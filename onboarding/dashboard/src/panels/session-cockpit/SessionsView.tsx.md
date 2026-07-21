@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -43,7 +43,12 @@ Responsive collapse now preserves the sole chat-creation entrance: an empty narr
 the rail rather than applying ordinary auto-collapse, while populated cockpits keep the established
 edge-based policy. A collapsed rail is both visually hidden and `aria-hidden`, so off-screen controls
 do not remain in the accessibility tree. LaunchFlow remains outside the collapsible panel without
-becoming a second entrance.
+becoming a second entrance. **V11 (260718-CHATS-L5P):** the collapsed rail `<aside>` is now
+`display:none` (was `visibility:hidden`), which removes the aside's own ~21px padding/border box — the
+0px panel is truly empty, not a dead sliver. The drag min stays `RAIL_MIN_PERCENT` (12%); below it the
+panel snaps fully collapsed and the `☰ rail` chip (StatusLine) + the in-place resize handle are the
+reopen affordances. (The audit's desired ~220px min was left as an open design decision — react-resizable-panels
+is percentage-only and the 280px calibration contract is pinned; see the worker report V11 flag.)
 
 ### 260715-FEUI-L7 Inspector And Status Composition
 
@@ -121,7 +126,10 @@ becoming a second entrance.
   focused or the focused seat stopped running UNDER us — a user deliberately inspecting a landed
   row is never fought. When the focused seat retires/lands, a reason-bearing handoff note is set
   (`<label> landed/retired — <why> · focus handed off`) and focus moves by `smartDefaultFocus`
-  priority; a null focus with live seats picks the smart default on entry.
+  priority; a null focus with live seats picks the smart default on entry. **R6 (260718-CHATS-L5P):**
+  `lastFocusRef` now also remembers the focused seat's human LABEL, so once the row is gone from
+  `sessions` at handoff time the banner names `previous.label` (the seat the operator knows) and, only if
+  that is unavailable too, falls back to `shortId(previous.id)` — never leading with a raw UUID.
 - **Store mirrors** (L272-L278): the view-owned `railCollapsed`/`inspectorCollapsed` and
   `palette.open` are mirrored ONE-WAY into `sessionCockpitStore` (design §4.3 — the view keeps
   ownership via its imperative panel handles).
@@ -306,6 +314,11 @@ uncommitted; verification stays pinned to the FEUI-MX-FIX-2 base until closeout 
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded V11 (collapsed rail aside `display:none`,
+  removing the ~21px residual sliver; drag min stays 12%) and R6 (the focus-handoff banner remembers the
+  focused seat's human label via `lastFocusRef.label`, falling back to `shortId(previous.id)` — never a
+  raw UUID). Composition/keep-alive/focus-model unchanged. Verification pinned to the leaf base
+  (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
   the composition change from the unconditional `PtySurface` body to `ChatsStageBody` (structured
   surface default; PTY demoted to the read-only diagnostics drawer + legacy-raw body — supersedes the

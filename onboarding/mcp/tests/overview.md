@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated | 2026-07-21T12:00+02:00 |
+| lastVerifiedCommitHash | `352d5cd0e9a35afca41aeca4987612338a131365`|
+| lastVerifiedCommitDate | 2026-07-21T01:33:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -449,6 +449,14 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-21T12:00+02:00 — 260718-CHATS-L5P curator: body-reviewed against the post-L5 pyright fixup
+  (commit `352d5cd`) that changed `test_chats_l5_hardening.py` after the L5 verification (`68b3205`). The
+  change is strict-pyright conformance only (protocol-conformant fake-host param naming, an
+  `isinstance`-narrowed assertion, an explicit transcript-`state` annotation, a `Mapping` import) — zero
+  behavior change, no `type: ignore`, all seven H1/H2/F2/F4 regressions identical in intent — so the
+  route's hardening-regression enumeration (H1 quarantine + F2, H2 authority-pin + F4, the projector-tier
+  and installed companions, the 10k baseline) is UNAFFECTED and stands as written. No body change;
+  verification metadata advanced to `352d5cd` (the enumeration was reviewed this cycle).
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: added the evidence-backed hardening regression
   narrative — the new `test_chats_l5_hardening.py` (H1 catalog-sweep quarantine + F2, H2
   authority-pin + F4), the projector-tier H2/F1 companions in `test_conversation_active_service.py`,

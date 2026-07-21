@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate |  2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate |  2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,12 +52,26 @@ server id; harness creation remains in the canonical LaunchFlow.
 Compact visible labels may use an explicit accessible name when the action's full meaning would not
 fit the bar; stable data attributes remain the browser-test seam.
 
+### 260718-CHATS-L5P Delta (V8 persistence + R6 short ids)
+
+- **V8 — Browse history persists** (L158-L178): the `Browse history` button is now ALWAYS rendered when
+  `onBrowseHistory` exists, and is `disabled`-with-reason (`Browse history needs a running harness chat
+  focused`) when the focused row is not a running harness chat — it no longer unmounts/teleports on a
+  focus change (the toolbar never reflows, muscle memory holds). This supersedes the "offered ONLY for a
+  controlled harness session" reading below. The `action` recipe gained a muted `_disabled` state +
+  `whiteSpace:nowrap`.
+- **R6 — short task ids** (L182-L200): a long task/lifecycle id renders through `shortId()`
+  (`data/conversation/format`) as a `…SUFFIX` badge with the full `task <id>` value in the `title` — the
+  bar never leaks a 26-char raw ULID.
+
 ### Invariants And Boundaries
 
 This remains one launch entrance. It does not create harness-specific launch buttons or bypass the
 canonical LaunchFlow. Local lifecycle routing is not durable server authority; leaf ownership is
 server-authoritative, with no optimistic mutation or hidden 409 refusal. Failed raw opens neither
-create nor focus a session.
+create nor focus a session. Library-level affordances (Browse history) stay present and disable with a
+reason rather than teleporting on focus (V8); raw ids display as short suffixes with the full value in a
+tooltip (R6).
 
 ### Todos
 
@@ -90,15 +104,20 @@ The bar composes repository-local task/session helpers and same-origin terminal 
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (Browse history)
 
-Additive (+14): an optional `onBrowseHistory` callback and a `Browse history` action, offered ONLY for
-a controlled harness session. It opens the in-stage previous-conversation library (the `SessionsView`
-`chats.browseHistory` stage mode / `ConversationLibrarySurface`); it does not create a session, mint a
-focus id, or add a second launch path. The sole-launch-entrance and accepted-row-only invariants are
-unchanged. The reviewed L4 candidate is uncommitted; verification stays pinned to the FEUI-MX-FIX-2
-base until closeout.
+Additive (+14): an optional `onBrowseHistory` callback and a `Browse history` action. It opens the
+in-stage previous-conversation library (the `SessionsView` `chats.browseHistory` stage mode /
+`ConversationLibrarySurface`); it does not create a session, mint a focus id, or add a second launch
+path. The sole-launch-entrance and accepted-row-only invariants are unchanged. *(L5P update: this action
+is now ALWAYS present and disabled-with-reason on an ineligible focus, per the V8 delta above — no longer
+conditionally unmounted.)*
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded V8 (Browse history always present,
+  disabled-with-reason on ineligible focus — no teleport) and R6 (task/lifecycle badges rendered via
+  `shortId` with the full value in the `title`). Corrected the L4 delta's "offered ONLY for a controlled
+  harness session" phrasing. Sole-launch-entrance invariant unchanged. Verification pinned to the leaf
+  base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
   the additive optional `onBrowseHistory` callback + controlled-session `Browse history` action that
   opens the in-stage history library; no new launch path or focus authority. Verification metadata

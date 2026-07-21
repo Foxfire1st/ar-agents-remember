@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/CommandPalette.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -41,6 +41,12 @@ stays local (R7 — the view's `closePalette` hands focus back to the invoker).
   everything passes through except exactly". `shouldFilter` is disabled on the keys page. The
   footer hint states the Esc-is-never-intercepted-over-the-terminal rule.
 - cmdk is unstyled; the Panda `box` css styles its `[cmdk-*]` data-attribute parts (L36-L77).
+- **V1 panel clamp (260718-CHATS-L5P)** (L36-L77): the panel `box` is `overflow:hidden` and its
+  `[cmdk-root]` is a bounded flex column (`flex:1; minHeight:0; overflow:hidden`) with the
+  `[cmdk-list]` as the sole interior scroller (`flex:1; minHeight:0; overflow:auto`). The keys reference
+  is taller than the `maxHeight:70%` panel; without this clamp its list rows + footer spilled onto a
+  TRANSPARENT background over the live composer/StatusLine (help text superimposed on page text). Now the
+  list scrolls INSIDE the panel and the footer stays on the panel background.
 
 ### Invariants And Boundaries
 
@@ -92,6 +98,11 @@ leaf base; closeout owns commit stamping.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V1 panel clamp — the `box` is
+  `overflow:hidden` with `[cmdk-root]`/`[cmdk-list]` as a bounded flex column + interior scroller, so the
+  tall keys reference no longer spills its rows/footer onto a transparent background over the live page.
+  Page pattern, one-options-source, non-portal focus-return unchanged. Verification pinned to the leaf
+  base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

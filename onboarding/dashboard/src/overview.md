@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`       |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -175,6 +175,19 @@ references informed product framing only; current code truth stays in agents-rem
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — No route impact: the `dashboard/src` route model
+  (`cockpit/`/`grammar/`/`panels/`/`data/`) is unchanged by 260718-CHATS-L5P (cockpit chrome visual
+  polish, PASS-WITH-NOTES; dashboard-only, zero backend edits). The two app-wide `dashboard/src/`-direct
+  CSS/token changes are captured at the child/sidecar level, not in this route body (which has no styling
+  section): (1) `index.css` gained an unlayered `word-break: normal` root override on `html, body,
+  [data-view="sessions"]` that neutralizes `@webtui/css`'s inherited `word-break: break-all` app-wide
+  (RV-1, LOAD-BEARING — a third-party scoped reset in a lower layer silently defeated every
+  component-level `overflow-wrap` patch; the test is computed-value verification; raw-id spans keep
+  explicit `break-all`) — recorded in the `index.css` sidecar and the `panels/session-cockpit/` overview's
+  "Cockpit chrome conventions" section; (2) `styles/tokens.css` + `panda.config.ts` gained the `well`
+  (`#070b0f`) terminal-well token (the xterm pty inset, FB7.1) — recorded in the `tokens.css` sidecar. The
+  regenerated `package_data/dashboard/` bundle is shipped output governed by the mcp overview's sync
+  mechanism, not an mcp source contract. Verification metadata unchanged.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer; reviewer FINAL
   PASS, 26/26 findings closed): `data/` gains the reconstructable `conversation/` and
   `conversation-library/` projection child routes; `panels/session-cockpit/` gains `ChatsStageBody`

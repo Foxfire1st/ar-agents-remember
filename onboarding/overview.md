@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4` |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 
 > **Status:** active baseline
 
@@ -639,6 +639,15 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-21T12:00+02:00 — No route impact: reviewed 260718-CHATS-L5P (cockpit chrome visual polish,
+  PASS-WITH-NOTES) against the repo body. Dashboard-only, zero backend edits: it closes the developer
+  visual-findings file + the FB7 terminal-identity directive against the composed app (the terminal well
+  + gutter grammar, the responsive rail-row grammar, collapse-or-explain chrome, humanized durations, and
+  the load-bearing `@webtui/css` `word-break: break-all` root-override lesson). No repo-level feature
+  inventory changed — detail routes to the `dashboard/src/`, `dashboard/src/panels/`, `.../session-cockpit/`,
+  `.../session-cockpit/conversation/`, and `dashboard/src/data/conversation/` governors; the regenerated
+  `package_data/dashboard/` bundle is shipped output under the `mcp/` overview's sync mechanism.
+  Verification metadata unchanged.
 - 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E gate plus
   bounded hardening (the terminal-liveness per-row synchronizer quarantine, the conversation
   projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and

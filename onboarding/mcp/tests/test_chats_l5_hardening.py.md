@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_chats_l5_hardening.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4` |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated | 2026-07-21T12:00+02:00 |
+| lastVerifiedCommitHash | `352d5cd0e9a35afca41aeca4987612338a131365` |
+| lastVerifiedCommitDate | 2026-07-21T01:33:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,13 @@ Pure-function/in-memory regressions: the H1 tests drive the real `TerminalCatalo
 real `HostedInteractionSynchronizer` with a doubled alive host and a mocked `read_control_transcript`
 (no tmux, no socket); the H2/F4 tests drive the real `ProjectionStore` directly. `_revalidate` is the
 in-test proxy for the active-page route's response re-validation boundary — the surface where the
-silently-stored split item actually 500s.
+silently-stored split item actually 500s. The in-test doubles are strict-pyright / protocol-conformant:
+`_AliveHost.has_session(self, tmux_name)` names its parameter to match the real host protocol (then
+`del tmux_name` marks it unused) rather than the underscore-prefixed form, poison-error assertions are
+narrowed through an `isinstance(..., str)` extraction before the substring check, and the F2 transcript
+`state` carries an explicit `dict[str, tuple[Mapping[str, object], ...]]` annotation — all satisfy the
+whole-project pyright gate with NO `type: ignore` and zero behavior change (commit `352d5cd`, "260718-CHATS-L5
+fixup").
 
 ### Invariants And Boundaries
 
@@ -122,6 +128,14 @@ No cross-repository implementation participates in this suite.
 
 ## Update History
 
+- 2026-07-21T12:00+02:00 — 260718-CHATS-L5P curator: body-reviewed against the post-L5 pyright fixup
+  (commit `352d5cd`, "260718-CHATS-L5 fixup") that changed this file after the L5 verification (`68b3205`).
+  The diff is strict-pyright conformance ONLY — a `Mapping` import, the fake `_AliveHost.has_session`
+  parameter renamed `_tmux_name`→`tmux_name` + `del` (protocol-conformant), the H1 poison-error assertion
+  narrowed via an `isinstance(..., str)` extraction, and an explicit F2 `state` annotation — with zero
+  behavior change and no `type: ignore`; all seven regressions (H1×3 + F2 + H2×2 + F4) are identical in
+  intent, so every claim above still holds. Added the strict-typing/protocol-conformant note to
+  Conventions; verification metadata advanced to `352d5cd` (the body was reviewed this cycle).
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: created the sidecar for the evidence-backed
   hardening suite — the H1 catalog-sweep quarantine regressions (poisoned-completion contract still
   raises standalone; one poisoned row never breaks the sweep and is fail-loud on its own row; the

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,9 +28,11 @@ body stays sequentially readable/navigable without one enormous forced-layout DO
 - `useHideThinking` (L37) reads the global preference; when hidden the item collapses to a single
   `thinking hidden` marker (L38-L44) — the content stays in the store, only rendering is suppressed
   (non-destructive).
-- When shown, it renders an uppercase `thinking` label plus each block's text through `MarkdownBlock`
+- When shown, it renders the marker label plus each block's text through `MarkdownBlock`
   (`testId="thinking-markdown"`). `thinkingText` (L30) reads `thinking`/`markdown` (`.markdown`) or
-  `text` (`.text`) blocks and skips the rest.
+  `text` (`.text`) blocks and skips the rest. **FB7.4 (260718-CHATS-L5P):** the label is now Claude
+  Code's inline lowercase marker `✻ thinking` at meta size — the uppercase/letterspaced `textTransform`
+  was dropped (it was a boxed web-chip idiom the well does not use).
 - The wrap sets `contentVisibility: "auto"` + `containIntrinsicSize: "auto 4rem"` (L17-L20) so a huge
   reasoning body is rendered in bounded segments — accessible, never deleted (§14.2).
 
@@ -70,6 +72,10 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: corrected the label claim — the marker is now the
+  lowercase inline `✻ thinking` (FB7.4), no longer uppercase/letterspaced. Never-clamped full-inline
+  behavior + hide-thinking toggle + content-visibility bounding unchanged. Verification pinned to the
+  leaf base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the thinking item —
   full-inline never-clamped dim reasoning, the global hide-thinking toggle (instant, non-destructive),
   and content-visibility bounding for large bodies. Verification is pinned to the leaf base

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -44,7 +44,9 @@ the shared `FLEET` fixtures.
   preview NAMING every removed session, and the fetch-level assertion captures the exact posted
   sessionIds.
 - **Freshness + footer (R15, R8)** — the stale banner past the missed-beat cutoff; anchored bus
-  numbers; the honest never-ticked line (never fake numbers).
+  numbers; the honest never-ticked line (never fake numbers). **R5/A4 (260718-CHATS-L5P):** the footer
+  heartbeat/cutoff pin is now the HUMANIZED form `heartbeat 2 s / stale cutoff 1 m 0 s` (was the raw
+  `heartbeat 2s / stale 60s`); the anchored `2 pending / 0 redeliverable` case is preserved.
 - **Cross-surface consistency (R14)** — renders the rail AND a HeaderStrip and diffs the two
   dots' `data-state`/color/pulse attributes (two surfaces, not one function twice).
 - **Zero state (R9)** — the empty rail explains itself; waiting(reason) renders steady
@@ -101,6 +103,11 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: updated the bus-footer freshness pin to the
+  humanized `heartbeat 2 s / stale cutoff 1 m 0 s` form (R5/A4); the anchored pending/redeliverable case
+  is unchanged. (The RV-2 rail-row geometry is pinned by the e2e `cockpit.spec.ts`, not this jsdom suite
+  — jsdom has no layout.) Verification pinned to the leaf base (`352d5cd`) until closeout stamps the
+  candidate commit.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

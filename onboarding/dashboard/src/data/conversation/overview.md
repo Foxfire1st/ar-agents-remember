@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/conversation/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,7 +59,12 @@ side-effect-free core the store, the stream, and the tests all share, so the aut
   rehydrates on refocus.
 - `format.ts` — the shared presentation conventions (A1/A4/A5/A8): em-dash = genuinely absent,
   interpunct = separator, `joinChips` drops empties (no dash-chains), humanized durations, quiet
-  long-stale tone, boundary truncation with a full-value affordance.
+  long-stale tone, boundary truncation with a full-value affordance. **260718-CHATS-L5P** widened its
+  reach beyond the conversation surfaces: `humanizeDuration` is now the SINGLE duration authority for the
+  whole cockpit chrome (supervisor badge, rail-footer heartbeat/cutoff, uptime — `StatusLine` also imports
+  `joinChips` for its collapse-or-explain segments), and a NEW `shortId(id, tail)` collapses a long
+  ULID/UUID to `…SUFFIX` (R6) with the full value the caller's `title` (rail task badges, focus-handoff
+  banner).
 - `thinkingPreference.ts` — the global persisted hide-thinking preference (`cockpit.chats.hide-thinking.v1`,
   the only durable UI bit — non-destructive, instant).
 
@@ -166,6 +171,10 @@ package's serving endpoints; no cross-repository implementation source governs i
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the `format.ts` widening — `humanizeDuration`
+  is now the single duration authority across the cockpit chrome and a new `shortId` (R6) was added; the
+  reducer/store/stream authority contracts are unchanged (presentation-only). Verification pinned to this
+  leaf's base (`352d5cd`) while the polish candidate is uncommitted; closeout owns candidate stamping.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the governing pillar for the
   reconstructable active-conversation projection — the pure authority-sensitive reducer, the
   no-durable-browser-store rule (R1), the retention-gap re-page tolerance (L1.4/L1.5), the manual

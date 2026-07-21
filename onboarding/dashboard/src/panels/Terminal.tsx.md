@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -116,7 +116,10 @@ tears down and reconnects the data subscription correctly.
 `socketFactory` comes from `TerminalSocketContext` (dev bench supplies a mock; production = `null`
 ⇒ real same-origin socket). A concrete dark VT `THEME` (xterm needs literal colours, not Panda
 tokens); the host div is Panda `css` (`data-testid="terminal-host"`), with xterm descendant selectors for
-height and viewport scrollability.
+height and viewport scrollability. **V31 (260718-CHATS-L5P):** the host `background` migrated from the
+hardcoded `#070b0f` literal to the `well` token (`panels/Terminal.tsx:19`) — the same token the FB7.1
+conversation stage/composer now use, so the "pty well" is one source of truth. (The xterm `THEME` still
+carries literal colours, which xterm requires.)
 
 ### Invariants And Boundaries
 
@@ -174,6 +177,10 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V31 well-token migration — the host
+  `background` `#070b0f` literal → the `well` token (shared with the FB7.1 conversation stage/composer).
+  No behavior change; the xterm THEME keeps its literal colours. Verification pinned to the leaf base
+  (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented xterm-preserving, once-per-serving-boot socket
   reattach and stale-ref-safe teardown; verification metadata remains pinned pending closeout.
 

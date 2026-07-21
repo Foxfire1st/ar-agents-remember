@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated            | 2026-07-21T11:00+02:00                                       |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`                  |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated            | 2026-07-21T12:00+02:00                                       |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`                  |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -71,6 +71,23 @@ it never writes conversation authority and never scrapes a vendor TUI.
   controlled runner PTY READ-ONLY through `PtySurface`'s `readOnly` prop (§12.6).
 - `useConversationControls.ts` — the exact-turn interrupt hook (§9.5), documented in the L5-Facing
   Register below.
+
+## FB7 terminal-surface identity (260718-CHATS-L5P — the developer directive)
+
+The renderer's grammar was unchanged; its STYLING became a terminal well instead of a generic web panel
+(spec home: the leaf visual-audit `## FB7`, derived from Toad `main.tcss` + the Claude Code / Codex TUIs).
+Cross-file: `ConversationTimeline` viewport = `background: well` (the `#070b0f` token) + grid border + a
+centered `100ch` content column with the page bg as gutter (FB7.1); item rhythm is line-grid blank lines,
+no per-article hairline (FB7.3); item chrome is gutter grammar — `ToolItem` `●` phase dot + lowercase
+phase word + left-rule output wash, `TurnResultItem` `· turn complete` flow line, `ThinkingItem` `✻
+thinking`, `primitives` `ClampButton` de-boxed lowercase underline, the collapsed unknown-vendor run one
+dim mono line with the honest `same summary` copy (FB7.4/R12). `MarkdownBlock` prose uses `break-word` +
+inline-code `nowrap` (V10) — effective only under the app-root `word-break: normal` override (RV-1,
+`index.css`). `ConversationSurface` renders the history/live capability as a short CUE (state word visible,
+full reason in the hover `title` — R11), not the old always-visible reason paragraph. The composed litmus
+(a settled turn over the well, indistinguishable in grammar from an adjacent vendor TUI) passed on live
+content; item-level styling is not mountable in the bench (mock returns `structured surface unavailable`),
+so it holds by unit tests + the reviewer's live R13 pass.
 
 ## Invariants And Boundaries
 
@@ -194,6 +211,12 @@ cross-repository implementation source governs it.
 
 ## Update History
 
+- 2026-07-21T12:00+02:00 — 260718-CHATS-L5P curator: added the FB7 terminal-surface identity section —
+  the well (FB7.1), line-grid rhythm (FB7.3), gutter grammar across the item components (FB7.4/R12),
+  V10 whole-word wrapping (dependent on the RV-1 root override), and the R11 capability CUE. Styling
+  only; the harness-neutral grammar, feed ARIA, and virtualization are unchanged. Spec home is the leaf
+  visual-audit `## FB7`. Verification re-pinned to this leaf's base (`352d5cd`) while the polish candidate
+  is uncommitted; closeout owns candidate stamping.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: updated the L5-Facing Register's
   virtualization/E1/E2 bullet to DELIVERED — the 10k DOM/interaction baseline + axe tripwire landed in
   `renderer.test.tsx` (its file card refreshed), E1 is quarantined and E2 authority-pinned in the

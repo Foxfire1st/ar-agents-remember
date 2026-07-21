@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionComposer.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -84,6 +84,27 @@ CodeMirror now consumes the effective keymap through compartments and reconfigur
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
+## 260718-CHATS-L5P Delta (well identity + focus + capability-derived hints)
+
+- **FB7.1 — the composer joins the terminal well** (`editorFrame`): `background: bg → well` (the
+  `#070b0f` token), matching the conversation feed + the pty pane inset. Pty-pane parity (composer bg ===
+  `--well`) is the numeric FB7.1 acceptance test.
+- **V4 — visible focus on the page's primary input** (`editorFrame`): the inner CodeMirror
+  `.cm-focused` outline is clipped by the frame's `overflow:hidden`, so the FRAME now carries the house
+  amber ring via `&:focus-within { borderColor: amber }` — keyboard focus is no longer discoverable only
+  by the caret.
+- **V9 — capability-derived hints** (`footerHint`): on a legacy-raw TERMINAL seat (`session.kind ===
+  "terminal"`) native submission is unsupported (typing bypasses the /submit queue), so the hint is
+  `<profile> keys · raw terminal keys pass through` and the `reliable submit · text only` tail is NOT
+  rendered — the prior static `markdown · … · reliable submit · text only` set contradicted the pane.
+  Controlled chats keep the full markdown/reliable-submit set. This supersedes the always-static hint the
+  F7 delta below described.
+- **V14 — draft chip is an exception cue**: `draft saved` shows only when a non-empty draft actually
+  exists (`draft.draft.length > 0`), not permanently on an empty composer.
+- **V3 — send never hides under the inspector** (`sendButton`): `flexShrink:0` + `whiteSpace:nowrap` so
+  `ctrl+↵ send` keeps its full width + single line; the hint (`footerLeft`, `flex:1 minWidth:0`) is the
+  only part that yields when the inspector opens and the stage column reflows.
+
 ## 260718-CHATS-L4 Reviewed Candidate Delta (composer hint restructure, F7)
 
 Presentation-only blank-fill (no authority change): the composer hint line was restructured to close
@@ -96,6 +117,12 @@ uncommitted; verification stays pinned to the FEUI-L8 base until closeout.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the composer polish — `editorFrame`
+  `background: well` (FB7.1) + `:focus-within` amber ring (V4); capability-derived footer hint (V9 —
+  terminal seats show `raw terminal keys pass through`, not the markdown/reliable-submit claims); `draft
+  saved` only with a non-empty draft (V14); `sendButton` `flexShrink:0`+`nowrap` so it never hides under
+  the inspector (V3). Reliable-submit/receipt/withdrawal authorities unchanged. Verification pinned to
+  the leaf base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
   the presentation-only composer-hint restructure (F7/A3) — grouped by concern with one interpunct
   separator, the honest-boundary wall moved into a `reliable submit` tooltip; no submit/authority

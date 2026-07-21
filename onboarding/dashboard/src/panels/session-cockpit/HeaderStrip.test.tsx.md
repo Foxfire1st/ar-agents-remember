@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -26,9 +26,11 @@ The jsdom suite for the HeaderStrip AND the SessionStage container (260715-FEUI-
 - **HeaderStrip (R10)** — the anatomy order identity → controls → state → (leaf/seat) →
   diagnostics via DOM position; FEUI-L4 mounts the real `ModelEffortControl` and trigger inside
   the reserved slot; the state
-  dot + word come from the shared grammar; freshness honesty (R15): `ws —` with no pane, real
-  state + quiet age when known, the 10 s sweep bound in the tooltip; a hand-opened session
-  renders NO provenance chips (absent, never invented).
+  dot + word come from the shared grammar; freshness honesty (R15 + R3): the ws marker COLLAPSES
+  (is omitted, asserted `not.toContain("ws —")`) when no pane reports a state — 260718-CHATS-L5P
+  changed this from the prior `ws —` placeholder assertion — with the real state + quiet age when
+  known and the 10 s sweep bound still in the tooltip; a hand-opened session renders NO provenance
+  chips (absent, never invented).
 - **Derived provenance tiers (R7, rewritten by L3)** (L68-L107) — the tier assertion runs on a
   PURPOSE-BUILT row (review finding 7 — not FLEET's `worker-l4`, whose claude-harness/codex-key
   pairing is an L2 fixture quirk that could silently flip the assertion if ever corrected): a
@@ -76,6 +78,10 @@ expanded cockpit state while keeping model/effort header assertions independent 
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: updated the freshness-honesty pin — the no-pane
+  case now asserts the `ws —` placeholder COLLAPSES (`not.toContain("ws —")`) rather than rendering a
+  bare dash (R3); the sweep-bound tooltip pin is unchanged. Verification pinned to the leaf base
+  (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5 fixture-only refresh; no HeaderStrip semantic impact.
 
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2 replaced the empty-slot assertion with proof that

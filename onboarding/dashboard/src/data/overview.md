@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -228,6 +228,12 @@ session-cockpit overview before the six obsolete sidecars were removed.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — No route impact: 260718-CHATS-L5P (cockpit chrome visual polish) touched one
+  `data/` source — `conversation/format.ts` gained the `shortId` helper (R6) and its `humanizeDuration`
+  became the cockpit-wide single duration authority (R5). Both are presentation conventions inside the
+  `conversation/` child route (recorded in [conversation/overview.md](conversation/overview.md) and the
+  `format.ts` card); the `data/` route model and every state/authority contract are unchanged.
+  Verification metadata unchanged.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator (structured Chats renderer, reviewer FINAL PASS):
   added the two child routes `conversation/` (reconstructable active-conversation projection — pure
   reducer + resumable stream + store/LRU) and `conversation-library/` (reconstructable

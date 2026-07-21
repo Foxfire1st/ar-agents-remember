@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |
 | doc_type               | `route-local-overview`                                              |
-| lastUpdated            | 2026-07-20T22:30+02:00                                              |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`                         |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                                              |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`                         |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                                    |
 
 ## Governing Overview
@@ -33,9 +33,15 @@ active.
   columns, and the §4.4 return paths (Back button, Escape-in-stage → `onBack`, palette Back-to-current-chat)
   all consuming the same focus-return token. **Layout idiom (F23/L4.R5):** the `columns` flex container is
   `nowrap` (NOT wrap) with `min-height:0` columns each handing overflow to its own interior scroller, and
-  `@container (max-width:640px)` owns stacking with `container-type:inline-size` (F22). A wrapping flex
+  `@container (max-width:56rem)` owns stacking with `container-type:inline-size` (F22). A wrapping flex
   container would size each line to content, defeat the `overflow:hidden` height clip, and leave the sole
-  resume action and the paging affordance pointer-unreachable — the regression F23 fixed.
+  resume action and the paging affordance pointer-unreachable — the regression F23 fixed. **V10 threshold
+  raise (260718-CHATS-L5P):** the stack breakpoint moved `640px → 56rem` — the 16rem list + 20rem preview
+  crush below ~56rem of surface (the list falls to a ~180px sliver, preview prose splits mid-word), so the
+  surface stacks to one column BEFORE that (the 900px window with the rail collapsed, and the ~1000px
+  sweep). Sibling `MarkdownBlock` prose wraps whole-word (`break-word`) with inline code `nowrap` (V10),
+  effective only under the app-root `word-break: normal` override (RV-1). The `nowrap`/container-query
+  idiom itself is unchanged.
 - `ConversationLibraryList.tsx` — the native list: boundary-truncated title carrying the full value in
   `title` (A5), humanized age (`humanizeAge`), a completeness badge, and `Load more` paging.
 - `ConversationHistoryPreview.tsx` — the read-only preview in the SAME block grammar, labeled
@@ -117,6 +123,13 @@ cross-repository implementation source governs it.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: minimal body update for the V10 responsive fix —
+  the Route Model's stale `@container (max-width:640px)` stacking threshold is corrected to `56rem` (the
+  two columns crush below ~56rem, so the surface stacks earlier), and the sibling `MarkdownBlock`
+  whole-word/inline-code-nowrap wrap policy (dependent on the RV-1 root override) is noted. The
+  `nowrap` + container-query height-containment idiom (F22/F23/L4.R5) is unchanged; no data/authority/
+  focus behavior changed. Verification pinned to the leaf base (`352d5cd`) until closeout stamps the
+  candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the governing pillar for the in-stage
   previous-conversation browser — the read-only preview in the shared block grammar, the sole exact-open
   resume action with focus-only-on-opened-proof (R4) and same-requestId reconcile, the §4.4 return paths
