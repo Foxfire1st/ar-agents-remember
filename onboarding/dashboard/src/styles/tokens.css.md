@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/styles/tokens.css`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -25,7 +25,14 @@ moved to co-located Panda).
 ### Logic
 
 `:root { color-scheme: dark; --bg/--bg-panel/--ink/--grid; --amber/--cyan/--alarm/--mint/--dormant;
---font-mono; --glow-strength }`, plus — 260715-FEUI-L1 — **`--muted`** (`oklch(0.7 0.02 250)`,
+--font-mono; --glow-strength }`, plus — **260718-CHATS-L5P** — **`--well`** (`#070b0f`, the terminal
+"well"): the darker inset the xterm pty pane already used (was a hardcoded `#070b0f` literal in
+`panels/Terminal.tsx`). FB7.1/V31 promote it to a token so the STRUCTURED conversation stage
+(`ConversationTimeline` viewport + `SessionComposer` editor frame) inherits the SAME well tone as the
+legacy-raw pane — the developer's "chat doesn't look like a TUI" identity fix. Mirrored as the Panda
+token `colors.well` in `panda.config.ts` (two views of one palette). The TUI-identity spec that derives
+this (Toad `main.tcss` + Claude Code / Codex TUIs) lives in the leaf visual-audit `## FB7`. Plus —
+260715-FEUI-L1 — **`--muted`** (`oklch(0.7 0.02 250)`,
 muted control text): it existed only as a Panda token (`panda.config.ts`) + a hardcoded literal in
 `index.css`, and the WebTUI mapping (`webtui.css` → `--foreground1: var(--muted)`) would have
 referenced an undefined var — the spike test's declared-token assertion caught it. Plus — 260703-L14
@@ -56,7 +63,8 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The Panda token mirror of this palette. | L30-L46 | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
+| The Panda token mirror of this palette (incl. `colors.well`). | L30-L46 | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
+| The pty pane + structured stage that consume `well` (parity is the FB7.1 acceptance test). | — | [../panels/Terminal.tsx](../panels/Terminal.tsx.md) · [../panels/session-cockpit/conversation/ConversationTimeline.tsx](../panels/session-cockpit/conversation/ConversationTimeline.tsx.md) · [../panels/SessionComposer.tsx](../panels/SessionComposer.tsx.md) |
 | The WebTUI mapping that consumes these vars (incl. `--muted`) — no raw literals allowed there. | L17-L34 | [webtui.css](webtui.css) |
 | The spike assertion that every mapped var is declared here. | L117-L128 | [../test/webtuiSpike.test.ts](../test/webtuiSpike.test.ts) |
 
@@ -78,6 +86,11 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: added the `--well` (`#070b0f`) terminal-well token
+  — the xterm pty inset promoted from a Terminal.tsx literal (FB7.1/V31) so the structured conversation
+  stage + composer inherit the same well tone; mirrored as Panda `colors.well`. Two-views-of-one-palette
+  rule unchanged. TUI-identity spec home is the leaf visual-audit `## FB7`. Verification pinned to the
+  leaf base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

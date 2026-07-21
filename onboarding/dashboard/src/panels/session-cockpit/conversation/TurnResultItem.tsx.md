@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,10 @@ unknown-vendor item is preserved as LABELED evidence — never guessed into a me
 - `labelFor` (L31) maps `kind` to a `{ text, toneKey }`: `error` → `error`; `turn-result` splits on
   phase into `interrupted` / `turn failed` / `turn complete`; `notice`/`telemetry` → neutral;
   `unknown-vendor` → `unknown vendor event`. The tone classes (L22) carry neutral/error/interrupted/
-  done color, always alongside the text label.
+  done color, always alongside the text label. **FB7.4/A8 (260718-CHATS-L5P):** the label is now a dim
+  lowercase FLOW line prefixed with `· ` (e.g. `· turn complete`) — `tagBase` dropped the boxed
+  uppercase/letterspaced chip (border, `textTransform`, padding) for a plain sized span; the tone class
+  still sets the color but the word is always present.
 - An `unknown-vendor` block renders `vendorType: safeSummary` on the head line and its `evidenceRef`
   as a monospace `evidence <ref>` line (L75-L82, `data-testid="unknown-vendor-evidence"`) — the
   honest preserved reference, so a collapsed run (see `collapse.ts`) can still address each member.
@@ -72,6 +75,10 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7.4/A8 flow-line restyle — the
+  turn-boundary label is now `· turn complete` dim lowercase (tone class keeps the color), replacing the
+  boxed uppercase web chip. Kind mapping + unknown-vendor evidence preservation unchanged. Verification
+  pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the turn-result item —
   labeled turn-complete/failed/interrupted/notice states (text plus color) and unknown-vendor events
   preserved as labeled evidence with their evidenceRef. Verification is pinned to the leaf base

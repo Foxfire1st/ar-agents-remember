@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,9 +19,8 @@
 The active-conversation **surface** (design §12.1): the page/stream state and scroll shell around the
 one `role="feed"` timeline. It reads the reconstructable store (never a fixture authority), renders the
 honest reconnect/failure states, drives revision-keyed announcers that stay SILENT during
-replay/hydration (§14.2), and exposes the global thinking toggle, the ambient telemetry chips, and a
-single non-dismissable history-completeness note (§10.2). It owns no data/paging/cursor logic — the
-store/reducer do.
+replay/hydration (§14.2), and exposes the global thinking toggle, the ambient telemetry chips, and the
+live/history capability CUES (§10.2, R11). It owns no data/paging/cursor logic — the store/reducer do.
 
 ## Code Commentary
 
@@ -37,12 +36,15 @@ store/reducer do.
 - **First-connect failure** (L119-L131, F15): with no projection yet, the surface renders
   `ConversationReconnect` carrying the typed `routeError.detail` (honest reason, never a generic
   message).
-- **History-completeness note** (L133-L140, F13): printed only when history is not fully supported, and
-  it prints the reason from the capability that is ACTUALLY unsupported (`toolCompleteness` vs
-  `completeness`), mirroring the control-copy rule.
+- **Capability cues (R11, 260718-CHATS-L5P)** (F13): the always-visible italic `history: <reason>` note
+  div is GONE. The offending history capability (tool details first, then overall completeness) is
+  selected as `historyCapability` and rendered through `CapabilityReason` with `label="history"` INSIDE
+  the toolbar; the live-completeness cue likewise carries `label="live"`. Each cue shows only the
+  one-word state (`history partial`, `live unavailable`) with the exact server reason behind hover
+  (`title`) — the implementation-jargon paragraph never owns above-the-fold chrome (A3). The
+  `history-completeness-note` testid now wraps the history cue (not the removed div).
 - **Toolbar** (L142-L171): thinking toggle (`thinkingPreferenceStore`), a `terminal diagnostics`
-  opener, `AmbientTelemetry` (keyed on `status.revision`), and a `CapabilityReason` for a non-supported
-  live-completeness capability.
+  opener, `AmbientTelemetry` (keyed on `status.revision`), and the live + history capability cues above.
 - **Empty vs timeline** (L183-L198): an empty live conversation shows `No messages yet — send one from
   the composer below.` (A1); otherwise it mounts `ConversationTimeline` with `busy` derived from
   `connecting`/`gap`, wiring `onLoadOlder` and the scroll-anchor recorder.
@@ -86,6 +88,12 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded R11 progressive disclosure — the
+  always-visible `history: <reason>` note div was removed; the history and live capabilities now render
+  as short `CapabilityReason` CUES (labeled `history`/`live`, state word visible, full reason in the
+  hover `title`) inside the toolbar. Announcer discipline, typed first-connect reason, empty state, and
+  timeline mount unchanged. Verification pinned to the leaf base (`352d5cd`) until closeout stamps the
+  candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the active-conversation
   surface — the page/stream shell with `live`-only announcers (silent on replay/hydration, F21), the
   typed first-connect reason (F15), the failing-capability history note (F13), and the thinking/telemetry

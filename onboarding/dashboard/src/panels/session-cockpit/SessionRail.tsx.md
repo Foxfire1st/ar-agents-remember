@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -32,17 +32,28 @@ rail view.
   consistency, worker flag 5) — while `sessions`, the tree toggle, poll health, the projection
   slices (`taskDocuments`, `lifecycles`, `agentPickups`, `supervisorHeartbeat`), the L6 lifecycle
   notices (`cleanupOutcome`), and the harvest map (`usePtyHarvest`) are store reads.
-- **Row anatomy `renderRow`** (L455-L616, RULED R6): dot · role(3) · title · attention-slot ·
-  status · End. The title is the flex segment (`min-width: 3.5rem` — ALWAYS survives); the status
-  chip is the ONLY elidable segment (`flexShrink:1; min-width:0; max-width:7rem`); the full truth
-  stays in the row tooltip (`railRowTooltip`). Status chips carry the grammar's status vocabulary
-  ONLY — the DOM-negative test proves `resolvedModel`/`resolvedEffort` render NOWHERE in the rail.
-  The `data-slot="attention-marker"` slot carries the two-state brief marker (✉, R8), held-gate
-  badge (R13), and FEUI-L4's `set!` marker when `hasUnackedSetAttention` finds unsupported,
-  clamp, unknown, or pair-failure evidence. Its accessible name directs the user to the set
-  ledger; only an explicitly labelled `mark seen` action clears it. Viewing/focusing never does.
-  The `input?` chip's
-  tooltip carries the pending question's prompt preview (R16).
+- **Row anatomy `renderRow`** (RULED R6 / **RV-2 responsive redesign, 260718-CHATS-L5P**): the row is
+  now TWO groups inside a `flex-wrap: wrap` `rowShell` — a **LABEL group** (`rowLabelGroup`: dot ·
+  role(3) · title · attention/markers · status chip; `flex:1 1 auto; min-width:0; overflow:hidden`) and
+  an **ACTION group** (`rowActionGroup`: End, or the armed confirm/cancel, or the end-failure alert;
+  `flex:0 1 auto; min-width:0`). When the two cannot share one line at a narrow rail, the ACTION group
+  wraps WHOLE to a second line — the confirm/cancel controls stay single-line and reachable inside the
+  `overflow:hidden` aside at EVERY width down to the 12% collapse threshold, never letter-wrapping,
+  clipping, or overflowing. Priority when squeezed: **actions > chip > inline copy**. `rowTitle` is now
+  the truly-absorbing segment (`flex:1 1 auto; min-width:0` — the old `min-width:3.5rem` floor is GONE;
+  the floor forced the row past the aside), eliding to `…` with the full label in `railRowTooltip`. The
+  status chip (`statusChip`) is `flex:0 1 auto` — whole-word when there is room (R2: `turn-ended` ~72px
+  under the 7rem ceiling), elidable after the title yields, and **DROPPED ENTIRELY while the row is
+  armed or showing an end-failure** (`showChip = chip && !isArmed && !hasEndFailure`) because the
+  confirm copy already carries the state, so the two controls always fit. Status chips carry the
+  grammar's status vocabulary ONLY — the DOM-negative test proves `resolvedModel`/`resolvedEffort`
+  render NOWHERE in the rail. The `data-slot="attention-marker"` slot carries the two-state brief marker
+  (✉, R8), held-gate badge (R13), and FEUI-L4's `set!` marker when `hasUnackedSetAttention` finds
+  unsupported, clamp, unknown, or pair-failure evidence. Its accessible name directs the user to the set
+  ledger; only an explicitly labelled `mark seen` action clears it. Viewing/focusing never does. The
+  `input?` chip's tooltip carries the pending question's prompt preview (R16). Geometry is e2e-pinned
+  (`cockpit.spec.ts`) at 1440 / 1100 / 900 / min-rail: armed confirm 55×15, cancel 40×15, single-line,
+  both fully inside the aside, chip dropped.
 - **Accessible state dot (L4 R8)** (L491-L501): the rail supplies `ariaLabel="state: <word>"`
   to the shared `StateDot`, making the truncation-surviving signal a named image. Header dots stay
   hidden because the visible state word already sits beside them.
@@ -54,7 +65,13 @@ rail view.
   terminate POST (review finding 4) renders a `role="alert"` `end failed: <verbatim server
   words>` row with retry + dismiss, REPLACING the End segment until resolved — never a silent
   disarm; distinct from stop residuals, which are informational facts about SUCCESSFUL
-  terminations.
+  terminations. **R9 demotion (260718-CHATS-L5P):** the `endButton` now carries DEMOTED weight —
+  `color: muted` by default, warming to `alarm` only on hover / keyboard focus / the selected row (red
+  on every row was six alarms shouting, diluting the danger signal). The `rowShell` gained a `_hover`
+  border feedback (an amber-grid mix) — the row had NO approach feedback before the click that arms End.
+  The confirm/cancel/End controls (`bulkButton`, `doneToggle`, `endButton`) all hold `flex:none` +
+  `whiteSpace:nowrap` so they never crush into vertical letter columns (R1/V12). The
+  `terminateConfirmCopy` em-dash collision (`state — —`) is fixed in `lifecycleCopy.ts`.
 - **Legacy-raw harvest markers (L6 R7)** (L464-L471, L499-L514): a pending bell renders a warn
   marker chip in the attention slot with a text equivalent ("terminal bell — the vendor TUI
   rang"), cleared by focusing the seat (PtySurface acknowledges); harvested OSC title/turn hints
@@ -82,11 +99,20 @@ rail view.
   finding 3).
 - **Poll-health banner** (L749-L754, R15): `pollHealth.healthy === false` ⇒ the amber "catalog
   poll stale — N beats missed; rows may be frozen" banner.
-- **Bus footer** (L836-L851, R8): anchored numbers from `supervisorHeartbeat` — `inbox N pending /
-  M redeliverable`, `heartbeat Xs / stale Ys` with the 10 s sweep bound in the tooltip; renders
-  the truth ("supervisor has not ticked in this workspace") when null — never fake numbers.
-- **Tree toggle** (L808-L815): swaps to `buildSpawnTree` rows indented by spawn depth (provenance
+- **Bus footer** (L836-L851, R8): anchored numbers from `supervisorHeartbeat`. **260718-CHATS-L5P
+  (RV-4/R4 + R5):** the both-zero inbox collapses to a calm `inbox clear` (the anchored `N pending / M
+  redeliverable` pair renders only when there is something to anchor); the heartbeat/cutoff are
+  HUMANIZED via `humanizeDuration` (`heartbeat 2 s / stale cutoff 1 m 0 s`, never the raw
+  `570724.69163s / 86400s`), with the raw seconds kept in the tooltip. Renders the truth ("supervisor
+  has not ticked in this workspace") when null — never fake numbers.
+- **Tree toggle** (L808-L815, R8 — 260718-CHATS-L5P): reads as a view TOGGLE, not a bare taxonomy noun
+  — `⇄ role view` ↔ `⇄ tree view` with `aria-pressed` + a both-states tooltip + `whiteSpace:nowrap`
+  (V12, never `rol/e vie/w`). Swaps to `buildSpawnTree` rows indented by spawn depth (provenance
   inspection only); persisted per user via the cockpit store.
+- **Leaf caption (V26, 260718-CHATS-L5P)** (`leafCaption`): a long leaf id (`260715_#2067_react-data-
+  testids-01`) now truncates at the END with the full value in the cluster `title` (`display:block;
+  min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap`) — never breaking mid-word
+  down the narrow rail.
 - **Zero state** (L804-L807, R9): an EXPLAINED empty rail ("no sessions — launch one from Chats;
   the cockpit launcher lands in L5"), never an unexplained blank.
 
@@ -103,8 +129,12 @@ rail root carries `data-focus-target` (design §5.3 — always present, even emp
 - The rail renders MODEL truth only: no model/effort anywhere (R6), no fabricated latency, no
   invented states — chips/words come exclusively from `stateGrammar`; harvested hints live in
   the TOOLTIP, clearly labeled, never the dot.
-- The ruled anatomy order and the only-status-elides truncation contract are DOM-test-pinned; new
-  row content must go through the reserved attention-marker slot or a ruling.
+- The ruled anatomy order is DOM-test-pinned; new row content goes through the reserved
+  attention-marker slot or a ruling. **RV-2 truncation/wrap contract (260718-CHATS-L5P):** the row is a
+  two-group `flex-wrap:wrap` layout; the ACTION group (End/confirm/cancel) stays single-line + reachable
+  at EVERY rail width (wrapping whole to line 2 when tight), the title elides first, the chip elides next
+  and is dropped entirely while armed — pinned by the 4-width `cockpit.spec.ts` geometry e2e (jsdom has
+  no layout, so this is an e2e pin, not a vitest one).
 - Set attention is presentation of existing ledger/pair evidence only; the rail never
   acknowledges it and never renders requested/effective model or effort values.
 - Attention highlight must stay class-derived (never an id snapshot) — review finding 3.
@@ -157,6 +187,15 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the responsive rail-row redesign (RV-2) —
+  the `rowShell` is now a `flex-wrap:wrap` LABEL-group + ACTION-group layout where the action group
+  wraps whole to a second line and stays single-line/reachable at 1440/1100/900/min-rail (4-width
+  `cockpit.spec.ts` geometry pin); the `rowTitle` min-width floor was removed so it truly absorbs; the
+  status chip elides and is DROPPED while armed (confirm copy carries the state). Also: R9 End demotion
+  (muted→alarm on hover/focus/selected) + row hover feedback; R1/V12 nowrap on confirm/cancel/toggle;
+  R8 `⇄ role view / ⇄ tree view` toggle affordance; R5/RV-4 humanized + `inbox clear` bus footer; V26
+  end-truncated `leafCaption`. No model/effort leakage introduced. Verification pinned to the leaf base
+  (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

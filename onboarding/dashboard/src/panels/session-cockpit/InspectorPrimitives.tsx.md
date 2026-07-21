@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,12 @@ panes: pane/section layout, optional facts, notes, raw payloads, and compact ins
 
 - `InspectorSection` provides a consistent titled section; `InspectorFact` omits only truly absent
   values and preserves full content/title; `InspectorNote` states explanatory limits.
+- **V2 value wrapping (260718-CHATS-L5P)** (L34): the `fact` `& > dd` value uses `overflowWrap:
+  break-word` (was `anywhere`), so a long inspector value wraps on token boundaries rather than
+  per-character (`the pane sho/ws the runne/r line-log`). NOTE: this holds only because the leaf's
+  `index.css` root override neutralizes `@webtui/css`'s inherited `word-break: break-all` (RV-1) — under
+  `break-all` the `overflowWrap` value is inert and the mid-word breaks return. See
+  [../../index.css](../../index.css.md).
 - `InspectorRaw` renders strings verbatim or JSON values as formatted raw evidence in a scrollable
   ledger treatment.
 - `inspectorAction` is the shared compact button style with visible focus and disabled states.
@@ -65,5 +71,9 @@ No meaningful cross-repo boundary is owned here.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V2 value-wrapping fix — `dd`
+  `overflowWrap` `anywhere → break-word` (whole-token wrapping), noting its dependency on the `index.css`
+  `word-break: normal` root override (RV-1). Verification pinned to the leaf base (`352d5cd`) until
+  closeout stamps the candidate commit.
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
   metadata remains pinned to the leaf base until closeout.

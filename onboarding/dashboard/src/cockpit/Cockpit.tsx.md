@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ optional fingerprint remains neutral rather than falsely stale.
 
 ### Logic
 
-Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from the store and renders nothing when `lastTickAt` is `null` (the supervisor has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"supervisor ok/stale <age>m"`, styled with the existing `caution({sev:"alarm"})` pulsing-red class past the staleness cutoff (`heartbeat.stale`) or the muted `dim` class otherwise, with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
+Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from the store and renders nothing when `lastTickAt` is `null` (the supervisor has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"supervisor ok/stale <age>"` with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260718-CHATS-L5P (R5/A4/B9):** the age is now HUMANIZED via `humanizeDuration(ageSeconds*1000)` (`6 d 2 h`, never the raw `9512.1m`), and a long-stale supervisor degrades to a QUIET-distinct amber `caution({sev:"warn"})` — NOT the pulsing cried-wolf red it used past the cutoff before (six-day staleness is expected for an idle workspace, not a fault to alarm on); a fresh heartbeat stays the muted `dim` class. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
 
 `Cockpit` wires the two SSE streams (`connectState`, `connectEvents`) then renders
 `CockpitShell` (split out so the dev gallery renders the same surface against fixtures).
@@ -80,8 +80,17 @@ the railed body is now kept mounted but `display:none`/`aria-hidden` while the t
 hidden-not-unmounted pattern as the File Viewer + Chats layers), so the `DetailPanel`'s drill state (which
 leaf you were reading) survives — the viewer's back link returns you to exactly where you opened it from
 (a drilled leaf), instead of `DetailPanel` remounting fresh at the master overview.
-`TopBar` shows the always-visible master-caution (`⚠ N waiting`, severity-keyed from `selectQueue`), so
-an alarm is never hidden even in a full-bleed view. **5g G6** adds an `EffectsToggle` to the `TopBar`
+`TopBar` shows the master-caution (`⚠ N waiting`, severity-keyed from `selectQueue`). **260718-CHATS-L5P
+(RV-4/R4):** the waiting chip renders ONLY when `queue.length > 0` — a reassurance zero wearing an alarm
+glyph is a lie, so an empty queue shows nothing (absence = clear); a real alarm is still never hidden in
+a full-bleed view. **Top-bar humanization + honesty (V15/V6/R7):** `ServingBuildStamp`'s `up` label is a
+HUMANIZED uptime (`humanizeDuration(Date.now() - bootedAt)`, one time format in the bar; the absolute
+start stamp stays in the tooltip — was a second 12h clock, V15); the brand `title` + each fact-chip
+(`dim`, `caution`, `connBadge`) are `whiteSpace:nowrap` and the `statusRow` is `flex-wrap:wrap` so the
+bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the lifecycle counts are
+explicitly scope-labeled `tasks N running · N blocked · N tok` with a tooltip naming them
+lifecycle/task-scoped (a different authority from the Chats rail's chat-seat states — R7, no backend
+change). **5g G6** adds an `EffectsToggle` to the `TopBar`
 (`effects-toggle`): a ✦ Effects / ❄ Calm button that flips `html[data-effects]` (which `useShouldAnimate`
 reads live, so the engine-room backdrop + all gated motion respond at once) and persists the choice to the
 `calm-cockpit` localStorage flag `main.tsx` reads on the next load. **Slice 6f** mounts the
@@ -207,6 +216,13 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the top-bar polish — `SupervisorHeartbeatBadge`
+  age humanized (`humanizeDuration`) and stale degraded to quiet `caution({sev:"warn"})` amber (no longer
+  pulsing red, R5/A4/B9); the `⚠ N waiting` chip renders only when `> 0` (RV-4/R4); `ServingBuildStamp`
+  `up` is a humanized uptime with the absolute stamp in the tooltip (V15); brand/fact-chips `nowrap` +
+  `statusRow` `flex-wrap:wrap` (V6); lifecycle counts scope-labeled `tasks …` with an authority tooltip
+  (R7, no backend change). Shell layout/keep-alive/selection unchanged. Verification pinned to the leaf
+  base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: made FEUI-L1's separate Sessions route explicitly
   historical, named the landed single `SessionsView` mount behind Chats, and assigned full-page
   launch/attach ownership to `ChatContextBar`; the shell alone owns catalog polling and

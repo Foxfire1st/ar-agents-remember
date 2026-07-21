@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,12 @@ real disclosure button, and routes diff content to `DiffBlock`.
 - `phaseClass` (L45) is a STATIC per-phase accent map (pending/streaming/waiting/completed/failed/
   interrupted/unknown). Color is never the only carrier — the phase word itself is always rendered
   (`data-testid="tool-phase"`, §14.2).
+- **FB7.4 gutter grammar (260718-CHATS-L5P):** the head is now Claude Code / Toad tool grammar — a
+  `●` `gutterDot` (phase-colored, `aria-hidden`) + the verb (`ink`, no longer cyan) + a dim lowercase
+  `phaseWord` — NOT a bordered uppercase `phaseTag` chip. The output region adopts Toad's ShellResult
+  idiom: `borderRadius:0` + a `borderLeft` 2px wash (the `└` relationship) + `marginInlineStart:2ch`,
+  not a four-sided web box. Color still never carries alone — the phase word stays. (Declared FB7.4
+  deviation: the left rule is a `grid`-mix, not phase-color at 45% — RV-5, a token-pass polish note.)
 - `OutputBlock` (L61) clamps a `tool-output` block at `OUTPUT_THRESHOLD_LINES` (12, L17): it slices to
   the threshold and reports the exact `hiddenLines` on the `ClampButton`; empty output renders
   nothing (reads do not auto-expand). The output sits in a labeled `role="group"` / `aria-label="tool
@@ -76,6 +82,11 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7.4 gutter-grammar restyle — the
+  `●` phase-colored gutter dot + dim lowercase phase word (was a bordered uppercase `phaseTag`), and the
+  Toad ShellResult left-rule output wash (was a four-sided box). Behavior (in-place recompose, honest
+  clamp, diff routing, labeled overflow group) unchanged. Verification pinned to the leaf base
+  (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the tool item —
   stable-ID in-place recompose, verb-phrase head with a text-plus-color phase accent, output clamp in
   a labeled `role="group"` scroll region, and diff routing to DiffBlock. Verification is pinned to the

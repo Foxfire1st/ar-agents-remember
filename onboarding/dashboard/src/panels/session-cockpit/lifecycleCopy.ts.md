@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/lifecycleCopy.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -27,9 +27,12 @@ the InteractionBar's copy states the real answer channel and the real PTY truth.
 
 ### Logic
 
-- **`terminateConfirmCopy`** (L13-L18): `end <label> · leaf <id> · state <word> — kills the tmux
+- **`terminateConfirmCopy`** (L13-L21): `end <label> · leaf <id> · state <word> — kills the tmux
   session; transcripts are kept` — the grammar's state word via `seatVisualState`, the leaf via
-  `leafIdFromKey`.
+  `leafIdFromKey`. **R1 dash-collision fix (260718-CHATS-L5P):** an UNCLASSIFIED seat's state word is
+  itself an em-dash (`—`), which placed next to the copy's `— kills` consequence dash printed a bare
+  `state — —`. The `· state <word>` clause is now DROPPED entirely when the state is `—`, so the two
+  dashes never collide (`end <label> · leaf <id> — kills …`).
 - **Residual copy** (L20-L32): `terminateResidualCopy` / `retireResidualCopy` — both
   `<label> terminated|retired · control-stop note (informational): <detail>`; the detail is the
   server's verbatim words.
@@ -97,6 +100,10 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the R1 dash-collision fix in
+  `terminateConfirmCopy` — the `· state <word>` clause is dropped when the state word is the em-dash
+  sentinel, so an unclassified seat no longer renders `state — —`. All other copy/predicates unchanged.
+  Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

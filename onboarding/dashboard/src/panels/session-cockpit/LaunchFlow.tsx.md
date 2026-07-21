@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -85,8 +85,19 @@ harness plus a complete selection; pre-session buttons no longer claim adapter p
   While an unknown is pending, the cancel button reads "dismiss (resolves via the catalog)"
   (L517).
 - **Optional inputs** (L475-L493): label + leaf key — the leaf-key input makes the 409 leaf-taken
-  path genuinely reachable from this surface; the placeholder says the server arbitrates
-  ownership.
+  path genuinely reachable from this surface. **V7 (260718-CHATS-L5P):** the placeholder is now the
+  short `leaf key (optional)` (was a self-truncating sentence `leaf key (optional — the server
+  arbitra…`); the arbitration note moved to the field `title` (progressive disclosure) so the input
+  reads at any width.
+- **Visual honesty pass (V7 + RV-3, 260718-CHATS-L5P)**: (a) the disabled `launchButton` primary is
+  DEMOTED — `_disabled` drops the amber prominence to `opacity:0.4` + muted color + grid border, so the
+  most emphatic control looks armed ONLY when the pair is complete and the harness detected (was styled
+  amber-ready while disabled). (b) The launch summary (`noteLine`, `data-testid="launch-summary"`) always
+  states WHY it is blocked via `launchBlockReason` (`pick a harness` → `pick a model and effort` → `<name>
+  is not installed …`), never a bare `codex · — · —` em-dash chain; it shows `harness · model · effort`
+  only when `readyToLaunch`. (c) `launchButton` + `quietButton` gain `flexShrink:0` + `whiteSpace:nowrap`
+  so an action never wraps its own label (`launc/h`, `dismiss (resolves via the catal/og)`) — the summary
+  span is the only segment that yields.
 
 ### Conventions
 
@@ -152,6 +163,13 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V7 + RV-3 visual-honesty pass — the
+  disabled primary is demoted to a muted/inert chip (no longer amber-ready), the summary always names the
+  blocking next step (no `codex · — · —` chain), the leaf-key placeholder is shortened (`leaf key
+  (optional)`) with the arbitration note moved to `title`, and `launchButton`/`quietButton` gained
+  `flexShrink:0` + `nowrap` (no self-wrapping labels). Daemon-only pickers, pair gating, and outcome
+  paths unchanged. Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate
+  commit.
 - 2026-07-18T12:43+02:00 — FEUI-L9R: corrected overlay geometry and catalog authority: fixed
   bounded viewport, typed read states, abortable timeout/operator retry, one reread per serving
   boot, detected-row submit gate, and no pre-session adapter projection. Verification metadata

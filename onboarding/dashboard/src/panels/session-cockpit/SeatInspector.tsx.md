@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/SeatInspector.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,10 @@ rather than absorbing inspector logic.
   Bus component instance, drafts, virtual-row state, and in-flight reply settlements.
 - Evidence accepts no focus and still exposes lifecycle residuals; Capabilities states the exact-
   session limitation; Bus remains fleet-global and reachable without a focused seat.
+- **V2 tab label (260718-CHATS-L5P)** (L47-L53, L102-L106): each `tab` is `whiteSpace:nowrap` +
+  `overflow:hidden` + `textOverflow:ellipsis` and carries `title={item.label}`, so a long tab label
+  truncates to `Capabili…` on one line (h=22) instead of wrapping mid-word to `Capabil/ities`; the full
+  label stays reachable via the tooltip.
 
 ### Conventions
 
@@ -76,6 +80,10 @@ No meaningful cross-repo boundary is owned here.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V2 tab-label fix — `nowrap` +
+  ellipsis + full-label `title` on each tab so `Capabilities` truncates on one line rather than wrapping
+  mid-word. Tablist keyboard behavior + mounted-hidden panels unchanged. Verification pinned to the leaf
+  base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 replaced the interim provenance/ledger card with the
   accessible three-pane inspector host. Round 3 fixed the final integration gap by keeping every
   panel mounted and using native `hidden`, preserving Bus state and async settlement off-tab.

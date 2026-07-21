@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/index.css`                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -48,15 +48,38 @@ always wins) freezes every animation + transition; the two companion display-fre
 their targets have no settled end-state — `[data-testid="conduit-packet"]` (the travelling packet) and
 `[data-testid="warp-surge"]` (the warp-core bands) are hidden under the freeze.
 
+**RV-1 — the `@webtui/css` `word-break: break-all` cascade trap (260718-CHATS-L5P, LOAD-BEARING).**
+`@webtui/css`'s base layer sets `body, html { word-break: break-all }` (it lands in the `webtui` layer,
+and postcss-prefix-selector ALSO rewrites that `body,html` rule onto the `[data-view="sessions"]` cockpit
+scope root at build time). `word-break: break-all` permits a break between ANY two characters regardless
+of `overflow-wrap` — so **every component-level `overflow-wrap` patch was INERT in render** (the Inspector
+headers/values, the rail footer, the keyboard-overlay footer, and prose all still broke mid-word:
+`CAPABILI/TIES`, `thi/s`, `termi/nal`, `Be bri/ef`). The remedy is ONE unlayered root override in
+`index.css` — `html, body, [data-view="sessions"] { word-break: normal; overflow-wrap: break-word }` —
+which wins over webtui's LAYERED rule (unlayered beats layered for non-`!important` declarations) and
+whose `normal` descendants inherit. `[data-view="sessions"]` MUST be in the selector because the sessions
+scope carries its OWN postcss-rewritten `break-all` that an `html/body` override alone does not reach.
+Raw-id / hash spans that WANT character breaking keep their own explicit `word-break: break-all` (a direct
+rule on the span overrides this inherited default — e.g. `engine-room/DiagnosticsPanel.tsx`,
+`engineRoomStyles.ts nodeBranch`). **The durable lesson: a third-party scoped reset in a lower layer can
+silently defeat local overflow-wrap patches app-wide; the test is COMPUTED-VALUE verification (assert
+`word-break: normal` on the scope root + descendants, and `break-all` on the retained raw-id span), not
+inference from the source rule.** The reviewer's final closure DOM-measured zero `break-all` elements in
+the whole rendered document with the retained raw-id spans still computing `break-all`.
+
 ### Conventions
 
 Cascade layers, not specificity, order the cascade; effect/determinism rules sit unlayered + `!important` so
 they win regardless. Token values are read as `var(--…)` from `styles/tokens.css` during the migration.
+The RV-1 `word-break` override is deliberately UNLAYERED (like the effects freeze) so it beats webtui's
+layered base without needing `!important`.
 
 ### Invariants And Boundaries
 
 Effects stay global + isolated (note 09), never per-component. The body/utility rules reference the
-`:root` vars from `styles/tokens.css`. Component styling is Panda, not here.
+`:root` vars from `styles/tokens.css`. Component styling is Panda, not here — the RV-1 `word-break`
+override is the deliberate exception (an app-wide reset that MUST live above the webtui layer at the root;
+a component-level fix cannot neutralize an inherited `break-all`).
 The `webtui` slot must stay in the FIRST `@layer` statement, between `effects` and `tokens`, and
 the `data-effects=off` freeze must stay UNLAYERED and top-level — both are asserted by
 `test/webtuiSpike.test.ts` (for `!important` declarations, layered beats unlayered, so the freeze
@@ -77,9 +100,18 @@ reindex pulse from GSAP `data-fx='reindex'`.)*
 | The Panda PostCSS plugin that fills the layers. | — | [postcss.config.cjs](agents-remember/dashboard/postcss.config.cjs) |
 | The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. | L12-L15 | [styles/webtui.css](styles/webtui.css) |
 | Asserts the exact layer-order statement and the unlayered freeze. | L131-L172 | [test/webtuiSpike.test.ts](test/webtuiSpike.test.ts) |
+| The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. | — | [styles/webtui.css](styles/webtui.css) |
+| Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | — | [panels/session-cockpit/InspectorPrimitives.tsx](panels/session-cockpit/InspectorPrimitives.tsx.md) · [panels/session-cockpit/conversation/MarkdownBlock.tsx](panels/session-cockpit/conversation/MarkdownBlock.tsx.md) · [panels/session-cockpit/SessionRail.tsx](panels/session-cockpit/SessionRail.tsx.md) |
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the RV-1 root override (LOAD-BEARING) —
+  an unlayered `html, body, [data-view="sessions"] { word-break: normal; overflow-wrap: break-word }`
+  that neutralizes `@webtui/css`'s inherited `word-break: break-all` app-wide. Captured the durable
+  lesson: a third-party scoped reset in a lower layer silently defeats local overflow-wrap patches; the
+  test is computed-value verification (the `[data-view="sessions"]` inclusion is required because postcss
+  rewrites webtui's `body,html` rule onto the scope root; raw-id spans keep explicit `break-all`).
+  Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R14): added the `pulseSlow` keyframe — the cockpit
   seat-state pulse (2.4 s ease-in-out opacity, ruled 2026-07-16, never steps()) consumed by the
   grammar's single renderer `StateDot`; the header comment names the ruling and the

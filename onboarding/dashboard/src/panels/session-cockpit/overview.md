@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`       |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated            | 2026-07-21T05:30+02:00                           |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -166,6 +166,39 @@ until a control-capabilities GET or an L1-view refresh lands (a clean proactive 
 measured virtualization/scale baseline plus the E1/E2 environmental faults are L5 hardening
 (see the L5-Facing Register in the `conversation/` overviews).
 
+## 260718-CHATS-L5P Cockpit chrome conventions (visual polish, PASS-WITH-NOTES)
+
+A dashboard-only polish pass (zero backend edits) closing the developer's visual-findings file + the FB7
+terminal-identity directive against the COMPOSED app. Durable cross-file conventions the next
+session-cockpit leaf MUST carry (spec home for the TUI grammar: the leaf visual-audit `## FB7`, derived
+from Toad `main.tcss` + the Claude Code / Codex TUIs — a reference derivation, not first principles):
+
+- **Terminal well + gutter grammar (FB7).** The structured stage is a TUI, not a web panel: the
+  `ConversationTimeline` viewport + `SessionComposer` editor frame use the `well` token (`#070b0f`, the
+  xterm pty inset — `styles/tokens.css`/`panda.config.ts`; pty-pane parity is the acceptance test), the
+  item chrome is `●`/`✻`/`·` gutter glyphs + lowercase phase words + left-rule washes (NOT boxed
+  uppercase chips), and item rhythm is line-grid blank lines (no per-article hairline). See the
+  `conversation/` overview + item cards.
+- **Responsive rail-row grammar (RV-2).** `SessionRail` rows are a `flex-wrap:wrap` LABEL-group +
+  ACTION-group layout: the action group (End / armed confirm·cancel) wraps WHOLE to a second line and
+  stays single-line + reachable at every rail width (1440/1100/900/min-rail, e2e-pinned); the title
+  absorbs (`min-width:0` end-to-end) and elides first, the chip elides next and is DROPPED while armed.
+  Destructive End carries demoted (muted) weight until hover/focus/selection.
+- **Collapse-or-explain chrome (R3/R4/A1/A2).** StatusLine/HeaderStrip/top-bar: an absent value
+  disappears with its label (never an em-dash chain), the healthy steady state collapses to one calm
+  token (`poll ✓`, `inbox clear`), a reassurance zero never wears an alarm glyph. The StatusLine UA-5
+  `ctx —/cost —` slot was REMOVED.
+- **Humanized durations + short ids.** `data/conversation/format.humanizeDuration` is the SINGLE duration
+  authority (supervisor age, rail-footer heartbeat/cutoff, uptime — no raw `9512.1m`/`570724.69163s`);
+  the new `format.shortId` renders long ULIDs/UUIDs as `…SUFFIX` with the full value in a tooltip (rail
+  task badges, focus-handoff banner).
+- **The @webtui/css `word-break: break-all` cascade trap (RV-1, LOAD-BEARING).** `@webtui/css`'s base
+  (postcss-rewritten onto `[data-view="sessions"]`) sets `word-break: break-all`, which defeats EVERY
+  component-level `overflow-wrap` patch in render. The remedy is one unlayered `word-break: normal` root
+  override in `index.css`; raw-id spans keep explicit `break-all`. The test is computed-value
+  verification, not source inference. Any future mid-word-break fix in this route depends on that
+  override — see `index.css` card.
+
 ## Invariants And Boundaries
 
 - Exactly one full-page Chats destination; no second Sessions tab or legacy Chats layer.
@@ -260,6 +293,15 @@ references, not imported governing implementations, so no cross-repository sourc
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator (cockpit chrome visual polish, PASS-WITH-NOTES):
+  added the "Cockpit chrome conventions" section recording the durable cross-file design truths this
+  dashboard-only leaf established — the FB7 terminal well + gutter grammar, the RV-2 responsive rail-row
+  grammar, collapse-or-explain chrome (StatusLine/HeaderStrip/top-bar, UA-5 slot removed), the
+  humanize-duration single authority + `shortId`, and the load-bearing `@webtui/css` `word-break:
+  break-all` cascade trap + unlayered root-override remedy (RV-1). No route composition, authority, or
+  invariant changed; zero backend edits. Spec home for the TUI grammar is the leaf visual-audit `## FB7`.
+  Verification stays pinned to the leaf base (`352d5cd`) because the polish candidate is uncommitted;
+  closeout owns candidate stamping.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator (structured Chats renderer, reviewer FINAL PASS,
   26/26 findings closed): recorded the composition change from the unconditional controlled-session
   PtySurface body to `ChatsStageBody` (structured `ConversationSurface` is the controlled-session

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4` |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -964,6 +964,12 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
 
+- 2026-07-21T12:00+02:00 — No route impact: 260718-CHATS-L5P (dashboard-only cockpit chrome visual
+  polish, PASS-WITH-NOTES) regenerated the shipped `src/agents_remember/package_data/dashboard/` bundle
+  (rebuilt `assets/*.js`/`*.css`, `index.html`, `dashboard.fingerprint`) via the established
+  `sync-dashboard.py` mechanism; `--check` confirmed the bundle matches `dashboard/dist`. This is shipped
+  build output, not an `mcp/` source contract — zero backend `.py` edits (`ruff check mcp/src` clean).
+  No package structure, route, wire contract, or capability changed. Verification metadata unchanged.
 - 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E hardening
   (three source edits — the `terminal_liveness.py` per-entry hosted-interaction-synchronizer
   quarantine, the active projection-store input-authority pin, and the active projector's

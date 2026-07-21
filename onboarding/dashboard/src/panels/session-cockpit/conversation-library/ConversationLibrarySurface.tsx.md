@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,10 +47,13 @@ discipline that the review's F8/F16/F22/F23 findings and register entry L4.R5 ma
   `overflow:hidden` clip and the interior `overflow-y:auto` scrollers would never engage, pushing
   `Open as new chat`/`Load more` past the fold and out of pointer reach. `nowrap` keeps one flex line
   whose cross-size is the definite container height, so each column (`minHeight:0`) hands its own
-  overflow to its interior scroller. Stacking at the ~80-col floor is owned entirely by the
-  `@container (max-width: 640px)` query, which only matches because this surface sets
-  `containerType: "inline-size"` (L30-L32, F22). This is the reliable in-stage-overlay idiom the
-  register records; do not reintroduce `flexWrap`.
+  overflow to its interior scroller. Stacking is owned entirely by the `@container` query, which only
+  matches because this surface sets `containerType: "inline-size"` (L30-L32, F22). This is the reliable
+  in-stage-overlay idiom the register records; do not reintroduce `flexWrap`. **V10 threshold raise
+  (260718-CHATS-L5P):** the stack breakpoint moved `640px → 56rem` — the two columns (16rem list + 20rem
+  preview + gaps) crush below ~56rem of surface (the list falls to a ~180px sliver and preview prose
+  splits mid-word), so the surface now stacks to one column BEFORE that (the 900px window with the rail
+  collapsed, and the ~1000px sweep, both read as a single flow).
 - The live conversation surface stays mounted (its store keeps updating) but is rendered inert behind
   the library by `ChatsStageBody`; the diagnostics drawer is not rendered while the library is up, so
   the two surfaces can never overlay (F8 — enforced in `ChatsStageBody`, relied on here).
@@ -89,6 +92,10 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V10 stack-threshold raise (`@container`
+  breakpoint `640px → 56rem`) so the two columns stack to one flow before they crush; the `nowrap` +
+  `min-height:0` + interior-scroll containment idiom is unchanged (the reason the `@container` matches).
+  Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the in-stage
   prior-conversation browser surface — heading-focus-on-open, the three §4.4 return paths on one
   focus-return token, and the F23/L4.R5 `nowrap` + `min-height:0` + interior-scroll + `@container`

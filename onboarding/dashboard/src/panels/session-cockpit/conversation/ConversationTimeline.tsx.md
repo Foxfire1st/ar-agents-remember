@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-21T05:30+02:00 |
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,7 +47,33 @@ navigation, and unknown-vendor run collapse — and no data/cursor logic.
   regions (`[role="group"], pre`) and to selections instead of hijacking them.
 - **Unknown-vendor run collapse** (L112-L148, L177): `groupUnknownVendorRuns` folds a run of ≥3
   identical-summary unknown-vendor items into one de-emphasized expandable `unknown-run` row; members
-  stay addressable (`#ordinal · evidenceRef`), identity is never mutated.
+  stay addressable (`#ordinal · evidenceRef`), identity is never mutated. **L5P (R12):** the collapsed
+  run is now a dim mono GUTTER line (`runRow`/`runSummary`, `whiteSpace:nowrap` + ellipsis, full text in
+  `title`), and the copy is honest — `N unknown vendor events (same summary)` (was `N identical …
+  events`): the members share a summary but each carries its OWN distinct evidence id, so "identical" was
+  a copy lie against the visibly-skipping ids. The `show each` toggle (`runButton`) is a de-boxed
+  underline text affordance (`flex:none` + `whiteSpace:nowrap`, V12) and expanded members indent under
+  the summary (`runMember`, `paddingInlineStart:2ch`).
+
+### FB7 terminal-surface identity (260718-CHATS-L5P — the developer directive)
+
+The conversation stage was the one surface that replaced an xterm viewport yet did NOT inherit the
+xterm "well" — it read as a generic web panel sharing the page background. This leaf gives it the
+terminal grammar (spec home: the leaf's visual-audit `## FB7`, derived from Toad `main.tcss` + the
+Claude Code / Codex TUIs, NOT first principles):
+
+- **FB7.1 the well** — `viewport` gains `background: well` (the `#070b0f` token, see `styles/tokens.css`
+  / `panda.config.ts`) + 1px `grid` border + radius + horizontal inset, EXACTLY matching the pty pane
+  (`panels/Terminal.tsx`); the page `bg` shows through as the gutter. `feedInner` centers a `maxWidth:
+  100ch` content column (Toad `max-width: 100`). Horizontal inset only — the vertical scroll math stays
+  clean for the virtualizer. The pty-pane parity is the acceptance test (composer bg === `--well`,
+  proven numerically).
+- **FB7.3 rhythm** — `rowShell` DROPS the per-article `borderBottom` hairline (a web-list idiom neither
+  reference uses) for line-grid blank-line spacing (`paddingBlockEnd: 0.9rem`); turn boundaries are
+  marked by the turn-result flow line, not by rules.
+- **FB7.4 gutter grammar** — sibling items (`ToolItem`, `TurnResultItem`, `ThinkingItem`, the run rows
+  above, `primitives` ClampButton) replace boxed uppercase web chips with a `●`/`✻`/`·` gutter glyph +
+  lowercase phase word + left-rule washes; documented in each item's card.
 
 ### Invariants And Boundaries
 
@@ -91,6 +117,12 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7 terminal-surface identity pass —
+  the `viewport` well (`background: well` + grid border + `100ch` centered `feedInner` column, FB7.1),
+  the FB7.3 line-grid rhythm (per-article hairline removed), and the R12 collapsed-run gutter line with
+  the honest `same summary` copy + de-boxed nowrap toggle. Spec home is the leaf visual-audit `## FB7`.
+  No feed/ARIA/virtualization behavior changed. Verification pinned to the leaf base (`352d5cd`) until
+  closeout stamps the candidate commit.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the one `role="feed"`
   timeline — item-virtualized with server-ordinal `aria-posinset`, honest `aria-setsize`/`total
   unknown`, focus pinning of both the focused and default-last rows (F18), non-animated bottom-follow,

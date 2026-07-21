@@ -25,14 +25,15 @@
     "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx",
     "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts",
     "dashboard/src/panels/session-cockpit/conversation/collapse.ts",
+    "dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/primitives.tsx",
     "dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 19,
-    "fileSidecars": 19,
+    "sourceFilesInScope": 20,
+    "fileSidecars": 20,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -81,6 +82,7 @@
       "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx",
       "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts",
       "dashboard/src/panels/session-cockpit/conversation/collapse.ts",
+      "dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/primitives.tsx",
       "dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx",
@@ -117,6 +119,8 @@
       "collapse.test",
       "collapse.ts",
       "collapse",
+      "primitives.test.tsx",
+      "primitives.test",
       "primitives.tsx",
       "primitives",
       "renderer.test.tsx",
@@ -132,9 +136,7 @@
       "ARIA",
       "dashboard/src/panels/session-cockpit/conversation/",
       "route-local-overview",
-      "68b3205526dae210cd902eef39d93c4f4352c2d4",
-      "/overview.md",
-      "session-cockpit/conversation/"
+      "1119b64ff1564c5fc76fd518f88e529535c04b34"
     ]
   },
   "fallback": {

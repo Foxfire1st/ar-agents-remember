@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`       |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
+| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -135,6 +135,15 @@ inside agents-remember.
 | Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
 ## Update History
 
+- 2026-07-21T05:30+02:00 — No route impact: the `dashboard/src/panels` route model is unchanged by
+  260718-CHATS-L5P (cockpit chrome visual polish, PASS-WITH-NOTES; dashboard-only, zero backend edits).
+  Two DIRECT `panels/` children got styling polish captured in their own sidecars, not this route body:
+  `SessionComposer.tsx` — the editor frame joins the terminal `well` (FB7.1) + gains a `:focus-within`
+  amber ring (V4), the footer hint is capability-derived on legacy-raw terminal seats (V9), `draft saved`
+  is exception-only (V14), and the send button holds width/single-line under the inspector (V3);
+  `Terminal.tsx` — the host `background` `#070b0f` literal migrated to the `well` token (V31). The bulk of
+  the leaf's chrome polish lives under [session-cockpit/](session-cockpit/overview.md) (its "Cockpit chrome
+  conventions" section). Verification metadata unchanged.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer, reviewer FINAL
   PASS): corrected the stale shared-panel claims — the controlled-session runner line-log is now the
   read-only terminal-diagnostics drawer + legacy-raw body (the structured `ConversationSurface` is the
