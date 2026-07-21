@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/native_helpers/conversation_library/src/claude.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastUpdated | 2026-07-21T11:30+02:00 |
 | lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
 | lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
 | governingOverview | `../overview.md` |
@@ -65,14 +65,16 @@ are the direct contract evidence.
 ## Repo-Internal References
 
 The protocol module owns the serve loop, handshake, paging, and error vocabulary this entry
-consumes; the Python port and host drive it on the production seam; the installed suite proves
-the version-mismatch fail-closed posture.
+consumes; the Python port and host drive it on the production seam; the installed suite proves the
+library gates on the live CONTRACT probe, not a version comparison (260718-CHATS-L5F R4 made
+`buildHandshake` ready-by-contract, so this entry's handshake no longer fails closed on a version
+drift — the observed versions are informational and the `list`/`read` operation is the gate).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | L102-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
 | The Python Claude port calls list/read/resolve-resume-target through the locked helper host. | L87-L182 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py) |
-| Installed Claude 2.1.214 vs locked 2.1.211 fails closed and visible through this helper's handshake. | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed suite gates Claude on the live helper contract probe, not a version comparison (L5F R4); the observed runtime/helper version rides evidence informationally. | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 
 ## Cross-Repo References
 
@@ -85,5 +87,10 @@ only from this repository's package/lock; no neighboring workspace repository pa
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: reference-health correction only (claude.ts
+  source unchanged this leaf). The R4 change to `protocol.ts::buildHandshake` (ready-by-contract, no
+  version comparison — developer ruling 2026-07-21) made this entry's cited "installed 2.1.214 vs
+  locked 2.1.211 fails closed through the handshake" claim FALSE; corrected the Repo-Internal summary
+  and row to the contract-only gate. Verification stamp unchanged (source not modified).
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the locked Claude helper entry
   sidecar. Verification is blank until closeout commits and stamps the new source.

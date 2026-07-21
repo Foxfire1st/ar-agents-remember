@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_contracts.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,7 +29,11 @@ provenance, status, capability, identity, rollback, recovery, attachment, or met
   conflicts, stable item identity/revision/global ordinals, and exact input provenance products.
 - Tests image accessibility, canonical status evidence, waiting/terminal sibling matrices, and the
   rule that unknown evidence cannot establish ready.
-- Tests capability evidence-tier/state matrices, runtime/helper demotion, and attachment limits.
+- Tests capability evidence-tier/state matrices and attachment limits. (260718-CHATS-L5F R4)
+  `test_capability_has_no_version_demotion_predicate` now asserts the model carries NO version-gate:
+  `FeatureCapability` has no `for_observed_runtime` attribute — the contract probe is the only gate,
+  and version strings survive as informational metadata only. The former runtime/helper version
+  demotion is removed, not asserted.
 - Tests canonical operation fingerprints and the full open identity/catalog/rollback grammar.
 - Tests interrupt, queue privacy, authoritative withdrawal/pop-back recovery, attachment state,
   gap/repage, metric evidence, and fixture non-promotion products.
@@ -46,6 +50,8 @@ sibling state. Pydantic `ValidationError` is part of the expected fail-closed bo
 - Raw recovery text may appear only in a successful withdrawn response; pending/failure projections
   must stay raw-free.
 - Fixtures remain evidence with `enablesCapabilities=false`.
+- No version-string comparison gates a capability: the capability model exposes no
+  `for_observed_runtime` demotion predicate (260718-CHATS-L5F R4), and the suite asserts its absence.
 - This suite verifies contracts, not projector/native-helper/control implementation behavior.
 
 ### Todos
@@ -79,6 +85,12 @@ No neighboring repository participates in these contract tests.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the capability-demotion coverage for
+  the R4 version-gate removal — `test_capability_has_no_version_demotion_predicate` now pins that
+  `FeatureCapability` has no `for_observed_runtime` predicate (the contract probe is the only gate;
+  version strings are informational metadata). Reworded the former "runtime/helper demotion" Logic
+  bullet and added the no-version-gate invariant. Verification metadata stays pinned (uncommitted);
+  closeout re-stamps the candidate commit.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the hostile semantic-product test
   sidecar after same-reviewer PASS closed status, capability, open identity, and rollback gaps.
   Verification is blank until closeout commits and stamps the new source.

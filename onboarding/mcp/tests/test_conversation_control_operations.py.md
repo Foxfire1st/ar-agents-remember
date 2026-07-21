@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_control_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,9 @@ regressions over the closed L3E envelope preservation (an oversized `x*40_000` c
 settles not-`pending`; a small `toolUse` then an oversized final `aborted` settles `interrupted`,
 never `already-settled`) — both proven non-vacuous by neutralizing the L3E preservation.
 `ClaudeInterruptGateTests` (L370): the capability gate refuses claude/unsupported before any native
-call (zero adapter calls).
+call (zero adapter calls). Since 260718-CHATS-L5F (R4) the refusal reason is contract-driven —
+`unverified` until the control seam is probed — asserted to contain `"contract"`, never a
+version-string comparison against a locked runtime.
 
 ### Conventions
 
@@ -85,6 +87,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R4 contract-reason refinement in
+  `ClaudeInterruptGateTests` — the pre-native capability refusal now asserts a contract-driven reason
+  (`"contract"` in the message), not a version-string comparison, matching the version-gate removal.
+  Verification metadata stays pinned (uncommitted); closeout re-stamps the candidate commit.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the interrupt ledger
   suite — codex/pi/claude coverage over the real seam, idempotence write-counting, lost-response
   reconcile, and the Finding 1 content-ful + Finding 2 oversized/clipped settlement regressions

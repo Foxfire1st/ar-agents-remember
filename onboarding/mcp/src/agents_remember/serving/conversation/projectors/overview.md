@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 
 ## What This Area Is
 
@@ -94,10 +94,20 @@ notices/outcomes anchored on native entry identity).
 
 ### Live frame mapping
 
-1. Codex notifications discriminate by (event kind, schema-disjoint params keys); bare deltas
-   resolve their target block through the item kind at the engine.
+1. Codex notifications discriminate on the CARRIED native method first (260718-CHATS-L5F R1: the
+   adapter now carries `EvidenceFrame.native_method`), then params-key shape. `_SILENT_NOTIFICATION_METHODS`
+   drops the known codex 0.144.5 startup/lifecycle/status/telemetry burst BY METHOD
+   (`mcpServer/startupStatus/updated`, `thread/started`, `remoteControl/status/changed`, `warning`,
+   `configWarning`) → zero unknown-vendor rows on a stock open; a truly-unknown method still becomes
+   unknown-vendor WITH the method NAMED. Bare deltas resolve their target block through the item kind
+   at the engine.
 2. Claude assistant frames split text/thinking and mint stable-ID tool items; `tool_result`
-   carriers upsert the same item; result frames classify terminal outcomes.
+   carriers upsert the same item; result frames classify terminal outcomes. 260718-CHATS-L5F R3 learns
+   the two installed-2.1.216 frame contracts first-class: `command_lifecycle` is strictly validated
+   against the captured 3-state contract (`command_uuid` + `state ∈ {queued,started,completed}`) and
+   mints NO timeline item (native history renders the command; the 3-state specimen is preserved as
+   L7/L8 slash-command prior art), a drifted state raising `UnmappableShape` → a VISIBLE malformed
+   row; `rate_limit_event` is shape-validated then dropped as telemetry (like codex rateLimits).
 3. Pi `tool_execution_*` events upsert live tool items by `toolCallId`; `message_end`/
    `message_update` mint nothing — completed messages mint from durable entries.
 
@@ -130,6 +140,15 @@ notices/outcomes anchored on native entry identity).
   `message_end` frame.
 - Turn-result items mint only where a native settlement exists (codex/claude always; pi only
   for failed/aborted turns).
+- Codex notification identity (L5F R1): the native notification METHOD is preserved end-to-end as
+  typed `EvidenceFrame.native_method` and is the primary discriminator — the known lifecycle/status/
+  telemetry burst is classified/dropped by method (never shape-guessed), and a truly-unknown method
+  is NAMED in the unknown-vendor summary rather than one anonymous "unrecognized params" box. The
+  drop-set is method-specific and item-less, so an item-bearing frame still reaches the shape branches.
+- Claude frame contracts (L5F R3): `command_lifecycle` and `rate_limit_event` are recognized-first-
+  class against their captured contracts (not tolerated strangers); `command_lifecycle` mints no
+  timeline row and a drifted state surfaces VISIBLY as a malformed row, never a silent tolerance and
+  never a stream kill.
 - Codex's live notification channel and its `thread/read` native pages emit DISJOINT id namespaces
   for the SAME settled turn (live UUID/`msg_*` item ids vs positional `item-N`). The mapper faithfully
   emits both and correlates NO channels (purity), so the native-history twin can only arise on this
@@ -194,12 +213,26 @@ they map correctly.
 
 ## Needs Verification
 
-- Codex reasoning/diffs/MCP shapes, claude's whole surface (installed 2.1.214 ≠ locked
-  2.1.211), and pi thinking/tool-execution shapes stay capability-`unverified` until
-  installed-runtime fixtures observe them through the production seam.
+- Codex reasoning/diffs/MCP shapes and pi thinking/tool-execution shapes stay capability-`unverified`
+  until installed-runtime fixtures observe them through the production seam. Claude's surface is now
+  `unverified` for a NEVER-PROBED contract reason (L5F R4 removed the installed-vs-locked version
+  gate), not a version reason — the R1/R3 frame contracts map cleanly on installed 2.1.216; promoting
+  claude to `supported` needs a captured 2.1.216 runtime fixture (worker H3).
+- Reviewer F3 (recorded follow-on, outside this leaf's letters): a stock pi 0.80.7 ordinary flow mints
+  `pi:turn_start`/`pi:turn_end` unknown-vendor rows the pi mapper has never learned — the same
+  fixture-drift class as R1/R3, on pi, to be taught in a follow-on leaf.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time frame-contract truths.
+  R1 (codex notification identity) — the native method is preserved as `EvidenceFrame.native_method`
+  and is the primary discriminator; `_SILENT_NOTIFICATION_METHODS` drops the known 0.144.5 startup/
+  status/telemetry burst by method (zero unknown-vendor rows on a stock open) and truly-unknown
+  methods are NAMED. R3 (claude 2.1.216) — `command_lifecycle` (strict 3-state, mints no row, drift →
+  visible malformed) and `rate_limit_event` (dropped telemetry) are learned first-class. Corrected the
+  Needs-Verification claude line to the never-probed contract reason (L5F R4 removed the version gate)
+  and recorded reviewer F3 (pi `turn_start`/`turn_end` unlearned rows) as a follow-on. Mappers stay
+  pure. Verification stays pinned until L5F closeout stamps the candidate commit.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: added the durable disjoint-id-namespace invariant
   (no mapper source changed) — codex's live notification channel emits UUID/`msg_*` ids while
   `thread/read` returns positional `item-N` for the same settled turn, so the native-history twin the

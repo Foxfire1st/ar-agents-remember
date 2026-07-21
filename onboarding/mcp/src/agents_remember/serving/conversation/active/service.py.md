@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,13 +35,18 @@ window, fresh page cursor, event cursor, hydration id, canonical status, capabil
 same-generation and the retention floor (`cursor-reset-required` with `generation-changed` /
 `retention-overflow` reasons), then attaches the subscriber queue and snapshots the replay
 window with no await between them — the poll task cannot interleave, so replay and live delivery
-neither gap nor duplicate an envelope (L126-L135). `_projector_for` (L143-L182) resolves the
+neither gap nor duplicate an envelope (L126-L135). `release_session` (L143-L156) de-registers and closes one
+session's projector when the session ends: it pops the projector from `_projectors`, drops it from
+the LRU order, and awaits `projector.close()`, releasing the whole per-session projection
+(ProjectionStore items, the L5 live-turn/request id-sets, retained SSE envelopes) immediately
+instead of leaving it registered until the tombstone self-idles and then falls to 32-LRU eviction
+(260718-CHATS-L5F R5). `_projector_for` (L157-L196) resolves the
 catalog entry, verifies the expected bridge epoch against the live submission authority, builds
 the proven identity, and returns the matching live projector or closes/replaces a stale one;
-projectors are bounded at 32 per app with LRU eviction (L54, L184-L197) — an evicted projector
+projectors are bounded at 32 per app with LRU eviction (L54, L198-L203) — an evicted projector
 rehydrates from native authority and establishes a new cursor generation, so stale event cursors
 reset loudly instead of mixing sequences. Every blocking sync IPC read is offloaded with
-`asyncio.to_thread` (L150-L156) so the daemon event loop stays responsive. One service per
+`asyncio.to_thread` (L165-L172) so the daemon event loop stays responsive. One service per
 runtime is kept through a weak-key registry (L248-L260).
 
 ### Conventions
@@ -60,6 +65,17 @@ secret; minting/decoding never happens in routes or projectors without it.
   are gap events, never HTTP resets.
 - Sync IPC reads never run on the event loop (worker round-2 issue 3 — a production
   responsiveness rule, not a test workaround).
+- `release_session` (explicit session-end projection release) is implemented and unit-tested but,
+  as of this leaf, has NO production caller — the terminate/retire endpoints do not invoke it
+  (reviewer F1, accepted-bounding disposition). The tombstone-projector leak is closed by
+  bounded-by-construction (the 32-projector LRU) plus the projector's own idle-self-release
+  (`_release_dormant_state` at the dormant idle-break, ~30-60s after the last subscriber departs),
+  NOT by an explicit end-hook. R5's "released or bounded" is met; the "removed on session end"
+  sub-clause is met only via idle release. Recorded wiring locus for the follow-on: expose the
+  app-scoped `ConversationRuntime` (minted once in
+  `harness_control_api.register_harness_control_routes`) and call `release_session` after
+  `catalog.mark_terminated` in the terminate and retire handlers, scheduling the async release onto
+  the loop (`run_coroutine_threadsafe`) from the sync endpoint.
 
 ### Todos
 
@@ -96,6 +112,15 @@ No cross-repository implementation participates in this service.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded R5 — added `release_session`, which
+  de-registers and closes one session's projector on session end (pop from `_projectors`, drop from
+  the LRU, await `projector.close()`), freeing the whole per-session projection immediately instead
+  of waiting for the tombstone to self-idle and fall to 32-LRU eviction. Recorded the honest F1
+  disposition: `release_session` has no production caller this leaf (terminate/retire do not invoke
+  it), so the leak is closed by bounded-by-construction plus the projector's idle-self-release, not
+  by an explicit end-hook; captured the recorded wiring locus for the follow-on. Refreshed stale
+  line refs shifted by the new method. Verification metadata stays pinned until L5F closeout stamps
+  the candidate commit.
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the active serving
   authority — per-app service, epoch verification per wire, atomic page+cursor assembly,
   pre-stream cursor checks, bounded projector LRU. Verification is blank because the new source

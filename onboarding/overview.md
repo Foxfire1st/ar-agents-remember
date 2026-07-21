@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 
 > **Status:** active baseline
 
@@ -184,8 +184,10 @@ native authority only — with the pure per-harness mapper grammars in a new
 `conversation/projectors/` route, an idempotent projection store whose tool-call upserts union
 blocks, one typed gap + close per established-stream failure class, the canonical
 `ConversationStatusService` now single-sourcing both Chats and orchestration's seat projection,
-and fixture-gated capability honesty (claude `unverified` at the installed-vs-locked version
-mismatch; codex historical tool loss visible). The L0 composition, wire grammar, and
+and fixture-gated capability honesty (claude `unverified` for a never-probed contract reason —
+since 260718-CHATS-L5F R4 THE CONTRACT IS THE ONLY GATE and no version-string comparison demotes
+any capability, superseding the earlier installed-vs-locked version demotion; codex historical
+tool loss visible). The L0 composition, wire grammar, and
 library/control shells are untouched. This repository overview routes the seam without
 duplicating detail: the `mcp/` overview owns the package boundary, the
 `mcp/src/agents_remember/serving/` and `conversation/` overviews own the serving placement, the
@@ -648,6 +650,14 @@ only. Dashboard and packaged projections remain additive and synchronized.
   `.../session-cockpit/conversation/`, and `dashboard/src/data/conversation/` governors; the regenerated
   `package_data/dashboard/` bundle is shipped output under the `mcp/` overview's sync mechanism.
   Verification metadata unchanged.
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the CHATS-L1 narrative's now-false
+  "claude `unverified` at the installed-vs-locked version mismatch" to the never-probed contract reason
+  — 260718-CHATS-L5F R4 (developer ruling 2026-07-21) removed all capability version gating (THE
+  CONTRACT IS THE ONLY GATE). The half-time functional fixes (R1 codex notification identity, R2 claude
+  acceptance, R3 claude 2.1.216 frame contracts, R4 version-gate removal, R5 per-session bounds/release,
+  R6 exit-note + metrics timeout, R7 durable `dashboard/e2e-chats/` suite) are detailed in the `serving/`,
+  `serving/conversation/*`, `mcp/`, `mcp/tests/`, and `dashboard/` overviews. Verification stays pinned
+  until L5F closeout stamps the candidate commit.
 - 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E gate plus
   bounded hardening (the terminal-liveness per-row synchronizer quarantine, the conversation
   projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,9 +17,11 @@
 ## Purpose
 
 The dormant Claude library port: helper-backed list/read/resolve through the repository-owned
-locked helper (`@anthropic-ai/claude-agent-sdk@0.3.207` `listSessions` / `getSessionMessages` /
-`getSessionInfo`), with the version handshake re-proving locked runtime/helper versions on
-every spawn.
+locked helper (`@anthropic-ai/claude-agent-sdk` `listSessions` / `getSessionMessages` /
+`getSessionInfo`). Since 260718-CHATS-L5F R4 the helper handshake on every spawn reports the
+observed runtime/helper versions as informational evidence ONLY — the contract is the only gate:
+the native `list`/`read` operation succeeding is the proof, and a version drift never demotes the
+surface (the old locked-version re-prove is gone).
 
 ## Code Commentary
 
@@ -68,15 +70,15 @@ No Domain Documentation source is configured for this internal port.
 ## Repo-Internal References
 
 The ports suite proves rows/paging, block/role/provenance mapping, range-absurd timestamp
-failures, and exact argv resume targets on fake helpers; the installed suite proves the
-version-mismatch fail-closed posture on the real machine; the locked helper implements the
-native seam.
+failures, and exact argv resume targets on fake helpers; since 260718-CHATS-L5F R4 the installed
+suite proves the library gates on CONTRACT, not version — a runtime drift still enables the surface
+when the native operation probe passes; the locked helper implements the native seam.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Claude list rows and paging, read block/role/provenance mapping, and argv resume minting on fake helper boundaries. | L472-L567 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
 | A range-absurd but type-valid `lastModified` fails as a typed store error. | L497-L511 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| Installed Claude 2.1.214 vs locked 2.1.211 fails closed and visible on the real helper seam. | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed suite proves the claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes (L5F R4). | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The locked helper's scope-exact listSessions/getSessionMessages/getSessionInfo implementations. | L65-L169 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
 
 ## Cross-Repo References
@@ -89,5 +91,11 @@ No meaningful cross-repo boundary exists for this local port.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — corrected the now-false
+  "version handshake re-proving locked runtime/helper versions on every spawn" claim. The helper
+  handshake reports observed versions as informational evidence only; the contract (the succeeding
+  `list`/`read` operation) is the only gate and a version drift never demotes the surface. Reworded
+  the installed-suite reference from "2.1.214 vs locked 2.1.211 fails closed" to gates-on-contract.
+  Change uncommitted; closeout re-stamps verification.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the helper-backed Claude port
   sidecar. Verification is blank until closeout commits and stamps the new source.

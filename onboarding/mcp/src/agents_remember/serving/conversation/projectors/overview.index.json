@@ -64,7 +64,7 @@
       "mcp/src/agents_remember/serving/conversation/projectors/",
       "mcp/src/agents_remember/serving/conversation/projectors/overview.md",
       "conversation/overview.md",
-      "41b2fd6452ee572799fa10c4f9c820ab549ec3d2",
+      "38c3fd81bdf851dce96e9b2b14e2bff741e7b383",
       "active/",
       "unknown-vendor",
       "PROJECTORS",
@@ -94,7 +94,7 @@
       "turn-result",
       "toolCall",
       "toolResult",
-      "tool_result"
+      "EvidenceFrame.native_method"
     ]
   },
   "fallback": {

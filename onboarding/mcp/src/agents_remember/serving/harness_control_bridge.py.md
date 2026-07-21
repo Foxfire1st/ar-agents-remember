@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,9 @@ normalized snapshots/transcripts. 260718-CHATS-L0E adds a bounded per-session na
 buffer beside the untouched transcript path, plus deque-domain/native-domain evidence page reads
 and the submission-provenance batch read. 260718-CHATS-L2E adds the epoch-guarded native
 `interrupt` write dispatch (bridge-stamped epoch, adapter-mint epoch refused, settlement untouched)
-and the `operation_timeline` read delegation.
+and the `operation_timeline` read delegation. 260718-CHATS-L5F R1 threads a diverted notification's
+native method onto the evidence frame as typed `native_method` and strips its reserved raw key so
+the redacted snapshot stays byte-identical.
 
 ## Code Commentary
 
@@ -38,10 +40,15 @@ loud failed state, resolve active callers, and drain queued commands.
 
 The L0E evidence buffer is a bounded per-session deque (default 2000 frames, per-frame 32 KiB clip)
 fed at the single `_run_events` event-consumption point: when an adapter event carries the reserved
-`arEvidence` raw key, `_divert_evidence` appends an `EvidenceFrame(sequence, kind, created_at,
-clipped payload)` and the redacted event (raw minus `arEvidence`) flows to reduce/observe/transcript/
-publish, so `snapshot.raw`, catalog `control_raw`, SSE projections, and every existing consumer stay
-byte-identical. `evidence()` pages the deque domain with count+byte bounds and reports
+`arEvidence` raw key, `_divert_evidence` (L499-L545) appends an `EvidenceFrame(sequence, kind,
+created_at, clipped payload, native_method)` and the redacted event (raw minus BOTH reserved keys,
+`{AR_EVIDENCE_KEY, AR_EVIDENCE_METHOD_KEY}` at L518) flows to reduce/observe/transcript/publish, so
+`snapshot.raw`, catalog `control_raw`, SSE projections, and every existing consumer stay
+byte-identical. 260718-CHATS-L5F R1 threads the out-of-band native method through this same seam:
+when the event also carries `AR_EVIDENCE_METHOD_KEY`, `_divert_evidence` validates it is non-empty
+text (L510-L515, else raises) and preserves it on the frame as typed `native_method` (L516) so the
+codex projector switches on the real method, then strips the extra reserved key so the redacted
+snapshot stays byte-identical exactly as before. `evidence()` pages the deque domain with count+byte bounds and reports
 `latestSequence`, `evictedBeforeSequence`, `truncated`, and `bridgeEpoch`; `native_page()` dispatches
 through the structural `NativePageReader` protocol (fail-closed typed where the adapter does not
 support it) and stamps the bridge epoch itself — an adapter-minted epoch is refused;
@@ -75,9 +82,13 @@ generic evidence validation/ordering belongs to the queue.
 - Unsupported receipts use the bounded submission ledger and remain explicitly unsupported.
 - The evidence buffer is evidence, not authority: it is a hot window with an explicit frame-count
   bound and an honest eviction floor on every page; deep history stays with the native read APIs.
-- Evidence never rides the shared raw merge: the reserved key is diverted at the one consumption
-  point and only the redacted event reaches reduction, the authority, the transcript, and
-  subscribers.
+- Evidence never rides the shared raw merge: the reserved key(s) are diverted at the one
+  consumption point and only the redacted event reaches reduction, the authority, the transcript,
+  and subscribers.
+- The R1 native method rides the same divert-and-strip discipline as the payload: it is preserved
+  onto the frame as typed `native_method` and its reserved raw key removed from the republished
+  event, so the byte-identical snapshot guarantee holds; a present-but-non-string or empty method
+  fails visibly rather than being silently carried.
 - The bridge alone stamps `bridgeEpoch` on evidence responses; adapters never mint it.
 - The interrupt write is epoch-guarded, bridge-stamped, and adapter-mint-epoch-refused; it never
   enters the prompt FIFO and never settles the operation — settlement stays with the landed
@@ -107,7 +118,7 @@ The protocol owns vendor-specific setters; the queue owns order and result valid
 | The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | L33-L79; L151-L180 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The queue facade serializes both setters and the timeline read through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | Private IPC exposes bridge advertise/set actions under the same exact identity. | L150-L170; L220-L229 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The evidence DTOs, reserved key, clip/window helpers, and structural native-page protocol live in the models module. | L57-L72; L385-L470; L569-L660 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` (R1) are the method-carry pair this divert preserves. | L57-L72; L385-L470; L416-L420; L569-L660 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | Contract tests pin diversion no-leak, buffer bounds, continuation, epoch mismatch, and the provenance delegation through this bridge. | L268-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The structural interrupt sub-protocol this bridge dispatches against, with identity guards riding the write. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The IPC server dispatches the interrupt and operation-timeline actions to this bridge over the private socket. | L212-L215; L302-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
@@ -137,6 +148,12 @@ active operation. Startup failure and graceful stop clean the same authority ins
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented `_divert_evidence`'s
+  native-method thread: the diverted event's `AR_EVIDENCE_METHOD_KEY` is validated non-empty text,
+  preserved onto the frame as typed `native_method`, and its reserved key stripped alongside
+  `AR_EVIDENCE_KEY` so the redacted snapshot stays byte-identical; refreshed the divert line ranges
+  and the models citation. Verification metadata stays pinned until closeout stamps the candidate
+  commit.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the epoch-guarded native
   `interrupt` dispatch (`_require_epoch` mismatch typed, structural `InterruptCapableAdapter`
   refusal naming the adapter, adapter-mint-epoch refusal, bridge-stamped epoch, settlement

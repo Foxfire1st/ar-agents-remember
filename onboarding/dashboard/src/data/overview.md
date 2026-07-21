@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00                           |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,7 +59,13 @@ and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
 ### Catalog And Session Identity
 
 - `sessions.ts` owns `OpenSession`, the catalog-backed registry, live-action `activeId`, connection
-  registries, leaf/lifecycle attachment patches, and cross-tab catalog-change notifications.
+  registries, leaf/lifecycle attachment patches, and cross-tab catalog-change notifications. One
+  field is deliberately NOT catalog-sourced: `liveTurnWorking?` (260718-CHATS-L5F R9) carries the
+  focused seat's own conversation-projection live-turn signal, merged at the view layer only
+  (`SessionsView`) — the registry itself never writes it, so the accepted-server-row materialization
+  rule above is unweakened. `stateGrammar.ts`'s `seatVisualState` prefers it over the sweep-lagged
+  catalog `turnState` (a streaming turn must never read settled `turn-ended`) but only AFTER the
+  terminal/fault/blocked-on-human/wait guards, so it can never fake liveness over a real end state.
 - `catalogPoll.ts` is the single catalog read/reconcile boundary. `CockpitShell` owns both its
   refcounted interval and eager/cross-tab reconciler for the shell lifetime. Remote terminate is
   removed locally and excluded from the confirming read so a stale echo cannot resurrect it.
@@ -228,6 +234,15 @@ session-cockpit overview before the six obsolete sidecars were removed.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) live-turn seat-state
+  nuance in Catalog And Session Identity — `OpenSession.liveTurnWorking?` is the single
+  projection-sourced ephemeral field (view-layer merge for the focused seat only; `sessions.ts` never
+  writes it, accepted-server-row materialization unweakened), and `stateGrammar.ts`'s
+  `seatVisualState` prefers it over the sweep-lagged catalog `turnState` strictly after the
+  terminal/fault/blocked/wait guards. Detail in the [sessions.ts](sessions.ts.md) and
+  [stateGrammar.ts](stateGrammar.ts.md) sidecars; the `conversation/` child route carries the R10
+  hydrate-retry truth in its own overview. Verification stays pinned until L5F closeout stamps the
+  candidate commit.
 - 2026-07-21T05:30+02:00 — No route impact: 260718-CHATS-L5P (cockpit chrome visual polish) touched one
   `data/` source — `conversation/format.ts` gained the `shortId` helper (R6) and its `humanizeDuration`
   became the cockpit-wide single duration authority (R5). Both are presentation conventions inside the

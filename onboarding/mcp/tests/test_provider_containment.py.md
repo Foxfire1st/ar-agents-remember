@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_containment.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00                     |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -81,7 +81,11 @@ The `_armed_boot_config(tmp, disk_providers=...)` helper builds a real
   and a non-JSON `ps` line skipped); a stats failure is tolerated while a
   `Restarting` status flags `restarts=1` and `running=False`; the store
   round-trips `record`/`read_current` (with `runningCount`) and `read_recent`
-  skips a torn append line.
+  skips a torn append line. 260718-CHATS-L5F (R6) adds
+  `test_sampler_bounds_docker_ps_timeout_into_error_sample`: a `docker ps` that
+  times out now returns an error-annotated snapshot (via `allow_timeout=True`)
+  instead of letting `subprocess.TimeoutExpired` escape and dump a full
+  traceback every sampling interval into the daemon log.
 
 ### Conventions
 
@@ -135,6 +139,11 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R6 docker-ps timeout bound in
+  `MetricsTests` (`test_sampler_bounds_docker_ps_timeout_into_error_sample`) — a timed-out `docker ps`
+  now yields an error-annotated snapshot via `allow_timeout=True` instead of an escaping
+  `TimeoutExpired` traceback each sampling interval. Verification metadata stays pinned (uncommitted);
+  closeout re-stamps the candidate commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes: the suite grew `QueryFunnelGateTests`
   (per-provider funnel refusal — armed grepai does not authorize a cgc one-shot), the lock
   host-path pin (`fleet_setup_lock_path()` under the system temp dir) with the explicit

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/control/policy.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,11 +29,13 @@ anywhere in this leaf — capability gating alone cannot authorize one.
 `ConversationPolicyProjection` (L45) carries two `PolicyPart` (L35) DTOs — the AR `repoPolicy`
 posture and the effective `harnessMode` — each with state/origin/evidence/freshness/reasons.
 `conversation_policy` (L57) resolves the caller and epoch, reads the live snapshot, and builds both
-parts plus the `policyRead` capability. `_harness_mode` (L103) reports Claude's `permissionMode` from
-the live snapshot with its unverified locked-version-mismatch reason; codex approval/sandbox values
-are adapter-private at thread/turn start and never cross (honestly unverified); pi has no built-in
-permission-popup surface. `_freshness` (L132) stamps the observed-time window. `_POLICY_ORIGIN` (L32)
-is the AR composition origin string.
+parts plus the `policyRead` capability. `_harness_mode` (L104) reports Claude's `permissionMode` from
+the live snapshot carrying the control-contract capability's own `capability.reason` — since
+260718-CHATS-L5F R4 that reason is contract-verification language ("unverified until the control seam
+is probed"), NEVER a locked-version-mismatch string; codex approval/sandbox values are adapter-private
+at thread/turn start and never cross (honestly unverified); pi has no built-in permission-popup
+surface. `_freshness` (L133) stamps the observed-time window. `_POLICY_ORIGIN` (L33) is the AR
+composition origin string.
 
 ### Conventions
 
@@ -46,7 +48,8 @@ unverified/unavailable, never invented. The route is GET-only.
   and the foundation pin is GET-only).
 - `repoPolicy` is the local single-operator loopback authority + canonical scope; `harnessMode` is
   the effective harness posture — the two are never conflated.
-- Claude's `permissionMode` crosses with its unverified gate reason; codex/pi carry honest
+- Claude's `permissionMode` crosses with its control-contract capability reason — unverified until
+  the control seam is probed, never a version gate (the L5F R4 removal); codex/pi carry honest
   unavailable/unverified reasons rather than a fabricated mode.
 
 ### Todos
@@ -83,6 +86,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — corrected the now-false
+  "locked-version-mismatch reason" prose for Claude's `permissionMode`. `_harness_mode` carries the
+  control-contract capability's `capability.reason`, which is contract-verification language
+  ("unverified until the control seam is probed") and never a version-string comparison. Change
+  uncommitted; closeout re-stamps verification.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the read-only policy
   projection — repoPolicy-vs-harnessMode separation with origin/evidence/freshness/reasons, Claude
   permissionMode with the locked-gate reason, and zero mutation surface. Verification is blank because

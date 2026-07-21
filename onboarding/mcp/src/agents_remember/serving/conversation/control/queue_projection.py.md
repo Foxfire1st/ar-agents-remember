@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/control/queue_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,13 @@ Set-model/set-effort control operations (substrate `source=None`) are **not** pr
 `OperationQueueItem` validator cannot represent them without inventing a source or forcing a
 withdrawable cockpit block on a row the authority cannot withdraw — so the projection covers the
 complete **prompt** queue they interleave with. Row and projection revisions are semantic and
-monotonic (stable on no-change reads, bump on set/phase changes).
+monotonic (stable on no-change reads, bump on set/phase changes). Since 260718-CHATS-L5F R5 the
+per-channel `channel.queue_rows` revision store is bounded: after writing a row (L97) `_queue_row`
+`move_to_end`s it (L101) and then evicts oldest keys while the store exceeds
+`MAX_QUEUE_ROWS_PER_CHANNEL` (L102-L103, `popitem(last=False)`). An evicted key restarts at
+revision 1 only if its `(kind, operation_id, sequence)` operation ever reappears; a settled
+operation never reappears, so the bound is invisible to any live row and closes the prior
+unbounded-`queue_rows` leak (the former L3 precision-note Todo).
 
 ### Conventions
 
@@ -57,6 +63,9 @@ cockpit block.
   projection (reviewer ACCEPTED; the SC1 admission is the recorded fallback).
 - Union completeness is the join of pages through `latestSequence`; an epoch flip fails typed at the
   validated client.
+- The `channel.queue_rows` revision store is bounded-by-construction at `MAX_QUEUE_ROWS_PER_CHANNEL`
+  with oldest-first eviction; the bound only ever drops a key whose operation has settled and cannot
+  reappear, so a live queued/dispatching row is never lost to eviction.
 
 ### Todos
 
@@ -92,6 +101,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R5 bound — documented the new
+  `MAX_QUEUE_ROWS_PER_CHANNEL=256` cap on `channel.queue_rows` with oldest-first `popitem` eviction
+  in `_queue_row`; an evicted key restarts at revision 1 only if a settled operation reappears (it
+  never does), so the bound is invisible to live rows and closes the prior unbounded-`queue_rows`
+  precision-note Todo. Change uncommitted; closeout re-stamps verification.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the source-aware queue
   projection — complete never-bodies prompt-queue truth, cockpit-only withdrawal refs/previews/
   digests, journal-backed empty-held honesty, and the accepted setter-row exclusion. Verification is

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/claude_stream_startup.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T20:05+02:00 |
-| lastVerifiedCommitHash | `fc2e8b22abf09cd1b6d8c547bca25e59877b34aa` |
-| lastVerifiedCommitDate | 2026-07-15T21:46:02+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,10 @@ steady-state reader takes ownership of stdout.
 successful synthetic bootstrap result needed for protocol readiness. `negotiate_claude_startup`
 bounds that collection with a timeout. `negotiate_claude_catalog` then sends `list_models`, reads one
 correlated response, and delegates normalization to the catalog parser using the current model from
-`system/init`.
+`system/init` — and, since 260718-CHATS-L5F R2, also threads the caller's requested launch key
+(`expected_launch.model_key`, passed by `harness_control_claude`) into the parser's
+`_select_current_model` so that when several catalog rows share one `resolved_model`, current-model
+selection resolves to the requested alias rather than collapsing onto the default alias.
 
 ### Conventions
 
@@ -40,6 +43,8 @@ long-running state-reader task starts.
 
 - Startup and catalog enumeration submit no model query or visible user prompt.
 - The current model must be reconciled with the returned catalog by the parser; no default is guessed.
+  When a requested launch key is known it is threaded to the parser so a resolved-model collision
+  resolves to the requested alias, not the default (R2).
 - Disconnect, timeout, or an unexpected frame fails loudly. Pane, prompt, log, and timing heuristics
   are not readiness or catalog evidence.
 - Exact CLI versions are fixture evidence only, not a production gate.
@@ -77,6 +82,10 @@ No external repository boundary is implemented by startup negotiation.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 — `negotiate_claude_catalog` threads the
+  caller's requested launch key into `parse_list_models_response` so current-model selection compares
+  like-for-like when catalog rows share a `resolved_model` (the claude `opus[1m]` refused-pair fix
+  seam). Verification metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented ordered dynamic catalog
   negotiation before the stdout reader, token-free discovery semantics, and current-model
   reconciliation; replaced obsolete exact-version language.

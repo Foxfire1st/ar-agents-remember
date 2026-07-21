@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/library/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 
 ## What This Area Is
 
@@ -77,9 +77,11 @@ family.
   persisted; a restart invalidates outstanding tokens honestly.
 - A content-derived catalog generation (no server-side counter or index) that resets cursors
   when the native store observably changes.
-- Live capability gates: Codex proves `thread/list` over a real app-server connection reporting
-  the exact locked CLI version; Claude/Pi prove the locked helper handshake plus a real native
-  list call. Results are cached per installed-executable fingerprint, bounded by the three
+- Live capability gates (contract-only since 260718-CHATS-L5F R4): Codex proves `thread/list` over
+  a real app-server connection (the observed CLI version rides the evidence as informational metadata
+  only — never compared to a locked constant); Claude/Pi prove the helper handshake plus a real native
+  `list` call, where the OPERATION result is the gate and the handshake reports observed versions
+  informationally. Results are cached per installed-executable fingerprint, bounded by the three
   normalized harnesses.
 - A bounded (256) in-memory open-operation ledger keyed by caller principal + requestId with
   LRU terminal eviction and a hard refusal when full of live work.
@@ -113,7 +115,7 @@ family.
 1. `canonical_library_scope` narrows the requested cwd inside the caller's workspace root;
    traversal, symlink escape, and malformed paths fail closed as `LibraryScopeError`.
 2. The live gate must report `list` supported, else `LibraryCapabilityError` → 422 with the
-   exact observed-versus-locked reason.
+   exact contract-probe-failure reason (never a version-comparison reason since L5F R4).
 3. The port verifies the signed list cursor (purpose, scope, generation) and pages the native
    store, minting rows whose conversation keys bind scope, vendor identity, identity digest,
    and generation.
@@ -147,12 +149,12 @@ family.
 | `open_service.py` | open authority | Guarantees one launch per stable requestId, exact catalog proof, and no wrong retirement. | covered |
 | `cursor.py` | token authority | Every opaque token's mint/verify boundary; tampering or cross-purpose use fails closed. | covered |
 | `scope.py` | scope authority | The narrow-only canonical scope and query digest every cursor/key binds. | covered |
-| `gates.py` | capability authority | Capability honesty: supported only with live production-path evidence at the locked versions. | covered |
+| `gates.py` | capability authority | Capability honesty: supported only when the live production-path CONTRACT probe passes; no version comparison gates or demotes (L5F R4). | covered |
 | `factories.py` | composition | Per-app shared bundle without `app.state` edits or import-time singletons. | covered |
 | `helper_host.py` | helper boundary | Locked spawn/handshake/exit discipline; raw helper stderr never disclosed. | covered |
 | `codex.py` | codex port | Direct read-only app-server list/read/resolve with honest partial completeness. | covered |
 | `codex_normalize.py` | codex parser | Exact provenance normalization; unknown vendor kinds become explicit evidence, never guesses. | covered |
-| `claude.py` | claude port | Helper-backed list/read/resolve with the version re-proof on every spawn. | covered |
+| `claude.py` | claude port | Helper-backed list/read/resolve; the per-spawn handshake reports observed versions informationally (no version gate — L5F R4). | covered |
 | `pi.py` | pi port | Helper-backed list/read/resolve; reading never calls `switch_session` on any process. | covered |
 | `normalize_common.py` | shared primitives | One home so the three resolvers cannot drift apart. | covered |
 | `errors.py` | typed family | Leaf-local errors the route table maps exactly; parallel leaves stay collision-free. | covered |
@@ -161,8 +163,9 @@ family.
 
 - Possession of a cursor/key is never authorization: every call re-resolves the caller binding
   and re-checks scope, purpose, and catalog generation.
-- Capability `supported` requires live runtime-fixture evidence at the exact locked versions;
-  any mismatch demotes the whole harness history surface with the exact reason.
+- Capability `supported` requires the live production-path CONTRACT probe to pass; a failed probe
+  demotes the whole harness history surface with the exact probe-failure reason. NO version-string
+  comparison gates or demotes any capability (L5F R4) — the observed version is informational evidence.
 - The deterministic open session id is replay keying, never launch evidence; only `launched`
   authorizes proof observation and retirement, and `absorbed_existing` sessions are never
   retired whatever they prove.
@@ -249,12 +252,21 @@ Never infer capability from fixture existence or a locked dependency: only the l
 
 ## Needs Verification
 
-- Claude library stays `unverified` on this machine (installed 2.1.214 ≠ locked 2.1.211) until a
-  real installed 2.1.211 user/assistant/tool/permission history passes the locked SDK 0.3.207
-  list/read/exact resume replay gate.
+- Claude library is enabled or `unverified` strictly by the live helper CONTRACT probe (a real
+  `list`/`read` through the locked SDK helper against the installed runtime), no longer by an
+  installed-vs-locked version comparison (L5F R4 removed that gate). An auto-updated claude that
+  answers the helper `list` now enables the surface; a failed probe fails closed with the exact
+  contract reason.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
+  2026-07-21, R4). Corrected the now-false "supported at the exact locked versions / observed-versus-
+  locked reason / version re-proof on every spawn" doctrine throughout: the live production-path
+  CONTRACT probe (codex `thread/list`; claude/pi helper `list`) is the only gate, the handshake
+  reports observed runtime/helper versions as informational evidence, and no version comparison gates
+  or demotes. Routes, cursor/key authority, ports, and open/reconcile service unchanged. Verification
+  stays pinned until L5F closeout stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the governing overview for the
   implemented dormant native library — authorized list/read, live capability gates, signed
   cursor/key authority, narrow-only scope, locked-helper and direct app-server ports, and the

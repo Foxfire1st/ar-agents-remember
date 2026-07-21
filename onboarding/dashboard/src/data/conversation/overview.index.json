@@ -41,7 +41,7 @@
     "types"
   ],
   "hotPath": {
-    "summary": "1. `store.connectConversation` reads the bridge epoch, calls `client.fetchConversationPage` for the native-hydrated page, and `reducer.applyInitialPage` establishes the baseline + resume cursor. 2. `stream.openConversationStream` opens the resumable SSE from that cursor; each envelope flows through `reducer.applyEvent` (cursor-ordered, deduped, revision-gated). 3. A reducer `recovery` signal (`gap`/`reset`) stops the stream, re-pages native authority, and resumes from the fresh cursor; a typed page failure sets `errorBySession` and marks `projection-failed`. 4. The renderer reads `orderedIt...",
+    "summary": "1. `store.connectConversation` reads the bridge epoch, calls `client.fetchConversationPage` for the native-hydrated page, and `reducer.applyInitialPage` establishes the baseline + resume cursor. 2. `stream.openConversationStream` opens the resumable SSE from that cursor; each envelope flows through `reducer.applyEvent` (cursor-ordered, deduped, revision-gated). 3. A reducer `recovery` signal (`gap`/`reset`) stops the stream, re-pages native authority, and resumes from the fresh cursor; a typed page failure sets `errorBySession` and marks `projection-failed`. Since 260718-CHATS-L5F R10 the I...",
     "candidateHints": [
       "dashboard/src/data/conversation",
       "dashboard/src/data/conversation/client.ts",
@@ -92,18 +92,18 @@
       "openConversationStream",
       "SSE",
       "applyEvent",
-      "orderedIt",
+      "CHATS",
+      "L5F",
+      "R10",
       "dashboard/src/data/conversation/",
       "route-local-overview",
-      "1119b64ff1564c5fc76fd518f88e529535c04b34",
+      "38c3fd81bdf851dce96e9b2b14e2bff741e7b383",
       "/overview.md",
       "data/conversation/",
       "exact camelCase from the server's",
       "ActiveConversationRef",
       "arSessionId",
-      "bridgeEpoch",
-      "ConversationItem",
-      "ConversationContentBlock"
+      "bridgeEpoch"
     ]
   },
   "fallback": {

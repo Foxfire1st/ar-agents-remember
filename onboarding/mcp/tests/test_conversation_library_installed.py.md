@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,9 @@
 Installed-runtime production gates for 260718-CHATS-L2: exercises the REAL seams on machines
 where the harnesses are installed — the live Codex app-server gate and library, the locked Pi
 helper gate/library, end-to-end Codex and Pi opens through the tracked opener with exact
-catalog proof and retirement, and the Claude version-mismatch fail-closed proof.
+catalog proof and retirement, and (260718-CHATS-L5F R4) the Claude library-gate-on-CONTRACT proof
+(`test_installed_claude_library_gates_on_contract_not_version`): claude stays `unverified` for a
+contract reason, not a version comparison.
 
 ## Code Commentary
 
@@ -32,9 +34,11 @@ list/read with partial completeness, and a list → read → resolve round-trip 
 protocol's malformed-request rejection, and a real end-to-end open (spawn through
 opener → tmux → runner → `pi --mode rpc --session <file>`, exact vendor id + bridge epoch
 catalog proof, idempotent replay, retirement with no leaked `ar-open-*` sessions). Codex open:
-the same end-to-end proof through the landed L0E `resume_thread_id` channel. Claude: installed
-2.1.214 vs locked 2.1.211 handshakes `incompatible` and the whole surface stays `unverified`
-with the exact reason.
+the same end-to-end proof through the landed L0E `resume_thread_id` channel. Claude
+(260718-CHATS-L5F R4): `test_installed_claude_library_gates_on_contract_not_version` proves the
+claude library gates on the CONTRACT, not the version — the surface stays `unverified` for a
+contract/never-probed reason regardless of the installed version, so a future claude auto-update no
+longer flips the reason to a version comparison.
 
 ### Conventions
 
@@ -51,7 +55,10 @@ enabling).
 
 ### Todos
 
-None.
+- Reviewer F8 (recorded conservatism): the codex/pi exact-identity installed tests still SKIP when
+  the installed version drifts from the pinned constant, so the installed lane goes dark on the next
+  auto-update. The follow-on is to convert them to contract-shape assertions like the new claude
+  contract-not-version test.
 
 ## Docs References
 
@@ -80,6 +87,12 @@ No neighboring repository participates in this installed-runtime suite.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the Claude gate framing for the R4
+  removal — `test_installed_claude_library_gates_on_contract_not_version` replaces the version-mismatch
+  fail-closed description; claude stays `unverified` for a contract/never-probed reason, not an
+  installed-vs-locked version comparison. Recorded reviewer F8 (codex/pi exact-identity installed
+  tests still skip on version drift — follow-on to convert to contract-shape assertions).
+  Verification metadata stays pinned (uncommitted); closeout re-stamps.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the installed-runtime
   library/open production gate sidecar. Verification is blank until closeout commits and
   stamps the new source.

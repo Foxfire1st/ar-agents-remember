@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,6 +66,18 @@ twins actually reach:
   are the always-run (no opt-in) companions to the installed F1 real-wire regression in
   `test_conversation_control_installed.py`.
 
+### 260718-CHATS-L5F additions (R3 echo honesty + R5 dormant release)
+
+`ClaudeEngineTests` gains `test_nonuser_transcript_entries_mint_no_echo_unknown_vendor_rows` (R3):
+the echo poller now consumes only `role == "user"` transcript entries and advances past
+assistant/result entries, so a mixed-role transcript no longer mints `claude:echo: unrecognized
+submission echo shape` unknown-vendor rows. A new `DormantReleaseTests` adds
+`test_release_dormant_state_frees_heavy_projection_and_retires_shell` (R5): when the poll loop goes
+idle the projector's `_release_dormant_state` clears the full heavy per-session state
+(`ProjectionStore` items, the L5 live-turn/request id sets, retention and pending frames) and
+retires the shell, so a dead session's state frees immediately on the idle-break instead of lingering
+as a registered tombstone until 32-LRU eviction.
+
 ### Conventions
 
 Engine tests run on `IsolatedAsyncioTestCase` with injected reader callables — no socket, no
@@ -113,6 +125,12 @@ No cross-repository implementation participates in this suite.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R3 echo-honesty test
+  (`test_nonuser_transcript_entries_mint_no_echo_unknown_vendor_rows` — non-user transcript entries
+  no longer mint `claude:echo` rows) and the new `DormantReleaseTests`
+  (`test_release_dormant_state_frees_heavy_projection_and_retires_shell` — R5: the idle-break frees
+  the heavy per-session projection and retires the shell instead of leaving a resident tombstone).
+  Verification metadata stays pinned (uncommitted); closeout re-stamps the candidate commit.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the H2 and F1 projector-tier
   regressions added by L5 — `test_native_remap_after_resolution_stays_model_valid` (H2, drives the
   real poll path, pre-fix raises the exact E2 `ValidationError`) and the three F1 tests

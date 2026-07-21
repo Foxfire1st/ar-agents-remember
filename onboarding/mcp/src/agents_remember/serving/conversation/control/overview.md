@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/control/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 
 ## What This Area Is
 
@@ -49,7 +49,7 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
 | `api.py` | The seventeen registered routes plus the O4 typed-error mapping and multipart staging. |
 | `service.py` | Per-app service: control secret, bounded per-(session, epoch) ledgers, per-session locks, shared seams. |
 | `refs.py` | The opaque signed control-reference authority (four purpose brands) and the typed `ControlRefError` family. |
-| `capabilities.py` | Control-domain exact-session capability gate with observed-runtime demotion. |
+| `capabilities.py` | Control-domain exact-session capability gate; contract-only honesty (no observed-runtime/version demotion since L5F R4). |
 | `operations.py` | R1: the exact-turn interrupt ledger, idempotence, and settlement correlation. |
 | `queue_projection.py` | R2: the complete never-bodies source-aware prompt-queue projection. |
 | `previews.py` | The deterministic preview transform and authority-parity content digest. |
@@ -105,8 +105,10 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
    result in its bounded ledger.
 4. Every opaque reference is re-bound against the authorized identity on the wire; possession is never
    authorization, and the source rule is the backstop behind the signature.
-5. Capability gating is fixture/evidence-bound and demotes on observed runtime/helper mismatch; a
-   refused capability fails typed (422) before any native call.
+5. Capability gating is fixture/evidence-bound and, since L5F R4, demotes only on a failed or
+   never-run contract verification — never on an observed runtime/helper version comparison (the
+   observed version is informational evidence only); a refused capability fails typed (422) before
+   any native call.
 
 ## Main Flows
 
@@ -145,7 +147,7 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
 | `withdrawals.py` | withdrawal authority | Preserves the landed cockpit-only atomicity and bounds recovery to an expiring, authenticated lease. | covered |
 | `attachments.py` | attachment authority | One-use exact-receipt assets, timeline-driven lifecycle, and recoverable-under-lease rebind. | covered |
 | `queue_projection.py` | queue authority | Never-bodies truth; withdrawability is validator-enforced, never fabricated. | covered |
-| `capabilities.py` | capability gate | Features enable only from fixture evidence; a version mismatch demotes and the action stays off. | covered |
+| `capabilities.py` | capability gate | Features enable only from fixture evidence; an un-probed contract stays `unverified` and the action stays off (contract-only gate, no version demotion since L5F R4). | covered |
 
 ## Local Invariants And Traps
 
@@ -173,6 +175,19 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
   `unknown` is retained, never re-uploaded under a new id.
 - No PTY Esc / paste / native-queue substitution exists anywhere in the control modules (source-
   scanned); policy is GET-only with no mutation surface.
+- 260718-CHATS-L5F R5 bounds the per-session control structures: `service._locks` is a bounded
+  `OrderedDict` (`MAX_SESSION_LOCKS_PER_APP=128`, evicting the oldest UNLOCKED lock so a held lock is
+  never dropped) with an explicit `release_session` (drops the lock + every epoch channel on session
+  end), and `queue_projection.queue_rows` is capped at `MAX_QUEUE_ROWS_PER_CHANNEL=256` with oldest-key
+  eviction (closing the old unbounded-`queue_rows` L3 Todo; eviction only ever touches settled
+  operations, invisible to live rows). Honest posture (reviewer F1 accepted-bounding): the sync
+  `release_session` is unit-tested but NOT wired into the terminate/retire endpoints this leaf — the
+  monotonic `_locks` leak is closed by bounding, not by an explicit session-end hook; the wiring locus
+  (expose the ConversationRuntime and call `release_session` after `catalog.mark_terminated`) is
+  recorded in the `service.py` sidecar.
+- Since 260718-CHATS-L5F R4 (developer ruling 2026-07-21) THE CONTRACT IS THE ONLY GATE: no
+  version-string comparison demotes any control/telemetry capability; the observed runtime/helper
+  version is informational evidence only.
 
 ## L4-Facing Register (durable reviewer rulings the renderer must carry)
 
@@ -261,15 +276,25 @@ body.
 
 ## Needs Verification
 
-- Claude's control/telemetry surface stays `unverified` on this machine (installed 2.1.214 ≠ locked
-  2.1.211) until a real installed 2.1.211 session crosses the production seam; the wire carries the
-  exact reason.
+- Claude's control/telemetry surface stays `unverified` with a NEVER-PROBED contract reason
+  ("control contract not yet probed through a captured production fixture … never a version gate"),
+  no longer a version-mismatch reason (L5F R4 removed the version gate); the wire carries the exact
+  contract reason.
 - Only codex cumulative token usage is a landed supported metric; cost/context/rateLimits/compaction
   for codex and every claude/pi metric stay visibly unverified/unavailable until installed-runtime
   fixtures observe them through the production seam.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths for
+  the control route. R4 version-gate REMOVAL (developer ruling 2026-07-21) — corrected the now-false
+  "version mismatch demotes" capability-gate language to the contract-only gate; claude control/
+  telemetry is `unverified` for a never-probed contract reason, not an installed-vs-locked version
+  reason. R5 — `_locks` is a bounded `OrderedDict` (128, idle-first eviction, held lock never
+  dropped) with `release_session`, and `queue_rows` is capped (256, oldest-evicted), closing the old
+  unbounded-`queue_rows` Todo; `release_session` is unwired from terminate/retire (F1
+  accepted-bounding, wiring locus recorded). Routes, ref authority, and ledger contract unchanged.
+  Verification stays pinned until L5F closeout stamps the candidate commit.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the governing overview for the
   implemented authoritative control slice — the seventeen registered routes, the opaque signed
   reference authority, the per-app service with bounded ledgers and per-session locks, the R1–R6

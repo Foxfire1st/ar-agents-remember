@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,7 +23,10 @@ adds strictly validated reads for the evidence family: `read_control_evidence`,
 `read_control_native_page`, and `read_submission_provenance`. 260718-CHATS-L2E adds the
 epoch-guarded `interrupt_control` write, the paged `read_operation_timeline` read with strict
 monotonicity/epoch/coherence validation, additive `assets` on `submit_control_prompt`, and strict
-withdrawal-recovery parsing.
+withdrawal-recovery parsing. 260718-CHATS-L5F deserializes the R1 evidence `nativeMethod` on the
+frame round trip, and R6 maps a control-socket connect failure to an honest "already exited"
+lifecycle note (unlinking the stale socket on `ECONNREFUSED`) instead of surfacing a raw
+`[Errno 111]`.
 
 ## Code Commentary
 
@@ -33,10 +36,17 @@ Every request carries protocol version and exact catalog identity. Capability an
 strictly parsed through the normalized type layer; setter calls use a bound above Claude's native
 correlated acceptance window. Submit sends the complete message and caller request id once.
 
-`_exchange_control` distinguishes connect/pre-write failure from any failure after the socket accepts
-the first byte. Pre-write failure raises as unavailable and may be retried by policy. Post-write
-loss, malformed response, or mismatched post-dispatch evidence becomes an honest `unknown` receipt
-or `SetResult` carrying the original request id/value; it is never resent. The explicit reconcile
+`_exchange_control` (L509) distinguishes connect/pre-write failure from any failure after the socket
+accepts the first byte. Pre-write failure raises as unavailable (`may_have_sent=False`) and may be
+retried by policy. 260718-CHATS-L5F R6 routes that connect failure through
+`_connect_unavailable_detail` (L486-L506): `ECONNREFUSED` (a stale socket file with nothing
+listening — the developer's image1 `[Errno 111]` banner) and `ENOENT` (an absent socket) both map to
+the honest "the controlled runner already exited (…)" note, and the stale socket is best-effort
+`unlink`ed on `ECONNREFUSED` so the next probe reads the absent case cleanly instead of repeating the
+refused surprise; a timeout and any other error get their own honest phrasings. On Linux AF_UNIX
+`ECONNREFUSED` means no listener, so the unlink cannot orphan a live endpoint. Post-write loss,
+malformed response, or mismatched post-dispatch evidence becomes an honest `unknown` receipt or
+`SetResult` carrying the original request id/value; it is never resent. The explicit reconcile
 operation queries the bridge's retained same-id truth.
 
 The L0E evidence reads validate responses strictly rather than trusting JSON coercion:
@@ -48,7 +58,10 @@ continue the last frame) under the dedicated `EVIDENCE_PAGE_TIMEOUT_SECONDS = 35
 `SET_CONTROL_TIMEOUT_SECONDS` precedent, above the 2-second control default);
 `read_submission_provenance` enforces exact result count/order, valid sources, and request-id echo.
 Every evidence response carries `bridgeEpoch`; a caller-supplied expected epoch that mismatches
-raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably.
+raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably. 260718-
+CHATS-L5F R1 deserializes the optional evidence `nativeMethod` on the frame round trip (L840-L851):
+a present value must be non-empty text or the read fails typed, so the projector receives the
+carried notification method the bridge preserved.
 
 The L2E helpers hold the same strict posture. `interrupt_control` sends the epoch-guarded write
 under the setter-class timeout and validates the acknowledgement enum, epoch continuity
@@ -86,6 +99,11 @@ protocol bound, not an invented acceptance result.
   never treated as settlement.
 - Asset-free submit payloads keep their exact previous key order; `assets` rides only as a
   sequence of objects.
+- A control-socket connect failure never leaks a raw errno: `ECONNREFUSED`/`ENOENT` map to the
+  designed "already exited" note (R6), the stale socket is unlinked best-effort on `ECONNREFUSED`,
+  and the failure stays `may_have_sent=False` (retry-safe pre-write).
+- The evidence `nativeMethod` (R1) is parsed only when present and must be non-empty text; it is
+  carried metadata, never a resend or acceptance signal.
 
 ### Todos
 
@@ -110,6 +128,7 @@ unknown/reconcile contract without a second submission.
 | The private server dispatches advertise/set/submit/reconcile against one bridge identity. | L150-L250 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | The queue facade treats request id as an idempotency key and returns retained reconciliation truth through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | Client tests pin pre-first-byte versus post-first-byte ambiguity and unknown setter/submission mapping. | L61-L145 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
+| The R6 test pins that a refused control socket yields the honest note AND unlinks the stale socket (never a raw errno). | L61-L92 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
 | Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | L1036-L1153 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Contract tests pin the strict page/native-page/provenance validators, cross-domain typed rejection, and epoch-continuity failure exercised through this client. | L463-L1309 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The IPC server answers the two additive actions and verifies staged assets before dispatch, so this client's references and reads stay reference-only and strictly shaped. | L212-L215; L252-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
@@ -132,6 +151,12 @@ transport loss is returned as ambiguous, never reclassified into retry safety.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the evidence `nativeMethod`
+  deserialization on the frame round trip (present-must-be-non-empty-text, L840-L851). R6 —
+  documented `_connect_unavailable_detail` (L486-L506): `ECONNREFUSED`/`ENOENT` map to the honest
+  "already exited" note, the stale socket is unlinked on `ECONNREFUSED`, and no raw errno leaks
+  (pre-write `may_have_sent=False`); added both invariants and the R6 regression citation.
+  Verification metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented `interrupt_control`, the paged
   `read_operation_timeline` (monotonicity, floor-vs-high-water, truncated/latest coherence,
   cross-page epoch continuity, cross-domain cursor rejection), additive `assets` on

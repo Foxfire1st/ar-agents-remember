@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 
 ## What This Area Is
 
@@ -51,7 +51,7 @@ in the sibling `projectors/` route.
 | `store.py` | Idempotent projection store: append/upsert/delta application, tool block union, provenance resolution, page slicing. |
 | `cursor.py` | HMAC-signed purpose-branded page/event cursors and the typed cursor error family. |
 | `status.py` | Canonical `ConversationStatusService`: the one evidence classification, revisioned envelope, single seat projection. |
-| `capabilities.py` | Exact-session capability evidence per harness with runtime-version demotion. |
+| `capabilities.py` | Exact-session capability evidence per harness; contract-only honesty (no version demotion since L5F R4). |
 | `factories.py` | Running-session resolution, live identity proof, server-issued identity digest, typed session errors. |
 | `__init__.py` | Package marker. |
 
@@ -82,8 +82,11 @@ in the sibling `projectors/` route.
   64-record provenance batches, 30 s consumer TTL, 5-failure authority-loss ladder).
 - One canonical status classification with a revision that advances only on semantic change,
   consumed identically by the Chats page/SSE and by orchestration's seat projection.
-- Per-session capability evidence enabled only from landed installed-runtime fixture rows, with
-  read-time demotion on observed runtime/helper version mismatch.
+- Per-session capability evidence enabled only from landed installed-runtime fixture rows. Since
+  260718-CHATS-L5F R4 (developer ruling 2026-07-21) THE CONTRACT IS THE ONLY GATE: `capabilities_for`
+  discards the snapshot, no version-string comparison demotes any feature, and an un-probed native
+  shape stays `unverified` with a never-probed contract reason (the observed version is informational
+  evidence only). The prior read-time observed-version demotion is removed.
 - One typed `gap {requiresRepage, closeAfterEvent}` per established-stream failure class
   (retention overflow, generation change, ordering fault) — retained so the sequence chain stays
   hole-free, delivered even to a full queue, never an HTTP reset.
@@ -136,7 +139,7 @@ in the sibling `projectors/` route.
 | `store.py` | idempotence authority | Rehydration/replay reproduce the identical projection; tool blocks converge, never drop. | covered |
 | `cursor.py` | cursor authority | Every active token's mint/verify boundary; tampering or cross-purpose use fails closed. | covered |
 | `status.py` | status authority | The only evidence classification; both Chats and orchestration consume it. | covered |
-| `capabilities.py` | capability evidence | Capability honesty: supported only with fixture evidence; version mismatch demotes. | covered |
+| `capabilities.py` | capability evidence | Capability honesty: supported only with fixture evidence; an un-probed contract stays `unverified` (contract-only gate, no version demotion since L5F R4). | covered |
 | `factories.py` | session resolution | Exact running-session and native-identity proof; no state is ever manufactured. | covered |
 
 ## Local Invariants And Traps
@@ -147,7 +150,18 @@ in the sibling `projectors/` route.
   before headers.
 - The transcript deque is never history authority; Claude user items come only from the exact
   submission echo, zipped by turn order without timestamps (an advancing evidence-eviction floor
-  voids the zipper and gaps `ordering-fault` — review F3).
+  voids the zipper and gaps `ordering-fault` — review F3). Since 260718-CHATS-L5F R3 the echo poller
+  consumes ONLY `role=="user"` transcript entries; assistant/result entries are advanced past (the
+  evidence/terminal path owns them), so a mixed-role 2.1.216 transcript no longer mints spurious
+  `claude:echo: unrecognized submission echo shape` unknown-vendor rows.
+- 260718-CHATS-L5F R5 releases dormant per-session state: `projector._release_dormant_state` frees
+  the FULL heavy projection on the idle-break (ProjectionStore items/order, the L5
+  `_live_turn_ids`/`_live_request_ids`, retention and pending frames) and retires the shell, so a
+  dead session's heavy state frees within ~30-60s of the last subscriber leaving instead of at
+  32-LRU eviction; `matches()` then returns False so the next access re-creates a fresh projector.
+  `service.release_session` can de-register + close a projector explicitly, but is NOT wired into
+  terminate/retire this leaf (reviewer F1 accepted-bounding disposition — the leak is closed by
+  bounding + idle-release; the wiring locus is recorded in the file sidecar).
 - Tool-call upserts union blocks by `block_id`; whole-item replacement would silently discard
   the invocation (review F1).
 - Hosted codex live notifications and `thread/read` history use DISJOINT id namespaces (live
@@ -240,14 +254,26 @@ capability from fixture existence.
 
 ## Needs Verification
 
-- Claude's active surface stays `unverified` on this machine (installed 2.1.214 ≠ locked
-  2.1.211) until a real installed 2.1.211 session crosses the production evidence seam; the
-  wire carries the exact reason.
+- Claude's active surface stays `unverified` with a NEVER-PROBED contract reason ("frame contract
+  not yet probed through a captured production fixture … never a version gate"), no longer a
+  version-mismatch reason (L5F R4 removed the version gate). Promoting claude to `supported` needs
+  a captured 2.1.216 runtime fixture through the production evidence seam — recorded follow-on
+  (worker H3); the R7 E2E now proves the contract live.
 - Codex live reasoning/tools/diffs and pi live thinking/tools stay `unverified` until
   installed-runtime fixtures observe those shapes through the production seam.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths landed
+  in this slice. R4 version-gate REMOVAL (developer ruling 2026-07-21) — corrected the now-false
+  read-time observed-version demotion doctrine to the contract-only gate (`capabilities.py` discards
+  the snapshot; claude reasons are never-probed contract language, not the installed-vs-locked
+  mismatch). R3 — the echo poller consumes only `role=="user"` transcript entries so a 2.1.216
+  mixed-role transcript no longer mints `claude:echo` unknown-vendor rows. R5 —
+  `projector._release_dormant_state` frees the full heavy projection on the idle-break and
+  `service.release_session` de-registers a projector (unwired from terminate/retire this leaf; F1
+  accepted-bounding). The two routes, cursor authority, per-app service, and status contract are
+  unchanged. Verification stays pinned until L5F closeout stamps the candidate commit.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the two production-E2E hardening truths
   landed in this slice — the projector's F1 live-settled-natives filter (disjoint live vs
   `thread/read` id namespaces, twin suppression by turn-id / submitted `clientId` / walk-scoped

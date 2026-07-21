@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated            | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -28,6 +28,11 @@ FEUI-L8 deliberately separates strategic ownership:
 - [session-cockpit overview](panels/session-cockpit/overview.md) — the sole full-page Chats product.
 - Existing focused child overviews under data, grammar, and panels own their routes. The bounded
   `cockpit/` and `dev/` source slices remain governed here rather than gaining thin overview files.
+- [e2e-chats overview](../e2e-chats/overview.md) — the durable, opt-in Chats end-to-end suite
+  (260718-CHATS-L5F R7/FB5) is a **sibling** route to `dashboard/src/` (it lives at
+  `dashboard/e2e-chats/`, not under `src/`): it boots an isolated real dashboard daemon from the
+  worktree and drives the real installed harnesses through this cockpit. Governed by its own route
+  overview under the root; linked here for discoverability.
 
 ## FEUI-L9R Runtime Truth Repair
 
@@ -175,6 +180,13 @@ references informed product framing only; current code truth stays in agents-rem
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: added a discoverability pointer to the new
+  sibling [e2e-chats overview](../e2e-chats/overview.md) — the durable, opt-in Chats E2E suite
+  (R7/FB5) that boots an isolated real dashboard daemon from the worktree and drives the real
+  installed harnesses through this cockpit. The suite lives at `dashboard/e2e-chats/` (a sibling of
+  `src/`, governed by its own route overview under the root); the `dashboard/src/` route model is
+  otherwise unchanged. Verification metadata pinned; the L5F change is uncommitted and closeout
+  re-stamps.
 - 2026-07-21T05:30+02:00 — No route impact: the `dashboard/src` route model
   (`cockpit/`/`grammar/`/`panels/`/`data/`) is unchanged by 260718-CHATS-L5P (cockpit chrome visual
   polish, PASS-WITH-NOTES; dashboard-only, zero backend edits). The two app-wide `dashboard/src/`-direct

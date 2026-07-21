@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_launch.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash |  `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate |  2026-07-15T23:33:30+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,13 @@ and Codex may use one unambiguous resolved vendor identity.
 `verify_effective_launch` reuses catalog validation and compares running model/effort echoes. Its
 explicit `require_effort_echo` parameter preserves real protocol asymmetry: Pi requires both echoes,
 while Claude can truthfully accept model echo plus catalog-validated native effort because
-stream-json exposes no effort echo. `apply_launch_knobs` inserts adapter argv immediately after the
+stream-json exposes no effort echo. Since 260718-CHATS-L5F R2 a strict catalog-KEY equality is no
+longer the only acceptance path: the `_resolves_to_same_model` secondary guard accepts when the
+running-reported key and the requested selection resolve to the SAME underlying model — the fix for
+the claude `opus[1m]` refused-pair, where request `opus[1m]` and `default` share
+`resolved_model=claude-opus-4-8[1m]` and the harness echoes the resolved id. A genuinely different
+or absent resolved model still fails loudly (both directions test-pinned); codex exact-key and pi
+exact-provider-qualified-key acceptance are unchanged. `apply_launch_knobs` inserts adapter argv immediately after the
 executable, merges adapter env, and refuses conflicts with owned argv options or config keys. The
 Codex grammar scan covers separated, equals-attached, and short-attached selector/config forms.
 
@@ -53,8 +59,10 @@ evidence.
 - Pi model identity is exact `provider/id`; a bare id is refused with matching alternatives.
 - Adapter-owned argv/config/environment cannot coexist with a second free-form declaration.
 - Duplicate-selector preflight must happen before token-free discovery starts a transient process.
-- Effective launch mismatch fails loudly; acceptance evidence is never invented where a protocol
-  lacks an echo.
+- Effective launch mismatch fails loudly, EXCEPT when the reported key and the requested selection
+  resolve to the same underlying model (`_resolves_to_same_model`, R2) — an alias/default collision
+  on one `resolved_model` validates; a different or absent resolved model still refuses. Acceptance
+  evidence is never invented where a protocol lacks an echo.
 - The module performs no subprocess, settings write, ACP transport, Toad hosting, composer paste,
   or mid-session mutation.
 
@@ -96,6 +104,13 @@ their in-repository own adapters.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 model-acceptance — `verify_effective_launch`
+  gains the `_resolves_to_same_model` secondary guard so an alias/default catalog-key collision that
+  resolves to one underlying model VALIDATES (the claude `opus[1m]`·medium refused-pair defect, where
+  request `opus[1m]` and `default` share `resolved_model=claude-opus-4-8[1m]` and the harness echoes
+  the resolved id); a genuinely different or absent resolved model still fails loudly, and codex/pi
+  exact-key acceptance is unchanged (both directions test-pinned). Verification metadata stays pinned
+  until closeout stamps the candidate commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: created onboarding for the complete typed
   launch selection, dynamic model-gated validation, exact Pi identity, honest effective-echo
   verification, and pre-discovery duplicate-authority refusal. Verification metadata remains empty

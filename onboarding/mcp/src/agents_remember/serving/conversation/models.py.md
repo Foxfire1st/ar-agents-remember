@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
+| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,11 @@ history store, or control service.
   explicit lane/source/producer provenance, and unknown-vendor/input evidence.
 - Status models fix the evidence-to-turn-state vocabulary and validate waiting and terminal
   cross-products; unknown evidence cannot establish ready.
-- Capability models require exact evidence products and demote mismatched runtime/helper versions.
+- Capability models require exact evidence products. Since 260718-CHATS-L5F R4 (developer ruling
+  2026-07-21) `FeatureCapability` carries a documenting NOTE (L653-L658) that there is deliberately
+  NO `for_observed_runtime` version-demotion: the contract is the only gate, a capability is never
+  demoted because an installed runtime/helper version drifts from a fixture's captured version, and
+  the runtime/helper version survives on `CapabilityEvidence` as informational metadata only.
 - Page/event models carry cursor continuity and explicit gap/repage semantics.
 - Open, interrupt, queue, withdrawal, attachment, telemetry, and runtime-fixture DTOs validate the
   full semantic product rather than relying on callers to combine individually valid fields.
@@ -91,6 +95,11 @@ No cross-repository implementation governs these contracts.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
+  2026-07-21, R4). Corrected the now-false "demote mismatched runtime/helper versions" claim:
+  `FeatureCapability.for_observed_runtime` is removed; a documenting NOTE (L653-L658) records the
+  deliberate absence and the contract-only gate; the runtime/helper version is informational
+  `CapabilityEvidence` metadata only. Uncommitted; closeout re-stamps verification.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the contract sidecar after same-reviewer
   PASS closed six authority findings. Verification is blank until closeout commits and stamps the
   new source.

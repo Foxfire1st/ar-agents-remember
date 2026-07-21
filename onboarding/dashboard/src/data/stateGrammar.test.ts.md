@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/stateGrammar.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
+| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,10 @@
 ## Purpose
 
 Unit suite for the seat-state grammar (260715-FEUI-L2 R14) — the spec §2.4 mapping and the
-developer pulse ruling pinned as behavior.
+developer pulse ruling pinned as behavior. 260718-CHATS-L5F R9 adds the `liveTurnWorking`
+display-preference pins: the projection-derived working signal overrides a lagging catalog
+`turn-ended`, but slots BELOW the terminal/fault/blocked guards so it can never fake liveness over a
+real end state.
 
 ## Code Commentary
 
@@ -28,6 +31,14 @@ developer pulse ruling pinned as behavior.
   rendered into word AND chip; failed = alarm SLOW PULSE and outranks turn-state; ready/turn-ended
   = steady mint; landed/retired = dormant and outrank every live signal; starting = cyan steady;
   unclassified stays unclassified and stale stays stale (mirrors, never invents).
+- **liveTurnWorking override (260718-CHATS-L5F R9)** — `seatVisualState({ turnState: "turn-ended",
+  liveTurnWorking: true })` resolves to `working`: the sub-second projection signal is PREFERRED over
+  the sweep-lagging catalog `turn-ended`.
+- **liveTurnWorking never over an end state (R9 honesty pin)** — the signal slots BELOW the
+  terminal/fault/blocked guards, so `liveTurnWorking: true` cannot resurrect a real end state:
+  with `status: "terminated"` it stays `retired`, with `controlState: "failed"` it stays `failed`,
+  and with a pending approval interaction it stays blocked. This is the guard-order proof that the
+  display preference can never fake liveness over a genuine terminal/fault/blocked state.
 - **The pulse ruling** — asserts `PULSE_ANIMATION` is the 2.4 s ease-in-out string and contains NO
   `steps(` — the reviewer additionally greps the diff for `steps(` additions at review time.
 
@@ -64,6 +75,10 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the two R9 `liveTurnWorking` pins —
+  the projection working signal overrides a lagging catalog `turn-ended`, and the guard-order proof
+  that it NEVER fakes liveness over a terminal/fault/blocked state. Verification stays pinned; the
+  L5F change is uncommitted and closeout re-stamps.
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
   is unchanged by this memory-only governance move; verification hash/date remain pinned.
