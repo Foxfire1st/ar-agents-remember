@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T23:08+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -164,7 +164,16 @@ assertions stay right-world-only).
 | The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | L61-L72 | [projection.ts](../../types/projection.ts) |
 | The jsdom stubs + determinism freeze. | — | [test/setup.ts](../../test/setup.ts) |
 
+## Current L5I Maintenance
+
+The map suite now drives intersection changes to prove that all GSAP context tweens pause/resume
+without rebuilding and that the blueprint video pauses off-screen. It also pins the full-geometry
+warp-surge inputs used by transform animation.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded off-screen animation/video and transform-surge
+  regressions; verification fields remain pre-commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: added the stale landing rendering regression, covering visible stale styling, freshness age, and suppression of landing-flow packets.
 
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: added coverage for `runtimeState="missing"` and a regression proving missing code/memory provider slots render as visible gauges. Verification metadata pinned until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/BusPane.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,16 @@ No meaningful cross-repo boundary is owned here.
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
+## Current L5I Maintenance
+
+`BusPane` now receives an `ageClockActive` gate and advances its local age clock only while the
+visible inspector is showing the bus tab. Hidden inspector tabs retain their data but do not perform
+unseen clock-driven rendering.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented inspector-tab age-clock gating; verification fields
+  remain pre-commit.
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Records the
   fleet-first projection, exact filter, honest empty states, and entry-keyed reply persistence.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/index.css`                        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -92,6 +92,12 @@ driver is the grammar/StateDot pair (2.4 s ease-in-out, never steps()). *(Correc
 draw-on moved to GSAP. 05k makes the point moot by deleting all nine canvas keyframes and re-driving the
 reindex pulse from GSAP `data-fx='reindex'`.)*
 
+### 2026-07-24 Curator Delta
+
+The CRT effects overlay no longer uses full-screen `mix-blend-mode:multiply`. Its unchanged translucent
+scanline and vignette treatment can remain a static compositor layer rather than forcing a whole-screen
+re-raster for scroll, video, or animation invalidations.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -104,6 +110,9 @@ reindex pulse from GSAP `data-fx='reindex'`.)*
 | Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | — | [panels/session-cockpit/InspectorPrimitives.tsx](panels/session-cockpit/InspectorPrimitives.tsx.md) · [panels/session-cockpit/conversation/MarkdownBlock.tsx](panels/session-cockpit/conversation/MarkdownBlock.tsx.md) · [panels/session-cockpit/SessionRail.tsx](panels/session-cockpit/SessionRail.tsx.md) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented the compositor-safe CRT overlay change. Verification hash/date
+  remain pinned to the pre-commit source stamp.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the RV-1 root override (LOAD-BEARING) —
   an unlayered `html, body, [data-view="sessions"] { word-break: normal; overflow-wrap: break-word }`

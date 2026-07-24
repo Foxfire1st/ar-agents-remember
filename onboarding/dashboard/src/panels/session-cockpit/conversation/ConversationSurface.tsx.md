@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,18 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+The structured surface always retains its timeline well, including an empty live conversation; the
+empty state is now `ConversationWelcome` inside that well and receives real process state for its
+readiness wording. It tracks scroll memory per session, restores only when layout geometry is active,
+and suppresses live-region announcements from hidden keep-alive surfaces while still tracking their
+projection state.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected empty-well, process-readiness, scroll-memory, and
+  hidden-announcement invariants; verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded R11 progressive disclosure — the
   always-visible `history: <reason>` note div was removed; the history and live capabilities now render

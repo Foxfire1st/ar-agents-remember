@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/ChatActivityIndicator.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,11 @@ The test uses a small local `session` builder and Testing Library cleanup; it te
 
 None.
 
+### 2026-07-24 Curator Delta
+
+The summary tests pin ready-without-turn as idle and starting-without-turn as unknown, preventing the
+fresh-chat path from returning to a stale or alarmed label.
+
 ## Docs References
 
 No relevant domain documentation was configured in the resolved `system/sources.md`.
@@ -61,5 +66,8 @@ No meaningful cross-repository reference exists.
 | No cross-repo reference. | — | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added fresh-chat activity-summary coverage. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-12T17:50 — 260712-TRH-L6: created onboarding for the new focused activity regressions and their exact identity/precedence/omission contract. Candidate source remains uncommitted; metadata is pinned to the current code HEAD until closeout.

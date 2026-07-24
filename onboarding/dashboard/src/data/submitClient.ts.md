@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submitClient.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -48,6 +48,12 @@ flows without treating draft editability as transport readiness.
 
 None for FEUI-L5.
 
+### 2026-07-24 Curator Delta
+
+The submission gate lets an actively streaming projection outrank a lagging disconnected sweep state.
+Composer drafts clear once authority has committed the request through queued, delivering, or accepted;
+withdrawability remains reserved for a server-confirmed queued lifecycle state.
+
 ## Docs References
 
 No Domain Documentation source is configured for this repository.
@@ -81,6 +87,9 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented live-turn gate precedence, draft clearing, and queued-receipt
+  honesty. Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

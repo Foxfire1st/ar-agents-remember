@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminal.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,6 +88,11 @@ separate authorities; fakes must not collapse them into one close signal.
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
+### 2026-07-24 Curator Delta
+
+The terminal tests now prove one shared catalog read for concurrent callers and a fresh successful
+retry after an abort-aware hung catalog or harness request expires.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -114,6 +119,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added terminal and harness catalog single-flight timeout coverage.
+  Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: replaced boolean opener assertions with real-response
   success/failure classification, exact server identity, and Round 1 raw harness/control

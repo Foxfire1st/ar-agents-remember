@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 
 ## What This Area Is
 
@@ -284,7 +284,15 @@ body.
   for codex and every claude/pi metric stay visibly unverified/unavailable until installed-runtime
   fixtures observe them through the production seam.
 
+## 260718-CHATS-L5I Current Route Impact
+
+The control child now carries normalized question pages and an exact answers map through both gate-mediated and lifecycle-free response paths. Native Claude interrupt joins the existing exact-turn control ledger with an explicit acknowledgement/settlement split; a failed adapter decision reopens with visible failure evidence rather than masquerading as approval.
+
+Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths for
   the control route. R4 version-gate REMOVAL (developer ruling 2026-07-21) — corrected the now-false

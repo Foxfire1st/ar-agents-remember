@@ -50,6 +50,7 @@
     "mcp/tests/test_controller_guards.py",
     "mcp/tests/test_controlplane_gates.py",
     "mcp/tests/test_conversation_active_api.py",
+    "mcp/tests/test_conversation_active_capabilities.py",
     "mcp/tests/test_conversation_active_projectors.py",
     "mcp/tests/test_conversation_active_service.py",
     "mcp/tests/test_conversation_active_status.py",
@@ -91,6 +92,7 @@
     "mcp/tests/test_harness_logs.py",
     "mcp/tests/test_harness_submission_authority.py",
     "mcp/tests/test_harnesses.py",
+    "mcp/tests/test_heap_diag.py",
     "mcp/tests/test_hosted_control_conformance.py",
     "mcp/tests/test_hosted_interactions.py",
     "mcp/tests/test_hosted_readiness.py",
@@ -172,6 +174,7 @@
     "mcp/tests/test_tool_response_conformance.py",
     "mcp/tests/test_tools.py",
     "mcp/tests/test_worktree_abandon.py",
+    "mcp/tests/test_worktree_closeout_quality_gate.py",
     "mcp/tests/test_worktree_contract_lifecycle.py",
     "mcp/tests/test_worktree_lifecycle_attribution.py",
     "mcp/tests/test_worktree_longpath_preflight.py",
@@ -181,8 +184,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 162,
-    "fileSidecars": 169,
+    "sourceFilesInScope": 165,
+    "fileSidecars": 172,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -229,6 +232,7 @@
     "cleanup",
     "cli",
     "client",
+    "closeout",
     "code",
     "codex",
     "codex_app_server_0_144_3",
@@ -257,15 +261,14 @@
     "daemon",
     "dashboard",
     "degradation",
+    "diag",
     "discovery",
     "dispatch",
     "doc",
     "docker",
     "document",
     "drift",
-    "escalation",
-    "evidence",
-    "expectation"
+    "escalation"
   ],
   "hotPath": {
     "summary": "For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git generated-positive/authored-negative regression. Use `dashboard/package.json` and `dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest parity. Do not route this seam through generated asset file cards or a generic normalizer. For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census and byte-convergence matrix,...",

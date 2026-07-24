@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -101,7 +101,15 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+The rail suite now pins immediate single-seat termination, retained bulk confirmation, failure
+recovery, and the absence of the duplicate bus-footer presentation.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded immediate-end and rail-declutter regression coverage;
+  verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: updated the bus-footer freshness pin to the
   humanized `heartbeat 2 s / stale cutoff 1 m 0 s` form (R5/A4); the anchored pending/redeliverable case

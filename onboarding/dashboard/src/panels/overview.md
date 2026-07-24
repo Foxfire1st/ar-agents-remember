@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -133,7 +133,18 @@ inside agents-remember.
 | Full-page route registration/default. | [Cockpit.tsx](../cockpit/Cockpit.tsx) |
 | Shared terminal, composer, selection-send, and contextual chat. | [Terminal.tsx](Terminal.tsx) · [SessionComposer.tsx](SessionComposer.tsx) · [HighlightComposer.tsx](HighlightComposer.tsx) · [RailChat.tsx](RailChat.tsx) |
 | Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
+## Current L5I Route State
+
+The panels route now treats keep-alive shells as an explicit performance boundary: persistent
+top-level panels memoize unchanged shell rerenders, while their own store subscriptions remain live.
+Interactive controls also favor evidence-bounded wording, including reopened gate failures and
+viewport-measured leaf-picker placement.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented cross-panel persistent-subtree memoization and the
+  current evidence/placement conventions introduced by this route's owned sources. Verification
+  metadata remains pre-commit.
 
 - 2026-07-21T11:30+02:00 — No route impact: the `dashboard/src/panels` route model is unchanged by
   260718-CHATS-L5F (half-time functional fixes, PASS-WITH-NOTES). No DIRECT `panels/` child changed;

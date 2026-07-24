@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -142,7 +142,16 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 | The Zustand projection store seeded by the test. | L1-L112 | [data/store.ts](../data/store.ts) |
 | The frontend mirror of `WorkspaceProjection`, `LifecycleProjection`, and `EnclosureNode`. | L1-L80; L360-L390 | [types/projection.ts](../types/projection.ts) |
 
+## Current L5I Maintenance
+
+The list tests now exercise the active/inactive rendering boundary as well as the established task
+hierarchy rules, preserving the guarantee that a hidden persistent rail need not advance its local
+age presentation.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded hidden-rail activity regression coverage; verification
+  fields remain pre-commit.
 
 - 2026-07-12T17:50 — 260712-TRH-L6: added Operations integration coverage for running-task versus idle-chat
   separation, pending inbox versus idle chat, shared-store live transitions, and the three-axis row

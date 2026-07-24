@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -121,6 +121,11 @@ regression stays at the connection seam, where the suite can prove no submit inp
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
+### 2026-07-24 Curator Delta
+
+New reconciliation cases assert zero subscriber work for an identical poll, stable references for
+unchanged rows in a mixed payload, and replacement of an optimistic local patch by the next catalog row.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -161,6 +166,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added catalog reconciliation identity regression coverage. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced the deleted Chats test/view ownership with the
   current session-cockpit consumers and the `PtySurface`, `SessionsView`, and Cockpit S5 keep-alive

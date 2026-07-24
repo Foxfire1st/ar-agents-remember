@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_projectors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,25 @@ No cross-repository implementation participates in this suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Projector regressions now exercise Claude tail ordering, structured interaction evidence, and recovery around non-turn trailing frames. The cases preserve the rule that unknown vendor evidence is retained without being promoted into a fabricated transcript turn.
+
+The incremental CRAP remediation reaches mutation behavior only through
+`claude.map_evidence_frame`. Table-driven cases cover valid Edit, MultiEdit, Write, and NotebookEdit
+diff blocks; rejected mappings, incomplete edits, unknown tools, and non-mapping input; and exact
+raw `ToolInputBlock.data` preservation for both accepted and rejected shapes. This public-path
+coverage keeps every extracted mutation parser below the mandatory threshold.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: recorded the public-path valid and
+  malformed mutation matrix that proves the projector parser split without bypassing the stable
+  mapper facade; verification remains pinned until the code commit.
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R1/R3 mapper regressions this
   leaf added — the codex startup-burst-mints-zero, method-carried-still-maps, and truly-unknown-names-the-method

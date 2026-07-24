@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-06-28T03:21+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -223,7 +223,18 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 | The honest-motion gate the GSAP/Motion read. | [useShouldAnimate.ts](agents-remember/dashboard/src/panels/engine-room/useShouldAnimate.ts) |
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
 
+## Current L5I Route State
+
+Engine Room visibility is now an execution boundary, not merely a visual one. Hidden keep-alive
+layers pause GSAP/Motion/video work through a shared observer gate; the room also narrows analytics
+subscriptions and memoizes its model so unrelated snapshot changes do not rebuild the dense map.
+SVG effects use composited transforms with non-scaling stroke protection where a scaled ring stands
+in for radius animation.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented the hidden-room CPU contract, narrowed subscriptions,
+  and transform-safe SVG effects. Verification metadata remains pre-commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: Engine Room now types and visibly renders stale landing facts, exposes their age, and suppresses stale/missing landing motion while retaining the node.
 
 - 2026-06-28T03:21+02:00 — Task 31 route impact: `BootTimeline`, `EnclosureCanvas`, and the shared

@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 
 ## What This Area Is
 
@@ -262,7 +262,15 @@ capability from fixture existence.
 - Codex live reasoning/tools/diffs and pi live thinking/tools stay `unverified` until
   installed-runtime fixtures observe those shapes through the production seam.
 
+## 260718-CHATS-L5I Current Route Impact
+
+Active conversations now distinguish a quiet healthy ready state from stale evidence-expected work, bootstrap an event subscription without invalidating a fresh page, and re-page from a new server cursor when a stream cannot prove continuity. The active capability view delegates interrupt evidence to the control gate, eliminating a second local verdict.
+
+Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths landed
   in this slice. R4 version-gate REMOVAL (developer ruling 2026-07-21) — corrected the now-false

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/conversation/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-21T11:30+02:00                           |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -67,6 +67,15 @@ side-effect-free core the store, the stream, and the tests all share, so the aut
   banner).
 - `thinkingPreference.ts` — the global persisted hide-thinking preference (`cockpit.chats.hide-thinking.v1`,
   the only durable UI bit — non-destructive, instant).
+
+## 2026-07-24 Warm Projection And Liveness Refinement
+
+Focus changes keep up to `LRU_LIMIT=6` active projections warm; only LRU eviction and session termination
+disconnect their runtime. The UI's scroll geometry is deliberately outside the reducer/store protocol
+state: per-session view memory restores only after stable rendering and cannot alter replay authority.
+HTTP page, telemetry, and interrupt calls are abort-bounded. The stream retries faster before first open,
+uses a visible-tab one-shot watchdog for sleep or half-open channels, and turns a replacement instance
+that never opens into an honest failure rather than perpetual connecting.
 
 ## Invariants And Boundaries
 
@@ -142,6 +151,7 @@ this overview is their governing pillar.
 | Pure authority-sensitive reducer | [reducer.ts](reducer.ts.md) · [reducer.test.ts](reducer.test.ts.md) |
 | Page/telemetry/interrupt HTTP client | [client.ts](client.ts.md) |
 | Resumable SSE transport | [stream.ts](stream.ts.md) |
+| Stream boot and liveness regression coverage | [stream.test.ts](stream.test.ts.md) |
 | Reconstructable store + orchestration | [store.ts](store.ts.md) · [store.test.ts](store.test.ts.md) |
 | Presentation conventions | [format.ts](format.ts.md) · [format.test.ts](format.test.ts.md) |
 | Hide-thinking preference | [thinkingPreference.ts](thinkingPreference.ts.md) |
@@ -176,6 +186,10 @@ package's serving endpoints; no cross-repository implementation source governs i
 | The parent data authority boundary. | [data overview](../overview.md) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Route impact: recorded warm-projection disconnect ownership, the deliberate
+  scroll-geometry boundary, bounded conversation HTTP, and boot/half-open stream liveness. Added the
+  `stream.test.ts` file card; verification metadata remains pinned until the code commit.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R10 initial-hydrate cried-wolf fix
   in the Hot Path Summary — `hydrateAndStream` now retries transient (network / 5xx) first-page

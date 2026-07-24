@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/engine-room/EnclosureCanvas.tsx` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-06-27T23:08+02:00                                 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`             |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`             |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -374,7 +374,16 @@ Landing refs with `factState: stale` remain visible, carry an explicit state wor
 
 The canvas renders the official/source branch from the projected `CommitRefNode` instead of forcing the label to `main`, so a master series leaf can display its integration branch as the official line.
 
+## Current L5I Maintenance
+
+The warp-surge bands now render their full geometry and leave their expanding/retracting motion to
+the timeline's composited transform. This avoids per-frame SVG endpoint writes while retaining the
+same link-origin choreography.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented full-geometry surge bands for transform-owned motion;
+  verification fields remain pre-commit.
 
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: stale landing facts now render with an explicit stale tone/state and age, and stale or missing facts are excluded from landing-flow motion so the UI remains visible but motion-inert while projection stays fresh.
 

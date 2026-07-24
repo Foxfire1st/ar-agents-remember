@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T14:16+02:00                           |
-| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3`       |
-| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -231,7 +231,15 @@ No meaningful cross-repository implementation source governs this repository-loc
 | --- | --- | --- |
 | The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Serving tests now cover projection-body reuse, gzip for ordinary JSON, deliberately uncompressed SSE streaming, and the opt-in heap/allocator lifecycle hooks.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: documented deterministic coverage for the
   atomic snapshot/subscription handoff, failed-prime first-recovery snapshot plus build identity,

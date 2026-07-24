@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLifecycle.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -70,6 +70,12 @@ against the retire route's authority checks).
   deliberately resurfaces undismissed retire residuals — the catalog row still carries the fact.
 - Store state is in-memory: reload persistence is the catalog row itself, not this store.
 
+### 2026-07-24 Curator Delta
+
+Successful terminate and landed cleanup now explicitly disconnect the active conversation runtime.
+Focus changes keep healthy projections warm, but a terminated seat must not retain its SSE runtime until
+later LRU pressure.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -110,6 +116,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added termination-time conversation disconnect ownership. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

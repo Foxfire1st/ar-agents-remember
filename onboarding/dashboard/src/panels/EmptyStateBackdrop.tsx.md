@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`                                        |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                                        |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -72,6 +72,12 @@ reintroduce a DOM/CSS/Motion zoom wrapper around this filtered video. If the des
 framerate changes, re-render the MP4 assets instead. The `.mp4` assets live in
 `dashboard/public/assets/` and are referenced by path, not imported.
 
+### 2026-07-24 Curator Delta
+
+The backdrop wrapper observes its actual layer visibility. Its looping video pauses while an ancestor
+kept-mounted cockpit layer is hidden and resumes when the layer returns, avoiding hidden decoding while
+preserving the component's visual treatment.
+
 ## Docs References
 
 The engine-room visual language (state colours, motion, glow, the atmospheric backdrop) is the design
@@ -105,6 +111,9 @@ empty states that mount it.
 No meaningful cross-repo references found. This is a self-contained presentational dashboard component.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added visibility-gated backdrop video behavior. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

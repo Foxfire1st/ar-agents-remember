@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.tsx`  |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-06-23T13:45+02:00                                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -98,7 +98,15 @@ is `aria-hidden` pure atmosphere, never state. `data-testid` hooks (`process-map
 | The honest-motion gate. | — | [useShouldAnimate.ts](useShouldAnimate.ts) |
 | Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | L251-L285 | [projection.ts](../../types/projection.ts) |
 
+## Current L5I Maintenance
+
+The process-map wrapper is observed for visibility. A hidden keep-alive room pauses the decorative
+blueprint video, then resumes playback on re-show without unmounting the map.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded hidden-layer video pause/resume behavior; verification
+  fields remain pre-commit.
 
 - 2026-06-23T13:45+02:00 — Task 11: added optional `gateNode` prop and threaded it into
   `EnclosureCanvas`. The process map still renders no gate response control; diagnostics owns the

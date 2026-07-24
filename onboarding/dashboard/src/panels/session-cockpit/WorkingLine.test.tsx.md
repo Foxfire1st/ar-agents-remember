@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -74,7 +74,16 @@ No meaningful cross-repo references found.
 No WorkingLine behavior changed. Its session fixture gained empty `submitHistory` for the expanded
 cockpit state; working-line liveness/stream assertions remain semantically unchanged.
 
+## Current L5I Maintenance
+
+The fallback-line suite now distinguishes the absent interrupt (no control) from an unavailable
+wired interrupt (disabled honest control), retaining raw-terminal stop behavior without duplicating
+the controlled composer action.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded fallback working-line stop ownership regressions;
+  verification fields remain pre-commit.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5 fixture-only refresh; no WorkingLine semantic impact.
 

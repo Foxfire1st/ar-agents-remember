@@ -83,7 +83,7 @@
       "CodeMirror",
       "dashboard/src/panels/file-viewer/",
       "route-local-overview",
-      "e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5",
+      "842b487b854503d95c9c2d9dce1841198ba93c7d",
       "/overview.md",
       "file-viewer/",
       "GET /api/files/{repos,list,read,onboarding",

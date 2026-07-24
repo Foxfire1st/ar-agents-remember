@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/keymap/preferences.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate |  2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,11 @@ writer notification; and browser `storage` propagation.
 
 Tests must prove both the accepted effective binding and the visible issue for rejected input. A
 test that only asserts fallback would hide why an operator preference was ignored.
+
+### 2026-07-24 Curator Delta
+
+Preference resolution now expects Enter as the default `composer.submit` chord, while retaining
+validation of browser-reserved and duplicate bindings.
 
 ## Docs References
 
@@ -54,6 +59,9 @@ The suite tests a repository-local module and browser storage doubles; no cross-
 | Unit under test. | [preferences.ts](preferences.ts) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Updated default submit-chord preference coverage. Verification hash/date
+  remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — Created for FEUI-L8 effective-keymap regressions; verification metadata
   remains blank until the new source is committed.

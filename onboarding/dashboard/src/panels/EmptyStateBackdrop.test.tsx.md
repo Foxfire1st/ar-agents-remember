@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.test.tsx` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-24T13:04+02:00                             |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                          |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                                          |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -54,6 +54,11 @@ effects-on; `data-effects=off` flips the first branch and a `matchMedia` reduce 
 `empty-backdrop-zoom` absence pins that runtime zoom stays out of the component; the `loop` + `muted` +
 `aria-hidden` assertions pin the seamless-boomerang + muted-autoplay + atmosphere-not-state contracts.
 
+### 2026-07-24 Curator Delta
+
+The test supplies a controllable IntersectionObserver and asserts that hiding a kept-mounted backdrop
+pauses its video while a re-show resumes playback.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -66,6 +71,9 @@ effects-on; `data-effects=off` flips the first branch and a `matchMedia` reduce 
 No meaningful cross-repo references found. This is a self-contained dashboard render test.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added hidden-layer video pause/resume coverage. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

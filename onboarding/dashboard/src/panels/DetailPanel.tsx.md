@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/DetailPanel.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T12:07+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -221,6 +221,11 @@ Complete visible task content outranks optional reader metadata: `TaskNotes` and
 `ChangeSetButton` under the selected reader remain unmounted only while body state is `loading`, then
 resume for both `available` and `unavailable` so fallback mode retains existing tools.
 
+### 2026-07-24 Curator Delta
+
+`DetailPanel` is now a memoized persistent cockpit layer. Stable callbacks and unchanged selection let
+view switches skip its subtree, while real selection and store changes still pass through the memo gate.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -249,6 +254,9 @@ resume for both `available` and `unavailable` so fallback mode retains existing 
 | The shared empty-state backdrop the no-selection state renders. | L1-L64 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added persistent DetailPanel memoization semantics. Verification hash/date
+  remain pinned to the pre-commit source stamp.
 
 - 2026-07-12T12:55+02:00 — 260712-TRH-L2: changed the existing series change-set counter call site to request `includeLeaves=false`; no new reader state or transport behavior was introduced. Verification metadata pinned until closeout stamps the L2 code commit.
 - 2026-07-12T12:07+02:00 — 260712-TRH-L1: moved hydration/cache ownership to

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/stream.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,6 +51,12 @@ controller only delivers ordered envelopes and reports connect/disconnect.
 - **Superseded sources are inert** (the `source !== next` guard), so a slow close cannot demote a fresh
   connection.
 
+### 2026-07-24 Curator Delta
+
+Before its first successful open, the stream retries the bridge boot window quickly; established
+drops retain the normal backoff. An open deadline and shared liveness watchdog distinguish an
+unopened or half-open channel from an honestly live one, while a quiet resume remains visually quiet.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
@@ -80,6 +86,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Recorded boot-aware reconnect, open-deadline, and half-open watchdog
+  behavior. Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the resumable SSE
   controller — the manual fresh-EventSource reconnect from `after=<cursor>` (no `Last-Event-ID`) that

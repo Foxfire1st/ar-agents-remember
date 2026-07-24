@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -218,7 +218,16 @@ list.
 | Task-row pickup spinner/check-chat notice. | — | [AgentPickupIndicator.tsx](AgentPickupIndicator.tsx) |
 | Native disclosure control and stable persisted collapse hook used by the hierarchy renderer. | L21-L45; L1-L28 | [TaskGroupDisclosure.tsx](TaskGroupDisclosure.tsx); [useCollapsedTaskGroups.ts](useCollapsedTaskGroups.ts) |
 
+## Current L5I Maintenance
+
+The lifecycle rail accepts an `active` signal. Its locally advancing staleness clock stops while a
+kept-alive rail is hidden, while the render-heavy row/group derivation lives in a memoized child so
+clock and parent renders do not reconstruct the React Aria list unnecessarily.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented hidden-rail clock pausing and memoized row rendering;
+  verification fields remain pre-commit.
 
 - 2026-07-12T17:50 — 260712-TRH-L6: Operations now subscribes to the shared Chats session catalog and
   renders separate task-progress, live turn-activity, and inbox acknowledgment axes. Exact-leaf-first

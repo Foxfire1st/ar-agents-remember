@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -180,7 +180,15 @@ Claude hosted-control tests now prove sole-operation authority across prompt/int
 traffic, exact terminal completion, late/cancel/duplicate immunity, and bounded retained history.
 Unknown setter evidence remains the shared barrier until exact resolution.
 
+## 260718-CHATS-L5I Current Delta
+
+Claude control regressions now pin native interrupt request acceptance and the corresponding typed failure/detail paths without mistaking acknowledgement for turn settlement.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: added Claude sole-authority, exact completion, stale-event, and
   bounded-history regression proof.

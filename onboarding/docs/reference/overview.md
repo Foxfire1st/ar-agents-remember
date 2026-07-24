@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-16T07:27+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25`|
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastUpdated | 2026-07-24T14:44Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 
 ## Purpose
 
@@ -32,7 +32,27 @@ switching supersedes the earlier launch-only assumption without creating a Fable
 Structured hosted dispatch, complete serving reload, and the bounded R9 compatibility exception
 remain separate contracts.
 
+For commit-gate and closeout questions, `mcp-tools.md` is the public tool-surface
+reference, `worktrees-c09.md` owns the quality-before-commit sequence, and
+`skills.md` records that synchronized skill copies are checked at both
+pre-commit and pre-push.
+
+## 260718-CHATS-L5I Commit-Gate Reference Impact
+
+The public reference route now exposes the same mandatory source-quality order
+as the implementation and runtime guidance. `worktree_closeout_apply` runs the
+strict project-owned wrapper before an Agents Remember source commit;
+`worktrees-c09.md` places that gate before code, onboarding, memory, and ledger
+commit steps; and the skills reference names both pre-commit and pre-push sync
+checks. These are documentation projections of the existing gate authority, not
+independent bypasses or alternative check sequences.
+
 ## Update History
+- 2026-07-24T14:44Z — 260718-CHATS-L5I preview-gate remediation: refreshed the
+  route body for the public MCP closeout description, strict
+  quality-before-commit worktree order, and pre-commit/pre-push skill-sync
+  checks. Verification metadata remains pinned until the code commit.
+
 - 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: aligned the reference route with the final
   three-source Claude startup contract, live native advertise/launch/set evidence, dynamic Fable
   switching, and the rule that captured versions/catalog rows remain evidence rather than pins.

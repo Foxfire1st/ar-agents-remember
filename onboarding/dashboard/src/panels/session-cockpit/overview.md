@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -23,7 +23,7 @@ identities. `CockpitShell` defaults to Operations, keeps this route mounted, and
 Sessions destination.
 
 The route composes a role/spawn rail, persistent stage, default-closed toggleable inspector,
-CodeMirror reliable composer, command/key reference palette, status line, interaction and lifecycle
+CodeMirror reliable composer, command/key reference palette, source-selected working cues, interaction and lifecycle
 notices, and — since 260718-CHATS-L4 — the **structured conversation surface** that is now the
 controlled-session stage default. It projects the shared data plane documented by the
 [data overview](../../data/overview.md); it does not own a second session catalog or delivery ledger.
@@ -63,7 +63,7 @@ share one parser and one zero-ghost invariant.
 `ChatsStageBody.tsx` is the thin controlled-session stage body: it selects between the default
 structured `ConversationSurface`, the in-stage `ConversationLibrarySurface` history browser, and the
 legacy-raw PTY, and it owns the default-off `TerminalDiagnosticsDrawer`. It copies no panel's state —
-the composer, InteractionBar, QueuePreview, HeaderStrip, and StatusLine remain their own authorities,
+the composer, InteractionBar, QueuePreview, and HeaderStrip remain their own authorities,
 rendered by `SessionsView` around this body, and QueuePreview stays inside `SessionComposer` between
 interaction and composer. It resolves the bridge epoch by REUSING `readSubmissionAuthority` (no second
 submission authority) with one bounded auto-retry before the fail-loud projection-failed banner.
@@ -184,10 +184,9 @@ from Toad `main.tcss` + the Claude Code / Codex TUIs — a reference derivation,
   stays single-line + reachable at every rail width (1440/1100/900/min-rail, e2e-pinned); the title
   absorbs (`min-width:0` end-to-end) and elides first, the chip elides next and is DROPPED while armed.
   Destructive End carries demoted (muted) weight until hover/focus/selection.
-- **Collapse-or-explain chrome (R3/R4/A1/A2).** StatusLine/HeaderStrip/top-bar: an absent value
-  disappears with its label (never an em-dash chain), the healthy steady state collapses to one calm
-  token (`poll ✓`, `inbox clear`), a reassurance zero never wears an alarm glyph. The StatusLine UA-5
-  `ctx —/cost —` slot was REMOVED.
+- **Collapse-or-explain chrome.** Header/top-bar values disappear with their labels rather than
+  forming em-dash chains; reassurance zeros do not wear alarm glyphs. The former StatusLine footer
+  is retired entirely, so it no longer owns a reserved ctx/cost slot or reopen controls.
 - **Humanized durations + short ids.** `data/conversation/format.humanizeDuration` is the SINGLE duration
   authority (supervisor age, rail-footer heartbeat/cutoff, uptime — no raw `9512.1m`/`570724.69163s`);
   the new `format.shortId` renders long ULIDs/UUIDs as `…SUFFIX` with the full value in a tooltip (rail
@@ -291,7 +290,22 @@ references, not imported governing implementations, so no cross-repository sourc
 | Effective keyboard contract. | [../../data/keymap/overview.md](../../data/keymap/overview.md) |
 | Dev end-to-end scenario authority. | [../../dev/cockpitScenarios.ts](../../dev/cockpitScenarios.ts) |
 
+## Current L5I Route State
+
+The stage now keeps controlled conversation surfaces mounted per warm projection and preserves their
+scroll geometry across both focus and cockpit-view switches. It separates `visibility:hidden` pool
+entries from `display:none` view geometry, remembers/recovers intentional position, and bounds
+retention with the conversation LRU. The once-standing StatusLine and rail-bus footer are retired:
+stage actions live by the title, working feedback sits beside the conversation/composer, and detailed
+evidence remains in the inspector. Structured decision pages, queue steering, and the direct
+interaction route maintain distinct authority channels.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected the route model for mounted conversation continuity,
+  scroll restoration, focused action placement, retired StatusLine/rail footer, and structured
+  interaction authority. The deleted StatusLine knowledge is retained by SessionsView/SessionStage
+  and this route overview; verification metadata remains pre-commit.
 
 - 2026-07-21T11:30+02:00 — No route impact: 260718-CHATS-L5F (half-time functional fixes,
   PASS-WITH-NOTES) touched one governed file — `SessionsView.tsx` gained the R9 (audit V5)

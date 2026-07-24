@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,16 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+A streaming message now carries an explicit cyan dot plus lowercase `streaming` word beside its
+source badge. The phase is therefore not color-only and follows the same compact grammar as other
+in-progress conversation evidence.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented the visible, non-color-only streaming phase cue;
+  verification fields remain pre-commit.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the message item —
   streaming Markdown, the source-line-sliced clamp with an exact `+N lines` count (F12), and the

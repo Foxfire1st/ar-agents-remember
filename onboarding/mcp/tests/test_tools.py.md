@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T11:10+02:00                      |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-24T14:31Z                      |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -106,7 +106,17 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+## 260718-CHATS-L5I Incremental Commit-Gate Delta
+
+The closeout-description regression loads the real MCP server and asserts both public tools name
+mandatory CRAP enforcement. Preview must say it runs before the code commit; apply must say it runs
+before any code mutation and that approval precedes apply.
+
 ## Update History
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: added the public closeout-description
+  regression contract for mandatory CRAP, quality-before-mutation, and approval-before-apply;
+  verification remains pinned until the code commit.
+
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-04T11:10+02:00 — L2: the expected public-tool subset now includes `spawn_agent_session`,

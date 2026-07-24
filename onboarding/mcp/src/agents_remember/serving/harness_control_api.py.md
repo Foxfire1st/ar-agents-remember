@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -128,7 +128,15 @@ status batches limited to 64 ids. Submit/reconcile are epoch-bound and source-ta
 conflicts return 409 before lifecycle disclosure; only the exact pre-dispatch certificate returns a
 retry-safe 503, while possible-write loss remains unknown. The prior frontend-submit todo is closed.
 
+## 260718-CHATS-L5I Current Delta
+
+The harness-control API adds a short liveness memo for control reads and the lifecycle-free interaction-response path. A direct answer is epoch-checked and typed, so a non-pending interaction is reported as such instead of silently disappearing.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-time composition binding —
   the required `coordination_root` keyword, construction of the immutable `ConversationRuntime`

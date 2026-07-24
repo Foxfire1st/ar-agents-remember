@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/EventRiver.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T13:54+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -83,7 +83,16 @@ visible window mounts; backend retention and the store reset/reload boundary own
 | The reload-order regression keeps a lifecycle-bound tool row hidden until task-document context arrives. | L233-L258 | [EventRiver.test.tsx](EventRiver.test.tsx) |
 | `EventRiver` virtualizes the displayed rows with `@tanstack/react-virtual` (`useVirtualizer`) over a state-backed scroll ref; only the visible window mounts as absolutely-positioned measured rows, with no newest-N slice. | L3; L78-L154 | [EventRiver.tsx](EventRiver.tsx) |
 
+## Current L5I Maintenance
+
+`EventRiver` is now memoized as a persistent rail panel. Shell rerenders caused solely by cockpit
+view changes no longer reconstruct this virtualized subtree; its own dashboard-store subscriptions
+remain the source of genuine event updates.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented the keep-alive memo boundary for tab-switch CPU;
+  verification fields remain pre-commit.
 
 - 2026-06-28T13:54+02:00 — Task 34: the list is now **virtualized** with `@tanstack/react-virtual`
   (`useVirtualizer`) — only the visible window of rows mounts, so render cost stays flat regardless of feed

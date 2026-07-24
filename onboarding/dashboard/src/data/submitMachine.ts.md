@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submitMachine.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,6 +49,12 @@ backoff while preserving the immutable request id.
 None for FEUI-L5. Any new lifecycle ingress must extend the central evidence algebra rather than add
 component-local precedence.
 
+### 2026-07-24 Curator Delta
+
+A bare queued receipt is acceptance evidence, not proof that a request remains pre-dispatch and
+withdrawable. Only the lifecycle authority's own queued word earns that claim; dispatching and unknown
+states start one bounded terminal-word watch shared with reconciliation.
+
 ## Docs References
 
 No Domain Documentation source is configured for this repository; the implemented state algebra and
@@ -75,6 +81,9 @@ No meaningful cross-repo references found.
 | This state machine is repository-local. | — | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Corrected queued-receipt semantics and documented the bounded lifecycle
+  watch. Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

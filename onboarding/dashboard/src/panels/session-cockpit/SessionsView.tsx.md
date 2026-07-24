@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T11:30+02:00                           |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 The canonical full-page Chats composition seam (internal filename and data-view=sessions marker
 retained for implementation/test stability). It renders the role/spawn rail, persistent stage,
-reliable composer, interaction/lifecycle surfaces, status line, and optional
+reliable composer, interaction/lifecycle surfaces, source-selected working feedback, and optional
 Evidence/Capabilities/Bus inspector. Operations is the shell default; this route replaces both the
 legacy Chats page and the separate Sessions navigation concept.
 
@@ -46,20 +46,20 @@ do not remain in the accessibility tree. LaunchFlow remains outside the collapsi
 becoming a second entrance. **V11 (260718-CHATS-L5P):** the collapsed rail `<aside>` is now
 `display:none` (was `visibility:hidden`), which removes the aside's own ~21px padding/border box — the
 0px panel is truly empty, not a dead sliver. The drag min stays `RAIL_MIN_PERCENT` (12%); below it the
-panel snaps fully collapsed and the `☰ rail` chip (StatusLine) + the in-place resize handle are the
+panel snaps fully collapsed and the `☰ rail` title-row chip + the in-place resize handle are the
 reopen affordances. (The audit's desired ~220px min was left as an open design decision — react-resizable-panels
 is percentage-only and the 280px calibration contract is pinned; see the worker report V11 flag.)
 
-### 260715-FEUI-L7 Inspector And Status Composition
+### 260715-FEUI-L7 Inspector Composition (superseded status details corrected below)
 
 - **Narrow data seam** (L203-L206): the view selects existing `pollHealth`, projected
   `agentPickups`, and `supervisorHeartbeat` facts; it does not derive inspector-domain rows.
 - **Inspector composition** (L735-L740): passes the focused session/cockpit plus fleet pickups and
   heartbeat into `SeatInspector`. The inspector owns its accessible stable-mounted tab host and
   delegates Evidence, Capabilities, and Bus logic to focused files.
-- **Status composition** (L745-L757): the shell renders `StatusLine` once with focused-seat,
-  cockpit, and poll-health truth and supplies only the existing panel-reopen controls as its
-  action slot. Status ordering/telemetry honesty remain owned by `StatusLine`.
+- **Current action composition:** focused-session actions and rail/inspector reopen controls render
+  on `SessionStage`'s title row. There is no StatusLine footer; detailed evidence remains in the
+  inspector and the data stores that own it.
 - No L7 list virtualization, reverse-reply, capability, evidence, or clock logic lives in this
   route file; this is intentionally the bounded composition seam for the already large route.
 
@@ -243,7 +243,6 @@ No Domain Documentation source is configured for this repository; repository cod
 | The pane surface the stage mounts per focused seat (archetypes, keep-alive, cols reporting). | L110-L244 | [PtySurface.tsx](PtySurface.tsx) |
 | The one interaction axis rendered above the composer. | L79-L293 | [InteractionBar.tsx](InteractionBar.tsx) |
 | The turn theater rendered into the stage's reserved slot (its grammar gate is the `turn.stop` gate). | L76-L126 | [WorkingLine.tsx](WorkingLine.tsx) |
-| The dismissable informational stop-residual lines above the surface. | — | [StopResidualNotes.tsx](StopResidualNotes.tsx) |
 | The focus-independent retire-residual sweep this view mounts (F1). | L47-L146 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
 | The shell that mounts this view as a keep-alive hidden layer and gates `active`. | — | [../../cockpit/Cockpit.tsx](../../cockpit/Cockpit.tsx) |
 | The pure decisions this shell feeds widths into. | L5-L85 | [../../data/sessionLayout.ts](../../data/sessionLayout.ts) |
@@ -257,7 +256,6 @@ No Domain Documentation source is configured for this repository; repository cod
 | The rail renderer receiving the once-derived model/rollup as props. | L364-L372 | [SessionRail.tsx](SessionRail.tsx) |
 | The stage container + header line the stage panel mounts. | L46-L87 | [SessionStage.tsx](SessionStage.tsx) |
 | The accessible stable-mounted Evidence / Capabilities / Bus tab host. | L18-L151 | [SeatInspector.tsx](SeatInspector.tsx) |
-| The contractual focused-seat footer composed by this route. | L76-L184 | [StatusLine.tsx](StatusLine.tsx) |
 | The pure derivations this view memoizes once per render. | L131-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
 | The cockpit store (focus, mirrors, perSession) + the catalog mirror this view starts. | L107-L309 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
 | The shared poll driver subscription. | L60-L77 | [../../data/catalogPoll.ts](../../data/catalogPoll.ts) |
@@ -310,8 +308,8 @@ New view-owned wiring:
   `turn.stop` registration (F2), and the interrupt hook (`useConversationInterrupt`) is fed to
   `WorkingLine` as its `interrupt` prop, which renders the actionable, capability-gated stop.
 
-This is an additive composition change; QueuePreview/InteractionBar/HeaderStrip/StatusLine authorities
-and the `data-kbzone`/`data-region` focus model are unchanged. The reviewed L4 candidate is
+This is an additive composition change; QueuePreview/InteractionBar/HeaderStrip authorities and the
+`data-kbzone`/`data-region` focus model are unchanged. The reviewed L4 candidate is
 uncommitted; verification stays pinned to the FEUI-MX-FIX-2 base until closeout stamps the L4 commit.
 
 ## 260718-CHATS-L5F R9 Delta (streaming turn-state honesty — audit V5)
@@ -323,7 +321,7 @@ projection and returns true only when `projection.stream === "live"`, the status
 `focused` is then the base session row merged with `{ liveTurnWorking: true }` when that holds,
 otherwise the plain base row. That flag flows through `stateGrammar.seatVisualState` (which prefers
 it over the sweep-lagging catalog `turnState` but only below the terminal/fault/blocked/wait guards)
-into the stage authorities — HeaderStrip StateDot, StatusLine, WorkingLine — so a live streaming
+into the stage authorities — HeaderStrip StateDot and working cues — so a live streaming
 turn stops reading a settled-green `turn-ended`. This is the honest display-preference: a
 stale/disconnected projection is never trusted, and a real terminal/fault/blocked catalog state
 still wins. **Recorded remainder (durable):** only the focused stage seat is covered here; the rail
@@ -331,7 +329,20 @@ chip is a separate store-driven per-row derivation (`SessionRail`), and wiring t
 into non-focused rail rows is left as a follow-on — the stage (the surface in the developer's
 screenshots) is covered, the rail chip is not.
 
+## Current L5I Maintenance
+
+`SessionsView` composes the decluttered stage: a deliberate 0.75rem rail gutter, stage-header
+focused-session actions and rail/inspector controls, and no StatusLine or end-notification stack.
+Rail selection defers focus into the controlled composer or raw PTY host. The working slot chooses
+the live SSE conversation cue for a live harness stream and otherwise the catalog cue; the controlled
+stop remains beside Send, while raw-terminal stop remains on its line. It passes cockpit visibility
+through to the stage so scroll geometry can restore after a view switch.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected stage composition, focus handoff, source-selected working
+  feedback, stop placement, view visibility, and removed StatusLine/stop-notification chrome. This
+  is the current replacement owner for the retired StatusLine composition knowledge.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) focused-seat
   live-turn merge. The view imports `useActiveConversation` and computes `focusedLiveTurnWorking`

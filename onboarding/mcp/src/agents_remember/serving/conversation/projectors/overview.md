@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 
 ## What This Area Is
 
@@ -222,7 +222,18 @@ they map correctly.
   `pi:turn_start`/`pi:turn_end` unknown-vendor rows the pi mapper has never learned — the same
   fixture-drift class as R1/R3, on pi, to be taught in a follow-on leaf.
 
+## 260718-CHATS-L5I Current Route Impact
+
+Claude projection now recognizes the native structured-interaction and interrupt frame shapes needed by the active/control contracts. Accepted interrupt correlation is required before an abort-style terminal result is classified as interrupted; other error evidence stays failed or unknown rather than being rewritten. Its stable mutation-diff facade now delegates Edit, MultiEdit, Write, and NotebookEdit to focused parsers over observed `tool_use.input`; malformed vendor shapes preserve raw input without inventing diffs, and MultiEdit identifiers retain original edit positions. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP curation: recorded the
+  stable Claude mutation-diff facade, focused parser split, malformed-input
+  preservation, and original-position MultiEdit identity. Verification metadata
+  remains pre-commit.
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time frame-contract truths.
   R1 (codex notification identity) — the native method is preserved as `EvidenceFrame.native_method`

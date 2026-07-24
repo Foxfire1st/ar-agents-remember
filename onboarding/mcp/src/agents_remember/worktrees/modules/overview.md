@@ -5,16 +5,16 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-18T20:03+02:00 |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
 
 The `worktrees/modules` package contains the extracted implementation modules
 behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycle
-status guidance, start preparation, onboarding refresh, closeout, integration,
+status guidance, start preparation, onboarding refresh, strict code-quality gating, closeout, integration,
 cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
 `task_reopen` lives in the tasks package (L11) because it reopens a task, and this route's start path
@@ -32,6 +32,12 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   `git diff --numstat --name-status --find-renames`, KEEPING deletions and reporting
   counts (binary → `None`, untracked → `A`, rename → post-rename path), unlike the
   name-only `changed_*_paths`.
+- `code_quality_gate.py` is the fail-closed worktree closeout adapter for the
+  repository-owned quality wrapper. It previews the exact command, resolves
+  interpreters in worktree, shared-clone, then active-Python order, puts the
+  candidate worktree's `mcp/src` first on `PYTHONPATH`, and rejects a missing
+  wrapper/interpreter or any nonzero result. This preserves linked worktree
+  operation without weakening the gate or accidentally testing a sibling checkout.
 - `guidance.py` renders lifecycle phase and typed next-operation payloads. Its
   `lifecycle_guidance` checks the disposal states first: `cleanup == "completed"`
   → the `cleanup-completed` phase, and (slice 05l P1) `cleanup == "abandoned"` →
@@ -185,6 +191,11 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   when the new code or memory-content commit is not yet on the recorded source
   branch. Clean no-op re-closeout keeps the completed integration state and does
   not duplicate an already-present ledger mapping.
+  260718-CHATS-L5I inserts the strict `code_quality_gate.py` adapter after
+  preview/approval validation and before every apply mutation. A quality failure
+  therefore leaves code, memory, ledger, contract, and applied-gate state
+  untouched; only a clean wrapper result permits `commit_if_dirty` and the
+  subsequent onboarding/ledger sequence.
 - `args.py` defines the frozen `WorktreeArgs` cross-layer DTO that operation
   modules consume in place of `argparse.Namespace`; `from_namespace` builds it
   from partial CLI/controller namespaces with per-field defaults. It carries `parent_task` and `leaf_id`
@@ -211,6 +222,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py); [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 
 ## Update History
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
+  added the fail-closed `code_quality_gate.py` authority and corrected closeout's
+  mutation order to quality-before-commit. Verification metadata remains
+  pre-commit.
+
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: closeout route-index preview and apply now forward the
   resolved `context.storage` authority explicitly to the deterministic builder.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1 route impact (small): `cli.py` gained the `heal-leaf-ids`

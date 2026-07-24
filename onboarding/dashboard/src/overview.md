@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -178,7 +178,13 @@ references informed product framing only; current code truth stays in agents-rem
 | Sole Chats route, deletion map, and future boundary. | [session-cockpit overview](panels/session-cockpit/overview.md) |
 | Dev scenario authority and end-to-end states. | [dev/cockpitScenarios.ts](dev/cockpitScenarios.ts) |
 
+## 260718-CHATS-L5I Current Route Impact
+
+The cockpit now treats a focused chat or terminal as a persistent operator surface rather than disposable tab content: switch and hidden-view transitions preserve mounted identity, scroll/selection/geometry state, and only resume visible-only work when appropriate. Its global data consumers also adopt bounded stream/watchdog, single-flight, timeout, build-identity, and wake-lock behavior. Detailed mechanics remain owned by the existing `data/`, `panels/`, and nested session-cockpit overviews; this route records only the shared frontend consequence.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the shared dashboard/src route for the whole frontend change without modifying nested overview ownership. Verification metadata remains pre-commit.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: added a discoverability pointer to the new
   sibling [e2e-chats overview](../e2e-chats/overview.md) — the durable, opt-in Chats E2E suite

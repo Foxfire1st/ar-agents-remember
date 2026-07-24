@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -128,7 +128,15 @@ authority, bounded status, and withdraw actions. Cockpit-only disclosure is enfo
 serialization; request ids and operation refs are validated structurally. Typed busy/conflict/epoch
 errors retain their meaning across the private socket boundary.
 
+## 260718-CHATS-L5I Current Delta
+
+The private control IPC accepts the raised bounded message ceiling needed for native interaction payloads while preserving its line-oriented timeout and framing contract. The ceiling is an explicit transport limit, not an unbounded read.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the two additive actions
   (`interrupt`, `operation-timeline`) and the additive `assets` submit key — schema validation,

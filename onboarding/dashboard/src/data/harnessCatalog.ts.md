@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/harnessCatalog.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,6 +43,12 @@ base URL and abort signal so transport lifetime remains outside the reader.
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
+### 2026-07-24 Curator Delta
+
+Signal-less boot reads now share a 10-second-bounded catalog request. Caller-supplied abort signals
+remain private requests so one launch dialog cannot cancel another caller; a timed-out shared request
+returns the existing network-error classification and releases the key.
+
 ## Docs References
 
 No relevant documentation was found after checking the configured sources; current claims are
@@ -69,6 +75,9 @@ No meaningful cross-repository implementation source governs this repository-loc
 | The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented bounded, signal-aware harness-catalog single-flight behavior.
+  Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: created the one-to-one card for the candidate harness-catalog
   reader; verification metadata stays blank until the code candidate is committed and closeout can

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -259,7 +259,15 @@ readiness and liveness, correlated receipts sit beneath durable inbox rows, inte
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
+## 260718-CHATS-L5I Current Route Impact
+
+Gate records now have an explicit reopen transition for an adapter decision that failed to deliver. The transition makes the gate answerable again and carries failure evidence, so an operator's decision is never silently consumed or left represented as an approval.
+
+Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: recorded the exact two-field additive inbox-reader seam for
   rolling serving compatibility; unrelated extensions remain rejected.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.

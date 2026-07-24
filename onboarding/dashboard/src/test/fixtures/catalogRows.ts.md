@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/catalogRows.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -54,6 +54,11 @@ Fixtures must stay FULL-wire-shape (built on `types/terminalCatalog.ts`) so DOM-
 plant provenance fields and assert they never leak into the rail (the R6 negative test). Shared
 test infrastructure — extend by adding rows/overrides, not by forking a second builder.
 
+### 2026-07-24 Curator Delta
+
+The shared catalog fixtures now cover structured multi-question and permission interactions, direct
+responses without a lifecycle, and a legacy runner's nested native question shape.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -64,6 +69,9 @@ test infrastructure — extend by adding rows/overrides, not by forking a second
 | The L6 pack's consumers: lifecycle flows, interaction bar, archetype surface. | — | [../../data/sessionLifecycle.test.ts](../../data/sessionLifecycle.test.ts), [../../panels/session-cockpit/InteractionBar.test.tsx](../../panels/session-cockpit/InteractionBar.test.tsx), [../../panels/session-cockpit/PtySurface.test.tsx](../../panels/session-cockpit/PtySurface.test.tsx) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added interaction-routing fixture coverage. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R9): appended the L6 fixture pack after FLEET — the
   controlled/legacy-raw archetype rows, the choices/freetext/unrepresentable interaction rows,

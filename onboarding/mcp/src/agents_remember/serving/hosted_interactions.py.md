@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/hosted_interactions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b` |
-| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,13 +39,21 @@ No relevant external/domain documentation was configured; gate, inbox, and inter
 
 ## Repo-Internal References
 - [operator_inbox_store.py](../controlplane/operator_inbox_store.py) persists delivery evidence.
-- [GateResponder.tsx](../../../../../../dashboard/src/panels/GateResponder.tsx) renders interaction context.
+- [GateResponder.tsx](agents-remember/dashboard/src/panels/GateResponder.tsx) renders interaction context.
 - [harness_control_client.py](harness_control_client.py) sends interaction responses.
 
 ## Cross-Repo References
 No meaningful cross-repo references.
 
+## 260718-CHATS-L5I Current Delta
+
+Hosted interactions now serialize structured answers for harness adapters and reopen a failed decision with `adapterDecisionFailure` evidence. A delivery fault is visible and answerable again; it is not silently swallowed or represented as a completed approval.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned null-requestId/vendor-correlation
   completion projection, explicit pending/unconsumed inbox semantics, and loud correlation failures.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented durable interaction gates and completion-without-consumption.

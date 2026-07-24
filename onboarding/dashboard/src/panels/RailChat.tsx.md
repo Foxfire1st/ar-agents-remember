@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -173,7 +173,15 @@ Updates contextual-chat ownership language for the one-roof cutover: RailChat sh
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
+## Current L5I Maintenance
+
+The contextual rail chat is memoized as another persistent shell surface. It skips unchanged
+tab-switch parent renders without changing its own session/store driven behavior.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented the rail-chat memo boundary; verification fields
+  remain pre-commit.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: gated contextual raw/harness creation and leaf-context
   delivery on an accepted server row and added a visible typed failure alert. Verification metadata

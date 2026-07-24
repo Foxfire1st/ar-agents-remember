@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`         |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`         |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -73,7 +73,15 @@ advance). All helpers are pure.
 
 As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handover-approval`: the master-exit seam gate the manager raises with the reviewer verdict attached and the orchestrator decides (delegable, never human-pinned — human review concentrates at the super gate).
 
+## 260718-CHATS-L5I Current Delta
+
+`reopen_gate` now creates an answerable gate from a failed adapter decision while retaining the gate identity and attaching the failure detail. It is the records-layer counterpart to honest interaction failure handling; a failed delivery must not continue to look approved.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): GateKind gains master-handover-approval (the ruled master-exit seam gate). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: added orchestration attribution

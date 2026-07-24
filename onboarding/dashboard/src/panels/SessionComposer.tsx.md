@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionComposer.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -115,7 +115,18 @@ transport wall (`receipts + reconcile; terminal lines join the same queue withou
 submit / receipt / reconcile / withdrawal authorities are unchanged. The reviewed L4 candidate is
 uncommitted; verification stays pinned to the FEUI-L8 base until closeout.
 
+## Current L5I Maintenance
+
+The live composer now sends on plain Enter while Shift+Enter explicitly inserts an indented newline.
+It renders queue preview/counts only after server-confirmed pre-dispatch queue evidence, describes a
+boot-time send deferral as `connecting… · composer draft unchanged`, and keeps static capabilities
+in a tooltip rather than standing footer chrome. The exact-turn stop action belongs beside Send for
+working controlled seats; raw terminal seats mount no dashboard composer.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected composer input, queue-honesty, declutter, boot-deferral,
+  and stop-control ownership semantics; verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the composer polish — `editorFrame`
   `background: well` (FB7.1) + `:focus-within` amber ring (V4); capability-derived footer hint (V9 —

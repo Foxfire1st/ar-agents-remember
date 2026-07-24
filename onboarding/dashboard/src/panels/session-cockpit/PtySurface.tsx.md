@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/PtySurface.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -128,7 +128,17 @@ no longer the primary stage body — `ChatsStageBody` makes it a default-off, re
 The reviewed candidate is uncommitted; existing verification hash/date remain pinned; closeout owns
 commit stamping.
 
+## Current L5I Maintenance
+
+The PTY pane no longer reserves a standing chrome bar for archetype text or an empty badge slot.
+Archetype context remains available through the inspector and the screen-reader toggle tooltip,
+which now floats inside the pane. A hidden layer has no keyboard zone or ended-state focus target,
+so focus routing reaches only the currently visible terminal surface.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected PTY declutter, retained archetype disclosure, and
+  hidden-layer focus invariants; verification fields remain pre-commit.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: recorded the optional `readOnly` prop (default
   false) that lets the terminal-diagnostics drawer host the controlled runner PTY input-disabled

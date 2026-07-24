@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-21T11:30+02:00                           |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -131,6 +131,21 @@ catalog, capability, snapshot, submission-poll, withdrawal, and connection owner
 before seeding the successor fixture. These reset exports are dev-only authority seams; production
 code must not use them as ordinary recovery APIs.
 
+### 2026-07-24 Resilient Boot And Steady-State Work
+
+- `fetchWithTimeout.ts` aborts a hung browser socket. `inflight.ts` owns only per-key single-flight
+  lifetime: concurrent boot readers share result or rejection, then the identity-guarded slot clears
+  on settle. Repository, harness, terminal, and capability catalogs use the pair.
+- `sessions.ts` preserves state and row identity for a byte-identical catalog beat, while the
+  authoritative poll still replaces any row whose content differs from a local pre-apply.
+- `streamLiveness.ts` gives state and conversation EventSource channels a visible-tab watchdog: sleep
+  is positive evidence, ordinary silence earns at most one quiet cycle, and never-open replacements fail
+  honestly instead of retaining a live cue.
+- A queued receipt is acceptance evidence rather than pre-dispatch proof. The lifecycle authority alone
+  enables withdrawal; dispatching/unknown records wait for a terminal word under the bounded window.
+- Structured question maps and permission responses use the direct session route with bridge-epoch
+  evidence; the gate channel remains the fallback for forms that direct routing cannot represent.
+
 ## Invariants And Boundaries
 
 - The terminal catalog and bridge responses are authoritative; browser state is a projection and
@@ -186,9 +201,11 @@ code must not use them as ordinary recovery APIs.
 | Control/capability truth | [capabilityCatalog.ts](capabilityCatalog.ts.md) · [setClient.ts](setClient.ts.md) |
 | Role/spawn rail derivation | [railModel.ts](railModel.ts.md) |
 | Runtime bundle identity | [buildIdentity.ts](buildIdentity.ts.md) |
+| Bounded boot transport and single-flight ownership | [fetchWithTimeout.ts](fetchWithTimeout.ts.md) · [inflight.ts](inflight.ts.md) |
 | Strict pre-session harness discovery | [harnessCatalog.ts](harnessCatalog.ts.md) |
 | Authoritative terminal open | [terminalOpen.ts](terminalOpen.ts.md) · [terminal.ts](terminal.ts.md) · [sessions.ts](sessions.ts.md) · [launchFlow.ts](launchFlow.ts.md) |
 | Durable terminal transport | [terminal.ts](terminal.ts.md) · [terminal.test.ts](terminal.test.ts.md) |
+| Stream liveness and visible-tab wake policy | [streamLiveness.ts](streamLiveness.ts.md) · [screenWakeLock.ts](screenWakeLock.ts.md) |
 
 ## Docs References
 
@@ -233,6 +250,11 @@ the UI composition owner. Detailed legacy grouping knowledge was preserved here 
 session-cockpit overview before the six obsolete sidecars were removed.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Route impact: added the resilient boot/steady-state model for bounded
+  transport + single-flight, no-op catalog reconciliation, one-shot SSE liveness, lifecycle-terminal
+  submit settlement, and direct structured interaction answers. Added the new data file cards;
+  verification metadata remains pinned until the code commit.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) live-turn seat-state
   nuance in Catalog And Session Identity — `OpenSession.liveTurnWorking?` is the single

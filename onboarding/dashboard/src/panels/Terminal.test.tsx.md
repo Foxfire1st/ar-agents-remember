@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Terminal.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash |                                                  `7b62338310aff67ae8b66a450a52a1f1052137c4`|
-| lastVerifiedCommitDate |                                                  2026-07-17T04:36:24+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash |                                                  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |                                                  2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -96,7 +96,16 @@ No external Domain Documentation source is configured for this memory repo.
 
 No meaningful cross-repo references found.
 
+## Current L5I Maintenance
+
+The terminal tests now exercise unchanged-box refit suppression, visible-box recovery, clipped-row
+correction, and platform-correct selection copy. In particular they prove a copied selection is
+released so a second interrupt chord is delivered to the running terminal.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded terminal geometry and copy-versus-interrupt regression
+  coverage; verification fields remain pre-commit.
 
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6: extended the fake xterm class for the wrapper's new
   surface (`options` record, `parser.registerOscHandler`, `onBell`/`onTitleChange` disposables,

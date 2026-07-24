@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/servedAges.ts`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,11 @@ grain (s → m → h → d) makes the 10 s step visually seamless above the firs
 - Ages are still never *computed* from the render clock — only aged forward from the served
   anchor (localhost clocks; skew far below display grain).
 
+### 2026-07-24 Curator Delta
+
+`useNowMs` accepts an active flag so kept-mounted hidden layers stop their local age interval. On
+re-show it catches up once from the clock, preserving visible accuracy without hidden React work.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -79,6 +84,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added active-layer local-age scheduling semantics. Verification hash/date
+  remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

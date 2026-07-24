@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -46,8 +46,8 @@ exactly the bound reserved set; no bare-Esc sequence is ever claimed).
   intercepted. 260718-CHATS-L4 adds the `conversation.stop` chord (default `Control+Shift+Period`,
   chrome+composer zones, PTY-excluded — the R6 rebindable non-Escape stop, collision-audited as the
   sole `Control+Shift` entry) and removes the stale `turn.stop` binding.
-- `focus.ts` — the F6 region cycle (rail → stage → inspector → statusline, collapsed panels drop
-  out) + the region/stage-header/PTY-host focus selectors.
+- `focus.ts` — the F6 region cycle (rail → stage → inspector, collapsed panels drop out) + the
+  region/stage-header/PTY-host focus selectors. StatusLine was removed and is no longer an F6 stop.
 - `preferences.ts` — strict `cockpit.sessions.keymap.v1` persistence, same-tab external-store and
   cross-tab storage subscription, user overrides, Emacs/Vim composer profile, CodeMirror chord
   conversion, and the effective signature used for live reconfiguration. Browser-reserved,
@@ -123,6 +123,10 @@ no cross-repository implementation source is imported or treated as governing co
 | The live CodeMirror surface that consumes profile and chord reconfiguration. | [SessionComposer.tsx](../../panels/SessionComposer.tsx) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Route impact: corrected the focus model after StatusLine removal and recorded
+  the harness-chat Enter submit default (with Shift+Enter retaining newline insertion). Verification
+  metadata remains pinned until the code commit.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer, reviewer FINAL
   PASS): recorded the two fix-round-2 additions to this route's governed sources — the

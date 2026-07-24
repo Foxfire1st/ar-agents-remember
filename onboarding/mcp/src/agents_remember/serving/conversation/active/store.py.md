@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,15 @@ No cross-repository implementation participates in this store.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+The active projection store now keeps page, event, recovery, and eviction state aligned with the current session epoch. Recovery re-pages from a fresh server cursor after an unusable stream, and bounded state release remains the only route that discards a dormant projection.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: documented the H2/F4 `_preserved_input_authority`
   pin — for `role=="user"` items the `lane`/`source`/`provenance` authority triple stays intact

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -107,7 +107,15 @@ No cross-repository implementation participates in this evidence module.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+The active conversation capability view now delegates `controls.interrupt` directly to the control capability gate. It does not copy that verdict locally, and all other active-view capability postures remain conservative.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
   2026-07-21, R4). Corrected the now-false read-time version-demotion doctrine: `capabilities_for`

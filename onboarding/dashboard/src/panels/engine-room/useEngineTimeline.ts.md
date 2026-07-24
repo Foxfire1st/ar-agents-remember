@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `dashboard/src/panels/engine-room/useEngineTimeline.ts`   |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-06-21T02:27+02:00                                    |
-| lastVerifiedCommitHash |                                                           `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                           2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash |                                                           `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |                                                           2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -119,7 +119,17 @@ entries, so the GSAP/Motion library docs are not cited here — the split is pro
 | `EngineProcessNode` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads). | L224-L285 | [projection.ts](../../types/projection.ts) |
 | The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract. | L55-L72 | [EnclosureProcessMap.test.tsx](EnclosureProcessMap.test.tsx) |
 
+## Current L5I Maintenance
+
+The GSAP hook now gives a stroked scan ring `vector-effect="non-scaling-stroke"` before animating
+its radius-equivalent scale, and animates surge bands by `scaleY` from the link origin. Its scoped
+context pauses every tween while the observed canvas is hidden and resumes the same context on
+re-show, including a context rebuilt during the hidden interval.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented composited SVG effects and the hidden-canvas pause
+  invariant; verification fields remain pre-commit.
 
 - 2026-06-22T11:00 — slice 05o: `buildFx` gained a **`refuse`** flash — a ONE-SHOT refused-conduit recolour on
   `[data-fx='refuse']` (a rejected seed/integration lane): a `gsap.timeline` with `repeat: 0` (NOT a loop) that

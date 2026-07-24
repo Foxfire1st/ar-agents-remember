@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T18:40+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -85,7 +85,16 @@ No meaningful cross-repo references found.
 | The unchanged L9 serving endpoints behind the client. | [serving/notes.py](agents-remember/mcp/src/agents_remember/serving/notes.py) |
 | The component test suite. | [panels/notes-reader/NotesReaderViewer.test.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx) |
 
+## Current L5I Maintenance
+
+The controlled Notes Reader is memoized as a persistent cockpit view. Shell view switches with
+unchanged route props no longer reconstruct its reader subtree, while its own selected-note state
+and data reads remain unchanged.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented the persistent-reader memo boundary; verification
+  fields remain pre-commit.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 2): render the "Showing the first 2 MiB"
   truncation banner (`notes-trunc-banner`) above the DualPane when a note is `truncated && markdown` —

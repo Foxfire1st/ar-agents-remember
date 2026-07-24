@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/keymap/focus.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -19,14 +19,14 @@
 The **cockpit focus model** (260715-FEUI-L1 S4, design §5.3) — pure region logic. Regions carry a
 `data-region` marker; each region exposes ONE primary focus target (`data-focus-target`): rail =
 the selected row (roving tabindex arrives with L2), stage = the composer, inspector = the active
-tab, statusline = the summary. F6 cycles forward, Shift+F6 backward; collapsed panels drop out of
-the cycle.
+tab. F6 cycles forward, Shift+F6 backward; collapsed panels drop out of the cycle. The removed
+StatusLine is no longer a region or an F6 stop.
 
 ## Code Commentary
 
 ### Logic
 
-- `FOCUS_REGIONS` (L8): `rail → stage → inspector → statusline`, the canonical cycle order.
+- `FOCUS_REGIONS`: `rail → stage → inspector`, the canonical cycle order.
 - `nextRegion(current, direction, available)` (L13-L23): filters the canonical order by the
   available set (collapsed panels excluded by the caller), wraps both ways, starts from the
   matching edge when focus is outside every region (`current === null` or the current region
@@ -54,6 +54,10 @@ the cycle.
 | The cycle suite: forward/backward wrap, edge starts, collapsed dropout, unavailable-current recovery. | L7-L45 | [focus.test.ts](focus.test.ts) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Corrected the stale StatusLine focus-region description after the bar's
+  removal; F6 now wraps inspector directly to rail. Verification hash/date remain pinned to the
+  pre-commit source stamp.
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (R7): the F6 region cycle with
   collapsed-panel dropout plus the stage-header (composer-Esc / PTY-exit landing) and PTY-host

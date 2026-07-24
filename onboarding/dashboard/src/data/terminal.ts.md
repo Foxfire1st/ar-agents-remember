@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -147,6 +147,12 @@ gated, and all retry/reattach initiation is caller-owned.
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
+### 2026-07-24 Curator Delta
+
+Terminal-session catalog reads now share an in-flight boot/poll request and enforce a 10-second socket
+bound. A timed-out beat resolves through the existing `null` failure path and releases the slot for the
+next authoritative read.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -187,6 +193,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added terminal-catalog single-flight and timeout semantics. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: removed the boolean fail-open implementation and
   documented this module as the compatibility facade over `terminalOpen.ts`, with one POST,

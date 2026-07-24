@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,7 +118,25 @@ local subprocess reached through this repository's own adapter.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+The Claude projector maps newly observed native interaction and interrupt evidence into the normalized active-conversation grammar. Unknown vendor shapes remain preserved evidence rather than guessed transcript semantics.
+
+The mutation-diff path now keeps `_tool_mutation_diff_blocks` as a stable facade and delegates
+Edit, MultiEdit, Write, and NotebookEdit to responsibility-specific parsers. All diff content comes
+only from the observed `tool_use.input`; malformed or unsupported vendor shapes retain their raw
+`ToolInputBlock` and produce no invented diff. MultiEdit identifiers preserve original positions
+when invalid entries are skipped.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: documented the stable mutation-diff
+  facade, per-tool parser split, vendor-shape boundary, and position-preserving MultiEdit behavior;
+  verification remains pinned until the code commit.
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded R3 — the mapper now learns the
   installed Claude Code 2.1.216 frame contracts as first-class typed frames. `command_lifecycle` is

@@ -6,8 +6,8 @@
 | path | `mcp/tests/_control_plane.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,15 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+The shared control-plane test topology now supports structured interaction replies and native interrupt evidence over a real bridge/IPC path. It remains the common boundary fixture rather than a parallel implementation of production control behavior.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the shared L3 control
   test topology — the structural fake adapter, the real bridge/IPC/authority/L0 seam, and the

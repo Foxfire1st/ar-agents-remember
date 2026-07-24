@@ -5,9 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T03:30+02:00                     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastUpdated            | 2026-07-24T14:31Z                           |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| governingOverview      | `../../../../../../../../overview.md`       |
+
+## Governing Overview
+
+[mcp overview](../../../../../../../../overview.md)
 
 ## Purpose
 
@@ -24,8 +29,10 @@ The file tells users to copy the example to memory-layer `system/git-workflow.md
 flow (issue → branch → worktree → commit gate → push gate → agent owns push→PR→checks→merge→cleanup
 → `c-11-memory-carryover-from-branch` skill carryover run against the merged spear, which maps the ledger to the actual spear HEAD
 including a PR merge commit even when nothing else needs carrying), a "prefer merge commit over
-squash" rule for branches that bundle distinct changes, the optional CI + local pre-push quality
-gate, and an optional release/changelog convention (tag scheme, version-bump locations, release
+squash" rule for branches that bundle distinct changes, and the mandatory repository quality
+wrapper at pre-commit, worktree closeout before mutation, pre-push, and CI. CRAP at or above the
+configured threshold (30 by default) fails each gate without a separate strict opt-in. The file
+also carries an optional release/changelog convention (tag scheme, version-bump locations, release
 commit subject, PR-gated end-to-end flow).
 
 ### Conventions
@@ -68,6 +75,12 @@ No sibling repository evidence is needed.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I CRAP/commit-gate curation: replaced the
+  former optional CI/pre-push framing with one mandatory default repository
+  wrapper at pre-commit, closeout-before-mutation, pre-push, and CI. CRAP at or
+  above the configured threshold (30 by default) fails without a separate strict
+  flag. Verification metadata remains pinned until the code commit.
 
 - 2026-06-11T06:47+02:00: No content impact: the example's commit-gate line now says "the `c-12-closeout` skill worktree closeout preview first" instead of "/ direct-closeout preview first" (issue #62 worktree-only closeout); the starter structure this sidecar describes is unchanged.
 - 2026-06-02T04:00+02:00: Updated after the example's landing flow clarified that `c-11-memory-carryover-from-branch` skill carryover (run against the merged spear) maps the ledger to the actual spear HEAD, including a PR merge commit even when nothing else needs carrying. `l-01-session-job-lifecycle` skill series, Sub-task C, mcp 1.1.0.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/catalogPoll.test.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -43,6 +43,12 @@ cases. Test-only.
 The refcount cases are the regression net for the R1 hoist: they must keep failing if a second
 interval ever appears or a release leaks the timer.
 
+### 2026-07-24 Curator Delta
+
+Regression cases now prove that one aborted catalog beat records one missed beat and the next beat
+recovers, while a byte-identical catalog payload preserves state and row identity without notifying
+subscribers.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -77,6 +83,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented poll timeout recovery and no-op reconciliation coverage.
+  Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

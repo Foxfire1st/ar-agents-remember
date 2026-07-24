@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,15 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | This is a repository-local authority suite. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Submission-authority tests now pin the bounded dispatch-acceptance grace: a delayed healthy echo becomes an honest queued receipt and only later authoritative lifecycle evidence settles it.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5; captured authoritative pop-back races,
   completion-before-receipt, exact-ref id reuse, ordering, idempotency/conflict, retry safety,

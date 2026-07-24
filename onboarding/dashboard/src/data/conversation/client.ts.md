@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/client.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -56,6 +56,12 @@ refusal is never guessed into success**. Route shapes are the exact landed wire 
 - **Injectable + or-null.** All reads accept a `FetchLike`; a network error is a typed transport result,
   never a thrown exception to the caller.
 
+### 2026-07-24 Curator Delta
+
+Page, telemetry, and interrupt requests now share a 15-second abort bound. A half-open transport
+therefore enters the client's established error and recovery paths instead of freezing a conversation
+operation forever.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
@@ -86,6 +92,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added the conversation HTTP timeout boundary. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the active/control HTTP
   client — the typed `PageResult` threading the server's `ConversationRouteError` to the banner (F15),

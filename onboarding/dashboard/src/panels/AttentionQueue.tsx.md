@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/AttentionQueue.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -55,6 +55,12 @@ gate-open rows can be consumed by gate id, and actionable drift is the only targ
 this component can dismiss. Provider/down/setup/start alarms remain fact-backed and cannot be dismissed
 by this component.
 
+### 2026-07-24 Curator Delta
+
+The kept-mounted attention rail is memoized and receives its visibility state. Its local age clock stops
+while the full-bleed shell hides the rail, then refreshes when visible again; store updates still render
+through the component's own subscription.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -65,6 +71,9 @@ by this component.
 | Dismiss and Clear all optimistically suppress rows and release failed POSTs. | L126-L158 | [AttentionQueue.tsx](AttentionQueue.tsx) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented memoized hidden-rail age behavior. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
 

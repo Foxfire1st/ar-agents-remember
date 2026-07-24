@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -123,7 +123,15 @@ dashboard terminal catalog.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Runner launch now propagates the daemon worktree's package root into the tmux-spawned harness environment. A worktree deployment therefore runs the code it was started to test instead of inheriting a stale main-checkout `PYTHONPATH` from the tmux server.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive codex-only
   `resume_thread_id` pass-through — `bad-kind` refusal for non-codex/malformed values before any
   spawn, unchanged threading into the runner payload, the `launch_args`-class no-validation

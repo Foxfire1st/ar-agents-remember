@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/EngineRoom.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -97,7 +97,19 @@ must be kept for the legacy projection tests.
 | The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | — | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 | The shared chat-routed gate responder rendered by diagnostics. | — | [panels/GateResponder.tsx](GateResponder.tsx) |
 
+## Current L5I Maintenance
+
+The keep-alive Engine Room now subscribes only to the `engineProcesses` and `ledgers` analytics
+slices with `stableEquals`, memoizes its pure room model, and memoizes the component itself. An
+unrelated analytics replacement or a cockpit tab switch therefore does not rebuild the large room.
+The header pulse additionally stops while its observed element is hidden, so a mounted-but-hidden
+room does not keep a Motion frame loop alive.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented the narrowed analytics subscriptions, memoized room
+  model/component, and visibility-gated header pulse. Verification fields remain pinned until the
+  uncommitted code is committed at closeout.
 
 - 2026-06-24T08:09+02:00 — Engine Room leaf identity: the selected-room header now titles the active leaf (`leafId || taskName`) and keeps the parent series task in the metadata line when a leaf is present. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:19+02:00 — Official-line strip aggregation: `OfficialStrip` now groups workspace providers

@@ -185,6 +185,16 @@ The following patterns are not acceptable:
 
 These are drift behaviors. Agents must call them out before continuing.
 
+## Source Comment Scope
+
+Source comments explain the technical **why** of the code and must stand alone for a maintainer who has only this repository.
+
+1. Do not place task, leaf, decision-item, review, requirement, or audit identifiers in source comments.
+2. Do not use conversation provenance such as who requested or ruled on a change, and do not point source comments at report or task paths.
+3. Keep the technical constraint, evidence boundary, invariant, or trade-off that a future maintainer needs to preserve.
+4. Product-role vocabulary is allowed when it names a real runtime role, and shipped `docs/design/` pointers are allowed when they explain the product contract.
+5. Put workflow history and review provenance in Git history, task artifacts, and onboarding rather than source comments.
+
 ## Required Agent Behavior Before Editing
 
 Before adding code to any Python file, inspect the current file shape.

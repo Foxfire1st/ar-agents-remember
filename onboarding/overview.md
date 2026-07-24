@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated            | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 
 > **Status:** active baseline
 
@@ -78,7 +78,7 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Repository-owned quality wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. | `python -m agents_remember.code_quality.check`, `code_quality/` |
+| Source quality tooling | Repository-owned wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. CRAP at or above the configured threshold (30 by default) is a mandatory failure at pre-commit, worktree closeout before mutation, pre-push, and CI. | `python -m agents_remember.code_quality.check`, `code_quality/`, `.githooks/`, `worktrees/modules/code_quality_gate.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
 | Canonical runtime, skills, and dashboard asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`; the built dashboard cockpit (`dashboard/dist/`) syncs into `package_data/dashboard/` by `scripts/sync-dashboard.py`. These sync checks are gated by githooks + CI and covered by `mcp/tests/test_sync_*`; the dashboard `--check` is source-aware — it fingerprints the build inputs into a sibling `dashboard.fingerprint`, so a `dashboard/src` change shipped without a rebuild is flagged at the commit gate, not only at push. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `scripts/sync-dashboard.py`, `mcp/tests/test_sync_runtime.py`, `mcp/tests/test_sync_dashboard.py`, `.githooks/` |
 
@@ -441,6 +441,8 @@ The source checkout now explicitly tells agents to run Ruff, Pyright, and Radon 
 
 The current `pyproject.toml` makes Ruff responsible for import/style/static hygiene and Radon responsible for complexity scouting. Ruff ignores line-length wrapping, high-branch/high-return/high-statement complexity warnings, and numeric sentinel warnings that are better reviewed through Radon or code review. Test files have targeted ignores for unused patched-callable arguments and import-path setup. Radon is configured to show `B` through `F` cyclomatic complexity, visible complexity scores, total/average output, and maintainability-index pressure points while excluding generated, cache, virtualenv, build, dist, and test paths.
 
+The wrapper is now fail-closed and mandatory by default: a CRAP score at or above the configured threshold (30 by default) produces a failing result without a separate strict flag. The same repository-owned command is enforced by the pre-commit hook, by worktree closeout before any code/memory/ledger/contract/applied-gate mutation, by pre-push, and by CI. Closeout resolves the active worktree package first and uses the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
+
 The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit tests, and diff whitespace checks after safe formatting and cleanup. It also found refactor pressure that should feed Phase 06 rather than be hidden by formatter churn: `parse_settings_block` in `coordination_context_resolver.py` was the highest-complexity function seen in the sweep, and provider lifecycle/setup plus worktree and benchmark modules remain large enough to need package-level analysis before code motion.
 
 ### Task Workflows
@@ -453,7 +455,7 @@ The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit 
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, `lifecycle_finalize_task`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval, and real external-memory closeout commits code first, uses `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refreshes affected onboarding verification metadata and entity fingerprints, runs `memory_quality_check`, then commits memory content and ledger when clean. `lifecycle_finalize_task` is the terminal lifecycle operation after the branch edge has landed: it proves the landed commit is reachable from the local parent/source branch, verifies memory carryover, runs or verifies cleanup, and reconciles the JSON-primary leaf task plus immediate parent row to `Completed`; it does not attempt squash equivalence or recursively complete ancestors. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, `lifecycle_finalize_task`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval. Real external-memory closeout then runs the strict repository quality wrapper before any code, memory, ledger, contract, or applied-gate mutation; a missing wrapper/interpreter, CRAP at or above threshold, or any other nonzero result fails closed. Only after that gate passes does closeout commit code, use `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refresh affected onboarding verification metadata and entity fingerprints, run `memory_quality_check`, then commit memory content and ledger when clean. `lifecycle_finalize_task` is the terminal lifecycle operation after the branch edge has landed: it proves the landed commit is reachable from the local parent/source branch, verifies memory carryover, runs or verifies cleanup, and reconciles the JSON-primary leaf task plus immediate parent row to `Completed`; it does not attempt squash equivalence or recursively complete ancestors. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
 
 ### Observable Session Lifecycle
 
@@ -639,7 +641,21 @@ readiness and liveness, correlated receipts sit beneath durable inbox rows, inte
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
+## 260718-CHATS-L5I Current Repo Impact
+
+The interactive Chats round strengthens the repository's runtime-truth contract across the cockpit and serving daemon. Persistent chat and terminal surfaces preserve local state across view changes; active conversation streams recover from server-minted cursors instead of retrying unusable coordinates; structured questions and native interrupts are exact-session operations with explicit evidence; and dashboard state serving avoids repeated whole-tree walks and repeated projection serialization. These changes retain the existing rule that optimistic browser activity, transport acknowledgement, and terminal settlement are different facts.
+
+The final commit-gate delta also makes the repository wrapper mandatory at pre-commit, worktree closeout before mutation, pre-push, and CI, with CRAP at or above 30 failing by default. Canonical hooks, workflows, setup/public docs, root skill mirrors, and generated dashboard assets are pathRules-disabled onboarding subjects; their current contract is represented here and in eligible README, MCP package authorities, route cards, and memory-system guidance rather than by duplicate sidecars.
+
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
+  recorded the mandatory default CRAP threshold and four enforcement seams,
+  corrected closeout ordering to quality-before-mutation, and documented the
+  pathRules boundary for disabled generated/public surfaces. Verification metadata
+  and entity fingerprints remain pre-commit.
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the root behavioral inventory for the combined frontend/backend interactive-session delta. Verification metadata remains pre-commit.
 
 - 2026-07-21T12:00+02:00 — No route impact: reviewed 260718-CHATS-L5P (cockpit chrome visual polish,
   PASS-WITH-NOTES) against the repo body. Dashboard-only, zero backend edits: it closes the developer

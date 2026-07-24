@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-16T07:25+02:00 |
-| lastVerifiedCommitHash | `d99a1a7f3ac251957ae155ea9beb878b9ba1ab25` |
-| lastVerifiedCommitDate | 2026-07-16T07:36:40+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,15 @@ append-only attempt as review history.
 | The final worker report records the blocked append-only selector attempt, the corrected pre-`--` grammar, and two-marker zero-turn closure. | L72-L96 | [260716-ACPUI-L5-worker-closeout-report.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
 | Independent review confirms normal-start preservation, the absent synthetic MCP marker, all five live rows, and the closed high-severity collision. | L70-L88; L165-L168 | [260716-ACPUI-L5-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
+## 260718-CHATS-L5I Current Delta
+
+Claude protocol parsing now normalizes structured multi-question interactions and the native interrupt request/response grammar. Terminal classification treats an interrupt as `interrupted` only when accepted-interrupt correlation and the supported abort shape prove it; unrelated errors remain failures.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 curator: documented the discovery-only native MCP
   selector grammar, first-`--` boundary, exactly-one strict empty replacement, and normal-start

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_files.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T18:40+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -78,7 +78,15 @@ Run with `PYTHONPATH=mcp/src python -m pytest mcp/tests/test_serving_files.py -q
 | `McpRuntimeConfig` / `RepositoryScope` constructed by the catalog + route tests. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | The serving test suite whose `_config` / `TestClient` pattern this mirrors. | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
+## 260718-CHATS-L5I Current Delta
+
+Serving-files regressions now assert that repository discovery is single-pass and TTL-cached while the returned repository/file grouping stays complete.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): added
   `test_read_file_oversize_multibyte_boundary_returns_text_not_binary` — an oversize text file with a

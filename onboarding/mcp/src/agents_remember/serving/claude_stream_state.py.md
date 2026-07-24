@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_state.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,15 @@ interaction response, model, and effort writes share the transport lock. Prepare
 is not a FIFO and cannot admit a hidden second prompt; late/cancelled frames complete only their exact
 operation.
 
+## 260718-CHATS-L5I Current Delta
+
+Claude stream state retains accepted native-interrupt correlation through settlement and preserves unmatched or malformed frames as evidence. That prevents a late or unrelated error from being rewritten into a user interruption while still allowing an accepted abort to settle honestly.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented full-frame `arEvidence`
   forwarding at the assistant/result/unhandled emit sites and the `_emit` reserved-key exclusion

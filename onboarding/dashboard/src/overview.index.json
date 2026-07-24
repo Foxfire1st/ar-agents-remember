@@ -26,6 +26,7 @@
     }
   ],
   "coveredFiles": [
+    "dashboard/src/cockpit/Cockpit.memo.test.tsx",
     "dashboard/src/cockpit/Cockpit.test.tsx",
     "dashboard/src/cockpit/Cockpit.tsx",
     "dashboard/src/dev/Bench.tsx",
@@ -64,8 +65,8 @@
     "dashboard/src/vite-env.d.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 299,
-    "fileSidecars": 36,
+    "sourceFilesInScope": 316,
+    "fileSidecars": 37,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -91,6 +92,7 @@
     "index",
     "linelogfixture",
     "main",
+    "memo",
     "mockterminalsocket",
     "model",
     "openresponses",
@@ -122,6 +124,7 @@
       "dashboard/src/grammar",
       "dashboard/src/panels",
       "dashboard/src/cockpit",
+      "dashboard/src/cockpit/Cockpit.memo.test.tsx",
       "dashboard/src/cockpit/Cockpit.test.tsx",
       "dashboard/src/cockpit/Cockpit.tsx",
       "dashboard/src/dev",
@@ -139,10 +142,11 @@
       "dashboard/src/dev/scenarios.test.ts",
       "dashboard/src/dev/scenarios.ts",
       "dashboard/src/index.css",
-      "dashboard/src/main.tsx",
-      "dashboard/src/styles"
+      "dashboard/src/main.tsx"
     ],
     "anchorHints": [
+      "Cockpit.memo.test.tsx",
+      "Cockpit.memo.test",
       "Cockpit.test.tsx",
       "Cockpit.test",
       "Cockpit.tsx",
@@ -188,9 +192,7 @@
       "capabilityEnvelopes.ts",
       "capabilityEnvelopes",
       "catalogRows.ts",
-      "catalogRows",
-      "controlMessages.ts",
-      "controlMessages"
+      "catalogRows"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
-| lastVerifiedCommitDate |  2026-07-18T15:41:39+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,15 @@ The suite exercises repository-local routing and browser broadcast doubles; no c
 | --- | --- |
 | Unit under test. | [ChatContextBar.tsx](ChatContextBar.tsx) |
 
+## Current L5I Maintenance
+
+The context-bar suite now pins the split between persistent launch controls and stage-header session
+actions, including history availability and the server-first leaf assignment path.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded launch/action ownership regression coverage;
+  verification fields remain pre-commit.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: added exact-one accepted raw focus plus network and
   contradictory-authority failure regressions with zero row and zero focus. Verification metadata

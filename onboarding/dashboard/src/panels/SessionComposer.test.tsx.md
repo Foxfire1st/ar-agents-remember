@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionComposer.test.tsx`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -69,7 +69,16 @@ Adds same-tab effective-keymap/profile reconfiguration coverage and proves a liv
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
+## Current L5I Maintenance
+
+The composer suite now pins Enter-send versus Shift+Enter newline precedence, server-confirmed queue
+honesty, deferred-send copy, decluttered exception cues, and the evidence-gated stop control beside
+Send.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded the live composer behavior and evidence-gating
+  regressions; verification fields remain pre-commit.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/store.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,6 +54,12 @@ quietly on the `connecting` phase and never flashes the fail-loud alarm.
   (generation guards, `enforceLru`, `failStream`) — only transport is faked.
 - `afterEach` disconnects every session and `reset()`s the store so cases do not leak runtime.
 
+### 2026-07-24 Curator Delta
+
+The orchestration suite now covers the exact six-warm-chat LRU bound, slow boot recovery, rejected
+resume escalation, and the preservation of warm conversations across refocus without an eager
+disconnect.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
@@ -82,6 +88,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added current recovery and warm-LRU regression coverage. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the fourth vitest case — the R10
   transient boot-race retry. The suite now pins the cried-wolf honesty boundary: a hard 4xx (409

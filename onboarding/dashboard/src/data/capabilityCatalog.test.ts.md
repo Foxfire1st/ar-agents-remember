@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/capabilityCatalog.test.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,11 @@ The drop-on-error loop and the refresh-chaining interleaving are the regression 
 dynamic-only ruling and review finding 3: they must keep failing if an error branch ever retains a
 stale envelope or a demanded refresh is satisfied by a plain read.
 
+### 2026-07-24 Curator Delta
+
+The suite now drives an abort-aware hung socket through the capability timeout, asserting the normal
+transport error and a successful fresh retry after the single-flight slot releases.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -88,6 +93,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added timeout/retry regression coverage to the file card. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

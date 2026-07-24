@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-12T20:02+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -480,7 +480,15 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | The shared per-tick contract snapshot and its cross-tick stat-identity parse cache (PTS-L2). | [contract_snapshot.py](contract_snapshot.py) |
 | The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
 
+## 260718-CHATS-L5I Current Route Impact
+
+The observer now caches shared projection inputs per tick and slows repository-surface refresh to its appropriate operational cadence. It also freezes a fully observed completed landing result, validates that persisted projection before use, and returns a reopened or stale-final contract to the live sweep.
+
+Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2 route impact: added `contract_snapshot.py` to the route
   model — ONE shared leaf-contract enumeration+parse pass per projection tick (built in
   `projection_store`, consumed by `read_enclosures`, `read_engine_process_facts`, and drift-snapshot

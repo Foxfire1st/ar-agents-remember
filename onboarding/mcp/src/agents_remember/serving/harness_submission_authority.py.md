@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -131,7 +131,15 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | The authority is internal to agents-remember's hosted-control bridge. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Submission authority now returns an honest queued receipt after a bounded dispatch-acceptance grace when a healthy native echo has not yet arrived. Later lifecycle evidence upgrades the state; a receipt alone is never treated as a completed turn.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the paged never-bodies
   `operation_timeline` enumeration (count+budget greedy loop, `latestSequence`, the eviction floor

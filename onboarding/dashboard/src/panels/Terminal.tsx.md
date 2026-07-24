@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -175,7 +175,19 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+The terminal now preserves the interrupt chord when no real selection is being copied: copy uses
+the platform-native modifier, snapshots selection bytes, and clears the range after a copy so the
+next Ctrl+C/Cmd+C can reach the PTY. `plainTextSelection` promotes an ordinary drag to xterm's
+selection path only for terminals whose application lacks useful mouse gestures. Refit is keyed to
+the last fitted visible box, corrects only genuinely overflowing rows, and does not churn scroll or
+PTY winsize on a keep-alive re-show; disposal is synchronous after all listeners are detached.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected xterm copy/interrupt, selection, refit, and cleanup
+  invariants; verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V31 well-token migration — the host
   `background` `#070b0f` literal → the `well` token (shared with the FB7.1 conversation stage/composer).
