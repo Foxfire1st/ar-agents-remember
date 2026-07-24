@@ -229,6 +229,60 @@ the standalone CRAP-Calculator command.
 
 ---
 
+## Browser Tooling For Frontend Work
+
+Frontend and dashboard work hinges on the agent having the right browser tool for the job.
+This workstation is WSL2 **with WSLg** (`DISPLAY=:0`, Wayland active), a full Linux Google
+Chrome at `/usr/bin/google-chrome`, and Playwright Chromium builds cached under
+`~/.cache/ms-playwright`. Three distinct browser routes exist; they are not interchangeable.
+
+### Route 1 — Playwright (default for agent-driven verification)
+
+The agent's own browser. Use for dashboard verification, e2e flows, screenshots, console/network
+inspection — anything where the agent must *drive and observe* a page. The dashboard repo already
+carries Playwright configs (`dashboard/playwright*.config.ts`); the `playwright-cli` skill covers
+ad-hoc driving outside the test suites. Headful runs render through WSLg as a visible window (with
+the WSL border), so the developer can watch; headless works the same without the window.
+Deterministic, scriptable, available to every spawned CLI seat — no setup required.
+
+Two Playwright frontends are wired into the workspace and split by interaction shape:
+
+- **`playwright-cli` skill** — scripted runs, screenshots, and the dashboard e2e suites. Full
+  Playwright API via Bash; no standing context cost.
+- **Playwright MCP (`@playwright/mcp`)** — long, exploratory sessions with many small
+  interactive steps (click → look → click). One persistent browser session across the whole
+  conversation, typed tools, accessibility-tree snapshots. Registered for both harnesses via
+  `.codex/mcp-playwright.sh` (referenced from `Projects/.mcp.json` for Claude and
+  `.codex/config.toml` for Codex); artifacts land in `Projects/.playwright-mcp/`.
+
+Rule: many small interactive steps → MCP; scripted runs and test suites → CLI skill.
+
+### Route 2 — Windows Chrome via WSL interop (show the developer something)
+
+WSL can launch Windows binaries: `cmd.exe /c start <url>`, `wslview <url>`, or `xdg-open` (wslu)
+pop a tab in the **Windows-side** Chrome. This is **one-way launch only** — there is no control
+channel back, so the agent cannot click, type, read the console, or move the mouse in that tab.
+Right tool for exactly one job: opening a URL for the human to look at.
+
+### Route 3 — Claude in Chrome extension (not usable on this workstation)
+
+The extension gives a Claude Code session bidirectional control of the developer's personal
+browser (login state included). Auth-wise our seats qualify (subscription `/login`), but the
+extension ↔ native-messaging-host ↔ CLI pairing cannot cross the WSL/Windows boundary — Chrome
+integration is officially unsupported in WSL. A Linux Chrome inside WSL could in principle host
+the whole stack on one side, but that is untested/unsupported; do not build workflows on it.
+
+### Rule of thumb
+
+- Agent must verify or interact with a page → **Playwright** (headful via WSLg when the developer wants to watch).
+- Developer just needs to see a URL → **interop tab-launch** into Windows Chrome.
+- Personal-browser state (logins) needed programmatically → not available on WSL; on native
+  Windows/macOS/Linux the extension route or a Chrome DevTools MCP would cover it. Agent SDK /
+  API-key sessions never get the extension — MCP (Playwright MCP, Chrome DevTools MCP) is the
+  sanctioned programmatic route there.
+
+---
+
 ## Release And Changelog Convention
 
 Moved to [`git-workflow.md`](git-workflow.md): the `mcp-vX.Y.Z` tag scheme (→ PyPI publish), the four
