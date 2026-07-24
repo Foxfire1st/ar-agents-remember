@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/ChatActivityIndicator.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,6 +40,11 @@ The component is a pure mapping/presentation seam over `OpenSession`; it uses th
 
 Reviewer residuals F1/F2/F4/F5/F6 are follow-up observations: task-axis role semantics, adjacent palette meaning, live-region scale, shared-store poll rerenders, and the deliberate omission of undefined-status sessions.
 
+### 2026-07-24 Curator Delta
+
+A fresh ready harness seat with no turn claim now summarizes as calm idle. A starting seat remains
+unknown, preserving the difference between booting evidence and a fabricated completed turn.
+
 ## Docs References
 
 No relevant domain documentation was configured in the resolved `system/sources.md`; the contract is proved by repository sources and tests.
@@ -70,6 +75,9 @@ No meaningful cross-repository boundary exists; the component is inside the agen
 | No cross-repo reference. | — | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added fresh-chat activity-state honesty. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3 / missing FEUI-L8 history repair: replaced retired Chats
   hydration ownership with `CockpitShell`/`catalogPoll`, named `LifecycleList` as the sole production

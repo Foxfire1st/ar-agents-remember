@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -81,7 +81,16 @@ rather than the stale L1 text. The welded ⏹ position and the working-only rend
 The reviewed candidate is uncommitted; existing verification hash/date remain pinned; closeout owns
 commit stamping.
 
+## Current L5I Maintenance
+
+This is the catalog-driven working fallback for raw terminals and the temporary SSE connect/reconnect
+window. It renders no stop at all when no interrupt is wired, because controlled seats own Stop beside
+Send; a raw terminal can still receive the line-hosted evidence-gated control.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected fallback-source and stop-control ownership semantics;
+  verification fields remain pre-commit.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: recorded the optional `interrupt` prop — absent
   keeps the pre-L4 disabled placeholder (existing tests unchanged); present renders an evidence-gated

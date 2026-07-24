@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 
 ## What This Area Is
 
@@ -326,7 +326,15 @@ the implemented slices are documented by `active/overview.md`, `projectors/overv
   honest follow-on now that the gate is gone; only codex cumulative token usage is a landed
   supported telemetry metric.
 
+## 260718-CHATS-L5I Current Route Impact
+
+The conversation contract now includes structured per-question interactions and the session-direct response path for lifecycle-free seats, while exact-turn native interrupt remains an acknowledgement-then-settlement operation. Active and control capability views share the fixture-backed interrupt verdict; unsupported control features remain separately conservative. Fresh event/page handoff and recovery use server-minted cursors rather than retrying an invalid resume coordinate.
+
+Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected this route's capability doctrine to
   the landed contract-verification rule (developer ruling 04:55, R4). The Operating Model's

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,19 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+Controlled chat surfaces now remain mounted per session in a pool bounded by the conversation LRU.
+An unfocused surface is `visibility:hidden` and inert, never `display:none`, preserving its scroll
+geometry and virtualizer measurements; evicted or terminated projections are removed rather than
+resurrected. Warm projection reuse avoids needless epoch resolution, while cold boot resolution
+retries only transient failures in a bounded 30-second window and otherwise fails loud. Hidden PTY
+layers freeze their last visible box so composer chrome cannot provoke terminal refits.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected warm/cold projection, bounded keep-alive, scroll-geometry,
+  visible-PTY-box, and honest boot-retry invariants; verification fields remain pre-commit.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the one Chats stage body —
   the thin composition that defaults controlled sessions to the structured surface (PTY demoted to a

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/interactionAnswer.test.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,6 +43,11 @@ gate. 10 cases over `representPendingInteraction`, `findInteractionGate`, and
   CANNOT (not "retry in a moment"), fetch never called (review finding 2 regression, fails on
   pre-fix code) (L173-L189).
 
+### 2026-07-24 Curator Delta
+
+The interaction suite now covers structured multi-question maps, direct permission responses,
+lifecycle-free seats, epoch mismatch refresh-and-retry, and retained exact retry payloads.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -71,6 +76,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added direct interaction-route and structured-answer regression coverage.
+  Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

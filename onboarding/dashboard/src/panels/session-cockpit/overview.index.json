@@ -29,6 +29,7 @@
     "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx",
     "dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx",
     "dashboard/src/panels/session-cockpit/ChatContextBar.tsx",
+    "dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx",
     "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx",
     "dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx",
     "dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx",
@@ -50,6 +51,7 @@
     "dashboard/src/panels/session-cockpit/ModelEffortControl.tsx",
     "dashboard/src/panels/session-cockpit/PtySurface.test.tsx",
     "dashboard/src/panels/session-cockpit/PtySurface.tsx",
+    "dashboard/src/panels/session-cockpit/QueuePreview.test.tsx",
     "dashboard/src/panels/session-cockpit/QueuePreview.tsx",
     "dashboard/src/panels/session-cockpit/SeatInspector.test.tsx",
     "dashboard/src/panels/session-cockpit/SeatInspector.tsx",
@@ -61,8 +63,6 @@
     "dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx",
     "dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx",
     "dashboard/src/panels/session-cockpit/StateDot.tsx",
-    "dashboard/src/panels/session-cockpit/StatusLine.test.tsx",
-    "dashboard/src/panels/session-cockpit/StatusLine.tsx",
     "dashboard/src/panels/session-cockpit/StopResidualNotes.tsx",
     "dashboard/src/panels/session-cockpit/VirtualizedInspectorList.test.tsx",
     "dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx",
@@ -73,7 +73,7 @@
     "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 74,
+    "sourceFilesInScope": 79,
     "fileSidecars": 50,
     "childRoutes": 2
   },
@@ -111,7 +111,6 @@
     "setoutcometoasts",
     "src",
     "statedot",
-    "statusline",
     "stopresidualnotes",
     "test",
     "tsx",
@@ -134,6 +133,7 @@
       "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx",
       "dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx",
       "dashboard/src/panels/session-cockpit/ChatContextBar.tsx",
+      "dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx",
       "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx",
       "dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx",
       "dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx",
@@ -145,8 +145,7 @@
       "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx",
       "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx",
       "dashboard/src/panels/session-cockpit/HeaderStrip.tsx",
-      "dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx",
-      "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+      "dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx"
     ],
     "anchorHints": [
       "AcceptanceChip.tsx",
@@ -165,6 +164,8 @@
       "ChatContextBar.test",
       "ChatContextBar.tsx",
       "ChatContextBar",
+      "ChatsStageBody.test.tsx",
+      "ChatsStageBody.test",
       "ChatsStageBody.tsx",
       "ChatsStageBody",
       "CockpitLiveRegions.test.tsx",
@@ -194,9 +195,7 @@
       "InteractionBar.tsx",
       "InteractionBar",
       "LandedCleanupNotice.tsx",
-      "LandedCleanupNotice",
-      "LaunchFlow.test.tsx",
-      "LaunchFlow.test"
+      "LandedCleanupNotice"
     ]
   },
   "fallback": {

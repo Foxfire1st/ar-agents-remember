@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4` |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,17 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+The renderer suite gained the browser-sensitive regression matrix for scroll memory: middle/top and
+bottom restoration, later inflow at bottom, geometry settling, hidden collapse clamps, trusted-user
+override, virtual measurement shifts, and the persistent latest control. It also retains focused
+renderer/a11y coverage for the conversation grammar.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded the scroll-restoration regression matrix and latest-chip
+  behavior; verification fields remain pre-commit.
 
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the 10k tool-heavy DOM/interaction
   baseline + axe tripwire this leaf added (the L4.4 artifact L4 deferred) — the bounded-mounted-DOM

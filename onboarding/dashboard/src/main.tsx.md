@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/main.tsx`                          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:25+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -36,6 +36,12 @@ upgrade, complementing the manual `effects=off` freeze).
 Import order: `index.css` (declares the cascade-layer order) before `tokens.css`; CSS-var resolution
 is order-independent regardless. The effects flag is read once at boot.
 
+### 2026-07-24 Curator Delta
+
+Development builds now periodically clear React's accumulating performance marks and measures. The
+minute janitor is dev-only, preventing a long-running cockpit tab from retaining an unbounded timeline
+while leaving production bundles and live DevTools recording behavior untouched.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -45,6 +51,9 @@ is order-independent regardless. The effects flag is read once at boot.
 | The scoped WebTUI skin it loads third (260715-FEUI-L1). | L12-L15 | [styles/webtui.css](styles/webtui.css) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added the development performance-timeline cleanup boundary. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-17T00:25+02:00 — 260715-FEUI-L1 S1: added the third global stylesheet import,
   `./styles/webtui.css` (the one WebTUI mapping file), after `index.css` so its `layer(webtui)`

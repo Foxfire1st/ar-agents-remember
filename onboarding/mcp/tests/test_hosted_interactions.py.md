@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_hosted_interactions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `8fc3ecb0cb22da53ba639ad37dee37ce0e8d7c9b` |
-| lastVerifiedCommitDate | 2026-07-14T17:24:18+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,15 @@ No relevant external/domain documentation was configured.
 ## Cross-Repo References
 No meaningful cross-repo references.
 
+## 260718-CHATS-L5I Current Delta
+
+Hosted-interaction tests now cover serialized multi-question answers and failure reopening with adapter-decision evidence, preventing a failed delivery from silently consuming an operator decision.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: added Codex completion-correlation projection and
   explicit pending/unconsumed plus no-replacement terminal-state coverage.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: added durable interaction and non-consumption regression coverage.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -346,7 +346,19 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260718-CHATS-L5I Incremental Commit-Gate Delta
+
+The public closeout tool descriptions now state the real order. Preview reports whether mandatory
+project-owned quality, including CRAP enforcement, will run before the code commit. Apply requires
+preview and approval first, then runs strict quality before any code, memory, ledger, contract, or
+applied-gate mutation. The tool surface no longer describes closeout as commit-first.
+
 ## Update History
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: reconciled the public
+  `worktree_closeout_preview` and `worktree_closeout_apply` descriptions with approval-before-apply
+  and mandatory quality-before-mutation ordering; verification remains pinned until the code
+  commit.
+
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the additive
   `launch-selection-invalid` public refusal and its boundary from runner-owned dynamic launch
   failures. Added the missing governing-overview backlink and corrected the no-configured-domain-

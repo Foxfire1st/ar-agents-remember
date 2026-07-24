@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/QueuePreview.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,16 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | This is a repository-local cockpit projection. | — | — |
 
+## Current L5I Maintenance
+
+The queue head can offer `steer` only when the active projection proves an interrupt capability and
+a real working turn. Steering requests that exact-turn interrupt; it never withdraws, duplicates,
+or locally reorders queued messages, so the server dispatches the same head after settlement.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented wire-evidenced queue steering and its no-local-queue-
+  mutation boundary; verification fields remain pre-commit.
 
 - 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5; documented the read-only authoritative
   queue projection and its privacy/non-optimism boundary. Verification metadata remains pinned to

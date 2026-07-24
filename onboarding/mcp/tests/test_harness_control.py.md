@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1` |
-| lastVerifiedCommitDate | 2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,15 @@ It covers ordered terminal outcomes, unknown-setter barriers, no-resend idempote
 bounded ambiguity, private status/withdraw, IPC and outer-response loss, durable-source interaction,
 and duplicate raw-free projection. Earlier second-runner queue semantics are historical only.
 
+## 260718-CHATS-L5I Current Delta
+
+Harness-control coverage now includes the expanded structured interaction/control surface while preserving exact epoch, request, and transport failure boundaries.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-line call-shape follow —
   the IPC daemon route composition passes the new required `coordination_root` keyword. No

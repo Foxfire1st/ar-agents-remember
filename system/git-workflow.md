@@ -34,8 +34,9 @@ A job changes the checkout via these steps:
 2. Cut **`feat/<slug>`** | **`fix/<slug>`** from the spear (`main`).
 3. **C-09 worktree on that branch — chat & task both** (task adds `task.md`; chat doesn't).
 4. Work in the worktree; **memory parks on the worktree memory branch.**
-5. **Commit gate (human).** Nothing is committed before explicit developer commit approval
-   (C-12 / direct-closeout preview first).
+5. **Commit gate (human + quality).** Nothing is committed before explicit developer commit
+   approval (`c-12-closeout` worktree preview first). After approval, closeout runs the default
+   strict project wrapper before any code, memory, ledger, contract, or applied-gate mutation.
 6. **Push gate (human — one question).** After commit approval, a single "push?" approval hands the
    tail to the agent. Merge is **no longer its own gate** — only timing.
 7. Agent owns the tail: **push the branch → `gh pr create` (target `main`) → checks green →
@@ -88,18 +89,25 @@ The full orchestration doctrine lives in
 
 ---
 
-## Pre-push quality gate
+## Commit and push quality gates
 
-Quality is enforced at two gates, both running the project quality wrapper with
-`--fail-on-crap-threshold` (Ruff, Pyright, the full pytest suite, and CRAP all fail the run):
+Every repository-owned quality gate runs the same default project wrapper.
+Ruff, Pyright, the full pytest suite, and CRAP all fail the run; every CRAP
+score at or above the configured threshold (30 by default) is mandatory failure.
 
+- **Local pre-commit** — `.githooks/pre-commit` runs the wrapper before an
+  ordinary local commit.
+- **Workflow closeout** — `worktree_closeout_apply` runs the wrapper before its
+  code commit and before any code, memory, ledger, contract, or applied-gate
+  mutation, even when local hooks are not configured.
+- **Local pre-push** — `.githooks/pre-push` repeats the same wrapper and blocks
+  the push. **Enable the hooks once per clone** with `./setup-hooks.sh` (which
+  sets `git config core.hooksPath .githooks` after `pip install -e "mcp[dev]"`);
+  `git push --no-verify` bypasses the local push hook intentionally, not CI.
 - **CI** — `.github/workflows/quality-checks.yml` runs on every push and PR to `main` across a
   Python `3.11 / 3.12 / 3.13` matrix. This is the non-bypassable backstop.
-- **Local pre-push** — `.githooks/pre-push` runs the same wrapper and blocks the push. **Enable it
-  once per clone** with `./setup-hooks.sh` (which sets `git config core.hooksPath .githooks` after
-  `pip install -e "mcp[dev]"`); `git push --no-verify` bypasses it intentionally.
 
-Keep both gates calling the project-owned wrapper, not a hand-picked subset. See
+Keep every gate calling the project-owned wrapper, not a hand-picked subset. See
 [`tools.md`](tools.md) for the quality wrapper itself.
 
 ---

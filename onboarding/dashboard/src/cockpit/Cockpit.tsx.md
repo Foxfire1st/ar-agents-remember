@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -164,6 +164,13 @@ follows for a pre-L15 server.
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
+### 2026-07-24 Curator Delta
+
+The shell now keeps rails and Engine Room mounted across view changes, passing visibility as a prop and
+memoizing persistent layers so a tab switch does not reconcile unchanged subtrees. It starts the visible
+tab's wake lock, marks a dirty serving checkout with a compact `*` label, and exposes a real client/
+serving bundle mismatch through the stamp tooltip rather than a redundant reload control.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -215,6 +222,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented persistent-layer memoization, wake-lock ownership, and serving
+  identity honesty. Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the top-bar polish — `SupervisorHeartbeatBadge`
   age humanized (`humanizeDuration`) and stale degraded to quiet `caution({sev:"warn"})` amber (no longer

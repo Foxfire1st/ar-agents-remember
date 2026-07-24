@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/EngineRoom.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -64,7 +64,16 @@ do not assert or reshape the enclosure canvas' workspace-engine rendering.
 | The `GALLERY` projection seed + the store `applySnapshot`. | — | [dev/fixtures.ts](../dev/fixtures.ts) |
 | The honest-motion gate the pulse reads. | — | [engine-room/useShouldAnimate.ts](engine-room/useShouldAnimate.ts) |
 
+## Current L5I Maintenance
+
+The focused suite now delegates to the real model builder through a spy and proves the performance
+boundary: unchanged render inputs and unrelated analytics deltas do not rebuild the room, while a
+real `engineProcesses` change does.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded the model-memo and narrowed-subscription regression
+  coverage; verification fields remain pre-commit.
 
 - 2026-06-24T08:09+02:00 — Engine Room leaf identity: added a two-leaf browser-dashboard render regression proving the rail/header prefer `leafId` while keeping parent `taskName` context and ordering active work before cleanup-pending siblings. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:26+02:00 — Added official-line strip aggregation coverage: same-state workspace CGCs

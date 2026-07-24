@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -260,7 +260,15 @@ the code/memory directories appear on disk, no contract rewrite) and
 still projects — it is NOT archived — but with both flags False until `worktree_start` recreates the
 directories).
 
+## 260718-CHATS-L5I Current Delta
+
+Projection tests now pin the shared per-tick parse/cache path and repository-surface refresh cadence, ensuring the performance change does not change projection truth.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: projection tests cover the new network-free landing snapshot integration while preserving existing observer projection contracts.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: changed projection fixtures to assert summary-only

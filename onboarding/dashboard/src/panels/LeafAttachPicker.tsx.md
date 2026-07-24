@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LeafAttachPicker.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -116,7 +116,17 @@ the reviewed task evidence for any current behavioral claim.
 
 No meaningful cross-repo references found. This is a self-contained presentational dashboard component.
 
+## Current L5I Maintenance
+
+The portaled leaf picker now measures the room above and below its trigger on every open/viewport
+move, chooses the roomier vertical direction when space below is short, and applies that actual
+available height. Horizontal placement remains edge-aware, preventing both rail clipping and a
+fixed-height menu that runs off-screen.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented viewport-aware vertical popover placement and its
+  bounded height; verification fields remain pre-commit.
 
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3 / missing FEUI-L8 history repair: replaced the retired
   Chats consumer and one-argument callback with the landed `RailChat` + `ChatContextBar` ownership

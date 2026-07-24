@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_plane.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash |  `22562e0f2161c2d980385a462275dc370deb72eb`|
-| lastVerifiedCommitDate |  2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,15 @@ No neighboring repository participates in this contract suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+The control-plane suite now pins native interrupt transport, structured pending-interaction payloads, and the raised but finite IPC payload budget at the real bridge boundary.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: created the control-plane contract-suite
   sidecar (interrupt/timeline/asset/recovery batteries plus client validation, 25 tests + 35

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/GateResponder.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:18+02:00                           |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -91,7 +91,17 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 Gate responses render adapter-owned interaction prompt, choices, and identity, and submit the chosen
 response through the durable gate path. Completion or acceptance does not consume an inbox row.
 
+## Current L5I Maintenance
+
+A reopened hosted-interaction gate can carry `packet.adapterDecisionFailure`. This renderer now
+shows the prior decision/note, the proven delivery certainty, and its reason before offering a
+fresh response. It distinguishes `not-sent` (safe to decide again) from `unknown` (the harness may
+already hold the decision) and preserves unfamiliar wire values verbatim rather than guessing.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected the reopened-gate contract to surface the failed prior
+  delivery with evidence-bounded copy; verification fields remain pre-commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed adapter interaction rendering and response boundary.
 
 - 2026-07-02T16:18+02:00 — L8: removed the message-only `Chat` mode and its textarea/send path from

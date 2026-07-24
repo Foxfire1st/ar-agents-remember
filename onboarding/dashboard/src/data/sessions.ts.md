@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T11:30+02:00                           |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -163,6 +163,12 @@ object with the action methods on it, not a separate actions slice.
 The older raw connection helpers remain for legacy terminal surfaces, but no new task-independent
 debt was introduced by the authoritative-open change.
 
+### 2026-07-24 Curator Delta
+
+Catalog hydration now reuses content-identical row objects and returns the prior store state when a
+whole beat is unchanged. Changed catalog facts still replace only their row, including a locally
+pre-applied seat event that the authoritative poll disproves.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -233,6 +239,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented identity-preserving authoritative catalog reconciliation.
+  Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 UI-only field
   `OpenSession.liveTurnWorking?` — the focused seat's conversation-projection live-turn signal that

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-04T12:32+02:00|
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-24T14:31Z|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,11 +16,14 @@ Owns worktree closeout preview/apply behavior.
 
 ## Code Commentary
 
-Closeout validates source branch positions and explicit commit approval, commits
-code first, refreshes onboarding metadata, route overview metadata, generated
-route indexes, and entity fingerprints to that new code commit, runs
-`memory_quality_check`, commits memory content only after the quality gate is
-clean, updates the external memory ledger, and returns the closeout payload.
+Closeout validates source branch positions and explicit commit approval. When
+an Agents Remember code commit would be created, it runs the strict
+project-owned quality wrapper before any code, memory, ledger, contract, or
+applied-gate mutation. Only after that gate passes does it commit code, refresh
+onboarding metadata, route overview metadata, generated route indexes, and
+entity fingerprints to the new code commit, run `memory_quality_check`, commit
+memory content, update the external memory ledger, and return the closeout
+payload.
 Closeout is worktree-only: the former direct-closeout functions
 (`validate_direct_external_context`, `direct_closeout_preview_payload`,
 `direct_closeout_result`) were removed with the direct tool surface (issue #62).
@@ -107,8 +110,21 @@ No external Domain Documentation source is configured for this memory repo.
 | The pure closeout-gate policy this module enforces (slice 6b). | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
 | The gate policy threaded through `WorktreeArgs`. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
 | The gate log read during enforcement and appended to when marking `applied`. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
+| The strict source-quality adapter decides applicability, executes the current worktree wrapper, and fails before mutation. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
+| Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs quality before code commit. | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+
+## 260718-CHATS-L5I Incremental Commit-Gate Delta
+
+Preview now exposes the strict quality requirement and places it first in `closeout_order`. Apply
+recomputes whether code would commit, runs `run_strict_code_quality_gate` before
+`commit_if_dirty`, and returns the gate result in the closeout payload. The deliberate skip remains
+narrow: no Agents Remember code commit means no project-owned wrapper run.
 
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: corrected closeout ordering to
+  mandatory strict quality before every mutation and documented preview/apply payload evidence plus
+  the no-code-commit skip; verification remains pinned until the code commit.
 
 - 2026-07-04T12:32+02:00 — 260703-L4: closeout preview/apply now evaluate
   `closeout-approval` through `args.gate_policy`, so human approvals remain

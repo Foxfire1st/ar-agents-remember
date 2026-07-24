@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -115,7 +115,19 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+The virtualized timeline owns robust view-switch scroll restoration. It continuously records
+per-session `{scrollTop, atBottom}`, ignores box-less/clamp-echo events, arms restores until honest
+geometry can contain them, drives bottom restoration through stable frames, and lets trusted user
+input cancel any pending restore. A latest chip is outside the scroller so it remains reachable;
+measurement anchoring protects a reader's visible row during virtual-row size changes.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented restored scroll intent, trusted-input precedence,
+  late-clamp protection, latest navigation, and measurement anchoring; verification fields remain
+  pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7 terminal-surface identity pass —
   the `viewport` well (`background: well` + grid border + `100ch` centered `feedInner` column, FB7.1),

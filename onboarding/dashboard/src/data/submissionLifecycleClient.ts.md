@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submissionLifecycleClient.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -49,6 +49,12 @@ exact-request plus exact-revision local state and never causes network I/O.
 
 None for FEUI-L5. New lifecycle sources must use the same settlement/fold seam.
 
+### 2026-07-24 Curator Delta
+
+Lifecycle reads are abort-bounded and continue after a dispatching or unknown projection until the
+authority supplies a terminal word. The watch shares the reconciliation budget; expiry enters the
+existing honest endgame rather than polling or displaying delivering forever.
+
 ## Docs References
 
 No Domain Documentation source is configured for this repository.
@@ -83,6 +89,9 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added bounded lifecycle transport and post-dispatch watch semantics.
+  Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

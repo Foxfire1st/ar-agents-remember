@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-12T20:02+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`             |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`             |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -200,7 +200,15 @@ The recurring projection path uses projected status plus the latest landing snap
 | Admission policy is centralized in the worktree provider admission helper. | L18-L84 | [worktree_provider_admission.py](agents-remember/mcp/src/agents_remember/observer/worktree_provider_admission.py) |
 | Projection tests prove cached repo surfaces do not cache provider reads. | L2283-L2324 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
+## 260718-CHATS-L5I Current Delta
+
+The projection path now shares one contract/enclosure parse pass per tick and uses a slower bounded repository-surface refresh cache. These changes remove repeated whole-workspace reads from the one-second projection cadence without freezing the projection's volatile fields.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2: added the module-level `_contract_snapshot_cache`;
   `project_and_write` builds ONE shared `ContractSnapshot` per tick and passes it to
   `read_enclosures`, `prune_orphaned_drift_snapshots`, and `read_engine_process_facts`, replacing

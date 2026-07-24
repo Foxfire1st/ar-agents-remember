@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/keymap/chords.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -50,6 +50,12 @@ zone passes it through.
   Do not reintroduce it.
 - Command ids must exist in `data/commands.ts`'s registry — the chord layer dispatches ids, never
   functions.
+
+### 2026-07-24 Curator Delta
+
+Harness-chat composition now uses plain Enter for submit; Shift+Enter remains the editor newline
+binding at the same precedence. The chord table remains the single source shared by the key router and
+keyboard-reference surfaces.
 
 ## Docs References
 
@@ -95,6 +101,9 @@ zone-scoping contract; the reviewed L4 candidate is uncommitted, verification st
 FEUI-L1 base until closeout.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Updated the default composer submit chord to Enter. Verification hash/date
+  remain pinned to the pre-commit source stamp.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
   the new `conversation.stop` chord (`Control+Shift+Period`, chrome+composer, pty-excluded,

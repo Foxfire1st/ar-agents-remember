@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/files.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`       |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,12 @@ mutation. Query strings are always built via `URLSearchParams` so path/scope val
   `unknown-repo` / `unknown-scope` / `not-found`, 400 `bad-path`.
 - Same-origin by default; the FastAPI dashboard server owns repo/scope resolution and path safety.
 
+### 2026-07-24 Curator Delta
+
+`fetchRepos` now shares only concurrent boot reads and expires its transport after 10 seconds.
+Settlement always clears the slot: a successful later read re-fetches, and an abort or rejection lets
+the next caller retry rather than turning a single-flight into a cache or permanent wedge.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -96,6 +102,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added bounded single-flight repository-catalog behavior. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

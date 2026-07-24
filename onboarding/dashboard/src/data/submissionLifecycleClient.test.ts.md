@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submissionLifecycleClient.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -35,6 +35,11 @@ creation, explicit replace versus keep-current, and exact dismissal with no netw
 - Tests never restore from not-found or generation-lost evidence.
 - Recovery assertions include draft revision as well as request id, preventing a successor request
   or newer edit from being dismissed accidentally.
+
+### 2026-07-24 Curator Delta
+
+The polling suite now proves that dispatching is non-terminal, delivered stops the poller, and a
+never-terminal record reaches bounded endgame instead of producing an unbounded loop.
 
 ## Docs References
 
@@ -67,6 +72,9 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added terminal-word and bounded-watch polling coverage. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

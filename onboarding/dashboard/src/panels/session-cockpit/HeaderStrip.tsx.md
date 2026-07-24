@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -79,7 +79,17 @@ EvidenceBadge glyph — no longer the L2 store default).
 | The live exact-session model/effort control mounted in the slot. | L148-L383 | [ModelEffortControl.tsx](ModelEffortControl.tsx) |
 | The suite: anatomy order, mounted control, grammar word, freshness honesty, derived provenance tiers. | L16-L117 | [HeaderStrip.test.tsx](HeaderStrip.test.tsx) |
 
+## Current L5I Maintenance
+
+The compact header no longer duplicates model/effort provenance or a seat-role fact already owned by
+the control/inspector. An unclassified state is exposed to assistive technology as unavailable
+without painting a false visible state word; model/effort remains one plain current pair in its
+dedicated control.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented header decluttering and unavailable-state accessibility
+  copy; verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded R10 identity dedup (harness label dropped
   when it case-insensitively equals the session label — no `codex codex` stutter) and the R3 diagnostics

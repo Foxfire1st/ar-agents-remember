@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-10T01:27+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -75,7 +75,15 @@ the reader kept mounted-hidden so selection survives.
 | The shell that hosts the takeover + lifts its selection. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
 | The entry surface (compact list + references) that opens this reader. | [panels/TaskNotes.tsx](agents-remember/dashboard/src/panels/TaskNotes.tsx) |
 
+## Current L5I Route State
+
+The Notes Reader remains a controlled mounted-hidden takeover, now memoized so unchanged shell view
+switches do not reconstruct its note-reader subtree or disturb selected-note state.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented the persistent-reader memo boundary. Verification
+  metadata remains pre-commit.
 
 - 2026-07-10T01:27+02:00 — No route impact: reviewed 260707-HFX2-L13's changed
   `NotesReaderViewer.test.tsx` fixture. It now serves the parent detail reader's on-demand

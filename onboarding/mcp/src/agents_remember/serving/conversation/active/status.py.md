@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/status.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,15 @@ No cross-repository implementation participates in this status authority.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Status freshness now reflects evidence-expected active states rather than making a quiet, ready conversation look stale. Fresh active pages and events retain their canonical turn state and cursor semantics while genuine working or settlement evidence can still surface staleness.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the canonical
   status authority — the one evidence classification, revisioned envelope, single seat

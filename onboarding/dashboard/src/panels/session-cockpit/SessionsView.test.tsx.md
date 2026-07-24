@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -154,7 +154,16 @@ the read-only diagnostics drawer (R2/R7). No test intent was silently dropped.
 The reviewed candidate is uncommitted; existing verification hash/date remain pinned; closeout owns
 commit stamping.
 
+## Current L5I Maintenance
+
+The composition suite now covers stage guttering, rail-to-input focus handoff, title-row controls,
+SSE-preferred working feedback, removal of the StatusLine/end-notice chrome, and visibility passed
+to the kept-alive conversation stage.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded current stage-composition and retired-StatusLine
+  regressions; verification fields remain pre-commit.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: recorded the six SessionsView test updates from the
   pre-L4 unconditional-PTY architecture to the `ChatsStageBody` composition (Deviation 3), including the

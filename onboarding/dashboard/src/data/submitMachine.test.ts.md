@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submitMachine.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,11 @@ admissible and cannot be regressed by stale observations.
 - Request identity is constant across every transition in a scenario.
 - `not-found` and `generation-lost` never become safe-retry or draft-restore certificates.
 
+### 2026-07-24 Curator Delta
+
+The pure-machine tests distinguish a queued receipt from server-confirmed queued state and pin watch
+start, terminal completion, phase exclusions, and bounded expiry.
+
 ## Docs References
 
 No Domain Documentation source is configured for this repository.
@@ -60,6 +65,9 @@ No meaningful cross-repo references found.
 | This is a repository-local unit suite. | — | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added receipt-honesty and lifecycle-watch coverage. Verification hash/date
+  remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

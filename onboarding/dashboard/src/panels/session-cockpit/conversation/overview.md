@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated            | 2026-07-21T12:00+02:00                                       |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`                  |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                  |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -207,9 +207,21 @@ cross-repository implementation source governs it.
 | The sibling in-stage history browser. | [conversation-library overview](../conversation-library/overview.md) |
 | The one-roof composition that mounts this renderer. | [session-cockpit overview](../overview.md) |
 | The interrupt chord/aria-derivation the hook consumes. | [../../../data/keymap/overview.md](../../../data/keymap/overview.md) |
-| The control routes whose evidence gates interrupt + the L4-facing rulings. | [control overview](../../../../mcp/src/agents_remember/serving/conversation/control/overview.md) |
+| The control routes whose evidence gates interrupt + the L4-facing rulings. | [control overview](../../../../../mcp/src/agents_remember/serving/conversation/control/overview.md) |
+
+## Current L5I Route State
+
+The renderer keeps its timeline well mounted even while empty, uses process-state evidence for the
+welcome state, and owns a robust scroll-memory contract for a Cockpit `display:none` view switch.
+Restores wait for valid geometry, ignore collapse echoes, follow the current end only when the reader
+left at bottom, and yield to trusted user input. A live SSE stream supplies a compact working cue;
+the exact-turn Stop control intentionally remains beside Send in the composer.
 
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented current empty-well honesty, scroll restoration, latest
+  navigation, SSE working cue, and composer-owned stop behavior. Verification metadata remains
+  pre-commit.
 
 - 2026-07-21T12:00+02:00 — 260718-CHATS-L5P curator: added the FB7 terminal-surface identity section —
   the well (FB7.1), line-grid rhythm (FB7.3), gutter grammar across the item components (FB7.4/R12),

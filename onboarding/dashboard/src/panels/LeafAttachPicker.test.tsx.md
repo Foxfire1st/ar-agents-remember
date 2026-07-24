@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LeafAttachPicker.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -62,7 +62,15 @@ key as opaque — they only check it round-trips through `onPick`.
 | The component under test. | — | [LeafAttachPicker.tsx](LeafAttachPicker.tsx) |
 | The `TaskTreeNode` type the `TREE` fixture is built against. | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 
+## Current L5I Maintenance
+
+The picker tests now cover the measured placement contract in addition to selection behavior,
+including opening above the trigger when the lower viewport room cannot accommodate the menu.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded regression coverage for measured vertical placement;
+  verification fields remain pre-commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: expanded drill-down tests with mandatory/preselected
   seat role and restricted role-option behavior.

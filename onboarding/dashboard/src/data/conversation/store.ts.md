@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/store.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T11:30+02:00                           |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -35,7 +35,8 @@ session's projection; it is simply rehydrated on refocus — history authority i
   hydrate), `ingestEvent` (drops events for an un-hydrated session, applies through the reducer,
   no-op-skips when unchanged), `setStreamPhase`, `failStream` (records the typed reason and marks the
   projection `projection-failed`; when no projection exists yet the error alone lets the surface render
-  the reason on a first-connect failure), `setScrollAnchor`, `evict`, `reset`.
+  the reason on a first-connect failure), `evict`, `reset`. Scroll restoration is no longer reducer
+  state: the UI owns its short-lived per-session geometry memory so protocol reduction stays DOM-free.
 - Orchestration (outside the store, `runtimeBySession` Map, to avoid re-render churn — the
   identity-preserving pattern; never conversation authority): `connectConversation` disposes any prior
   runtime, bumps a `generation`, enforces the LRU, then `hydrateAndStream` fetches the page (guarded by
@@ -55,8 +56,17 @@ session's projection; it is simply rehydrated on refocus — history authority i
   `handleRecovery` (stop the stream, re-page native authority, `applyPage` initial which clears
   recovery/fault and re-establishes the resume cursor, then resume). `disconnectConversation` disposes
   and stops but KEEPS the projection (keep-alive). `loadOlderConversation` prepends one older page.
-  `enforceLru` keeps the focused session + the newest `LRU_LIMIT-1` (LRU_LIMIT=6) and evicts only
-  sessions with NO live runtime (`!runtimeBySession.has(id)`).
+  `enforceLru` keeps exactly `LRU_LIMIT=6` warm conversations and evicts the least-recently used
+  runtime; focus switches only touch the order, while eviction and termination are the disconnectors.
+
+### 2026-07-24 Curator Delta
+
+The store now treats a rejected resume cursor and a never-opening stream as recoverable transport
+failures: it re-pages for a fresh server cursor, limits repeated dead-stream recovery, and eventually
+surfaces the typed failure instead of leaving a fabricated connecting state. It also preserves warm
+projections across focus changes, disconnecting only on LRU eviction or termination, and tests the
+exact six-chat bound. Scroll state moved out of the protocol reducer into the timeline's per-session
+view memory; no `setScrollAnchor` action remains here.
 
 ### Invariants And Boundaries
 
@@ -107,6 +117,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Corrected the stale `setScrollAnchor` and non-disconnecting-LRU claims, and
+  documented current bounded recovery, keep-warm, and exact-LRU behavior. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R10 (audit V13) initial-hydrate
   boot-race retry. `hydrateAndStream` is now a bounded loop (`INITIAL_CONNECT_ATTEMPTS=8`,

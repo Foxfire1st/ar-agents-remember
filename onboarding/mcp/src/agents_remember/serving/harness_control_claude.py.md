@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -129,7 +129,15 @@ The Claude hosted adapter passes full operation refs through prompt, response, m
 methods and delegates sole-operation preflight to stream state. An unknown setter remains the common
 authority barrier until exact resolution; it is not released merely because a caller timed out.
 
+## 260718-CHATS-L5I Current Delta
+
+The Claude control adapter now sends native interrupts through the shared control channel and returns a typed acceptance outcome. It does not infer terminal delivery from the write acknowledgement; stream settlement remains the authority.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 — `start` now passes the expected launch's
   requested model key into `negotiate_claude_catalog`, so a resolved-model collision (e.g. `opus[1m]`

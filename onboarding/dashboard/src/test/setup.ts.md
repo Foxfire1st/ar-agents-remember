@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/setup.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:25+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -46,6 +46,11 @@ Test-only — loaded by vitest `setupFiles`, never part of the production bundle
 idempotent; they must not impose real media-query / resize behaviour (tests that need specific values
 override locally).
 
+### 2026-07-24 Curator Delta
+
+The jsdom setup now supplies inert media `play`/`pause` methods. Visibility-gating tests can assert their
+calls without relying on browser playback that jsdom does not implement.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
@@ -55,6 +60,9 @@ override locally).
 | The render test that depends on these stubs. | — | [cockpit/Cockpit.test.tsx](../cockpit/Cockpit.test.tsx) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added media playback stubs for visibility-gate tests. Verification hash/date
+  remain pinned to the pre-commit source stamp.
 
 - 2026-07-17T00:25+02:00 — 260715-FEUI-L1: added a guarded inert `Element.prototype.scrollIntoView`
   stub — jsdom omits it and cmdk (the sessions command palette) calls it on the selected item.

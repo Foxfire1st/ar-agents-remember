@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -95,6 +95,12 @@ first touch.
   object per 2.5 s beat (re-renders the banner subscriber); an identity-preserving write is a
   candidate follow-up, out of the leaf's minimal-fix mandate.
 
+### 2026-07-24 Curator Delta
+
+Interaction retry state can now retain a structured answers map alongside its human-readable summary.
+The exact map, keyed by the authoritative question text, is what a retry resends; it is not rebuilt
+from rendered controls.
+
 ## Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
@@ -142,6 +148,9 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Documented structured-interaction retry state. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

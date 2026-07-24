@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-06T23:59:12+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -108,7 +108,15 @@ together.
 | The render-back precedent: the worktree contract regenerates its markdown from its model. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | The persisted-contract peer this schema mirrors. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 
+## 260718-CHATS-L5I Current Route Impact
+
+Task reopening now clears the completed landing-final artifact as part of restoring live task state and exposes a clearing failure. The tasks route therefore does not let a historical completed landing projection survive as the current truth for reopened work.
+
+Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-06T23:59:12+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: the schema
   now carries the ORCHESTRATION-COMMAND relation — `document.py` gained the master-only

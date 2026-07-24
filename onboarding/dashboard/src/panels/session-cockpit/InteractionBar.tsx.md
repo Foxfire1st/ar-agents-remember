@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -98,7 +98,18 @@ rather than a bar-owned draft. The exact interaction, stored answer text, and re
 failed gate call for retry; a later edit wins through revision-CAS clearing. Choice interactions
 remain direct gate decisions and ordinary submission stays disabled as an answer channel.
 
+## Current L5I Maintenance
+
+Structured `AskUserQuestion` interactions now render each question with its own option group. A
+multi-select question records a joined single answer only after explicit confirmation; all question
+answers submit together through the direct session route once every question is answered. Permission
+interactions share that direct route, while legacy shapes retain the gate fallback and unsupported
+payloads remain explicit rather than dead controls.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented per-question pages, all-or-nothing answer submission,
+  and direct-route versus legacy-gate routing; verification fields remain pre-commit.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented shared-composer answer mode, exact retry state, and
   revision-safe clearing.

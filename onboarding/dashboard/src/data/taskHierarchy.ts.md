@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskHierarchy.ts`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash |                                           `31f58834f86c0d98e26b0896e099a2403a8729ee`|
-| lastVerifiedCommitDate |                                           2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash |                                           `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |                                           2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,6 +73,12 @@ instead of duplicating selection prefixes.
 
 No standing todos.
 
+### 2026-07-24 Curator Delta
+
+Parent task lookup now builds one weakly cached normalized-reference index per series-list identity.
+It preserves the established first-series and creation-order precedence while avoiding repeated
+sort-and-normalize scans for every task row.
+
 ## Docs References
 
 No relevant external documentation found; this file implements same-repository task projection
@@ -106,6 +112,9 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is involved. | — | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added cached parent-task index semantics. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: restricted the orchestration-command helpers' current
   consumer to Operations `LifecycleList` and recorded `railModel` as the separate canonical Chats

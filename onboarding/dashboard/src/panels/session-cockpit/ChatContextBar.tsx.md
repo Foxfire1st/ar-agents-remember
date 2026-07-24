@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate |  2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,16 @@ path. The sole-launch-entrance and accepted-row-only invariants are unchanged. *
 is now ALWAYS present and disabled-with-reason on an ineligible focus, per the V8 delta above — no longer
 conditionally unmounted.)*
 
+## Current L5I Maintenance
+
+The rail context bar now owns creation only. Focused-session actions—history browsing and server-first
+leaf attach/move—are extracted to `ChatSessionActions` on the stage title row, where their object is
+visible. Ineligible actions retain their disabled placement/reason rather than moving unpredictably.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected launch-versus-focused-session action ownership and
+  title-row placement; verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded V8 (Browse history always present,
   disabled-with-reason on ineligible focus — no teleport) and R6 (task/lifecycle badges rendered via

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,15 @@ epoch mismatch/id conflict, invalid batches, certified pre-dispatch retry, post-
 the complete reconciliation/status lifecycle matrix. They prove errors are mapped before private
 state leaks.
 
+## 260718-CHATS-L5I Current Delta
+
+API regressions now cover the control liveness memo and lifecycle-free interaction-response route, including typed non-pending and epoch failure behavior.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-line call-shape follow —
   the focused route registration passes the new required `coordination_root` keyword. No HTTP

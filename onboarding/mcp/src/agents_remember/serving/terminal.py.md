@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -202,7 +202,15 @@ No meaningful cross-repository implementation source governs this repository-loc
 | --- | --- | --- |
 | The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Terminal creation now uses synchronized tmux frame support only when the installed tmux capability permits it, preserving a fallback for older hosts. The terminal host continues to separate durable session identity from browser attachment and does not treat unsupported terminal features as a reason to fail a session.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: recorded owned tmux-client terminal identity across all six
   administrative clients and attached PTY spawn; verification metadata remains pinned pending

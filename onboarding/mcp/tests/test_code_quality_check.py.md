@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T12:06+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                      |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-24T14:31Z                     |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                      |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -40,8 +40,10 @@ virtualenv without losing third-party import resolution.
   interpreter path.
 - Fixed check failures make the wrapper return nonzero.
 - Missing coverage JSON makes the CRAP step fail.
-- CRAP threshold hits are report-only by default and fail only when
-  `fail_on_crap_threshold` is enabled.
+- CRAP threshold hits fail the default wrapper, and the parser exposes no
+  report-only or strict opt-in mode.
+- Repository-gate fixtures prove pre-commit, pre-push, and CI all invoke the
+  same default wrapper command.
 - The wrapper threads an environment to the runner whose `PYTHONPATH` leads with
   this checkout's source import root, so the gate measures the current checkout.
 
@@ -53,6 +55,10 @@ virtualenv without losing third-party import resolution.
 | CRAP-Calculator owns the function scoring used by the wrapper. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
 
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: documented mandatory default
+  threshold failure, removal of the strict opt-in surface, and repository-gate command parity;
+  verification remains pinned until the code commit.
 
 - 2026-06-08T12:06+02:00: Added coverage that the Pyright command includes
   `--pythonpath` and the active interpreter path, matching the linked-worktree

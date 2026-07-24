@@ -17,13 +17,14 @@
     "dashboard/src/data/conversation/reducer.ts",
     "dashboard/src/data/conversation/store.test.ts",
     "dashboard/src/data/conversation/store.ts",
+    "dashboard/src/data/conversation/stream.test.ts",
     "dashboard/src/data/conversation/stream.ts",
     "dashboard/src/data/conversation/thinkingPreference.ts",
     "dashboard/src/data/conversation/types.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 10,
-    "fileSidecars": 10,
+    "sourceFilesInScope": 11,
+    "fileSidecars": 11,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -51,6 +52,7 @@
       "dashboard/src/data/conversation/reducer.ts",
       "dashboard/src/data/conversation/store.test.ts",
       "dashboard/src/data/conversation/store.ts",
+      "dashboard/src/data/conversation/stream.test.ts",
       "dashboard/src/data/conversation/stream.ts",
       "dashboard/src/data/conversation/thinkingPreference.ts",
       "dashboard/src/data/conversation/types.ts"
@@ -70,6 +72,8 @@
       "store.test",
       "store.ts",
       "store",
+      "stream.test.ts",
+      "stream.test",
       "stream.ts",
       "stream",
       "thinkingPreference.ts",
@@ -97,13 +101,11 @@
       "R10",
       "dashboard/src/data/conversation/",
       "route-local-overview",
-      "38c3fd81bdf851dce96e9b2b14e2bff741e7b383",
+      "842b487b854503d95c9c2d9dce1841198ba93c7d",
       "/overview.md",
       "data/conversation/",
       "exact camelCase from the server's",
-      "ActiveConversationRef",
-      "arSessionId",
-      "bridgeEpoch"
+      "ActiveConversationRef"
     ]
   },
   "fallback": {

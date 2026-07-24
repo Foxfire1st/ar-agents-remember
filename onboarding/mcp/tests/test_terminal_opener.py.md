@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`        |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`        |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -156,7 +156,15 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260718-CHATS-L5I Current Delta
+
+Opener regressions now assert that a runner inherits the daemon worktree package root, preventing tmux-server environment leakage from selecting stale checkout code.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented same-pair idempotent reopen,
   changed-pair/identity conflict without mutation, fresh dead replacement, concurrent one-process /
   one-catalog truth, the batch fence, and preservation of the role-based shared opener path; also

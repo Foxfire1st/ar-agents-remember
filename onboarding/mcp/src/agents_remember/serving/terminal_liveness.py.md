@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `68b3205526dae210cd902eef39d93c4f4352c2d4`                                             |
-| lastVerifiedCommitDate | 2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                                             |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -227,7 +227,15 @@ Process existence remains tmux evidence, while hosted activity and turn state co
 adapter snapshot. Bridge failures remain explicit disconnected/unknown states; pane classifiers are
 stored only as diagnostics and cannot produce supervisor actions.
 
+## 260718-CHATS-L5I Current Delta
+
+Terminal liveness now checks starting control rows on a one-second fast path and requires consecutive failed reads before marking a busy bridge disconnected. Full-sweep cadence and prompt tmux-death detection remain distinct from this startup/read hysteresis.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: documented the H1 hosted-interaction
   synchronizer quarantine (`_observe_control_snapshot`: per-entry fail-loud `interactionSyncError`,
   the sweep survives; the broad `except Exception` justified because a pipe/disk failure in the same

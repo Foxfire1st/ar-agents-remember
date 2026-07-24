@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T12:07+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -136,7 +136,24 @@ The README describes external memory in general terms, but this file-level onboa
 | --- | --- | --- |
 | No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
+## 260718-CHATS-L5I Current Delta
+
+The README now presents the repository's mission-control welcome capture immediately below the canonical documentation links. The image is a product illustration, not an onboarding source: its PNG path remains excluded by the memory path rules.
+
+Its developer section now also states the commit-gate contract: pre-commit and pre-push run the
+default project quality wrapper, and worktree closeout runs that same strict wrapper before creating
+an Agents Remember code commit. Ruff, Pyright, the full pytest suite, and the configured CRAP
+threshold are therefore one public default contract rather than an optional strict mode.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: added the README's public
+  pre-commit/pre-push/closeout strict-wrapper contract; verification remains pinned until the code
+  commit.
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-12T12:07+02:00 — No content impact: 260712-TRH-L1 bumps the public Status/install pin
   strings 3.0.0rc4 -> 3.0.0rc5 for the task-reader priority release; the body describes the release

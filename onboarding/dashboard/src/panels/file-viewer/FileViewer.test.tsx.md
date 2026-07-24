@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/file-viewer/FileViewer.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-29T09:06+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,15 @@ is a breaking change.
 | `applySnapshot` loads the projection under test. | L129-L144 | [../../data/store.ts](../../data/store.ts) |
 | The `engine-fleet` GALLERY fixture. | L152 | [../../dev/fixtures.ts](../../dev/fixtures.ts) |
 
+## Current L5I Maintenance
+
+The focused viewer suite now proves that a hidden mounted viewer makes no files API request, first
+selection makes exactly one catalog read, and later hide/show cycles retain the settled catalog.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded first-visible catalog-read regressions; verification
+  fields remain pre-commit.
 
 - 2026-06-30T00:00:00+02:00 — operations-integration L5: the pre-selection assertion now checks `container.textContent` contains "Select a code file" (the siege-tank empty-state backdrop fills the pane, so there are no per-side `pane-placeholder` nodes to query) instead of scanning `pane-placeholder` elements.
 - 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the vitest/RTL test

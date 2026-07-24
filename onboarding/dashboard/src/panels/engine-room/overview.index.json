@@ -21,13 +21,16 @@
     "dashboard/src/panels/engine-room/engineRoomStyles.ts",
     "dashboard/src/panels/engine-room/engineRoomTypes.ts",
     "dashboard/src/panels/engine-room/fixtures.ts",
+    "dashboard/src/panels/engine-room/useElementVisible.test.tsx",
+    "dashboard/src/panels/engine-room/useElementVisible.ts",
+    "dashboard/src/panels/engine-room/useEngineTimeline.test.tsx",
     "dashboard/src/panels/engine-room/useEngineTimeline.ts",
     "dashboard/src/panels/engine-room/useShouldAnimate.test.ts",
     "dashboard/src/panels/engine-room/useShouldAnimate.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 14,
-    "fileSidecars": 14,
+    "sourceFilesInScope": 17,
+    "fileSidecars": 17,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -47,6 +50,7 @@
     "src",
     "test",
     "tsx",
+    "useelementvisible",
     "useenginetimeline",
     "useshouldanimate"
   ],
@@ -65,6 +69,9 @@
       "dashboard/src/panels/engine-room/engineRoomStyles.ts",
       "dashboard/src/panels/engine-room/engineRoomTypes.ts",
       "dashboard/src/panels/engine-room/fixtures.ts",
+      "dashboard/src/panels/engine-room/useElementVisible.test.tsx",
+      "dashboard/src/panels/engine-room/useElementVisible.ts",
+      "dashboard/src/panels/engine-room/useEngineTimeline.test.tsx",
       "dashboard/src/panels/engine-room/useEngineTimeline.ts",
       "dashboard/src/panels/engine-room/useShouldAnimate.test.ts",
       "dashboard/src/panels/engine-room/useShouldAnimate.ts"
@@ -92,6 +99,12 @@
       "engineRoomTypes",
       "fixtures.ts",
       "fixtures",
+      "useElementVisible.test.tsx",
+      "useElementVisible.test",
+      "useElementVisible.ts",
+      "useElementVisible",
+      "useEngineTimeline.test.tsx",
+      "useEngineTimeline.test",
       "useEngineTimeline.ts",
       "useEngineTimeline",
       "useShouldAnimate.test.ts",
@@ -100,7 +113,7 @@
       "useShouldAnimate",
       "dashboard/src/panels/engine-room/",
       "route-local-overview",
-      "300664e63f2dbb5f0701d37bbc17ff5358960c77",
+      "842b487b854503d95c9c2d9dce1841198ba93c7d",
       "/overview.md",
       "engine-room/",
       "analytics.engineProcesses",
@@ -111,13 +124,7 @@
       "seedFallback",
       "worktree_sync",
       "nominal",
-      "mint",
-      "projection.py",
-      "05h",
-      "workspaceEngines",
-      "Panel",
-      "fill",
-      "landing"
+      "mint"
     ]
   },
   "fallback": {

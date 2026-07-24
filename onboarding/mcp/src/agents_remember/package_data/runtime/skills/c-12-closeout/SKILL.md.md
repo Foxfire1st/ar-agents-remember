@@ -5,9 +5,14 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-08T00:00+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| governingOverview      | `../../../../../../overview.md` |
+
+## Governing Overview
+
+[mcp overview](../../../../../../overview.md)
 
 ## Purpose
 
@@ -40,7 +45,11 @@ authorship can be attributed").
 uses the worktree closeout preview/apply tools against the task contract,
 requires a non-mutating preview before real commits, requires applicable closeout
 authority with an intent note, runs the package-local missing-onboarding gate,
-commits code, refreshes affected onboarding metadata, entity fingerprints, route
+and runs the strict repository quality wrapper before any code, memory, ledger,
+contract, or applied-gate mutation. The wrapper's CRAP threshold is mandatory by
+default: a function scoring at or above the configured threshold (30 by default)
+fails closeout. After that gate passes, closeout commits code, refreshes affected
+onboarding metadata, entity fingerprints, route
 overview metadata, and generated route indexes, runs the full memory quality
 check, commits memory content only after the quality gate is clean, prepends the
 `C2 | M2` mapping to `memory.md`, and commits the ledger update.
@@ -151,7 +160,10 @@ canonical `skills/c-12-closeout/SKILL.md`.
 a memory content commit whose affected onboarding metadata still points at
 pre-closeout code, must not commit memory before route overview metadata,
 generated route indexes, and `memory_quality_check` are clean for the new code
-commit, must not advance verification metadata for a changed source file whose
+commit, and must not mutate code, memory, ledger, contract, or applied-gate state
+when the strict repository quality wrapper cannot run or reports any failure,
+including CRAP at or above the configured threshold. It must not advance
+verification metadata for a changed source file whose
 sidecar content was not updated in the task, and must not push automatically. It does not create worktrees, integrate
 worktrees, finalize lifecycles, clean up worktrees, or initialize memory roots. In the curator
 chain it must not author onboarding inline to satisfy a still-failing missing-onboarding or
@@ -181,6 +193,15 @@ No sibling repository evidence is needed for the skill itself.
 Closeout instructions now target the leaf enclosure `series-contract.md`; the root series contract is integration-branch state and is not the path used for leaf code/memory closeout.
 
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I CRAP/commit-gate curation: documented the
+  strict repository-wrapper gate that runs after preview/approval and before every
+  closeout mutation. CRAP at or above the configured threshold (30 by default) is
+  a mandatory failure, and missing interpreters/wrappers or nonzero wrapper exits
+  fail closed without mutating code, memory, ledger, contract, or applied-gate
+  state. This is the pathRules-eligible packaged copy synchronized from the
+  canonical `skills/c-12-closeout/SKILL.md`; verification metadata remains pinned
+  until the code commit.
 
 - 2026-07-08T15:27+02:00 — 260707-HFX2-L6 (delegated closeout authority):
   frontmatter and Approval Authority guidance now distinguish explicit developer commit approval

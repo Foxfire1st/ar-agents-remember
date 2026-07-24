@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/lifecycleCopy.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -98,7 +98,16 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+Centralized interaction copy now includes multi-question progress, multi-select guidance/confirm
+labels, and recorded-answer feedback. These strings describe the direct route's all-or-nothing
+contract and keep structured interaction wording consistent across the composer-stage UI.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented structured-question copy ownership and all-or-nothing
+  wording; verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the R1 dash-collision fix in
   `terminateConfirmCopy` — the `· state <word>` clause is dropped when the state word is the em-dash

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/stream.ts`                   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,6 +52,12 @@ resume models: `/api/stream` re-snapshots; `/api/events` resumes by raw event cu
 readiness separately. This module owns only browser transport wiring, not projection interpretation or
 retention.
 
+### 2026-07-24 Curator Delta
+
+The state EventSource now has an open deadline and uses the shared liveness watchdog. Sleep/wake can
+quietly cycle an open corpse, but a fresh subscribe that never opens drops the connection to the honest
+signal-lost state instead of retaining a live badge forever.
+
 ## Docs References
 
 No relevant external documentation is needed beyond the browser EventSource API used directly here.
@@ -78,6 +84,9 @@ No meaningful cross-repo references found.
 | This client transport module talks only to this package's dashboard serving endpoints. | N/A | [stream.ts](stream.ts) |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added state-stream half-open and never-open honesty behavior. Verification
+  hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

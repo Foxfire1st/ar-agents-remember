@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -122,7 +122,15 @@ No meaningful cross-repository implementation source governs this repository-loc
 | --- | --- | --- |
 | The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
+## 260718-CHATS-L5I Current Delta
+
+Terminal regressions now pin capability-aware synchronized tmux frame setup and its older-tmux fallback without weakening durable session and attachment semantics.
+
+This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+
 ## Update History
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented owned-environment unit coverage and contaminated
   launcher end-to-end ensure/attach proof; verification metadata remains pinned pending closeout.

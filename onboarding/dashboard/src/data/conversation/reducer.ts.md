@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/reducer.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd`       |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,8 +30,14 @@ protocol rules (cursor order, dedupe, revision gating, gap tolerance, fault rese
   (the resume point), `lastApplied` (the last cursor whose event actually applied — used for
   `previousCursor` gap detection), `olderCursor`/`hasOlder`/`totalItems`, `status`/`capabilities`,
   `lastAppliedDelivery` (so announcers can tell replay/hydration from live), `lastTouchedItemId` (the
-  true announcer/scroll target, not a DOM guess), `recovery?`/`fault?`, the view-owned `scrollAnchor`,
-  and the bounded dedupe pair `appliedKeys`/`appliedKeySet`.
+  true announcer target, not a DOM guess), `recovery?`/`fault?`, and the bounded dedupe pair
+  `appliedKeys`/`appliedKeySet`. Scroll geometry is deliberately not part of this transport reducer.
+
+### 2026-07-24 Curator Delta
+
+The removed `scrollAnchor` field was stale view state, not protocol evidence. The reducer now remains
+strictly about page/event reduction; the timeline records and restores per-session scroll geometry only
+after stable rendering, without changing cursor, replay, or recovery semantics.
 - `applyInitialPage` replaces the whole projection from a freshly-hydrated page (initial/reset/native
   rehydrate), sorting by `globalOrdinal`, seeding `lastApplied = page.eventCursor` (so the very first
   live event's `previousCursor` is gap-checked against it), and clearing the dedupe set.
@@ -101,6 +107,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Removed the stale reducer-owned scroll-anchor description and recorded the
+  protocol/UI boundary. Verification hash/date remain pinned to the pre-commit source stamp.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the authority-sensitive
   pure reducer — cursor-ordered apply, bounded copy-on-write `eventId+cursor` dedupe (F17), block-delta

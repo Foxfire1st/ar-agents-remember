@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -185,7 +185,17 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## Current L5I Maintenance
+
+Single-seat End now executes immediately; only bulk end retains a confirmation because it acts on
+multiple seats. Failure retry/dismiss remains visible. The rail subscribes only to shown poll facts
+instead of heartbeat age, and its former bus footer is removed because inbox and supervisor facts
+already have their authority in the top bar and detailed inspector.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected single-end behavior, narrowed poll subscriptions, and
+  removed duplicated rail-bus chrome; verification fields remain pre-commit.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the responsive rail-row redesign (RV-2) —
   the `rowShell` is now a `flex-wrap:wrap` LABEL-group + ACTION-group layout where the action group

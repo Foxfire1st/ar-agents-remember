@@ -5,9 +5,9 @@
 | repository             | agents-remember                                      |
 | path                   | `dashboard/src/panels/file-viewer/FileViewer.tsx`    |
 | doc_type               | `file-level-onboarding`                              |
-| lastUpdated            | 2026-07-17T02:30+02:00                               |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`           |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`           |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -81,7 +81,17 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 | The shell that registers + keeps this view mounted across tab switches. | L246 | [Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
 | The route overview that governs this page. | — | [overview.md](overview.md) |
 
+## Current L5I Maintenance
+
+The mounted-but-hidden File Viewer defers its repository-catalog request until its first actual
+showing. A settled success or failure is retained across later hide/show cycles, while concurrent
+StrictMode effects share the in-flight request instead of multiplying boot reads; the component is
+memoized between meaningful `active` transitions.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented first-visible catalog loading, settled read posture,
+  and the keep-alive memo boundary; verification fields remain pre-commit.
 
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (collateral, reviewer-accepted): one defensive line in
   the repos mount effect — `cat.repos ?? []` — so a `repos`-less catalog response degrades to the

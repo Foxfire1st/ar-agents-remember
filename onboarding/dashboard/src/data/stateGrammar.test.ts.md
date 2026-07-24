@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/stateGrammar.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`       |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,11 @@ real end state.
 The ruling case pins constants exported for exactly this purpose; changing pulse timing or easing
 must fail here first. Test-only.
 
+### 2026-07-24 Curator Delta
+
+The state-grammar tests now pin the fresh-chat trajectory: starting remains visibly booting, while a
+ready control with no turn claim is calm idle rather than stale or fabricated turn-ended.
+
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
@@ -74,6 +79,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-24T13:17:50Z — Added fresh-chat state-honesty coverage. Verification hash/date remain
+  pinned to the pre-commit source stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the two R9 `liveTurnWorking` pins —
   the projection working signal overrides a lagging catalog `turn-ended`, and the guard-order proof

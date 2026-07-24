@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionStage.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -62,7 +62,17 @@ bridge from the view into the header's sole model/effort control.
 | The focus selectors that target `data-stage-header`. | — | [../../data/keymap/focus.ts](../../data/keymap/focus.ts) |
 | The suite covering slot position, handoff, and the explained empty state. | L83-L107 | [HeaderStrip.test.tsx](HeaderStrip.test.tsx) |
 
+## Current L5I Maintenance
+
+Stage actions now live beside the title in the `headerActions` slot. The old StatusLine action bar
+is retired, and the working-line slot moves beneath the conversation surface and above the composer.
+The focus-handoff message remains available to assistive technology but is no longer standing visual
+chrome after a chat ends.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented title-row action placement, working-line relocation,
+  and screen-reader-only handoff copy; verification fields remain pre-commit.
 
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2 added the optional controlled-popover bridge and
   forwarded it to HeaderStrip; stage order and ownership remain unchanged. Verification metadata

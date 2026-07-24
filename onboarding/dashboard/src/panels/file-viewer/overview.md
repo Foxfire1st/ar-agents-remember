@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-17T02:30+02:00                           |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -81,7 +81,16 @@ a file is selected; kept mounted so state survives a tab switch.
 | The shell that registers + keeps this view mounted. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
 | The markdown renderer the sidecar pane reuses. | [grammar/Markdown.tsx](agents-remember/dashboard/src/grammar/Markdown.tsx) |
 
+## Current L5I Route State
+
+The mounted-hidden File Viewer does not fetch its repository catalog at dashboard boot. It waits for
+its first selected view, retains that settled result across later visibility changes, and shares an
+in-flight read during development effect replay.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: documented first-visible catalog loading and settled keep-alive
+  behavior. Verification metadata remains pre-commit.
 
 - 2026-07-17T02:30+02:00 — No route impact: 260715-FEUI-L2's only touch under file-viewer/ is a
   reviewer-accepted one-line defensive guard in `FileViewer.tsx` (a `repos`-less catalog response

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -82,7 +82,15 @@ The suite now drives the shared composer handle across the interaction kind matr
 exact gate round trip, retained failed-answer text/revision, newer-draft preservation, focus changes,
 and stale-interaction rejection. It asserts that `/submit` is not an answer fallback.
 
+## Current L5I Maintenance
+
+The interaction tests cover separate question option groups, multi-select confirmation, progress and
+recorded-answer copy, all-or-nothing direct submission, and the retained honest fallback forms.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded structured-interaction rendering and answer-routing
+  regression coverage; verification fields remain pre-commit.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: added shared answer-mode, exact retry, revision, and sole-
   channel regression coverage.

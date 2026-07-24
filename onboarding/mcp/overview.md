@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated            | 2026-07-24T14:31Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -964,7 +964,20 @@ readiness and liveness, correlated receipts sit beneath durable inbox rows, inte
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
+## 260718-CHATS-L5I Current Route Impact
+
+The MCP package now carries the L5I interactive-session backend hardening: active conversations reconnect through fresh server cursors, native interrupt and structured interaction answers are evidence-bound, serving avoids repeated projection/repository serialization, and terminal-backed sessions retain honest lifecycle and shutdown boundaries. Completed landing facts can freeze out of recurring remote probes but reopen into live observation. These are production behavior changes, not a new package route.
+
+The package also owns the final mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before closeout mutation; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and zero mutation on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. Existing verification metadata remains pre-commit.
+
 ## Update History
+
+- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
+  added the mandatory quality-wrapper, closeout adapter, public-description,
+  packaged-skill/example, and focused-test route impact. Verification metadata
+  remains pre-commit.
+
+- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T12:00+02:00 — No route impact: 260718-CHATS-L5P (dashboard-only cockpit chrome visual
   polish, PASS-WITH-NOTES) regenerated the shipped `src/agents_remember/package_data/dashboard/` bundle

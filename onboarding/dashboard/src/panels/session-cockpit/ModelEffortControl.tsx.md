@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ModelEffortControl.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,16 @@ No meaningful cross-repo boundary is owned here.
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
+## Current L5I Maintenance
+
+The trigger shows only a real running model/effort pair: freshest echoed evidence first, then the
+launch-resolved value. Missing effort now removes its segment instead of emitting an unsupported
+sentinel; the live menu remains the authority for choosing a value.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: corrected missing-effort presentation to omission rather than a
+  fabricated sentinel; verification fields remain pre-commit.
 
 - 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R1–R3/R5/R6 through fix round 3 and
   final reviewer PASS. Sev-4 observation 6 remains recorded. Verification metadata is pinned to

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/GateResponder.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-02T16:18+02:00                           |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`       |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated | 2026-07-24T13:17:17Z |
+| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
+| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -71,7 +71,16 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## Current L5I Maintenance
+
+The tests seed reopened gates with both delivery certainties. They pin the prior-answer/reason
+display for a proven unsent response, the no-fabricated-answer form for unknown delivery, and the
+absence of a warning on an ordinary open gate.
+
 ## Update History
+
+- 2026-07-24T13:17:17Z — Curator: recorded coverage for evidence-bounded adapter-decision-failure
+  rendering; verification fields remain pre-commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-02T16:18+02:00 — L8: replaced the message-only Chat route assertion with a regression that
