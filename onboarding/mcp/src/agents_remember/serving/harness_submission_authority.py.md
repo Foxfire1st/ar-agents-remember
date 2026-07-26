@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,14 +16,16 @@
 
 ## Purpose
 
-Owns the FEUI-L5 authoritative, epoch-bound prompt/setter timeline for one live harness bridge. It
-is the only component allowed to admit queued prompts, linearize withdrawal against dispatch, bind
-exact adapter operations, and retain normalized lifecycle truth. 260718-CHATS-L0E adds one
-additive read-only provenance batch over its existing per-operation records. 260718-CHATS-L2E adds
-the paged never-bodies `operation_timeline` enumeration over the same retained ledger (with the
-eviction floor tracked at the sole pop site), the pre-tombstone withdrawal-recovery capture, and
-the asset-carrying submit channel (capability gate, dispatch routing, additive digest extension,
-and receipt `assetIds` evidence).
+Owns the authoritative, epoch-bound prompt/setter timeline for one live harness bridge. It is the
+only component allowed to admit queued prompts, linearize withdrawal against dispatch, bind exact
+adapter operations, and retain normalized lifecycle truth. One additive read-only provenance batch
+rides over its existing per-operation records. The paged never-bodies `operation_timeline`
+enumeration runs over the same retained ledger (with the eviction floor tracked at the sole pop
+site), alongside the pre-tombstone withdrawal-recovery capture and the asset-carrying submit
+channel (capability gate, dispatch routing, additive digest extension, and receipt `assetIds`
+evidence). `respond` is multiplex-aware: interaction responses match against the parent-thread
+singular pending slot OR the plural sub-agent pending tuple, with the active-operation guard kept
+parent-only.
 
 ## Code Commentary
 
@@ -39,20 +41,30 @@ receipt; such definitive completion dominates a later unknown observation. Respo
 a bypass lane but share each adapter's write lock. Status/withdrawal read only normalized state and
 never wait on vendor I/O while holding the lifecycle lock.
 
+The multiplex-aware `respond` (L276-L321) resolves an interaction response against TWO pending sets: the singular
+`snapshot.pending_interaction` (the parent thread's entry) and the plural
+`snapshot.pending_interactions` (multiplexed sub-agent entries). A response matching
+neither raises the same typed `HarnessInteractionNotPendingError` as before — the not-pending
+contract is unchanged, only the match set widened. The "active ordinary operation" guard is now
+explicitly parent-only (L295-L301): sub-agent pendings own no parent operation, so their responses
+cross to the adapter with `operation=None` (`replace(response, operation=operation)` at L309)
+instead of being refused for lacking an active record. The `_responded_interactions` dedupe and
+the post-response identity check apply uniformly to both classes.
+
 Retention is bounded (timeline 64, duplicate/terminal ledger 256 by the configured defaults): live,
 active, and unknown rows are never evicted; terminal rows discard full prompt text while retaining
 identity/digest truth. Full-ref completion dedupe prevents a reused request id or stale adapter event
 from releasing a successor. Certified pre-dispatch busy may requeue safely; possible-first-byte
 loss remains unknown and blocks later ordered work until exact resolution.
 
-L0E's `provenance(expected_bridge_epoch, request_ids)` is a read-only batch over those same
+The `provenance(expected_bridge_epoch, request_ids)` read is a batch over those same
 records: epoch-checked before disclosure, 1..64 unique request ids, and never origin-filtered —
 each found id reports its exact `source` (`cockpit`/`terminal`/`durable`), `state`, submitted/
 updated/accepted timestamps, and vendor correlation from the record; unknown ids answer an honest
 `not-found` rather than a guessed row. The read holds the lifecycle lock only over normalized
 record fields and mutates nothing.
 
-L2E's `operation_timeline(expected_bridge_epoch, *, after_sequence, limit, byte_budget)` pages
+The `operation_timeline(expected_bridge_epoch, *, after_sequence, limit, byte_budget)` read pages
 those same records under the lifecycle lock: epoch-checked, positive limit/byte budget, items in
 sequence order strictly after `afterSequence`, the greedy loop bounded by both
 `MAX_OPERATION_TIMELINE_PAGE` and the shared `EVIDENCE_PAGE_BYTE_BUDGET` (an oversized first item
@@ -63,7 +75,7 @@ mint counter), `evictedBeforeSequence` (tracked additively in `_make_ledger_room
 identity only when assets are present (asset-free digests stay byte-identical), a non-
 `AssetSubmitCapable` adapter receives an `unsupported` terminal receipt with the exact reason
 before any dispatch, and the dispatcher routes asset requests to `submit_with_assets` (the raise
-behind the admit gate is a loud invariant, never reachable — the reviewer accepted it as the
+behind the admit gate is a loud invariant, never reachable — it stands as the
 assert class). `_OperationRecord.assets` clears at exactly the tombstone moment text clears.
 Withdrawal captures `WithdrawalRecovery(text, assets)` at the true queued → withdrawn transition
 immediately before `_mark_terminal`, so the exact body crosses once inside the already
@@ -95,12 +107,18 @@ immediately before `_mark_terminal`, so the exact body crosses once inside the a
   submissions keep byte-identical digests, and same-text-with-asset conflicts instead of silently
   deduping.
 - Asset submissions on a non-capable adapter fail closed with an `unsupported` terminal receipt —
-  never guessed, never dispatched; daemon-side bounded recovery retention is L3's obligation, not
-  this authority's.
+  never guessed, never dispatched; bounded daemon-side recovery retention is not this authority's
+  obligation.
+- An interaction response must match a CURRENTLY pending entry — the singular parent slot or the
+  plural multiplexed tuple; anything else is the same typed not-pending error as
+  before multiplexing, and the already-responded dedupe covers both classes.
+- The active-operation guard in `respond` is parent-only by construction: sub-agent pendings own no
+  parent operation, so their responses carry `operation=None` to the adapter rather than inventing
+  or borrowing an operation ref.
 
 ### Todos
 
-None for FEUI-L5 after review round 6 PASS.
+None known.
 
 ## Docs References
 
@@ -131,14 +149,25 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | The authority is internal to agents-remember's hosted-control bridge. | — | — |
 
-## 260718-CHATS-L5I Current Delta
+## Queued Receipt Grace Delta
 
 Submission authority now returns an honest queued receipt after a bounded dispatch-acceptance grace when a healthy native echo has not yet arrived. Later lifecycle evidence upgrades the state; a receipt alone is never treated as a completed turn.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## Multiplex-Aware Respond Delta
+
+`respond` now matches an interaction response against the union of the parent-thread singular pending and the multiplexed plural pending tuple. The active-operation guard became parent-only: sub-agent entries own no parent operation and cross with `operation=None`. Not-pending, already-responded, and post-response identity checks are unchanged and apply to both classes.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex-aware `respond` — match
+  against singular parent pending OR plural sub-agent tuple, parent-only active-operation guard,
+  `operation=None` for sub-agent responses, unchanged not-pending/dedupe/identity checks — in
+  Purpose, Logic, and Invariants. Verification metadata stays pinned to the pre-commit source
+  history until closeout (the L7 change is uncommitted).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the paged never-bodies

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/stateGrammar.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:40+0200 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,11 +16,13 @@
 
 ## Purpose
 
-Unit suite for the seat-state grammar (260715-FEUI-L2 R14) — the spec §2.4 mapping and the
-developer pulse ruling pinned as behavior. 260718-CHATS-L5F R9 adds the `liveTurnWorking`
+Unit suite for the seat-state grammar — the spec §2.4 mapping and the
+pulse ruling pinned as behavior. The `liveTurnWorking`
 display-preference pins: the projection-derived working signal overrides a lagging catalog
 `turn-ended`, but slots BELOW the terminal/fault/blocked guards so it can never fake liveness over a
-real end state.
+real end state. The plural-pending pins: a seat blocked SOLELY on a
+multiplexed sub-agent approval (singular slot absent, plural list non-empty) is awaiting-input, and
+both-slots-present leaves the parent presentation unchanged.
 
 ## Code Commentary
 
@@ -31,7 +33,7 @@ real end state.
   rendered into word AND chip; failed = alarm SLOW PULSE and outranks turn-state; ready/turn-ended
   = steady mint; landed/retired = dormant and outrank every live signal; starting = cyan steady;
   unclassified stays unclassified and stale stays stale (mirrors, never invents).
-- **liveTurnWorking override (260718-CHATS-L5F R9)** — `seatVisualState({ turnState: "turn-ended",
+- **liveTurnWorking override** — `seatVisualState({ turnState: "turn-ended",
   liveTurnWorking: true })` resolves to `working`: the sub-second projection signal is PREFERRED over
   the sweep-lagging catalog `turn-ended`.
 - **liveTurnWorking never over an end state (R9 honesty pin)** — the signal slots BELOW the
@@ -39,6 +41,11 @@ real end state.
   with `status: "terminated"` it stays `retired`, with `controlState: "failed"` it stays `failed`,
   and with a pending approval interaction it stays blocked. This is the guard-order proof that the
   display preference can never fake liveness over a genuine terminal/fault/blocked state.
+- **Plural pending = awaiting-input (N1)** — with the singular slot absent and the
+  plural list carrying one sub-agent permission entry (adapter-bound `raw: { threadId, agentLabel }`),
+  `seatVisualState` returns STEADY amber `awaiting-input` — the attention grammar must not go dark
+  on an agent-only block. With BOTH slots present the parent presentation is unchanged (same
+  awaiting-input, no new word/chip).
 - **The pulse ruling** — asserts `PULSE_ANIMATION` is the 2.4 s ease-in-out string and contains NO
   `steps(` — the reviewer additionally greps the diff for `steps(` additions at review time.
 
@@ -66,7 +73,8 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module under test. | L12-L106 | [stateGrammar.ts](stateGrammar.ts) |
+| The module under test. | L12-L125 | [stateGrammar.ts](stateGrammar.ts) |
+| The N1 agent-only-blocked pin (plural-only → awaiting-input; both slots → unchanged). | L37-L62 | [stateGrammar.test.ts](stateGrammar.test.ts) |
 | The renderer whose Panda literal the cross-surface suite pins to the same string. | L27-L33 | [../panels/session-cockpit/StateDot.tsx](../panels/session-cockpit/StateDot.tsx) |
 
 ## Cross-Repo References
@@ -79,6 +87,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the two N1 plural-pending pins — a seat
+  blocked SOLELY on a multiplexed sub-agent approval (singular slot absent, plural non-empty, with
+  adapter-bound `raw.agentLabel`) is awaiting-input, and both-slots-present keeps the parent
+  presentation unchanged. Verification stays pinned; the L7 change is uncommitted and closeout
+  re-stamps.
 
 - 2026-07-24T13:17:50Z — Added fresh-chat state-honesty coverage. Verification hash/date remain
   pinned to the pre-commit source stamp.

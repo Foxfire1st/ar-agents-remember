@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/claude_stream_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T07:25+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,14 +19,26 @@
 Defines strict Claude Code stream-json framing and the protocol parsers used by the long-lived
 native adapter. It owns normal stream transport flags, a discovery-only MCP-selector normalizer,
 initialization and bootstrap frames, the correlated `list_models` request shape, native session
-commands, their canonical replay bodies, interactions, and safe terminal-result extraction.
+commands, their canonical replay bodies, interactions, and safe terminal-result extraction. It
+also owns the fail-closed
+`--forward-subagent-text` capability: the flag constant, its probed version floor, and the
+parse/verdict helpers `build_claude_stream_argv` consults before emitting the flag — the only
+version gate in the module, justified because an argv-only contract cannot be probed without
+launching the flag itself.
 
 ## Code Commentary
 
 ### Logic
 
-`build_claude_stream_argv` preserves caller arguments while requiring stream-json input/output,
-stdio permission prompts, print mode, verbosity, and replayed user messages.
+`build_claude_stream_argv` (L88-L113) preserves caller arguments while requiring stream-json
+input/output, stdio permission prompts, print mode, verbosity, and replayed user messages. It
+takes a keyword-only `forward_subagent_text` flag: the
+`--forward-subagent-text` transport flag (`FORWARD_SUBAGENT_TEXT_FLAG` L56) is appended only when
+the caller proved the installed CLI meets `FORWARD_SUBAGENT_TEXT_FLOOR` (2.1.220, L65) — never by
+default. The verdict helpers are `claude_version_tuple` (L68-L74 — parses `major.minor.patch`;
+anything unparseable is `None`, never guessed) and `forward_subagent_text_supported` (L77-L85 —
+fail-closed: `None`/unproven versions never get the flag). A caller-supplied flag inside `argv` is
+preserved verbatim exactly like every other caller argument.
 `build_claude_discovery_argv` is a separate, discovery-only transform for Claude Code 2.1.210's
 accumulating MCP grammar. Before the first `--`, it removes separate variadic/repeated
 `--mcp-config <configs...>`, equals-attached `--mcp-config=<config>`, and the exact
@@ -48,7 +60,10 @@ of the module maps interactions, clips transcript text, and retains only safe te
 ### Conventions
 
 Control responses are matched by exact request id and subtype. The CLI-reported version is opaque
-evidence rather than an allowlist. Slash-command names are normalized without their leading slash;
+evidence rather than an allowlist — with ONE justified exception: the
+`--forward-subagent-text` floor, because an argv-only contract cannot be probed without launching
+the flag itself, and even there an unparseable version parses to `None` (unproven), never a
+guess. Slash-command names are normalized without their leading slash;
 model and effort are capability-command categories, not model-name special cases. The synthetic
 bootstrap keeps `shouldQuery` false. Discovery normalization recognizes only selector spellings
 accepted by the live 2.1.210 grammar; it does not guess unsupported boolean or negated strict forms.
@@ -70,10 +85,20 @@ accepted by the live 2.1.210 grammar; it does not guess unsupported boolean or n
 - A command replay is authoritative only when its retained UUID, vendor session, and exact canonical
   body agree; this module supplies the canonical body but does not promote acceptance itself.
 - A nominal success frame with error evidence remains failed, and credentials are not retained.
+- `--forward-subagent-text` emission is fail-closed (fix-round review finding
+  8): the flag is appended only when the caller proved the installed CLI meets
+  `FORWARD_SUBAGENT_TEXT_FLOOR` (2.1.220, the only version it was ever probed against); unproven
+  or unparseable versions never get it, and a caller-supplied flag inside `argv` is preserved
+  verbatim like every other caller argument.
+- No version seam exists at argv-build time — the installed version is captured only by
+  `system/init` AFTER launch — so the floor verdict is consumed downstream of that capture: the
+  adapter launches WITHOUT the flag (the fail-closed default) and re-launches WITH it only on a
+  proven install; below the floor the capability is marked unverified with the exact reason,
+  never silently omitted.
 
 ### Todos
 
-None known for the L5 discovery-normalization and native-command framing contract.
+None known for the discovery-normalization and native-command framing contract.
 
 ## Docs References
 
@@ -87,14 +112,18 @@ pass was available for this update.
 ## Repo-Internal References
 
 Startup owns the request ordering, while the dedicated catalog parser owns the dynamic model and
-model-gated effort projection.
+model-gated effort projection. The adapter also owns the flag's consumption:
+it launches WITHOUT `--forward-subagent-text`, consults this module's floor verdict against the
+`system/init`-captured version, and re-launches WITH the flag only on a proven install.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The adapter applies discovery normalization only to a copied transient launch, then uses the ordinary startup/advertise/forced-stop sequence. | L192-L206 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Regression cases cover separate, repeated/variadic, equals-attached, end-of-options, exactly-one-empty-selector, and normal-start preservation behavior. | L195-L351 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| The adapter applies discovery normalization only to a copied transient launch, then uses the ordinary startup/advertise/forced-stop sequence. | L233-L242 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| The adapter launches without the flag, re-launches with it when `system/init` proves the floor, and records the exact enabled/unverified reason in the snapshot. | L107-L130; L161-L170 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| Regression cases cover separate, repeated/variadic, equals-attached, end-of-options, exactly-one-empty-selector, and normal-start preservation behavior. | L260-L395; L430-L445 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Floor-gate regressions: at/above the floor the adapter re-launches with the flag; an unparseable version stays fail-closed with no flag. | L466-L500 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 | Startup sends initialization/bootstrap before the correlated catalog request and rejects unexpected catalog frames. | L59-L109 | [claude_stream_startup.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_startup.py) |
-| State requires the same session, retained UUID, and exact canonical replay body before accepting a command. | L412-L471 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
+| State requires the same session, retained UUID, and exact canonical replay body before accepting a command. | L598-L648 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
 | Catalog parsing validates model identities, disabled state, and each model's own effort menu. | L15-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
 
 ## Cross-Repo References
@@ -108,13 +137,25 @@ append-only attempt as review history.
 | The final worker report records the blocked append-only selector attempt, the corrected pre-`--` grammar, and two-marker zero-turn closure. | L72-L96 | [260716-ACPUI-L5-worker-closeout-report.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
 | Independent review confirms normal-start preservation, the absent synthetic MCP marker, all five live rows, and the closed high-severity collision. | L70-L88; L165-L168 | [260716-ACPUI-L5-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
-## 260718-CHATS-L5I Current Delta
+## Structured Interaction And Interrupt Grammar Delta
 
 Claude protocol parsing now normalizes structured multi-question interactions and the native interrupt request/response grammar. Terminal classification treats an interrupt as `interrupted` only when accepted-interrupt correlation and the supported abort shape prove it; unrelated errors remain failures.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented R4 — the fail-closed
+  `--forward-subagent-text` capability (`FORWARD_SUBAGENT_TEXT_FLAG`, `FORWARD_SUBAGENT_TEXT_FLOOR`
+  = 2.1.220, `claude_version_tuple`, `forward_subagent_text_supported`, and the keyword-only
+  `forward_subagent_text` parameter on `build_claude_stream_argv`); emission stays behind the
+  `system/init` version capture (launch without, re-launch with), with unproven/unparseable
+  versions never receiving the flag. Updated Purpose/Logic/Conventions/Invariants, re-pointed
+  drifted reference rows (discovery launch now L233-L242 in harness_control_claude.py,
+  command-replay acceptance now L598-L648 in claude_stream_state.py, discovery tests now
+  L260-L445), and added rows for the adapter's launch/re-launch consumption and the floor-gate
+  regression tests. Verification metadata stays pinned — the L7 change is uncommitted, so no
+  commit hash can attest it.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 

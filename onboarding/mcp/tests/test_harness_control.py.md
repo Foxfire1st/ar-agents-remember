@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:45+02:00 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,14 +30,14 @@ without resend, bounded retention, draft custody, and graceful/forced shutdown. 
 private endpoint permissions, exact identity, malformed requests, and peer loss after accepted
 dispatch without losing the preserved vendor correlation.
 
-ACPUI-L1 adds the normalized `advertise()` method to the deterministic fake adapter. It returns an
+The deterministic fake adapter also implements the normalized `advertise()` method. It returns an
 empty `CapabilitySnapshot`, allowing the shared bridge conformance suite to continue satisfying the
 expanded `HarnessProtocolAdapter` boundary without pretending that this generic fake owns a vendor
 catalog. Vendor-specific discovery and catalog assertions remain in the Claude, Codex, and Pi test
 modules.
 
-ACPUI-L3 gives the fake explicit model/effort methods and records every launch, setter, and prompt
-operation. The new scenarios prove one shared FIFO control queue from launch through a setter into
+The fake implements explicit model/effort methods and records every launch, setter, and prompt
+operation. The scenarios prove one shared FIFO control queue from launch through a setter into
 the following prompt; cancelling a caller while a setter is executing does not terminate that
 queue when the adapter later completes. A truth-table test rejects mismatched requested values,
 illegal acceptance tokens, `echo-verified` without an effective value, accepted results marked
@@ -45,13 +45,13 @@ not-ok, and unknown/unsupported results that falsely claim an effect. Each rejec
 the runner usable for the next prompt. The unregistered adapter remains explicitly unsupported for
 both setters.
 
-ACPUI-L4 extends the suite through the real local socket and daemon route composition. Duplicate
+The suite also drives the real local socket and daemon route composition. Duplicate
 request ids are idempotency keys: a retained duplicate returns the first receipt, and a duplicate
 arriving while the first submit is pending waits for that same result; neither path replaces the
 first payload or calls the adapter twice. Reconciliation maps retained immediate/queued receipts to
 accepted, rejected to rejected, and unsupported to unsupported without invoking native
-reconciliation; only genuinely unknown evidence delegates to the adapter. 260718-CHATS-L0 follows
-the registration call shape: the daemon route composition now passes the required
+reconciliation; only genuinely unknown evidence delegates to the adapter. The registration call
+shape is followed: the daemon route composition passes the required
 `coordination_root` keyword so the seam constructs the immutable conversation runtime scope.
 
 The exact-session IPC cases advertise the normalized snapshot and pass through honest queued and
@@ -61,6 +61,20 @@ same loss is driven through `deliver_inbox_entry`: the durable bus moves from un
 accepted with one adapter call and no paste fallback. A concurrent public duplicate test reaches
 the HTTP route, Unix socket, bridge queue, and adapter, proving identical responses and one native
 submission end to end.
+
+Multiplexed sub-agent approval authority cases (R6) round out the suite.
+`test_subagent_pending_interaction_responds_without_parent_operation` (L752-L805) proves an agent
+entry riding the plural `pending_interactions` tuple owns no parent operation, so the
+active-operation guard must not strand it: the response routes to the adapter with no operation
+attached, the answered entry settles out of the plural tuple, and an unknown interaction id is
+still refused (`HarnessInteractionNotPendingError`) without reaching the adapter. The fake
+adapter's `respond` now settles the answered multiplexed entry out of `pending_interactions` too.
+`test_multiplexed_pending_interactions_serialize_through_every_surface` (L808-L866) round-trips the
+plural pending tuple through every wire: `snapshot_json` carries both the singular
+`pendingInteraction` (back-compat) and the additive `pendingInteractions`; the control client
+parses the additive field back and defaults a pre-multiplexing bridge (key absent) to the empty tuple; the
+catalog projection and `TerminalCatalogEntry` JSON round-trip carry
+`controlPendingInteractions`; and an empty multiplex never writes the additive key.
 
 ### Conventions
 
@@ -89,10 +103,13 @@ messages over transport timing heuristics.
   reserved for a bridge-retained `unknown` outcome.
 - Exact-session advertise and setters travel through the private identity-checked endpoint, and
   durable-bus recovery must converge without invoking terminal paste.
+- Multiplexed sub-agent approvals answer through the authority without a parent operation; the
+  singular parent pending slot stays back-compatible, the plural tuple is additive on every wire,
+  and an empty multiplex never serializes the additive key (R6).
 
 ### Todos
 
-None known for this leaf.
+None.
 
 ## Docs References
 
@@ -131,20 +148,26 @@ No sibling repository is required to prove this protocol-neutral test suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260715-FEUI-L5 Submission Authority Delta
+## Submission Authority Delta
 
 The common control suite now treats one `HarnessSubmissionAuthority` as the prompt/setter timeline.
 It covers ordered terminal outcomes, unknown-setter barriers, no-resend idempotency/reconciliation,
 bounded ambiguity, private status/withdraw, IPC and outer-response loss, durable-source interaction,
 and duplicate raw-free projection. Earlier second-runner queue semantics are historical only.
 
-## 260718-CHATS-L5I Current Delta
+## Structured Interaction Surface Delta
 
 Harness-control coverage now includes the expanded structured interaction/control surface while preserving exact epoch, request, and transport failure boundaries.
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the multiplexed sub-agent approval
+  authority cases (R6) — respond-without-parent-operation with unknown-id refusal, and the plural
+  `pending_interactions` serialization round-trips across snapshot/client/catalog surfaces with
+  the additive-key-never-empty invariant. Verification metadata stays pinned (uncommitted);
+  closeout re-stamps the candidate commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:45+02:00 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,9 +16,9 @@
 
 ## Purpose
 
-L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
-260715-FEUI-L9 adds the stable structured-conversation contract gate. The contract suite uses
+The stable structured-conversation contract gate: the contract suite uses
 hostile sibling-product matrices to pin purpose-bound cursors, exact provenance, canonical status,
 evidence-backed capabilities, operation identity/rollback, authoritative queued withdrawal
 recovery, attachments, metrics, and fixture non-promotion. The foundation suite separately pins
@@ -26,18 +26,18 @@ exactly two read ports, three behavior-empty owned child routers, one global reg
 repository-only native-helper resolution, and redacted installed-runtime fixtures. These tests do
 not claim a projector, native-history implementation, control service, or renderer exists.
 
-260718-CHATS-L1 adds the active conversation serving regression set. Four focused suites cover
+The active conversation serving regression set: four focused suites cover
 the implemented slice — canonical status classification/revision discipline with full-product
 orchestration parity, per-harness mapper grammars with hostile shapes, the projector engine and
 store (hydration, ordering, idempotence, provenance, rehydration, tool convergence, overflow and
 zipper gap mechanics), and the production routes over a REAL composition (bridge + IPC server on
-a real socket, real catalog row, L0 route registration, HTTP over loopback uvicorn) proving
+a real socket, real catalog row, the single route registration, HTTP over loopback uvicorn) proving
 native identity, cursor forgery refusals, dual-cursor agreement, epoch-flip gap+close,
 provenance through the real authority, orchestration parity, and absence of PTY/runner-log/
 fixture production authority. The foundation pin asserts the active child's exact two-route
 surface.
 
-260718-CHATS-L2 adds the native conversation library regression set. Six focused suites cover the
+The native conversation library regression set: six focused suites cover the
 implemented slice on doubled boundaries — ASGI routes with the exact O4 status ladder, cursor/key
 and scope contracts, live gate demotion rules, port normalization with hostile shapes, and the
 open service's idempotence/race/ownership arms — while the opt-in installed-runtime suite proves
@@ -46,7 +46,7 @@ fail-closed posture. The foundation pin asserts the library child's exact five-r
 the extended helper source set; the three runtime fixtures record observed (never enabling)
 gate/open rows.
 
-260718-CHATS-L2E adds the native control-plane regression set. The contract suite
+The native control-plane regression set: the contract suite
 (`test_harness_control_plane.py`, 25 tests + 35 subtests) pins the interrupt write/ack/replay-once
 with exact-turn and expected-operation guards plus the successor zero-write refusal, the paged
 never-bodies timeline (all sources/kinds, union completeness, eviction-floor honesty, the full
@@ -58,9 +58,9 @@ captures the same seams live against pinned codex 0.144.5 and pi 0.80.7 and enfo
 version-honesty rows; the three runtime fixtures gain redacted `control-plane/*` rows with
 `enablesCapabilities: false` — evidence, never enablement.
 
-260718-CHATS-L3 adds the authoritative control-API regression set. A shared topology
+The authoritative control-API regression set: a shared topology
 (`_control_plane.py`) runs the real bridge + IPC server on a real socket, the real submission
-authority, and the L0 route composition with only the harness adapter doubled, plus the manager-
+authority, and the single route composition with only the harness adapter doubled, plus the manager-
 authorized `NOW`-anchored control service seeded into the `_SERVICES` memo so lease arithmetic is
 time-consistent. Four focused service/route suites drive it: `test_conversation_control_operations.py`
 (interrupt ledger — ack≠settlement, fingerprint idempotence with native-write counting, lost-response
@@ -77,50 +77,49 @@ withdrawal recovery, typed attachment submit, and telemetry through the register
 Claude version-honesty gate. The foundation pin asserts the control child's exact seventeen-route
 surface.
 
-260718-CHATS-L5 adds the evidence-backed hardening regression set for the production-E2E gate. The
-new `test_chats_l5_hardening.py` pins the two master hardening obligations at their origin, each
-non-vacuous on stashed source: H1 (the hosted-interaction synchronizer 500 that aborted the whole
-terminal-catalog sweep — now quarantined fail-loud per row, with F2 logging only on state change) and
-H2 (the unknown-input provenance-validator 500 from a native re-map splitting a resolved user item's
-authority triple — now pinned, with F4's identical re-map a true no-op). `test_conversation_active_service.py`
-gains the projector-tier companions (the H2 model-valid re-map and the three F1 twin-suppression
+The evidence-backed hardening regression set for the production-E2E gate:
+`test_chats_l5_hardening.py` pins the two master hardening obligations at their origin, each
+non-vacuous on stashed source: the hosted-interaction synchronizer 500 that aborted the whole
+terminal-catalog sweep (now quarantined fail-loud per row, with logging only on state change) and
+the unknown-input provenance-validator 500 from a native re-map splitting a resolved user item's
+authority triple (now pinned, with an identical re-map a true no-op). `test_conversation_active_service.py`
+gains the projector-tier companions (the model-valid re-map and the three twin-suppression
 tests, driving the real poll path), and the opt-in `test_conversation_control_installed.py` gains the
-F1 installed regression proving a settled live codex turn projects EXACTLY once on the re-read
+installed regression proving a settled live codex turn projects EXACTLY once on the re-read
 conversation page (`2 != 1` on stashed `projector.py`). The 10,000-item DOM/interaction baseline + axe
-tripwire (L4.4) lands in the dashboard test tree (`renderer.test.tsx`), not here.
+tripwire lives in the dashboard test tree (`renderer.test.tsx`), not here.
 
-260718-CHATS-L5F adds the half-time functional regression set. The NEW `test_chats_l5f_leaks.py`
-pins the R5 per-session bounds (`SessionLockLeakTests`: `release_session` drops the lock + every
+The half-time functional regression set: `test_chats_l5f_leaks.py`
+pins the per-session bounds (`SessionLockLeakTests`: `release_session` drops the lock + every
 epoch channel; `_locks` bounded evicting idle-first; a held lock is never evicted; and
 `QueueRowsBoundTests`: `queue_rows` capped with oldest eviction). `test_conversation_active_projectors.py`
-gains the R1 codex startup-burst-mints-zero-unknown-vendor / method-carried-mapping /
-truly-unknown-names-the-method tests plus the R3 claude `command_lifecycle` recognized-and-drift and
-`rate_limit_event` drop tests; `test_conversation_active_service.py` gains the R3 non-user-echo-skip
-and the R5 `DormantReleaseTests` (heavy-projection release + shell retire).
-`test_conversation_contracts.py` pins R4 (`FeatureCapability` has no `for_observed_runtime` predicate
-— the contract is the only gate), `test_conversation_control_operations.py` pins the unverified
+gains the codex startup-burst-mints-zero-unknown-vendor / method-carried-mapping /
+truly-unknown-names-the-method tests plus the claude `command_lifecycle` recognized-and-drift and
+`rate_limit_event` drop tests; `test_conversation_active_service.py` gains the non-user-echo-skip
+and the `DormantReleaseTests` (heavy-projection release + shell retire).
+`test_conversation_contracts.py` pins that `FeatureCapability` has no `for_observed_runtime` predicate
+(the contract is the only gate), `test_conversation_control_operations.py` pins the unverified
 refusal now carries a contract reason (not a version comparison), and
 `test_conversation_library_gates.py`/`test_conversation_library_installed.py` pin that a version drift
-still ENABLES when the contract probe passes (the reviewer F8 codex/pi exact-identity installed skips
-on drift are recorded conservatism). `test_harness_control_evidence.py` pins R1 (native method carried
-onto the frame + stripped from the byte-identical snapshot + IPC round trip),
-`test_harness_control_client.py` pins R6 (a refused control socket yields the honest note and unlinks
-the stale socket), `test_harness_launch.py` pins R2 (accepts an alias collapsed onto the default
-resolved model; still refuses a genuinely different model), and `test_provider_containment.py` pins R6
-(the docker-ps timeout is bounded into an error-annotated sample).
+still ENABLES when the contract probe passes (the codex/pi exact-identity installed skips
+on drift are recorded conservatism). `test_harness_control_evidence.py` pins the native method carried
+onto the frame + stripped from the byte-identical snapshot + IPC round trip,
+`test_harness_control_client.py` pins that a refused control socket yields the honest note and unlinks
+the stale socket, `test_harness_launch.py` pins accepting an alias collapsed onto the default
+resolved model while still refusing a genuinely different model, and `test_provider_containment.py` pins
+the docker-ps timeout bounded into an error-annotated sample.
 
-260715-FEUI-L5 adds the first end-to-end authoritative submit/withdraw regression matrix. The new
+The first end-to-end authoritative submit/withdraw regression matrix: the new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
 prompt/setter timeline, atomic queued-withdraw versus dispatch, exact full-ref completion,
 completion-before-receipt dominance, no native queue/steer fallback, bounded privacy-aware retention,
-and browser-visible status semantics. The backend blockers found during review rounds 1–5 are closed;
-round 6 is canonical PASS.
+and browser-visible status semantics. All backend blockers found during review are closed.
 
-The L1 regression set adds a fake-adapter conformance suite for normalized harness control,
+A fake-adapter conformance suite covers normalized harness control,
 correlated acceptance/reconciliation, private IPC, bounded queue/ledger behavior, shutdown failure
-paths, and R11 surface-owned draft preservation. Existing settings, harness, catalog, opener, and
+paths, and surface-owned draft preservation. Existing settings, harness, catalog, opener, and
 WebSocket tests pin the additive launch/API projections and preserve legacy behavior.
-The 260713-PHA-L3 additions add fake and stdio transport coverage for the pinned Codex app-server:
+Fake and stdio transport coverage pins the Codex app-server:
 exact initialize/model/thread setup, protocol-only effort validation and echoing, structured
 status/completion and server requests, explicit busy behavior, bounded malformed/oversized input,
 and reconnect correlation without resend. An opt-in live smoke proves exact-version readiness using
@@ -134,41 +133,41 @@ unconsumed; terminal state is `idle` / `immediate` without a queued replacement 
 `settling` / `queued` only for an actual replacement. Exact 2.1.207, 0.144.3, and 0.80.6 values
 remain fixture/smoke evidence, not production pins.
 
-The 260713-PHA-L2 tests add pinned Claude Code 2.1.207 JSONL fixtures, fake-transport conformance,
-and an opt-in credential-safe live smoke. The smoke submits the advertised local `/cost` command
+Pinned Claude Code 2.1.207 JSONL fixtures, fake-transport conformance,
+and an opt-in credential-safe live smoke cover the Claude adapter boundary. The smoke submits the advertised local `/cost` command
 through the same correlated acceptance/result path without a model API request. A mixed
 `success`/`is_error=true` API-429 regression remains failed and retains only safe terminal metadata;
 no result text, stderr, credentials, environment, or settings are emitted or retained.
 
-260714-ACPUI-L1 moves the active Claude fake-transport fixture root to 2.1.210. Its initialization
+The active Claude fake-transport fixture root is 2.1.210. Its initialization
 fixture is the current test authority for separate control initialization, `system/init`, a
 zero-turn bootstrap result, and correlated `list_models`; its interaction and turn companions keep
 durable gates and acceptance-versus-completion covered in the same versioned cohort. The 2.1.207
 fixtures remain historical evidence and are no longer loaded by the active adapter suite.
 
-The L7 test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. These are focused leaf regressions; the manager owns the full repository gate.
+The test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. These are focused regressions; the full repository gate runs above this route.
 
-The 260712-PTS-L3 additions (new `test_change_watcher.py`, plus touched `test_serving.py`/
-`test_dashboard_daemon.py` fixtures) prove change-driven projection pacing: the derived watch-root
+`test_change_watcher.py` (plus touched `test_serving.py`/
+`test_dashboard_daemon.py` fixtures) proves change-driven projection pacing: the derived watch-root
 list and self-trigger event filter, the pure `ChangePacer` deadline table (heartbeat/debounce/
 interval-floor/max-delay/degraded), heartbeat-only quiet-world projection, debounce-bounded change
 latency, burst coalescing, LOUD fixed-interval degrade on missing `watchfiles`/crashed
 watcher/failed root derivation (with retry), watch-task lifecycle ownership, exact legacy pacing
 without a watcher, `--heartbeat` CLI/daemon argv plumbing, and one real-inotify end-to-end pass.
-The 260712-PTS-L2 additions to the projection scaling suite prove the shared per-tick contract
+The projection scaling suite proves the shared per-tick contract
 snapshot: one contract enumeration and at most one parse per contract per projection tick, zero
 re-parses while the `(mtime_ns, size, ctime_ns)` stat identity holds, reader-output parity with and
 without the injected snapshot, cache retention bounded to live contracts, chmod-000 and
 utime-pinned-rewrite invalidation via ctime, and parse failures retried every build.
 
-## FEUI-L9R Runtime-Truth Regression Gate
+## Runtime-Truth Regression Gate
 
-The candidate expands serving coverage across four exact boundaries: client/build fingerprint and
+Serving coverage spans four exact boundaries: client/build fingerprint and
 HTML revalidation; raw-event record realignment and invalid/non-object cursor progression; owned
 tmux client environment under contaminated launcher state; and omission of fictitious pre-session
 adapter control. Integration coverage skips only when tmux itself is absent.
 
-## MX-FIX-1 Atomic Folded-State Stream Gate
+## Atomic Folded-State Stream Gate
 
 `test_serving.py` now forces both formerly lost state paths. One case publishes while the initial
 snapshot generator is suspended but already subscribed and requires the exact next delta. One case
@@ -177,7 +176,7 @@ identical state is not duplicated, and then requires an ordinary later delta. A 
 waiting stream and proves immediate subscriber removal. These are synchronization-driven assertions,
 not sleep-based race probabilities.
 
-## MX-FIX-4 Route-Index And Carryover Authority Gate
+## Route-Index And Carryover Authority Gate
 
 `test_route_index.py` pins the production census boundary across ignored and generated paths,
 tracked/untracked identity, symlinks without target following, sparse checkouts, index/worktree
@@ -194,7 +193,7 @@ preflight agrees with the typed settings parser rather than creating a second se
 fixtures, while `conftest.py` imports the production selector inventory so tests cannot drift from
 the Git boundary they exercise.
 
-## MX-FIX-5 Generated Bundle Whitespace Policy Gate
+## Generated Bundle Whitespace Policy Gate
 
 `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` exercises the repository's real
 Git attribute in an isolated temporary repository. It stages a direct shipped dashboard JavaScript
@@ -215,6 +214,20 @@ content-hash regeneration without manual asset edits.
 
 ## Hot Path Summary
 
+The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared
+codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24
+bridge-death incident regression — three sub-agents mid-turn, multiplexed approvals answered by
+request-id, collab identity binding, degrade-not-die, native-page thread demux),
+`test_conversation_projector_codex_agents.py` (roster/multiplexed projection/per-thread twin-suppression
+dedupe/plural pendings in one cursor domain), `test_conversation_projector_claude_agents.py`
+(`parent_tool_use_id` sidechain binding, `task_*` roster lifecycle, the fail-closed
+`--forward-subagent-text` floor), and `test_conversation_library_agents.py` (both harnesses'
+agent grouping with visible `agents_note` degrade and nested-agent naming). Authority-level
+multiplexed respond + plural-pending serialization round-trips extend `test_harness_control.py`;
+the flag-floor probe/relaunch flow extends `test_harness_control_claude.py`; the reordered
+`task_started` binder pin extends `test_conversation_active_service.py`; the additive agent
+fetch at the fake boundary extends `test_conversation_library_ports.py`.
+
 For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset
 scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git
 generated-positive/authored-negative regression. Use `dashboard/package.json` and
@@ -225,25 +238,25 @@ For route-index/carryover authority changes, begin with `test_route_index.py` fo
 and byte-convergence matrix, then `test_carryover.py` for full-apply zero-mutation refusals and
 parser-equivalent positive controls. Use `test_worktree_support.py` for closeout caller wiring.
 
-For folded-state transport changes, begin at `test_serving.py::StreamEventsTests`: the MX-FIX-1
+For folded-state transport changes, begin at `test_serving.py::StreamEventsTests`: those
 cases pin atomic activation, first-recovery snapshot semantics, later-delta continuity, and
 close/cancellation cleanup against the production `Projector` and `stream_events` seam.
 
-260715-FEUI-L9 centers `test_conversation_contracts.py` for semantic authority and
-`test_conversation_foundation.py` for package/router/helper/fixture topology. The three
+`test_conversation_contracts.py` carries semantic authority and
+`test_conversation_foundation.py` the package/router/helper/fixture topology. The three
 `fixtures/conversation_runtime/*.json` files are allow-listed installed observations with
 `enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained
 feature declarations. Helper protocol behavior is also covered in its own Node test package.
 
-260718-CHATS-L1 centers four focused suites: `test_conversation_active_status.py` (canonical
+The active-serving set centers four focused suites: `test_conversation_active_status.py` (canonical
 classification, revision discipline, full-product orchestration parity),
 `test_conversation_active_projectors.py` (per-harness mapper identity/blocks/tools/provenance),
-`test_conversation_active_service.py` (engine hydration/ordering/idempotence plus the F1/F2/F3
-fix pins), and `test_conversation_active_api.py` (production routes over a real socket, incl.
+`test_conversation_active_service.py` (engine hydration/ordering/idempotence plus the landed
+review-fix pins), and `test_conversation_active_api.py` (production routes over a real socket, incl.
 the live epoch-flip gap and the no-PTY source scan). The foundation pin asserts the active
 child's exact two routes; fixture rows stay evidence-not-enablement.
 
-260718-CHATS-L2 centers six focused suites: `test_conversation_library_api.py` (real-ASGI routes
+The library set centers six focused suites: `test_conversation_library_api.py` (real-ASGI routes
 and the O4 status ladder), `test_conversation_library_cursor.py` (signed token and scope
 contracts), `test_conversation_library_gates.py` (capability demotion rules),
 `test_conversation_library_ports.py` (hostile normalization), `test_conversation_library_open.py`
@@ -251,8 +264,8 @@ contracts), `test_conversation_library_gates.py` (capability demotion rules),
 both real opens). The foundation pin asserts the library child's exact five routes and the
 four-file helper source set; fixture rows stay evidence-not-enablement.
 
-260718-CHATS-L3 centers four focused suites plus a shared topology and an installed proof:
-`_control_plane.py` (the real bridge/IPC/authority/L0 seam with only the harness adapter doubled and
+The control set centers four focused suites plus a shared topology and an installed proof:
+`_control_plane.py` (the real bridge/IPC/authority/composition seam with only the harness adapter doubled and
 the `NOW`-anchored control service), `test_conversation_control_operations.py` (interrupt ledger,
 Finding 1/Finding 2 pi settlement regressions), `test_conversation_control_queue.py` (never-bodies
 queue truth, withdrawal race, bounded recovery lease + frozen-clock expiry, forgery battery),
@@ -262,14 +275,14 @@ wire, O4 mapping, no-paste source scan), with `test_conversation_control_install
 version-locked live proof. The foundation pin asserts the control child's exact seventeen routes;
 fixture rows stay evidence-not-enablement.
 
-260718-CHATS-L0 adds `test_conversation_runtime_composition.py` and
-`test_conversation_authorization.py` for the runtime composition repair: single install-once
+`test_conversation_runtime_composition.py` and
+`test_conversation_authorization.py` cover the runtime composition repair: single install-once
 binding at both composition seams, duplicate/missing/foreign/missing-member fail-closed shapes,
 per-app child isolation over real HTTP, no import-time singleton, no production identity-injection
 or fixture/PTY/browser-identity reliance, server-resolved local-operator identity, loopback-only
 resolution, and cross-principal rejection in both directions through an injected seam double.
 
-260718-CHATS-L0E adds `test_harness_control_evidence.py` for the native evidence and resume
+`test_harness_control_evidence.py` covers the native evidence and resume
 substrate: per-harness reserved-key round-trips with the no-leak guarantee across `snapshot.raw`,
 projected `control_raw`, and subscriber snapshots; unknown-vendor pass-through; buffer bounds and
 clip visibility at two sizes; native-page continuation without overlap/gap, null-terminated, with
@@ -279,17 +292,17 @@ queue delegation; and the codex resume channel end-to-end with pre-spawn refusal
 (opt-in, version-locked) into redacted `substrate-evidence/*` fixture rows, keeping the
 version-mismatched Claude row honestly `not-exercised` and `enablesCapabilities` false everywhere.
 
-260718-CHATS-L3E extends `test_harness_control_evidence.py` with the evidence-truncation settlement
+`test_harness_control_evidence.py` also carries the evidence-truncation settlement
 coverage: `ClipHelperTests` gains three byte-level clip terminal-identity preservation tests (a
 clipped pi `message_end` keeps only `type` + `message.stopReason`; a clipped codex `turn/completed`
 keeps only `turn.id` + `turn.status`; absent identity is never invented) plus a giant-scalar
 drop-whole regression with a 256/257 boundary check, and the new
 `EvidenceTruncationSettlementIpcTests` drives oversized (>32 KiB) production pi/codex terminal frames
 end-to-end through the real bridge clip and the real `read_control_evidence` IPC surface, asserting
-the preserved enums survive to scan helpers that mirror L3's `_pi_stop_reason` /
-`_codex_terminal_outcome` reads verbatim (the in-leaf acceptance proxy for `probe_l3_delta.py`).
+the preserved enums survive to scan helpers that mirror the control child's `_pi_stop_reason` /
+`_codex_terminal_outcome` reads verbatim (the acceptance proxy for `probe_l3_delta.py`).
 
-260718-CHATS-L2E centers `test_harness_control_plane.py` for the control-plane contract suite:
+`test_harness_control_plane.py` centers the control-plane contract suite:
 the interrupt batteries (bridge epoch guard, codex exact-turn, pi expected-operation guard,
 successor zero-write refusal, content-less `message_end` honesty), the timeline batteries
 (all-sources/kinds union, eviction floor, the 256-record budget edge), the asset batteries
@@ -299,7 +312,7 @@ against pinned codex 0.144.5 and pi 0.80.7 (opt-in, version-locked) into redacte
 `control-plane/*` fixture rows, with the Claude version-honesty test keeping those rows
 `not-exercised` and `enablesCapabilities` false everywhere.
 
-260715-FEUI-L5 centers `test_harness_submission_authority.py`: slow-adapter responsiveness,
+`test_harness_submission_authority.py` centers the authority matrix: slow-adapter responsiveness,
 dispatch/withdraw races, early terminal completion, full-ref id reuse, ordering, idempotency/source-
 payload conflicts, certified pre-dispatch retry, impossible safe retry after possible bytes, epoch
 mismatch, privacy, and retention. `test_harness_control.py` extends the same timeline across IPC,
@@ -308,7 +321,7 @@ status/withdraw and typed 409/503 mapping. Claude/Codex/Pi suites each prove the
 exact completion semantics; Codex/Pi live smokes remain opt-in installation evidence, not generic
 authority.
 
-260714-ACPUI-L5 adds the final live-conformance and Claude discovery-isolation regressions. Claude
+Live-conformance and Claude discovery-isolation regressions complete the capability-gate coverage. Claude
 fake-transport cases cover separate variadic/repeated and equals-attached MCP selectors, the `--`
 suffix boundary, exactly one strict empty discovery config, and byte-preserved normal startup. The
 explicit-opt-in Codex live case performs dynamic initialize/model-list discovery without a thread or
@@ -318,7 +331,7 @@ retains only method, selection, thread, version, timing, and numeric token-usage
 suites skip the token-spending case. Captured versions, catalog rows, and counts remain live evidence
 rather than production constants.
 
-260714-ACPUI-L4 tests the frozen daemon consumer boundary and its production races. Capability
+The frozen daemon consumer boundary and its production races are pinned. Capability
 catalog cases prove token-free current-environment discovery, install fingerprint invalidation,
 bounded single-flight retention, failed-refresh quarantine/recovery, and protection of a later
 concurrent success. API/client/IPC/queue cases prove strict normalized advertise/set parsing,
@@ -329,7 +342,7 @@ pre-spawn validation, same-pair live reopen, changed launch conflict with actual
 fresh dead replacement, and a cross-process different-pair race with one host creation/catalog row.
 Role-spawn uses that same opener and conflicts without an alternate launch path.
 
-260714-ACPUI-L3 tests the complete same-session setter delegate graph. Shared contract and queue
+The complete same-session setter delegate graph is pinned. Shared contract and queue
 coverage fail closed outside the five `SetResult` outcomes, reject contradictory effective values,
 preserve FIFO set/prompt order, and prove a cancelled waiter cannot poison later commands. Claude
 tests require exact session, UUID, canonical command replay, and terminal evidence; near-miss
@@ -341,9 +354,9 @@ reject incoherent catalogs atomically, and keep late cancelled responses from th
 Scaling cases at 8 and 64 requests prove Codex/Pi cancellation reclamation without tombstone
 growth. A static 17-module dependency guard covers the full shared/Claude/Codex/Pi setter graph and
 rejects composer, tmux, session-command, terminal-paste, injector, and terminal-surface imports.
-L4 now covers the daemon serving endpoints while retaining the same no-paste delegate graph.
+The daemon serving endpoints are covered while retaining the same no-paste delegate graph.
 
-260714-ACPUI-L2 adds focused and production-path coverage for settings-resolved initial
+Focused and production-path coverage pins settings-resolved initial
 configuration. `test_harness_launch.py` proves the normalized contract, Pi's exact
 provider-qualified identity, model-gated effort, honest echoes, and the complete Codex selector
 grammar. Runner, opener, spawn, settings, and registry suites prove pre-discovery conflict refusal,
@@ -352,39 +365,39 @@ roleless Codex dynamic defaults, persistent exact failure evidence, and removal 
 model/effort paste synthesis. Adapter tests pin Codex thread/resume configuration and Claude
 effective-model mismatch classification. No launch test submits a prompt or turn.
 
-260714-ACPUI-L1 tests dynamic, token-free catalog discovery across all three native adapters.
+Dynamic, token-free catalog discovery is pinned across all three native adapters.
 Claude uses the 2.1.210 initialize/bootstrap/`list_models` fixture, Codex proves paginated hidden
 catalog retention without thread creation, and Pi proves provider-qualified identity plus
 model-gated thinking menus without prompting. Exact fixture versions remain test evidence only.
 
-260713-PHA-L6 tests preserve exact Claude/Codex/Pi versions only as fixture and smoke baselines,
-while proving structured capability acceptance/rejection and the exact additive inbox allowlist.
-They preserve R9's optional-only `adapterDeliveryState` and `adapterDeliveryDetail` compatibility,
-reject unrelated extras, and do not document R10 resource performance as current behavior.
+Exact Claude/Codex/Pi versions are preserved only as fixture and smoke baselines,
+while structured capability acceptance/rejection and the exact additive inbox allowlist are pinned.
+Inbox compatibility stays optional-only `adapterDeliveryState` and `adapterDeliveryDetail`,
+unrelated extras are rejected, and resource performance is not documented as current behavior.
 
-The L6 IPC regression additionally proves that a delayed reply after accepted dispatch can lose its
+The IPC regression additionally proves that a delayed reply after accepted dispatch can lose its
 peer without an unhandled callback exception: only `BrokenPipeError`/`ConnectionResetError` during
 write/drain/close/`wait_closed` are contained, while dispatch, identity, protocol, validation, and
 unrelated failures remain loud. The accepted timeout remains ambiguous but bridge-reconcilable, and
 the regression confirms the preserved vendor correlation with no retry or fallback.
 
-260712-PTS-L1 tests prove the worktree-contract read/heal split: zero-traversal contract loads (loud
+Worktree-contract read/heal split coverage proves: zero-traversal contract loads (loud
 tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim
 by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without
 resolution, dry-run reporting, torn-contract tolerance, and the `heal-leaf-ids` CLI seam.
 
-260712-TRH-L5 tests prove the narrow confirmed-gone eligibility boundary, terminal and tmux
+Confirmed-gone reconciliation coverage proves the narrow eligibility boundary, terminal and tmux
 positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapshot boundedness,
 same-lock resolve-plus-compact ordering, stale-snapshot non-resurrection, unchanged TTL fallback,
 persisted folded-id removal counts, body-free aggregate events, and silence on no-op sweeps.
 
-260713-PHA-L4 tests prove the Pi boundary at three levels: pinned capability/framing and schema
+Pi boundary coverage proves three levels: pinned capability/framing and schema
 policy, fake-adapter queue/retry/compaction/settlement, extension UI, disconnect, cursor
 reconciliation, and no-resend behavior, and the real subprocess's correlation, malformed stdout,
 EOF ambiguity, and clean stop. The opt-in real smoke installs Pi 0.80.6 under a temporary
 prefix/HOME/cache and verifies `get_state` readiness without changing global tools.
 
-L4 regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
 ## Invariants And Boundaries
 
@@ -437,7 +450,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
-| Foundation coverage pins two ports, child ownership (the active child's exact two L1 routes, the library child's exact five L2 routes, and the control child's exact seventeen L3 routes), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Foundation coverage pins two ports, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | Active serving coverage pins canonical status/parity, per-harness mapper grammars, engine/store mechanics, and the real-socket production routes with the no-PTY source scan. | L362-L865 | [test_conversation_active_api.py](agents-remember/mcp/tests/test_conversation_active_api.py) |
 | Library coverage pins the ASGI status ladder, cursor/scope contracts, gate demotion, hostile port normalization, open idempotence/race/ownership, and the opt-in live gates and real opens. | L1-L9 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | Control coverage pins the interrupt ledger (ack≠settlement, idempotence, Finding 1/2 pi settlement), never-bodies queue truth with cockpit-only withdrawal recovery, the typed attachment lifecycle with on-disk spool proofs, read-only policy, evidence-bound telemetry, and the seventeen routes over a real wire — all over the shared `_control_plane.py` topology. | L1-L381 | [test_conversation_control_api.py](agents-remember/mcp/tests/test_conversation_control_api.py) |
@@ -451,6 +464,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | L1-L1180 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Public API epoch/conflict/certificate/privacy/status matrix. | L1-L700 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
 | Native adapter exact-operation coverage is split by harness. | L1-L1 | [Claude tests](agents-remember/mcp/tests/test_harness_control_claude.py); [Codex tests](agents-remember/mcp/tests/test_codex_app_server_adapter.py); [Pi tests](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
+| Sub-agent regression coverage: the demux incident suite, both projector-agent suites, and the library agent-grouping suite share the vendored-shape fixture module. | L1-L37 | [_agent_wire_fixtures.py](agents-remember/mcp/tests/_agent_wire_fixtures.py); [test_codex_adapter_thread_demux.py](agents-remember/mcp/tests/test_codex_adapter_thread_demux.py); [test_conversation_projector_codex_agents.py](agents-remember/mcp/tests/test_conversation_projector_codex_agents.py); [test_conversation_projector_claude_agents.py](agents-remember/mcp/tests/test_conversation_projector_claude_agents.py); [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
 | Folded-state stream regressions force the handoff mutation, failed-prime snapshot/non-duplication/later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | Route-index regressions cover ignored/generated exclusion, symlink/sparse/gitlink/non-UTF-8 identity, ambient selectors, typed failures, and repeat convergence. | L199-L911 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 | Carryover full-apply regressions compare raw JSON/Markdown authority with typed parser semantics and prove exact zero mutation for every refusal. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
@@ -460,18 +474,40 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | The sync helper copies and compares raw dist/package bytes; it does not introduce or normalize emitted whitespace. | L59-L68; L133-L172 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 | The production build runs Vite and recreates `dashboard/dist`, making Vite the physical-byte owner. | package L6-L10; config L61-L67 | [dashboard/package.json](agents-remember/dashboard/package.json); [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
 
-### 260713-PHA-L5 Route Contract Review
+### Route Contract Review
 
 The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
 readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
-## 260718-CHATS-L5I Current Route Impact
+## Harness Sub-Agent Regression Route Impact
 
-The L5I regression set now covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
+Harness sub-agents are first-class in test coverage: one shared codex
+vendored-shape fixture module plus five focused suites prove the thread demux (the 2026-07-24
+production bridge-death incident class), both projectors' agent grammar (roster, multiplexed
+pendings, per-thread twin suppression, sidechain binding, the claude flag floor), and both
+libraries' agent grouping with visible degrade notes. Four existing suites gain targeted
+extensions (plural-pending authority + serialization, flag-floor probe/relaunch, the reordered
+binder pin, the additive fake-boundary agent fetch). Native-helper sub-agent enumeration and the
+agent transcript read are covered at the Python port boundary in
+`test_conversation_library_agents.py`; the helper's own Node suite is unchanged.
+Verification metadata remains pre-commit.
+
+## Serving Performance And Quality-Gate Route Impact
+
+The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
 
 ## Update History
+
+- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: added the harness sub-agent regression set —
+  the NEW shared `_agent_wire_fixtures.py` and five NEW focused suites (thread demux, codex
+  projector agents, claude projector agents, library agents) plus targeted extensions to
+  `test_harness_control.py` (multiplexed respond + plural serialization), `test_harness_control_claude.py`
+  (flag floor + relaunch), `test_conversation_active_service.py` (reordered binder pin + per-thread
+  dict assertions), and `test_conversation_library_ports.py` (additive agent fetch at the fake
+  boundary). New-file sidecars registered; verification metadata stays pinned until L7 closeout
+  stamps the candidate commit.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
   added the default-threshold, closeout mutation-order, public-tool-description,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-21T11:30+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-26T15:40+0200                            |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -22,12 +22,12 @@ catalog, drives launch/set/submit lifecycles, and exposes pure derivations for r
 and state-grammar surfaces. Components may project these facts, but must not invent a second
 catalog, delivery ledger, or lifecycle authority.
 
-FEUI-L8 makes this overview the strategic owner for the data plane so the root and panels
+This overview is the strategic owner for the data plane so the root and panels
 overviews can remain compact. It also records the retirement of the legacy `sessionGroups` model:
 role/spawn hierarchy and attention are now derived by `railModel.ts`, while product-facing grouping
 and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
 
-## FEUI-L9R Runtime Identity And Recovery
+## Runtime Identity And Recovery
 
 - `buildIdentity.ts` owns the executing bundle fingerprint and a pure tri-state comparison with the
   server's optional shipped-dashboard identity; it never reloads the page itself.
@@ -38,7 +38,7 @@ and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
   server exit ends the session; a boot-owned reattach consumes each identity once, rejects stale
   callbacks, and replays resize before buffered input without a timer loop.
 
-## FEUI-MX-FIX-2 Authoritative Session Open
+## Authoritative Session Open
 
 - `terminalOpen.ts` is the sole browser authority for `POST /api/terminal`. It preserves the exact
   requested identity, validates HTTP and protocol outcomes, and returns a normalized accepted
@@ -60,12 +60,19 @@ and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
 
 - `sessions.ts` owns `OpenSession`, the catalog-backed registry, live-action `activeId`, connection
   registries, leaf/lifecycle attachment patches, and cross-tab catalog-change notifications. One
-  field is deliberately NOT catalog-sourced: `liveTurnWorking?` (260718-CHATS-L5F R9) carries the
+  field is deliberately NOT catalog-sourced: `liveTurnWorking?` carries the
   focused seat's own conversation-projection live-turn signal, merged at the view layer only
   (`SessionsView`) — the registry itself never writes it, so the accepted-server-row materialization
   rule above is unweakened. `stateGrammar.ts`'s `seatVisualState` prefers it over the sweep-lagged
   catalog `turnState` (a streaming turn must never read settled `turn-ended`) but only AFTER the
   terminal/fault/blocked-on-human/wait guards, so it can never fake liveness over a real end state.
+  The pending-interaction twin rule (review finding N1):
+  `OpenSession.controlPendingInteractions?` is the ADDITIVE plural (multiplexed harness sub-agent
+  pendings) beside the parent-thread singular slot, and every attention surface —
+  `stateGrammar.ts`'s blocked-on-human guard, `announcer.ts`'s focused-seat suppression,
+  `railModel.ts`'s question triage — derives from `sessions.ts`'s `sessionHasPendingInteraction`
+  (singular slot OR non-empty plural), never the singular slot alone, or a seat blocked SOLELY on a
+  sub-agent approval goes dark.
 - `catalogPoll.ts` is the single catalog read/reconcile boundary. `CockpitShell` owns both its
   refcounted interval and eager/cross-tab reconciler for the shell lifetime. Remote terminate is
   removed locally and excluded from the confirming read so a stale echo cannot resurrect it.
@@ -99,11 +106,11 @@ and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
 - Exited and retired rows are catalog evidence rather than live PTYs. Landed rows remain read-only
   inspectable until authoritative cleanup removes them.
 
-### Structured Conversation Projection (260718-CHATS-L4)
+### Structured Conversation Projection
 
 - [data/conversation](conversation/overview.md) owns the **reconstructable active-conversation
   projection**: a pure authority reducer (cursor-ordered apply, eventId+cursor dedupe, block-delta
-  revision gating, L1.4/L1.5 gap→re-page, same-revision→reset, replace-page rehydrate — never an
+  revision gating, gap→re-page tolerance, same-revision→reset, replace-page rehydrate — never an
   optimistic durable item) plus a thin store orchestrating page/stream/recovery/LRU. It holds only a
   browser projection rebuilt from the landed L1 page/stream contract and the L3 control routes.
 - [data/conversation-library](conversation-library/overview.md) owns the **reconstructable
@@ -159,7 +166,7 @@ code must not use them as ordinary recovery APIs.
 - Reliable submit and withdrawal preserve request identity. Never resend blindly after an ambiguous
   boundary and never implement pop-back as a local-only deletion.
 - Operator text, agent-bus messages, lifecycle control, and adapter interaction answers remain
-  distinct authority channels. The structured conversation UI (260718-CHATS-L4) consumes
+  distinct authority channels. The structured conversation UI consumes
   adapter-normalized history/resume from the landed L1/L2/L3 server contracts; it never scrapes or
   duplicates vendor TUIs, and it holds only a reconstructable projection — no durable browser
   conversation index and no optimistic durable item authority.
@@ -211,7 +218,7 @@ code must not use them as ordinary recovery APIs.
 
 The curator checked the memory repository's `system/sources.md`; it contains “No entries configured
 yet,” so no Domain Documentation source was available for this route. The current statements were
-verified from same-repository source/tests, the L8 task/worker/reviewer records, and the recovered
+verified from same-repository source/tests, the task/worker/reviewer records, and the recovered
 same-repository history pack.
 
 | Finding | Citations | Source Path |
@@ -242,7 +249,7 @@ own server contracts, so no external code path is cited as authority.
 
 ## Placement Decision
 
-FEUI-L8 considered new overview routes for `dev/` and the cockpit-scenario files. Their code is a
+New overview routes for `dev/` and the cockpit-scenario files were considered. Their code is a
 bounded test/fixture authority seam and remains governed by the root overview; creating another
 overview would fragment the product architecture. The high-churn state/authority modules instead
 receive this `data/` overview, while `keymap/` remains its own child and `session-cockpit/` remains
@@ -250,6 +257,15 @@ the UI composition owner. Detailed legacy grouping knowledge was preserved here 
 session-cockpit overview before the six obsolete sidecars were removed.
 
 ## Update History
+
+- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator (route impact: one derivation rule): recorded the
+  review-N1 plural pending rule in Catalog And Session Identity — `controlPendingInteractions?` is
+  the additive multiplexed sub-agent plural beside the parent-thread singular slot, and every
+  attention surface derives from `sessions.ts`'s `sessionHasPendingInteraction` (singular OR
+  non-empty plural) so an agent-only-blocked seat never goes dark. Detail in the
+  [sessions.ts](sessions.ts.md), [stateGrammar.ts](stateGrammar.ts.md),
+  [announcer.ts](announcer.ts.md), and [railModel.ts](railModel.ts.md) sidecars. Source is
+  uncommitted; closeout re-stamps verification.
 
 - 2026-07-24T13:17:50Z — Route impact: added the resilient boot/steady-state model for bounded
   transport + single-flight, no-op catalog reconciliation, one-shot SSE liveness, lifecycle-terminal

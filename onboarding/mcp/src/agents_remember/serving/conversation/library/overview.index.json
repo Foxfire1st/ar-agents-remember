@@ -117,19 +117,19 @@
       "mcp/src/agents_remember/serving/conversation/library/",
       "mcp/src/agents_remember/serving/conversation/library/overview.md",
       "conversation/overview.md",
-      "38c3fd81bdf851dce96e9b2b14e2bff741e7b383",
+      "4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f",
       "supported",
       "switch_session",
       "mcp/native_helpers/conversation_library/",
       "LibraryShared",
+      "subAgent*",
+      "agents_note",
       "ConversationItem",
+      "subagents/*.jsonl",
       "mcp/src/agents_remember/serving/conversation/models.py",
       "mcp/src/agents_remember/serving/conversation/",
       "terminal_opener.py",
-      "retire.py",
-      "hosted_readiness.py",
-      "/api/harnesses/{harness_id}/conversations",
-      "agents_remember.errors"
+      "retire.py"
     ]
   },
   "fallback": {

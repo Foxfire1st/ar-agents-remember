@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,10 +30,22 @@ history store, or control service.
   library-key, private native-resume, and SHA-256 operation identities non-interchangeable.
 - Conversation items carry stable ids, monotonic revisions/global ordinals, typed content blocks,
   explicit lane/source/producer provenance, and unknown-vendor/input evidence.
+- Harness sub-agent grammar: `ConversationAgentRef` (L320-L338) labels
+  the sub-agent one timeline item belongs to via the additive optional `ConversationItem.agent`
+  field (L375); absent means the parent conversation. Identity is evidence-bound — codex
+  `agentThreadId` (plus `agentPath`/`nickname`/`role` once collab evidence binds them), claude
+  `agentId`/`subagent_type` joined through the spawning tool call (`join_key` =
+  `parent_tool_use_id`) — and `status` (`ConversationAgentStatus`, L315-L317) tracks the agent's
+  own lifecycle, not the item's phase.
+- Library sub-agent grouping: `ConversationLibraryAgentRow` (L765-L784) is one
+  sub-agent conversation grouped under its parent row's `agents` tuple (L794); it opens through
+  its own `conversation_key` exactly like a top-level row. `ConversationLibraryPage.agents_note`
+  (L807-L809) carries capability honesty: the exact native reason sub-agent conversations are
+  (partially) unavailable on a page, never silently absent.
 - Status models fix the evidence-to-turn-state vocabulary and validate waiting and terminal
   cross-products; unknown evidence cannot establish ready.
-- Capability models require exact evidence products. Since 260718-CHATS-L5F R4 (developer ruling
-  2026-07-21) `FeatureCapability` carries a documenting NOTE (L653-L658) that there is deliberately
+- Capability models require exact evidence products. `FeatureCapability` carries a documenting NOTE
+  (L680-L685) that there is deliberately
   NO `for_observed_runtime` version-demotion: the contract is the only gate, a capability is never
   demoted because an installed runtime/helper version drifts from a fixture's captured version, and
   the runtime/helper version survives on `CapabilityEvidence` as informational metadata only.
@@ -62,6 +74,10 @@ modules behind these types, not in this file.
 - Only queued cockpit work exposes withdrawal identity. Raw draft and attachment recovery exist
   only in the authoritative successful withdrawal response.
 - Metrics always retain scope, freshness, precision, runtime, and evidence origin.
+- Sub-agent identity is never fabricated: unresolved identity renders as
+  `agent <short-id>`, both on item refs and library rows, and agent/library identity fields are
+  populated only from native evidence. When sub-agent conversations are unavailable on a library
+  page, `agents_note` must carry the exact native reason — absence stays explicit, never silent.
 
 ### Todos
 
@@ -81,8 +97,8 @@ authoritative behavioral evidence for this internal grammar.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Hostile tests cover cursor purpose, provenance, status, capability, identity/rollback, recovery, attachment, metrics, and fixture products. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
-| Foundation tests prove the types participate in exactly two ports and fixture non-promotion. | L21-L28; L102-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Hostile tests cover cursor purpose, provenance, status, capability, identity/rollback, recovery, attachment, metrics, and fixture products. | L208-L1182 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
+| Foundation tests prove the types participate in exactly two ports and that installed runtime fixtures are allowlisted evidence, never enablement. | L21-L28; L162-L176 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The two read protocols consume these normalized models without owning control behavior. | L8-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
 
 ## Cross-Repo References
@@ -95,6 +111,15 @@ No cross-repository implementation governs these contracts.
 
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7: harness sub-agents became first-class wire participants.
+  Code added `ConversationAgentStatus` (L315-L317) and `ConversationAgentRef` (L320-L338) with
+  the additive `ConversationItem.agent` field (L375), `ConversationLibraryAgentRow` (L765-L784)
+  with `ConversationLibraryRow.agents` (L794), and `ConversationLibraryPage.agents_note`
+  (L807-L809). Sidecar: documented the evidence-bound, never-fabricated sub-agent identity
+  grammar and the capability-honesty `agents_note`; fixed the stale L5F NOTE citation
+  (L653-L658 → L680-L685); corrected the foundation-test citation (L102-L137 pointed at the
+  registration/lock tests, not fixture non-promotion → L162-L176) and the contracts range end
+  (L1185 → L1182). Uncommitted; closeout re-stamps verification.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
   2026-07-21, R4). Corrected the now-false "demote mismatched runtime/helper versions" claim:
   `FeatureCapability.for_observed_runtime` is removed; a documenting NOTE (L653-L658) records the

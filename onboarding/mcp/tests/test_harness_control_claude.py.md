@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:45+02:00 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,9 +23,21 @@ terminal normalization.
 
 ## Code Commentary
 
-### 260714-ACPUI-L5 Discovery Isolation And Live Closure
+### Sub-Agent Text Forwarding Floor
 
-L5 keeps Claude catalog discovery token-free while preventing the transient probe from starting
+The fail-closed `--forward-subagent-text` version floor is pinned here (fix-round review finding 8). The
+fake transport learns scripted re-launch: `start_argvs` records every launch argv, and a
+`restart_frames` script drains the stop sentinel and replays startup frames on the second `start`.
+The below-floor case (2.1.210, L431-L445) requires the flag omitted, exactly ONE launch (no
+re-launch), and an `unverified` note naming both the observed and floor versions. The at-floor
+case (2.1.220, L466-L491) proves the two-launch flow: the probe launch omits the flag, the proven
+re-launch carries it behind the `system/init` capture, and the note reports `enabled`. The
+unparseable-version case (`dev-build`, L493-L510) stays fail-closed with one flagless launch. The
+mapper-tier floor verdicts live in `test_conversation_projector_claude_agents.py`.
+
+### Discovery Isolation And Live Closure
+
+Claude catalog discovery stays token-free while the transient probe is kept from starting
 unrelated MCP servers inherited through the caller's native argv. The discovery-only regression
 table covers the selector grammar accepted by the observed Claude Code 2.1.210 install: one
 separate config, variadic and repeated separate configs, equals-attached configs, the exact strict
@@ -40,16 +52,16 @@ selectors to survive byte-for-byte, so ordinary settings-owned sessions continue
 installed MCP configuration. The original fake discovery case still proves the synthetic bootstrap
 has zero turns and zero cost, uses one strict empty config, and force-stops the transient transport.
 
-Task-local live evidence closes the relationship between those fake pins and the native process:
+Live evidence closes the relationship between those fake pins and the native process:
 a two-marker A/B made normal startup create both configured markers while discovery created
 neither, returned the same model-gated catalog at zero turns/cost, and cleaned up. The independent
 reviewer then reproduced an adversarial marker collision against the corrected candidate; its
 marker stayed absent and the same five observed model keys returned. Those row counts and keys are
 live installation/auth observations, not production enums or expectations encoded by this suite.
 
-### 260714-ACPUI-L3 Same-Session Setter Evidence
+### Same-Session Setter Evidence
 
-The L3 scenarios drive `/model` and `/effort` as structured Claude session commands through the
+The same-session scenarios drive `/model` and `/effort` as structured Claude session commands through the
 native stream transport. A set becomes `echo-verified` only after the replayed user frame matches
 the retained correlation, session id, and exact canonical command body and a following terminal
 result echoes an allowed effective label. Model changes immediately re-gate effort against the
@@ -69,7 +81,7 @@ replay/result frames before a clean retry. A later setter is not sent while an a
 has not terminated, completed duplicate replay is ignored, strict correlation/body/session
 mismatches fail loudly, and a duplicate retained correlation is never written a second time.
 
-### 260714-ACPUI-L2 Effective-Launch Mismatch
+### Effective-Launch Mismatch
 
 The Claude suite can inject an expected `ResolvedLaunch` and now proves the fail-loud acceptance
 boundary. When `system/init` echoes a different effective model, the adapter force-closes its
@@ -85,7 +97,7 @@ preservation, discovery-only MCP isolation, compatible structured version negoti
 correlation, busy ordering, durable interaction responses, supported commands, ambiguous
 disconnect reconciliation, bounded history, and safe terminal failure metadata.
 
-ACPUI-L1 moves the fixture baseline to the live-confirmed `2.1.210` shape and adds catalog-specific
+The fixture baseline tracks the live-confirmed `2.1.210` shape with catalog-specific
 coverage. Discovery performs only the synthetic `shouldQuery: false` bootstrap plus the
 `list_models` control request, asserts zero turns and zero cost, and always stops the transient
 process. Started advertisement is cached, selects the current model, keeps effort levels nested per
@@ -124,12 +136,15 @@ environment must never appear in handshake evidence.
   not promote capability state.
 - Timed-out/cancelled command frames are neutralized without stealing a later setter result or
   writing a duplicate retained correlation.
+- `--forward-subagent-text` is fail-closed: emitted only behind a probed >= 2.1.220 install via a
+  probe-launch-then-relaunch flow; below-floor or unparseable versions run exactly one flagless
+  launch with an honest `unverified` note (fix-round finding 8).
 - Fixture versions are test evidence rather than a production pin, and credentials/model output
   remain excluded from retained startup evidence.
 
 ### Todos
 
-None known for this leaf.
+None.
 
 ## Docs References
 
@@ -166,7 +181,7 @@ advertisement contract.
 
 ## Cross-Repo References
 
-The task-local live and reviewer artifacts corroborate the fake selector grammar with real process
+The live and reviewer artifacts corroborate the fake selector grammar with real process
 side-effect markers. Their five-row result is a captured install/auth observation, not a test enum.
 
 | Finding | Citations | Source Path |
@@ -174,19 +189,26 @@ side-effect markers. Their five-row result is a captured install/auth observatio
 | The corrected live two-marker A/B preserved normal configured startup, isolated discovery, returned the same zero-turn/model-gated catalog, and cleaned up. | L72-L96 | [L5 worker closeout report](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
 | Independent review caught the append-only selector collision, then closed it only after fake grammar cases plus an independent marker replay returned the same five observed keys with no marker side effect. | L148-L151; L163-L173 | [L5 reviewer verdict](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
-## 260715-FEUI-L5 Submission Authority Delta
+## Submission Authority Delta
 
 Claude hosted-control tests now prove sole-operation authority across prompt/interaction/setter
 traffic, exact terminal completion, late/cancel/duplicate immunity, and bounded retained history.
 Unknown setter evidence remains the shared barrier until exact resolution.
 
-## 260718-CHATS-L5I Current Delta
+## Native Interrupt Acceptance Delta
 
 Claude control regressions now pin native interrupt request acceptance and the corresponding typed failure/detail paths without mistaking acknowledgement for turn settlement.
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the `--forward-subagent-text`
+  flag-floor coverage (fix-round finding 8) — the fake transport's scripted re-launch
+  (`start_argvs`/`restart_frames`), the below-floor one-launch omission with the exact
+  `unverified` note, the at-floor probe-then-relaunch flow, and the unparseable-version
+  fail-closed case. Verification metadata stays pinned (uncommitted); closeout re-stamps the
+  candidate commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

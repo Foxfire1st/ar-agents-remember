@@ -10,6 +10,7 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "mcp/tests/_agent_wire_fixtures.py",
     "mcp/tests/_control_plane.py",
     "mcp/tests/_scaling.py",
     "mcp/tests/conftest.py",
@@ -40,6 +41,7 @@
     "mcp/tests/test_cleanup_carryover.py",
     "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_code_quality_check.py",
+    "mcp/tests/test_codex_adapter_thread_demux.py",
     "mcp/tests/test_codex_app_server_adapter.py",
     "mcp/tests/test_codex_app_server_live.py",
     "mcp/tests/test_codex_app_server_protocol.py",
@@ -62,12 +64,15 @@
     "mcp/tests/test_conversation_control_operations.py",
     "mcp/tests/test_conversation_control_queue.py",
     "mcp/tests/test_conversation_foundation.py",
+    "mcp/tests/test_conversation_library_agents.py",
     "mcp/tests/test_conversation_library_api.py",
     "mcp/tests/test_conversation_library_cursor.py",
     "mcp/tests/test_conversation_library_gates.py",
     "mcp/tests/test_conversation_library_installed.py",
     "mcp/tests/test_conversation_library_open.py",
     "mcp/tests/test_conversation_library_ports.py",
+    "mcp/tests/test_conversation_projector_claude_agents.py",
+    "mcp/tests/test_conversation_projector_codex_agents.py",
     "mcp/tests/test_conversation_runtime_composition.py",
     "mcp/tests/test_crap_calculator.py",
     "mcp/tests/test_dashboard_daemon.py",
@@ -184,8 +189,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 165,
-    "fileSidecars": 172,
+    "sourceFilesInScope": 170,
+    "fileSidecars": 177,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -197,7 +202,9 @@
     "adapter",
     "adapters",
     "agent",
+    "agent_wire_fixtures",
     "agentic",
+    "agents",
     "ambient",
     "analysis",
     "api",
@@ -261,19 +268,18 @@
     "daemon",
     "dashboard",
     "degradation",
+    "demux",
     "diag",
     "discovery",
     "dispatch",
     "doc",
-    "docker",
-    "document",
-    "drift",
-    "escalation"
+    "docker"
   ],
   "hotPath": {
-    "summary": "For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git generated-positive/authored-negative regression. Use `dashboard/package.json` and `dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest parity. Do not route this seam through generated asset file cards or a generic normalizer. For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census and byte-convergence matrix,...",
+    "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux), `test_conversation_projector_codex_agents.py` (roster/multiplexed projection/per-thread twin-suppression dedupe/plural pendings in one cursor domain), `test_conversation_projector_claude_agents.py` (`parent_tool_use_id` sidechain binding, `task_*` roster lifecycl...",
     "candidateHints": [
       "mcp/tests",
+      "mcp/tests/_agent_wire_fixtures.py",
       "mcp/tests/_control_plane.py",
       "mcp/tests/_scaling.py",
       "mcp/tests/conftest.py",
@@ -295,10 +301,11 @@
       "mcp/tests/fixtures/pi_rpc",
       "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
       "mcp/tests/fixtures/pi_rpc/activity.jsonl",
-      "mcp/tests/test_agentic_settings.py",
-      "mcp/tests/test_benchmark_analysis.py"
+      "mcp/tests/test_agentic_settings.py"
     ],
     "anchorHints": [
+      "_agent_wire_fixtures.py",
+      "_agent_wire_fixtures",
       "_control_plane.py",
       "_control_plane",
       "_scaling.py",
@@ -344,9 +351,7 @@
       "test_chats_l5_hardening.py",
       "test_chats_l5_hardening",
       "test_chats_l5f_leaks.py",
-      "test_chats_l5f_leaks",
-      "test_claude_stream_transport.py",
-      "test_claude_stream_transport"
+      "test_chats_l5f_leaks"
     ]
   },
   "fallback": {

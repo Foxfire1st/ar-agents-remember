@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:40+0200 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -30,9 +30,9 @@ rail view.
 - **Props vs store** (L368-L389): `model`/`rollup` arrive as PROPS — derived once in
   `SessionsView` and shared with the palette commands (one derivation, two surfaces; same-snapshot
   consistency, worker flag 5) — while `sessions`, the tree toggle, poll health, the projection
-  slices (`taskDocuments`, `lifecycles`, `agentPickups`, `supervisorHeartbeat`), the L6 lifecycle
+  slices (`taskDocuments`, `lifecycles`, `agentPickups`, `supervisorHeartbeat`), the lifecycle
   notices (`cleanupOutcome`), and the harvest map (`usePtyHarvest`) are store reads.
-- **Row anatomy `renderRow`** (RULED R6 / **RV-2 responsive redesign, 260718-CHATS-L5P**): the row is
+- **Row anatomy `renderRow`** (RULED R6 / **RV-2 responsive redesign**): the row is
   now TWO groups inside a `flex-wrap: wrap` `rowShell` — a **LABEL group** (`rowLabelGroup`: dot ·
   role(3) · title · attention/markers · status chip; `flex:1 1 auto; min-width:0; overflow:hidden`) and
   an **ACTION group** (`rowActionGroup`: End, or the armed confirm/cancel, or the end-failure alert;
@@ -48,16 +48,19 @@ rail view.
   confirm copy already carries the state, so the two controls always fit. Status chips carry the
   grammar's status vocabulary ONLY — the DOM-negative test proves `resolvedModel`/`resolvedEffort`
   render NOWHERE in the rail. The `data-slot="attention-marker"` slot carries the two-state brief marker
-  (✉, R8), held-gate badge (R13), and FEUI-L4's `set!` marker when `hasUnackedSetAttention` finds
+  (✉, R8), held-gate badge (R13), and the `set!` marker when `hasUnackedSetAttention` finds
   unsupported, clamp, unknown, or pair-failure evidence. Its accessible name directs the user to the set
   ledger; only an explicitly labelled `mark seen` action clears it. Viewing/focusing never does. The
-  `input?` chip's tooltip carries the pending question's prompt preview (R16). Geometry is e2e-pinned
+  `input?` chip's tooltip carries the pending question's prompt preview (R16) — read
+  from `sessionPendingInteractionPayload(session)` (review N1; the parent's singular slot first, else the first multiplexed sub-agent entry — L651) and prefixed with the
+  adapter-bound agent label when present (`<agentLabel>: <prompt>`, L654-L656, tooltip at
+  L780-L782), so the tooltip never implies the parent is asking. Geometry is e2e-pinned
   (`cockpit.spec.ts`) at 1440 / 1100 / 900 / min-rail: armed confirm 55×15, cancel 40×15, single-line,
   both fully inside the aside, chip dropped.
-- **Accessible state dot (L4 R8)** (L491-L501): the rail supplies `ariaLabel="state: <word>"`
+- **Accessible state dot (R8)** (L491-L501): the rail supplies `ariaLabel="state: <word>"`
   to the shared `StateDot`, making the truncation-surviving signal a named image. Header dots stay
   hidden because the visible state word already sits beside them.
-- **Honest single-End flow (L6 R5)** (L381-L385, L424-L432, L548-L614): the End segment renders
+- **Honest single-End flow (R5)** (L381-L385, L424-L432, L548-L614): the End segment renders
   on EVERY row (live `End`, dormant `✕`), but clicking now ARMS an inline confirm that NAMES
   session · leaf · state (`terminateConfirmCopy` — arming alone never kills); confirm runs
   `executeEnd` → `endSessionDetailed` (the residual-keeping path in `data/sessionLifecycle`;
@@ -65,19 +68,19 @@ rail view.
   terminate POST (review finding 4) renders a `role="alert"` `end failed: <verbatim server
   words>` row with retry + dismiss, REPLACING the End segment until resolved — never a silent
   disarm; distinct from stop residuals, which are informational facts about SUCCESSFUL
-  terminations. **R9 demotion (260718-CHATS-L5P):** the `endButton` now carries DEMOTED weight —
+  terminations. **R9 demotion:** the `endButton` now carries DEMOTED weight —
   `color: muted` by default, warming to `alarm` only on hover / keyboard focus / the selected row (red
   on every row was six alarms shouting, diluting the danger signal). The `rowShell` gained a `_hover`
   border feedback (an amber-grid mix) — the row had NO approach feedback before the click that arms End.
   The confirm/cancel/End controls (`bulkButton`, `doneToggle`, `endButton`) all hold `flex:none` +
   `whiteSpace:nowrap` so they never crush into vertical letter columns (R1/V12). The
   `terminateConfirmCopy` em-dash collision (`state — —`) is fixed in `lifecycleCopy.ts`.
-- **Legacy-raw harvest markers (L6 R7)** (L464-L471, L499-L514): a pending bell renders a warn
+- **Legacy-raw harvest markers (R7)** (L464-L471, L499-L514): a pending bell renders a warn
   marker chip in the attention slot with a text equivalent ("terminal bell — the vendor TUI
   rang"), cleared by focusing the seat (PtySurface acknowledges); harvested OSC title/turn hints
   join the row TOOLTIP as clearly-labeled `pty title:` / `pty hint:` parts — NEVER the grammar
   dot (the dot stays pure grammar, test-pinned).
-- **Cleanup-outcome note (L6 R5)** (L755-L770): the landed-cleanup route's OWN outcome —
+- **Cleanup-outcome note (R5)** (L755-L770): the landed-cleanup route's OWN outcome —
   `ended N · skipped M (session: reason)` via `cleanupOutcomeCopy` — renders as a dismissable
   `role="status"` row instead of dropping the skips.
 - **Ruled hierarchy render** (L619-L681, L800-L834): spine rows flat; `renderMaster` — master box
@@ -99,22 +102,21 @@ rail view.
   finding 3).
 - **Poll-health banner** (L749-L754, R15): `pollHealth.healthy === false` ⇒ the amber "catalog
   poll stale — N beats missed; rows may be frozen" banner.
-- **Bus footer** (L836-L851, R8): anchored numbers from `supervisorHeartbeat`. **260718-CHATS-L5P
-  (RV-4/R4 + R5):** the both-zero inbox collapses to a calm `inbox clear` (the anchored `N pending / M
+- **Bus footer** (L836-L851, R8): anchored numbers from `supervisorHeartbeat`. **RV-4/R4 + R5:** the both-zero inbox collapses to a calm `inbox clear` (the anchored `N pending / M
   redeliverable` pair renders only when there is something to anchor); the heartbeat/cutoff are
   HUMANIZED via `humanizeDuration` (`heartbeat 2 s / stale cutoff 1 m 0 s`, never the raw
   `570724.69163s / 86400s`), with the raw seconds kept in the tooltip. Renders the truth ("supervisor
   has not ticked in this workspace") when null — never fake numbers.
-- **Tree toggle** (L808-L815, R8 — 260718-CHATS-L5P): reads as a view TOGGLE, not a bare taxonomy noun
+- **Tree toggle** (L808-L815, R8): reads as a view TOGGLE, not a bare taxonomy noun
   — `⇄ role view` ↔ `⇄ tree view` with `aria-pressed` + a both-states tooltip + `whiteSpace:nowrap`
   (V12, never `rol/e vie/w`). Swaps to `buildSpawnTree` rows indented by spawn depth (provenance
   inspection only); persisted per user via the cockpit store.
-- **Leaf caption (V26, 260718-CHATS-L5P)** (`leafCaption`): a long leaf id (`260715_#2067_react-data-
+- **Leaf caption (V26)** (`leafCaption`): a long leaf id (`260715_#2067_react-data-
   testids-01`) now truncates at the END with the full value in the cluster `title` (`display:block;
   min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap`) — never breaking mid-word
   down the narrow rail.
 - **Zero state** (L804-L807, R9): an EXPLAINED empty rail ("no sessions — launch one from Chats;
-  the cockpit launcher lands in L5"), never an unexplained blank.
+  the cockpit launcher lands in the Chats surface"), never an unexplained blank.
 
 ### Conventions
 
@@ -130,7 +132,7 @@ rail root carries `data-focus-target` (design §5.3 — always present, even emp
   invented states — chips/words come exclusively from `stateGrammar`; harvested hints live in
   the TOOLTIP, clearly labeled, never the dot.
 - The ruled anatomy order is DOM-test-pinned; new row content goes through the reserved
-  attention-marker slot or a ruling. **RV-2 truncation/wrap contract (260718-CHATS-L5P):** the row is a
+  attention-marker slot or a ruling. **RV-2 truncation/wrap contract:** the row is a
   two-group `flex-wrap:wrap` layout; the ACTION group (End/confirm/cancel) stays single-line + reachable
   at EVERY rail width (wrapping whole to line 2 when tight), the title elides first, the chip elides next
   and is dropped entirely while armed — pinned by the 4-width `cockpit.spec.ts` geometry e2e (jsdom has
@@ -158,8 +160,10 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | L348-L889 | [SessionRail.tsx](SessionRail.tsx) |
+| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | L487-L1115 | [SessionRail.tsx](SessionRail.tsx) |
 | The pure model/rollup/join derivations this renders. | L17-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
+| The payload selector + agent label the `input?` chip tooltip resolves (N1). | L463-L472 | [../../data/sessions.ts](../../data/sessions.ts) |
+| The adapter-bound agent label the tooltip prefixes. | L192-L201 | [../../data/interactionAnswer.ts](../../data/interactionAnswer.ts) |
 | The single dot renderer + grammar. | L38-L49 | [StateDot.tsx](StateDot.tsx) |
 | The view deriving props and wiring focus + palette mirrors. | L206-L344 | [SessionsView.tsx](SessionsView.tsx) |
 | The detailed terminate/cleanup flows + notice store the End paths run through. | L120-L191 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
@@ -167,9 +171,9 @@ the reviewed task evidence for any current behavioral claim.
 | The harvest store + hint words the markers/tooltips read. | L51-L126 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
 | Shared set-attention predicate feeding the `set!` marker. | L1-L232 | [../../data/setChips.ts](../../data/setChips.ts) |
 | The poll-health + tree-toggle store slices. | L107-L172 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
-| The jsdom suite: state matrix, anatomy order, model-leakage negative, hierarchy, attention, joins, completed/bulk, footer honesty, cross-surface dot, + the L6 block. | L61-L473 | [SessionRail.test.tsx](SessionRail.test.tsx) |
+| The jsdom suite: state matrix, anatomy order, model-leakage negative, hierarchy, attention, joins, completed/bulk, footer honesty, cross-surface dot, + the End/cleanup/harvest block. | L61-L473 | [SessionRail.test.tsx](SessionRail.test.tsx) |
 
-## FEUI-L8 Reviewed Candidate Delta
+## Sole Chats Rail Candidate Delta
 
 Becomes the sole Chats rail replacing SessionList/sessionGroups rendering. It consumes `railModel`, renders role/spawn/master/leaf/completed truth and attention rollups, preserves exact terminate/cleanup targets, and enables browser rendering optimization only beyond 50 actually emitted rows.
 
@@ -185,7 +189,7 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
-## Current L5I Maintenance
+## Single-Seat End And Decluttered Rail Maintenance
 
 Single-seat End now executes immediately; only bulk end retains a confirmation because it acts on
 multiple seats. Failure retry/dismiss remains visible. The rail subscribes only to shown poll facts
@@ -193,6 +197,13 @@ instead of heartbeat age, and its former bus footer is removed because inbox and
 already have their authority in the top bar and detailed inspector.
 
 ## Update History
+
+- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the review-N1 tooltip asker fix — the
+  `input?` chip's prompt preview now reads `sessionPendingInteractionPayload(session)` (parent's
+  singular slot first, else the first multiplexed sub-agent entry) and prefixes the adapter-bound
+  agent label (`<agentLabel>: <prompt>`) so the tooltip never implies the parent is asking. Also
+  refreshed the self-reference range to the current 1115-line source. Source uncommitted;
+  closeout re-stamps verification.
 
 - 2026-07-24T13:17:17Z — Curator: corrected single-end behavior, narrowed poll subscriptions, and
   removed duplicated rail-bus chrome; verification fields remain pre-commit.

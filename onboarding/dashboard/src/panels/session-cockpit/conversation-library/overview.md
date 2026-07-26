@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |
 | doc_type               | `route-local-overview`                                              |
-| lastUpdated            | 2026-07-21T05:30+02:00                                              |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`                         |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastUpdated            | 2026-07-26T15:40+02:00                                              |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`                         |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `../overview.md`                                                    |
 
 ## Governing Overview
@@ -19,8 +19,7 @@ the sibling live renderer is [conversation/](../conversation/overview.md).
 
 ## Purpose
 
-`session-cockpit/conversation-library/` is the **in-stage previous-conversation library** (260718-CHATS-L4,
-design §4.4, §12.1). It renders each harness's normalized native history inside the same Chats stage,
+`session-cockpit/conversation-library/` is the **in-stage previous-conversation library** (design §4.4, §12.1). It renders each harness's normalized native history inside the same Chats stage,
 previews a selected conversation READ-ONLY in the same block grammar, and owns the **sole exact-open
 resume action**. Opening focuses a new live rail row ONLY on exact `opened` catalog proof; every other
 outcome leaves the operator's current draft, focus, and scroll intact (R4). It holds only a
@@ -31,26 +30,33 @@ active.
 
 - `ConversationLibrarySurface.tsx` — the in-stage browser shell: heading focus on open, responsive
   columns, and the §4.4 return paths (Back button, Escape-in-stage → `onBack`, palette Back-to-current-chat)
-  all consuming the same focus-return token. **Layout idiom (F23/L4.R5):** the `columns` flex container is
+  all consuming the same focus-return token. **Layout idiom (F23/R5):** the `columns` flex container is
   `nowrap` (NOT wrap) with `min-height:0` columns each handing overflow to its own interior scroller, and
   `@container (max-width:56rem)` owns stacking with `container-type:inline-size` (F22). A wrapping flex
   container would size each line to content, defeat the `overflow:hidden` height clip, and leave the sole
-  resume action and the paging affordance pointer-unreachable — the regression F23 fixed. **V10 threshold
-  raise (260718-CHATS-L5P):** the stack breakpoint moved `640px → 56rem` — the 16rem list + 20rem preview
+  resume action and the paging affordance pointer-unreachable — the regression F23 fixed. **V10 threshold raise:** the stack breakpoint moved `640px → 56rem` — the 16rem list + 20rem preview
   crush below ~56rem of surface (the list falls to a ~180px sliver, preview prose splits mid-word), so the
   surface stacks to one column BEFORE that (the 900px window with the rail collapsed, and the ~1000px
   sweep). Sibling `MarkdownBlock` prose wraps whole-word (`break-word`) with inline code `nowrap` (V10),
   effective only under the app-root `word-break: normal` override (RV-1). The `nowrap`/container-query
-  idiom itself is unchanged.
+  idiom itself is unchanged. The surface also passes the page's `agentsNote` straight through to
+  the list (`agentsNote={list?.agentsNote}`) — a one-line pass-through; the list owns the render.
 - `ConversationLibraryList.tsx` — the native list: boundary-truncated title carrying the full value in
   `title` (A5), humanized age (`humanizeAge`), a completeness badge, and `Load more` paging.
+  **Sub-agent nesting:** a row's `agents` render as indented child rows (2ch inline
+  indent, dashed border, `library-agent-row` testid) with an `agent` badge plus the `role` badge when
+  present; `agentChildRow` promotes a child to the parent row shape (its own server-minted key +
+  identity digest, the parent's read-path capabilities — the wire carries none per child — `agents: []`),
+  so children select/preview/open through the SAME flow. The page's `agentsNote` renders VERBATIM
+  (`library-agents-note`) whenever non-empty — agent unavailability is never silent. Covered by the new
+  `ConversationLibraryList.test.tsx` suite.
 - `ConversationHistoryPreview.tsx` — the read-only preview in the SAME block grammar, labeled
   `history preview · not active`; its partial note prints the reason from the capability that is ACTUALLY
   unsupported (F13), never a supported-state reason.
 - `OpenConversationAction.tsx` — the SOLE resume action: a caller-stable `requestId`; focus moves to a
   new rail row ONLY on `phase="opened" && outcome="opened"` catalog proof; every other outcome
   (`unsupported`/`stale-identity`/`timeout-unknown`/`launch-failed`/`identity-mismatch`/`request-conflict`)
-  is surfaced without focusing. `dispatching` (set from dispatch) blocks a double-open (the L2.3 TOCTOU
+  is surfaced without focusing. `dispatching` (set from dispatch) blocks a double-open (the dispatch TOCTOU
   window); poll exhaustion switches to an honest "outcome unknown — reconcile" re-drive under the SAME
   requestId (F6).
 
@@ -67,7 +73,7 @@ active.
 - **In-stage, never overlapping the diagnostics drawer.** While the library overlay is up, `ChatsStageBody`
   does not render the diagnostics drawer, so the two surfaces can never overlay (F8); the live surface
   stays mounted but inert behind the library.
-- **Height containment via single-line flex + container queries (L4.R5).** See the layout idiom above —
+- **Height containment via single-line flex + container queries (R5).** See the layout idiom above —
   wrapping flex is forbidden here; each column scrolls independently.
 
 ## Hot Path Summary
@@ -90,14 +96,14 @@ this overview is their governing pillar.
 | Responsibility | File onboarding |
 | --- | --- |
 | In-stage browser shell + return paths + layout | [ConversationLibrarySurface.tsx](ConversationLibrarySurface.tsx.md) |
-| Native history list | [ConversationLibraryList.tsx](ConversationLibraryList.tsx.md) |
+| Native history list | [ConversationLibraryList.tsx](ConversationLibraryList.tsx.md) · [ConversationLibraryList.test.tsx](ConversationLibraryList.test.tsx.md) |
 | Read-only preview | [ConversationHistoryPreview.tsx](ConversationHistoryPreview.tsx.md) |
 | Sole exact-open resume action | [OpenConversationAction.tsx](OpenConversationAction.tsx.md) |
 
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
-configured. This route relies on its direct agents-remember source/tests and the reviewed L4
+configured. This route relies on its direct agents-remember source/tests and the reviewed
 task/worker/verdict evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
@@ -123,6 +129,12 @@ cross-repository implementation source governs it.
 
 ## Update History
 
+- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the harness sub-agent grouping in this
+  route — the list's nested child rows (`agentChildRow` promotion: own server-minted key, parent-
+  inherited capabilities, `agents: []`, `agent`/role badges), the verbatim `agentsNote` render, the
+  surface's one-line `agentsNote` pass-through, and the new `ConversationLibraryList.test.tsx` suite
+  added to the File Onboarding Map. The L7 source is uncommitted, so lastVerifiedCommit* stays on the
+  prior stamp and closeout re-stamps verification.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: minimal body update for the V10 responsive fix —
   the Route Model's stale `@container (max-width:640px)` stacking threshold is corrected to `56rem` (the
   two columns crush below ~56rem, so the surface stacks earlier), and the sibling `MarkdownBlock`

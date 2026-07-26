@@ -10,7 +10,10 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx",
+    "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx",
     "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx",
+    "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx",
     "dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx",
     "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx",
@@ -21,6 +24,7 @@
     "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx",
     "dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx",
+    "dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx",
     "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx",
     "dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx",
@@ -37,15 +41,17 @@
     "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 25,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 29,
+    "fileSidecars": 29,
     "childRoutes": 0
   },
   "routingTerms": [
+    "agentsarea",
     "ambienttelemetry",
     "cockpit",
     "collapse",
     "conversation",
+    "conversationagentfocus",
     "conversationitemview",
     "conversationreconnect",
     "conversationsurface",
@@ -74,7 +80,10 @@
     "summary": "1. `ChatsStageBody` mounts `ConversationSurface` for a controlled seat; the surface reads the `data/conversation` projection through `useActiveConversation`. 2. `ConversationTimeline` virtualizes `orderedItems`, stamps server-ordinal ARIA, folds unknown-vendor runs (`collapse.ts`), and pins tabbable rows; each item routes through `ConversationItemView` to its grammar component. 3. `AmbientTelemetry` renders evidence-bound metrics absent-not-zero; `ConversationReconnect` surfaces any typed fault fail-loud. 4. `useConversationControls` resolves the working turn id from item evidence and gates...",
     "candidateHints": [
       "dashboard/src/panels/session-cockpit/conversation",
+      "dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx",
+      "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx",
       "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx",
+      "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx",
@@ -85,6 +94,7 @@
       "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx",
       "dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx",
+      "dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx",
       "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx",
       "dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx",
@@ -92,15 +102,17 @@
       "dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx",
       "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx",
-      "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts",
-      "dashboard/src/panels/session-cockpit/conversation/collapse.ts",
-      "dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx",
-      "dashboard/src/panels/session-cockpit/conversation/primitives.tsx",
-      "dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx"
+      "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts"
     ],
     "anchorHints": [
+      "AgentsArea.test.tsx",
+      "AgentsArea.test",
+      "AgentsArea.tsx",
+      "AgentsArea",
       "AmbientTelemetry.tsx",
       "AmbientTelemetry",
+      "ConversationAgentFocus.test.tsx",
+      "ConversationAgentFocus.test",
       "ConversationItemView.tsx",
       "ConversationItemView",
       "ConversationReconnect.tsx",
@@ -121,6 +133,8 @@
       "ConversationWorkingLine",
       "DiffBlock.tsx",
       "DiffBlock",
+      "InteractionItem.test.tsx",
+      "InteractionItem.test",
       "InteractionItem.tsx",
       "InteractionItem",
       "MarkdownBlock.tsx",
@@ -138,15 +152,7 @@
       "collapse.test.ts",
       "collapse.test",
       "collapse.ts",
-      "collapse",
-      "primitives.test.tsx",
-      "primitives.test",
-      "primitives.tsx",
-      "primitives",
-      "renderer.test.tsx",
-      "renderer.test",
-      "useConversationControls.test.tsx",
-      "useConversationControls.test"
+      "collapse"
     ]
   },
   "fallback": {

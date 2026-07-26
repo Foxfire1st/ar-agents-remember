@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated            | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ still-live tmux session without asking the browser to remember process-local sta
 
 ## Code Commentary
 
-### 260707-HFX2-L18 JSON Projection Decomposition
+### JSON Projection Decomposition
 
 `TerminalCatalogEntry.from_json` now reuses `_optional_str` and `_optional_path` for migration-safe
 optional scalar/path reads while retaining the existing typed tuple, status, liveness, turn-state,
@@ -39,7 +39,7 @@ consumers parse JSON objects and do not use byte-order golden files. Independent
 both target methods at CRAP `4.00` / CC `4` / `100%` coverage, down from `30.00` and `34.00`, with
 every extracted helper at Radon rank A.
 
-### 260707-HFX2-L17 Pair-Binding Identity
+### Pair-Binding Identity
 
 `TerminalCatalogEntry.seat_role` is mutable binding identity while `spawn_role` remains immutable
 origin provenance. Legacy rows migrate in place from `spawnRole` (or `chat`; terminals remain
@@ -51,25 +51,37 @@ order, ids, or other fields. Reviewer O1 is retained as a low-severity concurren
 self-limiting migration rewrite occurs from the lock-free read path and could theoretically race a
 concurrent mutator at first upgrade read, though unique-temp atomic replace prevents corruption.
 
-### 260707-HFX2-L12 CS-6 Update
+### Batch Unit-of-Work Update
 
-`TerminalCatalog.batch()` is a read-once/write-once unit of work for full-catalog sweeps and L4
+`TerminalCatalog.batch()` is a read-once/write-once unit of work for full-catalog sweeps and
 session-open transactions. It holds both the cross-process file lock and the instance `RLock`
 across the complete body. Same-thread mutators re-enter safely; another request thread cannot see
 the process-wide batch buffer and mistake it for its own nested transaction. Other catalog
 instances may read only the last atomically committed file while the batch is in flight.
 `compact()` reclaims aged `terminated` tombstones while preserving running, exited, and
-landed/archive rows. Landed cleanup remains the explicit L11 manual path.
+landed/archive rows. Landed cleanup remains an explicit manual path.
 
-### 260713-PHA-L1 additive control metadata
+### Additive Control Metadata
 
 Catalog entries may preserve optional control state, private control endpoint, and protocol version
 for harness sessions. Fields are additive and migration-safe: legacy rows remain readable, while
 the opener/API can report an explicit unsupported state without treating pane text as authority.
 
+### Multiplexed Pending Interactions
+
+`TerminalCatalogEntry` gained the additive `control_pending_interactions` column (JSON
+`controlPendingInteractions`) beside the untouched singular
+`control_pending_interaction` parent-thread slot (L118-L121). It rides the same migration-safe
+optional pattern as every other control column: `from_json` reads it through the new
+`_optional_object_list` helper (L201-L203; helper at L871-L878) and `to_json` emits it through the
+`None`-filtered optional fold (L271), so legacy rows read back as `None` and unset values never
+enter the JSON. The read helper is fail-closed on shape: a non-list value, or a list containing
+even one non-object entry, degrades the WHOLE field to `None` rather than persisting a partial or
+malformed pending set.
+
 ### Logic
 
-**260707-HFX2-L15 dispatch provenance.** `TerminalCatalogEntry` persists
+**Dispatch provenance.** `TerminalCatalogEntry` persists
 `replacementForLeaf`, resolved model/effort, and the bound harness-log entry id/path with
 migration-safe optional JSON fields. `bind_session_log` locks and re-reads the latest catalog row,
 then replaces only the two log fields; it must not replay an open-time snapshot over newer liveness,
@@ -78,20 +90,18 @@ exit, failure-count, or pane evidence.
 `TerminalCatalogEntry` is the immutable row model. It stores the browser-visible session id and label,
 the launch kind (`terminal` or `harness`), optional harness id and lifecycle id, cwd, tmux session
 name, fixed command argv, creation and last-attach timestamps, status (`running`, `exited`,
-`landed`, or `terminated`), optional termination timestamp, and (slice L5) an optional `leaf_key` — the durable
+`landed`, or `terminated`), optional termination timestamp, and an optional `leaf_key` — the durable
 leaf-identity key (qualified leaf id `repo/master/leaf-id`) the catalog uses as the **leaf→chat
-registry** key; it is opaque to the backend. Since **L2** the row also carries **spawned-by
+registry** key; it is opaque to the backend. The row also carries **spawned-by
 provenance** — `spawned_by_session` + `spawned_by_lifecycle`, set when the row was created by the
-`spawn_agent_session` tool (an orchestrator spawning a manager, a manager spawning a worker), and since
-**L14** a `spawn_role` column — the l-01 role this session was spawned AS (the `AR_SPAWN_ROLE` value the
+`spawn_agent_session` tool (an orchestrator spawning a manager, a manager spawning a worker), and a `spawn_role` column — the l-01 role this session was spawned AS (the `AR_SPAWN_ROLE` value the
 dispatching seat seeded into the spawn env), recorded so the Chats command tree can group command chats
-(orchestrator/strategist/manager) by role provenance without re-reading tmux env. Since **L16** five
-more optional spawn-provenance columns follow the same pattern: the free-form escape hatch —
+(orchestrator/strategist/manager) by role provenance without re-reading tmux env. Five more optional spawn-provenance columns follow the same pattern: the free-form escape hatch —
 `launch_args` (`launchArgs`, the verbatim argv passthrough that rode the launch), `prompt_keywords`
 (`promptKeywords`, prepended to the brief paste), `session_commands` (`sessionCommands`, the
 post-launch pastes, resolved list incl. a session-vehicle effort) — plus the resolved dispatch level
 `spawn_level` (`spawnLevel`, leaf|master|portfolio) and `spawn_level_source` (`spawnLevelSource`,
-explicit|default), the rolesPerLevel knob-resolution provenance. Since **260707-HFX-L5** the row
+explicit|default), the rolesPerLevel knob-resolution provenance. The row
 also carries **liveness probe state**: `liveness_failures` (consecutive failed probes,
 `_non_negative_int` on read), `liveness_first_failed_at` / `liveness_last_failed_at` (ISO
 timestamps), `liveness_evidence` and `exit_evidence`
@@ -103,16 +113,16 @@ when the row is actually `exited` — all migration-safe like the other optional
 `from_json`/`to_json` translate between Python
 snake_case and the dashboard API's camelCase fields (`_string_tuple` reads the free-form lists back,
 `None` for absent/legacy rows). `to_json` writes `leafKey` / `spawnedBySession` /
-`spawnedByLifecycle` / `spawnRole` / the five L16 keys **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
+`spawnedByLifecycle` / `spawnRole` / the five spawn-provenance keys **only when set** (like `harness` / `lifecycleId` / `terminatedAt`), so legacy rows
 with no such key read back as `None` — no schema bump, migration-safe, the SAME pattern for all optional
-columns; the dashboard groups the Chats sidebar by `spawnRole` (L14) and reads the spawned-by pair to
+columns; the dashboard groups the Chats sidebar by `spawnRole` and reads the spawned-by pair to
 render the spawner → spawned edges once that surface lands. `with_attachment` restores a normal row to
 `running`, but preserves a row already classified as `landed`; it refreshes `lastAttachedAt`, clears
-`terminatedAt`, and (HFX-L5) resets all liveness state — a fresh attach is direct evidence of life
+`terminatedAt`, and resets all liveness state — a fresh attach is direct evidence of life
 without reopening archived successful seats. `with_status` changes status and records
 `terminatedAt` only for explicit termination.
 
-The **liveness transition copiers** (260707-HFX-L5) own the hysteresis math.
+The **liveness transition copiers** own the hysteresis math.
 `with_liveness_success()` clears all failure state and restores a non-`terminated` `exited` row to
 `running` — the **self-heal**: a false exit mark recovers automatically when a later probe finds
 the tmux session alive; a `landed` row stays `landed` and a `terminated` row is never revived
@@ -132,13 +142,13 @@ failure_threshold=3, minimum_failure_window_seconds=5.0, pane_gone_failure_thres
 store-level write point: under the catalog lock it reads, applies `with_liveness_success` (alive)
 or `with_liveness_failure` (dead with evidence; a dead probe with `evidence=None` is a no-op), and
 writes only when the row actually changed; an unknown id returns `None`. Callers are the
-`terminal_liveness.py` sweeper + shared observation path. **L2** rewrote all three copiers
-(`with_attachment` / `with_status` / `with_leaf_key`) to use `dataclasses.replace(self, …)` instead of
+`terminal_liveness.py` sweeper + shared observation path. All three copiers
+(`with_attachment` / `with_status` / `with_leaf_key`) were rewritten to use `dataclasses.replace(self, …)` instead of
 field-by-field reconstruction, so a newly added column (like the spawned-by pair) is preserved through a
 re-attach/status change **by construction** rather than silently dropped. `with_leaf_key(leaf_key)` is
 the leaf-attach write point: a copy bound to `leaf_key`, or unbound when `None`.
 
-The **leaf-uniqueness role** (L5, superseded by HFX2-L17 pair binding) splits one slot into role-scoped
+The **leaf-uniqueness role** splits one slot into role-scoped
 bindings: `TerminalSessionRole = "chat" | "terminal"` remains the legacy kind mapping, while the
 persisted `seat_role`/JSON `seatRole` is the current mutable binding identity. Uniqueness is per
 **(leaf, seat role)** — a leaf may hold one live owner for each declared pipeline role, so different
@@ -151,7 +161,7 @@ downgraded to `exited` by the `terminal_liveness.py` sweeper / direct liveness o
 the hysteresis evidence threshold is met — never by a single transient tmux command failure),
 giving server-authoritative single-owner-per-role uniqueness.
 
-**Seat lifecycle (260707-HFX-L8/HFX2-L11)** adds optional column groups, all written-only-when-set
+**Seat lifecycle** adds optional column groups, all written-only-when-set
 via the same `to_json`/`from_json` migration-safe pattern: **retirement provenance**
 (`retired_at`/`retired_by_session`/`retired_reason`/`retired_edge`, JSON `retiredAt`/
 `retiredBySession`/`retiredReason`/`retiredEdge`) layered onto `status == "terminated"` for manual
@@ -200,7 +210,7 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
 - Liveness self-heal revives any non-`landed`/non-`terminated` `exited` row on an alive probe (broader than a
   probe-caused exit alone — the WebSocket-close exit path's marks are also revivable when tmux still
   holds the session, which is semantically correct); `landed` and `terminated` are never revived. Known narrow
-  race (HFX-L5 review F2): a false exit + a fast same-(leaf, role) respawn inside one sweep interval
+  race (review finding F2): a false exit + a fast same-(leaf, role) respawn inside one sweep interval
   could revive into a momentary two-running-rows state for that slot.
 - Terminated rows stay available only when explicitly requested with `include_terminated=True`; exited
   and landed rows remain listed so the UI can show an honest ended/archive state.
@@ -221,11 +231,16 @@ The catalog is JSON-primary and API-shaped: persisted keys use the same camelCas
   `with_landing` sets `status="landed"` plus landing provenance, keeps the row listed for dashboard
   inspection, and releases the leaf slot because active lookup is running-only.
 - Rename (`with_label`) touches only `label`/`spawned_label` — it must never touch `spawn_role` (the
-  L6 role-seat-immutability field); a seat's role is fixed at spawn for its lifetime.
+  role-seat-immutability field); a seat's role is fixed at spawn for its lifetime.
 - Turn-state is classified for `kind == "harness"` rows only (see `terminal_liveness.py`); plain
   `terminal` (shell) rows never carry a meaningful `turn_state`.
 - A batch's file lock and instance lock span read, body, and final write. This is required when the
   body performs live-process validation plus `ensure` before publishing launch provenance.
+- The plural `control_pending_interactions` column is strictly additive and
+  migration-safe: the singular `control_pending_interaction` stays the parent-thread entry with its
+  exact pre-multiplexing meaning, unset plurals never enter the JSON, and `_optional_object_list` degrades a
+  malformed list (non-list, or any non-object entry) to `None` whole-field rather than persisting a
+  partial pending set.
 
 ### Todos
 
@@ -250,7 +265,7 @@ operations that keep catalog state honest.
 | The FastAPI app injects/creates the catalog, refreshes stale rows, rehydrates WebSockets from catalog metadata, persists opener rows, marks terminations, and uses catalog cwd for image uploads. | L334-L351; L291-L331; L481-L515; L528-L638 | [app.py](app.py) |
 | The terminal host exposes the tmux probe and terminate hooks that app.py uses before rehydrate and during explicit termination. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
 | Unit tests pin catalog path, JSON schema/order, complete optional-field round-trip, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | `TerminalCatalogTests` | [../../../tests/test_terminal_catalog.py](../../../tests/test_terminal_catalog.py) |
-| The liveness sweeper + shared observation path that drive `record_liveness_probe` (HFX-L5) and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
+| The liveness sweeper + shared observation path that drive `record_liveness_probe` and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
 | `mark_retired`/`mark_landed`/`set_label`/`record_turn_state` are called from the manual retire/rename tools and endpoints, the landed cleanup endpoint, and the integrate/finalize auto-land hooks. | `retire_entry`; `TerminalCatalog.mark_landed`; `TerminalCatalog.set_label`; `record_turn_state` | [retire.py](retire.py); [landing.py](landing.py); [terminal.py (mcp/tools)](../mcp/tools/terminal.py.md); [worktree_tools.py](../controllers/worktree_tools.py.md); [app.py](app.py) |
 | The retire authority policy (`check_retire_authority`) is evaluated against `SeatRef`s built from this catalog's `spawn_role`/`leaf_key` fields before any `mark_retired` call. | `SeatRef`; `master_of` | [retire_policy.py](retire_policy.py) |
@@ -264,21 +279,29 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
-## 260712-TRH-L4 Final Candidate
+## Serialized Catalog Writer Concurrency
 
-This sidecar was reviewed against the final uncommitted ACPUI L4 candidate. Catalog writers are
+Catalog writers are
 serialized across one read/body/write transaction in both the file-lock and same-instance thread
 domains. A same-instance reader waits behind the held `RLock`; another instance sees the coherent
 last committed atomic-file snapshot until commit. This corrects the older overbroad claim that all
 atomic readers remain lock-free.
 
-### 260713-PHA-L5 Additive Adapter Projection
+### Additive Adapter Projection
 
 Catalog rows retain existing fields and add control state, endpoint/protocol, activity, acceptance,
 vendor identity, pending interaction, event sequence, and raw detail. Legacy raw-TUI rows project
-unsupported until a bridge-backed restart; ordinary terminal rows remain unwrapped.
+unsupported until a bridge-backed restart; ordinary terminal rows remain unwrapped. The projection
+also gains the plural `controlPendingInteractions` list for multiplexed sub-agent
+pendings; the singular pending field keeps the parent-thread entry exactly as before.
 
 ## Update History
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `control_pending_interactions`
+  column (multiplexed sub-agent pendings, review R6) — `_optional_object_list` read (fail-closed:
+  any non-object entry degrades the whole field to `None`), `None`-filtered `to_json` emission,
+  singular parent slot unchanged — in a new Commentary subsection and Invariants. Verification
+  metadata stays pinned to the pre-commit source history until closeout (the L7 change is
+  uncommitted).
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the cross-process and
   same-instance batch fence used by live session open, including coherent last-committed reads from
   other instances and the correction to the earlier lock-free-reader overstatement.

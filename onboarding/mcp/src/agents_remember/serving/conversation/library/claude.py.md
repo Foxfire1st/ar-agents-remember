@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,10 +18,13 @@
 
 The dormant Claude library port: helper-backed list/read/resolve through the repository-owned
 locked helper (`@anthropic-ai/claude-agent-sdk` `listSessions` / `getSessionMessages` /
-`getSessionInfo`). Since 260718-CHATS-L5F R4 the helper handshake on every spawn reports the
+`getSessionInfo`). The helper handshake on every spawn reports the
 observed runtime/helper versions as informational evidence ONLY — the contract is the only gate:
 the native `list`/`read` operation succeeding is the proof, and a version drift never demotes the
-surface (the old locked-version re-prove is gone).
+surface (the old locked-version re-prove is gone). List rows also carry
+sub-agent children (`ConversationLibraryAgentRow`): the locked helper sweeps each session's
+on-disk `subagents/agent-<agentId>.jsonl` transcripts plus `.meta.json` identity, and agent
+conversations open through the library's own composite vendor id `<sessionId>/<agentId>`.
 
 ## Code Commentary
 
@@ -29,27 +32,52 @@ surface (the old locked-version re-prove is gone).
 
 `ClaudeConversationLibrary.list` verifies the signed list cursor, calls the helper's `list`,
 derives the catalog generation from the helper's store signature (resetting stale cursors as
-`CatalogGenerationError`), and mints rows keyed by session id with title preference
-`customTitle`/`summary`/`firstPrompt` and an optional millisecond-epoch `lastModified`.
-`read` verifies the read cursor, calls the helper's `read`, and maps records: user items
-(unknown-input lane; all-tool-result content becomes a correlated tool-result item), assistant
-items (text/thinking/tool_use/tool_result/image blocks), and anything else as system notices —
+`CatalogGenerationError` — the helper's signature sweep covers agents too), and mints rows
+keyed by session id with title preference `customTitle`/`summary`/`firstPrompt` and an optional
+millisecond-epoch `lastModified`. Each row's helper-supplied `agents` list becomes
+`ConversationLibraryAgentRow` children (`_agent_row`): identity comes only from the native
+`.meta.json` (`description`/`agentType`/`model`, `toolUseId` as `join_key` to the spawning tool
+call), with the honest `agent <short-id>` fallback when the meta carries no title evidence.
+`_rows` also computes the page-level `agents_note`: a helper that predates sub-agent
+enumeration (no response-level `agentsEnumerated: true` marker, or any row missing the
+`agents` key) degrades to the visible unavailability note, and nested agents with
+`spawnDepth > 1` are counted and named (they stay listed flat under the top-level session).
+`read` verifies the read cursor, splits the composite vendor id (`_split_agent_vendor_id`), and
+routes an `agentId` through the helper so the locked helper reads
+`subagents/agent-<agentId>.jsonl`; record mapping is unchanged: user items (unknown-input lane;
+all-tool-result content becomes a correlated tool-result item), assistant items
+(text/thinking/tool_use/tool_result/image blocks), and anything else as system notices —
 unknown content blocks become explicit `unknown-vendor` evidence. `resolve_resume_target`
-re-proves identity through the helper and mints the server-private argv target
-`--resume <sessionId>`.
+fails closed with an exact reason for agent conversations (sub-agent transcripts have no
+native resume target); for top-level sessions it re-proves identity through
+the helper and mints the server-private argv target `--resume <sessionId>`.
 
 ### Conventions
 
 Constructed per request with the caller's server-resolved authorization binding; the port never
 authorizes. Claude history is honestly `partial`: the SDK rebuilds chronological
 user/assistant chains, and thinking/tool/permission records appear only where the installed
-history persists them.
+history persists them. The composite agent vendor id grammar `<sessionId>/<agentId>`
+(`_AGENT_ID_SEPARATOR = "/"`) is minted ONLY by this port — session ids and agent ids never
+contain "/" — so the split in `read`/`resolve_resume_target` is unambiguous. Agent identity is meta-bound: `description` wins over `agentType` for the
+title, and a missing title is never fabricated.
 
 ### Invariants And Boundaries
 
 - Helper-reported invalid pages, missing fields, non-text cursors, and identity mismatches fail
   closed as `LibraryStoreError`/`InvalidLibraryCursorError`; helper `stale-identity` surfaces
   through the host as `StaleNativeIdentityError`.
+- Sub-agent capability honesty: a helper without sub-agent enumeration proof
+  is VISIBLY unavailable through `agents_note`, never silently absent. The response-level
+  `agentsEnumerated` marker covers the empty catalog too (fix-round review finding 11) — over
+  zero rows only the marker proves the helper enumerates agents. Nested `spawnDepth > 1` agents
+  are shown flat under the top-level session AND named in the note (fix-round review finding
+  7); the flat per-session grouping never pretends to model agent-of-agent parenting.
+- A row whose `agents` key is present but not a list, and an agent row without `agentId`,
+  fail closed as `LibraryStoreError`.
+- Claude sub-agent transcripts have no native resume target: `resolve_resume_target` on a
+  composite agent id fails closed with the exact reason instead of minting an argv that would
+  resume the parent session under a false identity.
 - Range-absurd but type-valid `lastModified` values fail as typed `LibraryStoreError` with an
   exact out-of-range reason (review F4), never raw 500s.
 - Unknown content blocks (including images) are explicit evidence with safe summaries, never
@@ -70,16 +98,19 @@ No Domain Documentation source is configured for this internal port.
 ## Repo-Internal References
 
 The ports suite proves rows/paging, block/role/provenance mapping, range-absurd timestamp
-failures, and exact argv resume targets on fake helpers; since 260718-CHATS-L5F R4 the installed
-suite proves the library gates on CONTRACT, not version — a runtime drift still enables the surface
-when the native operation probe passes; the locked helper implements the native seam.
+failures, and exact argv resume targets on fake helpers; the dedicated agents suite proves
+sub-agent grouping, capability-honesty notes, agent reads, and the resume fail-closed on fake
+helper boundaries; the installed suite proves the library gates on CONTRACT, not version; the
+locked helper implements the native seam, including the on-disk `subagents/` enumeration.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Claude list rows and paging, read block/role/provenance mapping, and argv resume minting on fake helper boundaries. | L472-L567 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| A range-absurd but type-valid `lastModified` fails as a typed store error. | L497-L511 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| The installed suite proves the claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes (L5F R4). | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| The locked helper's scope-exact listSessions/getSessionMessages/getSessionInfo implementations. | L65-L169 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
+| Claude list rows and paging, read block/role/provenance mapping, and argv resume minting on fake helper boundaries. | L479-L626 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
+| A range-absurd but type-valid `lastModified` fails as a typed store error. | L504-L518 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
+| Sub-agent grouping with meta identity, helper-without-evidence and empty-catalog unavailability notes, nested spawnDepth naming, agent read routing, agent resume fail-closed, and agent-row shape failures. | L475-L656 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
+| The installed suite proves the claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The locked helper's scope-exact listSessions (with per-row `agents` children and the `agentsEnumerated` marker), getSessionMessages read, and getSessionInfo resume resolution. | L80-L134; L372-L445 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
+| The locked helper's sub-agent on-disk authority: project-dir slug rule (sdk-verified, base36 Java-hash truncation), `subagents/` sweep, `.meta.json` identity parsing, and agent transcript reads. | L135-L370 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
 
 ## Cross-Repo References
 
@@ -91,6 +122,18 @@ No meaningful cross-repo boundary exists for this local port.
 
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7: sub-agent grouping — list rows now carry
+  `ConversationLibraryAgentRow` children from the locked helper's `subagents/*.jsonl` +
+  `.meta.json` evidence; agent conversations open through the port's composite
+  `<sessionId>/<agentId>` vendor id (read routes `agentId` to the helper;
+  `resolve_resume_target` fails closed with an exact reason); a helper without enumeration
+  proof degrades to a visible `agents_note` (`agentsEnumerated` marker covers the empty
+  catalog), and nested `spawnDepth > 1` agents are named, never silently absent. Sidecar:
+  rewrote Purpose/Logic/Conventions/Invariants, refreshed ports-suite citation ranges (+7 shift
+  from the L7 fake-transport addition), re-anchored the claude.ts citations to the post-L7
+  helper layout (listSessions moved to L80; new sub-agent section L135-L370), and added the new
+  test_conversation_library_agents.py suite. Change uncommitted; verification hash/date
+  intentionally unchanged.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — corrected the now-false
   "version handshake re-proving locked runtime/helper versions on every spawn" claim. The helper
   handshake reports observed versions as informational evidence only; the contract (the succeeding

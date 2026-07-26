@@ -7,17 +7,17 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:52 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 
 ## What This Area Is
 
-This route is the implemented active conversation serving slice landed by 260718-CHATS-L1. It
+This route is the implemented active conversation serving slice. It
 projects the exact running Codex, Claude, and Pi conversations into the normalized active
 conversation/status authority and exposes the two registered production wires — the authorized
 native-hydrated page and the resumable SSE event stream — consumed identically by Chats and
-orchestration. Every wire re-authorizes: the L0 request dependencies resolve the caller and the
+orchestration. Every wire re-authorizes: the request dependencies resolve the caller and the
 runtime, `expectedBridgeEpoch` is verified against the live submission authority per request,
 and every cursor is signature-checked and re-bound against the authorized identity before any
 lookup or header.
@@ -34,8 +34,10 @@ stale event cursors reset loudly instead of mixing sequences.
 Start with `api.py` for the two routes and the typed pre-stream error ladder. `service.py` is
 the per-app authority (cursor secret, epoch verification per wire, atomic page+eventCursor,
 bounded projector LRU), `projector.py` the per-session engine (native hydration, bounded polls,
-echo zipper, total-order envelopes, gap mechanics), `store.py` the idempotence authority
-(native-id dedupe, tool block union, delta buffering, provenance application), `cursor.py` the
+echo zipper, total-order envelopes, gap mechanics, and per-thread
+sub-agent demux with per-thread twin suppression), `store.py` the idempotence authority
+(native-id dedupe, tool block union, delta buffering, provenance application, roster-aware
+upsert guards), `cursor.py` the
 signed cursor mint/verify boundary, `status.py` the canonical status classification both Chats
 and orchestration consume, `capabilities.py` the fixture-gated per-session evidence, and
 `factories.py` running-session resolution plus identity proof. Per-harness frame grammars live
@@ -51,7 +53,7 @@ in the sibling `projectors/` route.
 | `store.py` | Idempotent projection store: append/upsert/delta application, tool block union, provenance resolution, page slicing. |
 | `cursor.py` | HMAC-signed purpose-branded page/event cursors and the typed cursor error family. |
 | `status.py` | Canonical `ConversationStatusService`: the one evidence classification, revisioned envelope, single seat projection. |
-| `capabilities.py` | Exact-session capability evidence per harness; contract-only honesty (no version demotion since L5F R4). |
+| `capabilities.py` | Exact-session capability evidence per harness; contract-only honesty (no version demotion). |
 | `factories.py` | Running-session resolution, live identity proof, server-issued identity digest, typed session errors. |
 | `__init__.py` | Package marker. |
 
@@ -60,15 +62,15 @@ in the sibling `projectors/` route.
 | Nearby Thing | Belongs Instead In |
 | --- | --- |
 | Strict wire grammar, cursor brands, canonical vocabulary | `mcp/src/agents_remember/serving/conversation/models.py` (the parent contract route). |
-| Runtime composition, authorization ruling, request dependencies, child-router mounting | `mcp/src/agents_remember/serving/conversation/` (L0; consumed, never edited). |
+| Runtime composition, authorization ruling, request dependencies, child-router mounting | `mcp/src/agents_remember/serving/conversation/` (consumed, never edited). |
 | Per-harness native frame mapping grammars | `mcp/src/agents_remember/serving/conversation/projectors/` (the sibling mapper route). |
-| Dormant native list/read/exact open | `mcp/src/agents_remember/serving/conversation/library/` (the L2 leaf). |
-| Control operations, attachments, telemetry projections | The L3 control leaf. |
-| The IPC evidence/native-page/provenance substrate | `serving/harness_control_*.py` (L0E; consumed read-only). |
+| Dormant native list/read/exact open | `mcp/src/agents_remember/serving/conversation/library/`. |
+| Control operations, attachments, telemetry projections | The control route. |
+| The IPC evidence/native-page/provenance substrate | `serving/harness_control_*.py` (consumed read-only). |
 
 ## Structures Found Here
 
-- Two FastAPI routes on the L9 prefix `/api/terminal/{ar_session_id}/conversation` with every
+- Two FastAPI routes on the prefix `/api/terminal/{ar_session_id}/conversation` with every
   typed refusal mapped subclass-before-base to one precise HTTP status (no raw 500 for routine
   refusals — the O4 idiom), and explicit SSE wire frames over `StreamingResponse` so all
   validation precedes headers.
@@ -82,8 +84,8 @@ in the sibling `projectors/` route.
   64-record provenance batches, 30 s consumer TTL, 5-failure authority-loss ladder).
 - One canonical status classification with a revision that advances only on semantic change,
   consumed identically by the Chats page/SSE and by orchestration's seat projection.
-- Per-session capability evidence enabled only from landed installed-runtime fixture rows. Since
-  260718-CHATS-L5F R4 (developer ruling 2026-07-21) THE CONTRACT IS THE ONLY GATE: `capabilities_for`
+- Per-session capability evidence enabled only from landed installed-runtime fixture rows.
+  THE CONTRACT IS THE ONLY GATE: `capabilities_for`
   discards the snapshot, no version-string comparison demotes any feature, and an un-probed native
   shape stays `unverified` with a never-probed contract reason (the observed version is informational
   evidence only). The prior read-time observed-version demotion is removed.
@@ -139,7 +141,7 @@ in the sibling `projectors/` route.
 | `store.py` | idempotence authority | Rehydration/replay reproduce the identical projection; tool blocks converge, never drop. | covered |
 | `cursor.py` | cursor authority | Every active token's mint/verify boundary; tampering or cross-purpose use fails closed. | covered |
 | `status.py` | status authority | The only evidence classification; both Chats and orchestration consume it. | covered |
-| `capabilities.py` | capability evidence | Capability honesty: supported only with fixture evidence; an un-probed contract stays `unverified` (contract-only gate, no version demotion since L5F R4). | covered |
+| `capabilities.py` | capability evidence | Capability honesty: supported only with fixture evidence; an un-probed contract stays `unverified` (contract-only gate, no version demotion). | covered |
 | `factories.py` | session resolution | Exact running-session and native-identity proof; no state is ever manufactured. | covered |
 
 ## Local Invariants And Traps
@@ -150,13 +152,13 @@ in the sibling `projectors/` route.
   before headers.
 - The transcript deque is never history authority; Claude user items come only from the exact
   submission echo, zipped by turn order without timestamps (an advancing evidence-eviction floor
-  voids the zipper and gaps `ordering-fault` — review F3). Since 260718-CHATS-L5F R3 the echo poller
+  voids the zipper and gaps `ordering-fault` — review F3). The echo poller
   consumes ONLY `role=="user"` transcript entries; assistant/result entries are advanced past (the
   evidence/terminal path owns them), so a mixed-role 2.1.216 transcript no longer mints spurious
   `claude:echo: unrecognized submission echo shape` unknown-vendor rows.
-- 260718-CHATS-L5F R5 releases dormant per-session state: `projector._release_dormant_state` frees
-  the FULL heavy projection on the idle-break (ProjectionStore items/order, the L5
-  `_live_turn_ids`/`_live_request_ids`, retention and pending frames) and retires the shell, so a
+- Dormant per-session state is released on the idle-break: `projector._release_dormant_state` frees
+  the FULL heavy projection (ProjectionStore items/order, the
+  `_live_turn_ids`/`_live_request_ids` live-turn sets, retention and pending frames) and retires the shell, so a
   dead session's heavy state frees within ~30-60s of the last subscriber leaving instead of at
   32-LRU eviction; `matches()` then returns False so the next access re-creates a fresh projector.
   `service.release_session` can de-register + close a projector explicitly, but is NOT wired into
@@ -168,17 +170,25 @@ in the sibling `projectors/` route.
   UUID/`msg_*` vs positional `item-N`) for the same settled turn, so id-keyed dedupe can never
   converge them; the projector's native-tip re-walk drops any native output whose turn was already
   settled live — matched by turn id, submitted `clientId` (renumber-robust), or an already-anchored
-  sibling — so a live turn is never re-projected as an `unknown-input`/`native-history` twin (L5 F1,
-  proven before/after on the real codex wire). Suppression only; nothing merged across ids or
+  sibling — so a live turn is never re-projected as an `unknown-input`/`native-history` twin
+  (proven before/after on the real codex wire). Suppression only; nothing merged across ids or
   fabricated. At hydration both live sets are empty (native walk precedes the first poll), so
   prior-session native history hydrates in full; mid-session hydration-overlap is a recorded,
-  un-hardened boundary (L5.R6).
+  un-hardened boundary.
+- Multiplexing: the engine demuxes every evidence/native-page frame by its verbatim
+  `thread_id` into parent vs sub-agent buckets (`None`/parent id = parent, byte-identical to
+  the pre-multiplexing behavior); twin suppression (F1) and pending-interaction projection run PER THREAD, and only the
+  parent's pendings fill the singular slot. Malformed agent-thread frames degrade to agent-tagged
+  unknown-vendor evidence — never stream-fatal, never leaked into the parent's view. Agent identity
+  is fill-only from registry evidence, never fabricated; unmapped statuses stay `unknown`. The
+  thread-scoped `refresh_agent_native` walk is a latent seam with no production caller yet, bounded
+  and fail-closed like the parent walk.
 - A `role=="user"` item's input-authority triple (`lane` + `source` + `provenance`) is ONE resolved
   unit: the store preserves it intact across a native re-map (`_preserved_input_authority`), and only
   `apply_provenance` resolves it. Splitting it (a re-map adopting the candidate `unknown-input` lane
   while keeping the resolved `exact` provenance) violates `preserve_input_authority` but is stored
   SILENTLY because `model_copy(update=…)` skips validation, 500-ing only at route/SSE re-validation —
-  which is exactly why the triple stays coupled (L5 H2/F4).
+  which is exactly why the triple stays coupled (H2/F4).
 - A full subscriber queue still receives exactly one retained overflow gap + close; the gap
   consumes a sequence so the chain stays hole-free for all consumers (review F2).
 - `totalItems` is emitted only when the native walk completed and the evidence window never
@@ -190,7 +200,7 @@ in the sibling `projectors/` route.
 
 ## Repo-Internal References
 
-The parent contract route supplies the wire grammar and composition seams; the L0E substrate
+The parent contract route supplies the wire grammar and composition seams; the IPC substrate
 supplies the validated evidence/native-page/provenance reads; the sibling `projectors/` route
 owns the per-harness frame grammars; orchestration consumes the canonical status through the
 delegated seat projection. Four new test suites prove the contract, three of them through the
@@ -198,8 +208,8 @@ engine/store and one over a real socket.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The L0 request dependencies are the only consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The L0E validated IPC reads are the only substrate channels polled. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The request dependencies are the only consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
+| The validated IPC reads are the only substrate channels polled. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The evidence/native-page/provenance products define the polled shapes. | L310-L380 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | Orchestration's delegated seat projection consumes the canonical classification. | L70-L90 | [hosted_control_projection.py](agents-remember/mcp/src/agents_remember/serving/hosted_control_projection.py) |
 | The foundation pin asserts exactly the two owned active routes while library/control stay empty. | L32-L56 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
@@ -218,7 +228,7 @@ allows no neighboring repository.
 ## Docs References
 
 The resolved `Domain Documentation` registry has no entries. This route therefore uses the
-repository-owned contract, L0E substrate, fixtures, and tests as its direct evidence and does
+repository-owned contract, IPC substrate, fixtures, and tests as its direct evidence and does
 not fabricate an external citation.
 
 | Finding | Citations | Source Path |
@@ -256,20 +266,40 @@ capability from fixture existence.
 
 - Claude's active surface stays `unverified` with a NEVER-PROBED contract reason ("frame contract
   not yet probed through a captured production fixture … never a version gate"), no longer a
-  version-mismatch reason (L5F R4 removed the version gate). Promoting claude to `supported` needs
+  version-mismatch reason (the version gate was removed). Promoting claude to `supported` needs
   a captured 2.1.216 runtime fixture through the production evidence seam — recorded follow-on
-  (worker H3); the R7 E2E now proves the contract live.
+  (worker H3); the end-to-end run now proves the contract live.
 - Codex live reasoning/tools/diffs and pi live thinking/tools stay `unverified` until
   installed-runtime fixtures observe those shapes through the production seam.
 
-## 260718-CHATS-L5I Current Route Impact
+## Status Semantics And Stream Continuity Route Impact
 
 Active conversations now distinguish a quiet healthy ready state from stale evidence-expected work, bootstrap an event subscription without invalidating a fresh page, and re-page from a new server cursor when a stream cannot prove continuity. The active capability view delegates interrupt evidence to the control gate, eliminating a second local verdict.
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
+## Sub-Agent Multiplexing Route Impact
+
+The projection engine is now multiplexed: every evidence/native-page frame is demuxed by its
+verbatim `thread_id` into parent vs sub-agent buckets, twin suppression (F1) and
+pending-interaction projection run PER THREAD, malformed agent-thread frames degrade to
+agent-tagged unknown-vendor evidence (never stream-fatal, never leaked into the parent's view),
+and only the parent's pendings fill the singular slot. The store gained roster-aware upsert
+guards (terminal-phase no-regression on block-less lifecycle tagging upserts; roster-notice
+final-message first-wins retention). The thread-scoped `refresh_agent_native` walk is a latent
+seam with no production caller yet. The two routes, cursor authority, per-app service, and
+status contract are unchanged.
+
+Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+
 ## Update History
 
+- 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the multiplexed engine (per-thread
+  demux/F1/pendings, degrade-not-fatal agent frames, fill-only agent identity, latent
+  `refresh_agent_native`) and the store's roster-aware upsert guards; refreshed the Hot Path
+  Summary and added the multiplexing invariant. The two routes, cursor authority, service, and
+  status contract are unchanged. Aggregate route-index generation remains manager-owned;
+  verification metadata stays pinned (L7 uncommitted).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths landed

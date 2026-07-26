@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -117,6 +117,17 @@ attempt-and-reflect on the L3 evidence until a control-capabilities GET or L1-vi
 the measured virtualization/scale baseline plus the E1/E2 environmental faults are enumerated in the
 `conversation/` L5-Facing Register.
 
+Harness sub-agents are now a first-class additive layer on both capabilities. The active-transcript
+data plane carries per-item agent refs (evidence-bound identity, absent on parent items) and keeps
+the operator's agent-lane focus outside the projection so it survives LRU eviction and is
+re-validated against the live roster. The library groups sub-agent conversations as child rows
+under their parent and renders the server's verbatim `agentsNote` when agent history is (partially)
+unavailable. Pending interactions are multiplexed: an additive plural wire slot carries sub-agent
+approvals alongside the parent's singular slot, and every attention surface — rail badge,
+announcer, seat visual grammar, and the palette's question triage — derives from the combined set
+via one shared predicate, so a seat blocked solely on a sub-agent approval never goes dark; the
+adapter-bound agent label names who is asking, never a fabricated name.
+
 User submissions, agent-to-agent bus messages, lifecycle/control commands, and adapter-interaction
 answers remain distinct paths. The original orchestration failure mode was collisions caused by
 routing agent communication through the same paste/input channel as operator typing; the dashboard
@@ -183,6 +194,14 @@ references informed product framing only; current code truth stays in agents-rem
 The cockpit now treats a focused chat or terminal as a persistent operator surface rather than disposable tab content: switch and hidden-view transitions preserve mounted identity, scroll/selection/geometry state, and only resume visible-only work when appropriate. Its global data consumers also adopt bounded stream/watchdog, single-flight, timeout, build-identity, and wake-lock behavior. Detailed mechanics remain owned by the existing `data/`, `panels/`, and nested session-cockpit overviews; this route records only the shared frontend consequence.
 
 ## Update History
+
+- 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: added one paragraph to the Product Truth And
+  Conversation Boundary section covering the sub-agent surface — additive per-item agent refs and
+  the LRU-surviving agent-lane focus in the conversation data plane, library child rows plus the
+  verbatim `agentsNote`, and multiplexed pending interactions feeding all attention chrome through
+  one shared predicate with the adapter-bound agent label. No route composition or authority model
+  changed; detail lives in the `data/` and `panels/session-cockpit/` child overviews. Verification
+  metadata remains pre-commit; closeout re-stamps.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the shared dashboard/src route for the whole frontend change without modifying nested overview ownership. Verification metadata remains pre-commit.
 

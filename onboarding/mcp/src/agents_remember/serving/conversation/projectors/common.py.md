@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/common.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,15 +24,18 @@ builders that keep producer claims honest (never guessed, never defaulted).
 
 ### Logic
 
-`required_object`/`required_list`/`required_text` (L33-L48) are the parse-by-schema gate: any
-shape that misses an exact required key or type raises `UnmappableShape` (L23-L24), which the
+`required_object`/`required_list`/`required_text` (L34-L49) are the parse-by-schema gate: any
+shape that misses an exact required key or type raises `UnmappableShape` (L24-L25), which the
 engine converts into preserved `unknown-vendor` evidence — malformed known shapes never kill
-the stream and never acquire guessed semantics. The frozen output dataclasses (L55-L94) are the
+the stream and never acquire guessed semantics. The frozen output dataclasses (L56-L99) are the
 only things a mapper may emit: `MappedItem` (a fully built item; the engine assigns the real
 ordinal/revision), `MappedBlockDelta` (streaming text into one existing item block),
 `MappedTurnOutcome` (a native turn settlement feeding canonical status), and
 `MappedUnknownVendor` (an unrecognized-but-preserved shape whose raw payload stays server-side).
-`provenance`/`harness_provenance`/`unknown_input_provenance` (L97-L140) build the
+`MappedUnknownVendor` also carries an
+optional `agent: ConversationAgentRef` (L92-L96; fix-round review finding 4): a malformed AGENT-thread frame's preserved
+evidence belongs to that agent's view, never the parent's; `None` means the parent conversation.
+`provenance`/`harness_provenance`/`unknown_input_provenance` (L102-L145) build the
 `ProvenanceEvidence` values; `unknown_input_provenance` is the honest user-input product when no
 producer can be proven — it never defaults to operator or the bus.
 
@@ -48,6 +51,9 @@ they fail or how they attribute evidence.
   engine/store boundary.
 - `UnmappableShape` is the only failure channel for shape mismatches; mappers never fabricate a
   message, tool, or control meaning for an unrecognized frame.
+- Degrade-not-fatal stays agent-honest: unknown-vendor evidence minted for a
+  malformed sub-agent-thread frame must stay bound to that agent via the `agent` field — it
+  never leaks into the parent conversation's view.
 - User-role items without a proven producer keep `unknown-input` lane semantics through
   `unknown_input_provenance`; the provenance batch later resolves exact sources exactly once.
 
@@ -72,9 +78,9 @@ validate every emitted product.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The engine maps `UnmappableShape` to preserved unknown-vendor evidence, never a stream failure. | L453-L472 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
-| The store applies `MappedItem`/`MappedBlockDelta` and rebuilds user items through provenance resolution. | L515-L533 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
-| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | L315-L403 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The engine maps `UnmappableShape` to preserved unknown-vendor evidence, never a stream failure; the agent binding still applies to malformed agent-thread frames. | L856-L879 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
+| The engine routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and rebuilds user items through provenance resolution. | L969; L986-L1004 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
+| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | L197-L204; L341-L431 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
 ## Cross-Repo References
 
@@ -86,6 +92,14 @@ No cross-repository implementation participates in this shared module.
 
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7: `MappedUnknownVendor` gained the optional
+  `agent: ConversationAgentRef` field (L92-L96, fix-round review finding 4) so a malformed
+  AGENT-thread frame's preserved evidence stays in that agent's view, never the parent's.
+  Sidecar: documented the field and its degrade-not-fatal-but-agent-honest invariant; refreshed
+  citations (parse gate L34-L49, outputs L56-L99, builders L102-L145) and re-pointed the
+  projector.py citations displaced by the L7 multiplexed-projection rewrite (L453-L472 →
+  L856-L879; L515-L533 → L969/L986-L1004) plus the models.py product lines (L315-L403 →
+  L197-L204/L341-L431). Uncommitted; closeout re-stamps verification.
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the shared
   mapper infrastructure — strict parsing, the four mapper output types, honest provenance
   builders. Verification is blank because the new source file is uncommitted; closeout owns its

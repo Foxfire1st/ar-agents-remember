@@ -11,13 +11,14 @@
   "childRoutes": [],
   "coveredFiles": [
     "dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx",
+    "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx",
     "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx",
     "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 4,
-    "fileSidecars": 4,
+    "sourceFilesInScope": 5,
+    "fileSidecars": 5,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -32,6 +33,7 @@
     "panels",
     "session",
     "src",
+    "test",
     "tsx"
   ],
   "hotPath": {
@@ -39,6 +41,7 @@
     "candidateHints": [
       "dashboard/src/panels/session-cockpit/conversation-library",
       "dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx",
+      "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx",
       "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx",
       "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx"
@@ -46,6 +49,8 @@
     "anchorHints": [
       "ConversationHistoryPreview.tsx",
       "ConversationHistoryPreview",
+      "ConversationLibraryList.test.tsx",
+      "ConversationLibraryList.test",
       "ConversationLibraryList.tsx",
       "ConversationLibraryList",
       "ConversationLibrarySurface.tsx",
@@ -59,7 +64,7 @@
       "arSessionId",
       "dashboard/src/panels/session-cockpit/conversation-library/",
       "route-local-overview",
-      "1119b64ff1564c5fc76fd518f88e529535c04b34",
+      "4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f",
       "/overview.md",
       "session-cockpit/conversation-library/",
       "onBack",
@@ -73,25 +78,23 @@
       "MarkdownBlock",
       "break-word",
       "word-break: normal",
+      "agentsNote",
+      "agentsNote={list?.agentsNote",
       "title",
       "humanizeAge",
       "Load more",
+      "agents",
+      "library-agent-row",
+      "agent",
+      "role",
+      "agentChildRow",
+      "library-agents-note",
       "history preview \u00b7 not active",
       "phase=\"opened\" && outcome=\"opened",
       "unsupported",
       "stale-identity",
       "timeout-unknown",
-      "launch-failed",
-      "identity-mismatch",
-      "request-conflict",
-      "dispatching",
-      "conversation-library/",
-      "system/sources.md",
-      "@container (max-width:640px",
-      "56rem",
-      "352d5cd",
-      "0be0099",
-      "/../../data/conversation-library/overview.md"
+      "launch-failed"
     ]
   },
   "fallback": {

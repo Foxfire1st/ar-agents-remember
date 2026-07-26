@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,6 +92,13 @@ while the reserved key is stripped from the republished event so `snapshot.raw` 
 so the codex projector can classify by method instead of shape-guessing, and no method name leaks
 into a public snapshot.
 
+`test_native_page_thread_id_is_additive_over_ipc` pins the multiplexed per-thread selector on the
+`evidence-native-page` action end-to-end over a real socket: a set `threadId` reaches the
+thread-aware adapter as the trailing `thread_id` argument, an unset selector keeps the exact
+single-thread adapter call (the bridge passes `None`), and an empty-string selector fails typed
+before any adapter call. The `_ThreadAwareNativePageAdapter` fake records the exact call shape so
+the test proves forwarding only happens when the wire carries the field.
+
 ### Conventions
 
 Tests are `unittest.IsolatedAsyncioTestCase` classes over in-process fakes and real Unix-socket
@@ -163,6 +170,13 @@ Evidence tests now cover the extended normalized control evidence used for struc
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: recorded the multiplexed native-page selector
+  coverage — `test_native_page_thread_id_is_additive_over_ipc` plus the `_ThreadAwareNativePageAdapter`
+  fake: an optional `threadId` crosses the real IPC socket end-to-end to the adapter, an unset
+  selector keeps the exact single-thread call shape, and an empty selector fails typed before any
+  adapter call. One Logic paragraph added; verification metadata stays pinned (uncommitted);
+  closeout re-stamps the candidate commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

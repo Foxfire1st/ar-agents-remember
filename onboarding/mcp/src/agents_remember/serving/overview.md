@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-26T15:52 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-### Current FEUI-L9R runtime-truth repair
+### Current Runtime-Truth Repair
 
 The serving boundary exposes a packaged dashboard fingerprint without fabricating one when the
 artifact is absent, sends revalidation policy only on successful HTML, and keeps pre-session harness
@@ -25,7 +25,7 @@ advance past malformed, undecodable, blank, heartbeat, and non-object records; a
 objects are parsed once and reused by SSE. Dashboard-owned tmux clients strip inherited tmux
 identity and force the browser PTY grammar while preserving unrelated environment settings.
 
-### Current MX-FIX-1 folded-state stream repair
+### Current Folded-State Stream Repair
 
 The state SSE channel now has one projector-owned activation and publication contract.
 `Projector.subscribe()` registers a queue before capturing current authority, so a concurrent
@@ -35,9 +35,9 @@ after failed `prime()` emits one full snapshot, an identical recovered state emi
 later changes use ordinary named deltas. `app.stream_events()` only decorates/serializes that stream
 and explicitly closes the subscription on disconnect or cancellation.
 
-### Current L9 structured-conversation contract
+### Current Structured-Conversation Contract
 
-260715-FEUI-L9 adds `serving/conversation/` as the protocol-neutral contract roof for the future
+`serving/conversation/` is the protocol-neutral contract roof for the future
 Chats interface. Strict Pydantic wire models normalize harness identity, active transcript/event
 pages, independent active/library cursor scopes, evidence-backed status and capabilities,
 operation queue/withdrawal recovery, attachments, and telemetry without claiming that native
@@ -46,7 +46,7 @@ active and library seams. Three behavior-empty owned child routers (`active`, `l
 compose under one root router, registered exactly once by `harness_control_api.py`, so later leaves
 can add behavior without restructuring the serving route.
 
-260718-CHATS-L0 repairs the missing production composition boundary under that roof: the same
+The missing production composition boundary under that roof is repaired: the same
 single registration now constructs and installs one immutable app-scoped `ConversationRuntime`
 (scope, terminal catalog/host, effective harness registry, liveness clock/config, capability
 evidence, and a server-resolved local-operator authorization resolver) on `app.state` exactly
@@ -55,10 +55,10 @@ once. Child leaves consume it through two narrow request dependencies and never 
 server-resolved local single-user ruling: loopback-only at request time, no browser-supplied
 principal/tenant channel, fail closed otherwise.
 
-260718-CHATS-L1 implements the active child inside its owned seam as
+The active child is implemented inside its owned seam as
 `serving/conversation/active/` plus the per-harness mapper grammars in
 `serving/conversation/projectors/`: the two registered production wires (authorized native-
-hydrated page and resumable SSE events) behind the L0 composition, HMAC-signed purpose-branded
+hydrated page and resumable SSE events) behind the shared composition, HMAC-signed purpose-branded
 page/event cursors re-bound against the authorized identity on every wire, a per-app service
 holding a bounded reconstructable-projector LRU, per-session engines that hydrate from native
 authority (codex persisted-thread pages, pi durable entries, the bounded live evidence window —
@@ -67,38 +67,38 @@ established-stream failure class, an idempotent projection store whose tool-call
 blocks by `block_id`, the canonical `ConversationStatusService` whose one evidence
 classification both Chats and orchestration consume (`hosted_control_projection.snapshot_turn_state`
 now delegates to it), and fixture-gated per-session capabilities (claude honestly `unverified`
-for a never-probed contract reason — since 260718-CHATS-L5F R4 THE CONTRACT IS THE ONLY GATE and
+for a never-probed contract reason — THE CONTRACT IS THE ONLY GATE and
 no version-string comparison demotes any capability, so the prior "installed 2.1.214 vs locked
 2.1.211" version demotion is removed; codex historical tool loss visible). The shared
 composition, router, wire grammar, and library/control shells are untouched; the slices are
 governed by `conversation/active/overview.md` and `conversation/projectors/overview.md`.
 
-260718-CHATS-L2 implements the library child inside its owned seam as
+The library child is implemented inside its owned seam as
 `serving/conversation/library/`: authorized dormant native list/read routes over each normalized
 harness's catalog/history (Codex direct app-server, Claude/Pi through the repository-locked Node
 helpers), live production-path capability gates cached per installed-executable fingerprint, a
 per-app HMAC-signed cursor/key authority with content-derived catalog generations, narrow-only
 canonical project scope, and an idempotent exact open/status/reconcile service that launches a
-NEW tracked session through the existing opener (codex through the landed L0E
+NEW tracked session through the existing opener (codex through the additive
 `resume_thread_id` channel), proves exact catalog identity, and retires record-spawned failures
 honestly. The shared composition, router, and wire grammar are untouched; the slice is governed
 by `conversation/library/overview.md`.
 
-260718-CHATS-L3 implements the control child inside its owned seam as
+The control child is implemented inside its owned seam as
 `serving/conversation/control/`, filling the last behavior-empty conversation router: seventeen
 registered routes for exact-turn interrupt (idempotent request/status/reconcile, acknowledgement
 never equal to settlement), the complete source-aware never-bodies operation queue with cockpit-only
 withdrawal and a bounded authorization-bound 900 s recovery lease, typed attachment stage/rebind/
-submit through the L2E asset channel into a confined 0700/0600 spool, read-only effective policy with
+submit through the control-plane asset channel into a confined 0700/0600 spool, read-only effective policy with
 no mutation surface, and evidence-bound telemetry (codex cumulative token usage). Opaque control
 references are HMAC-signed, purpose-branded, and re-bound per wire; a per-app control service holds
-bounded per-(session, epoch) ledgers with per-session serialization above the L2E replay cache; the
-pi settlement reads the L3E-preserved evidence terminal identity. It consumes the closed L2E
+bounded per-(session, epoch) ledgers with per-session serialization above the control-plane replay cache; the
+pi settlement reads the clip-preserved evidence terminal identity. It consumes the closed
 control-plane substrate (native interrupt write, paged never-bodies operation timeline, asset
 channel, pre-tombstone recovery payload) read-only and touches neither the shared composition, the
 router, nor the wire grammar; the slice is governed by `conversation/control/overview.md`.
 
-### Current L5 hosted-session contract
+### Current Hosted-Session Contract
 
 The current hosted-session serving contract is protocol-backed: exact adapter snapshots govern
 readiness, liveness/activity, delivery evidence, interactions, and terminal projection. Durable
@@ -108,14 +108,14 @@ paste echoes, and timing windows are diagnostic-only and cannot authorize readin
 completion, or supervisor action. The older pane/log/paste descriptions retained below are historical
 route history, not current authority.
 
-**260715-FEUI-L5 adds `HarnessSubmissionAuthority` as the sole epoch-bound prompt/setter
+**`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
 dispatch claim, exact full-operation-ref completion, early-terminal dominance, response bypass,
 raw-free cockpit status, and bounded privacy-aware retention. `HarnessControlQueue` is now only a
 compatibility facade. Codex, Claude, and Pi are dispatch-now adapters with guarded first-byte seams;
 none may create a native/adapter queue or release work by FIFO/id alone.
 
-**260718-CHATS-L0E adds the additive, read-only native evidence and resume substrate.** Mappers
+**The additive, read-only native evidence and resume substrate.** Mappers
 place full native frames under the single reserved `arEvidence` raw key on events they already emit;
 the bridge diverts each payload at its one `_run_events` consumption point into a bounded
 per-session evidence deque (2,000 frames, 32 KiB clip with a visible marker, monotonic adapter-event
@@ -132,7 +132,7 @@ kwarg → the sole `CodexAppServerSettings` site, refusing non-codex or malforme
 spawn. No existing action, DTO, consumer, deque, or snapshot reduction changed shape; unknown
 native shapes cross as unknown-vendor evidence with raw preserved and semantics never guessed.
 
-**260718-CHATS-L2E lands the additive native control-plane substrate inside the same family.** A
+**The additive native control-plane substrate lands inside the same family.** A
 native interrupt write rides a runtime-checkable structural `InterruptCapableAdapter` sub-protocol
 (base protocol byte-compatible): the bridge dispatch is epoch-guarded and bridge-stamped
 (adapter-mint epochs refused), codex writes `turn/interrupt` against the exact active turn with
@@ -145,7 +145,7 @@ authority's retained ledger — all three prompt sources plus set-model/set-effo
 page count cap and the shared 48 KiB-class budget, every page carrying `latestSequence`,
 `evictedBeforeSequence` (tracked at the sole pop site), `truncated`, and `bridgeEpoch`, with
 completeness as the union of pages and an epoch flip failing typed at the validated client; the
-delegation runs authority → queue → bridge → IPC → validated client exactly like L0E provenance.
+delegation runs authority → queue → bridge → IPC → validated client exactly like the evidence provenance reads.
 The asset channel rides submit with references only: schema validation, resolve-and-verify
 confinement under the request-independent `<endpoint-root>/assets` anchor (lexical
 separator/dot-segment ban, ≤255-byte components, NUL translated to a typed refusal), size/sha256
@@ -155,8 +155,8 @@ byte-identical), an `unsupported` terminal receipt on non-capable adapters, and 
 `assetIds`. Withdrawal recovery captures the exact pre-tombstone body once inside the already
 `cockpit_only` response at the true transition; replays carry none and the tombstone timing/class
 is byte-preserved. Two additive IPC actions (`interrupt`, `operation-timeline`) keep the protocol
-at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays L3's
-obligation.
+at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays the control
+child's obligation.
 
 `serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
 browser-dashboard series): a FastAPI app over the observer projection read side. It
@@ -169,30 +169,30 @@ developer-attributed and binding), and hosts the Mode B2 terminal backend
 (`terminal.py` — tmux-wrapped PTY sessions, slice 6d-1) bridged to the browser over the
 `@app.websocket("/api/terminal/{session}")` WebSocket (slice 6d-2); a `POST /api/terminal/{session}`
 opener + `GET /api/harnesses` let the dashboard spawn + own a shell or a detected harness (slices
-6e-2a/6e-2b, the `harnesses.py` registry). Task 10/L3 adds `POST /api/operator-inbox`, the trusted
-developer/dashboard write side for durable inbox messages; L3 can immediately push a queued row into a
+6e-2a/6e-2b, the `harnesses.py` registry). `POST /api/operator-inbox` is the trusted
+developer/dashboard write side for durable inbox messages; a queued row can be pushed immediately into a
 matching hosted session through the shared terminal paster while keeping the row pollable.
-Task 23/24 adds `POST /api/operator-inbox/{entry_id}/dismiss`, the delete path
-for stale task-row pickup warnings. Task 22 adds `terminal_catalog.py` and the durable terminal-session
+`POST /api/operator-inbox/{entry_id}/dismiss` is the delete path
+for stale task-row pickup warnings. `terminal_catalog.py` provides the durable terminal-session
 surface: opener rows persist under `logs/dashboard/terminal-sessions.json`, `/api/terminal/sessions`
 hydrates the UI after refresh, the opener creates detached tmux sessions, each WebSocket gets its own
 tmux client only after a tmux probe, and explicit terminate kills tmux and hides the row from normal
-lists. L9 adds `terminal_leaf_assignment.py`, the shared catalog move policy used by both
+lists. `terminal_leaf_assignment.py` is the shared catalog move policy used by both
 `POST /api/terminal/{session}/attach-leaf` and the agent-facing MCP tool so hosted chats can move between
-durable leaves without respawn. HFX-L4 adds `leaf_ref_validation.py`, the serving adapter that normalizes
-terminal opener/attach leaf keys to canonical qualified task-doc ids before catalog mutation. L2 (agent-facing dispatch) adds `terminal_opener.py` — the shared
+durable leaves without respawn. `leaf_ref_validation.py` is the serving adapter that normalizes
+terminal opener/attach leaf keys to canonical qualified task-doc ids before catalog mutation. `terminal_opener.py` is the shared
 hosted-session **opener** (leaf claim + env-seeded tmux ensure + catalog upsert) that both the
 `POST /api/terminal/{session}` route and the agent-facing `spawn_agent_session` MCP tool compose over so
 there is **no parallel spawn path** — and `terminal_paste.py`, the server-side capture-verified stdin
-paste (260707-HFX-L3: success only after the pane provably shows the paste; one origin baseline per
+paste (success only after the pane provably shows the paste; one origin baseline per
 delivery makes duplicate stacking impossible; failures ship the pane capture) that backs the
 `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery. `terminal.py`
 gains an `env` knob-injection seam (`tmux new-session -e KEY=VALUE`) and `terminal_catalog.py` gains
-spawned-by provenance columns for the orchestration tree (L14 adds `spawn_role` beside them —
+spawned-by provenance columns for the orchestration tree (`spawn_role` beside them —
 written only when AR_SPAWN_ROLE is set, preserved on re-open, riding the sessions wire for the
 chats command tree). Run via
 `agents-remember dashboard` (the `cli/` umbrella); `--sim` replays a recorded fixture
-through the byte-identical path. **260707-HFX-L8** adds the seat-lifecycle surface (issues #12/#4):
+through the byte-identical path. The seat-lifecycle surface (issues #12/#4):
 `POST /api/terminal/{session}/retire` and `POST /api/terminal/{session}/rename` — server-authoritative
 retirement (kill tmux + a retirement-provenance mark layered on the existing `terminated` status,
 authority enforced via `retire_policy.check_retire_authority`: owner-never-self-retires, a manager
@@ -202,24 +202,24 @@ text only, `spawn_role` never changes). Live turn-state (`working`/`turn-ended`/
 `stale`) rides the EXISTING `terminal_liveness.py` alive-probe sweep — no new hot loop — classifying
 harness rows from the same `terminal_paste.capture_pane` history-inclusive pane view paste
 verification already uses, and firing `seat_events.py` observer events (`seat.retired`/
-`seat.renamed`/`seat.turn-state-changed`) only on an actual transition. **260707-HFX2-L11** replaces
-normal completion cleanup with landed/archive classification: successful integrate/finalize marks
+`seat.renamed`/`seat.turn-state-changed`) only on an actual transition. Landed/archive classification
+replaces normal completion cleanup: successful integrate/finalize marks
 matching seats `status:"landed"` via `landing.py` + `seat.landed`, keeps them visible/inspectable in
 the dashboard, and leaves manual retire as the explicit terminating path for stuck/abandoned/duplicate
 or harmful seats; `POST /api/terminal/landed-cleanup` closes only rows still marked landed and reports
-closed/skipped counts. **260707-HFX2-L2** adds the
+closed/skipped counts. The
 **deterministic supervisor sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
 third decoupled-cadence lifespan task (`supervisor.py::run_supervisor_sweep`, default ~10s,
 settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the
 nudge store DIRECTLY (never the projection), evaluates five mechanical predicates — pane-state
 (new `pane_signals.py`), expectation-deadline expiry, turn-report staleness (`missing_artifact()`
-gets its first caller), unacked-row redelivery, and seat-liveness (the L5/L8 join with graceful
-degradation) — and acts: redeliver via the L3 injector, auto-nudge, owner-addressed signal-emit, or
-hand off to the L4 escalation ladder's reserved stub, logging every action as an
+gets its first caller), unacked-row redelivery, and seat-liveness (the liveness/turn-state join with graceful
+degradation) — and acts: redeliver via the shared injector, auto-nudge, owner-addressed signal-emit, or
+hand off to the escalation ladder's reserved stub, logging every action as an
 `orchestration.supervisor.*` observer event. New `supervisor_heartbeat.py` gives the sweep its own
 self-liveness tick row (issue #15, "the watcher must be code AND watched"), surfaced as a fail-loud
 MCP-tool banner (`mcp/tools/base.py`) and a dashboard header badge (`/api/state`/SSE).
-**260707-HFX2-L4** fills that reserved stub in: `supervisor.py` gains two more predicates
+The escalation ladder fills that reserved stub: `supervisor.py` gains two more predicates
 (`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and two more actions
 (`_escalate_rung`/`_signal_dead_upstream`), calling through the new
 `controlplane/escalation_ladder.py` walker (governed by the `controlplane/` overview) for rung
@@ -232,27 +232,27 @@ find_orphaned_workers`) as orphans in the same respawn event, never auto re-pare
 absorbing the dead manager's role. No new hot loop, no new `InboxMessageKind` values — rung 1 reuses
 `nudge`, rung 2/3/respawn/dead-upstream reuse `escalation`, distinguishable via the dedicated
 `orchestration.escalation.rung`/`.respawn`/`.dead-upstream` events.
-**260707-HFX2-L9** keeps the supervisor's observation cadence independent from its delivery/escalation
+The supervisor keeps its observation cadence independent from its delivery/escalation
 cadence: `supervisor.py` passes the redelivery floor into hosted delivery, checks the new
 `controlplane/supervisor_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
 and skips `pane-signal: mid-turn` as busy-state noise. `app.py` wires the new store plus
 `settings.supervisor.signal_cooldown_seconds` into `SupervisorContext`; `inbox_delivery.py` threads
 the redelivery floor into every stored delivery snapshot.
-**260707-HFX2-L13** makes this supervisor chain-aware and manager-first: stale expectation/report/
+The supervisor is chain-aware and manager-first: stale expectation/report/
 seat/inbox/escalation predicates defer when the same leaf chain has progressed; nudge, signal, and
 dead-upstream actions resolve the current responsible manager; one row can transition at most once per
 sweep; and completion/artifact posts are readdressed and hosted-delivered to the current manager.
 Unbound reviewer/curator progress is credited in the subject worktree; unbound worker active-phase
-credit remains the accepted HFX2-L14 S7 follow-up.
+credit remains an accepted follow-up.
 
-260707-HFX2-L7 release-tail hardens the same supervisor path: delivery-failure inbox rows whose
+Release-tail hardening covers the same supervisor path: delivery-failure inbox rows whose
 delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redelivery domain until
 `PERSISTENT_FAILURE_ATTEMPTS` or `escalatedAt`; the generic unacked escalation ladder skips them
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
 
-For the active conversation serving (260718-CHATS-L1), start at
+For the active conversation serving, start at
 `conversation/active/api.py` (the two routes plus the O4 error ladder), then
 `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor),
 `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics),
@@ -262,7 +262,7 @@ For the active conversation serving (260718-CHATS-L1), start at
 per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`; the four focused
 suites pin the slice, the API suite over a real socket.
 
-For the native conversation library (260718-CHATS-L2), start at
+For the native conversation library, start at
 `conversation/library/api.py` (five routes plus the O4 error-status ladder), then
 `conversation/library/service.py` (per-call re-authorization),
 `conversation/library/open_service.py` (idempotent exact open and bounded ledger),
@@ -271,7 +271,7 @@ For the native conversation library (260718-CHATS-L2), start at
 `claude.py`, `pi.py` with `helper_host.py` for the locked Node helpers. The six focused suites
 plus the installed-runtime suite pin the slice.
 
-For the native evidence and resume substrate (260718-CHATS-L0E), start at
+For the native evidence and resume substrate, start at
 `harness_control_bridge.py::_run_events` (the single diversion point) and
 `harness_control_models.py` (evidence DTOs, reserved key, clip/window helpers), then the three IPC
 actions in `harness_control_ipc.py` and the validated reads in `harness_control_client.py`.
@@ -281,7 +281,7 @@ Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_st
 `harness_control_runner.py` → `harness_control_factories.py`. `test_harness_control_evidence.py`
 pins the whole seam.
 
-For the native control-plane substrate (260718-CHATS-L2E), start at
+For the native control-plane substrate, start at
 `harness_control_bridge.py::interrupt` (epoch guard, structural dispatch, bridge-stamped epoch),
 then the adapter writes `codex_app_server_adapter.py::interrupt` (exact active turn) and
 `pi_rpc_adapter.py::interrupt` (expected-operation guard), the authority read
@@ -299,14 +299,14 @@ For folded-state stream convergence, start at `projector.py::_publish_projection
 registers before snapshot capture, failed-prime recovery emits one full snapshot, and iterator
 closure owns subscriber cleanup.
 
-260715-FEUI-L9 establishes structure rather than a live endpoint path: consumers validate hostile
+The structured-conversation contract establishes structure rather than a live endpoint path: consumers validate hostile
 normalized products through `conversation/models.py`; future active and library implementations
 must satisfy their separate read ports and cursor purposes; future mutations stay on the control
 router. The root composition is mounted once beside existing harness-control routes. The locked
 repository helper and redacted installed-runtime fixtures are compatibility evidence only and may
 not promote a capability by being present.
 
-260715-FEUI-L5 reliable submission enters one bridge-generation authority. Async native preflight is
+Reliable submission enters one bridge-generation authority. Async native preflight is
 followed by a lifecycle-lock claim and final adapter write guard; a queued withdrawal and dispatch
 compete at that exact point. Each prompt/model/effort operation is identified by epoch + monotonic
 sequence + id + kind. Direct adapter completion reaches authority before coalesced publication and
@@ -316,10 +316,10 @@ evicting live, active, or unknown rows; terminal prompt text is discarded while 
 remain. Only a certified pre-dispatch busy failure is retry-safe. Codex uses fresh-turn guarded
 writes and bounded turn correlation, Claude accepts one guarded operation under the shared transport
 lock, and Pi requires fresh state plus generation/activity/event tokens and settled+fresh-idle
-completion. The ACPUI-L3/L4 queue descriptions below are historical provenance superseded by this
+completion. The older setter/daemon queue descriptions below are historical provenance superseded by this
 authority model.
 
-260714-ACPUI-L5 closes the live native-capability gate and hardens Claude catalog discovery. Only
+The live native-capability gate is closed and Claude catalog discovery hardened. Only
 the ephemeral discovery launch removes every Claude 2.1.210-supported pre-`--` MCP selector
 (`--mcp-config` separate/variadic/repeated or equals-attached, plus the exact strict flag), preserves
 unrelated argv and the complete positional suffix, and inserts one strict empty MCP set. Normal
@@ -332,7 +332,7 @@ counts and resource measurements are installation evidence, never maintained enu
 policy. A startup-failed bridge may still surface `control command queue is stopped` during graceful
 stop; terminate/retire retain that detail, reap the host, and reach terminal catalog state.
 
-260714-ACPUI-L4 exposes the normalized port through the daemon without introducing ACP transport.
+The normalized port is exposed through the daemon without introducing ACP transport.
 `HarnessCapabilityCatalog` performs token-free native discovery, caches one successful snapshot per
 built-in harness under an executable/argv fingerprint, single-flights concurrent misses, and treats
 explicit refresh as the auth/account boundary: failure conditionally quarantines only the entry it
@@ -344,10 +344,10 @@ reconciles retained known outcomes locally. The shared opener fences one read/pr
 transaction, so live reopens return immutable process truth or conflict and dead replacement starts
 a clean generation. Liveness precedes 404/409 support classification. Role spawn and the durable
 inbox/brief bus remain on their existing paths; no UI, settings authoring, paste fallback, Toad, or
-ACP transport rides this leaf.
+ACP transport rides this boundary.
 
-260714-ACPUI-L3 makes `set_model` and `set_effort` first-class operations on the normalized
-own-adapter port and serializes them with prompt submission through `HarnessControlQueue`.
+`set_model` and `set_effort` are first-class operations on the normalized
+own-adapter port, serialized with prompt submission through `HarnessControlQueue`.
 `SetResult` accepts exactly `echo-verified`, `immediate`, `queued`, `unknown`, or `unsupported`,
 with requested and effective values kept separate and contradictory combinations rejected. Claude
 sends ordinary structured `/model` and `/effort` user frames, then requires the same vendor
@@ -362,8 +362,8 @@ Cancelled and late responses are reclaimed without reader or queue failure. None
 delegates reaches composer paste, tmux input, session commands, terminal surfaces, or injectors;
 role-based spawn and the durable inbox/brief bus retain their separate ownership.
 
-260714-ACPUI-L2 carries one settings-resolved `ResolvedLaunch{harness, model, effort, workspace}`
-through the shared opener into the exact-session runner. Before a configured vendor session starts,
+One settings-resolved `ResolvedLaunch{harness, model, effort, workspace}`
+is carried through the shared opener into the exact-session runner. Before a configured vendor session starts,
 the runner applies adapter-owned selector conflict preflight, performs token-free dynamic discovery,
 validates model plus model-local launch effort, then starts Claude with native `--model/--effort`,
 Codex with `thread/start` model/config effort, or Pi with provider-qualified
@@ -372,18 +372,18 @@ model/effort, and Claude echoes model while its effort remains catalog-validated
 evidence because stream-json has no effort echo. Failures remain addressable as
 failed/rejected/exact `bridgeError`; normalized native model/effort is never composer-pasted.
 
-260714-ACPUI-L1 adds one normalized, own-adapter capability layer without ACP transport. Claude
+A normalized, own-adapter capability layer sits beneath the port without ACP transport. Claude
 `list_models`, Codex paginated `model/list`, and Pi `get_available_models` dynamically advertise
 the installed/authenticated model catalog without submitting a model turn. Effort is nested under
 each model; running adapters serve their retained startup catalog while transient discovery starts
 only the native protocol handshake/catalog path. The ACP Sense 1 projection uses the `model` and
 `thought_level` category shape; unknown current values are omitted rather than fabricated.
 
-260713-PHA-L6: Claude, Codex, and Pi built-ins negotiate the structured fields their adapters
+Claude, Codex, and Pi built-ins negotiate the structured fields their adapters
 consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is
 limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the
-daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. R10 resource
-performance remains queued.
+daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. Resource
+performance work remains queued.
 
 Codex terminal completion with a null protocol `requestId` is resolved only through its text vendor
 correlation on exactly one accepted inbox row for the same hosted session. Missing, non-text,
@@ -391,7 +391,7 @@ unmatched, or ambiguous correlation fails loudly. Completion projects onto that 
 delivery metadata while explicit inbox state remains `pending` and unconsumed. With no actual queued
 replacement the adapter reports `idle` / `immediate`; `settling` / `queued` means a replacement is
 actually queued. This is protocol-owned structured behavior, not a fixture-version, parser, pane,
-fallback, or R10 performance behavior.
+fallback, or resource performance behavior.
 
 The exact-session Unix IPC response lifecycle contains peer-loss `BrokenPipeError` and
 `ConnectionResetError` only after accepted dispatch, across response write/drain and close/
@@ -400,7 +400,7 @@ cancellation, and unrelated failures remain loud. A delayed-reply disconnect lea
 submission ambiguous but bridge-reconcilable, with no retry or fallback; bridge reconciliation
 returns the preserved vendor correlation.
 
-260712-PTS-L3 makes the projector's waking change-driven: new `change_watcher.py` derives watch
+The projector's waking is change-driven: `change_watcher.py` derives watch
 roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/`
 — container data is unreadable + high-churn, 30s watch-set re-derivation), filters non-input churn, and paces wakes through `ChangePacer`
 (debounce 0.1s, max-delay = `--interval` so a busy world keeps the former 1s cadence, idle
@@ -410,21 +410,21 @@ watcher absence/failure degrades LOUDLY to legacy fixed-interval ticking; `--sim
 time-driven; a running daemon picks the new pacing up only via explicit stop + spawn (ensure
 adopts healthy daemons).
 
-260712-TRH-L5 inserts confirmed-gone inbox reconciliation at the front of the deterministic
+Confirmed-gone inbox reconciliation runs at the front of the deterministic
 supervisor sweep. The bounded policy resolves only eligible supervisor nudge/escalation rows:
 catalog termination is direct proof, compacted tombstones require one successful exact-name tmux
 snapshot, and command failure fails closed. Resolve-plus-compact runs under the inbox lock before
 redelivery; the body-free aggregate event is silent on no-op sweeps. The existing TTL/cap fallback
 and active/landed/exited retention remain unchanged.
 
-260707-HFX2-L17 centralizes seat normalization in `seat_binding.py`: `spawnRole` is immutable
+Seat normalization is centralized in `seat_binding.py`: `spawnRole` is immutable
 provenance, `seatRole` is current binding, and uniqueness is one live owner per canonical
 leaf-role pair. `terminal_catalog.py` migrates old rows; opener/assignment liveness-check the
 same-role holder; attach requires identity for an untyped hand-opened harness; retire/supervisor/
 landing paths consume binding identity. The supervisor also preserves role in findings, rows,
 cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes.
 
-260707-HFX2-L15 makes harness JSONL the only submitted-delivery authority across spawn, inbox,
+Harness JSONL is the only submitted-delivery authority across spawn, inbox,
 supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
 Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0
 s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace
@@ -432,14 +432,14 @@ re-paste, with pane capture restricted to duplicate prevention and failure diagn
 persists resolved knobs, log id/path, and `replacementForLeaf`; safe binding re-reads the latest row.
 Codex knobs ride explicit argv, and the supervisor's synchronous redelivery budget defaults to one.
 
-260707-HFX2-L13 adds a live sixty-second workspace-river compactor over virtual locked cursors, serves
-full task bodies only through `GET /api/task-document`, and makes the supervisor current-manager-first,
+A live sixty-second workspace-river compactor runs over virtual locked cursors, full task bodies are
+served only through `GET /api/task-document`, and the supervisor is current-manager-first,
 chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains
 body-free for task documents.
 
 `agents-remember dashboard --config <settings.json>` → `cli/dashboard.py` →
 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks
-`project_and_write` — since **260712-PTS-L3** on change-or-heartbeat wakes when the live change
+`project_and_write` — on change-or-heartbeat wakes when the live change
 watcher is healthy (`--interval` is the fast-path cadence floor a busy world still ticks at;
 `--heartbeat`, default 15s, is the quiet-world refresh) and on the legacy fixed `--interval`
 under `--sim` or a degraded watcher — refreshing provider current-state first in live mode, then
@@ -447,14 +447,14 @@ hands each successful projection to one publication boundary. That boundary deri
 first-recovery snapshot or `serving.delta.diff_projection` events, commits stable/current
 authority, and only then fans events out to every registered SSE client. Beside the projector task,
 the same lifespan runs the **provider containment
-metrics sampler** (260707-HFX-L1, containment R4): every 30s
+metrics sampler**: every 30s
 (`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the projection tick)
 it snapshots labeled provider containers read-only
 (`providers/metrics.sample_provider_containers`) into the `ProviderMetricsStore` under
 `logs/observer/providers/` — exception-tolerant (a failed docker probe logs and retries
 next interval), dockerless-safe, cancelled at shutdown; `provider_status` and the
-HFX-L7 degradation protocol read that store. **260707-HFX-L7 (landed):** the same sampling-loop
-iteration, in the same exception-tolerant `try` block, now also calls
+degradation protocol read that store. The same sampling-loop
+iteration, in the same exception-tolerant `try` block, also calls
 `await asyncio.to_thread(evaluate_provider_degradation, config)` immediately after the metrics
 record — no separate task, no separate cadence; the degradation detector's durable
 events/state/inbox-alerts/critical-failsafe live entirely in `providers/degradation.py` (governed
@@ -472,11 +472,11 @@ validates lifecycle transitions against `ActionAvailability` (no mutation) and r
 targeted gate-decision verbs as developer-attributed gate decisions, including `gateId` staleness
 checks and rejection notes (`serving.actions` + `gate_decide_for_lifecycle`). `POST /api/operator-inbox` writes developer/dashboard-attributed
 external-chat responses through `mcp/tools/operator_inbox.py` so non-hosted agents can poll/consume
-them; Task 29 S7 also lets `/api/actions/dismiss` persist targetless actionable-drift acknowledgements
+them; `/api/actions/dismiss` also persists targetless actionable-drift acknowledgements
 and the raw `/api/events` stream sends a one-shot `ready` marker after retained backlog replay, so the
 frontend can avoid painting an empty feed before history has arrived. `POST /api/operator-inbox/{entry_id}/dismiss` deletes stale pending entries after the pickup TTL
 warning is shown. `--sim` swaps a replay clock + fixture feeder onto the projector's
-`now`/`before_tick` seams (`serving.sim`). `GET /api/task-document?path=...` is the separate L13
+`now`/`before_tick` seams (`serving.sim`). `GET /api/task-document?path=...` is the separate
 task-reader body edge: it requires a ready projection and delegates path confinement/schema
 validation to `observer.snapshots`; `/api/state` and `/api/stream` carry summaries only. Gate-id-only
 `cancel` requests are the explicit legacy
@@ -487,18 +487,18 @@ JSON `stdin`/`resize` in (the `websockets` dep is uvicorn's WS impl). The bridge
 rows after a dashboard restart, but only after `TerminalHost.has_session` proves the tmux name still
 exists; normal browser disconnect closes only that websocket's PTY client while leaving the tmux/catalog
 row running so refreshes and second browser tabs get fresh independent attaches; stale running rows
-become `exited` only through the **catalog liveness hysteresis** path (260707-HFX-L5,
-`terminal_liveness.py`: evidence-scaled thresholds, ≤1 probe sweep per 10s regardless of the
+become `exited` only through the **catalog liveness hysteresis** path
+(`terminal_liveness.py`: evidence-scaled thresholds, ≤1 probe sweep per 10s regardless of the
 dashboard's 1s polling, self-healing false exits), and `POST /api/terminal/{session}/terminate` is
 the only destructive terminal action.
 
-### 260712-TRH-L7 projection/observation split
+### Projection/Observation Split
 
 The serving layer starts one lifecycle-managed landing refresher for live projection, passes its latest immutable snapshot into the network-free projector tick, and cancels it during shutdown. Simulation disables remote observation; interactive status remains the fresh-probe path. A failed refresher is logged without preventing host shutdown.
 
 ## Route Model
 
-- `harness_submission_authority.py` — the FEUI-L5 sole prompt/setter timeline: epoch/idempotency
+- `harness_submission_authority.py` — the sole prompt/setter timeline: epoch/idempotency
   admission, lock-linearized dispatch/withdraw, full operation refs, response bypass, early exact
   completion, raw-free status/withdraw projection, and bounded live-safe retention.
 - `harness_control_queue.py` — compatibility facade over `HarnessSubmissionAuthority`; it owns no
@@ -507,18 +507,18 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `harness_capabilities.py` and `harness_control_adapter.py` — the normalized capability contract:
   `CapabilitySnapshot` contains dynamic `ModelCapability` rows with model-local `EffortOption`
   menus; ACP Sense 1 projects category-keyed select options; `LaunchKnobs` includes adapter-owned
-  selectors and `SetResult` establishes the L3 evidence boundary. The combined launchable adapter
+  selectors and `SetResult` establishes the setter evidence boundary. The combined launchable adapter
   seam joins synchronous cached advertise, transient native discovery, and native launch knobs. No
   ACP transport, global effort enum, or composer-paste fallback belongs in this port.
 
-- `harness_capability_catalog.py` — the L4 pre-session discovery authority. It resolves only the
+- `harness_capability_catalog.py` — the pre-session discovery authority. It resolves only the
   built-in native registry rows, fingerprints effective argv plus the canonical executable/stat
   identity, passes the current environment into the own-adapter `discover()` port, and retains at
   most one successful entry and lock per built-in harness. Ordinary misses are single-flight;
   explicit refresh re-enumerates auth/account state, and a failed refresh conditionally evicts only
   the exact observed entry so stale data cannot reappear as a healthy hit or erase a later success.
 
-- `harness_control_client.py`, `harness_control_api.py`, and `harness_control_models.py` — the L4
+- `harness_control_client.py`, `harness_control_api.py`, and `harness_control_models.py` — the
   exact-session serving boundary. The client strictly parses normalized advertise/set results and
   records whether a Unix-socket failure happened before or after the first accepted byte; only the
   latter becomes honest unknown evidence under the same request id/value. The API exposes
@@ -551,7 +551,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
   `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
   transport, normalized retry/compaction/settlement and extension UI events, `get_state` readiness,
-  exact-session reconnect, and post-cursor reconciliation without resend. ACPUI-L1 also consumes
+  exact-session reconnect, and post-cursor reconciliation without resend. The Pi adapter also consumes
   `get_available_models`, preserves provider-qualified model identity, derives model-gated thinking
   menus using Pi's own map rules, strips provider headers from retained state, and makes transient
   discovery fail-clean and prompt-free. Configured startup uses exact provider-qualified
@@ -561,14 +561,14 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `app.py` — `create_app(config, *, interval, heartbeat, now, before_tick,
   refresh_provider_state, refresh_landing_state, watch_changes, harness_capability_catalog)` builds
   the FastAPI app
-  (260712-PTS-L3: `watch_changes` defaults to `before_tick is None`, so live serving injects a
+  (`watch_changes` defaults to `before_tick is None`, so live serving injects a
   `ProjectionInputWatcher` for change-driven pacing while `--sim` stays time-driven;
   `heartbeat` bounds quiet-world staleness): a
   lifespan that primes + runs one shared `Projector` plus the 30s provider containment
-  metrics loop (260707-HFX-L1 R4 — `sample_provider_containers` → `ProviderMetricsStore.record`
+  metrics loop (`sample_provider_containers` → `ProviderMetricsStore.record`
   via `asyncio.to_thread`, exception-tolerant, both tasks cancelled + awaited at shutdown),
-  `GET /api/state` (one-shot; **260703-L15
-  change-gated** — weak `ETag: W/"<projector.revision(seq)>"` + `Cache-Control: no-cache`,
+  `GET /api/state` (one-shot; **change-gated**
+  — weak `ETag: W/"<projector.revision(seq)>"` + `Cache-Control: no-cache`,
   `If-None-Match` weak-matches → `304` empty-body via `_if_none_match_matches`, and the body
   carries the boot-time `servingBuild` stamp),
   `GET /api/stream` (the `state` SSE endpoint, delegating to the testable
@@ -582,66 +582,66 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `gateId`/`note`, require a reason for reject, and distinguish stale gates from no-open-gate), the
   `@app.websocket("/api/terminal/{session}")` Mode B2 terminal bridge (6d-2 — catalog-backed
   per-websocket `TerminalHost.attach`, binary PTY bytes out / JSON `stdin`+`resize` in, via the
-  module-level `_bridge_terminal`/`_apply_terminal_session_input` helpers), `POST /api/operator-inbox` (task 10/L3 — call
+  module-level `_bridge_terminal`/`_apply_terminal_session_input` helpers), `POST /api/operator-inbox` (call
   `operator_inbox_post_payload` with developer/dashboard attribution for durable inbox messages,
   accepting lifecycle/agent/recipient role plus role/message/artifact metadata and passing catalog/host/paster
   seams for optional hosted push; bad lifecycle/agent/role addressing returns `400 bad-address`),
-  `POST /api/operator-inbox/{entry_id}/dismiss` (task 23/24 — physically delete a pending inbox entry
+  `POST /api/operator-inbox/{entry_id}/dismiss` (physically delete a pending inbox entry
   for dismissible `check chat` warnings), the
   `POST /api/terminal/{session}` **opener**
-  (6e-2a/6e-2b; **since L2** the leaf-claim + `host.ensure` + catalog-upsert composition delegates to the
+  (6e-2a/6e-2b; the leaf-claim + `host.ensure` + catalog-upsert composition delegates to the
   shared `terminal_opener.open_terminal_session` — `resolve_terminal_launch` / `_terminal_label` / the
   role-scoped conflict check all left `app.py` for that module — so this route and the `spawn_agent_session`
-  MCP tool spawn through ONE opener; L4 adds optional `model`/`effort`, requires a complete pair for
+  MCP tool spawn through ONE opener; it accepts optional `model`/`effort`, requires a complete pair for
   built-in native harnesses, and maps `bad-kind`→400 / `leaf-taken`→409 /
   `launch-conflict`→409 / `opened`→200. Successful and conflicting responses report the actual
   retained row's launch/control facts rather than echoing the attempted request. Server-resolved
   harness id, never argv on the wire; the opener passes `suspend_unsafe=(kind=="harness")` so
   later host writes strip Ctrl-Z for bare-pane harnesses, slice 6f, and persists a `TerminalCatalogEntry`
-  carrying label/lifecycle/cwd/tmux/command/status/leafKey + L2 spawned-by provenance + the L14 `spawnRole` without opening a
-  starter PTY client; **slice L5** uniqueness is per (leaf, role) so a terminal never collides with the
+  carrying label/lifecycle/cwd/tmux/command/status/leafKey + spawned-by provenance + `spawnRole` without opening a
+  starter PTY client; uniqueness is per (leaf, role) so a terminal never collides with the
   leaf's chat, and the `leafKey` is normalized through `leaf_ref_validation.resolve_catalog_leaf_key`
   before persistence (preserving an existing binding when none is sent) and echoed),
-  `POST /api/terminal/{session}/paste` (**L2, 260707-HFX-L3** — server-side capture-verified
+  `POST /api/terminal/{session}/paste` (server-side capture-verified
   context-packet delivery to a hosted session with no attached browser client, over
   `terminal_paste.TerminalPaster`; delivery is confirmed against the pre-delivery origin capture —
   a new chip in either harness vocabulary or the payload head, not mere pane output; 404 on
   unknown/gone session, else `{delivered, submitted}` plus the pane `capture` on an unconfirmed
   outcome),
-  `POST /api/terminal/{session}/attach-leaf` (**slice L5/L9/HFX-L4** — normalize the requested leaf ref,
+  `POST /api/terminal/{session}/attach-leaf` (normalize the requested leaf ref,
   then claim or move a leaf for an existing session, enclosure-free / no respawn; delegates to
   `terminal_leaf_assignment.assign_terminal_session_to_leaf`, returning `400 leaf-ref-not-found` /
   `400 leaf-ref-ambiguous`, `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
-  /api/terminal/sessions` (task 22; **260707-HFX-L5** — return non-terminated sessions via
+  /api/terminal/sessions` (return non-terminated sessions via
   `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
   non-overlapping, rate-limited callers get the persisted catalog; WebSocket attach + the paste
   endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
   replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
-  `POST /api/terminal/{session}/terminate` (task 22 — kill tmux and mark the catalog row terminated),
-  `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), the L4 native control
+  `POST /api/terminal/{session}/terminate` (kill tmux and mark the catalog row terminated),
+  `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), the native control
   routes (`GET /api/harnesses/{harness}/capabilities`, live `GET .../capabilities`, `POST
-  .../set-model`, `POST .../set-effort`, `POST .../submit`, `POST .../reconcile`, FEUI-L5
+  .../set-model`, `POST .../set-effort`, `POST .../submit`, `POST .../reconcile`,
   authority/status, and authoritative withdraw) registered
   before the static mount, `POST /api/terminal/{session}/image`
   (6f — save a validated screenshot under `<cwd>/.dashboard-pastes/<uuid>.<ext>` using either a live host
   session cwd or a catalog-restored cwd so the composer can inject its path; the terminal channel is
-  text-only), `POST /api/terminal/{session}/retire` (**260707-HFX-L8**, issue #12 — the
+  text-only), `POST /api/terminal/{session}/retire` (issue #12 — the
   server-authoritative retire surface: 404 unknown-session/unknown-actor, 200 `already-retired`
   idempotent fast-path on an already-terminated target BEFORE any authority check, 403
   `retire-refused` naming the exact policy clause via `retire_policy.check_retire_authority`, else
   `retire.retire_entry` kills tmux + marks the catalog row + `seat_events.log_retire_event`),
-  `POST /api/terminal/{session}/rename` (**260707-HFX-L8**, issue #4 — 404 unknown-session on a
+  `POST /api/terminal/{session}/rename` (issue #4 — 404 unknown-session on a
   missing/terminated target, else `catalog.set_label` + `seat_events.log_rename_event`; identity
   text only, never `spawn_role`), and the static mount.
   SSE uses built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`).
-- `daemon.py` — the dashboard daemon supervisor (260703 L2): `ensure()` adopts a healthy detached
+- `daemon.py` — the dashboard daemon supervisor: `ensure()` adopts a healthy detached
   daemon, spawns a missing one, and restarts on version/host/port mismatch, behind one
   non-blocking flock (`ensure.lock`) so concurrent MCP boots never double-spawn. State lives under
   `<coordinationRoot>/logs/dashboard/` — an atomic `daemon.json` (pid/host/port/version/paths,
   written immediately after spawn) and a per-spawn-rotated `dashboard.log` (the child serves with
   `--no-access-log` so the log stays bounded). Liveness is kill-probe **plus** `/proc/<pid>/cmdline`
-  identity (pid reuse and zombies read as stale); stop is TERM → bounded wait → KILL. Since
-  260712-PTS-L3 `ensure`/`spawn` plumb an optional `heartbeat` onto the child argv
+  identity (pid reuse and zombies read as stale); stop is TERM → bounded wait → KILL.
+  `ensure`/`spawn` plumb an optional `heartbeat` onto the child argv
   (`--heartbeat`, spawn/restart only — ensure ADOPTS a healthy daemon without cadence comparison,
   so adaptive pacing reaches a live daemon only via explicit stop + spawn). The child is
   the plain foreground CLI addressed by module string — the module stays import-light (stdlib +
@@ -653,19 +653,19 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   (tick: re-project → compute snapshot/delta batch → commit stable/current authority → notify),
   `_publish_projection()`, `current()`,
   `revision(seq)` (the `"{boot}-{seq}"` content fingerprint behind the `/api/state` ETag — seq
-  only advances on stable-content change since L15), `subscribe()` (register queue and capture the
+  only advances on stable-content change), `subscribe()` (register queue and capture the
   current snapshot without an await, then drain that queue with `finally` cleanup). A failed
   `prime()` recovers by sending one full snapshot to already-connected subscribers; identical
   recovery does not duplicate and later changes return to ordinary deltas. The `now`/`before_tick`
   seams + `_tick_sync(moment)` keep one loop generic across live and sim. Live projectors can
   pass a provider refresher into the observer store; sim projectors keep fixture state
   deterministic by omitting it. One re-projection per tick regardless of client count.
-  **260712-PTS-L3:** with an injected `change_watcher` the pacemaker is `ChangePacer.wait()`
+  With an injected `change_watcher` the pacemaker is `ChangePacer.wait()`
   (change-or-heartbeat waking) instead of the unconditional `sleep(interval)`; the watch task's
   lifecycle mirrors the landing refresher's, a dead watcher degrades loudly to fixed-interval
   ticking (`_on_watch_task_done`), and `projection_count`/`last_wake_reason` instrument the loop.
   Without a watcher (sim, injected-`now()` tests) the legacy pacing is byte-identical.
-- `change_watcher.py` — the **260712-PTS-L3 change-driven pacing module**:
+- `change_watcher.py` — the **change-driven pacing module**:
   `projection_input_roots` (watch roots derived reader-by-reader from `project_and_write`'s input
   surfaces — tasks/, observer lifecycles/workspace/drift, provider status/setup, temp
   worktree-start/tool-reports; nothing under `worktrees/` — container data is unreadable to the
@@ -676,20 +676,20 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   heartbeat default 15s, degraded ⇒ fixed interval, starts degraded at boot), and
   `ProjectionInputWatcher` on `watchfiles` (30s watch-set re-derivation; ANY failure — missing
   wheel, derivation error, crashed watch — degrades LOUDLY to fixed-interval ticking and retries
-  every 30s). Heartbeat = the staleness bound for `/api/state` and time-derived fields (R4:
-  volatile ages already advance client-side via `servedAges.ts`).
+  every 30s). Heartbeat = the staleness bound for `/api/state` and time-derived fields
+  (volatile ages already advance client-side via `servedAges.ts`).
 - `delta.py` — the **pure** `diff_projection(previous, current, *, previous_state=None,
   current_state=None) -> list[DeltaEvent]`: the per-entity diff over the flat id-keyed
   collections (upserts in projection order, removals sorted for determinism). A transport concern
-  kept out of the reducer. Task 33: it also emits an `activeWorktreeGroups` whole-value delta
+  kept out of the reducer. It also emits an `activeWorktreeGroups` whole-value delta
   (a bare list wrapped as `{"activeWorktreeGroups": [...]}`) when that set changes, alongside the
-  `metrics`/`analytics` whole-block events. **260703-L15 (the change gate):** comparison runs
+  `metrics`/`analytics` whole-block events. **The change gate:** comparison runs
   over *stable forms* — `VOLATILE_AGE_FIELDS` (`staleSeconds`/`snapshotStaleSeconds`/`ageSeconds`/
   `waitSeconds`/`heartbeatAgeSeconds`, mirrored client-side in `dashboard/src/data/servedAges.ts`)
   stripped recursively — so a tick where only ages advanced emits NOTHING (live measurement:
   ~780 KB/tick → 0; the dashboard-tab OOM driver). `StableProjectionState` +
   `stable_projection_state` are the projector's per-tick cache.
-- `build_info.py` — the boot-time **serving build stamp** (260703-L15 S3, the July-4
+- `build_info.py` — the boot-time **serving build stamp** (the July-4
   ghost-process lesson): `ServingBuild` (version / best-effort git short-hash / boot time) +
   `resolve_serving_build`, resolved ONCE in `create_app` and injected on `/api/state` + the SSE
   snapshot as `servingBuild` so a stale serving process is visible in the cockpit top bar. A
@@ -700,9 +700,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   (inactivity-pruned) lifecycle logs are skipped, workspace/lifecycle-less rows are bounded by age, and
   active lifecycle histories remain uncapped; malformed/empty cursors fall back to those retained offsets,
   while valid `Last-Event-ID` cursors keep exact byte-offset resume. Separate from `/api/stream`
-  (byte-offset resume vs. snapshot resume). Task 29 S7 emits `event: ready` once after the retained
-  backlog is sent on each connection, giving the browser a reliable hydration boundary. Task 34 makes the
-  connect path cheap and quiet: it does **one** retained-backlog scan per connect (no repeated
+  (byte-offset resume vs. snapshot resume). The stream emits `event: ready` once after the retained
+  backlog is sent on each connection, giving the browser a reliable hydration boundary. The
+  connect path is cheap and quiet: it does **one** retained-backlog scan per connect (no repeated
   whole-history reads), streams that bounded backlog to the client in **chunks** rather than
   materializing the whole history, filters `lifecycle.heartbeat` events out of the river, and prunes
   expired logs on a slow background cadence instead of on every tail.
@@ -723,29 +723,29 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `static.py` — `dashboard_static_dir()` resolves `package_data/dashboard` via
   `importlib.resources` (the `install.assets` idiom); `mount_static(app)` mounts it at `/`
   (non-fatal when absent).
-- `files.py` — the **read-only files API** (operations-integration L1): `register_files_routes(app, config)`
+- `files.py` — the **read-only files API**: `register_files_routes(app, config)`
   registers `GET /api/files/{repos,list,read,onboarding}` **before** `mount_static` (the greedy `/` mount
   must stay last). It is the first serving module to resolve a kernel `CoordinationContext`: a
   `{repo, mainline|enclosure}` scope maps to `(codeRoot, onboardingRoot)` to enumerate repos/enclosures,
   list one directory level (code + paired onboarding), read a file (content + drift metadata), and resolve
   the 1:1 code↔onboarding sidecar pairing both ways via the shared `kernel/sidecar_pairing.py`. Allow-listed
   roots only, realpath-confined (Task-6 posture); a memory-less repo degrades to code-only browsing and a
-  missing sidecar is a normal `missing` result, never an error. Feeds the dashboard File Viewer (L2) and
-  Change-Set Viewer (L3/L4).
-- `scope.py` — the **shared browse-scope layer** (operations-integration L3, extracted from `files.py`):
+  missing sidecar is a normal `missing` result, never an error. Feeds the dashboard File Viewer and
+  Change-Set Viewer.
+- `scope.py` — the **shared browse-scope layer** (extracted from `files.py`):
   `FileScope`, `resolve_scope` (`{repo, mainline|enclosure}` → roots), the `run_scoped` error map (404
   unknown-repo/unknown-scope/not-found, 400 bad-path), `language_for`, and the active leaf-enclosure
   enumeration. `files.py` and `changeset.py` both import it (files.py re-exports `FileScope` +
-  `_resolve_within` for callers/tests). Behaviour is identical to L1 — one resolver, shared.
-- `changeset.py` — the **read-only change-set API** (operations-integration L3): `register_changeset_routes`
+  `_resolve_within` for callers/tests). Behaviour matches the original files resolver — one resolver, shared.
+- `changeset.py` — the **read-only change-set API**: `register_changeset_routes`
   mounts `GET /api/changeset/{task,file-diff,master}` **before** the static mount. Computes a task's
   `base → current` code + memory change-set with insertion/deletion counts + status + `hasSidecar`
-  (`task`), BEFORE/AFTER file content for the L4 CodeMirror MergeView (`file-diff`, with an optional `master` param for the series net file-diff), and the master's **NET**
+  (`task`), BEFORE/AFTER file content for the CodeMirror MergeView (`file-diff`, with an optional `master` param for the series net file-diff), and the master's **NET**
   change-set (`master`) — `git diff <master-base> <resolved-series-tip>` for code + memory (one
   coherent, per-file-inspectable range) with a per-leaf counter breakdown alongside. For an in-flight
   series the resolved tip is the contract work-branch tip; after landing, when that work branch is gone,
   it falls back to the source-branch tip. The master file-diff view uses the same resolved tip so
-  counters and BEFORE/AFTER content cannot drift. **L4a** adds the doc-reader
+  counters and BEFORE/AFTER content cannot drift. The doc-reader
   **leaf views**: the `task` + `file-diff` routes take a `leaf` + `mode` selector (precedence
   `leaf > master > scope`), resolving one leaf's `committed` (`base → code_commit`) or `working`
   (`HEAD → worktree`, uncommitted only) change-set straight off the persisted enclosure contract
@@ -754,9 +754,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   Master and leaf contract discovery is confined to the requested repo/master enclosure and
   canonicalizes both requested and persisted leaf ids; `/api/changeset/master?includeLeaves=false`
   skips the optional per-leaf breakdown while preserving the coherent net range.
-  Reuses `scope.py` + the L1 posture; the change-detection primitive is
-  `worktrees/modules/git.changed_files_with_counts`. Feeds the dashboard Change-Set Viewer (L4/L4a).
-- `notes.py` — the **read-only coordination-notes API** (agent-orchestration L9, friction F-M) (its status mapper, like `scope.py`'s files-API mapper, answers `400 bad-path` for `ValueError` input such as null bytes — the L9 review's L9R-1 fix, applied to both):
+  Reuses `scope.py` + the same confinement posture; the change-detection primitive is
+  `worktrees/modules/git.changed_files_with_counts`. Feeds the dashboard Change-Set Viewer.
+- `notes.py` — the **read-only coordination-notes API** (its status mapper, like `scope.py`'s files-API mapper, answers `400 bad-path` for `ValueError` input such as null bytes — a review fix applied to both):
   `register_notes_routes` mounts `GET /api/notes/{list,read}` **before** the static mount. Lists +
   reads one series master's `tasks/<repo>/<master>/notes/` tree under the coordination root — the
   design records / friction ledger / worker reports / adversarial verdicts that previously had no
@@ -772,19 +772,19 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `preexec_fn`) + a seeded winsize, so tmux has a `/dev/tty` to size against and honors resize (slice
   6e-4). `write` strips the Ctrl-Z byte `0x1a` for **suspend-unsafe** (bare-pane harness) sessions only,
   so a harness can't be soft-locked into a suspend while a plain shell keeps its job control (slice 6f).
-  Task 22 adds injectable tmux probe/create/kill hooks, `has_session`, `ensure`, `terminate`, and
+  Injectable tmux probe/create/kill hooks, `has_session`, `ensure`, `terminate`, and
   unregistered per-connection `attach` clients so the durable catalog can create a detached tmux
   session, prove it still exists before attach, kill one explicitly, and serve multiple browser tabs
-  without sharing one PTY fd. **260707-HFX-L5** makes the probe evidence-bearing:
+  without sharing one PTY fd. The probe is evidence-bearing:
   `TmuxProbeResult(exists, evidence)` / `probe_session` beside the boolean `has_session`, with
   stderr-aware classification — only explicit missing-session stderr is definitive `pane-gone`;
   every other failure (subprocess error, timeout, non-missing nonzero exit) is the transient
-  `tmux-command-failed` that feeds catalog hysteresis instead of an immediate exit mark. **L2** threads an optional `env: Mapping[str, str]` through
+  `tmux-command-failed` that feeds catalog hysteresis instead of an immediate exit mark. An optional `env: Mapping[str, str]` threads through
   `ensure`/`open`/`_build_tmux_command` (`_tmux_create_detached` emits `tmux new-session -e KEY=VALUE`
   via the pure `_env_flags`), seeded only at creation and inert on re-attach — the minimal
   env-passthrough seam the agent-facing spawn tool injects role knobs through (empty-safe: an empty
-  mapping keeps the byte-identical legacy argv). The reopened L6 wheel fix adds the injectable `TmuxConfigurer` seam
-  (default: per-session `tmux set-option mouse on`, failures suppressed), asserted by `ensure` and
+  mapping keeps the byte-identical legacy argv). The injectable `TmuxConfigurer` seam
+  (default: per-session `tmux set-option mouse on`, failures suppressed) is asserted by `ensure` and
   every `attach`, so browser wheel input reaches tmux as mouse reports — tmux scrolls pane history for
   normal-buffer TUIs and passes wheel through to mouse-aware ones (pane text selection becomes
   Shift+drag). Its copy-mode escape companion: `write_session` arms a per-connection flag on
@@ -793,30 +793,30 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   live bottom and reaches the pane app. Fixed-argv (no shell injection), OS-user creds, localhost. The live
   WebSocket bridge (`@app.websocket("/api/terminal/{session}")`, in `app.py`) + the `websockets`
   dep landed in 6d-2; the xterm.js viewport is 6e.
-- `terminal_catalog.py` — the durable dashboard terminal-session catalog (task 22): immutable
+- `terminal_catalog.py` — the durable dashboard terminal-session catalog: immutable
   `TerminalCatalogEntry` rows plus a JSON store under `logs/dashboard/terminal-sessions.json`. It
   persists id, label, kind, optional harness/lifecycle, cwd, tmux name, command, timestamps, status,
-  (**slice L5**) an optional `leaf_key`, and (**L2**) optional spawned-by provenance
+  an optional `leaf_key`, and optional spawned-by provenance
   (`spawned_by_session` / `spawned_by_lifecycle`, written migration-safe only when set; the copiers now
   use `dataclasses.replace` so a new column survives a re-attach); normal `list()` keeps exited rows visible and filters terminated
   rows, while `include_terminated=True`
   is available for audits. Explicit termination wins over later passive exit bookkeeping so an `End`
-  action cannot reappear after refresh as an `exited` row. **Slice L5** makes the catalog the
+  action cannot reappear after refresh as an `exited` row. The catalog is the
   **leaf→chat registry**: `to_json` writes `leafKey` only when set (migration-safe), `with_leaf_key` is
-  the attach write point, and (L5 fix 2) a leaf-uniqueness **role** (`TerminalSessionRole`,
+  the attach write point, and a leaf-uniqueness **role** (`TerminalSessionRole`,
   `role_for_kind` / `entry.role` — a shell is a terminal, a harness is a chat) scopes
   `active_for_leaf(leaf_key, role="chat")` so it returns the single **running** owner *of that role* — the
   per-(leaf, role) single-owner probe the opener + attach-leaf routes call before an upsert, letting one
-  leaf hold a running chat AND a running terminal at once. **260707-HFX-L5** adds persisted liveness
+  leaf hold a running chat AND a running terminal at once. The catalog also carries persisted liveness
   state (`livenessFailures`/`livenessFirstFailedAt`/`livenessLastFailedAt`/`livenessEvidence` +
   `exitEvidence` on exited rows, all migration-safe write-when-set) and the locked
   `record_liveness_probe` write point with the `with_liveness_success`/`with_liveness_failure`
   transition copiers — hysteresis survives a daemon restart and a false exit self-heals on the next
-  alive probe. L4 reuses `batch()` as the complete session-open transaction fence: its file lock
+  alive probe. `batch()` serves as the complete session-open transaction fence: its file lock
   plus process `RLock` spans read, live probe, host ensure, and upsert, so concurrent callers cannot
   share one newly created process and then publish different attempted launch provenance. Other
   processes see the coherent last committed atomic-file snapshot until the batch commits.
-- `terminal_liveness.py` — the **catalog liveness hysteresis** module (260707-HFX-L5):
+- `terminal_liveness.py` — the **catalog liveness hysteresis** module:
   `TerminalCatalogLivenessSweeper` (rate-limited — 10s default interval — and non-overlapping via a
   non-blocking lock; a rate-limited or concurrent `refresh()` serves the persisted catalog without
   probing, so the dashboard's 1s cadence never implies 1s tmux probing) +
@@ -827,56 +827,55 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   command-failure storm cannot mass-exit a live fleet), definitive `pane-gone` marks fast, and a
   falsely exited row self-heals to `running` within one sweep (exited rows are probed too;
   `terminated` is never revived). Constants are code defaults, not settings knobs. Replaces
-  `app.py`'s deleted `_refresh_catalog_entries`. **260707-HFX-L8** folds live turn-state
-  classification into the SAME alive-probe call (`_observe_alive`, no new hot loop, no new tmux
+  `app.py`'s deleted `_refresh_catalog_entries`. Live turn-state
+  classification is folded into the SAME alive-probe call (`_observe_alive`, no new hot loop, no new tmux
   round-trip cadence): `kind == "harness"` rows only get `terminal_paste.capture_pane` +
   `turn_state.classify_turn_state` on every ALIVE observation, persisted via
   `catalog.record_turn_state`; `TerminalLivenessObservation.turn_state_changed` is true only on an
   actual transition, and `TerminalCatalogLivenessSweeper` gained an `on_turn_state_change` callback
   (wired in `app.py`'s `create_app` to `seat_events.log_turn_state_change_event`) fired only for
-  those transitioning rows, never per sweep tick. **260718-CHATS-L5 (H1/F2)** quarantines the
-  `on_control_snapshot` observer (the hosted-interaction synchronizer wired in `create_app`) as a
+  those transitioning rows, never per sweep tick. The `on_control_snapshot` observer (the
+  hosted-interaction synchronizer wired in `create_app`) is quarantined as a
   per-entry side effect: `_observe_alive` routes it through `_observe_control_snapshot`, which
   records any failure fail-loud on that ONE row's `control_raw["interactionSyncError"]` and lets the
   sweep continue. Before this, a single orphan-`vendorCorrelationId` completion raised
   `HarnessControlError` out of the per-entry comprehension inside `catalog.batch()`, aborting the
-  whole sweep and 500-ing `GET /api/terminal/sessions` for EVERY row (the developer's stuck-loading
+  whole sweep and 500-ing `GET /api/terminal/sessions` for EVERY row (the stuck-loading
   rail). Load-bearing fact: an orphan `vendorCorrelationId` is the NORMAL steady state of every
-  cockpit-driven hosted (`+ Chat`) codex chat, so this quarantine path is HOT, not exceptional; F2
-  bounds the warning to state changes (first occurrence / heal) while the per-sweep marker keeps the
+  cockpit-driven hosted (`+ Chat`) codex chat, so this quarantine path is HOT, not exceptional; the
+  warning is bounded to state changes (first occurrence / heal) while the per-sweep marker keeps the
   wire honestly degraded. Availability hardening only — the completion-correlation contract in
-  `hosted_interactions.py` is untouched (F3 is a required master-exit disposition; the F8
-  phantom-transition re-warn on non-observer `control_raw` rebuilds is a Low residual). Detail in the
+  `hosted_interactions.py` is untouched (the
+  phantom-transition re-warn on non-observer `control_raw` rebuilds is a known Low residual). Detail in the
   file sidecar.
-- `retire_policy.py` — the **260707-HFX-L8** server-side retire authority policy: `SeatRef`,
+- `retire_policy.py` — the server-side retire authority policy: `SeatRef`,
   `master_of(leaf_key)` (the qualified leaf key's 2nd path segment — uniform for a leaf-level or
   master-level `leaf_key`), `check_retire_authority(actor, target)` (owner-never-self-retires
   checked FIRST unconditionally; a manager may retire only worker/reviewer seats of its own master;
   only the orchestrator has portfolio-wide authority; every refusal names the exact clause via
   `RetirePolicyError`).
-- `retire.py` — the **260707-HFX-L8** shared manual retire mechanics: `retire_entry` kills the tmux
+- `retire.py` — the shared manual retire mechanics: `retire_entry` kills the tmux
   session best-effort/idempotent, then `catalog.mark_retired`. This path backs explicit retire/tool and
   landed-cleanup closure, not normal successful completion.
-- `landing.py` — the **260707-HFX2-L11** shared landing mechanics: `land_seats_for_leaf` marks matching
+- `landing.py` — the shared landing mechanics: `land_seats_for_leaf` marks matching
   non-terminated catalog rows `status:"landed"` with reason/edge provenance, without constructing a
   `TerminalHost` and without killing tmux. `controllers/worktree_tools.py` calls it from successful
   `worktree_integrate`/`lifecycle_finalize_task` completion edges.
-- `turn_state.py` — the **260707-HFX-L8** live turn-state classifier: `classify_turn_state(pane_text,
+- `turn_state.py` — the live turn-state classifier: `classify_turn_state(pane_text,
   harness=)` is marker-regex-based (precedence working > awaiting-input > turn-ended > stale; blank/
   unreadable pane ⇒ `stale`), with empty per-harness override dicts ready for future tuning. Rides
   the EXISTING `terminal_liveness.py` sweep cadence via `terminal_paste.capture_pane` — no new
-  tmux round-trip. Patterns are a first-cut, not verified against live harness panes (reviewer F2,
-  accepted, folded into a follow-up calibration task — the classifier is fed the full history-inclusive
-  capture rather than just the pane tail).
-- `seat_events.py` — the **260707-HFX-L8** observer-event emitters for the seat surface:
+  tmux round-trip. Patterns are a first-cut, not verified against live harness panes (the classifier
+  is fed the full history-inclusive capture rather than just the pane tail).
+- `seat_events.py` — the observer-event emitters for the seat surface:
   `log_retire_event`/`log_rename_event`/`log_turn_state_change_event` write `ar-observer-event/v1`
   records (`seat.retired`/`seat.renamed`/`seat.turn-state-changed`) mirroring the existing
   `orchestration_nudge_manager` event-logging pattern, feeding the watcher/architect
   NEEDS-ATTENTION feed.
-- `terminal_leaf_assignment.py` — the shared L9 catalog reassignment helper: moves an existing catalog row
+- `terminal_leaf_assignment.py` — the shared catalog reassignment helper: moves an existing catalog row
   to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
   owns the target leaf, and is reused by the dashboard route and MCP tool.
-- `leaf_ref_validation.py` — the HFX-L4 serving adapter for terminal catalog write surfaces: resolves
+- `leaf_ref_validation.py` — the serving adapter for terminal catalog write surfaces: resolves
   qualified ids, doc ids, and unambiguous legacy stems/slugs through `worktrees.leaf_refs`, returning the
   canonical qualified leaf key that opener/attach routes persist.
 - `terminal_opener.py` — the shared hosted-session opener: `open_terminal_session(...)` resolves a
@@ -887,28 +886,28 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   resolved-selection provenance. Static knob mapping is retained only for explicitly declared
   settings-defined non-native harnesses; native Claude/Codex/Pi selection is dynamically validated
   and applied by their adapters. Dashboard `POST /api/terminal/{session}` and
-  `spawn_agent_session` compose this same opener—no parallel spawn path. L4 treats a live catalog
-  row as immutable process truth: a selectionless or exact-pair reopen returns it unchanged; a
+  `spawn_agent_session` compose this same opener—no parallel spawn path. A live catalog
+  row is treated as immutable process truth: a selectionless or exact-pair reopen returns it unchanged; a
   changed kind, harness, cwd, or explicit pair returns `launch-conflict` without a second ensure or
   catalog mutation. A dead row starts a fresh generation and drops process-specific control/log/raw
   evidence. The full operation runs under the catalog batch fence so cross-thread/process races
   create one process and one durable launch truth.
-- `terminal_paste.py` — the **capture-verified server-side paste** (L2, hardened by 260707-HFX-L3):
+- `terminal_paste.py` — the **capture-verified server-side paste**:
   `TerminalPaster.paste(tmux_name, text, submit=…)` mirrors the frontend
   `pasteAndConfirm`/`submitAndConfirm` over tmux primitives — the payload rides STDIN into
   `load-buffer` (never argv/ARG_MAX) then `paste-buffer -p -d`, and `capture-pane` verification
   against ONE pre-delivery origin baseline held for the whole delivery: a NEW paste chip in either
   harness vocabulary (`[Pasted text #N]` claude, `[Pasted Content N chars]` codex) or the payload's
   own head confirms; before any re-paste across the boot window the pane is re-captured first, so a
-  landed paste is never re-sent (duplicate stacking impossible — the F-V run stacked 7 via
-  per-attempt re-baselining). `PasteResult.capture` attaches the final pane snapshot so a failed
-  delivery is loud evidence, never a bare boolean (the SF-1 blind seat); Escape is refused by
+  landed paste is never re-sent (duplicate stacking impossible — per-attempt re-baselining
+  is what allowed repeats to stack). `PasteResult.capture` attaches the final pane snapshot so a failed
+  delivery is loud evidence, never a bare boolean; Escape is refused by
   construction — only Enter is ever sent. Every tmux op + the clock are injectable so the loop is
   fake-driven and sleepless in tests. Never submits an unconfirmed paste; never raises on a gone
   session. Backs the `spawn_agent_session` context delivery, the
   `POST /api/terminal/{session}/paste` endpoint, and the inbox hosted push (whose durable failure
-  detail embeds a bounded capture tail). **260707-HFX-L8** adds the public `capture_pane(tmux_name)`
-  wrapper around the existing private `_tmux_capture_pane`, so turn-state classification
+  detail embeds a bounded capture tail). The public `capture_pane(tmux_name)`
+  wrapper wraps the existing private `_tmux_capture_pane`, so turn-state classification
   (`terminal_liveness.py`) reads the identical history-inclusive pane view paste verification
   already uses — one capture-command shape in the codebase, not two.
 - `harnesses.py` — the harness id/base-command registry and injectable executable detection behind
@@ -918,51 +917,51 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   settings-defined non-native harnesses. A harness id is on the wire, fixed argv stays in registry
   or validated settings, and normalized native model/effort never becomes a generated session
   command or paste.
-- `supervisor.py` — the **260707-HFX2-L2** deterministic supervisor sweep, now also the
-  **260707-HFX2-L4** P-15 tier-3 ladder + dead-man-respawn host and the **260707-HFX2-L8**
+- `supervisor.py` — the deterministic supervisor sweep, also the
+  P-15 tier-3 ladder + dead-man-respawn host and the
   bounded dead-seat-storm terminator: `SupervisorContext` (the
   one seam every predicate/action reads through — stores + catalog/host/paster, injected directly,
-  never the projection, plus L4's `escalation_sla_seconds`/`escalation_rung_seconds`/
-  `respawn_after_rung` plain-primitive knobs and L8's `redeliver_budget`), the eight predicate functions
+  never the projection, plus the `escalation_sla_seconds`/`escalation_rung_seconds`/
+  `respawn_after_rung` plain-primitive knobs and `redeliver_budget`), the eight predicate functions
   (`evaluate_pane_findings`/`evaluate_expectation_findings`/`evaluate_turn_report_findings`/
   `evaluate_inbox_findings`/`evaluate_seat_liveness_findings`/`evaluate_escalation_findings`/
-  `evaluate_dead_upstream_findings`/`evaluate_ladder_terminal_findings`), the R4 action dispatcher (`act_on_finding` →
+  `evaluate_dead_upstream_findings`/`evaluate_ladder_terminal_findings`), the action dispatcher (`act_on_finding` →
   `_redeliver`/`_auto_nudge`/`_signal_emit`/`_escalate_rung`/`_signal_dead_upstream`/
   `_resolve_ladder_terminal`, each logging an
   `orchestration.supervisor.*` or `orchestration.escalation.rung` event), and `run_supervisor_sweep`
   (one in-sweep inbox snapshot/index → evaluate → bounded act → tick the heartbeat unconditionally,
   now including inbox backlog counts and last sweep duration). Gives `missing_artifact()` its first
-  caller; `mark_missed` stays the L2 sweep's own reserved transition, while `mark_escalated` and the
+  caller; `mark_missed` stays the sweep's own reserved transition, while `mark_escalated` and the
   ladder's own `advance_rung`/respawn/orphan-surfacing (via `escalation_ladder.py`/
   `orphan_policy.py`, governed by the `controlplane/` overview) are now genuinely landed here. Still
-  touches no `terminal_paste.py` internals. HFX2-L7 adds `_delivery_failure_still_retrying`, a
-  guard inside `evaluate_escalation_findings` that lets delivery-failure rows exhaust the redelivery
+  touches no `terminal_paste.py` internals. `_delivery_failure_still_retrying`, a
+  guard inside `evaluate_escalation_findings`, lets delivery-failure rows exhaust the redelivery
   threshold before the generic unacked ladder advances them.
-- `pane_signals.py` — the **260707-HFX2-L2** pane-state classifier (R2a): `classify_pane_signal`
+- `pane_signals.py` — the pane-state classifier: `classify_pane_signal`
   answers which of the four P-15 intervention triggers (`never-briefed`/`delivery-stalled`/
   `mid-turn`/`blocked`) a captured pane shows, reusing `terminal_paste.count_paste_chips` for the
   chip-count trigger. Distinct from `turn_state.py`'s `classify_turn_state` (a different question
-  over the same captured text — deliberately not merged). **260707-HFX2-L3** populated
-  `_HARNESS_BLOCKED_PATTERNS["codex"]` with the issue #20 quota/rate-limit modal markers and added
-  `blocked_reason_label` + `composer_state`, the two new signatures `harness_adapters.py` composes.
-- `supervisor_heartbeat.py` — the **260707-HFX2-L2** self-liveness primitive (R5, issue #15): an
+  over the same captured text — deliberately not merged).
+  `_HARNESS_BLOCKED_PATTERNS["codex"]` carries the issue #20 quota/rate-limit modal markers, and
+  `blocked_reason_label` + `composer_state` are the two signatures `harness_adapters.py` composes.
+- `supervisor_heartbeat.py` — the self-liveness primitive (issue #15): an
   atomic-overwrite single-row `SupervisorHeartbeatStore` (`logs/observer/workspace/
   supervisor-heartbeat.json`), `heartbeat_age_seconds`, and `supervisor_staleness_banner` (silent
   when never-ticked, a fail-loud one-liner past the staleness cutoff) — consumed by the MCP tool
-  choke point and the dashboard header payload. HFX2-L8 extends the heartbeat row with volatile
+  choke point and the dashboard header payload. The heartbeat row also carries volatile
   `pendingInboxCount`, `redeliverableInboxCount`, and `lastSweepDurationSeconds`.
-- `harness_adapters.py` — the **260707-HFX2-L3** per-harness delivery adapter (R2): `HarnessAdapter`
+- `harness_adapters.py` — the per-harness delivery adapter: `HarnessAdapter`
   (`boot_ready`/`composer_state`/`mid_turn`/`mid_turn_behavior`/`blocked_reason`/`turn_started`), a
   thin composition over `pane_signals.py`/`turn_state.py` with NO new pattern table of its own, plus
   `get_adapter` (named `CLAUDE_CODE_ADAPTER`/`CODEX_ADAPTER`, generic fallback for any other id) and
-  the NEW-HARNESS CHECKLIST (R4: a future harness is one adapter registration, never a new delivery
+  the NEW-HARNESS CHECKLIST (a future harness is one adapter registration, never a new delivery
   path).
-- `injector.py` — the **260707-HFX2-L3** ONE delivery path (R1 + R3): `deliver(row) -> {acked,
+- `injector.py` — the ONE delivery path: `deliver(row) -> {acked,
   landed-unacked, blocked(reason), failed(reason)}` — the four-way `DeliveryOutcome` contract every
   payload class (spawn briefs, inbox dispatch/nudge/redelivery/signal rows) now funnels through
   instead of two independent `TerminalPaster.paste` call sites. Wraps `TerminalPaster.paste`
   unchanged, reads `harness_adapters.get_adapter` for the blocked-check (against the FINAL capture)
-  and the turn-started corroboration, and never retries itself — retries stay the caller's (the L2
+  and the turn-started corroboration, and never retries itself — retries stay the caller's (the
   supervisor's) decision. `DeliveryRow`'s `envelope=False` on both current callers keeps the exact
   pre-existing wire format for the spawn-brief path and avoids double-heading the inbox path's own
   `_push_text` header.
@@ -970,14 +969,14 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 ## Invariants And Boundaries
 
-### Current L5 authority boundary
+### Current Authority Boundary
 
-- L9 conversation products are strict normalized contracts, not proof of a live projector,
+- The conversation products are strict normalized contracts, not proof of a live projector,
   historical store, control service, or renderer.
 - Active-transcript and conversation-library cursors are purpose-bound and non-interchangeable;
   status, capability, operation, attachment, and metric claims require their modeled evidence.
-- The route owns exactly two read ports and three owned child routers — all now implemented (active
-  L1, library L2, control L3), none behavior-empty. Production behavior lands in the owning child
+- The route owns exactly two read ports and three owned child routers — all now implemented (active,
+  library, control), none behavior-empty. Production behavior lands in the owning child
   without creating a second root registration seam.
 - Runtime observations and the locked native helper are evidence boundaries. Their versions and
   observed counts do not become feature flags or maintained capability declarations.
@@ -1054,57 +1053,56 @@ current hosted-session authority.
   The app decorates this authority but never performs a second current-state handoff.
 - **Sim is a seam, not a fork.** Only `now` + `coordination_root` differ from live, so the
   SSE output is byte-identical and replay is deterministic.
-- **Containment metrics are observation, not control (260707-HFX-L1 R4).** The lifespan's
+- **Containment metrics are observation, not control.** The lifespan's
   sampler is read-only + dockerless-safe, discovers stacks by ownership label (no settings
   needed, leftover stacks stay visible), runs on its own 30s cadence — never the projection
   tick — and never gates or launches providers; a failed pass logs and retries.
-- **Change-driven pacing changes when the projector wakes, never what a tick does
-  (260712-PTS-L3).** The tick body, prime, diff/broadcast, and ETag revision are untouched; a
+- **Change-driven pacing changes when the projector wakes, never what a tick does.**
+  The tick body, prime, diff/broadcast, and ETag revision are untouched; a
   busy world keeps the former `--interval` cadence (max-delay = interval + floor); a quiet
   world's `/api/state` staleness and time-derived fields advance at heartbeat resolution
   (default 15s); watcher absence or failure degrades LOUDLY to legacy fixed-interval ticking —
   fail-open, never fail-silent, never a crash. `--sim` replay is always time-driven, and an
   already-running daemon adopts the new pacing only through explicit stop + spawn.
-- **The supervisor sweep is stores-not-projections, code-not-model (260707-HFX2-L2 R1/R3).**
+- **The supervisor sweep is stores-not-projections, code-not-model.**
   `supervisor.py` imports nothing from `projector.py`/`observer/reducer.py`; every predicate reads
   its store directly. Own decoupled cadence (settings-controlled, default 10s), zero model calls
   anywhere in the loop, level-triggered (a missed action is caught by the next sweep). The
   heartbeat's staleness is a volatile age (same posture as `servingBuild`): never gates the
   `/api/state` ETag revision.
-- **Dead-seat storm termination is narrower than escalation (260707-HFX2-L8).** A pending row only
+- **Dead-seat storm termination is narrower than escalation.** A pending row only
   becomes `ladder-resolved` when it is both at the terminal rung and addressed to a provably dead/no-
   hosted-session seat. Live seats and rows still climbing stay pending; redelivery is merely bounded by
   budget/rate limit, not dropped.
-- **The escalation ladder never absorbs a dead owner's role (260707-HFX2-L4 R4, HFX-L6 capture
-  hardening).** A spawned seat with a dead owner continues its own brief and escalates to its
+- **The escalation ladder never absorbs a dead owner's role.** A spawned seat with a dead owner continues its own brief and escalates to its
   grandparent — `_signal_dead_upstream` only ever signals, never reassigns. Rung 3 (developer
   attention) is a hard ceiling: `escalation_ladder.rung_due` refuses to advance a row past it, so
   re-surfacing happens via the row's own rung-3 dwell SLA firing the same signal again, never a
   state change past the developer. Orphaned workers of a respawned manager are surfaced, never
   auto re-parented.
-- **Manual retirement is terminal; landed completion is inspectable archive (260707-HFX-L8/HFX2-L11).**
+- **Manual retirement is terminal; landed completion is inspectable archive.**
   A retire rides the EXISTING `status == "terminated"` catalog state plus provenance, so it composes
-  for free with the L5 liveness hysteresis (never resurrected) and the "never a zombie row" `list()`
+  for free with the liveness hysteresis (never resurrected) and the "never a zombie row" `list()`
   filter — no new interplay logic. Normal successful completion instead sets `status == "landed"` with
   landing provenance, keeps the row visible for dashboard/WebSocket inspection, and releases leaf
   ownership because active lookup is running-only. Retire authority is enforced server-side, never
-  trusted from the caller; refusals are loud and name the exact policy clause. Rename is identity text only — `spawn_role` (L6
-  role-seat immutability) never changes on a rename. Turn-state classification is best-effort and
-  fail-safe (an unreadable/blank pane classifies `stale`, never raises) — it rides the existing L5
+  trusted from the caller; refusals are loud and name the exact policy clause. Rename is identity text only — `spawn_role`
+  (role-seat immutability) never changes on a rename. Turn-state classification is best-effort and
+  fail-safe (an unreadable/blank pane classifies `stale`, never raises) — it rides the existing
   sweep cadence and classifies `kind == "harness"` rows only, never plain terminals.
 
 ## Docs References
 
-The resolved Domain Documentation registry has no configured entries for this route. L9's
+The resolved Domain Documentation registry has no configured entries for this route. The
 structured-conversation contract is grounded in repository code, tests, and redacted observations.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No configured domain documentation governed the L9 contract update. | — | — |
+| No configured domain documentation governed the structured-conversation contract update. | — | — |
 
 ## Cross-Repo References
 
-The L9 contract, helper package, fixtures, and tests are all owned by `agents-remember`; no
+The structured-conversation contract, helper package, fixtures, and tests are all owned by `agents-remember`; no
 neighboring repository governs this route.
 
 | Finding | Citations | Source Path |
@@ -1113,43 +1111,43 @@ neighboring repository governs this route.
 
 ## Repo-Internal References
 
-### Current L0E evidence substrate
+### Current Evidence Substrate
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The reserved `arEvidence` key, evidence DTOs, clip/window helpers, and structural native-page protocol define the substrate. | L57-L72; L310-L384; L494-L583 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page. | L85-L88; L168-L232; L440-L471 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| Three additive read actions cross only the private socket under the unchanged v1 protocol. | L198-L203; L286-L313 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| Strict client validation enforces disjoint coordinate domains, continuation coherence, and epoch continuity. | L286-L358; L576-L730 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The provenance batch reads the authority's existing records epoch-checked through the sole queue delegation. | L375-L412 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The reserved `arEvidence` key, evidence DTOs, clip/window helpers, and structural native-page protocol define the substrate; the DTOs also carry the multiplexing grammar (`AdapterSnapshot.pending_interactions`, `EvidenceFrame.thread_id`). | L57-L72; L217-L234; L456-L477; L770-L815 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page; `_evidence_thread_id` also stamps the per-thread demux key on every diverted frame. | L140-L207; L521-L585 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| Three additive read actions cross only the private socket under the unchanged v1 protocol. | L213-L218; L380-L401 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| Strict client validation enforces disjoint coordinate domains, continuation coherence, and epoch continuity; `read_control_native_page` takes the additive `threadId` selector and snapshots parse the plural `pendingInteractions`. | L342-L395; L863-L874; L1100-L1152 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The provenance batch reads the authority's existing records epoch-checked through the sole queue delegation. | L452-L489 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | The codex resume channel threads opener → runner payload → factory → the sole settings site with pre-spawn refusals. | L611-L621; L88-L105; L41-L58 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py); [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py); [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
 | Contract and installed-runtime suites pin the whole seam including no-leak, continuation, provenance, and resume. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py); [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
 
-### Current L2E control-plane substrate
+### Current Control-Plane Substrate
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | L75-L88; L184-L204; L314-L366; L768-L830 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | L255-L263; L385-L443; L1046-L1064 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The structural sub-protocols adapters opt into without a base-contract member. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | L241-L290 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The authority's paged never-bodies enumeration, eviction floor, pre-tombstone recovery capture, capability gate, and asset-conditional digest. | L436-L485; L515-L531; L1036-L1073 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | L212-L215; L252-L325; L449-L490 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The validated client helpers: `interrupt_control`, `read_operation_timeline` coherence/monotonicity/epoch validation, recovery parsing, additive submit assets. | L398-L450; L667-L790 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction. | L276-L342; L796-L818 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | L264-L328 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The authority's paged never-bodies enumeration, eviction floor, pre-tombstone recovery capture, capability gate, and asset-conditional digest; `respond` matches a response against the singular parent pending OR the plural sub-agent tuple with the active-operation guard explicitly parent-only. | L276-L321; L491-L531; L538-L590; L1130-L1151 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | L219-L225; L259-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The validated client helpers: `interrupt_control`, `read_operation_timeline` coherence/monotonicity/epoch validation, recovery parsing, additive submit assets. | L421-L444; L733-L760 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction; the adapter also owns the per-thread demux/registry, collab identity learning, multiplexed pendings, and degrade-never-fatal agent frames (detail in the file sidecar). | L321; L980 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Pi expected-operation-guarded `abort` with replay-once and verified base64 image content. | L393-L477 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
 | The content-less `message_end` evidence-only mapping (the abort's own shape) with preserved role strictness. | L226-L244 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
 | Contract and installed-runtime suites pin the whole seam; the fixtures record redacted `control-plane/*` rows without enabling anything. | L252-L1575; L126-L384 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py); [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
 
-### Current L9 evidence
+### Current Structured-Conversation Evidence
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1270 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1305 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | Exactly two protocol read ports separate active transcript reads from conversation-library reads. | L1-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
 | Three owned child routers compose beneath one stable root and one explicit registration function. | L1-L24 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The existing harness-control application factory mounts the conversation root once. | L1-L396 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 
-### Current MX-FIX-1 folded-state evidence
+### Current Folded-State Evidence
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
@@ -1168,39 +1166,39 @@ neighboring repository governs this route.
 | The `--config` → `McpRuntimeConfig` contract the CLI mirrors. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | The umbrella CLI entry that launches the server (and wires `--sim`). | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
 | The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
-| The containment metrics sampler + store the lifespan loop drives (260707-HFX-L1 R4). | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
-| The provider degradation detector the sampling loop now also calls once per tick (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The stores the supervisor sweep's predicates read directly (R3): expectation rows, operator inbox, orchestration nudges, supervisor signal cooldowns, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [controlplane/supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
+| The containment metrics sampler + store the lifespan loop drives. | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
+| The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
+| The stores the supervisor sweep's predicates read directly: expectation rows, operator inbox, orchestration nudges, supervisor signal cooldowns, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [controlplane/supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
 | The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
-| The MCP tool choke point that surfaces the supervisor staleness banner on every tool call (260707-HFX2-L2 R5). | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| The MCP tool choke point that surfaces the supervisor staleness banner on every tool call. | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 | The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py); [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py); [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 
-## Historical — 260712-TRH-L4 Route Impact (superseded hosted authority)
+## Historical Route Impact (superseded hosted authority)
 
 Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
 
 
-### 260713-PHA-L6 Current Capability Contract
+### Current Capability Contract
 
 Claude, Codex, and Pi production adapters launch the installed/current harness and validate the
 structured capabilities, messages, and fields they consume. Missing, malformed, or contradictory
 required evidence fails loudly; exact 2.1.207, 0.144.3, and 0.80.6 values are fixture/smoke
-evidence only. R9 rolling inbox compatibility remains limited to optional `adapterDeliveryState`
-and `adapterDeliveryDetail`; unrelated extras remain rejected. R10 resource performance is queued
+evidence only. Rolling inbox compatibility remains limited to optional `adapterDeliveryState`
+and `adapterDeliveryDetail`; unrelated extras remain rejected. Resource performance work is queued
 and not implemented or current behavior.
 
-### 260713-PHA-L6 Codex Completion Correlation
+### Codex Completion Correlation
 
 The Codex adapter owns the null-requestId/vendor-correlation mapping and terminal projection. It
 must consume structured protocol messages and fields and fail loudly on missing, non-text,
 unmatched, or ambiguous correlation evidence; exact 2.1.207, 0.144.3, and 0.80.6 values remain
 fixture/smoke evidence only. The matched row receives adapter completion metadata without explicit
 inbox consumption, and only an actual replacement permits `settling` / `queued`; otherwise the
-terminal snapshot is `idle` / `immediate`. R9 remains limited to optional `adapterDeliveryState`
-and `adapterDeliveryDetail`, with unrelated extras rejected. R10 remains queued and unimplemented.
+terminal snapshot is `idle` / `immediate`. Inbox compatibility remains limited to optional
+`adapterDeliveryState` and `adapterDeliveryDetail`, with unrelated extras rejected. Resource performance remains queued and unimplemented.
 
-### 260713-PHA-L5 Hosted Protocol Cutover
+### Hosted Protocol Cutover
 
 Claude, Codex, and Pi hosted sessions now launch through the shared bridge. Exact adapter snapshots
 govern readiness, delivery, liveness, interactions, and terminal projection. Durable inbox rows are
@@ -1209,14 +1207,35 @@ acknowledges receipt. Custom and already-running raw-TUI sessions are explicitly
 pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets stay additive and
 must remain synchronized.
 
-## 260718-CHATS-L5I Current Route Impact
+## Hot-Path Performance And Diagnostics Route Impact
 
-L5I makes the serving hot path both cheaper and more explicit: one published projection supplies the `/api/state` and snapshot body memo, per-response volatile fields are injected outside that memo, ordinary JSON is gzip-compressed while SSE stays streaming, and repository discovery is single-pass/TTL-cached. The route also adds bounded dashboard shutdown, opt-in heap diagnostics/allocator trimming, honest dirty-build marking, structured interaction responses, native Claude interrupt support, and capability-aware terminal frame synchronization.
+The serving hot path is both cheaper and more explicit: one published projection supplies the `/api/state` and snapshot body memo, per-response volatile fields are injected outside that memo, ordinary JSON is gzip-compressed while SSE stays streaming, and repository discovery is single-pass/TTL-cached. The route also adds bounded dashboard shutdown, opt-in heap diagnostics/allocator trimming, honest dirty-build marking, structured interaction responses, native Claude interrupt support, and capability-aware terminal frame synchronization.
 
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+Route indexes are intentionally not regenerated during a partitioned documentation pass; a single aggregate refresh runs after all ownership is complete. Existing verification metadata remains pre-commit.
+
+## Sub-Agent Multiplexing Route Impact
+
+Harness sub-agents became first-class across the control substrate: the bridge extracts
+`threadId` into every evidence frame (`_evidence_thread_id`; missing/malformed degrades to the
+parent thread, never guessed), snapshots carry the multiplexed `pending_interactions` tuple
+end-to-end (catalog column `control_pending_interactions` → hosted projection → API
+`pendingInteractions`; the singular slot stays the parent-thread entry), the authority's
+`respond` matches a response against the singular parent pending OR the plural sub-agent tuple
+with the active-operation guard explicitly parent-only, the codex adapter owns the per-thread
+demux/registry with collab identity learning and degrade-never-fatal agent frames, and claude
+launches with the floor-gated `--forward-subagent-text` (floor 2.1.220) only after `system/init`
+proves the floor. Every change is additive; single-thread sessions stay byte-identical.
+
+Route indexes are intentionally not regenerated during a partitioned documentation pass; a single aggregate refresh runs after all ownership is complete. Existing verification metadata remains pre-commit.
 
 ## Update History
 
+- 2026-07-26T15:52 — 260718-CHATS-L7 curator: recorded the sub-agent control-substrate changes
+  (evidence `thread_id` demux, plural pendings end-to-end, parent-only authority respond guard,
+  codex per-thread registry, claude floor-gated sub-agent text flag) and re-anchored the L0E/L2E
+  substrate citation ranges the L7 insertions shifted (verified against the current worktree
+  source). Aggregate route-index generation remains manager-owned; verification metadata stays
+  pinned (L7 uncommitted).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional fixes across

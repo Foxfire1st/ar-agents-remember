@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:45+02:00 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Projector-engine and store tests for 260718-CHATS-L1 (R2/R4): hydration, ordering, idempotence,
+Projector-engine and store tests: hydration, ordering, idempotence,
 provenance resolution, rehydration, and the review-fix gap mechanics — driven through a scripted
 in-memory bridge seam, plus the review-F1 tool-convergence proofs through the real mappers and
 store.
@@ -46,9 +46,9 @@ finding F3): an advancing eviction floor raises `ZipperEvidenceEvicted` for the 
 projector (mapped to one ordering-fault gap), does NOT gap the codex projector (totals clear
 honestly), and a fresh claude projector rehydrates from the remaining window without raising.
 
-### 260718-CHATS-L5 additions (H2 + F1 projector-tier regressions)
+### Projector-tier regressions (H2 model-validity + F1 project-once)
 
-Two proven-failure families extend `CodexEngineTests`, both driving the REAL L1 poll path and
+Two proven-failure families extend `CodexEngineTests`, both driving the REAL projector poll path and
 re-validating every emitted item — the surface the intermittent active-page 500 and the native
 twins actually reach:
 
@@ -66,7 +66,7 @@ twins actually reach:
   are the always-run (no opt-in) companions to the installed F1 real-wire regression in
   `test_conversation_control_installed.py`.
 
-### 260718-CHATS-L5F additions (R3 echo honesty + R5 dormant release)
+### Echo honesty and dormant release (R3 + R5)
 
 `ClaudeEngineTests` gains `test_nonuser_transcript_entries_mint_no_echo_unknown_vendor_rows` (R3):
 the echo poller now consumes only `role == "user"` transcript entries and advances past
@@ -74,9 +74,19 @@ assistant/result entries, so a mixed-role transcript no longer mints `claude:ech
 submission echo shape` unknown-vendor rows. A new `DormantReleaseTests` adds
 `test_release_dormant_state_frees_heavy_projection_and_retires_shell` (R5): when the poll loop goes
 idle the projector's `_release_dormant_state` clears the full heavy per-session state
-(`ProjectionStore` items, the L5 live-turn/request id sets, retention and pending frames) and
+(`ProjectionStore` items, the live-turn/request id maps, retention and pending frames) and
 retires the shell, so a dead session's state frees immediately on the idle-break instead of lingering
 as a registered tombstone until 32-LRU eviction.
+
+### Sub-agent binding regressions
+
+`ToolConvergenceTests` gains `test_reordered_task_started_tagging_never_regresses_a_terminal_phase`
+(L934-L1003, fix-round review finding 9): reordered claude evidence — the Agent `tool_result`
+settles the call BEFORE `task_started` binds the agent identity — keeps the terminal phase while
+the agent ref still lands through the real claude mapper and store. The dormant-release assertions
+follow the multiplexed sub-agent demux: `_live_turn_ids` / `_live_request_ids` are now per-thread
+DICTS (keyed by thread id), so the freed-state assertions compare against `{}` instead of empty
+sets.
 
 ### Conventions
 
@@ -91,7 +101,7 @@ parameters) is asserted too.
   sentinel — never silent loss.
 - Rehydration must reproduce items, revisions, and ordinals identically.
 - A resolved user item re-mapped by a native frame must stay model-valid (H2), and a live-settled
-  turn must project exactly once through the native re-walk (F1) — the L5 regressions drive the real
+  turn must project exactly once through the native re-walk (F1) — these regressions drive the real
   poll path and re-validate every emitted item, non-vacuous on stashed source.
 
 ### Todos
@@ -123,13 +133,20 @@ No cross-repository implementation participates in this suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260718-CHATS-L5I Current Delta
+## Hydrate/Page Recovery And Bounded Release Delta
 
 Active-service coverage now pins the updated hydrate/page/event recovery sequence and bounded release behavior. It verifies that a fresh page or a re-page after a dead stream remains server-cursor authoritative.
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the reordered-binder regression
+  (`test_reordered_task_started_tagging_never_regresses_a_terminal_phase` — fix-round finding 9:
+  an Agent tool_result settling before `task_started` keeps the terminal phase while the agent
+  ref still lands) and followed the dormant-release assertions to the L7 per-thread dict shape of
+  `_live_turn_ids`/`_live_request_ids`. Verification metadata stays pinned (uncommitted); closeout
+  re-stamps the candidate commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
