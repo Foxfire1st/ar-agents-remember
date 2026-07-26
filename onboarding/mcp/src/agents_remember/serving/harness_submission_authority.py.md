@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,8 @@ site), alongside the pre-tombstone withdrawal-recovery capture and the asset-car
 channel (capability gate, dispatch routing, additive digest extension, and receipt `assetIds`
 evidence). `respond` is multiplex-aware: interaction responses match against the parent-thread
 singular pending slot OR the plural sub-agent pending tuple, with the active-operation guard kept
-parent-only.
+parent-only — parent-ness decided by the matched entry's own THREAD, so a concurrent parent
+pending riding the plural tuple is guarded exactly like the singular slot.
 
 ## Code Commentary
 
@@ -41,15 +42,19 @@ receipt; such definitive completion dominates a later unknown observation. Respo
 a bypass lane but share each adapter's write lock. Status/withdrawal read only normalized state and
 never wait on vendor I/O while holding the lifecycle lock.
 
-The multiplex-aware `respond` (L276-L321) resolves an interaction response against TWO pending sets: the singular
-`snapshot.pending_interaction` (the parent thread's entry) and the plural
-`snapshot.pending_interactions` (multiplexed sub-agent entries). A response matching
+The multiplex-aware `respond` (L276-L334) resolves an interaction response against TWO pending sets: the singular
+`snapshot.pending_interaction` (the parent thread's OLDEST pending) and the plural
+`snapshot.pending_interactions` (multiplexed entries, including concurrent parent-thread pendings
+beyond the oldest — the adapter keeps a per-thread pending map). A response matching
 neither raises the same typed `HarnessInteractionNotPendingError` as before — the not-pending
-contract is unchanged, only the match set widened. The "active ordinary operation" guard is now
-explicitly parent-only (L295-L301): sub-agent pendings own no parent operation, so their responses
-cross to the adapter with `operation=None` (`replace(response, operation=operation)` at L309)
-instead of being refused for lacking an active record. The `_responded_interactions` dedupe and
-the post-response identity check apply uniformly to both classes.
+contract is unchanged, only the match set widened. Parent-ness is decided by the matched entry's
+own thread, not by which slot carries it (L287-L301): a singular-slot match is parent, and a tuple
+entry whose `raw.threadId` equals the snapshot's `vendor_session_id` is parent too, so a concurrent
+parent pending riding the tuple gets the "active ordinary operation" guard (L306-L311) exactly like
+the singular slot. Genuinely foreign (sub-agent) pendings own no parent operation, so their
+responses cross to the adapter with `operation=None` (`replace(response, operation=operation)` at
+L319) instead of being refused for lacking an active record. The `_responded_interactions` dedupe
+and the post-response identity check apply uniformly to both classes.
 
 Retention is bounded (timeline 64, duplicate/terminal ledger 256 by the configured defaults): live,
 active, and unknown rows are never evicted; terminal rows discard full prompt text while retaining
@@ -112,9 +117,11 @@ immediately before `_mark_terminal`, so the exact body crosses once inside the a
 - An interaction response must match a CURRENTLY pending entry — the singular parent slot or the
   plural multiplexed tuple; anything else is the same typed not-pending error as
   before multiplexing, and the already-responded dedupe covers both classes.
-- The active-operation guard in `respond` is parent-only by construction: sub-agent pendings own no
-  parent operation, so their responses carry `operation=None` to the adapter rather than inventing
-  or borrowing an operation ref.
+- The active-operation guard in `respond` is parent-only BY ENTRY THREAD: parent-ness is the
+  singular slot match OR a tuple entry whose `raw.threadId` is the session's vendor thread (a
+  concurrent parent pending riding the tuple is guarded exactly like the singular slot); genuinely
+  foreign sub-agent pendings own no parent operation, so their responses carry `operation=None` to
+  the adapter rather than inventing or borrowing an operation ref.
 
 ### Todos
 
@@ -133,13 +140,14 @@ repository-owned.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Records, locks, idempotent admission, dispatch/withdraw, exact completion, retention, the timeline read, and the recovery capture. | L56-L1098 | [harness_submission_authority.py](harness_submission_authority.py) |
+| Records, locks, idempotent admission, dispatch/withdraw, exact completion, retention, the timeline read, the recovery capture, and the entry-thread multiplexed respond. | L56-L1186 | [harness_submission_authority.py](harness_submission_authority.py) |
 | The queue module is now only a compatibility facade over this authority. | — | [harness_control_queue.py](harness_control_queue.py) |
 | The bridge wires direct adapter events here before coalesced publication. | — | [harness_control_bridge.py](harness_control_bridge.py) |
 | The API exposes raw-free authority/status/withdrawal projections. | — | [harness_control_api.py](harness_control_api.py) |
 | Dedicated tests exercise races, early completion, full-ref reuse, bounds, privacy, and epochs. | — | [../../../tests/test_harness_submission_authority.py](../../../tests/test_harness_submission_authority.py) |
 | The evidence contract suite exercises the provenance batch end-to-end through bridge → queue → authority → IPC → validated client, including all three sources, not-found, epoch mismatch, and the 1..64 uniqueness bound. | L463-L791 | [test_harness_control_evidence.py](../../../tests/test_harness_control_evidence.py) |
 | The control-plane contract suite exercises the timeline enumeration (all sources/kinds, paged union, eviction floor, 256-record budget edge), the asset channel (capability gate, digest conflict/dedupe, receipt `assetIds`), and the first-vs-replay recovery through this authority. | L773-L1010; L1175-L1268; L1397-L1473 | [test_harness_control_plane.py](../../../tests/test_harness_control_plane.py) |
+| The common conformance suite pins the multiplexed respond: respond-without-parent-operation for agent entries, the entry-thread operation guard for concurrent parent tuple entries, and the plural pending serialization round-trips. | L752-L928 | [test_harness_control.py](../../../tests/test_harness_control.py) |
 
 ## Cross-Repo References
 
@@ -163,6 +171,15 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the entry-thread parent guard in
+  `respond`: parent-ness is no longer which SLOT carries the entry (concurrent parent pendings
+  beyond the singular slot's oldest ride the plural tuple now that the adapter keeps a per-thread
+  pending map) — a tuple entry whose `raw.threadId` is the session's vendor thread gets the
+  active-operation guard exactly like the singular slot, while genuinely foreign agent entries
+  still cross with `operation=None`. Re-anchored the respond citations (L276-L334; guard
+  L306-L311; `replace(response, …)` L319) and the whole-file row (L56-L1186), and added the
+  conformance-suite row. Verification metadata stays pinned to the pre-commit source history until
+  closeout (the change is uncommitted).
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex-aware `respond` — match
   against singular parent pending OR plural sub-agent tuple, parent-only active-operation guard,
   `operation=None` for sub-agent responses, unchanged not-pending/dedupe/identity checks — in

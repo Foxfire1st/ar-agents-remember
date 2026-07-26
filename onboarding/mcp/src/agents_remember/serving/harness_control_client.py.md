@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-27T00:02+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,8 +26,9 @@ monotonicity/epoch/coherence validation, additive `assets` on `submit_control_pr
 withdrawal-recovery parsing. The evidence `nativeMethod` is deserialized on the frame round trip,
 and a control-socket connect failure maps to an honest "already exited" lifecycle note (unlinking
 the stale socket on `ECONNREFUSED`) instead of surfacing a raw `[Errno 111]`. The multiplexed
-control plane adds the per-thread `thread_id` selector on `read_control_native_page` and parses the
-plural `pendingInteractions` on snapshots.
+control plane adds the per-thread `thread_id` selector on `read_control_native_page`, parses the
+plural `pendingInteractions` on snapshots, and reads the optional evidence `threadId` wire key
+back into `EvidenceFrame.thread_id`.
 
 ## Code Commentary
 
@@ -60,9 +61,12 @@ continue the last frame) under the dedicated `EVIDENCE_PAGE_TIMEOUT_SECONDS = 35
 `read_submission_provenance` enforces exact result count/order, valid sources, and request-id echo.
 Every evidence response carries `bridgeEpoch`; a caller-supplied expected epoch that mismatches
 raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably. The
-optional evidence `nativeMethod` is deserialized on the frame round trip (L863-L874):
+optional evidence `nativeMethod` is deserialized on the frame round trip (L863-L867):
 a present value must be non-empty text or the read fails typed, so the projector receives the
-carried notification method the bridge preserved.
+carried notification method the bridge preserved. The optional evidence `threadId` rides the same
+frame parse (L868-L870, onto the frame at L878): a present value must be non-empty text or the
+read fails typed, and an absent key yields `None` — the parent thread — so the multiplexed demux
+key the models serialize reaches the projector verbatim.
 
 Two multiplex seams live here. `read_control_native_page` (L365-L395) gained the
 additive `thread_id` selector: it rides the payload as `threadId` only when set (L389-L390), so a
@@ -115,6 +119,9 @@ protocol bound, not an invented acceptance result.
   and the failure stays `may_have_sent=False` (retry-safe pre-write).
 - The evidence `nativeMethod` is parsed only when present and must be non-empty text; it is
   carried metadata, never a resend or acceptance signal.
+- The evidence `threadId` is parsed only when present and must be non-empty text; absent reads as
+  `None` = the parent thread, so the multiplexed demux key crosses the wire verbatim and is never
+  invented.
 - The snapshot's plural `pendingInteractions` is additive and optional: absent
   means `()` (the pre-multiplexing bridge shape), a present non-list fails typed, and every entry passes the
   same strict `_pending_interaction` validation as the singular parent slot.
@@ -179,6 +186,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence `threadId` parse — the
+  `_evidence_page` frame loop reads the optional wire key into `EvidenceFrame.thread_id`
+  (present-must-be-non-empty-text, L868-L870; assigned onto the frame at L878), so the multiplexed
+  demux key now survives the IPC round trip to the projector; absent yields `None` = the parent
+  thread, keeping the pre-multiplex read shape. Verification metadata stays pinned — the change is
+  uncommitted.
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `thread_id` selector on
   `read_control_native_page` (present-only `threadId` payload key) and the plural
   `pendingInteractions` snapshot parse (extracted `_pending_interaction` helper, absent-tolerant,

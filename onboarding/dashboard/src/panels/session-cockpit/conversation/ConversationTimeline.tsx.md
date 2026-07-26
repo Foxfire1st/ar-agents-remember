@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,35 +27,43 @@ navigation, and unknown-vendor run collapse — and no data/cursor logic.
 
 ### Logic
 
-- **ARIA honesty** (L337-L355, R5): `aria-posinset` is the item's server `globalOrdinal` (or the run's
-  first ordinal), NOT the array index; `aria-setsize` is emitted ONLY when `totalItems` is a known
-  number (`knownTotal`), else omitted and the older-paging button reads `Load older (total unknown)`
-  (L321). Every article is `aria-live="off"` (the surface owns announcements).
-- **Focus pinning** (L184-L194, F18): `rangeExtractor` pins the focused row AND unconditionally the
+- **ARIA honesty** (L1128, L1147, L1179-L1181, R5): `aria-posinset` is the item's server
+  `globalOrdinal` (or the run's first ordinal), NOT the array index; `aria-setsize` is emitted ONLY
+  when `totalItems` is a known number (`knownTotal`), else omitted and the older-paging button reads
+  `Load older (total unknown)` (L1147). Every article is `aria-live="off"` (the surface owns
+  announcements).
+- **Focus pinning** (L439-L464, F18): `rangeExtractor` pins the focused row AND unconditionally the
   last row (`rows.length - 1`), so a tabbable article always stays mounted even when both scroll out of
-  the virtual window — incoming data can never relocate focus to the container. `tabbable` (L342-L343)
-  gives the focused row, or the last row when nothing is focused, `tabIndex=0`.
-- **Bottom-follow** (L205-L232): `handleScroll` tracks `nearBottom` (within `BOTTOM_FOLLOW_PX=120`); a
-  new last row while near-bottom scrolls to end, otherwise increments `pendingUpdates` and shows the
-  NON-animated `N new updates` button (L369-L382). Older prepend restores the captured top stable row +
-  pixel offset (L234-L242, anchor-preserving paging).
-- **Widget-scoped keyboard nav** (L259-L289, §14.4/F14 accepted deviation): `onKeyDown` on the `feed`
+  the virtual window — incoming data can never relocate focus to the container. `tabbable`
+  (L1168-L1177) gives the focused row, or the last row when nothing is focused, `tabIndex=0`.
+- **Bottom-follow** (L638-L680, `BOTTOM_FOLLOW_PX=120` L44): `handleScroll` tracks `nearBottom`;
+  a new last row while near-bottom scrolls to end, otherwise increments `pendingUpdates` and shows the
+  NON-animated latest chip with the `N new updates` count (L1198-L1215). Older prepend restores the
+  captured top stable row + pixel offset (anchor-preserving paging).
+- **Widget-scoped keyboard nav** (L1033-L1060, §14.4/F14 accepted deviation): `onKeyDown` on the `feed`
   element (the ARIA feed pattern), NOT a global document handler. `]`/`[` move next/prev; `Home`/`End`
-  jump ends. The exclusion list is complete — `isEditableTarget` (L97-L105) skips
+  jump ends. The exclusion list is complete — `isEditableTarget` (L263-L271) skips
   `INPUT/TEXTAREA/SELECT/contentEditable` and any `closest('button,a,[contenteditable],.cm-editor')`;
-  `inOverflowRegion` (L107-L110) plus an active text selection make Home/End YIELD to labeled overflow
+  `inOverflowRegion` (L273-L276) plus an active text selection make Home/End YIELD to labeled overflow
   regions (`[role="group"], pre`) and to selections instead of hijacking them.
-- **Unknown-vendor run collapse** (L112-L148, L177): `groupUnknownVendorRuns` folds a run of ≥3
-  identical-summary unknown-vendor items into one de-emphasized expandable `unknown-run` row; members
-  stay addressable (`#ordinal · evidenceRef`), identity is never mutated. **L5P (R12):** the collapsed
-  run is now a dim mono GUTTER line (`runRow`/`runSummary`, `whiteSpace:nowrap` + ellipsis, full text in
+- **Operator scroll keys** (L111-L125): `OPERATOR_SCROLL_KEYS` — Home/End, PageUp/PageDown, ArrowUp,
+  Space, `[`/`]` — is the "the operator is scrolling this feed" set for the trusted-input restore
+  cancel (a programmatic clamp never carries input; consumed at L1099-L1105 beside the
+  wheel/touch/pointer listeners). ArrowDown is deliberately ABSENT: on a non-empty roster the
+  conversation surface hijacks ArrowDown into the agents line, so it is no longer a scroll key here
+  — PageUp/PageDown, `[`/`]` and the wheel remain the downward scroll paths. The set is EXPORTED for
+  the surface keyboard-contract tests.
+- **Unknown-vendor run collapse** (`groupUnknownVendorRuns` consumed at L356): a run of ≥3
+  identical-summary unknown-vendor items folds into one de-emphasized expandable `unknown-run` row;
+  members stay addressable (`#ordinal · evidenceRef`), identity is never mutated. The collapsed
+  run is a dim mono GUTTER line (`runRow`/`runSummary`, `whiteSpace:nowrap` + ellipsis, full text in
   `title`), and the copy is honest — `N unknown vendor events (same summary)` (was `N identical …
   events`): the members share a summary but each carries its OWN distinct evidence id, so "identical" was
   a copy lie against the visibly-skipping ids. The `show each` toggle (`runButton`) is a de-boxed
   underline text affordance (`flex:none` + `whiteSpace:nowrap`, V12) and expanded members indent under
   the summary (`runMember`, `paddingInlineStart:2ch`).
 
-### FB7 terminal-surface identity (260718-CHATS-L5P — the developer directive)
+### FB7 terminal-surface identity
 
 The conversation stage was the one surface that replaced an xterm viewport yet did NOT inherit the
 xterm "well" — it read as a generic web panel sharing the page background. This leaf gives it the
@@ -84,6 +92,9 @@ Claude Code / Codex TUIs, NOT first principles):
 - A tabbable article is always mounted (focused or default-last), so keyboard users never skip the feed.
 - Keyboard navigation is widget-scoped; printable `[`/`]` cannot live in the document registry without
   fighting the printable-suppression contract, and Home/End defer to labeled overflow regions/selections.
+- ArrowDown is never treated as an operator scroll key: the surface hijacks it into the agents line
+  on a non-empty roster, so the trusted-input restore cancel must not fire on it; downward scrolling
+  keeps working through PageDown, `]`, and the wheel.
 
 ## Docs References
 
@@ -99,12 +110,13 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, run collapse. | L160-L385 | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
+| Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, the scroll-key set, run collapse. | L356-L1223 | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
 | The pure unknown-vendor run grouping this feed renders. | — | [collapse.ts](collapse.ts) |
 | The kind dispatcher + stable accessible-name helper per article. | — | [ConversationItemView.tsx](ConversationItemView.tsx) |
 | The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads. | — | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The surface that mounts this feed and owns announcements + paging callbacks. | — | [ConversationSurface.tsx](ConversationSurface.tsx) |
+| The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line. | — | [ConversationSurface.tsx](ConversationSurface.tsx) |
 | The feed ARIA + default-closed diagnostics render suite. | — | [renderer.test.tsx](renderer.test.tsx) |
+| The surface keyboard-contract suite pinning the ArrowDown absence from the scroll-key set. | — | [ConversationAgentFocus.test.tsx](ConversationAgentFocus.test.tsx) |
 
 ## Cross-Repo References
 
@@ -125,6 +137,17 @@ measurement anchoring protects a reader's visible row during virtual-row size ch
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the updated scroll-key contract —
+  `OPERATOR_SCROLL_KEYS` is now EXPORTED (for the surface keyboard-contract tests) and ArrowDown is
+  deliberately absent from it because the conversation surface hijacks ArrowDown into the agents
+  line on a non-empty roster; PageUp/PageDown, `[`/`]`, ArrowUp, Home/End, Space, and the
+  wheel/touch/pointer remain the scroll/trusted-input paths. Also re-anchored the card's line
+  citations, which had drifted from the current file layout (the file is 1223 lines): ARIA honesty
+  L1128/L1147/L1179-L1181, focus pinning L439-L464, tabbable L1168-L1177, bottom-follow
+  L638-L680 + latest chip L1198-L1215, widget nav L1033-L1060 with `isEditableTarget` L263-L271 and
+  `inOverflowRegion` L273-L276, run-collapse consumption L356, and the reference row L356-L1223.
+  Verification metadata stays pinned at the file's last committed touch (`842b487`); the scroll-key
+  change is uncommitted.
 - 2026-07-24T13:17:17Z — Curator: documented restored scroll intent, trusted-input precedence,
   late-clamp protection, latest navigation, and measurement anchoring; verification fields remain
   pre-commit.

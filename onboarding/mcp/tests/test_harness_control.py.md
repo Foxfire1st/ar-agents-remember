@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,11 @@ active-operation guard must not strand it: the response routes to the adapter wi
 attached, the answered entry settles out of the plural tuple, and an unknown interaction id is
 still refused (`HarnessInteractionNotPendingError`) without reaching the adapter. The fake
 adapter's `respond` now settles the answered multiplexed entry out of `pending_interactions` too.
-`test_multiplexed_pending_interactions_serialize_through_every_surface` (L808-L866) round-trips the
+`test_parent_thread_tuple_entry_gets_the_operation_guard` (L808-L866) pins the entry-thread
+parent rule: a concurrent PARENT pending riding the plural tuple (the adapter's per-thread
+pending map makes that normal traffic) gets the active-operation guard exactly like the singular
+slot — answering it operation-free is refused — while the agent tuple entry still answers without
+one. `test_multiplexed_pending_interactions_serialize_through_every_surface` (L868-L928) round-trips the
 plural pending tuple through every wire: `snapshot_json` carries both the singular
 `pendingInteraction` (back-compat) and the additive `pendingInteractions`; the control client
 parses the additive field back and defaults a pre-multiplexing bridge (key absent) to the empty tuple; the
@@ -105,7 +109,9 @@ messages over transport timing heuristics.
   durable-bus recovery must converge without invoking terminal paste.
 - Multiplexed sub-agent approvals answer through the authority without a parent operation; the
   singular parent pending slot stays back-compatible, the plural tuple is additive on every wire,
-  and an empty multiplex never serializes the additive key (R6).
+  and an empty multiplex never serializes the additive key (R6). Parent-ness follows the entry's
+  own thread: a concurrent parent pending riding the tuple gets the active-operation guard exactly
+  like the singular slot.
 
 ### Todos
 
@@ -162,6 +168,13 @@ Harness-control coverage now includes the expanded structured interaction/contro
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the entry-thread parent-guard pin
+  (`test_parent_thread_tuple_entry_gets_the_operation_guard`, L808-L866): a concurrent parent
+  pending riding the plural tuple gets the active-operation guard like the singular slot while an
+  agent entry answers operation-free. Re-anchored the serialization round-trip (L808-L866 →
+  L868-L928) and extended the R6 invariant. Verification metadata stays pinned (uncommitted);
+  closeout re-stamps the candidate commit.
 
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the multiplexed sub-agent approval
   authority cases (R6) — respond-without-parent-operation with unknown-id refusal, and the plural

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,52 +21,58 @@ one `role="feed"` timeline. It reads the reconstructable store (never a fixture 
 honest reconnect/failure states, drives revision-keyed announcers that stay SILENT during
 replay/hydration (§14.2), and exposes the global thinking toggle, the ambient telemetry chips, and the
 live/history capability CUES (§10.2, R11). It also owns the **sub-agent focus
-model** (R7): the roster-derived focus that filters the timeline to one agent's lane, cycled from the
-keyboard with the Claude Code agents-view precedent. It owns no data/paging/cursor logic — the
-store/reducer do.
+model** (R7, reworked): the roster-derived focus that filters the timeline to one agent's lane,
+reached primarily by the uniform ArrowDown hijack INTO the agents line (the Claude Code sub-agent
+navigation model), with ArrowLeft/ArrowRight cycling and Escape returning as additional paths. It
+owns no data/paging/cursor logic — the store/reducer do.
 
 ## Code Commentary
 
 ### Logic
 
-- **Store reads** (L111-L132): `useActiveConversation` selects the session projection and its typed
+- **Store reads** (L107-L133): `useActiveConversation` selects the session projection and its typed
   `errorBySession` reason; `items` is the materialized ordered list (`orderedItemIds.map`).
-- **Sub-agent focus model (R7)** (L134-L145): `storedAgentFocus` reads the
+- **Sub-agent focus model (R7)** (L135-L143): `storedAgentFocus` reads the
   LRU-surviving `agentFocusBySession` entry; `agents = deriveAgents(items)` derives the roster from
   projection evidence only; `agentFocus = effectiveAgentFocus(stored, agents)` is NEVER the stored
   value applied blindly — a rehydrated projection without that agent honestly falls back to the
   parent conversation; `focusedItems = filterItemsForFocus(items, agentFocus)` yields the lane the
   timeline renders.
-- **Focus keys** (L163-L185, the Claude Code agents-view precedent): the surface root's `onKeyDown`
-  cycles ArrowLeft/ArrowRight through parent → agent 1 → … → agent N → parent (`cycleAgentFocus`),
-  and Escape returns to the parent. `ownsAgentFocusKeys` (L78-L88) yields the keys to
+- **Focus keys** (L160-L191, the Claude Code sub-agent navigation model): the surface root's
+  `onKeyDown` handles FOUR keys. ArrowDown ANYWHERE on the surface (feed article AND scroll
+  viewport — one uniform hijack, `surfaceRef` L113/L265) moves DOM focus INTO the agents line when
+  the roster is non-empty — the primary sub-agent path; the line owns Enter/menu from there and
+  ArrowUp from the line returns focus to the timeline's tabbable row. ArrowLeft/ArrowRight cycle
+  parent → agent 1 → … → agent N → parent (`cycleAgentFocus`) as an additional path, and Escape
+  returns to the parent. `ownsAgentFocusKeys` (L74-L84) yields the keys to
   editable/interactive targets — input/textarea/select/contentEditable, or anything inside
   `button, a, pre, [role='group'], .cm-editor` — the same exclusion discipline the feed's own
   navigation uses.
-- **`applyAgentFocus`** (L147-L161): writes the store via `setAgentFocus`, then announces politely
+- **`applyAgentFocus`** (L144-L159): writes the store via `setAgentFocus`, then announces politely
   (`viewing <label>` / `viewing parent conversation`) ONLY when the surface is visible — a hidden
   keep-alive surface never voices an operator action it did not see.
-- **Announcer discipline** (L188-L211, §14.2/F21): status announcers key on `(state + revision)` and
+- **Announcer discipline** (L196-L220, §14.2/F21): status announcers key on `(state + revision)` and
   fire ONLY when `projection.lastAppliedDelivery === "live"` — hydration/re-page (delivery `replay` or
   the `undefined` fresh-hydration case) updates the store WITHOUT announcing. `failed` → assertive
   `turn failed`; `ready` → polite `response complete`; process `disconnected` → assertive. Stream-phase
-  transitions (L214-L225) politely announce `reconnecting` / `re-syncing history` once per phase.
-- **First-connect failure** (L227-L239, F15): with no projection yet, the surface renders
+  transitions (L222-L236) politely announce `reconnecting` / `re-syncing history` once per phase.
+- **First-connect failure** (L238-L251, F15): with no projection yet, the surface renders
   `ConversationReconnect` carrying the typed `routeError.detail` (honest reason, never a generic
   message).
-- **Capability cues (R11)** (F13): the always-visible italic `history: <reason>` note
+- **Capability cues (R11)** (L252-L261, F13): the always-visible italic `history: <reason>` note
   div is GONE. The offending history capability (tool details first, then overall completeness) is
   selected as `historyCapability` and rendered through `CapabilityReason` with `label="history"` INSIDE
   the toolbar; the live-completeness cue likewise carries `label="live"`. Each cue shows only the
   one-word state (`history partial`, `live unavailable`) with the exact server reason behind hover
   (`title`) — the implementation-jargon paragraph never owns above-the-fold chrome (A3). The
   `history-completeness-note` testid now wraps the history cue (not the removed div).
-- **Toolbar** (L255-L287): thinking toggle (`thinkingPreferenceStore`), a `terminal diagnostics`
+- **Toolbar** (L269-L307): thinking toggle (`thinkingPreferenceStore`), a `terminal diagnostics`
   opener, `AmbientTelemetry` (keyed on `status.revision`), and the live + history capability cues above.
-- **Agents strip + focus bar** (L294-L309): `AgentsArea` mounts above the timeline with the derived
-  roster and the effective focus; while focused, a `conversation-agent-focus-bar` carries the
-  `← back to parent conversation` button and a `viewing <label>` note.
-- **Empty vs timeline** (L310-L334): the timeline receives `focusedItems`; `totalItems` is passed
+- **Agents strip** (L308-L310): `AgentsArea` mounts above the timeline with the derived roster and
+  the effective focus. The area owns the whole compact line — the count chip plus, in an agent
+  view, the viewing note and the `← back to parent conversation` affordance; the surface's own
+  focus bar is deleted.
+- **Empty vs timeline** (L312-L337): the timeline receives `focusedItems`; `totalItems` is passed
   only when unfocused (a focused lane's count is not the server's total, so the honest-total
   contract stays intact). An empty live conversation shows the `ConversationWelcome` when unfocused
   (A1); a focused lane with no evidence shows `no evidence from <label> yet` instead — never the
@@ -81,6 +87,9 @@ store/reducer do.
   live roster, so stale focus honestly degrades to the parent view.
 - The focus keys never fire from editable/interactive targets (composer, buttons, overflow regions,
   code blocks).
+- The ArrowDown hijack is UNIFORM (feed article and scroll viewport alike) and focus-only: it
+  moves DOM focus into the agents line without switching the view; the feed keeps
+  PageUp/PageDown scrolling and `[`/`]` row moves (ArrowDown is no longer a scroll key there).
 - The surface reads the store projection and NEVER a fixture or a second authority.
 - The reason shown on a failure is the server's typed reason, not a fabricated calm.
 - Data/paging/cursor logic stays in the reducer/store; this file is presentation + announcer only.
@@ -99,13 +108,13 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Surface shell, focus model + keys, announcer discipline, capability cues, agents strip, focus bar, timeline mount. | L90-L337 | [ConversationSurface.tsx](ConversationSurface.tsx) |
+| Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount. | L86-L338 | [ConversationSurface.tsx](ConversationSurface.tsx) |
 | The roster/focus primitives this surface composes (`deriveAgents`, `effectiveAgentFocus`, `cycleAgentFocus`, `filterItemsForFocus`). | L11-L16 | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts) |
 | The reconstructable store + older-paging + scroll-anchor writers + `agentFocusBySession`/`setAgentFocus` this surface reads/writes. | L17-L24 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts) |
 | The `live`-delivery flag the announcers gate on. | — | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts) |
 | The shared polite/assertive announcer store. | — | [../../../data/announcer.ts](../../../data/announcer.ts) |
-| The sub-agents strip, the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. | — | [AgentsArea.tsx](AgentsArea.tsx) · [ConversationTimeline.tsx](ConversationTimeline.tsx) · [ConversationReconnect.tsx](ConversationReconnect.tsx) · [AmbientTelemetry.tsx](AmbientTelemetry.tsx) · [primitives.tsx](primitives.tsx) |
-| The surface-level focus-cycling/filtering/Esc suite. | — | [ConversationAgentFocus.test.tsx](ConversationAgentFocus.test.tsx) |
+| The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. | — | [AgentsArea.tsx](AgentsArea.tsx) · [ConversationTimeline.tsx](ConversationTimeline.tsx) · [ConversationReconnect.tsx](ConversationReconnect.tsx) · [AmbientTelemetry.tsx](AmbientTelemetry.tsx) · [primitives.tsx](primitives.tsx) |
+| The surface-level focus-cycling/filtering/Esc/hijack suite. | — | [ConversationAgentFocus.test.tsx](ConversationAgentFocus.test.tsx) |
 | The persisted hide-thinking preference. | — | [../../../data/conversation/thinkingPreference.ts](../../../data/conversation/thinkingPreference.ts) |
 
 ## Cross-Repo References
@@ -127,6 +136,13 @@ projection state.
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent navigation rework —
+  the uniform ArrowDown hijack (feed article AND scroll viewport) moving DOM focus INTO the
+  agents line as the primary path (the line owns Enter/menu; ArrowUp from the line returns focus
+  to the timeline's tabbable row), ArrowLeft/ArrowRight cycling kept as an additional path, the
+  surface-owned focus bar DELETED (the agents line now carries the viewing note + back-to-parent
+  affordance), and `surfaceRef` added for the hijack target. Re-anchored every line citation
+  against the post-rework source. Verification stays pinned (uncommitted); closeout re-stamps.
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the R7 sub-agent focus model —
   `storedAgentFocus` → `deriveAgents` → `effectiveAgentFocus` (never applied blindly; stale focus
   falls back to the parent), `filterItemsForFocus` driving the timeline, the ArrowLeft/ArrowRight/Escape

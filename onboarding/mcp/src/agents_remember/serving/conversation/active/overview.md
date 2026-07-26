@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-26T15:52 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 
 ## What This Area Is
 
@@ -177,8 +177,12 @@ in the sibling `projectors/` route.
   un-hardened boundary.
 - Multiplexing: the engine demuxes every evidence/native-page frame by its verbatim
   `thread_id` into parent vs sub-agent buckets (`None`/parent id = parent, byte-identical to
-  the pre-multiplexing behavior); twin suppression (F1) and pending-interaction projection run PER THREAD, and only the
-  parent's pendings fill the singular slot. Malformed agent-thread frames degrade to agent-tagged
+  the pre-multiplexing behavior); twin suppression (F1) and pending-interaction projection run PER THREAD. The
+  singular slot carries the parent's OLDEST pending; EVERY tuple entry projects (agent entries
+  labeled, concurrent parent-thread entries beyond the oldest plainly — the adapter keeps a
+  per-thread pending map, so concurrent parent pendings are normal traffic), the singular-slot
+  entry is never double-projected, and a slot ROTATION resolves the evicted id while the id
+  rotated into the slot stays live under the singular path. Malformed agent-thread frames degrade to agent-tagged
   unknown-vendor evidence — never stream-fatal, never leaked into the parent's view. Agent identity
   is fill-only from registry evidence, never fabricated; unmapped statuses stay `unknown`. The
   thread-scoped `refresh_agent_native` walk is a latent seam with no production caller yet, bounded
@@ -284,7 +288,10 @@ The projection engine is now multiplexed: every evidence/native-page frame is de
 verbatim `thread_id` into parent vs sub-agent buckets, twin suppression (F1) and
 pending-interaction projection run PER THREAD, malformed agent-thread frames degrade to
 agent-tagged unknown-vendor evidence (never stream-fatal, never leaked into the parent's view),
-and only the parent's pendings fill the singular slot. The store gained roster-aware upsert
+and the singular slot carries the parent's OLDEST pending while every tuple entry projects —
+concurrent parent-thread pendings beyond the oldest project plainly (no agent ref) now that the
+adapter keeps a per-thread pending map, and a singular-slot ROTATION resolves the evicted id with
+the rotated id staying live under the singular path. The store gained roster-aware upsert
 guards (terminal-phase no-regression on block-less lifecycle tagging upserts; roster-notice
 final-message first-wins retention). The thread-scoped `refresh_agent_native` walk is a latent
 seam with no production caller yet. The two routes, cursor authority, per-app service, and
@@ -294,6 +301,13 @@ Route indexes are intentionally not regenerated during this partitioned curator 
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the concurrent-parent-pending
+  projection rework — every tuple entry projects (concurrent parent-thread entries beyond the
+  singular slot's oldest plainly, never skipped for matching the projection's thread id), the
+  singular slot carries the parent's OLDEST pending, and a slot ROTATION resolves the evicted id
+  while the rotated id stays live under the singular path. The two routes, cursor authority,
+  service, and status contract are unchanged. Aggregate route-index generation remains
+  manager-owned; verification metadata stays pinned (remediation uncommitted).
 - 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the multiplexed engine (per-thread
   demux/F1/pendings, degrade-not-fatal agent frames, fill-only agent identity, latent
   `refresh_agent_native`) and the store's roster-aware upsert guards; refreshed the Hot Path

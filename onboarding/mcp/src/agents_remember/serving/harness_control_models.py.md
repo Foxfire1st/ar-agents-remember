@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:36 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-27T00:02+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,9 @@ only when present, so a diverted notification's native method survives to the pr
 metadata instead of being stripped at the bridge. The multiplexed sub-agent grammar adds
 `AdapterSnapshot.pending_interactions` (plural, serialized as `pendingInteractions`) for approvals
 raised on non-parent threads, and `EvidenceFrame.thread_id` as the demux key that tells the serving
-layer which native thread one multiplexed evidence frame belongs to.
+layer which native thread one multiplexed evidence frame belongs to — a demux key
+`evidence_frame_json` now carries onto the evidence IPC wire as the optional `threadId` key
+(present only when the field is set, so parent-thread frames keep the pre-multiplex wire shape).
 
 ## Code Commentary
 
@@ -122,9 +124,12 @@ key beside the untouched singular one (L603-L607), so consumers that predate mul
 exactly the parent entry they always saw. `EvidenceFrame.thread_id` (L471-L477) is the demux key:
 codex auto-attaches sub-agent thread listeners to the seat's connection, so one evidence stream
 carries many threads and `None` means the parent/session thread (matching pre-multiplexing behavior); Claude
-encodes its sidechain join key (`parent_tool_use_id`) inside `raw` instead. Note that
-`evidence_frame_json` (L613-L622) does NOT serialize `thread_id` as its own wire key — the demux is
-consumed in-process by the bridge/serving projection, and the wire frame shape stays byte-identical.
+encodes its sidechain join key (`parent_tool_use_id`) inside `raw` instead.
+`evidence_frame_json` (L613-L624) serializes `thread_id` as the optional `threadId` wire key only
+when it is non-None (L622-L623) — the multiplexed demux key finally crosses the evidence IPC wire;
+parent frames carry no key, so the pre-multiplex wire shape stays byte-identical. (The recorded
+root cause of the earlier in-process-only gap: a dashboard-side projector received every evidence
+frame as thread-less and bound all agent content to the parent conversation.)
 
 The 256-char ceiling is a fail-safe, not a formatting bound. Every preserved field is a protocol
 enum (pi `stopReason`, codex turn `status`), a frame-type name, or a vendor turn id — a handful of
@@ -185,10 +190,12 @@ byte-identically to before.
 - The multiplexing grammar is back-compat by construction: the singular `pending_interaction`
   slot stays the parent-thread entry, the plural `pending_interactions` defaults to the empty tuple
   and is serialized as the additive `pendingInteractions` key only, and `EvidenceFrame.thread_id`
-  defaults `None` = the parent/session thread — pre-multiplexing consumers and wire shapes are unchanged.
+  defaults `None` = the parent/session thread — parent-thread frames keep the exact pre-multiplex
+  wire shape, and agent frames carry only the one additive optional `threadId` key.
 - `thread_id` is a demux key, never authority: this module carries it verbatim (the bridge extracts
-  it from diverted raw evidence), `evidence_frame_json` does not serialize it as its own wire key,
-  and a missing/`None` value always reads as the parent thread — no consumer may invent a thread.
+  it from diverted raw evidence), `evidence_frame_json` emits it as the additive optional
+  `threadId` wire key only when present, and a missing/`None` value always reads as the parent
+  thread — no consumer may invent a thread.
 
 ### Todos
 
@@ -247,6 +254,13 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence-wire demux fix —
+  `evidence_frame_json` now emits the optional `threadId` key when `EvidenceFrame.thread_id` is
+  set (L622-L623), so the multiplexed demux key crosses the evidence IPC wire; parent frames carry
+  no key and the pre-multiplex wire stays byte-identical. Recorded the root cause (a dashboard-side
+  projector received every frame thread-less and bound all agent content to the parent) and
+  corrected the two body statements that claimed the key was deliberately unserialized.
+  Verification metadata stays pinned — the change is uncommitted.
 - 2026-07-26T15:36 — 260718-CHATS-L7 curator: documented the multiplexed sub-agent grammar —
   `AdapterSnapshot.pending_interactions` (L226-L234) serialized as the additive
   `pendingInteractions` key in `snapshot_json` (L603-L607) with the singular slot kept as the
