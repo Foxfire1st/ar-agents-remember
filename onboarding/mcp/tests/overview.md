@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -217,13 +217,18 @@ content-hash regeneration without manual asset edits.
 The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared
 codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24
 bridge-death incident regression — three sub-agents mid-turn, multiplexed approvals answered by
-request-id, collab identity binding, degrade-not-die, native-page thread demux),
+request-id, collab identity binding, degrade-not-die, native-page thread demux — plus the
+remediation pins: concurrent parent pendings answered per id with the oldest in the singular
+slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed
+event queue with its honest `ar/load-shed` notice),
 `test_conversation_projector_codex_agents.py` (roster/multiplexed projection/per-thread twin-suppression
-dedupe/plural pendings in one cursor domain), `test_conversation_projector_claude_agents.py`
+dedupe/plural pendings in one cursor domain, incl. concurrent-parent projection and the
+singular-rotation resolution), `test_conversation_projector_claude_agents.py`
 (`parent_tool_use_id` sidechain binding, `task_*` roster lifecycle, the fail-closed
 `--forward-subagent-text` floor), and `test_conversation_library_agents.py` (both harnesses'
 agent grouping with visible `agents_note` degrade and nested-agent naming). Authority-level
-multiplexed respond + plural-pending serialization round-trips extend `test_harness_control.py`;
+multiplexed respond + plural-pending serialization round-trips extend `test_harness_control.py`
+(incl. the entry-thread operation guard for concurrent parent tuple entries);
 the flag-floor probe/relaunch flow extends `test_harness_control_claude.py`; the reordered
 `task_started` binder pin extends `test_conversation_active_service.py`; the additive agent
 fetch at the fake boundary extends `test_conversation_library_ports.py`.
@@ -492,6 +497,15 @@ extensions (plural-pending authority + serialization, flag-floor probe/relaunch,
 binder pin, the additive fake-boundary agent fetch). Native-helper sub-agent enumeration and the
 agent transcript read are covered at the Python port boundary in
 `test_conversation_library_agents.py`; the helper's own Node suite is unchanged.
+The remediation adds twelve pins: nine in the demux suite (concurrent parent server requests
+answered per id with the oldest in the singular slot, the method-first degrade split —
+experimental/unknown METHODS decline + degrade on the parent while known-method malformed shapes
+and boolean rpc ids still fail loud, the bounded pending map declining only the newest request,
+and the load-shed queue's delta-shed/consumer-mint/notice-before-sentinel ordering), two in the
+codex-agents projector suite (concurrent-parent projection with plain parent entries, the
+singular-rotation resolution semantics), and one in `test_harness_control.py` (the entry-thread
+operation guard for concurrent parent tuple entries); the legacy experimental-request case in
+`test_codex_app_server_adapter.py` flips to decline-not-fail with the decline itself unchanged.
 Verification metadata remains pre-commit.
 
 ## Serving Performance And Quality-Gate Route Impact
@@ -499,6 +513,14 @@ Verification metadata remains pre-commit.
 The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
 
 ## Update History
+
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent surface remediation
+  regression pins — nine new demux-suite tests (concurrent parent pendings, method-first degrade,
+  bounded pending map, load-shed queue), two codex-agents projector tests (concurrent-parent
+  projection, singular rotation), one `test_harness_control.py` guard test, and the flipped
+  decline-not-fail experimental-request case in `test_codex_app_server_adapter.py`; Hot Path
+  Summary and route-impact sections updated. Verification metadata stays pinned (remediation
+  uncommitted).
 
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: added the harness sub-agent regression set —
   the NEW shared `_agent_wire_fixtures.py` and five NEW focused suites (thread demux, codex

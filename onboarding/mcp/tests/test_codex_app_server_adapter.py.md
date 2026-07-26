@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,6 +68,14 @@ hidden models and their model-specific effort menus, leaves current selections u
 thread exists, and proves discovery never calls `thread/*` or `turn/*`. A repeated pagination cursor
 fails loudly and still forces the transient app-server process to stop.
 
+The experimental server-request case (`test_experimental_server_request_fails_instead_of_enabling_experimental_api`,
+L1078-L1118) pins the remediation contract: an unknown/experimental request METHOD is still
+DECLINED (`respond_error` -32601 — no experimental API is ever enabled), but the failure contract
+deliberately changed: the method is vendor traffic that degrades to preserved raw evidence on any
+thread, so the bridge stays `ready` with nothing left outstanding instead of marking `failed`
+(multiplexed seats make new request types routine). The deeper method-first matrix (unknown vs
+known-malformed vs boolean-rpc-id) lives in `test_codex_adapter_thread_demux.py`.
+
 ### Conventions
 
 Tests use `pytest` with the AnyIO asyncio backend. `FakeCodexTransport` deep-copies protocol values
@@ -93,6 +101,8 @@ schema evidence for the tests, not a production version enum or fallback catalog
   same thread and transport.
 - Existing reconnect coverage requires `resend: false`, and the tests do not register a production
   driver or exercise pane/log readiness.
+- An experimental request type is declined, never enabled — and the decline is a degrade (bridge
+  stays `ready`), not a bridge failure.
 
 ### Todos
 
@@ -121,11 +131,12 @@ thread-free discovery contract.
 | Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | L611-L681 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
 | Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | L684-L794 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
 | Idempotent setters return immediate without falsely claiming an effective echo. | L797-L810 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | L88-L126 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| The experimental-request case pins the decline-not-fail remediation contract. | L1078-L1118 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | L137-L190 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | L173-L208; L311-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | L153-L208 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | L220-L272 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | L344-L415 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | L226-L313 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | L314-L355 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | L519-L615 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Session state validates dynamic model-local effort, separates desired from effective state, promotes only an accepted selection, and guards settings notifications against unrelated drift. | L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
 | The fixture path remains an explicit test baseline rather than a runtime catalog source. | L27-L29 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
 
@@ -147,6 +158,14 @@ synchronous and async correlation maps are bounded.
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the deliberately changed
+  experimental-request failure contract — the decline is unchanged (`respond_error` -32601, no
+  experimental API), but an unknown/experimental request METHOD now degrades to preserved evidence
+  with the bridge `ready` instead of marking it `failed` — and added the matching invariant plus a
+  reference row (L1078-L1118). Re-anchored the four adapter-source citations the remediation
+  shifted (L88-L126 → L137-L190; L153-L208 → L226-L313; L220-L272 → L314-L355; L344-L415 →
+  L519-L615). Verification metadata stays pinned at the file's last committed touch; the adapter
+  change itself is uncommitted.
 - 2026-07-17T21:39+02:00 — FEUI-L5: replaced busy-queue/steer expectations with fresh-turn,
   exact-ref, early-completion, cleanup, id-reuse, and bounded-correlation proofs.
 

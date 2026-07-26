@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,46 +16,73 @@
 
 ## Purpose
 
-The sub-agents area (R7): the small persistent strip above the timeline with one
-live row per roster-evidenced agent — label, status chip, and the final-message preview once
-terminal. It renders ONLY from projection roster evidence (`deriveAgents`): no optimistic rows, no
-polling. With no agents, or while the surface is narrow, it collapses to a single summary line
-(`N agents · M running`) that expands on activation.
+The sub-agents area (R7, reworked): ONE compact line above the timeline — always, never one row
+per agent (the Claude Code sub-agent navigation model). The line carries the tone-colored count
+chip (`N agents · M running`), plus `viewing <label>` and a back-to-parent affordance while an
+agent view is active. Activating the line opens the agent menu: a small listbox overlay with one
+option per roster agent (label, word-carrying status chip, terminal final-message preview). It
+renders ONLY from projection roster evidence (`deriveAgents`): no optimistic rows, no polling.
 
 ## Code Commentary
 
 ### Logic
 
-- **Summary line** (L105-L110, L144-L159): `summaryText` renders `0 agents` for an empty roster
-  (a STATIC `summaryStatic` span — nothing to expand, so no dead toggle) or `N agent(s) · M running`.
-  With agents present the summary is a real `<button aria-expanded aria-controls>` whose click sets
-  the expand `override`.
-- **Narrow collapse** (L15, L112-L125, L137-L140): a `ResizeObserver` flips `narrow` below
-  `NARROW_PX` (560px). The `override` state (null = no explicit operator choice) makes the default
-  `expanded` iff agents exist AND the width allows; an operator toggle wins over the width heuristic.
-- **Agent rows** (L160-L196): one button per agent — the ellipsized label, a status chip
-  (`statusChip` + per-status `statusTone`, L78-L95), and the terminal `finalMessage` preview with
-  the full text behind `title`. Row activation toggles focus: the focused row re-clicked returns
-  `null` (the parent conversation); the focused row carries `aria-current="true"` and an amber
-  border (`&[aria-current='true']`, L70).
-- The area itself is a labeled `role="group"` (`sub-agents`, L143).
+- **The compact line** (L299-L344, `summaryText` L173-L178): an empty roster renders a STATIC
+  `lineStatic` span (`0 agents` — nothing to open, so no dead toggle, L59-L62); otherwise a real
+  `<button aria-haspopup="listbox" aria-expanded aria-controls>` carrying the count chip
+  (`countChip` + `countTone` active/idle by whether anything is running, L64-L77) and, in an agent
+  view, the ellipsized `viewing <label>` note (L78-L82). The separate `← back to parent
+  conversation` button (L84-L98, L331-L340) renders beside the line while focused — the old
+  surface-owned focus bar is gone; the line owns the whole affordance row.
+- **Menu state** (L190-L218): `open` + `activeId`; `resolvedActiveId` recomputes the active option
+  against the LIVE roster — a stale id (an agent the roster dropped while the menu was open)
+  resolves to the first option, the honest recompute. `openMenu` starts the active option on the
+  currently-viewed agent (else the first); `selectAgent` focuses the chosen agent — re-selecting
+  the already-viewed agent is a close, not a redundant focus write/announcement.
+- **Effects** (L222-L236): DOM focus lands on the listbox on open (its ring +
+  `aria-activedescendant` carry the active option — no per-option focus movement); every active
+  change scrolls the active option into view (`scrollIntoView({block:"nearest"})` —
+  aria-activedescendant moves no DOM focus, so the browser never does this); a roster that empties
+  while the menu is open closes honestly.
+- **Line keys** (`onLineKeyDown` L238-L265): Enter/Space/ArrowDown toggle the menu
+  (preventDefault suppresses the native button-activation click); ArrowUp from the closed line
+  returns focus to the timeline's tabbable row — symmetric with the surface's ArrowDown hijack
+  that moves focus INTO the line (the surface owns that half; this component exposes the line via
+  `data-agents-line`, L316); Escape on the closed line in an agent view returns to the parent
+  conversation (the menu owns Esc while open).
+- **Menu keys** (`onMenuKeyDown` L267-L296): ArrowUp/ArrowDown move the active descendant with
+  wrap-around, Enter selects the active option, Escape closes returning focus to the line, Tab
+  dismisses without the focus return (the browser's own order moves on).
+- **The listbox overlay** (L343-L395): a fixed backdrop (outside click closes with focus return)
+  plus the `role="listbox"` panel (`menu` L100-L122 — maxHeight scroll, `tabIndex={-1}`,
+  `aria-activedescendant={optionId(resolvedActiveId)}`), one `role="option"` row per agent
+  (`option` L123-L139, `aria-selected` on the active) carrying the ellipsized label, the
+  word-carrying status chip, and the terminal `finalMessage` preview with full text in `title`.
+- The area itself is a labeled `role="group"` (`sub-agents`, L299).
 
 ### Conventions
 
 - **Status is never color-only (§14.2):** every chip carries its status WORD (`registered` /
   `running` / `completed` / `interrupted` / `failed` / `unknown`); the tone is reinforcement only.
-- **No transitions:** a keyboard-driven expand/focus change must not animate (header contract, L6-L7).
+- **No transitions:** a keyboard-driven open/focus change must not animate (header contract).
 - Chrome follows the FB7 terminal-well grammar: de-boxed lowercase buttons, `grid` borders, amber
   hover/focus accents.
+- The menu is a genuine ARIA listbox: DOM focus on the listbox, `aria-activedescendant` +
+  `aria-selected` for the active option, never roving per-option focus.
 
 ### Invariants And Boundaries
 
-- Projection-only: rows come from `deriveAgents` roster evidence passed in by the surface; this
+- Projection-only: options come from `deriveAgents` roster evidence passed in by the surface; this
   component never fetches, polls, or invents an optimistic row.
+- The area is ONE line at every roster size and every width — per-agent rows never render outside
+  the menu (the old narrow-collapse ResizeObserver is deleted).
 - The preview renders only where terminal evidence carried a `finalMessage`; it is ellipsized with
   the full text in the hover `title`.
-- Focus is an operator toggle, not a navigation trap: activating the already-focused row returns to
-  the parent conversation.
+- The menu owns its keys while open (arrow navigation stops propagation); the closed line yields
+  ArrowUp to the timeline-return path and Escape to the agent-view return, never trapping the
+  operator.
+- A stale active id recomputes to the first option; an emptying roster closes the menu — the
+  listbox never points at an agent the roster no longer carries.
 
 ## Docs References
 
@@ -71,11 +98,11 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The strip: summary/narrow collapse, per-status chips, focus-toggle rows. | L127-L199 | [AgentsArea.tsx](AgentsArea.tsx) |
-| The `ConversationAgentView` rows are shaped by (`deriveAgents`). | L12 | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts) |
-| The `ConversationAgentStatus` union the tones enumerate. | L13 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The surface that derives the roster, owns the effective focus, and mounts this strip. | — | [ConversationSurface.tsx](ConversationSurface.tsx) |
-| The component suite pinning the rendering states. | — | [AgentsArea.test.tsx](AgentsArea.test.tsx) |
+| The line + listbox menu: state, effects, both keymaps, the overlay JSX. | L180-L395 | [AgentsArea.tsx](AgentsArea.tsx) |
+| The `ConversationAgentView` rows are shaped by (`deriveAgents`). | L18 | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts) |
+| The `ConversationAgentStatus` union the tones enumerate. | L19 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
+| The surface that derives the roster, owns the effective focus and the ArrowDown-into-the-line hijack, and mounts this strip. | — | [ConversationSurface.tsx](ConversationSurface.tsx) |
+| The component suite pinning the line/menu states and the keyboard contract. | — | [AgentsArea.test.tsx](AgentsArea.test.tsx) |
 
 ## Cross-Repo References
 
@@ -88,6 +115,15 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: rewrote the card for the one-compact-line
+  rework — the per-agent rows and the ResizeObserver narrow collapse are gone; the line carries
+  the tone-colored count chip plus the viewing note/back-to-parent affordance (the surface's focus
+  bar is deleted), and the roster lives in a new listbox menu (click/Enter/Space/ArrowDown open,
+  aria-activedescendant arrow navigation with wrap + scroll-into-view on every active change,
+  Enter/click select with the already-viewed re-select collapsing to a close, Esc/backdrop/Tab
+  dismiss, ArrowUp from the closed line returning focus to the timeline, stale active id and
+  emptying roster recomputing honestly). Verification stays pinned (uncommitted); closeout
+  re-stamps.
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: created the sidecar for the R7 sub-agents strip —
   one roster-evidenced row per agent (label, word-carrying status chip, terminal final-message
   preview), the `N agents · M running` summary with honest `aria-expanded` collapse (static `0 agents`

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-27T00:02+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,17 +16,17 @@
 
 ## Purpose
 
-Contract suite for the 260718-CHATS-L0E native evidence and resume substrate (leaf R12 clauses
+Contract suite for the native evidence and resume substrate (leaf R12 clauses
 (i)–(viii)). It proves the per-harness evidence round-trips, the bounded buffer semantics, the
 no-leak guarantee, native-page continuation correctness, the submission-provenance batch, the
 codex resume launch channel, and zero regression of existing IPC semantics — all through the
 production mapper → reserved key → bridge buffer → IPC → validated client seam.
 
-260718-CHATS-L3E extends this suite with the evidence-truncation settlement coverage (leaf R1–R6):
+The suite also carries the evidence-truncation settlement coverage (leaf R1–R6):
 it proves the clip envelope preserves a clipped frame's terminal-identity enums (frame `type`, pi
 `message.stopReason`, codex `turn.id` + `turn.status`) at their original payload paths while no
 other content crosses, both at the byte level (`ClipHelperTests`) and end-to-end through the real
-bridge clip at the production 32 KiB budget plus the real `read_control_evidence` IPC surface the L3
+bridge clip at the production 32 KiB budget plus the real `read_control_evidence` IPC surface the
 settlement consumers read (`EvidenceTruncationSettlementIpcTests`), so oversized-frame interrupt
 settlement stays honest.
 
@@ -56,7 +56,7 @@ pin the `resumeThreadId` payload round-trip, legacy field-less parse, malformed 
 factory construction with pre-spawn refusal for non-codex harnesses, the opener `bad-kind` refusals
 with zero host interactions, and absent-field behavior preservation. `ClipHelperTests` covers the
 clip helper's small-payload passthrough, visible marker, and non-serializable rejection, plus the
-L3E byte-level terminal-identity preservation: a clipped pi `message_end` keeps exactly `type` +
+byte-level terminal-identity preservation: a clipped pi `message_end` keeps exactly `type` +
 `message.stopReason` (and no `role`/`content`), a clipped codex `turn/completed` keeps exactly
 `turn.id` + `turn.status` and drops the large items body, an absent terminal identity is never
 invented (a big blob keeps only the truncation-notice fields; a `message_end` with no `stopReason`
@@ -65,18 +65,18 @@ dropped WHOLE at the production 32 KiB budget without raising or leaking, with a
 257-dropped boundary check. Each proves no content crosses via exact top-level key-sets, an absent
 tail-leak sentinel, and a bounded body-char count.
 
-`EvidenceTruncationSettlementIpcTests` (260718-CHATS-L3E R6/R8) drives oversized (>32 KiB)
+`EvidenceTruncationSettlementIpcTests` (leaf R6/R8) drives oversized (>32 KiB)
 production terminal-frame shapes end-to-end through the REAL evidence path — the real bridge clip at
 the production budget plus the real `read_control_evidence` IPC surface interrupt settlement
 consumes — and asserts the frame is actually `arEvidenceTruncated` yet the tiny identity/status
-enums survive to the exact reads the L3 settlement code performs: an oversized pi content-ful
+enums survive to the exact reads the settlement code performs: an oversized pi content-ful
 `message_end` settles `stop` and `aborted` (facet a — no permanent `pending`), a small mid-turn
 frame (crosses whole, unclipped) followed by an oversized final abort settles `aborted` under the
 latest-wins scan (facet b — never mis-settling `already-settled`), and an oversized codex
 `turn/completed` with a large items body keeps `turn.id` + `turn.status`. Its
 `_pi_latest_stop_reason` / `_codex_terminal_status` scan helpers mirror
 `control.operations._pi_stop_reason` / `_codex_terminal_outcome` verbatim, so a green run is the
-in-leaf acceptance proxy for L3's settlement reads (the definitive check remains L3's unmodified
+in-leaf acceptance proxy for the settlement reads (the definitive check remains the unmodified
 `probe_l3_delta.py` after base sync). Two new `_EvidenceAdapter` helpers mirror the production
 mappers exactly so the regressions drive real frame shapes: `emit_pi_content_ful_message_end`
 mirrors `pi_rpc_events._message_event` (a `transcript` event + minted `TranscriptEntry` + the full
@@ -84,7 +84,7 @@ frame under `AR_EVIDENCE_KEY`, with `filler_chars` inflating the content past th
 `complete_with_codex_turn` mirrors `codex_app_server_adapter._handle_turn_completed` (a `completed`
 event bound to the exact operation ref, native turn params under `AR_EVIDENCE_KEY`).
 
-The 260718-CHATS-L5F R1 addition,
+The reserved-method addition,
 `test_native_method_is_carried_onto_the_frame_and_stripped_from_snapshot`, pins the notification-identity
 fix end to end: an adapter emit carrying the reserved `AR_EVIDENCE_METHOD_KEY` surfaces the native
 method on the typed `EvidenceFrame.native_method` across the bridge divert and the IPC round trip,
@@ -98,6 +98,14 @@ thread-aware adapter as the trailing `thread_id` argument, an unset selector kee
 single-thread adapter call (the bridge passes `None`), and an empty-string selector fails typed
 before any adapter call. The `_ThreadAwareNativePageAdapter` fake records the exact call shape so
 the test proves forwarding only happens when the wire carries the field.
+
+`test_evidence_thread_id_round_trips_over_ipc` (L649-L673) pins the multiplexed demux key on the
+evidence wire end-to-end over a real socket: an adapter emit whose `arEvidence` payload carries a
+`threadId` surfaces on the typed `EvidenceFrame.thread_id` across the bridge divert, the
+`evidence_frame_json` serialization, and the validated client parse, while a frame without the key
+reads `None` — the parent thread — so the pre-multiplex wire shape stays identical. The root cause
+it guards: before the demux key crossed the evidence wire, a dashboard-side projector received
+every evidence frame as thread-less and bound all agent content to the parent conversation.
 
 ### Conventions
 
@@ -116,16 +124,19 @@ imports only the production seam it pins — no fixture-only production authorit
 - The resume channel refuses non-codex harnesses and malformed values before any spawn.
 - The native method carried under the reserved `AR_EVIDENCE_METHOD_KEY` reaches
   `EvidenceFrame.native_method` and the IPC round trip, and is stripped from `snapshot.raw` so the
-  redacted snapshot stays byte-identical (260718-CHATS-L5F R1).
+  redacted snapshot stays byte-identical (leaf R1).
+- The demux key round-trips verbatim: an agent `threadId` reaches the client
+  `EvidenceFrame.thread_id` through the real IPC surface, and parent frames carry no key (the
+  pre-multiplex wire stays byte-identical).
 - Existing IPC semantics stay green unmodified; this suite adds coverage without editing prior
   suites.
-- The L3E settlement regressions replicate each L3 consumer's read expression verbatim against the
+- The settlement regressions replicate each consumer's read expression verbatim against the
   real `read_control_evidence` surface; a green run proves the preserved paths satisfy
   `_pi_stop_reason` / `_codex_terminal_outcome` unchanged (the codex helper matches `turn.id` before
   reading `turn.status`, so a status-only envelope would fail the correlation).
-- The L3E no-content proof is structural, not zero-bytes: exact top-level key-sets, a tail-leak
+- The no-content proof is structural, not zero-bytes: exact top-level key-sets, a tail-leak
   sentinel absent from the serialized envelope, and a bounded body-char count — the pre-existing
-  bounded `preview` prefix is the L0E truncation-notice field and is expected to carry a capped
+  bounded `preview` prefix is the original truncation-notice field and is expected to carry a capped
   content head.
 - A giant identity scalar in a preserved path drops whole and never collapses the clip into a
   raise; the boundary is exact (256 kept, 257 dropped), driven at the production 32 KiB budget.
@@ -150,7 +161,7 @@ evidence.
 | --- | --- | --- |
 | The bounded evidence deque, reserved-key diversion, and epoch-stamped page reads under test. | L85-L88; L168-L232; L440-L471 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | The three additive IPC actions exercised over a real socket. | L198-L203; L286-L313 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The strict client validators for pages, native pages, and provenance. | L286-L358; L576-L730 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The strict client validators for pages (including the `threadId` frame parse), native pages, and provenance. | L842-L999 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The authority's provenance batch read exercised through the queue delegation. | L375-L412 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | The codex stop-dropping forwards and `thread/read` native page under test. | L334-L361; L503-L600 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | The resume payload/parse/factory/opener channel under test. | L46-L105 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
@@ -163,13 +174,23 @@ No neighboring repository participates in this contract suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260718-CHATS-L5I Current Delta
+## Current Delta
 
 Evidence tests now cover the extended normalized control evidence used for structured interaction and interrupt correlation, preserving redaction and byte-boundary guarantees.
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence `threadId` IPC
+  round-trip test (`test_evidence_thread_id_round_trips_over_ipc`, L649-L673): an agent `threadId`
+  crosses the bridge divert + serializer + real socket + client parse into
+  `EvidenceFrame.thread_id`, while parent frames carry none (the pre-multiplex wire stays
+  identical); re-anchored the stale client-validators citation to the current parser block
+  (L842-L999), and scrubbed the pre-existing task-id references out of the body (bodies carry
+  behavioral prose only; the tags remain in this history). Verification metadata stays pinned
+  (uncommitted); closeout re-stamps the candidate
+  commit.
 
 - 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: recorded the multiplexed native-page selector
   coverage — `test_native_page_thread_id_is_additive_over_ipc` plus the `_ThreadAwareNativePageAdapter`

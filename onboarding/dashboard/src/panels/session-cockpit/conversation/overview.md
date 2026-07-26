@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`                  |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`                  |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -34,21 +34,27 @@ it never writes conversation authority and never scrapes a vendor TUI.
   are SILENT on replay/hydration (`lastAppliedDelivery === "live"` strict, so fresh hydration/re-page
   never announces — F21), the global thinking toggle, the history-completeness note printing the
   actually-unsupported capability's reason (F13), and the ambient telemetry toolbar. It
-  also owns the sub-agent FOCUS model (R7): `storedAgentFocus` → `deriveAgents` →
+  also owns the sub-agent FOCUS model (R7, reworked): `storedAgentFocus` → `deriveAgents` →
   `effectiveAgentFocus` (never applied blindly — a rehydrated projection without that agent honestly
-  falls back to the parent), ArrowLeft/ArrowRight cycling parent → agent 1 → … → agent N → parent and
-  Escape returning to the parent (the Claude Code agents-view precedent; editable/interactive targets
-  own their keys), polite visibility-gated `viewing <label>` announcements, the focus bar with a
-  `← back to parent conversation` button, and `filterItemsForFocus` feeding the timeline (`totalItems`
+  falls back to the parent), the uniform ArrowDown hijack from anywhere on the surface (feed article
+  AND scroll viewport) moving DOM focus INTO the agents line as the primary path (the Claude Code
+  sub-agent navigation model; the line owns Enter/menu, ArrowUp from the line returns focus to the
+  timeline), ArrowLeft/ArrowRight cycling parent → agent 1 → … → agent N → parent as an additional
+  path and Escape returning to the parent (editable/interactive targets
+  own their keys), polite visibility-gated `viewing <label>` announcements, and
+  `filterItemsForFocus` feeding the timeline (`totalItems`
   only when unfocused; a focused empty lane shows `no evidence from <label> yet`, never the welcome).
-- `AgentsArea.tsx` — the persistent sub-agents strip above the timeline (R7): one
-  roster-evidenced row per agent (label, word-carrying status chip — never color-only, §14.2; terminal
-  final-message preview), projection-only with no optimistic rows and no polling. It collapses to a
-  single `N agents · M running` summary line when narrow (ResizeObserver < 560px) or to a static
-  `0 agents` span on an empty roster; the summary button toggles expansion through an operator
-  `override` (default: expanded iff agents exist and the width allows). Row click toggles focus with
-  `aria-current` on the focused row; no transitions — a keyboard-driven expand/focus change must not
-  animate.
+- `AgentsArea.tsx` — ONE compact sub-agents line above the timeline, always (R7, reworked): never one
+  row per agent — the line carries the tone-colored count chip (`N agents · M running`, the status
+  word never color-only, §14.2) plus, in an agent view, the `viewing <label>` note and the
+  `← back to parent conversation` affordance (the surface's old focus bar is gone). The roster lives
+  in a listbox menu opened from the line (click/Enter/Space/ArrowDown): one option per
+  roster-evidenced agent (label, word-carrying status chip, terminal final-message preview),
+  aria-activedescendant arrow navigation with wrap + scroll-into-view on every active change,
+  Enter/click select (re-selecting the viewed agent just closes), Esc/backdrop/Tab dismiss, and
+  honest recompute of a stale active id or an emptying roster. Projection-only with no optimistic
+  rows and no polling; an empty roster is a static `0 agents` span. No transitions — a
+  keyboard-driven open/focus change must not animate.
 - `ConversationTimeline.tsx` — the single virtualized `role="feed"` (`aria-label="Conversation"`).
   `aria-posinset` is the server `globalOrdinal` (never the array index); `aria-setsize` is emitted only
   when the total is honestly known, else `total unknown` copy (R5). A focus-pinning range extractor pins
@@ -57,7 +63,9 @@ it never writes conversation authority and never scrapes a vendor TUI.
   Feed-scoped `onKeyDown` widget navigation (`[`/`]`/Home/End) with the completed exclusion list
   (`button,a,[contenteditable],.cm-editor`, input/textarea/select, active selection) and Home/End exempt
   inside labeled overflow regions (`[role="group"]`, `pre`) — the ARIA feed pattern, NOT document
-  handlers (F14 accepted deviation). It consumes `collapse.ts` to fold unknown-vendor runs.
+  handlers (F14 accepted deviation). The exported `OPERATOR_SCROLL_KEYS` trusted-input set deliberately
+  OMITS ArrowDown (the surface hijacks it into the agents line; PageDown/`]`/wheel stay scroll paths).
+  It consumes `collapse.ts` to fold unknown-vendor runs.
 - `ConversationItemView.tsx` — the pure kind dispatcher + stable accessible-name helper routing each
   `ConversationItem` to its component.
 - Item/block components (one harness-neutral grammar): `MessageItem` (operator/assistant/user/system;
@@ -235,6 +243,14 @@ the exact-turn Stop control intentionally remains beside Send in the composer.
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent navigation rework in
+  the Route Model — `AgentsArea` is ONE compact line always (per-agent rows and the narrow-collapse
+  ResizeObserver deleted) with the roster in a new listbox menu (arrow navigation with wrap +
+  scroll-into-view, Enter/click select, Esc/backdrop dismiss), the surface owns the uniform
+  ArrowDown hijack INTO the line as the primary path (ArrowLeft/ArrowRight kept as an additional
+  path; the surface focus bar deleted — the line carries the viewing note + back-to-parent), and
+  the timeline's exported `OPERATOR_SCROLL_KEYS` drops ArrowDown from the scroll-key contract.
+  Verification stays pinned (remediation uncommitted); closeout re-stamps.
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the R7 sub-agent focus UX — the
   `AgentsArea` strip (roster-evidenced rows, word-carrying status chips, narrow/empty summary
   collapse, aria-current focus toggle), the surface-owned focus model (ArrowLeft/ArrowRight/Escape

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-26T15:52 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -1130,10 +1130,10 @@ neighboring repository governs this route.
 | The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | L255-L263; L385-L443; L1046-L1064 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The structural sub-protocols adapters opt into without a base-contract member. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | L264-L328 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The authority's paged never-bodies enumeration, eviction floor, pre-tombstone recovery capture, capability gate, and asset-conditional digest; `respond` matches a response against the singular parent pending OR the plural sub-agent tuple with the active-operation guard explicitly parent-only. | L276-L321; L491-L531; L538-L590; L1130-L1151 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The authority's paged never-bodies enumeration, eviction floor, pre-tombstone recovery capture, capability gate, and asset-conditional digest; `respond` matches a response against the singular parent pending OR the plural tuple with the active-operation guard kept parent-only BY ENTRY THREAD (a parent-thread tuple entry is guarded like the singular slot). | L276-L334; L502-L542; L549-L601; L1141-L1162 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | L219-L225; L259-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | The validated client helpers: `interrupt_control`, `read_operation_timeline` coherence/monotonicity/epoch validation, recovery parsing, additive submit assets. | L421-L444; L733-L760 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction; the adapter also owns the per-thread demux/registry, collab identity learning, multiplexed pendings, and degrade-never-fatal agent frames (detail in the file sidecar). | L321; L980 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction; the adapter also owns the per-thread demux/registry, collab identity learning, per-thread pending-interaction MAPS (concurrent requests normal traffic, unknown METHODS declined + degraded on any thread), and the load-shed event queue (detail in the file sidecar). | L356-L403; L681-L847; L1056-L1122 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Pi expected-operation-guarded `abort` with replay-once and verified base64 image content. | L393-L477 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
 | The content-less `message_end` evidence-only mapping (the abort's own shape) with preserved role strictness. | L226-L244 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
 | Contract and installed-runtime suites pin the whole seam; the fixtures record redacted `control-plane/*` rows without enabling anything. | L252-L1575; L126-L384 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py); [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
@@ -1226,10 +1226,32 @@ demux/registry with collab identity learning and degrade-never-fatal agent frame
 launches with the floor-gated `--forward-subagent-text` (floor 2.1.220) only after `system/init`
 proves the floor. Every change is additive; single-thread sessions stay byte-identical.
 
+The remediation pass closed the two multiplexed-production kill seams. Concurrent server requests
+are now normal traffic: the adapter keeps a bounded per-thread pending-interaction MAP keyed by
+rpc id (the "multiple unresolved server requests" raise is deleted; the vendor keeps a global
+pending map), the singular slot carries the parent's OLDEST pending, an unknown/experimental
+request METHOD is declined (`respond_error` -32601) and degraded on ANY thread while a known
+method's malformed shape keeps the agent-degrade/parent-fail split, the projector projects ALL
+pendings (concurrent parent ones plainly) with singular-rotation resolution semantics, and the
+authority's parent guard follows the entry's own thread (a parent-thread tuple entry is guarded
+like the singular slot). And the adapter event queue no longer raises queue-full: it sheds the
+oldest high-volume delta events first (structural events survive), counts every shed, and emits
+one `ar/load-shed` notice with the count when the consumer catches up (queue 256→1024).
+
 Route indexes are intentionally not regenerated during a partitioned documentation pass; a single aggregate refresh runs after all ownership is complete. Existing verification metadata remains pre-commit.
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the multiplexing remediation in the
+  route-impact section — per-thread pending-interaction maps (concurrency is normal traffic; the
+  multi-request raise deleted), the method-first degrade split (unknown/experimental request
+  METHODS decline + degrade on any thread; known-method malformed shapes keep the old split), the
+  entry-thread parent guard in the authority's `respond`, the projector's all-pendings projection
+  with singular rotation, and the load-shed adapter event queue (256→1024, shed-oldest-deltas,
+  counted, one `ar/load-shed` notice on catch-up). Re-anchored the authority (L276-L334;
+  L502-L542; L549-L601; L1141-L1162) and codex-adapter (L356-L403; L681-L847; L1056-L1122)
+  reference rows against the post-remediation source. Aggregate route-index generation remains
+  manager-owned; verification metadata stays pinned (remediation uncommitted).
 - 2026-07-26T15:52 — 260718-CHATS-L7 curator: recorded the sub-agent control-substrate changes
   (evidence `thread_id` demux, plural pendings end-to-end, parent-only authority respond guard,
   codex per-thread registry, claude floor-gated sub-agent text flag) and re-anchored the L0E/L2E

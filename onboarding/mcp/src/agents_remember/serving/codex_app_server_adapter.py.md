@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:35 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-26T21:59+02:00 |
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,9 +30,14 @@ re-guessing it from params shape and flooding one unknown-vendor row per MCP ser
 Harness sub-agents are first-class on the multiplexed app-server connection: a
 bounded per-thread demux registry (`_ThreadState`) replaces the single-thread `_validate_thread`
 gate, collab identity learning binds agent labels into `snapshot.raw.agentRegistry`, server-request
-approvals multiplex into `AdapterSnapshot.pending_interactions`, malformed sub-agent frames degrade
-to preserved raw evidence instead of failing the bridge, and `read_native_page` gains an optional
-`thread_id` selector so native history can be paged per thread.
+approvals multiplex into per-thread pending-interaction MAPS keyed by rpc id (a concurrent second
+request on one thread is normal vendor traffic, never an error) projected through
+`AdapterSnapshot.pending_interactions`, an unknown/experimental request METHOD is declined and
+degraded on ANY thread while a known method's malformed shape keeps the agent-degrade/parent-fail
+split, malformed sub-agent frames degrade to preserved raw evidence instead of failing the bridge,
+the bounded event queue sheds oldest delta-method events under load (every shed counted, one
+`ar/load-shed` notice on catch-up) instead of raising queue-full, and `read_native_page` gains an
+optional `thread_id` selector so native history can be paged per thread.
 
 ## Code Commentary
 
@@ -50,12 +55,12 @@ Launch-knob ownership, token-free discovery, interactions, events, and bounded r
 on their existing native paths.
 
 Evidence forwarding places the full `params` of each previously trimmed emit under the reserved
-`arEvidence` raw key — consolidated through the `_emit_notification` helper (L705-L721),
+`arEvidence` raw key — consolidated through the `_emit_notification` helper (L745-L761),
 with the parent-thread `thread/status/changed`/`thread/settings/updated` state emits keeping their
 direct path — while every pre-existing raw key (`codexMethod`, `turnId`) keeps its exact shape; the
 bridge diverts the payload so no projection changes. It additionally sets
-`AR_EVIDENCE_METHOD_KEY: method` inside `_emit_notification` (L705-L721, which also serves
-the `item/completed` evidence path at L778-L806), so the notification's native method reaches the
+`AR_EVIDENCE_METHOD_KEY: method` inside `_emit_notification` (L745-L761, which also serves
+the `item/completed` evidence path at L818-L846), so the notification's native method reaches the
 projector as typed evidence rather than being stripped with the trimmed event; the bridge preserves
 it onto `EvidenceFrame.native_method` and strips the reserved key, keeping the redacted snapshot
 byte-identical. `codexMethod` still rides for diagnostics; the method-carry key is the discriminator
@@ -80,38 +85,75 @@ after the text block, with sha256/size re-verified at construction (`_verified_a
 Receipt raw gains additive `assetIds` only when assets ride.
 
 The single-thread correlation maps are replaced by a per-thread demux. `_ThreadState`
-(L82-L104) holds one thread's active turn, turn→operation bindings, unbound completions, bounded
-terminal window, and pending interaction; `self._threads` (bounded at `THREAD_REGISTRY_LIMIT = 64`,
-L77) is keyed by native thread id with the parent/session state registered on first use via
-`_parent_state` (L1026-L1038). The old `_validate_thread` fail-on-foreign-thread gate is deleted:
-`_thread_for` (L1056-L1093) still fails closed on a missing or non-text `threadId` exactly as
+(L97-L132) holds one thread's active turn, turn→operation bindings, unbound completions, bounded
+terminal window, and a per-thread pending-interaction MAP (`pending_interactions`, an insertion-ordered
+dict keyed by rpc id, bounded at `PENDING_INTERACTIONS_PER_THREAD = 16`, L81); its
+`pending_interaction` property is the thread's OLDEST pending — the pre-multiplex singular
+view. `self._threads` (bounded at `THREAD_REGISTRY_LIMIT = 64`,
+L79) is keyed by native thread id with the parent/session state registered on first use via
+`_parent_state` (L1176-L1188). The old `_validate_thread` fail-on-foreign-thread gate is deleted:
+`_thread_for` (L1205-L1241) still fails closed on a missing or non-text `threadId` exactly as
 before, but a well-formed foreign id auto-registers as an `unresolved` agent thread and is never an
-error. Every notification handler demuxes first (`_handle_message`, L641-L703): parent-thread
+error. Every notification handler demuxes first (`_handle_message`, L681-L744): parent-thread
 traffic keeps the pre-multiplexing snapshot/activity contract byte-identical, while sub-agent
 `thread/status/changed`, `turn/started`, `thread/settings/updated`, and `turn/completed` update
 only registry state plus raw evidence and never move the parent-scoped activity or settlement (D4).
 Turn writes stay parent-only, so agent turn completions record `None` as the operation and never
-touch `_active_operation` or the submission ledger. `_learn_collab_identity` (L1133-L1175) binds
+touch `_active_operation` or the submission ledger. `_learn_collab_identity` (L1281-L1323) binds
 agent identity from parent-thread `collabAgentToolCall` (`receiverThreadIds`/`agentsStates`) and
-`subAgentActivity` (`agentThreadId`/`agentPath`) items, and `_publish_agent_registry` (L1177-L1195)
-mirrors the bounded registry into `snapshot.raw.agentRegistry` for the serving projector. Server
-requests demux per thread: each thread holds at most one pending interaction, `_sync_pending_snapshot`
-(L864-L881) rebuilds `AdapterSnapshot.pending_interactions` (the parent's entry stays in the
-singular slot; agent entries carry `raw.threadId` plus the bound `agentLabel`), and `respond`
-(L370-L394) routes by interaction id via `_interaction_thread` (L855-L862) — the active-operation
-match is enforced only for parent-thread responses (the parent-only operation guard). `read_native_page`
-(L435-L471) gains an additive `thread_id` selector: `None` reads the parent thread exactly as
+`subAgentActivity` (`agentThreadId`/`agentPath`) items, and `_publish_agent_registry` (L1325-L1363)
+mirrors the bounded registry into `snapshot.raw.agentRegistry` for the serving projector.
+
+Server requests demux per thread and MULTIPLEX within a thread. `_handle_server_request`
+(L848-L920) decides by METHOD first: an unknown/experimental request method (anything outside the
+stable grammar `STABLE_SERVER_REQUESTS`) is vendor traffic, never a bridge failure — it is answered
+with decline semantics (`respond_error` -32601 when the rpc id is answerable; the vendor maps an
+error response to decline) and crossed as degraded preserved evidence via
+`_degrade_agent_frame(..., force=True)` on ANY thread, parent included. A KNOWN stable method's
+malformed shape (rpc-id type, non-object params) is a protocol violation, not traffic: it re-raises
+into the message loop's agent-degrade/parent-fail split unchanged. Malformed thread identity on a
+parsed request is declined when answerable, then the same split applies. The old "multiple
+unresolved server requests on one thread" raise is deleted — the vendor keeps one app-global
+pending map keyed by approval id, so concurrent pendings on one thread are normal traffic and
+register, never raise; a full per-thread map (16) declines + degrades the NEW request, never a
+bridge failure and never a silent loss of an older unanswered one; a vendor rpc-id REUSE overwrites
+the older pending, which then becomes honestly unanswerable later (a JSON-RPC violation the vendor
+owns). `_handle_server_request_resolved` (L922-L938) pops the pending by rpc id.
+`_sync_pending_snapshot` (L949-L969) rebuilds `AdapterSnapshot.pending_interactions` from EVERY
+thread's full map (agent entries carry `raw.threadId` plus the bound `agentLabel`; concurrent
+parent entries beyond the oldest ride the tuple plainly), keeping the singular slot on the parent's
+OLDEST pending for back-compat. `respond` (L405-L437) routes by interaction id via
+`_interaction_thread` (L940-L947), which returns the owning (thread, rpc id) pair — the
+active-operation match is enforced only for parent-thread responses (the parent-only operation
+guard). `read_native_page`
+(L470-L506) gains an additive `thread_id` selector: `None` reads the parent thread exactly as
 before, an explicit id pages that sub-agent thread through the same `thread/read` echo check.
-`item/completed` (L778-L806) stamps agent transcripts with `raw.threadId` (parent entries
+`_handle_item_completed` (L818-L846) stamps agent transcripts with `raw.threadId` (parent entries
 deliberately carry none, keeping the pre-multiplexing parent transcript shape byte-identical — fix-round
-review finding 12), while `_learn_item_thread` (L1102-L1115) + `_route_delta_params` (L1117-L1131)
+review finding 12), while `_learn_item_thread` (L1250-L1263) + `_route_delta_params` (L1265-L1279)
 bind thread-less delta frames (`item/.../delta`, `patchUpdated`) to their item's learned thread
-without ever inventing one. `_degrade_agent_frame` (L609-L639) catches `CodexAppServerError` in the
+without ever inventing one. `_degrade_agent_frame` (L644-L679) catches `CodexAppServerError` in the
 message loop: only a well-formed FOREIGN threadId degrades to preserved raw evidence
-with the failure noted; a missing or parent threadId re-raises and still fails the bridge. The four
+with the failure noted; a missing or parent threadId re-raises and still fails the bridge — unless
+`force=True` (the unknown-request-METHOD path above), which degrades on any thread. The four
 white-box parent views (`_active_turn_id`, `_turn_operations`, `_unbound_completions`,
-`_completed_turns`, L1040-L1055) keep the original correlation-test surface as live mappings over the
+`_completed_turns`, L1190-L1203) keep the original correlation-test surface as live mappings over the
 parent `_ThreadState`.
+
+The event queue is a bounded LOAD-SHED queue, not a kill seam. `_enqueue` (L1056-L1078) never
+raises at saturation: `_evict_for_space` (L1080-L1097) evicts the oldest HIGH-VOLUME delta event
+first (the `_LOAD_SHED_DELTA_METHODS` set — `item/agentMessage/delta`, `item/plan/delta`,
+reasoning deltas, `item/commandExecution/outputDelta`, `item/fileChange/patchUpdated`), structural
+events (turns, completions, interactions, failures, the close sentinel) shed only when nothing else
+remains, and every shed is counted in `_dropped_events`. `_emit_load_shed_notice_if_caught_up`
+(L1099-L1122) mints exactly one `codex-notification` carrying `ar/load-shed` with the shed count
+once the queue has room again — producer-side after an enqueue that leaves space, consumer-side in
+`_event_stream` (L289-L301) after each drained yield (a silent producer must not strand the
+accounting), and always BEFORE the close sentinel (the enqueue path for `None` first makes room for
+notice + sentinel, so the subscriber sees the loss account before termination). The queue limit
+rose 256 → `ADAPTER_EVENT_QUEUE_LIMIT = 1024` (L82). The shed notice rides the same monotonic
+sequence path as every other event, and a zero count makes the emit a no-op, so the notice itself
+never recurses.
 
 ### Conventions
 
@@ -121,7 +163,10 @@ synchronous no-RPC read. Initial model/effort belongs to `thread/start`/`thread/
 native adapter never uses the codex-acp-only `CODEX_CONFIG` environment path. Adapter identity
 reports `codex-app-server:<opaque negotiated version>`. Per-thread demux state lives in one
 `_ThreadState` dataclass rather than parallel adapter-level dicts; the four parent-view properties
-exist only so the white-box correlation tests keep reading the original attribute names.
+exist only so the white-box correlation tests keep reading the original attribute names. The
+singular `pending_interaction` property is a back-compat OLDEST view over the per-thread map, never
+the only live pending. Sheddable queue pressure is identified by `codexMethod` membership in
+`_LOAD_SHED_DELTA_METHODS`; everything else is structural and outlives deltas.
 
 ### Invariants And Boundaries
 
@@ -160,14 +205,24 @@ exist only so the white-box correlation tests keep reading the original attribut
   `threadId`; a well-formed foreign threadId auto-registers as `unresolved` and is never an error.
 - Malformed sub-agent frames degrade to preserved raw evidence with the failure noted (the bridge
   stays ready); parent-thread shape errors still fail the bridge — `_degrade_agent_frame` is keyed
-  on a well-formed FOREIGN threadId, never a blanket catch.
+  on a well-formed FOREIGN threadId, never a blanket catch, with one explicit exception:
+  `force=True` degrades an unknown/experimental server-request METHOD on ANY thread (a new vendor
+  request type is traffic, not a protocol violation), while a KNOWN stable method's malformed shape
+  keeps the agent-degrade/parent-fail split with no decline-and-degrade.
 - Turn writes, settlement, and the submission ledger stay parent-only: agent turns carry no
   `ControlOperationRef`, record `None` as the operation, and never move the parent-scoped
   activity/acceptance (D4); a sub-agent approval likewise never moves parent activity.
-- The singular `pending_interaction` slot stays the parent's entry for back-compat; multiplexed
-  agent approvals live only in `pending_interactions` with their `threadId`/`agentLabel` evidence,
-  one pending interaction per thread, and `respond`'s active-operation guard applies to
-  parent-thread responses only.
+- The singular `pending_interaction` slot stays the parent's OLDEST pending for back-compat; every
+  thread keeps a bounded per-thread pending map (≤ `PENDING_INTERACTIONS_PER_THREAD`, keyed by rpc
+  id) mirrored into `pending_interactions` (agent entries carry `threadId`/`agentLabel`; concurrent
+  parent entries beyond the oldest ride the tuple plainly). Concurrent pendings on one thread are
+  normal vendor traffic and never raise; a full map declines + degrades the NEWEST request without
+  dropping older ones; `respond`'s active-operation guard applies to parent-thread responses only.
+- The adapter event queue never raises at saturation: the oldest high-volume delta event sheds
+  first, structural events (turns, completions, interactions, failures, the close sentinel) shed
+  only when nothing else remains, every shed is counted, and one `ar/load-shed` notice with the
+  count crosses when the consumer catches up — after a drained put, off the consumer drain, and
+  always BEFORE the close sentinel.
 - The thread registry (`THREAD_REGISTRY_LIMIT = 64`) and item→thread index
   (`ITEM_THREAD_INDEX_LIMIT = 1024`) are bounded; eviction never removes the parent, an
   actively-turning agent, or one holding a pending approval, and a full registry raises so the
@@ -194,19 +249,21 @@ pass was available for this update.
 Session ownership and strict model-page parsing remain dedicated modules rather than adapter-local
 policy. The multiplexing grammar lives in the control models, and a dedicated
 thread-demux regression suite pins the anti-death behavior (before the demux, the first
-foreign-thread notification failed the whole bridge — the 2026-07-24 production seat death).
+foreign-thread notification failed the whole bridge — the 2026-07-24 production seat death) plus
+the follow-on concurrency and queue-shed remediation.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence. | L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
 | Submission evidence captures the exact model/effort pair accepted at reservation time. | L74-L118 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
+| The stable server-request grammar (`STABLE_SERVER_REQUESTS`) the method-first degrade split keys on: methods outside it parse as experimental/unsupported traffic, never protocol violations. | L27-L33; L440-L450 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 | The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | L108-L128; L250-L262 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
 | The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | L174-L206 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
 | Model pages preserve display/description metadata and model-local reasoning effort options. | L142-L213 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 | The thread flatten helper enforces unique typed item identity for native paging. | L378-L415 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 | The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key. | L226-L234; L471-L477 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector. | L209-L246; L547-L585 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| Thread-demux regression tests pin the anti-death behavior: foreign-thread auto-registration, collab identity binding into `agentRegistry`, multiplexed pending interactions, parent-only settlement, and degraded (never bridge-fatal) malformed agent frames. | L1-L457 | [test_codex_adapter_thread_demux.py](agents-remember/mcp/tests/test_codex_adapter_thread_demux.py) |
+| Thread-demux regression tests pin the anti-death behavior (foreign-thread auto-registration, collab identity binding into `agentRegistry`, multiplexed pending interactions, parent-only settlement, degraded-never-fatal malformed agent frames) plus the remediation pins: concurrent parent pendings answered per id, the method-first degrade split, the bounded pending map, and the load-shed queue with its honest notice. | L1-L819 | [test_codex_adapter_thread_demux.py](agents-remember/mcp/tests/test_codex_adapter_thread_demux.py) |
 | Contract tests pin the evidence round-trip, unknown-vendor pass-through, thread/read paging, and the installed 0.144.5 production-seam capture. | L791-L1033 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The structural sub-protocols this adapter implements; the caller's identity guards ride the write. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The control-plane contract suite pins the interrupt write/replay/turnId guard/no-active typed refusal and the `localImage` construction with zero-write rejection. | L454-L522; L1270-L1335 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
@@ -232,6 +289,23 @@ or turn-id reuse cannot release a successor.
 
 ## Update History
 
+- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: documented the two closed kill seams and the
+  degrade rework. (1) Concurrent server requests: `_ThreadState.pending_interactions` is now a
+  bounded per-thread MAP keyed by rpc id (≤16; the `pending_interaction` property is the
+  oldest/back-compat view) and the "multiple unresolved server requests" raise is deleted —
+  concurrency is normal vendor traffic; `_handle_server_request` decides by METHOD first
+  (unknown/experimental methods declined -32601 + degraded on ANY thread via
+  `_degrade_agent_frame(force=True)`; KNOWN stable methods' malformed shapes keep the
+  agent-degrade/parent-fail split; a full map declines + degrades the newest request);
+  `serverRequest/resolved` pops by rpc id; `respond`/`_interaction_thread` route by (thread, rpc
+  id); `_sync_pending_snapshot` projects ALL pendings with the singular slot on the parent's
+  oldest. (2) The event queue no longer raises queue-full: `_enqueue`/`_evict_for_space` shed the
+  oldest delta-method events first (structural events survive until nothing else remains), count
+  every shed, and mint one `ar/load-shed` notice with the count on catch-up (producer-side, off the
+  consumer drain in `_event_stream`, and before the close sentinel); the limit rose 256 → 1024.
+  Re-anchored every stale line citation against the post-remediation source (the file grew to 1376
+  lines) and extended the demux-suite row (L1-L819). Verification metadata stays pinned — the
+  change is uncommitted, so no commit hash can attest it.
 - 2026-07-26T15:35 — 260718-CHATS-L7 curator: documented the per-thread demux — `_ThreadState` +
   bounded thread registry replacing the deleted `_validate_thread` gate (foreign ids auto-register,
   missing/non-text ids still fail closed), collab identity learning into `snapshot.raw.agentRegistry`,

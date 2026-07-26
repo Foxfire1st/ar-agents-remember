@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
+| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -315,6 +315,19 @@ seat (one page, one SSE, one cursor domain) with per-thread native/live dedupe, 
 sub-agent conversations under their parent on both harnesses (codex `subAgent` source kinds, claude
 `subagents/*.jsonl` enumeration), and claude launches gate `--forward-subagent-text` on a
 version-floor probe with fail-closed fallback.
+
+The multiplexed surface is load-shedding and concurrency-safe under real vendor traffic.
+Server→client requests pend per thread in bounded maps keyed by rpc id (concurrent approvals
+across any threads are normal traffic, answered by request id; the vendor's own clients track
+them the same way); an unknown or experimental request method is answered with decline
+semantics and preserved as degraded evidence on any thread, while a malformed shape on a known
+stable method still fails loud on the parent only. Concurrent pendings — parent included — all
+project into the interaction lane with singular-rotation settlement (the oldest holds the
+singular slot; answering rotates the next in without falsely resolving it), and the authority's
+parent guard is decided by the entry's own thread. The adapter's bounded event queue never
+fails the bridge under a delta flood: the oldest high-volume delta events shed first with every
+shed counted, and one load-shed notice crosses with the count when the consumer catches up
+(including on consumer-side drain and before the close sentinel).
 
 ## Hot Path Summary
 
@@ -986,6 +999,10 @@ The package also owns the final mandatory commit-gate implementation: `code_qual
 
 ## Update History
 
+- 2026-07-26T22:20+02:00 — 260718-CHATS-L7R curator: added the load-shedding
+  and concurrency-safety paragraph (per-thread pending maps, method-first
+  degrade, all-pendings projection with rotation, entry-thread guard,
+  load-shed event queue). Verification metadata remains pre-commit.
 - 2026-07-26T18:45+02:00 — 260718-CHATS-L7 curator: added the multiplexed
   harness sub-agent paragraph (adapter thread demux, additive agent grammar,
   one-projection multiplexed serving, library grouping, gated claude text
