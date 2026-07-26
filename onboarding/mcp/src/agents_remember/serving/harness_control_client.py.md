@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,15 +18,16 @@
 
 Synchronous exact-session client for the Unix control socket owned by a hosted harness runner. It
 is the serving boundary for live advertise, honest model/effort set, correlated whole-message
-submission, reconciliation, interaction responses, transcript reads, and stop. 260718-CHATS-L0E
-adds strictly validated reads for the evidence family: `read_control_evidence`,
-`read_control_native_page`, and `read_submission_provenance`. 260718-CHATS-L2E adds the
+submission, reconciliation, interaction responses, transcript reads, and stop. It also provides
+strictly validated reads for the evidence family: `read_control_evidence`,
+`read_control_native_page`, and `read_submission_provenance`. The control-plane surface adds the
 epoch-guarded `interrupt_control` write, the paged `read_operation_timeline` read with strict
 monotonicity/epoch/coherence validation, additive `assets` on `submit_control_prompt`, and strict
-withdrawal-recovery parsing. 260718-CHATS-L5F deserializes the R1 evidence `nativeMethod` on the
-frame round trip, and R6 maps a control-socket connect failure to an honest "already exited"
-lifecycle note (unlinking the stale socket on `ECONNREFUSED`) instead of surfacing a raw
-`[Errno 111]`.
+withdrawal-recovery parsing. The evidence `nativeMethod` is deserialized on the frame round trip,
+and a control-socket connect failure maps to an honest "already exited" lifecycle note (unlinking
+the stale socket on `ECONNREFUSED`) instead of surfacing a raw `[Errno 111]`. The multiplexed
+control plane adds the per-thread `thread_id` selector on `read_control_native_page` and parses the
+plural `pendingInteractions` on snapshots.
 
 ## Code Commentary
 
@@ -36,11 +37,11 @@ Every request carries protocol version and exact catalog identity. Capability an
 strictly parsed through the normalized type layer; setter calls use a bound above Claude's native
 correlated acceptance window. Submit sends the complete message and caller request id once.
 
-`_exchange_control` (L509) distinguishes connect/pre-write failure from any failure after the socket
+`_exchange_control` (L530) distinguishes connect/pre-write failure from any failure after the socket
 accepts the first byte. Pre-write failure raises as unavailable (`may_have_sent=False`) and may be
-retried by policy. 260718-CHATS-L5F R6 routes that connect failure through
-`_connect_unavailable_detail` (L486-L506): `ECONNREFUSED` (a stale socket file with nothing
-listening — the developer's image1 `[Errno 111]` banner) and `ENOENT` (an absent socket) both map to
+retried by policy. A connect failure routes through
+`_connect_unavailable_detail` (L507-L528): `ECONNREFUSED` (a stale socket file with nothing
+listening — the observed `[Errno 111]` banner) and `ENOENT` (an absent socket) both map to
 the honest "the controlled runner already exited (…)" note, and the stale socket is best-effort
 `unlink`ed on `ECONNREFUSED` so the next probe reads the absent case cleanly instead of repeating the
 refused surprise; a timeout and any other error get their own honest phrasings. On Linux AF_UNIX
@@ -49,7 +50,7 @@ malformed response, or mismatched post-dispatch evidence becomes an honest `unkn
 `SetResult` carrying the original request id/value; it is never resent. The explicit reconcile
 operation queries the bridge's retained same-id truth.
 
-The L0E evidence reads validate responses strictly rather than trusting JSON coercion:
+The evidence reads validate responses strictly rather than trusting JSON coercion:
 `read_control_evidence` enforces monotonic frame sequences, `latestSequence` coherence, and typed
 rejection of native-cursor coordinates in the deque domain; `read_control_native_page` rejects
 adapter-sequence coordinates in the native domain, enforces native-id uniqueness, and requires
@@ -58,12 +59,22 @@ continue the last frame) under the dedicated `EVIDENCE_PAGE_TIMEOUT_SECONDS = 35
 `SET_CONTROL_TIMEOUT_SECONDS` precedent, above the 2-second control default);
 `read_submission_provenance` enforces exact result count/order, valid sources, and request-id echo.
 Every evidence response carries `bridgeEpoch`; a caller-supplied expected epoch that mismatches
-raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably. 260718-
-CHATS-L5F R1 deserializes the optional evidence `nativeMethod` on the frame round trip (L840-L851):
+raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably. The
+optional evidence `nativeMethod` is deserialized on the frame round trip (L863-L874):
 a present value must be non-empty text or the read fails typed, so the projector receives the
 carried notification method the bridge preserved.
 
-The L2E helpers hold the same strict posture. `interrupt_control` sends the epoch-guarded write
+Two multiplex seams live here. `read_control_native_page` (L365-L395) gained the
+additive `thread_id` selector: it rides the payload as `threadId` only when set (L389-L390), so a
+`None` reads the parent/session thread with the exact pre-multiplexing request shape. And `_snapshot` now
+parses the plural pending set (L1133-L1141, field at L1152): the singular `pendingInteraction`
+parse was extracted verbatim into the shared strict `_pending_interaction` helper (L1100-L1114 —
+same required-text/choices/questions validation), and the additive `pendingInteractions` list maps
+each entry through it. The plural key is OPTIONAL — absent on pre-multiplexing bridges it deserializes to the
+empty tuple — but a present non-list value fails typed, so a malformed multiplex payload is never
+silently truncated to the parent view.
+
+The control-plane helpers hold the same strict posture. `interrupt_control` sends the epoch-guarded write
 under the setter-class timeout and validates the acknowledgement enum, epoch continuity
 (`_evidence_bridge_epoch`), and the `ControlOperationRef` round-trip. `read_operation_timeline`
 rejects opaque string cursors typed before I/O, then validates shape, kind/source enums, positive
@@ -100,14 +111,19 @@ protocol bound, not an invented acceptance result.
 - Asset-free submit payloads keep their exact previous key order; `assets` rides only as a
   sequence of objects.
 - A control-socket connect failure never leaks a raw errno: `ECONNREFUSED`/`ENOENT` map to the
-  designed "already exited" note (R6), the stale socket is unlinked best-effort on `ECONNREFUSED`,
+  designed "already exited" note, the stale socket is unlinked best-effort on `ECONNREFUSED`,
   and the failure stays `may_have_sent=False` (retry-safe pre-write).
-- The evidence `nativeMethod` (R1) is parsed only when present and must be non-empty text; it is
+- The evidence `nativeMethod` is parsed only when present and must be non-empty text; it is
   carried metadata, never a resend or acceptance signal.
+- The snapshot's plural `pendingInteractions` is additive and optional: absent
+  means `()` (the pre-multiplexing bridge shape), a present non-list fails typed, and every entry passes the
+  same strict `_pending_interaction` validation as the singular parent slot.
+- The native-page `thread_id` selector is sent only when set; a `None` selector produces the exact
+  pre-multiplexing request payload, so single-thread bridges see no contract change.
 
 ### Todos
 
-None known for the L4 exact-session client.
+None known for the exact-session client.
 
 ## Docs References
 
@@ -128,7 +144,7 @@ unknown/reconcile contract without a second submission.
 | The private server dispatches advertise/set/submit/reconcile against one bridge identity. | L150-L250 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | The queue facade treats request id as an idempotency key and returns retained reconciliation truth through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | Client tests pin pre-first-byte versus post-first-byte ambiguity and unknown setter/submission mapping. | L61-L145 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| The R6 test pins that a refused control socket yields the honest note AND unlinks the stale socket (never a raw errno). | L61-L92 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
+| A regression test pins that a refused control socket yields the honest note AND unlinks the stale socket (never a raw errno). | L61-L92 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
 | Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | L1036-L1153 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Contract tests pin the strict page/native-page/provenance validators, cross-domain typed rejection, and epoch-continuity failure exercised through this client. | L463-L1309 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The IPC server answers the two additive actions and verifies staged assets before dispatch, so this client's references and reads stay reference-only and strictly shaped. | L212-L215; L252-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
@@ -142,21 +158,33 @@ No external repository boundary is implemented by the local Unix-socket client.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260715-FEUI-L5 Submission Authority Delta
+## Submission Authority Delta
 
 The exact-session client now reads authority/status/withdraw and sends epoch-bound submit/reconcile.
 Its byte classifier distinguishes no-byte, first-byte-possible, and decoded typed errors; parser
 logic preserves the normalized lifecycle alphabet while stripping private raw evidence. A post-write
 transport loss is returned as ambiguous, never reclassified into retry safety.
 
-## 260718-CHATS-L5I Current Delta
+## Submit Echo Timeout Delta
 
 The control client applies the longer submit timeout only to the healthy submit-echo path and retains bounded control request handling. This prevents a normal delayed echo from being prematurely labelled unknown without widening unrelated calls.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## Multiplexed Control Plane Delta
+
+The client now speaks the multiplexed control plane: `read_control_native_page` carries the additive `threadId` selector (parent thread when absent), and `_snapshot` parses the plural `pendingInteractions` through the extracted strict `_pending_interaction` helper — optional/absent-tolerant for pre-multiplexing bridges, typed-fatal on a malformed list. The singular `pendingInteraction` parse is byte-identical to before, now shared.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `thread_id` selector on
+  `read_control_native_page` (present-only `threadId` payload key) and the plural
+  `pendingInteractions` snapshot parse (extracted `_pending_interaction` helper, absent-tolerant,
+  non-list typed failure); refreshed the R6/R1 citation line ranges (L507-L528, L530, L863-L874)
+  for the L7-shifted source. Verification metadata stays pinned to the pre-commit source history
+  until closeout (the L7 change is uncommitted).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the evidence `nativeMethod`

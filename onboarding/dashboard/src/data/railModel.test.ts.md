@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/railModel.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-07-26T15:40+0200 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Unit suite for the rail model (260715-FEUI-L2 S4) — every ruled hierarchy/attention/join behavior
+Unit suite for the rail model — every ruled hierarchy/attention/join behavior
 as a pure-function case over the shared catalog fixtures.
 
 ## Code Commentary
@@ -40,7 +40,10 @@ as a pure-function case over the shared catalog fixtures.
   active running → null.
 - **Projection joins** — held gates only while undecided (R13), the two-state brief column (never
   a tri-state, R8), critical bus at age ≥ ttl·0.8 or check-chat (F11).
-- **Question triage (R16)** — prompt preview + clamping; all waiting seats newest-first.
+- **Question triage (R16)** — prompt preview + clamping; all waiting seats newest-first; and the
+  N1 pin: a seat blocked SOLELY on a multiplexed sub-agent approval (singular slot
+  absent, plural list carrying the permission with adapter-bound `raw: { threadId, agentLabel }`)
+  is listed by `waitingSeats` instead of going dark.
 
 ### Invariants And Boundaries
 
@@ -62,7 +65,8 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The module under test. | L17-L464 | [railModel.ts](railModel.ts) |
-| The shared full-wire-shape fixtures (`catalogRow` builder + `FLEET`). | L10-L172 | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
+| The shared full-wire-shape fixtures: the `catalogRow` builder (spreads overrides, so the plural pending list flows through) and `FLEET`; the multiplexed parent+sub-agent fixture is `L7_MULTIPLEXED_INTERACTIONS`. | L10-L26; L32-L172; L410-L446 | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
+| The N1 agent-only-blocked triage pin. | L349-L365 | [railModel.test.ts](railModel.test.ts) |
 
 ## Cross-Repo References
 
@@ -74,6 +78,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the N1 triage pin — a seat blocked
+  SOLELY on a multiplexed sub-agent approval (plural-only `controlPendingInteractions` with
+  adapter-bound `raw.agentLabel`) is listed by `waitingSeats`. Refreshed the fixture citation and
+  noted the new `L7_MULTIPLEXED_INTERACTIONS` parent+sub-agent fixture in `catalogRows.ts`.
+  Verification stays pinned; the L7 change is uncommitted and closeout re-stamps.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

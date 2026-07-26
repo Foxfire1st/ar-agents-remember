@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,6 +39,11 @@ nothing is listening — an unclean runner exit) is mapped by `_connect_unavaila
 honest "already exited (stale control socket…)" lifecycle note rather than a raw `[Errno 111]`
 surprise, and the stale socket is unlinked so the next probe reads the absent (ENOENT) case. On Linux
 AF_UNIX, ECONNREFUSED means no listener, so the unlink cannot orphan a live endpoint.
+
+`test_native_page_serializes_thread_id_only_when_set` pins the multiplexed selector at the client
+serialization seam: `read_control_native_page` emits the additive `threadId` on the
+`evidence-native-page` request only when set, and an unset selector produces the byte-identical
+pre-multiplex single-thread request (limit plus optional cursor, nothing else).
 
 ### Conventions
 
@@ -99,6 +104,12 @@ Client regressions now cover the submit-specific delayed-echo timeout and retain
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: recorded the client serialization test for the
+  multiplexed selector (`test_native_page_serializes_thread_id_only_when_set`) — `threadId` is
+  emitted on the `evidence-native-page` request only when set, so the unset request stays the
+  byte-identical pre-multiplex single-thread shape. One Logic paragraph added; verification
+  metadata stays pinned (uncommitted); closeout re-stamps the candidate commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

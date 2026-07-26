@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_contracts.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,13 @@ provenance, status, capability, identity, rollback, recovery, attachment, or met
 - Tests canonical operation fingerprints and the full open identity/catalog/rollback grammar.
 - Tests interrupt, queue privacy, authoritative withdrawal/pop-back recovery, attachment state,
   gap/repage, metric evidence, and fixture non-promotion products.
+- Tests the multiplexed sub-agent wire additions as purely additive products: `ConversationAgentRef`
+  pins the six-word status vocabulary (registered/running/completed/interrupted/failed/unknown), the
+  agentId-only minimum, absent-not-null identity fields, and extra-forbid rejection;
+  `ConversationItem.agent` defaults absent so the pre-multiplex wire decodes byte-identical and the
+  agent key changes nothing else on the envelope; `ConversationLibraryAgentRow` is evidence-bound
+  and extra-forbid with a required title; and the library row `agents` grouping plus the page
+  `agentsNote` both default to absent.
 
 ### Conventions
 
@@ -85,6 +92,12 @@ No neighboring repository participates in these contract tests.
 
 ## Update History
 
+- 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: recorded the four wire-contract additions for
+  the multiplexed sub-agent surface — the `ConversationAgentRef` status-vocabulary/additive-shape/
+  extra-forbid matrix, `ConversationItem.agent` absent-by-default with the pre-multiplex wire held
+  byte-identical, the additive evidence-bound `ConversationLibraryAgentRow`, and the library row
+  `agents` + page `agentsNote` absent defaults. One Logic bullet added; verification metadata stays
+  pinned (uncommitted); closeout re-stamps the candidate commit.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the capability-demotion coverage for
   the R4 version-gate removal — `test_capability_has_no_version_demotion_predicate` now pins that
   `FeatureCapability` has no `for_observed_runtime` predicate (the contract probe is the only gate;

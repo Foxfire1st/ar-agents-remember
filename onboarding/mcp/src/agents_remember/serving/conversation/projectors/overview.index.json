@@ -37,7 +37,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "Start with `__init__.py` for the `HarnessProjector` protocol, channel flags, and registry. `common.py` holds the strict parsing primitives, the four mapper output types, and the honest provenance builders. `codex.py` maps thread items and notifications (items/blocks/tools/ deltas/turn results), `claude.py` maps stream-json frames (text/thinking/tools/results plus the exact submission echo), and `pi.py` maps durable entries and live RPC events (messages/tools/ notices/outcomes anchored on native entry identity).",
+    "summary": "Start with `__init__.py` for the `HarnessProjector` protocol, channel flags, and registry. `common.py` holds the strict parsing primitives, the four mapper output types, and the honest provenance builders. `codex.py` maps thread items and notifications (items/blocks/tools/ deltas/turn results, plus the collab/sub-agent roster rows), `claude.py` maps stream-json frames (text/thinking/tools/results, the exact submission echo, and the `task_*` sub-agent lifecycle correlated by `parent_tool_use_id`), and `pi.py` maps durable entries and live RPC events (messages/tools/ notices/outcomes anchored...",
     "candidateHints": [
       "mcp/src/agents_remember/serving/conversation/projectors",
       "mcp/src/agents_remember/serving/conversation/projectors/__init__.py",
@@ -58,15 +58,19 @@
       "pi.py",
       "pi",
       "HarnessProjector",
+      "task_*",
+      "parent_tool_use_id",
       "init__",
+      "task_",
       "RPC",
       "route-local-overview",
       "mcp/src/agents_remember/serving/conversation/projectors/",
       "mcp/src/agents_remember/serving/conversation/projectors/overview.md",
       "conversation/overview.md",
-      "842b487b854503d95c9c2d9dce1841198ba93c7d",
+      "4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f",
       "active/",
       "unknown-vendor",
+      "parent_thread_id",
       "PROJECTORS",
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/models.py",
@@ -89,12 +93,8 @@
       "toolCallId",
       "unknown-input",
       "clientId",
-      "NotImplementedError",
-      "thread/read",
-      "turn-result",
-      "toolCall",
-      "toolResult",
-      "EvidenceFrame.native_method"
+      "collabAgentToolCall",
+      "subAgentActivity"
     ]
   },
   "fallback": {

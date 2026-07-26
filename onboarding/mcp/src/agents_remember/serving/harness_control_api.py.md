@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,9 +19,9 @@
 Defines the harness-neutral daemon request/response boundary for pre-session advertise,
 complete-pair launch selection, exact-session capability reads and model/effort sets, reliable
 whole-message submit, and same-request reconciliation. It freezes the server contract later UI and
-settings work may consume without implementing those surfaces here. FEUI-L9 also makes this the
+settings work may consume without implementing those surfaces here. It is also the
 single global mounting seam for the independently owned structured-conversation child routers, and
-260718-CHATS-L0 makes it the one-time construction site of the immutable app-scoped
+the one-time construction site of the immutable app-scoped
 `ConversationRuntime` authority those children consume.
 
 ## Code Commentary
@@ -30,7 +30,7 @@ single global mounting seam for the independently owned structured-conversation 
 
 `resolve_terminal_open_selection` accepts either no native selection or a complete model/effort pair
 for an AR built-in harness. A partial pair, plain terminal, or non-native harness fails before spawn;
-a valid pair becomes the existing L2 `ResolvedLaunch` rather than a second launch mechanism.
+a valid pair becomes the existing `ResolvedLaunch` rather than a second launch mechanism.
 
 `register_harness_control_routes` installs one pre-session capability route and five exact-session
 routes. The pre-session route delegates to `HarnessCapabilityCatalog`, including explicit refresh.
@@ -39,7 +39,7 @@ control endpoint. Capability and setter calls go through the exact-session clien
 entire message plus caller request id through `submit_control_prompt`; reconcile queries the same id.
 Setter domain outcomes remain HTTP 200 as normalized `SetResult` evidence.
 
-Before defining its harness-control endpoints, the registration function performs the L0 one-time
+Before defining its harness-control endpoints, the registration function performs the one-time
 composition binding: it constructs the single `ConversationRuntime` from authorities already in
 hand — a `ConversationScope` pairing `workspace_root` with the newly required `coordination_root`
 keyword, the catalog, host, harness registry, liveness clock/config, the same pre-session
@@ -56,6 +56,12 @@ Submit and reconciliation use public serializers that retain normalized correlat
 acceptance/state, and detail while omitting adapter-private `raw`. Transport/discovery unavailability
 is distinct from honest adapter acceptance. Async output remains on the existing event, terminal,
 transcript, and durable-bus paths.
+
+The snapshot route is multiplex-aware: the serialized snapshot body
+now carries an additive `pendingInteractions` list — every pending interaction across the
+multiplexed threads, each serialized through the same `pending_interaction_json` shape — beside the
+untouched singular `pendingInteraction` parent-thread slot (L458-L466). Consumers reading
+only the singular field see exactly the pre-multiplexing contract.
 
 ### Conventions
 
@@ -81,10 +87,13 @@ already uses them (`requestId`). Vendor-specific response shapes never cross thi
   opener is created.
 - `coordination_root` is a required keyword so the runtime scope always pairs both canonical
   roots; production composition accepts no browser-supplied or injected identity.
+- The multiplexed `pendingInteractions` field is strictly additive: the singular
+  `pendingInteraction` parent-thread slot keeps its exact pre-multiplexing meaning, and no pending entry is
+  dropped, merged, or reordered at this serialization seam.
 
 ### Todos
 
-Frontend and settings consumers belong to the separate FEUI and CFGUI masters.
+Frontend and settings consumers are separate workstreams outside this module.
 
 ## Docs References
 
@@ -121,21 +130,35 @@ catalog state.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260715-FEUI-L5 Submission Authority Delta
+## Submission Authority Delta
 
 The daemon API now exposes authority metadata plus cockpit-only raw-free status and withdrawal, with
 status batches limited to 64 ids. Submit/reconcile are epoch-bound and source-tagged. Epoch/id
 conflicts return 409 before lifecycle disclosure; only the exact pre-dispatch certificate returns a
 retry-safe 503, while possible-write loss remains unknown. The prior frontend-submit todo is closed.
 
-## 260718-CHATS-L5I Current Delta
+## Control-Read Liveness And Interaction-Response Delta
 
 The harness-control API adds a short liveness memo for control reads and the lifecycle-free interaction-response path. A direct answer is epoch-checked and typed, so a non-pending interaction is reported as such instead of silently disappearing.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## Multiplexed Pending Interactions Delta
+
+The snapshot route now serializes the multiplexed plural pending set: an additive
+`pendingInteractions` array (one entry per pending interaction across sub-agent threads, same
+`pending_interaction_json` shape) sits beside the unchanged singular parent-thread
+`pendingInteraction`. This is the control-plane half of the plural-pendings story — the exact
+serialization the validated client's `_snapshot` parser reads back.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `pendingInteractions` list on
+  the snapshot route (multiplexed sub-agent pendings, review R6) in Logic and Invariants; the
+  singular `pendingInteraction` contract is unchanged. Verification metadata stays pinned to the
+  pre-commit source history until closeout (the L7 change is uncommitted).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-time composition binding —

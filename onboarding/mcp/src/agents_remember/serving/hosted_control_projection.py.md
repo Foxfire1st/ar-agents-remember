@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/hosted_control_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,9 +17,10 @@
 ## Purpose
 
 Projects adapter snapshots into additive terminal catalog fields and converts protocol activity
-to the serving turn-state vocabulary. Since 260718-CHATS-L1 the turn-state projection delegates
+to the serving turn-state vocabulary. The turn-state projection delegates
 to the canonical conversation status authority, so orchestration and Chats serving consume one
-classification of adapter evidence (leaf R3).
+classification of adapter evidence. The snapshot projection also
+carries the multiplexed sub-agent pendings end-to-end into the catalog row.
 
 ## Code Commentary
 
@@ -27,7 +28,11 @@ classification of adapter evidence (leaf R3).
 
 Snapshot projection preserves existing catalog schema members while adding control state,
 activity, acceptance, vendor identity, pending interaction, sequence, and raw vendor detail.
-Legacy raw-TUI harness rows are explicitly marked unsupported. `snapshot_turn_state` (L70-L90)
+`control_snapshot_entry` (L35-L56) also projects `control_pending_interactions` (L47-L53): every entry of the snapshot's plural `pending_interactions` tuple
+is serialized through the same `pending_interaction_json` wire shape and stored as a list —
+purely additive, so the singular `control_pending_interaction` slot stays the parent-thread
+entry exactly as before, and an empty tuple serializes as `None` (no claim) rather than `[]`.
+Legacy raw-TUI harness rows are explicitly marked unsupported. `snapshot_turn_state` (L77-L100)
 now delegates to `snapshot_seat_turn_state` in the canonical status authority with an optional
 harness parameter: the same canonical classification the Chats serving consumes produces the
 turn state, and the single seat projection rule translates it — parity with the pre-canonical
@@ -50,6 +55,10 @@ seat state from adapter fields; the canonical authority is the only classificati
 - The delegated mapping must keep exact parity with the pre-canonical seat vocabulary; any
   vocabulary change belongs to the canonical authority, not a local mapping.
 - The function-local import cycle documentation must stay with the delegation.
+- The plural pending projection is additive only: the singular
+  `control_pending_interaction` slot remains the parent-thread entry and must not be fed from
+  the agent tuple; consumers that do not understand the multiplexed form see exactly the pre-multiplexing
+  row shape (empty tuple → `None`, never `[]`).
 
 ### Todos
 
@@ -65,11 +74,17 @@ No relevant external/domain documentation was configured; catalog and projection
 
 ## Repo-Internal References
 
+The canonical status authority classifies adapter evidence once for every consumer; the catalog
+owns the persisted additive fields the projection writes, including the multiplexed plural pendings; the
+snapshot grammar defines the multiplexed tuple this module serializes.
+
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The canonical status authority this module now delegates to (classification plus single seat projection rule). | L155-L190 | [status.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/status.py) |
-| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | L159-L216 | [test_conversation_active_status.py](agents-remember/mcp/tests/test_conversation_active_status.py) |
+| The canonical status authority this module now delegates to (classification plus single seat projection rule). | L205-L224 | [status.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/status.py) |
+| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | L168-L258 | [test_conversation_active_status.py](agents-remember/mcp/tests/test_conversation_active_status.py) |
 | `terminal_catalog.py` owns persisted additive fields and the `SeatTurnState` vocabulary. | L38 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | L121; L271 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| `AdapterSnapshot.pending_interactions` is the multiplexed sub-agent pending tuple this module serializes end-to-end; the singular slot stays the parent-thread entry (D3). | L224-L231 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 
 ## Cross-Repo References
 
@@ -79,7 +94,7 @@ No meaningful cross-repo references.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260718-CHATS-L5I Current Delta
+## Canonical Turn-Status Delegation Delta
 
 Hosted control projection now consumes the canonical conversation turn-status authority rather than maintaining a divergent local interpretation. This keeps dashboard and orchestration-facing status vocabulary aligned.
 
@@ -87,6 +102,14 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: recorded the multiplexed sub-agent pendings
+  projection (review R6): `control_snapshot_entry` now serializes every entry of the snapshot's
+  plural `pending_interactions` into the additive `control_pending_interactions` catalog field
+  (L47-L53), while the singular slot stays the parent-thread entry exactly as before and an
+  empty tuple serializes as `None`. Refreshed stale line citations (`snapshot_turn_state`
+  L77-L100, status authority L205-L224, parity suite L168-L258) and added the
+  catalog-field and snapshot-grammar reference rows. Verification metadata stays pinned — the
+  L7 change is uncommitted, so no commit hash can attest it.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the R3 orchestration migration —

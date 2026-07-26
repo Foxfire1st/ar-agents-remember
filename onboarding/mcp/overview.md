@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -301,6 +301,20 @@ withdrawal against guarded native dispatch, completes only exact full operation 
 bounded raw-free lifecycle status. `HarnessControlQueue` is a facade, not a second actor. The shared
 typed error family now distinguishes certified pre-dispatch busy, immutable-id conflict, and epoch
 mismatch so only the exact certificate is retry-safe.
+
+The hosted harness-control and conversation layers are multiplexed for harness sub-agents. The
+codex app-server connection auto-attaches every spawned sub-agent thread to the seat's connection,
+and the adapter demultiplexes per thread: a bounded thread registry tracks per-thread turns,
+operations, and pending interactions; collab items (`collabAgentToolCall`, `subAgentActivity`) bind
+agent identity into a snapshot-carried registry; malformed non-parent traffic degrades to preserved
+raw evidence while parent shape errors still fail loud; server→client requests (approvals) are
+accepted from any thread and answered by JSON-RPC request id. The wire grammar gains an additive
+agent dimension (`ConversationAgentRef` on items, `EvidenceFrame.thread_id`,
+`AdapterSnapshot.pending_interactions`), the active projector serves one multiplexed projection per
+seat (one page, one SSE, one cursor domain) with per-thread native/live dedupe, the library groups
+sub-agent conversations under their parent on both harnesses (codex `subAgent` source kinds, claude
+`subagents/*.jsonl` enumeration), and claude launches gate `--forward-subagent-text` on a
+version-floor probe with fail-closed fallback.
 
 ## Hot Path Summary
 
@@ -972,6 +986,10 @@ The package also owns the final mandatory commit-gate implementation: `code_qual
 
 ## Update History
 
+- 2026-07-26T18:45+02:00 — 260718-CHATS-L7 curator: added the multiplexed
+  harness sub-agent paragraph (adapter thread demux, additive agent grammar,
+  one-projection multiplexed serving, library grouping, gated claude text
+  forwarding). Verification metadata remains pre-commit.
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
   added the mandatory quality-wrapper, closeout adapter, public-description,
   packaged-skill/example, and focused-test route impact. Verification metadata

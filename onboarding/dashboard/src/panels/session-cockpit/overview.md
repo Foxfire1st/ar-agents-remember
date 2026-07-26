@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -76,6 +76,27 @@ and unknown-vendor events preserved as labeled evidence — no vendor-clone skin
 real turn+capability evidence and registered as the `conversation.stop` chord/palette command.
 History open focuses a new rail row only on exact `opened` catalog proof; every other outcome leaves
 the current draft/focus/scroll intact.
+
+## Sub-Agent Lanes And Multiplexed Pending Interactions
+
+The structured surface now renders harness sub-agents as first-class lanes. `ConversationSurface`
+derives the roster from the per-item agent refs, hosts an `AgentsArea`, and cycles parent → agent
+lanes on ArrowLeft/ArrowRight with Escape returning to the parent (editable/interactive targets own
+their keys). The stored focus lives outside the projection, survives LRU eviction, and is
+re-validated against the rehydrated roster rather than applied blindly; the focus switch is
+announced politely and only for the operator's own action on a visible surface.
+
+`ConversationLibraryList` renders a row's sub-agent conversations as indented child rows that
+select, preview, and open through the exact same flow as a top-level row — the child's
+`conversationKey` is minted server-side — and renders the page's `agentsNote` verbatim when the
+server reports (partial) agent-history unavailability.
+
+`InteractionBar` is multiplexed: one bar per pending interaction — the parent's singular slot
+first, then the sub-agent entries from the additive plural catalog slot, de-duplicated by
+interactionId — each badged with the adapter-bound agent label (absent on the parent, never
+fabricated) and answered through the same channel routing, so a sub-agent approval is never
+dropped into the legacy gate fallback. Rail rows and the palette's question triage preview name
+who asks, and a seat blocked solely on a sub-agent approval still reads awaiting-input.
 
 ## Route Model
 
@@ -301,6 +322,14 @@ evidence remains in the inspector. Structured decision pages, queue steering, an
 interaction route maintain distinct authority channels.
 
 ## Update History
+
+- 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: added the "Sub-Agent Lanes And Multiplexed
+  Pending Interactions" section — the `ConversationSurface` roster/agent-lane focus cycling with
+  roster-revalidated LRU-surviving focus, the library's indented server-keyed agent child rows plus
+  verbatim `agentsNote`, and the multiplexed `InteractionBar` (one bar per pending interaction,
+  adapter-bound agent badge, shared answer-channel routing) with attention previews naming who
+  asks. No route composition, keep-alive, or authority model changed; verification metadata
+  remains pre-commit and closeout re-stamps.
 
 - 2026-07-24T13:17:17Z — Curator: corrected the route model for mounted conversation continuity,
   scroll restoration, focused action placement, retired StatusLine/rail footer, and structured

@@ -10,6 +10,8 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "dashboard/src/data/conversation/agents.test.ts",
+    "dashboard/src/data/conversation/agents.ts",
     "dashboard/src/data/conversation/client.ts",
     "dashboard/src/data/conversation/format.test.ts",
     "dashboard/src/data/conversation/format.ts",
@@ -23,11 +25,12 @@
     "dashboard/src/data/conversation/types.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 11,
-    "fileSidecars": 11,
+    "sourceFilesInScope": 13,
+    "fileSidecars": 13,
     "childRoutes": 0
   },
   "routingTerms": [
+    "agents",
     "client",
     "conversation",
     "dashboard",
@@ -42,9 +45,11 @@
     "types"
   ],
   "hotPath": {
-    "summary": "1. `store.connectConversation` reads the bridge epoch, calls `client.fetchConversationPage` for the native-hydrated page, and `reducer.applyInitialPage` establishes the baseline + resume cursor. 2. `stream.openConversationStream` opens the resumable SSE from that cursor; each envelope flows through `reducer.applyEvent` (cursor-ordered, deduped, revision-gated). 3. A reducer `recovery` signal (`gap`/`reset`) stops the stream, re-pages native authority, and resumes from the fresh cursor; a typed page failure sets `errorBySession` and marks `projection-failed`. Since 260718-CHATS-L5F R10 the I...",
+    "summary": "1. `store.connectConversation` reads the bridge epoch, calls `client.fetchConversationPage` for the native-hydrated page, and `reducer.applyInitialPage` establishes the baseline + resume cursor. 2. `stream.openConversationStream` opens the resumable SSE from that cursor; each envelope flows through `reducer.applyEvent` (cursor-ordered, deduped, revision-gated). 3. A reducer `recovery` signal (`gap`/`reset`) stops the stream, re-pages native authority, and resumes from the fresh cursor; a typed page failure sets `errorBySession` and marks `projection-failed`. The INITIAL hydrate (`hydrateAnd...",
     "candidateHints": [
       "dashboard/src/data/conversation",
+      "dashboard/src/data/conversation/agents.test.ts",
+      "dashboard/src/data/conversation/agents.ts",
       "dashboard/src/data/conversation/client.ts",
       "dashboard/src/data/conversation/format.test.ts",
       "dashboard/src/data/conversation/format.ts",
@@ -58,6 +63,10 @@
       "dashboard/src/data/conversation/types.ts"
     ],
     "anchorHints": [
+      "agents.test.ts",
+      "agents.test",
+      "agents.ts",
+      "agents",
       "client.ts",
       "client",
       "format.test.ts",
@@ -96,16 +105,12 @@
       "openConversationStream",
       "SSE",
       "applyEvent",
-      "CHATS",
-      "L5F",
-      "R10",
+      "INITIAL",
+      "hydrateAnd",
       "dashboard/src/data/conversation/",
       "route-local-overview",
-      "842b487b854503d95c9c2d9dce1841198ba93c7d",
-      "/overview.md",
-      "data/conversation/",
-      "exact camelCase from the server's",
-      "ActiveConversationRef"
+      "4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f",
+      "/overview.md"
     ]
   },
   "fallback": {

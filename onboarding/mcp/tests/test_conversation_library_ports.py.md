@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_ports.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastUpdated | 2026-07-26T15:45+02:00 |
+| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Dormant port normalization tests for 260718-CHATS-L2 with fake native boundaries: proves the
+Dormant port normalization tests with fake native boundaries: prove the
 Codex, Claude, and Pi resolvers produce the landed normalized grammar (strict
 `ConversationItem` validators included), honest cursor/generation behavior, and exact resume
 targets — without touching real harness processes.
@@ -32,6 +32,12 @@ resolve mints the exact `codex-thread-resume` target. Claude list rows and pagin
 range-absurd `lastModified` fails as a typed store error (review F4); read maps blocks, roles,
 and provenance; resolve mints the `--resume` argv target. Pi read maps roles, tools, and
 notices; resolve mints the `--session <file>` argv target.
+
+The `_FakeCodexTransport` boundary (L91-L97) also covers the library's additive sub-agent
+fetch: a `thread/list` whose
+`sourceKinds` is outside the plain top-level vocabulary answers an empty page at this fake
+boundary, keeping these dormant port cases green while the agent-grouping suite
+(`test_conversation_library_agents.py`) owns the non-empty sub-agent cases.
 
 ### Conventions
 
@@ -75,5 +81,9 @@ No neighboring repository participates in this ports suite.
 
 ## Update History
 
+- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the additive sub-agent fetch at the
+  fake codex boundary (a non-top-level `sourceKinds` `thread/list` answers an empty page; the
+  non-empty agent-grouping cases live in `test_conversation_library_agents.py`). Verification
+  metadata stays pinned (uncommitted); closeout re-stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the dormant port normalization
   suite sidecar. Verification is blank until closeout commits and stamps the new source.

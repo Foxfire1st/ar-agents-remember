@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/conversation-library/store.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-07-26T15:40+02:00 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,28 +28,30 @@ focus signal ONLY on exact opened-catalog proof.
 
 ### Logic
 
-- **State shape** (L31-L72): `list?: LibraryListView` (rows + `nextCursor` + scope + loading/error),
-  `preview?: LibraryPreview`, `selectedKey`, and `open?: OpenTracker`. `OpenTracker` carries
+- **State shape** (L31-L75): `list?: LibraryListView` (rows + `nextCursor` + scope + `agentsNote` +
+  loading/error), `preview?: LibraryPreview`, `selectedKey`, and `open?: OpenTracker`. `OpenTracker` carries
   `requestId`, `dispatching` (from dispatch until the first response — blocks a double-dispatch, F6c),
   `pollsExhausted` (poll budget spent while non-terminal — offer a manual reconcile, F6a), and
   `openedForFocus` (true ONLY when `phase==="opened" && outcome==="opened"` — the sole focus gate).
-- **`loadLibraryList`** (L95-L134): sets a loading view (preserving prior rows when appending under a
+- **`loadLibraryList`** (L98-L141): sets a loading view (preserving prior rows when appending under a
   cursor), fetches, and either records `history unavailable for this harness` on `null` or merges
   rows and threads `canonicalProjectScope`/`nextCursor`. Append is detected by a non-null cursor on
-  the same harness.
-- **`loadLibraryPreview`** (L136-L152): sets `selectedKey`, shows a loading preview, fetches the
+  the same harness. **Agents note:** the previous view's `agentsNote` is carried
+  through the loading and error states; on success the FRESHEST page's note wins (`page.agentsNote
+  ?? null`) — it describes the query's current agent availability.
+- **`loadLibraryPreview`** (L143-L159): sets `selectedKey`, shows a loading preview, fetches the
   historical read page, and DROPS a stale preview if the selection moved on (`selectedKey !== key`).
-- **`applyOpen`** (L157-L170): folds an `OpenResult` into the tracker — on failure it KEEPS the
+- **`applyOpen`** (L164-L177): folds an `OpenResult` into the tracker — on failure it KEEPS the
   requestId (F6b, reconcile under the same id) and clears `dispatching`/`openedForFocus`; on success
   it stores the operation and sets `openedForFocus` only for the opened/opened terminal.
-- **`isTerminalOpen`** (L172-L175): `pending`/`timeout-unknown` keep polling under the same id;
+- **`isTerminalOpen`** (L179-L182): `pending`/`timeout-unknown` keep polling under the same id;
   every other outcome is terminal.
-- **`beginOpen`** (L182-L216): sets `dispatching:true` BEFORE the first POST (F6c — a second click
-  cannot open a second operation into the L2.3 TOCTOU window), dispatches `openConversation`, folds the
+- **`beginOpen`** (L189-L223): sets `dispatching:true` BEFORE the first POST (F6c — a second click
+  cannot open a second operation into the TOCTOU window), dispatches `openConversation`, folds the
   result, and starts polling only if non-terminal.
-- **`reconcileOpen`** (L222-L244): the poll-exhaustion / transport-retry re-drive — reuses the
+- **`reconcileOpen`** (L229-L251): the poll-exhaustion / transport-retry re-drive — reuses the
   EXISTING requestId and re-enters the poll loop with `reconcileFirst`, never minting a fresh id.
-- **`runOpenPolls`** (L253-L287): the bounded poll loop (`OPEN_POLL_MS`=1200, `OPEN_POLL_LIMIT`=25).
+- **`runOpenPolls`** (L260-L294): the bounded poll loop (`OPEN_POLL_MS`=1200, `OPEN_POLL_LIMIT`=25).
   It escalates `open-status`→`open-reconcile` every 5th poll (or immediately on a re-drive), aborts if
   the tracked requestId is superseded, and on budget exhaustion while still non-terminal sets
   `pollsExhausted` and stops (no dead-end "reconciling…" forever).
@@ -100,6 +102,11 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the page-level `agentsNote` on
+  `LibraryListView` — `loadLibraryList` carries the previous note through loading/error states and
+  takes the freshest page's note on success; all downstream line citations re-stamped against the
+  post-L7 source. The L7 source is uncommitted, so lastVerifiedCommit* stays on the prior stamp and
+  closeout re-stamps verification.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the reconstructable
   library store — paged list/preview state, the caller-stable open tracker (`dispatching`/
   `pollsExhausted`/`openedForFocus`), the bounded escalating poll loop, and the R4 discipline that

@@ -73,7 +73,7 @@
     "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 79,
+    "sourceFilesInScope": 84,
     "fileSidecars": 50,
     "childRoutes": 2
   },

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-26T15:35 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,14 +19,20 @@
 Adapts one native Codex app-server session and JSON-RPC transport to the normalized hosted adapter
 contract, including cached model/effort advertisement, transient token-free catalog discovery,
 settings-resolved initial configuration, and ordered same-thread model/effort switching.
-260718-CHATS-L0E stops the adapter dropping native frames: full notification/item/usage params now
+The adapter no longer drops native frames: full notification/item/usage params now
 ride the reserved `arEvidence` key into the bridge's evidence buffer, and a `thread/read`-backed
-native history page exposes persisted threads. 260718-CHATS-L2E implements the structural
+native history page exposes persisted threads. It implements the structural
 `InterruptCapableAdapter`/`AssetSubmitCapable` seams: a native `turn/interrupt` write against the
 exact active turn with replay-once, and verified `localImage` asset construction on `turn/start`.
-260718-CHATS-L5F R1 additionally carries each notification's native method under the reserved
+It additionally carries each notification's native method under the reserved
 `AR_EVIDENCE_METHOD_KEY` so the codex projector recognizes the 0.144.5 startup burst instead of
 re-guessing it from params shape and flooding one unknown-vendor row per MCP server.
+Harness sub-agents are first-class on the multiplexed app-server connection: a
+bounded per-thread demux registry (`_ThreadState`) replaces the single-thread `_validate_thread`
+gate, collab identity learning binds agent labels into `snapshot.raw.agentRegistry`, server-request
+approvals multiplex into `AdapterSnapshot.pending_interactions`, malformed sub-agent frames degrade
+to preserved raw evidence instead of failing the bridge, and `read_native_page` gains an optional
+`thread_id` selector so native history can be paged per thread.
 
 ## Code Commentary
 
@@ -43,25 +49,25 @@ prompt and retain the prior effective selection plus pending fresh-turn barrier.
 Launch-knob ownership, token-free discovery, interactions, events, and bounded reconciliation remain
 on their existing native paths.
 
-L0E forwarding places the full `params` of each previously trimmed emit under the reserved
-`arEvidence` raw key at six sites — the notification fallback (item/started, deltas, rate-limit and
-compaction shapes), `thread/status/changed`, `thread/settings/updated`, `turn/completed`, and both
-`item/completed` paths — while every pre-existing raw key (`codexMethod`, `turnId`) keeps its exact
-shape; the bridge diverts the payload so no projection changes. 260718-CHATS-L5F R1 additionally
-sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit (L598-L601) and on the
-`item/completed` evidence emit (L667-L670), so the notification's native method reaches the
+Evidence forwarding places the full `params` of each previously trimmed emit under the reserved
+`arEvidence` raw key — consolidated through the `_emit_notification` helper (L705-L721),
+with the parent-thread `thread/status/changed`/`thread/settings/updated` state emits keeping their
+direct path — while every pre-existing raw key (`codexMethod`, `turnId`) keeps its exact shape; the
+bridge diverts the payload so no projection changes. It additionally sets
+`AR_EVIDENCE_METHOD_KEY: method` inside `_emit_notification` (L705-L721, which also serves
+the `item/completed` evidence path at L778-L806), so the notification's native method reaches the
 projector as typed evidence rather than being stripped with the trimmed event; the bridge preserves
 it onto `EvidenceFrame.native_method` and strips the reserved key, keeping the redacted snapshot
 byte-identical. `codexMethod` still rides for diagnostics; the method-carry key is the discriminator
 the projector reads. `read_native_page` implements the
 structural native-page protocol over `thread/read` with `includeTurns`: it reconnects a disconnected
-session, requires the echoed thread id to match the adapter's own, flattens items through
+session, requires the echoed thread id to match the requested one, flattens items through
 `native_evidence_frames_from_thread`, and windows them with an opaque cursor; native window errors
 raise as typed `CodexAppServerError`, and ephemeral threads' native `includeTurns` refusal crosses
 typed with the native reason rather than a guessed page. Reconcile, submission, and interaction
 behavior is byte-preserved.
 
-L2E's `interrupt` writes one native `turn/interrupt(threadId, turnId)` against the exact active
+`interrupt` writes one native `turn/interrupt(threadId, turnId)` against the exact active
 turn: a missing active turn or a caller `turn_id` mismatching it fails typed before any write
 (`expected_operation_id` is result evidence, never a guard input — the codex guard is the native
 turn identity), and the write parameters use the captured active id so a completion interleaving
@@ -73,13 +79,49 @@ with zero `turn/start` requests — and `_turn_input` appends verified `localIma
 after the text block, with sha256/size re-verified at construction (`_verified_asset_path`).
 Receipt raw gains additive `assetIds` only when assets ride.
 
+The single-thread correlation maps are replaced by a per-thread demux. `_ThreadState`
+(L82-L104) holds one thread's active turn, turn→operation bindings, unbound completions, bounded
+terminal window, and pending interaction; `self._threads` (bounded at `THREAD_REGISTRY_LIMIT = 64`,
+L77) is keyed by native thread id with the parent/session state registered on first use via
+`_parent_state` (L1026-L1038). The old `_validate_thread` fail-on-foreign-thread gate is deleted:
+`_thread_for` (L1056-L1093) still fails closed on a missing or non-text `threadId` exactly as
+before, but a well-formed foreign id auto-registers as an `unresolved` agent thread and is never an
+error. Every notification handler demuxes first (`_handle_message`, L641-L703): parent-thread
+traffic keeps the pre-multiplexing snapshot/activity contract byte-identical, while sub-agent
+`thread/status/changed`, `turn/started`, `thread/settings/updated`, and `turn/completed` update
+only registry state plus raw evidence and never move the parent-scoped activity or settlement (D4).
+Turn writes stay parent-only, so agent turn completions record `None` as the operation and never
+touch `_active_operation` or the submission ledger. `_learn_collab_identity` (L1133-L1175) binds
+agent identity from parent-thread `collabAgentToolCall` (`receiverThreadIds`/`agentsStates`) and
+`subAgentActivity` (`agentThreadId`/`agentPath`) items, and `_publish_agent_registry` (L1177-L1195)
+mirrors the bounded registry into `snapshot.raw.agentRegistry` for the serving projector. Server
+requests demux per thread: each thread holds at most one pending interaction, `_sync_pending_snapshot`
+(L864-L881) rebuilds `AdapterSnapshot.pending_interactions` (the parent's entry stays in the
+singular slot; agent entries carry `raw.threadId` plus the bound `agentLabel`), and `respond`
+(L370-L394) routes by interaction id via `_interaction_thread` (L855-L862) — the active-operation
+match is enforced only for parent-thread responses (the parent-only operation guard). `read_native_page`
+(L435-L471) gains an additive `thread_id` selector: `None` reads the parent thread exactly as
+before, an explicit id pages that sub-agent thread through the same `thread/read` echo check.
+`item/completed` (L778-L806) stamps agent transcripts with `raw.threadId` (parent entries
+deliberately carry none, keeping the pre-multiplexing parent transcript shape byte-identical — fix-round
+review finding 12), while `_learn_item_thread` (L1102-L1115) + `_route_delta_params` (L1117-L1131)
+bind thread-less delta frames (`item/.../delta`, `patchUpdated`) to their item's learned thread
+without ever inventing one. `_degrade_agent_frame` (L609-L639) catches `CodexAppServerError` in the
+message loop: only a well-formed FOREIGN threadId degrades to preserved raw evidence
+with the failure noted; a missing or parent threadId re-raises and still fails the bridge. The four
+white-box parent views (`_active_turn_id`, `_turn_operations`, `_unbound_completions`,
+`_completed_turns`, L1040-L1055) keep the original correlation-test surface as live mappings over the
+parent `_ThreadState`.
+
 ### Conventions
 
 Acceptance is proven by correlated `turn/start`/`turn/steer` responses. A setter's `queued` result
 does not claim an effective value; the fresh turn is the effect boundary. Running advertise is a
 synchronous no-RPC read. Initial model/effort belongs to `thread/start`/`thread/resume` config; this
 native adapter never uses the codex-acp-only `CODEX_CONFIG` environment path. Adapter identity
-reports `codex-app-server:<opaque negotiated version>`.
+reports `codex-app-server:<opaque negotiated version>`. Per-thread demux state lives in one
+`_ThreadState` dataclass rather than parallel adapter-level dicts; the four parent-view properties
+exist only so the white-box correlation tests keep reading the original attribute names.
 
 ### Invariants And Boundaries
 
@@ -89,7 +131,7 @@ reports `codex-app-server:<opaque negotiated version>`.
 - Adapter-owned `--model`/`-m` and `model`/`model_reasoning_effort` config selectors cannot compete
   with the normalized launch selection; the runner preflights all accepted spellings.
 - The effort used for later turns and settings-update validation is the exact effort resolved while
-  opening the thread, including a model-local dynamic default for a roleless pre-L4 session.
+  opening the thread, including a model-local dynamic default for a roleless session.
 - Model changes rebase an unavailable desired effort to the target row's dynamic default; effort
   remains gated by the desired model's own menu.
 - Prompt-before-set and set-before-prompt preserve their captured selection order. No setter
@@ -104,7 +146,7 @@ reports `codex-app-server:<opaque negotiated version>`.
 - Evidence payloads ride only the reserved `arEvidence` key; the adapter never merges that key into
   any projection itself and never mints `bridgeEpoch`.
 - The native notification method rides the reserved `AR_EVIDENCE_METHOD_KEY` beside the `arEvidence`
-  payload (R1); the adapter only emits it and never reads or merges it — the bridge alone diverts it
+  payload; the adapter only emits it and never reads or merges it — the bridge alone diverts it
   onto the frame and strips it from the republished event.
 - Native pages are for persisted threads: a native refusal (e.g. ephemeral `includeTurns`) crosses
   typed with its reason instead of being retried into a less truthful shape.
@@ -114,10 +156,29 @@ reports `codex-app-server:<opaque negotiated version>`.
 - Asset bytes are re-verified (sha256/size) at construction before the native process sees a
   `localImage` path; a verification failure is a clean `rejected` receipt with zero native writes,
   and unknown/unverified native shapes are never guessed.
+- The thread demux fails closed exactly like the former `_validate_thread` on a missing or non-text
+  `threadId`; a well-formed foreign threadId auto-registers as `unresolved` and is never an error.
+- Malformed sub-agent frames degrade to preserved raw evidence with the failure noted (the bridge
+  stays ready); parent-thread shape errors still fail the bridge — `_degrade_agent_frame` is keyed
+  on a well-formed FOREIGN threadId, never a blanket catch.
+- Turn writes, settlement, and the submission ledger stay parent-only: agent turns carry no
+  `ControlOperationRef`, record `None` as the operation, and never move the parent-scoped
+  activity/acceptance (D4); a sub-agent approval likewise never moves parent activity.
+- The singular `pending_interaction` slot stays the parent's entry for back-compat; multiplexed
+  agent approvals live only in `pending_interactions` with their `threadId`/`agentLabel` evidence,
+  one pending interaction per thread, and `respond`'s active-operation guard applies to
+  parent-thread responses only.
+- The thread registry (`THREAD_REGISTRY_LIMIT = 64`) and item→thread index
+  (`ITEM_THREAD_INDEX_LIMIT = 1024`) are bounded; eviction never removes the parent, an
+  actively-turning agent, or one holding a pending approval, and a full registry raises so the
+  message loop degrades that frame to raw evidence instead of failing the bridge.
+- Delta routing never invents a thread: a thread-less delta for an unknown item crosses unmodified
+  on the parent/None path, and agent transcript entries carry `raw.threadId` while parent
+  transcript entries stay byte-identical to the pre-multiplexing shape.
 
 ### Todos
 
-None known for the L3 same-thread mutation seam.
+None known for the same-thread mutation seam.
 
 ## Docs References
 
@@ -131,16 +192,21 @@ pass was available for this update.
 ## Repo-Internal References
 
 Session ownership and strict model-page parsing remain dedicated modules rather than adapter-local
-policy.
+policy. The multiplexing grammar lives in the control models, and a dedicated
+thread-demux regression suite pins the anti-death behavior (before the demux, the first
+foreign-thread notification failed the whole bridge — the 2026-07-24 production seat death).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence. | L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
 | Submission evidence captures the exact model/effort pair accepted at reservation time. | L74-L118 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
-| The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | L93-L108; L220-L250 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
-| The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | L149-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
+| The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | L108-L128; L250-L262 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
+| The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | L174-L206 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
 | Model pages preserve display/description metadata and model-local reasoning effort options. | L142-L213 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 | The thread flatten helper enforces unique typed item identity for native paging. | L378-L415 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
+| The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key. | L226-L234; L471-L477 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector. | L209-L246; L547-L585 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| Thread-demux regression tests pin the anti-death behavior: foreign-thread auto-registration, collab identity binding into `agentRegistry`, multiplexed pending interactions, parent-only settlement, and degraded (never bridge-fatal) malformed agent frames. | L1-L457 | [test_codex_adapter_thread_demux.py](agents-remember/mcp/tests/test_codex_adapter_thread_demux.py) |
 | Contract tests pin the evidence round-trip, unknown-vendor pass-through, thread/read paging, and the installed 0.144.5 production-seam capture. | L791-L1033 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The structural sub-protocols this adapter implements; the caller's identity guards ride the write. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The control-plane contract suite pins the interrupt write/replay/turnId guard/no-active typed refusal and the `localImage` construction with zero-write rejection. | L454-L522; L1270-L1335 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
@@ -156,7 +222,7 @@ runtime boundary contracts.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260715-FEUI-L5 Submission Authority Delta
+## Submission Authority Delta
 
 Codex is now dispatch-now under the shared authority: it does not queue or steer an active turn.
 Prompt/setter writes are guarded and carry the exact operation ref; native turn ids bind to that ref.
@@ -166,6 +232,17 @@ or turn-id reuse cannot release a successor.
 
 ## Update History
 
+- 2026-07-26T15:35 — 260718-CHATS-L7 curator: documented the per-thread demux — `_ThreadState` +
+  bounded thread registry replacing the deleted `_validate_thread` gate (foreign ids auto-register,
+  missing/non-text ids still fail closed), collab identity learning into `snapshot.raw.agentRegistry`,
+  multiplexed `pending_interactions` with the parent-only operation guard on `respond`, per-thread
+  `read_native_page(thread_id=...)`, agent-transcript `threadId` stamping with byte-identical parent
+  entries, item→thread delta routing, bounded eviction, and degrade-not-fatal malformed agent frames.
+  Fixed stale emit-site citations (L598-L601/L667-L670 → `_emit_notification` L705-L721 +
+  `item/completed` L778-L806), refreshed the protocol-cancellation (L108-L128; L250-L262) and
+  launch-refusal (L174-L206) citations, and added rows for the models grammar and the
+  `test_codex_adapter_thread_demux.py` regression suite. Verification metadata stays pinned: the L7
+  change is uncommitted, so no commit hash can attest it.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the native-method carry: the
   `codex-notification` (L598-L601) and `item/completed` (L667-L670) emits now set
   `AR_EVIDENCE_METHOD_KEY: method` so the codex projector recognizes the 0.144.5 startup burst by

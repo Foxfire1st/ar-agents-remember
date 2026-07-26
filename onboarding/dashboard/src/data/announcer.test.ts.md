@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/announcer.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated | 2026-07-26T15:40+0200                           |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 Pins the single-copy-source announcement contract, repeat sequencing, transition-only fleet
-announcements, and the focused-question deduplication rule.
+announcements, and the focused-question deduplication rule — extended (N1) to the
+plural-pending case: a seat blocked SOLELY on a multiplexed sub-agent approval.
 
 ## Code Commentary
 
@@ -25,7 +26,11 @@ announcements, and the focused-question deduplication rule.
 
 The suite checks every SetResult/promotion/state string, verifies sequence increments for repeated
 text, exhausts the pure state-entry detector's seed/steady/transition cases, and drives the wired
-watcher through the live session store.
+watcher through the live session store. The N1 case (L119-L141) pins both halves of the
+agent-only-blocked coordination: UNFOCUSED, the region speaks with the seat-level wording
+(`sessionAwaitingInputAnnouncement`) and never claims the question is the parent's; FOCUSED, the
+InteractionBar announces the agent bar itself and the region stays silent — the fixture builds the
+plural-only row with the adapter-bound `raw: { threadId, agentLabel }`.
 
 ### Conventions
 
@@ -52,8 +57,9 @@ No Domain Documentation source is configured; no external citation applies.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Announcement implementation under test. | L1-L102 | [announcer.ts](announcer.ts) |
+| Announcement implementation under test. | L1-L112 | [announcer.ts](announcer.ts) |
 | One source for every asserted string. | L1-L127 | [setControlsCopy.ts](setControlsCopy.ts) |
+| The catalog-row fixture builder the seat helper spreads (plural pending flows through `...overrides`). | L10-L26 | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
 
 ## Cross-Repo References
 
@@ -63,7 +69,7 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
-## FEUI-L8 Reviewed Candidate Delta
+## Reviewed Candidate Delta
 
 Adds same-hydration multi-seat coverage: urgent transitions are emitted together so a later synchronous seat cannot overwrite the earlier alert.
 
@@ -71,6 +77,12 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the N1 agent-only-blocked pin — a seat
+  whose plural `controlPendingInteractions` carries a sub-agent permission (singular slot absent)
+  announces seat-level "awaiting input" when unfocused and stays silent when focused (the
+  InteractionBar announces the agent bar itself). Verification stays pinned; the L7 change is
+  uncommitted and closeout re-stamps.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

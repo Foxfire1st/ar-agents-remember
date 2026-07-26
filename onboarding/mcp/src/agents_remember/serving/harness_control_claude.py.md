@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,10 +28,23 @@ mutation, normalized state/events, interactions, reconciliation, and shutdown.
 `launch_knobs` produces native `--model <key> --effort <level>` argv and declares both flags as
 adapter-owned. `start` applies the stream-json protocol flags to the caller launch unchanged,
 negotiates structured initialization, and retains the live catalog before constructing the
-steady-state reader; since 260718-CHATS-L5F R2 it passes the expected launch's requested model key
+steady-state reader; it also passes the expected launch's requested model key
 (`expected_launch.model_key`) into `negotiate_claude_catalog` so that when the running harness echoes
 a resolved id shared by several catalog rows, current-model selection resolves to the requested alias
-and the effective-launch echo compares like-for-like (the claude `opus[1m]` refused-pair fix). `discover` copies the `LaunchSpec`, replaces only that transient copy's argv
+and the effective-launch echo compares like-for-like (the claude `opus[1m]` refused-pair fix).
+
+A floor-gated sub-agent text launch (fix-round review finding 8) runs inside
+`start` (L102-L131): the FIRST launch deliberately omits `--forward-subagent-text` because no
+version seam exists at argv-build time — the installed version is provable only from the captured
+`system/init`. When `forward_subagent_text_supported(system_init.version)` confirms the probed
+floor (`FORWARD_SUBAGENT_TEXT_FLOOR = (2, 1, 220)`), the adapter stops the transport, re-launches
+WITH the flag, and re-negotiates startup; a proven install that then rejected the flag would fail
+loudly at launch, never silently degrade. Below the floor (or with an unparseable/absent version)
+the adapter simply runs on without the flag. The verdict crosses on the snapshot metadata as
+`subagentTextForwarding` (L161-L170, L187): an explicit "enabled: … meets the probed floor …" note
+or the exact fail-closed "unverified: … flag was omitted …" reason — never a silent omission.
+
+`discover` copies the `LaunchSpec`, replaces only that transient copy's argv
 through `build_claude_discovery_argv`, invokes the same startup/catalog negotiation, returns the
 advertisement, and forces the transient adapter down in `finally`. It does not mutate the original
 launch or create a second startup implementation.
@@ -74,7 +87,7 @@ flags.
 - Unsupported or stopped state cannot advertise stale capabilities.
 - A successful expected launch must echo the selected model; a mismatch is launch failure with exact
   runner evidence, EXCEPT that a requested alias and the echoed key resolving to the same underlying
-  model now validate (R2, resolved via the threaded requested key + `verify_effective_launch`'s
+  model now validate (resolved via the threaded requested key + `verify_effective_launch`'s
   `_resolves_to_same_model`); genuine startup/protocol incompatibility remains `unsupported`.
 - Claude effort acceptance is not fabricated: stream-json has no effective-effort echo.
 - Mid-session selection changes only after exact terminal echo; replay alone and near-match model
@@ -84,10 +97,18 @@ flags.
 - Pane/log fallback, ACP transport, Toad hosting, composer-paste model changes, and blind resend are
   outside this adapter.
 - Acceptance remains distinct from completion.
+- `--forward-subagent-text` emission is fail-closed: the first launch never
+  carries the flag; it is added only on a re-launch after `system/init` proves the version meets
+  the probed floor 2.1.220. An unproven or below-floor install runs without the flag and the
+  snapshot says so verbatim (`subagentTextForwarding` = "unverified: …") — sub-agent text blocks
+  then simply do not cross the live stream instead of being partially guessed.
+- The floor gate is the ONLY version heuristic in this adapter (justified because the contract is
+  argv-only and cannot be probed without launching the flag); the "no launch-only heuristic"
+  convention above otherwise stands unchanged.
 
 ### Todos
 
-None known for the L5 discovery-isolation and native setter seams.
+None known for the discovery-isolation and native setter seams.
 
 ## Docs References
 
@@ -106,7 +127,8 @@ normalization.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | State requires the same vendor session, retained UUID, exact canonical replay body, and ordered terminal result. | L102-L169; L412-L471; L529-L565 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
-| Protocol keeps normal stream argv construction separate from discovery-only MCP selector replacement and pins the first-`--` boundary. | L41-L87 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
+| Protocol keeps normal stream argv construction separate from discovery-only MCP selector replacement and pins the first-`--` boundary. | L88-L114; L116-L155 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
+| The sub-agent-text forwarding floor gate: `FORWARD_SUBAGENT_TEXT_FLAG`, the probed floor `(2, 1, 220)`, and `forward_subagent_text_supported` — fail-closed so unproven/unparseable versions never get the flag. | L50-L85 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
 | Protocol command gating admits native model/effort categories without model-name heuristics while keeping identity changes blocked. | L223-L261 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
 | Claude catalog parsing validates unique models, selectability, resolved current identity, and model-local effort. | L15-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
 | The shared queue serializes setters with prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. | L73-L180; L476-L508 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
@@ -123,20 +145,32 @@ review found the selector-collision class that the first implementation missed.
 | Resource proof distinguishes cheap strict-empty discovery from materially heavier normal sessions and records the corrected live two-marker closure. | L65-L109 | [260716-ACPUI-L5-worker-closeout-report.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
 | Independent review confirms the copied discovery path, normal-start preservation, absent marker, complete live catalog, and final repository gates. | L70-L88 | [260716-ACPUI-L5-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
-## 260715-FEUI-L5 Submission Authority Delta
+## Submission Authority Delta
 
 The Claude hosted adapter passes full operation refs through prompt, response, model, and effort
 methods and delegates sole-operation preflight to stream state. An unknown setter remains the common
 authority barrier until exact resolution; it is not released merely because a caller timed out.
 
-## 260718-CHATS-L5I Current Delta
+## Native Interrupt Acceptance Delta
 
 The Claude control adapter now sends native interrupts through the shared control channel and returns a typed acceptance outcome. It does not infer terminal delivery from the write acknowledgement; stream settlement remains the authority.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## Floor-Gated Sub-Agent Text Forwarding Delta
+
+`start` now performs the floor-gated `--forward-subagent-text` launch (fix-round review finding 8): first launch omits the flag (no version seam exists at argv-build time), the captured `system/init` version decides, a proven install re-launches with the flag and re-negotiates, and the snapshot metadata carries the explicit `subagentTextForwarding` verdict — "enabled" with the floor citation or "unverified" with the exact fail-closed reason. This is the claude half of the sub-agent conversation story (the `subagents/*.jsonl` native-library side joins by `parent_tool_use_id` in the projector).
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the floor-gated `--forward-subagent-text`
+  launch in `start` (fail-closed first launch, `system/init`-proven re-launch, snapshot
+  `subagentTextForwarding` verdict), added the fail-closed invariants, refreshed the protocol argv
+  citation ranges for the L7-shifted source, and added the floor-gate protocol citation row.
+  Verification metadata stays pinned to the pre-commit source history until closeout (the L7 change
+  is uncommitted).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 — `start` now passes the expected launch's

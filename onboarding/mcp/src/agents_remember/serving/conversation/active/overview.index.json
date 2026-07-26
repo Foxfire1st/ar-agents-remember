@@ -46,7 +46,7 @@
     "store"
   ],
   "hotPath": {
-    "summary": "Start with `api.py` for the two routes and the typed pre-stream error ladder. `service.py` is the per-app authority (cursor secret, epoch verification per wire, atomic page+eventCursor, bounded projector LRU), `projector.py` the per-session engine (native hydration, bounded polls, echo zipper, total-order envelopes, gap mechanics), `store.py` the idempotence authority (native-id dedupe, tool block union, delta buffering, provenance application), `cursor.py` the signed cursor mint/verify boundary, `status.py` the canonical status classification both Chats and orchestration consume, `capabili...",
+    "summary": "Start with `api.py` for the two routes and the typed pre-stream error ladder. `service.py` is the per-app authority (cursor secret, epoch verification per wire, atomic page+eventCursor, bounded projector LRU), `projector.py` the per-session engine (native hydration, bounded polls, echo zipper, total-order envelopes, gap mechanics, and per-thread sub-agent demux with per-thread twin suppression), `store.py` the idempotence authority (native-id dedupe, tool block union, delta buffering, provenance application, roster-aware upsert guards), `cursor.py` the signed cursor mint/verify boundary, `s...",
     "candidateHints": [
       "mcp/src/agents_remember/serving/conversation/active",
       "mcp/src/agents_remember/serving/conversation/active/__init__.py",
@@ -84,7 +84,7 @@
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/active/overview.md",
       "conversation/overview.md",
-      "842b487b854503d95c9c2d9dce1841198ba93c7d",
+      "4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f",
       "expectedBridgeEpoch",
       "projectors/",
       "ConversationStatusService",

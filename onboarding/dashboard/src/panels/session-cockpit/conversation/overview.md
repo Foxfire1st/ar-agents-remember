@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                  |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:40+0200 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`                  |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ in-stage history browser is [conversation-library/](../conversation-library/over
 ## Purpose
 
 `session-cockpit/conversation/` is the **one harness-neutral grammar** that renders a live structured
-conversation (260718-CHATS-L4, design §12.1, §14). It projects the reconstructable
+conversation (design §12.1, §14). It projects the reconstructable
 `data/conversation` store into a single navigable `role="feed"` timeline of ruled blocks — streaming
 Markdown, full-inline thinking, stable-ID plans/tools/diffs/interactions/results, required image labels,
 and ambient telemetry — with visible harness identity and honest capability reasons, and **no
@@ -33,7 +33,22 @@ it never writes conversation authority and never scrapes a vendor TUI.
 - `ConversationSurface.tsx` — the page/stream shell: reconnect states, revision-keyed announcers that
   are SILENT on replay/hydration (`lastAppliedDelivery === "live"` strict, so fresh hydration/re-page
   never announces — F21), the global thinking toggle, the history-completeness note printing the
-  actually-unsupported capability's reason (F13), and the ambient telemetry toolbar.
+  actually-unsupported capability's reason (F13), and the ambient telemetry toolbar. It
+  also owns the sub-agent FOCUS model (R7): `storedAgentFocus` → `deriveAgents` →
+  `effectiveAgentFocus` (never applied blindly — a rehydrated projection without that agent honestly
+  falls back to the parent), ArrowLeft/ArrowRight cycling parent → agent 1 → … → agent N → parent and
+  Escape returning to the parent (the Claude Code agents-view precedent; editable/interactive targets
+  own their keys), polite visibility-gated `viewing <label>` announcements, the focus bar with a
+  `← back to parent conversation` button, and `filterItemsForFocus` feeding the timeline (`totalItems`
+  only when unfocused; a focused empty lane shows `no evidence from <label> yet`, never the welcome).
+- `AgentsArea.tsx` — the persistent sub-agents strip above the timeline (R7): one
+  roster-evidenced row per agent (label, word-carrying status chip — never color-only, §14.2; terminal
+  final-message preview), projection-only with no optimistic rows and no polling. It collapses to a
+  single `N agents · M running` summary line when narrow (ResizeObserver < 560px) or to a static
+  `0 agents` span on an empty roster; the summary button toggles expansion through an operator
+  `override` (default: expanded iff agents exist and the width allows). Row click toggles focus with
+  `aria-current` on the focused row; no transitions — a keyboard-driven expand/focus change must not
+  animate.
 - `ConversationTimeline.tsx` — the single virtualized `role="feed"` (`aria-label="Conversation"`).
   `aria-posinset` is the server `globalOrdinal` (never the array index); `aria-setsize` is emitted only
   when the total is honestly known, else `total unknown` copy (R5). A focus-pinning range extractor pins
@@ -51,7 +66,8 @@ it never writes conversation authority and never scrapes a vendor TUI.
   never clamped, obeys the hide-thinking toggle), `ToolItem` (stable-ID verb phrase + phase accent,
   in-place recompose, output clamp, diff routing), `DiffBlock` (per-file diff, full-to-threshold clamp
   with exact hidden count, labeled scroll region), `InteractionItem` (historical prompt + answer,
-  NON-live — InteractionBar owns the live gate channel), `TurnResultItem`
+  NON-live — InteractionBar owns the live gate channel; a bound agent ref badges WHO is asking in a
+  cyan uppercase badge), `TurnResultItem`
   (result/error/interrupt/notice/unknown-vendor as labeled evidence), `MarkdownBlock` (streaming-safe
   memoized react-markdown; code in its own labeled scroll region).
 - `primitives.tsx` — `ClampButton` (a real `<button aria-expanded aria-controls>`; exact `+N` only when
@@ -69,10 +85,10 @@ it never writes conversation authority and never scrapes a vendor TUI.
 - `TerminalDiagnosticsDrawer.tsx` — the DEFAULT-OFF, inert-when-closed drawer (`inert` + `aria-hidden` +
   zero children/no PTY mounted when closed — R2/R7/§14.1); framed inset vendor-chrome (A7); hosts the
   controlled runner PTY READ-ONLY through `PtySurface`'s `readOnly` prop (§12.6).
-- `useConversationControls.ts` — the exact-turn interrupt hook (§9.5), documented in the L5-Facing
+- `useConversationControls.ts` — the exact-turn interrupt hook (§9.5), documented in the Renderer Rulings
   Register below.
 
-## FB7 terminal-surface identity (260718-CHATS-L5P — the developer directive)
+## FB7 terminal-surface identity
 
 The renderer's grammar was unchanged; its STYLING became a terminal well instead of a generic web panel
 (spec home: the leaf visual-audit `## FB7`, derived from Toad `main.tcss` + the Claude Code / Codex TUIs).
@@ -120,37 +136,36 @@ so it holds by unit tests + the reviewer's live R13 pass.
 4. `useConversationControls` resolves the working turn id from item evidence and gates the interrupt,
    which `WorkingLine` renders and the `conversation.stop` chord/palette dispatches.
 
-## L5-Facing Register (durable renderer rulings the next conversation leaf must carry)
+## Renderer Rulings Register (durable renderer rulings a follow-on renderer change must carry)
 
-- **Interrupt gating is attempt-and-reflect on the L3 routes' evidence, never the stale L1 page view
-  (L4.1 / register L3.5).** No GET exposes the true control capability and the active page's
+- **Interrupt gating is attempt-and-reflect on the L3 routes' evidence, never the stale L1 page view.** No GET exposes the true control capability and the active page's
   `capabilities.controls` is the KNOWN-STALE L1 `unverified` view, so `useConversationControls` enables
   the stop on a working+resolvable turn unless the capability is a hard `unavailable`, and reflects the
   server's typed refusal reactively (a refusal disables that turn until the turn changes — F5). A clean
   proactive gate awaits a control-capabilities GET or an L1-view refresh.
-- **Hosted-codex status carries no `turn.turnId` during working turns (L4.R1).** `resolveWorkingTurnId`
+- **Hosted-codex status carries no `turn.turnId` during working turns (R1).** `resolveWorkingTurnId`
   correlates the id from projector item evidence (status turn id → newest streaming/pending item
   `turnId` → null with the honest reason `turn identity unavailable on this wire`); pi supplies the AR
   operation id per ruling 3. A status fix populating `turn.turnId` on this topology invalidates the
   correlation path.
-- **The known-stale L1 `unverified` reason must NEVER surface as control copy (F24 / L4.R4).** An
+- **The known-stale L1 `unverified` reason must NEVER surface as control copy (F24 / R4).** An
   enabled stop carries no reason (WorkingLine shows an honest action tooltip); the not-working/catalog-lag
-  placeholder falls back to the honest pre-L4 `STOP_TURN_DISABLED_REASON` constant. That constant's stale
-  "no cancel-turn route exists yet" wording predates L3 and should be RETIRED with the catalog-lag
-  turn-state reconciliation (L4.R4) — the catalog seat turn-state lags the projection in both directions,
+  placeholder falls back to the honest earlier `STOP_TURN_DISABLED_REASON` constant. That constant's stale
+  "no cancel-turn route exists yet" wording predates the L3 control routes and should be RETIRED with the
+  catalog-lag turn-state reconciliation (R4) — the catalog seat turn-state lags the projection in both directions,
   so the chord/palette can be live while the button is absent.
 - **`aria-keyshortcuts` is derived from the effective keymap, never hardcoded (F25).** `ariaKeyshortcuts(
   bindingFor(effectiveKeymap, "conversation.stop"))` keeps the AT advertisement truthful across a rebind
   through the `cockpit.sessions.keymap.v1` seam.
-- **Wrapping flex containers defeat height containment (L4.R5 / F23).** A `flex-wrap:wrap` container sizes
+- **Wrapping flex containers defeat height containment (R5 / F23).** A `flex-wrap:wrap` container sizes
   each line to content, so an interior `overflow:auto` never engages and in-stage affordances become
   pointer-unreachable. The reliable idiom is single-line (`nowrap`) flex + `min-height:0` columns +
   per-column interior scrollers + `@container` stacking. (This bites the sibling `conversation-library/`
   surface; recorded here because it is the renderer-wide layout lesson.)
-- **Virtualization DOM-boundedness at 10k items and the E1/E2 environmental faults — DELIVERED by
-  260718-CHATS-L5 (was L4.4 / L4.R2).** The 10k tool-heavy DOM/interaction baseline + axe tripwire now
+- **Virtualization DOM-boundedness at 10k items and the E1/E2 environmental faults — DELIVERED
+  (previously an open ruling).** The 10k tool-heavy DOM/interaction baseline + axe tripwire now
   lives in `renderer.test.tsx` (mounted rows bounded `< 80` AND `< total/100`; recorded 10 rows /
-  ~42–55 ms; the ms is a jsdom tripwire, a real-layout supersede is a second-half item — L5.R4). E1
+  ~42–55 ms; the ms is a jsdom tripwire, a real-layout supersede is a second-half item). E1
   (hosted-interactions vendor-correlation 500) is quarantined per row in `terminal_liveness.py` — the
   orphan `vendorCorrelationId` is the NORMAL steady state of cockpit-driven hosted chats — and E2 (L1
   unknown-input provenance 500) is closed by the store's input-authority pin. NEW L5 finding **F1**:
@@ -169,11 +184,12 @@ overview is their governing pillar.
 
 | Responsibility | File onboarding |
 | --- | --- |
-| Page/stream shell | [ConversationSurface.tsx](ConversationSurface.tsx.md) |
+| Page/stream shell + sub-agent focus model | [ConversationSurface.tsx](ConversationSurface.tsx.md) |
+| Sub-agents strip + focus suites | [AgentsArea.tsx](AgentsArea.tsx.md) · [AgentsArea.test.tsx](AgentsArea.test.tsx.md) · [ConversationAgentFocus.test.tsx](ConversationAgentFocus.test.tsx.md) |
 | Virtualized feed timeline | [ConversationTimeline.tsx](ConversationTimeline.tsx.md) |
 | Kind dispatcher | [ConversationItemView.tsx](ConversationItemView.tsx.md) |
 | Message/thinking/tool/diff items | [MessageItem.tsx](MessageItem.tsx.md) · [ThinkingItem.tsx](ThinkingItem.tsx.md) · [ToolItem.tsx](ToolItem.tsx.md) · [DiffBlock.tsx](DiffBlock.tsx.md) |
-| Interaction/result items | [InteractionItem.tsx](InteractionItem.tsx.md) · [TurnResultItem.tsx](TurnResultItem.tsx.md) |
+| Interaction/result items | [InteractionItem.tsx](InteractionItem.tsx.md) · [InteractionItem.test.tsx](InteractionItem.test.tsx.md) · [TurnResultItem.tsx](TurnResultItem.tsx.md) |
 | Markdown + primitives | [MarkdownBlock.tsx](MarkdownBlock.tsx.md) · [primitives.tsx](primitives.tsx.md) |
 | Ambient telemetry + run collapse | [AmbientTelemetry.tsx](AmbientTelemetry.tsx.md) · [collapse.ts](collapse.ts.md) · [collapse.test.ts](collapse.test.ts.md) |
 | Reconnect + diagnostics drawer | [ConversationReconnect.tsx](ConversationReconnect.tsx.md) · [TerminalDiagnosticsDrawer.tsx](TerminalDiagnosticsDrawer.tsx.md) |
@@ -183,7 +199,7 @@ overview is their governing pillar.
 ## Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
-configured. This route relies on its direct agents-remember source/tests and the reviewed L4
+configured. This route relies on its direct agents-remember source/tests and the reviewed
 task/worker/verdict evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
@@ -207,9 +223,9 @@ cross-repository implementation source governs it.
 | The sibling in-stage history browser. | [conversation-library overview](../conversation-library/overview.md) |
 | The one-roof composition that mounts this renderer. | [session-cockpit overview](../overview.md) |
 | The interrupt chord/aria-derivation the hook consumes. | [../../../data/keymap/overview.md](../../../data/keymap/overview.md) |
-| The control routes whose evidence gates interrupt + the L4-facing rulings. | [control overview](../../../../../mcp/src/agents_remember/serving/conversation/control/overview.md) |
+| The control routes whose evidence gates interrupt + the renderer-facing rulings. | [control overview](../../../../../mcp/src/agents_remember/serving/conversation/control/overview.md) |
 
-## Current L5I Route State
+## Empty-Well Honesty And Scroll-Restoration Route State
 
 The renderer keeps its timeline well mounted even while empty, uses process-state evidence for the
 welcome state, and owns a robust scroll-memory contract for a Cockpit `display:none` view switch.
@@ -219,6 +235,15 @@ the exact-turn Stop control intentionally remains beside Send in the composer.
 
 ## Update History
 
+- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the R7 sub-agent focus UX — the
+  `AgentsArea` strip (roster-evidenced rows, word-carrying status chips, narrow/empty summary
+  collapse, aria-current focus toggle), the surface-owned focus model (ArrowLeft/ArrowRight/Escape
+  keys with interactive-target exclusion, effective-focus honesty against the live roster, timeline
+  filtering with `totalItems` withheld while focused, the back-to-parent focus bar and the
+  focused-lane empty note), and the `InteractionItem` asking-agent badge. Added `AgentsArea.tsx`,
+  `AgentsArea.test.tsx`, `ConversationAgentFocus.test.tsx`, and `InteractionItem.test.tsx` to the
+  file onboarding map. The L7 source is uncommitted; lastVerified* stays at the leaf base and
+  closeout re-stamps verification.
 - 2026-07-24T13:17:17Z — Curator: documented current empty-well honesty, scroll restoration, latest
   navigation, SSE working cue, and composer-owned stop behavior. Verification metadata remains
   pre-commit.

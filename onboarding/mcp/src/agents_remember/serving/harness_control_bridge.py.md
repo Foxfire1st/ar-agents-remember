@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-26T15:34 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,13 +18,15 @@
 
 Hosts one exact harness identity, validates adapter handshake/capabilities, serializes prompts,
 interactions, reconciliation, and model/effort mutations through one bounded queue, and publishes
-normalized snapshots/transcripts. 260718-CHATS-L0E adds a bounded per-session native evidence
-buffer beside the untouched transcript path, plus deque-domain/native-domain evidence page reads
-and the submission-provenance batch read. 260718-CHATS-L2E adds the epoch-guarded native
-`interrupt` write dispatch (bridge-stamped epoch, adapter-mint epoch refused, settlement untouched)
-and the `operation_timeline` read delegation. 260718-CHATS-L5F R1 threads a diverted notification's
-native method onto the evidence frame as typed `native_method` and strips its reserved raw key so
-the redacted snapshot stays byte-identical.
+normalized snapshots/transcripts. A bounded per-session native evidence buffer sits beside the
+untouched transcript path, plus deque-domain/native-domain evidence page reads and the
+submission-provenance batch read. The epoch-guarded native `interrupt` write dispatch
+(bridge-stamped epoch, adapter-mint epoch refused, settlement untouched) and the
+`operation_timeline` read delegation are also served here. A diverted notification's native method
+is threaded onto the evidence frame as typed `native_method` and its reserved raw key stripped so
+the redacted snapshot stays byte-identical. Each evidence frame is stamped with the multiplex demux
+key `thread_id` extracted from the payload's `threadId`, and `native_page` is optionally per-thread
+for multiplexed adapters.
 
 ## Code Commentary
 
@@ -38,17 +40,22 @@ distinct from terminal completion; reconciliation and explicit unknown resolutio
 sends. Event reduction and transcript retention are bounded. Unexpected queue failures publish a
 loud failed state, resolve active callers, and drain queued commands.
 
-The L0E evidence buffer is a bounded per-session deque (default 2000 frames, per-frame 32 KiB clip)
+The evidence buffer is a bounded per-session deque (default 2000 frames, per-frame 32 KiB clip)
 fed at the single `_run_events` event-consumption point: when an adapter event carries the reserved
-`arEvidence` raw key, `_divert_evidence` (L499-L545) appends an `EvidenceFrame(sequence, kind,
-created_at, clipped payload, native_method)` and the redacted event (raw minus BOTH reserved keys,
-`{AR_EVIDENCE_KEY, AR_EVIDENCE_METHOD_KEY}` at L518) flows to reduce/observe/transcript/publish, so
+`arEvidence` raw key, `_divert_evidence` (L521-L544) appends an `EvidenceFrame(sequence, kind,
+created_at, clipped payload, native_method, thread_id)` and the redacted event (raw minus BOTH reserved keys,
+`{AR_EVIDENCE_KEY, AR_EVIDENCE_METHOD_KEY}` at L540) flows to reduce/observe/transcript/publish, so
 `snapshot.raw`, catalog `control_raw`, SSE projections, and every existing consumer stay
-byte-identical. 260718-CHATS-L5F R1 threads the out-of-band native method through this same seam:
+byte-identical. The out-of-band native method rides this same seam:
 when the event also carries `AR_EVIDENCE_METHOD_KEY`, `_divert_evidence` validates it is non-empty
-text (L510-L515, else raises) and preserves it on the frame as typed `native_method` (L516) so the
+text (L532-L536, else raises) and preserves it on the frame as typed `native_method` (L537-L539) so the
 codex projector switches on the real method, then strips the extra reserved key so the redacted
-snapshot stays byte-identical exactly as before. `evidence()` pages the deque domain with count+byte bounds and reports
+snapshot stays byte-identical exactly as before. A third stamped field carries the multiplex demux key:
+`_evidence_thread_id` (L546-L558) reads the payload's `threadId` verbatim — codex notification
+params carry it, parent frames carry the parent thread's id — and `_append_evidence` stamps it as
+`thread_id` on every frame (L581); anything present-but-not-non-empty-text degrades to `None`
+(the parent/session thread, matching pre-multiplexing behavior) rather than being guessed. `evidence()` pages
+the deque domain with count+byte bounds and reports
 `latestSequence`, `evictedBeforeSequence`, `truncated`, and `bridgeEpoch`; `native_page()` dispatches
 through the structural `NativePageReader` protocol (fail-closed typed where the adapter does not
 support it) and stamps the bridge epoch itself — an adapter-minted epoch is refused;
@@ -56,7 +63,14 @@ support it) and stamps the bridge epoch itself — an adapter-minted epoch is re
 bridge→authority path. The evidence sequence is the adapter event sequence and non-monotonic input
 fails visibly.
 
-The L2E `interrupt` dispatch is a single native write, never a queue entry: `_require_epoch`
+`native_page` is also optionally per-thread (L209-L254): the additive `thread_id` kwarg is
+forwarded to `adapter.read_native_page` only when present, so the structural `NativePageReader`
+protocol and every single-thread adapter keep their exact signature; an adapter that rejects the
+additive kwarg (`TypeError`) surfaces a typed `HarnessControlError` naming the adapter and stating
+it does not support per-thread native pages — never a silent fallback to the wrong thread. The
+bridge-stamped epoch discipline is unchanged on both paths.
+
+The `interrupt` dispatch is a single native write, never a queue entry: `_require_epoch`
 compares the caller's expected epoch with the authority's and raises
 `HarnessBridgeEpochMismatchError` on mismatch, `_require_running` gates lifecycle, and a structural
 `isinstance(adapter, InterruptCapableAdapter)` check refuses unsupported harnesses typed, naming
@@ -85,7 +99,7 @@ generic evidence validation/ordering belongs to the queue.
 - Evidence never rides the shared raw merge: the reserved key(s) are diverted at the one
   consumption point and only the redacted event reaches reduction, the authority, the transcript,
   and subscribers.
-- The R1 native method rides the same divert-and-strip discipline as the payload: it is preserved
+- The native method rides the same divert-and-strip discipline as the payload: it is preserved
   onto the frame as typed `native_method` and its reserved raw key removed from the republished
   event, so the byte-identical snapshot guarantee holds; a present-but-non-string or empty method
   fails visibly rather than being silently carried.
@@ -95,10 +109,16 @@ generic evidence validation/ordering belongs to the queue.
   completion path.
 - A harness without the structural `InterruptCapableAdapter` seam is refused typed with the
   adapter named; the fail-closed posture is bridge-side (claude needs no edits).
+- The evidence `thread_id` is extracted, never inferred: a missing or malformed
+  (non-text) `threadId` degrades to `None` = the parent/session thread, and only a consumer that
+  knows the session thread (the projector's identity) may classify frames further.
+- `native_page(thread_id=…)` is forwarded only when set; an adapter without the additive kwarg is
+  refused typed ("does not support per-thread native pages"), so a per-thread read can never
+  silently return the parent thread's page.
 
 ### Todos
 
-None known for the L4 bridge seam.
+None known for the bridge seam.
 
 ## Docs References
 
@@ -118,7 +138,7 @@ The protocol owns vendor-specific setters; the queue owns order and result valid
 | The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | L33-L79; L151-L180 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The queue facade serializes both setters and the timeline read through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
 | Private IPC exposes bridge advertise/set actions under the same exact identity. | L150-L170; L220-L229 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` (R1) are the method-carry pair this divert preserves. | L57-L72; L385-L470; L416-L420; L569-L660 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` are the method-carry pair this divert preserves, alongside `EvidenceFrame.thread_id` (the demux key this bridge stamps) plus `AdapterSnapshot.pending_interactions` (the plural multiplexed set). | L57-L76; L217-L227; L456-L478; L534-L544; L770-L790 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | Contract tests pin diversion no-leak, buffer bounds, continuation, epoch mismatch, and the provenance delegation through this bridge. | L268-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The structural interrupt sub-protocol this bridge dispatches against, with identity guards riding the write. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 | The IPC server dispatches the interrupt and operation-timeline actions to this bridge over the private socket. | L212-L215; L302-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
@@ -133,13 +153,13 @@ No external repository boundary is implemented by the bridge.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-### 260713-PHA-L5 Shared Protocol Bridge
+### Shared Protocol Bridge
 
 The bridge owns adapter lifecycle, exact identity, readiness, correlated immediate/queued/rejected/
 unknown receipts, pending interactions, transcript completion, and graceful recovery. It retains
 raw vendor detail as evidence without promoting pane diagnostics to authority.
 
-## 260715-FEUI-L5 Submission Authority Delta
+## Submission Authority Delta
 
 The bridge now exposes one epoch-bound authority facade for submit, reconcile, status, withdrawal,
 model/effort sets, and exact operation resolution. Direct adapter completion events enter authority
@@ -148,6 +168,13 @@ active operation. Startup failure and graceful stop clean the same authority ins
 
 ## Update History
 
+- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex demux key — `_evidence_thread_id`
+  extracts `threadId` verbatim (missing/malformed degrades to `None` = parent, never guessed) and
+  `_append_evidence` stamps it as `EvidenceFrame.thread_id` — and the additive per-thread
+  `native_page(thread_id=…)` forwarding (present-only forwarding, `TypeError` refused typed naming
+  the adapter, bridge-stamped epoch unchanged). Refreshed the `_divert_evidence` line ranges
+  (L521-L544, validation L532-L536) and the models citation ranges for the L7-shifted source.
+  Verification metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented `_divert_evidence`'s
   native-method thread: the diverted event's `AR_EVIDENCE_METHOD_KEY` is validated non-empty text,
   preserved onto the frame as typed `native_method`, and its reserved key stripped alongside

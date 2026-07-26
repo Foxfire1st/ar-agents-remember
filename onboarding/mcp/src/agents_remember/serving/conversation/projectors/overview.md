@@ -7,13 +7,13 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-26T15:52 |
+| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
+| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 
 ## What This Area Is
 
-This route is the per-harness active projector slice landed by 260718-CHATS-L1: the pure frame
+This route is the per-harness active projector slice: the pure frame
 grammars that map each harness's native frames — live evidence frames and native-history page
 frames — into normalized conversation mapping outputs for the engine in the sibling `active/`
 route. Mappers are schema-strict and vendor-honest: every item type with exact field evidence
@@ -30,9 +30,13 @@ surface, so the engine never special-cases a harness.
 Start with `__init__.py` for the `HarnessProjector` protocol, channel flags, and registry.
 `common.py` holds the strict parsing primitives, the four mapper output types, and the honest
 provenance builders. `codex.py` maps thread items and notifications (items/blocks/tools/
-deltas/turn results), `claude.py` maps stream-json frames (text/thinking/tools/results plus the
-exact submission echo), and `pi.py` maps durable entries and live RPC events (messages/tools/
-notices/outcomes anchored on native entry identity).
+deltas/turn results, plus the collab/sub-agent roster rows), `claude.py`
+maps stream-json frames (text/thinking/tools/results, the exact submission echo, and the
+`task_*` sub-agent lifecycle correlated by `parent_tool_use_id`), and
+`pi.py` maps durable entries and live RPC events (messages/tools/
+notices/outcomes anchored on native entry identity). Every mapper takes
+the optional `parent_thread_id` demux context; only codex consumes it — claude's sub-agent
+identity arrives in-band and pi has no sub-agent threads.
 
 ## What Belongs Here
 
@@ -50,8 +54,8 @@ notices/outcomes anchored on native entry identity).
 | --- | --- |
 | Ordinals, revisions, retention, envelopes, cursor minting, gap mechanics | `mcp/src/agents_remember/serving/conversation/active/` (the engine route). |
 | Strict wire grammar and provenance validation | `mcp/src/agents_remember/serving/conversation/models.py` (the parent contract route). |
-| Native evidence emission and the IPC seam | `serving/harness_control_*.py` and the native adapters (L0E; consumed). |
-| Dormant native list/read normalization | `mcp/src/agents_remember/serving/conversation/library/` (the L2 leaf). |
+| Native evidence emission and the IPC seam | `serving/harness_control_*.py` and the native adapters. |
+| Dormant native list/read normalization | `mcp/src/agents_remember/serving/conversation/library/`. |
 
 ## Structures Found Here
 
@@ -71,6 +75,14 @@ notices/outcomes anchored on native entry identity).
 - Honest user-input provenance: `unknown-input` with request correlation where the harness
   carries one (codex `clientId`, claude echo request id), always unknown-input for pi (no native
   correlation exists); the engine's provenance batch resolves exact sources exactly once.
+- Sub-agent mapping: codex `collabAgentToolCall`/`subAgentActivity` items
+  and the agent-lifecycle notification methods upsert a shared `codex-agent-<threadId>` roster —
+  never optimistic (the parent thread can never roster itself, `idle`/unknown statuses mint
+  nothing, and an agent `turn/completed` mints an agent-bound turn-result but NEVER a
+  parent-scoped `MappedTurnOutcome`); claude correlates `task_*` frames by `parent_tool_use_id`
+  through a bounded binding registry, and off-shape collab/task frames degrade to preserved
+  unknown-vendor evidence, never a stream kill. `thread/started` left the codex silent set:
+  parent boot/resume silence now comes from `_map_thread_started`'s guards, not the drop table.
 
 ## Operating Model
 
@@ -94,19 +106,19 @@ notices/outcomes anchored on native entry identity).
 
 ### Live frame mapping
 
-1. Codex notifications discriminate on the CARRIED native method first (260718-CHATS-L5F R1: the
-   adapter now carries `EvidenceFrame.native_method`), then params-key shape. `_SILENT_NOTIFICATION_METHODS`
+1. Codex notifications discriminate on the CARRIED native method first (the
+   adapter carries `EvidenceFrame.native_method`), then params-key shape. `_SILENT_NOTIFICATION_METHODS`
    drops the known codex 0.144.5 startup/lifecycle/status/telemetry burst BY METHOD
    (`mcpServer/startupStatus/updated`, `thread/started`, `remoteControl/status/changed`, `warning`,
    `configWarning`) → zero unknown-vendor rows on a stock open; a truly-unknown method still becomes
    unknown-vendor WITH the method NAMED. Bare deltas resolve their target block through the item kind
    at the engine.
 2. Claude assistant frames split text/thinking and mint stable-ID tool items; `tool_result`
-   carriers upsert the same item; result frames classify terminal outcomes. 260718-CHATS-L5F R3 learns
+   carriers upsert the same item; result frames classify terminal outcomes. The mapper learns
    the two installed-2.1.216 frame contracts first-class: `command_lifecycle` is strictly validated
    against the captured 3-state contract (`command_uuid` + `state ∈ {queued,started,completed}`) and
    mints NO timeline item (native history renders the command; the 3-state specimen is preserved as
-   L7/L8 slash-command prior art), a drifted state raising `UnmappableShape` → a VISIBLE malformed
+   prior art for the later slash-command consumers), a drifted state raising `UnmappableShape` → a VISIBLE malformed
    row; `rate_limit_event` is shape-validated then dropped as telemetry (like codex rateLimits).
 3. Pi `tool_execution_*` events upsert live tool items by `toolCallId`; `message_end`/
    `message_update` mint nothing — completed messages mint from durable entries.
@@ -140,12 +152,12 @@ notices/outcomes anchored on native entry identity).
   `message_end` frame.
 - Turn-result items mint only where a native settlement exists (codex/claude always; pi only
   for failed/aborted turns).
-- Codex notification identity (L5F R1): the native notification METHOD is preserved end-to-end as
+- Codex notification identity: the native notification METHOD is preserved end-to-end as
   typed `EvidenceFrame.native_method` and is the primary discriminator — the known lifecycle/status/
   telemetry burst is classified/dropped by method (never shape-guessed), and a truly-unknown method
   is NAMED in the unknown-vendor summary rather than one anonymous "unrecognized params" box. The
   drop-set is method-specific and item-less, so an item-bearing frame still reaches the shape branches.
-- Claude frame contracts (L5F R3): `command_lifecycle` and `rate_limit_event` are recognized-first-
+- Claude frame contracts: `command_lifecycle` and `rate_limit_event` are recognized-first-
   class against their captured contracts (not tolerated strangers); `command_lifecycle` mints no
   timeline row and a drifted state surfaces VISIBLY as a malformed row, never a silent tolerance and
   never a stream kill.
@@ -153,13 +165,13 @@ notices/outcomes anchored on native entry identity).
   for the SAME settled turn (live UUID/`msg_*` item ids vs positional `item-N`). The mapper faithfully
   emits both and correlates NO channels (purity), so the native-history twin can only arise on this
   codex hosted topology; the ENGINE, not the mapper, suppresses the twin of an already-live turn
-  (L5 F1, in `active/projector.py`, keyed on the shared `turnId`/`clientId`). Pi shares one namespace
+  (review finding F1, in `active/projector.py`, keyed on the shared `turnId`/`clientId`). Pi shares one namespace
   across channels and claude has no native pages, so neither can produce the twin.
 
 ## Repo-Internal References
 
 The engine route drives these mappers and owns everything stateful; the strict contract
-validates every emitted product; the L0E substrate defines the frame products; the runtime
+validates every emitted product; the evidence substrate defines the frame products; the runtime
 fixtures record which shapes are gate-observed. The mapper suite pins every grammar.
 
 | Finding | Citations | Source Path |
@@ -215,19 +227,36 @@ they map correctly.
 
 - Codex reasoning/diffs/MCP shapes and pi thinking/tool-execution shapes stay capability-`unverified`
   until installed-runtime fixtures observe them through the production seam. Claude's surface is now
-  `unverified` for a NEVER-PROBED contract reason (L5F R4 removed the installed-vs-locked version
-  gate), not a version reason — the R1/R3 frame contracts map cleanly on installed 2.1.216; promoting
-  claude to `supported` needs a captured 2.1.216 runtime fixture (worker H3).
-- Reviewer F3 (recorded follow-on, outside this leaf's letters): a stock pi 0.80.7 ordinary flow mints
+  `unverified` for a NEVER-PROBED contract reason (the installed-vs-locked version
+  gate was removed), not a version reason — the learned frame contracts map cleanly on installed
+  2.1.216; promoting claude to `supported` needs a captured 2.1.216 runtime fixture.
+- Reviewer F3: a stock pi 0.80.7 ordinary flow mints
   `pi:turn_start`/`pi:turn_end` unknown-vendor rows the pi mapper has never learned — the same
-  fixture-drift class as R1/R3, on pi, to be taught in a follow-on leaf.
+  fixture-drift class as the learned codex/claude frame contracts, on pi, to be taught in a follow-on.
 
-## 260718-CHATS-L5I Current Route Impact
+## Claude Interaction-Shape And Mutation-Diff Route Impact
 
 Claude projection now recognizes the native structured-interaction and interrupt frame shapes needed by the active/control contracts. Accepted interrupt correlation is required before an abort-style terminal result is classified as interrupted; other error evidence stays failed or unknown rather than being rewritten. Its stable mutation-diff facade now delegates Edit, MultiEdit, Write, and NotebookEdit to focused parsers over observed `tool_use.input`; malformed vendor shapes preserve raw input without inventing diffs, and MultiEdit identifiers retain original edit positions. Existing verification metadata remains pre-commit.
 
+## Sub-Agent Mapping Route Impact
+
+The mappers learned sub-agent frames: codex maps collab/roster items and agent-lifecycle
+notification methods into a shared per-thread roster (never optimistic — the parent can never
+roster itself, and an agent settlement never becomes a parent-scoped turn outcome), claude
+correlates `task_*` lifecycle frames by `parent_tool_use_id` through a bounded binding
+registry, and every mapper accepts the optional `parent_thread_id` demux context (only codex
+consumes it; claude identity is in-band, pi has no sub-agent threads). `thread/started` left
+the codex silent set — parent boot/resume silence is now guard-derived, not table-derived.
+Mappers stay pure; malformed agent frames degrade to preserved unknown-vendor evidence, never
+a stream kill.
+
 ## Update History
 
+- 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the sub-agent mapping grammars (codex
+  roster/collab, claude `task_*` correlation, the `parent_thread_id` demux context, the
+  `thread/started` silent-set change) in the Hot Path Summary and Structures list. Mappers stay
+  pure; protocol surface unchanged apart from the additive keyword. Aggregate route-index
+  generation remains manager-owned; verification metadata stays pinned (L7 uncommitted).
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP curation: recorded the
   stable Claude mutation-diff facade, focused parser split, malformed-input
   preservation, and original-position MultiEdit identity. Verification metadata
