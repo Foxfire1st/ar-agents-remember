@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/conversation/store.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,9 +74,9 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The store orchestration under test (connect/disconnect/enforceLru/failStream). | — | [store.ts](store.ts) |
-| The stream ctor injected as a no-op. | — | [stream.ts](stream.ts) |
-| The typed error shape threaded to the banner. | — | [types.ts](types.ts) |
+| The store orchestration under test (connect/disconnect/enforceLru/failStream). | — | [store.ts](store.ts.md) |
+| The stream ctor injected as a no-op. | — | [stream.ts](stream.ts.md) |
+| The typed error shape threaded to the banner. | — | [types.ts](types.ts.md) |
 
 ## Cross-Repo References
 
@@ -87,7 +87,19 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## 260727-CHATS-IM-L2 Child-Hydration Regression Delta
+
+The suite now proves selected-child-only POST routing and encoded identity (L66-L99), concurrent
+same-child singleflight (L101-L131), and the exact 64-request/64-state capacity bound with visible
+local-resource refusal (L133-L180). Its table-driven error cases preserve non-2xx, invalid payload,
+network, and timeout reasons as child-local state, and the recovery case proves a retry succeeds
+without changing the parent stream.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded selected-child routing,
+  singleflight, capacity, visible failure, and recovery coverage. Verification metadata remains
+  pinned while uncommitted.
 
 - 2026-07-24T13:17:50Z — Added current recovery and warm-LRU regression coverage. Verification
   hash/date remain pinned to the pre-commit source stamp.

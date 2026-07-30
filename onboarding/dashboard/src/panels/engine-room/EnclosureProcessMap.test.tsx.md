@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -170,7 +170,18 @@ The map suite now drives intersection changes to prove that all GSAP context twe
 without rebuilding and that the blueprint video pauses off-screen. It also pins the full-geometry
 warp-surge inputs used by transform animation.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+The animated-mode regression asserts that the structural canvas has no repeating `data-fx`
+targets and the sparse overlay owns surge and reindex targets. Existing effects-off tests continue
+to pin the static scene.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added the regression proving
+  repeating transforms live only in the sparse effects SVG when animation is enabled, while the
+  structural canvas contains none of the repeating `data-fx` targets. Verification metadata
+  remains pinned until closeout.
 
 - 2026-07-24T13:17:17Z — Curator: recorded off-screen animation/video and transform-surge
   regressions; verification fields remain pre-commit.

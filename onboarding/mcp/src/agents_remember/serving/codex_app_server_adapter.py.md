@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,8 +20,10 @@ Adapts one native Codex app-server session and JSON-RPC transport to the normali
 contract, including cached model/effort advertisement, transient token-free catalog discovery,
 settings-resolved initial configuration, and ordered same-thread model/effort switching.
 The adapter no longer drops native frames: full notification/item/usage params now
-ride the reserved `arEvidence` key into the bridge's evidence buffer, and a `thread/read`-backed
-native history page exposes persisted threads. It implements the structural
+ride the reserved `arEvidence` key into the bridge's evidence buffer, and the dedicated,
+runtime-probed native-history reader exposes persisted threads through bounded items/turns when
+accepted or an explicit legacy whole-thread path after two exact method-unavailable responses. It
+implements the structural
 `InterruptCapableAdapter`/`AssetSubmitCapable` seams: a native `turn/interrupt` write against the
 exact active turn with replay-once, and verified `localImage` asset construction on `turn/start`.
 It additionally carries each notification's native method under the reserved
@@ -287,7 +289,25 @@ Synchronous or asynchronous terminal events share one once-only completion latch
 and terminal dedupe are bounded, removed on completion, and keyed strongly enough that stale events
 or turn-id reuse cannot release a successor.
 
+## 260727-CHATS-IM-L2 Native-History Acquisition Delta
+
+`read_native_page` now delegates source acquisition, opaque continuation, and response bounds to
+one connection-local `CodexNativeHistoryReader` (L133-L146; L470-L496). The adapter no longer
+materializes `thread/read` itself. Reconnect resets the capability probe (L969-L980), so a new
+process proves items/turns/legacy support independently. The selected thread id remains exact and
+parent-by-default; history-method fallback is owned by the reader and requires exact `-32601`.
+
+This section supersedes older direct-`thread/read` descriptions in this sidecar. The dormant
+`conversation/library/codex.py` full-read path is outside this adapter change and remains a
+separate follow-up.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: replaced the direct whole-thread history
+  description with the connection-local, runtime-probed history reader; recorded reconnect probe
+  reset, exact thread selection, opaque continuation ownership, explicit legacy fallback, and the
+  separate dormant library exposure. Verification metadata stays pinned because the change is
+  uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: documented the two closed kill seams and the
   degrade rework. (1) Concurrent server requests: `_ThreadState.pending_interactions` is now a

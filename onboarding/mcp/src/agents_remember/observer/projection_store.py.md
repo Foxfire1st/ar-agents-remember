@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-12T20:02+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`             |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`             |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -206,7 +206,19 @@ The projection path now shares one contract/enclosure parse pass per tick and us
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+`project_and_write` receives an optional worker-owned `ProjectionInputState` plus exact
+`ProjectionRefresh` and consumes its complete `ProjectionInputs`. The reducer and atomic-write
+boundary are unchanged; input acquisition and reclamation now belong to the state object.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: `project_and_write` now
+  delegates input acquisition to `ProjectionInputState`, accepting the worker-owned retained state
+  and exact `ProjectionRefresh`. The write/reducer edge remains unchanged; this removes unrelated
+  domain reads from narrow change and heartbeat ticks. Verification metadata remains pinned until
+  closeout.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2: added the module-level `_contract_snapshot_cache`;

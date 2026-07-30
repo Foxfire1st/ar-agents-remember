@@ -8,25 +8,33 @@
   "sourceScope": [
     "mcp/src/agents_remember/serving/conversation/active/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/serving/conversation/active/projector",
+      "overview": "mcp/src/agents_remember/serving/conversation/active/projector/overview.md",
+      "index": "mcp/src/agents_remember/serving/conversation/active/projector/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/serving/conversation/active/__init__.py",
+    "mcp/src/agents_remember/serving/conversation/active/agent_history.py",
     "mcp/src/agents_remember/serving/conversation/active/api.py",
     "mcp/src/agents_remember/serving/conversation/active/capabilities.py",
     "mcp/src/agents_remember/serving/conversation/active/cursor.py",
     "mcp/src/agents_remember/serving/conversation/active/factories.py",
-    "mcp/src/agents_remember/serving/conversation/active/projector.py",
     "mcp/src/agents_remember/serving/conversation/active/service.py",
     "mcp/src/agents_remember/serving/conversation/active/status.py",
     "mcp/src/agents_remember/serving/conversation/active/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 9,
+    "sourceFilesInScope": 19,
     "fileSidecars": 9,
-    "childRoutes": 0
+    "childRoutes": 1
   },
   "routingTerms": [
     "active",
+    "agent",
+    "agent_history",
     "agents",
     "agents_remember",
     "api",
@@ -34,6 +42,7 @@
     "conversation",
     "cursor",
     "factories",
+    "history",
     "init",
     "init__",
     "mcp",
@@ -46,15 +55,16 @@
     "store"
   ],
   "hotPath": {
-    "summary": "Start with `api.py` for the two routes and the typed pre-stream error ladder. `service.py` is the per-app authority (cursor secret, epoch verification per wire, atomic page+eventCursor, bounded projector LRU), `projector.py` the per-session engine (native hydration, bounded polls, echo zipper, total-order envelopes, gap mechanics, and per-thread sub-agent demux with per-thread twin suppression), `store.py` the idempotence authority (native-id dedupe, tool block union, delta buffering, provenance application, roster-aware upsert guards), `cursor.py` the signed cursor mint/verify boundary, `s...",
+    "summary": "Start with `api.py` for page/events, selected-child history, and the typed pre-stream error ladder. `service.py` is the per-app authority (cursor secret, epoch verification per wire, atomic page+eventCursor, bounded projector LRU), `projector/` the decomposed per-session engine (native hydration, bounded polls, echo zipper, total-order envelopes, gap mechanics, and per-thread sub-agent demux with per-thread twin suppression), `store.py` the idempotence authority (native-id dedupe, tool block union, delta buffering, provenance application, roster-aware upsert guards), `cursor.py` the signed...",
     "candidateHints": [
       "mcp/src/agents_remember/serving/conversation/active",
+      "mcp/src/agents_remember/serving/conversation/active/projector",
       "mcp/src/agents_remember/serving/conversation/active/__init__.py",
+      "mcp/src/agents_remember/serving/conversation/active/agent_history.py",
       "mcp/src/agents_remember/serving/conversation/active/api.py",
       "mcp/src/agents_remember/serving/conversation/active/capabilities.py",
       "mcp/src/agents_remember/serving/conversation/active/cursor.py",
       "mcp/src/agents_remember/serving/conversation/active/factories.py",
-      "mcp/src/agents_remember/serving/conversation/active/projector.py",
       "mcp/src/agents_remember/serving/conversation/active/service.py",
       "mcp/src/agents_remember/serving/conversation/active/status.py",
       "mcp/src/agents_remember/serving/conversation/active/store.py"
@@ -62,6 +72,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "agent_history.py",
+      "agent_history",
       "api.py",
       "api",
       "capabilities.py",
@@ -70,21 +82,21 @@
       "cursor",
       "factories.py",
       "factories",
-      "projector.py",
-      "projector",
       "service.py",
       "service",
       "status.py",
       "status",
       "store.py",
       "store",
+      "projector",
+      "projector/",
       "eventCursor",
       "LRU",
       "route-local-overview",
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/active/overview.md",
       "conversation/overview.md",
-      "a401e3dba0bc6e9723451edbfdefb8d77c42945d",
+      "3a8ff703d796dc585b86a458daaf9eb2af6b2b31",
       "expectedBridgeEpoch",
       "projectors/",
       "ConversationStatusService",
@@ -105,9 +117,7 @@
       "resume-replay",
       "ordering-fault",
       "role==\"user",
-      "claude:echo: unrecognized submission echo shape",
-      "projector._release_dormant_state",
-      "_live_turn_ids"
+      "claude:echo: unrecognized submission echo shape"
     ]
   },
   "fallback": {

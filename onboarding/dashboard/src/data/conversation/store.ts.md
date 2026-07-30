@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/conversation/store.ts`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-26T15:40+02:00                           |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated            | 2026-07-27T14:20+02:00                           |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -111,14 +111,14 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The pure reducer whose page/event/recovery this store drives. | L19-L26 | [reducer.ts](reducer.ts) |
-| The page/telemetry/interrupt client this store fetches through. | L15-L18 | [client.ts](client.ts) |
-| The SSE controller this store opens/reconnects/stops. | L27 | [stream.ts](stream.ts) |
-| The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | — | [store.test.ts](store.test.ts) |
-| The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). | L44-L48 · L103-L109 | [agents.ts](agents.ts) |
-| The focus LRU-survival + reset pins for `agentFocusBySession`. | L44-L48 · L131-L134 | [agents.test.ts](agents.test.ts) |
-| The stage body that connects/disconnects on focus + epoch resolution. | L71-L102 | [../../panels/session-cockpit/ChatsStageBody.tsx](../../panels/session-cockpit/ChatsStageBody.tsx) |
-| The house vanilla-zustand store idiom this matches. | — | [../store.ts](../store.ts) · [../sessionCockpitStore.ts](../sessionCockpitStore.ts) |
+| The pure reducer whose page/event/recovery this store drives. | L19-L26 | [reducer.ts](reducer.ts.md) |
+| The page/telemetry/interrupt client this store fetches through. | L15-L18 | [client.ts](client.ts.md) |
+| The SSE controller this store opens/reconnects/stops. | L27 | [stream.ts](stream.ts.md) |
+| The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | — | [store.test.ts](store.test.ts.md) |
+| The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). | L44-L48 · L103-L109 | [agents.ts](agents.ts.md) |
+| The focus LRU-survival + reset pins for `agentFocusBySession`. | L44-L48 · L131-L134 | [agents.test.ts](agents.test.ts.md) |
+| The stage body that connects/disconnects on focus + epoch resolution. | L71-L102 | [../../panels/session-cockpit/ChatsStageBody.tsx](../../panels/session-cockpit/ChatsStageBody.tsx.md) |
+| The house vanilla-zustand store idiom this matches. | — | [../store.ts](../store.ts.md) · [../sessionCockpitStore.ts](../sessionCockpitStore.ts.md) |
 
 ## Cross-Repo References
 
@@ -129,7 +129,26 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## 260727-CHATS-IM-L2 Selected-Child Store Delta
+
+`agentHistoryBySession` is child-scoped UI acquisition state and never changes the parent's stream
+phase (L47-L74; L132-L146). `hydrateAgentConversation` sends one request for the selected child,
+singleflights duplicate callers, retains successful child ids in LRU order, and publishes
+loading/ready/failed states without calling `failStream` (L470-L563). Both in-flight and retained
+child bookkeeping are capped at 64. This explicit bound is necessary because multiple mounted
+consumers can call the exported function and abandoned requests/success rows otherwise form
+unbounded browser state; capacity refusal is a visible `local-resource-limit`, not silent defense.
+
+Disconnect/reconnect clears child acquisition state with its runtime, while the existing raw focus
+survives and is revalidated against the next roster. A failed child is retryable; a successful
+child is not re-posted within the same runtime.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented child-scoped history state,
+  same-child singleflight, visible retry/failure, the necessary 64-entry in-flight/retained bounds,
+  and strict separation from parent stream failure. Verification metadata remains pinned while
+  uncommitted.
 
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the operator agent-focus state —
   `agentFocusBySession` + `setAgentFocus` (null clears), keyed OUTSIDE `bySession` so an LRU

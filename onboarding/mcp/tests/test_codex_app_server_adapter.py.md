@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -156,7 +156,18 @@ refs to fresh turns, terminal evidence promotes exactly once, early completion i
 guards clean pending state, and stale/duplicate/reused turn ids cannot release a successor. Both
 synchronous and async correlation maps are bounded.
 
+## 260727-CHATS-IM-L2 Experimental Capability Delta
+
+The unknown server-request regression now distinguishes two independent facts: experimental history
+is enabled at initialization, while an unrelated unsupported server-to-client request is still
+declined/degraded. It does not infer that any history method exists or that experimental server
+requests are accepted; the dedicated history-reader tests own runtime method probing.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: corrected the adapter-suite capability
+  record to experimental history opt-in without overclaiming method or server-request support.
+  Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the deliberately changed
   experimental-request failure contract — the decline is unchanged (`respond_error` -32601, no

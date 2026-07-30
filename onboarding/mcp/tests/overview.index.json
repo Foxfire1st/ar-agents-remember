@@ -27,6 +27,7 @@
     "mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json",
     "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
     "mcp/tests/fixtures/pi_rpc/activity.jsonl",
+    "mcp/tests/test_active_projector_singleflight.py",
     "mcp/tests/test_agentic_settings.py",
     "mcp/tests/test_benchmark_analysis.py",
     "mcp/tests/test_carryover.py",
@@ -42,9 +43,12 @@
     "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_code_quality_check.py",
     "mcp/tests/test_codex_adapter_thread_demux.py",
+    "mcp/tests/test_codex_agent_lifecycle.py",
     "mcp/tests/test_codex_app_server_adapter.py",
     "mcp/tests/test_codex_app_server_live.py",
     "mcp/tests/test_codex_app_server_protocol.py",
+    "mcp/tests/test_codex_history_production_path.py",
+    "mcp/tests/test_codex_native_history.py",
     "mcp/tests/test_compact_content.py",
     "mcp/tests/test_config.py",
     "mcp/tests/test_context_packet.py",
@@ -131,6 +135,7 @@
     "mcp/tests/test_pi_rpc_adapter.py",
     "mcp/tests/test_pi_rpc_process.py",
     "mcp/tests/test_pi_rpc_real_smoke.py",
+    "mcp/tests/test_projection_domain_invalidation.py",
     "mcp/tests/test_projection_scaling_cs6.py",
     "mcp/tests/test_provider_async.py",
     "mcp/tests/test_provider_containment.py",
@@ -166,6 +171,7 @@
     "mcp/tests/test_sync_runtime.py",
     "mcp/tests/test_sync_scripts.py",
     "mcp/tests/test_task_document.py",
+    "mcp/tests/test_task_document_payload_cache.py",
     "mcp/tests/test_task_reopen.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
@@ -189,8 +195,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 170,
-    "fileSidecars": 177,
+    "sourceFilesInScope": 176,
+    "fileSidecars": 183,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -224,6 +230,7 @@
     "build_rich_sim",
     "builder",
     "bundle",
+    "cache",
     "calculator",
     "capabilities",
     "capture",
@@ -272,8 +279,7 @@
     "diag",
     "discovery",
     "dispatch",
-    "doc",
-    "docker"
+    "doc"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",
@@ -301,7 +307,7 @@
       "mcp/tests/fixtures/pi_rpc",
       "mcp/tests/fixtures/pi_rpc/0.80.6-capabilities.json",
       "mcp/tests/fixtures/pi_rpc/activity.jsonl",
-      "mcp/tests/test_agentic_settings.py"
+      "mcp/tests/test_active_projector_singleflight.py"
     ],
     "anchorHints": [
       "_agent_wire_fixtures.py",
@@ -332,6 +338,8 @@
       "0.80.6-capabilities",
       "activity.jsonl",
       "activity",
+      "test_active_projector_singleflight.py",
+      "test_active_projector_singleflight",
       "test_agentic_settings.py",
       "test_agentic_settings",
       "test_benchmark_analysis.py",
@@ -349,9 +357,7 @@
       "test_change_watcher.py",
       "test_change_watcher",
       "test_chats_l5_hardening.py",
-      "test_chats_l5_hardening",
-      "test_chats_l5f_leaks.py",
-      "test_chats_l5f_leaks"
+      "test_chats_l5_hardening"
     ]
   },
   "fallback": {

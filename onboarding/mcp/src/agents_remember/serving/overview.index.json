@@ -29,7 +29,9 @@
     "mcp/src/agents_remember/serving/claude_stream_state.py",
     "mcp/src/agents_remember/serving/claude_stream_submission.py",
     "mcp/src/agents_remember/serving/claude_stream_transport.py",
+    "mcp/src/agents_remember/serving/codex_agent_lifecycle.py",
     "mcp/src/agents_remember/serving/codex_app_server_adapter.py",
+    "mcp/src/agents_remember/serving/codex_app_server_history.py",
     "mcp/src/agents_remember/serving/codex_app_server_protocol.py",
     "mcp/src/agents_remember/serving/codex_app_server_session.py",
     "mcp/src/agents_remember/serving/codex_app_server_state.py",
@@ -93,14 +95,15 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 125,
-    "fileSidecars": 75,
+    "sourceFilesInScope": 137,
+    "fileSidecars": 77,
     "childRoutes": 1
   },
   "routingTerms": [
     "actions",
     "adapter",
     "adapters",
+    "agent",
     "agents",
     "agents_remember",
     "api",
@@ -128,7 +131,9 @@
     "claude_stream_transport",
     "client",
     "codex",
+    "codex_agent_lifecycle",
     "codex_app_server_adapter",
+    "codex_app_server_history",
     "codex_app_server_protocol",
     "codex_app_server_session",
     "codex_app_server_state",
@@ -166,6 +171,7 @@
     "heap",
     "heap_diag",
     "heartbeat",
+    "history",
     "hosted",
     "hosted_control_projection",
     "hosted_interactions",
@@ -173,14 +179,10 @@
     "inbox",
     "inbox_delivery",
     "inbox_reclamation",
-    "info",
-    "init",
-    "init__",
-    "injector",
-    "interactions"
+    "info"
   ],
   "hotPath": {
-    "summary": "For the active conversation serving, start at `conversation/active/api.py` (the two routes plus the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`; the four focused suite...",
+    "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",
@@ -197,15 +199,15 @@
       "mcp/src/agents_remember/serving/claude_stream_state.py",
       "mcp/src/agents_remember/serving/claude_stream_submission.py",
       "mcp/src/agents_remember/serving/claude_stream_transport.py",
+      "mcp/src/agents_remember/serving/codex_agent_lifecycle.py",
       "mcp/src/agents_remember/serving/codex_app_server_adapter.py",
+      "mcp/src/agents_remember/serving/codex_app_server_history.py",
       "mcp/src/agents_remember/serving/codex_app_server_protocol.py",
       "mcp/src/agents_remember/serving/codex_app_server_session.py",
       "mcp/src/agents_remember/serving/codex_app_server_state.py",
       "mcp/src/agents_remember/serving/daemon.py",
       "mcp/src/agents_remember/serving/delta.py",
-      "mcp/src/agents_remember/serving/dispatch_brief.py",
-      "mcp/src/agents_remember/serving/events.py",
-      "mcp/src/agents_remember/serving/files.py"
+      "mcp/src/agents_remember/serving/dispatch_brief.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -234,8 +236,12 @@
       "claude_stream_submission",
       "claude_stream_transport.py",
       "claude_stream_transport",
+      "codex_agent_lifecycle.py",
+      "codex_agent_lifecycle",
       "codex_app_server_adapter.py",
       "codex_app_server_adapter",
+      "codex_app_server_history.py",
+      "codex_app_server_history",
       "codex_app_server_protocol.py",
       "codex_app_server_protocol",
       "codex_app_server_session.py",
@@ -251,11 +257,7 @@
       "events.py",
       "events",
       "files.py",
-      "files",
-      "harness_adapters.py",
-      "harness_adapters",
-      "harness_capabilities.py",
-      "harness_capabilities"
+      "files"
     ]
   },
   "fallback": {

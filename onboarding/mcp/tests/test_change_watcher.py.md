@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_change_watcher.py`             |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-12T20:24+02:00                         |
-| lastVerifiedCommitHash |                                                `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
-| lastVerifiedCommitDate |                                                2026-07-13T12:33:57+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash |                                                `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |                                                2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -93,7 +93,17 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | Same-repository tests only. | N/A | N/A |
 
+## 260727-CHATS-IM-L2 Current Delta
+
+Coverage now proves tasks/lifecycles/workspace path mapping, multi-domain coalescing, full-refresh
+fallback for an unknown accepted path, and the exact task-domain wake through both the adaptive
+worker and real watchfiles integration.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added path-to-domain,
+  coalescing, fail-open unknown-path, adaptive-worker, and real-watchfiles assertions for domain
+  invalidation. Verification metadata remains pinned until closeout.
 
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: created alongside `serving/change_watcher.py` — root
   derivation exactness, self-trigger/event filtering (incl. the lifecycle-vs-workspace

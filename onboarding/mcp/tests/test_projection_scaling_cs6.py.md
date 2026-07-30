@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-12T20:02+02:00                         |
-| lastVerifiedCommitHash |                                                `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
-| lastVerifiedCommitDate |                                                2026-07-13T12:33:57+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash |                                                `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |                                                2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -86,7 +86,16 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | Same-repository tests only. | N/A | N/A |
 
+## 260727-CHATS-IM-L2 Current Delta
+
+`LandingProjectionHotPathTests` now proves a heartbeat replaces only landing rows from published
+landing authority while contract, guidance, and other status facts retain identity and value.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added the heartbeat landing-tail
+  regression proving a refresh replaces only landing rows while retaining contract, guidance, and
+  non-landing status facts. Verification metadata remains pinned until closeout.
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2: added `ContractSnapshotSharedPassTests` — parse-count
   N/zero/changed-only across builds, one contract enumeration per full projection tick, reader-output
   parity with/without the injected snapshot, live-set cache retention, the chmod-000 and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-26T15:52 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated            | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -57,8 +57,9 @@ principal/tenant channel, fail closed otherwise.
 
 The active child is implemented inside its owned seam as
 `serving/conversation/active/` plus the per-harness mapper grammars in
-`serving/conversation/projectors/`: the two registered production wires (authorized native-
-hydrated page and resumable SSE events) behind the shared composition, HMAC-signed purpose-branded
+`serving/conversation/projectors/`: three registered production wires (authorized native-hydrated
+page, selected-child history, and resumable SSE events) behind the shared composition,
+HMAC-signed purpose-branded
 page/event cursors re-bound against the authorized identity on every wire, a per-app service
 holding a bounded reconstructable-projector LRU, per-session engines that hydrate from native
 authority (codex persisted-thread pages, pi durable entries, the bounded live evidence window —
@@ -253,7 +254,7 @@ until then, so hosted-delivery failures do not escalate before the persistent re
 ## Hot Path Summary
 
 For the active conversation serving, start at
-`conversation/active/api.py` (the two routes plus the O4 error ladder), then
+`conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then
 `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor),
 `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics),
 `conversation/active/store.py` (idempotence, tool block union),
@@ -1240,7 +1241,26 @@ one `ar/load-shed` notice with the count when the consumer catches up (queue 256
 
 Route indexes are intentionally not regenerated during a partitioned documentation pass; a single aggregate refresh runs after all ownership is complete. Existing verification metadata remains pre-commit.
 
+## Codex Native-History And Selected-Child Route Impact
+
+Codex history now has separate compatibility/resource layers: the 128 MiB JSON payload fuse in
+`codex_app_server_protocol.py`; runtime-probed items/turns/explicit-legacy acquisition plus the
+16 MiB complete source-response ceiling and 64 MiB/64-walk continuation LRU in
+`codex_app_server_history.py`; typed preservation over control IPC; and selected-child-only active
+projection. The fuse is shared-fatal above its boundary and is never history paging.
+
+The active serving child now owns three routes. Parent paging discovers children from metadata/live
+events without hydrating all of them; the selected-child POST performs native I/O outside the
+projector apply lock, singleflights same-child work, caps concurrent reads at 64, and converts only
+typed native-history outcomes into child-local unavailable/recovered state. The separate dormant
+`conversation/library/codex.py` full-read path remains a follow-up exposure.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the transport/source/cache/output
+  boundary split, runtime-probed history reader, typed IPC, selected-child active route, necessary
+  capacity bounds, parent/sibling continuity, and dormant library follow-up. Refreshed the active
+  hot-path route count. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the multiplexing remediation in the
   route-impact section — per-thread pending-interaction maps (concurrency is normal traffic; the

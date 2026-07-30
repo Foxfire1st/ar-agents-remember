@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-26T15:52 |
-| lastVerifiedCommitHash |  `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
-| lastVerifiedCommitDate |  2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
 
 ## What This Area Is
 
@@ -352,7 +352,20 @@ are unchanged; the multiplexing machinery itself lives in the `active/`, `projec
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
+## 260727-CHATS-IM-L2 Route Impact
+
+The active child keeps the same page/events/history public routes but decomposes its projector
+behind an import-compatible package. Selected-child acquisition remains behind the route's
+authorization and epoch proof, and typed child-local history failure leaves parent control and
+siblings live. Harness-specific source probing remains in the serving adapter layer.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the active child now owns a
+  route-local `projector/` component graph rather than one monolith, and selected-child history
+  crosses the same authorization/epoch boundary as page and events. Codex acquisition probes
+  bounded native methods at runtime; typed child failure does not tear down parent control or
+  siblings. Verification metadata remains pinned until closeout.
 
 - 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the sub-agent participant grammar added
   to `models.py` (agent status/ref, per-item `agent`, library agent rows, `agents_note`) and

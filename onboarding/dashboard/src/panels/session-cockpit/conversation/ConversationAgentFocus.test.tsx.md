@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ menu — the primary path; ArrowUp from the line returns focus to the timeline; 
 cycle parent → agent 1 → … → agent N → parent as an additional path, Escape returns to the parent,
 the timeline filters to the focused lane, every switch is announced politely — and a stored focus
 naming an agent the roster no longer carries recomputes to the parent, never re-applied blindly.
+It also pins selected-child hydration on a valid persisted focus and visible local retry without
+parent stream failure.
 
 ## Code Commentary
 
@@ -85,12 +87,12 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The surface under test. | L22 | [ConversationSurface.tsx](ConversationSurface.tsx) |
-| The exported scroll-key set the ArrowDown-absence pin imports. | L23 | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
-| The real store seeded with projections (`agentFocusBySession`, `setAgentFocus`, `reset`). | L16 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts) |
-| The projection type + `emptyProjection` the fixtures extend. | L14-L15 | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts) |
-| The item/identity/status wire types the fixtures build (incl. the `agent` ref). | L17-L21 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The mocked announcer side channel the visibility gate is asserted against. | L13 | [../../../data/announcer.ts](../../../data/announcer.ts) |
+| The surface under test. | L22 | [ConversationSurface.tsx](ConversationSurface.tsx.md) |
+| The exported scroll-key set the ArrowDown-absence pin imports. | L23 | [ConversationTimeline.tsx](ConversationTimeline.tsx.md) |
+| The real store seeded with projections (`agentFocusBySession`, `setAgentFocus`, `reset`). | L16 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts.md) |
+| The projection type + `emptyProjection` the fixtures extend. | L14-L15 | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts.md) |
+| The item/identity/status wire types the fixtures build (incl. the `agent` ref). | L17-L21 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts.md) |
+| The mocked announcer side channel the visibility gate is asserted against. | L13 | [../../../data/announcer.ts](../../../data/announcer.ts.md) |
 
 ## Cross-Repo References
 
@@ -101,7 +103,18 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## 260727-CHATS-IM-L2 Persisted-Focus And Retry Delta
+
+The persisted-focus regression proves a valid effective child hydrates exactly once across
+mount/remount while a stale stored id sends zero POSTs (L311-L362). The failure/retry regression
+renders the server's child-scoped detail, keeps the parent projection `live` with no parent error,
+retries explicitly, and clears the local error after success (L364-L405).
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded exact-once valid persisted-focus
+  hydration, stale-focus non-hydration, and child-local visible failure/recovery with parent
+  continuity. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the ArrowDown-primary-path pins —
   the hijack moves DOM focus into the agents line from a timeline row AND from the scroll viewport

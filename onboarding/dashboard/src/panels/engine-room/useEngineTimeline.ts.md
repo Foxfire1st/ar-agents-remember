@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `dashboard/src/panels/engine-room/useEngineTimeline.ts`   |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |                                                           `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |                                                           2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash |                                                           `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |                                                           2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -126,7 +126,18 @@ its radius-equivalent scale, and animates surge bands by `scaleY` from the link 
 context pauses every tween while the observed canvas is hidden and resumes the same context on
 re-show, including a context rebuilt during the hidden interval.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+`useEngineTimeline` accepts an optional effects-root ref and combines selectors from both SVG
+roots. The same timeline and visibility hooks own all targets, so splitting the DOM does not
+create a second ticker or alter choreography.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: extended the timeline selector
+  across the structural SVG and optional sparse effects SVG. One timeline still owns the same
+  draw and repeating choreography; only the queried roots changed. Verification metadata remains
+  pinned until closeout.
 
 - 2026-07-24T13:17:17Z — Curator: documented composited SVG effects and the hidden-canvas pause
   invariant; verification fields remain pre-commit.

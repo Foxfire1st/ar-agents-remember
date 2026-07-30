@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T00:02+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -184,7 +184,19 @@ The client now speaks the multiplexed control plane: `read_control_native_page` 
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260727-CHATS-IM-L2 Opaque Cursor And Typed History Delta
+
+The client reconstructs `NativeHistoryLimitExceeded` with exact byte evidence and
+`NativeHistoryUnavailable` with its stable code from private control responses (L570-L596).
+Native-page `nextCursor` is now treated as an opaque adapter continuation rather than required to
+equal the final frame's native id (L926-L941). Page shape, duplicate-id checks, epoch validation,
+and non-empty-page continuation rules remain strict.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded typed native-history error
+  reconstruction and the opaque continuation contract, including removal of the obsolete
+  `nextCursor == last nativeId` assumption. Verification metadata stays pinned while uncommitted.
 
 - 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence `threadId` parse — the
   `_evidence_page` frame loop reads the optional wire key into `EvidenceFrame.thread_id`

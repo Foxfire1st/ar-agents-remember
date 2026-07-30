@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/codex.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -187,7 +187,18 @@ subprocess reached through this repository's own adapter.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260727-CHATS-IM-L2 Current Delta
+
+A persisted `subAgentActivity` spawn/start row proves historical existence but not present
+liveness. Native-history mapping therefore emits `unknown` for registered/running historical
+states; current adapter registry authority may overlay a live status during hydration.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: persisted
+  `subAgentActivity` spawn/start rows now hydrate with `unknown` liveness unless current adapter
+  registry authority overlays a live status. Historical existence can no longer reopen a
+  completed child. Verification metadata remains pinned until closeout.
 
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: R2 sub-agent roster mapping — the projector gained
   the multiplexed demux context (`parent_thread_id` on `map_evidence_frame`), four agent-thread

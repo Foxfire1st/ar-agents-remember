@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/conversation/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-26T15:40+02:00                           |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated            | 2026-07-27T14:20+02:00                           |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -57,10 +57,11 @@ side-effect-free core the store, the stream, and the tests all share, so the aut
   gap→re-page, same-revision-divergence→reset (§6.4), older-page anchor-preserving prepend, replace-page
   rehydrate. It NEVER authors an item — the only paths that add a user item are projector events, so
   there is no optimistic user echo (R2/§12.5/R7).
-- `client.ts` — the active-page/telemetry reads + interrupt request/status/reconcile over the landed
-  routes. Typed control evidence: a refusal is discriminated by the payload shape and NEVER guessed
-  into a success; a failed page read threads the server's typed `ConversationRouteError` to the banner
-  (F15), never a generic message.
+- `client.ts` — the active-page/telemetry reads, selected-child history POST, and interrupt
+  request/status/reconcile over the landed routes. Typed outcomes are discriminated by payload
+  shape and never guessed into success; selected-child non-2xx/invalid/network/timeout errors stay
+  child-local, while a failed page read threads the server's typed `ConversationRouteError` to the
+  parent banner (F15).
 - `stream.ts` — the resumable SSE controller. It manually re-opens a FRESH `EventSource` from the
   latest cursor (`after=` query only) precisely to avoid the landed `cursor-conflict` preflight that
   fires when a native `Last-Event-ID` header disagrees with `after=`.
@@ -70,7 +71,9 @@ side-effect-free core the store, the stream, and the tests all share, so the aut
   rehydrates on refocus. The store also carries `agentFocusBySession` + `setAgentFocus` — the
   operator's timeline focus, keyed OUTSIDE `bySession` so an LRU eviction keeps the operator's
   place; the surface revalidates the stored id via `agents.effectiveAgentFocus` rather than
-  re-applying it blindly.
+  re-applying it blindly. It also owns selected-child history orchestration: same-child
+  singleflight, visible loading/ready/failed state, successful-id LRU, retry, and explicit 64-entry
+  in-flight/retained bounds that never call the parent `failStream`.
 - `format.ts` — the shared presentation conventions (A1/A4/A5/A8): em-dash = genuinely absent,
   interpunct = separator, `joinChips` drops empties (no dash-chains), humanized durations, quiet
   long-stale tone, boundary truncation with a full-value affordance. Its reach was widened
@@ -103,6 +106,15 @@ The store's `agentFocusBySession` holds the raw focus id OUTSIDE the evictable `
 projection, so an LRU eviction keeps the operator's place with the keep-warm runtime and a stale id
 honestly recomputes to the parent on rehydrate.
 
+## 2026-07-27 Selected-Child History Hydration
+
+Roster discovery remains metadata/live-event first. Once `effectiveAgentFocus` validates one child,
+the browser posts only that id for native backfill. A valid persisted focus hydrates on mount;
+a stale stored id sends no request. Same-child callers singleflight, failures remain visible and
+retryable per child, and the parent stream phase is unchanged. The 64-entry in-flight and retained
+maps are necessary explicit bounds because the exported hydration function can be called by
+multiple mounted consumers and abandoned requests/state must not grow without limit.
+
 ## Invariants And Boundaries
 
 - **Reconstructable, never durable (R1).** This route holds only a server-derived projection. Reload,
@@ -125,6 +137,9 @@ honestly recomputes to the parent on rehydrate.
   (an unresolved identity is `agent <short-id>`). Conversely the operator's focus
   (`agentFocusBySession`) is pure UI state that survives LRU eviction OUTSIDE the projection and is
   always revalidated against the live roster (`effectiveAgentFocus`), never re-applied blindly.
+- **Child history failure is not parent stream failure.** Hydration state is keyed by session and
+  child; non-2xx, invalid payload, network, timeout, server unavailability, and local capacity are
+  shown on that child and can be retried without `failStream`.
 
 ## Follow-On Register (durable rulings a future conversation surface must carry)
 
@@ -168,6 +183,8 @@ honestly recomputes to the parent on rehydrate.
    path in `ChatsStageBody` is NOT hardened by this fix (pre-existing, recorded follow-on).
 4. The renderer reads `orderedItems`/`status`/`capabilities`/`stream` through `useActiveConversation`;
    the interrupt hook reads the same projection for turn id + capability evidence.
+5. A validated effective child focus calls `hydrateAgentConversation`; the store singleflights the
+   POST, applies the local outcome, and leaves page/SSE ownership untouched.
 
 ## Child Route Onboarding Map
 
@@ -181,10 +198,10 @@ this overview is their governing pillar.
 | Wire grammar mirror | [types.ts](types.ts.md) |
 | Sub-agent roster derivation + timeline focus model | [agents.ts](agents.ts.md) · [agents.test.ts](agents.test.ts.md) |
 | Pure authority-sensitive reducer | [reducer.ts](reducer.ts.md) · [reducer.test.ts](reducer.test.ts.md) |
-| Page/telemetry/interrupt HTTP client | [client.ts](client.ts.md) |
+| Page/telemetry/selected-child-history/interrupt HTTP client | [client.ts](client.ts.md) |
 | Resumable SSE transport | [stream.ts](stream.ts.md) |
 | Stream boot and liveness regression coverage | [stream.test.ts](stream.test.ts.md) |
-| Reconstructable store + orchestration | [store.ts](store.ts.md) · [store.test.ts](store.test.ts.md) |
+| Reconstructable store + parent and selected-child orchestration | [store.ts](store.ts.md) · [store.test.ts](store.test.ts.md) |
 | Presentation conventions | [format.ts](format.ts.md) · [format.test.ts](format.test.ts.md) |
 | Hide-thinking preference | [thinkingPreference.ts](thinkingPreference.ts.md) |
 
@@ -219,6 +236,11 @@ package's serving endpoints; no cross-repository implementation source governs i
 | The parent data authority boundary. | [data overview](../overview.md) |
 
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented selected-child-only hydration,
+  effective persisted-focus behavior, same-child singleflight, visible retry/failure, necessary
+  64-entry resource bounds, and the strict child-state/parent-stream separation. Updated client,
+  store, hot path, invariants, and file map. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the sub-agent roster + timeline focus
   model (R7/D2/D3). Added `agents.ts` to the Route Model and File Onboarding Map (with its test

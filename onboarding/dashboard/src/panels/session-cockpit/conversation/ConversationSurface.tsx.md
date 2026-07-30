@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,7 +21,8 @@ one `role="feed"` timeline. It reads the reconstructable store (never a fixture 
 honest reconnect/failure states, drives revision-keyed announcers that stay SILENT during
 replay/hydration (§14.2), and exposes the global thinking toggle, the ambient telemetry chips, and the
 live/history capability CUES (§10.2, R11). It also owns the **sub-agent focus
-model** (R7, reworked): the roster-derived focus that filters the timeline to one agent's lane,
+  model** (R7, reworked): the roster-derived focus that filters the timeline to one agent's lane
+and triggers bounded native-history hydration for only that effective selection,
 reached primarily by the uniform ArrowDown hijack INTO the agents line (the Claude Code sub-agent
 navigation model), with ArrowLeft/ArrowRight cycling and Escape returning as additional paths. It
 owns no data/paging/cursor logic — the store/reducer do.
@@ -108,14 +109,14 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount. | L86-L338 | [ConversationSurface.tsx](ConversationSurface.tsx) |
-| The roster/focus primitives this surface composes (`deriveAgents`, `effectiveAgentFocus`, `cycleAgentFocus`, `filterItemsForFocus`). | L11-L16 | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts) |
-| The reconstructable store + older-paging + scroll-anchor writers + `agentFocusBySession`/`setAgentFocus` this surface reads/writes. | L17-L24 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts) |
-| The `live`-delivery flag the announcers gate on. | — | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts) |
-| The shared polite/assertive announcer store. | — | [../../../data/announcer.ts](../../../data/announcer.ts) |
-| The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. | — | [AgentsArea.tsx](AgentsArea.tsx) · [ConversationTimeline.tsx](ConversationTimeline.tsx) · [ConversationReconnect.tsx](ConversationReconnect.tsx) · [AmbientTelemetry.tsx](AmbientTelemetry.tsx) · [primitives.tsx](primitives.tsx) |
-| The surface-level focus-cycling/filtering/Esc/hijack suite. | — | [ConversationAgentFocus.test.tsx](ConversationAgentFocus.test.tsx) |
-| The persisted hide-thinking preference. | — | [../../../data/conversation/thinkingPreference.ts](../../../data/conversation/thinkingPreference.ts) |
+| Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount. | L86-L338 | [ConversationSurface.tsx](ConversationSurface.tsx.md) |
+| The roster/focus primitives this surface composes (`deriveAgents`, `effectiveAgentFocus`, `cycleAgentFocus`, `filterItemsForFocus`). | L11-L16 | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts.md) |
+| The reconstructable store + older-paging + scroll-anchor writers + `agentFocusBySession`/`setAgentFocus` this surface reads/writes. | L17-L24 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts.md) |
+| The `live`-delivery flag the announcers gate on. | — | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts.md) |
+| The shared polite/assertive announcer store. | — | [../../../data/announcer.ts](../../../data/announcer.ts.md) |
+| The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. | — | [AgentsArea.tsx](AgentsArea.tsx.md) · [ConversationTimeline.tsx](ConversationTimeline.tsx.md) · [ConversationReconnect.tsx](ConversationReconnect.tsx.md) · [AmbientTelemetry.tsx](AmbientTelemetry.tsx.md) · [primitives.tsx](primitives.tsx.md) |
+| The surface-level focus-cycling/filtering/Esc/hijack suite. | — | [ConversationAgentFocus.test.tsx](ConversationAgentFocus.test.tsx.md) |
+| The persisted hide-thinking preference. | — | [../../../data/conversation/thinkingPreference.ts](../../../data/conversation/thinkingPreference.ts.md) |
 
 ## Cross-Repo References
 
@@ -134,7 +135,22 @@ readiness wording. It tracks scroll memory per session, restores only when layou
 and suppresses live-region announcements from hidden keep-alive surfaces while still tracking their
 projection state.
 
+## 260727-CHATS-IM-L2 Effective-Focus Hydration Delta
+
+The surface derives history state from the validated effective focus and runs hydration from an
+effect keyed by that focus/session/bridge epoch (L145-L185). A valid persisted focus therefore
+hydrates after page load or remount even without a click; a stale focus becomes parent and sends
+no request. Runtime singleflight makes the remount path exactly once.
+
+A failed selected-child route renders its typed detail beside a retry action (L335-L354). Retrying
+addresses only that child; the parent projection and reconnect surface remain live. The component
+still owns presentation/focus only—the store owns request orchestration and resource bounds.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented effective-focus-driven
+  one-shot hydration, persisted-versus-stale focus behavior, visible child-local error/retry, and
+  unchanged parent stream authority. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent navigation rework —
   the uniform ArrowDown hijack (feed article AND scroll viewport) moving DOM focus INTO the

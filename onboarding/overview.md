@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated            | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 
 > **Status:** active baseline
 
@@ -647,7 +647,21 @@ The interactive Chats round strengthens the repository's runtime-truth contract 
 
 The final commit-gate delta also makes the repository wrapper mandatory at pre-commit, worktree closeout before mutation, pre-push, and CI, with CRAP at or above 30 failing by default. Canonical hooks, workflows, setup/public docs, root skill mirrors, and generated dashboard assets are pathRules-disabled onboarding subjects; their current contract is represented here and in eligible README, MCP package authorities, route cards, and memory-system guidance rather than by duplicate sidecars.
 
+## 260727-CHATS-IM-L2 Repository Impact
+
+The structured Chats path now keeps parent control and siblings usable when one selected child's
+history is unavailable or exceeds a bounded source contract. The active projector was decomposed
+by mutable authority, and workspace projection ticks gained exact domain invalidation plus
+per-file task parsing. The repository's public capability, task, and dashboard surfaces are
+unchanged; ownership and failure containment are now explicit in their route overviews.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: updated the repository
+  onboarding spine for the active-projector package split, runtime-probed bounded Codex history,
+  child-local failure containment, explicit projection-domain invalidation, and per-file task
+  document parse reuse. Detailed ownership remains in the MCP, observer, serving/conversation,
+  and dashboard route overviews. Verification metadata remains pinned until closeout.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
   recorded the mandatory default CRAP threshold and four enforcement seams,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`       |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -140,7 +140,18 @@ top-level panels memoize unchanged shell rerenders, while their own store subscr
 Interactive controls also favor evidence-bounded wording, including reopened gate failures and
 viewport-measured leaf-picker placement.
 
+## 260727-CHATS-IM-L2 No Route-Model Impact
+
+The Engine Room effects overlay and session-cockpit child-history behavior are internal to their
+existing child routes. Panel inventory, cross-panel ownership, and the shared panel primitive are
+unchanged.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — No route-model impact for 260727-CHATS-IM-L2. The
+  Engine Room effects-root isolation is governed by the `engine-room/` child overview and the
+  selected-child history surface by `session-cockpit/`; the panels inventory and ownership split
+  remain unchanged. Verification metadata remains pinned until closeout.
 
 - 2026-07-24T13:17:17Z — Curator: documented cross-panel persistent-subtree memoization and the
   current evidence/placement conventions introduced by this route's owned sources. Verification

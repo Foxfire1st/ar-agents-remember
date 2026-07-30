@@ -1,0 +1,66 @@
+# mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Active projector package overview](overview.md)
+
+## Purpose
+
+Owns the Claude transcript-submission echo and live-evidence zipper.
+
+## Code Commentary
+
+### Logic
+
+Evidence frames queue until `poll` can place them around retained transcript entries in exact
+turn order. Only transcript rows with `role == "user"` become submission echoes; assistant and
+result rows merely advance the transcript watermark. Initial hydration reads all retained
+transcript pages and, when evidence has already evicted, realigns orphan echoes and surviving
+turn bodies without timestamp guesses.
+
+### Conventions
+
+The transcript is an echo channel, not history authority. Off-shape echoes degrade to a safe
+unknown-vendor row.
+
+### Invariants And Boundaries
+
+- A user echo precedes the evidence body it opened.
+- A result closes the current turn before the next echo.
+- Non-user transcript rows never mint user or unknown-vendor items.
+- Release drops pending zipper frames when the projector retires.
+
+### Todos
+
+None known.
+
+## Docs References
+
+No Domain Documentation source is configured.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| Claude echo mapping. | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
+| Ordering and eviction regressions. | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
+
+## Cross-Repo References
+
+No meaningful cross-repository references found.
+
+## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the Claude
+  echo-zipper sidecar after projector decomposition. Verification metadata remains blank until
+  commit.

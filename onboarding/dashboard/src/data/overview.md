@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -256,7 +256,18 @@ receive this `data/` overview, while `keymap/` remains its own child and `sessio
 the UI composition owner. Detailed legacy grouping knowledge was preserved here and in the
 session-cockpit overview before the six obsolete sidecars were removed.
 
+## 260727-CHATS-IM-L2 Route Impact
+
+Conversation roster derivation now accepts only backend-minted roster identities. Other
+agent-tagged notices, including selected-child history state, remain conversation items and cannot
+create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: roster derivation now accepts
+  only explicit backend roster identities (`codex-agent-`/`claude-agent-`), so selected-child
+  history state and other agent-tagged notices remain transcript content rather than duplicate
+  seats. Verification metadata remains pinned until closeout.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator (route impact: one derivation rule): recorded the
   review-N1 plural pending rule in Catalog And Session Identity — `controlPendingInteractions?` is

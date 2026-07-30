@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T20:02+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -309,7 +309,19 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 | The memory ledger loader read for surface 8. | L1-L104 | [kernel/memory_ledger.py](../../kernel/memory_ledger.py) |
 | The data-surface inventory the structural/analytical split follows. | L91-L118; L332-L344 | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md) |
 
+## 260727-CHATS-IM-L2 Current Delta
+
+Task and series readers now share `TaskDocumentPayloadCache`, which enumerates the live set but
+reparses only changed/new stat identities and removes deleted entries. The new
+`refresh_engine_process_landing` updates only the volatile landing tail of retained Engine Room
+facts on heartbeat ticks.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: replaced the time-based whole
+  task-corpus cache with per-file stat-identity reuse and added a heartbeat-only landing refresh
+  that updates retained Engine Room facts without rerunning their Git-backed structural reader.
+  Verification metadata remains pinned until closeout.
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2: `read_enclosures` + `read_engine_process_facts` gained
   keyword-only `contracts: ContractSnapshot | None = None` — the projection tick injects the ONE
   shared per-tick contract snapshot (built in `projection_store`, cached across ticks by

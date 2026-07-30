@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                    |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`                    |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -109,7 +109,19 @@ certified pre-dispatch condition may advertise retry safety; possible-write fail
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260727-CHATS-IM-L2 Native-History Error Delta
+
+`NativeHistoryUnavailable` identifies one child/history read that can fail without invalidating
+the shared adapter; its stable `code` carries the exact local reason. The
+`NativeHistoryLimitExceeded` subtype adds `actual_bytes` and `limit_bytes` and fixes its code to
+`materialization-limit` (L124-L144). These types distinguish child-local acquisition/resource
+outcomes from malformed shared protocol and bridge-fatal transport failure.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented typed native-history
+  unavailability and bounded-materialization byte evidence as child-local outcomes distinct from
+  shared transport/protocol failure. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 

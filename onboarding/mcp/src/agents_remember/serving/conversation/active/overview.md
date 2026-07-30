@@ -7,17 +7,18 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 
 ## What This Area Is
 
 This route is the implemented active conversation serving slice. It
 projects the exact running Codex, Claude, and Pi conversations into the normalized active
-conversation/status authority and exposes the two registered production wires — the authorized
-native-hydrated page and the resumable SSE event stream — consumed identically by Chats and
-orchestration. Every wire re-authorizes: the request dependencies resolve the caller and the
+conversation/status authority and exposes three registered production wires — the authorized
+native-hydrated page, selected-child history hydration, and the resumable SSE event stream —
+consumed identically by Chats and orchestration. Every wire re-authorizes: the request dependencies
+resolve the caller and the
 runtime, `expectedBridgeEpoch` is verified against the live submission authority per request,
 and every cursor is signature-checked and re-bound against the authorized identity before any
 lookup or header.
@@ -31,11 +32,11 @@ stale event cursors reset loudly instead of mixing sequences.
 
 ## Hot Path Summary
 
-Start with `api.py` for the two routes and the typed pre-stream error ladder. `service.py` is
+Start with `api.py` for page/events, selected-child history, and the typed pre-stream error ladder. `service.py` is
 the per-app authority (cursor secret, epoch verification per wire, atomic page+eventCursor,
-bounded projector LRU), `projector.py` the per-session engine (native hydration, bounded polls,
-echo zipper, total-order envelopes, gap mechanics, and per-thread
-sub-agent demux with per-thread twin suppression), `store.py` the idempotence authority
+bounded projector LRU), `projector/` the decomposed per-session engine (native hydration,
+bounded polls, echo zipper, total-order envelopes, gap mechanics, and per-thread sub-agent
+demux with per-thread twin suppression), `store.py` the idempotence authority
 (native-id dedupe, tool block union, delta buffering, provenance application, roster-aware
 upsert guards), `cursor.py` the
 signed cursor mint/verify boundary, `status.py` the canonical status classification both Chats
@@ -47,9 +48,10 @@ in the sibling `projectors/` route.
 
 | Path | Role |
 | --- | --- |
-| `api.py` | The two registered routes (page, events) plus the O4 typed-error ladder and explicit SSE frames. |
+| `api.py` | The three registered routes (page, selected-child history, events) plus the O4 typed-error ladder and explicit SSE frames. |
+| `agent_history.py` | Child-local hydration outcomes and stable unavailable/recovered projection rows. |
 | `service.py` | Per-app service: cursor secret, epoch checks, atomic page+cursor assembly, pre-stream cursor checks, bounded projector LRU. |
-| `projector.py` | Per-session engine: hydration, poll channels, echo zipper, envelope minting, retention, subscriber fan-out, gap+close. |
+| `projector/` | Per-session component graph: public facade, hydration/poll coordinator, source ingestion, child history, interactions, mutations, retention, subscriber fan-out, gap+close. |
 | `store.py` | Idempotent projection store: append/upsert/delta application, tool block union, provenance resolution, page slicing. |
 | `cursor.py` | HMAC-signed purpose-branded page/event cursors and the typed cursor error family. |
 | `status.py` | Canonical `ConversationStatusService`: the one evidence classification, revisioned envelope, single seat projection. |
@@ -131,13 +133,23 @@ in the sibling `projectors/` route.
 3. Epoch flip, ordering fault, or sustained authority loss emits exactly one typed gap with the
    exact reason and closes; recovery is re-paging native authority with a fresh cursor.
 
+### Selected-child history
+
+1. The POST route resolves the same authorization, exact session, and bridge epoch as page/events.
+2. Only the effective selected child is eligible. Same-child callers share one shielded task;
+   native IPC/source waits run outside the projector apply lock, and bounded page mutation runs
+   inside it.
+3. Typed unavailable/limit outcomes become one child-local retry state. Parent paging/SSE and
+   sibling hydration continue.
+
 ## Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
 | `api.py` | route/mapping authority | Keeps every typed refusal on its precise HTTP status; a raw 500 here violates the O4 contract. | covered |
+| `agent_history.py` | child-local outcome model | Keeps unavailable/recovered history state bound to one child without changing parent health. | covered |
 | `service.py` | serving authority | The one boundary where epoch, cursor, and session checks complete before any page or stream. | covered |
-| `projector.py` | projection engine | Native hydration and the totally ordered, honestly-gapping event stream live here. | covered |
+| `projector/` | projection component graph | Native hydration and the totally ordered, honestly-gapping event stream are divided by mutable authority without changing the public projector surface. | covered |
 | `store.py` | idempotence authority | Rehydration/replay reproduce the identical projection; tool blocks converge, never drop. | covered |
 | `cursor.py` | cursor authority | Every active token's mint/verify boundary; tampering or cross-purpose use fails closed. | covered |
 | `status.py` | status authority | The only evidence classification; both Chats and orchestration consume it. | covered |
@@ -185,8 +197,9 @@ in the sibling `projectors/` route.
   rotated into the slot stays live under the singular path. Malformed agent-thread frames degrade to agent-tagged
   unknown-vendor evidence — never stream-fatal, never leaked into the parent's view. Agent identity
   is fill-only from registry evidence, never fabricated; unmapped statuses stay `unknown`. The
-  thread-scoped `refresh_agent_native` walk is a latent seam with no production caller yet, bounded
-  and fail-closed like the parent walk.
+  thread-scoped `refresh_agent_native` walk is production-wired only through selected-child
+  hydration. It is same-child singleflight, capped at 64 concurrent reads, and catches only typed
+  native-history outcomes; it never runs as an eager all-child page loop.
 - A `role=="user"` item's input-authority triple (`lane` + `source` + `provenance`) is ONE resolved
   unit: the store preserves it intact across a native re-map (`_preserved_input_authority`), and only
   `apply_provenance` resolves it. Splitting it (a re-map adopting the candidate `unknown-input` lane
@@ -244,9 +257,10 @@ not fabricate an external citation.
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
 | `__init__.py` | [`__init__.py.md`](__init__.py.md) | covered | Active route package marker. |
-| `api.py` | [`api.py.md`](api.py.md) | covered | The two registered routes and the O4 error ladder. |
+| `api.py` | [`api.py.md`](api.py.md) | covered | The three registered routes and the O4 error ladder. |
+| `agent_history.py` | [`agent_history.py.md`](agent_history.py.md) | covered | Selected-child hydration outcomes and visible recovery rows. |
 | `service.py` | [`service.py.md`](service.py.md) | covered | Per-app serving authority. |
-| `projector.py` | [`projector.py.md`](projector.py.md) | covered | Per-session projection engine. |
+| `projector/` | [`projector/overview.md`](projector/overview.md) | covered | Per-session projection component graph and its ten file-level sidecars. |
 | `store.py` | [`store.py.md`](store.py.md) | covered | Idempotent projection store. |
 | `cursor.py` | [`cursor.py.md`](cursor.py.md) | covered | Signed cursor authority. |
 | `status.py` | [`status.py.md`](status.py.md) | covered | Canonical status service. |
@@ -255,8 +269,10 @@ not fabricate an external citation.
 
 ## Child Overviews
 
-None. The nine modules form one coherent serving slice; the per-harness mapper grammars are
-governed by the sibling `projectors/` overview, not a child of this route.
+- [`projector/overview.md`](projector/overview.md) governs the decomposed active-session
+  projector component graph.
+- The per-harness mapper grammars remain governed by the sibling `projectors/` overview, not a
+  child of this route.
 
 ## How To Use This Area
 
@@ -293,13 +309,38 @@ concurrent parent-thread pendings beyond the oldest project plainly (no agent re
 adapter keeps a per-thread pending map, and a singular-slot ROTATION resolves the evicted id with
 the rotated id staying live under the singular path. The store gained roster-aware upsert
 guards (terminal-phase no-regression on block-less lifecycle tagging upserts; roster-notice
-final-message first-wins retention). The thread-scoped `refresh_agent_native` walk is a latent
-seam with no production caller yet. The two routes, cursor authority, per-app service, and
-status contract are unchanged.
+final-message first-wins retention). The thread-scoped `refresh_agent_native` walk is now
+production-wired only for the selected/effective child. Parent page assembly no longer walks every
+discovered child; child I/O is singleflight and outside the apply lock, and typed failure is a local
+retry state. The three routes, cursor authority, per-app service, and status contract remain one
+coherent slice.
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
+## Codex Selected-Child History Route Impact
+
+The active slice now treats child discovery and child content acquisition separately. Metadata/live
+events mint the roster; a validated effective focus invokes the third route to hydrate only one
+child. The projector's external read is outside `_apply_lock`, same-child calls singleflight, and
+64 concurrent reads are the explicit safety bound required by unlocked external I/O. Typed
+unavailable/limit outcomes upsert one child-local row and can recover on retry; parent/sibling
+projection stays live.
+
+Opaque native-history cursors flow end to end. The adapter-level reader, not the projector, owns
+source paging and continuation. Parent completeness stays parent-scoped.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: replaced the deleted
+  `projector.py` monolith mapping with the `projector/` component graph and linked its route-local
+  overview and file-level sidecars. The public projector contract and behavioral invariants are
+  unchanged; verification metadata remains pinned until closeout.
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the active route from two to three
+  wires, replaced latent/page-driven child backfill with selected-focus hydration, added
+  `agent_history.py` to the route map, and documented unlocked I/O, singleflight, necessary
+  capacity, typed local recovery, and opaque cursors. Verification metadata remains pinned while
+  uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the concurrent-parent-pending
   projection rework — every tuple entry projects (concurrent parent-thread entries beyond the

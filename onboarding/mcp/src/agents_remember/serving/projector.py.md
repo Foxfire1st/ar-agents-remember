@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-18T14:16+02:00                         |
-| lastVerifiedCommitHash | `ec409b11a1e700a33ec9b775fc5ebe096f10f3f3`     |
-| lastVerifiedCommitDate | 2026-07-18T14:27:15+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`     |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -160,7 +160,19 @@ No neighboring repository or external service governs this in-process publicatio
 | --- | --- | --- |
 | The reviewed projector, app, and tests are wholly repository-local. | — | — |
 
+## 260727-CHATS-IM-L2 Current Delta
+
+The watched production worker owns one `ProjectionInputState`. Startup uses a full refresh;
+change wakes pass the coalesced domain set; heartbeats advance only heartbeat-owned state.
+Watcherless execution and failed watcher fallback retain full-refresh behavior.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the live projection worker now
+  owns one `ProjectionInputState`, converts watcher wakes into full/change/heartbeat refreshes, and
+  passes the exact invalidated domains to the projection write edge. Watcherless replay/tests keep
+  full-refresh behavior; watcher failure still fails open. Verification metadata remains pinned
+  until closeout.
 - 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: documented the single-owner atomic
   subscribe-and-snapshot boundary, compute-then-publish-then-notify ordering, one full first-recovery
   snapshot, identical-recovery suppression, ordinary later deltas, and explicit cancellation

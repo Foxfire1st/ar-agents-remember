@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`|
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,22 @@ JSON-RPC request writes share a transport lock and accept a final authority guar
 the first byte. A rejected guard removes the pending request without writing. No await occurs between
 the final claim and write, making withdrawal-vs-dispatch linearization observable and exact.
 
+## 260727-CHATS-IM-L2 Emergency Framing Fuse Delta
+
+The former 4 MiB normal-operation cap is replaced by
+`CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES = 128 << 20` (L18-L23). This number is the available
+Codex remote app-server compatibility precedent and an emergency malformed/runaway JSON payload
+fuse only; it is not paging and does not bound retained history. `_read_messages` removes exactly
+one JSONL newline before comparing payload bytes (L217-L240): a 128 MiB payload plus delimiter is
+valid, 128 MiB + 1 is shared-fatal, and the same explicit failure reaches pending RPCs and the event
+stream because the JSONL transport cannot safely resynchronize after a partial oversized record.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the 128 MiB emergency payload
+  fuse, delimiter-excluded boundary, shared-fatal above-fuse behavior, and separation from native
+  history paging/materialization bounds. Verification metadata remains pinned while the source
+  change is uncommitted.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented the guarded first-write seam, shared lock, and
   pending-request cleanup when authority rejects dispatch.

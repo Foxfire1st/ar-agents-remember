@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T14:16+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -237,7 +237,18 @@ Serving tests now cover projection-body reuse, gzip for ordinary JSON, deliberat
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+Four deliberate `project_and_write` doubles accept the new optional `input_state` and `refresh`
+keywords. They continue returning the held projection, so ETag, body-cache, gzip, and SSE tests
+exercise their original behavior rather than projection internals.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: updated four explicit
+  `project_and_write` test doubles for the new `input_state` and `refresh` keyword-only seam. This
+  is a test-interface repair only; ETag, body-cache, gzip, and SSE expectations remain unchanged.
+  Verification metadata remains pinned until closeout.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
