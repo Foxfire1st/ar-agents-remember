@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-30T15:55+02:00 |
+| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
+| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,12 @@ correlated acceptance window. Submit sends the complete message and caller reque
 
 `_exchange_control` (L530) distinguishes connect/pre-write failure from any failure after the socket
 accepts the first byte. Pre-write failure raises as unavailable (`may_have_sent=False`) and may be
-retried by policy. A connect failure routes through
+retried by policy. The remainder write is CONDITIONAL: `send` usually accepts the whole request, and
+`sendall` is a do-while over its buffer, so calling it with an empty remainder still issued one
+zero-length send. Once the server had answered and closed with the request drained, the peer was gone
+and that pointless write raised `EPIPE` — turning an exchange the server actually completed into a
+`may_have_sent=True` disconnect that forces reconciliation. Only a non-empty remainder is written now
+(260727-CHATS-IM-L4). A connect failure routes through
 `_connect_unavailable_detail` (L507-L528): `ECONNREFUSED` (a stale socket file with nothing
 listening — the observed `[Errno 111]` banner) and `ENOENT` (an absent socket) both map to
 the honest "the controlled runner already exited (…)" note, and the stale socket is best-effort
@@ -117,6 +122,8 @@ protocol bound, not an invented acceptance result.
 - A control-socket connect failure never leaks a raw errno: `ECONNREFUSED`/`ENOENT` map to the
   designed "already exited" note, the stale socket is unlinked best-effort on `ECONNREFUSED`,
   and the failure stays `may_have_sent=False` (retry-safe pre-write).
+- A request the socket accepted whole issues NO further write. A completed exchange must never be
+  reported as a disconnect, so the client never performs a write it has no bytes for.
 - The evidence `nativeMethod` is parsed only when present and must be non-empty text; it is
   carried metadata, never a resend or acceptance signal.
 - The evidence `threadId` is parsed only when present and must be non-empty text; absent reads as
@@ -194,6 +201,10 @@ and non-empty-page continuation rules remain strict.
 
 ## Update History
 
+- 2026-07-30T15:55+02:00 — 260727-CHATS-IM-L4: recorded the conditional remainder write in
+  `_exchange_control`. An empty remainder still issued a zero-length send, which raised `EPIPE` after
+  the server answered and closed, reporting a completed exchange as a `may_have_sent` disconnect; it
+  surfaced as an intermittent broken pipe that blocked the commit gate under full-suite load.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded typed native-history error
   reconstruction and the opaque continuation contract, including removal of the obsolete
   `nextCursor == last nativeId` assumption. Verification metadata stays pinned while uncommitted.

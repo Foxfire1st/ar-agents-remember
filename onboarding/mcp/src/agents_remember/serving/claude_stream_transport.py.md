@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/claude_stream_transport.py` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-30T15:05+02:00 |
+| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
+| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,9 +21,17 @@ define production compatibility by CLI version probing.
 ## Code Commentary
 Starts stream-json, reads frames, drains/discards stderr, and force-cleans blocked readers. The
 adapter decides compatibility from the consumed structured initialize/system-init messages.
+`stop` owns one bounded shutdown — forced kill or stdin close, a timeout-bounded wait that escalates
+to kill, then the stderr drain — and releases the owned process and stderr task only after that work
+completes, so the object is reusable rather than single-use.
 
 ## Invariants And Boundaries
 Process bounds prevent hangs/deadlocks but never infer readiness or terminal meaning; sensitive process output is not retained.
+The transport owns at most one process at a time: `start` refuses while a process is owned, and a
+completed `stop` clears that ownership so the same object may start again. Ownership release is the
+last step of shutdown, never an early reset that would abandon a live process or an undrained stderr
+task. After a completed stop the not-started guard governs again, so `returncode` reports `None`
+rather than the previous process's exit status.
 
 ## Docs References
 
@@ -36,7 +44,8 @@ No Domain Documentation source is configured for this repository; repository cod
 ## Repo-Internal References
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Transport lifecycle. | `L1-L30` | [harness_control_claude.py](harness_control_claude.py) |
+| The adapter's floor-gated sub-agent-text probe stops the transport and starts the same object again, so a completed stop must release process ownership for the relaunch to launch at all. | `L106-L131` | [harness_control_claude.py](harness_control_claude.py) |
+| The adapter's own shutdown stops the transport before it cancels the state reader, so ownership release is the final shutdown step rather than an early reset. | `L437-L444` | [harness_control_claude.py](harness_control_claude.py) |
 
 ### 260713-PHA-L6 Boundary
 
@@ -60,6 +69,10 @@ zero candidate bytes and unrelated response traffic cannot interleave a control 
 
 ## Update History
 
+- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: documented the single-process ownership contract —
+  a completed stop releases the process and stderr task so the adapter's probe relaunch can reuse the
+  object, while a live start still refuses. Corrected the transport-lifecycle citation, which pointed
+  at `L1-L30` instead of the relaunch and shutdown seams that consume this contract.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented shared write serialization and the final guarded-
   byte seam.
 - 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: removed the obsolete

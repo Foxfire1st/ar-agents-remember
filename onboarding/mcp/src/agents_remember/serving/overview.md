@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated            | 2026-07-30T15:05+02:00 |
+| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473`|
+| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -1227,6 +1227,14 @@ demux/registry with collab identity learning and degrade-never-fatal agent frame
 launches with the floor-gated `--forward-subagent-text` (floor 2.1.220) only after `system/init`
 proves the floor. Every change is additive; single-thread sessions stay byte-identical.
 
+That floor gate makes the Claude subprocess transport a RESTARTABLE resource rather than a one-shot:
+the adapter stops and re-launches the same transport object to add the flag, so
+`claude_stream_transport.py` releases its process and stderr-task ownership as the final step of a
+completed stop, while a start against a live process still refuses. The refusal and the release are
+one contract — a transport that kept its terminated process turned every at-or-above-floor install
+into an `unsupported` handshake, which is what removed control readiness and the dashboard's
+model/effort selection before 260727-CHATS-IM-L4.
+
 The remediation pass closed the two multiplexed-production kill seams. Concurrent server requests
 are now normal traffic: the adapter keeps a bounded per-thread pending-interaction MAP keyed by
 rpc id (the "multiple unresolved server requests" raise is deleted; the vendor keeps a global
@@ -1257,6 +1265,10 @@ typed native-history outcomes into child-local unavailable/recovered state. The 
 
 ## Update History
 
+- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: gave the Claude subprocess transport's restart contract
+  a route-level home — a completed stop releases process and stderr-task ownership so the floor-gated
+  re-launch can reuse the object, while a live start still refuses — and named the control-readiness
+  and model/effort loss that a retained process caused.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the transport/source/cache/output
   boundary split, runtime-probed history reader, typed IPC, selected-child active route, necessary
   capacity bounds, parent/sibling continuity, and dormant library follow-up. Refreshed the active

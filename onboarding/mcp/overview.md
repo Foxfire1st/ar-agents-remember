@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-30T15:15+02:00 |
+| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
+| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -314,7 +314,9 @@ agent dimension (`ConversationAgentRef` on items, `EvidenceFrame.thread_id`,
 seat (one page, one SSE, one cursor domain) with per-thread native/live dedupe, the library groups
 sub-agent conversations under their parent on both harnesses (codex `subAgent` source kinds, claude
 `subagents/*.jsonl` enumeration), and claude launches gate `--forward-subagent-text` on a
-version-floor probe with fail-closed fallback.
+version-floor probe with fail-closed fallback. That probe stops and re-launches the SAME subprocess
+transport, so the transport is a restartable resource: a completed stop releases process ownership
+while a start against a live process still refuses.
 
 The multiplexed surface is load-shedding and concurrency-safe under real vendor traffic.
 Server→client requests pend per thread in bounded maps keyed by rpc id (concurrent approvals
@@ -1008,6 +1010,9 @@ ceiling and smaller output-page budgets.
 
 ## Update History
 
+- 2026-07-30T15:15+02:00 — 260727-CHATS-IM-L4: noted at package level that the
+  `--forward-subagent-text` floor probe re-launches the same subprocess transport, so the transport
+  releases process ownership at a completed stop while still refusing a start against a live process.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the observer projection
   worker now carries explicit domain invalidations and retained fixed-slot inputs, while active
   Chats projection moved from one monolith into an authority-shaped `active/projector/` package.

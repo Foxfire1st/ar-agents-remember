@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/claude_stream_startup.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
+| lastUpdated | 2026-07-30T15:05+02:00 |
 | lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
 | lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
 | governingOverview | `overview.md` |
@@ -19,6 +19,12 @@
 Owns the ordered Claude stream-json startup negotiation: structured initialize plus synthetic
 non-query bootstrap first, followed by token-free dynamic model-catalog enumeration before the
 steady-state reader takes ownership of stdout.
+
+On an install at or above the sub-agent-text floor the adapter runs this negotiation TWICE — once per
+launched process — over the same transport object, because the floor verdict is only provable from the
+first `system/init`. Both passes read frames inline; the long-running state reader starts only after
+the surviving pass, so nothing else competes for stdout during either negotiation or the stop between
+them.
 
 ## Code Commentary
 
@@ -82,6 +88,10 @@ No external repository boundary is implemented by startup negotiation.
 
 ## Update History
 
+- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: documented that a floor-proven install negotiates twice
+  over two launched processes on one transport, and that both passes read inline so no state reader
+  competes with the stop between them. Verification metadata stays pinned until closeout stamps the
+  candidate commit.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 — `negotiate_claude_catalog` threads the
   caller's requested launch key into `parse_list_models_response` so current-model selection compares
   like-for-like when catalog rows share a `resolved_model` (the claude `opus[1m]` refused-pair fix
