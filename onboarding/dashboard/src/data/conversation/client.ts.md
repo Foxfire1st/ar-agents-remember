@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/conversation/client.ts`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-27T14:20+02:00                           |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -76,10 +76,10 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The page/telemetry/interrupt/error wire shapes this client returns. | L8-L15 | [types.ts](types.ts) |
-| The store that threads `PageResult` errors to `errorBySession`/the banner. | L96-L104 | [store.ts](store.ts) |
-| The SSE controller that consumes `conversationEventsUrl`. | L9-L10 | [stream.ts](stream.ts) |
-| The interrupt hook that discriminates `ControlResult` into ack/settlement/refusal. | L115-L132 | [../../panels/session-cockpit/conversation/useConversationControls.ts](../../panels/session-cockpit/conversation/useConversationControls.ts) |
+| The page/telemetry/interrupt/error wire shapes this client returns. | L8-L15 | [types.ts](types.ts.md) |
+| The store that threads `PageResult` errors to `errorBySession`/the banner. | L96-L104 | [store.ts](store.ts.md) |
+| The SSE controller that consumes `conversationEventsUrl`. | L9-L10 | [stream.ts](stream.ts.md) |
+| The interrupt hook that discriminates `ControlResult` into ack/settlement/refusal. | L115-L132 | [../../panels/session-cockpit/conversation/useConversationControls.ts](../../panels/session-cockpit/conversation/useConversationControls.ts.md) |
 | The landed active + control routes this client calls. | — | [active/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) · [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
 
 ## Cross-Repo References
@@ -91,7 +91,19 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
+## 260727-CHATS-IM-L2 Selected-Child Client Delta
+
+`requestAgentHistory` posts to the exact active-session child route with the expected bridge epoch
+and encoded agent id (L179-L198). Its discriminated result preserves the four successful
+child-local statuses and converts non-2xx, invalid successful payloads, network failure, and
+timeout into typed route errors (L110-L177). These errors are returned to the child store; they do
+not fail the parent stream.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the selected-child POST,
+  discriminated outcomes, strict response validation, and visible transport/error mapping.
+  Verification metadata remains pinned while uncommitted.
 
 - 2026-07-24T13:17:50Z — Added the conversation HTTP timeout boundary. Verification hash/date remain
   pinned to the pre-commit source stamp.

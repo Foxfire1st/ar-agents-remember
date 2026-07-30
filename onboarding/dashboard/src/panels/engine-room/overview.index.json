@@ -16,6 +16,7 @@
     "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx",
     "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx",
     "dashboard/src/panels/engine-room/EnclosureStackList.tsx",
+    "dashboard/src/panels/engine-room/EngineFxOverlay.tsx",
     "dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts",
     "dashboard/src/panels/engine-room/buildEngineRoomModel.ts",
     "dashboard/src/panels/engine-room/engineRoomStyles.ts",
@@ -29,8 +30,8 @@
     "dashboard/src/panels/engine-room/useShouldAnimate.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 17,
-    "fileSidecars": 17,
+    "sourceFilesInScope": 18,
+    "fileSidecars": 18,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -42,6 +43,7 @@
     "enclosureprocessmap",
     "enclosurestacklist",
     "engine",
+    "enginefxoverlay",
     "engineroomstyles",
     "engineroomtypes",
     "fixtures",
@@ -64,6 +66,7 @@
       "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx",
       "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx",
       "dashboard/src/panels/engine-room/EnclosureStackList.tsx",
+      "dashboard/src/panels/engine-room/EngineFxOverlay.tsx",
       "dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts",
       "dashboard/src/panels/engine-room/buildEngineRoomModel.ts",
       "dashboard/src/panels/engine-room/engineRoomStyles.ts",
@@ -89,6 +92,8 @@
       "EnclosureProcessMap",
       "EnclosureStackList.tsx",
       "EnclosureStackList",
+      "EngineFxOverlay.tsx",
+      "EngineFxOverlay",
       "buildEngineRoomModel.test.ts",
       "buildEngineRoomModel.test",
       "buildEngineRoomModel.ts",
@@ -113,7 +118,7 @@
       "useShouldAnimate",
       "dashboard/src/panels/engine-room/",
       "route-local-overview",
-      "842b487b854503d95c9c2d9dce1841198ba93c7d",
+      "3a8ff703d796dc585b86a458daaf9eb2af6b2b31",
       "/overview.md",
       "engine-room/",
       "analytics.engineProcesses",
@@ -122,9 +127,7 @@
       "AnimatePresence",
       "down",
       "seedFallback",
-      "worktree_sync",
-      "nominal",
-      "mint"
+      "worktree_sync"
     ]
   },
   "fallback": {

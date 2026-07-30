@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-12T20:02+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -486,7 +486,21 @@ The observer now caches shared projection inputs per tick and slows repository-s
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
+## 260727-CHATS-IM-L2 Route Impact
+
+`projection_inputs.py` now owns fixed-slot domain snapshots and full/change/heartbeat refresh
+semantics. `task_document_cache.py` owns bounded per-file parse reuse. The projection store remains
+the atomic write edge, and snapshots remain the reader library; the change prevents one
+lifecycle/heartbeat event from rereading unrelated task, drift, provider, repository, and Engine
+Room surfaces.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added
+  `projection_inputs.py` and `task_document_cache.py`. The serialized worker now retains
+  domain-owned snapshots, refreshes only watcher-invalidated domains, advances heartbeat ages
+  without heavy rereads, reparses only changed/new task documents, and reclaims deleted rows on
+  the owning-domain refresh. Verification metadata remains pinned until closeout.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2 route impact: added `contract_snapshot.py` to the route

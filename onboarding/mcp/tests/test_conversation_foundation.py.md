@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_foundation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,16 @@ No neighboring repository participates in this topology suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260727-CHATS-IM-L2 Active Route-Ownership Delta
+
+The topology pin now asserts three active child routes: page GET, events GET, and the exact
+`/agents/{agent_id}/history` POST (L32-L57). Library and control ownership sets remain unchanged.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the active child-router ownership
+  pin from two routes to three with the selected-child history POST. Verification metadata remains
+  pinned while uncommitted.
 
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: documented the child-router pin now asserting the
   control child's exact seventeen owned routes (GET-only on policy/telemetry/queue/pending) alongside

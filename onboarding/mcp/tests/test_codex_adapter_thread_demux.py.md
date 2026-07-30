@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_adapter_thread_demux.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash |  `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
-| lastVerifiedCommitDate |  2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -144,7 +144,18 @@ file in the vendor checkout.
 | --- | --- | --- |
 | The live sub-agent spawn sequences (V1 collab / V2 subAgentActivity) the demux must survive. | L30-L32 of the fixture docstring | [codex app-server v2 turn_start suite](https://github.com/openai/codex/blob/main/codex-rs/app-server/tests/suite/v2/turn_start.rs) |
 
+## 260727-CHATS-IM-L2 Runtime-Probed Thread Read Delta
+
+The selected-thread native-page regression now supplies the items-list capability response and
+asserts the one-item bounded request for both agent and parent thread ids. The demux contract is
+unchanged: an explicit child id routes only that thread, while absent selection reads the parent;
+the acquisition implementation is now contract-probed rather than a direct whole-thread request.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the thread-demux native-page
+  coverage record for items-first runtime probing and exact parent/child request selection.
+  Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the nine new remediation
   tests — concurrent parent server requests answered per id with the oldest in the

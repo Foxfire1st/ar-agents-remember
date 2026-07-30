@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-26T15:52 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 
 ## What This Area Is
 
@@ -250,7 +250,19 @@ the codex silent set — parent boot/resume silence is now guard-derived, not ta
 Mappers stay pure; malformed agent frames degrade to preserved unknown-vendor evidence, never
 a stream kill.
 
+## 260727-CHATS-IM-L2 Route Impact
+
+Codex native-history mapping no longer treats persisted sub-agent spawn/start activity as proof of
+current liveness. Those rows hydrate as `unknown` until adapter registry authority overlays
+current status. Pure mapping, item identity, and unknown-vendor preservation remain unchanged.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: Codex persisted
+  sub-agent activity now records historical existence without claiming current liveness;
+  `registered`/`running` becomes `unknown` on native-history hydration until current adapter
+  registry authority overlays status. Mapper purity and native item identity are unchanged.
+  Verification metadata remains pinned until closeout.
 
 - 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the sub-agent mapping grammars (codex
   roster/collab, claude `task_*` correlation, the `parent_thread_id` demux context, the

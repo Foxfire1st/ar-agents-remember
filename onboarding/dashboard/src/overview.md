@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`       |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -193,7 +193,20 @@ references informed product framing only; current code truth stays in agents-rem
 
 The cockpit now treats a focused chat or terminal as a persistent operator surface rather than disposable tab content: switch and hidden-view transitions preserve mounted identity, scroll/selection/geometry state, and only resume visible-only work when appropriate. Its global data consumers also adopt bounded stream/watchdog, single-flight, timeout, build-identity, and wake-lock behavior. Detailed mechanics remain owned by the existing `data/`, `panels/`, and nested session-cockpit overviews; this route records only the shared frontend consequence.
 
+## 260727-CHATS-IM-L2 No Route-Level Architecture Impact
+
+This leaf changes internals inside existing children: roster identity in `data/conversation/`,
+selected-child projection in `panels/session-cockpit/conversation/`, and effect isolation in
+`panels/engine-room/`. The dashboard source layering and ownership model described here are
+unchanged.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — No route-level architecture change for
+  260727-CHATS-IM-L2. Roster identity narrowing is owned by `data/conversation/`; the sparse
+  Engine Room effects overlay is owned by `panels/engine-room/`; structured child-history
+  selection remains in `panels/session-cockpit/conversation/`. Verification metadata remains
+  pinned until closeout.
 
 - 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: added one paragraph to the Product Truth And
   Conversation Boundary section covering the sub-agent surface — additive per-item agent refs and

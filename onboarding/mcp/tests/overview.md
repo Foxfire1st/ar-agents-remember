@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ The stable structured-conversation contract gate: the contract suite uses
 hostile sibling-product matrices to pin purpose-bound cursors, exact provenance, canonical status,
 evidence-backed capabilities, operation identity/rollback, authoritative queued withdrawal
 recovery, attachments, metrics, and fixture non-promotion. The foundation suite separately pins
-exactly two read ports, three behavior-empty owned child routers, one global registration seam,
+exactly two read ports, three owned child routers, one global registration seam,
 repository-only native-helper resolution, and redacted installed-runtime fixtures. These tests do
 not claim a projector, native-history implementation, control service, or renderer exists.
 
@@ -34,7 +34,7 @@ zipper gap mechanics), and the production routes over a REAL composition (bridge
 a real socket, real catalog row, the single route registration, HTTP over loopback uvicorn) proving
 native identity, cursor forgery refusals, dual-cursor agreement, epoch-flip gap+close,
 provenance through the real authority, orchestration parity, and absence of PTY/runner-log/
-fixture production authority. The foundation pin asserts the active child's exact two-route
+fixture production authority. The foundation pin asserts the active child's exact three-route
 surface.
 
 The native conversation library regression set: six focused suites cover the
@@ -258,8 +258,8 @@ classification, revision discipline, full-product orchestration parity),
 `test_conversation_active_projectors.py` (per-harness mapper identity/blocks/tools/provenance),
 `test_conversation_active_service.py` (engine hydration/ordering/idempotence plus the landed
 review-fix pins), and `test_conversation_active_api.py` (production routes over a real socket, incl.
-the live epoch-flip gap and the no-PTY source scan). The foundation pin asserts the active
-child's exact two routes; fixture rows stay evidence-not-enablement.
+selected-child hydration, the live epoch-flip gap, and the no-PTY source scan). The foundation pin
+asserts the active child's exact three routes; fixture rows stay evidence-not-enablement.
 
 The library set centers six focused suites: `test_conversation_library_api.py` (real-ASGI routes
 and the O4 status ladder), `test_conversation_library_cursor.py` (signed token and scope
@@ -455,7 +455,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
-| Foundation coverage pins two ports, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Foundation coverage pins two ports, child ownership (the active child's exact three routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | Active serving coverage pins canonical status/parity, per-harness mapper grammars, engine/store mechanics, and the real-socket production routes with the no-PTY source scan. | L362-L865 | [test_conversation_active_api.py](agents-remember/mcp/tests/test_conversation_active_api.py) |
 | Library coverage pins the ASGI status ladder, cursor/scope contracts, gate demotion, hostile port normalization, open idempotence/race/ownership, and the opt-in live gates and real opens. | L1-L9 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | Control coverage pins the interrupt ledger (ack≠settlement, idempotence, Finding 1/2 pi settlement), never-bodies queue truth with cockpit-only withdrawal recovery, the typed attachment lifecycle with on-disk spool proofs, read-only policy, evidence-bound telemetry, and the seventeen routes over a real wire — all over the shared `_control_plane.py` topology. | L1-L381 | [test_conversation_control_api.py](agents-remember/mcp/tests/test_conversation_control_api.py) |
@@ -508,11 +508,34 @@ operation guard for concurrent parent tuple entries); the legacy experimental-re
 `test_codex_app_server_adapter.py` flips to decline-not-fail with the decline itself unchanged.
 Verification metadata remains pre-commit.
 
+## Codex Native-History And Projection-Containment Regression Route Impact
+
+`test_codex_native_history.py` pins items-first/turns-second runtime probing, exact `-32601`-only
+legacy entry, 16 MiB complete source-response refusal, 64 MiB/64-walk one-shot continuation,
+linear once-only source reads, cycle/repeated-id termination, aggregate legacy bounds, eviction
+without refetch, and typed IPC survival. `test_codex_history_production_path.py` composes the exact
+4,846,576-byte response through stdio, installed-shaped items `-32601` then turns/full success,
+adapter, Unix IPC, and selected-child projection; its cyclic second-wave child fails locally while
+parent and sibling remain live.
+
+The protocol suite owns increasing below-fuse sizes, exact 128 MiB payload-plus-newline acceptance,
+one-byte-over refusal, and shared-fatal above-fuse evidence. Projector/API/browser suites own
+selected-child-only hydration, unlocked child I/O, same-child singleflight, necessary 64-entry
+capacity bounds, valid persisted-focus one-shot hydration, stale-focus non-hydration, and visible
+retry/recovery without parent stream failure. The dormant library full-read path is not covered as
+repaired and remains a named follow-up.
+
 ## Serving Performance And Quality-Gate Route Impact
 
 The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
 
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: added the two new native-history
+  regression suites and routed measured-size transport, exact probe/fallback, one-shot resource
+  bounds, cycle/legacy behavior, typed IPC, selected-child concurrency/continuity, and dashboard
+  persisted-focus/retry coverage. Updated active route ownership from two to three. Verification
+  metadata remains pinned while uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent surface remediation
   regression pins — nine new demux-suite tests (concurrent parent pendings, method-first degrade,

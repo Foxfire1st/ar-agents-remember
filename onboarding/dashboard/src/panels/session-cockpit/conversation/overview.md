@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`                  |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`                  |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -44,6 +44,9 @@ it never writes conversation authority and never scrapes a vendor TUI.
   own their keys), polite visibility-gated `viewing <label>` announcements, and
   `filterItemsForFocus` feeding the timeline (`totalItems`
   only when unfocused; a focused empty lane shows `no evidence from <label> yet`, never the welcome).
+  The validated effective focus also drives selected-child history hydration after click, page
+  load, or remount; stale focus sends no request. A typed local failure renders its detail and
+  retry beside the agents area without changing the parent reconnect/stream state.
 - `AgentsArea.tsx` — ONE compact sub-agents line above the timeline, always (R7, reworked): never one
   row per agent — the line carries the tone-colored count chip (`N agents · M running`, the status
   word never color-only, §14.2) plus, in an agent view, the `viewing <label>` note and the
@@ -131,6 +134,9 @@ so it holds by unit tests + the reviewer's live R13 pass.
 - **The renderer never authors conversation authority.** It reads the projection; interrupt dispatch
   goes through the typed control client; the live interaction/queue/submit authorities are consumed, not
   duplicated (InteractionBar/QueuePreview/SessionComposer stay their own owners).
+- **Selected-child history is local and retryable.** The surface triggers hydration only from the
+  validated effective focus and renders only the store's child-scoped outcome; it never turns a
+  child route failure into parent `projection-failed`.
 
 ## Hot Path Summary
 
@@ -143,6 +149,8 @@ so it holds by unit tests + the reviewer's live R13 pass.
    any typed fault fail-loud.
 4. `useConversationControls` resolves the working turn id from item evidence and gates the interrupt,
    which `WorkingLine` renders and the `conversation.stop` chord/palette dispatches.
+5. `ConversationSurface` hydrates the effective selected child once per runtime and renders a local
+   retry state when that acquisition fails; the parent feed remains mounted and live.
 
 ## Renderer Rulings Register (durable renderer rulings a follow-on renderer change must carry)
 
@@ -241,7 +249,18 @@ Restores wait for valid geometry, ignore collapse echoes, follow the current end
 left at bottom, and yield to trusted user input. A live SSE stream supplies a compact working cue;
 the exact-turn Stop control intentionally remains beside Send in the composer.
 
+## Selected-Child History Renderer State
+
+A valid persisted effective focus hydrates after page load/remount without requiring a click; a
+stale focus falls back to parent and performs no I/O. The focused-child error strip shows the
+server/client detail and retry action. Runtime/store singleflight keeps the effect exactly once,
+and retry affects only the selected child.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented effective-focus-driven
+  hydration, valid persisted versus stale focus, child-local visible failure/retry, and unchanged
+  parent feed/reconnect authority. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent navigation rework in
   the Route Model — `AgentsArea` is ONE compact line always (per-agent rows and the narrow-collapse

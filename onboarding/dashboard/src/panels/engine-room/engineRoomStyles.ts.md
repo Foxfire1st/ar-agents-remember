@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/engine-room/engineRoomStyles.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T23:08+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -165,7 +165,17 @@ The fact-state recipes include a visibly distinct stale variant used by landing 
 | `health` / `factState` / `runtimeState` axes (colour-as-state); the only remaining `animation:` is the app-wide `pulse`. | L74-L260 | [engineRoomStyles.ts](engineRoomStyles.ts) |
 | The GSAP hook + the canvas that read these now-static recipes and drive the motion. | — | [useEngineTimeline.ts](useEngineTimeline.ts) · [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 
+## 260727-CHATS-IM-L2 Current Delta
+
+`fxOverlaySvg` positions a pointer-transparent sibling over the full structural scene at the same
+size and view box. It introduces no new effect paint recipe; surge, reindex, and attention keep
+their established classes.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added `fxOverlaySvg`, the
+  pointer-transparent sibling layer aligned to the structural 1200x660 scene. Existing effect
+  recipes remain the paint authority. Verification metadata remains pinned until closeout.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: extended Engine Room fact-state styling for visibly distinct stale landing observations.
 
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: added `missing` runtime variants for the engine gauge outer, charge, and petals so missing provider slots are visible but not confused with nominal or indexing engines. Verification metadata pinned until closeout stamps the code commit.

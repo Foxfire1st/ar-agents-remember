@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:37 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -150,7 +150,20 @@ The private control IPC accepts the raised bounded message ceiling needed for na
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260727-CHATS-IM-L2 Typed History IPC Delta
+
+The private IPC preserves child-history semantics in both directions.
+`NativeHistoryLimitExceeded` serializes status, stable code, actual bytes, and limit bytes;
+`NativeHistoryUnavailable` serializes status and code. The inverse decoder requires the same
+typed fields before reconstructing either error (L535-L597). This makes the selected-child
+boundary recoverable across Unix IPC without converting it into an undifferentiated
+`HarnessControlError`.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented typed history
+  unavailable/limit serialization and strict byte-evidence reconstruction across the private
+  control IPC. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T15:37 — 260718-CHATS-L7 curator: documented the additive optional `threadId` payload
   key on `evidence-native-page` (`_evidence_native_page`, L388-L401) — the multiplexed-thread

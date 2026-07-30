@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -266,7 +266,16 @@ Projection tests now pin the shared per-tick parse/cache path and repository-sur
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+The provider-reader patch target follows its new `projection_inputs` ownership. The test still
+asserts the same projection output and uncached volatile-provider behavior.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: updated the provider-reader
+  patch seam to its new `projection_inputs` owner while retaining the existing projection-output
+  assertion. Verification metadata remains pinned until closeout.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: projection tests cover the new network-free landing snapshot integration while preserving existing observer projection contracts.

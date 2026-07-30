@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/engine-room/EnclosureCanvas.tsx` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`             |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`             |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -380,7 +380,20 @@ The warp-surge bands now render their full geometry and leave their expanding/re
 the timeline's composited transform. This avoids per-frame SVG endpoint writes while retaining the
 same link-origin choreography.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+When effects are enabled, the repeating surge, reindex, and attention primitives render in a
+sparse sibling `EngineFxOverlay`; their structural counterparts are hidden or lose `data-fx`
+ownership. With effects off, the original structural SVG renders the static end state. Shared
+view-box geometry and style classes preserve the visual composition.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: documented the sparse sibling
+  `EngineFxOverlay`: animated surge/reindex/attention primitives move out of the text-heavy
+  structural SVG only while effects are enabled; the effects-off/static canvas remains intact.
+  Shared classes, view box, geometry, and timeline selectors preserve the existing visual
+  choreography. Verification metadata remains pinned until closeout.
 
 - 2026-07-24T13:17:17Z — Curator: documented full-geometry surge bands for transform-owned motion;
   verification fields remain pre-commit.

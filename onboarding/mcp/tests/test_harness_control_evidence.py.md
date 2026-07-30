@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T00:02+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -180,7 +180,20 @@ Evidence tests now cover the extended normalized control evidence used for struc
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260727-CHATS-IM-L2 Opaque History/IPC Regression Delta
+
+Codex native-page cases now drive items-list source cursors through the adapter and private socket,
+assert the `ar-cnh1` continuation is opaque, and prove every item is emitted once across pages.
+Repeated source ids/cursors and an oversized projected source response produce typed local
+failures. The IPC cases additionally prove `NativeHistoryUnavailable` and
+`NativeHistoryLimitExceeded` preserve stable code and byte evidence in both control-client
+directions.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented opaque Codex continuation,
+  once-only paging, duplicate/cycle/limit refusal, and typed history error round-trip coverage.
+  Verification metadata remains pinned while uncommitted.
 
 - 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence `threadId` IPC
   round-trip test (`test_evidence_thread_id_round_trips_over_ipc`, L649-L673): an agent `threadId`

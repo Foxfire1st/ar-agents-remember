@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -139,7 +139,20 @@ Active-service coverage now pins the updated hydrate/page/event recovery sequenc
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+The behavior suite now addresses decomposed owners (`_echo`, `_coordinator`, `_native`, `_stream`)
+and patches the subscriber bound in `mutation_stream`. Hydration, status, gap, twin suppression,
+and dormant-release assertions remain behavior-identical, demonstrating that the refactor did not
+change the public projector contract.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: followed the projector
+  decomposition in the existing behavior suite: zipper, status revision, overflow bound,
+  native-live buckets, retained envelopes, and dormant release now assert against their owning
+  components. Test meaning is unchanged and proves the split preserved behavior. Verification
+  metadata remains pinned until closeout.
 
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the reordered-binder regression
   (`test_reordered_task_started_tagging_never_regresses_a_terminal_phase` — fix-round finding 9:

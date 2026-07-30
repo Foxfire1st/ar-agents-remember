@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892` |
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,20 @@ No Domain Documentation entries are configured in the resolved source registry.
 | --- | --- | --- |
 | Reviewer confirmed malformed/oversized protocol and pinned-schema checks. | L25-L29 | [260713-PHA-L3-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
+## 260727-CHATS-IM-L2 Framing-Fuse Regression Delta
+
+The protocol suite now covers increasing below-fuse sizes including the exact 4,846,576-byte
+production failure, the constant's 128 MiB compatibility value, and the payload-versus-delimiter
+boundary. Its large boundary subprocess proves exactly 128 MiB of JSON plus newline succeeds while
+one more payload byte fails. The shared-fatal regression proves an above-fuse record delivers one
+explicit failure to every pending RPC and the event stream; the fuse is not presented as history
+paging.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented measured-size compatibility,
+  increasing payloads, exact 128 MiB delimiter-excluded boundary, and shared-fatal above-fuse
+  regressions. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented cancellation-safe correlation,
   stale late-response disposal, and two-size proof that missing responses need no retained

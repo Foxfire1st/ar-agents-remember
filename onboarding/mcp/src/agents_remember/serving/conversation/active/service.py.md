@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -110,7 +110,18 @@ No cross-repository implementation participates in this service.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260727-CHATS-IM-L2 Selected-Child Service Delta
+
+`hydrate_agent_history` resolves the same exact authorized session/projector and bridge epoch as
+page/SSE, then delegates only the requested child id to `refresh_agent_native` (L138-L153). The
+service does not widen parent paging, invent child eligibility, or translate the local hydration
+outcome; those contracts remain projector-owned.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the exact-session selected-child
+  service seam and its parent-page/projector ownership boundaries. Verification metadata remains
+  pinned while uncommitted.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded R5 — added `release_session`, which
   de-registers and closes one session's projector on session end (pop from `_projectors`, drop from

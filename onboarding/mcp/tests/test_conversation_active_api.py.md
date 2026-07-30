@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ repository-owned and cited below.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The two registered production routes under test. | L121-L186 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
+| The three registered production routes under test. | L121-L249 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
 | The L0 root composition the suite installs verbatim. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The bridge/IPC server seam (L0E) the suite runs on a real socket. | L103-L149 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
 | The cursor mint helpers used to forge/tamper cursors in the refusal tests. | L197-L262 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/cursor.py) |
@@ -94,7 +94,18 @@ This suite now covers the active page/event bootstrap and recovery wire, includi
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260727-CHATS-IM-L2 Selected-Child Route Regression Delta
+
+The production-route suite now posts an exact child id and bridge epoch to the selected-child
+history route, verifies the projector receives only that id, and proves the returned local outcome
+does not replace or fail the parent page. Existing page/event authorization and epoch behavior
+remain intact.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the active route count to three
+  and documented exact selected-child POST/parent-continuity coverage. Verification metadata
+  remains pinned while uncommitted.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

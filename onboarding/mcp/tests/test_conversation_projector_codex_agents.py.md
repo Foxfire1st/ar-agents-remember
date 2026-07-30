@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_projector_codex_agents.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T00:02+02:00 |
-| lastVerifiedCommitHash |  `a401e3dba0bc6e9723451edbfdefb8d77c42945d`|
-| lastVerifiedCommitDate |  2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -131,7 +131,21 @@ protocol; the fixture module pins each shape to its proving file in the vendor c
 | --- | --- | --- |
 | `CollabAgentToolCall` / `SubAgentActivity` variants, exact camelCase enums, and turn/thread notification params. | L7-L28 of the fixture docstring | [codex app-server protocol v2](https://github.com/openai/codex/tree/main/codex-rs/app-server-protocol/src/protocol/v2) |
 
+## 260727-CHATS-IM-L2 Selected-Child Continuity Delta
+
+The suite replaces page-driven all-child backfill expectations with explicit selection. It proves
+roster-only parent paging, selected-child content hydration, a second wave where a cyclic child is
+locally unavailable while the first child, healthy sibling, and parent remain live, same-child
+singleflight, a slow child that does not hold the projector apply lock, visible 64-read capacity
+refusal, and unavailable-to-recovered revision-two state. Opaque source continuations are consumed
+without native-id cursor assumptions.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: superseded page-driven backfill coverage
+  with selected-child hydration, second-wave/sibling continuity, unlocked I/O, singleflight,
+  explicit capacity, typed failure, and recovery regressions. Verification metadata remains
+  pinned while uncommitted.
 
 - 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the backfill coverage —
   `test_page_backfills_agent_content_when_live_delivery_is_partial` (L730-L807): partial live

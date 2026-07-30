@@ -5,9 +5,9 @@
 | repository             | agents-remember                                      |
 | path                   | `mcp/src/agents_remember/serving/change_watcher.py`  |
 | doc_type               | `file-level-onboarding`                              |
-| lastUpdated            | 2026-07-12T20:24+02:00                               |
-| lastVerifiedCommitHash |                                                      `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
-| lastVerifiedCommitDate |                                                      2026-07-13T12:33:57+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash |                                                      `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |                                                      2026-07-30T13:59:13+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -167,7 +167,18 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | Same-repository serving concern only. | N/A | N/A |
 
+## 260727-CHATS-IM-L2 Current Delta
+
+Accepted watcher paths map to explicit projection reader domains. `ChangePacer` accumulates those
+domains through debounce/max-wait and returns a `ProjectionWake`; an unmapped accepted path returns
+all domains so correctness fails open to a full refresh.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: watcher paths now map to
+  explicit projection domains and `ChangePacer` coalesces both the wake and its invalidation set.
+  An accepted but unmapped path fails open to every domain, preserving correctness while narrow
+  known changes avoid a full input rebuild. Verification metadata remains pinned until closeout.
 
 - 2026-07-13T11:15+02:00 — 260712-PTS-L3 post-integration correction: removed the
   `worktrees/*/*/provider-runtime` watch root entirely. It descended (recursive) into each task's

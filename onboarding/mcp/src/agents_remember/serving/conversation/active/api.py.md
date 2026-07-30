@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-The two registered production routes of the active conversation surface (260718-CHATS-L1): the
-authorized native-hydrated page and the resumable SSE event stream. Every wire resolves the
+The three registered production routes of the active conversation surface: the authorized
+native-hydrated page, selected-child history hydration, and the resumable SSE event stream. Every
+wire resolves the
 caller through the L0 authorization dependency, compares `expectedBridgeEpoch` against the live
 submission authority, and maps every typed refusal to the serving status idiom — pre-stream as
 typed HTTP errors, established-stream failures as one typed `gap` plus close. Raw 500s are
@@ -58,7 +59,7 @@ error ladder maps subclass-before-base so cursor/session errors keep their exact
   gap events, never HTTP resets.
 - Dual resume inputs must agree; a missing resume cursor is `400 cursor-invalid`.
 - No raw 500 on any routine refusal path (O4).
-- The router still owns only these two GET routes; library/control shells are untouched.
+- The router owns two GET routes plus the selected-child POST; library/control routes are untouched.
 
 ### Todos
 
@@ -96,7 +97,20 @@ The active API now keeps cursor and generation behavior coherent for fresh page/
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260727-CHATS-IM-L2 Selected-Child Route Delta
+
+`POST /agents/{agent_id}/history` resolves the same authorization and exact bridge epoch as the
+page/event wires, then asks the active service to hydrate only that child (L153-L187). Typed
+child-local unavailable/not-eligible outcomes are successful response bodies with status, exact
+agent id, and optional detail/code; authority, epoch, composition, cursor, control, and session
+failures retain the existing typed HTTP mapping. The route never replaces the parent page or SSE
+stream.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the route count from two to three
+  and documented the exact selected-child POST, successful local-outcome vocabulary, and unchanged
+  parent/typed-error boundaries. Verification metadata stays pinned while uncommitted.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,18 @@ Codex session state no longer owns `BusyPolicy` or advertises a native busy queu
 retains discovery/configuration and desired/effective selection state; prompt ordering and active-
 operation authority live above the session in `HarnessSubmissionAuthority`.
 
+## 260727-CHATS-IM-L2 Experimental History Opt-In Delta
+
+Initialization now advertises `capabilities.experimentalApi: true`, and the capability snapshot
+reports the same fact (L282-L298; L336-L358). This opt-in only makes experimental history methods
+callable. It does not assert that either method exists: the connection-local history reader probes
+items first, turns second, and treats runtime results—not Codex version text—as authority.
+
 ## Update History
+
+- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the experimental API opt-in as
+  permission to probe bounded history, never as a version/capability assertion. Verification
+  metadata remains pinned while the source change is uncommitted.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: removed obsolete busy-policy/native-queue claims and recorded
   the authority boundary.

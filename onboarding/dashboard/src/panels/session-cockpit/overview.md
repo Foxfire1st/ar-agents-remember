@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d`       |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -321,7 +321,18 @@ stage actions live by the title, working feedback sits beside the conversation/c
 evidence remains in the inspector. Structured decision pages, queue steering, and the direct
 interaction route maintain distinct authority channels.
 
+## 260727-CHATS-IM-L2 Route Impact
+
+Within the existing conversation child route, focus now triggers bounded native hydration only for
+the effective selected agent, and exact roster identities survive incremental updates and reload.
+The cockpit's rail, stage, composer, diagnostics, and layout ownership remain unchanged.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the conversation surface now
+  hydrates only the effective selected child and retains exact roster identity across live updates,
+  reload, and child focus. The broader cockpit layout and ownership model are unchanged.
+  Verification metadata remains pinned until closeout.
 
 - 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: added the "Sub-Agent Lanes And Multiplexed
   Pending Interactions" section — the `ConversationSurface` roster/agent-lane focus cycling with

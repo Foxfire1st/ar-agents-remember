@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -169,7 +169,18 @@ The active projection store now keeps page, event, recovery, and eviction state 
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260727-CHATS-IM-L2 Current Delta
+
+Roster upsert reconciliation preserves terminal status and phase when a native-history candidate
+only replays a historical non-terminal row. The rule is limited to explicit backend roster ids
+and yields to terminal candidates or non-history live authority.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: roster upserts now preserve a
+  terminal child status when a later native-history replay carries only historical non-terminal
+  evidence, while still accepting a terminal candidate or current live authority. Verification
+  metadata remains pinned until closeout.
 
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: recorded the two sub-agent upsert-race guards and
   the agent-ref propagation. Fix-round finding 9: a late `streaming`-claiming tagging upsert

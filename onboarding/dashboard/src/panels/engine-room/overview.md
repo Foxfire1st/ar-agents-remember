@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -231,7 +231,22 @@ subscriptions and memoizes its model so unrelated snapshot changes do not rebuil
 SVG effects use composited transforms with non-scaling stroke protection where a scaled ring stands
 in for radius animation.
 
+## 260727-CHATS-IM-L2 Route Impact
+
+The structural scene and repeating effects now occupy sibling SVG roots with one shared view box.
+`EnclosureCanvas` remains structural authority; `EngineFxOverlay` owns only surge, reindex, and
+attention transforms; `useEngineTimeline` queries both through one timeline. Effects-off behavior
+and visual choreography remain unchanged. Further steady-state Hangar/Engine Room CPU work is
+developer-deferred and is not a blocker for this leaf.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: repeating surge, reindex,
+  and attention transforms now render in `EngineFxOverlay`, a sparse sibling SVG aligned to the
+  unchanged structural canvas. The shared timeline queries both roots and preserves the original
+  selectors, geometry, paint, and choreography. This is the accepted visual/performance boundary;
+  further steady-state Hangar/Engine Room CPU work is developer-deferred. Verification metadata
+  remains pinned until closeout.
 
 - 2026-07-24T13:17:17Z — Curator: documented the hidden-room CPU contract, narrowed subscriptions,
   and transform-safe SVG effects. Verification metadata remains pre-commit.

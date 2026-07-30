@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
+| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -997,7 +997,22 @@ The MCP package now carries the L5I interactive-session backend hardening: activ
 
 The package also owns the final mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before closeout mutation; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and zero mutation on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. Existing verification metadata remains pre-commit.
 
+## 260727-CHATS-IM-L2 Route Impact
+
+Two hot paths changed ownership without widening the MCP public surface. Active Chats projection is
+now an authority-shaped package beneath `serving/conversation/active/projector/`, while the
+workspace projector retains domain inputs and invalidates only the reader domains named by the
+watcher. Codex history acquisition probes bounded native methods at runtime; the 128 MiB transport
+fuse remains an emergency framing limit, separate from the 16 MiB materialized source-response
+ceiling and smaller output-page budgets.
+
 ## Update History
+
+- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the observer projection
+  worker now carries explicit domain invalidations and retained fixed-slot inputs, while active
+  Chats projection moved from one monolith into an authority-shaped `active/projector/` package.
+  Codex native history uses runtime-probed bounded methods with typed child-local failure and a
+  separate 128 MiB emergency transport fuse. Verification metadata remains pinned until closeout.
 
 - 2026-07-26T22:20+02:00 — 260718-CHATS-L7R curator: added the load-shedding
   and concurrency-safety paragraph (per-thread pending maps, method-first
