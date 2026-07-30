@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-30T15:55+02:00 |
+| lastVerifiedCommitHash |  `2b47ed9520a770b9858e8af1f112f58745dcf473`|
+| lastVerifiedCommitDate |  2026-07-30T16:00:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,12 @@ blind duplicate native command.
 ## Code Commentary
 
 ### Logic
+
+`HarnessControlWriteCompletionTests` pins the write-completion contract: `_WholeWriteSocket` accepts
+the entire request in one `send` and raises `BrokenPipeError` from `sendall`, proving the client
+issues no remainder write when nothing remains; a partial-write companion proves a genuine remainder
+is still written. Without that contract the zero-length send raised `EPIPE` after the server closed,
+which is the intermittent broken pipe that blocked the commit gate (260727-CHATS-IM-L4).
 
 A socket double fails either before its first `send` accepts a byte or after that first byte while
 `sendall` completes the request. The tests require `HarnessControlClientError.may_have_sent` to be
@@ -54,6 +60,9 @@ without starting an adapter, server, or terminal process.
 ### Invariants And Boundaries
 
 - `may_have_sent` becomes true only after the socket accepts at least one request byte.
+- A socket that accepts the whole request in one `send` must see NO second write: the fake's
+  `sendall` raises unconditionally, so reaching it fails the test. The partial-write companion keeps
+  the remainder path honest, since the `_Socket` base returns a one-byte `send`.
 - A pre-write failure remains a loud client error; a post-write failure becomes an honest unknown
   outcome with the original request id or requested setter value.
 - A mismatched response cannot donate request or vendor correlation evidence to the caller.
@@ -105,6 +114,8 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-07-30T15:55+02:00 — 260727-CHATS-IM-L4: recorded `HarnessControlWriteCompletionTests`, which
+  pins that a fully accepted request issues no remainder write while a partial one still does.
 - 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: recorded the client serialization test for the
   multiplexed selector (`test_native_page_serializes_thread_id_only_when_set`) — `threadId` is
   emitted on the `evidence-native-page` request only when set, so the unset request stays the

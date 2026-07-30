@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
+| lastUpdated | 2026-07-30T15:05+02:00 |
 | lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
 | lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
 | governingOverview | `overview.md` |
@@ -43,6 +43,13 @@ loudly at launch, never silently degrade. Below the floor (or with an unparseabl
 the adapter simply runs on without the flag. The verdict crosses on the snapshot metadata as
 `subagentTextForwarding` (L161-L170, L187): an explicit "enabled: … meets the probed floor …" note
 or the exact fail-closed "unverified: … flag was omitted …" reason — never a silent omission.
+
+That re-launch reuses the SAME transport object, so it depends on the transport releasing process
+ownership at a completed stop; a transport that retained its terminated process would refuse the
+second `start` as already started, and the `HarnessControlError` handler would convert the whole
+handshake into an `unsupported` snapshot — the exact shape of the 260727-CHATS-IM-L4 defect, where
+every install at or above the floor lost control readiness and therefore model/effort selection.
+The probe runs before `_state` exists (L201-L211), so no state reader competes with that stop.
 
 `discover` copies the `LaunchSpec`, replaces only that transient copy's argv
 through `build_claude_discovery_argv`, invokes the same startup/catalog negotiation, returns the
@@ -105,6 +112,9 @@ flags.
 - The floor gate is the ONLY version heuristic in this adapter (justified because the contract is
   argv-only and cannot be probed without launching the flag); the "no launch-only heuristic"
   convention above otherwise stands unchanged.
+- The floor re-launch requires a restartable transport, not a retry or a downgrade: the adapter stops
+  and starts the same object exactly once and has no fallback for a refused second start, so the
+  transport's ownership-release contract is load-bearing for control readiness.
 
 ### Todos
 
@@ -165,6 +175,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: recorded that the floor re-launch reuses one transport
+  object and therefore depends on the transport's ownership-release contract, that the probe runs
+  before the state reader exists, and that a refused second start degrades the whole handshake to
+  `unsupported` rather than retrying.
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the floor-gated `--forward-subagent-text`
   launch in `start` (fail-closed first launch, `system/init`-proven re-launch, snapshot
   `subagentTextForwarding` verdict), added the fail-closed invariants, refreshed the protocol argv

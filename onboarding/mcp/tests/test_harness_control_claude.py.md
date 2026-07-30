@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-30T15:05+02:00 |
+| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
+| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,16 @@ case (2.1.220, L466-L491) proves the two-launch flow: the probe launch omits the
 re-launch carries it behind the `system/init` capture, and the note reports `enabled`. The
 unparseable-version case (`dev-build`, L493-L510) stays fail-closed with one flagless launch. The
 mapper-tier floor verdicts live in `test_conversation_projector_claude_agents.py`.
+
+Those cases prove the argv contract but not the transport lifecycle it assumes: `_FakeClaudeTransport`
+accepts a second `start` on the same object, so the at-floor case passed while the production
+transport would have refused its own re-launch (260727-CHATS-IM-L4).
+`ClaudeProductionTransportRelaunchTests` closes that gap by driving the real adapter with
+`transport_factory=ClaudeSubprocessTransport` against a local stream-json stub that reports 2.1.220
+and appends each launch argv to a log file. It asserts exactly two launches with the flag only on the
+second, `control` = `ready`, and a selectable model whose effort options are advertised — the
+dashboard's model/effort surface. The stub is a local interpreter script, so the case stays
+credential-free while still exercising real process ownership.
 
 ### Discovery Isolation And Live Closure
 
@@ -139,6 +149,8 @@ environment must never appear in handshake evidence.
 - `--forward-subagent-text` is fail-closed: emitted only behind a probed >= 2.1.220 install via a
   probe-launch-then-relaunch flow; below-floor or unparseable versions run exactly one flagless
   launch with an honest `unverified` note (fix-round finding 8).
+- The fake transport is restart-tolerant and therefore cannot witness process ownership; any claim
+  about the probe re-launch actually launching belongs to the real-transport case, not the fake tier.
 - Fixture versions are test evidence rather than a production pin, and credentials/model output
   remain excluded from retained startup evidence.
 
@@ -203,6 +215,9 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: recorded `ClaudeProductionTransportRelaunchTests`, the
+  real-transport probe/relaunch proof, and named the restart-tolerant fake as the reason the at-floor
+  argv case passed over a transport that would have refused its own re-launch.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the `--forward-subagent-text`
   flag-floor coverage (fix-round finding 8) — the fake transport's scripted re-launch
   (`start_argvs`/`restart_frames`), the below-floor one-launch omission with the exact

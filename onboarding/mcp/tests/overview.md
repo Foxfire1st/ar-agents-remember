@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-30T15:05+02:00 |
+| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473`|
+| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -134,8 +134,15 @@ unconsumed; terminal state is `idle` / `immediate` without a queued replacement 
 remain fixture/smoke evidence, not production pins.
 
 Pinned Claude Code 2.1.207 JSONL fixtures, fake-transport conformance,
+a real-local-subprocess lifecycle tier,
 and an opt-in credential-safe live smoke cover the Claude adapter boundary. The smoke submits the advertised local `/cost` command
-through the same correlated acceptance/result path without a model API request. A mixed
+through the same correlated acceptance/result path without a model API request.
+The lifecycle tier sits between the fake and the credentialed smoke: `test_claude_stream_transport.py`
+drives a real stdin-waiting child through start -> completed stop -> start to pin process-ownership
+release plus the live double-start refusal, and `test_harness_control_claude.py` drives the real
+adapter over the real transport against a local stream-json stub to prove the floor probe's
+stop/re-launch reaches control readiness with a selectable model and effort. Both use local
+interpreter children, so this tier costs no credentials and no model tokens. A mixed
 `success`/`is_error=true` API-429 regression remains failed and retains only safe terminal metadata;
 no result text, stderr, credentials, environment, or settings are emitted or retained.
 
@@ -531,6 +538,11 @@ The regression set covers the serving performance/truth changes (single-pass rep
 
 ## Update History
 
+- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: routed the new real-local-subprocess lifecycle tier for
+  Claude (transport ownership release across start -> stop -> start, and the adapter's floor
+  probe/re-launch to control readiness over the real transport), and recorded that the live smoke's
+  `/cost` arm asserts the still-unimplemented harness slash-command capability owned by an upcoming
+  master, so its red state there is expected rather than a regression.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: added the two new native-history
   regression suites and routed measured-size transport, exact probe/fallback, one-shot resource
   bounds, cycle/legacy behavior, typed IPC, selected-child concurrency/continuity, and dashboard
