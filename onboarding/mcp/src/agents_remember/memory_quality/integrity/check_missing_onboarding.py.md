@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -40,6 +40,27 @@ string is byte-identical to the pre-split version.
 to `resolve_coordination_context` inside a `CoordinationHints(...)`, matching the resolver's
 current signature.
 
+Since 260731-EFA-L3 the module runs no git subprocess of its own. It imports `run_git` from
+`agents_remember.kernel.git_command` and keeps one helper, `require_git`, which adds the module's
+contract that any git failure is fatal and — unlike the `require_git` helpers elsewhere — returns
+the `CompletedProcess` instead of stripped text, because `worktree_added_sources` and
+`code_repository_name_from_git` read NUL-delimited (`-z`) output that a `.strip()` would corrupt:
+
+```python
+def require_git(repo_root: Path, args: list[str]) -> subprocess.CompletedProcess[str]:
+    result = run_git(repo_root, args)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or f"git {' '.join(args)} failed")
+    return result
+```
+
+Raise-on-failure is unchanged behaviour: the deleted local copy already raised, it was just named
+`run_git`. What the module gains is what its copy was missing — `env=git_environment()`, so an
+ambient `GIT_DIR` cannot make `git diff --cached` / `git ls-files --others` answer out of a
+different repository and report "no new files"; `timeout=GIT_LOCAL_TIMEOUT_SECONDS` (300s) instead
+of no bound at all; and explicit `encoding="utf-8"` with `errors="surrogateescape"`, so a
+non-UTF-8 filename in the `-z` listing decodes instead of raising.
+
 ### Conventions
 
 The module is a pre-code-commit closeout helper. Agents run it while new files
@@ -54,7 +75,8 @@ code and refresh the new sidecars to the real code commit hash.
 - Sidecar-managed files require `onboarding/<source-path>.md`.
 - Inline-managed files require an inline onboarding block.
 - Unsupported storage modes are reported instead of guessed.
-- Git subprocesses use `stdin=subprocess.DEVNULL`.
+- Git subprocesses use `stdin=subprocess.DEVNULL` and a scrubbed repository-selection environment.
+  Both belong to `kernel.git_command.run_git`; this module must not grow a second runner.
 - Linked-worktree basenames are not repository identifiers; the Git common
   directory is the repository identity source for CLI resolution.
 - Sidecar existence and inline source reads use the shared filesystem helper so
@@ -68,9 +90,15 @@ code and refresh the new sidecars to the real code commit hash.
 | Resolver helpers provide storage/path-rule decisions. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 | Tests cover untracked, staged, excluded, and renamed file cases. | [test_missing_onboarding.py](agents-remember/mcp/tests/test_missing_onboarding.py) |
 | The kernel filesystem helper handles long-path sidecar and source probes. | [filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
+| `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Update History
 
+- 2026-07-31T20:53+02:00 — 260731-EFA-L3 curator: the module-local `run_git` copy was removed; the
+  helper is now `require_git`, wrapping `kernel.git_command.run_git`. Documented the rename, why it
+  still returns a `CompletedProcess` (NUL-delimited `-z` output), and the three guards the copy was
+  missing (environment scrubbing, 300s timeout, explicit UTF-8/surrogateescape decoding). The
+  `stdin=subprocess.DEVNULL` invariant was re-pointed at the runner that now enforces it.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911` armed with no exemptions):
   `missing_onboarding_for_source` was split into per-storage-mode helpers
   `_missing_sidecar_onboarding` and `_missing_inline_onboarding`; `main()` was updated for the

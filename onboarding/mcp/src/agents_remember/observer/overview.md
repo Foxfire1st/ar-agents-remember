@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`       |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -420,6 +420,19 @@ The slice-3a projection read side:
   snapshot, never re-classified in the reducer (git-per-sidecar stays in the
   on-demand drift tools); large inventories collapse to rollups + bounded samples
   so the served projection stays lean.
+- **A best-effort reader on this route degrades; it never raises — and since
+  260731-EFA-L3 that means catching the runner's timeout, not only `OSError`.**
+  `_ledger_window` and `read_ledger` both promise that a missing, invalid or
+  unreadable ledger yields an empty window or hash-only rows so the projection tick
+  cannot fail. `_git_commit_meta` is the git probe underneath them, and it moved onto
+  `kernel/git_command.py::run_git`, which — unlike the private copy it replaced —
+  carries a timeout. `subprocess.TimeoutExpired` is a `SubprocessError` and
+  `SubprocessError` is **not** a subclass of `OSError`, so a wedged `git log` would
+  have escaped the old `except OSError`, travelled up through `_enrich_ledger_rows`
+  and failed the whole tick. It now catches `(OSError, subprocess.SubprocessError)`.
+  Any future reader here that consolidates onto the shared runner inherits the same
+  obligation: the runner's failure surface is wider than a bare `subprocess.run` with
+  no bound, and this route's degrade-never-raise promise is what pays for it.
 - Derived states are flagged `inferred` so a renderer never shows a projected
   state as a written fact ("never pretend declared is observed").
 - **Persistent lifecycle rows are current-enclosure-owned:** deleting or re-owning an enclosure removes
@@ -514,6 +527,38 @@ long-lived collaborators in `ProjectionTickState`, and `ProjectionInputState.rea
 
 ## Update History
 
+- 2026-07-31T22:45+02:00 — 260731-EFA-L3 curator (re-verification pass): **the "No route impact"
+  attestation below no longer covers `snapshots.py`, which changed again after it was written.**
+  `_git_commit_meta` widened `except OSError` to `except (OSError, subprocess.SubprocessError)`, and
+  that is a route fact rather than a local tidy-up: the entry below attested "same `{}`-on-failure
+  contract", and the failure *set* is what moved. Consolidating this probe onto
+  `kernel/git_command.py::run_git` gave it a timeout it never had, and
+  `subprocess.TimeoutExpired` is a `SubprocessError`, which is not an `OSError` — so a wedged
+  `git log` would have escaped `_enrich_ledger_rows` and failed the projection tick, breaking the
+  promise `_ledger_window` and `read_ledger` both document (an unreadable ledger degrades to
+  hash-only rows, never to an exception). Recorded that as an invariant under Invariants And
+  Boundaries, stated as an obligation on any future reader here that moves onto the shared runner,
+  because the reasoning generalizes and the next such consolidation will not come with a comment.
+  Re-checked the rest of the earlier attestation against the current source and it still holds:
+  same argv, same one-`git log`-per-repo batching, same never-faked metadata, same
+  `--ignore-missing` fallback to the bare hash. The reader/reducer/projection split, the pure fold
+  and the surface inventory are untouched. Verification metadata pinned until closeout stamps the
+  L3 commit.
+
+- 2026-07-31T21:03+02:00 — 260731-EFA-L3 curator: No route impact: the leaf's only change under this
+  route is one import line in `snapshots.py` — `run_git` now comes from
+  `agents_remember.kernel.git_command` instead of `agents_remember.worktrees.modules.git`, because
+  the six near-identical private copies of that function were consolidated onto the kernel owner
+  (`worktrees/modules/git.py` no longer defines one; it imports the same kernel function). Checked
+  the one caller,
+  `_git_commit_meta`'s batched `git log --no-walk --ignore-missing --format=%H%x1f%cI%x1f%s` for
+  `_enrich_ledger_rows`, against the current source: same argv, same one-subprocess-per-repo shape,
+  same `{}`-on-failure contract, same never-faked metadata. Checked this overview's three git claims
+  against the code — "git-free sidecar staleness" (Purpose), "provider-state refreshes are not
+  delayed by repeated git probes" (Purpose) and "git-per-sidecar stays in the on-demand drift tools"
+  (Invariants) — all still hold. The observer's surface inventory, reader/reducer/projection split
+  and pure-fold boundary are untouched; which module the runner is imported from was never a fact
+  this overview stated.
 - 2026-07-31T00:00+02:00 — No route impact on behaviour: 260731-EFA-L2 re-signed the reducer and
   the projection input/write edge onto parameter objects (`WorkspaceStructure`/`AnalyticalInputs`,
   `ProjectionTickState`, `ProjectionReaders`/`RefreshPass`/`ActiveGroups`, `AmbientTiming`) and

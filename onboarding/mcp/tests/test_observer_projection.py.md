@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`       |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -136,6 +136,22 @@ that `cleanup-pending` keeps its live node. Slice 05m adds
 SHA with no HEAD fallback, and returns `{}` for a non-repo / empty input; `_ledger_window` and `read_ledger`
 enrich each served row when the commits are local and leave the message/date fields `None` (the row still
 served by its hash) when they are not.
+
+**260731-EFA-L3** adds one case to that class:
+`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` (L2474-L2504). It is the
+only test in this suite that patches git rather than running it: `mock.patch.object(snapshots,
+"run_git", side_effect=subprocess.TimeoutExpired(cmd=["git", "log"], timeout=300))` over a real
+two-commit repo with a written ledger. `TimeoutExpired` is a `SubprocessError` and a `SubprocessError`
+is **not** an `OSError`, so when `snapshots._git_commit_meta` moved onto a runner that has a timeout,
+its `except OSError` stopped covering the failure the timeout produces — the raise would have escaped
+through `_enrich_ledger_rows` and taken down the projection tick. The case drives **both** entry points
+inside one patch — `_ledger_window(...)` (worktree coupler) and `read_ledger(repo, code_root=repo)`
+(official coupler) — and asserts the honest degrade rather than the absence of a crash: `total` still
+equals the full ledger row count, `rows[0].codeCommit` still carries the hash, and `codeSubject` /
+`memoryDate` / `node.rows[0].codeSubject` are all `None`, i.e. the enrichment is dropped and never
+faked. Asserting the `LedgerNode` builder separately is deliberate — the two windowing sites call
+`_git_commit_meta` through different paths, so one guard covering only one of them would pass a
+single-entry-point test.
 Task 31 extends this area with configured-only versus live worktree provider assertions: `read_providers`
 can use mocked Docker inspect data to mark a worktree stack ready, while `build_engine_processes` emits
 missing code/memory provider placeholders and missing facts when a worktree expects providers but no
@@ -233,6 +249,13 @@ with `decide_gate(gate, GateVerdict(...), now=...)`, `default_contract(ContractT
 leaf=LeafIdentity(...), code=RepoBranchPlan(...), memory=RepoBranchPlan(...))`, and
 `write_start_progress(root, StartingEnclosure(...), StartBeat(...))`.
 
+Git is exercised for real, not mocked, everywhere except one case: the suite imports the module
+object (`from agents_remember.observer import snapshots`, L42) purely so
+`LedgerCommitMetaTests.test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
+can patch `snapshots.run_git` — a wedged git cannot be produced with a real repository. Patching the
+module attribute rather than `kernel.git_command.run_git` is what makes the test see the binding
+`snapshots.py` actually resolves at call time, so a future re-import from a different module fails it.
+
 The 3b suites write fixture files (drift
 snapshots, sidecars, setup/progress JSON, route indexes, tool reports, ledgers)
 into tmp roots; `DriftSnapshotProducerTests` uses a real `git init -b` + empty
@@ -244,27 +267,27 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | L412-L507 | [projection.py](../src/agents_remember/observer/projection.py) |
-| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | L584-L736; L757-L783 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | L2753-L3014 | [test_observer_projection.py](test_observer_projection.py) |
-| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | L3079-L3137 | [test_observer_projection.py](test_observer_projection.py) |
-| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | L690-L763 | [test_observer_projection.py](test_observer_projection.py) |
-| The fold + inferred layer + action availability under test. | L1-L92 | [reducer.py](../src/agents_remember/observer/reducer.py) |
-| The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | L1-L92 | [provider_nodes.py](../src/agents_remember/observer/provider_nodes.py) |
-| The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | L18-L84 | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode` L487-L533; `SeriesSubTaskNode` L536-L561; `SeriesNode` L564-L590 | [projection.py](../src/agents_remember/observer/projection.py) |
+| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | `read_task_documents` L1149-L1177; `read_series_documents` L1272-L1313; `_series_subtask_nodes` L1316-L1333; `_series_subtask_created_at` L1336-L1349; `_task_doc_node` L1370-L1459 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
+| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` L2782-L3043 | [test_observer_projection.py](test_observer_projection.py) |
+| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` L3108-L3166 | [test_observer_projection.py](test_observer_projection.py) |
+| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | `test_series_token_total_sums_linked_leaf_lifecycles` L691-L764 | [test_observer_projection.py](test_observer_projection.py) |
+| The fold + inferred layer + action availability under test. | `project_lifecycle` L71-L98; `_project_inferred` L446-L460; the action-availability block (`_lifecycle_actions` L466-L475, `enclosure_actions` L478-L479, `_integrate_action` L482-L496, `_cleanup_action` L499-L513) | [reducer.py](../src/agents_remember/observer/reducer.py) |
+| The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | `workspace_provider_nodes` L16-L39; `_cgc_repo_provider_nodes` L83-L98; `_target_repo_provider_nodes` L139-L150; `_target_repo_ids` L174-L185 | [provider_nodes.py](../src/agents_remember/observer/provider_nodes.py) |
+| The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | `admitted_worktree_groups` L24-L45; `active_enclosure_worktree_groups` L48-L73 | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
 | The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`, `SeriesRetentionTests` | [test_observer_projection.py](test_observer_projection.py) |
 | The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
-| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | L112-L203; L496-L535; L778-L805 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | L1735-L1768 | [test_observer_projection.py](test_observer_projection.py) |
-| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | L1909-L1948 | [test_observer_projection.py](test_observer_projection.py) |
-| The log reader + atomic writer + orchestrator under test. | L1-L90 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
-| Projection reads active admission sets once and caches repo surfaces on a short TTL. | L151-L180; L217-L240 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
-| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | L216-L324; L1266-L1292; L2264-L2278; L2650-L2691; L3627-L3656 | [test_observer_projection.py](test_observer_projection.py) |
-| The drift-snapshot producer exercised by the round-trip test. | L1-L88 | [onboarding_drift_check/summary.py](../src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
-| The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | L17-L60 | [drift_snapshots.py](../src/agents_remember/observer/drift_snapshots.py) |
-| The shared drift-snapshot dir/schema the fixtures use. | L1-L47 | [paths.py](../src/agents_remember/observer/paths.py) |
+| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers` L191-L209 with the group filter in `_worktree_providers` L224-L284; `read_engine_process_facts` L636-L693; `read_setup_progress_nodes` L1035-L1069 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
+| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` L1736-L1769 | [test_observer_projection.py](test_observer_projection.py) |
+| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L1910-L1949 | [test_observer_projection.py](test_observer_projection.py) |
+| The log reader + atomic writer + orchestrator under test. | `read_lifecycle_logs` L112-L154; `write_projection` L157-L164 with `_atomic_write_json` L361-L365; `project_and_write` L214-L277 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
+| Projection reads active admission sets once and caches repo surfaces on a short TTL. | `REPO_SURFACE_REFRESH_TTL_SECONDS` L64-L68; the single admission/surface read inside `project_and_write` L232; L247; `_gather_repo_surfaces_cached` L334-L345 with `_repo_surface_cache_key` L348-L358 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
+| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests` L217-L325; `test_read_providers_ignores_unadmitted_worktree_stacks` L1267-L1293; `test_active_group_filter_skips_parked_progress` L2265-L2279; `test_repo_surface_cache_reuses_recent_repo_reads` L2679-L2720; `test_reader_skips_inactive_engine_process_groups_when_filtered` L3656-L3685 | [test_observer_projection.py](test_observer_projection.py) |
+| The drift-snapshot producer exercised by the round-trip test. | `run_drift_summary` L23-L71; `_write_drift_snapshot` L107-L149 | [onboarding_drift_check/summary.py](../src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
+| The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | `drift_snapshot_path` L19-L22; `prune_orphaned_drift_snapshots` L36-L69 | [drift_snapshots.py](../src/agents_remember/observer/drift_snapshots.py) |
+| The shared drift-snapshot dir/schema the fixtures use. | `DRIFT_SNAPSHOT_SCHEMA` L24; `drift_snapshot_dir` L37-L39 (the file is 39 lines) | [paths.py](../src/agents_remember/observer/paths.py) |
 
 ## Series-Contract Notes
 
@@ -290,6 +313,48 @@ The provider-reader patch target follows its new `projection_inputs` ownership. 
 asserts the same projection output and uncached volatile-provider behavior.
 
 ## Update History
+
+- 2026-07-31T21:55+02:00 — 260731-EFA-L3 curator: recorded the one test this leaf added and
+  repaired every line range in the card. **New coverage:**
+  `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
+  (L2474-L2504), plus the module-object import `from agents_remember.observer import snapshots`
+  (L42) that exists only to give it a patch seam. It is the sole case in the suite that patches git
+  instead of running it: `mock.patch.object(snapshots, "run_git", side_effect=
+  subprocess.TimeoutExpired(...))` proves that when `snapshots._git_commit_meta` moved onto a runner
+  with a timeout, `TimeoutExpired` — a `SubprocessError`, which is **not** an `OSError` — no longer
+  escapes to fail the projection tick. Both entry points (`_ledger_window` and `read_ledger`) are
+  driven inside one patch, because each reaches `_git_commit_meta` by its own path. Added the
+  paragraph under Tier 2 and a Conventions note for the patch seam. **Citation repairs — 17 rows.**
+  The file grew 3796 → 3825 lines (+1 at the import, +28 at the new test), so every self-citation
+  past L42 shifted and every one past L2474 shifted again: `TaskDocumentsReaderTests` L2753-L3014 →
+  L2782-L3043; `test_read_series_documents_orders_subtasks_by_leaf_creation` L3079-L3137 →
+  L3108-L3166; `test_series_token_total_sums_linked_leaf_lifecycles` L690-L763 → L691-L764;
+  `test_drift_and_failed_setup_surface` L1735-L1768 → L1736-L1769;
+  `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L1909-L1948 → L1910-L1949; and the
+  task-29 set L216-L324; L1266-L1292; L2264-L2278; L2650-L2691; L3627-L3656 → L217-L325;
+  L1267-L1293; L2265-L2279; L2679-L2720; L3656-L3685. Ranges into other files were stale from
+  earlier restructurings and are now cited per symbol rather than as bare spans: `projection.py`
+  L412-L507 held none of `TaskDocNode` (L487), `SeriesSubTaskNode` (L536) or `SeriesNode` (L564);
+  `snapshots.py` L584-L736; L757-L783 held none of `read_task_documents` (L1149),
+  `read_series_documents` (L1272), `_series_subtask_nodes` (L1316) or `_task_doc_node` (L1370), and
+  its group-filter row L112-L203; L496-L535; L778-L805 held none of `read_providers` (L191),
+  `read_engine_process_facts` (L636) or `read_setup_progress_nodes` (L1035); `reducer.py` L1-L92
+  held `project_lifecycle` (L71) but neither `_project_inferred` (L446) nor the action-availability
+  block (L466-L513); `provider_nodes.py` L1-L92 held `_cgc_repo_provider_nodes` (L83) but not
+  `_target_repo_provider_nodes` (L139) or `_target_repo_ids` (L174); `projection_store.py` L1-L90
+  held none of `read_lifecycle_logs` (L112), `write_projection` (L157), `project_and_write` (L214)
+  or `_atomic_write_json` (L361), and its cache row L151-L180; L217-L240 missed
+  `_gather_repo_surfaces_cached` (L334) and `REPO_SURFACE_REFRESH_TTL_SECONDS` (L68);
+  `summary.py` L1-L88 missed `_write_drift_snapshot` (L107); and `paths.py` L1-L47 ran eight lines
+  past a 39-line file. `drift_snapshots.py` and `worktree_provider_admission.py` did contain their
+  named symbols and were narrowed to exact definition ranges rather than corrected. Two rows carry
+  no line range by design (`test_active_group_survives_a_pruned_lifecycle_log` / `SeriesRetentionTests`
+  and `series_retained_lifecycle_ids`) and were left naming their symbols. The Repo-Internal
+  References header was `| Finding | Source Path |` while all 19 rows carried a third `Citations`
+  cell — the same defect found in `snapshots.py.md` — so **none** of these ranges rendered at all;
+  header and separator widened to three columns, no row content moved. No test was removed or
+  renamed and no existing assertion changed. Verification metadata pinned until closeout stamps the
+  L3 commit.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. This suite absorbed
   more parameter-object churn than any other in the leaf. `project_workspace` now takes

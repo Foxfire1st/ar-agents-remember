@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -27,7 +27,17 @@ analysis, service payloads, and CLI wiring independently navigable and testable.
   template rendering, memory repo preparation, and whole-case setup.
   `commands.py`'s `run_command` captures stdout/stderr and never inherits the
   parent's stdio (on MCP stdio transport those are the protocol pipes; 2.5.1,
-  GitHub #49) — failures raise with a bounded output tail. The case manifest
+  GitHub #49) — failures raise with a bounded output tail. Since 260731-EFA-L3 it
+  never inherits a **git repository selector** either: both `run_command` and
+  `repo_has_commit` pass `env=git_environment()` from
+  `kernel/git_command.py`, which strips the eight `GIT_DIR`-family variables
+  (`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
+  `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`,
+  `GIT_PREFIX`). The scrub covers **every** spawned command, not only the ones
+  whose argv starts with `git`, because the git argv this runner spawns is
+  `clone` / `checkout --detach` / `reset --hard` / `clean -fdx` against a scratch
+  workspace — with `GIT_DIR` inherited, the most destructive commands in the
+  package would run against whatever repository it names instead. The case manifest
   is NOT provider launch authority (containment R1, 260707-HFX-L1):
   `workspace.filter_benchmark_provider_ids` filters manifest provider ids
   against the caller's `allowed_provider_ids` — the live MCP authority set the
@@ -87,6 +97,14 @@ intact.
 
 ## Update History
 
+- 2026-07-31T20:59+02:00 — 260731-EFA-L3 curator: extended the `commands.py` hot-path bullet, which
+  previously recorded only the stdio-isolation half of the subprocess hygiene contract. Both
+  `run_command` and `repo_has_commit` now also pass `env=git_environment()`
+  (`kernel/git_command.py`), stripping the eight `GIT_DIR`-family repository selectors from every
+  command this runner spawns — the workspace-prep argv (`clone`, `checkout --detach`,
+  `reset --hard`, `clean -fdx`) is the reason the scrub is unconditional rather than git-only. No
+  change to the module split, the containment R1 authority filter, or the L2 value objects.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: added the shared `BenchmarkWorkspace` / `BenchmarkTask`
   / `BenchmarkRun` / `BenchmarkPreparation` / `BenchmarkRunOutcome` value objects and re-signed
   `prepare_case`, `run_case`, `maybe_prepare_case`, `run_one`, `run_dry_batches`,

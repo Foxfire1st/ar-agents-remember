@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -15,6 +15,44 @@
 `seed.py` owns CodeGraphContext seed request options, configured root resolution, source/target validation, export/load lifecycle orchestration, and seed result payloads.
 
 ## Code Commentary
+
+### 260731-EFA-L3 Both Git Calls Run On The One Runner
+
+This module's two git calls — `git_head_or_none` (the HEAD it declares the seed fresh against) and
+`seed_commit_divergence` (the catch-up diff) — no longer build their own `subprocess.run`. Both call
+`run_git` from `agents_remember.kernel.git_command`:
+
+```python
+result = run_git(repo_root, ["rev-parse", "HEAD"])
+...
+result = run_git(
+    source_repo_root,
+    ["diff", "--name-status", source_head, target_head],
+    timeout=_CATCH_UP_DIFF_TIMEOUT_SECONDS,
+)
+```
+
+What that buys, beyond removing a copy:
+
+- **The seed's freshness claim is anchored to the repository it names.** The removed
+  `git_head_or_none` body spelled out `-c safe.directory=… -C <repo_root> rev-parse HEAD` but passed
+  no `env=`, so an exported `GIT_DIR` selected the repository regardless: the call would return
+  *another* repository's HEAD, and the seed would be declared fresh against a commit this repo never
+  had. `run_git` strips the whole `GIT_DIR` family (`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`,
+  `GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`,
+  `GIT_PREFIX`) before every call. This matters here more than almost anywhere else in the tree,
+  because seeding runs during worktree start — exactly when a `GIT_DIR` is likely to be in the
+  environment.
+- **`git_head_or_none` is bounded at all.** It previously ran with no `timeout`; it now inherits the
+  runner's `GIT_LOCAL_TIMEOUT_SECONDS` (300) default.
+- The catch-up diff keeps its own tighter bound, now named: `_CATCH_UP_DIFF_TIMEOUT_SECONDS = 60`.
+  It runs during provider setup, and a repo whose diff has not answered in a minute is not one a
+  per-file touch pass was going to catch up anyway.
+
+Protocol-pipe hygiene is unchanged, just relocated: stdin is `DEVNULL` because that is the runner's
+default, not because this module asks for it. `stderr` is now captured rather than discarded (the
+runner uses `capture_output=True`), which changes nothing for callers — both call sites branch on
+`returncode` only.
 
 ### 260731-EFA-L2 Seed Resolution Split
 
@@ -81,6 +119,9 @@ The argv after `--` in `_seed_export`/`_seed_load` executes inside the Linux run
   unrelatable heads refuse, protecting against cloning a different
   repository's graph.
 - Bundle path rewriting is delegated to `bundle.py`.
+- Every git call in this module goes through `kernel.git_command.run_git`, never `subprocess`
+  directly: the seed's freshness decision is only as trustworthy as the guarantee that the HEAD it
+  read came from the repository it named, and an inherited `GIT_DIR` breaks exactly that.
 - `_cgc_settings_path` is the canonical priority chain for the cgc settings file; it must match the chain in `cgc_extra_args`.
 - Argv after `--` runs inside the Linux container and must be container-form (`to_container_path`); `--from-settings` and other pre-`--` arguments are consumed host-side and stay host paths (GitHub #58).
 
@@ -98,9 +139,23 @@ No external Domain Documentation source is configured for this memory repo.
 | Worktree setup constructs CGC seed options through the provider setup request. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
 | The post-watcher catch-up stage consuming the stashed divergence. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
 | Index-lifecycle tests pin relatable/unrelatable divergence and the proceed/stash/refuse mismatch paths. | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
+| `run_git`, the one runner both git calls here use: `GIT_REPOSITORY_SELECTOR_ENV` + `git_environment` strip the selectors, and `GIT_LOCAL_TIMEOUT_SECONDS` is the default bound `git_head_or_none` inherits. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| `DecoyRepositoryTests` proves a set `GIT_DIR` cannot make a runner call answer from another repository, and `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` stops a private copy from reappearing here. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
 
 ## Update History
 
+- 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: this module lost both of its local
+  `subprocess.run` calls. `git_head_or_none` and `seed_commit_divergence` now call
+  `kernel.git_command.run_git`, so the seed's HEAD comparison runs with the `GIT_DIR`-family
+  selectors stripped — the removed body passed `-C <repo_root>` but no `env=`, so an exported
+  `GIT_DIR` (likely during worktree start, which is when seeding runs) would have returned another
+  repository's HEAD and the seed would have been declared fresh against a commit this repo never
+  had. `git_head_or_none` also gains a bound it never had (the runner's 300 s local default), and
+  the catch-up diff's 60 s is now the named `_CATCH_UP_DIFF_TIMEOUT_SECONDS`. Recorded this as a
+  new Code Commentary section plus an invariant, and superseded the "detaches stdin" detail from
+  the 2026-06-10 entry: stdin is still `DEVNULL`, now as the runner's default rather than this
+  module's own argument. Skip reasons, divergence classification and the produced `CgcSeedContext`
+  are unchanged. Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0913` armed with no
   exemptions): extracted `_seed_precondition_skip` and `_seed_locations` from
   `_resolve_seed_context`, and re-signed `_validated_seed_context` / `_seed_validation_failure`

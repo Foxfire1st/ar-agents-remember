@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`                |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -78,6 +78,17 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-31T20:59+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
+  `abandon.py` is one import line — `run_git` moved from `modules.git` to
+  `agents_remember.kernel.git_command`, `branch_exists` still comes from `modules.git` — and this
+  sidecar never described a git runner, a subprocess style or a timeout, so it had nothing to
+  correct. Re-verified every behavioural claim against the current file: `_abandon_branch`'s
+  unmerged probe is still `run_git(repo, ["log", "--oneline", f"{base_branch}..{branch}"])`
+  (`_unmerged_commits`), the force path still routes to `delete_branch_force` (`git branch -D`) and
+  `remove_registered_worktree(..., force=True)` (`git worktree remove --force`), and
+  `_abandon_blockers` / `_abandon_state` still produce `abandoned` / `abandon-blocked` /
+  `would-abandon` unchanged. The shared runner's guard and timeout classes are documented on their
+  owner, `kernel/git_command.py`, and on `modules/git.py` which lost the local copy.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: docstring vocabulary updated to the l-01-agent-lifecycles orchestrator read-only/abandon exit; behavior unchanged. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-10T07:30+02:00 — `abandon_result` blocks (exit 2) without `force` while a live background provider setup owns the worktree (fresh heartbeat); `force=true` overrides, and a stale heartbeat does not block (GitHub #53).
 - 2026-06-02T16:24+02:00: Docstring now references the `l-01-agent-lifecycles` skill in full for the read-only/abandon exit (was "L-01"). Reference-style normalization; behavior unchanged.

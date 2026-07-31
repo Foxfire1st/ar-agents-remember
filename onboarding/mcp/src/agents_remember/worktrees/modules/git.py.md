@@ -6,19 +6,53 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
-Owns the Git subprocess adapter and small repository state helpers used by the
-`c-09-git-worktree-manager` skill worktree lifecycle.
+Owns small repository-state helpers used by the `c-09-git-worktree-manager`
+skill worktree lifecycle. It no longer owns a Git subprocess adapter: since
+260731-EFA-L3 every helper here calls the single `run_git` in
+`kernel/git_command.py`.
 
 ## Code Commentary
 
-All Git commands run with `stdin=subprocess.DEVNULL` and an explicit
-`safe.directory` override. The module exposes branch, commit, cleanliness,
+**The module-local `run_git` is gone (260731-EFA-L3).** This file used to define
+its own copy — `kernel.git_command.run_git` with the environment guard, the
+timeout and the explicit encoding all dropped — and every destructive worktree
+operation reached git through it. The file now opens with
+`from agents_remember.kernel.git_command import run_git` and a comment naming
+what that cost:
+
+```
+# This module used to define its own `run_git` -- the kernel's function with the
+# environment guard, the timeout and the explicit encoding all dropped -- and every
+# destructive worktree operation (commit, merge --ff-only, reset --hard, rebase,
+# branch -f, branch -D, worktree remove --force, push origin --delete) ran through
+# it. With GIT_DIR exported those landed in whatever repository GIT_DIR named. The
+# helpers below now call the one guarded runner; nothing else about them changed.
+```
+
+The helpers are otherwise unchanged; what they gained from the swap is
+everything `run_git` guarantees:
+
+- the repository-selector scrub — `git_environment()` copies the ambient
+  environment minus `GIT_REPOSITORY_SELECTOR_ENV` (`GIT_DIR`, `GIT_WORK_TREE`,
+  `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`,
+  `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`), so an exported `GIT_DIR` can
+  no longer redirect `require_git(repo, ["commit", ...])` into another repository;
+- the `stdin=subprocess.DEVNULL` + `-c safe.directory=<repo>` pair this module
+  always had, plus `encoding="utf-8"` / `errors="surrogateescape"`, which the
+  local copy lacked;
+- a timeout. No helper here passes `timeout=`, so all of them take `run_git`'s
+  default class, `GIT_LOCAL_TIMEOUT_SECONDS = 300` — the local band that bounds
+  `rebase`/`merge`/`status`. Nothing in this module is unbounded any more, and a
+  git call that exceeds 300s raises `subprocess.TimeoutExpired` out of the helper
+  instead of hanging; no helper catches it.
+
+The module exposes branch, commit, cleanliness,
 worktree creation, commit-if-dirty, changed-path, and commit-content helpers
 without owning workflow policy. `commit_text_or_none(repo, ref, rel)` returns a
 path's text at any ref or `None` when absent — the closeout body gates use it
@@ -52,12 +86,22 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
+| The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 | Memory baseline code reuses these facade-exported Git helpers. | [baseline.py](agents-remember/mcp/src/agents_remember/memory/baseline.py) |
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
 | Worktree tests cover changed-path behavior for long filesystem paths. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 
+- 2026-07-31T20:50+02:00 — 260731-EFA-L3 curator: the module-local `run_git` was deleted and every
+  helper now calls `kernel.git_command.run_git`, so the old Purpose ("Owns the Git subprocess
+  adapter") and the old Code Commentary opening ("All Git commands run with
+  `stdin=subprocess.DEVNULL` and an explicit `safe.directory` override") were both false — the local
+  copy also dropped the `GIT_DIR`-family scrub, the encoding and any timeout. Rewrote both to
+  describe the shared runner, the eight `GIT_REPOSITORY_SELECTOR_ENV` names it pops, and the
+  `GIT_LOCAL_TIMEOUT_SECONDS = 300` default that now bounds every helper (none passes `timeout=`,
+  none catches `subprocess.TimeoutExpired`). Added the `kernel/git_command.py` reference row.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-06-29T15:30+02:00 — operations-integration L3: added `changed_files_with_counts(repo, base, head=None)` (+ the `_rename_aware_path` helper), the change-set primitive behind the serving change-set API (`serving/changeset.py`): per-file `{path, insertions, deletions, status}` via `git diff --numstat --name-status --find-renames`, KEEPING deletions, binary→`None` counts, untracked→`A` in worktree mode, rename→post-rename path. Unlike `changed_worktree_paths`/`committed_changed_paths` it does not drop deletions. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
 - 2026-06-12T19:06+02:00 — Issue #83: added `committed_changed_paths()` (tree-diff `base..HEAD` ∩ `verified..HEAD`, `is_file`-filtered) and generalized `head_text_or_none` into `commit_text_or_none(repo, ref, rel)` so closeout worklists and body-gate baselines cover pre-committed work.
 - 2026-06-10T04:47+02:00 — Added `head_text_or_none()` (`git show HEAD:<rel>`, `None` when absent) for the issue #56 closeout body/history gates.

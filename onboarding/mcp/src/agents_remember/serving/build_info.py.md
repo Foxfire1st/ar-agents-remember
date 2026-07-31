@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-07-31T04:28+02:00                          |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`      |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`      |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -57,11 +57,39 @@ stamp never fakes a hash it could not resolve.
 
 `resolve_serving_build(*, anchor=None)` composes the stamp: `version` from
 `agents_remember.mcp.SERVER_VERSION` (the same identity the daemon's restart-on-version-mismatch
-uses), `commit` via `_git_short_head` (a `git rev-parse --short HEAD` subprocess anchored at the
-installed package directory — git walks up to the enclosing checkout), `booted_at` from
-`observer.events.now_iso()`. `_git_short_head` is best-effort by construction: fixed argv, 2 s
-timeout, every exception suppressed to `None` — from an installed wheel (no git metadata) the
+uses), `commit` via `_git_short_head` (`git rev-parse --short HEAD` anchored at the installed
+package directory — git walks up to the enclosing checkout), `booted_at` from
+`observer.events.now_iso()`. `_git_short_head` is best-effort by construction: fixed argv, a 2 s
+bound, every exception suppressed to `None` — from an installed wheel (no git metadata) the
 stamp serves version-only, never a crash.
+
+### 260731-EFA-L3 — Both Probes Run On The One Git Runner
+
+This module no longer spawns git itself. `_git_short_head` (L67-L77) and `_git_worktree_dirty`
+(L80-L94) each call `run_git` from `agents_remember.kernel.git_command` — the package's single
+runner — with the module's own bound:
+
+```python
+_PROBE_TIMEOUT_SECONDS = 2
+...
+result = run_git(anchor, ["rev-parse", "--short", "HEAD"], timeout=_PROBE_TIMEOUT_SECONDS)
+```
+
+Two things change for the stamp, both in its favour:
+
+- **The stamp now describes the checkout the server was started from.** The removed local
+  `subprocess.run` passed no `env=`, so an exported `GIT_DIR` (worktree tooling, hooks, a wrapping
+  git invocation) selected the repository and the probe would stamp *that* repository's HEAD and
+  dirtiness onto this process. `run_git` strips the whole `GIT_DIR` family before every call.
+- **`safe.directory` is no longer a failure mode.** `run_git` always passes
+  `-c safe.directory=<repo_root>`, so a checkout owned by another user resolves instead of failing
+  the probe into an honest-but-avoidable `None`.
+
+`_PROBE_TIMEOUT_SECONDS` is kept deliberately tighter than the runner's general
+`GIT_LOCAL_TIMEOUT_SECONDS` (300): this probe rides app creation, so a git that does not answer in
+two seconds must read as "unstampable" like any other failure rather than delay boot. Everything
+else is unchanged — fixed argv, stdin `DEVNULL` (the runner's default, so the probe can never touch
+the MCP stdio protocol pipes), and every exception still suppressed to the honest `None`/`None`.
 
 ## Invariants And Boundaries
 
@@ -110,6 +138,8 @@ is proven by repository source and tests.
 | The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | L138-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 | The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | job `build`, step "Verify the distributions ship the dashboard bundle" | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
 | The payload test asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally. | L945-L951 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The one runner both probes call: `GIT_REPOSITORY_SELECTOR_ENV` (the `GIT_DIR` family stripped by `git_environment`) and `run_git` itself (`safe.directory`, stdin `DEVNULL`, caller-supplied `timeout`). | L24-L33; L58-L96 | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| `DecoyRepositoryTests` sets the selectors against a decoy repository and proves reads and writes still answer from the real one; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` keeps this module from growing a private copy again. | `test_reads_answer_from_the_real_repository_not_the_decoy`; `test_only_the_kernel_module_defines_a_git_runner` | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
 
 ## Cross-Repo References
 
@@ -126,6 +156,18 @@ Serving build identity now distinguishes a proven dirty checkout from an unprova
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: this module lost its two local `subprocess.run`
+  copies. Corrected the FEUI-L9R sentence that described `_git_short_head` as a subprocess of its
+  own and added the delta section: both probes now call `run_git`
+  (`agents_remember.kernel.git_command`) with `timeout=_PROBE_TIMEOUT_SECONDS` (2), so they inherit
+  the `GIT_DIR`-family scrub — the removed local runner passed no `env=`, and an exported `GIT_DIR`
+  would have stamped another repository's HEAD and dirtiness onto this process — plus
+  `-c safe.directory=<anchor>`. The 2 s bound, the fixed argv, the `DEVNULL` stdin and the
+  fail-open `None`/`None` honesty are all unchanged. Re-verified the `test_serving.py` L945-L951
+  citation against the current file (still the present-or-omitted `dashboardBuild` assertion) and
+  added references for the runner and its decoy-repository proof. Verification metadata pinned
+  until closeout stamps the L3 commit.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past
   the end of `mcp/src/agents_remember/mcp/__init__.py`, which is 11 lines, not 20. `SERVER_VERSION`

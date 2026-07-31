@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -82,6 +82,15 @@ branch and contract-lookup precedence are unchanged.
 
 ## Update History
 
+- 2026-07-31T21:04+02:00 — 260731-EFA-L3 curator: No route impact: checked Purpose, Hot Path
+  Summary, Route Model and Invariants And Boundaries against this route's only L3 change —
+  `cross_repo.py` (1 file, +7/-3), where `git_branch` (line 26) and `git_head_or_empty` (line 35)
+  now pass `timeout=GIT_METADATA_TIMEOUT_SECONDS` to the runner. Unlike the routes this leaf
+  consolidated, `cross_repo.py` already imported `run_git` from `kernel/git_command.py` and still
+  re-exports it in `__all__` (line 17), so this route never held one of the drifted unguarded
+  copies and no "owns its own git runner" claim exists here to correct. Module responsibilities,
+  the resolver's facts-only boundary, settings authority and the L2 `hints=`/`selector=` API are
+  all unchanged; the added bound is a per-call argument documented in the `cross_repo.py` sidecar.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: the resolver's public API moved to keyword-only
   `hints=` / `selector=` bundles (`CoordinationHints`, `EnclosureSelector`), with `CodeRepository`
   and `CoordinationRoots` typing what the private helpers pass between them. Every caller in the

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -76,8 +76,37 @@ finalized/cleaned by their own lifecycle edge. Helpers:
   accidentally names it as a work branch.
 - `delete_remote_branch_if_present(repo, branch, dry_run)` — clears `origin/<branch>`
   when the code work branch still has a remote ref: `git ls-remote --heads origin
-  <branch>` probe → `git push origin --delete`. Honest reasons:
+  <branch>` probe → `git push origin --delete` (the push is split out into
+  `_push_branch_deletion`). Honest reasons:
   `empty` / `remote-unreachable` / `already-absent`; `would_delete` on dry-run.
+
+**Both remote calls are bounded (260731-EFA-L3).** They are the only two network-talking
+git commands in this module, and they run inside an MCP tool call the client cannot
+cancel; the module-local runner they used to go through set no timeout at all, so an
+unreachable or wedged remote held the tool call open indefinitely. `_remote_git(repo,
+args)` now wraps both:
+
+```python
+def _remote_git(repo: Path, args: list[str]) -> subprocess.CompletedProcess[str] | None:
+    try:
+        return run_git(repo, args, timeout=GIT_REMOTE_TIMEOUT_SECONDS)
+    except subprocess.TimeoutExpired:
+        return None
+```
+
+`GIT_REMOTE_TIMEOUT_SECONDS` (120s, from `kernel.git_command`) is the remote band —
+deliberately tighter than the 300s local default every other `run_git` call in this file
+takes, because bytes either move or the connection is wedged. A stall returns `None`,
+and both call sites fold that into the reason the caller already handles:
+`probe is None or probe.returncode != 0` → `remote-unreachable` in
+`delete_remote_branch_if_present`, and `res is None` → `remote-unreachable` in
+`_push_branch_deletion`. So a hung remote reads exactly like an unreachable one and
+never escapes as an exception; the payload shape and every reason string are unchanged.
+
+Everything else in this module (`worktree remove`, `branch -d`/`-D`,
+`symbolic-ref`, `branch --show-current`, `checkout`) calls the shared
+`kernel.git_command.run_git` with no `timeout=`, i.e. the 300-second local class, and
+with the `GIT_DIR`-family environment scrub the module-local runner never had.
 
 **Task 13 correction.** Work-branch cleanup no longer relies on Git's ambient
 merge target (`HEAD` / upstream) and no longer force-drops task work branches
@@ -135,10 +164,19 @@ No external Domain Documentation source is configured for this memory repo.
 | `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
 | The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | [test_cleanup_carryover.py](agents-remember/mcp/tests/test_cleanup_carryover.py) |
 | Shared drift snapshot removal helper used by cleanup. | [observer/drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
+| `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 | Worktree tests cover cleanup preconditions and completed cleanup state. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Update History
 
+- 2026-07-31T20:54+02:00 — 260731-EFA-L3 curator: the module lost its import of the local `run_git`
+  and now takes `run_git` + `GIT_REMOTE_TIMEOUT_SECONDS` from `kernel.git_command`. Two new symbols
+  the commentary did not describe: `_remote_git` (runs a remote-talking git command at the 120s
+  remote bound and returns `None` on `subprocess.TimeoutExpired`) and `_push_branch_deletion` (the
+  `push origin --delete` half split out of `delete_remote_branch_if_present`). Documented both, why
+  the remote band is tighter than the 300s local default the rest of the module takes, and that a
+  stall folds into the existing `remote-unreachable` reason so no payload field or reason string
+  changed. Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `_retire_work_branch` was re-signed from `(repo, branch, source_branch, default_branch, dry_run,
   *, remote)` to `(target: RetiringBranch, dry_run, *, remote)`. All three call sites in

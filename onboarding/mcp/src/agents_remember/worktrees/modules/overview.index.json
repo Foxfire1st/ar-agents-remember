@@ -78,7 +78,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns raw Git subprocess operations and small repository state checks, including `committed_changed_paths` (issue #83: the unverified committed range \u2014 tree-diff `base..HEAD` \u2229 `verified..HEAD`) and the `commit_text_or_none` baseline reader behind the closeout body gates. **Operations-integration L3** adds `changed_files_with_counts(repo, base, head=None)` (+ `_rename_aware_path`) \u2014 the change-set primitive behind the serving change-set API (`serving/changeset.py`): per-file `{path, insertions, deletions, status}` via `git diff --numstat --name-status --find-renames`, KEEPING dele...",
+    "summary": "- `git.py` owns this route's Git vocabulary \u2014 the typed helpers and small repository state checks every operation module speaks \u2014 but **since 260731-EFA-L3 it no longer owns a Git runner**. It imports the one owner (`from agents_remember.kernel.git_command import run_git`, line 7), and its own `require_git` (line 18) is now just raise-on-nonzero over it. See the 260731-EFA-L3 section below for why that distinction is a correctness property and not bookkeeping. Its helpers include `committed_changed_paths` (issue #83: the unverified committed range \u2014 tree-diff `base..HEAD` \u2229 `verified..HEAD`...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -146,12 +146,12 @@
       "start_contract",
       "sync.py",
       "sync",
+      "from agents_remember.kernel.git_command import run_git",
+      "require_git",
       "committed_changed_paths",
       "base..HEAD",
       "verified..HEAD",
-      "commit_text_or_none",
-      "changed_files_with_counts(repo, base, head=None",
-      "_rename_aware_path"
+      "EFA"
     ]
   },
   "fallback": {

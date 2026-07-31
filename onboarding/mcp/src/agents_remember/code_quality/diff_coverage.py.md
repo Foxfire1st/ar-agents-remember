@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/diff_coverage.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -138,6 +138,50 @@ header that is not `+++ b/<path>`, and a `@@` line the `HUNK` pattern does not m
 reachable only from malformed input, and `mcp/tests/test_diff_coverage.py` drives them
 directly. A guard no test can reach is a guard nobody can show is right.
 
+### Every Git Call Goes Through `_git`, On The Package's One Runner
+
+`_git` is this module's only spawn point. It has exactly **three** callers — `run_git`,
+`revision_exists` and `merge_base` — and `changed_python_lines` / `state_for_empty_diff` reach it
+through `run_git`:
+
+```python
+def _git(project_root: Path, arguments: list[str]) -> subprocess.CompletedProcess[str]:
+    try:
+        return git_command.run_git(project_root, ["-c", "core.quotePath=false", *arguments])
+    except (OSError, subprocess.SubprocessError) as error:
+        raise DiffScopeError(f"git command failed (git {' '.join(arguments)}): {error}") from error
+```
+
+Three facts are packed into that helper.
+
+- **`core.quotePath=false` is this gate's own requirement and stays.** Without it git octal-escapes
+  non-ASCII paths in `diff` output, and `parse_unified_diff` stops recognising the very files it is
+  supposed to score — silently, as "no changed lines".
+- **The spawn itself belongs to `kernel.git_command.run_git`**, which strips the `GIT_DIR`-family
+  repository selectors (`GIT_REPOSITORY_SELECTOR_ENV`) before running. That is not tidiness here.
+  The full tier runs from the `pre-push` hook and git exports `GIT_DIR` to its hooks, so of every
+  git call site in the package this gate's were the ones most certain to meet the variables they
+  did not strip — and a redirected `git diff` makes this module certify the coverage of a different
+  repository than the one being pushed.
+- **The conversion of "git could not run" into `DiffScopeError` lives in `_git`, so all three
+  callers get it by construction rather than by three copies.** `run_git` used to own that
+  conversion alone while `revision_exists` and `merge_base` called this helper bare, and moving
+  onto the shared runner made that difference load-bearing: the runner **bounds** every call
+  (`GIT_LOCAL_TIMEOUT_SECONDS` = 300s) where the old inline `subprocess.run` had no timeout at all,
+  and it passes `cwd=repo_root`, so a `project_root` that does not exist raises `FileNotFoundError`
+  out of `subprocess.run` before git is ever started — where the old `git -C <path>` with no `cwd=`
+  merely exited non-zero and those two answered `False` / `None`. `subprocess.TimeoutExpired` and
+  `FileNotFoundError` are caught here as `SubprocessError` and `OSError`, so a wedged or unstartable
+  git is this gate's own typed error from every entry point.
+
+`run_git` is kept as the public, *raising* wrapper, and it now owns only the **other** failure half.
+`kernel.git_command.run_git` returns a `CompletedProcess` with `check=False`, so `run_git` raises
+`DiffScopeError` on an explicit `completed.returncode != 0`, carrying the exit code and git's
+`stderr`. `revision_exists` and `merge_base` still read `returncode` directly, because a missing
+revision and an unresolvable merge base are **answers, not failures** — converting those would turn
+every ordinary negative into a gate crash, which is what
+`test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` pins.
+
 ## Invariants And Boundaries
 
 - **The floor is 100% and lowering it is a policy change, not a tuning change.** Anything
@@ -156,6 +200,21 @@ directly. A guard no test can reach is a guard nobody can show is right.
 - It lives **inside** the wrapper rather than beside it, so it reaches the pre-push hook,
   closeout and CI through the one command they already run. A separate invocation is a
   gate somebody has to remember, which is the same as not having one.
+- Every git call goes through `_git`, and therefore through `kernel.git_command.run_git`. Do not
+  spawn `git` in this module: it runs from the `pre-push` hook where `GIT_DIR` is exported, and an
+  unstripped selector points the diff at another repository.
+  `test_git_command.py::SingleRunnerTests` fails the build if a second runner appears.
+- `-c core.quotePath=false` must stay on every call this module makes. It is what keeps
+  `parse_unified_diff` able to see non-ASCII paths; losing it degrades the gate to silence rather
+  than to an error.
+- A git failure is a `DiffScopeError`, never an empty diff. An empty diff means `no-changed-lines`,
+  which passes — so a failure that returned one would be a silent pass.
+- **The three wrappers must agree on which failures are this gate's error.** The
+  `OSError` / `subprocess.SubprocessError` conversion belongs to `_git`. Moving it back up into
+  `run_git` alone lets a wedged git (`TimeoutExpired`, from the runner's 300s bound) or a missing
+  `project_root` (`FileNotFoundError`, from the runner's `cwd=`) escape `revision_exists` and
+  `merge_base` untyped. `test_diff_coverage.py::BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error`
+  fails if any of the three stops converting.
 
 ## Repo-Internal References
 
@@ -163,13 +222,45 @@ directly. A guard no test can reach is a guard nobody can show is right.
 | --- | --- |
 | The wrapper's `run_diff_coverage` step, the `--diff-base`/`--diff-floor` flags, and the single pytest coverage run this module reads. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
 | `load_coverage_by_path`, `FileCoverage`, and the refusal of a report without branch data, all reused here. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. | [test_diff_coverage.py](agents-remember/mcp/tests/test_diff_coverage.py) |
+| Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. `BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives all three wrappers against a missing root and against a patched `git_command.run_git` raising `TimeoutExpired`; `::test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` keeps a missing revision and an absent merge base as `False` / `None`. | [test_diff_coverage.py](agents-remember/mcp/tests/test_diff_coverage.py) |
 | `[tool.coverage.run] branch = true`, without which this step refuses to score. | [pyproject.toml](agents-remember/pyproject.toml) |
 | The full hook tier that runs the wrapper, and the note telling leaf branches to export `AR_GATE_DIFF_BASE`. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
 | CI checkout uses `fetch-depth: 0` so a merge base exists; a shallow clone would silently degrade this step to the empty tree. | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
 | The contributor-facing statement of the floor and why it is 100%. | [CONTRIBUTING.md](agents-remember/CONTRIBUTING.md) |
+| `run_git` — the runner `_git` calls — strips `GIT_REPOSITORY_SELECTOR_ENV`, keeps stdin on `DEVNULL`, and bounds every call with the local/remote/metadata timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `diff_coverage.run_git` still reads the repository it was handed, and that a non-repository and an unrunnable git both surface as `DiffScopeError`. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
 
 ## Update History
+
+- 2026-07-31T21:20+02:00 — 260731-EFA-L3 curator (second pass): the fix worker moved the
+  `OSError`/`SubprocessError` → `DiffScopeError` conversion out of `run_git` and **into `_git`**
+  after the entry below was written, so the card's account of the failure split was wrong.
+  Corrected three claims in "Every Git Call Goes Through `_git`": (1) the quoted `_git` body no
+  longer matched the source — it now carries the `try` / `except (OSError, subprocess.SubprocessError)`
+  that raises `DiffScopeError`; (2) "four git call sites" was wrong — `_git` has exactly three
+  callers (`run_git`, `revision_exists`, `merge_base`), with `changed_python_lines` /
+  `state_for_empty_diff` reaching it through `run_git`; (3) the card credited `run_git` with both
+  failure halves, when `run_git` now retains only the `completed.returncode != 0` branch and the
+  "could not run" half is shared by all three. Recorded why it moved: the shared runner bounds
+  every call at `GIT_LOCAL_TIMEOUT_SECONDS` = 300s where the old inline call had no timeout, and
+  passes `cwd=repo_root`, so a missing `project_root` raises `FileNotFoundError` before git starts
+  where the old `git -C <path>` merely exited non-zero — both would have escaped `revision_exists`
+  and `merge_base` untyped. Added the matching invariant and named the two new
+  `BaseResolutionTests` regressions in the `test_diff_coverage.py` reference row. No citation
+  ranges to repair: this card's reference table carries source paths only.
+
+- 2026-07-31T20:48+02:00 — 260731-EFA-L3 curator: this module's git calls were consolidated onto
+  the package's one runner and the card said nothing about them. Added "Every Git Call Goes Through
+  `_git`, On The Package's One Runner": the new private `_git` helper keeps `-c core.quotePath=false`
+  (this gate's own requirement — without it `parse_unified_diff` cannot see non-ASCII paths) and
+  delegates the spawn to `kernel.git_command.run_git`, which strips the `GIT_DIR`-family selectors.
+  That matters most here: the full tier runs from `pre-push`, where git exports `GIT_DIR`, so an
+  unstripped `git diff` would have scored a different repository than the one being pushed. Also
+  recorded the failure conversion (`check=True`/`CalledProcessError` → explicit `returncode != 0`
+  plus `OSError`/`subprocess.SubprocessError`, which now includes the runner's timeout) and why
+  `revision_exists`/`merge_base` still read `returncode` directly. Added four invariants and the
+  `git_command.py` / `test_git_command.py` reference rows. No citation ranges in this card point
+  into a file this leaf changed — its reference table carries source paths only.
 
 - 2026-07-31T16:10+02:00 — Created for 260731-EFA-L2 (requirement L2-R7). Records the new
   binding coverage gate: the changed-lines floor of 100% with the measured derivation that

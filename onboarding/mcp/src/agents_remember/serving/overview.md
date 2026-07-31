@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`|
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -713,6 +713,17 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `resolve_serving_build`, resolved ONCE in `create_app` and injected on `/api/state` + the SSE
   snapshot as `servingBuild` so a stale serving process is visible in the cockpit top bar. A
   failed hash resolve serves version-only (`commit` omitted), never a fake.
+  Both probes — `_git_short_head` (`rev-parse --short HEAD`) and `_git_worktree_dirty`
+  (`status --porcelain`) — go through the package's one git runner, `run_git` in
+  `kernel/git_command.py`, since 260731-EFA-L3; they previously built their own `subprocess.run`
+  calls here. The runner strips the `GIT_DIR`-family repository selectors, which is what makes the
+  stamp name **the checkout the server was actually booted from**: with `GIT_DIR` exported, the
+  identity meant to expose a ghost process would have described whatever repository that variable
+  pointed at. It also keeps the `stdin=DEVNULL` guard the local calls carried by hand (never touch
+  the MCP stdio protocol pipes). The 2-second bound survives as the named
+  `_PROBE_TIMEOUT_SECONDS = 2`, passed explicitly against the runner's general-purpose
+  `GIT_LOCAL_TIMEOUT_SECONDS = 300` — a best-effort stamp must never delay app creation, so a git
+  that does not answer in two seconds is "unstampable" like any other failure.
 - `events.py` — the raw `event` channel: the **pure** byte-offset tail `read_new_events` (a
   composite per-source offset cursor, `encode_cursor`/`decode_cursor`) + the `stream_raw_events`
   async tailer. Fresh connections use `observer.event_retention.initial_event_offsets` so expired
@@ -1365,6 +1376,15 @@ closeout.
 
 ## Update History
 
+- 2026-07-31T21:02+02:00 — 260731-EFA-L3 curator: corrected the `build_info.py` Route Model bullet,
+  which described the build stamp's honesty rules without saying which repository the stamp reads.
+  `_git_short_head` and `_git_worktree_dirty` no longer own local `subprocess.run` calls; both now
+  call `run_git` (`kernel/git_command.py`), whose `GIT_DIR`-family scrub is what guarantees the
+  stamp identifies the checkout the server booted from rather than an inherited one — the property
+  the whole ghost-process surface depends on. The 2s bound is now the named `_PROBE_TIMEOUT_SECONDS`
+  passed explicitly against the runner's `GIT_LOCAL_TIMEOUT_SECONDS = 300`. `ServingBuild`'s fields,
+  the tri-state `dirty` fail-open rule and the version-only fallback are unchanged, as is every
+  other serving surface. Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 4 cross-file line citations. The codex
   adapter row now cites each thing it names: `_ThreadState` L99-L135 (per-thread demux), `interrupt`
   L375-L422 (exact-active-turn `turn/interrupt` with the `_last_interrupt` replay-once pair),

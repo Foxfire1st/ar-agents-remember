@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 
 > **Status:** active baseline
 
@@ -70,7 +70,7 @@ onboarding pass.
 | Authoritative browser session open | Every dashboard raw or harness create entrance crosses one `POST /api/terminal` client, validates exact request/response identity, and materializes only the accepted server row. Network, HTTP, protocol, identity, or server-declared failure creates no registry row, focus change, readiness/submit transition, or dependent context delivery. | `dashboard/src/data/terminalOpen.ts`, `dashboard/src/data/sessions.ts`, dashboard data/panels/session-cockpit overviews |
 | Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
 | Harness starter packages | Harness-native first-run packages for Claude Code, Codex, Cursor, Antigravity, VS Code + Copilot, Hermes, Pi.dev, and OpenClaw. Each package carries MCP settings templates, skill folders, and either startup hooks or always-on instruction files that load the coordinator first-action directive. | `.claude/`, `.codex/`, `.cursor/`, `.agents/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.pi/`, `.openclaw/`, `docs/install/` |
-| MCP server and authority settings | Installable stdio MCP server with trusted settings outside the coordinator root, allowed repo/provider scopes, timeout caps, transcript roots, and path containment. | `agents-remember-mcp`, `mcp/config.py`, `mcp/server.py` |
+| MCP server and authority settings | Installable stdio MCP server with trusted settings outside the coordinator root, allowed repo/provider scopes, timeout caps, transcript roots, and path containment. Since 260731-EFA-L3 it also **starts with no network egress**: the `o200k_base` tokenizer vocabulary ships inside the package under `package_data/tiktoken/` instead of being downloaded while the tool surface imports, so a fresh container, an offline machine, and a hermetic CI job can all start the server. | `agents-remember-mcp`, `mcp/config.py`, `mcp/server.py`, `models/tokens.py`, `package_data/tiktoken/` |
 | Public MCP response contracts | Pydantic models for every public MCP tool response, registry coverage for the tool surface, compact strict contracts where the repo owns shape, flexible envelopes where provider/service-native details are intentionally passed through, and token metadata fields for later cost accounting. | `mcp/src/agents_remember/models/`, `PUBLIC_TOOL_RESPONSE_MODELS`, `test_models.py` |
 | Provider lifecycle and discovery tools | Docker-managed GrepAI memory search/trace, CodeGraphContext symbol/caller/callee/dependency/complexity/visualization queries, compact provider status, dedicated provider diagnostics, watcher lifecycle, and current-state snapshots. Readiness is content-gated (2.5.0/2.5.1): graph/workspace content probes drive `indexed`/`indexing`/`empty`/`backend-unreachable` states for both providers, empty/unreachable targets degrade the global packet `ok`, crash-looping containers are not ready, and healthy-but-busy targets surface in the compact summary's `indexing` list. Provider launch is contained since 260707-HFX-L1: launch-capable operations (watcher start/restart/index rebuild, one-shot query runners, worktree provider setup, benchmark provider synthesis, the install rebind) re-read the on-disk MCP authority fail-closed — the boot snapshot is not launch authority, so `providers: {}` on disk is a live fleet-wide kill-switch — while stop/status/cleanup stay ungated; provider setup is serialized fleet-wide (one non-dry-run prepare at a time); and the dashboard daemon samples per-container containment metrics (label-discovered, read-only, dockerless-safe) that ride `provider_status`. | `provider_status`, `provider_diagnostics`, `provider_watchers`, `grepai_*`, `cgc_*`, `providers/`, `providers/metrics.py` |
 | Tool response token budgets | Verbose tools (`runtime_install`, `provider_diagnostics`, `provider_watchers`, carryover plan/apply) keep compact outcomes inline and file bulk diagnostics under `temp/tool-reports/<tool>/` with an inline `reportPath` (keep-last-5 / 7-day write-time prune, secret redaction); budget tests are the regression line (2.5.1/2.5.2). | `mcp/tool_reports.py`, `compact_*_payload` builders, `test_tool_response_budgets.py` |
@@ -259,14 +259,56 @@ builds the frontend, `scripts/sync-dashboard.py` places it, and packaging ships 
 and sdist. A source checkout without Node therefore has no cockpit: `GET /` answers 503 naming the
 build command while `/api` serves normally. The residual cost is deliberate and documented.
 
+**Runtime integrity (260731-EFA-L3 — cold start and one git runner).** Two repository-wide facts
+changed, both of the "it worked on the machines that happened to have it" kind. **(1) The server now
+starts with no network egress.** `mcp/tools/base.py` imports `models/tokens.py`, whose default token
+counter is built at module scope, so `tiktoken.get_encoding("o200k_base")` used to open an HTTPS
+connection *while the server was still importing* — a fresh container, an offline machine and a
+hermetic CI job could not start it at all, and nothing in the tree pre-warmed a cache. The
+vocabulary is now vendored inside the package, and a copy that is absent **or present with the
+wrong bytes** raises `TokenizerVocabularyError` rather than downloading; the
+counts and the reported encoding name are unchanged, because a fallback would make a token count
+depend on whether the machine that produced it had network. **(2) There is exactly one git runner.**
+Six near-identical private copies had drifted apart and only one scrubbed the eight `GIT_DIR`-family
+repository-selector variables, so with `GIT_DIR` exported — which is the ordinary state inside a git
+hook — the same operation landed in a different repository depending on which copy ran, and the
+unguarded copy sat behind `reset --hard`, `branch -D`, `worktree remove --force` and
+`push origin --delete`. All of them now call `kernel/git_command.py::run_git`, and an AST sweep
+fails the suite if a seventh runner appears. Detail lives in the `mcp/` and `mcp/tests/` route
+overviews.
+
 FEUI-MX-FIX-5 preserved Vite's generated JavaScript bytes as the semantic authority, and root
-`.gitattributes` still disables only `blank-at-eol` for
+`.gitattributes` still disables `blank-at-eol` for
 `mcp/src/agents_remember/package_data/dashboard/assets/*.js`. **That rule now has no tracked
 subject** — the path it names is git-ignored as of 260731-EFA-L1 — so the attribute is inert and
 the `mcp/tests` temporary-repository regression that policed it was removed with it. The underlying
 reason it existed still holds and still forbids post-build normalization: a generic end-of-line
 strip would corrupt CodeMirror completion indentation inside generated template literals. If a
 generated path ever returns to version control, the attribute and its regression return together.
+**260731-EFA-L3 added the file's second rule, and it is the one with a tracked subject.** This
+overview is where that rule's contract lives — no file card covers `.gitattributes`. The entry is
+a **literal filename**, not a directory or a glob:
+`mcp/src/agents_remember/package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790 -text`.
+It marks the vendored tokenizer vocabulary binary so no EOL or text filter can touch it, because
+that file's bytes are its identity: `models/tokens.py::_verify_vendored_vocabulary` hashes the file
+and compares it against `VENDORED_VOCABULARY_SHA256` **before** tiktoken is told where to look, and
+a mismatch raises `TokenizerVocabularyError`. **It does not restore the download — it refuses to
+start.** So without this line, a `core.autocrlf=true` checkout rewrites the line endings and that
+clone — and only that clone — cannot start the server at all.
+
+The check is in this package rather than left to tiktoken on purpose, and that is the durable point:
+tiktoken does verify the same SHA-256, but it does not fail closed on a mismatch.
+`tiktoken.load.read_file_cached` answers one by *deleting* the offending cached file and downloading
+a replacement over it. Pointed at this package's own directory, that turns a corrupt vendored copy
+into a network fetch on the startup path plus a rewrite of the installed tree — or, on the read-only
+install this is written for, a `PermissionError` from the write-back instead of a diagnosis.
+Checking the digest first is what makes corruption behave like absence.
+
+Because the entry names one file, refreshing the vocabulary renames both the file and the entry, and
+`mcp/tests/test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` stays red until
+the rename lands — an orphaned `-text` rule would otherwise protect nothing, silently, and only on
+the clones that need it. `mcp/src/agents_remember/package_data/tiktoken/README.md` records the
+procedure.
 
 FEUI-MX-FIX-2 routes all dashboard session creation through one accepted-response authority. Start
 at `dashboard/src/data/terminalOpen.ts` for exact identity and failure classification, then
@@ -854,6 +896,42 @@ per-file task parsing. The repository's public capability, task, and dashboard s
 unchanged; ownership and failure containment are now explicit in their route overviews.
 
 ## Update History
+
+- 2026-07-31T22:12+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers):
+  **corrected the `.gitattributes` `-text` claim, which was false.** It said tiktoken verifies the
+  vocabulary's SHA-256 on load and re-downloads any copy whose bytes differ, so an autocrlf clone
+  would "restore the cold-start download on those clones alone". Read against the current code:
+  `models/tokens.py::_verify_vendored_vocabulary` (L70-L106) hashes the file against
+  `VENDORED_VOCABULARY_SHA256` (L47) itself and raises `TokenizerVocabularyError` — such a clone
+  cannot start the server at all, and nothing is re-downloaded. Recorded why the check moved into
+  this package (`tiktoken.load.read_file_cached` verifies but does not fail closed: it deletes the
+  file and downloads a replacement over it, which inside an installed package is a startup fetch
+  plus a rewrite of the installed tree, or a `PermissionError` on a read-only install), and that the
+  entry is a **literal filename** — `.gitattributes` L13 names
+  `package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`, so a refresh renames both and
+  `test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` (L246) holds them
+  together. `.gitattributes` carries its own corrected comment (L5-L12) for the same reason. Also
+  made the cold-start hot-path sentence say *absent or byte-wrong* rather than only absent, and
+  added the invariant that a downstream integrity check which repairs itself is not a check. The
+  `blank-at-eol` half of the paragraph and the one-git-runner half were re-read and are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
+
+- 2026-07-31T21:05+02:00 — 260731-EFA-L3 curator: recorded the leaf's two repository-wide runtime
+  facts and corrected the one root claim it falsified. Added a **Runtime integrity** hot-path
+  paragraph (the server starts with no network egress now that the `o200k_base` vocabulary is
+  vendored rather than downloaded at import; six drifted private git runners consolidated onto
+  `kernel/git_command.py::run_git`, only one of which had scrubbed the `GIT_DIR`-family selectors
+  while the unguarded one sat behind `reset --hard` / `branch -D` / `worktree remove --force` /
+  `push origin --delete`), and extended the MCP-server feature row with the cold-start property.
+  **Corrected the `.gitattributes` note**, which said the file's only rule was the inert
+  `blank-at-eol` exception over a git-ignored path: it now has a second rule, and that one has a
+  tracked subject — the vendored vocabulary is marked `-text` because a `core.autocrlf=true` clone
+  would otherwise break the checksum tiktoken verifies and restore the download on those clones
+  alone. Added two durable invariants (a guard that lives in one copy of a duplicated function is
+  not a guard; nothing on the import path may reach the network, and a mitigation that lives in
+  `conftest.py` can hide the defect it mitigates). Detail stays in the `mcp/` and `mcp/tests/`
+  route overviews.
+  Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator (final state). **Retired every mid-leaf claim that
   rested on the complexity baseline, which the developer's no-deferral ruling deleted**: the
@@ -1723,6 +1801,9 @@ Repository onboarding now records spawned-unbriefed → harness-ready → briefe
 - **Ratchets, baselines, grandfather lists and burn-down schedules are forbidden in this repository's gates — fix the finding instead.** (Developer ruling, 2026-07-31, overruling this leaf's own plan.) 260731-EFA-L2 built the well-shaped version of that idea — a `quality/complexity-baseline.txt` failing in *both* directions, with an auto-tightening cap, a named owner and a dated burn-down — and then deleted it along with three empty allowlists in `test_gate_scope.py`. The reasoning is that **an exemption list, even an empty one, is a place to put the next offender**; all 67 complexity findings, 274 of 293 long signatures and all 46 CRAP offenders were paid instead. The one surviving carve-out (`PLR0913` on published MCP tool signatures) is a category the coding standard already exempts, is scoped by path rather than by entry, and is held shut by an AST test that fails if it widens.
 - **A budget that scales with the size of the change is backwards.** A coverage floor below 100% lets `floor((1-X) * N)` untested units in per change, so the bigger the change the more untested code it buys. The same shape shows up in every "percentage" gate; prefer the form where a 3-line change and a 300-line change mean the same thing.
 - **Derive scope from the tree, never enumerate it.** Every hand-written scope constant in this repository had fallen behind: the wrapper's, the pre-commit hook's, and Pyright's `include`, each silently narrower than the last. `git ls-files` plus a test that asserts the *real* argument vectors reach every tracked path is what makes "the gate covers everything" a fact rather than an intention.
+- **A safety guard that lives in one copy of a duplicated function is not a guard.** Six copies of the git runner drifted apart and only one scrubbed the `GIT_DIR`-family repository selectors, which is why every `git` subprocess in the package now goes through `kernel/git_command.py::run_git` and an AST sweep fails the suite if a second spawner appears (260731-EFA-L3). Wrapping the one runner is fine; re-implementing it is not.
+- **Nothing on the server's import path may reach the network, and a mitigation must not live only in the test harness.** The tool surface is imported while the MCP handshake is starting, so an import-time download is a startup dependency on egress; the `o200k_base` vocabulary is vendored and a missing one raises instead of downloading. The same rule applies to test scaffolding: `conftest.py` stripped the git selectors at import, which made the production defect *undetectable by any test*, so the redirection tests re-set them inside their own scope on purpose.
+- **A downstream integrity check is not a check if the downstream repairs itself.** tiktoken verifies the vendored vocabulary's SHA-256 and then answers a mismatch by deleting the file and re-downloading it, so "tiktoken verifies it" was never the guarantee it read as — inside an installed package that repair is a startup download plus a rewrite of the installed tree. `models/tokens.py` hashes the file itself before handing it over and raises `TokenizerVocabularyError`, which is what makes corruption behave like absence (260731-EFA-L3). When delegating verification, check what the verifier does on failure, not just that it looks.
 - Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
 - Provider runtime artifacts are not durable memory or source data: GrepAI config/state/cache/home files belong under `providers/runners/grepai/`, GrepAI per-root `.grepai/` working directories are git-ignored runtime artifacts, CGC runtime files belong under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable provider database data belongs under `providers/data/`, and MCP/provider operator logs belong under `logs/`.
 

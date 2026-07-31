@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -35,6 +35,14 @@ overviews by `sourceRoute`; `classify_external_source` maps a source to its
 mirrored sidecar; `classify_sidecar_onboarding_units` dispatches by `doc_type`
 (overview / entity-catalog / file-level) and storage mode.
 
+Both classifiers reach git twice: `run_git(repo_root, ["cat-file", "-e", f"{last_hash}^{{commit}}"])`
+inside `_early_classification`, and then `run_git(repo_root, ["diff", "--quiet", last_hash, "HEAD",
+"--", source_file])` (`source_route` for overviews), whose return code is the verdict — `0` is up to
+date, `1` is drifted, and anything else is drifted with the git error in the note. Since
+260731-EFA-L3 `run_git` is imported from `agents_remember.kernel.git_command`, not from the sibling
+`git_ops`, which no longer defines it; `local_change_note` and `local_route_change_note` still come
+from `git_ops`.
+
 ### Invariants And Boundaries
 
 - Reports drift only; it must not rewrite onboarding.
@@ -42,16 +50,28 @@ mirrored sidecar; `classify_sidecar_onboarding_units` dispatches by `doc_type`
   explicitly rather than treated as drift; the sidecar test uses the boolean
   `is_sidecar_storage` predicate from `coordination_context_resolver`.
 - Entity-catalog classification is delegated to `entities.classify_entity_catalog`.
+- No local git runner: the commit-existence and source-diff calls are `kernel.git_command.run_git`.
+  Its `env=git_environment()` guard is what keeps these verdicts about the caller's repository — an
+  inherited `GIT_DIR` would resolve `lastVerifiedCommitHash` in a different repository, where
+  `cat-file -e` fails, and every sidecar would be reported "drifted: recorded verification commit is
+  not available in git history".
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | Metadata parsing, path mirroring, and `rel` come from `discovery`. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Source diff and change notes come from `git_ops`; entity catalogs are delegated to `entities`. | [entities.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
+| Entity-catalog sidecars are delegated to `entities`. | [entities.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
+| Local staged/unstaged change notes come from `git_ops`. | [git_ops.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
+| The `cat-file -e` and `diff --quiet` calls run on the single kernel git runner. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Update History
 
+- 2026-07-31T20:57+02:00 — 260731-EFA-L3 curator: `run_git` is now imported from
+  `kernel.git_command` instead of `git_ops`, so the reference row "Source diff and change notes come
+  from `git_ops`" was half false. Split the row, documented the two git calls each classifier makes
+  and the return-code-to-verdict mapping, and added the no-local-runner invariant. Verdicts,
+  ordering and notes are unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911` armed with no
   exemptions): `classify_external_onboarding` was rewritten around a `row(...)` verdict closure
   plus an `_early_classification()` closure, collapsing six hand-repeated `DriftRow(...)`

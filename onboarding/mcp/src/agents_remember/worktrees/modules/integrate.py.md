@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -64,6 +64,17 @@ As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: 
 
 ## Update History
 
+- 2026-07-31T21:00+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
+  `integrate.py` is one import line — `run_git` moved out of the `modules.git` import block to
+  `agents_remember.kernel.git_command` — and this sidecar names no runner, subprocess style or
+  timeout. I specifically re-checked the one claim the shared runner's new 300s bound could have
+  broken, the all-or-nothing merge: `_merge_integrated_commits` still wraps the memory-side
+  `merge --ff-only` and the ledger-mapping check in `except Exception`, and
+  `subprocess.TimeoutExpired` is an `Exception`, so even a merge that outruns the bound still hits
+  `run_git(..., ["reset", "--hard", code_head_before])` and the memory equivalent before re-raising
+  — integration still cannot leave a half-integrated state. `IntegrationSources` (with
+  `replay_required`), `IntegratedCommits`, `_apply_integration` and the `rebase` /
+  `rebase --onto` replay call sites are untouched.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0913` armed with no
   exemptions): added the frozen `IntegrationSources` (with its `replay_required` property) and
   `IntegratedCommits`, re-signed `_integration_replay_requirements` / `_blocked_non_ff_result` /

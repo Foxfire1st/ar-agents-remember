@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-07-31T15:32+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`|
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -198,7 +198,9 @@ repopulation, mode/layout selection, root fallback, and official-over-source cas
 preflight agrees with the typed settings parser rather than creating a second settings language.
 `test_worktree_support.py` provisions explicit supported storage authority in initialized-memory
 fixtures, while `conftest.py` imports the production selector inventory so tests cannot drift from
-the Git boundary they exercise.
+the Git boundary they exercise. That import-time strip is fixture safety and stays, but read the
+Single-Runner Git Gate below before trusting it as coverage: it also removes the variables a
+redirection test needs, so any suite that leans on it can only prove the harness stripped them.
 
 ## Dashboard Bundle Placement Gate (260731-EFA-L1)
 
@@ -237,6 +239,157 @@ API route that matched the path but not the method.
 build-dependent assertions were rewritten: `/` is served from a patched stand-in bundle rather than
 the repository's, `dashboardBuild` is asserted present-or-omitted rather than indexed, and
 `StaticTests` skips when this checkout has no build instead of failing.
+
+## Single-Runner Git Gate (260731-EFA-L3)
+
+`test_git_command.py` is the new owner of this package's git boundary, and it is written against a
+**decoy repository**. Every redirection test builds a real `real/` and a real `decoy/`, points all
+eight selectors (`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
+`GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`) at the decoy
+inside a `patch.dict`, and asserts **both** halves — the real branch advanced and the decoy did not
+move. Asserting only the real repository would still pass if the write were duplicated into both.
+
+**Those `patch.dict` blocks deliberately undo `conftest.py`.** The conftest strips the selectors at
+import, which meant no test anywhere could observe a call site that failed to strip them: the
+mitigation for the production hazard was installed in the only place that could have detected it.
+`test_a_commit_lands_in_the_real_repository_not_the_decoy` asserts
+`set(GIT_REPOSITORY_SELECTOR_ENV).issubset(os.environ)` before it acts, so it passes because
+production strips, not because the harness did — delete the conftest lines and it still passes;
+delete `env=` from the runner and it fails.
+
+`SingleRunnerTests` is the decay guard and it is `test_subprocess_hygiene.py`'s shape: an AST sweep
+over every package module asserting that the only file that spawns git is `kernel/git_command.py`.
+Six near-identical runners is exactly how the defect was born, so the rule is that no module may
+grow a seventh. **Its reach is stated rather than assumed** — it recognises a spawn whose argv is a
+list literal whose head names git, so `benchmarks/runner_modules/commands.py`, which composes its
+argv through `git_command()`, is invisible to it and is asserted directly by
+`BenchmarkRunnerEnvironmentTests` instead. That is not a formality: the benchmark runner holds the
+most destructive argv in the package (`clone`, `checkout --detach`, `reset --hard`, `clean -fdx`).
+
+**`SingleRunnerGuardReachTests` is the guard on the guard, and it exists because of how this sweep
+fails.** `SingleRunnerTests` reports safety as an *empty offender list* — which is also exactly what
+it reports when its sweep cannot see the offender, so a hole in the reach does not look like a
+failure, it looks like a clean tree. Each test there plants a bypass form and fails if the sweep
+stops catching it. Three of those forms were live blind spots the fix workers closed: a spawn
+reached through `from subprocess import run` rather than `subprocess.run`
+(`test_a_spawn_imported_off_subprocess_is_still_a_spawn`, plus
+`test_an_import_alias_is_followed_to_the_name_it_binds`), a path-qualified argv head such as
+`/usr/bin/git` (`test_an_absolute_path_to_git_is_git`), and a `**kwargs` splat previously counted as
+proof that `env=` had been passed, whose contents the syntax tree cannot see
+(`test_a_kwargs_splat_is_not_proof_that_env_was_passed`). It also pins the negatives so the sweep
+cannot be "fixed" into over-reporting — a program that merely *starts with* `git` is not git, a
+local function named `run` is not a subprocess spawn — and pins the one remaining hole as
+deliberate: `test_a_computed_argv_remains_the_documented_blind_spot`, which is the debt
+`BenchmarkRunnerEnvironmentTests` pays.
+
+`TimeoutClassTests` pins the *other* half of the consolidation, and it is the half that could have
+shipped a regression invisibly. Before the leaf the kernel's runner hard-coded `timeout=5`, so
+moving these reads onto a runner whose default is the local bound would have loosened them 60x —
+on commands that sit under `resolve_context`, which runs on essentially every tool call. Its
+`_recorder` stand-in takes `timeout` as a **required keyword**, so a call site that leaves the class
+to the default fails the recorder rather than quietly recording the default.
+`test_read_git_facts_bounds_its_three_ref_reads_at_the_metadata_band` and
+`test_branch_freshness_classes_each_of_its_commands_by_what_it_does` assert the exact
+`{command: bound}` map per module — including that `status --porcelain` and
+`rev-list --left-right --count` keep the *local* bound because neither is constant time — and
+`test_one_command_means_one_bound_across_the_kernel` asserts the rule itself: `branch
+--show-current` and `rev-parse HEAD` are called from both `cross_repo.py` and `git_facts.py`, were
+bounded at 30s in one and 300s in the other, and must now agree.
+`test_the_metadata_bound_is_the_shortest_of_the_three` keeps the ordering from being reshuffled.
+
+The rest of the module pins the runner contract the consolidation depended on. Stdin is `DEVNULL`
+unless `input_text` is passed (`git patch-id` in `memory/carryover.py` is the only caller that needs
+it — GitHub #49). A command that deliberately outlives the runner's old hard-coded `timeout=5`
+completes, while a caller-named short timeout still raises `TimeoutExpired`, so raising the default
+did not amount to removing the bound; `GIT_REMOTE_TIMEOUT_SECONDS < GIT_LOCAL_TIMEOUT_SECONDS` is
+asserted rather than assumed. `RemoteBranchStallTests` pins the two remote calls in
+`worktrees/modules/cleanup.py` — which previously ran with no timeout at all — reporting
+`remote-unreachable` on a stall instead of holding an uncancellable MCP tool call open.
+`QualityGateGitTests` covers the gate's own git calls specifically because the gate runs from the
+**pre-push hook, where git itself exports `GIT_DIR`**, and keeps both wrappers converting failure
+into their typed `DiffScopeError` / `ScopeError` rather than an empty scope that would certify
+nothing.
+
+**One consequence when editing an existing suite:** a module that used to spawn git now calls
+`run_git`, so a test that patches `subprocess.run` in it patches nothing. `test_serving.py`'s
+`BuildInfoTests` was moved onto `agents_remember.serving.build_info.run_git` for exactly that
+reason, and its fake now takes `(repo, arguments)` instead of a full argv.
+
+## Cold-Start Gate (260731-EFA-L3)
+
+`test_cold_start.py` proves the server imports and starts with **no network egress**. It is a
+subprocess, and both reasons decide whether it can fail at all. tiktoken memoizes loaded encodings
+in `tiktoken.registry.ENCODINGS`, so in-process the load under test would be a dictionary hit left
+warm by an earlier test in the session, and the assertion would pass against a package that ships no
+vocabulary at all. And the caches must be cold: the child gets `TIKTOKEN_CACHE_DIR`,
+`DATA_GYM_CACHE_DIR`, `TMPDIR` and `HOME` pointed at one empty directory — pointing the operator
+variable at a *cold* directory is deliberate, because it also proves the package's own vendored copy
+wins over an exported cache that would send the load back to the network.
+
+The child blocks `socket.connect`, `connect_ex`, `create_connection`, `getaddrinfo` and
+`gethostbyname`, then **proves the block took** by attempting one connection before importing
+anything — a block that silently did not take would make every later assertion vacuous. It then
+builds a real server through `create_server(McpRuntimeConfig(...))` and prints what it counted, and
+the parent asserts the child's count equals its own warm counter's count of the same fixed payload:
+same tokenizer name (`tiktoken:o200k_base`), same `exact`, same number. A lazy load behind an
+approximate fallback would pass the start test and fail that one, which is why the vocabulary is
+vendored rather than made optional.
+
+**The module under test is imported through a helper, never at module scope.** `tokens_module()`
+returns it per call, so no test in this file can be the one that warms
+`tiktoken.registry.ENCODINGS` for the others, and the `mock.patch.object(tokens,
+"VENDORED_VOCABULARY_DIR", ...)` redirections below act on a module the file does not hold a stale
+reference to.
+
+`VendoredVocabularyTests` re-derives both hashes from the installed tiktoken rather than restating
+them — the SHA-1-of-URL filename `read_file_cached` looks up, and the SHA-256 tiktoken asserts on
+load — so a tiktoken upgrade that moves the URL, or a truncated copy, fails here instead of quietly
+sending the next cold machine back to the network. Since the loader now has to check the digest
+*before* tiktoken sees the file, the package holds its own copy of it
+(`tokens.VENDORED_VOCABULARY_SHA256`), and `test_the_shipped_file_is_the_one_tiktoken_asks_for`
+asserts that copy equals the `expected_hash` recorded off `openai_public.o200k_base()` — which is
+what keeps a restated constant from becoming a second source of truth. It also pins that an absent
+vocabulary and any encoding this package does not ship raise `TokenizerVocabularyError` rather than
+falling through to a download, and that the `TIKTOKEN_CACHE_DIR` override never outlives one load
+(the vendored directory sits inside the installed package, which is routinely read-only).
+
+Two further pins in that class earn their place by naming a failure that has no traceback.
+`test_the_gitattributes_entry_names_the_shipped_file` asserts the root `.gitattributes` `-text`
+entry is *exactly* the shipped filename: the entry is a literal path and the path is `sha1(URL)`, so
+a tiktoken release that moves the URL renames the file and leaves the rule protecting nothing —
+silently, and only on `core.autocrlf=true` clones, which are precisely the clones that need it.
+`test_holding_the_context_open_around_a_counter_does_not_deadlock` covers the obvious use of an
+exported context manager, `with vendored_vocabulary_cache(name): TiktokenTokenCounter()`, where the
+counter's own load re-enters the manager on the same thread. On a non-reentrant lock held across the
+`yield` that is a permanent hang — no timeout, no traceback, a gate that never returns — so the test
+runs on a worker with a **bounded join** and asserts the thread finished, in order to *report* a
+regression rather than reproduce the hang inside the suite.
+
+`CorruptVendoredVocabularyTests` is the newer half and the one that states the real threat model:
+present-but-wrong, not absent. tiktoken does verify the SHA-256, but it does not fail closed —
+`read_file_cached` deletes the offending file and downloads a replacement over it, so "tiktoken
+checks it" would have meant a corrupt vendored copy becoming a silent network fetch into the
+installed package on the startup path. The class docstring records that this was *measured*, not
+reasoned: CRLF-mangling the vendored file and truncating it to half its bytes both passed while the
+file was quietly restored underneath.
+
+Its shared `assert_corruption_is_refused` helper builds a **copy** of the shipped file in a
+temporary directory and points `VENDORED_VOCABULARY_DIR` at that, so a test that fails part-way
+cannot leave the checkout damaged and have the suite assert against its own debris. Each case
+asserts four things: the refusal is raised; the message names the file, the expected digest and the
+found digest (an operator's next move is to compare their copy against the one tiktoken asks for,
+and "corrupt" alone does not say against what); and **the copy is still on disk afterwards** —
+tiktoken was never handed the directory, so nothing was deleted and nothing was downloaded over it.
+The corruptions are the ways bytes actually go wrong: CRLF-mangled
+(`test_a_line_ending_mangled_copy_is_refused` — what a `core.autocrlf=true` checkout does, and the
+reason the `.gitattributes` entry exists) and truncated to half
+(`test_a_truncated_copy_is_refused` — a partial write, whose prefix is byte-identical, so anything
+short of hashing the whole file accepts it). `test_a_counter_will_not_build_on_a_corrupt_copy` then
+drives the production entry point — `TiktokenTokenCounter()`, the statement that runs while
+`mcp/tools/base.py` is importing — over a **single flipped byte**, same length and same line
+endings as the original, and patches `tiktoken.load.read_file` with a stub that raises: the refusal
+must land before tiktoken reads anything, which is both the assertion and what stops a regression
+here from actually downloading 3.6 MB over the corrupt copy.
 
 ## Hot Path Summary
 
@@ -562,6 +715,13 @@ where the signature **is** the published MCP input schema — see
   counts and covered-file membership must come from the same frozen Git/path-rule snapshot.
 - Carryover authority refusals assert official HEAD, status, non-Git bytes, source bytes, and
   route-index absence so parser-default authority cannot mutate any official-memory surface.
+- A test that proves git cannot be redirected must re-set the repository selectors inside its own
+  scope. `conftest.py` strips them at import, so a redirection assertion that relies on the ambient
+  environment proves the harness stripped them and nothing about the call site under test.
+- A cold-start assertion must run in a child process with cold caches. In-process, a warm
+  `tiktoken.registry.ENCODINGS` makes the load a dictionary hit, so the assertion passes against a
+  package that ships no vocabulary; and a network block must be proven to have taken effect before
+  anything that depends on it is trusted.
 - Generated dashboard whitespace coverage must exercise Git's real attribute resolution. Only direct
   shipped `assets/*.js` may suppress `blank-at-eol`; authored source and generated near misses remain
   strict, and semantic JavaScript string bytes must remain identical through sync.
@@ -612,7 +772,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | The static surface is pinned in both states without reading the repository's own bundle, including method parity against the real `StaticFiles` mount. | L29-L144 | [test_static.py](agents-remember/mcp/tests/test_static.py) |
 | The placement step under test refuses an absent or non-current `dist` and writes the sidecar only after the tree. | L107-L166 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 | The production build runs Vite and recreates `dashboard/dist`, making Vite the physical-byte owner and the source of the compiled fingerprint. | package L6-L10; config L36-L66 | [dashboard/package.json](agents-remember/dashboard/package.json); [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
-| The root `.gitattributes` `blank-at-eol` exception still names `package_data/dashboard/assets/*.js`, a path that is now git-ignored, so the rule is inert and its regression was removed. | L1-L3 | [.gitattributes](agents-remember/.gitattributes) |
+| The root `.gitattributes` `blank-at-eol` exception still names `package_data/dashboard/assets/*.js`, a path that is now git-ignored, so *that* rule is inert and its regression was removed. The file's second rule is not inert and does have a live regression: the `-text` entry names the shipped vocabulary by its exact `sha1(URL)` filename, and `test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` fails if the two stop matching. | L1-L3; L13 | [.gitattributes](agents-remember/.gitattributes) |
 | Two tests hold the local gates to the wrapper after the hook split: the shared tiered body plus CI carry the command, and each hook is pinned to its tier. | L109-L134 | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
 | Six further classes pin the gate's honesty: exactly two Radon steps are declared reports, every enforcing step can fail with the complexity rules at full strength and the deleted baseline kept deleted, `PLR0913`'s one exemption is held to published MCP tool declarations by an AST walk, CRAP is enforced by threshold alone, scope is derived rather than written down, and the pytest strictness/marker/warning contracts hold. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
 | An independent recomputation asserts the wrapper's real `ruff`/`pyright` argument vectors reach every tracked Python file, and that every tracked `.ts`/`.tsx` is both linted and type-checked. **No allowlists**: a file that cannot be gated is a change to a rail. | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
@@ -621,6 +781,11 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | CRAP consumes branch coverage and refuses a report without branch measurement; a partially taken branch lowers a score a statement reader calls perfect. | [test_crap_calculator.py](agents-remember/mcp/tests/test_crap_calculator.py) |
 | Drift between `scripts/harness/` and the nine generated harness trees fails the suite, covering content and file mode. | L35-L108 | [test_sync_harness.py](agents-remember/mcp/tests/test_sync_harness.py) |
 | The closeout gate suite covers all three statuses and spies on the real argument passed from the unannotated closeout call sites. | L38-L222 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| A decoy repository named by all eight selectors receives none of the real repository's writes or reads (`DecoyRepositoryTests`), an AST sweep asserts `kernel/git_command.py` is the only module that spawns git (`SingleRunnerTests`), and the benchmark runner's composed argv — `reset --hard` included — is asserted directly because the sweep cannot see it (`BenchmarkRunnerEnvironmentTests`). | L151-L207; L389-L459; L656-L693 | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| The sweep's own reach is planted and asserted rather than assumed — `from subprocess import run` aliases, a path-qualified `/usr/bin/git` argv head, and a `**kwargs` splat that is not proof of `env=` (`SingleRunnerGuardReachTests`) — and each git command's timeout band is asserted per command, including that one command means one bound across `cross_repo.py` and `git_facts.py` (`TimeoutClassTests`). | L462-L540; L543-L653 | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| The runner under test scrubs the selectors on every call, takes `input_text` for `git patch-id` and `DEVNULL` otherwise, and carries `GIT_LOCAL_TIMEOUT_SECONDS` / `GIT_REMOTE_TIMEOUT_SECONDS` / `GIT_METADATA_TIMEOUT_SECONDS` in place of the former hard-coded `timeout=5`. | L24-L96 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| A child process with every tiktoken cache cold and every socket call blocked starts the real server and counts exactly what the warm parent counts (`ColdStartTests`), and the shipped vocabulary's URL-SHA-1 name and SHA-256 bytes are re-derived from the installed tiktoken rather than restated — plus the `.gitattributes` filename pin and the re-entrant-load deadlock guard (`VendoredVocabularyTests`). | L199-L218; L221-L331 | [test_cold_start.py](agents-remember/mcp/tests/test_cold_start.py) |
+| A vendored copy that is present but *wrong* is refused and left on disk, never deleted-and-refetched the way tiktoken's own `read_file_cached` would: CRLF-mangled, truncated, and a single flipped byte, each against a temporary copy so the shipped file is never mutated (`CorruptVendoredVocabularyTests`). | L334-L417 | [test_cold_start.py](agents-remember/mcp/tests/test_cold_start.py) |
 
 ### Route Contract Review
 
@@ -673,6 +838,44 @@ repaired and remains a named follow-up.
 The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
 
 ## Update History
+
+- 2026-07-31T22:30+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
+  **Both new suites were restructured, so every citation into them was re-derived from the current
+  files and every one had moved.** `test_git_command.py` (697 lines): `DecoyRepositoryTests`
+  L151-L207 (was L84-L140), `SingleRunnerTests` L389-L459 (was L322-L402),
+  `BenchmarkRunnerEnvironmentTests` L656-L693 (was L405-L442); each range re-read and confirmed to
+  open on the named `class` statement. `test_cold_start.py` (421 lines): `ColdStartTests` L199-L218
+  (was L153-L171), `VendoredVocabularyTests` L221-L331 (was L174-L228). `git_command.py` L24-L96
+  re-checked and still correct (`GIT_REPOSITORY_SELECTOR_ENV` at L24 through the end of `run_git`).
+  Added two evidence rows for the suites that did not exist when the first entry was written:
+  `SingleRunnerGuardReachTests` L462-L540 and `TimeoutClassTests` L543-L653;
+  `CorruptVendoredVocabularyTests` L334-L417. **Corrected the `.gitattributes` row**, which said the
+  file's rule was inert and its regression removed — true of the `blank-at-eol` rule (still L1-L3)
+  but no longer of the file: L13's `-text` entry names the shipped vocabulary by filename and
+  `test_the_gitattributes_entry_names_the_shipped_file` (L246) is its live regression. Wrote up the
+  guard-on-the-guard reasoning (an AST sweep reports a hole and a clean tree identically, so each
+  bypass form is planted: `from subprocess import run`, `/usr/bin/git`, `**kwargs` mistaken for
+  `env=`), the per-command timeout assertions and their required-keyword recorder, the
+  no-module-scope-import discipline via `tokens_module()`, the bounded-join deadlock guard, and
+  `CorruptVendoredVocabularyTests` — including that it works on copies, asserts the corrupt file is
+  *still there* afterwards, and that CRLF-mangling and truncation were measured to pass silently
+  before the digest check moved into `models/tokens.py`. Verification metadata pinned until closeout
+  stamps the code commit.
+
+- 2026-07-31T21:05+02:00 — 260731-EFA-L3 curator: two modules joined this route and both are here
+  because the property they guard cannot be observed the ordinary way. Added the **Single-Runner Git
+  Gate** (`test_git_command.py`: the decoy repository whose `patch.dict` blocks deliberately undo
+  `conftest.py`'s selector strip, the `SingleRunnerTests` AST sweep pinning
+  `kernel/git_command.py` as the only module that spawns git, the stated blind spot covered by
+  `BenchmarkRunnerEnvironmentTests`, the stdin/`input_text` and three-timeout-class contract, the
+  `cleanup.py` remote-stall arms, and the pre-push-hook framing of `QualityGateGitTests`) and the
+  **Cold-Start Gate** (`test_cold_start.py`: the subprocess probe with cold caches and a
+  proven-effective socket block, the warm-versus-cold count equality, and the re-derived vocabulary
+  hashes). Qualified the `conftest.py` selector-inventory sentence, which read as coverage and is
+  only fixture safety. Recorded that `test_serving.py::BuildInfoTests` now patches
+  `serving.build_info.run_git` — patching `subprocess.run` in a consolidated module patches nothing.
+  Added two invariants and three evidence rows. Verification metadata pinned until closeout stamps
+  the code commit.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 8 cross-file line citations, each re-anchored on a read-back boundary. `test_conversation_control_api.py` L1-L379 (382-line file; also dropped the "seventeen routes" phrase — that count is pinned in `test_conversation_foundation.py`, not here); `test_conversation_runtime_composition.py` L113-L252 (was L106-L260 in a 252-line file); `test_harness_submission_authority.py` L1-L675 (was L1-L687 in a 678-line file); `test_harness_control.py` L1-L1958 (was L1-L1180; the file is 1961 lines and the IPC class runs to L1958); `test_serving_harness_control_api.py` L1-L891 (was L1-L700; extended the claim to name `ControlLivenessMemoRetentionTests` at L779); `test_serving.py` L430-L492 (the three `StreamEventsTests` the claim names, was L395-L457); `test_route_index.py` L199-L907 (fixture through the last test, off the `unittest.main()` guard); `test_static.py` L29-L144.
 
