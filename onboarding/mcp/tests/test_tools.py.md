@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-24T14:31Z                      |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -51,9 +51,17 @@ removed); that integrity coverage now lives elsewhere.
 
 Payload tests track the act-by-default `dry_run` contract: the `skills_install`,
 `route_index_refresh`, and `memory_init` payload tests assert apply-by-default
-(`dryRun` is false), while the typed CGC command-construction test passes
-`dry_run=True` per call because the planned provider command is only exposed in
-the preview path.
+(`dryRun` is false), while the typed CGC and GrepAI command-construction tests pass
+`scope=DRY_RUN_SCOPE` per call (the module-level `ProviderQueryScope(dry_run=True)`)
+because the planned provider command is only exposed in the preview path.
+
+Provider and controller payload builders are addressed through parameter objects rather
+than loose keywords: GrepAI search/trace take a `GrepaiSearchQuery` / `GrepaiTraceQuery`
+plus an optional `repos=GrepaiRepoScope(...)` and `scope=ProviderQueryScope(...)`,
+`memory_carryover_plan_payload` takes a `CarryoverSelection`, and
+`codex_benchmark_run_payload` takes a `CodexBenchmarkRun`. The validation cases still
+assert the same messages (`unknown repo_ids`, `repo_ids is required`, `trace_action`,
+`depth`) — only the argument spelling moved.
 
 Newer cases assert that every public tool registers a human-facing description,
 and that `runtime_install_payload` exposes a `no_cache` parameter defaulting to
@@ -86,7 +94,13 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 - Payload tests should protect stable domain payloads and model defaults, not
   command-capture implementation artifacts.
 - Real MCP stdio integration remains gated behind
-  `AGENTS_REMEMBER_REAL_MCP_CONFIG` so normal unit runs stay hermetic.
+  `AGENTS_REMEMBER_REAL_MCP_CONFIG` so normal unit runs stay hermetic; `RealMcpIntegrationTests`
+  also carries `@pytest.mark.agents_remember_real_mcp_config` so the environment-gated class can be
+  selected or deselected by marker under the strict-markers pytest config.
+- The real-MCP GrepAI assertion derives its expected `--workspace` from the same
+  `grepai_workspace(load_config(...))` call the server uses, never a literal workspace name: once
+  provider instances became scoped, `scoped_name` appends the instance id, so a hardcoded name is
+  no longer anyone's workspace and would make the (rarely run) integration check vacuous.
 - Provider lifecycle MCP tests should keep provider operations on typed service
   functions instead of CLI `main(argv)` wrappers.
 
@@ -113,6 +127,19 @@ mandatory CRAP enforcement. Preview must say it runs before the code commit; app
 before any code mutation and that approval precedes apply.
 
 ## Update History
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the provider, memory, and benchmark
+  payload builders moved their loose keywords into parameter objects, so the GrepAI and CGC cases
+  now pass `GrepaiSearchQuery` / `GrepaiTraceQuery` / `GrepaiRepoScope` and a module-level
+  `DRY_RUN_SCOPE = ProviderQueryScope(dry_run=True)` instead of `dry_run=True`, carryover planning
+  passes a `CarryoverSelection`, and the benchmark sandbox case passes a `CodexBenchmarkRun`.
+  Corrected the `dry_run` paragraph, which still claimed the CGC test passes `dry_run=True` per
+  call, and added a paragraph naming the parameter objects. Two further real changes are now
+  recorded in Invariants: `RealMcpIntegrationTests` gained
+  `@pytest.mark.agents_remember_real_mcp_config` on top of its `AGENTS_REMEMBER_REAL_MCP_CONFIG`
+  skip, and its `--workspace` assertion stopped comparing against the stale literal
+  `agents-remember-memory`, deriving the expected value from `grepai_workspace(load_config(...))`
+  instead. No test case was added, removed, or renamed.
+
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: added the public closeout-description
   regression contract for mandatory CRAP, quality-before-mutation, and approval-before-apply;
   verification remains pinned until the code commit.

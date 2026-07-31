@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_projection_domain_invalidation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,13 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 collapsed
+  `ProjectionInputState.read`'s loose arguments into two parameter objects, `ProjectionReaders`
+  (lifecycle, repo_surfaces, landing_state) and `RefreshPass` (now, refresh), so all five
+  `state.read(...)` call sites here were respelled and the explicit `landing_state=None` now comes
+  from the `ProjectionReaders` default. No test was added, removed, or renamed; the instrumented
+  reader counts, the two corpus sizes, and every assertion are unchanged, and this card describes
+  refresh behavior rather than the call signature.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for the
   domain-invalidation and reclamation regressions. Verification metadata remains blank until
   commit.

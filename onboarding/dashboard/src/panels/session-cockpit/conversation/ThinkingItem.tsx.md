@@ -25,11 +25,11 @@ body stays sequentially readable/navigable without one enormous forced-layout DO
 
 ### Logic
 
-- `useHideThinking` (L37) reads the global preference; when hidden the item collapses to a single
+- `useHideThinking` (L36) reads the global preference; when hidden the item collapses to a single
   `thinking hidden` marker (L38-L44) — the content stays in the store, only rendering is suppressed
   (non-destructive).
 - When shown, it renders the marker label plus each block's text through `MarkdownBlock`
-  (`testId="thinking-markdown"`). `thinkingText` (L30) reads `thinking`/`markdown` (`.markdown`) or
+  (`testId="thinking-markdown"`). `thinkingText` (L29-L33) reads `thinking`/`markdown` (`.markdown`) or
   `text` (`.text`) blocks and skips the rest. **FB7.4 (260718-CHATS-L5P):** the label is now Claude
   Code's inline lowercase marker `✻ thinking` at meta size — the uppercase/letterspaced `textTransform`
   was dropped (it was a boxed web-chip idiom the well does not use).
@@ -71,6 +71,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the FB7.4
+  `label` css shrank and shifted the component up a line: the `useHideThinking` call is L36 (L37 is
+  now the `if (hidden)` guard) and `thinkingText` is the whole helper at L29-L33. Behaviour unchanged.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: corrected the label claim — the marker is now the
   lowercase inline `✻ thinking` (FB7.4), no longer uppercase/letterspaced. Never-clamped full-inline

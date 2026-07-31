@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -265,8 +265,33 @@ Gate records now have an explicit reopen transition for an adapter decision that
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
+## 260731-EFA-L2 Record Builder Parameter Objects
+
+Every record builder in this route is now signed on frozen parameter objects rather than long
+keyword lists, and the groupings are the route's own vocabulary:
+
+- gates — `GateAnchor` (what a gate is raised against), `GateRequest` (what the decider is handed),
+  `GateVerdict` (the verb + who + through which channel + in which role). The verdict is one object
+  because the closeout policy never reads its parts apart.
+- inbox — `InboxAddress` / `InboxOwner` / `InboxRouting` (where a row goes and who owns it),
+  `InboxSubject` / `InboxMessage` (what it says and about what), `InboxPoster` (who put it there),
+  plus `DeliveryAttempt` / `AdapterReceipt` / `InboxRenewal` on the store. Passing
+  `InboxRenewal.readdress_to` *is* the readdress — the old `readdress: bool` beside loose `owner_*`
+  values is gone.
+- expectations — `ExpectationSubject` / `Expectation`.
+- supervisor signals — `SupervisorSignalTarget` / `SupervisorSignalKey`; the cooldown key is
+  compared whole, so `last_sent` and `in_cooldown` cannot diverge on which fields identify a signal.
+
+No record schema, wire field or refusal changed.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `create_gate`, `decide_gate`,
+  `create_operator_inbox_entry`, `OperatorInboxStore.record_delivery`/`advance_rung`/`renew`,
+  `create_expectation_row`, `write_expectation_row`, `SupervisorSignalCooldownStore.last_sent` and
+  `in_cooldown` were all re-signed onto frozen parameter objects, and `gate_policy` gained the
+  extracted `_decision_attribution_failure_reason`. Record schemas and refusals are unchanged.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: recorded the exact two-field additive inbox-reader seam for
   rolling serving compatibility; unrelated extensions remain rejected.

@@ -49,7 +49,7 @@ pass through the removed direct `response.json()` implementation.
   `open-refused` with verbatim status+detail; 409 leaf-taken → owning session named; 409
   launch-selection-conflict → the LIVE retained pair, provenance untouched; transport-null / 500
   / 502 / garbage-200 / unrecognized-409 all → `outcome-unknown` (F9).
-- **`openHostedSession`** (L199-L247) — asserts the exact POST URL (`/api/terminal/launch-1`)
+- **`openHostedSession`** (L199-L245) — asserts the exact POST URL (`/api/terminal/launch-1`)
   and body `{kind, harness, model, effort, label}` for a complete pair; a vendor-defaults launch
   sends NEITHER knob (`"model" in body === false`); a thrown fetch becomes `outcome-unknown`
   (the caller keeps the id and reconciles).
@@ -97,6 +97,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The
+  `openHostedSession` describe block ends at the last line of the file, so its range was corrected
+  from the out-of-bounds L199-L247 to L199-L245 (the file is 245 lines); the three cases inside
+  (complete-pair POST body, vendor-defaults knob absence, thrown-fetch `outcome-unknown`) are
+  unchanged and were read back.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: moved complete-pair, vendor-defaults, and thrown-fetch
   client cases onto the shared authoritative opener response path without changing launch-selection

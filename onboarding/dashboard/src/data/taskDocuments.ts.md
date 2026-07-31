@@ -71,7 +71,7 @@ link state is recorded rather than silently treated as already landed.
 | The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node. | L1-L9 | [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts) |
 | `useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision. | L1-L72 | [useTaskDocumentBody.ts](agents-remember/dashboard/src/data/useTaskDocumentBody.ts) |
 | The serving route maps projection readiness and the confined snapshot read to HTTP responses. | L655-L670 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | L1091-L1130 | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | L1089-L1128 | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
 ## Cross-Repo References
 

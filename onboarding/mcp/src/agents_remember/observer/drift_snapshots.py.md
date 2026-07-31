@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/drift_snapshots.py`  |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-12T20:02+02:00                                 |
-| lastVerifiedCommitHash |                                                        `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`|
-| lastVerifiedCommitDate |                                                        2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                                 |
+| lastVerifiedCommitHash |                                                        `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                                        2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -90,13 +90,13 @@ drift producer, the observer projection tick, and worktree cleanup.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload. | L19-L33 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots. | L36-L71 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses. | L36-L44; L74-L82 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
+| Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots. | L36-L69 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
+| `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses. | L36-L44; L72-L80 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
 | The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes. | L1-L112 | [contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
-| `project_and_write` builds the snapshot once per tick and passes it to the pruner (after enclosure discovery, before `read_drift_snapshots`), so the reducer sees the pruned snapshot set. | L211-L230 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| PTS-L2 tests pin prune-key parity with and without the shared snapshot. | L632-L663 | [test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
+| `project_and_write` drives one `ProjectionInputState` per tick; that state builds the contract snapshot once during task refresh (with enclosure discovery) and passes it to the pruner before `read_drift_snapshots`, so the reducer sees the pruned snapshot set. | L214-L237 · L225-L238, L266-L270, L345-L350 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) · [projection_inputs.py](agents-remember/mcp/src/agents_remember/observer/projection_inputs.py) |
+| PTS-L2 tests pin prune-key parity with and without the shared snapshot. | L669-L700 | [test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
 | Cleanup removes the contract's exact code-worktree snapshot and returns that result under `drift_snapshots`. | L325-L364 | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| Tests cover shared drift-snapshot path usage by reader/producer suites and projection-time pruning of orphaned worktree snapshots (line ranges repaired 2026-07-12; the dry-run/exact cleanup-removal coverage now lives with the worktree cleanup tests). | L2027-L2060; L2616-L2671 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| Tests cover shared drift-snapshot path usage by reader/producer suites and projection-time pruning of orphaned worktree snapshots (line ranges repaired 2026-07-31; the dry-run/exact cleanup-removal coverage now lives with the worktree cleanup tests). | L2104-L2150; L2484-L2558; L2693-L2750 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
 ## Cross-Repo References
 
@@ -104,6 +104,27 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations and reworded one
+  claim. The tick-time pruner call is no longer in `projection_store.py`: `project_and_write` (L214-L237)
+  now delegates to `ProjectionInputState`, whose `read` orders the refreshes (L225-L238), whose
+  `_refresh_tasks` builds the contract snapshot once and does enclosure discovery (L266-L270), and whose
+  `_refresh_drift` passes `contracts=` to `prune_orphaned_drift_snapshots` immediately before
+  `read_drift_snapshots` (L345-L350) — so the row now cites both files and names the state object. The
+  `test_observer_projection.py` row now cites `DriftSnapshotReaderTests` L2104-L2150,
+  `DriftSnapshotProducerTests` L2484-L2558, and the prune test plus its `_write_snapshot` helper
+  L2693-L2750 (was L2027-L2060; L2616-L2671, which had drifted onto unrelated reader suites).
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/src/agents_remember/observer/drift_snapshots.py` and moved the lines this card cites, so
+  the Citations column no longer pointed at the code its rows name. Corrected the ranges (L36-L71
+  → L36-L69; L74-L82 → L72-L80). The behaviour described is unchanged — the file's AST is
+  identical to the base revision — this is a citation repair only. Verification metadata pinned
+  until closeout stamps the L2 commit.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2: `prune_orphaned_drift_snapshots` and
   `_active_worktree_snapshot_keys` gained keyword-only `contracts: ContractSnapshot | None = None`;
   the projection tick injects the shared per-tick snapshot so pruning parses no contracts (the third

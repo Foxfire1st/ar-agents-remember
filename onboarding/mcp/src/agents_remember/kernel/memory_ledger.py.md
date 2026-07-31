@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -72,10 +72,33 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill imports ledger helpers for closeout, integration, and direct closeout mapping updates. | L18-L24; L923-L929; L1071-L1078 | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
+| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing `memory.md`. | L9-L14; L523-L534 | [modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | L10-L15; L251-L257 | [modules/integrate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/integrate.py) |
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-repo citation that broke when
+  the worktree manager was split into `worktrees/modules/`. `git_worktree_manager.py` is now a
+  195-line pure re-export facade with no ledger call in it at all, so the old `L18-L24; L923-L929;
+  L1071-L1078` pointed past the end of the file. Split the row in two and repointed to the real
+  call sites, both read back: `modules/closeout.py` L9-L14 (import) + L523-L534 (direct-closeout
+  mapping update, which now skips the rewrite when `find_mapping` already matches) and
+  `modules/integrate.py` L10-L15 (import) + L251-L257 (integration mapping prepend). Claim text
+  rewritten to name the two modules and the conditional-vs-unconditional difference.
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/kernel/memory_ledger.py` since the L2 base commit is the whole-tree
+  `ruff format` pass in `00e8379`, which re-wrapped 1 line(s) with no token change whatsoever.
+  Checked by parsing both revisions and comparing the abstract syntax trees (identical) and the
+  comment tokens (identical), so no symbol, signature, default, decorator, control-flow branch,
+  docstring, or assertion this card describes has moved, and every claim this card makes about its
+  own source still holds.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-05-31T12:30+02:00 — Removed `find_ledger_anchor_commit()` (and its `subprocess` use) from Logic and references; `LedgerError` now subclasses `AgentsRememberError` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Extracted `_ledger_rows_from` (inner row loop) from `parse_ledger_rows` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

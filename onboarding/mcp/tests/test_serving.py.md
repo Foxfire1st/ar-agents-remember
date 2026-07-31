@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`       |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -89,11 +89,15 @@ that a 28 MB generated tree lives in git. The deterministic `None` half lives in
 
 **`StateEtagTests` (260703-L15 S1)** drive the `/api/state` change gate end-to-end via
 `TestClient` over a mocked `project_and_write` returning a held projection (a `held[0]` closure the
-test swaps mid-run, `interval=0.02` so the real tick loop publishes; since 260712-PTS-L3 the app is
-built with `watch_changes=False` because this world changes only through the mocked
+test swaps mid-run, `interval=0.02` so the real tick loop publishes; since 260712-PTS-L3 the app
+disables the change-driven watcher because this world changes only through the mocked
 `project_and_write`, which no filesystem watcher can observe — the tick loop must stay
 interval-paced, exactly the live contract for watcher-invisible changes whose bound is the
-heartbeat instead): 200 carries a weak
+heartbeat instead. **Since 260731-EFA-L2 that is expressed through parameter objects, not
+keywords:** the cadence travels as `ProjectionCadence(interval=…)`, the watcher/landing switches as
+`LiveProjectionInputs`, the projector's refreshers as `ProjectionRefreshers(...)`, and the four
+substituted long-lived objects as one `ServingCollaborators` — the bare `watch_changes=False`
+keyword no longer exists): 200 carries a weak
 `ETag: W/"…"` + `Cache-Control: no-cache`; `If-None-Match` with that tag → 304 with the SAME tag
 and an EMPTY body; swapping in a volatile-only change (staleSeconds) keeps returning 304 with the
 same tag after several ticks; swapping in a real change (tokens) makes a deadline-polled
@@ -221,20 +225,20 @@ are proven by repository source and the test suite itself.
 | The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 | The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | L135-L178; L207-L269 | [serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
 | The app consumes one projector iterator, decorates every snapshot, preserves SSE framing, and explicitly closes the subscription. | L181-L203; L702-L707 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L430-L492 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The raw event tail under test. | L125-L277 | [serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | The inactivity-based raw event retention helper under test. | — | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
 | The raw retention regressions: dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | — | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | L994-L1074 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | L1913-L1981; L2008-L2038 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | L5 retention exemption: a protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The `protected_lifecycle_ids` parameter under test, and the series-retention set it carries. | `prune_expired_lifecycle_event_logs`, `series_retained_lifecycle_ids` | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | L1085-L1124 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | L2049-L2062; L2099-L2128 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The sim load/replay under test. | — | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
 | The action evaluation under test. | — | [serving/actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
 | The gate write-path the `/api/actions` gate verbs drive (slice 6b). | — | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | — | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The compact attention acknowledgement store asserted by `ActionDismissTests`. | — | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
-| Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | L558-L616; L662-L674 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | L1373-L1396; L1423-L1433; L1479-L1491 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The CLI dispatcher + dashboard adapter under test. | — | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
 | The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | — | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 
@@ -254,11 +258,36 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## 260727-CHATS-IM-L2 Current Delta
 
-Four deliberate `project_and_write` doubles accept the new optional `input_state` and `refresh`
-keywords. They continue returning the held projection, so ETag, body-cache, gzip, and SSE tests
-exercise their original behavior rather than projection internals.
+Four deliberate `project_and_write` doubles accept the additional optional projection inputs. They
+continue returning the held projection, so ETag, body-cache, gzip, and SSE tests exercise their
+original behavior rather than projection internals. Since 260731-EFA-L2 those inputs arrive as
+parameter objects rather than as separate keywords; the doubles' behaviour is unchanged.
+
+## 260731-EFA-L2 Delta — action-gate target resolution
+
+Two arms of `evaluate_action`: an action naming **neither a lifecycle nor a gate** is
+`missing-target`, and a dismiss scoped to nothing is `missing-lifecycle`. The distinction is the
+point — both are 400s, and the code tells the caller which half of the address is absent. (The
+recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisionHelperTests`.)
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 4 self-referencing line citations against the
+  now-2404-line `test_serving.py`. MX-FIX-1 regressions → L430-L492 (`StreamEventsTests`: handoff
+  mutation, failed-prime recovery whose duplicate `_publish_projection(recovered)` proves
+  identical-state silence before the later delta, cancellation cleanup), was L395-L457. Task 34
+  retention/heartbeat/limit → L1913-L1981; L2008-L2038 in `RawEventTests` (the split skips the
+  separately cited protected-log test at L1983-L2006), was L994-L1074. Raw stream ready/heartbeat →
+  L2049-L2062; L2099-L2128 in `StreamRawEventsTests`, was L1085-L1124. Actionable-drift dismiss →
+  L1373-L1396; L1423-L1433; L1479-L1491 in `ActionDismissTests`, was L558-L616; L662-L674.
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: corrected the `watch_changes=False` claim. That
+  keyword no longer exists — `create_app` now takes `cadence: ProjectionCadence`,
+  `live_inputs: LiveProjectionInputs` and `collaborators: ServingCollaborators`, and `Projector`
+  takes `cadence` plus `refreshers: ProjectionRefreshers`. What the ETag suite proves is unchanged;
+  only how it configures the app is. Verification metadata pinned until closeout stamps the code
+  commit.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1: the cockpit bundle left version control, so three
   assertions that silently depended on a committed build were rewritten — `/` is served from a

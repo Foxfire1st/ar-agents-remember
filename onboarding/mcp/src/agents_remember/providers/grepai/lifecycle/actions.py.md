@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/actions.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -20,6 +20,21 @@
 Docker-only install/run/status composition.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Call Sites For The New Bundles
+
+The action wrappers construct the parameter objects their callees now take (all defined in
+`grepai/lifecycle/core.py` and `runner.py`):
+
+- `prepare_grepai_workspace(layout, provider_settings, GrepaiWorkspaceConfig(dsn=…,
+  project_paths=…, embedder_settings=…))` — in both `grepai_docker_workspace_state` and
+  `grepai_install_workspace`.
+- `grepai_watcher_container_start(..., ports=GrepaiServicePorts(postgres=…, ollama=…))` — the two
+  published host ports read out of the backend and embedder results.
+- `grepai_docker_state(layout, GrepaiStackResults(backend=…, embedder=…, watcher=…), action=…,
+  runner=…)` — the per-container lifecycle results.
+
+The written state file and every returned payload are unchanged.
 
 ### Logic
 
@@ -55,6 +70,9 @@ watcher startup so later Compose calls use the same dependency port mappings.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site updates for the new
+  `GrepaiWorkspaceConfig` / `GrepaiServicePorts` / `GrepaiStackResults` signatures. Same payloads
+  and state file. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-10T05:30+02:00 — Leaf imports replace the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).
 - 2026-06-02T01:15+02:00 — Removed `grepai_root_artifacts` and dropped the `rootArtifacts` term from the status ok-gate (roots are watched live; `.grepai/` is expected); `grepai_roots_payload` no longer emits `sourcePath` (watch-live).

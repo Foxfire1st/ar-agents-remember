@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_active_projector_singleflight.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,5 +56,12 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 widened the in-test `_Projected`
+  double's constructor from `(**_kwargs)` to `(*_args, **_kwargs)` so it still absorbs the
+  now-positional parameter object `ActiveSessionProjector` is constructed with, and reflowed the
+  three gathered `_projector_for` calls onto single lines. The arguments passed to
+  `_projector_for` are unchanged and this card names neither the projector constructor nor the
+  call shape, so the retired-projector, singleflight-at-the-service-boundary, and
+  one-shared-live-projector claims all still hold.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for the
   concurrent projector-replacement regression. Verification metadata remains blank until commit.

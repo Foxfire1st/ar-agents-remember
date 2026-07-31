@@ -89,7 +89,7 @@ and anti-patterns — written language-general for teams to adapt.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The full guidelines body (design philosophy, budget tables, split triggers, responsibility rules, anti-patterns, naming, boolean-flag rule) lives in the source example. | L1-L255 | [coding-guidelines.example.md](agents-remember/examples/mcp/coding-guidelines.example.md) |
+| The full guidelines body (design philosophy, budget tables, split triggers, responsibility rules, anti-patterns, naming, boolean-flag rule) lives in the source example. | L1-L254 | [coding-guidelines.example.md](agents-remember/examples/mcp/coding-guidelines.example.md) |
 | The example sits in the `examples/mcp` route governed by the route overview, alongside `settings.example.json`. | n/a | [overview.md](overview.md) |
 
 ## Cross-Repo References
@@ -102,4 +102,5 @@ No meaningful cross-repo references: this is standalone example content.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past the end of the target. `examples/mcp/coding-guidelines.example.md` is 254 lines (ends mid-fence at the Boolean Flag Rule example), so the whole-body citation is now L1-L254 instead of L1-L255.
 - 2026-05-30T21:30+02:00: Created the file-level onboarding sidecar for the previously-undocumented `examples/mcp/coding-guidelines.example.md`, closing the route's coverage gap surfaced during the S1 onboarding-drift refresh. Verified against `3f006e9`.

@@ -79,10 +79,10 @@ Same-repository source and tests define the supported task-folder and series-con
 | Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names. | L71-L114 | [task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
 | Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist; completed root tasks archive under `0_archive` with dry-run support and safety blockers. | L117-L184 | [task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
 | `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. | n/a | [leaf_refs.py](agents-remember/mcp/src/agents_remember/worktrees/leaf_refs.py) |
-| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | L38-L43; L66-L81 | [modules/start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
+| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | L38-L43; L71-L86 | [modules/start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
 | `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. | L14-L15; L60-L74 | [modules/finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
-| Resolver parity tests pin parent-task disambiguation and archive exclusion from active task discovery. | L146-L234 | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py) |
-| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | L53-L57; L465-L500 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Resolver parity tests pin parent-task disambiguation and archive exclusion from active task discovery. | L155-L251 | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py) |
+| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | L60-L64; L493-L528 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 
@@ -94,6 +94,12 @@ No cross-repo boundary is required to explain this local resolver.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The two parity
+  tests the row names now read at `test_resolver_parity.py` L155-L251 —
+  `test_parent_task_disambiguates_nested_task_roots` (L155-L210) and
+  `test_active_series_discovery_excludes_archive` (L212-L251, which asserts
+  `iter_active_series_contracts` skips the archived folder and that `resolve_active_task_root` raises
+  `TaskResolutionError`). Was L146-L234.
 - 2026-07-07T20:50+02:00 — 260707-HFX-L4: kept this module focused on active task root, raw leaf
   enclosure path, and root-task archive resolution after the qualified leaf-ref resolver moved to
   `worktrees/leaf_refs.py`. Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.

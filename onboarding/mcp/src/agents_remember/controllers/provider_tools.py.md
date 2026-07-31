@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,6 +17,21 @@ diagnostics, watcher lifecycle, GrepAI search/trace, and CodeGraphContext MCP
 tools.
 
 ## Code Commentary
+
+### Query Parameter Objects (260731-EFA-L2)
+
+The query tools' shared execution knobs are one frozen `ProviderQueryScope(worktree, dry_run,
+timeout)` — `WORKSPACE_QUERY_SCOPE` is the shared default (workspace stack, real run, provider
+default timeout). GrepAI additionally splits its inputs into the query itself
+(`GrepaiSearchQuery(query, limit, output_format)` / `GrepaiTraceQuery(trace_action, symbol, depth,
+output_format)`) and the repo scope (`GrepaiRepoScope(repo_ids, all_repos)`, default
+`ALL_INDEXED_REPOS`). The CGC tools keep `repo_id` plus their one domain argument positional and
+take `scope=` for the rest.
+
+Two internal seams were named at the same time: `ProviderOperation` (the operation name plus its
+native argument vector, built by `_grepai_operation`) and `_grepai_target` / `_canonical_repo_ids`,
+which carry the worktree-target and repo-id normalization that used to be inline. `GrepaiProjectSelection`
+and `WorktreeProviderTarget` are unchanged.
 
 Status and diagnostics delegate to `providers.status`. Watcher actions route
 through provider lifecycle services and write current provider state when a
@@ -55,7 +70,8 @@ launch-capable operations; when a worktree `settings_path_override` resolved,
 the worktree's own stack settings still drive the run (the live map replaces
 the config only on the temp-settings path), but only under an armed authority.
 
-All CGC and GrepAI query tools accept an optional `worktree` parameter. When a
+All CGC and GrepAI query tools accept an optional `worktree` inside their
+`ProviderQueryScope`. When a
 `worktree` name is given (or a single stack is discoverable for the repo),
 `_resolve_worktree_target` locates the worktree's persisted lifecycle-settings
 file and `_provider_operation_result` uses it directly without writing or
@@ -121,6 +137,12 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: introduced `ProviderQueryScope` (+ `WORKSPACE_QUERY_SCOPE`),
+  `GrepaiRepoScope` (+ `ALL_INDEXED_REPOS`), `GrepaiSearchQuery`, `GrepaiTraceQuery` and the internal
+  `ProviderOperation` / `_grepai_target` / `_grepai_operation` / `_canonical_repo_ids` seams; every
+  query tool's keyword list moved onto them. The launch-authority gate, worktree scoping, refusal
+  behaviour and native argument vectors are unchanged. Verification metadata pinned until closeout
+  stamps the L2 code commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix: `_provider_operation_result` gained
   `launch_capable_provider` — the SPECIFIC provider must be armed in the live map (GrepAI
   funnels pass `grepai-memory`, CGC funnels pass `codegraphcontext-code`; missing ⇒

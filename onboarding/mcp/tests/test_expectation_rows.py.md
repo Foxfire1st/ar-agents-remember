@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_expectation_rows.py`                |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-07-08T16:15+02:00                              |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -24,6 +24,14 @@ append/fold/query surface, and the `orchestration.expectations` SLA-settings par
 ## Code Commentary
 
 ### Logic
+
+Since 260731-EFA-L2 both builders take a frozen `Expectation(kind, source_id, subject, note)` as
+their first positional argument — `create_expectation_row(expectation, *, row_id, now, due_at)` and
+`write_expectation_row(store, expectation, *, row_id, now, sla_seconds)` — with the addressee
+nested one level deeper as `ExpectationSubject(agent_id, lifecycle_id, leaf_key, seat_role)`. The
+former loose `kind=`, `source_id=` and `subject_agent_id=` keywords are gone; `row_id`, `now`,
+`due_at` and `sla_seconds` stay keyword-only, because the clock and the row identity are minted by
+the caller while everything else about an expectation travels together.
 
 `ExpectationRowRecordTests` covers the pure builders: `create_expectation_row` stamps `dueAt` from
 `due_at_from_sla`, `mark_met` is idempotent (a second `mark_met` call does not move `metAt`), and
@@ -70,9 +78,10 @@ No meaningful external design-doc references found yet (created this leaf).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Row creation/transition idempotency: `mark_met`/`mark_missed` never overwrite an existing terminal state. | L32-L62 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
-| Store query surface: `pending`, `overdue`, `find_by_source`, `mark_met`/`mark_missed` via the store. | L71-L148 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
-| `orchestration.expectations` SLA-settings parser: defaults, per-kind override, fail-loud validation. | L152-L174 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
+| Row creation/transition idempotency: `mark_met`/`mark_missed` never overwrite an existing terminal state. | L34-L66 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
+| Store query surface: `pending`, `overdue`, `find_by_source`, `mark_met`/`mark_missed` via the store. | L75-L149 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
+| `orchestration.expectations` SLA-settings parser: defaults, per-kind override, fail-loud validation. | L153-L175 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
+| The `Expectation` / `ExpectationSubject` parameter objects and the two builders under test. | L60-L90; L293-L300 | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
 
 ## Cross-Repo References
 
@@ -83,6 +92,21 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass changed both builders this
+  suite exercises, so the card now states the current call shape and its own-source citations were
+  re-derived. `create_expectation_row` and `write_expectation_row` take a frozen `Expectation` as
+  their first positional argument, carrying the kind, the source id, the nested
+  `ExpectationSubject` address and an optional note; the loose `kind=`, `source_id=` and
+  `subject_agent_id=` keywords no longer exist, while `row_id`, `now`, `due_at` and `sla_seconds`
+  remain keyword-only. Nine call sites were rewritten and the import block grew by two names, which
+  moved all three own-file ranges in the references table: the record tests from L32-L62 to L34-L66,
+  the store tests from L71-L148 to L75-L149, and the settings-parser tests from L152-L174 to
+  L153-L175. Each corrected range was re-read at its new position, and a row was added pointing at
+  the parameter objects themselves. No behavioural claim moved: the seeded kinds, source ids, SLA
+  seconds and subject agent are the same values as before, the idempotency and fail-loud invariants
+  are untouched, and `find_by_source("entry-1", kind="ack-by")` still reads exactly as documented.
+  Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-07-08T16:15+02:00 — Created for 260707-HFX2-L1 (curator delta round 2, closeout-preview
   gap): store/settings unit coverage for the R2 durable expectation-row primitive. Verification

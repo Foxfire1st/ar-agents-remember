@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-27T22:00+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -74,7 +74,8 @@ guidance=…)` directly:
   `nextTool`/`nextArgs` onto the `NextStep` shape.
 
 `EdgeAndChokePointTests` installs a real `AmbientLifecycle` (over a tmp
-`EventStore`, `heartbeat_seconds=3600`) via `install_ambient`, with cleanups for
+`EventStore`, with `timing=AmbientTiming(heartbeat_seconds=3600)`) via
+`install_ambient`, with cleanups for
 `reset_ambient` + `amb.shutdown` + tmpdir. It drives `next_step_for(amb,
 tool_name)` (returns the JSON-dumped dict, not a `NextStep`):
 
@@ -99,7 +100,9 @@ tool_name)` (returns the JSON-dumped dict, not a `NextStep`):
   `lifecycle_turn_end_notification_payload(...)` parks the lifecycle in
   `awaiting-developer` and its OWN response keeps `nextTool` absent + "resumes
   automatically" (the choke-point name-guard prevents self-dismiss) while the
-  projected `build_attention_queue` holds exactly one `awaiting-developer` item;
+  projected `build_attention_queue(lifecycles, [],
+  AnalyticalInputs(drift_snapshots=[], setup_progress=[]))` holds exactly one
+  `awaiting-developer` item;
   then an arbitrary next call (`ping_payload()`) auto-resumes the lifecycle to
   `running` and that attention item disappears.
 
@@ -158,6 +161,13 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2: both construction shapes this card spelled out for
+  `EdgeAndChokePointTests` moved behind parameter objects, so the body was corrected.
+  `AmbientLifecycle` no longer takes `heartbeat_seconds=3600` directly — it is now
+  `timing=AmbientTiming(heartbeat_seconds=3600)` — and `build_attention_queue`'s two trailing list
+  arguments collapsed into one `AnalyticalInputs(drift_snapshots=…, setup_progress=…)`, which the
+  auto-dismiss bullet now names. Every test name, hint assertion, gate-await path and the
+  NOTIFY-AND-CONTINUE contract itself are unchanged.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): the ACTIVE-hint assertions were repointed off `lifecycle_gate` onto `lifecycle_turn_end_notification` — `test_front_half_generic_points_back_to_the_rundown`, the renamed `test_decide_points_to_the_turn_end_notification`, the renamed `_gate_after` overlays (`test_closeout_preview_hints_the_turn_end_until_approved`/`test_integrate_dry_run_hints_the_turn_end`/`test_finalize_dry_run_hints_the_turn_end`), the edge dry-run/torn-contract cases, and the `lifecycle_start` choke-point rundown assertion. Added `test_awaiting_developer_hints_the_stop` (`nextTool=None`, "resumes automatically") and the end-to-end `test_turn_end_notification_does_not_self_dismiss_then_next_call_resumes` (the notification keeps its own response on `awaiting-developer`; the next call auto-resumes). The parked `blocked`-gate await/resume tests are unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T20:16+02:00 — Added two gate-await tests: `test_blocked_at_a_gate_awaits_the_decision` (pure — a `blocked` state in both `close` and `build` phases yields `_AWAIT_GATE`/`lifecycle_resume`) and `test_next_step_for_blocked_gate_awaits_resume` (edge — the live `amb.start()` + `amb.block(...)` seam returns the resume hint on the `lifecycle_gate` response). Both pin the blocked-state branch added to `compute_next_step`.
 - 2026-06-27T18:43+02:00 — Added file-level onboarding for the new task-27 test suite covering the `compute_next_step` state machine (front-half/decide pointers, linear guidance delegation, the closeout/integrate/finalize gate overlays, `_from_guidance`, and `lifecycle_end` loop-back), the exception-contained `next_step_for` edge (missing/torn-contract degradation, dry-run windows), and the `_tool_payload`/`lifecycle_start` rundown choke point. Verification metadata pinned until closeout stamps the task-27 code commit.

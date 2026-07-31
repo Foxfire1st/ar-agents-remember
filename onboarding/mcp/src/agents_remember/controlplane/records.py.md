@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`         |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -37,11 +37,30 @@ fields (mirroring the observer event envelope); `schema_version` carries
 `alias="schema"`, so records dump with `model_dump_json(by_alias=True,
 exclude_none=True)`. L4 adds `GateEvidenceRef` (`kind="reviewer-verdict"`,
 `ref`, optional `verdict`) plus `GateRecord.decidingRole` and
-`GateRecord.evidenceRefs`. `create_gate(...)` returns a fresh `open` gate (the
-caller mints the ULID `id` and `now`) and may attach initial evidence refs;
-`decide_gate(gate, ...)` returns a NEW snapshot (same `id`, new `ts`) carrying
-the decision, the optional deciding role, and append-only evidence refs from the
-previous snapshot plus the decision call. `DecidedVia` now includes
+`GateRecord.evidenceRefs`.
+
+**Three frozen parameter objects (260731-EFA-L2)** carry what a gate is raised against, what the
+decider is handed, and what they answered:
+
+- **`GateAnchor(lifecycle_id=None, enclosure=None, repo_id=None)`** — what the gate is raised
+  against: the lifecycle that opened it, the enclosure it guards, the repository that enclosure
+  changes. Every reader that matches a gate to work in flight matches on this triple.
+- **`GateRequest(packet=None, required_decision=None, evidence_refs=None)`** — what the decider is
+  handed: the packet to read, the decisions the gate will accept, and the evidence attached at
+  open time.
+- **`GateVerdict(decision, via, by=None, note=None, deciding_role=None)`** — one decider's verdict.
+  These are load-bearing together: the closeout policy never reads them apart — a delegated
+  approval is the `orchestration` channel AND a `manager` role AND an actor that is not the owning
+  lifecycle — so a verdict assembled field by field is a verdict that can be assembled wrongly.
+
+`create_gate(kind, *, gate_id, now, anchor=None, request=None)` returns a fresh `open` gate (the
+caller mints the ULID `id` and `now`) and may attach initial evidence refs via the request;
+`decide_gate(gate, verdict, *, now, evidence_refs=None)` returns a NEW snapshot (same `id`, new
+`ts`) carrying the decision, the optional deciding role, and append-only evidence refs from the
+previous snapshot plus the decision call. `verdict.decision` is one of `DECISION_STATES`; an
+unknown verb raises `KeyError` here, because the tool boundary validates first for a clean message.
+Note `decide_gate`'s `evidence_refs` stays a separate keyword — it is evidence attached *at
+decision time*, distinct from `GateRequest.evidence_refs` attached at open time. `DecidedVia` now includes
 `orchestration`, so delegated approvals can be attributed separately from
 chat/dashboard/cli. `expire_gate(gate, now=...)` returns a NEW `expired`
 snapshot for an open gate replaced by a newer lifecycle gate. `apply_gate(gate, ...)` (slice 6b)
@@ -81,6 +100,15 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `GateAnchor`, `GateRequest` and `GateVerdict` parameter objects and re-signed
+  the two builders — `create_gate(kind, *, gate_id, now, anchor=None, request=None)` (the former
+  `lifecycle_id` / `enclosure` / `repo_id` / `packet` / `required_decision` / `evidence_refs`
+  keywords) and `decide_gate(gate, verdict, *, now, evidence_refs=None)` (the former `decision` /
+  `by` / `via` / `note` / `deciding_role` keywords). `kind` became positional on `create_gate`.
+  `decide_gate`'s decision-time `evidence_refs` stayed a separate keyword on purpose. All helpers
+  remain pure and no `GateRecord` field changed. Verification metadata pinned until closeout
+  stamps the L2 commit.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): GateKind gains master-handover-approval (the ruled master-exit seam gate). Verification metadata pinned until closeout stamps the L8 commit.

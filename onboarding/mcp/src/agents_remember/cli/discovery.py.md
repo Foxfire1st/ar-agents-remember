@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/discovery.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-03T09:55+02:00                       |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`   |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                       |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -40,6 +40,18 @@ semantic probe `_is_usable_settings`: the file must parse as a JSON object whose
 `_config_from_mcp_registration` is total over hostile input: missing file, unreadable bytes,
 malformed JSON, non-dict shapes, foreign server entries, or a `--config` flag without a value all
 return `None` (the walk continues) — discovery must never crash on someone else's `.mcp.json`.
+Since 260731-EFA-L2 it is one line —
+`_nested_object(_json_object(mcp_json), "mcpServers", _SERVER_NAME)` then `_config_argument(...)` —
+over three named helpers that carry that totality explicitly:
+
+- `_json_object(path)` — the file's top-level JSON object; `None` when absent, unreadable, or not
+  an object. **Foreign and malformed files are someone else's**, so discovery skips them silently
+  rather than crashing the walk. `_is_usable_settings` reuses it, which is why the two probes now
+  tolerate exactly the same hostile input by construction.
+- `_nested_object(container, *keys)` — follows `keys` down nested JSON objects, returning `None` at
+  the first missing or non-object step.
+- `_config_argument(arguments)` — the value following `--config` in a recorded argv list, if it
+  carries one.
 
 ## Invariants And Boundaries
 
@@ -67,6 +79,12 @@ return `None` (the walk continues) — discovery must never crash on someone els
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911` armed with no
+  exemptions): `_config_from_mcp_registration` was rebuilt on the new `_json_object`,
+  `_nested_object` and `_config_argument` helpers, and `_is_usable_settings` now reuses
+  `_json_object` — so both probes tolerate the same hostile input by construction. Discovery
+  results and the `ConfigDiscoveryError` message are unchanged. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-07-03T09:55+02:00 — Created for 260703 L1 (dashboard config auto-discovery): upward walk with
   convention-then-registration probing, nearest-wins, the `_is_usable_settings` semantic probe (the
   tracked placeholder template must never shadow real settings), and the both-patterns miss error.

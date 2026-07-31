@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T19:55+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,6 +21,26 @@ The module validates closeout state, checks fast-forward eligibility, reports
 blocked non-fast-forward cases, optionally replays code and memory content for
 reviewed parallel changes, merges integrated commits, verifies the memory
 ledger mapping, and updates integration fields in the contract.
+
+**Two frozen parameter objects and one extracted phase (260731-EFA-L2):**
+
+- **`IntegrationSources(current_code_source, current_memory_source, code_replay_required,
+  memory_replay_required)`** — where each side's source branch stands when integration starts: its
+  current head, and whether that head has already moved past the commit closeout landed (which is
+  exactly what makes a fast-forward impossible and `--strategy replay` necessary). Head and verdict
+  are read in the same breath per side and every consumer needs both.
+  `IntegrationSources.replay_required` is a property (`code_replay_required or
+  memory_replay_required`) — the ff-only block now reads `sources.replay_required` rather than
+  re-OR-ing at the call site. `_integration_replay_requirements` returns it;
+  `_blocked_non_ff_result` and `_dry_run_result` consume it.
+- **`IntegratedCommits(code, memory_content, ledger)`** — the three commits one integration lands.
+  Every step past the replay decision — the merge, the contract rewrite, the result payload —
+  consumes all three or none, so `_merge_integrated_commits(contract, commits)` and
+  `_integrated_result(contract, args, commits, *, handover_warning)` take the triple.
+- **`_apply_integration(contract, args, sources, *, handover_warning)`** — the real (non-dry-run)
+  path lifted out of `integrate_result`: land the code commit, then the memory commits, then merge
+  both into their sources. `integrate_result` now reads as guard, replay decision, dry-run branch,
+  delegate.
 
 The merge of integrated commits is all-or-nothing: both the code and memory
 fast-forwards are pre-validated as ancestors before either branch is mutated,
@@ -44,6 +64,13 @@ As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: 
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0913` armed with no
+  exemptions): added the frozen `IntegrationSources` (with its `replay_required` property) and
+  `IntegratedCommits`, re-signed `_integration_replay_requirements` / `_blocked_non_ff_result` /
+  `_dry_run_result` / `_merge_integrated_commits` / `_integrated_result` onto them, and lifted the
+  real integration path into `_apply_integration`. The all-or-nothing merge, the replay decision
+  and every payload field are unchanged. Verification metadata pinned until closeout stamps the L2
+  commit.
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: added pure `unmatched_handover_gate_warning` (the enclosure spelling-check on gateless integrates, AR4-1b) and the dry-run now evaluates-but-does-not-enforce the seam guard, carrying `handover_gate` + the warning in the preview with no contract mutation (AR4-2). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: extracted `handover_gate_guard` (pure, testable) — cross-lifecycle fold + enclosure addressing replaces the inert `contract.lifecycle_id` lookup (AR3-1(b)). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): master-handover-approval enforcement consumer added at the integrate edge. Verification metadata pinned until closeout stamps the L8 commit.

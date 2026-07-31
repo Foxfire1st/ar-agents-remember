@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T19:55+02:00                     |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -35,6 +35,33 @@ and conversion from parsed front matter back into a typed contract object. Contr
 small section renderers for memory, sync, human review, closeout, integration, and body content. Task-folder
 lookup is delegated to `worktrees/task_resolver.py`; leaf-id normalization is delegated to
 `worktrees/leaf_refs.py`; this module no longer owns active-task lookup or leaf-ref policy.
+
+**The constructor parameter objects (260731-EFA-L2).** `default_contract` and
+`default_series_contract` are now signed on three frozen dataclasses this module also owns and
+exports:
+
+- **`RepoBranchPlan(repo_path, source_branch="", work_branch="", base_commit="")`** — one
+  repository's branch plan for a worktree pair. The contract's `code:` and `memory:` sections carry
+  exactly these four facts and `start_contract` derives them per side as a unit. **On the series
+  contract the pair used to read `protected_branch`/`integration_branch`** — those were only other
+  names for the same fork point and landing branch, so `default_series_contract` now takes
+  `code=RepoBranchPlan(source_branch=<protected>, work_branch=<integration>, …)` and still writes
+  them to `code_source_branch`/`code_work_branch` as before.
+- **`ContractTask(name, repo_name, coordination_root, workflow_kind, memory_mode,
+  parent_task_name="", parent_contract_path=None)`** — the task a contract speaks for: its name,
+  the repository it changes, the coordination tree that holds it, how it is run, and the contract
+  one level up (a leaf's series, a series' enclosing task).
+- **`LeafIdentity(worktree_name, leaf_id=None, lifecycle_id="")`** — which leaf a leaf-enclosure
+  contract is for. `leaf_id=None` still means "derive from the worktree name": the *reference* used
+  for the enclosure path is `leaf_id or worktree_name`, while the *persisted* `leaf_id` is
+  `leaf_id or slugify(worktree_name)` — the same two-value rule as before.
+
+Current signatures: `default_contract(task, *, leaf, code, memory=None)` and
+`default_series_contract(task, *, code, memory=None, task_root=None)`. **`memory=None` is the whole
+absent-memory state**: without a repo path there is no memory branch, no memory base and no
+ledger, so the constructors expand `None` to `memory_repo_path=None` and empty branch/commit
+strings rather than accepting a half-populated memory plan. `start_contract._memory_plan` is the
+helper that builds it or returns `None`. Every emitted `WorktreeContract` field is unchanged.
 
 Since 260712-PTS-L1, `load_contract` is read + parse + validate ONLY: one file read, zero tasks-tree
 traversal — no leaf-ref resolution, no series-contract iteration, no glob. A legacy stem-shaped
@@ -136,6 +163,15 @@ external memory paths, but the parser and renderer are same-repository code.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `RepoBranchPlan`, `ContractTask` and `LeafIdentity`, and re-signed both
+  constructors — `default_contract(task, *, leaf, code, memory=None)` and
+  `default_series_contract(task, *, code, memory=None, task_root=None)`. The series contract's
+  `protected_branch`/`integration_branch` keywords became the code plan's
+  `source_branch`/`work_branch` (the same two facts under their general names), and `memory=None`
+  now expresses the whole absent-memory state. Every emitted `WorktreeContract` field, including
+  the `leaf_id or worktree_name` reference and the `leaf_id or slugify(worktree_name)` persisted
+  id, is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1: `load_contract` is now read+parse+validate ONLY — the
   per-read `normalize_contract_leaf_id` call and its hidden whole-tasks-tree resolution walk are gone
   (py-spy 2026-07-12 measured that walk at ~9.7s of a 15s daemon sample; master 260712-PTS decision:

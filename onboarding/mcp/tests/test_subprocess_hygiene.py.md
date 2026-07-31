@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_subprocess_hygiene.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879`|
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -41,5 +41,13 @@ spread is accepted as a deliberate choice (e.g. `command_runner`).
 | The proving harness for the bug class this guards. | [test_mcp_stdio_transport.py](agents-remember/mcp/tests/test_mcp_stdio_transport.py) |
 
 ## Update History
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/tests/test_subprocess_hygiene.py` since the L2 base commit is the whole-tree `ruff format`
+  pass in `00e8379`, which re-wrapped 2 line(s) with no token change whatsoever. Checked by
+  parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds.
 
 - 2026-06-10T05:30+02:00: Created with the package-wide stdin audit (2.5.1).

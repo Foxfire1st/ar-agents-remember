@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-18T20:03+02:00|
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,7 +73,29 @@ only those nearest-governing overviews as stale / untraced / attested (marker
 `No route impact:`), while ancestor-matched overviews — including the repo-root
 overview matched by happenstance — are collected as
 `stamped_without_body_review` (skipped when their body was reviewed anyway) and
-never gate closeout. `require_updated_route_overview_content` raises on
+never gate closeout.
+
+Since 260731-EFA-L2 that classification is three named steps, and
+`classify_route_overview_updates` is just the loop that appends each returned bucket name:
+
+- `_overview_revision(overview_path, *, memory_root, baseline_ref, changed_memory)` → `(body
+  meaningfully changed, history lines added) | None`. **`None` is not a verdict** — it means the
+  overview is outside the memory tree or absent from the baseline, neither of which is a stale
+  signal, so those overviews drop out of the classification entirely.
+- `_governing_overview_bucket(body_changed, added_history)` → the gating bucket for a
+  nearest-governor overview: `None` once it is properly updated (body changed *and* history added),
+  else `untraced` / `attested_no_impact` / `stale`.
+- `_route_overview_bucket(overview_path, *, memory_root, baseline_ref, changed_memory,
+  domain_evident)` → the bucket for one matched overview. Only a nearest governor
+  (`domain_evident`) is classified like a sidecar; an ancestor match returns
+  `stamped_without_body_review` when its body went unreviewed, and `None` otherwise.
+
+`refresh_onboarding_metadata(contract, change)`,
+`refresh_onboarding_metadata_for_context(context, change, *, memory_tree=None,
+memory_verified_commit="")` and `refresh_route_overview_metadata_for_context(context, change, *,
+memory_tree=None, memory_verified_commit="")` all take a `VerifiedChange` (from `modules.models`)
+in place of the separate `changed_paths` / `verified_commit` / `verified_date` / `working_paths`
+arguments, so a refresher cannot stamp one commit's hash beside another's path list. `require_updated_route_overview_content` raises on
 stale/untraced and returns attested routes;
 `validate_route_overview_refresh_plan_for_context` runs it (with `memory_tree`
 and `memory_verified_commit` plumbed from the worktree wrapper) before the code
@@ -121,7 +143,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | drift integrity | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
 | Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | L345-L363 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py); [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, entity fingerprints, and explicit initialized-memory storage authority. | L224-L252 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, entity fingerprints, and explicit initialized-memory storage authority. | L234-L262 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
 
@@ -134,6 +156,13 @@ implementation governs this module.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0913` armed with no
+  exemptions): `classify_route_overview_updates`'s body was extracted into `_overview_revision`,
+  `_governing_overview_bucket` and `_route_overview_bucket`, leaving the public function as the
+  loop that appends each returned bucket; and `refresh_onboarding_metadata`,
+  `refresh_onboarding_metadata_for_context` and `refresh_route_overview_metadata_for_context` were
+  re-signed onto `VerifiedChange`. Classification outcomes and stamped metadata are unchanged.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: route-index preview and apply now pass the resolved
   `context.storage` authority explicitly into deterministic generation.
 - 2026-06-12T19:06+02:00 — Issue #83: two-tier plan split via `working_paths` (blocking `missing`/`unsupported` scoped to working paths, committed-range gaps collected as non-blocking `unonboarded`), body gates re-baselined on `contract_memory_verified_commit` via `commit_text_or_none` with `_changed_memory_paths` membership, and `_joined_sample` capping gate error joins.

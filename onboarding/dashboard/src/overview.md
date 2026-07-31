@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -53,8 +53,35 @@ withhold focus, readiness, submit, and contextual delivery. Request-shaped local
 alternate success path.
 
 The dev cockpit scenarios replace transport with request-matched raw and harness responses through
-the real client seam. They remain fixtures governed by this root overview, not a production authority
-or a reason to create a separate `dev/` overview for two files.
+the real client seam. They remain fixtures governed by this route overview, not a production
+authority — `dev/` is now three files and still does not warrant its own overview.
+
+## 260731-EFA-L2 — `dev/` Is A Contract Between Two TypeScript Projects
+
+`dev/` is not only fixtures. `/dev/bench` and `/dev/pty-bench` install probes on `window` so the
+Playwright drivers under `e2e/`, `e2e-chats/`, `e2e-production/` and `perf/` can read what the app
+actually did — which makes those globals **an interface between two TypeScript programs**: the app
+installs them, the drivers read them, and the drivers compile under their own tsconfig project.
+
+`dev/benchProbes.ts` is that interface, declared once. It holds `CockpitBenchProbe`,
+`CockpitBenchRequest`, `CockpitBenchTransition`, `CockpitResetAudit`, `PtyFrameStats`,
+`PtySerializeProbe` and the `Window` augmentation for `__ptyBench` / `__ptyBenchCols`;
+`cockpitScenarios.ts` and `PtyRenderBench.tsx` now import those types rather than each declaring
+its own copy. **The module has no imports on purpose** — `tsconfig.driver.json` names it directly,
+so the driver program gains the `Window` augmentation without pulling the app's module graph in
+behind it. Adding an import to `benchProbes.ts` would drag the app graph into the driver build.
+
+`tsconfig.driver.json` is a new project reference (added to the root `tsconfig.json` alongside
+`tsconfig.node.json`) covering `src/dev/benchProbes.ts`, the four e2e/perf suites and the four
+Playwright configs under the same `strict` / `noUnusedLocals` / `noUnusedParameters` settings the
+app uses. Before it, the driver sources were type-checked by nothing. `tsconfig.node.json` also
+picked up `panda.config.ts`, which was likewise unchecked.
+
+The rule this establishes: **a value the browser hands a driver is declared in `benchProbes.ts`.**
+Hand-copying a probe field into a spec, or re-declaring `Window`, is how the two halves drift — and
+the drift is invisible, because the driver side simply reads `any`.
+
+No production cockpit behaviour, panel, store or authority boundary changed in this leaf.
 
 ## Layered Architecture
 
@@ -202,6 +229,13 @@ unchanged.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: no production cockpit change. `dev/` gained
+  `benchProbes.ts`, the single declaration of the browser→driver probe contract (and the `Window`
+  augmentation), deliberately import-free so the new `tsconfig.driver.json` project can name it
+  without pulling in the app module graph; `cockpitScenarios.ts` and `PtyRenderBench.tsx` import
+  those types instead of duplicating them. The e2e/perf suites and Playwright configs are now
+  type-checked at all, as is `panda.config.ts`. Corrected the stale "two files" claim about `dev/`.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-30T12:51+02:00 — No route-level architecture change for
   260727-CHATS-IM-L2. Roster identity narrowing is owned by `data/conversation/`; the sparse
   Engine Room effects overlay is owned by `panels/engine-room/`; structured child-history

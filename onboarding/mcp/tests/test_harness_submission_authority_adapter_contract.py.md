@@ -1,0 +1,67 @@
+# mcp/tests/test_harness_submission_authority_adapter_contract.py
+
+| Field                  | Value                                                             |
+| ---------------------- | ----------------------------------------------------------------- |
+| repository             | agents-remember                                                   |
+| path                   | `mcp/tests/test_harness_submission_authority_adapter_contract.py` |
+| doc_type               | `file-level-onboarding`                                           |
+| lastUpdated            | 2026-07-31T15:32+02:00                                            |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                        |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| governingOverview      | `overview.md`                                                     |
+
+## Governing Overview
+
+[mcp/tests overview](overview.md)
+
+## Purpose
+
+The authority's **re-verification of whatever an adapter hands back**.
+
+An adapter is a vendor boundary, not a trusted collaborator: it can answer with the wrong
+type, acknowledge somebody else's request, or claim an acceptance the contract forbids after
+dispatch.
+
+## The Single Outcome
+
+None of those may be projected as a settled outcome — and **none may be projected as a
+rejection either**. The adapter method has already returned, so the authority cannot certify
+that nothing crossed the wire. Every case therefore ends in the same place: an `unknown`
+**barrier** that
+
+- pins the head,
+- keeps the successor undispatched, and
+- waits for an operator to resolve it.
+
+## Why `VerbatimAdapter` Exists
+
+The shared `_AuthorityAdapter` double stamps the request id back onto every receipt it
+returns. That is the right shape for testing the timeline, but it is precisely what hides
+the contract under test here. `VerbatimAdapter` answers with **exactly what the test
+queued**, with none of the usual repairs, so the authority's own verification is the only
+thing standing between a malformed adapter answer and a settled submission.
+
+Helpers: `state_of` reads the resulting state; `dispatched_ids` reports the request ids the
+adapter was actually asked to send, once the dispatcher settles — which is how "the
+successor stayed undispatched" is asserted rather than assumed.
+
+## Invariants And Boundaries
+
+- A malformed or mis-addressed adapter answer produces `unknown`, never `delivered` and
+  never `rejected`.
+- The barrier is head-pinning: no successor may be dispatched past an unresolved one.
+- Resolution is an operator action; the authority never resolves a barrier itself.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The submission authority under test. | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The timeline-shaped suite that uses the repairing double. | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
+| Log-side acceptance evidence the authority reads. | [test_harness_logs_user_message_readers.py](agents-remember/mcp/tests/test_harness_logs_user_message_readers.py) |
+
+## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
+  adapter-contract re-verification suite. Verification metadata is pinned to the leaf's
+  reformat commit until closeout stamps the code commit.

@@ -74,8 +74,8 @@ boundary is the sibling attachments module; the confinement mirrors the L2E runn
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The `AssetReference` type and `read_asset_bytes` this module produces/consumes. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The lifecycle policy that stages/exchanges/deletes through this boundary. | L128-L468 | [attachments.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/attachments.py) |
-| The `AttachmentCapability` limits `validate_upload` enforces. | L406-L678 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The lifecycle policy that stages/exchanges/deletes through this boundary: `stage`, `submit`, `attachment_status`, `rebind`, `mark_recoverable`, `delete_recoverable`, plus the expiry sweep, live-store eviction, and spool byte deletion. | L135-L497; L710-L741 | [attachments.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/attachments.py) |
+| The `AttachmentCapability` limits `validate_upload` enforces (allow-listed MIME types, `max_bytes`, `max_count`, `description` required/fallback, and the supported-state actionability validator). | L678-L690 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
 ## Cross-Repo References
 
@@ -86,6 +86,8 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that drifted as both targets grew. The attachments lifecycle policy is now L135-L497 (`stage` L135, `submit` L204, `attachment_status` L345, `rebind` L375, `mark_recoverable` L460, `delete_recoverable` L484) plus L710-L741 (expiry sweep, eviction, spool byte deletion) in a 795-line file. `AttachmentCapability` in `models.py` is L678-L690, not L406-L678; both claims were made specific about what the ranges cover.
 
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the attachment spool
   boundary — confined constructed paths, resolve-and-verify containment, 0700/0600 permissions,

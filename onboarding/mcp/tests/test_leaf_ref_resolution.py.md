@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_leaf_ref_resolution.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T19:55+02:00                     |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,6 +73,15 @@ contract persisted with a legacy stem-shaped id — the pre-heal on-disk state) 
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: the two `default_contract(...)` fixtures — the shared
+  `_persisted_legacy_contract` helper and the duplicate-slug case — now build the same contract
+  from the `ContractTask`, `LeafIdentity`, and `RepoBranchPlan` parameter objects instead of eleven
+  loose keywords, with the imports widened to match. This card describes those fixtures by what
+  they persist (a leaf contract carrying a legacy stem-shaped `leaf_id`) and never named the
+  `default_contract` keywords, so nothing it claims moved. Re-read the file for case changes:
+  no test was added, removed, or renamed, so the canonical/alias resolution pins, the
+  `leaf-ref-not-found` and `leaf-ref-ambiguous` reporting, the zero-traversal tripwire, the
+  heal-parity and idempotence cases, and the `heal-leaf-ids` CLI seam all still match the source.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1: replaced the two read-time-normalization contract tests with
   the read/heal-split suite — legacy ids come back verbatim from `load_contract`, a loud zero-traversal
   tripwire guards the walk-free read path, and `heal_contract_leaf_ids` is pinned for read-path parity,

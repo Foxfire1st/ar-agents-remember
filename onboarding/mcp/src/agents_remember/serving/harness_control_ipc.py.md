@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ checks existence, size, and sha256 against the staged bytes. Asset bytes never c
 only verified references ride submit.
 
 The multiplexing extension keeps the same additive posture without adding an action: `_evidence_native_page`
-(L388-L401) now forwards the optional `threadId` payload key straight to `bridge.native_page`
+(L376-L389) now forwards the optional `threadId` payload key straight to `bridge.native_page`
 through `_optional_text`. When the key is absent the call is byte-identical to before and reads the
 parent/session thread; when present it selects that (sub-agent) multiplexed thread — the codex
 app-server serves `thread/read` for every multiplexed thread, and adapters that do not multiplex
@@ -120,13 +120,13 @@ parameter, whose `None` default keeps the parent-thread read byte-identical.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The bridge exposes live advertise and ordered setter operations only while running. | L413-L425 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | L209-L246 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bridge exposes live advertise and ordered setter operations only while running. | L440-L452 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | L236-L273 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | The blocking client validates exact identity and distinguishes pre-write from post-write loss. | L186-L326; L475-L585 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | L988-L1285 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | L1423-L1670; L1844-L1898 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | L463-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | L113-L122; L403-L443 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | L264-L328 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | L291-L355 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | Contract tests pin the asset schema/traversal/verification batteries, the two actions end-to-end over a real socket, and the typed confinement refusals. | L1025-L1268; L864-L959 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 
 ## Cross-Repo References
@@ -159,8 +159,39 @@ typed fields before reconstructing either error (L535-L597). This makes the sele
 boundary recoverable across Unix IPC without converting it into an undifferentiated
 `HarnessControlError`.
 
+## 260731-EFA-L2 Current Delta
+
+The two `if action == …` dispatch chains were replaced by one `_CONTROL_ACTIONS` handler table
+mapping each action name to a bound coroutine (`_handshake`, `_advertise`, `_set_model`,
+`_set_effort`, `_submit`, `_submission_authority`, `_submission_status`, `_withdraw`, `_reconcile`,
+`_transcript`, `_evidence`, …). An unknown action still raises `HarnessControlError(f"unknown
+control action: {action}")` — that is now one refusal instead of two (the separate "unknown
+capability action" message is gone because capability actions are ordinary table entries). Every
+action's payload validation and response shape is unchanged.
+
+**`StagedAssetClaim`** (`asset_id`, `mime_type`, `byte_size`, `sha256`) names what the wire CLAIMS
+about one staged asset, **before the spooled file is read**. Every field is a claim to be verified
+against the file on disk: the id locates it, and the mime type, byte size and digest are what must
+match. Verifying one field against another asset's claim is exactly the substitution the digest
+check exists to catch, so the claim travels as one value.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `test_harness_control.py` citation.
+  The stamped `L988-L1285` sits inside `HarnessControlConformanceTests`, not the IPC suite; the
+  IPC tests are `HarnessControlIpcTests` (opens L1355). The five behaviours the row names are
+  L1423-L1670 — `test_exact_session_ipc_advertises_and_returns_set_acceptance` (capability read +
+  both setters and their accept/unsupported acceptances),
+  `test_outer_socket_lost_receipt_reconciles_retained_known_truth` and
+  `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend` (response loss +
+  reconciliation), and `test_public_duplicate_returns_retained_result_with_one_adapter_call`
+  (same-id retention, exactly one adapter submission) — plus L1844-L1898,
+  `test_peer_timeout_after_submit_preserves_reconciliation_result`. Both ranges read back; claim
+  unchanged.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_CONTROL_ACTIONS` handler table (one unknown-action refusal) and `StagedAssetClaim` as the pre-verification wire claim.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented typed history
   unavailable/limit serialization and strict byte-evidence reconstruction across the private
   control IPC. Verification metadata remains pinned while uncommitted.

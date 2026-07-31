@@ -22,7 +22,7 @@ Provides the scenario fixtures for the enclosure-centered Engine Room process ma
 
 ### Logic
 
-`EngineRoomScenario` (L15-L19) names a `{ name, processes, workspace }` triple; `ENGINE_ROOM_SCENARIOS` (L288-L623) is the exported array consumed downstream. Node shaping is factory-driven: `wsEngine` (L23-L32) builds a ready workspace `ProviderNode` (role inferred from id — memory/grepai → `memory`, else `code`), and `WORKSPACE` (L34) is the shared `[codegraphcontext-code, grepai-memory]` stack reused by every scenario. `ref` (L36-L38) wraps a `CommitRefNode` defaulting `factState: "observed"`; `boot` (L40-L47) builds a `ProviderBootNode` for the code/memory role; `edges` (L57-L105) emits the `EngineProcessEdge[]` graph (worktree-add, cgc-seed, and — when `external` — ledger-map + grepai-clone, plus an optional sync edge), each edge state overridable via `EdgeStates` (L49-L55). `engineProcess` (L107-L156) is the core builder: it derives the worktree group path from `repoName`/`id`, fills a nominal `worktree-started` enclosure (leaf id, commit refs, external memory, provider boots, completed phases, source files), then spreads `over` last so each scenario overrides only the fields it varies. `bootStages` are the six `engine-boot-*` build-up frames, **renumbered B0→B5 in slice 5i** to match the
+`EngineRoomScenario` (L19-L23) names a `{ name, processes, workspace }` triple; `ENGINE_ROOM_SCENARIOS` (L724-L1198) is the exported array consumed downstream. Node shaping is factory-driven: `wsEngine` (L27-L36) builds a ready workspace `ProviderNode` (role inferred from id — memory/grepai → `memory`, else `code`), and `WORKSPACE` (L38) is the shared `[codegraphcontext-code, grepai-memory]` stack reused by every scenario. `ref` (L109-L111) wraps a `CommitRefNode` defaulting `factState: "observed"`; `boot` (L113-L120) builds a `ProviderBootNode` for the code/memory role; `edges` (L142-L214) emits the `EngineProcessEdge[]` graph (worktree-add, cgc-seed, and — when `external` — ledger-map + grepai-clone, plus an optional sync edge), each edge state overridable via `EdgeStates` (L132-L140). `engineProcess` (L216-L270) is the core builder: it derives the worktree group path from `repoName`/`id`, fills a nominal `worktree-started` enclosure (leaf id, commit refs, external memory, provider boots, completed phases, source files), then spreads `over` last so each scenario overrides only the fields it varies. `bootStages` are the six `engine-boot-*` build-up frames, **renumbered B0→B5 in slice 5i** to match the
 scenario-player beats: `engine-boot-0-main-only` (the official line at rest — worktree refs `planned`, no
 providers, every edge planned, no `missingFacts`: a not-yet-created enclosure is not an alarm) →
 `-1-code-worktree` (code worktree forks in; `worktree-add` complete) → `-2-memory-contract` (memory copies
@@ -32,16 +32,16 @@ in, the coupler binds; `ledger-map` complete) → `-3-providers-dim` (the runtim
 
 ### Invariants And Boundaries
 
-Fixtures are presentation data only: they encode the wire shape (camelCase, `exclude_none` optionals) and carry no behavior. They must stay in lockstep with the imported node types in [types/projection.ts](../../types/projection.ts) — fields like `factState`, `health`, edge `state`, and `phase` use the unions defined there. `SOURCE_BRANCH` (L21) and the hard-coded commits (`08e9221a`, `d60a0511`) are illustrative, not live. Health/setup/edge state strings must remain valid members of `ProcessHealth` and the edge-state vocabulary so the map renders honestly. `seedFallback: true` in `engine-cgc-fallback` (L379) models a reroute-to-reindex, not a failure; `retryArgs` appears only on failed-setup scenarios. The active provider `runtimeState` is kept consistent with the running conduit (5g G4) — the engine being seeded/cloned is `indexing`, the done engine `nominal` — so the charging engine lines up with the flowing conduit (e.g. GrepAI cloning ⇒ `[boot("code"), boot("memory", "indexing")]`).
+Fixtures are presentation data only: they encode the wire shape (camelCase, `exclude_none` optionals) and carry no behavior. They must stay in lockstep with the imported node types in [types/projection.ts](../../types/projection.ts) — fields like `factState`, `health`, edge `state`, and `phase` use the unions defined there. `SOURCE_BRANCH` (L25) and the hard-coded commits (`08e9221a`, `d60a0511`) are illustrative, not live. Health/setup/edge state strings must remain valid members of `ProcessHealth` and the edge-state vocabulary so the map renders honestly. `seedFallback: true` in `engine-cgc-fallback` (L379) models a reroute-to-reindex, not a failure; `retryArgs` appears only on failed-setup scenarios. The active provider `runtimeState` is kept consistent with the running conduit (5g G4) — the engine being seeded/cloned is `indexing`, the done engine `nominal` — so the charging engine lines up with the flowing conduit (e.g. GrepAI cloning ⇒ `[boot("code"), boot("memory", "indexing")]`).
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Node/edge types this file shapes (`EngineProcessNode`, `CommitRefNode`, `ProviderBootNode`, `EngineProcessEdge`, `ProviderNode`) | [L7-L13](fixtures.ts) → [L61-L285](../../types/projection.ts) | [types/projection.ts](../../types/projection.ts) |
-| `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | L17-L21, L288-L623 | [fixtures.ts](fixtures.ts) |
-| `engineProcess` core builder (override-last spread) | L130-L180 | [fixtures.ts](fixtures.ts) |
-| `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges) | L70-L128 | [fixtures.ts](fixtures.ts) |
+| `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | L19-L23, L724-L1198 | [fixtures.ts](fixtures.ts) |
+| `engineProcess` core builder (override-last spread) | L216-L270 | [fixtures.ts](fixtures.ts) |
+| `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges) | L132-L214 | [fixtures.ts](fixtures.ts) |
 | `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail | — | [fixtures.ts](fixtures.ts) |
 | `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) | — | [fixtures.ts](fixtures.ts) |
 | `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split | — | [fixtures.ts](fixtures.ts) |
@@ -52,6 +52,15 @@ Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<r
 
 ## Update History
 
+- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 10 stale self-citations after the file
+  grew to 1198 lines. The whole factory block moved down past the `LEDGER_ROWS`/`LEDGER_TOTAL`/
+  `OFFICIAL_LEDGER` window and the `landingRef` helper: `SOURCE_BRANCH` L21→L25,
+  `wsEngine` L23-L32→L27-L36, `WORKSPACE` L34→L38, `ref` L36-L38→L109-L111,
+  `boot` L40-L47→L113-L120, `EdgeStates` L49-L55→L132-L140, `edges` L57-L105→L142-L214,
+  `engineProcess` L107-L156→L216-L270, `EngineRoomScenario` L15-L19→L19-L23, and
+  `ENGINE_ROOM_SCENARIOS` L288-L623→L724-L1198 (the export tail now ends at the six spread stage
+  arrays). The same three ranges were re-stamped in the Repo-Internal References table. No claim
+  text changed; every range was read back against the current source.
 - 2026-06-24T08:09+02:00 — Engine Room leaf identity: the `engineProcess` fixture helper seeds `leafId` so bench/gallery projections exercise the same leaf-label contract as live series-contract projections. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: engine-room fixtures now point `enclosure` and `sourceFiles` at `<task>/enclosures/<leaf-id>/series-contract.md` instead of a task-root `contract.md`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-22T11:00 — slice 05o: added the fixtures for the six remaining failure modes (all reusing the

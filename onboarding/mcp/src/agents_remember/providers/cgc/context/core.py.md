@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:05+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -21,6 +21,29 @@ layout fields, provider-owned config writing, source artifact detection, and
 stale runtime cleanup.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Layout Parameter Objects
+
+`cgc_runtime_layout(repo, *, instance=DEFAULT_CGC_INSTANCE, watcher=DEFAULT_CGC_WATCHER,
+backend=DEFAULT_CGC_BACKEND)` replaces the previous nineteen keywords. The four frozen dataclasses
+are defined here and split along what each fact is *about*, not where it happens to be used:
+
+- **`CgcRepo(coordination_root, repo_id, code_repo_root, cgcignore_patterns=())`** — the repository
+  one CGC instance indexes and the root that owns the instance. `cgcignore_patterns` belongs here
+  because it is about which parts of *this repository* the graph covers, not about how the provider
+  is deployed. This is the only required argument.
+- **`CgcInstance(runtime_root, requirements_file, patches_root, state_file)`** — where the instance
+  lives on disk and what it is pinned to.
+- **`CgcWatcher(image, build_root, lock_file, container_name, process_env_template, watch_cwd,
+  watch_log_file)`** — one process, described once: the runner image, the build inputs it comes
+  from, the container it runs as, its environment, and the cwd/log of the `cgc watch` it hosts.
+- **`CgcBackend(root, data_root, state_file, container_name, network_name)`** — the managed
+  FalkorDB backend.
+
+**Every field of the last three is an override, so the empty instance IS the convention.** That is
+why `DEFAULT_CGC_INSTANCE` / `DEFAULT_CGC_WATCHER` / `DEFAULT_CGC_BACKEND` exist as module-level
+frozen singletons and serve as the defaults: omitting a bundle means "conventional placement under
+`providers/runners/codegraphcontext/<repoId>`", exactly as omitting each keyword did.
 
 ### Logic
 
@@ -77,6 +100,10 @@ otherwise reject.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `cgc_runtime_layout` was re-signed onto `CgcRepo` + the optional `CgcInstance` / `CgcWatcher` /
+  `CgcBackend` bundles (with `DEFAULT_CGC_*` frozen singletons as defaults). The resolved
+  `CgcRuntimeLayout` is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-10T07:05+02:00 — `to_container_path` moved to `providers/context_common.py` (canonical home); this module keeps a commented re-export so existing `cgc.context.core`/facade importers are unchanged (GitHub #58).
 - 2026-06-10T05:30+02:00 — `_cgc_runner_image` is now public `cgc_runner_image()` with a docstring naming it the single source of truth (GitHub #50); `providers/settings.py` and a regression test depend on it.
 - 2026-06-09T22:10+02:00 — `_cgc_runner_image()` now appends `CGC_RUNNER_IMAGE_LAYER_REVISION` to the tag (`agents-remember/codegraphcontext:0.4.10-ar1`) so Docker-layer-only changes (e.g. the watch-guard entrypoint) trigger image rebuilds on install.

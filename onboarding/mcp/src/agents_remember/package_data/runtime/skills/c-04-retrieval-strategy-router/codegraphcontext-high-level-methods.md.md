@@ -77,7 +77,7 @@ example outputs.
 | --- | --- | --- |
 | The CGC catalog states the typed MCP tool contract and says generic `cgc_query` is removed. | L1-L42 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
 | Symbol search, callees, callers, dependencies, and complexity sections show placeholder tool calls and synthetic output shapes. | L44-L175 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Practical rules explain when to use each typed CGC tool and require source confirmation before edits. | L177-L185 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| Practical rules explain when to use each typed CGC tool and require source confirmation before edits. | L174-L184 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
 | The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Relationship section. | L107-L111 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
 
 ## Cross-Repo References
@@ -91,6 +91,10 @@ contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 line citation. The catalog is 184 lines,
+  so the Practical Rules row's L177-L185 ran past the end; the `## Practical Rules` section now reads
+  L174-L184 (five bullets, ending on the "Treat CGC output as discovery, not proof" source-confirmation
+  rule). Verified by reading the file tail.
 - 2026-07-02T15:40+02:00 — Updated the CGC dependency-method catalog to document
   the current native command shape as `analyze deps <module>`.
 - 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — the CGC query examples dropped the now-redundant `dry_run=false` (queries return results by default; `dry_run=true` returns the planned command without executing it).

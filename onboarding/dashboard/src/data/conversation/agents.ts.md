@@ -93,8 +93,8 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The wire types this module reads (`ConversationAgentRef`/`ConversationAgentStatus`, `ConversationItem.agent`). | L140-L156 · L172 | [types.ts](types.ts) |
 | The store whose `agentFocusBySession` this module's `effectiveAgentFocus` revalidates. | L44-L48 · L103-L109 | [store.ts](store.ts) |
-| The codex roster mint: one `codex-agent-<threadId>` notice/system item per agent, upserted across the lifecycle, never optimistic. | L663-L699 | [projectors/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) |
-| The claude roster mint: `claude-agent-<taskId>` from the task_* frames (with the join-key tool upsert), terminal summary as a `summary` TextBlock. | L340-L424 | [projectors/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
+| The codex roster mint: one `codex-agent-<threadId>` notice/system item per agent, upserted across the lifecycle, never optimistic. | L722-L753 | [projectors/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) |
+| The claude roster mint: `claude-agent-<taskId>` from the task_* frames (with the join-key tool upsert), terminal summary as a `summary` TextBlock. | L305-L385 · L496-L511 · L514-L554 | [projectors/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
 | The surface that cycles/filters by this model (ArrowLeft/Right, Esc, focus bar). | L12-L16 · L138-L144 · L169-L184 · L294-L305 | [ConversationSurface.tsx](../../panels/session-cockpit/conversation/ConversationSurface.tsx) |
 | The roster strip rendering `ConversationAgentView` rows. | L3-L12 | [AgentsArea.tsx](../../panels/session-cockpit/conversation/AgentsArea.tsx) |
 | The agent badge rendering `agentLabel`. | L8 · L80 | [InteractionItem.tsx](../../panels/session-cockpit/conversation/InteractionItem.tsx) |
@@ -116,6 +116,14 @@ An arbitrary system notice carrying an agent ref is content, not roster authorit
 selected-child history state and rebound notices from appearing as extra seats.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that moved
+  when the projectors were refactored. The codex roster mint (`_roster_item`, now taking an
+  `ItemPlacement`) moved to `codex.py` L722-L753; the claude roster mint was decomposed out of one
+  monolithic `_map_task_lifecycle` into `claude.py` L305-L385 plus the extracted
+  `_task_lifecycle_blocks` (L496-L511, where the `summary` TextBlock is appended) and
+  `_agent_identity_tag_item` (L514-L554, the join-key tool-call upsert). Both claims re-verified
+  against the current source; no claim text changed.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: narrowed roster detection to the
   backend's explicit `codex-agent-`/`claude-agent-` identities. Agent-tagged child-history and

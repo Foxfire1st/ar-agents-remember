@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/codex_normalize.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ on fake native payloads; the shared primitives module owns the capping/extractio
 | --- | --- | --- |
 | Codex reads normalize items with ordinals, windows, roles, blocks, and provenance through the strict contract validators. | L255-L289 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
 | Shared capping, provenance, and text-extraction primitives this parser builds on. | L18-L69 | [normalize_common.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/normalize_common.py) |
-| The normalized item/block/provenance grammar this parser targets. | L315-L403 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The normalized item/block/provenance grammar this parser targets. | L311-L399 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
 ## Cross-Repo References
 
@@ -82,5 +82,15 @@ No meaningful cross-repo boundary exists for this local parser.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: the leaf's whole edit to this parser is the deletion
+  of the trailing `# noqa: UP040 - Python 3.11 support` from the `ToolPhase` line. The declaration
+  `ToolPhase: TypeAlias = Literal["completed", "failed", "interrupted"]` and its docstring are
+  otherwise byte-identical, so the terminal-phase vocabulary this card pins is exactly what the
+  source still declares. The suppression went dead because the root `pyproject.toml` now sets
+  `[tool.ruff] target-version = "py311"`, and UP040 only fires when the target supports PEP 695
+  `type` statements. Re-read the builder dispatch, the provenance/evidence-reference conventions,
+  and the unknown-vendor and fail-closed invariants against the current file: none of them names a
+  lint directive or an interpreter floor, so every claim still holds.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: the only non-format change here is a lint-suppression cleanup — the `# noqa: UP040` suppression on the `ToolPhase` type alias was deleted, because `[tool.ruff] target-version` is now pinned to the supported floor `py311` and those PEP 695 upgrade rules no longer fire. The declarations themselves are byte-identical. Nothing else in the file changed, so no other claim in this sidecar can have been invalidated by this leaf. Attested, deliberately not rewritten.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the Codex thread-item parser
   sidecar. Verification is blank until closeout commits and stamps the new source.

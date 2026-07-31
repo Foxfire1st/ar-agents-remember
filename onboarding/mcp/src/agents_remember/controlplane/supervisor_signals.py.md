@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                |
 | path                   | `mcp/src/agents_remember/controlplane/supervisor_signals.py`   |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash |                                                                `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                                                2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash |                                                                `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                                                2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ Signal records and cooldown lookups add `seatRole`, so two roles with the same l
 and detail retain independent cooldown slots. Existing bounded snapshot/compaction behavior is
 unchanged.
 
-### 260707-HFX2-L12 CS-6 Update
+### 260707-HFX2-L13 CS-6 Update
 
 `SupervisorSignalCooldownStore` is no longer an unbounded per-finding full-file fold: reads skip malformed rows, `in_cooldown(records=...)` consumes a sweep snapshot, and `compact()` atomically retains only records inside the cooldown window.
 
@@ -41,8 +41,21 @@ the hosted inbox delivery attempt.
 
 `SupervisorSignalCooldownStore(observer_root)` writes `workspace/supervisor-signals.jsonl`.
 `append(record)` creates the workspace directory and appends one alias-rendered JSON row. `read()`
-parses the current full file into `SupervisorSignalRecord` rows. `last_sent(...)` filters the full
-record set to rows matching the dedupe key and returns the newest timestamp. `in_cooldown(...)`
+parses the current full file into `SupervisorSignalRecord` rows.
+
+Two frozen parameter objects (260731-EFA-L2) make the dedupe key a value rather than a keyword
+list:
+
+- **`SupervisorSignalTarget(agent_id=None, lifecycle_id=None, role=None, leaf_key=None,
+  seat_role=None)`** — the owner inbox a signal is addressed to. Derived as one routing decision by
+  `derive_signal_owner` and stamped verbatim onto every `SupervisorSignalRecord`.
+- **`SupervisorSignalKey(target, finding_kind, detail)`** — what makes two signals "the same
+  signal" for cooldown purposes: the same target told the same thing. **Every field is compared,
+  all of them or none** — a partial match is a different signal and must not suppress delivery.
+
+`last_sent(signal, *, records=None)` filters the full
+record set to rows matching that key and returns the newest timestamp.
+`in_cooldown(signal, *, now, cooldown_seconds, records=None)`
 validates `cooldown_seconds` through `inbox_backoff.require_redelivery_floor_seconds`, then compares
 the latest matching record's timestamp to `now`; malformed timestamps fail open for that row so the
 next valid signal can be posted and persisted.
@@ -85,7 +98,7 @@ supervisor control-plane state.
 | --- | --- | --- |
 | `SupervisorSignalRecord` defines the persisted signal-cooldown key fields and delivery state. | L14-L33 | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
 | The store appends JSONL rows under `workspace/supervisor-signals.jsonl` and reads the full file back into records. | L36-L59 | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
-| `last_sent` matches by owner/leaf/kind/detail and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | L61-L113 | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
+| `last_sent` matches on the whole `SupervisorSignalKey` (target + kind + detail) and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
 | `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | L701-L747 | [../serving/supervisor.py](../serving/supervisor.py.md) |
 | The serving app imports `SupervisorSignalCooldownStore` and wires `signal_cooldown_seconds` into each supervisor context. | L70; L517-L533 | [../serving/app.py](../serving/app.py.md) |
 | The 900-second floor is owned by the shared inbox backoff helper. | L40-L52 | [inbox_backoff.py](inbox_backoff.py.md) |
@@ -100,6 +113,14 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `SupervisorSignalTarget` and `SupervisorSignalKey`, and re-signed
+  `last_sent(signal, *, records=None)` and `in_cooldown(signal, *, now, cooldown_seconds,
+  records=None)` onto the key. `in_cooldown` now forwards the whole key to `last_sent` in one
+  argument, so the two can no longer compare on different field sets — the L17 seat-role identity
+  is part of the key by construction rather than by both call sites remembering to pass it.
+  Matching semantics are unchanged. Verification metadata pinned until closeout stamps the L2
+  commit.
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: extended persisted cooldown identity with seat role so
   different seats on one leaf do not suppress one another.
 

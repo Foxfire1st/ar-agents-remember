@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/actions.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-06-28T07:32+02:00                       |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`   |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -32,10 +32,13 @@ repo-level one-shot signal. The UI is still never the gate *enforcement*.
   `"dashboard"`, never trusted from the body. `target` may be omitted only for a `cancel` carrying a
   concrete `gateId`, for `dismiss` of a `gate-open` item carrying a concrete `gateId`, or for
   targetless `actionable-drift` dismissal.
-- `ActionEvaluationContext` is the internal dataclass that carries the request context echoed into
-  intents (`actor`, `now`, `gate_id`, `note`, `item_id`, `kind`) so the dispatcher can stay small while
-  preserving the public `evaluate_action(...)` call shape.
-- `evaluate_action(projection, action, target, *, actor, now, gate_id?, note?, item_id?, kind?) -> ActionOutcome` is
+- `ActionEvaluationContext` is the **public request context** every evaluator echoes into intents:
+  who asked (`actor`), when (`now`), and every identifier the specific verb needs to name its object
+  (`gate_id`, `note`, `item_id`, `kind`). Each evaluator reads a different subset — which is exactly
+  why they arrive as one context rather than six optional parameters repeated at every layer. Since
+  260731-EFA-L2 the caller builds it: `app.py` constructs the context and passes it in, instead of
+  `evaluate_action` assembling one from six keywords.
+- `evaluate_action(projection, action, target, context: ActionEvaluationContext) -> ActionOutcome` is
   **pure** and delegates to focused branch helpers:
   - `_find_actions` resolves the target (lifecycle by `id`, then enclosure by `enclosure`) and
     returns its precomputed `actions`, or `None`.
@@ -58,11 +61,19 @@ repo-level one-shot signal. The UI is still never the gate *enforcement*.
     `DismissalIntent(item_id, dismissed_at, kind, lifecycle_id, gate_id, note)`. Missing `itemId`
     returns `400 missing-item`; unsupported targetless dismissal returns `400 missing-lifecycle`.
 - `app.py` owns the routing **and** the one durable side effect (slice 6b): on a lifecycle-targeted
-  `gate_decision` it calls `gate_decide_for_lifecycle(… decided_by="developer",
-  decided_via="dashboard")`; on gate-id-only `cancel` it calls `gate_decide_payload` against the
-  workspace gate log. For a `DismissalIntent`, `app.py` either stores a compact lifecycle
-  acknowledgement or cancels/deletes the gate-open source. Otherwise it maps the `ActionOutcome` to a
-  `JSONResponse` (projection-not-ready ⇒ `503`).
+  `gate_decision` it calls `gate_decide_for_lifecycle` with a developer/dashboard `GateVerdict`; on
+  gate-id-only `cancel` it calls `gate_decide_payload` against the workspace gate log. For a
+  `DismissalIntent`, `app.py` either stores a compact lifecycle acknowledgement or cancels/deletes
+  the gate-open source. Otherwise it maps the `ActionOutcome` to a `JSONResponse`
+  (projection-not-ready ⇒ `503`).
+- **This module is the single request-shape authority, and `app.py` now relies on that in code.**
+  Since 260731-EFA-L2 `app.py` no longer re-checks the two shapes refused here: it dropped its own
+  `missing-gate-id` branch (because `_gate_decision_outcome` already returns `400 missing-target`
+  for a decision naming neither a lifecycle nor a gate id, so an intent that reaches the recorder is
+  always addressed) and its own `lifecycle_id is not None or kind == "actionable-drift"` re-check
+  (because `_dismiss_action_outcome` already returns `400 missing-lifecycle`, so a dismissal that
+  reaches the writer is always scoped). Weakening either refusal here now changes `app.py`'s
+  behaviour, not just this module's response.
 
 ## Invariants And Boundaries
 
@@ -89,10 +100,14 @@ repo-level one-shot signal. The UI is still never the gate *enforcement*.
 | The app that routes `POST /api/actions/{action}` to this and executes the gate write. | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The gate write-path the router calls for a gate-decision verb (slice 6b). | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | The compact acknowledgement store used for lifecycle attention dismissals. | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
-| `_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift. | L180-L230 | [actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
+| `_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift. | L170-L219 | [actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
 
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: `evaluate_action` now takes one `ActionEvaluationContext`
+  built by the caller instead of six keywords; recorded that context as the named request-context
+  concept and recorded that `app.py` deleted its two duplicate shape guards because this module is
+  the single place those shapes are refused. Verification metadata stays pinned until closeout.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `dismiss` now allows targetless actionable-drift rows
   while preserving lifecycle scope for lifecycle rows and gate-id scope for gate-open consumption.
   Verification metadata pinned until closeout stamps the task-29 code commit.

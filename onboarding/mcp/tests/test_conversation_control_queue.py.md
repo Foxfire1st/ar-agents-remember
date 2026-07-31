@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,17 +25,25 @@ the queued→dispatching race, the bounded 900 s recovery lease, and lease expir
 
 ### Logic
 
-`QueueProjectionTests` (L47): complete multi-source truth (`3 queued · 1 yours(cockpit) · 1 terminal
+`QueueProjectionTests` (L51): complete multi-source truth (`3 queued · 1 yours(cockpit) · 1 terminal
 · 1 durable`), sequences ordered, no body anywhere in the JSON; only queued cockpit rows carry the
 withdrawal ref/redacted preview/digest; legacy cockpit rows report empty held content honestly;
 setter operations are not queue rows (while the timeline still enumerates them); semantic monotonic
-revisions. `WithdrawalRecoveryTests` (L202): atomic `cockpit_only` withdrawal; the queued→dispatching
+revisions. `WithdrawalRecoveryTests` (L211): atomic `cockpit_only` withdrawal; the queued→dispatching
 race with exactly one winner (`already-dispatching` 409, refs captured while queued); replay returns
 the same outcome/revision + recovery; opaque pending discovery then authenticated fetch/ack/disposed
 replay; lost withdraw response → journal-of-last-resort recovery; legacy-row recovery from the
 substrate payload; the reference forgery battery; and `test_recovery_lease_expiry_disposes_content`
-(L465) which builds its own separate advancing frozen clock (09:00:00Z → 09:16:01Z) and asserts
+(L505) which builds its own separate advancing frozen clock (09:00:00Z → 09:16:01Z) and asserts
 `pending.items == ()` / `recovery_state == "expired"` after the advance.
+
+Every withdrawal-authority call is addressed through a `ControlRequest(service=…, authorization=…,
+ar_session_id=…, expected_bridge_epoch=…)` parameter object (`withdraw`, `withdraw_status`,
+`pending_recoveries`, `fetch_recovery`, `acknowledge_recovery`); the legacy substrate writes go
+through `submit_control_prompt(entry, text, ControlSubmission(source=…, request_id=…,
+expected_bridge_epoch=…))`; and the forgery battery mints its refs with
+`mint_ref(secret, "withdrawal-ref", RefBinding(operator, session, epoch), RefTarget(identity=…))`,
+so a forged session or epoch is a different `RefBinding` rather than a different keyword.
 
 ### Conventions
 
@@ -71,9 +79,9 @@ topology.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The source-aware queue projection under test. | L40-L144 | [control/queue_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/queue_projection.py) |
-| The withdrawal + bounded recovery authority (900 s lease, expiry sweep). | L117-L699 | [control/withdrawals.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/withdrawals.py) |
-| The shared fake-topology harness with the `NOW`-anchored service. | L408-L520 | [_control_plane.py](agents-remember/mcp/tests/_control_plane.py) |
+| The source-aware queue projection under test. | L47-L152 | [control/queue_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/queue_projection.py) |
+| The withdrawal + bounded recovery authority (900 s lease, `sweep_recoveries` expiry sweep at L651) and the `ControlRequest` it is addressed by. | L121-L706 | [control/withdrawals.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/withdrawals.py) |
+| The shared fake-topology harness with the `NOW`-anchored service. | L436-L520 | [_control_plane.py](agents-remember/mcp/tests/_control_plane.py) |
 
 ## Cross-Repo References
 
@@ -85,6 +93,17 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the withdrawal authority, the harness
+  control client, and the ref minter all moved their loose arguments into parameter objects, so
+  this suite now calls `withdrawals.*` through `ControlRequest`, `submit_control_prompt` through
+  `ControlSubmission`, and `mint_ref` through `RefBinding` + `RefTarget`. Added a Logic paragraph
+  naming those call shapes (the forgery battery in particular now varies a `RefBinding`, not a
+  keyword) and re-anchored the line references the same commit moved: `QueueProjectionTests` is
+  L51 (was L47), `WithdrawalRecoveryTests` is L211 (was L202),
+  `test_recovery_lease_expiry_disposes_content` is L505 (was L465), `queue_projection.py` is
+  L47-L152, `withdrawals.py` is L121-L706, and the `NOW`-anchored `ControlHarness` is L436-L520.
+  No test was added, removed, or renamed and the privacy, one-winner, and frozen-clock-expiry
+  assertions are untouched.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the queue/withdrawal/
   recovery suite — complete never-bodies truth, cockpit-only withdrawal race, opaque discovery +
   authenticated fetch/ack, journal-of-last-resort recovery, forgery battery, and the untouched

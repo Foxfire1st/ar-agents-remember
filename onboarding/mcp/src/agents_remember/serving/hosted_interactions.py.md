@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/hosted_interactions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,8 +51,20 @@ Hosted interactions now serialize structured answers for harness adapters and re
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+Gate creation now uses the control-plane gate parameter objects: the `agent-question` gate is opened
+with a positional kind plus `anchor=GateAnchor(lifecycle_id=…)` and
+`request=GateRequest(packet=…, required_decision=…)` instead of flat keywords. The gate contents are
+unchanged — the same exact session/interaction identity, prompt, choices, raw detail and question
+list ride the `adapterInteraction` packet, and the required decision is still the interaction's own
+choices, falling back to `["approve", "reject"]`.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `GateAnchor` / `GateRequest` call shape for the agent-question gate; gate contents unchanged.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned null-requestId/vendor-correlation
   completion projection, explicit pending/unconsumed inbox semantics, and loud correlation failures.

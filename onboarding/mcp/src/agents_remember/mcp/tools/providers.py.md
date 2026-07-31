@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/providers.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879`                                        |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                        |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -37,9 +37,15 @@ retention, secrets redacted) and returns a compact builder result with
 watchers report is written **before** `summarize_command_logs` mutates the
 payload, so the report keeps full logs while the inline response stays lean.
 
-All CGC and GrepAI query builder functions accept and forward an optional
-`worktree` parameter to the controller layer; their result payloads are not
-compacted because the search/analysis results are the point of the call.
+All CGC and GrepAI query builders route their execution knobs through one
+`ProviderQueryScope(worktree, dry_run, timeout)` (260731-EFA-L2; `WORKSPACE_QUERY_SCOPE` is the
+shared default). `worktree` still targets a worktree's isolated stack by name. The GrepAI pair
+additionally take `GrepaiSearchQuery` / `GrepaiTraceQuery` (the query, limit/depth, output format)
+and `repos: GrepaiRepoScope(repo_ids, all_repos)` (`ALL_INDEXED_REPOS` by default), while the CGC
+builders keep `repo_id` plus their one domain argument positional. Query result payloads are not
+compacted — the search/analysis results are the point of the call.
+
+The published MCP signatures stay flat; `mcp/registration/code_search.py` builds these objects.
 
 ### Invariants And Boundaries
 
@@ -54,6 +60,11 @@ compacted because the search/analysis results are the point of the call.
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the eight query builders took `scope: ProviderQueryScope`
+  in place of the separate `worktree`/`dry_run`/`timeout` keywords, and the GrepAI pair took
+  `GrepaiSearchQuery`/`GrepaiTraceQuery` plus `repos: GrepaiRepoScope`. The three provider-control
+  builders and all compaction are unchanged. Verification metadata pinned until closeout stamps the
+  L2 code commit.
 - 2026-06-10T05:30+02:00 — `provider_diagnostics_payload` and `provider_watchers_payload` file their full payloads via `write_tool_report` and return compact builders (`compact_diagnostics_payload` drops rawStatus/currentState bodies; `compact_watchers_payload` keeps per-provider outcomes only) with `reportPath` inline. Compaction lives in this MCP tool layer only — internal consumers keep full data.
 - 2026-06-01T00:00+02:00 — `provider_watchers_payload` now applies `summarize_command_logs`; all CGC/GrepAI builders gained a `worktree` parameter forwarded to the controller.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the provider/query payload builders.

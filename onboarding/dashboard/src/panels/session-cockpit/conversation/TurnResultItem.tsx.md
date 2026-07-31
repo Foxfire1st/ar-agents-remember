@@ -25,7 +25,7 @@ unknown-vendor item is preserved as LABELED evidence — never guessed into a me
 
 ### Logic
 
-- `labelFor` (L31) maps `kind` to a `{ text, toneKey }`: `error` → `error`; `turn-result` splits on
+- `labelFor` (L27-L44) maps `kind` to a `{ text, toneKey }`: `error` → `error`; `turn-result` splits on
   phase into `interrupted` / `turn failed` / `turn complete`; `notice`/`telemetry` → neutral;
   `unknown-vendor` → `unknown vendor event`. The tone classes (L22) carry neutral/error/interrupted/
   done color, always alongside the text label. **FB7.4/A8 (260718-CHATS-L5P):** the label is now a dim
@@ -75,6 +75,10 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. `labelFor` is
+  the `switch (item.kind)` reader at L27-L44 (the old single-line L31 landed inside the
+  `turn-result` case, not on the definition); the range now covers the whole function, whose kind →
+  `{ text, toneKey }` mapping is unchanged.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7.4/A8 flow-line restyle — the
   turn-boundary label is now `· turn complete` dim lowercase (tone class keeps the color), replacing the
   boxed uppercase web chip. Kind mapping + unknown-vendor evidence preservation unchanged. Verification

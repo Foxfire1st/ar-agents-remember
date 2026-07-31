@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_installed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,6 +87,15 @@ No neighboring repository participates in this installed-runtime suite.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 only folded call-site arguments into
+  parameter objects — `ConversationOpenService(LibraryBinding(runtime=…, shared=…, authorization=…),
+  library=…)`, `service.open(harness, key, OpenRequest(request_id=…, expected_identity_digest=…,
+  cwd=…, launch_context=…))`, `retire_entry(catalog, host, entry, SeatClosure(at=…, by_session=…,
+  reason=…, edge=…))` and `hosted_session_readiness(…, wait=ReadinessWait(seconds=0.0))` — plus one
+  `ConversationScope` reflow. All eight opt-in tests, their exact skip reasons, the codex/pi
+  end-to-end identity, replay and retirement proofs, and
+  `test_installed_claude_library_gates_on_contract_not_version` are unchanged, and this card names
+  none of the keywords that moved.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the Claude gate framing for the R4
   removal — `test_installed_claude_library_gates_on_contract_not_version` replaces the version-mismatch
   fail-closed description; claude stays `unverified` for a contract/never-probed reason, not an

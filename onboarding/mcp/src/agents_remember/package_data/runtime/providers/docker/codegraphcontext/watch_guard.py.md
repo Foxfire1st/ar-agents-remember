@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-09T22:10+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../requirements/codegraphcontext.txt.md`                              |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The guard waits for a genuine PONG, clears poisoned graph keys below the threshold, and execs cgc with the original arguments. | L1-L115 | [watch_guard.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
+| The guard waits for a genuine PONG, clears poisoned graph keys below the threshold, and execs cgc with the original arguments. | L41-L106 | [watch_guard.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
 | The CGC Dockerfile copies the guard to `/usr/local/bin/cgc-watch-guard.py` during runner image build. | L13-L16 | [Dockerfile](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
 | The watcher Compose template sets the guard as the watcher service entrypoint. | L14-L22 | [codegraphcontext.watcher.yaml.tmpl](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
 
@@ -77,5 +77,19 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is required; the guard only talks to the managed FalkorDB backend inside the Compose network. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 line citation that ran past the end of
+  `watch_guard.py` (cited L1-L115; the file is 110 lines). Narrowed it to L41-L106, the exact span
+  the claim describes: `wait_for_ready` (L41-L53), `indexed_file_count` (L56-L69),
+  `clear_poisoned_graph` (L72-L85), and `main` ending at the `os.execvp("cgc", ...)` call on L106.
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py`
+  since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 2
+  line(s), joining implicitly concatenated string literals back onto single lines. Checked by
+  parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds.
 
 - 2026-06-09T22:10+02:00: Created with the watcher self-heal entrypoint for the CGC persistence-and-readiness task (2.5.0).

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T22:36+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,14 @@
 `core.py` owns CodeGraphContext lifecycle settings and layout derivation.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Layout Call Site
+
+`cgc_layout_from_args` now builds the layout as `cgc_runtime_layout(CgcRepo(coordination_root=…,
+repo_id=…, code_repo_root=…))` — the three manual-override arguments the command requires, wrapped
+in the repo bundle the layout builder takes. No instance/watcher/backend override is passed, which
+is what selects conventional placement. Behaviour is unchanged, including the
+`--repo-id`/`--code-repo-root` requirement check that precedes it.
 
 ### Logic
 
@@ -55,6 +63,9 @@ runner image/build/lock/container settings for CGC command execution.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `cgc_runtime_layout`'s new
+  signature (`CgcRepo` bundle). Same resolved layout. Verification metadata pinned until closeout
+  stamps the L2 commit.
 - 2026-07-06T22:36+02:00 — 260703-L13 ride-along: the three `cgc_settings_from_file` call
   sites dropped the `coordination_root` argument (the implicit coordinator-settings fallback
   was deleted; explicit `--from-settings` behavior unchanged, manual override path

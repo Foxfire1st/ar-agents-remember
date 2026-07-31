@@ -90,7 +90,7 @@ tears down and reconnects the data subscription correctly.
 - **`screenReaderMode` (R2), applied LIVE** (L149-L155, L168): a dedicated effect mutates
   `term.options.screenReaderMode` on the existing instance — never a teardown/reconnect; the
   creation option seeds from a ref so the connect effect needn't depend on it.
-- **`renderer` (R1 / master OQ-B)** (L190-L212): `"dom"` (default — the measured baseline) or
+- **`renderer` (R1 / master OQ-B)** (L121, L134-L136, L274-L296): `"dom"` (default — the measured baseline) or
   `"webgl"`, which lazily imports `@xterm/addon-webgl` (its own code-split chunk) and demotes
   itself back to DOM on load failure, constructor throw, or `onContextLoss` — never a dead pane.
   `renderer` joins the effect deps; it is constant at every current call site, so no new teardown
@@ -100,7 +100,7 @@ tears down and reconnects the data subscription correctly.
   `term.onTitleChange`, and `parser.registerOscHandler(133)`/`(9)` — the OSC handlers `return
   false` (observe only, never swallowing the sequence from other handlers). PtySurface wires them
   ONLY for legacy-raw panes; held in refs so changing identities never re-run the effect.
-- **`keyEventFilter`** (L173-L177): when provided, `term.attachCustomKeyEventHandler` gives the
+- **`keyEventFilter`** (L141-L143, L218-L226): when provided, `term.attachCustomKeyEventHandler` gives the
   caller a veto — PtySurface's `reservedChordFilter` returns false only for the BOUND reserved
   set, so a reserved chord is never consumed by (or leaked into) the pane even when the
   window-capture tinykeys layer is inactive.
@@ -185,6 +185,14 @@ the last fitted visible box, corrects only genuinely overflowing rows, and does 
 PTY winsize on a keep-alive re-show; disposal is synchronous after all listeners are detached.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations. `renderer`
+  cited L190-L212, which is now the serving-boot reattach effect and the xterm constructor; the
+  prop default is L121, its typed doc L134-L136, and the lazy `@xterm/addon-webgl` escalation with
+  its load-failure / constructor-throw / `onContextLoss` demotion is L274-L296. `keyEventFilter`
+  cited L173-L177, now unrelated refs (`termRef`, `screenReaderModeRef`); the prop contract is
+  L141-L143 and the `attachCustomKeyEventHandler` veto that consults `keyEventFilterRef` is
+  L218-L226.
 
 - 2026-07-24T13:17:17Z — Curator: corrected xterm copy/interrupt, selection, refit, and cleanup
   invariants; verification fields remain pre-commit.

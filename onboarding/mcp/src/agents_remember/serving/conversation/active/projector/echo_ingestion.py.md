@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,8 +59,19 @@ No Domain Documentation source is configured.
 
 No meaningful cross-repository references found.
 
+## 260731-EFA-L2 Current Delta
+
+The constructor is now `EchoIngestion(spine, readers)` — the shared machinery arrives as one
+`SessionProjectionSpine` and the transcript reader as part of the one substitutable `BridgeReaders`
+set (see [wiring.py](wiring.py.md)). The drain loop was split into `_zip_entry` (advance one
+transcript entry against the pending frames) and `_drain_one_turn_body` (close one open turn and
+flush its buffered frames); the zip/turn semantics themselves are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: constructor now takes `SessionProjectionSpine` + `BridgeReaders`; drain loop split into `_zip_entry` / `_drain_one_turn_body`.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the Claude
   echo-zipper sidecar after projector decomposition. Verification metadata remains blank until
   commit.

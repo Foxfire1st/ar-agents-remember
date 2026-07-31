@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T18:45+02:00                      |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                      |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -23,7 +23,7 @@ out and becomes cleanable instead of being held alive by its own keepalive.
 
 ## Code Commentary
 
-`AmbientLifecycle(store, *, heartbeat_seconds, ttl_seconds, clock, id_factory)`
+`AmbientLifecycle(store, *, timing=None, clock, id_factory, served_store=None)`
 holds the single `current: LifecycleState | None` under a `threading.Lock`; all
 state mutation and emission run under that lock because the heartbeat thread and
 the request thread both append to the same single-writer per-lifecycle log.
@@ -107,8 +107,13 @@ alive) whenever `_inactive_seconds_locked()` exceeds `_inactivity_cutoff_seconds
 (`INACTIVITY_CUTOFF_SECONDS`, 10 min), and resumes the moment a real event resets the clock.
 `_inactive_seconds_locked()` is the age of `self._last_activity_iso`, which `_emit_locked`
 stamps for every kind except the module-level `_HEARTBEAT_KIND` (heartbeats are liveness
-theater, so they never refresh it). The constructor takes `inactivity_cutoff_seconds`
-(default `INACTIVITY_CUTOFF_SECONDS`) so tests can pin the cutoff. Net: a parked lifecycle
+theater, so they never refresh it). Since 260731-EFA-L2 the cutoff is pinned through the frozen
+`AmbientTiming(heartbeat_seconds, ttl_seconds, inactivity_cutoff_seconds)` parameter object rather
+than three separate constructor keywords — the three durations are one timing policy (a heartbeat
+longer than the TTL keeps nothing alive), and passing `timing=AmbientTiming(...)` is how a test
+overrides any of them; omitting it takes all three module defaults. The constructor still unpacks
+them onto `_heartbeat_seconds` / `_ttl_seconds` / `_inactivity_cutoff_seconds`, so every internal
+read is unchanged. Net: a parked lifecycle
 stops beating and its dashboard log ages out under `event_retention`'s inactivity TTL instead
 of being kept alive forever by its own keepalive.
 `_reap_stale_fleeting` is the project-and-prune TTL sweep — it deletes the log
@@ -185,6 +190,13 @@ existing seam rather than adding a second one.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  the `AmbientLifecycle` constructor's `heartbeat_seconds` / `ttl_seconds` /
+  `inactivity_cutoff_seconds` keywords were replaced by one frozen `AmbientTiming` parameter
+  object passed as `timing=` (defaulting to `AmbientTiming()`, i.e. the same module constants).
+  Callers that pinned a duration for tests must now build an `AmbientTiming`. Nothing about the
+  state machine, the emission path, the ticker or the TTL sweep changed. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added a read-only `root` property
   (`self._store.root`) so `mcp/tools/base.py`'s `_tool_payload` choke point can resolve the observer
   root and surface a stale-supervisor banner on any tool call without its own `McpRuntimeConfig`.

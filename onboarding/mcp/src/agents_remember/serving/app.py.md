@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,6 +41,72 @@ slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 
 ## Code Commentary
 
+### 260731-EFA-L2 Current Delta — the file's shape changed
+
+Read this before anything below it. `create_app` used to be a ~1000-line closure in which every
+route handler, every background loop, and every helper was a nested function capturing `config`,
+`projector`, `catalog`, `host`, `paster` and friends from the enclosing scope. It is now a thin
+composer, and the handlers are module-level functions that take what they need. Nothing about the
+wire contract changed — same paths, same status codes, same bodies — but *every* description below
+that says "the route does X inside `create_app`" now means "the module-level `_x_response` function
+does X, and a four-line nested route handler calls it".
+
+**`create_app(config, *, cadence, replay, live_inputs, collaborators)`** — the six loose keyword
+arguments became four named concepts:
+
+- **`ProjectionCadence`** (`cadence.py`, `DEFAULT_PROJECTION_CADENCE`) — `interval` (the floor
+  between projector ticks) and `heartbeat` (the ceiling on staleness when nothing changes). One
+  pacing decision; setting one without the other is how a "fast" projector serves hour-old state.
+- **`ProjectionReplay`** (`projector.py`, `LIVE_PROJECTION_CLOCK`) — the `now` clock and the
+  `before_tick` feeder, i.e. the sim seam.
+- **`LiveProjectionInputs`** (`INFERRED_LIVE_INPUTS`) — the three live world-input toggles
+  (`provider_state`, `landing_state`, `change_watch`), each `None` = infer. `.resolved(replay)`
+  settles them against the replay seam in one place: a feeder means sim, so off. They must move
+  together — the sim feeder only writes *inside* a tick, so a change-gated loop would never wake,
+  and answering the question three times independently is how a replay app ends up half-live.
+- **`ServingCollaborators`** (`OWNED_SERVING_COLLABORATORS`) — the four injectable long-lived
+  objects (`terminal_host`, `terminal_catalog`, `terminal_paster`, `harness_capability_catalog`);
+  `None` on any field constructs the real one. They are one value because substituting them is one
+  decision: a host paired with someone else's catalog observes sessions that do not exist.
+
+**`_ServingRuntime`** is the frozen bundle the app is built around (config, projector, catalog,
+host, paster, liveness clock/config, capability catalog, stores). It replaced the closure capture:
+every module-level handler and loop takes `runtime` as its first parameter, and
+`runtime.observer_root` is the property every durable control-plane store is opened under.
+
+Route registration is grouped into four module-level registrars, each with a one-line statement of
+what it owns: `_register_projection_routes` (the read side — the projection once, tailed, and the
+raw event river), `_register_action_routes` (the write side the developer drives — the gate return
+channel and the operator inbox), `_register_terminal_session_routes` (attaching to a live pane, and
+what there is to attach to), `_register_terminal_control_routes`. Background loops are likewise
+module-level: `_metrics_loop`, `_supervisor_loop`, `_malloc_trim_loop`,
+`_workspace_river_compaction_loop`, composed by `_serving_lifespan`.
+
+**Two duplicated request-shape guards were deleted, not weakened.** Request validation lives once,
+in `actions.py`, and app.py now states that it is downstream of it:
+
+- `_recorded_gate_decision` no longer re-checks "gate-id-only decisions require gateId" (the old
+  400 `missing-gate-id`). `actions._gate_decision_outcome` refuses a decision naming neither a
+  lifecycle target nor a gate id with 400 `missing-target` and never builds a `GateDecisionIntent`
+  for that shape, so every intent reaching this function is addressed. The remaining `assert
+  decision.gate_id is not None` documents the surviving case: the gate-id-only cancel.
+- `_dismissal_response` no longer re-checks `intent.lifecycle_id is not None or intent.kind ==
+  "actionable-drift"` before writing the acknowledgement row; it is a plain `else`.
+  `actions._dismiss_action_outcome` already refuses an unscoped acknowledgement with 400
+  `missing-lifecycle`, so every intent reaching here is scoped.
+
+Other call-shape updates made here: `evaluate_action(...)` is called with one
+`ActionEvaluationContext`; gate decisions carry one `GateVerdict` (decision/by/via/note) into
+`gate_decide_payload` / `gate_decide_for_lifecycle`; `TerminalHost.ensure` takes a
+`TerminalSessionSpec`; and the opener is called as `open_terminal_session(runtime=
+HostedSessionRuntime(catalog=…, host=…), session_id=…, launch=TerminalLaunchRequest(…),
+provenance=SpawnProvenance(…))`. `_terminal_entry_payload` is the one place the catalog facts every
+open/conflict answer repeats are built; `_seat_ref` is the one place the three facts retire
+authority is decided from (who, on which leaf, in which role) are assembled.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source
+behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ### FEUI-L9R Reviewed Candidate Delta
 
 `GET /api/harnesses` now returns only the server-owned pre-session discovery facts `id`, `name`,
@@ -68,10 +134,13 @@ leaves add behavior without touching `create_app`.
 
 ### Logic
 
-`create_app` constructs the shared projector, terminal/catalog/liveness services, supervisor and
-metrics loops, then registers HTTP, SSE, WebSocket, and delegated route modules before the static
-mount. Request handlers stay composition-focused: domain behavior remains in the serving modules
-and stores they call.
+`create_app` resolves its four composition values (cadence, replay, live inputs, collaborators),
+constructs the shared projector and the terminal/catalog/liveness services, freezes them into one
+`_ServingRuntime`, installs `_serving_lifespan` (which primes the projection, starts the background
+loops, and stops them cleanly), then calls the four route registrars and the delegated route modules
+before the static mount. Request handlers stay composition-focused: each nested handler is a thin
+call into a module-level `_*_response` function that takes `runtime`, and domain behavior remains in
+the serving modules and stores they call.
 
 ### 260714-ACPUI-L4 Native Capability And Control Composition
 
@@ -132,20 +201,24 @@ The serving lifespan now runs the startup-only workspace-river compactor before 
 
 L16 review follow-up (L16R-1): the terminal-open route loads the effective harness registry ONLY when the request resolves a harness (kind=harness or an explicit harness id) — a malformed agentic settings file fails the launches that use it, never a plain scratch terminal.
 
-`create_app(config, *, interval=1.0, heartbeat=None, now=None, before_tick=None,
-refresh_provider_state=None, refresh_landing_state=None, watch_changes=None,
-terminal_host=None, terminal_catalog=None, terminal_paster=None)`
-constructs a `Projector` (threading `now`/`before_tick` straight through — the **sim seams**;
-both default to live behaviour). **260712-PTS-L3:** `interval` is the fast-path projection cadence
-floor and `heartbeat` bounds quiet-world `/api/state` staleness (default
-`DEFAULT_HEARTBEAT_SECONDS`, 15s); `watch_changes` defaults to `before_tick is None` — exactly like
-the provider/landing refreshers — so LIVE serving gets a `ProjectionInputWatcher(config)` injected
-as the projector's `change_watcher` (change-driven + heartbeat waking) while `--sim` replay stays
-time-driven (the sim feeder only writes *inside* a tick, so a change-gated loop would never wake).
-It also builds a `TerminalHost` (`terminal_host` defaults to a fresh one;
+`create_app(config, *, cadence=DEFAULT_PROJECTION_CADENCE, replay=LIVE_PROJECTION_CLOCK,
+live_inputs=INFERRED_LIVE_INPUTS, collaborators=OWNED_SERVING_COLLABORATORS)`
+(see the 260731-EFA-L2 delta above for the four concepts; the paragraph below describes the same
+behaviour under the old keyword names, which no longer exist)
+constructs a `Projector` (threading `replay.now`/`replay.before_tick` straight through — the **sim
+seams**; both default to live behaviour). **260712-PTS-L3:** `cadence.interval` is the fast-path
+projection cadence floor and `cadence.heartbeat` bounds quiet-world `/api/state` staleness (default
+`DEFAULT_HEARTBEAT_SECONDS`, 15s); `live_inputs.change_watch` defaults to `before_tick is None` —
+exactly like the provider/landing refreshers, and now resolved with them in one place by
+`LiveProjectionInputs.resolved(replay)` — so LIVE serving gets a `ProjectionInputWatcher(config)`
+injected as the projector's `refreshers.change_watcher` (change-driven + heartbeat waking) while
+`--sim` replay stays time-driven (the sim feeder only writes *inside* a tick, so a change-gated loop
+would never wake).
+It also builds a `TerminalHost` (`collaborators.terminal_host` defaults to a fresh one;
 tests inject a fake), a `TerminalCatalog` at `coordination_root/logs/dashboard/terminal-sessions.json`
-(`terminal_catalog` is test-injectable), and (L2) a `TerminalPaster` (`terminal_paster` defaults to a
-fresh one; tests inject a fake for the paste endpoint). Since **260707-HFX-L5** it also builds the
+(`collaborators.terminal_catalog` is test-injectable), and (L2) a `TerminalPaster`
+(`collaborators.terminal_paster` defaults to a fresh one; tests inject a fake for the paste
+endpoint). Since **260707-HFX-L5** it also builds the
 catalog-liveness wiring: `liveness_clock = now or utc_now` (ONE timestamp base per app instance —
 sim/replay wires its replay clock through liveness too, the L5R2 fix), one
 `TerminalCatalogLivenessConfig` (the code-default hysteresis knobs), and one
@@ -159,7 +232,7 @@ It wires a FastAPI `lifespan` that `prime()`s the projector
 and on shutdown cancels both tasks (awaiting each under `CancelledError` suppression) and calls
 `host.shutdown()`. Endpoints:
 
-When `refresh_provider_state` is left as `None`, live mode (`before_tick is None`)
+When `live_inputs.provider_state` is left as `None`, live mode (`replay.before_tick is None`)
 constructs a `ProviderStateRefresher`, while sim mode disables provider refresh so replayed
 fixtures stay deterministic. Tests can still force either branch explicitly.
 
@@ -395,7 +468,8 @@ otherwise-unchanged projection look changed.
   SPA mount cannot swallow them. The handlers live in `serving/files.py`.
 - `register_changeset_routes(app, config)` (operations-integration L3) registers the read-only
   `GET /api/changeset/{task,file-diff,master}` change-set routes immediately after the files routes and
-  still **before** `mount_static` (L711-L713). The handlers live in `serving/changeset.py`.
+  still **before** `mount_static` (registrars L711-L713; `mount_static(app)` at L733). The handlers
+  live in `serving/changeset.py`.
 - `register_notes_routes(app, config)` (agent-orchestration L9) registers the read-only
   `GET /api/notes/{list,read}` coordination-notes routes after the change-set routes and still
   **before** `mount_static`. The handlers live in `serving/notes.py`.
@@ -473,13 +547,16 @@ this app.
   never conflicts with the leaf's chat. `leaf_key` is opaque here (a qualified leaf id or a reserved
   `master:<…>` key flow identically); the binding is enclosure-independent and survives finalize, and a
   dead/exited session frees its slot because `active_for_leaf` gates on `status == "running"`.
-- **Sim is a seam, not a fork:** `now`/`before_tick` default to live; `cli.dashboard` passes a
-  replay clock + fixture feeder under `--sim` and the path is otherwise byte-identical.
+- **Sim is a seam, not a fork:** `replay` (`ProjectionReplay`, holding `now`/`before_tick`) defaults
+  to `LIVE_PROJECTION_CLOCK`; `cli.dashboard` passes a replay clock + fixture feeder under `--sim`
+  and the path is otherwise byte-identical. The clock and the feeder are substituted **together**,
+  by construction.
 - **Metrics sampling is observation, not control (containment R4):** the loop is read-only and
   dockerless-safe, runs on its own 30s cadence (never the projection tick), and must survive
   sampling failures — a failed pass logs and retries next interval; shutdown cancels it cleanly.
 - **The projection watcher is a live-only seam with a loud fallback (260712-PTS-L3):**
-  `watch_changes` follows the refresher pattern (`before_tick is None`), the watcher task's
+  `live_inputs.change_watch` follows the refresher pattern (`replay.before_tick is None`) and is
+  resolved with them by `LiveProjectionInputs.resolved(replay)`, the watcher task's
   lifecycle is owned by `Projector.run` (not the lifespan), and any watcher absence/failure
   degrades LOUDLY to the legacy fixed-`interval` ticking. The `heartbeat` (default 15s) is the
   `/api/state` staleness bound and the resolution of time-derived fields for a quiet world.
@@ -520,8 +597,8 @@ pass was available for this update.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The shared projector owns atomic registration/snapshot capture, publish-before-notify ordering, first-recovery snapshots, and the ETag revision. | L135-L178; L207-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| Deterministic serving regressions force the former handoff mutation, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The live change watcher `create_app` injects when `watch_changes` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
+| Deterministic serving regressions force the former handoff mutation, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | L430-L492 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The live change watcher `create_app` injects when `live_inputs.change_watch` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
 | The boot-time serving build stamp injected on `/api/state` + the SSE snapshot. | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
 | The raw `event` channel `/api/events` delegates to. | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | The pure action evaluation `/api/actions/{action}` delegates to. | [actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
@@ -532,7 +609,7 @@ pass was available for this update.
 | The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 | The shared hosted-session opener (L2) both this route and the `spawn_agent_session` tool compose. | L84-L174 | [terminal_opener.py](terminal_opener.py) |
-| The L4 route module owns harness-neutral advertise, launch selection, exact-session set, submit, reconcile, and liveness-first status mapping. | L64-L249 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The L4 route module owns harness-neutral advertise, launch selection, exact-session set, submit, reconcile, and liveness-first status mapping. | L140-L163; L194-L339; L539-L572 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 | The pre-session catalog owns bounded dynamic discovery and failed-refresh quarantine. | L80-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
 | The shared opener owns live launch-truth checks and the fenced read/probe/ensure/upsert transaction. | L170-L648 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
 | The serving leaf-ref adapter normalizes terminal open/attach leaf keys before catalog writes. | resolve_catalog_leaf_key | [leaf_ref_validation.py](leaf_ref_validation.py.md) |
@@ -575,6 +652,31 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: repaired 1 incomplete self-citation. The
+  change-set bullet cited `(L711-L713)` for a claim about ordering relative to `mount_static`, but
+  that span holds only the three registrar calls; `mount_static(app)` is at L733, so the citation
+  now names both. Two other flagged items in this card were checked and left alone: `(L2)` and
+  `(L5)` next to `collaborators.terminal_catalog` / `lifecycleId` are leaf identifiers
+  (260731-EFA-L2, …-L5), not line citations.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The
+  `harness_control_api.py` row's single `L64-L249` span no longer matches the module, which now
+  splits registration across three private registrars; replaced it with the three ranges that
+  actually hold the named material — `resolve_terminal_open_selection` at L140-L163 (launch
+  selection), L194-L339 (the registrar calls plus `_register_capability_routes`' harness-neutral
+  advertise and exact-session set-model/set-effort, and `_register_submission_routes`' submit and
+  reconcile), and `_running_control_entry` at L539-L572 (liveness-first status mapping, now
+  memoized). The `test_serving.py` row moved to L430-L492 — `StreamEventsTests`' interleaved-
+  projection handoff test, `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`
+  (which carries both the identical-republish suppression and the later tokens delta), and
+  `test_cancelled_waiting_stream_releases_its_subscription`. Both claims verified unchanged.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the structural rewrite — `create_app`'s four
+  composition values (`ProjectionCadence`, `ProjectionReplay`, `LiveProjectionInputs`,
+  `ServingCollaborators`), the `_ServingRuntime` bundle that replaced closure capture, the
+  module-level handlers/loops/registrars, and the two duplicated request-shape guards
+  (`missing-gate-id`, the dismissal scope re-check) deleted because `actions.py` already refuses
+  those shapes. Verification metadata stays pinned until closeout.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-line composition edit —

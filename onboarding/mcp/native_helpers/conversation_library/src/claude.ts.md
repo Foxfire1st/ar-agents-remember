@@ -99,8 +99,8 @@ drift — the observed versions are informational and the `list`/`read` operatio
 | --- | --- | --- |
 | The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | L102-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
 | The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. | L87-L182 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py) |
-| The library agent-grouping suite proves the helper's agent rows, marker degrade, and agent transcript read through the fake boundary. | L419-L656 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
-| The installed suite gates Claude on the live helper contract probe, not a version comparison; the observed runtime/helper version rides evidence informationally. | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The library agent-grouping suite proves the helper's agent rows, marker degrade, and agent transcript read through the fake boundary. | L415-L648 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
+| The installed suite gates Claude on the live helper contract probe, not a version comparison; the observed runtime/helper version rides evidence informationally. | L562-L590 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 
 ## Cross-Repo References
 

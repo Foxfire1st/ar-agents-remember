@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T16:30+02:00|
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -23,6 +23,32 @@ coordinator root, delegates provider watcher rebind orchestration to
 through package-local lifecycle functions.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Install Request And Tree-Sync Objects
+
+Three frozen dataclasses carry what an install is asked to do:
+
+- **`RuntimeTreeSync(source_root, destination_root, preserve=frozenset(), prune_ignore=frozenset(),
+  copy_ignore=frozenset())`** — one packaged runtime tree mirrored into the coordination root.
+  **The ownership rules travel with the pair of roots because they are what makes the mirror
+  non-destructive**: `preserve` names destination paths a prune never removes (user-owned
+  coordinator state), `prune_ignore` names paths pruned even when the packaged source still carries
+  them, and `copy_ignore` names source paths the copy never writes. Note the split — the old single
+  `ignore=` keyword meant different things to `prune_tree` and `copy_tree`, and now says which.
+  Signatures: `prune_tree(sync, summary, dry_run)` and `copy_tree(sync, summary, dry_run)`.
+- **`ProviderDependencyInstall(settings, timeout, enabled=True, no_cache=False)`** — the
+  provider-dependency step: whether it runs at all, the live provider settings it installs against,
+  the per-provider budget, and whether caches may be reused. `install_runtime(source_root,
+  coordination_root, dry_run, *, provider_deps, include_benchmarks=False)` takes it, and the
+  watcher rebind is derived from the same object because it is the same step's stop/start cycle.
+- **`RuntimeInstallRequest(dry_run=False, include_benchmarks=False, install_provider_deps=True,
+  no_cache=False, provider_deps_timeout=None, source_root=None)`** — what one install is asked to
+  do. `install_runtime_from_config(config, request)` takes it. `provider_deps_timeout` and
+  `source_root` stay unset for MCP callers: the timeout then falls back to the config's provider
+  setup cap and the source to the packaged runtime tree.
+
+Defaults are unchanged, including `dry_run=False` (act-by-default) on both entry points and the
+`no_cache` pass-through into the provider lifecycle install calls.
 
 ### Logic
 
@@ -109,6 +135,13 @@ clients reach it through the `runtime_install` tool.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915`/`PLR0913`
+  armed with no exemptions): added the frozen `RuntimeTreeSync`, `ProviderDependencyInstall` and
+  `RuntimeInstallRequest`; `prune_tree`/`copy_tree` take a `RuntimeTreeSync` (whose single
+  `ignore=` keyword became the explicit `prune_ignore` / `copy_ignore` pair), `install_runtime`
+  takes `provider_deps: ProviderDependencyInstall`, and `install_runtime_from_config` takes a
+  `RuntimeInstallRequest`. Preserved paths, pruned paths, copied files and the emitted payload are
+  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `install_runtime_from_config`
   now derives the rebind `provider_settings` from the live on-disk authority
   (`reload_provider_authority(config).apply(config)`) instead of the boot snapshot, so the

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_projector_claude_agents.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,10 +34,19 @@ run_in_background, subagent_type}`, and sidechain `tool_result` content crosses 
 string while the parent-carried Agent result keeps list content). Each test drives a
 distinct vendor session id so the session-keyed binding registry never leaks across cases.
 
-`ClaudeAgentLifecycleTests` (L219-L452) maps frames directly through
+`ClaudeAgentLifecycleTests` (L219-L466) maps frames directly through
 `claude.map_evidence_frame`: the full lifecycle (spawn tool_use → `task_started` →
 sidechain user/assistant/tool-cycle → `task_progress` → `task_notification` → Agent
-tool_result) binds identity and upserts one roster row — the spawning Agent call stays an
+tool_result) binds identity and upserts one roster row.
+`test_full_lifecycle_binds_identity_and_upserts_roster` is a six-line sequence over six
+`_assert_*` helpers, one per frame stage —
+`_assert_spawn_call_is_untagged`, `_assert_task_started_binds_the_roster_and_tags_the_call`,
+`_assert_sidechain_records_are_bound`, `_assert_task_progress_upserts_usage`,
+`_assert_task_notification_completes_the_roster_row`, and
+`_assert_tool_result_settles_the_bound_call`. They are stages, not independent tests: they share
+one session and the projector's per-session binding state, so they must run in that order (the
+ninth frame's settlement only means something because the second frame bound the identity it
+settles). Across the six: the spawning Agent call stays an
 untagged parent tool-call until `task_started` tags it and mints the roster
 (`claude-agent-<task_id>` with join key, role, description); sidechain items bind the
 agent ref; `task_progress` carries usage + last tool; the terminal `task_notification`
@@ -51,7 +60,7 @@ silently. `background_tasks_changed` registers an unknown task once — the rich
 authority owns the row afterward, and a late `task_started` still binds the join key onto
 the same row; an empty task set reconciles nothing.
 
-`ClaudeLaunchFlagTests` (L455-L477) pin the fail-closed `--forward-subagent-text` floor
+`ClaudeLaunchFlagTests` (L469-L491) pin the fail-closed `--forward-subagent-text` floor
 (fix-round finding 8): the flag is emitted only when the caller proved the floor
 (`forward_subagent_text=True`), never by default and never duplicated;
 `forward_subagent_text_supported` accepts 2.1.220/2.2.0 and refuses 2.1.219 and below,
@@ -92,7 +101,7 @@ the installed claude runtime as recorded in the module docstring.
 | --- | --- | --- |
 | The claude mapper under test: sidechain binding registry, task_* roster grammar, unknown-vendor degrade. | L32-L32 | [projectors/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
 | The launch-flag builder and floor verdict under test. | L23-L26 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| The reordered-binder engine companion (tool_result settling before task_started keeps the terminal phase). | L934-L1003 | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
+| The reordered-binder engine companion (tool_result settling before task_started keeps the terminal phase). | L982-L1050 | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
 | The flag-floor probe/relaunch flow at the adapter level. | L466-L510 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 
 ## Cross-Repo References
@@ -106,6 +115,16 @@ stream-json runtime probed live during implementation.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
+  `test_full_lifecycle_binds_identity_and_upserts_roster` was too complex for the tightened
+  `C901`/`PLR0915` gate and has been split: the test body is now six calls to six `_assert_*`
+  helper methods, one per frame stage, each carrying the comment that used to sit inline as its
+  docstring. Rewrote the `ClaudeAgentLifecycleTests` paragraph to name the six helpers and to
+  record that they are ordered stages sharing one session and the projector's per-session binding
+  state, not independent tests. Also corrected both class line ranges — `ClaudeAgentLifecycleTests`
+  L219-L466 (was L219-L452) and `ClaudeLaunchFlagTests` L469-L491 (was L455-L477) — for the lines
+  the split and the `ruff format` reflow moved. The mapped frames, the nine sequence numbers, and
+  every assertion are unchanged.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: created the sidecar for the new claude
   projector sub-agent suite (D6; fix-round finding 8 flag-floor pins). Verification is
   blank because the new source file is uncommitted; closeout owns its first source stamp.

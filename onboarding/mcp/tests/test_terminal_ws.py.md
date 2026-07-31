@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`       |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -182,7 +182,19 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260731-EFA-L2 Delta — launch args ride the resolved argv
+
+`test_launch_args_ride_the_resolved_argv` pins that caller-supplied launch arguments travel on the
+**resolved** argv rather than being appended somewhere later, so what the seat runs is what
+`resolve_terminal_launch` decided.
+
+Note on shape: the terminal fixtures now build `TerminalSessionSpec` / `TerminalSessionBinding`,
+`TerminalLaunchRequest` / `SpawnKnobs`, `ServingCollaborators` and `ProjectionCadence` objects
+instead of long keyword lists. The assertions are unchanged.
+
 ## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: replaced the stale pre-session control assertion with exact
   field-absence coverage; verification metadata remains pinned pending candidate closeout.

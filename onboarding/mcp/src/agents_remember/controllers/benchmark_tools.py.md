@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/benchmark_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,6 +16,24 @@
 and benchmark run MCP tools.
 
 ## Code Commentary
+
+### Parameter Objects (260731-EFA-L2)
+
+This module now owns the three concepts a benchmark call is made of, each with a shared default:
+
+- `BenchmarkSelection(target, case_id, benchmarks_root)` — which cases an operation acts on
+  (`ALL_CASES`: every case in the default benchmarks root).
+- `BenchmarkPreparation(dry_run, force_clone, skill_exposure_mode, provider_timeout)` — how each
+  selected case's workspace is built before it can run (`DEFAULT_PREPARATION`: plan-only, cached
+  clones, copied skills). `dry_run` lives here for **both** tools.
+- `CodexBenchmarkRun(prompt, variant, repetitions, jobs, skip_prepare, codex_sandbox)` — one Codex
+  execution over the prepared cases (`DEFAULT_RUN`). Its `codex_sandbox` default is
+  `benchmark_runner.CODEX_BENCHMARK_SANDBOX`, so the sandbox default lives beside the field it
+  belongs to rather than being restated at each call site.
+
+`codex_benchmark_prepare_tool(config, *, selection, preparation)` and
+`codex_benchmark_run_tool(config, *, selection, preparation, run)` unpack these onto the runner's
+own `BenchmarkPrepareRequest` / `BenchmarkRunRequest`.
 
 Both benchmark tools short-circuit with a disabled-tools error unless
 `config.benchmarks_enabled` is set (via `"benchmarksEnabled": true` in MCP
@@ -59,6 +77,11 @@ registration or provider launch.
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: added `BenchmarkSelection`, `BenchmarkPreparation` and
+  `CodexBenchmarkRun` (with `ALL_CASES` / `DEFAULT_PREPARATION` / `DEFAULT_RUN`) and moved both
+  controllers' keyword lists onto them; the `codex_sandbox` default now sits on
+  `CodexBenchmarkRun`. The `benchmarksEnabled` gate, coordination containment and live-provider
+  filtering are unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B4 (downstream): the workspace filter's
   `None` semantics flipped to fail-closed with the `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1`
   env escape; this controller's behavior is unchanged (it always passes the live set) — the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -32,7 +32,10 @@ the same classifiers.
 ### Conventions
 
 `__all__` enumerates the re-exported surface so the facade stays an explicit,
-backward-compatible boundary. `main()` is the CLI/dev facade; production callers
+backward-compatible boundary. Since 260731-EFA-L2 `main()` passes `--topology` /
+`--coordination-root` / `--settings-path` / `--onboarding-root` to
+`resolve_coordination_context` inside a `CoordinationHints(...)`, matching the resolver's current
+signature; no CLI flag changed. `main()` is the CLI/dev facade; production callers
 go through `summary.py` / the MCP controllers. `classify_source` routes to the
 external classifier via the shared `is_sidecar_storage` predicate from
 `coordination_context_resolver` (re-exported here); the older
@@ -68,6 +71,9 @@ external classifier via the shared `is_sidecar_storage` predicate from
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update only — `main()` now builds a
+  `CoordinationHints` for `resolve_coordination_context`. No flag, classifier or report changed.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-05-31T12:50+02:00 — Replaced the `sidecar_storage_label` import/re-export with the boolean `is_sidecar_storage` predicate from `coordination_context_resolver` (now used in `classify_source`), and dropped the no-longer-re-exported `is_file_level_onboarding` from the imports and `__all__`; corrected the Conventions note to name `is_sidecar_storage` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Extracted `_collect_drift_rows` and `_print_drift_rows` from `main` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Split into focused modules (`models`, `git_ops`, `discovery`, `entities`, `inline`, `sidecar`, `report`); `drift.py` is now a re-exporting facade with `classify_source` + `main`. Cleared the file-size hard limit, MI rank C, and the drift CRAP offenders. Metadata pending closeout refresh to the split commit.

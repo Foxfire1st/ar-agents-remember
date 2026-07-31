@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_route_index.py`                         |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-18T20:03+02:00                                 |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`             |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`             |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -29,6 +29,13 @@ explicit storage rules. The matrix proves ignored/generated contamination exclus
 and untracked path identity; symlinks independent of target state; sparse checkout and matched
 deletion behavior; gitlink exclusion; all eight ambient repository selectors; typed command,
 timeout, `OSError`, and `lstat` failures; non-UTF-8 filenames; and non-repository refusal.
+
+The contamination case is carried by two named helpers on `RouteIndexTests` rather than one long
+body: `_write_scoped_fixture` commits the in-scope tree (including a path-rule-excluded file that
+still carries a sidecar, plus a `.gitignore`), and `_assert_contamination_is_invisible_to_git`
+writes the artifacts a real checkout accumulates and pins which of them
+`git ls-files --others --exclude-standard` still offers — those are exactly the candidates the
+census has to reject on its own rules.
 
 Regular checkout, clean linked worktree, and selector-contaminated generation must produce complete
 byte-identical index sets. Every successful first pass is followed by a second pass that reports no
@@ -71,7 +78,7 @@ production code and real Git fixtures.
 | Source census validates the root and freezes tracked/untracked membership plus eligible paths. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
 | Rendering consumes one snapshot and writes only changed index bytes. | L101-L249 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 | Shared Git execution scrubs selectors and uses surrogate-preserving decoding. | L9-L42 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| Matrix sections cover contamination, symlink/sparse/gitlink identity, selectors, failures, non-UTF-8 paths, and convergence. | L199-L911 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| Matrix sections cover contamination, symlink/sparse/gitlink identity, selectors, failures, non-UTF-8 paths, and convergence. | L199-L907 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 
 ## Cross-Repo References
 
@@ -83,6 +90,14 @@ No sibling repository evidence is required; linked-worktree fixtures are created
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 self-file line citation. The matrix-sections row ended on the `unittest.main()` guard; it now runs L199-L907 — the shared `_write_scoped_fixture` helper through the last line of `test_non_git_source_root_fails_instead_of_walking_the_filesystem` in the 911-line file. Repeat convergence is proven by the `written == 0` re-build assertions at L503-L511, L808-L818, and L858-L876.
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the contamination test was split for
+  complexity into `_write_scoped_fixture` and `_assert_contamination_is_invisible_to_git`, so Logic
+  now names both helpers and what each one owns; the rest of the diff is `ruff format` reflow,
+  mostly the nested `with patch(...)` / `assertRaisesRegex(...)` pairs becoming parenthesized
+  context groups. All fourteen test methods keep their names and assertions, and the self-citation
+  L199-L911 was re-checked: it still starts at the contamination material and now ends exactly at
+  the file's last line.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: added the exact Git/path-rule census, ignored/generated
   exclusion, symlink/sparse/deletion/gitlink/non-UTF-8 identity, selector isolation, typed failure,
   linked-worktree equivalence, and zero-write repeat matrix.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/log_capture.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `4117c3d98eadb4265af6e55f3dd8f2552e8589a0`                |
-| lastVerifiedCommitDate | 2026-06-01T20:31:44+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,6 +24,21 @@ always drops the redundant `json` mirror, drops verbose plumbing keys
 `PGPASSWORD=` tokens from command-line arguments.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Two Named Reduction Steps
+
+`summarize_command_logs`'s per-node body is now two helpers, and the split is the rule:
+
+- `_shrink_logs(node, *, succeeded, failure_tail)` — empties this node's captured output on
+  success, caps it to the failure tail otherwise. **The keys stay present (as `""`)** so the
+  response keeps its shape either way.
+- `_drop_verbose_plumbing(node, *, succeeded)` — drops the always-redundant mirror keys, then
+  either the debug-only keys (on success) or the secrets inside them (on failure, via
+  `_redact_commands`). A failing node keeps the plumbing, redacted, **because that detail is what
+  makes the failure debuggable**.
+
+`summarize_command_logs` still mutates in place, still recurses into dict values and list items,
+and still returns the same payload.
 
 ### Logic
 
@@ -76,4 +91,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
+  exemptions): extracted `_shrink_logs` and `_drop_verbose_plumbing` from `summarize_command_logs`.
+  Identical reduction: same keys emptied, same keys dropped, same redaction on failure.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new log-capture response trimmer module.

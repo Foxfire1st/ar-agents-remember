@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`|
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastUpdated | 2026-07-31T15:32+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -130,7 +130,7 @@ the protocol-owned text vendor correlation on exactly one accepted inbox row in 
 session. Missing, non-text, unmatched, and ambiguous correlation evidence fails loudly. Completion
 records adapter delivery metadata on that same row while explicit inbox state remains `pending` and
 unconsumed; terminal state is `idle` / `immediate` without a queued replacement and
-`settling` / `queued` only for an actual replacement. Exact 2.1.207, 0.144.3, and 0.80.6 values
+`settling` / `queued` only for an actual replacement. Exact 2.1.207, 0.144.3, and 0.80.7 values
 remain fixture/smoke evidence, not production pins.
 
 Pinned Claude Code 2.1.207 JSONL fixtures, fake-transport conformance,
@@ -269,7 +269,70 @@ bundle to compare against.
 For the local gate itself, begin at `test_code_quality_check.py`: one test scans
 `.githooks/_gate.sh` and the CI workflow for the wrapper command with no threshold opt-out, and a
 second pins each hook to its tier (`pre-commit` → `fast`, `pre-push` → `full`) so neither can be
-silently promoted or demoted. For closeout enforcement, begin at
+silently promoted or demoted. Since 260731-EFA-L2 the same module also holds the gate's honesty
+contracts: `RadonIsAReportNotAGateTests` (exactly the two Radon steps are declared reports; the
+section header and the help text say so; a report step that exits non-zero still fails, because a
+tool that exits 0 on every finding can only exit non-zero when broken),
+`EveryEnforcingStepCanFailTests` (the `ruff` step routes **no** rule away from itself; `C901`,
+`PLR0911`, `PLR0912` and `PLR0915` are selected, unignored and proven to reject a real over-complex
+function at this repository's configuration; the format step is enforcing over the derived scope;
+and `test_the_complexity_baseline_and_its_gate_step_are_gone` keeps the deleted ratchet deleted),
+`ToolSignatureExemptionTests` (`PLR0913`'s one exemption covers the MCP registration directory and
+nothing else — an AST walk over every file the `pyproject.toml` pattern really resolves to proves
+each function there is a published `@server.tool()` declaration or its registrar),
+`CrapThresholdEnforcementTests` (every offender named, the clearing branch coverage inverted from
+the CRAP formula, "split it" when no coverage can clear it, and no exemption file anywhere),
+`GateScopeDerivationTests` (no hand-written scope constant may return; `git ls-files` reads the
+index; a file in no importable package still reaches both rails; an underivable scope refuses
+rather than certifying nothing; `main` reports the gate's verdict rather than owning one), and
+`PytestConfigurationTests` (strictness switches, `python_classes`, an **exact-count** cap of 5 on
+`filterwarnings` ignores, and two-way reconciliation between registered markers and the suite's
+real `AR_*` environment gates).
+
+**For "does the gate reach everything?", begin at `test_gate_scope.py`** — it is a different kind of
+test from the above. It does not read the wrapper's dataclasses; it recomputes `git ls-files`
+itself, builds the real `ruff` and `pyright` argument vectors, and asserts every tracked path
+appears in them, because a scope that is declared but not passed to a tool is not a scope. It also
+reads the frontend rails (`eslint.config.*` directories and `tsconfig*.json` includes, with a
+hand-written glob translator because `fnmatch`'s `*` crosses `/` and would silently widen every
+pattern). **It has no allowlists.** Three empty ones stood there mid-leaf and were deleted with the
+complexity baseline they were shaped like; every population they were built for was brought onto a
+rail instead (`.pi/extensions/tsconfig.json` for the Pi extension, `tsconfig.driver.json` for the
+Playwright/perf layer, `panda.config.ts` into `tsconfig.node.json`). All four failure messages say
+so: "There is no allowlist to record it in."
+
+**For the changed-lines coverage floor, begin at `test_diff_coverage.py`** — the 100% per-diff floor
+this leaf added, where every statement and branch arc on a changed line must be exercised and the
+failure names each uncovered line rather than reporting a percentage. Every test drives a **real
+throwaway git repository**: a fake `git diff` string would only prove the parser agrees with whoever
+wrote the fixture, not with git's hunk headers for an added file, a one-line deletion, a rename, or
+a working-tree-only change.
+
+**For "is any gated path actually reachable?", begin at `test_gated_integration_runner.py`.** Eight
+`AR_*` markers were registered and reconciled with the suite's skip decorators while **nothing
+applied or ran any of them** — a registered marker that decorates nothing selects zero tests, and
+pytest reports that as a successful run of an empty selection. This module reconciles registered
+markers, applied markers and `scripts/run-gated-integration.py` entries in both directions, and pins
+the two credential-free paths CI runs (`ar-run-pi-rpc-smoke`, `agents-remember-real-mcp-config`)
+against the six that stay behind the local runner.
+
+**For the generated harness trees, begin at `test_sync_harness.py`.** Its first test is the
+enforcing one: any drift — content **or** file mode — between `scripts/harness/` and the nine
+generated trees fails the suite, so drift is caught for a contributor who has not installed the
+hooks and in CI. Note the `sys.modules` registration in `load_script`: the generator defines
+frozen dataclasses, which resolve their defining module through `sys.modules` at class-creation
+time, so a path-imported script must be registered before `exec_module`.
+
+**There is no complexity ratchet.** `test_complexity_baseline.py`,
+`code_quality/complexity_baseline.py`, `quality/complexity-baseline.txt` and the wrapper's baseline
+step were all built during 260731-EFA-L2 and then **deleted** when the developer ruled that
+ratchets, baselines, grandfather lists and burn-down schedules are all forbidden. All 67 complexity
+offenders were fixed by extraction instead, and 274 of 293 long signatures were fixed by
+introducing 163 parameter objects. Do not reintroduce any of them — 
+`test_code_quality_check.py::EveryEnforcingStepCanFailTests::test_the_complexity_baseline_and_its_gate_step_are_gone`
+fails if you do.
+
+For closeout enforcement, begin at
 `test_worktree_closeout_quality_gate.py`, whose argument spy is the only thing standing between the
 mandatory gate and a silent no-op at an unannotated call site.
 
@@ -430,13 +493,50 @@ positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapsho
 same-lock resolve-plus-compact ordering, stale-snapshot non-resurrection, unchanged TTL fallback,
 persisted folded-id removal counts, body-free aggregate events, and silence on no-op sweeps.
 
-Pi boundary coverage proves three levels: pinned capability/framing and schema
-policy, fake-adapter queue/retry/compaction/settlement, extension UI, disconnect, cursor
-reconciliation, and no-resend behavior, and the real subprocess's correlation, malformed stdout,
-EOF ambiguity, and clean stop. The opt-in real smoke installs Pi 0.80.6 under a temporary
-prefix/HOME/cache and verifies `get_state` readiness without changing global tools.
+Pi boundary coverage proves four levels: the **recorded** capability/framing surface,
+fake-adapter queue/retry/compaction/settlement, extension UI, disconnect, cursor
+reconciliation, and no-resend behavior, the event mapper's frame classification
+(`test_pi_rpc_events.py`), and the real subprocess's correlation, malformed stdout,
+EOF ambiguity, and clean stop. The opt-in real smoke installs Pi **0.80.7** under a temporary
+prefix/HOME/cache, verifies `get_state` readiness without changing global tools, and re-records
+the capability fixture from a live probe.
+
+**The Pi capability recording is version-addressed, and that is the anti-drift mechanism.**
+`fixtures/pi_rpc/0.80.7-capabilities.json` is read as `f"{PI_RPC_VERSION}-capabilities.json"` by
+both `test_pi_rpc_real_smoke.py` (which defines the pin) and `test_pi_rpc_adapter.py` (which imports
+it). Bumping the pin without re-recording therefore fails **offline** with `FileNotFoundError` in
+the ordinary suite, rather than waiting on the network-gated smoke test that would re-record it; and
+`test_capability_fixture_documents_the_smoke_baseline` asserts exactly **one** `*-capabilities.json`
+exists, because a second recording leaves no rule about which is authoritative — which is why
+0.80.6 was renamed rather than copied. The old 0.80.6 recording was under-recorded: it listed 4
+commands where the adapter drives 7 (`abort`, `get_available_models`, `set_model`,
+`set_thinking_level` were all absent) and omitted the `model` state field that `parse_pi_state`
+reads to derive `model_key`. Every field is now produced by `_pi_rpc_capabilities.py`, which drives
+a real installed Pi — including a deliberate unknown-command negative control, without which
+"every recorded command was accepted" would prove nothing.
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+
+## Route-Wide: Call Sites Now Build Parameter Objects (260731-EFA-L2)
+
+`PLR0913` was armed and 274 of 293 long signatures were fixed **by extraction**, introducing 163
+parameter objects. About a hundred modules in this route changed as a consequence, and almost all of
+that change is one kind: a call site that used to pass a long keyword list now builds a parameter
+object first.
+
+**What a future agent should take from that:** those modules prove exactly what they proved before.
+A file card in this route that describes what a suite *asserts* is still true even though the
+module's diff is large; a card that quotes a *keyword argument* may not be. Examples corrected in
+this pass: `create_app(watch_changes=False)` is now `cadence: ProjectionCadence` /
+`live_inputs: LiveProjectionInputs` / `collaborators: ServingCollaborators`;
+`_provider_operation_result(launch_capable_provider=…)` is now
+`ProviderOperation(required_provider=…)`; `task_doc_tool` takes `TaskDocTarget` + `TaskDocEdit`;
+`create_operator_inbox_entry` takes `InboxMessage` / `InboxAddress` / `InboxPoster` /
+`InboxRouting`; `test_supervisor.py`'s `_entry(...)` no longer mirrors the catalog row's fields.
+
+The one place a long signature is still allowed is `mcp/src/agents_remember/mcp/registration/`,
+where the signature **is** the published MCP input schema — see
+`test_code_quality_check.py::ToolSignatureExemptionTests` and `test_mcp_registration_wiring.py`.
 
 ## Invariants And Boundaries
 
@@ -488,33 +588,39 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
+| Structured-conversation hostile matrices cover cursor, provenance, status, capability, operation, withdrawal, attachment, metric, and fixture authority. | L208-L1179 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
 | Foundation coverage pins two ports, child ownership (the active child's exact three routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | Active serving coverage pins canonical status/parity, per-harness mapper grammars, engine/store mechanics, and the real-socket production routes with the no-PTY source scan. | L362-L865 | [test_conversation_active_api.py](agents-remember/mcp/tests/test_conversation_active_api.py) |
 | Library coverage pins the ASGI status ladder, cursor/scope contracts, gate demotion, hostile port normalization, open idempotence/race/ownership, and the opt-in live gates and real opens. | L1-L9 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| Control coverage pins the interrupt ledger (ack≠settlement, idempotence, Finding 1/2 pi settlement), never-bodies queue truth with cockpit-only withdrawal recovery, the typed attachment lifecycle with on-disk spool proofs, read-only policy, evidence-bound telemetry, and the seventeen routes over a real wire — all over the shared `_control_plane.py` topology. | L1-L381 | [test_conversation_control_api.py](agents-remember/mcp/tests/test_conversation_control_api.py) |
-| Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
+| Control coverage pins the interrupt ledger (ack≠settlement, idempotence, Finding 1/2 pi settlement), never-bodies queue truth with cockpit-only withdrawal recovery, the typed attachment lifecycle with on-disk spool proofs, read-only policy, evidence-bound telemetry, and the production control routes over a real uvicorn wire — all over the shared `_control_plane.py` topology. | L1-L379 | [test_conversation_control_api.py](agents-remember/mcp/tests/test_conversation_control_api.py) |
+| Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | L113-L252 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 | Evidence contract coverage pins per-harness round-trips, no-leak, bounds, continuation, cross-domain/epoch rejection, provenance, and the resume channel. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | Installed-runtime coverage captures the redacted `substrate-evidence/*` fixture rows through the production seam with version-locked honesty. | L115-L362 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
 | Control-plane contract coverage pins the interrupt guards/replay, the paged never-bodies timeline with the 256-record budget edge, the asset schema/traversal/verification/construction batteries, the once-only recovery, and the strict client validators. | L252-L1575 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 | Installed-runtime control-plane coverage captures the redacted `control-plane/*` fixture rows through the production seam and enforces the Claude version-honesty posture. | L126-L384 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
-| Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | L1-L687 | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
-| Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | L1-L1180 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Public API epoch/conflict/certificate/privacy/status matrix. | L1-L700 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | L1-L675 | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
+| Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage: `HarnessControlConformanceTests` then `HarnessControlIpcTests`. | L1-L1958 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Public API epoch/conflict/certificate/privacy/status matrix, plus the bounded control-route liveness memo retention. | L1-L891 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
 | Native adapter exact-operation coverage is split by harness. | L1-L1 | [Claude tests](agents-remember/mcp/tests/test_harness_control_claude.py); [Codex tests](agents-remember/mcp/tests/test_codex_app_server_adapter.py); [Pi tests](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
 | Sub-agent regression coverage: the demux incident suite, both projector-agent suites, and the library agent-grouping suite share the vendored-shape fixture module. | L1-L37 | [_agent_wire_fixtures.py](agents-remember/mcp/tests/_agent_wire_fixtures.py); [test_codex_adapter_thread_demux.py](agents-remember/mcp/tests/test_codex_adapter_thread_demux.py); [test_conversation_projector_codex_agents.py](agents-remember/mcp/tests/test_conversation_projector_codex_agents.py); [test_conversation_projector_claude_agents.py](agents-remember/mcp/tests/test_conversation_projector_claude_agents.py); [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
-| Folded-state stream regressions force the handoff mutation, failed-prime snapshot/non-duplication/later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| Route-index regressions cover ignored/generated exclusion, symlink/sparse/gitlink/non-UTF-8 identity, ambient selectors, typed failures, and repeat convergence. | L199-L911 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| Folded-state stream regressions force the handoff mutation, failed-prime snapshot/non-duplication/later delta, and cancellation cleanup. | L430-L492 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Route-index regressions cover ignored/generated exclusion, symlink/sparse/gitlink/non-UTF-8 identity, ambient selectors, typed failures, and repeat convergence. | L199-L907 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 | Carryover full-apply regressions compare raw JSON/Markdown authority with typed parser semantics and prove exact zero mutation for every refusal. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
-| Worktree fixtures install explicit supported external-memory storage settings so closeout tests exercise real write authority. | L224-L252 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Worktree fixtures install explicit supported external-memory storage settings so closeout tests exercise real write authority. | L234-L262 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 | Placement succeeds only for a bundle carrying the current build-input fingerprint; every refusal path writes nothing, and `--check` fails through the process boundary. | L63-L268 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
-| The static surface is pinned in both states without reading the repository's own bundle, including method parity against the real `StaticFiles` mount. | L29-L143 | [test_static.py](agents-remember/mcp/tests/test_static.py) |
+| The static surface is pinned in both states without reading the repository's own bundle, including method parity against the real `StaticFiles` mount. | L29-L144 | [test_static.py](agents-remember/mcp/tests/test_static.py) |
 | The placement step under test refuses an absent or non-current `dist` and writes the sidecar only after the tree. | L107-L166 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 | The production build runs Vite and recreates `dashboard/dist`, making Vite the physical-byte owner and the source of the compiled fingerprint. | package L6-L10; config L36-L66 | [dashboard/package.json](agents-remember/dashboard/package.json); [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
 | The root `.gitattributes` `blank-at-eol` exception still names `package_data/dashboard/assets/*.js`, a path that is now git-ignored, so the rule is inert and its regression was removed. | L1-L3 | [.gitattributes](agents-remember/.gitattributes) |
-| Two tests hold the local gates to the wrapper after the hook split: the shared tiered body plus CI carry the command, and each hook is pinned to its tier. | L122-L149 | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
-| The closeout gate suite covers all three statuses and spies on the real argument passed from the unannotated closeout call sites. | L38-L250 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| Two tests hold the local gates to the wrapper after the hook split: the shared tiered body plus CI carry the command, and each hook is pinned to its tier. | L109-L134 | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| Six further classes pin the gate's honesty: exactly two Radon steps are declared reports, every enforcing step can fail with the complexity rules at full strength and the deleted baseline kept deleted, `PLR0913`'s one exemption is held to published MCP tool declarations by an AST walk, CRAP is enforced by threshold alone, scope is derived rather than written down, and the pytest strictness/marker/warning contracts hold. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| An independent recomputation asserts the wrapper's real `ruff`/`pyright` argument vectors reach every tracked Python file, and that every tracked `.ts`/`.tsx` is both linted and type-checked. **No allowlists**: a file that cannot be gated is a change to a rail. | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
+| The 100% changed-lines coverage floor, driven against real throwaway git repositories: base resolution, hunk parsing for adds/deletes/renames/working-tree edits, per-line naming of uncovered statements and untaken arcs, and the wrapper exit code. | [test_diff_coverage.py](agents-remember/mcp/tests/test_diff_coverage.py) |
+| Every registered `AR_*` marker is applied to at least one test and reachable from the gated runner, in both directions; the two credential-free CI paths are pinned by name. | [test_gated_integration_runner.py](agents-remember/mcp/tests/test_gated_integration_runner.py) |
+| CRAP consumes branch coverage and refuses a report without branch measurement; a partially taken branch lowers a score a statement reader calls perfect. | [test_crap_calculator.py](agents-remember/mcp/tests/test_crap_calculator.py) |
+| Drift between `scripts/harness/` and the nine generated harness trees fails the suite, covering content and file mode. | L35-L108 | [test_sync_harness.py](agents-remember/mcp/tests/test_sync_harness.py) |
+| The closeout gate suite covers all three statuses and spies on the real argument passed from the unannotated closeout call sites. | L38-L222 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 
 ### Route Contract Review
 
@@ -567,6 +673,40 @@ repaired and remains a named follow-up.
 The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 8 cross-file line citations, each re-anchored on a read-back boundary. `test_conversation_control_api.py` L1-L379 (382-line file; also dropped the "seventeen routes" phrase — that count is pinned in `test_conversation_foundation.py`, not here); `test_conversation_runtime_composition.py` L113-L252 (was L106-L260 in a 252-line file); `test_harness_submission_authority.py` L1-L675 (was L1-L687 in a 678-line file); `test_harness_control.py` L1-L1958 (was L1-L1180; the file is 1961 lines and the IPC class runs to L1958); `test_serving_harness_control_api.py` L1-L891 (was L1-L700; extended the claim to name `ControlLivenessMemoRetentionTests` at L779); `test_serving.py` L430-L492 (the three `StreamEventsTests` the claim names, was L395-L457); `test_route_index.py` L199-L907 (fixture through the last test, off the `unittest.main()` guard); `test_static.py` L29-L144.
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator, **correcting and completing the mid-leaf entry
+  below**. `test_complexity_baseline.py` was deleted along with the whole complexity ratchet and its
+  file card removed; `test_gate_scope.py`'s three allowlists were deleted, so the routing paragraph
+  and evidence row that described them were wrong and are rewritten. Twenty-two further modules
+  joined the route and now have file cards: the gate suites `test_diff_coverage.py` and
+  `test_gated_integration_runner.py`; the Pi capability helper `_pi_rpc_capabilities.py` with its
+  recording `fixtures/pi_rpc/0.80.7-capabilities.json` (renamed from 0.80.6) and
+  `test_pi_rpc_events.py`; the serving suites `test_serving_app_routes.py`,
+  `test_serving_app_background_loops.py`, `test_serving_helper_behaviour.py`; the platform suites
+  `test_platform_edge_refusals.py`, `test_platform_long_tail.py`,
+  `test_packaged_assets_and_context_values.py`, `test_provider_runtime_helpers.py`; the conversation
+  suites `test_conversation_control_and_library_helpers.py`,
+  `test_conversation_control_projector_edges.py`,
+  `test_codex_adapter_thread_routing_and_registry.py`; the harness suites
+  `test_harness_control_runner_config.py`, `test_harness_logs_user_message_readers.py`,
+  `test_harness_submission_authority_adapter_contract.py`; the worktree suites
+  `test_worktree_and_observer_helpers.py`, `test_worktree_edge_paths.py`; plus
+  `test_mcp_registration_wiring.py` and `test_onboarding_integrity_edges.py`. Recorded the Pi
+  capability anti-drift contract, the branch-coverage CRAP change, and three pre-existing 1:1
+  fixture gaps closed. The route index is now strictly 1:1 at 210 files. Verification metadata
+  pinned to the leaf's reformat commit until closeout stamps the code commit.
+
+- 2026-07-31T06:30+02:00 — 260731-EFA-L2 curator (mid-leaf, partly superseded above): three new test modules joined this route —
+  `test_gate_scope.py` (the gate's scope is the tree, asserted against real argument vectors, with
+  shrink-only reason-bearing allowlists), `test_complexity_baseline.py` (the shrink-only complexity
+  ratchet in all four failing directions plus the `--write` cap asymmetry), and
+  `test_sync_harness.py` (drift between `scripts/harness/` and the nine generated trees, content and
+  mode). `test_code_quality_check.py` roughly doubled with four classes holding Radon-is-a-report,
+  every-enforcing-step-can-fail, scope derivation, and the pytest strictness/marker/warning
+  contracts. Rewrote the "local gate" routing paragraph accordingly and added five evidence rows.
+  Verification metadata pinned to the leaf's reformat commit until closeout stamps the code commit.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: replaced the Generated Bundle Whitespace Policy
   Gate with the Dashboard Bundle Placement Gate and added a Static Surface Gate. `test_sync_dashboard.py`

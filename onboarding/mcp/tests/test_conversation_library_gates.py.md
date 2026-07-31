@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No Domain Documentation source is configured. The repository sources are direct 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The gate registry, locked Codex version constant, and per-fingerprint cache under test. | L146-L192; L40 | [gates.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/gates.py) |
-| The installed-runtime suite re-proving the same gates on real harnesses. | L134-L152; L215-L230 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed-runtime suite re-proving the same gates on real harnesses. | L136-L153; L217-L231 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 
 ## Cross-Repo References
 
@@ -79,6 +79,14 @@ No neighboring repository participates in this gate suite.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
+  leaf diff. The only change is the local `_registry` helper handing `LibraryGateRegistry` a
+  `GateProbes(codex_probe=…, which=…)` parameter object instead of the two loose keyword
+  arguments, plus the matching import. Every test body is untouched, all eight method names
+  survive (including `test_version_drift_still_enables_codex_when_the_probe_passes`), the codex
+  probe and `which` resolver are still injected doubles under a different wrapper, and this
+  sidecar cites no line range into this file. The contract-probe-is-the-only-gate description and
+  both honesty invariants still read true against the current source.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the version-gate language for the R4
   removal — the suite now proves the CONTRACT PROBE is the only gate
   (`test_version_drift_still_enables_codex_when_the_probe_passes`: a drifted CLI version still enables

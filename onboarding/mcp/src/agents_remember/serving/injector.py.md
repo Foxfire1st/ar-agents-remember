@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/injector.py`               |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-10T13:03+02:00                                      |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -93,7 +93,23 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 Legacy injector and pane/log timing helpers remain available for offline diagnostics and ordinary
 surfaces, but hosted dispatch no longer imports them as an authority or fallback.
 
+## 260731-EFA-L2 Current Delta
+
+Dispatch delivery now calls the **explicit** paster method instead of switching on an optional
+argument: a row carrying a `dispatch_policy` goes to `paster.paste_dispatch(tmux_name, text,
+accepted=…, policy=…)`, and everything else to `paster.paste(tmux_name, text, submit=True,
+accepted=…)`. `paste()` no longer accepts `dispatch_policy` at all.
+
+That also removed a runtime guard: `paste()` used to raise `ValueError("dispatch paste requires a
+harness-log acceptance probe")` when a dispatch policy arrived without a probe. `paste_dispatch`
+now **requires** `accepted` in its signature, so the same rule is enforced by the type, not by a
+branch. A durable brief that cannot be proven accepted must still fail rather than be retried into
+a duplicate.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `paste_dispatch` vs `paste` split — the acceptance-probe requirement is now enforced by the signature instead of a runtime `ValueError`.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented removal of hosted log-flush/paste authority.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -25,6 +25,10 @@ commands now adapt parsed arguments into that request shape, print the returned
 payload, and return the service return code. The thin argparse-to-context
 adapter is `resolve_baseline_context(args)` (renamed from the package-generic
 `resolve_context`); it delegates to `resolve_request_context(request_from_args(args))`.
+`resolve_request_context` passes the request's `topology` and `coordination_root` to the resolver
+inside a `CoordinationHints(...)` (260731-EFA-L2) — the resolver no longer accepts
+`requested_topology=` / `coordination_root=` as individual keywords. `code_repository_name`,
+`workspace_root` and `code_repository_root` are still passed directly.
 
 ### Invariants And Boundaries
 
@@ -48,6 +52,9 @@ adapter is `resolve_baseline_context(args)` (renamed from the package-generic
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for the resolver's new signature —
+  `resolve_request_context` now wraps `topology`/`coordination_root` in a `CoordinationHints`.
+  Behaviour unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-05-31T12:50+02:00 — Renamed the argparse adapter `resolve_context` to `resolve_baseline_context` in the source; noted the new name in Logic (behavior-preserving, thin delegate to `resolve_request_context(request_from_args(args))`) (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Typed drift rows as `list[drift.DriftRow]`, normalized `topology` to `Literal['internal','external'] | None` at the argparse boundary, and added a ledger-path guard in `baseline_adopt`; behavior-preserving (commit `0549b28`).
 - 2026-05-24T02:47+02:00: Updated after drift imports moved under `memory_quality.integrity`.

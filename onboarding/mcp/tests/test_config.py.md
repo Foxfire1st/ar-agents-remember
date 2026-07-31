@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -93,6 +93,12 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 As of the 260703-L8 seam ruling the orchestration settings tests prove the parse path consumes requireReviewerVerdictAtSeams (the delegated handover rule comes back verdict-bound; non-seam rules untouched).
 
 ## Update History
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_config.py` since
+  the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 21
+  line(s) with no token change whatsoever. Checked by parsing both revisions and comparing the
+  abstract syntax trees (identical) and the comment tokens (identical), so no symbol, signature,
+  default, decorator, control-flow branch, docstring, or assertion this card describes has moved,and every claim this card makes about its own source still holds.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: `RetirementSettingsTests` now
   document the current `autoLandOnIntegration`/`autoLandOnFinalize` keys plus compatibility parsing

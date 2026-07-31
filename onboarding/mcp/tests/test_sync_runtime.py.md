@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_sync_runtime.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-08T11:53+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -64,8 +64,8 @@ No external documentation is needed for this repository-local test.
 | --- | --- | --- |
 | The tests load `scripts/sync-runtime.py` from the repository root despite its hyphenated filename. | L11-L21 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
 | The diff test verifies missing, extra, and changed file reporting. | L24-L46 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
-| The sync test verifies target replacement and cache-directory ignore behavior. | L48-L69 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
-| The target-boundary test verifies default targets are package-data-only and exclude harness starter package folders. | L71-L83 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
+| The sync test verifies target replacement and cache-directory ignore behavior. | L48-L71 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
+| The target-boundary test verifies default targets are package-data-only and exclude harness starter package folders. | L73-L85 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
 
 ## Cross-Repo References
 
@@ -76,5 +76,12 @@ No sibling repository evidence is needed for this test module.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/tests/test_sync_runtime.py` and moved the lines this card cites, so the Citations column no
+  longer pointed at the code its rows name. Corrected the ranges (L48-L69 → L48-L71; L71-L83 →
+  L73-L85). The behaviour described is unchanged — the file's AST is identical to the base
+  revision — this is a citation repair only. Verification metadata pinned until closeout stamps
+  the L2 commit.
 
 - 2026-06-08T11:53+02:00: Created onboarding for the focused runtime sync helper tests. Verification metadata is pending until the code commit exists.

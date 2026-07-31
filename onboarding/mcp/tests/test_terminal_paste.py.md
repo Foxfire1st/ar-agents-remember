@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_paste.py`                |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T13:03+02:00                            |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -114,7 +114,23 @@ No meaningful cross-repo references found.
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+## 260731-EFA-L2 Delta — the escalation ladder's failure arms
+
+Five tests covering what the paste ladder does when a step will not take:
+
+- acceptance on the **first** Enter climbs no rung of the ladder;
+- an unwritable buffer reports `undelivered` and **never presses Enter** — a blind Enter into a
+  seat whose buffer never took the text is how a wrong command gets submitted;
+- a refused Enter ends the ladder as **delivered but unsubmitted** (a distinct state, not a
+  failure);
+- a refused clear key **blocks the repaste rather than appending**, so a retry cannot concatenate
+  onto what is already in the buffer;
+- dispatch recovery reports failure when the verified repaste cannot be written.
+
 ## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round + case (f): replaced capture-echo tests

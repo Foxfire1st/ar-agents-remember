@@ -24,8 +24,8 @@ capture phase, active only while the sessions view is the visible view. Every ha
 
 ### Logic
 
-- `active` gates the whole effect (L27-L28): the hidden keep-alive layer never grabs keys;
-  `dispatch` rides a ref so rebinding never depends on render identity.
+- `active` gates the whole effect (L31-L32): the hidden keep-alive layer never grabs keys;
+  `dispatch` rides a ref (L27-L28) so rebinding never depends on render identity.
 - **Composed handlers** (L30-L37, L79-L87): one binding string can serve several zones with
   different actions (F6 = chrome region-cycle AND PTY exit-to-chrome), so handlers accumulate per
   chord string and at most one acts per event (`event.defaultPrevented` short-circuits).
@@ -89,6 +89,9 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the stale `active` self-citation. L27-L28
+  is the `dispatchRef` wiring, not the gate; the `active` guard is the effect's first statement, so the
+  bullet now cites L31-L32 for the gate and keeps L27-L28 on the ref clause it actually describes.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T19:30+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -70,8 +70,44 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 | CGC context behavior is grouped under the provider-owned context package. | [context overview](context/overview.md) |
 | CGC lifecycle behavior is grouped under the provider-owned lifecycle package. | [lifecycle overview](lifecycle/overview.md) |
 
+## 260731-EFA-L2 — The Seed Reads As Source → Target
+
+The behaviour recorded above — catch-up rather than teardown, unrelatable heads only refusing,
+explicit-only from-zero reindex — is unchanged. What changed is that `seed.py` now says it.
+
+**`_CgcSeedEnd` (frozen: `coordination_root`, `repo_id`, `repo_root`, `runtime_root`) names one end
+of a seed.** Source and target are symmetric, and the seed previously carried them as four
+interleaved pairs whose *argument order* was the only thing keeping the two ends apart — a
+transposition would have seeded the wrong direction silently. `_validated_seed_context(args, source,
+target)` now takes the two ends by name.
+
+Resolution is staged so a half-resolved pair cannot reach validation:
+`_seed_precondition_skip` answers "is there any reason to refuse before we read the source settings
+at all?" (returns the skip payload or `None`), then `_seed_locations` resolves the repo root and
+runtime root for both ends and returns either all four or the *first* side's skip payload — every
+one of the four lookups reports failure the same way, so the first payload wins.
+
+`setup.py` invokes lifecycle through `LifecycleCommand(provider=, action=, extra_args=,
+native_args=)` from `providers/setup_common.py` rather than positional provider/action strings; the
+type records that the provider CLI splits its arguments either side of the action (`extra_args`
+precede it, `native_args` are the action's own).
+
+The post-watcher catch-up in `provider_setup.py` is now three named stages rather than one
+straight-line function — `_seed_touch_plan` splits the divergence into paths a touch can re-index
+and *residual staleness it cannot* (deletions, the vanished half of a rename, paths absent from the
+checkout have no file left to touch and stay in the graph as phantoms until an explicit refresh),
+`_stale_index_skip` records a delta this run did not deliver, and `_deliver_seed_touches` claims
+`caughtUp` **only with zero residuals**. That last rule is the one not to break.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: seeding kept every rule and gained the vocabulary for
+  them — `_CgcSeedEnd` names source and target instead of relying on argument order,
+  `_seed_precondition_skip`/`_seed_locations` stage resolution so the first skip wins,
+  `setup.py` dispatches via `LifecycleCommand`, and the catch-up stage split into
+  plan/skip/deliver with `caughtUp` conditioned on zero residuals. Layout construction moved to
+  the `CgcRepo`/`CgcInstance`/`CgcWatcher`/`CgcBackend` bundles (see the context route).
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-07T19:30+02:00 — 260707-HFX-L2 route impact (index lifecycle): the seed's HEAD-mismatch
   refusal narrowed to UNRELATABLE heads only — `seed.py` computes the relatable divergence (git
   diff in the source repo) and stashes it for the post-watcher catch-up stage, so small diffs

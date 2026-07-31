@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:56+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -46,4 +46,12 @@ representative `worktree_sync` payload).
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
+  No content impact: `SyncFixture` now builds its contract through
+  `default_contract(ContractTask(...), leaf=LeafIdentity(...), code=RepoBranchPlan(...),
+  memory=RepoBranchPlan(...))` instead of the flat keyword list, and everything else is
+  `ruff format` reflow of the two `git worktree add` argument lists, two `assertEqual` calls,
+  and the `subprocess.run` inside `git()`. This card names no `default_contract` keyword, and
+  the same repo paths, source/work branches, and base commits are still paired, so the eight
+  documented sync cases and their assertions are unaffected.
 - 2026-06-10T09:56+02:00: Created with issue #54 sub-task D (8 tests over live-worktree fixtures).

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,22 +30,22 @@ history store, or control service.
   library-key, private native-resume, and SHA-256 operation identities non-interchangeable.
 - Conversation items carry stable ids, monotonic revisions/global ordinals, typed content blocks,
   explicit lane/source/producer provenance, and unknown-vendor/input evidence.
-- Harness sub-agent grammar: `ConversationAgentRef` (L320-L338) labels
+- Harness sub-agent grammar: `ConversationAgentRef` (L316-L334) labels
   the sub-agent one timeline item belongs to via the additive optional `ConversationItem.agent`
-  field (L375); absent means the parent conversation. Identity is evidence-bound — codex
+  field (L371); absent means the parent conversation. Identity is evidence-bound — codex
   `agentThreadId` (plus `agentPath`/`nickname`/`role` once collab evidence binds them), claude
   `agentId`/`subagent_type` joined through the spawning tool call (`join_key` =
-  `parent_tool_use_id`) — and `status` (`ConversationAgentStatus`, L315-L317) tracks the agent's
+  `parent_tool_use_id`) — and `status` (`ConversationAgentStatus`, L311-L313) tracks the agent's
   own lifecycle, not the item's phase.
-- Library sub-agent grouping: `ConversationLibraryAgentRow` (L765-L784) is one
-  sub-agent conversation grouped under its parent row's `agents` tuple (L794); it opens through
+- Library sub-agent grouping: `ConversationLibraryAgentRow` (L755-L774) is one
+  sub-agent conversation grouped under its parent row's `agents` tuple (L784); it opens through
   its own `conversation_key` exactly like a top-level row. `ConversationLibraryPage.agents_note`
-  (L807-L809) carries capability honesty: the exact native reason sub-agent conversations are
+  (L797-L799) carries capability honesty: the exact native reason sub-agent conversations are
   (partially) unavailable on a page, never silently absent.
 - Status models fix the evidence-to-turn-state vocabulary and validate waiting and terminal
   cross-products; unknown evidence cannot establish ready.
 - Capability models require exact evidence products. `FeatureCapability` carries a documenting NOTE
-  (L680-L685) that there is deliberately
+  (L670-L675) that there is deliberately
   NO `for_observed_runtime` version-demotion: the contract is the only gate, a capability is never
   demoted because an installed runtime/helper version drifts from a fixture's captured version, and
   the runtime/helper version survives on `CapabilityEvidence` as informational metadata only.
@@ -97,7 +97,7 @@ authoritative behavioral evidence for this internal grammar.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Hostile tests cover cursor purpose, provenance, status, capability, identity/rollback, recovery, attachment, metrics, and fixture products. | L208-L1182 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
+| Hostile tests cover cursor purpose, provenance, status, capability, identity/rollback, recovery, attachment, metrics, and fixture products. | L208-L1176 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
 | Foundation tests prove the types participate in exactly two ports and that installed runtime fixtures are allowlisted evidence, never enablement. | L21-L28; L162-L176 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The two read protocols consume these normalized models without owning control behavior. | L8-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
 
@@ -111,6 +111,17 @@ No cross-repository implementation governs these contracts.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: re-anchored this card's in-file citations, which
+  the same leaf's `ruff format` pass invalidated. Collapsing a dozen wrapped `Literal`/`Mapping`/
+  `ClassVar` declarations back onto single lines (and deleting the dead `# noqa` comments recorded
+  in the entry below) shortened the module by 23 lines, moving every declaration the sub-agent and
+  capability bullets point at: `ConversationAgentStatus` L315-L317 → L311-L313,
+  `ConversationAgentRef` L320-L338 → L316-L334, `ConversationItem.agent` L375 → L371, the
+  `FeatureCapability` NOTE L680-L685 → L670-L675, `ConversationLibraryAgentRow` L765-L784 →
+  L755-L774, `ConversationLibraryRow.agents` L794 → L784, and `ConversationLibraryPage.agents_note`
+  L807-L809 → L797-L799. Each declaration is otherwise byte-identical, so no claim about the wire
+  grammar itself changed — only where to find it.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: the only non-format change here is a lint-suppression cleanup — the `# noqa: UP040` suppressions on the `ConversationContentBlock` / `ConversationMutation` / `WithdrawQueueResponse` / `ComposerSubmitBlock` type aliases and the `# noqa: UP046` on `MetricEvidence` were deleted, because `[tool.ruff] target-version` is now pinned to the supported floor `py311` and those PEP 695 upgrade rules no longer fire. The declarations themselves are byte-identical. Nothing else in the file changed, so no other claim in this sidecar can have been invalidated by this leaf. Attested, deliberately not rewritten.
 - 2026-07-26T15:34 — 260718-CHATS-L7: harness sub-agents became first-class wire participants.
   Code added `ConversationAgentStatus` (L315-L317) and `ConversationAgentRef` (L320-L338) with
   the additive `ConversationItem.agent` field (L375), `ConversationLibraryAgentRow` (L765-L784)

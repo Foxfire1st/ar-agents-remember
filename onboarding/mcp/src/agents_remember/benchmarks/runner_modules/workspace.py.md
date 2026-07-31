@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/workspace.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,21 @@
 Benchmark workspace and repository preparation orchestration.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Preparation And Workspace Objects
+
+`prepare_case(preparation, case, *, provider_ids=())` takes a `BenchmarkPreparation` in place of
+`benchmarks_root` plus the five preparation keywords (`dry_run`, `skill_exposure_mode`,
+`force_clone`, `provider_timeout`, `allowed_provider_ids`). The containment R1 filter still runs
+first — `filter_benchmark_provider_ids(case.case_id, provider_ids, preparation.allowed_provider_ids)`
+— so the authority set reaches it through the preparation object rather than a loose keyword.
+
+Once the roots are laid down, `prepare_case` builds one **`BenchmarkWorkspace`** (case, with-memory
+root, coordination root, source repo root, memory repo, filtered provider ids) and hands that whole
+object to `write_benchmark_mcp_registration(workspace, *, provider_timeout, dry_run)` and
+`prepare_configured_providers(workspace, *, dry_run, provider_timeout)`. That is the point: the
+registration written to disk and the providers launched against it are now guaranteed to describe
+the same materialized workspace.
 
 ### Logic
 
@@ -64,6 +79,11 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `prepare_case` was re-signed onto `BenchmarkPreparation`, and it now builds a
+  `BenchmarkWorkspace` that both `write_benchmark_mcp_registration` and
+  `prepare_configured_providers` consume. The materialized workspace and the written registration
+  are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B4: `filter_benchmark_provider_ids`'s
   `None` semantics flipped from unfiltered to FAIL-CLOSED (loud skip naming the escape hatch);
   the new `UNFILTERED_PROVIDERS_ENV` constant (`AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1`) is

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `01f503dcba3a6eacc1587941f6a89fce0bcc72a2` |
-| lastVerifiedCommitDate | 2026-05-29T18:32:57+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -27,6 +27,16 @@ notes and missing evidence paths); `missing_entity_fingerprint_row` and
 `orphaned_entity_fingerprint_row` build reconciliation rows; `classify_entity_catalog`
 ties inventory and fingerprint rows together.
 
+**`EntityCatalog` (frozen, 260731-EFA-L2)** is the document all three row builders are signed on:
+`onboarding_file`, `onboarding_root`, `repository`, `settings` and `last_updated`. All five are
+read out of one catalog document before any row is emitted and every builder needs all five, so
+the catalog travels as the document it is. `classify_entity_catalog` constructs it once, right
+after `parse_table_metadata`, and passes it down — which is why the `repository` /
+`storage_mode` / `last_verified_date` stamped on every emitted row necessarily come from the same
+document. Current signatures: `classify_entity_fingerprint(catalog, repo_root, row)`,
+`missing_entity_fingerprint_row(catalog, entity, note)`,
+`orphaned_entity_fingerprint_row(catalog, row)`.
+
 ### Invariants And Boundaries
 
 - Reports drift only; it must not rewrite the entity catalog.
@@ -43,5 +53,12 @@ ties inventory and fingerprint rows together.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `EntityCatalog` and re-signed all three row builders onto it —
+  `classify_entity_fingerprint(catalog, repo_root, row)`,
+  `missing_entity_fingerprint_row(catalog, entity, note)` and
+  `orphaned_entity_fingerprint_row(catalog, row)` replace the previous five- to seven-argument
+  signatures. `classify_entity_catalog` builds the catalog once. No emitted `DriftRow` changed.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-05-29T18:35+02:00: Extracted `_entity_fingerprint_from_row`, `_is_table_separator_row`, `_normalized_header_cells`, and an `_early_classification` closure in `classify_entity_fingerprint` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.

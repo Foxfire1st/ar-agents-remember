@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ windows are diagnostic evidence only and cannot authorize hosted delivery or com
 The following earlier descriptions are retained as historical implementation context only; they are
 not current authority after the L5 protocol cutover.
 
-**Historical — 260707-HFX2-L15 hosted inbox delivery (superseded).** `deliver_inbox_entry` built a `HarnessSessionLog` from
+**Historical — 260707-HFX2-L19 hosted inbox delivery (superseded).** `deliver_inbox_entry` built a `HarnessSessionLog` from
 the target catalog row, passes it into the shared injector, and persists a newly bound log id/path
 through `TerminalCatalog.bind_session_log`. Durable delivery detail now says
 `harness-log-confirmed`; an unconfirmed result carries only failure-pane diagnostics, while a draft
@@ -142,7 +142,39 @@ uses the row id as request correlation, persists acceptance/reconciliation/compl
 never invokes the compatibility paster. Adapter acceptance and completion do not consume the row;
 explicit recipient consume remains the acknowledgement.
 
+## 260731-EFA-L2 Current Delta
+
+Five named concepts replaced this module's long recorder/pusher parameter lists:
+
+- **`InboxDeliveryLog`** (`store`, `entry`, `at`, `floor`) — one durable row's delivery journal:
+  which row, where attempts are written, and when. Every recorder writes through the same journal,
+  so it travels as one value and each recorder supplies only what is genuinely different about its
+  own outcome.
+- **`RedeliveryFloor`** (`current`, `seconds`) — the rate limit on re-recording a delivery **and the
+  row snapshot it is measured against**. The floor is meaningless without `current`: the store needs
+  the rows it is comparing this attempt's timing against, and they arrive together from the sweep
+  that owns both.
+- **`DeliveryAdmission`** (`submit=True`, `dispatch_gate=None`; default
+  `DEFAULT_DELIVERY_ADMISSION` = the ordinary committed push) — whether this push is allowed to
+  reach the wire at all. Both checks settle **before any adapter call**: `submit` is the caller's
+  commitment to a real adapter submission, and `dispatch_gate` is the exact-once gate a durable
+  brief must pass.
+- **`_DeliveryOutcome`** (`delivery_state`, `adapter_state`, `detail`) — what one attempt amounted
+  to, in exactly the fields `_record` writes. A refusal, an adapter receipt and a reconciliation all
+  reduce to this triple; the three are always decided together and are meaningless apart (a delivery
+  state carrying someone else's detail is a lie in the durable record).
+- **`_AdapterCorrelation`** (`request_id`, `vendor_correlation_id`, `accepted_at`) — how the adapter
+  identifies the submission this attempt produced, if it produced one.
+
+`_delivery_refusal(...)` is the named decision that returns the refusal to durably record for an
+addressed target, or `None` to go submit; `_redelivery(log, target)` is the named re-record path.
+Durable delivery semantics — what is recorded, when a push is refused, and the exact-once brief
+gate — are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `InboxDeliveryLog`, `RedeliveryFloor`, `DeliveryAdmission`, `_DeliveryOutcome` and `_AdapterCorrelation`, plus `_delivery_refusal` / `_redelivery`; durable semantics unchanged.
 - 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative delivery to inbox-rooted adapter submission and
   explicit consume acknowledgement; historicized pane/log/copy-mode/raw-paste authority.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: replaced log-window/raw-paste authority with adapter receipts and R13/R14 semantics.

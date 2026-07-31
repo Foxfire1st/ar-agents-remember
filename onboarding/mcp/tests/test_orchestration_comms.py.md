@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_orchestration_comms.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash |                                            `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                            2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash |                                            `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -63,6 +63,13 @@ As of the 260703-L9 lifecycle convergence, the artifact-helper test pins the tur
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
+  leaf diff. The sole change is the `orchestration_nudge_manager_payload` call inside
+  `NudgeToolTests`, which now passes `target=NudgeTarget(agent_id=…)` and
+  `subject=NudgeSubject(subject=…, agent_id=…, artifact_path=…)` in place of four loose keyword
+  arguments, plus the two added imports. No test name, assertion, artifact path or escalation rung
+  changed; the sidecar never named that builder's argument list and carries no line citations, so
+  the pinned artifact/escalation/nudge/inbox coverage above is unaffected.
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 R2 fix round (closes reviewer F5): added
   `test_system_specialist_escalates_to_orchestrator` pinning the new
   `system-specialist -> orchestrator` escalation rung in `escalation_packet`. Verification

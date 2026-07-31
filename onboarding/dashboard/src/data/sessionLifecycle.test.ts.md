@@ -26,7 +26,7 @@ against the real `sessionStore` (hydrated from the L6 fixtures) with fetch stubb
 
 ### Logic
 
-- **`terminateSessionDetailed`** (L34-L72): `controlStopDetail` kept from the response body
+- **`terminateSessionDetailed`** (L40-L84): `controlStopDetail` kept from the response body
   (`L6_TERMINATE_RESPONSE_WITH_RESIDUAL`); a clean terminate carries no residual; a FAILED POST
   (502 + body) keeps the server's words verbatim — `{ok:false, error:"bridge host unavailable"}`
   (review finding 4 regression).
@@ -35,9 +35,9 @@ against the real `sessionStore` (hydrated from the L6 fixtures) with fetch stubb
   catalog serves the row every beat) never duplicate it, and a dismissal stays dismissed across
   later beats (the swept-set remembers). Rows already in the store when the sweep starts are
   captured too — the reload path (L98-L103).
-- **`endSessionDetailed`** (L106-L128): tombstones the row out of the store AND records the stop
+- **`endSessionDetailed`** (L120-L144): tombstones the row out of the store AND records the stop
   residual as an informational notice.
-- **`endLandedDetailed`** (L130-L164): records the route's own closed + skipped outcome — skips
+- **`endLandedDetailed`** (L146-L213): records the route's own closed + skipped outcome — skips
   never vanish; `cleanupOutcomeCopy` renders `ended 1 · skipped 1 (landed-b: status:running)`.
 - **Copy honesty** (L166-L185): the terminate confirm NAMES session · leaf · state (fixture
   label, `leaf 06_pty-stage-interactions-lifecycle`, `state working`); terminate AND retire
@@ -80,6 +80,13 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the file
+  grew a header comment, a `beforeEach`/`afterEach` block, and the landed-cleanup
+  authority-unavailable case. `terminateSessionDetailed` L34-L72 -> L40-L84 (the range now reaches
+  the verbatim-failed-POST case it describes), `endSessionDetailed` L106-L128 -> L120-L144, and
+  `endLandedDetailed` L130-L164 -> L146-L213 (both suites shifted down and the latter now holds
+  two cases). Claims themselves re-verified and unchanged.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

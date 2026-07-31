@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 
 ## What This Area Is
 
@@ -215,8 +215,8 @@ composition and authorization contract suites.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. | L25-L204; L315-L431 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| Canonical status, capability evidence, open rollback, withdrawal recovery, library agent rows, and fixture non-promotion are fail-closed products. | L543-L682; L765-L830; L924-L1114; L1226-L1280 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. | L25-L199; L311-L426 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Canonical status, capability evidence, open rollback, withdrawal recovery, library agent rows, and fixture non-promotion are fail-closed products. | L429-L552; L640-L737; L755-L775; L811-L912; L983-L1097; L1245-L1262 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | Exactly two read ports separate active exact-session reads from dormant native library reads. | L27-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
 | Three behavior-empty child routers compose through one stable root that now also installs the one runtime. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. | L47-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
@@ -224,7 +224,7 @@ composition and authorization contract suites.
 | The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The production composition constructs the one runtime from existing authorities and installs it exactly once. | L144-L162 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 | The foundation suite verifies two-port topology, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper pins, and fixture non-promotion. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
+| The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | L113-L252 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
 
 ## Cross-Repo References
@@ -359,8 +359,50 @@ behind an import-compatible package. Selected-child acquisition remains behind t
 authorization and epoch proof, and typed child-local history failure leaves parent control and
 siblings live. Harness-specific source probing remains in the serving adapter layer.
 
+## 260731-EFA-L2 — The Contract Is Untouched; Its Children Grew Vocabulary
+
+**Nothing in this route's contract changed.** `models.py` — the normalized wire grammar, every
+`TypeAlias`, discriminated union, envelope and status/telemetry model — emits exactly what it did.
+Its only edit was the deletion of five `# noqa: UP040` / `# noqa: UP046` directives that had been
+suppressing rules the linter no longer raises, now that Ruff's `target-version` matches the
+package's declared Python 3.11 floor rather than 3.13. The runtime composition authority, the two
+read ports and the three child-router seams are all as described above.
+
+What a reader must know is where the children's new vocabulary lives, because these are the values
+that now cross the seams this route fixes:
+
+| Child route | Value it introduced | The rule it makes structural |
+| --- | --- | --- |
+| `control/` | `ControlRequest` → `ControlScope` | The verified bridge epoch, not the caller's claimed one, is what refs are minted and decoded against. |
+| `control/` | `RefBinding` / `RefTarget` | Mint and decode share one binding value — caller, session, epoch — so the two sides are provably identical. |
+| `active/` | `TurnTransition` | A proposed turn state travels with the evidence strength that justifies it, so a weak observation cannot displace a strong one. |
+| `active/` | `ProjectedSession` | The five facts a projector must not mix — identity, authorization, controlled row, mapper, signing secret. |
+| `library/` | `LibraryBinding` / `OpenRequest` | Per-app authorities bound to one caller; and the joint fingerprint that makes a replayed request id with changed contents a *conflict*, not a second open. |
+| `projectors/` | `ItemPlacement` / `_CollabCall` / `_TaskIdentity` | Frame placement resolved once per frame; "well-typed" held as a value; displayed-vs-retained sub-agent identity kept distinct. |
+
+The pattern is the same in every case and is worth carrying into any new child: **facts that are
+only correct together stop being separate parameters.** This route's own job — being the semantic
+boundary — is unchanged by that, and none of these values belong in `models.py`: they are internal
+call shapes, not wire contracts.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The
+  fail-closed-products row's four ranges no longer covered the products it names, so it now cites
+  each one exactly in `models.py`: canonical status L429-L552 (`CanonicalStatusEvidence`,
+  `CANONICAL_TURN_STATE_BY_EVIDENCE`, the turn/process/status models and their
+  `require_waiting_evidence` / `require_terminal_evidence` / `reject_false_ready` validators),
+  capability evidence L640-L737, library agent rows L755-L775, open rollback L811-L912 (the
+  `_phases_by_outcome` / `_failure_rollbacks` tables and `require_coherent_rollback`), withdrawal
+  recovery L983-L1097, fixture non-promotion L1245-L1262 (`enables_capabilities: Literal[False]`).
+  The composition-suite row overran its file (252 lines); its tests are L113-L252. All ranges read
+  back; no claim text changed.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: no contract or composition change. `models.py` lost five
+  now-unnecessary `noqa: UP040`/`UP046` directives after Ruff's target version was reconciled with
+  the 3.11 floor. Added a map of the parameter objects the child routes introduced and the rule each
+  makes structural, with the note that they are internal call shapes and deliberately not wire
+  contracts. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the active child now owns a
   route-local `projector/` component graph rather than one monolith, and selected-child history
   crosses the same authorization/epoch boundary as page and events. Codex acquisition probes

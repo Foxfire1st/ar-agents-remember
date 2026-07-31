@@ -79,7 +79,7 @@ the reviewed task evidence for any current behavioral claim.
 | Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation). | L12-L50 | [changeset.ts](changeset.ts) |
 | Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. | L52-L69 | [changeset.ts](changeset.ts) |
 | Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`. | L82-L92 | [files.ts](files.ts) |
-| The serving layer that defines the endpoints + response shapes this client mirrors. | L37-L196 | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
+| The serving layer that defines the endpoints + response shapes this client mirrors. | L38-L195 | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
 | `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. | L152-L187 | [ChangeSetViewer.tsx](agents-remember/dashboard/src/panels/changeset/ChangeSetViewer.tsx) |
 | `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. | L573-L616 | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
 | The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. | L16-L36 | [changeset.test.ts](changeset.test.ts) |

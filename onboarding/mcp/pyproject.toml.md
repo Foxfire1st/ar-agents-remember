@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -56,6 +56,21 @@ assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 — so `runtime_install` can reconcile those package-owned assets into a
 coordinator from a pip/uvx install with no source checkout. Dotfiles need their
 own explicit entry; `**/*` does not match them.
+
+### Classifiers Declare The Supported Floor And Platforms (260731-EFA-L2)
+
+`classifiers` is not decoration here — it is the one place a consumer can read the supported
+interpreter floor and the supported platforms without cloning. It lists Python 3.11, 3.12, and 3.13
+(matching `requires-python = ">=3.11"` and the three interpreters
+`.github/workflows/quality-checks.yml` runs the gate on) and the two operating-system classifiers
+`POSIX :: Linux` and `MacOS`. Windows is supported **through WSL**, which presents as Linux to the
+interpreter and therefore deliberately carries no separate classifier — the absence is a decision,
+not an omission, and the inline comment in the file records it.
+
+The floor is a three-way agreement: `requires-python` here, `[tool.ruff] target-version` in the
+repository-root `pyproject.toml` (pinned to `py311` by the same leaf, so `UP` rules can no longer
+push syntax the floor rejects), and the CI interpreter matrix. Moving one without the other two is
+the failure mode this block exists to make visible.
 
 ### The Dashboard Bundle Is Packaged But Not Committed (260731-EFA-L1)
 
@@ -107,6 +122,11 @@ the source rather than being repeated here; it is the same string
   state whose documented remedy is `npm --prefix dashboard run build`.
 - The wheel and the sdist must both carry the bundle. The release workflow, not this file, is where
   that is enforced.
+- The supported floor is stated in three places that must move together: `requires-python` and the
+  Python classifiers here, `[tool.ruff] target-version` in the repository-root `pyproject.toml`, and
+  the CI interpreter matrix. Raising or lowering one alone is a defect.
+- The absence of a Windows classifier is deliberate (Windows is supported through WSL). Do not add
+  one to "fix" the list.
 
 ## Repo-Internal References
 
@@ -123,9 +143,19 @@ the source rather than being repeated here; it is the same string
 | The placement step whose output this recursive glob picks up at build time. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 | Both generated dashboard paths are git-ignored, with the reason recorded inline. | [.gitignore](agents-remember/.gitignore) |
 | An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
+| The Ruff `target-version` that must track the floor declared here lives in the repository-root project file. | [pyproject.toml](agents-remember/pyproject.toml) |
+| The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
 
 ## Update History
 
+- 2026-07-31T16:45+02:00 — 260731-EFA-L2 (R13, supported-platform decision of 2026-07-31): added a
+  `classifiers` block declaring Python 3.11/3.12/3.13 and the `POSIX :: Linux` / `MacOS` platforms,
+  with an inline comment recording that Windows is supported through WSL and therefore carries no
+  classifier. Documented the new block, the deliberate absence of a Windows classifier, and the
+  three-way floor agreement between `requires-python`, the root `[tool.ruff] target-version` (pinned
+  to `py311` by the same leaf), and the CI interpreter matrix; added the two references that
+  agreement depends on. No dependency, entry-point, package-data, discovery-root, or version
+  contract changed. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1: recorded that `package_data/**/*` is recursive and now
   carries a cockpit bundle that is **not** in version control. The release job builds the frontend
   and runs `scripts/sync-dashboard.py` before `python -m build`, then asserts the wheel and sdist

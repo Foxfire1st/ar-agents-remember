@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                                  |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                  |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                  |
 
 ## Purpose
@@ -25,8 +25,36 @@ bug, GitHub #50). Bump `constants.py`'s `CGC_RUNNER_IMAGE_LAYER_REVISION`
 whenever the runner Docker layer changes without a cgc version change, because
 `runtime_install` skips building image tags that already exist.
 
+## Layout Construction Is Now Four Named Things
+
+`cgc_runtime_layout` used to take nineteen keyword arguments in one flat list, which made the
+deployment shape of a CGC instance unreadable. It is now
+`cgc_runtime_layout(repo, *, instance=, watcher=, backend=)` over four frozen dataclasses in
+`core.py`, and the split is by *subject*, not by convenience:
+
+| Bundle | What it describes | Note |
+| --- | --- | --- |
+| `CgcRepo` | The repository this instance indexes and the root that owns it — `coordination_root`, `repo_id`, `code_repo_root`, `cgcignore_patterns`. | Positional and required. `cgcignore_patterns` belongs here because it is about which parts of *this* repository the graph covers, not how the provider is deployed. |
+| `CgcInstance` | Where the instance lives on disk — `runtime_root`, `requirements_file`, `patches_root`, `state_file`. | Every field optional. |
+| `CgcWatcher` | The watcher as *one process* — the runner `image`, the `build_root`/`lock_file` it is produced from, the `container_name` it runs as, its `process_env_template`, and the `watch_cwd`/`watch_log_file` of the `cgc watch` it hosts. | Every field optional. |
+| `CgcBackend` | The managed FalkorDB the instance connects to — `root`, `data_root`, `state_file`, `container_name`, `network_name`. | Every field optional. |
+
+**Every field of the three keyword bundles is an override of the conventional placement under
+`providers/runners/codegraphcontext/<repoId>`, so the empty instance IS the convention.** That is
+why `DEFAULT_CGC_INSTANCE` / `DEFAULT_CGC_WATCHER` / `DEFAULT_CGC_BACKEND` are module-level frozen
+singletons used as defaults rather than `None` sentinels. A new pinnable path is a new optional
+field on the bundle that owns the subject; it is not a new `cgc_runtime_layout` keyword.
+
+`CgcRuntimeLayout` itself — the returned value, its field names, and the resolution rules that
+produce them — is unchanged, so every reader of a layout is unaffected. Only construction moved.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `cgc_runtime_layout`'s nineteen flat keywords became the
+  `CgcRepo` / `CgcInstance` / `CgcWatcher` / `CgcBackend` bundles with frozen module-level defaults
+  standing for conventional placement. The produced `CgcRuntimeLayout` is identical; the runner
+  image rule and layer-revision doctrine below still hold. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-07-03T01:55+02:00 — L12 route impact: materialize targets the watch-context global .cgcignore; constants add per-repo exclusions + timer-pop patch (revision ar2); patches.py applies it idempotently.
 - 2026-06-10T07:40+02:00 — No route impact: `core.py` re-exports `to_container_path` from its new canonical home `providers/context_common.py`; `cleanup.py`/`patches.py` only updated the import path (GitHub #58).
 - 2026-06-10T05:30+02:00 — Route body caught up with 2.5.0/2.5.1: the single `cgc_runner_image()` derivation rule and the layer-revision bump doctrine (GitHub #50). Previous closeouts had only stamped the verification header (developer-flagged gap).

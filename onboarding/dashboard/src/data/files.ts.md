@@ -84,7 +84,8 @@ the reviewed task evidence for any current behavioral claim.
 | Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing). | L10-L68 | [files.ts](files.ts) |
 | `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code. | L72-L89 | [files.ts](files.ts) |
 | Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs. | L91-L124 | [files.ts](files.ts) |
-| The serving layer defines the endpoints and maps domain errors to the status idiom this client surfaces. | L298-L332 | [serving/files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
+| The serving layer registers the four `/api/files/*` endpoints this client calls. | L291-L312 | [serving/files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
+| `run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404). | L207-L227 | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
 | `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. | L11-L21, L112, L162-L214 | [FileViewer.tsx](agents-remember/dashboard/src/panels/file-viewer/FileViewer.tsx) |
 | `useFilesTree` calls `listDir` per directory level to lazy-load each tree side. | L11, L47 | [useFilesTree.ts](agents-remember/dashboard/src/panels/file-viewer/useFilesTree.ts) |
 | `FileTree` consumes the `DirEntry` and `Scope` types. | L8 | [FileTree.tsx](agents-remember/dashboard/src/panels/file-viewer/FileTree.tsx) |
@@ -102,6 +103,13 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that split when
+  the serving-side error mapper left `serving/files.py`. The old `L298-L332` row asserted one file
+  owned both halves; `_run` was renamed `run_scoped` and moved to `serving/scope.py` (now L207-L227,
+  and it additionally maps `ValueError` from a malformed path to the same `bad-path` 400), while
+  `register_files_routes` stayed in `files.py` at L291-L312. Split the row in two and verified both
+  ranges by reading them.
 
 - 2026-07-24T13:17:50Z — Added bounded single-flight repository-catalog behavior. Verification
   hash/date remain pinned to the pre-commit source stamp.

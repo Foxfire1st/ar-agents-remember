@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_events.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,8 +83,20 @@ Pi event translation attaches the exact operation ref. Completion requires the s
 fresh idle observation for the same generation/activity token; `agent_end` or queue depth zero alone
 is insufficient and stale events cannot release the successor.
 
+## 260731-EFA-L2 Current Delta
+
+**`EventPayload`** (`snapshot`, `transcript`, `operation`, `evidence`; module constant
+`EMPTY_EVENT_PAYLOAD`) replaces the four independently-defaulted switches an adapter event used to
+carry: what one event carries besides its kind and raw frame. An event may republish the snapshot,
+append transcript entries, name the operation it settles and carry the full frame as evidence —
+each combination belongs to a specific kind of frame, so it is chosen **once** as a payload rather
+than as four separate arguments. The emitted events are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `EventPayload` / `EMPTY_EVENT_PAYLOAD` as the per-frame event payload choice.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the content-less `message_end`
   relaxation — the abort's own native shape crosses as an evidence-only `pi:message_end` event
   with no transcript entry and no bridge failure; exactly one raise class is relaxed, the role

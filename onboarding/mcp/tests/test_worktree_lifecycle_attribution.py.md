@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_lifecycle_attribution.py`         |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-06-13T18:45+02:00                                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                 |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                 |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -49,6 +49,12 @@ Lifecycle-attribution tests verify that controller attribution can use `enclosur
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: the only change is in `_AttributionCase.setUp`,
+  which after the PLR0913 parameter-object pass builds the ambient as
+  `AmbientLifecycle(self.store, timing=AmbientTiming(heartbeat_seconds=3600))` and imports
+  `AmbientTiming` next to `AmbientLifecycle`. The long-heartbeat tempfile ambient, the
+  `shutdown()` cleanup, and every promote / adopt / save-gate assertion described above are
+  unchanged, so the Purpose, Logic, and Conventions claims still hold.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: lifecycle attribution tests now use `series-contract.md` enclosure paths and cover the controller fallback from `enclosure_path` to legacy `contract_path`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-13T18:45+02:00: Created for slice 2c — controller promote/adopt/save-gate
   attribution tests. Verification metadata is pinned until closeout stamps the 2c

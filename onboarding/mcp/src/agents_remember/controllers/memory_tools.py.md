@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/controllers/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-07-18T20:03+02:00                                     |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`                 |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                 |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -22,6 +22,14 @@ refresh, memory initialization, baseline adoption, and memory carryover MCP oper
 ## Code Commentary
 
 ### Logic
+
+Since 260731-EFA-L2 three controllers take parameter objects defined here:
+`MemoryBranches(source_branch, work_branch)` (default `DEFAULT_MEMORY_BRANCHES`) on
+`memory_baseline_adopt_tool`; `CarryoverSelection(repo_id, source_memory, official_code_ref,
+source_code_ref, old_base, replace_existing)` — everything the plan compares — passed positionally
+to both carryover tools; and `CarryoverCommitMessages(memory, ledger)` (default
+`DEFAULT_CARRYOVER_MESSAGES`) on apply. `intent_note` stays a separate keyword argument on apply
+because it is the approval, not part of the selection.
 
 The module resolves repository authority through `McpRuntimeConfig` and coordination context, then
 delegates to package services. `route_index_refresh_tool` passes both
@@ -77,6 +85,11 @@ this package-local dispatch contract.
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: added `MemoryBranches`, `CarryoverSelection` and
+  `CarryoverCommitMessages` (plus their shared defaults) and moved the baseline-adopt and carryover
+  keyword lists onto them; `intent_note` deliberately stays outside the selection. Resolver
+  authority, drift artifacts and the plan/apply split are unchanged. Verification metadata pinned
+  until closeout stamps the L2 code commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented explicit resolved repository/storage
   authority at the route-index controller boundary.
 - 2026-05-31T12:30+02:00 — Repo/path guards moved to shared `_guards`

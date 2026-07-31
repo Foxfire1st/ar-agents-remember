@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-16T06:26+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -20,6 +20,40 @@ task-domain `task_doc.py` submodule, and `PUBLIC_TOOLS` lists `task_reopen` besi
 `task_doc`): every `*_payload` builder, the
 `PUBLIC_TOOLS`/`RESERVED_TOOLS`/`TRANSPORT` constants, and the `_tool_payload`
 re-export remain importable from `agents_remember.mcp.tools`.
+
+## Where Registration Lives Now (260731-EFA-L2)
+
+The `@server.tool()` declarations that used to sit in `mcp/server.py` moved to the new
+**`mcp/registration/`** package (twelve family modules + `TOOL_REGISTRARS`). This route is
+unchanged in responsibility — it is still the payload-builder registry — but its consumer changed:
+`registration/<family>.py` imports the `*_payload` builders from `agents_remember.mcp.tools`, and
+`server.py` is process wiring only.
+
+That split is also why the builders here **do** take parameter objects while the tool declarations
+do not. FastMCP derives each tool's published JSON schema from the Python signature, so a
+model-typed parameter on a declaration would republish the tool as a nested object; a payload
+builder has no such constraint. 260731-EFA-L2 armed `PLR0913` and moved these builders onto the
+concept objects their controllers take:
+
+| Builder | Now takes |
+| --- | --- |
+| `worktree_start_payload` | `TaskIdentity`, `bases: TaskBases`, `execution: StartExecution` |
+| `worktree_attach_payload` / `worktree_status_payload` | `task: TaskRef` |
+| `worktree_closeout_preview_payload` / `..._apply_payload` | `CloseoutCommitMessages` (+ `CloseoutApproval` on apply) |
+| `lifecycle_finalize_task_payload` | `docs: FinalizeTaskDocs` |
+| `resolve_context_payload` | `task: TaskRef` |
+| `task_doc_payload` | `target: TaskDocTarget`, `edit: TaskDocEdit` |
+| `memory_baseline_adopt_payload` | `branches: MemoryBranches` |
+| `memory_carryover_plan_payload` / `..._apply_payload` | `selection: CarryoverSelection` (+ `messages: CarryoverCommitMessages`) |
+| `codex_benchmark_prepare_payload` / `..._run_payload` | `selection`, `preparation` (+ `run`) |
+| the eight `grepai_*`/`cgc_*` builders | `scope: ProviderQueryScope` (+ GrepAI query/repo-scope objects) |
+| `spawn_agent_session_payload` | `seat: SpawnSeat`, `retired: RetiredSpawnInputs`, `spawned_by: SpawnedBy`, `overrides: SpawnOverrides` |
+| `lifecycle_gate_payload` / the gate builders | `GateRaise`, `GateWait`, `InboxWatch`, `GateVerdict` |
+| `operator_inbox_post_payload` | `InboxAddress`, `InboxMessage`, `InboxPoster`, `HostedDelivery` |
+| `orchestration_nudge_manager_payload` | `NudgeTarget`, `NudgeSubject` |
+
+Behaviour, refusal vocabularies and response shapes are unchanged throughout; only the argument
+shape on the controller-facing side moved.
 
 ## Hot Path Summary
 
@@ -42,8 +76,8 @@ in the spawn-cwd harness log, retroactively verifies/reissues only missing or er
 persists resolved model/effort plus log id/path. An unbound replacement declares
 `replacement_for_leaf`; it receives normal leaf expectations without taking the occupied leaf key.
 
-Server registration imports advertised `*_payload` builders from
-`agents_remember.mcp.tools`; each builder forwards typed MCP arguments to its
+The `mcp/registration/` family modules import the advertised `*_payload` builders from
+`agents_remember.mcp.tools`; each builder forwards its arguments to its
 domain controller and validates the result through `base._tool_payload`. Since
 task 27 that choke point also attaches the engine-computed `nextStep` hint (after
 the ambient emission hook) onto every active-lifecycle response, computed by
@@ -129,7 +163,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Invariants And Boundaries
 
-- `PUBLIC_TOOLS` (in `base.py`) must match server registration in `server.py`
+- `PUBLIC_TOOLS` (in `base.py`) must match the declarations in `mcp/registration/`
   and the public response-model subset in `models/tool_registry.py`.
 - `TOOL_RESPONSE_MODELS` may include retained compatibility builders that are not
   public MCP tools; do not infer public availability from facade exports alone.
@@ -155,7 +189,8 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 | Finding | Source Path |
 | --- | --- |
-| FastMCP server registration calls these payload builders. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| The `@server.tool()` declarations that call these payload builders. | [registration overview](../registration/overview.md) |
+| What each declaration hands its builder, proved through a live FastMCP instance. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
 | Public response model registry maps each tool name to a Pydantic model. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
 | Domain controllers own the tool behavior the builders forward to. | [controllers overview](../../controllers/overview.md) |
 | Schema tests assert public tool and response model coverage. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
@@ -179,6 +214,11 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: added the **Where Registration Lives Now** section
+  (the `@server.tool()` surface moved to the sibling `mcp/registration/` route, and the per-builder
+  parameter-object table), corrected the `PUBLIC_TOOLS` invariant and the registration reference off
+  `server.py`, and noted the wiring test. No builder's responsibility, response shape or refusal
+  vocabulary changed. Verification metadata pinned until closeout stamps the L2 code commit.
 - 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the serving-owned optional roleless
   pair, immutable live launch truth, and `launch-conflict` to `launch-selection-invalid` mapping
   without retry or alternate spawn. Settings-owned role dispatch, exact shared opener, and durable

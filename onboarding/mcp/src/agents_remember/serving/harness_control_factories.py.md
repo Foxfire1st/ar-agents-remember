@@ -75,7 +75,7 @@ startup evidence.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter. | L152-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| Claude consumes expected launch evidence and produces native model/effort flags. | L47-L63; L77-L140; L188-L202 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| Claude consumes expected launch evidence and produces native model/effort flags. | L94-L100; L145-L172; L200-L210; L271-L285 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
 | Codex session settings resolve typed or catalog-default model/effort into thread config. | L37-L83; L106-L176; L295-L337 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
 | Pi consumes expected launch evidence and produces native provider-qualified model/thinking flags. | L63-L153; L181-L191 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
 
@@ -88,6 +88,15 @@ No external repository boundary is implemented by this factory.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The Claude
+  adapter grew a two-pass `--forward-subagent-text` startup, so the cited ranges no longer covered
+  the material. `ClaudeStreamJsonAdapter` now takes `expected_launch: ResolvedLaunch | None` at
+  L94-L100, feeds its `model_key` into catalog negotiation and runs `verify_effective_launch` (with
+  a forced transport stop on mismatch) at L145-L172, records `requestedLaunchModel` /
+  `requestedLaunchEffort` / `launchEffortEvidence` on the handshake snapshot at L200-L210, and
+  `launch_knobs` mints the native `--model`/`--effort` argv at L271-L285. Verified `_expected_launch`
+  has no other use in the file. No claim text changed.
 
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the codex-only `resume_thread_id`
   kwarg — fail-closed refusal for non-codex harnesses and malformed values before construction,

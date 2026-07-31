@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T20:45+02:00     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -15,6 +15,25 @@
 `seed.py` owns CodeGraphContext seed request options, configured root resolution, source/target validation, export/load lifecycle orchestration, and seed result payloads.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Seed Resolution Split
+
+`_resolve_seed_context` is now a sequence of named steps, each of which can return a skip payload:
+
+- `_seed_precondition_skip(args, settings)` — the reasons to skip **before any source settings are
+  read**: a benchmark-scoped target (benchmarks are hermetic, so a benchmark target never seeds
+  from another stack) and a missing seed-source coordination root. Returns `None` to go ahead.
+- `_seed_locations(args, settings, source_settings, source_coordination_root)` — repo root and
+  runtime root for both ends, or the first side's skip payload. Every one of the four lookups
+  reports failure the same way, so **the first payload wins and the caller never sees a
+  half-resolved pair**.
+- `_validated_seed_context(args, source, target)` — takes two **`_CgcSeedEnd(coordination_root,
+  repo_id, repo_root, runtime_root)`** values. Source and target are symmetric, so naming the end
+  makes the seed read as source → target instead of four interleaved pairs whose argument order is
+  the only thing keeping them straight. `_seed_validation_failure(args, source, target,
+  source_head, target_head)` takes the same two ends.
+
+`run_lifecycle` calls in this module pass a `setup_common.LifecycleCommand`.
 
 ### Logic
 
@@ -82,6 +101,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0913` armed with no
+  exemptions): extracted `_seed_precondition_skip` and `_seed_locations` from
+  `_resolve_seed_context`, and re-signed `_validated_seed_context` / `_seed_validation_failure`
+  onto the new frozen `_CgcSeedEnd` (source and target as named ends). Skip reasons, validation
+  failures and the produced `CgcSeedContext` are unchanged. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fix (L2/B2): `seed_commit_divergence` switched to
   `git diff --name-status` and returns classified `entries` (`[{status, path, from?}]`; a rename
   carries its old path as `from`) so the catch-up stage can be honest about deliverability —

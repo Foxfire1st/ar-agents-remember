@@ -109,10 +109,11 @@ build; the three consumers accept the snapshot via keyword-only injection.
 | `ContractSnapshotCache`: `(mtime_ns, size, ctime_ns)` identity with the chmod/utime rationale, failure-never-cached retry, and live-set pruning; `build` implements the single pass. | L52-L112 | [contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
 | `_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot. | L114-L145 | [contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
 | The enumeration and contract parser this module reuses (one parser per surface, owned by its producer). | L28-L33 | [contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
-| `projection_store` owns the module-level cache and builds the snapshot once per tick, handing it to `read_enclosures`, drift-snapshot pruning, and `read_engine_process_facts`. | L102-L108; L211-L230; L250-L258 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| `read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior. | L476-L494; L639-L668 | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk. | L36-L44; L74-L82 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| `ContractSnapshotSharedPassTests` pins N-then-zero-then-one parse counts, one enumeration per full tick, output parity with and without the shared snapshot, live-set retention, the chmod-000 and utime-pinned-rewrite ctime hardening, and malformed-contract retry-every-build. | L495-L764 | [test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
+| `projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`. | L96-L102; L227 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| `ProjectionInputState` holds the injected cache, builds the snapshot once per tasks refresh, and hands that one `ContractSnapshot` to `read_enclosures`, `read_engine_process_facts`/`refresh_engine_process_landing`, and drift-snapshot pruning. | L192-L194; L266-L275; L318-L350 | [projection_inputs.py](agents-remember/mcp/src/agents_remember/observer/projection_inputs.py) |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior. | L476-L494; L637-L666 | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk. | L36-L44; L72-L80 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
+| `ContractSnapshotSharedPassTests` pins N-then-zero-then-one parse counts, one enumeration per full tick, output parity with and without the shared snapshot, live-set retention, the chmod-000 and utime-pinned-rewrite ctime hardening, and malformed-contract retry-every-build. | L590-L858 | [test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
 
 ## Cross-Repo References
 
@@ -123,6 +124,8 @@ No meaningful cross-repo references found.
 | Same-repository projection concern only. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations after the per-tick read fan-out moved out of `projection_store`. Split the store row in two: `projection_store.py` now only owns `_contract_snapshot_cache` (L96-L102) and injects it at `ProjectionInputState(contract_cache=...)` (L227), while the once-per-refresh `build` and the hand-off to `read_enclosures`/`read_engine_process_facts`/`prune_orphaned_drift_snapshots` now live in `projection_inputs.py` (L192-L194; L266-L275; L318-L350). Also re-anchored `ContractSnapshotSharedPassTests` to L590-L858 (verified class start and last assertion in `test_projection_scaling_cs6.py`, 862 lines).
 
 - 2026-07-12T20:02+02:00 — 260712-PTS-L2: created for the shared per-tick contract snapshot —
   `ContractSnapshot` (immutable, enumeration-ordered, `skipped` containment) +

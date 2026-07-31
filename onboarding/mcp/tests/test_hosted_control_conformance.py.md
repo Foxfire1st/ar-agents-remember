@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_hosted_control_conformance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,10 @@ completion, ambiguity, restart recovery, incompatibility, and shutdown.
 A shared fake adapter and private IPC server are instantiated once per harness identity. The matrix
 asserts ready snapshots, immediate and queued delivery, blocked interaction response, terminal
 transcript completion, ambiguous transport reconciliation, graceful stop, restart recovery, and
-protocol incompatibility through the public hosted-control client helpers.
+protocol incompatibility through the public hosted-control client helpers. Prompt delivery is driven
+as `submit_control_prompt(entry, text, ControlSubmission(source=..., request_id=...))`: the durable
+source and the per-harness request id travel inside one `ControlSubmission` parameter object rather
+than as loose keyword arguments.
 
 ACPUI-L1 adds the normalized `advertise()` method to this generic fake adapter. It returns an empty
 `CapabilitySnapshot` so every matrix row satisfies the expanded protocol boundary without claiming
@@ -79,10 +82,10 @@ advertisement requirement.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The matrix enumerates the three native harness ids, and its fake adapter implements startup, snapshots, and an intentionally empty advertisement. | L47-L84 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
-| The generic fake implements structurally valid immediate model/effort setters without claiming an effective value; the matrix does not exercise them. | L95-L107 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
-| Every harness identity runs through ready state, immediate/queued delivery, blocked interaction, completion, ambiguity/reconciliation, and shutdown. | L201-L317 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
-| Restart recovery rebinds the same identity and validates protocol incompatibility through the private endpoint. | L319-L386 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
+| The matrix enumerates the three native harness ids, and its fake adapter implements startup, snapshots, and an intentionally empty advertisement. | L49-L86 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
+| The generic fake implements structurally valid immediate model/effort setters without claiming an effective value; the matrix does not exercise them. | L101-L119 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
+| Every harness identity runs through ready state, immediate/queued delivery, blocked interaction, completion, ambiguity/reconciliation, and shutdown. | L214-L345 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
+| Restart recovery rebinds the same identity and validates protocol incompatibility through the private endpoint. | L347-L414 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
 | The shared adapter protocol requires normalized cached advertisement and setters alongside the existing hosted-control lifecycle. | L31-L53 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
 
 ## Cross-Repo References
@@ -101,6 +104,12 @@ quietly retaining native queue or id-only release behavior.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the three `submit_control_prompt` call sites
+  now pass a `ControlSubmission(source=..., request_id=...)` parameter object instead of loose
+  keyword arguments, so Logic now names that object, and the four line ranges this card cites into
+  its own source were re-anchored against the current file (fake adapter and empty advertisement
+  L49-L86, the model/effort setters L101-L119, the ready/delivery/ambiguity/shutdown matrix
+  L214-L345, and the restart/incompatibility test L347-L414).
 - 2026-07-17T21:39+02:00 — FEUI-L5: extended conformance to epoch, full refs, guarded preflight/
   write, restart, and exact completion.
 

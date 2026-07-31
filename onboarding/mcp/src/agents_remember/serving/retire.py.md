@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/retire.py`     |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-07-09T13:36:16+02:00                        |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`                                    |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                    |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -97,7 +97,21 @@ No meaningful cross-repo references found.
 Retirement observes adapter-owned terminal state and uses the bridge shutdown path for hosted
 sessions; it does not infer completion from pane timing or create a parallel delivery channel.
 
+## 260731-EFA-L2 Current Delta
+
+**`SeatClosure`** (`at`, `reason`, `edge`, `by_session`) now carries the terminal mark's whole
+provenance: **why a seat stopped, when, and on whose authority**. Both closure paths write it —
+retirement (`killed`) and landing (`archived`, in [landing.py](landing.py.md)) — and the four facts
+are one record: a timestamp with no reason is an unexplained tombstone, and a reason with no edge
+cannot be traced back to the chain step that closed the seat. They are therefore chosen together at
+the one place that decides to close the seat. The retire authority policy (owner never self-retires,
+a manager retires only its own master's worker/reviewer seats, the orchestrator retires anything) is
+unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `SeatClosure` as the shared terminal-mark provenance for both retirement and landing; authority policy unchanged.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented protocol-aware retirement boundary.
 
 - 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: removed the production-dead

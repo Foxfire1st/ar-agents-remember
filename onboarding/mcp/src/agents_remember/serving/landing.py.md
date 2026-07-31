@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/landing.py`            |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                           |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                           |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ into the dashboard archive while tmux remains available for inspection.
 
 ## Code Commentary
 
-### 260707-HFX2-L17 Binding-Role Landing Filter
+### 260707-HFX2-L16 Binding-Role Landing Filter
 
 Completion-edge seat selection now matches the current binding role rather than immutable spawn
 provenance. Rebound or hand-opened typed pipeline seats therefore land with their actual leaf role;
@@ -56,8 +56,21 @@ landed row is an archive classification, not terminal cleanup.
 | Manual retire remains the destructive/session-closing path. | [retire.py](retire.py) |
 | Tests cover leaf/role selection and completion-edge auto-land results. | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
 
+## 260731-EFA-L2 Current Delta
+
+Landing now stamps the terminal mark with one **`SeatClosure`** (from
+[retire.py](retire.py.md)): `at`, `reason`, `edge` and `by_session` — why a seat stopped, when, and
+on whose authority. Both closure paths write it (retirement marks `killed`, landing marks
+`archived`), and the four facts are one record: a timestamp with no reason is an unexplained
+tombstone, and a reason with no edge cannot be traced back to the chain step that closed the seat.
+`catalog.mark_landed(...)` still receives `at` / `reason` / `edge` from that value; the landing
+selection rules are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the shared `SeatClosure` provenance value on the landing path.
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: moved landing role selection to current binding
   identity; no change to archive lifecycle semantics.
 

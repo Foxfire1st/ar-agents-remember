@@ -82,7 +82,7 @@ direct evidence.
 | Foundation tests require this exact runtime/helper tuple and explicitly assert the helper observation stays not-exercised/unverified. | L102-L123 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The helper manifest pins the Claude SDK version named by this fixture. | L13-L16 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
 | The installed honesty test enforces the version-mismatch `not-exercised` reason on this row. | L340-L362 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
-| The L2 installed suite proves the implemented helper's incompatible handshake on the real machine. | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The L2 installed suite proves the implemented helper's incompatible handshake on the real machine. | L562-L590 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The L2E installed honesty test enforces the version-mismatch `not-exercised` reason on the `control-plane/interrupt-and-assets` row. | L366-L384 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
 
 ## Cross-Repo References

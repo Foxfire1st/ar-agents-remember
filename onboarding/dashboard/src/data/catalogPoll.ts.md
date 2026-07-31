@@ -28,7 +28,7 @@ prevent retired scenario reads from mutating successor rows or poll health.
 ### Logic
 
 - `CATALOG_REFRESH_INTERVAL_MS = 2500` (L14) — the one poll cadence, exported for tests.
-- `readLastActiveSessionId`/`writeLastActiveSessionId` (L18-L33) — the
+- `readLastActiveSessionId`/`writeLastActiveSessionId` (L44-L59) — the
   `ar-dashboard:last-active-chat-session` localStorage preference, moved with the hydrate (a UI
   preference only; failures swallowed for private contexts).
 - `hydrateTerminalSessionsFromCatalog(allowEmpty, excludeSessionIds, authority)` (L79-L96) — ONE
@@ -100,6 +100,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The
+  `readLastActiveSessionId`/`writeLastActiveSessionId` pair cited L18-L33, which is now
+  `CatalogAuthority` + `captureCatalogAuthority`/`catalogAuthorityIsCurrent`; the two localStorage
+  helpers moved below the dev-bench authority block and now sit at L44-L50 and L52-L59, so the
+  citation is L44-L59.
 
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: labeled the old `Chats` extraction as historical,
   recorded `CockpitShell` as the sole driver/reconciler owner, and replaced the deleted consumer

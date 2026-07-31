@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_containment.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-21T11:30+02:00                     |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -51,11 +51,18 @@ The `_armed_boot_config(tmp, disk_providers=...)` helper builds a real
   disk-armed run hands the worktree manager a setup config whose written
   settings have `contextProviders.enabled: true` (read inside the mock, while
   the temp file still exists) and carries no `providersAuthority` block.
+  (Since 260731-EFA-L2 both calls read
+  `worktree_start_tool(config, TaskIdentity(repo_id="repo", task_name="t", worktree_name="w"))`:
+  the task's identity travels as one `TaskIdentity` parameter object in the second positional
+  slot, in place of the three loose keywords. The bases and execution knobs stay keyword-only
+  at their defaults, so what these two tests drive is unchanged.)
 - `QueryFunnelGateTests` — `_provider_operation_result` with
-  `launch_capable_provider="codegraphcontext-code"` refuses under a
-  grepai-only-armed authority: `ConfigError` naming the missing provider and
-  the runner mock never called — an armed grepai must not authorize a cgc
-  one-shot.
+  `ProviderOperation(operation="cgc_symbol_search", required_provider="codegraphcontext-code",
+  run=run)` refuses under a grepai-only-armed authority: `ConfigError` naming the missing
+  provider and the runner mock never called — an armed grepai must not authorize a cgc
+  one-shot. (Since 260731-EFA-L2 the operation, its required provider and its runner travel
+  as one `ProviderOperation` parameter object; the former `launch_capable_provider=` keyword
+  is now `ProviderOperation.required_provider`.)
 - `RuntimeRebindDerivationTests` — the runtime-install rebind derivation
   (`lifecycle_settings_from_config(reload_provider_authority(config).apply(config))`)
   yields `contextProviders.enabled: false` when the disk disables providers.
@@ -138,6 +145,24 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass rewrote two call shapes this
+  card describes, and this entry records both. `QueryFunnelGateTests` now drives
+  `_provider_operation_result(config, ProviderOperation(operation=…, required_provider=…, run=…))`
+  — that half of the body was already corrected; completing it here, note the old `launch_capable=`
+  boolean has no successor keyword at all, because a `None` `required_provider` is now what marks
+  an operation needing no launch authority. The second change had not been recorded: both
+  `WorktreeStartVetoTests` cases call
+  `worktree_start_tool(config, TaskIdentity(repo_id=…, task_name=…, worktree_name=…))` instead of
+  passing those three as keywords, so the card now names `TaskIdentity` where it describes the veto
+  and armed-launch paths. Everything else in the diff is `ruff format` reflow — rejoined call
+  arguments, the redundant parentheses on the docker `Labels` literal, and the uncontended-lock test
+  moving to a parenthesized `with (...)` block, which is the same two context managers in the same
+  order. Re-read every remaining claim against the current file: the refusal still raises
+  `ConfigError` naming `codegraphcontext-code` with the runner never called, the vetoed run still
+  produces no settings file and no `provider_setup_config`, and the fail-closed, lock and metrics
+  invariants are untouched. This card's references table carries no line citations, so nothing
+  needed re-anchoring. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R6 docker-ps timeout bound in
   `MetricsTests` (`test_sampler_bounds_docker_ps_timeout_into_error_sample`) — a timed-out `docker ps`

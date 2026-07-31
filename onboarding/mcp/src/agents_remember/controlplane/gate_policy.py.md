@@ -5,9 +5,9 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/controlplane/gate_policy.py` |
 | doc_type               | `file-level-onboarding`                             |
-| lastUpdated            | 2026-07-05T16:30+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`          |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`          |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Purpose
@@ -39,6 +39,14 @@ lifecycle/session in `decidedBy`, carry a configured `decidingRole`, differ from
 the gate-owning lifecycle, and include reviewer-verdict evidence when the rule
 requires it.
 
+Since 260731-EFA-L2 the first four of those are a named identity check of their own:
+`_decision_attribution_failure_reason(gate)` answers *who decided, and through which channel*
+before any policy is consulted — a decision that fails there names no role the policy could be
+asked about. `delegated_decision_failure_reason` calls it first, returns its reason verbatim when
+there is one, and only then coerces the role and consults `policy.rule_for(gate.kind)`. The
+`assert gate.decidingRole is not None` after that call is not a guess: the attribution check
+already proved it. Refusal messages and their order are identical to before the split.
+
 ## Invariants And Boundaries
 
 - Defaults are all-human. A settings file must opt into every delegated kind.
@@ -62,6 +70,11 @@ As of the 260703-L8 seam ruling: `master-handover-approval` joins DELEGABLE_GATE
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911` armed with no exemptions):
+  extracted `_decision_attribution_failure_reason(gate)` — the identity half of
+  `delegated_decision_failure_reason` (channel, `decidedBy`, not-the-owning-lifecycle,
+  `decidingRole` present) — leaving the policy half in the public function. Same refusal strings,
+  same order, no policy change. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): seam kind delegable; at-seams flag wired via apply_seam_verdict_requirement; named policy routes handover to the orchestrator. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: created for validated opt-in gate
   delegation policy, human-pinned gate protection, no-self-approval attribution,

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,11 +74,11 @@ The normalized data module supplies the exact vocabulary; the bridge exposes the
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The capability contract declares the five acceptance values and serialization rejects any other token. | L13-L24; L152-L159; L216-L227 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
-| The bridge exposes setters only while running and delegates both to this queue. | L394-L401 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The capability contract declares the five acceptance values and serialization rejects any other token. | L13-L23; L152-L159; L216-L225 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
+| The bridge exposes setters only while running and delegates both to this queue. | L422-L428 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | The blocking client preserves post-write ambiguity under the same caller request id. | L179-L252; L253-L325 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Queue and IPC tests prove pending and retained duplicates invoke the adapter once and known receipts reconcile locally. | L673-L751; L1155-L1232 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| The bridge delegates the epoch-checked paged operation-timeline read through this facade's sole authority path. | L163-L179; L270-L284 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py); [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| Queue and IPC tests prove pending and retained duplicates invoke the adapter once and known receipts reconcile locally. | L983-L1087; L1458-L1497; L1571-L1669 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| The bridge delegates the epoch-checked paged operation-timeline read through this facade's sole authority path. | L154-L169; L320-L334 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py); [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | Contract tests pin the timeline enumeration over this delegation: all sources and kinds, paged union, eviction floor, budget edge, and epoch flip. | L773-L1010 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 
 ## Cross-Repo References
@@ -95,8 +95,32 @@ Current authority lives in `HarnessSubmissionAuthority`; this class is only the 
 facade and lifecycle wrapper. Earlier history describing an independent command runner remains
 historical and must not be read as current architecture.
 
+## 260731-EFA-L2 Current Delta
+
+The queue facade now constructs and forwards the two concepts declared in
+[harness_submission_authority.py](harness_submission_authority.py.md) instead of six loose
+arguments: it takes a **`BridgeSnapshotPort`** (`clock`, `snapshot`, `set_snapshot`, `publish` — how
+a bridge sub-component reads, replaces, publishes and timestamps the ONE snapshot) and builds a
+**`SubmissionLimits`** (`timeline=queue_limit`, `ledger=submission_limit`) for the authority it
+wraps. The facade's own behaviour and the wrapped authority's bounds are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 line citations. The two-target
+  operation-timeline row cited L163-L179; L270-L284 — the second overran this 227-line facade
+  because it belongs to the second link; both were repointed to the current definitions,
+  `harness_control_queue.py::operation_timeline` at L154-L169 and
+  `harness_control_bridge.py::operation_timeline` at L320-L334 (same link order). The
+  `mcp/tests/test_harness_control.py` row now cites the exact tests instead of L673-L751;
+  L1155-L1232: the queue-level block L983-L1087
+  (`test_duplicate_request_id_returns_retained_result_without_resubmission`,
+  `test_dispatching_duplicate_returns_unknown_without_resubmission`,
+  `test_known_receipts_reconcile_without_native_reconciliation`) plus the IPC-level
+  `test_outer_socket_lost_receipt_reconciles_retained_known_truth` (L1458-L1497) and
+  `test_public_duplicate_returns_retained_result_with_one_adapter_call` (L1571-L1669).
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `BridgeSnapshotPort` / `SubmissionLimits` pass-through to the submission authority.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive read-only
   `operation_timeline` delegation — the same provenance-shaped epoch-checked facade path for the
   paged never-bodies ledger enumeration, with no independent facade state. Verification metadata

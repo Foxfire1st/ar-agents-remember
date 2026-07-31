@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cgc_installation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                         |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -106,13 +106,13 @@ No external documentation is needed for these unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Shared fixtures build a synthetic coordination root and settings file for a single `codegraphcontext-code` provider instance and parse `cgc` args through the real lifecycle parser. | L22-L100 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
-| The scoped install dry-run asserts the result shape, absence of `doctor`/`backend` keys, and the two planned Compose commands (image build, then doctor run). | L104-L127 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
-| The dry-run side-effect test proves the runtime root and state file are not materialized because preflight short-circuits before the layout is ensured. | L129-L139 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
-| The no-`--repo-id` install dry-run routes to install-all and asserts the aggregated action, backend ok flag, repo count, and per-repo `install` result. | L141-L165 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
-| The preflight dry-run returns no executed/backend results and an early result carrying `dryRun`, `ok`, the `install` action, and the planned commands. | L169-L185 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
-| The doctor dry-run asserts the named check order, the failing runner-image check and overall verdict, and the Compose doctor command plan. | L189-L233 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
-| The runtime containment check passes for a coordination-rooted runtime and reports `outsideSourceRepo`. | L235-L244 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| Shared fixtures build a synthetic coordination root and settings file for a single `codegraphcontext-code` provider instance and parse `cgc` args through the real lifecycle parser. | L22-L98 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The scoped install dry-run asserts the result shape, absence of `doctor`/`backend` keys, and the two planned Compose commands (image build, then doctor run). | L102-L125 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The dry-run side-effect test proves the runtime root and state file are not materialized because preflight short-circuits before the layout is ensured. | L127-L137 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The no-`--repo-id` install dry-run routes to install-all and asserts the aggregated action, backend ok flag, repo count, and per-repo `install` result. | L139-L163 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The preflight dry-run returns no executed/backend results and an early result carrying `dryRun`, `ok`, the `install` action, and the planned commands. | L167-L181 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The doctor dry-run asserts the named check order, the failing runner-image check and overall verdict, and the Compose doctor command plan. | L185-L229 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
+| The runtime containment check passes for a coordination-rooted runtime and reports `outsideSourceRepo`. | L231-L240 | [test_cgc_installation.py](agents-remember/mcp/tests/test_cgc_installation.py) |
 
 ## Cross-Repo References
 
@@ -123,5 +123,13 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/tests/test_cgc_installation.py` and moved the lines this card cites, so the Citations
+  column no longer pointed at the code its rows name. Corrected the ranges (L22-L100 → L22-L98;
+  L104-L127 → L102-L125; L129-L139 → L127-L137; L141-L165 → L139-L163; L169-L185 → L167-L181;
+  L189-L233 → L185-L229; L235-L244 → L231-L240). The behaviour described is unchanged — the file's
+  AST is identical to the base revision — this is a citation repair only. Verification metadata
+  pinned until closeout stamps the L2 commit.
 
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

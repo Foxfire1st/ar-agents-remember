@@ -25,14 +25,14 @@ introduced.
 
 ### Logic
 
-- `ClampButton` (L37): the ONLY expand/collapse control for a clamped message/tool/diff. It is a real
+- `ClampButton` (L38-L68): the ONLY expand/collapse control for a clamped message/tool/diff. It is a real
   `<button>` with `aria-expanded`/`aria-controls`, and it shows an exact `show more (+N lines)` ONLY
   when a logical source-line count is known (`hiddenLines > 0`); otherwise plain `show more`/`show
   less`. `noun` defaults to `lines`. **FB7.4/A8/V12 (260718-CHATS-L5P):** the labels are now LOWERCASE
   (`show more`/`show less`, was `Show …`) and the control is a de-boxed underline text affordance
-  (`clampButton` dropped the border/padding chip for `textDecoration: underline` + `whiteSpace: nowrap`)
-  — it never wraps its own label and matches the well's chip grammar.
-- `sourceLineCount` (L70): counts logical source lines (`split("\n").length`) — the honest basis for
+  (`clampButton`, L16-L31, dropped the border/padding chip for `textDecoration: underline` +
+  `whiteSpace: nowrap`) — it never wraps its own label and matches the well's chip grammar.
+- `sourceLineCount` (L71-L74): counts logical source lines (`split("\n").length`) — the honest basis for
   an exact clamp count, never visual wrapping/pixels.
 - `SourceBadge` / `sourceBadgeLabel` (L92/L108): a terse source/lane badge shown ONLY when origin
   changes interpretation (§13) — `agent bus` (agent-bus lane / durable-inbox source), `native replay`,
@@ -46,7 +46,7 @@ introduced.
   `primitives.test.tsx` (visible = state word; `title` = full reason incl. optional `label:` prefix;
   supported = nothing). This replaced the prior always-visible `state: reason` paragraph, which was an
   implementation-jargon wall above every codex conversation (A3).
-- `useClampIds` (L140): a stable `useId`-based `{buttonId, regionId}` pair binding a clamp button to
+- `useClampIds` (L161-L164): a stable `useId`-based `{buttonId, regionId}` pair binding a clamp button to
   its controlled region.
 
 ### Invariants And Boundaries
@@ -89,6 +89,15 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, each now a full
+  span over its construct instead of a single line that had drifted off it. `ClampButton` L37 → the
+  component body L38-L68 (L37 was the closing `*/` of its docstring), and the `clampButton` recipe
+  the same sentence describes is cited explicitly at L16-L31; `sourceLineCount` L70 → L71-L74 (L70
+  was its docstring); `useClampIds` L140 → L161-L164 (L140 had drifted onto `CapabilityReason`'s
+  signature). All claims unchanged and re-verified. NOT fixed (beyond this worklist):
+  `SourceBadge`/`sourceBadgeLabel` L92/L108 are L93-L107/L109-L119, and `CapabilityReason` L130 is
+  L140-L158 (L130 sits inside the `cue` recipe).
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: reworked the `CapabilityReason` claim — it is now
   a short progressive-disclosure CUE (visible one-word state, optional `label` prefix, full server

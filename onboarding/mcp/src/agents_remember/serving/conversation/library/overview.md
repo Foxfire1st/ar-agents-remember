@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/library/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-26T15:52 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 
 ## What This Area Is
 
@@ -277,8 +277,46 @@ live gates, and the open/reconcile service are unchanged.
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
+## 260731-EFA-L2 — Per-App vs Per-Caller, And Probes That Cannot Be Half-Faked
+
+The read-and-open boundary, the re-authorization chain and the gate-before-store rule are all
+unchanged. Three values now carry rules this route previously enforced only by convention.
+
+**`LibraryBinding(runtime, shared, authorization)` (`open_service.py`) makes the scope split
+explicit.** The runtime and the shared library state are *per-app*; the authorization is
+*per-caller*. Every operation fingerprint, ledger key and minted session id is derived from that
+pairing — binding them once is what stops one caller's request from being keyed under another's
+identity. A function in this route that takes `runtime` and `shared` without an authorization is
+operating outside a caller's scope and should be suspected.
+
+**`OpenRequest(request_id, expected_identity_digest, cwd=, launch_context=)` is one idempotent open
+in the caller's own words.** The request id keys the ledger, the identity digest is the exact row
+the caller believes it is opening, and cwd/launch context narrow where and how. **Replaying the id
+with any of the others changed is a conflict, not a second open** — and that is only checkable
+because the four form one fingerprinted value. Splitting them back into separate parameters would
+silently re-permit the replay.
+
+**`AppServerSeams` (`codex.py`) and `GateProbes` (`gates.py`) are all-or-nothing substitution
+seams.** `AppServerSeams(env, transport_factory)`: the environment selects the binary and its
+credentials, the transport factory decides how the process is spoken to — a fake transport against
+the real environment (or the reverse) talks to a process nobody meant to start. `GateProbes(
+codex_probe, which, environment)`: a gate answers "can this harness serve a library here?" only by
+probing the machine, via the codex app-server probe, PATH lookup, and the process environment —
+**faking one while leaving the others live probes two different machines.** Each has a frozen
+module-level default (`DEFAULT_APP_SERVER_SEAMS`, `DEFAULT_GATE_PROBES`) standing for "the real
+machine". Tests substitute the whole seam or none of it.
+
+`ToolPhase` in `codex_normalize.py` dropped its `# noqa: UP040` — the Ruff target version now
+matches the package's declared 3.11 floor, so the directive had nothing to suppress.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `LibraryBinding` (per-app runtime/shared bound to a
+  per-caller authorization) and `OpenRequest` (the four facts whose joint fingerprint is what makes
+  a replay a conflict rather than a second open) replaced the parallel parameter lists;
+  `AppServerSeams` and `GateProbes` made the two substitution surfaces all-or-nothing, with frozen
+  defaults standing for the real machine. No wire, gate, digest rule or read path changed.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the sub-agent library rows (codex
   `subAgent*` source-kind grouping, claude `subagents/*.jsonl` enumeration/reads, the
   capability-honest `agents_note`, fail-closed sub-agent identity/resume) in the port rows and

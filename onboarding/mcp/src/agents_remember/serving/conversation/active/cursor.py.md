@@ -81,8 +81,8 @@ battery against this authority (all held).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. | L74-L93 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. | L133-L138 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. | L70-L89 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. | L129-L134 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The service decodes and generation-checks every cursor before any stream exists. | L97-L135 | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/service.py) |
 | The routes map dual resume inputs and every cursor error to typed pre-stream statuses. | L106-L118; L85-L89 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
 

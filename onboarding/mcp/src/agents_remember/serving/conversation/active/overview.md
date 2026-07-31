@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 
 ## What This Area Is
 
@@ -228,7 +228,7 @@ engine/store and one over a real socket.
 | The request dependencies are the only consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The validated IPC reads are the only substrate channels polled. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The evidence/native-page/provenance products define the polled shapes. | L310-L380 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| Orchestration's delegated seat projection consumes the canonical classification. | L70-L90 | [hosted_control_projection.py](agents-remember/mcp/src/agents_remember/serving/hosted_control_projection.py) |
+| Orchestration's delegated seat projection consumes the canonical classification. | L71-L91 | [hosted_control_projection.py](agents-remember/mcp/src/agents_remember/serving/hosted_control_projection.py) |
 | The foundation pin asserts exactly the two owned active routes while library/control stay empty. | L32-L56 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The four focused suites cover status, mappers, engine/store, and production routes. | L1-L8 | [mcp/tests overview](../../../../../tests/overview.md) |
 
@@ -329,8 +329,37 @@ projection stays live.
 Opaque native-history cursors flow end to end. The adapter-level reader, not the projector, owns
 source paging and continuation. Parent completeness stays parent-scoped.
 
+## 260731-EFA-L2 — A Turn Change Carries Its Own Warrant
+
+Every hydration, authorization, cursor and recovery rule above is unchanged. Two values were
+introduced, and both encode a rule this route already depended on but did not state in a signature.
+
+**`TurnTransition` (`status.py`) is one proposed turn-state change together with the evidence
+strength that justifies it** — `state`, `strength`, and optionally `turn_id`, `reason`, `waiting`,
+`terminal_outcome`. The state, its turn, what it is waiting on and how it ended are *one
+observation*; the strength is what decides whether that observation may overwrite the last one.
+`ConversationStatusService`'s setter takes the transition plus `now`, rather than the state and the
+strength as separate arguments. The reason is exactly the failure it prevents: **deciding the
+observation and its strength separately is how a weak observation overwrites a strong one** — how a
+heuristic `probable` turn end could displace an `exact` native settlement.
+
+**`ProjectedSession` (`projector/facade.py`) is which conversation is being projected together with
+the authority to mint references for it** — `identity`, `authorization`, `entry`, `mapper`,
+`secret`. `service.py` constructs one and hands it to the projector instead of passing five
+keywords. A projector built from a *mixed* set would publish one session's events under another
+session's references; requiring the five as one value makes that unconstructible in passing.
+
+The `projector/` subpackage additionally gained `wiring.py` (`SessionProjectionSpine`,
+`BridgeReaders`) — see its [route overview](projector/overview.md); the rule there is the same
+shape: every component of one projection is built from the same spine and the same whole reader set.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `TurnTransition` binds a proposed turn-state change to
+  the evidence strength that justifies it (so a weak observation cannot be applied without its
+  warrant), and `ProjectedSession` binds the five facts a projector must not mix. Hydration
+  authority, cursor binding, re-authorization and recovery behaviour are unchanged. Verification
+  metadata pinned until closeout stamps the L2 commit.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: replaced the deleted
   `projector.py` monolith mapping with the `projector/` component graph and linked its route-local
   overview and file-level sidecars. The public projector contract and behavioral invariants are

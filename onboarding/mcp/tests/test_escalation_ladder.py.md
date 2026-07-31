@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_escalation_ladder.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -50,9 +50,13 @@ Four test classes:
 - **`OrphanPolicyTests`** — `find_orphaned_workers` returns only the RUNNING workers spawned by the
   named manager, excluding a terminated sibling worker and another manager's worker.
 
-`_entry(**overrides)` and `_catalog_entry(session_id, **overrides)` are the shared fixture builders
-layering overrides onto a base inbox-entry / catalog-entry dict, matching the project's existing
-`_upsert`/`_entry` fixture convention used across the terminal-catalog and supervisor test modules.
+`_entry(*, agent_id=..., recipient_role=...)` is a keyword-only inbox-entry builder that calls
+`create_operator_inbox_entry` directly through the `InboxMessage`, `InboxRouting`/`InboxAddress`, and
+`InboxPoster` parameter objects. It exposes only the two fields the ladder tests vary and leaves every
+other variation (`rung`, `state`, timestamps) to `.model_copy(update=...)` at the call site.
+`_catalog_entry(session_id, **overrides)` remains the override-layering fixture builder over a base
+catalog-entry dict, matching the project's existing `_upsert`/`_entry` fixture convention used across
+the terminal-catalog and supervisor test modules.
 
 ### Conventions
 
@@ -101,6 +105,13 @@ No meaningful cross-repo references found.
 | Same-repository unit-test suite only. | — | — |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: `_entry` stopped being a `**overrides`
+  dict-layering builder and is now keyword-only over `agent_id`/`recipient_role`, calling
+  `create_operator_inbox_entry` through the new `InboxMessage`, `InboxRouting`, `InboxAddress`, and
+  `InboxPoster` parameter objects. Rewrote the fixture-builder paragraph in Logic to describe that
+  shape and to keep `_catalog_entry` documented as the remaining override-layering builder. The rest
+  of the diff is `ruff format` rewrapping; the four test classes and their assertions are untouched.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added the stale-anchor regression for the
   redundant five-minute later-rung floor. Verification metadata remains pinned until closeout stamps

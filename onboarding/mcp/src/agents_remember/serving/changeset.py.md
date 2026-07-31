@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-07-12T12:55+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`     |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`     |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -49,16 +49,16 @@ through `_leaf_json` — it validates the selector (a `leaf` without `master`, o
 `mode`, is a `400`) and maps domain errors to the same `400`/`404` idiom. `file-diff`'s
 `master`-only branch keeps its own `JSONResponse` mapping; `master` (the list route) wraps its own.
 
-`task_changeset(scope)` (L56-L75) is the per-**enclosure** change-set.
-`_require_contract(scope)` (L37-L44) loads the leaf contract for the base commits and
+`task_changeset(scope)` (L57-L76) is the per-**enclosure** change-set.
+`_require_contract(scope)` (L38-L45) loads the leaf contract for the base commits and
 raises `FileNotFoundError` (→ `404 not-found`) for a mainline scope or an unreadable
 contract — mainline has no base, so it has no change-set. Code = `changed_files_with_counts(scope.code_root,
 contract.code_base_commit, None)` (base → the live worktree), each entry tagged with
 `hasSidecar` via `route_sidecar_status`; memory = the same over `contract.memory_worktree`
-+ `contract.memory_base_commit` (skipped when there is no memory tree). `_sum` (L47-L53)
++ `contract.memory_base_commit` (skipped when there is no memory tree). `_sum` (L62-L68)
 produces the `{files, insertions, deletions}` counters (binary `None` counts → 0).
 
-`file_diff(scope, kind, rel)` (L78-L103) emits BEFORE + AFTER content (not unified-diff
+`file_diff(scope, kind, rel)` (L79-L104) emits BEFORE + AFTER content (not unified-diff
 text) so the L4 pane feeds CodeMirror MergeView `a`/`b` directly. `kind="memory"` diffs
 the memory worktree, anything else the code worktree; `before =
 commit_text_or_none(root, base, relp)` (the `git show base:path` reader — `None` for an
@@ -67,7 +67,7 @@ from `language_for`. The path is confined with `confine_rel`.
 
 `master_changeset(config, repo_id, master)` is the series **NET** change-set —
 `git diff <master-base> <series-tip>` for code + memory, **not** a sum of the leaves.
-`_load_master_contract` (L129-L143) loads the series (root) contract at
+`_load_master_contract` (L153-L163) loads the series (root) contract at
 `tasks/<repo>/<master>/series-contract.md`, with `master` confined to a single path segment
 (no `/` `\` or leading `.`) so a wire value cannot escape the tasks tree. `_series_tip`
 resolves the shared series tip for both counters and file view: it uses the contract's
@@ -76,9 +76,9 @@ state), then falls back to `code_source_branch` / `memory_source_branch` once th
 landed and the work branch has been deleted. `_net_changed` runs
 `changed_files_with_counts(repo, base, resolved_tip)` over the code repo and the memory repo;
 code entries are tagged with `hasSidecar` via `route_sidecar_status` on
-`memory_repo_path/onboarding`. `_master_leaf_summaries` (L157-L179)
+`memory_repo_path/onboarding`. `_master_leaf_summaries` (L193-L215)
 keeps the per-leaf `{leafId, counters}` breakdown alongside (each leaf vs its own base, via
-`_leaf_counts` L112-L126). It degrades to an empty net (never a 500) on a missing contract /
+`_leaf_counts` L113-L127). It degrades to an empty net (never a 500) on a missing contract /
 ref. `master_file_diff(config, repo_id, master, kind, rel)` makes every net-changed file
 inspectable against the same resolved tip: BEFORE = `commit_text_or_none(repo, master_base,
 relp)`, AFTER = `commit_text_or_none(repo, resolved_series_tip, relp)` (both committed refs).
@@ -139,8 +139,21 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | The app factory that calls `register_changeset_routes` before `mount_static`. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The test suite for this module. | [test_serving_changeset.py](agents-remember/mcp/tests/test_serving_changeset.py) |
 
+## 260731-EFA-L2 Current Delta
+
+`leaf_file_diff` and the `GET` file-diff route now take one `ChangesetFileRef` instead of six query
+parameters. The concept: **which file, in which change-set, seen through which lens** — `repo` and
+`leaf`/`master` (with `scope`) locate the change-set, `kind` picks its code or memory half, `mode`
+picks committed or working, and `path` names the file inside it. Any one alone selects nothing,
+which is why the selector travels as one value from the query string down to the diff. The route
+binds it with FastAPI `Depends()`, so the wire query parameters are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the module grew above them. `_sum` L48-L54 → L62-L68 (L48-L54 is now inside `_require_contract`), `_load_master_contract` L130-L142 → L153-L163, and `_master_leaf_summaries` L156-L178 → L193-L215 (that old range now spans `_series_tip`/`_net_changed`). Behaviour claims unchanged and re-read against the source.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ChangesetFileRef` as the single file-diff selector (`leaf_file_diff(config, ref)`, route bound via `Depends()`; wire query unchanged).
 - 2026-07-12T12:55+02:00 — 260712-TRH-L2: bounded master/leaf contract discovery to the requested repo/master enclosure, normalized requested and persisted leaf ids, and made master per-leaf summaries optional through `includeLeaves`; committed/working/master range semantics remain unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-07-04T23:43+02:00 — L8 content update: master series net diffs now resolve a shared series tip through the work branch while it exists, falling back to the source branch after landing/deletion; `master_changeset` counters and `master_file_diff` BEFORE/AFTER content use the same resolved code/memory tip. Verification metadata pinned until closeout stamps the L8 commit.

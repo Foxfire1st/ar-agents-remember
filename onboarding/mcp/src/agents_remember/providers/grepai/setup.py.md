@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -15,6 +15,13 @@
 `setup.py` owns the GrepAI-specific provider setup branch for install and prepare refresh orchestration.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Lifecycle Command Objects
+
+Every `run_lifecycle(...)` call passes a `setup_common.LifecycleCommand(provider="grepai",
+action=…, extra_args=tuple(grepai_extra_args(args)))` in place of the positional
+`provider`/`action` plus the `extra_args=` keyword; `timeout` and `dry_run` stay keywords. The
+argv the lifecycle CLI receives is unchanged.
 
 ### Logic
 
@@ -40,6 +47,9 @@ phases (`grepai install`, `grepai clone-db`) through
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `run_lifecycle`'s new
+  `LifecycleCommand` signature. Same argv, same results. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-06-10T07:30+02:00 — `install_enabled_provider` and `prepare_enabled_provider` announce their phases (`grepai install`, `grepai clone-db`) through `setup_progress_from(args)` so background worktree setup is observable mid-run (GitHub #53). Behavior and return shapes unchanged.
 - 2026-05-31T12:50+02:00 — `prepare_enabled_provider` dropped the leading `args.coordination_root` argument from its `load_settings(...)` call to match `setup_common.load_settings`/`settings_path`, which no longer take a `coordination_root` parameter; behaviour-preserving, no documented prose named the call so no prose corrected (1.0.0 review remediation).
 - 2026-05-25T19:50+02:00: Created when GrepAI setup orchestration was extracted out of `provider_setup.py`.

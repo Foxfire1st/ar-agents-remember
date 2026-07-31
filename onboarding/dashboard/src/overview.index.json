@@ -34,6 +34,7 @@
     "dashboard/src/dev/DevApp.tsx",
     "dashboard/src/dev/PtyRenderBench.tsx",
     "dashboard/src/dev/ScenarioPlayer.tsx",
+    "dashboard/src/dev/benchProbes.ts",
     "dashboard/src/dev/cockpitScenarios.test.ts",
     "dashboard/src/dev/cockpitScenarios.ts",
     "dashboard/src/dev/dev.css",
@@ -65,12 +66,13 @@
     "dashboard/src/vite-env.d.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 324,
-    "fileSidecars": 37,
+    "sourceFilesInScope": 325,
+    "fileSidecars": 38,
     "childRoutes": 3
   },
   "routingTerms": [
     "bench",
+    "benchprobes",
     "busscenarios",
     "capabilityenvelopes",
     "catalogrows",
@@ -133,6 +135,7 @@
       "dashboard/src/dev/DevApp.tsx",
       "dashboard/src/dev/PtyRenderBench.tsx",
       "dashboard/src/dev/ScenarioPlayer.tsx",
+      "dashboard/src/dev/benchProbes.ts",
       "dashboard/src/dev/cockpitScenarios.test.ts",
       "dashboard/src/dev/cockpitScenarios.ts",
       "dashboard/src/dev/dev.css",
@@ -141,8 +144,7 @@
       "dashboard/src/dev/mockTerminalSocket.ts",
       "dashboard/src/dev/scenarios.test.ts",
       "dashboard/src/dev/scenarios.ts",
-      "dashboard/src/index.css",
-      "dashboard/src/main.tsx"
+      "dashboard/src/index.css"
     ],
     "anchorHints": [
       "Cockpit.memo.test.tsx",
@@ -161,6 +163,8 @@
       "PtyRenderBench",
       "ScenarioPlayer.tsx",
       "ScenarioPlayer",
+      "benchProbes.ts",
+      "benchProbes",
       "cockpitScenarios.test.ts",
       "cockpitScenarios.test",
       "cockpitScenarios.ts",
@@ -190,9 +194,7 @@
       "busScenarios.ts",
       "busScenarios",
       "capabilityEnvelopes.ts",
-      "capabilityEnvelopes",
-      "catalogRows.ts",
-      "catalogRows"
+      "capabilityEnvelopes"
     ]
   },
   "fallback": {

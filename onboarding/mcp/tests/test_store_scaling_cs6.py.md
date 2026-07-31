@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_store_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated            | 2026-07-10T01:14+02:00                    |
-| lastVerifiedCommitHash |                                           `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                           2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash |                                           `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                           2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                          |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ The suite uses `_scaling` helpers to prove post-compaction size is bounded at mu
 
 ### Conventions
 
-Each store is temp-rooted. Tests prefer deterministic read/write/count metrics over timing, and they seed at two sizes when proving reclamation or subquadratic growth.
+Each store is temp-rooted. Tests prefer deterministic read/write/count metrics over timing, and they seed at two sizes when proving reclamation or subquadratic growth. Store entry points are addressed through parameter objects rather than loose keywords: `SupervisorSignalCooldownStore.in_cooldown` takes a `SupervisorSignalKey(target=SupervisorSignalTarget(...), finding_kind=..., detail=...)`, `write_expectation_row` takes an `Expectation(kind=..., source_id=..., subject=ExpectationSubject(...))`, `AmbientLifecycle` takes `timing=AmbientTiming(heartbeat_seconds=...)`, and `TerminalCatalogLivenessSweeper` takes `probe=LivenessProbe(hysteresis=TerminalCatalogLivenessConfig(...), pane_capturer=...)`.
 
 ### Invariants And Boundaries
 
@@ -56,9 +56,9 @@ No external documentation governs these repo-local store scaling regressions.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Store scaling tests cover signal compaction/snapshot reads, metrics tail reads, expectation compaction, provider degradation compaction, tolerant readers, terminal catalog batch/compact, and workspace-river compaction. | L57-L155; L157-L193; L204-L233; L277-L332; L335-L389; L438-L571 | [mcp/tests/test_store_scaling_cs6.py](agents-remember/mcp/tests/test_store_scaling_cs6.py) |
-| The shared CS-6 assertion helpers provide subquadratic, bounded-file-size, and bounded-count assertions used by this suite. | L58-L125 | [mcp/tests/_scaling.py](agents-remember/mcp/tests/_scaling.py) |
-| The startup workspace-river compactor documents why live cursor-safe compaction is out of scope for this leaf. | L99-L150 | [mcp/src/agents_remember/observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
+| Store scaling tests cover signal compaction/snapshot reads, metrics tail reads, expectation snapshot reads, heartbeat/lifecycle reclamation, expectation and metrics compaction, provider degradation compaction, tolerant readers, terminal catalog batch/compact, and workspace-river compaction. | L76-L162; L163-L215; L216-L250; L288-L383; L384-L464; L465-L482; L251-L287 with L483-L525; L526-L650; L651-L749 | [mcp/tests/test_store_scaling_cs6.py](agents-remember/mcp/tests/test_store_scaling_cs6.py) |
+| The shared CS-6 assertion helpers provide subquadratic, bounded-file-size, and bounded-count assertions used by this suite. | L62-L155 | [mcp/tests/_scaling.py](agents-remember/mcp/tests/_scaling.py) |
+| The startup workspace-river compactor documents why live cursor-safe compaction is out of scope for this leaf. | L111-L162 | [mcp/src/agents_remember/observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
 
 ## Cross-Repo References
 
@@ -69,6 +69,19 @@ No meaningful cross-repo references found.
 | Same-repository tests only. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the store entry points this suite
+  drives moved their loose keywords into parameter objects
+  (`SupervisorSignalKey`/`SupervisorSignalTarget` for `in_cooldown`,
+  `Expectation`/`ExpectationSubject` for `write_expectation_row`, `AmbientTiming` for
+  `AmbientLifecycle`, and `LivenessProbe` for `TerminalCatalogLivenessSweeper`), and a whole-file
+  reformat pushed every block down. Recorded the new call shapes in Conventions and re-anchored
+  the own-file citations against the current source (signal store L76-L162, metrics tail
+  L163-L215, expectation snapshot L216-L250, heartbeat/reclamation L288-L383, expectation and
+  metrics compaction L384-L464, degradation compaction L465-L482, tolerant readers L251-L287 with
+  L483-L525, terminal catalog L526-L650, river compaction L651-L749), plus the moved `_scaling.py`
+  helpers (L62-L155) and `compact_workspace_river` (L111-L162). No test case was added, removed,
+  or renamed and every bounded-count, bounded-size, and two-size assertion is unchanged.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7/B1: added two-size heartbeat coalescing,
   complete lifecycle-directory reclamation, and live virtual-cursor compaction regressions.

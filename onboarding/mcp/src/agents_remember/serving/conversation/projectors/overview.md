@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 
 ## What This Area Is
 
@@ -176,11 +176,11 @@ fixtures record which shapes are gate-observed. The mapper suite pins every gram
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The engine consumes channel flags and converts `UnmappableShape` to preserved evidence. | L387-L396; L453-L472 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
-| The store converges the split tool items these mappers emit. | L123-L126; L303-L319 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
+| The engine consumes the mapper channel flags (`uses_native_pages`, `uses_transcript_echo`, `eager_native_continuation`) and converts `UnmappableShape` into preserved unknown-vendor evidence. | L148-L200 · L64-L66, L165-L178 | [projector/native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) · [projector/echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
+| The store converges the split tool items these mappers emit. | L123-L126; L301-L317 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
 | The evidence/native frame products the mappers parse. | L310-L350 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The runtime fixtures record the observed (never enabling) shapes per harness. | L34-L58 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
-| The mapper suite pins identity, blocks, tools, provenance, and preservation for all three. | L49-L553 | [test_conversation_active_projectors.py](agents-remember/mcp/tests/test_conversation_active_projectors.py) |
+| The mapper suite pins identity, blocks, tools, provenance, and preservation for all three. | L84-L901 | [test_conversation_active_projectors.py](agents-remember/mcp/tests/test_conversation_active_projectors.py) |
 
 ## Cross-Repo References
 
@@ -256,8 +256,64 @@ Codex native-history mapping no longer treats persisted sub-agent spawn/start ac
 current liveness. Those rows hydrate as `unknown` until adapter registry authority overlays
 current status. Pure mapping, item identity, and unknown-vendor preservation remain unchanged.
 
+## 260731-EFA-L2 — The Routers Are Flat, And "Well-Typed" Is A Value You Hold
+
+This is the route where the complexity limits bit hardest: a frame router is naturally a long
+`if type == …` chain, and both mappers had grown one. Neither was listed in a baseline — they were
+split. **Purity, schema-strictness and the vendor-honest fallback are unchanged**, and no frame maps
+differently than it did.
+
+**Codex (`codex.py`).** The single notification router became a cascade of narrow routers —
+`_map_codex_notification` → `_map_notification_params` → `_map_notification_item` /
+`_map_item_scoped_notification` / `_map_block_delta` — and the item router split by *kind* into
+`_map_thread_item`, `_map_prose_item`, `_map_tool_item` and `_map_collab_item`, each with per-type
+leaves (`_user_message_item`, `_reasoning_item`, `_mcp_tool_call_item`, `_markdown_item`). Two
+values carry what used to be threaded through every branch:
+
+- **`ItemPlacement`** (`origin`, `live`, `turn_id`, `created_at`, `evidence_ref`) — where a mapped
+  frame's items sit in the conversation, **before any item body is read**. It is the same for every
+  item in the frame, which is why it arrives once instead of per item.
+- **`_LiveItemContext`** — the same facts plus `item_id` and `phase`, i.e. what each individual
+  item mapper needs about the frame besides the item body itself.
+
+**`_CollabCall`** is the one to understand before touching the sub-agent path. It holds a
+`collabAgentToolCall`'s three identity fields — which collab tool ran, which agent threads it
+addressed, and what the item said about their states — **already proven well-typed**. Its purpose
+is to keep the shape check in exactly one place: *a `_CollabCall` in hand means the item was the
+documented collab shape*. `_collab_receiver_ids` returns `None` to mean "present but not the
+documented list shape", which is how the honest-fallback path stays reachable. Do not construct a
+`_CollabCall` outside `_collab_call_shape`; doing so would let an unchecked payload past the only
+gate.
+
+**Claude (`claude.py`).** The `task_*` sub-agent lifecycle split into `_resolve_task_identity`,
+`_task_lifecycle_state`, `_task_usage_block`, `_task_lifecycle_blocks` and `_agent_identity_tag_item`,
+with two schema assertions named as their own guards (`_require_command_lifecycle`,
+`_require_rate_limit_event`) and `_require_task_usage` returning the usage mapping or `None`.
+
+**`_TaskIdentity` carries a distinction the code previously kept only in local variable names**, and
+it is the fact a future change is most likely to break: it holds `join_key`, `subagent_type`,
+`description` **and** `retained_description`, because *what the replacing binding record keeps is
+deliberately not always what the roster row displays*. Every field prefers the frame's own evidence
+and falls back to what earlier `task_*` evidence already proved — a `task_notification` carries
+neither `subagent_type` nor `description`, and its roster upsert **must not blank what `task_started`
+filled in**. Nothing is guessed; absent evidence stays absent.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The engine row
+  was repointed off the deleted `active/projector.py` onto the package that replaced it: channel-flag
+  consumption plus the `UnmappableShape` → `MappedUnknownVendor` conversion now reads at
+  `projector/native_ingestion.py` L148-L200 and `projector/echo_ingestion.py` L64-L66, L165-L178, and
+  the claim was reworded to name the three flags (`uses_native_pages`, `uses_transcript_echo`,
+  `eager_native_continuation`) it actually consumes. The mapper suite row now spans L84-L901 (the three
+  mapper test classes) in `test_conversation_active_projectors.py`, was L49-L553.
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: both mappers' routers were split into narrow per-kind
+  routers with per-type leaves, and the facts they threaded became values — `ItemPlacement` and
+  `_LiveItemContext` (codex frame placement vs per-item context), `_CollabCall` (the single proof
+  that an item matched the documented collab shape), `_TaskIdentity` (claude, preserving the
+  displayed-vs-retained description distinction and the sparse-frame fallback rule). Purity,
+  schema-strictness, the `unknown-vendor` fallback and every mapped output are unchanged.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: Codex persisted
   sub-agent activity now records historical existence without claiming current liveness;
   `registered`/`running` becomes `unknown` on native-history hydration until current adapter

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/mcp/tools/next_step.py`       |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`             |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`             |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -41,7 +41,15 @@ the hint.
 ### Logic
 
 Pure core: `compute_next_step(state, contract, tool_name, *, guidance)` →
-`NextStep | None`. All inputs are pre-resolved; it does no I/O. Branching:
+`NextStep | None`. All inputs are pre-resolved; it does no I/O.
+
+Since 260731-EFA-L2 `compute_next_step` is a four-line dispatcher over one named helper per regime —
+`_terminal_step(tool_name)`, `_parked_step(state)`, `_front_half_step(state)`,
+`_linear_half_step(tool_name, contract, guidance)` — each carrying the explanatory comment that used
+to sit inline. The branch order, the conditions and every returned hint are unchanged; the
+descriptions below still hold, they simply live one function down.
+
+Branching:
 
 - `state is None or state.is_terminal` → no active lifecycle. If the just-completed
   `tool_name == "lifecycle_end"`, return the module-level `_LOOP_BACK` constant
@@ -187,6 +195,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `compute_next_step`'s inline branches were extracted into
+  `_terminal_step` / `_parked_step` / `_front_half_step` / `_linear_half_step` to bring the function
+  under the now-armed complexity rules. No hint, condition or ordering changed. Verification
+  metadata pinned until closeout stamps the L2 code commit.
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: updated the
   front-half rundown reframe pointer from the orchestrator lifecycle to the architect lifecycle
   (`roles/architect.md`). Verification metadata pinned until closeout stamps the HFX-L6 commit.

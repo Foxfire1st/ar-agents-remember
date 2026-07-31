@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ the helper host reports the runtime/helper versions as informational evidence (n
 | A codex version drift still ENABLES the surface when the connect+list probe passes; a failed probe demotes to unverified. | (test) | [test_conversation_library_gates.py](agents-remember/mcp/tests/test_conversation_library_gates.py) |
 | Helper success enables Pi fully; helper failure and missing locked dependencies demote to unverified. | L158-L209 | [test_conversation_library_gates.py](agents-remember/mcp/tests/test_conversation_library_gates.py) |
 | The helper host reports observed runtime/helper versions as informational evidence only; the operation result is the gate (no version comparison). | L145-L151 | [helper_host.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/helper_host.py) |
-| The installed-runtime suite re-proves the Codex and Pi gates on real harnesses (the exact-identity checks still skip on version drift — recorded conservatism). | L134-L152; L215-L230 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed-runtime suite re-proves the Codex and Pi gates on real harnesses (the exact-identity checks still skip on version drift — recorded conservatism). | L136-L153; L217-L231 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 
 ## Cross-Repo References
 
@@ -97,8 +97,20 @@ No meaningful cross-repo boundary exists for this local gate registry.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+**`GateProbes`** (`codex_probe`, `which`, `environment`; module default `DEFAULT_GATE_PROBES`) is
+now how the registry finds out what is actually installed, as one substitutable surface. A gate
+answers "can this harness serve a library here?" only by probing the machine — the codex app-server
+probe, PATH lookup and the process environment are the three ways it looks — and faking one while
+leaving the others live probes two different machines. `None` on `codex_probe`/`which` keeps the
+real probe. The gate verdicts themselves are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `GateProbes` / `DEFAULT_GATE_PROBES` as the one substitutable installed-ness surface.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
   2026-07-21, R4). Corrected the now-false "passes at the exact locked versions" gating doctrine:
   the real connect+list (codex) / helper `list` (claude/pi) CONTRACT probe is the only gate;

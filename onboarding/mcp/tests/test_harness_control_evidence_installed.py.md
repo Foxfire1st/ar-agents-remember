@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_evidence_installed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04`|
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,7 +33,11 @@ seam and asserts evidence frames cross with `bridgeEpoch` while `snapshot.raw` s
 native reason; then opens a persisted thread, pages it through the native read with typed identity,
 builds a second adapter through the factory resume channel, and proves `thread/resume` reopens the
 exact persisted thread whose items page identically; a live cockpit submission's source crosses
-the provenance batch with exact epoch scoping. `PiInstalledEvidenceTests` (locked 0.80.7) drives
+the provenance batch with exact epoch scoping. Its one test method delegates to two named helpers:
+`_assert_evidence_family(page)` owns the whole-family assertion (the `codex-notification` kind, the
+typed id-carrying `userMessage`/`agentMessage` items, token usage, turn completion), and
+`_assert_resume_channel_reaches_the_persisted_thread(root)` owns the persisted-thread paging and
+factory-resume half. `PiInstalledEvidenceTests` (locked 0.80.7) drives
 one prompt and asserts live evidence frames, the `get_entries` native page with typed identity, the
 provenance batch, and the no-leak guarantee. `ClaudeInstalledHonestyTests` keeps the Claude row
 honestly `not-exercised` while the installed version (2.1.214) mismatches the locked 2.1.211 gate,
@@ -43,7 +47,10 @@ with the exact reason asserted.
 
 Every captured observation is redacted to the fixture allow-list: counts, kinds, field presence,
 and shape descriptors only — never content, paths, native text, or credentials. Version probes use
-`--version` subprocesses; live turns use a one-word prompt.
+`--version` subprocesses; live turns use a one-word prompt. The two live classes also carry the
+registered `@pytest.mark.ar_run_evidence_installed` marker so the pair can be selected or deselected
+by name; `ClaudeInstalledHonestyTests` is unmarked. Cockpit submissions pass one
+`ControlSubmission(source=..., request_id=..., expected_bridge_epoch=...)` parameter object.
 
 ### Invariants And Boundaries
 
@@ -87,6 +94,13 @@ boundaries.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the codex live test was split for C901, so
+  the whole-family assertions now live in `_assert_evidence_family(page)` and the persisted-thread
+  plus factory-resume half in `_assert_resume_channel_reaches_the_persisted_thread(root)`; both live
+  classes gained the registered `@pytest.mark.ar_run_evidence_installed` marker, and the cockpit
+  submissions now pass a `ControlSubmission` parameter object. Named the two helpers in Logic and
+  recorded the marker and the submission object under Conventions.
 
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: created the installed-runtime evidence
   capture sidecar (3 opt-in classes: codex 0.144.5 live incl. ephemeral refusal + resume E2E, pi

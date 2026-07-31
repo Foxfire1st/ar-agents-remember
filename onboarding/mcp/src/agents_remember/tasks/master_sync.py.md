@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/master_sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-26T20:18+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                         |
-| lastVerifiedCommitDate |                                            2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                         |
+| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ scope; this file implements an internal coordination contract.
 | --- | --- | --- |
 | The task-doc controller invokes `plan_master_sync`, includes sync data in dry-run previews, and writes the changed leaf plus changed master together. | L125-L135; L444-L472 | [task_doc_tools.py](agents-remember/mcp/src/agents_remember/controllers/task_doc_tools.py) |
 | Store batch writes prepare every JSON and markdown payload before writing, then return paths in input order. | L35-L57 | [store.py](agents-remember/mcp/src/agents_remember/tasks/store.py) |
-| Controller tests prove row creation, manual scope preservation, status derivation, and dry-run sync preview without writing the master. | L603-L666 | [test_task_document.py](agents-remember/mcp/tests/test_task_document.py) |
+| Controller tests prove row creation, manual scope preservation, status derivation, unreadable/mis-kinded parent refusal, and dry-run sync preview without writing the master. | L635-L758 | [test_task_document.py](agents-remember/mcp/tests/test_task_document.py) |
 
 ## Cross-Repo References
 
@@ -84,5 +84,17 @@ resolved agents-remember coordination task root.
 | No cross-repo dependency; external-memory alignment is handled by the worktree lifecycle outside this file. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The master-sync controller tests now sit at L635-L758 of `test_task_document.py` (1375 lines): `test_leaf_create_syncs_parent_master_row` L635, `test_leaf_updates_preserve_manual_master_scope` L650, `test_leaf_step_progress_derives_master_row_status` L669, unreadable-parent and wrong-kind refusals L684/L711, and `test_leaf_dry_run_includes_master_sync_preview_without_writing` L745-L758. Extended the claim to name the two refusal tests the range now covers.
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/tasks/master_sync.py` since the L2 base commit is the whole-tree `ruff
+  format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked
+  by parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds. Noted while checking: the references table also cites line ranges inside
+  `task_doc_tools.py`, `test_task_document.py`; those ranges shifted because this task edited
+  those files, so treat the cited numbers as approximate and the linked cards as authoritative.
 
 - 2026-06-26T20:18+02:00 — Created for Task 21: documents same-root leaf-to-master row sync planning, status derivation, manual scope preservation, and the preview/write boundary. Verification metadata left blank until closeout stamps the first code commit for this new file.

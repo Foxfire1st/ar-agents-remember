@@ -58,7 +58,7 @@ this client helper test; the behavior is pinned by same-repository code and test
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tests pin the POST body, posted/error return contract, and dismiss helper endpoint mapping. | L5-L67 | [operatorInbox.test.ts](agents-remember/dashboard/src/data/operatorInbox.test.ts) |
+| The tests pin the POST body, posted/error return contract, and dismiss helper endpoint mapping. | L5-L65 | [operatorInbox.test.ts](agents-remember/dashboard/src/data/operatorInbox.test.ts) |
 | The helper under test owns the fetch call and response mapping. | L1-L25 | [operatorInbox.ts](agents-remember/dashboard/src/data/operatorInbox.ts) |
 | Component-level tests pin how the helper is used from Gate Respond. | L53-L84 | [GateResponder.test.tsx](agents-remember/dashboard/src/panels/GateResponder.test.tsx) |
 
@@ -71,6 +71,12 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 line citation that ran past the end of
+  the file (cited L5-L67; the file is 65 lines). The two `describe` blocks the row names span
+  L5-L65 — `postOperatorInbox` L5-L45 and `dismissOperatorInboxEntry` L47-L65 — read back and
+  corrected. Noted while verifying, not changed: the Code Commentary still says the dismiss helper
+  returns `"queued"`, but the tests at L52 and L59 assert `"dismissed"` and `"not-found"`.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

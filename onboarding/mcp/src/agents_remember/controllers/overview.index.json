@@ -21,11 +21,12 @@
     "mcp/src/agents_remember/controllers/runtime_install.py",
     "mcp/src/agents_remember/controllers/skill_tools.py",
     "mcp/src/agents_remember/controllers/task_doc_tools.py",
+    "mcp/src/agents_remember/controllers/task_ref.py",
     "mcp/src/agents_remember/controllers/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 12,
-    "fileSidecars": 12,
+    "sourceFilesInScope": 13,
+    "fileSidecars": 13,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -52,6 +53,7 @@
     "provider_tools",
     "read",
     "read_files",
+    "ref",
     "remember",
     "runtime",
     "runtime_install",
@@ -60,6 +62,7 @@
     "src",
     "task",
     "task_doc_tools",
+    "task_ref",
     "tools",
     "worktree",
     "worktree_tools"
@@ -79,6 +82,7 @@
       "mcp/src/agents_remember/controllers/runtime_install.py",
       "mcp/src/agents_remember/controllers/skill_tools.py",
       "mcp/src/agents_remember/controllers/task_doc_tools.py",
+      "mcp/src/agents_remember/controllers/task_ref.py",
       "mcp/src/agents_remember/controllers/worktree_tools.py"
     ],
     "anchorHints": [
@@ -104,6 +108,8 @@
       "skill_tools",
       "task_doc_tools.py",
       "task_doc_tools",
+      "task_ref.py",
+      "task_ref",
       "worktree_tools.py",
       "worktree_tools",
       "ContextPacketV2",
@@ -114,7 +120,7 @@
       "CGC",
       "mcp/src/agents_remember/controllers/",
       "route-local-overview",
-      "7ca29c3b6dd2c0184253e2690f1ebe78c511573b",
+      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
       "/../../overview.md",
       "controllers/",
       "task_reopen_tool",
@@ -127,9 +133,7 @@
       "enclosures",
       "contractPath",
       "worktree_integrate_tool",
-      "lifecycle_finalize_task_tool",
-      "config.retirement.auto_land_on_integration",
-      "auto_land_on_finalize"
+      "lifecycle_finalize_task_tool"
     ]
   },
   "fallback": {

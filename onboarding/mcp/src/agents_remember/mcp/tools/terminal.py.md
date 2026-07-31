@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -24,6 +24,42 @@ serving primitives so an orchestrator can spawn a manager and a manager a worker
 clicks.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Spawn Parameter Objects
+
+`spawn_agent_session_payload`'s sixteen keyword arguments became four bundles, each with a named
+default so an ordinary call reads as one:
+
+```python
+spawn_agent_session_payload(config, *, seat: SpawnSeat = DEFAULT_SPAWN_SEAT,
+                            retired: RetiredSpawnInputs = NO_RETIRED_INPUTS,
+                            spawned_by: SpawnedBy = UNATTRIBUTED_SPAWN,
+                            overrides: SpawnOverrides = NO_SPAWN_OVERRIDES)
+```
+
+- **`SpawnSeat`** — what the caller legitimately declares: `kind`, `leaf_key`,
+  `replacement_for_leaf`, `level`, `label`, `env` (the seat's `AR_SPAWN_ROLE` rides here).
+- **`RetiredSpawnInputs`** — what it may no longer declare: `context`/`submit` (the retired one-call
+  brief) plus `harness`, `model`, `effort`, `launch_args`, `prompt_keywords`, `session_commands`.
+  These are accepted **only so they can be refused loudly** before any settings, catalog, or
+  terminal side effect; a non-`None` value is a refusal, never a setting, which is why they travel
+  as the one bundle `_caller_spend_override_refusal(seat, retired)` walks.
+- **`SpawnedBy`** — the spawner's own `session_id` / `lifecycle_id`, recorded on the new row.
+- **`SpawnOverrides`** — real collaborators a test may substitute: `session_id`, `host`, `paster`,
+  `session_log`, `which`. Its docstring is explicit that this is **not** a hexagonal port bundle —
+  the type was called `SpawnPorts` and the name implied a boundary the spawn talks to the domain
+  through, which it is not. `paster` and `session_log` are kept precisely because the spawn path
+  never reads them: a spawn delivers no brief and writes no session log, and a test hands in a fake
+  to assert it was never called. Production always passes `NO_SPAWN_OVERRIDES`.
+
+`_resolve_spawn_harness` was split into `_requested_harness` (the caller named one: known id AND
+installed), `_preferred_harness` (settings named one: a configured-but-missing harness names its
+source file) and `_first_detected_harness` (nothing asked or configured: first registry harness on
+PATH). Same precedence, same refusals.
+
+The published MCP tool keeps its flat sixteen-parameter signature — the packing happens in
+`mcp/registration/sessions.py`, because a model-typed tool parameter would republish
+`spawn_agent_session` as a nested object for every client.
 
 ### 260714-ACPUI-L2 Typed Native Launch Dispatch
 
@@ -214,7 +250,8 @@ session-identity primitive is built.
 
 Builders stay transport-thin: durable spawn/paste behavior lives in `serving.terminal_opener` +
 `serving.terminal_paste`, leaf reassignment in `serving.terminal_leaf_assignment`, response validation
-is `_tool_payload` + `models/terminal.py`, and server registration lives in `mcp/server.py`.
+is `_tool_payload` + `models/terminal.py`, and the `@server.tool()` declarations live in
+`mcp/registration/sessions.py` (260731-EFA-L2 moved them out of `mcp/server.py`).
 
 ### Invariants And Boundaries
 
@@ -279,11 +316,11 @@ catalog.
 | Leaf-ref refusal payloads are shared by attach and spawn. | leaf_ref_refusal_payload | [leaf_ref.py](leaf_ref.py.md) |
 | The shared opener validates live launch identity and fences create, leaf claim, tmux ensure, and catalog upsert; both role and dashboard paths reuse it. | L170-L648 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
 | The server-side capture-verified paste helper that delivers the context packet (and attaches the failure capture). | L133-L229 | [terminal_paste.py](agents-remember/mcp/src/agents_remember/serving/terminal_paste.py) |
-| The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L72 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
+| The harness detection registry (`find_harness` / `is_detected` / `HARNESSES` order) that gates a spawn before tmux and orders the detection-gated default. | L41-L73 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | load_agentic_settings | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 | The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | L18-L20 | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 | The facade re-exports both payload builders. | L86; L94 | [__init__.py](agents-remember/mcp/src/agents_remember/mcp/tools/__init__.py) |
-| The FastMCP server registers `attach_terminal_session_to_leaf` and documents the HFX2-L10 settings-only authority rule for `spawn_agent_session`, including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | L170-L197 | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| The tool declarations for `attach_terminal_session_to_leaf` and `spawn_agent_session`, whose docstring states the HFX2-L10 settings-only authority rule including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | n/a | [registration/sessions.py](agents-remember/mcp/src/agents_remember/mcp/registration/sessions.py) |
 | The strict response models (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`) are registered for conformance validation. | L82-L88; L111-L114 | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
 | `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | [retire.py](agents-remember/mcp/src/agents_remember/serving/retire.py); [retire_policy.py](agents-remember/mcp/src/agents_remember/serving/retire_policy.py) |
 | Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | [seat_events.py](agents-remember/mcp/src/agents_remember/serving/seat_events.py) |
@@ -315,6 +352,13 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: `spawn_agent_session_payload` took the
+  `seat`/`retired`/`spawned_by`/`overrides` parameter objects (`SpawnSeat`, `RetiredSpawnInputs`,
+  `SpawnedBy`, `SpawnOverrides` — the last renamed from `SpawnPorts`, with the reason recorded on the
+  type), and `_resolve_spawn_harness` split into `_requested_harness` / `_preferred_harness` /
+  `_first_detected_harness`. `retire_entry` now takes a `SeatClosure`. Refusal vocabulary, precedence
+  and every payload field are unchanged, and the published MCP signature stays flat. Verification
+  metadata pinned until closeout stamps the L2 code commit.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented role-spawn conflict mapping,
   no alternate spawn or provenance rewrite, and corrected the inherited overbroad lock-free-reader
   statement while preserving settings-owned role dispatch.

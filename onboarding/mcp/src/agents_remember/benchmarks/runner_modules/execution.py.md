@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/execution.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T16:30+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,24 @@
 Codex benchmark execution policy, command construction, per-run metadata, and run orchestration.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Run/Task Objects
+
+The execution entry points now take value objects instead of long keyword lists:
+
+- `run_case(request: BenchmarkRunRequest, case)` — one request and one case. It derives
+  `preparation = request.preparation` and passes that down, so a run prepares its workspace under
+  exactly the same rules `codex_benchmark_prepare` uses.
+- `maybe_prepare_case(preparation, case, *, prompt_id, variant_id, skip_prepare)` — the
+  preparation object plus the three decisions that are the *run's* own.
+- `run_one(run: BenchmarkRun, task: BenchmarkTask)` and
+  `run_dry_batches(run: BenchmarkRun, task_batches)` — the case execution frame plus the scheduled
+  work. `task_batches_for_prompt` now emits `BenchmarkTask` values rather than bare
+  `(prompt, variant, repetition)` tuples, so a batch element is self-describing.
+
+`allowed_provider_ids` still reaches `prepare_case` — it now rides on `BenchmarkPreparation`
+rather than being threaded as its own parameter — so the containment R1 (260707-HFX-L1)
+live-authority set still flows from the service request to the workspace provider filter.
 
 ### Logic
 
@@ -53,6 +71,12 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0913` armed with no
+  exemptions): `run_case`, `maybe_prepare_case`, `run_one` and `run_dry_batches` were re-signed
+  onto `BenchmarkRunRequest` / `BenchmarkPreparation` / `BenchmarkRun` / `BenchmarkTask`, and
+  `task_batches_for_prompt` now emits `BenchmarkTask` values. `allowed_provider_ids` now reaches
+  `prepare_case` via `BenchmarkPreparation`. Run outputs are unchanged. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `maybe_prepare_case` and
   `run_case` gained the pass-through `allowed_provider_ids` parameter feeding the workspace
   provider filter. Verification metadata pinned until closeout stamps the HFX-L1 commit.

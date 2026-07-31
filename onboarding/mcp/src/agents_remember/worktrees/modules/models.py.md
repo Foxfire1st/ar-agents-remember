@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/models.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-12T19:06+02:00     |
-| lastVerifiedCommitHash | `6f1a7e9028d5d4858cf9c645f2448d5395fafc6a` |
-| lastVerifiedCommitDate | 2026-06-12T19:52:16+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,6 +32,15 @@ onboarding. `PATH_SAMPLE_LIMIT` (30) caps the payload exposure of lists that
 scale with transported history; closeout exposes them as count + sample while
 the plans keep full lists internally.
 
+**`VerifiedChange` (frozen, 260731-EFA-L2)** is the landed code change that onboarding metadata is
+stamped against: `commit`, `commit_date`, `changed_paths`, and `working_paths` (the working-tree
+subset that gates closeout; `None` when the caller has no separate working set). Every refresher
+needs the same four facts together, and splitting them let a caller stamp one commit's hash beside
+another's path list. `closeout._external_closeout_commits` builds it once and
+`onboarding.refresh_onboarding_metadata` / `refresh_onboarding_metadata_for_context` /
+`refresh_route_overview_metadata_for_context` all take it. `refresh_entity_fingerprints_for_context`
+deliberately still takes `change.changed_paths` alone — it stamps no commit.
+
 `WorktreeProviderSetupConfig.unlink_settings_after_setup` (default False)
 marks the settings path as a controller-owned temp file whose lifetime must
 extend into the background setup thread, which then owns the unlink
@@ -49,6 +58,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `VerifiedChange(commit, commit_date, changed_paths, working_paths=None)` — the
+  landed code change every onboarding refresher stamps against. Additive to this module; the
+  signature changes land in `closeout.py` and `onboarding.py`. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-06-12T19:06+02:00 — Issue #83: `OnboardingRefreshPlan` gained the non-blocking `unonboarded` list (committed-range paths without onboarding) and the module gained `PATH_SAMPLE_LIMIT` (30) for count+sample payload bounding.
 - 2026-06-10T07:30+02:00 — `WorktreeProviderSetupConfig` gained `unlink_settings_after_setup` (default False): marks the settings path as a controller-owned temp file whose lifetime must extend into the background setup thread, which then owns the unlink (GitHub #53).
 - 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added `RouteOverviewBodyClassification` (stale / untraced / attested_no_impact / stamped_without_body_review).

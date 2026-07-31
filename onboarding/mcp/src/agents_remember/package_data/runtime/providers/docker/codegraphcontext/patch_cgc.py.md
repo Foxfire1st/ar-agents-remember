@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../requirements/codegraphcontext.txt.md`                              |
 
 ## Governing Overview
@@ -56,8 +56,8 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The script locates the installed CodeGraphContext package and applies a static list of patch operations. | L1-L33 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
-| Patch operations fail fast when neither the patched text nor an acceptable original snippet is present. | L238-L249 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
+| The script locates the installed CodeGraphContext package and applies a static list of patch operations. | L1-L7; L124-L137 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
+| Patch operations fail fast when neither the patched text nor an acceptable original snippet is present. | L127-L133 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
 | The CGC Dockerfile copies and executes this patch script during runner image build. | L10-L13 | [Dockerfile](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
 
 ## Cross-Repo References
@@ -69,6 +69,22 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is required beyond patching the installed third-party package inside the Docker image. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that no longer
+  matched the 137-line script. The locate-and-apply claim now cites L1-L7 (the `sysconfig` purelib
+  `base` path plus the head of the `operations` list) and the apply loop at L124-L137, replacing the
+  old L1-L33 which now lands mid-`operations` data. The fail-fast claim now cites L127-L133 — the
+  `if operation["patched"] in text: continue` short-circuit, the `for original ... break` scan, and
+  its `else: raise SystemExit(...)` — replacing the old L238-L249, which ran 101 lines past the end
+  of the file. Read both ranges back.
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py`
+  since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 27
+  line(s) and normalised string quoting to double quotes. Checked by parsing both revisions and
+  comparing the abstract syntax trees (identical) and the comment tokens (identical), so no
+  symbol, signature, default, decorator, control-flow branch, docstring, or assertion this card
+  describes has moved, and every claim this card makes about its own source still holds.
 
 - 2026-07-03T01:55+02:00 — L12 adds the core/watcher.py timer-pop operation: upstream never removes a fired debounce timer's dict entry, so the per-path dict grew with every unique changed source path (the 2.16GiB watcher incident). A drift-guard test pins the script's snippets to the in-package constants.
 - 2026-05-26T23:59+02:00: Created for the provider Compose migration and closeout missing-onboarding gate.

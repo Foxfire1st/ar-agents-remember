@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash |  `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`|
-| lastVerifiedCommitDate |  2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,11 +100,11 @@ The suite proves the adapter and its production closeout call sites together.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Adapter tests cover all three gate statuses, invocation, worktree import authority, bounded failures, and interpreter selection. | L38-L187 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
-| The argument spy proves both closeout entry points pass the checkout path, not the repository name. | L191-L250 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
-| Closeout integration tests prove zero mutation on failure and quality-before-commit on success. | L252-L322 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
-| The adapter under test: wrapper-presence applicability plus the three status constants. | L15-L117 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
-| The unannotated call sites the spy guards. | L282-L284; L589-L597 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| Adapter tests cover all three gate statuses, invocation, worktree import authority, bounded failures, and interpreter selection. | L38-L165 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| The argument spy proves both closeout entry points pass the checkout path, not the repository name. | L169-L222 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| Closeout integration tests prove zero mutation on failure and quality-before-commit on success. | L224-L284 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| The adapter under test: wrapper-presence applicability plus the three status constants. | L15-L112 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
+| The unannotated call sites the spy guards. | L283-L285; L583-L589 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
 
 ## Cross-Repo References
 
@@ -113,9 +113,16 @@ about other repositories: a bare temp checkout stands in for a consuming reposit
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| A checkout with no wrapper is reported as `wrapper-unavailable` rather than silently skipped, which is the consuming-repository case. | L76-L96 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| A checkout with no wrapper is reported as `wrapper-unavailable` rather than silently skipped, which is the consuming-repository case. | L66-L82 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 
 ## Update History
+
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/tests/test_worktree_closeout_quality_gate.py` and moved the lines this card cites, so the
+  Citations column no longer pointed at the code its rows name. Corrected the ranges (L38-L187 →
+  L38-L165; L191-L250 → L169-L222; L252-L322 → L224-L284; L76-L96 → L66-L82). The behaviour
+  described is unchanged — the file's AST is identical to the base revision — this is a citation
+  repair only. Verification metadata pinned until closeout stamps the L2 commit.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1: rewrote the policy half of this suite for the removal of
   the repository-name hard-code. Added `_checkout_with_wrapper`, three status-named preview tests

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,19 @@ No Domain Documentation source is configured.
 
 No meaningful cross-repository references found.
 
+## 260731-EFA-L2 Current Delta
+
+**`IngestionComponents`** (`native`, `echo`, `child_history`, `interactions`) is the coordinator's
+new single collaborator argument: the four ingestion components one rebuild drives, **in the order
+it must drive them**. A rebuild is not four independent refreshes — native evidence establishes the
+timeline, echo ingestion fills the transcript gaps in it, child history hangs off the agents that
+appeared, and the interaction projection reads what all three produced. Passing them as one set is
+what keeps a coordinator from being wired to three components of this session and one of another.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `IngestionComponents` as the ordered four-component rebuild set.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the rebuild/poll
   coordinator sidecar. Verification metadata remains blank until commit.

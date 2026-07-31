@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,29 +51,38 @@ arriving while the first submit is pending waits for that same result; neither p
 first payload or calls the adapter twice. Reconciliation maps retained immediate/queued receipts to
 accepted, rejected to rejected, and unsupported to unsupported without invoking native
 reconciliation; only genuinely unknown evidence delegates to the adapter. The registration call
-shape is followed: the daemon route composition passes the required
-`coordination_root` keyword so the seam constructs the immutable conversation runtime scope.
+shape is followed: `register_harness_control_routes` now takes one `ConversationRuntime` whose
+`ConversationScope(workspace_root=..., coordination_root=...)` is the immutable scope, alongside
+the harness registry, catalog, `TerminalHost`, liveness clock/config, a `HarnessCapabilityCatalog`,
+and a `LocalOperatorAuthorizationResolver.for_workspace(...)` authorization.
 
 The exact-session IPC cases advertise the normalized snapshot and pass through honest queued and
-unsupported setter results. A deliberately dropped outer response proves the caller keeps the same
+unsupported setter results; prompts travel through `submit_control_prompt(entry, text,
+ControlSubmission(source=..., request_id=..., expected_bridge_epoch=...))`, so source, id, and
+epoch are one submission descriptor rather than three loose keywords. A deliberately dropped outer
+response proves the caller keeps the same
 request id as unknown, then recovers the bridge-retained vendor correlation without resend. The
-same loss is driven through `deliver_inbox_entry`: the durable bus moves from unknown to delivered /
-accepted with one adapter call and no paste fallback. A concurrent public duplicate test reaches
+same loss is driven through `deliver_inbox_entry`, whose call shape is now an
+`InboxDeliveryLog(store=..., entry=...)` plus a `sessions=HostedSessionRuntime(catalog=..., host=...)`
+and the paster: the durable bus moves from unknown to delivered /
+accepted with one adapter call and no paste fallback. The entry it delivers is minted by
+`create_operator_inbox_entry` from `InboxMessage`, `InboxRouting`/`InboxAddress`, and `InboxPoster`
+parameter objects. A concurrent public duplicate test reaches
 the HTTP route, Unix socket, bridge queue, and adapter, proving identical responses and one native
 submission end to end.
 
 Multiplexed sub-agent approval authority cases (R6) round out the suite.
-`test_subagent_pending_interaction_responds_without_parent_operation` (L752-L805) proves an agent
+`test_subagent_pending_interaction_responds_without_parent_operation` (L768-L823) proves an agent
 entry riding the plural `pending_interactions` tuple owns no parent operation, so the
 active-operation guard must not strand it: the response routes to the adapter with no operation
 attached, the answered entry settles out of the plural tuple, and an unknown interaction id is
 still refused (`HarnessInteractionNotPendingError`) without reaching the adapter. The fake
 adapter's `respond` now settles the answered multiplexed entry out of `pending_interactions` too.
-`test_parent_thread_tuple_entry_gets_the_operation_guard` (L808-L866) pins the entry-thread
+`test_parent_thread_tuple_entry_gets_the_operation_guard` (L824-L883) pins the entry-thread
 parent rule: a concurrent PARENT pending riding the plural tuple (the adapter's per-thread
 pending map makes that normal traffic) gets the active-operation guard exactly like the singular
 slot — answering it operation-free is refused — while the agent tuple entry still answers without
-one. `test_multiplexed_pending_interactions_serialize_through_every_surface` (L868-L928) round-trips the
+one. `test_multiplexed_pending_interactions_serialize_through_every_surface` (L884-L944) round-trips the
 plural pending tuple through every wire: `snapshot_json` carries both the singular
 `pendingInteraction` (back-compat) and the additive `pendingInteractions`; the control client
 parses the additive field back and defaults a pre-multiplexing bridge (key absent) to the empty tuple; the
@@ -83,8 +92,12 @@ catalog projection and `TerminalCatalogEntry` JSON round-trip carry
 ### Conventions
 
 The module uses `unittest.IsolatedAsyncioTestCase`, fixed timestamps and identities, bounded fake
-queues, and deterministic adapter events. Assertions favor whole protocol outcomes and loud error
-messages over transport timing heuristics.
+queues, and deterministic adapter events. Bounds are set through one `BridgeLimits` object —
+`HarnessControlBridge(identity, adapter, limits=BridgeLimits(queue=..., submission=...,
+subscriber_queue=..., transcript=...))` — so the subscriber-coalescing, eviction, unsupported-ledger,
+and transcript-reclamation cases each clamp exactly the dimension they probe. The terminal host is
+constructed as `TerminalHost(TerminalHostSeams(tmux_probe=...))`. Assertions favor whole protocol
+outcomes and loud error messages over transport timing heuristics.
 
 ### Invariants And Boundaries
 
@@ -133,17 +146,17 @@ advertisement and setter methods it now satisfies.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The fake adapter implements startup, snapshots, an intentionally empty normalized advertisement, prompt submission, reconciliation observation, and explicit setter results. | L77-L209 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Shared ordering and cancellation coverage proves launch, setter, and following prompt execute in one FIFO queue that survives a cancelled waiter. | L319-L394 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| The invalid-result matrix rejects dishonest evidence and arbitrary acceptance strings without poisoning the runner; unregistered adapters remain explicitly unsupported. | L396-L435 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Pending and retained duplicate ids return the first result and preserve the first payload with one adapter submission; known receipts reconcile locally without a native reconcile call. | L673-L748 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Exact-session IPC advertises and returns honest queued/unsupported setter acceptance through the blocking client. | L1000-L1034 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Outer response loss returns unknown, then retained reconciliation restores accepted state and vendor correlation with one adapter call. | L1036-L1076 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Durable-inbox redelivery converges from unknown to delivered/accepted through reconcile, makes one adapter submission, and never invokes paste. | L1078-L1153 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| The public concurrent duplicate case crosses HTTP and real Unix-socket IPC, returns identical correlated responses, and invokes the adapter once. | L1155-L1239 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Private endpoint permission, identity, peer-loss, and malformed-request cases preserve exact-session ownership and loud failure. | L1241-L1354 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| The fake adapter implements startup, snapshots, an intentionally empty normalized advertisement, prompt submission, reconciliation observation, and explicit setter results. | L112-L284 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Shared ordering and cancellation coverage proves launch, setter, and following prompt execute in one FIFO queue that survives a cancelled waiter. | L440-L494 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| The invalid-result matrix rejects dishonest evidence and arbitrary acceptance strings without poisoning the runner; unregistered adapters remain explicitly unsupported. | L495-L544 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Pending and retained duplicate ids return the first result and preserve the first payload with one adapter submission; known receipts reconcile locally without a native reconcile call. | L983-L1088 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Exact-session IPC advertises and returns honest queued/unsupported setter acceptance through the blocking client. | L1423-L1457 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Outer response loss returns unknown, then retained reconciliation restores accepted state and vendor correlation with one adapter call. | L1458-L1498 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Durable-inbox redelivery converges from unknown to delivered/accepted through reconcile, makes one adapter submission, and never invokes paste. | L1499-L1570 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| The public concurrent duplicate case crosses HTTP and real Unix-socket IPC, returns identical correlated responses, and invokes the adapter once. | L1571-L1670 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Private endpoint permission, identity, peer-loss, and malformed-request cases preserve exact-session ownership and loud failure. | L1844-L1959 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | `HarnessProtocolAdapter` requires cached advertisement and model/effort setters alongside startup, snapshot, submit, reconciliation, and shutdown. | L31-L53 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The shared queue treats request ids as idempotency keys, retains one payload/result, and converts known receipts into reconciliation truth before considering the native port. | L114-L145; L378-L411 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| The submission authority behind the queue treats request ids as idempotency keys, refuses a second source/payload under the same id, and converts known receipts into reconciliation truth before considering the native port. | L254-L281; L399-L417 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | Exact-identity IPC dispatches advertise and setters separately from submit/reconcile while retaining private internal serializers. | L127-L192 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 
 ## Cross-Repo References
@@ -168,6 +181,36 @@ Harness-control coverage now includes the expanded structured interaction/contro
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose subject
+  had moved out of the cited file. `harness_control_queue.py` is now a 227-line facade — its own
+  docstring says the ordering truth lives in `HarnessSubmissionAuthority` — so `L114-L145;
+  L378-L411` pointed at plain delegation (`submit` L84-L85, `reconcile` L90-L96). Repointed the
+  link and both ranges to `harness_submission_authority.py`: `_pre_admission_receipt_locked`
+  L254-L281, where a repeat request id returns the first receipt but a different source or payload
+  digest under that id raises `HarnessRequestConflictError`; and `reconcile` L399-L417, where
+  `_known_reconciliation` answers from the retained record and returns before
+  `self._adapter.reconcile(...)` is ever awaited. Read both ranges back, and sharpened the claim's
+  "retains one payload/result" to the conflict behaviour the code actually implements.
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: rewrote the call-shape claims this card had gone
+  stale on and re-anchored every self-citation. Route registration no longer takes a
+  `coordination_root` keyword: `register_harness_control_routes` now receives one
+  `ConversationRuntime` carrying `ConversationScope(workspace_root, coordination_root)`, the harness
+  registry, catalog, host, liveness clock/config, a `HarnessCapabilityCatalog`, and a
+  `LocalOperatorAuthorizationResolver.for_workspace(...)`, so the Logic paragraph was rewritten to
+  match. Bridge bounds now travel as `limits=BridgeLimits(queue=..., submission=...,
+  subscriber_queue=..., transcript=...)`, the terminal host as
+  `TerminalHost(TerminalHostSeams(tmux_probe=...))`, prompts as `submit_control_prompt(entry, text,
+  ControlSubmission(...))`, and durable delivery as `deliver_inbox_entry(InboxDeliveryLog(store,
+  entry), sessions=HostedSessionRuntime(catalog, host), paster=...)` with the entry minted from the
+  `InboxMessage`/`InboxRouting`/`InboxAddress`/`InboxPoster` objects; Conventions and the IPC
+  paragraph now name all of them. Corrected the nine Repo-Internal citations and the three R6
+  in-prose ranges against the current file (`_FakeAdapter` L112-L284, FIFO ordering L440-L494,
+  invalid-result matrix L495-L544, duplicate/reconcile L983-L1088, IPC advertise L1423-L1457, outer
+  loss L1458-L1498, durable inbox L1499-L1570, public duplicate L1571-L1670, private endpoint
+  L1844-L1959, and R6 at L768-L823, L824-L883, L884-L944). No test was added, removed, or renamed
+  and no protocol, queue, or reconciliation behavior changed. Verification metadata stays pinned;
+  closeout re-stamps the candidate commit.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the entry-thread parent-guard pin
   (`test_parent_thread_tuple_entry_gets_the_operation_guard`, L808-L866): a concurrent parent

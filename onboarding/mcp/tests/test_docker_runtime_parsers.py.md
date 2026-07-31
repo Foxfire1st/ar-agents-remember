@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_docker_runtime_parsers.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-05-31T12:30+02:00                         |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f`                             |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                             |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                               |
 
 ## Purpose
@@ -110,5 +110,13 @@ tolerance band rather than exact equality.
 | `docker_container_state_summary` is the projection these parsers feed into provider current state, which has its own integration coverage. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
 ## Update History
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/tests/test_docker_runtime_parsers.py` since the L2 base commit is the whole-tree `ruff
+  format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked
+  by parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds.
 
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

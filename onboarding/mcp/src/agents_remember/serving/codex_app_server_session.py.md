@@ -80,7 +80,7 @@ catalog and thread evidence.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Model pages validate descriptions, per-model effort menus/defaults, visibility, and identity; submission evidence captures its selection epoch. | L38-L118; L155-L256 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
-| Adapter setters mutate desired state and fresh `turn/start` acceptance promotes the submission's captured pair. | L153-L211; L220-L272; L344-L413 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Adapter setters mutate desired state and fresh `turn/start` acceptance promotes the submission's captured pair. | L168-L226; L235-L287; L360-L428 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults. | L22-L56 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -208,8 +208,36 @@ Terminal creation now uses synchronized tmux frame support only when the install
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+Two named concepts now define this module's surface:
+
+- **`TerminalSessionSpec`** (`cwd`, `command`, `lifecycle_id`, `name`, `suspend_unsafe`, `env`) —
+  **how ONE hosted tmux session is created**: what runs, where, and under whose identity. It is the
+  request half of the pair whose answer is `TerminalSessionBinding` / `TerminalSession`.
+  `TerminalHost.open`, `.ensure` and `.attach` now ALL take the same spec, because they create (or
+  re-reach) the *same* durable session through different client shapes — keeping it one object is
+  what makes that sameness checkable instead of six parallel parameter lists drifting apart.
+  `__post_init__` normalizes `cwd` to `Path` and `command` to a tuple, and `tmux_name_for(sid)` is
+  the one place the durable tmux identity is decided (the spec's explicit `name`, else the derived
+  one). `env` keeps its documented meaning: spawn env seeded at CREATION (`tmux new-session -e
+  KEY=VALUE`, the L2 knob-injection seam), inert once the durable session exists, and **never used
+  by `attach`**.
+- **`TerminalHostSeams`** (`spawn`, `tmux_probe`, `tmux_killer`, `tmux_creator`, `tmux_configurer`,
+  `tmux_mode_canceller`) — the **one impure boundary** of `TerminalHost`: the PTY spawner and the
+  tmux commands. These are not independent switches; they are a single surface, the host's entire
+  contact with the operating system. A test that fakes tmux replaces the surface, so the
+  substitution is visible as one decision at the call site. `TerminalHost(seams=None)` keeps every
+  real implementation, and `None` on any individual field keeps that seam real.
+
+Callers updated accordingly: the opener and `app.py` both call `host.ensure(sid,
+TerminalSessionSpec(...))`.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `TerminalSessionSpec` (shared by open/ensure/attach, with `tmux_name_for`) and `TerminalHostSeams` (the one impure OS boundary).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: recorded owned tmux-client terminal identity across all six

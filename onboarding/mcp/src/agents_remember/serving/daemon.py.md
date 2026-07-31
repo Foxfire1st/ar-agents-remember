@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -101,8 +101,28 @@ protocol.
 | The version comparator (`SERVER_VERSION`). | [mcp/__init__.py](agents-remember/mcp/src/agents_remember/mcp/__init__.py) |
 | Unit tests: state round-trip, probes, stop escalation, ensure matrix, autostart, CLI dispatch. | [test_dashboard_daemon.py](agents-remember/mcp/tests/test_dashboard_daemon.py) |
 
+## 260731-EFA-L2 Current Delta
+
+Two named concepts replaced five loose arguments on the daemon ensure/spawn path:
+
+- **`DaemonEndpoint`** (`host`, `port`, `version`, defaulting to `SERVER_VERSION`) — *which daemon
+  this is*: where it serves and which build it runs. Adoption is exactly an equality check on these
+  three (`_describe_mismatch`); a daemon matching two of them is still the wrong daemon, so they are
+  compared, recorded and passed as one value.
+- **`ProjectionCadence`** (from the new stdlib-only [cadence.py](cadence.py.md)) replaces the
+  `interval` / `heartbeat` pair. It is imported here precisely *because* that module pulls in
+  nothing from the serving stack: the supervisor can name the cadence it hands a spawned child
+  without importing the projector.
+
+The spawn argv is built the same way (`--heartbeat` still appended only when set), and the
+documented rule is unchanged: the cadence reaches the child only when this call spawns or restarts
+it — an **adopted** daemon keeps the cadences it was started with.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `DaemonEndpoint` and the `ProjectionCadence` import from the new stdlib-only cadence module; adoption-equality rule unchanged.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: `spawn`/`ensure`/`_ensure_locked` gained
   `heartbeat: float | None = None` — an explicit value rides the child argv as `--heartbeat`,
   `None` omits the flag (serving default 15s). Like `interval`, it reaches the child only on

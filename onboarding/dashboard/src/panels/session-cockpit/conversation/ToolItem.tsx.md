@@ -25,9 +25,9 @@ real disclosure button, and routes diff content to `DiffBlock`.
 
 ### Logic
 
-- `verbPhrase` (L55) reads the `tool-input` block's `summary` for the head; falls back to `tool
+- `verbPhrase` (L52-L56) reads the `tool-input` block's `summary` for the head; falls back to `tool
   result`/`tool call` by `kind`. The head carries the phrase in `title` for the full value.
-- `phaseClass` (L45) is a STATIC per-phase accent map (pending/streaming/waiting/completed/failed/
+- `phaseClass` (L42-L50) is a STATIC per-phase accent map (pending/streaming/waiting/completed/failed/
   interrupted/unknown). Color is never the only carrier — the phase word itself is always rendered
   (`data-testid="tool-phase"`, §14.2).
 - **FB7.4 gutter grammar (260718-CHATS-L5P):** the head is now Claude Code / Toad tool grammar — a
@@ -36,7 +36,7 @@ real disclosure button, and routes diff content to `DiffBlock`.
   idiom: `borderRadius:0` + a `borderLeft` 2px wash (the `└` relationship) + `marginInlineStart:2ch`,
   not a four-sided web box. Color still never carries alone — the phase word stays. (Declared FB7.4
   deviation: the left rule is a `grid`-mix, not phase-color at 45% — RV-5, a token-pass polish note.)
-- `OutputBlock` (L61) clamps a `tool-output` block at `OUTPUT_THRESHOLD_LINES` (12, L17): it slices to
+- `OutputBlock` (L58-L85) clamps a `tool-output` block at `OUTPUT_THRESHOLD_LINES` (12, L17): it slices to
   the threshold and reports the exact `hiddenLines` on the `ClampButton`; empty output renders
   nothing (reads do not auto-expand). The output sits in a labeled `role="group"` / `aria-label="tool
   output"` / `tabIndex={-1}` overflow region so a wide line scrolls inside itself rather than widening
@@ -82,6 +82,11 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations that pointed at a
+  single line inside the construct instead of its definition — `verbPhrase` L55→L52-L56 (L55 was only
+  the fallback `return`), `phaseClass` L45→L42-L50 (L45 was only the `waiting` entry), and
+  `OutputBlock` L61→L58-L85 (L61 was only the non-`tool-output` guard). Described behavior is
+  unchanged and still accurate.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7.4 gutter-grammar restyle — the
   `●` phase-colored gutter dot + dim lowercase phase word (was a bordered uppercase `phaseTag`), and the
   Toad ShellResult left-rule output wash (was a four-sided box). Behavior (in-place recompose, honest

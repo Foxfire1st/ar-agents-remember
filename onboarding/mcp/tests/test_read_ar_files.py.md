@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_read_ar_files.py`                  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-22T22:33+02:00                             |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -93,5 +93,14 @@ stripped from the served body).
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: the only non-format edit is the ambient-lifecycle
+  construction in the `FrontDoorDedupTests` and `ServedLedgerAndEventTests` fixtures, which now
+  passes `timing=AmbientTiming(heartbeat_seconds=3600)` instead of the loose `heartbeat_seconds`
+  keyword; the card names neither the keyword nor the heartbeat value, and both fixtures still
+  install a real ambient lifecycle over a temp `EventStore` and reset the singleton around each
+  case. The rest is `ruff format` reflow of `_write_route_index`, the two `_read` helpers, and one
+  trailing comma. Re-checked the five test classes and every enumerated case against the source:
+  none was added, removed, renamed, or re-asserted, so the status-semantics, path-confinement,
+  dedup, served-ledger, facts-only `read.packet`, and five-file-cap claims all still hold.
 - 2026-06-23T01:40+02:00 — Slice 07b v1: the emission test now also asserts the `read.packet`'s `data.repoId == REPO` (the read's repo carried alongside the per-file facts). Body only — verification metadata pinned until closeout stamps the slice-07b code commit.
 - 2026-06-22T22:33+02:00 — Created for slice 07: the `read_ar_files` test suite (ranged read, status semantics, path-confinement, facts-only `read.packet`, served-ledger dedup/reset, five-file cap + payload end-to-end). Verification metadata pinned until closeout stamps the slice-07 code commit.

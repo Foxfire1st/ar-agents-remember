@@ -88,8 +88,8 @@ The launch policy is carried by the shared opener/runner and consumed by each ow
 | --- | --- | --- |
 | The normalized capability types nest effort under each model and declare owned launch selectors. | L73-L156 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
 | The runner performs pure conflict preflight, transient discovery, dynamic validation, then fresh runtime construction. | L152-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| Claude produces native model/effort flags and verifies the model echo without fabricating effort echo. | L77-L140; L188-L202 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Codex produces thread config plus owned model/config selectors. | L128-L146 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Claude produces native model/effort flags and verifies the model echo without fabricating effort echo. | L160-L172; L200-L210; L271-L285 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| Codex produces thread config plus owned model/config selectors. | L225-L243 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Pi produces native provider-qualified model/thinking flags and requires both effective echoes. | L94-L153; L181-L191 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
 | The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | L170-L216; L311-L460 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
 
@@ -104,6 +104,14 @@ their in-repository own adapters.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. Claude's row now
+  cites the three places the claim actually lives in `harness_control_claude.py`: the
+  `verify_effective_launch(..., require_effort_echo=False)` guard at L160-L172, the honest
+  `launchEffortEvidence` note ("catalog-validated native `--effort`; stream-json init has no effort
+  echo") at L200-L210, and `launch_knobs`, which emits `("--model", model_key, "--effort", effort)`,
+  at L271-L285 (was L77-L140; L188-L202). Codex's `launch_knobs`, which returns the `session_config`
+  model/`model_reasoning_effort` pair plus `owned_argv_options`/`owned_config_keys`, is now L225-L243
+  in `codex_app_server_adapter.py` (was L128-L146).
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 model-acceptance — `verify_effective_launch`
   gains the `_resolves_to_same_model` secondary guard so an alias/default catalog-key collision that
   resolves to one underlying model VALIDATES (the claude `opus[1m]`·medium refused-pair defect, where

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -494,8 +494,32 @@ the atomic write edge, and snapshots remain the reader library; the change preve
 lifecycle/heartbeat event from rereading unrelated task, drift, provider, repository, and Engine
 Room surfaces.
 
+## 260731-EFA-L2 Reducer Input Contract
+
+`reducer.project_workspace` is now signed on **two frozen bundles that mirror the design's own two
+slices**: `WorkspaceStructure` (3a — `enclosures`, `providers`, `active_worktree_groups`) and
+`AnalyticalInputs` (3b — the sixteen analytical fields, every one defaulted). The long
+keyword-optional list is gone; `given=None` is what still yields an empty `analytics`, preserving
+the structural-only contract. `build_analytics(given, *, series, attention_queue,
+engine_processes)` and `build_attention_queue(lifecycles, providers, given)` take the same bundle.
+
+Two rules a future change must respect: a field belongs in `WorkspaceStructure` only if it leaves
+through `WorkspaceProjection` rather than `Analytics` (which is why `active_worktree_groups` moved
+there), and a new analytical input is a new defaulted field on `AnalyticalInputs`, never a new
+`project_workspace` keyword.
+
+On the read edge, `projection_store.project_and_write(config, *, now, refresh, tick)` carries its
+long-lived collaborators in `ProjectionTickState`, and `ProjectionInputState.read` takes
+`ProjectionReaders` + `RefreshPass`. The fold stays pure and every projected value is unchanged.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — No route impact on behaviour: 260731-EFA-L2 re-signed the reducer and
+  the projection input/write edge onto parameter objects (`WorkspaceStructure`/`AnalyticalInputs`,
+  `ProjectionTickState`, `ProjectionReaders`/`RefreshPass`/`ActiveGroups`, `AmbientTiming`) and
+  turned `_apply_kind` into the `_KIND_UPDATES` dispatch table. Projected output is byte-identical;
+  the read/write split and the pure-fold boundary are unchanged. Detail in the per-file sidecars.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added
   `projection_inputs.py` and `task_document_cache.py`. The serialized worker now retains
   domain-owned snapshots, refreshes only watcher-invalidated domains, advances heartbeat ages

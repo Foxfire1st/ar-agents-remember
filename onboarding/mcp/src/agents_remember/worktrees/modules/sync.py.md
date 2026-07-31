@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:56+02:00                     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46`                         |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -45,6 +45,26 @@ carryover; only the code base advances). On success the contract's
 `code_base_commit`/`memory_base_commit` move to the new pair and a `sync_log`
 entry is appended, then the contract is rewritten. `dry_run` previews
 (`would-sync` / `would-fast-forward` / `would-merge`) without mutating.
+
+**The five helpers extracted in 260731-EFA-L2** (behaviour unchanged; every payload, summary
+string and exit code is the same):
+
+- `_stop_before_sync(contract, *, code_tip, memory_tip, external, fetch)` — the result when no
+  branch should move: an inconsistent official pair, or `already-current`. Returns `None` to
+  proceed.
+- `_memory_sync_block(contract, code_sync, memory_sync, fetch)` — the blocked result when the
+  memory side could not be advanced on its own (`needs-review` or `conflicts`). Returns `None`
+  otherwise.
+- `_memory_branch_move(contract, args, *, worktree_head, tip)` — the **decision**, as a string:
+  `fast-forward` when the worktree head is an ancestor of the tip, `merge` when the caller chose
+  `memory_sync_choice="merge-memory"`, else `needs-review`. Deciding once is what lets the dry-run
+  path report `would-<move>` from the same rule the real path executes, instead of duplicating the
+  ancestry test.
+- `_move_memory_branch(worktree, source_branch, *, move, tip)` — performs the decided move. A
+  failed fast-forward leaves nothing to abort; a failed merge does.
+- `_aborted_merge_state(worktree, result)` — collect the conflicted paths and `merge --abort`, so
+  the worktree is never left half-merged. **Shared by the code and memory paths**, which is why
+  the two now report conflicts identically by construction.
 
 ### Conventions
 
@@ -95,4 +115,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0912` armed with no
+  exemptions): extracted `_stop_before_sync`, `_memory_sync_block`, `_memory_branch_move`,
+  `_move_memory_branch` and the shared `_aborted_merge_state` (now used by both the code and memory
+  merge paths). The dry-run `would-<move>` states are now derived from the same decision the real
+  path executes. Every payload, summary string and exit code is unchanged. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-06-10T09:56+02:00: Created as issue #54 sub-task D — atomic mid-task base-pair sync with consistent-pair gate, merge/ff sides, memory_sync_choice recoveries, and contract sync_log.

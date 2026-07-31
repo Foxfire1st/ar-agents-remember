@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,18 +21,55 @@ tool. It resolves the server-owned base command, preserves role/lineage provenan
 live seat per leaf-role pair, and carries a typed native launch selection into the exact-session
 control runner without creating a parallel spawn path. It also treats an already-live process as
 immutable launch truth, so an idempotent reopen cannot rewrite model/effort or control provenance.
-260718-CHATS-L0E adds one additive optional `resume_thread_id` parameter threaded into the runner
-payload for the codex harness only.
+`resume_thread_id` (now `launch.control.resume_thread_id`) remains an optional codex-only selector
+threaded into the runner payload.
 
 ## Code Commentary
+
+### The two values one open is made of
+
+One open is described by exactly two caller-supplied concepts plus the runtime it lands in. Both are
+frozen dataclasses declared in this module and are what the internal chain passes down, so no layer
+re-lists fields:
+
+- **`TerminalLaunchRequest`** — *the process identity of a hosted session*: `kind`, `workspace_root`,
+  `shell`, `harness`, `which` (installed-ness probe), `harnesses` (the EFFECTIVE registry ids resolve
+  against), `env` (the spawn env / knob-injection seam and carrier of `AR_SPAWN_ROLE`), plus nested
+  `knobs` and `control`, plus the `legacy_model`/`legacy_effort` compatibility seam. It is the value
+  `resolve_terminal_launch` consumes AND the value a live row's recorded provenance is compared
+  against, which is the point: the request IS the launch identity. Two derived properties carry the
+  rules that used to be recomputed inline — `resolved_kind` (anything not an explicit `harness` is a
+  plain `terminal`) and `is_controlled_harness` (a harness with an id, i.e. runs behind the bridge).
+- **`SpawnProvenance`** — *what the dispatcher declares about the seat*, none of which ever reaches
+  the argv: `label`, `lifecycle_id`, `leaf_key`, `replacement_for_leaf`, `spawned_by_session`,
+  `spawned_by_lifecycle`, `spawn_level`, `spawn_level_source`. Every field is write-once across
+  reopen (`_preserved`), which is only checkable because they travel as one value. The module
+  constant `NO_SPAWN_PROVENANCE` is the opener's default and means "hand-opened seat: no dispatcher
+  declared anything".
+
+Three smaller values complete the vocabulary. **`SpawnKnobs`** (`launch_args`, `prompt_keywords`,
+`session_commands`) is the settings-owned free-form escape hatch, recorded verbatim and never
+validated — the three are one decision applied at three moments of the same launch (argv, pre-brief
+runner commands, brief prefix), which is why they are no longer split across parameter lists.
+**`ControlRunnerRequest`** (`resolved_launch`, `resume_thread_id`, `endpoint`, `endpoint_root`) is
+the caller-supplied half of `RunnerConfig`; the rest is spawn identity the opener derives.
+**`HostedSessionRuntime`** (from `hosted_session_runtime.py`) is the catalog+host pair the opener
+reads and writes through — `open_terminal_session(runtime=..., session_id=..., launch=...,
+provenance=...)` is the whole signature.
+
+`resolve_terminal_launch(launch)` returns a **`LaunchCommand`** NamedTuple (`cwd`, `argv` tuple)
+rather than a loose `(Path, list[str])`. `_reopen_state` returns a **`ReopenState`** (`existing`,
+`created_at`, `tmux_name`), and `_opened_catalog_entry` takes a **`SpawnOutcome`** (`binding`,
+`label`, `seat_role`, `attached_at`, `control_endpoint`) — what one open actually produced once tmux
+is ensured and the seat resolved.
 
 ### Logic
 
 `resolve_terminal_launch` resolves a terminal shell or detected harness id to server-owned base argv.
 For native Claude/Codex/Pi it leaves normalized model/effort to the typed `ResolvedLaunch` carried in
-the runner payload; it applies `legacy_model`/`legacy_effort` only through an explicitly declared
-settings-defined non-native mapping. Free-form `launch_args` remain verbatim provenance but later
-adapter-owned conflicts are refused by the runner before discovery.
+the runner payload; it applies the legacy model/effort pair only through an explicitly declared
+settings-defined non-native mapping. Free-form `knobs.launch_args` remain verbatim provenance but
+later adapter-owned conflicts are refused by the runner before discovery.
 
 `open_terminal_session` resolves only the server-owned command before entering `TerminalCatalog.batch`.
 The batch fences the complete durable read, live-process check, leaf-role arbitration,
@@ -43,19 +80,40 @@ actual retained row without calling `ensure`; changed kind, harness, cwd, or exp
 `createdAt`/control endpoint and does not inherit process-specific control, session-log, free-form,
 role-origin, level, or resolved-pair state.
 
-For a fresh generation, `_session_command` launches ordinary shells directly or wraps the native
-harness in `harness_control_runner` with exact identity, cwd, base argv, session commands, and typed
-launch. The opened row retains leaf/lineage binding where appropriate and records process-specific
-spawn role, free-form inputs, resolved model/effort, and endpoint from this generation. Different
-roles may coexist on one leaf; a live same-role owner returns `leaf-taken` without process or
-catalog mutation.
+**`_live_open_result` is now the single place a live row is handled.** Everything past it is a
+spawn — `existing` is either absent or dead — and the code now states that rather than re-deriving
+it. Three consequences a future agent must not undo:
 
-L0E's `resume_thread_id` is a codex-only native-identity selector in the `launch_args` authority
-class: `open_terminal_session` returns `bad-kind` before any spawn when the value targets a
-non-codex harness/kind or is empty/outer-whitespace, and otherwise threads it unchanged through
+- `_reopen_state` no longer probes the host at all; it only decides which tmux name the replacement
+  reuses (a first open mints one, a dead row lends its own).
+- `_control_metadata` no longer carries prior control state/endpoint/protocol forward. The minted row
+  starts at the adapter's advertised status, on `CONTROL_PROTOCOL_VERSION`, bound to the endpoint
+  this open resolved. A plain terminal still gets no control columns at all.
+- `_opened_catalog_entry` writes this spawn's own knobs, spawn role, resolved pair and level, and
+  leaves the bridge observations (`control_activity`, `control_acceptance`, vendor session id,
+  pending interaction, last event sequence, `control_raw`) and the session-log columns unset until
+  the bridge reports them. Only the two things the departed process never owned survive: the
+  write-once seat provenance (`_preserved` against the dead row) and the tmux identity on
+  `ReopenState`.
+
+`_launch_identity_conflict` is now a named function returning just the reason string (or `None`),
+ordered coarsest identity first: what the session is, then where it runs, then the resolved launch it
+was created with. A request carrying no `ResolvedLaunch` cannot disagree about model/effort and stops
+after the cwd check. `_live_launch_conflict` still returns the immutable live row alongside it.
+
+For a fresh generation, `_session_command` launches ordinary shells directly or wraps a controlled
+harness in `harness_control_runner` with exact identity, cwd, base argv, session commands, and typed
+launch, returning `(argv, endpoint)`. `TerminalHost.ensure` is now called with a
+`TerminalSessionSpec` (cwd, command, lifecycle id, `suspend_unsafe`, env) rather than five keywords.
+Different roles may coexist on one leaf; a live same-role owner returns `leaf-taken` without process
+or catalog mutation.
+
+`resume_thread_id` is a codex-only native-identity selector in the `launch_args` authority class:
+`open_terminal_session` returns `bad-kind` before any spawn when the value targets a non-codex
+harness/kind or is empty/outer-whitespace, and otherwise threads it unchanged through
 `_open_terminal_transaction` → `_session_command` → `RunnerConfig`. The opener never validates or
 authorizes the resume target; target authorization stays with the later re-authorization seam
-before launch. Omitting the parameter preserves the pre-L0E open behavior exactly.
+before launch.
 
 ### Conventions
 
@@ -81,8 +139,14 @@ their callers; this module returns `opened`, `launch-conflict`, `leaf-taken`, or
   from normalized native model/effort.
 - `resume_thread_id` refuses codex-incompatible kinds/harnesses and malformed shapes with `bad-kind`
   before `TerminalHost.ensure` or any spawn; it is never validated or authorized here.
-- Legacy raw-TUI rows remain explicit legacy state; unsupported custom ids do not receive a native
-  compatibility fallback.
+- **There is no legacy pre-bridge respawn path in this module.** The old `legacy_running` branch —
+  which re-spawned a live pre-bridge row's recorded argv and stamped it `control_state="unsupported"`
+  / `control_activity="unknown"` / `control_raw={"detail": "legacy raw-TUI session has no protocol
+  bridge"}` — was proven unreachable and deleted, because `_live_open_result` returns for every row
+  whose tmux session is alive before that branch could ever be evaluated. Do not reintroduce a
+  second live-row handler; add to `_live_open_result` instead.
+- Every open past `_live_open_result` is a spawn. Any new code below that call may assume the prior
+  row's process is gone, and must not read process-owned state off it.
 
 ### Todos
 
@@ -123,6 +187,23 @@ dashboard terminal catalog.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+The opener's parameter lists became named concepts and its one dead branch was deleted rather than
+covered. `open_terminal_session` / `_open_terminal_transaction` now take `runtime`
+(`HostedSessionRuntime`), `launch` (`TerminalLaunchRequest`, carrying `SpawnKnobs` and
+`ControlRunnerRequest`) and `provenance` (`SpawnProvenance`, defaulting to `NO_SPAWN_PROVENANCE`);
+`resolve_terminal_launch` takes the request and returns a `LaunchCommand`. Any caller still passing
+the old flat keywords (`kind=`, `workspace_root=`, `label=`, `leaf_key=`, `launch_args=`,
+`control_root=`, …) is calling a signature that no longer exists.
+
+The legacy pre-bridge argv path is gone: `_live_open_result` is the single place a live row is
+handled, `_reopen_state` no longer probes the host, and `_control_metadata` mints control columns
+instead of inheriting them.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source
+behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## 260718-CHATS-L5I Current Delta
 
 Runner launch now propagates the daemon worktree's package root into the tmux-spawned harness environment. A worktree deployment therefore runs the code it was started to test instead of inheriting a stale main-checkout `PYTHONPATH` from the tmux server.
@@ -131,6 +212,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: rewrote Purpose/Logic/Invariants for the parameter-object
+  signatures (`HostedSessionRuntime`, `TerminalLaunchRequest`, `SpawnProvenance`, `SpawnKnobs`,
+  `ControlRunnerRequest`, `LaunchCommand`, `ReopenState`, `SpawnOutcome`, `TerminalSessionSpec`) and
+  removed the now-false legacy raw-TUI reopen claim: that branch was proven dead and deleted, and
+  `_live_open_result` is the single live-row handler. Verification metadata stays pinned until
+  closeout.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive codex-only
   `resume_thread_id` pass-through — `bad-kind` refusal for non-codex/malformed values before any

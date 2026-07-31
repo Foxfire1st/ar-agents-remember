@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-23T07:25+02:00     |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -35,7 +35,22 @@ read off the tree. (`closeout-approval` IS the commit gate: closeout is the sing
 commit-of-record for code + memory + ledger, so there is no separate
 `commit-approval`.)
 
-`lifecycle_guidance` checks the disposal states **first**: `cleanup == "completed"`
+**Three phase groups (260731-EFA-L2).** `lifecycle_guidance` is now a three-line `or` chain over
+one helper per group, and **the order is the contract** — read back to front: a reclaimed worktree
+is done, an integrated one is waiting on carryover/cleanup, and everything else is still working
+toward closeout.
+
+- `_reclaimed_phase(contract) -> dict | None` — the terminal phases, where the worktrees are gone:
+  `cleanup-completed` and `abandoned`.
+- `_post_integration_phase(contract) -> dict | None` — integration has been attempted:
+  `integration-blocked`, or it landed and `carryover-pending` / `cleanup-pending` follow.
+- `_pre_integration_phase(contract) -> dict` — still working: `integration-pending`,
+  closeout-approved, closeout-pending, `worktree-started`. This one always returns a phase, which
+  is why it terminates the chain.
+
+The first two return `None` to mean "not my group", so an earlier group always wins — the same
+precedence the old top-to-bottom if-chain had. `lifecycle_guidance` checks the disposal states
+**first**: `cleanup == "completed"`
 returns the `cleanup-completed` phase, and (slice 05l P1) `cleanup == "abandoned"`
 returns a dedicated `abandoned` phase (`"Worktree abandoned — provider stack reclaimed;
 no further action."`, `nextOperation: "done"`). Before this branch an abandoned worktree
@@ -126,6 +141,12 @@ No external Domain Documentation source is configured for this memory repo.
 Guidance/status payloads now expose contract `kind`, `leaf_id`, `enclosure_path`, and optional `parent_contract_path`, making the leaf/root split visible to dashboard and tool callers.
 
 ## Update History
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911`/`PLR0912` armed with no
+  exemptions): `lifecycle_guidance` became a three-way `or` chain over `_reclaimed_phase`,
+  `_post_integration_phase` and `_pre_integration_phase`. The first two return `None` for "not my
+  group", preserving the old top-to-bottom precedence; the third always returns a phase. Every
+  emitted phase, summary and `next_guidance` block is unchanged. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: separated interactive status landing probes from projected status, which accepts only the latest immutable observation and its freshness truth.
 
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: status and next-action payloads now include `kind`, `leaf_id`, `enclosure_path`, and `parent_contract_path`, while retaining `contract_path` for callers that have not yet renamed the field. Verification metadata pinned until closeout stamps the code commit.

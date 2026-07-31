@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/harness_logs.py`       |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -85,7 +85,24 @@ No meaningful cross-repo references found.
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+## 260731-EFA-L2 Current Delta
+
+The per-harness "is this record developer-typed input?" test is now one named reader per harness:
+
+- `_claude_user_text(record)` — the developer-typed text of one Claude `user` record, or `None`.
+  Meta records and the `<command-name>` / `<local-command-*>` wrappers are harness bookkeeping
+  rather than submitted input; a delivery id found inside one of those would not prove acceptance.
+- `_codex_user_text(record)` — the developer-typed text of one Codex rollout record, or `None`.
+  Codex writes the same submission twice under different envelopes (a `response_item` message and an
+  `event_msg` `user_message`) and **both** are accepted here.
+
+The acceptance-evidence semantics are unchanged; what changed is that each harness's exclusion rule
+is stated once, where it is decided.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_claude_user_text` / `_codex_user_text` readers and the exclusion rules they carry.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — Created for 260707-HFX2-L15 FIX-H-prime: bounded recent-log discovery,

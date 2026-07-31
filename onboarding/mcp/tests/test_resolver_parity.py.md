@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_resolver_parity.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-23T18:05+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -44,6 +44,14 @@ Resolver parity tests now pin task-name lookup over active roots, nested parent 
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 rewrote only the contract-fixture call
+  sites. `default_contract` and `default_series_contract` now take the `ContractTask`,
+  `LeafIdentity` and `RepoBranchPlan` parameter objects instead of a dozen loose keywords
+  (`protected_branch`/`integration_branch` are now `RepoBranchPlan.source_branch`/`work_branch`),
+  and one stray closing paren was re-indented. No test was added, removed or renamed and no
+  assertion changed; this card claims the resolver CLI's context key set plus the task-name,
+  nested-parent, leaf-id, archive-exclusion and API/wrapper-parity coverage, and names none of the
+  keywords that moved.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: resolver parity coverage now includes active task-name lookup, nested parent disambiguation, leaf enclosure resolution, archive exclusion, and source API/MCP wrapper parity for the new resolver arguments. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-23T18:05+02:00: Created during direct closeout prep after resolver parity tests stopped comparing against the deleted old script.

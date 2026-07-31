@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |                                                `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |                                                2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |                                                `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                                2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ series summaries are body-free and the on-demand reader returns full content.
 
 ### Logic
 
-`GateReadFoldTests` counts `GateStore.read()` calls and proves `read_gates()` folds each gate log once per tick. `TaskDocSharedCacheTests` proves task and series readers share the same parsed task-json cache. `GitStatusCacheTests` proves `_safe_status_payload()` is TTL-cached. `LifecycleLogCacheTests` proves unchanged lifecycle logs are not re-read at two event-log sizes. `TaskDocumentsPayloadBudgetTests` characterizes the still-unbounded task-doc body payload and proves the write-path guardrail logs only when over budget and is rate-limited. `ContractSnapshotSharedPassTests` (PTS-L2) counts `contract_snapshot.load_contract` calls (the builder's only parse site) and `iter_leaf_enclosure_contracts` walks, seeds real contracts via `default_contract`/`write_contract`, forces stat-identity changes with `_bump_mtime`, and steps past the kernel's coarse-clock granule (`_step_past_ctime_granule`, 50ms) before chmod/rewrite cases because ctime cannot be set explicitly; the chmod case is skipped for root (root ignores file modes).
+`GateReadFoldTests` counts `GateStore.read()` calls and proves `read_gates()` folds each gate log once per tick. `TaskDocSharedCacheTests` proves task and series readers share the same parsed task-json cache. `GitStatusCacheTests` proves `_safe_status_payload()` is TTL-cached. `LifecycleLogCacheTests` proves unchanged lifecycle logs are not re-read at two event-log sizes. `TaskDocumentsPayloadBudgetTests` characterizes the still-unbounded task-doc body payload and proves the write-path guardrail logs only when over budget and is rate-limited. `ContractSnapshotSharedPassTests` (PTS-L2) counts `contract_snapshot.load_contract` calls (the builder's only parse site) and `iter_leaf_enclosure_contracts` walks, seeds real contracts via `default_contract`/`write_contract` (since 260731-EFA-L2 called as `default_contract(ContractTask(...), leaf=LeafIdentity(...), code=RepoBranchPlan(...))`, with the leaf's `lifecycle_id` now a `LeafIdentity` field and the disabled-memory cases simply omitting the optional `memory=` plan), forces stat-identity changes with `_bump_mtime`, and steps past the kernel's coarse-clock granule (`_step_past_ctime_granule`, 50ms) before chmod/rewrite cases because ctime cannot be set explicitly; the chmod case is skipped for root (root ignores file modes).
 
 ### Conventions
 
@@ -71,12 +71,13 @@ No external documentation governs these repo-local projection scaling regression
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The test file covers gate one-read folds, shared task-doc cache, git status TTL, lifecycle-log cache, and task-doc payload guardrail. | L44-L73; L76-L118; L121-L141; L144-L184; L186-L242 | [mcp/tests/test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
-| `ContractSnapshotSharedPassTests`: parse counting, one-enumeration-per-tick, output parity, live-set retention, chmod-000 and utime-pinned-rewrite ctime hardening, and malformed-retry regressions. | L495-L764 | [mcp/tests/test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
+| The test file covers gate one-read folds, shared task-doc cache, git status TTL, lifecycle-log cache, and task-doc payload guardrail. | L67-L99; L102-L148; L151-L189; L323-L418; L421-L587 | [mcp/tests/test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
+| `LandingProjectionHotPathTests`: the invalid-landing containment case and the heartbeat landing-tail regression. | L192-L320 | [mcp/tests/test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
+| `ContractSnapshotSharedPassTests`: parse counting, one-enumeration-per-tick, output parity, live-set retention, chmod-000 and utime-pinned-rewrite ctime hardening, and malformed-retry regressions. | L590-L862 | [mcp/tests/test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
 | The shared per-tick contract snapshot + stat-identity parse cache under test. | L1-L145 | [mcp/src/agents_remember/observer/contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
-| The single per-tick build in `project_and_write` the full-tick regression instruments. | L102-L108; L211-L230 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Projection store implements lifecycle-log caching and over-budget task-document payload warnings. | L93-L130; L248-L274 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Snapshot readers implement the shared task-document cache, single-read gate fold, and git-status TTL cache. | L113-L155; L485-L516; L603-L665 | [mcp/src/agents_remember/observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| The single per-tick build in `project_and_write` the full-tick regression instruments: one shared `ContractSnapshotCache`, then exactly one `state.read(...)` pass per tick. | L96-L102; L214-L237 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| Projection store implements lifecycle-log caching and over-budget task-document payload warnings. | L89-L109; L112-L154; L275; L280-L306 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| Snapshot readers implement the shared task-document cache, single-read gate fold, and git-status TTL cache. | L113-L155; L485-L516; L601-L663 | [mcp/src/agents_remember/observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
 ## Cross-Repo References
 
@@ -92,6 +93,37 @@ No meaningful cross-repo references found.
 landing authority while contract, guidance, and other status facts retain identity and value.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired both `observer/projection_store.py`
+  citations (4 ranges), all read back in the 365-line file. The per-tick-build row is now
+  L96-L102 (the comment + `_contract_snapshot_cache = ContractSnapshotCache()`, the one
+  enumeration/parse pass per tick) and L214-L237 (`project_and_write` through its single
+  `state.read(...)` call); the old `L211-L230` opened inside `ProjectionTickState` and cut off
+  before the read. The caching/warning row is now L89-L109 (`_LifecycleLogCacheEntry` and the
+  `_lifecycle_log_cache` dict with its rationale comment), L112-L154 (`read_lifecycle_logs`, the
+  `(mtime_ns, size)` reuse and the prune-to-live-set at L152-L153), L275 (the call site) and
+  L280-L306 (`_warn_if_task_documents_payload_over_budget`, rate-limited by
+  `TASK_DOCUMENTS_PAYLOAD_WARN_INTERVAL_SECONDS`); the old `L248-L274` now lands mid-`project_and_write`.
+  Both claims unchanged.
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass rewrote the three
+  `default_contract` seedings in this suite, so the card names the new shape and its own-file
+  citations were re-derived. Contracts are now built as
+  `default_contract(ContractTask(name, repo_name, coordination_root, workflow_kind, memory_mode),
+  leaf=LeafIdentity(...), code=RepoBranchPlan(...))`; the former `worktree_name=` and
+  `lifecycle_id=` keywords are `LeafIdentity` fields, the four `code_*` keywords are a
+  `RepoBranchPlan`, and the disabled-memory cases omit the now-optional `memory=` plan instead of
+  passing four empty strings. Those expansions plus the three added imports and the `ruff format`
+  reflow of several collapsed literals moved every class in the file, so both own-file rows in the
+  references table were recomputed from the current source and re-read at their new positions
+  (`GateReadFoldTests` L67-L99, `TaskDocSharedCacheTests` L102-L148, `GitStatusCacheTests`
+  L151-L189, `LifecycleLogCacheTests` L323-L418, `TaskDocumentsPayloadBudgetTests` L421-L587, and
+  `ContractSnapshotSharedPassTests` L590-L862). Most of that correction is older drift this leaf
+  merely exposed: the cited ranges were already tens of lines off at the L2 base commit, and
+  `LandingProjectionHotPathTests` had no row at all, so one was added for it. No counter, cache
+  assertion, budget threshold or ctime-hardening case changed — the seeded contracts carry the same
+  values, so every scaling claim in this card still holds. Verification metadata stays pinned until
+  closeout stamps the code commit.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added the heartbeat landing-tail
   regression proving a refresh replaces only landing rows while retaining contract, guidance, and

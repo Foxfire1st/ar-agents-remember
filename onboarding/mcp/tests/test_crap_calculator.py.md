@@ -2,50 +2,92 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
+| repository             | agents-remember                            |
 | path                   | `mcp/tests/test_crap_calculator.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T06:05+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                      |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
-| governingOverview      | `../overview.md`                              |
+| lastUpdated            | 2026-07-31T15:32+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| governingOverview      | `overview.md`                              |
 
 ## Governing Overview
 
-[overview.md](../overview.md)
+[mcp/tests overview](overview.md)
 
 ## Purpose
 
-`test_crap_calculator.py` verifies the source-development CRAP-Calculator
-helper.
+Unit coverage for `agents_remember.code_quality.crap_calculator`: the CRAP formula, the
+join of Radon function complexity with Coverage.py data, file rollups, and table/JSON CLI
+rendering.
 
-## Code Commentary
+## CRAP Consumes Branch Coverage (260731-EFA-L2)
 
-### Logic
+The reader was changed to consume **branch** coverage, not statement coverage.
+`crap = cc**2 * (1 - coverage)**3 + cc` is defined over branch coverage, and the coverage
+term is the only thing a test can move. The calculator reads the `executed_branches` /
+`missing_branches` fields Coverage.py emits under `[tool.coverage.run] branch = true`, and
+**refuses** a report produced without them. Arcs are `[source_line, destination_line]`
+pairs attributed to a function by their *source* line.
 
-The tests import `agents_remember.code_quality.crap_calculator` from `mcp/src`.
-They verify the CRAP formula with coverage ratios, build a synthetic Python file
-and Coverage.py JSON report to prove function-level Radon complexity can be
-joined with coverage line spans, assert missing coverage files are treated as
-zero coverage, and exercise file rollups plus table/JSON CLI rendering.
+The tests that pin this:
 
-### Invariants And Boundaries
+- `test_a_partially_taken_branch_lowers_the_score_a_statement_reader_calls_perfect` — the
+  defect the change removes, in one function. Every statement of `branchy` runs, so a
+  statement-only reader scores it 1.0 and reports the bare complexity; the untaken false
+  arm is invisible to it.
+- `test_a_function_without_branches_is_scored_by_the_same_division` — the zero-branch case
+  takes no special path, no metric switch, and no division by zero.
+- `test_a_report_without_branch_measurement_is_refused` — **no silent fallback.**
+  Statement-only input fails loudly rather than scoring low. This is the property that
+  makes the whole gate honest: a coverage run misconfigured without `branch = true` cannot
+  produce flattering CRAP numbers.
+- `test_a_malformed_branch_arc_raises_rather_than_being_dropped`.
+- `test_well_formed_arcs_survive_including_the_negative_exit_endpoint` — Coverage.py encodes
+  "this branch leaves the function" as a negative destination line; it is a real arc, not
+  a parse error.
 
-- These tests do not run pytest-cov; they feed synthetic coverage JSON directly
-  into the calculator.
-- The fixture stays temporary and does not require repository-wide coverage
-  data.
-- The tests protect function-level scoring first. File rollups and report
-  rendering are covered as derived behavior so the helper can be used directly
-  during refactor scouting.
+`branch_report()` is the module's fixture helper: a Coverage.py JSON report that declares
+branch measurement, as the reader requires.
+
+## Threshold
+
+`DEFAULT_CRAP_THRESHOLD` is **20.0** (was 30.0). The value was chosen against the measured
+branch-coverage distribution of `mcp/src/agents_remember` on 2026-07-31 under the full
+suite; the reasoning, including why 30.0 was a weak gate under either metric and the
+Radon-vs-Coverage.py disagreement about what a branch is, is recorded in the module header
+of `crap_calculator.py`. All 46 offenders under the new threshold were cleared — 41 by
+being tested, 5 by being split. There is no exemption file beside the threshold;
+`test_code_quality_check.py::CrapThresholdEnforcementTests` asserts that.
+
+`coverage_clearing(complexity, threshold)` inverts the formula so the gate can tell an
+offender the branch coverage that would clear it, and returns `None` when no coverage can
+— the "split this instead" case.
+
+## Invariants And Boundaries
+
+- These tests do not run pytest-cov; they feed synthetic coverage JSON directly into the
+  calculator.
+- The fixture stays temporary and does not require repository-wide coverage data.
+- A report without branch fields is an error, never zero-coverage and never full coverage.
+- Function-level scoring is the primary contract; file rollups and rendering are covered as
+  derived behaviour.
+- Missing coverage *file* (as opposed to missing branch measurement) still counts as zero
+  coverage.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
-| CRAP-Calculator owns the formula, coverage matching, Radon integration, table output, and JSON output. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| CRAP-Calculator owns the formula, branch-arc attribution, Radon integration, the clearing-coverage inversion, and both renderings. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| The wrapper side: threshold enforcement, per-offender failure lines, and the no-exemption-file assertion. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| `[tool.coverage.run] branch = true` — without it the reader refuses. | [pyproject.toml](agents-remember/pyproject.toml) |
 
 ## Update History
 
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: rewritten. The previous card described a
+  statement-coverage reader; CRAP now consumes branch coverage and refuses a report without
+  it. Recorded the five branch-arc tests, the 30.0 → 20.0 threshold change and where its
+  justification lives, and `coverage_clearing`'s split-instead-of-test answer. Verification
+  metadata is pinned to the leaf's reformat commit until closeout stamps the code commit.
 - 2026-05-24T06:12+02:00: Updated after tests added rollup and CLI rendering coverage.
 - 2026-05-24T06:05+02:00: Created unit coverage for CRAP-Calculator.

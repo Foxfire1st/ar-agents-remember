@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer.py`                     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -45,6 +45,13 @@ importing `agents_remember.observer`. `EventStore` is exercised against a
 | The store under test. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
 
 ## Update History
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_observer.py` since
+  the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s)
+  with no token change whatsoever. Checked by parsing both revisions and comparing the abstract
+  syntax trees (identical) and the comment tokens (identical), so no symbol, signature, default,
+  decorator, control-flow branch, docstring, or assertion this card describes has moved, and every
+  claim this card makes about its own source still holds.
 
 - 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
   until closeout stamps the 2a code commit.

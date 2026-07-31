@@ -78,7 +78,7 @@ open; the locked helper implements the native seam.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Pi read maps roles, tools, and notices; resolve mints the session-file argv target on fake helper boundaries. | L638-L692 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| The installed suite proves the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. | L215-L262; L360-L479 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed suite proves the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. | L217-L263; L284-L413 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The locked helper's SessionManager list/branch-read/session-file resolution implementations. | L69-L159 | [pi.ts](agents-remember/mcp/native_helpers/conversation_library/src/pi.ts) |
 
 ## Cross-Repo References
@@ -91,6 +91,10 @@ No meaningful cross-repo boundary exists for this local port.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
+  `test_conversation_library_installed.py`. The live Pi helper gate + list/read/resolve round-trip now
+  read at L217-L263 and the real-open E2E class `PiOpenEndToEndTests` at L284-L413 (was
+  `L215-L262; L360-L479`, which now lands inside the Codex open E2E). Both ranges read back.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — recorded the
   contract-only gate doctrine now stated in the docstring: the helper handshake reports observed
   runtime/helper versions as informational evidence only, and the succeeding native `list`/`getBranch`

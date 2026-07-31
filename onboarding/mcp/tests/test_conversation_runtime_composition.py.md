@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_runtime_composition.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,8 +27,12 @@ mutable singleton or production identity-injection seam exists.
 ### Logic
 
 The suite builds real `ConversationRuntime` bundles over `tmp_path` scopes with a minimal
-`_NoSessionHost` host double and an empty harness registry, then drives both composition seams:
-`register_harness_control_routes` (the production path, also via a live `create_app` build) and
+`_NoSessionHost` host double and an empty harness registry through one local `_runtime()` factory
+(which takes optional `catalog`/`liveness_config` overrides so a test can hold the identical
+objects it later asserts on), then drives both composition seams:
+`register_harness_control_routes(app, runtime)` — the production path, which now RECEIVES the
+already-constructed runtime as its single authority argument instead of seven loose ones, also
+exercised via a live `create_app(config, cadence=ProjectionCadence(interval=100))` build — and
 `register_conversation_routes`. Field-identity assertions prove the runtime binds the exact
 catalog/registry/clock/config objects the composition already holds. Failure-shape cases cover
 retrieval before install (app-level and through the request dependency), duplicate installation at
@@ -37,7 +41,10 @@ authority, and frozen-instance mutation attempts on both the runtime and its sco
 `test_child_composition_is_isolated_per_app` mounts the shared module-level child routers on two
 apps and proves over real HTTP (through `TestClient` probe routes owned by the test, never by the
 shared child routers) that each app resolves its own runtime. Two source-scan cases close the
-contract: `register_harness_control_routes` must accept no identity/resolver parameter, and the
+contract: `register_harness_control_routes` must accept no identity/resolver parameter — and,
+since the runtime moved out of that function, the paired scan now reads
+`inspect.getsource(create_app)` for `LocalOperatorAuthorizationResolver`, because `create_app` is
+where the production composition mints its own resolver — and the
 four production conversation modules must contain no fixture, PTY, tmux, header-access, or
 browser-identity tokens.
 
@@ -75,7 +82,8 @@ evidence.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The immutable runtime/scope types, install-once, and fail-closed retrieval under test. | L47-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
-| The production seam constructs and installs the one runtime. | L144-L162 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The production seam accepts the already-built runtime and installs it once. | L166-L179 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The live composition that constructs the runtime and mints the resolver the identity scan looks for. | L714-L732 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The root registration installs the runtime then mounts the unchanged root router. | L22-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The typed composition error asserted by every failure-shape case. | L30-L38 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
 
@@ -88,6 +96,21 @@ No neighboring repository participates in this composition suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the production seam changed shape, so the
+  Logic and reference rows were rewritten rather than attested.
+  `register_harness_control_routes` now takes `(app, runtime)`; the seven-keyword form the card
+  implied (`workspace_root`, `coordination_root`, `harness_registry`, `catalog`, `host`,
+  `liveness_clock`, `liveness_config`) is gone, the runtime is built by `create_app`, and both
+  the production-composition and duplicate-registration cases pass a `_runtime(...)` bundle (the
+  local factory gained `catalog`/`liveness_config` overrides).
+  `test_production_composition_accepts_no_injected_identity` still proves no identity parameter,
+  but its paired source scan moved from `inspect.getsource(register_harness_control_routes)` to
+  `inspect.getsource(create_app)`, and the live build now passes
+  `cadence=ProjectionCadence(interval=100)`. The `harness_control_api.py` row was corrected to
+  say the seam installs rather than constructs the runtime (L144-L162 to L166-L179) and an
+  `app.py` row was added for the composition that does construct it. Every fail-closed invariant
+  still holds.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: created the composition contract suite
   sidecar. Verification is blank because the new source file is uncommitted; closeout owns its

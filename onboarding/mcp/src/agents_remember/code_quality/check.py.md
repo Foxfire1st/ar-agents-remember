@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-24T14:31Z                     |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                      |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T16:10+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -16,67 +16,166 @@
 
 ## Purpose
 
-`check.py` provides the remembered source quality suite entrypoint for
-Agents Remember development.
-
-## Code Commentary
-
-### Logic
-
-The module runs a fixed sequence of development checks from the source checkout:
-`ruff check`, Pyright with the root project config and active interpreter,
-Radon cyclomatic
-complexity, Radon maintainability index, pytest with coverage JSON, and
-CRAP-Calculator over the generated coverage report.
-
-The default CLI is:
+`check.py` is the quality gate. It is the command the pre-push hook, CI, and worktree
+closeout run, and it is the single place that decides what the repository certifies and
+what it merely reports.
 
 ```text
 python -m agents_remember.code_quality.check
 ```
 
-CRAP threshold enforcement is mandatory in the default command. After rendering
-the score table, any function at or above the configured threshold makes the
-wrapper return non-zero. The former strict opt-in setting and CLI option no
-longer exist.
+## Code Commentary
 
-Each subprocess runs with this checkout's source import roots (the parent of
-every configured source package, e.g. `mcp/src`) prepended to `PYTHONPATH` via
-`subprocess_env`/`source_import_roots`. That makes pytest import and measure
-coverage for *this* checkout's `agents_remember` rather than whatever an editable
-install resolves to. Without it, running the gate from a git worktree imported
-the primary clone's editable package, so coverage never matched the worktree's
-files and every complex function scored as uncovered — inflating CRAP far past
-the threshold and falsely failing the push. With it, the gate behaves identically
-from the primary clone and from any worktree.
+### Enforcing Steps Versus Report Steps
 
-### Invariants And Boundaries
+Every step is one of two kinds, and the distinction lives in the type rather than in
+prose. `Step.report_note is None` means the step **enforces**: a non-zero exit is a finding
+and fails the gate. A note means the step **reports**, and the note is printed into the
+section header so nobody reads the output as enforcement.
+
+| Step | Kind | What it runs |
+| --- | --- | --- |
+| `ruff` | enforcing | `ruff check <every tracked .py>` — no `--select`, no `--extend-ignore` |
+| `ruff-format` | enforcing | `ruff format --check <every tracked .py>` |
+| `pyright` | enforcing | `pyright --project . --pythonpath <interpreter> <every tracked .py>` |
+| `radon-cc` | **report** | `radon cc <packages> -s -n B --order SCORE` |
+| `radon-mi` | **report** | `radon mi <packages> -s -n B` |
+| `pytest` | enforcing | the suite under coverage, emitting the coverage JSON |
+| CRAP | enforcing | scored in-process from that JSON after the steps (`run_crap_calculator`) |
+| diff-coverage | enforcing | scored in-process from the **same** JSON (`run_diff_coverage`) |
+
+The last two do not measure anything again. `pytest` writes one coverage report and both
+score it, so the aggregate, CRAP and the changed-lines floor are three readings of one
+measurement rather than three runs that can disagree.
+
+**Radon cannot fail this gate and never could.** `radon cc` and `radon mi` exit 0 whatever
+they find, so `run_fixed_checks` was structurally incapable of failing on them while the
+wrapper's help text, the CI step name, and `AGENTS.md` all listed them beside the checks
+that can. The steps are kept, relabelled with `RADON_REPORT_NOTE` — *"report only: radon
+exits 0 whatever it finds, so nothing below can fail the gate"* — and their header now says
+so. A report step that exits non-zero *does* still fail the gate: for a tool that exits 0
+on every finding, a non-zero exit means the tool itself broke, and `step_failure()` prints
+exactly that sentence rather than "failed with exit code N".
+
+Radon remains load-bearing outside the gate: `crap_calculator.py` imports
+`radon.complexity.cc_visit` for the complexity term of every CRAP score.
+
+### Nothing Here Is Exempt
+
+There is **no baseline, ratchet, allowlist or grandfather file** in this gate — not for
+complexity, not for CRAP, not for coverage.
+
+A fifth `complexity-baseline` step used to sit beside `ruff`, holding `C901`, `PLR0911`,
+`PLR0912` and `PLR0915` against `quality/complexity-baseline.txt`, and `ruff` was handed
+`--extend-ignore` for exactly those codes so the two steps could not double-report the same
+function. **All of that is gone**: the module, its data file, its test, the
+`BASELINED_COMPLEXITY_RULES` tuple and the `--extend-ignore` routing. The 67 recorded
+offenders were refactored rather than scheduled, so `ruff` enforces the four codes directly
+and the only way past a finding is to fix the function.
+
+The `ruff` step therefore carries a comment saying what its bare command line means:
+anything routed off it is a rule the gate stops enforcing. Adding a flag there is the
+single edit that would silently un-arm four complexity rules.
+
+### Scope Is Derived From The Tree
+
+There are no `DEFAULT_SOURCE_PATHS`/`DEFAULT_TEST_PATHS` constants, no positional
+`source_paths` argument and no `--tests` option. `derive_scope(project_root)` builds a
+frozen `GateScope`:
+
+- `lint_paths` and `type_paths` — **every tracked Python file**, from
+  `git ls-files -z -- '*.py'`. `git ls-files` reads the *index*, so a file is in scope the
+  moment it is `git add`-ed, which is exactly the content the pre-commit tier certifies.
+- `coverage_paths` — the tracked top-level importable packages (`top_level_packages`: a
+  directory holding `__init__.py` whose parent is not itself a package). These are what
+  `--cov` measures, what the Radon report covers, and what CRAP scores; their parents are
+  the import roots pushed onto `PYTHONPATH`.
+- `test_paths` — read from `[tool.pytest.ini_options] testpaths` in the root
+  `pyproject.toml`, so the wrapper does not carry a second copy of where the suite lives.
+
+Every failure mode raises `ScopeError` rather than degrading: `git ls-files` failing, a tree
+with no tracked Python, no tracked top-level package, a missing `pyproject.toml`, or a
+missing/empty `testpaths`. `main()` catches it, prints `gate scope could not be derived: …`,
+and returns 1. An empty scope would make every step pass by certifying nothing, which is the
+exact failure this module exists to prevent.
+
+**The wrapper takes no path arguments at all.** There is no supported way to narrow what the
+gate certifies.
+
+### The Two Post-Suite Scorers
+
+`run_crap_calculator` renders the fixed-length `--top` table, then — separately — lists
+**every** function at or above the threshold, not the first `--top` of them, with the branch
+coverage that would clear it (`crap_failure_line` inverts `crap = cc**2 * (1-c)**3 + cc`).
+When the complexity term alone already reaches the threshold there is no such coverage, and
+the line says "split it" instead of naming an impossible number. A gate that truncates its
+own findings sends the reader back to run the tool by hand for the rest.
+
+`run_diff_coverage` resolves the diff base, scores the changed lines, prints the base it
+chose and every uncovered line by name, and fails only in the `measured` state. It lives
+inside the wrapper rather than beside it so it reaches the pre-push hook, closeout and CI
+through the one command they already run.
+
+Both return 1 when `coverage_json` does not exist, so a pytest step that died without
+writing a report cannot leave two enforcing rails silently satisfied.
+
+### Existing Behaviour That Did Not Change
+
+Each subprocess still runs with this checkout's source import roots first on `PYTHONPATH`
+(`subprocess_env` / `source_import_roots`, fed from `scope.coverage_paths`). That makes
+pytest import and measure *this* checkout's `agents_remember` rather than whatever an
+editable install resolves to, so the gate behaves identically from the primary clone and
+from any linked worktree. CRAP threshold enforcement is still mandatory in the default
+command, with no report-only or strict opt-in surface. `coverage_path_context` still writes
+the report to a temporary directory unless `--coverage-json` is given.
+
+## Invariants And Boundaries
 
 - The wrapper is a fixed quality suite, not a generic shell command surface.
-- Subprocess commands use the active Python executable and fixed module names.
-- Pyright uses `--project .`, `--pythonpath` pointing at the wrapper's active
-  interpreter, and the same configured source/test paths as the other source
-  quality commands. The explicit interpreter keeps linked worktrees usable when
-  root Pyright config still names `.venv` relative to the checkout but the hook
-  is intentionally running with the primary checkout's virtualenv.
-- pytest coverage JSON is generated into a temporary file unless the caller
-  explicitly supplies `--coverage-json`.
-- CRAP-Calculator runs in-process from the generated coverage JSON.
-- Every CRAP score at or above the configured threshold fails the default
-  wrapper; callers cannot turn enforcement into a report-only result.
-- Subprocesses receive an environment with this checkout's source roots first on
-  `PYTHONPATH`, so the gate measures the current checkout regardless of where an
-  editable install points; the `CommandRunner` signature carries that env.
+- Scope is derived, never passed: no CLI path arguments exist, and no caller can narrow it.
+- A step is enforcing unless it carries a `report_note`; only the two Radon steps carry one.
+- A report step that exits non-zero still fails the gate, reported as a broken tool.
+- The four complexity codes are enforced by `ruff` directly. Any `--select`/`--ignore`/
+  `--extend-ignore` added to that step un-arms rules — that is what the deleted baseline
+  step used to do on purpose.
+- No baseline, ratchet, allowlist or exemption file exists anywhere in this gate, and the
+  CLI help says so.
+- Any scope derivation failure is fatal and exits 1; the gate never certifies an empty or
+  guessed scope.
+- One pytest run produces one coverage report; CRAP and the diff floor both score that
+  report and never re-measure.
+- Every CRAP score at or above the configured threshold fails the default wrapper, and every
+  offender is listed — not just the top `--top`.
+- Every uncovered changed line fails the default wrapper, and every one is named.
+- `--diff-base`/`--diff-floor` exist so the failure probes can drive the arithmetic; the
+  floor is policy (100%), not a dial.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
-| CRAP-Calculator owns function-level CRAP scoring and rendering. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| Unit tests cover fixed command composition including Pyright, failure propagation, missing coverage JSON, mandatory CRAP threshold failure, and repository-gate command parity. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
-| Repo tool guidance points agents to this wrapper for full local source quality checks. | [system/tools.md](agents-remember/system/tools.md) |
+| The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
+| CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
+| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
+| The shared tiered hook body derives the same `git ls-files` scope and runs this wrapper as its full tier. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
+| `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | [pyproject.toml](agents-remember/pyproject.toml) |
+| Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | [AGENTS.md](agents-remember/AGENTS.md) |
 
 ## Update History
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired this card's
+  `complexity-baseline` step, its `BASELINED_COMPLEXITY_RULES` routing contract and the
+  `ruff --extend-ignore` note**: the developer's no-deferral rule removed the baseline
+  outright, so `ruff` now enforces `C901`/`PLR0911`/`PLR0912`/`PLR0915` directly and the
+  module, data file, test and gate step no longer exist. Added the `diff-coverage` step as
+  the eighth and binding one, recorded that CRAP and the floor score the *same* coverage
+  report, and recorded that both fail when that report is missing. Verification metadata is
+  pinned to the leaf's reformat commit until closeout stamps the code commit.
+
+- 2026-07-31T06:30+02:00 — 260731-EFA-L2 gate honesty (mid-leaf): replaced the report-only
+  Radon claim with the `Step.report_note` split, added `ruff format --check`, and replaced
+  the scope constants and CLI path arguments with `derive_scope`.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: replaced the report-only/strict-opt-in
   contract with mandatory default CRAP failure, added the missing governing-overview backlink, and

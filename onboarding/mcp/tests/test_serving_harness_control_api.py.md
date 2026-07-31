@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,7 +31,9 @@ dependency.
 
 Model and effort routes pass through honest `SetResult` values, including queued and unsupported,
 as HTTP 200 rather than translating them into success claims. Submit preserves the caller's full
-multiline string, request id, source, timestamps, and normalized vendor correlation. The test seeds
+multiline string, request id, source, timestamps, and normalized vendor correlation; source, request
+id, and expected epoch are asserted off the `ControlSubmission` descriptor the route passes as the
+third positional argument to the control client, not off a keyword dict. The test seeds
 sensitive-looking private `raw` values and proves neither submit nor reconcile exposes `raw`, argv,
 environment, auth, or vendor-specific nested data. The blocking client's UTF-8 JSON encoder is the
 transport authority for Unicode; this route case directly pins whole multiline text without
@@ -44,9 +46,11 @@ native row reaches its exact-session control helper.
 ### Conventions
 
 The module registers only the focused routes on a small `FastAPI` app, uses a temporary real
-`TerminalCatalog`, and patches the blocking client/liveness seams. Since 260718-CHATS-L0 the
-registration call passes the required `coordination_root` keyword so the seam constructs the
-immutable conversation runtime scope. Assertions compare complete
+`TerminalCatalog`, and patches the blocking client/liveness seams. Both registration sites pass one
+`ConversationRuntime` positionally — carrying `ConversationScope(workspace_root=..., coordination_root=...)`
+as the immutable scope plus the harness registry, catalog, host, liveness clock/config, capability
+catalog, and a `LocalOperatorAuthorizationResolver.for_workspace(...)` authorization — rather than
+the loose keyword run it used before. Assertions compare complete
 public JSON where the contract is frozen and explicitly search serialized output for forbidden
 private data.
 
@@ -83,13 +87,13 @@ same-repository implementation evidence.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The pre-session endpoint forwards refresh and returns the exact normalized envelope; refresh failure is 503 without stale capabilities. | L103-L133 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Live capabilities remain vendor-neutral and set routes return honest queued/unsupported results for the exact catalog session. | L135-L164 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Submit preserves one whole multiline message and normalized correlation while omitting private raw, argv, and environment data. | L166-L197 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Reconcile preserves the same request/vendor correlation and strips private vendor/auth details. | L199-L219 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Unknown/stopped/dead rows are 404 before live plain/legacy rows become 409; a live native row reaches the control client. | L221-L290 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Daemon routes call exact-session advertise/set/submit/reconcile helpers and use explicit public serializers for submit and reconcile. | L105-L210 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| Liveness observation precedes live endpoint-support classification. | L213-L242 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The pre-session endpoint forwards refresh and returns the exact normalized envelope; refresh failure is 503 without stale capabilities. | L129-L160 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Live capabilities remain vendor-neutral and set routes return honest queued/unsupported results for the exact catalog session. | L161-L191 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Submit preserves one whole multiline message and normalized correlation while omitting private raw, argv, and environment data. | L192-L227 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Reconcile preserves the same request/vendor correlation and strips private vendor/auth details. | L482-L506 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Unknown/stopped/dead rows are 404 before live plain/legacy rows become 409; a live native row reaches the control client. | L656-L725 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Daemon routes call exact-session advertise/set/submit/reconcile helpers and use explicit public serializers for submit and reconcile. | L204-L252; L255-L340 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| Liveness observation precedes live endpoint-support classification. | L539-L572 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 | Public receipt and reconciliation serializers retain normalized evidence while intentionally omitting internal `raw`. | L274-L296 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | Exact-session request encoding preserves Unicode with `ensure_ascii=False` and sends one newline-framed JSON request. | L220-L234 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 
@@ -115,6 +119,30 @@ API regressions now cover the control liveness memo and lifecycle-free interacti
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations into
+  `harness_control_api.py`, whose routes were split into three private registrars. The daemon-route
+  row now cites `_register_capability_routes` L204-L252 (harness/terminal capabilities, set-model,
+  set-effort) and `_register_submission_routes` L255-L340, where `/submit` and `/reconcile` go
+  through `public_receipt_json` (L310) and `public_reconciliation_json` (L331). The liveness row
+  now cites `_running_control_entry` L539-L572, where `observe_terminal_liveness` (L553-L559) runs
+  before the `kind != "harness" or control_endpoint is None` 409 classification (L563-L570), with a
+  `_ControlLivenessMemo` hit short-circuiting at L550-L552. No claim text changed.
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected the registration claim and every
+  self-citation. The Conventions sentence asserting that the call "passes the required
+  `coordination_root` keyword" is no longer true of the source: both
+  `register_harness_control_routes` sites now pass one positional `ConversationRuntime` holding
+  `ConversationScope(workspace_root, coordination_root)`, the harness registry, catalog, host,
+  liveness clock/config, capability catalog, and a
+  `LocalOperatorAuthorizationResolver.for_workspace(...)`,
+  so that paragraph was rewritten. Also recorded that the submit case now reads source, request id,
+  and expected epoch off the `ControlSubmission` descriptor passed as the third positional argument
+  instead of comparing a kwargs dict. Re-anchored the five Repo-Internal citations against the
+  current file: pre-session/refresh L129-L160, live capabilities and set routes L161-L191, submit
+  L192-L227, reconcile L482-L506, and the liveness-first status matrix L656-L725. No route, privacy,
+  or status-ordering behavior changed and no test was added, removed, or renamed. Verification
+  metadata remains pinned until closeout stamps the candidate commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,28 +26,28 @@ check before an SSE response exists.
 
 ### Logic
 
-`ActiveConversationService` (L65-L227) mints its own 32-byte random cursor secret (L71 — per
+`ActiveConversationService` (L57-L259) mints its own 32-byte random cursor secret (L63 — per
 app, never persisted; a daemon restart invalidates old cursor generations loudly). `page`
-(L83-L104) resolves the projector, decodes the optional `before` page cursor against the
+(L78-L99) resolves the projector, decodes the optional `before` page cursor against the
 authorized identity, bounds the limit (≤500), and assembles the `ConversationPage` (identity,
 window, fresh page cursor, event cursor, hydration id, canonical status, capabilities) in
-`_assemble_page` (L199-L227). `subscribe` (L106-L135) decodes the event cursor, enforces
+`_assemble_page` (L233-L259). `subscribe` (L101-L127) decodes the event cursor, enforces
 same-generation and the retention floor (`cursor-reset-required` with `generation-changed` /
 `retention-overflow` reasons), then attaches the subscriber queue and snapshots the replay
 window with no await between them — the poll task cannot interleave, so replay and live delivery
-neither gap nor duplicate an envelope (L126-L135). `release_session` (L143-L156) de-registers and closes one
+neither gap nor duplicate an envelope (L121-L127). `release_session` (L144-L157) de-registers and closes one
 session's projector when the session ends: it pops the projector from `_projectors`, drops it from
 the LRU order, and awaits `projector.close()`, releasing the whole per-session projection
 (ProjectionStore items, the L5 live-turn/request id-sets, retained SSE envelopes) immediately
 instead of leaving it registered until the tombstone self-idles and then falls to 32-LRU eviction
-(260718-CHATS-L5F R5). `_projector_for` (L157-L196) resolves the
+(260718-CHATS-L5F R5). `_projector_for` (L158-L197) resolves the
 catalog entry, verifies the expected bridge epoch against the live submission authority, builds
 the proven identity, and returns the matching live projector or closes/replaces a stale one;
-projectors are bounded at 32 per app with LRU eviction (L54, L198-L203) — an evicted projector
+projectors are bounded at 32 per app with LRU eviction (L54, L199-L204) — an evicted projector
 rehydrates from native authority and establishes a new cursor generation, so stale event cursors
 reset loudly instead of mixing sequences. Every blocking sync IPC read is offloaded with
-`asyncio.to_thread` (L165-L172) so the daemon event loop stays responsive. One service per
-runtime is kept through a weak-key registry (L248-L260).
+`asyncio.to_thread` (L188-L191) so the daemon event loop stays responsive. One service per
+runtime is kept through a weak-key registry (L251-L263).
 
 ### Conventions
 
@@ -99,7 +99,7 @@ signing/binding; the projector engine does hydration/polling; the routes call on
 | --- | --- | --- |
 | The immutable app-scoped `ConversationRuntime` is the authority one service instance binds. | L47-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
 | Cursor mint/decode/generation checks run through the cursor authority with this service's secret. | L197-L272 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/cursor.py) |
-| The projector captures the atomic page + event cursor under its apply lock. | L213-L234 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
+| The projector captures the atomic page + event cursor under its apply lock. | L103-L127 | [projector/rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
 | The two routes invoke this service and map its typed refusals to the serving status idiom. | L121-L186 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
 
 ## Cross-Repo References
@@ -117,8 +117,29 @@ page/SSE, then delegates only the requested child id to `refresh_agent_native` (
 service does not widen parent paging, invent child eligibility, or translate the local hydration
 outcome; those contracts remain projector-owned.
 
+## 260731-EFA-L2 Current Delta
+
+The service now constructs one `ProjectedSession(identity=…, authorization=…, entry=…, mapper=…,
+secret=self._secret)` and hands it to the projector facade, instead of passing the five as separate
+keywords. The concept is WHICH conversation is being projected plus the authority to mint
+references for it — see [projector/facade.py](projector/facade.py.md). No behaviour change here.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 4 stale self-citations (plus the three
+  sub-citations riding the same sentences). The class head moved up 8 lines while
+  `hydrate_agent_history` pushed the tail down: `ActiveConversationService` L65-L227→L57-L259,
+  the cursor-secret line L71→L63, `page` L84-L105→L78-L99, `_assemble_page` L199-L227→L233-L259,
+  `subscribe` L107-L136→L101-L127 with the no-await queue+replay capture L127-L136→L121-L127, and
+  the two offloaded sync IPC reads (`current_bridge_epoch`, `live_snapshot`) L166-L173→L188-L191.
+  No claim text changed; every range was read back.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `active/projector.py`
+  no longer exists — it is now the `active/projector/` package, and the atomic page + event-cursor capture
+  under the apply lock is `RebuildCoordinator.page` at `projector/rebuild_coordinator.py` L103-L127 (was
+  `projector.py` L213-L234); both the link path and the range were repointed and read back.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ProjectedSession` call shape into the projector facade.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the exact-session selected-child
   service seam and its parent-page/projector ownership boundaries. Verification metadata remains
   pinned while uncommitted.

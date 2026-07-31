@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastUpdated            | 2026-07-31T16:10+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -236,7 +236,36 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | [test_lifecycle_finalize.py](agents-remember/mcp/tests/test_lifecycle_finalize.py) |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py); [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 
+## 260731-EFA-L2 Lifecycle Parameter Objects
+
+The worktree lifecycle's long argument lists became frozen value objects, most of which are
+route-level vocabulary rather than local tidy-ups:
+
+- `models.VerifiedChange` — the landed code change onboarding metadata is stamped against
+  (`commit`, `commit_date`, `changed_paths`, `working_paths`). `closeout` builds it once;
+  `onboarding`'s three refreshers take it, so a refresher cannot stamp one commit's hash beside
+  another's path list.
+- `worktree_contract.ContractTask` / `LeafIdentity` / `RepoBranchPlan` — what both contract
+  constructors now take. On the series contract the old `protected_branch`/`integration_branch`
+  pair is the code plan's `source_branch`/`work_branch`, and `memory=None` expresses the whole
+  absent-memory state.
+- `start_progress.StartingEnclosure` / `StartBeat` — the pre-contract observability payload, split
+  into what the beat is about versus how far the start has got.
+- `cleanup.RetiringBranch`, `integrate.IntegrationSources` / `IntegratedCommits`,
+  `provider_async.ProviderSetupJob`.
+
+`start_result` is now three stages (`_existing_contract_result`, `_preflighted_contract`,
+`_create_start_enclosure`) and `lifecycle_guidance` three phase groups whose order is the
+precedence contract. `context.py` builds the kernel resolver's `CoordinationHints` /
+`EnclosureSelector`. Every payload, refusal, recovery choice and written contract is unchanged.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2: route-wide parameter-object pass (`VerifiedChange`,
+  `ContractTask`/`LeafIdentity`/`RepoBranchPlan`, `StartingEnclosure`/`StartBeat`,
+  `RetiringBranch`, `IntegrationSources`/`IntegratedCommits`, `ProviderSetupJob`) plus the
+  `start_result` three-stage split, the `lifecycle_guidance` phase groups and the `sync` helper
+  extractions. Behaviour is unchanged throughout. Verification metadata pinned until closeout
+  stamps the L2 commit.
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: recorded that `code_quality_gate.py` no longer
   decides by repository name. Applicability is now wrapper availability in the target checkout, the
   preview reports `enforced` / `no-code-commit` / `wrapper-unavailable`, and both `closeout.py` call

@@ -78,7 +78,7 @@ real helper end-to-end including its malformed-request refusals.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The versioned JSONL serve loop, typed failure vocabulary, and paging primitives the host correlates against. | L102-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
-| The installed suite proves the helper handshake plus malformed-request rejection on the real process seam. | L263-L280 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed suite proves the helper handshake plus malformed-request rejection on the real process seam. | L265-L281 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The Python foundation suite forbids incidental module resolution in the helper sources this host spawns. | L102-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 
 ## Cross-Repo References

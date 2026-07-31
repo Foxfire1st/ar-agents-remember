@@ -68,7 +68,7 @@ authority's digest construction are the parity targets.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The repository `redact_secrets` policy applied to every preview. | L1-L80 | [tool_reports.py](agents-remember/mcp/src/agents_remember/mcp/tool_reports.py) |
+| The repository `redact_secrets` policy applied to every preview. | L25-L27; L72-L79 | [tool_reports.py](agents-remember/mcp/src/agents_remember/mcp/tool_reports.py) |
 | The `AssetReference` type covered by the asset-form digest. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The submission authority's payload-digest construction this mirrors byte-for-byte. | L1-L120 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 
@@ -81,6 +81,11 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past
+  the end of `mcp/src/agents_remember/mcp/tool_reports.py` (cited L1-L80; the file is 79 lines).
+  Replaced the whole-file range with the two spans the claim actually rests on: `_SECRET_PATTERN`
+  at L25-L27 and the recursive `redact_secrets` at L72-L79.
 
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the deterministic
   preview/digest transforms — control-char strip, whitespace collapse, secret redaction, the 96

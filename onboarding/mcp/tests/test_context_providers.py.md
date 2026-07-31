@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -23,7 +23,13 @@
 ### Logic
 
 The test module imports `agents_remember.providers.context` from the MCP
-package source path. It checks that CGC runtime layout expansion produces a
+package source path. Layout expansion is driven through one value object per
+provider: `cgc_runtime_layout(CgcRepo(coordination_root=…, repo_id=…,
+code_repo_root=…, cgcignore_patterns=…))` and
+`grepai_runtime_layout(GrepaiWorkspace(coordination_root=…, name=…, roots=…))` —
+note the workspace object spells the display name `name`, not the layout's own
+`workspace_name` attribute the assertions still read back. It checks that CGC
+runtime layout expansion produces a
 contained per-repo runner root, pinned requirements file, patch root, durable
 `providers/data` FalkorDB backend root, FalkorDB process env, and isolated
 HOME-like runtime directories without exposing host venv executable paths. It
@@ -95,12 +101,13 @@ No external documentation is needed for these unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/requirements/codegraphcontext.txt`, patch root, and per-repo FalkorDB process env without host venv executable fields. | L89-L125 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
-| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L145-L187 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
-| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L188-L226 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
-| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, rejection of configured code repository paths that do not exist, and rejection of removed `venvRoot` settings. | L228-L338 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
-| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots indexed live in place, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and `ensure_grepai_root_gitignore` (append/create/idempotent `.grepai/` ignore). | L243-L420 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
-| Source artifact, patch idempotence, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query and route patches. | L423-L726 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/requirements/codegraphcontext.txt`, patch root, and per-repo FalkorDB process env without host venv executable fields. | L91-L134 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | L211-L261 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | L262-L303 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, rejection of configured code repository paths that do not exist, and rejection of removed `venvRoot` settings. | L304-L415 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots indexed live in place, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and `ensure_grepai_root_gitignore` (append/create/idempotent `.grepai/` ignore). | L416-L577 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| Source artifact, patch idempotence, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query and route patches. | L578-L784 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
+| The Windows-host container-path tests (`to_container_path`, driveless container roots, `env(for_container=True)`) sit between the first layout test and the pinned-defaults test. | L135-L210 | [test_context_providers.py](agents-remember/mcp/tests/test_context_providers.py) |
 
 ## Cross-Repo References
 
@@ -111,6 +118,16 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: both layout builders now take one value object
+  — `cgc_runtime_layout(CgcRepo(...))` and `grepai_runtime_layout(GrepaiWorkspace(...))`, the
+  latter renaming the caller-side `workspace_name` keyword to `name` while the layout attribute
+  the tests read back keeps its old spelling — so the Logic section names both objects and that
+  asymmetry. The rewrapped call sites shifted every test in the file, and all six own-file
+  reference rows were re-verified against the current line numbers and re-anchored (for example
+  the GrepAI row from L243-L420 to L416-L577 and the patch-helper row from L423-L726 to
+  L578-L784); a row was added for the Windows-host container-path tests the table never covered.
+  No test case or assertion changed.
 
 - 2026-07-03T01:55+02:00 — L12: timer-pop patch idempotency test, patch-script drift guard, and the materialize test asserts the global/.cgcignore copy is byte-identical to the runtime-root copy.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.

@@ -27,14 +27,14 @@ comparison — and the runtime/helper versions ride the metric as informational 
 
 ### Logic
 
-`conversation_telemetry` (L40) resolves caller/epoch, reads the telemetry capability set, and emits
+`conversation_telemetry` (L41-L73) resolves caller/epoch, reads the telemetry capability set, and emits
 only capability-cleared metrics. The single currently-supported metric is codex cumulative token
-usage: `_codex_usage` (L75) reads the latest `thread/tokenUsage/updated` frame in the bounded evidence
+usage: `_codex_usage` (L76-L121) reads the latest `thread/tokenUsage/updated` frame in the bounded evidence
 window and projects the cumulative breakdown with unit `tokens`, scope `conversation`, observed time
 (frame `createdAt`), and precision `exact`; reasoning tokens have no model field and are omitted rather
-than misfiled. `_freshness` (L123) classifies fresh/stale/unknown against the `_FRESH_WINDOW_MS`
-15 s window (L37). `_telemetry_key` (L134) drives the semantic revision (stable on no-change,
-bumps on new evidence/freshness transitions). `_int_or_none` (L143) keeps absent values absent.
+than misfiled. `_freshness` (L124-L132) classifies fresh/stale/unknown against the `_FRESH_WINDOW_MS`
+15 s window (L38). `_telemetry_key` (L135-L141) drives the semantic revision (stable on no-change,
+bumps on new evidence/freshness transitions). `_int_or_none` (L144-L145) keeps absent values absent.
 
 ### Conventions
 
@@ -72,8 +72,8 @@ L0E evidence window; the capability gate decides what may emit.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The `ConversationTelemetry`/`MetricEvidence`/`UsageMetricValue` DTOs. | L406-L678 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The telemetry capability gate — contract-verified, no version demotion (L5F R4). | L317-L342 | [capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
+| The `ConversationTelemetry`/`MetricEvidence`/`UsageMetricValue` DTOs. | L1185-L1242 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The telemetry capability gate — contract-verified, no version demotion (L5F R4). | L323-L347 | [capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
 | The bounded evidence window the `thread/tokenUsage/updated` frame is read from. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 
 ## Cross-Repo References
@@ -85,6 +85,18 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 5 stale self-citations (plus the
+  `_FRESH_WINDOW_MS` line riding the same sentence). Everything had slipped one or two lines and
+  the single-line def citations were widened to the whole function each sentence describes:
+  `conversation_telemetry` L40→L41-L73, `_codex_usage` L75→L76-L121, `_freshness` L123→L124-L132,
+  `_FRESH_WINDOW_MS` L37→L38, `_telemetry_key` L134→L135-L141, `_int_or_none` L143→L144-L145. No
+  claim text changed; every range was read back.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The metric
+  DTO block moved to the tail of `models.py`: `T = TypeVar("T")`, `MetricScope`, the generic
+  `MetricEvidence`, the five metric-value models and `ConversationTelemetry` now occupy
+  L1185-L1242 (the old L406-L678 is the status/capability region). Verified by reading the block
+  back; no claim text changed.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — corrected the now-false
   "version mismatch demotes the capability" language. The contract is the only gate: a capability

@@ -63,7 +63,7 @@ the shared reader.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Configuration wraps mutation plus state/catalog readback in one finite timeout; cancellation propagates into this transport. | L133-L167 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
+| Configuration wraps mutation plus state/catalog readback in one finite timeout; cancellation propagates into this transport. | L145-L179 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
 | Adapter owns this transport and delegates live setters to the configuration transaction. | L68-L127; L208-L214 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/coordination_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -15,6 +15,12 @@
 `coordination_tools.py` exposes the `resolve_context` MCP controller.
 
 ## Code Commentary
+
+`resolve_context_tool(config, task: TaskRef, *, worktree_name=None, topology=None)` — since
+260731-EFA-L2 the five locators arrive as one `TaskRef` (`controllers/task_ref.py`), shared with
+`worktree_attach_tool` and `worktree_status_tool`. `worktree_name` and `topology` stay separate
+because neither identifies the task. The resolver call itself now passes
+`hints=CoordinationHints(...)` and `selector=EnclosureSelector(...)` instead of five loose keywords.
 
 The controller validates the requested repo ID against MCP settings via
 `require_repo()` and confines an optional contract path under the coordination
@@ -47,9 +53,16 @@ repo is disallowed or a path escapes the coordination root.
 
 ## Series-Contract Notes
 
-The context controller forwards `parent_task` and `leaf_id` through the trusted config-bound resolver path, preserving task-name ergonomics while allowing nested active task roots and multiple leaf enclosures.
+The context controller still resolves nested active task roots and a specific leaf enclosure —
+`parent_task` and `leaf_id` now travel inside the `TaskRef` through the same trusted config-bound
+resolver path, preserving task-name ergonomics.
 
 ## Update History
+
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `resolve_context_tool` took one `TaskRef` in place of the
+  five locator keywords, and the `resolve_coordination_context` call moved onto
+  `CoordinationHints` / `EnclosureSelector`. Guards, topology narrowing and serialization are
+  unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
 
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `resolve_context_tool` now forwards `parent_task` and `leaf_id` so source API/MCP callers can resolve nested task roots and a specific leaf enclosure by task name. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-31T12:50+02:00 — Source dropped the local `_repo`/`_coord_path` helpers in favor of `require_repo`/`require_within_coordination` imported from shared `controllers/_guards`, switching authority failures from `ValueError` to `AuthorityError` and removing the `Path`/`RepositoryScope`/`path_is_relative_to` imports; corrected Code Commentary, Invariants And Boundaries, and References accordingly (1.0.0 review remediation).

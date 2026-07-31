@@ -65,7 +65,7 @@ protocol snapshot is recorded in the repository fixture instead.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Fixture pins the CLI version, protocol, and stable method inventory. | L1-L31 | [codex_app_server_0_144_3.json](agents-remember/mcp/tests/fixtures/codex_app_server_0_144_3.json) |
-| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | L344-L413 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | L360-L428 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 
 ## Cross-Repo References
 

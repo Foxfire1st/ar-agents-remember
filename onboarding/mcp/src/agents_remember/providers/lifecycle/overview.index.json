@@ -127,7 +127,7 @@
       "GrepAI",
       "mcp/src/agents_remember/providers/lifecycle/",
       "route-local-overview",
-      "e358c4ac520d94ae2e597ae3cbe186e07a4d1063",
+      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
       "/../../../overview.md",
       "lifecycle/",
       "providers/cgc/lifecycle/",
@@ -139,8 +139,8 @@
       "--from-settings",
       "require_lifecycle_settings_path",
       "providers/current_state.py",
-      "system/settings.json",
-      "coordination_root"
+      "BackendStartReconciliation",
+      "network"
     ]
   },
   "fallback": {

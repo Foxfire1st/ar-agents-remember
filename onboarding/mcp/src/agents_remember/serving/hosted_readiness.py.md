@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/serving/hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -55,7 +55,25 @@ Readiness is derived only from the identity-matching adapter snapshot: control r
 immediate or queued. Legacy/custom sessions are unsupported; pane glyphs, copy mode, footer text,
 and log flush windows cannot make a session ready.
 
+## 260731-EFA-L2 Current Delta
+
+**`ReadinessWait`** (`seconds=0.0`, `poll_interval=0.1`, `monotonic`, `sleep`; module default
+`NO_READINESS_WAIT` = *observe exactly once and answer with what is true right now*) replaces the
+four loose waiting arguments. A bound without a poll interval never re-observes and a poll interval
+without a bound never stops, so the four are one decision — and the clock/sleep pair must be the
+same one the bound is measured in, which separate parameters cannot guarantee.
+
+Two named steps carry the readiness path: `_bridge_unreachable(...)` returns the result to report
+when a row has no bridge to read (or `None` to go read it), and `_readiness_from_snapshot(...)`
+re-reads the catalog **after** the bridge call and projects the snapshot onto the current row. The
+readiness contract itself is unchanged: an identity-matching snapshot with `control=ready` and an
+accepting state of `immediate` or `queued`; pane text, copy mode, footer glyphs and log timing are
+still not readiness inputs.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ReadinessWait` / `NO_READINESS_WAIT` and the `_bridge_unreachable` / `_readiness_from_snapshot` steps; readiness contract unchanged.
 - 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative readiness to the exact adapter handshake and
   historicized pane, copy-mode, footer, and log timing observations as diagnostics-only.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed exact adapter handshake and unsupported behavior.

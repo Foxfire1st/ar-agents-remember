@@ -65,7 +65,7 @@ package's production-path regression matrix.
 | --- | --- | --- |
 | The deterministic route-index census consumes NUL-delimited output from this runner and preserves typed causes. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
 | Carryover uses the same scrubbed environment for its separate input-bearing Git adapter. | Git runner | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
-| Tests import the production selector inventory and cover every selector. | L34-L39; L595-L644 | [conftest.py](agents-remember/mcp/tests/conftest.py); [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| Tests import the production selector inventory and cover every selector. | L34-L39; L592-L640 | [conftest.py](agents-remember/mcp/tests/conftest.py); [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 
 ## Cross-Repo References
 
@@ -77,6 +77,13 @@ repository defines this implementation.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The row
+  carries two source paths, and only its second range moved: `conftest.py` L34-L39 still holds the
+  `GIT_REPOSITORY_SELECTOR_ENV` import and the `os.environ.pop` scrub loop, while the coverage test
+  `test_ambient_git_repository_selectors_cannot_redirect_the_census` shifted to `test_route_index.py`
+  L592-L640. Re-verified that its `selectors` dict still names all eight tuple entries from
+  `git_command.py` L9-L18.
 
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: added the authoritative selector scrub and
   surrogate-preserving output boundary used by deterministic route-index census and carryover.

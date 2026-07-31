@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/turn_state.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -132,7 +132,23 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260731-EFA-L2 Current Delta
+
+Classification was decomposed into named strategies, with the precedence rule stated once:
+
+- `_first_matching_state(...)` — walk a precedence-ordered marker ladder; **the first pattern that
+  fires names the state**.
+- `_classify_codex_pane(pane_text)` — classify Codex off the live pane **TAIL only**.
+- `_classify_by_marker_tables(pane_text, harness)` — classify any harness off the shared marker
+  tables, with per-harness overrides applied first.
+
+The marker tables, their precedence and the resulting `TurnStateClassification` values are
+unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_first_matching_state` / `_classify_codex_pane` / `_classify_by_marker_tables` split; marker tables and precedence unchanged.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

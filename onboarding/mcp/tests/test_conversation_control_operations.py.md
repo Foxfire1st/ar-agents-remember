@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,20 +26,30 @@ both pi settlement classes (content-less, content-ful, and oversized/clipped).
 
 ### Logic
 
-`CodexInterruptTests` (L34): accepted → `interrupted`/`already-settled`/`failed` settlement over the
+Since 260731-EFA-L2 every call into the ledger carries a `ControlRequest` parameter object:
+`operations.interrupt(ControlRequest(service=…, authorization=…, ar_session_id=…,
+expected_bridge_epoch=…), turn_id=…, request_id=…)`, and the same for `interrupt_status` with its
+`reconcile=` flag. The four scope values that were loose leading arguments now travel bound
+together — nothing in the package may act on a session without all four, and `ControlRequest`
+narrows to a `ControlScope` only once the service has verified the epoch.
+
+`CodexInterruptTests` (L40): accepted → `interrupted`/`already-settled`/`failed` settlement over the
 completion surface; identical-tuple replay returns the stored projection with one native write;
 reused id + different tuple → `request-conflict`; concurrent same-tuple gathers serialize to one
 write; lost `may_have_sent` → `unknown` (202) → reconcile recovers the first ack with one write;
-pre-write failure → 503 with no phantom record. `PiInterruptTests` (L178): the pi settlement battery
+pre-write failure → 503 with no phantom record. `PiInterruptTests` (L195): the pi settlement battery
 including the Finding 1 regression pair (content-ful `stop` → `already-settled`, content-ful
 `aborted` → `interrupted`) driven through the real bridge evidence path, plus the Finding 2 facet
 regressions over the closed L3E envelope preservation (an oversized `x*40_000` content-ful frame
 settles not-`pending`; a small `toolUse` then an oversized final `aborted` settles `interrupted`,
 never `already-settled`) — both proven non-vacuous by neutralizing the L3E preservation.
-`ClaudeInterruptGateTests` (L370): the capability gate refuses claude/unsupported before any native
-call (zero adapter calls). Since 260718-CHATS-L5F (R4) the refusal reason is contract-driven —
-`unverified` until the control seam is probed — asserted to contain `"contract"`, never a
-version-string comparison against a locked runtime.
+`ClaudeInterruptTests` (L413): claude is no longer gated off — the suite asserts the capability
+reports `supported` at evidence tier `runtime-fixture` (fixture
+`claude-2.1.217-installed-20260722`, runtime version `2.1.217`), that the interrupt accessor shares
+the control gate's verdict, and then drives the same settlement battery as the other harnesses:
+accepted/`pending` on acknowledgement with the operation id reaching the adapter, `interrupted`
+(200) after the abort lands, `already-settled` (200) on natural completion, `failed` (503) on an
+unprovoked error result, and a stale expected identity refused before any native call.
 
 ### Conventions
 
@@ -73,8 +83,9 @@ fields.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The interrupt ledger under test, incl. the Finding 1 payload-type settlement match. | L87-L449 | [control/operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
-| The shared fake-topology harness (real bridge/IPC/authority, `NOW`-anchored service, pi emit helpers). | L88-L520 | [_control_plane.py](agents-remember/mcp/tests/_control_plane.py) |
+| The interrupt ledger under test, incl. the Finding 1 payload-type settlement match. Both entry points now take a `ControlRequest`, the per-attempt values travel as `InterruptTicket` (L205-L217), and the claude branch's settlement match was extracted into `_claude_result_settlement` (L417-L450). | L73-L511 | [control/operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
+| The `ControlRequest` scope object these calls build, and its `resolved()` narrowing to a verified-epoch `ControlScope`. | L156-L181 | [control/service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
+| The shared fake-topology harness (real bridge/IPC/authority, `NOW`-anchored service, pi emit helpers). | L88-L518 | [_control_plane.py](agents-remember/mcp/tests/_control_plane.py) |
 | The L3E truncation-envelope identity preservation the Finding 2 regressions depend on. | L569-L667 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 
 ## Cross-Repo References
@@ -92,6 +103,24 @@ Control-operation regressions now cover structured interaction answers and nativ
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass moved the ledger's scope
+  arguments into a parameter object, so the card now states the current call shape and its anchors
+  were re-derived. `operations.interrupt` and `operations.interrupt_status` take a frozen
+  `ControlRequest(service, authorization, ar_session_id, expected_bridge_epoch)` positionally,
+  keeping `turn_id`, `request_id` and `reconcile` keyword-only; the complexity extraction in the
+  same leaf also added `InterruptTicket` and split the claude settlement match out as
+  `_claude_result_settlement`, both now cited. Nineteen call sites grew, moving the class anchors,
+  so `CodexInterruptTests` L34 became L40 and `PiInterruptTests` L178 became L195, verified by
+  reading the file at those lines. While re-anchoring, found the third paragraph describing a class
+  that does not exist: there is no `ClaudeInterruptGateTests`, and `ClaudeInterruptTests` (L413) has
+  not proved a pre-native capability refusal for some time — it asserts claude is `supported` at
+  evidence tier `runtime-fixture` and then drives the full settlement battery. That paragraph was
+  already wrong at the L2 base commit, not by this leaf's doing, and has been rewritten against the
+  current source. Also shifted the `_control_plane.py` harness range to L88-L518; the
+  `harness_control_models.py` L3E range was re-checked and is still accurate. No settlement class,
+  write count, epoch check or non-vacuity claim changed. Verification metadata stays pinned until
+  closeout stamps the code commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

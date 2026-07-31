@@ -45,11 +45,12 @@ owns no data/paging/cursor logic — the store/reducer do.
   the roster is non-empty — the primary sub-agent path; the line owns Enter/menu from there and
   ArrowUp from the line returns focus to the timeline's tabbable row. ArrowLeft/ArrowRight cycle
   parent → agent 1 → … → agent N → parent (`cycleAgentFocus`) as an additional path, and Escape
-  returns to the parent. `ownsAgentFocusKeys` (L74-L84) yields the keys to
-  editable/interactive targets — input/textarea/select/contentEditable, or anything inside
+  returns to the parent. `ownsAgentFocusKeys` (L88-L98, documented by the block comment at
+  L81-L87) yields the keys to editable/interactive targets —
+  input/textarea/select/contentEditable, or anything inside
   `button, a, pre, [role='group'], .cm-editor` — the same exclusion discipline the feed's own
   navigation uses.
-- **`applyAgentFocus`** (L144-L159): writes the store via `setAgentFocus`, then announces politely
+- **`applyAgentFocus`** (L163-L177): writes the store via `setAgentFocus`, then announces politely
   (`viewing <label>` / `viewing parent conversation`) ONLY when the surface is visible — a hidden
   keep-alive surface never voices an operator action it did not see.
 - **Announcer discipline** (L196-L220, §14.2/F21): status announcers key on `(state + revision)` and
@@ -147,6 +148,20 @@ addresses only that child; the parent projection and reconnect surface remain li
 still owns presentation/focus only—the store owns request orchestration and resource bounds.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations, both read back
+  against the current source. `ownsAgentFocusKeys` L74-L84 → L88-L98 (L74-L84 now sits inside the
+  tail of the `agentHistoryError` css recipe plus the head of the focus-keys block comment);
+  `applyAgentFocus` L144-L159 → L163-L177 (L144-L159 now covers the
+  sub-agent-focus derivation block, not the callback). Both claims are unchanged and still true.
+  NOT fixed (beyond this worklist): the rest of the Logic bullets drifted the same way when the
+  IM-L2 hydration/error work landed — store reads L107-L133 → L121-L143, sub-agent focus model
+  L135-L143 → L145-L161, focus keys L160-L191 → L187-L221 with `surfaceRef` L113/L265 → L127/L292,
+  announcer discipline L196-L220 → L223-L247, stream-phase L222-L236 → L249-L261, first-connect
+  failure L238-L251 → L263-L275, capability cues L252-L261 → L277-L287 (rendered at L319-L327),
+  toolbar L269-L307 → L296-L328, agents strip L308-L310 → L335-L337, empty-vs-timeline L312-L337 →
+  L355-L379, and the self row's L86-L338 → L100-L382 (file is 383 lines). The two IM-L2 delta
+  citations (L145-L185, L335-L354) are current.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented effective-focus-driven
   one-shot hydration, persisted-versus-stale focus behavior, visible child-local error/retry, and

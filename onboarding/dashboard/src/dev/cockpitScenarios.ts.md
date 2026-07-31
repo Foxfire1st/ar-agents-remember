@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/dev/cockpitScenarios.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee` |
-| lastVerifiedCommitDate |  2026-07-18T15:41:39+02:00|
+| lastUpdated | 2026-07-31T16:10+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,24 @@ Catalogues dedicated Chats-cockpit scenarios and drives the real data stores/cli
 dev-only fake transport for interactive and Playwright verification.
 
 ## Code Commentary
+
+### The Probe Types Are No Longer Exported From Here
+
+260731-EFA-L2 moved `CockpitBenchProbe`, `CockpitBenchTransition`, `CockpitBenchRequest`,
+`CockpitResetAudit` and the `declare global { interface Window { … } }` block for
+`__cockpitBench` / `__cockpitBenchResetAudit` out to [`benchProbes.ts`](benchProbes.ts).
+This file imports `CockpitBenchProbe` and `CockpitResetAudit` as types and **exports none of
+them**; an importer that still pulls those names from `./cockpitScenarios` will not compile.
+
+The reason is a project boundary: the Playwright drivers read `window.__cockpitBench` from
+the driver tsconfig project, which does not include this file. `benchProbes.ts` is
+import-free precisely so `tsconfig.driver.json` can name it without dragging the app's module
+graph along.
+
+**Nothing about the transport, the audit or the scenario catalogue changed** — the same
+values are still installed on `window` at the same points (`window.__cockpitBench` at the end
+of `installCockpitScenarioFetch`, `__cockpitBenchResetAudit` during reset, and the probe
+deleted on teardown).
 
 ### FEUI MX-FIX-2 Request-Matched Open Simulation
 
@@ -83,8 +101,16 @@ Scenario routes and fixture facts are repository-local. Vendor harness names are
 | Authority wrapper. | [CockpitScenarioHarness.tsx](CockpitScenarioHarness.tsx) |
 | Scenario registration. | [scenarios.ts](scenarios.ts) |
 | Cross-generation regressions. | [cockpitScenarios.test.ts](cockpitScenarios.test.ts) |
+| The probe types and the `Window` augmentation this file installs into, shared with the Playwright driver tsconfig project. | [benchProbes.ts](benchProbes.ts) |
 
 ## Update History
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2: `CockpitBenchProbe`, `CockpitBenchTransition`,
+  `CockpitBenchRequest`, `CockpitResetAudit` and the `Window` augmentation moved out to
+  `benchProbes.ts` so the Playwright driver tsconfig project reads one declaration; this file
+  now imports two of them as types and exports none. No transport, audit or scenario
+  behaviour changed. Verification metadata is pinned to the leaf's reformat commit until
+  closeout stamps the code commit.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: made the dev transport model authoritative raw and
   harness open responses separately; raw rows no longer fabricate harness/control facts, while

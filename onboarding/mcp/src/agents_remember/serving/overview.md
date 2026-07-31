@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`|
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -564,12 +564,25 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `--model` plus native `--thinking` and requires both effective values to echo, exposing Pi's
   silent-clamp asymmetry rather than trusting it.
 
-- `app.py` — `create_app(config, *, interval, heartbeat, now, before_tick,
-  refresh_provider_state, refresh_landing_state, watch_changes, harness_capability_catalog)` builds
+- `cadence.py` — `ProjectionCadence(interval, heartbeat)` + `DEFAULT_PROJECTION_CADENCE`. The one
+  pacing decision every dashboard process shares, kept **stdlib-only** so the import-light daemon
+  supervisor can name a spawned child's cadence without importing the projector (and, through it,
+  the serving stack).
+
+- `hosted_session_runtime.py` — `HostedSessionRuntime(catalog, host)`. The pair of authorities that
+  jointly decide which hosted sessions exist: a durable catalog row and a live tmux process. Neither
+  answers "does this session exist, and what is it?" alone, and a row read against the wrong host is
+  a silent correctness bug, so the opener takes them bound together.
+
+- `app.py` — `create_app(config, *, cadence, replay, live_inputs, collaborators)` builds
   the FastAPI app
-  (`watch_changes` defaults to `before_tick is None`, so live serving injects a
-  `ProjectionInputWatcher` for change-driven pacing while `--sim` stays time-driven;
-  `heartbeat` bounds quiet-world staleness): a
+  (`ProjectionCadence` paces it; `ProjectionReplay` is the sim seam; `LiveProjectionInputs` resolves
+  the three live world-input toggles together against that seam — each `None` = infer, so live
+  serving injects a `ProjectionInputWatcher` for change-driven pacing while `--sim` stays
+  time-driven, and `cadence.heartbeat` bounds quiet-world staleness; `ServingCollaborators` are the
+  four injectable long-lived objects). Since 260731-EFA-L2 the handlers, background loops and route
+  registrars are module-level functions taking one frozen `_ServingRuntime` rather than nested
+  closures. It wires: a
   lifespan that primes + runs one shared `Projector` plus the 30s provider containment
   metrics loop (`sample_provider_containers` → `ProviderMetricsStore.record`
   via `asyncio.to_thread`, exception-tolerant, both tasks cancelled + awaited at shutdown),
@@ -1129,7 +1142,7 @@ neighboring repository governs this route.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The reserved `arEvidence` key, evidence DTOs, clip/window helpers, and structural native-page protocol define the substrate; the DTOs also carry the multiplexing grammar (`AdapterSnapshot.pending_interactions`, `EvidenceFrame.thread_id`). | L57-L72; L217-L234; L456-L477; L770-L815 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page; `_evidence_thread_id` also stamps the per-thread demux key on every diverted frame. | L140-L207; L521-L585 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page; `_evidence_thread_id` also stamps the per-thread demux key on every diverted frame. | L167-L234; L548-L610 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | Three additive read actions cross only the private socket under the unchanged v1 protocol. | L213-L218; L380-L401 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | Strict client validation enforces disjoint coordinate domains, continuation coherence, and epoch continuity; `read_control_native_page` takes the additive `threadId` selector and snapshots parse the plural `pendingInteractions`. | L342-L395; L863-L874; L1100-L1152 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The provenance batch reads the authority's existing records epoch-checked through the sole queue delegation. | L452-L489 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
@@ -1142,11 +1155,11 @@ neighboring repository governs this route.
 | --- | --- | --- |
 | The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | L255-L263; L385-L443; L1046-L1064 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The structural sub-protocols adapters opt into without a base-contract member. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | L264-L328 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | L291-L355 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | The authority's paged never-bodies enumeration, eviction floor, pre-tombstone recovery capture, capability gate, and asset-conditional digest; `respond` matches a response against the singular parent pending OR the plural tuple with the active-operation guard kept parent-only BY ENTRY THREAD (a parent-thread tuple entry is guarded like the singular slot). | L276-L334; L502-L542; L549-L601; L1141-L1162 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | L219-L225; L259-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | The validated client helpers: `interrupt_control`, `read_operation_timeline` coherence/monotonicity/epoch validation, recovery parsing, additive submit assets. | L421-L444; L733-L760 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction; the adapter also owns the per-thread demux/registry, collab identity learning, per-thread pending-interaction MAPS (concurrent requests normal traffic, unknown METHODS declined + degraded on any thread), and the load-shed event queue (detail in the file sidecar). | L356-L403; L681-L847; L1056-L1122 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction; the adapter also owns the per-thread demux/registry, collab identity learning, per-thread pending-interaction MAPS (concurrent requests normal traffic, unknown METHODS declined + degraded on any thread), and the load-shed event queue (detail in the file sidecar). | L99-L135; L375-L422; L950-L1071; L1160-L1247; L1309-L1346; L1385-L1469 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Pi expected-operation-guarded `abort` with replay-once and verified base64 image content. | L393-L477 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
 | The content-less `message_end` evidence-only mapping (the abort's own shape) with preserved role strictness. | L226-L244 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
 | Contract and installed-runtime suites pin the whole seam; the fixtures record redacted `control-plane/*` rows without enabling anything. | L252-L1575; L126-L384 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py); [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
@@ -1155,10 +1168,10 @@ neighboring repository governs this route.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1305 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1282 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | Exactly two protocol read ports separate active transcript reads from conversation-library reads. | L1-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
 | Three owned child routers compose beneath one stable root and one explicit registration function. | L1-L24 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The existing harness-control application factory mounts the conversation root once. | L1-L396 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The existing harness-control application factory mounts the conversation root once. | L166-L201 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 
 ### Current Folded-State Evidence
 
@@ -1166,7 +1179,7 @@ neighboring repository governs this route.
 | --- | --- | --- |
 | Projector publication computes events, commits authority, and then notifies; subscription activation registers before snapshot capture and cleans up in `finally`. | L207-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
 | App streaming consumes one iterator, decorates every snapshot, preserves event/id/retry framing, and owns explicit closure. | L181-L203 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L416-L492 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
 ### Legacy route map
 
@@ -1275,8 +1288,99 @@ projector apply lock, singleflights same-child work, caps concurrent reads at 64
 typed native-history outcomes into child-local unavailable/recovered state. The separate dormant
 `conversation/library/codex.py` full-read path remains a follow-up exposure.
 
+## 260731-EFA-L2 Route Impact — named concepts replaced parameter lists
+
+Enforcing `PLR0913` (Ruff's default max-args of 5) and the complexity codes at full strength, with
+no per-file ignore or `noqa` anywhere in this route, turned this route's long parameter lists into
+named values. The rule for reading the rest of this overview: **wherever a description below names
+a keyword that no longer exists, the concept it belonged to is one of the values listed here.**
+
+Three modules are new:
+
+| Module | Concept |
+| --- | --- |
+| `cadence.py` | `ProjectionCadence(interval, heartbeat)` — one pacing decision; stdlib-only so `daemon.py` can name it without importing the projector. |
+| `hosted_session_runtime.py` | `HostedSessionRuntime(catalog, host)` — the durable row and the tmux process that jointly decide which hosted sessions exist. |
+| `conversation/active/projector/wiring.py` | `SessionProjectionSpine` + `BridgeReaders` — one projection, one session, one epoch, made structural. |
+
+The concepts introduced across the existing modules, grouped by what they name:
+
+- **Composition / substitution seams.** `ServingCollaborators` + `LiveProjectionInputs` +
+  `_ServingRuntime` (`app.py`), `ProjectionReplay` + `ProjectionRefreshers` (`projector.py`),
+  `TerminalHostSeams` (`terminal.py`), `TerminalPasterSeams` (`terminal_paste.py`), `LivenessProbe`
+  (`terminal_liveness.py`), `AppServerSeams` (`conversation/library/codex.py`), `GateProbes`
+  (`conversation/library/gates.py`), `ConfigurationPorts` (`pi_rpc_configuration.py`),
+  `BridgeSnapshotPort` (`harness_submission_authority.py`), `BridgeReaders` (projector `wiring.py`).
+  Every one of them exists because **partial substitution observes a world that does not exist**.
+- **Bounds chosen as one budget.** `BridgeLimits` (`harness_control_bridge.py`), `SubmissionLimits`
+  (`harness_submission_authority.py`), `PiAdapterLimits` (`pi_rpc_adapter.py`),
+  `TerminalCatalogLivenessConfig` (now in `terminal_catalog.py`), `AcceptanceWindow` +
+  `PasteRecoveryLadder` (`terminal_paste.py`), `EscalationSchedule` (`supervisor.py`),
+  `ReadinessWait` (`hosted_readiness.py`), `BoundedPageRequest` (`codex_app_server_history.py`).
+- **Identity / scope that must travel together.** `TerminalLaunchRequest` + `SpawnProvenance` +
+  `SpawnKnobs` + `ControlRunnerRequest` (`terminal_opener.py`), `TerminalSessionSpec`
+  (`terminal.py`), `DaemonEndpoint` (`daemon.py`), `ControlRequest` → `ControlScope`
+  (`conversation/control/service.py`), `RefBinding` + `RefTarget` (`conversation/control/refs.py`),
+  `ControlSubmission` (`harness_control_client.py`), `ProjectedSession` (projector `facade.py`),
+  `LibraryBinding` + `OpenRequest` (`conversation/library/open_service.py`), `ChangesetFileRef`
+  (`changeset.py`), `ClaudeStreamSession` (`claude_stream_state.py`).
+- **One attempt / one observation.** `WithdrawalTicket` (`conversation/control/withdrawals.py`),
+  `InterruptTicket` (`conversation/control/operations.py`), `TurnTransition`
+  (`conversation/active/status.py`), `SubmittedContent` (`conversation/control/attachments.py`),
+  `StartedTurn` (`codex_app_server_adapter.py`), `TranscriptCorrelation`
+  (`claude_stream_state.py`), `SeatClosure` (`retire.py`, also written by `landing.py`),
+  `OwnerSignal` (`supervisor.py`), `_DeliveryOutcome` + `InboxDeliveryLog` + `RedeliveryFloor` +
+  `DeliveryAdmission` (`inbox_delivery.py`), `ExpectedEcho` (`harness_control_claude.py`),
+  `StagedAssetClaim` (`harness_control_ipc.py`), `ItemPlacement` + `_LiveItemContext` +
+  `_CollabCall` (`conversation/projectors/codex.py`), `_TaskIdentity`
+  (`conversation/projectors/claude.py`), `IngestionComponents` (projector
+  `rebuild_coordinator.py`), `StageAttachmentsForm` (`conversation/control/api.py`),
+  `ActionEvaluationContext` (`actions.py`, now built by the caller).
+
+**Deletions in this route, at the cause rather than covered by a test:**
+
+- `terminal_opener.py` lost its legacy pre-bridge argv path. `_live_open_result` is now the single
+  place a live row is handled; everything past it is a spawn, so `_reopen_state` no longer probes
+  the host and `_control_metadata` mints control columns instead of inheriting them.
+- `app.py` lost two duplicated request-shape guards (the `missing-gate-id` re-check and the
+  dismissal scope re-check). Request validation lives once, in `actions.py`, which already refuses
+  both shapes with 400 `missing-target` / `missing-lifecycle`.
+- `harness_submission_authority.py` reduced its dispatch-time asset-capability guard to an assert;
+  `_unsupported_prompt_locked` is the single capability decision point, deciding under the same lock
+  that enrols the record.
+- `terminal_paste.py` lost its "dispatch paste requires a harness-log acceptance probe" `ValueError`:
+  `paste_dispatch` requires the probe in its signature, and `paste()` no longer accepts a dispatch
+  policy at all.
+- `harness_control_client.py` lost its "operation timeline item requires lifecycle state" re-check:
+  `_submission_state` now raises for anything outside the seven states unless `optional=True`.
+- `harness_control_ipc.py` collapsed two `if action == …` chains into one `_CONTROL_ACTIONS` table
+  with one unknown-action refusal.
+
+**One relocation:** `TerminalCatalogLivenessConfig`, `DEFAULT_LIVENESS_HYSTERESIS` and the four
+`DEFAULT_LIVENESS_*` constants moved from `terminal_liveness.py` to `terminal_catalog.py`.
+
+This entry supersedes any earlier description in this overview that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 4 cross-file line citations. The codex
+  adapter row now cites each thing it names: `_ThreadState` L99-L135 (per-thread demux), `interrupt`
+  L375-L422 (exact-active-turn `turn/interrupt` with the `_last_interrupt` replay-once pair),
+  `_handle_server_request` → `_sync_pending_snapshot` L950-L1071 (per-thread pending-interaction
+  maps, the `PENDING_INTERACTIONS_PER_THREAD` cap, unknown-method declines), `_enqueue` →
+  `_verified_asset_path` L1160-L1247 (load-shed queue and verified `localImage` construction),
+  `_thread_for` L1309-L1346 (registry with `THREAD_REGISTRY_LIMIT` eviction) and
+  `_learn_collab_identity` → `_publish_agent_registry` L1385-L1469. `models.py` is 1282 lines, so
+  the whole-module row is L1-L1282. The harness-control factory row is
+  `register_harness_control_routes` L166-L201, whose L179 is the single
+  `register_conversation_routes(app, runtime)` call. The regression row is `StreamEventsTests`
+  L416-L492 — later delta, interleaved-projection handoff, failed-prime recovery (whose L473-L478
+  is the identical-state silence), and cancellation cleanup. All ranges read back; no claim text
+  changed.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: added the route-impact section naming every parameter object introduced in this route, the three new modules (`cadence.py`, `hosted_session_runtime.py`, `conversation/active/projector/wiring.py`), the six deletions made at the cause, and the liveness-config relocation; corrected the `create_app` signature in the Route Model. Verification metadata stays pinned until closeout.
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: the cockpit bundle and its fingerprint sidecar
   left version control and are now built at release, so a source checkout legitimately serves no
   cockpit. Recorded `static.py`'s new missing-bundle surface (503 with expected location and build

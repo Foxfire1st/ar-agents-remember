@@ -92,8 +92,8 @@ reviewed task evidence for any current behavioral claim.
 | The client that returns these types as or-null reads / typed open evidence. | — | [client.ts](client.ts) |
 | The store that holds the paged list, preview, and open-operation state over these types. | — | [store.ts](store.ts) |
 | The wire authority these types mirror (native library routes + models). | — | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) · [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | L765-L785, L794, L809 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The harness listers that group sub-agent rows and mint the `agents_note` (Claude: `_AGENTS_UNAVAILABLE_NOTE`; Codex: degraded-to-note listing). | L75, L258-L283 · L283-L327 | [library/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py) · [library/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/codex.py) |
+| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | L755-L775, L784, L799 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The harness listers that group sub-agent rows and mint the `agents_note` (Claude: `_AGENTS_UNAVAILABLE_NOTE`; Codex: degraded-to-note listing). | L75, L235-L281 · L292-L346, L477-L500 | [library/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py) · [library/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/codex.py) |
 
 ## Cross-Repo References
 
@@ -106,6 +106,11 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the harness-lister citation. `_AGENTS_UNAVAILABLE_NOTE`
+  is still `claude.py` L75, but the grouping/note-minting body moved to `ClaudeConversationLibrary._rows`
+  at L235-L281 (was L258-L283). On the Codex side the equivalent material is now split: `list` groups the
+  agent rows and appends the nested-sub-agent note at L292-L346, and `_agent_page` mints the
+  degraded/truncated note at L477-L500 (was the single range L283-L327). All four ranges read back.
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the harness sub-agent grouping —
   `ConversationLibraryRow.agents`, the new capability-free `ConversationLibraryAgentRow`, and the
   page-level `agentsNote` capability-honesty field (the exact native reason, rendered verbatim,

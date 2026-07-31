@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/tools/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T00:30+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,14 +23,21 @@ since L11, `task_reopen` (reopen a completed leaf task under its exact leaf id).
 
 ### Logic
 
-`task_doc_payload(config, *, repo_id, operation, task_name, contract_path, slug,
-fields, step, decision, subtask, section)` forwards its arguments to
-`controllers.task_doc_tools.task_doc_tool` and wraps the result through
-`base._tool_payload("task_doc", ...)`, so the response is validated against
-`TaskDocResponse` and (like every tool) attributed to the active lifecycle at the
-`_tool_payload` choke point. The `subtask`/`section` payloads carry the master
-`set_subtask`/`set_section` edits; `dry_run` threads the R5 preview flag (the controller
-renders + diffs the would-be doc and returns it **without** writing).
+`task_doc_payload(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
+dry_run=False)` calls `task_doc_tool(config, target, operation=..., edit=..., dry_run=...)` and
+wraps the result through `base._tool_payload("task_doc", ...)`, so the response is validated against
+`TaskDocResponse` and (like every tool) attributed to the active lifecycle at the `_tool_payload`
+choke point.
+
+Since 260731-EFA-L2 the arguments arrive in two objects that answer two different questions:
+`TaskDocTarget(repo_id, task_name, contract_path, slug)` — which document — and
+`TaskDocEdit(fields, step, decision, subtask, section)` — what the edit is. `NO_EDIT` is the
+shared empty edit a read (`operation='get'`) passes. The `subtask`/`section` slots still carry the
+master `set_subtask`/`set_section`/`remove_subtask` edits; `dry_run` still threads the R5 preview
+flag (the controller renders + diffs the would-be doc and returns it **without** writing).
+
+The published MCP signature is still the flat argument list; `mcp/registration/tasks.py` builds the
+two objects, because a model-typed tool parameter would republish `task_doc` as a nested object.
 
 ### Invariants And Boundaries
 
@@ -48,6 +55,10 @@ renders + diffs the would-be doc and returns it **without** writing).
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `task_doc_payload`'s ten keyword arguments became
+  `target: TaskDocTarget` plus `edit: TaskDocEdit` (default `NO_EDIT`), with `operation` and
+  `dry_run` still separate. `task_reopen_payload` is unchanged. Verification metadata pinned until
+  closeout stamps the L2 code commit.
 - 2026-07-03T00:30+02:00 — L11 adds `task_reopen_payload` beside the task_doc builder — the payload lives in the task domain.
 - 2026-06-19T07:23 — Slice 3c reopened (R5, dry-run/preview): threads the new `dry_run` flag into `task_doc_tool`. Verification metadata pinned until closeout stamps the R5 code commit.
 - 2026-06-14T00:16 — Slice 3c commit 3: forwards the new `subtask`/`section` payloads for the master `set_subtask`/`set_section` ops. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.

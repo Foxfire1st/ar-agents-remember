@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,7 +29,10 @@ dedupe under id reuse, strict timeline ordering, payload/source conflicts, bound
 certified preflight busy versus impossible safe retry after a possible first byte, epoch mismatch,
 raw-free disclosure, and invalid operation references. These tests are the regression pins for the
 architectural gap surfaced when Alt+Up first put queue, adapter, and UI behavior under one end-to-end
-interaction.
+interaction. The shared `_authority(...)` fixture builds the system under test from two parameter
+objects — `BridgeSnapshotPort(clock, snapshot, set_snapshot, publish)` for the bridge seam and
+`SubmissionLimits(timeline, ledger, dispatch_grace_seconds)` for the bounds — with `bridge_epoch`
+still a direct keyword.
 
 ### Invariants And Boundaries
 
@@ -51,8 +54,8 @@ No Domain Documentation source is configured for this repository.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Slow-adapter responsiveness and dispatch/withdraw races. | L214-L292 | [test_harness_submission_authority.py](test_harness_submission_authority.py) |
-| Early completion, full-ref reuse, ordering, conflicts, bounds, epoch, and privacy. | L293-L636 | [test_harness_submission_authority.py](test_harness_submission_authority.py) |
+| Slow-adapter responsiveness and dispatch/withdraw races. | L222-L339 | [test_harness_submission_authority.py](test_harness_submission_authority.py) |
+| Early completion, full-ref reuse, ordering, conflicts, bounds, epoch, and privacy. | L341-L674 | [test_harness_submission_authority.py](test_harness_submission_authority.py) |
 | The system under test defines the sole timeline and lifecycle lock. | — | [../src/agents_remember/serving/harness_submission_authority.py](../src/agents_remember/serving/harness_submission_authority.py) |
 
 ## Cross-Repo References
@@ -71,6 +74,16 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected both self-file line ranges in
+  Repo-Internal References and recorded the fixture's new shape. The leaf rewired the `_authority`
+  helper to construct `HarnessSubmissionAuthority` from a `BridgeSnapshotPort` and a
+  `SubmissionLimits` parameter object instead of six loose keywords, and collapsed five wrapped
+  `authority.withdraw`/`authority.status` calls onto single lines; together those shifted this
+  file's contents by up to six lines in either direction. Verified against the current source,
+  the slow-adapter and dispatch/withdraw race block now spans L222-L339 (was cited L214-L292) and
+  the early-completion through invalid-operation-reference block spans L341-L674 (was cited
+  L293-L636). No test method was added, removed or renamed and no assertion changed, so the
+  Purpose, Logic and all four invariants stand as written.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5; captured authoritative pop-back races,

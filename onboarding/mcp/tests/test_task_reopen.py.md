@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T20:50+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -63,6 +63,15 @@ task doc id when the task tree proves the mapping.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
+  leaf diff. Only fixture construction changed: the three `default_contract(...)` fixtures
+  (`_completed_leaf_contract` and both `StartAfterReopenTests` cases) now pass
+  `ContractTask(...)`, `leaf=LeafIdentity(...)` and `code=RepoBranchPlan(...)` instead of twelve
+  loose keyword arguments, and `AbandonAmbientLifecycleTests` builds
+  `AmbientLifecycle(store, timing=AmbientTiming(heartbeat_seconds=3600))`. Every field value,
+  test name, guard blocker and reset expectation is unchanged; this sidecar names neither
+  builder's argument list and carries no line citations, so the reopen-guard, reset, leaf-doc
+  lookup/restamp and start-after-reopen descriptions all still match.
 - 2026-07-07T20:50+02:00 — 260707-HFX-L4: legacy reopened contract fixtures now expect `load_contract`
   to normalize a proven stem-shaped leaf id to the canonical task doc id. Verification metadata pinned
   until closeout stamps the 260707-HFX-L4 commit.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,5 +62,14 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py` since
+  the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 5 line(s)
+  with no token change whatsoever. Checked by parsing both revisions and comparing the abstract
+  syntax trees (identical) and the comment tokens (identical), so no symbol, signature, default,
+  decorator, control-flow branch, docstring, or assertion this card describes has moved, and every
+  claim this card makes about its own source still holds.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the interaction
   projection sidecar. Verification metadata remains blank until commit.

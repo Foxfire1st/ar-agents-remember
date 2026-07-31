@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_ambient.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T01:14+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -67,10 +67,13 @@ goes silent once the clock jumps past `inactivity_cutoff_seconds`, and resumes t
 
 Inserts `mcp/src` on `sys.path` (the suite idiom). `_AmbientCase` builds an
 `AmbientLifecycle` over a `tempfile.TemporaryDirectory` `EventStore` with a long
-heartbeat for determinism and calls `shutdown()` in `tearDown` to stop the
-ticker; the heartbeat tests deliberately use a short interval then stop before
-reading. The task-34 decay tests inject a list-backed mutable clock and an explicit
-`inactivity_cutoff_seconds` so they can step time deterministically across the cutoff.
+heartbeat for determinism — the cadence rides one `timing=AmbientTiming(...)`
+parameter object rather than loose keywords — and calls `shutdown()` in `tearDown`
+to stop the ticker; the heartbeat tests deliberately use a short interval then stop
+before reading. The task-34 decay tests inject a list-backed mutable clock (still a
+separate `clock=` argument) plus an explicit
+`AmbientTiming(heartbeat_seconds=..., inactivity_cutoff_seconds=...)` so they can step
+time deterministically across the cutoff.
 
 ## Repo-Internal References
 
@@ -79,13 +82,25 @@ reading. The task-34 decay tests inject a list-backed mutable clock and an expli
 | The ambient lifecycle under test. | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
 | The state vocabulary, errors, and `coerce_phase` under test. | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
 | The store events are written to and read back from. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| Task 34 heartbeat activity-decay coverage (L265-L316): inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
+| Task 34 heartbeat activity-decay coverage (L265-L322): inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
 
 ## Series-Contract Notes
 
 Ambient observer tests use leaf enclosure paths when lifecycle promotion records an enclosure, matching the durable anchor consumed by dashboard projection.
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. `AmbientLifecycle`
+  now takes its cadence as one
+  `timing=AmbientTiming(heartbeat_seconds=..., inactivity_cutoff_seconds=...)` parameter object,
+  so `_AmbientCase.setUp` and all three
+  `HeartbeatTests` constructions changed shape while `clock=` stayed a separate argument.
+  Rewrote the Conventions paragraph to name `AmbientTiming` instead of describing
+  `inactivity_cutoff_seconds` as a direct constructor keyword, and corrected the task-34
+  activity-decay reference range from L265-L316 to L265-L322 (the two rewrapped constructor calls
+  pushed the end of `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` down four
+  lines; `AskTests` now opens at L324). No test was added, removed, or renamed and no assertion
+  changed.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F7: repointed heartbeat ticker assertions to the
   coalesced sidecar while preserving active/idle/resume semantics. Verification metadata remains

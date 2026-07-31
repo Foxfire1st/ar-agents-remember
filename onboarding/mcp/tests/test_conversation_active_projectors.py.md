@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_projectors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,18 +24,18 @@ for the codex, claude, and pi mappers — without any engine or IPC.
 
 ### Logic
 
-`CodexMapperTests` (L49-L270): native user messages carry unknown-input provenance with
+`CodexMapperTests` (L84-L404): native user messages carry unknown-input provenance with
 `clientId` correlation; agent messages map to markdown; reasoning maps summary/content thinking
 blocks; command executions map input+output tool blocks with phase from native status; file
 changes map diff blocks; MCP tool calls map input/output; unknown native item types keep their
 native id as unknown-vendor evidence; live item started/completed phases; indexed and bare
 deltas target the right block ids; `turn/completed` maps the turn-result item plus outcome;
 usage/rate frames mint no items; unknown notifications are preserved.
-`ClaudeMapperTests` (L272-L388): assistant frames split text/thinking and mint stable-ID tool
+`ClaudeMapperTests` (L407-L711): assistant frames split text/thinking and mint stable-ID tool
 items; `tool_result` upserts the same item; result frames classify terminal outcomes; the
 transcript echo is the exact submission user item (replay uuid identity, request-id
 correlation, unknown-input until the batch resolves); system frames mint nothing; unknown frame
-types are preserved. `PiMapperTests` (L389-L553): entry user messages stay unknown-input;
+types are preserved. `PiMapperTests` (L713-L902): entry user messages stay unknown-input;
 assistant entries split blocks and tools; `toolResult` messages converge by `toolCallId`;
 aborted assistants mint the in-place turn-result; compaction/model entries are notices; unknown
 entry types keep their native id; live tool-execution events upsert by `toolCallId`;
@@ -87,7 +87,7 @@ repository-owned and cited in the mapper sidecars.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The codex mapper under test: live discrimination, thread items, deltas, turn outcomes. | L66-L159; L162-L299 | [codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) |
+| The codex mapper under test: live discrimination, thread items, deltas, turn outcomes. | L132-L336; L372-L483; L1167-L1208 | [codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) |
 | The claude mapper under test: frame mapping plus the exact submission echo. | L54-L123 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
 | The pi mapper under test: entry mapping plus live tool upserts. | L56-L162 | [pi.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/pi.py) |
 | The mapper output vocabulary the assertions match. | L55-L94 | [common.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/common.py) |
@@ -114,6 +114,31 @@ coverage keeps every extracted mutation parser below the mandatory threshold.
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the 3 stale class self-citations in the
+  Logic paragraph. The suite grew to 905 lines, so `ClaudeMapperTests` L290-L404→L407-L711 and
+  `PiMapperTests` L389-L553→L713-L902 (both old ranges landed inside `CodexMapperTests`), and the
+  co-located `CodexMapperTests` L49-L270→L84-L404 (it had started inside the module helpers and
+  stopped mid-class). Each class body was read back and every behavior the paragraph lists still has
+  a matching test method; no claim changed.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the 1 cross-file citation the previous
+  entry flagged as approximate. `codex.py` was decomposed into a named router plus per-family item
+  mappers, so L66-L159; L162-L299 no longer covers what the claim names; it is now L132-L336
+  (`map_native_frame` through `_map_block_delta` — native frames, the `map_evidence_frame` /
+  `_map_codex_notification` / `_map_notification_params` live discrimination, and delta routing),
+  L372-L483 (`_map_thread_item` with `_map_prose_item` / `_map_tool_item` / `_map_collab_item`), and
+  L1167-L1208 (`_map_turn_completed`). Each span was read back against the current 1223-line file.
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/tests/test_conversation_active_projectors.py` since the L2 base commit is the whole-tree
+  `ruff format` pass in `00e8379`, which re-wrapped 71 line(s), touching only magic trailing
+  commas. Checked by parsing both revisions and comparing the abstract syntax trees (identical)
+  and the comment tokens (identical), so no symbol, signature, default, decorator, control-flow
+  branch, docstring, or assertion this card describes has moved, and every claim this card makes
+  about its own source still holds. Noted while checking: the references table also cites line
+  ranges inside `codex.py`; those ranges shifted because this task edited those files, so treat
+  the cited numbers as approximate and the linked cards as authoritative.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: recorded the public-path valid and
   malformed mutation matrix that proves the projector parser split without bypassing the stable

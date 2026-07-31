@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/services.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T17:40+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,19 @@
 MCP-facing benchmark service payload functions.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Preparation And Outcome Objects
+
+`prepare_benchmarks` derives `preparation = request.preparation` once and calls
+`prepare_case(preparation, case, provider_ids=selected_provider_ids(case))`; `run_selected_cases`
+calls `run_case(request, case)`. Both therefore thread `request.allowed_provider_ids` to the
+workspace provider filter through the preparation object (containment R1, 260707-HFX-L1) rather
+than as a loose keyword, and both still OPEN with `disarm_stale_benchmark_registrations`.
+
+`benchmark_run_payload(request, benchmarks_root, outcome)` takes a `BenchmarkRunOutcome` in place
+of the `cases` / `output_roots` / `messages` / `resolved_codex_executable` arguments. The emitted
+payload keys are unchanged. `run_selected_cases`'s `cases` parameter is now typed
+`list[BenchmarkCase]` instead of `list[Any]`.
 
 ### Logic
 
@@ -63,6 +76,10 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `prepare_benchmarks` / `run_selected_cases` now pass `BenchmarkPreparation` and the whole
+  request down, and `benchmark_run_payload` takes a `BenchmarkRunOutcome`. Emitted payloads are
+  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B3: `prepare_benchmarks.run_prepare` and
   `run_selected_cases` now both open with
   `disarm_stale_benchmark_registrations(benchmarks_root, request.allowed_provider_ids)`, sweeping

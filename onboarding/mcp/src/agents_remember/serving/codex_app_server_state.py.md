@@ -78,7 +78,7 @@ the same strict thread and event helpers.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Session reads all model pages and validates desired/effective model-local settings against these rows. | L106-L195; L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | L220-L272; L344-L413 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | L235-L287; L360-L428 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 
 ## Cross-Repo References
 

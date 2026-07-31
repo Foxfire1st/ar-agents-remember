@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-15T23:16+02:00                     |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../../../overview.md`            |
 
 ## Governing Overview
@@ -124,7 +124,7 @@ Harness-native setup details now live in the install guides and starter packages
 | Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | L97-L116 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
 | Stage 2 interviews the developer on the agentic settings families and writes the global file seeded by `runtime_install`. | L125-L165 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
 | Stage 3/4 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | L167-L194 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 5 starts/refreshes provider watchers and verifies indexing. | L196-L216 | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
+| The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). | L47-L86 | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
 | The install-side seeding the interview builds on (copy-if-missing global file). | seed_agentic_settings | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 
 ## Cross-Repo References
@@ -136,6 +136,15 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation and rewrote
+  its claim. The row's `L196-L216` were SKILL.md stage-heading line numbers carried onto a
+  `provider_tools.py` link, so they never pointed at that file's material; the row now cites
+  `provider_watchers_tool` at `provider_tools.py` L47-L86. Reading it showed the claim was also
+  false: the tool no longer accepts `action="refresh"` (it raises and points at `restart` /
+  `invalidate-indexes`), while this SKILL.md's Stage 5 (L216-L236) still instructs `refresh`. The
+  row now states the tool's real action vocabulary and names that drift instead of asserting a
+  refresh path that fails.
 
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: updated the packaged installer interview to
   require complete dynamically advertised native selections, exact Pi provider identity, and

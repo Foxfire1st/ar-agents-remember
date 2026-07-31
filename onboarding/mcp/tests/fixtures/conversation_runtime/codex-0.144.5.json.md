@@ -89,9 +89,9 @@ direct evidence.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Foundation tests parse this exact version tuple, require non-enablement, and scan all fixtures for raw secrets/paths/conversation material. | L102-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The runtime-fixture model requires allowlist-v1, at least one observation, and literal false enablement. | L1233-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The runtime-fixture model requires allowlist-v1, at least one observation, and literal false enablement. | L1210-L1227 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The opt-in installed suite captures these `substrate-evidence/*` rows through the production seam and asserts their shapes. | L115-L273 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
-| The L2 installed-runtime suite produces the live gate and codex open evidence the `native-history/*` rows record. | L134-L214; L480-L539 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The L2 installed-runtime suite produces the live gate and codex open evidence the `native-history/*` rows record. | L136-L186; L495-L551 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The L2E installed-runtime suite captures these `control-plane/*` rows through the production control seam and asserts their shapes. | L126-L261 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
 
 ## Cross-Repo References
@@ -104,6 +104,14 @@ No neighboring repository is involved.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
+  `mcp/tests/test_conversation_library_installed.py`. Both halves had drifted across class
+  boundaries. The live gate is `CodexInstalledTests` L136-L186
+  (`test_live_gate_supports_list_read_and_partial_completeness` +
+  `test_live_list_read_and_resolve_round_trip`), matching the range this repo's
+  `library/codex.py.md` already carries; the codex open evidence is
+  `CodexOpenEndToEndTests.test_open_real_codex_thread_proves_exact_identity` at L495-L551, whose
+  end the old `L480-L539` cut off mid-replay-assertion. Read both ranges back.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the four appended
   `control-plane/*` rows (interrupt write/ack with interrupted settlement and the settled
   typed refusal, the paged operation timeline, the `localImage` asset submit, the once-only
