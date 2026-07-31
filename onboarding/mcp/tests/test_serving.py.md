@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`       |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,7 +33,9 @@ Serving tests cover the real app lifespan with a dead landing refresher, asserti
 ### FEUI-L9R Reviewed Candidate Delta
 
 Serving regressions now pin three runtime-truth boundaries. Static HTML carries `no-cache`, and the
-build payload carries the packaged `dashboardBuild` fingerprint. Raw-event tests cover lifecycle and
+build payload carries the packaged `dashboardBuild` fingerprint *when a build was placed* (see the
+`BuildInfoTests` note below — since 260731-EFA-L1 that stamp is present-or-omitted, never
+fabricated). Raw-event tests cover lifecycle and
 workspace mid-record realignment, malformed JSON and invalid UTF-8 advancing without retry, every
 non-object JSON family advancing without emission, beyond-EOF settling, successor streaming, exact
 cursor progression, and ready-after-valid-object ordering.
@@ -72,8 +74,18 @@ handoff publication, failed-prime recovery/non-duplication/later-delta, and canc
 cases; each asserts the subscriber set directly so generator ownership cannot regress silently.
 `AppTests` use `TestClient`
 (lifespan-triggered prime) for `/api/state` (asserting `body["version"] == 2`, the same bumped
-schema version) and `/` (now the shipped React bundle, not the slice-04 placeholder); `StaticTests`
-assert `dashboard_static_dir`.
+schema version) and for `/` in **both** of its states, since 260731-EFA-L1 took the cockpit bundle
+out of version control. `test_root_serves_dashboard_bundle` supplies its own stand-in bundle and
+patches `serving.static.dashboard_static_dir` — it used to read the committed bundle straight out
+of the repository, which now gives different verdicts before and after a frontend build — and
+asserts only what is stable across rebuilds: the SPA mount point, the app title, and
+`Cache-Control: no-cache`. `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` patches the
+resolver to `None` and requires the server to still boot, `/` to answer 503 naming the remedy with
+`Cache-Control: no-store`, and `/api/state` to keep answering 200 behind the greedy mount.
+`StaticTests.test_static_dir_resolves_only_a_real_built_bundle` keeps the honest half of the old
+assertion — when resolution succeeds it must point at a real build (`index.html` plus `assets/`) —
+and **skips** when this checkout has no build, because "never `None`" encoded the removed contract
+that a 28 MB generated tree lives in git. The deterministic `None` half lives in `test_static.py`.
 
 **`StateEtagTests` (260703-L15 S1)** drive the `/api/state` change gate end-to-end via
 `TestClient` over a mocked `project_and_write` returning a held projection (a `held[0]` closure the
@@ -89,7 +101,10 @@ same tag after several ticks; swapping in a real change (tokens) makes a deadlin
 state body and the pure `_if_none_match_matches` table (weak/strong forms, comma lists, `*`,
 mismatch, None). **`BuildInfoTests`** pin `resolve_serving_build`: in this checkout the commit
 short-hash resolves and rides `payload()`; anchored at a non-git tmp dir the commit is `None` and
-OMITTED from the payload (never faked); the payload shape is camelCase (`bootedAt`). `CliTests`/`CliRunTests` assert the umbrella parser, the `dashboard`
+OMITTED from the payload (never faked); the payload shape is camelCase (`bootedAt`). The
+`dashboardBuild` assertion is now **present-or-omitted**, not an unconditional index: that only
+held while the fingerprint sidecar was committed alongside the bundle, and both are now generated
+at release time. `CliTests`/`CliRunTests` assert the umbrella parser, the `dashboard`
 flags, and `run()` (uvicorn/create_app mocked: launch + ConfigError + dispatch). Task 26 added
 `--reload`: `CliRunTests._args` is now a `**overrides` builder seeding `reload: False`, and three
 tests cover the dev path — `test_run_reload_launches_the_dev_factory` asserts `--reload` hands
@@ -244,6 +259,15 @@ keywords. They continue returning the held projection, so ETag, body-cache, gzip
 exercise their original behavior rather than projection internals.
 
 ## Update History
+
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1: the cockpit bundle left version control, so three
+  assertions that silently depended on a committed build were rewritten — `/` is served from a
+  patched stand-in bundle instead of the repository's own, `dashboardBuild` is asserted
+  present-or-omitted instead of indexed, and `StaticTests` skips rather than failing in a checkout
+  with no build. Added `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` (503 + remedy +
+  `no-store`, API unaffected). The deterministic version of both static states lives in the new
+  `test_static.py`. Verification metadata pinned to the pre-leaf source authority until closeout
+  stamps the code commit.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: updated four explicit
   `project_and_write` test doubles for the new `input_state` and `refresh` keyword-only seam. This

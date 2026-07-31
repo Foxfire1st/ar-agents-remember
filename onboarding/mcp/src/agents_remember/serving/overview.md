@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473`|
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastUpdated            | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`|
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -19,7 +19,12 @@
 ### Current Runtime-Truth Repair
 
 The serving boundary exposes a packaged dashboard fingerprint without fabricating one when the
-artifact is absent, sends revalidation policy only on successful HTML, and keeps pre-session harness
+artifact is absent. Since 260731-EFA-L1 that absence is **routine rather than exceptional**: the
+cockpit bundle and its `dashboard.fingerprint` sidecar are generated at release time and are not in
+version control, so a source checkout serves no cockpit and reports no `dashboardBuild`. Both
+absences are answered honestly — a 503 naming the build command at `/`, and an omitted key on the
+wire — never with a placeholder page or a fabricated identity. The boundary also sends revalidation
+policy only on successful HTML, and keeps pre-session harness
 discovery to `id`/`name`/`detected`. Raw event cursors realign to server-owned record boundaries and
 advance past malformed, undecodable, blank, heartbeat, and non-object records; accepted top-level
 objects are parsed once and reused by SSE. Dashboard-owned tmux clients strip inherited tmux
@@ -482,7 +487,7 @@ task-reader body edge: it requires a ready projection and delegates path confine
 validation to `observer.snapshots`; `/api/state` and `/api/stream` carry summaries only. Gate-id-only
 `cancel` requests are the explicit legacy
 cleanup path for workspace-shaped stale gates; approve/reject/revision stay lifecycle-targeted. The static bundle (`package_data/dashboard/`)
-mounts at `/`. The Mode B2 terminal bridge `@app.websocket("/api/terminal/{session}")` (6d-2)
+mounts at `/` when one was built, and a 503 diagnostic mounts there when one was not. The Mode B2 terminal bridge `@app.websocket("/api/terminal/{session}")` (6d-2)
 attaches one concrete `TerminalHost.attach` tmux client per browser WebSocket — binary PTY bytes out,
 JSON `stdin`/`resize` in (the `websockets` dep is uvicorn's WS impl). The bridge can rehydrate catalog
 rows after a dashboard restart, but only after `TerminalHost.has_session` proves the tmux name still
@@ -722,8 +727,15 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `gate_decide_payload` cancel. Targetless actionable-drift dismissals are persisted as attention
   acknowledgements instead of gate decisions.
 - `static.py` — `dashboard_static_dir()` resolves `package_data/dashboard` via
-  `importlib.resources` (the `install.assets` idiom); `mount_static(app)` mounts it at `/`
-  (non-fatal when absent).
+  `importlib.resources` (the `install.assets` idiom), returning `None` when nothing was built there;
+  `mount_static(app)` always mounts something at `/`. With a bundle it mounts
+  `DashboardStaticFiles` (HTML revalidates, hashed assets keep default caching). Without one it
+  mounts `MissingDashboardBundle`: **503** on `GET`/`HEAD` with the expected location and the build
+  command in a `no-store` plain-text body, and **405** on every other method — exactly what
+  `StaticFiles` raises — so the greedy mount cannot turn an `/api` method error into an outage.
+  Since 260731-EFA-L1 the bundle is a release build product that is not in version control, so
+  "absent" is a normal state for a source checkout, not a broken install. There is no placeholder
+  and no fallback UI.
 - `files.py` — the **read-only files API**: `register_files_routes(app, config)`
   registers `GET /api/files/{repos,list,read,onboarding}` **before** `mount_static` (the greedy `/` mount
   must stay last). It is the first serving module to resolve a kernel `CoordinationContext`: a
@@ -1264,6 +1276,14 @@ typed native-history outcomes into child-local unavailable/recovered state. The 
 `conversation/library/codex.py` full-read path remains a follow-up exposure.
 
 ## Update History
+
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: the cockpit bundle and its fingerprint sidecar
+  left version control and are now built at release, so a source checkout legitimately serves no
+  cockpit. Recorded `static.py`'s new missing-bundle surface (503 with expected location and build
+  command under `no-store`, GET/HEAD only with 405 elsewhere so the greedy `/` mount cannot change
+  `/api` method semantics, no placeholder or fallback UI) and the shift in `dashboardBuild` from
+  "absent means legacy bundle" to "absent means no build happened here". Verification metadata
+  remains pre-commit.
 
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: gave the Claude subprocess transport's restart contract
   a route-level home — a completed stop releases process and stderr-task ownership so the floor-gated

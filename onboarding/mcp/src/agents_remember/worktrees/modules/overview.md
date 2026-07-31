@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -33,11 +33,26 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   counts (binary → `None`, untracked → `A`, rename → post-rename path), unlike the
   name-only `changed_*_paths`.
 - `code_quality_gate.py` is the fail-closed worktree closeout adapter for the
-  repository-owned quality wrapper. It previews the exact command, resolves
+  project-owned quality wrapper. It previews the exact command, resolves
   interpreters in worktree, shared-clone, then active-Python order, puts the
   candidate worktree's `mcp/src` first on `PYTHONPATH`, and rejects a missing
   wrapper/interpreter or any nonzero result. This preserves linked worktree
   operation without weakening the gate or accidentally testing a sibling checkout.
+
+  **Since 260731-EFA-L1 the gate is not scoped to one repository.** The deciders take the code
+  worktree `Path` and gate on whether that checkout carries
+  `mcp/src/agents_remember/code_quality/check.py`; the old `repo_name == "agents-remember"`
+  condition made the gate a no-op for every consuming repository — the product's actual audience —
+  while the product documented it as mandatory. The preview now reports one of three statuses:
+  `enforced`, `no-code-commit`, or `wrapper-unavailable`. The last is deliberately *reported*
+  rather than silent: closeout proceeds, and the payload states that the code commit was not
+  quality-checked and why.
+
+  One hazard lives at this route's boundary: `closeout.py` calls these functions with an
+  unannotated `contract`, so passing `contract.repo_name` where a `Path` is expected type-checks
+  clean and silently disables the mandatory gate. Only
+  `test_worktree_closeout_quality_gate.py::test_closeout_hands_the_gate_the_code_worktree_not_the_repository_name`
+  observes the real argument; do not weaken it into a stub.
 - `guidance.py` renders lifecycle phase and typed next-operation payloads. Its
   `lifecycle_guidance` checks the disposal states first: `cleanup == "completed"`
   → the `cleanup-completed` phase, and (slice 05l P1) `cleanup == "abandoned"` →
@@ -222,6 +237,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py); [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 
 ## Update History
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: recorded that `code_quality_gate.py` no longer
+  decides by repository name. Applicability is now wrapper availability in the target checkout, the
+  preview reports `enforced` / `no-code-commit` / `wrapper-unavailable`, and both `closeout.py` call
+  sites pass `contract.code_worktree`. Recorded the unannotated-call-site hazard and the single
+  regression that guards it. Verification metadata remains pre-commit.
+
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
   added the fail-closed `code_quality_gate.py` authority and corrected closeout's
   mutation order to quality-before-commit. Verification metadata remains

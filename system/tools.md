@@ -79,20 +79,36 @@ passed" when the tools emitted complexity, coverage, or threshold findings.
 
 ### Commit-Gate Enforcement
 
-Every repository-owned commit gate runs the same default wrapper. Ruff,
-Pyright, the full pytest suite, and CRAP all fail the run; CRAP scores at or
-above 30 fail unless the repository intentionally configures another threshold.
+Wherever the wrapper runs it runs in full: Ruff, Pyright, the whole pytest
+suite, and CRAP all fail the run; CRAP scores at or above 30 fail unless the
+repository intentionally configures another threshold.
 
-- **Local pre-commit** — `.githooks/pre-commit` runs the wrapper before an
-  ordinary local commit.
+The local hooks are **tiered** (260731-EFA-L1). Both `.githooks/pre-commit` and
+`.githooks/pre-push` are thin wrappers over `.githooks/_gate.sh`, which takes
+the tier as its argument:
+
+- **Local pre-commit — `fast` tier.** Certifies the **staged content** (parked
+  with `git stash push --keep-index --include-untracked` under restore traps)
+  with the generated-copy checks, Ruff, and Pyright. About 20 seconds. It does
+  **not** run the wrapper. The tier is cheap on purpose: `--no-verify` is
+  all-or-nothing, so a pre-commit expensive enough to be worth skipping costs
+  Ruff and Pyright too.
+- **Local pre-push — `full` tier.** Certifies the working tree with the
+  generated-copy checks plus the whole wrapper, and blocks the push.
 - **Workflow closeout** — `worktree_closeout_apply` runs the wrapper before
-  creating an Agents Remember code commit and before any code, memory, ledger,
-  contract, or applied-gate mutation, even when Git hooks are not configured.
-- **Local pre-push** — `.githooks/pre-push` repeats the same wrapper and blocks
-  the push.
-- **CI** — `.github/workflows/quality-checks.yml` runs on every push and pull
-  request to `main`, across a Python `3.11 / 3.12 / 3.13` matrix. This is the
-  non-bypassable backstop.
+  creating a code commit and before any code, memory, ledger, contract, or
+  applied-gate mutation, even when Git hooks are not configured. This applies to
+  **any** repository whose checkout carries the wrapper, not only
+  `agents-remember`; a checkout without it is reported as `wrapper-unavailable`
+  in the closeout payload, which states that the commit was not quality-checked.
+- **CI** — `.github/workflows/quality-checks.yml` runs the wrapper on **every
+  branch push and every pull request** across a Python `3.11 / 3.12 / 3.13`
+  matrix, alongside the `Dashboard frontend rail`. The branch ruleset on `main`
+  requires all four. This is the non-bypassable backstop.
+- **Release** — `.github/workflows/publish-mcp-to-pypi.yml` calls
+  `quality-checks.yml` through `workflow_call` and declares `needs: [quality]`,
+  so a tag pointing at a commit that never reached `main` is re-gated before
+  anything is built or published.
 
 Keep every gate calling the project-owned wrapper, not a hand-picked subset.
 Enabling the local hooks (`./setup-hooks.sh`), the PR-gated landing flow, and

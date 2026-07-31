@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastUpdated | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 
 > **Status:** active baseline
 
@@ -78,9 +78,10 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Repository-owned wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. CRAP at or above the configured threshold (30 by default) is a mandatory failure at pre-commit, worktree closeout before mutation, pre-push, and CI. | `python -m agents_remember.code_quality.check`, `code_quality/`, `.githooks/`, `worktrees/modules/code_quality_gate.py` |
+| Source quality tooling | Repository-owned wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. CRAP at or above the configured threshold (30 by default) is a mandatory failure wherever the wrapper runs: pre-push (full tier), worktree closeout before mutation, and CI on every branch and pull request. Pre-commit runs a deliberately cheap **fast tier** over the staged content only (generated-copy checks + Ruff + Pyright) — see the enforcement topology below. | `python -m agents_remember.code_quality.check`, `code_quality/`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
-| Canonical runtime, skills, and dashboard asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`; the built dashboard cockpit (`dashboard/dist/`) syncs into `package_data/dashboard/` by `scripts/sync-dashboard.py`. These sync checks are gated by githooks + CI and covered by `mcp/tests/test_sync_*`; the dashboard `--check` is source-aware — it fingerprints the build inputs into a sibling `dashboard.fingerprint`, so a `dashboard/src` change shipped without a rebuild is flagged at the commit gate, not only at push. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `scripts/sync-dashboard.py`, `mcp/tests/test_sync_runtime.py`, `mcp/tests/test_sync_dashboard.py`, `.githooks/` |
+| Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry a `--check` mode, both run in **both** hook tiers and in CI, and both are covered by `mcp/tests/test_sync_*`. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/_gate.sh` |
+| Dashboard bundle release build | The built cockpit (`dashboard/dist/`) is placed into `package_data/dashboard/` by `scripts/sync-dashboard.py`. This is a **release build step, not a sync check**: the bundle is a generated artifact that is **not in version control** (master decision OQ6, 2026-07-31), so there is no `--check` mode and no hook runs it. The release job builds the frontend, runs the placement, packages, and asserts the wheel and sdist both carry the bundle plus its `dashboard.fingerprint` sidecar. Placement refuses an absent `dist` and refuses a `dist` that does not carry the current build-input fingerprint Vite compiled into it, so it cannot stamp over a stale artifact. | `scripts/sync-dashboard.py`, `mcp/tests/test_sync_dashboard.py`, `.github/workflows/publish-mcp-to-pypi.yml`, `dashboard/vite.config.ts` |
 
 Task 10 external-chat inbox current state spans three route families: the control-plane inbox
 (`OperatorInboxEntry` / `OperatorInboxStore` plus the `operator_inbox_*` MCP tools), the dashboard
@@ -136,23 +137,51 @@ overviews.
 
 ## Hot Path Summary
 
-FEUI-MX-FIX-5 preserves Vite's generated JavaScript bytes as the semantic authority. Vite recreates
-`dashboard/dist`; `scripts/sync-dashboard.py` raw-copies and hashes that tree into the shipped
-package, so a generic end-of-line strip would corrupt CodeMirror completion indentation and break
-byte parity. Root `.gitattributes` therefore disables only `blank-at-eol` for direct shipped
-`mcp/src/agents_remember/package_data/dashboard/assets/*.js`. Generated CSS, nested or unrelated
-JavaScript, authored source/test/configuration, `blank-at-eof`, and `space-before-tab` remain strict.
-The `mcp/tests` route owns the temporary-repository generated-positive/authored-negative regression;
-two clean build/sync passes remained byte- and fingerprint-identical. Generated assets remain
-excluded evidence rather than file-card targets, and post-build normalization remains forbidden.
+**Enforcement topology (260731-EFA-L1 — read this before touching a gate).** The local gate is one
+shared body, `.githooks/_gate.sh`, invoked in two tiers by two thin hooks. `pre-commit` runs the
+`fast` tier and certifies **the staged content**, isolating it with
+`git stash push --keep-index --include-untracked` behind traps that restore on success, failure,
+and Ctrl-C (and skipping isolation entirely when the tree already matches the index or a
+merge/rebase/cherry-pick/revert is in progress, where stashing would move the conflict resolution
+out of the tree git is about to commit from). `pre-push` runs the `full` tier: the generated-copy
+checks plus the whole wrapper. The fast tier is cheap on purpose, because `--no-verify` is
+all-or-nothing — a pre-commit expensive enough to be worth skipping costs Ruff and Pyright too,
+which is exactly how this repository ended up with a gate that never ran and 45 commits landed
+behind it. `.github/workflows/quality-checks.yml` runs the wrapper on **every branch push and every
+pull request** across Python 3.11/3.12/3.13 alongside the `Dashboard frontend rail`, and both are
+required by the branch ruleset on `main`; it is also `workflow_call`-able, and
+`publish-mcp-to-pypi.yml` calls it as `needs: [quality]` so a release tag pointing at a commit that
+never reached `main` is re-gated before anything is built or published. Worktree closeout runs the
+same wrapper before a code commit in **any** repository whose checkout carries it — the
+`repo_name == "agents-remember"` hard-code is gone. These files are pathRules-disabled onboarding
+subjects, so this overview is their durable contract; the eligible sidecars for
+`scripts/sync-dashboard.py`, `worktrees/modules/code_quality_gate.py`, and
+`mcp/tests/test_code_quality_check.py` carry the details.
+
+**The cockpit bundle is built at release and is not in version control** (master decision OQ6).
+`package_data/dashboard/` and `package_data/dashboard.fingerprint` are git-ignored; the release job
+builds the frontend, `scripts/sync-dashboard.py` places it, and packaging ships it inside the wheel
+and sdist. A source checkout without Node therefore has no cockpit: `GET /` answers 503 naming the
+build command while `/api` serves normally. The residual cost is deliberate and documented.
+
+FEUI-MX-FIX-5 preserved Vite's generated JavaScript bytes as the semantic authority, and root
+`.gitattributes` still disables only `blank-at-eol` for
+`mcp/src/agents_remember/package_data/dashboard/assets/*.js`. **That rule now has no tracked
+subject** — the path it names is git-ignored as of 260731-EFA-L1 — so the attribute is inert and
+the `mcp/tests` temporary-repository regression that policed it was removed with it. The underlying
+reason it existed still holds and still forbids post-build normalization: a generic end-of-line
+strip would corrupt CodeMirror completion indentation inside generated template literals. If a
+generated path ever returns to version control, the attribute and its regression return together.
 
 FEUI-MX-FIX-2 routes all dashboard session creation through one accepted-response authority. Start
 at `dashboard/src/data/terminalOpen.ts` for exact identity and failure classification, then
 `sessions.ts` for accepted-row-only registry mutation, and the data/panels/session-cockpit overviews
 for caller behavior and zero-ghost focus/delivery gates. Request-matched dev fixtures exercise the
-same client seam. The synchronized index, fingerprint, and hashed files under
-`mcp/.../package_data/dashboard/` are generated shipped evidence only; they have no file cards and
-must remain in parity through `scripts/sync-dashboard.py --check`.
+same client seam. The index, fingerprint, and hashed files under `mcp/.../package_data/dashboard/`
+are generated shipped evidence only and have no file cards. **Since 260731-EFA-L1 they are not in
+version control at all**, so there is no parity to maintain and no `--check` to run: the release
+job rebuilds them, and `scripts/sync-dashboard.py` refuses to place a bundle that was not built
+from the current source.
 
 260715-FEUI-L9R repairs runtime truth across the established dashboard/serving split. Start at the
 `dashboard/src/` overview for browser build-identity comparison, operator-owned reload, pre-session
@@ -262,7 +291,9 @@ as the legacy-raw body. The renderer is governed by the `dashboard/src/data/{con
 conversation-library}/` and `dashboard/src/panels/session-cockpit/{conversation,conversation-library}/`
 overviews, which carry the L5-Facing Register (retention-gap tolerance, capability gating, the
 measured scale baseline, and the pre-existing E1/E2 backend faults L5 must harden). No backend or MCP
-source changed; the shipped `package_data/dashboard/` bundle is regenerated output only.
+source changed; the `package_data/dashboard/` bundle was regenerated output only. (Historical: that
+bundle was still committed at the time. Since 260731-EFA-L1 it is git-ignored and built at release,
+so a leaf's dashboard change no longer produces packaged-bundle churn to review.)
 
 260715-FEUI-L5 completes controlled prompt delivery end to end. The browser sends one epoch-bound
 request and folds receipt, reconcile, poll, availability loss, and withdrawal through one monotonic
@@ -321,9 +352,11 @@ role-suffixed leaf refs are rejected with canonical pair guidance. Per-role life
 as “one leaf, one session” describes that role's fresh pass, not global leaf exclusivity.
 
 Dashboard package generation remains downstream evidence only: `dashboard/src` defines the role
-picker and binding-first rendering, `scripts/sync-dashboard.py` proves source build and packaged
-tree parity, and the serving package mounts the synchronized output. Hashed generated assets stay
-outside file-level onboarding.
+picker and binding-first rendering, and the serving package mounts whatever bundle was placed.
+Hashed generated assets stay outside file-level onboarding. (Historical detail: at the time,
+`scripts/sync-dashboard.py --check` proved source-build and packaged-tree parity. Since
+260731-EFA-L1 the packaged tree is untracked, so the surviving proof is the release-time refusal to
+place a `dist` that does not carry the current build-input fingerprint.)
 
 260707-HFX2-L15 makes submitted terminal dispatch acceptance deterministic: every message carries
 its unique id, binds the spawn-cwd Claude/Codex harness JSONL, and receives credit only from that
@@ -338,8 +371,9 @@ redelivery per sweep.
 through enclosure transitions. The final release candidate rebuilds the static dashboard after the
 landed L15 base, proves `dashboard/dist` and `package_data/dashboard` byte-identical, and ships L15
 Python plus the L16 rail/R7 reader markers from one `agents_remember` package root. Generated hashed
-assets remain excluded from file sidecars; their durable boundary is the sync script plus static
-serving sidecars. Closeout must stage the complete add/delete asset set atomically.
+assets remain excluded from file sidecars; their durable boundary is the placement script plus the
+static serving sidecar. (The "closeout must stage the complete add/delete asset set atomically"
+rule died with the committed bundle in 260731-EFA-L1 — there is no asset set to stage.)
 
 Use the root index to route quickly: `AGENTS.md` and `README.md` cover source-checkout and public contracts; `mcp/` covers the package-managed server and runtime; `mcp/src/agents_remember/package_data/runtime/agents-md-files` covers installed instruction templates; hidden harness roots cover first-run files; and `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles` carries the unified lifecycle router, minimal frame, loop doctrine, nine role lifecycles, templates, and criteria catalogs. Its current condition 3 is the free-chat launcher, not an architect default. Canonical doctrine lives under root `skills/` and is synchronized by `scripts/sync-skills.py`; only path-rule-eligible package-data copies receive file sidecars. The kernel's `agentic_settings.py` owns per-use orchestration concurrency and role settings. For route-index behavior start at `mcp/src/agents_remember/kernel/route_index.py` and its deterministic Git census in `mcp/src/agents_remember/kernel/route_index_census.py`; callers must supply the resolved repository identity and storage/path-rule authority explicitly. Then use `route_index_refresh`, c-05, and c-04.
 
@@ -441,7 +475,7 @@ The source checkout now explicitly tells agents to run Ruff, Pyright, and Radon 
 
 The current `pyproject.toml` makes Ruff responsible for import/style/static hygiene and Radon responsible for complexity scouting. Ruff ignores line-length wrapping, high-branch/high-return/high-statement complexity warnings, and numeric sentinel warnings that are better reviewed through Radon or code review. Test files have targeted ignores for unused patched-callable arguments and import-path setup. Radon is configured to show `B` through `F` cyclomatic complexity, visible complexity scores, total/average output, and maintainability-index pressure points while excluding generated, cache, virtualenv, build, dist, and test paths.
 
-The wrapper is now fail-closed and mandatory by default: a CRAP score at or above the configured threshold (30 by default) produces a failing result without a separate strict flag. The same repository-owned command is enforced by the pre-commit hook, by worktree closeout before any code/memory/ledger/contract/applied-gate mutation, by pre-push, and by CI. Closeout resolves the active worktree package first and uses the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
+The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (30 by default) produces a failing result without a separate strict flag. The same repository-owned command is enforced by the **full** hook tier on pre-push, by worktree closeout before any code/memory/ledger/contract/applied-gate mutation, and by CI on every branch push and pull request. The **fast** pre-commit tier does not run it — it runs the generated-copy checks, Ruff, and Pyright over the staged content, deliberately cheap so nobody buys back the minutes with `--no-verify`. Closeout applies the gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
 
 The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit tests, and diff whitespace checks after safe formatting and cleanup. It also found refactor pressure that should feed Phase 06 rather than be hidden by formatter churn: `parse_settings_block` in `coordination_context_resolver.py` was the highest-complexity function seen in the sweep, and provider lifecycle/setup plus worktree and benchmark modules remain large enough to need package-level analysis before code motion.
 
@@ -551,8 +585,12 @@ over a single multiplexed SSE stream (`GET /api/stream`: an `event:snapshot` the
 the reducer owns — and reads coordination state exclusively through `McpRuntimeConfig` +
 `observer.paths` (North-Star #5), never raw host paths. Local-first: bound to `127.0.0.1`,
 no auth in v1. The **frontend** is a root-level sub-project (`dashboard/`) whose built bundle
-ships as `package_data/dashboard/` via `scripts/sync-dashboard.py` (mirroring
-`sync-runtime.py`); slice 04 shipped a placeholder, and slice 05 (5a) now ships the real Vite/React cockpit, synced by `scripts/sync-dashboard.py` and gated by `sync-dashboard --check` in both githooks + CI. Slice 4b added
+ships as `package_data/dashboard/`, placed there by `scripts/sync-dashboard.py`. Since
+260731-EFA-L1 that placement happens **in the release job**, not at commit time: the bundle is
+git-ignored, no hook and no CI job checks it, and the frontend rail in CI proves only that
+`npm run build` still succeeds. A checkout with no build serves 503 with the build command from
+`serving/static.py` rather than a placeholder — the slice-04 hand-authored placeholder is gone and
+must not return. Slice 4b added
 the raw `event` SSE channel (`GET /api/events`, byte-offset `Last-Event-ID` resume), sim-mode
 replay (a replay clock + fixture feeder over the projector's `now`/`before_tick` seams, so the
 frontend cannot tell sim from live), and the `POST /api/actions/{action}` plane
@@ -613,7 +651,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages, and now includes `docs/features.md` as the concentrated product tour.                                                                                                   | L1-L46            | [docs/README.md](agents-remember/docs/README.md) |
 | The source checkout carries hidden harness starter packages whose hook, rule, context, or extension startup surfaces load the coordinator first-action directive and now require the `l-01` deep-research retrieval-strategy evidence tally; the Claude Code install page also documents the required copy from `.claude/mcp/mcp.json` to root `.mcp.json` for MCP detection. | README L95-L119; Claude install L18-L31; install README L1-L25; starter instruction files L1-L37 | [README.md](agents-remember/README.md); [docs/install/claude-code.md](agents-remember/docs/install/claude-code.md); [docs/install/README.md](agents-remember/docs/install/README.md); [.claude hook](agents-remember/.claude/hooks/agents-remember-session-start.md); [.codex hook](agents-remember/.codex/hooks/agents-remember-session-start.md); [.cursor hook](agents-remember/.cursor/hooks/agents-remember-session-start.md); [.cursor rule](agents-remember/.cursor/rules/agents-remember.mdc); [.agents GEMINI.md](agents-remember/.agents/GEMINI.md); [.github-vscode hook](agents-remember/.github-vscode/hooks/agents-remember-session-start.md); [.github-vscode instructions](agents-remember/.github-vscode/copilot-instructions.md); [.hermes HERMES.md](agents-remember/.hermes/HERMES.md); [.openclaw workspace AGENTS.md](agents-remember/.openclaw/workspace/AGENTS.md); [.pi extension](agents-remember/.pi/extensions/agents-remember-start.ts) |
 | The current feature inventory is supported by the public Core Features pitch, the full `docs/features.md` tour, runtime/tool-surface docs, MCP `PUBLIC_TOOLS`, response model registry, packaged skill reference, runtime layout, benchmark methodology, and source quality wrapper. | README L32-L48; features L1-L471; MCP README L64-L90; tools L50-L86; model registry L1-L85; skills L15-L46; runtime layout L1-L118; benchmarks L1-L31; quality wrapper L1-L140 | [README.md](agents-remember/README.md); [docs/features.md](agents-remember/docs/features.md); [mcp/README.md](agents-remember/mcp/README.md); [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/); [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py); [skills reference](agents-remember/docs/reference/skills.md); [runtime layout](agents-remember/docs/reference/runtime-layout.md); [benchmark methodology](agents-remember/docs/benchmarks-methodology.md); [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| Runtime asset sync treats root runtime folders as canonical and copies them into package data; the pre-commit hook runs the check form so package data does not silently drift from canonical assets. | sync-runtime L1-L168; test L1-L69; hook L1-L29 | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [pre-commit hook](agents-remember/.githooks/pre-commit) |
+| Runtime asset sync treats root runtime folders as canonical and copies them into package data; both hook tiers run the check form so package data does not silently drift from canonical assets. | sync-runtime L1-L168; test L1-L69; gate `generated_copy_checks` | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [_gate.sh](agents-remember/.githooks/_gate.sh) |
+| The local gate is one shared body in two tiers: `fast` certifies the staged content under stash isolation, `full` runs the wrapper. | L19-L29; L66-L91; L93-L202 | [_gate.sh](agents-remember/.githooks/_gate.sh); [pre-commit](agents-remember/.githooks/pre-commit); [pre-push](agents-remember/.githooks/pre-push) |
+| CI runs the wrapper and the frontend rail on every branch push and pull request, and is `workflow_call`-able so the release path can require it. | `on:` block; jobs `quality`, `dashboard` | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
+| The publish workflow gates on quality, owns the frontend build, and fails if a distribution lacks the bundle or its fingerprint. | jobs `quality`, `build`, `publish` | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
+| The generated bundle, its fingerprint sidecar, and local packaging output are git-ignored with the reason recorded inline. | dashboard and build ignore rules | [.gitignore](agents-remember/.gitignore) |
+| The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" section | [CONTRIBUTING.md](agents-remember/CONTRIBUTING.md) |
 | MCP provider guidance requires Docker-wrapped provider backends instead of host-level services, live GrepAI memory roots, runtime artifacts under `providers/runners/grepai/`, PostgreSQL data under `providers/data/grepai/postgres/`, and `.grepai/` working directories treated as runtime artifacts rather than durable memory. | L79-L99 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The MCP settings example declares the external authority surface for repositories, provider ids, timeout caps, transcript roots, and package-derived provider runtime paths, replacing the removed coordinator `system/settings.json` provider template. | L1-L31 | [examples/mcp/settings.example.json](agents-remember/examples/mcp/settings.example.json) |
 | The repository quality configuration leaves Ruff on import/style/static hygiene, delegates branch/statement complexity pressure to Radon, gives tests targeted patched-callable/import-setup ignores, and configures Radon to report `B` through `F` complexity plus maintainability pressure. | L1-L39; L59-L68 | [pyproject.toml](agents-remember/pyproject.toml) |
@@ -645,7 +688,38 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 The interactive Chats round strengthens the repository's runtime-truth contract across the cockpit and serving daemon. Persistent chat and terminal surfaces preserve local state across view changes; active conversation streams recover from server-minted cursors instead of retrying unusable coordinates; structured questions and native interrupts are exact-session operations with explicit evidence; and dashboard state serving avoids repeated whole-tree walks and repeated projection serialization. These changes retain the existing rule that optimistic browser activity, transport acknowledgement, and terminal settlement are different facts.
 
-The final commit-gate delta also makes the repository wrapper mandatory at pre-commit, worktree closeout before mutation, pre-push, and CI, with CRAP at or above 30 failing by default. Canonical hooks, workflows, setup/public docs, root skill mirrors, and generated dashboard assets are pathRules-disabled onboarding subjects; their current contract is represented here and in eligible README, MCP package authorities, route cards, and memory-system guidance rather than by duplicate sidecars.
+The final commit-gate delta also makes the repository wrapper mandatory at worktree closeout before mutation, at the full pre-push tier, and in CI, with CRAP at or above 30 failing by default. (260731-EFA-L1 retiered pre-commit off the wrapper and onto the fast staged-content tier; see the enforcement topology in the Hot Path Summary, which is authoritative over this paragraph.) Canonical hooks, workflows, setup/public docs, root skill mirrors, and generated dashboard assets are pathRules-disabled onboarding subjects; their current contract is represented here and in eligible README, MCP package authorities, route cards, and memory-system guidance rather than by duplicate sidecars.
+
+## 260731-EFA-L1 Repository Impact — The Gate Now Runs
+
+This leaf's subject was enforcement itself, and it changes facts a future agent will otherwise get
+wrong. The durable contracts:
+
+1. **The cockpit bundle is built at release and is NOT in version control.**
+   `package_data/dashboard/` and `package_data/dashboard.fingerprint` are git-ignored, as are
+   `mcp/build/` and `mcp/dist/`. `scripts/sync-dashboard.py` lost its `--check` mode along with the
+   subject it compared against; it now refuses an absent `dist` and refuses a `dist` that does not
+   carry the build-input fingerprint `vite.config.ts` compiled into it as `__AR_DASHBOARD_BUILD__`.
+   The fingerprint sidecar is therefore a value read *out of* the bundle, never stamped over it.
+2. **The pre-commit hook gates staged content on a fast tier; pre-push runs the full wrapper.**
+   `.githooks/pre-commit` and `.githooks/pre-push` are thin wrappers over `.githooks/_gate.sh
+   <fast|full>`. The fast tier isolates the index with `git stash --keep-index --include-untracked`
+   under restore traps, and skips isolation when the tree already matches the index or a sequencer
+   operation is in progress.
+3. **CI runs on every branch and every pull request**, not only `main`, across Python
+   3.11/3.12/3.13, with `Dashboard frontend rail` alongside it; the branch ruleset on `main`
+   requires all four.
+4. **The publish workflow gates on quality.** `publish-mcp-to-pypi.yml` calls `quality-checks.yml`
+   via `workflow_call` and declares `needs: [quality]` before it builds, and the build job asserts
+   the wheel and sdist each contain the bundle and the fingerprint sidecar.
+5. **The closeout quality gate is no longer hard-coded to one repository name.** Applicability is
+   decided by whether the target checkout carries `mcp/src/agents_remember/code_quality/check.py`;
+   a checkout without it is reported as `wrapper-unavailable` rather than silently skipped.
+
+What follows for anyone reading older material: `--no-verify` was routine here precisely because
+the pre-commit hook could not pass, and any statement that pre-commit runs the full wrapper, that
+CI is scoped to `main`, or that the shipped bundle is committed describes the world before this
+leaf.
 
 ## 260727-CHATS-IM-L2 Repository Impact
 
@@ -656,6 +730,20 @@ per-file task parsing. The repository's public capability, task, and dashboard s
 unchanged; ownership and failure containment are now explicit in their route overviews.
 
 ## Update History
+
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: refreshed the repository spine for the
+  enforcement-first leaf. Recorded the enforcement topology as the durable home for the
+  pathRules-disabled hooks and workflows: the shared `.githooks/_gate.sh` in a fast staged-content
+  tier and a full pre-push tier, CI on every branch and pull request with the frontend rail
+  required by the ruleset, `publish-mcp-to-pypi.yml` gated on `quality-checks.yml` through
+  `workflow_call`, and the closeout gate applying to any checkout that carries the wrapper rather
+  than to one repository name. Recorded that the cockpit bundle and its fingerprint sidecar left
+  version control (master decision OQ6) and are built at release. Corrected the falsified claims
+  in place: the Source-quality feature row, the dashboard-sync feature row (split into an asset-sync
+  row and a release-build row), the wrapper-enforcement paragraph, the Dashboard Serving Layer
+  paragraph, the `--check` parity statements in the FEUI-MX-FIX-2 / HFX2-L16 / HFX2-L17 summaries,
+  the `.gitattributes` hot-path note (now an inert rule over an untracked path), and the
+  pre-commit citation row. Verification metadata remains pinned until closeout.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: updated the repository
   onboarding spine for the active-projector package split, runtime-probed bounded Codex history,

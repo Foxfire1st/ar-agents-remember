@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-24T14:31Z|
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T04:28+02:00|
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,8 +16,8 @@ Owns worktree closeout preview/apply behavior.
 
 ## Code Commentary
 
-Closeout validates source branch positions and explicit commit approval. When
-an Agents Remember code commit would be created, it runs the strict
+Closeout validates source branch positions and explicit commit approval. When a code commit would
+be created **in any repository whose checkout carries the wrapper**, it runs the strict
 project-owned quality wrapper before any code, memory, ledger, contract, or
 applied-gate mutation. Only after that gate passes does it commit code, refresh
 onboarding metadata, route overview metadata, generated route indexes, and
@@ -113,14 +113,39 @@ No external Domain Documentation source is configured for this memory repo.
 | The strict source-quality adapter decides applicability, executes the current worktree wrapper, and fails before mutation. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
 | Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs quality before code commit. | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 
+## 260731-EFA-L1 Current Commit-Gate Delta
+
+The three quality-gate call sites — `code_quality_gate_preview` in `closeout_preview_payload`, and
+`code_quality_gate_preview` plus `requires_strict_code_quality` in `closeout_result` — now pass
+`contract.code_worktree` instead of `contract.repo_name`. The gate is no longer hard-coded to this
+repository: applicability is decided by whether the target checkout carries
+`mcp/src/agents_remember/code_quality/check.py`.
+
+**This call site is type-unsafe by construction.** `contract` is unannotated here, so Pyright does
+not object if a `str` repository name is passed where a checkout `Path` is expected — and the
+failure is silent, because a relative path built from a name is not a file, so
+`requires_strict_code_quality` returns `False` and the mandatory gate never runs.
+`test_worktree_closeout_quality_gate.py::test_closeout_hands_the_gate_the_code_worktree_not_the_repository_name`
+spies on the actual argument at both entry points for exactly this reason.
+
+The payload's `code_quality_gate.status` now distinguishes `enforced`, `no-code-commit`, and
+`wrapper-unavailable`; the last means the commit still happens and the payload states it was not
+quality-checked.
+
 ## 260718-CHATS-L5I Incremental Commit-Gate Delta
 
-Preview now exposes the strict quality requirement and places it first in `closeout_order`. Apply
+Preview exposes the strict quality requirement and places it first in `closeout_order`. Apply
 recomputes whether code would commit, runs `run_strict_code_quality_gate` before
-`commit_if_dirty`, and returns the gate result in the closeout payload. The deliberate skip remains
-narrow: no Agents Remember code commit means no project-owned wrapper run.
+`commit_if_dirty`, and returns the gate result in the closeout payload.
 
 ## Update History
+
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1: both closeout entry points now hand the quality gate
+  `contract.code_worktree` rather than `contract.repo_name`, so the mandatory gate applies to every
+  repository whose checkout carries the wrapper. Corrected the previous "no Agents Remember code
+  commit means no wrapper run" skip description, which described the removed repository-name
+  hard-code. Verification metadata pinned to the pre-leaf source authority until closeout stamps the
+  code commit.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: corrected closeout ordering to
   mandatory strict quality before every mutation and documented preview/apply payload evidence plus
