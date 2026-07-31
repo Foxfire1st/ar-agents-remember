@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473`|
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastUpdated | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`|
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -200,24 +200,43 @@ preflight agrees with the typed settings parser rather than creating a second se
 fixtures, while `conftest.py` imports the production selector inventory so tests cannot drift from
 the Git boundary they exercise.
 
-## Generated Bundle Whitespace Policy Gate
+## Dashboard Bundle Placement Gate (260731-EFA-L1)
 
-`test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` exercises the repository's real
-Git attribute in an isolated temporary repository. It stages a direct shipped dashboard JavaScript
-asset whose tab-only line is semantic template-literal content beside an authored
-`dashboard/src/main.tsx` file with ordinary trailing spaces. The actual
-`git diff --cached --check` result must omit the generated asset and retain the exact authored-source
-diagnostic, so the exception cannot silently become a source-wide relaxation.
+`test_sync_dashboard.py` no longer tests a sync check. The cockpit bundle left version control
+(master decision OQ6), so `scripts/sync-dashboard.py` is a release build step and the suite pins one
+property: it cannot place an artifact that was not built from the dashboard source as it stands
+right now. Three tests that asserted the opposite — absent `dist` passes, absent fingerprint
+sidecar passes, absent `dashboard/src` passes — were replaced by their inversions, two of them
+carrying docstrings that name the fail-open they encoded, so the history cannot be readopted by
+accident. The `--check` flag's absence is asserted through a real `subprocess`, because the process
+boundary is where the old fail-open lived: hooks and CI invoked `--check` and read its exit status.
 
-Vite owns and recreates the generated `dashboard/dist` bytes; `scripts/sync-dashboard.py` copies and
-hashes those bytes without transformation. Generic end-of-line normalization is rejected because
-the generated tab is CodeMirror Python-completion indentation and removing it changes the runtime
-string. The root policy therefore targets only direct shipped
-`mcp/src/agents_remember/package_data/dashboard/assets/*.js` and disables only `blank-at-eol`.
-Generated CSS, nested or unrelated JavaScript, authored source/test/configuration,
-`blank-at-eof`, and `space-before-tab` remain strict. Two clean build/sync passes produced identical
-dist/package bytes and the same source/package fingerprint, confirming the exception survives
-content-hash regeneration without manual asset edits.
+Fixtures reproduce Vite's handshake rather than mocking it: `emit_bundle` writes a `dist` whose
+JavaScript contains the build-input fingerprint verbatim, which is what `vite.config.ts` compiles in
+as `__AR_DASHBOARD_BUILD__` and what the script searches for. Nothing in the suite reads the real
+tree, and no test requires a frontend build to have happened.
+
+`GeneratedDashboardWhitespacePolicyTests` was **removed** with the committed bundle it policed.
+Root `.gitattributes` still disables `blank-at-eol` for
+`mcp/src/agents_remember/package_data/dashboard/assets/*.js`, but that path is now git-ignored, so
+the rule has no tracked subject and the regression had nothing to prove. The reason it existed
+still holds and still forbids post-build normalization — the generated tab is CodeMirror
+Python-completion indentation and removing it changes the runtime string — so if a generated path
+ever returns to version control, the attribute and this regression return together.
+
+## Static Surface Gate (260731-EFA-L1)
+
+`test_static.py` is the new deterministic owner of both legitimate states of the serving static
+surface: a built bundle and an honest absence. It never reads the repository's own bundle, so it
+gives the same verdict before and after a frontend build. Its non-obvious assertion is method
+parity — for `POST`/`PUT`/`DELETE`/`PATCH` on an `/api` route, the missing-bundle mount and the real
+`StaticFiles` mount must return the *same* status (405), because the greedy `/` mount outranks an
+API route that matched the path but not the method.
+
+`test_serving.py` keeps the `create_app`-level version of the same two states, but its
+build-dependent assertions were rewritten: `/` is served from a patched stand-in bundle rather than
+the repository's, `dashboardBuild` is asserted present-or-omitted rather than indexed, and
+`StaticTests` skips when this checkout has no build instead of failing.
 
 ## Hot Path Summary
 
@@ -240,11 +259,19 @@ the flag-floor probe/relaunch flow extends `test_harness_control_claude.py`; the
 `task_started` binder pin extends `test_conversation_active_service.py`; the additive agent
 fetch at the fake boundary extends `test_conversation_library_ports.py`.
 
-For generated dashboard whitespace policy, begin at root `.gitattributes` for the exact direct-asset
-scope, then `test_sync_dashboard.py::GeneratedDashboardWhitespacePolicyTests` for the real-Git
-generated-positive/authored-negative regression. Use `dashboard/package.json` and
-`dashboard/vite.config.ts` for Vite ownership, and `scripts/sync-dashboard.py` for raw copy/digest
-parity. Do not route this seam through generated asset file cards or a generic normalizer.
+For the dashboard release path, begin at `test_sync_dashboard.py` for the placement refusals and
+the process-boundary proof that `--check` is gone, then `test_static.py` for what a checkout with
+no bundle serves. Use `dashboard/vite.config.ts` for the compiled fingerprint the fixtures embed
+and `.github/workflows/publish-mcp-to-pypi.yml` for the only production caller. Do not route this
+seam through generated asset file cards or a generic normalizer, and do not expect a committed
+bundle to compare against.
+
+For the local gate itself, begin at `test_code_quality_check.py`: one test scans
+`.githooks/_gate.sh` and the CI workflow for the wrapper command with no threshold opt-out, and a
+second pins each hook to its tier (`pre-commit` → `fast`, `pre-push` → `full`) so neither can be
+silently promoted or demoted. For closeout enforcement, begin at
+`test_worktree_closeout_quality_gate.py`, whose argument spy is the only thing standing between the
+mandatory gate and a silent no-op at an unannotated call site.
 
 For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census
 and byte-convergence matrix, then `test_carryover.py` for full-apply zero-mutation refusals and
@@ -481,10 +508,13 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Route-index regressions cover ignored/generated exclusion, symlink/sparse/gitlink/non-UTF-8 identity, ambient selectors, typed failures, and repeat convergence. | L199-L911 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 | Carryover full-apply regressions compare raw JSON/Markdown authority with typed parser semantics and prove exact zero mutation for every refusal. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
 | Worktree fixtures install explicit supported external-memory storage settings so closeout tests exercise real write authority. | L224-L252 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| The generated-whitespace test copies the real attribute into a temp repository and proves the direct generated JavaScript allowance together with strict authored TSX behavior. | L216-L247 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
-| The root attribute narrows the exception to direct shipped dashboard JavaScript assets and only the `blank-at-eol` check. | L1-L3 | [.gitattributes](agents-remember/.gitattributes) |
-| The sync helper copies and compares raw dist/package bytes; it does not introduce or normalize emitted whitespace. | L59-L68; L133-L172 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| The production build runs Vite and recreates `dashboard/dist`, making Vite the physical-byte owner. | package L6-L10; config L61-L67 | [dashboard/package.json](agents-remember/dashboard/package.json); [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
+| Placement succeeds only for a bundle carrying the current build-input fingerprint; every refusal path writes nothing, and `--check` fails through the process boundary. | L63-L268 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
+| The static surface is pinned in both states without reading the repository's own bundle, including method parity against the real `StaticFiles` mount. | L29-L143 | [test_static.py](agents-remember/mcp/tests/test_static.py) |
+| The placement step under test refuses an absent or non-current `dist` and writes the sidecar only after the tree. | L107-L166 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| The production build runs Vite and recreates `dashboard/dist`, making Vite the physical-byte owner and the source of the compiled fingerprint. | package L6-L10; config L36-L66 | [dashboard/package.json](agents-remember/dashboard/package.json); [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
+| The root `.gitattributes` `blank-at-eol` exception still names `package_data/dashboard/assets/*.js`, a path that is now git-ignored, so the rule is inert and its regression was removed. | L1-L3 | [.gitattributes](agents-remember/.gitattributes) |
+| Two tests hold the local gates to the wrapper after the hook split: the shared tiered body plus CI carry the command, and each hook is pinned to its tier. | L122-L149 | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| The closeout gate suite covers all three statuses and spies on the real argument passed from the unannotated closeout call sites. | L38-L250 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 
 ### Route Contract Review
 
@@ -538,6 +568,16 @@ The regression set covers the serving performance/truth changes (single-pass rep
 
 ## Update History
 
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: replaced the Generated Bundle Whitespace Policy
+  Gate with the Dashboard Bundle Placement Gate and added a Static Surface Gate. `test_sync_dashboard.py`
+  inverted three fail-open tests into refusals and proves `--check` no longer exists through a real
+  subprocess; `GeneratedDashboardWhitespacePolicyTests` was removed because the `.gitattributes`
+  exception it policed now names a git-ignored path. Added the new `test_static.py` (both static
+  states, deterministic, including method parity against the real `StaticFiles` mount) and recorded
+  the three build-dependent rewrites in `test_serving.py`. Recorded the two-test split that holds
+  the local gates to the wrapper after the hook tiering, and the closeout-gate argument spy.
+  Refreshed the affected hot-path routing and reference rows. Verification metadata remains
+  pre-commit.
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: routed the new real-local-subprocess lifecycle tier for
   Claude (transport ownership release across start -> stop -> start, and the adapter's floor
   probe/re-launch to control readiness over the real transport), and recorded that the live smoke's

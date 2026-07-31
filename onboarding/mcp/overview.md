@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-07-30T15:15+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastUpdated | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -333,12 +333,23 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 
 ## Hot Path Summary
 
-FEUI-MX-FIX-2 changes no MCP package source contract. Its `package_data/dashboard/` index,
-fingerprint, and content-hashed assets are synchronized shipped output from the reviewed
-`dashboard/src/` build. They are deliberately excluded from one-to-one onboarding: browser open
-authority is documented under the dashboard source cards and overviews, while
-`scripts/sync-dashboard.py --check` proves package parity. The generated rollover must land as one
-complete add/delete set; it is not a second implementation route.
+**260731-EFA-L1: `package_data/dashboard/` is no longer in this package's version-controlled
+surface.** The bundle, its `dashboard.fingerprint` sidecar, and local `mcp/build/` / `mcp/dist/`
+output are git-ignored. The recursive `package_data/**/*` glob in `mcp/pyproject.toml` still ships
+whatever is present at build time, so the wheel and sdist carry a cockpit — placed by the release
+job, verified by the release job. Building the package from a checkout with no bundle succeeds and
+yields an installation whose `/` answers 503 with the build command. Two consequences for anyone
+working in this package: a dashboard change produces **no packaged-asset churn to review**, and
+`serving/build_info.py`'s `dashboardBuild` is routinely absent in a source checkout, so it must be
+consumed as optional.
+
+FEUI-MX-FIX-2 changed no MCP package source contract. Its `package_data/dashboard/` index,
+fingerprint, and content-hashed assets were shipped output from the reviewed `dashboard/src/`
+build, deliberately excluded from one-to-one onboarding: browser open authority is documented under
+the dashboard source cards and overviews. (Historical: package parity was then proven by
+`scripts/sync-dashboard.py --check`, and a generated rollover had to land as one complete
+add/delete set. Neither applies now — the tree is untracked, the `--check` mode is gone, and the
+release-time refusal to place a non-current `dist` is the surviving proof.)
 
 260715-FEUI-L9R crosses `mcp/` through the existing `agents_remember.serving` route and the shipped
 dashboard boundary. Serving resolves the optional packaged dashboard fingerprint into
@@ -506,11 +517,12 @@ target/source branch, checks memory carryover, runs or verifies cleanup, and
 reconciles JSON-primary task documents after landing. Runtime package data under
 `src/agents_remember/package_data/` is synchronized from canonical root runtime
 asset folders by `scripts/sync-runtime.py`, and the sync behavior is covered by
-`mcp/tests/test_sync_runtime.py` plus the pre-commit check. The built dashboard cockpit
-ships under `package_data/dashboard/`, synced from `dashboard/dist/` by
-`scripts/sync-dashboard.py` (slice 05 replaces the slice-04 placeholder with the real
-Vite/React bundle), covered by `mcp/tests/test_sync_dashboard.py` plus the
-pre-commit/pre-push and CI `--check`.
+`mcp/tests/test_sync_runtime.py` plus the generated-copy check that runs in both hook tiers. The
+built dashboard cockpit ships under `package_data/dashboard/`, placed there from `dashboard/dist/`
+by `scripts/sync-dashboard.py`. Since 260731-EFA-L1 that placement is a **release build step**: the
+bundle is git-ignored, no hook or CI job checks it, and `scripts/sync-dashboard.py` has no
+`--check` mode. It is covered by `mcp/tests/test_sync_dashboard.py` and driven by
+`.github/workflows/publish-mcp-to-pypi.yml`.
 
 ## Route Model
 
@@ -917,18 +929,28 @@ into the role files.
   (R2). Containment metrics are daemon-sampled, label-discovered, and
   read-only (R4) so leftover stacks from dead sessions stay observable
   without any settings file.
-- The shipped dashboard has a three-stage release boundary: editable inputs under
-  `dashboard/src/` and the production config set build into `dashboard/dist/`;
-  `scripts/sync-dashboard.py` copy-swaps that complete tree into
-  `package_data/dashboard/` and records the build-input digest in the sibling
-  `package_data/dashboard.fingerprint`; `serving.static.dashboard_static_dir()` resolves that
-  packaged tree and `mount_static()` serves it at `/`. `sync-dashboard.py --check` must prove both
-  source-fingerprint currency and byte-for-byte `dist`/package equality. Because the generated
-  package tree is excluded from file-level onboarding, this route overview carries its release
-  boundary. A hashed-bundle refresh must stage `index.html`, the fingerprint, every new asset, and
-  every replaced asset deletion together; omitting either half can leave the installed wheel with
-  broken asset references. The fingerprint is written during sync, so the canonical evidence order
-  remains build, sync, `--check`, then served-package verification.
+- The shipped dashboard has a three-stage release boundary, and **none of its stages are in version
+  control** (master decision OQ6, 260731-EFA-L1). Editable inputs under `dashboard/src/` plus the
+  production config set build into `dashboard/dist/`; `scripts/sync-dashboard.py` copy-swaps that
+  tree into `package_data/dashboard/` and writes the build-input digest to the sibling
+  `package_data/dashboard.fingerprint`; `serving.static.dashboard_static_dir()` resolves the
+  packaged tree and `mount_static()` serves it at `/`. All three of `dist/`,
+  `package_data/dashboard/`, and `package_data/dashboard.fingerprint` are git-ignored.
+  - There is **no `--check` mode** and no drift comparison: the repository cannot drift from a
+    bundle it does not contain. The surviving proof runs on the write path, where it cannot be
+    skipped — placement refuses an absent `dist`, and refuses a `dist` that does not contain the
+    current build-input fingerprint verbatim (Vite compiles it in as `__AR_DASHBOARD_BUILD__`).
+  - `.github/workflows/publish-mcp-to-pypi.yml` is the only caller: it builds the frontend, runs
+    the placement, runs `python -m build`, then asserts both the wheel and the sdist carry
+    `package_data/dashboard/index.html` and `package_data/dashboard.fingerprint`.
+  - Because the generated package tree is excluded from file-level onboarding, this route overview
+    carries its release boundary. The old rule about staging hashed assets, `index.html`, and the
+    fingerprint atomically at closeout no longer applies — there is nothing to stage.
+  - Packaging from a checkout with no bundle **succeeds**: the recursive `package_data/**/*` glob
+    matches nothing and the installed server reports the absence itself (503 from
+    `serving/static.py`, naming the build command).
+  - The canonical evidence order is now build → place (which refuses a stale build) → package →
+    verify the distributions.
 
 ## Docs References
 
@@ -969,8 +991,9 @@ implementation governs its hash rollover or static mount.
 | `server.py` installs a FastMCP shim that minifies the JSON text mirror of tool results without touching structured content. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
 | `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift and branch-freshness status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember/mcp/src/agents_remember/models/providers.py); [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| Runtime package data is synchronized from canonical root asset folders, and tests verify missing, extra, changed, and target-scope behavior. | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [pre-commit hook](agents-remember/.githooks/pre-commit) |
-| The built dashboard cockpit bundle is synchronized from `dashboard/dist/` into `package_data/dashboard/` and gated by `--check` — the built-bundle digest **plus** a source-freshness fingerprint of the build inputs (the `src` tree minus tests + the production configs, recorded in a sibling `package_data/dashboard.fingerprint`), so a `dashboard/src` change shipped without a rebuild is flagged at the commit gate the way a changed skill is. The serving app resolves and mounts this packaged tree rather than `dashboard/dist/`. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py); [static.py](agents-remember/mcp/src/agents_remember/serving/static.py); [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py); [test_serving.py](agents-remember/mcp/tests/test_serving.py); [pre-commit hook](agents-remember/.githooks/pre-commit) |
+| Runtime package data is synchronized from canonical root asset folders, and tests verify missing, extra, changed, and target-scope behavior. The `--check` form runs in both hook tiers. | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [_gate.sh](agents-remember/.githooks/_gate.sh) |
+| The dashboard cockpit bundle is a **release build product**, not a committed artifact: `scripts/sync-dashboard.py` places `dashboard/dist/` into `package_data/dashboard/` during the publish workflow and writes the sibling `package_data/dashboard.fingerprint`, refusing any `dist` that does not carry the current build-input fingerprint. Both paths are git-ignored, there is no `--check`, and no hook or branch CI job touches them. The serving app resolves and mounts the packaged tree, or answers 503 with the build command when nothing was placed. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py); [static.py](agents-remember/mcp/src/agents_remember/serving/static.py); [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py); [test_static.py](agents-remember/mcp/tests/test_static.py); [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
+| The closeout quality gate applies to any checkout that carries the wrapper rather than to one repository name, and reports `enforced` / `no-code-commit` / `wrapper-unavailable`. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py); [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py); [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 | Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
@@ -997,7 +1020,28 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 The MCP package now carries the L5I interactive-session backend hardening: active conversations reconnect through fresh server cursors, native interrupt and structured interaction answers are evidence-bound, serving avoids repeated projection/repository serialization, and terminal-backed sessions retain honest lifecycle and shutdown boundaries. Completed landing facts can freeze out of recurring remote probes but reopen into live observation. These are production behavior changes, not a new package route.
 
-The package also owns the final mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before closeout mutation; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and zero mutation on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. Existing verification metadata remains pre-commit.
+The package also owns the mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before closeout mutation; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and zero mutation on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. (260731-EFA-L1 removed the `repo_name == "agents-remember"` condition from that gate — see the route impact below. Existing verification metadata remains pre-commit.)
+
+## 260731-EFA-L1 Route Impact
+
+Three package-owned contracts changed, all in service of making the gate actually run.
+
+`worktrees/modules/code_quality_gate.py` no longer decides by repository name. Both deciders take
+the code worktree `Path`, applicability is `code_would_commit and <checkout>/mcp/src/agents_remember/code_quality/check.py`
+exists, and the preview reports one of `enforced`, `no-code-commit`, or `wrapper-unavailable`. The
+last is a *reported* state: closeout still commits, and the payload says the commit was not
+quality-checked and why. `closeout.py` passes `contract.code_worktree` at both call sites; that
+argument is unannotated and a `str`-for-`Path` substitution would silently disable the gate, so
+`test_worktree_closeout_quality_gate.py` spies on the real argument rather than trusting Pyright.
+
+`serving/static.py` gained the missing-bundle surface: `MissingDashboardBundle` answers 503 with the
+expected location and `BUILD_COMMAND` under `Cache-Control: no-store`, restricted to `GET`/`HEAD`
+with 405 elsewhere so the greedy `/` mount cannot change `/api` method semantics based on whether a
+build is present. There is no placeholder and no fallback UI.
+
+`serving/build_info.py` is unchanged in behavior, but its `dashboardBuild` semantics moved: `None`
+now means "no bundle was built here", not "legacy bundle", because the fingerprint sidecar is
+generated beside the generated bundle and the two are absent together.
 
 ## 260727-CHATS-IM-L2 Route Impact
 
@@ -1009,6 +1053,16 @@ fuse remains an emergency framing limit, separate from the 16 MiB materialized s
 ceiling and smaller output-page budgets.
 
 ## Update History
+
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: refreshed this route for the enforcement leaf.
+  Recorded that the cockpit bundle, its fingerprint sidecar, and local packaging output left version
+  control and are produced by the release job (master decision OQ6); rewrote the three-stage release
+  boundary to drop `--check`, the drift comparison, and the atomic-asset-staging rule, and to record
+  the release-time refusal plus distribution verification that replaced them. Recorded the removal of
+  the `repo_name == "agents-remember"` hard-code from the closeout quality gate and its three
+  reported states, the new missing-bundle serving surface, and the shift in `dashboardBuild`
+  semantics. Corrected the two falsified reference rows and the FEUI-MX-FIX-2 parity claim.
+  Verification metadata remains pre-commit.
 
 - 2026-07-30T15:15+02:00 — 260727-CHATS-IM-L4: noted at package level that the
   `--forward-subagent-text` floor probe re-launches the same subprocess transport, so the transport

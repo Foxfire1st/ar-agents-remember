@@ -59,7 +59,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1019,
+    "sourceFilesInScope": 1020,
     "fileSidecars": 6,
     "childRoutes": 8
   },
@@ -86,7 +86,7 @@
     "toml"
   ],
   "hotPath": {
-    "summary": "FEUI-MX-FIX-5 preserves Vite's generated JavaScript bytes as the semantic authority. Vite recreates `dashboard/dist`; `scripts/sync-dashboard.py` raw-copies and hashes that tree into the shipped package, so a generic end-of-line strip would corrupt CodeMirror completion indentation and break byte parity. Root `.gitattributes` therefore disables only `blank-at-eol` for direct shipped `mcp/src/agents_remember/package_data/dashboard/assets/*.js`. Generated CSS, nested or unrelated JavaScript, authored source/test/configuration, `blank-at-eof`, and `space-before-tab` remain strict. The `mcp/tes...",
+    "summary": "**Enforcement topology (260731-EFA-L1 \u2014 read this before touching a gate).** The local gate is one shared body, `.githooks/_gate.sh`, invoked in two tiers by two thin hooks. `pre-commit` runs the `fast` tier and certifies **the staged content**, isolating it with `git stash push --keep-index --include-untracked` behind traps that restore on success, failure, and Ctrl-C (and skipping isolation entirely when the tree already matches the index or a merge/rebase/cherry-pick/revert is in progress, where stashing would move the conflict resolution out of the tree git is about to commit from). `pr...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -124,22 +124,13 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "dashboard/dist",
-      "scripts/sync-dashboard.py",
-      "gitattributes",
-      "blank-at-eol",
-      "mcp/src/agents_remember/package_data/dashboard/assets/*.js",
-      "blank-at-eof",
-      "space-before-tab",
-      "FEUI",
-      "FIX",
-      "JavaScript",
-      "CodeMirror",
-      "agents_remember",
-      "package_data",
-      "CSS",
+      "githooks/_gate.sh",
+      "pre-commit",
+      "fast",
+      "git stash push --keep-index --include-untracked",
+      "EFA",
       "repo-overview",
-      "2b47ed9520a770b9858e8af1f112f58745dcf473",
+      "c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6",
       "agents-remember",
       "c-04-retrieval-strategy-router",
       "ar-memory/",
@@ -152,7 +143,16 @@
       "c-09-git-worktree-manager",
       "task_reopen",
       "c-10-adopt-memory-baseline",
-      "memory.md"
+      "memory.md",
+      "providers/runners/",
+      "providers/data/",
+      "logs/mcp/",
+      "logs/providers/",
+      "providers/_bin/",
+      "providers/_venvs/",
+      "onboarding/",
+      "c-05-create-or-update-onboarding-files",
+      "ar-coordination/memory-repos/ar-<repo>/"
     ]
   },
   "fallback": {

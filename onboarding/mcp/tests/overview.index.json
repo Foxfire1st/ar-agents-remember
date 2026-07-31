@@ -164,6 +164,7 @@
     "mcp/tests/test_sim_fixture_builder.py",
     "mcp/tests/test_spawn_agent_session.py",
     "mcp/tests/test_starter_renderers.py",
+    "mcp/tests/test_static.py",
     "mcp/tests/test_store_scaling_cs6.py",
     "mcp/tests/test_subprocess_hygiene.py",
     "mcp/tests/test_supervisor.py",
@@ -195,8 +196,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 176,
-    "fileSidecars": 183,
+    "sourceFilesInScope": 177,
+    "fileSidecars": 184,
     "childRoutes": 0
   },
   "routingTerms": [

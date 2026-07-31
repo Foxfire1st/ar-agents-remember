@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `scripts/sync-dashboard.py`                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:07+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T04:28+02:00                     |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -16,108 +16,123 @@
 
 ## Purpose
 
-`scripts/sync-dashboard.py` copies the built dashboard frontend bundle (`dashboard/dist/`)
-into `mcp/src/agents_remember/package_data/dashboard/` so the wheel ships the cockpit with no
-Node build at install time — mirroring `sync-runtime.py` / `sync-skills.py`.
+`scripts/sync-dashboard.py` places a freshly built cockpit bundle (`dashboard/dist/`) into
+`mcp/src/agents_remember/package_data/dashboard/` so the wheel and sdist ship the cockpit with
+no Node build at install time.
 
-It also closes the gap that distinguishes the dashboard from the skill/runtime gates: `dashboard/dist`
-is a *generated* artifact, so comparing it against the shipped copy only proves "built bundle == shipped
-bundle" — it cannot tell that either still reflects the current source. A `dashboard/src` edit committed
-without a rebuild therefore used to slip the gate (both copies stay stale together, or `dist` is simply
-absent). `sync` now also fingerprints the dashboard's real build inputs (the `src` tree minus tests,
-plus the production config files) into a sibling `dashboard.fingerprint` sidecar, and `--check`
-re-verifies that fingerprint — flagging a source change that was never rebuilt the same way a changed
-skill is flagged. This is the pre-commit/pre-push `--check` behavior, so the commit gate catches a stale
-shipped bundle, not just the push gate.
+**It is a release build step, not a drift check.** The destination is a generated artifact and is
+**not under version control** (master decision OQ6, 2026-07-31, leaf 260731-EFA-L1). The release
+job runs `npm --prefix dashboard run build` and then this script; `python -m build` then reads
+what this script placed. Nothing in the repository can drift from a bundle the repository does not
+contain, so the `--check` mode is gone along with its subject.
+
+That removal is the root fix for a chain of downstream defects, and the reason to keep it removed:
+a 28 MB generated tree in git produced the fingerprint sidecar's fail-open, the stale-stamping
+`sync()`, a pre-commit hook that could not pass on a clean tree, and 45 commits made with
+`--no-verify`.
 
 ## Code Commentary
 
-### 260707-HFX2-L17 Pair-Role Package Proof
-
-The L17 dashboard source adds role selection plus binding-first grouping/rendering and was rebuilt
-and synchronized by the worker. This script remains the only durable build/package proof: its
-source fingerprint covers the TypeScript inputs and its tree digest compares `dashboard/dist`
-against `package_data/dashboard`. Individual hashed assets are replaceable output and intentionally
-receive no file-level onboarding.
-
 ### Logic
 
-`SOURCE` is the repo-root `dashboard/dist`; `TARGET` is the package-data dashboard dir.
-`file_digests` SHA-256s every non-ignored file under a root. `replace_tree` is the crash-safe
-copy-then-swap (stage to `<target>.ar-sync-new`, rename the live target aside, swap in, then
-remove the old tree), matching `sync-runtime.py`.
+`SOURCE` is the repo-root `dashboard/dist`; `TARGET` is `package_data/dashboard`; `SOURCE_TREE` is
+`dashboard/src`; `FINGERPRINT_FILE` is `dashboard.fingerprint`, a **sibling** of `TARGET` (never
+inside it, so the served tree stays a byte-pure copy of `dist`).
 
-`check()` now runs **two** gates and returns non-zero if either fails. The built-bundle gate is the
-original `file_digests(SOURCE) == file_digests(TARGET)` comparison (skipped as a graceful no-op when
-`dist` is absent). The source-freshness gate is `fingerprint_check()`: `SOURCE_TREE` is `dashboard/src`
-and `FINGERPRINT_FILE` is the `dashboard.fingerprint` sibling *beside* `TARGET` (never inside it, so the
-served tree stays a byte-pure copy of `dist`). `source_inputs()` digests every bundled `src` file
-(skipping `.test.`/`.spec.`/`.stories.` modules via `_is_bundled_source`, which Vite never bundles) plus
-the production config files in `BUILD_INPUT_FILES` (`index.html`, `vite.config.ts`, the `tsconfig*.json`,
-`panda.config.ts`, `postcss.config.cjs`, `package.json`, `package-lock.json`); `source_fingerprint()`
-folds those into one stable SHA-256 over sorted `path\0digest` pairs. `fingerprint_check()` compares the
-recorded fingerprint to the current one and is skipped (returns 0) until a fingerprint exists (legacy
-placeholder) or when no `src` tree is present (a packaged install). `sync()` replaces the target, calls
-`write_fingerprint()` to record the current build inputs, then re-checks; `main` exposes `--check`.
+`source_inputs()` digests every bundled file under `SOURCE_TREE` — skipping `.test.` / `.spec.` /
+`.stories.` modules via `_is_bundled_source`, which Vite never bundles — plus the production config
+files in `BUILD_INPUT_FILES` (`index.html`, `vite.config.ts`, the `tsconfig*.json`,
+`panda.config.ts`, `postcss.config.cjs`, `package.json`, `package-lock.json`).
+`source_fingerprint()` folds those into one SHA-256 over sorted `key\0digest\n` records.
 
-### 260707-HFX2-L16 Final Combined Package Proof
+`bundle_is_current(fingerprint)` is the whole freshness proof and the one thing to understand here.
+`dashboard/vite.config.ts::dashboardSourceFingerprint` computes the **same** value by the same
+algorithm and Vite's `define` substitutes it into the bundle as the `__AR_DASHBOARD_BUILD__` string
+literal. So this function simply searches `dist` for that literal: a bundle built from this source
+contains it verbatim and a bundle built from any other source cannot. Timestamps would prove
+nothing where this runs — a fresh clone or a CI checkout writes every file at once, so "dist is
+newer than its inputs" is satisfiable by an artifact that was never built from them.
 
-The final L16 candidate was rebuilt after synchronizing onto landed L15 base `c8818285`. The shipped
-`package_data/dashboard/` tree was byte-identical to `dashboard/dist/`; `--check` passed both its
-source-fingerprint and tree-digest gates; the packaged entry asset carried the L16 sprint-rail and R7
-reader markers; and worktree package resolution proved the landed L15 Python code plus the rebuilt
-L16 bytes ship from one `agents_remember` package root. L15 changed no dashboard or packaged-dashboard
-path, so no L15 JavaScript marker exists or should be invented. The `/api/task-document` source marker
-belongs to `dashboard/src/data/taskDocuments.ts`, not `DetailPanel.tsx` (reviewer CD-N1 correction).
+`sync()` refuses (exit 1, message naming `REBUILD_HINT`) when `dist` is absent, and refuses again
+when `dist` does not carry the current fingerprint. Only then does it `replace_tree()` (the
+crash-safe copy-then-swap staging pattern shared with `sync-runtime.py`) and write the sidecar —
+**after** the tree, never before, so a crash between the two cannot leave a sidecar advertising a
+build identity for a bundle that is not there.
 
-### Build present vs. absent `dist`
+`main()` parses an empty argument set and returns `sync()`. Passing `--check` now exits non-zero
+with `unrecognized arguments: --check`, which is deliberate: a silently tolerated flag would let a
+hook or workflow keep believing a check runs.
 
-The slice-05 Vite build now exists and the shipped bundle is its output; the `--check` call is wired
-into both `.githooks/pre-commit` and `.githooks/pre-push` on the dashboard branch line. When
-`dashboard/dist/` is absent (a clean checkout that has not run `npm run build`), the *built-bundle* gate
-still no-ops gracefully — it never wipes the committed bundle. The *source-freshness* gate, however, is
-independent of `dist`: once a `dashboard.fingerprint` is recorded, `--check` flags a `src`/config change
-even with `dist` absent, because the recorded fingerprint is compared against the live source tree, not
-against the (possibly missing) build output. The historical placeholder
-(`package_data/dashboard/index.html`, no recorded fingerprint) still passes untouched.
+### Conventions
+
+The value written to `dashboard.fingerprint` is **read back out of the bundle's own JavaScript**,
+never asserted over it. That is what makes it usable as an identity: `serving/build_info.py`
+publishes it as `servingBuild.dashboardBuild`, and a live tab compares it against its own
+`CLIENT_DASHBOARD_BUILD` to notice it is running stale JS. The previous `sync()` stamped the
+current source fingerprint over whatever tree it had just copied, which corrupted exactly the
+signal the sidecar exists to carry.
 
 ### Invariants And Boundaries
 
-- Build output (`dashboard/dist/`) and `node_modules/` are git-ignored; the shipped bundle
-  under `package_data/dashboard/` is committed.
-- Absent `dist/` is a graceful no-op for the built-bundle gate, never a failure or a destructive wipe
-  of the placeholder.
-- The source-freshness fingerprint covers only build inputs: the `src` tree minus
-  `.test.`/`.spec.`/`.stories.` modules, plus the production config files in `BUILD_INPUT_FILES`. A
-  test/spec/story edit must never demand a rebuild; a bundled-source or production-config change must.
-- `dashboard.fingerprint` lives *beside* the shipped bundle, never inside `package_data/dashboard/`, so
-  the served tree stays a byte-pure copy of `dist` and the built-bundle digest comparison is unaffected.
-- The source-freshness gate is skipped (returns 0) without a recorded fingerprint or without a
-  `dashboard/src` tree, so legacy placeholders and packaged installs are never falsely failed.
+- `package_data/dashboard/` and `package_data/dashboard.fingerprint` are git-ignored
+  (`.gitignore`). Do not commit either; do not add a check that compares the repository against
+  them.
+- There is **no fail-open**. Absent `dist`, a `dist` built from other source, and an absent
+  `dashboard/src` all return 1. (An absent source tree yields an empty input set whose fingerprint
+  no real bundle carries, so it refuses by construction rather than by a special case.)
+- A refusal writes nothing: neither the target tree nor the sidecar is created or modified.
+- The fingerprint covers build inputs only. A `.test.` / `.spec.` / `.stories.` edit must never
+  demand a rebuild; a bundled-source or production-config edit must.
+- `source_fingerprint()` here and `dashboardSourceFingerprint()` in `dashboard/vite.config.ts` are
+  one algorithm in two languages. Changing either without the other makes every build refuse.
+- The sidecar is written after the tree, and only after both refusals have been cleared.
 
 ### Todos
 
-- Reviewer D2-N1: `sync()` records the source fingerprint after copying the already-built tree. A
-  source edit between build and sync can therefore stamp current source beside stale build output.
-  This candidate closes that evidence gap with source-to-served-byte markers; a future build-time
-  fingerprint or embedded build manifest would close it mechanically.
-- Reviewer CD-N2/D2-N3: generated hashed assets are an atomic replacement set. Closeout must stage
-  every new asset together with every deleted asset, `index.html`, and the fingerprint; omitting the
-  untracked additions leaves a broken package tree.
-- Reviewer D2-N2: run `python3 -m unittest mcp.tests.test_sync_dashboard` from the repo root with
-  system Python. The project venv's installed `mcp` package shadows the local `mcp.tests` namespace.
+- The two implementations of the fingerprint algorithm (Python here, TypeScript in
+  `vite.config.ts`) are kept in step by convention and by the refusal itself; there is no shared
+  fixture proving they agree beyond a real build succeeding.
+
+## Docs References
+
+No relevant documentation was found after checking the configured sources (`system/sources.md` has
+no entries); the placement contract is proven by repository source, the release workflow, and tests.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external or domain documentation exists for this repository-local build step. | Source discovery checked | — |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The script digests build inputs, records the sibling fingerprint during sync, and checks fingerprint plus dist/package tree equality. | L30-L52; L79-L130; L151-L179 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| The isolated unit suite covers tree replacement, fingerprint staleness, config inputs, test exclusion, and sync/check round trips. | L24-L210 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
-| The static resolver serves the committed package-data directory at the root after API routes. | L18-L35 | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The API literal used in the L16 source-to-package marker proof is owned by the dashboard data adapter. | L10-L17 | [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts) |
+| The script refuses an absent or non-current `dist`, places the tree, then writes the sidecar. | L107-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| Vite compiles the same fingerprint into the bundle as `__AR_DASHBOARD_BUILD__`, which is the literal `bundle_is_current` searches for. | L36-L66 | [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
+| The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar. | job `build` | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
+| The suite proves placement, every refusal path, and that `--check` no longer exists. | L63-L268 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
+| The serving resolver mounts what this script placed, or answers 503 when nothing was placed. | L94-L129 | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
+| The sidecar this script writes is what the build stamp publishes as `dashboardBuild`. | L105-L125 | [serving/build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
+| Both generated paths are git-ignored with the reason recorded inline. | ignore rules for `package_data/dashboard` | [.gitignore](agents-remember/.gitignore) |
+
+## Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local build step.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
 ## Update History
 
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1 rewrote this card. The script is now a release build step,
+  not a commit-gate drift check: `--check`, the `dist`↔`package_data` tree comparison, the
+  fingerprint re-verification, and the "no `dist` yet" no-op are all removed with the committed
+  bundle they described (master decision OQ6). `sync()` refuses an absent or non-current `dist`
+  instead of stamping over it, and the sidecar value is read back out of the bundle's compiled
+  `__AR_DASHBOARD_BUILD__` literal rather than asserted over the tree. The previous body's
+  "the shipped bundle under `package_data/dashboard/` is committed" invariant and its two-gate
+  `check()` description are obsolete and were removed rather than annotated. Verification metadata
+  is pinned to the pre-leaf source authority until closeout stamps the code commit.
 - 2026-07-10T15:07+02:00 — No source impact: 260707-HFX2-L17 recorded the dashboard
   role-selection/binding-role build as a source-fingerprint plus dist/package tree proof at this
   sync boundary. Generated hashed assets remain excluded from onboarding.

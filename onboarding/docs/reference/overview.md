@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-24T14:44Z |
+| lastUpdated | 2026-07-31T04:28+02:00 |
 | lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
 | lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 
@@ -35,19 +35,32 @@ remain separate contracts.
 For commit-gate and closeout questions, `mcp-tools.md` is the public tool-surface
 reference, `worktrees-c09.md` owns the quality-before-commit sequence, and
 `skills.md` records that synchronized skill copies are checked at both
-pre-commit and pre-push.
+pre-commit and pre-push. Two facts these docs predate (260731-EFA-L1, recorded on
+the root overview): the two hook tiers are not equivalent — pre-commit runs a
+fast staged-content tier without the wrapper, and pre-push runs the full one —
+and the closeout gate applies to any repository whose checkout carries the
+wrapper rather than only to `agents-remember`. The skill-copy checks named here
+do run in both tiers and are unaffected.
 
 ## 260718-CHATS-L5I Commit-Gate Reference Impact
 
 The public reference route now exposes the same mandatory source-quality order
 as the implementation and runtime guidance. `worktree_closeout_apply` runs the
-strict project-owned wrapper before an Agents Remember source commit;
+strict project-owned wrapper before a source commit — in any repository whose
+checkout carries that wrapper, since 260731-EFA-L1 removed the
+`agents-remember`-only condition;
 `worktrees-c09.md` places that gate before code, onboarding, memory, and ledger
 commit steps; and the skills reference names both pre-commit and pre-push sync
 checks. These are documentation projections of the existing gate authority, not
 independent bypasses or alternative check sequences.
 
 ## Update History
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: flagged the two commit-gate facts these public
+  reference documents now predate — the fast/full hook tier split (pre-commit no longer runs the
+  wrapper) and the removal of the repository-name condition from the closeout gate. The skill-copy
+  check claim remains true in both tiers. The referenced `docs/` sources are pathRules-excluded, so
+  the durable contract lives on the root overview. Verification metadata remains pinned.
+
 - 2026-07-24T14:44Z — 260718-CHATS-L5I preview-gate remediation: refreshed the
   route body for the public MCP closeout description, strict
   quality-before-commit worktree order, and pre-commit/pre-push skill-sync

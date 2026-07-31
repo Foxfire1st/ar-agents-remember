@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T20:24+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -54,7 +54,29 @@ packages from `mcp/src`. The `[tool.setuptools.package-data]` block ships the in
 runtime scaffold — `package_data/**/*` (AGENTS.md templates, skills, provider
 assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 — so `runtime_install` can reconcile those package-owned assets into a
-coordinator from a pip/uvx install with no source checkout.
+coordinator from a pip/uvx install with no source checkout. Dotfiles need their
+own explicit entry; `**/*` does not match them.
+
+### The Dashboard Bundle Is Packaged But Not Committed (260731-EFA-L1)
+
+`package_data/**/*` is **recursive** (setuptools globs package data with `recursive=True`), so
+whatever is present under `package_data` at build time ships. That deliberately includes the
+cockpit bundle at `package_data/dashboard/` and its `package_data/dashboard.fingerprint` sidecar,
+neither of which is in version control (master decision OQ6, 2026-07-31).
+
+The consequences a packager must know:
+
+- **The release job owns the build.** `publish-mcp-to-pypi.yml` runs `npm run build` and then
+  `scripts/sync-dashboard.py` **before** `python -m build`, because package data is read from the
+  source tree at build time. It then asserts both the wheel and the sdist contain
+  `agents_remember/package_data/dashboard/index.html` and
+  `agents_remember/package_data/dashboard.fingerprint`, so "the release quietly shipped no
+  dashboard" is a build failure rather than a support ticket.
+- **Building from a checkout with no bundle still succeeds.** The glob simply matches nothing.
+  Packaging does not fail; the installed server reports the absence itself (`serving/static.py`
+  answers 503 naming the build command), which is why no packaging-time guard is needed here.
+- **Nothing in this file needs to change when the frontend changes.** The declaration is a glob
+  over a directory, not a manifest of assets.
 
 The package `version` tracks the release line. Its exact current value lives in
 the source rather than being repeated here; it is the same string
@@ -79,6 +101,12 @@ the source rather than being repeated here; it is the same string
 - The installable runtime scaffold is shipped as `package-data` under
   `agents_remember/package_data/`; assets `runtime_install` reconciles into a
   coordinator must live inside that tree to be packaged by a pip/uvx install.
+- `package_data/dashboard/` and `package_data/dashboard.fingerprint` are **generated at release
+  time and git-ignored**. Do not commit them, do not add them to this file as explicit entries, and
+  do not make packaging fail when they are absent — a source build without Node is a supported
+  state whose documented remedy is `npm --prefix dashboard run build`.
+- The wheel and the sdist must both carry the bundle. The release workflow, not this file, is where
+  that is enforced.
 
 ## Repo-Internal References
 
@@ -91,9 +119,20 @@ the source rather than being repeated here; it is the same string
 | MCP server payloads report the package-level `SERVER_VERSION`. | [__init__.py](agents-remember/mcp/src/agents_remember/mcp/__init__.py) |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | [README.md](agents-remember/mcp/README.md) |
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| The release job builds the frontend, places the bundle, packages, and then verifies both distributions carry the bundle and its fingerprint sidecar. | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
+| The placement step whose output this recursive glob picks up at build time. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| Both generated dashboard paths are git-ignored, with the reason recorded inline. | [.gitignore](agents-remember/.gitignore) |
+| An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
 
 ## Update History
 
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1: recorded that `package_data/**/*` is recursive and now
+  carries a cockpit bundle that is **not** in version control. The release job builds the frontend
+  and runs `scripts/sync-dashboard.py` before `python -m build`, then asserts the wheel and sdist
+  both contain the bundle and `dashboard.fingerprint`; a checkout with no bundle still packages
+  successfully because the glob matches nothing and the server reports the absence itself. No
+  dependency, entry-point, discovery-root, or version contract changed. Verification metadata
+  pinned to the pre-leaf source authority until closeout stamps the code commit.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: added `watchfiles` (`>=1.1,<2`) as a **core** runtime
   dependency — the inotify backend for `serving/change_watcher.py`'s change-driven projection
   pacing (decision-logged; no prior watch library in the tree). Missing-wheel behaviour is a loud

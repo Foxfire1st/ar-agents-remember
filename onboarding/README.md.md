@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T04:28+02:00 |
+| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
+| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -136,18 +136,44 @@ The README describes external memory in general terms, but this file-level onboa
 | --- | --- | --- |
 | No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
+## 260731-EFA-L1 Current Delta — The Gate Paragraph Is Now Tiered
+
+The README's generated-copy section previously said "both hooks also run
+`python -m agents_remember.code_quality.check`". That is no longer true and the paragraph was
+rewritten. The public contract it now states:
+
+- Both hooks are thin wrappers over `.githooks/_gate.sh`, which takes the tier as its argument.
+- **pre-commit** runs the fast tier over the **staged** content: the generated-copy checks
+  (`sync-skills.py --check`, `sync-runtime.py --check`), plus Ruff and Pyright.
+- **pre-push** runs the full tier: the wrapper, enforcing Ruff, Pyright, the full pytest suite, and
+  the configured CRAP threshold.
+- **CI** runs that same wrapper on **every branch push and every pull request**, not only `main`.
+- **Closeout** runs it before creating a code commit even when hooks are not configured.
+- The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
+  there rather than duplicating them.
+
+Note that `sync-dashboard.py` is **not** among the generated-copy checks any more — it is a release
+build step with no `--check` mode, because the bundle it places is no longer in version control.
+
 ## 260718-CHATS-L5I Current Delta
 
-The README now presents the repository's mission-control welcome capture immediately below the canonical documentation links. The image is a product illustration, not an onboarding source: its PNG path remains excluded by the memory path rules.
+The README presents the repository's mission-control welcome capture immediately below the canonical documentation links. The image is a product illustration, not an onboarding source: its PNG path remains excluded by the memory path rules.
 
-Its developer section now also states the commit-gate contract: pre-commit and pre-push run the
-default project quality wrapper, and worktree closeout runs that same strict wrapper before creating
-an Agents Remember code commit. Ruff, Pyright, the full pytest suite, and the configured CRAP
-threshold are therefore one public default contract rather than an optional strict mode.
+Its developer section states the commit-gate contract as a public default rather than an optional
+strict mode: Ruff, Pyright, the full pytest suite, and the configured CRAP threshold are one
+wrapper, and closeout runs it before creating a code commit. (The *distribution* of that wrapper
+across the two hooks was retiered by 260731-EFA-L1 — see the current delta above, which supersedes
+this entry's "pre-commit and pre-push both run the wrapper" wording.)
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-07-31T04:28+02:00 — 260731-EFA-L1: rewrote the README's hook paragraph for the fast/full tier
+  split over the shared `.githooks/_gate.sh`, recorded that CI now runs on every branch push and
+  pull request rather than only `main`, and pointed readers at CONTRIBUTING.md for the tier table
+  and staged-content stash contract. Verification metadata pinned to the pre-leaf source authority
+  until closeout stamps the code commit.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: added the README's public
   pre-commit/pre-push/closeout strict-wrapper contract; verification remains pinned until the code
