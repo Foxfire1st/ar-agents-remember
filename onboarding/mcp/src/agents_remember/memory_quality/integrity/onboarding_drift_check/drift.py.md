@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -29,6 +29,14 @@ context, discovers onboarding, classifies, writes the report, and prints
 text/JSON/CSV). MCP tools call package-level summary/controller code that reuses
 the same classifiers.
 
+Since 260731-EFA-L3 one re-exported name is no longer package-local: `run_git` is imported from
+`agents_remember.kernel.git_command` (the single owner) instead of from the sibling `git_ops`. It is
+still listed in `__all__`, so `drift.run_git` keeps resolving — now to the one runner. `main` is the
+only local caller: `git_check = run_git(code_repository_root, ["rev-parse", "--show-toplevel"])`,
+the guard that rejects a `--code-repository-root` that is not a git repository. That guard is exactly
+the kind of call the consolidation matters for, since it now runs with the repository selectors
+scrubbed rather than answering out of whatever `GIT_DIR` names.
+
 ### Conventions
 
 `__all__` enumerates the re-exported surface so the facade stays an explicit,
@@ -47,7 +55,8 @@ external classifier via the shared `is_sidecar_storage` predicate from
 - `c-02-memory-quality-control` skill detects and reports drift; it must not rewrite onboarding.
 - Implementation responsibilities live in `models`, `git_ops`, `discovery`,
   `entities`, `inline`, `sidecar`, and `report`; this file must stay a facade
-  plus `classify_source`/`main` and not re-accumulate logic.
+  plus `classify_source`/`main` and not re-accumulate logic. The git subprocess runner is the one
+  re-exported name that lives outside the package, in `kernel.git_command`.
 - Public names removed or renamed here are a compatibility break for `baseline`,
   `summary`, and `check_missing_onboarding`, which import from this module.
 
@@ -68,9 +77,16 @@ external classifier via the shared `is_sidecar_storage` predicate from
 | Sidecar/overview and entity/inline classifiers. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
 | Report rendering and path resolution. | [report.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py) |
 | Summary generation reuses the facade's classifiers. | [summary.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
+| The re-exported `run_git` and `main`'s git-repository guard resolve here, not to `git_ops`. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Update History
 
+- 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: `run_git` is now imported from
+  `kernel.git_command` rather than the sibling `git_ops`, so the facade's re-export (still in
+  `__all__`) and `main`'s `rev-parse --show-toplevel` guard resolve to the single owner. Recorded
+  that in Logic, noted the runner as the one implementation that lives outside the module list in
+  Invariants, and added the `git_command.py` reference row. `__all__` and every classifier are
+  unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update only — `main()` now builds a
   `CoordinationHints` for `resolve_coordination_context`. No flag, classifier or report changed.
   Verification metadata pinned until closeout stamps the L2 commit.

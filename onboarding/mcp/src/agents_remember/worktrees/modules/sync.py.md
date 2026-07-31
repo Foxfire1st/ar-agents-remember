@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                         |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -72,6 +72,20 @@ States are data, never exceptions: `synced`, `would-sync`, `already-current`,
 and blocked payloads with `next_guidance` recovery args mirror the start
 module's blocked-state pattern.
 
+**One bounded exception since 260731-EFA-L3.** `run_git` is now
+`agents_remember.kernel.git_command.run_git` (the module-local copy in `modules.git` is
+gone), and it always applies a timeout — the default local class
+`GIT_LOCAL_TIMEOUT_SECONDS = 300`, which every `run_git` call in this file takes because
+none passes `timeout=`. The only `except` in the module is `except LedgerError` around
+`parse_ledger_text` in `_consistent_pair_block`, so a git command that outruns 300s raises
+`subprocess.TimeoutExpired` out of `sync_result` rather than returning a blocked state.
+That is a change of failure *shape*, not of reachability: the old local runner passed no
+`timeout=` at all, so the same wedged `merge`/`show` hung the MCP tool call forever
+instead. The bound names the slowest legitimate `merge`/`status` over a large tree, so
+tripping it means git is stalled — typically on an index lock another process holds — not
+that a real sync was cut short. Every state and payload the sync itself produces is
+unchanged.
+
 ### Invariants And Boundaries
 
 - The base pair moves together or not at all (modulo the explicit
@@ -103,6 +117,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Detection surface: `worktree_status`'s fetch-free freshness block recommends this tool. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | The contract's `sync_log` field persists each base-pair advance. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Upstream fetch + ref helpers come from the freshness kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
+| The `run_git` every merge/ff/show in this module calls, and the `GIT_LOCAL_TIMEOUT_SECONDS` default that bounds them. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 | Sync behavior coverage: ff pair, mid-cycle block, conflicts, choices, dry-run. | [test_worktree_sync.py](agents-remember/mcp/tests/test_worktree_sync.py) |
 
 ## Cross-Repo References
@@ -115,6 +130,16 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: `run_git` now comes from
+  `kernel.git_command`, not `modules.git`. The module's own logic is untouched, but the
+  Conventions section asserted "States are data, never exceptions" without qualification and that no
+  longer holds unconditionally: the shared runner always sets a timeout (the 300s
+  `GIT_LOCAL_TIMEOUT_SECONDS` default, taken by all six `run_git` calls here — `_consistent_pair_block`,
+  `_sync_code`, `_aborted_merge_state` x2, `_move_memory_branch` x2), the module's only `except` is
+  `LedgerError`, so a stalled git raises `subprocess.TimeoutExpired` out of `sync_result` where the
+  old unbounded local runner hung instead. Recorded that one bounded exception and added the
+  `kernel/git_command.py` reference. Verification metadata pinned until closeout stamps the L3
+  commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0912` armed with no
   exemptions): extracted `_stop_before_sync`, `_memory_sync_block`, `_memory_branch_move`,
   `_move_memory_branch` and the shared `_aborted_merge_state` (now used by both the code and memory

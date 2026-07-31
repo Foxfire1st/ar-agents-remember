@@ -70,7 +70,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1071,
+    "sourceFilesInScope": 1074,
     "fileSidecars": 17,
     "childRoutes": 8
   },
@@ -194,7 +194,7 @@
       "EFA",
       "CRAP",
       "repo-overview",
-      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d"
+      "abc7cbcc74921cdcb57a61529445f61641e919e7"
     ]
   },
   "fallback": {

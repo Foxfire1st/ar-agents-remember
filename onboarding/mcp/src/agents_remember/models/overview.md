@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`|
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -113,6 +113,23 @@ never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gai
   validation pass treats the missing key as a required-field error.
 - Flexible models are for intentionally raw/detail payloads, not a shortcut for
   avoiding a stable public contract.
+- **Nothing on this route may reach the network while the package is importing.**
+  `tokens.py` builds `DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` at module
+  scope, and `mcp/tools/base.py` imports `finalize_payload_tokens` from it — so
+  that construction runs on the server's startup path, and anything it touches
+  runs there too. Adding a second `tiktoken` encoding therefore means
+  vendoring its vocabulary too — `vendored_vocabulary_cache` raises
+  `TokenizerVocabularyError` (`errors.py`) for any name other than
+  `VENDORED_ENCODING_NAME` rather than letting `tiktoken` download it.
+- **A vendored vocabulary is verified by this route before `tiktoken` is pointed at
+  it, never afterwards.** `_verify_vendored_vocabulary` hashes the file against
+  `VENDORED_VOCABULARY_SHA256` and raises for absent, unshipped, *or byte-wrong*;
+  only then does `vendored_vocabulary_cache` set `TIKTOKEN_CACHE_DIR`, and only to
+  the verified file's own parent directory. Delegating the check to `tiktoken` is not
+  equivalent and must not be "simplified" back: `tiktoken.load.read_file_cached`
+  checks the same digest but answers a mismatch by deleting the file and downloading
+  a replacement over it — inside an installed package that is a startup fetch plus a
+  rewrite of the installed tree, or a `PermissionError` on a read-only install.
 - Tools whose bulk moved to `temp/tool-reports/` (2.5.1: runtime install,
   provider diagnostics/watchers; 2.5.2: carryover plan/apply) document the
   compact wire fields as optional declared fields on their flexible models —
@@ -147,7 +164,94 @@ readiness and liveness, correlated receipts sit beneath durable inbox rows, inte
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
+## 260731-EFA-L3 Route Impact — `tokens.py` Counts Offline
+
+The token counter no longer downloads its vocabulary. `TiktokenTokenCounter.__post_init__` used to
+call `tiktoken.get_encoding("o200k_base")` bare, which on a cold cache fetched
+`o200k_base.tiktoken` from `openaipublic.blob.core.windows.net` — and because
+`DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` is built at module scope on the import path of
+every MCP tool, that HTTPS round trip happened *while the server was starting*. A fresh container,
+an offline machine or a hermetic CI job could not start the server at all.
+
+The vocabulary now ships inside the package at
+`agents_remember/package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`. That file name is
+not decoration: `tiktoken.load.read_file_cached` keys its cache on `sha1(url)`, so it is the only
+name a cache hit can have, and `vendored_vocabulary_path()` recomputes it from
+`VENDORED_VOCABULARY_URL` rather than hard-coding the digest — the shipped file and the download it
+replaces stay provably the same thing. `__post_init__` now loads inside
+`vendored_vocabulary_cache(self.encodingName)`, which points `TIKTOKEN_CACHE_DIR` at the vendored
+directory for the duration of that one load, under `_CACHE_DIR_LOCK`, and restores
+the operator's previous value afterwards. Scoped rather than exported, because the vendored
+directory sits inside an installed (usually read-only) package and any *other* encoding loaded later
+in the process would try to write its download there. The operator's own `TIKTOKEN_CACHE_DIR` is
+deliberately overridden rather than honoured — theirs may be cold, and honouring a cold one is
+exactly the download this exists to remove.
+
+**The route verifies the vocabulary itself, before tiktoken is told where to look.**
+`vendored_vocabulary_cache` calls the private `_verify_vendored_vocabulary(encoding_name)` as its
+first statement — ahead of the lock and ahead of any environment mutation — and that helper raises
+`TokenizerVocabularyError` in three cases: an encoding this package does not ship, an absent file,
+and a file whose SHA-256 does not equal `VENDORED_VOCABULARY_SHA256`. It then hands back the
+verified path, and only *that file's own parent directory* is ever exported, so tiktoken cannot be
+pointed at a directory whose contents were not checked.
+
+Leaving the digest to tiktoken is not the same thing, and the difference is the whole point.
+tiktoken checks the same SHA-256, but it does **not** fail closed on a mismatch:
+`tiktoken.load.read_file_cached` deletes the offending cached file and downloads a replacement over
+it. Pointed at this package's directory, that turns a corrupt vendored copy into a silent network
+fetch on the server's startup path *and* a rewrite of the installed tree — or, on the read-only
+install this module is written for, into a `PermissionError` from the write-back instead of the
+designed refusal. Checking first is what makes corruption behave like absence. `VENDORED_VOCABULARY_SHA256`
+is restated here rather than imported, and that is not a second source of truth:
+`mcp/tests/test_cold_start.py` re-derives it from the installed tiktoken, so a release that changes
+what tiktoken asks for fails there. Hashing costs one full read of 3.6 MB per counter construction,
+which in the server is once per process.
+
+`_CACHE_DIR_LOCK` is a `threading.RLock`, not a `Lock`, because the guarded region spans the `yield`
+in an exported context manager. The obvious use of one —
+`with vendored_vocabulary_cache(name): TiktokenTokenCounter()` — has the counter's own load re-enter
+the manager on the same thread, which on a non-reentrant lock is a permanent hang with no timeout
+and no traceback rather than a wrong answer. The lock's honest scope is "the counters this package
+builds": `TIKTOKEN_CACHE_DIR` is process-global and belongs to tiktoken, so a thread that reads or
+writes it without coming through here can still observe or clobber the override, and nothing at this
+layer can prevent that.
+
+Nothing about the response contract changed: the shipped bytes are the download's bytes, so counts
+are the same numbers and `name` still reports
+`tiktoken:o200k_base`. There is deliberately no approximate fallback — a fallback would make a
+reported count depend on whether the machine that produced it had egress, silently mixing exact and
+estimated values inside one dashboard aggregate. A vendored file that is missing **or present with
+the wrong bytes** raises `TokenizerVocabularyError` instead, naming both the expected and the found
+digest, so a build that failed to ship it — or a `core.autocrlf=true` checkout that rewrote its line
+endings — says so at startup rather than working only where the network happens to be reachable.
+
 ## Update History
+- 2026-07-31T22:38+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
+  **Corrected the parenthetical "(tiktoken verifies its SHA-256 on load)", which credited tiktoken
+  with an integrity guarantee it does not provide.** `tokens.py` now verifies the digest itself:
+  `_verify_vendored_vocabulary` hashes the file against the new `VENDORED_VOCABULARY_SHA256` and
+  raises `TokenizerVocabularyError` for absent, unshipped, or byte-wrong — and
+  `vendored_vocabulary_cache` calls it as its *first* statement, ahead of the lock and ahead of
+  touching `TIKTOKEN_CACHE_DIR`. Recorded why: `tiktoken.load.read_file_cached` checks the same hash
+  but answers a mismatch by deleting the file and downloading a replacement over it, which inside an
+  installed package is a startup fetch plus a rewrite of the installed tree (or a `PermissionError`
+  on a read-only install). Also corrected the cache-override sentence — the directory handed to
+  tiktoken is the *verified file's own parent*, not `VENDORED_VOCABULARY_DIR` reached independently
+  — and recorded that `_CACHE_DIR_LOCK` is now a `threading.RLock` because the guarded region spans
+  the `yield` and the documented `with vendored_vocabulary_cache(...): TiktokenTokenCounter()` use
+  re-enters it on the same thread, where a plain `Lock` hangs forever with no diagnostic. Changed
+  "a missing vendored file raises" to missing **or byte-wrong**, and added a second import-path
+  invariant covering the verify-before-delegate rule. Response models, field names, the strict/
+  flexible split and the reported `tiktoken:o200k_base` counter name are all unchanged.
+  Verification metadata pinned until closeout stamps the L3 commit.
+- 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: recorded that `tokens.py` no longer fetches the
+  `o200k_base` vocabulary at import. Added the route-impact section above (vendored
+  `package_data/tiktoken/<sha1(url)>` file, `vendored_vocabulary_path()`/`vendored_vocabulary_cache`,
+  the scoped-and-locked `TIKTOKEN_CACHE_DIR` override, no approximate fallback) and one new
+  invariant: nothing on this route may touch the network during import, so a second `tiktoken`
+  encoding must be vendored or `TokenizerVocabularyError` refuses it. Response contracts, field
+  names and reported counter name are unchanged. Verification metadata pinned until closeout stamps
+  the L3 commit.
 - 2026-07-31T16:55+02:00 — No route impact: re-verified the attestation below in the exact form the
   closeout gate reads. Both changed files in this route (`context_packet.py`, `memory.py`) were
   parsed at the L2 base commit and at the current revision and their syntax trees are identical, so

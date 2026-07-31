@@ -6,21 +6,26 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `610b8568b6517a78a80d35583101b32ed396e2a7` |
-| lastVerifiedCommitDate | 2026-06-11T15:49:54+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
 
-`git_ops.py` is the git interaction boundary for drift detection. It runs git
-subprocesses and derives the source-change notes and deterministic evidence
-fingerprints the classifiers rely on.
+`git_ops.py` is the git interaction boundary for drift detection. It derives the source-change
+notes and deterministic evidence fingerprints the classifiers rely on, over the one shared git
+runner.
 
 ## Code Commentary
 
 ### Logic
 
-`run_git` wraps `subprocess.run` with `safe.directory` and `stdin=DEVNULL`;
+Since 260731-EFA-L3 this module owns no runner. Its local `run_git` — a bare `subprocess.run` with
+`safe.directory` and `stdin=DEVNULL`, but no environment guard, no timeout and no explicit encoding
+— was deleted, and every helper here now calls `run_git` imported from
+`agents_remember.kernel.git_command`, e.g. `run_git(repo_root, ["ls-files", "-z"])` in
+`list_repo_sources`. No call site passes `timeout=`, so they all take the runner's default
+`GIT_LOCAL_TIMEOUT_SECONDS` (300s).
 `git_stdout`/`git_blob_hash` read single values; `compute_git_blob_set_fingerprint`
 sorts evidence paths, resolves each `HEAD:<path>` blob, and sha256s the
 `path\\0blob` list. Both fingerprint helpers take keyword-only `ref` (default
@@ -31,12 +36,17 @@ and `current_branch_name` expose repo facts.
 
 ### Conventions
 
-Git subprocesses use `stdin=subprocess.DEVNULL` so they cannot consume MCP stdio
-transport input.
+Git subprocesses still cannot consume MCP stdio transport input, but the guarantee is
+`kernel.git_command.run_git`'s: it passes `stdin=subprocess.DEVNULL` unless a caller supplies
+`input_text`, and no helper here supplies one.
 
 ### Invariants And Boundaries
 
 - External git boundary only: it provides facts, it does not classify or decide policy.
+- No second runner: every git subprocess here is `kernel.git_command.run_git`. The
+  `env=git_environment()` scrubbing that keeps `git ls-files` / `git diff --quiet` off an ambient
+  `GIT_DIR` — and therefore keeps `list_repo_sources` and `local_change_note` reporting on the
+  repository the caller passed — belongs to that function, not to this module.
 - The `git-blob-set-v1` fingerprint is a deterministic Git blob-set hash over curated evidence paths.
 
 ## Repo-Internal References
@@ -44,9 +54,16 @@ transport input.
 | Finding | Source Path |
 | --- | --- |
 | `entities.py` recomputes entity fingerprints and change notes through these helpers. | [entities.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
-| `sidecar.py` reads source diff/notes through `run_git` and the change-note helpers. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| `sidecar.py` imports the `local_change_note` / `local_route_change_note` helpers from here; its own `cat-file` and `diff --quiet` calls go straight to the kernel runner. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| `run_git` lives here now: selector scrubbing, DEVNULL stdin, and the local/remote/metadata timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Update History
 
+- 2026-07-31T20:54+02:00 — 260731-EFA-L3 curator: the local `run_git` was deleted and every helper
+  re-pointed at `kernel.git_command.run_git`, so the Logic sentence describing this module's own
+  `subprocess.run` wrapper and the Conventions claim that it sets `stdin=DEVNULL` were both false.
+  Rewrote them, recorded that no helper passes `timeout=` (so all take the 300s local default),
+  added the "no second runner" invariant, and corrected the `sidecar.py` reference row: sidecar no
+  longer imports `run_git` from here, only the change-note helpers.
 - 2026-06-11T15:05+02:00 — `git_blob_hash()` and `compute_git_blob_set_fingerprint()` accept a keyword-only `ref` (default `HEAD`) so the carryover entity-catalog validation can recompute fingerprints against the official code ref.
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.

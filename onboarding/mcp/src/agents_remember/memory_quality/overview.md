@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -100,8 +100,54 @@ rebuilt at every branch, and a field could silently disagree between two of them
   [kernel/coordination_context](../kernel/coordination_context/overview.md)). Resolved contexts are
   identical.
 
+## 260731-EFA-L3 — Every Verdict Is Now Read Through One Git Runner
+
+Every check this route emits is ultimately a statement about *a repository*: which files
+the worktree added, which blobs a source has, whether a recorded commit is in history.
+Two files in this route each carried their own private `run_git`, and both were the
+kernel's runner with `env=git_environment()` dropped — the guard that strips the eight
+`GIT_DIR`-family repository selectors. `cwd=` does not defeat those variables, so with
+`GIT_DIR` exported these checks would read a *different repository* and emit verdicts
+about it in the current one's name. Both copies are gone; both files now import
+`run_git` from `agents_remember.kernel.git_command`.
+
+- **`integrity/check_missing_onboarding.py`** is the pre-code-commit gate, so a
+  misdirected read is not a wrong report but a wrongly-passed gate — this is the check
+  whose stated boundary above is that it is "local worktree responsibility, not a
+  whole-repository adoption scan", and until this leaf an exported `GIT_DIR` was enough
+  to make it enumerate someone else's worktree. Its private runner always raised on a
+  nonzero return, so `run_git` was the wrong name for it; it is now **`require_git`**
+  (line 176), delegating to the owner and keeping the fail-fast contract. It still
+  returns the `CompletedProcess` rather than stripped text — unlike the same-named
+  helper in `worktrees/modules/git.py` — because every caller reads NUL-delimited
+  output that a `.strip()` would corrupt. Both call sites moved:
+  `worktree_added_sources` (lines 82-83, the three `-z` enumerations) and
+  `code_repository_name_from_git` (line 192, the `--git-common-dir` probe that decides
+  which repository name the finding is filed under).
+- **`integrity/onboarding_drift_check/git_ops.py`** is the drift classifier's entire git
+  surface — `current_branch_name` (line 15), `local_change_note` (line 22),
+  `list_repo_sources` (line 41), `git_stdout` (line 54), `git_blob_hash` (line 61) and
+  the entity fingerprints built on it. Its `run_git` was the route's other copy and is
+  deleted; `drift.py`, `report.py` and `sidecar.py` correspondingly import `run_git`
+  from the kernel rather than re-exporting it through `git_ops`.
+
+The checks, their names, their classification vocabulary and their emitted rows are
+unchanged. What changed is that a verdict can no longer be computed against a repository
+the caller did not name. `mcp/tests/test_git_command.py` holds the proof against a decoy
+repository named by the selectors.
+
 ## Update History
 
+- 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: recorded that this route no longer contains a
+  git runner. `integrity/onboarding_drift_check/git_ops.py` and
+  `integrity/check_missing_onboarding.py` each held a private `run_git` that was the kernel's
+  runner minus `env=git_environment()`, so an exported `GIT_DIR` could make these checks read a
+  different repository — including the pre-code-commit gate whose stated boundary is that it is
+  local-worktree-scoped. Both now call `kernel/git_command.run_git`; the misnamed always-raising
+  copy in `check_missing_onboarding.py` became `require_git` (line 176), with
+  `worktree_added_sources` and `code_repository_name_from_git` moved onto it. No statement in the
+  body was false — the route model, check catalogue and emitted rows are unchanged — this adds the
+  correctness fact behind them. Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: verdict construction was centralized per classifier
   (`_missing_sidecar_onboarding`/`_missing_inline_onboarding`, `sidecar.py`'s `row(...)` closure
   and `_early_classification`, `EntityCatalog` in `entities.py`), and both CLI entry points now

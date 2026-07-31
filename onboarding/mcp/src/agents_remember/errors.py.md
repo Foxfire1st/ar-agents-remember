@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`                    |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                    |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ Codex protocol, and client-side first-byte ambiguity families. 260718-CHATS-L0 a
 conversation-composition family: `ConversationCompositionError` marks a violated app-scoped
 conversation runtime composition contract, kept distinct from `AuthorityError`, which remains the
 type for identity/authorization refusals such as the conversation resolver's loopback ruling.
+260731-EFA-L3 adds `TokenizerVocabularyError`: a build-integrity family for a packaged asset the
+server needs before it can finish starting.
 
 ## Code Commentary
 
@@ -37,7 +39,12 @@ without conflating it with `AuthorityError`, which remains the type for a root m
 write authority. `ConversationCompositionError` identifies a conversation runtime composition bug —
 retrieval before installation, a second install, a foreign object on the reserved state key, or
 construction missing a required authority — that must fail at startup or request entry, never
-silently at first use.
+silently at first use. `TokenizerVocabularyError` (L40-L48) marks the one packaging failure the
+token counter cannot paper over: the tiktoken vocabulary it needs is not the one vendored into
+`package_data/tiktoken`. It is raised in place of letting tiktoken download the file it cannot
+find, because the counter is constructed while the MCP tool surface is still importing — a
+download there is a network round trip on the server's startup path, which is what made a cold
+container, an offline machine, and a hermetic CI job unable to start at all.
 
 ### Conventions
 
@@ -64,6 +71,11 @@ an explicit constructor argument, not inferred later from exception text.
 - Conversation composition failures (missing/duplicate/foreign/missing-member runtime binding)
   remain `ConversationCompositionError`; identity and cross-principal refusals in the same route
   remain `AuthorityError` — the two families are never interchangeable.
+- `TokenizerVocabularyError` must stay a raise, never a fallback. A missing vendored vocabulary is
+  a build defect, and the only alternatives are downloading it (the startup network call this
+  exists to remove) or silently degrading the counter, which would make the failure visible only
+  on machines without egress. It is not an authority or protocol failure and shares no boundary
+  with the harness-control family.
 
 ### Todos
 
@@ -86,8 +98,9 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 | --- | --- | --- |
 | The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | L237-L280 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The ordered dispatcher converts native disconnect evidence into requeued or `unknown` receipts without blind resend: a disconnect certified pre-send requeues the head, a `may_have_sent` disconnect installs the ambiguity barrier instead. (`HarnessControlQueue` is now only a facade over `HarnessSubmissionAuthority`, which owns this.) | L865-L892; L1051-L1061; L1082-L1117 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
+| The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes: `_untracked_source_candidates` re-raises `lstat` failures, `_require_repository_root` raises `AuthorityError`, and `_run_git` converts `TimeoutExpired`/`OSError` with `from error`. | L126-L205 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
 | The conversation runtime raises `ConversationCompositionError` for missing/duplicate/foreign/missing-member bindings; the resolver raises `AuthorityError` for identity refusals. | L73-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
+| `vendored_vocabulary_cache` is the sole raiser of `TokenizerVocabularyError` — an unknown encoding name or an absent vendored file raises before the `TIKTOKEN_CACHE_DIR` override is installed — and `TiktokenTokenCounter` is the caller that enters it on the import path. | L56-L95; L133-L154 | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
 
 ## Cross-Repo References
 
@@ -114,10 +127,26 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 `NativeHistoryUnavailable` identifies one child/history read that can fail without invalidating
 the shared adapter; its stable `code` carries the exact local reason. The
 `NativeHistoryLimitExceeded` subtype adds `actual_bytes` and `limit_bytes` and fixes its code to
-`materialization-limit` (L124-L144). These types distinguish child-local acquisition/resource
+`materialization-limit` (L135-L155). These types distinguish child-local acquisition/resource
 outcomes from malformed shared protocol and bridge-fatal transport failure.
 
 ## Update History
+
+- 2026-07-31T20:56+02:00 — 260731-EFA-L3 curator: body updated for the typed error this leaf added.
+  Documented `TokenizerVocabularyError` (L40-L48) in Purpose and Logic as a build-integrity family
+  — the vendored tiktoken vocabulary is absent or not the one shipped — raised instead of letting
+  tiktoken download it on the server's import-time startup path, and added the invariant that it
+  must stay a raise rather than become a download or a silent degrade. Repaired 2 citations into
+  files this leaf changed. (1) The census row's whole-file `L1-L226` → `L126-L205`, which actually
+  contains the three claimed raisers: `_untracked_source_candidates` re-raising `lstat` failures
+  (L140-L150), `_require_repository_root` raising `AuthorityError` (L159-L179), and `_run_git`
+  converting `TimeoutExpired`/`OSError` `from error` (L189-L205); the file is now 229 lines, so the
+  old range was both stale and unanchored. (2) The native-history delta's own-file `(L124-L144)` →
+  `(L135-L155)`: inserting `TokenizerVocabularyError` above pushed `NativeHistoryUnavailable` to
+  L135-L140 and `NativeHistoryLimitExceeded`, with its `code="materialization-limit"`,
+  `actual_bytes` and `limit_bytes`, to L143-L155. Added a `models/tokens.py` row for the sole
+  raiser. The `harness_control_client.py`, `harness_submission_authority.py` and
+  `serving/conversation/runtime.py` ranges were left alone — this leaf touched none of those files.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that moved when the command queue became a facade. `harness_control_queue.py` (227 lines) now only forwards to `HarnessSubmissionAuthority`, so the disconnect-evidence row was repointed to `harness_submission_authority.py` (`_send_and_settle` branching on `may_have_sent` L865-L892, `_certified_pre_send_busy` requeue L1051-L1061, `_possible_send_failure`/`_set_unknown_locked` L1082-L1117) and the claim reworded to say requeued-or-`unknown` rather than rejected-or-unknown.
 

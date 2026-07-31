@@ -54,6 +54,7 @@
     "mcp/tests/test_codex_app_server_protocol.py",
     "mcp/tests/test_codex_history_production_path.py",
     "mcp/tests/test_codex_native_history.py",
+    "mcp/tests/test_cold_start.py",
     "mcp/tests/test_compact_content.py",
     "mcp/tests/test_config.py",
     "mcp/tests/test_context_packet.py",
@@ -95,6 +96,7 @@
     "mcp/tests/test_expectation_rows.py",
     "mcp/tests/test_gate_scope.py",
     "mcp/tests/test_gated_integration_runner.py",
+    "mcp/tests/test_git_command.py",
     "mcp/tests/test_git_freshness.py",
     "mcp/tests/test_harness_adapters.py",
     "mcp/tests/test_harness_capabilities.py",
@@ -222,8 +224,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 200,
-    "fileSidecars": 210,
+    "sourceFilesInScope": 202,
+    "fileSidecars": 212,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -281,6 +283,8 @@
     "code",
     "codex",
     "codex_app_server_0_144_3",
+    "cold",
+    "command",
     "comms",
     "compact",
     "composition",
@@ -304,9 +308,7 @@
     "cs6",
     "current",
     "cursor",
-    "daemon",
-    "dashboard",
-    "degradation"
+    "daemon"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",

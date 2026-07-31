@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -99,8 +99,36 @@ checkout have no file left to touch and stay in the graph as phantoms until an e
 `_stale_index_skip` records a delta this run did not deliver, and `_deliver_seed_touches` claims
 `caughtUp` **only with zero residuals**. That last rule is the one not to break.
 
+## 260731-EFA-L3 — The Seed's Git Reads Name This Repository
+
+Every freshness verdict above rests on two git reads, and both used to build their own
+`subprocess.run` invocation inside `seed.py`. They now go through the package's single runner,
+`run_git` in `kernel/git_command.py`, which strips the eight `GIT_DIR`-family repository selectors
+(`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
+`GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`) from the child
+environment. That matters here specifically because of what the verdict is used for:
+
+- `git_head_or_none` — with `GIT_DIR` exported it would have returned *another* repository's HEAD,
+  and the seed would then have been declared fresh against a commit this repo never had.
+- `seed_commit_divergence` — the catch-up `git diff --name-status source target` that decides which
+  paths the post-watcher stage touches. It passes an explicit
+  `_CATCH_UP_DIFF_TIMEOUT_SECONDS = 60`, deliberately tighter than the runner's general
+  `GIT_LOCAL_TIMEOUT_SECONDS = 300`: this runs during provider setup, and a repo whose diff has not
+  answered in a minute was never going to be caught up by a per-file touch pass anyway.
+
+No seeding rule changed — catch-up rather than teardown, UNRELATABLE-only refusal, explicit-only
+from-zero reindex, and `caughtUp` conditioned on zero residuals all still hold exactly as written
+above. What changed is that the repository those rules are evaluated against is now guaranteed.
+
 ## Update History
 
+- 2026-07-31T21:00+02:00 — 260731-EFA-L3 curator: added the section above. `seed.py` lost its two
+  hand-built `subprocess.run` git invocations; `git_head_or_none` and `seed_commit_divergence` now
+  call the one owner `run_git` (`kernel/git_command.py`), so an inherited `GIT_DIR` can no longer
+  make the seed read a different repository's HEAD and bless itself fresh, and the catch-up diff
+  carries a named `_CATCH_UP_DIFF_TIMEOUT_SECONDS = 60` instead of an inline literal. Verified
+  against the current `seed.py` that no seeding rule this overview records changed. Verification
+  metadata pinned until closeout stamps the L3 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: seeding kept every rule and gained the vocabulary for
   them — `_CgcSeedEnd` names source and target instead of relying on argument order,
   `_seed_precondition_skip`/`_seed_locations` stage resolution so the first skip wins,

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover.py`                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-31T00:00+02:00                                      |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                  |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                  |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -52,8 +52,28 @@ cleanliness proof, `required_official_storage(official_memory)` must return effe
 memory `StorageSettings`. Missing, invalid, unsupported, or semantically empty authority raises
 `AuthorityError` before ledger, onboarding, route-index, commit, or branch mutation. The validated
 settings object is reused by `_refresh_official_route_indexes()` so the write and derived-index
-steps cannot disagree about path-rule authority. The local input-bearing Git adapter also uses
-`git_environment()` to scrub ambient repository selectors.
+steps cannot disagree about path-rule authority.
+
+**Git now runs through the one owner (260731-EFA-L3).** This module no longer carries a local
+`subprocess.run` adapter. It imports `run_git` from `agents_remember.kernel.git_command` and keeps
+only `require_git`, which adds this module's contract — a non-zero exit is fatal — and returns the
+stripped stdout every caller here wants:
+
+```python
+def require_git(repo: Path, args: list[str], *, input_text: str | None = None) -> str:
+    result = run_git(repo, args, input_text=input_text)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or f"git {' '.join(args)} failed")
+    return result.stdout.strip()
+```
+
+`patch_id` is the only caller in the package that feeds git's stdin —
+`run_git(repo, ["patch-id", "--stable"], input_text=diff_text)` — which is why `input_text` is a
+keyword parameter of the shared runner rather than of a local copy. The ambient-selector scrubbing
+this module used to perform for itself with `git_environment()` is now unconditional inside
+`run_git` (`env=git_environment()`), and every carryover git call additionally inherits the shared
+runner's `timeout=GIT_LOCAL_TIMEOUT_SECONDS` (300s) default, `encoding="utf-8"` and
+`errors="surrogateescape"`. The removed local adapter had none of the last three.
 
 ### Conventions
 
@@ -72,6 +92,9 @@ authorize mutation.
 - Authority refusal is exact zero mutation: official HEAD, Git status, non-Git bytes, source bytes,
   route-index presence, and ledger state remain unchanged.
 - Git children use scrubbed repository-selection environment and never inherit the MCP stdio pipe.
+  Both guarantees are the single `kernel.git_command.run_git`'s, not a module-local copy's: it always
+  passes `env=git_environment()`, and `stdin=subprocess.DEVNULL` unless a caller supplies
+  `input_text`. This module must not grow a second runner.
 - Post-merge head mapping runs only when no auto-carry or review-required candidate remains.
 - Memory `main` advances ff-only and is never forced across divergence.
 
@@ -96,6 +119,7 @@ matrix define the current write-authority contract.
 | Route-index rendering requires and reuses explicit repository/storage authority. | L101-L203 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 | Full-apply tests pin empty/unsupported refusal, retention/repopulation acceptance, official-over-source selection, and exact zero mutation. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
 | Ledger updates remain delegated to the kernel memory-ledger service. | memory ledger API | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | L24-L96 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 
 ## Cross-Repo References
 
@@ -108,6 +132,12 @@ authorization implementation remains package-local.
 
 ## Update History
 
+- 2026-07-31T20:52+02:00 — 260731-EFA-L3 curator: the module's local `run_git` (the only copy that
+  accepted `input_text`) was deleted and every git call re-pointed at
+  `kernel.git_command.run_git`; `require_git` now just wraps it. Rewrote the MX-FIX-4 note that
+  claimed a "local input-bearing Git adapter" scrubs selectors — that adapter no longer exists —
+  and recorded what the shared runner adds on top of the deleted copy (300s local timeout,
+  `encoding="utf-8"`, `errors="surrogateescape"`). Added a `git_command.py` L24-L96 reference row.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `CarryoverRefs`, `MemoryOnlyDoc` and `OfficialLedger` parameter objects and
   re-signed `candidate_for_path`, `memory_only_doc_candidates`, `_memory_only_evidence` and

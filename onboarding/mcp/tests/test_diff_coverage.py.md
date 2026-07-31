@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,6 +32,11 @@ Module helpers: `git()`, `write()`, `coverage_report()` (a Coverage.py JSON repo
 exactly like the wrapper's), and `seeded_repository()` (one committed module plus the
 commit it was committed in).
 
+There is exactly one patch in the file, and it is not a stubbed diff: the wrapper-agreement test
+patches `diff_coverage.git_command.run_git` to raise `subprocess.TimeoutExpired`, because a git
+that hangs for 300 seconds cannot be produced from a real repository inside a unit test. Its
+other half — a missing project root — still uses the real runner.
+
 ## Code Commentary
 
 ### `BaseResolutionTests` — which commit "changed" is measured against
@@ -42,6 +47,22 @@ An unknown explicit base is an **error, not a silent fallback**; a candidate wit
 history is skipped rather than used; a first commit with no merge base compares against the
 empty tree; a broken git invocation raises rather than reporting "nothing changed" (the
 failure mode that would silently disable the floor).
+
+The class also pins the seam between the module's three git wrappers, now that all of them go
+through one `_git` on `kernel.git_command.run_git`:
+
+- `test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives `run_git`,
+  `revision_exists` and `merge_base` twice over. First against a `project_root` that does not
+  exist: the shared runner passes `cwd=`, so `subprocess.run` raises `FileNotFoundError` before
+  git is started, where the old `git -C <missing>` merely exited non-zero and two of the three
+  answered `False` / `None`. Then with `diff_coverage.git_command.run_git` patched to raise
+  `subprocess.TimeoutExpired(cmd=["git"], timeout=300)` — a bound the old inline call did not
+  have at all. All six calls must raise `DiffScopeError`. This is the regression against the
+  conversion drifting back into `run_git` alone.
+- `test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` is its counterweight: on a
+  real seeded repository, a known revision is `True`, `no-such-revision` is `False`, and
+  `merge_base(root, "main")` is the seed commit. The conversion is for failures to *run* git;
+  applying it to git's negatives would turn every ordinary "no" into a gate crash.
 
 ### `ChangedLineTests` — what counts as a changed line
 
@@ -72,9 +93,14 @@ uncovered changed lines**.
 
 ## Invariants And Boundaries
 
-- Real repositories only. Do not replace them with canned diff text.
+- Real repositories only. Do not replace them with canned diff text. The single `patch.object`
+  in the file stands in for a wedged git, which no real repository can produce on demand.
 - Every failure mode fails **closed**: unknown base, broken git, missing coverage JSON, and
   statement-only coverage all fail rather than reporting a clean diff.
+- `run_git`, `revision_exists` and `merge_base` must keep answering the same way about what is a
+  failure (`DiffScopeError` for a git that could not run) and what is an answer (`False` / `None`
+  for a git that ran and said no). Both halves are asserted, because either one alone can be
+  satisfied by a change that breaks the other.
 - The floor is per-diff, not per-file or per-project; it says nothing about total coverage.
 - The floor lives in the full (pre-push) tier and in CI, because it needs a diff base.
 
@@ -85,8 +111,24 @@ uncovered changed lines**.
 | The module under test: base resolution, changed-line collection, and the measurement. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
 | The wrapper that runs the floor as a step and exposes its two flags. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
 | The tier that carries the floor, and why the fast tier cannot. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
+| The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
 
 ## Update History
+
+- 2026-07-31T21:20+02:00 — 260731-EFA-L3 curator: `BaseResolutionTests` gained two tests this leaf
+  and the card did not mention them. Added both to the `BaseResolutionTests` section:
+  `test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` (all three of
+  `run_git` / `revision_exists` / `merge_base` must raise `DiffScopeError` for a missing
+  `project_root` and for a patched `git_command.run_git` raising
+  `TimeoutExpired(cmd=["git"], timeout=300)` — the two failures the shared runner introduced, since
+  it passes `cwd=` and bounds every call where the old inline `git -C <path>` did neither) and
+  `test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` (a missing revision stays
+  `False`, an absent merge base stays `None`). Qualified "The Method That Matters": the file is no
+  longer patch-free, and the one `patch.object` is named along with why a real repository cannot
+  produce a wedged git. Added the matching invariant and reference rows for `kernel/git_command.py`
+  and `mcp/tests/test_git_command.py`. No citation ranges in this card — its reference table
+  carries source paths only.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   changed-lines coverage floor suite. Verification metadata is pinned to the leaf's

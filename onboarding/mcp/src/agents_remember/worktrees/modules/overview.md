@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -22,8 +22,13 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
 
 ## Hot Path Summary
 
-- `git.py` owns raw Git subprocess operations and small repository state checks,
-  including `committed_changed_paths` (issue #83: the unverified committed
+- `git.py` owns this route's Git vocabulary — the typed helpers and small repository
+  state checks every operation module speaks — but **since 260731-EFA-L3 it no longer
+  owns a Git runner**. It imports the one owner (`from agents_remember.kernel.git_command
+  import run_git`, line 7), and its own `require_git` (line 18) is now just
+  raise-on-nonzero over it. See the 260731-EFA-L3 section below for why that
+  distinction is a correctness property and not bookkeeping. Its helpers include
+  `committed_changed_paths` (issue #83: the unverified committed
   range — tree-diff `base..HEAD` ∩ `verified..HEAD`) and the
   `commit_text_or_none` baseline reader behind the closeout body gates.
   **Operations-integration L3** adds `changed_files_with_counts(repo, base, head=None)`
@@ -79,7 +84,18 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
 - `landing.py` (slice 5h; hardened 5l P2) observes the successful-landing arc
   best-effort — `git ls-remote` branch tips (`origin/<feat>`, `origin/mem-main`) +
   a best-effort `gh pr list`, all timeout-bounded and `stdin=DEVNULL` (the #49
-  stdio-pipe guard), gated to the landing window (closeout-completed onward) so the
+  stdio-pipe guard). Since 260731-EFA-L3 the two `ls-remote` probes get both of those
+  properties from the shared runner rather than hand-rolling them —
+  `run_git(repo, [...], timeout=_PROBE_TIMEOUT_SECONDS)` at `_remote_branch` (line 56)
+  and `_default_branch` (line 79), keeping the deliberately short 8s probe bound
+  (`_PROBE_TIMEOUT_SECONDS`, line 31) rather than inheriting a runner default. The
+  `gh pr list` in `_pr_for` (line 93) is not git and still builds its own
+  `subprocess.run`, but it now takes `env=git_environment()` (line 124) — `gh`
+  resolves the repository *through* git, so an inherited `GIT_DIR` would have it list
+  another repository's pull requests under this worktree's branch name, and `cwd=repo`
+  does not outrank the selectors for `gh` any more than it does for `git`. It is the
+  package's only non-git spawn that reads a repository.
+  The probes are gated to the landing window (closeout-completed onward) so the
   status poll stays network-free during the build phase; `guidance.py`'s
   `status_payload` emits its result as the `landing` block, and the observer reducer
   composes it onto `EngineProcessNode.landing`. Probe failures degrade to
@@ -259,7 +275,113 @@ route-level vocabulary rather than local tidy-ups:
 precedence contract. `context.py` builds the kernel resolver's `CoordinationHints` /
 `EnclosureSelector`. Every payload, refusal, recovery choice and written contract is unchanged.
 
+## 260731-EFA-L3 This Route No Longer Runs Its Own Git
+
+**`git.py` used to define its own `run_git`, and it was the kernel's function with the
+environment guard dropped.** Only `kernel/git_command.py`'s copy passed
+`env=git_environment()`, which strips the eight `GIT_DIR`-family repository selectors
+(`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
+`GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`).
+`cwd=` does not defeat those variables — git consults them first — so with `GIT_DIR`
+exported the *same logical operation* landed in a different repository depending on
+which copy ran.
+
+This route is where that mattered most, because this route is where the destructive
+verbs live. All of these are reachable from the former unguarded copy and are still
+here, now on the owner:
+
+| Operation | Site |
+| --- | --- |
+| `commit` | `git.py` `commit_if_dirty` (line 85) |
+| `merge --ff-only` | `integrate.py` (line 460, and memory at 465) |
+| `reset --hard` | `integrate.py` rollback (lines 476-477) |
+| `rebase` | `integrate.py` (lines 182, 234) |
+| `branch -f` | `start.py` (line 386) |
+| `branch -D` | `cleanup.py` (lines 72, 89) |
+| `worktree remove [--force]` | `cleanup.py` (line 27) |
+| `push origin --delete` | `cleanup.py` `_push_branch_deletion` (line 137) |
+
+All nine git-touching modules in this route now import from
+`agents_remember.kernel.git_command`: `git.py`, `abandon.py`, `guidance.py`,
+`integrate.py`, `start.py`, `sync.py` and `cleanup.py` take `run_git`, while
+`landing.py` and `code_quality_gate.py` take both `run_git` and `git_environment`
+(they each also spawn something that is not `git` — see below). Nothing about the
+helpers themselves changed.
+
+**The runner had to be made fit to be the only one before it could be the only one.**
+Its `timeout` was hard-coded to `5`, which is right for `rev-parse` and absurd for a
+rebase, so consolidating onto it unchanged would have turned every integrate into a
+five-second timeout. `timeout` is now a per-call parameter with three named classes —
+`GIT_LOCAL_TIMEOUT_SECONDS = 300` (the default: rebase/merge/status),
+`GIT_REMOTE_TIMEOUT_SECONDS = 120`, `GIT_METADATA_TIMEOUT_SECONDS = 30`. This route's
+local work takes the default; `landing.py` keeps its own shorter 8s probe bound.
+
+Three route-visible consequences beyond "same behaviour, one runner":
+
+- **`cleanup.py`'s remote calls are bounded for the first time.** `git ls-remote --heads
+  origin` and `git push origin --delete` ran inside an MCP tool call, which the client
+  cannot cancel, through a runner that set no timeout at all — an unreachable or wedged
+  remote held the tool call open forever. `_remote_git` (line 108) runs them at
+  `GIT_REMOTE_TIMEOUT_SECONDS` and returns `None` on `subprocess.TimeoutExpired`, which
+  `delete_remote_branch_if_present` (line 122) and `_push_branch_deletion` (line 136)
+  fold into the already-handled `{"remote_deleted": False, "reason": "remote-unreachable"}`.
+  A stall therefore reads as an unreachable remote in the payload rather than escaping
+  as an exception or hanging.
+- **`code_quality_gate.py`'s repository probe is guarded.** `_git_common_dir` (line 176)
+  hand-rolled `subprocess.run` without `env=`; it now calls
+  `run_git(code_worktree, ["rev-parse", "--path-format=absolute", "--git-common-dir"])`
+  (line 179). That value decides which repository the mandatory closeout quality gate
+  then certifies, and this gate runs from the pre-push hook — where `GIT_DIR` *is* set
+  by git itself.
+- **`code_quality_gate.py` also stops handing the selectors to its child.**
+  `quality_environment` (line 157) used to start from `dict(os.environ)`; it now builds
+  from `git_environment()` (line 167), so the eight repository selectors are gone before
+  the quality wrapper subprocess starts. That wrapper derives its own scope from
+  `git ls-files` and its diff base from `merge-base`, and closeout spawns it from paths
+  where `GIT_DIR` can be exported. Every git call inside that child strips the selectors
+  itself today, so this is defence in depth — but the gate decides *which repository gets
+  certified*, and that must not rest on the continued good behaviour of a process this
+  one cannot see.
+
+`mcp/tests/test_git_command.py` is the proof: it points every selector at a decoy
+repository and asserts the real one received the commit and the decoy did not
+(`test_a_commit_lands_in_the_real_repository_not_the_decoy`), plus
+`test_a_stalled_push_reports_unreachable_instead_of_hanging` and
+`test_both_remote_calls_carry_the_remote_bound` for the cleanup path. `conftest.py` also
+strips the selectors, but the decoy test re-sets them inside its own scope precisely so
+it cannot pass on the conftest's account — do not "simplify" that away.
+
 ## Update History
+- 2026-07-31T22:52+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
+  **Repaired the two citations the fixes moved and confirmed the other eleven.** Still correct,
+  each re-read against the current file and confirmed to contain the symbol the claim names:
+  `git.py` `commit_if_dirty` L85, `integrate.py` merge L460/L465, `reset --hard` L476-L477, rebase
+  L182/L234, `start.py` `branch -f` L386, `cleanup.py` `worktree remove` L27, `branch -D` L72/L89,
+  `_remote_git` L108, `delete_remote_branch_if_present` L122, `_push_branch_deletion` L136-L137,
+  and `landing.py`'s `_PROBE_TIMEOUT_SECONDS` L31 with its two `run_git` probes at L56 and L79.
+  **Moved:** `code_quality_gate.py::_git_common_dir` L168 → **L176** and its `run_git` call L171 →
+  **L179** (`quality_environment` gained a docstring above them); `landing.py::_pr_for` was cited at
+  L104, which is inside the `gh` argv rather than at the definition — now **L93**. **Two new
+  route-visible facts:** `quality_environment` (L157) now builds from `git_environment()` (L167)
+  instead of `dict(os.environ)`, so the spawned quality wrapper no longer inherits the eight
+  repository selectors — the gate decides which repository gets certified and must not depend on a
+  child process behaving; and `_pr_for`'s `gh pr list` spawn now passes `env=git_environment()`
+  (L124), because `gh` resolves the repository through git and would otherwise list another
+  repository's pull requests under this worktree's branch name. Corrected the import roll-call,
+  which named six modules: all nine git-touching modules in this route import from the kernel runner
+  (`cleanup.py`, `code_quality_gate.py` and `landing.py` were missing). Verification metadata pinned
+  until closeout stamps the L3 commit.
+- 2026-07-31T20:52+02:00 — 260731-EFA-L3 curator: corrected the `git.py` Hot Path bullet,
+  which claimed the module "owns raw Git subprocess operations" — it no longer owns a
+  runner at all, only Git vocabulary over the one owner (`kernel/git_command.run_git`,
+  imported at `git.py` line 7; `require_git` at line 18). Made the `landing.py` bullet
+  precise about which of its probes are now shared-runner calls versus the `gh`
+  subprocess it still builds itself. Added the "This Route No Longer Runs Its Own Git"
+  section: the dropped `env=git_environment()` guard and the destructive operations that
+  sat behind it, the three timeout classes that had to exist before consolidation was
+  safe, `cleanup.py`'s newly bounded remote calls (`_remote_git`, stall folds into
+  `remote-unreachable`), and `code_quality_gate.py`'s guarded `_git_common_dir`.
+  Verification metadata pinned until closeout stamps the L3 commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2: route-wide parameter-object pass (`VerifiedChange`,
   `ContractTask`/`LeafIdentity`/`RepoBranchPlan`, `StartingEnclosure`/`StartBeat`,
   `RetiringBranch`, `IntegrationSources`/`IntegratedCommits`, `ProviderSetupJob`) plus the

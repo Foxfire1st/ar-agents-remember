@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -206,6 +206,17 @@ For master task starts, `start_contract.py` creates or loads the root series con
 
 ## Update History
 
+- 2026-07-31T21:01+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
+  `start.py` is one import line — `run_git` moved out of the `modules.git` import block to
+  `agents_remember.kernel.git_command`; `current_branch`, `head_commit`,
+  `longest_tracked_path_length` and `require_git` still come from `modules.git`. This sidecar names
+  no runner, subprocess style or timeout, so nothing in it became false. I re-verified the two body
+  claims that do name git commands against the current file: `_fast_forward_stale_branches` still
+  does `merge --ff-only` for the checked-out branch and `branch -f` for a parked one, still
+  collecting a non-zero return into `staleBases` as `recovery_error`; and
+  `_memory_divergence_paths` still computes the changed-path set with
+  `run_git(source, ["diff", "--name-only", source_head, target_head])` in the source repo. Both
+  still describe the code exactly.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915`/`PLR0913`
   armed with no exemptions): `start_result` was split into `_existing_contract_result` (attach vs
   recreate), `_preflighted_contract` (stale-base, fast-forward rebuild, long-path — returns the

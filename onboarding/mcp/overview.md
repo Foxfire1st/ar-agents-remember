@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -506,9 +506,65 @@ one exact Git/path-rule source snapshot for membership, coverage, and counts.
 Tracked and untracked records are NUL-delimited, ignored/generated paths are
 excluded by Git plus resolved storage rules, symlinks are classified without
 following their targets, and ambient Git repository selectors are scrubbed by
-`kernel/git_command.py`. Controllers and worktree closeout pass the resolved
+`kernel/git_command.py` — which since 260731-EFA-L3 is the **only** module in
+this package that spawns git at all, so that scrubbing is no longer a census
+property. Controllers and worktree closeout pass the resolved
 repository identity and `StorageSettings` explicitly rather than rediscovering
-authority inside the builder. Branch-memory carryover (`memory/carryover.py`)
+authority inside the builder.
+
+**`kernel/git_command.py` is the package's one git runner (260731-EFA-L3).** Six
+near-identical private copies had drifted apart — in `worktrees/modules/git.py`,
+`code_quality/diff_coverage.py`, `memory/carryover.py`,
+`memory_quality/integrity/check_missing_onboarding.py`,
+`memory_quality/integrity/onboarding_drift_check/git_ops.py` and
+`kernel/route_index_census.py` — and only the kernel's passed
+`env=git_environment()`. With `GIT_DIR` exported, the same logical operation
+therefore landed in a *different repository* depending on which copy ran, and the
+unguarded worktree copy sat behind `commit`, `merge --ff-only`, `reset --hard`,
+`rebase`, `branch -D`, `worktree remove --force` and `push origin --delete`.
+**Twenty-six package modules import from the single runner** — re-counted against the current
+tree, and the count needs both import shapes to come out right: twenty-four take the symbol
+(`from agents_remember.kernel.git_command import ...`) and two take the module
+(`from agents_remember.kernel import git_command`, in `code_quality/check.py` and
+`code_quality/diff_coverage.py`). Three of the twenty-six want `git_environment()` rather than, or
+as well as, `run_git`: `benchmarks/runner_modules/commands.py` composes its own argv so the runner
+cannot carry it; `worktrees/modules/landing.py::_pr_for` spawns `gh pr list`, which is not git but
+resolves the repository *through* git, so an inherited `GIT_DIR` would list another repository's
+pull requests; and `worktrees/modules/code_quality_gate.py::quality_environment` builds the
+environment it hands the spawned quality wrapper, so the selectors are stripped before that child
+starts rather than relying on every git call inside it to strip them again.
+
+The runner always scrubs the eight selectors, always declares its stdin — `DEVNULL`, or
+`input_text` for the `git patch-id` call in `memory/carryover.py` — and carries three
+timeout classes in place of the former hard-coded `timeout=5`:
+`GIT_LOCAL_TIMEOUT_SECONDS = 300` (a rebase or status over a large tree can
+legitimately churn for minutes), `GIT_REMOTE_TIMEOUT_SECONDS = 120` (a remote that
+has not moved bytes is wedged, and a wedged remote inside an MCP tool call has no
+cancellation path), and `GIT_METADATA_TIMEOUT_SECONDS = 30` for constant-time reads
+on interactive paths. Consolidating onto the old five-second bound unchanged would
+have replaced a redirection bug with a five-second failure on every integrate.
+
+**The class belongs to the command, not to the module that calls it.** Consolidating onto a runner
+whose *default* is the local bound would have silently moved every `rev-parse` from 5s to 300s — a
+60x loosening on reads that sit under `resolve_context`, which runs on essentially every tool call,
+with no cancellation path for the client. So the band is named per command:
+`rev-parse --is-inside-work-tree`, `rev-parse HEAD`, `branch --show-current` and
+`rev-parse --abbrev-ref <branch>@{upstream}` take the metadata bound, while `status --porcelain`
+and `rev-list --left-right --count` are not constant time (one stats the whole work tree, the other
+walks history) and keep the local bound **explicitly named** rather than defaulted.
+`kernel/git_facts.py::_git_stdout` makes `timeout` a *required* keyword-only argument for exactly
+that reason — a call site that leaves the class to the default is a type error, not a quiet
+inheritance. `kernel/git_freshness.py::fetch_remote` keeps its own 30s `DEFAULT_FETCH_TIMEOUT`.
+`mcp/tests/test_git_command.py::TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel`
+pins the rule where it was already broken: `branch --show-current` and `rev-parse HEAD` are called
+from both `kernel/coordination_context/cross_repo.py` and `kernel/git_facts.py`, and the test
+asserts the two modules agree.
+
+`mcp/tests/test_git_command.py` holds every half: a decoy repository the selectors
+point at, an AST sweep that fails if a seventh runner appears, a guard-on-the-guard suite that
+plants each bypass form the sweep must catch, and the per-command timeout assertions above.
+
+Branch-memory carryover (`memory/carryover.py`)
 plans route-overview candidates beside file sidecars (route-keyed, never
 auto-carried when content differs), requires effective official-memory storage
 authority through `memory/carryover_authority.py` before any write, regenerates
@@ -528,6 +584,36 @@ by `scripts/sync-dashboard.py`. Since 260731-EFA-L1 that placement is a **releas
 bundle is git-ignored, no hook or CI job checks it, and `scripts/sync-dashboard.py` has no
 `--check` mode. It is covered by `mcp/tests/test_sync_dashboard.py` and driven by
 `.github/workflows/publish-mcp-to-pypi.yml`.
+
+`package_data/` has a **third population** since 260731-EFA-L3, and it is neither synced from a
+canonical root folder nor built at release: `package_data/tiktoken/` holds the vendored `o200k_base`
+vocabulary that `models/tokens.py` counts response tokens with. Unlike the dashboard bundle it is
+**tracked in version control**, its file name is `sha1(<download URL>)` because that is the only name
+`tiktoken.load.read_file_cached` can hit, and root `.gitattributes` names **that exact filename**
+`-text` so no EOL filter can touch it on a `core.autocrlf=true` clone. It ships
+because `mcp/tools/base.py` imports `models/tokens.py` and `DEFAULT_TOKEN_COUNTER` is built at module
+scope: before the file was vendored, `tiktoken.get_encoding("o200k_base")` opened an HTTPS connection
+to `openaipublic.blob.core.windows.net` while the server was still importing, so a fresh container,
+an offline machine and a hermetic CI job could not start the server at all.
+
+**This package verifies the vocabulary itself, and that is a correctness property rather than
+belt-and-braces.** `vendored_vocabulary_cache` calls the private `_verify_vendored_vocabulary` first,
+*before* it touches `TIKTOKEN_CACHE_DIR` at all, and that helper raises `TokenizerVocabularyError`
+for three cases: an encoding this package does not ship, an absent file, and a file whose SHA-256
+does not match `VENDORED_VOCABULARY_SHA256`. Leaving the digest check to tiktoken would not have
+been equivalent — tiktoken checks the same hash but does **not** fail closed on it:
+`read_file_cached` deletes the offending file and downloads a replacement over it, which pointed at
+this package's directory means a network fetch on the startup path plus a rewrite of the installed
+tree, or a `PermissionError` from the write-back on the read-only installs this is written for.
+Checking first is what makes corruption behave like absence. Only the *verified* file's own parent
+directory is then handed to tiktoken, so it cannot be pointed at a directory whose contents were not
+checked, and the override is scoped to the one load (the vendored directory sits inside the
+installed package, which is routinely read-only). `_CACHE_DIR_LOCK` is a `threading.RLock` rather
+than a `Lock` because the guarded region spans the `yield`: the obvious use of an exported context
+manager — `with vendored_vocabulary_cache(name): TiktokenTokenCounter()` — has the counter's own
+load re-enter it on the same thread, which on a plain `Lock` is a permanent hang with no timeout and
+no diagnostic. Counts and the reported `tiktoken:o200k_base` name are unchanged — the shipped bytes
+are the download — and `mcp/tests/test_cold_start.py` is the regression line.
 
 ## Route Model
 
@@ -900,6 +986,39 @@ into the role files.
   (`stdin=DEVNULL` or piped `input`), enforced by the
   `test_subprocess_hygiene.py` AST guard and the end-to-end stdio transport
   test (2.5.1, GitHub #49).
+- **No module may spawn `git` itself** (260731-EFA-L3): every git subprocess goes
+  through `kernel/git_command.py::run_git`, which scrubs the eight
+  `GIT_DIR`-family repository selectors, declares its stdin, and takes one of the
+  three timeout classes. A wrapper that adds a typed domain error is fine —
+  `code_quality/diff_coverage.py` does, and since the consolidation that conversion
+  lives in its private `_git` helper rather than in one of the three public wrappers,
+  so `run_git`, `revision_exists` and `merge_base` cannot disagree about which
+  failures are the gate's own `DiffScopeError` — but a second *spawner* is not, and
+  `mcp/tests/test_git_command.py::SingleRunnerTests` fails when one appears. An
+  environment guard that is present in one copy and absent in another is not a
+  guard; six copies had already drifted that way. The sweep's reach is stated and
+  test-backed rather than assumed (`SingleRunnerGuardReachTests`): it follows
+  `from subprocess import run` aliases, treats a path-qualified argv head
+  (`/usr/bin/git`) as git, and refuses to accept a `**kwargs` splat as proof that
+  `env=` was passed. One blind spot is documented and stays open by design — an argv
+  that is not a list literal at the call site — which is why the module in that shape
+  (`benchmarks/runner_modules/commands.py`) is asserted directly instead.
+- **A git command's timeout class is decided by the command, never by the module**
+  (260731-EFA-L3). Constant-time reads take `GIT_METADATA_TIMEOUT_SECONDS`; anything
+  that stats the work tree or walks history takes `GIT_LOCAL_TIMEOUT_SECONDS` and
+  names it explicitly. The same command called from two modules must carry the same
+  bound — it did not, and `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel`
+  is what keeps it that way. Where a helper forwards a timeout it should require it
+  (`kernel/git_facts.py::_git_stdout` takes `timeout` keyword-only with no default),
+  so an unclassified call site fails rather than silently inheriting the local bound.
+- **Nothing on the server's import path may reach the network** (260731-EFA-L3).
+  The tool surface is imported while the MCP handshake is starting, so a download
+  there is a startup dependency on egress: the `o200k_base` vocabulary is vendored
+  under `package_data/tiktoken/` and an absent one raises
+  `TokenizerVocabularyError` instead of being fetched. Do not add an approximate
+  fallback for a missing vocabulary — that would make a reported token count depend
+  on whether the machine had network, mixing exact and estimated counts inside one
+  dashboard aggregate.
 - Provider readiness is content-gated, not liveness-gated: global `ok`
   requires both running containers and actual graph/workspace content;
   healthy-but-busy targets surface in the compact summary's `indexing` list
@@ -1004,6 +1123,8 @@ implementation governs its hash rollover or static mount.
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
 | Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
 | Deterministic route indexes consume one validated tracked/untracked Git census and resolved path-rule authority; route rendering reuses the frozen repository and eligible-path sets. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py); [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py); [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Every `git` subprocess in the package goes through one runner that always scrubs the eight repository-selector variables, declares its stdin (`input_text` only for `git patch-id`), and carries local/remote/metadata timeout classes; a decoy-repository suite and an AST sweep fail if a second spawner appears. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py); [worktrees/modules/git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py); [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| The `o200k_base` tokenizer vocabulary is vendored under `package_data/tiktoken/` so the import-time default counter never downloads it; an absent file, an unshipped encoding, or a copy whose SHA-256 does not match raises `TokenizerVocabularyError` — checked in `_verify_vendored_vocabulary` before tiktoken is pointed at the directory, because tiktoken answers a mismatch by deleting and re-downloading — and the cold-start suite starts the real server with every socket call blocked. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py); [errors.py](agents-remember/mcp/src/agents_remember/errors.py); [test_cold_start.py](agents-remember/mcp/tests/test_cold_start.py) |
 | Carryover validates effective official-memory JSON or Markdown storage authority before mutation and reuses it for official route-index refresh. | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py); [carryover_authority.py](agents-remember/mcp/src/agents_remember/memory/carryover_authority.py); [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
 | The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py); [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py); [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py); [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
@@ -1119,6 +1240,50 @@ fuse remains an emergency framing limit, separate from the 16 MiB materialized s
 ceiling and smaller output-page budgets.
 
 ## Update History
+
+- 2026-07-31T22:20+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
+  **Re-counted the single-runner importers rather than trusting the figure: still twenty-six**, but
+  the number only reconciles with both import shapes counted — twenty-four symbol-style
+  (`from agents_remember.kernel.git_command import ...`) plus two module-style
+  (`from agents_remember.kernel import git_command`, in `code_quality/check.py` and
+  `code_quality/diff_coverage.py`, the latter added by this leaf's error-conversion fix). Corrected
+  the parenthetical that made `benchmarks/runner_modules/commands.py` sound like the only
+  `git_environment()` consumer: `landing.py::_pr_for` now passes it to the `gh pr list` spawn (gh is
+  not git but resolves the repository through git), and `code_quality_gate.py::quality_environment`
+  now builds from it so the spawned quality wrapper does not inherit the eight selectors.
+  **Recorded the timeout rule the fixes actually established** — the class is picked per command,
+  not per module: `kernel/git_facts.py::_git_stdout` takes `timeout` keyword-only *with no default*,
+  `rev-parse --is-inside-work-tree` / `rev-parse HEAD` / `branch --show-current` /
+  `rev-parse --abbrev-ref …@{upstream}` take the metadata band while `status --porcelain` and
+  `rev-list --left-right --count` name the local band explicitly, and
+  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` pins `cross_repo.py` and
+  `git_facts.py` to the same answer. **Corrected the cold-start half, which credited tiktoken with
+  the integrity guarantee:** `.gitattributes` names the exact filename (not the directory) `-text`,
+  and `models/tokens.py::_verify_vendored_vocabulary` hashes the file against
+  `VENDORED_VOCABULARY_SHA256` before `TIKTOKEN_CACHE_DIR` is touched — tiktoken checks the same
+  hash but answers a mismatch by deleting the file and downloading a replacement over it, which
+  inside an installed package is a startup fetch plus a tree rewrite. Added that only the verified
+  file's own parent directory is handed over and that `_CACHE_DIR_LOCK` is an `RLock` (the
+  guarded region spans the `yield`; the documented
+  `with vendored_vocabulary_cache(...): TiktokenTokenCounter()` use re-enters on the same thread).
+  Extended the no-second-spawner invariant with `SingleRunnerGuardReachTests`' three closed blind
+  spots and `diff_coverage.py`'s error conversion moving into `_git`. Verification metadata pinned
+  until closeout stamps the code commit.
+
+- 2026-07-31T21:05+02:00 — 260731-EFA-L3 curator: **corrected the claim that made selector scrubbing
+  look like a route-index-census detail.** `kernel/git_command.py` is now the only module in this
+  package that spawns git: six near-identical private copies (worktrees git, diff-coverage,
+  carryover, missing-onboarding, drift git-ops, census) were consolidated onto it, only the kernel's
+  had passed `env=git_environment()`, and the unguarded worktree copy sat behind `reset --hard`,
+  `branch -D`, `worktree remove --force` and `push origin --delete`. Recorded the runner's three
+  timeout classes (300/120/30) replacing the hard-coded `timeout=5` and the `input_text` stdin path
+  for `git patch-id`. **Completed the `package_data/` description**, which enumerated only synced
+  runtime assets and the release-built dashboard: `package_data/tiktoken/` is a third, tracked,
+  neither-synced-nor-built population — the vendored `o200k_base` vocabulary that lets the server
+  import with no network egress, with `.gitattributes` marking it `-text` so an autocrlf clone cannot
+  break its checksum. Added two invariants (one git runner; nothing on the import path may reach the
+  network, and no approximate-count fallback) and two package-map rows. Verification metadata pinned
+  until closeout stamps the code commit.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations on the
   serving-conversation row, all whole-file spans that had drifted past their stamped end. Verified

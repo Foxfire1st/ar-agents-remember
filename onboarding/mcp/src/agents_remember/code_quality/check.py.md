@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -102,6 +102,27 @@ exact failure this module exists to prevent.
 **The wrapper takes no path arguments at all.** There is no supported way to narrow what the
 gate certifies.
 
+#### The Scope Query Runs On The Package's One Git Runner
+
+`git_ls_files` does not spawn `git` itself. It builds `["ls-files", "-z", "--", *patterns]` and
+hands it to `agents_remember.kernel.git_command.run_git`, which strips the `GIT_DIR`-family
+repository selectors (`GIT_REPOSITORY_SELECTOR_ENV`: `GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`,
+`GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`,
+`GIT_PREFIX`) from the child environment before running.
+
+That is load-bearing for *this* module in particular, and the source says why: **this gate runs
+from the `pre-push` hook, and git exports `GIT_DIR` to its hooks.** An unstripped `ls-files` here
+would derive the entire gate's scope — every path Ruff lints, Pyright types and coverage measures —
+from whichever repository `GIT_DIR` named, so the wrapper would certify a tree nobody was pushing.
+Of all the git call sites in this package, the gate's were the ones most certain to meet the
+variables they did not strip.
+
+The failure conversion moved with it. `run_git` returns a `CompletedProcess` with `check=False`, so
+`git_ls_files` raises `ScopeError` on *both* halves: `except (OSError, subprocess.SubprocessError)`
+for a git that cannot run at all — which also now covers `subprocess.TimeoutExpired`, since the
+runner bounds every call (300s locally by default) — and an explicit `completed.returncode != 0`
+branch that puts the exit code and git's `stderr` in the message. Neither can return an empty list.
+
 ### The Two Post-Suite Scorers
 
 `run_crap_calculator` renders the fixed-length `--top` table, then — separately — lists
@@ -141,7 +162,12 @@ the report to a temporary directory unless `--coverage-json` is given.
 - No baseline, ratchet, allowlist or exemption file exists anywhere in this gate, and the
   CLI help says so.
 - Any scope derivation failure is fatal and exits 1; the gate never certifies an empty or
-  guessed scope.
+  guessed scope. A non-zero `git ls-files` and an unrunnable git both raise `ScopeError`; neither
+  degrades to an empty scope.
+- Scope is read through `kernel.git_command.run_git`, never through a local `subprocess.run`.
+  This gate runs from the `pre-push` hook where `GIT_DIR` is exported, so a bare `git` spawn here
+  would scope the whole gate to another repository. `test_git_command.py::SingleRunnerTests`
+  fails the build if any module in the package spawns `git` itself.
 - One pytest run produces one coverage report; CRAP and the diff floor both score that
   report and never re-measure.
 - Every CRAP score at or above the configured threshold fails the default wrapper, and every
@@ -158,11 +184,26 @@ the report to a temporary directory unless `--coverage-json` is given.
 | CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
 | Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
 | An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
+| `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
 | The shared tiered hook body derives the same `git ls-files` scope and runs this wrapper as its full tier. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | [pyproject.toml](agents-remember/pyproject.toml) |
 | Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | [AGENTS.md](agents-remember/AGENTS.md) |
 
 ## Update History
+
+- 2026-07-31T20:48+02:00 — 260731-EFA-L3 curator: `git_ls_files` no longer spawns `git` itself.
+  It builds `["ls-files", "-z", "--", *patterns]` and calls
+  `agents_remember.kernel.git_command.run_git`, the package's single runner, which strips the
+  `GIT_DIR`-family selectors. The card documented the derived scope without ever saying which
+  repository the derivation reads — and this gate runs from the `pre-push` hook, where git exports
+  `GIT_DIR`, so that was the one omission that mattered. Added "The Scope Query Runs On The
+  Package's One Git Runner" under *Scope Is Derived From The Tree*, recorded the changed failure
+  conversion (`check=True`/`CalledProcessError` → explicit `returncode != 0` plus
+  `OSError`/`subprocess.SubprocessError`, which now includes the runner's timeout), and added the
+  two matching invariants and the `git_command.py` / `test_git_command.py` reference rows. No
+  citation ranges in this card point into a file this leaf changed — its reference table carries
+  source paths only.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired this card's
   `complexity-baseline` step, its `BASELINED_COMPLEXITY_RULES` routing contract and the

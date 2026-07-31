@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
+| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -26,7 +26,8 @@ on — and renders contract dataclasses into JSON-compatible dictionaries.
 gate from `git status`.** The old code carried a dirty-tree branch (worktree dirty
 → phase `commit-approval-pending`) that fabricated a gate the working tree has no
 authority to assert; it has been removed (with its unused `contract_has_worktree_changes`
-import — `worktree_dirty`/`run_git` stay). A dirty worktree now falls through to its
+import — `worktree_dirty` stays, and so does `run_git`, though since 260731-EFA-L3 it is
+imported from `kernel.git_command` rather than `modules.git`). A dirty worktree now falls through to its
 honest lifecycle-position phase (e.g. `closeout_status == "completed"` →
 `integration-pending`). `commit-approval-pending` is owned by the closeout preview
 (the real gate moment, set in `closeout.py`) and — once the slice-6 gate plane is
@@ -85,7 +86,17 @@ making carryover a distinct lifecycle phase **between integration and cleanup**:
   `EngineProcessNode.carryoverDoneAt` for the dashboard; 5k renders the seam).
 
 New imports back this: `LedgerError`/`find_mapping`/`load_ledger` from
-`kernel.memory_ledger`, and `run_git` from `modules.git`.
+`kernel.memory_ledger`, and `run_git` — since 260731-EFA-L3 from
+`agents_remember.kernel.git_command`, the package's single git runner, not from
+`modules.git` (which no longer defines one). The one call site is unchanged in shape —
+`run_git(contract.memory_repo_path, ["show", "-s", "--format=%cI", row.memory_commit])` — but
+it now runs with the `GIT_DIR`-family selectors stripped from the environment and under
+`run_git`'s default local bound `GIT_LOCAL_TIMEOUT_SECONDS = 300` (it passes no `timeout=`).
+`carryover_done`'s `try` covers only `load_ledger`/`find_mapping` (`except LedgerError`) and the
+`run_git` call sits outside it, so a git call that outran the bound would raise
+`subprocess.TimeoutExpired` out of `carryover_done` and its `_post_integration_phase` caller;
+a `show -s` of a known commit is a constant-time read, so tripping 300s means git is blocked,
+not busy.
 
 `status_payload` includes a `providers` block from
 `provider_async.provider_setup_status(contract)` when present: the
@@ -141,6 +152,15 @@ No external Domain Documentation source is configured for this memory repo.
 Guidance/status payloads now expose contract `kind`, `leaf_id`, `enclosure_path`, and optional `parent_contract_path`, making the leaf/root split visible to dashboard and tool callers.
 
 ## Update History
+- 2026-07-31T20:56+02:00 — 260731-EFA-L3 curator: the Code Commentary said `run_git` comes from
+  `modules.git`; that import is gone (`from agents_remember.kernel.git_command import run_git`,
+  `modules.git` now supplies only `worktree_dirty`) and `modules.git` no longer defines a runner at
+  all, so the sentence was false. Corrected it and the slice-09 parenthetical, and recorded what the
+  one call site — `carryover_done`'s `run_git(memory_repo_path, ["show", "-s", "--format=%cI",
+  row.memory_commit])` — inherits from the shared runner: the `GIT_DIR`-family scrub and the 300s
+  `GIT_LOCAL_TIMEOUT_SECONDS` default, uncaught because the `except LedgerError` does not cover it.
+  Historical entries left as written. Verification metadata pinned until closeout stamps the L3
+  commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911`/`PLR0912` armed with no
   exemptions): `lifecycle_guidance` became a three-way `or` chain over `_reclaimed_phase`,
   `_post_integration_phase` and `_pre_integration_phase`. The first two return `None` for "not my

@@ -227,6 +227,7 @@
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md",
+    "mcp/src/agents_remember/package_data/tiktoken/README.md",
     "mcp/src/agents_remember/providers/context_common.py",
     "mcp/src/agents_remember/providers/current_state.py",
     "mcp/src/agents_remember/providers/degradation.py",
@@ -248,8 +249,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 730,
-    "fileSidecars": 145,
+    "sourceFilesInScope": 733,
+    "fileSidecars": 146,
     "childRoutes": 18
   },
   "routingTerms": [
