@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/attention_dismissals.py`      |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                         |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -63,10 +63,22 @@ not need a row in this store.
 | Projection tick that prunes rows after folding live lifecycle state. | [observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
 | Reducer suppression check that requires the acknowledgement lifecycle to match the item lifecycle. | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
 | Serving route that records lifecycle acknowledgements or cancels gate-open items. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune. | L77-L111 | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
+| Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune. | L77-L110 | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 
 ## Update History
 
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/src/agents_remember/controlplane/attention_dismissals.py` and moved the lines this card
+  cites, so the Citations column no longer pointed at the code its rows name. Corrected the ranges
+  (L77-L111 → L77-L110). The behaviour described is unchanged — the file's AST is identical to the
+  base revision — this is a citation repair only. Verification metadata pinned until closeout
+  stamps the L2 commit.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `prune_lifecycles` now retains targetless
   actionable-drift current acknowledgements while still pruning lifecycle rows whose lifecycle left the

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_adapter_thread_demux.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,58 +33,64 @@ Seventeen async tests drive the real `CodexAppServerAdapter` over the shared
 `FakeCodexTransport`/`prime_start` seam from `test_codex_app_server_adapter`, with wire
 frames built by `_agent_wire_fixtures`:
 
-- `test_spawned_subagent_traffic_never_fails_the_bridge` (L106-L169) — the incident shape:
+- `test_spawned_subagent_traffic_never_fails_the_bridge` (L106-L167) — the incident shape:
   three sub-agents mid-turn, interleaved with parent traffic; parent busy semantics stay
   parent-scoped, off-wire partial deltas route through the item→thread index, and every
   agent thread lands in the registry with its own completed turns.
-- `test_subagent_approval_is_multiplexed_and_answered_by_request_id` (L171-L212) — a
+- `test_subagent_approval_is_multiplexed_and_answered_by_request_id` (L171-L208) — a
   sub-agent approval rides the plural `pending_interactions` (never the singular parent
   slot), is answered by JSON-RPC request-id, and a server-settled request clears per
   thread via `serverRequest/resolved`.
-- `test_collab_items_bind_agent_identity_into_the_registry` (L214-L272) — parent-thread
+- `test_collab_items_bind_agent_identity_into_the_registry` (L212-L270) — parent-thread
   `collabAgentToolCall` and `subAgentActivity` evidence binds status/agentPath into the
-  registry, and the bound identity becomes the agent label on multiplexed approvals.
-- `test_unknown_item_delta_degrades_without_failing` (L274-L315) — an unbound partial
+  registry, and the bound identity becomes the agent label on multiplexed approvals. Since
+  260731-EFA-L2 the collab frame is built as
+  `collab_agent_tool_call_item(..., agents=CollabAgents(sender, receiver_thread_ids=…, states=…))`
+  — the fixture's three thread-bearing keywords (`sender_thread_id`, `receiver_thread_ids`,
+  `agents_states`) are now one `CollabAgents` parameter object, because they are one fact
+  about who the call is between. The wire shape emitted, and therefore what this test
+  proves, is unchanged.
+- `test_unknown_item_delta_degrades_without_failing` (L274-L313) — an unbound partial
   delta crosses unmodified (no invented thread); a full-shape foreign-thread delta
   auto-registers its thread as `unresolved`.
-- `test_read_native_page_reads_the_requested_agent_thread` (L317-L349) — native pages
+- `test_read_native_page_reads_the_requested_agent_thread` (L317-L350) — native pages
   demux by `thread_id` (agent thread vs parent default).
-- `test_malformed_agent_thread_frames_degrade_to_raw_evidence` (L351-L400, review R5) —
+- `test_malformed_agent_thread_frames_degrade_to_raw_evidence` (L354-L401, review R5) —
   agent-thread shape drift degrades to preserved raw evidence with a `degraded` reason;
   the bridge stays `ready`.
-- `test_malformed_parent_frame_still_fails_loud` (L402-L417) — the same malformation on
+- `test_malformed_parent_frame_still_fails_loud` (L405-L418) — the same malformation on
   the PARENT thread still fails the bridge: parent-thread shapes stay load-bearing.
-- `test_registry_full_degrades_and_settled_threads_evict` (L419-L460, review R5) — at
+- `test_registry_full_degrades_and_settled_threads_evict` (L422-L463, review R5) — at
   `THREAD_REGISTRY_LIMIT` an unevictable registry degrades the overflow frame; a settled
   agent thread is evicted to make room for the next one.
-- `test_concurrent_parent_server_requests_never_fail_the_bridge` (L462-L513) — two
+- `test_concurrent_parent_server_requests_never_fail_the_bridge` (L467-L518) — two
   concurrent pendings on the SAME parent thread are normal traffic: both register, the
   singular slot carries the OLDEST for back-compat, each is answerable individually by
   request id (parent guard honored), and a server-settled request clears by rpc id.
-- `test_experimental_server_request_on_parent_degrades` (L515-L546) — an
+- `test_experimental_server_request_on_parent_degrades` (L522-L556) — an
   unknown/experimental request METHOD on the parent is declined (`respond_error` -32601)
   and crosses as degraded preserved evidence; the bridge stays `ready` and nothing stays
   outstanding.
-- `test_malformed_known_method_parent_request_fails_loud` (L548-L572) — a KNOWN stable
+- `test_malformed_known_method_parent_request_fails_loud` (L560-L582) — a KNOWN stable
   method's malformed params on the parent keeps failing the bridge: never
   declined-and-degraded, no error response, nothing outstanding.
-- `test_known_method_request_with_boolean_rpc_id_fails_loud` (L574-L604) — `id: true` on
+- `test_known_method_request_with_boolean_rpc_id_fails_loud` (L586-L614) — `id: true` on
   a known stable method fails the bridge; no silent outstanding.
-- `test_unknown_method_on_parent_degrades` (L606-L637) — a method outside both the
+- `test_unknown_method_on_parent_degrades` (L618-L647) — a method outside both the
   stable and experimental sets is declined (-32601, "unsupported") and degraded, never
   fatal.
-- `test_pending_map_overflow_declines_the_newest_request` (L639-L675) — at 16 pendings
+- `test_pending_map_overflow_declines_the_newest_request` (L651-L685) — at 16 pendings
   the bounded per-thread map declines + degrades the NEW request (`map is full`) while
   the older 16 stay intact and answerable.
-- `test_delta_flood_sheds_oldest_deltas_with_an_honest_notice` (L677-L742) — a 3-agent
+- `test_delta_flood_sheds_oldest_deltas_with_an_honest_notice` (L689-L754) — a 3-agent
   delta flood past the queue limit: no raise, every event sequenced, structural
   completions survive the shed, the shed count is accounted, and one `ar/load-shed`
   notice with the count crosses once the consumer catches up.
-- `test_load_shed_notice_crosses_on_consumer_drain_without_new_traffic` (L758-L789) —
+- `test_load_shed_notice_crosses_on_consumer_drain_without_new_traffic` (L776-L805) —
   flood → full drain → producer silent: the CONSUMER side mints the notice as the last
-  event the subscriber sees, exactly counted (`_flood_deltas`, L744-L756, supplies the
+  event the subscriber sees, exactly counted (`_flood_deltas`, L757-L772, supplies the
   pure-delta flood past `ADAPTER_EVENT_QUEUE_LIMIT`).
-- `test_load_shed_notice_precedes_the_close_sentinel_on_stop` (L791-L819) — flood →
+- `test_load_shed_notice_precedes_the_close_sentinel_on_stop` (L809-L837) — flood →
   drain → `stop()`: the notice mints BEFORE the close sentinel, fully counted — the
   minted order ends `[ar/load-shed, close sentinel]`, never the other way around.
 
@@ -129,10 +135,10 @@ vendored codex protocol via the shared fixture module.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The shared fixture/transport seam (FakeCodexTransport, prime_start, launch, make_adapter) this suite reuses. | L43-L51 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| The vendored-shape builders the frames come from. | L17-L30 | [_agent_wire_fixtures.py](agents-remember/mcp/tests/_agent_wire_fixtures.py) |
-| The demuxed adapter under test: thread registry, per-thread pending maps, multiplexed pendings, method-first degrade, load-shed queue, native-page demux. | L31-L35 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| The snapshot/evidence models carrying the plural pending tuple and evidence key. | L37-L42 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The shared fixture/transport seam (FakeCodexTransport, prime_start, launch, make_adapter) this suite reuses. | L42-L50 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The vendored-shape builders the frames come from, now including the `CollabAgents` parameter object. | L16-L29 | [_agent_wire_fixtures.py](agents-remember/mcp/tests/_agent_wire_fixtures.py) |
+| The demuxed adapter under test: thread registry, per-thread pending maps, multiplexed pendings, method-first degrade, load-shed queue, native-page demux. | L30-L34 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| The snapshot/evidence models carrying the plural pending tuple and evidence key. | L36-L41 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 
 ## Cross-Repo References
 
@@ -152,6 +158,22 @@ unchanged: an explicit child id routes only that thread, while absent selection 
 the acquisition implementation is now contract-probed rather than a direct whole-thread request.
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass reached the wire fixtures, so
+  the collab-frame call shape and every line citation in this card were re-derived from the current
+  source. `collab_agent_tool_call_item` no longer takes `sender_thread_id=`, `receiver_thread_ids=`
+  and `agents_states=`; those three vendor thread fields are now one `CollabAgents` parameter object
+  passed as `agents=`, and the card names it where it describes
+  `test_collab_items_bind_agent_identity_into_the_registry`. Adding that import shifted the whole
+  import block, so the four Repo-Internal References ranges were corrected (fixtures L17-L30 to
+  L16-L29, adapter L31-L35 to L30-L34, models L37-L42 to L36-L41, shared seam L43-L51 to L42-L50),
+  each re-read at its new position. All eighteen per-test anchors were likewise recomputed against
+  the current file and now cite each test from its `def` line to its last body line; most of that
+  correction is older drift this leaf merely exposed, since the anchors were already several lines
+  off at the L2 base commit and the leaf itself only moved lines by one before the collab test and
+  three after it. No assertion, decline path, degrade reason, bound, or ordering claim changed —
+  the emitted wire shape is identical, so every behavioural claim in this card still holds.
+  Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the thread-demux native-page
   coverage record for items-first runtime probing and exact parent/child request selection.

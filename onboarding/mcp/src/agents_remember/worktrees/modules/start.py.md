@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T23:45+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,17 +22,39 @@ via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
 
 Every entry point and helper takes the typed `WorktreeArgs` dataclass (imported
 from `agents_remember.worktrees.modules.args`), replacing the former
-`argparse.Namespace`; `import argparse` is gone. `start_result()` resolves
-context, asks `start_contract.build_start_contract` for the normalized contract, prepares code and optional memory
-worktrees, runs the synchronous provider preflight, writes the contract for
-real starts, and then LAUNCHES provider setup in the background (GitHub #53).
+`argparse.Namespace`; `import argparse` is gone.
+
+**`start_result()` is now four lines (260731-EFA-L2)** — resolve context, build the contract, then
+three stages, each of which owns one decision and can return early:
+
+1. `_existing_contract_result(context, contract, args) -> WorktreeCommandResult | None` — attach to
+   a live contract at this path instead of recreating its worktrees. Returns `None` (recreate
+   fresh) when no contract exists, or when the one on disk is `abandoned` (a tombstone) or
+   `reopened` (L11, a reset) — either way its worktrees and branches are gone. With
+   `args.retry_provider_setup` a live contract routes to `_retry_provider_setup_result`.
+2. `_preflighted_contract(context, contract, args) -> WorktreeContract | WorktreeCommandResult` —
+   the pre-creation preflights: stale base (records a `stale-base-blocked` beat, then refuses), the
+   fast-forward rebuild, and the Windows long-path check. **The returned contract is the one the
+   caller must use** — a `fast-forward` recovery may have moved the source branches, so the
+   contract is rebuilt inside this stage and the fresh one is returned.
+3. `_create_start_enclosure(context, contract, args)` — create the code worktree, prepare memory,
+   plan providers, write the contract, and launch setup.
+
+This stage split is why the memory/provider blocked returns and their start-progress beats all sit
+in stage 3 while the stale-base beat sits in stage 2. `start_result()` itself
+resolves context, asks `start_contract.build_start_contract` for the normalized contract, and then
+runs the three stages: prepare code and optional memory
+worktrees, run the synchronous provider preflight, write the contract for
+real starts, and then LAUNCH provider setup in the background (GitHub #53).
 The ordering is deliberate: the contract is the durable anchor
 `worktree_status` polls while the setup thread runs, so it must exist before
 the launch. `plan_providers_for_start` is the sync preflight (skip /
 enablement / settings checks — config-level failures still block the start
 fast); `run_or_launch_provider_setup` keeps dry runs fully synchronous
 (`planned`, unchanged shape) and otherwise delegates to
-`provider_async.launch_provider_setup`, returning `starting` with the progress
+`provider_async.launch_provider_setup`, passing a
+`provider_async.ProviderSetupJob(request=…, contract=…, write_state_file=…, settings_cleanup=…)`
+and returning `starting` with the progress
 file. The settings path transfers to the launcher's cleanup only when
 `provider_setup_config.unlink_settings_after_setup` is set (the controller's
 temp-file ownership handshake). `prepare_providers_for_start` remains as the
@@ -49,7 +71,7 @@ and `provider_setup.settings_path` are now called with the settings path alone
 `_cgc_enablement_state` helper was removed in favour of the unified
 `_provider_enablement_state`.
 
-Slice 5e (§5.4) adds pre-contract start observability: `start_result` calls `_record_start_block` at
+Slice 5e (§5.4) adds pre-contract start observability: the start path calls `_record_start_block` at
 each of the three blocked early returns — stale-base (`stale-base-blocked`), external-memory
 (`memory-blocked`), and provider-plan (`provider-blocked`) — writing a transient `start-progress.json`
 (via `worktrees/start_progress.write_start_progress`) so a start gated *before* its contract exists is
@@ -60,8 +82,17 @@ then anchors the enclosure). Slice 5f S6 (§9) closes the happy-path gap: `_reco
 enclosure is observable assembling rather than popping in at contract-write. All three helpers are
 best-effort and skipped on dry runs, so the start flow never fails on observability.
 
-When an existing contract is found on disk, `start_result` now checks its
-`cleanup` field: if `cleanup == "abandoned"` the contract is a tombstone whose
+Since 260731-EFA-L2 both recorders take a `StartBeat` (from `worktrees.start_progress`) instead of
+loose `phase`/`reason`/`completed`/`choices` keywords —
+`_record_start_block(context, contract, args, beat)` and
+`_record_start_progress(context, contract, args, beat)` — and the enclosure half of the payload is
+built once by `_starting_enclosure(contract, worktree_name) -> StartingEnclosure`, the contract's
+own front-matter facts for a start that has not written a contract yet. A blocked beat is a
+`StartBeat` whose `blocked_reason` is set; a happy-path beat leaves it `None`. The two recorders
+are otherwise identical, which is exactly what the shared beat type makes visible.
+
+When an existing contract is found on disk, `_existing_contract_result` checks its
+`cleanup` field: if `cleanup` is `abandoned` (a tombstone) or `reopened` (a reset) its
 worktrees and branches were already discarded, so start recreates fresh rather
 than attaching to the dead binding. With `args.retry_provider_setup` set, an
 existing live contract routes to `_retry_provider_setup_result` instead of
@@ -71,8 +102,8 @@ the preflight + launch re-run against the existing contract and the result is
 `provider-setup-retried` — the recovery path for failed or stale background
 setups.
 
-The stale-base preflight (issue #54) runs after the existing-contract
-short-circuit and before the long-path preflight: `_stale_base_preflight`
+The stale-base preflight (issue #54) runs inside `_preflighted_contract`, after the
+existing-contract short-circuit and before the long-path preflight: `_stale_base_preflight`
 reads `kernel.git_freshness` for the code source branch and (external mode)
 the memory source branch, and blocks (exit 2,
 `choose_stale_base_recovery`, required arg `stale_base_choice`) when either is
@@ -83,12 +114,21 @@ and silently defeats the CGC seed fast-path. `unknown` (offline fetch) and
 branch → `merge --ff-only`; parked branch → `branch -f`, safe because state
 `behind` proves ancestry; diverged or worktree-pinned branches land back in
 `staleBases` with a `recovery_error`). After a fast-forward recovery
-`start_result` rebuilds the contract so recorded base commits reflect the
-recovered tips.
+`_preflighted_contract` rebuilds the contract so recorded base commits reflect the
+recovered tips, and returns the rebuilt one.
+
+`prepare_memory_for_start` opens with `_memory_source_state(contract, args)` (260731-EFA-L2) — the
+state that settles the memory side **before its ledger is ever read**: either there is no external
+memory repo to prepare (`internal` / `disabled`), or the one configured cannot be started from
+(absent → `_missing_memory_repo_state`, or dirty in its official checkout →
+`_dirty_memory_source_state`). A non-`None` return is the whole result; `None` means proceed to the
+ledger.
 
 The **ledger-mapping gate** in `prepare_memory_for_start`: when `find_mapping(ledger,
 code_base_commit)` is `None` (the code base is a SHA the ledger never recorded — e.g. two
-code-only owner commits ahead of the last memory closeout), the recovery block now
+code-only owner commits ahead of the last memory closeout), `_rebased_on_mapped_commit(contract,
+ledger, args)` owns the recovery and returns either the rebound `(contract, ledger)` pair or the
+`dict` state that blocks the start. It
 consumes BOTH advertised choices (260703-L18 finding 7 / friction F-R; previously only
 `disabled-memory` was wired and `reconciliation`/`custom` dead-ended). `disabled-memory`
 drops external memory; `memory_choice="reconciliation"` calls `_reconcile_missing_mapping`,
@@ -166,6 +206,16 @@ For master task starts, `start_contract.py` creates or loads the root series con
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915`/`PLR0913`
+  armed with no exemptions): `start_result` was split into `_existing_contract_result` (attach vs
+  recreate), `_preflighted_contract` (stale-base, fast-forward rebuild, long-path — returns the
+  possibly-rebuilt contract) and `_create_start_enclosure` (worktrees, memory, contract write,
+  provider launch). `prepare_memory_for_start` gained `_memory_source_state` (the pre-ledger
+  settling states) and `_rebased_on_mapped_commit` (the missing-mapping recovery).
+  `_record_start_block` / `_record_start_progress` now take a `StartBeat`, with the enclosure half
+  built once by the new `_starting_enclosure` helper; `run_or_launch_provider_setup` passes a
+  `provider_async.ProviderSetupJob`. Every blocked payload, recovery choice and start-progress beat
+  is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2: `start.py` now imports the public
   `start_contract.memory_base_for_source` helper for the reconciliation path instead of reaching across
   modules for a private helper. Verification metadata pinned until closeout stamps the 260707-HFX-L4

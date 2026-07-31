@@ -1,64 +1,107 @@
 # mcp/tests/test_pi_rpc_real_smoke.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_pi_rpc_real_smoke.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
-| governingOverview | `../overview.md` |
+| Field                  | Value                                      |
+| ---------------------- | ------------------------------------------ |
+| repository             | agents-remember                            |
+| path                   | `mcp/tests/test_pi_rpc_real_smoke.py`      |
+| doc_type               | `file-level-onboarding`                    |
+| lastUpdated            | 2026-07-31T15:32+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| governingOverview      | `overview.md`                              |
 
 ## Governing Overview
-[mcp/tests overview](../overview.md)
+
+[mcp/tests overview](overview.md)
 
 ## Purpose
-Opt-in integration smoke for the pinned real Pi 0.80.6 RPC package and readiness path.
 
-## Code Commentary
-With `AR_RUN_PI_RPC_SMOKE=1`, the test installs `@earendil-works/pi-coding-agent@0.80.6` into
-temporary prefix/HOME/cache locations, launches the real child through RPC, and verifies
-`get_state` reaches ready/idle. The normal suite skips this networked smoke.
+Opt-in isolated smoke against the pinned real Pi RPC npm package. Three tests, all behind
+`@pytest.mark.ar_run_pi_rpc_smoke` on `PiRpcRealSmokeTests`:
+
+1. `test_pinned_isolated_install_reaches_get_state_ready` — a pinned install launched
+   through the real adapter reaches `control="ready"` / `activity="idle"` with a vendor
+   session id and `raw["vendorProtocol"] == "pi-rpc/jsonl"`.
+2. `test_committed_capability_fixture_still_describes_the_installed_runtime` — re-verifies
+   the capability recording against a Pi it installs and drives.
+3. `test_installed_guard_rejects_stale_idle_without_native_queueing` — holds a real
+   provider stream open (a local HTTP handler that answers the opening chunk and then
+   blocks) and proves a second prompt cannot slip past the busy guard, emitting zero
+   candidate bytes.
+
+## The Version Pin
+
+`PI_RPC_VERSION = "0.80.7"` is the single source of the pin in this module and must match
+what the product pins (`mcp/native_helpers/conversation_library/package.json` and the
+native flag contract in `serving/pi_rpc_adapter.py`). A smoke test that installs a
+different build proves the adapter works against a runtime nobody ships.
+
+`install_pinned_pi` is the module's **only** install path, deliberately: a second one could
+drift to a different build and quietly re-validate the wrong runtime. It runs
+`npm install --prefix … --no-save <pkg>@PI_RPC_VERSION` into a temporary prefix with an
+isolated `HOME` and npm cache, and never touches global Pi/npm state.
+
+## The Capability Recording
+
+`CAPABILITY_FIXTURE = FIXTURES / f"{PI_RPC_VERSION}-capabilities.json"` — the recording is
+addressed by the pin, never by a literal. That naming is the anti-drift mechanism: bump the
+pin without re-recording and the path does not exist, so
+`test_pi_rpc_adapter.py` fails **offline** with `FileNotFoundError` rather than this
+network-gated module silently re-validating a build nobody ships. See the fixture's own
+card for the full contract, including the "exactly one `*-capabilities.json`" assertion.
+
+`test_committed_capability_fixture_still_describes_the_installed_runtime` asserts, against
+a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
+
+- `schema`, `package` and `version` agree with `CAPABILITY_SCHEMA`, `PI_RPC_PACKAGE` and
+  `PI_RPC_VERSION`;
+- `launch` equals the argv `pi_rpc_launch` really builds (via `_rpc_launch_argv`), so the
+  recording cannot describe a launch the adapter no longer performs;
+- `unknown_command_rejected` — without this the "every recorded command was accepted"
+  result would prove nothing;
+- `framing`, `commands`, `dialogMethods`, `fireAndForgetMethods` — **exact** equality;
+- `stateFields` and `events` — **subset** (`assertLessEqual`). Pi may report more than the
+  adapter reads; it may not stop reporting something the adapter depends on.
 
 ## Invariants And Boundaries
-- Installation is isolated and never changes global Pi/tools state.
-- This proves protocol readiness only; production registration/cutover remains L5 scope.
 
-## Docs References
-
-No Domain Documentation source is configured for this repository; repository code and tests are the authority.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+- Installation is isolated (temporary prefix, HOME, npm cache, `PI_CODING_AGENT_DIR`) and
+  never changes global Pi/tool state.
+- The whole module skips unless the `ar_run_pi_rpc_smoke` marker is selected; the runner
+  entry lives in `scripts/run-gated-integration.py` and is asserted reachable by
+  `test_gated_integration_runner.py`.
+- Provider traffic is either the discard port or a local blocking HTTP handler — no
+  credential and no provider account is ever required.
+- Exact installed-version facts are evidence, never generic protocol authority: production
+  compatibility comes from the structured RPC exchange.
 
 ## Repo-Internal References
+
 | Finding | Source Path |
 | --- | --- |
-| Real adapter and launch path. | [pi_rpc_adapter.py](../src/agents_remember/serving/pi_rpc_adapter.py), [pi_rpc_process.py](../src/agents_remember/serving/pi_rpc_process.py) |
-| Pinned capability policy. | [0.80.6-capabilities.json](fixtures/pi_rpc/0.80.6-capabilities.json) |
+| Real adapter and launch path under test. | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py), [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
+| The recording this module re-verifies. | [0.80.7-capabilities.json](agents-remember/mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json) |
+| Produces the observation compared against the recording. | [_pi_rpc_capabilities.py](agents-remember/mcp/tests/_pi_rpc_capabilities.py) |
+| Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
+| Proves this marker is applied and reachable from the gated runner. | [test_gated_integration_runner.py](agents-remember/mcp/tests/test_gated_integration_runner.py) |
 
 ## Cross-Repo References
+
 | Finding | Source Path |
 | --- | --- |
 | Real package RPC documentation. | [Pi RPC](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/rpc.md) |
 
-## 260713-PHA-L6 Fixture Boundary
-
-The opt-in Pi `0.80.6` real-smoke baseline is non-production evidence only. Production compatibility
-comes from the structured RPC exchange and does not require this package version.
-
-## 260715-FEUI-L5 Submission Authority Delta
-
-The installed Pi 0.80.7 smoke proves the stale-guard path emits zero candidate bytes and exposes no
-native prompt queue. It records readiness/resource evidence without treating installed-version facts
-as generic protocol authority.
-
 ## Update History
 
-- 2026-07-17T21:39+02:00 — FEUI-L5: updated installed evidence to Pi 0.80.7 and added zero-byte/
-  no-native-queue guarded-write smoke coverage.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: marked the exact Pi smoke version as fixture-only evidence.
-- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for the isolated pinned
-  real-Pi readiness smoke and global-tool isolation boundary.
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: rewritten. The module now installs
+  0.80.7 (the previous card still said 0.80.6 in Purpose and Code Commentary), owns a
+  single install path, and re-records the capability fixture from a live probe instead of
+  pinning a hand-maintained policy file. Recorded the version-addressed fixture contract
+  and the exact-vs-subset assertion split. Verification metadata is pinned to the leaf's
+  reformat commit until closeout stamps the code commit.
+- 2026-07-17T21:39+02:00 — FEUI-L5: updated installed evidence to Pi 0.80.7 and added
+  zero-byte/no-native-queue guarded-write smoke coverage.
+- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: marked the exact Pi smoke version as
+  fixture-only evidence.
+- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for the isolated
+  pinned real-Pi readiness smoke and global-tool isolation boundary.

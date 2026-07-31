@@ -25,7 +25,7 @@ labeled, keyboard-scrollable overflow region so a long line never widens the pag
 
 ### Logic
 
-- `MarkdownBlockImpl` (L68) renders `react-markdown` with `remark-gfm` inside a `prose` container that
+- `MarkdownBlockImpl` (L73-L84) renders `react-markdown` with `remark-gfm` inside a `prose` container that
   is `tabIndex={-1}` and carries a stable `data-testid` (default `conversation-markdown`, overridable
   via `testId`).
 - `export const MarkdownBlock = memo(...)` (L83): re-renders only when the `markdown` string actually
@@ -79,6 +79,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The `prose`
+  recipe grew the V10 wrapping rules, pushing `MarkdownBlockImpl` from L68 (now a `& th, & td`
+  padding line) to L73-L84; the range now covers the whole component body it describes.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded V10 whole-word wrapping — `overflowWrap`
   `anywhere → break-word` on prose/links, inline `& code` `whiteSpace: nowrap`; and the dependency note

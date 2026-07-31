@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-06-10T09:56+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Purpose
@@ -40,21 +40,53 @@ would otherwise make the response too large to render.
 
 `worktree_start_payload` forwards `retry_provider_setup` to the controller — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` is newly added (GitHub #54 sub-task D), forwarding `contract_path`/`memory_sync_choice`/`dry_run` to `worktree_sync_tool`. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
+### Parameter Objects (260731-EFA-L2)
+
+Every builder here now takes the concept object its controller takes, not a keyword list:
+
+| Builder | Signature |
+| --- | --- |
+| `worktree_start_payload` | `(config, identity: TaskIdentity, *, bases: TaskBases = DEFAULT_TASK_BASES, execution: StartExecution = DEFAULT_START_EXECUTION)` |
+| `worktree_attach_payload` | `(config, task: TaskRef, *, on_unsaved=None)` |
+| `worktree_status_payload` | `(config, task: TaskRef)` |
+| `worktree_closeout_preview_payload` | `(config, contract_path, messages: CloseoutCommitMessages)` |
+| `worktree_closeout_apply_payload` | `(config, contract_path, messages: CloseoutCommitMessages, approval: CloseoutApproval)` |
+
+`worktree_sync_payload`, `worktree_integrate_payload`, `worktree_cleanup_payload` and
+`worktree_abandon_payload` keep their flat arguments — each already sat at or under the limit.
+
+The split is meaningful, not cosmetic. `TaskIdentity` is who the task is, `TaskBases` what it is cut
+from, `StartExecution` how the start runs. `CloseoutApproval` (intent note + dry_run) is kept apart
+from `CloseoutCommitMessages` so a preview can never read as an approved apply. `TaskRef` is the
+shared task locator `resolve_context` also uses.
+
+The MCP tools themselves still publish flat signatures; the packing happens one layer up in
+`mcp/registration/worktrees.py` and `mcp/registration/closeout.py`, because a model-typed tool
+parameter would republish the tool as a nested object.
+
 ### Invariants And Boundaries
 
 - Transport-thin: worktree/closeout behavior lives in
   `controllers.worktree_tools` and `worktrees/modules`.
 - Closeout/apply builders carry the explicit `intent_note` commit-approval
-  argument through to the controller.
+  argument through to the controller — it now travels inside `CloseoutApproval`, which must stay a
+  separate parameter from `CloseoutCommitMessages`.
 - `worktree_start_payload`/`worktree_integrate_payload`/`worktree_cleanup_payload`/`worktree_abandon_payload`
   default `dry_run=False` (act-by-default); the `*_closeout_apply` builders keep
   `dry_run=False` paired with their `*_preview` builders. `dry_run=true` previews.
 
 ## Series-Contract Notes
 
-Worktree payload builders keep closeout/integration path-explicit while start/attach/status can resolve a leaf enclosure from `task_name`, optional `parent_task`, and optional `leaf_id`.
+Worktree payload builders keep closeout/integration path-explicit while start/attach/status can resolve a leaf enclosure from `task_name`, optional `parent_task`, and optional `leaf_id` — carried by `TaskIdentity` for start and by `TaskRef` for attach/status.
 
 ## Update History
+
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the builders here took parameter objects.
+  `worktree_start_payload` now takes `TaskIdentity` + `bases: TaskBases` + `execution:
+  StartExecution`; attach/status take one `TaskRef`; the closeout pair take
+  `CloseoutCommitMessages`, with apply keeping a separate `CloseoutApproval`. The published MCP
+  signatures are unchanged — packing moved to `mcp/registration/`. Verification metadata pinned
+  until closeout stamps the L2 code commit.
 
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: worktree payload builders now include `parent_task` and `leaf_id` for start/attach/status, matching the new resolver contract while closeout/integration continue taking explicit enclosure paths. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-13T18:45+02:00 — Slice 2c: `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (the save-gate decision); plumbing only. Verification metadata pinned until closeout stamps the 2c code commit.

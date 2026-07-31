@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-09T13:07:21+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -164,7 +164,7 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 
 | Finding | Source Path |
 | --- | --- |
-| Server registration consumes this config object. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| `create_server` loads this config and hands it to every tool registrar. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 | The daemon supervisor consuming `DashboardSettings` (autoStart/port). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
 | Gate delegation policy validation lives in controlplane. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
@@ -179,6 +179,12 @@ As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewer
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **mechanical only, attested unchanged.** The
+  file's diff against `c1dc505` is two `ruff format` line rewraps —
+  `require_provider_launch_authority`'s parameter list and one
+  `_warn_legacy_gate_delegation(...)` call — with no behaviour, signature, key, or default touched.
+  Every claim in this sidecar was re-checked against the current source and still holds; the prose
+  was deliberately not rewritten. (The whole-tree reformat is commit `00e8379`.)
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): renamed the completion toggles to
   `auto_land_on_integration`/`auto_land_on_finalize` and the settings keys to
   `autoLandOnIntegration`/`autoLandOnFinalize`. The parser still accepts HFX-L8's

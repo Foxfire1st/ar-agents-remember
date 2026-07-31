@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00                     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,8 +24,13 @@ runs on a daemon thread observable through a `SetupProgressFile`.
 
 ### Logic
 
-`launch_provider_setup(request=, contract=, write_state_file=,
-settings_cleanup=, runner=, thread_factory=)` creates the progress file at
+`launch_provider_setup(job, *, runner=, thread_factory=)` — since 260731-EFA-L2 the four values the
+daemon thread closes over travel as the frozen **`ProviderSetupJob(request, contract,
+write_state_file, settings_cleanup=None)`**: the request to run, the enclosure it belongs to, where
+its result state file is written, and the temporary settings file whose lifetime the setup thread
+owns (`None` when the caller keeps it). The thread cannot be started with a subset of them, which
+is the point. `runner` and `thread_factory` stay separate keywords — they are test seams, not part
+of the job. It creates the progress file at
 `setup_progress_path(worktree_group)` (`provider-runtime/setup-progress.json`)
 with `progress_identity(contract)`, starts a daemon thread, and immediately
 returns the `starting` payload (`progressFile`, `pollTool: worktree_status`,
@@ -79,4 +84,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `ProviderSetupJob` and re-signed `launch_provider_setup(job, *, runner,
+  thread_factory)`; the `request` / `contract` / `write_state_file` / `settings_cleanup` keywords
+  are gone. The thread body, the settings-file ownership transfer and the returned `starting`
+  payload are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-10T07:30+02:00 — Created for GitHub #53: daemon-thread launcher with durable progress, settings-file ownership transfer, status projection with retryArgs, and the live-setup teardown guard.

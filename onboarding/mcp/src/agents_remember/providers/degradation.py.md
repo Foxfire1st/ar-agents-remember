@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -29,6 +29,18 @@ redoing the response protocol (task doc `08_degradation-protocol-and-system-spec
 objective).
 
 ## Code Commentary
+
+### 260731-EFA-L2 Transition Identity And Inbox Objects
+
+**`_DegradationTransition(event_id, previous, state, at)`** is the identity of one degradation
+state change; everything else in the emitted event is the *evidence* that justifies it. That split
+is the signature: `_build_event(transition, evidence, *, rows, metric_store)`. The emitted event
+payload (`schema`, `id`, `at`, `from`, `to`, `affectedStacks`, `evidence`, `metrics`) is unchanged.
+
+`_post_degradation_alerts` builds its inbox rows through the controlplane's parameter objects —
+`create_operator_inbox_entry(InboxMessage(ask=…, response=…, message_kind="degradation-alert"),
+entry_id=…, now=…, routing=InboxRouting(address=InboxAddress(...)), poster=InboxPoster(...))` —
+matching `controlplane/operator_inbox_records.py`'s current API. The posted rows are identical.
 
 ### 260707-HFX2-L17 Current-Role Degradation Recipients
 
@@ -178,6 +190,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `_DegradationTransition` and re-signed `_build_event(transition, evidence, *,
+  rows, metric_store)`; updated the degradation-alert posting for
+  `create_operator_inbox_entry`'s new `InboxMessage`/`InboxRouting`/`InboxPoster` signature.
+  Emitted events and posted inbox rows are unchanged. Verification metadata pinned until closeout
+  stamps the L2 commit.
 - 2026-07-10T21:05+02:00 — Super-exit curator correction: refreshed the `classify_degradation`
   empty-log and `app.py` sampling-loop line citations against code commit `e400ed0`.
 

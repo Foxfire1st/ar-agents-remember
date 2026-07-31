@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T22:48+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -67,7 +67,12 @@ F-04 service tests build a temporary lifecycle settings file and verify that
 `providers.lifecycle_service` can run CGC and aggregate watcher dry-run/status
 paths without going through the CLI `main(argv)` route. Those CGC settings
 fixtures use Docker runner fields and generated ownership labels without
-`venvRoot`.
+`venvRoot`. The service call is `run_cgc_lifecycle(service_config,
+CgcLifecycleRequest(action=..., repo_id=..., native_args=(...)))` — one request
+object, with `native_args` a tuple — and the containment tests call
+`cgc_runtime_layout(CgcRepo(coordination_root=..., repo_id=..., code_repo_root=...),
+instance=CgcInstance(runtime_root=...))`, so the layout's repo identity and its
+instance placement are two named objects rather than four loose keywords.
 
 ### Conventions
 
@@ -93,17 +98,18 @@ No external documentation is needed for these unit tests.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module imports package-local provider lifecycle code from `mcp/src` and `parse_cgc` normalizes parsed CGC args the way the lifecycle main path does. | L12-L24; L81-L91 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Service tests verify the typed lifecycle service can dispatch CGC, GrepAI, and watcher operations from settings-owned config. | L112-L164; L267-L285; L344-L361 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Render tests assert that captured command output is streamed without wrapper text, successful `cgc run --json` still emits native output, `run --lifecycle-json -- ...` preserves an explicit metadata path, and Compose `auto` ports render as empty published ports. | L21-L97 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Parser tests assert that `visualize` accepts named options after the subcommand and still allows common lifecycle options before the subcommand. | L93-L129 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Default-root parser tests assert that CGC and aggregate watcher commands infer the installed runtime root when `--coordination-root` is omitted. | L140-L155 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Process namespace tests assert that ephemeral daemon actions raise clear errors, namespace status reports `durableForDaemons: false`, `cgc visualize` rejects non-dry-run server launch from that namespace, and bounded `cgc run` queries remain allowed when provider execution is mocked; the bounded-run test stubs both `cgc_status` and `cgc_backend_status` (saved/restored in `originals`). | L157-L181; L183-L211; L270-L316 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Handler tests assert that `cgc_visualize` dry-run emits an explicit Dockerized long-running server command and that `cgc_run` rejects `visualize`. | L213-L268 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Docker-mode GrepAI tests assert that direct non-settings run calls are unsupported, settings-backed bounded queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and start dry-run builds the full migration/network/Postgres/Ollama/watcher stack with container workspace settings. | L221-L334 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Compose render and CGC start-all tests assert `auto` ports do not leak into rendered YAML, provider ownership labels are required, the GrepAI watcher gets container-local config env plus a POSIX user block when available, and CGC project migration includes unmanaged network and watcher removal. | L387-L533 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| The optional POSIX user-block assertion uses `getattr()` plus `callable()` checks before reading `os.getuid` and `os.getgid`, so the test remains valid on Windows hosts. | L428-L434 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| GrepAI lifecycle tests assert that PostgreSQL readiness proceeds from `pg_isready` to a target database query and aggregate watcher results include partial state plus recovery actions. | L580-L700 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| The module imports package-local provider lifecycle code from `mcp/src` and `parse_cgc` normalizes parsed CGC args the way the lifecycle main path does. | L12-L27; L131-L140 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Service tests verify the typed lifecycle service can dispatch CGC (via `CgcLifecycleRequest`) and watcher operations from settings-owned config. | L411-L429; L878-L891 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Render tests assert that captured command output is streamed without wrapper text, successful `cgc run --json` still emits native output, `run --lifecycle-json -- ...` preserves an explicit metadata path, and Compose `auto` ports render as empty published ports. | L30-L108 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Parser tests assert that `visualize` accepts named options after the subcommand and still allows common lifecycle options before the subcommand. | L228-L264 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Default-root parser tests assert that CGC and aggregate watcher commands infer the installed runtime root when `--coordination-root` is omitted. | L265-L281 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Process namespace tests assert that ephemeral daemon actions raise clear errors, namespace status reports `durableForDaemons: false`, `cgc visualize` rejects non-dry-run server launch from that namespace, and bounded `cgc run` queries remain allowed when provider execution is mocked; the bounded-run test stubs both `cgc_status` and `cgc_backend_status` (saved/restored in `originals`). | L922-L983; L1058-L1112 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Handler tests assert that `cgc_visualize` dry-run emits an explicit Dockerized long-running server command and that `cgc_run` rejects `visualize`. | L984-L1022; L1030-L1057 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Docker-mode GrepAI tests assert that direct non-settings run calls are unsupported, settings-backed bounded queries use `docker exec ar-grepai-watcher grepai ...` without host `_bin`, and start dry-run builds the full migration/network/Postgres/Ollama/watcher stack with container workspace settings. | L282-L410 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Compose render and CGC start-all tests assert `auto` ports do not leak into rendered YAML, provider ownership labels are required, the GrepAI watcher gets container-local config env plus a POSIX user block when available, and CGC project migration includes unmanaged network and watcher removal. | L430-L749 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| The optional POSIX user-block assertion uses `getattr()` plus `callable()` checks before reading `os.getuid` and `os.getgid`, so the test remains valid on Windows hosts. | L467-L473 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| CGC runtime-containment tests build the layout from `CgcRepo` plus `instance=CgcInstance(runtime_root=...)`, allowing a workflow-local provider runtime and rejecting a source-repo runtime. | L821-L877 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| GrepAI lifecycle tests assert that PostgreSQL readiness proceeds from `pg_isready` to a target database query and aggregate watcher results include partial state plus recovery actions. | L1113-L1196 | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
 ## Cross-Repo References
 
@@ -114,6 +120,20 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: `lifecycle_service.run_cgc_lifecycle`
+  now takes a `CgcLifecycleRequest` (with a tuple `native_args`) and
+  `lifecycle.cgc_runtime_layout` now takes `CgcRepo` plus
+  `instance=CgcInstance(runtime_root=...)`; recorded both call shapes in Logic and imported
+  `CgcInstance`/`CgcRepo` alongside `to_container_path`. Every own-file line range in
+  Repo-Internal References was re-derived from the current source after the reformat — several
+  were already stale before this leaf — so the rows now point at the imports plus `parse_cgc`
+  (L12-L27; L131-L140), the render tests (L30-L108), the parser and default-root tests (L228-L264,
+  L265-L281), Docker-mode GrepAI (L282-L410), the service tests (L411-L429, L878-L891), Compose
+  render and start-all (L430-L749) with the POSIX user block at L467-L473, the process-namespace
+  and handler tests (L922-L1057, L1058-L1112), and the GrepAI readiness/watcher aggregation tests
+  (L1113-L1196); a new row covers the two runtime-containment tests (L821-L877). No test case was
+  added, removed, or renamed and no assertion changed.
 
 - 2026-07-06T22:48+02:00 — 260703-L13 (GQ3): added `LifecycleSettingsPathTests` (fallback
   removal refusals + explicit-path pass-through); grepai direct-run tests updated to explicit

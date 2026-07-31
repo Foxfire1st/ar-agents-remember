@@ -102,12 +102,18 @@ is percentage-only and the 280px calibration contract is pinned; see the worker 
   focused-handoff residual-capture block is REMOVED (ownership moved to
   `data/sessionLifecycle.ts`; an unfocused/tombstoned seat's `retireControlStopError` still
   surfaces, and resurfaces after a reload).
-- **`turn.stop` palette command** (L317-L331): registered UA-7-honest — the title names the gap
-  (`Stop turn — unavailable: <STOP_TURN_DISABLED_REASON>`), the `when` gate is the WorkingLine's
-  OWN render condition `seatVisualState(focused).key === "working"` (review finding F3 — never
-  `turnState` directly, which would offer a command whose control is not on screen), and `run()`
-  focuses the welded disabled `working-line-stop` control so the reason is seen where the
-  control lives (design §9.7). The registration effect's deps gained `focused`.
+- **`conversation.stop` palette command** (L579-L588): the §9.5 exact-turn interrupt — the palette
+  command AND the `ctrl+shift+.` chord dispatch the same handler. `when` is the conversation
+  projection's own interrupt availability (`chatsInterruptRef.current.available`) and `run()` calls
+  that same ref's `onStop`, so the command is offered only for an interruptible working turn and
+  never for a dead stop. The availability comes from `useConversationInterrupt(focusedSessionId)`
+  held in a ref (L334-L339) so a projection tick never re-registers the command; the registration
+  effect (L551-L593, shared with the stage-mode toggles) carries `focused` in its deps. There is no
+  longer a UA-7-honest `turn.stop` registration: the title is the plain `Stop turn`, not
+  `Stop turn — unavailable: <STOP_TURN_DISABLED_REASON>`; the gate is no longer
+  `seatVisualState(focused).key === "working"`; and `run()` no longer focuses the welded disabled
+  `working-line-stop` control. `STOP_TURN_DISABLED_REASON` survives only as the disabled stop
+  button's title/aria-label in `WorkingLine.tsx` (L168-L170) and `SessionComposer.tsx` (L697-L699).
 - **Triage focuses the bar in place** (L643-L673): the per-seat question-triage commands now
   focus the seat AND then the `interaction-bar` button — answering was the user's explicit
   palette intent, so this is the invoked action, not a focus steal (R4's never-steal rule is
@@ -142,14 +148,14 @@ is percentage-only and the 280px calibration contract is pinned; see the worker 
   sprint: a, b, …` — the palette row IS the preview), and per-seat question triage
   (`Answer pending question — <label>: “<preview>”`, newest first; selecting focuses
   the seat AND its InteractionBar in place). All disposed and re-registered per dependency change.
-- **Live `switchSession`** (L404-L416): alt+↑/↓ now cycles `railCycleOrder(model)` around the
+- **Live `switchSession`** (L890-L902): alt+↑/↓ now cycles `railCycleOrder(model)` around the
   focused seat (the former stub replaced — command ids/chords unchanged).
 
 ### Launch Surfaces (pure appends — no existing node reshaped or reordered)
 
-- **The `launch` state** (L213-L217): `{open, prefill?}` — the LaunchFlow dialog's open state,
+- **The `launch` state** (L272-L279): `{open, prefill?}` — the LaunchFlow dialog's open state,
   set by the palette command or the banner's corrected-launch prefill.
-- **The `session.launch` palette command** (L287-L296): one self-contained registry effect
+- **The `session.launch` palette command** (L511-L519): one self-contained registry effect
   ("Launch session…") — the palette is the flow's entry point (design §7.1); no chord minted
   (consistent with the established chord-audit posture).
 - **FailedLaunchBanner for a focused FAILED seat** (L589-L597): mounted inside the stage children
@@ -343,6 +349,19 @@ stop remains beside Send, while raw-terminal stop remains on its line. It passes
 through to the stage so scroll geometry can restore after a view switch.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations and rewrote 1
+  false claim. The `turn.stop` bullet cited L317-L331, which is now the `focusedLiveTurnWorking`
+  selector — and the command it described no longer exists: the registration is `conversation.stop`
+  (L579-L588) with the plain title `Stop turn`, a `ctrl+shift+.` chord, `when` reading
+  `chatsInterruptRef.current.available` (from `useConversationInterrupt`, L334-L339) and `run()`
+  calling that ref's `onStop` — not a `STOP_TURN_DISABLED_REASON`-titled command gated on
+  `seatVisualState(focused).key === "working"` whose `run()` focused the disabled
+  `working-line-stop` control; the bullet now states the current behaviour and names what is gone.
+  `switchSession` cited L404-L416 (now inside the panel group) → L890-L902, the keymap action that
+  cycles `railCycleOrder(model)`. The `launch` state cited L213-L217 → L272-L279, and the
+  `session.launch` registry effect cited L287-L296 → L511-L519. Source uncommitted; closeout
+  re-stamps verification.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the review-N1 question-triage preview
   fix — the `waitingSeats` loop resolves `sessionPendingInteractionPayload(seat)` (parent's

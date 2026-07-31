@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T23:55+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -64,8 +64,36 @@ visualizer commands.
 | The parent lifecycle facade imports the CGC package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
 | Watcher aggregation imports CGC all-root start/status/stop behavior from this package. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
 
+## 260731-EFA-L2 — The Backend Invocation Is A Value
+
+`backend.py` no longer passes the resolved invocation around as a five-tuple. `CgcBackendContext`
+(frozen) carries `settings_path`, `provider_settings`, `layouts` and `backend`, and exposes
+`layout` as a property returning `layouts[0]`. Both resolvers — `cgc_primary_backend_context` and
+`cgc_backend_start_context` — take only `args: argparse.Namespace` and return that one value.
+
+The `layouts` / `layout` relationship is a CGC-specific fact worth knowing before you touch this
+package: **the FalkorDB backend is shared across every configured repo layout, and the first layout
+is the primary the backend commands act through.** That was previously encoded only in the tuple's
+element order.
+
+`CgcBackendPort` names a published port by the *keys that carry it*, because a port is spread
+across three dictionaries — recorded backend state, resolved backend settings, and container
+inspect data — under a different key in each. `FALKORDB_PORT` and `BROWSER_PORT` are the two
+instances, and `cgc_backend_endpoint(state, backend, inspect_data, port)` takes one instead of four
+parallel `*_key` keywords. `CgcHostPorts` carries the two published host ports as a pair. A third
+published port is a new `CgcBackendPort` constant, not a new keyword group.
+
+`core.py` builds its layout through `CgcRepo(...)` (see the [context route](../context/overview.md))
+— the explicit `--from-settings` requirement recorded below is untouched.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `backend.py`'s five-tuple invocation became the frozen
+  `CgcBackendContext` (with `layout` as a property over `layouts[0]`, making the shared-backend /
+  primary-layout rule explicit), published ports became the `CgcBackendPort` constants
+  `FALKORDB_PORT` / `BROWSER_PORT` plus `CgcHostPorts`, and `core.py` constructs its layout via
+  `CgcRepo`. No lifecycle behaviour, container topology or settings rule changed. Verification
+  metadata pinned until closeout stamps the L2 commit.
 - 2026-07-06T23:55+02:00 — L13 owner follow-up (body): core.py's settings-backed layout now states the explicit --from-settings requirement in the route model (the earlier ride-along was history-only). Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-07-06T23:08+02:00 — 260703-L13 ride-along: `core.py`'s settings-backed layout reads

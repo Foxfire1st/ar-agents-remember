@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/metrics.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ failed `docker ps` yield an error-annotated empty snapshot, never a crash or a
 launch — status must stay legal while providers are disabled. Since
 260718-CHATS-L5F R6, a `docker ps` that TIMES OUT (a slow or hung docker daemon)
 is bounded the same way: the call passes `allow_timeout=True` (L252) and the
-`timedOut` branch (L254-L259) returns an error-annotated empty `MetricsSnapshot`
+`timedOut` branch (L256-L261) returns an error-annotated empty `MetricsSnapshot`
 ("docker ps timed out after {timeout}s") instead of letting a
 `subprocess.TimeoutExpired` escape and dump a full traceback into the daemon's
 30s `metrics_loop` every sampling interval (the developer's image1 log noise). A
@@ -138,6 +138,19 @@ each docker call.
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/providers/metrics.py` since the L2 base commit is the whole-tree `ruff
+  format` pass in `00e8379`, which re-wrapped 7 line(s), touching only redundant grouping
+  parentheses. Checked by parsing both revisions and comparing the abstract syntax trees
+  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
+  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
+  card makes about its own source still holds.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R6 — `sample_provider_containers` now passes
   `allow_timeout=True` for `docker ps` and returns an error-annotated empty `MetricsSnapshot` on the
   `timedOut` branch, so a slow/hung docker daemon no longer lets a `subprocess.TimeoutExpired` escape

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/setup_reporting.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T23:40+02:00                     |
-| lastVerifiedCommitHash | `8833b31a37deda0d9d2e6895659ab0fe085a8ee9` |
-| lastVerifiedCommitDate | 2026-06-01T23:39:39+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -62,9 +62,9 @@ No external documentation is needed for this local setup reporting module.
 | Setup finalization computes strict `ok`, recovered `ready`, setup state, failed phases, final status, result counts, and summary output. | L45-L66 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
 | Setup state keeps `ready-with-failed-phases` distinct from `ok`, failed, and failed-unchecked states. | L69-L77 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
 | Setup summary files are written under `logs/providers/setup/` as `last-<action>.json`, a timestamped snapshot, and `last-<action>-full.json` (full untrimmed payload), with dry-runs returning paths but writing nothing. | L117-L154 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Summary payloads omit nested settings internals and include action, readiness, enabled providers, result counts, failed phases, final status, and compacted results. | L157-L183 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Tests assert dry-run no-write behavior, compact summary files, recovered final status reporting, and omission of raw stdout. | L51-L192 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| Provider setup delegates final payload augmentation and summary persistence to this module. | L1-L66 | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| Summary payloads omit nested settings internals and include action, readiness, enabled providers, result counts, failed phases, final status, and compacted results. | L157-L179 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
+| Tests assert dry-run no-write behavior, compact summary files, recovered final status reporting, and omission of raw stdout. | L51-L193 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| Provider setup delegates final payload augmentation and summary persistence to this module. | L24; L562-L588 | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
 
 ## Cross-Repo References
 
@@ -76,5 +76,23 @@ No sibling repository boundary is needed to explain this file.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The
+  delegation row pointed at `provider_setup.py` L1-L66 (imports and the `ProviderSetupRequest`
+  dataclass); the single call is `setup_reporting.finalize_setup_payload(...)` inside
+  `_action_payload_from_args` at L562-L588, reached via the module import at L24. Verified by grep
+  that L584 is the only `setup_reporting.` call site in that file. No claim text changed.
+
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/src/agents_remember/providers/setup_reporting.py` and moved the lines this card cites, so
+  the Citations column no longer pointed at the code its rows name. Corrected the ranges
+  (L157-L183 → L157-L179). The behaviour described is unchanged — the file's AST is identical to
+  the base revision — this is a citation repair only. Verification metadata pinned until closeout
+  stamps the L2 commit.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-06-01T23:40+02:00 — `write_setup_summary` now writes a third artifact, `last-<action>-full.json`, with the full untrimmed provider-setup payload (command stdout/stderr included, `default=str`). `setup_summary_paths` gained a `lastFull` key; all return dicts (success, error, dry-run) report `lastFull`. The compact summary and trimmed tool response were not usable debug artifacts when a provider step failed. Updated Logic, Invariants, and the summary-files Repo-Internal References row.
 - 2026-05-28T12:32+02:00: Created after provider setup gained compact setup summaries and separate historical setup state.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/setup_common.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -15,6 +15,17 @@
 `setup_common.py` owns shared provider setup primitives: explicit settings-file loading, provider enablement checks, template helpers, subprocess execution, JSON stdout parsing, and lifecycle command capture. It re-exports `stable_provider_id` from `providers.identity` (the canonical slug source) for existing callers.
 
 ## Code Commentary
+
+### 260731-EFA-L2 `LifecycleCommand`
+
+`run_lifecycle(coordination_root, command_spec, *, timeout, dry_run)` takes the frozen
+**`LifecycleCommand(provider, action, extra_args=(), native_args=())`**. The split matters because
+**the provider CLI puts its arguments on either side of the action**: `extra_args` are
+provider-level flags that precede it, `native_args` are the action's own arguments. The three parts
+are only ever meaningful together, so they travel as one command. Both are tuples because the
+object is frozen; the built argv is `[provider, --coordination-root …, --timeout …, --json,
+*extra_args, action, *native_args]` — identical to before. Every provider setup module
+(`cgc/setup.py`, `grepai/setup.py`, `provider_setup.py`, `cgc/seed.py`) imports it.
 
 ### Logic
 
@@ -40,6 +51,11 @@ while announcing phases (GitHub #53).
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `LifecycleCommand` and re-signed `run_lifecycle(coordination_root,
+  command_spec, *, timeout, dry_run)`; `provider`/`action`/`extra_args`/`native_args` are no longer
+  separate parameters. The built argv is unchanged. Verification metadata pinned until closeout
+  stamps the L2 commit.
 - 2026-06-10T07:30+02:00 — Added `setup_progress_from(args)`: returns the `SetupProgress` sink riding on the args namespace (set by `run_provider_setup(request, progress)`) or a shared no-op, so the install/prepare functions keep their `(args, settings)` signatures while announcing phases (GitHub #53).
 - 2026-05-31T12:30+02:00 — `stable_provider_id` slug logic moved to `providers.identity` (now re-exported); added `provider_settings`; dropped unused `coordination_root` arg from `settings_path`/`load_settings` (1.0.0 review remediation).
 - 2026-05-25T19:50+02:00: Created when shared provider setup helpers were extracted out of `provider_setup.py`.

@@ -47,7 +47,7 @@ harness plus a complete selection; pre-session buttons no longer claim adapter p
   `fetchHarnessCapabilities(harnessId)` (single-flighted; a daemon cache hit is cheap) and the
   component subscribes to that harness's `perHarness` entry only.
 - **Model/effort pickers — dynamic only** (L356-L473): while `loading`/`refreshing`, the
-  cost-named `capabilityLoadingCopy` renders and ZERO options exist (L359-L365); an `error` entry
+  cost-named `capabilityLoadingCopy` renders and ZERO options exist (L448-L454); an `error` entry
   renders the VERBATIM `status: detail` with a retry button (L366-L381); a loaded envelope renders
   `cacheStatusNote` + a refresh button whose `title` is `capabilityCostNote` (R2 — the same cost
   naming as the miss-loading state, L384-L396). Hidden rows are FILTERED OUT (L398-L399);
@@ -162,6 +162,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The
+  `capabilityLoadingCopy` loading branch moved L359-L365 -> L448-L454 (L359-L365 is now the
+  dialog's `role="dialog"`/Escape wiring); the range now covers the whole loading ternary arm that
+  proves ZERO options exist while `loading`/`refreshing`. Claim re-verified and unchanged.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V7 + RV-3 visual-honesty pass — the
   disabled primary is demoted to a muted/inert chip (no longer amber-ready), the summary always names the

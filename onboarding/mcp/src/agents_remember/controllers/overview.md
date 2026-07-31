@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-18T20:03+02:00 |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -53,9 +53,37 @@ landed archive. The helper body remains best-effort (`except Exception: return [
 fault can never fail an already-succeeded edge — landing is archive bookkeeping riding the edge,
 never a gate on it.
 
+## Parameter Objects: This Route Owns The Concepts
+
+260731-EFA-L2 armed `PLR0913` (≤5 arguments) at full strength with no ignore and no `max-args`
+override, and this route absorbed a large share of the resulting refactor. A controller's arguments
+are now named concepts, defined **beside the controller that takes them** and imported by the
+payload builder and the tool declaration:
+
+| Module | Types it defines |
+| --- | --- |
+| `task_ref.py` (new) | `TaskRef` — the repo plus whichever locator a caller holds; shared by `resolve_context_tool`, `worktree_attach_tool`, `worktree_status_tool`. |
+| `worktree_tools.py` | `TaskIdentity`, `TaskBases`, `StartExecution`, `CloseoutCommitMessages`, `CloseoutApproval`, `FinalizeTaskDocs` (+ `DEFAULT_TASK_BASES`, `DEFAULT_START_EXECUTION`, `PREVIEW_ONLY`, `NO_TASK_DOCS`). |
+| `memory_tools.py` | `MemoryBranches`, `CarryoverSelection`, `CarryoverCommitMessages` (+ their defaults). |
+| `task_doc_tools.py` | `TaskDocTarget`, `TaskDocEdit` (+ `NO_EDIT`). |
+| `benchmark_tools.py` | `BenchmarkSelection`, `BenchmarkPreparation`, `CodexBenchmarkRun` (+ `ALL_CASES`, `DEFAULT_PREPARATION`, `DEFAULT_RUN`). |
+| `provider_tools.py` | `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery` (+ `WORKSPACE_QUERY_SCOPE`, `ALL_INDEXED_REPOS`). |
+| `runtime_install.py` | Re-exports `RuntimeInstallRequest`, whose definition moved to `install/runtime.py`. |
+
+Two splits are load-bearing rather than cosmetic and must survive future edits: `CloseoutApproval`
+stays separate from `CloseoutCommitMessages` (folding them would let a dry run read as an approved
+apply), and `intent_note` stays outside `CarryoverSelection` (it is the approval, not part of what
+is carried).
+
+**These types stop at this boundary.** The MCP tool declarations in `mcp/registration/` keep flat
+published signatures and build these objects in their bodies, because FastMCP derives each tool's
+JSON schema from the Python signature — a model-typed tool parameter would republish the tool as a
+nested object for every client.
+
 ## Route Model
 
-- MCP transport lives in `mcp/server.py` and the `mcp/tools/` package.
+- MCP transport lives in `mcp/registration/` (the `@server.tool()` declarations) and the
+  `mcp/tools/` package (the payload builders); `mcp/server.py` is process wiring only.
 - Controllers should remain typed operation facades, not generic command
   runners.
 - Domain behavior belongs in service modules such as `providers`,
@@ -125,6 +153,11 @@ benchmark requests, so a case manifest cannot arm providers disabled on disk.
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: added the **Parameter Objects** section — the new
+  `task_ref.py` module and the concept types each controller now defines — and corrected the Route
+  Model's transport line: the `@server.tool()` declarations left `server.py` for the new
+  `mcp/registration/` package. Verification metadata pinned until closeout stamps the L2 code
+  commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: `memory_tools.py` now forwards the resolved code
   repository identity and storage/path-rule authority into deterministic route-index generation.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: controller overview now documents

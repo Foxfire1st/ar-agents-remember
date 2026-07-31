@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T13:03+02:00                     |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -78,8 +78,11 @@ classes, one per incident:
   set converges to empty, the heartbeat never goes stale and reports backlog/duration metrics, and
   compaction reduces `operator-inbox.jsonl` to the bounded live set.
 
-Shared fixtures: `_entry()` builds a `TerminalCatalogEntry`; `_FakeHost` is a reachable-by-default
-tmux host a scenario can flip to unreachable (#16); `_landing_paster()` is the healthy-delivery
+Shared fixtures: `_entry(session_id, *, leaf_key)` builds one fixed shape — a `running` `harness`
+`TerminalCatalogEntry` — and scenarios vary the frozen row with `replace(...)` or with
+`entry.with_turn_state(state, changed_at=…)` rather than through builder parameters; `_FakeHost`
+is a reachable-by-default tmux host a scenario can flip to unreachable (#16);
+`_landing_paster()` is the healthy-delivery
 capture-verified paste every non-stuck scenario reuses; `_StubPaster` returns one fixed
 `PasteResult` for scenarios needing the same pane state on every attempt (a stuck modal, a busy
 pane); `_LivenessSimulationCase` is the shared `SupervisorContext` scaffolding base class. HFX2-L9
@@ -92,7 +95,11 @@ scenario in this file.
 `unittest.TestCase` per incident class, `NOW` a shared fixed-clock constant
 (`datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)`), temp-rooted stores per test via the shared base
 class — matching the project's existing fixture conventions (`test_supervisor.py`,
-`test_escalation_ladder.py`).
+`test_escalation_ladder.py`). Seeded rows are built through parameter objects: expectation rows
+via `write_expectation_row(store, Expectation(kind, source_id, subject=ExpectationSubject(...)),
+row_id=…, now=…, sla_seconds=…)`, and inbox entries via
+`create_operator_inbox_entry(InboxMessage(ask, response, message_kind), entry_id=…, now=…,
+routing=InboxRouting(address=InboxAddress(...)), poster=InboxPoster(...))`.
 
 ### Invariants And Boundaries
 
@@ -137,7 +144,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `SupervisorHeartbeatStore`, `supervisor_staleness_banner` | [../src/agents_remember/serving/supervisor_heartbeat.py](../src/agents_remember/serving/supervisor_heartbeat.py.md) |
 | The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | [test_supervisor.py](test_supervisor.py.md) |
 | The terminal state and compaction semantics the HFX2-L8 storm simulation proves at scale. | `OperatorInboxStore.compact`; `mark_ladder_resolved`; `redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
-| The shared simulation context now wires the supervisor signal cooldown store expected by `SupervisorContext`. | L162-L190 | [test_liveness_simulations.py](agents-remember/mcp/tests/test_liveness_simulations.py) |
+| The shared simulation context (`_ctx`) wires the supervisor signal cooldown store expected by `SupervisorContext`. | L151-L176 | [test_liveness_simulations.py](agents-remember/mcp/tests/test_liveness_simulations.py) |
 
 ## Cross-Repo References
 
@@ -155,6 +162,18 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected the shared-fixture description and the
+  self-file citation. `_entry` lost five parameters (`kind`, `status`, `turn_state`,
+  `turn_state_changed_at`, `liveness_failures`) and now mints only a `running` `harness` row from
+  `session_id`/`leaf_key`; scenarios reach the rarer shapes with `replace(...)` or the entry's own
+  `with_turn_state(state, changed_at=…)`, which is what `FalseDeadSeatHysteresisTests` now uses
+  for its stale-flicker and stale-past-window rows. Row seeding also moved onto parameter
+  objects — `write_expectation_row` takes an `Expectation`/`ExpectationSubject` pair and
+  `create_operator_inbox_entry` takes `InboxMessage` plus `routing=InboxRouting(address=…)` and
+  `poster=InboxPoster(...)` — recorded under Conventions. The Repo-Internal citation for the
+  shared simulation context was re-derived and verified: the `_ctx` builder is L151-L176 (it was
+  cited L162-L190, which had drifted off the helper's start). All twelve tests keep their names
+  and assertions, so every incident-class claim and invariant above still holds.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: aligned simulations with harness-log acceptance and

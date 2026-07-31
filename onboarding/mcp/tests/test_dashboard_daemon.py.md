@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_dashboard_daemon.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e`       |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ Helpers: `make_config(root, auto_start=…, port=…)` builds a real `McpRuntime
 directly (tmp coordination root); `make_state(**overrides)` builds `DaemonState`
 fixtures; `_spawn_sleeper(ignore_term=…)` launches a real python child that prints
 `ready` **after** installing (or not) a SIGTERM ignore handler — reading that line
-before signalling removes the classic install-race flake. `_write_settings` writes a
+before signalling removes the classic install-race flake; the handshake pipe is then
+closed by the helper itself, since the caller keeps the `Popen` only for its pid and an
+open read end would otherwise be finalised by GC. `_write_settings` writes a
 minimal real settings JSON for CLI dispatch tests.
 
 - `StateFileTests` — round-trip equality, camelCase JSON keys, no `.tmp` residue,
@@ -42,20 +44,25 @@ minimal real settings JSON for CLI dispatch tests.
   `start_new_session=True`, immediate state write, and per-spawn log rotation. 260712-PTS-L3
   adds the `--heartbeat` plumbing pair: the default spawn asserts `--heartbeat` is NOT in the
   child argv (the child uses the serving default), and
-  `test_spawn_forwards_an_explicit_heartbeat_to_the_child` asserts `heartbeat=20.0` rides as
-  `--heartbeat 20.0` before `--no-access-log`.
+  `test_spawn_forwards_an_explicit_heartbeat_to_the_child` asserts
+  `cadence=ProjectionCadence(heartbeat=20.0)` rides as `--heartbeat 20.0` before
+  `--no-access-log`. Every call is `daemon.spawn(config, DaemonEndpoint(host=…, port=…,
+  version=…), cadence=…)` — host/port/version travel as one endpoint value.
 - `EnsureTests` — the decision matrix with `spawn`/`stop`/`probe`/`_wait_ready`
   patched: absent→`started`, healthy-match→`adopted` (no spawn), version-mismatch and
   port-mismatch→`restarted` (stop then spawn), child-death→`failed`+state cleared,
-  slow-start→`failed`+state kept, and a really-held flock→`lock-held` (no spawn). The
-  absent→`started` case pins the full spawn call shape including the PTS-L3 `heartbeat=None`
+  slow-start→`failed`+state kept, and a really-held flock→`lock-held` (no spawn). `daemon.ensure`
+  likewise takes the endpoint positionally, and the absent→`started` case pins the full spawn call
+  shape — `spawn(config, DaemonEndpoint(host=…, port=…, version=…),
+  cadence=ProjectionCadence(interval=1.0, heartbeat=None))` — including the PTS-L3 `heartbeat=None`
   pass-through.
 - `AutostartTests` — off→no-op (ensure never called); on→a joined worker thread that
   called `ensure` with the settings port and reported to captured stderr; an ensure
   exception is swallowed and reported (`failed: …`), never raised.
 - `CliDaemonDispatchTests` — real parser + real settings file, `serving_daemon.*`
   patched: `--status` exit 0/1, `--stop` reporting, `--daemon` using the settings
-  port by default with explicit `--port` winning, failure exit 1, `--daemon --sim`
+  port by default with explicit `--port` winning (both read off the positional
+  `DaemonEndpoint` as `ensure.call_args.args[1].port`), failure exit 1, `--daemon --sim`
   rejected, and `--status`/`--stop` mutual exclusion (SystemExit).
 
 ## Invariants And Boundaries
@@ -77,6 +84,13 @@ minimal real settings JSON for CLI dispatch tests.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: `daemon.spawn` and `daemon.ensure` now take a
+  positional `DaemonEndpoint(host, port, version)` plus an optional
+  `cadence=ProjectionCadence(interval, heartbeat)`, so the pinned `spawn.assert_called_once_with`
+  shape, the explicit-heartbeat assertion, and the CLI port assertions (`call_args.args[1].port`)
+  all changed; updated the `SpawnTests`, `EnsureTests`, and `CliDaemonDispatchTests` bullets to the
+  new call shapes. Also recorded that `_spawn_sleeper` now closes the handshake pipe after reading
+  `ready`. The 33 test cases and the decision matrix they pin are otherwise unchanged.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: `SpawnTests` pins heartbeat argv plumbing (omitted by
   default, `--heartbeat 20.0` when explicit) and `EnsureTests` pins the `heartbeat=None`
   pass-through on the started path — the ensure-adopts-without-cadence-comparison behaviour that

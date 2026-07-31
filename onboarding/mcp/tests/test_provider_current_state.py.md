@@ -103,7 +103,7 @@ No external documentation is needed for these standard-library unit tests.
 | Provider status and diagnostics both expose restart/rebind recovery guidance when the current projected GrepAI state is `noWorkspace`. | L129-L155 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | L178-L208 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 | The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | L209-L230 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| Current-state projection and persistence are implemented in the provider current-state module. | L16-L325 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| Current-state projection and persistence are implemented in the provider current-state module. | L16-L348 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | The structured-`lastRefresh` regression mutates a CGC watcher's `lastRefresh` to a `{returncode, durationSeconds, updatedAt}` object and asserts the projected watcher `lastRefresh` is the flattened summary string. | L243-L275 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
 ## Cross-Repo References
@@ -116,6 +116,13 @@ No sibling repository evidence is needed for these tests.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
+  `providers/current_state.py`. The module is 348 lines and the old `L16-L325` stopped short of the
+  helpers the claim covers, cutting off `cgc_indexing_state` (L336) and `_result_list` (L345).
+  Widened to L16-L348 — `build_current_provider_state` through the last helper — and read both ends
+  to confirm the range spans the whole projection-and-persistence body (`write_current_provider_state`
+  L39, `current_state_path` L52, `grepai_current_state` L136, `cgc_current_state` L179,
+  `aggregate_state` L285, `grepai_indexing_state` L317).
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented `test_provider_status_summarizes_structured_cgc_last_refresh` (MCP 2.9.x), which pins flattening a structured CGC `lastRefresh` object to the human-readable summary string. Grafted onto the series' task-12 `targetRepos` content.
 - 2026-06-23T22:09+02:00 — Task 12 S2 correction: the current-truth regression now asserts GrepAI
   `targetRepos` are persisted from configured repository memory roots, protecting the observer's

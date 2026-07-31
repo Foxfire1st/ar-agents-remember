@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`  |
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`  |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -142,9 +142,9 @@ claims are proven by repository source and tests.
 | The one read/path abstraction (NS #5). | — | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
 | The app that mounts this as `GET /api/events`. | — | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | L36-L94 | [event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | L125-L225 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | L188-L231 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | L994-L1124 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | L125-L227 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
+| `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | L190-L233 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
+| Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | L1913-L2039; L2099-L2128 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
 ## Cross-Repo References
 
@@ -156,6 +156,24 @@ No meaningful cross-repository implementation source governs this repository-loc
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the one remaining cross-file citation,
+  into `mcp/tests/test_serving.py`. The stamped `L994-L1124` now lands in `BuildInfoTests` /
+  `ActionGateTests`, nothing to do with raw events. The five behaviours the row names are
+  `RawEventTests` L1913-L2039 (`test_read_new_events_skips_heartbeats`,
+  `test_read_new_events_limit_bounds_batch`, the two
+  `test_dormant_*_lifecycle_pruned_without_terminal_event` cases, and
+  `test_initial_offsets_bound_active_replay_to_recent_window`) plus
+  `StreamRawEventsTests.test_stream_does_not_emit_heartbeats` at L2099-L2128. Both ranges read
+  back; the claim is unchanged and still true.
+
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/src/agents_remember/serving/events.py` and moved the lines this card cites, so the
+  Citations column no longer pointed at the code its rows name. Corrected the ranges (L125-L225 →
+  L125-L227; L188-L231 → L190-L233). The behaviour described is unchanged — the file's AST is
+  identical to the base revision — this is a citation repair only. Verification metadata pinned
+  until closeout stamps the L2 commit.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented server-owned record realignment, exact skip/cursor
   semantics, top-level-object admission, and one-parse payload reuse; verification metadata remains
   pinned pending candidate closeout.

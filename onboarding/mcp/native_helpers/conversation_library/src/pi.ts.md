@@ -73,7 +73,7 @@ live gate and the real open.
 | --- | --- | --- |
 | The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | L102-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
 | The Python Pi port calls list/read/resolve-resume-target through the locked helper host. | L88-L182 | [pi.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/pi.py) |
-| The installed suite proves the live Pi gate, the list/read/resolve round-trip, and the real end-to-end open through this helper. | L215-L262; L360-L479 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed suite proves the live Pi gate, the list/read/resolve round-trip, and the real end-to-end open through this helper. | L217-L231; L233-L263; L284-L413 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 
 ## Cross-Repo References
 
@@ -86,6 +86,12 @@ participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that drifted
+  as `test_conversation_library_installed.py` grew. The three proofs the row names are now
+  `PiInstalledTests.test_live_helper_gate_supports_pi_history` (L217-L231),
+  `test_live_list_read_resolve` (L233-L263), and the `PiOpenEndToEndTests` class (L284-L413,
+  tracked opener → tmux → control runner → pi RPC resume → proof → retire). No claim text changed.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the locked Pi helper entry
   sidecar. Verification is blank until closeout commits and stamps the new source.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -47,6 +47,13 @@ now take the newest bounded window (250 nodes each) and omit reader bodies. `_ta
 `bodyRevision` from the omitted fields and receives an explicit `include_body` choice. Lifecycle
 binding was factored into `_TaskDocumentLifecycleMaps` so summary and on-demand paths resolve the same
 runtime context.
+
+Since 260731-EFA-L2 that map arrives **whole**: `_task_doc_node(doc, path, maps, now, *,
+include_body)` takes the `_TaskDocumentLifecycleMaps` and calls `_task_doc_lifecycle_id` itself,
+rather than receiving a pre-computed `lifecycle_id` beside a bare `lifecycle_by_dir`. The doc's own
+lifecycle id and its cross-folder link resolution are two reads of the same index, and passing the
+id separately let the two callers (`read_task_documents`, `read_task_document_body`) disagree.
+Both call sites shrank to one line each as a result.
 
 `read_task_document_body` accepts a projected `docPath`, resolves candidates, requires the final path
 to be a real file under `coordination_root/tasks` (including after symlink resolution), validates the
@@ -318,6 +325,12 @@ facts on heartbeat ticks.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `_task_doc_node` was re-signed from `(doc, lifecycle_id, path, lifecycle_by_dir, now, *,
+  include_body)` to `(doc, path, maps, now, *, include_body)` — it now resolves the doc's own
+  lifecycle id from the `_TaskDocumentLifecycleMaps` it receives, closing the gap where a caller
+  could pass an id inconsistent with the index used for cross-folder link resolution. Private
+  helper; no reader output changed. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: replaced the time-based whole
   task-corpus cache with per-file stat-identity reuse and added a heartbeat-only landing refresh
   that updates retained Engine Room facts without rerunning their Git-backed structural reader.

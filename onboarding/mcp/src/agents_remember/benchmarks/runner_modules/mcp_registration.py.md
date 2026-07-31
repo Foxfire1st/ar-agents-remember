@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T20:45+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,17 @@
 Benchmark-local MCP/Codex registration and generated provider setup settings.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Workspace-Object Signatures
+
+`benchmark_mcp_config(workspace)`, `benchmark_lifecycle_settings(workspace)`,
+`write_benchmark_mcp_registration(workspace, *, provider_timeout, dry_run)` and
+`prepare_configured_providers(workspace, *, dry_run, provider_timeout)` all take one
+`BenchmarkWorkspace` (from `models.py`) in place of the case/roots/provider-ids keyword lists. The
+new `benchmark_repo_id(case)` names the per-case repo id these builders derive. Everything written
+— `.codex/mcp` settings, `.codex/config.toml`, the generated lifecycle settings and their
+`timeoutCaps` — is unchanged, as is the no-seed-options / `cgc_refresh_fallback=True` provider
+setup call.
 
 ### Logic
 
@@ -93,6 +104,11 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `benchmark_mcp_config`, `benchmark_lifecycle_settings`, `write_benchmark_mcp_registration` and
+  `prepare_configured_providers` were re-signed onto `BenchmarkWorkspace`; `benchmark_repo_id(case)`
+  was extracted. Generated files are unchanged. Verification metadata pinned until closeout stamps
+  the L2 commit.
 - 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fix: `prepare_configured_providers` opts INTO
   `cgc_refresh_fallback=True` — hermetic-cold benchmarks need the synchronous timeout-bounded
   graph build; with the new fleet default off, `cgc watch` would self-index asynchronously and

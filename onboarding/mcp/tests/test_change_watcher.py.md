@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_change_watcher.py`             |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |                                                `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |                                                2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |                                                `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                                2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -65,7 +65,11 @@ Pacer tests set `_last_wake`/`_watcher_healthy`/`_first_pending` directly and as
 `(deadline, reason)` tuples — the scheduling core stays pure so no test sleeps to prove a
 deadline. Projector tests use loose beat-count bounds to absorb slow-CI tick durations, drain
 boot-time ticks (degraded start + floor) before measuring, and cancel the run task via
-`addAsyncCleanup`. Instrumentation (`projection_count`, `last_wake_reason`) exists for exactly
+`addAsyncCleanup`. Every `Projector(...)` construction passes pacing as one
+`ProjectionCadence(interval=..., heartbeat=...)` and the injected watcher as one
+`ProjectionRefreshers(change_watcher=...)`, so a test tuning cadence names the cadence object
+rather than loose keywords; the no-watcher legacy case passes cadence alone.
+Instrumentation (`projection_count`, `last_wake_reason`) exists for exactly
 these assertions plus ops.
 
 ## Docs References
@@ -81,7 +85,7 @@ Domain Documentation entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Root derivation, event filter, pure pacer deadline, adaptive projector, and real-backend suites. | L46-L130; L133-L181; L212-L387; L390-L432 | [mcp/tests/test_change_watcher.py](agents-remember/mcp/tests/test_change_watcher.py) |
+| Root derivation, event filter, domain mapping, pure pacer deadline, adaptive projector, and real-backend suites. | L48-L97; L98-L137; L138-L168; L169-L219; L248-L438; L440-L485 | [mcp/tests/test_change_watcher.py](agents-remember/mcp/tests/test_change_watcher.py) |
 | The module under test: derived roots, event filter, `ChangePacer`, `ProjectionInputWatcher`, and the R-numbered contracts the suites pin. | L1-L384 | [mcp/src/agents_remember/serving/change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
 | The projector integration under test: pacer wiring, watch-task lifecycle, `_on_watch_task_done` fail-open, and the `projection_count`/`last_wake_reason` instrumentation. | L105-L124; L149-L205 | [mcp/src/agents_remember/serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
 
@@ -100,6 +104,16 @@ fallback for an unknown accepted path, and the exact task-domain wake through bo
 worker and real watchfiles integration.
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: every `Projector(...)` construction in the
+  adaptive and real-watchfiles suites now threads `ProjectionCadence(interval=...,
+  heartbeat=...)` and `ProjectionRefreshers(change_watcher=...)` instead of three loose
+  keywords, so the Conventions paragraph names both parameter objects. The rewrapped
+  constructions moved the adaptive-projector and real-backend suites down the file, and the
+  own-file reference row was re-verified line by line and re-anchored (L46-L130; L133-L181;
+  L212-L387; L390-L432 became L48-L97; L98-L137; L138-L168; L169-L219; L248-L438; L440-L485,
+  with the previously unlisted domain-mapping suite now named). No assertion, log string, or
+  test name changed.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added path-to-domain,
   coalescing, fail-open unknown-path, adaptive-worker, and real-watchfiles assertions for domain

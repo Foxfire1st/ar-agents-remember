@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash |                                            `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                            2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash |                                            `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -53,4 +53,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: the fixture's `default_contract` call now passes the
+  `ContractTask` / `LeafIdentity` / `RepoBranchPlan` parameter objects added for PLR0913 instead of
+  ten loose keyword arguments, and `ruff format` rewrapped the `patch(...)` context manager in the
+  cleanup-blocked test. The temporary Git repos, the disabled-memory contract, the `write_task_doc`
+  fixture path, and every covered behavior enumerated above are unchanged.
 - 2026-06-23T22:50+02:00 — Created focused lifecycle finalizer regression coverage. Verification metadata is pending until closeout stamps the source commit.

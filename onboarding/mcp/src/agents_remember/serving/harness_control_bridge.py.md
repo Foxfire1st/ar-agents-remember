@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,18 +42,18 @@ loud failed state, resolve active callers, and drain queued commands.
 
 The evidence buffer is a bounded per-session deque (default 2000 frames, per-frame 32 KiB clip)
 fed at the single `_run_events` event-consumption point: when an adapter event carries the reserved
-`arEvidence` raw key, `_divert_evidence` (L521-L544) appends an `EvidenceFrame(sequence, kind,
+`arEvidence` raw key, `_divert_evidence` (L548-L569) appends an `EvidenceFrame(sequence, kind,
 created_at, clipped payload, native_method, thread_id)` and the redacted event (raw minus BOTH reserved keys,
-`{AR_EVIDENCE_KEY, AR_EVIDENCE_METHOD_KEY}` at L540) flows to reduce/observe/transcript/publish, so
+`{AR_EVIDENCE_KEY, AR_EVIDENCE_METHOD_KEY}` at L565) flows to reduce/observe/transcript/publish, so
 `snapshot.raw`, catalog `control_raw`, SSE projections, and every existing consumer stay
 byte-identical. The out-of-band native method rides this same seam:
 when the event also carries `AR_EVIDENCE_METHOD_KEY`, `_divert_evidence` validates it is non-empty
-text (L532-L536, else raises) and preserves it on the frame as typed `native_method` (L537-L539) so the
+text (L559-L561, else raises) and preserves it on the frame as typed `native_method` (L562-L564) so the
 codex projector switches on the real method, then strips the extra reserved key so the redacted
 snapshot stays byte-identical exactly as before. A third stamped field carries the multiplex demux key:
-`_evidence_thread_id` (L546-L558) reads the payload's `threadId` verbatim — codex notification
+`_evidence_thread_id` (L571-L583) reads the payload's `threadId` verbatim — codex notification
 params carry it, parent frames carry the parent thread's id — and `_append_evidence` stamps it as
-`thread_id` on every frame (L581); anything present-but-not-non-empty-text degrades to `None`
+`thread_id` on every frame (L606); anything present-but-not-non-empty-text degrades to `None`
 (the parent/session thread, matching pre-multiplexing behavior) rather than being guessed. `evidence()` pages
 the deque domain with count+byte bounds and reports
 `latestSequence`, `evictedBeforeSequence`, `truncated`, and `bridgeEpoch`; `native_page()` dispatches
@@ -63,7 +63,7 @@ support it) and stamps the bridge epoch itself — an adapter-minted epoch is re
 bridge→authority path. The evidence sequence is the adapter event sequence and non-monotonic input
 fails visibly.
 
-`native_page` is also optionally per-thread (L209-L254): the additive `thread_id` kwarg is
+`native_page` is also optionally per-thread (L236-L281): the additive `thread_id` kwarg is
 forwarded to `adapter.read_native_page` only when present, so the structural `NativePageReader`
 protocol and every single-thread adapter keep their exact signature; an adapter that rejects the
 additive kwarg (`TypeError`) surfaces a typed `HarnessControlError` naming the adapter and stating
@@ -166,8 +166,21 @@ model/effort sets, and exact operation resolution. Direct adapter completion eve
 before coalesced snapshot publication, preventing publication latency or loss from stranding the
 active operation. Startup failure and graceful stop clean the same authority instance.
 
+## 260731-EFA-L2 Current Delta
+
+**`BridgeLimits`** (`queue=64`, `transcript=1000`, `submission=256`, `subscriber_queue=16`,
+`evidence=2000`, `evidence_frame_bytes=32 KiB`; module default `DEFAULT_BRIDGE_LIMITS`) replaces the
+six independent bound arguments. The concept: **every bound one control bridge holds itself to,
+chosen as one memory budget**. A bridge retains a transcript, an evidence window (capped in frames
+AND in bytes per frame), a command queue, a submission ledger and a per-subscriber fan-out queue —
+they are one decision, how much a single live session may hold, and raising any one alone silently
+moves the process's real ceiling somewhere else. The default values are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `BridgeLimits` / `DEFAULT_BRIDGE_LIMITS` as the single per-session memory budget (default values unchanged).
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex demux key — `_evidence_thread_id`
   extracts `threadId` verbatim (missing/malformed degrades to `None` = parent, never guessed) and
   `_append_evidence` stamps it as `EvidenceFrame.thread_id` — and the additive per-thread

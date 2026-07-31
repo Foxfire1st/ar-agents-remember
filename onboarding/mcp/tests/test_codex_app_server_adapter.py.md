@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ hidden models and their model-specific effort menus, leaves current selections u
 thread exists, and proves discovery never calls `thread/*` or `turn/*`. A repeated pagination cursor
 fails loudly and still forces the transient app-server process to stop.
 
-The experimental server-request case (`test_experimental_server_request_fails_instead_of_enabling_experimental_api`,
-L1078-L1118) pins the remediation contract: an unknown/experimental request METHOD is still
+The experimental server-request case (`test_unknown_server_request_is_declined_while_experimental_history_stays_enabled`,
+L1091-L1129) pins the remediation contract: an unknown/experimental request METHOD is still
 DECLINED (`respond_error` -32601 — no experimental API is ever enabled), but the failure contract
 deliberately changed: the method is vendor traffic that degrades to preserved raw evidence on any
 thread, so the bridge stays `ready` with nothing left outstanding instead of marking `failed`
@@ -81,6 +81,16 @@ known-malformed vs boolean-rpc-id) lives in `test_codex_adapter_thread_demux.py`
 Tests use `pytest` with the AnyIO asyncio backend. `FakeCodexTransport` deep-copies protocol values
 so fixture mutation and adapter behavior remain deterministic. The pinned `0.144.3` fixture is
 schema evidence for the tests, not a production version enum or fallback catalog.
+
+`make_adapter(transport, settings=TEST_SETTINGS)` takes one `CodexAppServerSettings` value rather
+than a parallel keyword list: the module-level `TEST_SETTINGS` (xhigh effort, `gpt-5.6-sol`,
+ephemeral) is the baseline every test starts from, and a case that needs a different resume thread,
+approval policy, sandbox, config map, or submission limit varies exactly that field with
+`dataclasses.replace(TEST_SETTINGS, ...)`. Three shared helpers keep the correlation cases honest:
+`drain_events()` empties the adapter queue and returns the sequence number to compare against,
+`assert_notification_is_inert()` emits an already-settled notification and proves the sequence did
+not move from that known-empty queue, and `next_event_of_kind()` awaits the next event of a given
+kind while skipping the ones emitted on the way there.
 
 ### Invariants And Boundaries
 
@@ -124,21 +134,22 @@ thread-free discovery contract.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The started-adapter test verifies cached advertisement, retained descriptions, current model/effort, and no extra request after startup. | L210-L263 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | L294-L357 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Model and effort changes remain queued until one same-thread turn accepts their exact override, with no reconnect or resume. | L531-L566 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Turn statuses promote only `inProgress`/`completed`; failed/interrupted starts reject and retain the fresh-turn requirement. | L569-L608 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | L611-L681 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | L684-L794 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Idempotent setters return immediate without falsely claiming an effective echo. | L797-L810 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| The experimental-request case pins the decline-not-fail remediation contract. | L1078-L1118 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | L137-L190 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| The started-adapter test verifies cached advertisement, retained descriptions, current model/effort, and the exact initialize/model-list/thread-start request sequence after startup. | L301-L360 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | L388-L454 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Model and effort changes remain queued until one same-thread turn accepts their exact override, with no reconnect or resume. | L590-L637 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Turn statuses promote only `inProgress`/`completed`; failed/interrupted starts reject and retain the fresh-turn requirement. | L638-L670 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | L869-L925 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | L926-L1028 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| Idempotent setters return immediate without falsely claiming an effective echo. | L1029-L1044 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The experimental-request case pins the decline-not-fail remediation contract. | L1091-L1129 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The shared `TEST_SETTINGS` baseline and the `drain_events`/`assert_notification_is_inert`/`next_event_of_kind` helpers every correlation case reuses. | L225-L284 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | L152-L205 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | L173-L208; L311-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | L226-L313 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | L314-L355 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | L519-L615 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | L241-L328 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | L329-L370 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | L528-L593; L657-L701 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | Session state validates dynamic model-local effort, separates desired from effective state, promotes only an accepted selection, and guards settings notifications against unrelated drift. | L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| The fixture path remains an explicit test baseline rather than a runtime catalog source. | L27-L29 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The fixture path remains an explicit test baseline rather than a runtime catalog source. | L34; L1251-L1259 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
 
 ## Cross-Repo References
 
@@ -164,6 +175,30 @@ declined/degraded. It does not infer that any history method exists or that expe
 requests are accepted; the dedicated history-reader tests own runtime method probing.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The turn-start
+  override material is now split across two methods in `codex_app_server_adapter.py`: `_start_turn`
+  plus `_turn_start_params` at L528-L593 (which carries `evidence.model.model` / `evidence.effort` and
+  rejects a `failed`/`interrupted` start status), and `_accept_started_turn` at L657-L701 (which calls
+  `self._session.accept_settings_selection(...)` — the promotion). Was the single range L519-L615.
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the suite's own fixture surface changed, so
+  the Conventions section was rewritten rather than attested. `make_adapter` no longer takes the
+  seven keywords it used to assemble into a settings object; it takes one
+  `CodexAppServerSettings` defaulting to the new module-level `TEST_SETTINGS`, and the resume,
+  submission-limit, and approval/sandbox/config cases vary a single field with
+  `dataclasses.replace(TEST_SETTINGS, ...)`. Three extracted helpers — `drain_events`,
+  `assert_notification_is_inert`, and `next_event_of_kind` — replace the inline queue-draining
+  and `while True` event loops the correlation cases repeated, and are now named alongside a
+  reference row at L225-L284. That 31-line block plus the `AdapterEvent` import shifted every
+  test below it, so all eight own-file reference ranges were re-verified against the current
+  definitions and re-anchored (for example the experimental-request row from L1078-L1118 to
+  L1091-L1129 and the discovery row from L294-L357 to L388-L454), and the fixture-path row was
+  re-pointed from the long-stale L27-L29 to the current `FIXTURE_PATH` at L34 plus the
+  schema-pinning test at L1251-L1259. The Logic paragraph's experimental-case name was also
+  corrected to the source's actual
+  `test_unknown_server_request_is_declined_while_experimental_history_stays_enabled`. No test
+  was added, removed, or renamed, and every decline/degrade, promotion, and validation claim
+  still holds.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: corrected the adapter-suite capability
   record to experimental history opt-in without overclaiming method or server-request support.

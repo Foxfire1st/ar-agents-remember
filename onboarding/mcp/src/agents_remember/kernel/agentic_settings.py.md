@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -87,7 +87,13 @@ concurrency caps, and the four expectation-row kinds) and `_refuse_unknown` rais
 3's ladder — `EscalationSettings` (`sla_seconds` per `message_kind`, defaulting from
 `DEFAULT_ESCALATION_SLA_SECONDS`; `rung_seconds` keyed 1/2/3, defaulting from
 `DEFAULT_ESCALATION_RUNG_SECONDS`; `nudge_rate_limit_seconds` default 900; `respawn_after_rung`
-default 2). `_parse_escalation` validates `slaSeconds` keys against `KNOWN_ESCALATION_MESSAGE_KINDS`
+default 2). `_parse_escalation` is now a three-call assembly over one parser per sub-block
+(260731-EFA-L2): `_parse_escalation_sla_seconds(raw, *, source)`,
+`_parse_escalation_rung_seconds(raw, *, source)` and `_parse_respawn_after_rung(block, *, source)`,
+each returning the defaults when its key is absent. **Call order is the refusal order** — a
+settings file with more than one bad field is still reported against the first one, exactly as
+before the split; do not reorder those calls. The validation itself is unchanged:
+`slaSeconds` keys are checked against `KNOWN_ESCALATION_MESSAGE_KINDS`
 (a literal set duplicated by hand against `InboxMessageKind`, the same kernel<->controlplane
 cycle-avoidance reason `KNOWN_EXPECTATION_KINDS` already uses), `rungSeconds` keys against the
 closed `KNOWN_ESCALATION_RUNGS = (1, 2, 3)`, and `respawnAfterRung` against that same closed set (a
@@ -247,8 +253,8 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The gate policy primitives the gateDelegation parse builds on (named policies, rule construction, seam verdict binding). | L1-L120 | [gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
-| The harness registry whose ids bound every harness preference value. | L41-L48 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
+| The gate policy primitives the gateDelegation parse builds on (named policies, rule construction, seam verdict binding). | L1-L118 | [gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
+| The harness registry whose ids bound every harness preference value. | L41-L49 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | The boot-snapshot consumer: gateDelegation sourced from the global file at boot with the legacy authority fallback. | parse_orchestration_settings | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | The per-use spawn consumer: HFX2-L10 makes caller spend fields a `spend-override-unsupported` refusal; settings resolve spend as repo-local level override > global level override > repo-local role default > global role default > spawn preference/detection. | _caller_spend_override_refusal; _resolve_harness_dispatch | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 | The install seeding consumer (copy-if-missing global file). | seed_agentic_settings | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
@@ -270,6 +276,12 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
+  exemptions): `_parse_escalation` was split into `_parse_escalation_sla_seconds`,
+  `_parse_escalation_rung_seconds` and `_parse_respawn_after_rung`, each owning one sub-block and
+  its defaults. An in-source comment records that field order is the refusal order, so the first
+  bad field in a multi-error settings file is still the one reported. No accepted or rejected
+  settings file changed. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: replaced the stale static-dispatch description
   with the split authority contract: settings parse model/effort as values, native adapters perform
   dynamic model-gated launch validation, and explicit non-native mappings keep legacy validation.

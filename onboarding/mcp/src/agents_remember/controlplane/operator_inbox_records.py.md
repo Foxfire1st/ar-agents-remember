@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate | 2026-07-14T16:16:44+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ delivery snapshots are ignored, while later terminal snapshots preserve idempote
 signals and later redelivery/escalation retain which role on the leaf produced the condition while
 owner addressing remains a separate routed field family.
 
-### 260707-HFX2-L13 Chain And Transition Fields
+### 260707-HFX2-L14 Chain And Transition Fields
 
 Pending inbox rows may now carry `leafKey` and `subjectAgentId`, preserving the leaf whose progress
 must be checked and the seat whose inactivity/completion produced the signal. `rungTransitionAt` is
@@ -47,18 +47,18 @@ fields without changing older rows that omit them.
 `OPERATOR_INBOX_RECORD_SCHEMA` is the wire tag. `OperatorInboxState` is
 `pending | consumed | ladder-resolved`, `OperatorInboxVia` is `chat | dashboard | cli`,
 `AgentRole` addresses orchestration identities (`orchestrator`, `manager`,
-`worker`, `reviewer`, and — as of 260703-L12 — `strategist`, so the spawn-first sprint
+`worker`, `reviewer`, and — as of 260703-L14 — `strategist`, so the spawn-first sprint
 planner can post/receive role-addressed inbox rows). **260707-HFX-L7** adds
 `system-specialist`: the investigate-first provider-degradation seat needs its own inbox address
 alongside `orchestrator`/`manager` since it is dispatched and reports through the same durable
-mailbox as every other role. **260707-HFX-L12** adds `architect` and `curator`: HFX-L6 landed
+mailbox as every other role. **260707-HFX-L14** adds `architect` and `curator`: HFX-L7 landed
 doctrine (`architect.md`, `orchestrator.md`, `SKILL.md`) instructing the orchestrator to post a
 `decision-item` inbox row to `recipient_role="architect"` and the architect to post a
 `decision-ruling` back, but the schema itself still rejected both roles — a master-exit BLOCK
 finding (Finding 1, `notes/reports/260707-HFX-master-exit-verdict.md`) that this leaf closes.
 `InboxMessageKind` classifies the row, and now also carries `degradation-alert` (260707-HFX-L7) —
 the row kind the provider degradation detector posts to the orchestrator and every active manager
-on a state-change transition (see `providers/degradation.py`) — and, as of 260707-HFX-L12,
+on a state-change transition (see `providers/degradation.py`) — and, as of 260707-HFX-L14,
 `decision-item`/`decision-ruling` — the architect/orchestrator decision relay pair the doctrine
 above mandates, now genuinely round-trippable (proven by
 `test_decision_item_relay_round_trip_between_orchestrator_and_architect` in
@@ -71,10 +71,33 @@ recipient role.
 (`lifecycleId`, `agentId`, `recipientRole`), optional `gateId`, sender role/id,
 message kind, optional artifact path, the originating `ask`, the message
 `response`, creation attribution, hosted delivery metadata, and optional consume
-attribution. `create_operator_inbox_entry(...)` returns a `pending` snapshot using
-caller-minted `entry_id` and `now`. `consume_operator_inbox_entry(...)` returns a
-later `consumed` snapshot while preserving the original post and delivery
-metadata.
+attribution. `create_operator_inbox_entry(message, *, entry_id, now, routing, poster)` returns a
+`pending` snapshot using caller-minted `entry_id` and `now`.
+`consume_operator_inbox_entry(...)` returns a later `consumed` snapshot while preserving the
+original post and delivery metadata.
+
+**The five frozen parameter objects (260731-EFA-L2)** are the module's public vocabulary for
+posting; every caller builds them instead of passing nineteen keywords:
+
+- **`InboxAddress(lifecycle_id=None, agent_id=None, recipient_role=None)`** — the mailbox a row is
+  delivered to. At least one of the three must be set, which is exactly what
+  `require_inbox_address` enforces; they are one address, never independently meaningful.
+- **`InboxOwner(role=None, agent_id=None, lifecycle_id=None)`** — the R4 routed owner a poster
+  derives from catalog spawn provenance BEFORE posting, stamped once at creation (and re-stamped
+  by a readdressing ladder rung) so redelivery never re-derives it from a catalog snapshot that
+  has since moved on.
+- **`InboxRouting(address, owner=InboxOwner())`** — the two together. A readdressing rung moves
+  the address onto the next owner and rewrites both, which is why they are one routing decision.
+- **`InboxSubject(leaf_key=None, seat_role=None, agent_id=None)`** — what a row is *about* as
+  opposed to who it goes to. The supervisor coalesces re-fires and the ladder readdresses on
+  exactly this triple.
+- **`InboxMessage(ask, response, message_kind="message", gate_id=None, artifact_path=None,
+  subject=InboxSubject())`** — what the row says and what about.
+- **`InboxPoster(created_by, created_via, sender_agent_id=None, sender_role=None)`** — who put the
+  row in the inbox.
+
+`InboxOwner` and `InboxSubject` are imported by `operator_inbox_store.py` too — they are the same
+owner and the same subject a renewal or a readdressing rung rewrites.
 
 **260707-HFX2-L1** (R1 ack semantics + R4 routing): adds `attemptCount`,
 `lastAttemptAt`, `nextAttemptAt`, and `escalatedAt` — the redelivery schedule
@@ -82,8 +105,9 @@ riding every entry, because `delivered` is never terminal and consume=ack is
 the only terminal outcome (F-A/F-V proved pasted != perceived). Also adds
 `ownerRole`/`ownerAgentId`/`ownerLifecycleId`: the ROUTED address
 (`controlplane/signal_routing.py`) stamped once at post time from catalog
-spawn provenance, distinct from the caller-supplied `recipientRole`.
-`create_operator_inbox_entry(...)` gained matching `owner_*` keyword params.
+spawn provenance, distinct from the caller-supplied `recipientRole`. Those three fields are now
+carried by `InboxRouting.owner` (an `InboxOwner`); the former `owner_role` / `owner_agent_id` /
+`owner_lifecycle_id` keywords on `create_operator_inbox_entry` are gone.
 
 **260707-HFX2-L4** (R1/R2, escalation ladder rung marker): adds `rung: int = 0` — the ladder's own
 position marker for the row (0 = not yet escalated; 1 = renudged; 2 = skip-level re-addressed; 3 =
@@ -92,7 +116,7 @@ genuinely re-stamped by `OperatorInboxStore.advance_rung` on EVERY rung transiti
 names "since when has this row sat at its CURRENT rung" — the anchor the ladder's own SLA/dwell
 check (`escalation_ladder.rung_due`) reads — rather than merely "was this row ever escalated."
 
-**260707-HFX2-L8** (dead-seat storm fix): adds the terminal non-ack state
+**260707-HFX2-L9** (dead-seat storm fix): adds the terminal non-ack state
 `ladder-resolved` plus `ladderResolvedAt`/`ladderResolvedReason`. This is the durable end state for
 a pending row whose ladder has reached the terminal rung and whose target seat is provably not live;
 it is distinct from `consumed`, so the ack path remains the only "agent picked this up" terminal.
@@ -160,6 +184,13 @@ this is an additive two-field seam, not catch-all parsing. Delivery evidence rem
 the explicit consume state.
 
 ## Update History
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `InboxAddress`, `InboxOwner`, `InboxRouting`, `InboxSubject`, `InboxMessage`
+  and `InboxPoster` parameter objects, and re-signed `create_operator_inbox_entry` from nineteen
+  keywords to `(message, *, entry_id, now, routing, poster)`. `require_inbox_address` keeps its
+  own keyword signature and is still called with the address's three fields, so the
+  at-least-one-mailbox refusal is unchanged. No record field was added, removed or renamed.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented the exact two-field rolling-reader allowlist and
   preserved rejection of unrelated inbox extensions.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented adapter evidence fields without changing consume semantics.

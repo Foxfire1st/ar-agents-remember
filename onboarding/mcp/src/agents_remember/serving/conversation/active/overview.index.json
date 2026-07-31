@@ -27,7 +27,7 @@
     "mcp/src/agents_remember/serving/conversation/active/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 19,
+    "sourceFilesInScope": 20,
     "fileSidecars": 9,
     "childRoutes": 1
   },
@@ -96,7 +96,7 @@
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/active/overview.md",
       "conversation/overview.md",
-      "3a8ff703d796dc585b86a458daaf9eb2af6b2b31",
+      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
       "expectedBridgeEpoch",
       "projectors/",
       "ConversationStatusService",

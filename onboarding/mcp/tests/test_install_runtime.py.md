@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_install_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T22:50+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -19,7 +19,7 @@
 `test_install_runtime.py` covers MCP package runtime-install behavior that
 affects live provider runtime safety from the core-skill test suite, including
 the provider watcher rebind path used when provider dependencies are refreshed.
-`AgenticSettingsSeedTests` (L13) pins the global agentic settings seeding:
+`AgenticSettingsSeedTests` (L466) pins the global agentic settings seeding:
 `install_runtime` writes `<coordinationRoot>/system/settings.json` when missing
 (content equal to `default_agentic_settings_seed()`), NEVER clobbers an
 existing file (byte-for-byte preserved), and dry-run counts the seed without
@@ -35,7 +35,12 @@ temporary coordination root. Its regression case seeds stale host provider
 artifacts under `providers/_venvs/`, live Docker provider runner state under
 `providers/runners/codegraphcontext/` and `providers/runners/grepai/`, plus a
 stale legacy `providers/_bin/grepai.exe`, then calls
-`install_runtime(..., install_provider_deps=False)`. The assertions prove the
+`install_runtime(..., provider_deps=ProviderDependencyInstall(settings={}, timeout=1800,
+enabled=False))`. Since 260731-EFA-L2 the whole provider-dependency step travels as that one
+frozen object — whether the step runs (`enabled`), the settings it installs against
+(`settings`), the per-provider budget (`timeout`), and whether caches may be reused
+(`no_cache`) — so the former `install_provider_deps=` and `provider_settings=` keywords no
+longer exist. The assertions prove the
 MCP runtime installer keeps live runner artifacts, prunes stale `_bin` and
 `_venvs` host artifacts, removes unrelated stale provider files, copies current
 provider defaults, removes stale coordinator `scripts/` remnants, and does not
@@ -57,10 +62,11 @@ recovery before raising.
 helpers — `any_provider_enabled`, `configured_provider_enabled`, and
 `install_provider_dependencies_from_settings` (the none-configured skip, the
 run-enabled path with mocked `lifecycle.grepai_install`/`cgc_install_all`, and the
-failure-raises path, all with `dry_run=True`). It also covers `no_cache`
-threading: `install_provider_dependencies_from_settings` forwards `no_cache=True`
-into both the GrepAI and CGC provider args, and defaults `no_cache` to `False`
-when unset. `ReadSkillNameTests` covers
+failure-raises path, all with `dry_run=True`). That helper also takes the
+`ProviderDependencyInstall` in its second positional slot now, so the settings and the
+timeout reach it as one value while `dry_run` stays keyword-only. It also covers `no_cache`
+threading: `ProviderDependencyInstall(..., no_cache=True)` forwards into both the GrepAI and
+CGC provider args, and the field defaults to `False` when unset. `ReadSkillNameTests` covers
 `install.skills._read_skill_name` frontmatter parsing (name present, frontmatter
 without a name, and no frontmatter). These drive coverage on the previously
 untested install helpers so they clear the CRAP threshold.
@@ -100,13 +106,14 @@ No external documentation is needed for this test.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | L22-L31 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L63-L116 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L118-L160 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The provider-deps rebind regression proves watcher stop happens before runner refresh and watcher start/status happens after provider dependency install. | L162-L232 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The dry-run rebind regression reports watcher stop/start/status and dependency install while preserving the stale runner file. | L234-L297 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| Degraded and unrecovered status regressions prove one non-destructive restart/rebind attempt and recovery-action reporting. | L299-L403 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| Dependency-install failure still attempts watcher recovery before raising a runtime-install failure. | L405-L454 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | L25-L36 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L65-L119 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L121-L164 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The provider-deps rebind regression proves watcher stop happens before runner refresh and watcher start/status happens after provider dependency install. | L166-L237 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The dry-run rebind regression reports watcher stop/start/status and dependency install while preserving the stale runner file. | L239-L303 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| Degraded and unrecovered status regressions prove one non-destructive restart/rebind attempt and recovery-action reporting. | L305-L411 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| Dependency-install failure still attempts watcher recovery before raising a runtime-install failure. | L413-L463 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| The `ProviderDependencyInstall` parameter object and the two entry points this suite drives through it. | L89-L102; L415-L421; L462-L469 | [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 
 ## Cross-Repo References
 
@@ -117,6 +124,24 @@ No sibling repository evidence is needed for this installer test.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass deleted a keyword this card
+  named, so the body was corrected rather than attested. `install_runtime` no longer accepts
+  `install_provider_deps=` or `provider_settings=`; both entry points this suite drives now take a
+  frozen `ProviderDependencyInstall(settings, timeout, enabled, no_cache)` — `install_runtime` as a
+  keyword-only `provider_deps=`, and `install_provider_dependencies_from_settings` in its second
+  positional slot with `dry_run` still keyword-only. The `no_cache` paragraph was rewritten
+  accordingly: the flag is now a field of that object, not a keyword of the helper, and it still
+  defaults to `False` and still reaches both the GrepAI and CGC provider args. Fourteen call sites
+  changed, which moved every own-file range in the references table; all seven were recomputed
+  against the current source and re-read at their new positions, and a row was added for the
+  parameter object itself. While re-anchoring, corrected the Purpose section's
+  `AgenticSettingsSeedTests (L13)` to L466 — that anchor was already wrong before this leaf. No
+  behaviour moved: the timeout is passed explicitly as 1800 where the old calls relied on the same
+  effective budget, `enabled=False` reproduces the former `install_provider_deps=False`, and every
+  assertion about preserved runner state, pruned `_bin`/`_venvs`, watcher stop/start ordering,
+  dry-run reporting, degraded-status retry and failure recovery is untouched. Verification metadata
+  stays pinned until closeout stamps the code commit.
 
 - 2026-07-06T22:50+02:00 — 260703-L13 (settings unification): added
   `AgenticSettingsSeedTests` — seed-when-missing, never-clobber, dry-run-no-write.

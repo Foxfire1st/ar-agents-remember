@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/context/layout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0` |
-| lastVerifiedCommitDate | 2026-06-10T08:21:41+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,22 @@
 `grepai/layout.py` owns GrepAI memory-root models, provider-owned runtime layout expansion, requirements pin writing, and per-root `.gitignore` management for grepai's `.grepai/` working dir.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Layout Parameter Objects
+
+`grepai_runtime_layout(workspace, *, instance=DEFAULT_GREPAI_INSTANCE,
+backend=DEFAULT_GREPAI_BACKEND)` replaces the previous ten keywords, mirroring the CGC layout
+builder:
+
+- **`GrepaiWorkspace(coordination_root, name="agents-remember-memory", roots=())`** — the memory
+  workspace GrepAI indexes and the root that owns the instance. The only required argument.
+- **`GrepaiInstance(runtime_root, logs_root, requirements_file, state_file)`** — where the instance
+  lives on disk and what it is pinned to.
+- **`GrepaiBackend(root, data_root, state_file)`** — the managed PostgreSQL backend.
+
+**Every field of the last two is an override, so the empty instance IS the convention** — hence the
+`DEFAULT_GREPAI_INSTANCE` / `DEFAULT_GREPAI_BACKEND` frozen module singletons used as defaults.
+Omitting a bundle means conventional placement under `providers/runners/grepai`.
 
 ### Logic
 
@@ -44,6 +60,11 @@ coordination log tree at `logs/providers/grepai`.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `grepai_runtime_layout` was re-signed onto `GrepaiWorkspace` + the optional `GrepaiInstance` /
+  `GrepaiBackend` bundles (with `DEFAULT_GREPAI_*` frozen singletons as defaults). The resolved
+  `GrepaiRuntimeLayout` is unchanged. Verification metadata pinned until closeout stamps the L2
+  commit.
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-02T01:15+02:00: Dropped the mirror redirect and `sync_grepai_index_roots`/`_sync_grepai_index_root`; roots are now indexed live in place. Added `ensure_grepai_root_gitignore` (called from `prepare_grepai_workspace`) and removed `GrepaiMemoryRoot.source_path`.
 - 2026-05-28T12:32+02:00: Updated after GrepAI watch log defaults moved under `logs/providers/grepai`.

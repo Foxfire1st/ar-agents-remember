@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T06:05+02:00                     |
-| lastVerifiedCommitHash | `98af161a6c8d77f7dfc30457c9f6ab1c20e411ab`                      |
-| lastVerifiedCommitDate | 2026-05-24T06:49:48+02:00|
+| lastUpdated            | 2026-07-31T16:10+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
+
+## Governing Overview
+
+[mcp overview](../../../overview.md)
 
 ## Purpose
 
@@ -35,8 +39,18 @@ register MCP tools or runtime behavior.
 | --- | --- |
 | CRAP-Calculator lives in this package. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
 | The source quality suite wrapper lives in this package. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
+| The changed-lines coverage floor lives in this package. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
 
 ## Update History
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 **mechanical only, attested**. The leaf's only edit
+  to this file was the whole-tree `ruff format` in `00e8379`, which removed a trailing blank
+  line; the module is still the one-line package docstring it was. Every claim on this card
+  was re-read against the file and remains true, so the prose was not rewritten. One factual
+  addition: `diff_coverage.py` joined the package, so it is now listed beside its two
+  siblings. `complexity_baseline.py` was created and deleted inside this leaf and never
+  needs a row here. Verification metadata is pinned to the leaf's reformat commit until
+  closeout stamps the code commit.
 
 - 2026-05-24T06:30+02:00: Updated after adding the source quality suite wrapper.
 - 2026-05-24T06:05+02:00: Created for the code quality helper package.

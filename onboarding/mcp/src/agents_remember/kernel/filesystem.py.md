@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-22T22:33+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -77,5 +77,18 @@ No cross-repository evidence is needed for this local helper.
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/kernel/filesystem.py` since the L2 base commit is the whole-tree `ruff
+  format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked
+  by parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-06-22T22:33+02:00 — Slice 07: documented the net-new `read_text_range` (1-based inclusive line slice; `start_line` clamped to 1, `end_line` clamped to EOF, `start_line` beyond EOF or an inverted range → empty string) added for the `read_ar_files` ranged source read; `read_text` stays the whole-file read. Body and references only — verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-05-24T18:51+02:00: Created for the closeout-tool fix after F-10 exposed long Windows path false negatives in onboarding closeout probes.

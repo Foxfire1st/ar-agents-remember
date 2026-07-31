@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,21 +36,21 @@ version differs from capability evidence" banner).
 ### Logic
 
 Three builders assemble the per-harness sets from the pinned fixture/runtime constants
-(L30-L40): codex (L97-L189) reports live text `supported` (fixture-observed
+(L30-L40): codex (L97-L191) reports live text `supported` (fixture-observed
 userMessage/agentMessage through the production evidence seam), live completeness `partial`
 (bounded evidence window; ephemeral threads have no native page), history read `partial`
 (thread/read pages fixture-observed on persisted threads; ephemeral threads refuse typed), and
 historical tool completeness honestly `partial` ("historical tool details are lossy") — the
-documented codex history loss stays visible on the wire; claude (L197-L238) is uniformly
+documented codex history loss stays visible on the wire; claude (L199-L244) is uniformly
 `unverified` with the honest NEVER-PROBED contract reason ("frame contract not yet probed
 through a captured production fixture … never a version gate"), and history read `unavailable`
-(claude has no native page — stream/replay-only); pi (L241-L331) reports live text `partial`
+(claude has no native page — stream/replay-only); pi (L247-L339) reports live text `partial`
 (messages mint from durable entries; in-flight deltas stay buffered until completion), history
 read `supported` (get_entries durable pages fixture-observed), and history completeness `partial`
 (branch/label/custom entries surface as unknown-vendor evidence). List/resume are `unavailable`
 everywhere (the L2 library leaf owns them); attachment kinds are `unavailable` (the L3 control
 leaf owns staging); telemetry/control rows stay `unverified` or `unavailable` with their
-owning-leaf reasons. `capabilities_for` (L334-L347) now DISCARDS the snapshot (`del snapshot`):
+owning-leaf reasons. `capabilities_for` (L342-L355) now DISCARDS the snapshot (`del snapshot`):
 the observed runtime version is no longer a gate, so each builder mints its honest fixture-declared
 or never-probed state directly and nothing is demoted at read time by a version comparison. The
 runtime constants (`_CODEX_RUNTIME`/`_CLAUDE_RUNTIME`/`_PI_RUNTIME`, L39-L43) survive only as
@@ -93,8 +93,8 @@ page.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `FeatureCapability` deliberately carries NO `for_observed_runtime` version-demotion (documenting NOTE); the contract is the only gate. | L653-L658 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| `ConversationCapabilities` fixes the live/history/controls/telemetry group shape. | L733-L738 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| `FeatureCapability` deliberately carries NO `for_observed_runtime` version-demotion (documenting NOTE); the contract is the only gate. | L643-L648 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| `ConversationCapabilities` fixes the live/history/controls/telemetry group shape. | L723-L728 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The contract-only gate is pinned: `FeatureCapability` has no `for_observed_runtime` predicate. | (test) | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
 | The runtime fixtures record the observed (never enabling) evidence rows per harness. | L34-L58 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
 | The service assembles capabilities into every atomic page response. | L212-L227 | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/service.py) |
@@ -115,6 +115,18 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/serving/conversation/active/capabilities.py` since the L2 base commit
+  is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 12 line(s) with no token
+  change whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
+  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
+  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
+  card makes about its own source still holds. Noted while checking: the references table also
+  cites line ranges inside `service.py`, `models.py`; those ranges shifted because this task
+  edited those files, so treat the cited numbers as approximate and the linked cards as
+  authoritative.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling

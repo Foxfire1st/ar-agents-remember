@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/hosted_control_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,11 +28,11 @@ carries the multiplexed sub-agent pendings end-to-end into the catalog row.
 
 Snapshot projection preserves existing catalog schema members while adding control state,
 activity, acceptance, vendor identity, pending interaction, sequence, and raw vendor detail.
-`control_snapshot_entry` (L35-L56) also projects `control_pending_interactions` (L47-L53): every entry of the snapshot's plural `pending_interactions` tuple
+`control_snapshot_entry` (L35-L57) also projects `control_pending_interactions` (L47-L54): every entry of the snapshot's plural `pending_interactions` tuple
 is serialized through the same `pending_interaction_json` wire shape and stored as a list —
 purely additive, so the singular `control_pending_interaction` slot stays the parent-thread
 entry exactly as before, and an empty tuple serializes as `None` (no claim) rather than `[]`.
-Legacy raw-TUI harness rows are explicitly marked unsupported. `snapshot_turn_state` (L77-L100)
+Legacy raw-TUI harness rows are explicitly marked unsupported. `snapshot_turn_state` (L78-L101)
 now delegates to `snapshot_seat_turn_state` in the canonical status authority with an optional
 harness parameter: the same canonical classification the Chats serving consumes produces the
 turn state, and the single seat projection rule translates it — parity with the pre-canonical
@@ -81,7 +81,7 @@ snapshot grammar defines the multiplexed tuple this module serializes.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The canonical status authority this module now delegates to (classification plus single seat projection rule). | L205-L224 | [status.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/status.py) |
-| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | L168-L258 | [test_conversation_active_status.py](agents-remember/mcp/tests/test_conversation_active_status.py) |
+| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | L168-L250 | [test_conversation_active_status.py](agents-remember/mcp/tests/test_conversation_active_status.py) |
 | `terminal_catalog.py` owns persisted additive fields and the `SeatTurnState` vocabulary. | L38 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
 | The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | L121; L271 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
 | `AdapterSnapshot.pending_interactions` is the multiplexed sub-agent pending tuple this module serializes end-to-end; the singular slot stays the parent-thread entry (D3). | L224-L231 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
@@ -102,6 +102,18 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/serving/hosted_control_projection.py` since the L2 base commit is the
+  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 2 line(s) with no token change
+  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
+  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
+  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
+  card makes about its own source still holds. Noted while checking: the references table also
+  cites line ranges inside `terminal_catalog.py`, `test_conversation_active_status.py`; those
+  ranges shifted because this task edited those files, so treat the cited numbers as approximate
+  and the linked cards as authoritative.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: recorded the multiplexed sub-agent pendings
   projection (review R6): `control_snapshot_entry` now serializes every entry of the snapshot's
   plural `pending_interactions` into the additive `control_pending_interactions` catalog field

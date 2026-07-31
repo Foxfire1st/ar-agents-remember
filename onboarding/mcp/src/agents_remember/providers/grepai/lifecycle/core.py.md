@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T22:38+02:00     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -21,10 +21,28 @@ embedder derivation shared by the Docker-owned GrepAI modules.
 
 ## Code Commentary
 
+### 260731-EFA-L2 Workspace And Port Objects
+
+Two frozen parameter objects are defined here and used across the GrepAI lifecycle:
+
+- **`GrepaiWorkspaceConfig(dsn, embedder_settings=None, project_paths=None)`** — what one
+  `workspace.yaml` says: the store, the embedder, the projects. The three are only meaningful as
+  one document, because the watcher reads them together to know where to write vectors, how to
+  produce them, and which paths each indexed project lives at inside the container.
+  `prepare_grepai_workspace(layout, provider_settings, config, *, dry_run=False)` takes it, and
+  still falls back to `grepai_embedder_settings(provider_settings)` when `config.embedder_settings`
+  is `None`.
+- **`GrepaiServicePorts(postgres=None, ollama=None)`** — the host ports the stack publishes its
+  dependencies on. `UNRESOLVED_SERVICE_PORTS` is the module-level empty instance meaning "nothing
+  published yet", so each command falls back to the configured host port.
+
+`grepai_layout_from_args` builds the layout through `grepai_runtime_layout(GrepaiWorkspace(...),
+instance=GrepaiInstance(runtime_root=…))`.
+
 ### Logic
 
 The module resolves settings-backed GrepAI runtime layout
-(`grepai_settings_from_file(from_settings)` — since 260703-L13 the explicit
+(`grepai_settings_from_file(from_settings)` — since 260703-L14 the explicit
 `--from-settings` path is REQUIRED even for manual `--root`/`--runtime-root`
 layouts, because `grepai_layout_from_args` always reads provider settings for
 workspace/embedder derivation and the implicit coordinator-settings fallback
@@ -78,6 +96,11 @@ seed target without the caller needing to pass it separately.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `GrepaiWorkspaceConfig` and `GrepaiServicePorts` (plus the
+  `UNRESOLVED_SERVICE_PORTS` singleton), re-signed `prepare_grepai_workspace` onto the config
+  object, and updated `grepai_layout_from_args` for the layout builder's new bundles. The written
+  `workspace.yaml` is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-06T22:38+02:00 — 260703-L13 ride-along: `grepai_layout_from_args` calls
   `grepai_settings_from_file` without the dropped `coordination_root` argument; manual
   layouts now require an explicit `--from-settings` file (an empty JSON object suffices —

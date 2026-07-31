@@ -65,6 +65,11 @@
       "index": "mcp/src/agents_remember/kernel/coordination_context/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/mcp/registration",
+      "overview": "mcp/src/agents_remember/mcp/registration/overview.md",
+      "index": "mcp/src/agents_remember/mcp/registration/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/mcp/tools",
       "overview": "mcp/src/agents_remember/mcp/tools/overview.md",
       "index": "mcp/src/agents_remember/mcp/tools/overview.index.json"
@@ -107,6 +112,7 @@
     "mcp/src/agents_remember/code_quality/__init__.py",
     "mcp/src/agents_remember/code_quality/check.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
+    "mcp/src/agents_remember/code_quality/diff_coverage.py",
     "mcp/src/agents_remember/errors.py",
     "mcp/src/agents_remember/install/__init__.py",
     "mcp/src/agents_remember/install/assets.py",
@@ -242,9 +248,9 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 689,
-    "fileSidecars": 144,
-    "childRoutes": 17
+    "sourceFilesInScope": 730,
+    "fileSidecars": 145,
+    "childRoutes": 18
   },
   "routingTerms": [
     "adopt",
@@ -317,6 +323,8 @@
     "defaults",
     "degradation",
     "designer",
+    "diff",
+    "diff_coverage",
     "discovery",
     "doc",
     "docker",
@@ -324,9 +332,7 @@
     "doctrine",
     "entity",
     "errors",
-    "evidence",
-    "examples",
-    "facts"
+    "evidence"
   ],
   "hotPath": {
     "summary": "**260731-EFA-L1: `package_data/dashboard/` is no longer in this package's version-controlled surface.** The bundle, its `dashboard.fingerprint` sidecar, and local `mcp/build/` / `mcp/dist/` output are git-ignored. The recursive `package_data/**/*` glob in `mcp/pyproject.toml` still ships whatever is present at build time, so the wheel and sdist carry a cockpit \u2014 placed by the release job, verified by the release job. Building the package from a checkout with no bundle succeeds and yields an installation whose `/` answers 503 with the build command. Two consequences for anyone working in thi...",
@@ -343,6 +349,7 @@
       "mcp/src/agents_remember/tasks",
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/kernel/coordination_context",
+      "mcp/src/agents_remember/mcp/registration",
       "mcp/src/agents_remember/mcp/tools",
       "mcp/src/agents_remember/providers/cgc",
       "mcp/src/agents_remember/providers/context",
@@ -353,8 +360,7 @@
       "mcp/pyproject.toml",
       "mcp/requirements.txt",
       "mcp/src/agents_remember/benchmarks",
-      "mcp/src/agents_remember/benchmarks/runner.py",
-      "mcp/src/agents_remember/cli"
+      "mcp/src/agents_remember/benchmarks/runner.py"
     ],
     "anchorHints": [
       "README.md",
@@ -379,6 +385,8 @@
       "check",
       "crap_calculator.py",
       "crap_calculator",
+      "diff_coverage.py",
+      "diff_coverage",
       "errors.py",
       "errors",
       "assets.py",
@@ -402,9 +410,7 @@
       "git_freshness.py",
       "git_freshness",
       "memory_init.py",
-      "memory_init",
-      "memory_ledger.py",
-      "memory_ledger"
+      "memory_init"
     ]
   },
   "fallback": {

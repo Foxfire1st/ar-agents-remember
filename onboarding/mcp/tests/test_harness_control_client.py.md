@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T15:55+02:00 |
-| lastVerifiedCommitHash |  `2b47ed9520a770b9858e8af1f112f58745dcf473`|
-| lastVerifiedCommitDate |  2026-07-30T16:00:03+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,9 +91,9 @@ owns the corresponding exact-session request encoding and unknown-result convers
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Socket failures before and after the first accepted byte produce false and true `may_have_sent` respectively. | L30-L81 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| Post-write submit loss and a mismatched receipt both remain unknown under the original request id with one request call. | L83-L118 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| A post-write setter failure returns unknown for the requested model and is not retried. | L120-L130 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
+| Socket failures before and after the first accepted byte produce false and true `may_have_sent` respectively. | L32-L83 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
+| Post-write submit loss and a mismatched receipt both remain unknown under the original request id with one request call. | L86-L120 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
+| A post-write setter failure returns unknown for the requested model and is not retried. | L122-L131 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
 | The blocking client preserves whole UTF-8 JSON text, records the first accepted byte, and reports the exact failure stage. | L205-L263 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | Submit and set helpers convert only post-write uncertainty into normalized unknown evidence while pre-write failures stay loud. | L99-L136; L282-L317 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | `_connect_unavailable_detail` maps a refused control socket to the honest exit note and unlinks the stale socket (R6). | — | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
@@ -112,7 +112,20 @@ Client regressions now cover the submit-specific delayed-echo timeout and retain
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260731-EFA-L2 Delta — `SubmissionStatusLookupTests`
+
+A new class covering the submission-status lookup decoder, all of it refusal-shaped:
+
+- a found lookup carries its status **verbatim**; a not-found lookup needs no evidence;
+- a non-object payload is refused;
+- **a lookup answering for another request id is refused rather than re-keyed** — silently
+  adopting a foreign id is how one request's outcome gets attributed to another;
+- an unknown outcome, missing evidence, a non-boolean `withdrawable`, and a found lookup with
+  no usable lifecycle state are each refused rather than defaulted.
+
 ## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-30T15:55+02:00 — 260727-CHATS-IM-L4: recorded `HarnessControlWriteCompletionTests`, which
   pins that a fully accepted request issues no remainder write while a partial one still does.

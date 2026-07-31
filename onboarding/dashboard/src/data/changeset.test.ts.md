@@ -63,7 +63,7 @@ the reviewed task evidence for any current behavioral claim.
 | Asserts the task / file-diff / master URLs (including `%2F` path encoding). | L16-L30 | [changeset.test.ts](changeset.test.ts) |
 | Asserts a non-ok (404) response throws `FilesApiError`. | L32-L35 | [changeset.test.ts](changeset.test.ts) |
 | Subject under test: the helpers + result types + the shared error mapping. | L52-L69 | [changeset.ts](changeset.ts) |
-| Contract counterpart: the serving layer emits the 404/400 codes this test stubs. | L37-L196 | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
+| Contract counterpart: the serving layer emits the 404/400 codes this test stubs. | L38-L195 | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
 
 ## Cross-Repo References
 

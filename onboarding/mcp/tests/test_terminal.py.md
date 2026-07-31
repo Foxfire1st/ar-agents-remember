@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -79,7 +79,13 @@ raises `KeyError` (the require-before-strip ordering).
 ### Conventions
 
 Inserts `mcp/src` on `sys.path` (the suite idiom) before importing
-`agents_remember.serving.terminal`. `_read_until` polls `read_nonblocking` via
+`agents_remember.serving.terminal`. Every host fixture constructs the host as
+`TerminalHost(TerminalHostSeams(spawn=…, tmux_probe=…, tmux_killer=…, tmux_creator=…,
+tmux_configurer=…, tmux_mode_canceller=…))`, and every `open`/`attach`/`ensure` call passes the sid
+followed by one `TerminalSessionSpec(cwd=…, command=(…,), lifecycle_id=…, name=…,
+suspend_unsafe=…)`. The seam and per-session field names are unchanged — they moved onto those two
+objects — but `command` is now a tuple rather than a list.
+`_read_until` polls `read_nonblocking` via
 `select` to a deadline; `_wait_dead` spins on `is_alive`. Skips key off
 `shutil.which("tmux"|"cat"|"true")`, plus `_term_supports_clear()` for the real tmux
 integration case, so the slice's PTY/tmux integration tests degrade to skips rather than
@@ -130,6 +136,14 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2: every fixture in this suite was rewritten onto two new
+  parameter objects, so Conventions now records them. `TerminalHost` is constructed from one
+  `TerminalHostSeams` carrying the same `spawn`/`tmux_probe`/`tmux_killer`/`tmux_creator`/
+  `tmux_configurer`/`tmux_mode_canceller` fakes this card describes, and `open`/`attach`/`ensure`
+  take the sid plus one `TerminalSessionSpec` carrying `cwd`/`command`/`lifecycle_id`/`name`/
+  `suspend_unsafe`, with `command` now a tuple instead of a list. Every field name the body cites
+  survives on those objects, and no test, argv assertion, Ctrl-Z scoping case, winsize check or
+  skip guard changed.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: documented owned-environment unit coverage and contaminated

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cgc_watch_guard.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-09T23:55+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03`|
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -50,5 +50,11 @@ becomes ready or no graph name is set).
 | The watcher Compose template sets the guard as the watcher entrypoint. | [codegraphcontext.watcher.yaml.tmpl](agents-remember/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
 
 ## Update History
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_cgc_watch_guard.py`
+  since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3
+  line(s) with no token change whatsoever. Checked by parsing both revisions and comparing the
+  abstract syntax trees (identical) and the comment tokens (identical), so no symbol, signature,
+  default, decorator, control-flow branch, docstring, or assertion this card describes has moved,and every claim this card makes about its own source still holds.
 
 - 2026-06-09T23:55+02:00: Created with the guard's unit tests after the CRAP report flagged `wait_for_ready` at the 30.0 threshold (0% coverage on a CC-5 function).

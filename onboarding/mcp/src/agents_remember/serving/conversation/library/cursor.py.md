@@ -75,7 +75,7 @@ rejection; the contract module owns the branded token types this authority mints
 | List/read cursors round-trip and reject tampering and wrong-purpose use. | L37-L68 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
 | Conversation keys and resume targets round-trip and reject garbage/foreign signatures. | L69-L112 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
 | Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. | L113-L130 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
-| The purpose-branded token types and binding models are declared in the parent contract. | L315-L403 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The purpose-branded token types and binding models are declared in the parent contract. | L311-L399 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
 ## Cross-Repo References
 

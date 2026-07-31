@@ -75,7 +75,7 @@
       "MCP",
       "mcp/src/agents_remember/providers/grepai/lifecycle/",
       "route-local-overview",
-      "e358c4ac520d94ae2e597ae3cbe186e07a4d1063",
+      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
       "/overview.md",
       "grepai/lifecycle/",
       "Performing initial scan",
@@ -93,15 +93,15 @@
       "grepai.context",
       "context.common",
       "providers.context",
-      "grepai_layout_from_args",
-      "--root",
-      "--runtime-root",
-      "providers/context_common.py",
-      "providers/grepai/lifecycle/",
-      "grepai_*",
-      "lifecycle_modules/grepai/",
-      "agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py",
-      "test_provider_lifecycle.py"
+      "GrepaiBackendContext",
+      "settings_path",
+      "provider_settings",
+      "layout",
+      "network_name",
+      "grepai_backend_start_context(args",
+      "GrepaiEmbedderContext",
+      "grepai_embedder_start_context(args",
+      "GrepaiWatcherStart"
     ]
   },
   "fallback": {

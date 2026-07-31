@@ -55,8 +55,8 @@ The sibling API module owns the registered control routes; the package overview 
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The sibling `api.py` owns the seventeen registered exact-session control routes. | L57-L570 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
-| The governing route-local overview for the implemented control slice. | L1-L40 | [control/overview.md](agents-remember/mcp/src/agents_remember/serving/conversation/control/overview.md) |
+| The sibling `api.py` owns the seventeen registered exact-session control routes, all under the `/api/terminal/{ar_session_id}` router prefix. | L58-L631 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
+| The governing route-local overview for the implemented control slice. | route overview | [overview.md](overview.md) |
 
 ## Cross-Repo References
 
@@ -68,6 +68,15 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 broken citations. `control/api.py` grew
+  to 686 lines and its seventeen `@router` decorations now run from the `APIRouter(prefix=
+  "/api/terminal/{ar_session_id}")` at L58 to the end of `conversation_telemetry` at L631 (was
+  `L57-L570`); counted the decorators and read both ends back. The overview row pointed at
+  `agents-remember/mcp/.../control/overview.md`, which does not exist in the source tree —
+  `overview.md` is a memory-repo onboarding doc, not a code file. Repointed it to the sibling
+  `[overview.md](overview.md)` this card already names as its `governingOverview`, and replaced the
+  invented `L1-L40` with the house-style non-numeric `route overview` citation, since that doc lives
+  in this repo and is not line-stable.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: updated the package-marker description from the
   reserved shell to the implemented control surface and repointed the governing overview to the new
   `control/overview.md` pillar. Verification stays pinned at the L3E base until L3 closeout stamps the

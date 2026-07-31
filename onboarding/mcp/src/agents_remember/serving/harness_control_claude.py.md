@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,14 +34,15 @@ a resolved id shared by several catalog rows, current-model selection resolves t
 and the effective-launch echo compares like-for-like (the claude `opus[1m]` refused-pair fix).
 
 A floor-gated sub-agent text launch (fix-round review finding 8) runs inside
-`start` (L102-L131): the FIRST launch deliberately omits `--forward-subagent-text` because no
+`start` (L115-L237; the floor gate itself at L120-L144): the FIRST launch deliberately omits
+`--forward-subagent-text` because no
 version seam exists at argv-build time — the installed version is provable only from the captured
 `system/init`. When `forward_subagent_text_supported(system_init.version)` confirms the probed
 floor (`FORWARD_SUBAGENT_TEXT_FLOOR = (2, 1, 220)`), the adapter stops the transport, re-launches
 WITH the flag, and re-negotiates startup; a proven install that then rejected the flag would fail
 loudly at launch, never silently degrade. Below the floor (or with an unparseable/absent version)
 the adapter simply runs on without the flag. The verdict crosses on the snapshot metadata as
-`subagentTextForwarding` (L161-L170, L187): an explicit "enabled: … meets the probed floor …" note
+`subagentTextForwarding` (L173-L182, L199): an explicit "enabled: … meets the probed floor …" note
 or the exact fail-closed "unverified: … flag was omitted …" reason — never a silent omission.
 
 That re-launch reuses the SAME transport object, so it depends on the transport releasing process
@@ -49,7 +50,8 @@ ownership at a completed stop; a transport that retained its terminated process 
 second `start` as already started, and the `HarnessControlError` handler would convert the whole
 handshake into an `unsupported` snapshot — the exact shape of the 260727-CHATS-IM-L4 defect, where
 every install at or above the floor lost control readiness and therefore model/effort selection.
-The probe runs before `_state` exists (L201-L211), so no state reader competes with that stop.
+The probe runs before `_state` exists (assigned L213-L224, reader started L225), so no state reader
+competes with that stop.
 
 `discover` copies the `LaunchSpec`, replaces only that transient copy's argv
 through `build_claude_discovery_argv`, invokes the same startup/catalog negotiation, returns the
@@ -141,7 +143,7 @@ normalization.
 | The sub-agent-text forwarding floor gate: `FORWARD_SUBAGENT_TEXT_FLAG`, the probed floor `(2, 1, 220)`, and `forward_subagent_text_supported` — fail-closed so unproven/unparseable versions never get the flag. | L50-L85 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
 | Protocol command gating admits native model/effort categories without model-name heuristics while keeping identity changes blocked. | L223-L261 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
 | Claude catalog parsing validates unique models, selectability, resolved current identity, and model-local effort. | L15-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
-| The shared queue serializes setters with prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. | L73-L180; L476-L508 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| The shared submission authority admits setters onto the same ordinary-operation timeline as prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. (`HarnessControlQueue` is now only a facade that forwards to it.) | L335-L339; L725-L760; L1021-L1049; L1323-L1336 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | Adapter regressions prove token-free discovery, complete selector replacement, end-of-options preservation, forced transient stop, and byte-for-byte normal-start preservation. | L195-L351 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 
 ## Cross-Repo References
@@ -173,8 +175,29 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+**`ExpectedEcho`** (`expected_result`, `prefix_match`, `allowed_results`) names what counts as the
+harness having **ACCEPTED** one set command, in its own words. A Claude set is proven only by the
+echo it writes back, so the exact expected line, whether a prefix is enough, and which other lines
+also settle it are one acceptance rule — splitting them is how a command gets matched against
+another command's echo. The accepted echoes themselves are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations. The
+  floor-gated launch is now cited as `start` L115-L237 with the gate block at L120-L144 (the old
+  L116-L145 clipped the `def` line and both ends of the gate). The "`_state` does not exist yet"
+  claim cited L201-L211, which the added `requestedLaunchModel`/`requestedLaunchEffort`/
+  `launchEffortEvidence` snapshot-`raw` entries turned into part of that dict; `self._state` is
+  assigned at L213-L224 and its reader started at L225, so the ordering claim holds and now points
+  there. The neighbouring `subagentTextForwarding` citations (L173-L182, L199) were re-read and are
+  still exact.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that moved when the command queue became a facade. `harness_control_queue.py` is now 227 lines of pure delegation, so the setter-serialization/`SetResult`-validation row was repointed to `harness_submission_authority.py` (`set_model`/`set_effort` L335-L339, `_admit_setter` enqueueing onto the single timeline L725-L760, `_apply_set_result_locked` L1021-L1049, `_validate_set_result` L1323-L1336) and the claim reworded to name the authority.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ExpectedEcho` as the one acceptance rule per set command.
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: recorded that the floor re-launch reuses one transport
   object and therefore depends on the transport's ownership-release contract, that the probe runs
   before the state reader exists, and that a refused second start degrades the whole handshake to

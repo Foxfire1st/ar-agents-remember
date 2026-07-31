@@ -32,14 +32,20 @@ stays local (R7 — the view's `closePalette` hands focus back to the invoker).
 - `runItem(id)` (L121-L126): runs through `registry.run(id, getContext())`; commands without
   `keepsPaletteOpen` close the palette, page-switch commands (keyboard.reference) keep it open
   and clear the query.
-- `onKeyDown` (L128-L140): Escape closes (preventDefault + stopPropagation so the window-level
-  layer never sees it); Backspace on an EMPTY query leaves a sub-page back to `commands` — the
-  page pattern's back gesture.
-- The `keys` page (L177-L206) renders three disabled groups straight from the data: Chrome /
-  Composer chord tables (`CHROME_CHORDS`/`COMPOSER_CHORDS`) and the PTY reserved set
-  (`PTY_RESERVED`, unbound slots labeled "(reserved, unbound)") under the heading "Terminal —
-  everything passes through except exactly". `shouldFilter` is disabled on the keys page. The
-  footer hint states the Esc-is-never-intercepted-over-the-terminal rule.
+- `onKeyDown` (L195-L224): Escape closes (preventDefault + stopPropagation so the window-level
+  layer never sees it); Tab/Shift-Tab wrap focus inside the dialog (L202-L218 — the modal focus
+  trap over the dialog's own enabled inputs/buttons/tabbables); Backspace on an EMPTY query leaves
+  a sub-page back to `commands` — the page pattern's back gesture.
+- The `keys` page (L274-L331) renders three disabled groups straight from the data — but the data
+  is now the EFFECTIVE keymap, not the static chord tables: the Chrome group (L276-L283) and the
+  Composer group (L284-L297) filter `useEffectiveKeymap()`'s `bindings` by zone (composer
+  additionally drops profile-inactive commands), so `CHROME_CHORDS`/`COMPOSER_CHORDS` are no longer
+  read here at all — they only seed `data/keymap/preferences.DEFAULT_BINDINGS`. The PTY reserved set
+  (`PTY_RESERVED`, unbound slots labeled "(reserved, unbound)") rides under the heading "Terminal —
+  everything passes through except exactly" (L319-L329). The page also carries the composer-profile
+  toggle (L298-L313) and any keymap validation issues (L314-L318). `shouldFilter` is disabled on
+  the keys page (L241). The footer hint (L333-L337) states the
+  Esc-is-never-intercepted-over-the-terminal rule.
 - cmdk is unstyled; the Panda `box` css styles its `[cmdk-*]` data-attribute parts (L36-L77).
 - **V1 panel clamp (260718-CHATS-L5P)** (L36-L77): the panel `box` is `overflow:hidden` and its
   `[cmdk-root]` is a bounded flex column (`flex:1; minHeight:0; overflow:hidden`) with the
@@ -97,6 +103,19 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations and corrected
+  one now-false claim inside them. `onKeyDown` L128-L140 → L195-L224 (the handler also grew the
+  modal Tab focus trap at L202-L218, which the FEUI-L8 delta already described but Logic did not
+  cite). The `keys` page L177-L206 → L274-L331, and its "Chrome / Composer chord tables
+  (`CHROME_CHORDS`/`COMPOSER_CHORDS`)" claim is no longer true: neither constant is imported by
+  this file any more — both groups filter `useEffectiveKeymap()`'s `bindings` by zone, and the
+  tables survive only as `data/keymap/preferences.DEFAULT_BINDINGS` seeds (verified by grep across
+  `dashboard/src`). Added the previously undocumented composer-profile toggle and keymap-validation
+  rows the same range covers. NOT fixed (beyond this worklist): the query-reset citation L113-L117
+  is now L177-L180, `runItem` L121-L126 is L184-L193, the `box` css L36-L77 is L31-L103 (its
+  `[cmdk-*]` parts L52-L102), and the Repo-Internal References row citing `chords.ts` for what the
+  keys page renders no longer matches the source it renders from.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V1 panel clamp — the `box` is
   `overflow:hidden` with `[cmdk-root]`/`[cmdk-list]` as a bounded flex column + interior scroller, so the

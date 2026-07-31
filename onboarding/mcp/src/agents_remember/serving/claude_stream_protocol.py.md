@@ -118,8 +118,8 @@ it launches WITHOUT `--forward-subagent-text`, consults this module's floor verd
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The adapter applies discovery normalization only to a copied transient launch, then uses the ordinary startup/advertise/forced-stop sequence. | L233-L242 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| The adapter launches without the flag, re-launches with it when `system/init` proves the floor, and records the exact enabled/unverified reason in the snapshot. | L107-L130; L161-L170 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| The adapter applies discovery normalization only to a copied transient launch, then uses the ordinary startup/advertise/forced-stop sequence. | L247-L256 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| The adapter launches without the flag, re-launches with it when `system/init` proves the floor, and records the exact enabled/unverified reason in the snapshot. | L121-L144; L173-L182 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
 | Regression cases cover separate, repeated/variadic, equals-attached, end-of-options, exactly-one-empty-selector, and normal-start preservation behavior. | L260-L395; L430-L445 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 | Floor-gate regressions: at/above the floor the adapter re-launches with the flag; an unparseable version stays fail-closed with no flag. | L466-L500 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 | Startup sends initialization/bootstrap before the correlated catalog request and rejects unexpected catalog frames. | L59-L109 | [claude_stream_startup.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_startup.py) |

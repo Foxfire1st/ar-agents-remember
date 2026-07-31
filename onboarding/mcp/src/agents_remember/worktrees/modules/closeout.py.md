@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T04:28+02:00|
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastUpdated            | 2026-07-31T16:10+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -67,6 +67,15 @@ The entry points (`closeout_preview_payload`, `closeout_result`) and the
 `WorktreeArgs` dataclass (imported from `modules.args`) rather than the old
 `argparse.Namespace`; `closeout_result` asserts `args.contract_path is not None`
 before loading the contract, since `WorktreeArgs.contract_path` is optional.
+
+Since 260731-EFA-L2 `_external_closeout_commits(contract, args, change)` takes a
+`VerifiedChange` (from `modules.models`) in place of `changed_paths`, `code_commit`,
+`code_commit_date` and `working_paths`. `closeout_result` constructs it once from the values it
+already computed, and it is threaded straight into `refresh_onboarding_metadata` and
+`refresh_route_overview_metadata_for_context` — so the commit hash, the commit date, the changed
+paths and the working subset that all get stamped into onboarding necessarily describe the same
+landed change. `refresh_entity_fingerprints_for_context(context, change.changed_paths)` still
+takes only the path list, because it stamps no commit.
 
 Server-side gate enforcement (slice 6b, generalized by 260703-L4): when the contract carries a
 `lifecycle_id`, `_enforce_closeout_gate` reads the lifecycle's gate log via
@@ -140,6 +149,11 @@ recomputes whether code would commit, runs `run_strict_code_quality_gate` before
 
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `_external_closeout_commits` now takes a `VerifiedChange` instead of `changed_paths` /
+  `code_commit` / `code_commit_date` / `working_paths`, and threads it into the onboarding and
+  route-overview refreshers (which were re-signed to match). No payload or gate behaviour changed.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1: both closeout entry points now hand the quality gate
   `contract.code_worktree` rather than `contract.repo_name`, so the mandatory gate applies to every
   repository whose checkout carries the wrapper. Corrected the previous "no Agents Remember code

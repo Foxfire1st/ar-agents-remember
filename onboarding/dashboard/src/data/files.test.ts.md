@@ -25,12 +25,12 @@ mapped to a thrown `FilesApiError` carrying the server status code.
 ### Logic
 
 - `stubFetch(payload, ok, status)` installs a `vi.fn` `fetch` returning a minimal `Response`-shaped
-  object (`ok`, `status`, `statusText`, async `json`); `afterEach` unstubs all globals. (L5-L13)
+  object (`ok`, `status`, `statusText`, async `json`); `afterEach` unstubs all globals. (L23-L31)
 - The first case calls all five helpers once and asserts the recorded URLs: bare `/api/files/repos`,
   the `list` / `read` query strings (note the `%2F`-encoded `path`), and `direction=forward` /
   `direction=reverse` for the two onboarding calls. (L16-L29)
 - The second case stubs a 400 `{status: "bad-path"}` response and asserts `listDir` rejects with a
-  `FilesApiError` instance. (L31-L34)
+  `FilesApiError` instance. (L49-L52)
 
 ### Invariants And Boundaries
 
@@ -59,11 +59,11 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Stubs `fetch` and unstubs globals after each test. | L5-L13 | [files.test.ts](files.test.ts) |
+| Stubs `fetch` and unstubs globals after each test. | L23-L31 | [files.test.ts](files.test.ts) |
 | Asserts the catalog / list / read / onboarding URLs (including `%2F` path encoding and `direction`). | L16-L29 | [files.test.ts](files.test.ts) |
-| Asserts a non-ok response throws `FilesApiError`. | L31-L34 | [files.test.ts](files.test.ts) |
+| Asserts a non-ok response throws `FilesApiError`. | L49-L52 | [files.test.ts](files.test.ts) |
 | Subject under test: the helpers, result types, and `FilesApiError` mapping pinned here. | L72-L124 | [files.ts](files.ts) |
-| Contract counterpart: the serving layer emits the 404/400 status codes this test stubs. | L298-L332 | [serving/files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
+| Contract counterpart: the serving layer emits the 404/400 status codes this test stubs. | L207-L227 | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
 
 ## Cross-Repo References
 
@@ -75,6 +75,16 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
+  hung-socket helper was added above the fixtures. The `stubFetch` + `afterEach` setup moved
+  L5-L13 -> L23-L31 (L5-L13 is now the import list), and the `FilesApiError` non-ok case moved
+  L31-L34 -> L49-L52; both the prose and the Repo-Internal References rows were repointed.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that moved
+  out of `serving/files.py`. The 404/400 status-code idiom the test stubs is now emitted by
+  `run_scoped` in the extracted `serving/scope.py` (L207-L227), not by `serving/files.py`
+  (which only registers routes and delegates); repointed both the link path and the range.
 
 - 2026-07-24T13:17:50Z — Added repository-catalog single-flight and timeout coverage. Verification
   hash/date remain pinned to the pre-commit source stamp.

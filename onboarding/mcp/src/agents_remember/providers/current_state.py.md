@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-27T23:08+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -110,9 +110,9 @@ No external documentation is needed for this local status projection.
 | GrepAI and CGC status mappers keep provider-specific resources, watcher state, and indexing state separate. | L85-L198 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state. | L101-L105; L132-L172 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | GrepAI lifecycle settings use the same repository memory-root mapping for roots (`projectId == repoId`). | L52-L56 | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
-| GrepAI readiness is gated on workspace presence: `grepai_workspace_present` reads the watcher `workspaceStatus` stdout, `grepai_current_state` downgrades to `degraded`, and `grepai_indexing_state` returns `noWorkspace` when absent. | L132-L164, L294-L325 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload. | L229-L264 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Aggregate state ignores disabled providers and reports ready, degraded, failed, unknown, disabled, or noProviders from current provider facts. | L267-L291 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| GrepAI readiness is gated on workspace presence: `grepai_workspace_present` reads the watcher `workspaceStatus` stdout, `grepai_current_state` downgrades to `degraded`, and `grepai_indexing_state` returns `noWorkspace` when absent. | L132-L164, L298-L329 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload. | L233-L268 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
+| Aggregate state ignores disabled providers and reports ready, degraded, failed, unknown, disabled, or noProviders from current provider facts. | L271-L295 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
 | Provider status writes this current-state payload and returns both the file path and current-state object to MCP callers. | L64-L80 | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Unit tests assert the file path, current truth shape, disabled-provider behavior, workflow-local instance paths, and provider-status integration. | L42-L174 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
 
@@ -126,6 +126,18 @@ No sibling repository boundary is needed to explain this file.
 
 ## Update History
 
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/src/agents_remember/providers/current_state.py` and moved the lines this card cites, so the
+  Citations column no longer pointed at the code its rows name. Corrected the ranges (L229-L264 →
+  L233-L268; L267-L291 → L271-L295). The behaviour described is unchanged — the file's AST is
+  identical to the base revision — this is a citation repair only. Verification metadata pinned
+  until closeout stamps the L2 commit.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: current-state building/writing now accepts an injected `checked_at` timestamp so projector-owned refreshes and stale-age calculation share one tick time. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T22:31+02:00 — Clarified that GrepAI `targetRepos` are addressable project targets inside
   the aggregate provider instance, not separate per-repo processes or per-root health. Verification

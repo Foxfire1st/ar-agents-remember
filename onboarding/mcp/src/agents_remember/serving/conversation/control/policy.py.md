@@ -26,9 +26,9 @@ anywhere in this leaf — capability gating alone cannot authorize one.
 
 ### Logic
 
-`ConversationPolicyProjection` (L45) carries two `PolicyPart` (L35) DTOs — the AR `repoPolicy`
+`ConversationPolicyProjection` (L46-L55) carries two `PolicyPart` (L36-L43) DTOs — the AR `repoPolicy`
 posture and the effective `harnessMode` — each with state/origin/evidence/freshness/reasons.
-`conversation_policy` (L57) resolves the caller and epoch, reads the live snapshot, and builds both
+`conversation_policy` (L58-L101) resolves the caller and epoch, reads the live snapshot, and builds both
 parts plus the `policyRead` capability. `_harness_mode` (L104) reports Claude's `permissionMode` from
 the live snapshot carrying the control-contract capability's own `capability.reason` — since
 260718-CHATS-L5F R4 that reason is contract-verification language ("unverified until the control seam
@@ -71,9 +71,9 @@ authorization ruling; the harness mode reads the live snapshot.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | L406-L678 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | L55-L63; L640-L675 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The AR local-operator ruling and canonical scope the `repoPolicy` part reports. | L48-L105 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
-| The `policyRead` capability gate. | L301-L316 | [capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
+| The `policyRead` capability gate. | L305-L321 | [capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
 | The live snapshot `harnessMode` reads Claude `permissionMode` from. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 
 ## Cross-Repo References
@@ -86,6 +86,19 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, all read back.
+  The three single-line anchors each pointed at the blank line ABOVE their construct (a one-line
+  shift, from the module docstring's re-wrap) and are now full spans: `PolicyPart` L35 → L36-L43,
+  `ConversationPolicyProjection` L45 → L46-L55, `conversation_policy` L57 → L58-L101. `_harness_mode`
+  (L104), `_freshness` (L133) and `_POLICY_ORIGIN` (L33) were re-checked and still land on their own
+  `def`/assignment. No claim text changed; every claim still holds.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The single
+  `L406-L678` span into `conversation/models.py` no longer holds the material — the file grew to
+  1282 lines and the two subjects are now far apart. Split it into the `WireModel` strict/frozen/
+  camel-case base at L55-L63 and the `CapabilityEvidence` + `FeatureCapability` DTOs at L640-L675
+  (including the `require_honest_state_evidence` validator and the R4 no-version-demotion note this
+  card's 2026-07-21 entry describes). Read both ranges back.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — corrected the now-false
   "locked-version-mismatch reason" prose for Claude's `permissionMode`. `_harness_mode` carries the
   control-contract capability's `capability.reason`, which is contract-verification language

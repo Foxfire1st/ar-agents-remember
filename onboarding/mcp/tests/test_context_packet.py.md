@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -60,6 +60,14 @@ detail consumers at `provider_diagnostics`.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: the active-worktree fixture now calls
+  `default_contract` with the `ContractTask`, `LeafIdentity`, and `RepoBranchPlan` parameter
+  objects instead of fourteen loose keywords, and one `contractPath` assignment was reflowed onto
+  a single line by `ruff format`. The card documents what the packet must report — repo, memory,
+  compact provider summary, worktree, drift, and freshness facts — and never named the
+  contract-construction keywords, so the coverage list is unaffected. Verified against the source
+  that no test was added, removed, or renamed and that the `taskRoot` `as_posix()` note and the
+  four freshness cases still describe the assertions actually present.
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-10T08:39+02:00: Added four freshness tests (default not-checked, no-upstream fixture, behind + ledger-mapped fixture, unmapped-head ledger) for the issue #54 freshness section.
 - 2026-06-08T09:57+02:00: Moved skipped-provider regression coverage to the public `context_packet_payload(...)` path so serialization and wrapper re-validation are exercised.

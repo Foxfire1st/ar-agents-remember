@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/controllers/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-28T22:41+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,8 +32,10 @@ descriptions below document that imported behavior.
 point. It resolves the repo through `require_repo` (authority check), rejects a
 batch over `MAX_FILES` (5) with `AuthorityError`, parses each entry into a frozen
 `_FileRequest`, and resolves the coordination context once via
-`resolve_coordination_context` (the `_context` keyword is a test seam that injects
-a pre-built `CoordinationContext` to isolate one storage mode). It then reads the
+`resolve_coordination_context` — since 260731-EFA-L2 with
+`hints=CoordinationHints(coordination_root=...)` and
+`selector=EnclosureSelector(contract_path=...)` rather than loose keywords (the `_context` keyword
+is still the test seam that injects a pre-built `CoordinationContext` to isolate one storage mode). It then reads the
 current ambient lifecycle id, runs `_maybe_reset_served`, reads each file, and
 assembles the payload, optionally attaching the deduped front-door, and finally
 emits a facts-only `read.packet` — passing `repo.repo_id` (slice 07b, so the
@@ -149,6 +151,11 @@ ever appears it is honored once.
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the `resolve_coordination_context` call moved onto the
+  resolver's `CoordinationHints` / `EnclosureSelector` parameter objects; the rest of the file was
+  touched only by the whole-tree `ruff format`. Batch limits, status vocabulary, dedup and the
+  `read.packet` emission are unchanged. Verification metadata pinned until closeout stamps the L2
+  code commit.
 - 2026-06-28T22:41+02:00 — operations-integration L1: extracted the path-confinement guard (`_confined_rel`) and the sidecar-pairing helpers (`_route_sidecar_status`/`_governing_indexes`/`_load_route_index`/`_sidecar_body`) into `kernel/sidecar_pairing.py`, shared with the new dashboard `serving/files.py`; they are now imported here under their former private names. Behavior-preserving — the slice-07 suite is unchanged. References updated (the direct `meaningful_body`/`mirror_onboarding_path`/`sidecar_status` rows now flow through `sidecar_pairing`). Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-23T01:40+02:00 — Slice 07b v1: the controller now passes `repo.repo_id` to `emit_read_packet`, so the emitted `read.packet` carries `data.repoId` (the read's repo). Body + invariant note only — verification metadata pinned until closeout stamps the slice-07b code commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the compact-reset note — the `compact-reset.json` **producer** is **not** a session-hook concern; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). `_maybe_reset_served` (consumer) + the `refresh=true` path remain as defensive scaffolding; `refresh=true` is the working manual reset. Docstring text only. Verification metadata pinned until closeout stamps the slice-07 code commit.

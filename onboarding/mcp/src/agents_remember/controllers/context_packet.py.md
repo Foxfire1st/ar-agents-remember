@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T08:39+02:00                     |
-| lastVerifiedCommitHash | `f62c732df2acc30ec3766f83c176a24b39c0bc46` |
-| lastVerifiedCommitDate | 2026-06-10T10:41:09+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,7 +19,10 @@ optional drift and branch-freshness facts.
 ## Code Commentary
 
 `build_context_packet()` resolves the allowed repo ID, builds coordination
-context, reads Git facts, projects paths and memory state into explicit
+context — since 260731-EFA-L2 through `resolve_coordination_context(...,
+hints=CoordinationHints(coordination_root, onboarding_root),
+selector=EnclosureSelector(contract_path))` rather than five loose keyword arguments — reads Git
+facts, projects paths and memory state into explicit
 Pydantic nested models, obtains read-only worktree status, obtains compact
 provider summary status, and adds a drift summary only when requested. The
 controller validates the serialized provider summary through
@@ -79,6 +82,10 @@ l-01 trust checkpoint is the intended opt-in caller.
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the `resolve_coordination_context` call moved onto the
+  resolver's new `CoordinationHints` / `EnclosureSelector` parameter objects. Packet contents,
+  request flags and validation boundaries are unchanged. Verification metadata pinned until
+  closeout stamps the L2 code commit.
 - 2026-06-10T08:39+02:00: Added the opt-in `freshness` section (issue #54): `include_freshness`/`fetch_timeout` on the request, `_freshness_packet()` with code+memory `read_branch_freshness` and the `ledgerMapsCodeHead` mapping check; default stays `not-checked`.
 - 2026-06-08T09:57+02:00: Restored the provider-summary model-validation boundary after skipped provider summaries moved the omitted nullable `ok` contract into the provider response model.
 - 2026-06-06T12:28+02:00: Corrected the context-packet payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.

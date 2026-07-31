@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-07-07T20:45+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -74,8 +74,24 @@ No external Domain Documentation source is configured for this memory repo.
 Benchmark cases may clone external repositories during runs, but this package's
 source-level behavior is local to `agents-remember`.
 
+## 260731-EFA-L2 Shared Runner Value Objects
+
+`models.py` now owns five frozen value objects the runner modules are signed on:
+`BenchmarkWorkspace` (a materialized case workspace), `BenchmarkTask`, `BenchmarkRun`,
+`BenchmarkPreparation` and `BenchmarkRunOutcome`. The load-bearing one is `BenchmarkPreparation`:
+**both** `BenchmarkPrepareRequest` and `BenchmarkRunRequest` project onto it through a `preparation`
+property, so `prepare_case` takes one object and the prepare and run entry points cannot drift
+apart on preparation semantics. `allowed_provider_ids` rides on it, so the containment R1
+authority set still reaches `filter_benchmark_provider_ids` with its FAIL-CLOSED `None` handling
+intact.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: added the shared `BenchmarkWorkspace` / `BenchmarkTask`
+  / `BenchmarkRun` / `BenchmarkPreparation` / `BenchmarkRunOutcome` value objects and re-signed
+  `prepare_case`, `run_case`, `maybe_prepare_case`, `run_one`, `run_dry_batches`,
+  `benchmark_run_payload` and the MCP-registration builders onto them. Generated files and run
+  outputs are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-07T20:45+02:00 — No route impact: 260707-HFX-L2's only change under this route is
   `mcp_registration.py`'s `prepare_configured_providers` opting INTO the synchronous cgc
   refresh fallback (hermetic-cold benchmarks need the timeout-bounded graph build now that

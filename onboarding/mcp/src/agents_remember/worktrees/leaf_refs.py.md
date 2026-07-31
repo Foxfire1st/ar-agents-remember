@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T19:55+02:00 |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -36,6 +36,16 @@ scope, indexes active task roots from `task_resolver.py`, builds aliases from ma
 standalone/light `task.json` docs, sibling leaf task docs, file stems, slugs, and enclosure ids, then
 returns `ResolvedLeafRef` with both the qualified catalog identity and the doc id used by worktree
 contracts.
+
+Candidate enumeration and candidate *building* are now separate (260731-EFA-L2). Two generators
+yield `(doc id, alias seeds)` and know nothing about qualification or dedup:
+`_root_document_leaves(root_doc, task_root)` — a master root names its sub-task leaves (number +
+file stem + file), a leaf root names only itself (id + slug + folder name + enclosure leaf ids);
+and `_declared_leaves(task_root)` — the root `task.json` through that helper, then every
+marker-bearing sibling leaf document beside it. `_leaf_candidates_for_root` consumes the stream:
+it strips each id, skips empties, qualifies as `<repo>/<task-root>/<doc-id>`, unions the alias set
+per qualified id, and returns `_LeafCandidate`s sorted by lowercase qualified id. The alias sets
+and the sort order are unchanged; the local `add_candidate` closure is gone.
 
 Candidate indexing identifies task-document JSON by the raw `schema: ar-task-document/v1` marker before
 model validation. Sibling JSON artifacts without that marker are ignored; malformed or unreadable
@@ -80,6 +90,12 @@ walk. `repo_name` only shapes the internal qualified ids, never the returned doc
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
+  exemptions): candidate enumeration was extracted from `_leaf_candidates_for_root` into the
+  generators `_declared_leaves(task_root)` and `_root_document_leaves(root_doc, task_root)`, and the
+  local `add_candidate` closure was replaced by the qualification/dedup loop in the caller. Alias
+  sets, qualified ids and sort order are unchanged. Verification metadata pinned until closeout
+  stamps the L2 commit.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1: added `canonical_leaf_doc_ids(repo_name, task_root)`, the
   bounded one-scan per-task-root doc-id index the contract heal uses as its cheap-skip. Resolution
   behavior is unchanged; contract READS no longer reach this module at all (leaf-id normalization moved

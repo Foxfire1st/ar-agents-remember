@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/kernel/route_index.py`           |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-18T20:03+02:00                                   |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`               |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                                   |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`               |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -30,6 +30,14 @@ unfiltered `repository_paths` for sidecar/source membership and its path-rule-fi
 covered sidecars, child routes, routing terms, and hot-path summaries, serializes stable JSON, and
 writes only when bytes differ. There is no filesystem source walker and no late `Path.is_file()`
 membership decision.
+
+Routing-term extraction decides which identifier hints are worth indexing in two named steps
+(260731-EFA-L2): `_is_source_anchor(token)` rejects tokens shorter than three characters and
+anything in `GENERIC_ANCHOR_WORDS`, then defers to `_has_code_shape(token)` — one boolean
+expression that is true when the token's own spelling marks it as an identifier rather than prose.
+Any one signal is enough: a dotted or slashed path, snake_case, an embedded digit, an all-caps
+constant, or an interior capital (camelCase / PascalCase). The signals and their outcomes are
+exactly the previous early-return chain's; only the shape test now has a name.
 
 ### Conventions
 
@@ -69,7 +77,7 @@ package source and deterministic production-path tests.
 | The census validates the Git root and freezes tracked/untracked membership plus path-rule eligibility. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
 | MCP refresh supplies resolved repository and storage authority. | L80-L110 | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py) |
 | Closeout preview/apply forwards `context.storage` explicitly. | L345-L363 | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py) |
-| The regression matrix proves identity, exclusions, typed failures, and repeat convergence. | L199-L911 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| The regression matrix proves identity, exclusions, typed failures, and repeat convergence. | L199-L907 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 
 ## Cross-Repo References
 
@@ -82,6 +90,17 @@ inside this package.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose end ran
+  past `mcp/tests/test_route_index.py` (911 lines, of which L909-L911 are the `unittest.main()`
+  trailer). Narrowed the regression-matrix range to L199-L907 and re-read it: it now opens on the
+  extracted `_write_scoped_fixture`/`_assert_contamination_is_invisible_to_git` helpers and still
+  covers identity (L329, L768, L822), exclusions (L258, L544), typed failures (L642, L675, L739,
+  L891), and repeat convergence (`written == 0` on the second build at L503-L511, L808-L818,
+  L858-L876).
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911` armed with no exemptions):
+  `_is_source_anchor`'s six-return chain became a length/generic-word guard plus the new
+  `_has_code_shape(token)` boolean. Same tokens accepted, same tokens rejected — a regenerated
+  index is byte-identical. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: route generation now consumes one explicit
   repository/storage-authorized Git census for membership, eligibility, counts, and covered files.
 - 2026-05-31T12:50+02:00 — Removed the unused `load_route_index(index_path)` reader; the module

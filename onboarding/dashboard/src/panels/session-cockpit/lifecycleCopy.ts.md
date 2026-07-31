@@ -38,7 +38,7 @@ the InteractionBar's copy states the real answer channel and the real PTY truth.
   server's verbatim words.
 - **`cleanupOutcomeCopy`** (L34-L47): the landed-cleanup route's OWN outcome —
   `ended N · skipped M (session: reason, …)`; skips never dropped.
-- **`STOP_TURN_DISABLED_REASON`** (L51-L52): the UA-7 gap named honestly (no cancel-turn route
+- **`STOP_TURN_DISABLED_REASON`** (L66-L67): the UA-7 gap named honestly (no cancel-turn route
   exists on the control bridge yet).
 - **InteractionBar copy** (L54-L71): `INTERACTION_HONESTY_HINT` (terminal text becomes a queued
   message, not an answer), `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED` (poll-bounded,
@@ -105,6 +105,10 @@ labels, and recorded-answer feedback. These strings describe the direct route's 
 contract and keep structured interaction wording consistent across the composer-stage UI.
 
 ## Update History
+
+- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived the stale `STOP_TURN_DISABLED_REASON`
+  self-citation — the constant now sits at L66-L67 (was L51-L52) after the cleanup-failure copy was
+  added above it. The string itself is unchanged.
 
 - 2026-07-24T13:17:17Z — Curator: documented structured-question copy ownership and all-or-nothing
   wording; verification fields remain pre-commit.

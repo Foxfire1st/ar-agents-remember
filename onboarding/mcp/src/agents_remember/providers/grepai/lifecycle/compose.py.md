@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/compose.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
-| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,6 +22,17 @@ Postgres, Ollama, and watcher dynamic values out of Python `docker run`
 assembly while still letting lifecycle code choose ports and paths.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Published Ports As One Value
+
+`grepai_compose_render(provider_settings, layout, runner, backend, ports=UNRESOLVED_SERVICE_PORTS)`
+takes the two published dependency ports as one `GrepaiServicePorts` (from
+`grepai/lifecycle/core.py`) instead of the `postgres_port=` / `ollama_port=` keywords.
+`UNRESOLVED_SERVICE_PORTS` is the module-level empty instance meaning **nothing published yet**,
+which is what makes the existing fallback read honestly: `ports.postgres or
+backend["postgresHostPort"]` and `ports.ollama or embedder["httpHostPort"]` — an unpublished port
+falls back to the configured host port, exactly as before. The rendered compose files and their
+hashes are unchanged.
 
 ### Logic
 
@@ -72,9 +83,9 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L40-L97 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| The optional POSIX UID/GID Compose user block for the watcher is rendered via the shared `host_user_block()` helper. | L76 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L100-L106 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L42-L99 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| The optional POSIX UID/GID Compose user block for the watcher is rendered via the shared `host_user_block()` helper. | L79 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L96-L102 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
 
 ## Cross-Repo References
 
@@ -86,6 +97,12 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that shifted when `grepai_compose_render` took the `ports: GrepaiServicePorts` argument. `grepai_compose_render` is now L42-L99 (was L40-L97) and the `WATCHER_USER_BLOCK: host_user_block()` value is now L79 (was L76); both read back and confirmed.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `grepai_compose_render`'s `postgres_port` / `ollama_port` keywords became one
+  `ports: GrepaiServicePorts` argument defaulting to `UNRESOLVED_SERVICE_PORTS`. Rendered compose
+  output is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-02T01:15+02:00 — `grepai_compose_render()` now bind-mounts each live memory root read-write at `/grepai/roots/<project_id>` (`WATCHER_ROOT_VOLUMES`) so the watcher indexes the real repos in place instead of a mirror under the runtime mount.
 - 2026-05-31T12:30+02:00 — Fixed Repo-Internal citation: local `grepai_user()`/`grepai_user_block()` replaced by shared `host_user_block()` helper; refreshed line ranges (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after GrepAI Compose label rendering began

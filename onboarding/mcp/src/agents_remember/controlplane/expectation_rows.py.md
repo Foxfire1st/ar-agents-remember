@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ in-memory timer that a daemon/MCP restart would erase (the Restate durable-timer
 
 ## Code Commentary
 
-### 260707-HFX2-L17 Seat-Scoped Expectations
+### 260707-HFX2-L18 Seat-Scoped Expectations
 
 Expectation rows persist optional `seatRole` beside `leafKey`, and both pure creation and
 write-at-dispatch helpers carry it. Supervisor findings can therefore retain the exact pair whose
@@ -42,10 +42,23 @@ kernel<->controlplane import cycle; a future refactor should watch for drift bet
 id — lets a sweep or dashboard resolve straight back to the thing the row is a deadline FOR),
 optional subject/leaf keys, and `metAt`/`missedAt` stamps.
 
-`create_expectation_row(...)` / `due_at_from_sla(now=, sla_seconds=)` are pure builders.
-`mark_met`/`mark_missed` are idempotent past the first transition (a `missed` row that later gets
-marked `met` — or vice versa — is a no-op; the FIRST terminal transition wins).
-`write_expectation_row(store, ...)` is the one-call create+append helper every dispatch surface
+Two frozen parameter objects (260731-EFA-L2) carry what an expectation *is*, separate from the
+clock and identity the caller mints:
+
+- **`ExpectationSubject(agent_id=None, lifecycle_id=None, leaf_key=None, seat_role=None)`** — who
+  owes the expectation: the agent, the lifecycle it runs, and the leaf/seat it claimed. A row
+  addressed to only some of these is addressed to nobody, so the dispatch surface resolves the
+  whole address once.
+- **`Expectation(kind, source_id, subject=ExpectationSubject(), note=None)`** — what must happen.
+  `dueAt` and the row id are minted separately by the caller; everything else about an expectation
+  is here.
+
+`create_expectation_row(expectation, *, row_id, now, due_at)` / `due_at_from_sla(now=,
+sla_seconds=)` are pure builders. `mark_met`/`mark_missed` are idempotent past the first transition
+(a `missed` row that later gets marked `met` — or vice versa — is a no-op; the FIRST terminal
+transition wins).
+`write_expectation_row(store, expectation, *, row_id, now, sla_seconds)` is the one-call
+create+append helper every dispatch surface
 calls (`mcp/tools/terminal.py::_write_spawn_expectation_rows`, `mcp/tools/gates.py::
 _write_verdict_by_row`, `mcp/tools/operator_inbox.py::operator_inbox_post_payload`) — so the row
 is never a forgettable follow-up step to the dispatch itself.
@@ -106,6 +119,14 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `ExpectationSubject` and `Expectation` parameter objects and re-signed both
+  builders onto them — `create_expectation_row(expectation, *, row_id, now, due_at)` and
+  `write_expectation_row(store, expectation, *, row_id, now, sla_seconds)`. The former
+  `kind` / `source_id` / `subject_agent_id` / `subject_lifecycle_id` / `leaf_key` / `seat_role` /
+  `note` keywords are gone from both; every dispatch surface constructs an `Expectation` instead.
+  The written row's fields, the SLA computation and the store are unchanged. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added durable seat-role identity to expectation rows

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_inbox_backoff.py`             |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-07-09T11:19+02:00                        |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -45,9 +45,13 @@ not-yet-due) and asserts only the due-and-clear entry survives, proving `is_due`
 ### Conventions
 
 Plain `unittest.TestCase` classes split by concern (pure backoff math vs. due/rate-limit
-predicates); a local `_entry(**overrides)` helper builds a base `OperatorInboxEntry` via
-`create_operator_inbox_entry` and layers `model_copy(update={...})` for schedule/state variants,
-matching the fixture style of `test_operator_inbox.py`.
+predicates); a local keyword-only `_entry(*, entry_id="A", agent_id="agent-a")` helper builds a base
+`OperatorInboxEntry` via `create_operator_inbox_entry` — which takes `InboxMessage(ask=…,
+response=…)` positionally plus `routing=InboxRouting(address=InboxAddress(lifecycle_id=…,
+agent_id=…))` and `poster=InboxPoster(created_by=…, created_via=…)` — and layers
+`model_copy(update={...})` for schedule/state variants, matching the fixture style of
+`test_operator_inbox.py`. The helper exposes only the two fields any test actually varies, so it is
+fully typed and no longer needs the `# type: ignore[arg-type]` its old `**overrides` splat carried.
 
 ### Invariants And Boundaries
 
@@ -76,8 +80,8 @@ No meaningful external design-doc references found yet (created this leaf).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Backoff ladder climbs then clamps at its ceiling; `next_attempt_at` respects the 900-second floor and rejects sub-floor overrides. | L45-L68 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
-| `is_due`/`is_rate_limited`/`redeliverable` combinator semantics, including the consumed-row, ladder-resolved, 900-second-rate-limit, and sub-floor-refusal cases. | L71-L127 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
+| Backoff ladder climbs then clamps at its ceiling; `next_attempt_at` respects the 900-second floor and rejects sub-floor overrides. | L46-L69 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
+| `is_due`/`is_rate_limited`/`redeliverable` combinator semantics, including the consumed-row, ladder-resolved, 900-second-rate-limit, and sub-floor-refusal cases. | L72-L128 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
 
 ## Cross-Repo References
 
@@ -89,6 +93,14 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2: `create_operator_inbox_entry` moved onto parameter
+  objects, which invalidated this card's description of the fixture helper. `_entry` is no longer
+  the untyped `**overrides` splat with a `# type: ignore[arg-type]`; it is a keyword-only
+  `_entry(*, entry_id="A", agent_id="agent-a")` passing `InboxMessage` positionally plus
+  `routing=InboxRouting(address=InboxAddress(...))` and `poster=InboxPoster(...)`. Rewrote
+  Conventions to match and re-anchored both Repo-Internal citations for the one-line growth
+  (L45-L68 → L46-L69, L71-L127 → L72-L128). No test name, ladder value, floor or predicate
+  assertion changed.
 - 2026-07-09T11:19+02:00 — 260707-HFX2-L9: updated redelivery-math tests for the 900-second
   `next_attempt_at` floor, sub-floor refusal, 900-second rate-limit window, and sub-floor
   rate-limit refusal. Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_configuration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash |  `f8196d98982f834d68152d307ff8025ea69440d5`|
-| lastVerifiedCommitDate |  2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,8 +90,21 @@ Model/effort mutation carries the exact operation guard through request and boun
 preflight is rethrown for authority classification; timeout/unknown does not release the shared
 timeline and therefore cannot license a following prompt or setter.
 
+## 260731-EFA-L2 Current Delta
+
+**`ConfigurationPorts`** (`transport`, `read_state`, `read_capabilities`, `capabilities`, `commit`,
+`request_id`) is now the single argument a set transaction drives: the adapter surface **from
+request to committed evidence**. A set is atomic across all six — it mints a request id, writes
+through the transport, re-reads the state and capabilities that must corroborate the write, and
+commits both together. Handing them over as one port is what keeps a transaction from reading one
+adapter and committing to another. The transaction's steps, timeouts and corroboration
+requirements are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ConfigurationPorts` as the one atomic set-transaction surface.
 - 2026-07-17T21:39+02:00 — FEUI-L5: corrected timeout-release claims and documented guarded
   configuration plus unknown-barrier behavior.
 

@@ -85,7 +85,7 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | L237-L280 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The ordered queue converts native disconnect evidence into rejected or unknown receipts without blind resend. | L340-L365 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
+| The ordered dispatcher converts native disconnect evidence into requeued or `unknown` receipts without blind resend: a disconnect certified pre-send requeues the head, a `may_have_sent` disconnect installs the ambiguity barrier instead. (`HarnessControlQueue` is now only a facade over `HarnessSubmissionAuthority`, which owns this.) | L865-L892; L1051-L1061; L1082-L1117 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
 | The conversation runtime raises `ConversationCompositionError` for missing/duplicate/foreign/missing-member bindings; the resolver raises `AuthorityError` for identity refusals. | L73-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
 
@@ -118,6 +118,8 @@ the shared adapter; its stable `code` carries the exact local reason. The
 outcomes from malformed shared protocol and bridge-fatal transport failure.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that moved when the command queue became a facade. `harness_control_queue.py` (227 lines) now only forwards to `HarnessSubmissionAuthority`, so the disconnect-evidence row was repointed to `harness_submission_authority.py` (`_send_and_settle` branching on `may_have_sent` L865-L892, `_certified_pre_send_busy` requeue L1051-L1061, `_possible_send_failure`/`_set_unknown_locked` L1082-L1117) and the claim reworded to say requeued-or-`unknown` rather than rejected-or-unknown.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented typed native-history
   unavailability and bounded-materialization byte evidence as child-local outcomes distinct from

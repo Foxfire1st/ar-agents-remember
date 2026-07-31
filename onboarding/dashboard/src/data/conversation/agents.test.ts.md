@@ -28,22 +28,24 @@ to the parent instead of being trusted.
 
 ### Logic — what each case proves and why it is required
 
-- **`isAgentRosterItem` (L53-L69)** — detects EXACTLY the ruled roster shape (notice + system +
+- **`isAgentRosterItem` (L53-L92)** — detects EXACTLY the ruled roster shape (notice + system +
   agent): a notice without an agent ref is an ordinary notice, an agent-tagged message is an agent
-  item (not a roster row), and an assistant-role notice with an agent ref is not the roster shape.
-- **`agentLabel` / `shortAgentId` (L71-L83)** — the precedence nickname → role → last `agentPath`
+  item (not a roster row), and an assistant-role notice with an agent ref is not the roster shape
+  (L54-L68); the negative cases (L70-L91) add that an `agent-history:<thread>` item and a
+  thread-rebound system notice are not roster seats either.
+- **`agentLabel` / `shortAgentId` (L94-L106)** — the precedence nickname → role → last `agentPath`
   segment → `agent <short-id>` (first 8 chars), so an unresolved identity is named by its id, never
   invented.
-- **`deriveAgents` (L85-L116)** — one row per roster agent in first-evidence order, ignoring
+- **`deriveAgents` (L108-L139)** — one row per roster agent in first-evidence order, ignoring
   non-roster items; the final-message preview surfaces ONLY for a terminal roster row (a running
   roster carrying a `final-message` block yields none), and the claude task_notification's terminal
   `summary` TextBlock is equally a report preview.
-- **`cycleAgentFocus` (L118-L139)** — ArrowRight cycles parent → agent 1 → agent 2 → parent,
+- **`cycleAgentFocus` (L141-L162)** — ArrowRight cycles parent → agent 1 → agent 2 → parent,
   ArrowLeft the reverse; a stale focus (agent gone from the roster) is treated as the parent in both
   directions, and an empty roster always yields parent.
-- **`effectiveAgentFocus` (L141-L149)** — a roster-backed stored focus is kept; an unknown id (the
+- **`effectiveAgentFocus` (L164-L172)** — a roster-backed stored focus is kept; an unknown id (the
   evicted-agent case), `null`, and `undefined` all recompute to the parent.
-- **`filterItemsForFocus` (L151-L172)** — the parent view keeps parent items + roster rows and drops
+- **`filterItemsForFocus` (L174-L195)** — the parent view keeps parent items + roster rows and drops
   agent-tagged items; an agent view keeps only that agent's items, its roster row included (so the
   focused lane still shows its status/final report).
 - **Agent focus in the store (L174-L212)** — `setAgentFocus` records/clears the focus OUTSIDE the
@@ -93,6 +95,16 @@ Negative cases now prove that `agent-history:<thread>` and thread-scoped rebound
 not satisfy roster detection even when they carry an agent ref.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 6 stale self-citations in Logic. The
+  second `isAgentRosterItem` case added at L70-L91 (child-history / rebound system notices) pushed
+  every later suite down by exactly 23 lines, so `agentLabel`/`shortAgentId` L71-L83 → L94-L106,
+  `deriveAgents` L85-L116 → L108-L139, `cycleAgentFocus` L118-L139 → L141-L162,
+  `effectiveAgentFocus` L141-L149 → L164-L172, and `filterItemsForFocus` L151-L172 → L174-L195; the
+  `isAgentRosterItem` bullet now spans the whole two-case suite (L53-L92) and names the negative
+  cases it had grown past. Every range read back against the current source. NOT fixed (beyond this
+  worklist): the store bullet's L174-L212 is now L197-L235, and in Repo-Internal References
+  `store.ts`'s L174-L212 is L197-L235 and `reducer.ts`'s L186-L198 is L209-L221.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added negative roster tests for
   child-history state and rebound system notices, pinning the one-explicit-identity-per-seat

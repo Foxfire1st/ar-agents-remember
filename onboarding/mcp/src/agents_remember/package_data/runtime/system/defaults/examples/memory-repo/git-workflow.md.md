@@ -63,7 +63,7 @@ No external documentation is needed.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics. | L1-L120 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md) |
+| The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics. | L1-L97 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md) |
 | The examples README documents that the memory layer owns this landing-flow file. | n/a | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
 
 ## Cross-Repo References
@@ -75,6 +75,12 @@ No sibling repository evidence is needed.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 whole-file line citation that ran past
+  the end of the example (cited L1-L120; the file is 97 lines). Corrected to L1-L97 after reading
+  the example back end to end — the copy-to-`system/git-workflow.md` instruction (L3-L7), Spine
+  (L11-L18), issue/PR table (L22-L27), landing flow and gates (L31-L53), merge-commit convention
+  (L57-L64), quality gates (L68-L82), and release convention (L86-L97) are all still present.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I CRAP/commit-gate curation: replaced the
   former optional CI/pre-push framing with one mandatory default repository

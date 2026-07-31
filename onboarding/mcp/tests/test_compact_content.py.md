@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compact_content.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T08:53+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -53,5 +53,11 @@ the compaction must never raise on non-JSON content.
 | MCP settings fixtures come from `test_config.py`. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
 
 ## Update History
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_compact_content.py`
+  since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3
+  line(s) with no token change whatsoever. Checked by parsing both revisions and comparing the
+  abstract syntax trees (identical) and the comment tokens (identical), so no symbol, signature,
+  default, decorator, control-flow branch, docstring, or assertion this card describes has moved,and every claim this card makes about its own source still holds.
 
 - 2026-05-29T08:53+02:00: Created onboarding for the compact-content shim tests.

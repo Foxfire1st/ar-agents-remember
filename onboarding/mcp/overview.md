@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastUpdated | 2026-07-31T16:10+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -460,12 +460,17 @@ Current code still excludes an unbound worker from active-phase chain credit; re
 accepted HFX2-L14 S7 follow-up, and this summary does not certify the separate post-integration HFX3
 retro gate.
 
-Start in `src/agents_remember/mcp/config.py` for trusted settings parsing,
-`src/agents_remember/mcp/server.py` and the `mcp/tools/` package for exposed
-MCP tools (`server.py` installs `mcp/compact_content.py` to minify tool-result
-text; verbose tools additionally file bulk diagnostics under
-`temp/tool-reports/` via `mcp/tool_reports.py` and return compact outcomes
-with a `reportPath`), `models/tool_registry.py` for public response contracts,
+Start in `src/agents_remember/mcp/config.py` for trusted settings parsing, then
+`src/agents_remember/mcp/registration/` for the exposed MCP tools — since
+260731-EFA-L2 the `@server.tool()` declarations live there, one module per tool
+family, and `server.py` is reduced to process wiring: it installs
+`mcp/compact_content.py` (tool-result text minification), installs the ambient
+lifecycle, and walks `TOOL_REGISTRARS`, which is the only place that decides
+which families a server advertises and in what order. The `mcp/tools/` package
+still holds the payload builders those declarations call; verbose tools
+additionally file bulk diagnostics under `temp/tool-reports/` via
+`mcp/tool_reports.py` and return compact outcomes with a `reportPath`. Then
+`models/tool_registry.py` for public response contracts,
 `controllers/context_packet.py` for compact `ContextPacketV2` startup packets,
 and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned
 runtime installation. Provider status is composed in `providers/status.py`; the serving/observer path can
@@ -977,17 +982,17 @@ implementation governs its hash rollover or static mount.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The serving conversation route owns strict normalized products, exactly two read ports, and three owned child routers beneath one root — all now implemented (active L1, library L2, control L3), none behavior-empty. | L1-L1270; L1-L87; L1-L24 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py); [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py); [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| The serving conversation route owns strict normalized products, exactly two read ports, and three owned child routers beneath one root — all now implemented (active L1, library L2, control L3), none behavior-empty. | L1-L1282; L1-L87; L1-L35 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py); [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py); [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The private locked helper normalizes redacted observations and validates its protocol without becoming a runtime server or store. | L1-L272 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
 | Foundation tests pin helper resolution, fixture redaction/non-promotion, two ports, three routers, and one registration seam. | L1-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| Hostile normalized-product matrices pin semantic authority and contradiction rejection. | L1-L1185 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
+| Hostile normalized-product matrices pin semantic authority and contradiction rejection. | L1-L1179 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
 
 ### Legacy package map
 
 | Finding | Source Path |
 | --- | --- |
 | MCP settings reject coordinator `system/settings.json`, forbid settings inside the coordinator, and derive provider runtime roots under `providers/runners/<provider>`. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The tool surface exposes `context_packet`, provider diagnostics, runtime, memory, worktree, benchmark, and install tools; handlers delegate to controllers and response validation flows through the model registry. | [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/); [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py); [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| The tool surface exposes `context_packet`, provider diagnostics, runtime, memory, worktree, benchmark, and install tools. The `@server.tool()` declarations live in `mcp/registration/` (one module per family, ordered by `TOOL_REGISTRARS`); `server.py` only walks that tuple; handlers delegate to controllers and response validation flows through the model registry. | [mcp/registration/](agents-remember/mcp/src/agents_remember/mcp/registration/); [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/); [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py); [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
 | `server.py` installs a FastMCP shim that minifies the JSON text mirror of tool results without touching structured content. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
 | `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift and branch-freshness status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember/mcp/src/agents_remember/models/providers.py); [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember/mcp/src/agents_remember/install/runtime.py) |
@@ -1020,7 +1025,68 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 The MCP package now carries the L5I interactive-session backend hardening: active conversations reconnect through fresh server cursors, native interrupt and structured interaction answers are evidence-bound, serving avoids repeated projection/repository serialization, and terminal-backed sessions retain honest lifecycle and shutdown boundaries. Completed landing facts can freeze out of recurring remote probes but reopen into live observation. These are production behavior changes, not a new package route.
 
-The package also owns the mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before closeout mutation; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and zero mutation on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. (260731-EFA-L1 removed the `repo_name == "agents-remember"` condition from that gate — see the route impact below. Existing verification metadata remains pre-commit.)
+The package also owns the mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before closeout mutation; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and zero mutation on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. (260731-EFA-L1 removed the `repo_name == "agents-remember"` condition from that gate; 260731-EFA-L2 then changed what the wrapper *is* — see both route impacts below. Existing verification metadata remains pre-commit.)
+
+## 260731-EFA-L2 Route Impact — `code_quality/` Became An Honest Gate
+
+The `code_quality/` package is no longer a suite that mostly reports.
+
+**`check.py` splits its steps into two kinds by type, not by prose.** A `Step` with
+`report_note is None` enforces; a note means it reports, and the note is printed into the section
+header. Exactly two steps carry one, and both are Radon: `radon cc` and `radon mi` exit 0 whatever
+they find, so no finding of theirs was ever able to fail this gate while the help text, the CI step
+name, and `AGENTS.md` all listed them beside the checks that can. A report step exiting non-zero
+still fails the gate — for a tool that exits 0 on every finding, that means the tool broke.
+**Radon stays load-bearing outside the gate**: `crap_calculator.py` imports
+`radon.complexity.cc_visit` for the complexity half of every CRAP score.
+
+**Scope moved from constants to the tree.** `DEFAULT_SOURCE_PATHS`, `DEFAULT_TEST_PATHS`, the
+positional `source_paths` argument and `--tests` are all gone. `derive_scope` reads every tracked
+`*.py` from `git ls-files` (the *index*, which is exactly what the pre-commit tier certifies) for
+lint and types, the tracked top-level `__init__.py` packages for coverage/Radon/CRAP, and
+`[tool.pytest.ini_options] testpaths` for the suite. Every failure mode raises `ScopeError` and
+exits 1 rather than degrading — an empty scope would make every step pass by certifying nothing.
+**The wrapper accepts no path arguments at all.**
+
+**`diff_coverage.py` is new, and it is the binding coverage gate.** It scores the lines the change
+touched — statements plus branch arcs leaving a changed line — against the same coverage JSON pytest
+already wrote, and names every uncovered line rather than reporting a percentage. **The floor is
+100%**, and the evidence rules out less: the tree's aggregate is 87.16%, so any floor at or below it
+passes a change that is merely average; and at 90% the median 234-line change carries a 23-unit
+budget while the median function here is ~9 statements, so an entirely untested function fits inside
+an average change. Base resolution (`--diff-base`, `AR_GATE_DIFF_BASE`, `GITHUB_BASE_REF`,
+`@{upstream}`, `origin/HEAD`, `main`) is printed on every run, and "no merge base" means the empty
+tree — the whole tree — never a skip.
+
+**CRAP now consumes branch coverage and refuses a report without it.** `load_coverage_by_path` reads
+`executed_branches`/`missing_branches` and raises when `meta.branch_coverage` is not true, so
+`[tool.coverage.run] branch = true` is a prerequisite rather than a preference. The threshold moved
+30.0 → **20.0**, chosen on *reach* rather than on the failure count: `crap(4,0) = 20` is the lowest
+score an entirely unexercised four-path function can have, and every value from 28 to 30 has
+identical reach. All 46 offenders were cleared — 41 by behavioural tests, 5 by splitting — leaving
+the tree topping out at 19.83 against 20.0.
+
+**No baseline exists anywhere in this package.** A `complexity_baseline.py` module, its
+`quality/complexity-baseline.txt` data file, its test and its gate step were built inside this leaf
+and then **deleted**, together with the `BASELINED_COMPLEXITY_RULES` tuple and the `ruff
+--extend-ignore` routing that kept the two steps from double-reporting. The developer's no-deferral
+rule replaced them: all 67 recorded offenders were refactored, and `ruff` enforces `C901`,
+`PLR0911`, `PLR0912` and `PLR0915` directly. `PLR0913` is armed too, at Ruff's default of 5
+arguments, with 274 of 293 findings fixed by 163 parameter objects; the remaining 19 are
+`@server.tool()` declarations where the signature *is* the published MCP schema, covered by a single
+per-file-ignore on `mcp/src/agents_remember/mcp/registration/*.py` that
+`test_code_quality_check.py::ToolSignatureExemptionTests` holds shut by walking the AST.
+
+**Two new test modules join the package's suite.** `test_gate_scope.py` recomputes the tracked set
+independently and asserts the wrapper's real `ruff`/`pyright` argument vectors reach it — **with no
+allowlist at all**: three empty shrink-only lists stood there and were deleted with the baseline
+they were shaped like, on the reasoning that an empty exemption list is a place to put the next
+offender. `test_sync_harness.py` fails on any drift between `scripts/harness/` and the nine
+generated harness trees. `test_diff_coverage.py` and `test_gated_integration_runner.py` join them.
+
+`mcp/pyproject.toml` gained `classifiers` declaring the supported floor and platforms — Python
+3.11/3.12/3.13, Linux and macOS, with Windows supported through WSL and therefore carrying no
+separate classifier — which is the packaging half of the `target-version = "py311"` reconciliation.
 
 ## 260731-EFA-L1 Route Impact
 
@@ -1053,6 +1119,29 @@ fuse remains an emergency framing limit, separate from the 16 MiB materialized s
 ceiling and smaller output-page budgets.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations on the
+  serving-conversation row, all whole-file spans that had drifted past their stamped end. Verified
+  by reading the files: `serving/conversation/models.py` is now 1282 lines (was cited L1-L1270),
+  `ports.py` still ends at 87 (both read-port protocols intact), and `router.py` is 35 lines (was
+  cited L1-L24, which cut off `register_conversation_routes`, the "one root" mount the claim
+  names). Claim text unchanged — still true.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator (final state). **Retired the mid-leaf claim that
+  `complexity_baseline.py` is new and that `test_gate_scope.py` ships shrink-only allowlists** —
+  the baseline module, its data file, its test, its gate step, the `BASELINED_COMPLEXITY_RULES`
+  tuple, the `ruff --extend-ignore` routing and all three (empty) allowlists were deleted before
+  the leaf ended. Recorded instead: the new `diff_coverage.py` binding coverage gate at a 100%
+  changed-lines floor with the evidence that rules out lower floors, CRAP moving onto branch
+  coverage at threshold 20.0 with all 46 offenders cleared, `PLR0913` armed at 5 args with the
+  single AST-guarded tool-signature carve-out, and the two further new test modules. Verification
+  metadata pinned to the leaf's reformat commit until closeout stamps the code commit.
+
+- 2026-07-31T06:30+02:00 — 260731-EFA-L2 curator (mid-leaf): recorded the `code_quality/` route
+  impact — the enforcing/report `Step` split with Radon declared a report (while remaining CRAP's
+  complexity engine), the retirement of the hand-written scope constants in favour of
+  `derive_scope` off `git ls-files` plus pytest `testpaths`, and the `mcp/pyproject.toml`
+  classifiers declaring the supported floor and platforms.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: refreshed this route for the enforcement leaf.
   Recorded that the cockpit bundle, its fingerprint sidecar, and local packaging output left version

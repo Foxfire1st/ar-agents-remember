@@ -74,7 +74,7 @@ matrix are the authoritative evidence.
 | --- | --- | --- |
 | The renderer consumes exactly one snapshot and separates repository membership from eligibility. | L101-L249 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
 | The shared Git runner scrubs all repository selectors and preserves non-UTF-8 record identity. | L9-L42 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| Focused tests cover ignored/generated paths, symlink/sparse/deletion/gitlink behavior, selectors, typed failures, non-UTF-8 names, and byte convergence. | L199-L911 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| Focused tests cover ignored/generated paths, symlink/sparse/deletion/gitlink behavior, selectors, typed failures, non-UTF-8 names, and byte convergence. | L258-L907 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 
 ## Cross-Repo References
 
@@ -86,6 +86,14 @@ external implementation dependency.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that the
+  ruff-format pass plus the extraction of the `_write_scoped_fixture` /
+  `_assert_contamination_is_invisible_to_git` helpers pushed down `mcp/tests/test_route_index.py`.
+  The focused-test block now runs L258-L907, from
+  `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes` through the end of
+  `test_non_git_source_root_fails_instead_of_walking_the_filesystem`; the old range also swept in
+  the `if __name__` boilerplate, which is now excluded.
 
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: created the one-to-one sidecar for the deterministic
   Git/path-rule source census, exact identity rules, typed failures, and convergence boundary.

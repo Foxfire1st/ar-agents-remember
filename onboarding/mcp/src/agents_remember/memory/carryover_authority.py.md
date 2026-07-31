@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                  |
 | path                   | `mcp/src/agents_remember/memory/carryover_authority.py`           |
 | doc_type               | `file-level-onboarding`                                          |
-| lastUpdated            | 2026-07-18T20:03+02:00                                           |
-| lastVerifiedCommitHash |                                                                  `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`|
-| lastVerifiedCommitDate |                                                                  2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                                           |
+| lastVerifiedCommitHash |                                                                  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                                                  2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                                           |
 
 ## Governing Overview
@@ -28,7 +28,10 @@ Markdown. It validates the raw authority surface before accepting typed `Storage
 the general parser's wildcard/default behavior is suitable for read/topology discovery but cannot
 grant write permission. JSON preflight mirrors parser selection rules, including `onboarding:null`,
 root storage fallback, `mode`/`layout`, falsey versus truthy storage selection, supported labels,
-and raw path-rule members before defaults are materialized.
+and raw path-rule members before defaults are materialized. Since 260731-EFA-L2 the list arm of
+`_json_path_rule_state` is its own function, `_json_path_rule_list_state(raw_rules)`: an empty list
+is `absent`, and otherwise **the weakest member decides** — `invalid` beats `empty-member` beats the
+rest. Same verdicts as the inlined chain; the fold rule now has a name.
 
 The Markdown scanner follows the parser's onboarding/storage/pathRules scopes, global and per-rule
 include/exclude lists, recognized list names, repeated-key reset semantics, retained explicit paths
@@ -86,5 +89,8 @@ sibling repository provides implementation authority.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911` armed with no exemptions):
+  extracted `_json_path_rule_list_state` from `_json_path_rule_state`'s list branch. No verdict
+  changed. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: created the one-to-one sidecar for fail-closed official
   JSON/Markdown carryover authority, typed-parser equivalence, and pre-mutation refusal semantics.

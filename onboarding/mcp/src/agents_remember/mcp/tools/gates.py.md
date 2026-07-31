@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/mcp/tools/gates.py`       |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`         |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -20,6 +20,44 @@ create/wait builders remain lower-level compatibility builders for internal
 callers and tests.
 
 ## Code Commentary
+
+### Parameter Objects And Current Signatures (260731-EFA-L2)
+
+This module gained three local frozen dataclasses and four shared values, and every builder's
+keyword list collapsed onto them:
+
+| Type | Carries |
+| --- | --- |
+| `GateRaise(kind, anchor, request, ask)` | One `lifecycle_gate` raise: which gate to open (`GateAnchor`, `GateRequest` — the same pieces the record layer stores) and the structured `ask` put to the developer. |
+| `GateWait(block, timeout_seconds, poll_seconds, sleep, monotonic)` | How a caller waits. `block=False` is raise-and-continue; `timeout_seconds=None` waits indefinitely; `sleep`/`monotonic` are injected so tests drive the loop deterministically. |
+| `InboxWatch(agent_id, allow_ungated_entries)` | Which operator-inbox entries end a wait alongside a decision on the gate itself. |
+
+Shared values: `BLOCKING_GATE_WAIT` (`timeout_seconds=None` — block until decided),
+`SHORT_GATE_WAIT` (30 s at 1 s — the low-level poll), `DEFAULT_GATE_WAIT` (5 s poll up to 5 minutes
+— the compatibility window), `ANY_INBOX_ENTRY` (any pending entry ends the wait).
+
+```python
+gate_create_payload(config, *, kind, anchor=None, request=None)
+lifecycle_gate_payload(config, raised: GateRaise, *, wait: GateWait = BLOCKING_GATE_WAIT)
+gate_decide_payload(config, *, gate_id, lifecycle_id, verdict: GateVerdict, evidence_refs=None)
+gate_decide_for_lifecycle(config, *, lifecycle_id, verdict: GateVerdict, expected_gate_id=None,
+                          evidence_refs=None)
+gate_wait_payload(config, *, gate_id, lifecycle_id, wait: GateWait = SHORT_GATE_WAIT)
+gate_response_wait_payload(config, *, gate_id, lifecycle_id, inbox: InboxWatch = ANY_INBOX_ENTRY,
+                           wait: GateWait = DEFAULT_GATE_WAIT)
+gate_list_payload(config, *, lifecycle_id)
+```
+
+Attribution now travels as one `GateVerdict(decision, by, via, note, deciding_role)` instead of
+separate `decided_by` / `decided_via` / `note` / `deciding_role` arguments — the registration layer
+and the dashboard serving layer each construct their own, which is what keeps model/cli and
+developer/dashboard attribution from being mixed by a stray keyword.
+
+`lifecycle_gate_payload` was also decomposed into named helpers — `_gating_lifecycle` (only a
+running, matching lifecycle may gate), `_validated_ask` (type-checks the free-form ask mapping),
+`_require_raise_and_continue_allowed`, `_raised_gate_payload` — and `gate_decide_payload` into
+`_gate_to_decide`, `_require_undelegated_cli_decision`, `_meet_verdict_by_expectation`. The
+behaviour described below is unchanged; it is now spread across those helpers rather than inlined.
 
 ### Logic
 
@@ -58,7 +96,7 @@ evidence refs. `gate_wait_payload` is a bounded poll (injectable
 `gate_response_wait_payload` is the dashboard-response helper: a compatibility call polls the folded
 gate plus the operator inbox every five seconds for up to five minutes by default, or blocks when
 called with `timeout_seconds=None`; it returns when the gate leaves `open`, a matching inbox entry is
-pending, or its explicit bounded timeout elapses. `lifecycle_gate_payload` passes
+pending, or its explicit bounded timeout elapses. `lifecycle_gate_payload` passes an `InboxWatch` with
 `allow_ungated_entries=False`, so stale lifecycle-scoped inbox entries cannot wake a new gate. The
 helper never consumes inbox entries. If a waited gate was physically dismissed/cleared, it returns
 `cancelled` so the caller unblocks. Non-enforcement gate decisions that are returned through this wait
@@ -72,8 +110,8 @@ envelope. `cancel` decisions physically delete the gate and any inbox entries ti
 
 ### Invariants And Boundaries
 
-- **Attribution honesty → enforced.** The server registers `gate_decide` with
-  `decided_by="model"` / `decided_via="cli"`, so the agent cannot claim a
+- **Attribution honesty → enforced.** `mcp/registration/gates.py` builds
+  `GateVerdict(by="model", via="cli")` for a plain `gate_decide`, so the agent cannot claim a
   developer decision; the dashboard serving layer calls `gate_decide_for_lifecycle`
   with `developer` / `dashboard` (slice 6b). Enforcement now consumes that
   distinction — `worktree_closeout_apply` binds on a developer-attributed
@@ -108,6 +146,12 @@ As of cycle 5 the seam channel is operable: lifecycle_gate accepts wait=false (r
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: added `GateRaise` / `GateWait` / `InboxWatch` plus the
+  four shared wait values, and collapsed every builder's keyword list onto them — including
+  `GateVerdict` replacing the separate `decided_by`/`decided_via`/`note`/`deciding_role` arguments
+  on both decide paths. `lifecycle_gate_payload` and `gate_decide_payload` were decomposed into
+  named helpers; the gate semantics, attribution rules and refusal ordering are unchanged.
+  Verification metadata pinned until closeout stamps the L2 code commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `gate_create_payload`/`lifecycle_gate_payload` now atomically write an R2 `verdict-by` expectation row alongside the opened gate; `gate_decide_payload` marks that row `met` on any terminal decision (approve/reject/cancel). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-05T19:55+02:00 - L8 builder cycle 7: wait=false additionally requires a non-empty `enclosure` (the integrate guard's address, AR4-1a) — refused before the expire-sweep/append, so a mis-called raise still mutates nothing. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: wait=false restricted to delegated seam kinds and validated before mutating (AR3-2/AR3-5); gate_list defaults to the ambient lifecycle (AR3-3). Verification metadata pinned until closeout stamps the L8 commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T19:49+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -139,8 +139,12 @@ datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
   still ticks), `test_second_sweep_bumps_sweep_count`.
 
 `_entry(...)` is the shared `TerminalCatalogEntry` fixture builder, typed against the catalog's own
-`Literal` aliases (`TerminalSessionKind`/`TerminalSessionStatus`/`SeatTurnState`) per `pyright`'s
-finding during this leaf.
+`Literal` aliases (`TerminalSessionKind`/`TerminalSessionStatus`). Since 260731-EFA-L2 it supplies
+only what **identifies** the seat: turn state comes from the row's own `with_turn_state(...)` and
+everything else from `replace(...)`, because `TerminalCatalogEntry` already carries every field and
+a builder that mirrored the row's shape was a second copy of it. The `turn_state`,
+`turn_state_changed_at` and `liveness_failures` parameters (and the `SeatTurnState` import) are
+gone.
 
 ### Conventions
 
@@ -203,9 +207,9 @@ spec.
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | [../src/agents_remember/controlplane/orphan_policy.py](../src/agents_remember/controlplane/orphan_policy.py.md) |
 | The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `SupervisorSignalCooldownStore` | [../src/agents_remember/controlplane/supervisor_signals.py](../src/agents_remember/controlplane/supervisor_signals.py.md) |
-| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | L759-L789 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
+| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | L747-L777 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
 | The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | L477-L505 | [supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
-| HFX2-L9 tests cover signal cooldown, mid-turn suppression, restart non-burst before the 900-second floor, and one-second sweeps without per-second signal rows. | L531-L636 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
+| HFX2-L9 tests cover signal cooldown, mid-turn suppression, restart non-burst before the 900-second floor, and one-second sweeps without per-second signal rows. | L526-L621 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
 
 ## Cross-Repo References
 
@@ -227,6 +231,17 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2: recorded the `_entry` rewrite this leaf already made to
+  the body. The fixture no longer mirrors `TerminalCatalogEntry`'s shape, so its `turn_state`,
+  `turn_state_changed_at` and `liveness_failures` parameters (and the `SeatTurnState` import) are
+  gone; callers now use the row's own `with_turn_state(state, changed_at=…)` or `replace(...)`. The
+  rest of the source diff is parameter-object adoption at fixture call sites —
+  `Expectation`/`ExpectationSubject` for expectation rows, `InboxMessage`/`InboxRouting`/
+  `InboxAddress`/`InboxPoster`/`InboxSubject` for `create_operator_inbox_entry`, and
+  `schedule=EscalationSchedule(...)` for `evaluate_escalation_findings` — plus `ruff format`
+  reflow. Every class and every test name is identical and no predicate, ladder, respawn or sweep
+  assertion changed, but the file lost 24 lines, so both in-file citations were re-anchored (the F1
+  pin L759-L789 → L747-L777 and the HFX2-L9 sweep block L531-L636 → L526-L621).
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

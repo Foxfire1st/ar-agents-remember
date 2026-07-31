@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/controllers/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T13:07:21+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T15:31+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -23,6 +23,29 @@ a lifecycle whose owner is gone is terminalized by the reducer from the contract
 `cleanup: abandoned` instead, honoring the event store's single-writer invariant.
 
 ## Code Commentary
+
+### Parameter Objects (260731-EFA-L2)
+
+The module now defines the concept objects its callers pack, each with a documented meaning rather
+than a keyword list:
+
+| Type | Meaning | Shared default |
+| --- | --- | --- |
+| `TaskIdentity(repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind)` | Who the task is. `worktree_name` is the on-disk directory; `leaf_id`/`parent_task` place it in the task tree; `workflow_kind` is its document format (`light-task`/`chat-task`). | — |
+| `TaskBases(source_branch, work_branch, memory_mode, memory_choice, stale_base_choice)` | What a started task is cut from, plus the answers that clear a refused base. | `DEFAULT_TASK_BASES` |
+| `StartExecution(dry_run, skip_provider_setup, retry_provider_setup)` | How the start itself runs, and what happens to background provider setup. | `DEFAULT_START_EXECUTION` |
+| `CloseoutCommitMessages(code, memory, ledger)` | The three commit messages. | — |
+| `CloseoutApproval(intent_note, dry_run)` | The approval-bearing half, deliberately separate so a preview cannot read as an approved apply. | `PREVIEW_ONLY` |
+| `FinalizeTaskDocs(task_doc_path, master_doc_path, subtask_number)` | The documents finalize reconciles. | `NO_TASK_DOCS` |
+
+Resulting signatures: `worktree_start_tool(config, identity, *, bases, execution)`;
+`worktree_attach_tool(config, task: TaskRef, *, on_unsaved)`; `worktree_status_tool(config, task:
+TaskRef)` — both attach and status resolve through the shared `_task_ref_namespace(config, task)`
+helper; the closeout pair take `(config, contract_path, messages[, approval])`; and
+`lifecycle_finalize_task_tool(config, contract_path, *, docs, dry_run, teardown_providers)`.
+`TaskRef` itself lives in `controllers/task_ref.py` and is shared with `resolve_context_tool`.
+
+The behaviour below is unchanged — this is the same plumbing with its arguments named.
 
 The module resolves allowed repositories and coordination-contained paths from
 `McpRuntimeConfig`, builds typed `git_worktree_manager.WorktreeArgs`, and
@@ -54,7 +77,7 @@ and delegates final readiness, cleanup, and task-document reconciliation to the
 worktree finalizer.
 260703-L4 also threads `config.orchestration.gate_policy` into closeout
 `WorktreeArgs`, keeping the controller as typed plumbing while the closeout
-module and controlplane enforce the policy. L8 cycle 6 extends the same
+module and controlplane enforce the policy. L9 cycle 6 extends the same
 pass-through to `worktree_integrate_tool`: integrate `WorktreeArgs` now carry
 the configured policy too (the dataclass default is all-human, which would
 refuse the exact delegated master-handover approval the seam channel produces),
@@ -83,7 +106,7 @@ at=now_iso())`, logs each landed entry via `seat_events.log_landed_event(config,
 the landed session ids. The helper does not construct `TerminalHost` and does not kill tmux:
 successful completion is an archive classification, not cleanup.
 
-**F1 fix round (260707-HFX-L8, reviewer finding F1, LOW/MEDIUM):** the FIRST build round only
+**F1 fix round (260707-HFX-L9, reviewer finding F1, LOW/MEDIUM):** the FIRST build round only
 wrapped `load_contract` in a narrow `try/except (ContractError, OSError)`, leaving
 the catalog file I/O (the `_read`/`_write` calls inside the seat-classification helper can raise
 `OSError`/JSON-decode errors) and the `log_retire_event` loop OUTSIDE any guard. That let a rare
@@ -122,7 +145,7 @@ ambient is installed (CLI/tests).
   `providersAuthority` result block; worktree creation itself is never blocked
   by the provider gate.
 - Completion-seat classification must NEVER be able to fail a completion edge that has already
-  succeeded (260707-HFX-L8 F1 doctrine, carried into HFX2-L11): `_auto_land_completed_seats` wraps
+  succeeded (260707-HFX-L9 F1 doctrine, carried into HFX2-L11): `_auto_land_completed_seats` wraps
   its ENTIRE body — contract load, catalog construction, `land_seats_for_leaf`, and the
   `log_landed_event` loop — in one `try: ... except Exception: return []`. Landing is an archive
   courtesy that rides the `worktree_integrate`/`lifecycle_finalize_task` edge; it is never itself a
@@ -160,6 +183,11 @@ Worktree start/attach/status controllers accept `parent_task` and `leaf_id` and 
 
 ## Update History
 
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: introduced `TaskIdentity`, `TaskBases`, `StartExecution`,
+  `CloseoutCommitMessages`, `CloseoutApproval` and `FinalizeTaskDocs` (plus their shared defaults)
+  and moved every controller's keyword list onto them; attach/status now take the shared `TaskRef`
+  and resolve through one `_task_ref_namespace` helper. Behaviour, guards and result shapes are
+  unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): successful
   `worktree_integrate_tool`/`lifecycle_finalize_task_tool` edges now auto-land matching seats into
   `result["autoLandedSeats"]` instead of auto-retiring them. The helper calls

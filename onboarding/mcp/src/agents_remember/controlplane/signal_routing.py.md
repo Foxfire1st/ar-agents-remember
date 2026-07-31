@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -145,6 +145,21 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/controlplane/signal_routing.py` since the L2 base commit is the whole-
+  tree `ruff format` pass in `00e8379`, which re-wrapped 9 line(s) with no token change
+  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
+  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
+  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
+  card makes about its own source still holds. Noted while checking: the references table also
+  cites line ranges inside `terminal_catalog.py`; those ranges shifted because this task edited
+  those files, so treat the cited numbers as approximate and the linked cards as authoritative.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: moved current routing and chain credit to binding
   identity while preserving the one intentional historical spawn-provenance ladder hop.
 

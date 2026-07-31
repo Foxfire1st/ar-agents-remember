@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-31T16:20+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 
 ## Purpose
 
@@ -54,7 +54,43 @@ commit steps; and the skills reference names both pre-commit and pre-push sync
 checks. These are documentation projections of the existing gate authority, not
 independent bypasses or alternative check sequences.
 
+## 260731-EFA-L2 Reference Impact
+
+Two things a reader of this route must now hold.
+
+**The tool surface has a new authoritative source, and `mcp-tools.md` says so.** It no longer points
+at `mcp/server.py`; the `@server.tool()` registrations moved to
+`mcp/src/agents_remember/mcp/registration/`, one module per tool family, and `create_server` only
+walks `TOOL_REGISTRARS` — an ordered tuple that also fixes the order the server advertises tools in.
+Response shapes are still enforced by `models/` via `tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`.
+When a tool is added or its schema changes, the family module under `registration/` is what to read,
+and its `@server.tool()` signature **is** the published schema — this route's job is to project that
+truth, not to restate a parameter list that can drift from it.
+
+**Three commit-gate facts these public documents predate.** As with the L1 note above, `docs/` is
+pathRules-excluded, so the durable record lives on the root overview and here:
+
+1. **There are no baselines, allowlists, grandfather lists or exemption files anywhere in the
+   gate.** Several were built during L2 and then deleted; the no-deferral rule forbids the category,
+   so a document that describes "the current offender list" would be describing something that does
+   not exist and cannot be created.
+2. **The binding coverage gate is per-diff at 100%** — every statement and every branch arc leaving
+   a changed line must be exercised, reported as named uncovered lines rather than a percentage.
+   There is no aggregate coverage pin.
+3. **CRAP consumes branch coverage at threshold 20.0** and refuses a coverage report that lacks
+   branch data rather than silently falling back to statement coverage.
+
+`worktrees-c09.md`'s quality-before-commit *sequence* is unaffected — the gate still runs before any
+closeout mutation, and still fails closed. What changed is what the gate can catch.
+
 ## Update History
+- 2026-07-31T16:20+02:00 — 260731-EFA-L2 curator: `mcp-tools.md` now names
+  `mcp/src/agents_remember/mcp/registration/` (one module per tool family, `TOOL_REGISTRARS` walked
+  by `create_server`) as the authoritative tool surface instead of `mcp/server.py`. Flagged the
+  three gate facts these pathRules-excluded reference documents predate: no baselines or exemption
+  files exist anywhere in the gate, the binding coverage gate is a 100% per-diff floor, and CRAP
+  consumes branch coverage at threshold 20.0. The closeout gate order is unchanged. Verification
+  metadata remains pinned.
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: flagged the two commit-gate facts these public
   reference documents now predate — the fast/full hook tier split (pre-commit no longer runs the
   wrapper) and the removal of the repository-name condition from the closeout gate. The skill-copy

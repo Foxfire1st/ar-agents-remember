@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_changeset.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T12:55+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -101,7 +101,18 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
 | `McpRuntimeConfig` / `RepositoryScope` constructed by the master test. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | The L1 files test whose harness/style this mirrors. | [test_serving_files.py](agents-remember/mcp/tests/test_serving_files.py) |
 
+## 260731-EFA-L2 Delta — the scope-resolution fall-through
+
+Five tests pinning which diff a file request resolves to when it names no leaf:
+
+- no leaf answers the **master series** diff; no leaf **or** master falls through to the
+  enclosure scope;
+- a master file diff maps a path breach to `bad-path` and an unknown series to `not-found`;
+- a scoped file diff **reports an unknown scope rather than guessing** one.
+
 ## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-12T12:55+02:00 — 260712-TRH-L2: added regressions for mixed-case leaf normalization, exact master enclosure scoping, and the master summary opt-out while retaining the existing real-git range tests. Verification metadata pinned until closeout stamps the L2 code commit.
 

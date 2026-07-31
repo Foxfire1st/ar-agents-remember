@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/scope.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T18:40+02:00                     |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ scope and maps domain errors to the serving status-string `JSONResponse` idiom.
 
 L9 review ride-along (L9R-1): the files-API status mapper now also catches `ValueError` from `Path.resolve()` (e.g. an embedded null byte) and answers `400 bad-path` — the notes API inherited its uncaught-500 idiom from here, so both were fixed in the same pass.
 
-`resolve_scope(config, repo_id, scope_id) -> FileScope` (L107-L153) maps
+`resolve_scope(config, repo_id, scope_id) -> FileScope` (L111-L157) maps
 `{repo, mainline|enclosure}` to a frozen `FileScope` (`code_root`,
 `onboarding_root | None`, `memory_root | None`, `branch`, `contract_path`). The repo is
 gated through `require_repo` (the allow-list authority — `AuthorityError` on an unknown
@@ -41,16 +41,18 @@ code_repository_root` as the code root, and **degrades to a code-only scope**
 
 `run_scoped(op, config, repo_id, scope_id) -> Response` (L167-L185) is the error mapper
 (formerly `files._run`): an unknown repo → `404 unknown-repo`, an unknown enclosure
-(`_UnknownScope`, L66-L67) → `404 unknown-scope`, an out-of-root / absolute path
+(`_UnknownScope`, L70-L71) → `404 unknown-scope`, an out-of-root / absolute path
 (`AuthorityError` from `confine_rel`) → `400 bad-path`, an absent file
 (`FileNotFoundError`) → `404 not-found`; success returns the domain dict at 200.
 
-`_iter_repo_contracts` (L84-L95) / `_find_enclosure_contract` (L98-L104) enumerate the
-**active** leaf-enclosure contracts for a repo from
-`iter_leaf_enclosure_contracts(coordination_root/"tasks")` — filtered to the allow-listed
-`repo_name`, skipping `cleanup=="abandoned"` and any enclosure whose `code_worktree` no
-longer exists, tolerating a malformed contract (`ContractError`/`OSError` → skip).
-`_resolve_within(root, rel)` (L156-L164) is the per-call confinement: `""`/`"."` is the
+`_iter_repo_contracts` (L110-L114) / `_find_enclosure_contract` (L138-L144) enumerate the
+**active** leaf-enclosure contracts for a repo. The tasks-tree walk itself now lives in
+`_iter_active_contracts` (L117-L135) — the L5I single-pass extraction — which reads
+`iter_leaf_enclosure_contracts(coordination_root/"tasks")` ONCE, skipping
+`cleanup=="abandoned"` and any enclosure whose `code_worktree` no longer exists and
+tolerating a malformed contract (`ContractError`/`OSError` → skip); `_iter_repo_contracts`
+filters that one pass to the requested `repo_name`.
+`_resolve_within(root, rel)` (L160-L168) is the per-call confinement: `""`/`"."` is the
 root, everything else goes through `confine_rel` (so an absolute or escaping path is
 rejected, never silently re-rooted). `language_for(path)` maps a file extension
 to the dashboard language id via `_LANG_BY_EXT` (`text` fallback). `decode_capped(raw, cap)
@@ -65,7 +67,7 @@ staying in lockstep.
 
 ### Conventions
 
-`FileScope` is a frozen dataclass (L70-L81). The module imports the sidecar-pairing
+`FileScope` is a frozen dataclass (L96-L107). The module imports the sidecar-pairing
 confinement (`confine_rel`) from `kernel/sidecar_pairing.py` and the
 `CoordinationContext` bridge from `kernel/coordination_context_resolver.py`; it owns no
 HTTP route — only the scope/catalog resolution + the error mapping reused by the route
@@ -101,8 +103,26 @@ Repository scope discovery now supports the single-pass, repository-bucketed fil
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+The coordination-context call now passes the kernel's two parameter objects instead of two loose
+keywords: `resolve_coordination_context(..., hints=CoordinationHints(coordination_root=…),
+selector=EnclosureSelector(contract_path=…))`. The resolved scope and its fallbacks are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations and corrected
+  where the enclosure walk lives. The L5I single-pass extraction moved the tasks-tree walk and the
+  abandoned/worktree-gone/malformed skips out of `_iter_repo_contracts` into `_iter_active_contracts`
+  (L117-L135); `_iter_repo_contracts` (L110-L114, was L88-L98) now only filters that one pass by
+  `repo_name`, and `_find_enclosure_contract` is L138-L144 (was L102-L107). `FileScope` is L96-L107
+  (was L74-L85, which now lands in `decode_capped`'s backward scan). Behaviour is unchanged. Still
+  stale and left for the next citation pass (verified, not repaired here): `_UnknownScope` L92-L93
+  (cited L70-L71), `resolve_scope` L147-L193 (cited L111-L157), `_resolve_within` L196-L205 (cited
+  L160-L168), `run_scoped` L207-L227 (cited L167-L185).
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `CoordinationHints` / `EnclosureSelector` call shape into the kernel resolver.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): added the shared

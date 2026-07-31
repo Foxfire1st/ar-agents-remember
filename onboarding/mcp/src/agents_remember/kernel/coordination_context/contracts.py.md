@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/contracts.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T23:30+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,12 +23,14 @@ coordination context.
 
 ### Logic
 
-`resolve_contract()` resolves a worktree contract in priority order: an explicit
-`contract_path` first, then a task-based lookup via `find_task_contract` when a
-`task_name` is supplied (leaf-enclosure-aware through `parent_task`/`leaf_id`),
-then a `find_worktree_contract` fallback keyed on `worktree_name` alone. Missing
-or unparsable contracts produce `(None, candidate_path)` so the resolver can
-still report the attempted path without mutating contract state.
+`resolve_contract(selector, coordination_root, code_repository_name)` — since 260731-EFA-L2 the
+five naming arguments arrive as one frozen `EnclosureSelector` (from `models.py`) rather than as
+`contract_path, task_name, parent_task, leaf_id, worktree_name`. It resolves a worktree contract in
+priority order: an explicit `selector.contract_path` first, then a task-based lookup via
+`find_task_contract` when `selector.task_name` is supplied (leaf-enclosure-aware through
+`selector.parent_task` / `selector.leaf_id`), then a `find_worktree_contract` fallback keyed on
+`selector.worktree_name` alone. Missing or unparsable contracts produce `(None, candidate_path)` so
+the resolver can still report the attempted path without mutating contract state.
 
 `find_task_contract` selects the root `series-contract.md` or a specific leaf
 enclosure contract through `worktrees.task_resolver.resolve_active_task_root` and
@@ -80,6 +82,12 @@ Contract lookup delegates task-name selection to `worktrees.task_resolver` and e
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `resolve_contract` was re-signed from `(contract_path, coordination_root, code_repository_name,
+  task_name, parent_task=None, leaf_id=None, worktree_name=None)` to `(selector,
+  coordination_root, code_repository_name)`, taking the frozen `EnclosureSelector`. Priority order
+  and every lookup below it are unchanged. Verification metadata pinned until closeout stamps the
+  L2 commit.
 - 2026-07-07T23:30+02:00 — 260707-HFX-L4: explicit `leaf_id` task-contract lookup now delegates to
   `worktrees.leaf_refs.resolve_leaf_enclosure_contract_for_ref`, so qualified/doc-id/legacy refs resolve
   to canonical or existing legacy enclosure contracts without adding leaf-ref policy to this package.

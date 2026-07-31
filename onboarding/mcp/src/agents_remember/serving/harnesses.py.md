@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harnesses.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,6 +87,16 @@ No external repository boundary is implemented by this local registry.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/serving/harnesses.py` since the L2 base commit is the whole-tree `ruff
+  format` pass in `00e8379`, which re-wrapped 1 line(s) with no token change whatsoever. Checked
+  by parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds. Noted while checking: the references table also cites line ranges inside
+  `terminal_opener.py`; those ranges shifted because this task edited those files, so treat the
+  cited numbers as approximate and the linked cards as authoritative.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: removed the obsolete static native
   model/effort and normalized-paste description; documented base-command/detection ownership,
   adapter-owned dynamic native launch, and the retained explicit non-native settings extension.

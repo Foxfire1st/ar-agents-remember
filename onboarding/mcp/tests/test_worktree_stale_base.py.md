@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_stale_base.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:30+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -36,6 +36,17 @@ mapping the code base required), reported as `created-from-official-tip`;
 dry-run reports `would-create-from-official-tip` without creating; an
 existing branch reports `existing`.
 
+### Conventions
+
+The shared `make_contract(root, code, *, memory=None, source_branch=None)` factory takes each
+side as a local frozen `RepoSide(repo, base_commit=None)` dataclass — the repository and the
+commit the contract records as that side's fork point, kept together because the preflight
+compares exactly that pair per side — and expands them into
+`default_contract(ContractTask(...), leaf=LeafIdentity(...), code=RepoBranchPlan(...),
+memory=RepoBranchPlan(...))`. A `RepoSide` with no `base_commit` falls back to the
+`PLACEHOLDER_CODE_BASE` / `PLACEHOLDER_MEMORY_BASE` constants, which are deliberately never real
+commits: a case that passes a real base commit is declaring that side is the one under test.
+
 ### Invariants And Boundaries
 
 Real git subprocess fixtures, no mocking. `_stale_base_preflight` is exercised
@@ -51,4 +62,13 @@ with a `SimpleNamespace` context because it only reads
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. The `make_contract`
+  fixture was reshaped: it no longer takes `code_repo`/`memory_repo`/`code_base_commit`/
+  `memory_base_commit` as four independent keywords but a new module-level frozen `RepoSide`
+  dataclass per side, and it builds the contract through
+  `default_contract(ContractTask(...), leaf=LeafIdentity(...), code=RepoBranchPlan(...),
+  memory=RepoBranchPlan(...))`. The former `"c1"`/`"m1"` defaults became the named
+  `PLACEHOLDER_CODE_BASE` / `PLACEHOLDER_MEMORY_BASE` constants. Added a Conventions section
+  recording that factory, since the card previously described the fixtures only as bare-origin
+  clone pairs. All eleven cases and their block/recovery assertions are unchanged.
 - 2026-06-10T09:30+02:00: Created with the issue #54 sub-task B stale-base preflight and memory-branch auto-template (11 tests).

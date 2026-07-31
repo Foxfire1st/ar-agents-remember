@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                                             |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                             |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -43,12 +43,14 @@ completion, or supervisor action. Ordinary shell rows remain ordinary terminal r
 The detailed pane/turn-state path below is historical pre-L5 behavior and is retained only to explain
 the migration surface; it is not current hosted authority.
 
-Module constants are the **code-default hysteresis knobs** (deliberately not settings-backed in
-this leaf): `DEFAULT_LIVENESS_FAILURE_THRESHOLD = 3` (consecutive command failures before an exit
+The **code-default hysteresis knobs** (deliberately not settings-backed) are
+`DEFAULT_LIVENESS_FAILURE_THRESHOLD = 3` (consecutive command failures before an exit
 mark), `DEFAULT_LIVENESS_FAILURE_WINDOW_SECONDS = 5.0` (minimum age of the first failure),
 `DEFAULT_PANE_GONE_FAILURE_THRESHOLD = 1` (pane-gone is definitive, so it marks fast), and
 `DEFAULT_LIVENESS_SWEEP_INTERVAL_SECONDS = 10.0` (minimum spacing between full catalog sweeps).
-`TerminalCatalogLivenessConfig` is the frozen bundle of those four; `TerminalLivenessObservation`
+Since 260731-EFA-L2 those four constants and `TerminalCatalogLivenessConfig` (the frozen bundle of
+them, plus `DEFAULT_LIVENESS_HYSTERESIS`) are **defined in `terminal_catalog.py`** and imported
+here. `TerminalLivenessObservation`
 pairs the (possibly updated) `TerminalCatalogEntry` with an `alive` verdict. `Clock` is
 `Callable[[], datetime]` with the `utc_now()` default — `serving.app` injects its `now` seam so
 sim/replay wiring keeps ONE timestamp base per app instance (the L5R2 F4 fix).
@@ -233,8 +235,30 @@ Terminal liveness now checks starting control rows on a one-second fast path and
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+Two changes, both about where things live:
+
+1. **`TerminalCatalogLivenessConfig` and the `DEFAULT_LIVENESS_*` constants moved OUT of this
+   module** into [terminal_catalog.py](terminal_catalog.py.md); this module imports
+   `DEFAULT_LIVENESS_HYSTERESIS` / `TerminalCatalogLivenessConfig` from there. Any reference to
+   `terminal_liveness.DEFAULT_LIVENESS_FAILURE_THRESHOLD` (or its siblings) is stale.
+2. **`LivenessProbe`** (`hysteresis`, `pane_capturer`, `snapshot_reader`, `on_control_snapshot`;
+   module default `DEFAULT_LIVENESS_PROBE`) is the new single argument: **how one catalog row is
+   observed — the instruments that read it, and the rule that judges it**. Reading and judging are
+   one decision: the pane capturer and the bridge snapshot reader produce the evidence,
+   `hysteresis` decides how much of it is required before a row is marked exited, and
+   `on_control_snapshot` is who else gets to see that same evidence. Substituting one without the
+   others — a fake reader against production thresholds, say — observes a session that does not
+   exist, which is exactly the mistake four separate parameters made easy.
+
+The observation semantics and exit-marking rules themselves are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `LivenessProbe` / `DEFAULT_LIVENESS_PROBE` and the relocation of the hysteresis config to `terminal_catalog.py`.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: documented the H1 hosted-interaction
   synchronizer quarantine (`_observe_control_snapshot`: per-entry fail-loud `interactionSyncError`,

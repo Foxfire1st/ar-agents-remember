@@ -1,0 +1,64 @@
+# mcp/tests/test_serving_helper_behaviour.py
+
+| Field                  | Value                                        |
+| ---------------------- | -------------------------------------------- |
+| repository             | agents-remember                              |
+| path                   | `mcp/tests/test_serving_helper_behaviour.py` |
+| doc_type               | `file-level-onboarding`                      |
+| lastUpdated            | 2026-07-31T15:32+02:00                       |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| governingOverview      | `overview.md`                                |
+
+## Governing Overview
+
+[mcp/tests overview](overview.md)
+
+## Purpose
+
+Behavioural coverage for **eight serving helpers whose error and edge arms were untested**.
+Every class drives the real helper over real inputs and asserts the value returned, the side
+effect left, or the error raised.
+
+## Method
+
+Fakes stop at the **process/network seam only**: the terminal host (tmux kill), the
+daemon's TCP probe and pid probe, and the Claude stream transport. The git repositories, the
+terminal catalog, the FastAPI app and the contracts are all real. `_StepClock` is a
+monotonic clock that advances only when the code under test sleeps, which makes the retry
+cadence assertions exact.
+
+## The Eight Helpers
+
+| Class | Helper and the arms it adds |
+| --- | --- |
+| `ImageSniffTests` | `app._looks_like_image` — the magic-byte half of the paste-upload gate. Every accepted signature (PNG/JPEG/GIF87/GIF89/WEBP/BMP), the cross-format mismatches (a body of one format under another's extension), the too-short WEBP, and the rejected extension. The extension alone never admits a body. |
+| `RetireResponseTests` | `app._retire_response` over the real route and catalog — unknown target, unknown actor, already-retired, the policy refusal, and the granted retire with its tmux kill plus persisted provenance. |
+| `LeafFileDiffTests` | `changeset.leaf_file_diff` over real git repositories — the memory side, the missing-worktree and no-head refusals, and added/deleted files where one side of the diff is absent. `CodeSide` / `MemorySide` are frozen fixture dataclasses so a side is stated once and its fields cannot disagree; `MemorySide` is one optional object because a memory-less leaf has none of the three. |
+| `SelectCurrentModelTests` | `claude_stream_capabilities._select_current_model` — mapping the model id the running harness echoes back onto one catalog key: exact-key precedence, a requested key that resolves to nothing, the sole-alias fallback, and both unresolvable shapes. |
+| `ClaudeStatusActivityTests` | `claude_stream_state.ClaudeStreamState._status_activity` — compacting, requesting, blocked behind a pending interaction, idle with no turn, running with one accepted. Each arm distinct. |
+| `WaitReadyTests` | `daemon._wait_ready` — the spawn readiness poll needs an alive child **and** an accepting bind within the budget: the wildcard-bind rewrite, a dead child, the retry cadence, the expired budget, and a real listening socket for the ready case. |
+| `EvidencePageTests` | `harness_control_client._evidence_page` — every malformed-response refusal fails loudly and typed, plus the empty page and the optional per-frame identity fields. |
+| `HeapDiagFramesTests` | `heap_diag._frames` — `AR_HEAP_DIAG_FRAMES` is the tracemalloc traceback depth: the default, the override asserted through the tracer it configures, garbage, a non-positive value, and the ambient-environment read. |
+
+## Invariants And Boundaries
+
+- No PTY, no tmux, no real daemon spawn; the process seam is the only double.
+- `_looks_like_image` is a body check, not an extension check — a helper that trusted the
+  filename would let any bytes through the paste route.
+- `_wait_ready` must require both liveness and an accepting bind; either alone is not ready.
+- Malformed control-plane evidence is a typed refusal, never a silently empty page.
+
+## Repo-Internal References
+
+| Finding | Source Path |
+| --- | --- |
+| The helpers under test. | [serving/](agents-remember/mcp/src/agents_remember/serving/) |
+| The happy paths these edge arms sit beside. | [test_serving.py](agents-remember/mcp/tests/test_serving.py), [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
+| The route-level companion for the same app's failure arms. | [test_serving_app_routes.py](agents-remember/mcp/tests/test_serving_app_routes.py) |
+
+## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
+  serving-helper behavioural suite. Verification metadata is pinned to the leaf's reformat
+  commit until closeout stamps the code commit.

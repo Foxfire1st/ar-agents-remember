@@ -23,7 +23,7 @@ with a frozen clock (`now` prop) over the shared `L6_CONTROLLED_WORKING` fixture
 
 ### Logic
 
-- **`formatApproxElapsed`** (L33-L41): ~-labeled at every magnitude (`~9s`, `~119s`, `~2m14s`,
+- **`formatApproxElapsed`** (L36-L44): ~-labeled at every magnitude (`~9s`, `~119s`, `~2m14s`,
   `~1h02m`), clamped at `~0s` for negatives.
 - **Render gate** (L44-L54): a `turn-ended` seat renders NOTHING; the working seat renders the
   line.
@@ -81,6 +81,10 @@ wired interrupt (disabled honest control), retaining raw-terminal stop behavior 
 the controlled composer action.
 
 ## Update History
+
+- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived the stale `formatApproxElapsed`
+  self-citation — the formatter matrix `describe` is now L36-L44 (was L33-L41) after the hand-built
+  session fixture gained `submitHistory`. The assertions it names are unchanged.
 
 - 2026-07-24T13:17:17Z — Curator: recorded fallback working-line stop ownership regressions;
   verification fields remain pre-commit.

@@ -94,7 +94,7 @@ reviewed task evidence for any current behavioral claim.
 | The roster derivation + focus model consumes `ConversationAgentRef`/`ConversationAgentStatus` and reads `ConversationItem.agent`. | L140-L156 · L172 | [agents.ts](agents.ts) |
 | The client + stream mirror these page/telemetry/interrupt/error shapes. | L8-L15 | [client.ts](client.ts) · [stream.ts](stream.ts) |
 | The server wire contract this file mirrors exactly (camelCase `to_camel`). | — | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The stale L1 control/telemetry capability view (`controls.interrupt`). | L152-L165 | [active/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
+| The stale L1 control/telemetry capability view (`controls.interrupt`). | L154-L167 | [active/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
 
 ## Cross-Repo References
 

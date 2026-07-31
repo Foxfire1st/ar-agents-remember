@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-25T09:55+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,15 @@
 `embedder.py` owns the managed GrepAI Ollama Docker embedder.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Embedder Context
+
+`grepai_embedder_start_context(args)` returns the frozen
+**`GrepaiEmbedderContext(settings_path, provider_settings, layout, embedder, network_name)`**
+instead of a tuple — which settings file the invocation read, the provider entry it found, the
+runtime layout, the resolved embedder settings, and the docker network the Ollama container joins.
+Every embedder command needs all of it, so it is resolved once and consumed whole. Host reconciliation is reported through `BackendStartReconciliation`. Emitted payloads,
+the model pull and the readiness probe are unchanged.
 
 ### Logic
 
@@ -81,6 +90,9 @@ fallback runs. The failed seed result is attached to the response as
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `grepai_embedder_start_context` now returns `GrepaiEmbedderContext` instead of a tuple. Emitted
+  payloads are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-25T09:55+02:00 — `auto` host-port selection now uses the centralized GrepAI Ollama preferred host port (`61434`) instead of preferring host `11434`; existing mappings and explicit configured ports still win.
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-06-10T05:30+02:00 — Leaf import replaces the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).

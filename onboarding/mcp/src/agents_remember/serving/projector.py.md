@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`     |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`     |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -147,9 +147,9 @@ regression suite below prove the ordering rather than relying on timing observat
 | The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | L149-L178; L207-L234 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
 | Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | L253-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
 | The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. | L181-L203 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | L395-L457 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | L1-L216 | [delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
-| The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | L1-L184 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | L416-L492 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | L1-L165 | [delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
+| The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | L157-L164; L214-L277 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
 | Change-driven pacing remains owned by `ChangePacer`/`ChangeWatch`; it changes wake timing, not publication semantics. | L1-L345 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
 
 ## Cross-Repo References
@@ -166,8 +166,44 @@ The watched production worker owns one `ProjectionInputState`. Startup uses a fu
 change wakes pass the coalesced domain set; heartbeats advance only heartbeat-owned state.
 Watcherless execution and failed watcher fallback retain full-refresh behavior.
 
+## 260731-EFA-L2 Current Delta
+
+`Projector(config, *, cadence, replay, refreshers)` — five loose keywords became three named
+concepts, all with module-level defaults:
+
+- **`ProjectionCadence`** (`DEFAULT_PROJECTION_CADENCE`, from the new stdlib-only
+  [cadence.py](cadence.py.md)) — `interval` (the floor between ticks) and `heartbeat` (the ceiling
+  on staleness in a quiet world). One pacing decision.
+- **`ProjectionReplay`** (`now`, `before_tick`; `LIVE_PROJECTION_CLOCK` = both `None` = live
+  serving) — the sim/replay seam. **They are one substitution**: sim wires a replay clock together
+  with the feeder that writes the world that clock is about, and a replay clock without its feeder
+  ticks over a world that never moves.
+- **`ProjectionRefreshers`** (`provider`, `landing`, `change_watcher`; `NO_PROJECTION_REFRESHERS`)
+  — the side-inputs a LIVE tick drives, plus the watcher that lets it wake early. All three are
+  enabled together for live serving and disabled together for sim replay (the feeder only writes
+  *inside* a tick, so a change-gated loop would never wake). One choice — "is this projector
+  attached to a moving world?" — not three independent hooks.
+
+Adaptive waking is unchanged: with a change watcher the run loop paces via the `ChangePacer`
+(change-driven + heartbeat, floored to one tick per `interval`); without one — sim replay and the
+injected-`now()` tests — it keeps the exact `sleep(interval)` pacemaker.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The
+  `test_serving.py` row is now L416-L492 — the four `StreamEventsTests` cases that prove it:
+  `test_snapshot_then_delta` (L416, identical-state suppression plus the later delta),
+  `test_snapshot_subscription_cannot_lose_an_interleaved_projection` (L430),
+  `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas` (L452), and
+  `test_cancelled_waiting_stream_releases_its_subscription` (L482). `delta.py` is 165 lines, not
+  216, so the pure-diff row is L1-L165 — the whole module, `VOLATILE_AGE_FIELDS` /
+  `_strip_volatile` / `stable_projection_state` / `diff_projection` / `_collection_deltas`. The
+  observer row's `L1-L184` was a stale prefix of a now-365-line `projection_store.py`; retargeted
+  to the two things the claim names — `write_projection`'s atomic pair-write at L157-L164 and the
+  `project_and_write` read/fold/write tick entry at L214-L277. Read all four ranges back.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ProjectionCadence` / `ProjectionReplay` / `ProjectionRefreshers` constructor concepts and their module defaults; pacing behaviour unchanged.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the live projection worker now
   owns one `ProjectionInputState`, converts watcher wakes into full/change/heartbeat refreshes, and
   passes the exact invalidated domains to the projection write edge. Watcherless replay/tests keep

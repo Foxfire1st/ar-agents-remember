@@ -36,10 +36,10 @@ proves no next cycle begins while the prior list/file requests remain pending.
   asserts the changed code + onboarding rows render, the counters contain `+3`, and the no-file empty
   state prompts "Select a changed file" — now asserted via `container.textContent` (the prompt comes
   from the siege-tank `EmptyStateBackdrop`, not a bare `pane-placeholder`). (L44-L60)
-- **back link** — clicking `changeset-back` calls `onBack` once. (L62-L70)
+- **back link** — clicking `changeset-back` calls `onBack` once. (L122-L130)
 - **master mode** — `<ChangeSetViewer repo master onBack/>` now renders **clickable** rows; before a
   pick it shows the same empty-state prompt (asserted via `container.textContent`), and clicking a row
-  opens a diff (`ChangeSetPane` is mocked so CodeMirror stays out of jsdom). (L72-L81)
+  opens a diff (`ChangeSetPane` is mocked so CodeMirror stays out of jsdom). (L262-L278)
 - **leaf mode** (L4a) — `<ChangeSetViewer repo master leaf mode="committed"/>` loads via the `task` route
   (the stub returns `TASK_CHANGESET`), labels the header `committed · <leaf>`, and is per-file inspectable
   (a row click opens the diff pane); a `mode="working"` case asserts the `working · <leaf> · uncommitted`
@@ -50,7 +50,7 @@ proves no next cycle begins while the prior list/file requests remain pending.
   1 each (the interval is gated off).
 - **DetailPanel entry** — over the `full` gallery projection, a lifecycle selection renders an
   `open-changeset` button whose click calls `onOpenChangeSet` with the series target `{ repo, master }`
-  (the fixture has no `activeWorktreeGroups`, so only the series button shows). (L84-L97)
+  (the fixture has no `activeWorktreeGroups`, so only the series button shows). (L282-L293)
 - **Cockpit takeover** — `<CockpitShell/>` shows no `changeset-viewer` initially and keeps the
   `rail--left` + `data-fullbleed="false"`. (L99-L108)
 
@@ -73,6 +73,11 @@ design).
 | Subject under test: the screen. | L144-L293 | [ChangeSetViewer.tsx](ChangeSetViewer.tsx) |
 
 ## Update History
+
+- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the
+  loading/error and non-overlapping-refresh cases were inserted ahead of them. The back-link case
+  moved L62-L70 → L122-L130, the master-mode clickable-row case L72-L81 → L262-L278, and the
+  DetailPanel entry case L84-L97 → L282-L293. No described behaviour changed.
 
 - 2026-07-12T12:55+02:00 — 260712-TRH-L2: added loading/error, master query-shape, and non-overlapping working-refresh regressions while retaining task, master, leaf, and DetailPanel entry coverage. Verification metadata pinned until closeout stamps the L2 code commit.
 

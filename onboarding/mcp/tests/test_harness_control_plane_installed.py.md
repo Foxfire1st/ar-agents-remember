@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_plane_installed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash |  `22562e0f2161c2d980385a462275dc370deb72eb`|
-| lastVerifiedCommitDate |  2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,8 +26,11 @@ posture on the fixture rows.
 
 ### Logic
 
-Three opt-in classes (`AR_RUN_CONTROL_PLANE_INSTALLED=1`), each version-locked and skipping with
-an exact reason where its precondition is absent. `CodexInstalledControlPlaneTests` (pinned
+Two live-seam classes are opt-in (`AR_RUN_CONTROL_PLANE_INSTALLED=1`) and carry the registered
+`@pytest.mark.ar_run_control_plane_installed` marker, so the pair can also be selected or
+deselected by name; `ClaudeInstalledHonestyTests` is the unmarked fixture-honesty class and has no
+environment gate. All three are version-locked and skip with an exact reason where a precondition
+is absent. `CodexInstalledControlPlaneTests` (pinned
 0.144.5) spawns the real app-server and proves one accepted `turn/interrupt` acknowledgement
 (`vendorCorrelationId=turn`), the interrupted settlement crossing the existing completion path, a
 post-settlement interrupt refused typed, the paged timeline over a live cockpit submission, a
@@ -46,7 +49,9 @@ belongs to a locked-gate evidence run.
 These tests are the evidence source for the redacted `control-plane/*` fixture rows: what passes
 here on a qualifying machine is what the fixtures record (shape descriptors only,
 `enablesCapabilities: false`, never enabling). Version locks keep the evidence version-honest; CI
-machines without the pinned runtimes skip.
+machines without the pinned runtimes skip. Cockpit submissions are issued as
+`submit_control_prompt(entry, text, ControlSubmission(...))`, with the source, request id,
+`expected_bridge_epoch` guard, and any staged `assets` travelling inside that one parameter object.
 
 ### Invariants And Boundaries
 
@@ -77,7 +82,7 @@ contract are the direct evidence.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The runtime fixtures recording (never enabling) the `control-plane/*` rows this suite captures. | L1-L140 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json); [pi-0.80.7.json](agents-remember/mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json); [claude-2.1.211.json](agents-remember/mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json) |
+| The runtime fixtures recording (never enabling) the `control-plane/*` rows this suite captures. | L94-L137 · L71-L102 · L45-L50 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) · [pi-0.80.7.json](agents-remember/mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json) · [claude-2.1.211.json](agents-remember/mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json) |
 | The client helpers driven against the live socket (`interrupt_control`, `read_operation_timeline`, asset-carrying submit, withdrawal). | L398-L450; L179-L227 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The contract-suite companion pinning the same seams over fake transports. | L252-L1575 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
 | The L0E installed-suite precedent for opt-in version-locked capture. | L115-L362 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
@@ -91,6 +96,21 @@ No neighboring repository participates in this installed-runtime suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the runtime-fixture citation. One range
+  (L1-L140) was being applied to three files of different lengths and overran the 139-line codex
+  fixture; the row now carries one range per fixture, each covering exactly that file's
+  `control-plane/*` entries: `codex-0.144.5.json` L94-L137 (interrupt-write-ack, operation-timeline,
+  asset-local-image-submit, withdrawal-recovery), `pi-0.80.7.json` L71-L102 (abort-write-ack,
+  operation-timeline, asset-image-submit), and `claude-2.1.211.json` L45-L50 (interrupt-and-assets,
+  `not-exercised`). The path separator in that cell changed from `;` to ` · ` so ranges and paths
+  pair up positionally, as elsewhere in this tree.
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the two live-seam classes now carry the
+  registered `@pytest.mark.ar_run_control_plane_installed` marker (`ClaudeInstalledHonestyTests` is
+  unmarked and has no environment gate), and every cockpit submission passes a single
+  `ControlSubmission` parameter object carrying the source, request id, `expected_bridge_epoch`, and
+  staged `assets`. Corrected the Logic opening, which counted three environment-opt-in classes, and
+  documented the submission parameter object under Conventions.
 
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: created the installed-runtime control-plane
   capture sidecar (codex/pi live proofs plus Claude version honesty, opt-in and version-locked).

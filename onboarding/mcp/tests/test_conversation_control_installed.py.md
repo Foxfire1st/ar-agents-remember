@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_installed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash |  `68b3205526dae210cd902eef39d93c4f4352c2d4`|
-| lastVerifiedCommitDate |  2026-07-21T01:12:04+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,15 +27,19 @@ routes — never through scenario fixtures.
 
 ### Logic
 
-`_LiveHost` (L84), `_ControlledEntry` (L90), and `_LiveHarness` (L98) build the live seam against the
-installed harnesses. `CodexInstalledControlApiTests` (L196): typed submit → live turn id →
+`_LiveHost` (L83), `_ControlledEntry` (L89), and `_LiveHarness` (L97) build the live seam against the
+installed harnesses. `CodexInstalledControlApiTests` (L200): typed submit → live turn id →
 `POST /conversation/interrupt` 202 accepted → native `turn/completed status=interrupted` →
 `interrupt-status` 200 `interrupted` with advanced revision; withdrawal recovery with the exact body;
 typed attachment submit as `localImage`; telemetry usage with `runtimeVersion: 0.144.5` and the
-fixture id on the wire. `PiInstalledControlApiTests` (L364): guarded abort accepted → settlement
-polls to `interrupted`; stale expected identity after settlement → 422 rejected.
-`ClaudeInstalledHonestyTests` (L432): the control gate stays `unverified` at the installed-vs-locked
-version mismatch (a plain `TestCase`, no live harness needed).
+fixture id on the wire. Those last three stages live in
+`_assert_withdrawal_recovers_the_exact_body`, `_assert_typed_attachment_submit_is_accepted`, and
+`_assert_telemetry_carries_exact_usage` — ordered helper stages of
+`test_live_interrupt_settlement_queue_recovery_assets_and_telemetry`, sharing its one live harness
+and turn sequence, not standalone tests. `PiInstalledControlApiTests` (L492): guarded abort
+accepted → settlement polls to `interrupted`; stale expected identity after settlement → 422
+rejected. `ClaudeInstalledHonestyTests` (L560): the control gate stays `unverified` at the
+installed-vs-locked version mismatch (a plain `TestCase`, no live harness needed).
 
 ### 260718-CHATS-L5 F1 — installed twin-suppression regression (real codex wire)
 
@@ -55,7 +59,11 @@ this is the installed companion to the always-run F1 tests in `test_conversation
 
 The installed suite does not use the fake `ControlHarness` (it drives the real routes unseeded, so it
 also exercises the production memo's create-on-miss branch). Version-locked to live codex 0.144.5 and
-pi 0.80.7; without the opt-in flag the live classes skip with exact reasons.
+pi 0.80.7; without the opt-in flag the live classes skip with exact reasons. Both live classes also
+carry `@pytest.mark.ar_run_control_installed` above their `skipUnless`, so the environment-gated
+suite can be selected or deselected by marker under `--strict-markers`; the marker is a selector
+only and the `AR_RUN_CONTROL_INSTALLED=1` skip guard remains the thing that decides whether a live
+runtime is touched. `ClaudeInstalledHonestyTests` is unmarked — it needs no installed runtime.
 
 ### Invariants And Boundaries
 
@@ -85,9 +93,9 @@ The suite drives the registered routes against the live installed adapters.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The seventeen registered routes proven live. | L57-L570 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
-| The interrupt ledger whose live settlement this proves. | L87-L449 | [control/operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
-| The control capability gate whose Claude version-mismatch honesty this pins. | L301-L342 | [control/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
+| The seventeen registered routes proven live. | L131-L631 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
+| The interrupt ledger whose live settlement this proves. | L95-L511 | [control/operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
+| The control capability gate whose Claude version-mismatch honesty this pins. | L305-L347 | [control/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
 
 ## Cross-Repo References
 
@@ -99,6 +107,28 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that the same
+  hardening sweep moved on the other side of the link. `control/api.py` L57-L570 became L131-L631 —
+  the seventeen decorated handlers from `@router.post("/conversation/interrupt")` (L131) through the
+  end of `conversation_telemetry` (L631), counted on the file and excluding the multipart helpers
+  below them. `control/operations.py` L87-L449 became L95-L511, the acknowledge-plus-settle
+  machinery this suite proves live: `interrupt`/`interrupt_status` through `_drive_interrupt`,
+  `_observe_settlement`, and the per-harness terminal readers ending at `_pi_stop_reason` (L511) —
+  the old range stopped inside the claude branch and never reached the pi settlement this sidecar
+  says it proves.
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. Three changes hit
+  this suite. `test_live_interrupt_settlement_queue_recovery_assets_and_telemetry` was split for
+  the tightened complexity gate: withdrawal recovery, typed attachment submit, and telemetry now
+  live in `_assert_withdrawal_recovers_the_exact_body`,
+  `_assert_typed_attachment_submit_is_accepted`, and `_assert_telemetry_carries_exact_usage`,
+  ordered stages over the same live harness. `@pytest.mark.ar_run_control_installed` was added
+  above the `skipUnless` on `CodexInstalledControlApiTests` and `PiInstalledControlApiTests`.
+  Rewrote the Logic paragraph to name the three helpers and the Conventions paragraph to record
+  the marker alongside the unchanged env-var skip guard, and corrected every class/helper line
+  citation for the lines the split, the marker, and the `ruff format` reflow moved: `_LiveHost`
+  L83, `_ControlledEntry` L89, `_LiveHarness` L97, `CodexInstalledControlApiTests` L200,
+  `PiInstalledControlApiTests` L492, `ClaudeInstalledHonestyTests` L560. No route, assertion, or
+  version lock changed.
 - 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the reviewer-required F1 installed
   regression `test_settled_live_turn_projects_once_on_the_conversation_page` — opens the page, drives
   two real codex turns to settlement, re-reads the conversation, and asserts each settled turn

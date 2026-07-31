@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ rules; process/event modules remain transport and event boundaries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Configuration owns the finite locked mutation/readback/catalog transaction, exact provider split, selected-model effort gate, clamp evidence, and atomic commit decision. | L24-L167; L170-L194 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
+| Configuration owns the finite locked mutation/readback/catalog transaction, exact provider split, selected-model effort gate, clamp evidence, and atomic commit decision. | L29-L193; L196-L202 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
 | Pi protocol parsing provides RPC launch validation, safe state identity, and provider-qualified model-local effort menus. | L114-L130; L176-L234; L383-L427 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
 | The launch validator requires exact Pi catalog keys and model-local launch effort before the configured process starts. | L78-L119 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
 | The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones. | L28-L98; L177-L199 | [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
@@ -138,8 +138,27 @@ Fresh state preflight plus generation/activity/event tokens guard prompt and set
 operation is bound before bytes. Completion requires settled plus fresh idle. Unknown remains the
 active barrier until exact resolution, so native queue state never becomes a second authority.
 
+## 260731-EFA-L2 Current Delta
+
+**`PiAdapterLimits`** (`submission=256`, `interaction=64`, `configuration_timeout_seconds`; module
+default `DEFAULT_PI_ADAPTER_LIMITS`) replaces the three loose bounds: how much one Pi adapter may
+retain, and how long a set transaction may take. The retained submission and interaction ledgers
+plus the mutation timeout are **one bounded budget** for a single live Pi session — raising one
+alone just moves where the session first misbehaves under load. The default values are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `pi_rpc_configuration.py` citation
+  (2 ranges), verified by reading the 220-line file end to end. Now L29-L193 — the finite
+  `DEFAULT_PI_MUTATION_TIMEOUT_SECONDS` bound at L29, the six-port `ConfigurationPorts` at L32-L47,
+  the `asyncio.Lock` taken by both setters at L80/L126, the selected-model effort vocabulary gate at
+  L106-L124, the clamp-evidence detail at L143-L146, the two `self._commit` atomic-commit decisions
+  at L96 and L142, and `_transaction`'s bounded mutation/readback/catalog body at L155-L193 — plus
+  L196-L202 for `_provider_model`, the exact `provider/model-id` split. Claim unchanged.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `PiAdapterLimits` / `DEFAULT_PI_ADAPTER_LIMITS` as the single per-session budget (defaults unchanged).
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the `InterruptCapableAdapter`
   implementation (RPC `abort` guarded pre-write by the expected active-operation identity,
   `turn_id` refused typed, replay-once per pair, native failure → `rejected` acknowledgement) and

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/facade.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,25 @@ No Domain Documentation source is configured.
 
 No meaningful cross-repository references found.
 
+## 260731-EFA-L2 Current Delta
+
+**`ProjectedSession`** (`identity`, `authorization`, `entry`, `mapper`, `secret`) is the facade's
+new single argument: WHICH conversation is being projected, and the authority to mint references
+for it. The identity names the exact session and bridge epoch; the controlled session is the row
+those reads go through; the mapper is that harness's shape reader; the authorization and signing
+secret are what every emitted reference is bound to. A projector built from a mixed set would
+publish one session's events under another's references, so the five arrive as one value.
+
+Internally the facade now builds the two bundles in [wiring.py](wiring.py.md) — one
+`SessionProjectionSpine` and one `BridgeReaders` — and hands the SAME pair to every ingestion
+component, plus an `IngestionComponents` set to the rebuild coordinator. That is what makes "one
+projection, one session, one epoch" structural instead of a convention repeated across five
+parameter lists.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ProjectedSession` and the spine/readers bundles the facade now builds and shares across every ingestion component.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the facade ownership
   record after the projector decomposition. Verification metadata remains blank until commit.

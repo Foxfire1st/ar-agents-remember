@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`        |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`        |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ The opener tests now prove an unregistered harness is persisted and returned as 
 `unsupported` control state with protocol metadata, and that a supplied private endpoint is retained
 on re-open. This is additive catalog behavior; no pane or log fallback is accepted.
 
-### 260707-HFX2-L17 Multi-Role Pipeline And Replacement Proof
+### 260707-HFX2-L16 Multi-Role Pipeline And Replacement Proof
 
 The opener suite now places worker, reviewer, curator, and manager on one canonical leaf, refuses a
 live same-role duplicate, replaces a dead worker without ceremony, and opens curator after worker
@@ -162,7 +162,16 @@ Opener regressions now assert that a runner inherits the daemon worktree package
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260731-EFA-L2 Delta — reopen conflicts and dead pre-bridge rows
+
+- A live reopen from **another workspace root** conflicts on cwd, and one whose resolved launch
+  names **another harness** conflicts too: a row is only reusable when both its location and its
+  harness still agree with the request.
+- A dead pre-bridge row is replaced by a **controlled spawn** rather than being reattached to.
+
 ## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented same-pair idempotent reopen,

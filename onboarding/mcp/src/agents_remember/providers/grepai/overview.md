@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-28T19:10+02:00     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -69,8 +69,42 @@ ports stay `5432` and `11434`.
 | GrepAI context behavior is grouped under the provider-owned context package. | [context overview](context/overview.md) |
 | GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package. | [lifecycle overview](lifecycle/overview.md) |
 
+## 260731-EFA-L2 — The Clone Reads As Source → Target
+
+Everything recorded above about the clone still holds: the stall watchdog, the deliberate absence of
+a total-duration cap, the up-front benchmark-scoped refusal. What changed is that `seed.py` now
+states the *direction*.
+
+**`_GrepaiCloneEnd` (frozen: `coordination_root`, `settings_path`, `provider`) names one end of the
+clone.** Source and target are symmetric — each is a coordination root, the settings file that
+describes it, and the enabled `grepai-memory` provider entry found there — and they previously
+travelled as six interleaved keyword arguments whose pairing was held together by name prefixes
+alone. `_clone_context_from_providers(source, target, *, project_id)` now takes the two ends.
+
+`_CloneInputs` (a `NamedTuple` of `source_coordination_root`, `target_settings_path`, `project_id`)
+is the caller-supplied coordinate triple **once each is known to be present**; `_clone_inputs`
+returns either it or the skip payload naming the *first* missing coordinate. The refusal ordering is
+therefore explicit: missing coordinates are reported before any source settings file is read, and
+each of the four subsequent provider-presence checks reports its own reason.
+
+`setup.py` dispatches through `LifecycleCommand(provider=, action=, extra_args=, native_args=)`
+from `providers/setup_common.py` instead of positional provider/action strings — the type records
+that the provider CLI splits its arguments either side of the action. The progress-sink phase
+announcements (`grepai install`, `grepai clone-db`) are unchanged.
+
+Layout construction moved to `GrepaiWorkspace` / `GrepaiInstance` / `GrepaiBackend`
+(see the [context route](context/overview.md)); the resolved-invocation types the lifecycle package
+now uses are listed in the [lifecycle route](lifecycle/overview.md). **The multi-root invariant is
+untouched** — `GrepaiWorkspace.roots` is exactly the multi-root shape `isolated.py` rewrites one
+entry of.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `seed.py` gained `_GrepaiCloneEnd` (naming source and
+  target instead of six prefixed keywords) and `_CloneInputs`/`_clone_inputs` (first missing
+  coordinate wins, before any source settings read); `setup.py` dispatches via `LifecycleCommand`.
+  Clone semantics, the stall watchdog, the hermetic guard and the multi-root isolation invariant
+  are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the `_clone_skip` benchmark-scoped hermetic guard (task 260619 / MCP 2.9.2) that the series carryover had dropped, while keeping the series' Task 12 multi-root / preferred-host-port content. The merged tree at 84e95ad has both.
 - 2026-06-25T09:55+02:00 — No route model change: child context/lifecycle routes now record GrepAI's preferred auto host ports (`61432`/`61434`) separately from container service ports (`5432`/`11434`).
 - 2026-06-23T22:31+02:00 — Clarified the worktree-isolation invariant behind Task 12 provider

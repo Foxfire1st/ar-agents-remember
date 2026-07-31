@@ -61,8 +61,8 @@ watcher rebind reporting.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The shared recovery constant names `provider_watchers(action='restart')`, current runner roots, preserved indexes, and follow-up status/diagnostics checks. | L1-L7 | [recovery.py](agents-remember/mcp/src/agents_remember/providers/recovery.py) |
-| Runtime-install watcher recovery actions use the shared restart/rebind text when provider watchers remain degraded. | L110-L124; L180-L214 | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
-| Provider status adds the same shared recovery text for GrepAI `noWorkspace`. | L214-L225 | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
+| Runtime-install watcher recovery actions use the shared restart/rebind text when provider watchers remain degraded. | L111-L125; L152-L166 | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
+| Provider status adds the same shared recovery text for GrepAI `noWorkspace`. | L218-L229 | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 
 ## Cross-Repo References
 
@@ -74,4 +74,9 @@ No sibling repository evidence is needed for this shared message module.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations into
+  `install/provider_watchers.py` that moved when the helper was re-signed onto `ProviderWatcherRebind`
+  and the file shrank to 166 lines. `add_provider_watcher_recovery_actions` (which emits the shared
+  `PROVIDER_WATCHER_RESTART_RECOVERY` text) is now L111-L125 (was L110-L124), and the degraded
+  restart/rebind branch that ends in that call is now L152-L166 (was L180-L214, past end of file).
 - 2026-06-04T22:15+02:00 — Created for shared provider watcher restart/rebind recovery guidance.

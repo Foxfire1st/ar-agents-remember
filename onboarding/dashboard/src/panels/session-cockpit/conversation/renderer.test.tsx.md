@@ -33,12 +33,12 @@ grammar.
   present only when `totalItems` is known, and streaming articles carry `aria-live="off"`. The second
   case proves `aria-setsize` is OMITTED and the pager reads `total unknown` when the total is not
   honestly known.
-- **`MessageItem` — grammar/images/clamp (R3)** (L70-L118): an `image-ref` renders a non-empty
+- **`MessageItem` — grammar/images/clamp (R3)** (L1314-L1373): an `image-ref` renders a non-empty
   accessible alt + provenance and NO `<img>` (no invented `/api/assets` URL — F11); a long completed
   assistant message clamps behind a real `<button aria-expanded>` whose label carries an exact
   `+N lines` count; an agent-bus delivery is source-badged (`agent bus`) while an ordinary operator
   message is not (badge only when origin changes interpretation).
-- **`TerminalDiagnosticsDrawer` — default off (R2/R7)** (L120-L130): closed by default →
+- **`TerminalDiagnosticsDrawer` — default off (R2/R7)** (L1375-L1385): closed by default →
   `data-open="false"`, `aria-hidden="true"`, `inert`, and NO PTY frame mounted (the R7 negative proof).
 - **`ConversationTimeline` — 10k tool-heavy DOM/interaction baseline (R5.2/R5.10, L4.4)** (added by
   260718-CHATS-L5, L132-L217): mounts 10,000 rotating message/thinking/tool-call/tool-result items
@@ -103,6 +103,12 @@ override, virtual measurement shifts, and the persistent latest control. It also
 renderer/a11y coverage for the conversation grammar.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations. The scroll-memory
+  / intent-lock / upscroll-anchor matrix (L70-L1312) was inserted between the feed-semantics suite and
+  the grammar suites, so `MessageItem` moved L70-L118 -> L1314-L1373 and `TerminalDiagnosticsDrawer`
+  moved L120-L130 -> L1375-L1385; both cited ranges had been pointing into the scroll-memory tests.
+  The `ConversationTimeline` role=feed range (L33-L68) was re-checked and is still exact.
 
 - 2026-07-24T13:17:17Z — Curator: recorded the scroll-restoration regression matrix and latest-chip
   behavior; verification fields remain pre-commit.

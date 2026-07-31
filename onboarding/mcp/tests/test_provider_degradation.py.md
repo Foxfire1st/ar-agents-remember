@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_degradation.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T01:00+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -112,6 +112,19 @@ No meaningful cross-repo references found.
 | Test-only, repository-local fixtures and imports. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 touched this suite only through the
+  `deliver_inbox_entry` parameter-object change plus `ruff format` reflow. That function now takes
+  an `InboxDeliveryLog` (store, entry, timestamp, redelivery floor) as its first positional
+  argument, so the local `deliver_entry` capture double became `def deliver_entry(log, **kwargs)`
+  recording `{"log": log, **kwargs}` and returning `log.entry`, and the recipient assertion reads
+  `attempt["log"].entry.agentId` instead of `attempt["entry"].agentId`. Three assertions were
+  re-wrapped for line length with no change of operand. Checked every claim this card makes about
+  that test: the patch target is still `agents_remember.providers.degradation.deliver_inbox_entry`,
+  the double is still the only mocked seam, the attempt count is still exactly 2, and the asserted
+  recipient set is still `{"orchestrator-1", "manager-1"}` — so the delivery-parity invariant this
+  card calls out still fails loudly here first. The card names neither the double's signature nor
+  the former `entry=` keyword, and it carries no line citations, so nothing needed re-anchoring.
 
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: created after the builder R1 pass
   (hysteresis/streak/index-lag classifier tests, the critical-transition evaluator test) plus the

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_runner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ Launch validation and adapter construction remain separate pure/data and vendor-
 | The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority. | L22-L57 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
 | The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. | L170-L216; L311-L460 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
 | Contract tests pin the resumeThreadId payload round-trip, legacy field-less parse, malformed refusal, and codex-only factory channel. | L1309-L1460 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
-| The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence. | L109-L121; L219-L226 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw["bridgeError"]`), refusing to overwrite an already-started bridge. | L170-L184 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path. | L180-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
 
 ## Cross-Repo References
@@ -106,8 +106,27 @@ harnesses owned by the local adapter process.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+The runner payload decoder was split into named checks, each stating the contract it enforces:
+
+- `_decode_runner_payload(encoded)` — decode the base64url argv token the opener hands the runner
+  into its JSON object.
+- `_is_text_list(value)` — a `TypeGuard` for the only argv shape accepted: a list whose every entry
+  is non-empty text.
+- `_optional_resume_thread_id(raw)` — `resumeThreadId` is additive, so an absent or null field stays
+  a legal payload.
+- `_require_launch_agrees_with_config(config)` — refuse a payload whose settings-owned selection
+  contradicts the session it launches.
+
+The refusals and the launch sequence are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `HarnessControlBridge.mark_failed` is a single contiguous method at L170-L184 in the 623-line `harness_control_bridge.py`, so the two-range citation collapsed to one; extended the claim to name `raw["bridgeError"]` and the already-started refusal, both read back at L174 and L181.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the named payload-decode and launch-agreement checks; refusals unchanged.
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive `resumeThreadId`
   payload field — trimmed-non-empty parse validation, legacy field-less compatibility, and delivery
   into both real adapter-construction sites as the codex-only factory kwarg while the transient

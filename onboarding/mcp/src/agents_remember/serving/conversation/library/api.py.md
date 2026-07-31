@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,8 +82,18 @@ No meaningful cross-repo boundary exists for this local route module.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+The open route now builds one `OpenRequest(request_id=…, expected_identity_digest=…, cwd=…,
+launch_context=…)` and passes it to the open service instead of four parallel keywords. The wire
+body is unchanged; `_launch_context(body)` still assembles the launch context. See
+[open_service.py](open_service.py.md) for why the four form one fingerprinted value.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `OpenRequest` call shape (wire body unchanged).
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: rewrote the route-shell sidecar for the
   implemented leaf — five routes, strict request models, the outcome→status table, and the
   subclass-before-base O4 error ladder — and re-pointed the governing overview to the new

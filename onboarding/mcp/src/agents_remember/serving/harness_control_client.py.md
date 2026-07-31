@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T15:55+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ Every request carries protocol version and exact catalog identity. Capability an
 strictly parsed through the normalized type layer; setter calls use a bound above Claude's native
 correlated acceptance window. Submit sends the complete message and caller request id once.
 
-`_exchange_control` (L530) distinguishes connect/pre-write failure from any failure after the socket
+`_exchange_control` (L534-L568) distinguishes connect/pre-write failure from any failure after the socket
 accepts the first byte. Pre-write failure raises as unavailable (`may_have_sent=False`) and may be
 retried by policy. The remainder write is CONDITIONAL: `send` usually accepts the whole request, and
 `sendall` is a do-while over its buffer, so calling it with an empty remainder still issued one
@@ -46,7 +46,7 @@ zero-length send. Once the server had answered and closed with the request drain
 and that pointless write raised `EPIPE` — turning an exchange the server actually completed into a
 `may_have_sent=True` disconnect that forces reconciliation. Only a non-empty remainder is written now
 (260727-CHATS-IM-L4). A connect failure routes through
-`_connect_unavailable_detail` (L507-L528): `ECONNREFUSED` (a stale socket file with nothing
+`_connect_unavailable_detail` (L511-L530): `ECONNREFUSED` (a stale socket file with nothing
 listening — the observed `[Errno 111]` banner) and `ENOENT` (an absent socket) both map to
 the honest "the controlled runner already exited (…)" note, and the stale socket is best-effort
 `unlink`ed on `ECONNREFUSED` so the next probe reads the absent case cleanly instead of repeating the
@@ -66,18 +66,18 @@ continue the last frame) under the dedicated `EVIDENCE_PAGE_TIMEOUT_SECONDS = 35
 `read_submission_provenance` enforces exact result count/order, valid sources, and request-id echo.
 Every evidence response carries `bridgeEpoch`; a caller-supplied expected epoch that mismatches
 raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably. The
-optional evidence `nativeMethod` is deserialized on the frame round trip (L863-L867):
+optional evidence `nativeMethod` is deserialized on the frame round trip (L891-L895):
 a present value must be non-empty text or the read fails typed, so the projector receives the
 carried notification method the bridge preserved. The optional evidence `threadId` rides the same
-frame parse (L868-L870, onto the frame at L878): a present value must be non-empty text or the
+frame parse (L876-L878, onto the frame at L886): a present value must be non-empty text or the
 read fails typed, and an absent key yields `None` — the parent thread — so the multiplexed demux
 key the models serialize reaches the projector verbatim.
 
-Two multiplex seams live here. `read_control_native_page` (L365-L395) gained the
-additive `thread_id` selector: it rides the payload as `threadId` only when set (L389-L390), so a
+Two multiplex seams live here. `read_control_native_page` (L369-L397) gained the
+additive `thread_id` selector: it rides the payload as `threadId` only when set (L393-L394), so a
 `None` reads the parent/session thread with the exact pre-multiplexing request shape. And `_snapshot` now
-parses the plural pending set (L1133-L1141, field at L1152): the singular `pendingInteraction`
-parse was extracted verbatim into the shared strict `_pending_interaction` helper (L1100-L1114 —
+parses the plural pending set (L1159-L1167, field at L1178): the singular `pendingInteraction`
+parse was extracted verbatim into the shared strict `_pending_interaction` helper (L1126-L1140 —
 same required-text/choices/questions validation), and the additive `pendingInteractions` list maps
 each entry through it. The plural key is OPTIONAL — absent on pre-multiplexing bridges it deserializes to the
 empty tuple — but a present non-list value fails typed, so a malformed multiplex payload is never
@@ -157,9 +157,9 @@ unknown/reconcile contract without a second submission.
 | --- | --- | --- |
 | The private server dispatches advertise/set/submit/reconcile against one bridge identity. | L150-L250 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | The queue facade treats request id as an idempotency key and returns retained reconciliation truth through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
-| Client tests pin pre-first-byte versus post-first-byte ambiguity and unknown setter/submission mapping. | L61-L145 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| A regression test pins that a refused control socket yields the honest note AND unlinks the stale socket (never a raw errno). | L61-L92 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | L1036-L1153 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
+| Client tests pin pre-first-byte versus post-first-byte ambiguity and unknown setter/submission mapping. | L65-L146 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
+| A regression test pins that a refused control socket yields the honest note AND unlinks the stale socket (never a raw errno). | L65-L94 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
+| Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | L1458-L1569 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
 | Contract tests pin the strict page/native-page/provenance validators, cross-domain typed rejection, and epoch-continuity failure exercised through this client. | L463-L1309 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 | The IPC server answers the two additive actions and verifies staged assets before dispatch, so this client's references and reads stay reference-only and strictly shaped. | L212-L215; L252-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | Contract tests pin the strict interrupt/timeline/recovery validators, the cross-domain cursor rejection, and the epoch-flip typed failure through this client. | L1475-L1575; L918-L959 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
@@ -199,8 +199,45 @@ Native-page `nextCursor` is now treated as an opaque adapter continuation rather
 equal the final frame's native id (L926-L941). Page shape, duplicate-id checks, epoch validation,
 and non-empty-page continuation rules remain strict.
 
+## 260731-EFA-L2 Current Delta
+
+**`ControlSubmission`** (`source`, `request_id`, `submitted_at`, `expected_bridge_epoch`, `assets`)
+is now the second argument of `submit_control_prompt(text, submission)`: **everything about one
+submission except its text** — who sent it, as what, against which epoch. The request id makes the
+submission idempotent, the source decides which authority owns it, the epoch is the bridge
+generation it is valid against, and the assets are the bytes it references. A request id replayed
+with a different source or epoch is a *different* submission, and the wire payload
+(`_submit_payload`) is built from all of them at once.
+
+Two parsing guards were made structural rather than repeated:
+
+- `_submission_lookup(raw_lookup, *, expected_id)` — one lookup out of a status batch, verified
+  against the id asked for **at that position**. The id/order mismatch, invalid outcome, non-boolean
+  `withdrawable` and missing-state refusals all still raise `HarnessControlError`; they now live in
+  one place instead of inline in the batch loop.
+- `_submission_state(value)` is now overloaded and **raises** for anything outside the seven
+  lifecycle states. `optional=True` is the only way to get `None` back, and it means the field was
+  absent. Because `None` never survives a required call, callers no longer re-check for it — the
+  removed `"operation timeline item requires lifecycle state"` raise was that duplicate check, not a
+  relaxation: a timeline item with a missing or bogus state still fails loudly, one call earlier.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations. `_exchange_control`
+  cited the single line L530 (now inside `_connect_unavailable_detail`); the function with its
+  pre-write / post-write split and the conditional remainder write is L534-L568. The evidence
+  `nativeMethod` parse cited L871-L875 → L891-L895 (the `raw_frame.get("nativeMethod")` read plus
+  its non-empty-text refusal). `read_control_native_page`'s additive selector cited L391-L392, which
+  is the `cursor` branch; the `threadId` payload key is set at L393-L394.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The two
+  lost-response regressions now read at `test_harness_control.py` L1458-L1569 —
+  `test_outer_socket_lost_receipt_reconciles_retained_known_truth` (L1458-L1497) and
+  `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend` (L1499-L1569), both in
+  `HarnessControlIpcTests` and both asserting `adapter.reconciliation_requests == []`. Was
+  L1036-L1153, which now lands in the fake-adapter bridge tests.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ControlSubmission`, the `_submission_lookup` extraction, and the overloaded `_submission_state` that now refuses non-members itself (the removed timeline re-check was a duplicate, not a relaxation).
 - 2026-07-30T15:55+02:00 — 260727-CHATS-IM-L4: recorded the conditional remainder write in
   `_exchange_control`. An empty remainder still issued a zero-length send, which raised `EPIPE` after
   the server answered and closed, reporting a completed exchange as a `may_have_sent` disconnect; it

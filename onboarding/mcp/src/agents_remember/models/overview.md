@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -148,6 +148,23 @@ gates, legacy/custom sessions are explicit unsupported states, and pane/log sign
 only. Dashboard and packaged projections remain additive and synchronized.
 
 ## Update History
+- 2026-07-31T16:55+02:00 — No route impact: re-verified the attestation below in the exact form the
+  closeout gate reads. Both changed files in this route (`context_packet.py`, `memory.py`) were
+  parsed at the L2 base commit and at the current revision and their syntax trees are identical, so
+  the reflow of the `BranchFreshness.state` `Literal` member list and of the parenthesized
+  `description=` string on `MemoryCarryoverApplyResponse.reportPath` changed no model, field name,
+  alias, default, validation rule or serialization behaviour this overview describes. The route's
+  shape — which modules own which contracts — is untouched.
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation, no route impact. Two files in this route
+  (`context_packet.py`, `memory.py`) were touched by the whole-tree `ruff format` pass (commit
+  `00e8379`) and by nothing else: a `Literal` member list and one parenthesized `description=`
+  string were reflowed. No model, field, alias, serialization rule or contract in this route
+  changed, so this overview was re-read against the current source and deliberately **not**
+  rewritten — every claim below still holds. Note for readers arriving from other routes: the
+  parameter objects introduced across the package in L2 are *local* to the modules that use them
+  and were deliberately not added here — this route stays the home of wire and response contracts,
+  not of internal call-shape bundles. Verification metadata pinned until closeout stamps the L2
+  commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: added the strict incomplete-selection status
   and clarified resolved selection, user-authored session commands, and runner-owned dynamic
   failure evidence. Verification metadata remains pinned until closeout stamps the L2 code commit.

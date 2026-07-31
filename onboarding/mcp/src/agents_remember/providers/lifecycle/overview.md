@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T23:04+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -75,8 +75,38 @@ an invalid UID/GID override.
 | GrepAI lifecycle implementation is grouped under the GrepAI provider package. | [GrepAI lifecycle overview](../grepai/lifecycle/overview.md) |
 | Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
+## 260731-EFA-L2 — One More Shared Primitive, One Fewer Unused Knob
+
+`compose_runtime.py` now owns `BackendStartReconciliation` (frozen: `network`, optional
+`migration`, optional `forced_remove`). Both managed backends reconcile the host before they bring
+a container up — adopt the compose-owned network, migrate what an unmanaged project left behind,
+force-remove a container whose data mount no longer matches the layout — and all three land
+together in the start result's `network`/`commands` payload. It lives here, not in either provider
+package, precisely because both providers do it: a third managed backend inherits the shape rather
+than re-deriving it. Both `cgc/lifecycle/backend.py` and `grepai/lifecycle/backend.py` import it
+from here.
+
+`command_runner.run_command` **no longer accepts an `env` override**. Provider commands have always
+run under the sanitized `subprocess_env(...)`, and no caller in the tree ever supplied its own — the
+parameter was a way to escape that sanitization that nothing used. Removing it makes the sanitized
+environment the only environment. Do not restore the knob: a provider command that needs an extra
+variable belongs in `runtime_environment.py`, where the sanitizer can see it.
+
+`log_capture.py`'s recursive trim is unchanged in behaviour but is now two named halves —
+`_shrink_logs` (empty captured output on success, cap it to the failure tail otherwise, keys always
+present so the response keeps its shape) and `_drop_verbose_plumbing` (drop the always-redundant
+mirror, then either drop the debug-only keys outright on success or keep them redacted on failure,
+because that detail is what makes a failure debuggable). The success/failure asymmetry is the point
+of the module and is now readable at the call site.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `compose_runtime.py` gained the shared
+  `BackendStartReconciliation` bundle both provider backends now pass; `command_runner.run_command`
+  lost its never-supplied `env` override, so the sanitized provider environment is the only one;
+  `log_capture.py`'s trim split into `_shrink_logs` + `_drop_verbose_plumbing` with no change to
+  what is emitted. Route model, facade boundary and the explicit `--from-settings` rule are
+  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-06T23:04+02:00 — 260703-L13 (GQ3): the implicit coordinator `system/settings.json`
   fallback was deleted from `provider_settings.py` (readers now demand the explicit
   `--from-settings`; the `coordination_root` parameter dropped, call sites in `watchers.py`

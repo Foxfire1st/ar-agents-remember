@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
@@ -195,7 +195,47 @@ No meaningful cross-repo references found.
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+## 260731-EFA-L2 Current Delta
+
+The recovery contract and the impure boundary became named values, and dispatch became its own
+public method.
+
+- **`AcceptanceWindow`** (`flush_window=30.0`, `poll_interval`; default
+  `DEFAULT_ACCEPTANCE_WINDOW`) — how long one Enter is given to show up in the harness log, and how
+  often that is checked. One calibration: the poll interval is meaningless without the window it
+  divides, and shortening the window without tightening the interval changes how many probes a
+  submission actually gets. Every rung of the ladder waits exactly one of these.
+- **`PasteRecoveryLadder`** (`window`, `settle_delay=0.1`, `enter_represses=1`, `repastes=1`,
+  `clear_key="C-u"`; default `DEFAULT_PASTE_LADDER`) — the **fixed, bounded** recovery contract for
+  one verified paste. Three rungs in order, each ending the moment the harness log confirms
+  acceptance: the initial paste+Enter, then `enter_represses` bare Enter re-presses for a composer
+  that held the text unsubmitted, then `repastes` clear/replace re-pastes driven by `clear_key`.
+  The bounds ARE the contract — "fixed and bounded recovery" is a single safety property, and
+  raising one bound without the others silently changes how many duplicate submissions the ladder
+  can produce.
+- **`TerminalPasterSeams`** (`load_buffer`, `paste_buffer`, `send_key`, `capture_pane`, `sleep`,
+  `monotonic`) — the impure surface a `TerminalPaster` drives: the tmux commands **and the clock**,
+  because the recovery ladder is defined in seconds. One object for the same reason
+  `TerminalHostSeams` is; `None` keeps the real implementation.
+
+**`paste_dispatch(tmux_name, text, *, accepted, policy, window=DEFAULT_ACCEPTANCE_WINDOW)`** is now
+a public method, separate from `paste`. It submits one durable brief **exact-once**: no Enter
+re-presses, no duplicate re-pastes. The harness-log probe is **mandatory in its signature** — a
+durable brief that cannot be proven accepted must fail rather than be retried into a duplicate.
+Correspondingly, `paste()` no longer takes `dispatch_policy`, and its old runtime guard
+(`ValueError("dispatch paste requires a harness-log acceptance probe")`) is gone: the requirement is
+now carried by the type. `paste()` keeps its own contract — `accepted=None` is allowed only for
+draft transport or a spawn command whose evidence is checked retroactively, and never produces
+`submitted=True`.
+
+The verified path is also decomposed into named rungs: `_paste_verified`, `_retry_enter_represses`,
+`_retry_repastes`, `_clear_prior_payload`, `_press_enter_and_await`, `_compose_dispatch`,
+`_await_acceptance`.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `AcceptanceWindow`, `PasteRecoveryLadder`, `TerminalPasterSeams` and the public `paste_dispatch` split — the mandatory acceptance probe is now signature-enforced, replacing the removed `ValueError` guard.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round + case (f): replaced pane-echo/output

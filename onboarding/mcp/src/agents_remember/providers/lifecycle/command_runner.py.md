@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/command_runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -20,6 +20,15 @@
 commands.
 
 ## Code Commentary
+
+### 260731-EFA-L2 The `env` Parameter Was Removed
+
+`run_command(command, *, cwd, stdin_text=None, timeout=60, allow_timeout=False)` no longer accepts
+an `env` override. Provider commands always run under the sanitized provider environment, and no
+caller ever supplied its own, so the body now calls `subprocess_env(None)` directly with a comment
+recording why. This is a **contract narrowing**: a caller that wants a different environment can no
+longer get one through this seam, and adding that back means deciding deliberately rather than
+inheriting a dead parameter.
 
 ### Logic
 
@@ -47,6 +56,10 @@ wall-clock cap, while setup/control commands still pass a real timeout.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  dropped `run_command`'s unused `env` parameter; the sanitized provider environment
+  (`subprocess_env(None)`) is now unconditional. No caller changed. Verification metadata pinned
+  until closeout stamps the L2 commit.
 - 2026-05-31T12:30+02:00 — Removed the now-deleted `run_foreground_command` and `popen_detached_command` helpers from Logic, dropped the detached-stdin/lifetime invariant, and removed the stale CGC `process.py` reference (1.0.0 review remediation).
 - 2026-05-30T21:33+02:00: Documented the `UNLIMITED_TIMEOUT = 0` sentinel and the `timeout<=0 → None` (uncapped) subprocess behavior added in the never-cap-indexing run; added the never-cap invariant. Verified against `825a172`.
 - 2026-05-29T18:35+02:00: `popen_detached_command` returns `Popen[bytes]` via an explicit `cast` (the `**popen_kwargs` spread defeated overload selection); behavior-preserving (commit `0549b28`).

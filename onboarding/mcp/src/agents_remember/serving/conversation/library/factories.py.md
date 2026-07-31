@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ consumes the injected port builder through the documented no-cycle seam.
 | --- | --- | --- |
 | The immutable runtime/scope types and install-once binding define the app-scoped composition this factory memoizes per instance. | L47-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
 | The service documents the injected port-builder seam that keeps this factory import-free. | L1-L11 | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/service.py) |
-| The foundation suite pins per-app isolation and no import-time singleton for the composition this factory preserves. | L106-L260 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
+| The foundation suite pins per-app isolation and no import-time singleton for the composition this factory preserves. | L197-L224 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 
 ## Cross-Repo References
 
@@ -81,7 +81,22 @@ No meaningful cross-repo boundary exists for this local factory module.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+The library factory now builds one `LibraryBinding(runtime=…, shared=…, authorization=…)` and
+passes it on, instead of three parallel keywords: the app-scoped library authorities bound to ONE
+caller. Every operation fingerprint, ledger key and minted session id is derived from that pairing,
+so binding them once is what stops one caller's request from being keyed under another's identity.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past
+  the end of `mcp/tests/test_conversation_runtime_composition.py` (cited L106-L260; the file is 252
+  lines). Narrowed it to L197-L224, the exact two tests the claim names —
+  `test_no_import_time_mutable_singleton` (L197-L208) and
+  `test_child_composition_is_isolated_per_app` (L211-L224) — instead of sweeping the whole suite.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `LibraryBinding` call shape.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the dormant resolver factory
   sidecar. Verification is blank until closeout commits and stamps the new source.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,69 @@ pending riding the plural tuple is guarded exactly like the singular slot.
 
 ## Code Commentary
 
+### Construction: two named concepts, not six keywords
+
+`HarnessSubmissionAuthority(adapter, port, limits, *, bridge_epoch=None)`.
+
+- **`BridgeSnapshotPort`** (`clock`, `snapshot`, `set_snapshot`, `publish`) — how a bridge
+  sub-component reads, replaces, publishes and timestamps **the one** snapshot. They travel as one
+  value because reading through one accessor while replacing through another component's setter
+  would publish transitions nobody else sees; the clock rides along because every published
+  transition is stamped by the same one.
+- **`SubmissionLimits`** (`timeline`, `ledger`, `dispatch_grace_seconds`) — the bounds of one
+  authority. They are one bound, not two: the ledger retains settled records the timeline has
+  already dropped, so a ledger shorter than its timeline cannot answer for the operations still in
+  it. The constructor still refuses non-positive limits and `ledger < timeline` with
+  `HarnessControlError`; that refusal is now the reason the two arrive together.
+
+### Admission: `_unsupported_prompt_locked` is the single capability decision point
+
+`submit` decomposes into three locked steps, in order:
+
+1. `_pre_admission_receipt_locked` — the receipt the request is already owed before any record
+   exists: the idempotent duplicate receipt (same source **and** payload digest; a different one
+   under the same id is `HarnessRequestConflictError`), or the ledger-full `rejected` receipt.
+2. `_enrol_prompt_locked` — register the admitted prompt as a queued `_OperationRecord` and bind its
+   request id, before it reaches the timeline.
+3. `_unsupported_prompt_locked` — retire a prompt this hosted harness cannot carry at all. Two
+   cases: the snapshot says `control == "unsupported"`, or the request carries assets and the
+   adapter is not `AssetSubmitCapable`. The record is still created and marked terminal so the
+   ledger can answer for the request id; what it never does is join the dispatch timeline.
+
+That third step is **the** place capability is decided. It runs under the same lock that enrols the
+record, against the one adapter the authority was constructed with (`self._adapter` is never
+rebound — reconnect for Codex/pi replaces the transport under a fixed adapter, and no adapter in
+this tree binds or drops `submit_with_assets` at runtime), so its answer still holds at dispatch.
+A refusal here is clean and terminal — an `unsupported` receipt, the session untouched — whereas
+refusing at dispatch could only produce an `unknown` ambiguity barrier, because by then the
+authority can no longer say whether bytes crossed the wire. Do not add a second capability check
+downstream; add to this one.
+
+### Dispatch: `_dispatch_one` decomposed
+
+`_dispatch_one` returns whether the dispatcher should look at the head again immediately rather than
+wait for a wake (the head was released, or the claim went stale and the new head is unexamined). It
+now reads as four named steps:
+
+- `_dispatchable_head_locked` — the queued head this step may dispatch, or `None`.
+- `_preflight_declined` — ask the adapter whether it can take the operation; `True` means stand
+  down. A preflight sends no operation bytes, so busy/not-yet-connected simply leaves the record
+  queued; an adapter that nonetheless claims it may have sent goes to
+  `_unknown_after_preflight_claim`, which installs the ambiguity barrier and flips the snapshot to
+  disconnected/unknown/unknown.
+- `_claim_head_locked` — re-verify under the lock (timeline head, no active operation, still
+  queued, same bridge epoch, snapshot still allows dispatch) and mark it `dispatching`. The
+  preflight ran outside the lock, so anything that moved voids the claim.
+- `_send_and_settle` — issue the claimed operation via `_invoke_adapter` and apply what came back.
+  Every failure mode turns on what the adapter can certify: busy, or a disconnect proven pre-write,
+  requeues safely; a disconnect that may have sent, any other exception, and an incoherent result
+  all install the ambiguity barrier instead of guessing which side of the wire the bytes are on.
+
+Receipt/result application is likewise split into `_verified_prompt_receipt` (read the adapter's
+result as a receipt for exactly this operation, or a control error), `_accept_prompt_locked`,
+`_complete_delivered_locked`, `_apply_prompt_receipt_locked` and `_apply_set_result_locked` — the
+last two returning whether the head was released.
+
 ### Logic
 
 `HarnessSubmissionAuthority` stores one ordered timeline for prompts, model sets, and effort sets.
@@ -42,18 +105,18 @@ receipt; such definitive completion dominates a later unknown observation. Respo
 a bypass lane but share each adapter's write lock. Status/withdrawal read only normalized state and
 never wait on vendor I/O while holding the lifecycle lock.
 
-The multiplex-aware `respond` (L276-L334) resolves an interaction response against TWO pending sets: the singular
+The multiplex-aware `respond` (L341-L399) resolves an interaction response against TWO pending sets: the singular
 `snapshot.pending_interaction` (the parent thread's OLDEST pending) and the plural
 `snapshot.pending_interactions` (multiplexed entries, including concurrent parent-thread pendings
 beyond the oldest — the adapter keeps a per-thread pending map). A response matching
 neither raises the same typed `HarnessInteractionNotPendingError` as before — the not-pending
 contract is unchanged, only the match set widened. Parent-ness is decided by the matched entry's
-own thread, not by which slot carries it (L287-L301): a singular-slot match is parent, and a tuple
+own thread, not by which slot carries it (L352-L366): a singular-slot match is parent, and a tuple
 entry whose `raw.threadId` equals the snapshot's `vendor_session_id` is parent too, so a concurrent
-parent pending riding the tuple gets the "active ordinary operation" guard (L306-L311) exactly like
+parent pending riding the tuple gets the "active ordinary operation" guard (L371-L376) exactly like
 the singular slot. Genuinely foreign (sub-agent) pendings own no parent operation, so their
 responses cross to the adapter with `operation=None` (`replace(response, operation=operation)` at
-L319) instead of being refused for lacking an active record. The `_responded_interactions` dedupe
+L384) instead of being refused for lacking an active record. The `_responded_interactions` dedupe
 and the post-response identity check apply uniformly to both classes.
 
 Retention is bounded (timeline 64, duplicate/terminal ledger 256 by the configured defaults): live,
@@ -79,9 +142,11 @@ mint counter), `evictedBeforeSequence` (tracked additively in `_make_ledger_room
 `latestSequence`. The asset channel extends admission: `_payload_digest` covers canonical asset
 identity only when assets are present (asset-free digests stay byte-identical), a non-
 `AssetSubmitCapable` adapter receives an `unsupported` terminal receipt with the exact reason
-before any dispatch, and the dispatcher routes asset requests to `submit_with_assets` (the raise
-behind the admit gate is a loud invariant, never reachable — it stands as the
-assert class). `_OperationRecord.assets` clears at exactly the tombstone moment text clears.
+before any dispatch (`_unsupported_prompt_locked`), and `_invoke_adapter` routes asset requests to
+`submit_with_assets`. The old defensive re-check there — a `HarnessControlError("asset submission
+dispatch reached a non-capable adapter")` — is now literally `assert isinstance(capable,
+AssetSubmitCapable)`, because it was always the assert class: it can only fire if the admission gate
+above it stopped deciding. `_OperationRecord.assets` clears at exactly the tombstone moment text clears.
 Withdrawal captures `WithdrawalRecovery(text, assets)` at the true queued → withdrawn transition
 immediately before `_mark_terminal`, so the exact body crosses once inside the already
 `cockpit_only` response and idempotent replays carry `recovery=None`. `_receipt` adds raw
@@ -113,7 +178,8 @@ immediately before `_mark_terminal`, so the exact body crosses once inside the a
   deduping.
 - Asset submissions on a non-capable adapter fail closed with an `unsupported` terminal receipt —
   never guessed, never dispatched; bounded daemon-side recovery retention is not this authority's
-  obligation.
+  obligation. `_unsupported_prompt_locked` is the ONE place that decision is made; `_invoke_adapter`
+  only asserts it, and must not grow a second runtime check.
 - An interaction response must match a CURRENTLY pending entry — the singular parent slot or the
   plural multiplexed tuple; anything else is the same typed not-pending error as
   before multiplexing, and the already-responded dedupe covers both classes.
@@ -171,6 +237,11 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `BridgeSnapshotPort` / `SubmissionLimits`
+  constructor concepts, the three-step locked admission (`_pre_admission_receipt_locked`,
+  `_enrol_prompt_locked`, `_unsupported_prompt_locked` as the single capability decision point),
+  the four-step `_dispatch_one` decomposition, and the reduction of the dispatch-side capability
+  re-check to an assert. Verification metadata stays pinned until closeout.
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the entry-thread parent guard in
   `respond`: parent-ness is no longer which SLOT carries the entry (concurrent parent pendings
   beyond the singular slot's oldest ride the plural tuple now that the adapter keeps a per-thread

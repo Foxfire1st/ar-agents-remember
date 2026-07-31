@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-06-28T07:43+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -72,8 +72,41 @@ history-order fixes.
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | [history_order_fix.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
 | The missing-onboarding checker catches newly added worktree files before code commit. | [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
 
+## 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
+
+The check catalogue, the dispatch contract and the diagnostic-only rule are unchanged. What changed
+is that each classifier now emits its verdicts through a single constructor, which is what makes the
+verdict *set* auditable — previously the same nine-field `DriftRow` or `MissingOnboarding` was
+rebuilt at every branch, and a field could silently disagree between two of them.
+
+- **`check_missing_onboarding.py`** dispatches on storage mode to `_missing_sidecar_onboarding`
+  (the mirrored path this source expects, reported when the file does not exist) and
+  `_missing_inline_onboarding` (the in-source block, reported when absent *or unreadable*). The
+  three states remain `missing`, `unsupported` (non-UTF-8 source, or a storage mode this checker
+  does not implement) and "no finding"; the unsupported-storage-mode fallthrough is now the
+  function's visible last statement rather than a branch buried after the inline path.
+- **`sidecar.py`** builds one local `row(...)` closure that fixes the sidecar's identity and
+  verification stamp, so a classifier only supplies `classification` / `trust` /
+  `affected_sections` / `note`. `_early_classification` groups the three pre-diff verdicts —
+  `missing verification`, `orphaned`, and the recorded commit not being in git history — and
+  returning `None` from it is what means "go on and diff". The classification vocabulary and trust
+  levels are byte-identical.
+- **`entities.py`** takes `EntityCatalog` (frozen: `onboarding_file`, `onboarding_root`,
+  `repository`, `settings`, `last_updated`). All five are read out of one document before any row
+  is emitted and every row builder needs all five, so the catalog travels as the document it is.
+- **`drift.py`** and `check_missing_onboarding.py` resolve coordination context through
+  `hints=CoordinationHints(topology=, coordination_root=, settings_path=, onboarding_root=)` — the
+  resolver's new keyword-bundle API (see
+  [kernel/coordination_context](../kernel/coordination_context/overview.md)). Resolved contexts are
+  identical.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: verdict construction was centralized per classifier
+  (`_missing_sidecar_onboarding`/`_missing_inline_onboarding`, `sidecar.py`'s `row(...)` closure
+  and `_early_classification`, `EntityCatalog` in `entities.py`), and both CLI entry points now
+  pass `hints=CoordinationHints(...)` to the resolver. No check was added, removed or reclassified;
+  emitted rows are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-28T07:43+02:00 — Task 29 S7 route impact: drift snapshot summaries now carry source-root,
   memory-root, optional report-path, and checked-at provenance for actionable-drift attention detail.
   Verification metadata pinned until closeout stamps the task-29 code commit.

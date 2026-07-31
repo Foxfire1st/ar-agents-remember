@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -51,9 +51,10 @@ dormancy never auto-abandons, and a terminal state survives staleness.
 one is ignored. `ActionAvailabilityTests` assert `resume` (blocked-only) and the
 enclosure `integrate`/`cleanup` rules + `disabledReason`s. `WorkspaceTests` assert
 tree assembly, metric counts, and `generatedAt`, plus (task 33) `project_workspace`'s
-`active_worktree_groups` passthrough: a passed group set is stored sorted on
+`active_worktree_groups` passthrough: a group set passed as
+`structure=WorkspaceStructure(..., active_worktree_groups=[...])` is stored sorted on
 `WorkspaceProjection.activeWorktreeGroups` (the Topology's active scope), and the field defaults to an
-empty list when the kwarg is omitted. `StoreIOTests` assert log
+empty list when that `WorkspaceStructure` field is left out. `StoreIOTests` assert log
 enumeration and the atomic round-trip (no `.tmp` left). `SnapshotReaderTests`
 assert provider snapshot parsing with `snapshotStaleSeconds`, enclosure reading
 from a real contract, the absent-surface empties, and `project_and_write`
@@ -215,7 +216,24 @@ Inserts `mcp/src` on `sys.path` (the suite idiom). `_event`/`_started`/`_enclosu
 build fixtures; fixed `T0`/`FRESH`/`STALE`/`DORMANT` datetimes make the staleness
 windows deterministic; a local `McpRuntimeConfig` factory + `current_state_path`
 back the snapshot/store tests, and `default_contract`/`write_contract` produce a
-real contract for `read_enclosures`. The 3b suites write fixture files (drift
+real contract for `read_enclosures`.
+
+`_event` takes provenance as `by=<Attribution>` and the promotion target as
+`enclosure=EnclosureRef(path, repo_id)` rather than as loose `trust`/`actor`/`enclosure`/`repo_id`
+keywords. The four provenance pairs the suite uses are named module constants —
+`DECLARED_BY_MODEL` (the `_event` default), `OBSERVED_BY_MODEL`, `OBSERVED_BY_SYSTEM`, and
+`INFERRED_BY_SYSTEM` — so a case cannot quietly invent a fifth trust/actor combination, and
+`EnclosureRef` keeps the contract path and its repo id together because a promotion carries both
+or neither. The production entry points are likewise driven through their parameter objects:
+`project_workspace(logs, structure=WorkspaceStructure(enclosures, providers,
+active_worktree_groups), now=..., given=AnalyticalInputs(...))`,
+`build_analytics(AnalyticalInputs(...))`, `build_attention_queue(lifecycles, providers,
+AnalyticalInputs(...))`, `create_gate(kind, gate_id=..., now=..., anchor=GateAnchor(lifecycle_id))`
+with `decide_gate(gate, GateVerdict(...), now=...)`, `default_contract(ContractTask(...),
+leaf=LeafIdentity(...), code=RepoBranchPlan(...), memory=RepoBranchPlan(...))`, and
+`write_start_progress(root, StartingEnclosure(...), StartBeat(...))`.
+
+The 3b suites write fixture files (drift
 snapshots, sidecars, setup/progress JSON, route indexes, tool reports, ledgers)
 into tmp roots; `DriftSnapshotProducerTests` uses a real `git init -b` + empty
 commit with a `SimpleNamespace` context. Drift snapshot fixtures and the producer
@@ -230,20 +248,20 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 | --- | --- |
 | The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | L412-L507 | [projection.py](../src/agents_remember/observer/projection.py) |
 | The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | L584-L736; L757-L783 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | L1525-L1698 | [test_observer_projection.py](test_observer_projection.py) |
-| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | L1760-L1818 | [test_observer_projection.py](test_observer_projection.py) |
-| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | L420-L490 | [test_observer_projection.py](test_observer_projection.py) |
+| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | L2753-L3014 | [test_observer_projection.py](test_observer_projection.py) |
+| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | L3079-L3137 | [test_observer_projection.py](test_observer_projection.py) |
+| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | L690-L763 | [test_observer_projection.py](test_observer_projection.py) |
 | The fold + inferred layer + action availability under test. | L1-L92 | [reducer.py](../src/agents_remember/observer/reducer.py) |
 | The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | L1-L92 | [provider_nodes.py](../src/agents_remember/observer/provider_nodes.py) |
 | The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | L18-L84 | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
 | The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`, `SeriesRetentionTests` | [test_observer_projection.py](test_observer_projection.py) |
 | The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
 | Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | L112-L203; L496-L535; L778-L805 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | L1439-L1468 | [test_observer_projection.py](test_observer_projection.py) |
-| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | L1604-L1629 | [test_observer_projection.py](test_observer_projection.py) |
+| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | L1735-L1768 | [test_observer_projection.py](test_observer_projection.py) |
+| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | L1909-L1948 | [test_observer_projection.py](test_observer_projection.py) |
 | The log reader + atomic writer + orchestrator under test. | L1-L90 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
 | Projection reads active admission sets once and caches repo surfaces on a short TTL. | L151-L180; L217-L240 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
-| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | L169-L258; L1034-L1132; L1863-L1907; L2283-L2324; L3109-L3134 | [test_observer_projection.py](test_observer_projection.py) |
+| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | L216-L324; L1266-L1292; L2264-L2278; L2650-L2691; L3627-L3656 | [test_observer_projection.py](test_observer_projection.py) |
 | The drift-snapshot producer exercised by the round-trip test. | L1-L88 | [onboarding_drift_check/summary.py](../src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
 | The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | L17-L60 | [drift_snapshots.py](../src/agents_remember/observer/drift_snapshots.py) |
 | The shared drift-snapshot dir/schema the fixtures use. | L1-L47 | [paths.py](../src/agents_remember/observer/paths.py) |
@@ -272,6 +290,27 @@ The provider-reader patch target follows its new `projection_inputs` ownership. 
 asserts the same projection output and uncached volatile-provider behavior.
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. This suite absorbed
+  more parameter-object churn than any other in the leaf. `project_workspace` now takes
+  `structure=WorkspaceStructure(...)` and `given=AnalyticalInputs(...)` in place of its
+  `enclosures`/`providers`/`active_worktree_groups`/`gates`/`drift_snapshots`/`setup_progress`/
+  `task_documents`/`series`/`sidecar_staleness`/`attention_dismissals`/`engine_process_facts`/
+  `engine_start_progress` keywords; `build_analytics` and `build_attention_queue` take
+  `AnalyticalInputs` too; `create_gate` takes `anchor=GateAnchor(...)` and `decide_gate` a
+  `GateVerdict`; `default_contract` takes `ContractTask`/`LeafIdentity`/`RepoBranchPlan`; and
+  `write_start_progress` takes `StartingEnclosure` plus `StartBeat`. Locally, the `_event` fixture
+  now takes `by=<Attribution>` and `enclosure=EnclosureRef(path, repo_id)` behind four new named
+  constants (`DECLARED_BY_MODEL`, `OBSERVED_BY_MODEL`, `OBSERVED_BY_SYSTEM`,
+  `INFERRED_BY_SYSTEM`). Corrected the task-33 sentence, which claimed `active_worktree_groups`
+  was a `project_workspace` kwarg that defaults when omitted — it is now a `WorkspaceStructure`
+  field — and rewrote the Conventions section to record the fixture provenance constants and the
+  parameter-object call shapes. Also repaired every self-referencing line range in
+  Repo-Internal References against the current file: task-document reader tests L2753-L3014,
+  creation-order regression L3079-L3137, series-token regression L690-L763, actionable-drift rows
+  L1735-L1768, targetless dismissal L1909-L1948, and the task-29 set
+  L216-L324; L1266-L1292; L2264-L2278; L2650-L2691; L3627-L3656. No test was added, removed, or
+  renamed, and no assertion changed value.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: updated the provider-reader
   patch seam to its new `projection_inputs` owner while retaining the existing projection-output

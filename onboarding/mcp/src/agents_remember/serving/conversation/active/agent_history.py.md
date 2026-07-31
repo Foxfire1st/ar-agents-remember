@@ -61,7 +61,7 @@ serializes the same status vocabulary.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The projector catches only typed native-history outcomes and mints unavailable/recovered rows under the apply lock. | L502-L586 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
+| The projector catches only typed native-history outcomes (`NativeHistoryLimitExceeded`, `NativeHistoryUnavailable`) and mints unavailable/recovered rows under the apply lock. | L99-L137 | [child_history.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/child_history.py) |
 | The active route serializes status, exact child id, detail, and code. | L153-L187 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
 | Projection regressions prove local failure, sibling continuity, same-child singleflight, capacity refusal, and revision-two recovery. | L677-L1052 | [test_conversation_projector_codex_agents.py](agents-remember/mcp/tests/test_conversation_projector_codex_agents.py) |
 
@@ -74,6 +74,8 @@ No cross-repository boundary is implemented here.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation broken by the `active/projector.py` -> `active/projector/` package split. The typed-native-history catch and the unavailable/recovered row minting are now `ChildHistoryProjection._hydrate` in `projector/child_history.py` L99-L137 (`except (NativeHistoryLimitExceeded, NativeHistoryUnavailable)` at L102, both `agent_history_state_item` emissions inside `async with self._apply_lock`); link path and range both repointed.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: created strict 1:1 onboarding for the
   child-local hydration result and stable unavailable/recovered projection row. Verification

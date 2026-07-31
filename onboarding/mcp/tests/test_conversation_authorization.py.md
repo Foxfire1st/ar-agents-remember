@@ -73,7 +73,7 @@ evidence.
 | --- | --- | --- |
 | The production resolver, loopback classification, and OS-resolved principal under test. | L48-L105 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
 | The request dependency that forwards only the ASGI TCP peer. | L26-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The strict binding, cursor, scope, and fingerprint carriers used as own/foreign evidence. | L138-L148 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The strict binding, cursor, scope, and fingerprint carriers used as own/foreign evidence. | L134-L144 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The typed `AuthorityError` refusal asserted across the suite. | L17-L17 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
 
 ## Cross-Repo References

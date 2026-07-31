@@ -26,14 +26,14 @@ vendor-clone skin.
 
 ### Logic
 
-- `Block` (L63) dispatches one `ConversationContentBlock` by `type`: `markdown`/`text`/`code` flow
+- `Block` (L67-L102) dispatches one `ConversationContentBlock` by `type`: `markdown`/`text`/`code` flow
   through `MarkdownBlock` (code is fenced with its language); `image-ref` renders a LABELED reference
   (L71-L85) — the alt text plus a `· filename/type fallback` note when `altProvenance ===
   "filename-mime-fallback"` and the MIME type — with **no `<img>` fetch and no invented
   `/api/assets/...` URL** (finding F11: no asset-read route exists in the backend; `assetId` is a
   submit-side reference, so an `<img>` would 404 on every future `image-ref`; the missing asset-read
   seam is recorded in-code); `file-ref`/`resource-ref` render a 📎 name + optional MIME chip.
-- `MessageItem` (L100) computes the clamp from LOGICAL SOURCE LINES: `combinedSourceText` (L51) joins
+- `MessageItem` (L104-L156) computes the clamp from LOGICAL SOURCE LINES: `combinedSourceText` (L55-L65) joins
   the markdown/text blocks, `sourceLineCount` counts newlines, and a message is `clampable` only when
   it is an assistant message, `phase === "completed"`, and exceeds `CLAMP_THRESHOLD_LINES` (40, L13).
 - **Clamp by slicing, not by pixels (F12):** a collapsed message renders `sourceText.split("\n").
@@ -87,6 +87,12 @@ source badge. The phase is therefore not color-only and follows the same compact
 in-progress conversation evidence.
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations. The four lines
+  the streaming-phase cue added (the `streamDot`/`phaseWord` recipes and their comment, L28-L31)
+  shifted everything below them by +4: `combinedSourceText` L51 → L55-L65, `Block` L63 → L67-L102,
+  `MessageItem` L100 → L104-L156. `CLAMP_THRESHOLD_LINES` (L13) sits above the insert and was
+  already correct.
 
 - 2026-07-24T13:17:17Z — Curator: documented the visible, non-color-only streaming phase cue;
   verification fields remain pre-commit.

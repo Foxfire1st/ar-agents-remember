@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,8 +58,29 @@ re-gates thinking to `off` so an old model's effort token is immediately unsuppo
 ### Conventions
 
 The module uses `unittest` with deterministic request ids, fixed clocks, provider-qualified fixture
-models, and a transport sequence for retry/reconnect ownership. The pinned `0.80.6` fixture remains
+models, and a transport sequence for retry/reconnect ownership. The capability recording remains
 protocol evidence only; runtime catalogs come from the fake native request in these tests.
+
+### The Capability Recording Guard (260731-EFA-L2)
+
+`test_capability_fixture_documents_the_smoke_baseline` is the **offline** half of the
+capability anti-drift contract. It imports `PI_RPC_VERSION` from `test_pi_rpc_real_smoke.py`
+and reads `FIXTURES / f"{PI_RPC_VERSION}-capabilities.json"` — never a literal filename —
+then asserts:
+
+- `fixture["package"] == PI_RPC_PACKAGE` and `fixture["version"] == PI_RPC_VERSION`;
+- the recorded `dialogMethods` / `fireAndForgetMethods` equal the adapter's
+  `PI_RPC_DIALOG_METHODS` / `PI_RPC_FIRE_AND_FORGET_METHODS`;
+- `sorted(FIXTURES.glob("*-capabilities.json"))` is **exactly** the one file for the pinned
+  version, because "a second capability recording leaves no rule about which one is
+  authoritative".
+
+Why this test and not the smoke test: re-recording lives behind
+`@pytest.mark.ar_run_pi_rpc_smoke`, which needs npm and a network and can stay unrun. This
+one runs in the ordinary suite, so bumping the pin without re-recording fails immediately
+with `FileNotFoundError` on the version-addressed path. Keeping the superseded recording
+beside the new one also fails here. The 0.80.6 file was therefore renamed to 0.80.7, not
+copied.
 
 ### Invariants And Boundaries
 
@@ -111,8 +132,8 @@ normalized advertisement.
 | `pi_rpc_launch` preserves the launch while adding RPC mode; state parsing sanitizes the model object and catalog parsing builds unique provider-qualified model capabilities. | L114-L130; L176-L234 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
 | Adapter startup, transient discovery, cleanup, cached advertisement, and catalog/state validation are owned by the native Pi adapter. | L109-L194; L411-L434 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
 | The adapter delegates both setters to one configuration transaction object with a configurable finite timeout. | L68-L107; L208-L214 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
-| Configuration validates provider/model identity and the selected model's dynamic effort vocabulary, serializes mutations, and commits only coherent state plus catalog readback. | L27-L131 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
-| The whole mutation/readback transaction is bounded; timeout, disconnect, or incoherent catalog evidence returns unknown without an effective value. | L133-L167 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
+| Configuration validates provider/model identity and the selected model's dynamic effort vocabulary, serializes mutations, and commits only coherent state plus catalog readback. | L70-L153; L196-L203 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
+| The whole mutation/readback transaction is bounded; timeout, disconnect, or incoherent catalog evidence returns unknown without an effective value. | L145-L179 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
 
 ## Cross-Repo References
 
@@ -130,6 +151,19 @@ interaction completion, certified disconnect before dispatch, and no resend afte
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The row's
+  four claims live in `PiRpcConfiguration.set_model` / `set_effort` at
+  `pi_rpc_configuration.py` L70-L153 — `_provider_model` identity validation, the selected model's
+  `session_settable` effort vocabulary, the `async with self._lock` serialization, and the
+  `_commit(state, capabilities)` that runs only after the `get_state` readback agrees — plus the
+  `_provider_model` parser itself at L196-L203. The old L27-L131 started in the module imports.
+  No claim text changed.
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the offline capability-recording
+  guard (version-addressed path, exactly-one-recording assertion, dialog/fire-and-forget
+  agreement) and removed the stale `0.80.6` fixture reference from Conventions. Metadata
+  fields left at their FEUI-L5 verification pins; the rest of this card was re-read against
+  the file and remains true. Closeout stamps the code commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: corrected timeout-release assumptions and added fresh-state,
   token, no-native-queue, certificate, and exact-settlement proof.
 

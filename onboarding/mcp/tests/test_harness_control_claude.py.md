@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -180,14 +180,14 @@ advertisement contract.
 | Startup preserves native launch settings, issues `list_models`, caches the selected catalog, gates efforts by model, leaves current effort unknown, and marks disabled rows non-selectable. | L353-L401 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 | Current initialization omits stale model/account fields, while duplicate or rejected catalog evidence yields unsupported/loud failure with no fallback. | L402-L453 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 | Same-session model/effort setters require native replay plus terminal echo, update the model gate only on evidence, and refuse effort unavailable for the selected model without a write. | L653-L708 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Native failure and non-echo completion remain unsupported/immediate without promotion; provider-qualified Fable refusal and a successful alias named `fable` prove there is no name heuristic. | L709-L799 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Exact dynamic terminal aliases reject prefix impostors and arbitrary default labels. | L800-L884 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Timeout/cancellation late frames are neutralized before retry, strict replay correlation/body/session mismatches fail, and duplicate retained correlations are not written twice. | L885-L993 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Native failure and non-echo completion remain unsupported/immediate without promotion; provider-qualified Fable refusal and a successful alias named `fable` prove there is no name heuristic. | L942-L1031 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Exact dynamic terminal aliases reject prefix impostors and arbitrary default labels. | L803-L885 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| Timeout/cancellation late frames are neutralized before retry, strict replay correlation/body/session mismatches fail, and duplicate retained correlations are not written twice. | L886-L994 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
 | The Claude catalog parser validates the native response, exact unique model keys, model-specific effort consistency, disabled state, and current-model membership. | L15-L31; L34-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
-| The adapter negotiates startup then catalog before readiness, isolates only transient discovery, force-stops that probe, and retains cached advertisement for started sessions. | L97-L215 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| The adapter negotiates startup then catalog before readiness, isolates only transient discovery, force-stops that probe, and retains cached advertisement for started sessions. | L115-L269 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
 | The discovery argv builder removes only accepted pre-separator MCP selector spellings, preserves unrelated arguments/suffixes, and adds one strict empty set; the ordinary stream argv builder stays separate. | L41-L87 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
 | Native startup frames define the exact `list_models` control request and a synthetic non-querying bootstrap. | L90-L116 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| Claude setters validate the dynamic catalog/model gate, send structured commands, promote only echo-verified results, and derive exact model terminal aliases from the selected catalog row. | L233-L308; L467-L550 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| Claude setters validate the dynamic catalog/model gate, send structured commands, promote only echo-verified results, and derive exact model terminal aliases from the selected catalog row. | L287-L396; L545-L677 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
 | State submission retains canonical command replay text, waits for a terminal result, and marks timed-out commands abandoned. | L102-L168 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
 | Replayed-user handling requires exact retained correlation, session, and body; completed abandoned replays are ignored rather than requeued. | L412-L450 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
 
@@ -213,7 +213,28 @@ Claude control regressions now pin native interrupt request acceptance and the c
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260731-EFA-L2 Delta — repeated late replay
+
+`test_repeated_late_replay_of_an_expired_set_restores_one_turn_not_two`: replaying an expired set
+more than once restores **one** turn, not one per replay. Replay is idempotent per set, so a
+duplicated late frame cannot inflate the transcript.
+
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 line citations. In
+  `harness_control_claude.py` the startup/discovery/advertisement row moved from L97-L215 to
+  L115-L269 (`start` L115-L237 negotiating startup then catalog, `discover` L246-L261 which builds
+  the isolated argv and force-stops the probe in its `finally`, `advertise` L262-L269 returning the
+  cached snapshot), and the setter row moved from L233-L308; L467-L550 to L287-L396 (`set_model`,
+  `set_effort`, `_submit_set_command`, `_selected_model`, `_unsupported_set`) plus L545-L677 (the
+  module-level set-result classifiers through `_model_terminal_results` and
+  `_resolved_model_terminal_label`). In this suite itself the Fable row moved from L709-L799 to
+  L942-L1031 (`test_terminal_refusal_or_non_echo_never_promotes_claude_capability` L942-L965 and
+  `test_native_noninteractive_set_blocked_refusal_maps_without_alias_guessing` L966-L1031). Not
+  repaired and reported upward instead: the other eight self-citations in this table are stale by
+  roughly the same drift and need their own pass.
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: recorded `ClaudeProductionTransportRelaunchTests`, the
   real-transport probe/relaunch proof, and named the restart-tolerant fake as the reason the at-floor

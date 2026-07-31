@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/query.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T23:40+02:00                     |
-| lastVerifiedCommitHash | `8833b31a37deda0d9d2e6895659ab0fe085a8ee9` |
-| lastVerifiedCommitDate | 2026-06-01T23:39:39+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,6 +57,19 @@ Linux runner on Windows hosts.
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/providers/cgc/lifecycle/query.py` since the L2 base commit is the
+  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change
+  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
+  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
+  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
+  card makes about its own source still holds.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-06-01T23:40+02:00 — `cgc_run_status_result` now gates on `cgc_backend_status` (FalkorDB backend only) instead of `cgc_status` (full provider including watcher). Fixes OQ7-caused seed failure: worktree watchers start last, so gating `bundle import` on the watcher caused the import to never run and the seed to fall back to a full re-index. The visualize path still uses `cgc_status`. Added `cgc_backend_status` import from `backend.py`. Updated Logic, Invariants, and Repo-Internal References.
 - 2026-05-31T12:50+02:00 — `cgc_run_command`, `cgc_run_dry_result`, `cgc_visualize_command`, and `cgc_visualize_dry_result` now type their `layout` param as `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`) instead of `Any`; added an Invariants note recording the concrete layout type (1.0.0 review remediation).
 - 2026-05-29T07:19+02:00: Updated after the visualizer `--repo` argument switched to the driveless container path (`container_code_repo_root`) for Windows-host support.

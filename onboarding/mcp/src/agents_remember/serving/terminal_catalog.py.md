@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -71,10 +71,10 @@ the opener/API can report an explicit unsupported state without treating pane te
 
 `TerminalCatalogEntry` gained the additive `control_pending_interactions` column (JSON
 `controlPendingInteractions`) beside the untouched singular
-`control_pending_interaction` parent-thread slot (L118-L121). It rides the same migration-safe
+`control_pending_interaction` parent-thread slot (L149-L152). It rides the same migration-safe
 optional pattern as every other control column: `from_json` reads it through the new
-`_optional_object_list` helper (L201-L203; helper at L871-L878) and `to_json` emits it through the
-`None`-filtered optional fold (L271), so legacy rows read back as `None` and unset values never
+`_optional_object_list` helper (L232-L234; helper at L900-L906) and `to_json` emits it through the
+`None`-filtered optional fold (L302), so legacy rows read back as `None` and unset values never
 enter the JSON. The read helper is fail-closed on shape: a non-list value, or a list containing
 even one non-object entry, degrades the WHOLE field to `None` rather than persisting a partial or
 malformed pending set.
@@ -253,7 +253,7 @@ shape and migration rules are same-repository runtime behavior proven by source 
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external/domain document defines this catalog shape; the implementation is the source of truth. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
+| No external/domain document defines this catalog shape; the implementation is the source of truth. | L15-L30; L141-L216 | [terminal_catalog.py](terminal_catalog.py) |
 
 ## Repo-Internal References
 
@@ -295,7 +295,25 @@ unsupported until a bridge-backed restart; ordinary terminal rows remain unwrapp
 also gains the plural `controlPendingInteractions` list for multiplexed sub-agent
 pendings; the singular pending field keeps the parent-thread entry exactly as before.
 
+## 260731-EFA-L2 Current Delta
+
+**The liveness hysteresis configuration now lives here**, moved from `terminal_liveness.py`: the
+constants `DEFAULT_LIVENESS_FAILURE_THRESHOLD` (3), `DEFAULT_LIVENESS_FAILURE_WINDOW_SECONDS` (5.0),
+`DEFAULT_PANE_GONE_FAILURE_THRESHOLD` (1) and `DEFAULT_LIVENESS_SWEEP_INTERVAL_SECONDS` (10.0), the
+`TerminalCatalogLivenessConfig` dataclass, and the `DEFAULT_LIVENESS_HYSTERESIS` instance. Import
+them from `terminal_catalog`, not from `terminal_liveness`.
+
+The concept it now carries explicitly: **the hysteresis that decides when probe failures are allowed
+to exit-mark a row**. One value because the thresholds only mean something together — a failure
+count without the minimum window would mark a row on a burst of fast failures, and the pane-gone
+threshold is deliberately lower than the command-failure one because that evidence is definitive.
+The sweep interval belongs with them for the same reason: it sets how quickly those counts
+accumulate. Values are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded that `TerminalCatalogLivenessConfig`, `DEFAULT_LIVENESS_HYSTERESIS` and the four `DEFAULT_LIVENESS_*` constants now live in this module (moved from `terminal_liveness.py`); values unchanged.
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `control_pending_interactions`
   column (multiplexed sub-agent pendings, review R6) — `_optional_object_list` read (fail-closed:
   any non-object entry degrades the whole field to `None`), `None`-filtered `to_json` emission,

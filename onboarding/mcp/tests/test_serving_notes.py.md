@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_notes.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T18:40+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -29,7 +29,9 @@ and the size-capped binary-tolerant read.
 L9 review follow-up adds `test_null_byte_path_is_400_bad_path`: a null byte inside `path` must answer `400 bad-path`, not an uncaught 500 (L9R-1).
 
 One `NotesRouteTests` class, deliberately **API-layer only**: every test drives
-`TestClient(create_app(config, interval=100))` against a temp coordination tree
+`TestClient(create_app(config, cadence=ProjectionCadence(interval=100)))` — the projection
+pacing arrives as one `serving.projector.ProjectionCadence` value, not a loose `interval`
+keyword — against a temp coordination tree
 (`coord/tasks/R/<master>/notes/`) so the confinement and the status idiom are proven at
 the real HTTP surface, never against hand-aligned internals. Coverage groups:
 
@@ -78,6 +80,13 @@ No meaningful cross-repo references found.
 | The sibling files-API suite whose harness idiom this mirrors. | [test_serving_files.py](agents-remember/mcp/tests/test_serving_files.py) |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the shared client builder now calls
+  `create_app(config, cadence=ProjectionCadence(interval=100))`, so the Logic paragraph's quoted
+  harness call was rewritten and the new `serving.projector.ProjectionCadence` parameter object
+  is named where the old loose `interval=100` keyword used to be. The route, confinement,
+  depth-cap, and binary/oversize coverage claims are unaffected; the only other source change in
+  this file was a `ruff format` reflow of one multi-line `assertEqual` in the listing test.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): added
   `test_read_oversize_multibyte_boundary_returns_text_not_binary` — an oversize markdown note with a

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastUpdated | 2026-07-31T16:10+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 
 > **Status:** active baseline
 
@@ -78,7 +78,8 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Repository-owned wrapper for Ruff, Radon, pytest coverage, and CRAP-Calculator risk scoring. CRAP at or above the configured threshold (30 by default) is a mandatory failure wherever the wrapper runs: pre-push (full tier), worktree closeout before mutation, and CI on every branch and pull request. Pre-commit runs a deliberately cheap **fast tier** over the staged content only (generated-copy checks + Ruff + Pyright) — see the enforcement topology below. | `python -m agents_remember.code_quality.check`, `code_quality/`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py` |
+| Source quality tooling | Repository-owned gate whose scope is **derived from `git ls-files '*.py'`** — it takes no path arguments, so nothing can narrow what it certifies. **Six steps enforce**: Ruff (lint, including `C901`/`PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` armed at full strength), `ruff format --check`, Pyright, the full pytest suite under branch coverage, mandatory CRAP threshold enforcement (**20.0**, against branch coverage, with a report lacking branch data refused), and the **changed-lines coverage floor at 100%** (`diff_coverage.py`, the binding coverage gate — the aggregate is 87.16%, so any lower floor passes a merely average change). **Radon's `cc` and `mi` steps are declared reports and cannot fail anything** (they exit 0 whatever they find), while Radon stays load-bearing as CRAP's complexity engine. **There is no baseline, ratchet, allowlist or grandfather file anywhere in the gate** — one was built inside 260731-EFA-L2 and deleted. The gate runs at pre-push (full tier), worktree closeout before mutation, and CI on every branch and pull request; pre-commit runs a cheap **fast tier** over the staged content (three generated-copy checks + Ruff + formatter + Pyright), deriving the same `git ls-files` scope — see the enforcement topology below. | `python -m agents_remember.code_quality.check`, `code_quality/`, `code_quality/diff_coverage.py`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py`, `mcp/tests/test_gate_scope.py` |
+| Self-hosted harness configuration | The nine dogfooded harness configuration trees (`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/` + `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/`, `.agents/`) are **generated from one source and checked**, not eight independent copies. `scripts/harness/` holds the fragment libraries and shared bodies; `scripts/sync-harness.py` fans out 45 files three ways (verbatim, composed body + per-harness framing, and programs assembled from named fragments with derived imports). `--check` runs in both hook tiers and in the test suite. `scripts/harness/README.md` is the ruled classification of genuine per-harness requirements versus drift. | `scripts/sync-harness.py`, `scripts/harness/`, `mcp/tests/test_sync_harness.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
 | Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry a `--check` mode, both run in **both** hook tiers and in CI, and both are covered by `mcp/tests/test_sync_*`. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/_gate.sh` |
 | Dashboard bundle release build | The built cockpit (`dashboard/dist/`) is placed into `package_data/dashboard/` by `scripts/sync-dashboard.py`. This is a **release build step, not a sync check**: the bundle is a generated artifact that is **not in version control** (master decision OQ6, 2026-07-31), so there is no `--check` mode and no hook runs it. The release job builds the frontend, runs the placement, packages, and asserts the wheel and sdist both carry the bundle plus its `dashboard.fingerprint` sidecar. Placement refuses an absent `dist` and refuses a `dist` that does not carry the current build-input fingerprint Vite compiled into it, so it cannot stamp over a stale artifact. | `scripts/sync-dashboard.py`, `mcp/tests/test_sync_dashboard.py`, `.github/workflows/publish-mcp-to-pypi.yml`, `dashboard/vite.config.ts` |
@@ -137,19 +138,113 @@ overviews.
 
 ## Hot Path Summary
 
-**Enforcement topology (260731-EFA-L1 — read this before touching a gate).** The local gate is one
+**Gate honesty (260731-EFA-L2 — the seven durable contracts).** The wrapper used to list six steps of
+which three could not fail, enforce two complexity limits it had switched off, feed CRAP the wrong
+metric, and certify a scope written by hand. Seven facts are now true and enforced, not documented:
+
+1. **`C901`, `PLR0911`, `PLR0912`, `PLR0915` and `PLR0913` are armed at full strength with zero
+   exemptions.** The limits existed and were dead — `max-complexity = 10` was configured while
+   `C901` was unselected, and the three `PLR09xx` codes were ignored "because Radon reports
+   complexity pressure", deferring enforcement to the one tool that cannot enforce. All of them are
+   live and enforced by `ruff` directly. **There is no baseline.** All 67 complexity offenders and
+   274 of 293 long signatures were fixed by extraction — 163 parameter objects introduced — rather
+   than recorded. A 67-entry `quality/complexity-baseline.txt`, its module, its test and its gate
+   step were built and then deleted when the developer ruled that ratchets, baselines, grandfather
+   lists and burn-down schedules are all forbidden. The only carve-out anywhere is a single
+   per-file-ignore for `PLR0913` on `mcp/src/agents_remember/mcp/registration/*.py`, where the
+   signature **is** the published MCP schema; an AST test fails if that glob widens or a second
+   exemption appears.
+2. **Radon's two subprocess steps REPORT and never gate.** `radon cc` and `radon mi` exit 0 whatever
+   they find, so no finding of theirs was ever able to fail anything. They now carry a
+   `report_note` printed into their section header, the CLI help says so, the CI step name no
+   longer claims them, and `AGENTS.md` states it outright. A report step exiting non-zero still
+   fails the gate — that means the tool broke, not that it found something.
+3. **Radon remains CRAP's complexity engine.** `crap_calculator.py` imports
+   `radon.complexity.cc_visit`. "Radon reports" is a statement about the gate steps, never about
+   the dependency.
+4. **CRAP consumes branch coverage and refuses a report without it.** `[tool.coverage.run]
+   branch = true` is the repository's first coverage configuration, and
+   `crap_calculator.load_coverage_by_path` reads `executed_branches`/`missing_branches` and
+   **raises** when `meta.branch_coverage` is not true — so turning branch measurement off breaks
+   the gate loudly rather than silently reverting CRAP to the metric it is not defined over. The
+   threshold moved 30.0 → **20.0**, chosen on *reach* (`crap(4,0) = 20`, the lowest score an
+   entirely unexercised four-path function can have; every value 28–30 has identical reach and 30
+   failed 0 of 4,423 functions). All 46 offenders were cleared — 41 by behavioural tests, 5 by
+   splitting — and the tree now tops out at 19.83 against 20.0.
+5. **The binding coverage gate is a 100% floor on changed lines, not a pin on the aggregate.**
+   `code_quality/diff_coverage.py` scores the same coverage JSON pytest already wrote, restricted
+   to lines changed against the merge base, and **names every uncovered line and untaken arc**
+   rather than reporting a percentage. The aggregate cannot be the gate: 87.16% over 44,697
+   statements, where one entirely untested 20-line function moves the figure by 0.04 points. And
+   nothing below 100% works either — a lower floor is a per-change budget for untested code that
+   *grows with the change* (at 90%, the median 234-line change buys 23 uncovered units against a
+   median function of ~9 statements, so a whole untested function fits inside an average change),
+   while any floor at or below 87.16% passes a merely average change outright. The base it diffs
+   against is printed on every run; no merge base means the empty tree, never a skip.
+6. **The gate's scope is derived from `git ls-files`, not a hand-written constant.**
+   `DEFAULT_SOURCE_PATHS`/`DEFAULT_TEST_PATHS` and the CLI path arguments are gone; `derive_scope`
+   reads every tracked `*.py` for lint and types, the tracked top-level packages for coverage and
+   CRAP, and `[tool.pytest.ini_options] testpaths` for the suite. There is no way to narrow what
+   the gate certifies. `mcp/tests/test_gate_scope.py` recomputes the tracked set independently and
+   asserts the wrapper's **real argument vectors** reach it — **with no allowlist at all**. Three
+   empty shrink-only lists (`ALLOWED_UNGATED_PYTHON`, `ALLOWED_UNGATED_TYPESCRIPT`,
+   `ALLOWED_UNTYPED_TYPESCRIPT`) stood there and were deleted with the baseline they were shaped
+   like: an empty exemption list is a place to put the next offender. The ~1,895 previously ungated
+   lines, including the three `scripts/sync-*.py` that gate every commit, came in clean.
+7. **The nine harness configuration trees are generated from one source and checked.**
+   `scripts/harness/` holds one definition; `scripts/sync-harness.py` fans 45 files across
+   `.claude/`, `.codex/`, `.cursor/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.openclaw/`,
+   `.pi/` and `.agents/`, replacing eight independent `render-starter.py` copies (~940 lines) and
+   four hook copies. `--check` runs in both hook tiers **and** in `mcp/tests/test_sync_harness.py`,
+   so a hand-edited tree fails even without hooks. `scripts/harness/README.md` records which
+   differences are genuine per-harness requirements — payload envelopes, hook-configuration
+   schemas, TOML escaping, the VS Code two-folder split, Codex's global-hook workspace guard — and
+   which files the generator deliberately leaves alone.
+
+**Nothing was left open with a named owner, because the no-deferral rule removed that option.** Both
+items this leaf tried to defer were paid instead: `PLR0913` was armed at Ruff's default of 5 args
+(the 27→24→25 keyword pass-through in `serving/terminal_opener.py` is now 4→5→4 through
+`TerminalLaunchRequest` / `SpawnProvenance` / `HostedSessionRuntime`), and `DEFAULT_CRAP_THRESHOLD`
+went to 20.0 with every offender cleared rather than baselined. The leaf's final run on the settled
+tree: ruff clean, `ruff format` 652 files, pyright 0 errors, 3718 passed / 25 skipped, CRAP 0
+offenders at 20.0, diff-coverage 5498/5498 = 100.00%.
+
+Eight environment-gated integration markers were also registered-but-applied-to-nothing —
+`pytest -m ar_run_pi_rpc_smoke` selected 0 of 3402 tests, because `--strict-markers` rejects an
+*unknown* marker and says nothing about a registered one decorating nothing. All eight are applied
+now, selecting 15; two run in CI (`.github/workflows/integration-gated.yml`, with
+`--require-passed` so a self-skip cannot pass) and six run through
+`scripts/run-gated-integration.py` locally because they need a signed-in vendor CLI and four bill.
+Running them for the first time exposed two real bugs.
+
+**Enforcement topology (260731-EFA-L1, step list corrected by L2 — read this before touching a
+gate).** The local gate is one
 shared body, `.githooks/_gate.sh`, invoked in two tiers by two thin hooks. `pre-commit` runs the
 `fast` tier and certifies **the staged content**, isolating it with
 `git stash push --keep-index --include-untracked` behind traps that restore on success, failure,
 and Ctrl-C (and skipping isolation entirely when the tree already matches the index or a
 merge/rebase/cherry-pick/revert is in progress, where stashing would move the conflict resolution
-out of the tree git is about to commit from). `pre-push` runs the `full` tier: the generated-copy
-checks plus the whole wrapper. The fast tier is cheap on purpose, because `--no-verify` is
-all-or-nothing — a pre-commit expensive enough to be worth skipping costs Ruff and Pyright too,
-which is exactly how this repository ended up with a gate that never ran and 45 commits landed
-behind it. `.github/workflows/quality-checks.yml` runs the wrapper on **every branch push and every
+out of the tree git is about to commit from). The fast tier derives its own scope from
+`git ls-files` exactly as the wrapper does — it used to name `mcp/src/agents_remember` and
+`mcp/tests` by hand, which was *narrower than the gate it fronts*, so a broken
+`scripts/sync-skills.py` passed pre-commit and was rejected on push. Its steps are: the three
+generated-copy checks (skills, runtime assets, **harness trees**), Ruff — with **no
+`--extend-ignore`**, so the four complexity codes are enforced in the tier developers actually
+feel — **`ruff format --check`**, and Pyright. `pre-push` runs the
+`full` tier: the generated-copy checks plus the whole wrapper, which carries the changed-lines
+coverage floor; export `AR_GATE_DIFF_BASE` before pushing from a leaf branch cut from a series
+branch, because git cannot infer that fork point and the floor would otherwise ask you to cover the
+series' lines too. The fast tier is cheap on purpose, because
+`--no-verify` is all-or-nothing — a pre-commit expensive enough to be worth skipping costs Ruff and
+Pyright too, which is exactly how this repository ended up with a gate that never ran and 45
+commits landed behind it. `.github/workflows/quality-checks.yml` runs the wrapper on **every branch push and every
 pull request** across Python 3.11/3.12/3.13 alongside the `Dashboard frontend rail`, and both are
-required by the branch ruleset on `main`; it is also `workflow_call`-able, and
+required by the branch ruleset on `main`. It checks out with **`fetch-depth: 0`**, which is
+load-bearing rather than cosmetic: the changed-lines coverage floor diffs against a merge base, and
+a shallow clone has none to find — that would silently turn the strictest step of the gate into
+"compare against the empty tree". A second workflow, `.github/workflows/integration-gated.yml`,
+runs the two credential-free environment-gated integration paths on every push and pull request.
+`quality-checks.yml` is also `workflow_call`-able, and
 `publish-mcp-to-pypi.yml` calls it as `needs: [quality]` so a release tag pointing at a commit that
 never reached `main` is re-gated before anything is built or published. Worktree closeout runs the
 same wrapper before a code commit in **any** repository whose checkout carries it — the
@@ -471,11 +566,36 @@ GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generate
 
 ### Code Quality And Refactor Baseline
 
-The source checkout now explicitly tells agents to run Ruff, Pyright, and Radon after Python implementation work, then use the resolved memory layer's `system/tools.md` for exact validation commands and `system/coding-guidelines.md` for repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands.
+The source checkout tells agents to run **one command** after Python implementation work —
+`python -m agents_remember.code_quality.check` — and states that it takes no path arguments because
+its scope is `git ls-files '*.py'`. (It previously said "run Ruff, Pyright, and Radon"; 260731-EFA-L2
+replaced that, because two of the three named tools were not the gate and the third could not fail
+it.) The resolved memory layer's `system/tools.md` still holds exact command details and
+`system/coding-guidelines.md` the repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. The packaged and live code-quality report templates no longer offer `passed` as a Radon result: a tool that cannot fail must not be given a verdict vocabulary that says it did not.
 
-The current `pyproject.toml` makes Ruff responsible for import/style/static hygiene and Radon responsible for complexity scouting. Ruff ignores line-length wrapping, high-branch/high-return/high-statement complexity warnings, and numeric sentinel warnings that are better reviewed through Radon or code review. Test files have targeted ignores for unused patched-callable arguments and import-path setup. Radon is configured to show `B` through `F` cyclomatic complexity, visible complexity scores, total/average output, and maintainability-index pressure points while excluding generated, cache, virtualenv, build, dist, and test paths.
+The current `pyproject.toml` makes **Ruff responsible for complexity as well as hygiene**. `C901` is
+selected and `PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` are no longer ignored; all five are enforced by
+`ruff` directly rather than deferred to Radon, whose steps cannot fail, and **no baseline, ratchet or
+allowlist stands behind any of them**. Ruff still ignores line-length wrapping (`E501`, because the
+formatter owns wrapping) and numeric sentinels (`PLR2004`). The only `per-file-ignores` addition is
+`PLR0913` on `mcp/src/agents_remember/mcp/registration/*.py`, where a parameter list is the
+published MCP input schema rather than a call burden — held shut by an AST test that fails if the
+glob widens or a second `PLR0913` exemption appears. Test
+files keep targeted ignores for unused patched-callable arguments and import-path setup.
+`target-version` is `py311` — the supported floor, matching `requires-python`, which is what let
+seven PEP 695 `# noqa: UP040/UP046/UP047` suppressions be deleted. Pyright's `include` is now the
+whole checkout (`["."]`) instead of a second hand-written copy of the retired scope constant.
+`[tool.coverage.run] branch = true` and a full `[tool.pytest.ini_options]` block (strict markers and
+config, `python_classes` covering the `*Tests` house convention, `xfail_strict`, an exact-count
+`filterwarnings` ratchet, registered `AR_*` integration markers, and `testpaths` as the gate's single
+declaration of where the suite lives) are both the first of their kind in this repository. Radon's
+own configuration still shows `B` through `F` cyclomatic complexity, visible scores, total/average
+output, and maintainability-index pressure — but `tests/*` was removed from its exclusions, because
+Radon applies those patterns even to an explicitly named path and the entry was hiding the only E-
+and F-rank blocks in the tree. **Radon configuration shapes a report; it never decides what the gate
+certifies.**
 
-The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (30 by default) produces a failing result without a separate strict flag. The same repository-owned command is enforced by the **full** hook tier on pre-push, by worktree closeout before any code/memory/ledger/contract/applied-gate mutation, and by CI on every branch push and pull request. The **fast** pre-commit tier does not run it — it runs the generated-copy checks, Ruff, and Pyright over the staged content, deliberately cheap so nobody buys back the minutes with `--no-verify`. Closeout applies the gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
+The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (**20.0** by default, scored against branch coverage) produces a failing result without a separate strict flag, and so does any changed line the tests never reach (the 100% diff-coverage floor). The same repository-owned command is enforced by the **full** hook tier on pre-push, by worktree closeout before any code/memory/ledger/contract/applied-gate mutation, and by CI on every branch push and pull request. The **fast** pre-commit tier does not run it — it runs the generated-copy checks, Ruff, `ruff format --check`, and Pyright over the staged content, deliberately cheap so nobody buys back the minutes with `--no-verify`. Closeout applies the gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
 
 The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit tests, and diff whitespace checks after safe formatting and cleanup. It also found refactor pressure that should feed Phase 06 rather than be hidden by formatter churn: `parse_settings_block` in `coordination_context_resolver.py` was the highest-complexity function seen in the sweep, and provider lifecycle/setup plus worktree and benchmark modules remain large enough to need package-level analysis before code motion.
 
@@ -646,7 +766,9 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------------- |
 | The source checkout instructions distinguish this repository from the installed runtime, hand sibling-repo work to `ar-coordination/AGENTS.md`, keep `c-08-ar-coordination-context-resolver` skill plus `c-02-memory-quality-control` skill memory quality control as the context gate for this repo, and separate implementation approval from commit approval. | L1-L14; L28-L53; L84-L91 | [AGENTS.md](agents-remember/AGENTS.md) |
 | The installed runtime system template defines the hard start-of-task onboarding trust gate: resolve context, call `context_packet` when configured, run drift detection, classify update candidates versus dirty work-in-progress, ask whether to update candidates, rerun drift after updates, and never silently drop or ignore onboarding after drift detection. | L1-L48 | [system AGENTS template](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
-| The source checkout instructions route repo-specific code quality checks through resolved memory-layer `system/tools.md`, tell agents to run Ruff, Pyright, and Radon after Python implementation work, and use `system/coding-guidelines.md` when present. | L60-L62; L90-L96 | [AGENTS.md](agents-remember/AGENTS.md) |
+| The source checkout instructions name `python -m agents_remember.code_quality.check` as the gate, state that it takes no path arguments because its scope is `git ls-files '*.py'`, state that nothing in the gate is exempt and no baseline or allowlist may be added, say plainly that Radon does not enforce anything while remaining CRAP's complexity engine, and route the rest through resolved memory-layer `system/tools.md` and `system/coding-guidelines.md`. (`AGENTS.md` does *not* name the changed-lines coverage floor; `CONTRIBUTING.md` does.) | L148-L198 | [AGENTS.md](agents-remember/AGENTS.md) |
+| The nine harness configuration trees are generated from `scripts/harness/` and verified by `--check` in both hook tiers and in the suite; the classification of genuine per-harness requirements versus drift is recorded beside the generator. | n/a | [sync-harness.py](agents-remember/scripts/sync-harness.py); [scripts/harness/README.md](agents-remember/scripts/harness/README.md); [test_sync_harness.py](agents-remember/mcp/tests/test_sync_harness.py) |
+| The gate's scope is recomputed independently from `git ls-files` and asserted against the wrapper's real `ruff`/`pyright` argument vectors. Anything neither rail reaches fails the module, and **there is no allowlist to name it in** — the module docstring records that three empty shrink-only lists (`ALLOWED_UNGATED_PYTHON`, `ALLOWED_UNGATED_TYPESCRIPT`, `ALLOWED_UNTYPED_TYPESCRIPT`) stood there and were deleted, because an empty exemption list is a place to put the next offender. | n/a | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
 | The README now presents the public front door, a Core Features pitch, the generic quickstart, links to harness install pages, and a compact source/runtime layout.                                                                                                   | L1-L191            | [README.md](agents-remember/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages, and now includes `docs/features.md` as the concentrated product tour.                                                                                                   | L1-L46            | [docs/README.md](agents-remember/docs/README.md) |
 | The source checkout carries hidden harness starter packages whose hook, rule, context, or extension startup surfaces load the coordinator first-action directive and now require the `l-01` deep-research retrieval-strategy evidence tally; the Claude Code install page also documents the required copy from `.claude/mcp/mcp.json` to root `.mcp.json` for MCP detection. | README L95-L119; Claude install L18-L31; install README L1-L25; starter instruction files L1-L37 | [README.md](agents-remember/README.md); [docs/install/claude-code.md](agents-remember/docs/install/claude-code.md); [docs/install/README.md](agents-remember/docs/install/README.md); [.claude hook](agents-remember/.claude/hooks/agents-remember-session-start.md); [.codex hook](agents-remember/.codex/hooks/agents-remember-session-start.md); [.cursor hook](agents-remember/.cursor/hooks/agents-remember-session-start.md); [.cursor rule](agents-remember/.cursor/rules/agents-remember.mdc); [.agents GEMINI.md](agents-remember/.agents/GEMINI.md); [.github-vscode hook](agents-remember/.github-vscode/hooks/agents-remember-session-start.md); [.github-vscode instructions](agents-remember/.github-vscode/copilot-instructions.md); [.hermes HERMES.md](agents-remember/.hermes/HERMES.md); [.openclaw workspace AGENTS.md](agents-remember/.openclaw/workspace/AGENTS.md); [.pi extension](agents-remember/.pi/extensions/agents-remember-start.ts) |
@@ -659,7 +781,9 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" section | [CONTRIBUTING.md](agents-remember/CONTRIBUTING.md) |
 | MCP provider guidance requires Docker-wrapped provider backends instead of host-level services, live GrepAI memory roots, runtime artifacts under `providers/runners/grepai/`, PostgreSQL data under `providers/data/grepai/postgres/`, and `.grepai/` working directories treated as runtime artifacts rather than durable memory. | L79-L99 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The MCP settings example declares the external authority surface for repositories, provider ids, timeout caps, transcript roots, and package-derived provider runtime paths, replacing the removed coordinator `system/settings.json` provider template. | L1-L31 | [examples/mcp/settings.example.json](agents-remember/examples/mcp/settings.example.json) |
-| The repository quality configuration leaves Ruff on import/style/static hygiene, delegates branch/statement complexity pressure to Radon, gives tests targeted patched-callable/import-setup ignores, and configures Radon to report `B` through `F` complexity plus maintainability pressure. | L1-L39; L59-L68 | [pyproject.toml](agents-remember/pyproject.toml) |
+| The repository quality configuration selects `C901`, un-ignores `PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` with no baseline behind them, carves out only published MCP tool signatures via one AST-guarded `per-file-ignores` entry, pins `target-version` to the `py311` floor, widens Pyright's `include` to the whole checkout, enables branch coverage, adds the first `[tool.pytest.ini_options]` block (including the eight now-applied `AR_*` integration markers), and keeps Radon as report configuration only. | L1-L288 | [pyproject.toml](agents-remember/pyproject.toml) |
+| The binding coverage gate: a 100% floor on changed statements and branch arcs, scored from the same coverage report CRAP reads, naming every uncovered line. | n/a | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
+| One command per environment-gated integration path, with `--require-passed` reading pytest's JUnit report because a skipped test exits 0. | n/a | [run-gated-integration.py](agents-remember/scripts/run-gated-integration.py); [integration-gated.yml](agents-remember/.github/workflows/integration-gated.yml) |
 | The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
 
 HFX2-L21 advances the existing Dashboard frontend feature: the Chats session rail is now a
@@ -730,6 +854,35 @@ per-file task parsing. The repository's public capability, task, and dashboard s
 unchanged; ownership and failure containment are now explicit in their route overviews.
 
 ## Update History
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator (final state). **Retired every mid-leaf claim that
+  rested on the complexity baseline, which the developer's no-deferral ruling deleted**: the
+  Source-quality feature row's five-step list and threshold of 30, contract 1's shrink-only ratchet
+  with a 2026-10-31 burn-down, contract 4's "CRAP is statement-based until that reader is moved",
+  contract 5's shrink-only allowlists in `test_gate_scope.py` (all three were empty and were
+  deleted outright), the "two things deliberately not changed with named owners" paragraph
+  (`PLR0913` and the CRAP threshold were both paid instead), the fast tier's complexity-baseline
+  step, and the "prefer a ratchet with an owner" lesson — which is now the opposite rule. Added the
+  seventh contract: the 100% changed-lines coverage floor in `diff_coverage.py`, with the evidence
+  that rules out 80/85/90/95. Recorded CRAP at 20.0 against branch coverage with a report lacking
+  branch data refused, `PLR0913` armed at 5 args with the single AST-guarded tool-signature
+  carve-out, the eight now-applied integration markers with their CI and local runners, and CI's
+  load-bearing `fetch-depth: 0`. Verification metadata pinned to the leaf's reformat commit until
+  closeout stamps the code commit.
+
+- 2026-07-31T06:30+02:00 — 260731-EFA-L2 curator (mid-leaf): recorded gate honesty as six durable contracts
+  in the Hot Path Summary (baselined complexity rules, Radon reports but is CRAP's engine, branch
+  coverage with its honest caveat, `git ls-files`-derived scope, and the nine generated harness
+  trees), plus the two deliberately-open items with named owners (`PLR0913`, the CRAP threshold).
+  **Retired falsified claims:** the Source-quality feature row's "wrapper for Ruff, Radon, pytest
+  coverage, and CRAP"; "the current `pyproject.toml` makes … Radon responsible for complexity
+  scouting" and its "better reviewed through Radon" ignore rationale; "run Ruff, Pyright, and
+  Radon after Python implementation work" in both the prose and the lessons list; the lesson
+  "Radon owns complexity scouting"; and the fast-tier step list, which now includes the formatter,
+  the complexity baseline, the harness generated-copy check, and its own `git ls-files` derivation.
+  Added a Self-hosted harness configuration feature row and four new lessons (unselected limits,
+  ratchets with owners, deferral to non-enforcing tools, derive-never-enumerate scope).
+  Verification metadata pinned to the leaf's reformat commit until closeout stamps the code commit.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: refreshed the repository spine for the
   enforcement-first leaf. Recorded the enforcement topology as the durable home for the
@@ -1536,7 +1689,7 @@ Repository onboarding now records spawned-unbriefed → harness-ready → briefe
 
 ## Build & Dev
 
-- Source-checkout Python implementation work should run Ruff, Pyright, and Radon from the `agents-remember/` root; exact command details belong in the resolved memory layer's `system/tools.md`.
+- Source-checkout Python implementation work should run `python -m agents_remember.code_quality.check` from the `agents-remember/` root — one command, no path arguments, scope derived from `git ls-files '*.py'`. (Superseded 2026-07-31 by 260731-EFA-L2: this line used to read "run Ruff, Pyright, and Radon", which named two tools that are not the gate and one that cannot fail it.) Exact command details belong in the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
 
@@ -1565,7 +1718,11 @@ Repository onboarding now records spawned-unbriefed → harness-ready → briefe
 - Repo entity catalogs use deterministic `git-blob-set-v1` fingerprints over curated load-bearing evidence files so `c-02-memory-quality-control` skill can flag stale entity memory without semantic guessing.
 - The package-owned runtime `AGENTS.md` template set is currently `coordinator`, `skills`, `system`, and `tasks`; memory repos use `system/*` files rather than a root-level `AGENTS.md`.
 - Runtime, provider, benchmark, route-index, memory quality, memory, worktree, and skill-install behavior belongs in MCP package modules; the source checkout no longer keeps parallel `installer/`, top-level `scripts/`, `runtime/scripts/`, skill-local `scripts/`, `_shared`, or skill-local `tests` execution routes.
-- Ruff owns source hygiene and Radon owns complexity scouting for this repository; high-complexity results should feed refactor planning and coding-guideline updates rather than being buried through broad local suppressions.
+- **Ruff owns complexity enforcement as well as hygiene; Radon only scouts.** (Superseded 2026-07-31 by 260731-EFA-L2: this line used to say Radon owned complexity scouting, which was read as a reason to ignore three Ruff complexity rules — deferring enforcement to a tool that exits 0 whatever it finds.) `C901`, `PLR0911`, `PLR0912`, `PLR0915` and `PLR0913` are enforced by `ruff` directly with no baseline behind them; Radon's findings feed refactor planning and must never be recorded as a pass.
+- **A configured limit whose rule is unselected is not a limit, and a rule ignored in deference to a tool that cannot enforce is not delegation.** Both patterns were individually invisible and collectively hollowed out this gate. When a suppression cites another tool, check that the other tool can fail.
+- **Ratchets, baselines, grandfather lists and burn-down schedules are forbidden in this repository's gates — fix the finding instead.** (Developer ruling, 2026-07-31, overruling this leaf's own plan.) 260731-EFA-L2 built the well-shaped version of that idea — a `quality/complexity-baseline.txt` failing in *both* directions, with an auto-tightening cap, a named owner and a dated burn-down — and then deleted it along with three empty allowlists in `test_gate_scope.py`. The reasoning is that **an exemption list, even an empty one, is a place to put the next offender**; all 67 complexity findings, 274 of 293 long signatures and all 46 CRAP offenders were paid instead. The one surviving carve-out (`PLR0913` on published MCP tool signatures) is a category the coding standard already exempts, is scoped by path rather than by entry, and is held shut by an AST test that fails if it widens.
+- **A budget that scales with the size of the change is backwards.** A coverage floor below 100% lets `floor((1-X) * N)` untested units in per change, so the bigger the change the more untested code it buys. The same shape shows up in every "percentage" gate; prefer the form where a 3-line change and a 300-line change mean the same thing.
+- **Derive scope from the tree, never enumerate it.** Every hand-written scope constant in this repository had fallen behind: the wrapper's, the pre-commit hook's, and Pyright's `include`, each silently narrower than the last. `git ls-files` plus a test that asserts the *real* argument vectors reach every tracked path is what makes "the gate covers everything" a fact rather than an intention.
 - Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
 - Provider runtime artifacts are not durable memory or source data: GrepAI config/state/cache/home files belong under `providers/runners/grepai/`, GrepAI per-root `.grepai/` working directories are git-ignored runtime artifacts, CGC runtime files belong under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable provider database data belongs under `providers/data/`, and MCP/provider operator logs belong under `logs/`.
 

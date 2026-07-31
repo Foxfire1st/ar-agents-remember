@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/compose_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T17:27+02:00                     |
-| lastVerifiedCommitHash | `44012225994debc1bd7e196f87dc5fc314943f4e` |
-| lastVerifiedCommitDate | 2026-06-08T09:05:36+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -21,6 +21,15 @@ lifecycle modules. It keeps the stable Compose assets package-owned while
 feeding dynamic override YAML to Compose through stdin.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Backend Start Reconciliation
+
+**`BackendStartReconciliation(network, migration=None, forced_remove=None)`** names what a backend
+start already did to the host before bringing a container up. Every managed provider start
+reconciles the host first: it adopts the compose-owned network, migrates containers and networks
+left behind by an unmanaged project, and force-removes a container whose data mount no longer
+matches the layout. All three land together in the start result's `network`/`commands` payload, so
+they travel together. Both the CGC and GrepAI backend lifecycles import it.
 
 ### Logic
 
@@ -77,11 +86,11 @@ resolved `system/sources.md` currently contains no entries.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | L41-L67 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | L81-L125 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | L135-L144 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L134-L176; L225-L262 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | L160-L203 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | L58-L83 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | L98-L141 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | L151-L160 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L151-L189; L239-L276 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | L174-L215 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
 
 ## Cross-Repo References
 
@@ -93,6 +102,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `BackendStartReconciliation` so the CGC and GrepAI backend starts report host
+  reconciliation as one value. Additive; emitted payloads are unchanged. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-06-06T17:27+02:00 — Updated after `host_user()` switched to `getattr()` plus `callable()` checks so Windows/Pyright does not treat POSIX-only `os.getuid` and `os.getgid` as required attributes.
 - 2026-05-31T12:30+02:00 — Documented new `host_user()`/`host_user_block()` helpers that render an optional `user: uid:gid` line so provider containers run as the host user (1.0.0 review remediation).
 - 2026-05-28T14:21:08+02:00: Updated after Compose rendering began rejecting

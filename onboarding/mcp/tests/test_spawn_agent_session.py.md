@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ through expectation creation without changing settings-resolved launch provenanc
 
 ### Logic
 
-**260707-HFX2-L15 coverage.** The spawn composition now proves worker/manager/curator settings tiers
+**260707-HFX2-L14 coverage.** The spawn composition now proves worker/manager/curator settings tiers
 reach distinct argv, resolved knobs and the unique id/log binding persist on the response/catalog,
 and missing log evidence fails without screen fallback. `replacementForLeaf` is recorded for an
 unbound replacement and feeds expectations without claiming the occupied leaf. Session commands
@@ -73,7 +73,11 @@ exercise the same id-bearing log-confirmed path.
 
 `SpawnAgentSessionTests` drives `spawn_agent_session_payload` with a `_FakeHost` (records `ensure`
 calls + the seeded `env`), a `_FakePaster` (records paste calls + returns a scripted
-delivered/submitted `PasteResult`), a `_detected` `which`, and a fixed `session_id`. The cases pin the
+delivered/submitted `PasteResult`), a `_detected` `which`, and a fixed `session_id`. Every suite in
+this file reaches the builder through the module-level `call_spawn(config, **flat)` shim:
+`spawn_agent_session_payload` takes four parameter objects (`SpawnSeat`, `RetiredSpawnInputs`,
+`SpawnedBy`, `SpawnOverrides`), and `call_spawn` fans the flat kwargs the tests are written in into
+them, asserting loudly on any kwarg it does not recognise. The cases pin the
 L2 contracts:
 
 - **spawn + submit** (`test_spawns_and_delivers_context_with_submit`): the payload is `ok`/`spawned`,
@@ -139,8 +143,9 @@ command + keyword-bearing brief and full provenance.
   `spawned_by_lifecycle`, the spawn defaults it to the active ambient lifecycle id (installed over a temp
   `EventStore`).
 
-`TerminalPasteEndpointTests` builds the app with `create_app(..., terminal_host=fake,
-terminal_catalog=…, terminal_paster=fake)` and drives `POST /api/terminal/{session}/paste` through
+`TerminalPasteEndpointTests` builds the app with `create_app(config,
+cadence=ProjectionCadence(interval=100), collaborators=ServingCollaborators(terminal_host=fake,
+terminal_catalog=…, terminal_paster=fake))` and drives `POST /api/terminal/{session}/paste` through
 `TestClient`: a known running session delivers+submits (200), an unknown session is `404`
 `unknown-session` with no paste attempted, and — 260707-HFX-L3 — an unconfirmed paste ships the
 pane `capture` in the body while a delivered one omits it.
@@ -149,8 +154,10 @@ pane `capture` in the body while a delivered one omits it.
 
 `unittest` + `tempfile` + the `sys.path` insertion idiom. `reset_ambient()` in setUp/tearDown keeps the
 process-singleton lifecycle isolated between tests. The fakes duck-type `TerminalHost` /
-`TerminalPaster` and are passed through the tool's injectable `host`/`paster`/`which`/`session_id`
-seams (or `create_app`'s injectable params for the endpoint).
+`TerminalPaster` — `_FakeHost.ensure(sid, spec)` takes one `TerminalSessionSpec` and reads
+`tmux_name_for(sid)`, `cwd`, `command`, `env`, `lifecycle_id`, and `suspend_unsafe` off it — and are
+passed through the tool's injectable `host`/`paster`/`which`/`session_id`
+seams (or `create_app`'s `cadence`/`collaborators` params for the endpoint).
 
 ### Invariants And Boundaries
 
@@ -171,7 +178,7 @@ No relevant external/domain documentation found; the behavior is local MCP/servi
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The tests pin the local agent-facing dispatch composition, not an external protocol. | L116-L273 | [test_spawn_agent_session.py](agents-remember/mcp/tests/test_spawn_agent_session.py) |
+| The tests pin the local agent-facing dispatch composition, not an external protocol. | L160-L307 | [test_spawn_agent_session.py](agents-remember/mcp/tests/test_spawn_agent_session.py) |
 
 ## Repo-Internal References
 
@@ -210,6 +217,15 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: `spawn_agent_session_payload` now takes the
+  `SpawnSeat`, `RetiredSpawnInputs`, `SpawnedBy`, and `SpawnOverrides` parameter objects, so every
+  suite calls it through the new module-level `call_spawn(config, **flat)` shim; `_FakeHost.ensure`
+  now receives one `TerminalSessionSpec`; and the endpoint fixture builds the app as
+  `create_app(config, cadence=ProjectionCadence(interval=100),
+  collaborators=ServingCollaborators(...))`.
+  Rewrote the `SpawnAgentSessionTests` lead-in, the Conventions fakes sentence, and the
+  `TerminalPasteEndpointTests` call shape, and moved the self-citation from L116-L273 to L160-L307
+  after re-reading the file at the shifted lines.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented complete native role fixtures,
   typed runner selection, structural fail-loud behavior, provenance-only env, no synthesized

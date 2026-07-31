@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -17,6 +17,19 @@ records-and-store layer and the `gate_*` payload builders (slice 6a), plus the
 closeout-gate enforcement policy and its wiring (slice 6b).
 
 ## Code Commentary
+
+The record and payload entry points are addressed through parameter objects: `create_gate` takes the
+kind positionally plus `anchor=GateAnchor(lifecycle_id=…, enclosure=…)` and
+`request=GateRequest(packet=…, evidence_refs=…)`; `decide_gate` and every `gate_decide*` builder take
+`GateVerdict(decision=…, by=…, via=…, note=…, deciding_role=…)`; `lifecycle_gate_payload` takes a
+`GateRaise(kind=…, anchor=…, request=…, ask=…)`; and every waiting builder takes
+`GateWait(block=…, timeout_seconds=…, poll_seconds=…, sleep=…, monotonic=…)`, whose `block=False` is
+the raise-and-continue mode this card calls `wait=false`. The supporting fixtures moved the same way:
+inbox rows are seeded with `create_operator_inbox_entry(InboxMessage(…),
+routing=InboxRouting(address=InboxAddress(…)), poster=InboxPoster(…))`, the ambient lifecycle is
+installed as `AmbientLifecycle(events, timing=AmbientTiming(heartbeat_seconds=3600))`, and the
+projection assertion calls `project_workspace(logs, structure=WorkspaceStructure(enclosures=[],
+providers=[]), now=…, given=AnalyticalInputs(gates=…))`.
 
 `GateRecordTests` covers `create_gate` / `decide_gate` purity (same id, new ts,
 original snapshot untouched) and the `schema`-alias wire round-trip
@@ -47,7 +60,15 @@ non-enforcement gates are deleted after `gate_response_wait` returns their termi
 attribution preserved, source snapshot untouched). `EvaluateCloseoutGateTests`
 exercises every branch of the pure `evaluate_closeout_gate` policy (gateless
 permits, non-closeout kinds ignored, open/rejected/applied block,
-developer-approved permits, **model-approved blocks**, latest gate governs).
+developer-approved permits, **model-approved blocks**, latest gate governs). Its
+`_closeout_gate` fixture now takes one `decision: Decider` instead of loose
+`by`/`via`/`deciding_role`/`note`/`evidence_refs` keywords: `Decider` is a test-local frozen
+dataclass holding who decides and what they attach, with `verdict(verb)` assembling the production
+`GateVerdict` around the verb under test. The named deciders keep the policy's actor/surface/role
+triple from being respelled per case — `BY_DEVELOPER`, `BY_MODEL`, `BY_MANAGER` (orchestration
+surface + manager role + a non-owning actor) and `BY_OWNING_MANAGER` (the gate's own
+`OWNER_LIFECYCLE` claiming the manager role, i.e. self-approval) — and `dataclasses.replace` varies
+one field for the reviewer-verdict and rejection-note cases.
 `CloseoutEnforcementHelperTests` drives `closeout.py`'s `_enforce_closeout_gate` /
 `_mark_closeout_gate_applied` / `_closeout_gate_payload` over a temp `GateStore`
 rooted at a stub contract's `coordination_root`.
@@ -85,10 +106,26 @@ attribute: `worktree_integrate_tool` reads `config.retirement.auto_land_on_integ
 unconditionally on a successful non-dry-run integrate, so without this the fake would raise
 `AttributeError` the moment the new auto-land branch is reached; setting it `False` keeps the
 landing hook orthogonal to this test's gate-policy-plumbing focus and disabled against the
-fake's unattached contract. Cycle 7 adds three layers on the enclosure address: SeamChannelTests proves an enclosure-less/blank wait=false raise refuses BEFORE mutation (no orphan gate, sibling not expired) and that a raised gate carries its address; HandoverEnforcementHelperTests covers the pure `unmatched_handover_gate_warning` (foreign-enclosure open gate warns with gateId+enclosure, no-handover-gates and matched/decided cases stay silent); and `IntegrateDryRunGuardTests` drives `integrate_result(dry_run=true)` with the git steps mocked over a REAL cross-lifecycle store, asserting the preview carries `handover_gate` (permitted/gateId/reason), names `handover-gate-blocked` in the summary when the real run would refuse, carries the unmatched-gate warning, and never calls `write_contract`.
+fake's unattached contract. Cycle 7 adds three layers on the enclosure address: SeamChannelTests proves an enclosure-less/blank wait=false raise refuses BEFORE mutation (no orphan gate, sibling not expired) and that a raised gate carries its address; HandoverEnforcementHelperTests covers the pure `unmatched_handover_gate_warning` (foreign-enclosure open gate warns with gateId+enclosure, no-handover-gates and matched/decided cases stay silent); and `IntegrateDryRunGuardTests` drives `integrate_result(dry_run=true)` with the git steps mocked over a REAL cross-lifecycle store, asserting the preview carries `handover_gate` (permitted/gateId/reason), names `handover-gate-blocked` in the summary when the real run would refuse, carries the unmatched-gate warning, and never calls `write_contract`; its mocked `_integration_replay_requirements` now returns an `IntegrationSources(current_code_source=…, current_memory_source=…, code_replay_required=…, memory_replay_required=…)` object rather than a bare four-tuple.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the whole gate substrate moved its
+  loose arguments into parameter objects, so this suite now calls `create_gate` with `GateAnchor`
+  + `GateRequest`, `decide_gate` and every `gate_decide*` builder with `GateVerdict`,
+  `lifecycle_gate_payload` with `GateRaise`, and every waiting builder with `GateWait` — whose
+  `block=False` is the raise-and-continue mode this card had been calling `wait=false` as a
+  keyword. Added a Code Commentary paragraph naming those shapes plus the moved fixture calls
+  (`create_operator_inbox_entry` through
+  `InboxMessage`/`InboxRouting`/`InboxAddress`/`InboxPoster`, `AmbientLifecycle` through
+  `AmbientTiming`, `project_workspace` through `WorkspaceStructure` and `AnalyticalInputs`).
+  Documented the new test-local `Decider` frozen dataclass and its `BY_DEVELOPER` / `BY_MODEL` /
+  `BY_MANAGER` / `BY_OWNING_MANAGER` constants, which replaced `_closeout_gate`'s loose
+  `by`/`via`/`deciding_role`/`note`/`evidence_refs` keywords, and recorded that
+  `IntegrateDryRunGuardTests` now mocks `_integration_replay_requirements` to an
+  `IntegrationSources` object instead of a four-tuple. No test case was added, removed, or
+  renamed, and the closeout-policy branches, the seam refusals, and the handover-guard assertions
+  are unchanged.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: updated the handover fake-config
   note from `auto_retire_on_integration` to `auto_land_on_integration`; the hook remains disabled
   so gate-policy plumbing tests stay focused. Verification metadata pinned until closeout stamps

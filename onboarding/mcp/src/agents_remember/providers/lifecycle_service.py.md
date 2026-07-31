@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T19:16+02:00                     |
-| lastVerifiedCommitHash | `2e2117a194ab1576c860dbca39b6acff0d1c20fa` |
-| lastVerifiedCommitDate | 2026-05-26T14:55:50+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -17,6 +17,16 @@ callers. It lets MCP controllers run provider operations from trusted lifecycle
 settings without building CLI `argv` or invoking `lifecycle.main()`.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Typed Request Object
+
+`run_cgc_lifecycle(service_config, request)` takes the frozen
+**`CgcLifecycleRequest(action, repo_id=None, native_args=(), port=8000, context=None)`**. The
+action and its inputs are only meaningful together: `native_args` carry a `run` query, while
+`port`/`context` carry where a `visualize` server binds and which graph it serves. `native_args` is
+a tuple because the request is frozen, and is expanded with `list(request.native_args)` at the CLI
+boundary. The allowed-action check (`run`, `visualize`, `refresh-all`) and its `ValueError` are
+unchanged.
 
 ### Logic
 
@@ -53,6 +63,10 @@ structured `ok: false` payloads for MCP callers.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `run_cgc_lifecycle` was re-signed from five keywords to `(service_config, request:
+  CgcLifecycleRequest)`. The supported actions, the refusal and the returned payload are unchanged.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-05-26T12:51+02:00: Updated after removing the CGC provider Python executable from the typed service config.
 - 2026-05-25T19:16+02:00: Updated after the `provider_lifecycle.py` compatibility shim was deleted and service imports wired to `providers.lifecycle` directly.
 - 2026-05-23T20:56+02:00: Created for F-04 so MCP provider tools call a typed lifecycle service instead of the provider lifecycle CLI main.

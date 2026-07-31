@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/skills.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T12:28+02:00|
-| lastVerifiedCommitHash | `11f28a2035f06f8bc33f11b0617b41cda1122c1f` |
-| lastVerifiedCommitDate | 2026-06-06T13:01:33+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -16,6 +16,20 @@
 packaged Agents Remember skills into the configured harness skill root.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Skills Install Request
+
+**`SkillsInstallRequest(install_root, dry_run=False, overwrite=False, archive_existing=False)`**
+is what one skills install is asked to do: where the packaged skills land, whether it writes at
+all, and how it treats a skill directory that is already there. **The collision rule rides with
+the destination** because every per-skill copy has to consult both.
+
+`request.validated()` replaces the old `_validate_install_skills_args` helper and raises the same
+two `ValueError`s — a non-absolute `install_root`, and `overwrite` together with
+`archive_existing` (mutually exclusive). `install_skills(*, install_root, dry_run=False,
+overwrite=False, archive_existing=False)` keeps its fully keyword-only public signature and builds
+the validated request internally; `_copy_skill_tree(request, summary, *, source, destination)`
+takes it. `dry_run` still defaults to `False` (act-by-default).
 
 ### Logic
 
@@ -50,6 +64,10 @@ symlink installs can be migrated to the copy.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `_validate_install_skills_args` became `SkillsInstallRequest.validated()`, and
+  `_copy_skill_tree` was re-signed onto the request. `install_skills`'s public signature and both
+  refusals are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-06T12:28+02:00: Corrected the MCP payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-06-02T04:40+02:00: Simplified to a single flat copy — dropped the `layout` param, the `tree` branch, and the `agents-remember` namespace now that the packaged skills tree is flat (U-01-core-skills dissolved). `install_skills` copies each skill by frontmatter name; callers + the `skills_install` tool dropped `layout`. `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
 - 2026-05-29T18:35+02:00: Added `sys.platform` narrowing in `_is_link` for the Windows-only `st_file_attributes` and extracted `_validate_install_skills_args` from `install_skills`; behavior-preserving (commits `0549b28`, `e3dab63`).

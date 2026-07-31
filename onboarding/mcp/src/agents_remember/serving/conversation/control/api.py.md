@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,22 +28,22 @@ refusal path (L0 reviewer obligation O4).
 
 ### Logic
 
-The `router` (L57) mounts at `/api/terminal/{ar_session_id}` with the structured-control tag. The
-seventeen routes: interrupt (L129), interrupt-status (L156), interrupt-reconcile (L184) [R1];
-`GET /operation-queue` (L212), withdraw (L234), withdraw-status (L262), withdraw-reconcile (L288),
-`GET .../pending-withdrawal-recoveries` (L314), withdraw-recovery (L336), withdraw-recovery-ack
-(L360) [R2/R3]; attachments (L385), attachments/rebind (L429), `GET .../attachments/{request_id}/
-status` (L459), attachments/{request_id}/reconcile (L484), submit (L509) [R4]; `GET .../conversation/
-policy` (L548) [R5]; `GET .../conversation/telemetry` (L570) [R6]. Each handler invokes the two L0
+The `router` (L58-L61) mounts at `/api/terminal/{ar_session_id}` with the structured-control tag. The
+seventeen routes: interrupt (L131), interrupt-status (L160), interrupt-reconcile (L190) [R1];
+`GET /operation-queue` (L220), withdraw (L242), withdraw-status (L272), withdraw-reconcile (L300),
+`GET .../pending-withdrawal-recoveries` (L328), withdraw-recovery (L352), withdraw-recovery-ack
+(L378) [R2/R3]; attachments (L420), attachments/rebind (L465), `GET .../attachments/{request_id}/
+status` (L497), attachments/{request_id}/reconcile (L524), submit (L551) [R4]; `GET .../conversation/
+policy` (L590) [R5]; `GET .../conversation/telemetry` (L612) [R6]. Each handler invokes the two L0
 dependencies (`get_conversation_runtime`, `resolve_conversation_authorization`), gets the per-app
 service via `conversation_control_service`, and delegates to the owning module (operations,
-withdrawals, attachments, policy, telemetry, queue_projection). `_map_typed_error` (L105) maps the
+withdrawals, attachments, policy, telemetry, queue_projection). `_map_typed_error` (L107) maps the
 `_TYPED_ERRORS` tuple (L61 — AuthorityError, ConversationCompositionError,
 HarnessBridgeEpochMismatchError, HarnessControlError, ControlRefError, ControlOperationError,
-SessionResolutionError) to the serving status idiom via `_error` (L98); `_dump` (L125) serializes
-wire models. Multipart staging parses through `_parse_uploads` (L592), `_parse_metadata_array`
-(L608), and `_upload_for` (L626) with the `MAX_SUBMIT_ASSET_BYTES` bounded read. The request bodies
-`InterruptBody`/`WithdrawStatusBody`/`RecoveryFetchBody`/`RecoveryAckBody`/`RebindBody` (L74-L93) are
+SessionResolutionError) to the serving status idiom via `_error` (L100); `_dump` (L127) serializes
+wire models. Multipart staging parses through `_parse_uploads` (L634-L645), `_parse_metadata_array`
+(L648), and `_upload_for` (L662-L683) with the `MAX_SUBMIT_ASSET_BYTES` bounded read. The request bodies
+`InterruptBody`/`WithdrawStatusBody`/`RecoveryFetchBody`/`RecoveryAckBody`/`RebindBody` (L76-L95) are
 strict wire models.
 
 ### Conventions
@@ -84,8 +84,9 @@ foundation suite pins the exact seventeen routes.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The owning modules each route delegates to (operations/queue/withdrawals/attachments/policy/telemetry). | L87-L570 | [operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
-| Operation, queue, withdrawal, recovery, attachment, policy, and telemetry wire products. | L786-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. | L95-L201; L552-L564 | [operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
+| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). | L811-L1242 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | L36-L101 | [policy.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/policy.py) |
 | The two L0 request dependencies every handler consumes. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The foundation regression pins the exact seventeen owned routes (GET-only on policy/telemetry/queue/pending). | L54-L82 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 
@@ -97,8 +98,42 @@ No meaningful cross-repo boundary exists for this local route surface.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+**`StageAttachmentsForm`** replaces the loose multipart parameters of the attachment-staging route:
+the request id, the metadata array and the uploaded assets are one upload — the metadata is
+positionally matched against the assets, and both are only meaningful under the request id that
+makes the staging idempotent. It is a `BaseModel` with `populate_by_name`, so `requestId` stays the
+wire name.
+
+Every route in this module now builds one `ControlRequest(service=conversation_control_service(
+runtime), authorization=…, ar_session_id=…, expected_bridge_epoch=…)` and passes it to the control
+layer, instead of repeating the same four arguments at each call. See
+[service.py](service.py.md) for why the four are one scope (and why `ControlScope` — the same
+request narrowed to the *verified* epoch — is a separate type). The paths, payloads and status
+codes are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations. `router` cited
+  the single line L59; the `APIRouter(...)` construct with its prefix and tag is L58-L61. The two
+  multipart helpers moved to the end of the module behind the route block: `_parse_uploads` L592 →
+  L634-L645 and `_upload_for` L626 → L662-L683 (`_parse_metadata_array` L648 was already correct,
+  as were all seventeen route line numbers).
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations and rewrote
+  both claims. The `operations.py` row cited L87-L570 against a 564-line file and claimed six owning
+  modules while linking only one; `operations.py` is the interrupt ledger alone, so the claim now
+  names its actual public surface — `interrupt` (L95-L156), `interrupt_status` (L159-L201) and
+  `interrupt_http_status` (L552-L561) with `__all__` on L564 — cited L95-L201; L552-L564. The
+  `models.py` row cited L786-L1250 and listed "policy" among the wire products, but no policy model
+  lives in `models.py`; the control wire block is now L811-L1242 (`OpenConversationOperation`
+  through `ConversationTelemetry`, stopping before `RuntimeFixtureObservation`) and "policy" was
+  dropped from that claim. Added one row pointing the policy products at their real home,
+  `control/policy.py` L36-L101 (`PolicyPart`, `ConversationPolicyProjection`,
+  `conversation_policy`).
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `StageAttachmentsForm` as the one multipart staging body (wire alias `requestId` preserved).
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: replaced the behavior-empty route-shell
   description with the filled reality — the seventeen registered production routes, per-handler L0
   dependency + live-epoch verification, O4 typed-error mapping across the `_TYPED_ERRORS` tuple, and

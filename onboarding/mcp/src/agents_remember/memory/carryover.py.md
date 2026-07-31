@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/memory/carryover.py`                |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-07-18T20:03+02:00                                      |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b`                  |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                                      |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                  |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -27,6 +27,25 @@ The service compares base, source, and official code/memory states; classifies f
 overview, memory-only-doc, and entity-catalog candidates; and applies only proven or explicitly
 selected changes. It preserves the existing exact-landed-commit, review-required, ledger mapping,
 entity fingerprint validation, guarded route-index refresh, and ff-only memory-main advance rules.
+
+**Three frozen parameter objects (260731-EFA-L2)** carry the comparison frame and the ledger handle
+that were previously spread across long keyword lists:
+
+- **`CarryoverRefs(code_repository_root, official_ref, source_ref, old_base, official_memory,
+  source_memory)`** — the two states of the world a carryover compares and the base they diverged
+  from. Every candidate builder judges one path against exactly this pair of sides, and the pair is
+  **constant for a whole plan**, so it is built once in `build_plan_for_request` and passed down.
+  That is the point: candidates from two different plans can no longer be assembled against
+  mismatched refs. `candidate_for_path(refs, source_path, *, replace_existing)` and
+  `memory_only_doc_candidates(refs, *, existing)` both take it.
+- **`MemoryOnlyDoc(branch_doc, official_file, rel, source_path)`** — one onboarding doc that changed
+  only in branch memory: the branch copy, its official counterpart, its path relative to the
+  onboarding root, and the source path it documents. `_memory_only_evidence(refs, doc, mem_base)`
+  takes the refs frame plus one of these.
+- **`OfficialLedger(ledger, path, memory_root, commit_message)`** — the official ledger as carryover
+  writes it. A ledger without its file path and its memory tree cannot be persisted, so they are
+  one handle. `_nothing_to_carry_result(plan, official_ledger, *, cleaned_note, carried,
+  official_head)` takes it.
 
 MX-FIX-4 adds a write-authority preflight at the start of apply. Immediately after plan creation and
 cleanliness proof, `required_official_storage(official_memory)` must return effective official-
@@ -89,6 +108,14 @@ authorization implementation remains package-local.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `CarryoverRefs`, `MemoryOnlyDoc` and `OfficialLedger` parameter objects and
+  re-signed `candidate_for_path`, `memory_only_doc_candidates`, `_memory_only_evidence` and
+  `_nothing_to_carry_result` onto them. `build_plan_for_request` now builds one `CarryoverRefs` and
+  passes it to both candidate builders, so a plan's comparison frame is constructed once instead of
+  re-listed per call. Evidence tiers, decisions, reasons, the ledger-mapped-head path and the
+  emitted plan/apply payloads are all unchanged. Verification metadata pinned until closeout stamps
+  the L2 commit.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: apply now requires effective official-memory storage
   authority before mutation, reuses it for route-index refresh, and scrubs ambient Git selectors.
 - 2026-06-11T15:05+02:00 — Documented `memory-only-doc` and `entity-catalog` candidate kinds,

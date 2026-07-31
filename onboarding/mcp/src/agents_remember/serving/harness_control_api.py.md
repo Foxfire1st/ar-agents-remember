@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -115,7 +115,7 @@ boundaries rather than duplicating their policy.
 | The client implements exact-session advertise/set, first-byte ambiguity, whole-message submit, and reconciliation. | L58-L156; L205-L337 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | Public serializers deliberately omit the internal raw evidence mapping. | L251-L296 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The app registers these routes, passes `config.coordination_root` for the runtime scope, and feeds complete launch selection into the one shared opener. | L946-L1049; L1339-L1349 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | L103-L252 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
+| Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | L129-L147; L154-L159; L171-L313; L482-L518; L677-L725 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
 | The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | L22-L32 | [conversation/router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The immutable runtime authority and scope types this registration constructs. | L47-L101 | [conversation/runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
 | The server-resolved local-operator resolver bound into the runtime. | L69-L105 | [conversation/authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
@@ -153,8 +153,44 @@ serialization the validated client's `_snapshot` parser reads back.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+Route registration was regrouped and the repeated per-route boilerplate was named. The registered
+paths, payloads and status codes are unchanged.
+
+`register_harness_control_routes(app, runtime)` now delegates to three registrars, each stating what
+it owns: `_register_capability_routes` (what a harness can do and how it is currently set:
+advertise, read, live set), `_register_submission_routes` (the submission authority's public
+surface: its epoch, its ledger, and writes against it) and `_register_interaction_routes` (answering
+a vendor's own question, with no lifecycle required anywhere).
+
+The shared spine of every control route is now explicit:
+
+- `control_entry(session)` (a `ControlEntryResolver`) — resolve one seat to its live catalog row,
+  **or to the response that refuses the request**.
+- `_control_route(...)` — run one control route: resolve the exact seat, make the one bridge call,
+  answer for any failure.
+- `_ok(content)` — the 200 every successful control route returns, so each route names only its
+  payload.
+- Failure responders, one per class: `_control_failure_response` (the default — a stale epoch is the
+  caller's fault, anything else ours), `_submit_failure_response` (answer a failed cockpit submit by
+  what the failure proves about delivery) and `_interaction_failure_response` (interaction answering
+  adds one refusal no other control route can produce).
+- `_answer_interaction(...)` — answer one pending vendor interaction on an exact seat and report the
+  resulting snapshot.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
+  `mcp/tests/test_serving_harness_control_api.py`. The five properties the claim names are no longer
+  one contiguous block (the file has grown to 894 lines), so L103-L252 was replaced with the exact
+  tests: refresh at L129-L147 and L154-L159, honest set results plus exact submit correlation plus
+  raw-free authority/status/withdraw at L171-L313, reconcile correlation at L482-L518, and
+  liveness-before-support ordering
+  (`test_status_order_is_unknown_or_dead_then_live_unsupported_then_native`) at L677-L725.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the three route registrars and the shared `control_entry` / `_control_route` / `_ok` / per-class failure-responder spine; wire contract unchanged.
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `pendingInteractions` list on
   the snapshot route (multiplexed sub-agent pendings, review R6) in Logic and Invariants; the
   singular `pendingInteraction` contract is unchanged. Verification metadata stays pinned to the

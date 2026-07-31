@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-18T20:03+02:00                     |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ Git isolation directly.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Production owns the eight-selector inventory and scrubbed Git environment. | L9-L42 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| Route-index tests independently contaminate each selector and require identical output. | L595-L644 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| Route-index tests independently contaminate each selector and require identical output. | L592-L640 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
 | Worktree fixtures create and commit temporary code/memory repositories. | fixture setup | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 ## Cross-Repo References
@@ -77,6 +77,11 @@ No sibling repository defines the pytest bootstrap contract.
 
 ## Update History
 
+- 2026-07-31T21:45+02:00 — 260731-EFA-L2 curator: re-derived the `test_route_index.py` citation
+  after the leaf's whole-tree `ruff format` moved it (L595-L644 → L592-L640), verified by reading
+  both ends back. The leaf also deleted a stray `# Reopen drill marker (L13): …` comment left in
+  this conftest by earlier drill scaffolding; it was referenced nowhere and carried no behaviour,
+  so no claim in this sidecar changes. Every other citation here was re-checked and is correct.
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: replaced the duplicated Git selector list with the
   production `GIT_REPOSITORY_SELECTOR_ENV` inventory and corrected the nearest governing overview.
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added the worktree-local source/import pin so pytest

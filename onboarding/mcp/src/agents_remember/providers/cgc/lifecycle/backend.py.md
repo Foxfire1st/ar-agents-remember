@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T06:20+02:00|
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,23 @@
 `backend.py` owns the managed CodeGraphContext FalkorDB Docker backend.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Backend Context And Port Identity
+
+`cgc_primary_backend_context(args)` and `cgc_backend_start_context(args)` now return the frozen
+**`CgcBackendContext(settings_path, provider_settings, layouts, backend)`** instead of a
+five-tuple. `context.layout` is a property returning `layouts[0]` — the primary layout the backend
+commands act through, since the FalkorDB backend is shared across every configured repo layout.
+Every backend command needs the whole context, so unpacking is gone.
+
+Published ports are named rather than spelled out per call. **`CgcBackendPort(state_key, host_key,
+host_port_key, container_port_key)`** exists because a published port is spread across three
+dictionaries — the recorded backend state, the resolved backend settings, and the container
+inspect data — under a different key in each, so **the key set is the port's identity**. The two
+module-level instances `FALKORDB_PORT` and `BROWSER_PORT` are what `cgc_backend_endpoint(state,
+backend, inspect_data, port)` is called with. **`CgcHostPorts(falkordb, browser)`** names the host
+ports one backend container publishes. Host reconciliation before a start is reported through
+`BackendStartReconciliation` (from `lifecycle/compose_runtime.py`).
 
 ### Logic
 
@@ -66,6 +83,12 @@ when Docker labels do not show the expected Compose project.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  the two backend context builders now return `CgcBackendContext` instead of a five-tuple;
+  `cgc_backend_endpoint` takes a `CgcBackendPort` (`FALKORDB_PORT` / `BROWSER_PORT`) instead of
+  four key keywords; `CgcHostPorts` and `BackendStartReconciliation` name the published-port and
+  host-reconciliation groups. Emitted payloads are unchanged. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the `dataDestination` mount-verification and migration mechanics into Logic and extended the container-reuse invariant with the destination-sync rule (documentation only).
 - 2026-06-09T22:10+02:00 — Mount verification (`cgc_backend_runtime_details`, `cgc_backend_remove_mismatched_container`) now checks the mount at the configured backend `dataDestination` instead of hardcoded `/data`; an existing container mounted at the old destination is treated as mismatched and recreated on the next backend start (the built-in migration path for the persistence fix).
 - 2026-05-31T12:50+02:00 — Re-typed `layout` params and `layouts` lists from bare `Any` to `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`) across the backend helpers; behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).

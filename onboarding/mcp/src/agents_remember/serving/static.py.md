@@ -97,8 +97,8 @@ no entries); static-serving behavior is proven by repository source and tests.
 | The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`. | L53-L91 | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
 | The release build step places the tree this module resolves; it refuses to place a stale one. | L138-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 | The serving app registers API routes before the static mount. | L1-L80 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Both halves of the contract are pinned deterministically, without reading the repository's own bundle. | L29-L143 | [test_static.py](agents-remember/mcp/tests/test_static.py) |
-| The end-to-end app tests cover the served bundle and the missing-bundle diagnosis through `create_app`. | L506-L538 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Both halves of the contract are pinned deterministically, without reading the repository's own bundle. | L29-L144 | [test_static.py](agents-remember/mcp/tests/test_static.py) |
+| The end-to-end app tests cover the served bundle and the missing-bundle diagnosis through `create_app`. | L526-L558 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 
 ## Cross-Repo References
 
@@ -109,6 +109,15 @@ No meaningful cross-repository implementation source governs this repository-loc
 | The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations into the two
+  test modules. `mcp/tests/test_serving.py` is now L526-L558, the contiguous pair
+  `test_root_serves_dashboard_bundle` (L526-L543) and
+  `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` (L545-L558) — both of which now patch
+  `dashboard_static_dir` rather than reading the repository bundle. `mcp/tests/test_static.py` is
+  now L29-L144, from `DashboardStaticDirTests` through the last assertion of
+  `test_missing_bundle_covers_every_path_the_bundle_would_have`; the old L29-L143 clipped that final
+  assertion by one line.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1: the shipped bundle left version control (master decision
   OQ6), so "no bundle" became a normal state for a source checkout. Added `MissingDashboardBundle`

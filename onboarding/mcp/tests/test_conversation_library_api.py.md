@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,12 @@ failure, and identity-mismatch statuses. A non-loopback peer fails closed on eve
 
 ASGI-level requests against the real routers keep the test honest about registration,
 serialization (null-meaningful camel-case bodies), and status mapping; no TestClient shortcut
-bypasses the peer classification.
+bypasses the peer classification. Every call goes through `asgi_request`, which takes a frozen
+`AsgiClient` binding the app to the peer address the connection will report — loopback
+`127.0.0.1:5000` by default, so the fail-closed case changes only the peer by passing
+`AsgiClient(self.app, peer=("10.0.0.5", 9000))` while the requests stay identical. The doubled
+open service is built from a `LibraryBinding(runtime=..., shared=..., authorization=...)`
+parameter object beside its `library`, `port_builder`, `opener`, and `proof_wait_seconds` seams.
 
 ### Invariants And Boundaries
 
@@ -76,5 +81,13 @@ No neighboring repository participates in this route suite.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: named the new request seam the card's peer
+  claims now depend on. `asgi_request` no longer takes the app and a `client=(host, port)` keyword
+  separately; it takes one frozen `AsgiClient` dataclass that binds the app to the peer address the
+  connection reports, with loopback as the default, and the non-loopback fail-closed case supplies
+  `AsgiClient(self.app, peer=("10.0.0.5", 9000))`. The doubled `ConversationOpenService` is now
+  constructed from a `LibraryBinding` parameter object. Rewrote the Conventions paragraph to say
+  both; the thirteen async cases and the whole status ladder are unchanged. Verification metadata
+  stays pinned until closeout stamps the candidate commit.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the library ASGI route suite
   sidecar. Verification is blank until closeout commits and stamps the new source.

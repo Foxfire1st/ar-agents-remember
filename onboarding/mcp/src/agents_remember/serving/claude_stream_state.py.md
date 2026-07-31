@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_state.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ The protocol supplies canonical replay text, and the submission record stores bo
 | --- | --- | --- |
 | Protocol parsing derives the canonical native-command replay body and keeps identity-changing commands blocked. | L190-L227 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
 | Submission records retain wire/replay text, acceptance and terminal futures, and abandoned/completed state. | L18-L35 | [claude_stream_submission.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_submission.py) |
-| The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback. | L404-L508 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
+| The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback. | L424-L527 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
 | Contract tests pin full-frame forwarding, the no-leak guarantee at both merge points, and the honestly fail-closed Claude native page. | L1179-L1309 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
 
 ## Cross-Repo References
@@ -107,8 +107,30 @@ Claude stream state retains accepted native-interrupt correlation through settle
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+Two named concepts replaced loose constructor/threading arguments:
+
+- **`ClaudeStreamSession`** (`identity`, `snapshot`, `transport`, `supported_commands`) — WHICH
+  Claude stream this state reduces. The four are settled together at handshake and never
+  independently: the supported command set is what THIS transport advertised for THIS identity, and
+  the snapshot is the state that pairing starts from.
+- **`TranscriptCorrelation`** (`request_id`, `vendor_correlation_id`, `created_at`) — what ties one
+  transcript entry back to the submission that produced it, and when. The AR request id and the
+  vendor's correlation id name the same submission from the two sides of the bridge; the timestamp
+  is the moment they were observed together. An entry stamped with one submission's ids and
+  another's time is unusable as evidence.
+
+The replay-user-message path was extracted into `_handle_abandoned_replay` (the late/abandoned
+correlation case) and `_require_faithful_replay` (the identity + body checks). Both refusals are
+unchanged — the session-identity change and the body-changed-for-its-retained-correlation errors
+still raise `HarnessControlError`; they now live in one helper each instead of being written twice.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ClaudeStreamSession` / `TranscriptCorrelation` concepts and the `_handle_abandoned_replay` / `_require_faithful_replay` extraction (replay refusals byte-preserved).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented full-frame `arEvidence`

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-07-09T12:04+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -128,6 +128,25 @@ declared nor part of the input."
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: No content impact: the diff is entirely the
+  PLR0913 parameter-object conversion of the representative-payload call sites
+  (`GrepaiSearchQuery`, `GrepaiTraceQuery`, `ProviderQueryScope`, `TaskRef`, `TaskIdentity`,
+  `TaskBases`, `StartExecution`, `CloseoutCommitMessages`, `CloseoutApproval`,
+  `CarryoverSelection`, `TaskDocTarget`/`TaskDocEdit`,
+  `GateRaise`/`GateWait`/`GateRequest`/`GateAnchor`/`GateVerdict`,
+  `InboxAddress`/`InboxMessage`/`InboxPoster`, `NudgeTarget`/`NudgeSubject`,
+  `RetiredSpawnInputs`, `AmbientTiming`), plus the two module constants
+  `DRY_RUN_SCOPE`/`DISABLED_MEMORY_BASES` and a `_carryover_selection` builder factored out of
+  the two carryover calls. None of those keywords were named by this card, and every literal it
+  does quote still matches the source byte for byte: `tools.session_retire_payload(config,
+  actor_session_id="missing-actor", session_id="missing-session")` and
+  `tools.session_rename_payload(config, session_id="missing-session", label="New Label")` are
+  untouched, `worktree_sync` and `lifecycle_finalize_task` still pass `dry_run=True`, and the
+  `c-11-memory-carryover-from-branch` docstring is still there. I counted the fixtures:
+  `setUpClass` still builds eight temp dirs and still calls the same eight collectors, no
+  `*_payload` entry was added or removed from `cls.payloads`, and the three conformance test
+  functions and their strict/flexible taxonomy assertions are unchanged, so the coverage and
+  round-trip claims hold as written.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): the representative

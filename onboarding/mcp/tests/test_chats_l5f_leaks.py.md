@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_chats_l5f_leaks.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,18 +33,22 @@ A bare `ConversationControlService(cast(Any, object()))` is sufficient because `
 secret, never the runtime authorities. `_item(seq)` builds an `OperationTimelineItem` for the queue
 rows.
 
-`SessionLockLeakTests` (L47): `test_release_session_drops_lock_and_every_epoch_channel` proves
+`SessionLockLeakTests` (L48): `test_release_session_drops_lock_and_every_epoch_channel` proves
 `release_session(ar_session_id)` removes the session's `_locks` entry and every per-epoch channel;
 `test_locks_are_bounded_by_construction_evicting_idle_first` proves `_locks` (an `OrderedDict`) is
 capped at `MAX_SESSION_LOCKS_PER_APP` and `_evict_idle_locks` drops the oldest UNLOCKED lock first;
 `test_a_held_lock_is_never_evicted` proves the eviction guard never drops a currently-held lock (so
 an in-use serializer is never broken).
 
-`QueueRowsBoundTests` (L79): `test_queue_rows_are_bounded_with_oldest_key_eviction` proves
+`QueueRowsBoundTests` (L80): `test_queue_rows_are_bounded_with_oldest_key_eviction` proves
 `_queue_row` caps `channel.queue_rows` (also an `OrderedDict`) at `MAX_QUEUE_ROWS_PER_CHANNEL`,
 evicting the oldest key (`popitem(last=False)`) — a settled operation never reappears, so the bound
 is invisible to live rows; `test_the_real_cap_is_a_named_constant` pins the cap as a named module
-constant rather than a magic number.
+constant rather than a magic number. Since 260731-EFA-L2 the call the test drives is
+`_queue_row(ControlScope(service, auth, "ar-1", "epoch-1"), channel, _item(seq))`: the service, the
+`AuthorizationBinding`, the session id and the epoch travel as one frozen `ControlScope` parameter
+object imported from `control.service`, in place of the four loose leading arguments. Nothing about
+the cap or the eviction order changed — only how the scope reaches the helper.
 
 ### Conventions
 
@@ -84,8 +88,9 @@ The suite pins the control service's bounded/released lock map and the capped qu
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The `_locks` `OrderedDict`, `MAX_SESSION_LOCKS_PER_APP` cap, idle-first `_evict_idle_locks`, and `release_session` under test. | L58; L187-L244 | [control/service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
-| The `queue_rows` cap enforcement (`MAX_QUEUE_ROWS_PER_CHANNEL`, oldest-key `popitem`) under test. | L75-L103 | [control/queue_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/queue_projection.py) |
+| The `_locks` `OrderedDict`, `MAX_SESSION_LOCKS_PER_APP` cap, idle-first `_evict_idle_locks`, and `release_session` under test. | L58; L230-L287 | [control/service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
+| The frozen `ControlScope` parameter object this suite now builds to call `_queue_row`. | L184-L196 | [control/service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
+| The `queue_rows` cap enforcement (`MAX_QUEUE_ROWS_PER_CHANNEL`, oldest-key `popitem`) under test. | L81-L110 | [control/queue_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/queue_projection.py) |
 | The active-projector dormant-release companion to these control-side leak pins. | — | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
 
 ## Cross-Repo References
@@ -97,6 +102,20 @@ No cross-repository implementation participates in this suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` parameter-object pass reached this
+  suite, so the card's call-shape and every line citation it carries were re-derived from the
+  current source. `_queue_row` no longer takes `(service, auth, channel, ar_session_id, epoch,
+  item)`; the test now builds `ControlScope(service, auth, "ar-1", "epoch-1")` and passes it with
+  the channel and the item, so the sidecar names the parameter object and its import. The added
+  import line shifted both class anchors down one (`SessionLockLeakTests` L47 to L48,
+  `QueueRowsBoundTests` L79 to L80), and inserting `ControlScope` into `control/service.py` ahead of
+  `ControlChannel` moved the referenced lock-map region from L187-L244 to L230-L287 while
+  `MAX_SESSION_LOCKS_PER_APP` stayed at L58; the `queue_projection.py` cap enforcement moved from
+  L75-L103 to L81-L110. All four corrected ranges were re-read at their new positions, and a row was
+  added pointing at the `ControlScope` definition. What the suite proves is unchanged: the lock map
+  is still bounded and released, and the queue rows are still capped with oldest-key eviction.
+  Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: created the sidecar for the R5 leak-fix
   regression suite — `SessionLockLeakTests` (release_session drops the lock + every-epoch channel;

@@ -40,7 +40,7 @@
     "mcp/src/agents_remember/serving/conversation/runtime.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 60,
+    "sourceFilesInScope": 61,
     "fileSidecars": 7,
     "childRoutes": 4
   },
@@ -108,7 +108,7 @@
       "mcp/src/agents_remember/serving/conversation/",
       "mcp/src/agents_remember/serving/conversation/overview.md",
       "serving/overview.md",
-      "3a8ff703d796dc585b86a458daaf9eb2af6b2b31",
+      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
       "ConversationRuntime",
       "active/",
       "projectors/",

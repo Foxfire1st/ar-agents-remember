@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/child_history.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,8 +62,26 @@ No Domain Documentation source is configured.
 
 No meaningful cross-repository references found.
 
+## 260731-EFA-L2 Current Delta
+
+The constructor is now `ChildHistoryProjection(spine, readers, native)`:
+
+- `spine: SessionProjectionSpine` supplies the parent thread id, bridge epoch, controlled session,
+  mapper, mutation stream, agent authority, evidence refs, apply lock and clock — see
+  [wiring.py](wiring.py.md). `parent_thread_id` and `bridge_epoch` are now derived from the
+  identity by the spine's own properties rather than passed in.
+- `readers: BridgeReaders` supplies the native-page reader (the whole read surface is substituted as
+  one set).
+- `native: NativeEvidenceIngestion` stays an explicit collaborator, because it is this component's
+  peer rather than shared machinery.
+
+Behaviour, hydration ordering and the walked/failures/inflight bookkeeping are unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: constructor now takes `SessionProjectionSpine` + `BridgeReaders` (plus the native ingestion peer); parent thread id and epoch come from the spine.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the selected-child
   history sidecar and recorded its demand, singleflight, capacity, and failure-containment
   boundaries. Verification metadata remains blank until commit.

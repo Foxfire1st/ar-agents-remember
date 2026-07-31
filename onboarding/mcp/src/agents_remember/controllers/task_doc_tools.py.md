@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/controllers/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-07-06T23:57:54+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated | 2026-07-31T15:31+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,9 +27,16 @@ worktree-command contract shape because the payload carries the enclosure state.
 
 ### Logic
 
-`task_doc_tool(config, *, repo_id, operation, task_name=None, contract_path=None,
-slug=None, fields=None, step=None, decision=None, subtask=None, section=None)`
-validates `operation` against `VALID_OPERATIONS`
+`task_doc_tool(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
+dry_run=False)` — since 260731-EFA-L2 the arguments arrive as two objects that answer two different
+questions. `TaskDocTarget(repo_id, task_name, contract_path, slug)` is **which document**;
+`TaskDocEdit(fields, step, decision, subtask, section)` is **what the edit is**, with `NO_EDIT` the
+shared empty value a `get` passes. Internally the operation table dispatches through one private
+`_Edit` view and a per-operation `_apply_set_status` / `_apply_set_field` / `_apply_set_step` /
+`_apply_set_subtask` / `_apply_set_section` / `_apply_append_decision` function behind `_apply`,
+replacing the former single branching applier.
+
+It validates `operation` against `VALID_OPERATIONS`
 (`create`/`replace`/`set_status`/`set_step`/`set_subtask`/`remove_subtask`/`set_section`/
 `append_decision`/`set_field`/`get`), then `_resolve()`s the task root + optional contract: a
 `contract_path` can point at either a root `series-contract.md` or a leaf
@@ -98,15 +105,27 @@ validation failures, and invalid resolvable parent master docs.
 | --- | --- | --- |
 | The controller operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | L43-L56; L108-L127 | [task_doc_tools.py](agents-remember/mcp/src/agents_remember/controllers/task_doc_tools.py) |
 | `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | L177-L226 | [task_doc_tools.py](agents-remember/mcp/src/agents_remember/controllers/task_doc_tools.py) |
-| Focused controller tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | L683-L767 | [test_task_document.py](agents-remember/mcp/tests/test_task_document.py) |
+| Focused controller tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | L876-L960 | [test_task_document.py](agents-remember/mcp/tests/test_task_document.py) |
 | Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | L125-L135; L444-L472 | [task_doc_tools.py](agents-remember/mcp/src/agents_remember/controllers/task_doc_tools.py) |
-| The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | L33-L120 | [master_sync.py](agents-remember/mcp/src/agents_remember/tasks/master_sync.py) |
+| The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | L33-L122 | [master_sync.py](agents-remember/mcp/src/agents_remember/tasks/master_sync.py) |
 | The schema/store/renderer this controller drives. | route overview | [tasks/](agents-remember/mcp/src/agents_remember/tasks/) |
 | The payload builder that wraps this controller. | L13-L37 | [mcp/tools/task_doc.py](agents-remember/mcp/src/agents_remember/mcp/tools/task_doc.py) |
 | The contract helpers used to resolve the task root + lifecycle key. | route overview | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that drifted as
+  `mcp/tests/test_task_document.py` grew. The three `replace` tests
+  (`test_replace_rewrites_structural_fields_and_decisions`,
+  `test_replace_dry_run_does_not_mutate_existing_files`,
+  `test_replace_rejects_document_path_change`) now sit at L876-L960, not L683-L767; read the range
+  back and confirmed it still proves the `steps`/`codeExamples`/`decisions` rewrite, the dry-run
+  no-mutation guarantee, and the `TaskDocError` on a slug that would move the document path.
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `task_doc_tool` took `target: TaskDocTarget` +
+  `edit: TaskDocEdit` (default `NO_EDIT`) in place of its ten keyword arguments, and the edit
+  applier split into one `_apply_*` function per operation behind `_apply`. Operation semantics,
+  validation, master sync and the dry-run preview are unchanged. Verification metadata pinned until
+  closeout stamps the L2 code commit.
 - 2026-07-06T23:57:54+02:00 — 260703-L14 (visual hierarchy + chat grouping): added `orchestrates` to
   `_MUTABLE_FIELDS` — `set_field` can set the orchestration-command list on a master (flat string
   list, matching the whitelist's scalars+flat-lists rule); the schema validator backstops

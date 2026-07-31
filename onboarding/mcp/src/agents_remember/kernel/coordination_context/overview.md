@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-07T23:30+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -67,8 +67,26 @@ The package is intentionally split by responsibility:
 | The package-local facade keeps existing callers pointed at the split implementation. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
 | Resolver behavior is covered by resolver parity and worktree support tests. | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py); [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
+## 260731-EFA-L2 Resolver API
+
+`resolve_coordination_context` is now
+`(code_repository_name=None, workspace_root=None, code_repository_root=None, *, hints:
+CoordinationHints | None = None, selector: EnclosureSelector | None = None)`. The nine former
+resolution arguments live on the two frozen bundles in `models.py`, which also owns
+`CodeRepository` (replacing the untyped repo dict the private helpers passed around) and
+`CoordinationRoots`. `build_coordination_context(repo, *, roots, storage, cross_repo, selector)`
+and `contracts.resolve_contract(selector, coordination_root, code_repository_name)` match. All four
+models are re-exported from the `kernel.coordination_context_resolver` facade, which is the
+supported import path for callers outside this package. Resolution order, the onboarding-root
+branch and contract-lookup precedence are unchanged.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: the resolver's public API moved to keyword-only
+  `hints=` / `selector=` bundles (`CoordinationHints`, `EnclosureSelector`), with `CodeRepository`
+  and `CoordinationRoots` typing what the private helpers pass between them. Every caller in the
+  tree was updated; resolved contexts are unchanged. Verification metadata pinned until closeout
+  stamps the L2 commit.
 - 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: `contracts.py` now uses the dedicated
   `worktrees.leaf_refs` adapter for explicit leaf-id contract lookup, so qualified/doc-id/legacy refs can
   find the correct enclosure while the package structure stays unchanged. Verification metadata pinned

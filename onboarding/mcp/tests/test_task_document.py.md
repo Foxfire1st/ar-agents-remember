@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-07-07T18:40+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -98,7 +98,15 @@ and tool registration.
 
 Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields and observer binding from a leaf doc's enclosure path to its lifecycle.
 
+## 260731-EFA-L2 Delta — parent-master integrity
+
+- An **unreadable parent master refuses the leaf edit rather than dropping the row**: a leaf whose
+  parent cannot be read must not be silently orphaned.
+- A master ref naming a **sibling leaf** is refused **by kind**, not by id shape.
+
 ## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 1 / friction F-N): added
   `MasterControllerTests.test_remove_subtask_response_validates_on_both_paths` — validates the

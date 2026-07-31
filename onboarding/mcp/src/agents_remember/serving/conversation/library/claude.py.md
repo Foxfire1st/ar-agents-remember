@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -107,8 +107,8 @@ locked helper implements the native seam, including the on-disk `subagents/` enu
 | --- | --- | --- |
 | Claude list rows and paging, read block/role/provenance mapping, and argv resume minting on fake helper boundaries. | L479-L626 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
 | A range-absurd but type-valid `lastModified` fails as a typed store error. | L504-L518 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| Sub-agent grouping with meta identity, helper-without-evidence and empty-catalog unavailability notes, nested spawnDepth naming, agent read routing, agent resume fail-closed, and agent-row shape failures. | L475-L656 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
-| The installed suite proves the claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. | L540-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| Sub-agent grouping with meta identity, helper-without-evidence and empty-catalog unavailability notes, nested spawnDepth naming, agent read routing, agent resume fail-closed, and agent-row shape failures. | L471-L648 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
+| The installed suite proves the claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. | L562-L590 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The locked helper's scope-exact listSessions (with per-row `agents` children and the `agentsEnumerated` marker), getSessionMessages read, and getSessionInfo resume resolution. | L80-L134; L372-L445 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
 | The locked helper's sub-agent on-disk authority: project-dir slug rule (sdk-verified, base36 Java-hash truncation), `subagents/` sweep, `.meta.json` identity parsing, and agent transcript reads. | L135-L370 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
 
@@ -122,6 +122,19 @@ No meaningful cross-repo boundary exists for this local port.
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/serving/conversation/library/claude.py` since the L2 base commit is the
+  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 7 line(s), touching only redundant
+  grouping parentheses. Checked by parsing both revisions and comparing the abstract syntax trees
+  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
+  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
+  card makes about its own source still holds. Noted while checking: the references table also
+  cites line ranges inside `test_conversation_library_agents.py`,
+  `test_conversation_library_installed.py`, `test_conversation_library_ports.py`; those ranges
+  shifted because this task edited those files, so treat the cited numbers as approximate and the
+  linked cards as authoritative.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-26T15:34 — 260718-CHATS-L7: sub-agent grouping — list rows now carry
   `ConversationLibraryAgentRow` children from the locked helper's `subagents/*.jsonl` +
   `.meta.json` evidence; agent conversations open through the port's composite

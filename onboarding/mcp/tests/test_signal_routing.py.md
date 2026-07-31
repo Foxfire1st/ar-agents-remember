@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -111,9 +111,9 @@ No meaningful external design-doc references found yet (created this leaf).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | L42-L61 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
-| One-hop-only regression: a worker's signal never chases the chain past its manager. | L64-L82 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
-| `decision-item` reserved-role routing and the three no-route negative cases. | L84-L104 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
+| Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | L42-L65 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
+| One-hop-only regression: a worker's signal never chases the chain past its manager. | L68-L86 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
+| `decision-item` reserved-role routing and the three no-route negative cases. | L88-L108 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
 | Two-hop, dead-node-skipping owner derivation: live chain, dead intermediate, dead-ceiling, unknown sender, and role-only-address cases. | `SkipLevelOwnerTests` | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
 | The shared liveness primitive both the ladder and the two-hop walk read. | `IsSeatDeadTests` | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
 
@@ -126,6 +126,13 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/tests/test_signal_routing.py` and moved the lines this card cites, so the Citations column
+  no longer pointed at the code its rows name. Corrected the ranges (L42-L61 → L42-L65; L64-L82 →
+  L68-L86; L84-L104 → L88-L108). The behaviour described is unchanged — the file's AST is
+  identical to the base revision — this is a citation repair only. Verification metadata pinned
+  until closeout stamps the L2 commit.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added pair-bound chain-credit/manager-addressing proof
   at two fleet sizes and current-role discovery coverage.

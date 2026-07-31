@@ -105,7 +105,7 @@
       "GitHub",
       "route-local-overview",
       "mcp/src/agents_remember/benchmarks/runner_modules",
-      "0d5ce6784930aa4e9006ab4bbf2b788a3296abce",
+      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
       "/../../../overview.md",
       "runner_modules",
       "benchmarks/runner.py",
@@ -120,8 +120,8 @@
       "disarm_stale_benchmark_registrations",
       "benchmark_mcp_config_overrides",
       "agents-remember",
-      "filter_benchmark_provider_ids",
-      "BenchmarkPrepareRequest"
+      "BenchmarkWorkspace",
+      "BenchmarkTask"
     ]
   },
   "fallback": {

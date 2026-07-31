@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -319,7 +319,27 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260731-EFA-L2 Current Delta
+
+Two named concepts replaced repeated argument groups in the sweep:
+
+- **`EscalationSchedule`** (`sla_seconds`, `rung_seconds`) — when an unacked row is due for its next
+  ladder rung. The SLA (how long a kind of message may sit unacked) and the rung dwell (how long
+  each rung waits before the next) are **one timetable**: raising the SLA without the dwell just
+  moves where the same storm starts, and `rung_due` needs both for every row.
+- **`OwnerSignal`** (`message_kind`, `ask`, `response`, `leaf_key`, `seat_role`,
+  `subject_agent_id`) — one owner-addressed signal: what is being said, and about which seat. The
+  message and its subject are inseparable here, because coalescing looks up an existing row by
+  `(ask, kind, leaf, role)` and renewal rewrites the subject from the same value — a message
+  carrying someone else's subject silently renews the wrong row.
+
+The deterministic-sweep posture is unchanged: zero tokens, pure code, every predicate reading the
+durable stores directly rather than the projection.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `EscalationSchedule` and `OwnerSignal`; sweep posture and predicates unchanged.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented the final confirmed-gone
   reconciliation ordering, fail-closed evidence matrix, body-free/no-op-silent event contract,

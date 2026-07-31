@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -28,16 +28,24 @@ the served projection and a sim replay stay byte-identical.
 `project_lifecycle(events, *, now)` is the pure fold — its only inputs are the
 log and `now`, so "same log ⇒ same projection" holds. `events[0]` is the
 self-contained `lifecycle.started` that `_seed_from_started` turns into the
-initial `LifecycleProjection`; `_apply_kind` then folds each later event:
-`phase-changed`→phase, `blocked`→blocked+ask, `awaiting-developer`→
-awaiting-developer (task-28 turn end: the carried `summary` rides on the
+initial `LifecycleProjection`; `_apply_kind` then folds each later event.
+
+Since 260731-EFA-L2 that fold is a **dispatch table, not an if/elif chain**:
+`_KIND_UPDATES: dict[str, Callable[[LifecycleProjection, Event], dict[str, Any]]]`
+maps each event kind to the one small function that owns the projection fields it
+writes — `_phase_changed_updates` (→phase), `_blocked_updates` (→blocked+ask),
+`_awaiting_developer_updates` (task-28 turn end: the carried `summary` rides on the
 projection's `ask` carrier, mirroring how the block ask rides on
-`lifecycle.blocked`), `resumed`→running+ask cleared (one `resumed` arm carries
-both the parked blocked path and the awaiting-developer turn end back to running),
-`paused`→paused, `promoted`→fleeting=False+scope (+enclosure/repoId from the
-envelope), `ended`→completed|abandoned, `tool.completed`→token sum;
-`heartbeat`/unknown only advance liveness. `lastEventTs` is taken from
-`events[-1].ts`.
+`lifecycle.blocked`), `_resumed_updates` (→running, ask cleared — one function
+carries both the parked blocked path and the awaiting-developer turn end back to
+running), `_paused_updates`, `_promoted_updates` (fleeting=False+scope,
++enclosure/repoId from the envelope), `_ended_updates` (→completed|abandoned) and
+`_tool_completed_updates` (token sum). `_apply_kind` is now three lines: look the
+kind up, apply the returned update dict, or `model_copy(update={})` when the kind
+is absent. **Absence from the table is the liveness contract** — `lifecycle.heartbeat`
+and any unknown kind write no projection field, because staleness comes from
+`events[-1].ts`. Adding a kind means adding a `_*_updates` function and a table
+entry; there is no chain to append to.
 
 The **inferred layer** `_project_inferred` reuses the write-side thresholds
 rather than re-deriving them: a non-terminal `fleeting` lifecycle older than
@@ -80,20 +88,44 @@ bounded (an uncapped series rode ~60 B/sample on EVERY lifecycle delta while its
 agent worked: 10k tool calls ≈ 600 KB/delta). `staleness_histogram` buckets sidecar
 verification ages (fed into `Metrics.stalenessHistogram`); and `build_analytics`
 assembles the `Analytics` block, collapsing the full sidecar list to a bounded
-stalest-first leaderboard (`_stalest`). `project_workspace` gained
-keyword-optional analytical inputs (drift snapshots, sidecar staleness, setup
-summaries/progress, route coverage, tool reports, agent pickups, ledgers, and — slice 3c — task
-documents) — omit them and `analytics` is empty, so the 3a structural-only contract
-still holds. **Task 33** adds the keyword-optional `active_worktree_groups: list[str] | None`; the
-return sets `activeWorktreeGroups=sorted(active_worktree_groups or [])` on the projection — the bounded
-active worktree-group set the Topology filters on. The caller (`projection_store.project_and_write`)
-passes the `active_enclosure_worktree_groups` set it already computes for the Engine Room, so the two
-views share one active definition; omit it and the field is an empty list (structural-only contract
-unaffected).
+stalest-first leaderboard (`_stalest`).
 
-**Slice-05 attention queue:** `build_attention_queue(lifecycles, providers,
-drift_snapshots, setup_progress, start_progress)` is a pure, deterministic ranking of what needs the
-human (the home-screen queue). It delegates to one small builder per source —
+### The two input bundles (260731-EFA-L2)
+
+`project_workspace(logs, *, structure, now, given=None)` is the current signature. The long
+keyword list it used to carry is now **two frozen dataclasses that mirror the design's own two
+slices**, and this is a contract change every caller and test sees:
+
+- **`WorkspaceStructure(enclosures, providers, active_worktree_groups=[])`** — slice 3a, the
+  workspace as it exists. `active_worktree_groups` lives here, not in the analytical bundle where
+  it used to sit: it leaves as `WorkspaceProjection.activeWorktreeGroups`, a *structural* field
+  beside `enclosures` and `providers`, and never reaches `Analytics` at all. The return still sets
+  `activeWorktreeGroups=sorted(structure.active_worktree_groups)` — the bounded active
+  worktree-group set the Topology filters on, which `projection_store.project_and_write` fills
+  from the `active_enclosure_worktree_groups` admission it already computes for the Engine Room, so
+  the two views share one definition of "active".
+- **`AnalyticalInputs`** — slice 3b, the pre-image of `Analytics`: sixteen fields
+  (`drift_snapshots`, `sidecar_staleness`, `setup_summaries`, `setup_progress`, `route_coverage`,
+  `tool_reports`, `agent_pickups`, `expectation_rows`, `ledgers`, `task_documents`, `series`,
+  `engine_process_facts`, `engine_start_progress`, `gates`, `attention_dismissals`,
+  `stalest_limit`), each defaulting empty. Ten map to one `Analytics` surface by name; the other
+  six produce the three DERIVED surfaces in pairs — `sidecar_staleness`+`stalest_limit` →
+  `stalestSidecars`, `engine_process_facts`+`engine_start_progress` → `engineProcesses`,
+  `gates`+`attention_dismissals` → `attentionQueue`.
+
+**Optional as a set, not one by one.** `given` defaults to `None` and is replaced by an empty
+`AnalyticalInputs()`, so a caller that wants only the structural tree (the 3a contract) passes no
+`given` and gets an empty `analytics` — the same guarantee the old keyword-optional list gave,
+expressed once instead of sixteen times. Do not try to split `AnalyticalInputs` further: the
+`Analytics` surfaces are independent cockpit panels, so any sub-grouping here would be a grouping
+of the projection contract the dashboard reads, not a tidy-up. Two fields deliberately leave
+through a second door — `sidecar_staleness` is also counted into `WorkspaceProjection.metrics`,
+and `gates` is also materialized onto `lifecycle.gate` by `_attach_gates`.
+
+**Slice-05 attention queue:** `build_attention_queue(lifecycles, providers, given)` — its third
+argument is the same `AnalyticalInputs` bundle, from which it reads `gates`, `drift_snapshots`,
+`setup_progress`, `engine_start_progress` and `attention_dismissals` — is a pure, deterministic
+ranking of what needs the human (the home-screen queue). It delegates to one small builder per source —
 `_lifecycle_attention` (task-28 `awaiting-developer` info item / `blocked-gate` /
 stale-session / dormant-fleeting),
 `_gate_attention` (slice 6c: an open durable gate → a `gate-open` item),
@@ -109,20 +141,22 @@ Enclosure-derived items (pending review / worktree debt) are deferred to the han
 before its contract was written — the same master-caution the agent raises in chat (a human-choice
 gate, not a fault); a happy-path beat (no `blockedReason`) is observability, not an alarm.
 Task 23/24 adds `gateId` to `_gate_attention` items so dashboard Clear/Dismiss posts can target the
-actual gate record. Task 28 S5.2 adds lifecycle-scoped attention acknowledgements: `project_workspace`
-accepts `attention_dismissals`, and `build_attention_queue(..., dismissals=...)` drops a row only when
-the stored `AttentionDismissalRecord` matches both item id and lifecycle id and its `dismissedAt` is at
+actual gate record. Task 28 S5.2 adds lifecycle-scoped attention acknowledgements, now carried on
+`AnalyticalInputs.attention_dismissals`: a row is dropped only when the stored
+`AttentionDismissalRecord` matches both item id and lifecycle id and its `dismissedAt` is at
 or after the row's `signalTs`; a newer `signalTs` re-surfaces the lifecycle item. Task 29 extends the
 same freshness comparison to whitelisted repo-level rows: actionable drift ids include
 `repository:branch`, details include memory/report/checked provenance from the drift snapshot, and
 `signalTs` is the snapshot `checkedAt`. Targetless dismissal never applies to provider/setup/start rows.
-`build_analytics`
-also passes `agentPickups` through unchanged; pickup age/state is computed by
-`snapshots.read_agent_pickups`, not inferred in the reducer or frontend. Since 260707-HFX2-L1 (R5),
-`project_workspace`/`build_analytics` also accept an `expectation_rows` keyword (default `[]`),
-passed through unchanged into `Analytics.expectationRows` — the durable deadline-row projection
-computed entirely by `snapshots.read_expectation_rows`; the reducer performs no expectation-row
-logic of its own.
+`build_analytics(given, *, series=None, attention_queue=None, engine_processes=None)` reads
+`agentPickups` off the bundle and passes it through unchanged; pickup age/state is computed by
+`snapshots.read_agent_pickups`, not inferred in the reducer or frontend. Its three keyword
+arguments are the **derived** surfaces the caller already computed from the same bundle (series
+carrying token totals the raw nodes lack), so they override what `given` holds rather than being
+read out of it — `series=series if series is not None else given.series` is the explicit rule.
+`expectation_rows` rides on `AnalyticalInputs` (default `[]`) into `Analytics.expectationRows` —
+the durable deadline-row projection computed entirely by `snapshots.read_expectation_rows`; the
+reducer performs no expectation-row logic of its own.
 
 **Task-28 turn-end branch + gate-open/blocked-gate dedup:** `_lifecycle_attention`
 gains an `awaiting-developer` branch — one `info` `AttentionItem` ("Turn complete
@@ -166,17 +200,40 @@ stack), so a torn-down enclosure leaves the active `engineProcesses` instead of 
 fully-active phantom — the frontend (05k) animates the removal. `cleanup-pending` is
 intentionally **kept** (its de-materialise beat still needs a live node to animate).
 Worktree providers are bucketed by group and sorted `(code, memory)`
-via `_ROLE_ORDER`; the per-fact `_engine_process` resolves `codeSource`/`codeWorktree`
-(and, in `external` mode, `memorySource`/`memoryWorktree`/`ledgerPath`) into
-`CommitRefNode`s with a `factState` (`observed` on disk / `derived` recorded-but-absent /
-`missing` unobservable), derives the process `phase` (`_GUIDANCE_PHASE` maps the
+via `_ROLE_ORDER`; the per-fact `_engine_process` is now an **assembly over three composers**
+(260731-EFA-L2), each owning one unit of the node:
+
+- `_code_refs(*, contract, status, freshness) -> _CodeRefs(source, worktree)` — the code lane. The
+  source ref is the official line the worktree was cut from plus how far that recorded base now
+  sits behind the source tip; the worktree ref is the checkout, `observed` only where the probe
+  actually saw it on disk.
+- `_memory_refs(*, contract, status, freshness, memory_mode) -> _MemoryRefs(source, worktree,
+  ledger_path)` — the memory lane, mirroring the code lane. **All three fields are `None` unless
+  `memory_mode == "external"`**: an internal or disabled contract has no memory lane, and the node
+  leaves those fields unset rather than rendering an empty lane as an observation.
+- `_setup_facts(setup_node, status) -> _SetupFacts(state, current_phase, heartbeat_age_seconds,
+  failed_phases, completed_phases, seed_fallback, retry_args)` — the group's provider-boot facts,
+  **preferring the live setup run over the recorded status block, field by field**. A live
+  `SetupProgressNode` is the better witness and is the only source of `current_phase` and
+  `heartbeat_age_seconds`; the status payload's `providers` block is the fallback for `state` and
+  `failed_phases`, and remains the *only* source of `completed_phases`, `seed_fallback` and
+  `retry_args`.
+
+Each `CommitRefNode` still carries a `factState` (`observed` on disk / `derived` recorded-but-absent /
+`missing` unobservable). `_engine_process` derives the process `phase` (`_GUIDANCE_PHASE` maps the
 `lifecycle_guidance` phases — including the 05l-P1 `abandoned` → `abandoned` and the 05m
 `carryover-pending` → `carryover-pending`, each surfacing a new guidance phase to the
 process-map vocabulary; `_process_phase` overlays `sync-needed`/`provider-setup`),
-`health` (`_process_health`), and the `edges` conduit graph (`_process_edges`:
-worktree-add → cgc-seed, the `external` ledger-map → grepai-clone pair, and a
-`behind_official` sync feedback edge), plus `missingFacts`/`sourceFiles` for trust
-honesty. `_engine_process` maps `contract["leaf_id"]` onto `EngineProcessNode.leafId`
+`health` (`_process_health`), and the `edges` conduit graph
+(`_process_edges(lanes, boot, setup, *, behind_official)`, where `lanes` is the frozen
+`_ProcessLanes(memory_mode, code_worktree, memory_worktree)` — the mode that decides which lanes
+exist plus each lane's worktree ref — and `setup` is the same `_SetupFacts`: worktree-add →
+cgc-seed, the `external` ledger-map → grepai-clone pair, and a `behind_official` sync feedback
+edge), plus `missingFacts`/`sourceFiles` for trust honesty. `_seed_edge_state` reads
+strongest-evidence-first through the module-level `_DECISIVE_SETUP_EDGE_STATES` table (`running`,
+`stale`, and every `_SETUP_FAILED` state → `failed`): a failed phase naming the seed outranks
+everything, then a decisive setup state, then the engine's presence, which is what turns a
+finished or unobserved setup into a `complete` edge. `_engine_process` maps `contract["leaf_id"]` onto `EngineProcessNode.leafId`
 while keeping `task_name` as the parent series identity, so sibling leaf worktrees under
 one series do not collapse into duplicate task labels downstream. The whole list is sorted
 `(repoName, taskName, id)` so replay stays byte-identical. Slice 5h: `_engine_process` also maps the successful-landing arc onto the
@@ -209,26 +266,34 @@ completed, emits the same edge skeleton (planned/blocked states), and flags
 de-dupes by group basename: once a contract anchors an enclosure, the matching
 start-progress entry is dropped so the same worktree never double-renders.
 
-**Threading through `project_workspace` + `build_analytics`:** `project_workspace` gained
-two keyword-optional inputs, `engine_process_facts` and `engine_start_progress`, calls
-`build_engine_processes(...)`, and threads the result into `build_analytics(engine_processes=…)`
-→ the derived `Analytics.engineProcesses`. Both default empty, so the 3a structural-only
-and 3b analytical-only contracts still hold. The two inputs are read at the call edge by
-`snapshots.read_engine_process_facts` / `read_start_progress_entries` (the latter over
-`worktrees.start_progress`) and wired in `projection_store`.
+**Threading through `project_workspace` + `build_analytics`:** `given.engine_process_facts` and
+`given.engine_start_progress` feed `build_engine_processes(...)`, whose result is threaded into
+`build_analytics(engine_processes=…)` → the derived `Analytics.engineProcesses`. Both default
+empty on `AnalyticalInputs`, so the 3a structural-only and 3b analytical-only contracts still
+hold. The two inputs are read at the call edge by `snapshots.read_engine_process_facts` /
+`read_start_progress_entries` (the latter over `worktrees.start_progress`) and wired in
+`projection_store`.
 
-**Series threading (R1 + Task 21 token rollup):** `project_workspace` and `build_analytics` accept the
-keyword-optional `series` input read at the call edge by `snapshots.read_series_documents`. Before
-analytics assembly, `project_workspace` calls `attach_series_token_totals(series or [], task_docs,
-lifecycles)`, which joins each master row's `file` to projected sibling leaf docs and sums their bound
-lifecycle `tokens` into `SeriesNode.seriesTokenTotal`. The helper returns copied nodes, so the reducer
-still composes derived analytics from already-read inputs and performs no file I/O. Defaults empty, so
-prior structural/analytical callers remain unchanged.
+**Series threading (R1 + Task 21 token rollup):** `given.series` is read at the call edge by
+`snapshots.read_series_documents`. Before analytics assembly, `project_workspace` calls
+`attach_series_token_totals(given.series, given.task_documents, lifecycles)`, which joins each
+master row's `file` to projected sibling leaf docs and sums their bound lifecycle `tokens` into
+`SeriesNode.seriesTokenTotal`; the enriched list is then passed as the `series=` override to
+`build_analytics`, which is why that keyword wins over `given.series`. The helper returns copied
+nodes, so the reducer still composes derived analytics from already-read inputs and performs no
+file I/O. Defaults empty, so prior structural/analytical callers remain unchanged.
 
 ## Invariants And Boundaries
 
 - **Pure fold:** `project_lifecycle`/`project_workspace` take already-read inputs;
   all file I/O lives at the call edge (`projection_store`/`snapshots`).
+- **Two bundles, two slices:** structural inputs go in `WorkspaceStructure` (3a), analytical
+  inputs in `AnalyticalInputs` (3b). Both are frozen. A field belongs in `WorkspaceStructure`
+  only if it leaves through `WorkspaceProjection` rather than `Analytics` — that is exactly why
+  `active_worktree_groups` sits there. Adding an analytical input means adding a defaulted field
+  to `AnalyticalInputs`, not a new keyword to `project_workspace`.
+- **The kind table is the fold's extension point:** a projection field is written by exactly one
+  `_KIND_UPDATES` entry, and a kind absent from the table is liveness-only by construction.
 - **Trust honesty:** derived states are flagged `inferred`; the reducer never
   presents a projected state as a written transition.
 - **Thresholds are imported, not redefined** (from `timeutil`), so write and read
@@ -284,6 +349,22 @@ As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks ge
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty: `C901`/`PLR0912`/`PLR0915`/`PLR0913`
+  armed with no exemptions). Three public signatures changed, so this is a contract change, not a
+  tidy-up:
+  `project_workspace(logs, *, structure: WorkspaceStructure, now, given: AnalyticalInputs | None = None)`,
+  `build_analytics(given, *, series=None, attention_queue=None, engine_processes=None)`, and
+  `build_attention_queue(lifecycles, providers, given)`. The former keyword lists collapsed into
+  the two new frozen bundles; `active_worktree_groups` moved from the analytical set to
+  `WorkspaceStructure` (it is structural — it leaves via `WorkspaceProjection`, never `Analytics`),
+  and `stalest_limit` moved onto `AnalyticalInputs`. The `_apply_kind` if/elif chain became the
+  `_KIND_UPDATES` dispatch table over eight per-kind `_*_updates` functions. `_engine_process` was
+  split into `_code_refs`/`_memory_refs`/`_setup_facts` returning the frozen `_CodeRefs`/
+  `_MemoryRefs`/`_SetupFacts`; `_process_edges` was re-signed onto `_ProcessLanes` + `_SetupFacts`;
+  `_seed_edge_state` reads through the new `_DECISIVE_SETUP_EDGE_STATES` table; `_str_list` was
+  added for the recorded-sequence coercion both setup readers do. Every projection value is
+  unchanged — the fold, the inferred layer, the attention ranking and the engine map all produce
+  byte-identical output. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `build_analytics`/`project_workspace` gained an `expectation_rows` keyword threading `ExpectationRowNode`s into `Analytics.expectationRows` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-07-07T05:12+02:00 — 260703-L15 S2 (bounded served buffers): `token_series` now decimates
   past `TOKEN_SERIES_MAX` (512) via `_decimate_token_series` — newest `TOKEN_SERIES_RECENT`

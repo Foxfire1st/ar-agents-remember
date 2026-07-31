@@ -6,8 +6,8 @@
 | path | mcp/tests/test_hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | mcp/tests/overview.md |
 
 ## Governing Overview
@@ -47,7 +47,16 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260731-EFA-L2 Delta — unreachable bridge
+
+An unreachable bridge is **not ready and keeps the adapter's refusal** (the reason is not replaced
+by a generic timeout), and it is **retried until the wait bound expires** rather than failing on
+the first attempt — readiness is a bounded poll, not a single probe.
+
 ## Update History
+
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,8 +111,8 @@ initialize/state helpers.
 | --- | --- | --- |
 | Codex list maps rows/keys/next-cursor, generation mismatch resets, reads window by ordinal, and resolve mints the exact codex-thread-resume target. | L227-L460 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
 | Shape-skewed list/read payloads and range-absurd timestamps fail as typed store errors. | L297-L387; L504-L518 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | L257-L474 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
-| The installed suite proves the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). | L134-L186 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | L256-L412 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
+| The installed suite proves the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). | L136-L186 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | L127-L155; L527-L542; L551-L572 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
 
 ## Cross-Repo References
@@ -123,8 +123,27 @@ No meaningful cross-repo boundary exists for this local port.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+**`AppServerSeams`** (`env`, `transport_factory`, defaulting to `os.environ` and
+`CodexStdioTransport`; module default `DEFAULT_APP_SERVER_SEAMS`) is now how a codex app-server
+subprocess is reached, as one substitutable value. The environment selects the binary and its
+credentials; the transport factory decides how the process is spoken to. A fake transport against
+the real environment (or the reverse) talks to a process nobody meant to start, so **both are
+replaced as one seam**.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The sub-agent
+  row's `L257-L474` into `mcp/tests/test_conversation_library_agents.py` had slid off the codex
+  class and across the module-level `CLAUDE_AGENT_LIST` fixture into the claude suite. Retargeted it
+  to `CodexLibraryAgentTests` at L256-L412 and confirmed by reading that the class still holds
+  exactly the six named cases: probed source kinds (L284), agent-thread read (L328), RPC-refusal
+  degrade note (L349), truncation note (L364), nested depth-2 naming (L372), and ungroupable-row
+  fail-closed (L404).
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `AppServerSeams` / `DEFAULT_APP_SERVER_SEAMS` as the single env+transport substitution.
 - 2026-07-26T15:34 — 260718-CHATS-L7: sub-agent grouping — the port now fetches one probed
   sub-agent thread page (`_AGENT_SOURCE_KINDS`, capped at 100), groups agent rows under their
   parent's top-level row via `parentThreadId`, folds agent ids plus `agents_note` into the

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,17 +40,17 @@ probes, foreground and `run_in_background` Agent calls).
 `map_evidence_frame` (L210-L242) dispatches on the frame `type`; it also
 accepts an optional `parent_thread_id` demux context from the multiplexed-harness path, which the
 claude mapper deliberately ignores because sub-agent identity is encoded in-band via
-`parent_tool_use_id`. `assistant` frames (`_map_assistant` L541-L611)
+`parent_tool_use_id`. `assistant` frames (`_map_assistant` L665-L735)
 key on the message `uuid`, split content into markdown/thinking blocks, mint one
 stable-ID tool-call item per `tool_use` block (keyed by the native block id, input block
 carrying name + arguments, phase `streaming`, parented on the assistant item), and preserve
-unknown block types as `UnknownVendorBlock`s; `result` frames (`_map_result` L899-L954) classify
+unknown block types as `UnknownVendorBlock`s; `result` frames (`_map_result` L1021-L1074) classify
 completed/interrupted/failed from the adapter-attributed terminal stamp or
 `subtype`/`is_error`/`terminal_reason` (cancel reasons L76), mint a `turn-result` item, and emit
 `MappedTurnOutcome` with the stop reason; non-replay
-`user` frames are tool-result carriers (`_map_tool_carrier` L763-L853) that upsert the same tool
+`user` frames are tool-result carriers (`_map_tool_carrier` L887-L975) that upsert the same tool
 item with the output block (phase `failed` on `is_error`); `system` frames dispatch through
-`_map_system` (L262-L295): api_retry/status still feed the canonical status service via the
+`_map_system` (L269-L302): api_retry/status still feed the canonical status service via the
 snapshot, and every other subtype observed on 2.1.220 (init, task_updated, hook_*, ...) still
 drops silently exactly as before, but the agent-lifecycle subtypes now mint roster items (see the
 sub-agent paragraph below); `command_lifecycle` frames (L228-L229 →
@@ -59,13 +59,14 @@ validated against the captured 3-state contract (`command_uuid` present, `state 
 {queued,started,completed}`) and minting NO timeline item, so an ordinary session no longer floods
 with `claude:command_lifecycle` boxes (native `result`/history already renders the command), while
 a state outside the contract raises `UnmappableShape` and surfaces as visible drift instead of
-silent tolerance; `rate_limit_event` frames (L230-L234) are shape-validated (`rate_limit_info`
-required) then dropped as telemetry, exactly like codex rateLimits. Genuinely unknown frame types
+silent tolerance; `rate_limit_event` frames (recognized by the `_SILENT_FRAME_CONTRACTS` lookup
+L220-L223, table L263-L266 → `_require_rate_limit_event` L253-L256) are shape-validated
+(`rate_limit_info` required) then dropped as telemetry, exactly like codex rateLimits. Genuinely unknown frame types
 still become `MappedUnknownVendor`.
 
 Sub-agents: `_map_system` routes `task_started`/`task_progress`/
 `task_notification` to `_map_task_lifecycle` (L298-L424) and `background_tasks_changed` to
-`_map_background_tasks_changed` (L427-L490). `_map_task_lifecycle` upserts ONE roster item per
+`_map_background_tasks_changed` (L557-L618). `_map_task_lifecycle` upserts ONE roster item per
 agent (`claude-agent-<task_id>`, role `system`, kind `notice`) across started → progress →
 notification, carrying description/summary/usage blocks and a `ConversationAgentRef` whose status
 comes from the probe-locked `task_notification.status` vocabulary (`_NOTIFICATION_AGENT_STATUS`
@@ -84,14 +85,14 @@ the roster identity to assistant/user frames keyed by `parent_tool_use_id` — t
 wins once task_* evidence bound the join key, otherwise the join key itself is the honest
 `agent_id` with status `unknown` and the frame's own `subagent_type` as role — and
 `_spawned_agent_ref` (L196-L207) tags a parent-timeline `tool_result` that settles a bound Agent
-call. Sidechain user-frame text blocks become the sub-agent's own user message item (L810-L850 —
+call. Sidechain user-frame text blocks become the sub-agent's own user message item (L932-L972 —
 the probe shows the task prompt echo as the first sidechain user frame; with
 `--forward-subagent-text` its replies cross too), while parent user text keeps the
 unknown-vendor/replay-echo path. A MALFORMED task_* frame is vendor shape drift: it degrades to
-preserved unknown-vendor (`claude-system:<subtype>`, L285-L295), never a guess and never a stream
+preserved unknown-vendor (`claude-system:<subtype>`, L292-L302), never a guess and never a stream
 kill — a frame on every agent spawn must never kill the projection.
 
-`map_transcript_echo` (L493-L538) consumes only `role="user"` entries: the echo is the
+`map_transcript_echo` (L621-L662) consumes only `role="user"` entries: the echo is the
 authority's own submission record (original text, exact request id, replay correlation uuid), so
 the user item keys on the replay uuid and carries unknown-input provenance until the engine's
 provenance batch resolves the real source — replayed user frames on the evidence channel raise
@@ -175,9 +176,9 @@ upsert; the conversation grammar carries the roster identity as `ConversationAge
 | --- | --- | --- |
 | The adapter builds the exact submission echo (original text, exact request id, replay uuid) this mapper consumes. | L435-L463 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
 | The claude runtime fixture records the claude evidence rows; version strings are informational metadata, never a capability gate. | L37-L41 | [claude-2.1.211.json](agents-remember/mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json) |
-| The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output; a late `streaming`-claiming tagging upsert never regresses a terminal phase (fix-round review finding 9). | L123-L134; L435-L452 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The engine's echo zipper merges echo and frame channels by strict turn order. | L573-L577; L696-L712 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
-| `ConversationAgentRef`/`ConversationAgentStatus` are the additive roster grammar this mapper emits (agent_id/role/join_key/status; `None` = parent conversation). | L315-L338; L375 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output; a late `streaming`-claiming tagging upsert never regresses a terminal phase (fix-round review finding 9). | L123-L134; L431-L448 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
+| The engine's echo zipper merges echo and frame channels by strict turn order. | L35-L36; L82-L111 | [projector/echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
+| `ConversationAgentRef`/`ConversationAgentStatus` are the additive roster grammar this mapper emits (agent_id/role/join_key/status; `None` = parent conversation). | L311-L334; L371 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
 ## Cross-Repo References
 
@@ -200,8 +201,51 @@ when invalid entries are skipped.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L2 Current Delta
+
+The `task_*` (sub-agent roster) mapping was decomposed into named readers, and one concept was
+introduced:
+
+- **`_TaskIdentity`** (`join_key`, `subagent_type`, `description`, `retained_description`) — the
+  roster identity one `task_*` frame resolves to, **frame evidence over binding**.
+  `retained_description` is deliberately what the replacing binding record keeps, which is NOT
+  always what the roster row displays; `_resolve_task_identity` is the one place that difference is
+  decided.
+- `_task_lifecycle_state(subtype, …)` — the join key, agent status and item phase a lifecycle
+  subtype settles on.
+- `_require_task_usage(subtype, raw)` — the frame's optional `usage` telemetry, validated as the
+  vendor-owned object it is.
+- `_task_usage_block(...)` — the roster row's telemetry block, or `None` when the frame carried
+  neither half.
+- `_task_lifecycle_blocks(...)` — the roster row's content blocks, in the order every upsert
+  re-emits them.
+- `_agent_identity_tag_item(...)` — the `task_started` upsert that tags the spawning `Agent`
+  tool-call with the bound identity.
+
+Two strictness checks were also named: `_require_command_lifecycle` (strictly recognize the 3-state
+slash-command lifecycle) and `_require_rate_limit_event` (strictly recognize rate-limit telemetry,
+which feeds L3 exactly like codex `rateLimits`). The mapped output is unchanged — an unrecognized
+shape is still preserved, never guessed.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. `rate_limit_event`
+  is no longer its own `if frame_type == …` branch in `map_evidence_frame`; the silent-contract frame
+  types are now a table lookup, so the old `(L230-L234)` — which now points at the `system` branch and
+  the unknown-vendor fallback — became `_SILENT_FRAME_CONTRACTS` lookup L220-L223, table L263-L266,
+  validator `_require_rate_limit_event` L253-L256. The claim (shape-validated on `rate_limit_info`,
+  then dropped as telemetry, minting no timeline row) re-verified and unchanged.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file citation whose target file
+  was split into a package upstream. `serving/conversation/active/projector.py` no longer exists;
+  the echo zipper now lives in `active/projector/echo_ingestion.py`. Repointed both the link path
+  and the range: `EchoIngestion` ("Own the strict turn-order zip between Claude echoes and evidence
+  frames") at L35-L36, and the zip itself — `_zip_entry` plus `_drain_one_turn_body` — at L82-L111.
+  Read the module to confirm a user echo still opens the next turn and flushes the frames queued
+  behind the previous one.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `_TaskIdentity` and the named `task_*` / strict-recognition readers; mapped output unchanged.
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: the projector learned claude sub-agent mapping (D6)
   — `system` frames `task_started`/`task_progress`/`task_notification` now mint one roster item per
   agent, `background_tasks_changed` registers never-bound background tasks, a bounded session-keyed

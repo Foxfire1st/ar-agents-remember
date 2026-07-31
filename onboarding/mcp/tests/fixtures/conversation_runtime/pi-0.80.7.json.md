@@ -84,7 +84,7 @@ direct evidence.
 | Foundation tests require this exact runtime/helper tuple, false enablement, and raw-free fixture set. | L102-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The helper manifest pins the Pi package version named by this fixture. | L13-L16 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
 | The opt-in installed suite captures these `substrate-evidence/*` rows through the production seam and asserts their shapes. | L273-L340 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
-| The L2 installed-runtime suite produces the live helper gate and real Pi open evidence this row records. | L215-L262; L360-L479 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The L2 installed-runtime suite produces the live helper gate and real Pi open evidence this row records. | L217-L263; L366-L413 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 | The L2E installed-runtime suite captures these `control-plane/*` rows through the production control seam and asserts their shapes. | L262-L364 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
 
 ## Cross-Repo References
@@ -97,6 +97,13 @@ No neighboring repository is involved.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
+  `mcp/tests/test_conversation_library_installed.py`. The live-helper-gate range is now L217-L263
+  (`test_live_helper_gate_supports_pi_history` L217-L231, asserting the locked runtime and helper
+  version 0.80.7, plus `test_live_list_read_resolve` L233-L263, which ends on the exact `--session`
+  file proof), and the real-open range is now L366-L413
+  (`test_open_real_pi_session_proves_exact_identity`); the old L360-L479 spilled into
+  `CodexOpenEndToEndTests`.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the three appended
   `control-plane/*` rows (identity-guarded abort write/ack with the stale-identity typed refusal,
   the paged operation timeline, the base64 image asset submit); `enablesCapabilities` stays

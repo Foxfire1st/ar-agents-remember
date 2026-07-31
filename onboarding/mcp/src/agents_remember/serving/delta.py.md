@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/delta.py`  |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-07T05:06+02:00                      |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`  |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`  |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -70,6 +70,15 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 
 ## Update History
 
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/src/agents_remember/serving/delta.py` since the L2 base commit is the whole-tree `ruff
+  format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked
+  by parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-07T05:06+02:00 — 260703-L15 S1 (the change gate): comparison moved to stable forms —
   `VOLATILE_AGE_FIELDS`, `_strip_volatile`/`_stable_dump`, `StableProjectionState` +
   `stable_projection_state`, and `diff_projection` gained optional precomputed-state arguments.

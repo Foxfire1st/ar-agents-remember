@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T20:45+02:00     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -18,6 +18,23 @@ and public compatibility exports while implementation lives in focused setup
 modules.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Seed-Catchup Split
+
+`_seed_catchup_results` was split into three named steps that make the honesty rule explicit:
+
+- `_seed_touch_plan(entries, root)` → `(touch_paths, residuals)` — splits the diff into paths a
+  touch can re-index and **residual staleness it cannot**: deletions, the vanished source half of a
+  rename, and paths absent from the checkout have no file left to touch, so they stay in the index
+  as phantoms until an explicit refresh.
+- `_stale_index_skip(args, settings, payload, stale_index)` — records and reports a delta this run
+  did not deliver: the index serves, knowingly stale. Both skip paths (over the delta-file limit,
+  and watcher-not-ready) go through it, so they report identically by construction.
+- `_deliver_seed_touches(args, settings, payload, touch_paths, residuals)` — touches the
+  deliverable files; **`caughtUp` is claimed only with zero residuals**.
+
+`run_lifecycle` calls pass a `LifecycleCommand` (re-exported here as
+`provider_setup.LifecycleCommand`).
 
 ### Logic
 
@@ -175,6 +192,12 @@ provider stack is POSIX-hosted anyway.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915` armed with no
+  exemptions): extracted `_seed_touch_plan`, `_stale_index_skip` and `_deliver_seed_touches` from
+  `_seed_catchup_results`, and updated the watcher `run_lifecycle` call for the new
+  `LifecycleCommand` signature (also re-exported here). Every emitted payload — `skipped`,
+  `staleIndex`, `touched`, `residuals`, `caughtUp` — is unchanged. Verification metadata pinned
+  until closeout stamps the L2 commit.
 - 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fixes (L2/B1+B2 + round-2 verdict): the catch-up
   stage now WAITS for the cgc watcher's post-subscribe log marker before touching
   (`_wait_for_cgc_watcher_ready` + `_cgc_watcher_container_name`,

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_landing_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,12 @@ Landing-state tests now cover freezing fully observed completed facts, stale/cor
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — No content impact: the only change is the `_contract` fixture helper,
+  which now calls `default_contract` with the `ContractTask` / `LeafIdentity` / `RepoBranchPlan`
+  parameter objects introduced for PLR0913 instead of ten loose keyword arguments. The same
+  per-index contract identities are still produced, and no observer test case, probe scenario, or
+  assertion in this suite changed, so the coverage record above still holds.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

@@ -78,9 +78,11 @@ validate every emitted product.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The engine maps `UnmappableShape` to preserved unknown-vendor evidence, never a stream failure; the agent binding still applies to malformed agent-thread frames. | L856-L879 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
-| The engine routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and rebuilds user items through provenance resolution. | L969; L986-L1004 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
-| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | L197-L204; L341-L431 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Native evidence ingestion maps `UnmappableShape` (and an over-budget truncated frame) to preserved `MappedUnknownVendor` evidence, never a stream failure; thread binding and roster reconciliation still apply to malformed agent-thread frames. | L159-L200 | [native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) |
+| Echo ingestion takes the same containment for a submission echo it cannot parse. | L165-L178 | [echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
+| `ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal. | L85-L100 | [mutation_stream.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py) |
+| The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store. | L179-L192 | [rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
+| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | L193-L200; L337-L427 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
 ## Cross-Repo References
 
@@ -91,6 +93,8 @@ No cross-repository implementation participates in this shared module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations broken by the `active/projector.py` -> `active/projector/` package split, expanding them into 4 rows because the consumers landed in different modules. `UnmappableShape` containment plus thread binding/roster reconciliation is `native_ingestion.py` L159-L200; the echo-side equivalent is `echo_ingestion.py` L165-L178; the `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` routing into the store is `ProjectionMutationStream.apply_outputs` in `mutation_stream.py` L85-L100; the user-item provenance rebuild is `RebuildCoordinator._resolve_provenance` in `rebuild_coordinator.py` L179-L192.
 
 - 2026-07-26T15:34 — 260718-CHATS-L7: `MappedUnknownVendor` gained the optional
   `agent: ConversationAgentRef` field (L92-L96, fix-round review finding 4) so a malformed

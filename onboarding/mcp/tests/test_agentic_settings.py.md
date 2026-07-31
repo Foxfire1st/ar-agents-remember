@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585` |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -163,8 +163,8 @@ No known follow-up in this file.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The loader under test. | whole module | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
-| The harness registry bounding harness-id validation. | L41-L48 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
-| Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | L443-L488 | [test_agentic_settings.py](agents-remember/mcp/tests/test_agentic_settings.py) |
+| The harness registry bounding harness-id validation. | L41-L49 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
+| Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | L419-L464 | [test_agentic_settings.py](agents-remember/mcp/tests/test_agentic_settings.py) |
 
 ## Cross-Repo References
 
@@ -175,6 +175,12 @@ No meaningful cross-repo references found.
 | Loader-local behavior only. | - | - |
 
 ## Update History
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/tests/test_agentic_settings.py` and moved the lines this card cites, so the Citations
+  column no longer pointed at the code its rows name. Corrected the ranges (L443-L488 →
+  L419-L464). The behaviour described is unchanged — the file's AST is identical to the base
+  revision — this is a citation repair only. Verification metadata pinned until closeout stamps
+  the L2 commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the partial-override regressions
   that prevent built-in static effort policy from reappearing and corrected the nearest governing
   overview link. Verification metadata remains pinned until closeout stamps the L2 code commit.

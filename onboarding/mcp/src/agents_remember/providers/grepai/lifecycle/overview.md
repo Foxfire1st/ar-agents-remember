@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-06T23:55+02:00|
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -68,8 +68,45 @@ service ports (`5432` and `11434`) used inside the Docker network.
 | The parent lifecycle facade imports the GrepAI package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
 | Provider lifecycle tests cover Docker-only GrepAI install, run, and watcher behavior. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
 
+## 260731-EFA-L2 — The Vocabulary Of A Stack Start
+
+Every container in this package is started from a *resolved invocation*, and each of those used to
+be a tuple or a run of parallel keywords. They are now named frozen values, and the names carry
+facts the tuple positions did not:
+
+| Type | Home | What it settles |
+| --- | --- | --- |
+| `GrepaiBackendContext` | `backend.py` | `settings_path`, `provider_settings`, `layout`, `backend`, `network_name`. `grepai_backend_start_context(args)` returns it; every backend command needs all of it. |
+| `GrepaiEmbedderContext` | `embedder.py` | The same five for the Ollama container. `grepai_embedder_start_context(args)` returns it. |
+| `GrepaiWatcherStart` | `runner.py` | `layout`, `runner`, `network`, `image` — everything a watcher start has in hand **before compose brings it up**, resolved once by `grepai_watcher_start_prerequisites` and reported verbatim in every watcher-start result. |
+| `GrepaiStackResults` | `runner.py` | The lifecycle result of each container — `backend`, `embedder`, `watcher`, each optional. `grepai_docker_state(layout, stack, *, action, runner)` takes it. |
+| `GrepaiServicePorts` | `core.py` | The host ports the stack publishes its dependencies on: `postgres`, `ollama`. |
+| `GrepaiWorkspaceConfig` | `core.py` | What one `workspace.yaml` says — `dsn`, `embedder_settings`, `project_paths`. The three are only meaningful as one document: the watcher reads them together to know where to write vectors, how to produce them, and which container paths each indexed project lives at. |
+
+Two of these encode a rule worth stating. `UNRESOLVED_SERVICE_PORTS` is the frozen empty
+`GrepaiServicePorts` used as the default, and it means **"nothing published yet, so fall back to the
+configured host port"** — the `ports.postgres or backend["postgresHostPort"]` fallback is preserved
+exactly, and a caller that knows a live published port passes it. And `GrepaiWatcherStart` is
+deliberately the *pre*-compose set: adding a post-start fact to it would make the watcher-start
+result claim something compose had not yet done.
+
+`backend.py` and the CGC backend both take `BackendStartReconciliation` from
+`providers/lifecycle/compose_runtime.py` — the shared record of what a start already did to the
+host (network adoption, unmanaged-project migration, forced removal of a container whose data mount
+no longer matches).
+
+`core.py` builds its layout through `GrepaiWorkspace(...)` / `GrepaiInstance(...)` (see the
+[context route](../context/overview.md)). No container topology, port preference, DSN, initial-scan
+reading or settings rule changed.
+
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: the resolved-invocation tuples became named frozen values
+  — `GrepaiBackendContext`, `GrepaiEmbedderContext`, `GrepaiWatcherStart`, `GrepaiStackResults`,
+  `GrepaiServicePorts` (+ `UNRESOLVED_SERVICE_PORTS`) and `GrepaiWorkspaceConfig` — and both
+  backends now share `BackendStartReconciliation` from the provider-agnostic lifecycle package.
+  Container topology, ports, DSNs, `initialScan` reading and the `--from-settings` rule are
+  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-06T23:55+02:00 — L13 owner follow-up (body): core.py's explicit --from-settings requirement stated in the route model (the earlier ride-along was history-only). Verification metadata pinned until closeout stamps the L13 commit.
 
 - 2026-07-06T23:10+02:00 — 260703-L13 ride-along: `core.py`'s

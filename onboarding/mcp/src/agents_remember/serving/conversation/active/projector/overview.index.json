@@ -19,11 +19,12 @@
     "mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py",
     "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py",
     "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py",
-    "mcp/src/agents_remember/serving/conversation/active/projector/references.py"
+    "mcp/src/agents_remember/serving/conversation/active/projector/references.py",
+    "mcp/src/agents_remember/serving/conversation/active/projector/wiring.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 10,
-    "fileSidecars": 10,
+    "sourceFilesInScope": 11,
+    "fileSidecars": 11,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -59,7 +60,8 @@
     "remember",
     "serving",
     "src",
-    "stream"
+    "stream",
+    "wiring"
   ],
   "hotPath": {
     "summary": "",
@@ -74,7 +76,8 @@
       "mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py",
       "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py",
       "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py",
-      "mcp/src/agents_remember/serving/conversation/active/projector/references.py"
+      "mcp/src/agents_remember/serving/conversation/active/projector/references.py",
+      "mcp/src/agents_remember/serving/conversation/active/projector/wiring.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -97,15 +100,24 @@
       "rebuild_coordinator",
       "references.py",
       "references",
+      "wiring.py",
+      "wiring",
       "route-local-overview",
       "mcp/src/agents_remember/serving/conversation/active/projector/",
       "mcp/src/agents_remember/serving/conversation/active/projector/overview.md",
       "active/overview.md",
-      "3a8ff703d796dc585b86a458daaf9eb2af6b2b31",
+      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
       "active/projector.py",
+      "SessionProjectionSpine",
+      "parent_thread_id",
+      "bridge_epoch",
+      "BridgeReaders",
       "ActiveSessionProjector",
       "projector/__init__.py",
       "Domain Documentation",
+      "LIVE_BRIDGE_READERS",
+      "ProjectedSession",
+      "IngestionComponents",
       "/overview.md",
       "service.py",
       "agents-remember/mcp/src/agents_remember/serving/conversation/active/service.py",
@@ -115,16 +127,7 @@
       "agents-remember/mcp/tests/test_conversation_active_service.py",
       "test_active_projector_singleflight.py",
       "agents-remember/mcp/tests/test_active_projector_singleflight.py",
-      "agents_remember",
-      "doc_type",
-      "sourceRoute",
-      "onboardingRoute",
-      "parentOverview",
-      "lastUpdated",
-      "T12",
-      "lastVerifiedCommitHash",
-      "a8ff703d796dc585b86a458daaf9eb2af6b2b31",
-      "lastVerifiedCommitDate"
+      "agents_remember"
     ]
   },
   "fallback": {

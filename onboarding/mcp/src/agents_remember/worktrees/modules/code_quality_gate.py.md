@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash |  `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`|
-| lastVerifiedCommitDate |  2026-07-31T04:58:22+02:00|
+| lastUpdated | 2026-07-31T16:10+02:00 |
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,9 +108,9 @@ coverage, and CRAP checks.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Wrapper presence decides applicability, the preview reports one of three states, and execution preserves current-worktree imports with bounded failure output. | L15-L117 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
-| Both closeout call sites pass `contract.code_worktree` — the preview path and the apply path — and the gate runs before `commit_if_dirty`. | L282-L284; L589-L597 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
-| Regressions cover all three statuses, the checkout-not-name argument at both call sites, worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | L38-L322 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| Wrapper presence decides applicability, the preview reports one of three states, and execution preserves current-worktree imports with bounded failure output. | L15-L113 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
+| Both closeout call sites pass `contract.code_worktree` — the preview path and the apply path — and the gate runs before `commit_if_dirty`. | L283-L285; L583-L589 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| Regressions cover all three statuses, the checkout-not-name argument at both call sites, worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | L38-L284 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 | The contributor documentation states the same three-state contract for consuming repositories. | "Closeout" section | [CONTRIBUTING.md](agents-remember/CONTRIBUTING.md) |
 
 ## Cross-Repo References
@@ -120,10 +120,22 @@ that repository's checkout rather than this one.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Applicability is decided by the presence of the wrapper in the target checkout, so a sibling repository that vendors the wrapper is gated and one that does not is reported as `wrapper-unavailable`. | L24-L37 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
+| Applicability is decided by the presence of the wrapper in the target checkout, so a sibling repository that vendors the wrapper is gated and one that does not is reported as `wrapper-unavailable`. | L22-L35 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
 
 ## Update History
 
+- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
+  `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` and moved the lines this card
+  cites, so the Citations column no longer pointed at the code its rows name. Corrected the ranges
+  (L15-L117 → L15-L113; L24-L37 → L22-L35). The behaviour described is unchanged — the file's AST
+  is identical to the base revision — this is a citation repair only. Verification metadata pinned
+  until closeout stamps the L2 commit.
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
+  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
+  structure or responsibility change. The sidecar was re-read against the current source and
+  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
+  pinned until closeout stamps the L2 commit.
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 removed the repository-name hard-code (L1-R10). The
   deciders now take the code worktree `Path` and gate on wrapper availability, so the gate applies
   to every consuming repository that carries the wrapper instead of only to `agents-remember`.

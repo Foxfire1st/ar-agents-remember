@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -22,7 +22,15 @@ onboarding against the current source tree, routing entity-catalog sidecars to
 
 `classify_external_onboarding` compares a source file against its recorded
 `lastVerifiedCommitHash` (handling missing source, missing commit, clean, and
-drifted cases); `classify_overview_onboarding` does the same for repo/route
+drifted cases). Since 260731-EFA-L2 it builds its six verdicts through a local `row(*,
+classification, trust, affected_sections, note)` closure that fixes the identity and verification
+stamp (`onboarding_file`, `source_file`, `repository`, `storage_mode="external"`,
+`last_verified_hash`, `last_verified_date`) once, so the four varying fields are the only thing a
+verdict states — the same shape `classify_overview_onboarding` already used. A local
+`_early_classification()` closure returns the missing-metadata, orphaned-source and
+commit-not-in-history verdicts before the diff runs; `None` means proceed to the diff. Every
+classification, trust level, affected-sections string and note is unchanged.
+`classify_overview_onboarding` does the same for repo/route
 overviews by `sourceRoute`; `classify_external_source` maps a source to its
 mirrored sidecar; `classify_sidecar_onboarding_units` dispatches by `doc_type`
 (overview / entity-catalog / file-level) and storage mode.
@@ -44,6 +52,11 @@ mirrored sidecar; `classify_sidecar_onboarding_units` dispatches by `doc_type`
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911` armed with no
+  exemptions): `classify_external_onboarding` was rewritten around a `row(...)` verdict closure
+  plus an `_early_classification()` closure, collapsing six hand-repeated `DriftRow(...)`
+  constructions into four-field verdicts. Same verdicts, same order. Verification metadata pinned
+  until closeout stamps the L2 commit.
 - 2026-05-31T12:50+02:00 — `classify_sidecar_onboarding_units` now gates non-sidecar storage via the boolean `is_sidecar_storage` predicate instead of the removed `sidecar_storage_label` helper (both imported from `coordination_context_resolver`); corrected the Invariants note to name `is_sidecar_storage` (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Extracted an `_early_classification` closure in `classify_overview_onboarding` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; the unused `classify_sidecar_onboarding` aggregator was dropped during the split. Metadata pending closeout refresh to the split commit.

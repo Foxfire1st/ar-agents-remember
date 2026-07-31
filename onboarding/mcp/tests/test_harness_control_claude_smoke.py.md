@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_claude_smoke.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-30T15:25+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,6 +56,13 @@ production exact-version requirement; production accepts the installed/current C
 structured contract.
 
 ## Update History
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 added only `import pytest` and the
+  `@pytest.mark.ar_claude_stream_smoke` marker stacked above the existing
+  `@unittest.skipUnless(AR_CLAUDE_STREAM_SMOKE == "1", ...)` decorator — the leaf's way of naming
+  environment-gated suites now that `--strict-markers` is enforced. Nothing else in the file moved:
+  the opt-in gate this card calls "pinned and opt-in", the exact `ControlOperationRef` submission,
+  the credential-safe `/cost` design, and the pending slash-command capability note all describe
+  code the diff never touched.
 - 2026-07-30T15:25+02:00 — 260727-CHATS-IM-L4: recorded the developer ruling that harness slash
   commands are unimplemented and owned by an upcoming master, so this suite's `/cost` arm asserts a
   pending capability and its red state is expected rather than a regression.

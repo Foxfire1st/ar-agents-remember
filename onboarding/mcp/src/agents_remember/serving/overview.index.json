@@ -20,6 +20,7 @@
     "mcp/src/agents_remember/serving/actions.py",
     "mcp/src/agents_remember/serving/app.py",
     "mcp/src/agents_remember/serving/build_info.py",
+    "mcp/src/agents_remember/serving/cadence.py",
     "mcp/src/agents_remember/serving/change_watcher.py",
     "mcp/src/agents_remember/serving/changeset.py",
     "mcp/src/agents_remember/serving/claude_stream_capabilities.py",
@@ -62,6 +63,7 @@
     "mcp/src/agents_remember/serving/hosted_control_projection.py",
     "mcp/src/agents_remember/serving/hosted_interactions.py",
     "mcp/src/agents_remember/serving/hosted_readiness.py",
+    "mcp/src/agents_remember/serving/hosted_session_runtime.py",
     "mcp/src/agents_remember/serving/inbox_delivery.py",
     "mcp/src/agents_remember/serving/inbox_reclamation.py",
     "mcp/src/agents_remember/serving/injector.py",
@@ -95,8 +97,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 137,
-    "fileSidecars": 77,
+    "sourceFilesInScope": 140,
+    "fileSidecars": 79,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -115,6 +117,7 @@
     "brief",
     "build",
     "build_info",
+    "cadence",
     "capabilities",
     "capability",
     "catalog",
@@ -176,10 +179,9 @@
     "hosted_control_projection",
     "hosted_interactions",
     "hosted_readiness",
+    "hosted_session_runtime",
     "inbox",
-    "inbox_delivery",
-    "inbox_reclamation",
-    "info"
+    "inbox_delivery"
   ],
   "hotPath": {
     "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",
@@ -190,6 +192,7 @@
       "mcp/src/agents_remember/serving/actions.py",
       "mcp/src/agents_remember/serving/app.py",
       "mcp/src/agents_remember/serving/build_info.py",
+      "mcp/src/agents_remember/serving/cadence.py",
       "mcp/src/agents_remember/serving/change_watcher.py",
       "mcp/src/agents_remember/serving/changeset.py",
       "mcp/src/agents_remember/serving/claude_stream_capabilities.py",
@@ -206,8 +209,7 @@
       "mcp/src/agents_remember/serving/codex_app_server_session.py",
       "mcp/src/agents_remember/serving/codex_app_server_state.py",
       "mcp/src/agents_remember/serving/daemon.py",
-      "mcp/src/agents_remember/serving/delta.py",
-      "mcp/src/agents_remember/serving/dispatch_brief.py"
+      "mcp/src/agents_remember/serving/delta.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -218,6 +220,8 @@
       "app",
       "build_info.py",
       "build_info",
+      "cadence.py",
+      "cadence",
       "change_watcher.py",
       "change_watcher",
       "changeset.py",
@@ -255,9 +259,7 @@
       "dispatch_brief.py",
       "dispatch_brief",
       "events.py",
-      "events",
-      "files.py",
-      "files"
+      "events"
     ]
   },
   "fallback": {

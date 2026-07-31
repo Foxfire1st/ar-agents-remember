@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T23:30+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -22,7 +22,22 @@ settings ownership, and the teardown guards.
 
 `make_contract` builds a disabled-memory `default_contract` under a temp root;
 `CapturedThreads` is a `thread_factory` seam that records spawned threads so
-tests can join them deterministically. Launcher tests inject a fake `runner`:
+tests can join them deterministically.
+
+Since 260731-EFA-L2 both constructions this suite drives take parameter objects.
+`default_contract` is called as
+`default_contract(ContractTask(...), leaf=LeafIdentity(...), code=RepoBranchPlan(...),
+memory=RepoBranchPlan(...))` instead of fourteen loose keywords — note the disabled-memory
+case still passes an all-empty memory plan and needs a `# type: ignore[arg-type]` because
+`RepoBranchPlan.repo_path` is not optional. `launch_provider_setup` takes a
+`ProviderSetupJob(request, contract, write_state_file, settings_cleanup)` in its first
+positional slot — the four values the daemon thread closes over, which it cannot be started
+with a subset of — while `runner` and `thread_factory` remain the keyword-only injection
+seams. The start-ordering assertion reads the transferred cleanup path off
+`launch_mock.call_args.args[0].settings_cleanup` accordingly, where it previously read
+`call_args.kwargs["settings_cleanup"]`.
+
+Launcher tests inject a fake `runner`:
 success writes the state file, records `providerStateFile` in the finish
 summary, and unlinks the temp settings file from the thread; a failed payload
 finishes `failed` without a state file; a raising runner finishes `failed`
@@ -62,6 +77,22 @@ No external documentation is needed for these standard-library unit tests.
 | Controller ownership helper under test. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: recorded the parameter-object call shapes the
+  `PLR0913` pass introduced here, since the card describes the launcher's seams closely enough that
+  the old shape would mislead a reader reconstructing the call. `launch_provider_setup` now takes a
+  `ProviderSetupJob` positionally, keeping `runner` and `thread_factory` keyword-only, and
+  `default_contract` takes `ContractTask` plus keyword-only `LeafIdentity` and two `RepoBranchPlan`
+  values in place of fourteen keywords. The start-ordering test reads the transferred settings path
+  off `call_args.args[0].settings_cleanup` rather than `call_args.kwargs["settings_cleanup"]`, which
+  is the same assertion against the same expected value. The rest of the diff is `ruff format`
+  rejoining eight wrapped calls. Every behavioural claim was re-read against the current file and
+  still holds: the contract is still disabled-memory, the success path still writes the state file
+  and unlinks settings from the thread, the failed and raising paths still finish `failed`, the
+  contract still exists on disk when `run_or_launch_provider_setup` is invoked, dry-run is still
+  synchronous, and the retry and teardown guards still return exit 2 with their hints. This card
+  carries no line citations, so nothing needed re-anchoring. Verification metadata stays pinned
+  until closeout stamps the code commit.
 
 - 2026-07-07T23:30+02:00 — 260707-HFX-L4: updated the start-ordering mock target to the extracted
   `build_start_contract` call site after contract construction moved out of `start.py`. Verification

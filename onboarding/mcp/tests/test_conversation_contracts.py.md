@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_contracts.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ evidence for this internal test suite.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The strict production grammar defines all cursor, item, status, capability, operation, recovery, attachment, metric, and fixture products under test. | L25-L1270 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The strict production grammar defines all cursor, item, status, capability, operation, recovery, attachment, metric, and fixture products under test. | L25-L1282 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | Foundation tests separately guard ports, route ownership, helper resolution, and installed-fixture topology. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 
 ## Cross-Repo References
@@ -91,6 +91,24 @@ No neighboring repository participates in these contract tests.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `models.py`
+  is now 1282 lines and the old L25-L1270 stopped inside `operation_fingerprint` (L1265-L1282), the
+  canonical-identity hash the operation products are keyed by. The row now reads L25-L1282: from
+  `HarnessId` through the final line of the module, so every product the claim enumerates —
+  cursor brands, `ConversationItem`, status, capabilities, operations, recovery, attachments,
+  the metric block (L1185-L1242) and `RuntimeFixtureEvidence` (L1252-L1262) — is inside it. No
+  claim text changed.
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to
+  `mcp/tests/test_conversation_contracts.py` since the L2 base commit is the whole-tree `ruff
+  format` pass in `00e8379`, which re-wrapped 19 line(s), touching only redundant grouping
+  parentheses. Checked by parsing both revisions and comparing the abstract syntax trees
+  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
+  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
+  card makes about its own source still holds. Noted while checking: the references table also
+  cites line ranges inside `models.py`; those ranges shifted because this task edited those files,
+  so treat the cited numbers as approximate and the linked cards as authoritative.
 
 - 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: recorded the four wire-contract additions for
   the multiplexed sub-agent surface — the `ConversationAgentRef` status-vocabulary/additive-shape/

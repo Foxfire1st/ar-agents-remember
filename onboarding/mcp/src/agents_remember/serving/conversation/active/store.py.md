@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,36 +29,36 @@ later block-less lifecycle upserts.
 
 ### Logic
 
-`apply_item` (L124-L214) appends a new item (revision 1, next global ordinal) or upserts an
+`apply_item` (L161-L249) appends a new item (revision 1, next global ordinal) or upserts an
 existing one: when `existing.kind == candidate.kind == "tool-call"` the candidate's blocks are
-first unioned with the existing blocks by `block_id` (`_union_blocks` L435-L451 — candidate wins
+first unioned with the existing blocks by `block_id` (`_union_blocks` L466-L482 — candidate wins
 per shared id, existing siblings survive, order stable), so partial-block tool items (invocation
 first, result later) converge instead of the later whole-item replacement silently discarding
 the `ToolInputBlock` (review finding F1); codex full-item re-maps are byte-identical under
 union. Two upsert-race guards sit on top of that union. First (fix-round review
-finding 9, L161-L166): a late tagging upsert — claude `task_started` binds the agent identity
+finding 9, L195-L204): a late tagging upsert — claude `task_started` binds the agent identity
 onto the spawning tool call — hard-claims `phase="streaming"`, and reordered evidence can land
 it AFTER the tool_result already completed the item; the guard keeps the existing terminal phase
 (`completed`/`failed`/`interrupted`) so a settled tool call never re-opens. Second (fix-round
-review finding 5, L173-L182): codex roster notices (sub-agent lifecycle rows) upsert per
+review finding 5, L206-L217): codex roster notices (sub-agent lifecycle rows) upsert per
 lifecycle event and most of those events (`turn/started`, `turn/completed`, status) know nothing
 about the agent's final message — when the candidate carries no `final-message` block, the
 existing one is retained first-wins instead of being wiped by whole-item replacement.
 Comparison normalizes engine-assigned fields (L49) so identical replays are no-ops; a
 real change advances the revision while preserving ordinal, created-at, and provenance.
-`apply_delta` (L216-L238) appends text into one existing block — targeting the mapped block id
-or the kind-based default (`tool-call` → `output`, else `markdown`, L408-L412) — and buffers
+`apply_delta` (L251-L273) appends text into one existing block — targeting the mapped block id
+or the kind-based default (`tool-call` → `output`, else `markdown`, L441-L445) — and buffers
 deltas that arrive before their item or block (bounded 64 items × 64 deltas, L36-L39,
-L300-L307), flushing them on the item's arrival (L309-L341). `apply_provenance` (L240-L271)
+L335-L342), flushing them on the item's arrival (L344-L376). `apply_provenance` (L275-L306)
 resolves one user item's producer from the provenance batch verdict through `_SOURCE_AUTHORITY`
 (L41-L47: cockpit → operator/cockpit-composer, terminal → operator/terminal-controlled, durable
 → agent-bus/durable-inbox), exactly once per request id, with strength `exact`; absent records
-leave the honest unknown-input product untouched. `page` (L273-L289) slices one chronological
+leave the honest unknown-input product untouched. `page` (L308-L324) slices one chronological
 window by ordinal with an older-page boundary and an honest `total_items` (only when the caller
-attests the total is known). `unknown_vendor_item` (L454-L486) mints the preserved
+attests the total is known). `unknown_vendor_item` (L485-L517) mints the preserved
 unknown-vendor evidence item — the public item carries only a safe summary and an opaque
 coordinate evidence handle; raw payloads stay server-side. It also
-propagates the mapper-bound agent ref (`agent=mapped.agent`, L472), so a malformed agent-thread
+propagates the mapper-bound agent ref (`agent=mapped.agent`, L503), so a malformed agent-thread
 frame's preserved evidence lands in the agent's view, not anonymously in the parent's.
 
 ### Input-authority preservation across native re-maps (H2/F4)
@@ -78,7 +78,7 @@ candidate's `unknown-input` lane/source while preserving the existing resolved `
 SPLITTING the triple into a `lane="unknown-input"` item that carries `strength="exact"` + an
 operator producer. That item violates `ConversationItem.preserve_input_authority` (`models.py`) but
 is stored SILENTLY because pydantic v2 `model_copy(update=…)` skips validation; it 500-ed only later,
-at the active-page route / SSE re-validation boundary (and when `projector.py` wraps the mutation
+at the active-page route / SSE re-validation boundary (and when the projector wraps the mutation
 into `UpsertItemMutation`) — the intermittent active-page 500 the reviewer saw. The fix applies
 `_preserved_input_authority` at BOTH the real upsert AND (F4) the comparable candidate BEFORE the
 normalized-equality check, so an identical `unknown-input` re-map of an already-resolved user item
@@ -97,7 +97,7 @@ re-resolves, so the pin is never persisted state.
 ### Conventions
 
 The store holds no IO, no envelope minting, and no cursor knowledge — the projector wraps
-`StoreMutation`s into envelopes. User-item provenance is tracked (L291-L298) only while not
+`StoreMutation`s into envelopes. User-item provenance is tracked (L326-L333) only while not
 already exact, and resolution never downgrades an exact verdict.
 
 ### Invariants And Boundaries
@@ -121,7 +121,7 @@ already exact, and resolution never downgrades an exact verdict.
   whole-item replacement semantics with this single roster retention exception (no legitimate
   native block-removal update exists in any landed tool grammar).
 - Agent identity on preserved unknown-vendor evidence flows into the stored item
-  (`unknown_vendor_item`, L472): a malformed agent-thread frame's evidence is attributed to the
+  (`unknown_vendor_item`, L503): a malformed agent-thread frame's evidence is attributed to the
   agent, never anonymously to the parent.
 - Buffering is bounded by construction; eviction of pending deltas is silent only for shapes
   that never complete, which the unknown-vendor path already covers.
@@ -150,10 +150,10 @@ the codex roster lifecycle upserts the two retention guards cover.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `ConversationItem` and the block/provenance vocabulary define what the store compares and unions. | L341-L473 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| `ConversationItem` and the block/provenance vocabulary define what the store compares and unions. | L337-L463 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The submission-provenance batch is the only producer-verdict channel; absent records stay unknown-input. | L528-L530 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| Claude mappers emit split tool items (input first, output later) that the block union converges, and the `task_started` tagging upsert that hard-claims `streaming` (the finding-9 guard's subject). | L613-L650; L860-L895 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
-| The projector wraps store mutations into totally ordered envelopes. | L1130-L1183 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
+| Claude mappers emit split tool items (input first, output later) that the block union converges, and the `task_started` tagging upsert that hard-claims `streaming` (the finding-9 guard's subject). | L738-L774; L982-L1017 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
+| The projector wraps store mutations into totally ordered envelopes. | L110-L117; L152-L163 | [projector/mutation_stream.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py) |
 
 ## Cross-Repo References
 
@@ -177,6 +177,36 @@ and yields to terminal candidates or non-history live authority.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the one cross-file citation left broken
+  by the `active/projector.py` -> `active/projector/` package split (commit `3a8ff70`). Envelope
+  minting now lives in `projector/mutation_stream.py`: `ProjectionMutationStream.emit` L110-L117
+  converts a `StoreMutation` to the public `ConversationMutation` and `_mint_envelope` L152-L163
+  bumps the monotonic `self.sequence` and stamps `cursor` / `previous_cursor` / `event_id`
+  (`{generation}:{sequence}`) — the total order the claim names. Both ranges read back. Also
+  dropped the now-wrong `projector.py` filename from the Logic prose above (the behaviour it
+  describes is unchanged); the claim itself needed no rewrite.
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: refreshed every line citation this sidecar makes
+  into its own source. The leaf's only change to `store.py` is the whole-tree `ruff format` commit
+  (`00e8379`), which I confirmed is behaviour-preserving by parsing both revisions and comparing
+  the ASTs — they are identical once docstring whitespace is normalized, and the sole textual
+  edits are a re-indented `apply_item` docstring plus three call/signature expressions collapsed
+  onto one line under the wider line limit. Those three joins removed six lines, which renumbered
+  the whole file below the roster-retention block, so the citations in Logic, Conventions and the
+  Invariants were pointing at the wrong code. Correcting them showed they had also drifted
+  earlier (they were written when the file was 489 lines; it is now 520), so every self-file
+  citation was re-derived from the current source and verified by reading it there:
+  `apply_item` L124-L214 → L161-L249, the terminal-phase guard L161-L166 → L195-L204, the
+  roster `final-message` retention L173-L182 → L206-L217, `apply_delta` L216-L238 → L251-L273,
+  `apply_provenance` L240-L271 → L275-L306, `page` L273-L289 → L308-L324, `_track_provenance`
+  L291-L298 → L326-L333, `_buffer_delta` L300-L307 → L335-L342, `_flush_pending_deltas`
+  L309-L341 → L344-L376, `_default_block` L408-L412 → L441-L445, `_union_blocks` L435-L451 →
+  L466-L482, `unknown_vendor_item` L454-L486 → L485-L517, and the agent-ref propagation L472 →
+  L503. `_NORMALIZED_FIELDS` (L49), `_SOURCE_AUTHORITY` (L41-L47) and the buffering bounds
+  (L36-L39) sit above the first join and were already correct. No prose claim changed: the
+  block-union convergence, both upsert-race guards, the `_preserved_input_authority` triple and
+  the honest page slicing all behave exactly as described.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: roster upserts now preserve a
   terminal child status when a later native-history replay carries only historical non-terminal
   evidence, while still accepting a terminal candidate or current live authority. Verification

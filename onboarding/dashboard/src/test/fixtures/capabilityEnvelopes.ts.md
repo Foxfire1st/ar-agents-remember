@@ -51,7 +51,7 @@ unknown→readback sequences, live Codex snapshot construction, and exact-sessio
 - **L4 extensions** (L249-L336): clamp and echo-without-value results, queued then immediate,
   `codexLiveSessionSnapshot`, confirming/disproving unknown readbacks, and verbatim 404/409/503
   exact-session bodies. `configOptions` remains present only to prove the effort menu ignores it.
-- `CAPABILITY_ERROR_BODIES` (L340-L358): 404 `harness not installed: 'codex'`, 409 non-native,
+- `CAPABILITY_ERROR_BODIES` (L336-L358): 404 `harness not installed: 'codex'`, 409 non-native,
   503 control-unavailable — verbatim server wording with the HTTP status alongside.
 
 ### Invariants And Boundaries
@@ -75,6 +75,11 @@ unknown→readback sequences, live Codex snapshot construction, and exact-sessio
 
 ## Update History
 
+- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation.
+  `CAPABILITY_ERROR_BODIES` is declared at L336 (the `Record<"notInstalled" | "nonNative" |
+  "controlUnavailable", …>` head) and runs to L358, so the range was widened from L340-L358, which
+  began inside the object literal and skipped the declaration. The three verbatim 404/409/503
+  bodies it names are unchanged.
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R9 appended the clamp and defensive echo results,
   queued→immediate sequence, live Codex snapshot helper, unknown confirming/disproving readbacks,
   and exact-session 404/409/503 bodies. Verification metadata remains pinned to the contract base

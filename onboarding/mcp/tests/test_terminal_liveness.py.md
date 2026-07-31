@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -40,9 +40,12 @@ overlap case, and a `calls` counter for the rate-limit case); `_TmuxSubprocessPr
 **real production classifier** `_tmux_probe_session` with `subprocess.run` mocked — the stderr
 cases bite the shipping classification, not a fake.
 
-`TerminalCatalogLivenessTests` builds a temp-dir `TerminalCatalog` per case; `_sweeper(...)`
-constructs a `TerminalCatalogLivenessSweeper` with explicit config (threshold 3 / window 5s /
-pane-gone 1 / interval 0 unless overridden). Cases:
+`TerminalCatalogLivenessTests` builds a temp-dir `TerminalCatalog` per case; `_sweeper(...)`,
+`_snapshot_sweeper(...)`, and `_control_sweeper(...)` construct a
+`TerminalCatalogLivenessSweeper` with one `probe=LivenessProbe(...)` argument carrying the
+hysteresis config plus the injected doubles — `hysteresis=TerminalCatalogLivenessConfig(threshold
+3 / window 5s / pane-gone 1 / interval 0 unless overridden)`, and where a case needs them,
+`pane_capturer=` and `snapshot_reader=`. Only `now=self.clock` stays a loose keyword. Cases:
 
 - `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` — 14 sessions,
   `tmux-command-failed` on every probe, 3 sweeps over 3 seconds: all rows stay `running` with
@@ -105,6 +108,15 @@ Liveness regressions now pin the one-second starting-row path and multi-read dis
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
+  `TerminalCatalogLivenessSweeper` now takes one `probe=LivenessProbe(...)` argument in place of
+  the separate `config=`, `pane_capturer=`, and `snapshot_reader=` keywords, so every sweeper
+  construction in the suite changed shape. Rewrote the sentence describing the three sweeper
+  builders to name `LivenessProbe`, its `hysteresis=TerminalCatalogLivenessConfig(...)` slot, and
+  the two injected doubles that now ride inside it. The threshold-3 / window-5s / pane-gone-1 /
+  interval values are passed unchanged, and none of the eight enumerated cases gained, lost, or
+  altered an assertion.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the regression-coverage record for the current backend/shared behavior and preserved the pre-commit verification stamp.
 

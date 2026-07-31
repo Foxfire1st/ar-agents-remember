@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ succeeded completion edge).
 
 ## Code Commentary
 
-### 260707-HFX2-L17 Pair Retirement Regressions
+### 260707-HFX2-L18 Pair Retirement Regressions
 
 The authority matrix now uses binding leaf/role, covers manager retirement of own-master pipeline
 roles, and proves an unbound failed dispatch resolves its master through `replacementForLeaf`.
@@ -35,8 +35,10 @@ Owner-never-self-retires and portfolio authority remain pinned.
 ### Logic
 
 Shared fixtures: `_config(root, **retirement_overrides)` builds a minimal `McpRuntimeConfig` with
-an overridable `RetirementSettings`; `_entry(session_id, *, leaf_key, spawn_role, status, kind)`
-builds a `TerminalCatalogEntry` with sane defaults (`kind="harness"`, `status="running"`); `_get`
+an overridable `RetirementSettings`; `_entry(session_id, *, leaf_key, spawn_role)` builds one
+fixed shape — a `running` `harness` `TerminalCatalogEntry` — and every rarer shape (a
+`terminated` row, a plain `terminal` row, an unbound `replacement_for_leaf`) is a
+`dataclasses.replace(...)` on the frozen row rather than another builder parameter; `_get`
 asserts a catalog row exists and returns it; `_FakeHost` is a minimal `terminate`-capable stand-in
 so retirement tests never need a real tmux server.
 
@@ -65,18 +67,22 @@ Test classes, in file order:
   `awaiting-input`; idle `>` prompt → `turn-ended`; empty string, `None`, and an unrecognized-shape
   string all → `stale`; a busy marker anywhere in the text wins over an idle-shaped marker
   elsewhere in the SAME capture (precedence proof).
-- **`TurnStateSweepWiringTests`** — `observe_terminal_liveness` with an injected `pane_capturer`:
-  an alive `kind="harness"` row gets classified AND `turn_state_changed=True` on first
-  classification; a `kind="terminal"` (plain shell) row is NEVER classified — asserts `turn_state`
+- **`TurnStateSweepWiringTests`** — `observe_terminal_liveness` with the capturer injected through
+  `probe=LivenessProbe(hysteresis=TerminalCatalogLivenessConfig(), pane_capturer=…)`: an alive
+  `kind="harness"` row gets classified AND `turn_state_changed=True` on first
+  classification; a `kind="terminal"` (plain shell) row — built as
+  `replace(_entry(...), kind="terminal", harness=None)` — is NEVER classified: asserts `turn_state`
   stays `None` and the capturer is never even called (`calls == []`), proving the "plain terminals
   are never classified" invariant at the capture-call level, not just the result level.
 - **`TerminalMarkVsLivenessInterplayTests`** — a retired row stays `status="terminated"` after a
   SUBSEQUENT alive `record_liveness_probe` (hysteresis never resurrects a retire); retiring an
   already-`terminated` row (via a plain `/terminate`, i.e. `mark_terminated`, not a prior retire)
   never back-fills retroactive retirement provenance — `retired_at` stays `None`.
-- **`LandSeatsForLeafTests`** — `land_seats_for_leaf` role/leaf-key scoping: lands only rows
+- **`LandSeatsForLeafTests`** — `land_seats_for_leaf(catalog, SeatClosure(reason, edge, at), *,
+  leaf_key, roles)` role/leaf-key scoping: lands only rows
   matching BOTH `leaf_key` and `roles`, leaves a manager row and a different-leaf worker row
-  untouched, records landing provenance, and skips already-terminated seats.
+  untouched, records the landing provenance carried by `SeatClosure`, and skips
+  already-terminated seats.
 - **`AutoLandHookIntegrationTests`** — the completion-edge wiring in
   `controllers/worktree_tools.py`, built around a fake `WorktreeContract` and mocked
   `git_worktree_manager.integrate_result`/`finalize_result`: `worktree_integrate_tool` auto-lands
@@ -115,7 +121,7 @@ same-repository unit/integration test file with no external-standard dependency.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| No external/domain document governs this test shape; the leaf task doc's failing-first requirement list is the source of truth for coverage scope. | L1-L743 | [test_seat_lifecycle.py](test_seat_lifecycle.py) |
+| No external/domain document governs this test shape; the leaf task doc's failing-first requirement list is the source of truth for coverage scope. | L1-L832 | [test_seat_lifecycle.py](test_seat_lifecycle.py) |
 
 ## Repo-Internal References
 
@@ -153,6 +159,19 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected the shared-fixture and injection-seam
+  descriptions, which the leaf made false. `_entry` lost three parameters — its documented
+  signature `(session_id, *, leaf_key, spawn_role, status, kind)` is now
+  `(session_id, *, leaf_key, spawn_role)` and it always mints a `running` `harness` row; the
+  terminated row, the plain-terminal row and the unbound `replacement_for_leaf` row are now
+  `dataclasses.replace(...)` on the frozen entry, so the "sane defaults" wording was describing
+  defaults that no longer exist as parameters. `TurnStateSweepWiringTests` now injects the
+  capturer through `probe=LivenessProbe(hysteresis=TerminalCatalogLivenessConfig(),
+  pane_capturer=…)` rather than the two loose keywords, and `land_seats_for_leaf` takes a
+  positional `SeatClosure(reason, edge, at)` ahead of `leaf_key`/`roles`; both bullets were
+  rewritten to match. The whole-module citation in Docs References moved from L1-L743 to L1-L832.
+  No test class or method was added, removed or renamed and no assertion changed, so the coverage
+  claims themselves are unaffected.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

@@ -106,12 +106,12 @@ references below use source evidence rather than treating this prose as runtime 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults. | L624-L714; L1130-L1152 | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
-| Built-in ids are registry identities, while native model validation is dynamic rather than a registry enum. | L75-L125; L203-L215 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
+| Built-in ids are registry identities, while native model validation is dynamic rather than a registry enum. | L76-L126; L204-L216 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
 | Spawn rejects caller spend overrides before side effects and sends settings-resolved model/effort through one typed native runner payload. | L400-L434; L474-L518 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 | Claude initialize and `system/init` parse different required fields; the catalog request is a separate control message. | L90-L163 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
 | Startup orders correlated initialize/bootstrap before a separate correlated dynamic catalog request. | L59-L109 | [claude_stream_startup.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_startup.py) |
 | Catalog parsing preserves native model keys and nests each effort menu under its owning model row. | L15-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
-| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | L1000-L1103 | [test_spawn_agent_session.py](agents-remember/mcp/tests/test_spawn_agent_session.py) |
+| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | L1032-L1135 | [test_spawn_agent_session.py](agents-remember/mcp/tests/test_spawn_agent_session.py) |
 
 ## Cross-Repo References
 

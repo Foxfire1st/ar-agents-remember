@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `add1235644c8a5a4b5d6a1b114f29510cdc03d36`                         |
-| lastVerifiedCommitDate | 2026-06-19T15:03:04+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -15,6 +15,25 @@
 `seed.py` owns GrepAI workflow-local database clone support for worktree warm-starts.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Clone Resolution Split
+
+`_resolve_clone_context` was split so each step owns one question:
+
+- `_clone_inputs(args, target_settings)` → **`_CloneInputs(source_coordination_root,
+  target_settings_path, project_id)`** (a `NamedTuple`) or the skip payload naming the first
+  missing coordinate. The hermetic-benchmark refusal lives here, so a benchmark-scoped target is
+  still refused before any source is read.
+- **`_GrepaiCloneEnd(coordination_root, settings_path, provider)`** — one end of the clone. Source
+  and target are symmetric, so `_clone_context_from_providers(source, target, ...)` reads as
+  source → target instead of six interleaved parameters.
+- `_run_with_stall_watchdog(command, watchdog, *, cwd, stdout, stdin)` takes
+  **`_StallWatchdog(progress, stall_seconds, poll_seconds=GREPAI_CLONE_POLL_SECONDS)`** — a
+  wedge's signature is silence, not duration, so how to sample progress, how often, and how long
+  zero movement is tolerated are one rule. The watchdog now also enters `Popen` as a context
+  manager: a `stdout=PIPE` caller gets a read end this function owns, and both exits (the stall
+  kill and the normal return) leave the `Popen` unreferenced, so without `__exit__` the pipe would
+  be finalised by GC rather than by the code that opened it.
 
 ### Logic
 
@@ -42,6 +61,13 @@
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0913` armed with no
+  exemptions): extracted `_clone_inputs` (+ the `_CloneInputs` NamedTuple), introduced the frozen
+  `_GrepaiCloneEnd` for `_clone_context_from_providers`, and re-signed `_run_with_stall_watchdog`
+  onto the frozen `_StallWatchdog`; the watchdog also entered `Popen` as a context manager so the
+  read end of a `stdout=PIPE` is closed by this function rather than by GC. Skip reasons, stall
+  results and the produced `GrepaiCloneContext` are unchanged. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-06-19T13:42: `_resolve_clone_context` now refuses a benchmark-scoped target (`instance.scope == "benchmark"`) with a `_clone_skip` before resolving any source, so a benchmark stack can never clone from another provider stack (hermetic). Defense-in-depth alongside the benchmark runner no longer wiring a seed source; corrected Purpose/Invariants since benchmarks no longer warm-start (task 260619).
 - 2026-06-10T05:30+02:00 — `_clone_database` runs under a stall watchdog (`_run_with_stall_watchdog`): no total-time cap (clones scale with index size by design), killed only after 300s of zero progress (dump-file growth / `_target_database_size` probe), returning a structured phase-named `stalled` result. stderr goes to a temp file so unread pipe buffers cannot deadlock the child.
 - 2026-05-31T12:30+02:00 — Documented that `_clone_skip` now returns `ok: True` (benign skip, mirroring CGC) instead of `ok: False` (1.0.0 review remediation).

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_chats_l5_hardening.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T12:00+02:00 |
-| lastVerifiedCommitHash | `352d5cd0e9a35afca41aeca4987612338a131365` |
-| lastVerifiedCommitDate | 2026-07-21T01:33:09+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,9 @@ is the exact H1 input — a terminal result with `requestId=None` and a `vendorC
   not soften this contract; it only stops the error from taking down the sweep.
 - **H1 — `test_h1_poisoned_row_is_quarantined_and_never_breaks_the_catalog_sweep`** (the core
   regression): wires the REAL synchronizer as the sweeper's `on_control_snapshot` exactly as `app.py`
-  does, with one poisoned + one healthy alive row. `refresh()` MUST NOT raise; both rows project;
+  does — now a field of the `probe=LivenessProbe(hysteresis=…, pane_capturer=…, snapshot_reader=…,
+  on_control_snapshot=…)` parameter object rather than a loose keyword — with one poisoned + one
+  healthy alive row. `refresh()` MUST NOT raise; both rows project;
   `poison-1.control_raw.interactionSyncError` is set with the exact message (fail-loud on its OWN
   row), and `healthy-1` is untouched. Before the guard the `HarnessControlError` propagated out of
   the per-entry comprehension inside `catalog.batch()`, aborting the sweep for every row.
@@ -48,11 +50,14 @@ is the exact H1 input — a terminal result with `requestId=None` and a `vendorC
   steady state of every cockpit-driven hosted chat, the warning must fire ONCE (first occurrence),
   stay silent while the same failure persists, and emit one `recovered` log on heal — while the
   per-sweep marker keeps the wire honestly degraded throughout. Uses a fresh sweeper per sweep (fixed
-  clock, `sweep_interval_seconds=0.0`) to sidestep the intra-process rate limiter, and asserts the
+  clock, `LivenessProbe(hysteresis=TerminalCatalogLivenessConfig(sweep_interval_seconds=0.0), …)`)
+  to sidestep the intra-process rate limiter, and asserts the
   warning/recovery counts on the `agents_remember.serving.terminal_liveness` logger plus the marker
   set/cleared on the catalog row.
 - **H1 — `test_h1_healthy_completion_still_synchronizes_through_the_sweep`**: the guard must not
-  suppress the NORMAL effect — seeds an accepted/delivered `OperatorInboxStore` row, feeds a matching
+  suppress the NORMAL effect — seeds an accepted/delivered `OperatorInboxStore` row (built through
+  `create_operator_inbox_entry(InboxMessage(…), routing=InboxRouting(address=InboxAddress(…)),
+  poster=InboxPoster(…))`), feeds a matching
   `requestId`, and asserts the inbox completion synchronizes (`adapterDeliveryState=="completed"`)
   with no `interactionSyncError` marker.
 - **H2 — `test_h2_native_remap_after_resolution_never_splits_input_authority`**: reproduces E2 at the
@@ -89,8 +94,8 @@ fixup").
   completion-correlation contract intact (the standalone test guards it) and only contains its blast
   radius; H2 keeps the resolved user-item authority triple coupled and leaves the unresolved honest
   path untouched.
-- The H1 tests wire the synchronizer as `on_control_snapshot` exactly as `app.py` does — the
-  regression is against the real sweep seam, not a stand-in.
+- The H1 tests wire the synchronizer as the sweeper probe's `on_control_snapshot` exactly as `app.py`
+  does — the regression is against the real sweep seam, not a stand-in.
 - `model_copy(update=…)` skips validation in pydantic v2, so the store can hold an
   authority-inconsistent item silently; `_revalidate` is the assertion that the served product stays
   valid.
@@ -112,10 +117,10 @@ repository-owned and cited below.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The H1 quarantine under test: `_observe_control_snapshot` contains the per-entry synchronizer failure. | L259-L331 | [terminal_liveness.py](agents-remember/mcp/src/agents_remember/serving/terminal_liveness.py) |
+| The H1 quarantine under test: `_observe_control_snapshot` contains the per-entry synchronizer failure; `LivenessProbe` (L71) is the sweeper's probe parameter object. | L371-L421 | [terminal_liveness.py](agents-remember/mcp/src/agents_remember/serving/terminal_liveness.py) |
 | The synchronizer whose `observe` raises on the orphan completion (contract left intact). | — | [hosted_interactions.py](agents-remember/mcp/src/agents_remember/serving/hosted_interactions.py) |
-| The H2/F4 store pin under test: `_preserved_input_authority` keeps the user-item authority triple intact. | L52-L74; L150-L172 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The validator (`preserve_input_authority`) whose violation the split item raises at re-validation. | L400 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The H2/F4 store pin under test: `_preserved_input_authority` keeps the user-item authority triple intact. | L54-L75; L221-L245 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
+| The validator (`preserve_input_authority`) whose violation the split item raises at re-validation. | L377 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The projector-tier and installed companions to these store-level regressions. | — | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) · [test_conversation_control_installed.py](agents-remember/mcp/tests/test_conversation_control_installed.py) |
 
 ## Cross-Repo References
@@ -128,6 +133,18 @@ No cross-repository implementation participates in this suite.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: `TerminalCatalogLivenessSweeper` now
+  takes `config` / `pane_capturer` / `snapshot_reader` / `on_control_snapshot` as one
+  `LivenessProbe` parameter object (`hysteresis=` holds the `TerminalCatalogLivenessConfig`), and
+  `create_operator_inbox_entry` now takes `InboxMessage` / `InboxRouting(address=InboxAddress(…))`
+  / `InboxPoster` objects. Rewrote the H1 core-regression bullet, the F2 fresh-sweeper note, the
+  H1 healthy-completion bullet, and the Invariants line that named `on_control_snapshot` as a
+  loose sweeper argument, so the card describes the real wiring the tests use. Also re-anchored
+  the cited line ranges the same commit moved: `_observe_control_snapshot` is L371-L421 in
+  `terminal_liveness.py` (was L259-L331), `_preserved_input_authority` plus the no-op comparison
+  are L54-L75 / L221-L245 in `store.py` (was L52-L74 / L150-L172), and `preserve_input_authority`
+  is L377 in `models.py` (was L400). All seven regressions (H1x3 + F2 + H2x2 + F4) keep their
+  names and assertions.
 - 2026-07-21T12:00+02:00 — 260718-CHATS-L5P curator: body-reviewed against the post-L5 pyright fixup
   (commit `352d5cd`, "260718-CHATS-L5 fixup") that changed this file after the L5 verification (`68b3205`).
   The diff is strict-pyright conformance ONLY — a `Mapping` import, the fake `_AliveHost.has_session`

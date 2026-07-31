@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ single-thread adapter call (the bridge passes `None`), and an empty-string selec
 before any adapter call. The `_ThreadAwareNativePageAdapter` fake records the exact call shape so
 the test proves forwarding only happens when the wire carries the field.
 
-`test_evidence_thread_id_round_trips_over_ipc` (L649-L673) pins the multiplexed demux key on the
+`test_evidence_thread_id_round_trips_over_ipc` (L679-L705) pins the multiplexed demux key on the
 evidence wire end-to-end over a real socket: an adapter emit whose `arEvidence` payload carries a
 `threadId` surfaces on the typed `EvidenceFrame.thread_id` across the bridge divert, the
 `evidence_frame_json` serialization, and the validated client parse, while a frame without the key
@@ -159,11 +159,11 @@ evidence.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The bounded evidence deque, reserved-key diversion, and epoch-stamped page reads under test. | L85-L88; L168-L232; L440-L471 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
+| The bounded evidence deque, reserved-key diversion, and epoch-stamped page reads under test. | L110-L113; L196-L259; L467-L498 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | The three additive IPC actions exercised over a real socket. | L198-L203; L286-L313 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | The strict client validators for pages (including the `threadId` frame parse), native pages, and provenance. | L842-L999 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The authority's provenance batch read exercised through the queue delegation. | L375-L412 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The codex stop-dropping forwards and `thread/read` native page under test. | L334-L361; L503-L600 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| The codex stop-dropping forwards (a transcript-less `item/completed` and any foreign notification cross as raw `codex-notification` evidence instead of being dropped) and the `read_native_page` contract under test. | L489-L515; L832-L861; L920-L948 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | The resume payload/parse/factory/opener channel under test. | L46-L105 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
 
 ## Cross-Repo References
@@ -189,7 +189,22 @@ failures. The IPC cases additionally prove `NativeHistoryUnavailable` and
 `NativeHistoryLimitExceeded` preserve stable code and byte evidence in both control-client
 directions.
 
+## 260731-EFA-L2 Delta — present but unusable
+
+`test_a_present_but_unusable_native_method_fails_the_bridge_visibly`: a native method that exists
+but cannot be used must fail the bridge **visibly**. Degrading quietly would leave the cockpit
+believing an evidence channel it does not have.
+
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation.
+  `test_evidence_thread_id_round_trips_over_ipc` is L679-L705; the cited L683-L707 started inside
+  the test's docstring and ran one line into `test_cross_domain_coordinates_fail_typed`. The claim
+  (a `threadId` in the `arEvidence` payload surfaces on `EvidenceFrame.thread_id`, a frame without
+  the key reads `None`) re-verified against the assertions at L700/L702 and unchanged.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. In the 1503-line `codex_app_server_adapter.py` the stop-dropping forwards are `_handle_foreign_notification` + `_emit_notification` L832-L861 and the transcript-less `item/completed` branch L920-L948 (`await self._emit_notification("item/completed", params)` at L935); the native page the suite drives is `read_native_page` L489-L515. Reworded the claim, which said "`thread/read` native page" — the adapter's `thread/read` call is in `reconcile` (L456-L463), not on the native-page path.
+- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented opaque Codex continuation,
   once-only paging, duplicate/cycle/limit refusal, and typed history error round-trip coverage.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash |                                                                   `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate |                                                                   2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash |                                                                   `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                                                   2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -41,19 +41,41 @@ delivery that finishes from an older pending snapshot cannot make the row pendin
 again. Explicit dashboard dismissal still uses physical `delete`, and normal compaction owns audit
 expiry.
 
+### Mutation Parameter Objects (260731-EFA-L2)
+
+Three frozen objects define this store's mutating calls, plus one shared helper:
+
+- **`AdapterReceipt(delivery_state=None, request_id=None, vendor_correlation_id=None,
+  accepted_at=None, detail=None)`** — what the vendor adapter reported about one delivery attempt.
+  One receipt per attempt; the fields are never sourced independently.
+- **`DeliveryAttempt(delivery_state, delivered_to_session=None, detail=None,
+  adapter=AdapterReceipt())`** — one attempt to put a pending row in front of its addressee.
+  `delivered` is not terminal (pasted != perceived); only a consume ends the schedule.
+- **`InboxRenewal(response=None, subject=InboxSubject(), readdress_to=None)`** — what a re-firing
+  condition refreshes on the row it already has. **Passing `readdress_to` IS the readdress** —
+  the former `readdress: bool` flag beside three loose `owner_*` values is gone, so there is no
+  longer a way to pass an owner without readdressing or to readdress to nothing.
+- **`_readdress_fields(owner)`** — the module-private mapping from an `InboxOwner` to the six
+  fields a readdress rewrites (`recipientRole`/`agentId`/`lifecycleId` and
+  `ownerRole`/`ownerAgentId`/`ownerLifecycleId`). `advance_rung` and `renew` share it, so the
+  delivery address and the routed owner can no longer drift apart between the two paths.
+
+`InboxOwner` and `InboxSubject` are imported from `operator_inbox_records.py`.
+
 ### 260707-HFX2-L17 Pair-Preserving Renewal
 
-`renew` can refresh `seatRole` with `leafKey` and subject identity when one coalesced supervisor
-condition re-fires. Pair identity therefore survives readdressing to a replacement manager and
-prevents same-text findings for different roles from becoming one row.
+`renew` can refresh `seatRole` with `leafKey` and subject identity (all three now on
+`InboxRenewal.subject`) when one coalesced supervisor condition re-fires. Pair identity therefore
+survives readdressing to a replacement manager and prevents same-text findings for different roles
+from becoming one row.
 
-### 260707-HFX2-L13 Transition And Readdress Mutations
+### 260707-HFX2-L14 Transition And Readdress Mutations
 
 `advance_rung` atomically stamps `ts`, `rung`, `escalatedAt`, and `rungTransitionAt`, so every
 successful transition resets both the ordinary dwell and redundant minimum-floor anchors. `renew`
-can refresh `leafKey`/`subjectAgentId` and, when explicitly requested, rewrite both direct and owner
-addresses to the currently resolved manager while keeping the same durable row id. Normal renewal
-does not touch either rung anchor.
+can refresh `leafKey`/`subjectAgentId` and, when a `readdress_to` owner is supplied, rewrite both
+direct and owner addresses to the currently resolved manager while keeping the same durable row id.
+Normal renewal does not touch either rung anchor.
 
 ### Logic
 
@@ -65,7 +87,8 @@ and appends a strict JSON snapshot. `read()` validates each JSONL row back into
 `list_pending(lifecycle_id, agent_id, recipient_role)` requires at least one
 mailbox key, then returns pending entries matching every supplied key. That means
 a lifecycle poll, an agent poll, a role poll, or a combined poll all use the same
-log without duplicating entries. `record_delivery(...)` appends a delivery-state
+log without duplicating entries. `record_delivery(entry_id, attempt, *, now, current=None,
+redelivery_floor_seconds=None)` appends a delivery-state
 snapshot for a queued message. `consume(entry_id, ...)` appends one consumed snapshot and
 returns `(entry, True)` the first time; repeated consumes return the existing
 consumed entry with `False`.
@@ -87,12 +110,13 @@ their backoff window and clear of the per-target rate limit
 redelivery from; this store itself never redelivers on its own (no in-memory
 timer). `mark_escalated(entry_id, now=...)` stamps the reserved `escalatedAt`
 field the ladder (HFX2-L4) will set -- this store only reserves the transition.
-HFX2-L9 extends that path with the 900-second production floor: `record_delivery` accepts
+HFX2-L10 extends that path with the 900-second production floor: `record_delivery` accepts
 `redelivery_floor_seconds` and passes it into `next_attempt_at`, while `list_redeliverable` still
 defaults through `inbox_backoff.DEFAULT_RATE_LIMIT_SECONDS` when the caller supplies no override.
 Below-floor values are refused in `inbox_backoff`, not silently shortened here.
 
-260707-HFX2-L4 (R1/R2, the ladder's own transition): `advance_rung(entry_id, *, rung, now)` stamps
+260707-HFX2-L4 (R1/R2, the ladder's own transition): `advance_rung(entry_id, *, rung, now,
+readdress_to=None, current=None)` stamps
 the ladder's next rung AND re-anchors `escalatedAt` to `now` in the SAME snapshot, so the next
 rung's SLA/dwell check is measured from this transition, not the row's original creation. Distinct
 from `mark_escalated` (HFX2-L2's reserved, rung-agnostic "this row is now escalatable" stamp) —
@@ -143,10 +167,10 @@ agents that cannot receive dashboard session injection.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | L15-L53 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Pending filters match supplied lifecycle and/or agent keys. | L55-L70 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Consume is idempotent and appends a consumed snapshot only once. | L72-L93 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Delivery snapshots thread `redelivery_floor_seconds` into `next_attempt_at`, and redeliverable selection defaults to the shared backoff floor. | L89-L155 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | L92-L108 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Pending filters match supplied lifecycle and/or agent keys. | L106-L121 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Consume is idempotent and appends a consumed snapshot only once. | L350-L372 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Delivery snapshots thread `redelivery_floor_seconds` into `next_attempt_at`, and redeliverable selection defaults to the shared backoff floor. | L133-L186; L216-L236 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 
 ## Cross-Repo References
 
@@ -162,6 +186,21 @@ The store records accepted, queued, rejected, unsupported, ambiguous, and termin
 adapter evidence against an existing durable row. None of these transitions call `consume`.
 
 ## Update History
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 line citations that the parameter-object
+  refactor pushed down the file. Log/append/read/current is now L92-L108 (`log_path` through
+  `current`), consume is L350-L372, and the delivery-floor claim splits into L133-L186
+  (`record_delivery` threading `redelivery_floor_seconds` into `next_attempt_at`) plus L216-L236
+  (`list_redeliverable` defaulting to `DEFAULT_RATE_LIMIT_SECONDS`). All four spans read back.
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `AdapterReceipt`, `DeliveryAttempt` and `InboxRenewal` parameter objects plus
+  the shared `_readdress_fields(owner)` helper, and re-signed three mutators:
+  `record_delivery(entry_id, attempt, *, now, ...)` (eight delivery/adapter keywords collapsed
+  into `attempt`), `advance_rung(entry_id, *, rung, now, readdress_to=None, current=None)` and
+  `renew(entry_id, renewal, *, now, current=None)`. The `readdress: bool` + three `owner_*`
+  keywords were replaced on both by an optional `InboxOwner` — supplying it *is* the readdress,
+  which removes the pass-an-owner-without-readdressing and readdress-to-nothing states. The two
+  readdress paths now write the same six fields through one helper. Written snapshots are
+  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed correlated delivery and explicit-consumption separation.
 
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented one-fold resolve-plus-compact

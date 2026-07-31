@@ -82,7 +82,8 @@ regardless of whether it happens to look at the dashboard.
 
 ### Invariants And Boundaries
 
-- `PUBLIC_TOOLS` must match server registration in `server.py` and the public
+- `PUBLIC_TOOLS` must match the `@server.tool()` declarations in `mcp/registration/` (260731-EFA-L2
+  moved them out of `server.py`) and the public
   subset in `models/tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`.
 - `_tool_payload` uses `TOOL_RESPONSE_MODELS`, which also includes lower-level
   compatibility builders that are not advertised as public MCP tools.
@@ -111,7 +112,7 @@ regardless of whether it happens to look at the dashboard.
 | Finding | Source Path |
 | --- | --- |
 | Response model registry resolved per tool name. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| Server registers exactly the `PUBLIC_TOOLS` names. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| The registration package declares exactly the `PUBLIC_TOOLS` names. | [registration overview](../registration/overview.md) |
 | Token-accounting finalizer applied to every dumped payload. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
 | The ambient lifecycle the emission hook tags every tool call onto. | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
 | The next-step engine whose hint is attached after emission. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
@@ -124,6 +125,10 @@ regardless of whether it happens to look at the dashboard.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: `base.py` itself is unchanged by this leaf, but two
+  of its claims pointed at `server.py` for tool registration, which moved wholesale to
+  `mcp/registration/`. Repointed the `PUBLIC_TOOLS` invariant and the reference row; nothing else
+  touched.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5, issue #15): `_tool_payload` now

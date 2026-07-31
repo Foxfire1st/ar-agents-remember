@@ -84,7 +84,7 @@ it from the workspace root it already holds.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies. | L138-L140 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| `AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies. | L134-L136 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The request dependency consults only the ASGI TCP peer and delegates to the bound resolver. | L26-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime. | L160 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 | `AuthorityError` is the typed refusal raised for non-loopback peers and cross-principal bindings. | L17-L17 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |

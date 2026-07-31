@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-06T23:59:12+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -116,6 +116,20 @@ Route indexes are intentionally not regenerated during this partitioned curator 
 
 ## Update History
 
+- 2026-07-31T16:55+02:00 — No route impact: re-verified the attestation below in the exact form the
+  closeout gate reads. Both changed files in this route (`master_sync.py`, `render.py`) were parsed
+  at the L2 base commit and at the current revision and their syntax trees are identical, so
+  wrapping the `MasterSyncError(...) from exc` raise and the `headerNotes` list comprehension across
+  lines changed no task-document schema, render rule, header ordering or master-sync contract this
+  overview describes. Which module owns which responsibility in this route is untouched.
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation, no route impact. Two files in this route
+  (`master_sync.py`, `render.py`) were touched by the whole-tree `ruff format` pass (commit
+  `00e8379`) and by nothing else: a `raise ... from exc` and a list comprehension with a trailing
+  comment were reflowed across lines. No task-document schema, render rule, master-sync contract or
+  file placement changed, so this overview was re-read against the current source and deliberately
+  **not** rewritten — every claim below still holds. Worth knowing for anyone reading task
+  documents *about* L2: the leaf plan text is not memory, and closeout owns it. Verification
+  metadata pinned until closeout stamps the L2 commit.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-06T23:59:12+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: the schema

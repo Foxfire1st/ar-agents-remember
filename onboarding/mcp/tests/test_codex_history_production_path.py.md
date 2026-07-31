@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_history_production_path.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,8 @@ No Domain Documentation source is configured.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The protocol accepts valid payloads through the separate 128 MiB emergency fuse. | L18-L23; L217-L240 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
-| The active projector hydrates only selected children and contains typed failures. | L502-L635 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
+| The active projector hydrates only selected children and contains typed failures. | L67-L137 | [projector/child_history.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/child_history.py) |
+| `refresh_agent_native` on the facade — the entry point this test drives — hydrates then delegates to that child-history projection. | L159-L160; L146-L148 | [projector/facade.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/facade.py); [projector/rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
 
 ## Cross-Repo References
 
@@ -70,6 +71,28 @@ The fake Codex process is repository-local; no external repository is executed.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the citation broken by the
+  `active/projector.py` -> `active/projector/` package split (commit `3a8ff70`). The selected-child
+  behaviour this test drives now lives in `projector/child_history.py`: `ChildHistoryProjection`
+  L67-L137 — the four-way eligibility gate and `already-hydrated` short-circuit (L67-L76), the
+  `MAX_AGENT_NATIVE_INFLIGHT`=64 capacity refusal and per-thread singleflight task (L77-L97), and
+  `_hydrate`'s containment of `NativeHistoryLimitExceeded` / `NativeHistoryUnavailable` into an
+  `unavailable` `AgentHistoryHydration` plus an `agent_history_state_item`, with the symmetric
+  `recovered` emission on a later successful retry (L99-L137) — which is exactly the
+  `cyclic.status == "unavailable"` + sibling-continuity assertion at L346-L349 of this test. Added a
+  second row for the call path the test actually touches: `facade.refresh_agent_native` (L159-L160)
+  -> `RebuildCoordinator.refresh_child` (L146-L148) -> that projection.
+
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
+  leaf diff. The single test body was split for the complexity gate — projector construction moved
+  into `_projector_over_control_entry` and the transport-log checks into `_assert_wire_evidence` —
+  and `ActiveSessionProjector` is now built from `ProjectedSession(...)` plus
+  `readers=BridgeReaders(...)`, with the roster fixture passing `agents=CollabAgents(...)`. The
+  assertions themselves moved without changing: the single `thread/items/list` probe refused with
+  `-32601`, the measured `responseBytes`, the `None`/`opaque-A`/`opaque-B` cursor cycle, the
+  healthy-sibling turn call and the "never `thread/read`" check all still run in the same test.
+  The sidecar names no helper and cites no line range into this file, so its Logic paragraph and
+  all three invariants hold as written.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: created strict 1:1 onboarding for the exact
   measured-size production seam and second-wave continuity regression. Verification metadata
   remains blank because the new test is uncommitted.

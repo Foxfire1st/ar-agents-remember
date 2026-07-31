@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_static.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00                     |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ repository-local serving contract is documented from source and this executable 
 | --- | --- | --- |
 | The resolver's `None`-vs-directory contract and the two mount branches under test. | L94-L129 | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
 | The 503 body, `no-store` header, and GET/HEAD-only method contract under test. | L53-L91 | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The app-level counterpart covering both states through `create_app`. | L506-L538 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The app-level counterpart covering both states through `create_app`. | L526-L558 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The release build step that produces the bundle these tests stand in for. | L138-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
 
 ## Cross-Repo References
@@ -111,6 +111,26 @@ No sibling repository evidence is needed for this test module.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: made the `test_serving.py` citation the previous
+  entry flagged as approximate exact again. The app-level counterpart is `AppTests` L526-L558:
+  `test_root_serves_dashboard_bundle` (a stand-in bundle patched over `dashboard_static_dir`, 200 +
+  `cache-control: no-cache`) and `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404`
+  (resolver patched to `None`, 503 + remedy text + `no-store`, with `/api/state` still 200) — both
+  built through `create_app`, which is what the claim asserts. Read back verbatim. Note for
+  accuracy: the skip described in Conventions belongs to `StaticTests` at L1549-L1559, a different
+  class that only exercises `dashboard_static_dir()` directly; the two `create_app` cases above do
+  not skip.
+
+- 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_static.py` since
+  the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 4
+  line(s), touching only magic trailing commas and redundant grouping parentheses. Checked by
+  parsing both revisions and comparing the abstract syntax trees (identical) and the comment
+  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
+  or assertion this card describes has moved, and every claim this card makes about its own source
+  still holds. Noted while checking: the references table also cites line ranges inside
+  `test_serving.py`; those ranges shifted because this task edited those files, so treat the cited
+  numbers as approximate and the linked cards as authoritative.
 
 - 2026-07-31T04:28+02:00 — Created for 260731-EFA-L1: deterministic coverage of the static surface
   after the cockpit bundle left version control — resolver `None` vs. directory, served-HTML

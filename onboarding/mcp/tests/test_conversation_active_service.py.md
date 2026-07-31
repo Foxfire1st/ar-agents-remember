@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,26 +25,34 @@ store.
 
 ### Logic
 
-A `_ScriptedBridge` (L65-L218) plays scripted evidence/native/transcript/provenance/snapshot
-answers through the projector's injected reader seams. `CodexEngineTests` (L221-L335): hydration
+A `_ScriptedBridge` (L75-L170) plays scripted evidence/native/transcript/provenance/snapshot
+answers through the projector's injected reader seams; its `read_native_page` double takes exactly
+the production seam's parameters (`entry`, `cursor`, `limit`, `expected_bridge_epoch`) and
+deliberately does NOT accept a `byte_budget`, so a caller cannot pass the double an argument the
+real `read_control_native_page` would reject. `_projector` (L177-L196) assembles the projector from
+a `ProjectedSession(identity, authorization, entry, mapper, secret)` and a
+`BridgeReaders(evidence, native_page, transcript, provenance, snapshot)` bundle rather than ten
+loose keywords. `CodexEngineTests` (L233-L551): hydration
 from native pages plus the live window with stable identity and ordinals; live polling appends
 in order; idempotent re-feeds mint no duplicates; provenance resolves through the batch;
 ephemeral-thread native refusal stays honestly partial; rehydration reproduces the identical
-projection with a new generation. `ClaudeEngineTests` (L336-L441): the echo zipper merges
+projection with a new generation. `ClaudeEngineTests` (L553-L846): the echo zipper merges
 submission echoes and frames in exact turn order (echo first, result in a later poll, multiple
-turns) with no duplicate or inverted items. `PiEngineTests` (L442-L487): eager native
+turns) with no duplicate or inverted items. `PiEngineTests` (L848-L890): eager native
 continuation anchors live items to durable-entry identity and live tool upserts converge.
-`StoreTests` (L488-L508): identical upsert replays are no-ops. `ToolConvergenceTests`
-(L509-L692, review finding F1): claude `tool_use` → `tool_result`, pi live start → update →
+`StoreTests` (L892-L911): identical upsert replays are no-ops. `ToolConvergenceTests`
+(L913-L1200, review finding F1): claude `tool_use` → `tool_result`, pi live start → update →
 end (including the result-less update as a true no-op), and pi entry call → `toolResult` all
 converge to items carrying BOTH input and output blocks with completed phase; codex full-item
-re-maps are byte-identical under the block union. `OverflowGapTests` (L693-L740, review finding
+re-maps are byte-identical under the block union. `OverflowGapTests` (L1435-L1479, review finding
 F2): with a clamped undrained subscriber queue the consumer receives exactly one
 `retention-overflow` gap (requiresRepage + closeAfterEvent) then the close sentinel, and the
-retention sequence set is contiguous with no hole. `ZipperEvictionGapTests` (L741-L820, review
+retention sequence set is contiguous with no hole. `ZipperEvictionGapTests` (L1481-L1914, review
 finding F3): an advancing eviction floor raises `ZipperEvidenceEvicted` for the echo-zipper
 projector (mapped to one ordering-fault gap), does NOT gap the codex projector (totals clear
-honestly), and a fresh claude projector rehydrates from the remaining window without raising.
+honestly), and a fresh claude projector rehydrates from the remaining window without raising,
+followed by the rehydration-realignment cases over evicted, in-flight, echoless, settled-close,
+non-turn-trailing, lifecycle-only, and paged-transcript evidence.
 
 ### Projector-tier regressions (H2 model-validity + F1 project-once)
 
@@ -81,7 +89,7 @@ as a registered tombstone until 32-LRU eviction.
 ### Sub-agent binding regressions
 
 `ToolConvergenceTests` gains `test_reordered_task_started_tagging_never_regresses_a_terminal_phase`
-(L934-L1003, fix-round review finding 9): reordered claude evidence — the Agent `tool_result`
+(L982-L1053, fix-round review finding 9): reordered claude evidence — the Agent `tool_result`
 settles the call BEFORE `task_started` binds the agent identity — keeps the terminal phase while
 the agent ref still lands through the real claude mapper and store. The dormant-release assertions
 follow the multiplexed sub-agent demux: `_live_turn_ids` / `_live_request_ids` are now per-thread
@@ -92,7 +100,9 @@ sets.
 
 Engine tests run on `IsolatedAsyncioTestCase` with injected reader callables — no socket, no
 real IPC; the scripted bridge records calls so channel discipline (page sizes, cursors, epoch
-parameters) is asserted too.
+parameters) is asserted too. Those callables reach the projector as one `BridgeReaders` bundle
+beside the `ProjectedSession` that carries identity, authorization, entry, mapper, and secret, both
+imported from the decomposed `projector.wiring` and `projector.facade` modules.
 
 ### Invariants And Boundaries
 
@@ -121,8 +131,11 @@ repository-owned and cited below.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The projector engine under test: hydration, poll channels, zipper, retention, gap mechanics. | L134-L791 | [projector.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector.py) |
-| The store under test: idempotent apply, block union, delta buffering. | L101-L319 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
+| The projector engine under test is now the `active/projector/` package. Its facade owns the poll loop, the gap classification (`generation-changed` vs `ordering-fault`, plus the consecutive-read-failure ceiling) and dormant release. | L59-L221 | [facade.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/facade.py) |
+| Hydration (`ensure_hydrated` -> `_rebuild`), the fixed channel-poll order, and paging live in the rebuild coordinator. | L94-L104; L129-L144; L150-L192 | [rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
+| The zipper faults under test — `ZipperEvidenceEvicted` and `EvidenceTimelineRegressed` — are raised by the native evidence walk. | L36-L41; L116-L146 | [native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) |
+| Retention, the retention-overflow gap on a full subscriber queue, and the gap envelope shape live in the mutation stream. | L165-L197 | [mutation_stream.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py) |
+| The store under test: idempotent apply, block union, delta buffering. | L101-L317 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
 | The evidence/native/provenance page products the scripted bridge mimics. | L320-L380 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 
 ## Cross-Repo References
@@ -147,6 +160,22 @@ and dormant-release assertions remain behavior-identical, demonstrating that the
 change the public projector contract.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the last cross-file citation still pointing at the deleted `active/projector.py`. Replaced the single "projector engine under test" row with four verified rows against the `active/projector/` package: `facade.py` L59-L221 (poll loop, gap classification, dormant release), `rebuild_coordinator.py` L94-L104; L129-L144; L150-L192 (hydration, poll-channel order, paging), `native_ingestion.py` L36-L41; L116-L146 (`ZipperEvidenceEvicted` / `EvidenceTimelineRegressed`), and `mutation_stream.py` L165-L197 (retention, retention-overflow gap, gap envelope).
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: followed the projector construction seam and
+  re-anchored every self-citation. `_projector` now builds `ActiveSessionProjector` from a
+  `ProjectedSession` (identity, authorization, entry, mapper, secret) plus a `BridgeReaders` bundle
+  (evidence, native_page, transcript, provenance, snapshot) imported from `projector.facade` and
+  `projector.wiring`, so the Logic and Conventions paragraphs now name both instead of describing
+  ten loose keywords. Recorded the tightened double: `_ScriptedBridge.read_native_page` dropped its
+  `byte_budget` parameter so the fake accepts exactly what the production
+  `read_control_native_page` seam accepts. Corrected the stale class citations against the current
+  file — `_ScriptedBridge` L75-L170, `_projector` L177-L196, `CodexEngineTests` L233-L551,
+  `ClaudeEngineTests` L553-L846, `PiEngineTests` L848-L890, `StoreTests` L892-L911,
+  `ToolConvergenceTests` L913-L1200, `OverflowGapTests` L1435-L1479, `ZipperEvictionGapTests`
+  L1481-L1914, and the reordered-binder case L982-L1053 — and named the rehydration-realignment
+  block that closes the eviction class. No test was added, removed, or renamed; assertions are
+  unchanged apart from `ruff format` reflow. Verification metadata remains pinned until closeout.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: followed the projector
   decomposition in the existing behavior suite: zipper, status revision, overflow bound,

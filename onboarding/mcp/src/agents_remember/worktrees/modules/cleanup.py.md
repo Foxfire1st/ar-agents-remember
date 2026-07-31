@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-27T23:09+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -86,9 +86,17 @@ target_ref, dry_run)` first proves `merge-base --is-ancestor <work_branch>
 <contract source_branch>`, then deletes with `git branch -D`; the force delete is
 safe by construction because the explicit source-branch proof already succeeded.
 If the proof fails, cleanup keeps the branch with reason
-`not-merged-into-source` and `kept_branches` reports it. `_retire_work_branch`
-uses this rule for `code_work`, `memory_work`, and the scratch memory integration
+`not-merged-into-source` and `kept_branches` reports it. `_retire_work_branch(target, dry_run, *,
+remote)` uses this rule for `code_work`, `memory_work`, and the scratch memory integration
 branch.
+
+Since 260731-EFA-L2 `target` is the frozen **`RetiringBranch(repo, branch, source_branch,
+default_branch)`** — one task work branch on its way out: the repo it lives in, the branch itself,
+the source branch it must be proven merged into before deletion, and that repo's default branch
+(the one to check out when the branch being deleted is currently checked out). Retirement never
+consults any of these without the others, and each call site in `_deleted_branches` derives the
+whole set from one contract side, so a code-side repo can no longer be paired with a memory-side
+source branch by argument order.
 
 **Task 14 correction.** The older source-branch retirement path was removed because
 nested dashboard tasks use parent/source branches as their own lifecycle edges. In
@@ -131,6 +139,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `_retire_work_branch` was re-signed from `(repo, branch, source_branch, default_branch, dry_run,
+  *, remote)` to `(target: RetiringBranch, dry_run, *, remote)`. All three call sites in
+  `_deleted_branches` build the `RetiringBranch` from one contract side. Retirement rules, the
+  merged-into-source proof and the payload shape are unchanged. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-06-27T23:09+02:00 — Task 32 memory-mirror pruning: cleanup now reports/removes the exact observer drift snapshot for the contract's code worktree branch, leaving unrelated snapshots for their own lifecycle. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T00:27+02:00 — Corrected cleanup's human summary wording: `would-cleanup` dry-runs now say cleanup would reclaim providers/worktrees/merged branches instead of saying cleanup completed, while real `cleanup-completed` and idempotent `already-clean` states keep completed wording.
 - 2026-06-24T00:03+02:00 — Task 14 cleanup correction: cleanup is now a child-edge operation. `_deleted_branches` removes only the finalized task work branches (`code`, `memory`, optional `memory_integration`) after the source-branch ancestry proof, keeps parent/source branches for their own lifecycle edge, removes the `code_source`/`memory_source` payload entries, and deletes the obsolete `_retire_branch(...)` source-retirement helper. The code work branch remote deletion remains available via `delete_remote_branch_if_present`.

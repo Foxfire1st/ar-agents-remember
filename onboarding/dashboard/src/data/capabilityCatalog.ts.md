@@ -30,12 +30,12 @@ exports the launch flow renders.
 
 ### Logic
 
-- `CapabilityFetchState` (L22) — exactly `idle | loading | refreshing | error`; there is no
+- `CapabilityFetchState` (L23) — exactly `idle | loading | refreshing | error`; there is no
   "loaded" word: loaded = `idle` + `envelope` present (`fetchedAt` distinguishes never-fetched).
 - `CapabilityCatalogError` (L25-L30) — the verbatim error surface `{httpStatus, status, detail}`;
   `httpStatus: null` = the fetch itself threw (transport).
 - `capabilityCatalogStore` / `useCapabilityCatalog` / `harnessCapabilities(harness)` (L44-L55) —
-  vanilla store + hook selector + imperative read; `patchHarness` (L57) replaces one harness's
+  vanilla store + hook selector + imperative read; `patchHarness` (L58-L62) replaces one harness's
   entry whole (envelopes are never merged).
 - **R2 cost-honesty exports** (L69-L90): `capabilityCostNote(harness)` = ``starts a short-lived
   native ${harness} process`` — GENERIC, no seconds constant anywhere (observed per-harness
@@ -124,6 +124,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
+  leaf's reformat. `CapabilityFetchState` moved L22 -> L23 (the honesty-invariant header comment
+  grew a line); `patchHarness` moved L57 -> L58-L62 and the range now covers the whole
+  `setState` body instead of a single line.
 
 - 2026-07-24T13:17:50Z — Added the bounded capability-read and single-flight-release invariant.
   Verification hash/date remain pinned to the pre-commit source stamp.

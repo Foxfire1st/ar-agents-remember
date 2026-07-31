@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_foundation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ source set, and allow-listed installed-runtime fixtures that cannot enable capab
 
 The suite introspects exported port types and router objects, reads the global serving source to
 prove one registration call — since 260718-CHATS-L0 pinning the exact
-`register_conversation_routes(app, conversation_runtime)` call that carries the immutable runtime
+`register_conversation_routes(app, runtime)` call that carries the immutable runtime
 through the same single seam — parses the helper manifest/lock to prove exact pins, scans production
 helper TypeScript for forbidden ambient resolution, validates all three runtime fixtures through
 the production Pydantic contract, and rejects raw secret/path/conversation material by pattern.
@@ -85,9 +85,9 @@ contract are direct evidence.
 | Root conversation composition defines the exact child tuple and single registration function. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The active child's two owned GET routes pinned by the child-router assertion. | L56-L59; L121-L160 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
 | The library child owns exactly the five L2 routes this suite pins by method and path. | L93-L198 | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
-| The control child owns exactly the seventeen L3 routes this suite pins by method and path. | L57-L570 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
+| The control child owns exactly the seventeen L3 routes this suite pins by method and path (`APIRouter` prefix declaration through the last decorated handler). | L58-L61; L131-L631 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
 | The helper manifest owns the exact direct runtime dependencies checked against the lock. | L1-L22 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
-| Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | L1233-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | L1210-L1227 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 
 ## Cross-Repo References
 
@@ -103,6 +103,15 @@ The topology pin now asserts three active child routes: page GET, events GET, an
 `/agents/{agent_id}/history` POST (L32-L57). Library and control ownership sets remain unchanged.
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `control/api.py` is 686 lines; the seventeen `@router` decorators run from `/conversation/interrupt` at L131 to `/conversation/telemetry` at L612 (handler ends L631), with the prefixed `APIRouter` declared at L58-L61 — counted all seventeen decorators, so the "exactly seventeen" claim still holds. Citation moved from L57-L570 to L58-L61; L131-L631.
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the registration-seam pin now asserts
+  `register_conversation_routes(app, runtime)` — the composition parameter rename that came with
+  the runtime-object seam — so the Logic paragraph's quoted call string was rewritten from the
+  old `register_conversation_routes(app, conversation_runtime)` spelling. The count-of-one
+  claim, the no-seam-in-`app.py` claim, and the route-ownership, helper-manifest, and
+  fixture-redaction claims are untouched, and the single-line replacement left every cited line
+  number in place.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the active child-router ownership
   pin from two routes to three with the selected-child history POST. Verification metadata remains

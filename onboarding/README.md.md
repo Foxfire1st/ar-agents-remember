@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastUpdated            | 2026-07-31T16:10+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -136,24 +136,45 @@ The README describes external memory in general terms, but this file-level onboa
 | --- | --- | --- |
 | No meaningful cross-repo references found for the README itself. | n/a | n/a |
 
-## 260731-EFA-L1 Current Delta — The Gate Paragraph Is Now Tiered
+## Current Gate Paragraph (260731-EFA-L1 tiering, 260731-EFA-L2 honesty)
 
 The README's generated-copy section previously said "both hooks also run
-`python -m agents_remember.code_quality.check`". That is no longer true and the paragraph was
-rewritten. The public contract it now states:
+`python -m agents_remember.code_quality.check`". That was retired by L1's tiering, and L2
+then corrected what each tier actually enforces. The public contract the README now
+states:
 
 - Both hooks are thin wrappers over `.githooks/_gate.sh`, which takes the tier as its argument.
 - **pre-commit** runs the fast tier over the **staged** content: the generated-copy checks
-  (`sync-skills.py --check`, `sync-runtime.py --check`), plus Ruff and Pyright.
-- **pre-push** runs the full tier: the wrapper, enforcing Ruff, Pyright, the full pytest suite, and
-  the configured CRAP threshold.
+  (`sync-skills.py --check`, `sync-runtime.py --check`, **`sync-harness.py --check`**), plus
+  Ruff, **`ruff format --check`**, and Pyright.
+- **pre-push** runs the full tier: the wrapper, enforcing Ruff, **the formatter**, Pyright,
+  the full pytest suite, and the configured CRAP threshold.
+- **"No rail carries a baseline or exemption list"** — the README states this outright. The
+  complexity baseline that existed for one day inside this leaf is deleted, and the README
+  never shipped a description of it.
+- **Radon is printed as a report and cannot fail either tier — it exits 0 whatever it
+  finds.** The README says so explicitly rather than listing it beside the enforcing steps.
+
+**Known gap in the source file:** the README's full-tier sentence does not name the
+changed-lines coverage floor, which is the wrapper's last and binding step. `CONTRIBUTING.md`
+carries it; the README does not.
 - **CI** runs that same wrapper on **every branch push and every pull request**, not only `main`.
 - **Closeout** runs it before creating a code commit even when hooks are not configured.
 - The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
   there rather than duplicating them.
 
-Note that `sync-dashboard.py` is **not** among the generated-copy checks any more — it is a release
+Note that `sync-dashboard.py` is **not** among the generated-copy checks — it is a release
 build step with no `--check` mode, because the bundle it places is no longer in version control.
+
+### The Repository Map Gained The Harness Source
+
+The layout section now lists `scripts/sync-harness.py` ("generate the nine harness
+configuration trees") and `scripts/harness/` ("canonical source for those trees") beside
+`sync-skills.py` and `sync-runtime.py`, and a paragraph tells readers to edit
+`scripts/harness/` and run the generator to regenerate `.claude/`, `.codex/`, `.cursor/`,
+`.github-vscode/`, `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/` and `.agents/`. It names
+`mcp/tests/test_sync_harness.py` as running the same check inside the suite, so drift is
+caught even without hooks.
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -162,12 +183,28 @@ The README presents the repository's mission-control welcome capture immediately
 Its developer section states the commit-gate contract as a public default rather than an optional
 strict mode: Ruff, Pyright, the full pytest suite, and the configured CRAP threshold are one
 wrapper, and closeout runs it before creating a code commit. (The *distribution* of that wrapper
-across the two hooks was retiered by 260731-EFA-L1 — see the current delta above, which supersedes
-this entry's "pre-commit and pre-push both run the wrapper" wording.)
+across the two hooks was retiered by 260731-EFA-L1, and the *step list* was corrected by
+260731-EFA-L2 — see the current gate paragraph above, which supersedes both this entry's
+"pre-commit and pre-push both run the wrapper" wording and its four-step enumeration.)
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired this card's mid-leaf claim
+  that either hook tier runs a complexity baseline** — the baseline was deleted before the
+  leaf ended, and the README's own sentence is "No rail carries a baseline or exemption
+  list". Corrected both tier step lists, and recorded that the README, like `AGENTS.md`,
+  does not name the changed-lines coverage floor. Verification metadata is pinned to the
+  leaf's reformat commit until closeout stamps the code commit.
+
+- 2026-07-31T06:30+02:00 — 260731-EFA-L2 gate honesty (mid-leaf): the README's tier description now names
+  `ruff format --check`, the complexity baseline, and `sync-harness.py --check`, and states
+  outright that Radon is a report that cannot fail either tier. The repository map gained
+  `scripts/sync-harness.py` and `scripts/harness/` with the regenerate instruction and the
+  suite-level drift check. Superseded this card's prior four-step enumeration of what the
+  wrapper enforces. Verification metadata pinned to the leaf's reformat commit until closeout
+  stamps the code commit.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1: rewrote the README's hook paragraph for the fast/full tier
   split over the shared `.githooks/_gate.sh`, recorded that CI now runs on every branch push and

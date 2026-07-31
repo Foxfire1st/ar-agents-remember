@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_sim_fixture_builder.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T10:30+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 
 ## Purpose
 
@@ -38,4 +38,11 @@ No sibling repository evidence is needed for this test suite.
 
 ## Update History
 
+- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 touched only `_load_builder`, which
+  now registers the path-loaded module as `sys.modules[spec.name]` before `exec_module` so the
+  builder's new parameter-object dataclasses can resolve their PEP 563 string annotations through
+  their own module. That is still the `spec_from_file_location` direct-from-path recipe this card
+  describes, `main()` still runs into a temp dir, and the contract walk is byte-identical:
+  `cleanup: pending` leaves must ship both worktree dirs, every other cleanup state must have
+  none, and the live/hidden counts must stay non-zero.
 - 2026-07-06T10:30+02:00 — Created for the L11 adversarial-review follow-up (L11R-1): pins materialize_worktrees behavior in the rich sim fixture builder. Verification metadata pinned until closeout stamps the L11 commit.

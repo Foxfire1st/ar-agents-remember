@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-12T20:24+02:00                       |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`   |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                       |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -45,31 +45,44 @@ control group `--daemon` / `--status` / `--stop` (260703 L2), and `--no-access-l
 without per-request access logs; the daemon child uses it to keep its log bounded — both
 foreground `uvicorn.run` call sites pass `access_log=not args.no_access_log`).
 
-`run(args)` first resolves `config_path = args.config or discover_config()` (an explicit flag
-always wins; `ConfigDiscoveryError` prints and returns `1`), then calls `load_config(config_path)`
-(printing the error and returning `1` on `ConfigError`), resolves the effective `port`, routes any
+`run(args)` first calls `_resolve_settings(args)` (260731-EFA-L2), which resolves
+`config_path = args.config or discover_config()` — an explicit flag always wins — and loads it,
+printing the message and returning `None` for **either** `ConfigDiscoveryError` or `ConfigError`;
+`run` turns that `None` into exit `1`. It then resolves the effective `port`, routes any
 daemon control flag to `_run_daemon_command(args, config, port)` — `--status` prints the probed
 state (exit 0 running / 1 not), `--stop` prints the stop outcome, `--daemon` runs
-`serving_daemon.ensure(config, host, port, interval=args.interval, heartbeat=args.heartbeat)` and
+`serving_daemon.ensure(config, serving_daemon.DaemonEndpoint(host=args.host, port=port),
+cadence=ProjectionCadence(interval=args.interval, heartbeat=args.heartbeat))` and
 exits 0 only for `adopted`/`started`/`restarted` (heartbeat, like interval, reaches the child only
 when ensure spawns/restarts — an adopted daemon keeps its cadences); all three reject
 `--sim`/`--reload` combos — then dispatches in priority order:
 
-- **reload** (`--reload` set): rejects `--sim` (`error: --reload is not supported with --sim`,
+- **reload** (`--reload` set): delegated to `_run_reload_server(args, config_path, port)`
+  (260731-EFA-L2). It rejects `--sim` (`error: --reload is not supported with --sim`,
   return `1`). Otherwise it sets `AR_DASHBOARD_DEV_CONFIG` (the resolved absolute settings path —
   discovered or explicit) and `AR_DASHBOARD_DEV_INTERVAL` env vars — plus (260712-PTS-L3)
   `AR_DASHBOARD_DEV_HEARTBEAT` only when `--heartbeat` was explicit — then calls
   `uvicorn.run("agents_remember.cli.dashboard:_dev_app", factory=True, reload=True,
   reload_dirs=[<package source dir>], host=..., port=...)` and returns `0`.
-- **sim** (`--sim` set): `build_sim(config, Path(args.sim), speed=parse_sim_speed(args.sim_speed))`
-  (printing and returning `1` on `SimError` — bad speed or empty fixture), then
-  `create_app(sim.config, interval=..., now=sim.clock.now, before_tick=sim.feeder.feed)` — no
-  `heartbeat` and no watcher: replay stays time-driven on the fixed `--interval`. The
-  `sim` setup stays referenced until `run` returns, so its throwaway temp coordination root lives
-  for the whole server lifetime.
-- **live** (default): builds the app via `serving.app.create_app(config, interval=...,
-  heartbeat=args.heartbeat)` (260712-PTS-L3 — live serving gets change-driven + heartbeat pacing)
-  and serves with `uvicorn.run(app, host=..., port=...)`.
+- **sim or live**: both are built by `_build_app(args, config) -> _DashboardApp | None`
+  (260731-EFA-L2) — "the app to serve: live state, or a replayed fixture; `None` when the fixture
+  is unusable". With `--sim` it runs
+  `build_sim(config, Path(args.sim), speed=parse_sim_speed(args.sim_speed))` (printing and
+  returning `None` on `SimError` — bad speed or empty fixture), then
+  `create_app(sim.config, cadence=ProjectionCadence(interval=args.interval),
+  replay=ProjectionReplay(now=sim.clock.now, before_tick=sim.feeder.feed))` — no `heartbeat` and no
+  watcher, so replay stays time-driven on the fixed `--interval`. Without `--sim` it is
+  `create_app(config, cadence=ProjectionCadence(interval=args.interval, heartbeat=args.heartbeat))`
+  (260712-PTS-L3 — live serving gets change-driven + heartbeat pacing). `run` then serves
+  `built.app` with `uvicorn.run(...)`.
+
+**`_DashboardApp(app, sim)`** (a `NamedTuple`) is why the sim survives the server: it carries the
+`SimSetup` alongside the app rather than dropping it at build time, **because the sim owns the
+throwaway coordination root the server is reading** — releasing it would reclaim the directory
+under a running server. `run` keeps `built` referenced for the whole `uvicorn.run` call and, in a
+`finally`, calls `built.sim.temp_dir.cleanup()` when there is a sim. Closing it there is what ends
+the root's life: dropping the reference instead would leave the directory to
+`TemporaryDirectory`'s finaliser, which is a ResourceWarning, not a cleanup.
 
 `_dev_app()` is the zero-arg import-string app **factory** for the reload path: uvicorn's reloader
 re-imports the app per worker restart, so it needs a factory, not a pre-built app object (passing
@@ -77,7 +90,8 @@ an object silently disables reload). The factory re-reads the resolved config fr
 `AR_DASHBOARD_DEV_CONFIG` (`load_config(...)`), the interval from `AR_DASHBOARD_DEV_INTERVAL`
 (default `1.0`), and (260712-PTS-L3) the optional heartbeat from `AR_DASHBOARD_DEV_HEARTBEAT`
 (absent/empty ⇒ `heartbeat=None`, the serving default) — the env vars the parent `run` set — and
-returns `create_app(config, interval=..., heartbeat=...)`. It is live-state only; it never builds a sim. `reload_dirs` watches only the
+returns `create_app(config, cadence=ProjectionCadence(interval=..., heartbeat=...))`. It is
+live-state only; it never builds a sim. `reload_dirs` watches only the
 package source dir (`Path(agents_remember.__file__).parent`) so unrelated trees don't churn the
 reloader. `os`, `uvicorn`, `create_app`, and the sim helpers are imported at module top (the
 established CLI convention); `import agents_remember` is local to the reload branch.
@@ -121,6 +135,16 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915` armed with no
+  exemptions): `run` was split into `_resolve_settings` (discover + load, one refusal path for
+  `ConfigDiscoveryError` and `ConfigError`), `_run_reload_server` and `_build_app` (returning the
+  new `_DashboardApp(app, sim)` NamedTuple, or `None` for an unusable fixture). The serving calls
+  were re-signed onto the serving layer's new parameter objects — `create_app(config,
+  cadence=ProjectionCadence(...), replay=ProjectionReplay(...))` and
+  `serving_daemon.ensure(config, DaemonEndpoint(host, port), cadence=ProjectionCadence(...))`.
+  `run` now also closes the sim's temp root explicitly in a `finally` instead of leaving it to the
+  `TemporaryDirectory` finaliser. No flag, dispatch order or exit code changed. Verification
+  metadata pinned until closeout stamps the L2 commit.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: added `--heartbeat` (default `None` ⇒ serving default

@@ -11,7 +11,7 @@
 
 ## Purpose
 
-This companion file provides the reusable report shape for deeper research in the `l-01-session-job-lifecycle` skill. It keeps the main lifecycle compact by owning the full and compact report templates, evidence-ledger format, proof inventory, evidence kind taxonomy, evidence limits, and final lifecycle decision summary.
+This companion file provides the reusable report shape for deeper research in the `l-01-agent-lifecycles` skill. It keeps the main lifecycle compact by owning the full and compact report templates, evidence-ledger format, proof inventory, evidence kind taxonomy, evidence limits, and final lifecycle decision summary.
 
 ## Code Commentary
 
@@ -45,9 +45,8 @@ The template is a companion to the lifecycle entry contract and the detailed spi
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The entry contract lists this file as the reusable report and evidence-ledger shape for deeper research. | L29-L33 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/SKILL.md) |
-| The lifecycle delegates report shape to this template while preserving its required proof categories. | L87-L97 | [lifecycle.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
-| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/deep-research-report.md) |
+| The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from. | L376-L383 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report.md](deep-research-report.md) |
 
 As of cycle 4 the decision block asks for the suggested artifact shape (minimal w-02 task vs master + series) instead of the retired 'build mode' axis.
 
@@ -60,6 +59,21 @@ No sibling repository evidence is needed for this lifecycle report template.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 citations and DELETED 1 whose material
+  is gone, after the `l-01-session-job-lifecycle` skill was renamed to `l-01-agent-lifecycles` and
+  its files moved into `templates/` and `roles/`. Repointed the entry-contract row to
+  `l-01-agent-lifecycles/SKILL.md` L376-L383 (the `templates/…` companion-file bullet, where
+  `deep-research-report` is now named on L381) and reworded it to match what SKILL.md actually
+  says. Fixed the self-citation link, which pointed at the retired skill path; its L12-L123 range
+  is still exact (Report Rules at L12 through the end of Evidence Ledger Guidance at L123 in a
+  123-line file). **Deleted** the row "The lifecycle delegates report shape to this template while
+  preserving its required proof categories" (was `lifecycle.md` L87-L97): `lifecycle.md` no longer
+  exists and nothing replaced that delegation — a full-tree grep for `deep-research`, `proof`,
+  `report shape` and `evidence ledger` across `SKILL.md`, `lenses.md`, all nine `roles/` files and
+  all five `criteria/` files finds this template's own L3-L6 self-description and one bare listing
+  on SKILL.md L381, and no lifecycle-side statement of required proof categories at all. Also
+  corrected the Purpose paragraph's stale `l-01-session-job-lifecycle` skill name.
 
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): retired build-mode vocabulary replaced with artifact shape. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: moved from the retired l-01-session-job-lifecycle skill into the shared template library and renamed deep-research-report.md; used by the orchestrator lifecycle's research phase. Verification metadata pinned until closeout stamps the L9 commit.

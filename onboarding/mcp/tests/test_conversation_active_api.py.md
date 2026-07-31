@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,8 +27,8 @@ log, no fixture authority.
 
 ### Logic
 
-`_FakeAdapter`/`_NativePageAdapter` (L105-L247) emit native frames exactly as the production
-mappers do and let the real submission authority own dispatch/provenance; `_Harness` (L256-L361)
+`_FakeAdapter`/`_NativePageAdapter` (L107-L248) emit native frames exactly as the production
+mappers do and let the real submission authority own dispatch/provenance; `_Harness` (L258-L360)
 wires the bridge, IPC server, catalog row, and composed app per test. `ProductionRouteTests`
 (L362-L781): a remote peer fails closed typed 403 over a real wire (XFF); the page serves
 native identity, items, canonical status, and capabilities; user-item provenance resolves
@@ -40,7 +40,7 @@ typed; resume replays in order with cursor ids (and earlier replays are marked `
 an epoch flip mid-stream emits exactly one gap + close read off the live wire (the runner
 generation restarts on the same socket); orchestration parity proves the seat projection comes
 from the same canonical classification; and a source scan proves no PTY/runner-log/fixture
-production authority exists in the active modules. `PiProductionRouteTests` (L783-L865) drives
+production authority exists in the active modules. `PiProductionRouteTests` (L948-L1035) drives
 pi native hydration, tool convergence, and capabilities through the same real seam.
 
 ### Conventions
@@ -102,6 +102,23 @@ does not replace or fail the parent page. Existing page/event authorization and 
 remain intact.
 
 ## Update History
+
+- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived the stale `PiProductionRouteTests`
+  self-citation — the class is L948-L1035 (was L785-L866) after the selected-child and L5I
+  bootstrap/recovery cases grew `ProductionRouteTests`. Its one test is still
+  `test_pi_native_hydration_tools_and_capabilities`. Still stale and left for the next citation
+  pass (verified, not repaired here): `ProductionRouteTests` runs L379-L946 (cited L362-L781) and
+  the fake adapters are L111-L257 (cited L107-L248).
+
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
+  No content impact: the whole diff is the new `ControlSubmission` import plus the
+  `submit_control_prompt` call inside `ProductionRouteTests` folding its
+  `source`/`request_id`/`expected_bridge_epoch`
+  arguments into that parameter object. The same cockpit source, request id, and bridge epoch
+  still reach the real submission authority, no test was added, removed, or renamed, and no
+  assertion moved — so the three-route page/events composition, the provenance-lane exactness,
+  the epoch-mismatch 409, the cursor and SSE refusals, and the no-PTY source scan all hold as
+  written.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the active route count to three
   and documented exact selected-child POST/parent-continuity coverage. Verification metadata

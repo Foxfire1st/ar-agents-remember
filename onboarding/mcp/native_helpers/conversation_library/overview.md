@@ -165,7 +165,7 @@ resolution source.
 | The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. | L14-L210 | [protocol.test.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.test.ts) |
 | The Python foundation suite forbids incidental resolution and verifies package/lock pins plus the exact helper source set. | L63-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The Python host and Claude/Pi ports drive these entries on the production seam. | L100-L148 | [helper_host.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/helper_host.py) |
-| The installed-runtime suite proves the Pi gate/round-trip/open and the Claude version-mismatch fail-closed posture through these helpers. | L215-L262; L360-L568 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The installed-runtime suite proves the Pi gate/round-trip and the real Pi open through these helpers, and pins the Claude gate on the live list CONTRACT — asserting the reason is never a version-mismatch demotion. | L217-L263; L284-L413; L554-L586 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
 
 ## Cross-Repo References
 
@@ -223,6 +223,14 @@ installed-runtime suite on machines with the harnesses to prove the production s
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the installed-runtime suite citation and
+  rewrote the claim that carried it. `test_conversation_library_installed.py` is now 590 lines: the Pi
+  gate + list/read/resolve round-trip are L217-L263, `PiOpenEndToEndTests` is L284-L413, and
+  `ClaudeGateHonestyTests` is L554-L586 (was `L215-L262; L360-L568`). The old claim asserted a "Claude
+  version-mismatch fail-closed posture", which the suite now explicitly disproves —
+  `test_installed_claude_library_gates_on_contract_not_version` asserts the reason contains neither
+  "differs from the locked" nor a version mismatch — so the claim was rewritten to state the
+  contract-only gate the test actually pins, matching this file's Needs Verification note.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the Claude sub-agent surface — the
   `subagents/` on-disk authority with the SDK-replicated project-slug rule, per-row `agents`
   enumeration folded into the list signature, the `agentsEnumerated` response marker, and the

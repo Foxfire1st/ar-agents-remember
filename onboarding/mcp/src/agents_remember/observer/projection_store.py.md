@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`             |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`             |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -73,8 +73,12 @@ logged and the previous snapshot is used: this containment is necessary because 
 and provider watcher reads are external control-plane I/O, and a failed provider probe
 must not stop the dashboard from projecting the rest of the workspace.
 
-`project_and_write(config, *, now=None, provider_refresher=None)` is the entry the serving layer drives on
-a tick (slice 04): it resolves the root via `paths.observer_root`, prunes expired
+`project_and_write(config, *, now=None, refresh=None, tick=None)` is the entry the serving layer
+drives on a tick (slice 04). Since 260731-EFA-L2 the projector's three long-lived collaborators
+travel together in the frozen `ProjectionTickState(input_state=None, provider_refresher=None,
+landing_state=None)` passed as `tick=` — a tick given some of them and not others silently reverts
+to a cold read, so they are one object. `tick or ProjectionTickState()` is the cold-read default.
+It resolves the root via `paths.observer_root`, prunes expired
 lifecycle event logs with `prune_expired_lifecycle_event_logs`, reads the lifecycle logs
 + structural snapshots (`read_enclosures`, optional provider refresh, `read_providers`), and — slice 3b — the
 analytical surfaces too: the coordination-level readers (drift snapshots, setup
@@ -86,16 +90,17 @@ surfaces (`read_engine_process_facts(coordination_root, active_worktree_groups=.
 ledger — now `read_ledger(scope.memory_root, code_root=scope.path)`, threading the scope's code root so
 the official coupler's window carries the slice-5h Tier 2 per-side commit message/date) iterated over
 `config.repositories` (each scope's `memory_root`/onboarding).
-It then calls `reducer.project_workspace`, threading every surface through as a
-keyword — including the slice-5e `engine_process_facts=` / `engine_start_progress=`
-arguments, the R1 `series=read_series_documents(coordination_root, now=…)`
-(the master series surface), and the slice-6c `gates=read_gates(coordination_root)`
-argument. Task 23/24 adds `agent_pickups=read_agent_pickups(coordination_root, now=…)`, the pending
-operator-inbox projection that drives task-row waiting-for-agent/check-chat feedback. Since
-260707-HFX2-L1 (R5) it also threads `expectation_rows=read_expectation_rows(coordination_root,
-now=moment)` — the durable deadline-row projection surfaced for dashboard/architect observability;
-this is surfacing only, an L2 predicate reads `ExpectationRowStore` directly and never this
-projection. Task 28 S5.2
+It then calls `reducer.project_workspace`, threading every surface through **two bundles rather
+than a keyword list** (260731-EFA-L2): `structure=WorkspaceStructure(enclosures=…, providers=…,
+active_worktree_groups=…)` for the structural tree, and `given=AnalyticalInputs(…)` for every
+analytical surface — drift snapshots, sidecar staleness, setup summaries/progress, route coverage,
+tool reports, agent pickups, expectation rows, ledgers, task documents, series, the slice-5e
+`engine_process_facts` / `engine_start_progress`, the slice-6c `gates`, and the attention
+dismissals. `series` is the R1 master-series surface from `read_series_documents`; `agent_pickups`
+(Task 23/24) is the pending operator-inbox projection that drives task-row
+waiting-for-agent/check-chat feedback; `expectation_rows` (260707-HFX2-L1 R5) is the durable
+deadline-row projection surfaced for dashboard/architect observability — surfacing only, since an
+L2 predicate reads `ExpectationRowStore` directly and never this projection. Task 28 S5.2
 constructs `AttentionDismissalStore(root)`, threads `attention_store.current()` into the reducer, then
 calls `attention_store.prune_lifecycles(...)` with the projected non-terminal lifecycle ids before the
 atomic write, so completed/abandoned lifecycle acknowledgement rows are physically removed as part of the
@@ -103,11 +108,10 @@ normal tick. It then writes atomically and returns the projection.
 `McpRuntimeConfig` is imported under `TYPE_CHECKING` (config is only passed
 through).
 
-**Slice-6g / Task 17:** `enclosures` (from `read_enclosures`) is now hoisted to a local and passed both
-into `project_workspace(enclosures=...)` and into
-`read_task_documents(coordination_root, enclosures=...)`, so the reader can attach lifecycle context to
-leaf/root task documents when structured enclosure bindings exist while still projecting unbound active
-docs.
+**Slice-6g / Task 17:** the enclosure list read by `ProjectionInputState` reaches both
+`WorkspaceStructure(enclosures=…)` and `read_task_documents(coordination_root, enclosures=...)`, so
+the reader can attach lifecycle context to leaf/root task documents when structured enclosure
+bindings exist while still projecting unbound active docs.
 
 **Task 32:** after `read_enclosures(coordination_root)` and before
 `read_drift_snapshots(coordination_root, now=...)`, `project_and_write` calls
@@ -126,8 +130,8 @@ while preserving non-terminal close/integration work in the Engine Room. The sam
 the per-repo analytical read behind `_gather_repo_surfaces_cached`, with a short TTL so sidecar
 staleness, route coverage, and ledgers do not re-walk every memory tree on every projection tick.
 
-**Task 33:** `project_and_write` also passes `active_worktree_groups=sorted(engine_groups)` into
-`project_workspace`, so the served `WorkspaceProjection.activeWorktreeGroups` reuses the exact
+**Task 33:** `project_and_write` also passes `active_worktree_groups=inputs.active_worktree_groups`
+inside `WorkspaceStructure`, so the served `WorkspaceProjection.activeWorktreeGroups` reuses the exact
 `active_enclosure_worktree_groups` set already computed for the Engine Room. The Topology constellation
 and the Engine Room therefore share one definition of "active", and the shared `enclosures`/`lifecycles`
 collections still carry all-time history for the other views.
@@ -154,9 +158,10 @@ The recurring projection path uses projected status plus the latest landing snap
 - This is the I/O edge; the fold (`reducer`) stays pure and the surface reads live
   in `snapshots`.
 - **Surfaces flow through, never reshaped here:** each reader's output (including
-  the slice-5e `read_engine_process_facts` / `read_start_progress_entries`) is passed
-  straight into `project_workspace` as a keyword; this file adds no engine logic,
-  only the read + thread.
+  the slice-5e `read_engine_process_facts` / `read_start_progress_entries`) is packed
+  straight into `WorkspaceStructure` / `AnalyticalInputs` and handed to `project_workspace`;
+  this file adds no engine logic, only the read + thread. The bundles are transport, not
+  transformation — assigning a field means the reducer receives that reader's output unchanged.
 - **Provider refresh is an I/O-edge concern:** the optional refresher runs before
   `read_providers`, but the reducer still receives ordinary provider snapshots and
   remains deterministic for supplied inputs. Refresh probe failures degrade to the
@@ -194,11 +199,11 @@ The recurring projection path uses projected status plus the latest landing snap
 | The pure fold that consumes the threaded `engine_process_facts` / `engine_start_progress` keywords (slice 5e). | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
 | Compact lifecycle-scoped attention acknowledgement store pruned by `project_and_write`. | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | The atomic-write design requirement + serving placement (§2.5, §5). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
-| `ProviderStateRefresher` implements the `ProviderStateRefresh` protocol, TTL-gates provider current-state refreshes, and logs probe failures before `project_and_write` reads provider snapshots. | L89-L137 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Task 29 projection entry prunes expired lifecycle event logs, computes provider and engine admission groups, reads admitted provider/setup/engine surfaces, and keeps gates/pickups/task docs on the fast path. | L141-L188 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | L192-L240 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| `ProviderStateRefresher` implements the `ProviderStateRefresh` protocol, TTL-gates provider current-state refreshes, and logs probe failures before `project_and_write` reads provider snapshots. | L167-L199; L225-L226 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| Task 29 projection entry prunes expired lifecycle event logs, computes provider and engine admission groups, reads admitted provider/setup/engine surfaces, and keeps gates/pickups/task docs on the fast path. | L151-L199 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | L80-L86; L334-L358 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
 | Admission policy is centralized in the worktree provider admission helper. | L18-L84 | [worktree_provider_admission.py](agents-remember/mcp/src/agents_remember/observer/worktree_provider_admission.py) |
-| Projection tests prove cached repo surfaces do not cache provider reads. | L2283-L2324 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| Projection tests prove cached repo surfaces do not cache provider reads. | L2358-L2399 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -208,12 +213,31 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## 260727-CHATS-IM-L2 Current Delta
 
-`project_and_write` receives an optional worker-owned `ProjectionInputState` plus exact
-`ProjectionRefresh` and consumes its complete `ProjectionInputs`. The reducer and atomic-write
-boundary are unchanged; input acquisition and reclamation now belong to the state object.
+`project_and_write` receives an optional worker-owned `ProjectionInputState` (now carried on
+`ProjectionTickState`) plus exact `ProjectionRefresh` and consumes its complete `ProjectionInputs`.
+The reducer and atomic-write boundary are unchanged; input acquisition and reclamation belong to
+the state object. `state.read(...)` is called with a `ProjectionReaders(lifecycle=read_lifecycle_logs,
+repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` and a
+`RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
 
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that had been
+  stale since well before the L2 refactor. `ProviderStateRefresher` + the `ProviderStateRefresh`
+  Protocol now sit at L167-L199, and the tick drives `maybe_refresh` at L225-L226 (was L89-L137,
+  which is the `_RepoSurfaceCacheEntry`/`_lifecycle_log_cache` module state). The repo-surface cache
+  is now cited at its two real homes — the frozen `_RepoSurfaceCacheEntry` + `_repo_surface_cache`
+  dict at L80-L86 and `_gather_repo_surfaces_cached` + `_repo_surface_cache_key` at L334-L358 (was
+  L192-L240, which is inside `project_and_write`). Re-read both ranges; no claim text changed.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  `project_and_write` is now `(config, *, now=None, refresh=None, tick=None)`. The
+  `provider_refresher` / `input_state` / `landing_state` keywords were folded into the new frozen
+  `ProjectionTickState`, and the reducer call was re-signed onto `reducer.WorkspaceStructure` +
+  `reducer.AnalyticalInputs` instead of ~sixteen keywords. `state.read(...)` now takes a
+  `ProjectionReaders` + `RefreshPass`. Pure plumbing: the read order, the provider-refresh
+  containment, the drift/retention pruning, the dismissal pruning and the atomic write are all
+  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: `project_and_write` now
   delegates input acquisition to `ProjectionInputState`, accepting the worker-owned retained state
   and exact `ProjectionRefresh`. The write/reducer edge remains unchanged; this removes unrelated

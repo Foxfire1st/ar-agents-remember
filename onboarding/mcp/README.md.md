@@ -6,8 +6,8 @@
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T11:55+02:00 |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6` |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -127,6 +127,12 @@ the workspace and never the user's home directory.
 
 ## Update History
 
+- 2026-07-31T21:45+02:00 — 260731-EFA-L2 curator: No content impact: the leaf changed two
+  Troubleshooting lines in `mcp/README.md` from `provider_watchers(action="refresh")` to
+  `action="restart"`, because the tool now rejects `refresh` outright and directs callers to
+  `restart` (watchers only) or `invalidate-indexes` (full rebuild). This sidecar records the
+  README's section structure and setup claims and asserts nothing about that command, so no
+  claim it makes is affected; checked every invariant and reference row against the new text.
 - 2026-07-03T11:55+02:00 — 260703 L3: Install And Run gains the umbrella-CLI story — unpinned
   `uv tool install agents-remember-mcp` first-class, discovery-backed flag-free `dashboard`,
   daemon mode + the `dashboard.autoStart` settings key, pinning as the debugging path, and the

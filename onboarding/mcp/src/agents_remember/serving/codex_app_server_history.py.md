@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_history.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ reader. Focused tests pin every probe, continuation, cycle, fallback, and capaci
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The adapter constructs one reader, delegates native pages to it, and resets the probe after reconnect. | L133-L146; L470-L496; L969-L980 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| The adapter constructs one reader, delegates native pages to it, and resets the probe after reconnect. | L152-L164; L489-L515; L1081-L1091 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
 | The protocol defines the separate 128 MiB emergency payload fuse before decoding. | L18-L23; L217-L240 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
 | Unit regressions cover items-first/turns fallback, linear one-shot walks, cycle termination, exact fallback, aggregate legacy refusal, eviction, and typed IPC survival. | L135-L589 | [test_codex_native_history.py](agents-remember/mcp/tests/test_codex_native_history.py) |
 | The production regression crosses measured-size stdio, runtime probe, adapter, Unix IPC, and selected-child projection. | L279-L406 | [test_codex_history_production_path.py](agents-remember/mcp/tests/test_codex_history_production_path.py) |
@@ -98,8 +98,29 @@ registry did not authorize a live external documentation route for this pass.
 | --- | --- | --- |
 | No externally health-checked reference was available. | — | — |
 
+## 260731-EFA-L2 Current Delta
+
+**`BoundedPageRequest`** (`thread_id`, `cursor`, `limit`, `byte_budget`) is now the single argument
+every bounded native-history read takes: one page — which thread, from where, and how much may come
+back. The two bounds are not independent (the reader stops at whichever of `limit` frames or
+`byte_budget` bytes is reached first), and the cursor is only meaningful for the thread it was
+minted against — reading a page under a mismatched set is how a walk silently returns another
+thread's frames. `_scan_bounded_source` and both bounded contracts (`bounded-items`,
+`bounded-turns`) take the request; only `contract` stays a separate keyword.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations into
+  `codex_app_server_adapter.py`. Reader construction is now L152-L164 (`class CodexAppServerAdapter`
+  through `self._native_history = CodexNativeHistoryReader()` on L164 — the old L133-L146 stopped at
+  the `__init__` signature and never actually covered the construction), native-page delegation is
+  L489-L515 (`read_native_page` calling `self._native_history.read_page`), and the probe reset is
+  L1081-L1091 (`_reconnect` through `self._native_history.reset_probe()`). The old third range
+  L969-L980 was wrong even at the pinned commit — it landed on `_handle_settings_updated`, which
+  never touches the probe.
+- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `BoundedPageRequest` as the single bounded native-history page selector.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: created strict 1:1 onboarding for the
   runtime-probed items/turns/legacy contract, one-shot opaque continuation, 16 MiB source-response
   ceiling, 64 MiB/64-walk LRU, exact `-32601` fallback, typed cycle/capacity outcomes, shared-fatal

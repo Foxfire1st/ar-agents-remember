@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_interaction_retention.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-25T13:20+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -41,5 +41,19 @@ entries and asserts `read_agent_pickups` returns `waiting-for-agent` before the
 | Agent-pickup projection exercised by the state test. | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
 ## Update History
+
+- 2026-07-31T16:50+02:00 — No content impact: the only change 260731-EFA-L2 made to
+  `mcp/tests/test_interaction_retention.py` is the `PLR0913` parameter-object pass rewriting the two
+  fixture-construction call sites. `create_gate` now takes its kind positionally with
+  `anchor=GateAnchor(lifecycle_id="L1")`, and `create_operator_inbox_entry` takes
+  `InboxMessage(ask=…, response=…, gate_id=…)` positionally plus `routing=InboxRouting(...)` and
+  `poster=InboxPoster(...)` in place of nine loose keywords; the import block grew to name those
+  objects. Checked that the seeded rows carry the same values as before, that no assertion line was
+  touched, and that this card names none of those constructors, keywords, or field names — it
+  describes only the two behaviours, both of which still read exactly as written: the TTL case still
+  asserts compaction empties the gate store past the 24-hour interaction TTL
+  (`test_read_gates_prunes_open_gates_after_24h`), and the projection case still asserts
+  `read_agent_pickups` returns `waiting-for-agent` for the fresh entry and `check-chat` for the
+  stale one. This card carries no line citations, so nothing needed re-anchoring.
 
 - 2026-06-25T13:20+02:00 — Created for task 23/24 TTL compaction and agent-pickup projection coverage.

@@ -41,9 +41,12 @@ the same event cursor, `_resume_cursor` L106-L118), generation, retention floor 
 `composition-unavailable`/`control-unavailable`, the cursor family (400
 `cursor-invalid`/`cursor-conflict`, 403 `cursor-authorization`, 409
 `cursor-reset-required`), and the session-resolution family (404 `unknown-session`, 409
-`unsupported`). `_event_stream` (L189-L204) yields `resume-replay`-marked replay envelopes,
-then live envelopes until the close sentinel or a gap mutation (returning after the gap frame).
-`_sse_frame` (L207-L216) emits explicit wire frames (`event`/`data`/`retry`/`id`) rather than
+`unsupported`). `_event_stream` (L226-L247) primes the stream with one `: connected` SSE comment
+(the first body chunk makes GZipMiddleware flush the response start, so a caught-up subscriber's
+headers arrive at connect; it carries no cursor and no event field), then yields
+`resume-replay`-marked replay envelopes, then live envelopes until the close sentinel or a gap
+mutation (returning after the gap frame), detaching the subscription in `finally`.
+`_sse_frame` (L250-L258) emits explicit wire frames (`event`/`data`/`retry`/`id`) rather than
 the generator-route idiom: this FastAPI version only encodes `ServerSentEvent` objects after
 the stream starts, which would make pre-stream typed errors impossible (declared deviation,
 review-ruled legitimate).
@@ -108,6 +111,11 @@ stream.
 
 ## Update History
 
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
+  selected-child POST route was inserted ahead of them — `_event_stream` L189-L204→L226-L247 and
+  `_sse_frame` L207-L216→L250-L258 (both old ranges landed inside the `conversation_events` handler).
+  Also recorded `_event_stream`'s `: connected` priming comment and its `finally` detach, which the
+  old sentence predated.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the route count from two to three
   and documented the exact selected-child POST, successful local-outcome vocabulary, and unchanged
   parent/typed-error boundaries. Verification metadata stays pinned while uncommitted.

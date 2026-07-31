@@ -56,7 +56,7 @@ No Domain Documentation source is configured for this repository-owned port boun
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally. | L88-L194; L733-L785 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally. | L84-L190; L723-L775 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The topology regression requires exactly these two ports and forbids a control port. | L21-L28 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 
 ## Cross-Repo References

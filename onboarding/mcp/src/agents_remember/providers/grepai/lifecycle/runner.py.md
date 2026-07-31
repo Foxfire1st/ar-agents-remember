@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -20,6 +20,17 @@
 GrepAI.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Watcher-Start And Stack Objects
+
+- **`GrepaiWatcherStart(layout, runner, network, image)`** — everything a watcher start has in hand
+  before compose brings it up, resolved once by `grepai_watcher_start_prerequisites(args, *,
+  runner, network_name)` (which now returns `(start, refusal_or_None)` instead of a four-tuple) and
+  reported verbatim in every watcher-start result. The refusal payload is still emitted when the
+  network or the image build is not ok.
+- **`GrepaiStackResults(backend=None, embedder=None, watcher=None)`** — the lifecycle result of each
+  container in the stack. `grepai_docker_state(layout, stack, *, action, runner)` takes it, and
+  still writes them to the state file's `backend`/`embedder`/`watcher` keys unchanged.
 
 ### Logic
 
@@ -71,6 +82,11 @@ markers (`Indexing [`, `Initial scan`, `Embedding`) → `in-progress`, otherwise
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  added the frozen `GrepaiWatcherStart` and `GrepaiStackResults`;
+  `grepai_watcher_start_prerequisites` now returns `(GrepaiWatcherStart, refusal | None)` and
+  `grepai_docker_state` takes the stack results as one object. The written state file is unchanged.
+  Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-06-10T05:30+02:00 — Watcher status gains `initialScan`: `grepai_watcher_initial_scan` reads the watcher's own container-log scan markers since container start (`Indexing [` progress, `Initial scan complete`) via `grepai_scan_state_from_log` — the same mechanism as the CGC probe, giving GrepAI real indexed/indexing states instead of permanent unknown.
 - 2026-06-02T01:15+02:00 — `grepai_docker_state` roots payload no longer emits `sourcePath` after `GrepaiMemoryRoot.source_path` was removed (roots are watched live in place).
 - 2026-05-31T12:50+02:00 — Removed the unused `grepai_runner_dockerfile` helper and its `provider_asset_text` import (build path uses `provider_asset_path`); re-typed the `layout` param from `Any` to `GrepaiRuntimeLayout` across `grepai_watcher_inspect`/`grepai_watcher_workspace_status`/`grepai_watcher_start_prerequisites`/`grepai_watcher_create_start_result`/`grepai_docker_state`; added matching Invariants And Boundaries notes (1.0.0 review remediation).

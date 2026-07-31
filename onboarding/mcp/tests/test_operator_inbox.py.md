@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `bc2958ae2d90ab3d34bffde5402d2dc21100e41b`|
-| lastVerifiedCommitDate |                                       2026-07-14T16:16:44+02:00|
+| lastVerifiedCommitHash |                                       `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |                                       2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -114,6 +114,21 @@ Tests mirror the gate control-plane test style: temporary directories, patched
 store factories for payload-builder tests, and direct assertions on modeled
 payload dictionaries.
 
+Every inbox row is minted through the parameter-object form of the record factory —
+`create_operator_inbox_entry(InboxMessage(...), entry_id=…, now=…,
+routing=InboxRouting(address=InboxAddress(...)), poster=InboxPoster(...))` — and the tool tests post
+through the matching `operator_inbox_post_payload(config, address=InboxAddress(...),
+message=InboxMessage(...), poster=InboxPoster(...), delivery=HostedDelivery(...))`, where
+`HostedDelivery(enabled=False)` is the no-push case and `HostedDelivery(catalog=…, host=…,
+paster=…)` injects the fakes. Store attempts go through `record_delivery(entry_id,
+DeliveryAttempt(delivery_state=…, delivered_to_session=…, detail=…), now=…)`, note `detail` where
+the row field is `deliveryDetail`. `deliver_inbox_entry` takes `InboxDeliveryLog(store=…, entry=…,
+at=…, floor=RedeliveryFloor(current=…))` plus `sessions=HostedSessionRuntime(catalog=…, host=…)`
+and a `paster`, so the stale-snapshot concurrency case passes its stale `current` and delivery
+timestamp inside the log object. `TerminalHost` is built as
+`TerminalHost(TerminalHostSeams(tmux_probe=...))`, and every `submit_control_prompt` patch takes a
+positional `submission` object (`submission.request_id`) rather than `**kwargs`.
+
 ### Invariants And Boundaries
 
 - A mailbox post/poll must include `lifecycle_id`, `agent_id`, or `recipient_role`.
@@ -138,10 +153,11 @@ listed as Domain Documentation.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Record tests cover create/consume purity, required addressing, and schema alias round-trip. | L22-L74 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
-| Store tests cover lifecycle/agent filters, idempotent consume, missing entry, and missing address errors. | L77-L163 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
-| Store tests (R1/R3 plus HFX2-L8/L9) cover attempt/backoff stamping, the 900-second first-send floor, redeliverable filtering, escalation stamping, ladder-resolved terminal state, and compaction pruning for terminal rows while preserving pending rows. | L220-L290 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
-| Tool tests cover post, poll, durable consume payloads, and no-address poll validation. | L166-L220 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Record tests cover create/consume purity, required addressing, schema alias round-trip, and the legacy-reader allowlist. | L52-L153 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Store tests cover lifecycle/agent/recipient filters, idempotent consume, delete, missing entry, delivery snapshots, and missing address errors. | L155-L276 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Store tests (R1/R3 plus HFX2-L4/L8/L9) cover attempt/backoff stamping, the 900-second first-send floor, redeliverable filtering, escalation and rung stamping, ladder-resolved terminal state, and compaction pruning for terminal rows while preserving fresh pending rows. | L277-L438 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Tool tests cover post, poll, durable consume payloads, no-address poll validation, the decision-item relay round trip, and the stale-manager completion wake. | L440-L673 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
+| Delivery tests drive `deliver_inbox_entry` against the temp store and fake catalog/host for the verified, in-flight-consume, unknown-acceptance, and empty-capture cases. | L675-L901 | [test_operator_inbox.py](agents-remember/mcp/tests/test_operator_inbox.py) |
 
 ## Cross-Repo References
 
@@ -164,6 +180,22 @@ Tests prove legacy-reader projection preserves only optional `adapterDeliverySta
 `adapterDeliveryDetail`, while an unrelated `futureEvidence` extension remains rejected.
 
 ## Update History
+- 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the whole suite moved to the parameter-object
+  form of the inbox seams, so the Conventions section was rewritten to name them instead of
+  attesting past them: `create_operator_inbox_entry` and `operator_inbox_post_payload` now take
+  `InboxMessage`/`InboxAddress`/`InboxRouting`/`InboxPoster` (and `HostedDelivery` for the
+  hosted push, with `HostedDelivery(enabled=False)` replacing `deliver_to_hosted=False`),
+  `OperatorInboxStore.record_delivery` takes a `DeliveryAttempt` whose field is `detail` rather
+  than the old `delivery_detail` keyword, `deliver_inbox_entry` takes `InboxDeliveryLog`
+  (carrying the stale `current` snapshot as `floor=RedeliveryFloor(...)` and the timestamp as
+  `at=`) plus `sessions=HostedSessionRuntime(...)`, `TerminalHost` takes `TerminalHostSeams`,
+  and the `submit_control_prompt` doubles now receive a positional `submission` object instead
+  of `**kwargs`. The shifted call sites invalidated all four own-file reference ranges, which
+  were re-verified against the current class boundaries and re-anchored (L22-L74 to L52-L153;
+  L77-L163 to L155-L276; L220-L290 to L277-L438; L166-L220 to L440-L673), and a fifth row was
+  added for the delivery suite at L675-L901. No test case was added, removed, or renamed and no
+  assertion changed.
+
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented the exact additive inbox compatibility regression
   and negative allowlist proof.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.

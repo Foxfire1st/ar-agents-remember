@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-07T23:45+02:00                                       |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                   |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00                                       |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                   |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -30,6 +30,19 @@ and converts `LeafRefResolutionError` into the same `WorktreeCommandResult` refu
 `start_result` can return before any worktree or contract write. `_build_start_contract` asserts the
 required start arguments, resolves `args.leaf_id or args.worktree_name` through `leaf_ref_start`, then
 passes the resulting doc id into `default_contract`.
+
+Since 260731-EFA-L2 both constructor calls are assembled from the parameter objects
+`worktree_contract.py` owns: a `ContractTask` (name, repo, coordination root, workflow kind, memory
+mode, parent linkage), a `LeafIdentity` (worktree name, resolved leaf id, lifecycle id — leaf
+contracts only), a code-side `RepoBranchPlan`, and a memory-side `RepoBranchPlan | None`. The
+series call maps its protected/integration branches onto the same plan's
+`source_branch`/`work_branch`.
+
+The local helper `_memory_plan(memory_repo, *, source_branch, work_branch, base_commit)` returns
+`None` when `memory_repo is None` — **absence is the whole state**: without a repo path there is no
+memory branch, no memory base and no ledger, so a plan whose repo path is missing is not a plan.
+`_external_memory_value` still blanks the memory work branch for non-external modes before it
+reaches the plan.
 
 The extracted parent-series helpers are unchanged in responsibility from their old `start.py` location:
 they create/load a root series contract, ensure the integration branch when needed, derive memory source
@@ -57,6 +70,11 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
+  both `default_series_contract` and `default_contract` calls were re-assembled onto the
+  `ContractTask` / `LeafIdentity` / `RepoBranchPlan` parameter objects, and the local
+  `_memory_plan(...)` helper was added (returns `None` when there is no memory repository). The
+  built contracts are identical. Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2: exported `memory_base_for_source` as the public helper used
   by `start.py` and tests, and documented that default light-task starts now resolve through the shared
   non-master `task.json` candidate path. Verification metadata pinned until closeout stamps the

@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/control/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
+| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 
 ## What This Area Is
 
@@ -212,11 +212,11 @@ foundation and four+installed suites pin the slice.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The two L0 request dependencies are the only caller/runtime consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The operation/queue/withdrawal/recovery/attachment/policy/telemetry wire products and privacy validators. | L786-L1250 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The operation/queue/withdrawal/recovery/attachment/telemetry wire products this route imports, the `protect_queue_source_privacy` validator, and the content-free `operation_fingerprint`. Policy products (`PolicyPart`, `ConversationPolicyProjection`) are route-local in `control/policy.py`, not here. | L915-L1242; L1265-L1282 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The L2E control-plane reads (interrupt write, operation timeline, asset channel) this slice consumes. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The L3E truncation-envelope terminal-identity preservation the pi settlement reads. | L569-L667 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The authority setter mint with no submission source (setter-row exclusion basis). | L541-L543 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The stale-but-fail-closed L1 page-level control/telemetry capability view (L4 gates on the L3 module instead). | L152-L165 | [active/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
+| The stale-but-fail-closed L1 page-level control/telemetry capability view (L4 gates on the L3 module instead). | L154-L167 | [active/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
 | The foundation pin asserts exactly the seventeen owned control routes (GET-only on policy/telemetry/queue/pending). | L54-L82 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The four focused suites + the opt-in installed suite cover interrupt, queue/withdrawal/recovery, attachments/policy/telemetry, the real-wire routes, and the live proof. | L1-L8 | [mcp/tests overview](../../../../../tests/overview.md) |
 
@@ -290,8 +290,64 @@ The control child now carries normalized question pages and an exact answers map
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
+## 260731-EFA-L2 — The Re-Authorization Rule Became A Type
+
+Everything asserted above about re-authorization still holds, and the route's boundaries are
+unchanged. What changed is that the rule is now carried by the type system instead of by four
+arguments repeated at every layer, and **the two most dangerous confusions in this route are now
+hard to express.**
+
+**`ControlRequest` → `ControlScope` (`service.py`).** `ControlRequest` is one authorized request's
+scope: `service`, `authorization`, `ar_session_id`, `expected_bridge_epoch`. Nothing in this package
+may act on a session without all four — the service owns the per-`(session, epoch)` channel, the
+authorization binding is what every operation fingerprint is computed against, and the session id
+plus the caller's *expected* epoch are what the epoch check verifies. `request.resolved(epoch)`
+narrows it to a `ControlScope` carrying **the epoch the service actually verified, not the one the
+caller believed.** Refs are minted and decoded against the verified epoch, so carrying the claimed
+epoch past the check would let a stale client mint refs for an epoch that no longer exists. The
+entry points take `ControlRequest`; everything downstream of the epoch check takes `ControlScope`.
+Do not add a function that takes a raw `expected_bridge_epoch` past that boundary.
+
+**`RefBinding` / `RefTarget` (`refs.py`).** A ref is only meaningful re-bound to all three of
+caller, session and exact bridge epoch — `RefBinding(authorization, ar_session_id, bridge_epoch)` —
+and `RefTarget(identity, withdraw_request_id=, asset_id=)` is what it points at. `mint_ref` and the
+decode path take **the same binding value**, rather than three parallel arguments each. Minting
+against one binding and verifying against another is exactly the confused-deputy the purpose brands
+exist to stop; passing one value makes the two sides provably identical. The four non-interchangeable
+purpose brands are unchanged.
+
+**One attempt, one record.** `WithdrawalTicket` (`withdrawals.py`) carries the five facts every
+record this module builds — settled, failed or unknown — is stamped with: the bound epoch, the
+operation identity, the caller's opaque operation ref, the idempotency fingerprint, and the withdraw
+request id. Its reason for existing is precise: it keeps a *failure* record from being stamped with
+a different operation's identity than the attempt it describes. `InterruptTicket` (`operations.py`)
+and `SubmittedContent` (`attachments.py`) play the same role for their operations, and
+`StageAttachmentsForm` (`api.py`) carries one multipart stage form.
+
+No route was added or removed; the seventeen routes, the typed-error mapping, the bounded ledgers,
+the never-bodies queue rule and the cockpit-only withdrawal restriction are all as described above.
+
 ## Update History
 
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `models.py` citation and narrowed
+  the claim, which was partly false. The span is now L915-L1242 (`InterruptOperation` through
+  `ConversationTelemetry`) plus L1265-L1282 (`operation_fingerprint`) — verified against what the
+  route's own modules import: `operations.py` takes `InterruptOperation`/`OperationFingerprint`,
+  `queue_projection.py` takes the three queue models (the privacy validator is
+  `OperationQueueItem.protect_queue_source_privacy` at L961-L968), `withdrawals.py` +
+  `recovery_assembly.py` take the withdrawal/recovery set, `attachments.py` the submit/receipt
+  set, `telemetry.py` the metric set. **Dropped "policy" from the claim**: `models.py` defines no
+  policy wire product — `PolicyPart` and `ConversationPolicyProjection` are declared in
+  `control/policy.py` and only borrow `FeatureCapability`/`CapabilityEvidence` from `models.py`.
+  The old start at L786 also over-reached into `ConversationLibraryPageScope`, which this route
+  does not touch.
+
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: the re-authorization contract became structural —
+  `ControlRequest` carries the four facts no operation may proceed without, `ControlScope` carries
+  the **verified** epoch past the check, and `RefBinding`/`RefTarget` make mint and decode share one
+  binding value. `WithdrawalTicket`/`InterruptTicket`/`SubmittedContent`/`StageAttachmentsForm` bind
+  one attempt's facts together. No route, error mapping or authorization rule changed. Verification
+  metadata pinned until closeout stamps the L2 commit.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths for

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/cgc/setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -15,6 +15,13 @@
 `setup.py` owns provider-level CodeGraphContext setup orchestration and isolated worktree settings generation.
 
 ## Code Commentary
+
+### 260731-EFA-L2 Lifecycle Command Objects
+
+Every `run_lifecycle(...)` call now passes a `setup_common.LifecycleCommand(provider=…, action=…,
+extra_args=…)` in place of the positional `provider`/`action` plus the `extra_args=` keyword;
+`timeout` and `dry_run` stay keywords. `extra_args` is a tuple (`tuple(cgc_extra_args(args))`)
+because the command object is frozen. The argv the lifecycle CLI receives is unchanged.
 
 ### Logic
 
@@ -56,6 +63,9 @@ else `stage`).
 
 ## Update History
 
+- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `run_lifecycle`'s new
+  `LifecycleCommand` signature. Same argv, same results. Verification metadata pinned until
+  closeout stamps the L2 commit.
 - 2026-06-10T07:30+02:00 — Install/seed/refresh phases announce through `setup_progress_from(args)` (GitHub #53). `_refresh_after_seed(args, seed, progress)` announces the fallback BEFORE the reindex runs, carrying `seed_fallback={active, reason}` — the single most important transition to surface, since a refused seed changes expected duration from ~1 minute to N minutes and the reindex emits nothing the orchestrator can see. `_seed_failure_reason` derives the reason from the seed result (`reason`, else `stage`).
 - 2026-05-31T12:50+02:00 — Removed local `_cgc_provider` helper; provider sub-settings now read via shared `provider_settings(settings, CGC_PROVIDER_ID)` from `setup_common` (import swapped from `context_providers`), behaviour-preserving; noted the helper source in Logic (1.0.0 review remediation).
 - 2026-05-28T13:40+02:00: Updated after isolated CGC settings stopped emitting `venvRoot`.
