@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T20:15+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -21,6 +21,64 @@ surface (spawn, gate open, signal post) so a deadline is a durable ROW an L2 swe
 in-memory timer that a daemon/MCP restart would erase (the Restate durable-timer lesson).
 
 ## Code Commentary
+
+### 260731-EFA-L5 Durable Store Contract
+
+The `durable_store.py` module docstring records this log losing **10.20 percent** of appended rows
+at the base commit under ordinary two-process operation, and that figure is quoted here on its
+authority: it appears at that one site and nowhere else in the tree, unlike the 31.45 percent and
+11.50 percent figures, which are carried at several independent sites. The mechanism is what a
+reader can check directly, and it is the part that matters: the loss is of whole rows, so nothing on
+the reader side could have detected it — the durability harness
+(`mcp/tests/_store_durability.py`, driven by `test_controlplane_store_durability.py`) is what
+produces a loss rate at all, and no recorded base-commit run of it is in the tree. Every
+dispatch surface writes here and the supervisor sweep reclaims here, so an append landing between
+the reclaim's read and its `os.replace` was silently discarded while the caller was told the row
+was written. A lost expectation row is a deadline nobody is watching.
+
+All file I/O now routes through `controlplane/durable_store.py` under `EXPECTATION_ROW_OWNERSHIP`,
+which names both processes as writers and the **dashboard** as the compaction owner — the
+supervisor sweep (`serving/supervisor.py`) is the only reclamation pass this log has and it needs
+the folded snapshot `compact` returns.
+
+- `append` calls `check_declared_writer()` and then holds `exclusive_access` around `append_line`,
+  which fsyncs before the handle closes.
+- `compact` opens `exclusive_access` and delegates to the new `_compact_locked`, so the read, the
+  filter and the rewrite all happen under **one** hold of the lock. Locking only the write half
+  looks safe and discards everything appended since the read.
+- `_replace` no longer unlinks an emptied log, no longer builds its own pid-scoped temp and no
+  longer calls `os.replace`; it delegates to `durable_store.rewrite_lines`, which refuses unless the
+  calling thread holds the lock.
+- `ExpectationRow` now inherits `DurableRecord`, picking up `extra="forbid"` (previously declared
+  locally) plus a validated `schemaVersion`: an unknown major raises `ValidationError` at parse
+  time, so the strict reader surfaces it and the tolerant reader skips it, with no version branch
+  in either.
+
+### 260731-EFA-L5 R8 The Read Split, And The Bug It Fixed
+
+This store now carries **two readers**, and the split fixed a live defect rather than merely
+tidying one.
+
+`read` stays **strict**: a deadline row that cannot be parsed is a deadline nobody is watching, and
+the L2 sweep is the only thing standing between a missed expectation and silence. Being strict is
+right for the sweep.
+
+But `observer/snapshots.py::read_expectation_rows` wrapped that strict read in
+`suppress(OSError, ValueError)` — and pydantic's `ValidationError` **subclasses `ValueError`**. So
+one torn line did not cost the dashboard one row; it cost the dashboard **every deadline in the
+file**, and the operator was shown nothing due. The new `read_for_projection` is tolerant per row,
+and `pending_for_projection` is `pending` over it; `read_expectation_rows` now calls that. The
+`suppress` stays for the I/O it was there for, but it is no longer load-bearing for a malformed
+row.
+
+`_pending_rows(rows)` is the shared fold both `pending` and `pending_for_projection` run — fold by
+id last-wins, keep the pending ones, order by `dueAt` — so the two readers cannot disagree about
+what "pending" means. Note `pending()` now folds `read()` directly rather than going through
+`current()`; the result is identical.
+
+**Every rewrite here reads strictly.** `_compact_locked` takes its record list from `read`, never
+from `read_for_projection`, so a compaction can never be the thing that erases a deadline row it
+could not parse. That is what makes two policies safe rather than merely different.
 
 ### 260707-HFX2-L18 Seat-Scoped Expectations
 
@@ -71,9 +129,12 @@ fulfillment path uses (e.g. `operator_inbox_consume_payload` marks the matching 
 
 ### Conventions
 
-Same append-only + fold-by-id pattern as `operator_inbox_store.py` / `orchestration_nudges.py`;
-`_replace` (unused today, present for parity/future compaction) uses the same unique-temp +
-`os.replace` atomic-write idiom as the other controlplane stores.
+Same append-only + fold-by-id pattern as `operator_inbox_store.py` / `orchestration_nudges.py`.
+`_replace` is no longer an unused parity stub and no longer owns an atomic-write idiom of its own:
+`_compact_locked` drives it, and it delegates to the shared `durable_store.rewrite_lines`. The
+public-method-takes-the-lock / `_locked`-half-does-the-work split is the route-wide convention all
+six stores now follow, precisely so a rewrite cannot be reached without the lock that made its
+input current.
 
 ### Invariants And Boundaries
 
@@ -83,6 +144,16 @@ Same append-only + fold-by-id pattern as `operator_inbox_store.py` / `orchestrat
 - Surfacing only: the dashboard/architect projection (`observer/snapshots.py::
   read_expectation_rows`) reads this store for VISIBILITY; an L2 predicate must read this store
   directly for CORRECTNESS and never the projection (R5's split).
+- **Two readers, and the correctness one is strict.** `read` / `pending` / `overdue` raise on a
+  torn or unknown-major row and are what the sweep uses; `read_for_projection` /
+  `pending_for_projection` skip it and are for the dashboard only. Point the sweep at the tolerant
+  pair and a malformed row becomes a deadline that silently stops being watched.
+- **Every rewrite reads strictly.** `_compact_locked` reclaims from `read`, so compaction can never
+  erase a row it could not parse.
+- **The lock is held across the read and the rewrite.** `compact` opens `exclusive_access` before
+  `_compact_locked` runs; `rewrite_lines` raises `DurableStoreError` if a caller skips it.
+- **`_replace` never unlinks.** An empty kept set is an empty file, so a concurrent appender
+  holding an open handle cannot write into an unlinked inode.
 - `ExpectationKind` here and `KNOWN_EXPECTATION_KINDS` in `kernel/agentic_settings.py` are two
   separate definitions kept in sync by convention, not by import (avoids a kernel<->controlplane
   cycle) — a new kind must be added to both.
@@ -103,8 +174,13 @@ No meaningful external design-doc references found yet (created this leaf).
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Every dispatch surface writes its expectation row in the SAME call as the dispatch itself. | L28-L48 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
-| `ExpectationRowStore.overdue` is the L2 sweep's predicate input; `find_by_source` is the fulfillment lookup. | L120-L156 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| `write_expectation_row` is the create-plus-append helper every dispatch surface calls, so the row is never a forgettable follow-up to the dispatch. | L337-L355 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| `ExpectationRowStore.find_by_source` is the fulfillment lookup and `overdue` is the L2 sweep's predicate input. | L219-L248 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| `append` checks the declared writer and holds `exclusive_access` around the fsyncing append. | L165-L169 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | L137-L144; L171-L217 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | L286-L334 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard supervisor sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. | L592-L610 | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
 ## Cross-Repo References
 
@@ -119,6 +195,35 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **One stale citation and one
+  unsourced number.** The `EXPECTATION_ROW_OWNERSHIP` row cited `durable_store.py` **L270-L280**;
+  the constant is at **L338** — the file grew 598 → 699 lines mid-pass and every range written
+  earlier is off. Replaced with a symbol-name citation and no range, as this leaf's test cards do,
+  because a number that was wrong within the hour is worse than no number. Re-read every other
+  citation on this card against the current files and left them: `write_expectation_row` L337-L355
+  (`def` L339), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
+  read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
+  `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
+  `_replace` L327), and `read_expectation_rows` L592-L610 (`def` L592). The **10.20 percent** figure
+  is now attributed rather than asserted: it appears only in the `durable_store.py` docstring, unlike
+  31.45 percent and 11.50 percent, which several independent sites carry. Named the harness that
+  produces a loss rate and recorded that no base-commit run of it is stored in the tree, so a reader
+  knows what is and is not checkable. This card's read-policy statements were already correct — the
+  strict `read` drives `_compact_locked`, and the card says so — and were left unchanged.
+- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded the 10.20 percent
+  measured loss and the routing of all file I/O through `durable_store.py` under
+  `EXPECTATION_ROW_OWNERSHIP` (both processes write, the dashboard supervisor sweep owns
+  compaction): `append` checks the declared writer and locks, `compact` holds one lock across the
+  new `_compact_locked` read-filter-rewrite half, and `_replace` delegates to `rewrite_lines` and
+  no longer unlinks an emptied log. Recorded the R8 read split and the live defect it closed —
+  `observer/snapshots.read_expectation_rows` wrapped the strict read in
+  `suppress(OSError, ValueError)`, and because `ValidationError` subclasses `ValueError`, one torn
+  line cost the dashboard every deadline in the file; it now calls the new
+  `pending_for_projection`, and `_pending_rows` is the fold both readers share. Recorded that every
+  rewrite still reads strictly. Corrected the stale Conventions claim that `_replace` was an unused
+  parity stub with its own atomic-write idiom, and repaired both pre-existing citations, which the
+  L2 parameter-object work had left pointing at moved code. Verification metadata pinned until
+  closeout stamps the L5 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `ExpectationSubject` and `Expectation` parameter objects and re-signed both
   builders onto them — `create_expectation_row(expectation, *, row_id, now, due_at)` and

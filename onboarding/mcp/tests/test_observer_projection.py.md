@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated | 2026-08-01T14:20+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -63,14 +63,14 @@ seeds the real series shape — lowercase enclosure leaf id, uppercase doc id, n
 matching neither, no lifecycleId/enclosures[] on the doc — and asserts `read_task_documents` still
 attaches the enclosure's lifecycle.
 
-#### 260731-EFA-L4 — the lifecycle-state vocabulary suites (L1617-L2005)
+#### 260731-EFA-L4 — the lifecycle-state vocabulary suites (L1625-L2013)
 
 Five classes added between `TokenSeriesTests` and `StalenessHistogramTests`. They exist for a set
 difference, not a typo: `Metrics` bucketed **three** states by hand while `State` declared **six**,
 so an `awaiting-developer` lifecycle counted towards `lifecycleCount` and `totalTokens` and towards
 nothing else — the rollup could not show a lifecycle that had handed the turn back.
 
-- **`MetricsBucketVocabularyTests` (L1617-L1722)** — the coverage half. `live_states()` re-derives
+- **`MetricsBucketVocabularyTests` (L1625-L1730)** — the coverage half. `live_states()` re-derives
   the live set as `STATES` minus `TERMINAL_STATES` rather than reading `projection.ACTIVE_STATES`
   (which *is* the live half verbatim), **so the measurement is not taken with the same instrument
   it is checking**, and a seventh state fails here.
@@ -84,14 +84,14 @@ nothing else — the rollup could not show a lifecycle that had handed the turn 
   them. `test_an_awaiting_developer_lifecycle_is_no_longer_uncountable` pins the reported symptom.
   The `_log(state)` helper derives its event kind from the state (`lifecycle.<state>`) rather than
   from a fourth table keyed by it.
-- **`StatePartitionTests` (L1725-L1789)** — deriving the bucket set as "the vocabulary minus
+- **`StatePartitionTests` (L1733-L1797)** — deriving the bucket set as "the vocabulary minus
   `TERMINAL_STATES`" only moves the hand-written list one level down unless `TERMINAL_STATES` is
   itself tied to the vocabulary. It is: `State` is **composed** from the two halves. These hold
   `check_state_partition` to totality and disjointness (`ACTIVE_STATES == LIVE_STATES` verbatim)
   and drive its three refusals — a state filed on neither side ("neither live nor terminal"), on
   both, and a filed state missing from the vocabulary — against **synthetic** `Literal`
   vocabularies, so the guard is exercised without the real declaration having to be wrong.
-- **`TerminalityIsStructuralTests` (L1792-L1909)** — totality stops a state escaping
+- **`TerminalityIsStructuralTests` (L1800-L1917)** — totality stops a state escaping
   classification; it cannot stop one being classified **wrongly**, and a mis-filed state is the
   same defect wearing the fix. So terminality gets an observable definition and is checked against
   the fold in both directions: a terminal state is one the log reaches **only** through
@@ -103,14 +103,14 @@ nothing else — the rollup could not show a lifecycle that had handed the turn 
   same set — `AmbientLifecycle.end` validates against `TERMINAL_STATES` and converts through
   `coerce_end_outcome`, so a terminal state the reducer can project but no session can write fails
   here whatever the write side is spelled in.
-- **`StateVocabularyReaderTests` (L1912-L1947)** — `vocabulary_names` must read every legal
+- **`StateVocabularyReaderTests` (L1920-L1955)** — `vocabulary_names` must read every legal
   declaration form. `get_args` alone is only correct for a **flat** `Literal`; on the union form
   (`Literal[...] | ReviewState`, a plausible way to fold a second vocabulary in) it returns
   `Literal` objects, and the first consumer to call `.split` on one dies with `AttributeError` at
   import of `agents_remember.observer` — the whole package goes down and the traceback names none
   of this. These pin the reading, the flattening of an alias composition, the by-name refusals
   (non-string member, empty declaration), and that the real declarations read as plain `str`.
-- **`StateCountFieldTests` (L1950-L2005)** — the state → bucket-field naming rule, held one-to-one
+- **`StateCountFieldTests` (L1958-L2013)** — the state → bucket-field naming rule, held one-to-one
   and identical to the client's. `test_a_capital_in_the_tail_survives` records why Python moved:
   `dashboard/src/types/projection.ts` derives the names with `Capitalize<Camel<Tail>>`, which
   upper-cases the first character and leaves the rest alone, while Python used `str.capitalize`,
@@ -198,7 +198,7 @@ enrich each served row when the commits are local and leave the message/date fie
 served by its hash) when they are not.
 
 **260731-EFA-L3** adds one case to that class:
-`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` (L2474-L2504). It is the
+`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` (L2895-L2921). It is the
 only test in this suite that patches git rather than running it: `mock.patch.object(snapshots,
 "run_git", side_effect=subprocess.TimeoutExpired(cmd=["git", "log"], timeout=300))` over a real
 two-commit repo with a written ledger. `TimeoutExpired` is a `SubprocessError` and a `SubprocessError`
@@ -271,7 +271,18 @@ and gate-open rows suppress only when the acknowledgement record matches the lif
 signals re-surface the item, and non-lifecycle provider alarms are not suppressible by orphaned
 acknowledgement rows. Task 29 extends this suite so targetless actionable-drift acknowledgements suppress
 only until a newer drift snapshot appears. `SnapshotReaderTests` adds an end-to-end `project_and_write` assertion that a
-completed lifecycle prunes its attention acknowledgement file from disk.
+completed lifecycle's attention acknowledgement is pruned
+(`test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement`, L1504-L1538).
+
+Since 260731-EFA-L5 (R5) that assertion is about **emptiness, not absence**. It used to end
+`assertFalse(dismissals.log_path().exists())`; the unlink that made it true is the defect the leaf
+removed. `AttentionDismissalStore` rewrote to empty by unlinking, so a concurrent dismisser
+holding an `"a"`-mode handle wrote into an inode with no remaining links and its record vanished
+with the file — no torn line, no exception, nothing for the caller to notice, and it is where the
+measured **31.45%** dismissal loss came from. The three assertions that replaced it are strictly
+stronger than the one they replace: `dismissals.read() == []`, `log_path().is_file()`, and
+`log_path().read_bytes() == b""`. Zero bytes read back is proof the row physically left; a missing
+file only proved something removed the file.
 
 Current `TaskDocumentsReaderTests` assert the Operations projection contract. `read_task_documents`
 takes `enclosures=` for optional lifecycle binding, but projects active JSON-primary light/subTask and
@@ -314,7 +325,7 @@ with a *different* instrument from the one under test — `live_states()` subtra
 `TERMINAL_STATES` from `STATES` rather than reading `ACTIVE_STATES`, and `seeded_state()` asks the
 fold rather than naming `running` — so no assertion can agree with itself. Second, the partition
 and reader guards are driven against **synthetic** `Literal` vocabularies declared as class
-attributes (`StatePartitionTests.LIVE` / `.TERMINAL`, L1736-L1737) plus inline `Literal[...]`
+attributes (`StatePartitionTests.LIVE` / `.TERMINAL`, L1745-L1746) plus inline `Literal[...]`
 arguments, so a refusal is exercised without the shipped declaration having to be wrong; only
 `test_the_real_partition_is_total_and_disjoint` and
 `test_the_real_bucket_fields_are_distinct` assert against the live vocabulary. `typing.Literal` is
@@ -342,21 +353,21 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode` L585-L631; `SeriesSubTaskNode` L634-L649; `SeriesNode` L662-L688 | [projection.py](../src/agents_remember/observer/projection.py) |
-| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | `read_task_documents` L1152-L1180; `read_series_documents` L1275-L1316; `_series_subtask_nodes` L1319-L1336; `_series_subtask_created_at` L1339-L1352; `_task_doc_node` L1373-L1462 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` L3195-L3642 | [test_observer_projection.py](test_observer_projection.py) |
-| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` L3521-L3579 | [test_observer_projection.py](test_observer_projection.py) |
+| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | `read_task_documents` L1146-L1174; `read_series_documents` L1269-L1310; `_series_subtask_nodes` L1313-L1330; `_series_subtask_created_at` L1333-L1346; `_task_doc_node` L1367-L1456 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
+| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` L3203-L3650 | [test_observer_projection.py](test_observer_projection.py) |
+| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` L3529-L3587 | [test_observer_projection.py](test_observer_projection.py) |
 | The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | `test_series_token_total_sums_linked_leaf_lifecycles` L713-L786 | [test_observer_projection.py](test_observer_projection.py) |
 | The fold + inferred layer + action availability under test. | `project_lifecycle` L78-L105; `_project_inferred` L454-L468; the action-availability block (`_lifecycle_actions` L474-L483, `enclosure_actions` L486-L487, `_integrate_action` L490-L504, `_cleanup_action` L507-L521) | [reducer.py](../src/agents_remember/observer/reducer.py) |
 | The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | `workspace_provider_nodes` L16-L39; `_cgc_repo_provider_nodes` L83-L98; `_target_repo_provider_nodes` L139-L150; `_target_repo_ids` L174-L185 | [provider_nodes.py](../src/agents_remember/observer/provider_nodes.py) |
 | The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | `admitted_worktree_groups` L24-L45; `active_enclosure_worktree_groups` L48-L73 | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
 | The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`, `SeriesRetentionTests` | [test_observer_projection.py](test_observer_projection.py) |
 | The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
-| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers` L191-L209 with the group filter in `_worktree_providers` L224-L284; `read_engine_process_facts` L636-L695; `read_setup_progress_nodes` L1038-L1072 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` L2149-L2182 | [test_observer_projection.py](test_observer_projection.py) |
-| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L2323-L2362 | [test_observer_projection.py](test_observer_projection.py) |
+| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers` L185-L203 with the group filter in `_worktree_providers` L218-L278; `read_engine_process_facts` L630-L689; `read_setup_progress_nodes` L1032-L1066 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
+| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` L2157-L2190 | [test_observer_projection.py](test_observer_projection.py) |
+| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L2331-L2370 | [test_observer_projection.py](test_observer_projection.py) |
 | The log reader + atomic writer + orchestrator under test. | `read_lifecycle_logs` L112-L154; `write_projection` L157-L164 with `_atomic_write_json` L361-L365; `project_and_write` L214-L277 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
 | Projection reads active admission sets once and caches repo surfaces on a short TTL. | `REPO_SURFACE_REFRESH_TTL_SECONDS` L64-L68; the single admission/surface read inside `project_and_write` L232; L247; `_gather_repo_surfaces_cached` L334-L345 with `_repo_surface_cache_key` L348-L358 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
-| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests` L239-L347; `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315; `test_active_group_filter_skips_parked_progress` L2678-L2692; `test_repo_surface_cache_reuses_recent_repo_reads` L3092-L3113; `test_reader_skips_inactive_engine_process_groups_when_filtered` L4069-L4098 | [test_observer_projection.py](test_observer_projection.py) |
+| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests` L239-L347; `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315; `test_active_group_filter_skips_parked_progress` L2686-L2700; `test_repo_surface_cache_reuses_recent_repo_reads` L3100-L3121; `test_reader_skips_inactive_engine_process_groups_when_filtered` L4077-L4106 | [test_observer_projection.py](test_observer_projection.py) |
 | The drift-snapshot producer exercised by the round-trip test. | `run_drift_summary` L24-L72; `_write_drift_snapshot` L108-L150 | [onboarding_drift_check/summary.py](../src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
 | The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | `drift_snapshot_path` L19-L22; `prune_orphaned_drift_snapshots` L36-L69 | [drift_snapshots.py](../src/agents_remember/observer/drift_snapshots.py) |
 | The shared drift-snapshot dir/schema the fixtures use. | `DRIFT_SNAPSHOT_SCHEMA` L24; `drift_snapshot_dir` L37-L39 (the file is 39 lines) | [paths.py](../src/agents_remember/observer/paths.py) |
@@ -391,6 +402,52 @@ The provider-reader patch target follows its new `projection_inputs` ownership. 
 asserts the same projection output and uncached volatile-provider behavior.
 
 ## Update History
+
+- 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: one assertion changed in this suite and every
+  line citation in the card moved with it. **Coverage:**
+  `SnapshotReaderTests::test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement`
+  (L1504-L1538) ended `assertFalse(dismissals.log_path().exists())`; it now asserts
+  `dismissals.read() == []`, `log_path().is_file()` and `log_path().read_bytes() == b""`. The
+  unlink it used to prove is the defect 260731-EFA-L5 removed (R5): `_replace` called
+  `path.unlink(missing_ok=True)` on an empty kept set, so a concurrent dismisser holding an
+  `"a"`-mode handle wrote into an inode with no remaining links and lost the record with no torn
+  line and no exception — the mechanism behind the measured **31.45%** dismissal loss, the worst
+  of the six stores. The replacement is strictly stronger: zero bytes read back proves the row
+  physically left, where a missing file only proved a file was removed. Rewrote the
+  `AttentionDismissalTests` paragraph accordingly and named the test. **Citation repairs — 16
+  ranges.** The file grew 4238 → 4246 lines: the diff replaced 7 lines with 15 at L1527, so every
+  self-citation at or below L1534 shifted by exactly +8 and each was re-verified against the
+  symbol it names — `MetricsBucketVocabularyTests` L1617-L1722 → **L1625-L1730**;
+  `StatePartitionTests` L1725-L1789 → **L1733-L1797** (its `LIVE`/`TERMINAL` class attributes
+  L1736-L1737 → **L1745-L1746**); `TerminalityIsStructuralTests` L1792-L1909 → **L1800-L1917**;
+  `StateVocabularyReaderTests` L1912-L1947 → **L1920-L1955**; `StateCountFieldTests` L1950-L2005 →
+  **L1958-L2013**, and the section heading's span L1617-L2005 → **L1625-L2013**;
+  `test_drift_and_failed_setup_surface` L2149-L2182 → **L2157-L2190**;
+  `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L2323-L2362 → **L2331-L2370**;
+  `test_active_group_filter_skips_parked_progress` L2678-L2692 → **L2686-L2700**;
+  `test_repo_surface_cache_reuses_recent_repo_reads` L3092-L3113 → **L3100-L3121**;
+  `TaskDocumentsReaderTests` L3195-L3642 → **L3203-L3650**;
+  `test_read_series_documents_orders_subtasks_by_leaf_creation` L3521-L3579 → **L3529-L3587**;
+  `test_reader_skips_inactive_engine_process_groups_when_filtered` L4069-L4098 → **L4077-L4106**.
+  `test_series_token_total_sums_linked_leaf_lifecycles` L713-L786,
+  `WorktreeProviderAdmissionTests` L239-L347,
+  `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315, the `snapshots` patch-seam
+  import L43 and the `typing.Literal` import L23 all sit above the hunk and were re-verified
+  unmoved. **One pre-existing defect corrected, not a shift:** the body cited
+  `test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` at L2474-L2504,
+  a range that has held neither its start nor its end since the L4 vocabulary insertion — the test
+  is at **L2895-L2921** and L2474 lands inside an unrelated attention-queue case. The L3 entry
+  below recorded the range correctly for its own tree; the L4 citation pass did not carry it
+  forward. **Cross-file:** every `snapshots.py` row moved by −6, because this leaf shortened that
+  module (1530 → 1524 lines: −6 at L123, −6 at L524, +6 at L606). `read_providers` L191-L209 →
+  **L185-L203**, `_worktree_providers` L224-L284 → **L218-L278**, `read_engine_process_facts`
+  L636-L695 → **L630-L689**, `read_setup_progress_nodes` L1038-L1072 → **L1032-L1066**,
+  `read_task_documents` L1152-L1180 → **L1146-L1174**, `read_series_documents` L1275-L1316 →
+  **L1269-L1310**, `_series_subtask_nodes` L1319-L1336 → **L1313-L1330**,
+  `_series_subtask_created_at` L1339-L1352 → **L1333-L1346**, `_task_doc_node` L1373-L1462 →
+  **L1367-L1456**. The Repo-Internal table's 3-column header is intact and no row changed width.
+  No test was added, removed or renamed, and no other assertion changed. Verification metadata
+  pinned until closeout stamps the L5 commit.
 
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the eight
   `projection.py` pointers after a worker inserted ten lines above them; every one moved by exactly

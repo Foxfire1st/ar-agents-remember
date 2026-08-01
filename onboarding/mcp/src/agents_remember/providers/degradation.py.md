@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T19:45+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -29,6 +29,73 @@ redoing the response protocol (task doc `08_degradation-protocol-and-system-spec
 objective).
 
 ## Code Commentary
+
+### 260731-EFA-L5 The Event Log Is On `ar-durable-store/1.0`
+
+`degradation-events.jsonl` had the same shape as the six `controlplane/` logs — an unlocked
+`open("a")` append beside a `compact_events` whole-file read-filter-rewrite, and a `.compact.tmp`
+name with no pid in it — and it was left off the contract's first pass on the strength of nothing
+but its directory.
+
+**It has ONE writer today, and that was refused as an argument.** `evaluate_provider_degradation`
+has exactly one production caller, the dashboard's `_metrics_loop`, and it is the only thing that
+appends an event, compacts the log or writes the state document. That is the same argument this leaf
+already refused for `attention_dismissals.py` and `supervisor_signals.py` — and refused for a
+measured reason, since the draft that left those two unlocked on the strength of single-writer
+measured 31.45% loss on attention-dismissals. **"Only one process writes this file" is a deployment
+fact; the lock is about the file.**
+
+**On the loss numbers: record the direction, not a rate.** This module's docstring states 72.75% /
+71.75% / 73.00% at 2 appenders and 800 events; `tests/test_provider_store_durability.py`
+re-measured against a `git archive` of the base commit after fixing the harness's scratch directory
+and got 3.00-7.50% at the shipped profile and 7.00-7.12% at the same 2×800 shape, and that file
+explicitly says the pacing behind the originals was never recorded and the figures should be read as
+direction only. **This card asserts no rate.** What is stable: *this store lost records at the base
+commit and loses none now* — and the zero is an assertion, not prose. `ProviderStoreDurabilityTests`
+pins `lost == 0`, `torn_lines == 0` and `stragglers == []` over `attempted == 200` (the shipped
+`STRESS_PROFILE`: 4 appenders × 50) for this store and its sibling, plus `lost == 0` over the forced
+single-record window. Zero loss at the 2-appender/800-record shape — four times the volume — is also
+reported, but narratively rather than as an assertion.
+
+**Ownership: `PROVIDER_DEGRADATION_OWNERSHIP`**, declared beside the store for the same reason
+`providers/metrics.py` declares its own (`durable_store.py`'s register is the contract for the six
+control-plane logs, not a directory of every store in the tree; the contract is imported, never
+re-implemented). `writers=("dashboard",)`, `compaction_owner="dashboard"`, enforced structurally —
+`compact_events` is called from one place, immediately after the append it bounds. It did **not**
+earn the operator-inbox's `compaction_owner=None` exception: that store earned `None` because both
+processes must physically remove rows, and nothing in the MCP process removes a degradation event or
+writes one, so a single owner was available and therefore required.
+
+The single writer is, however, why `check_declared_writer` earns its place here rather than being a
+formality: with `writers=("dashboard",)` this is the one store in the provider pair where the check
+can actually fire, and it fires the moment the MCP process starts evaluating degradation. It is
+**not** why the log is safe — the lock is unconditional.
+
+**What changed in each write:**
+
+- `append_event(event)` stamps `schemaVersion` and appends under the log's lock. The stamp is added
+  **here, at the only write**, because that is the only moment the information exists: this log is
+  an audit trail kept for a thousand events and nothing reads it back today, so a row written
+  without its version could never be told apart from a future one. A reader added later must apply
+  `durable_store.schema_version_supported` — unknown major refused, unknown minor accepted, absent
+  means 1.0, which is what lets an existing file load unchanged.
+- `compact_events(retain_rows=…)` holds the lock across the read, the filter **and** the rewrite.
+  Rarity is not serialization: the append that races this rewrite is the one that just caused the
+  state change this compaction is bounding, so the window is not merely open — it is the window the
+  store spends its whole life in. The reclaim drops rows **by age and never by content** (the lines
+  are kept raw), so a row no reader could parse survives here instead of being silently deleted by
+  the rewrite.
+- `write_state(state)` goes through `rewrite_lines` — pid-scoped temp, fsynced file and directory —
+  because `degradation-state.json.tmp` was the second unscoped temp name in this pair, and two
+  writers sharing it hand one of them a `FileNotFoundError`.
+
+**Be precise about what the lock does in `write_state`.** This document is not a record log: it is
+recomputed in full every evaluation and replaced, so there is no read-modify-write of stored rows
+for a lock to make atomic. The lock is **not** claimed to make `read_state` → `write_state` one
+transaction — it is not; that span belongs to `evaluate_provider_degradation` and to its single
+caller. What it does is serialize two republications and satisfy `rewrite_lines`' refusal to rewrite
+a path whose lock the caller is not holding. It is also why this document carries **no**
+`schemaVersion`: the stamp is a per-*record* fact and this file holds no records.
 
 ### 260731-EFA-L2 Transition Identity And Inbox Objects
 
@@ -56,9 +123,12 @@ attached as orchestrator/manager discoverable and avoiding phantom absence cause
 
 `ProviderDegradationStore` persists two durable artifacts under
 `<coordinationRoot>/logs/observer/providers/`: `degradation-state.json` (`ar-provider-degradation-state/v1`,
-atomic replace-write) and `degradation-events.jsonl` (`ar-provider-degradation-event/v1`,
+replaced whole) and `degradation-events.jsonl` (`ar-provider-degradation-event/v1`,
 append-only) — so the state machine survives a daemon restart (task requirement: "state machine
-survives daemon restart (durable events)").
+survives daemon restart (durable events)"). **Since 260731-EFA-L5 both go through
+`ar-durable-store/1.0`**: every write holds its own path's lock and uses the contract's pid-scoped,
+fsynced `rewrite_lines` rather than a hand-rolled `.tmp` + `os.replace` — see the L5 section above,
+including what the lock in `write_state` does and does not promise.
 
 `evaluate_provider_degradation(config, *, stop_provider_stacks=None)` is the entry point `app.py`
 calls once per sampling tick. It reads the persisted previous state, reads the recent metrics
@@ -128,6 +198,17 @@ tests substitute a fake stopper without touching `provider_watchers_tool`/docker
 
 ### Invariants And Boundaries
 
+- **Every write to either artifact holds that path's lock, and single-writer is not the reason.**
+  The lock is unconditional for the same reason it is on `attention_dismissals.py` and
+  `supervisor_signals.py`, which are also single-writer today: one process writing a file is a
+  deployment fact, not a structural one, and an unlocked draft of that pair measured 31.45% loss.
+- **`compact_events` holds the lock across read, filter and rewrite, and drops rows by age only.**
+  The append that races it is the one that caused the state change it is bounding, so rarity is not
+  serialization; keeping the lines raw means an unparseable row is retained rather than silently
+  deleted by a rewrite.
+- **`write_state`'s lock serializes republications; it does not make `read_state` → `write_state` a
+  transaction.** That span belongs to `evaluate_provider_degradation` and its single caller. The
+  state document holds no records and therefore carries no `schemaVersion`.
 - One durable event per state transition; same-state ticks never re-emit or re-alert (hysteresis
   is resolved before this module sees the transition).
 - The critical failsafe runs on transition-into-`critical` only, gated by
@@ -172,13 +253,16 @@ documentation, so it is cited as a repo-internal reference below rather than her
 | The developer plan-gate ruling defining the detector/response protocol, the providers-only scope, and the Sentry-replaceable seam requirement this module is shaped around. | objective; decisions[] | [08_degradation-protocol-and-system-specialist.json](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/08_degradation-protocol-and-system-specialist.json) |
 | The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). | whole module | [metrics.py](metrics.py) |
 | The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). | action="stop" | [provider_tools.py](../controllers/provider_tools.py) |
-| The inbox record schema (`system-specialist` `AgentRole`, `degradation-alert` `InboxMessageKind`) this module posts against. | L19-L33 | [operator_inbox_records.py](../controlplane/operator_inbox_records.py) |
+| The inbox record schema (`system-specialist` in `AgentRole` at L24, `degradation-alert` in `InboxMessageKind` at L39) this module posts against. | L17-L43 | [operator_inbox_records.py](../controlplane/operator_inbox_records.py) |
 | The store this module appends/compacts durable inbox rows through. | whole module | [operator_inbox_store.py](../controlplane/operator_inbox_store.py) |
 | The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. | whole module | [inbox_delivery.py](../serving/inbox_delivery.py) |
 | The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. | whole module | [terminal_catalog.py](../serving/terminal_catalog.py) |
 | `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | whole module | [../mcp/provider_degradation_settings.py](../mcp/provider_degradation_settings.py.md) |
-| The serving sampling loop that invokes `evaluate_provider_degradation` once per tick after recording a metrics sample. | L516-L518 (app.py) | [app.py](../serving/app.py.md) |
+| `_metrics_loop` — the sole production caller: `metrics_store.record` (L812), `evaluate_provider_degradation` (L813) and `metrics_store.compact` (L815) on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. | L806-L818 (app.py) | [app.py](../serving/app.py.md) |
 | Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | whole module | [../../../tests/test_provider_degradation.py](../../../tests/test_provider_degradation.py.md) |
+| `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol — that file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | by symbol | [durable_store.py](../controlplane/durable_store.py) |
+| The sibling provider store put on the same contract in the same change, and the shared durability suite whose docstring disclaims the base-commit percentages as unreproducible. | `PROVIDER_METRICS_OWNERSHIP` | [metrics.py](metrics.py); [test_provider_store_durability.py](../../../tests/test_provider_store_durability.py) |
+| The two single-writer control-plane logs whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | `ATTENTION_DISMISSAL_OWNERSHIP` | [attention_dismissals.py](../controlplane/attention_dismissals.py); [supervisor_signals.py](../controlplane/supervisor_signals.py) |
 
 ## Cross-Repo References
 
@@ -190,6 +274,36 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). This store was brought onto
+  `ar-durable-store/1.0` and the card described the pre-contract shape. Recorded: the unlocked
+  `open("a")` + whole-file `compact_events` rewrite + unscoped `.compact.tmp` it had; that its
+  **single writer was refused as an argument**, because that is the same argument the leaf refused
+  for `attention_dismissals.py` and `supervisor_signals.py` and refused for a measured reason — one
+  process writing a file is a deployment fact, the lock is about the file.
+  `PROVIDER_DEGRADATION_OWNERSHIP` with `writers=("dashboard",)` and
+  `compaction_owner="dashboard"`, enforced structurally (one caller, immediately after the append it
+  bounds), and **why it did not earn the operator-inbox's `None` exception**: nothing in the MCP
+  process removes or writes a degradation event, so a single owner was available and therefore
+  required. Noted that single-writer is why `check_declared_writer` can actually fire here, and that
+  this is not why the log is safe. Per write: `append_event` stamps `schemaVersion` at the only
+  write because that is the only moment the information exists; `compact_events` holds the lock
+  across read, filter and rewrite (rarity is not serialization — the racing append is the one that
+  caused the state change being bounded) and drops rows by age, never by content; `write_state` goes
+  through `rewrite_lines` because `degradation-state.json.tmp` was the second unscoped temp name in
+  this pair. Recorded **precisely what `write_state`'s lock does not promise** — it does not make
+  `read_state` → `write_state` a transaction, and the document carries no `schemaVersion` because
+  the stamp is a per-record fact. Corrected the "atomic replace-write" description in Logic.
+  **On the numbers: no rate is asserted.** The figures disagree (72.75-73.00% in this module's
+  docstring; 3.00-7.50% and 7.00-7.12% re-measured in `test_provider_store_durability.py`) because
+  the pacing was never recorded; the card carries the direction, and carries the zero as what it
+  actually is — an assertion (`lost == 0`, `torn_lines == 0`, `stragglers == []` over
+  `attempted == 200` on the shipped `STRESS_PROFILE`, plus the forced single-record window) — with
+  the 800-record zero marked as reported rather than asserted. Citations: corrected the
+  `app.py` sampling-loop row from `L516-L518` (now a `TerminalLandedCleanupRequest` field) to
+  **L806-L818**, and the `operator_inbox_records.py` row from `L19-L33` to **L17-L43**, because the
+  old range covered `system-specialist` but stopped six lines short of the `degradation-alert` kind
+  the same claim names. Added three invariants and three reference rows. Verification metadata
+  pinned until closeout stamps the L5 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `_DegradationTransition` and re-signed `_build_event(transition, evidence, *,
   rows, metric_store)`; updated the degradation-alert posting for

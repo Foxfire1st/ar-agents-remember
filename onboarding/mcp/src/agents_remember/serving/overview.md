@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-01T14:05+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-01T19:45+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -465,7 +465,15 @@ iteration, in the same exception-tolerant `try` block, also calls
 record — no separate task, no separate cadence; the degradation detector's durable
 events/state/inbox-alerts/critical-failsafe live entirely in `providers/degradation.py` (governed
 by the `mcp/` package overview), this route's `app.py` only wires the one extra call into the
-loop it already owns. `GET /api/stream` consumes one atomic projector subscription: it emits the
+loop it already owns. **Since 260731-EFA-L5 that one loop is also the declared compaction owner of
+both provider stores** (`PROVIDER_METRICS_OWNERSHIP`, `PROVIDER_DEGRADATION_OWNERSHIP`, both
+`compaction_owner="dashboard"`): `_metrics_loop` calls `metrics_store.record`,
+`evaluate_provider_degradation` and `metrics_store.compact` on one tick, and the ownership is
+enforced *structurally* — each reclaim has exactly one caller and it is inside this loop. Neither
+store earned the operator-inbox's `compaction_owner=None` exception, because nothing in the MCP
+process removes a provider row, so a single owner was available and the contract requires one where
+it is. The route consequence to remember: the reclaim of both provider logs now follows this loop's
+30s cadence and nothing else, and every write on this path holds its log's lock. `GET /api/stream` consumes one atomic projector subscription: it emits the
 captured current `event:snapshot`, or waits for one full first-recovery snapshot when prime failed,
 then per-entity `lifecycle`/`enclosure`/`provider`/`metrics`/`analytics` (and `*.removed`) events;
 `GET /api/state` returns the
@@ -690,7 +698,14 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   worktree-start/tool-reports; nothing under `worktrees/` — container data is unreadable to the
   daemon user and high-churn; the derivation
   table lives in its docstring), `is_projection_input_event` (drops `*.tmp`, dotfiles, the
-  projection's own outputs, and workspace non-input churn incl. `operator-inbox.lock`),
+  projection's own outputs, workspace non-input churn, and — since 260731-EFA-L5 — **every
+  control-plane lockfile by suffix in every watched directory**, through
+  `_DURABLE_LOG_LOCK_SUFFIX`, which is *derived* from `controlplane.durable_store.lock_path_for`
+  rather than spelled out: the old literal `operator-inbox.lock` had stopped matching once the
+  lock naming moved to `operator-inbox.jsonl.lock`, and a workspace-scoped basename list could
+  never have covered the per-lifecycle `gates.jsonl.lock` at all. These are the busiest writes in
+  the watched tree — every durable-store append and rewrite opens one `a+b` — and none is a
+  projection input),
   `ChangePacer` (debounce 0.1s, max-delay = interval — a busy world keeps the former cadence —
   heartbeat default 15s, degraded ⇒ fixed interval, starts degraded at boot), and
   `ProjectionInputWatcher` on `watchfiles` (30s watch-set re-derivation; ANY failure — missing
@@ -1570,6 +1585,20 @@ closeout stamps the L4 commit.
 
 ## Update History
 
+- 2026-08-01T19:45+02:00 — 260731-EFA-L5 second curator pass (route governor for
+  `serving/change_watcher.py`). Corrected the `change_watcher.py` route bullet, which named
+  `operator-inbox.lock` as a workspace name-filter entry: that literal is gone, and it was the
+  defect — it had stopped matching once `durable_store.lock_path_for` moved to
+  `operator-inbox.jsonl.lock`, so the exclusion filtered nothing while looking correct. The filter
+  is now `_DURABLE_LOG_LOCK_SUFFIX`, **derived** from `lock_path_for` and suffix-matched in every
+  watched directory, which is what lets it cover the per-lifecycle `gates.jsonl.lock` a
+  workspace-scoped basename list structurally could not. Recorded, on the `app.py` sampling-loop
+  bullet, that this route's `_metrics_loop` is now the declared compaction owner of both provider
+  stores, that the ownership is enforced structurally (one reclaim caller each, inside this loop),
+  that neither store earned the operator-inbox's `compaction_owner=None` exception, and the route
+  consequence — provider-log reclamation follows this loop's 30s cadence and every write on the path
+  holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
+  this leaf. Verification metadata untouched.
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "THE LIMIT OF THE
   GUARANTEE" said *"The dashboard's own tests enforce `fixture ⊆ mirror`; `mirror ⊆ server` is
   enforced by nothing"*, which keeps only the outer two nodes of a four-node chain and so reads as

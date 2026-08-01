@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:31+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T13:20+02:00                     |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -45,11 +45,35 @@ is the [registration route overview](registration/overview.md), not this file.
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), loads it
 through `load_config` and turns a `ConfigError` into an argparse error, then calls
-`maybe_autostart_dashboard(config)` **between** `load_config` and `run_server`. That hook is a no-op
+`declare_process_role("mcp")` and `maybe_autostart_dashboard(config)` **between** `load_config` and
+`run_server`. That hook is a no-op
 unless the trusted settings set `dashboard.autoStart`; otherwise a daemon thread adopts a healthy
 dashboard daemon, spawns an absent one, or restarts one on version mismatch. It is total and
 threaded so it can never delay or break the stdio handshake this process exists for, and its only
 output goes to stderr — stdout is the MCP protocol.
+
+### 260731-EFA-L5: the durable-store process role is declared here, in `main`
+
+`main` calls `declare_process_role("mcp")` (`server.py` L52) — one line, and the placement is the
+whole content of it. `controlplane/durable_store.py` names two concurrent writers of the six
+control-plane JSONL logs, `"mcp"` and `"dashboard"`, and the declaration is what lets shared code
+ask which one it is running in. `StoreOwnership.is_compaction_owner()` answers `role is None or
+compaction_owner is None or role == compaction_owner`, so a process that declares nothing counts as
+the owner of every log.
+
+**It belongs at the process entry point, not in `create_server`, and that is a correctness
+requirement rather than a style choice.** `create_server` is a *factory* the test suite calls
+in-process; `_declared` is a plain module-level dict with no reset, so a declaration made inside the
+factory would stamp `"mcp"` onto the interpreter and every later test in it — including tests that
+exercise the dashboard's own write paths. `main` runs once, in a process that exists only to be the
+MCP server, so the role it declares is a fact about the process rather than about whoever last built
+a server object. The dashboard's mirror image of this is `cli/dashboard.py::run`, for the same
+reason.
+
+What the declaration does **not** buy is durability. Every append and every rewrite of all six logs
+takes that log's `flock` unconditionally, in every process, declared or not; the role only decides
+who runs a reclaim pass and makes an undeclared new writer visible inside the two daemons. A process
+that skips this line loses no records — it just stops being distinguishable from the dashboard.
 
 ### Invariants And Boundaries
 
@@ -58,6 +82,12 @@ output goes to stderr — stdout is the MCP protocol.
   per-tool special cases.
 - Keep `install_compact_content()` and `install_ambient(...)` at the top of `create_server()`,
   before tools can be exercised.
+- **`declare_process_role("mcp")` stays in `main` and must never move into `create_server`.**
+  `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring
+  there marks the whole interpreter `"mcp"` — after which `is_compaction_owner()` answers `True` for
+  every MCP-owned log in a test that is exercising the dashboard, and `check_declared_writer()`
+  answers for a process that is not the MCP server. The mirrored obligation on the other side is
+  `cli/dashboard.py::run`.
 - The dashboard-autostart hook must stay total and threaded; anything that can raise or block here
   breaks the handshake.
 - Do not add a raw shell or arbitrary-command tool to this server.
@@ -72,6 +102,8 @@ output goes to stderr — stdout is the MCP protocol.
 | The shared observer store-root resolver used to install the ambient. | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
 | The compact-content shim installed at server creation. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
 | The boot-time dashboard supervision hook `main()` calls. | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
+| The durable-store contract this process declares its role against, including what the role does and does not guarantee. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The dashboard's mirror of the same declaration, at that process's own entry point. | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
 | Tests build a live server from this module to check the advertised tool list and each declaration's wiring. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
 
 ## Cross-Repo References
@@ -84,6 +116,24 @@ No sibling repository defines this process wiring.
 
 ## Update History
 
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: recorded the one source change here, six added
+  lines: the `declare_process_role` import (L8) and the `declare_process_role("mcp")` call in `main`
+  (L52), between `load_config`'s error handling and `maybe_autostart_dashboard`. Recorded **why the
+  placement is the content** — `create_server` is a factory the test suite calls in-process and
+  `controlplane/durable_store._declared` is a module-level dict with no reset, so declaring there
+  marks the whole interpreter and every later test in it. Added it as an invariant with the failure
+  it prevents named, and a reference row to the contract module. Also recorded what the declaration
+  is *not*: it is not what makes the writes safe — the per-log `flock` is unconditional in every
+  process, declared or not. Verification metadata pinned until closeout stamps the L5 code commit.
+
+  Two docstrings in `controlplane/durable_store.py` **disagree with this call site** and are
+  reported to the manager rather than edited from here (that file is another curator's lane):
+  `declare_process_role` says "`mcp.server.create_server` and `serving.app.create_app` are the ONLY
+  callers" (L168-L169) and the module front matter says "exactly one place does: `mcp.server.main`"
+  (L67-L68). Neither is true of the staged tree: `git grep declare_process_role` over the staged
+  index returns exactly two call sites, `mcp/server.py` L52 and `cli/dashboard.py` L148, and
+  `serving/app.py` is not in this leaf's changed-file set at all. The code is right; the two
+  docstrings describe an earlier iteration of it.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **rewritten**. The whole tool-registration surface
   left this file for the new `mcp/registration/` package, and `create_server` became wiring plus a
   loop over `TOOL_REGISTRARS`. The previous body — a per-tool catalogue of signatures, refusal

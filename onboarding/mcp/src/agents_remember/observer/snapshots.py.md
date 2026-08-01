@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated | 2026-08-01T20:45+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -64,7 +64,53 @@ completion in L13.
 
 ### 260707-HFX2-L12 CS-6 Update
 
-Snapshot readers gained three CS-6 hot-path bounds: gate logs fold through `compact_current()` with rewrite throttled by `GATE_COMPACT_TTL_SECONDS`, task and series document readers share a short TTL task-json cache, and engine-process git status probes are TTL-cached and pruned to live leaf contracts.
+Snapshot readers gained three CS-6 hot-path bounds: one directory scan + one read per gate log per
+tick, task and series document readers share a short TTL task-json cache, and engine-process git
+status probes are TTL-cached and pruned to live leaf contracts. (The gate half of this originally
+read `compact_current()` with the physical rewrite throttled by `GATE_COMPACT_TTL_SECONDS`. **The
+single read survived L5; the throttled rewrite did not** — both the constant and the
+`_last_gate_compact` dict it keyed are deleted, and this module now rewrites nothing at all. See the
+L5 section below.)
+
+### 260731-EFA-L5: this module no longer writes, and reads that only render read tolerantly
+
+Two readers changed, and the rule underneath them is worth stating before either:
+
+> **Every rewrite of an authority-bearing log reads strictly**, and the tolerant reader this module
+> takes never drives a rewrite. That is what makes it impossible for a compaction to erase an
+> authority record it could not parse: each of the three strict stores — gate, expectation rows,
+> operator inbox — drives its rewrites from its own strict `read`, which raises on a torn line, so
+> the rewrite never happens; the tolerant read used here skips the line, and nothing it returns is
+> ever written back on this route, so the skip lasts exactly one tick.
+>
+> **Do not generalise that to all six.** The other three — `AttentionDismissalStore.dismiss` /
+> `_prune_locked`, `OrchestrationNudgeStore.compact`, `SupervisorSignalCooldownStore._compact_locked`
+> — rewrite from the list their *tolerant* `read()` produced, so a row that read could not parse is
+> absent from what the rewrite writes back: those three drop it **permanently**, not for one tick.
+> That is acceptable only because none of the three carries authority, and it stops being acceptable
+> the moment one does.
+
+**`read_gates` stopped compacting.** `GATE_COMPACT_TTL_SECONDS` and the module-level
+`_last_gate_compact: dict[str, datetime]` are gone, and the body is now one call —
+`store.projected_current(lifecycle_id, now=now)` — per lifecycle log. The old path called
+`GateStore.compact_current(..., rewrite=prune)`, which physically rewrote every gate log every 30
+seconds *from the projection tick*: a whole-file replace performed by the process that owns nothing
+about gates, racing the MCP server's appends. That is where the measured 11.50% gate-snapshot loss
+came from. **The projection output is unchanged** — `projected_current` applies the same
+`gate_keep_ids` keep-filter in memory that `compact_current` applied, so the dashboard renders the
+same live gate set; only the on-disk reclamation moved, to `GateStore.compact` in
+`mcp/tools/gates.py::_reclaim_gate_log`, in the MCP process. `projected_current` also reads through
+the **tolerant** `GateStore.read_for_projection`, so one torn line costs this tick one row instead
+of the whole log; the strict `GateStore.read` still backs the enforcement fold and still raises.
+
+**`read_expectation_rows` reads per-row now, and the bug it closes is a trap worth remembering.**
+The call was `store.pending()` inside `with contextlib.suppress(OSError, ValueError)`. `pending()`
+goes through the strict `ExpectationRowStore.read`, which raises pydantic's `ValidationError` — and
+`ValidationError` **subclasses `ValueError`**. So the suppress that looks like it guards file I/O
+was swallowing a parse failure and discarding *every* deadline in the file: one torn row, and the
+dashboard told an operator that nothing was due. It now calls `pending_for_projection()`, which
+folds the same rows over a tolerant per-row read. The suppress stays for the I/O it was written for;
+it is no longer load-bearing for a malformed row.
 
 `read_providers(config, *, now)` reads the persisted provider snapshot at
 `providers.current_state.current_state_path(config)`, stamps `snapshotStaleSeconds`
@@ -162,10 +208,10 @@ it builds an `EngineProcessFacts` bundle per contract carrying the status-guidan
 `contract_payload(contract)` (code/memory branches, base commits, worktree paths) and
 `dict(lifecycle_guidance(contract))` — both pure — plus `status` from `_safe_status_payload`.
 Since 260731-EFA-L4 the guidance payload is **widened at the boundary** with an explicit `dict(...)`
-(L676-L678): `EngineProcessFacts` is the projection's untyped input carrier and the reducer folds it
+(L679-L681): `EngineProcessFacts` is the projection's untyped input carrier and the reducer folds it
 by key name, so the carrier takes a plain `dict[str, Any]` rather than propagating the guidance
 producer's narrower typed shape into a structure that never re-emits its vocabulary. The same
-widening is applied to the cached local status in `_cached_local_status` (L780-L797), where the
+widening is applied to the cached local status in `_cached_local_status` (L781-L798), where the
 annotation `value: dict[str, Any] | None` is now declared before the `try` so the `except` branch's
 `None` and the success branch's `dict(projected_status_payload(...))` share one type. Neither change
 alters a served value. `status_payload`
@@ -200,7 +246,7 @@ variable named, not the worktree's own) and under the runner's `GIT_LOCAL_TIMEOU
 the retired copy carried no timeout at all, so a wedged `git log` could hold a projection tick forever.
 
 **Gaining a timeout is what forced the handler to widen.** The guard around the probe is
-`except (OSError, subprocess.SubprocessError)` (L838), not the `except OSError` it was before this
+`except (OSError, subprocess.SubprocessError)` (L842), not the `except OSError` it was before this
 leaf. `subprocess.TimeoutExpired` is a `SubprocessError` and `SubprocessError` is **not** a subclass
 of `OSError`, so the moment the call moved onto a runner that has a bound, the bound's own exception
 became something the old handler could not see. It would have escaped `_git_commit_meta` through
@@ -208,7 +254,7 @@ became something the old handler could not see. It would have escaped `_git_comm
 make: `_ledger_window`'s "best-effort … so the projection tick never fails" and the `LedgerNode`
 builder in `read_ledger`. The degrade is hash-only rows, never an exception, and
 `test_observer_projection.py::LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
-(L2474-L2504) drives **both** paths through a patched `run_git` that raises `TimeoutExpired`.
+(L2895-L2921) drives **both** paths through a patched `run_git` that raises `TimeoutExpired`.
 
 It returns `{}` on any failure (no repo path / git absent / non-zero exit / a raise from the runner),
 and `--ignore-missing` drops a
@@ -245,8 +291,12 @@ projection sees live gate state with no event machinery. A malformed log is skip
 `projection_store` for the reducer's `_attach_gates` / `_gate_attention`.
 
 **Task 23/24 interaction retention** extended this surface. `read_gates(coordination_root, *, now=...)`
-now compacts gate logs through `GateStore.compact` before projecting, so untouched open/terminal
-interaction gates cannot sit in the dashboard forever. `read_agent_pickups(coordination_root, *, now)`
+applies the interaction keep-filter before projecting, so untouched open/terminal interaction gates
+cannot sit in the dashboard forever. (Until 260731-EFA-L5 it also *compacted* the log on a 30s
+cadence from this tick; it no longer writes anything — the filter is applied in memory by
+`GateStore.projected_current` and the physical prune belongs to the MCP process. `now=None` folds
+without the retention filter at all, which is what a caller holding no clock has always been given.)
+`read_agent_pickups(coordination_root, *, now)`
 projects pending operator-inbox responses as `AgentPickupNode`s for task-row feedback: fresh pending
 entries show `waiting-for-agent`, entries older than the 5-minute pickup TTL show `check-chat`, L3
 metadata (sender/recipient roles, message kind, artifact path, delivery state/session/detail) is carried
@@ -254,17 +304,26 @@ through from the inbox row, and consumed/dismissed/24h-expired entries disappear
 physically removes them. Since 260707-HFX2-L1, `read_agent_pickups` also carries the R1 ack/backoff
 fields (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`) and the R4 owner fields
 (`ownerRole`/`ownerAgentId`/`ownerLifecycleId`) straight off the entry. A new
-`read_expectation_rows(coordination_root, *, now)` (R5) reads `ExpectationRowStore.pending()`,
-computes an `overdue` flag per row (`now >= dueAt`), and returns `ExpectationRowNode`s sorted by
+`read_expectation_rows(coordination_root, *, now)` (R5) reads
+`ExpectationRowStore.pending_for_projection()` (L5 — the tolerant per-row reader; it was `pending()`
+and that cost the whole file on one torn line), computes an `overdue` flag per row
+(`now >= dueAt`), and returns `ExpectationRowNode`s sorted by
 `dueAt` — surfacing only, for dashboard/architect observability; an L2 predicate reads the store
 directly and never this projection.
 
-**Task 28 S5.2** adds `read_attention_dismissals(coordination_root)`, returning the compact
-`{itemId: AttentionDismissalRecord}` acknowledgement map from
-`AttentionDismissalStore(observer_logs_root(coordination_root))`. The projection tick uses the same
-store directly when it needs to prune after reduction; this reader remains the call-edge helper for
-consumers that only need current acknowledgement state. Task 29 lets that map include targetless
-actionable-drift records while lifecycle rows are still pruned by `projection_store`.
+**Attention dismissals are read elsewhere, and this module no longer has a reader for them.**
+Task 28 S5.2 added `read_attention_dismissals(coordination_root)` here, returning the compact
+`{itemId: AttentionDismissalRecord}` acknowledgement map. 260731-EFA-L5 deleted it, along with the
+`AttentionDismissalRecord`/`AttentionDismissalStore` imports that existed only to serve it: it never
+had a caller. Nothing in `agents_remember` and nothing in the suite ever reached it, at the leaf's
+base commit `e52edaf5` included — the projection builds its dismissal view directly, in
+`ProjectionInputState._refresh_workspace` (`projection_inputs.py`), which calls
+`AttentionDismissalStore(observer_root).current()` itself and hands the map to the reducer's
+`AnalyticalInputs.attention_dismissals`. The proof it was unreachable rather than merely
+uncalled-by-grep: narrowing the function's `contextlib.suppress(OSError, ValueError)` put its `with`
+statement under the 100% changed-lines floor and the gate reported it uncovered under the full
+suite. Task 29's targetless actionable-drift records still reach the map; they always did so through
+the store, never through this reader.
 
 **Series-contract leaf binding** reshaped `read_task_documents`: it builds maps from served enclosure path
 to lifecycle id, from root master task folders to root lifecycle ids, and from `(taskRoot, leafId)` to
@@ -291,8 +350,11 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 - **Resilient reads:** a missing/malformed surface degrades to empty/skip; one
   bad file never breaks the whole projection.
 - File I/O lives here at the call edge; the reducer fold stays pure.
-- **Attention acknowledgements are current state:** `read_attention_dismissals` returns compact
-  lifecycle-scoped acknowledgement records, not append-only suppression history.
+- **Attention acknowledgements are current state, and are not read here.** They are compact
+  lifecycle-scoped acknowledgement records rather than append-only suppression history, and since
+  260731-EFA-L5 the only reader is `projection_inputs.py`, which goes to `AttentionDismissalStore`
+  directly. This module's `read_attention_dismissals` was deleted with its imports because it never
+  had a caller; do not reinstate a call-edge helper here for a store the projection already reads.
 - **Drift is read, never classified here:** the reducer reads the persisted drift
   snapshot (cheap, staleness-stamped); the git-per-sidecar classification stays in
   the on-demand `drift_check`/`memory_quality_check` tools (slice 3b, b1).
@@ -325,36 +387,57 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
   steps. Contracts are not projected as task documents.
 - **Creation order comes from leaf task docs, not names:** series rows sort by resolved leaf `createdAt`
   only when every row has it; otherwise the reader preserves the master-authored sub-task order.
-- **Interactions are TTL-bound:** gate and operator-inbox readers may compact their own interaction
-  logs. Durable task docs, contracts, and ledger rows remain separate work-record surfaces.
+- **Interactions are TTL-bound, but this module does not do the bounding:** the gate reader applies
+  the retention keep-filter in memory and returns a filtered view; the physical reclamation lives in
+  the log's owner process. Durable task docs, contracts, and ledger rows remain separate
+  work-record surfaces.
+- **No reader on this route rewrites a control-plane log (260731-EFA-L5).** This is the projection
+  tick; it runs in the dashboard, and the dashboard owns none of the gate logs. A rewrite added back
+  here is a whole-file replace racing the MCP server's appends — the defect that cost 11.50% of gate
+  snapshots at the base commit — and the `applied` marker it can drop is what stops one human
+  approval being consumed twice. Reclamation belongs to the process that owns the log.
+- **A reader here that only renders must read tolerantly; anything that decides, or rewrites a log
+  that carries authority, must read strictly.** Exactly two of the six stores offer both readers,
+  and they are the two this module consumes: `GateStore.read` / `read_for_projection` and
+  `ExpectationRowStore.read` / `read_for_projection`. `OperatorInboxStore` is strict only.
+  Attention dismissals, orchestration nudges and supervisor signals are tolerant only — their single
+  `read` is the tolerant one, and it drives their rewrites, so those three drop an unparseable row
+  permanently. That is safe only because none of the three carries authority.
+  This module is a rendering surface, so it takes the tolerant half — but note the direction of the
+  danger: the strict half raises `pydantic.ValidationError`, which **subclasses `ValueError`**, so a
+  `contextlib.suppress(OSError, ValueError)` around a strict read does not degrade one row, it
+  discards the whole file silently. That is exactly what `read_expectation_rows` was doing.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | L1152-L1180 | [snapshots.py](snapshots.py) |
-| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | L1275-L1316 | [snapshots.py](snapshots.py) |
-| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | L1319-L1352 | [snapshots.py](snapshots.py) |
-| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | L1373-L1462 (`createdAt=doc.createdAt` L1405) | [snapshots.py](snapshots.py) |
+| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | L1153-L1181, the call at L1180; `_task_document_lifecycle_maps` L1217-L1250; `_task_doc_node` L1374-L1463 | [snapshots.py](snapshots.py) |
+| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | L1276-L1317 | [snapshots.py](snapshots.py) |
+| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | L1320-L1353 | [snapshots.py](snapshots.py) |
+| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | L1374-L1463 (`createdAt=doc.createdAt` L1406) | [snapshots.py](snapshots.py) |
 | The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode` L585-L631; `SeriesSubTaskNode` L634-L649; `SeriesNode` L662-L688 | [projection.py](projection.py) |
 | The provider current-state path + snapshot shape (surface 1). | L1-L49 | [providers/current_state.py](../providers/current_state.py) |
 | The provider-node projection policy used by `read_providers`. | L1-L92 | [provider_nodes.py](provider_nodes.py) |
-| Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | L223-L283; L286-L471 | [snapshots.py](snapshots.py) |
-| `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`). | L190-L207; L237-L240 | [snapshots.py](snapshots.py) |
-| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before `contract_payload`/`lifecycle_guidance`/`_safe_status_payload` are built. | L636-L695 | [snapshots.py](snapshots.py) |
-| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | L475-L492; L636-L695 | [snapshots.py](snapshots.py) |
+| Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | L216-L276; L279-L464 | [snapshots.py](snapshots.py) |
+| `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`). | L183-L201; L232-L233 | [snapshots.py](snapshots.py) |
+| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before `contract_payload`/`lifecycle_guidance`/`_safe_status_payload` are built. | L637-L696, the group guard at L663-L667 and the `_safe_status_payload` call at L682; `_safe_status_payload` itself L745-L778 | [snapshots.py](snapshots.py) |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | L467-L484; L637-L696 | [snapshots.py](snapshots.py) |
 | The shared per-tick contract snapshot + stat-identity parse cache these readers consume. | L1-L112 | [contract_snapshot.py](contract_snapshot.py) |
 | PTS-L2 tests pin reader-output parity with and without the shared snapshot and one enumeration per full projection tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged` L690-L728; `test_reader_outputs_equal_with_and_without_shared_snapshot` L730-L761 | [test_projection_scaling_cs6.py](../../../tests/test_projection_scaling_cs6.py) |
-| `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | L1038-L1072 | [snapshots.py](snapshots.py) |
-| `read_drift_snapshots` carries `checkedAt`/`sourceRoot`/`memoryRoot`/`reportPath` provenance from the persisted snapshot. | L931-L967 | [snapshots.py](snapshots.py) |
-| `_git_commit_meta` is this module's only git call, runs on the package's one runner, `kernel.git_command.run_git`, and guards it with `except (OSError, subprocess.SubprocessError)` so the runner's own `TimeoutExpired` cannot escape. | `def` L823; the guard L841; the guard's `return {}` L847 | [snapshots.py](snapshots.py) |
+| `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | L1039-L1073 | [snapshots.py](snapshots.py) |
+| `read_drift_snapshots` carries `checkedAt`/`sourceRoot`/`memoryRoot`/`reportPath` provenance from the persisted snapshot. | L932-L968 | [snapshots.py](snapshots.py) |
+| `_git_commit_meta` is this module's only git call, runs on the package's one runner, `kernel.git_command.run_git`, and guards it with `except (OSError, subprocess.SubprocessError)` so the runner's own `TimeoutExpired` cannot escape. | `def` L824; the guard L842; the guard's `return {}` L848 | [snapshots.py](snapshots.py) |
 | That runner strips the `GIT_DIR`-family selectors, adds `safe.directory`, DEVNULLs stdin, and bounds the call at `GIT_LOCAL_TIMEOUT_SECONDS` (300) by default — the bound whose `subprocess.TimeoutExpired` the widened guard above exists to absorb. | L24-L33; L53-L55; L58-L96 | [kernel/git_command.py](../kernel/git_command.py) |
-| A wedged `git log` degrades both ledger entry points to hash-only rows instead of failing the tick: a patched `run_git` raising `TimeoutExpired` is driven through `_ledger_window` **and** `read_ledger`. | `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` L2887-L2913 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
-| Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | `WorktreeProviderAdmissionTests` (admission + `test_rejects_parked_terminal_and_non_provider_phase_groups`) L239-L347; `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315; `test_active_group_filter_skips_parked_progress` L2678-L2692; `test_reader_skips_inactive_engine_process_groups_when_filtered` L4069-L4098 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
+| A wedged `git log` degrades both ledger entry points to hash-only rows instead of failing the tick: a patched `run_git` raising `TimeoutExpired` is driven through `_ledger_window` **and** `read_ledger`. | `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` L2895-L2921 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
+| Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | `WorktreeProviderAdmissionTests` (admission + `test_rejects_parked_terminal_and_non_provider_phase_groups`) L239-L347; `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315; `test_active_group_filter_skips_parked_progress` L2686-L2700; `test_reader_skips_inactive_engine_process_groups_when_filtered` L4077-L4106 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
 | The worktree contract loader + fields (surfaces 5/6). | L1-L116 | [worktrees/worktree_contract.py](../worktrees/worktree_contract.py) |
 | The setup-progress projection (`progress_status`) reused for surface 3. | L1-L75 | [providers/setup_progress.py](../providers/setup_progress.py) |
 | The memory ledger loader read for surface 8. | L1-L104 | [kernel/memory_ledger.py](../kernel/memory_ledger.py) |
 | The data-surface inventory the structural/analytical split follows. | L91-L118; L332-L344 | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md) |
+| The gate reader's two halves: the tolerant `read_for_projection` this module now uses, and `projected_current`, which folds + keep-filters from that one read and rewrites nothing (`now=None` folds without the retention filter). | `GateStore.read_for_projection`; `GateStore.projected_current` | [controlplane/store.py](../controlplane/store.py) |
+| The expectation-row reader's two halves: the tolerant `read_for_projection` and the `pending_for_projection` wrapper `read_expectation_rows` calls; the docstring names this module's `suppress`-plus-strict-read defect as the reason it exists. | `read_for_projection` L185-L203; `pending_for_projection` L215-L217 | [controlplane/expectation_rows.py](../controlplane/expectation_rows.py) |
+| Where the gate-log rewrite went: reclamation in the log's owner process, guarded by a non-raising ownership question and run on terminal decisions. | `_reclaim_gate_log` L453-L473; called L539 | [mcp/tools/gates.py](../mcp/tools/gates.py) |
 
 ## 260727-CHATS-IM-L2 Current Delta
 
@@ -365,6 +448,117 @@ facts on heartbeat ticks.
 
 ## Update History
 
+- 2026-08-01T20:45+02:00 — 260731-EFA-L5 worker: **`read_attention_dismissals` is deleted, together
+  with the `AttentionDismissalRecord` / `AttentionDismissalStore` imports that existed only to serve
+  it.** It never had a caller. Verified independently before deleting rather than on report: the name
+  occurs nowhere in `agents_remember`, nowhere in `mcp/tests`, and nowhere at the leaf's base commit
+  `e52edaf5` either (`git grep` over the base tree returns the definition line and nothing else), it
+  is absent from `observer/__init__.py`'s `__all__` and from every `from ...snapshots import` list,
+  and no dynamic access reaches it — the only `import_module`/`globals()` machinery in the tree is
+  the providers' lifecycle packages. The sharper proof is the one this leaf produced by accident:
+  narrowing the function's `contextlib.suppress(OSError, ValueError)` made the gate report the `with`
+  statement itself uncovered under the full suite, so the body never executed. **The defect was the
+  dead function, not the exception tuple inside it**, and the docstring that recorded the narrowing
+  attempt went with the function it was about. The projection is unaffected — it never used this
+  reader: `ProjectionInputState._refresh_workspace` calls `AttentionDismissalStore(...).current()`
+  directly and the map lands on `AnalyticalInputs.attention_dismissals`. One neighbouring docstring
+  was corrected in the same change: `read_agent_pickups` said its named `ValidationError` was
+  load-bearing "unlike the two readers above", and only `read_gates` is above it now.
+  *Citations.* Every line citation into `snapshots.py` on this card was re-derived from the file
+  after the deletion and each range's **end** re-checked against the symbol its claim names. They
+  needed it for two reasons and the larger one was not this deletion: they were already stale by
+  ~34 lines before it (`read_task_documents` was cited L1146-L1174 while the staged file had it at
+  L1180-L1208), and the deletion moved everything below the removed function up by a further 27.
+  Corrected: `read_providers` L183-L201 and the active-group guard L232-L233; `_worktree_providers`
+  L216-L276 and `_worktree_provider_ids`…`_worktree_runtime_summary` L279-L464; `read_enclosures`
+  L467-L484; `read_engine_process_facts` L637-L696 and the boundary widening L679-L681;
+  `_cached_local_status` L781-L798; `_git_commit_meta` `def` L824, guard L842, `return {}` L848;
+  `read_drift_snapshots` L932-L968; `read_setup_progress_nodes` L1039-L1073; `read_task_documents`
+  L1153-L1181; `read_series_documents` L1276-L1317; `_series_subtask_nodes` /
+  `_series_subtask_created_at` L1320-L1353; `_task_doc_node` L1374-L1463 with
+  `createdAt=doc.createdAt` at L1406. One body/table disagreement was resolved against the file: the
+  prose cited `test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` at
+  L2474-L2504 while the references table had L2895-L2921 — the table was right. One row carried the
+  defect shape this master's audits look for — a range that covers the first symbol its claim names
+  and stops before the rest: the `read_task_documents` row also names
+  `_task_document_lifecycle_maps` and `_task_doc_node`, which live at L1217-L1250 and L1374-L1463,
+  outside the L1153-L1181 it cited. Both ranges are now in the cell, with the `include_body=False`
+  call site at L1180. Citations into
+  `projection.py`, `contract_snapshot.py`, `provider_nodes.py`, `kernel/git_command.py`,
+  `worktree_contract.py`, `setup_progress.py`, `current_state.py`, `test_projection_scaling_cs6.py`
+  and `test_observer_projection.py` were re-opened and all resolved correctly; none were touched.
+  Verification metadata untouched — the source is uncommitted and closeout owns the first stamp.
+- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction): **the central property was stated
+  wrongly on this card, in the one place the tolerant readers are documented.** The 13:20 entry
+  below introduced a blockquote calling "Every rewrite reads strictly. The tolerant reader backs the
+  dashboard only and never drives a rewrite" *the rule underneath* both readers. It is false for
+  half the contract. `durable_store.py` says so under a heading that begins "DO NOT GENERALISE
+  'EVERY REWRITE READS STRICTLY' TO ALL SIX -- it is false": `AttentionDismissalStore.dismiss` /
+  `_prune_locked`, `OrchestrationNudgeStore.compact` and
+  `SupervisorSignalCooldownStore._compact_locked` each rewrite from the list their **tolerant**
+  `read()` produced, so for those three the tolerant read *does* drive a rewrite, what it returns
+  *is* written back, and the skip is **permanent** rather than one tick. The blockquote now scopes
+  the strict-rewrite rule to authority-bearing logs and states the tolerant three by name, in the
+  same words `controlplane/overview.md` and `controlplane/durable_store.py.md` already used — no
+  third phrasing was invented. The Invariants row made the second error too: "Every store on the
+  durable-store contract now offers both" generalises past the parenthetical that follows it, which
+  lists exactly the two stores that qualify. **Only `GateStore` and `ExpectationRowStore` offer both
+  readers**; `OperatorInboxStore` is strict only; the other three are tolerant only, their single
+  `read` being the tolerant one. That row now says so, and its heading is scoped to "rewrites a log
+  that carries authority" rather than "rewrites", which the tolerant three also contradicted.
+
+  *Citations.* One defect of the shape the L4 audit found — a range that starts correctly and stops a
+  few lines short. The `controlplane/store.py` row cited `projected_current` at **L187-L208**; the
+  `def` is at **L209**, one line past the end of the range, so the row named a symbol it did not
+  cover. Both halves of that row are now symbol-name citations with no range
+  (`GateStore.read_for_projection`, read at L108; `GateStore.projected_current`, read at L209),
+  because a number that was wrong within the hour is worse than no number. The
+  `controlplane/expectation_rows.py` row (`read_for_projection` L185-L203, `pending_for_projection`
+  L215-L217) and the `mcp/tools/gates.py` row (`_reclaim_gate_log` L453-L473, called L539) were
+  re-read at their cited ranges and are correct; they were left alone. Verification metadata pinned
+  until closeout stamps the L5 code commit.
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: **this module stopped writing.** Recorded the two
+  reader changes and repaired every citation the change shifted.
+
+  *Content.* `read_gates` no longer compacts: `GATE_COMPACT_TTL_SECONDS` and `_last_gate_compact`
+  are deleted and the body is `store.projected_current(lifecycle_id, now=now)` per log. Stated the
+  part that is easy to overstate — **the projection output is unchanged**, because
+  `projected_current` applies the same `gate_keep_ids` filter in memory that `compact_current` did;
+  what moved is the on-disk rewrite, to `mcp/tools/gates.py::_reclaim_gate_log` in the MCP process,
+  because a 30-second whole-file replace driven from the dashboard tick raced the MCP's appends and
+  cost 11.50% of gate snapshots at the base commit. `read_expectation_rows` now calls
+  `pending_for_projection()`; the old `pending()` went through a strict read whose
+  `pydantic.ValidationError` **subclasses `ValueError`**, so the `suppress(OSError, ValueError)`
+  around it discarded every deadline in the file on one torn row. Added the strict/tolerant rule as
+  a route-level invariant, plus a second invariant that no reader here may rewrite a control-plane
+  log, each naming what breaks if undone. Corrected the HFX2-L12 CS-6 paragraph and the Task 23/24
+  paragraph, which both still described the throttled rewrite as current.
+
+  *Citations.* The L5 diff removes 6 lines at L123-L134 and 6 more inside `read_gates`, and adds 6
+  inside `read_expectation_rows`, so **every** `snapshots.py` citation past L134 moved. All eleven
+  were re-derived against the staged file and read back at their new range, not shifted
+  arithmetically: `read_task_documents` L1152-L1180 → **L1146-L1174**; `read_series_documents`
+  L1275-L1316 → **L1269-L1310**; `_series_subtask_nodes`/`_series_subtask_created_at` L1319-L1352 →
+  **L1313-L1346**; `_task_doc_node` L1373-L1462 → **L1367-L1456** (`createdAt=doc.createdAt`
+  L1405 → **L1399**); the worktree-provider pair L223-L283; L286-L471 → **L218-L278; L281-L466**
+  (both ends widened by one to reach `def _worktree_providers` L218 and the close of
+  `_worktree_runtime_summary` L466 — the old range stopped short of both); `read_providers` +
+  admission filter L190-L207; L237-L240 → **L185-L203; L232-L235** (the second range now includes
+  the `continue` at L235, which the claim quotes and the old range excluded);
+  `read_engine_process_facts` L636-L695 → **L630-L689** (two rows); `read_enclosures` L475-L492 →
+  **L469-L486**; `read_setup_progress_nodes` L1038-L1072 → **L1032-L1066**; `read_drift_snapshots`
+  L931-L967 → **L925-L961**; `_git_commit_meta` `def` L823 → **L817**, guard L841 → **L835**,
+  `return {}` L847 → **L841**. Three `test_observer_projection.py` citations moved too (that file
+  gained 8 lines at L1530): the wedged-`git log` test L2887-L2913 → **L2895-L2921**,
+  `test_active_group_filter_skips_parked_progress` L2678-L2692 → **L2686-L2700**,
+  `test_reader_skips_inactive_engine_process_groups_when_filtered` L4069-L4098 → **L4077-L4106**.
+  `WorktreeProviderAdmissionTests` L239-L347 and `test_read_providers_ignores_unadmitted_worktree_stacks`
+  L1289-L1315 sit above that insertion and were re-read unchanged. Citations into `projection.py`,
+  `contract_snapshot.py`, `provider_nodes.py`, `kernel/git_command.py`,
+  `test_projection_scaling_cs6.py` and `kernel/memory_ledger.py` L1-L104 are unaffected — none of
+  those files changed above the cited ranges.
+
+  Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the three
   `projection.py` node ranges after a worker moved the lifecycle-vocabulary block into that file
   (+98 lines above these classes). `TaskDocNode` L487-L533 → L585-L631, `SeriesSubTaskNode`

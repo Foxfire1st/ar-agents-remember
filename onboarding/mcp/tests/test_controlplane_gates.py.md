@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T16:30+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -69,9 +69,35 @@ triple from being respelled per case — `BY_DEVELOPER`, `BY_MODEL`, `BY_MANAGER
 surface + manager role + a non-owning actor) and `BY_OWNING_MANAGER` (the gate's own
 `OWNER_LIFECYCLE` claiming the manager role, i.e. self-approval) — and `dataclasses.replace` varies
 one field for the reviewer-verdict and rejection-note cases.
-`CloseoutEnforcementHelperTests` drives `closeout.py`'s `_enforce_closeout_gate` /
-`_mark_closeout_gate_applied` / `_closeout_gate_payload` over a temp `GateStore`
-rooted at a stub contract's `coordination_root`.
+`CloseoutEnforcementHelperTests` (L964-L1035) drives `closeout.py`'s closeout-gate helpers over a
+temp `GateStore` rooted at a stub contract's `coordination_root`. **Since 260731-EFA-L5 R2 the
+helper under test is `_claim_closeout_gate` (`closeout.py` L449-L499), and
+`_mark_closeout_gate_applied` no longer exists — it was deleted rather than deprecated**, so there
+is no second, later step for a test to call and no arrangement of two lines that leaves the
+approval spendable in between. `test_gateless_lifecycle_returns_none`,
+`test_open_gate_blocks_closeout`, `test_model_approved_blocks_closeout` and
+`test_developer_approved_permits_and_marks_applied` all target the claim now; the last one asserts
+the gate reads `applied` immediately after the single permitting call.
+
+The two blocking cases **additionally** assert that the early refusal
+`_refuse_unsatisfied_closeout_gate` (`closeout.py` L424-L446) raises for the same seeded gate. That
+is a second rung, not a duplicate: the claim sits one statement above the first irreversible act
+(`closeout.py` L795), while the early read sits before staging and the strict code-quality gate
+(L750), so without it an unapproved closeout would only be refused after a full quality run over a
+staged worktree. The early rung is safe precisely because it can only DENY — its read is unlocked
+and therefore already stale when it returns, but a stale refusal costs a rerun and consumes
+nothing, and a stale permit is re-evaluated under the lock by the claim.
+
+**What the claim changed underneath these tests.** `GateStore.claim_approval` (`controlplane/store.py`
+L190-L234) folds the log, evaluates the policy and appends the `applied` snapshot inside **one**
+held `exclusive_access`, so `approved -> applied` is a compare-and-swap against every other writer
+and exactly one caller can both see the gate approved and be the one that marks it consumed. The
+consequence is a deliberate semantic change worth stating plainly: **an approval now authorises one
+attempt, not one success.** A closeout that dies after the claim — crashed process, failed memory
+quality gate, git error, ENOSPC — leaves the approval consumed and the next closeout needs a fresh
+gate. That is the fail-closed side of a trade whose alternative is not milder: marking applied at
+the end means every way that late write can fail to land leaves a live approval sitting on top of
+completed, irreversible work.
 260703-L4 extends the suite with gate policy and evidence coverage: record
 helpers append reviewer-verdict refs and orchestration attribution,
 `gate_decide_payload` records active-lifecycle deciding identity, rejects owner
@@ -84,18 +110,41 @@ approvals according to `GatePolicy`.
 - Pure units + a patched store; no live config / observer is needed. The
   dev-time conformance suite separately exercises the real config-rooted builders
   against a fixture workspace.
+- The two rungs must stay distinguishable. `_refuse_unsatisfied_closeout_gate` decides nothing and
+  writes nothing; `_claim_closeout_gate` is the only thing that spends an approval. A test that
+  asserted only one of them would pass while the other was deleted, and deleting the claim is the
+  check-then-act defect this leaf was called in to remove.
+- Nothing outside `GateStore.claim_approval` may append an `applied` snapshot for an enforcement
+  path. That is what makes "one approval, one consume" a property of the store rather than of a
+  call ordering in `closeout.py`.
+- **An `applied` `closeout-approval` record is no longer reclaimable garbage, so it cannot be used
+  as fixture filler.** Since R1, `applied` snapshots of a `CONSUMED_APPROVAL_GATE_KINDS` kind are
+  retained at any age — they are the authority record that stops one approval being spent twice.
+  Three fixtures across the suite had been seeding exactly such a record purely as something for a
+  reclaim pass to drop, and retaining them would have quietly turned those harnesses into no-ops:
+  a compaction with nothing prunable does not rewrite, so the concurrency they exist to exercise
+  would never happen and both halves of the affected tests would pass for the wrong reason. All
+  three moved to `expired` (which is in `PRUNE_IMMEDIATE_GATE_STATES`): `_store_durability.py`'s
+  `GateAdapter.write_decoy` (L172-L178), `test_durable_store_contract.py`'s
+  `GateReclaimOwnershipTests.setUp` (L851-L876), and `test_gate_replay_window.py`'s `_prunable_gate`
+  (L116-L130) — the last of which also moved off `closeout-approval` onto `alarm-ack`, a kind
+  nothing decides on. Each carries the reasoning in a comment at the fixture rather than in a
+  commit message.
 
 ## Repo-Internal References
 
 | Finding | Source Path |
 | --- | --- |
 | The records under test. | [controlplane/records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
-| The store under test. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
+| The store under test, and since 260731-EFA-L5 the only way to spend an approval: `claim_approval` (L190-L234) folds, evaluates policy and appends the `applied` snapshot inside one held lock. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 | The payload builders under test. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | The operator inbox store polled by `gate_response_wait_payload`. | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| The enforcement policy under test (slice 6b). | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
+| The enforcement policy under test (slice 6b): `evaluate_gate` (L52-L94), whose `applied` branch (L82-L88) is the refusal a second consume meets and the reason the `applied` snapshot is an authority record. | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
 | Gate delegation policy under test. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
-| The closeout enforcement helpers under test (slice 6b). | [worktrees/modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (L424-L446, called at L750) and the claim `_claim_closeout_gate` (L449-L499, called at L795, one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | [worktrees/modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | [controlplane/interaction_retention.py](agents-remember/mcp/src/agents_remember/controlplane/interaction_retention.py) |
+| The suite that pins the claim's position rather than its policy: the gate is already `applied` by the time `commit_if_dirty` runs, a failure upstream leaves it `approved`, and `_prunable_gate` (L116-L130) is one of the three fixtures moved to `expired`. | [test_gate_replay_window.py](agents-remember/mcp/tests/test_gate_replay_window.py) |
+| The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` (`_store_durability.py` L172-L178) and `GateReclaimOwnershipTests.setUp` (`test_durable_store_contract.py` L851-L876). | [test_durable_store_contract.py](agents-remember/mcp/tests/test_durable_store_contract.py) |
 | The conformance suite that also covers the gate tools. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 
 As of the 260703-L8 seam ruling the suite carries MasterHandoverSeamTests: delegability to the orchestrator, the named-policy routing, human-pinned kinds staying pinned, apply_seam_verdict_requirement binding only delegated seam rules, verdict-evidence refusal/acceptance on a delegated handover decision, and owner-never-self-approves on the handover kind.
@@ -110,6 +159,36 @@ fake's unattached contract. Cycle 7 adds three layers on the enclosure address: 
 
 ## Update History
 
+- 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: `CloseoutEnforcementHelperTests` (L964-L1035) now
+  exercises `_claim_closeout_gate` (`closeout.py` L449-L499) wherever it used to call
+  `_enforce_closeout_gate`, and the two blocking cases **additionally** assert that
+  `_refuse_unsatisfied_closeout_gate` (`closeout.py` L424-L446) raises for the same seeded gate.
+  `_mark_closeout_gate_applied` was **deleted rather than deprecated**, so
+  `test_developer_approved_permits_and_marks_applied` no longer calls a second step — it asserts the
+  gate reads `applied` straight after the single permitting call, which is the point: permitting and
+  marking applied are one step and there is no arrangement of two lines that leaves the approval
+  spendable in between. Recorded the two rungs as distinct rather than redundant — the claim sits
+  one statement above the first irreversible act (`closeout.py` L795) while the early read sits
+  before staging and the strict code-quality gate (L750), and the early rung is safe only because it
+  can exclusively DENY: its unlocked read is stale on return, but a stale refusal costs a rerun and
+  consumes nothing while a stale permit is re-evaluated under the lock. Recorded the mechanism
+  underneath: `GateStore.claim_approval` (`controlplane/store.py` L190-L234) folds, evaluates policy
+  and appends the `applied` snapshot inside **one** held `exclusive_access`, making
+  `approved -> applied` a compare-and-swap, and with it the deliberate semantic change — **an
+  approval now authorises one attempt, not one success** — together with why the fail-closed side is
+  the correct trade rather than the harsher one. **Also recorded where the fixture churn fits:**
+  three fixtures across the suite had been seeding an `applied` `closeout-approval` record purely as
+  something for a reclaim pass to drop, and since R1 such a record is retained at any age
+  (`CONSUMED_APPROVAL_GATE_KINDS`), so leaving them would have made a compaction with nothing
+  prunable skip its rewrite and quietly turn those harnesses into no-ops. All three moved to
+  `expired`: `_store_durability.py::GateAdapter.write_decoy` (L172-L178),
+  `test_durable_store_contract.py::GateReclaimOwnershipTests.setUp` (L851-L876) and
+  `test_gate_replay_window.py::_prunable_gate` (L116-L130), the last also moving off
+  `closeout-approval` onto `alarm-ack`. **Citations:** every range added here was opened and checked
+  against each symbol the claim names, ends included — `evaluate_gate` L52-L94 with its `applied`
+  branch at L82-L88, both closeout helpers with their call sites, and each of the three fixtures.
+  The reference table is two-column by construction, so citations are carried inline in the Finding
+  cells rather than by widening it. Verification metadata untouched.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the whole gate substrate moved its
   loose arguments into parameter objects, so this suite now calls `create_gate` with `GateAnchor`
   + `GateRequest`, `decide_gate` and every `gate_decide*` builder with `GateVerdict`,

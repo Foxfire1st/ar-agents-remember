@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T10:45+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated | 2026-08-01T20:15+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -145,8 +145,10 @@ a durable gate, distinct from the event-derived `ask` proto-gate. L4 adds
 `GateNode.evidenceRefs`, a projection pass-through for reviewer-verdict artifact
 refs attached to delegated approvals.
 
-Task 23/24/L3 turns gate/operator-inbox prompts into TTL-bound interaction surfaces. `read_gates` can compact
-expired throwaway gate rows before projection, `AgentPickupNode` is the pending-inbox task-row feedback
+Task 23/24/L3 turns gate/operator-inbox prompts into TTL-bound interaction surfaces. `read_gates` applies
+the throwaway-gate keep-filter before projection (until 260731-EFA-L5 it also physically compacted the
+log on a 30s cadence from this tick; the rewrite is gone, the filter — and therefore what the cockpit
+sees — is unchanged), `AgentPickupNode` is the pending-inbox task-row feedback
 surface, and `read_agent_pickups` projects each pending inbox entry as `waiting-for-agent` until the
 5-minute pickup TTL, then `check-chat` until the developer dismisses it or the 24-hour interaction TTL
 deletes it. L3 carries sender/recipient roles, message kind, artifact path, and hosted-delivery
@@ -438,7 +440,8 @@ The slice-3a projection read side:
   provenance,
   slice 5e `read_engine_process_facts` (contract + best-effort `status_payload` + `lifecycle_guidance`) +
   `read_start_progress_entries` (§5.4), the slice 6c `read_gates` reader (folds the `GateStore` logs for
-  gate projection), plus — R1/task 17 — `read_series_documents` (`kind == "master"` docs keyed by task
+  gate projection through the TOLERANT `projected_current`; since 260731-EFA-L5 it rewrites nothing),
+  plus — R1/task 17 — `read_series_documents` (`kind == "master"` docs keyed by task
   folder; the companion master aggregation surface) carrying master objective and sorting sub-task rows
   oldest-first by resolved sibling leaf `createdAt` only when every row has one.
 - `provider_nodes.py` — the provider-node projection policy used by `snapshots.read_providers`: it expands
@@ -475,6 +478,24 @@ The slice-3a projection read side:
   lifecycle file is written by that lifecycle's live owner; the only cleanup of a
   dead lifecycle is the TTL *prune* of a dormant fleeting log (a directory
   deletion), never a non-owner append.
+- **No reader on this route rewrites a control-plane log** (260731-EFA-L5). The projection tick runs
+  in the dashboard; the dashboard owns none of the gate logs. A rewrite added back here is a
+  whole-file replace racing the MCP server's appends, and the `applied` marker it can silently drop
+  is what stops one human approval being consumed twice — measured at 11.50% of gate snapshots lost
+  at the base commit. Readers here filter in memory; the owner process reclaims. Note that the
+  single-writer invariant above is about this route's **own** `events.jsonl` logs and does not
+  extend to `controlplane/`'s six, every one of which has two writing processes and takes an
+  unconditional per-log lock.
+- **Read tolerantly here, because this route only renders.** The contract carries two read policies:
+  strict (raises on a torn or unknown-major line; backs authority, and every rewrite of an
+  authority-bearing log) and tolerant (skips the line; backs projection). **Only `GateStore` and
+  `ExpectationRowStore` offer both** — a strict `read` plus a projection-only `read_for_projection`,
+  which is the pair this route consumes. `OperatorInboxStore` is strict only; attention dismissals,
+  orchestration nudges and supervisor signals are tolerant only, and their rewrites run off that one
+  tolerant read. Take the tolerant half — and know the trap that makes the
+  choice load-bearing: `pydantic.ValidationError` **subclasses `ValueError`**, so wrapping a strict
+  read in `suppress(OSError, ValueError)` does not degrade one row, it silently discards the whole
+  file. That is what `read_expectation_rows` was doing to every deadline the operator needed to see.
 - **Events are a persisted, versioned contract.** The envelope carries
   `schema = ar-observer-event/v1`; readers `model_validate` records back, so the
   format must round-trip. Always serialize with
@@ -578,6 +599,10 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
 | The partition, coverage and terminality suites that hold the vocabulary to the buckets: `MetricsBucketVocabularyTests`, `StatePartitionTests`, `TerminalityIsStructuralTests`, `StateVocabularyReaderTests`, `StateCountFieldTests`. | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 | The write side's asymmetric refusal — `end()` rejects an unknown outcome instead of coercing it. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
+| The gate store's two read policies and its `projected_current` fold — the tolerant half this route's projection uses, and the strict `read` the enforcement fold uses. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
+| The expectation-row store's `pending_for_projection`, whose docstring names this route's `suppress`-plus-strict-read defect as the reason it exists. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| Where gate-log reclamation went: the owner process, on terminal decisions, behind a non-raising ownership question. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
+| The `ar-durable-store/1.0` contract that declares the strict/tolerant split and the unconditional per-log lock. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
 | The TypeScript mirror, which now carries the SAME partition shape as this route: `LIVE_STATES` / `TERMINAL_STATES` declared as halves, `LIFECYCLE_STATES` spread from them, and `ACTIVE_STATES = LIVE_STATES` rather than a difference. It refuses double-filing at compile time (`StatesAreFiledOnce`, a `never` constraint) where this route refuses it at import; the one thing it cannot follow is a duplicate WITHIN one half, which a TS tuple keeps and `Literal` collapses. | [dashboard/src/types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
 
 ## 260718-CHATS-L5I Current Route Impact
@@ -658,8 +683,82 @@ Two smaller boundary widenings ride along in `snapshots.py`: `read_engine_proces
 projection's untyped input carrier that the reducer folds by key name, so the widening is at the
 carrier, not in the producers.
 
+## 260731-EFA-L5 The Projection Tick Stopped Writing
+
+This route is the dashboard's read side. Until L5 one of its readers wrote: `snapshots.read_gates`
+physically rewrote every gate log on a 30-second cadence (`GATE_COMPACT_TTL_SECONDS`,
+`_last_gate_compact`, `GateStore.compact_current(..., rewrite=True)`). That is compaction running in
+a process that owns nothing about gates, racing the MCP server's appends, and it accounted for
+11.50% of appended gate snapshots being lost at the base commit. Both the constant and the cadence
+dict are deleted; the reader is now `store.projected_current(lifecycle_id, now=now)` per log, and
+reclamation belongs to `mcp/tools/gates.py` in the MCP process.
+
+**The projected output is unchanged, and saying so precisely matters.** `projected_current` applies
+the same `gate_keep_ids` keep-filter in memory that `compact_current` applied before writing, so the
+cockpit's live gate set is identical; what disappeared is a write, not a filter. (`now=None` still
+folds with no retention filter at all — a caller that named no moment is not asking a question about
+one.)
+
+**Two read policies, and this route takes the tolerant one — deliberately, and only because it never
+writes back.** The `ar-durable-store/1.0` contract carries two policies: a STRICT read that raises
+on a torn or unknown-major line, and a TOLERANT read that skips it. **Only two of the six stores
+offer both** — `GateStore` and `ExpectationRowStore` carry a strict `read` beside a projection-only
+`read_for_projection`, and those are the two this route consumes. `OperatorInboxStore` is strict
+only; attention dismissals, orchestration nudges and supervisor signals are tolerant only, their
+single `read` being the tolerant one. Authority reads strictly, because a skipped record there could
+drop a gate's `applied` marker and let the enforcement fold conclude a human approval was never
+consumed. Rendering reads tolerantly, because a 1s tick must degrade rather than freeze. **Every
+rewrite of an authority-bearing log reads strictly**, so a compaction can never be the thing that
+erases an authority record it could not parse. The three tolerant-only stores rewrite from that
+tolerant read and therefore *do* drop an unparseable row permanently — safe only because none of
+them carries authority. This route, which now rewrites nothing, is where the tolerant half is safe
+by construction.
+
+`read_expectation_rows` is the reader that proves why the split had to be made explicit. It called
+the strict `ExpectationRowStore.pending()` inside `contextlib.suppress(OSError, ValueError)` — and
+pydantic's `ValidationError` **subclasses `ValueError`**. So the guard that reads like file-I/O
+tolerance was swallowing a parse failure and discarding *every* deadline in the file: one torn row,
+and the dashboard told an operator nothing was due. It now calls `pending_for_projection()`, which
+degrades one row at a time. **The general rule for this route: a `suppress(ValueError)` around a
+strict read is not per-row tolerance, it is whole-file silence.**
+
 ## Update History
 
+- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction): **two overstatements of the read
+  policy, in the route whose readers are the tolerant ones.** Both came from the 13:20 entry below.
+  (1) The L5 section said "Every store on the `ar-durable-store/1.0` contract now offers both" and
+  "**Every rewrite reads strictly**, so a compaction can never be the thing that erases a record it
+  could not parse". (2) The Invariants entry said each contract store "offers a strict read (raises
+  on a torn or unknown-major line; backs authority and every rewrite) and a tolerant one". Both
+  claims are false for half the contract, and `durable_store.py` refuses them under a heading
+  beginning "DO NOT GENERALISE 'EVERY REWRITE READS STRICTLY' TO ALL SIX -- it is false".
+  Corrected to what the code and `controlplane/overview.md` already state, without inventing a third
+  phrasing: **every rewrite of an *authority-bearing* log reads strictly** — gate (`delete`,
+  `compact`), expectation rows (`_compact_locked`) and operator inbox (`delete`, `delete_by_gate`,
+  `compact`, `reconcile_and_compact`) each filter a list their own strict read produced — while
+  attention dismissals, orchestration nudges and supervisor signals rewrite from their tolerant
+  `read` and therefore drop an unparseable row **permanently**, which is acceptable only because
+  none of the three carries authority. And **only two of the six offer both readers**: `GateStore`
+  and `ExpectationRowStore` have a strict `read` plus a projection-only `read_for_projection` — the
+  pair this route consumes; `OperatorInboxStore` is strict only; the other three are tolerant only,
+  their single `read` being the tolerant one. Nothing else on this route changed: the tolerant
+  choice here was always correct, and it is now correct for the stated reason rather than an
+  overstated one. No citation defects were found — this document's Repo-Internal References table
+  carries no line ranges. Verification metadata pinned until closeout stamps the L5 code commit.
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: **this route stopped writing to a control-plane
+  log, and one of its readers stopped losing whole files.** Added the L5 section; corrected the two
+  places that still described `read_gates` as compacting (the Task 23/24 interaction-surface
+  paragraph and the `snapshots.py` Route Model row) and re-signed both onto
+  `GateStore.projected_current`. Stated the projected-output-is-unchanged claim precisely — the same
+  `gate_keep_ids` filter is applied in memory, so only the rewrite moved — because "compaction moved
+  to the MCP" is easy to mis-read as a projection change. Recorded the strict/tolerant read split as
+  a route-level rule with its concrete trap: `ValidationError` subclasses `ValueError`, so
+  `suppress(OSError, ValueError)` around a strict read discards the file rather than the row, which
+  is exactly what `read_expectation_rows` was doing. Added four reference rows (`controlplane/store.py`,
+  `controlplane/expectation_rows.py`, `mcp/tools/gates.py`, `controlplane/durable_store.py`). The
+  file card for `snapshots.py` carries the reader-level detail and the full citation repair pass —
+  the L5 diff shifted every `snapshots.py` citation past L134. Verification metadata pinned until
+  closeout stamps the L5 code commit.
 - 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change), **one corrected claim
   only**: `dashboard/src/types/projection.ts` adopted this route's partition after the 09:26 entry
   below was written, so the Repo-Internal References row calling it "the TypeScript mirror that
