@@ -5,7 +5,7 @@
 | repository             | agents-remember                                    |
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.test.tsx` |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-24T13:04+02:00                             |
+| lastUpdated            | 2026-08-01T17:40+02:00                             |
 | lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                                          |
 | lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                      |
@@ -18,8 +18,8 @@
 
 Vitest + `@testing-library/react` render test pinning the shared empty-state backdrop's two contracts
 (slice 07b polish): the empty-state **message always shows**, and the faint boomerang `<video>` is an
-**effects-gated** atmosphere — present as a direct child of `empty-backdrop` with the given `src` + `loop`
-+ `aria-hidden` when effects are on, absent entirely under calm-cockpit / reduced-motion while the
+**effects-gated** atmosphere — present as a direct child of `empty-backdrop` with the given `src` + `loop` +
+`aria-hidden` when effects are on, absent entirely under calm-cockpit / reduced-motion while the
 message still renders. It guards the "pure atmosphere, never state / never lost in the calm cockpit"
 posture by construction.
 
@@ -72,6 +72,7 @@ No meaningful cross-repo references found. This is a self-contained dashboard re
 
 ## Update History
 
+- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-24T13:17:50Z — Added hidden-layer video pause/resume coverage. Verification hash/date remain
   pinned to the pre-commit source stamp.
 

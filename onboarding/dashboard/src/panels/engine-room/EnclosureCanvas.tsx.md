@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/engine-room/EnclosureCanvas.tsx` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`             |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T15:10+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`             |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -272,9 +272,24 @@ gated by `useShouldAnimate` — instant end-state under effects-off so the snaps
 **05o — the six remaining failure modes (T7B/T9·T14C/T12B), keeping the node-anchored + topmost-pointer +
 `alertProps`-transition doctrine.** Two shared helpers carry the new lanes: `conduitPathD(edge)` extracts the
 conduit path string (straight lane / clone-arc BOW) so `Conduit` and the new refused-flash trace the *exact*
-same geometry (no duplicated arc maths), and `refusedPolarityOf(edge)` reads the flash polarity off the
-projection — a `failed` seed/return lane → red, a `stale` lane → amber, a `refused` lane → its explicit
-`edge.refusedPolarity` (default amber) — `null` for anything else. New components: `RefusedConduit` (the
+same geometry (no duplicated arc maths), and `refusedPolarityOf(edge)` **derives** the flash polarity from
+the edge STATE — a `failed` seed/return lane → red, a `stale` lane → amber — `null` for anything else. It
+reads no polarity field: `EngineProcessEdge` has none, and the `refused` state it used to branch on is not
+in the model's own documented state vocabulary (`nominal|running|blocked|failed|stale|skipped|complete|
+planned|unknown`) and has never been emitted — `git log --all -S 'state="refused"'` returns zero commits.
+The `integration` / `integration-mem` kind arms are kept even though today's reducer only emits
+worktree-add, cgc-seed, ledger-map, grepai-clone and sync. (Both edge builders were checked:
+`reducer.py::_process_edges` and `reducer.py::_start_process_node`. The in-code comment beside
+`refusedPolarityOf` used to cite a `_engine_edges` that has never existed in this repository;
+260731-EFA-L4 corrected it in place to name the two real builders, so `EnclosureCanvas.tsx` L219-L220
+now agrees with `reducer.py`. Do not re-report this: the only remaining occurrences of `_engine_edges`
+anywhere are in prose describing the correction.) The honest reason is **not**
+forward-compatibility — nothing is scheduled to start emitting them. It is that `integration` IS in
+`EngineProcessEdge`'s documented `kind` vocabulary (unlike `refused`, which its state comment never
+listed), and that the whole integration lane — geometry, the T14C conflict scenario, the replay strategy —
+is authored in the dev fixtures and covered by tests, so the arms are exercised even though the server does
+not drive them. `integration-mem` is the memory-side mirror, is NOT itself in that documented list, and
+lives or dies with `integration`. Delete the lane and its coverage together, or not at all. New components: `RefusedConduit` (the
 one-shot `data-fx='refuse'` GSAP flash over each `refusedEdges` lane — covering `cgc-seed`/`grepai-clone`
 seed faults/reroutes and `integration`/`integration-mem` conflicts — resting at opacity 0 so it is
 present-but-absent under effects-off while the steady STOP/gate carries the settled state), and `MovedBadge`
@@ -296,8 +311,9 @@ gate, **restricted to a blocked `ledger-map` edge** so it never reclassifies the
 `engine-sync-needed` gallery fixture, which has a blocked `sync` edge and keeps its existing edge-gate
 render); `blockNode` now branches T1B (stale main CODE base) / T12B (held memory worktree) / T3B (unmappable
 memory base). `refusedEdges` is the filtered `(edge, polarity)` list driving the flash. The `Conduit`
-`ghosted` condition is broadened to `(memGated || memSyncMoved) && edge.kind === "ledger-map"`, and `Conduit`
-now carries `data-refused-polarity` (from `edge.refusedPolarity`) for the topmost overlay. All the new
+`ghosted` condition is broadened to `(memGated || memSyncMoved) && edge.kind === "ledger-map"`. `Conduit`
+carries **no** `data-refused-polarity` attribute: polarity is derived by `refusedPolarityOf` at the point
+the overlay is built, so there is nothing on the conduit for the flash to read back. All the new
 overlays — the refused flash, the engine-dropout halos, the moved badge — render in the **TOPMOST layer**
 (after the nodes, with the scan ring + block gate), so a node's opaque rect can never cover a node-anchored
 pointer.
@@ -317,7 +333,14 @@ recipes it composes.
 ### Invariants And Boundaries
 
 Purely presentational — all data via the `node` (+ `workspaceEngines`) props; **state comes from
-the model** (`factState` / `runtimeState` / `edge.state`), never a class name alone. The canvas **animates**
+the model** (`factState` / `runtimeState` / `edge.state`), never a class name alone — and never a
+decorative field on the edge either. `refusedPolarityOf` DERIVES amber/red from `edge.state`; the panel
+must not reintroduce an `edge.refusedPolarity`, because the server model (`EngineProcessEdge`,
+`extra="forbid"`) has no such field and could never send one. The same rule governs which arms may
+exist here: a `kind` arm is legitimate when the kind is in `EngineProcessEdge`'s documented vocabulary
+and is exercised by fixtures and tests (that is `integration`, and `integration-mem` riding with it); a
+`state` arm for a state the model never documented and the reducer never emits — `refused` — is a dead
+branch, and was deleted as one. The canvas **animates**
 on two systems only (`05f` §8, post-05k): **GSAP** (`useEngineTimeline`, wired to the `<svg>` `rootRef`) owns
 the `strokeDashoffset` draw-ons (`[data-draw='on']`) + the repeating fx (`[data-fx=…]`), and **Motion** owns
 opacity/transform/scaleY/fill + `AnimatePresence` enter/exit — never both on the same property/element
@@ -358,14 +381,21 @@ Landing refs with `factState: stale` remain visible, carry an explicit state wor
 | `EDGE_GEOM["integration-mem"]` (memory-lane y=403 worktree→feat mirror of `integration`) + `Conduit`'s widened `isReplay` check + the `retiring` fade. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 | `chargeMotion` + the `booting` one-shot opacity pulse (`onAnimationComplete` + timer backstop) — Motion owns scaleY/opacity, the `engineCharge` class owns fill (second-cycle fill fix). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 | `branchEnter` / `mainRef` (5i) — the build-up materialisation axis + the always-`main` official-line relabel (three-tier landing). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `useEngineTimeline(rootRef, node)` wired to the `<svg>` root (05k) — GSAP owns the draw-ons (`[data-draw='on']`) + the fx (`[data-fx=…]`); the per-component `gsap.fromTo` + inline packet were removed. | L884 | [useEngineTimeline.ts](useEngineTimeline.ts) |
+| `useEngineTimeline(rootRef, node)` wired to the `<svg>` root (05k) — GSAP owns the draw-ons (`[data-draw='on']`) + the fx (`[data-fx=…]`); the per-component `gsap.fromTo` + inline packet were removed. | L168-L247 | [useEngineTimeline.ts](useEngineTimeline.ts) |
+| `refusedPolarityOf` derives the flash polarity from `edge.state` alone (`failed`→red, `stale`→amber) and documents why the `integration`/`integration-mem` kind arms stay while the `refused` state arm went. | L204-L241 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
+| `refusedEdges` — the `(edge, polarity)` list that drives the topmost flash; `RefusedConduit` renders it and stamps `data-polarity`/`data-refused-polarity` from the DERIVED polarity (the conduit itself carries neither). | L926-L942; L1307-L1312 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
+| `Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute. | L624-L680 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
+| `EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field. | L762-L781 | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| `_process_edges` emits only worktree-add, cgc-seed, ledger-map, grepai-clone and sync, so no served payload reaches the integration arms. | L1501-L1574 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
+| `_start_process_node` — the other edge builder, checked for the same reason and emitting the same four kinds. | L1086-L1150 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
 | The `data-fx` markers replacing the deleted CSS keyframes (`fault`/`reindex`/`surge`/`breath`/`stop`/`packet`) + `chargeMotion` (Motion's scaleY). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 | `AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 | `useShouldAnimate` gate — suppresses both GSAP (no context/ticker) and Motion (`initial={false}`) under effects-off / reduced-motion. | — | [useShouldAnimate.ts](useShouldAnimate.ts) |
 | Left official-line engines + `officialWire` conduits + official coupler (from `workspaceEngines`). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 | The `engineState` selector that derives each workspace engine's runtime. | — | [selectors.ts](../../data/selectors.ts) |
 | The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). | — | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| Projection types `EngineProcessNode`/`CommitRefNode`/`EngineProcessEdge`/`ProviderNode`. | L224-L285 | [projection.ts](../../types/projection.ts) |
+| Projection types `EngineProcessEdge`/`EngineProcessNode`. | L538-L608 | [projection.ts](../../types/projection.ts) |
+| Projection types `CommitRefNode`/`ProviderBootNode`/`LandingRefNode`, and `ProviderNode`. | L143-L154; L521-L565 | [projection.ts](../../types/projection.ts) |
 | 05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx="scan">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 | The `scanRing`/`ghostedLane` recipes + the `cx` combiner. | — | [engineRoomStyles.ts](engineRoomStyles.ts) |
 | The design prototype the geometry + decals are ported from. | — | `dashboard/public/_proto/podstage.html` |
@@ -388,6 +418,31 @@ ownership. With effects off, the original structural SVG renders the static end 
 view-box geometry and style classes preserve the visual composition.
 
 ## Update History
+
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
+  `observer/projection.py` citations — the reference row and the restatement in the 10:32 entry
+  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` (L762),
+  `extra="forbid"` (L770), the `kind` vocabulary comment (L775-L777), the nine-state comment (L778)
+  above `state: str` (L779), and the last field `detail` (L781) — every symbol the finding names is
+  inside the range. No body claim changed.
+
+- 2026-08-01T10:32+02:00 — 260731-EFA-L4 curator: corrected the `refusedPolarityOf` description, which
+  claimed a third arm — "a `refused` lane → its explicit `edge.refusedPolarity` (default amber)" — that
+  no longer exists and never could have fired. Verified: `EngineProcessEdge` (`observer/projection.py`
+  L762-L781) declares no `refusedPolarity` field and its state comment lists
+  nominal|running|blocked|failed|stale|skipped|complete|planned|unknown with no `refused`;
+  `git log --all -S 'state="refused"'` returns zero commits ever. Also corrected the claim that `Conduit`
+  "now carries `data-refused-polarity` (from `edge.refusedPolarity`)" — it carries no such attribute;
+  `RefusedConduit` stamps `data-polarity`/`data-refused-polarity` from the polarity `refusedPolarityOf`
+  derived. Recorded the kept `integration`/`integration-mem` arms with their ACTUAL justification —
+  `integration` is in the model's own documented `kind` vocabulary and the lane is fixture-authored and
+  test-covered — explicitly not forward-compatibility, and noted `integration-mem` is not itself in that
+  list and rides with `integration`. Checked both reducer edge builders (`_process_edges` L1501-L1574 and
+  `_start_process_node` L1086-L1150); neither emits either kind. The in-code comment beside
+  `refusedPolarityOf` cited a non-existent `_engine_edges`; that was corrected in the source during
+  this same leaf, so the comment now names both real builders and this card no longer reports it. Repaired citations: `useEngineTimeline` L884 → L168-L247 (L884
+  is a line number in the CANVAS, not in the hook file), and the projection-types row L224-L285 → split
+  into L538-L608 for the engine types and L143-L154;L521-L565 for `ProviderNode`/`CommitRefNode`.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: documented the sparse sibling
   `EngineFxOverlay`: animated surge/reindex/attention primitives move out of the text-heavy

@@ -5,7 +5,7 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-07-31T00:00+02:00 |
+| lastUpdated | 2026-08-01T17:40+02:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`             |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                          |
@@ -79,8 +79,8 @@ travel together in the frozen `ProjectionTickState(input_state=None, provider_re
 landing_state=None)` passed as `tick=` — a tick given some of them and not others silently reverts
 to a cold read, so they are one object. `tick or ProjectionTickState()` is the cold-read default.
 It resolves the root via `paths.observer_root`, prunes expired
-lifecycle event logs with `prune_expired_lifecycle_event_logs`, reads the lifecycle logs
-+ structural snapshots (`read_enclosures`, optional provider refresh, `read_providers`), and — slice 3b — the
+lifecycle event logs with `prune_expired_lifecycle_event_logs`, reads the lifecycle logs +
+structural snapshots (`read_enclosures`, optional provider refresh, `read_providers`), and — slice 3b — the
 analytical surfaces too: the coordination-level readers (drift snapshots, setup
 summaries/progress, tool reports, active task documents
 (`read_task_documents`, with optional lifecycle attachment) — slice 3c) and — slice 5e — the engine
@@ -199,11 +199,11 @@ The recurring projection path uses projected status plus the latest landing snap
 | The pure fold that consumes the threaded `engine_process_facts` / `engine_start_progress` keywords (slice 5e). | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
 | Compact lifecycle-scoped attention acknowledgement store pruned by `project_and_write`. | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | The atomic-write design requirement + serving placement (§2.5, §5). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
-| `ProviderStateRefresher` implements the `ProviderStateRefresh` protocol, TTL-gates provider current-state refreshes, and logs probe failures before `project_and_write` reads provider snapshots. | L167-L199; L225-L226 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Task 29 projection entry prunes expired lifecycle event logs, computes provider and engine admission groups, reads admitted provider/setup/engine surfaces, and keeps gates/pickups/task docs on the fast path. | L151-L199 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | L80-L86; L334-L358 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Admission policy is centralized in the worktree provider admission helper. | L18-L84 | [worktree_provider_admission.py](agents-remember/mcp/src/agents_remember/observer/worktree_provider_admission.py) |
-| Projection tests prove cached repo surfaces do not cache provider reads. | L2358-L2399 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| `ProviderStateRefresher` implements the `ProviderStateRefresh` protocol, TTL-gates provider current-state refreshes, and logs probe failures before `project_and_write` reads provider snapshots. (L167-L199; L225-L226) | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| Task 29 projection entry prunes expired lifecycle event logs, computes provider and engine admission groups, reads admitted provider/setup/engine surfaces, and keeps gates/pickups/task docs on the fast path. (L151-L199) | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. (L80-L86; L334-L358) | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
+| Admission policy is centralized in the worktree provider admission helper. (L18-L84) | [worktree_provider_admission.py](agents-remember/mcp/src/agents_remember/observer/worktree_provider_admission.py) |
+| Projection tests prove cached repo surfaces do not cache provider reads. (L2358-L2399) | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -222,6 +222,7 @@ repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` a
 
 ## Update History
 
+- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that had been
   stale since well before the L2 refactor. `ProviderStateRefresher` + the `ProviderStateRefresh`
   Protocol now sit at L167-L199, and the tick drives `maybe_refresh` at L225-L226 (was L89-L137,

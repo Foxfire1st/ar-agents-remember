@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T09:35+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -132,6 +132,22 @@ heading still uses the full `rows.length`, and switching to `BY PHASE` uses the 
 `useCollapsedTaskGroups` defaults to expanded and persists stable typed selection keys in
 `operations.tasks.collapsed.v1`; selectedId and task detail remain controlled by the parent.
 
+The row's state mark is `OperationRow.variant`, and BOTH row builders (`docRow`, `seriesRow`) compute
+it as `lifecycle?.state ?? statusVariant(doc.status)`. The two sides of that `??` are different
+vocabularies and the split is the point:
+
+- **Live side** — when a lifecycle is bound, its RAW server `state` string goes to `<Dot variant>`
+  untranslated. `awaiting-developer`, `blocked`, `paused` and `abandoned` all reach `Dot` on this
+  path, never through `statusVariant`. Whether each one gets its own colour/glyph is `grammar/Dot.tsx`'s
+  contract, not this panel's; this panel's obligation is only to hand the state over unmangled.
+- **Document side** — `statusVariant` is the DOCUMENT-status map, for rows with no live lifecycle. Its
+  entire input vocabulary is `tasks/document.py::DocStatus` (`planning | inProgress | Completed`),
+  which arrives verbatim as `TaskDocNode.status` / `SeriesNode.status`. It therefore has exactly two
+  outcomes — `Completed` → `completed`, everything else → `running` — and nothing else can arrive.
+  It deliberately carries no lifecycle vocabulary: arms for `awaiting-developer`, `blocked`, `paused`
+  and `abandoned` here would be permanently unreachable, since those states always take the left side
+  of the `??`.
+
 Task document rows attach runtime state by structured data: direct `doc.lifecycleId`, or for root
 masters the sibling enclosure whose `taskRoot` matches the doc directory and whose lifecycle id is the
 root task id/name. `taskLabel` is used only for runtime-only lifecycle fallback rows. Progress hints use
@@ -197,23 +213,40 @@ task label and stable typed row key. The no-horizontal-scroll contract belongs t
 containers, not to `Panel` globally; do not make every panel hide horizontal overflow to fix this one
 list.
 
+`statusVariant` must stay a DOCUMENT-status map. Adding a lifecycle state to it (an
+`awaiting-developer` arm, say) writes a branch the server can never reach, because a bound lifecycle
+short-circuits it at `lifecycle?.state ?? …`; the fix for a mis-rendered lifecycle state belongs in
+`grammar/Dot.tsx`'s variant recipe, not here.
+
+The `data-testid="task-state"` span carries `aria-label`/`title` (`Task progress: {variant}; phase:
+{phase}`) with **no `role`** — and that is only valid because it renders inside a React Aria
+`ListBoxItem`, whose `role="option"` computes its name from content and so absorbs the label. A bare
+`<span aria-label>` is a named `generic`, which ARIA prohibits (axe-core `aria-prohibited-attr`) and
+which announces nothing; `AttentionQueue`'s equivalent mark has no widget role above it and therefore
+had to take an explicit `role="img"`. If this span is ever lifted out of the `ListBoxItem`, it needs a
+role of its own for the same reason.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Sidebar row admission uses root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document. | L306-L370; L659-L672 | [LifecycleList.tsx](LifecycleList.tsx) |
+| `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins. | L477-L571; L911-L938 | [LifecycleList.tsx](LifecycleList.tsx) |
 | `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | [LifecycleList.tsx](LifecycleList.tsx) |
 | Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it. | reopen-hidden + reopen-restart + abandoned + orphan + one-row-per-enclosureId tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| BY REPO hierarchy uses taskHierarchy labels/parent keys, marks child rows with depth, and leaves BY PHASE flat. | L15-L20; L307-L343; L415-L447 | [LifecycleList.tsx](LifecycleList.tsx) |
-| Operations rows stay within the left panel by constraining the panel/listbox/section/row widths, then ellipsizing the title span. | L38-L106; L187-L214 | [LifecycleList.tsx](LifecycleList.tsx) |
-| Row titles use a shrinkable title span and native hover title assembled from label, lifecycle, repo, gate, and current-step context. | L99-L123; L212-L214; L464-L480 | [LifecycleList.tsx](LifecycleList.tsx) |
-| The shared hierarchy helper computes parent matches, child-id hierarchy labels, creation-order placement, and parent selection keys. | L15-L58; L73-L88 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
+| `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. | L17-L25; L363-L378; L752-L801 | [LifecycleList.tsx](LifecycleList.tsx) |
+| Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | L61-L104; L116-L187; L188-L223 | [LifecycleList.tsx](LifecycleList.tsx) |
+| `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | L180-L187; L386-L396; L841-L858 | [LifecycleList.tsx](LifecycleList.tsx) |
+| `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | L592-L597; L641-L646; L982-L1001 | [LifecycleList.tsx](LifecycleList.tsx) |
+| `DocStatus` — `statusVariant`'s entire input vocabulary. | L27-L33 | [tasks/document.py](agents-remember/mcp/src/agents_remember/tasks/document.py) |
+| `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. | L23-L129 | [grammar/Dot.tsx](../grammar/Dot.tsx) |
+| The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | L363-L392 | [LifecycleList.tsx](LifecycleList.tsx) |
+| The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`. | L28-L67; L145-L156 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
 | The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls. | `isOrchestrationDoc`; `masterCommandNames`; `orchestratorParentKey` | [taskHierarchy.ts](../data/taskHierarchy.ts) |
 | The V4 chevron insignia rendered on tier rows (size `row`). | — | [RankBadge.tsx](../grammar/RankBadge.tsx) |
 | L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression. | L14 describe blocks | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness. | L130-L352 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| `fmtWait` for server-computed stale/wait ages. | L1-L40 | [data/selectors.ts](../data/selectors.ts) |
-| Shared typed selection and label helpers used by the list and detail panel. | L1-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
+| `fmtWait` for server-computed stale/wait ages. | L107-L114 | [data/selectors.ts](../data/selectors.ts) |
+| Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel. | L17-L76; L213-L244 | [taskIdentity.ts](../data/taskIdentity.ts) |
 | The shared `Panel` head/sticky band the pivot sits in. | L1-L64 | [grammar/Panel.tsx](../grammar/Panel.tsx) |
 | Task-row pickup spinner/check-chat notice. | — | [AgentPickupIndicator.tsx](AgentPickupIndicator.tsx) |
 | Native disclosure control and stable persisted collapse hook used by the hierarchy renderer. | L21-L45; L1-L28 | [TaskGroupDisclosure.tsx](TaskGroupDisclosure.tsx); [useCollapsedTaskGroups.ts](useCollapsedTaskGroups.ts) |
@@ -225,6 +258,23 @@ kept-alive rail is hidden, while the render-heavy row/group derivation lives in 
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
 
 ## Update History
+
+- 2026-08-01T09:35+02:00 — 260731-EFA-L4 curator: documented the `OperationRow.variant` channel, which
+  the body never covered. `docRow` (L595) and `seriesRow` (L644) both compute
+  `lifecycle?.state ?? statusVariant(...)`, so a bound lifecycle's RAW state reaches `Dot` untranslated
+  — that is how `awaiting-developer` gets its own mark now, and it is why `statusVariant`'s
+  `awaiting-developer`/`blocked`/`paused`/`abandoned` arms were removable: they sat on the right of the
+  `??` and could never be entered. Verified `statusVariant`'s input vocabulary really is only
+  `tasks/document.py::DocStatus` (`planning|inProgress|Completed`), reaching it verbatim via
+  `TaskDocNode.status`/`SeriesNode.status`. Recorded the ARIA boundary: the `task-state` span's
+  role-less `aria-label` is valid only inside React Aria's `role="option"`. Repaired five stale
+  citations — row admission L306-L370;L659-L672 → `operationRows` L477-L571 + `isRootTaskDoc`/
+  `enclosureForDoc` L911-L938; BY REPO hierarchy L15-L20;L307-L343;L415-L447 → the taskHierarchy import
+  L17-L25 + `data-depth` L363-L378 + `groupRows`/`hierarchyRows` L752-L801; width constraints
+  L38-L106;L187-L214 → L61-L104;L116-L187;L188-L223; title/hover L99-L123;L212-L214;L464-L480 →
+  `rowId` L180-L187 + the span L386-L396 + `taskTitle` L841-L858 (the old third range landed on
+  `indentStyle`); `fmtWait` L1-L40 → L107-L114. Also widened the taskHierarchy row to name the now-
+  exported `orderedByCreation` (L145-L150) and the taskIdentity row to actually cover `taskLabel`.
 
 - 2026-07-24T13:17:17Z — Curator: documented hidden-rail clock pausing and memoized row rendering;
   verification fields remain pre-commit.

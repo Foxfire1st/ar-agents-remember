@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/conversation/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-27T14:20+02:00                           |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated            | 2026-08-01T10:30+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -236,6 +236,31 @@ package's serving endpoints; no cross-repository implementation source governs i
 | The parent data authority boundary. | [data overview](../overview.md) |
 
 ## Update History
+
+- 2026-08-01T10:30+02:00 — No route impact: 260731-EFA-L4 changed three files in this route and
+  all three are tests — `git status --short -- dashboard/src/data/conversation/` lists exactly
+  `reducer.test.ts`, `store.test.ts`, `stream.test.ts` and no source. The change is a fixture
+  conversion: locally hand-written wire nodes and branded-cursor casts were replaced by the shared
+  builders in `test/fixtures/wire.ts`'s companion `test/fixtures/conversationWire.ts`
+  (`conversationIdentity`, `conversationItem`, `conversationPage`, `conversationStatus`, and the
+  `eventCursor` mint that replaces the scattered `"evt-0" as ActiveEventCursor` assertions). What
+  the suites PROVE is unmoved, and that was checked rather than assumed: for each of the three
+  files the full set of `describe`/`it`/`test` titles hashes identically before and after
+  (`git show HEAD:<file> | grep -E '^\s*(it|test|describe)\(' | md5sum` against the same command on
+  the working tree), and the `it(` and `expect(` counts match exactly — reducer 14 its / 29 expects,
+  store 17 / 84, stream 11 / 47. Every reducer, store, stream, LRU, recovery and liveness assertion
+  named in the Route Model and Invariants above is the same assertion it was.
+  What DID improve is the honesty of the inputs, not the contract: `store.test.ts` used to hand the
+  store `capabilities: {} as unknown as ConversationCapabilities` — an EMPTY capability tree, where
+  the wire declares twenty-three `FeatureCapability` leaves and the server fills every one — and a
+  `ConversationStatus` cast from a single `turn` field. Both now come from builders that produce the
+  full shape and are type-checked against `data/conversation/types.ts`. The casts that remain in
+  these files are browser transport doubles (`Response`, `typeof fetch`, `EventSourceCtor`), which
+  are DOM types rather than wire vocabulary; the wire-shape casts are gone. `npm run typecheck`
+  (`tsc -b`) exits 0. Note for anyone reading the pinning strength: the mirror these fixtures are
+  checked against is hand-maintained, and nothing enforces that it agrees with
+  `serving/conversation/models.py` — no generator exists in this repository. Verification metadata
+  untouched; closeout stamps the commit.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented selected-child-only hydration,
   effective persisted-focus behavior, same-child singleflight, visible retry/failure, necessary

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T11:06+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -127,8 +127,12 @@ the worktree engine** (cloned-from, not box-edge→corner) — `cgc-seed` bows o
   `refused-conduit` on the failed `grepai-clone` lane with `data-polarity=red` + `data-fx=refuse` while the
   GrepAI engine raises a single `data-fx=fault` (CGC unaffected); a clean `engine-boot-4-seeding` frame shows
   **no** `refused-conduit`; and `engine-cgc-seed-refused` flashes the `cgc-seed` lane **amber**
-  (`data-state=refused`, `data-refused-polarity=amber`, a `data-fx=refuse` flash + a `data-fx=reindex`
-  center-out pulse) as a SOFT reroute — no `gate`/`terminal-stop`/`attention`. **T7B provider-plan block**:
+  (the conduit asserts `data-state=stale` and, positively, `data-refused-polarity` **`toBeNull()`** — the
+  polarity is DERIVED by the renderer, so the conduit carries nothing to assert it from; the amber is read
+  off the flash's own `data-polarity`, alongside a `data-fx=refuse` flash + a `data-fx=reindex`
+  center-out pulse) as a SOFT reroute — no `gate`/`terminal-stop`/`attention`. The null assertion is the
+  regression guard: it fails the moment a polarity field is put back on the edge. The test title reads
+  "AMBER (stale reroute)". **T7B provider-plan block**:
   `engine-boot-provider-blocked` renders the node-anchored `provider-block` (NOT the `fleeting-enclosure` box —
   that stays T1B/stale-base), the `engine-dropout` halos over the unlit engine slots, a steady `gate` +
   `attention`, and retry/disabled-led `recovery-chips` (the 4th `abandon` is clipped by the 3-chip cap); the
@@ -155,13 +159,22 @@ state with no RAF/ticker dependency. The 05k GSAP-gate cases assert that contrac
 cases pass `workspaceEngines` explicitly (the prop defaults to `[]`, so the existing scene-count
 assertions stay right-world-only).
 
+Assert on states the server can emit. The T9C case reads `data-state=stale` off the conduit because
+`stale` is what `_seed_edge_state` returns for a reroute; the previous `data-state=refused` assertion
+pinned a value no reducer path produces, so it could only ever have been satisfied by a fixture that
+described an impossible payload. Its companion `data-refused-polarity` `toBeNull()` is a deliberate
+negative — it is the assertion that would fail if a polarity field were reintroduced on the edge.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | `EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals). | — | [EnclosureProcessMap.tsx](EnclosureProcessMap.tsx) |
-| The scenario fixtures it renders. | — | [fixtures.ts](fixtures.ts) |
-| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | L61-L72 | [projection.ts](../../types/projection.ts) |
+| The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: "stale", … })`. | L829-L860 | [fixtures.ts](fixtures.ts) |
+| The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. | L514-L557 | [EnclosureProcessMap.test.tsx](EnclosureProcessMap.test.tsx) |
+| `refusedPolarityOf` — the derivation the test's amber expectation depends on. | L204-L241 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
+| `_seed_edge_state` — why `stale` is the honest reroute state to assert. | L1588-L1611 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
+| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | L143-L154 | [projection.ts](../../types/projection.ts) |
 | The jsdom stubs + determinism freeze. | — | [test/setup.ts](../../test/setup.ts) |
 
 ## Current L5I Maintenance
@@ -177,6 +190,16 @@ targets and the sparse overlay owns surge and reindex targets. Existing effects-
 to pin the static scene.
 
 ## Update History
+
+- 2026-08-01T11:06+02:00 — 260731-EFA-L4 curator: corrected the T9C case description. The conduit
+  assertion is no longer `data-state=refused` + `data-refused-polarity=amber`; it is `data-state=stale`
+  plus `data-refused-polarity` `toBeNull()`, because the renderer derives polarity from the state and
+  stamps nothing on the conduit. Verified `stale` is a state `_seed_edge_state` actually returns and that
+  `refused` is in neither `EngineProcessEdge`'s documented state list nor any commit in history
+  (`git log --all -S 'state="refused"'` → 0). Recorded that the null assertion is the regression guard
+  against reintroducing a polarity field, and that the amber is now read off the flash's own
+  `data-polarity`. Repaired the `ProviderNode` citation L61-L72 → L143-L154 (the old range sat inside the
+  state-vocabulary constants, not the interface) and gave the fixture row a real range.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added the regression proving
   repeating transforms live only in the sparse effects SVG when animation is enabled, while the

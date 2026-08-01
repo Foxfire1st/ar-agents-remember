@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T10:45+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -24,6 +24,77 @@ enclosure-centered `EngineProcessNode` (+ `CommitRefNode`, `ProviderBootNode`,
 served `WorkspaceProjection.version` from `1` to `2`.
 
 ## Code Commentary
+
+### 260731-EFA-L4 Metrics buckets derived from the live vocabulary
+
+This module now owns the map from lifecycle state to `Metrics` bucket field, and
+derives it from `lifecycle_state`'s **live half** rather than from a hand-written
+list.
+
+- `ACTIVE_STATES: tuple[LiveState, ...] = LIVE_STATES` (L227) — the states
+  `Metrics` buckets, the live half verbatim. It is deliberately **not** a set
+  difference `STATES - TERMINAL_STATES`: a subtraction re-derives the answer from
+  a second list that could be wrong, whereas the live half already *is* the
+  answer. `lifecycleCount` counts every lifecycle and `totalTokens` sums every
+  one, so what the per-state buckets add is the live workload — a
+  `completed`/`abandoned` lifecycle is history, not work in flight.
+- `state_count_field(state) -> str` (L230-L245) — the naming rule:
+  `running` → `runningCount`, `awaiting-developer` → `awaitingDeveloperCount`.
+  Each segment after the first has its **first character upper-cased and the rest
+  left alone**; `str.capitalize` would lower-case the tail instead, which both
+  disagrees with the TypeScript mirror (whose type-level `Capitalize<>` cannot
+  lower-case a tail, so it renders `awaitingDEVELOPERCount`) and quietly merges
+  states differing only in tail case.
+- `state_count_fields(states) -> dict[str, str]` (L248-L270) — builds the map and
+  **refuses one that is not one-to-one**, raising `LifecycleVocabularyError`
+  naming both colliding states. The rule is not injective (`a-b` and `aB` both
+  bucket into `aBCount`), and a collision does not announce itself: `Metrics` is
+  keyed by field, so two states sharing a bucket means the later count silently
+  overwrites the earlier.
+- `STATE_COUNT_FIELDS: dict[str, str] = state_count_fields(ACTIVE_STATES)`
+  (L273) — the one map the reducer's counting loop and the vocabulary-coverage
+  tests both read instead of re-enumerating buckets.
+
+**The bug this closed.** `awaiting-developer` had no bucket. `Metrics` declared
+`runningCount`/`blockedCount`/`pausedCount` only, and the reducer summed those
+three by hand, so a lifecycle that had handed the turn back counted towards
+`lifecycleCount` and `totalTokens` and towards *nothing else* — the rollup could
+not show it. `Metrics` now declares `awaitingDeveloperCount: int = 0` (L300-L302)
+alongside the other three, and because `Metrics` is `extra="forbid"`, a future
+live state whose bucket field was never declared **raises in the reducer** rather
+than reading zero.
+
+The `*Count` fields stay written out on `Metrics` because they are the served
+contract the dashboard reads by name and pyright checks by name; what makes them
+non-drifting is that the reducer fills them from the vocabulary and a test
+asserts the declaration equals `STATE_COUNT_FIELDS`.
+
+**State of the mirror** — the `STATE OF THE MIRROR` comment (L208-L226) was
+rewritten in this leaf and now describes what holds rather than deferring a
+defect. `dashboard/src/types/projection.ts` **holds the same partition, in the
+same shape**: it declares `LIVE_STATES` and `TERMINAL_STATES` as the two halves,
+spreads them into `LIFECYCLE_STATES` (live half first, so it enumerates in
+exactly the order `STATES` does here — nothing on either side indexes the tuple,
+but the two now agree for free), derives `State` from that tuple and
+`ActiveState` from the live half, and sets `ACTIVE_STATES = LIVE_STATES` — the
+live half itself, not a subtraction, for the same reason given above. Its
+`stateCountField` matches the naming rule; Python moved to that spelling, not
+the other way round, because TypeScript's type-level `Capitalize<>` cannot
+lower-case a tail and the runtime helper must agree with the type.
+
+**What the two sides enforce differs, and only in this file's favour.**
+Composition makes two of `check_state_partition`'s three refusals
+*unrepresentable* on either side: a state cannot be on `State` yet filed
+nowhere, nor filed yet absent from `State`. The third — one state filed on BOTH
+halves — is representable in both; this file refuses it at import, the mirror at
+compile time (`ActiveState & TerminalState` constrained to `never`, so `tsc -b`
+fails naming the offending state — verified by mutation, `TS2344`). Where the
+mirror genuinely cannot follow is a duplicate WITHIN one half: `Literal["a","a"]`
+collapses to one member here, while a TypeScript tuple keeps both. The
+dashboard's `contract.test.ts` catches that at runtime instead (one bucket per
+live state), which is a weaker gate but not an absent one. Do not restate this
+as "the mirror has not adopted the partition" — that was true before this leaf
+and is not true now.
 
 ### 260707-HFX2-L13 Summary-Only Task Documents
 
@@ -81,8 +152,9 @@ absent from `PUBLIC_TOOL_RESPONSE_MODELS`.
   Workspace provider nodes may be aggregate or repo-covered (`repoId`) when backend
   state has real per-repo evidence (CGC watcher rows or GrepAI `targetRepos`);
   worktree providers carry `worktreeGroup`, which remains the enclosure join key.
-- `Metrics` — workspace point counts + total tokens; slice 3b adds
-  `stalenessHistogram` (sidecar verification-age buckets).
+- `Metrics` (L278-L304) — workspace point counts + total tokens; slice 3b adds
+  `stalenessHistogram` (sidecar verification-age buckets). **260731-EFA-L4 makes
+  the per-state buckets derived rather than hand-listed** — see the next section.
 - `TokenSample` — one `{ts, cumulative}` point on a lifecycle's token fuel gauge
   (slice 3b).
 - The **slice-3b analytical nodes** (`DriftSnapshotNode`, `SidecarStaleNode`,
@@ -262,6 +334,17 @@ Projection assembly receives the latest landing facts as an input and does not c
   reducer's `build_engine_processes` stays I/O-free.
 - **`WorkspaceProjection.version` is the served-contract version** — bumped 1 → 2
   in slice 5e; clients gate on it.
+- **The `Metrics` per-state buckets are the live vocabulary, not a list**
+  (260731-EFA-L4). `ACTIVE_STATES` is `LIVE_STATES` verbatim and
+  `STATE_COUNT_FIELDS` is derived from it; a new live state grows a bucket here,
+  a count in the reducer, and — via `extra="forbid"` — a loud reducer failure if
+  the field was never declared. Never re-derive the bucket set by subtracting
+  `TERMINAL_STATES`, and never add a `*Count` field the vocabulary does not
+  produce.
+- **The bucket map must stay one-to-one.** `state_count_fields` refuses a
+  colliding map at import rather than letting one `Metrics` field silently count
+  two states; a collision is a naming problem in the state vocabulary, so it is
+  fixed by renaming a state, not by special-casing here.
 - **Creation order is structured data** — task/series consumers may use `createdAt` when it is present,
   but must not infer ordering from stored sub-task `number` strings or filename prefixes.
 - **Series token totals are derived data** — `SeriesNode.seriesTokenTotal` is served on the folder-keyed
@@ -273,25 +356,89 @@ Projection assembly receives the latest landing facts as an input and does not c
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `TaskDocNode.lifecycleId` is optional runtime attachment; `createdAt` remains structured ordering data. | — | [projection.py](projection.py) |
-| `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.createdAt`/`objective` are part of the served projection contract. | — | [projection.py](projection.py) |
-| `Analytics.series` carries the folder-keyed master aggregation surface while `taskDocuments` carries concrete active task documents. | L711-L740 | [projection.py](projection.py) |
-| `SeriesNode.seriesTokenTotal` is the served aggregate field filled by the reducer-side token helper. | L497-L523 | [projection.py](projection.py) |
-| The snapshot reader populates task `createdAt`, master objective, and sub-task creation order from JSON-primary task docs. | L635-L717; L752-L763 | [snapshots.py](snapshots.py) |
-| The persisted-record peer this mirrors (same not-a-response-model boundary). | L1-L77 | [events.py](events.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `TaskDocNode.lifecycleId` is optional runtime attachment; `createdAt` remains structured ordering data. | `TaskDocNode` L585-L631 | [projection.py](projection.py) |
+| `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.createdAt`/`objective` are part of the served projection contract. | `SeriesSubTaskNode` L634-L649; `SeriesNode` L662-L688 | [projection.py](projection.py) |
+| `Analytics.series` carries the folder-keyed master aggregation surface while `taskDocuments` carries concrete active task documents. | `Analytics` L933-L964 (`taskDocuments` L957; `series` L964) | [projection.py](projection.py) |
+| `SeriesNode.seriesTokenTotal` is the served aggregate field filled by the reducer-side token helper. | L662-L688 (`seriesTokenTotal` L684) | [projection.py](projection.py) |
+| The snapshot reader populates task `createdAt`, master objective, and sub-task creation order from JSON-primary task docs. | `read_series_documents` L1275-L1316; `_series_subtask_nodes`/`_series_subtask_created_at` L1319-L1352; `_task_doc_node` L1373-L1462 (`createdAt=doc.createdAt` L1405) | [snapshots.py](snapshots.py) |
+| The persisted-record peer this mirrors (same not-a-response-model boundary). | L1-L64 (the whole file) | [events.py](events.py) |
 | The reducer that produces these shapes and keeps derived analytics pure. | L1-L92 | [reducer.py](reducer.py) |
-| The provider projection helper that creates repo-covered workspace `ProviderNode`s from CGC watcher evidence and generic `targetRepos`. | L1-L92 | [provider_nodes.py](provider_nodes.py) |
-| `DriftSnapshotNode` carries checked/source/memory/report provenance for actionable-drift rows. | L199-L220 | [projection.py](projection.py) |
-| The state/phase vocabulary the lifecycle projection reuses. | L1-L19 | [lifecycle_state.py](lifecycle_state.py) |
-| The design: the reducer + client-agnostic projections (§2.5, §7). | L91-L118; L332-L344 | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md) |
+| The provider projection helper that creates repo-covered workspace `ProviderNode`s from CGC watcher evidence and generic `targetRepos`. | `workspace_provider_nodes` L16-L39; `_cgc_repo_provider_nodes` L83-L98; `_target_repo_provider_nodes` L139-L150 | [provider_nodes.py](provider_nodes.py) |
+| `DriftSnapshotNode` carries checked/source/memory/report provenance for actionable-drift rows. | L307-L327 | [projection.py](projection.py) |
+| The state/phase vocabulary the lifecycle projection reuses — since 260731-EFA-L4 the live/terminal partition and `LIVE_STATES`, which `ACTIVE_STATES` is verbatim. | L101-L158 | [lifecycle_state.py](lifecycle_state.py) |
+| `LifecycleVocabularyError` — the typed error `state_count_fields` raises on a colliding bucket map — and `check_state_partition`, the import-time refusal this module's comment contrasts with the mirror's compile-time one. | `LifecycleVocabularyError` L30-L38; `check_state_partition` L73-L98 | [lifecycle_state.py](lifecycle_state.py) |
+| The rewritten `STATE OF THE MIRROR` comment: the TypeScript mirror now holds the same partition in the same shape, both sides refuse double-filing (import-time here, compile-time there), and a duplicate within one half is the one asymmetry left. | comment L194-L226 (mirror paragraph L208-L226) | [projection.py](projection.py) |
+| The mirror the comment describes: `LIVE_STATES` / `TERMINAL_STATES` as halves, `LIFECYCLE_STATES` spread from them, `ACTIVE_STATES = LIVE_STATES`, and the `StatesAreFiledOnce` compile-time partition check. | L42; L48; L59; L72; L88-L90 | [dashboard/src/types/projection.ts](../../../../dashboard/src/types/projection.ts.md) |
+| The reducer counts by `STATE_COUNT_FIELDS` rather than by three hand-written sums; `Metrics(extra="forbid")` is what turns a missing bucket into a raise. | `_metrics` L524-L547 | [reducer.py](reducer.py) |
+| The bucket derivation, the collision refusal, and the `awaiting-developer` gap are pinned by test. | `MetricsBucketVocabularyTests` L1617-L1722; `StateCountFieldTests` L1950-L2005 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
+| The design: the reducer as the single owner of interpretation and the client-agnostic projection API (§2.5), restated as design principle 2 (§7). | §2.5 L241-L248; §7 L363-L390 (principle 2 at L370-L371) | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md.md) |
 
 ## Series-Contract Notes
 
 `EnclosureNode` now has explicit leaf identity and task-root fields, allowing the observer to serve active leaf enclosure records without making clients infer parent folders from contract paths. Leaf `series-contract.md` files are intentionally not `TaskDocNode`s; a promoted leaf needs a real `ar-task-document/v1` JSON document for the dashboard reader to show task content. `TaskDocNode.sections` can still render authored freeform sections from that JSON document. Master docs project as task documents and still project on `Analytics.series` for the legacy master surface. Master leaf ordering uses `createdAt` read from the referenced leaf JSON when available; task names remain display identity, not ordering metadata.
 
 ## Update History
+- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): the `STATE OF THE
+  MIRROR` comment was rewritten after the 00:35 entry below, and this card carried its old text as
+  fact. **Corrected the false claim.** The card said the TypeScript mirror "has *not* adopted the
+  partition … `LIFECYCLE_STATES` as one list of six and `TERMINAL_STATES` as a second list of two
+  beside it, with `ACTIVE_STATES` the subtraction". Verified against
+  `dashboard/src/types/projection.ts`: `LIVE_STATES` (L42) and `TERMINAL_STATES` (L48) are the
+  halves, `LIFECYCLE_STATES = [...LIVE_STATES, ...TERMINAL_STATES]` (L59), and
+  `ACTIVE_STATES = LIVE_STATES` (L72) — the same shape this file has, with no subtraction. The
+  paragraph now records what the comment (L194-L226) actually says, including the asymmetry it
+  names: both sides make two of `check_state_partition`'s three refusals unrepresentable; this file
+  refuses double-filing at import and the mirror refuses it at compile time (`ActiveState &
+  TerminalState` constrained to `never` — I reproduced the failure on a scratch copy and got
+  `TS2344: Type '"completed"' does not satisfy the constraint 'never'.`); and a duplicate WITHIN one
+  half is the one thing the mirror cannot follow, caught by `contract.test.ts` at runtime instead.
+  Added an explicit "do not restate this as un-adopted" note so the old wording is not readopted.
+  **Citation repairs.** The comment rewrite grew this file by 10 lines, so every in-file range at or
+  below it was off by exactly that: `ACTIVE_STATES` L217 → L227, `state_count_field` L220-L235 →
+  L230-L245, `state_count_fields` L238-L260 → L248-L270, `STATE_COUNT_FIELDS` L263 → L273, `Metrics`
+  L268-L294 → L278-L304, `awaitingDeveloperCount` L290-L292 → L300-L302, `DriftSnapshotNode`
+  L297-L317 → L307-L327, `TaskDocNode` L575-L621 → L585-L631, `SeriesSubTaskNode` L624-L639 →
+  L634-L649, `SeriesNode` L652-L678 → L662-L688 (`seriesTokenTotal` L674 → L684), `Analytics`
+  L923-L954 → L933-L964 (`taskDocuments` L947 → L957, `series` L954 → L964). Two rows were wrong in
+  kind rather than by offset. The `lifecycle_state.py` row cited L101-L158 for a claim that also
+  named `LifecycleVocabularyError`, which is at **L30-L38** — outside the range; it is now two rows,
+  the second citing `LifecycleVocabularyError` L30-L38 and `check_state_partition` L73-L98. And the
+  design-doc row cited **L91-L118; L332-L344** for "the reducer + client-agnostic projections
+  (§2.5, §7)": L91-L118 is §1.4/§1.5 (Phases, Fleeting vs persistent) and L332-L344 straddles §5/§6
+  — neither section is the one named. §2.5 is **L241-L248** and §7 is **L363-L390** (the
+  client-agnostic principle at L370-L371); repaired, and the link corrected to the `.md.md` sidecar
+  it should have pointed at. Re-checked and still landing unchanged: `snapshots.py` (all four
+  helpers), `events.py` L1-L64, `reducer.py` L1-L92 and `_metrics` L524-L547, all three
+  `provider_nodes.py` helpers, and both `test_observer_projection.py` classes. Added two rows (the
+  rewritten comment, and the mirror declarations it describes).
+- 2026-08-01T00:35+02:00 — 260731-EFA-L4 curator: the card described `Metrics` as "workspace point
+  counts + total tokens" and did not mention that this module had gained a module-level API.
+  Verified against the diff and the current source and added a section for it: `ACTIVE_STATES`
+  (L217, `LIVE_STATES` verbatim — not a set difference), `state_count_field` (L220-L235, whose
+  first-char-only upper-casing is what keeps it agreeing with the TypeScript mirror's
+  `Capitalize<>`), `state_count_fields` (L238-L260, which refuses a non-injective map by naming
+  both colliding states), and `STATE_COUNT_FIELDS` (L263). Recorded the bug this closed —
+  `awaiting-developer` had no bucket, so a lifecycle that handed the turn back inflated
+  `lifecycleCount`/`totalTokens` and landed nowhere; `Metrics` now declares
+  `awaitingDeveloperCount` (L290-L292) and `extra="forbid"` turns a future missing bucket into a
+  reducer raise. Also recorded the mirror's un-adopted state (`dashboard/src/types/projection.ts`
+  still keeps two lists and a subtraction), which is deliberately out of scope here. Added two
+  invariants. **Citation repairs** — every range in the reference table was re-checked and eight
+  did not land on their symbol: `Analytics.series`/`taskDocuments` L711-L740 → L923-L954
+  (`taskDocuments` L947, `series` L954); `SeriesNode.seriesTokenTotal` L497-L523 → L652-L678
+  (`seriesTokenTotal` L674); `DriftSnapshotNode` L199-L220 → L297-L317; the snapshots reader row
+  L635-L717; L752-L763 → `read_series_documents` L1275-L1316, `_series_subtask_nodes`/
+  `_series_subtask_created_at` L1319-L1352, `_task_doc_node` L1373-L1462 (`createdAt` L1405);
+  `events.py` L1-L77 → L1-L64 (the file is 64 lines, so the range overshot the file);
+  `provider_nodes.py` L1-L92 → named per helper, because L1-L92 excluded
+  `_target_repo_provider_nodes` (L139-L150), the half of the claim about generic `targetRepos`;
+  `lifecycle_state.py` L1-L19 → L101-L158 (L1-L19 is now only the module docstring — the
+  vocabulary moved below the partition helpers); and the two rows citing `projection.py` with no
+  range got their classes named. The `reducer.py` L1-L92 and design-doc ranges were re-checked and
+  still land. Added three reference rows (the reducer's `_metrics`, and the two test classes that
+  pin the derivation).
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/observer/projection.py` since the L2 base commit is the whole-tree
   `ruff format` pass in `00e8379`, which re-wrapped 4 line(s) with no token change whatsoever.

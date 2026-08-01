@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/control/api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T09:28+02:00 |
+| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,24 +26,65 @@ refusal path (L0 reviewer obligation O4).
 
 ## Code Commentary
 
+### 260731-EFA-L4 Current Delta — All Seventeen Routes Declare Their Contract
+
+Every route now names a `response_model`, and — because `_map_typed_error` is the one mapper for
+this whole surface — **one shared `CONTROL_RESPONSES` table is the complete refusal surface of
+all seventeen**: 400, 403, 404, 409 (`BridgeEpochMismatchRefusal | StatusRefusal`), 422 and 503.
+Declaring only the success model would have been a half-declaration.
+
+Most routes declare the model `_dump` already serialized (`InterruptOperation`,
+`OperationQueueProjection`, `WithdrawalOperationProjection`, `PendingWithdrawalRecoveryList`,
+`WithdrawalRecovery`, `AttachmentOperationProjection`, `ConversationPolicyProjection`,
+`ConversationTelemetry`). Four routes needed more:
+
+- **`/conversation/attachments` and `/attachments/rebind`** (L482, L531) declare
+  `StagedAttachments` — a model that did not exist, because that body (`operation` + `receipts`)
+  is assembled at the route.
+- **`/operation-queue/withdraw`** (L280) declares `WithdrawQueueAnswer`
+  (`WithdrawnQueueResponse | FailedWithdrawalResponse`) plus `WITHDRAW_OUTCOME_RESPONSES`:
+  `withdraw_http_status` reads which of the two was built to pick the status, so a **failed
+  withdrawal is still this route's own answer** on 202/404/409, not an error body.
+- **The three interrupt routes** (L151, L184, L218) add `INTERRUPT_OUTCOME_RESPONSES` for the
+  same reason: `interrupt_http_status` picks 200/202/422/503 off the operation's OWN
+  `acknowledgement`/`settlement`, so those statuses carry an `InterruptOperation`. Declaring
+  them as refusals — which the shared table alone would have done — was wrong, and the
+  conformance suite caught it on the real 422.
+- **`/conversation/submit`** (L635) declares `ConversationSubmitted` for **one body shape across
+  three statuses**: `acceptance` picks 200, 202 (`unknown`) or 422 (`rejected`/`unsupported`).
+  Its 422 entry must UNION `CONTROL_RESPONSES[422]`, because `responses={**a, **b}` is a dict
+  merge — a bare `{422: ConversationSubmitted}` would have DELETED the shared refusal rather
+  than joining it, and `_map_typed_error` reaches this route's 422 too
+  (`CapabilityRefusedError` and `OperationRejectedError` both carry `http_status = 422`).
+
+Nothing validates at runtime: every handler returns a `JSONResponse`, so FastAPI never reaches
+`serialize_response`. `mcp/tests/test_serving_response_conformance.py` drives each route and
+validates the real body — and it validates in **alias form only** (`by_name=False`), which is
+what pins these bodies to camelCase rather than merely to the right field set.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
+
 ### Logic
 
-The `router` (L58-L61) mounts at `/api/terminal/{ar_session_id}` with the structured-control tag. The
-seventeen routes: interrupt (L131), interrupt-status (L160), interrupt-reconcile (L190) [R1];
-`GET /operation-queue` (L220), withdraw (L242), withdraw-status (L272), withdraw-reconcile (L300),
-`GET .../pending-withdrawal-recoveries` (L328), withdraw-recovery (L352), withdraw-recovery-ack
-(L378) [R2/R3]; attachments (L420), attachments/rebind (L465), `GET .../attachments/{request_id}/
-status` (L497), attachments/{request_id}/reconcile (L524), submit (L551) [R4]; `GET .../conversation/
-policy` (L590) [R5]; `GET .../conversation/telemetry` (L612) [R6]. Each handler invokes the two L0
+The `router` (L75-L78) mounts at `/api/terminal/{ar_session_id}` with the structured-control tag. The
+seventeen routes: interrupt (L151), interrupt-status (L184), interrupt-reconcile (L218) [R1];
+`GET /operation-queue` (L252), withdraw (L280), withdraw-status (L314), withdraw-reconcile (L346),
+`GET .../pending-withdrawal-recoveries` (L378), withdraw-recovery (L406), withdraw-recovery-ack
+(L436) [R2/R3]; attachments (L482), attachments/rebind (L531), `GET .../attachments/{request_id}/
+status` (L567), attachments/{request_id}/reconcile (L598), submit (L635) [R4]; `GET .../conversation/
+policy` (L685) [R5]; `GET .../conversation/telemetry` (L711) [R6]. Each handler invokes the two L0
 dependencies (`get_conversation_runtime`, `resolve_conversation_authorization`), gets the per-app
 service via `conversation_control_service`, and delegates to the owning module (operations,
-withdrawals, attachments, policy, telemetry, queue_projection). `_map_typed_error` (L107) maps the
-`_TYPED_ERRORS` tuple (L61 — AuthorityError, ConversationCompositionError,
+withdrawals, attachments, policy, telemetry, queue_projection). `_map_typed_error` (L124) maps the
+`_TYPED_ERRORS` tuple (L80-L88 — AuthorityError, ConversationCompositionError,
 HarnessBridgeEpochMismatchError, HarnessControlError, ControlRefError, ControlOperationError,
-SessionResolutionError) to the serving status idiom via `_error` (L100); `_dump` (L127) serializes
-wire models. Multipart staging parses through `_parse_uploads` (L634-L645), `_parse_metadata_array`
-(L648), and `_upload_for` (L662-L683) with the `MAX_SUBMIT_ASSET_BYTES` bounded read. The request bodies
-`InterruptBody`/`WithdrawStatusBody`/`RecoveryFetchBody`/`RecoveryAckBody`/`RebindBody` (L76-L95) are
+SessionResolutionError) to the serving status idiom via `_error` (L117); `_dump` (L144) serializes
+wire models with `exclude_none=True`. Multipart staging parses through `_parse_uploads` (L737-L748),
+`_parse_metadata_array` (L751), and `_upload_for` (L765-L786) with the `MAX_SUBMIT_ASSET_BYTES`
+bounded read. The request bodies
+`InterruptBody`/`WithdrawStatusBody`/`RecoveryFetchBody`/`RecoveryAckBody`/`RebindBody` (L93-L114) are
 strict wire models.
 
 ### Conventions
@@ -63,6 +104,12 @@ wire.
   only caller/runtime resolution seam.
 - Authoritative pop-back is queue withdrawal recovery, not client-side draft reconstruction; the
   control routes are not a third conversation read port.
+- **`CONTROL_RESPONSES` is only as complete as `_map_typed_error`.** A status added to that
+  mapper without being added to the table leaves seventeen routes emitting an undeclared shape.
+- **Outcome statuses are success shapes, and spreading tables must union.** An acknowledged-but-
+  unsettled interrupt, a not-withdrawable withdrawal, and a `202`/`422` submit are answers with
+  their own bodies; and since `responses={**a, **b}` overwrites rather than joins, every entry
+  that overlaps a shared status has to carry the shared refusal model too.
 
 ### Todos
 
@@ -85,10 +132,13 @@ foundation suite pins the exact seventeen routes.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. | L95-L201; L552-L564 | [operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
-| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). | L811-L1242 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). | L831-L1262 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | L36-L101 | [policy.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/policy.py) |
 | The two L0 request dependencies every handler consumes. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The foundation regression pins the exact seventeen owned routes (GET-only on policy/telemetry/queue/pending). | L54-L82 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The shared `CONTROL_RESPONSES` table plus the two outcome tables and the three route-assembled models these routes declare. | `CONTROL_RESPONSES`; `INTERRUPT_OUTCOME_RESPONSES`; `WITHDRAW_OUTCOME_RESPONSES`; `StagedAttachments`; `ConversationSubmitted` | [../response_contract.py](../response_contract.py.md) |
+| The two 422-carrying control errors that force `/conversation/submit`'s 422 to union the shared refusal with the success model. | `CapabilityRefusedError`; `OperationRejectedError` | [service.py](service.py.md) |
+| The suite that enforces the declarations, drives all seventeen routes, and validates in alias form only (`by_name=False`) so camelCase is pinned. | `validate_wire`; `test_serving_response_conformance` | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
 
 ## Cross-Repo References
 
@@ -116,6 +166,24 @@ codes are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-01T09:28+02:00 — 260731-EFA-L4 curator: recorded the seventeen `response_model`
+  declarations and the shared `CONTROL_RESPONSES` table (complete because `_map_typed_error` is
+  the one mapper), plus the four routes that needed more than the model `_dump` already
+  serialized: `StagedAttachments` for the two route-assembled attachment bodies,
+  `WithdrawQueueAnswer` + `WITHDRAW_OUTCOME_RESPONSES` on withdraw, `INTERRUPT_OUTCOME_RESPONSES`
+  on the interrupt trio (where 200/202/422/503 carry an `InterruptOperation`, not a refusal —
+  the conformance suite caught the wrong declaration on the real 422), and
+  `ConversationSubmitted` on submit, whose 422 must union `CONTROL_RESPONSES[422]` because
+  `{**a, **b}` is a dict merge and `CapabilityRefusedError`/`OperationRejectedError` both reach
+  it. Added the two matching invariants. Re-derived **25** in-file citations that the added
+  decorator blocks shifted — all seventeen route lines (interrupt L131→L151 through telemetry
+  L612→L711), `router` L58-L61→L75-L78, `_TYPED_ERRORS` L61→L80-L88, `_error` L100→L117,
+  `_map_typed_error` L107→L124, `_dump` L127→L144, `_parse_uploads` L634-L645→L737-L748,
+  `_parse_metadata_array` L648→L751, `_upload_for` L662-L683→L765-L786, and the request bodies
+  L76-L95→L93-L114 — plus the `models.py` control wire block L811-L1242→L831-L1262, shifted by
+  the twenty comment lines that leaf added to that file. Verification metadata pinned until
+  closeout stamps the L4 commit.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations. `router` cited
   the single line L59; the `APIRouter(...)` construct with its prefix and tag is L58-L61. The two

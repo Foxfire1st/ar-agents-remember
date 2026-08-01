@@ -5,7 +5,7 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastUpdated            | 2026-08-01T17:40+02:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                         |
@@ -245,7 +245,7 @@ response models are `models/operator_inbox.py`.
 | The inbox record/store pair provides the external-chat pull return channel. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal` | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
+| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -286,6 +286,7 @@ No record schema, wire field or refusal changed.
 
 ## Update History
 
+- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `create_gate`, `decide_gate`,
   `create_operator_inbox_entry`, `OperatorInboxStore.record_delivery`/`advance_rung`/`renew`,
   `create_expectation_row`, `write_expectation_row`, `SupervisorSignalCooldownStore.last_sent` and
@@ -301,9 +302,6 @@ No record schema, wire field or refusal changed.
   confirmed-gone inbox predicate, same-lock terminal resolution/compaction, persisted folded-id
   removal accounting, unchanged TTL/cap fallback, and the callback no-store-reentry contract.
   Verification metadata remains pinned until closeout stamps the candidate commit.
-+## 260712-TRH-L4 Route Impact
-
-Controlplane expectations now start at the durable exact-session dispatch-brief entry, using its timestamp and id; pending rows remain pinned and never enter generic readdressing or respawn escalation.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20 control-plane route impact: documented the shared

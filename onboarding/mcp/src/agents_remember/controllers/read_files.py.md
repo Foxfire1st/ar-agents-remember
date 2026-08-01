@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/controllers/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:31+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:42+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -41,7 +41,19 @@ assembles the payload, optionally attaching the deduped front-door, and finally
 emits a facts-only `read.packet` — passing `repo.repo_id` (slice 07b, so the
 packet carries `data.repoId`, the read's repo) alongside the per-file facts.
 
-`_parse_file_request` validates one entry: a non-empty repo-relative `path`; an
+**This module declares `FileReadStatus`** (L54) — the onboarding-lookup outcome
+for one requested path, `found | missing | disabled | unsupported |
+not_requested` — with `VALID_FILE_READ_STATUSES` derived from it by `get_args`
+(L57). The declaration moved here from `models/read_files.py` in 260731-EFA-L4,
+and the direction is the point: `_resolve_onboarding` is the only function that
+decides the value and `_read_one` drops it into an untyped payload dict, so a
+copy on the model side would only have been measured against this one when a
+real read carried a new member — as a `ValidationError` on the `read_ar_files`
+tool path, with no handler for one. `models.read_files.FileRead.status` now
+imports it, and `test_wire_vocabulary_exhaustiveness` asserts the set this
+function actually returns *equals* the declared alias.
+
+`_parse_file_request` (L146) validates one entry: a non-empty repo-relative `path`; an
 `onboarding` flag (default true; only `False` suppresses the lookup); and a
 `source` that is either `"full"`/absent (whole file) or a `{startLine, endLine}`
 dict. The range is validated up front — both ends must be integers `>= 1` and
@@ -68,7 +80,10 @@ source-omitted (`None`, byte count 0) so one bad file never aborts the whole
 batch. The returned byte count is the UTF-8 length of what was returned — a fact
 for the event, never the content.
 
-`_resolve_onboarding` returns `(status, body, attach)`. With onboarding
+`_resolve_onboarding` (L216-L218) returns
+`tuple[FileReadStatus, str | None, bool]` — `(status, body, attach)`. Since
+260731-EFA-L4 the first element is **narrowed to the alias this module declares**
+rather than a bare `str`. With onboarding
 suppressed it returns `not_requested` (no front-door). Otherwise it resolves the
 storage mode for the path via `resolve_storage_for_source`: `disabled` →
 `disabled`; a non-sidecar mode (e.g. `inline`) → `unsupported`; a sidecar mode
@@ -118,6 +133,10 @@ ever appears it is honored once.
 - **Source presence is independent of onboarding status.** `source` rides its own
   field and is present whenever the file exists and decodes; it is unaffected by a
   `missing` / `disabled` / `unsupported` onboarding status.
+- **This module owns the `FileReadStatus` vocabulary.** It is declared here
+  because `_resolve_onboarding` decides it; the strict wire model imports it.
+  Adding a member is a one-place edit here, and the exhaustiveness suite fails if
+  the declared set and the returned set stop matching in either direction.
 - **The route index is authoritative; missing means missing — don't probe.** When
   a governing index covers a path but does not list it, the status is `missing`
   and the controller never probes the filesystem for an unrelated sidecar
@@ -138,7 +157,8 @@ ever appears it is honored once.
 | Finding | Source Path |
 | --- | --- |
 | The thin payload wrapper that returns this controller's dict through the token choke point. | [mcp/tools/read_files.py](agents-remember/mcp/src/agents_remember/mcp/tools/read_files.py) |
-| The strict response contract this dict validates against. | [models/read_files.py](agents-remember/mcp/src/agents_remember/models/read_files.py) |
+| The strict response contract this dict validates against; `FileRead.status` (L36) imports `FileReadStatus` from here rather than declaring its own. | [models/read_files.py](agents-remember/mcp/src/agents_remember/models/read_files.py) |
+| `test_every_onboarding_status_the_read_controller_returns_validates` asserts the set `_resolve_onboarding` returns equals `VALID_FILE_READ_STATUSES`. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
 | Repo-resolution authority guard. | [_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
 | The authority-violation error raised on a bad batch/range/path. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
 | The full read and the net-new ranged reader (`read_text_range`). | [kernel/filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
@@ -151,6 +171,16 @@ ever appears it is honored once.
 
 ## Update History
 
+- 2026-08-01T09:42+02:00 — 260731-EFA-L4 curator: body updated. This module now DECLARES
+  `FileReadStatus` (L54) and the derived `VALID_FILE_READ_STATUSES` (L57); the alias moved here
+  from `models/read_files.py` because `_resolve_onboarding` is the only function that decides the
+  value, and its signature is now `-> tuple[FileReadStatus, str | None, bool]` (L216-L218) instead
+  of `-> tuple[str, ...]`. The card had described the status vocabulary only as the returned tuple's
+  first element with no type and no owner. Added the ownership paragraph and the matching
+  invariant. Citations: `_parse_file_request` L146 and `_resolve_onboarding` L216-L218 pinned; the
+  `models/read_files.py` reference row now names `FileRead.status` L35 as the importer, and a row
+  was added for the exhaustiveness suite. Verification metadata pinned until closeout stamps the
+  L4 commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2: the `resolve_coordination_context` call moved onto the
   resolver's `CoordinationHints` / `EnclosureSelector` parameter objects; the rest of the file was
   touched only by the whole-tree `ruff format`. Batch limits, status vocabulary, dedup and the

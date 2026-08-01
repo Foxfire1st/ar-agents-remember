@@ -175,6 +175,7 @@
     "mcp/tests/test_route_index.py",
     "mcp/tests/test_seat_lifecycle.py",
     "mcp/tests/test_seed_timeouts.py",
+    "mcp/tests/test_served_state_conformance.py",
     "mcp/tests/test_serving.py",
     "mcp/tests/test_serving_app_background_loops.py",
     "mcp/tests/test_serving_app_routes.py",
@@ -184,6 +185,7 @@
     "mcp/tests/test_serving_harness_control_api.py",
     "mcp/tests/test_serving_helper_behaviour.py",
     "mcp/tests/test_serving_notes.py",
+    "mcp/tests/test_serving_response_conformance.py",
     "mcp/tests/test_setup_progress.py",
     "mcp/tests/test_signal_routing.py",
     "mcp/tests/test_sim_fixture_builder.py",
@@ -211,6 +213,7 @@
     "mcp/tests/test_tool_response_budgets.py",
     "mcp/tests/test_tool_response_conformance.py",
     "mcp/tests/test_tools.py",
+    "mcp/tests/test_wire_vocabulary_exhaustiveness.py",
     "mcp/tests/test_worktree_abandon.py",
     "mcp/tests/test_worktree_and_observer_helpers.py",
     "mcp/tests/test_worktree_closeout_quality_gate.py",
@@ -224,8 +227,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 202,
-    "fileSidecars": 212,
+    "sourceFilesInScope": 205,
+    "fileSidecars": 215,
     "childRoutes": 0
   },
   "routingTerms": [

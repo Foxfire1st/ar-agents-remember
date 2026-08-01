@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T00:02+02:00 |
+| lastUpdated | 2026-08-01T17:40+02:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
@@ -28,8 +28,8 @@ serialized), `WithdrawalRecovery`, the additive optional `PromptRequest.assets` 
 `WithdrawalResult.recovery` fields, all `*_json` serializers, the
 `operation_timeline_item_wire_bytes` budget measurer, and the shared typed `read_asset_bytes` spool
 reader. The truncation envelope preserves terminal identity: `clip_evidence_payload` re-carries a
-clipped frame's tiny terminal-identity enums (frame `type`, pi `message.stopReason`, codex `turn.id`
-+ `turn.status`) at their original payload paths via `_preserved_evidence_identity` +
+clipped frame's tiny terminal-identity enums (frame `type`, pi `message.stopReason`, codex `turn.id` +
+`turn.status`) at their original payload paths via `_preserved_evidence_identity` +
 `_bounded_identity_scalar` under the `MAX_PRESERVED_EVIDENCE_SCALAR_CHARS = 256` drop-whole ceiling,
 so oversized-frame interrupt settlement stays honest while no other content crosses the clip
 boundary. One reserved key `AR_EVIDENCE_METHOD_KEY = "arEvidenceMethod"` and one optional typed
@@ -270,6 +270,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The daemon
   route row is now L304-L339 of `harness_control_api.py` — the routes were regrouped into
   `_register_submission_routes`, and `api_terminal_submit` (L304-L323) / `api_terminal_reconcile`

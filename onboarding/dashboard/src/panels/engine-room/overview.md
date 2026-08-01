@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T15:10+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -122,8 +122,10 @@ moved" notification). The modes: **T7B provider-plan block** — both worktrees 
 and the runtime setup config missing, so the gate anchors ON the worktree CODE node with `engineDropout`
 halos over the dark CGC/GrepAI engines; derived ABOVE `fleeting` (`&& !providerPlanBlocked`) so it never falls
 into the big red `FleetingEnclosure` despite sharing the "contract not yet written" fact. **T9B seed-fault** —
-a red `refusedConduit` flash on the refused clone lane + the GrepAI engine down-flickering. **T9C
-reindex-reroute** — an amber `refusedConduit` flash + reindex (soft, a fallback not a failure). **T12B
+a red `refusedConduit` flash on the `failed` clone lane + the GrepAI engine down-flickering. **T9C
+reindex-reroute** — an amber `refusedConduit` flash on the `stale` seed lane + reindex (soft, a fallback
+not a failure); since 260731-EFA-L4 both polarities are DERIVED from the served `edge.state` rather than
+read from a field — see "Derived Refused-Conduit Polarity" below. **T12B
 live-sync** — the soft `MovedBadge` shows first (running, `memMoved`), then the memory ledger-map lane gates +
 ghosts (`memSyncMoved`) while the CODE lane keeps advancing. **T14C integration-conflict** — a red
 `refusedConduit` flash escalating to the terminal `TerminalStop` (all-or-nothing, no recovery chips). **T18
@@ -213,6 +215,14 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 - **Action boundary** — ordinary action availability remains display-only. Task 11's exception is the
   chat-routed `GateResponder`, which injects instructional text into an AR-hosted chat; no clock / no git
   in the browser.
+- **Refused-conduit polarity is DERIVED, never carried (260731-EFA-L4).** `EnclosureCanvas::refusedPolarityOf`
+  reads `edge.state` alone — `failed` → red fault, `stale` → amber reroute, on seed/integration kinds
+  only. There is no `refused` edge state and no `refusedPolarity` field; the conduit stamps no
+  `data-refused-polarity` (only the topmost `RefusedConduit` overlay carries `data-polarity`). This is
+  presentation derived from a served state, not a semantic the client invents, so it sits inside the
+  server-semantics rule rather than against it. `EnclosureProcessMap.test.tsx`'s T9C case is the guard:
+  it asserts `data-state="stale"` AND `data-refused-polarity` `toBeNull()` on the conduit. Reintroduce a
+  polarity field and that null assertion is what breaks.
 
 ## Repo-Internal References
 
@@ -222,6 +232,9 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 | The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 | The honest-motion gate the GSAP/Motion read. | [useShouldAnimate.ts](agents-remember/dashboard/src/panels/engine-room/useShouldAnimate.ts) |
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
+| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| `_seed_edge_state` and `_DECISIVE_SETUP_EDGE_STATES` — the only producers of a seed lane's state, including the `stale` reroute. | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
+| The client mirror of the edge, which no longer declares a polarity field. | [types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
 
 ## Current L5I Route State
 
@@ -239,7 +252,67 @@ attention transforms; `useEngineTimeline` queries both through one timeline. Eff
 and visual choreography remain unchanged. Further steady-state Hangar/Engine Room CPU work is
 developer-deferred and is not a blocker for this leaf.
 
+## Derived Refused-Conduit Polarity (260731-EFA-L4)
+
+The T9B/T9C/T14C refused-conduit flash no longer reads a polarity off the projection. Four files moved
+together and the visual result is unchanged; what changed is that the lane can now only be driven by a
+payload the server can actually send.
+
+- **The derivation.** `EnclosureCanvas::refusedPolarityOf` keeps its kind guard (`cgc-seed`,
+  `grepai-clone`, `integration`, `integration-mem`) and then maps state alone: `failed` → red,
+  `stale` → amber, anything else → no flash. The `edge.state === "refused"` arm is gone, and with it
+  `EngineProcessEdge.refusedPolarity` from `types/projection.ts`, the `data-refused-polarity` attribute
+  from `Conduit`, the `cgcRefused` flag from the fixture `EdgeStates`, and the `refused` term from
+  `useEngineTimeline::fxSignature`'s re-arm filter (now `failed`/`stale` only).
+- **Why that is a correction, not a loss of coverage.** `observer/projection.py::EngineProcessEdge` is
+  `extra="forbid"`, declares no `refusedPolarity`, and its state comment lists
+  nominal · running · blocked · failed · stale · skipped · complete · planned · unknown — no `refused`.
+  `git log --all -S 'state="refused"'` returns zero commits, so no served payload has ever carried the
+  state the removed arm was written for. The fixture that fed it was a body the server would have
+  rejected, and the branch it reached was unreachable in production.
+- **The T9C scenario now models the reroute the reducer emits.** `engine-cgc-seed-refused` seeds
+  `edges({ cgc: "stale", … })`; `reducer.py::_seed_edge_state` returns `stale` verbatim through
+  `_DECISIVE_SETUP_EDGE_STATES` when the setup run itself is stale, and the amber is derived from that.
+  The scenario ID is deliberately unchanged: **"refused" now names only the visual beat** — the
+  `refusedConduit` recipe and the `data-fx='refuse'` one-shot — never an edge state. Its `currentPhase`
+  and `summary` copy were retimed to match, saying the seed went stale and is rerouting rather than that
+  it was refused.
+- **The `integration` / `integration-mem` arms are kept on purpose and are dead against today's
+  reducer.** Both edge builders (`_process_edges`, `_start_process_node`) emit only `worktree-add`,
+  `cgc-seed`, `ledger-map`, `grepai-clone` and `sync`, so no served node reaches either arm. They stay
+  because `integration` IS in `EngineProcessEdge`'s own documented `kind` vocabulary and the whole
+  integration lane — geometry, the T14C conflict scenario, the `replay` strategy bend — is
+  fixture-authored and test-covered. That is the reason; it is **not** forward-compatibility, and
+  nothing is scheduled to start emitting them. `integration-mem` is not itself in the documented list
+  and lives or dies with `integration`. Delete the lane and its coverage together, or not at all.
+
 ## Update History
+
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the
+  `observer/projection.py` citations in the 12:50 entry below. The range `L752-L771` → `L762-L781`
+  (`class EngineProcessEdge` L762, `extra="forbid"` L770, last field `detail` L781), and the two
+  inner line references the same restructure moved: the nine-state comment L768 → **L778** and
+  `state: str` L769 → **L779**. Those two were missed by the derived correction list and are
+  recorded here so the next reader does not re-derive them. No body claim changed.
+
+- 2026-08-01T12:50+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
+  the "Derived Refused-Conduit Polarity" section and the matching invariant, and corrected the Purpose
+  paragraph's two stale mode descriptions — T9B's "refused clone lane" is the `failed` lane and T9C's
+  amber flash rides the `stale` seed lane. Evidence for the whole change: `EngineProcessEdge`
+  (`observer/projection.py` L762-L781) is `extra="forbid"`, declares no `refusedPolarity`, and its state
+  comment (L778, above `state: str` at L779) lists
+  nominal/running/blocked/failed/stale/skipped/complete/planned/unknown with no
+  `refused`; `git log --all -S 'state="refused"'` returns 0 commits in all of history; and
+  `_DECISIVE_SETUP_EDGE_STATES` (`observer/reducer.py` L1588-L1592) is what makes `stale` a state
+  `_seed_edge_state` (L1595-L1611) really returns. Recorded that the scenario ID
+  `engine-cgc-seed-refused` is unchanged on purpose because "refused" now names the beat, not a state,
+  and that `EnclosureProcessMap.test.tsx`'s `data-refused-polarity` `toBeNull()` is the guard against
+  reintroducing the field. Kept the `integration`/`integration-mem` arms documented with their ACTUAL
+  justification (`integration` is in the model's own `kind` list at L765-L767 and the lane is
+  fixture-authored/test-covered) rather than as forward-compatibility — I checked both reducer edge
+  builders, `_process_edges` (L1501-L1574) and `_start_process_node` (L1086-L1150), and neither emits
+  either kind. Added three two-cell `Repo-Internal References` rows in the existing two-column shape.
+  Evidence: the engine-room suites run green. Verification metadata remains pinned until closeout.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: repeating surge, reindex,
   and attention transforms now render in `EngineFxOverlay`, a sparse sibling SVG aligned to the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T00:00+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -51,14 +51,27 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   while the product documented it as mandatory. The preview now reports one of three statuses:
   `enforced`, `no-code-commit`, or `wrapper-unavailable`. The last is deliberately *reported*
   rather than silent: closeout proceeds, and the payload states that the code commit was not
-  quality-checked and why.
+  quality-checked and why. Since 260731-EFA-L4 the `enforced` reason (line 77) also names the
+  staging step that now precedes the run, because the gate derives its scope from the index and
+  therefore certifies whatever the caller staged — see the L4 section below.
 
   One hazard lives at this route's boundary: `closeout.py` calls these functions with an
   unannotated `contract`, so passing `contract.repo_name` where a `Path` is expected type-checks
   clean and silently disables the mandatory gate. Only
   `test_worktree_closeout_quality_gate.py::test_closeout_hands_the_gate_the_code_worktree_not_the_repository_name`
   observes the real argument; do not weaken it into a stub.
-- `guidance.py` renders lifecycle phase and typed next-operation payloads. Its
+- `guidance.py` renders lifecycle phase and typed next-operation payloads, and **since
+  260731-EFA-L4 it is where the phase/next-move vocabulary is declared** — `WorktreePhase`
+  (line 28), `NextOperation` (line 38) and `NextTool` (line 47) are `Literal`s owned by the
+  state machine that produces them, and `models/worktree.py::WorktreeSummary` imports those
+  three names instead of retyping them (`models/worktree.py` lines 15-19). Before that the
+  wire model held a hand-written copy, and the two sets had drifted: `carryover-pending`,
+  `abandoned`, `request_carryover_decision` and `memory_carryover_apply` were all emitted by
+  the functions below and all rejected by the packet. `lifecycle_guidance` now returns the
+  `LifecycleGuidance` TypedDict (line 85) rather than `dict[str, object]`, and the three
+  phase-group helpers return it too, so a phase string this module invents but the wire cannot
+  carry is a pyright error here rather than a pydantic `ValidationError` raised inside the
+  `context_packet` tool handler, which has no `except` for one. Its
   `lifecycle_guidance` checks the disposal states first: `cleanup == "completed"`
   → the `cleanup-completed` phase, and (slice 05l P1) `cleanup == "abandoned"` →
   a dedicated `abandoned` phase (`nextOperation: "done"`). Before the abandoned
@@ -81,6 +94,22 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   `carryover-pending` routing the existing `memory_carryover_apply` (carryover must run
   while the parked memory branch still exists), carried → `cleanup-pending` carrying
   `carryoverDoneAt`.
+  **L4 also splits the next-move builder in two.** `next_guidance` (line 142) is now typed
+  `NextOperation`/`NextTool` and belongs to the phase machine; the five payloads that are a
+  *gate or a block* rather than a phase — the closeout preview's `request_commit_approval` and
+  the four blocked start/sync recoveries — call the sibling `recovery_guidance` (line 159)
+  with its own `RecoveryOperation` (line 61) / `RecoveryTool` (line 68) vocabulary. Same keys,
+  same order, byte-identical wire; the split exists so that widening the recovery set cannot
+  widen `WorktreeSummary.nextOperation`, which would put "requires developer approval" and
+  "blocked on a stale base" back into the set the context packet claims to report. Undo the
+  split and the packet again advertises values its own state machine can never produce.
+  `status_payload` and `projected_status_payload` return the `WorktreeStatusPayload` TypedDict
+  (line 138) — `WorktreeStatusFacts` (line 98, the snake_case contract facts) merged with
+  `LifecycleGuidance` — instead of `dict[str, object]`, and gain one optional key:
+  `unknown_contract_cells`, present only when the contract file carried a cell outside its
+  vocabulary that `worktree_contract._vocabulary_cell` substituted for. It is the one place a
+  degraded contract read becomes visible to whoever called a worktree tool, and it says that
+  the phase beside it was computed from the substituted values.
 - `landing.py` (slice 5h; hardened 5l P2) observes the successful-landing arc
   best-effort — `git ls-remote` branch tips (`origin/<feat>`, `origin/mem-main`) +
   a best-effort `gh pr list`, all timeout-bounded and `stdin=DEVNULL` (the #49
@@ -223,10 +252,14 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   branch. Clean no-op re-closeout keeps the completed integration state and does
   not duplicate an already-present ledger mapping.
   260718-CHATS-L5I inserts the strict `code_quality_gate.py` adapter after
-  preview/approval validation and before every apply mutation. A quality failure
-  therefore leaves code, memory, ledger, contract, and applied-gate state
-  untouched; only a clean wrapper result permits `commit_if_dirty` and the
-  subsequent onboarding/ledger sequence.
+  preview/approval validation and before every apply **commit**. A quality failure
+  therefore creates no code, memory or ledger commit and leaves contract and
+  applied-gate state untouched; only a clean wrapper result permits `commit_if_dirty`
+  and the subsequent onboarding/ledger sequence. **Since 260731-EFA-L4 the gate is not
+  reached directly**: `closeout_result` (line 727) calls `_gate_staged_code` (line 625),
+  which stages the code worktree first, so the *index* is one mutation that now precedes
+  the gate and survives a refusal. See the L4 section below for why staging is what makes
+  the gate see created files, and why the two refusals must run ahead of the reset.
 - `args.py` defines the frozen `WorktreeArgs` cross-layer DTO that operation
   modules consume in place of `argparse.Namespace`; `from_namespace` builds it
   from partial CLI/controller namespaces with per-field defaults. It carries `parent_task` and `leaf_id`
@@ -251,6 +284,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | [test_lifecycle_finalize.py](agents-remember/mcp/tests/test_lifecycle_finalize.py) |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py); [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
+| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| This route's phase/next-move `Literal`s are the ones the wire model imports, and no producer here emits a value outside them. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py); [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
 
 ## 260731-EFA-L2 Lifecycle Parameter Objects
 
@@ -293,13 +328,16 @@ here, now on the owner:
 | Operation | Site |
 | --- | --- |
 | `commit` | `git.py` `commit_if_dirty` (line 85) |
-| `merge --ff-only` | `integrate.py` (line 460, and memory at 465) |
-| `reset --hard` | `integrate.py` rollback (lines 476-477) |
-| `rebase` | `integrate.py` (lines 182, 234) |
-| `branch -f` | `start.py` (line 386) |
-| `branch -D` | `cleanup.py` (lines 72, 89) |
-| `worktree remove [--force]` | `cleanup.py` (line 27) |
-| `push origin --delete` | `cleanup.py` `_push_branch_deletion` (line 137) |
+| `merge --ff-only` | `integrate.py` (line 462, and memory at 467) |
+| `reset --hard` | `integrate.py` rollback (lines 478-479) |
+| `rebase` | `integrate.py` (lines 184, 236) |
+| `branch -f` | `start.py` (line 393) |
+| `branch -D` | `cleanup.py` (lines 77, 94) |
+| `worktree remove [--force]` | `cleanup.py` (line 32) |
+| `push origin --delete` | `cleanup.py` `_push_branch_deletion` (line 142) |
+
+L4 moved every one of these except `git.py`'s: `integrate.py` +2, `start.py` +7, `cleanup.py` +5 and
+`code_quality_gate.py` +11 lines above the cited sites. The symbols and the claims are unchanged.
 
 All nine git-touching modules in this route now import from
 `agents_remember.kernel.git_command`: `git.py`, `abandon.py`, `guidance.py`,
@@ -321,21 +359,21 @@ Three route-visible consequences beyond "same behaviour, one runner":
 - **`cleanup.py`'s remote calls are bounded for the first time.** `git ls-remote --heads
   origin` and `git push origin --delete` ran inside an MCP tool call, which the client
   cannot cancel, through a runner that set no timeout at all — an unreachable or wedged
-  remote held the tool call open forever. `_remote_git` (line 108) runs them at
+  remote held the tool call open forever. `_remote_git` (line 113) runs them at
   `GIT_REMOTE_TIMEOUT_SECONDS` and returns `None` on `subprocess.TimeoutExpired`, which
-  `delete_remote_branch_if_present` (line 122) and `_push_branch_deletion` (line 136)
+  `delete_remote_branch_if_present` (line 127) and `_push_branch_deletion` (line 141)
   fold into the already-handled `{"remote_deleted": False, "reason": "remote-unreachable"}`.
   A stall therefore reads as an unreachable remote in the payload rather than escaping
   as an exception or hanging.
-- **`code_quality_gate.py`'s repository probe is guarded.** `_git_common_dir` (line 176)
+- **`code_quality_gate.py`'s repository probe is guarded.** `_git_common_dir` (line 187)
   hand-rolled `subprocess.run` without `env=`; it now calls
   `run_git(code_worktree, ["rev-parse", "--path-format=absolute", "--git-common-dir"])`
-  (line 179). That value decides which repository the mandatory closeout quality gate
+  (line 190). That value decides which repository the mandatory closeout quality gate
   then certifies, and this gate runs from the pre-push hook — where `GIT_DIR` *is* set
   by git itself.
 - **`code_quality_gate.py` also stops handing the selectors to its child.**
-  `quality_environment` (line 157) used to start from `dict(os.environ)`; it now builds
-  from `git_environment()` (line 167), so the eight repository selectors are gone before
+  `quality_environment` (line 168) used to start from `dict(os.environ)`; it now builds
+  from `git_environment()` (line 178), so the eight repository selectors are gone before
   the quality wrapper subprocess starts. That wrapper derives its own scope from
   `git ls-files` and its diff base from `merge-base`, and closeout spawns it from paths
   where `GIT_DIR` can be exported. Every git call inside that child strips the selectors
@@ -351,7 +389,156 @@ repository and asserts the real one received the commit and the decoy did not
 strips the selectors, but the decoy test re-sets them inside its own scope precisely so
 it cannot pass on the conftest's account — do not "simplify" that away.
 
+## 260731-EFA-L4 Typed Vocabularies, And A Gate That Sees What It Certifies
+
+Two independent things landed here, and both are about a check that could be defeated with
+nothing reporting it.
+
+### The six contract vocabulary cells stopped crossing `dataclasses.replace`
+
+`abandon.py`, `cleanup.py`, `closeout.py`, `integrate.py` and `start.py` all amended the
+contract with `dataclasses.replace(contract, cleanup=…, integration_status=…, …)`. Typeshed
+declares `def replace(obj, /, **changes: Any)`, so **pyright checked nothing about those
+keywords**: `replace(contract, cleanup="reclaimed-ish")` produced zero diagnostics even though
+`WorktreeContract.cleanup` is a four-member `Literal` and the wire model that reports it
+rejects everything else. Each module now routes the vocabulary cells through
+`worktree_contract.ContractCells` + `amend_contract`, a frozen record whose six declared
+fields put them back in front of the checker, while `replace` still performs the copy and
+still carries the free-text cells beside it (commit hashes, approval notes, strategies —
+these have no vocabulary to check against, which is exactly why they stay where they are).
+
+| Call site | Cells it moves |
+| --- | --- |
+| `abandon.py` line 74 | `cleanup="abandoned"` |
+| `cleanup.py` line 395 | `cleanup="completed"` |
+| `integrate.py` line 120 | `integration_status="blocked"` |
+| `integrate.py` line 490 | `integration_status="completed"`, `cleanup="pending"` |
+| `closeout.py` line 765 | `human_review_status`, `closeout_status`, `integration_status`, `cleanup` |
+| `start.py` line 141 | `memory_mode="disabled"` (the memory-disabled downgrade) |
+
+Undo one of these back to a bare `replace` keyword and **nothing fails at the call site** —
+that is the whole defect. It fails later, at the packet, as a pydantic `ValidationError`
+raised inside an MCP tool handler that has no `except` for one. The rule that keeps it shut is
+"no `replace` call anywhere may carry one of these six keywords", enforced together with
+`mcp/tests/test_wire_vocabulary_exhaustiveness.py`.
+
+`start_contract.build_start_contract` (line 187) gained a second `except` for the same reason.
+`worktree_start`'s `workflow_kind` and `memory_mode` reach the MCP signature as free `str`
+(the tool declares `workflow_kind: str = "light-task"` and documents `'light-task'` or
+`'chat-task'`), and `worktree_contract._task_vocabulary` now *refuses* an unknown one at both
+contract factories. Nothing between there and the `@server.tool()` handler catches a
+`ContractError`, so line 198 converts it through the new
+`leaf_ref_start.invalid_contract_request_result` (line 38) into the same
+`WorktreeCommandResult(2, {"state": "invalid-request", …})` shape every other blocked start
+already used, naming the legal set instead of producing a traceback. Note that this `except`
+is broader than its docstring says: it also catches a `ContractError` raised by the
+`write_contract` inside `_parent_series_contract` (line 176), which is a write-validation
+failure rather than a bad caller argument — the message still names the field and the file, so
+the refusal stays honest, but it is not only about arguments.
+
+### `closeout.py` stages the worktree before the quality gate
+
+`closeout_result` (line 727) no longer calls `run_strict_code_quality_gate` directly; it calls
+`_gate_staged_code` (line 625), which does `git reset --mixed --quiet HEAD` then `git add -A`
+(lines 679-680) and *then* runs the gate.
+
+**Why:** every rail of the wrapper reads the index. `code_quality/check.py::derive_scope`
+(line 199) enumerates what ruff and pyright are given with `git ls-files`, and `diff_coverage`
+diffs the base against the tracked tree — both blind to a file git has never been told about.
+Closeout commits with `git add -A`. So until it staged first, **every file a task created
+rather than edited went into the commit without a single rail reading a line of it**, and the
+gate reported green having never seen it. Check it against this route's own history:
+`git show --diff-filter=A --name-only abc7cbcc` (L3's tail, the commit this leaf is based on)
+lists four added files, two of them `.py` — `mcp/tests/test_cold_start.py` and
+`mcp/tests/test_git_command.py` — and neither could have appeared in that closeout's
+`git ls-files`, because `ls-files` does not report a path git has never been told about.
+The index cut the other way too: a path the task *deleted* stayed in `ls-files` until the
+deletion was staged, so ruff was handed a file that no longer existed and took an `E902`.
+
+**Why the reset and not just the add:** git applies ignore rules only to paths it does not
+already track or hold staged, so a file staged by a refused attempt stays staged even after
+the retry adds it to `.gitignore`, and the commit carries it. `--mixed` is index-only, so the
+tree the gate certifies is byte-for-byte what the task left on disk; the reset simply makes
+each run recompute the index from the working tree under the ignore rules in force *now*.
+
+**The ordering is load-bearing, and this is the part not to "simplify".** `_gate_staged_code`
+runs `_refuse_outside_a_linked_worktree` (line 557) and `_refuse_conflicted_worktree`
+(line 599) **before** the reset:
+
+- The first compares `git rev-parse --git-dir` with `--git-common-dir`: they differ in a
+  linked worktree and are the same path in a repository's own checkout. It tests the property
+  that makes staging safe rather than the contract's `kind` label, because
+  `worktree_contract.default_series_contract` records `code_worktree=code.repo_path` — the
+  primary checkout itself — and nothing else stops such a contract reaching
+  `worktree_closeout_apply`. Move the reset ahead of it and the reset inflicts exactly the
+  damage the refusal exists to prevent: a mixed reset in a checkout somebody works in discards
+  their `git add -p` selection.
+- The second lists `git diff --name-only --diff-filter=U`. `git add -A` over an unmerged index
+  does not fail — it *resolves* every conflict to whatever the working tree holds, markers and
+  all, and closeout then commits that. Move the reset ahead of it and the check is **silently
+  disarmed**: `git reset` drops the unmerged index entries and removes `MERGE_HEAD`, so
+  `--diff-filter=U` reports nothing and the refusal never fires again.
+
+**A refused gate leaves the worktree staged, deliberately.** There is no rollback and none is
+wanted: this checkout is the task's own disposable worktree (which is what the first refusal
+makes true rather than assumed), nothing is committed, and the next attempt resets and
+restages from the working tree so it reaches the index a first run would have reached. An
+earlier attempt saved the index file aside and copied it back; that machinery is **gone rather
+than fixed**, because it could not survive `core.splitIndex` (the saved pointer outlives the
+`sharedindex.<sha>` that `add -A` expires, leaving `status` exiting 128) nor `SIGTERM`, which
+is how an MCP server actually dies.
+
+Both refusals and the staging are **conditional on the gate running at all** —
+`requires_strict_code_quality(contract.code_worktree, code_would_commit=…)` still decides, so a
+consuming checkout carrying no `code_quality/check.py` wrapper stages nothing early, runs
+neither refusal, and reaches `commit_if_dirty`'s own `git add -A` exactly as before.
+
+Three surfaces were re-worded to match, and they are wire-visible:
+`code_quality_gate.code_quality_gate_preview`'s `enforced` reason (line 77) now names the
+staging; `closeout_preview_payload`'s `closeout_order` (line 312) lists the two refusals, the
+reset-and-stage step and the gate as four entries where it listed one; and the preview
+`summary` says a refused gate leaves the worktree staged and commits nothing.
+`run_strict_code_quality_gate`'s docstring records the corresponding boundary — it certifies
+the index it is handed and says nothing about how it came to look that way, so its failure
+message claims only that nothing was committed, **not** that the staging was undone.
+
+Pinned by `mcp/tests/test_worktree_closeout_quality_gate.py`:
+`CloseoutGateSeesCreatedFilesTests` (a created file's lint error fails the gate; the gate's
+scope is the commit's content), `TaskWorktreePreconditionTests` (the repository's own checkout
+is refused before anything is staged; a series contract's `code_worktree` is exactly that
+checkout), `ConflictedIndexTests::test_the_reset_runs_after_the_conflict_check_not_before_it`,
+and `RetryStagesWhatAFirstRunWouldTests::test_a_retry_commits_the_tree_a_first_run_would`.
+
 ## Update History
+- 2026-08-01T00:00+02:00 — 260731-EFA-L4 curator. **Corrected the closeout claim that a quality
+  failure leaves everything untouched**: `closeout_result` now reaches the gate through
+  `_gate_staged_code`, which resets and stages the code worktree first, so the index is one
+  mutation that precedes the gate and deliberately survives a refusal (no commit is created —
+  that part still holds). Added the L4 section: why staging is what makes the gate see files a
+  task *created* (`derive_scope` reads `git ls-files`, closeout commits `git add -A`; `abc7cbcc`
+  itself shipped four unread added files, two of them `.py`), why the mixed reset rather than a
+  bare `add -A`, and why `_refuse_outside_a_linked_worktree` / `_refuse_conflicted_worktree`
+  must both run *before* the reset — `git reset` drops the unmerged entries and `MERGE_HEAD`,
+  which silently disarms the conflict check. Recorded that all five contract-amending modules
+  moved their vocabulary cells off `dataclasses.replace` (typeshed's `**changes: Any` meant
+  pyright checked none of them) onto `ContractCells`/`amend_contract`, with the six call sites,
+  and that `build_start_contract` now returns a `ContractError` as an `invalid-request` result —
+  noting that this `except` is broader than its docstring claims. Rewrote the `guidance.py`
+  bullet: this module now *declares* `WorktreePhase`/`NextOperation`/`NextTool` and
+  `models/worktree.py` imports them, `lifecycle_guidance` returns the `LifecycleGuidance`
+  TypedDict, `status_payload` returns `WorktreeStatusPayload` with the new optional
+  `unknown_contract_cells`, and the gate/block payloads moved to the sibling `recovery_guidance`
+  so a wider recovery set cannot widen `WorktreeSummary.nextOperation`. **Citations: checked 26,
+  repaired 18.** Still correct: `git.py` L7/L18/L85 and `landing.py` L31/L56/L79/L93/L124.
+  Moved (L4 inserted lines above them; every new range re-read and confirmed to contain the
+  named symbol): `integrate.py` +2 — merge `--ff-only` L460→**L462** and memory L465→**L467**,
+  `reset --hard` L476-477→**L478-479**, rebase L182→**L184** and L234→**L236**; `start.py` +7 —
+  `branch -f` L386→**L393**; `cleanup.py` +5 — `worktree remove` L27→**L32**, `branch -D`
+  L72→**L77** and L89→**L94**, `_remote_git` L108→**L113**,
+  `delete_remote_branch_if_present` L122→**L127**, `_push_branch_deletion` L136→**L141** and its
+  `push origin --delete` L137→**L142**; `code_quality_gate.py` +11 — `quality_environment`
+  L157→**L168**, `git_environment()` L167→**L178**, `_git_common_dir` L176→**L187**, its
+  `run_git` L179→**L190**. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T22:52+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
   **Repaired the two citations the fixes moved and confirmed the other eleven.** Still correct,
   each re-read against the current file and confirmed to contain the symbol the claim names:

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/conversation-library/`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-26T15:40+02:00                           |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated            | 2026-08-01T10:35+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -119,6 +119,23 @@ serving endpoints; no cross-repository implementation source governs it.
 | The parent data authority boundary. | [data overview](../overview.md) |
 
 ## Update History
+
+- 2026-08-01T10:35+02:00 — No route impact: 260731-EFA-L4 changed exactly one file in this
+  route and it is a test — `git status --short -- dashboard/src/data/conversation-library/` lists
+  only `store.test.ts`; `types.ts` and `client.ts` and `store.ts` are untouched. The whole change is
+  one line of fixture hygiene: `const KEY = "ar-lck1.k1" as LibraryConversationKey` became
+  `libraryConversationKey("ar-lck1.k1")`, the named mint in
+  `test/fixtures/conversationWire.ts`, so the branded key is produced in one registered place
+  instead of asserted at the call site. `LibraryConversationKey` is `string & { __brand }` — an
+  opaque server-issued token with no structure to get wrong — so the mint changes where the
+  assertion lives, not what it can express. Checked rather than assumed: the full set of
+  `describe`/`it`/`test` titles hashes identically before and after
+  (`git show HEAD:<file> | grep -E '^\s*(it|test|describe)\(' | md5sum` against the working tree),
+  and the counts match exactly at 7 `it(` blocks and 16 `expect(` calls. The exact-open focus gate,
+  the caller-stable requestId rule, the F6 hardening, and the no-durable-index rule are all asserted
+  by the same assertions they were. The `as unknown as` casts still in the file are `fetch`/`Response`
+  transport doubles, not wire nodes. `npm run typecheck` (`tsc -b`) exits 0. Verification metadata
+  untouched; closeout stamps the commit.
 
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: extended the wire+store contract for the harness
   sub-agent grouping — `ConversationLibraryRow.agents` (capability-free `ConversationLibraryAgentRow`

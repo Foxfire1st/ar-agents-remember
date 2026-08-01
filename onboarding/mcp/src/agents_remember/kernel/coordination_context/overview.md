@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T00:00+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -36,7 +36,17 @@ for path-rule eligibility, `cross_repo.py` for branch-gated adjacent repo facts,
 
 The package is intentionally split by responsibility:
 
-- `models.py` owns dataclasses and typed dictionaries.
+- `models.py` owns dataclasses and typed dictionaries — with one deliberate exception since
+  260731-EFA-L4: `CoordinationContext.memory_mode` (line 151) is no longer an independently
+  declared `Literal["internal", "external", "disabled"]` but
+  `worktrees.worktree_contract.MemoryMode`, imported at line 8. The two were the same three
+  members, written twice, and this package is a *consumer* of that vocabulary rather than an
+  author of it: `resolver._resolve` assigns `contract.memory_mode` straight into the field
+  (line 284, reaching the constructor at line 307) whenever a contract is in scope, and falls
+  back to `_memory_mode(topology)` (line 342, `internal`/`external` only — a resolved context
+  is `disabled` only because a contract said so) when none is. Retype it here and the two
+  copies can disagree again, which is a type error at line 284 in the good case and, in the
+  bad one, a value this dataclass accepts that the contract writer refuses.
 - `paths.py` owns path/topology primitives.
 - `resolver.py` composes a `CoordinationContext` without performing mutation.
 - `settings.py` chooses JSON settings over Markdown fallback and delegates
@@ -82,6 +92,20 @@ branch and contract-lookup precedence are unchanged.
 
 ## Update History
 
+- 2026-08-01T00:00+02:00 — 260731-EFA-L4 curator: this route's only L4 change is
+  `models.py` (+5/-2), and it moves one ownership line. `CoordinationContext.memory_mode` stopped
+  declaring its own `Literal["internal", "external", "disabled"]` and now imports
+  `worktrees.worktree_contract.MemoryMode` (models.py line 8, field at line 151), so the
+  Route Model's "`models.py` owns dataclasses and typed dictionaries" needed the exception
+  recorded rather than left implied. Verified the direction of the dependency by reading
+  `resolver.py`: `contract.memory_mode` is assigned into the field at line 284 and reaches the
+  constructor at line 307, with `_memory_mode(topology)` (line 342) covering the no-contract
+  case in `internal`/`external` only. This is not a new package boundary — `contracts.py`
+  (line 14) and `resolver.py` (line 33) already imported from `worktrees.worktree_contract`;
+  what changed is that one vocabulary is now declared once instead of twice. The resolver's
+  facts-only boundary, settings authority, contract-lookup precedence and the L2
+  `hints=`/`selector=` API are all unchanged. Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-07-31T21:04+02:00 — 260731-EFA-L3 curator: No route impact: checked Purpose, Hot Path
   Summary, Route Model and Invariants And Boundaries against this route's only L3 change —
   `cross_repo.py` (1 file, +7/-3), where `git_branch` (line 26) and `git_head_or_empty` (line 35)

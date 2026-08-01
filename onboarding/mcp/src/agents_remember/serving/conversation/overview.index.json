@@ -36,12 +36,13 @@
     "mcp/src/agents_remember/serving/conversation/dependencies.py",
     "mcp/src/agents_remember/serving/conversation/models.py",
     "mcp/src/agents_remember/serving/conversation/ports.py",
+    "mcp/src/agents_remember/serving/conversation/response_contract.py",
     "mcp/src/agents_remember/serving/conversation/router.py",
     "mcp/src/agents_remember/serving/conversation/runtime.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 61,
-    "fileSidecars": 7,
+    "sourceFilesInScope": 62,
+    "fileSidecars": 8,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -49,6 +50,7 @@
     "agents",
     "agents_remember",
     "authorization",
+    "contract",
     "control",
     "conversation",
     "dependencies",
@@ -60,6 +62,8 @@
     "ports",
     "projectors",
     "remember",
+    "response",
+    "response_contract",
     "router",
     "runtime",
     "serving",
@@ -78,6 +82,7 @@
       "mcp/src/agents_remember/serving/conversation/dependencies.py",
       "mcp/src/agents_remember/serving/conversation/models.py",
       "mcp/src/agents_remember/serving/conversation/ports.py",
+      "mcp/src/agents_remember/serving/conversation/response_contract.py",
       "mcp/src/agents_remember/serving/conversation/router.py",
       "mcp/src/agents_remember/serving/conversation/runtime.py"
     ],
@@ -92,6 +97,8 @@
       "models",
       "ports.py",
       "ports",
+      "response_contract.py",
+      "response_contract",
       "router.py",
       "router",
       "runtime.py",
@@ -108,7 +115,7 @@
       "mcp/src/agents_remember/serving/conversation/",
       "mcp/src/agents_remember/serving/conversation/overview.md",
       "serving/overview.md",
-      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
+      "e52edaf5b655f495580efd93306afdf922b19b51",
       "ConversationRuntime",
       "active/",
       "projectors/",
@@ -119,6 +126,7 @@
       "harness_control_api.register_harness_control_routes",
       "library/overview.md",
       "control/overview.md",
+      "responses=",
       "mcp/src/agents_remember/serving/",
       "mcp/src/agents_remember/controlplane/",
       "dashboard/src/",
@@ -126,10 +134,7 @@
       "agent <short-id>",
       "ConversationLibraryAgentRow",
       "ActiveConversationPort",
-      "ConversationLibraryPort",
-      "ConversationScope",
-      "ConversationCompositionError",
-      "ConversationAuthorizationResolver"
+      "ConversationLibraryPort"
     ]
   },
   "fallback": {

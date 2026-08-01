@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/AttentionQueue.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-08-01T09:20+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,7 +45,15 @@ POSTs call `releaseAttention(...)`. Empty → a `muted` "queue clear".
 ### Conventions
 
 Panda `css`/`cva`; the `Panel` chrome with a sizing `className` (`flex:0 1 auto; maxHeight:42%`). The
-severity also drives a `<Dot>`.
+severity also drives a `<Dot>`, which is `aria-hidden` and therefore cannot carry the severity itself.
+It is wrapped in a `severityMark` span that supplies the accessible name: `role="img"` plus
+`aria-label={`Severity: ${q.severity}`}` (and the matching `title`), `data-testid="attn-severity"`.
+The role is load-bearing — `aria-label` on a bare `<span>` names a `generic`, which ARIA prohibits
+(axe-core `aria-prohibited-attr`, `serious`) and which no screen reader announces, so before the
+wrapper carried a role the severity reached nobody. `LifecycleList`'s equivalent span needs no role
+only because it sits inside React Aria's `role="option"`, whose name-from-content absorbs the label.
+`severityMark` also takes the `flexShrink:0`, because the wrapper — not the `Dot` — is now the flex
+item in the row.
 
 ### Invariants And Boundaries
 
@@ -53,7 +61,9 @@ The queue is computed server-side (never re-ranked here). Wait-times are formatt
 computed from the clock. Dismissal stays source-scoped: lifecycle rows require a lifecycle target,
 gate-open rows can be consumed by gate id, and actionable drift is the only targetless repo-level row
 this component can dismiss. Provider/down/setup/start alarms remain fact-backed and cannot be dismissed
-by this component.
+by this component. The severity must stay announced from a role that can hold a name: this panel's
+mark has no surrounding widget role to inherit from, so the `role="img"` on `severityMark` is the only
+thing putting the severity in the accessibility tree.
 
 ### 2026-07-24 Curator Delta
 
@@ -66,11 +76,23 @@ through the component's own subscription.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The server-side attention queue this reads. | — | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The `selectQueue` selector. | L23-L32 | [data/selectors.ts](../data/selectors.ts) |
-| `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | L103-L118 | [AttentionQueue.tsx](AttentionQueue.tsx) |
-| Dismiss and Clear all optimistically suppress rows and release failed POSTs. | L126-L158 | [AttentionQueue.tsx](AttentionQueue.tsx) |
+| The `selectQueue` selector. | L37-L46 | [data/selectors.ts](../data/selectors.ts) |
+| `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | L122-L128 | [AttentionQueue.tsx](AttentionQueue.tsx) |
+| `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. | L146-L178 | [AttentionQueue.tsx](AttentionQueue.tsx) |
+| `severityMark` — the wrapper that carries the severity's accessible name, and why the role is required. | L41-L49 | [AttentionQueue.tsx](AttentionQueue.tsx) |
+| The `role="img"` / `aria-label` span rendered around the decorative `Dot`. | L222-L230 | [AttentionQueue.tsx](AttentionQueue.tsx) |
+| `Dot` is `aria-hidden`, so its consumers own the announced name. | L118-L126 | [grammar/Dot.tsx](../grammar/Dot.tsx) |
 
 ## Update History
+
+- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: documented the `severityMark` wrapper — the `Dot`
+  is `aria-hidden`, so the severity is now announced from a `role="img"` span with
+  `aria-label="Severity: …"`; recorded why the role (not the label) is the fix, and that `flexShrink`
+  moved to the wrapper because it is now the flex item. Repaired three stale citations against the
+  current source: `selectQueue` L23-L32 → L37-L46 (the old range covered `hasLiveWorktree` and the
+  `EMPTY_QUEUE` cache fields, not the selector), `canDismiss` L103-L118 → L122-L128 (the old range
+  covered `titleForAttention`/`detailForAttention`/`dismissPayload`), and the dismiss row
+  L126-L158 → L146-L178, renamed to the actual symbols `dismissItem`/`clearAll`.
 
 - 2026-07-24T13:17:50Z — Documented memoized hidden-rail age behavior. Verification hash/date remain
   pinned to the pre-commit source stamp.

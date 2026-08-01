@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                         |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:12+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                         |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -69,8 +69,22 @@ string and exit code is the same):
 ### Conventions
 
 States are data, never exceptions: `synced`, `would-sync`, `already-current`,
-and blocked payloads with `next_guidance` recovery args mirror the start
+and blocked payloads with `recovery_guidance` recovery args mirror the start
 module's blocked-state pattern.
+
+**The next-move builder is `recovery_guidance`, not `next_guidance` (260731-EFA-L4).**
+`_memory_sync_block`'s `needs-review` branch is this module's only next-move block, and it
+calls `guidance.recovery_guidance("choose_memory_sync_recovery", tool="worktree_sync",
+args=contract_next_args(contract), required_args=["memory_sync_choice"])`. The emitted keys
+and their order are byte-identical to what `next_guidance` produced — `nextOperation`,
+`nextTool`, `nextArgs`, `nextRequiredArgs` — so nothing on the wire moved. The split is in
+the *type*: `next_guidance` is now narrowed to the phase machine's `NextOperation` /
+`NextTool` `Literal`s, which `models.worktree.WorktreeSummary` imports, and
+`choose_memory_sync_recovery` is deliberately not a member of them. It lives in
+`RecoveryOperation` — the vocabulary for payloads that are a *block*, not a lifecycle
+phase. This result is rendered as a `FlexibleToolResponse` and never reaches
+`WorktreeSummary`, so widening the phase vocabulary to hold it would have put "blocked on a
+moved official memory line" into the set the context packet's `nextOperation` claims to be.
 
 **One bounded exception since 260731-EFA-L3.** `run_git` is now
 `agents_remember.kernel.git_command.run_git` (the module-local copy in `modules.git` is
@@ -118,6 +132,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The contract's `sync_log` field persists each base-pair advance. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Upstream fetch + ref helpers come from the freshness kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
 | The `run_git` every merge/ff/show in this module calls, and the `GIT_LOCAL_TIMEOUT_SECONDS` default that bounds them. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| `recovery_guidance` and the `RecoveryOperation` / `RecoveryTool` vocabularies this module's block belongs to, kept separate from the phase machine's `next_guidance`. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | Sync behavior coverage: ff pair, mid-cycle block, conflicts, choices, dry-run. | [test_worktree_sync.py](agents-remember/mcp/tests/test_worktree_sync.py) |
 
 ## Cross-Repo References
@@ -130,6 +145,18 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-01T09:12+02:00 — 260731-EFA-L4 curator: the Conventions section said blocked payloads
+  carry "`next_guidance` recovery args"; that call is gone. `_memory_sync_block` now calls
+  `recovery_guidance("choose_memory_sync_recovery", tool="worktree_sync",
+  args=contract_next_args(contract), required_args=["memory_sync_choice"])`, and the import block
+  at the top of the module takes `recovery_guidance` in place of `next_guidance` (it imports no
+  `next_guidance` at all now). Corrected the sentence and recorded why the split exists: the emitted
+  keys are unchanged, but `next_guidance` is now narrowed to the phase vocabulary
+  `WorktreeSummary` imports, and `choose_memory_sync_recovery` is a `RecoveryOperation` because this
+  payload is a block rendered as a `FlexibleToolResponse`, not a lifecycle phase. Added the
+  `guidance.py` reference row. Nothing else in this module changed — the five L2 helpers, the
+  consistent-pair gate, both merge paths and the L3 timeout note all still describe the file
+  exactly. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: `run_git` now comes from
   `kernel.git_command`, not `modules.git`. The module's own logic is untouched, but the
   Conventions section asserted "States are data, never exceptions" without qualification and that no

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T10:30+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -99,6 +99,37 @@ selected while hidden and returns under BY PHASE; the total heading count stays 
 masters/leaves have no false controls. This test sidecar is refreshed because the test file is a changed
 source contract, while generated package assets receive no sidecars.
 
+### 260731-EFA-L4 state-mark handover
+
+Two regressions in the `LifecycleList independent Operations signals` block pin that this list hands
+the lifecycle state to `Dot` at all — the row builds `item.variant` as
+`lifecycle?.state ?? statusVariant(doc.status)`, so a live lifecycle's RAW state string is what
+reaches the mark. `seedActivityProjection` took a second parameter (`state`, defaulting to
+`"running"`) so the one activity fixture can be re-seeded in any state.
+
+- **`awaiting-developer`** — seeds the activity leaf in that state and asserts the cell's
+  `aria-label` is `"Task progress: awaiting-developer; phase: build"`, then compares the row's mark
+  `outerHTML` against two bare `<Dot>` renders: it must EQUAL `bareDotOf("awaiting-developer")` and
+  must NOT equal `bareDotOf("__no-such-variant__")`. The negative half is the real assertion — the
+  state used to appear in neither `statusVariant` nor `Dot`'s variant list, so it fell through to
+  the unrecognised-variant base and a handoff row read as nominal. The mark is read out of the DOM
+  BEFORE the bare `Dot` renders, because both renders share `document.body`.
+- **`paused` vs `abandoned`** — `rowMarkOf(state)` (`cleanup()` → re-seed → render → return the
+  mark's `outerHTML`) is called for each and the two must differ. Both states reach `Dot` through
+  this list's own `item.variant`, so this is a single-rail comparison, not a cross-panel one.
+
+What `Dot` does with each variant is `Dot.test.tsx`'s contract; these two only prove the handover.
+The tests therefore assert on rendered `outerHTML` equality rather than on any colour or glyph.
+
+Separately, the local `projection()` builder no longer hand-lists the metric buckets — it calls
+`metricsFor(lifecycles)` from the mirror. That is not cosmetic: `Metrics` extends
+`LifecycleStateCounts`, a mapped type derived from the LIVE half of the state vocabulary
+(`ActiveState` is `LIVE_STATES` itself, no longer `State` minus the terminal pair), so a state filed
+live adds a REQUIRED bucket field and any hand-written metrics literal stops compiling. The hand-written
+copy this replaced is exactly what let `awaiting-developer` be counted nowhere. No assertion in this
+file reads `metrics`; the seeds simply track the contract now instead of restating a stale snapshot
+of it.
+
 ### 260712-TRH-L6 Operations signaling matrix
 
 The L6 regressions keep the three Operations row signals independent. They pair a running task with an
@@ -126,21 +157,33 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 - The long-title test proves the full label remains available through the DOM `title` attribute and that
   the row/title/metadata shrink constraints are present, including the absence of metadata auto-margin;
   it does not attempt to measure browser ellipsis layout in jsdom.
+- The state-mark tests own the HANDOVER only. They must not restate `Dot`'s per-variant colour, glyph,
+  or animation — those belong to `Dot.test.tsx`, and duplicating them here would make a palette change
+  fail two files for one reason. Comparison is against a bare `<Dot variant=…>` render, so the
+  assertion stays true whatever treatment the variant is given.
+- Seed fixtures state lifecycles and derive metrics (`metricsFor`); a hand-written metrics literal must
+  not come back, because it cannot fail when the state vocabulary grows.
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The component under test admits root/master docs, active-enclosure-matched leaves, series fallbacks, and active-enclosure-backed lifecycle fallbacks. | L252-L286; L443-L455 | [LifecycleList.tsx](LifecycleList.tsx) |
-| The regression fixture proves sidebar inclusion/exclusion for root docs, active leaves, cleanup-completed leaves, enclosure fallbacks, inactive leaves, loose leaves, and unenclosed lifecycles, plus BY REPO child depth and BY PHASE flatness. | L129-L260 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The numbered-leaf regression fixture proves a leaf document whose file stem is longer than `EnclosureNode.leafId` still nests under its master when its authored task id matches the enclosure leaf id. | L264-L318 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| `operationRows` in the component under test admits root/master docs, active-enclosure-matched leaves, series fallbacks, and active-enclosure-backed lifecycle fallbacks. | L477-L571 | [LifecycleList.tsx](LifecycleList.tsx) |
+| `docRow`/`seriesRow` build the mark as `lifecycle?.state ?? statusVariant(...)` — the handover these tests pin. | L592-L597; L641-L646; L982-L1001 | [LifecycleList.tsx](LifecycleList.tsx) |
+| The `awaiting-developer` and `paused`-vs-`abandoned` state-mark regressions, with `rowMarkOf`/`bareDotOf`. | L1190-L1230 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| `seedActivityProjection` takes the seeded lifecycle `state`, so one fixture serves every state case. | L1125-L1160 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| `Dot` — the variant treatments these tests deliberately do not restate. | L23-L129 | [grammar/Dot.tsx](../grammar/Dot.tsx) |
+| `metricsFor` / `LifecycleStateCounts` — why the seeds derive metrics instead of listing buckets. | L208-L257 | [types/projection.ts](../types/projection.ts) |
+| The regression fixture proves sidebar inclusion/exclusion for root docs, active leaves, cleanup-completed leaves, enclosure fallbacks, inactive leaves, loose leaves, and unenclosed lifecycles, plus BY REPO child depth and BY PHASE flatness. | L227-L360 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| The numbered-leaf regression fixture proves a leaf document whose file stem is longer than `EnclosureNode.leafId` still nests under its master when its authored task id matches the enclosure leaf id. | L401-L456 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | The reopen regressions prove a reopened worktree-less enclosure is hidden until restart then re-admitted, and the identity regression proves one row per `enclosureId` with lifecycle annotation (both binding directions). | reopen-hidden + reopen-restart + one-row tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
 | The orphan-lifecycle regression proves a doc-less enclosure-backed runtime row nests under its master via the computed parent key instead of floating top-level. | orphan test | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The long-title fixture proves native row title hover text plus the row/title/metadata shrink classes on an admitted enclosure-backed task row. | L296-L350 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The shared hierarchy helper supplies the parent match, child task-document id, and creation-order placement that the test expects in the Operations row label. | L15-L58; L73-L88 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
-| The shared helper applies typed task selection and label contracts. | L1-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
-| The Zustand projection store seeded by the test. | L1-L112 | [data/store.ts](../data/store.ts) |
-| The frontend mirror of `WorkspaceProjection`, `LifecycleProjection`, and `EnclosureNode`. | L1-L80; L360-L390 | [types/projection.ts](../types/projection.ts) |
+| The long-title fixture proves native row title hover text plus the row/title/metadata shrink classes on an admitted enclosure-backed task row. | L1018-L1081 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
+| The shared hierarchy helper supplies `findParentTaskMatch`, `taskDocHierarchyLabel`, and `taskDocParentKey` — the parent match, child task-document id, and parent key the test expects in the Operations row label. | L28-L67 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
+| `taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey` and `parseTaskSelection` apply the typed task selection contract; `taskLabel`/`taskDocumentLabel` the label contract. | L17-L76; L213-L244 | [taskIdentity.ts](../data/taskIdentity.ts) |
+| `dashboardStore` — the Zustand projection store seeded (and `reset()`) by the test. | L225-L348 | [data/store.ts](../data/store.ts) |
+| The frontend mirror of `LifecycleProjection` and `EnclosureNode`. | L132-L176 | [types/projection.ts](../types/projection.ts) |
+| The frontend mirror of `WorkspaceProjection`. | L711-L726 | [types/projection.ts](../types/projection.ts) |
 
 ## Current L5I Maintenance
 
@@ -149,6 +192,33 @@ hierarchy rules, preserving the guarantee that a hidden persistent rail need not
 age presentation.
 
 ## Update History
+
+- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
+  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
+  every anchor below it. Re-anchored the three rows citing that file, each on its proving symbol:
+  `metricsFor`/`LifecycleStateCounts` L173-L220 → L208-L257 (`LifecycleStateCounts` L214, `metricsFor`
+  L250); `LifecycleProjection`/`EnclosureNode` L97-L141 → L132-L176; `WorkspaceProjection` L674-L689 →
+  L711-L726. Corrected one sentence the change falsified: `LifecycleStateCounts` was described as
+  "derived from the state vocabulary", which was the old `ActiveState = Exclude<State, TerminalState>`
+  shape; `ActiveState` is now `LIVE_STATES` itself, so the mapped type is over the LIVE half and a
+  state filed terminal gets no bucket.
+
+- 2026-08-01T09:48+02:00 — 260731-EFA-L4 curator: documented the two new state-mark regressions
+  (`awaiting-developer` must render the handoff dot and NOT the unknown-variant base;
+  `paused` must not render as `abandoned`), `seedActivityProjection`'s new `state` parameter, the
+  `rowMarkOf`/`bareDotOf` helpers, and the read-before-second-render ordering the shared
+  `document.body` forces. Recorded the boundary that these assert the handover only, with `Dot`'s
+  per-variant treatment left to `Dot.test.tsx`. Also documented the `projection()` builder's swap from
+  a hand-listed metrics literal to `metricsFor(lifecycles)` — verified it is a superset (same
+  `lifecycleCount`/`totalTokens`/empty histogram, buckets now derived from `ACTIVE_STATES` via
+  `LifecycleStateCounts`) and that no assertion in this file reads `metrics`, so the swap is
+  contract-tracking rather than behavioural. Repaired six citations against the current sources:
+  component-under-test L252-L286;L443-L455 → `operationRows` L477-L571; the admission test L129-L260 →
+  L227-L360; the numbered-leaf test L264-L318 → L401-L456; the long-title test L296-L350 → L1018-L1081
+  (that old range now lands inside the L10 case-mismatch test); `dashboardStore` L1-L112 → L225-L348
+  (L1-L112 held only the state interface); and the projection-mirror row L1-L80;L360-L390, which
+  contained none of `LifecycleProjection` (L97), `EnclosureNode` (L121) or `WorkspaceProjection`
+  (L674) — split into two rows with real ranges.
 
 - 2026-07-24T13:17:17Z — Curator: recorded hidden-rail activity regression coverage; verification
   fields remain pre-commit.

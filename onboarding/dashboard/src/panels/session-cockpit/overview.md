@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T14:05+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -174,8 +174,8 @@ one-to-one sidecars were deleted.
 The one shared visual message roof across Claude, Codex, and Pi is now landed. The two distinct
 capabilities are both served: the **active conversation transcript** by the reconstructable
 [data/conversation](../../data/conversation/overview.md) projection + the `conversation/` grammar, and
-the **previous-conversation library/index** by [data/conversation-library](../../data/conversation-library/overview.md)
-+ the `conversation-library/` browser. Both consume adapter-normalized history/index/resume from the
+the **previous-conversation library/index** by [data/conversation-library](../../data/conversation-library/overview.md) +
+the `conversation-library/` browser. Both consume adapter-normalized history/index/resume from the
 landed L1/L2/L3 server contracts and hold only a projection/cache — no durable browser conversation
 database (R1). Visible harness identity and capability reasons are surfaced honestly; harness-specific
 behavior stays in the adapters.
@@ -310,6 +310,9 @@ references, not imported governing implementations, so no cross-repository sourc
 | Cleanup authority notice. | [LandedCleanupNotice.tsx](LandedCleanupNotice.tsx) |
 | Effective keyboard contract. | [../../data/keymap/overview.md](../../data/keymap/overview.md) |
 | Dev end-to-end scenario authority. | [../../dev/cockpitScenarios.ts](../../dev/cockpitScenarios.ts) |
+| The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | [test/fixtures/wire.ts](agents-remember/dashboard/src/test/fixtures/wire.ts) · [test/fixtures/conversationWire.ts](agents-remember/dashboard/src/test/fixtures/conversationWire.ts) |
+| The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | [test/wireFixtureGuard.ts](agents-remember/dashboard/src/test/wireFixtureGuard.ts) |
+| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | [data/harnessCatalog.ts](agents-remember/dashboard/src/data/harnessCatalog.ts) · [serving/response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
 
 ## Current L5I Route State
 
@@ -327,7 +330,98 @@ Within the existing conversation child route, focus now triggers bounded native 
 the effective selected agent, and exact roster identities survive incremental updates and reload.
 The cockpit's rail, stage, composer, diagnostics, and layout ownership remain unchanged.
 
+## 260731-EFA-L4 Fixture Contract For This Route
+
+No cockpit component changed. All seven changed sources are SUITES, and the durable rule they now
+carry is: **a session-cockpit test may not author its own wire node.** Projection nodes come from
+`test/fixtures/wire.ts`, conversation and library nodes from `test/fixtures/conversationWire.ts`, and
+the `as unknown as <WireType>` casts these seven carried are gone. A cast skips excess-property
+checking, so a cast fixture can state a payload the server would reject; a builder call cannot.
+
+Three of the removed casts were stating exactly that, and correcting them changed the shape under
+assertion — not the assertions:
+
+- `ChatsStageBody.test.tsx` seeded `capabilities: undefined as unknown as ConversationCapabilities`,
+  which claims a REQUIRED field is absent; `QueuePreview.test.tsx` and `SessionsView.test.tsx` built
+  or omitted the tree by hand. All three now carry the full four-group tree
+  (`live`/`history`/`controls`/`telemetry`) from `conversationCapabilities()`, which is what the server
+  fills.
+- `SessionRail.test.tsx` seeded `{ taskDocuments, agentPickups } as unknown as Analytics` — an
+  `Analytics` carrying two of its thirteen keys. `analytics()` spreads `EMPTY_ANALYTICS`, so every list
+  key is present and empty, which is the shape the reducer always sends (they are list defaults
+  server-side).
+- Pages built through `conversationPage()` now carry `page.totalItems`, derived from the item array
+  rather than omitted.
+
+**`LaunchFlow.test.tsx` is the one file whose PROOF moved, and it moved down.** Its `HARNESSES` stub
+carried `control: "starting"` on all three rows — a field `serving/response_contract.py::DetectedHarness`
+does not declare, `data/harnessCatalog.ts::HarnessInfo` does not mirror, and no dashboard code reads,
+on a `WireResponse` whose `model_config` is `extra="forbid"`. All three keys are gone. The consequence
+must be stated plainly, because it is a guarantee this route no longer has: the suite's surviving
+`not.toContain("adapter starting")` assertions have nothing planting the field, so they can no longer
+fail, and any claim that this suite proves a stale legacy `control` field is not rendered is
+**superseded**. The replacement is narrower and honest — `const HARNESSES: { harnesses: HarnessInfo[] }`
+turns an extra field on a fresh literal into a `tsc -b` error, and a new describe asserts
+`Object.keys(row).sort()` equals `["detected","id","name"]` per row for the cases an annotation cannot
+see (a spread row, a key written after the fact).
+
+**Why the chooser needs that local belt.** `wireFixtureGuard.ts` discovers wire vocabulary from a
+first-line `// TypeScript mirror of` marker (plus everything under `src/types/`). `data/harnessCatalog.ts`
+carries no such marker, so `HarnessInfo` is not wire vocabulary to the guard and the chooser's catalog
+fixtures are covered only by the annotation and the key assertion above. The guard's own note names the
+live instances of this blind spot: `harnessCatalog.ts`, `submissionLifecycleClient.ts`, `changeset.ts`,
+`files.ts`, `notes.ts`. Adding a marker line to one of those brings it under the guard; until then a
+cockpit fixture for those clients is guarded per-file, not by the repo-wide rule.
+
+The honest limit of all of it: `wire.ts` and `dashboard/src/fixtures/snapshot.json` are
+**hand-maintained** — no generator exists anywhere in this repository, and no in-repo mechanism keeps
+the two sides in step. These suites hold two of the chain's **three** links: `tsc -b` binds
+`test/fixtures/wire.ts` to `types/projection.ts` (annotated bases, `Overrides<O, Node>` at every call
+site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `test/contract.test.ts`
+**measures the mirror against `snapshot.json`** in three TYPE-level directions (`mirror ⊇ served`,
+`served ⊇ mirror`, `fixture ⊇ mirror`) plus runtime `VOCABULARIES` assertions for the string unions
+`resolveJsonModule` widens to `string` — not a one-way `⊆`. **The third link is held by nothing:
+`snapshot.json` ↔ `observer/projection.py` is maintained by hand.**
+
 ## Update History
+
+- 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "Fixture Contract For
+  This Route" closed with *"`fixture ⊆ mirror` is what these suites enforce; `mirror ⊆ server` is
+  enforced by nothing"* — the outer two nodes of a four-node chain, which reads as though nothing
+  measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
+  `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
+  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror` — L29-L53) plus runtime `VOCABULARIES`
+  assertions (L269, L348, L368) for the string unions `resolveJsonModule` widens to `string`. The
+  paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
+  `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from
+  "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the strength the
+  evidence carries: no in-repo generator **and no in-repo mechanism keeping the two sides in step**.
+  Same correction applied to the 12:35 entry's restatement below. No suite claim, table row, or
+  verification field changed.
+
+- 2026-08-01T12:35+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
+  the "Fixture Contract For This Route" section. No cockpit component changed — all seven changed
+  sources are suites — so the body records the durable rule (a cockpit test builds wire nodes through
+  `test/fixtures/wire.ts` / `conversationWire.ts`, never through a cast) and, separately, the three
+  seeds whose SHAPE was corrected because it was a payload the server cannot send: the `undefined` /
+  hand-built `ConversationCapabilities` on a required field, the two-of-thirteen-key `Analytics` in
+  `SessionRail.test.tsx`, and the now-derived `page.totalItems`. Six of the seven changed only in
+  helper/seed construction with no assertion text touched; I ran all seven (163 tests, green) and read
+  each diff to confirm the `expect` lines are untouched. `LaunchFlow.test.tsx` is the exception and is
+  recorded as a LOSS: its three `control: "starting"` keys are gone, so the surviving
+  `not.toContain("adapter starting")` assertions can no longer fail and that guarantee is marked
+  superseded here — verified `DetectedHarness` declares exactly `id`/`name`/`detected`
+  (`serving/response_contract.py` L355-L360) on a `WireResponse` with `extra="forbid"` (L88-L100), and
+  that `HarnessInfo` mirrors the same three (`data/harnessCatalog.ts` L5-L9). Recorded the replacement
+  guarantee (typed `HARNESSES` annotation + the per-row `Object.keys` assertion) and the reason the
+  chooser needs a local belt at all: `wireFixtureGuard.ts` discovers vocabulary from a first-line
+  `// TypeScript mirror of` marker, `harnessCatalog.ts` has none, and the guard's own note lists it
+  among five unmarked blind-spot modules. Stated the fixture chain's honest reach (both `wire.ts` and
+  `snapshot.json` hand-maintained, no generator in this repository; the `snapshot.json` ↔
+  `observer/projection.py` crossing held by nothing). (This bullet originally read "`mirror ⊆ server`
+  enforced by nothing", which dropped the middle link; corrected in the 14:05 entry.) Added three
+  two-cell `Repo-Internal References` rows, matching the existing two-column
+  header. Verification metadata remains pinned until closeout stamps the commit.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the conversation surface now
   hydrates only the effective selected child and retains exact roster identity across live updates,

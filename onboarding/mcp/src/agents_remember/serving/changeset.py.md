@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-12T12:55+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`     |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T08:46+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`     |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -27,6 +27,38 @@ L4a adds the **doc-reader leaf views** — a single leaf's `committed` (landed) 
 so the viewer works with no live worktree.
 
 ## Code Commentary
+
+### 260731-EFA-L4 Current Delta — The Three Routes Now Declare What They Answer With
+
+- `GET /api/changeset/task` (L511-L515) declares `response_model=LeafChangeSet | TaskChangeSet`
+  with `responses=SCOPED_READ_RESPONSES`. **Two success shapes**, because the `leaf` selector is
+  what picks between them: `LeafChangeSet` is `TaskChangeSet` plus the `mode` echo, so the union
+  is the route's real answer, not a convenience.
+- `GET /api/changeset/file-diff` (L526) declares `response_model=FileDiff` with
+  `responses=SCOPED_READ_RESPONSES`.
+- `GET /api/changeset/master` (L546) declares `response_model=MasterChangeSet` and **no
+  `responses=` table at all** — an unresolvable master degrades to empty lists rather than
+  refusing, so this route has no refusal shape to declare. That absence is a fact about
+  `master_changeset`'s degrade-never-500 behaviour, not an omission.
+
+`SCOPED_READ_RESPONSES` (from `serving/response_contract.py`) is the shared 400/404 map the
+files and notes routes use. It covers both refusal paths this module has: `run_scoped`'s error
+map on the `scope` branch, and the hand-rolled `JSONResponse` mapping the `leaf`/`master`
+branches keep (`_leaf_json`, and the `file-diff` master branch's own
+`bad-path`/`not-found` try/except).
+
+Nothing on the wire changed and nothing is validated at runtime — every handler returns a
+`Response` it built itself, and FastAPI applies `response_model` only to values it serializes
+for you. The gate is `mcp/tests/test_serving_response_conformance.py`, which drives each route
+and validates the real body against the declared model under `extra="forbid"`.
+
+Note that the `Conventions` line below — "plain camelCase `dict[str, Any]` responses (no
+pydantic models)" — remains true of the *handlers*: they still build dicts. What changed is that
+the shape those dicts must have is now written down.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
 
 ### Logic
 
@@ -49,16 +81,16 @@ through `_leaf_json` — it validates the selector (a `leaf` without `master`, o
 `mode`, is a `400`) and maps domain errors to the same `400`/`404` idiom. `file-diff`'s
 `master`-only branch keeps its own `JSONResponse` mapping; `master` (the list route) wraps its own.
 
-`task_changeset(scope)` (L57-L76) is the per-**enclosure** change-set.
-`_require_contract(scope)` (L38-L45) loads the leaf contract for the base commits and
+`task_changeset(scope)` (L78-L97) is the per-**enclosure** change-set.
+`_require_contract(scope)` (L59-L66) loads the leaf contract for the base commits and
 raises `FileNotFoundError` (→ `404 not-found`) for a mainline scope or an unreadable
 contract — mainline has no base, so it has no change-set. Code = `changed_files_with_counts(scope.code_root,
 contract.code_base_commit, None)` (base → the live worktree), each entry tagged with
-`hasSidecar` via `route_sidecar_status`; memory = the same over `contract.memory_worktree`
-+ `contract.memory_base_commit` (skipped when there is no memory tree). `_sum` (L62-L68)
+`hasSidecar` via `route_sidecar_status`; memory = the same over `contract.memory_worktree` +
+`contract.memory_base_commit` (skipped when there is no memory tree). `_sum` (L69-L75)
 produces the `{files, insertions, deletions}` counters (binary `None` counts → 0).
 
-`file_diff(scope, kind, rel)` (L79-L104) emits BEFORE + AFTER content (not unified-diff
+`file_diff(scope, kind, rel)` (L100-L125) emits BEFORE + AFTER content (not unified-diff
 text) so the L4 pane feeds CodeMirror MergeView `a`/`b` directly. `kind="memory"` diffs
 the memory worktree, anything else the code worktree; `before =
 commit_text_or_none(root, base, relp)` (the `git show base:path` reader — `None` for an
@@ -67,7 +99,7 @@ from `language_for`. The path is confined with `confine_rel`.
 
 `master_changeset(config, repo_id, master)` is the series **NET** change-set —
 `git diff <master-base> <series-tip>` for code + memory, **not** a sum of the leaves.
-`_load_master_contract` (L153-L163) loads the series (root) contract at
+`_load_master_contract` (L160-L170) loads the series (root) contract at
 `tasks/<repo>/<master>/series-contract.md`, with `master` confined to a single path segment
 (no `/` `\` or leading `.`) so a wire value cannot escape the tasks tree. `_series_tip`
 resolves the shared series tip for both counters and file view: it uses the contract's
@@ -76,9 +108,9 @@ state), then falls back to `code_source_branch` / `memory_source_branch` once th
 landed and the work branch has been deleted. `_net_changed` runs
 `changed_files_with_counts(repo, base, resolved_tip)` over the code repo and the memory repo;
 code entries are tagged with `hasSidecar` via `route_sidecar_status` on
-`memory_repo_path/onboarding`. `_master_leaf_summaries` (L193-L215)
+`memory_repo_path/onboarding`. `_master_leaf_summaries` (L200-L222)
 keeps the per-leaf `{leafId, counters}` breakdown alongside (each leaf vs its own base, via
-`_leaf_counts` L113-L127). It degrades to an empty net (never a 500) on a missing contract /
+`_leaf_counts` L128-L142). It degrades to an empty net (never a 500) on a missing contract /
 ref. `master_file_diff(config, repo_id, master, kind, rel)` makes every net-changed file
 inspectable against the same resolved tip: BEFORE = `commit_text_or_none(repo, master_base,
 relp)`, AFTER = `commit_text_or_none(repo, resolved_series_tip, relp)` (both committed refs).
@@ -138,6 +170,8 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | The leaf-enclosure contract enumerator + `WorktreeContract`/`load_contract` for master accumulation. | [worktrees/task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
 | The app factory that calls `register_changeset_routes` before `mount_static`. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
 | The test suite for this module. | [test_serving_changeset.py](agents-remember/mcp/tests/test_serving_changeset.py) |
+| The declared response models and the shared `SCOPED_READ_RESPONSES` table these three routes name (`TaskChangeSet`, `LeafChangeSet`, `FileDiff`, `MasterChangeSet`). | [response_contract.py](response_contract.py.md) |
+| The suite that enforces the declarations by driving each route and validating the real body. | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
 
 ## 260731-EFA-L2 Current Delta
 
@@ -151,6 +185,20 @@ binds it with FastAPI `Depends()`, so the wire query parameters are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-01T08:46+02:00 — 260731-EFA-L4 curator: recorded the three `response_model`
+  declarations — `LeafChangeSet | TaskChangeSet` on `/api/changeset/task` (two real success
+  shapes, picked by the `leaf` selector), `FileDiff` on `/api/changeset/file-diff`, both under
+  the shared `SCOPED_READ_RESPONSES`, and `MasterChangeSet` on `/api/changeset/master` with no
+  refusal table at all because an unresolvable master degrades to empty lists. Noted that
+  FastAPI validates none of them (every handler returns a `Response`), so the gate is
+  `test_serving_response_conformance.py`, and that the `Conventions` "no pydantic models" line
+  still describes the handlers. Re-derived all **7** in-file self-citations, which the leaf's
+  seven-line import block shifted by exactly +7: `_require_contract` L38-L45 → L59-L66, `_sum`
+  L62-L68 → L69-L75, `task_changeset` L57-L76 → L78-L97, `file_diff` L79-L104 → L100-L125,
+  `_leaf_counts` L113-L127 → L128-L142, `_load_master_contract` L153-L163 → L160-L170, and
+  `_master_leaf_summaries` L193-L215 → L200-L222. Every behaviour claim was re-read against the
+  source and is unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the module grew above them. `_sum` L48-L54 → L62-L68 (L48-L54 is now inside `_require_contract`), `_load_master_contract` L130-L142 → L153-L163, and `_master_leaf_summaries` L156-L178 → L193-L215 (that old range now spans `_series_tip`/`_net_changed`). Behaviour claims unchanged and re-read against the source.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ChangesetFileRef` as the single file-diff selector (`leaf_file_diff(config, ref)`, route bound via `Depends()`; wire query unchanged).

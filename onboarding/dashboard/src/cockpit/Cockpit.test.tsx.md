@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-08-01T10:30+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -71,6 +71,45 @@ dashboard store.
   (`rail-chat-no-leaf`); drilling into the master's `subtask-open-1` then makes the `rail-chat-heading`
   contain the **leaf** id (`leaf-one`) and not the master id (`master-x`) — pinning that the rail keys off
   the displayed leaf (via `DetailPanel.onViewLeaf` → the shell's `viewedLeafKey`).
+- "workspace rollup — the handoff reaches the header" (**260731-EFA-L4**) — a `withStates(...states)`
+  helper clones the `calm` GALLERY lifecycle once per requested state and derives the rollup with
+  `metricsFor(lifecycles)` rather than hand-listing buckets beside it. Two cases pin the new top-bar
+  segment from both sides: three lifecycles (two `awaiting-developer`, one `running`) put
+  `2 awaiting you` inside `[data-testid="task-metrics"]`; a `running` + `blocked` pair makes the same
+  node contain no `"awaiting"` at all while still reading `1 running` and `1 blocked` — the segment is
+  appended, it displaces nothing, and it never renders a reassurance zero.
+- "the left rail shows lifecycle states and attention severities at the same time" (**260731-EFA-L4**) —
+  three cases, and they render the **whole `CockpitShell`** rather than the two panels, because the
+  panels being siblings in one always-visible rail is exactly the claim under test (the justification
+  `grammar/Dot.tsx` previously used for `warn` and `awaiting-developer` sharing amber was true per LIST
+  and false per VIEW). A local `railProjection(attentionQueue)` seeds one `awaiting-developer` lifecycle
+  plus its `liveEnclosure` (the rail renders a leaf only while a worktree exists) and a `warn`
+  `actionable-drift` row. (1) `[data-testid="task-state"]` and `[data-testid="attn-severity"]` both
+  resolve a first child, and their `outerHTML` differ — both are amber, so telling them apart is the
+  glyph's job. (2) The severity is queried BY ROLE AND NAME — `getByRole("img", { name: "Severity: warn" })`
+  must be the `attn-severity` node — because the wrapper used to be a bare `<span aria-label>`, and ARIA
+  prohibits naming a `generic`: a `getAttribute("aria-label")` assertion would have passed while the
+  computed tree carried nothing. The state dot's label reaches the tree by a different route and is
+  asserted as such: React Aria gives the row `role="option"`, whose name-from-content absorbs the span,
+  so it is matched by `getByRole("option", { name: /Task progress: awaiting-developer; phase: build/ })`.
+  (3) An `axe.run` over a standalone `<AttentionQueue>` render must report zero violations, with
+  `color-contrast` and `region` disabled because jsdom has no layout engine; `aria-prohibited-attr` is
+  `serious` and is what would fail. Scoped to the panel, not the shell, because axe walks every node it
+  is given. (`axe-core` was already a `dashboard` devDependency; this is its first use in this suite.)
+
+**Fixtures are now built through the typed wire builders (260731-EFA-L4).** The local `taskDoc(over)`
+factory no longer returns an `as TaskDocNode` object literal — it delegates to
+`taskDoc as wireTaskDoc` from `test/fixtures/wire.ts`, so an excess property fails `tsc -b` at the call
+site instead of being erased by the assertion. That immediately paid: the master's `subTasks[0]` row in
+`seedDrillableMaster` carried `createdAt: "2026-06-20T09:00:00+00:00"`, a field
+`TaskSubTaskRefNode` does not declare on either side (`projection.py::TaskSubTaskRefNode` is
+`extra="forbid"`), so the server could never have sent it — and it is gone. (`TaskDocNode.createdAt`
+itself IS declared and is still set on the doc bases.) Both hand-written `metrics: { lifecycleCount, runningCount, blockedCount, pausedCount,
+totalTokens, stalenessHistogram }` literals — in `seedDrillableMaster` and `taskReaderProjection` — are
+replaced by `metricsFor([...lifecycles])`, the client mirror of `reducer.py::_metrics` (the two new
+projections use it from birth). The hand-kept bucket lists were the reason a new state could be counted
+nowhere. Note what this DID change for the older cases: those seeds now receive complete rollups derived
+from their own lifecycles rather than the numbers the author typed.
 
 ### Invariants And Boundaries
 
@@ -108,12 +147,18 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `CockpitShell` under test (full-bleed rails-hide). | L124-L205 | [Cockpit.tsx](Cockpit.tsx) |
+| `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. | L385-L442 | [Cockpit.tsx](Cockpit.tsx) |
 | `GALLERY` fixtures + the `applySnapshot` hydration pattern. | — | [dev/fixtures.ts](../dev/fixtures.ts) |
 | The shared jsdom stubs the render relies on. | — | [test/setup.ts](../test/setup.ts) |
-| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | L329-L434 | [Cockpit.test.tsx](Cockpit.test.tsx) |
-| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | L640-L667 | [Cockpit.test.tsx](Cockpit.test.tsx) |
-| The production source census, separately from the singular test query, establishes the sole `SessionsView` JSX mount. | L551-L560 | [Cockpit.tsx](Cockpit.tsx) |
+| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | L328-L434 | [Cockpit.test.tsx](Cockpit.test.tsx) |
+| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | L759-L788 | [Cockpit.test.tsx](Cockpit.test.tsx) |
+| The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. | L612-L628 | [Cockpit.tsx](Cockpit.tsx) |
+| The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). | L436-L469 | [Cockpit.test.tsx](Cockpit.test.tsx) |
+| `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. | L842-L952 | [Cockpit.test.tsx](Cockpit.test.tsx) |
+| The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. | L41-L50; L219-L232 | [panels/AttentionQueue.tsx](../panels/AttentionQueue.tsx) |
+| The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. | L385-L392 | [panels/LifecycleList.tsx](../panels/LifecycleList.tsx) |
+| The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). | — | [test/fixtures/wire.ts](../test/fixtures/wire.ts) |
+| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | L246-L257 | [types/projection.ts](../types/projection.ts) |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 
@@ -134,6 +179,32 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
+  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
+  every anchor below it. Re-anchored the one row citing that file: `metricsFor()` L203-L220 → L246-L257
+  (the comment naming `reducer.py::_metrics` at L246, the function at L250). No body claim changed —
+  the seeds still call `metricsFor(...)`.
+
+- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: the body listed neither of the two new describes, so
+  both were added. "workspace rollup — the handoff reaches the header" (L436-L469) pins
+  `[data-testid="task-metrics"]` containing `2 awaiting you` for two `awaiting-developer` lifecycles and
+  containing no `"awaiting"` — while still reading `1 running` / `1 blocked` — when none are handed back.
+  "the left rail shows lifecycle states and attention severities at the same time" (L842-L952) renders
+  the whole `CockpitShell` on purpose and adds the accessibility-tree assertions: I confirmed against
+  `AttentionQueue.tsx` L222-L230 that the severity really is a `role="img"` + `aria-label` wrapper (so
+  `getByRole("img", { name: "Severity: warn" })` is a tree query, not an attribute read) and against
+  `LifecycleList.tsx` L385-L392 that the state span's label is absorbed by React Aria's `role="option"`,
+  which is why the two dots are asserted differently. Recorded the fixture conversion honestly: the
+  local `taskDoc` now delegates to `test/fixtures/wire.ts`'s builder, the leaf sub-task's `createdAt`
+  (declared by no server model) is gone, and the two hand-listed `metrics` literals became
+  `metricsFor(...)` — meaning the pre-existing L1/L5 cases now run against complete derived rollups
+  rather than typed-in numbers. `axe-core` was checked in `dashboard/package.json` and was ALREADY a
+  devDependency (`^4.10.2`) — this is its first use in this suite, not a new dependency. Citation
+  repairs, each re-anchored on its proving symbol: `CockpitShell` L124-L205 → L385-L442 (the old range
+  is inside the Panda `cva` block); the S5 cutover case L640-L667 → L759-L788; the sole `<SessionsView>`
+  JSX mount L551-L560 → L612-L628; the L1 composition range L329-L434 → L328-L434 so it opens on the
+  `describe`. Five rows added for the new coverage and its collaborators.
 
 - 2026-07-24T13:17:50Z — Added persistent-layer and serving-identity regression coverage. Verification
   hash/date remain pinned to the pre-commit source stamp.

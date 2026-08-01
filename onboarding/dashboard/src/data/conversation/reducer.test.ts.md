@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/conversation/reducer.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-08-01T09:50+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,15 @@ fixtures.
 - Pure-reducer testing: no network, no store, no DOM — the same purity that lets the store, the
   stream, and this suite share one reducer truth.
 - Fixtures mirror the SC1 wire grammar (`ConversationItem`/`ConversationEventEnvelope`/
-  `ConversationMutation`); a drift in `types.ts` surfaces here first.
+  `ConversationMutation`). The item, page and identity fixtures come from
+  `test/fixtures/conversationWire.ts` (`conversationItem`, `conversationPage`,
+  `conversationIdentity`), so a drift in `types.ts` now surfaces in that shared builder first and
+  reaches this suite through it; the `envelope(...)` helper stays local and is checked directly
+  against `ConversationEventEnvelope`, which is where an envelope-level drift still lands first.
+- The branded cursors are minted, not asserted: `eventCursor("evt-0")` replaces the
+  `"evt-0" as ActiveEventCursor` casts. `ActiveEventCursor` is `string & { __brand }` — an opaque
+  server-issued token with no structure to check — so a single registered mint is the honest form,
+  and the mint is the only remaining assertion in these fixtures.
 
 ## Docs References
 
@@ -74,8 +82,10 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The pure reducer under test (recovery signals, dedupe, revision gating). | — | [reducer.ts](reducer.ts) |
-| The wire grammar the fixtures mirror. | — | [types.ts](types.ts) |
+| The pure reducer under test (recovery signals, dedupe, revision gating). | `applyInitialPage`; `applyEvent`; `applyOlderPage` | [reducer.ts](reducer.ts) |
+| The wire grammar the fixtures mirror. | `ConversationItem`; `ConversationEventEnvelope`; `ConversationMutation` | [types.ts](types.ts) |
+| The local `page`/`envelope` wrappers and the fourteen cases they drive. | L27-L48; L50-L193 | [reducer.test.ts](reducer.test.ts) |
+| The shared item/page/identity builders and the `eventCursor` mint the fixtures now use. | L52-L65; L209-L243 | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
 
 ## Cross-Repo References
 
@@ -87,6 +97,21 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-08-01T09:50+02:00 — 260731-EFA-L4 curator: the Invariants section said "Fixtures mirror the
+  SC1 wire grammar … a drift in `types.ts` surfaces here first", which the diff against `abc7cbc`
+  made only half true — the 60-line local fixture block (the `item` factory, the whole hand-built
+  page including its `cap()`/`attachCap()` capability tree) is gone, replaced by
+  `test/fixtures/conversationWire.ts`, so grammar drift now lands in that shared builder and reaches
+  this suite through it. Corrected that, and recorded the `eventCursor` mints that replaced the
+  `"evt-0" as ActiveEventCursor` casts. Confirmed the suite is still exactly fourteen cases with
+  unchanged names, and checked the one data delta the swap introduces before leaving the behavioral
+  bullets alone: the shared `conversationCapabilities()` leaves carry `evidenceTier: "adapter"` and
+  `reason: ""` where the local `cap()` wrote `"runtime-fixture"`/`"ok"`, and the attachment leaves
+  carry real limits instead of zeros — but `reducer.ts` contains no reference to `capabilities` at
+  all (it stores the page's tree and never reads it), so no case's outcome depends on any of it. The
+  page shape is otherwise the same, including `page.totalItems = items.length`, which the local
+  helper also set and which the first case still asserts as `proj.totalItems === 2`.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the reducer negative-proof
   suite (R7) — no-dup-optimistic-user-item, cursor order/idempotence, L1.4 revision-skew and L1.5

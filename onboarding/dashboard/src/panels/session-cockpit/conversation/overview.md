@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`                  |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T13:05+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                  |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -240,6 +240,8 @@ cross-repository implementation source governs it.
 | The one-roof composition that mounts this renderer. | [session-cockpit overview](../overview.md) |
 | The interrupt chord/aria-derivation the hook consumes. | [../../../data/keymap/overview.md](../../../data/keymap/overview.md) |
 | The control routes whose evidence gates interrupt + the renderer-facing rulings. | [control overview](../../../../../mcp/src/agents_remember/serving/conversation/control/overview.md) |
+| The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints. | [test/fixtures/conversationWire.ts](agents-remember/dashboard/src/test/fixtures/conversationWire.ts) |
+| The registry that records those three mints as the only permitted casts, each with its reason. | [test/wireFixtureGuard.test.ts](agents-remember/dashboard/src/test/wireFixtureGuard.test.ts) |
 
 ## Empty-Well Honesty And Scroll-Restoration Route State
 
@@ -256,7 +258,58 @@ stale focus falls back to parent and performs no I/O. The focused-child error st
 server/client detail and retry action. Runtime/store singleflight keeps the effect exactly once,
 and retry affects only the selected child.
 
+## 260731-EFA-L4 Fixture Contract For This Renderer
+
+No renderer component changed. The two changed sources are suites, and both were seeding a capability
+tree the server cannot produce — which matters here more than in most routes, because the Renderer
+Rulings Register's interrupt gate is an argument ABOUT capability evidence.
+
+- **`ConversationCapabilities` is a required field with a full tree.** The mirror declares four groups
+  (`live` · `history` · `controls` · `telemetry`) and twenty-three capability leaves, and the server
+  fills every one. `ConversationAgentFocus.test.tsx` was seeding `capabilities: {} as ConversationCapabilities`
+  — an empty tree — and `useConversationControls.test.tsx` a local
+  `{ controls: { interrupt } } as unknown as ConversationCapabilities` — one leaf and three absent
+  groups. Both now build through `test/fixtures/conversationWire.ts` (`conversationPage()` and
+  `capabilitiesWithInterrupt(state)`), so the tree under assertion is one the L1 view can actually send.
+- **The interrupt gate is unmoved by that.** `useConversationControls` reads exactly
+  `projection?.capabilities?.controls.interrupt` and nothing else, so filling the other twenty-two
+  leaves changes no decision. What it removes is a stub that carried only the field under test — the
+  shape that lets a gate look proven when it has never seen a real tree.
+- **Pages built by the builder carry `page.totalItems`,** derived from the item array rather than
+  omitted. That is the field the timeline's honest-`aria-setsize` rule (R5) turns on, so a renderer test
+  seeding a page through `conversationPage()` is now in the "total honestly known" branch by default and
+  must say so explicitly if it wants the `total unknown` copy.
+- **`conversationItem()` defaults `turnId: "t1"`.** `ConversationAgentFocus.test.tsx` passes
+  `turnId: undefined` on purpose to keep its items turn-less; `ConversationItem.turnId` is optional in
+  the mirror and `exactOptionalPropertyTypes` is off, so the explicit `undefined` is admitted. Reuse the
+  builder here knowing the default, not the previous hand-written shape.
+- **The opaque tokens have exactly three mints.** `ActivePageCursor`, `ActiveEventCursor` and
+  `LibraryConversationKey` are `string & { __brand }` — compile-time only, no structure to get wrong —
+  so the inline `"evt-0" as ActiveEventCursor` casts collapse into `pageCursor()` / `eventCursor()` /
+  `libraryConversationKey()`, each registered as a sanctioned cast site in `wireFixtureGuard.test.ts`
+  with its reason. Registration is what makes them the only three rather than the first three: the
+  registry counts occurrences, so a fourth cast in a listed file fails.
+
 ## Update History
+
+- 2026-08-01T13:05+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
+  the "Fixture Contract For This Renderer" section. No renderer component changed; both changed sources
+  are suites whose capability seeds were shapes the server cannot send — an empty
+  `{} as ConversationCapabilities` in `ConversationAgentFocus.test.tsx` and a one-leaf
+  `as unknown as ConversationCapabilities` in `useConversationControls.test.tsx` — now built by
+  `conversationPage()` / `capabilitiesWithInterrupt()`. Checked the thing that would have made that
+  consequential for the Renderer Rulings Register: `useConversationControls.ts` L107 reads exactly
+  `projection?.capabilities?.controls.interrupt` and no other leaf, so the fuller tree moves no gate;
+  both suites run green. Recorded three builder defaults a follow-on renderer test must know rather than
+  rediscover — `conversationPage()` supplies `page.totalItems` (the field R5's honest-`aria-setsize`
+  rule turns on), `conversationItem()` defaults `turnId: "t1"` (which is why the focus suite passes an
+  explicit `turnId: undefined`, admitted because `ConversationItem.turnId` is optional and
+  `exactOptionalPropertyTypes` is off), and the four-group / twenty-three-leaf tree the mirror declares.
+  Verified the three brand mints (`ActivePageCursor`/`ActiveEventCursor`/`LibraryConversationKey`,
+  `data/conversation/types.ts` L26-L27 for the first two) are registered as sanctioned cast sites in
+  `test/wireFixtureGuard.test.ts` L165-L176 rather than merely tolerated. Added two two-cell
+  `Repo-Internal References` rows in the existing two-column shape. Verification metadata remains pinned
+  until closeout.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented effective-focus-driven
   hydration, valid persisted versus stale focus, child-local visible failure/retry, and unchanged

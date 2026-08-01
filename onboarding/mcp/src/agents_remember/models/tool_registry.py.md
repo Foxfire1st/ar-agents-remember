@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T02:43+02:00                     |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-08-01T09:12+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,8 +21,17 @@ L3 maps `orchestration_nudge_manager` -> `OrchestrationNudgeManagerResponse`
 
 ## Code Commentary
 
-`TOOL_RESPONSE_MODELS` is the enforcement registry consumed by
-`mcp.tools._tool_payload()`. It covers all modeled core, runtime, memory, skill
+`TOOL_RESPONSE_MODELS` (L116) is the enforcement registry consumed by
+`mcp.tools._tool_payload()`. Its value type is
+**`type[ResponseEnvelope]`** (`models.base`, the union
+`ResponseModel | FlexibleResponseEnvelope`), not `type[BaseModel]`.
+`PUBLIC_TOOL_RESPONSE_MODELS` (L181) carries the same annotation. That is not
+cosmetic: `BaseModel` made the envelope's two choke-point fields — `nextStep`
+and `supervisorBanner` — unreachable by type from `_tool_payload`, which is how
+`supervisorBanner` came to be written into the already-dumped dict instead of
+declared at all. With `ResponseEnvelope` the choke point sets both on the
+validated response *before* the single `model_dump`, so the emitted object stays
+inside its own contract and inside its own token count. It covers all modeled core, runtime, memory, skill
 install, provider, worktree (including `worktree_sync` → `WorktreeSyncResponse`,
 GitHub #54 sub-task D), benchmark, slice-2b lifecycle, the slice-3c
 `task_doc` → `TaskDocResponse`, `lifecycle_gate` → `LifecycleGateResponse`, the
@@ -63,6 +72,26 @@ fields are tolerated rather than rejected. This is tolerated drift, not
 un-validated input -- the envelope (`ok`/`operation`/`tokens`) is still typed.
 Pick STRICT unless the payload genuinely embeds provider-native detail.
 
+**The tier posture has two axes, and until 260731-EFA-L4 only one of them was
+guarded.** `extra="forbid"` guards the **field set**: which keys may appear. The
+`Literal` type aliases on those fields guard the **value set**: which tokens each
+key may carry. Nothing enforced the second axis, and STRICT is precisely where
+that hurts — a strict model is the one that *raises* on an unknown value, and it
+raises with a `ValidationError` inside an `@server.tool()` handler that has no
+`except` for one. Measured: 165 of the 213 `series-contract.md` files on disk
+(77.5%) made `context_packet` raise, across seven independent gaps, every one of
+them a hand-written `Literal` at a wire boundary over a vocabulary owned by some
+other module. So the convention now has a third clause beside STRICT-vs-FLEXIBLE:
+**a wire model never retypes a vocabulary it does not produce — it imports the
+producer's alias.** `models/gates.py`, `lifecycle.py`, `operator_inbox.py` and
+`orchestration.py` were already doing this; `models/worktree.py`,
+`context_packet.py`, `drift.py`, `memory.py`, `read_files.py` and
+`models/terminal.py` now do too. The set difference then cannot exist, because
+there is no second set. `test_wire_vocabulary_exhaustiveness.py` is the suite
+that pins it, in three deliberately different kinds (a behavioural walk of the
+guidance state machine, an AST scan of every literal written at a vocabulary
+field, and `produced == declared` equality against the `VALID_*` frozensets).
+
 ## Invariants And Boundaries
 
 - `PUBLIC_TOOL_RESPONSE_MODELS` keys must equal `mcp.tools.PUBLIC_TOOLS`.
@@ -74,6 +103,16 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 - A FLEXIBLE (`extra="allow"`) entry is a tolerated-drift surface for
   provider-native payloads, not a license to skip validation; the typed
   envelope still applies. AR-owned shapes must register a STRICT model.
+- **Both registries are `dict[str, type[ResponseEnvelope]]`.** Every registered
+  model must be a `ResponseModel` or a `FlexibleResponseEnvelope`, because
+  `_tool_payload` assigns the envelope's `nextStep` / `supervisorBanner` on the
+  instance it validated. Widening this back to `type[BaseModel]` would silently
+  put those two fields out of the type checker's reach again.
+- **A registered model does not retype a vocabulary another module produces.**
+  `extra="forbid"` is the field-set guard; the imported producer alias is the
+  value-set guard. A hand-copied `Literal` at a wire boundary is a drift
+  generator, and on a STRICT model it fails as an uncaught `ValidationError`
+  inside the MCP handler.
 
 ## Repo-Internal References
 
@@ -84,13 +123,33 @@ Pick STRICT unless the payload genuinely embeds provider-native detail.
 | Inbox responses registered here are strict AR-owned tool responses. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
 | Gate responses, including the combined wait helper, are strict AR-owned tool responses. | [gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
 | Lifecycle finalizer response registered here is a strict AR-owned tool response. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
-| Terminal responses registered here (`AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`, `SessionRetireResponse`, `SessionRenameResponse`) are strict AR-owned tool responses. | [terminal.py](terminal.py) |
+| Terminal responses registered here (`AttachTerminalSessionToLeafResponse` L121, `SpawnAgentSessionResponse` L122, `SessionRetireResponse` L124, `SessionRenameResponse` L125) are strict AR-owned tool responses. | [terminal.py](terminal.py) |
+| `ResponseEnvelope` (L93-L101) — the union both registries are annotated with, and the two envelope bases carrying `nextStep`/`supervisorBanner`. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| The suite that pins the value-set axis: `produced == declared` for each `VALID_*` frozenset, the AST scan of every literal written at a contract cell, and the guidance state-machine walk. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-08-01T09:12+02:00 — 260731-EFA-L4 curator: body corrected on both counts an earlier review
+  flagged. (1) The registry's declared value type changed from `dict[str, type[BaseModel]]` to
+  `dict[str, type[ResponseEnvelope]]` (L116 and L181; `ResponseEnvelope` is the new
+  `models.base` union at that file's L93-L101). The card described neither annotation. This is
+  what made `ResponseModel.nextStep` and `ResponseModel.supervisorBanner` reachable by type from
+  `_tool_payload` — under `BaseModel` they were not, which is how `supervisorBanner` ended up
+  written into an already-dumped dict rather than declared on the envelope. (2) The two-tier
+  paragraph framed the posture as one axis. `extra="forbid"` guards the FIELD set; the `Literal`
+  aliases on those fields guard the VALUE set, and nothing had guarded the second — 165 of the 213
+  `series-contract.md` files on disk (77.5%) made `context_packet` raise a `ValidationError`
+  inside a handler with no `except` for one, across seven independent gaps, each a hand-written
+  `Literal` over a vocabulary owned elsewhere. Added the third clause of the convention (a wire
+  model imports the producer's alias, never retypes it), named the four models that already did
+  this and the six that now do, and added the two matching invariants. Citations: the terminal
+  reference row's model names gained their registry line numbers (L121/L122/L124/L125), and rows
+  were added for `models/base.py` L93-L101 and for
+  `test_wire_vocabulary_exhaustiveness.py`. Verification metadata pinned until closeout stamps
+  the L4 commit.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):

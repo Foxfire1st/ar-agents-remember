@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/SessionComposer.test.tsx`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T11:22+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -76,6 +76,17 @@ honesty, deferred-send copy, decluttered exception cues, and the evidence-gated 
 Send.
 
 ## Update History
+
+- 2026-08-01T11:22+02:00 — 260731-EFA-L4 curator: No content impact: the only change is the answer-mode
+  seed swapping `{ id, gate } as unknown as LifecycleProjection` for
+  `lifecycleWithGate({ id: "lc-answer-mode" }, { …the same gate… })`, and I checked the thing that could
+  have made it consequential — whether the extra fields the builder now supplies can reach an assertion.
+  `findInteractionGate` (`data/interactionAnswer.ts` L258-L274) is the only consumer of this seed, and it
+  reads `lifecycle.gate.kind`, `gate.state`, `gate.packet.adapterInteraction.{sessionId,interactionId}`
+  and `lifecycle.id` — nothing else. The gate override is total for all four fields and
+  `lifecycleWithGate` applies `over` last, so `id` still wins; `BASE_LIFECYCLE`'s `state`/`phase`/`tokens`
+  are inert here. The suite's described cases, assertions and boundaries are unchanged, so the body
+  stands.
 
 - 2026-07-24T13:17:17Z — Curator: recorded the live composer behavior and evidence-gating
   regressions; verification fields remain pre-commit.

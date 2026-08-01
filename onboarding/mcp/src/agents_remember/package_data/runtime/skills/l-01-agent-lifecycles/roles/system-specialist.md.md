@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:20+02:00                     |
+| lastUpdated            | 2026-08-01T17:40+02:00                     |
 | lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
 | lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
 
@@ -80,14 +80,12 @@ No sibling repository evidence is needed for this orchestration role file.
 
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
-This sidecar describes the generated runtime copy, not canonical ownership. It is synchronized from canonical l-01-agent-lifecycles doctrine. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
+This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 
 ## Update History
-+## 260712-TRH-L4 Generated-Copy Doctrine
 
-This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
-
+- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-08T01:20+02:00 — 260707-HFX-L7 provider degradation protocol: created onboarding for
   the new investigate-first system-specialist seat (report-before-fix, providers-only scope,
   explicit-order fix mode, one-rung escalation to orchestrator). Gap-filled by the manager after

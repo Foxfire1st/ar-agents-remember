@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/seatEvents.test.ts`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastUpdated | 2026-08-01T11:40+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,6 +58,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The module under test. | L40-L130 | [seatEvents.ts](seatEvents.ts) |
 | The store whose rows the events mutate. | — | [sessions.ts](sessions.ts) |
+| The shared `observerEvent` builder the local `event()` factory (L15-L21) now wraps; its `schema`/`trust`/`actor` defaults are the fields the factory used to inline, and the factory's own `id`/`ts` still win by spreading last. | L369-L381 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
 
 ## Cross-Repo References
 
@@ -69,6 +70,38 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **the 09:26 entry's analysis is
+  sound and is kept in full; its `No content impact:` header was not.** The conversion introduced a
+  new dependency this card did not record — `seatEvents.test.ts` L6 now imports `observerEvent` from
+  `../test/fixtures/wire.ts` and the local `event()` factory (L15-L21) is a wrapper over it — and the
+  `Repo-Internal References` table had no fixtures row of any kind. (The review lead said this card
+  carried a "Shared deterministic fixtures" row naming `capabilityEnvelopes.ts`; it does not — that
+  row exists on `setClient.test.ts.md`, and here the row was simply absent.) A card that needs a new
+  reference row has content impact by definition, so the attestation is re-stated as **no behavioural
+  impact**, which is what the 09:26 analysis actually establishes. Added the row pointing at
+  `../test/fixtures/wire.ts` (`observerEvent`, L369-L381), matching the rows the same curator added on
+  `railModel.test.ts.md`, `interactionAnswer.test.ts.md` and `store.test.ts.md`; the table is
+  three-column here, so the new row carries three cells. Re-verified the kept citations from the
+  working tree: `seatEvents.ts` is 130 lines and `L40-L130` contains `applySeatEvent` (L40),
+  `applySeatEventLine` (L95) and `createGatedSeatEventApplier` (L113); the builder's defaults at
+  wire.ts L369-L381 are exactly the `schema`/`id`/`ts`/`trust`/`actor` set the entry describes, and
+  the factory's explicit `id`/`ts` do spread last. Verification metadata untouched.
+
+- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: No behavioural impact (this entry originally read
+  "No content impact"; corrected 11:40 — the card gained a `wire.ts` reference row): the entire diff against
+  `abc7cbc` is the local `event()` factory (L15-L21) delegating to
+  `test/fixtures/wire.ts::observerEvent` instead of building an inline object closed with
+  `as ObserverEvent`. The check that could have made this consequential: the builder supplies its own
+  defaults, so I compared them field by field against the ones the factory used to inline —
+  `schema: "ar-observer-event/v1"`, `trust: "observed"`, `actor: "system"` are identical, and the
+  factory still passes `id: "evt-1"` and `ts: "2026-07-16T10:00:00Z"` explicitly, which win over the
+  builder's `id: evt-${kind}` / `ts: SERVED.generatedAt` defaults because the overrides spread last.
+  The produced envelope is therefore byte-identical, which matters most for the
+  `seat.turn-state-changed` describe (L99-L147), whose whole subject is comparing an event `ts`
+  against the seeded row's `turnStateChangedAt`. Confirmed all five describes and eleven cases are
+  unchanged in name, count and order, and that the L40-L130 citation still contains
+  `applySeatEvent`, `applySeatEventLine` and `createGatedSeatEventApplier` in the 130-line source.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

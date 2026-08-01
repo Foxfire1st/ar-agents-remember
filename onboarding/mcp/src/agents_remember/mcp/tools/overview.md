@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:26+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -79,14 +79,19 @@ persists resolved model/effort plus log id/path. An unbound replacement declares
 The `mcp/registration/` family modules import the advertised `*_payload` builders from
 `agents_remember.mcp.tools`; each builder forwards its arguments to its
 domain controller and validates the result through `base._tool_payload`. Since
-task 27 that choke point also attaches the engine-computed `nextStep` hint (after
-the ambient emission hook) onto every active-lifecycle response, computed by
+task 27 that choke point also attaches the engine-computed `nextStep` hint onto every
+active-lifecycle response, computed by
 `next_step.py`. **260707-HFX2-L2 (R5)** adds a third thing this same choke point
 surfaces on every call: a `supervisorBanner` string when the serving daemon's
 supervisor-sweep heartbeat has gone stale (`serving.supervisor_heartbeat
 .supervisor_staleness_banner`, exception-contained at the call site) — issue #15's
 "the watcher must be code AND watched" surfaced at the one place every MCP tool
-response already passes through. `operator_inbox_post_payload` is also the completion-wake edge:
+response already passes through. **260731-EFA-L4 reordered this choke point**: both
+attachments are now set on the *validated model* by `_attach_lifecycle_tail` BEFORE the
+single `model_dump`, and the ambient emission hook runs LAST, off the finished payload.
+The previous order — dump, count tokens, emit, then write the two keys into the dict —
+served bytes the advertised `tokens` did not include and recorded that same short count
+against the lifecycle. `operator_inbox_post_payload` is also the completion-wake edge:
 for `turn-report` and `master-handover`, 260707-HFX2-L13 resolves and addresses the current manager
 before creating the row/ack expectation and attempting hosted delivery, while ordinary peer messages
 retain explicit addressing. Task 28 makes `lifecycle_turn_end_notification` the active
@@ -137,8 +142,8 @@ calling me" session-id resolution anywhere in this codebase.
 
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
-| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (54 with 260707-HFX-L8's `session_retire`/`session_rename`), `RESERVED_TOOLS`, and `_tool_payload` — the choke point that, after the ambient emission hook, runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification`) and then attaches the `next_step.py`-computed `nextStep` hint to every active-lifecycle response (exception-safe; never raises into the tool path). |
-| `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. |
+| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (58), `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point. Since 260731-EFA-L4 its order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _supervisor_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_supervisor_banner` swallows an unreadable heartbeat file). |
+| `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. 260731-EFA-L4: `next_step_for` returns `NextStep \| None` — the MODEL, not a dump of it — because the hint is a declared field of the response envelope and serializing it is the choke point's single `model_dump`; returning a dict here is what made the hint a key written into an already-dumped, already-token-counted payload. `_guidance_for` correspondingly widens `lifecycle_guidance`'s TypedDict with `dict(...)`: this hint layer reads guidance defensively by key and never re-emits its vocabulary. |
 | `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `compact_runtime_install_payload`. |
 | `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
 | `providers.py`  | provider status/diagnostics/watchers, GrepAI search/trace, CGC query tools; `compact_diagnostics_payload`, `compact_watchers_payload`. |
@@ -151,7 +156,7 @@ calling me" session-id resolution anywhere in this codebase.
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the terminal snapshot and leaves physical expiry to compaction so concurrent delivery cannot resurrect it. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
 | `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
-| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs, composes the shared `serving.terminal_opener.open_terminal_session` for live-identity validation, role-scoped leaf claim, native runner launch, and catalog upsert, then runs the capture-verified brief-delivery sequence. A live launch mismatch maps to `launch-selection-invalid` with no retry, expectation, or paste. Other strict response statuses remain `spawned`, `spend-override-unsupported`, `leaf-taken`, `harness-unknown`, `harness-not-detected`, `effort-invalid`, `model-invalid`, `level-invalid`, `leaf-ref-not-found`, `leaf-ref-ambiguous`, and `bad-kind`. |
+| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs, composes the shared `serving.terminal_opener.open_terminal_session` for live-identity validation, role-scoped leaf claim, native runner launch, and catalog upsert, then runs the capture-verified brief-delivery sequence. A live launch mismatch maps to `launch-selection-invalid` with no retry, expectation, or paste. Other strict response statuses remain `spawned`, `spend-override-unsupported`, `leaf-taken`, `harness-unknown`, `harness-not-detected`, `effort-invalid`, `model-invalid`, `level-invalid`, `leaf-ref-not-found`, `leaf-ref-ambiguous`, and `bad-kind`. 260731-EFA-L4 types the status seams against the wire aliases imported from `models.terminal` (`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`): `_spawn_refusal(status: SpawnAgentSessionStatus, ...)` and `_knob_refusal`'s `checks` tuple are annotated, so a refusal status this module invents is a pyright error at the producer rather than a `ValidationError` at `model_validate` — this payload is an untyped dict all the way to the MCP handler, which has no `except` for one. The retire/rename builders also collapse onto two constructors, `_retire_payload` and `_rename_payload`, so the shape rules have one site each: `_RETIRE_OK_STATUSES = frozenset({"retired", "already-retired"})` decides `ok` (previously written by hand at five call sites), retirement provenance rides a `closure=` argument and a policy clause rides `detail=` because nothing carries both, and `spawnedLabel` is emitted only when a row was actually renamed. |
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
@@ -170,6 +175,25 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 - Every public payload returned from any submodule must go through
   `base._tool_payload`, which validates response shape only (request validation
   stays in server signatures and controllers).
+- **Anything the choke point adds to a response is a declared field of that response's
+  model, set before the dump — never a key written into the dumped dict** (260731-EFA-L4).
+  There is exactly ONE `model_dump` in `_tool_payload` and exactly one
+  `finalize_payload_tokens` pass over its result, so "everything the caller receives is
+  inside the count" holds by construction. A key added after the dump is served but
+  uncounted, and — on the strict envelopes, which are `extra="forbid"` — makes the emitted
+  object fail its own model. `TOOL_RESPONSE_MODELS` is typed `dict[str, type[ResponseEnvelope]]`
+  precisely so setting these fields on the validated response type-checks.
+- **`amb.emit_tool` is the LAST thing `_tool_payload` does**, so the `tokens` recorded against
+  the lifecycle is the count the caller was actually served. Moving it back before the tail
+  attachment re-introduces the short count in the event log even if the wire count is right.
+  One consequence worth knowing when reading a log: the auto-dismiss now precedes the
+  emission, so a turn-end dismissal appends `lifecycle.resumed` BEFORE the call's
+  `tool.completed`, where it previously followed it. `emit_tool` records only
+  `tool`/`tokens`/`ok`, so nothing in the event payload changed — only the order.
+- A status string a builder writes must come from the wire alias in `models/`, annotated at
+  the producing function, not spelled inline. These payloads are untyped dicts until
+  `_tool_payload`, and by then a wrong status is a `ValidationError` inside an
+  `@server.tool()` handler with no `except` for one.
 - Payload builders stay transport-thin; deterministic behavior belongs in
   controllers and package services. Import the domain controller that owns the
   tool's behavior — do not reintroduce a mega-facade.
@@ -200,6 +224,8 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The next-step engine computes the `nextStep` hint the `_tool_payload` choke point attaches. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
 | The linear-half hint delegates to the worktree guidance state machine. | [guidance/lifecycle_guidance](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
+| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | [models/base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| The terminal status aliases `terminal.py` annotates its refusal seams with. | [models/terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -213,7 +239,69 @@ readiness and liveness, correlated receipts sit beneath durable inbox rows, inte
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
+## 260731-EFA-L4 — The Choke Point Emits Its Own Contract
+
+`_tool_payload` used to do this: validate, dump, count tokens, emit the observer event, then
+write `nextStep` and `supervisorBanner` into the dumped dict. Two things were wrong with the
+last step and both were silent.
+
+- **The advertised token count excluded them.** `finalize_payload_tokens` stamps `tokens` from
+  the dict it is handed; keys added afterwards are served but never counted. Because
+  `amb.emit_tool` also ran before them, the count recorded against the lifecycle was short by
+  the same amount, so the fuel gauge and the wire agreed with each other and both disagreed
+  with reality.
+- **`supervisorBanner` was declared on no model.** On a strict envelope (`extra="forbid"`) that
+  makes a banner-carrying response fail its own `model_validate`; on a flexible one
+  `extra="allow"` silently accepted it, which is the wrong kind of tolerance — that setting is
+  for a PROVIDER's fields, not this package's.
+
+The fix has two halves. `models/base.py` declares `supervisorBanner` on both envelope bases and
+names their union `ResponseEnvelope`; `models/tool_registry.py` types both registries
+`dict[str, type[ResponseEnvelope]]` instead of `type[BaseModel]`. That retyping is what makes
+the reordering possible at all: against a bare `BaseModel`, `response.nextStep = ...` is not an
+attribute a checker knows, so writing into the dict afterwards was the only type-clean option
+available. `_tool_payload` now reads:
+
+    response = model.model_validate(payload)
+    amb = ambient()
+    if amb is not None:
+        _attach_lifecycle_tail(response, amb, tool_name)   # dismiss, nextStep, banner
+    finalized = finalize_payload_tokens(response.model_dump(mode="json", exclude_none=True))
+    if amb is not None:
+        amb.emit_tool(tool_name, finalized)                # last, off the served payload
+
+`next_step.py`'s `next_step_for` returns `NextStep | None` rather than a dumped dict, for the
+same reason: serialization belongs to the one `model_dump`.
+
+Why this was not caught: `test_tool_response_conformance.py` captures a representative payload
+per tool and re-validates it, which is exactly the mutation point — but its fixtures were a
+workspace whose supervisor had NEVER ticked, a state in which the banner is deliberately
+silent, so the suite only ever validated the shape the choke point cannot break. The suite now
+ticks the heartbeat into the past (`_stale_supervisor`) and asserts that the captures actually
+contain both injections, so a fixture that quietly stops producing them fails there instead of
+hollowing out every assertion below it.
+
 ## Update History
+- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** The `_tool_payload` order
+  this card described is no longer the order in the code, and the description was load-bearing:
+  the Hot Path Summary said the `nextStep` hint is attached "after the ambient emission hook" and
+  the `base.py` Layout row said the auto-dismiss runs "after the ambient emission hook" too. Both
+  are now inverted — `_attach_lifecycle_tail` (dismiss → `nextStep` → `supervisorBanner`) runs on
+  the validated model BEFORE the single `model_dump`, and `amb.emit_tool` runs LAST off the
+  finished payload. Rewrote both, added the route-impact section explaining what the old order cost
+  (bytes served outside the advertised `tokens`, and the same short count recorded against the
+  lifecycle) and why `TOOL_RESPONSE_MODELS`'s `type[BaseModel]` typing is the reason the fields
+  were written into the dumped dict in the first place. Added four invariants: everything the
+  choke point adds is a declared field set before the dump; there is exactly one `model_dump` and
+  one token pass; `emit_tool` is last, with the resulting `lifecycle.resumed`-before-`tool.completed`
+  log ordering noted; and a status string comes from the `models/` alias annotated at the producer.
+  Updated the `next_step.py` row (`next_step_for` returns the model) and the `terminal.py` row
+  (typed refusal seams, `_retire_payload`/`_rename_payload`, `_RETIRE_OK_STATUSES` replacing the
+  hand-written `ok` at five call sites). **Corrected a stale count unrelated to this leaf but wrong
+  on a file this leaf changed:** the `base.py` row claimed `PUBLIC_TOOLS` is 54; it is 58, and it
+  matches `PUBLIC_TOOL_RESPONSE_MODELS` exactly (checked by importing both). Also recorded
+  `RESERVED_TOOLS` as empty. Added two reference rows to the 2-column table. Verification metadata
+  pinned until closeout stamps the L4 commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: added the **Where Registration Lives Now** section
   (the `@server.tool()` surface moved to the sibling `mcp/registration/` route, and the per-builder
   parameter-object table), corrected the `PUBLIC_TOOLS` invariant and the registration reference off
@@ -229,9 +317,6 @@ only. Dashboard and packaged projections remain additive and synchronized.
   no-synthesized-command rule, explicit custom-harness mappings, and the roleless temporal
   boundary. Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-+## 260712-TRH-L4 Route Impact
-
-The public tool route now exposes spawn-only creation, exact-session hosted_session_readiness, and an explicit dispatch-brief kind. Legacy context/submit refuses before side effects; promptKeywords apply once after readiness; completion requires delivered plus harness-log-confirmed proof.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20 MCP-tools route impact: public consume keeps its

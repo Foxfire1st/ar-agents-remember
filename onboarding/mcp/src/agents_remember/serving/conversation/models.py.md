@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T09:02+02:00 |
+| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,37 @@ history store, or control service.
 
 ## Code Commentary
 
+### 260731-EFA-L4 Current Delta — Six Fields That Could Not Validate Their Own Output
+
+Four models declared six fields as **required and nullable** while the serializers that emit
+them dump with `exclude_none=True` — so a `None` was DROPPED from the wire and the model could
+not validate its own emitted body. The response conformance suite found it the moment those
+routes started declaring these models. All six gained `= None` defaults:
+
+| Model | Fields | Line |
+| --- | --- | --- |
+| `StatusFreshness` | `last_evidence_at`, `age_ms` | L473-L474 |
+| `ConversationTurnStatus` | `turn_id`, `state_since` | L505-L506 |
+| `ConversationEventEnvelope` | `previous_cursor` | L641 |
+| `ConversationPageWindow` | `older_cursor` | L760 |
+
+**No bytes moved.** The absent key already meant exactly this `None`; the fix is that the model
+now says so. `age_ms` keeps its `ge=0` bound (`Field(default=None, ge=0)`), so the default is
+additive to the constraint, not a replacement for it.
+
+**Why only these six, and not every nullable field in the module:** the two serializers differ
+on purpose. `active/api._dump` and `control/api._dump` both use
+`model_dump(mode="json", by_alias=True, exclude_none=True)`, while `library/api._dump`
+deliberately does **not** exclude nulls — "null is meaningful on this wire (nextCursor /
+olderCursor / identity absence is contract-significant)". Fields reached only by the library
+serializer, such as `ConversationLibraryPage.next_cursor` and
+`HistoricalConversationPage.older_cursor` (L825), are therefore correct as required-and-nullable
+and were deliberately left alone. The six above are the ones the exclude-none serializers reach.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
+
 ### Logic
 
 - `WireModel` makes public DTOs immutable, camel-case on the wire, and closed to unknown fields.
@@ -37,15 +68,15 @@ history store, or control service.
   `agentId`/`subagent_type` joined through the spawning tool call (`join_key` =
   `parent_tool_use_id`) — and `status` (`ConversationAgentStatus`, L311-L313) tracks the agent's
   own lifecycle, not the item's phase.
-- Library sub-agent grouping: `ConversationLibraryAgentRow` (L755-L774) is one
-  sub-agent conversation grouped under its parent row's `agents` tuple (L784); it opens through
+- Library sub-agent grouping: `ConversationLibraryAgentRow` (L775-L794) is one
+  sub-agent conversation grouped under its parent row's `agents` tuple (L804); it opens through
   its own `conversation_key` exactly like a top-level row. `ConversationLibraryPage.agents_note`
-  (L797-L799) carries capability honesty: the exact native reason sub-agent conversations are
+  (L817-L819) carries capability honesty: the exact native reason sub-agent conversations are
   (partially) unavailable on a page, never silently absent.
 - Status models fix the evidence-to-turn-state vocabulary and validate waiting and terminal
   cross-products; unknown evidence cannot establish ready.
 - Capability models require exact evidence products. `FeatureCapability` carries a documenting NOTE
-  (L670-L675) that there is deliberately
+  (L685-L690) that there is deliberately
   NO `for_observed_runtime` version-demotion: the contract is the only gate, a capability is never
   demoted because an installed runtime/helper version drifts from a fixture's captured version, and
   the runtime/helper version survives on `CapabilityEvidence` as informational metadata only.
@@ -78,6 +109,11 @@ modules behind these types, not in this file.
   `agent <short-id>`, both on item refs and library rows, and agent/library identity fields are
   populated only from native evidence. When sub-agent conversations are unavailable on a library
   page, `agents_note` must carry the exact native reason — absence stays explicit, never silent.
+- **A model must be able to validate its own emitted body.** Required-and-nullable is only
+  correct for fields reached by the library serializer, which keeps nulls on the wire. Anything a
+  route dumps with `exclude_none=True` must be nullable AND defaulted, or the model rejects the
+  very payload it produced — the failure mode `260731-EFA-L4` found in six fields across four
+  models.
 
 ### Todos
 
@@ -100,6 +136,8 @@ authoritative behavioral evidence for this internal grammar.
 | Hostile tests cover cursor purpose, provenance, status, capability, identity/rollback, recovery, attachment, metrics, and fixture products. | L208-L1176 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
 | Foundation tests prove the types participate in exactly two ports and that installed runtime fixtures are allowlisted evidence, never enablement. | L21-L28; L162-L176 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The two read protocols consume these normalized models without owning control behavior. | L8-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
+| The two serializers whose `exclude_none=True` made the six required-and-nullable fields unvalidatable, versus the library serializer that deliberately keeps nulls. | `_dump` | [active/api.py](active/api.py.md); [control/api.py](control/api.py.md); [library/api.py](library/api.py.md) |
+| The declarations that made these models the routes' stated contract, and the suite that drove the real bodies through them. | `CONTROL_RESPONSES`; `LIBRARY_RESPONSES` | [response_contract.py](response_contract.py.md); [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
 
 ## Cross-Repo References
 
@@ -110,6 +148,22 @@ No cross-repository implementation governs these contracts.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-01T09:02+02:00 — 260731-EFA-L4 curator: recorded the six fields that gained `= None`
+  defaults across four models — `StatusFreshness.last_evidence_at`/`age_ms` (L473-L474),
+  `ConversationTurnStatus.turn_id`/`state_since` (L505-L506),
+  `ConversationEventEnvelope.previous_cursor` (L641), `ConversationPageWindow.older_cursor`
+  (L760) — and why: declared required-and-nullable while `active/api._dump` and
+  `control/api._dump` emit with `exclude_none=True`, so the null was dropped and the model could
+  not validate its own body. Recorded the deliberate asymmetry that scopes the fix —
+  `library/api._dump` keeps nulls, so `HistoricalConversationPage.older_cursor` (L825) and
+  `ConversationLibraryPage.next_cursor` are correct as-is — and added it as an invariant. No wire
+  bytes moved; the absent key already meant this `None`. Re-derived the 4 in-file citations the
+  leaf's 20 added comment lines shifted: the `FeatureCapability` NOTE L670-L675 → L685-L690,
+  `ConversationLibraryAgentRow` L755-L774 → L775-L794, `ConversationLibraryRow.agents` L784 →
+  L804, and `ConversationLibraryPage.agents_note` L797-L799 → L817-L819. The three sub-agent
+  grammar citations (L311-L313, L316-L334, L371) sit above every edit and were re-verified
+  unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: re-anchored this card's in-file citations, which
   the same leaf's `ruff format` pass invalidated. Collapsing a dozen wrapped `Literal`/`Mapping`/

@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 
 ## What This Area Is
 
@@ -72,10 +72,11 @@ in the sibling `projectors/` route.
 
 ## Structures Found Here
 
-- Two FastAPI routes on the prefix `/api/terminal/{ar_session_id}/conversation` with every
+- Three FastAPI routes on the prefix `/api/terminal/{ar_session_id}/conversation` with every
   typed refusal mapped subclass-before-base to one precise HTTP status (no raw 500 for routine
   refusals — the O4 idiom), and explicit SSE wire frames over `StreamingResponse` so all
-  validation precedes headers.
+  validation precedes headers. Since 260731-EFA-L4 each of the three also DECLARES its response
+  shape and the refusal table its typed errors land on.
 - Purpose-branded HMAC-SHA256-signed cursors binding principal/tenant/session/epoch/harness/
   vendor/scope/generation/schema; the per-app random secret is never persisted and the binding
   re-check per wire is the real authorization mechanism.
@@ -229,7 +230,9 @@ engine/store and one over a real socket.
 | The validated IPC reads are the only substrate channels polled. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The evidence/native-page/provenance products define the polled shapes. | L310-L380 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | Orchestration's delegated seat projection consumes the canonical classification. | L71-L91 | [hosted_control_projection.py](agents-remember/mcp/src/agents_remember/serving/hosted_control_projection.py) |
-| The foundation pin asserts exactly the two owned active routes while library/control stay empty. | L32-L56 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | L32-L57 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The declared response shapes and the cursor-aware refusal table the three routes spread. | L126-L227 | [active/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
+| `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | L81-L88; L113-L124 | [conversation/response_contract.py](agents-remember/mcp/src/agents_remember/serving/conversation/response_contract.py) |
 | The four focused suites cover status, mappers, engine/store, and production routes. | L1-L8 | [mcp/tests overview](../../../../../tests/overview.md) |
 
 ## Cross-Repo References
@@ -353,8 +356,60 @@ The `projector/` subpackage additionally gained `wiring.py` (`SessionProjectionS
 `BridgeReaders`) — see its [route overview](projector/overview.md); the rule there is the same
 shape: every component of one projection is built from the same spine and the same whole reader set.
 
+## 260731-EFA-L4 — The Three Routes Now Say What They Answer With
+
+Every hydration, authorization, cursor, gap and recovery rule above is unchanged, and no route was
+added or removed. What changed is that `api.py` declares each route's response shape and refusal
+table:
+
+| Route | `response_model` | `responses` |
+| --- | --- | --- |
+| `GET /conversation` | `ConversationPage` | `CONVERSATION_RESPONSES` |
+| `POST /conversation/agents/{agent_id}/history` | `AgentHistoryHydrated` | `CONVERSATION_RESPONSES` |
+| `GET /conversation/events` | `ConversationEventEnvelope` | `CONVERSATION_RESPONSES` + a 200 `text/event-stream` entry |
+
+Three things a reader must not mis-read from that table:
+
+- **The history route's failure vocabulary lives inside its 200.** A typed child failure is a
+  SUCCESSFUL local outcome — the child-local unavailable/recovered state this route exists to
+  produce — so it is carried in the body's `status`/`code`, and only parent-bridge refusals reach
+  the `responses` table. `AgentHistoryHydrated` is a new model: that body is assembled at the route
+  and previously had no model at all.
+- **`response_model` on `/conversation/events` names what one frame's `data` carries**, not the
+  response. The route returns an explicit `StreamingResponse` because every failure is typed
+  PRE-stream, so FastAPI validates nothing here; the declaration is the schema and the contract.
+- **`CONVERSATION_RESPONSES` is the control table plus the cursor refusals** — the only refusals on
+  this surface that carry a machine-readable `reason`. Because `_map_typed_error` is the single
+  mapper, one table is the complete refusal surface of all three routes.
+
+The enforcement is not the declaration. `mcp/tests/test_serving_response_conformance.py` drives the
+real routes and validates the returned body against the declared model; on these three the decorator
+validates nothing at runtime (all three return a `Response` instance). Its ledger records honestly
+which legs are undriven here: the parent-bridge 400/403/409/422/503 refusals on each route (the
+bridge fixture models the harness edge, not a socket dying mid-write), and the **200 of
+`/conversation/events`**, which needs a live control bridge and a live uvicorn at once — no fixture
+in that suite stands both up together. The 404 (no such seat) IS driven on all three.
+
+This route's declarations only became satisfiable because the parent contract fixed six
+required-but-nullable fields in `models.py` (see `../overview.md`): the serializers dump
+`exclude_none=True`, so `ConversationPage`'s window (`older_cursor`) and every envelope's
+`previous_cursor` could not previously validate a body this route had itself emitted.
+
 ## Update History
 
+- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three routes' declared response
+  shapes and the one shared refusal table, with the two things the table would otherwise mislead
+  about — a typed child failure is a 200 body value here, not a refusal; and the `/events`
+  declaration names one SSE frame's `data`, on a route that returns an explicit `StreamingResponse`
+  and is therefore validated by no FastAPI machinery. Named the conformance suite as the actual
+  enforcement and copied its honest gap for this route (the SSE 200 needs a live bridge and a live
+  uvicorn simultaneously, so it is declared-and-undriven by design). Corrected two false statements
+  that predate this leaf: the Structures bullet said "Two FastAPI routes" where the route has had
+  three since 260727-CHATS-IM-L2, and the foundation-pin reference row said "while library/control
+  stay empty" when the cited test asserts all three children's exact route sets. Added three
+  reference rows (`api.py` declarations, `conversation/response_contract.py`), all ranges read back.
+  Hydration, cursor, gap, status and capability behaviour are unchanged. Verification metadata
+  pinned until closeout stamps the L4 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `TurnTransition` binds a proposed turn-state change to
   the evidence strength that justifies it (so a weak observation cannot be applied without its
   warrant), and `ProjectedSession` binds the five facts a projector must not mix. Hydration

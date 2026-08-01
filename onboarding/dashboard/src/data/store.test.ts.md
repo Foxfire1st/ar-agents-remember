@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated | 2026-08-01T09:16+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,13 @@ to an empty baseline (it does NOT reset `events`/`eventsHydrated`, so the event 
 - `replaces metrics / analytics wholesale` — `applyDelta("metrics", …)` swaps the whole object.
 - `marks the connection signal-lost` — `setConn` flips the channel.
 
-**The change-gate describe (260703-L15):** `volatileBump(source, tick)` builds a byte-fresh copy
-(JSON round-trip, like a real wire parse) with `generatedAt` moved and every volatile age bumped —
-the exact shape of an idle tick. The cases: 50 idle re-snapshots fire ZERO subscriber
+**The change-gate describe (260703-L15):** `volatileBump(source, tick)` builds a byte-fresh copy —
+a new object graph, which is what the identity assertions need — with `generatedAt` moved and every
+volatile age bumped, the exact shape of an idle tick. The copy comes from
+`test/fixtures/wire.ts::reparsed`, which is a `structuredClone`, NOT the `JSON.parse(JSON.stringify(…))`
+round-trip this helper used to run inline: that round-trip answers `any`, and `any` assigns to
+anything, so the helper could have handed the store a shape the server cannot send and nothing would
+have objected. The cases: 50 idle re-snapshots fire ZERO subscriber
 notifications and leave `getState()` the SAME object (lifecycles/analytics/generatedAt identity
 included); an idle re-snapshot with an unchanged `supervisorHeartbeat` (including the `null`/`null`
 case, i.e. no supervisor attached, and since HFX2-L8 the backlog/duration fields) is also zero store writes and the state object stays identical —
@@ -70,9 +74,21 @@ CI-encoded "a working day stays flat" contract.
 
 ### Conventions
 
-Vitest with the `dashboardStore` vanilla store; `../fixtures/snapshot.json` is cast to
-`WorkspaceProjection` as the projection fixture. Tests assert on `getState()` snapshots rather than
-rendered output.
+Vitest with the `dashboardStore` vanilla store. `../fixtures/snapshot.json` reaches the store through
+`test/servedProjection.ts::asServedProjection`, NOT the `snapshot as unknown as WorkspaceProjection`
+double cast this file used to open with. That cast switched assignability off for the whole file, so
+a fixture that dropped a field the store reads would have typechecked; the helper's parameter type
+(`AsJsonModule<WorkspaceProjection>`) is a full structural check of everything `resolveJsonModule`'s
+literal-widening does not touch, and the cast inside it only re-narrows the erased vocabularies. This
+file therefore gained a check it never had.
+
+Counts that belong to the fixture are read from the fixture: `FIXTURE_LIFECYCLES =
+projection.lifecycles.length` replaces the hard-coded `2` in the snapshot-fold and long-session
+assertions. The fixture now carries six lifecycles (one per member of the closed state vocabulary),
+so a literal `2` would have failed — and a hand-kept literal beside a hand-kept payload is the
+second-copy problem itself.
+
+Tests assert on `getState()` snapshots rather than rendered output.
 
 ### Invariants And Boundaries
 
@@ -107,9 +123,12 @@ the bounded buffer documented in the store sidecar.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | System under test: the Zustand store these reducers belong to. | — | [store.ts](store.ts) |
-| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | L22-L35 | [store.test.ts](store.test.ts) |
-| Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | L37-L68 | [store.test.ts](store.test.ts) |
-| `supervisorHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | L106-L146 | [store.test.ts](store.test.ts) |
+| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | L36-L49 | [store.test.ts](store.test.ts) |
+| Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | L51-L82 | [store.test.ts](store.test.ts) |
+| `supervisorHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | L121-L159 | [store.test.ts](store.test.ts) |
+| The fixture narrowing and the fixture-derived lifecycle count. | L9-L20; `asServedProjection`; `FIXTURE_LIFECYCLES` | [store.test.ts](store.test.ts) |
+| The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | [../test/servedProjection.ts](../test/servedProjection.ts) |
+| `reparsed` (the `structuredClone` behind `volatileBump`) and the `supervisorHeartbeat` builder. | `reparsed`; `supervisorHeartbeat` | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
 | Projection / observer-event types the store maps over. | — | [../types/projection.ts](../types/projection.ts) |
 
 ## Cross-Repo References
@@ -121,6 +140,19 @@ No meaningful cross-repo references found. These tests are local to the dashboar
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-01T09:16+02:00 — 260731-EFA-L4 curator: corrected two Conventions/Logic claims the diff
+  against `abc7cbc` falsified. (1) "`../fixtures/snapshot.json` is cast to `WorkspaceProjection`" —
+  the `as unknown as WorkspaceProjection` double cast is gone; the fixture now narrows through
+  `test/servedProjection.ts::asServedProjection`, whose parameter type is a real structural check,
+  so this file gained assignability checking it did not have. (2) "`volatileBump` … (JSON
+  round-trip, like a real wire parse)" — it now calls `test/fixtures/wire.ts::reparsed`, which is a
+  `structuredClone`; the JSON round-trip is gone precisely because it answered `any`. Also recorded
+  `FIXTURE_LIFECYCLES`, which replaced the hard-coded `2` in the snapshot-fold (L57) and
+  long-session (L238) assertions — the fixture now carries six lifecycles, so the literal was about
+  to become wrong. Re-anchored the three test citations, all of which the +15-line header shift had
+  broken: L22-L35 → L36-L49 (the sliding-window `it`), L37-L68 → L51-L82 (fold/delta/metrics/conn),
+  L106-L146 → L121-L159 (the two `supervisorHeartbeat` cases).
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

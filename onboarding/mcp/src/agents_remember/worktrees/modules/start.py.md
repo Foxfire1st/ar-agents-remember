@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:47+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -39,6 +39,29 @@ three stages, each of which owns one decision and can return early:
    contract is rebuilt inside this stage and the fresh one is returned.
 3. `_create_start_enclosure(context, contract, args)` — create the code worktree, prepare memory,
    plan providers, write the contract, and launch setup.
+
+**The three blocked returns use `recovery_guidance`, not `next_guidance` (260731-EFA-L4).**
+`_blocked_memory_start_result` (`choose_memory_recovery`), `_blocked_provider_start_result`
+(`choose_provider_setup_recovery`) and `_stale_base_preflight` (`choose_stale_base_recovery`) are
+three of the five `RecoveryOperation` members, and all three pass `tool="worktree_start"`. The keys
+they emit and their order are unchanged, so nothing on the wire moved; the split is in the type.
+`next_guidance` is now narrowed to the phase machine's `NextOperation`/`NextTool` `Literal`s, which
+`models.worktree.WorktreeSummary` imports — and none of these three payloads is a lifecycle phase.
+They are blocks, rendered as a `FlexibleToolResponse`, so widening the phase vocabulary to hold
+"blocked on a stale base" would have put it into the set the context packet's `nextOperation` claims
+to be. `start.py` imports **both** builders: `status_result` still goes through the phase machine.
+
+`status_result` returns `WorktreeCommandResult(0, dict(status_payload(contract)))` — `status_payload`
+now returns the `WorktreeStatusPayload` `TypedDict`, and `WorktreeCommandResult.payload` is a plain
+`dict[str, object]`, which a `TypedDict` is not assignable to; the `dict(...)` is that widening,
+performed as a shallow copy.
+
+`_contract_after_memory_start`'s disabled-memory branch now writes `memory_mode` through the typed
+record: `amend_contract(replace(contract, memory_repo_path=None, …, memory_state="disabled"),
+ContractCells(memory_mode="disabled"))`. The two look alike in the front matter and are not alike in
+the type system — `memory_state` is free text, `memory_mode` is one of the six persisted
+vocabularies — and `dataclasses.replace` types `**changes` as `Any`, so it checked neither. The
+resulting contract is identical.
 
 This stage split is why the memory/provider blocked returns and their start-progress beats all sit
 in stage 3 while the stale-base beat sits in stage 2. `start_result()` itself
@@ -199,6 +222,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Index-lifecycle tests pin the divergence exclusion (real git worktree fixtures: divergent files stay fresh, equal heads sync everything). | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
 | Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | [test_worktree_stale_base.py](agents-remember/mcp/tests/test_worktree_stale_base.py) |
 | Branch freshness facts come from the shared kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## Series-Contract Notes
 
@@ -206,6 +231,22 @@ For master task starts, `start_contract.py` creates or loads the root series con
 
 ## Update History
 
+- 2026-08-01T09:47+02:00 — 260731-EFA-L4 curator: unlike L3's one-import diff, this leaf changed
+  three things in the file and the card described none. (1) All three blocked returns —
+  `_blocked_memory_start_result`, `_blocked_provider_start_result`, `_stale_base_preflight` — now
+  call `recovery_guidance` instead of `next_guidance`; the module imports both, because
+  `status_result` still goes through the phase machine. Recorded why the split exists: identical
+  keys on the wire, but `next_guidance` is now narrowed to the vocabulary `WorktreeSummary`
+  publishes, and these three payloads are blocks rendered as a `FlexibleToolResponse`, never
+  lifecycle phases. (2) `status_result` wraps its payload in `dict(...)` because `status_payload`
+  now returns a `TypedDict` and `WorktreeCommandResult.payload` is `dict[str, object]`, which a
+  `TypedDict` is not assignable to. (3) `_contract_after_memory_start` writes `memory_mode` through
+  `amend_contract(replace(contract, …), ContractCells(memory_mode="disabled"))` while `memory_state`
+  stays on `replace` — the two look alike in the front matter, but only one has a vocabulary, and
+  `replace` types `**changes` as `Any`. The contract produced is identical. Everything else — the
+  three L2 stages, the stale-base recoveries, the ledger-mapping gate and reconciliation, the mtime
+  sync and its divergence guard — was re-read against the current file and is unchanged. Added two
+  reference rows. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T21:01+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
   `start.py` is one import line — `run_git` moved out of the `modules.git` import block to
   `agents_remember.kernel.git_command`; `current_branch`, `head_commit`,

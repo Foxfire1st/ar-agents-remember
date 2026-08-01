@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated | 2026-08-01T11:40+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 
 > **Status:** active baseline
 
@@ -51,7 +51,7 @@ onboarding pass.
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
 | Workflow modes | The `l-01-agent-lifecycles` architect lifecycle's build decision at `decide`: a research-only exit for no-code answers, otherwise a `w-02-light-task-workflow` skill task — chat is never a build route, so one-session edits take the minimal artifact — escalating to a master + light sub-task series for larger phased work (the retired heavy workflow and the retired chat build are no longer modes). | `l-01-agent-lifecycles` skill, `w-02-light-task-workflow` skill |
 | Agent lifecycles (one per role) | Developer-requested multi-agent series run through the unified `l-01-agent-lifecycles` skill. Spawn-role env and fresh briefs select role seats; otherwise the developer-facing free chat is a launcher that answers research inline and spawns a settings-profile architect for role-shaped work. The architect proposes strategist dispatch and the developer decides; after a sanctioned skip the orchestrator authors/adopts the orchestration task from the ruled plan. The ladder terminates in architect custody. Dependency graphs drive scheduling: independent ready masters/leaves run in parallel by default within concurrency caps, while serial execution names a gate, shared-file one-writer dependency, or explicit ruling. The role set also includes the investigate-first `system-specialist`, curator, and criteria-bound reviewer; super/master/leaf branch topology, C-11 carry-over, and reviewer-verdict handover evidence remain unchanged. | `l-01-agent-lifecycles` skill, `skills/l-01-agent-lifecycles/roles/architect.md`, `skills/l-01-agent-lifecycles/roles/orchestrator.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, `system/git-workflow.md` |
-| Approval-gated closeout | Applicable authority gates for implementation, worktree-backed closeout, memory refresh, memory quality, and ledger alignment: standalone/final work uses explicit developer approval, while subordinate accepted-series work can proceed under recorded delegated series authority. Closeout is worktree-only — the direct current-checkout path was removed (issue #62). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*` |
+| Approval-gated closeout | Applicable authority gates for implementation, worktree-backed closeout, memory refresh, memory quality, and ledger alignment: standalone/final work uses explicit developer approval, while subordinate accepted-series work can proceed under recorded delegated series authority. Closeout is worktree-only — the direct current-checkout path was removed (issue #62). Since 260731-EFA-L4, where the quality gate runs it first resets the index and stages the whole task worktree, so the gate is shown the commit's content rather than only the paths already tracked; two refusals guard that step (not a task worktree, or unresolved merge conflicts). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*` |
 | Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
 | Observable session lifecycle | The 3.0 browser-dashboard substrate: an append-only `ar-observer-event/v1` event log with trust provenance, an ambient process-singleton lifecycle (six `lifecycle_*` signals, heartbeat, TTL sweep, tool-call attribution), and a pure projection reducer that folds events + file snapshots into resolved state (lifecycle tree, metrics, staleness, per-lifecycle token fuel gauge, drift/sidecar/setup/route/ledger analytical surfaces, precomputed action availability, and a server-computed attention queue). Task 27 adds a **lifecycle next-step hint engine** — every MCP tool response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload` choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing `lifecycle_gate` at gate junctions; built on the existing gate, with auto-firing a later step). Task 28 makes **NOTIFY-AND-CONTINUE** the active turn-end model: a new public `lifecycle_turn_end_notification` tool + a non-terminal `awaiting-developer` lifecycle state (notify the developer and stop — no gate, no wait — and the next AR tool call auto-resumes at the `_tool_payload` choke point), the next-step hints repoint off `lifecycle_gate` onto it, a one-line reducer dedup collapses the duplicate gate-open/blocked-gate attention item, and the old `lifecycle_gate`/inbox stack is parked (kept, un-hinted). Task 29 makes throwaway event/runtime surfaces lifecycle-aware: raw Event River lifetime is backend-retained by lifecycle state rather than frontend count caps, worktree provider/runtime facts require active enclosures, and actionable-drift attention carries repo/branch/source/memory provenance with targetless dismissal. | `agents_remember.observer`, `lifecycle_*` tools, `next_step.py`, `observer/` route overview, `docs/design/observable-lifecycle.md` |
 | JSON-primary task documents | The `ar-task-document/v1` document is the source of truth for a task's plan + step/substep progress; `task.md` is a deterministic render of it. The `task_doc` MCP tool authors documents, including a schema-validated full-document `replace` operation for task resets/replans, and re-renders the markdown without parsing it back; the observer projects leaf docs per lifecycle (what a lifecycle is doing, including creation timestamp for reader ordering) and series **masters** folder-keyed (R1 — whole-series progress and authored master content, so a master is observable on the dashboard). Series leaf rows expose structured leaf `createdAt` metadata for oldest-first display without parsing task-name prefixes. Closes the machine-readable-task-registry gap (note-03 #8). | `agents_remember.tasks`, `task_doc` tool, `tasks/` route overview |
@@ -78,10 +78,10 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Repository-owned gate whose scope is **derived from `git ls-files '*.py'`** — it takes no path arguments, so nothing can narrow what it certifies. **Six steps enforce**: Ruff (lint, including `C901`/`PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` armed at full strength), `ruff format --check`, Pyright, the full pytest suite under branch coverage, mandatory CRAP threshold enforcement (**20.0**, against branch coverage, with a report lacking branch data refused), and the **changed-lines coverage floor at 100%** (`diff_coverage.py`, the binding coverage gate — the aggregate is 87.16%, so any lower floor passes a merely average change). **Radon's `cc` and `mi` steps are declared reports and cannot fail anything** (they exit 0 whatever they find), while Radon stays load-bearing as CRAP's complexity engine. **There is no baseline, ratchet, allowlist or grandfather file anywhere in the gate** — one was built inside 260731-EFA-L2 and deleted. The gate runs at pre-push (full tier), worktree closeout before mutation, and CI on every branch and pull request; pre-commit runs a cheap **fast tier** over the staged content (three generated-copy checks + Ruff + formatter + Pyright), deriving the same `git ls-files` scope — see the enforcement topology below. | `python -m agents_remember.code_quality.check`, `code_quality/`, `code_quality/diff_coverage.py`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py`, `mcp/tests/test_gate_scope.py` |
+| Source quality tooling | Repository-owned gate whose scope is **derived from `git ls-files '*.py'`** — it takes no path arguments, so nothing can narrow what it certifies. **Six steps enforce**: Ruff (lint, including `C901`/`PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` armed at full strength), `ruff format --check`, Pyright, the full pytest suite under branch coverage, mandatory CRAP threshold enforcement (**20.0**, against branch coverage, with a report lacking branch data refused), and the **changed-lines coverage floor at 100%** (`diff_coverage.py`, the binding coverage gate — the aggregate is 87.16%, so any lower floor passes a merely average change). **Radon's `cc` and `mi` steps are declared reports and cannot fail anything** (they exit 0 whatever they find), while Radon stays load-bearing as CRAP's complexity engine. **There is no baseline, ratchet, allowlist or grandfather file anywhere in the gate** — one was built inside 260731-EFA-L2 and deleted. The gate runs at pre-push (full tier), worktree closeout before any **commit** (since 260731-EFA-L4 closeout resets the index and stages the whole task worktree first, so the gate's scope is the commit's content), and CI on every branch and pull request; pre-commit runs a cheap **fast tier** over the staged content (three generated-copy checks + Ruff + formatter + Pyright), deriving the same `git ls-files` scope — see the enforcement topology below. | `python -m agents_remember.code_quality.check`, `code_quality/`, `code_quality/diff_coverage.py`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py`, `mcp/tests/test_gate_scope.py` |
 | Self-hosted harness configuration | The nine dogfooded harness configuration trees (`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/` + `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/`, `.agents/`) are **generated from one source and checked**, not eight independent copies. `scripts/harness/` holds the fragment libraries and shared bodies; `scripts/sync-harness.py` fans out 45 files three ways (verbatim, composed body + per-harness framing, and programs assembled from named fragments with derived imports). `--check` runs in both hook tiers and in the test suite. `scripts/harness/README.md` is the ruled classification of genuine per-harness requirements versus drift. | `scripts/sync-harness.py`, `scripts/harness/`, `mcp/tests/test_sync_harness.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
-| Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry a `--check` mode, both run in **both** hook tiers and in CI, and both are covered by `mcp/tests/test_sync_*`. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/_gate.sh` |
+| Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry a `--check` mode and both run in **both** local hook tiers via `_gate.sh`'s `generated_copy_checks`. **Neither `--check` runs in CI** — no workflow invokes `_gate.sh` or any `scripts/sync-*.py`, and the quality wrapper does not either. Drift is caught outside the hooks anyway, because `mcp/tests/test_sync_scripts.py::RealTreeDriftTests` reads the **real** trees in this checkout: `test_every_skill_copy_matches_the_canonical_tree` walks all nine `sync-skills.TARGETS` and `test_every_runtime_package_asset_matches_its_source` walks all four `sync-runtime.TARGETS`, both through the shared module-level `drifted_files()` reader over each script's `diff_target`, and each failure names the drifted copy plus the command that repairs it. It is a plain `unittest` class under `mcp/tests/` (pytest's declared `testpaths`), so it runs in the quality wrapper's **pytest step** — at pre-push, at closeout, and in CI. **Two limits:** CI still never calls `--check` itself, so the guarantee arrives through pytest rather than a workflow step; and the tests are only as strong as `TARGETS` — nothing asserts that set is complete, so a tenth skill mirror added without registering it would go unnoticed (`test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` does pin the runtime target set; `sync-skills.TARGETS` has no counterpart). The six temp-directory cases in `ReplaceTreeTests` are unchanged and still needed — they cover `replace_tree`'s crash-safe copy-then-swap contract, which real-tree drift does not test. `RealTreeDriftTests` is modelled on `mcp/tests/test_sync_harness.py::test_every_generated_harness_file_matches_its_source`, so all three sync scripts now behave alike. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_scripts.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/_gate.sh` |
 | Dashboard bundle release build | The built cockpit (`dashboard/dist/`) is placed into `package_data/dashboard/` by `scripts/sync-dashboard.py`. This is a **release build step, not a sync check**: the bundle is a generated artifact that is **not in version control** (master decision OQ6, 2026-07-31), so there is no `--check` mode and no hook runs it. The release job builds the frontend, runs the placement, packages, and asserts the wheel and sdist both carry the bundle plus its `dashboard.fingerprint` sidecar. Placement refuses an absent `dist` and refuses a `dist` that does not carry the current build-input fingerprint Vite compiled into it, so it cannot stamp over a stale artifact. | `scripts/sync-dashboard.py`, `mcp/tests/test_sync_dashboard.py`, `.github/workflows/publish-mcp-to-pypi.yml`, `dashboard/vite.config.ts` |
 
 Task 10 external-chat inbox current state spans three route families: the control-plane inbox
@@ -637,7 +637,7 @@ Radon applies those patterns even to an explicitly named path and the entry was 
 and F-rank blocks in the tree. **Radon configuration shapes a report; it never decides what the gate
 certifies.**
 
-The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (**20.0** by default, scored against branch coverage) produces a failing result without a separate strict flag, and so does any changed line the tests never reach (the 100% diff-coverage floor). The same repository-owned command is enforced by the **full** hook tier on pre-push, by worktree closeout before any code/memory/ledger/contract/applied-gate mutation, and by CI on every branch push and pull request. The **fast** pre-commit tier does not run it — it runs the generated-copy checks, Ruff, `ruff format --check`, and Pyright over the staged content, deliberately cheap so nobody buys back the minutes with `--no-verify`. Closeout applies the gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
+The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (**20.0** by default, scored against branch coverage) produces a failing result without a separate strict flag, and so does any changed line the tests never reach (the 100% diff-coverage floor). The same repository-owned command is enforced by the **full** hook tier on pre-push, by worktree closeout before any code/memory/ledger/contract/applied-gate **commit**, and by CI on every branch push and pull request. (260731-EFA-L4 corrected "before any mutation" to "before any commit": closeout now performs one mutation ahead of the gate — a `git reset --mixed` plus `git add -A` in the task worktree — precisely so the gate can see files the task created. See the L4 repository-impact section.) The **fast** pre-commit tier does not run it — it runs the generated-copy checks, Ruff, `ruff format --check`, and Pyright over the staged content, deliberately cheap so nobody buys back the minutes with `--no-verify`. Closeout applies the gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
 
 The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit tests, and diff whitespace checks after safe formatting and cleanup. It also found refactor pressure that should feed Phase 06 rather than be hidden by formatter churn: `parse_settings_block` in `coordination_context_resolver.py` was the highest-complexity function seen in the sweep, and provider lifecycle/setup plus worktree and benchmark modules remain large enough to need package-level analysis before code motion.
 
@@ -651,7 +651,7 @@ The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit 
 
 ### Worktree Support
 
-The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, `lifecycle_finalize_task`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval. Real external-memory closeout then runs the strict repository quality wrapper before any code, memory, ledger, contract, or applied-gate mutation; a missing wrapper/interpreter, CRAP at or above threshold, or any other nonzero result fails closed. Only after that gate passes does closeout commit code, use `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refresh affected onboarding verification metadata and entity fingerprints, run `memory_quality_check`, then commit memory content and ledger when clean. `lifecycle_finalize_task` is the terminal lifecycle operation after the branch edge has landed: it proves the landed commit is reachable from the local parent/source branch, verifies memory carryover, runs or verifies cleanup, and reconciles the JSON-primary leaf task plus immediate parent row to `Completed`; it does not attempt squash equivalence or recursively complete ancestors. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
+The worktree and cross-repo roadmap specs are still useful design references, but core implementation now exists for the first support slice: memory ledger parsing/writing, worktree contract parsing/writing, `c-08-ar-coordination-context-resolver` skill contract-aware facts, the `c-09-git-worktree-manager` skill `start`, `attach`, `status`, `closeout`, `integrate`, `lifecycle_finalize_task`, and `cleanup` command surface, and the `c-10-adopt-memory-baseline` skill `status`/`adopt` adoption workflow for pre-existing external-memory onboarding. `c-00-initialize-memory-repo` skill initializes missing memory roots before `c-09-git-worktree-manager` skill worktree use. `c-09-git-worktree-manager` skill external-memory start blocks dirty source memory repos so a refreshed onboarding pass cannot be accidentally stranded outside the ledgered baseline. `c-09-git-worktree-manager` skill closeout dry-run is the non-mutating preview path before explicit commit approval. Real external-memory closeout then runs the strict repository quality wrapper before any code, memory, ledger, contract, or applied-gate commit — since 260731-EFA-L4 over the *staged* task worktree, which is the one index mutation that precedes the gate; a missing wrapper/interpreter, CRAP at or above threshold, or any other nonzero result fails closed. Only after that gate passes does closeout commit code, use `c-02-memory-quality-control` skill memory quality control to produce the maintenance worklist, refresh affected onboarding verification metadata and entity fingerprints, run `memory_quality_check`, then commit memory content and ledger when clean. `lifecycle_finalize_task` is the terminal lifecycle operation after the branch edge has landed: it proves the landed commit is reachable from the local parent/source branch, verifies memory carryover, runs or verifies cleanup, and reconciles the JSON-primary leaf task plus immediate parent row to `Completed`; it does not attempt squash equivalence or recursively complete ancestors. Closeout is worktree-only: the former direct-closeout current-checkout path was removed (issue #62), so every closeout runs against a task contract.
 
 ### Observable Session Lifecycle
 
@@ -813,13 +813,17 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | The gate's scope is recomputed independently from `git ls-files` and asserted against the wrapper's real `ruff`/`pyright` argument vectors. Anything neither rail reaches fails the module, and **there is no allowlist to name it in** — the module docstring records that three empty shrink-only lists (`ALLOWED_UNGATED_PYTHON`, `ALLOWED_UNGATED_TYPESCRIPT`, `ALLOWED_UNTYPED_TYPESCRIPT`) stood there and were deleted, because an empty exemption list is a place to put the next offender. | n/a | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
 | The README now presents the public front door, a Core Features pitch, the generic quickstart, links to harness install pages, and a compact source/runtime layout.                                                                                                   | L1-L191            | [README.md](agents-remember/README.md) |
 | The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages, and now includes `docs/features.md` as the concentrated product tour.                                                                                                   | L1-L46            | [docs/README.md](agents-remember/docs/README.md) |
-| The source checkout carries hidden harness starter packages whose hook, rule, context, or extension startup surfaces load the coordinator first-action directive and now require the `l-01` deep-research retrieval-strategy evidence tally; the Claude Code install page also documents the required copy from `.claude/mcp/mcp.json` to root `.mcp.json` for MCP detection. | README L95-L119; Claude install L18-L31; install README L1-L25; starter instruction files L1-L37 | [README.md](agents-remember/README.md); [docs/install/claude-code.md](agents-remember/docs/install/claude-code.md); [docs/install/README.md](agents-remember/docs/install/README.md); [.claude hook](agents-remember/.claude/hooks/agents-remember-session-start.md); [.codex hook](agents-remember/.codex/hooks/agents-remember-session-start.md); [.cursor hook](agents-remember/.cursor/hooks/agents-remember-session-start.md); [.cursor rule](agents-remember/.cursor/rules/agents-remember.mdc); [.agents GEMINI.md](agents-remember/.agents/GEMINI.md); [.github-vscode hook](agents-remember/.github-vscode/hooks/agents-remember-session-start.md); [.github-vscode instructions](agents-remember/.github-vscode/copilot-instructions.md); [.hermes HERMES.md](agents-remember/.hermes/HERMES.md); [.openclaw workspace AGENTS.md](agents-remember/.openclaw/workspace/AGENTS.md); [.pi extension](agents-remember/.pi/extensions/agents-remember-start.ts) |
-| The current feature inventory is supported by the public Core Features pitch, the full `docs/features.md` tour, runtime/tool-surface docs, MCP `PUBLIC_TOOLS`, response model registry, packaged skill reference, runtime layout, benchmark methodology, and source quality wrapper. | README L32-L48; features L1-L471; MCP README L64-L90; tools L50-L86; model registry L1-L85; skills L15-L46; runtime layout L1-L118; benchmarks L1-L31; quality wrapper L1-L140 | [README.md](agents-remember/README.md); [docs/features.md](agents-remember/docs/features.md); [mcp/README.md](agents-remember/mcp/README.md); [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/); [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py); [skills reference](agents-remember/docs/reference/skills.md); [runtime layout](agents-remember/docs/reference/runtime-layout.md); [benchmark methodology](agents-remember/docs/benchmarks-methodology.md); [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
+| The source checkout carries hidden harness starter packages whose hook, rule, context, or extension startup surfaces load the coordinator first-action directive and now require the `l-01` deep-research retrieval-strategy evidence tally; the Claude Code install page also documents the required copy from `.claude/mcp/mcp.json` to root `.mcp.json` for MCP detection. | README L95-L119; Claude install L18-L31; install README L1-L25; starter instruction files whole file (12-68 lines each) | [README.md](agents-remember/README.md); [docs/install/claude-code.md](agents-remember/docs/install/claude-code.md); [docs/install/README.md](agents-remember/docs/install/README.md); [.claude hook](agents-remember/.claude/hooks/agents-remember-session-start.md); [.codex hook](agents-remember/.codex/hooks/agents-remember-session-start.md); [.cursor hook](agents-remember/.cursor/hooks/agents-remember-session-start.md); [.cursor rule](agents-remember/.cursor/rules/agents-remember.mdc); [.agents GEMINI.md](agents-remember/.agents/GEMINI.md); [.github-vscode hook](agents-remember/.github-vscode/hooks/agents-remember-session-start.md); [.github-vscode instructions](agents-remember/.github-vscode/copilot-instructions.md); [.hermes HERMES.md](agents-remember/.hermes/HERMES.md); [.openclaw workspace AGENTS.md](agents-remember/.openclaw/workspace/AGENTS.md); [.pi extension](agents-remember/.pi/extensions/agents-remember-start.ts) |
+| The current feature inventory is supported by the public Core Features pitch, the full `docs/features.md` tour, runtime/tool-surface docs, MCP `PUBLIC_TOOLS`, response model registry, packaged skill reference, runtime layout, benchmark methodology, and source quality wrapper. | README L32-L48; features L1-L471; MCP README L64-L90; tools L50-L86; model registry L108-L185; skills L15-L46; runtime layout L1-L118; benchmarks L1-L31; quality wrapper L1-L140 | [README.md](agents-remember/README.md); [docs/features.md](agents-remember/docs/features.md); [mcp/README.md](agents-remember/mcp/README.md); [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/); [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py); [skills reference](agents-remember/docs/reference/skills.md); [runtime layout](agents-remember/docs/reference/runtime-layout.md); [benchmark methodology](agents-remember/docs/benchmarks-methodology.md); [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
 | Runtime asset sync treats root runtime folders as canonical and copies them into package data; both hook tiers run the check form so package data does not silently drift from canonical assets. | sync-runtime L1-L168; test L1-L69; gate `generated_copy_checks` | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [_gate.sh](agents-remember/.githooks/_gate.sh) |
 | The local gate is one shared body in two tiers: `fast` certifies the staged content under stash isolation, `full` runs the wrapper. | L19-L29; L66-L91; L93-L202 | [_gate.sh](agents-remember/.githooks/_gate.sh); [pre-commit](agents-remember/.githooks/pre-commit); [pre-push](agents-remember/.githooks/pre-push) |
 | CI runs the wrapper and the frontend rail on every branch push and pull request, and is `workflow_call`-able so the release path can require it. | `on:` block; jobs `quality`, `dashboard` | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
 | The publish workflow gates on quality, owns the frontend build, and fails if a distribution lacks the bundle or its fingerprint. | jobs `quality`, `build`, `publish` | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
-| The generated bundle, its fingerprint sidecar, and local packaging output are git-ignored with the reason recorded inline. | dashboard and build ignore rules | [.gitignore](agents-remember/.gitignore) |
+| The generated bundle, its fingerprint sidecar, and local packaging output are git-ignored with the reason recorded inline. Since 260731-EFA-L4 the file also ignores `.dmypy.json` and `.mypy_cache/`, with the reason stated in the same comment: closeout stages the whole worktree before gating, so an untracked-and-unignored tool dropping is staged and committed rather than merely skipped by ruff. | dashboard and build ignore rules; L31-L37 | [.gitignore](agents-remember/.gitignore) |
+| Closeout stages before it gates: `_gate_staged_code` runs `reset --mixed` then `add -A` and hands the gate exactly the commit's content, downstream of two refusals — `_refuse_outside_a_linked_worktree` (git-dir vs git-common-dir, the property `default_series_contract` violates) and `_refuse_conflicted_worktree` (an unmerged index, which `add -A` would resolve to the conflict markers). No rollback: the index-copy machinery is removed, and the next run's reset is what makes a retry equal a first run. | L557-L681 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| The canonical closeout skill states the staging step, the "no commit" (not "no mutation") phrasing, both refusals and their gate-scoped applicability, and the `wrapper-unavailable` state for a checkout with no wrapper. It is fanned into the eight harness mirrors and the package-data copy by `sync-skills.py`, whose `--check` runs in both hook tiers. | SKILL L69-L97; L227-L275; L301-L340 | [skills/c-12-closeout/SKILL.md](agents-remember/skills/c-12-closeout/SKILL.md); [sync-skills.py](agents-remember/scripts/sync-skills.py) |
+| The production E2E spec's happy-path terminal payloads are `satisfies`-checked against the wire mirrors (which surfaced the absent `controlEndpoint`/`controlProtocol` and the conditionally spread `harness`/`controlState`), while the fault-injection payloads are deliberately left untyped so they can remain shapes the server should never send. | L5-L29; L141; L159-L163 | [cockpit.production.spec.ts](agents-remember/dashboard/e2e-production/cockpit.production.spec.ts) |
+| The mirror boundary, stated by the mirror itself: `snapshot.json` is hand-maintained and no generator exists, so a fixture is type-checked against `types/projection.ts` and the mirror is measured against that hand-kept payload — fixture ⊆ mirror is enforced, mirror ⊆ server is enforced by nothing. | wire L1-L46; guard L21-L30 | [wire.ts](agents-remember/dashboard/src/test/fixtures/wire.ts); [wireFixtureGuard.test.ts](agents-remember/dashboard/src/test/wireFixtureGuard.test.ts) |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" section | [CONTRIBUTING.md](agents-remember/CONTRIBUTING.md) |
 | MCP provider guidance requires Docker-wrapped provider backends instead of host-level services, live GrepAI memory roots, runtime artifacts under `providers/runners/grepai/`, PostgreSQL data under `providers/data/grepai/postgres/`, and `.grepai/` working directories treated as runtime artifacts rather than durable memory. | L79-L99 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
 | The MCP settings example declares the external authority surface for repositories, provider ids, timeout caps, transcript roots, and package-derived provider runtime paths, replacing the removed coordinator `system/settings.json` provider template. | L1-L31 | [examples/mcp/settings.example.json](agents-remember/examples/mcp/settings.example.json) |
@@ -887,6 +891,120 @@ the pre-commit hook could not pass, and any statement that pre-commit runs the f
 CI is scoped to `main`, or that the shipped bundle is committed describes the world before this
 leaf.
 
+## 260731-EFA-L4 Repository Impact — Closeout Stages Before It Gates
+
+This leaf's subject was wire contracts and typed vocabularies, and most of it is route-local. Three
+things changed about the **repository's** shape and rules, and a future agent will get them wrong
+otherwise.
+
+**1. Closeout resets the index and stages the whole task worktree before the quality gate runs, and
+does not put it back.** Every rail of the gate reads the index — `derive_scope` lists what ruff and
+pyright are handed with `git ls-files`, and `diff_coverage` diffs the base against the tracked tree
+— while closeout commits with `git add -A`. Everything in that gap, meaning every path a task
+*created* rather than edited, went into the commit with no rail of the gate having read a line of
+it, and the gate reported green. **Leaf 3's `abc7cbcc` — the commit this leaf is cut from — shipped
+four files that way.** `worktrees/modules/closeout.py::_gate_staged_code` now runs
+`git reset --mixed HEAD` then `git add -A` and hands the gate exactly what the commit will contain.
+The mixed reset is not tidiness: `git add -A` applies ignore rules only to paths git does not
+already track or hold staged, so a file staged by a refused attempt stays staged after the leaf adds
+it to `.gitignore` and the retry commits it anyway. Resetting first makes every run recompute the
+index from the working tree under the ignore rules in force at that moment, which is what makes a
+retry equivalent to a first run rather than merely asserted to be.
+
+The end state after a refusal is **staged, not rolled back**, and that is deliberate. The checkout
+is the task's own disposable worktree — created by `worktree_start`, destroyed by
+`lifecycle_finalize_task` — so nobody is holding a partial staging in it, and `commit_if_dirty` was
+going to `add -A` over it moments later regardless. An earlier attempt saved the index file aside
+and copied it back; that machinery is **gone rather than fixed**, because it could not survive
+`core.splitIndex` or a `SIGTERM` (which is how an MCP server actually dies), and every guarantee it
+offered was about a person who is never in that checkout. So "closeout fails **without mutation**"
+is no longer the accurate phrasing anywhere it appears — the accurate phrasing is "without any
+**commit**".
+
+Two refusals guard the staging step, and because they guard it they run exactly where the gate runs
+— when code would commit **and** this checkout carries
+`mcp/src/agents_remember/code_quality/check.py`. They are **not** closeout-wide preconditions: a
+consuming repository with no wrapper runs no gate, is not staged early, and reaches the ordinary
+commit step's own `git add -A` exactly as before; the preview reports that as `wrapper-unavailable`.
+Where the gate does run, closeout refuses **before staging anything** when
+
+- the code checkout is **not a task worktree**. The test is git's own — `--git-dir` equal to
+  `--git-common-dir` is what a repository's own checkout looks like — rather than the contract's
+  `kind`, because that is the property the safety argument rests on: `kind` is a label beside the
+  path, the git-dir comparison constrains the path about to be written. This is reachable, not
+  hypothetical: `default_series_contract` records `code_worktree = code.repo_path`, so a
+  series/master contract reaching `worktree_closeout_apply` would otherwise stage in a checkout a
+  person works in — overwriting a partial `git add -p` selection and writing a durable blob for a
+  deliberately untracked file. Close out the leaf contract instead.
+- the code worktree has **unresolved merge conflicts**. `git add -A` over an unmerged index does not
+  refuse; it resolves every conflict to whatever the working tree holds and closeout commits the
+  `<<<<<<<` markers. Both refusals run before the reset as well as before the add, because
+  `git reset` drops the unmerged entries and `MERGE_HEAD` and would silently disarm the second one.
+
+All **nine** `c-12-closeout/SKILL.md` copies carry this — the canonical `skills/c-12-closeout/`
+plus the eight per-harness mirrors — and they are byte-identical after the edit (verified with
+`md5sum` and `cmp` across all nine, plus the tenth copy under
+`mcp/src/agents_remember/package_data/runtime/skills/`, all `e7279e57604ea6c1871ff918cf713449`, all
+mode 644). They are generated, not hand-copied: `scripts/sync-skills.py` fans root `skills/` into
+those nine targets (the eight harness roots plus the MCP package-data tree), and drift is caught by
+`scripts/sync-skills.py --check` inside `_gate.sh`'s `generated_copy_checks`, which **both** local
+hook tiers call. **The hooks are no longer the only net.**
+`mcp/tests/test_sync_scripts.py::RealTreeDriftTests` reads the real trees in this checkout:
+`test_every_skill_copy_matches_the_canonical_tree` iterates all nine `sync-skills.TARGETS` and
+`test_every_runtime_package_asset_matches_its_source` iterates all four `sync-runtime.TARGETS`, both
+through the shared module-level `drifted_files()` reader over each script's `diff_target`, which
+rebases every entry onto the target so a failure names the copy that has to be fixed rather than the
+path it shares with eight others; the assertion message names the `python3 scripts/sync-skills.py`
+that repairs it.
+Because it is a plain `unittest` class under `mcp/tests/` — the sole `testpaths` entry pytest is
+given — it runs in the quality wrapper's pytest step, so a hand-edited mirror now fails at pre-push,
+at closeout, and in CI, whether or not the contributor ever installed the hooks.
+**Know exactly where that stops.** CI still does not invoke `--check` at all (no workflow runs
+`_gate.sh` or any `scripts/sync-*.py`, and the wrapper does not either); the guarantee arrives
+through the pytest step, not through a workflow wiring. And the tests are only as strong as
+`TARGETS`: nothing asserts that set is complete, so a tenth skill mirror added without registering it
+would still drift unseen. `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data`
+pins the runtime target set exactly that way — `sync-skills.TARGETS` has no equivalent.
+The six temp-directory cases in `ReplaceTreeTests` were not replaced and still earn their place: they
+test `replace_tree`'s crash-safe copy-then-swap semantics, a different property from real-tree drift.
+This now matches the harness trees, where
+`test_sync_harness.py::test_every_generated_harness_file_matches_its_source` reads the real
+generated files and therefore fails in CI too — the test `RealTreeDriftTests` is explicitly
+modelled on.
+
+**2. `.gitignore` gained `.dmypy.json` and `.mypy_cache/`, and the reason is item 1.** Because
+closeout now stages the whole worktree, any tool dropping left in the tree becomes staged content
+and then committed — it is no longer merely "ignored by ruff". `dmypy` writes a `.dmypy.json`
+holding a pid and a socket path next to whatever it was pointed at, and it landed in `mcp/src/`
+twice during this task's tooling evaluation; one such file reached this leaf's own first commit by
+exactly the path-dependence the mixed reset now removes. The rule and its reason are recorded inline
+in `.gitignore` itself.
+
+**3. The production E2E spec now type-checks its happy-path payloads against the wire mirrors, and
+its fault-injection payloads deliberately stay untyped.** `dashboard/e2e-production/cockpit.production.spec.ts`
+fulfils every endpoint itself, so it faced the same question as a unit fixture: is what it serves a
+payload the server could produce? Its happy-path terminal payloads now carry
+`satisfies TerminalCatalogRow` / `satisfies TerminalOpenSuccessBody`, which found real drift — the
+open response omitted `controlEndpoint` and `controlProtocol` (both declared required by
+`TerminalOpenSuccessBody`) and spread `harness`/`controlState` conditionally where the server always
+sends the key with `null` when unset, so a client bug behind those keys could not have been caught
+there. The `missing`/`malformed`/`contradictory` and 4xx/5xx bodies are left untyped **on purpose
+and must stay that way**: their entire job is to be shapes the server should never send, and a
+`satisfies` there would delete the test. The third answer is the one to quote back at anyone who
+reads the spec as producer-verified: the projection is read whole from `src/fixtures/snapshot.json`,
+and the spec's own comment says that is **reuse, not provenance** — the biggest payload in the file
+is exactly as unverified as a hand-written one, merely unverified in one place instead of many.
+
+**Be precise about what the mirrors pin.** `dashboard/src/test/fixtures/wire.ts` is a
+**hand-maintained** TypeScript mirror and `dashboard/src/fixtures/snapshot.json` is a
+hand-maintained payload; **no generator exists in this repository** — nothing under `mcp/`,
+`scripts/` or `dashboard/` writes either. The chain is: a fixture is type-checked against
+`types/projection.ts` (the mirror), and the mirror is measured against `snapshot.json` by
+`dashboard/src/test/contract.test.ts` in three directions. So **fixture ⊆ mirror is enforced;
+mirror ⊆ server is enforced by nothing.** A field the server starts sending that neither the
+snapshot nor the mirror knows about is invisible to all of it. Do not read any of this as the two
+sides being kept in sync automatically.
+
 ## 260727-CHATS-IM-L2 Repository Impact
 
 The structured Chats path now keeps parent control and siblings usable when one selected child's
@@ -896,6 +1014,83 @@ per-file task parsing. The repository's public capability, task, and dashboard s
 unchanged; ownership and failure containment are now explicit in their route overviews.
 
 ## Update History
+
+- 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **corrected three passages this
+  same leaf wrote and this same leaf then falsified.** The 00:50 entry below correctly found that
+  nothing outside the locally-installed `.githooks/_gate.sh` checked the ten byte-identical skill
+  copies or the four runtime asset targets, and recorded it in the `Canonical runtime and skills
+  asset sync` capability row, in the `260731-EFA-L4 Repository Impact` section, and in that entry
+  itself. **The gap was then closed later in the same leaf and all three passages were left stating
+  the old world.** Re-derived from `mcp/tests/test_sync_scripts.py` rather than from the review lead:
+  a new `RealTreeDriftTests` class (L159-L207) holds
+  `test_every_skill_copy_matches_the_canonical_tree`, which iterates all **nine**
+  `sync-skills.TARGETS` (mcp package data + eight harness roots, L43-L56 of `scripts/sync-skills.py`),
+  and `test_every_runtime_package_asset_matches_its_source`, which iterates all **four**
+  `sync-runtime.TARGETS`; both read through one module-level `drifted_files()` helper (L36-L54) over
+  each script's `diff_target`, rebasing each entry onto its target so a failure names the copy to
+  repair, and both assert against `[]` with the repair command in the message. It is a plain
+  `unittest` class under `mcp/tests/`, which `[tool.pytest.ini_options] testpaths` declares as the
+  suite root, so it runs in the quality wrapper's pytest step — `.githooks/pre-push` (`_gate.sh full`),
+  worktree closeout, and `.github/workflows/quality-checks.yml`'s
+  `python -m agents_remember.code_quality.check`. **Kept both honest limits rather than trading one
+  overclaim for another:** CI still never invokes `--check` (verified — the only `sync-*` string under
+  `.github/workflows/` is a comment), so the enforcement is via pytest, not a workflow step; and there
+  is **no completeness assertion on `sync-skills.TARGETS`**, so a tenth mirror added without
+  registering it would pass (verified by grep across `mcp/tests/`) — unlike
+  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` (L72-L84), which pins
+  the runtime label set to `{agents-md-files, benchmarks, providers, system}`. Also recorded that the
+  six pre-existing `ReplaceTreeTests` temp-directory cases are **unchanged and not superseded** —
+  they cover `replace_tree`'s crash-safe copy-then-swap contract, a different property — and rewrote
+  the "that is the opposite of the harness trees" contrast, since `RealTreeDriftTests` is modelled on
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` and the three sync
+  scripts now behave alike. The 00:50 entry's own sentence is left as the record of what was true then,
+  marked superseded and pointing here. Verification metadata untouched; closeout stamps it.
+
+- 2026-08-01T00:50+02:00 — 260731-EFA-L4 curator. Eleven changed files have no closer governor
+  (`.gitignore`, the canonical `c-12-closeout/SKILL.md` plus its eight per-harness mirrors, and
+  `dashboard/e2e-production/cockpit.production.spec.ts`), and all of them are about the same three
+  repository-level facts, now recorded in a new **260731-EFA-L4 Repository Impact** section.
+  **(1) Closeout stages before it gates.** `worktrees/modules/closeout.py::_gate_staged_code` runs
+  `git reset --mixed HEAD` then `git add -A` in the task worktree and hands the wrapper exactly the
+  commit's content — because every rail of the gate reads the index while closeout commits with
+  `add -A`, so a file the task *created* was previously committed unread with the gate green (leaf
+  3's own `abc7cbcc` shipped four such files). Recorded that the staging is deliberately **not**
+  rolled back on refusal (the checkout is disposable, and the index-copy machinery an earlier attempt
+  used is removed rather than fixed — it could not survive `core.splitIndex` or `SIGTERM`), that the
+  mixed reset is what makes a retry equal a first run, and the two gate-scoped refusals (git-dir vs
+  git-common-dir, which `default_series_contract` violates; an unmerged index, which `add -A` would
+  resolve to the conflict markers) with their ordering constraint. **Corrected three places that said
+  closeout fails "without mutation"** — the accurate phrasing is now "without any **commit**", since
+  the index write is a mutation that precedes the gate on purpose: the `Source quality tooling` and
+  `Approval-gated closeout` inventory rows, the `Code Quality And Refactor Baseline` paragraph, and
+  the `Worktree Support` paragraph. **(2) `.gitignore` gained `.dmypy.json` and `.mypy_cache/`** for
+  that exact reason, verified from the diff and the inline comment: a tool dropping is now staged
+  content rather than something ruff merely skips, and one reached this leaf's own first commit.
+  **(3) The production E2E spec** now `satisfies`-checks its happy-path terminal payloads against the
+  wire mirrors (which surfaced the absent `controlEndpoint`/`controlProtocol` and the conditionally
+  spread `harness`/`controlState`) while its fault-injection payloads stay untyped on purpose.
+  **Verified the nine `c-12-closeout/SKILL.md` copies are byte-identical after the edit** —
+  `md5sum`/`cmp` over all nine plus the tenth package-data copy give one hash
+  (`e7279e57604ea6c1871ff918cf713449`) and mode 644 throughout. **Corrected a false claim about how
+  that identity is enforced**, in the `Canonical runtime and skills asset sync` inventory row and in
+  the new section: the row said both `--check` forms "run in **both** hook tiers and in CI" and that
+  both scripts are "covered by `mcp/tests/test_sync_*`". Neither half holds for skills or runtime
+  assets — no workflow under `.github/workflows/` invokes `_gate.sh` or any `scripts/sync-*.py`, the
+  quality wrapper does not either, and **as of this entry** `test_sync_scripts.py`/`test_sync_runtime.py`
+  only exercised `replace_tree`/`diff_target` over temp fixtures rather than the real trees.
+  Skill-mirror drift was therefore caught by the local hooks alone, unlike harness-tree drift, which
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` reads off the real
+  files and so fails in CI as well. **[Superseded later in this same leaf — see the 11:40 entry: the
+  gap was closed by `test_sync_scripts.py::RealTreeDriftTests`, which reads the real skill and
+  runtime trees in the pytest step, so the "hooks alone" conclusion no longer holds.]** Added four invariants, five evidence rows, and a paragraph stating the
+  mirror boundary precisely: `snapshot.json` and the TypeScript mirrors are hand-maintained, **no
+  generator exists**, fixture ⊆ mirror is enforced and mirror ⊆ server is enforced by nothing.
+  **Citations:** re-checked the 13 range-bearing rows in `Cross-Repo References` and repaired the two stale ones — `tool_registry.py` `L1-L85` →
+  **L108-L185** (the row names the response-model registry, and `TOOL_RESPONSE_MODELS` is at L111
+  with `PUBLIC_TOOL_RESPONSE_MODELS` at L181, so the old range contained neither symbol; the file is
+  185 lines) and the harness starter-instruction group citation `L1-L37`, which was out of bounds for
+  nine of its ten files (12-18 lines each) and is now stated as whole-file. Verification metadata
+  pinned until closeout stamps the commit.
 
 - 2026-07-31T22:12+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers):
   **corrected the `.gitattributes` `-text` claim, which was false.** It said tiktoken verifies the
@@ -1180,9 +1375,6 @@ unchanged; ownership and failure containment are now explicit in their route ove
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: recorded the repository-level routing impact of
   the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests
   route overviews and nine file sidecars. Verification metadata remains pinned until closeout.
-+## 260712-TRH-L4 Route Impact
-
-Repository onboarding now records spawned-unbriefed → harness-ready → briefed hosted dispatch, exact session-id continuity, delivered-plus-harness-log-confirmed assignment, canonical l-01 ownership with generated mirrors, and fully serialized catalog writers with lock-free atomic readers.
 
 - 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the changeset and dashboard reader refinements are fully documented in their existing child routes; the repository-level onboarding route model is unchanged. Verification metadata remains pinned until closeout.
 - 2026-07-12T12:28+02:00 — 260712-TRH-L1 root route impact: documented body-first complete task
@@ -1803,6 +1995,30 @@ Repository onboarding now records spawned-unbriefed → harness-ready → briefe
 - **Derive scope from the tree, never enumerate it.** Every hand-written scope constant in this repository had fallen behind: the wrapper's, the pre-commit hook's, and Pyright's `include`, each silently narrower than the last. `git ls-files` plus a test that asserts the *real* argument vectors reach every tracked path is what makes "the gate covers everything" a fact rather than an intention.
 - **A safety guard that lives in one copy of a duplicated function is not a guard.** Six copies of the git runner drifted apart and only one scrubbed the `GIT_DIR`-family repository selectors, which is why every `git` subprocess in the package now goes through `kernel/git_command.py::run_git` and an AST sweep fails the suite if a second spawner appears (260731-EFA-L3). Wrapping the one runner is fine; re-implementing it is not.
 - **Nothing on the server's import path may reach the network, and a mitigation must not live only in the test harness.** The tool surface is imported while the MCP handshake is starting, so an import-time download is a startup dependency on egress; the `o200k_base` vocabulary is vendored and a missing one raises instead of downloading. The same rule applies to test scaffolding: `conftest.py` stripped the git selectors at import, which made the production defect *undetectable by any test*, so the redirection tests re-set them inside their own scope on purpose.
+- **A gate must be shown the content that will be committed, not the content that happens to be
+  tracked.** Every rail of the quality wrapper reads the git index, and closeout commits with
+  `git add -A`, so until closeout staged first, a file the task *created* was committed unread while
+  the gate reported green (260731-EFA-L4; leaf 3's `abc7cbcc` shipped four such files). The same
+  asymmetry runs the other way: an unstaged deletion left a path in `git ls-files` that no longer
+  existed on disk.
+- **`git add -A` is not idempotent across attempts, so a step that stages must reset first.** Git
+  applies ignore rules only to paths it does not already track or hold staged, so a file staged by a
+  refused attempt survives being added to `.gitignore` and is committed by the retry. A `--mixed`
+  reset before the add is index-only and is what makes a retry mean the same thing as a first run
+  rather than merely be asserted to.
+- **Staging is safe in a task worktree and unsafe in a checkout a person works in, so the guard must
+  test the property, not the label.** A linked worktree is disposable scratch space that
+  `worktree_start` creates and `lifecycle_finalize_task` destroys; a repository's own checkout can
+  hold a partial `git add -p` selection, deliberately untracked files, and an in-progress merge.
+  The refusal compares git's own `--git-dir` against `--git-common-dir` rather than the contract's
+  `kind`, because `kind` is a label beside the path while the git-dir comparison constrains the path
+  about to be written — and `default_series_contract` records `code_worktree = code.repo_path`, so
+  the unsafe shape is producible.
+- **A hand-maintained mirror is not a contract, and saying so is part of the memory.** The dashboard
+  wire mirrors and `dashboard/src/fixtures/snapshot.json` are hand-kept; **no generator exists in
+  this repository**. Fixture ⊆ mirror is enforced by `tsc` plus the fixture guard, mirror ⊆ server is
+  enforced by nothing, and a field the server starts sending that neither knows about is invisible to
+  all of it. Never describe the two sides as automatically synchronized.
 - **A downstream integrity check is not a check if the downstream repairs itself.** tiktoken verifies the vendored vocabulary's SHA-256 and then answers a mismatch by deleting the file and re-downloading it, so "tiktoken verifies it" was never the guarantee it read as — inside an installed package that repair is a startup download plus a rewrite of the installed tree. `models/tokens.py` hashes the file itself before handing it over and raises `TokenizerVocabularyError`, which is what makes corruption behave like absence (260731-EFA-L3). When delegating verification, check what the verifier does on failure, not just that it looks.
 - Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
 - Provider runtime artifacts are not durable memory or source data: GrepAI config/state/cache/home files belong under `providers/runners/grepai/`, GrepAI per-root `.grepai/` working directories are git-ignored runtime artifacts, CGC runtime files belong under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable provider database data belongs under `providers/data/`, and MCP/provider operator logs belong under `logs/`.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_serving_files.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T18:40+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:20+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -61,6 +61,10 @@ and `with TestClient(create_app(config, cadence=ProjectionCadence(interval=100))
 route tests (`create_app` takes its polling interval inside a `ProjectionCadence` parameter object).
 The catalog fixture `_write_leaf_contract` varies only `repo` and `leaf`; the master task name is the
 module constant `_CATALOG_TASK`, not an argument.
+Since 260731-EFA-L4 its `cleanup` parameter — and the matching one on
+`CatalogAssemblyTests._enclosure` — is typed `CleanupStatus` rather than `str`, so the fixtures are
+inside the contract vocabulary pyright checks rather than beside it: an off-vocabulary cleanup value
+in a fixture is now a type error, not a contract the writer would refuse at runtime.
 Run with `PYTHONPATH=mcp/src python -m pytest mcp/tests/test_serving_files.py -q`.
 
 ### Invariants And Boundaries
@@ -88,6 +92,20 @@ Serving-files regressions now assert that repository discovery is single-pass an
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: the whole diff for this file is two type
+  annotations — `_write_leaf_contract(..., cleanup: CleanupStatus = "pending")` and
+  `CatalogAssemblyTests._enclosure(..., *, cleanup: CleanupStatus = "pending")`, plus the
+  `CleanupStatus` import that serves them. No test was added, removed or renamed, and no assertion
+  changed. The Conventions section already described `_write_leaf_contract`'s signature, so it was
+  the natural home for the one fact a reader would otherwise miss: these fixtures are now inside
+  the contract vocabulary pyright checks, which is the leaf's own mechanism reaching the test tree
+  (see `test_wire_vocabulary_exhaustiveness.py`, whose `unreadable_contract_writes` rule requires
+  every value at a typed contract writer to be statically readable). Everything else on this card —
+  the path guard and symlink escape, the oversize multibyte boundary, the null-byte 400, both
+  pairing directions, the memory-less degrade, and the `ProjectionCadence(interval=100)` call
+  pattern — was re-read against the source and still holds. Verification metadata pinned until
+  closeout stamps the L4 commit.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: `create_app` moved its polling
   interval into a `ProjectionCadence` parameter object, so `RouteTests._client` now builds

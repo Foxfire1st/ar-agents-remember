@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-08-01T10:30+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -90,7 +90,19 @@ start stamp stays in the tooltip — was a second 12h clock, V15); the brand `ti
 bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the lifecycle counts are
 explicitly scope-labeled `tasks N running · N blocked · N tok` with a tooltip naming them
 lifecycle/task-scoped (a different authority from the Chats rail's chat-seat states — R7, no backend
-change). **5g G6** adds an `EffectsToggle` to the `TopBar`
+change). **260731-EFA-L4** gives that same `dim` span a `data-testid="task-metrics"` and appends one
+CONDITIONAL segment to it: `· {metrics.awaitingDeveloperCount} awaiting you`, rendered only while
+`metrics.awaitingDeveloperCount > 0`. Server-side `reducer.py::_metrics` stopped hand-writing one
+`sum(1 for lc in ...)` line per bucket and now expands `STATE_COUNT_FIELDS` (derived from the live-state
+vocabulary), so `awaiting-developer` has a bucket at last; before that a lifecycle which had stopped and
+handed the turn back was inside `lifecycleCount` and `totalTokens` and inside **none** of the numbers on
+this bar. At zero the span emits the byte-identical `tasks N running · N blocked · N tok` it always did —
+running/blocked are the workspace's standing rhythm and read fine at zero, while a permanent
+`0 awaiting you` would be the same reassurance-zero lie the `⚠ N waiting` chip refuses to tell. The
+client mirror of the reducer rollup is `metricsFor(lifecycles)` in `types/projection.ts`, and `Metrics`
+now `extends LifecycleStateCounts` (one required `…Count` field mapped from each `ActiveState`), so a
+fixture or test seed states its lifecycles instead of re-listing buckets beside them — the hand-kept
+copies are where this gap kept reappearing. **5g G6** adds an `EffectsToggle` to the `TopBar`
 (`effects-toggle`): a ✦ Effects / ❄ Calm button that flips `html[data-effects]` (which `useShouldAnimate`
 reads live, so the engine-room backdrop + all gated motion respond at once) and persists the choice to the
 `calm-cockpit` localStorage flag `main.tsx` reads on the next load. **Slice 6f** mounts the
@@ -154,6 +166,14 @@ rails/viewport scroll internally and the bars stay fixed. The master-caution liv
 top bar; full-bleed only hides the rails, never the alarm summary (§4.1). The `EffectsToggle` is the only
 writer of `html[data-effects]` from the UI (vs the `?effects=off` URL param / `calm-cockpit` flag
 `main.tsx` applies at boot); default is effects-on.
+**The left rail is why `grammar/Dot.tsx` cannot lean on colour alone (260731-EFA-L4).** `AttentionQueue`
+and `LifecycleList` are SIBLINGS inside the one always-visible `rail--left` aside, so a developer reads
+the severity grammar and the lifecycle-state grammar in a single glance. They are different facts about
+different objects — the reducer builds no attention row for an `awaiting-developer` lifecycle — so an
+amber dot in the queue says nothing about an amber dot in the list, and the two must stay distinguishable
+by glyph rather than by hue. `Cockpit.test.tsx` pins this by rendering the whole shell (not the two panels
+in isolation, because their being siblings in one view is the claim) and asserting the two dots' markup
+differs.
 `selectedId` is no longer assumed to be a raw lifecycle id. Any consumer that needs lifecycle context
 must derive it through the task-identity helper.
 `SupervisorHeartbeatBadge` (260707-HFX2-L2) renders `null` for a never-ticked heartbeat rather than a
@@ -185,25 +205,27 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `fullBleed` rails-hide + `bodyGrid` `bleed` variant + gated rail fade. | L194-L252 | [Cockpit.tsx](Cockpit.tsx) |
-| The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | L59-L76; L379-L386 | [Cockpit.tsx](Cockpit.tsx) |
-| The Chats keep-alive layer preserves the one internal `sessions-view` implementation and toggles display/aria-hidden without remount. | L317-L323; L528-L541 | [Cockpit.tsx](Cockpit.tsx) |
-| The canonical Chats session cockpit the shell mounts once; it composes `ChatContextBar`, `SessionRail`, and `PtySurface`. | L187-L1040 | [panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
+| `bodyGrid` `bleed` variant, the `fullBleed` derivation, and the gated `railEnter` fade on `rail--left`. | L204-L220; L437-L442; L493; L548-L554 | [Cockpit.tsx](Cockpit.tsx) |
+| The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | L63-L80; L437-L442 | [Cockpit.tsx](Cockpit.tsx) |
+| The `chatsLayer` keep-alive const and the layer div that toggles display/aria-hidden without remount. | L318-L328; L612-L621 | [Cockpit.tsx](Cockpit.tsx) |
+| The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | L1067-L1078; L1336 | [panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
 | `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | — | [Cockpit.tsx](Cockpit.tsx) |
 | The boot-time effects flag it persists to. | — | [main.tsx](../main.tsx) |
 | The honest-motion gate the rail transition + the toggle drive. | — | [panels/engine-room/useShouldAnimate.ts](../panels/engine-room/useShouldAnimate.ts) |
-| The SSE stream wiring: one `/api/events` connection, two consumers (river + gated seat events), poll driver start. | L328-L354 | [Cockpit.tsx](Cockpit.tsx) |
-| The seat-event application + per-connection backlog gate this shell holds. | L106-L130 | [../data/seatEvents.ts](../data/seatEvents.ts) |
-| The refcounted catalog poll driver started unconditionally here. | L60-L77 | [../data/catalogPoll.ts](../data/catalogPoll.ts) |
+| The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`. | L360-L389 | [Cockpit.tsx](Cockpit.tsx) |
+| The seat-event application + per-connection backlog gate this shell holds (`applySeatEventLine`, `createGatedSeatEventApplier`). | L95-L130 | [../data/seatEvents.ts](../data/seatEvents.ts) |
+| The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`). | L101-L122 | [../data/catalogPoll.ts](../data/catalogPoll.ts) |
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | — | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
-| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; L6 receives `engineProcesses` here for leaf-context worktree facts. | L479-L485 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
-| The sole Chats layer receives selected lifecycle/leaf/task context while staying persistently mounted. | L544-L558 | [Cockpit.tsx](Cockpit.tsx) |
-| The full-page duty bar owns launch and server-first attach/move controls. | L80-L183 | [ChatContextBar.tsx](../panels/session-cockpit/ChatContextBar.tsx) |
+| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | L245-L257; L312 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
+| The sole Chats layer passes `selectedLifecycleId` / `selectedLeafKey` / `taskDocuments` / `contextMaster` into `SessionsView` while staying persistently mounted. | L617-L628 | [Cockpit.tsx](Cockpit.tsx) |
+| The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | L74-L183 | [ChatContextBar.tsx](../panels/session-cockpit/ChatContextBar.tsx) |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | — | [panels/HighlightComposer.tsx](../panels/HighlightComposer.tsx) |
-| The frontend projection type exposes `Analytics.engineProcesses`, the process-map input Cockpit now threads into `RailChat`. | L395-L408 | [types/projection.ts](../types/projection.ts) |
-| `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | — | [store.ts](../data/store.ts) |
-| The `SupervisorHeartbeat` type this badge's props shape mirrors. | — | [projection.ts](../types/projection.ts) |
+| The frontend projection type exposes `Analytics.engineProcesses`, the process-map input Cockpit now threads into `RailChat`. | L663-L678 | [types/projection.ts](../types/projection.ts) |
+| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | L206-L257 | [types/projection.ts](../types/projection.ts) |
+| The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | L524-L547 | [observer/reducer.py](../../../mcp/src/agents_remember/observer/reducer.py) |
+| `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | L38; L259-L294 | [store.ts](../data/store.ts) |
+| The `SupervisorHeartbeat` type this badge's props shape mirrors. | L701-L709 | [projection.ts](../types/projection.ts) |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 
@@ -222,6 +244,35 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
+  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
+  every anchor below it. Re-anchored the three rows citing that file, each on its proving symbol:
+  `Analytics` L626-L641 → L663-L678 (`engineProcesses` at L677); the metrics rollup L167-L220 → L206-L257
+  (`StateCountField` L206, `LifecycleStateCounts` L214, `Metrics extends LifecycleStateCounts` L240,
+  `metricsFor` L250); and `SupervisorHeartbeat` L664-L672 → L701-L709. The body's rollup claims still
+  hold: `ActiveState` is now `LIVE_STATES` itself rather than a subtraction, but `Metrics` still carries
+  one required `…Count` per `ActiveState`.
+
+- 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: corrected the top-bar counts claim, which still said
+  the span renders only `tasks N running · N blocked · N tok`. It now carries
+  `data-testid="task-metrics"` and appends `· {metrics.awaitingDeveloperCount} awaiting you` while that
+  count is `> 0` only (`Cockpit.tsx` L775-L795); recorded that `Metrics extends LifecycleStateCounts` and
+  that `metricsFor()` is the client mirror seeds now call, and that server-side `_metrics` expands
+  `STATE_COUNT_FIELDS` instead of three hand-written `sum(...)` lines. Added the left-rail invariant the
+  new in-file comment states (`AttentionQueue` + `LifecycleList` are siblings in `rail--left`, so the
+  amber in each grammar must differ by glyph; the reducer builds no attention row for
+  `awaiting-developer`). Citation repairs, each re-anchored on its proving symbol: `bodyGrid`/`fullBleed`/
+  `railEnter` L194-L252 → L204-L220; L437-L442; L493; L548-L554; view registry L59-L76; L379-L386 →
+  L63-L80 (`CockpitView`/`VIEWS`, incl. the `chats` entry the old range cut off); L437-L442; `chatsLayer`
+  L317-L323; L528-L541 → L318-L328; L612-L621; the Chats-layer prop pass L544-L558 → L617-L628 (the old
+  range landed on `motion.aside`); SSE wiring L328-L354 → L360-L389 (`connectState`/`connectEvents`/
+  `createGatedSeatEventApplier`/`startCatalogPollDriver`); `startCatalogPollDriver` L60-L77 → L101-L122;
+  `applySeatEventLine` L106-L130 → L95-L130; `RailChat` `engineProcesses` L479-L485 → L245-L257; L312;
+  `Analytics.engineProcesses` L395-L408 → L626-L641; and the two previously uncited rows
+  (`store.supervisorHeartbeat`, `SupervisorHeartbeat`) given real ranges. Also narrowed the
+  `SessionsView.tsx` row: it composes `ChatContextBar` + `SessionRail` (L1067-L1078) and reaches
+  `PtySurface` through `ChatsStageBody`, not directly — the file no longer names `PtySurface` at all.
 
 - 2026-07-24T13:17:50Z — Documented persistent-layer memoization, wake-lock ownership, and serving
   identity honesty. Verification hash/date remain pinned to the pre-commit source stamp.

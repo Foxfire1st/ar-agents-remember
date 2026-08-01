@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T08:54+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,54 @@ the one-time construction site of the immutable app-scoped
 `ConversationRuntime` authority those children consume.
 
 ## Code Commentary
+
+### 260731-EFA-L4 Current Delta — All Ten Routes Declare Their Response Contract
+
+Every route this module registers now names a `response_model`, and the models live in
+`serving/response_contract.py`:
+
+| Route | Model | Line |
+| --- | --- | --- |
+| `GET /api/harnesses/{harness}/capabilities` | `HarnessCapabilityEnvelope` | L231-L237 |
+| `GET /api/terminal/{session}/capabilities` | `CapabilitySnapshotWire` | L255-L259 |
+| `POST .../set-model` | `SetResultWire` | L267-L271 |
+| `POST .../set-effort` | `SetResultWire` | L279-L283 |
+| `GET .../submission-authority` | `SubmissionAuthorityWire` | L295-L299 |
+| `POST .../submission-status` | `SubmissionStatusBatchWire` | L307-L311 |
+| `POST .../withdraw` | `WithdrawalResultWire` | L330-L334 |
+| `POST .../submit` | `PublicReceiptWire` | L355-L369 |
+| `POST .../reconcile` | `PublicReconciliationWire` | L390-L394 |
+| `POST .../interaction-response` | `InteractionAnswered` | L414-L424 |
+
+**The shared `SESSION_CONTROL_RESPONSES` table is the liveness-first status ladder already
+documented below, transcribed once**: `404 UnknownSessionRefusal` (no live, bridge-backed seat),
+`409 UnsupportedSeatRefusal | BridgeEpochMismatchRefusal` (no control endpoint, or a stale
+caller epoch), `503 StatusRefusal` (the bridge refused or is unreachable). It is exactly what
+`_control_route` plus `_control_failure_response` can produce, so every exact-session route
+declares it unmodified.
+
+**Three routes deviate, each for a reason already in this file's design:**
+
+- The **pre-session** capability route has no seat at all, so it declares its own
+  `{404, 503}` (`StatusRefusal` both) rather than the session table.
+- **`/submit`** spreads the session table and then *widens* two statuses, because it adds two
+  refusals no other control route can produce: a reused request id (the caller's own
+  contradiction) on 409, and `PreDispatchFailureRefusal` on 503 — the one certificate that
+  proves zero socket bytes and is therefore retry-safe.
+- **`/interaction-response`** widens 409 the same way, for the refusal `_interaction_failure_response`
+  alone can emit: nothing pending.
+
+None of this validates at runtime — every handler here returns a `JSONResponse` built by `_ok`
+or a failure responder, and FastAPI applies `response_model` only to values it serializes
+itself. The declarations are the contract; `mcp/tests/test_serving_response_conformance.py`
+drives each route and validates the real body against them under `extra="forbid"`. In
+particular, `PublicReceiptWire` / `PublicReconciliationWire` now *declare* the raw-free public
+shape the Invariants below already required — an adapter-private `raw` key reaching the wire is
+a conformance failure, not just a review finding.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
 
 ### Logic
 
@@ -60,8 +108,9 @@ transcript, and durable-bus paths.
 The snapshot route is multiplex-aware: the serialized snapshot body
 now carries an additive `pendingInteractions` list — every pending interaction across the
 multiplexed threads, each serialized through the same `pending_interaction_json` shape — beside the
-untouched singular `pendingInteraction` parent-thread slot (L458-L466). Consumers reading
-only the singular field see exactly the pre-multiplexing contract.
+untouched singular `pendingInteraction` parent-thread slot (`_answer_interaction`, L537-L541).
+Consumers reading only the singular field see exactly the pre-multiplexing contract. Both keys
+are declared on `InteractionAnswered`, because both are emitted.
 
 ### Conventions
 
@@ -114,7 +163,9 @@ boundaries rather than duplicating their policy.
 | The pre-session catalog supplies the dynamic cached envelope and failed-refresh quarantine. | L80-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
 | The client implements exact-session advertise/set, first-byte ambiguity, whole-message submit, and reconciliation. | L58-L156; L205-L337 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | Public serializers deliberately omit the internal raw evidence mapping. | L251-L296 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The app registers these routes, passes `config.coordination_root` for the runtime scope, and feeds complete launch selection into the one shared opener. | L946-L1049; L1339-L1349 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope, then feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | L752-L770; L1440-L1446 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The declared models and the shared `SESSION_CONTROL_RESPONSES` table these ten routes name, plus the two submit-only refusals. | `SESSION_CONTROL_RESPONSES`; `PreDispatchFailureRefusal` | [response_contract.py](response_contract.py.md) |
+| The suite that enforces the declarations by driving every route and validating the real body. | `test_serving_response_conformance` | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
 | Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | L129-L147; L154-L159; L171-L313; L482-L518; L677-L725 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
 | The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | L22-L32 | [conversation/router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The immutable runtime authority and scope types this registration constructs. | L47-L101 | [conversation/runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
@@ -182,6 +233,24 @@ The shared spine of every control route is now explicit:
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-01T08:54+02:00 — 260731-EFA-L4 curator: recorded the ten `response_model`
+  declarations with their exact lines, the shared `SESSION_CONTROL_RESPONSES` table (which is
+  the liveness-first 404/409/503 ladder this card already documented, transcribed once), and the
+  three deliberate deviations — the seat-less pre-session capability route's own `{404, 503}`,
+  `/submit`'s widened 409 (reused request id) and 503 (`PreDispatchFailureRefusal`, the one
+  retry-safe certificate), and `/interaction-response`'s widened 409 (nothing pending). Noted
+  that the raw-free public shape is now *declared* by `PublicReceiptWire` /
+  `PublicReconciliationWire`, so an adapter-private `raw` key on the wire is a conformance
+  failure. Repaired 2 stale citations: the `pendingInteractions` self-citation L458-L466, which
+  the leaf's 99 added lines moved and which already ran two lines past the end of the `_ok(...)`
+  call — now `_answer_interaction` L537-L541; and the `app.py` row, whose `L946-L1049;
+  L1339-L1349` did not hold the named material even at the leaf base (that span is
+  `_task_document_response`/`_dismissal_response` and a `TerminalLaunchRequest` block) — replaced
+  with L752-L770, the `register_harness_control_routes` call carrying
+  `coordination_root=config.coordination_root`, and L1440-L1446, the
+  `resolve_terminal_open_selection` call. Verification metadata pinned until closeout stamps the
+  L4 commit.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
   `mcp/tests/test_serving_harness_control_api.py`. The five properties the claim names are no longer

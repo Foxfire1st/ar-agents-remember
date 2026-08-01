@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/observer/worktree_provider_admission.py` |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-06-28T05:38+02:00                                      |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                  |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-08-01T00:52+02:00                                      |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                  |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -64,7 +64,18 @@ reads the leaf contract's file mtime (its finalize/cleanup stamp) as that grace 
 never returned here, so they keep the ordinary inactivity TTL.
 
 `_project_lifecycle_map` is the shared fold helper; `_enclosure_is_provider_relevant`
-is the provider-specific contract-status gate.
+(L147-L154) is the provider-specific contract-status gate — it rejects an enclosure with no
+`lifecycleId` or no `worktreeGroup`, then an archived one, then a closeout- or
+integration-completed one.
+
+Since 260731-EFA-L4 that archived check reads the module constant:
+`if enclosure.cleanup in ARCHIVED_CLEANUP_STATES:` (L152), where it was a hand-written
+`{"completed", "abandoned"}` set literal. `ARCHIVED_CLEANUP_STATES` (L18) is now the single
+owner of the archived-cleanup vocabulary for **all three** of this module's readers: the
+provider gate (L152), `active_enclosure_worktree_groups` (L67) and `_series_is_retired` (L106).
+The two sets happened to agree, which is exactly the failure mode of a copy — a fourth cleanup
+state, or a rename, would have been picked up by two of the three call sites and silently missed
+by the provider gate, which is the *stricter* boundary and the one that pages.
 
 ### Conventions
 
@@ -88,6 +99,11 @@ remain owned by `snapshots.py` and `projection_store.py`.
   never series-protected.
 - Engine-process admission is intentionally broader than provider admission so
   non-terminal close/integration work can stay visible without paging provider alarms.
+- **One archived-cleanup vocabulary, three readers.** `ARCHIVED_CLEANUP_STATES` (L18) is the
+  only place `completed`/`abandoned` are named as cleanup states; the provider gate (L152), the
+  active-enclosure set (L67) and `_series_is_retired` (L106) all read it. Do not re-inline the
+  set literal at any of the three — the provider gate is the stricter boundary, so a copy that
+  fell behind there would keep paging on stacks the other two had already released.
 - Group joins always use the worktree group basename.
 
 ### Todos
@@ -113,6 +129,7 @@ rejection, and close-phase Engine Room visibility.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Provider admission joins enclosures and rejects only a *present* terminal/non-provider-phase log — a missing (pruned) log leaves the durable enclosure admitted. | `admitted_worktree_groups` | [worktree_provider_admission.py](worktree_provider_admission.py) |
+| The archived-cleanup vocabulary is declared once and read by all three admission/retention gates. | `ARCHIVED_CLEANUP_STATES` L18; read at L67, L106, L152 | [worktree_provider_admission.py](worktree_provider_admission.py) |
 | Active-enclosure groups keep any non-archived enclosure live; a missing log never drops the group (the Engine Room disappearing-worktree regression). | `active_enclosure_worktree_groups` | [worktree_provider_admission.py](worktree_provider_admission.py) |
 | A non-retired master series retains all its leaf lifecycle ids; retirement requires every leaf archived AND the one-week grace past the last finalized contract mtime. | `series_retained_lifecycle_ids`, `_series_is_retired`, `_contract_finalized_at` | [worktree_provider_admission.py](worktree_provider_admission.py) |
 | The projection store reads enclosures first, then passes `series_retained_lifecycle_ids(...)` as the retention `protected_lifecycle_ids`. | `project_and_write` | [projection_store.py](projection_store.py) |
@@ -132,6 +149,18 @@ boundary over local coordination state.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-08-01T00:52+02:00 — 260731-EFA-L4 curator: the card named `ARCHIVED_CLEANUP_STATES` only
+  as `active_enclosure_worktree_groups`' rule and described `_enclosure_is_provider_relevant`
+  as "the provider-specific contract-status gate" without saying that it carried its own
+  hand-written `{"completed", "abandoned"}` copy of the same vocabulary. Verified against the
+  diff: the literal at L152 is now `if enclosure.cleanup in ARCHIVED_CLEANUP_STATES:`, so the
+  constant at L18 is the single owner for all three readers that consult it (L67, L106, L152).
+  Corrected the Logic paragraph, added the line ranges for `_enclosure_is_provider_relevant`
+  (L147-L154), added an invariant naming all three call sites, and added a reference row. The two
+  existing self-reference rows carry symbol names rather than line ranges and were re-checked
+  against the current source — `admitted_worktree_groups` L24, `active_enclosure_worktree_groups`
+  L48, `series_retained_lifecycle_ids`/`_series_is_retired`/`_contract_finalized_at` all still
+  present — so nothing else moved.
 - 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): made admission resilient to a pruned lifecycle log
   (a MISSING log no longer retires a live enclosure in either `admitted_worktree_groups` or
   `active_enclosure_worktree_groups` — the durable enclosure is the source of truth; this fixed a

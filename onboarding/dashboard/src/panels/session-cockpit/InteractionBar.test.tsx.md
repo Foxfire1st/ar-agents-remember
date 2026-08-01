@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-08-01T10:40+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -26,10 +26,14 @@ terminal dependency by construction, so xterm never appears here.
 
 ### Logic
 
-- **`projectGate` helper** (L20-L45): seeds `dashboardStore.lifecycles` with an open
+- **`projectGate` helper** (L27-L44): seeds `dashboardStore.lifecycles` with an open
   `agent-question` gate carrying the REAL packet shape
   (`packet.adapterInteraction.{sessionId,interactionId}`) — the exact stamp
-  `hosted_interactions.py` writes.
+  `hosted_interactions.py` writes. Since 260731-EFA-L4 it builds that through
+  `lifecycleWithGate(…)` (`test/fixtures/wire.ts`) instead of an
+  `{ id, gate } as unknown as LifecycleProjection` cast, so the seeded lifecycle is a shape the
+  mirror can produce and a packet field the mirror does not declare fails `tsc -b` here. The gate
+  still sets `decisions: []` explicitly.
 - **Kind-awareness (F8)** (L75-L112): choices render one button per choice + kind chip + the
   honesty hint; non-choice kinds mark the composer (`data-answer-mode`) with the gate-channel
   label; unrepresentable payloads say so with ZERO dead buttons; no pending interaction ⇒
@@ -43,7 +47,7 @@ terminal dependency by construction, so xterm never appears here.
 - **Stale round-trip state (review finding 5)** (L246-L268): a pre-seeded "answered" record on
   the seat + a FOLLOWING unrepresentable payload ⇒ the store record clears and no answered line
   renders (fails on the old guard that skipped `interactionId === undefined`).
-- **Focus + announce** (L270-L296): appearance never steals focus (outside button keeps it) and
+- **Focus + announce** (L270-L292): appearance never steals focus (outside button keeps it) and
   the `role="alert"` region carries the prompt; unmount while holding focus returns it to the
   invoker.
 - **Multiplexed sub-agent approvals (review R6)** (L482-L521): over the
@@ -76,6 +80,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable). | L205-L256 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
 | The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). | L411-L446 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
 | The copy constants asserted verbatim (honesty hint). | L54-L71 | [lifecycleCopy.ts](lifecycleCopy.ts) |
+| `lifecycleWithGate` — the typed builder `projectGate` now seeds through, and the `BASE_LIFECYCLE`/`BASE_GATE` bases it spreads. | L98-L120; L252-L262 | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
 
 ## Cross-Repo References
 
@@ -97,6 +102,19 @@ The interaction tests cover separate question option groups, multi-select confir
 recorded-answer copy, all-or-nothing direct submission, and the retained honest fallback forms.
 
 ## Update History
+
+- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator: the only source change is `projectGate` swapping an
+  `{ id, gate } as unknown as LifecycleProjection` cast for `lifecycleWithGate(…)`, so the helper
+  bullet now says where the seed comes from and the `L20-L45` range was repaired to `L27-L44`, which is
+  where the function actually opens and closes. I verified the swap is behaviour-neutral before saying
+  so: the seeded lifecycle now inherits `BASE_LIFECYCLE` (`state: "blocked"`, `phase`, `tokens: 1200`,
+  timestamps), but every case in this suite routes through the GATE — `packet.adapterInteraction` and
+  `gate.state === "open"` — and no assertion reads a lifecycle field other than the gate; the gate
+  itself still sets `decisions: []` explicitly, so `BASE_GATE`'s served `["approve","revise"]` never
+  applies, which is the one residual that could have changed an answer body. `git diff -U2` shows no
+  field value inside the literal changed. Suite re-run: all cases pass. Also repaired
+  `Focus + announce` `L270-L296` → `L270-L292` (the describe closes at 292; 293+ is other content) and
+  added one reference row for the builder.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the "multiplexed sub-agent approvals"
   suite (review R6) over the new `L7_MULTIPLEXED_INTERACTIONS` fixture — two bars (parent

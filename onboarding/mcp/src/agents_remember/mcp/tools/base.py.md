@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-08T18:45+02:00                     |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-08-01T01:10+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -38,47 +38,82 @@ the unified `lifecycle_gate` junction, the remaining public gate tools
 `gate_decide`/`gate_list`, the task-10 external-chat inbox tools
 `operator_inbox_post`/`operator_inbox_poll`/`operator_inbox_consume`, and the
 dashboard task-14 `lifecycle_finalize_task`),
-`RESERVED_TOOLS`, and `_tool_payload(tool_name, payload)`. `_tool_payload`
-selects the declared Pydantic model from `models.tool_registry.TOOL_RESPONSE_MODELS`, validates the
-controller/core payload, serializes it with
-`model_dump(mode="json", exclude_none=True)`, and stamps token-accounting
-metadata onto the dumped dict via `finalize_payload_tokens` (from
-`models/tokens.py`). It then calls `ambient().emit_tool(name, finalized)` (slice
-2b): when a lifecycle is active the observer records one `observed`
-`tool.completed` for the call, and a lifecycle-less call is dropped — so the
-audit trail is complete by construction with no per-tool wiring. Task 28 then
-runs the NOTIFY-AND-CONTINUE **auto-dismiss**: when the active lifecycle is parked
-in `awaiting-developer` AND `tool_name != "lifecycle_turn_end_notification"`,
-`_tool_payload` calls `amb.resume_from_await()` so the next AR tool call resumes
-the lifecycle to `running` — the turn-end notification is a *stop*, not a stall.
-The tool-name guard is load-bearing: `lifecycle_turn_end_notification` flows
-through this same choke point in the very call that set `awaiting-developer`, so
-without the guard the notification would self-dismiss. After that, task 27
-attaches the engine-computed next move:
-`next_step = next_step_for(amb, tool_name)` (top-level `from .next_step import
-next_step_for`) projects the active lifecycle state to the single next step, and
-`finalized["nextStep"] = next_step` is set only when non-`None`. So this one
-choke point now carries the slice-2b emission hook, the task-28
-`awaiting-developer` auto-dismiss, AND the task-27 next-step
-hint — every in-lifecycle response gets a `nextStep` from the projected lifecycle
-state with no per-tool wiring, while lifecycle-less responses stay unchanged
-(`next_step_for` returns `None`). `next_step_for` is exception-contained, so the
-hint path never raises into a tool call. Because this is the single choke point
-every public payload passes through, that one path also gives every MCP response
-a real `tokens`/`tokenizer`/`tokenCountExact` rather than the model defaults.
+`RESERVED_TOOLS`, `_supervisor_banner`, `_attach_lifecycle_tail`, and
+`_tool_payload(tool_name, payload)`.
 
-**260707-HFX2-L2 R5** adds a third thing this one choke point surfaces on every call: after the
-next-step attachment, `_tool_payload` calls `supervisor_heartbeat.supervisor_staleness_banner(amb.root,
-now=datetime.now(UTC), stale_cutoff_seconds=DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS)` (imported from
-`serving.supervisor_heartbeat`; the cutoff constant from `kernel.agentic_settings`) wrapped in a bare
-`try/except Exception: banner = None` — an unreadable/absent heartbeat file must never block a tool
-response. When the sweep's heartbeat tick has gone stale past the cutoff, the result is attached as
-`finalized["supervisorBanner"]` (a short string, e.g. `"supervisor stale 2.3m (past the 60s
-cutoff)"`); a heartbeat that has never ticked (supervisor never run in this workspace) stays silent
-by the helper's own design (see `supervisor_heartbeat.py`'s doc), so this choke point never needs to
-special-case "never ticked" itself. This is issue #15's "the watcher must be code AND watched" —
-the fail-loud surface for the supervisor's OWN liveness, reachable from any seat's next AR call
-regardless of whether it happens to look at the dashboard.
+### 260731-EFA-L4: set on the model, then dump once
+
+`_tool_payload` (L132-L148) is now four steps in this order:
+
+1. `response = model.model_validate(payload)` — the declared Pydantic model from
+   `models.tool_registry.TOOL_RESPONSE_MODELS`, validated but **not yet dumped**.
+2. If a lifecycle is active, `_attach_lifecycle_tail(response, amb, tool_name)`
+   sets the two lifecycle-wide envelope fields **on the model**.
+3. `finalized = finalize_payload_tokens(response.model_dump(mode="json", exclude_none=True))`
+   — one dump, then one token pass over it.
+4. If a lifecycle is active, `amb.emit_tool(tool_name, finalized)` — **last**, off
+   the final payload.
+
+`_attach_lifecycle_tail(response, amb, tool_name)` (L99-L129) owns the tail:
+
+- The task-28 NOTIFY-AND-CONTINUE **auto-dismiss** runs first — when the active
+  lifecycle is parked in `awaiting-developer` AND
+  `tool_name != "lifecycle_turn_end_notification"`, it calls
+  `amb.resume_from_await()` so the next AR tool call resumes the lifecycle to
+  `running`; the turn-end notification is a *stop*, not a stall. The tool-name
+  guard is load-bearing: `lifecycle_turn_end_notification` flows through this same
+  choke point in the very call that set `awaiting-developer`, so without the guard
+  the notification would self-dismiss. It runs **before** `next_step_for`, which
+  reads the state it just moved.
+- `response.nextStep = next_step_for(amb, tool_name)` (L128) — the task-27
+  engine-computed next move (top-level `from .next_step import next_step_for`).
+  Since 260731-EFA-L4 `next_step_for` returns the `NextStep` **model**, not a dump
+  of it.
+- `response.supervisorBanner = _supervisor_banner(amb)` (L129).
+
+Both are assigned unconditionally, `None` included: `exclude_none=True` drops a
+`None`, so a lifecycle-less or live-supervisor response is byte-identical to
+before. `nextStep` and `supervisorBanner` are declared fields of the envelope
+(`models.base.ResponseEnvelope`), which is what makes setting them here legal.
+
+**What this fixed.** Both fields used to be written into the *already-dumped,
+already-token-counted* dict:
+
+- `finalize_payload_tokens` ran before the injections, so the advertised token
+  count under-reported by the whole `nextStep` object — roughly 69% short on every
+  in-lifecycle response.
+- `supervisorBanner` was declared on no model at all, so a payload carrying one
+  was outside its own schema: a stale supervisor made every response fail its own
+  `model_validate`.
+- `emit_tool` ran before the tail was attached, so the `tokens` recorded against
+  the lifecycle was the same short count the wire advertised. It now runs last,
+  off `finalized`, so the recorded figure is the count the caller was actually
+  served — hint included.
+
+Because this is the single choke point every public payload passes through, that
+one path gives every MCP response a real `tokens`/`tokenizer`/`tokenCountExact`
+rather than the model defaults — and now a *correct* one.
+
+`emit_tool` itself is the slice-2b hook: when a lifecycle is active the observer
+records one `observed` `tool.completed` for the call, and a lifecycle-less call is
+dropped — so the audit trail is complete by construction with no per-tool wiring.
+
+**260707-HFX2-L2 R5** is the third thing this choke point surfaces on every call,
+now extracted into `_supervisor_banner(amb)` (L81-L96): it calls
+`supervisor_heartbeat.supervisor_staleness_banner(amb.root, now=datetime.now(UTC),
+stale_cutoff_seconds=DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS)` (imported from
+`serving.supervisor_heartbeat`; the cutoff constant from `kernel.agentic_settings`)
+inside its own `try/except Exception: return None` — an unreadable/absent
+heartbeat file must never block a tool response. Since 260731-EFA-L4 that
+containment lives **inside the helper**, not at the call site. When the sweep's
+heartbeat tick has gone stale past the cutoff the result is a short string (e.g.
+`"supervisor stale 2.3m (past the 60s cutoff)"`); a heartbeat that has never
+ticked (supervisor never run in this workspace) stays silent by the helper's own
+design (see `supervisor_heartbeat.py`'s doc), so this choke point never needs to
+special-case "never ticked" itself. This is issue #15's "the watcher must be code
+AND watched" — the fail-loud surface for the supervisor's OWN liveness, reachable
+from any seat's next AR call regardless of whether it happens to look at the
+dashboard.
 
 ### Invariants And Boundaries
 
@@ -94,37 +129,70 @@ regardless of whether it happens to look at the dashboard.
   emission hook AND the next-step hint here cover every tool with no per-tool code.
 - The emission hook must never raise into the tool path (containment lives in
   `AmbientLifecycle.emit_tool`); likewise the next-step attachment must never
-  raise (containment lives in `next_step.next_step_for`).
-- `nextStep` is attached only when `next_step_for` returns non-`None`, and only
-  after `emit_tool` — the emission ordering is load-bearing.
-- Task 28 auto-dismiss order is fixed: `emit_tool` → (if `awaiting-developer` and
-  the tool is not `lifecycle_turn_end_notification`) `resume_from_await` →
-  next-step attachment. The `tool_name != "lifecycle_turn_end_notification"`
-  name-guard is mandatory — it is what keeps the notification from self-dismissing
-  in the same call that parked the lifecycle.
-- The supervisor-banner check (260707-HFX2-L2) runs last and is exception-contained by its own
-  `try/except Exception` at the call site (not inside the helper) — a banner failure must never
-  prevent `nextStep`/token accounting from reaching the caller. It is attached only when non-`None`,
-  same pattern as `nextStep`.
+  raise (containment lives in `next_step.next_step_for`) and neither must the
+  banner (containment lives inside `_supervisor_banner`).
+- **Everything the caller receives is a field of the model dumped here.** There is
+  exactly one `model_dump` in this file, and it happens after the tail is set.
+  Never write a key into `finalized` after the dump: a key added there is outside
+  the response model (so the payload fails its own `model_validate`) and outside
+  `finalize_payload_tokens` (so the advertised token count is short by whatever
+  was added). That is precisely what `nextStep` and `supervisorBanner` used to do.
+- **Both tail fields are assigned unconditionally, including `None`.**
+  `exclude_none=True` is what drops them, so a lifecycle-less or live-supervisor
+  response stays byte-identical. Do not reintroduce an `if ... is not None` guard
+  around the assignment.
+- **`emit_tool` runs last, off the final payload.** The `tokens` recorded against
+  the lifecycle must be the count the caller was served, hint included — emitting
+  before the tail is attached records the short count.
+- Task 28 auto-dismiss order is fixed and lives in `_attach_lifecycle_tail`:
+  (if `awaiting-developer` and the tool is not `lifecycle_turn_end_notification`)
+  `resume_from_await` → `nextStep` → `supervisorBanner`. The auto-dismiss must
+  stay *before* `next_step_for`, which reads the state it just moved. The
+  `tool_name != "lifecycle_turn_end_notification"` name-guard is mandatory — it is
+  what keeps the notification from self-dismissing in the same call that parked
+  the lifecycle.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Response model registry resolved per tool name. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| The registration package declares exactly the `PUBLIC_TOOLS` names. | [registration overview](../registration/overview.md) |
-| Token-accounting finalizer applied to every dumped payload. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
-| The ambient lifecycle the emission hook tags every tool call onto. | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The next-step engine whose hint is attached after emission. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| The two new public tools' payload builders. | [terminal.py](terminal.py.md) |
-| The supervisor heartbeat store + the `supervisor_staleness_banner` helper this choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
-| The `AmbientLifecycle.root` accessor this helper call resolves the observer root through. | [../../observer/ambient.py](../../observer/ambient.py.md) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Response model registry resolved per tool name. | — | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| `ResponseEnvelope` — the `TypeAlias` (L93) union of `ResponseModel` and `FlexibleResponseEnvelope`, the two families that declare `nextStep` and `supervisorBanner`; that declaration is what lets `_attach_lifecycle_tail` set them on the model before the single dump. | `ResponseModel.nextStep` L51, `.supervisorBanner` L57; `FlexibleResponseEnvelope` L69 (`nextStep` L77, `supervisorBanner` L81); `ResponseEnvelope` L93 | [models/base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| The registration package declares exactly the `PUBLIC_TOOLS` names. | — | [registration overview](../registration/overview.md) |
+| Token-accounting finalizer applied to the single dumped payload — now after the tail, so the advertised count includes it. | — | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
+| The ambient lifecycle the emission hook tags every tool call onto; `emit_tool` now runs last, off `finalized`. | `emit_tool` | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
+| The next-step engine, which now returns the `NextStep` model rather than a dump of it. | `next_step_for` L260-L281 | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
+| The two terminal-catalog public tools' payload builders (advertised at `PUBLIC_TOOLS` L23-L24 here). | `attach_terminal_session_to_leaf_payload` L117-L154; `spawn_agent_session_payload` L640-L765 | [terminal.py](terminal.py.md) |
+| The supervisor heartbeat store + the `supervisor_staleness_banner` helper this choke point calls (260707-HFX2-L2 R5). | — | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
+| The `AmbientLifecycle.root` accessor this helper call resolves the observer root through. | `AmbientLifecycle.root` | [../../observer/ambient.py](../../observer/ambient.py.md) |
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-08-01T01:10+02:00 — 260731-EFA-L4 curator: the Logic section and four invariants described a
+  `_tool_payload` that no longer exists — every claim about dump-then-inject was wrong. Verified
+  against the diff and the current source and rewrote the section. `_tool_payload` (L132-L148) now
+  validates into a model, calls the new `_attach_lifecycle_tail(response, amb, tool_name)`
+  (L99-L129) to set `response.nextStep` (L128) and `response.supervisorBanner` (L129) **on the
+  model**, then dumps once and finalizes tokens over that dump, then emits. The card said
+  `finalized["nextStep"] = next_step` "is set only when non-`None`" and that the banner was
+  attached "only when non-`None`, same pattern"; both are now unconditional assignments with
+  `exclude_none=True` doing the dropping, so a lifecycle-less response stays byte-identical.
+  Recorded the three defects the old order caused: `finalize_payload_tokens` ran before the
+  injections (the advertised token count was short by the whole `nextStep` object — about 69% on
+  every in-lifecycle response), `supervisorBanner` was declared on no model so a stale supervisor
+  made the payload fail its own `model_validate`, and `emit_tool` ran before the tail so the
+  `tokens` recorded against the lifecycle was that same short count. The card's ordering invariant
+  ("`nextStep` … only after `emit_tool` — the emission ordering is load-bearing" and "auto-dismiss
+  order is fixed: `emit_tool` → `resume_from_await` → next-step attachment") was exactly inverted
+  and is replaced: the tail is now attached first and `emit_tool` runs last, off `finalized`. Also
+  corrected the banner containment claim — the `try/except Exception` moved from the call site
+  **into** the extracted `_supervisor_banner(amb)` helper (L81-L96). Added four invariants
+  (one dump; unconditional `None`; emit last; auto-dismiss before `next_step_for`), a reference
+  row for `models.base.ResponseEnvelope`, and citations on the rows that had none; the
+  Repo-Internal References header was two columns and is now three.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: `base.py` itself is unchanged by this leaf, but two
   of its claims pointed at `server.py` for tool registration, which moved wholesale to
   `mcp/registration/`. Repointed the `PUBLIC_TOOLS` invariant and the reference row; nothing else

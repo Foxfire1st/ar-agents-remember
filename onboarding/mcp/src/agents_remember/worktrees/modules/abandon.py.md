@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:52+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -43,6 +43,13 @@ exist, the contract is not marked `cleanup="abandoned"` and the state is
 `"abandon-blocked"`. On a clean run the contract is stamped and state is
 `"abandoned"`. Dry-run yields `"would-abandon"`.
 
+Since 260731-EFA-L4 that stamp is
+`amend_contract(contract, ContractCells(cleanup="abandoned"))`, not `dataclasses.replace`; the
+module no longer imports `replace` at all. `cleanup` is one of the six persisted vocabulary cells,
+and typeshed declares `replace` as `**changes: Any`, so `replace(contract, cleanup=<anything>)` was
+checked by nothing — including against the wire model that reports the value. The written contract
+is unchanged.
+
 ### Invariants And Boundaries
 
 - Requires explicit `--approved` or `dry_run`; refuses silently-destructive
@@ -54,7 +61,10 @@ exist, the contract is not marked `cleanup="abandoned"` and the state is
 - Provider teardown runs before worktree/branch removal so the provider stack
   is reclaimed even when Git operations subsequently fail.
 - The contract `cleanup` field is set to `"abandoned"` on success; this value
-  causes a subsequent `start` call to recreate rather than reattach.
+  causes a subsequent `start` call to recreate rather than reattach. `"abandoned"` is a member of
+  `worktree_contract.CleanupStatus`, and the write must go through `ContractCells` /
+  `amend_contract` — no `replace` call here may carry a `cleanup=` keyword, because typeshed's
+  `**changes: Any` means pyright would check nothing.
 - The docstring points at the `l-01-agent-lifecycles` skill's
   read-only/abandon exit as the lifecycle entry that drives this operation.
 
@@ -75,9 +85,22 @@ No external Domain Documentation source is configured for this memory repo.
 | `WorktreeArgs` types the abandon input. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
 | The server registers `worktree_abandon` with `force` forwarded from the MCP layer. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | [test_worktree_abandon.py](agents-remember/mcp/tests/test_worktree_abandon.py) |
+| `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `abandoned` stamp belongs to and the typed write it takes. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## Update History
 
+- 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: the `cleanup="abandoned"` stamp changed mechanism.
+  `abandon_result` now writes `amend_contract(contract, ContractCells(cleanup="abandoned"))`, the
+  `from dataclasses import replace` import is gone, and `ContractCells` / `amend_contract` were
+  added to the `worktree_contract` import block. Recorded it and tightened the matching invariant:
+  `cleanup` is one of the six persisted vocabularies, and `dataclasses.replace` types `**changes` as
+  `Any`, so the old call was checked by nothing — not by pyright and not against the wire model that
+  reports the value. Behaviour and the written contract are unchanged, so every other claim in this
+  card still stands; I re-verified `_abandon_branch`'s unmerged probe, the force path
+  (`delete_branch_force`, `remove_registered_worktree(force=True)`) and the
+  `abandoned`/`abandon-blocked`/`would-abandon` states against the current file. Added the
+  `worktree_contract.py` reference row. Verification metadata pinned until closeout stamps the L4
+  commit.
 - 2026-07-31T20:59+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
   `abandon.py` is one import line — `run_git` moved from `modules.git` to
   `agents_remember.kernel.git_command`, `branch_exists` still comes from `modules.git` — and this

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:36+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -28,13 +28,142 @@ normalize.
 
 ### Logic
 
-The module defines the single `ar-series-contract/v1` schema, supported memory modes, valid contract
+The module defines the single `ar-series-contract/v1` schema, the six persisted vocabularies, valid contract
 `kind`s (`series` or `leaf`), the `WorktreeContract` dataclass, deterministic worktree folder helpers,
 root/leaf default constructors, markdown front-matter serialization, validation, limited YAML-like parsing,
 and conversion from parsed front matter back into a typed contract object. Contract rendering is split into
 small section renderers for memory, sync, human review, closeout, integration, and body content. Task-folder
 lookup is delegated to `worktrees/task_resolver.py`; leaf-id normalization is delegated to
 `worktrees/leaf_refs.py`; this module no longer owns active-task lookup or leaf-ref policy.
+
+### 260731-EFA-L4: the persisted vocabularies, declared here
+
+Six `Literal` aliases replace the loose `str` fields on `WorktreeContract`:
+
+| Alias | Members | Default constant |
+| --- | --- | --- |
+| `WorkflowKind` | `chat-task`, `light-task` | `DEFAULT_WORKFLOW_KIND = "light-task"` |
+| `MemoryMode` | `internal`, `external`, `disabled` | (derived — see `_memory_mode_fallback`) |
+| `HumanReviewStatus` | `pending-review`, `approved` | `DEFAULT_HUMAN_REVIEW_STATUS` |
+| `CloseoutStatus` | `not-started`, `completed` | `DEFAULT_CLOSEOUT_STATUS` |
+| `IntegrationStatus` | `not-started`, `completed`, `blocked` | `DEFAULT_INTEGRATION_STATUS` |
+| `CleanupStatus` | `pending`, `completed`, `abandoned`, `reopened` | `DEFAULT_CLEANUP_STATUS = "pending"` |
+
+Each `VALID_*` frozenset is `frozenset(get_args(<Alias>))`, derived rather than retyped, so a member
+can only ever be added in one place. `VALID_MEMORY_MODES` was previously a hand-written set literal;
+`VALID_KINDS` is unchanged and is still a plain set (`kind` has no `Literal`).
+
+**This is where these values are born and where they die** — `worktree_start` writes the file, the
+lifecycle tools rewrite it, and `models.worktree` imports these same aliases for the response
+boundary. One declaration is what turns "a writer emits a value the wire model rejects" into a type
+error at the writer instead of a pydantic `ValidationError` escaping an MCP tool handler that has no
+`except` anywhere on its path. `cleanup: reopened` (written by `tasks/reopen.py`) and
+`workflow_kind: chat-task` (`worktree_start`'s own documented argument) were both missing from the
+`Literal` the packet validated against.
+
+`WorkflowKind` deliberately holds only the two task formats a producer can write. The bare `chat`
+and `light` the pre-L4 union also carried had no writer at all and were dropped.
+
+### The reader is total; the writer is strict
+
+`_vocabulary_cell(raw, vocabulary, field_name, fallback, quarantined) -> _Cell` **never raises**.
+Blank reads as `fallback`; a member reads as itself; anything else reads as `fallback` *and* appends
+`f"{field_name}={value!r} read as {fallback!r}"` to `quarantined`. `_contract_from_data` collects
+that list and returns `replace(contract, unknown_cells=tuple(quarantined))` when it is non-empty;
+`load_contract` logs one warning naming the file and the cells. The record then travels on the new
+`WorktreeContract.unknown_cells: tuple[str, ...]` field, is surfaced on the status payload as
+`unknown_contract_cells`, and on the context packet as `unknownContractCells`. It is deliberately
+**not** written back by `contract_to_text`: a rewrite heals the document to the value already in
+force everywhere else.
+
+Tolerance here is not laxity — it is reachability. Every lifecycle tool loads through
+`load_contract` and *none* of them catches `ContractError`, so raising on an unreadable cell would
+take `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_sync` **and**
+`worktree_abandon` down together, leaving a task no tool could close, integrate, clean up or even
+abandon. All six cells now read by one rule with no exceptions; `workflow_kind` used to be the odd
+one out (no `or <default>`), so an emptied cell was a hard refusal where its five siblings degraded.
+
+Two supporting readers:
+
+- `_scalar(value)` returns `value.strip()` only for a `str`, else `""`. `_parse_limited_yaml` reads
+  a bare `key:` line as the *opening of a section* and stores `{}`, so a cell a developer blanked
+  out arrives as a dict; `str()` would have handed the literal `"{}"` to the vocabulary check. An
+  emptied cell is an absent cell, and this is where that is decided.
+- `_memory_mode_fallback(memory)` is the one fallback that cannot be a constant. `internal` and
+  `external` decide whether there is a second repository to commit and a ledger to map, so guessing
+  `internal` for a contract that owns a memory worktree would make closeout skip work that exists.
+  It reads the facts instead: `state: disabled` → `disabled`; a recorded `worktree` or `ledger` →
+  `external`; otherwise `internal`.
+
+The **write** boundary stays closed. `_contract_vocabularies(contract)` returns all six as
+`(name, value, vocabulary)` — using the names `contract_to_text` writes into the front matter, so a
+refusal points at the line a developer would edit — and `validate_contract` refuses any cell outside
+its set. Between the two, an off-vocabulary cell can only arrive from outside (a hand edit, an older
+build, a future one) and can only leave.
+
+`_task_vocabulary(task: ContractTask) -> tuple[WorkflowKind, MemoryMode]` is the third gate, on the
+*request* side: both `workflow_kind` and `memory_mode` reach `worktree_start`'s MCP signature as
+free `str`, and both contract factories funnel through this helper (which is also why the
+memory-mode check is no longer written out twice). It raises `ContractError` naming the legal set,
+and `start_contract.build_start_contract` turns that into a blocked `worktree_start` result.
+
+### `ContractCells` + `amend_contract`: the typed lifecycle write
+
+```python
+@dataclass(frozen=True)
+class ContractCells:
+    workflow_kind: WorkflowKind | None = None
+    memory_mode: MemoryMode | None = None
+    human_review_status: HumanReviewStatus | None = None
+    closeout_status: CloseoutStatus | None = None
+    integration_status: IntegrationStatus | None = None
+    cleanup: CleanupStatus | None = None
+```
+
+`amend_contract(contract, cells)` copies the contract, taking `cells.<field> or contract.<field>`
+for each of the six — no member of any of these vocabularies is falsy, so `or` is the whole of "was
+I given one". Omitted means "leave this one alone".
+
+The reason it exists is a hole in a third-party stub. The lifecycle tools amended contracts with
+`dataclasses.replace`, which typeshed declares as `def replace(obj, /, **changes: Any)` — one `Any`
+is enough to void the guarantee this module is built on, and `replace(contract,
+cleanup="reclaimed-ish")` produced **zero** pyright errors even though `cleanup` is a four-member
+`Literal` that the wire model rejects everything else for. Declaring the six as `ContractCells`
+fields puts them back in front of the
+checker at the call site. `cast` still passes, as it must; that residue is closed by
+`test_wire_vocabulary_exhaustiveness` plus the rule that **no `replace` call anywhere may carry one
+of these six keywords**. `replace` still performs the copy inside `amend_contract` — the values
+reaching it have simply been narrowed first.
+
+Call sites that were converted: `abandon` (`cleanup`), `cleanup` (`cleanup`), `integrate`
+(`integration_status`, and `integration_status` + `cleanup` together), `closeout`
+(`human_review_status`, `closeout_status`, `integration_status`, `cleanup`) and `start`
+(`memory_mode`). Where a write moves both vocabulary cells and free text, the pattern is
+`amend_contract(replace(contract, <free-text fields>), ContractCells(<vocabulary cells>))` — commit
+hashes, notes and strategies have no vocabulary to check them against and stay on `replace`.
+
+### Refusals name the file
+
+Nine refusals gained a path: five in `validate_contract` (missing required fields, invalid kind, the
+vocabulary loop, missing `leaf_id`, missing external-memory field), two in `_extract_front_matter`,
+one in `_path` and one in `_contract_from_data` (unsupported schema). Only `load_contract`'s
+"worktree contract does not exist" already named its file. `validate_contract(contract, *, path: Path)`
+takes it as a **required keyword** — passed in by both `load_contract` and `write_contract` rather
+than read off `contract.contract_path`, because that field is what the *document* claims about
+itself and a copied or moved contract claims the path it came from, which is the one file the reader
+must not be sent to.
+
+Two message shapes, applied consistently: a refusal about the file as a whole ends with it
+(`<problem>: {path}`), matching what `load_contract`'s "does not exist" already did; a refusal about
+something *inside* the file names that something first (`<problem>: <detail> (in {path})`), so the
+detail a developer greps for stays where it was.
+
+`_extract_front_matter(text, path)` gained the path parameter and stopped naming
+`SERIES_CONTRACT_FILENAME` — that constant is the filename the workflow writes, not the path the
+reader was handed, and printing it told a developer only what they already knew. The import of
+`SERIES_CONTRACT_FILENAME` from `task_resolver` is gone. `_path(value, field, contract_path)` now
+names its front-matter line as `section.key`: `repo_path` and `worktree` each appear under both
+`code:` and `memory:`, so the section is part of the answer.
 
 **The constructor parameter objects (260731-EFA-L2).** `default_contract` and
 `default_series_contract` are now signed on three frozen dataclasses this module also owns and
@@ -126,6 +255,22 @@ contract files human-readable without introducing a general YAML dependency.
   `agents_remember.errors`); since that base itself derives from `ValueError`,
   existing `except ValueError` callers still catch contract failures while the
   error now also participates in the domain error hierarchy.
+- **The read path never raises on a vocabulary cell; the write path always does.** `_vocabulary_cell`
+  is total by design — every lifecycle tool loads through `load_contract` and none catches
+  `ContractError`, so a refusal there strands a live task in a state no tool can move.
+  `validate_contract` refuses all six cells so nothing in this package can be what put an unreadable
+  one on disk.
+- **Move a vocabulary cell through `ContractCells` + `amend_contract`, never through
+  `dataclasses.replace`.** Typeshed types `replace`'s `**changes` as `Any`, so pyright checks
+  nothing there. No `replace` call anywhere may carry `workflow_kind`, `memory_mode`,
+  `human_review_status`, `closeout_status`, `integration_status` or `cleanup` as a keyword.
+- `unknown_cells` is read-path-only state. It must not be rendered by `contract_to_text`: a rewrite
+  is the heal, and persisting the quarantine record would make the degradation permanent.
+- **Every refusal names the file it is about, and takes that path as an argument.** Do not read it
+  from `contract.contract_path` — a copied contract claims the path it came from.
+- Adding a member to any of the six vocabularies means adding it to the `Literal` here. The
+  `VALID_*` frozensets derive from `get_args`, and `models.worktree` imports the aliases, so there
+  is no second place to update — and no place to forget.
 
 ## Docs References
 
@@ -141,15 +286,19 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines the contract schema, valid memory modes, the `ContractError` type (now subclassing `AgentsRememberError` from `agents_remember.errors`), and the full `WorktreeContract` state record. | L16-L60 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths. | L61-L151 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The module defines the contract schema, the six vocabulary `Literal`s and their derived `VALID_*` / `DEFAULT_*` constants, the `ContractError` type (subclassing `AgentsRememberError` from `agents_remember.errors`), the total reader `_vocabulary_cell` with `_scalar` / `_memory_mode_fallback` / `_task_vocabulary`, the `ContractCells` record with `amend_contract`, and the full `WorktreeContract` state record ending in `unknown_cells`. | L34-L274 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths; both constructors narrow the request through `_task_vocabulary`. | L323-L422 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Contract WRITE paths normalize legacy leaf ids to canonical doc ids when the leaf-ref resolver can prove the mapping; `load_contract` performs no normalization at all. | load_contract, normalize_contract_leaf_id | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | `heal_contract_leaf_ids` sweeps the active leaf-enclosure population once, cheap-skips canonical ids via a per-root doc-id index, rewrites only changed contracts, and reports every rewrite and error. | heal_contract_leaf_ids | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Dedicated leaf-ref resolver supplies canonical doc ids, legacy alias policy, and the heal's bounded per-task-root doc-id index (`canonical_leaf_doc_ids`). | n/a | [leaf_refs.py](agents-remember/mcp/src/agents_remember/worktrees/leaf_refs.py) |
 | The `heal-leaf-ids` CLI subcommand (`--coordination-root`, `--dry-run`) is the deliberate invocation seam for the heal. | command_heal_leaf_ids | [modules/cli.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cli.py) |
 | Walk-free load tripwires, heal parity with the removed read-time normalization, idempotence, dry-run, error tolerance, and the CLI seam are pinned by the resolver test suite. | n/a | [test_leaf_ref_resolution.py](agents-remember/mcp/tests/test_leaf_ref_resolution.py) |
-| Load/write/render helpers parse front matter, validate contracts, and render closeout/integration state back to markdown. | L154-L289 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Validation and limited YAML parsing enforce required fields and external-memory path requirements. | L292-L387 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Load/write/render helpers: `load_contract` (which logs the quarantined cells and passes `path=` to validation), `write_contract`, the heal, and the section renderers through `contract_to_text`. | L425-L729 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`. | L732-L981 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| `WorktreeSummary` imports `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` from here for the response boundary. | n/a | [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
+| `WorktreeStatusFacts` imports the same six and reports `unknown_cells` as `unknown_contract_cells`. | n/a | [modules/guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | n/a | [modules/start_contract.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start_contract.py) |
+| Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. | n/a | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
 | The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | n/a | [modules/overview.md](agents-remember/mcp/src/agents_remember/worktrees/modules/overview.md) |
 
 ## Cross-Repo References
@@ -163,6 +312,31 @@ external memory paths, but the parser and renderer are same-repository code.
 
 ## Update History
 
+- 2026-08-01T09:36+02:00 — 260731-EFA-L4 curator: this is the leaf's largest change to any file
+  (+406 lines) and the card carried none of it. Added four sections, every claim read off the
+  current source: (1) the six `Literal` aliases with their members and derived `VALID_*` /
+  `DEFAULT_*` constants, replacing the loose `str` fields on `WorktreeContract` and the hand-written
+  `VALID_MEMORY_MODES` set — including that `WorkflowKind` dropped `chat` and `light`, which had no
+  writer; (2) the total reader `_vocabulary_cell` with `_scalar`, `_memory_mode_fallback` and
+  `_task_vocabulary`, the new `unknown_cells` field it feeds, and why tolerance on read is
+  reachability (no lifecycle tool catches `ContractError`) while `validate_contract` refuses all six
+  on write; (3) `ContractCells` + `amend_contract`, the typeshed `**changes: Any` hole they close,
+  and the converted call sites; (4) the nine refusals that now interpolate a path, `path` being a
+  required keyword on `validate_contract` and threaded rather than read from
+  `contract.contract_path`, the two message shapes, and the dropped `SERIES_CONTRACT_FILENAME`
+  import. Added six invariants and five reference rows.
+  **Citation repairs — all four line ranges were broken by the +406 lines and are re-verified
+  against the current file:** L16-L60 → **L34-L274** (the old range contained neither
+  `ContractError`, now at L80, nor `WorktreeContract`, L219-L274; the new range runs from
+  `CONTRACT_SCHEMA` at L34 through `unknown_cells` at L274); L61-L151 → **L323-L423**
+  (`worktree_folder_name` L323 … `default_series_contract` ends L423); L154-L289 → **L425-L730**
+  (`load_contract` L425 … `contract_to_text` ends L730); L292-L387 → **L732-L981**
+  (`_contract_vocabularies` L732 … `_contract_from_data`'s final `return` at L981, the last line of
+  the file). The three symbol-name citations (`load_contract`, `normalize_contract_leaf_id`,
+  `heal_contract_leaf_ids`, `command_heal_leaf_ids`) were re-checked and all still resolve.
+  (Range ends are the last code line of the named symbol, not the blank separator: L422 is
+  `default_series_contract`'s closing paren, L729 is `contract_to_text`'s `return`.)
+  Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `RepoBranchPlan`, `ContractTask` and `LeafIdentity`, and re-signed both
   constructors — `default_contract(task, *, leaf, code, memory=None)` and

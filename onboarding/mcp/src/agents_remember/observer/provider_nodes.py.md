@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/observer/provider_nodes.py` |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-06-27T23:08+02:00                            |
-| lastVerifiedCommitHash |                                                   `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                   2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-08-01T15:10+02:00                            |
+| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`        |
+| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00                         |
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -104,13 +104,13 @@ contract used by the dashboard topology.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| CGC current state stores per-repo watcher rows under `resources.watchers`, keyed by repo id. | L175-L198 | [providers/current_state.py](../../providers/current_state.py) |
-| GrepAI current state persists configured repository memory-root targets as `targetRepos`. | L101-L105; L132-L172 | [providers/current_state.py](../../providers/current_state.py) |
-| Isolated worktree GrepAI settings keep the aggregate multi-root provider shape while replacing only the active project root with the worktree memory root. | L36-L67; L146-L167 | [providers/grepai/isolated.py](../providers/grepai/isolated.py) |
-| The isolated GrepAI test proves the active repo root points at the target memory worktree while an unrelated repo root stays on its source path. | L583-L657 | [test_provider_setup.py](../../../tests/test_provider_setup.py) |
-| `workspace_provider_nodes` expands CGC watcher rows and generic `targetRepos`, but falls back to aggregate workspace provider nodes when evidence is absent. | L16-L39; L75-L177 | [provider_nodes.py](provider_nodes.py) |
-| Worktree provider nodes carry `worktreeGroup` and `repoId` while workspace repo-covered provider nodes carry only `repoId`. | L42-L64; L109-L163 | [provider_nodes.py](provider_nodes.py) |
-| `ProviderNode` is the served schema carrying scope, role, `repoId`, and `worktreeGroup`. | L139-L165 | [projection.py](projection.py) |
+| CGC current state stores per-repo watcher rows under `resources.watchers`, keyed by repo id. | L179-L203 | [providers/current_state.py](../providers/current_state.py) |
+| GrepAI current state persists configured repository memory-root targets as `targetRepos`. | L100-L109; L136-L176 | [providers/current_state.py](../providers/current_state.py) |
+| Isolated worktree GrepAI settings keep the aggregate multi-root provider shape while replacing only the active project root with the worktree memory root. | L36-L74; L146-L167 | [providers/grepai/isolated.py](../providers/grepai/isolated.py) |
+| The isolated GrepAI test proves the active repo root points at the target memory worktree while an unrelated repo root stays on its source path. | L632-L706 | [test_provider_setup.py](../../../tests/test_provider_setup.py) |
+| `workspace_provider_nodes` expands CGC watcher rows and generic `targetRepos`, but falls back to aggregate workspace provider nodes when evidence is absent. | L16-L39; L67-L185 | [provider_nodes.py](provider_nodes.py) |
+| Worktree provider nodes carry `worktreeGroup` and `repoId` while workspace repo-covered provider nodes carry only `repoId`. | L42-L64; L117-L171 | [provider_nodes.py](provider_nodes.py) |
+| `ProviderNode` is the served schema carrying scope, role, `repoId`, and `worktreeGroup`. | L166-L193 | [projection.py](projection.py) |
 
 ## Cross-Repo References
 
@@ -125,6 +125,35 @@ current-state to observer projection boundary.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): re-verified all seven reference
+  citations against source; five were broken and are repaired. `current_state.py` L175-L198 →
+  **L179-L203** (`cgc_current_state` whole) — the old range began inside `grepai_target_repos` and
+  ended one line before the `"resources"` block, leaving `"watchers": repos` (L201), the symbol the
+  finding names, outside it; the repo-id keying it also names is L183-L184. `current_state.py`
+  L101-L105; L132-L172 → **L100-L109; L136-L176** — the first stopped three lines short of
+  `target_repos=grepai_target_repos(config)` (L108) and the second began in `disabled_provider_state`
+  and ended mid-function; the new pair is the GrepAI branch of `current_provider_states` plus
+  `grepai_current_state` (`payload` gains `targetRepos` at L167) and `grepai_target_repos`
+  (`memory_root` L175) whole. `grepai/isolated.py` L36-L67 → **L36-L74** —
+  `isolated_grepai_settings` was truncated mid-function and returns at L74; its second range
+  L146-L167 (`_isolated_grepai_roots`) was already exact and is unchanged.
+  `test_provider_setup.py` L583-L657 → **L632-L706** — the old range started inside
+  `test_isolated_cgc_settings_targets_worktree_backend` and ended before BOTH assertions the
+  finding names; L632-L706 is `test_isolated_grepai_settings_swaps_only_active_memory_root`, whose
+  closing lines are the active-root (L705) and unrelated-root (L706) claims. The two self-citations
+  were narrowed to function boundaries, having previously begun and ended mid-function: L75-L177 →
+  **L67-L185** (`_workspace_provider_node` through `_target_repo_ids`) and L109-L163 → **L117-L171**
+  (`_cgc_repo_provider_node` through `_target_repo_provider_node`, so the `repoId` assignments at
+  L135 and L170 are inside). `projection.py` `ProviderNode` L166-L193 was re-read and left
+  unchanged (`scope` L190, `role` L191, `repoId` L192, `worktreeGroup` L193). Also corrected the
+  `current_state.py` link depth (`../../providers/` → `../providers/`, matching `snapshots.py.md`)
+  and squared two ragged frontmatter cells. Every body claim was re-read against the 199-line
+  source and still holds, so no prose changed.
+- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): the `projection.py` citation was
+  stale by a much larger margin than the rest of the tree. `ProviderNode` L139-L165 was correct
+  against a much older commit; the class is now L166-L193, and only that range covers all four
+  fields this row names — `scope` L190, `role` L191, `repoId` L192, `worktreeGroup` L193 (the old
+  range also stopped one line short of `worktreeGroup`). No body text changed.
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: worktree provider nodes now accept runtime summaries while preserving configured-only inventory as `ok=None`/`watcherUp=False`, preventing static provider-state files from masquerading as live readiness. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T22:31+02:00 — Clarified the Task 12 GrepAI distinction: `targetRepos` are addressable
   project targets inside an aggregate GrepAI instance, and worktree GrepAI keeps unrelated roots on

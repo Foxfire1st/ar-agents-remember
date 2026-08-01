@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastUpdated | 2026-08-01T11:20+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,18 +24,26 @@ refusal path — the exact behaviors the review caught as falsely claimed in rou
 
 ### Logic
 
-- **`resolveWorkingTurnId` (F1)** (L67-L94): prefers the canonical status turn id; correlates from the
+- **Fixtures (260731-EFA-L4)** (L11-L54): the local `capabilities()` helper is gone. It built
+  `{ controls: { interrupt: … } } as unknown as ConversationCapabilities` — a tree with ONE leaf and
+  twenty-two missing, on a model the server fills completely — and is replaced by
+  `capabilitiesWithInterrupt`, imported under the same local name `capabilities`, from
+  `test/fixtures/conversationWire.ts`. The interrupt leaf keeps its exact old shape, including the
+  `reason: \`interrupt ${state}\`` string the reason assertions compare against. `IDENTITY`,
+  `streamingItem` and `status` likewise build on `conversationIdentity` / `conversationItem` /
+  `conversationStatus`.
+- **`resolveWorkingTurnId` (F1)** (L56-L84): prefers the canonical status turn id; correlates from the
   newest streaming item's `turnId` when status omits it on the hosted-codex topology (L4.R1); is null
   when the turn is not `working` even if items carry a `turnId`; is null when a working turn's id is
   genuinely unresolvable.
-- **`useConversationInterrupt` — enable / honest reasons** (L96-L180):
+- **`useConversationInterrupt` — enable / honest reasons** (L85-L170):
   - ENABLES the stop when working + the id resolves from item evidence, with a stale L1 `unverified`
     capability present, and asserts `keyshortcut === "Control+Shift+."` AND `reason === undefined` —
     the F24 guard that the known-stale L1 text never leaks onto the enabled control.
   - a genuinely unresolvable working turn renders disabled with the HONEST reason
     `turn identity unavailable on this wire` (never the stale capability text).
   - a not-working turn offers no stop; a hard-`unavailable` capability disables with its exact reason.
-  - **the F26/F5a refusal path** (L141-L180): a mocked typed 422 envelope (no `acknowledgement`) goes
+  - **the F26/F5a refusal path** (L130-L169): a mocked typed 422 envelope (no `acknowledgement`) goes
     through the REAL client parse — never guessed into an accepted interrupt — so a dispatch disables
     the control for THAT turn with the server's exact `detail`, `onStop === undefined`; a later working
     turn (new id) clears the turn-scoped refusal and re-enables the stop with `reason === undefined`.
@@ -61,10 +69,11 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The hook + `resolveWorkingTurnId` under test. | L12 | [useConversationControls.ts](useConversationControls.ts) |
-| The store seeded with projections. | L5 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts) |
-| The reducer `emptyProjection`/projection type. | L4 | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts) |
-| The status/capability/item wire types the fixtures build. | L6-L11 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
+| The hook + `resolveWorkingTurnId` under test (imported at L17). | L17 | [useConversationControls.ts](useConversationControls.ts) |
+| The store seeded with projections (`activeConversationStore`, imported at L5). | L5 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts) |
+| The reducer `emptyProjection`/projection type (imported at L4). | L4 | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts) |
+| The status/capability/item wire types the fixtures build (imported at L6-L10). | L6-L10 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
+| `capabilitiesWithInterrupt` (aliased to `capabilities` here) and the full `conversationCapabilities` tree it overrides one leaf of. | L103-L153 | [../../../test/fixtures/conversationWire.ts](../../../test/fixtures/conversationWire.ts) |
 
 ## Cross-Repo References
 
@@ -76,6 +85,24 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-08-01T11:20+02:00 — 260731-EFA-L4 curator: the Logic section did not mention the fixtures at
+  all, and the local `capabilities()` helper it would have described no longer exists, so a Fixtures
+  bullet was added. The removed helper returned a ONE-leaf tree
+  (`{ controls: { interrupt: … } } as unknown as ConversationCapabilities`) against a model the server
+  fills with twenty-three leaves; `capabilitiesWithInterrupt` is imported under the same local name and
+  produces the full tree with that one leaf overridden. Before attesting that the described matrix is
+  unchanged I checked the two claims that depend on capability CONTENT: the F24 guard asserts
+  `reason === undefined` on the enabled control while a stale `unverified` capability is present, and
+  the hard-`unavailable` case asserts the exact reason — both still hold because
+  `capabilitiesWithInterrupt` keeps the identical `reason: \`interrupt ${state}\`` string the old helper
+  built. The twenty-two newly-present leaves (`steer`, `followUp`, `attachments`, `policyRead`,
+  telemetry, history, live) are unread by `useConversationInterrupt`. Suite re-run: all cases pass.
+  Citation repairs, re-anchored on their describes: `resolveWorkingTurnId` L67-L94 → L56-L84;
+  `useConversationInterrupt` L96-L180 → L85-L170 (the old upper bound exceeded the 170-line file);
+  the F26/F5a refusal `it` L141-L180 → L130-L169; the four import-line citations re-checked against the
+  reshuffled import block (`useConversationControls` L12 → L17, types L6-L11 → L6-L10; the store and
+  reducer lines were already correct). One row added for the builder module.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the interrupt-hook
   suite — item-evidence turn-id correlation (F1/L4.R1), the enable/honest-disabled reason matrix with

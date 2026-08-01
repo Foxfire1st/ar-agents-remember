@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |
 | doc_type               | `route-local-overview`                                              |
-| lastUpdated            | 2026-07-26T15:40+02:00                                              |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`                         |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated            | 2026-08-01T13:28+02:00                                              |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                         |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                                    |
 
 ## Governing Overview
@@ -128,6 +128,25 @@ cross-repository implementation source governs it.
 | The live renderer whose block grammar the read-only preview reuses. | [conversation overview](../conversation/overview.md) |
 
 ## Update History
+
+- 2026-08-01T13:28+02:00 — No route impact: 260731-EFA-L4's single change under this route is
+  `ConversationLibraryList.test.tsx`, and the whole diff is fixture plumbing — the local
+  `capabilities()` and `row()` builders and the hand-written `AGENT` literal are replaced by
+  `conversationLibraryRow` (imported under the alias `row`), `conversationLibraryAgentRow` and
+  `historyCapabilities()` from `test/fixtures/conversationWire.ts`, the two inline
+  `as LibraryConversationKey` casts collapse into that module's single `libraryConversationKey()` mint,
+  and the `onSelect` spy is typed `vi.fn<(selected: ConversationLibraryRow) => void>()` so the payload
+  assertion reads `onSelect.mock.calls[0]?.[0]` instead of casting its own result back. No component
+  source, no `it(...)` title, and no `expect` changed. Every route-model claim this suite backs is
+  therefore intact and re-proven, not merely unrefuted: the indented child rows with label/suffix/role
+  badges, `agentChildRow` promotion carrying the CHILD's server-minted `conversationKey`/`identityDigest`
+  with the parent's read-path capabilities and `agents: []`, no child rows without `agents`, and the
+  verbatim-or-absent `agentsNote`. I checked the one assertion that reads capability CONTENT
+  (`selected.capabilities.completeness.state` is `"supported"`) against the shared
+  `historyCapabilities()` default, which supplies it exactly as the deleted local helper did; the four
+  cases run green. The surface's `agentsNote` pass-through, the sole-exact-open authority, and the
+  `nowrap` + container-query height-containment idiom are untouched. Verification metadata pinned until
+  closeout stamps the commit.
 
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the harness sub-agent grouping in this
   route — the list's nested child rows (`agentChildRow` promotion: own server-minted key, parent-

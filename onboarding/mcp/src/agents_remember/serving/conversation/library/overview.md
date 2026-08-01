@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/library/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 
 ## What This Area Is
 
@@ -186,6 +186,14 @@ family.
   helper is repository-owned and locked, so the practical risk is accepted for this leaf.
 - Library cursors/keys are non-interchangeable with the active cursor family, and the
   `library-list`/`library-read` purposes are non-interchangeable with each other.
+- **`_OPEN_STATUS_BY_OUTCOME` must stay TOTAL over `OpenConversationOperation.outcome`.** Since
+  260731-EFA-L4 `_open_call` indexes it directly (`_OPEN_STATUS_BY_OUTCOME[operation.outcome]`)
+  instead of the old `.get(operation.outcome, 500)`. A ninth outcome added without a status is now
+  a loud `KeyError` at the one place that can fix it; before, it answered **500 carrying a full
+  operation body** — a shape no `responses` table declares, on a status no test could ever drive,
+  silently. `test_serving_response_conformance.py::DeclaredSurfaceCoverageTests
+  ::test_the_open_status_map_is_total_over_the_declared_outcomes` asserts set equality between the
+  map's keys and the `Literal`'s eight members, which is what makes the direct index safe.
 
 ## Repo-Internal References
 
@@ -202,6 +210,8 @@ the live gates and both real open E2Es.
 | The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. | L170-L257 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
 | Locked helper entries and the JSONL protocol serve the Claude/Pi ports and host. | L50-L63; L54-L67 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts), [pi.ts](agents-remember/mcp/native_helpers/conversation_library/src/pi.ts) |
 | The foundation pin asserts exactly the five owned library routes and the helper source set. | L32-L56; L113-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | L68-L85; L109-L235; L261-L268; L271-L320 | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
+| `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | L125-L139; L178-L210 | [conversation/response_contract.py](agents-remember/mcp/src/agents_remember/serving/conversation/response_contract.py) |
 | The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | L1-L8 | [mcp/tests overview](../../../../../tests/overview.md) |
 | Runtime fixtures record the observed (never enabling) gate/open evidence rows per harness. | L21-L34 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
 
@@ -309,8 +319,63 @@ machine". Tests substitute the whole seam or none of it.
 `ToolPhase` in `codex_normalize.py` dropped its `# noqa: UP040` — the Ruff target version now
 matches the package's declared 3.11 floor, so the directive had nothing to suppress.
 
+## 260731-EFA-L4 — The Five Routes Declare Their Shapes, And One Silent 500 Was Deleted
+
+The read-and-open boundary, the re-authorization chain, the gate-before-store rule, the cursor/key
+authority and the open ledger are all unchanged. Two things changed in `api.py`.
+
+**1. Every route declares what it answers with.**
+
+| Route | `response_model` | `responses` |
+| --- | --- | --- |
+| `GET ""` | `ConversationLibraryPage` | `LIBRARY_RESPONSES` |
+| `GET /{conversation_key}` | `HistoricalConversationPage` | `LIBRARY_RESPONSES` |
+| `POST /{conversation_key}/open` | `OpenConversationOperation` (`status_code=201`) | `{**LIBRARY_RESPONSES, **OPEN_OUTCOME_RESPONSES}` |
+| `POST /{conversation_key}/open-status` | `OpenConversationOperation` (`status_code=201`) | same |
+| `POST /{conversation_key}/open-reconcile` | `OpenConversationOperation` (`status_code=201`) | same |
+
+`LIBRARY_RESPONSES` is `_ERROR_STATUS_TABLE` + `_error_response` transcribed: every typed library
+error lands on one of 400/403/404/409/422/503, so one table is the complete refusal surface of all
+five routes. The open trio need a second table because **they answer with two families on the same
+statuses**: `_OPEN_STATUS_BY_OUTCOME` picks 201/202/409/422/503 from the operation's own `outcome`
+and the body there is the operation (a `pending` open is an ANSWER, not an error), while
+`_error_response` still maps typed library errors onto the same 409/422/503 with refusal bodies.
+Because `{**a, **b}` is a dict merge and not a union, `OPEN_OUTCOME_RESPONSES` unions the refusal
+member into each overlapping status itself — a bare operation-only entry would overwrite
+`LIBRARY_RESPONSES`' entry and declare, on nine (route, status) pairs, a model the route cannot
+produce.
+
+**2. `_open_call` lost its `.get(..., 500)` default — a real behaviour change.** It now indexes
+`_OPEN_STATUS_BY_OUTCOME[operation.outcome]` directly. Before, an outcome nobody had mapped was
+answered as **HTTP 500 carrying a full operation body**: a shape no `responses` table names, on a
+status no test could drive, with no signal anywhere. Now it raises at the one place that can fix it,
+and `test_serving_response_conformance.py::DeclaredSurfaceCoverageTests
+::test_the_open_status_map_is_total_over_the_declared_outcomes` asserts set equality between the
+map's eight keys and `OpenConversationOperation.outcome`'s `Literal` members, so a ninth outcome
+fails in CI before it can reach the index.
+
+**What enforces the declarations.** Not FastAPI: every handler here returns a `JSONResponse` it
+built, so the decorator contributes an OpenAPI schema and validates nothing at runtime.
+`test_serving_response_conformance.py` drives the real routes and validates the returned body
+against the model declared for the status that came back; the library/open success bodies are
+driven off a real bridge in `ConversationSuccessConformanceTests` (they need a conversation key this
+app's own authority will sign), while the harness-specific failure legs remain declared-and-undriven
+with a recorded reason.
+
 ## Update History
 
+- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the five route declarations and the one
+  real behaviour change — `_open_call` dropped `_OPEN_STATUS_BY_OUTCOME.get(outcome, 500)` for a
+  direct index, so an unmapped outcome is now a loud failure instead of a silent 500 carrying a full
+  operation body on an undeclared status, held total by a set-equality test against the outcome
+  `Literal`'s eight members. Recorded why the open trio need a second `responses` table (the same
+  statuses carry either the operation or a refusal) and why every entry in it unions both models
+  (`{**a, **b}` is a merge, so an operation-only entry would delete the shared refusal on nine
+  (route, status) pairs). Added the totality rule to Local Invariants And Traps and two reference
+  rows (`library/api.py`, `conversation/response_contract.py`); all ranges read back. Named the
+  conformance suite rather than FastAPI as the enforcement, since every handler here returns a
+  `JSONResponse` it built itself. Gate, cursor/key, scope and open-ledger behaviour are unchanged.
+  Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `LibraryBinding` (per-app runtime/shared bound to a
   per-caller authorization) and `OpenRequest` (the four facts whose joint fingerprint is what makes
   a replay a conflict rather than a second open) replaced the parallel parameter lists;

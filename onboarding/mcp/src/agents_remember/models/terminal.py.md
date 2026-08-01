@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastUpdated            | 2026-08-01T09:48+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -44,14 +44,23 @@ compatibility and must not be confused with orchestration binding identity.
 `sessionLogPath`. `contextDelivered` means the id-bearing user record exists in the bound harness
 log; `sessionCommandsDelivered` means command record plus non-error stdout, not pane rendering.
 
-`LeafAssignmentStatus` is the closed response vocabulary for assignment attempts:
-`attached`, `leaf-taken`, `unknown-session`, `leaf-ref-not-found`, or `leaf-ref-ambiguous`.
-`AttachTerminalSessionToLeafResponse` is a strict
+`LeafAssignmentStatus` (L21-L27) is the closed response vocabulary for assignment
+attempts: `attached`, `leaf-taken`, `unknown-session`, `role-required`, plus the
+two members folded in from `LeafRefStatus` — `leaf-ref-not-found` and
+`leaf-ref-ambiguous`. Those two are no longer typed out here: since
+260731-EFA-L4 the alias `LeafRefStatus` is imported from `worktrees.leaf_refs`
+(L30 there), which is what raises them. `Literal` flattens a nested alias, so the
+published enum is byte-identical to the hand-written one — the change is that
+there is now one declaration instead of three.
+`AttachTerminalSessionToLeafResponse` (L30-L42) is a strict
 `ToolResponse` with operation `attach_terminal_session_to_leaf`, the requested session and `leafKey`,
 the optional prior binding (`previousLeafKey`), optional conflict owner (`ownerSession`), optional
 role (`chat` or `terminal`), and optional `detail` for validation refusals.
 
-`SpawnAgentSessionStatus` is the L2 vocabulary: `spawned` (the only `ok: true` case), `leaf-taken`
+`SpawnAgentSessionStatus` (L45-L71) is the L2 vocabulary: `spawned-unbriefed` (the only `ok: true`
+case — the seat exists and is bound, and its brief is a separate delivery),
+`brief-delivery-separate` (the refusal of the retired one-call brief contract, raised before any
+settings, catalog or spawn work when the caller passed `context` or `submit=true`), `leaf-taken`
 (the server-arbitrated refusal, never overridden), and the pre-spawn validation refusals
 `spend-override-unsupported` (HFX2-L10 — a caller supplied legacy spend fields, direct
 launch/session controls, namespaced spawn model/effort env, or a maintained harness-native spend env
@@ -59,9 +68,10 @@ key), `harness-unknown` / `harness-not-detected` / `effort-invalid` (L16 — eff
 resolved harness's vocabulary, or any effort for a mapping-less settings-defined harness) /
 `model-invalid` (L16 — model knob for a settings-defined harness with no modelFlag) /
 `level-invalid` (L16 — a dispatch level outside leaf|master|portfolio) / `bad-kind`. The HFX-L4
-leaf-ref refusals (`leaf-ref-not-found` / `leaf-ref-ambiguous`) are also modeled for spawn because
-a bad leaf key is refused before tmux or catalog mutation.
-`SpawnAgentSessionResponse` is a strict
+leaf-ref refusals are also modeled for spawn because a bad leaf key is refused before tmux or
+catalog mutation — and, like `LeafAssignmentStatus`, they arrive as the imported `LeafRefStatus`
+alias (L69) rather than as two more hand-typed strings.
+`SpawnAgentSessionResponse` (L80-L122) is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
 `label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) recorded
 on the catalog row for the dashboard orchestration tree, the optional `spawnRole` (L14 — the
@@ -77,27 +87,60 @@ the `ownerSession` set on `leaf-taken`, the context-delivery outcome (`contextDe
 outcome reports `False`; absent on full success — a blind seat is diagnosed from the payload
 itself, never trusted from a bare boolean), and a `detail` for the refusals.
 
-**Seat lifecycle (260707-HFX-L8)** adds two new strict response contracts. `SessionRetireStatus =
-Literal["retired","already-retired","unknown-session","unknown-actor","retire-refused"]`;
-`SessionRetireResponse` models `session_retire` (issue #12): `operation: Literal["session_retire"]`,
+**Seat lifecycle (260707-HFX-L8)** adds two new strict response contracts. `SessionRetireStatus`
+(L149-L156) `= Literal["retired","already-retired","unknown-session","unknown-actor","retire-refused"]`;
+`SessionRetireResponse` (L162-L179) models `session_retire` (issue #12): `operation: Literal["session_retire"]`,
 `status`, `session`, and the four retirement provenance fields
 `retiredAt`/`retiredBySession`/`retiredReason`/`retiredEdge` (all `None`-default, populated on
 success/already-retired), plus `detail` (populated on `retire-refused`, naming the exact
 authority-policy clause `check_retire_authority` raised). `ok` is true for `retired`/
-`already-retired` (idempotent), false for every refusal status. `SessionRenameStatus =
-Literal["renamed","unknown-session"]`; `SessionRenameResponse` models `session_rename` (issue #4):
+`already-retired` (idempotent), false for every refusal status — and that rule lives in ONE place,
+`mcp/tools/terminal.py::_RETIRE_OK_STATUSES` (L834 there), so a refusal status added later cannot
+arrive as `ok=True` from a call site that forgot it. `SessionRenameStatus` (L181) `=
+Literal["renamed","unknown-session"]`; `SessionRenameResponse` (L188-L199) models `session_rename` (issue #4):
 `operation: Literal["session_rename"]`, `status`, `session`, `label`/`spawnedLabel` (`None`-default).
 Identity text only — `spawn_role` (the L6 role-seat-immutability field) never appears in this
 response because a rename never touches it.
 
 ### Conventions
 
-The model duplicates the status literal locally rather than importing the serving helper, keeping the
-response-model layer independent of serving implementation code.
+**The status vocabularies are declared HERE, and the tool imports them — the ownership direction
+is inverted on purpose** (the block comment at L10-L18 states why). Everywhere else in the
+package a wire model imports its producer's alias; here that would close an import cycle,
+because `mcp.tools.base` → `models.tool_registry` → `models.terminal` is an existing edge and a
+`models.terminal` → `mcp.tools.terminal` import would complete the loop. The invariant the fix is
+actually for is ONE declaration, not a particular module owning it, so the aliases stay in this
+file and `mcp/tools/terminal.py` annotates its status seams with them: `_spawn_refusal(status:
+SpawnAgentSessionStatus, …)` (L804 there), `_retire_payload(status: SessionRetireStatus, …)`
+(L838), the rename payload (L928), and the spawn preflight check table (L405). A refusal status
+the tool invents is therefore a pyright error at the tool rather than a `ValidationError`
+escaping the MCP handler.
+
+The one alias that comes from elsewhere is `LeafRefStatus` (L8), imported from
+`worktrees.leaf_refs` — the module that raises those two members — and folded into both
+`LeafAssignmentStatus` (L26) and `SpawnAgentSessionStatus` (L69).
+
+Each of the three tool-facing vocabularies also publishes its runtime half, derived from the
+alias by `get_args` rather than retyped beside it: `VALID_SPAWN_AGENT_SESSION_STATUSES` (L75-L77),
+`VALID_SESSION_RETIRE_STATUSES` (L157-L159), `VALID_SESSION_RENAME_STATUSES` (L183-L185).
+`test_wire_vocabulary_exhaustiveness` asserts, per tool, that the set of statuses the tool can
+actually return *equals* the declared set — a measurement in the other direction too, catching a
+member no writer can emit.
+
+This module still does not import the serving helper; the response-model layer stays independent
+of serving implementation code.
 
 ### Invariants And Boundaries
 
 - This is an AR-owned response shape and should stay strict.
+- **One declaration per status vocabulary.** These aliases live here and
+  `mcp/tools/terminal.py` imports them; do not re-type a status literal at the payload builder,
+  and do not "fix" the direction by importing the tool from this module — that closes the
+  `mcp.tools.base` → `models.tool_registry` → `models.terminal` cycle.
+- `LeafRefStatus` belongs to `worktrees.leaf_refs`; its two members are folded in by reference,
+  never copied. `Literal` flattens nested aliases, so folding changes nothing on the wire.
+- The `VALID_*` frozensets must stay derived by `get_args` from their alias, never listed
+  separately.
 - Nullable fields default to `None` so `_tool_payload(..., exclude_none=True)` can omit absent
   previous-owner/conflict data without failing validation.
 - `ok` and token metadata come from the inherited `ToolResponse` envelope.
@@ -112,18 +155,20 @@ No relevant external/domain documentation found; this is an internal response co
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The response fields are defined by the local MCP payload and catalog assignment behavior. | L9-L21 | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
+| The response fields are defined by the local MCP payload and catalog assignment behavior. | `LeafAssignmentStatus` L21-L27; `AttachTerminalSessionToLeafResponse` L30-L42 | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The attach payload builder returns the exact fields modeled here, including leaf-ref refusal statuses and details. | attach_terminal_session_to_leaf_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| The spawn payload builder returns the `SpawnAgentSessionResponse` fields incl. leaf-ref refusals, spawned-by provenance, and context-delivery outcome. | spawn_agent_session_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | L82-L88; L111-L114 | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| Conformance coverage includes a representative missing-session (attach) and caller-spend-override (spawn) refusal payload for the models. | L88-L107 | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
+| The tool imports these aliases and annotates its status seams with them: `_spawn_refusal` L804, `_retire_payload` L838, the rename payload L928, the spawn preflight table L405, and `_RETIRE_OK_STATUSES` L834 (the single place `SessionRetireResponse.ok` is decided). | L17-L21 (the import); L405; L804; L834; L838; L928 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
+| `LeafRefStatus` — the two leaf-ref refusal members, declared where `LeafRefResolutionError` raises them, with `VALID_LEAF_REF_STATUSES` derived from it. | L30; L32 | [leaf_refs.py](agents-remember/mcp/src/agents_remember/worktrees/leaf_refs.py) |
+| The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | L121; L122 | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Conformance coverage includes a representative missing-session (attach) and legacy-caller-harness (spawn) refusal payload for the models. | L175-L186 | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
 | `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | session_retire_payload; session_rename_payload | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| The response registry maps `session_retire`/`session_rename` to these strict models. | TOOL_RESPONSE_MODELS | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| The response registry maps `session_retire`/`session_rename` to these strict models. | L124; L125 | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| `test_every_spawn_status_the_tool_can_return_validates` / `..._retire_status_...` / `..._rename_status_...` assert produced == declared for each of the three `VALID_*` sets. | ProducedLiteralTests | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
 
 ## Cross-Repo References
 
@@ -145,6 +190,32 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-01T09:48+02:00 — 260731-EFA-L4 curator: body corrected. The Conventions section said
+  "the model duplicates the status literal locally rather than importing the serving helper" —
+  true as far as the serving helper goes, but it framed local declaration as the whole convention,
+  and this file is now the one place in the package where the vocabulary-ownership direction is
+  deliberately INVERTED: the aliases stay here and `mcp/tools/terminal.py` imports them (L17-L21
+  there), because `mcp.tools.base` → `models.tool_registry` → `models.terminal` is an existing
+  import edge and the natural direction would close a cycle. Recorded that, the tool-side seams
+  now annotated with the aliases (`_spawn_refusal` L804, `_retire_payload` L838, rename L928,
+  preflight table L405), the three derived `VALID_*` frozensets (L75-L77, L157-L159, L183-L185)
+  and the exhaustiveness assertions over them, plus the `_RETIRE_OK_STATUSES` L834 single-place
+  `ok` rule. `LeafRefStatus` is now imported from `worktrees.leaf_refs` (L8) and folded into
+  `LeafAssignmentStatus` (L26) and `SpawnAgentSessionStatus` (L69) instead of the two members
+  being typed out in both — `Literal` flattens nested aliases, so the published enums are
+  unchanged. Two pre-existing body errors found while checking the vocabularies against the
+  source and fixed: the `LeafAssignmentStatus` enumeration omitted `role-required` (added in
+  HFX2-L17, described later in this same card), and `SpawnAgentSessionStatus` was described as
+  having `spawned` as "the only `ok: true` case" — the success status is `spawned-unbriefed`
+  (`_spawned_payload` L768-L773 there, the only `ok: True`), while `brief-delivery-separate` is a
+  refusal of the retired one-call brief contract. Added four invariants. Citations: two stale
+  ranges repaired — the registry row read L82-L88; L111-L114 and the rows are at L121/L122 and
+  L124/L125; the conformance row read L88-L107 and the representative attach/spawn payloads are
+  at L175-L186 (L88-L107 is now `_write_json`/`_run_git`/`_write_leaf_task`). The self-citation
+  row L9-L21 was re-pointed to `LeafAssignmentStatus` L21-L27 / `AttachTerminalSessionToLeafResponse`
+  L30-L42, every status alias and response class gained a range, and rows were added for
+  `leaf_refs.py` (L30, L32), the tool-side seams, and the exhaustiveness suite. Verification
+  metadata pinned until closeout stamps the L4 commit.
 - 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the additive
   `launch-selection-invalid` status, resolved-selection provenance, and the user-authored-only
   `sessionCommands` boundary. Verification metadata remains pinned until closeout stamps the L2

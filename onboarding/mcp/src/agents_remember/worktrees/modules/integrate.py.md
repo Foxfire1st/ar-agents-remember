@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:50+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -49,6 +49,22 @@ branch has advanced, both branches are reset hard to their pre-merge heads
 before the failure re-raises, so integration never leaves a half-integrated
 state.
 
+**Contract writes go through `ContractCells` (260731-EFA-L4).** This module moves two of the six
+persisted vocabulary cells, and both now take the typed path:
+
+- `blocked_integration_payload` — `amend_contract(contract, ContractCells(integration_status="blocked"))`.
+- `_integrated_result` — `amend_contract(replace(contract, integration_strategy=…,
+  integrated_code_commit=…, integrated_memory_content_commit=…, integrated_ledger_commit=…),
+  ContractCells(integration_status="completed", cleanup="pending"))`.
+
+The split inside `_integrated_result` is the pattern: the two vocabulary cells go through
+`ContractCells` so pyright checks them, while the commit hashes and the strategy string — which have
+no vocabulary to be checked against — stay on `replace`. That is the whole reason for the change:
+typeshed declares `dataclasses.replace` as `**changes: Any`, so `replace(contract,
+integration_status="bloqued")` was zero pyright errors even though the wire model rejects it. The
+persisted contract is byte-identical either way. `replace` is still imported and still used for the
+free-text fields.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -57,13 +73,27 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Source Path |
 | --- | --- |
-| Worktree contract fields record closeout and integration commit state. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Worktree contract fields record closeout and integration commit state; `ContractCells` / `amend_contract` are the typed path both writes here take, and `IntegrationStatus` / `CleanupStatus` are the vocabularies they are checked against. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | Worktree tests cover fast-forward integration, replay, and conflict blocking. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the controller) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
 ## Update History
 
+- 2026-08-01T09:50+02:00 — 260731-EFA-L4 curator: this leaf's diff here is not an import move — both
+  of the module's contract writes changed shape. `blocked_integration_payload` went from
+  `replace(contract, integration_status="blocked")` to
+  `amend_contract(contract, ContractCells(integration_status="blocked"))`, and `_integrated_result`
+  from one seven-keyword `replace` to `amend_contract(replace(contract, <four commit/strategy
+  fields>), ContractCells(integration_status="completed", cleanup="pending"))`. Documented both, and
+  the rule behind them: typeshed types `dataclasses.replace`'s `**changes` as `Any`, so an
+  off-vocabulary literal at either of these two cells was zero pyright errors; the typed record puts
+  them back in front of the checker. The persisted contract is byte-identical, so no payload,
+  ordering or blocking claim in this card changed — I re-verified the all-or-nothing merge, the
+  `IntegrationSources` / `IntegratedCommits` / `_apply_integration` L2 structure, and the
+  master-handover gate section against the current file, and all still hold. Extended the
+  `worktree_contract.py` reference row. Verification metadata pinned until closeout stamps the L4
+  commit.
 - 2026-07-31T21:00+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
   `integrate.py` is one import line — `run_git` moved out of the `modules.git` import block to
   `agents_remember.kernel.git_command` — and this sidecar names no runner, subprocess style or

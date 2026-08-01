@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/engine-room/engineRoomStyles.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T15:10+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -102,13 +102,16 @@ soft alarm `drop-shadow` glow — so it reads as a clear red panel over the dash
 full opacity as siblings. (The `scanRing` + `ghostedLane` atoms were documented in the prior 05o T3B entry.)
 
 **05o remaining failure-mode primitives.** Three more spec-driven atoms cover the modes the earlier 05o
-passes left open. **`refusedConduit`** — the shared refused-conduit flash (T9B / T9C / T14C): a `cva` keyed
-on a `polarity` variant (`amber` = a reroute/fallback, the T9C CGC-seed-refused → reindex lane; `red` =
+passes left open. **`refusedConduit`** — the shared flash for a conduit that did not take (T9B / T9C /
+T14C): a `cva` keyed
+on a `polarity` variant (`amber` = a reroute/fallback, the T9C CGC-seed-**stale** → reindex lane; `red` =
 a fault/conflict, the T9B GrepAI seed fault + the T14C integration conflict), each carrying the matching
 `stroke` + a 4px `drop-shadow` glow, and a `base` that rests at `opacity: 0` (a one-shot flash has no settled
 state — it ends GONE, like the prototype's `refused` keyframe ending at opacity 0). The colour sweep + fade
-are owned by GSAP (`data-fx='refuse'`, `repeat:0`, CSS stays static per §8); polarity is read off the
-projection (`edge.state` failed→red / stale→amber, or `edge.refusedPolarity`), never a class alone. **`engineDropout`**
+are owned by GSAP (`data-fx='refuse'`, `repeat:0`, CSS stays static per §8); polarity is **derived** from
+`edge.state` alone (failed→red / stale→amber) — never a class, and never a field on the edge, because
+`EngineProcessEdge` has no polarity field to read. "Refused" is the name of the beat, not an edge state:
+the reducer has never emitted `state="refused"`. **`engineDropout`**
 — a static alarm-toned dashed halo (`stroke: alarm`, `strokeDasharray: "5 5"`, `opacity: 0.5`, 4px alarm glow)
 marking an UNLIT worktree engine slot as HELD for T7B (the provider-plan block — the engines never light
 because the runtime config is missing), distinct from the build-up's faded-absent not-yet-present engine; no
@@ -154,15 +157,18 @@ The fact-state recipes include a visibly distinct stale variant used by landing 
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `sceneSvg` is now static layout only — the global `& g,& rect,…{ transition }` substrate is removed (05k). | L595-L605 | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| `engineCharge` is fill-only colour-as-state (Motion owns the scaleY/opacity boot-fill); `engineReindexCharge` lost `animation: chargeSweep` (GSAP `data-fx='reindex'`). | L663-L695 | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| `worktreeWire` (05k, NEW) — carries NO opacity so Motion owns the wire's opacity (a className opacity shadows Motion under `initial=false`). | L732-L743 | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| `warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity). | L786-L795 | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| `attnBadge`/`stopBar`/`dissolveShell` lost their `animation`/`transition` — GSAP `data-fx='breath'`/`'stop'` + Motion own them. | L931-L967 | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| `engineGaugeOut` — **FLAT** gold bezel (05o dropped the base amber glow; `down`/fault keeps the red bezel + red glow); `enginePetal` is constant gold (05o — amber on `base`, opacity-only variants). `engineCharge`/`warpCouplerBar`/`flowConduit running`/`flowPacket`/`gateBar` keep their state-coloured `drop-shadow` glows (settled lanes glow-less). | L649-L941 | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| `closeoutTrainLabel` — `ink` 10px (was `muted` 9px) for legibility as a bare caption on the textured backdrop; `cleanupRecord` is an absolute overlay (5k F6). | L1001-L1028 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `sceneSvg` is now static layout only — the global `& g,& rect,…{ transition }` substrate is removed (05k). | L603-L613 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `engineCharge` is fill-only colour-as-state (Motion owns the scaleY/opacity boot-fill); `engineReindexCharge` lost `animation: chargeSweep` (GSAP `data-fx='reindex'`). | L704-L749 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `worktreeWire` (05k, NEW) — carries NO opacity so Motion owns the wire's opacity (a className opacity shadows Motion under `initial=false`). | L782-L791 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity). | L838-L844 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `refusedConduit` — the `polarity` amber/red variants over an `opacity: 0` base; the recipe carries colour only, and the polarity it is keyed on is derived from `edge.state` by the canvas. | L996-L1017 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `refusedPolarityOf` — the caller that derives that polarity (`failed`→red, `stale`→amber) with no polarity field read. | L204-L241 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
+| `EngineProcessEdge` declares no polarity field and never documented a `refused` state. | L762-L781 | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| `attnBadge`/`stopBar`/`dissolveShell` lost their `animation`/`transition` — GSAP `data-fx='breath'`/`'stop'` + Motion own them. | L1069-L1120 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `engineGaugeOut` — **FLAT** gold bezel (05o dropped the base amber glow; `down`/fault keeps the red bezel + red glow); `enginePetal` is constant gold (05o — amber on `base`, opacity-only variants). `engineCharge`/`warpCouplerBar`/`flowConduit running`/`flowPacket`/`gateBar` keep their state-coloured `drop-shadow` glows (settled lanes glow-less). | L679-L1067 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `closeoutTrainLabel` — `ink` 10px (was `muted` 9px) for legibility as a bare caption on the textured backdrop; `cleanupRecord` is an absolute overlay (5k F6). | L1121-L1150 | [engineRoomStyles.ts](engineRoomStyles.ts) |
 | Fleeting-banner atoms (`fleetingBanner`/`fleetingLabel`/`fleetingReason`/`fleetingChoice(s)`). | — | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| `health` / `factState` / `runtimeState` axes (colour-as-state); the only remaining `animation:` is the app-wide `pulse`. | L74-L260 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| The `healthDot` / fact-state / runtime-state axes (colour-as-state); the only remaining `animation:` is the app-wide `pulse`. | L88-L96; L201-L230; L390-L400; L460-L475; L515-L530 | [engineRoomStyles.ts](engineRoomStyles.ts) |
 | The GSAP hook + the canvas that read these now-static recipes and drive the motion. | — | [useEngineTimeline.ts](useEngineTimeline.ts) · [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
 
 ## 260727-CHATS-IM-L2 Current Delta
@@ -172,6 +178,25 @@ size and view box. It introduces no new effect paint recipe; surge, reindex, and
 their established classes.
 
 ## Update History
+
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
+  `observer/projection.py` citations — the reference row and the restatement in the 10:44 entry
+  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` (L762),
+  `model_config = ConfigDict(extra="forbid")` (L770), the nine-state comment (L778) above
+  `state: str` (L779), and the last field `detail` (L781). No body claim changed.
+
+- 2026-08-01T10:44+02:00 — 260731-EFA-L4 curator: corrected the `refusedConduit` commentary. Polarity is
+  no longer "read off the projection (`edge.state` failed→red / stale→amber, **or `edge.refusedPolarity`**)"
+  — the second source is gone and the field never existed on the server model (`EngineProcessEdge`,
+  `extra="forbid"`, `observer/projection.py` L762-L781). Polarity is derived from `edge.state` alone by
+  `EnclosureCanvas::refusedPolarityOf`. Also retitled the amber case: the T9C lane is CGC-seed-**stale**,
+  the reducer's actual reroute state, not "seed-refused"; "refused" now names only the beat
+  (`data-fx='refuse'`, the `refusedConduit` recipe). The recipe itself is unchanged — the diff touched
+  only its comment — so this is a body correction, not a style change. Repaired seven citations that had
+  drifted wholesale: `sceneSvg` L595-L605 → L603-L613, `engineCharge` L663-L695 → L704-L749,
+  `worktreeWire` L732-L743 → L782-L791, `warpSurge` L786-L795 → L838-L844,
+  `attnBadge`/`stopBar`/`dissolveShell` L931-L967 → L1069-L1120, `closeoutTrainLabel`/`cleanupRecord`
+  L1001-L1028 → L1121-L1150, and the state-axis row L74-L260 → the five `pulse` sites plus `healthDot`.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added `fxOverlaySvg`, the
   pointer-transparent sibling layer aligned to the structural 1200x660 scene. Existing effect

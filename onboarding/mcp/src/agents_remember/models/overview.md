@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`|
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:26+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -41,11 +41,15 @@ only for the id-bearing user record, and commands require command plus non-error
 
 Start with `tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder
 to one response model, while `PUBLIC_TOOL_RESPONSE_MODELS` filters out retained
-compatibility builders so it matches `mcp.tools.PUBLIC_TOOLS`. `base.py` defines strict response envelopes, intentionally
+compatibility builders so it matches `mcp.tools.PUBLIC_TOOLS`. Both are typed
+`dict[str, type[ResponseEnvelope]]` (260731-EFA-L4), not `type[BaseModel]`.
+`base.py` defines strict response envelopes, intentionally
 flexible detail envelopes, token metadata fields, and the strict `NextStep`
 lifecycle-hint model carried by an optional `nextStep` field on BOTH envelope
 bases (`ResponseModel` and `FlexibleResponseEnvelope`), so every modeled tool
-response can surface the computed next move. Domain modules then own
+response can surface the computed next move; 260731-EFA-L4 declares the
+`supervisorBanner: str | None` stale-supervisor field beside it on both bases and
+names their union `ResponseEnvelope`. Domain modules then own
 contract slices: `context_packet.py` for compact `ContextPacketV2`,
 `providers.py` for provider summaries and diagnostics, `worktree.py` for
 worktree context/status responses including `enclosurePath`, `leafId`, and `kind`, `memory.py` for memory/onboarding tools,
@@ -93,6 +97,15 @@ never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gai
   optional `nextStep: NextStep | None` field, populated for in-lifecycle calls at
   the [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py)`::_tool_payload`
   choke point and excluded when None, so lifecycle-less calls stay unchanged.
+- Both envelope bases also declare `supervisorBanner: str | None` (260731-EFA-L4), set at
+  the same choke point. It had been written by the choke point since 260707-HFX2-L2 R5 but
+  declared on no model, which is the specific hole: `ResponseModel` is `extra="forbid"`, so
+  a response carrying a stale-supervisor banner failed its OWN `model_validate`, and
+  `FlexibleResponseEnvelope`'s `extra="allow"` accepted it undeclared — tolerated drift is
+  for the PROVIDER's fields, not this package's. `ResponseEnvelope` is the
+  `ResponseModel | FlexibleResponseEnvelope` alias naming the two families; the split between
+  them is about `extra`, not about the header, and both carry the same
+  `ok`/`tokens`/`nextStep`/`supervisorBanner` fields.
 - `ContextPacketV2` keeps startup context compact and points detailed provider
   troubleshooting to `provider_diagnostics`.
 - Token metadata fields exist on every modeled response; the final S6 wiring
@@ -113,6 +126,19 @@ never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gai
   validation pass treats the missing key as a required-field error.
 - Flexible models are for intentionally raw/detail payloads, not a shortcut for
   avoiding a stable public contract.
+- **A wire vocabulary is IMPORTED from whoever produces it; it is never retyped on this
+  route** (260731-EFA-L4). A hand-copied `Literal` beside a producer's own is a set that can
+  only be compared against the producer when a real payload carries the new member — which
+  happens as a `ValidationError` raised inside an `@server.tool()` handler that has no
+  `except` for one. Nested `Literal` aliases flatten under PEP 586, so folding a producer's
+  alias into a longer list (`Literal["attached", ..., LeafRefStatus]`) publishes exactly the
+  same enum it did when the members were spelled out. Where the producing module cannot be
+  imported without a cycle, the vocabulary is declared HERE and the producer imports it (see
+  `terminal.py` below) — one declaration is the invariant; a particular module owning it is
+  not.
+- **Nothing on this route declares a status a producer cannot emit, or omits one it can.**
+  `mcp/tests/test_wire_vocabulary_exhaustiveness.py` measures produced-vs-declared in both
+  directions and is the suite to extend when a new status appears.
 - **Nothing on this route may reach the network while the package is importing.**
   `tokens.py` builds `DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` at module
   scope, and `mcp/tools/base.py` imports `finalize_payload_tokens` from it — so
@@ -151,6 +177,10 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Lifecycle finalizer response model covers the terminal task finalization payload. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
 | Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
 | The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
+| Produced-vs-declared vocabulary measurement in both directions; the 165-of-213 contract measurement lives in its module docstring. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
+| The contract-cell vocabularies `worktree.py` imports rather than retypes. | [worktrees/worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| The phase/next-operation/next-tool vocabularies and the `LifecycleGuidance` TypedDict `worktree.py` imports. | [worktrees/modules/guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | [onboarding_drift_check/models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -225,7 +255,112 @@ the wrong bytes** raises `TokenizerVocabularyError` instead, naming both the exp
 digest, so a build that failed to ship it — or a `core.autocrlf=true` checkout that rewrote its line
 endings — says so at startup rather than working only where the network happens to be reachable.
 
+## 260731-EFA-L4 Route Impact — Vocabularies Come From Their Producers
+
+Every change here has the same shape: a `Literal` this route had typed out by hand, standing
+beside the module that actually produces those values, replaced by an import of the producer's
+own alias. The failure mode being removed is a **set difference**, and it lands as a
+`ValidationError` raised inside an MCP tool handler with no `except` for one.
+
+**`worktree.py` — six copies, six drifts, 165 of 213 contracts.** `WorktreeSummary`'s
+vocabularies were all local `Literal`s. They now come from
+`worktrees.worktree_contract` (`WorkflowKind`, `MemoryMode`, `HumanReviewStatus`,
+`IntegrationStatus`, `CleanupStatus`, and `CloseoutStatus` aliased to the published wire name
+`LifecycleStatus`) and `worktrees.modules.guidance` (`WorktreePhase`, `NextOperation`,
+`NextTool`). Only `WorktreeState` stays local — it is produced entirely inside
+`worktrees.status`, which constructs the model directly, so the checker already sees a single
+writer. What the copies had missed is checkable against the producers: the local
+`WorkflowKind` was `Literal["chat", "light", "light-task"]` while the contract's is
+`Literal["chat-task", "light-task"]` — the copy did not contain the kind `worktree_start`'s own
+docstring advertises and had two members the contract cannot write; local `CleanupStatus` lacked
+`reopened`; local `WorktreePhase` lacked `carryover-pending` and `abandoned`; local
+`NextOperation` lacked `request_carryover_decision`; local `NextTool` lacked
+`memory_carryover_apply`. Measured effect, recorded in
+`test_wire_vocabulary_exhaustiveness.py`'s docstring: 165 of the 213 `series-contract.md` files
+on disk (77.5%) made `context_packet` raise, across seven independent gaps. Two additive
+optional fields join the summary: `nextRequiredArgs` gains a documented absent-means-nothing-
+required reading (the producer writes the key only when there is a required argument, and the
+projection reports what the producer said rather than substituting `[]`), and
+`unknownContractCells: list[str] | None` reports `"<field>=<raw token> read as <fallback>"` for
+any contract cell outside its declared vocabulary — the file still projects as `active` with
+substituted values, and heals the next time a lifecycle tool writes it.
+
+**`context_packet.py` — three retyped vocabularies.** `RepoSummary.state` takes
+`kernel.git_facts.RepoState` and `BranchFreshness.state` takes
+`kernel.git_freshness.FreshnessState`, both of which are assembled here through
+`model_validate` of an untyped dict, so a copy would be measured against the producer only
+when a real degrade path fired. `MemorySummary.mode` moves from `Literal["internal",
+"external"]` to `worktrees.worktree_contract.MemoryMode`, which has always included
+`disabled` — `WorktreeSummary` in the SAME response already declared it, so one packet could
+pass `memoryMode="disabled"` and fail `memory.mode` on the same value.
+
+**`drift.py` / `memory.py` — one vocabulary, three declarations, two of them short.**
+`DriftStatus` now lives once, in
+`memory_quality/integrity/onboarding_drift_check/models.py` beside `run_drift_summary` which
+produces it, and both wire models import it. `models.drift.DriftStatus` had been
+`Literal["notChecked", "checked"]` and `DriftSummary` declared no `error` field, while
+`run_drift_summary` returns `{"status": "error", "error": ...}` whenever the onboarding root is
+missing — so `include_drift=true` against a repo without onboarding raised out of the tool on
+the status *and* the key, i.e. the diagnostic crashed on exactly the call meant to explain the
+problem. `DriftSummary` gains `error: str | None`. `models.memory.DriftCheckStatus` was the
+third copy (correct, but a third place for the next member not to arrive) and is gone.
+
+**`read_files.py` — the alias moved to the decider.** `FileReadStatus` is declared in
+`controllers/read_files.py`, where `_resolve_onboarding` decides it and now returns it as its
+annotated type, and this model imports it. Note the direction: this is a `models/` →
+`controllers/` import, the reverse of the usual layering, chosen because the deciding function
+is the single writer and it puts the value into an untyped payload dict. It creates no cycle —
+`controllers/read_files.py` does not import `models.read_files`.
+
+**`terminal.py` — folded members and runtime halves.** `LeafAssignmentStatus` and
+`SpawnAgentSessionStatus` fold in `worktrees.leaf_refs.LeafRefStatus` (the pair
+`leaf-ref-not-found`/`leaf-ref-ambiguous`) instead of respelling it; `Literal` flattening means
+the published enums are unchanged (`get_args(LeafAssignmentStatus)` is still the same six
+members). The three terminal vocabularies stay declared HERE rather than beside the payload
+builders that write them, and the module says why: `mcp.tools.base` → `models.tool_registry` →
+`models.terminal` is an existing import edge, so a `models.terminal` → `mcp.tools.terminal`
+import would close a cycle. The invariant is one declaration, not a particular owner —
+`mcp.tools.terminal` imports these aliases and annotates its status seams with them.
+`VALID_SPAWN_AGENT_SESSION_STATUSES`, `VALID_SESSION_RETIRE_STATUSES` and
+`VALID_SESSION_RENAME_STATUSES` are `frozenset(get_args(...))` of their aliases — the runtime
+half derived from the type rather than typed beside it.
+
+**`tool_registry.py` — the loose type that made the token count wrong.** Both registries are
+`dict[str, type[ResponseEnvelope]]`. Under the previous `dict[str, type[BaseModel]]`,
+`TOOL_RESPONSE_MODELS[tool].model_validate(payload)` was typed as a bare `BaseModel`, on which
+`nextStep` and `supervisorBanner` are not attributes a checker knows — so the choke point had
+no type-clean way to set them on the validated response, and wrote them into the dict AFTER
+`model_dump` and AFTER `finalize_payload_tokens`. Two consequences, both silent: the served
+response carried bytes the advertised `tokens` did not count, and `supervisorBanner` was a key
+on an object whose model did not declare it. Naming the union is what let the choke point be
+reordered (see the `mcp/tools/` overview). Verified: all 62 registered models are
+`ResponseModel` or `FlexibleResponseEnvelope` subclasses and all 62 declare both fields, so the
+narrower type is true of the whole registry today.
+
 ## Update History
+- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** Every changed file on this
+  route replaced a hand-copied `Literal` with an import of the producing module's alias, so the
+  route gained a rule it did not state — added it as an invariant ("a wire vocabulary is imported
+  from whoever produces it, never retyped here"), with the cycle-driven exception `terminal.py`
+  documents, and the note that PEP 586 flattening means folding a producer's alias into a longer
+  `Literal` republishes the identical enum (verified: `get_args(LeafAssignmentStatus)` still
+  returns the same six members). Added the route-impact section above with the specific set
+  differences each copy carried, checked against the producers rather than taken from the leaf's
+  summary: local `WorkflowKind` was `["chat", "light", "light-task"]` against the contract's
+  `["chat-task", "light-task"]`, local `CleanupStatus` lacked `reopened`, local `WorktreePhase`
+  lacked `carryover-pending`/`abandoned`, local `NextOperation` lacked
+  `request_carryover_decision`, local `NextTool` lacked `memory_carryover_apply`, and
+  `MemorySummary.mode` lacked `disabled` while `WorktreeSummary` in the same response declared it.
+  The 165-of-213 figure is quoted from `test_wire_vocabulary_exhaustiveness.py`'s module docstring,
+  which is where it is measured. Recorded `DriftSummary.error` and the `DriftStatus`
+  three-copies-to-one consolidation, `models/read_files.py`'s deliberate models→controllers import
+  (no cycle — confirmed by importing the module standalone), the two new `WorktreeSummary` fields,
+  and `supervisorBanner`/`ResponseEnvelope` on `base.py`. Corrected the `tool_registry.py` entry in
+  the Hot Path Summary and explained the mechanism precisely: `type[BaseModel]` made the two
+  envelope fields unreachable by type, which is why they were written into the already-dumped,
+  already-token-counted dict — verified that all 62 registered models satisfy the narrower type.
+  Added five reference rows to the 2-column table. Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-07-31T22:38+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
   **Corrected the parenthetical "(tiktoken verifies its SHA-256 on load)", which credited tiktoken
   with an integrity guarantee it does not provide.** `tokens.py` now verifies the digest itself:
@@ -273,9 +408,6 @@ endings — says so at startup rather than working only where the network happen
   and clarified resolved selection, user-authored session commands, and runner-owned dynamic
   failure evidence. Verification metadata remains pinned until closeout stamps the L2 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-+## 260712-TRH-L4 Route Impact
-
-Models now distinguish spawned-unbriefed, harness-ready, and briefed and carry the readiness/dispatch statuses, exact-session proof fields, dispatch kind, and separated supervisor state surface.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 models route impact: added pair-binding response fields

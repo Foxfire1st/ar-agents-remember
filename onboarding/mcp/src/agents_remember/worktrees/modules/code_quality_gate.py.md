@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash |  `abc7cbcc74921cdcb57a61529445f61641e919e7`|
-| lastVerifiedCommitDate |  2026-07-31T21:50:08+02:00|
+| lastUpdated | 2026-08-01T09:44+02:00 |
+| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ states this closeout is in, via the `status` key:
 | --- | --- | --- |
 | `no-code-commit` | `GATE_NO_CODE_COMMIT` | Nothing would commit, so nothing to gate. |
 | `wrapper-unavailable` | `GATE_WRAPPER_UNAVAILABLE` | Code would commit, but this checkout carries no wrapper. The reason string names `QUALITY_WRAPPER` and states the commit **is not quality-checked**. |
-| `enforced` | `GATE_ENFORCED` | The wrapper runs before the commit; `command` is `_gate_command(diff_base)` — `python -m agents_remember.code_quality.check --diff-base <base>` — and `diffBase` carries the base on its own key. |
+| `enforced` | `GATE_ENFORCED` | The wrapper runs before the commit; `command` is `_gate_command(diff_base)` — `python -m agents_remember.code_quality.check --diff-base <base>` — and `diffBase` carries the base on its own key. Since 260731-EFA-L4 the `reason` also names the staging step: closeout "stages the whole task worktree so the gate's scope is the commit's content, then runs the strict project-owned quality wrapper over exactly that before the code commit". |
 
 `wrapper-unavailable` is a *reported* state, not a silent skip: closeout still proceeds, and the
 payload says plainly that the code commit was not quality-checked and why. That is the deliberate
@@ -55,6 +55,22 @@ wrapper to exist (else `RuntimeError`), selects an interpreter, executes the cur
 `agents_remember.code_quality.check`, and raises with a bounded output tail
 (`FAILURE_OUTPUT_LINES` = last 40 lines) on any non-zero result. Success returns
 `{"required": True, "status": GATE_ENFORCED, "passed": True, "command": ..., "diffBase": ...}`.
+
+### The Index Is The Scope, And This Function Does Not Own It (260731-EFA-L4)
+
+The wrapper derives its scope from the index — `derive_scope` uses `git ls-files`, `diff_coverage`
+diffs against the tracked tree — so **what is staged when this runs is what gets certified**. Since
+260731-EFA-L4 closeout stages the whole task worktree first (`closeout._gate_staged_code`), which is
+what makes the gate's scope and the commit's content one set; before that, a file the task *created*
+went into the commit with no rail of the gate having read it.
+
+This module deliberately does not do the staging and does not describe it. `runner` is a public
+parameter and closeout is not the only caller this signature admits, so the failure message states
+only what is true of every caller — "code, memory, and ledger remain uncommitted" — and **does not
+say the staging was undone, because closeout does not undo it**. This function certifies the index
+it is handed and says nothing about how it came to look that way. The refusals, the reset and the
+`add -A` all live in `closeout.py`, where the disposable-worktree precondition that makes staging
+safe is actually established.
 
 ### `diff_base` Is What Makes The Coverage Floor Passable
 
@@ -131,6 +147,10 @@ different situations.
   against `main`. Both directions are failures of the same rule — the base the gate measures against
   must be the base the leaf branched from.
 - Failure output is bounded to the last 40 lines while preserving the actionable exit status.
+- **This module never stages, resets or restores.** The index it is handed is the scope it
+  certifies; producing that index is the caller's job, and the failure message must stay true for a
+  caller that did no staging at all. Do not add a "staging was reverted" claim here — closeout does
+  not revert it.
 - Gate applicability must stay a property of the checkout, not of any repository identity. Do not
   reintroduce a name-based branch.
 - Every git call this module makes goes through `kernel.git_command.run_git`. Spawning `git`
@@ -163,11 +183,12 @@ coverage, and CRAP checks.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three `status` values. | L24-L78 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
-| `run_strict_code_quality_gate` appends `--diff-base <diff_base>`, refuses on a missing wrapper, and raises with the bounded `_failure_output` tail; success reports `command` and `diffBase`. | L96-L136 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
-| `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()` and puts this worktree's `mcp/src` first on `PYTHONPATH`. | L139-L183 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
-| Both closeout call sites pass `contract.code_worktree` **and** `diff_base=contract.code_base_commit` — the preview path and the apply path — and the gate runs before `commit_if_dirty`. | L283-L287; L585-L594 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
-| Regressions cover all three statuses, the checkout-not-name argument at both call sites, that the leaf base reaches the wrapper as `--diff-base` (`test_gate_measures_the_leaf_diff_not_the_whole_branch`), that the spawned wrapper gets no repository selectors (`test_the_gate_hands_the_wrapper_no_repository_selectors`), worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | L39-L357 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three `status` values. | L24-L82 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
+| `run_strict_code_quality_gate` appends `--diff-base <diff_base>`, refuses on a missing wrapper, and raises with the bounded `_failure_output` tail; its docstring states that the index it is handed is the scope it certifies; success reports `command` and `diffBase`. | L100-L147 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
+| `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()` and puts this worktree's `mcp/src` first on `PYTHONPATH`. | L150-L194 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
+| Both closeout call sites pass `contract.code_worktree` **and** `diff_base=contract.code_base_commit` — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | L289-L293; L721-L730 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| Regressions cover all three statuses, the checkout-not-name argument at both call sites, that the leaf base reaches the wrapper as `--diff-base` (`test_gate_measures_the_leaf_diff_not_the_whole_branch`), that the spawned wrapper gets no repository selectors (`test_the_gate_hands_the_wrapper_no_repository_selectors`), worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | L49-L419 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | L422-L835 | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 | The one git runner this module calls, and the scrubber `quality_environment` builds from: `run_git` and `git_environment` both drop `GIT_REPOSITORY_SELECTOR_ENV`, and `run_git` carries the local/remote/metadata timeout classes. | L24-L96 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` points `GIT_DIR` at a decoy repository and proves `_git_common_dir` still answers for the worktree it was handed. | L343-L366 | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
 | `SingleRunnerTests` sweeps the package's AST and fails if any module spawns `git` itself or defines a second runner. | L389-L459 | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
@@ -183,6 +204,32 @@ that repository's checkout rather than this one.
 | Applicability is decided by the presence of the wrapper in the target checkout, so a sibling repository that vendors the wrapper is gated and one that does not is reported as `wrapper-unavailable`. | L24-L42 | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
 
 ## Update History
+
+- 2026-08-01T09:44+02:00 — 260731-EFA-L4 curator: this leaf's diff here is +13/-2 and both hunks are
+  content. (1) The `enforced` preview `reason` changed from "strict project-owned quality wrapper
+  runs before the code commit" to a three-line string that names the staging step; quoted the new
+  text in the status table. (2) `run_strict_code_quality_gate` gained a docstring paragraph stating
+  that the wrapper derives its scope from the index, that this function certifies the index it is
+  handed and says nothing about how it came to look that way, and that the failure message
+  deliberately does **not** claim the staging was undone because closeout does not undo it. Added
+  the matching section and the invariant that this module never stages, resets or restores — the
+  staging lives in `closeout._gate_staged_code`.
+  **Citation repairs, all re-verified against the current files.** The two hunks moved everything
+  below them: code_quality_gate.py L24-L78 → **L24-L82** (the `enforced` return block now ends at
+  L82; L78 landed mid-`reason`), L96-L136 → **L100-L147** (`run_strict_code_quality_gate` is
+  L100-L147; the old range started before its `def` and stopped before its return), L139-L183 →
+  **L150-L194** (`quality_python` L150, `quality_environment` L168-L184, `_git_common_dir` ends at
+  L194 — the old range began inside `run_strict_code_quality_gate` and stopped short of
+  `_git_common_dir` entirely). closeout.py grew +188 lines: L283-L287 → **L289-L293** (the preview
+  `code_quality_gate_preview(...)` call with `diff_base=contract.code_base_commit`) and L585-L594 →
+  **L721-L730** (the apply preview call, `requires_strict_code_quality`, `_gate_staged_code`, and
+  `commit_if_dirty` on L730). test_worktree_closeout_quality_gate.py grew +477: L39-L357 →
+  **L49-L419** (`CodeQualityGateTests` L49 through the end of `CloseoutCodeQualityGateTests`), plus
+  a **new row** for L422-L835, the staging regressions this leaf added. Re-verified unchanged and
+  left as written: git_command.py L24-L96 and both test_git_command.py rows (L343-L366, L389-L459)
+  — this leaf touches neither file — and cross-repo L24-L42, which still contains
+  `requires_strict_code_quality`'s body. Verification metadata pinned until closeout stamps the L4
+  commit.
 
 - 2026-07-31T21:20+02:00 — 260731-EFA-L3 curator (second pass): after the entry below was written
   the fix worker changed `quality_environment` to build from `git_environment()` instead of

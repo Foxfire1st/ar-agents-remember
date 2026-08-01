@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T18:40+02:00                     |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated            | 2026-08-01T08:36+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -27,6 +27,40 @@ pairing in both directions. It is the first serving module to resolve a
 `coordination_root`/`workspace_root`).
 
 ## Code Commentary
+
+### 260731-EFA-L4 Current Delta — The Four Routes Now Declare What They Answer With
+
+All four routes gained a `response_model` (L303-L321). Nothing about the wire changed: every
+handler still returns a `JSONResponse` it built itself, and FastAPI applies `response_model`
+only to values it serializes for you — so on these four the declaration contributes an OpenAPI
+schema and validates nothing at runtime. The enforcement is
+`mcp/tests/test_serving_response_conformance.py`, which drives each route through the real app
+and validates the body that actually came back against the declared model.
+
+The declarations, in `serving/response_contract.py`:
+
+- `GET /api/files/repos` → `RepoCatalog`, and it is the **one route in this family with no
+  `responses=` table at all**: the catalog is assembled from the allow-list itself, so it has no
+  refusal branch to declare.
+- `GET /api/files/list` → `DirectoryListing`
+- `GET /api/files/read` → `FileContents`
+- `GET /api/files/onboarding` → `OnboardingResolution`
+
+The other three share `SCOPED_READ_RESPONSES` (400 / 404), which is `run_scoped`'s error map
+transcribed: `StatusRefusal` on 400, and `UnknownRepoRefusal | UnknownScopeRefusal |
+MissingPathRefusal` on 404.
+
+`OnboardingResolution` is a **five-shape union**, and declaring it that way is the honest
+contract rather than a convenience: `direction` picks the forward/reverse pair
+(`OnboardingForwardFound | OnboardingForwardMissing` vs. `OnboardingPartnerSidecar |
+OnboardingPartnerOverview | OnboardingPartnerNone`), and within each pair `status`/`kind`
+discriminates further. Declaring only the forward shape would have been a lie about half the
+route's traffic. `DirectoryListing.code` carries the discriminated `CodeNode` union for the same
+reason — only a `kind: "file"` row may carry `language`/`hasSidecar`, and only it must.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
 
 ### Logic
 
@@ -111,6 +145,12 @@ rejected, never silently re-rooted).
   scope/catalog resolution, the HTTP shape, and the read cap.
 - **Enclosure enumeration is on-disk + per-request**, not projection-derived, so a
   newly started or closed worktree appears without a projector tick.
+- **The declared response models are the contract; the conformance suite is the gate.** These
+  handlers return `Response` objects, so a shape change here fails in
+  `test_serving_response_conformance.py`, never at runtime. A new key emitted by `list_dir`,
+  `read_file`, `resolve_onboarding` or `resolve_partner` must land in the matching model in
+  `serving/response_contract.py` in the same change — `extra="forbid"` makes an undeclared key a
+  failure, which is the point.
 
 ## Repo-Internal References
 
@@ -126,6 +166,8 @@ rejected, never silently re-rooted).
 | The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | [worktrees/worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 | The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | [kernel/onboarding_doc.py](agents-remember/mcp/src/agents_remember/kernel/onboarding_doc.py) |
 | The test suite for this module. | [test_serving_files.py](agents-remember/mcp/tests/test_serving_files.py) |
+| The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | [response_contract.py](response_contract.py.md) |
+| The suite that actually enforces the declarations by driving every route and validating the real body. | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -134,6 +176,15 @@ rejected, never silently re-rooted).
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-01T08:36+02:00 — 260731-EFA-L4 curator: recorded the four `response_model`
+  declarations (L303-L321) and the shared `SCOPED_READ_RESPONSES` table, including why
+  `/api/files/repos` alone declares no refusal shape (no refusal branch — the catalog is built
+  from the allow-list) and why `/api/files/onboarding` declares a five-shape union rather than
+  the forward shape only. Noted that FastAPI validates none of these handlers, because all four
+  return a `JSONResponse` directly, so the gate is `test_serving_response_conformance.py`; added
+  that boundary and two reference rows. No bytes moved on the wire. Verification metadata pinned
+  until closeout stamps the L4 commit.
 
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 

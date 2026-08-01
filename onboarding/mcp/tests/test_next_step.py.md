@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-27T22:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:05+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -30,6 +30,11 @@ NOTIFY-AND-CONTINUE assertions: every ACTIVE hint (front-half/`decide`/the
 stop (`nextTool=None`), and an end-to-end test proves the choke-point auto-dismiss
 (the notification does not self-dismiss; the next call resumes). The parked
 `blocked`-gate await/resume tests stay intact.
+
+260731-EFA-L4 added the **advertised-count** half: both keys the choke point writes
+(`nextStep`, `supervisorBanner`) are now declared fields of the response envelope, are set on the
+model *before* the single dump, and must therefore be inside the `tokens` number the response
+advertises — and the opportunistic banner must never take down the tool call it rides on.
 
 ## Code Commentary
 
@@ -76,8 +81,11 @@ guidance=…)` directly:
 `EdgeAndChokePointTests` installs a real `AmbientLifecycle` (over a tmp
 `EventStore`, with `timing=AmbientTiming(heartbeat_seconds=3600)`) via
 `install_ambient`, with cleanups for
-`reset_ambient` + `amb.shutdown` + tmpdir. It drives `next_step_for(amb,
-tool_name)` (returns the JSON-dumped dict, not a `NextStep`):
+`reset_ambient` + `amb.shutdown` + tmpdir. It drives `next_step_for(amb, tool_name)`, which
+**returns a `NextStep | None` model** — since 260731-EFA-L4 the choke point assigns it to the
+declared envelope field `ResponseEnvelope.nextStep` rather than writing a dumped dict into the
+payload afterwards, so the edge assertions read attributes (`step.nextTool`, `step.nextArgs`) just
+as the pure ones do:
 
 - **No active lifecycle** → `None`.
 - **Blocked gate (live seam)**: after `amb.start()` + `amb.block(kind=…)`,
@@ -94,7 +102,28 @@ tool_name)` (returns the JSON-dumped dict, not a `NextStep`):
 - **Choke point**: `lifecycle_start_payload()` carries
   `frontHalfRundown == FRONT_HALF_RUNDOWN` and a `nextStep` whose
   `nextTool == "lifecycle_turn_end_notification"` with a `summary` in `nextArgs`
-  (`test_tool_payload_attaches_next_step_and_lifecycle_start_emits_rundown`).
+  (`test_tool_payload_attaches_next_step_and_lifecycle_start_emits_rundown`, L298-L303).
+- **Advertised token count covers the hint** (L305-L317,
+  `test_advertised_token_count_covers_the_attached_next_step`): the hint is several hundred
+  characters and it is on the wire, so it is in the count. It was not —
+  `finalize_payload_tokens` ran over the dump and `nextStep` was written in afterwards, so every
+  in-lifecycle response advertised a total that excluded the largest thing the choke point adds.
+  Asserted as a **fixed point over the payload as served**: `payload["tokens"] ==
+  count_response_tokens(payload)`, and then that recounting the payload *without* `nextStep`
+  yields strictly less — so the equality cannot be satisfied incidentally.
+- **…and the supervisor banner** (L319-L331,
+  `test_advertised_token_count_covers_the_supervisor_banner`): the same invariant for the other
+  choke-point field. A supervisor that ticked and then went quiet past the cutoff
+  (`SupervisorHeartbeatStore(self.root).tick(now=now - 6h)`) puts a banner on **every** response;
+  the test asserts `"supervisor stale"` is in `payload["supervisorBanner"]`, the same fixed-point
+  and strictly-less pair, and — the point of the leaf — `PingResponse.model_validate(payload)`,
+  which is only possible now that `supervisorBanner` is a declared envelope field.
+- **A raising staleness probe degrades to silence** (L333-L345,
+  `test_a_raising_staleness_probe_degrades_to_silence`): patching
+  `agents_remember.mcp.tools.base.supervisor_staleness_banner` to raise `OSError` must yield
+  **no** `supervisorBanner` key, a response that still validates, and a `tokens` value that is
+  still the fixed point. The banner is opportunistic and defended: it must never take down the
+  tool call it rides on, and the response must not be a half-built envelope.
 - **Auto-dismiss end-to-end**
   (`test_turn_end_notification_does_not_self_dismiss_then_next_call_resumes`):
   `lifecycle_turn_end_notification_payload(...)` parks the lifecycle in
@@ -123,9 +152,18 @@ deliberately-loose `state`/`phase` literals and `**base` splat. Edge tests use a
   from contract I/O.
 - The edge tests assert the no-raise contract: every degraded path
   (missing/torn contract, no lifecycle) returns a value (`None` or a hint), never
-  an exception — mirroring `next_step_for`'s blanket containment.
-- Assertions read the dumped dict by key (`step["nextArgs"]`) for `next_step_for`
-  but attribute access (`step.nextArgs`) for `compute_next_step`.
+  an exception — mirroring `next_step_for`'s blanket containment. Since 260731-EFA-L4 the same
+  rule is asserted one level up for the *banner*: a raising staleness probe yields no key, not a
+  broken response.
+- Both engines are read by attribute (`step.nextArgs`), because both return `NextStep | None`.
+  The dict-by-key reads the edge tests used are gone with the dumped-dict attachment they went
+  with; only the payload-level assertions still index a dict, and they index the **payload**
+  (`payload["nextStep"]["nextArgs"]`, `payload["tokens"]`), not a hint object.
+- The advertised `tokens` must be a fixed point over the payload **as served**: everything the
+  caller receives is a field of the one model dumped at the choke point, so recounting the emitted
+  dict must reproduce the number exactly. Each of the two count tests pairs that equality with a
+  strictly-less recount over the payload minus the field under test, so neither can pass by
+  coincidence.
 
 ### Todos
 
@@ -152,14 +190,39 @@ the `lifecycle_start` payload it asserts the rundown on.
 | The projected `LifecycleState` the pure tests construct. | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
 | The `EventStore` backing the ambient under test. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
 | `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The `NextStep` shape the assertions read. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| The `NextStep` shape the assertions read, and the `nextStep` / `supervisorBanner` fields now declared on both response envelopes. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
 | The `lifecycle_guidance` state machine the linear half delegates to. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| `count_response_tokens` / `finalize_payload_tokens` — the counter the fixed-point assertions call and the one the choke point runs over the dump. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
+| `supervisor_staleness_banner` — the probe the degrade test patches, and the store that makes it fire. | [supervisor_heartbeat.py](agents-remember/mcp/src/agents_remember/serving/supervisor_heartbeat.py) |
+| `PingResponse`, the model the banner-carrying payload is validated against. | [core.py](agents-remember/mcp/src/agents_remember/models/core.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: corrected a claim this card made twice and
+  recorded three new tests. **The correction:** the card said `next_step_for` "returns the
+  JSON-dumped dict, not a `NextStep`" and that assertions "read the dumped dict by key
+  (`step["nextArgs"]`) for `next_step_for`". Both are now false — `next_step_for` is typed
+  `NextStep | None` (`next_step.py` L260) and every edge case in `EdgeAndChokePointTests` reads
+  attributes (`step.nextTool`, `step.nextArgs`), because the choke point assigns the hint to the
+  declared envelope field `ResponseEnvelope.nextStep` before the single dump rather than writing a
+  dict into the payload afterwards (`mcp/tools/base.py` `_attach_lifecycle_tail`). Rewrote both
+  passages. **New coverage** in `EdgeAndChokePointTests`:
+  `test_advertised_token_count_covers_the_attached_next_step` (L305-L317) —
+  `payload["tokens"] == count_response_tokens(payload)` and the recount without `nextStep` is
+  strictly less, closing the gap where `finalize_payload_tokens` ran before the hint was written
+  in; `test_advertised_token_count_covers_the_supervisor_banner` (L319-L331) — the same pair for
+  `supervisorBanner` off a supervisor ticked six hours into the past, plus
+  `PingResponse.model_validate(payload)`, which only became possible once the key was declared;
+  and `test_a_raising_staleness_probe_degrades_to_silence` (L333-L345) — a patched
+  `base.supervisor_staleness_banner` raising `OSError` yields no key, a still-valid response, and
+  an intact token fixed point. Added the matching invariants and three Repo-Internal rows
+  (`models/tokens.py`, `serving/supervisor_heartbeat.py`, `models/core.py`). Every other assertion,
+  test name and hint expectation in this card was re-read against the 389-line source and is
+  unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2: both construction shapes this card spelled out for
   `EdgeAndChokePointTests` moved behind parameter objects, so the body was corrected.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/scenarios.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-08-01T10:40+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ inserted after `memoryBlock`), then the resting frames.
 (the GrepAI seed arrow flashes RED + the engine flickers, CGC unaffected, held 2400ms) → S6
 `engine-boot-seed-retry` re-seed → S7 nominal — an honest re-seed recover, never a teleport (the earlier
 "then the CGC reindex reroute" no longer lives in `seedFault`; that reroute is now its own mode). Five more
-timelines join it: `reindexReroute` (**T9C**, soft — CGC seed REFUSED → reindex in place via
+timelines join it: `reindexReroute` (**T9C**, soft — CGC seed **STALE** → reindex reroute in place via
 `engine-cgc-seed-refused` (amber, 2000ms) → `engine-cgc-fallback` → nominal, health never gates/STOPs);
 `providerBlock` (**T7B**, pre-contract — `engine-boot-provider-verify` plan → `engine-boot-provider-blocked`
 gate BEFORE the contract anchors (held 2400ms) → recover supplies the config and deploys **through the
@@ -76,18 +76,39 @@ moved to `engine-sync-moved` → `engine-sync-memory-blocked` gate on the memory
 `engine-integration-conflict-flash` ⚡ → `engine-integration-conflict` steady **STOP** (2600ms), no recover
 tail, source branch unmoved); and `abandon` (**T18**, TERMINAL — X0 working `engine-boot-5-nominal` →
 `engine-boot-abandoned` dissolves the live enclosure with no landing, the X0→X2 step IS the Motion dissolve).
-The export is now `[buildUp, tearDown, seedFault, reindexReroute, memoryBlock, staleBase, providerBlock,
-liveSync, integrationConflict, abandon, ...restingScenarios]` — every recoverable mode passes through the
-provider clone beats (except the ff-only `liveSync`), and the two terminal modes end on a STOP/dissolve.
+The export is `[buildUp, tearDown, seedFault, reindexReroute, memoryBlock, staleBase, providerBlock,
+liveSync, integrationConflict, abandon, ...cockpitScenarios, ...restingScenarios]` — every recoverable mode
+passes through the provider clone beats (except the ff-only `liveSync`), the two terminal modes end on a
+STOP/dissolve, and the FEUI-L8 Chats catalog spreads in ahead of the resting frames.
+
+### Conventions
+
+Every frame is produced by `erFrame(<fixture-name>, <caption>, durMs?)`, never by an inline
+projection literal, so a timeline is a sequence of named engine-room fixture states. Captions carry
+the beat number and a short description; the beat prefix (`B`/`D`/`R`/`M`/`F`/`S`/`X`…) identifies the
+timeline. A caption must name a fact the projection actually carries — it is prose a developer reads
+next to the animation, so a caption naming a state the reducer cannot emit teaches the wrong grammar.
+
+### Todos
+
+No open file-local todos.
 
 ### Invariants And Boundaries
 
 DEV-only (the `/dev/*` route is dropped from the production bundle). Presentation data only — no behavior.
 A frame is a complete projection, never an SVG patch, so seeking applies frame `t` and the cockpit
 animates from wherever it currently is. The captions are load-bearing for `scenarios.test.ts` (it matches
-`worktree_start` / `idle constellation` / `removed` etc.), and the tear-down must contain a
+`worktree_start` / `idle constellation` / `removed` / `reroute` etc.), and the tear-down must contain a
 `cleanup-pending` phase frame (the de-materialise beat). Stays in lockstep with the engine-room fixture
 names: a renamed/removed fixture must be reflected here or `erFrame` throws.
+
+**A caption must name a state the reducer can actually emit.** The R4 caption in `reindexReroute` said
+`CGC seed REFUSED`, and `refused` is not in the served `EngineProcessEdge.state` vocabulary — it was
+invented on this side of the wire, and a renderer branch was written to match it. The caption now reads
+`CGC seed STALE → reindex reroute`, matching the `stale` edge state the fixture drives and the reducer
+genuinely produces (`_seed_edge_state`). Only the caption moved: the fixture *name*
+`engine-cgc-seed-refused` and the scenario `label` (`Reindex reroute · CGC seed refused (soft · T9C)`)
+both still read "refused", so a search for that word still finds the arc.
 
 ## Docs References
 
@@ -103,9 +124,13 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `erFrame` wraps a named engine-room scenario into a full projection. | L27-L31 | [scenarios.ts](scenarios.ts) |
-| `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | — | [fixtures.ts](fixtures.ts) |
-| `ENGINE_ROOM_SCENARIOS` — the named fixture states the timelines reference. | — | [engine-room/fixtures.ts](../panels/engine-room/fixtures.ts) |
+| `erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name. | L33-L44 | [scenarios.ts](scenarios.ts) |
+| The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. | L90-L102 | [scenarios.ts](scenarios.ts) |
+| `SCENARIOS` — timelines first, then the folded-in resting frames. | L258-L271 | [scenarios.ts](scenarios.ts) |
+| The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. | L835-L855 | [engine-room/fixtures.ts](../panels/engine-room/fixtures.ts) |
+| `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. | L1588-L1611 | [reducer.py](../../../mcp/src/agents_remember/observer/reducer.py) |
+| `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | L762-L781 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
+| `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | L134-L144; L146 | [fixtures.ts](fixtures.ts) |
 | Consumed by the player transport + the bench picker. | — | [ScenarioPlayer.tsx](ScenarioPlayer.tsx) · [Bench.tsx](Bench.tsx) |
 | `WorkspaceProjection` / `ObserverEvent` types each frame carries. | — | [projection.ts](../types/projection.ts) · [event.ts](../types/event.ts) |
 
@@ -126,6 +151,23 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+
+- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the `projection.py`
+  citation after a worker inserted ten lines above it. `EngineProcessEdge` L752-L771 → L762-L781:
+  the class opens at L762, `model_config = ConfigDict(extra="forbid")` is L770, and the nine-state
+  vocabulary comment plus `state: str` are L778-L779. No body text changed.
+- 2026-08-01T09:58+02:00 — 260731-EFA-L4 curator: the R4 caption in `reindexReroute` changed from
+  `CGC seed REFUSED` to `CGC seed STALE → reindex reroute`. `refused` was never in the served
+  `EngineProcessEdge.state` vocabulary — it was invented on the dashboard side and grew a renderer
+  branch — while `stale` is what `reducer.py::_seed_edge_state` genuinely emits and what the
+  `engine-cgc-seed-refused` fixture now drives. Corrected the T9C prose accordingly and recorded that
+  the fixture name and the scenario `label` still read "refused", so only the caption moved. Also
+  corrected the `SCENARIOS` export list, which omitted the `...cockpitScenarios` spread, and replaced
+  the placeholder `—` citations with ranges containing `erFrame`, `reindexReroute`, `SCENARIOS`, the
+  fixture's `stale` edge, `_seed_edge_state`, and the `EngineProcessEdge.state` vocabulary comment.
+  Verification metadata left pinned; closeout stamps the code commit.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

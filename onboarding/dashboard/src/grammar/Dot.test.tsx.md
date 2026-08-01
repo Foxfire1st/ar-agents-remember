@@ -1,0 +1,136 @@
+# dashboard/src/grammar/Dot.test.tsx
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| repository             | agents-remember                                  |
+| path                   | `dashboard/src/grammar/Dot.test.tsx`             |
+| doc_type               | `file-level-onboarding`                          |
+| lastUpdated            | 2026-08-01T10:30+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[grammar/ overview](overview.md)
+
+## Purpose
+
+Vitest + Testing Library coverage for `Dot`, the one place a lifecycle state or an attention severity
+becomes something a developer can see. Three flat properties, and deliberately nothing else:
+
+1. the variant vocabulary equals what the wire can send plus what the queue can rank;
+2. every variant renders differently from every other variant **and** from a variant the component
+   does not know;
+3. every variant carries an ink of its own, so the glyph is redundancy rather than a replacement.
+
+The suite exists because `awaiting-developer` reached this component with no treatment at all — a
+hand-copied `KNOWN` list missed it, `variant` resolved to `undefined`, and only the base applied. An
+unrecognised variant does not throw and does not render blank; it silently ships looking like the
+base. That is why the fallback is carried in the variant list as an extra citizen rather than as a
+special case: "distinct from the fallback" and "distinct from each other" are the same requirement.
+
+## Code Commentary
+
+### Logic
+
+`ALL_VARIANTS = [...DOT_VARIANTS, FALLBACK]` where `FALLBACK = "__no-such-variant__"`. `markOf`
+renders one `<Dot>` and returns `container.firstElementChild`, throwing if the component rendered
+nothing.
+
+`appearanceOf(mark)` is the observable the second test compares. jsdom applies no stylesheet, so a
+computed style would be useless — but Panda's atomic class names **are** the declarations (`c_amber`,
+`anim-n_pulseSlow`), so the class list is what actually ships. It returns
+`` `${textContent} ${sortedClassTokens}` `` with every token containing `anim` filtered out. Dropping
+the animation atoms is the load-bearing choice: motion is additive in `Dot`, so a pair whose only
+difference is that one of them moves is a pair that looks identical to anyone with the Calm toggle on
+or `prefers-reduced-motion` set.
+
+Three `it`s:
+
+1. *treats exactly the states the wire can send and the severities the queue can rank* — asserts
+   `[...DOT_VARIANTS].sort()` equals `[...LIFECYCLE_STATES, "alarm", "warn", "info"].sort()`.
+   Asserted in **both** directions: a new lifecycle state with no dot treatment fails, and so does a
+   recipe variant nothing can ever send. `DOT_VARIANTS` is read off the recipe, never hand-copied.
+2. *renders every state and severity differently from every other, and from a variant it does not
+   know* — walks `ALL_VARIANTS` into a `Map<appearance, variant>`, failing with the colliding
+   variant's name, and finally asserts `seen.size === ALL_VARIANTS.length`. It also asserts each mark
+   has non-empty `textContent`. Colour alone cannot carry this: `blocked`/`alarm`, `running`/`info`
+   and `awaiting-developer`/`warn` are three hues each shared by a state and a severity the cockpit's
+   left rail shows at the same time, so the glyph is what makes it pass.
+3. *gives every variant an ink of its own, so the glyph is redundancy and not a replacement* —
+   extracts the first `c_*` class per variant, asserts it exists, and asserts it differs from the
+   fallback's. Without this a build that stripped every hue would still pass test 2 on glyphs alone.
+   Sharing the base's tone is the one collision that is never safe, because every consumer can reach
+   the base — while the base was `amber` that was literally true of `warn`.
+
+### Conventions
+
+The vocabulary is imported from the unit under test (`DOT_VARIANTS`) and from the wire mirror
+(`LIFECYCLE_STATES`); this file holds no list of its own. Assertions read the rendered class list
+rather than computed styles, because under jsdom the atomic class name is the declaration. `cleanup`
+runs in `afterEach` since several helpers render inside loops.
+
+### Invariants And Boundaries
+
+- No stylesheet, no browser, no snapshot. The suite must stay readable as three properties, not as a
+  table of expected class names — a snapshot would pass on a wrong-but-stable rendering.
+- Animation atoms must stay excluded from the appearance key. Counting them would let a variant
+  "differ" only by moving, which is exactly what the Calm toggle and reduced motion erase.
+- The fallback stays a member of `ALL_VARIANTS`, never a separate assertion.
+- Test 3 must keep asserting colour separately from test 2. Together they say "colour is required and
+  the glyph is redundancy"; either one alone permits dropping a channel.
+- Scope is the mark's own appearance. Accessible naming lives with the consumers (`LifecycleList`'s
+  "Task progress: …" label, `AttentionQueue`'s "Severity: …" image); `Dot` is `aria-hidden`.
+
+### Todos
+
+No open file-local todos.
+
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; it has no configured Domain
+Documentation entries. This card is verified from its direct source and the component under test.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+
+## Repo-Internal References
+
+The suite closes over three declarations it does not own: the recipe's variant map, the wire state
+vocabulary, and the glyph table. All three are cited so a reader can see why no list is restated here.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `ALL_VARIANTS`/`FALLBACK`, the `markOf` and `appearanceOf` helpers, and the three property tests. | L16-L88 | [Dot.test.tsx](Dot.test.tsx) |
+| `DOT_VARIANTS = dot.variantMap.variant` — the derived vocabulary this suite imports rather than copying, and the total `DOT_GLYPHS` that makes the collision test pass. | L89-L117 | [Dot.tsx](Dot.tsx) |
+| The `cva` base (`color: "muted"`) and the three amber/cyan/alarm pairs that colour alone cannot separate. | L23-L87 | [Dot.tsx](Dot.tsx) |
+| `LIFECYCLE_STATES` — the wire half of the vocabulary equality assertion; composed from `LIVE_STATES` (L42) + `TERMINAL_STATES` (L48), so the range holds all six names. | L42-L59 | [types/projection.ts](../types/projection.ts) |
+| The unlayered `html[data-effects="off"]` freeze that nulls every animation with `!important` — why animation atoms are excluded from the appearance key. | L136-L143 | [index.css](../index.css) |
+| `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail, so a state and a severity sharing a hue are on screen together. | L560-L563 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+
+## Cross-Repo References
+
+No meaningful cross-repo references found. The vocabulary mirrors the served lifecycle states, but the
+mirror (`types/projection.ts`) is in this repository.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
+
+## Update History
+
+<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+
+- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
+  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
+  every anchor below it. Re-anchored the one row citing that file: `LIFECYCLE_STATES` L21-L30 → L42-L59,
+  which spans both halves and the composed tuple. The equality assertion still imports the one tuple, so
+  no claim in the body changed.
+- 2026-08-01T09:46+02:00 — 260731-EFA-L4 curator: created. New suite pinning three flat properties of
+  `Dot` — vocabulary equality against `LIFECYCLE_STATES` in both directions, every variant plus the
+  fallback rendering distinguishably (with animation atoms excluded, so motion cannot stand in for
+  identity), and every variant carrying its own `c_*` ink so a hue-stripped build cannot pass on
+  glyphs alone. Verification metadata pinned to the leaf base (`abc7cbc`); the source file is still
+  uncommitted and closeout stamps the code commit.

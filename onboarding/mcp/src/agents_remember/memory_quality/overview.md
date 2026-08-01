@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:26+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -43,6 +43,14 @@ history-order fixes.
   attention can say which repo/memory pair raised the notice and when it was measured. Task 32 routes
   that writer through the shared observer drift-snapshot path helper so producer
   writes, projection pruning, and cleanup deletion share one filename contract.
+  **260731-EFA-L4 makes this subpackage the declaring owner of the drift-summary wire
+  vocabulary**, not just its producer: `models.py` declares `DriftStatus = Literal["notChecked",
+  "checked", "error"]` and the `DriftSummaryPacket` TypedDict (`status` required; `count`,
+  `actionableCount`, `reportPath`, `actionableSample`, `error` all `NotRequired`), and
+  `summary.py`'s `not_checked`, `run_drift_summary` and `summarize_rows` are annotated with it
+  instead of `dict[str, Any]`. This is an INBOUND dependency edge that did not exist before —
+  `models/drift.py` (context-packet `DriftSummary`), `models/memory.py`
+  (`DriftCheckResponse`) and `controllers/context_packet.py` all import from here now.
 - `integrity/check_missing_onboarding.py` checks only current worktree
   additions so newly added eligible files get sidecars before the code commit.
 - `style/update_history/` checks that onboarding `## Update History` bullets
@@ -62,6 +70,20 @@ history-order fixes.
   belong in focused fix scripts.
 - New memory-quality checks should be placed under `style/` or `integrity/`
   according to what they validate.
+- **A status this route can emit is declared here, once, and imported by every wire model that
+  carries it** (260731-EFA-L4). `run_drift_summary` produces `notChecked`, `checked` and
+  `error`; before this leaf there were three declarations of that vocabulary — one here (via
+  the packet's actual behaviour), one on `models.drift.DriftStatus` missing `error`, one on
+  `models.memory.DriftCheckStatus` complete but separate. The short copy was reachable: a
+  missing onboarding root makes this route return `{"status": "error", "error": ...}`, so
+  `context_packet(include_drift=true)` against a repo without onboarding raised out of the
+  tool rather than reporting why. Adding a status here now propagates by import; adding one
+  to a wire model instead re-creates the split.
+- **A `NotRequired` key on `DriftSummaryPacket` must be read with `.get`, including by
+  consumers on this route.** `check.py`'s `run_drift_quality_check` reads `count`,
+  `reportPath` and `actionableCount` with `.get(...)`, not `[...]`: those keys accompany a
+  `checked` status only, which the guard above the return has established but the type cannot
+  carry across.
 
 ## Repo-Internal References
 
@@ -71,6 +93,8 @@ history-order fixes.
 | Tool metadata and server registration expose `memory_quality_check` to agents. | [mcp/tools/memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py); [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | [history_order_fix.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
 | The missing-onboarding checker catches newly added worktree files before code commit. | [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
+| The two wire models that import this route's `DriftStatus` instead of retyping it. | [models/drift.py](agents-remember/mcp/src/agents_remember/models/drift.py); [models/memory.py](agents-remember/mcp/src/agents_remember/models/memory.py) |
+| The context-packet controller that returns `DriftSummaryPacket` from its drift seam. | [controllers/context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
 
 ## 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
@@ -136,8 +160,56 @@ unchanged. What changed is that a verdict can no longer be computed against a re
 the caller did not name. `mcp/tests/test_git_command.py` holds the proof against a decoy
 repository named by the selectors.
 
+## 260731-EFA-L4 — The Drift Summary Is A Typed Packet With A Named Vocabulary
+
+The drift summary crossed three module boundaries as `dict[str, Any]`, which meant its shape
+was agreed by convention at each of them. It is now `DriftSummaryPacket`, a `TypedDict` declared
+in `integrity/onboarding_drift_check/models.py` beside the classifier that fills it, with
+`DriftStatus` declared in the same place.
+
+- **`models.py`** declares `DriftStatus = Literal["notChecked", "checked", "error"]` and
+  `DriftSummaryPacket` (`status` required; `count`, `actionableCount`, `reportPath`,
+  `actionableSample`, `error` `NotRequired`). The `NotRequired` markers are the honest part:
+  which keys are present genuinely depends on the status, and the type now says so instead of
+  every consumer guessing.
+- **`summary.py`**'s three producers — `not_checked`, `run_drift_summary`, `summarize_rows` —
+  return `DriftSummaryPacket` rather than `dict[str, Any]`. Nothing they emit changed.
+- **`check.py`**'s `run_drift_quality_check` reads the optional keys with `.get(...)` where it
+  had used `[...]`. On the `checked` path those keys are in fact always present, so this is not
+  a behaviour change on any reachable input; it is what makes the checked-status narrowing
+  expressible, since a `TypedDict` cannot carry the `status != "checked"` guard's conclusion
+  into the branch below it.
+
+The reason this route now has an inbound dependency from `models/` and `controllers/`: the
+vocabulary had been copied twice on the wire side, and one copy was SHORT. `models.drift`
+declared `Literal["notChecked", "checked"]` and no `error` field, while `run_drift_summary`
+returns `{"status": "error", "error": ...}` for a missing onboarding root — the diagnostic
+crashed on precisely the call meant to explain the missing onboarding. Both wire models now
+import `DriftStatus` from here, and `controllers/context_packet.py`'s `_drift_packet` is
+annotated `-> DriftSummaryPacket`. The route's checks, their names, their classification
+vocabulary and their emitted rows are all unchanged.
+
 ## Update History
 
+- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** This route acquired
+  something the card did not describe — it is now the declaring owner of a wire vocabulary, not
+  only its producer. Recorded `DriftStatus` and the `DriftSummaryPacket` TypedDict in
+  `integrity/onboarding_drift_check/models.py`, `summary.py`'s three producers moving off
+  `dict[str, Any]` onto it, and the resulting INBOUND import edge from `models/drift.py`,
+  `models/memory.py` and `controllers/context_packet.py` (checked by grep against the current
+  source: those three plus the six in-subpackage consumers). Recorded WHY the edge exists rather
+  than just that it does: `models.drift.DriftStatus` was `["notChecked", "checked"]` with no
+  `error` field, so `context_packet(include_drift=true)` against a repo with no onboarding root
+  raised on both the status and the key — the diagnostic failed on the call meant to explain the
+  problem. Added two invariants (one declaration of an emittable status, imported by every wire
+  model; and `NotRequired` keys are read with `.get`, with `check.py`'s guard-then-`.get` pattern
+  named as the reason) and two reference rows to the 2-column table. **Re-verified all eight
+  line-number citations in the L3 section and its history entry against the current files** — none
+  moved: `require_git` is still at `check_missing_onboarding.py:176`, `worktree_added_sources`'
+  call sites at 82-83, `code_repository_name_from_git`'s probe at 192, and `git_ops.py`'s
+  `current_branch_name`/`local_change_note`/`list_repo_sources`/`git_stdout`/`git_blob_hash` at
+  15/22/41/54/61. Neither of those two files was touched by this leaf. Verification metadata
+  pinned until closeout stamps the L4 commit.
 - 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: recorded that this route no longer contains a
   git runner. `integrity/onboarding_drift_check/git_ops.py` and
   `integrity/check_missing_onboarding.py` each held a private `run_git` that was the kernel's

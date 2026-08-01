@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `dashboard/src/topology/model.ts`           |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-06-23T22:31+02:00                      |
-| lastVerifiedCommitHash |                                             `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                             2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-08-01T10:30+02:00                      |
+| lastVerifiedCommitHash |                                             `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |                                             2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
@@ -22,9 +22,45 @@ checkouts (inner ring) → **active** worktree enclosures (outer ring), with pro
 to the entity they are scoped to. The view shows live work only — there is **no separate lifecycle/task
 rim**; each active enclosure node folds in its 1:1 lifecycle (id, status, phase·state).
 
+It also **owns the state → status grammar** for the whole constellation surface: the exported
+`CONSTEL_STATUSES` vocabulary, the total `CONSTEL_STATUS_BY_STATE` table, the declared
+`UNCLASSIFIED_STATUS`, and the exported `lifecycleStatus` that reads them. `constel.ts` keys its
+palette off the same vocabulary, so there is exactly one place a lifecycle state acquires a colour.
+
 ## Code Commentary
 
 ### Logic
+
+**The state → status grammar (260731-EFA-L4 — the leaf's headline defect).** `lifecycleStatus` was an
+if-chain that named five of the six declared states and ended in `return "ok"`. `awaiting-developer`
+— the NOTIFY-AND-CONTINUE turn end, where the turn is back with the developer — was the sixth, so a
+lifecycle waiting on a person drew as a **healthy** node on the one surface a developer scans for work
+owed to them. The chain is now four declarations:
+
+- `CONSTEL_STATUSES = ["core","ok","warn","crit","idle"] as const`, with `ConstelStatus` **derived**
+  from the tuple, so the vocabulary is one list readable at runtime (tests iterate it; `constel.ts`
+  keys its palette by it) rather than a union only `tsc` can see.
+- `CONSTEL_STATUS_BY_STATE: Record<State, ConstelStatus>` — total by construction. A seventh entry in
+  `LIFECYCLE_STATES` stops this object literal compiling until someone rules on it. The rulings:
+  `blocked → crit`; `awaiting-developer → warn`; `paused → warn`; `abandoned → idle`;
+  `running`/`completed → ok`.
+- `UNCLASSIFIED_STATUS: ConstelStatus = "warn"` — what a state this build has never heard of (a newer
+  server, or a projection persisted by one) renders as. Never `ok` (the exact wrong answer, the one
+  that caused the defect), never `crit` (that would claim a fault the server never reported).
+- `STATUS_BY_DECLARED_STATE: Partial<Record<string, ConstelStatus>>` — a **read view** over the same
+  table. `lifecycle.state` is typed `State`, but that is a claim about a process this build does not
+  control; indexing `Record<State, …>` directly types the miss away, so `?? UNCLASSIFIED_STATUS`
+  would read as dead code that anyone could delete for zero new `tsc` errors. The alias makes the
+  miss typed, so removing the `??` fails `tsc -b` here. (`noUncheckedIndexedAccess` would say the
+  same for every index in the project; the file records it as measured-and-not-on — 601 errors across
+  81 files, 33 non-test — so the guard is applied at the one seam where the key is wire data.)
+
+`lifecycleStatus(lifecycle)` takes `Pick<LifecycleProjection, "state" | "inferred">` (it needs nothing
+else, so a test can call it with a two-field literal). It reads the declared status through the view,
+then applies one degrade: `inferred` downgrades a **healthy** reading only — `declared === "ok" &&
+lifecycle.inferred ? "warn" : declared`. It never upgrades `warn`/`crit`/`idle`, because `inferred`
+means the reducer derived the state (stale heartbeat → paused, dormant fleeting → abandoned) rather
+than reading a written transition; an inferred blocked lifecycle is still a fault.
 
 `activeTopologyInputs(lifecycles, enclosures, activeWorktreeGroups)` is the exported pure seam that
 bounds the view to active work: it keeps only enclosures whose worktree group is in
@@ -57,13 +93,26 @@ real served data the join never matched and worktree providers fell back to the 
 
 ### Conventions
 
-The file exports the model types/constants, the pure builder, and `activeTopologyInputs`. `ConstelNode.parent`
+The file exports the model types/constants, the pure builder, `activeTopologyInputs`, and — since
+260731-EFA-L4 — the classification grammar (`CONSTEL_STATUSES`, `CONSTEL_STATUS_BY_STATE`,
+`UNCLASSIFIED_STATUS`, `lifecycleStatus`). Vocabularies are declared as `as const` tuples with the
+type derived, matching `LIFECYCLE_STATES`/`PHASES` in `types/projection.ts`: a table only the type
+system can see is a table no runtime assertion can prove total. `ConstelNode.parent`
 is an index into the returned node list, not an id string, because the imperative renderer performs
 hot-path layout over the array. `rf` selects the ring radius for checkouts/enclosures (`RF = {repo, wt}`,
 no task ring); providers use `rf: 0` and orbit their parent via `poff`.
 
 ### Invariants And Boundaries
 
+- **No unrecognised state may render as `ok`.** `UNCLASSIFIED_STATUS` is `warn` and the
+  `?? UNCLASSIFIED_STATUS` in `lifecycleStatus` is load-bearing — it is reachable only because
+  `STATUS_BY_DECLARED_STATE` re-types the lookup as partial. Deleting either the alias or the `??`
+  restores the original defect end-to-end (the `undefined` flows to `constel.ts`'s palette).
+- `CONSTEL_STATUS_BY_STATE` must stay total over `State`; a new `LIFECYCLE_STATES` member is a `tsc`
+  failure here (and a vitest failure in `model.test.ts`) until it is classified.
+- There is exactly ONE classification path. `buildTopology` calls `lifecycleStatus`; it must not grow
+  a second if-chain that can disagree with the declared grammar.
+- `inferred` degrades only. It turns `ok` into `warn` and leaves `warn`/`crit`/`idle` untouched.
 - The builder stays pure and deterministic so unit tests can assert topology behavior without a canvas.
 - `buildTopology` renders the enclosures/lifecycles it is given; active-scope filtering lives in
   `activeTopologyInputs`, so the two are independently testable.
@@ -91,16 +140,21 @@ implements project-local projection modeling logic.
 
 ## Repo-Internal References
 
-The model is the adapter between the served projection contract and the imperative canvas renderer. The
-focused unit test covers the provider parenting contract directly.
+The model is the adapter between the served projection contract and the imperative canvas renderer. It
+is also where the state vocabulary crosses from the wire mirror into a colour-bearing one, so both
+ends of that crossing are cited below: `LIFECYCLE_STATES`/`State` upstream, `constelColors` downstream.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `WorkspaceProjection.activeWorktreeGroups` (worktree-group basenames with a live enclosure lifecycle) is the bounded set `activeTopologyInputs` filters on; `ProviderNode.worktreeGroup` is a basename while `EnclosureNode.worktreeGroup` is a full path. | `activeWorktreeGroups`, `EnclosureNode`, `ProviderNode` | [types/projection.ts](../types/projection.ts) |
-| `activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node and parents providers by `groupKey` worktree group, then repo id, then workspace core. | `activeTopologyInputs`, `buildTopology`, `groupKey` | [model.ts](model.ts) |
-| The backend exposes `activeWorktreeGroups` from `active_enclosure_worktree_groups` (the same admission the Engine Room uses) via `project_workspace`. | `active_worktree_groups` param | [reducer.py](../../../mcp/src/agents_remember/observer/reducer.py); [projection_store.py](../../../mcp/src/agents_remember/observer/projection_store.py) |
-| The canvas renderer draws checkout/enclosure rings + provider satellites (no task ring) and positions providers by orbiting their parent node. | ring guides, `layout` | [constel.ts](constel.ts) |
-| The topology model test verifies `activeTopologyInputs` filtering, the lifecycle fold (no task nodes), the path-vs-basename provider join, and provider parenting/precedence. | `model.test.ts` | [model.test.ts](model.test.ts) |
+| `LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. It is now COMPOSED from the two declared halves (`LIVE_STATES` + `TERMINAL_STATES`), so the six names are read off L42/L48. | L42-L61 | [types/projection.ts](../types/projection.ts) |
+| `WorkspaceProjection.activeWorktreeGroups` (worktree-group basenames with a live enclosure lifecycle) is the bounded set `activeTopologyInputs` filters on; `ProviderNode.worktreeGroup` is a basename while `EnclosureNode.worktreeGroup` is a full path. | L156-L189; L711-L721 | [types/projection.ts](../types/projection.ts) |
+| `CONSTEL_STATUSES` + the derived `ConstelStatus`, the total `CONSTEL_STATUS_BY_STATE`, the declared `UNCLASSIFIED_STATUS`, the `STATUS_BY_DECLARED_STATE` partial read view, and `lifecycleStatus` with its inferred-degrades-healthy-only rule. | L12-L18; L39-L93 | [model.ts](model.ts) |
+| `activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node via `lifecycleStatus` and parents providers by `groupKey` worktree group, then repo id, then workspace core. | L99-L115; L184-L218 | [model.ts](model.ts) |
+| The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`. | L114-L122; L175 | [reducer.py](../../../mcp/src/agents_remember/observer/reducer.py) |
+| The projection store passes that structural set through to the served projection. | L247 | [projection_store.py](../../../mcp/src/agents_remember/observer/projection_store.py) |
+| `constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar. | L31-L39; L71-L75 | [constel.ts](constel.ts) |
+| `model.test.ts` pins the grammar: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the inferred degrade, and `buildTopology` driven over the whole vocabulary. | L92-L138; L154-L187 | [model.test.ts](model.test.ts) |
+| `Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`. | L96-L101; L118 | [panels/Topology.tsx](../panels/Topology.tsx) |
 
 ## Cross-Repo References
 
@@ -115,6 +169,29 @@ projection/model/render boundary.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
+  server's state partition — `LIVE_STATES` and `TERMINAL_STATES` are declared halves and
+  `LIFECYCLE_STATES` is now `[...LIVE_STATES, ...TERMINAL_STATES] as const` — which moved every anchor
+  below it. Re-anchored the two rows citing that file: `LIFECYCLE_STATES` L21-L30 → L42-L61 (the halves
+  at L42/L48, the composed tuple at L59, `State` at L61) and noted that the six names are now read off
+  the halves; `EnclosureNode`/`ProviderNode` L121-L154 → L156-L189 and
+  `WorkspaceProjection.activeWorktreeGroups` L683-L684 → L711-L721. No body claim changed —
+  `LIFECYCLE_STATES` is still an `as const` tuple with `State` derived from it.
+- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: documented the leaf's headline defect and its fix.
+  `lifecycleStatus` was an if-chain covering five of six `LIFECYCLE_STATES` and returning `"ok"` for
+  the rest, so an `awaiting-developer` lifecycle — the turn handed back to the developer — drew as a
+  healthy constellation node. It is now four declarations: the `CONSTEL_STATUSES` tuple with
+  `ConstelStatus` derived from it, the total `CONSTEL_STATUS_BY_STATE: Record<State, ConstelStatus>`
+  (a seventh state stops the literal compiling), `UNCLASSIFIED_STATUS = "warn"`, and the
+  `STATUS_BY_DECLARED_STATE: Partial<Record<string, ConstelStatus>>` read view that makes
+  `?? UNCLASSIFIED_STATUS` load-bearing to `tsc`. `lifecycleStatus` is now exported, takes
+  `Pick<LifecycleProjection, "state" | "inferred">`, and degrades only a healthy reading when
+  `inferred`. Added the invariants (no unrecognised state may read `ok`; one classification path;
+  inferred never upgrades) and rebuilt the Repo-Internal citations — the previous rows carried symbol
+  names in the `Citations` column instead of line ranges, and are now exact ranges containing
+  `LIFECYCLE_STATES`, `EnclosureNode`/`ProviderNode`, `CONSTEL_STATUS_BY_STATE`, `constelColors`, and
+  `activeTopologyInputs`/`buildTopology` respectively. Verification metadata left pinned; closeout
+  stamps the code commit.
 - 2026-06-28T07:30+02:00 — Task 33: reshaped the model to an active-enclosure view. Removed the lifecycle/task
   rim (`task` kind + `RF.task` gone; `RF` is now `{repo:0.3, wt:0.62}`) and folded each enclosure's 1:1
   lifecycle (id/click-through, `lifecycleStatus`, `phase·state`) into the `wt` node. Added the exported

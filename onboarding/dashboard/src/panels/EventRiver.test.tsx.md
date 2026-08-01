@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/EventRiver.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T03:10+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-08-01T11:15+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -31,7 +31,14 @@ display cap).
 
 Since L11 the suite's enclosure fixtures carry the REQUIRED `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags (default `true`) — the river renders events, not task rows, so behavior under test is unchanged.
 
-A small `ev(...)` helper builds an `ar-observer-event/v1` event (defaulting `ts`/`trust`/`actor`/`id`).
+A small `ev(...)` helper builds an `ar-observer-event/v1` event. It no longer assembles the envelope
+itself: it delegates to `observerEvent(...)` from `test/fixtures/wire`, passing a suite-local `id`
+(`e-<kind>-<random>`), the frozen `ts` `2026-06-23T10:11:12+00:00`, and `actor: "model"` ahead of the
+caller's `...partial`, while `schema` and `trust: "observed"` come from the shared builder. The
+`as ObserverEvent` cast at the end is gone, and the parameter type is now
+`Partial<ObserverEvent> & Pick<ObserverEvent, "kind">` — so the helper is checked against the mirror
+instead of asserting past it, and an event-envelope contract change fails this file. Spread order is
+unchanged, so an explicit `partial.id` still wins.
 Fixture helpers build minimal `LifecycleProjection`, `EnclosureNode`, `TaskDocNode`, and `Analytics`
 objects so the tests can exercise the same task-label join the live dashboard uses. A `beforeAll` defines
 `HTMLElement.prototype.offsetHeight`/`offsetWidth` as non-zero getters (restored in `afterAll`) so the
@@ -79,13 +86,25 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
 | --- | --- | --- |
 | The panel under test (now a virtualized list; the `read.packet` per-kind row on an otherwise-generic river). | — | [EventRiver.tsx](EventRiver.tsx) |
 | The summary layer whose known-kind behavior, lifecycle-only task-document label fallback, and context-ready gate the render tests exercise. | L99-L110; L145-L158; L296-L357 | [eventSummary.ts](eventSummary.ts) |
-| The render regression pins that a lifecycle-bound row stays hidden until task-document context is available. | L233-L258 | [EventRiver.test.tsx](EventRiver.test.tsx) |
-| The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts). | L19-L34; L137-L145; L189-L211 | [EventRiver.test.tsx](EventRiver.test.tsx) |
+| The render regression pins that a lifecycle-bound row stays hidden until task-document context is available. | L234-L260 | [EventRiver.test.tsx](EventRiver.test.tsx) |
+| The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts). | L21-L36; L138-L147; L190-L213 | [EventRiver.test.tsx](EventRiver.test.tsx) |
+| `ev` delegates to the shared `observerEvent` builder and drops the `as ObserverEvent` cast. | L48-L56 | [EventRiver.test.tsx](EventRiver.test.tsx) |
+| `observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror. | L364-L381 | [test/fixtures/wire.ts](../test/fixtures/wire.ts) |
 | The `read.packet` emitter that carries `data.repoId` + facts-only `files`. | — | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
 | The `ObserverEvent` shape (trust/actor/kind/data) the helper builds. | — | [types/event.ts](../types/event.ts) |
-| The task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | L77-L108 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
+| `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | L64-L108 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
 
 ## Update History
+
+- 2026-08-01T11:15+02:00 — 260731-EFA-L4 curator: corrected the `ev(...)` description. It no longer
+  assembles the envelope and defaults `trust` itself — it delegates to `test/fixtures/wire::observerEvent`,
+  which supplies `schema`/`trust`, and it dropped the trailing `as ObserverEvent` cast in favour of a
+  `Partial<ObserverEvent> & Pick<ObserverEvent, "kind">` parameter. Traced the spread order through both
+  functions to confirm the effective defaults are unchanged (`id` `e-<kind>-<random>`, the frozen
+  `ts`, `actor: "model"`, and an explicit `partial.id` still winning), so no assertion moves. Repaired
+  three citations: the context-ready test L233-L258 → L234-L260, the hydration/virtualization row
+  L19-L34;L137-L145;L189-L211 → L21-L36;L138-L147;L190-L213, and the `taskIdentity` row L77-L108 →
+  L64-L108 so it actually contains `qualifiedLeafKey` (L64).
 
 - 2026-07-06T10:45+02:00 — L11 body note: enclosure fixtures carry the required existence flags (default true); river behavior unchanged. Verification metadata pinned until closeout stamps the L11 commit.
 

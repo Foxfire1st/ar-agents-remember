@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `dashboard/src/panels/engine-room/useEngineTimeline.ts`   |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |                                                           `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |                                                           2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T15:10+02:00 |
+| lastVerifiedCommitHash |                                                           `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |                                                           2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -34,19 +34,24 @@ Three exports/helpers. `phaseStage(phase)` maps the projection `phase` string to
 → `idle` (the constellation at rest, no timeline). `fxSignature(node)` builds a stable string of everything
 the GSAP layer keys on — `node.phase`, the running draw lanes (`edges` filtered to `state === "running"`,
 kinds sorted), the resolved landing flows (`landing[]` `kind:state:factState`, sorted), the engine fx states
-(`providers` `role:runtimeState`, sorted), the **refused edges** (`edges` filtered to `state` ∈
-`refused`/`failed`/`stale`, `kind:state`, sorted — 05o), `seedFallback ? "reindex" : ""`, and `memoryMode` — so
+(`providers` `role:runtimeState`, sorted), the **refused edges** — the local is still called `refused`, but
+the filter is now `edges` with `state` ∈ `failed`/`stale` only (`kind:state`, sorted — 05o) —
+`seedFallback ? "reindex" : ""`, and `memoryMode` — so
 the effect re-runs (revert → rebuild) exactly when a choreography input changes (a `planned → running` lane
-re-draws, a cleared fault stops flickering). The refused fold-in matters because a refused lane is **not** a
+re-draws, a cleared fault stops flickering). The fold-in matters because a failed or stale lane is **not** a
 `running` lane, so the `draws` segment alone misses it — without it the one-shot `refuse` flash would not re-arm
-when the refuse beat lands. `buildFx(q)` builds the repeating loops on whatever `data-fx` elements the
+when the beat lands. A `state === "refused"` arm was removed here: the reducer has no such state (`_seed_edge_state`
+returns `failed`/`running`/`stale`/`complete`/`skipped`/`planned`, and `EngineProcessEdge`'s own state comment
+never listed `refused`), so the arm could never match a served payload. "Refused" survives as the NAME of the
+visual beat — `data-fx='refuse'`, the `refuse` tween, `refusedConduit` — not as an edge state.
+`buildFx(q)` builds the repeating loops on whatever `data-fx` elements the
 render produced: `fault` (engine down → the red frame **breathes GENTLY** — `opacity 0.5 → 0.95`, `1.7s`
 `sine.inOut` yoyo, 5o; never a strobe, so the WCAG 2.3.1 ≤3-flashes/s cap is satisfied with room to spare —
 this replaced the old 0.34s `steps(1)` flicker), `reindex` (amber center-out `scaleY` 0.25→1 + opacity pulse — a fallback, not
 a fault), `scan` (05o — the pre-block verify sweep: a cyan ring expands + fades, `attr {r}` 6→52 + `opacity` 0.9→0, `1.2s` `power1.out`, `repeat:-1`; transient, gone once the check resolves), `surge` (the two warp-core bands animate their `y1`/`y2` outward + fade, split up/down by
 `data-dir`, staggered), `breath` (the attention badge's gentle `sine.inOut` opacity breathing), `stop` (the
 terminal-STOP flash, `repeat: 5` = 3 on-beats then steady), `refuse` (05o — the refused-conduit flash on a
-rejected seed/integration lane: a **ONE-SHOT** `gsap.timeline` with `repeat: 0`, NOT a loop — cyan
+seed/integration lane that did not take, i.e. `failed` or `stale`: a **ONE-SHOT** `gsap.timeline` with `repeat: 0`, NOT a loop — cyan
 (`oklch(0.85 0.13 200)`) sparks to white (`oklch(0.98 0.04 200)`) over `0.11s`, recolours to the polarity read
 off the element's `data-polarity` (`red` → alarm `oklch(0.66 0.2 25)`, else amber `oklch(0.8 0.14 85)`) over
 `0.13s`, holds `0.4s`, then fades `opacity → 0` over `0.27s` `power1.in` — ~0.9s total, well under the WCAG
@@ -95,6 +100,9 @@ per-fx durations). Comments tie each fx back to the CSS keyframe it replaced.
   Playwright/vitest snapshots stay deterministic. (`EnclosureProcessMap.test.tsx` spies on `gsap.context` to
   prove this both ways.)
 - **Alarm cap:** the `fault` / `stop` flickers stay ≤3 flashes/s (WCAG 2.3.1).
+- **`fxSignature` folds in states the reducer can actually emit.** The refused fold-in filters on `failed`
+  and `stale`, both of which `_seed_edge_state` returns. Do not re-add `refused`: no reducer path produces
+  it, so the arm would be dead on arrival and would make the signature claim a beat that cannot occur.
 - **One context per enclosure**, scoped to the SVG root; `ctx.revert()` restores all inline state on
   unmount/re-run, so a re-key (`worktreeGroup`) or a phase change cleanly rebuilds.
 - Pure motion driver: it reads the `node` projection + a ref; it renders nothing and owns no DOM structure.
@@ -111,12 +119,15 @@ entries, so the GSAP/Motion library docs are not cited here — the split is pro
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| `phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated). | L22-L165 | [useEngineTimeline.ts](useEngineTimeline.ts) |
-| RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. | L124-L143 | [useEngineTimeline.ts](useEngineTimeline.ts) |
-| Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); fault fx is the gentle ~1.7s sine breathe. | L73-L162 | [useEngineTimeline.ts](useEngineTimeline.ts) |
+| `phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated). | L32-L247 | [useEngineTimeline.ts](useEngineTimeline.ts) |
+| `fxSignature`'s refused fold-in now filters `failed`/`stale` only. | L68-L75 | [useEngineTimeline.ts](useEngineTimeline.ts) |
+| `_seed_edge_state` — the states a seed edge can actually carry; `refused` is not among them. | L1588-L1611 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
+| `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. | L762-L781 | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. | L194-L212 | [useEngineTimeline.ts](useEngineTimeline.ts) |
+| Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); the `refuse` one-shot and the gentle ~1.7s sine `fault` breathe. | L83-L162; L215-L226 | [useEngineTimeline.ts](useEngineTimeline.ts) |
 | The honest-motion gate that suppresses the whole hook under effects-off/reduced-motion. | — | [useShouldAnimate.ts](useShouldAnimate.ts) |
 | The canvas that renders the `data-draw='on'` / `data-fx=…` elements + wires this hook to the `<svg>` root. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `EngineProcessNode` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads). | L224-L285 | [projection.ts](../../types/projection.ts) |
+| `EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`). | L538-L608 | [projection.ts](../../types/projection.ts) |
 | The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract. | L55-L72 | [EnclosureProcessMap.test.tsx](EnclosureProcessMap.test.tsx) |
 
 ## Current L5I Maintenance
@@ -133,6 +144,25 @@ roots. The same timeline and visibility hooks own all targets, so splitting the 
 create a second ticker or alter choreography.
 
 ## Update History
+
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the
+  `observer/projection.py` citation after that module was restructured. `L752-L771` → `L762-L781`;
+  read there: `class EngineProcessEdge` (L762), `model_config = ConfigDict(extra="forbid")` (L770),
+  the nine-state comment (L778) directly above `state: str` (L779), and the class's last field
+  `detail` (L781) — so the "no `refusedPolarity` field" half of the claim is provable at the range
+  end. No body claim changed.
+
+- 2026-08-01T10:18+02:00 — 260731-EFA-L4 curator: corrected the `fxSignature` description. The refused
+  fold-in no longer matches `state === "refused"` — the filter is `failed`/`stale` only. Verified there is
+  no reducer path to `refused` (`_seed_edge_state` returns failed/running/stale/complete/skipped/planned;
+  `EngineProcessEdge`'s state comment lists nominal|running|blocked|failed|stale|skipped|complete|planned|
+  unknown; `git log --all -S 'state="refused"'` returns zero commits ever), so the removed arm was dead
+  against every payload the server has ever sent. Recorded that "refused" survives as the name of the
+  visual beat (`data-fx='refuse'`, the `refuse` tween) rather than as an edge state, and added the
+  invariant against re-adding the arm. Repaired the citations: the whole-file row L22-L165 → L32-L247,
+  RETRACT L124-L143 → L194-L212, the draw-on/fx row L73-L162 → L83-L162;L215-L226, and
+  `EngineProcessNode` L224-L285 → L538-L608 (the old range fell inside `LifecycleProjection`/
+  `EnclosureNode` territory and contained neither engine type).
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: extended the timeline selector
   across the structural SVG and optional sparse effects SVG. One timeline still owns the same
