@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/src/agents_remember/controlplane/__init__.py`    |
 | doc_type               | `file-level-onboarding`                               |
-| lastUpdated            | 2026-07-04T12:32+02:00                                |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`            |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-08-01T18:30+02:00                                |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`            |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                         |
 
 ## Purpose
@@ -31,11 +31,35 @@ Task 10 adds the operator inbox exports: `OPERATOR_INBOX_RECORD_SCHEMA`,
 `OperatorInboxStore`. The module docstring now names this as the pull-based
 counterpart for non-AR-hosted chats, while `__all__` keeps the facade explicit.
 
+### 260731-EFA-L5 Durable Store Contract Exports
+
+The facade now also re-exports the `ar-durable-store/1.0` surface from
+`controlplane/durable_store.py`: the constants `DURABLE_STORE_CONTRACT` and `SCHEMA_VERSION`; the
+error types `DurableStoreError`, `CompactionOwnerError` and `UnsafeLockFilesystemError`; the record
+base `DurableRecord`; the ownership value object `StoreOwnership`; and the process-role pair
+`declare_process_role` / `declared_process_role`. All are in `__all__`.
+
+What is deliberately **not** exported is the I/O itself — `exclusive_access`, `require_lock_held`,
+`append_line`, `rewrite_lines`, `read_log_text`, `thread_mutex_for`, `lock_path_for` and the six
+per-store `*_OWNERSHIP` constants stay module-private to the package's own stores, which import
+them from `durable_store` directly. The facade exports what a *caller outside the package* legitimately
+needs (declare which process I am, catch a contract violation, subclass the record base), not the
+primitives that would let an outside caller write one of these logs by hand.
+
+The package docstring now states the contract in one paragraph — single-owner compaction, an
+unconditional per-log lock with no store exempt and no flag that turns it off, `schemaVersion` with
+an unknown major rejected and an unknown minor accepted, and two deliberate read policies — and
+directs anyone changing how these stores touch disk to read `durable_store.py` first.
+
 ## Invariants And Boundaries
 
 - Pure export facade — no behavior. The `gate_*` MCP tools live in
   `mcp/tools/gates.py`, and the `operator_inbox_*` MCP tools live in
   `mcp/tools/operator_inbox.py`, not here.
+- **The facade exports the contract, not the file I/O.** Adding `exclusive_access` or
+  `rewrite_lines` to `__all__` would make it possible to write a control-plane log from outside
+  this package without going through the store that owns it, which is exactly the shape the leaf
+  removed.
 
 ## Repo-Internal References
 
@@ -46,9 +70,20 @@ counterpart for non-AR-hosted chats, while `__all__` keeps the facade explicit.
 | The store this package exports. | [store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 | The enforcement policy this package exports (slice 6b). | [enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
 | The operator inbox records and store this package now exports. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L71-L106. | [__init__.py](agents-remember/mcp/src/agents_remember/controlplane/__init__.py) |
+| The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
 
 ## Update History
 
+- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded the new facade
+  exports from `durable_store.py` — `DURABLE_STORE_CONTRACT`, `SCHEMA_VERSION`, `DurableRecord`,
+  `StoreOwnership`, `DurableStoreError`, `CompactionOwnerError`, `UnsafeLockFilesystemError`,
+  `declare_process_role` and `declared_process_role` — and, as the load-bearing half, what is
+  deliberately withheld: the locking and rewrite primitives and the six per-store `*_OWNERSHIP`
+  constants stay package-internal so no caller outside `controlplane/` can write one of these logs
+  without going through the store that owns it. Recorded the new package-docstring paragraph
+  stating the contract in one place. Verification metadata pinned until closeout stamps the L5
+  commit.
 - 2026-07-04T12:32+02:00 — 260703-L4: facade now exports the gate-policy schema,
   evidence-ref model, and kind-generic enforcement resolver. Verification
   metadata pinned until closeout stamps the L4 commit.

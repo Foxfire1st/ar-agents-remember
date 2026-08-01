@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |                                                                   `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                                                   2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T20:15+02:00 |
+| lastVerifiedCommitHash |                                                                   `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
+| lastVerifiedCommitDate |                                                                   2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -20,6 +20,62 @@ File-backed operator inbox store for short-lived polling plus hosted-session
 delivery metadata.
 
 ## Code Commentary
+
+### 260731-EFA-L5 The Declared Compaction-Owner Exception
+
+This is the **only one of the six control-plane stores with `compaction_owner=None`**, and it is
+the leaf's declared exception rather than an oversight. Every other log was given a single
+compaction owner so that no two processes read-modify-write it. This one cannot be, because both
+long-lived processes must physically **remove** rows, not merely append them:
+
+- The MCP process deletes the inbox rows tied to a cancelled gate (`mcp/tools/gates.py` calling
+  `delete_by_gate`) at the moment it cancels the gate.
+- The dashboard's supervisor sweep must resolve and compact under one continuously held lock
+  (`reconcile_and_compact`) so that a consume which won the lock stays terminal.
+
+Neither can be moved to the other process without moving the decision it implements. So this is the
+one log where locking is the whole mechanism rather than the backstop behind an owner — which is
+what it already was before this leaf, and why its pre-existing `flock` was the right call kept
+rather than a habit inherited.
+
+That shows in the numbers, which are quoted on the authority of the source that carries them rather
+than asserted here as independently checkable. The `durable_store.py` module docstring records this
+store — the one that already took a lock — losing **0.00 percent** at the base commit while the five
+unlocked stores lost records. Of the six base-commit figures in that docstring, only two are
+corroborated elsewhere in the tree (31.45 percent on attention dismissals, 11.50 percent on gate);
+this store's 0.00 percent and the 9.20 percent floor of the other five appear at that one site and
+nowhere else. The claim that survives without any of them is the structural one: this is the only
+store that held a lock at the base commit, and it is the only one that lost nothing.
+
+### 260731-EFA-L5 What Changed Here
+
+The store's hand-rolled I/O was replaced by the shared contract, with no change to its concurrency
+semantics:
+
+- `_exclusive_access` no longer opens its own lockfile and calls `fcntl` directly; it wraps
+  `durable_store.exclusive_access(self.log_path(), OPERATOR_INBOX_OWNERSHIP)`. The `import fcntl`
+  and the `operator-inbox.lock` path construction are gone from this module. **The lockfile
+  basename changed** as a consequence: `lock_path_for` derives it from the log, so it is now
+  `operator-inbox.jsonl.lock` rather than `operator-inbox.lock`.
+- `append` additionally calls `OPERATOR_INBOX_OWNERSHIP.check_declared_writer()` before taking the
+  lock. Since both processes are declared writers, this raises for neither; it exists so that a
+  *third* writer appearing inside either daemon fails loudly.
+- `_append_unlocked` delegates to `append_line`, which now fsyncs before the handle closes.
+- `_replace_unlocked` delegates to `rewrite_lines`: **it no longer unlinks** when the kept set comes
+  out empty, and it no longer builds `<log>.tmp`. The old unlink let an appender holding an
+  `"a"`-mode handle write into an inode with no remaining links, and the old shared temp name let
+  two rewriters collide.
+- `_read_unlocked` keeps its **strict** read. An inbox row that cannot be parsed is an ack nobody
+  can account for, and `consume` decides on this fold. Every rewrite in this store therefore reads
+  strictly, so a compaction can never erase a row it could not parse.
+
+The lock's filesystem is now verified rather than assumed: `exclusive_access` proves once per
+lockfile that `flock` on that path actually excludes, and refuses an NFS, SMB or WSL DrvFs
+coordination root with `UnsafeLockFilesystemError` instead of silently degrading to a no-op.
+
+`OperatorInboxEntry` inherits `DurableRecord` through `OperatorInboxCompatibleRecord`, so it picks
+up the validated `schemaVersion` (unknown major rejected, unknown minor accepted) while keeping its
+own `extra="allow"` forward-compatibility allowlist.
 
 ### 260712-TRH-L5 Same-Lock Confirmed-Gone Reconciliation
 
@@ -148,6 +204,17 @@ by lifecycle, agent, role, or combinations of those keys.
   because it has no mailbox boundary.
 - This store owns persistence only; MCP payload shapes and attribution routing
   live in `mcp/tools/operator_inbox.py`.
+- **No single compaction owner, by declaration.** `OPERATOR_INBOX_OWNERSHIP.compaction_owner` is
+  `None` because both processes must physically remove rows. Give this log an owner and either the
+  MCP loses its gate-cancel row deletion or the dashboard loses its same-lock resolve-and-compact
+  transaction.
+- **The lock is the whole mechanism here, not a backstop.** Every append and every rewrite goes
+  through `_exclusive_access`. Remove it and there is no ownership rule underneath to catch the
+  race — this is the one store where that is literally true.
+- **`_read_unlocked` is strict, and every rewrite reads through it.** A row that cannot be parsed
+  is an ack nobody can account for. Make this reader tolerant and a torn line becomes an inbox
+  entry that compaction quietly deletes.
+- **`_replace_unlocked` never unlinks.** An empty kept set is an empty file.
 
 ### Todos
 
@@ -167,10 +234,12 @@ agents that cannot receive dashboard session injection.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | L92-L108 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Pending filters match supplied lifecycle and/or agent keys. | L106-L121 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Consume is idempotent and appends a consumed snapshot only once. | L350-L372 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Delivery snapshots thread `redelivery_floor_seconds` into `next_attempt_at`, and redeliverable selection defaults to the shared backoff floor. | L133-L186; L216-L236 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | L109-L126 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Pending filters match supplied lifecycle and/or agent keys. | L128-L149 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Consume is idempotent and appends a consumed snapshot only once. | L368-L390 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| Delivery snapshots thread `redelivery_floor_seconds` into `next_attempt_at`, and redeliverable selection defaults to the shared backoff floor. | L151-L204; L234-L254 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening its own `fcntl` lockfile. | L468-L492 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. | `OPERATOR_INBOX_OWNERSHIP` | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
 
 ## Cross-Repo References
 
@@ -186,6 +255,36 @@ The store records accepted, queued, rejected, unsupported, ambiguous, and termin
 adapter evidence against an existing durable row. None of these transitions call `consume`.
 
 ## Update History
+- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **One stale citation and the
+  leaf's least-corroborated number.** The `OPERATOR_INBOX_OWNERSHIP` row cited `durable_store.py`
+  **L297-L313**; the constant is at **L368** — the file grew 598 → 699 lines mid-pass, so every
+  range written earlier is off. Replaced with a symbol-name citation and no range. Re-read the five
+  citations into this module's own source and left them: the log-path/append/read row L109-L126
+  (`log_path` L109, `append` L113, `read` L119, `current` L124), pending filters L128-L149, `consume`
+  L368-L390 (`def` L368), the delivery-snapshot pair L151-L204; L234-L254, and the
+  `_read_unlocked` / `_replace_unlocked` / `_exclusive_access` row L468-L492 (L471, L481, L489). The
+  **0.00 percent** claim is now attributed rather than asserted as a measurement a reader can check:
+  it appears only in the `durable_store.py` docstring, as does the 9.20 percent that the old
+  "9.20 to 31.45 percent" range leaned on. Only 31.45 percent and 11.50 percent are carried at
+  several independent sites. The structural claim that needs no figure is stated instead and is the
+  one that actually carries the card: this was the only store holding a lock at the base commit and
+  the only one that lost nothing. This card's read-policy statements were already correct — strict
+  `_read_unlocked`, and every rewrite in this store reading through it — and were left unchanged.
+- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded this store as the
+  leaf's **declared compaction-owner exception**: `OPERATOR_INBOX_OWNERSHIP.compaction_owner` is
+  `None` because both processes must physically remove rows — the MCP deletes a cancelled gate's
+  rows via `delete_by_gate`, the dashboard resolves and compacts under one held lock in
+  `reconcile_and_compact` — and neither move travels without the decision it implements. It is
+  therefore the one log where locking rather than ownership is the whole mechanism, and it was the
+  only one of six to measure 0.00 percent loss at the base commit. Recorded the I/O migration:
+  `_exclusive_access` now wraps `durable_store.exclusive_access` (the local `import fcntl` and the
+  `operator-inbox.lock` path are gone, and the lockfile basename is consequently now
+  `operator-inbox.jsonl.lock`), `append` adds `check_declared_writer`, `_append_unlocked` fsyncs
+  through `append_line`, and `_replace_unlocked` delegates to `rewrite_lines` so it no longer
+  unlinks an emptied log or shares a `<log>.tmp` name. Recorded that `_read_unlocked` stays strict
+  and that every rewrite in this store therefore reads strictly. Repaired all four pre-existing
+  line citations, which this leaf's edits had pushed down the file. Verification metadata pinned
+  until closeout stamps the L5 commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 line citations that the parameter-object
   refactor pushed down the file. Log/append/read/current is now L92-L108 (`log_path` through
   `current`), consume is L350-L372, and the delivery-floor claim splits into L133-L186

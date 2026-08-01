@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/metrics.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T19:45+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,6 +26,95 @@ and the dashboard statistics board (260703_statistics-component) consume the
 same rows later.
 
 ## Code Commentary
+
+### 260731-EFA-L5 This Log Is On `ar-durable-store/1.0`
+
+The leaf's first pass put six `controlplane/` stores on the contract and left this one behind **on
+the strength of nothing but its directory**. It has the identical shape — append-only JSONL plus a
+reclaim pass that rewrites the file whole — so it had the identical defect, and this one is a
+genuine two-process pairing: the MCP process appends index-lifecycle rows from its provider-setup
+thread (`providers/provider_setup.py::_record_index_state`, reached from `worktree_start` /
+`runtime_install`) while the dashboard's `_metrics_loop` (`serving/app.py`) runs `record` and then
+`compact` — a tail rewrite.
+
+**On the loss numbers: record the direction, not a rate.** Several base-commit percentages for this
+store are in circulation and they do not agree, because each run used a different pacing and none of
+them recorded it. `metrics.py`'s own docstring states 35.88% / 40.00% / 36.75% at 2 appenders and
+800 records, and `tests/test_provider_store_durability.py` re-measured against a `git archive` of
+the base commit after fixing the harness's scratch directory and got 1.50-3.50% at the shipped
+profile and 5.25-5.50% at the same 2×800 shape. That test file says so itself and instructs the
+reader to treat the figures as evidence of direction only. **This card asserts no rate.** What is
+stable and worth carrying: *this store lost records at the base commit and loses none now.* The
+zero is the part a reader can check in one step, and it is an assertion rather than prose —
+`ProviderStoreDurabilityTests` pins `lost == 0`, `torn_lines == 0` and `stragglers == []` over
+`attempted == 200` (the shipped `STRESS_PROFILE`: 4 appenders × 50) for both provider stores, plus
+`lost == 0` over the forced single-record window. The leaf also reports zero loss at the
+2-appender/800-record shape — four times the volume — but that one is narrative, not an assertion.
+The rate was never the finding; the direction was.
+
+**Ownership: `PROVIDER_METRICS_OWNERSHIP`**, declared beside the store rather than in
+`durable_store.py`'s register (that register is titled for the six control-plane logs and is the
+contract, not a directory of every store in the tree; the contract itself is imported, never
+re-implemented). `writers=("mcp", "dashboard")`, `compaction_owner="dashboard"`. It did **not** earn
+the operator-inbox's `compaction_owner=None` exception, and the reason is worth keeping: that store
+earned `None` because *both* processes must physically remove rows and neither removal can travel to
+the other process without the decision it implements. Nothing in the MCP process removes a metrics
+row at all — so a single owner was **available** here, and the contract requires one wherever it is
+available. The owner is enforced structurally rather than by a runtime predicate: `compact()` has
+exactly one caller and it is inside the dashboard's loop.
+
+**Every write now holds `metrics.jsonl`'s lock.**
+
+- `record()` appends and republishes `metrics-current.json` under **one** hold of the log's lock, so
+  the current-state file always names a row that is really in the log. It is the only place two of
+  these locks are held at once, and the **lock order is stated**: the log's lock first, the
+  current-state file's inside it, never the other way round.
+- `record_index_state()` is the MCP process's write — the one that made the two-process pairing
+  real — and takes the same lock.
+- `compact()` holds the lock across the byte-budget `stat`, the `_tail_lines` read **and** the
+  rewrite. Holding it only around the rewrite would leave the tail a stale choice: every row
+  appended after it was read is not in the temp file and is gone at the replace — the lost update
+  wearing a lock. The old docstring called that acceptable ("a sample racing the atomic replace is
+  acceptable"); it was not a tolerance, it was the defect. The cost of the fix is one uncontended
+  `flock` on the sampler's 30s tick.
+- `rewrite_lines` supplies the pid-scoped temp name, the fsynced file and directory, and a refusal
+  if the caller is not holding the lock. The unscoped `metrics.jsonl.compact.tmp` and
+  `metrics-current.json.tmp` names are **gone** — two rewriters sharing one temp path meant one
+  `os.replace`d it away and the other took a `FileNotFoundError` out of a store call that had
+  reported nothing wrong.
+
+**Reads stay lock-free and per-row tolerant, argued structurally.** `_parse_row(text)` returns
+`None` for a blank, torn, non-object or unknown-major row; `read_recent`, `read_recent_index_states`
+and `read_current` all go through it. The leaf's rule is that a store may read tolerantly only if it
+carries no authority, because a tolerant read that feeds a rewrite drops the unreadable row
+permanently — and `_parse_row`'s docstring argues both halves rather than pleading "it is only
+telemetry":
+
+1. **Nothing is decided on the presence of a metrics row.** The distinguishing property of an
+   authority log is that the *absence* of a row reads as "the thing it records never happened",
+   which then permits what the row existed to refuse — a dropped `applied` gate marker re-opens a
+   replay window. This log has no such marker. Its one consumer that mutates anything, the
+   degradation detector's critical failsafe, re-derives the whole state machine from a rolling
+   window of live samples every 30s and consumes nothing, so a row lost to a torn line costs at most
+   one tick's accuracy and the next sample corrects it.
+2. **Nothing a read returns is ever written back.** `compact` reclaims from a **raw** byte tail
+   (`_tail_lines`) and drops rows **by age alone**, so a row `_parse_row` skipped is skipped for one
+   call and stays on disk. The permanent-drop cost the strict rule exists to prevent cannot arise.
+
+**There is an escalation clause, and it is part of the contract, not a comment.** `_parse_row` states
+that if either of those ever stops being true — a decision keyed to a specific row, or a rewrite that
+filters by parsing — this read **must become strict in the same change**.
+
+Reads take no lock on purpose: a reader that took the log's lock would queue the dashboard's status
+route behind a compaction, and the worst a concurrent append can cost a read is the torn last line
+`_parse_row` skips.
+
+**`schemaVersion` is stamped by the store, not by a caller.** `_stamped(payload)` adds
+`SCHEMA_VERSION` to every appended row. Per `ar-durable-store/1.0` it is MAJOR.MINOR, an unknown
+major is refused, an unknown minor is accepted, and an **absent** field means `1.0` — which is what
+makes this additive rather than a migration: every row already on disk was written by this same
+build under the same meaning, so `_parse_row` reads an existing `metrics.jsonl` unchanged and the
+field only appears on rows written from now on.
 
 ### 260707-HFX2-L12 CS-6 Update
 
@@ -46,12 +135,14 @@ provider container on the host (`schema` = `PROVIDER_METRICS_SCHEMA`,
 store under `<coordinationRoot>/logs/observer/providers/`: `metrics.jsonl`
 accretes samples for trend/statistics consumers, and `metrics-current.json` is
 the cheap always-fresh read for status packets and the projection. `record()`
-appends one JSON line to the log and rewrites the current snapshot
-replace-atomically (tmp file + `os.replace`, like the sibling observer
-stores). `read_current()` returns the parsed current snapshot or `None` on a
-missing/invalid file; `read_recent(limit=120)` returns the newest samples
-oldest-first and skips invalid lines, so a torn append (the crash class this
-master exists for) costs one sample row, never the store.
+appends one JSON line to the log and republishes the current snapshot — **since
+260731-EFA-L5 both under one hold of the log's lock, through `durable_store.append_line` and
+`rewrite_lines`, not the old hand-rolled tmp file + `os.replace`** (see the L5 section above for
+the lock order and why the unscoped temp names had to go).
+`read_current()` returns the parsed current snapshot or `None` on a
+missing/unreadable file; `read_recent(limit=120)` returns the newest samples
+oldest-first and skips unreadable rows per row via `_parse_row`, so a torn append (the crash class
+this master exists for) costs one sample row, never the store.
 
 `record_index_state(payload)` (260707-HFX-L2) appends one index-lifecycle row
 — seed catch-up, index staleness — to the SAME `metrics.jsonl`: the row is
@@ -107,9 +198,19 @@ each docker call.
   while providers are disabled.
 - Discovery is label-based, never settings-based: leftover stacks from dead
   sessions must remain visible without any lifecycle settings file.
-- `metrics-current.json` writes are replace-atomic; readers of `metrics.jsonl`
-  must skip invalid lines, so a torn append line costs one sample row, never
-  the store.
+- **Every append and every rewrite of `metrics.jsonl` holds its lock (`ar-durable-store/1.0`).**
+  Two processes write here — the dashboard's `_metrics_loop` and the MCP's provider-setup thread —
+  and the reclaim is a whole-file replace, so an unlocked append landing inside a compaction is a
+  lost update. Take the lock only around the rewrite and the loss returns, because the tail was
+  already stale when it was read.
+- **When `record()` holds two locks the order is fixed:** the log's lock first, `metrics-current.json`'s
+  inside it. Never the other way round.
+- **The reads are lock-free and per-row tolerant, and both are conditional.** Tolerance is licensed
+  by two structural facts — nothing is decided on a row's presence, and the reclaim drops rows by
+  age from a raw byte tail so nothing a read returns is written back. `_parse_row` carries the
+  escalation clause: if either stops holding, the read becomes strict **in the same change**.
+- **The store stamps `schemaVersion`; a caller cannot override it.** Absent means `1.0`, which is
+  what makes existing rows readable unchanged.
 - `metrics.jsonl` carries BOTH row kinds — container samples and index-state
   rows — distinguished by the `schema` field; the rolling current-state file
   stays container-only (260707-HFX-L2).
@@ -135,9 +236,36 @@ each docker call.
 | Containment tests pin the parsers, the sampler paths (incl. dockerless), and the store's torn-line tolerance. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
 | The seed catch-up stage records index-state rows through `_record_index_state`. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
 | Index-lifecycle tests pin the `record_index_state` row landing in the log with its schema. | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
+| `ar-durable-store/1.0` itself: `exclusive_access`, `append_line`, `rewrite_lines`, `SCHEMA_VERSION`, `schema_version_supported` and the `StoreOwnership` record `PROVIDER_METRICS_OWNERSHIP` instantiates. Cited by symbol: this file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The MCP-side appender that makes this a two-process store (`_record_index_state`). | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| The durability suite for this store and its sibling: R10 no-record-lost under real processes, R14 the harness proven able to fail against a `git archive` of the base commit, R8 the tolerant-read policy, R2 the ownership decisions as assertions. Its docstring is also where the base-commit figures are explicitly disclaimed as unreproducible. | [test_provider_store_durability.py](agents-remember/mcp/tests/test_provider_store_durability.py) |
 
 ## Update History
 
+- 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). This store was brought onto
+  `ar-durable-store/1.0`, and the card described the pre-contract shape throughout. Recorded: the
+  two-process pairing that makes it a real defect (dashboard `_metrics_loop` `record` + `compact`
+  against the MCP's `_record_index_state`); `PROVIDER_METRICS_OWNERSHIP` with
+  `compaction_owner="dashboard"`, and **why it did not earn the operator-inbox's `None` exception**
+  — nothing in the MCP process removes a provider row, so a single owner was available and the
+  contract requires one where it is; that the owner is enforced structurally, `compact()` having one
+  caller inside the dashboard's loop. Corrected the "replace-atomic tmp + `os.replace`" description
+  of `record()` to the contract's `append_line`/`rewrite_lines` under one lock, and recorded the
+  stated **lock order** (log first, current-state file inside). Recorded that `compact` holds the
+  lock across the stat, the tail read and the rewrite, and why locking only the rewrite is the lost
+  update wearing a lock. Recorded the tolerant `_parse_row` **argued structurally** — nothing is
+  decided on a row's presence, and the reclaim drops rows by age from a raw tail so nothing read is
+  written back — together with its **escalation clause** (strict in the same change if either stops
+  holding), and that reads stay lock-free so a status route is never queued behind a compaction.
+  Recorded `_stamped`/`schemaVersion` with absent-means-1.0 as what keeps it additive, and that both
+  unscoped temp names are gone. **On the numbers: no rate is asserted.** Several disagree
+  (35.88-40.00% in this module's docstring, 1.50-3.50% and 5.25-5.50% re-measured in
+  `test_provider_store_durability.py`) because the pacing was not recorded; the card carries the
+  direction, and carries the zero as what it actually is — an assertion (`lost == 0`,
+  `torn_lines == 0`, `stragglers == []` over `attempted == 200` on the shipped `STRESS_PROFILE`,
+  plus the forced single-record window), with the 800-record zero marked as reported rather than
+  asserted. Replaced one invariant with five and added four reference rows.
+  Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/metrics.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 7 line(s), touching only redundant grouping

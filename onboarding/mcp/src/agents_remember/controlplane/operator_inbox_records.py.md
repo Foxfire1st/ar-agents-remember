@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T18:30+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -122,10 +122,27 @@ a pending row whose ladder has reached the terminal rung and whose target seat i
 it is distinct from `consumed`, so the ack path remains the only "agent picked this up" terminal.
 `consume_operator_inbox_entry` now returns any non-pending row unchanged, preserving that separation.
 
+### 260731-EFA-L5 The One Store Whose `extra` Policy Differs, And Why That Is Deliberate
+
+`OperatorInboxCompatibleRecord` now inherits `DurableRecord` rather than `BaseModel`, so
+`OperatorInboxEntry` picks up the durable-store contract's validated `schemaVersion`: an unknown
+MAJOR raises `ValidationError` at parse time and an unknown minor is accepted, with no version
+branch anywhere in a reader.
+
+It does **not** pick up the contract's `extra="forbid"`. This is the single declared divergence
+across the six record types, and it is deliberate rather than an oversight: the record carries a
+named forward-compatibility allowlist (`OPERATOR_INBOX_FORWARD_COMPATIBLE_FIELDS`, the two
+`adapterDeliveryState` / `adapterDeliveryDetail` fields from 260713-PHA-L6) that pre-dates the
+contract, so it keeps `extra="allow"` plus the explicit `reject_unknown_extensions` validator
+underneath. The net refusal is unchanged: anything outside the allowlist is still rejected. The
+`schemaVersion` major/minor rule is unaffected by the difference.
+
 ### Conventions
 
 The record mirrors gate records: camelCase persisted fields, a `schema` alias,
-literal states, and pure helper functions that do not write disk.
+literal states, and pure helper functions that do not write disk. As of 260731-EFA-L5 all six
+control-plane record types also share one base class, `durable_store.DurableRecord`, so the
+`schemaVersion` policy is declared once instead of six times.
 
 ### Invariants And Boundaries
 
@@ -135,6 +152,14 @@ literal states, and pure helper functions that do not write disk.
   `recipientRole`).
 - This is the persisted record, not the public MCP response contract; responses
   live in `models/operator_inbox.py`.
+- **Two version fields answering different questions.** `schema` names the record vocabulary
+  (`ar-operator-inbox-entry/v1`, what the fields mean); the inherited `schemaVersion` versions the
+  durable-store contract the log is written under (how the file behaves — ownership, serialization,
+  torn-line policy). Collapsing them would make a change to either look like a change to both.
+- **`extra="allow"` here is paired with an explicit refusal, never left open.**
+  `reject_unknown_extensions` is what keeps the allowlist an allowlist. Remove it and the
+  divergence from the contract's `extra="forbid"` stops being a two-field seam and becomes
+  catch-all parsing.
 
 ### Todos
 
@@ -154,9 +179,10 @@ external-chat pull implementation of that idea.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The inbox record declares schema/state/via literals and requires lifecycle or agent addressing. | L9-L18 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
-| `OperatorInboxEntry` preserves mailbox keys, ask, response, creation attribution, and consume attribution. | L21-L40 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
-| Create and consume helpers are pure snapshot builders. | L43-L90 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
+| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | L13-L50 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
+| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | L125-L154 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
+| `OperatorInboxEntry` preserves mailbox keys, ask, response, creation attribution, consume attribution and the routed owner address. | L156-L224 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
+| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | L227-L307 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
 
 ## Cross-Repo References
 
@@ -184,6 +210,16 @@ this is an additive two-field seam, not catch-all parsing. Delivery evidence rem
 the explicit consume state.
 
 ## Update History
+- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded that
+  `OperatorInboxCompatibleRecord` now inherits `durable_store.DurableRecord`, so `OperatorInboxEntry`
+  carries the contract's validated `schemaVersion` (unknown major rejected, unknown minor accepted,
+  no version branch in any reader) while deliberately keeping its own `extra="allow"` plus
+  `reject_unknown_extensions` instead of the contract's blanket `extra="forbid"` — the single
+  declared `extra`-policy divergence among the six record types, kept because the named
+  two-field forward-compatibility allowlist pre-dates the contract. Recorded that `schema` and
+  `schemaVersion` answer different questions. Repaired all three pre-existing Repo-Internal
+  citations, which pointed at L9-L18, L21-L40 and L43-L90 in a 307-line file and named symbols that
+  are not in those ranges. Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `InboxAddress`, `InboxOwner`, `InboxRouting`, `InboxSubject`, `InboxMessage`
   and `InboxPoster` parameter objects, and re-signed `create_operator_inbox_entry` from nineteen

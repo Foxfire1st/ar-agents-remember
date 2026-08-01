@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/mcp/tools/gates.py`       |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T13:20+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`         |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -108,6 +108,50 @@ an expected `gateId` to reject stale dashboard actions, records an optional deci
 it — the serving layer calls it with `developer` / `dashboard`, reusing the `gate_decide` response
 envelope. `cancel` decisions physically delete the gate and any inbox entries tied to it.
 
+### 260731-EFA-L5: this module owns gate-log reclamation now
+
+`_reclaim_gate_log(store, lifecycle_id)` (L453-L473) is new, and `gate_decide_payload` calls it as
+its last act before building the response (L539, after `_meet_verdict_by_expectation`). It is four
+lines of body:
+
+```python
+if not GATE_OWNERSHIP.is_compaction_owner():
+    return
+with contextlib.suppress(OSError, ValueError):
+    store.compact(lifecycle_id, now=datetime.now(UTC))
+```
+
+**What moved.** Gate compaction used to ride `observer/snapshots.read_gates` — the dashboard's
+projection tick, on a 30-second throttle (`GATE_COMPACT_TTL_SECONDS`, now deleted). That is a
+whole-file rewrite performed by a process that owns nothing about gates, racing this process's
+appends; 11.50% of appended gate snapshots were being lost at the base commit. The MCP server mints,
+decides, applies and deletes gates, so reclamation is now here, at the moment a record *becomes*
+reclaimable — a terminal decision.
+
+**The one consequence a reader must not be surprised by.** Reclamation now follows owner activity
+instead of a wall clock. A gate raised and expired on a lifecycle the dashboard is watching is
+pruned from disk on the **next MCP decision on that lifecycle**, not within 30 seconds; a lifecycle
+that never sees another decision keeps its superseded rows on disk indefinitely. That is **space
+only, never correctness**: `GateStore.projected_current` applies the identical `gate_keep_ids`
+keep-filter in memory on every tick, so what the dashboard renders is byte-for-byte what it rendered
+before. Nothing reads the unpruned rows.
+
+**Why the guard is a question and not a refusal.** `is_compaction_owner()` returns a bool and never
+raises. It has to, because this function is *not* MCP-only: `serving/app.py` calls
+`gate_decide_payload` **directly** (L1108 and L1152), so the dashboard executes this exact code in a
+process that declared itself `"dashboard"`. There it answers `False` and returns, and the MCP
+reclaims on its next decision instead. A version of this check that raised from inside the rewrite
+would have thrown `CompactionOwnerError` — a `DurableStoreError`/`RuntimeError`, which is neither
+`OSError` nor `ValueError` — straight out of every dashboard gate decision, past the
+`contextlib.suppress(OSError, ValueError)` above and past the serving layer's own guards.
+
+**Deliberately not on the read paths.** `gate_list_payload` and the wait loops stay pure reads.
+Moving the reclaim pass here changes *who* prunes and *when*, never what any caller is shown.
+
+**Failure containment.** The suppress covers the reclaim only. A reclaim that fails must not cost
+the caller the decision that was already appended; the next decision on that lifecycle retries it.
+`GateStore.compact` itself swallows nothing.
+
 ### Invariants And Boundaries
 
 - **Attribution honesty → enforced.** `mcp/registration/gates.py` builds
@@ -130,6 +174,17 @@ envelope. `cancel` decisions physically delete the gate and any inbox entries ti
   `gate_response_wait_payload` stay as lower-level compatibility wait builders;
   the lifecycle skill must not teach them as the next step after
   `lifecycle_gate`.
+- **Gate-log reclamation belongs to this process and to the decide path only.** Do not put
+  `GateStore.compact` back on a read path, a timer, or the projection tick. A rewrite driven from
+  the dashboard is a whole-file replace racing this module's appends, and it is what cost 11.50% of
+  gate snapshots at the base commit — an `applied` marker lost there re-opens a replay window a
+  human approval exists to close.
+- **The ownership check here must stay a question.** `gate_decide_payload` is shared code: the MCP
+  tool surface reaches it through `mcp/registration/gates.py` and the dashboard reaches it directly
+  from `serving/app.py`. A refusal raised on this path — rather than an `is_compaction_owner()` that
+  answers `False` and returns — would surface as an exception on every developer gate decision made
+  from the dashboard, because `CompactionOwnerError` is a `RuntimeError` and the suppress here
+  catches `OSError`/`ValueError`.
 
 ## Repo-Internal References
 
@@ -141,11 +196,36 @@ envelope. `cancel` decisions physically delete the gate and any inbox entries ti
 | The external-chat inbox store this polls in `gate_response_wait_payload`. | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The choke point every gate payload returns through. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
 | Gate response models. | [models/gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
+| `GATE_OWNERSHIP`, `is_compaction_owner()` and the `ar-durable-store/1.0` contract the gate log implements. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The dashboard call sites that reach `gate_decide_payload` directly, which is why the ownership check cannot raise (L1108, L1152). | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The projection reader that no longer rewrites gate logs (`read_gates` → `GateStore.projected_current`). | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
 As of cycle 5 the seam channel is operable: lifecycle_gate accepts wait=false (raise-and-continue — returns the gateId in a model-conformant raised payload instead of blocking); gate_decide resolves a bare gate_id across lifecycles via GateStore.find when no lifecycle_id is given, REFUSES cli-attributed non-cancel decisions on kinds the active policy delegates (fail-loud: pass deciding_role or leave it to the developer), and cancel deletes by the gate's own lifecycleId. Cycle 6 hardens the raise path: wait=false is now reserved for SEAM kinds (`SEAM_GATE_KINDS`) that the active policy also delegates — a delegated non-seam kind like plan-approval blocks again — and the check runs BEFORE the expire-sweep and append (validate-then-mutate), so a refused raise persists no orphan open gate and expires no sibling. `gate_list_payload` is now ambient-defaulting: with no explicit lifecycle_id it lists the ACTIVE lifecycle's gates (a raiser polls its own gate without handling lifecycle ids) and falls back to the workspace log only when no lifecycle is active. Cycle 7 closes the addressless-raise hole (AR4-1): a wait=false raise additionally requires a non-empty `enclosure` — the master task name the integrate guard matches the gate by — and refuses inside the same validate-then-mutate block ("a master-handover-approval raise-and-continue requires enclosure=<master task name>"), because an addressless seam gate could only ever fail open at the enforcement rung.
 
 ## Update History
 
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: this module took ownership of gate-log
+  reclamation. Recorded `_reclaim_gate_log` (L453-L473) and its single call site at the end of
+  `gate_decide_payload` (L539), the ownership guard (L470-L471), and the two things a later reader
+  will otherwise get wrong. **First**, the behaviour change that is not a bug: reclamation now
+  follows owner activity rather than the dashboard's 30-second tick, so a gate expired on a quiet
+  lifecycle stays on disk until the next MCP decision there. Space only — `projected_current`
+  applies the same `gate_keep_ids` filter in memory every tick, so the rendered gate set is
+  unchanged. **Second**, why the guard is `is_compaction_owner()` (a bool) and not a raise:
+  `serving/app.py` L1108/L1152 call `gate_decide_payload` directly, so the dashboard runs this code
+  in a process declared `"dashboard"`; a `CompactionOwnerError` is a `RuntimeError` and would pass
+  straight through the `suppress(OSError, ValueError)` here, on every dashboard gate decision.
+  Added both as invariants naming what breaks if they are undone, plus three reference rows.
+  Verification metadata pinned until closeout stamps the L5 code commit.
+
+  **Reported, not fixed** (`controlplane/store.py` is another curator's lane): `GateStore.compact`'s
+  docstring says "Called from the dashboard, `GATE_OWNERSHIP` raises", and that module's front
+  matter says "a rewrite attempted from the dashboard raises there". Neither is true of the staged
+  code — `compact` takes `exclusive_access` (which never consults ownership), and `_replace` →
+  `rewrite_lines` → `require_lock_held` raises only on a missing lock. The only ownership check on
+  the gate path is the non-raising `is_compaction_owner()` in this module. The safety story is
+  unaffected (the lock is what makes the rewrite safe); the two docstrings describe an earlier
+  iteration.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2: added `GateRaise` / `GateWait` / `InboxWatch` plus the
   four shared wait values, and collapsed every builder's keyword list onto them — including
   `GateVerdict` replacing the separate `decided_by`/`decided_via`/`note`/`deciding_role` arguments

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T19:10+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -40,6 +40,112 @@ across that prune boundary because their source item is repository/branch-scoped
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
 
 ## Hot Path Summary
+
+**260731-EFA-L5 — the durable-store contract. Read this before changing how any store in this route
+touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`,
+`operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`,
+`supervisor_signals.py`) were written independently against the same shape, and their safety
+properties ended up distributed almost at random: one of six took a lock, three of six used a
+pid-scoped temp name, none fsynced. **No base-commit measurement artifact is committed anywhere in
+this tree**, so every base-commit rate below is checkable only as "the source says so": the harness
+can be re-pointed at a `git archive` of `e52edaf5` (`mcp/tests/_store_durability.py`), but no run
+output is stored and no test asserts a rate. Two figures are carried at several independent sites
+and are quoted here on that authority: attention-dismissals lost **31.45 percent** of appended
+records (`durable_store.py`, `supervisor_signals.py`, `test_durable_store_contract.py`,
+`test_observer_projection.py`) and gate **11.50 percent** (`durable_store.py`, `store.py`,
+`test_interaction_retention.py`). `durable_store.py`'s module docstring reports the rest at that one
+site — and it is the text these cards document, so quoting it back is not corroboration:
+supervisor-signals 10.50 percent, expectation-rows 10.20 percent, orchestration-nudges 9.20 percent,
+operator-inbox 0.00 percent (the one that already held a lock), 127 of 2000
+`AttentionDismissalStore.dismiss` calls raising, and ten runs per store. That docstring is also the
+only authority for records disappearing whole rather than torn — the property that would explain why
+no reader-side validation could have caught this while the caller was told the write succeeded.
+
+**Against the current tree the checkable claim is narrower than "all six stores, all scenarios",**
+and it lives in `mcp/tests/test_controlplane_store_durability.py::MultiProcessDurabilityTests`.
+`lost == 0` is asserted in all three scenarios, but over six stores in `forced_lost_update` and
+`stress` and over **five** in `forced_unlink`: attention-dismissals is excluded there by
+construction, because it has no `append` at all (its `dismiss` is a whole-file read-modify-write),
+which is exactly why it measured worst. `torn_lines == 0`, `append_error_count == 0` and
+`reclaim_error_count == 0` are asserted in the **`stress` scenario only**, over all six stores. The
+one base-commit figure a reader can check is not a rate: `HarnessSensitivityTests` asserts, against a
+`git archive` of `e52edaf5`, that each of the five unlocked stores loses its single record in
+`forced_lost_update` while operator-inbox loses none.
+
+All six now implement one declared contract, `ar-durable-store/1.0` in `durable_store.py`, and
+every byte of control-plane file I/O routes through it — exactly one `open("a", ...)`, one
+`os.replace`, one temp-path construction and one `import fcntl` remain in the whole package, all
+four in that module.
+
+**The lock is the mechanism; ownership is advisory.** Every append and every rewrite of every one
+of the six logs takes that log's lock, in every process, whether or not that process declared
+anything. There is no flag that turns it off and no store exempt from it; the `serialized` opt-out
+an earlier draft carried was deleted. Ownership is expressed two ways, neither of them a durability
+guarantee: `StoreOwnership.check_declared_writer` raises but only inside a process that called
+`declare_process_role` (the MCP server and the dashboard daemon, nowhere else), and
+`is_compaction_owner` is a question that never raises. Where ownership does real work it does it
+structurally, by moving code rather than by checking at runtime. `require_lock_held` is the one
+check that raises unconditionally, from inside `rewrite_lines`, so no store can rewrite a log it
+has not locked however the call was reached — it can afford to, because it asks about the calling
+thread's own lock rather than about a process-wide declaration.
+
+**Single-writer is a deployment fact, not a structural one.** An earlier draft left the two
+single-writer stores (attention-dismissals, supervisor-signals) unlocked on the strength of being
+single-writer, and the sources put 31.45 percent loss on attention-dismissals doing exactly
+that. `AttentionDismissalStore.dismiss` is a whole-file read-modify-write reached from the
+dashboard HTTP dismiss route at `serving/app.py:1164`, so two concurrent dismisses lose each other
+with no compactor involved and no second writer required. The store that looked safest was the
+worst.
+
+**Compaction owners.** Gate is the MCP process's, moved off the dashboard's 30-second projection
+tick onto `mcp/tools/gates.py`. Expectation rows, attention dismissals, orchestration nudges and
+supervisor signals are the dashboard's. Operator inbox has **none** — the leaf's declared
+exception, because both processes must physically remove rows (MCP deletes a cancelled gate's rows,
+the dashboard resolves and compacts under one held lock) and neither move travels without the
+decision it implements.
+
+**`rewrite_lines` never unlinks.** An empty kept set is an empty file. Previously a `_replace` that
+found the kept set empty called `unlink`, so a concurrent appender holding an `"a"`-mode handle
+wrote into an unlinked inode.
+
+**Two read policies, deliberately, and not an inconsistency.** Enforcement fails loudly on a torn
+line — silently skipping a malformed record could drop an `applied` marker and re-open the replay
+window a human approval exists to close — while projection degrades rather than crashing. Three
+stores read strictly because their rows change a decision (gate, expectation rows, operator inbox);
+three read tolerantly because their rows only render or rate-limit (attention dismissals,
+orchestration nudges, supervisor signals). Gate and expectation rows additionally carry a
+projection-only tolerant reader beside the strict one — `read` plus `read_for_projection` — used by
+`observer/snapshots.py` and by nothing that decides. **Every rewrite of an authority-bearing log
+reads strictly**, which is what makes two policies safe rather than merely different: each of the
+three strict stores drives its rewrites from its strict read, so a compaction can never erase a
+record it could not parse. The three tolerant stores drive their rewrites from their tolerant read
+and therefore do drop an unparseable row on compaction, which is safe only because none of them
+carries authority.
+
+**`schemaVersion` needs no version branch in any reader.** `DurableRecord` validates it on the way
+in, so an unknown major raises `ValidationError` and strict readers surface it while tolerant
+readers skip it. Verified on all six record types: minor `1.99` accepted, major `2.0` rejected.
+`worktrees/worktree_contract.py` imports the same constant and predicate, so the tree has one
+version policy.
+
+**A per-log process-wide `RLock`** (`thread_mutex_for`) is taken before the flock, always in that
+order. Stated carefully: `flock` **does** already serialise threads within one process on POSIX,
+because the lock lives on the open file description and `exclusive_access` opens a fresh one per
+non-reentrant acquisition. The mutex is therefore **not** fixing a reproducible loss. What it
+closes is that the thread-level exclusion rested on where the handle came from rather than on
+anything declared — cache one lockfile handle across threads, the obvious "stop opening two files
+per append" optimisation, and every thread would share one description and `flock` would silently
+stop excluding them. That regression was simulated and does lose records without the mutex.
+
+**The enforcement caught a real bug before it shipped.** `serving/app.py` calls
+`gate_decide_payload` directly, so an MCP-side reclaim ran inside the dashboard and raised
+`CompactionOwnerError` past `suppress(OSError, ValueError)` — every dashboard gate decision would
+have crashed. Fixed with an `is_compaction_owner()` guard in `_reclaim_gate_log`.
+
+**One accepted behavioural consequence.** Gate reclamation now follows owner activity rather than a
+wall clock: a gate raised and expired by the dashboard is reclaimed on the next MCP decision on that
+lifecycle, rather than within 30 seconds. Space-only, never correctness — the projection is
+keep-filtered in memory every tick regardless of what is still on disk.
 
 260713-PHA-L6 keeps operator inbox rolling compatibility deliberately narrow: legacy readers may
 preserve optional `adapterDeliveryState` and `adapterDeliveryDetail`, while unrelated extensions
@@ -180,7 +286,7 @@ signal, while targetless provider-down dismissals are not accepted.
 | Module        | Owns                                                                          |
 | ------------- | ----------------------------------------------------------------------------- |
 | `records.py`  | `GateRecord` (`ar-gate-record/v1`) + pure `create_gate` / `decide_gate` / `expire_gate` / `coerce_gate_kind`; the `GateKind` / `GateState` / `DecidedVia` Literals, `GateEvidenceRef`, and `DECISION_STATES`. `GateKind` is the full l-01 gate spine (slice 09 added `plan-approval` / `worktree-intent` / `push-approval`); `closeout-approval` IS the commit gate — no separate `commit-approval`. |
-| `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows. |
+| `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows under the log's lock. The strict `read` backs enforcement; the tolerant `read_for_projection` backs `projected_current`, which replaced `compact_current` and rewrites nothing. |
 | `operator_inbox_records.py` | `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/consume helpers for durable operator/agent inbox snapshots, including role/message/artifact and delivery metadata. |
 | `operator_inbox_store.py` | `OperatorInboxStore`: workspace inbox log, pending filters by lifecycle/agent/recipient role, delivery-state snapshots, idempotent store consume, public delete/dismiss paths, and TTL compaction. |
 | `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame, with HFX-L6 architect/curator role literals in the artifact vocabulary. |
@@ -195,7 +301,8 @@ signal, while targetless provider-down dismissals are not accepted.
 | `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. |
 | `escalation_ladder.py` | (260707-HFX2-L4 + L13/HFX3 correction) `rung_due`/`next_step`/`seat_is_suspect`: the pure tier-3 ladder walker, configured dwell plus redundant five-minute later-rung floor, architect terminal custody, and dead/stalled-seat respawn-candidate detection. |
 | `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
-| `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store). |
+| `durable_store.py` | (260731-EFA-L5) `ar-durable-store/1.0`: the one contract all six JSONL stores implement, and the only place in the package that appends, rewrites, builds a temp path or imports `fcntl`. Owns `DurableRecord` (the shared record base with `extra="forbid"` and a validated `schemaVersion`), `StoreOwnership` plus the six per-store ownership constants, `declare_process_role`, the `exclusive_access` / `thread_mutex_for` / `require_lock_held` locking primitives, the `_verify_lock_capability` filesystem probe, and `append_line` / `rewrite_lines`. |
+| `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store), plus the durable-store contract surface: constants, error types, `DurableRecord`, `StoreOwnership` and the process-role pair. The locking and rewrite primitives and the per-store ownership constants are deliberately not re-exported. |
 
 The `gate_*` MCP tools live in `mcp/tools/gates.py` (config-rooted, building a
 `GateStore(observer_root(config))`); their response models are `models/gates.py`.
@@ -233,6 +340,28 @@ response models are `models/operator_inbox.py`.
   `enclosure`, never by the consuming contract's lifecycle id.
 - Inbox entries require `lifecycleId`, `agentId`, or `recipientRole`; an
   unaddressed response has no external mailbox or hosted-session target.
+- **Every append and every rewrite of every one of the six JSONL logs holds that log's lock**
+  (260731-EFA-L5). No store is exempt, no process is exempt, and there is no flag that turns it
+  off. Skip it anywhere and the lost-update window returns silently, with the caller told the
+  record was written.
+- **The lock is held across the read AND the rewrite, never around the rewrite alone.** A record
+  list chosen by a read outside the lock is already stale, and rewriting from it is the same lost
+  update under a different name. Each store splits its reclaim into a public method that takes
+  `exclusive_access` and a `_locked` / `_unlocked` half that does the work;
+  `require_lock_held` raises from inside `rewrite_lines` for anything that gets it wrong.
+- **Ownership is advisory and is never what durability rests on.** `check_declared_writer` is
+  silent in every CLI invocation, script and test; `is_compaction_owner` never raises at all. Do
+  not read either as a guarantee, and do not remove a lock because an owner is named.
+- **Rewrites never unlink.** An empty kept set is written as an empty file, so a concurrent
+  appender cannot write into an inode with no remaining links.
+- **All file I/O for this route lives in `durable_store.py`.** Adding a second `open("a", ...)`,
+  `os.replace`, temp-path construction or `fcntl` import anywhere else in the package is the
+  regression this leaf exists to prevent.
+- **The read-policy split is a decision, not an inconsistency**, and every rewrite of an
+  authority-bearing log reads strictly. Pointing a strict store's rewrite at a tolerant reader
+  turns a torn line into a silently deleted record.
+- **No reader branches on `schemaVersion`.** `DurableRecord` rejects an unknown major at parse
+  time; that single rule is what gives both read policies their behaviour.
 
 ## Repo-Internal References
 
@@ -245,6 +374,10 @@ response models are `models/operator_inbox.py`.
 | The inbox record/store pair provides the external-chat pull return channel. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
+| The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The two process entry points that declare a durable-store role: `declare_process_role("mcp")` at L52 and `declare_process_role("dashboard")` at L148. Nothing else in the tree declares one, which is the whole reach of the advisory ownership checks. | [mcp/server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) and [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
+| `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
+| The projection tick that no longer rewrites anything: `read_gates` at L514-L537 folds through the tolerant `projected_current`, and `read_expectation_rows` at L592-L610 uses `pending_for_projection`. | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 | The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
 
 ## 260712-TRH-L4 Route Impact
@@ -286,6 +419,44 @@ No record schema, wire field or refusal changed.
 
 ## Update History
 
+- 2026-08-01T19:10+02:00 — Measured-claim repair; no prose about the lock, ownership, the read-policy
+  split or the compaction owners was touched, because it was right. The Hot Path Summary asserted six
+  base-commit loss rates, "127 of 2000 raising", "zero torn lines in every run" and a post-fix "0
+  lost, 0 raised, 0 torn, all six stores, all scenarios" as findings a reader could check. **No
+  base-commit measurement artifact is committed anywhere in the tree**, so that is now stated once,
+  plainly, and the rates are split by how well they are corroborated: 31.45 percent (four
+  independent sites) and 11.50 percent (three) are asserted plainly on the sources' authority, while
+  10.50 / 10.20 / 9.20 / 0.00 percent, 127 of 2000, "ten runs per store" and the whole-not-torn
+  property exist only in `durable_store.py`'s module docstring — the text these cards document — and
+  are attributed to it rather than restated as findings. **The post-fix claim was wrong in both
+  directions and is now stated at its true strength against
+  `test_controlplane_store_durability.py::MultiProcessDurabilityTests`:** `lost == 0` holds in all
+  three scenarios but over *five* stores in `forced_unlink` (`APPEND_CASES`; attention-dismissals has
+  no `append`, so it is excluded by construction) and six in the other two, while `torn_lines == 0`,
+  `append_error_count == 0` and `reclaim_error_count == 0` are asserted in the `stress` scenario
+  only. Added the one base-commit fact a reader *can* check — `HarnessSensitivityTests` asserting
+  1-of-1 loss for each unlocked store and 0 for operator-inbox against a `git archive` of
+  `e52edaf5`. The 18:30 entry below had the same six-rate list in its parenthetical and it was
+  reduced to the attribution. No line numbers were added into `durable_store.py`, which is under
+  active edit. Verification metadata untouched; closeout owns it.
+- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity), route-level. Recorded the loss
+  the sources report across all six JSONL stores at the base commit and the single
+  `ar-durable-store/1.0` contract
+  in the new `durable_store.py` that closed it. Recorded, as the route's governing distinction,
+  that the unconditional per-log lock is the mechanism while ownership is advisory, with
+  `require_lock_held` the one check that raises unconditionally because it asks about the calling
+  thread's own lock. Recorded that single-writer is a deployment fact rather than a structural one
+  and why the store that looked safest lost the most. Recorded the compaction owners including the
+  operator-inbox `None` exception; that `rewrite_lines` never unlinks; the strict/tolerant read
+  split with the every-authority-rewrite-reads-strictly property stated per store; the
+  `schemaVersion` rule that removes version branches from readers; the process-wide `RLock`
+  described as defending a simulated regression rather than fixing an existing thread race; the
+  `CompactionOwnerError` bug the enforcement caught in the dashboard's direct `gate_decide_payload`
+  call; and the accepted space-only consequence that gate reclamation now follows owner activity.
+  Added `durable_store.py` to the Layout table and eight route invariants. The route index
+  (`overview.index.json`) is deliberately not regenerated in this partitioned curator pass;
+  the manager owns the single aggregate refresh. Verification metadata pinned until closeout stamps
+  the L5 commit.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `create_gate`, `decide_gate`,
   `create_operator_inbox_entry`, `OperatorInboxStore.record_delivery`/`advance_rung`/`renew`,

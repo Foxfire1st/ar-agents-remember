@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-01T09:26+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-01T13:20+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -152,7 +152,7 @@ calling me" session-id resolution anywhere in this codebase.
 | `lifecycle.py`  | lifecycle signal builders driving the observer ambient lifecycle; `lifecycle_block_payload` is retained for lower-level compatibility. Since task 27 `lifecycle_start_payload` also emits the one-time `frontHalfRundown` (`next_step.py`'s `FRONT_HALF_RUNDOWN`). Task 28 adds `lifecycle_turn_end_notification_payload(summary)` — the NOTIFY-AND-CONTINUE turn end: drives `await_developer` → `awaiting-developer` and returns immediately (no gate, no wait), the one builder the choke-point auto-dismiss skips by name. |
 | `lifecycle_finalize.py` | the terminal `lifecycle_finalize_task` builder, forwarding to the worktree finalizer and strict response model. |
 | `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (L14: master docs accept the additive `orchestrates` list — the dashboard's command-hierarchy source) (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` controller. |
-| `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. The gate substrate itself lives in `controlplane/` (task 6). |
+| `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. Since 260731-EFA-L5 this module also **owns gate-log reclamation**: `_reclaim_gate_log` runs `GateStore.compact` at the end of every terminal decision, guarded by `GATE_OWNERSHIP.is_compaction_owner()` so the dashboard (which reaches `gate_decide_payload` directly) skips it — it moved here off the dashboard projection tick's 30-second rewrite, which raced this process's appends. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the terminal snapshot and leaves physical expiry to compaction so concurrent delivery cannot resurrect it. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
 | `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
@@ -208,6 +208,19 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
   it, decision/outcome facts stay inline, and
   `test_tool_response_budgets.py` holds every compact builder under
   `INLINE_BUDGET_CHARS` with deliberately fat inputs.
+- **A builder on this route may reclaim a durable log it owns, and only on a write path, and only
+  behind a non-raising ownership question** (260731-EFA-L5). `gates.py::_reclaim_gate_log` is the
+  one instance: `if not GATE_OWNERSHIP.is_compaction_owner(): return`, then
+  `GateStore.compact` under `contextlib.suppress(OSError, ValueError)`, called at the end of
+  `gate_decide_payload`. Two constraints, each with a named failure. It must not move onto a read
+  path or a timer — a rewrite driven from the dashboard's projection tick is what cost 11.50% of
+  gate snapshots at the base commit. And the check must stay a **question**, because builders on
+  this route are not MCP-only: `serving/app.py` calls `gate_decide_payload` directly, so the
+  dashboard executes this code, and a `CompactionOwnerError` (a `RuntimeError`) would pass straight
+  through that suppress on every developer gate decision.
+- **A reclaim failure must never cost the caller the operation that was already durable.** The
+  suppress above wraps the reclaim only; the append, the delete and the expectation-row update
+  ahead of it are not inside it, and the next decision on that lifecycle retries the prune.
 
 ## Repo-Internal References
 
@@ -281,7 +294,47 @@ ticks the heartbeat into the past (`_stale_supervisor`) and asserts that the cap
 contain both injections, so a fixture that quietly stops producing them fails there instead of
 hollowing out every assertion below it.
 
+## 260731-EFA-L5 — A Builder On This Route Now Reclaims A Durable Log
+
+One file on this route changed, `gates.py`, and the change is a **responsibility moving into this
+route** rather than a payload edit: gate-log compaction. It used to ride
+`observer/snapshots.read_gates` on a 30-second throttle — the dashboard's projection tick physically
+rewriting a log the dashboard owns nothing in, racing this process's appends. That is where 11.50%
+of appended gate snapshots were going at the base commit, and a lost snapshot there is not a missing
+row: the `applied` marker is what stops one human approval being consumed twice.
+
+`_reclaim_gate_log(store, lifecycle_id)` now runs at the end of `gate_decide_payload`, which is the
+moment a record *becomes* reclaimable. Three properties are worth carrying at route level, because
+each is a rule about how builders here may touch durable state:
+
+1. **Write paths only.** `gate_list_payload` and both wait loops stay pure reads. Moving the reclaim
+   here changes who prunes and when, never what a caller is shown.
+2. **The ownership check is a question, not a refusal.** `serving/app.py` calls
+   `gate_decide_payload` **directly**, so a builder on this route runs inside the dashboard process
+   too. `is_compaction_owner()` answers `False` there and returns. A version that raised would send
+   `CompactionOwnerError` — a `RuntimeError`, so invisible to `suppress(OSError, ValueError)` —
+   out of every developer gate decision made from the dashboard.
+3. **The observable consequence is space, never correctness.** Reclamation follows owner activity
+   instead of a wall clock, so a gate expired on a quiet lifecycle keeps its superseded rows on disk
+   until the next MCP decision there. `GateStore.projected_current` applies the identical
+   keep-filter in memory on every tick, so the dashboard renders exactly what it rendered before.
+
+The substrate this rides on is `ar-durable-store/1.0` in `controlplane/durable_store.py`, and it is
+that route's to describe. The one thing to carry here: what makes the rewrite safe is the log's
+unconditional `flock`, held across the read **and** the rewrite, in every process. Ownership decides
+only who runs the pass.
+
 ## Update History
+
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: `gates.py` is the only file on this route the leaf
+  touched, and it gained a responsibility rather than a payload change — gate-log reclamation moved
+  here off the dashboard projection tick. Added the L5 section and updated the `gates.py` Layout row.
+  Added two invariants, each naming the failure it prevents: a reclaim on this route may sit only on
+  a write path and only behind a **non-raising** ownership question (because `serving/app.py` calls
+  `gate_decide_payload` directly, so these builders execute in the dashboard process), and the
+  reclaim's `suppress` must not widen to cover the durable work ahead of it. No tool name, payload
+  shape, refusal vocabulary or registration changed. Verification metadata pinned until closeout
+  stamps the L5 code commit.
 - 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** The `_tool_payload` order
   this card described is no longer the order in the code, and the description was load-bearing:
   the Hot Path Summary said the `nextStep` hint is attached "after the ambient emission hook" and

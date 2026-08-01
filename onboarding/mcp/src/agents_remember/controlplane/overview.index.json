@@ -12,6 +12,7 @@
   "coveredFiles": [
     "mcp/src/agents_remember/controlplane/__init__.py",
     "mcp/src/agents_remember/controlplane/attention_dismissals.py",
+    "mcp/src/agents_remember/controlplane/durable_store.py",
     "mcp/src/agents_remember/controlplane/enforcement.py",
     "mcp/src/agents_remember/controlplane/escalation_ladder.py",
     "mcp/src/agents_remember/controlplane/expectation_rows.py",
@@ -29,8 +30,8 @@
     "mcp/src/agents_remember/controlplane/supervisor_signals.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 17,
-    "fileSidecars": 17,
+    "sourceFilesInScope": 18,
+    "fileSidecars": 18,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -42,6 +43,8 @@
     "backoff",
     "controlplane",
     "dismissals",
+    "durable",
+    "durable_store",
     "enforcement",
     "escalation",
     "escalation_ladder",
@@ -81,11 +84,12 @@
     "supervisor_signals"
   ],
   "hotPath": {
-    "summary": "260713-PHA-L6 keeps operator inbox rolling compatibility deliberately narrow: legacy readers may preserve optional `adapterDeliveryState` and `adapterDeliveryDetail`, while unrelated extensions remain forbidden. These delivery-evidence fields do not alter explicit consume or provider degradation state semantics. 260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback retention: only pending supervisor nudge/escalation rows with a subject id qualify, catalog `terminated` is direct proof, and a compacted tombstone needs one successful exact-name tmux snapsh...",
+    "summary": "**260731-EFA-L5 \u2014 the durable-store contract. Read this before changing how any store in this route touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`, `operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`, `supervisor_signals.py`) were written independently against the same shape, and their safety properties ended up distributed almost at random: one of six took a lock, three of six used a pid-scoped temp name, none fsynced. **No base-commit measurement artifact is committed anywhere in this tree**, so every base-commit rate below is chec...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
       "mcp/src/agents_remember/controlplane/attention_dismissals.py",
+      "mcp/src/agents_remember/controlplane/durable_store.py",
       "mcp/src/agents_remember/controlplane/enforcement.py",
       "mcp/src/agents_remember/controlplane/escalation_ladder.py",
       "mcp/src/agents_remember/controlplane/expectation_rows.py",
@@ -107,6 +111,8 @@
       "__init__",
       "attention_dismissals.py",
       "attention_dismissals",
+      "durable_store.py",
+      "durable_store",
       "enforcement.py",
       "enforcement",
       "escalation_ladder.py",
@@ -137,20 +143,18 @@
       "store",
       "supervisor_signals.py",
       "supervisor_signals",
-      "adapterDeliveryState",
-      "adapterDeliveryDetail",
-      "terminated",
-      "PHA",
-      "TRH",
+      "EFA",
+      "JSONL",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
+      "a714114ef94eedb8042fb4caa38d9469f4767dd6",
       "/../../overview.md",
       "controlplane/",
       "rung_due",
       "next_step",
       "seat_is_suspect",
-      "escalatedAt"
+      "escalatedAt",
+      "rungTransitionAt"
     ]
   },
   "fallback": {

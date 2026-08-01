@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T20:15+02:00|
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -28,6 +28,46 @@ Memory commit` table, validates that the newest table row matches the metadata,
 serializes the canonical ledger format, prepends new mappings, finds existing
 mappings, and creates an initial ledger.
 
+### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
+
+`write_ledger(path, ledger)` (L193-L215) is two statements — `mkdir(parents=True, exist_ok=True)`
+then `path.write_text(...)`. It got no lock, no temp-and-rename and no `fsync` in the leaf that gave
+all six control-plane JSONL stores exactly those things, and L5 records why in the function's own
+docstring (L194-L213) rather than leaving the omission to be re-litigated. The ruling is **degraded,
+not unrecoverable**, and it rests on two properties of the callers, both of which are checkable:
+
+- **Every call commits within two statements.** Six call sites across five modules —
+  `worktrees/modules/closeout.py` L539, `worktrees/modules/integrate.py` L254-L257,
+  `worktrees/modules/start.py` L1128, `memory/carryover.py` L759-L762 **and** L849, and
+  `memory/baseline.py` L153 — are each followed immediately by
+  `require_git(<memory root>, ["add", "memory.md"])` and then `commit_if_dirty(...)`. So the durable
+  authority for a mapping is the git object, not the working-tree file: a torn or truncated
+  `memory.md` costs the uncommitted delta and nothing else, and `git checkout -- memory.md` restores
+  it. (The docstring says "five callers … `carryover.py` (twice)", which is five modules and six
+  calls; both readings are in the text, and the count that matters is that all six commit.)
+- **No second long-lived process writes it.** `write_ledger` does not appear anywhere under
+  `observer/` or `serving/`. The dashboard reads the ledger — `observer/snapshots.py` L42 imports
+  `LedgerError`, `LedgerRow` and `load_ledger` from this module, and no writer — so there is nothing
+  to serialize against and a lock here would guard nothing. (The docstring's parenthetical says
+  snapshots.py "imports `load_ledger` and nothing else"; it imports three names. The claim that
+  matters — that none of them writes — holds.)
+
+**One caller-reach claim in the docstring is not exact, and the card records the accurate version.**
+It says all five are "reached only through MCP tool registrations". Three of them are also reachable
+from a script: `worktrees/modules/cli.py` registers `start`, `closeout` and `integrate` subcommands
+(`build_parser`, `main`), and `worktrees/git_worktree_manager.py` L194-L195 is
+`if __name__ == "__main__": raise SystemExit(main())`. That is a short-lived process, it commits on
+the same two-statement path, and it changes nothing about the ruling — but it does mean the second
+bullet's premise is "no concurrent *daemon* writes this", not "only the MCP process ever writes
+this".
+
+**What would falsify the ruling**, stated so a later reader can check it rather than trust it: a
+`write_ledger` caller that does not `git add` + commit in the same function, or one reached from a
+process that runs concurrently with another writer (a serving route, a projection tick, a
+supervisor sweep). Either one makes a truncated ledger lose history rather than a delta, and the
+ledger then belongs on the `ar-durable-store/1.0` contract in `controlplane/durable_store.py` like
+the six JSONL logs.
+
 ### Conventions
 
 The parser deliberately uses the standard library and a small markdown/table
@@ -40,6 +80,10 @@ grammar rather than pulling in a general markdown or YAML dependency.
   `lastMemoryContentCommit`.
 - `prepend_mapping()` requires both commits and updates metadata and rows
   together.
+- **A `write_ledger` call must be followed by `git add memory.md` + commit in the same function.**
+  That is not a style rule; it is the whole reason this file is allowed to do an unguarded
+  whole-file write while the control-plane stores may not. A caller that writes and defers the
+  commit converts "lose the uncommitted delta" into "lose the mapping history".
 
 ### Todos
 
@@ -62,7 +106,9 @@ format.
 | --- | --- | --- |
 | The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of `AgentsRememberError`). | L17-L41 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
 | `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | L51-L104 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | L142-L179; L193-L204 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger` L147-L156; `ledger_to_text` L159-L184; `prepend_mapping` L218-L229 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | `def` + body L193-L215; the ruling L194-L213 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
+| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | the module docstring's `CONTRACT FRONT MATTER` and read-policy sections; the deployment-fact paragraph in `StoreOwnership`'s class docstring ("only one process writes this file" is a deployment fact, not a structural one) | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
 
 ## Cross-Repo References
 
@@ -77,6 +123,50 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 ## Update History
 
+- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass): **the `durable_store.py` row
+  pointed at the wrong docstring.** It cited "contract front matter L1-L116; the deployment-fact
+  paragraph L190-L198". Neither range holds. `durable_store.py` grew 598 → 699 lines mid-pass: the
+  module docstring now runs **L1-L147**, so L1-L116 stops 31 lines short and cuts off the
+  read-policy sections the row's claim depends on; and L190-L198 is not the deployment-fact
+  paragraph at all — it lands on `SUPPORTED_SCHEMA_MAJOR`, `ProcessRole` and the error classes. The
+  deployment-fact text ("only one process writes this file" is a deployment fact, not a structural
+  one, and a store whose durability rests on one is precisely what this leaf was called in to
+  repair) is at **L237-L243**, inside `StoreOwnership`'s class docstring, where it explains why that
+  dataclass has no `serialized` field. Replaced both with symbol-name citations and no ranges, as
+  this leaf's test cards do, because a number that was wrong within the hour is worse than no
+  number. The row's claim is unchanged and was re-read at the new location. The four citations into
+  this module's own source were re-read and are correct: L17-L41 (`LEDGER_SCHEMA` L17, `LedgerRow`
+  L23, `MemoryLedger` L29, `LedgerError` L40), `parse_ledger_text` L51-L104 (`def` L52),
+  `validate_ledger` L147 / `ledger_to_text` L159 / `prepend_mapping` L218, and `write_ledger`
+  L193-L215 (`def` L193). Nothing on this card asserts a measured figure.
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: the only source change here is a 20-line docstring
+  on `write_ledger`, and it is a **ruling**, not a description — so the card now records the ruling,
+  the evidence for it, and what would overturn it. Verified all six call sites myself rather than
+  taking the docstring's word: `closeout.py` L539, `integrate.py` L254-L257, `start.py` L1128,
+  `carryover.py` L759-L762 and L849, `baseline.py` L153 — each followed by
+  `require_git(..., ["add", "memory.md"])` and `commit_if_dirty(...)` in the next two statements, so
+  the durable authority is the git object and a truncated `memory.md` costs the uncommitted delta.
+  Confirmed no writer under `observer/` or `serving/`; `observer/snapshots.py` L42 imports
+  `LedgerError`, `LedgerRow` and `load_ledger` and never `write_ledger`. Added the caller obligation
+  as an invariant, because it is the property the whole exemption rests on.
+
+  **Two docstring imprecisions carried into the card as the accurate version, and reported.**
+  (1) It says snapshots.py "imports `load_ledger` and nothing else" — it imports three names; the
+  load-bearing half (no writer) is true. (2) It says all five callers "are reached only through MCP
+  tool registrations" — `worktrees/modules/cli.py` registers `start`/`closeout`/`integrate`
+  subcommands and `worktrees/git_worktree_manager.py` L194-L195 (`if __name__ == "__main__": raise
+  SystemExit(main())`) makes them runnable as a script. That is a short-lived process on the same
+  commit-immediately path, so the ruling stands; the premise is "no concurrent daemon writes this",
+  not "only the MCP process ever writes this".
+
+  **Citations repaired.** The docstring inserts 20 lines at L194, so `prepend_mapping` moved:
+  `L142-L179; L193-L204` → `validate_ledger` **L147-L156**, `ledger_to_text` **L159-L184**,
+  `prepend_mapping` **L218-L229**. Note the old range was already defective in the shape the L4
+  audit found — `L142-L179` began at `_is_separator_row` and stopped 5 lines short of the end of
+  `ledger_to_text` (L184), and `L193-L204` began at `def write_ledger` and stopped 5 lines short of
+  the end of `prepend_mapping`; both symbols the claim names are now fully inside their ranges.
+  Added a row for `write_ledger` itself and one for the contract it was measured against.
+  Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-repo citation that broke when
   the worktree manager was split into `worktrees/modules/`. `git_worktree_manager.py` is now a
   195-line pure re-export facade with no ledger call in it at all, so the old `L18-L24; L923-L929;

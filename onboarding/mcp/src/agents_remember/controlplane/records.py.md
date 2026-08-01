@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T18:30+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`         |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -32,10 +32,22 @@ decision verbs (approve / reject / request-revision / cancel) to the resulting
 state. `coerce_gate_kind(raw)` validates a raw string against the `GateKind`
 literals (`get_args` + `cast`) so the MCP boundary can accept a plain `str`.
 
-`GateRecord` is a Pydantic `BaseModel` with `extra="forbid"` and camelCase wire
+`GateRecord` is a Pydantic model with `extra="forbid"` and camelCase wire
 fields (mirroring the observer event envelope); `schema_version` carries
 `alias="schema"`, so records dump with `model_dump_json(by_alias=True,
-exclude_none=True)`. L4 adds `GateEvidenceRef` (`kind="reviewer-verdict"`,
+exclude_none=True)`. **As of 260731-EFA-L5 it subclasses
+`durable_store.DurableRecord` rather than `BaseModel` directly**, which is where the
+`extra="forbid"` config now comes from (the local `model_config` line is gone) and which adds one
+inherited field, `schemaVersion`.
+
+The two version fields answer different questions and must not be collapsed: `schema`
+(`ar-gate-record/v1`) names the record **vocabulary** — what these fields mean — while the
+inherited `schemaVersion` versions the **durable-store contract** the log is written under: how
+the file behaves, meaning ownership, serialization and torn-line policy. `schemaVersion` is
+validated on the way in, so an unknown MAJOR raises `ValidationError` at parse time; that is what
+lets `GateStore.read` fail loudly on it and `GateStore.read_for_projection` skip it, with no
+version branch written into either reader. An unknown minor is accepted. Verified on this record
+type: minor `1.99` accepted, major `2.0` rejected. L4 adds `GateEvidenceRef` (`kind="reviewer-verdict"`,
 `ref`, optional `verdict`) plus `GateRecord.decidingRole` and
 `GateRecord.evidenceRefs`.
 
@@ -81,6 +93,13 @@ advance). All helpers are pure.
   verdict artifact is referenced by id/path, not inlined into the gate record.
 - This is a persisted-record model, not an MCP response: the `gate_*` tools have
   their own response models in `models/gates.py`.
+- **`schema` and `schemaVersion` version different things** — the record vocabulary and the
+  durable-store contract respectively. Adding a gate field is a `schema` question; changing how the
+  gate log locks, compacts or tolerates a torn line is a `schemaVersion` question.
+- **No reader may branch on `schemaVersion`.** The validator on `DurableRecord` rejects an unknown
+  major at parse time, which is what makes the strict and tolerant gate readers behave correctly
+  without either of them knowing the rule. Add a version branch to a reader and the two policies
+  stop following from one place.
 
 ## Repo-Internal References
 
@@ -89,6 +108,8 @@ advance). All helpers are pure.
 | Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). | [observer/events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
 | The append-only store that serializes and folds these snapshots. | [store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 | Ids come from the local ULID mint. | [observer/ulid.py](agents-remember/mcp/src/agents_remember/observer/ulid.py) |
+| `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions; the local `model_config` line is gone (L84-L116). | [records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
+| `DurableRecord` supplies the `extra="forbid"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor (L339-L374). | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
 
 As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handover-approval`: the master-exit seam gate the manager raises with the reviewer verdict attached and the orchestrator decides (delegable, never human-pinned — human review concentrates at the super gate).
 
@@ -100,6 +121,16 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded that `GateRecord` now
+  subclasses `durable_store.DurableRecord` instead of `BaseModel`: the local
+  `model_config = ConfigDict(extra="forbid")` line is gone (the base supplies it) and one inherited
+  field, `schemaVersion`, is added. Recorded why the record now carries two version fields and that
+  they answer different questions — `schema` names the record vocabulary, `schemaVersion` versions
+  the durable-store contract the log is written under — and that the validator on the base rejects
+  an unknown major at parse time, which is what lets `GateStore.read` raise on it and
+  `GateStore.read_for_projection` skip it with no version branch in either. Confirmed by direct
+  construction: minor `1.99` accepted, major `2.0` rejected. No `GateRecord` field, alias, literal
+  or helper changed. Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `GateAnchor`, `GateRequest` and `GateVerdict` parameter objects and re-signed
   the two builders — `create_gate(kind, *, gate_id, now, anchor=None, request=None)` (the former

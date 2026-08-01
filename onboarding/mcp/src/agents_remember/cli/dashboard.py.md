@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-31T22:05+02:00                       |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`   |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-01T13:20+02:00                       |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`   |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -45,7 +45,9 @@ control group `--daemon` / `--status` / `--stop` (260703 L2), and `--no-access-l
 without per-request access logs; the daemon child uses it to keep its log bounded — both
 foreground `uvicorn.run` call sites pass `access_log=not args.no_access_log`).
 
-`run(args)` first calls `_resolve_settings(args)` (260731-EFA-L2), which resolves
+`run(args)` opens with `declare_process_role("dashboard")` (260731-EFA-L5, L148 — the first
+statement in the function, before any settings work), then calls `_resolve_settings(args)`
+(260731-EFA-L2), which resolves
 `config_path = args.config or discover_config()` — an explicit flag always wins — and loads it,
 printing the message and returning `None` for **either** `ConfigDiscoveryError` or `ConfigError`;
 `run` turns that `None` into exit `1`. It then resolves the effective `port`, routes any
@@ -97,6 +99,48 @@ package source dir (`Path(agents_remember.__file__).parent`) so unrelated trees 
 reloader. `os`, `uvicorn`, `create_app`, and the sim helpers are imported at module top (the
 established CLI convention); `import agents_remember` is local to the reload branch.
 
+### 260731-EFA-L5: the durable-store process role (the whole change here)
+
+This file's entire L5 change is seven lines — the `declare_process_role` import (L20) and a
+five-line comment plus the call as the first statement of `run` (L143-L148; `def run` is L142). No
+flag, no dispatch order, no exit code and no serving call moved.
+
+`controlplane/durable_store.py` names two concurrent writers of the six control-plane JSONL logs,
+`"mcp"` and `"dashboard"`; the declaration is what lets code shared by both processes — most
+importantly `mcp/tools/gates.py::gate_decide_payload`, which `serving/app.py` calls **directly** —
+ask which one it is in. It sits at the top of `run` rather than inside `create_app` for the same
+reason the MCP server's sits in `main` rather than `create_server`: `create_app` is a factory the
+test suite calls in-process, `durable_store._declared` is a module-level dict with no reset, and a
+declaration made in the factory would stamp `"dashboard"` onto the interpreter and every later test
+in it.
+
+**Which serving processes this actually reaches, measured rather than assumed:**
+
+| Path | Serves in | Declares `"dashboard"` |
+| --- | --- | --- |
+| foreground live / `--sim` | this process (`uvicorn.run(built.app, ...)`) | yes |
+| `--daemon` | a child `sys.executable -m agents_remember.cli dashboard ...` (`serving/daemon.py` L201-L214), which re-enters `run` | yes |
+| `--reload` | a **spawned** uvicorn worker, not this process | **no** |
+
+The `--reload` row is a real gap, and it is worth stating precisely rather than rounding off.
+`uvicorn.run(..., reload=True)` keeps only the reload supervisor in the process that called it and
+serves from a child built by `multiprocessing.get_context("spawn")` (uvicorn 0.49.0,
+`uvicorn/_subprocess.py` L18 + `uvicorn/supervisors/basereload.py` L84-L85). A spawn-context child
+does not inherit the parent's module globals — measured directly: a parent that mutates a module
+dict before `Process.start()` and a child that reports the same dict give `{'role': 'dashboard'}`
+and `{}`. So under `agents-remember dashboard --reload`, the process that serves HTTP, decides
+gates and writes these logs has declared no role at all, and `StoreOwnership.is_compaction_owner()`
+answers `True` for every log (`role is None`). A dev-reload dashboard therefore *does* run the gate
+reclaim pass that a normal dashboard skips.
+
+That is an ownership-advisory gap, not a durability one, and the difference is the point of the
+contract: the reclaim still holds the log's `flock` across its read **and** its rewrite like every
+other writer, so no record is lost either way. What it falsifies is the contract's stated reason for
+letting an undeclared process count as owner — "a CLI or test run is nobody's competitor"
+(`durable_store.StoreOwnership.is_compaction_owner`) — because a `--reload` dashboard can be running
+against the same coordination root as a live MCP server. Closing it means declaring the role inside
+`_dev_app()` as well; nothing else about this file would change.
+
 ## Invariants And Boundaries
 
 - **Localhost-only by default** (`--host 127.0.0.1`); the help text warns against exposing it.
@@ -133,6 +177,8 @@ established CLI convention); `import agents_remember` is local to the reload bra
 | The sim builder / clock / feeder / speed parser it wires. | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
 | The `--config` → `McpRuntimeConfig` contract it mirrors. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
 | Tests covering the serving CLI (including the `--reload` path). | [tests/test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | [mcp/server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -142,6 +188,21 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: this file's change is **small, and is recorded as
+  small** — seven lines, one import (L20) and `declare_process_role("dashboard")` as the first
+  statement of `run` (L148). Nothing else in the file moved. Recorded the placement rule (entry
+  point, never `create_app`, because the factory is called in-process by tests and `_declared` has
+  no reset) and, more usefully, **which serving processes the declaration actually reaches**:
+  foreground live/sim yes; the `--daemon` child yes, because `serving/daemon.py` L201-L214 spawns
+  `sys.executable -m agents_remember.cli dashboard ...` and that re-enters `run`; `--reload` **no**.
+  The reload gap was verified, not inferred from the flag: uvicorn 0.49.0 serves the reload worker
+  from a `multiprocessing.get_context("spawn")` child (`uvicorn/_subprocess.py` L18,
+  `uvicorn/supervisors/basereload.py` L84-L85), and a spawn child does not inherit parent module
+  globals — measured with a two-line harness (parent `{'role': 'dashboard'}`, child `{}`). Stated
+  the consequence at its true weight: the dev-reload dashboard counts as compaction owner of every
+  log and so runs the gate reclaim pass a normal dashboard skips, which is an ownership-advisory
+  gap and **not** a durability one, because the reclaim holds the log's lock across read and rewrite
+  regardless. Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-07-31T22:05+02:00 — 260731-EFA-L4 curator: the previous claim that handing uvicorn a built
   app object instead of the `_dev_app` import-string factory makes hot-reload "silently no-op" was
   **false**. It appeared twice in this sidecar (the `_dev_app` commentary and the `--reload`

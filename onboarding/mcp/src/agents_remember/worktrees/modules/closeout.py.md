@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:40+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-01T19:45+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,7 +19,9 @@ Owns worktree closeout preview/apply behavior.
 Closeout validates source branch positions and explicit commit approval. When a code commit would
 be created **in any repository whose checkout carries the wrapper**, it stages the task worktree and
 then runs the strict project-owned quality wrapper over exactly that, before any code, memory,
-ledger, contract, or applied-gate mutation. Only after that gate passes does it commit code, refresh
+ledger, contract, or applied-gate mutation. Only after that gate passes does it claim the
+`closeout-approval` gate (260731-EFA-L5 — the `applied` mutation now sits here, one statement above
+the first commit, rather than at the end), commit code, refresh
 onboarding metadata, route overview metadata, generated route indexes, and
 entity fingerprints to the new code commit, run `memory_quality_check`, commit
 memory content, update the external memory ledger, and return the closeout
@@ -78,18 +80,21 @@ landed change. `refresh_entity_fingerprints_for_context(context, change.changed_
 takes only the path list, because it stamps no commit.
 
 Server-side gate enforcement (slice 6b, generalized by 260703-L4): when the contract carries a
-`lifecycle_id`, `_enforce_closeout_gate` reads the lifecycle's gate log via
+`lifecycle_id`, closeout reads the lifecycle's gate log via
 `GateStore(observer_logs_root(contract.coordination_root))` — the same log the
 dashboard writes — and `controlplane.evaluate_closeout_gate(..., policy=args.gate_policy)` refuses the closeout
 unless a `closeout-approval` gate is `approved` by the developer or by a
 policy-valid delegated orchestration decision (a model self-approval, owner
 self-approval, missing required reviewer verdict evidence, or an
 `open`/`rejected`/`applied` gate blocks; a gateless lifecycle falls back to the
-chat `--approved` gate, unchanged). The check runs
-after the chat approval note and before the code commit; on success
-`_mark_closeout_gate_applied` appends an `applied` snapshot so one approval cannot
-be replayed. Both preview and apply payloads carry a `closeout_gate` block
+chat `--approved` gate, unchanged). Both preview and apply payloads carry a `closeout_gate` block
 (`enforced` / `permitted` / `gateId` / `reason`) for the commit-approval relay.
+
+**Since 260731-EFA-L5 that enforcement is two functions, not one, and this is the section to read
+before changing either — see "The Claim, And Where It Goes" below.** The old shape —
+`_enforce_closeout_gate` checking near the top, `_mark_closeout_gate_applied` appending `applied`
+after `write_contract` at the very end — is gone. `_mark_closeout_gate_applied` was **deleted, not
+deprecated**.
 
 Task 30 adds the re-closeout reset path for already-integrated leaves. When a
 completed integration is legitimately re-closed, source-head validation accepts
@@ -197,6 +202,77 @@ always has.
   through the typed record so pyright checks them; `replace` carries only the fields that have no
   vocabulary to be checked against. The reopen logic itself is unchanged.
 
+## 260731-EFA-L5: The Claim, And Where It Goes
+
+This leaf found three reproduced ways to spend one human approval twice. Two of them lived in this
+file. The framing that explains why the store fix alone was not enough: **durability of a record is
+not atomicity of a decision** — the gate log now loses nothing, and this file's defects would have
+existed even if it never had.
+
+### The semantic change, stated plainly
+
+**An approval authorises one attempt, not one success.**
+
+A closeout that dies *after* the claim — a crashed process, a failed memory quality gate, a git
+error, an ENOSPC — leaves the approval consumed, and the next closeout needs a fresh gate.
+`enforcement.evaluate_gate` already words the remedy: *"was already applied; open a fresh gate for a
+new mutation"*. This is a deliberate, accepted behaviour change, and the alternative is not a milder
+version of it. Marking `applied` at the **end** means the marker is attempted only once the code
+commit, the memory commit, the ledger commit and the contract rewrite have all happened — so every
+way that write can fail to land leaves a **live approval sitting on top of an unknown amount of
+completed, irreversible work**. Both were reproduced. Fail-closed costs a re-approval after a
+failure the operator can see; fail-open silently hands the next closeout an approval the human
+granted for work that is already done.
+
+A two-phase claim (a `claimed` state finalised to `applied` on success and released back to
+`approved` on a clean failure) was considered and **rejected**: the release is exactly the step that
+cannot be guaranteed — same write, same late position, same failure modes — so it would need a
+reaper to age a stuck `claimed` gate back to spendable, which re-opens this window on a timer and
+cannot tell a died-mid-commit closeout from a died-before-commit one.
+
+### `_claim_closeout_gate` — the spend
+
+`_claim_closeout_gate(contract, args)` calls
+`GateStore.claim_approval(contract.lifecycle_id, kind=CLOSEOUT_GATE_KIND, now=now_iso(), policy=args.gate_policy)`,
+which folds the log, applies the policy and appends the `applied` snapshot **inside one held lock**,
+and raises the same `closeout blocked by gate enforcement: …` message on a refusal. Two closeouts
+racing that line resolve to exactly one spend. The old shape checked in one place and marked applied
+about a hundred lines and every commit later, with no lock across the pair; two real processes and a
+0.4s body were enough to have both permitted and two `applied` snapshots on disk. A contract with no
+`lifecycle_id` returns `None` and the chat `--approved` path governs, unchanged.
+
+### The call site is the design, not a detail
+
+The claim is placed **one statement above the first commit** — after `_gate_staged_code`, immediately
+before `commit_if_dirty` — and a source comment at that line says not to move it down past the
+commit. Both directions are wrong for a reason:
+
+- **Not earlier.** Everything upstream of that line only *reads*, or only touches the **index of the
+  task's own disposable worktree**: source-head validation, the onboarding and route plans, the
+  mixed reset and staging, and the strict code-quality gate. A refusal up there changes nothing that
+  survives, and a refused code-quality gate is the common case — claiming earlier would burn a
+  developer's approval on a refusal that changed nothing.
+- **Not later.** Everything below it writes a commit somebody would have to undo, so none of it may
+  run on an approval this closeout has not already consumed. That is the fail-open shape the leaf
+  removed.
+
+### `_refuse_unsatisfied_closeout_gate` — the early check, renamed because it can only deny
+
+The early check survives, at the same position as before (after the chat approval note, before the
+worklist), but it is **renamed** and it **returns nothing**: it can only refuse, never write. It
+exists purely so an unapproved closeout is refused *before* it stages the worktree and spends a
+minute in the strict code-quality gate.
+
+It is safe to keep precisely because it decides nothing. Its read is unlocked and therefore already
+stale by the time it returns, and a stale read there has exactly two outcomes: it refuses a gate
+that has since been approved (the operator reruns, and nothing was consumed), or it permits and the
+claim re-evaluates the same policy under the lock and refuses there. **It can never be the reason an
+approval is spent, because it never writes.** Reading it as the enforcement is the check-then-act
+mistake this leaf was called in to remove.
+
+`mcp/tests/test_gate_replay_window.py` pins both halves: the gate is already `applied` by the time
+`commit_if_dirty` runs, and a gate failure leaves it `approved`.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -211,7 +287,9 @@ No external Domain Documentation source is configured for this memory repo.
 | Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
 | The pure closeout-gate policy this module enforces (slice 6b). | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
 | The gate policy threaded through `WorktreeArgs`. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
-| The gate log read during enforcement and appended to when marking `applied`. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
+| `GateStore.claim_approval` — the compare-and-swap this module now spends an approval through: fold, policy verdict and the `applied` append inside one held `exclusive_access`. It is the only way to spend one; `_mark_closeout_gate_applied` was deleted. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
+| `CONSUMED_APPROVAL_GATE_KINDS` — why the `applied` snapshot this module writes is no longer reclaimed at any age, which is the other half of the replay fix. | [controlplane/interaction_retention.py](agents-remember/mcp/src/agents_remember/controlplane/interaction_retention.py) |
+| The replay-window regressions: the gate is `applied` before `commit_if_dirty`, and a gate failure leaves it `approved`. | [test_gate_replay_window.py](agents-remember/mcp/tests/test_gate_replay_window.py) |
 | The strict source-quality adapter decides applicability, executes the current worktree wrapper, and fails before mutation. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
 | Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs quality before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
 | `require_git` — the runner all three staging commands go through. | [git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
@@ -248,6 +326,24 @@ still what actually runs the wrapper, one step inside `_gate_staged_code`.
 
 ## Update History
 
+- 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). The card described a gate
+  enforcement shape that no longer exists: `_enforce_closeout_gate` returning a guard near the top
+  and `_mark_closeout_gate_applied` appending `applied` after `write_contract` at the end.
+  Corrections: `_enforce_closeout_gate` is renamed **`_refuse_unsatisfied_closeout_gate`** and now
+  returns `None` — it can only deny, never write — and `_mark_closeout_gate_applied` is **deleted,
+  not deprecated**. Added the new section for `_claim_closeout_gate`, which spends the approval
+  through `GateStore.claim_approval` (fold, policy verdict and `applied` append inside one held
+  lock) and is called **one statement above the first commit**, after `_gate_staged_code` and
+  immediately before `commit_if_dirty`. Recorded why that position and not another: everything
+  upstream only reads or touches the index of the task's own disposable worktree and a refused
+  code-quality gate is the common case, so claiming earlier would burn a developer's approval on a
+  refusal that changed nothing; everything downstream writes a commit somebody would have to undo.
+  Stated the semantic change plainly — **an approval authorises one attempt, not one success** — with
+  the fail-closed-versus-fail-open argument and the rejected two-phase `claimed` alternative.
+  Recorded that the early check is safe *because* it can only deny, so a stale unlocked read there
+  can never be the reason an approval is spent. Updated the Code Commentary opening to place the
+  claim in the apply order. Replaced the `controlplane/store.py` reference row and added two.
+  Verification metadata pinned until closeout stamps the L5 commit.
 - 2026-08-01T09:40+02:00 — 260731-EFA-L4 curator: the card said apply "runs
   `run_strict_code_quality_gate` before `commit_if_dirty`" and that preview "places it first in
   `closeout_order`" — both stale. Apply now calls the new `_gate_staged_code(contract.code_worktree,

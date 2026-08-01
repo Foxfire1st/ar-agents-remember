@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-01T00:00+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated | 2026-08-01T13:20+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1281,7 +1281,7 @@ declared once, at its producer, and imported by the wire model:
 
 | Vocabulary | Declared in | Imported by |
 | --- | --- | --- |
-| `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus` | `worktrees/worktree_contract.py` (lines 50-55) | `models/worktree.py`, `models/context_packet.py`, `kernel/coordination_context/models.py` |
+| `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus` | `worktrees/worktree_contract.py` (lines 62-67 — was 50-55 before L5 added the `schemaVersion` block above them) | `models/worktree.py`, `models/context_packet.py`, `kernel/coordination_context/models.py` |
 | `WorktreePhase`, `NextOperation`, `NextTool` | `worktrees/modules/guidance.py` (lines 28, 38, 47) | `models/worktree.py` |
 | `RepoState` | `kernel/git_facts.py` (line 22) | `models/context_packet.py::RepoSummary` |
 | `FreshnessState` | `kernel/git_freshness.py` (line 29) | `models/context_packet.py::BranchFreshness` |
@@ -1352,8 +1352,85 @@ first run, and that both refusals are preconditions **of the staging step** and 
 only where the gate runs: a consuming repository carrying no wrapper is not staged early and
 reaches the ordinary commit step's own `git add -A` exactly as before.
 
+## 260731-EFA-L5 Route Impact — One Durable-Store Contract, And What It Reached Outside `controlplane/`
+
+L3 gave the package one git runner; L4 gave it one declaration per wire vocabulary; L5 gives it one
+**storage** contract. `controlplane/durable_store.py` declares `ar-durable-store/1.0` and all six
+control-plane JSONL stores now route every byte of file I/O through it and take their log's lock
+unconditionally. The measured defect it closes is record loss under ordinary two-process operation —
+31.45% on attention dismissals and 11.50% of appended gate snapshots, the two figures the source
+itself carries — and the full account belongs to the `controlplane/` route, which owns that
+module. What follows is only what reached **this** route's own
+files.
+
+**Two processes, two declarations, both at their entry points.** The contract names two concurrent
+writers, `"mcp"` and `"dashboard"`. `mcp/server.py::main` declares the first (L52) and
+`cli/dashboard.py::run` declares the second (L148). Neither declaration sits in the factory beside
+it — not `create_server`, not `create_app` — and that is a correctness constraint rather than taste:
+both factories are called **in-process by the test suite**, and `durable_store._declared` is a
+module-level dict with no reset, so a declaration made there stamps a role onto the interpreter and
+every later test in it. The two entry points run once each, in processes that exist to be exactly
+one of the two things.
+
+State plainly what the declaration buys, because it is easy to over-read: **nothing about
+durability.** Every append and every rewrite of all six logs takes that log's `flock` in every
+process, declared or not. The role decides only who runs a reclaim pass, and makes a *new* writer
+visible inside the two daemons. A process that declares nothing (a CLI run, a test, a script) writes
+these logs unchecked and loses no records.
+
+There is one shipped path where the declaration does not reach the process that serves, and it is
+recorded on the `cli/dashboard.py` card rather than smoothed over: under `--reload`, uvicorn 0.49.0
+serves from a `multiprocessing` **spawn** child, which does not inherit the parent's module globals,
+so the dev-reload dashboard declares no role and counts as compaction owner of every log. The lock
+still covers it — this is an ownership gap, not a durability one — but it falsifies the contract's
+stated reason for treating an undeclared process as owner ("a CLI or test run is nobody's
+competitor"), because a `--reload` dashboard can run against the same coordination root as a live
+MCP server.
+
+**The series contract now carries `schemaVersion`, reusing the durable-record policy rather than
+inventing a second one.** `worktrees/worktree_contract.py` sets
+`CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION` (imported from `controlplane/durable_store.py`),
+`contract_to_text` writes it directly under `schema:`, and `_contract_from_data` refuses an unknown
+**major** through the same `schema_version_supported` the JSONL records read through. Unknown minor
+is accepted; an **absent** `schemaVersion` means 1.0 and is accepted, which is why every contract
+already on disk still loads and why no migration was written. Counted for this pass: 214
+`series-contract.md` files under this workspace's `ar-coordination/tasks/`, **zero** carrying a
+`schemaVersion:` line — so the absent case is not a corner, it is every contract that exists today. Note where this sits in the module's
+read/write asymmetry, since L4's entry above draws that line carefully: it is a **document-level**
+refusal, beside absent front matter and an unrecognized `schema` — not a vocabulary cell, and it
+does not make the total reader any less total. It can only ever fire on a document some other build
+wrote. (It also moved the six vocabulary `Literal`s down twelve lines; the table above is corrected.)
+
+**The external-memory ledger was measured and deliberately left off the contract.** Requirement R12
+asked whether `kernel/memory_ledger.py::write_ledger` — a plain `write_text` with no lock, no
+temp-and-rename and no `fsync` — needed the same treatment. The answer recorded in its docstring is
+**degraded, not unrecoverable**, and it rests on caller facts rather than on a claim about the file:
+all six call sites (`worktrees/modules/closeout.py`, `.../integrate.py`, `.../start.py`,
+`memory/carryover.py` twice, `memory/baseline.py`) `git add memory.md` and commit within the next
+two statements, so the durable authority is the git object and a truncated write costs the
+uncommitted delta; and nothing under `observer/` or `serving/` writes it at all — the dashboard
+imports `load_ledger` and never a writer. The obligation that keeps this true is now an invariant on
+that file's card: **write and commit in the same function.** A caller that defers the commit turns
+"lose a delta" into "lose the mapping history", and the ledger then belongs on the contract with the
+six JSONL logs.
+
 ## Update History
 
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator. Added the L5 route impact for the four files this
+  route governs that the leaf touched — `mcp/server.py`, `cli/dashboard.py`,
+  `worktrees/worktree_contract.py`, `kernel/memory_ledger.py` — and deliberately left the
+  durable-store contract itself to the `controlplane/` route, which owns it. Recorded the
+  entry-point rule for `declare_process_role` and the in-process-factory failure it prevents; the
+  `--reload` spawn-child gap, verified against the installed uvicorn 0.49.0 and a measured
+  spawn-inheritance check rather than assumed from the flag; the series contract's `schemaVersion`
+  and, specifically, that it is a document-level refusal and not a seventh vocabulary cell, so it
+  does not contradict the L4 reader-is-total entry above it; and the R12 ledger ruling with the
+  caller property it depends on. Corrected the L4 vocabulary table's `worktree_contract.py` line
+  reference (50-55 → 62-67), which L5's insertion above those aliases invalidated — read back
+  against the staged file. Also stated the boundary between the lock (unconditional, in every
+  process, what took the loss to zero) and the process role (advisory, opt-in, decides who
+  reclaims), because conflating them is the way this route's story gets mis-told. Verification
+  metadata pinned until closeout stamps the L5 code commit.
 - 2026-08-01T00:00+02:00 — 260731-EFA-L4 curator. Added the L4 route impact: the package now
   declares each wire vocabulary **once, at its producer**, and the response models import it —
   the same shape of guarantee as L3's single git runner, recorded as an invariant beside it.

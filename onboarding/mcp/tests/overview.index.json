@@ -14,6 +14,7 @@
     "mcp/tests/_control_plane.py",
     "mcp/tests/_pi_rpc_capabilities.py",
     "mcp/tests/_scaling.py",
+    "mcp/tests/_store_durability.py",
     "mcp/tests/conftest.py",
     "mcp/tests/fixtures/build_rich_sim.py",
     "mcp/tests/fixtures/claude_stream_json/2.1.207/initialization.jsonl",
@@ -61,6 +62,7 @@
     "mcp/tests/test_context_providers.py",
     "mcp/tests/test_controller_guards.py",
     "mcp/tests/test_controlplane_gates.py",
+    "mcp/tests/test_controlplane_store_durability.py",
     "mcp/tests/test_conversation_active_api.py",
     "mcp/tests/test_conversation_active_capabilities.py",
     "mcp/tests/test_conversation_active_projectors.py",
@@ -92,8 +94,10 @@
     "mcp/tests/test_dispatch_brief.py",
     "mcp/tests/test_dispatch_expectation_rows.py",
     "mcp/tests/test_docker_runtime_parsers.py",
+    "mcp/tests/test_durable_store_contract.py",
     "mcp/tests/test_escalation_ladder.py",
     "mcp/tests/test_expectation_rows.py",
+    "mcp/tests/test_gate_replay_window.py",
     "mcp/tests/test_gate_scope.py",
     "mcp/tests/test_gated_integration_runner.py",
     "mcp/tests/test_git_command.py",
@@ -167,6 +171,7 @@
     "mcp/tests/test_provider_lifecycle.py",
     "mcp/tests/test_provider_runtime_helpers.py",
     "mcp/tests/test_provider_setup.py",
+    "mcp/tests/test_provider_store_durability.py",
     "mcp/tests/test_provider_watcher_actions.py",
     "mcp/tests/test_provider_workflow_integration.py",
     "mcp/tests/test_provider_worktree_routing.py",
@@ -227,8 +232,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 205,
-    "fileSidecars": 215,
+    "sourceFilesInScope": 210,
+    "fileSidecars": 220,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -321,6 +326,7 @@
       "mcp/tests/_control_plane.py",
       "mcp/tests/_pi_rpc_capabilities.py",
       "mcp/tests/_scaling.py",
+      "mcp/tests/_store_durability.py",
       "mcp/tests/conftest.py",
       "mcp/tests/fixtures",
       "mcp/tests/fixtures/build_rich_sim.py",
@@ -338,8 +344,7 @@
       "mcp/tests/fixtures/codex_app_server_0_144_3.json",
       "mcp/tests/fixtures/conversation_runtime",
       "mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json",
-      "mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json",
-      "mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json"
+      "mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json"
     ],
     "anchorHints": [
       "_agent_wire_fixtures.py",
@@ -350,6 +355,8 @@
       "_pi_rpc_capabilities",
       "_scaling.py",
       "_scaling",
+      "_store_durability.py",
+      "_store_durability",
       "conftest.py",
       "conftest",
       "build_rich_sim.py",
@@ -387,9 +394,7 @@
       "test_carryover.py",
       "test_carryover",
       "test_cgc_index_concurrency.py",
-      "test_cgc_index_concurrency",
-      "test_cgc_installation.py",
-      "test_cgc_installation"
+      "test_cgc_index_concurrency"
     ]
   },
   "fallback": {

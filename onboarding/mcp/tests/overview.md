@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-01T14:05+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated | 2026-08-01T19:40+02:00 |
+| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
+| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -390,6 +390,168 @@ drives the production entry point — `TiktokenTokenCounter()`, the statement th
 endings as the original, and patches `tiktoken.load.read_file` with a stub that raises: the refusal
 must land before tiktoken reads anything, which is both the assertion and what stops a regression
 here from actually downloading 3.6 MB over the corrupt copy.
+
+## Durable Store Integrity Gate (260731-EFA-L5)
+
+Nine files in this route changed for one defect: the six control-plane JSONL stores were losing
+appended records. Four suites are new and five existing suites had an assertion replaced. Begin at
+`_store_durability.py` — it is the instrument the numbers came from, and it explains why they can
+be trusted.
+
+**`_store_durability.py` is support code with no assertion in it, and that is the point.** It
+expresses each store as four operations (`open` / `write` / `write_decoy` / `reclaim_now`), where
+`reclaim_now` is always that store's own shipped reclaim entry point and never a reimplementation,
+and drives three scenarios: `stress`, `forced_lost_update`, `forced_unlink`. It now covers **eight**
+stores, not six — the two `providers/` logs have the identical shape and are measured by the
+identical instrument — with `CASES` deliberately held at the six control-plane stores beside a
+separate `PROVIDER_CASES` so the control-plane contract test is not silently widened. Every record
+it writes is one of **three classes**: `survivor-*` (what policy must keep, and the only class the
+accounting counts), `decoy-*` (what policy should drop, so a reclaim tick does real work instead of
+returning early), and `anchor-keepalive` (never prunable, never counted, present so the kept set
+stays non-empty and the tick takes the temp-and-rename path rather than the `unlink` branch). That
+is what makes a reported "loss" mean *a row nobody decided to drop* rather than ordinary
+bounded-store reclamation. Three properties make its output evidence rather than anecdote:
+
+- **Real processes, never threads** (`multiprocessing` with the `fork` context). The defect is
+  cross-process; the GIL would serialise the very window under test.
+- **It is dual-mode, and the second mode is what pins a run to one tree.** Importable by pytest,
+  and executable as a script whose caller sets `PYTHONPATH` to the `mcp/src` it wants measured —
+  the live worktree for the contract assertion, a `git archive` of the leaf's base commit for the
+  reproducible baseline. `_require_source_root` refuses with `SystemExit` if `agents_remember`
+  resolved anywhere else. A measurement that cannot name the tree it measured is worthless, so
+  that guard is fatal rather than a warning.
+- **Loss accounting deliberately does not go through the store's own `read`.** A raw tolerant
+  JSON-lines reader counts "record lost" and "line torn" as two separate quantities, so a strict
+  reader cannot turn a measurement into an exception and a tolerant one cannot report a torn line
+  as a lost record. The appenders journal an id only *after* the store call returned, so anything
+  on that list and not on disk is a record the store accepted and then lost, and a write that
+  raised is counted as an error rather than as a loss.
+
+**The instrument had a defect of its own, and the guard that closed it is the fourth property.**
+The harness derived its work directory — including the reclaimer's **stop flag** — from
+`root.parent`. `test_controlplane_store_durability.py` passes sibling roots under one `self.tmp`,
+so **all cases shared one stop flag**: the first case to finish set it and every case after it left
+the tick loop after roughly one tick. Measured directly before the fix: **25 reclaim ticks for the
+first store and exactly 1 for each of the other seven, with all eight reporting 0.00% loss**. The
+same layout also let the forced scenarios share `forced.id` and the `*.err` files, so a case whose
+appender wrote nothing was scored off its predecessor's receipts. The fix is
+`harness_work_dir(root) = root.with_name(root.name + "-harness")` — a **sibling**, chosen over a
+child because `root` does not name one place: the six control-plane adapters resolve their log
+under `root/workspace`, the two provider adapters under `root/logs/observer/providers`, and
+`GateStore` additionally globs `root/lifecycles/*/gates.jsonl`, while the accounting reads that
+whole tree as raw bytes. The guard is `MIN_RECLAIM_TICKS = 10`, raising `VacuousRunError` at the
+end of `run_stress`, and it lives **in the instrument rather than in either suite**, so the
+control-plane suite, the provider suite and bare `main()` script runs are covered by one floor. The
+floor is evidence-based: real runs give 22-39 ticks idle and 34-49 under 24-way CPU load — load
+*raises* the count, because appender pacing stretches in wall clock while the reclaimer keeps
+polling — so 10 sits an order of magnitude above a vacuous run and under half the lowest of 32
+observed runs; 20 was rejected because the observed minimum is 22, which is no margin. The card
+[`_store_durability.py.md`](_store_durability.py.md) carries the line-level detail.
+
+**The base-commit numbers are quoted, not reproduced here.** `BASE_COMMIT` is `e52edaf5` and
+`STRESS_PROFILE` is 4 appenders × 50 records at 2 ms against 1 reclaimer at 5 ms — both are literals
+in `_store_durability.py` and are checkable. The *rates* are not: **no base-commit measurement
+artifact is committed anywhere in the tree**, `main` can write a JSON payload but none is stored, no
+test asserts a rate, and no committed invocation passes `runs`, so "10 runs per store" is a source
+claim too. Two figures are carried at several independent sites and are quoted on that authority:
+attention dismissals **31.45%** lost (`durable_store.py`, `supervisor_signals.py`,
+`test_durable_store_contract.py`, `test_observer_projection.py`) and gate **11.50%**
+(`durable_store.py`, `store.py`, `test_interaction_retention.py`). The rest come from
+`durable_store.py`'s module docstring alone: supervisor signals 10.50%, expectation rows 10.20%,
+orchestration nudges 9.20%, operator inbox 0.00% (the one store that already took a lock), **127 of
+2000** writes *raising*, and "zero torn lines in every run" — the last being the claim that records
+disappeared whole, which is what would explain why no reader-side validation could have detected
+this.
+
+**Those base-commit rates survived the harness fix, and that is the reassuring half.** Re-measured
+through the same `git archive` under the working harness — four runs each, percentage of records
+the store reported written and then did not have — the leaf's means are attention **23.91%**, gate
+**9.38%**, supervisor-signals **8.00%**, expectation-rows **7.63%**, nudges **7.50%**,
+operator-inbox **0.00%**: the documented ordering store for store, with the same lone survivor at
+exactly zero. They survived because `main`, the entry point base-commit work runs through, already
+built each case a root under its **own** parent, so `root.parent` was distinct there and the stop
+flag was never shared. **The bug never corrupted the historical measurements; it hollowed out the
+ongoing regression**, which is measured against the live tree and was passing over one tick per
+store. Note what those six figures are and are not: they are this leaf's **four-run means and do
+not appear in the source**. The source carries the *ranges* they were taken from, in
+`test_controlplane_store_durability.py::HarnessSensitivityTests`' class docstring — attention
+18.27-30.10, gate 7.50-10.50, supervisor_signal 7.50-9.00, expectation 6.50-9.50, nudge 5.50-9.00,
+operator_inbox 0.00 (all four runs) — and each mean falls inside its own range. A reviewer grepping
+the harness for `23.91` will find nothing, and that is expected rather than drift.
+
+**Against the current tree, what is asserted is narrower than "all six stores, all three
+scenarios"** and is worth reading precisely, because
+`test_controlplane_store_durability.py::MultiProcessDurabilityTests` is where a reader checks it.
+`lost == 0` (with `stragglers == []`) holds in all three scenarios — over six stores in
+`forced_lost_update` and `stress`, and over **five** in `forced_unlink`, which iterates
+`APPEND_CASES`. Attention dismissals is excluded there by construction, not by oversight: it has no
+`append` at all, so it cannot be stranded in an unlinked inode, and that same whole-file
+read-modify-write is why it measured worst. `torn_lines == 0` is asserted in the **`stress` scenario
+only**, as are `append_error_count == 0` and `reclaim_error_count == 0` — the latter two in their
+own stress run against their own root, with the "the run actually happened" guards repeated so a
+zero can never be reported over zero write calls.
+
+The two provider adapters have since landed in the instrument and do **not** widen the counts
+above: the registry is split into `CONTROLPLANE_ADAPTERS` and `PROVIDER_ADAPTERS`, `CASES` stays at
+the six control-plane stores beside a separate `PROVIDER_CASES`, and `APPEND_CASES` still derives
+from `CASES`. The counts above are anchored on those names; verify the names, not the numerals.
+
+`test_controlplane_store_durability.py` turns that into three assertions — no loss (R10), the
+per-store torn-line policy (R8, derived from named call sites rather than from docstrings), and
+sensitivity proven against the base-commit archive (R14, asserting both that the five unlocked
+stores each lose a record *and* that operator-inbox loses none, which is what proves the harness
+is measuring the defect). Loss and raising are asserted separately on purpose: a store that starts
+raising instead of losing has moved the failure, not fixed it. R14 has a second half:
+`HarnessVacuityGuardTests` drives the shipped `run_case` path to a one-tick run and requires
+`VacuousRunError`, then asserts the floor from both sides — above the vacuous run, and below the
+lowest tick count ever measured on this profile. That is the test that proves the refusal above is
+real and reachable rather than a constant nobody consults.
+
+`test_provider_store_durability.py` is the same three assertions over the two `providers/` stores,
+and is a **fifth** new file in this gate that the "nine files / four new suites" count above
+predates. Read it for one thing the control-plane suite cannot show: its `case_root` docstring is
+where the shared-stop-flag defect was first found and worked around locally, before the fix moved
+into the instrument where it also covered the control-plane suite, which had the same layout and no
+workaround.
+
+`test_gate_replay_window.py` states what the loss cost. **The entire defence against spending one
+human approval twice is a single appended record**: `_mark_closeout_gate_applied` appends
+`apply_gate`, and `enforcement.py`'s `applied` branch refuses. No flag, no marker file, no
+timestamp comparison. The counterfactual test deletes *only* that line — asserting the two
+remaining snapshots survive, so the deletion cannot have been indiscriminate — and the same
+approval becomes spendable again. Against the pristine base commit the suite exits 1 with
+`AssertionError: 'approved' != 'applied'`; against the fixed tree it exits 0.
+
+`test_durable_store_contract.py` is the in-process axis the multiprocess harness cannot see: two
+**threads** of one process, which is what the dashboard is. **Read what it claims about the mutex
+before repeating it.** `flock` already excludes two threads of one process — the lock lives on the
+open file description and `exclusive_access` opens a fresh one per non-reentrant acquisition — and
+that was measured, not assumed, so the thread-level lost update was already closed and
+`thread_mutex_for` **is not fixing a reproducible race**. What it closes is that the exclusion
+rested on *where the handle came from*: cache one lockfile handle on the store — the obvious fix
+for an append path that opens two files per record — and every thread shares one description,
+`flock` silently stops excluding, and nothing in the tree fails. The mutex makes the in-process
+half a stated property, and the first test asserts it directly via a non-holding thread's
+`acquire(blocking=False)` probe rather than inferring it from an ordering `flock` alone would
+produce. The re-entrancy case follows: that mutex is a second lock a thread can hang itself on.
+Its unsafe-filesystem tests **fake the filesystem, not the code** — a stand-in whose `flock` is
+accepted and takes no lock, exactly as WSL DrvFs behaves, substituted for `durable_store`'s own
+module reference alone so no other thread in the interpreter loses its locks; every assertion is
+on the raised type, the message text, and what is on disk, including that no log was created.
+
+**The five updated suites all had an assertion that a pruned log stops existing.** That unlink is
+the defect L5 removed: `_replace` called `path.unlink(missing_ok=True)` on an empty kept set, so a
+concurrent appender holding an `"a"`-mode handle wrote into an inode with no remaining links.
+Four of them now assert **emptiness** — `is_file()` true, `read_bytes() == b""` — which is
+strictly stronger, because zero bytes proves the records physically left where a missing file only
+proved a file was removed.
+
+`test_interaction_retention.py` is the exception and is worth reading as one. Its assertion was
+never about absence: it passed only because the base commit physically rewrote every gate log **on
+the projection tick**, which is the behaviour this leaf removed. Restating it as emptiness would
+have restated the removed behaviour. It was split into two proven claims instead — the projection
+leaves the log byte-identical (non-destructiveness, newly asserted and never held anywhere before)
+and `GateStore.compact`, in the owning process, is what empties it.
 
 ## Hot Path Summary
 
@@ -982,6 +1144,40 @@ an `awaiting-developer` lifecycle counted in the total and in no bucket.
 - Ordering between a refusal and a destructive step is asserted through what survives, not through
   call bookkeeping: `MERGE_HEAD` still present after a conflict refusal is what proves the reset has
   not run yet.
+- A durability measurement must not be taken through the instrument it is measuring. Loss is
+  counted from appender receipts against a raw on-disk read, never through a store's own `read`,
+  and "record lost" and "line torn" are counted separately — a strict reader would turn the
+  measurement into an exception and a tolerant one would report tearing as loss.
+- **A measurement must refuse to report a vacuous result.** A loss figure is a figure about a
+  window; open it twice instead of two hundred times and "0 records lost" costs the store nothing
+  to earn. `MIN_RECLAIM_TICKS` / `VacuousRunError` therefore sit **in the instrument**, at the
+  return of the run, and not in any suite — a check each caller has to remember holds only until
+  the next caller, and the script entry point carries no assertions at all.
+- **Sibling roots under one temp directory must remain legitimate.** The harness derives its own
+  scratch space from `root` itself, so no caller has to know anything about it. A guard that
+  instead required callers to pick distinct *parents* would be the same defect rewritten as a
+  convention. Correspondingly, nothing the harness writes for its own bookkeeping may live inside
+  `root`: the accounting reads that tree as raw bytes, and `root` resolves to a different
+  subdirectory per store family, so a sibling is the only rule that holds for all eight adapters.
+- A cross-process defect must be reproduced with real processes. Threads let the GIL serialise the
+  window under test, so a thread-based reproduction of these stores measures nothing.
+- A measurement must name the tree it measured. The harness is pinned to one `mcp/src` through
+  `PYTHONPATH` and refuses fatally if `agents_remember` resolved elsewhere; the base-commit
+  baseline comes from a `git archive`, never a second git worktree under a coordination tree.
+- A prune to nothing is asserted as an EMPTY FILE, never a missing one. `assertFalse(path.exists())`
+  over a control-plane log is the shape 260731-EFA-L5 removed: absence proves a file was deleted,
+  emptiness proves the records left.
+- A projection read must be assertable as non-destructive. Where a test's evidence was produced by
+  a rewrite riding on a read, the repair is to split the claim — the read changes nothing, and the
+  owning process's reclaim entry point is what removes the record — not to restate the removed
+  behaviour in stronger words.
+- The per-log in-process mutex is a STATED exclusion, not a fix for a reproducible thread race.
+  `flock` already excludes threads through the open file description; the mutex removes the
+  dependence of that exclusion on how the handle happened to be opened. Any comment, card or test
+  name asserting it closes an existing race is wrong.
+- Where a platform cannot be mounted, fake the platform and not the code. The unsafe-lock tests
+  substitute an `fcntl` stand-in for one module's reference only, and assert exclusively on raised
+  type, message text and on-disk state — never on the substitution.
 
 ## Docs References
 
@@ -1053,6 +1249,16 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | The runner under test scrubs the selectors on every call, takes `input_text` for `git patch-id` and `DEVNULL` otherwise, and carries `GIT_LOCAL_TIMEOUT_SECONDS` / `GIT_REMOTE_TIMEOUT_SECONDS` / `GIT_METADATA_TIMEOUT_SECONDS` in place of the former hard-coded `timeout=5`. | L24-L96 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 | A child process with every tiktoken cache cold and every socket call blocked starts the real server and counts exactly what the warm parent counts (`ColdStartTests`), and the shipped vocabulary's URL-SHA-1 name and SHA-256 bytes are re-derived from the installed tiktoken rather than restated — plus the `.gitattributes` filename pin and the re-entrant-load deadlock guard (`VendoredVocabularyTests`). | L199-L218; L221-L331 | [test_cold_start.py](agents-remember/mcp/tests/test_cold_start.py) |
 | A vendored copy that is present but *wrong* is refused and left on disk, never deleted-and-refetched the way tiktoken's own `read_file_cached` would: CRLF-mangled, truncated, and a single flipped byte, each against a temporary copy so the shipped file is never mutated (`CorruptVendoredVocabularyTests`). | L334-L417 | [test_cold_start.py](agents-remember/mcp/tests/test_cold_start.py) |
+| The measurement instrument the leaf's numbers came from: eight store adapters over the stores' own reclaim entry points, three scenarios in forked processes, raw on-disk loss accounting that counts lost and torn separately, and the dual-mode script path whose `_require_source_root` refuses to run unless `agents_remember` resolved under the named tree. | adapters L104-L522; registries L525-L545; accounting L553-L578; scenarios L863-L1029; script path L1069-L1149 | [_store_durability.py](agents-remember/mcp/tests/_store_durability.py) |
+| The instrument's own repaired defect and the guard that replaced it: the work directory is now a sibling derived from `root` rather than a child of `root.parent`, so two cases can never share a stop flag, and no stress result is returned unless its reclaimer cleared the tick floor. | `harness_work_dir` L790-L817; `MIN_RECLAIM_TICKS` L826-L841; `VacuousRunError` L844-L845; `_refuse_a_vacuous_run` L848-L860 | [_store_durability.py](agents-remember/mcp/tests/_store_durability.py) |
+| No record reported written is missing afterwards for any of the six record types, loss and raising are asserted separately, the torn-line policy is held per consumer class, and the harness is proven able to detect the defect against a `git archive` of the base commit — including that operator-inbox, the one store that already locked, loses nothing. `HarnessVacuityGuardTests` is the second half of R14 and its `HarnessSensitivityTests` docstring carries the four-run base-commit RANGES the leaf's means were taken from. | R10 L119-L201; R8 L204-L332; vacuity L335-L378; sensitivity L380-L435 | [test_controlplane_store_durability.py](agents-remember/mcp/tests/test_controlplane_store_durability.py) |
+| The provider durability suite, the second consumer covered by the instrument's in-module tick floor; its `case_root` docstring is where the shared-stop-flag defect was first discovered and worked around before being fixed at the source. Cited by symbol: the file still carries unstaged edits. | `ProviderStoreDurabilityTests`; `case_root` | [test_provider_store_durability.py](agents-remember/mcp/tests/test_provider_store_durability.py) |
+| One human approval is consumable exactly once, and the counterfactual proves the whole defence is one appended record: delete only the `applied` line and the same approval is spendable again. | L130-L145; L147-L174; L176-L205 | [test_gate_replay_window.py](agents-remember/mcp/tests/test_gate_replay_window.py) |
+| The in-process axis: the mutex asserted directly rather than inferred from `flock`, re-entrancy across both locks, the unsafe-filesystem refusal with the filesystem faked at the `fcntl` boundary, the `schemaVersion` major/minor policy, and failed-rewrite temp cleanup. | L11-L20; L152-L349; L352-L414; L417-L503; L632-L708 | [test_durable_store_contract.py](agents-remember/mcp/tests/test_durable_store_contract.py) |
+| The contract the four suites are named after: what prevents loss (the unconditional lock) stated apart from what merely documents (advisory ownership), the rewrite that never unlinks, and the record validator that gives both read policies their behaviour with no version branch in either. | `exclusive_access`, `rewrite_lines`, `require_lock_held`, `thread_mutex_for`, `DurableRecord` | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The projection tick this leaf stopped rewriting on — the reclaim pass that ran in a process owning nothing here, and the source of the measured gate-log loss. | `read_gates` L514-L537 | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| The four suites whose "the log stops existing" assertion became "the log is empty", plus the one whose assertion was split in two because it had been reading a side effect of the removed rewrite. | interaction retention L30-L75; projection L1504-L1538; packaged assets L419-L445; serving L1412-L1445 | [test_interaction_retention.py](agents-remember/mcp/tests/test_interaction_retention.py); [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py); [test_packaged_assets_and_context_values.py](agents-remember/mcp/tests/test_packaged_assets_and_context_values.py); [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The worktree contract's front matter read under the same major/minor rule as the JSONL records, through the same helper, so the two version policies cannot drift. | `ContractSchemaVersionTests` L84-L145 | [test_worktree_contract_lifecycle.py](agents-remember/mcp/tests/test_worktree_contract_lifecycle.py) |
 
 ### Route Contract Review
 
@@ -1105,6 +1311,115 @@ repaired and remains a named follow-up.
 The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
 
 ## Update History
+
+- 2026-08-01T19:40+02:00 — 260731-EFA-L5 curator. The Durable Store Integrity Gate section named
+  three properties that make the instrument's output evidence and **was silent about the instrument's
+  own defect**, which is the property that failed. Added the fourth: the harness derived its work
+  directory — including the reclaimer's **stop flag** — from `root.parent`, and
+  `test_controlplane_store_durability.py` passes sibling roots under one `self.tmp`, so all cases
+  shared one flag and every case after the first left the tick loop after roughly one tick.
+  Measured before the fix: **25 reclaim ticks for the first store and exactly 1 for each of the
+  other seven, all eight reporting 0.00% loss**; the forced scenarios additionally shared
+  `forced.id` and the `*.err` files, so a case whose appender wrote nothing was scored off its
+  predecessor's receipts. Recorded the fix as
+  `harness_work_dir(root) = root.with_name(root.name + "-harness")` — a **sibling**, because `root`
+  does not name one place (control-plane logs under `root/workspace`, provider logs under
+  `root/logs/observer/providers`, `GateStore` also globbing `root/lifecycles/*/gates.jsonl`) while
+  the accounting reads that whole tree as raw bytes — and the guard as `MIN_RECLAIM_TICKS = 10`
+  raising `VacuousRunError` at the end of `run_stress`, **in the instrument rather than in either
+  suite**, so both contract suites and bare `main()` runs share one floor. The floor's evidence is
+  recorded with its direction: 22-39 ticks idle, 34-49 under 24-way load, load *raising* the count,
+  with 20 rejected because the observed minimum is 22. **The reassuring half is recorded beside
+  it:** the documented base-commit rates survived, re-measured at attention 23.91% / gate 9.38% /
+  supervisor-signals 8.00% / expectation-rows 7.63% / nudges 7.50% / operator-inbox 0.00% — same
+  ordering, same lone survivor — because `main` already built each case a root under its own
+  parent. The bug never corrupted the historical measurements; it hollowed out the ongoing
+  regression. Those six figures are **labelled as the leaf's four-run means that do not appear in
+  the source**, with the source's *ranges* named and located
+  (`HarnessSensitivityTests`' class docstring) and each mean checked to fall inside its range. Two
+  invariants added: *a measurement must refuse to report a vacuous result*, and *sibling roots under
+  one temp directory must remain legitimate* — a guard demanding distinct parents would be the same
+  defect rewritten as a convention. **Drift repaired:** the section described the instrument as
+  covering six stores and carried the provider adapters as unstaged mid-flight work; they have
+  landed, so it now says eight with `CASES` / `PROVIDER_CASES` held apart, and the three record
+  classes (`survivor-*` / `decoy-*` / `anchor-keepalive`) are stated because they are what make
+  "loss" mean a row nobody decided to drop. The two `_store_durability.py` and
+  `test_controlplane_store_durability.py` evidence rows carried ranges from shorter versions of both
+  files and were re-derived; rows were added for the instrument's fix/guard and for the provider
+  suite. **Citations:** every range was opened and checked against each symbol the row names, ends
+  included. `_store_durability.py` (now 1153 lines) and `test_controlplane_store_durability.py` are
+  staged with no unstaged edits and are cited by line; `test_provider_store_durability.py` still
+  carries unstaged edits and is cited **by symbol name only**, as are all `controlplane/` and
+  `providers/` source modules. Verification metadata untouched; closeout owns it.
+- 2026-08-01T19:10+02:00 — Measured-claim repair in the Durable Store Integrity Gate section; nothing
+  about the instrument's three trustworthiness properties, the torn-line policy, the replay-window
+  counterfactual or the mutex was touched, because it was right. The section asserted six
+  base-commit loss rates, "127 of 2000", "10 runs per store" and "zero torn lines in every run" as
+  measurements, and closed with "0 lost, 0 raised, 0 torn, all six stores, all three scenarios"
+  against the current tree. **No base-commit measurement artifact is committed anywhere in the
+  tree** — `_store_durability.py::main` can write a JSON payload but none is stored, no test asserts
+  a rate, and no committed invocation passes `runs` — so that is now stated once and the rates are
+  separated from what *is* checkable. `BASE_COMMIT = e52edaf5` and the `STRESS_PROFILE` literals
+  (4 × 50 @2 ms against 1 reclaimer @5 ms) stay asserted, because they are literals in the file.
+  31.45% and 11.50% stay asserted, on the authority of four and three independent sites
+  respectively. 10.50 / 10.20 / 9.20 / 0.00%, 127 of 2000, "10 runs per store" and the whole-not-torn
+  property are attributed to `durable_store.py`'s module docstring, which is the text these cards
+  document. **The post-fix claim was overstated on two axes and is corrected against the test
+  source, citing the class:** `MultiProcessDurabilityTests` asserts `lost == 0` in all three
+  scenarios, but `forced_unlink` iterates `APPEND_CASES` — **five** stores, attention dismissals
+  excluded by construction because it has no `append` — and `torn_lines == 0`,
+  `append_error_count == 0` and `reclaim_error_count == 0` are asserted in the **`stress` scenario
+  only**. Recorded as mid-flight, not as landed: `_store_durability.py` carries unstaged edits
+  adding two provider adapters, which do not widen those counts because the working tree keeps
+  `CASES` at the six control-plane stores beside a separate `PROVIDER_CASES`. The R14 sentence
+  beneath it was already exact and was left alone. The 14:20 entry below
+  carried the same six-rate list and was reduced to a pointer at this entry. Verification metadata
+  untouched; closeout owns it.
+- 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator. Nine files in this route changed for one defect —
+  measured record loss in the six control-plane JSONL stores — and **four of them are new**, so the
+  card gained a section, nine invariants and nine evidence rows. **Durable Store Integrity Gate**
+  documents the four new suites with the instrument first, because the numbers depend on it:
+  `_store_durability.py` holds no assertion at all, expresses each store through its own shipped
+  reclaim entry point rather than a reimplementation, and is trustworthy for three stated reasons —
+  real processes via `multiprocessing` fork (the defect is cross-process; the GIL would serialise
+  the window), **dual-mode** operation where a script run pins `PYTHONPATH` to exactly one
+  `mcp/src` and `_require_source_root` refuses fatally if `agents_remember` resolved elsewhere
+  (which is what let it measure a `git archive` of the pristine base commit), and **loss accounting
+  that deliberately bypasses every store's own `read`** — a raw tolerant JSON-lines reader counting
+  "record lost" and "line torn" separately, so a strict reader cannot turn a measurement into an
+  exception and a tolerant one cannot report tearing as loss. Recorded the baseline the sources
+  report at `e52edaf5` against the checkable `STRESS_PROFILE` literals (4 appenders × 50 records
+  @2 ms against 1 reclaimer @5 ms) — corrected by the 19:10 entry above, which splits those rates by
+  corroboration and restates the post-fix claim at its true strength.
+  Recorded `test_controlplane_store_durability.py`'s three claims (R10/R8/R14, with loss and
+  raising asserted separately because a store that raises instead of losing has moved the failure),
+  `test_gate_replay_window.py`'s counterfactual (the whole defence is one appended record; delete
+  only the `applied` line and the approval is spendable again — base commit exits 1 with
+  `AssertionError: 'approved' != 'applied'`, fixed tree exits 0), and
+  `test_durable_store_contract.py`'s in-process axis. **The mutex is documented as what it is and
+  not as a race fix:** `flock` already excludes two threads of one process through the open file
+  description, that was measured rather than assumed, and `thread_mutex_for` closes the
+  *dependence of thread exclusion on where the handle came from* — cache one lockfile handle on the
+  store and `flock` silently stops excluding, with nothing in the tree failing. Its
+  unsafe-filesystem tests fake the **filesystem** at the `fcntl` boundary, scoped to one module's
+  reference, and assert only on raised type, message text and on-disk state. Recorded that the five
+  updated suites replaced "the pruned log stops existing" with emptiness (`is_file()` +
+  `read_bytes() == b""`), which is strictly stronger since zero bytes proves the records left
+  rather than that the file did — and that `test_interaction_retention.py` is the **exception**:
+  its assertion had been reading a side effect of the projection tick's physical rewrite, the very
+  behaviour the leaf removed, so it was split into two proven claims (the projection leaves the log
+  byte-identical — newly asserted — and `GateStore.compact` in the owning process empties it)
+  rather than restated. Added nine invariants covering measurement independence, real processes,
+  naming the measured tree, emptiness-not-absence, splitting a claim whose evidence was a removed
+  side effect, the mutex's exact scope, and faking a platform rather than the code. Added nine
+  Repo-Internal rows. **Citations:** every added row's range was opened and checked against each
+  symbol the row names, ends included; the four new suites' self-ranges are stable (none of the
+  nine test files carries unstaged edits). Six control-plane source modules
+  (`durable_store.py`, `store.py`, `attention_dismissals.py`, `expectation_rows.py`,
+  `orchestration_nudges.py`, `supervisor_signals.py`) were still being edited in the code worktree
+  during this pass, so rows pointing into them are cited **by symbol name** rather than by line
+  range; the symbol is the durable anchor and closeout should treat the linked file cards as
+  authoritative for line numbers. Verification metadata pinned until closeout stamps the L5 commit.
 
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), one clause. The 00:50 entry below
   said `response_model` "enforces nothing on the 59 handlers that return a `Response`", which
