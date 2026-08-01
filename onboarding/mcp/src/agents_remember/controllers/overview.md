@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/controllers/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:26+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -90,7 +90,14 @@ nested object for every client.
   `worktrees`, `memory_quality`, `memory`, `benchmarks`, and `install`.
 - Response shape validation happens after controller return through the model
   registry (`models/tool_registry.py`), applied by the `mcp/tools/` payload
-  builders.
+  builders. That is the LAST line of defence, not the only one: when a collaborator
+  already returns a model or a `TypedDict`, a controller passes it through rather than
+  re-validating an untyped dump (260731-EFA-L4) — a `ValidationError` raised at
+  `model_validate` inside a controller lands on the tool path, where nothing catches it,
+  whereas a type mismatch at the producer is a pyright error before the code ships.
+- A vocabulary a controller decides is declared in the controller that decides it, and
+  imported by the wire model, not retyped there (260731-EFA-L4; `read_files.FileReadStatus`
+  is the worked example).
 
 ## Invariants And Boundaries
 
@@ -116,6 +123,9 @@ L14: the task-doc controller accepts the additive `orchestrates` field (master-o
 | MCP payload builders call these controllers and then validate responses through the model registry. | [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/) |
 | Public tool response models live in the models package. | [models overview](../models/overview.md) |
 | `route_index_refresh_tool` resolves context and supplies repository/storage authority to the deterministic builder. | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py); [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
+| `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | [worktrees/status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
+| `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. | [onboarding_drift_check/models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
+| The wire model that imports `read_files.FileReadStatus` rather than declaring its own copy. | [models/read_files.py](agents-remember/mcp/src/agents_remember/models/read_files.py) |
 
 Worktree start is async (GitHub #53): `worktree_tools.py` transfers the temp
 lifecycle settings file to the background setup thread on a `starting` result,
@@ -151,8 +161,64 @@ boot snapshot (the worktree itself is still created). `benchmark_tools.py`
 passes the live authority's provider ids as `allowed_provider_ids` on both
 benchmark requests, so a case manifest cannot arm providers disabled on disk.
 
+## 260731-EFA-L4 — Typed Seams Where A Controller Meets A Producer
+
+Two controllers stopped re-validating something a collaborator already returned in a checked
+form. The rule is the same in both: a `ValidationError` from `model_validate` inside a
+controller surfaces from inside an `@server.tool()` handler that has no `except` for one, so
+where a producer can be made to hand over a typed value, the mismatch becomes a pyright error
+at the producer instead.
+
+**`context_packet.py`.** `worktree=` is now `worktree_status_packet(context.contract_path)`
+directly — the projection in `worktrees/status.py` is signed `-> WorktreeSummary` and
+constructs the model itself, so the previous
+`WorktreeSummary.model_validate(worktree_status_packet(...))` was validating a model's own
+dump. This is the controller-side half of a real defect: `models/worktree.py` had hand-copied
+six contract vocabularies that had each drifted from the contract's own, and the resulting
+`ValidationError` fired here, inside the tool. `test_wire_vocabulary_exhaustiveness.py` records
+the measurement — 165 of the 213 `series-contract.md` files on disk (77.5%) made
+`context_packet` raise, across seven independent gaps. The vocabulary fix lives in the `models/`
+route; what this route contributes is that the seam is now checked at the producer rather than
+at runtime here. `_drift_packet` is correspondingly annotated
+`-> DriftSummaryPacket` (from `memory_quality.integrity.onboarding_drift_check.models`) instead
+of `-> dict[str, Any]`, so both of its returns — `not_checked()` and `run_drift_summary(...)` —
+are checked against the shape `models/drift.py` expects.
+
+**`read_files.py`** becomes the declaring owner of `FileReadStatus`
+(`Literal["found", "missing", "disabled", "unsupported", "not_requested"]`), which
+`models/read_files.py` now imports instead of keeping its own copy. `_resolve_onboarding` is the
+only function that decides the value and is annotated
+`-> tuple[FileReadStatus, str | None, bool]`, which matters because it puts the status into an
+untyped payload dict — a copy on the model side would only be measured against the producer
+when a real read carried a new member, as a `ValidationError` on the tool path.
+`VALID_FILE_READ_STATUSES = frozenset(get_args(FileReadStatus))` is the runtime half, derived
+from the alias rather than typed beside it. Note the import direction: this is a `models/` →
+`controllers/` edge, the reverse of the usual layering, and it is deliberate — the deciding
+function is the single writer. It creates no cycle; `controllers/read_files.py` does not import
+`models.read_files`.
+
+The `read_ar_files` status semantics are unchanged and still worth restating, because the alias
+now carries them: this is the ONBOARDING lookup outcome, never a source-read condition. Source
+presence rides the independent `source` field, which is why `found` alongside a missing
+`source` is not a contradiction.
+
 ## Update History
 
+- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** Added the route-impact
+  section above for the two changed controllers, plus two invariants the route now follows but did
+  not state: pass through a collaborator's already-checked value instead of re-validating its dump
+  (because a `ValidationError` inside a controller lands on the uncaught tool path), and declare a
+  controller-decided vocabulary in the controller and let the wire model import it. Recorded
+  `context_packet.py`'s `worktree=worktree_status_packet(...)` passthrough — verified
+  `worktrees/status.py:worktree_status_packet` is signed `-> WorktreeSummary` — and `_drift_packet`'s
+  `-> DriftSummaryPacket` annotation. Recorded `read_files.py` as the new home of `FileReadStatus`
+  and `VALID_FILE_READ_STATUSES`, with `_resolve_onboarding` typed to it, and flagged the
+  models→controllers import direction explicitly with the no-cycle check I actually ran (imported
+  `agents_remember.models.read_files` standalone; `controllers/read_files.py` has no
+  `models.read_files` import). The 165-of-213 figure is quoted from
+  `test_wire_vocabulary_exhaustiveness.py`'s module docstring, which is where it is measured; the
+  vocabulary repair itself is a `models/` route fact and is documented there. Added three reference
+  rows to the 2-column table. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: added the **Parameter Objects** section — the new
   `task_ref.py` module and the concept types each controller now defines — and corrected the Route
   Model's transport line: the `@server.tool()` declarations left `server.py` for the new

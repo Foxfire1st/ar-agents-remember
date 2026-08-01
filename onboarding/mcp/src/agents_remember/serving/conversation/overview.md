@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 
 ## What This Area Is
 
@@ -77,6 +77,7 @@ implemented control slice by `control/overview.md`.
 | Path | Role |
 | --- | --- |
 | `models.py` | Stable strict wire vocabulary and authority-product validation. |
+| `response_contract.py` | The declared HTTP response contract for the 25 conversation routes: the three route-assembled shapes `models.py` never held, and the six shared `responses=` tables. |
 | `ports.py` | Exactly two read protocols: active conversation and dormant native library. |
 | `runtime.py` | The immutable app-scoped authority bundle, installed exactly once per app. |
 | `authorization.py` | Server-resolved local single-user operator ruling; loopback-only, fail closed. |
@@ -216,13 +217,14 @@ composition and authorization contract suites.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. | L25-L199; L311-L426 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| Canonical status, capability evidence, open rollback, withdrawal recovery, library agent rows, and fixture non-promotion are fail-closed products. | L429-L552; L640-L737; L755-L775; L811-L912; L983-L1097; L1245-L1262 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. | L429-L562; L655-L752; L775-L795; L831-L932; L1003-L1117; L1265-L1282 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | Exactly two read ports separate active exact-session reads from dormant native library reads. | L27-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
-| Three behavior-empty child routers compose through one stable root that now also installs the one runtime. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
+| Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
 | The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. | L47-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
 | The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | L48-L105 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
 | The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The production composition constructs the one runtime from existing authorities and installs it exactly once. | L144-L162 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | L752-L770; L182-L195 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py); [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. | L57-L88; L95-L210 | [conversation/response_contract.py](agents-remember/mcp/src/agents_remember/serving/conversation/response_contract.py) |
 | The foundation suite verifies two-port topology, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper pins, and fixture non-promotion. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
 | The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | L113-L252 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
 | The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
@@ -252,6 +254,7 @@ external citation.
 | --- | --- | --- | --- |
 | `__init__.py` | [`__init__.py.md`](__init__.py.md) | covered | Public route-registration facade. |
 | `models.py` | [`models.py.md`](models.py.md) | covered | Stable normalized grammar and authority guards. |
+| `response_contract.py` | [`response_contract.py.md`](response_contract.py.md) | covered | Declared HTTP response contract for the conversation surface. |
 | `ports.py` | [`ports.py.md`](ports.py.md) | covered | Exact two-port read boundary. |
 | `runtime.py` | [`runtime.py.md`](runtime.py.md) | covered | Immutable app-scoped composition authority. |
 | `authorization.py` | [`authorization.py.md`](authorization.py.md) | covered | Server-resolved local-operator ruling. |
@@ -385,8 +388,93 @@ only correct together stop being separate parameters.** This route's own job —
 boundary — is unchanged by that, and none of these values belong in `models.py`: they are internal
 call shapes, not wire contracts.
 
+## 260731-EFA-L4 — The Contract Grew A Declaration Layer, And Four Models Learned To Validate Their Own Wire
+
+**The wire this route defines did not change. Six field declarations did, and the reason is exact.**
+
+`models.py`'s serializers dump with `exclude_none=True` — active and control both call
+`model_dump(mode="json", by_alias=True, exclude_none=True)`. A `None` is therefore DROPPED from the
+emitted body, not written as a null. Six fields across four models were nullable but **required**,
+so the model could not validate a body it had itself produced. That was invisible until the routes
+started declaring these models and the conformance suite fed real responses back through them.
+Each is now nullable **and** defaulted to `None`:
+
+| Model | Fields |
+| --- | --- |
+| `StatusFreshness` | `last_evidence_at`, `age_ms` |
+| `ConversationTurnStatus` | `turn_id`, `state_since` |
+| `ConversationEventEnvelope` | `previous_cursor` |
+| `ConversationPageWindow` | `older_cursor` |
+
+**The emitted bytes are unchanged** — the absent key already meant exactly this `None`. What changed
+is that the model now accepts its own output, which is the precondition for any of it being checked.
+A later leaf that makes one of these required again breaks nothing on the wire and everything in
+`test_serving_response_conformance.py`.
+
+### `response_contract.py` — a second contract module, and why the split is structural
+
+The new `serving/conversation/response_contract.py` exists because everything in it needs
+`conversation/models.py`, and importing that from the app-level `serving/response_contract.py` would
+pull in the `serving.conversation` package — whose `__init__` mounts the routers, which import the
+contract back. `serving/app.py` registers the files/change-set/notes routes before the conversation
+ones, so the app-level module must stay importable first. **The seam is the package boundary, not a
+convenience**; do not "tidy" the two modules into one.
+
+All 25 conversation routes already DUMPED a strict `WireModel`, so a model existed for nearly every
+body — but not one route *declared* it, and three bodies are assembled at the route and had no model
+at all. Those three are now declared here: `StagedAttachments` (the attachment operation plus its
+receipts), `ConversationSubmitted` (one body shape across 200/202/422), and `AgentHistoryHydrated`
+(a typed child failure carried inside a successful 200). `WithdrawQueueAnswer` names the
+withdrawn-or-failed union. Everything else reuses the models the handlers already dump.
+
+Six `responses=` tables live here, and they divide by who chooses the status:
+
+- `CONTROL_RESPONSES` / `CONVERSATION_RESPONSES` / `LIBRARY_RESPONSES` are the **refusal** surfaces,
+  transcribed from the one mapper each child owns (`control/api._map_typed_error`,
+  `library/api._ERROR_STATUS_TABLE` + `_error_response`). Because there is exactly one mapper per
+  child, one table per child is the COMPLETE refusal surface of that child's routes.
+- `INTERRUPT_OUTCOME_RESPONSES` / `WITHDRAW_OUTCOME_RESPONSES` / `OPEN_OUTCOME_RESPONSES` are
+  **outcome** tables: statuses the route picks from the operation's own outcome, where the body is
+  the operation and not a refusal. A `pending` open, an acknowledged-but-unsettled interrupt and a
+  failed withdrawal are all this route's own answers.
+
+**The trap that these tables encode, and that a future editor will re-hit:** the child APIs spread
+them with `{**SHARED, **OUTCOME}`, and that is a **dict merge, not a union**. A bare
+`{409: OpenConversationOperation}` entry *deletes* `LIBRARY_RESPONSES[409]` instead of joining it,
+declaring on nine (route, status) pairs a model the route cannot produce. Every outcome-table entry
+therefore unions in the refusal model the shared table declares for the same status. The
+conformance suite caught the un-unioned version on a real 422 from the interrupt route.
+
+The wire grammar, the two-port split, the `ConversationRuntime` composition, the local-operator
+authorization ruling and the three child prefixes are all unchanged.
+
 ## Update History
 
+- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the two source changes in this route.
+  (1) Six fields across four `models.py` models became nullable AND defaulted, because the
+  serializers dump `exclude_none=True` and a required-but-nullable field made those models unable to
+  validate their own emitted body — the emitted bytes are unchanged. (2) The new
+  `conversation/response_contract.py` declares the 25 routes' responses; recorded why the module
+  split is an import-cycle boundary rather than a preference, which three bodies had no model at
+  all, how the six tables divide into refusal surfaces and outcome surfaces, and the
+  `{**a, **b}`-is-a-merge trap the outcome tables exist to work around. Added the module to
+  `What Belongs Here`, the file-level map and the reference table. Repaired 7 line citations. Six in
+  the fail-closed-products row, all moved by the `models.py` edits (+5/+10/+15/+20 by band):
+  canonical status L429-L552 → L429-L562 (now reaches `ConversationStatus.reject_false_ready`, which
+  the old end cut off), capability evidence L640-L737 → L655-L752 (`CapabilityEvidence` →
+  `ConversationCapabilities`), library agent rows L755-L775 → L775-L795
+  (`ConversationLibraryAgentRow`, previously only its `class` line), open rollback L811-L912 →
+  L831-L932 (`OpenConversationOperation` including `_phases_by_outcome`, `_failure_rollbacks` and
+  `require_coherent_rollback`, which the old end cut off), withdrawal recovery L983-L1097 →
+  L1003-L1117 (`AttachmentRecoveryRef` → `PendingWithdrawalRecoveryList`), fixture non-promotion
+  L1245-L1262 → L1265-L1282 (`RuntimeFixtureObservation`/`RuntimeFixtureEvidence`, whose
+  `enables_capabilities: Literal[False]` is at L1281). Seventh: the composition row cited
+  `harness_control_api.py` L144-L162, which is `resolve_terminal_open_selection` and was wrong
+  BEFORE this leaf; the claim was also wrong on its face — construction happens in
+  `app.py::create_app` (L752-L770), and `harness_control_api.py` L182-L195 is where the single
+  `register_conversation_routes(app, runtime)` install call sits. Corrected the router row's
+  "three behavior-empty child routers", contradicted by this same file's own text. Verification
+  metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The
   fail-closed-products row's four ranges no longer covered the products it names, so it now cites
   each one exactly in `models.py`: canonical status L429-L552 (`CanonicalStatusEvidence`,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T01:14+02:00                           |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-01T11:50+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,10 +45,25 @@ demand, so this branch preserves the suite's isolation while leaving notes API a
   drives select-master → open-note → **Back** → re-open and asserts the reader node is the SAME element
   (hidden-not-unmounted → selection survives back/forward, the File Viewer property).
 
+### Cockpit seed fixtures
+
+`masterDoc()` + `seedMaster()` build the one-master projection the takeover cases select a row from.
+Both are **typed against the mirror, not cast**: `masterDoc()` returns a `TaskDocNode` outright (its
+trailing `as unknown as TaskDocNode` is gone) and `seedMaster()`'s projection ends in
+`satisfies WorkspaceProjection`. That distinction matters more here than on a shared fixture, because
+these are hand-written literals — the double cast was the only thing between them and the mirror, and
+it made the seed immune to contract change: a new required `Analytics` field failed fifteen other
+files and not this one. `metrics` is now `metricsFor([])` rather than a hand-listed bucket literal, so
+a new lifecycle state adds a required bucket that this seed derives instead of missing.
+(`Analytics.agentPickups` and `.expectationRows` are optional in the mirror, which is why the
+deliberately short `analytics` literal still satisfies the type.)
+
 ### Invariants And Boundaries
 
 Fetch is stubbed per-URL (`/api/notes/list`, `/api/notes/read`; a `{repos:[]}` fallback keeps the hidden
-File Viewer layer happy). No real network, no store mutation beyond the seeded projection.
+File Viewer layer happy). No real network, no store mutation beyond the seeded projection. The seed
+must stay cast-free: a fixture that cannot fail when the projection contract moves stops describing the
+contract the day it moves.
 
 ## Cross-Repo References
 
@@ -64,8 +79,31 @@ No meaningful cross-repo references found.
 | --- | --- |
 | The component under test. | [notes-reader/NotesReaderViewer.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.tsx) |
 | The shell driven by the takeover-wiring test. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
+| `masterDoc` (L188-L210) and `seedMaster` (L211-L226) — the cast-free seed and its `satisfies WorkspaceProjection`. | [notes-reader/NotesReaderViewer.test.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx) |
+| `TaskDocNode` (L418-L447), `Analytics` (L663-L678) with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection` (L711-L726), and `metricsFor` (L250-L257). | [types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
 
 ## Update History
+
+- 2026-08-01T11:50+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
+  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
+  every anchor below it. Re-anchored the four inline ranges in the mirror row, each on its proving
+  symbol: `TaskDocNode` L381-L410 → L418-L447, `Analytics` L626-L641 → L663-L678 (optional
+  `agentPickups` L670 / `expectationRows` L672), `WorkspaceProjection` L674-L689 → L711-L726, and
+  `metricsFor` L213-L220 → L250-L257. Table stayed two columns; no body claim changed.
+
+- 2026-08-01T11:45+02:00 — 260731-EFA-L4 curator: the body described the rail, content pane, back and
+  takeover cases but said nothing about the projection seed those takeover cases depend on, which is
+  exactly where this leaf's change landed. Added the seed-fixture section: `masterDoc()` lost its
+  `as unknown as TaskDocNode` and `seedMaster()` its `as unknown as WorkspaceProjection` in favour of
+  `satisfies`, and `metrics` moved from a hand-listed bucket literal to `metricsFor([])`. Checked the
+  thing that could have made that consequential — whether the newly-enforced typing changed any seeded
+  value the takeover assertions read. It did not: the `masterDoc` literal is unchanged field-for-field
+  (the cast was gratuitous over an already-complete node), and `metricsFor([])` is a superset of the old
+  six-field literal, which no assertion here reads. Also verified why the short `analytics` literal
+  still compiles under `satisfies` — `Analytics.agentPickups` and `.expectationRows` are optional in the
+  mirror (L633-L635) — and recorded it, since that is the one thing that would otherwise look like a
+  type error. Added the cast-free-seed boundary and two two-cell reference rows (this table is
+  consistently two columns; the line ranges ride inside the Finding cell rather than adding a third).
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13: extended the notes-reader fetch fixture for the
   on-demand task-document body endpoint used by the embedded detail reader. Verification metadata

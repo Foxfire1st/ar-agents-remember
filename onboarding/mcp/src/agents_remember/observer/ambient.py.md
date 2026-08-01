@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-31T00:00+02:00                      |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T00:28+02:00                      |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -31,7 +31,7 @@ the request thread both append to the same single-writer per-lifecycle log.
 Signals: `start` (guarded — raises `GuardedStartError` while a lifecycle is
 active; mints the id, becomes `running`, emits `lifecycle.started`, starts the
 ticker, sweeps); `block` (`running`→`blocked`, carrying an optional structured
-ask via `build_ask`); `resume` (`blocked`→`running`); `end` (emits
+ask via `build_ask`); `resume` (`blocked`→`running`); `end` (L237-L268 — emits
 `lifecycle.ended` *before* clearing the ambient, so the end call's own
 `tool.completed` is dropped — the terminal signal is the record — and returns the
 terminal snapshot); `phase` (orthogonal phase move); `switch` (leave the current — persistent paused
@@ -47,6 +47,34 @@ current lifecycle.
 Task 25 keeps `block` as the ambient state-machine operation used by the unified
 `lifecycle_gate` public tool and by the retained lower-level compatibility
 builder; `build_ask` remains the single ask-shape constructor for both paths.
+
+**260731-EFA-L4: `end` no longer holds a copy of the terminal vocabulary.** This
+module was the last hand-written copy of the live/terminal split. `end` used to
+carry BOTH halves of the classification itself — a literal accept-tuple
+`if outcome not in ("completed", "abandoned")` and then a separate outcome→state
+conditional `terminal: State = "completed" if outcome == "completed" else "abandoned"`
+— which is a copy, and a copy fails silently: a third terminal state would be one
+the reducer projects and no session could write, and a renamed one would pass the
+guard and then be mapped to the wrong state by the conditional. Both halves now
+read `lifecycle_state`: the guard is `if outcome not in TERMINAL_STATES:` (L254,
+its message built from `'|'.join(sorted(TERMINAL_STATES))` at L256) and the
+conversion is `terminal = coerce_end_outcome(outcome)` (L261). Membership is
+already established by the guard, so that call is the identity conversion — it is
+made anyway, rather than `cast`, so the outcome→state rule has exactly one owner
+and the write side reads it from the same function the reducer's `_ended_updates`
+does.
+
+The **asymmetry is deliberate**: `coerce_end_outcome` defaults an unrecognized
+outcome to `abandoned`, but `end` refuses one. That leniency exists for the
+reducer, which reads logs it did not write; a session ending *itself* must not
+have a typo silently recorded as an abandonment.
+
+One literal `"abandoned"` deliberately remains, in the `discard` branch of
+`_leave_current_locked` (L508): that branch is *naming one outcome*, not
+classifying, so the literal is the decision. It is deliberately not
+`DEFAULT_END_OUTCOME`, which is the separate policy for coercing a free-form
+outcome at the tool boundary — discard would follow that constant anywhere it
+moved, and there is no reason it should.
 
 Task 28 adds the **NOTIFY-AND-CONTINUE turn end** — the new ACTIVE turn-end path,
 modeled on `block`/`resume` but with no gate and no wait: `await_developer(*,
@@ -142,6 +170,16 @@ existing seam rather than adding a second one.
 - **The model never handles ids.** `start` is guarded; ids are minted and tracked
   server-side; `switch`/`attach` carry a target reference resolved from the
   worktree contract server-side, never a raw id from the model.
+- **This module states no terminal vocabulary of its own (260731-EFA-L4).** `end`
+  reads `TERMINAL_STATES` for the guard and `coerce_end_outcome` for the
+  conversion; a new terminal state is added by filing it on `lifecycle_state`'s
+  terminal half and nothing here changes. The one surviving `"abandoned"` literal
+  (the `discard` branch, L508) names a single outcome as a decision and is not a
+  classification — do not route it through `DEFAULT_END_OUTCOME`.
+- **The write side refuses; the read side coerces.** `end` raises
+  `LifecycleError` on an unknown outcome even though `coerce_end_outcome` would
+  have defaulted it. Keep that asymmetry: the reducer reads foreign logs, a
+  session ends only itself.
 - **Two resume paths, two guards (task 28).** `resume` resumes only `blocked` (the
   parked gate stack); `resume_from_await` resumes only `awaiting-developer`. They
   are kept separate so the NOTIFY-AND-CONTINUE turn end can auto-resume at the
@@ -175,7 +213,8 @@ existing seam rather than adding a second one.
 
 | Finding | Source Path |
 | --- | --- |
-| The state/phase vocabulary, `LifecycleState`, and typed errors this module drives. | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
+| The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
+| `end` is pinned to hold no string constant from `TERMINAL_STATES` and to convert through the shared function — a structural test, because a copy that happens to agree passes a behavioural one. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
 | The append-only store the ambient writes events to. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
 | The `ar-observer-event/v1` envelope every signal emits. | [events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
 | The choke point that calls `ambient().emit_tool(...)` for every public tool, and (260707-HFX2-L2) reads `.root` to check the supervisor heartbeat. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
@@ -190,6 +229,18 @@ existing seam rather than adding a second one.
 
 ## Update History
 
+- 2026-08-01T00:28+02:00 — 260731-EFA-L4 curator: the card described `end` only as "emits
+  `lifecycle.ended` before clearing the ambient" and never mentioned that this method held the
+  last hand-written copy of the live/terminal split. Verified against the diff and the current
+  source and corrected it: the accept-tuple `("completed", "abandoned")` is now
+  `if outcome not in TERMINAL_STATES:` (L254, message from `sorted(TERMINAL_STATES)` at L256) and
+  the outcome→state conditional is now `terminal = coerce_end_outcome(outcome)` (L261) — the
+  identity conversion, called anyway rather than `cast`, so the rule has one owner. Recorded the
+  deliberate asymmetry (`end` refuses an unknown outcome; `coerce_end_outcome` defaults it,
+  because the reducer reads foreign logs), and the one surviving `"abandoned"` literal in the
+  `discard` branch of `_leave_current_locked` (L508), which names one outcome as a decision and
+  is deliberately not `DEFAULT_END_OUTCOME`. Added `end`'s line range (L237-L268), two invariants,
+  and a reference row for the structural test that pins `end` to hold no such string constant.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   the `AmbientLifecycle` constructor's `heartbeat_seconds` / `ttl_seconds` /
   `inactivity_cutoff_seconds` keywords were replaced by one frozen `AmbientTiming` parameter

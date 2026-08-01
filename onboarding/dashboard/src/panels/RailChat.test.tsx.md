@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-08-01T11:34+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -58,9 +58,17 @@ records the catalog-change broadcasts the terminate path posts.
   opener POST returns ok), clicks `rail-start-chat-claude`, and asserts `findSessionForLeaf(LEAF_KEY,
   "chat")` resolves a `kind: "harness"`, `harness: "claude"` session — i.e. the start button spawns an
   **agent chat keyed to the leaf**, not a bare shell.
-- **leaf context handoff (L6)** — `leafDoc()` now carries the projected lifecycle id, objective,
-  requirements, and steps that `RailChat` serializes, while `engineProcess()` supplies worktree facts from
-  the process map. Starting a harness chat on the viewed leaf asserts readiness followed by
+- **leaf context handoff (L6)** — `leafDoc()` carries the projected lifecycle id, objective,
+  requirements, and steps that `RailChat` serializes, while the process fixture supplies worktree facts
+  from the process map. That process fixture is now named **`leafProcess()`**, not `engineProcess()`:
+  `engineProcess` is the shared builder imported from `test/fixtures/wire`, and the local helper wraps
+  it. All three fixtures (`leafDoc`, `secondLeafDoc`, `leafProcess`) dropped their
+  `as unknown as …` casts and delegate to `taskDoc(...)` / `engineProcess(...)`, so they are checked
+  against the mirror. `leafProcess()` also shed ~18 hand-written boilerplate fields (`phase`, `health`,
+  `codeSource`, `memoryMode`, `ledgerRows`, `providers`, `edges`, `actions`, `summary`, `sourceFiles`, …)
+  that the shared base now supplies; it keeps explicit overrides for exactly the fields the packet path
+  reads — `worktreeGroup`, `leafId`, `lifecycleId`, `codeWorktree`, `memoryWorktree`. Starting a harness
+  chat on the viewed leaf asserts readiness followed by
   `submitSessionText("chat-id", packet, {source: "leaf-context", clearDraftOnAccept: false})` and checks
   the packet for task title, leaf key, lifecycle, code worktree, and a top-level step. Off-leaf creation
   asserts no submission. Successful attach/move submits the destination packet; `409 leaf-taken` submits
@@ -81,8 +89,8 @@ records the catalog-change broadcasts the terminate path posts.
 ### Conventions
 
 The start-affordance cases that don't open a session never Suspense-load xterm; the cases that surface a
-session rely on the `./Terminal` stub, the same posture as `Chats.test.tsx`. `afterEach` runs `cleanup`
-+ `vi.unstubAllGlobals`, resets the `sessions` store to its current shape (`sessions`, `activeId`,
+session rely on the `./Terminal` stub, the same posture as `Chats.test.tsx`. `afterEach` runs `cleanup` +
+`vi.unstubAllGlobals`, resets the `sessions` store to its current shape (`sessions`, `activeId`,
 `count`), clears reliable-submit mocks, and resets the test `FakeBroadcastChannel`.
 
 ### Invariants And Boundaries
@@ -90,6 +98,12 @@ session rely on the `./Terminal` stub, the same posture as `Chats.test.tsx`. `af
 The suite replaces xterm and adapter transport only. It still crosses the real session-store
 mutation boundary, proves exact-one accepted open, and proves rejected opens never submit leaf
 context.
+
+Fixtures are mirror-typed, not cast. A `as unknown as TaskDocNode` / `as unknown as EngineProcessNode`
+here would let a seed keep a shape the server can no longer send, which is precisely the failure mode
+a context-packet suite cannot afford: the packet's whole claim is that it serialises PROJECTED facts.
+Override only the fields the assertions read; let the shared base carry the rest, so a contract change
+fails the file instead of being absorbed by a stale literal.
 
 ### Todos
 
@@ -107,11 +121,14 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The suite mocks readiness/submission, supplies projected task/process fixtures, and verifies start-on-leaf, free-chat attach, attached-chat move, rejected attach, and non-accepted outcome behavior. | L1-L30; L215-L445 | [RailChat.test.tsx](RailChat.test.tsx) |
-| The right-rail chat under test builds and reliably submits the context package at leaf bind/move time. | L204-L243; L309-L365 | [RailChat.tsx](RailChat.tsx) |
-| The accepted-row session store the rail resolves leaves through. | L1-L180; L598-L621 | [data/sessions.ts](../data/sessions.ts) |
-| The reliable readiness/submission seam mocked by the suite. | L1-L180 | [data/submitClient.ts](../data/submitClient.ts) |
-| The attach client path whose 200/409 outcomes the tests mock. | L329-L357 | [data/terminal.ts](../data/terminal.ts) |
+| The suite mocks readiness/submission, supplies projected task/process fixtures, and verifies start-on-leaf, free-chat attach, attached-chat move, rejected attach, and non-accepted outcome behavior. | L14-L103; L147-L448 | [RailChat.test.tsx](RailChat.test.tsx) |
+| `leafDoc`/`secondLeafDoc`/`leafProcess` — the mirror-typed fixtures (`taskDoc(...)` / `engineProcess(...)`, no casts), overriding only the fields the packet reads. | L28-L80 | [RailChat.test.tsx](RailChat.test.tsx) |
+| `taskDoc` / `engineProcess` — the shared builders the local fixtures wrap. | L278-L290 | [test/fixtures/wire.ts](../test/fixtures/wire.ts) |
+| `findLeafProcess`/`buildLeafContextPackage` — the only consumers of the process fixture; they read `worktreeGroup`, `codeWorktree.path`, `memoryWorktree?.path`, and match on `lifecycleId`/`leafId`. | L191-L245 | [RailChat.tsx](RailChat.tsx) |
+| `RailChatImpl` builds and reliably submits the context package at leaf bind/move time. | L245-L330 | [RailChat.tsx](RailChat.tsx) |
+| `sessionStore` / `findSessionForLeaf` — the accepted-row session store the rail resolves leaves through. | L271-L300; L477-L500 | [data/sessions.ts](../data/sessions.ts) |
+| `submitSessionText` / `waitForSubmissionReady` — the reliable readiness/submission seam mocked by the suite. | L627-L660; L760-L784 | [data/submitClient.ts](../data/submitClient.ts) |
+| `attachSessionToLeaf` — the attach client path whose 200/409 (`leaf-taken`) outcomes the tests mock. | L439-L470 | [data/terminal.ts](../data/terminal.ts) |
 
 ## Cross-Repo References
 
@@ -128,6 +145,22 @@ same reliable client, rejection honesty, and gate-only non-choice answers. They 
 bracketed paste or Enter as delivery authority.
 
 ## Update History
+
+- 2026-08-01T11:34+02:00 — 260731-EFA-L4 curator: corrected the leaf-context bullet, which named
+  `engineProcess()` as the local process fixture. That name now belongs to the shared builder imported
+  from `test/fixtures/wire`; the local helper is `leafProcess()`. All three fixtures dropped their
+  `as unknown as …` casts and delegate to the shared `taskDoc` / `engineProcess`, and `leafProcess()`
+  shed ~18 boilerplate fields the base now supplies. Checked the thing that could have made that
+  consequential — whether any dropped field is read on the packet path — and it is not:
+  `findLeafProcess` matches on `lifecycleId`/`leafId` and `buildLeafContextPackage` reads only
+  `worktreeGroup`, `codeWorktree.path` and `memoryWorktree?.path` (`RailChat.tsx` L191-L245), all of
+  which the override still sets explicitly, so the assertions on task title / leaf key / lifecycle /
+  code worktree / top-level step are untouched. Added the fixture-honesty boundary. Repaired six
+  citations: the suite row L1-L30;L215-L445 → L14-L103;L147-L448, the component row L204-L243;L309-L365
+  → the two named functions at L191-L245 and `RailChatImpl` L245-L330, `sessions.ts` L1-L180;L598-L621 →
+  `sessionStore` L271-L300 + `findSessionForLeaf` L477-L500, `submitClient.ts` L1-L180 → L627-L660;
+  L760-L784 (the old range contained neither mocked export), and `terminal.ts` L329-L357 →
+  `attachSessionToLeaf` L439-L470.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: moved start fixtures to accepted server rows and proved
   a rejected harness creates no ghost row or context delivery while surfacing the typed error.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T11:40+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,6 +73,8 @@ The suite exercises repository-local routing and browser broadcast doubles; no c
 | Finding | Source Path |
 | --- | --- |
 | Unit under test. | [ChatContextBar.tsx](ChatContextBar.tsx) |
+| The typed `taskDoc` builder `leafDoc()` now returns, replacing an `as unknown as TaskDocNode` cast. | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
+| `buildTaskTree` — the only consumer of the seeded doc, and the reason the richer base changes nothing. | [../../data/taskIdentity.ts](../../data/taskIdentity.ts) |
 
 ## Current L5I Maintenance
 
@@ -80,6 +82,45 @@ The context-bar suite now pins the split between persistent launch controls and 
 actions, including history availability and the server-first leaf assignment path.
 
 ## Update History
+
+- 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **corrected the `buildTaskTree`
+  field enumeration in the 11:05 entry below, which was incomplete in the one place that mattered.**
+  It said `buildTaskTree` "reads only `kind`, `docPath`, `title`, `lifecycleId` and
+  `masterLifecycleId`". Read end to end from the working tree, `data/taskIdentity.ts` L126-L165 reads
+  those five directly (`doc.kind` L131/L152, `masterFolderOf(doc)` → `doc.docPath` L132/L157,
+  `doc.title` L134/L155, `doc.lifecycleId` L137, `doc.masterLifecycleId` L142/L158) **and two more
+  through `qualifiedLeafKey`**, which it calls at L153 for every leaf: that function is declared
+  `Pick<TaskDocNode, "repository" | "docPath" | "id">` (L64-L65) and reads `doc.repository` and
+  `doc.id` at L67-L69. Seven fields, not five. The entry's conclusion survives — `leafDoc()` still
+  passes `id: "260628-L5"` and `repository: "agents-remember"` explicitly, so the leaf key is
+  unchanged — but the omission mattered: `repository` and `id` are exactly the two fields
+  `BASE_TASK_DOC` *does* supply from `snapshot.json` (`repository: SERVED_TASK_DOC.repository`,
+  `id: SERVED_TASK_DOC.id`, wire.ts), so the "the base supplies nothing this path reads" argument was
+  resting on an enumeration that had dropped them. Recorded the corrected reasoning inline. No
+  reference rows changed; the two added at 11:05 are correct, and this table is two-column.
+  Verification metadata untouched.
+
+- 2026-08-01T11:05+02:00 — 260731-EFA-L4 curator: **No content impact:** the only source change is
+  `leafDoc()` returning `taskDoc({…})` from `test/fixtures/wire.ts` instead of an
+  `{…} as unknown as TaskDocNode` cast, and every behavioural claim above is about raw-create
+  responses, alert copy, focus, and leaf attach/move routing — none of which reads a task-document
+  field. I checked the one place that does rather than assuming: `ChatContextBar.tsx` L140 passes
+  `taskDocuments` into `buildTaskTree` and nothing else, and `buildTaskTree`
+  (`data/taskIdentity.ts` L126-L165) reads **seven** fields: `kind`, `docPath`, `title`, `lifecycleId`
+  and `masterLifecycleId` directly, plus `repository` and `id` through `qualifiedLeafKey` (L64-L70,
+  whose parameter is `Pick<TaskDocNode, "repository" | "docPath" | "id">`), which it calls at L153 to
+  key every leaf node. All of `kind`, `docPath`, `title`, `repository` and `id` were already set by
+  the old literal and are still passed explicitly by `leafDoc()`, and `lifecycleId`/`masterLifecycleId`
+  are OPTIONAL, so `BASE_TASK_DOC` — which carries required fields only — does not supply them; the
+  tree is built from exactly the same inputs as before. `repository` and `id` are the two that make
+  this worth checking rather than asserting: `BASE_TASK_DOC` **does** carry both
+  (`repository: SERVED_TASK_DOC.repository`, `id: SERVED_TASK_DOC.id`, drawn from `snapshot.json`), so
+  had `leafDoc()` stopped overriding them the builder would have silently swapped a snapshot value into
+  the leaf key the suite asserts as `LEAF_KEY`. It still overrides both. The dozen required fields the base did add
+  (`status`, `stepsDone`, `stepsTotal`, `steps`, `objective`, `requirements`, `codeExamples`,
+  `decisions`, `openQuestions`, `references`, `subTasks`, `sections`) have no reader on this path.
+  Suite re-run: all cases pass. Two reference rows added; the `Repo-Internal References` table here is
+  two-column, so both new rows carry two cells.
 
 - 2026-07-24T13:17:17Z — Curator: recorded launch/action ownership regression coverage;
   verification fields remain pre-commit.

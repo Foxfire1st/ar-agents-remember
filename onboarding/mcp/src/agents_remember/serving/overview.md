@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`|
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T14:05+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -708,11 +708,31 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   stripped recursively — so a tick where only ages advanced emits NOTHING (live measurement:
   ~780 KB/tick → 0; the dashboard-tab OOM driver). `StableProjectionState` +
   `stable_projection_state` are the projector's per-tick cache.
+- `response_contract.py` — the **declared HTTP wire** (260731-EFA-L4): `WireResponse`
+  (strict/frozen/camel-aliased, `populate_by_name`) and 93 model classes covering every route's
+  success and refusal shapes, plus three shared `responses=` tables — `SCOPED_READ_RESPONSES`
+  (the files/notes/change-set family), `SESSION_CONTROL_RESPONSES` (every `harness_control_api`
+  route) and `ACTION_RESPONSES`. Declared here and enforced in
+  `mcp/tests/test_serving_response_conformance.py`, because FastAPI validates only the two routes
+  that return a bare `dict`; see the 260731-EFA-L4 route impact for the exact boundary. Deliberately
+  free of any `serving.conversation` import so it stays importable before that package exists —
+  the conversation surface's own additions live in `conversation/response_contract.py`.
+- `served_state.py` — the **served projection contract**: `ServedWorkspaceProjection`
+  (`WorkspaceProjection` plus the two OPTIONAL serve-time keys `servingBuild` and
+  `supervisorHeartbeat`), `SERVED_TAIL_FIELDS`, and `served_state_tail(build=, heartbeat=)` — the
+  one place the tail is built, with the build half dumped `exclude_none=True` (absence, never a
+  fabricated fact) and the heartbeat half dumped WITHOUT it (explicit nulls, because "never ticked"
+  is a reported state). The tail stays off `WorkspaceProjection` on purpose: it is serve-time not
+  tick-time, it must stay outside the `_ProjectionBodyCache` memo and the ETag revision, and it must
+  not enter `latest-state.json`'s schema.
 - `build_info.py` — the boot-time **serving build stamp** (the July-4
   ghost-process lesson): `ServingBuild` (version / best-effort git short-hash / boot time) +
   `resolve_serving_build`, resolved ONCE in `create_app` and injected on `/api/state` + the SSE
   snapshot as `servingBuild` so a stale serving process is visible in the cockpit top bar. A
-  failed hash resolve serves version-only (`commit` omitted), never a fake.
+  failed hash resolve serves version-only (`commit` omitted), never a fake. Since 260731-EFA-L4
+  `payload()` returns the declared `ServingBuildPayload` model rather than a `dict[str, Any]`; the
+  omission rule moved into `None` + the caller's `exclude_none=True`, and `dirty` is written
+  `True if self.dirty else None` so proven-clean and unprovable both stay absent.
   Both probes — `_git_short_head` (`rev-parse --short HEAD`) and `_git_worktree_dirty`
   (`status --porcelain`) — go through the package's one git runner, `run_git` in
   `kernel/git_command.py`, since 260731-EFA-L3; they previously built their own `subprocess.run`
@@ -1156,7 +1176,7 @@ neighboring repository governs this route.
 | The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page; `_evidence_thread_id` also stamps the per-thread demux key on every diverted frame. | L167-L234; L548-L610 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
 | Three additive read actions cross only the private socket under the unchanged v1 protocol. | L213-L218; L380-L401 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
 | Strict client validation enforces disjoint coordinate domains, continuation coherence, and epoch continuity; `read_control_native_page` takes the additive `threadId` selector and snapshots parse the plural `pendingInteractions`. | L342-L395; L863-L874; L1100-L1152 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The provenance batch reads the authority's existing records epoch-checked through the sole queue delegation. | L452-L489 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The provenance batch reads the authority's existing records epoch-checked through the sole queue delegation. | L528-L565 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
 | The codex resume channel threads opener → runner payload → factory → the sole settings site with pre-spawn refusals. | L611-L621; L88-L105; L41-L58 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py); [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py); [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
 | Contract and installed-runtime suites pin the whole seam including no-leak, continuation, provenance, and resume. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py); [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
 
@@ -1179,18 +1199,31 @@ neighboring repository governs this route.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1282 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1302 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
 | Exactly two protocol read ports separate active transcript reads from conversation-library reads. | L1-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
 | Three owned child routers compose beneath one stable root and one explicit registration function. | L1-L24 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The existing harness-control application factory mounts the conversation root once. | L166-L201 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| The existing harness-control application factory mounts the conversation root once. | L182-L217 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
 
 ### Current Folded-State Evidence
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| Projector publication computes events, commits authority, and then notifies; subscription activation registers before snapshot capture and cleans up in `finally`. | L207-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| App streaming consumes one iterator, decorates every snapshot, preserves event/id/retry framing, and owns explicit closure. | L181-L203 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L416-L492 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Projector publication computes events, commits authority, and then notifies; subscription activation registers before snapshot capture and cleans up in `finally`. | L268-L295; L314-L330 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
+| App streaming consumes one iterator, decorates every snapshot, preserves event/id/retry framing, and owns explicit closure. | L300-L330 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L419-L503 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+
+### Current Wire Contract
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| `WireResponse` — the strict (`extra="forbid"`), frozen, `populate_by_name`, camel-aliased base every declared response model derives from — plus the 93 model classes and the three shared refusal tables (`SCOPED_READ_RESPONSES`, `SESSION_CONTROL_RESPONSES`, `ACTION_RESPONSES`) the route tables spread. | L88-L101; L1057-L1090 | [response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
+| `TerminalCatalogEntryWire` (52 fields) and `TerminalSessionsResponse`/`DetectedHarnessesResponse` — the only models FastAPI itself enforces, because only these two routes return a bare `dict`. | L280-L367 | [response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
+| `OnboardingResolution` — the five-shape union `GET /api/files/onboarding` answers with, declared rather than collapsed to the forward shape. | L709-L720 | [response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
+| `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | L47-L78 | [served_state.py](agents-remember/mcp/src/agents_remember/serving/served_state.py) |
+| `ServingBuildPayload` and `SupervisorHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | L43-L88; L30-L52 | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py); [supervisor_heartbeat.py](agents-remember/mcp/src/agents_remember/serving/supervisor_heartbeat.py) |
+| The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | L1004-L1075; L1259-L1284; L1336-L1361 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The route-inventory, validated-route hazard, per-route conformance and declared-surface-coverage suites — the only thing that enforces the contract on the 59 routes FastAPI does not validate. | L495-L629; L630-L700; L786-L1869; L2271-L2492 | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
+| The served-state tail rules, the 200 body, the body-less 304 and the bare-node `delta` asymmetry, driven over a populated coordination root. | L213-L414 | [test_served_state_conformance.py](agents-remember/mcp/tests/test_served_state_conformance.py) |
 
 ### Legacy route map
 
@@ -1374,8 +1407,214 @@ This entry supersedes any earlier description in this overview that conflicts wi
 source behavior above; verification metadata stays pinned to the pre-commit source history until
 closeout.
 
+## 260731-EFA-L4 Route Impact — the wire is declared, and ONE TEST is the enforcement
+
+Two new modules, `response_contract.py` (93 model classes) and `served_state.py`, declare what every
+HTTP route of this app answers with. **Read the mechanism before the intent, because the declaration
+and the enforcement are in different files and only one of them can fail.**
+
+### What the declaration is, and what it is not
+
+`serving/` registers 62 route decorators. 61 are HTTP routes and every one now carries
+`response_model=`; the 62nd is `@app.websocket("/api/terminal/{session}")`, which FastAPI registers
+as an `APIWebSocketRoute` — a class that has no `response_model` parameter, because a websocket has
+no response body. That is the only undeclared route there can be, and
+`ServingRouteInventoryTests` recognises the exemption **by route class**, asserting the attribute
+is absent, so a future undeclared *HTTP* route cannot hide behind a path skip-list.
+
+FastAPI applies `response_model` only to values it serializes itself: `get_request_handler` returns
+a `Response` instance untouched and never reaches `serialize_response`. Of the 61 handlers, **57
+return a `Response` subclass directly** and **two** (`GET /api/stream`, `GET /api/events`) are async
+generators feeding an `EventSourceResponse`. On all 59 the decorator contributes an OpenAPI schema
+and **validates nothing at runtime**. Undoing this leaf's decorators would therefore break no route
+and fail no request — which is exactly why "declare a model everywhere plus a test that no
+declaration is missing" would have been green on day one and enforced nothing.
+
+The enforcement is `mcp/tests/test_serving_response_conformance.py`: it drives the real routes
+through the real app and validates each returned body against the model declared **for the status
+that actually came back** (`responses[status]["model"]` when there is one, `response_model`
+otherwise). Because every model is `extra="forbid"` and validation is alias-strict, an undeclared
+key fails and so does a body that arrived in field-name rather than camel-alias form. Its score is
+pinned rather than implied: **286 declared `(method, path, status)` pairs, 133 driven against a real
+body, 153 declared-and-undriven** — each undriven leg listed with a reason in
+`UNDRIVEN_DECLARATIONS`, asserted by exact equality, so a declaration that stops being exercised
+fails there instead of going quiet. A weaker claim holds without exception: **every one of the 61
+routes is driven on at least one status.** Most undriven legs are the typed control-bridge failures
+(a stale epoch, a rejected operation, a socket that dies mid-write) that the bridge fixture does not
+model.
+
+### The two routes where the declaration IS live enforcement — and the hazard that creates
+
+`GET /api/terminal/sessions` and `GET /api/harnesses` are the only handlers returning a bare `dict`,
+so FastAPI validates them for real. That is a **behaviour change**: both were forward-compatible
+pass-through, and a key the model did not know about simply reached the cockpit. They now answer
+**HTTP 500** (`ResponseValidationError`) if the payload gains a key, loses a required one, or
+changes a type. On `/api/terminal/sessions` that is a 52-key body hand-assembled from an actively
+grown dataclass, so a leaf that adds a field to `TerminalCatalogEntry.to_json` and forgets
+`TerminalCatalogEntryWire` takes the session rail **down** rather than degrading it. The mitigation
+is `ValidatedRouteHazardTests.test_the_catalog_wire_model_covers_every_key_to_json_emits`: an AST
+scan of `to_json`'s two emission forms asserting set EQUALITY in both directions against the model's
+aliases, with the key count pinned at 52 so a scan that reads nothing cannot satisfy the equality.
+It fires when the field is added — earlier than the runtime 500 and earlier than a conformance run,
+whose fixture only populates some fields. The route also declares
+`response_model_exclude_unset=True`, which reproduces `to_json`'s conditional key set instead of
+back-filling nulls the dashboard has never seen.
+
+### THE LIMIT OF THE GUARANTEE — the dashboard mirror is NOT derived from these models
+
+`dashboard/src/types/projection.ts` and `dashboard/src/test/fixtures/wire.ts` are **hand-maintained**.
+**No generator exists anywhere in this repository, and no in-repo mechanism keeps the two sides in
+step** — nothing under `mcp/`, `scripts/` or `dashboard/` derives TypeScript, JSON Schema or an
+OpenAPI artifact from these pydantic models, and nothing writes
+`dashboard/src/fixtures/snapshot.json`. (An exhaustive search of this tree and its history supports
+that; it cannot exclude a generator kept outside the repository.)
+
+Be exact about which links ARE held, because the short form of this claim keeps losing its middle
+term. The chain is **four nodes and three links** — `test/fixtures/wire.ts` → `types/projection.ts`
+→ `dashboard/src/fixtures/snapshot.json` → `observer/projection.py` — and the dashboard's own tests
+hold the first two. `tsc -b` binds the fixture to the mirror: every base is annotated with its mirror
+type, every call-site override goes through `Overrides<O, Node>`, and `test/wireFixtureGuard.test.ts`
+refuses the one-token opt-outs. `test/contract.test.ts` then **measures the mirror against
+`snapshot.json`**, and it is *not* a one-way `⊆`: three TYPE-level directions (`mirror ⊇ served`,
+`served ⊇ mirror`, `fixture ⊇ mirror`) plus runtime `VOCABULARIES` assertions for the string unions
+`resolveJsonModule` widens to `string`. **The third link is held by nothing: `snapshot.json` ↔ these
+pydantic models is maintained by hand**, so the snapshot proves only what a person wrote it to say.
+A field the server starts sending that neither the mirror nor the snapshot knows about is invisible
+to every test on both sides. This leaf pinned the server half of the wire; it did not close the
+crossing, and no claim that these types are "kept in sync" is true.
+
+### The served state, which is assembled rather than dumped
+
+`served_state.py` declares what `/api/state` and the SSE `snapshot` frame actually emit:
+`ServedWorkspaceProjection` is a `WorkspaceProjection` plus two OPTIONAL serve-time keys,
+`servingBuild` and `supervisorHeartbeat`. Before this both were injected into the dumped projection
+with nothing declaring them, so feeding a served body back through `WorkspaceProjection`
+(`extra="forbid"`) raised on the extra keys — the emitted object was outside its own model.
+
+The tail deliberately does **not** move onto `WorkspaceProjection`, for five reasons that are load
+bearing rather than stylistic: (1) the projection is built at TICK time and both keys are computed at
+SERVE time; (2) `app._ProjectionBodyCache` memoizes the ~1.3 MB dump per published instance
+*precisely because* the volatile tail is merged onto a shallow copy afterwards — a measured
+13.7–16.5 ms per request; (3) the heartbeat is deliberately outside the projector's content
+revision, so a volatile age never busts the `/api/state` ETag and the 304 path keeps firing;
+(4) `observer.projection_store.write_projection` persists `WorkspaceProjection` into
+`latest-state.json`, and serving-only fields must not enter that artifact's schema; (5) only the
+`snapshot` frame carries the tail — a `delta` is one bare projection node.
+
+`served_state_tail(build=…, heartbeat=…)` is the one assembly point, and the two halves serialize
+under **opposite** null rules, which is why it is two dumps and not one: the build half uses
+`exclude_none=True` (an unresolvable commit, an unbuilt bundle and an unprovable tree are OMITTED —
+absence is never a fabricated "clean"), while the heartbeat half is dumped WITHOUT it (a supervisor
+that never ticked reports explicit nulls, because the cockpit distinguishes "never ticked" from
+"this server does not report a heartbeat"). `SERVED_TAIL_FIELDS` names exactly the keys the
+assembly may add so it and the model cannot drift apart silently. There is deliberately **no
+per-request validation** — it would re-parse the whole body and hand back exactly what the memo
+exists to save; `mcp/tests/test_served_state_conformance.py` holds it shut instead, over a
+coordination root that is actually populated (an empty temp root made every collection `[]`, so the
+200 validated without a single projection node ever being constructed).
+
+### What changed in each governed file
+
+- **`build_info.py`** — `ServingBuild.payload()` returns a declared `ServingBuildPayload`
+  (`extra="forbid"`) instead of a hand-built `dict[str, Any]`. The honest-unknown rule is now
+  expressed as `None` on every best-effort field plus the caller's `exclude_none=True`; `dirty` is
+  written `True if self.dirty else None`, so proven-clean (`False`) and unprovable (`None`) both
+  collapse to absent and the wire still never fabricates a "clean" fact. `ServingBuild`'s own
+  dataclass fields and the tri-state `dirty` are unchanged.
+- **`supervisor_heartbeat.py`** — new `SupervisorHeartbeatPayload`, deliberately distinct from the
+  durable `SupervisorHeartbeat` ROW: it is what a reader computes ABOUT that row at response time
+  (the row's counters plus the age and the staleness verdict against the configured cutoff).
+- **`app.py`** — `stream_events`'s `supervisor_heartbeat` parameter is typed
+  `SupervisorHeartbeatPayload | None` instead of `dict[str, Any] | None`, and both the `/api/state`
+  body and the SSE snapshot now merge `served_state_tail(...)` rather than assigning the two keys by
+  hand. Route declarations: `/api/state` declares `ServedWorkspaceProjection` plus a **body-less
+  304** and a 503; `/api/task-document` declares the observer's `TaskDocNode`; `/api/stream`
+  declares the shape a `snapshot` frame's `data` carries; `/api/events` declares `StreamReadyMarker`
+  — the ONLY frame that route mints, because every `event` frame is a verbatim observer JSONL record
+  whose schema belongs to the observer. `POST /api/actions/{action}` gained `status_code=202`,
+  because 202 is the status it answers with: left implicit it declared its success shape at 200, a
+  pair no request can produce and therefore one no conformance check could ever drive.
+- **`files.py` / `notes.py` / `changeset.py`** — every route declares its shape plus the shared
+  `SCOPED_READ_RESPONSES` (400 confinement/malformed, 404 unknown-repo/unknown-scope/not-found),
+  which is `run_scoped`'s error map transcribed. Two routes declare no refusal at all, each for a
+  stated reason: `/api/files/repos` has no refusal branch (the catalog is assembled from the
+  allow-list), and `/api/changeset/master` degrades an unresolvable master to empty lists rather
+  than refusing. `/api/files/onboarding` declares the five-member `OnboardingResolution` union,
+  because `direction` picks the pairing direction and each direction discriminates further;
+  declaring only the forward shape would have been a lie about half the route's traffic.
+- **`harness_control_api.py`** — nine of its ten routes take the shared `SESSION_CONTROL_RESPONSES`
+  (404 no live bridge-backed seat / 409 unsupported seat or stale epoch / 503 bridge refused),
+  which is `_control_route` → `_control_failure_response` transcribed. The tenth,
+  `GET /api/harnesses/{harness}/capabilities`, is the one capability route with **no seat**, so it
+  declares its own 404 (no such installed native harness) and 503 (discovery unavailable) instead.
+  `POST .../submit` and `POST .../interaction-response` extend the shared table with their own
+  409/503 unions, for refusals no other control route can produce (a reused request id; a certified
+  retry-safe pre-dispatch failure).
+
+### Rules a later leaf must not undo
+
+- A route that returns a `Response` gets **no runtime validation** from its declaration. If you add
+  a route here, the thing that makes its declaration mean anything is a driver in
+  `test_serving_response_conformance.py` — and `DeclaredSurfaceCoverageTests` will fail if you add
+  declarations without either driving them or listing them in `UNDRIVEN_DECLARATIONS` with a reason.
+- Growing `TerminalCatalogEntry.to_json` without growing `TerminalCatalogEntryWire` is now a
+  cockpit outage, not a passthrough. The AST equality test is what turns it into a red build first.
+- The serve-time tail must not become a `WorkspaceProjection` field: doing so puts a volatile age
+  inside the ETag revision and inside the persisted `latest-state.json` schema.
+- Nothing generates the dashboard's TypeScript from these models. Adding a served key is still a
+  two-sided, hand-made change.
+
+This entry supersedes any earlier description in this overview that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout stamps the L4 commit.
+
 ## Update History
 
+- 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "THE LIMIT OF THE
+  GUARANTEE" said *"The dashboard's own tests enforce `fixture ⊆ mirror`; `mirror ⊆ server` is
+  enforced by nothing"*, which keeps only the outer two nodes of a four-node chain and so reads as
+  though **nothing** measures the mirror against the snapshot. It does: `test/contract.test.ts`
+  measures `types/projection.ts` against `dashboard/src/fixtures/snapshot.json` in three TYPE-level
+  directions (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror` — L29-L53 of that file) plus
+  runtime `VOCABULARIES` assertions (L269, L348, L368) for the string unions `resolveJsonModule`
+  widens to `string`. The section now names all three links, attributes the fixture→mirror link to
+  `tsc -b` + `Overrides<O, Node>` + `test/wireFixtureGuard.test.ts`, and states the unheld one as
+  **`snapshot.json` ↔ `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one
+  letter from "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the
+  strength the evidence carries: no in-repo generator **and no in-repo mechanism keeping the two
+  sides in step**, with the caveat that no search of this tree can exclude a generator kept outside
+  it. Same correction applied to the 09:10 entry's restatement below. No route-model claim,
+  citation, or verification field changed.
+
+- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: added the wire-contract route impact for the two
+  new modules (`response_contract.py`, `served_state.py`) and the seven changed files they touch,
+  written as the mechanism rather than the intent. The load-bearing corrections: **the declaration
+  is not the gate.** 61 of 62 route decorators carry `response_model=` (the 62nd is the websocket,
+  an `APIWebSocketRoute` with no such parameter, exempted BY ROUTE CLASS), but FastAPI validates
+  only the two handlers returning a bare `dict` — 57 return a `Response` and 2 are SSE generators,
+  so on 59 the decorator is schema only. The enforcement is
+  `test_serving_response_conformance.py`, whose score is pinned at 286 declared pairs / 133 driven /
+  153 undriven-with-a-reason, with every route driven on at least one status. Recorded the real
+  behaviour change on `/api/terminal/sessions` and `/api/harnesses` (a drifted payload is now a 500,
+  not a passthrough) and the AST key-set equality test that fires first, and the `202` now declared
+  on `POST /api/actions/{action}` where the implicit 200 was a pair no request could produce.
+  Stated the limit explicitly: `dashboard/src/types/projection.ts` and
+  `dashboard/src/test/fixtures/wire.ts` are hand-maintained, **no generator exists** anywhere in
+  this repository, and the `snapshot.json` ↔ `observer/projection.py` crossing is held by nothing —
+  this leaf pinned the server half only. (This bullet originally said "`mirror ⊆ server` is enforced
+  by nothing", which dropped the middle link; corrected in the 14:05 entry.) Also recorded the served-state assembly (why the two-key tail is deliberately not a
+  projection field, and the opposite null rules per half). Added a `Current Wire Contract` reference
+  subsection (8 rows, all ranges read back). Repaired 6 stale line citations: `models.py`
+  L1-L1282 → L1-L1302 (file grew to 1302); `harness_control_api.py` L166-L201 → L182-L217
+  (`register_harness_control_routes`, whose L195 is the single `register_conversation_routes` call);
+  `app.py` L181-L203 → L300-L330 (`stream_events` — the old range was an import block, stale before
+  this leaf); `projector.py` L207-L269 → L268-L295; L314-L330 (`_publish_projection` and
+  `subscribe`, the latter entirely outside the old range — also pre-existing);
+  `test_serving.py` L416-L492 → L419-L503 (`StreamEventsTests`, whose
+  `test_cancelled_waiting_stream_releases_its_subscription` at L493 was outside the old end);
+  `harness_submission_authority.py` L452-L489 → L528-L565 (`provenance` — the old range held an
+  unrelated operator-resolution branch, pre-existing). Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-07-31T21:02+02:00 — 260731-EFA-L3 curator: corrected the `build_info.py` Route Model bullet,
   which described the build stamp's honesty rules without saying which repository the stamp reads.
   `_git_short_head` and `_git_worktree_dirty` no longer own local `subprocess.run` calls; both now
@@ -1604,9 +1843,6 @@ closeout.
   redelivery, body-free aggregate telemetry, no-op silence, 5-second lock-hold characteristics,
   and F3-F6 non-blocking reviewer residuals. Verification metadata remains pinned until closeout.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: serving lifecycle wiring starts and cancels the landing refresher outside the projection tick and preserves host shutdown after refresher failure.
-+## 260712-TRH-L4 Route Impact
-
-Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-12T12:55+02:00 — 260712-TRH-L2 route impact: `changeset.py` now scopes contract discovery to the requested master enclosure, canonicalizes persisted/requested leaf ids, and exposes an opt-out for expensive master leaf summaries while retaining the net range semantics. Verification metadata pinned until closeout stamps the L2 code commit.

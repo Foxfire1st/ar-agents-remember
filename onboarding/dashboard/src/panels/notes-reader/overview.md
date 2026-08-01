@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T13:20+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -81,6 +81,23 @@ The Notes Reader remains a controlled mounted-hidden takeover, now memoized so u
 switches do not reconstruct its note-reader subtree or disturb selected-note state.
 
 ## Update History
+
+- 2026-08-01T13:20+02:00 — No route impact: 260731-EFA-L4's single change under this route is
+  `NotesReaderViewer.test.tsx`, and the entire diff is one import plus the two cockpit-takeover seed
+  helpers — `masterDoc()` dropped its trailing `as unknown as TaskDocNode` (the literal is otherwise
+  unchanged field for field; the cast was gratuitous over an already-complete node), `seedMaster()`
+  swapped `as unknown as WorkspaceProjection` for `satisfies WorkspaceProjection`, and its `metrics`
+  moved from a hand-listed six-field literal to `metricsFor([])`. I read the whole diff: no `it(...)`
+  body, no assertion, no `/api/notes/{list,read}` or `/api/task-document` fetch-stub branch, and no
+  Notes Reader source changed. The route model this overview describes is expressed nowhere in that
+  seed — the takeover state, the controlled `path` + `onSelectNote` lift to `CockpitShell`, the reused
+  `DualPane` content paths, and the mounted-hidden retention are all driven by props and the stubbed
+  notes API; the seeded projection exists only so the Operations sidebar has one selectable master row
+  for the takeover cases to click. Checked the one way the retype could have been consequential:
+  `metricsFor([])` is a superset of the literal it replaced (same `lifecycleCount: 0`, `totalTokens: 0`,
+  empty `stalenessHistogram`, with the per-state buckets now derived from `ACTIVE_STATES` instead of
+  hand-listed), and no assertion in this file reads `metrics` at all. Suite runs green. Verification
+  metadata pinned until closeout stamps the commit.
 
 - 2026-07-24T13:17:17Z — Curator: documented the persistent-reader memo boundary. Verification
   metadata remains pre-commit.

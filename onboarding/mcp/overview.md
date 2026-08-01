@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated | 2026-08-01T00:00+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1011,6 +1011,21 @@ into the role files.
   is what keeps it that way. Where a helper forwards a timeout it should require it
   (`kernel/git_facts.py::_git_stdout` takes `timeout` keyword-only with no default),
   so an unclassified call site fails rather than silently inheriting the local bound.
+- **A vocabulary is declared once, by whoever produces it** (260731-EFA-L4). A response model
+  under `models/` must import the `Literal` from the module that writes the value —
+  `worktrees/worktree_contract.py` for the six contract cells, `worktrees/modules/guidance.py`
+  for phase and next-move, `kernel/git_facts.py` for `RepoState`, `kernel/git_freshness.py`
+  for `FreshnessState`, `worktrees/leaf_refs.py` for `LeafRefStatus` — never retype it. Where a
+  runtime set is needed it is `frozenset(get_args(<alias>))`, not a second list. Two copies of a
+  vocabulary is the same class of defect as two git runners: the divergence is invisible until
+  real data produces the member only one side has, and at that point it is a pydantic
+  `ValidationError` raised inside an MCP tool handler with no `except` on the path — the tool
+  call fails, not the field. Reach is test-backed rather than assumed
+  (`mcp/tests/test_wire_vocabulary_exhaustiveness.py`), and it walks producers and
+  producer→wire crossings rather than comparing two lists. The corollary at the write side: the
+  six contract cells move through `worktree_contract.ContractCells`/`amend_contract`, never as
+  `dataclasses.replace` keywords, because typeshed types `replace` as `**changes: Any` and
+  pyright checks nothing passed that way.
 - **Nothing on the server's import path may reach the network** (260731-EFA-L3).
   The tool surface is imported while the MCP handshake is starting, so a download
   there is a startup dependency on egress: the `o200k_base` vocabulary is vendored
@@ -1117,7 +1132,9 @@ implementation governs its hash rollover or static mount.
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember/mcp/src/agents_remember/install/runtime.py) |
 | Runtime package data is synchronized from canonical root asset folders, and tests verify missing, extra, changed, and target-scope behavior. The `--check` form runs in both hook tiers. | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [_gate.sh](agents-remember/.githooks/_gate.sh) |
 | The dashboard cockpit bundle is a **release build product**, not a committed artifact: `scripts/sync-dashboard.py` places `dashboard/dist/` into `package_data/dashboard/` during the publish workflow and writes the sibling `package_data/dashboard.fingerprint`, refusing any `dist` that does not carry the current build-input fingerprint. Both paths are git-ignored, there is no `--check`, and no hook or branch CI job touches them. The serving app resolves and mounts the packaged tree, or answers 503 with the build command when nothing was placed. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py); [static.py](agents-remember/mcp/src/agents_remember/serving/static.py); [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py); [test_static.py](agents-remember/mcp/tests/test_static.py); [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
-| The closeout quality gate applies to any checkout that carries the wrapper rather than to one repository name, and reports `enforced` / `no-code-commit` / `wrapper-unavailable`. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py); [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py); [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| The closeout quality gate applies to any checkout that carries the wrapper rather than to one repository name, reports `enforced` / `no-code-commit` / `wrapper-unavailable`, and (since L4) resets and stages the whole task worktree before running so its index-derived scope is the commit's content — leaving that staging in place when it refuses. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py); [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py); [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py); [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| Every wire vocabulary is declared once by its producer and imported by the response model; the runtime half is derived with `get_args`, and the exhaustiveness suite walks producers and producer→wire crossings rather than comparing two lists. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py); [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py); [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py); [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
+| The worktree contract reads tolerantly and writes strictly: an unreadable vocabulary cell degrades and is quarantined on `unknown_cells` (reported as `unknownContractCells`) because no lifecycle tool catches `ContractError`, while `validate_contract(contract, *, path)` refuses all six cells at the write boundary and every refusal names the file. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py); [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py); [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
 | Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
 | Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
 | Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
@@ -1146,7 +1163,7 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 The MCP package now carries the L5I interactive-session backend hardening: active conversations reconnect through fresh server cursors, native interrupt and structured interaction answers are evidence-bound, serving avoids repeated projection/repository serialization, and terminal-backed sessions retain honest lifecycle and shutdown boundaries. Completed landing facts can freeze out of recurring remote probes but reopen into live observation. These are production behavior changes, not a new package route.
 
-The package also owns the mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before closeout mutation; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and zero mutation on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. (260731-EFA-L1 removed the `repo_name == "agents-remember"` condition from that gate; 260731-EFA-L2 then changed what the wrapper *is* — see both route impacts below. Existing verification metadata remains pre-commit.)
+The package also owns the mandatory commit-gate implementation: `code_quality.check` fails CRAP at or above the configured threshold by default; `worktrees/modules/code_quality_gate.py` invokes the exact worktree source and fails closed before any closeout **commit**; `closeout.py` and public MCP descriptions expose that order; focused tests prove default failure and that no code, memory or ledger commit is created on gate failure. The pathRules-eligible packaged `c-12-closeout` skill and memory-repo git-workflow example carry the synchronized doctrine. (260731-EFA-L1 removed the `repo_name == "agents-remember"` condition from that gate; 260731-EFA-L2 then changed what the wrapper *is*; 260731-EFA-L4 corrected "before closeout mutation" to "before any closeout commit", because closeout now writes the index before the gate and leaves it written when the gate refuses — see all three route impacts below. Existing verification metadata remains pre-commit.)
 
 ## 260731-EFA-L2 Route Impact — `code_quality/` Became An Honest Gate
 
@@ -1239,7 +1256,131 @@ watcher. Codex history acquisition probes bounded native methods at runtime; the
 fuse remains an emergency framing limit, separate from the 16 MiB materialized source-response
 ceiling and smaller output-page budgets.
 
+## 260731-EFA-L4 Route Impact — One Declaration Per Wire Vocabulary
+
+L3 made every git subprocess go through one runner. L4 does the same thing to the package's
+*vocabularies*, and for the same reason: a second copy of a rule is a copy that can drift, and
+here the drift was already load-bearing.
+
+**A response model may no longer retype a vocabulary its producer declares.** Before L4,
+`models/worktree.py` hand-wrote nine `Literal`s beside the modules that already produce their
+values — six contract cells plus phase, next-operation and next-tool — and the copies had come
+apart in six places at once. Measured at `abc7cbcc`, the model declared
+`CleanupStatus = Literal["pending", "completed", "abandoned"]` while `tasks/reopen.py` writes
+`reopened`; `WorkflowKind = Literal["chat", "light", "light-task"]` while `worktree_start`'s own
+argument documents and defaults to `light-task`/`chat-task` (re-derived independently over the
+213 `series-contract.md` files in this workspace's `ar-coordination/tasks/`: 205 `light-task`,
+8 `chat-task`, **zero** `chat` and zero `light` — the two members the model did carry had no
+writer, and the one 8 contracts carry it did not); and its
+`WorktreePhase`/`NextOperation`/`NextTool` were missing
+`carryover-pending`, `abandoned`, `request_carryover_decision` and `memory_carryover_apply`,
+all four of which `worktrees/modules/guidance.py` emits. Every one of those is a pydantic
+`ValidationError` raised **inside an MCP tool handler that has no `except` for one** — a
+`context_packet` call that fails on a task the server itself created. Each vocabulary is now
+declared once, at its producer, and imported by the wire model:
+
+| Vocabulary | Declared in | Imported by |
+| --- | --- | --- |
+| `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus` | `worktrees/worktree_contract.py` (lines 50-55) | `models/worktree.py`, `models/context_packet.py`, `kernel/coordination_context/models.py` |
+| `WorktreePhase`, `NextOperation`, `NextTool` | `worktrees/modules/guidance.py` (lines 28, 38, 47) | `models/worktree.py` |
+| `RepoState` | `kernel/git_facts.py` (line 22) | `models/context_packet.py::RepoSummary` |
+| `FreshnessState` | `kernel/git_freshness.py` (line 29) | `models/context_packet.py::BranchFreshness` |
+| `LeafRefStatus` | `worktrees/leaf_refs.py` (line 30) | `models/terminal.py` (two statuses fold it in) |
+
+Each alias carries a derived runtime half — `VALID_MEMORY_MODES`, `VALID_REPO_STATES`,
+`VALID_FRESHNESS_STATES` and the rest are `frozenset(get_args(<alias>))`, not a second literal
+list — so a member can only ever be added in one place. `mcp/tests/test_wire_vocabulary_exhaustiveness.py`
+is the regression line, and it is the reach that matters: it walks the guidance state machine,
+the produced literals, and the producer→wire crossings rather than asserting two lists match.
+
+**`worktrees/status.py` stopped handing the packet a `dict[str, Any]`.**
+`worktree_status_packet` now *returns* `WorktreeSummary`; `controllers/context_packet.py`
+(line 88) assigns it straight onto the packet instead of calling `model_validate` on an opaque
+dict. That `Any` was what let every mismatch above survive the type checker up to the moment
+the packet was built. One wire change came out of it and is stated rather than absorbed: the
+projection used to substitute `""`/`{}`/`[]` for `nextTool`/`nextArgs`/`nextRequiredArgs` when
+the producer omitted them, inventing a `nextTool` value no producer declares; all three keys
+are now omitted when absent, and the model is dumped with `exclude_none`.
+
+**The worktree contract's read and write boundaries are now deliberately asymmetric.**
+`worktree_contract._vocabulary_cell` is *total*: a token the vocabulary does not hold degrades
+to the same value an absent cell reads as and is quarantined on
+`WorktreeContract.unknown_cells`, which `load_contract` logs once per parse and the status
+payload and context packet report (`unknownContractCells`). The reason is a package-level
+guarantee, not a local nicety — **every lifecycle tool loads through `load_contract` and none of
+them catches `ContractError`**, so refusing a hand-edited cell would leave a developer holding a
+task that `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_sync`
+and `worktree_abandon` had all simultaneously stopped being able to touch. The *write* boundary
+stays closed: the new `validate_contract(contract, *, path)` refuses all six vocabulary cells,
+so nothing in this package can create the state the reader tolerates, and an off-vocabulary cell
+can only arrive from outside and can only leave. Nine of the module's refusals now name the file
+they are about — and `path` is a required parameter taken from the caller rather than read off
+`contract.contract_path`, because that field is what the *document* claims about itself and a
+copied contract claims the path it came from.
+
+`ContractCells` + `amend_contract` replace `dataclasses.replace` for those six cells across
+`abandon`/`cleanup`/`closeout`/`integrate`/`start` and `tasks/reopen.py`. Typeshed declares
+`def replace(obj, /, **changes: Any)`, and one `Any` in a third-party stub voided the guarantee
+the whole scheme rests on: an off-vocabulary literal at any of the six fields, through
+`replace`, produced no pyright diagnostic at all.
+
+**`cli/dashboard.py`'s reload comment was wrong and is corrected.** It claimed that handing
+uvicorn a pre-built app object "silently disables reload". It does not: uvicorn refuses to start.
+Verified against the installed uvicorn 0.49.0, `uvicorn/main.py` lines 604-607 —
+`if (config.reload or config.workers > 1) and not isinstance(app, str):` logs the `uvicorn.error`
+warning "You must pass the application as an import string to enable 'reload' or 'workers'." and
+calls `sys.exit(1)`, before the port is bound. The import-string factory is still required; the
+failure mode it avoids is loud, not silent.
+
+**`code_quality/check.py` gained a caller obligation, and closeout is the caller that was
+breaking it.** `derive_scope` reads the *index* (`git ls-files`), which is exactly right for the
+pre-commit tier, where staged content is the commit. The closeout tier commits with
+`git add -A`, so until L4 every file a task **created** rather than edited was committed without
+ruff, pyright or the changed-lines coverage floor reading a line of it. `abc7cbcc` — the commit
+this leaf is based on — added four files that way, two of them `.py`. Closeout now stages its
+whole worktree before invoking the wrapper (`worktrees/modules/closeout.py::_gate_staged_code`),
+which is recorded in full at the `worktrees/modules` route. Note what was *not* done: widening
+`derive_scope` to `--cached --others --exclude-standard` would redefine the pre-commit tier and
+still could not reach `diff_coverage`, since an untracked file has no diff against any base. The
+CRAP threshold (20.0) and the diff-base resolution order are untouched by L4.
+
+The packaged `c-12-closeout` skill under `package_data/runtime/skills/` carries the matching
+doctrine, as it must — this is the same pathRules-eligible synced copy the commit-gate paragraph
+above names. It now states where the staging sits in the order, that a refused gate leaves the
+worktree staged and commits nothing, that the next run's reset makes a retry equivalent to a
+first run, and that both refusals are preconditions **of the staging step** and therefore run
+only where the gate runs: a consuming repository carrying no wrapper is not staged early and
+reaches the ordinary commit step's own `git add -A` exactly as before.
+
 ## Update History
+
+- 2026-08-01T00:00+02:00 — 260731-EFA-L4 curator. Added the L4 route impact: the package now
+  declares each wire vocabulary **once, at its producer**, and the response models import it —
+  the same shape of guarantee as L3's single git runner, recorded as an invariant beside it.
+  Verified the drift it replaces by reading `models/worktree.py` at `abc7cbcc`: the model then
+  declared `CleanupStatus` without `reopened` (written by `tasks/reopen.py` line 86, the only
+  writer in the package), `WorkflowKind = Literal["chat", "light", "light-task"]` against a tool
+  argument documenting `light-task`/`chat-task`, and phase/next-move literals missing
+  `carryover-pending`, `abandoned`, `request_carryover_decision` and `memory_carryover_apply`.
+  Re-derived the workflow-kind figure myself rather than taking the leaf's word for it — 213
+  `series-contract.md` files under this workspace's `ar-coordination/tasks/`, 205 `light-task`,
+  8 `chat-task`, zero `chat`, zero `light` — which is the sharpest single illustration of the
+  defect: the two members the wire model carried had no writer, and the one 8 real contracts
+  carry was absent. Recorded `worktrees/status.py` returning `WorktreeSummary` instead of `dict[str, Any]` (the
+  `Any` was what let those survive every type check up to packet-build time), the declared
+  omission of `nextTool`/`nextArgs`/`nextRequiredArgs`, and the contract's deliberate
+  read-tolerant / write-strict asymmetry with `unknown_cells` as the exception report.
+  **Corrected a falsified claim** in the L5I commit-gate paragraph: "fails closed before closeout
+  mutation … zero mutation on gate failure" is no longer true, because closeout now writes the
+  index before the gate and deliberately leaves it written when the gate refuses; it is "before
+  any closeout **commit**". **Corrected nothing in the code, but verified one code fix
+  independently**: `cli/dashboard.py`'s claim that an app object silently disables uvicorn reload
+  was false, and the replacement is right — uvicorn 0.49.0 `main.py` lines 604-607 warn and
+  `sys.exit(1)`, read in the installed package. Recorded that `code_quality/check.py`'s L4 change
+  is documentation only (+13 lines, all inside `derive_scope`'s docstring): the CRAP threshold
+  stays 20.0 and diff-base resolution is unchanged — what changed is the caller obligation the
+  index-derived scope puts on closeout. Added two package-map rows and extended the quality-gate
+  row. Verification metadata pinned until closeout stamps the L4 commit.
 
 - 2026-07-31T22:20+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
   **Re-counted the single-runner importers rather than trusting the figure: still twenty-six**, but
@@ -1551,10 +1692,6 @@ ceiling and smaller output-page budgets.
 - 2026-07-12T16:55+02:00 — No route impact: L1's dashboard build/sync changes only the generated
   `package_data/dashboard/` assets and sibling fingerprint within the already-documented static
   build/package/serve boundary; no MCP route, tool, Python package, or serving contract changed.
-
-+## 260712-TRH-L4 Route Impact
-
-L4 changes the MCP package public dispatch contract: spawn-only creation, exact-session hosted_session_readiness, and durable harness-log-confirmed dispatch-brief. The terminal catalog writer/reader contract is part of this boundary because readiness requires durable addressability.
 
 - 2026-07-12T13:46+02:00 — No route impact: 260712-TRH-L3 is dashboard-only. The collapsible task-group
   source change and the generated `package_data/dashboard` hash rollover do not change MCP routing or

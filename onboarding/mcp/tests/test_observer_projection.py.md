@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`       |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated | 2026-08-01T10:40+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
 
-[mcp overview](../overview.md) — there is no route-local `mcp/tests/overview.md`.
+[mcp/tests overview](overview.md)
 
 ## Purpose
 
@@ -62,6 +62,66 @@ end-to-end. The L10 regression (`test_resolves_leaf_doc_lifecycle_from_doc_id_ca
 seeds the real series shape — lowercase enclosure leaf id, uppercase doc id, numbered doc slug
 matching neither, no lifecycleId/enclosures[] on the doc — and asserts `read_task_documents` still
 attaches the enclosure's lifecycle.
+
+#### 260731-EFA-L4 — the lifecycle-state vocabulary suites (L1617-L2005)
+
+Five classes added between `TokenSeriesTests` and `StalenessHistogramTests`. They exist for a set
+difference, not a typo: `Metrics` bucketed **three** states by hand while `State` declared **six**,
+so an `awaiting-developer` lifecycle counted towards `lifecycleCount` and `totalTokens` and towards
+nothing else — the rollup could not show a lifecycle that had handed the turn back.
+
+- **`MetricsBucketVocabularyTests` (L1617-L1722)** — the coverage half. `live_states()` re-derives
+  the live set as `STATES` minus `TERMINAL_STATES` rather than reading `projection.ACTIVE_STATES`
+  (which *is* the live half verbatim), **so the measurement is not taken with the same instrument
+  it is checking**, and a seventh state fails here.
+  `test_the_vocabulary_scan_found_the_states` pins that the derivation found something, so a scan
+  matching nothing cannot satisfy everything below it. `test_every_live_state_has_a_metrics_bucket`
+  and `test_the_metrics_buckets_are_exactly_the_live_states` hold the two directions —
+  `lifecycleCount` excluded by name as the all-states total, the one `*Count` field that is
+  deliberately not per-state. `test_every_live_state_is_actually_counted` drives one real lifecycle
+  per live state through `project_workspace` and requires every bucket to read `1` and the total to
+  equal the number of live states — the fields existing is not the same as the reducer filling
+  them. `test_an_awaiting_developer_lifecycle_is_no_longer_uncountable` pins the reported symptom.
+  The `_log(state)` helper derives its event kind from the state (`lifecycle.<state>`) rather than
+  from a fourth table keyed by it.
+- **`StatePartitionTests` (L1725-L1789)** — deriving the bucket set as "the vocabulary minus
+  `TERMINAL_STATES`" only moves the hand-written list one level down unless `TERMINAL_STATES` is
+  itself tied to the vocabulary. It is: `State` is **composed** from the two halves. These hold
+  `check_state_partition` to totality and disjointness (`ACTIVE_STATES == LIVE_STATES` verbatim)
+  and drive its three refusals — a state filed on neither side ("neither live nor terminal"), on
+  both, and a filed state missing from the vocabulary — against **synthetic** `Literal`
+  vocabularies, so the guard is exercised without the real declaration having to be wrong.
+- **`TerminalityIsStructuralTests` (L1792-L1909)** — totality stops a state escaping
+  classification; it cannot stop one being classified **wrongly**, and a mis-filed state is the
+  same defect wearing the fix. So terminality gets an observable definition and is checked against
+  the fold in both directions: a terminal state is one the log reaches **only** through
+  `lifecycle.ended` (`coerce_end_outcome(state) == state`), and a live state is one some event kind
+  declares outright (`f"lifecycle.{state}" in _KIND_UPDATES`). `seeded_state()` asks the fold what a
+  bare `lifecycle.started` projects into rather than naming it. `test_is_terminal_reads_the_same_partition`
+  keeps `LifecycleState.is_terminal` and the projection from disagreeing, and
+  `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` holds the **write** side to the
+  same set — `AmbientLifecycle.end` validates against `TERMINAL_STATES` and converts through
+  `coerce_end_outcome`, so a terminal state the reducer can project but no session can write fails
+  here whatever the write side is spelled in.
+- **`StateVocabularyReaderTests` (L1912-L1947)** — `vocabulary_names` must read every legal
+  declaration form. `get_args` alone is only correct for a **flat** `Literal`; on the union form
+  (`Literal[...] | ReviewState`, a plausible way to fold a second vocabulary in) it returns
+  `Literal` objects, and the first consumer to call `.split` on one dies with `AttributeError` at
+  import of `agents_remember.observer` — the whole package goes down and the traceback names none
+  of this. These pin the reading, the flattening of an alias composition, the by-name refusals
+  (non-string member, empty declaration), and that the real declarations read as plain `str`.
+- **`StateCountFieldTests` (L1950-L2005)** — the state → bucket-field naming rule, held one-to-one
+  and identical to the client's. `test_a_capital_in_the_tail_survives` records why Python moved:
+  `dashboard/src/types/projection.ts` derives the names with `Capitalize<Camel<Tail>>`, which
+  upper-cases the first character and leaves the rest alone, while Python used `str.capitalize`,
+  which lower-cases the tail — so the two copies of one rule disagreed on `awaiting-DEVELOPER`.
+  TypeScript's is the rule expressible on both sides. `test_two_states_sharing_a_bucket_are_refused_rather_than_merged`
+  is the reviewer's case: `awaiting-Developer` beside `awaiting-developer` produced three
+  lifecycles, `awaitingDeveloperCount: 1`, and a **green** vocabulary suite, because the coverage
+  tests compare per-state values that both resolve to the merged field and therefore agree with
+  themselves. `state_count_fields` refuses to be built instead, and
+  `test_a_merged_bucket_would_have_under_counted_the_rollup` shows the number the dashboard would
+  have read.
 
 Slice 3b adds: `TokenSeriesTests` (cumulative fuel gauge from `tool.completed`; **260703-L15**
 extends the suite with the served bound — `_tool_log(count)` builds token-bearing logs, a series
@@ -249,8 +309,20 @@ with `decide_gate(gate, GateVerdict(...), now=...)`, `default_contract(ContractT
 leaf=LeafIdentity(...), code=RepoBranchPlan(...), memory=RepoBranchPlan(...))`, and
 `write_start_progress(root, StartingEnclosure(...), StartBeat(...))`.
 
+The 260731-EFA-L4 vocabulary suites add two local conventions. First, every derived set is derived
+with a *different* instrument from the one under test — `live_states()` subtracts
+`TERMINAL_STATES` from `STATES` rather than reading `ACTIVE_STATES`, and `seeded_state()` asks the
+fold rather than naming `running` — so no assertion can agree with itself. Second, the partition
+and reader guards are driven against **synthetic** `Literal` vocabularies declared as class
+attributes (`StatePartitionTests.LIVE` / `.TERMINAL`, L1736-L1737) plus inline `Literal[...]`
+arguments, so a refusal is exercised without the shipped declaration having to be wrong; only
+`test_the_real_partition_is_total_and_disjoint` and
+`test_the_real_bucket_fields_are_distinct` assert against the live vocabulary. `typing.Literal` is
+imported for exactly that (L23). The `EngineProcessTests` contract fixtures ask for
+`workflow_kind="light-task"`; the bare `"light"` they used is no longer a member of `WorkflowKind`.
+
 Git is exercised for real, not mocked, everywhere except one case: the suite imports the module
-object (`from agents_remember.observer import snapshots`, L42) purely so
+object (`from agents_remember.observer import snapshots`, L43) purely so
 `LedgerCommitMetaTests.test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
 can patch `snapshots.run_git` — a wedged git cannot be produced with a real repository. Patching the
 module attribute rather than `kernel.git_command.run_git` is what makes the test see the binding
@@ -269,25 +341,31 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode` L487-L533; `SeriesSubTaskNode` L536-L561; `SeriesNode` L564-L590 | [projection.py](../src/agents_remember/observer/projection.py) |
-| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | `read_task_documents` L1149-L1177; `read_series_documents` L1272-L1313; `_series_subtask_nodes` L1316-L1333; `_series_subtask_created_at` L1336-L1349; `_task_doc_node` L1370-L1459 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` L2782-L3043 | [test_observer_projection.py](test_observer_projection.py) |
-| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` L3108-L3166 | [test_observer_projection.py](test_observer_projection.py) |
-| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | `test_series_token_total_sums_linked_leaf_lifecycles` L691-L764 | [test_observer_projection.py](test_observer_projection.py) |
-| The fold + inferred layer + action availability under test. | `project_lifecycle` L71-L98; `_project_inferred` L446-L460; the action-availability block (`_lifecycle_actions` L466-L475, `enclosure_actions` L478-L479, `_integrate_action` L482-L496, `_cleanup_action` L499-L513) | [reducer.py](../src/agents_remember/observer/reducer.py) |
+| The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode` L585-L631; `SeriesSubTaskNode` L634-L649; `SeriesNode` L662-L688 | [projection.py](../src/agents_remember/observer/projection.py) |
+| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | `read_task_documents` L1152-L1180; `read_series_documents` L1275-L1316; `_series_subtask_nodes` L1319-L1336; `_series_subtask_created_at` L1339-L1352; `_task_doc_node` L1373-L1462 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
+| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` L3195-L3642 | [test_observer_projection.py](test_observer_projection.py) |
+| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` L3521-L3579 | [test_observer_projection.py](test_observer_projection.py) |
+| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | `test_series_token_total_sums_linked_leaf_lifecycles` L713-L786 | [test_observer_projection.py](test_observer_projection.py) |
+| The fold + inferred layer + action availability under test. | `project_lifecycle` L78-L105; `_project_inferred` L454-L468; the action-availability block (`_lifecycle_actions` L474-L483, `enclosure_actions` L486-L487, `_integrate_action` L490-L504, `_cleanup_action` L507-L521) | [reducer.py](../src/agents_remember/observer/reducer.py) |
 | The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | `workspace_provider_nodes` L16-L39; `_cgc_repo_provider_nodes` L83-L98; `_target_repo_provider_nodes` L139-L150; `_target_repo_ids` L174-L185 | [provider_nodes.py](../src/agents_remember/observer/provider_nodes.py) |
 | The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | `admitted_worktree_groups` L24-L45; `active_enclosure_worktree_groups` L48-L73 | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
 | The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`, `SeriesRetentionTests` | [test_observer_projection.py](test_observer_projection.py) |
 | The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
-| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers` L191-L209 with the group filter in `_worktree_providers` L224-L284; `read_engine_process_facts` L636-L693; `read_setup_progress_nodes` L1035-L1069 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` L1736-L1769 | [test_observer_projection.py](test_observer_projection.py) |
-| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L1910-L1949 | [test_observer_projection.py](test_observer_projection.py) |
+| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers` L191-L209 with the group filter in `_worktree_providers` L224-L284; `read_engine_process_facts` L636-L695; `read_setup_progress_nodes` L1038-L1072 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
+| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` L2149-L2182 | [test_observer_projection.py](test_observer_projection.py) |
+| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L2323-L2362 | [test_observer_projection.py](test_observer_projection.py) |
 | The log reader + atomic writer + orchestrator under test. | `read_lifecycle_logs` L112-L154; `write_projection` L157-L164 with `_atomic_write_json` L361-L365; `project_and_write` L214-L277 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
 | Projection reads active admission sets once and caches repo surfaces on a short TTL. | `REPO_SURFACE_REFRESH_TTL_SECONDS` L64-L68; the single admission/surface read inside `project_and_write` L232; L247; `_gather_repo_surfaces_cached` L334-L345 with `_repo_surface_cache_key` L348-L358 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
-| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests` L217-L325; `test_read_providers_ignores_unadmitted_worktree_stacks` L1267-L1293; `test_active_group_filter_skips_parked_progress` L2265-L2279; `test_repo_surface_cache_reuses_recent_repo_reads` L2679-L2720; `test_reader_skips_inactive_engine_process_groups_when_filtered` L3656-L3685 | [test_observer_projection.py](test_observer_projection.py) |
-| The drift-snapshot producer exercised by the round-trip test. | `run_drift_summary` L23-L71; `_write_drift_snapshot` L107-L149 | [onboarding_drift_check/summary.py](../src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
+| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests` L239-L347; `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315; `test_active_group_filter_skips_parked_progress` L2678-L2692; `test_repo_surface_cache_reuses_recent_repo_reads` L3092-L3113; `test_reader_skips_inactive_engine_process_groups_when_filtered` L4069-L4098 | [test_observer_projection.py](test_observer_projection.py) |
+| The drift-snapshot producer exercised by the round-trip test. | `run_drift_summary` L24-L72; `_write_drift_snapshot` L108-L150 | [onboarding_drift_check/summary.py](../src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
 | The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | `drift_snapshot_path` L19-L22; `prune_orphaned_drift_snapshots` L36-L69 | [drift_snapshots.py](../src/agents_remember/observer/drift_snapshots.py) |
 | The shared drift-snapshot dir/schema the fixtures use. | `DRIFT_SNAPSHOT_SCHEMA` L24; `drift_snapshot_dir` L37-L39 (the file is 39 lines) | [paths.py](../src/agents_remember/observer/paths.py) |
+| The lifecycle-state vocabulary under test: the composed `State`, its two halves, the partition guard, the declaration reader, and the end-outcome coercion the terminality tests drive. | `vocabulary_names` L41-L56; `check_state_partition` L73-L98; `STATES` L133-L135; `LIVE_STATES` L136-L138; `TERMINAL_STATES` L139; `DEFAULT_END_OUTCOME` L143; `coerce_end_outcome` L149-L158; `LifecycleState.is_terminal` L188-L210 | [lifecycle_state.py](../src/agents_remember/observer/lifecycle_state.py) |
+| The metrics buckets and the state→field naming rule the coverage suites hold to the vocabulary. | `ACTIVE_STATES` L227; `state_count_field` L230-L245; `state_count_fields` L248-L270; `STATE_COUNT_FIELDS` L273; `Metrics` L278-L304 | [projection.py](../src/agents_remember/observer/projection.py) |
+| The event-kind table `TerminalityIsStructuralTests` reads to decide which states a running session can declare about itself, and the rollup that fills the buckets. | `_KIND_UPDATES` L418-L427; `_metrics` L524-L547 | [reducer.py](../src/agents_remember/observer/reducer.py) |
+| The write side held to the same terminal set — `end` validates against `TERMINAL_STATES` and converts through `coerce_end_outcome`. | `AmbientLifecycle.end` | [ambient.py](../src/agents_remember/observer/ambient.py) |
+| The TypeScript mirror of the naming rule, which is why Python moved off `str.capitalize`: the field names are derived type-level with `Capitalize<Camel<Tail>>`. | `stateCountField` | [projection.ts](../../dashboard/src/types/projection.ts) |
+| The sibling suite that pins the structure of the ambient end signal's vocabulary, which this file pins the behaviour of. | `EndSignalVocabularyTests` | [test_observer_ambient.py](test_observer_ambient.py) |
 
 ## Series-Contract Notes
 
@@ -313,6 +391,72 @@ The provider-reader patch target follows its new `projection_inputs` ownership. 
 asserts the same projection output and uncached volatile-provider behavior.
 
 ## Update History
+
+- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the eight
+  `projection.py` pointers after a worker inserted ten lines above them; every one moved by exactly
+  +10 and none needed reshaping. `TaskDocNode` L575-L621 → L585-L631 (`id` L596, `lifecycleId` L597,
+  `createdAt` L609), `SeriesSubTaskNode` L624-L639 → L634-L649 (`createdAt` L649, the class's last
+  line), `SeriesNode` L652-L678 → L662-L688 (`objective` L680); `ACTIVE_STATES` L217 → L227,
+  `state_count_field` L220-L235 → L230-L245, `state_count_fields` L238-L260 → L248-L270,
+  `STATE_COUNT_FIELDS` L263 → L273, `Metrics` L268-L294 → L278-L304. No body text changed.
+- 2026-08-01T09:35+02:00 — 260731-EFA-L4 curator: this suite gained **five vocabulary/partition
+  classes** and the card gained a section for them, plus three corrections and 12 citation repairs.
+  **New coverage (L1617-L2005, between `TokenSeriesTests` and `StalenessHistogramTests`):**
+  `MetricsBucketVocabularyTests` (L1617-L1722) derives the live state set as `STATES` minus
+  `TERMINAL_STATES` **rather than** reading `projection.ACTIVE_STATES`, so the measurement is not
+  taken with the instrument it is checking; it holds both directions (every live state has a
+  bucket, every `*Count` bucket except `lifecycleCount` is a live state), drives one real lifecycle
+  per live state through `project_workspace` so a declared-but-undrivable state is reported rather
+  than skipped, and pins the reported symptom — `awaiting-developer` was in `lifecycleCount` and
+  `totalTokens` and in no bucket. `StatePartitionTests` (L1725-L1789) holds
+  `check_state_partition`'s three refusals against **synthetic** `Literal` vocabularies so the
+  guard is exercised without the shipped declaration being wrong.
+  `TerminalityIsStructuralTests` (L1792-L1909) gives terminality an observable definition and
+  checks it against the fold in both directions (`coerce_end_outcome`, `_KIND_UPDATES`), and holds
+  the write side (`AmbientLifecycle.end`) to the same terminal set. `StateVocabularyReaderTests`
+  (L1912-L1947) pins `vocabulary_names` across the flat, composed and union `Literal` forms — the
+  union form is where bare `get_args` returns `Literal` objects and the first `.split` kills the
+  whole `agents_remember.observer` import. `StateCountFieldTests` (L1950-L2005) pins the
+  state→field rule against the TypeScript mirror's `Capitalize<Camel<Tail>>` and refuses two states
+  that would share a bucket — the reviewer's `awaiting-Developer`/`awaiting-developer` case
+  produced a merged count and a **green** vocabulary suite, because the coverage tests compare
+  per-state values that both resolve to the merged field. **Corrections:** (1) the
+  `## Governing Overview` line asserted "there is no route-local `mcp/tests/overview.md`" — that
+  file exists in this memory tree, so the section and the `governingOverview` cell now point at it
+  (`overview.md`) instead of at `../overview.md`; (2) the Conventions note cited the
+  `from agents_remember.observer import snapshots` patch-seam import at L42, now **L43** (the
+  `typing.Literal` import at L23 pushed it down); (3) recorded that the `EngineProcessTests`
+  contract fixtures now ask for `workflow_kind="light-task"` — the bare `"light"` is no longer a
+  `WorkflowKind` member. Added a Conventions paragraph for the two local conventions the new suites
+  introduce (derive with a different instrument; drive guards against synthetic vocabularies).
+  **Citation repairs — 12 rows.** The file grew 3825 → 4238 lines: +22 in the import block and
+  +391 at L1614, so self-citations shifted by +22 below L1614 and by +413 above it, and every one
+  was re-verified against the symbol it names. `TaskDocumentsReaderTests` L2782-L3043 →
+  **L3195-L3642** (its END was already wrong before this leaf: at `abc7cbcc` the class ran to
+  L3229, not L3043); `test_repo_surface_cache_reuses_recent_repo_reads` L2679-L2720 →
+  **L3092-L3113** (END likewise wrong — L2700 at the base);
+  `test_read_series_documents_orders_subtasks_by_leaf_creation` L3108-L3166 → **L3521-L3579**;
+  `test_series_token_total_sums_linked_leaf_lifecycles` L691-L764 → **L713-L786**;
+  `test_drift_and_failed_setup_surface` L1736-L1769 → **L2149-L2182**;
+  `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L1910-L1949 → **L2323-L2362**;
+  and the task-29 set L217-L325; L1267-L1293; L2265-L2279; L2679-L2720; L3656-L3685 →
+  **L239-L347; L1289-L1315; L2678-L2692; L3092-L3113; L4069-L4098**. Cross-file rows moved because
+  their modules changed this leaf: `projection.py` `TaskDocNode`/`SeriesSubTaskNode`/`SeriesNode`
+  L487/L536/L564 → **L575-L621; L624-L639; L652-L678**; `snapshots.py` reader row
+  L1149/L1272/L1316/L1336/L1370 → **L1152-L1180; L1275-L1316; L1319-L1336; L1339-L1352;
+  L1373-L1462** and its group-filter row's `read_engine_process_facts` L636-L693 → **L636-L695**
+  and `read_setup_progress_nodes` L1035-L1069 → **L1038-L1072** (`read_providers` L191-L209 and
+  `_worktree_providers` L224-L284 re-verified unmoved); `reducer.py` `project_lifecycle` L71-L98 →
+  **L78-L105**, `_project_inferred` L446-L460 → **L454-L468**, and the action-availability block
+  L466/L478/L482/L499 → **L474-L483; L486-L487; L490-L504; L507-L521**; `summary.py`
+  `run_drift_summary` L23-L71 → **L24-L72** and `_write_drift_snapshot` L107-L149 → **L108-L150**.
+  `provider_nodes.py`, `projection_store.py`, `drift_snapshots.py`, `paths.py` and
+  `worktree_provider_admission.py` were re-verified and their ranges still contain their named
+  symbols. Added seven rows for the new coverage (`lifecycle_state.py`, `projection.py`'s bucket
+  machinery, `reducer.py`'s `_KIND_UPDATES`/`_metrics`, `ambient.py`'s `end`, the TypeScript
+  mirror, and the sibling `test_observer_ambient.py`). The Repo-Internal table's 3-column header
+  from the L3 repair is intact and every new row carries three cells. Verification metadata pinned
+  until closeout stamps the L4 commit.
 
 - 2026-07-31T21:55+02:00 — 260731-EFA-L3 curator: recorded the one test this leaf added and
   repaired every line range in the card. **New coverage:**

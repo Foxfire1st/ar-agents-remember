@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_facts.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:45+02:00|
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                         |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:52+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                         |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,16 +26,29 @@ exception escaping to the caller.
 
 ### Logic
 
-`read_git_facts(repo_id, repo_root)` (L28-L33) resolves the path and delegates to
-`_read_git_facts` (L36-L89), catching `OSError`/`SubprocessError` into an
+`read_git_facts(repo_id, repo_root)` (L40-L45) resolves the path and delegates to
+`_read_git_facts` (L48-L101), catching `OSError`/`SubprocessError` into an
 `unavailable` `GitFacts`. `_read_git_facts` short-circuits to `unavailable` when
 the path is missing, is not a directory, or is not a git work tree; otherwise it
 reads HEAD (empty HEAD -> `unavailable`), the current branch, and
 `status --porcelain` for the dirty flag. `state` is `available` when a branch is
-present and `detached` when HEAD has no branch. `git_facts_to_packet` (L92-L103)
+present and `detached` when HEAD has no branch (L100).
+`git_facts_to_packet` (L104-L115)
 projects a `GitFacts` into the context-packet dict, adding `error` only when set.
-`_git_stdout` (L106-L112) returns trimmed stdout or `""` on non-zero exit;
-`_git_error` (L115-L116) picks the most informative of stderr/stdout/default.
+`_git_stdout` (L118-L124) returns trimmed stdout or `""` on non-zero exit;
+`_git_error` (L127-L128) picks the most informative of stderr/stdout/default.
+
+**This module declares the repo-availability vocabulary.** `RepoState = Literal["available",
+"detached", "unavailable"]` (L22) with `VALID_REPO_STATES` derived from it by `get_args` (L26).
+`GitFacts.state` (L36) is that alias, not `str`, and the one computed assignment is annotated
+`state: RepoState` (L100) so the checker sees it. The wire face —
+`models.context_packet.RepoSummary.state` — **imports** this alias instead of retyping it.
+That matters because the packet builds that block as
+`RepoSummary.model_validate(git_facts_to_packet(...))` over an untyped dict: a hand-written copy
+at the boundary is invisible until a real repo produces the new member, and by then it is a
+pydantic `ValidationError` raised inside a tool handler with no `except` for one. That is the
+failure mode 165 of the 213 `series-contract.md` files on disk were reproducing across the
+package's seven vocabulary gaps.
 
 ### Conventions
 
@@ -47,18 +60,18 @@ All git calls go through the shared `run_git` runner imported from
 `timeout` keyword defaults to `GIT_LOCAL_TIMEOUT_SECONDS` (300), and inheriting
 that default is what this module deliberately does not do: the timeout class
 belongs to the command, not to the module the call sits in. `_git_stdout`'s
-`timeout` is therefore **keyword-only and required** (L106), so no call site here
+`timeout` is therefore **keyword-only and required** (L118), so no call site here
 can silently take the 300s default — a new probe that forgets it is a
 `TypeError`, not a five-minute hang.
 
-The assignments (L58-L87), with the reasoning carried in the code comments:
+The assignments (L70-L99), with the reasoning carried in the code comments:
 
 | Command | Bound | Why |
 | --- | --- | --- |
-| `rev-parse --is-inside-work-tree` (L66-L68) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time (~1.8ms measured on this repo) |
-| `rev-parse HEAD` (L80) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
-| `branch --show-current` (L84) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
-| `status --porcelain` (L87) | `GIT_LOCAL_TIMEOUT_SECONDS` (300) | **not** constant time — it stats the whole work tree |
+| `rev-parse --is-inside-work-tree` (L78-L80) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time (~1.8ms measured on this repo) |
+| `rev-parse HEAD` (L92) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
+| `branch --show-current` (L96) | `GIT_METADATA_TIMEOUT_SECONDS` (30) | constant time |
+| `status --porcelain` (L99) | `GIT_LOCAL_TIMEOUT_SECONDS` (300) | **not** constant time — it stats the whole work tree |
 
 The metadata band exists for exactly these reads because they sit under
 `resolve_context`, which runs on essentially every tool call: on the local
@@ -75,13 +88,21 @@ across `kernel/` — asserted by
 - Failure is data, not an exception: every error path returns a `GitFacts` with
   `state="unavailable"` and an `error` message. That still holds for a tripped
   bound: `subprocess.TimeoutExpired` is a `SubprocessError`, which
-  `read_git_facts` (L32) catches into `state="unavailable"`.
+  `read_git_facts` (L44) catches into `state="unavailable"`.
 - The git invocation flags, `safe.directory` isolation, the `GIT_DIR`-family
   selector stripping, and the DEVNULL stdin live in the shared `run_git` runner,
   not here. The **timeout class does not** — it is chosen per command at each
   call site in this file, because one number cannot bound both a `rev-parse` and
   a `status` over a large tree.
-- `state` is exactly one of `available`, `detached`, or `unavailable`.
+- `state` is exactly one of `available`, `detached`, or `unavailable`, and that
+  is now enforced by a type rather than by prose: `RepoState` (L22) is the single
+  declaration, `GitFacts.state` is typed with it, and the context packet's
+  `RepoSummary.state` imports it. **A new degrade path must add its member here,
+  not at the wire model** — the whole point is that there is no second set to
+  add it to.
+- `VALID_REPO_STATES` (L26) is derived from the alias by `get_args`, never listed
+  separately, and the exhaustiveness suite asserts the set this module actually
+  produces equals it — which also catches a declared member no writer can emit.
 
 ## Docs References
 
@@ -101,7 +122,9 @@ The shared git runner and the context-packet consumer are the direct evidence.
 | The three timeout bands this file selects from, and the `run_git` signature whose `timeout` defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`. | `GIT_LOCAL_TIMEOUT_SECONDS` / `GIT_REMOTE_TIMEOUT_SECONDS` / `GIT_METADATA_TIMEOUT_SECONDS` L35-L55; `run_git` L67-L96 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
 | The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound. | `git_branch` / `git_head_or_empty` L21-L39 | [coordination_context/cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
 | The per-command bounds are asserted, not left to whichever module holds the call — including the cross-module comparison that fails on re-divergence. | `TimeoutClassTests` L543-L653; `test_read_git_facts_bounds_its_three_ref_reads_at_the_metadata_band` L575-L597; `test_one_command_means_one_bound_across_the_kernel` L623-L647 | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
-| `git_facts_to_packet` output feeds the context packet's repo summary. | `read_git_facts` / `git_facts_to_packet` | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| `git_facts_to_packet` output feeds the context packet's repo summary. | `read_git_facts` L77; `RepoSummary.model_validate(git_facts_to_packet(...))` L81 | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| The wire face that imports `RepoState` instead of retyping it — the untyped-dict boundary this alias exists to close. | `RepoSummary.state` L27; import L9 | [models/context_packet.py](agents-remember/mcp/src/agents_remember/models/context_packet.py) |
+| `test_every_repo_state_the_git_facts_reader_writes_validates` asserts produced == `VALID_REPO_STATES`; `test_an_absent_repo_crosses_the_wire_as_unavailable` walks a real degrade through `RepoSummary`. | `ProducedLiteralTests`; `ProducerWireCrossingTests` | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
 
 ## Cross-Repo References
 
@@ -114,6 +137,26 @@ code repos and external-memory repos, but its contract is local to this file.
 
 ## Update History
 
+- 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: body updated and every self-citation
+  re-derived. This module now DECLARES `RepoState = Literal["available", "detached",
+  "unavailable"]` (L22) with `VALID_REPO_STATES` derived by `get_args` (L26); `GitFacts.state`
+  (L36) changed from `str` to that alias and the computed assignment is annotated
+  `state: RepoState` (L100). `models.context_packet.RepoSummary.state` imports it rather than
+  keeping the hand-written copy it used to hold — the copy that could only ever be measured
+  against this module when a real repo produced a new member, as a `ValidationError` inside a
+  tool handler with no `except` for one. The card's `state` invariant asserted the three values
+  in prose; it now names the type that enforces them and says where a fourth member must be
+  added. Citations: the file grew 116 → 128 lines and everything below the new alias block moved
+  +12, so all eleven self-citations were re-derived — `read_git_facts` L28-L33 → L40-L45,
+  `_read_git_facts` L36-L89 → L48-L101, `git_facts_to_packet` L92-L103 → L104-L115, `_git_stdout`
+  L106-L112 → L118-L124 (and its required-keyword `timeout` L106 → L118), `_git_error` L115-L116
+  → L127-L128, the assignments block L58-L87 → L70-L99, `rev-parse --is-inside-work-tree`
+  L66-L68 → L78-L80, `rev-parse HEAD` L80 → L92, `branch --show-current` L84 → L96,
+  `status --porcelain` L87 → L99, and the degrade-catch L32 → L44. The `run_git` import row
+  (L10-L14) was re-checked and still lands. The `context_packet.py` row gained
+  `read_git_facts` L77 / the `model_validate` call L81, and rows were added for
+  `models/context_packet.py` (L9, L27) and the exhaustiveness suite. Verification metadata
+  pinned until closeout stamps the L4 commit.
 - 2026-07-31T21:20+02:00 — 260731-EFA-L3 curator: body corrected. The Invariants section said "the
   git invocation flags, `safe.directory` isolation, and **the 5-second timeout** live in the shared
   `run_git` runner, not here" — the 5s is gone (the runner's `timeout` keyword now defaults to

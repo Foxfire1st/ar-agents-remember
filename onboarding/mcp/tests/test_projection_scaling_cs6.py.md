@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |                                                `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                                2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T09:31+02:00 |
+| lastVerifiedCommitHash |                                                `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |                                                2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ No external documentation governs these repo-local projection scaling regression
 | The shared per-tick contract snapshot + stat-identity parse cache under test. | L1-L145 | [mcp/src/agents_remember/observer/contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
 | The single per-tick build in `project_and_write` the full-tick regression instruments: one shared `ContractSnapshotCache`, then exactly one `state.read(...)` pass per tick. | L96-L102; L214-L237 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
 | Projection store implements lifecycle-log caching and over-budget task-document payload warnings. | L89-L109; L112-L154; L275; L280-L306 | [mcp/src/agents_remember/observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Snapshot readers implement the shared task-document cache, single-read gate fold, and git-status TTL cache. | L113-L155; L485-L516; L601-L663 | [mcp/src/agents_remember/observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| Snapshot readers implement the shared task-document cache (`_task_doc_cache` + `_iter_task_document_payloads`), the single-read gate fold (`read_gates`), and the git-status TTL cache (`STATUS_PAYLOAD_TTL_SECONDS` / `_cached_local_status`). | L132-L144; L155-L173; L520-L549; L744-L797 | [mcp/src/agents_remember/observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
 
 ## Cross-Repo References
 
@@ -93,6 +93,23 @@ No meaningful cross-repo references found.
 landing authority while contract, guidance, and other status facts retain identity and value.
 
 ## Update History
+
+- 2026-08-01T09:31+02:00 — 260731-EFA-L4 curator: repaired the `observer/snapshots.py` citation,
+  which named three symbols and pointed at none of them. `L485-L516` and `L601-L663` sat in an
+  unrelated docstring and in `read_agent_pickups`; the row is now L132-L144 (the two module-level
+  caches declared together: `_task_doc_cache = TaskDocumentPayloadCache()` at L137 and
+  `STATUS_PAYLOAD_TTL_SECONDS`/`_status_payload_cache` at L143-L144), L155-L173
+  (`_iter_task_document_payloads`, which routes through the cache when `now` is not None),
+  L520-L549 (`read_gates`, the one-scan/one-read-per-log fold with the
+  `GATE_COMPACT_TTL_SECONDS`-gated physical prune) and L744-L797 (`_safe_status_payload` plus
+  `_cached_local_status`, the TTL lookup). Each range re-read at its new position. That drift
+  pre-dates this leaf: `snapshots.py` changed here only at L675-L680 and L787-L792 (two
+  `dict(...)` widenings at the now-TypedDict `lifecycle_guidance` / `projected_status_payload`
+  boundaries), both below every cited range, and the claim itself is unchanged. In the test file
+  the only change was two `LandingProjectionHotPathTests` fixtures moving `workflow_kind="light"`
+  to `"light-task"`, one-for-one, so all six own-file ranges plus the `contract_snapshot.py` (whole
+  file, 145 lines) and `projection_store.py` rows were re-verified and still land — no counter,
+  cache assertion, budget threshold or ctime-hardening case changed.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired both `observer/projection_store.py`
   citations (4 ranges), all read back in the 365-line file. The per-tick-build row is now

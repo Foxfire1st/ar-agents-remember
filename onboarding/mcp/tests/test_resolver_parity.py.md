@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_resolver_parity.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-23T18:05+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:59+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -43,6 +43,22 @@ deleted runtime skill script.
 Resolver parity tests now pin task-name lookup over active roots, nested parent disambiguation, leaf-id selection, archive exclusion, and parity between source API and MCP wrapper arguments.
 
 ## Update History
+
+- 2026-08-01T09:59+02:00 — 260731-EFA-L4 curator: No content impact: three fixture values moved
+  onto the narrowed `WorkflowKind` (`Literal["chat-task", "light-task"]`,
+  `worktrees/worktree_contract.py` L50) — `"light"` to `"light-task"` in
+  `test_worktree_contract_resolution_reports_expected_context`, and `"master-series"` to
+  `"light-task"` in the two `default_series_contract` fixtures inside
+  `test_parent_task_disambiguates_nested_task_roots` and
+  `test_active_series_discovery_excludes_archive`. Checked the one thing that could have made that
+  consequential and it did not: series-ness is set by `default_series_contract` itself
+  (`contract.kind == "series"`), not by the workflow kind, so the nested-parent case still raises
+  `TaskResolutionError` on "multiple active tasks" and still disambiguates via `--parent-task`, and
+  the archive case still excludes `0_archive/`. Re-read every claim in the card against the current
+  396-line file: 5 tests in `ResolverCliTests`, the external / internal / contract-backed context
+  key sets asserted through `assert_context_shape`, `--contract-path` reporting
+  `contract_path`/`worktree_group`/`code_worktree`, and `--leaf-id` selection at L149-L153. Both
+  reference paths resolve. The card names no workflow kind.
 
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 rewrote only the contract-fixture call
   sites. `default_contract` and `default_series_contract` now take the `ContractTask`,

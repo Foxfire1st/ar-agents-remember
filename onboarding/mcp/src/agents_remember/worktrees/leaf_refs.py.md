@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:20+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -56,6 +56,26 @@ still run through `read_task_doc` and fail loudly.
 expected form and candidate qualified ids, and its `status` is either `leaf-ref-not-found` or
 `leaf-ref-ambiguous` for API/tool adapters.
 
+### 260731-EFA-L4: `status` is a declared wire vocabulary, not a bare string
+
+The two members are now the module-level alias `LeafRefStatus = Literal["leaf-ref-not-found",
+"leaf-ref-ambiguous"]`, with `VALID_LEAF_REF_STATUSES: frozenset[LeafRefStatus] =
+frozenset(get_args(LeafRefStatus))` derived from it rather than retyped beside it, and
+`LeafRefResolutionError.__init__` annotates the assignment `self.status: LeafRefStatus = ...`.
+
+**This module is the alias's only producer, and that is why it is declared here.**
+`mcp.tools.leaf_ref.leaf_ref_refusal_payload` (the terminal-side adapter, used by
+`attach_terminal_session_to_leaf` and `spawn_agent_session`) and
+`modules.leaf_ref_start.invalid_leaf_ref_result` (the worktree-start adapter) both copy
+`error.status` verbatim into whichever tool refused, so `models.terminal` folds `LeafRefStatus`
+into both `LeafAssignmentStatus` and `SpawnAgentSessionStatus` — `Literal` flattens nested aliases,
+so the published enums are unchanged — instead of keeping hand-written copies of the same two
+members. A
+hand-written second copy is exactly what drifts: the response model rejects a value the producer
+emits, and the resulting pydantic `ValidationError` escapes an MCP tool handler that has no
+`except` for it. Adding a resolution failure mode means adding a member here, and the wire models
+inherit it.
+
 `resolve_leaf_enclosure_contract_for_ref()` is the compatibility bridge for worktree contract loading. It
 first resolves aliases through the same task tree, then tries existing enclosure directories in canonical
 doc-id and legacy forms. If the task tree cannot prove a unique alias, it falls back to the raw legacy
@@ -71,6 +91,9 @@ walk. `repo_name` only shapes the internal qualified ids, never the returned doc
 
 - Terminal catalog assignments and spawn provenance persist `ResolvedLeafRef.qualified_id`.
 - Worktree contracts persist `ResolvedLeafRef.doc_id`.
+- `LeafRefStatus` is declared here and imported by the wire models; it is never retyped at a
+  response boundary. `VALID_LEAF_REF_STATUSES` is derived from it with `get_args`, so a member can
+  only ever be added in one place.
 - Missing optional master `task.json` files and sibling non-task JSON artifacts are skipped; malformed
   non-task JSON artifacts are tolerated for boot safety, but malformed
   marker-bearing task documents are not swallowed.
@@ -86,10 +109,25 @@ walk. `repo_name` only shapes the internal qualified ids, never the returned doc
 | Worktree contract WRITES and the explicit `heal_contract_leaf_ids` sweep normalize legacy `leaf_id` values through this resolver; since 260712-PTS-L1 contract reads never call into this module. | [worktree_contract.py](worktree_contract.py.md) |
 | The heal consumes `canonical_leaf_doc_ids` as its per-task-root cheap-skip index. | [worktree_contract.py](worktree_contract.py.md) |
 | Terminal serving adapter persists qualified catalog keys from this resolver. | [../serving/leaf_ref_validation.py](../serving/leaf_ref_validation.py.md) |
+| `LeafAssignmentStatus` and `SpawnAgentSessionStatus` fold in the `LeafRefStatus` alias declared here rather than restating its two members. | [../models/terminal.py](../models/terminal.py.md) |
+| `leaf_ref_refusal_payload` copies `LeafRefResolutionError.status` onto the terminal-tool refusal verbatim. | [../mcp/tools/leaf_ref.py](../mcp/tools/leaf_ref.py.md) |
 | Focused resolver tests pin accepted forms, ambiguity, no-match candidates, missing optional master docs, schema-marked malformed doc failures, sibling artifact skips, read-path contract tolerance, and light-task indexing. | [test_leaf_ref_resolution.py](../../../tests/test_leaf_ref_resolution.py.md) |
 
 ## Update History
 
+- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: the card said `LeafRefResolutionError.status` is
+  "either `leaf-ref-not-found` or `leaf-ref-ambiguous`", which was true but no longer the whole
+  fact: those two members are now the exported alias `LeafRefStatus = Literal[...]`, the assignment
+  in `__init__` is annotated `self.status: LeafRefStatus = ...`, and `VALID_LEAF_REF_STATUSES` is
+  derived from it with `get_args` (new `from typing import Literal, get_args`). Added the section
+  recording that this module is the alias's only producer and that `models.terminal` folds it into
+  `LeafAssignmentStatus` and `SpawnAgentSessionStatus` rather than restating the members — verified
+  by reading both unions, which each embed `LeafRefStatus` directly. Named both copying adapters:
+  `mcp.tools.leaf_ref.leaf_ref_refusal_payload` for the terminal tools and
+  `modules.leaf_ref_start.invalid_leaf_ref_result` for worktree start. Added the one-declaration
+  invariant and two reference rows. Resolution behaviour, candidate policy, the L2 generators and
+  `canonical_leaf_doc_ids` are untouched by this leaf. Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
   exemptions): candidate enumeration was extracted from `_leaf_candidates_for_root` into the
   generators `_declared_leaves(task_root)` and `_root_document_leaves(root_doc, task_root)`, and the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-18T20:03+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T10:04+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -192,6 +192,28 @@ the L3 memory-base regression: `memory_base_for_source` records the memory base 
 tip, not the repo HEAD when the memory repo is checked out on an unrelated branch.
 
 ## Update History
+
+- 2026-08-01T10:04+02:00 — 260731-EFA-L4 curator: No content impact: five one-for-one line
+  replacements, none of which this card describes. Four are fixture values moving to the narrowed
+  `WorkflowKind` — `workflow_kind="chat"` becoming `"chat-task"` in
+  `open_external_contract_fixture` (L279), `committed_range_external_contract_fixture` (L353),
+  `closed_external_contract_fixture` (L425) and the atomic-integrate contract (L2930) — forced by
+  `WorkflowKind = Literal["chat-task", "light-task"]` (`worktrees/worktree_contract.py` L50). The
+  fifth is inside `test_status_reports_integration_pending_for_dirty_closed_contract`, where
+  `payload["nextTool"]` became `payload.get("nextTool")`: `status_payload` now returns a
+  `WorktreeStatusPayload` whose `nextTool` is `NotRequired` (omitted rather than `""`), so the
+  subscript is a type error. Same expected value, `"worktree_integrate"`, and the paired
+  `assertNotIn("next_command", payload)` is untouched — the card's claim for that row is the
+  `integration-pending` / `request_integration_decision` position, which is unchanged, and the card
+  names `nextTool` nowhere. Nothing shifted a line: the file is still 3845 lines, so I re-verified
+  all fifteen Repo-Internal citations at their recorded positions rather than assuming them —
+  L22-L74 and L112-L134 (imports + `write_file_onboarding`), L136-L205 (`write_route_overview`),
+  L234-L262 (`initialized_memory_repo`), L409-L479 (`closed_external_contract_fixture`), L745-L762,
+  L1069-L1108, L1280-L1350 (the roundtrip test, whose `worktree_manager.command_status(` call at
+  L1343 is the "direct contract-path status loading" the row claims), L1352-L1591, L1950-L1962,
+  L2159-L2224 (which does contain `test_resolver_uses_installed_runtime_root_as_coordination_root`),
+  L2281-L2324, L2326-L2522, L2582-L2682 and L2949-L3582 (`BenchmarkRunnerPortabilityTests`). All
+  land on the symbols their claims name. No test method was added, removed or renamed.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the PLR0913 pass moved the call shapes this
   suite uses. `default_contract` now takes a `ContractTask` plus `leaf`/`code`/`memory` objects,

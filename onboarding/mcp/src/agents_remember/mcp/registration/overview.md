@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-31T15:31+02:00                           |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T00:00+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -142,6 +142,22 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 
 ## Update History
 
+- 2026-08-01T00:00+02:00 — No route impact: 260731-EFA-L4 touches exactly one file under this
+  path, `closeout.py` (+16/-7), and the change is **entirely inside two published docstrings** —
+  `worktree_closeout_preview` and `worktree_closeout_apply` now describe closeout's new
+  stage-before-gate step and its two refusals (not a task worktree; unresolved merge conflicts).
+  Proven rather than eyeballed: I parsed the file at `abc7cbcc` and at the current revision,
+  stripped every module/class/function docstring from both syntax trees, and the two dumps are
+  identical — so no signature, parameter, default, annotation, return type, decorator or
+  forwarding call moved. That matters here more than elsewhere, because on this route **the
+  signature IS the published JSON schema**: a docstring edit changes the model-visible
+  description and nothing on the wire, which is exactly the split this overview's defining
+  contract describes. The two tools stay in the `closeout.py` family, `TOOL_REGISTRARS` and the
+  58-name `PUBLIC_TOOLS` set are untouched, and no new function entered the `PLR0913`-exempted
+  path, so `ToolSignatureExemptionTests` sees the same AST it did before. This overview's
+  claim that "the published docstring … carries the refusal vocabulary … in prose" is not
+  merely still true — L4 is an instance of it. Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: route created. The `@server.tool()` surface moved
   out of `server.py` into this package (12 family modules + `TOOL_REGISTRARS`), and the route
   records its defining contract — the signature IS the published MCP schema — together with the

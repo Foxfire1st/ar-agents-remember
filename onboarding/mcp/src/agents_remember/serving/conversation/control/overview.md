@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/control/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 
 ## What This Area Is
 
@@ -212,7 +212,9 @@ foundation and four+installed suites pin the slice.
 | Finding | Citations | Source Path |
 | --- | --- | --- |
 | The two L0 request dependencies are the only caller/runtime consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The operation/queue/withdrawal/recovery/attachment/telemetry wire products this route imports, the `protect_queue_source_privacy` validator, and the content-free `operation_fingerprint`. Policy products (`PolicyPart`, `ConversationPolicyProjection`) are route-local in `control/policy.py`, not here. | L915-L1242; L1265-L1282 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The operation/queue/withdrawal/recovery/attachment/telemetry wire products this route imports, the `protect_queue_source_privacy` validator, and the content-free `operation_fingerprint`. Policy products (`PolicyPart`, `ConversationPolicyProjection`) are route-local in `control/policy.py`, not here. | L935-L1262; L1285-L1302 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The seventeen route declarations: one shared refusal table plus the two outcome tables, and the submit route's own 202/422 entries. `_map_typed_error` is the single mapper that makes one table the complete refusal surface. | L124-L150; L151-L789 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
+| `CONTROL_RESPONSES` (six statuses), `INTERRUPT_OUTCOME_RESPONSES` and `WITHDRAW_OUTCOME_RESPONSES` — the outcome tables whose bodies are the operation, not a refusal — plus `StagedAttachments`/`ConversationSubmitted`/`WithdrawQueueAnswer`. | L57-L90; L95-L112; L140-L177 | [conversation/response_contract.py](agents-remember/mcp/src/agents_remember/serving/conversation/response_contract.py) |
 | The L2E control-plane reads (interrupt write, operation timeline, asset channel) this slice consumes. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
 | The L3E truncation-envelope terminal-identity preservation the pi settlement reads. | L569-L667 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
 | The authority setter mint with no submission source (setter-row exclusion basis). | L541-L543 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
@@ -327,8 +329,71 @@ and `SubmittedContent` (`attachments.py`) play the same role for their operation
 No route was added or removed; the seventeen routes, the typed-error mapping, the bounded ledgers,
 the never-bodies queue rule and the cockpit-only withdrawal restriction are all as described above.
 
+## 260731-EFA-L4 — Seventeen Declarations, And The Distinction Between An Outcome And A Refusal
+
+No route was added or removed; the ref authority, bounded ledgers, never-bodies queue rule,
+cockpit-only withdrawal restriction and capability gate are all unchanged. All seventeen routes now
+declare a `response_model` and a `responses` table.
+
+**One shared refusal table covers all seventeen, and that is a claim about the code, not a
+convenience.** `_map_typed_error` is the single place a typed error becomes a status here, and it
+maps the whole family onto exactly six: 400 (a malformed operation/recovery/asset ref), 403
+(authorization), 404 (unknown session or operation), 409 (stale epoch or a typed conflict), 422
+(rejected as posed), 503 (composition or bridge unavailable). `CONTROL_RESPONSES` is that mapper
+transcribed. If a later leaf adds a seventh status to `_map_typed_error` and not to the table, the
+declaration becomes a lie that nothing about the mapper itself will catch.
+
+**Where this route is unusual: three of its statuses are not refusals at all.** The interrupt trio,
+the withdrawal route and submit each choose their status from the operation they built, and the body
+on those statuses is the operation:
+
+| Route(s) | Status chosen by | Statuses carrying a NON-refusal body |
+| --- | --- | --- |
+| `interrupt` / `interrupt-status` / `interrupt-reconcile` | `operations.interrupt_http_status`, off the operation's own `acknowledgement`/`settlement` | 202, 422, 503 carry `InterruptOperation` |
+| `operation-queue/withdraw` | `withdrawals.withdraw_http_status`, off which answer it built | 202, 404, 409 carry `WithdrawQueueAnswer` (withdrawn **or** failed) |
+| `conversation/submit` | `acceptance` (`unknown` → 202, `rejected`/`unsupported` → 422) | 200, 202, 422 all carry the SAME `ConversationSubmitted` body |
+
+An acknowledged-but-unsettled interrupt on 202 and a failed withdrawal on 409 are this route's own
+answers, not error envelopes. Declaring them through the shared refusal table alone would have been
+wrong, **and the conformance suite caught exactly that on a real 422 from the interrupt route.**
+
+**The merge trap.** These outcome tables are spread as `{**CONTROL_RESPONSES, **OUTCOME}`, and
+`{**a, **b}` is a dict merge — a bare `{422: InterruptOperation}` would DELETE the shared refusal
+entry rather than join it, declaring a model the route cannot produce on a status it genuinely
+answers with a refusal (`_map_typed_error` reaches 422 through `CapabilityRefusedError` and
+`OperationRejectedError`). Every overlapping entry therefore unions both members. The same shape is
+required of any future outcome table here.
+
+Three bodies on this surface are assembled at the route and had no model at all before this leaf:
+`StagedAttachments` (stage and rebind) and `ConversationSubmitted` (submit). They are declared in
+`conversation/response_contract.py`, which is split from the app-level contract module for an
+import-cycle reason (see `../overview.md`).
+
+**What is and is not enforced.** Every handler here returns a `JSONResponse` it built itself, so
+FastAPI validates none of these declarations at runtime — undoing them would fail no request.
+`mcp/tests/test_serving_response_conformance.py` is the enforcement: it drives the real routes and
+validates the returned body against the model declared for the status that came back. Its ledger is
+honest about the reach: the 404 (no such seat) is driven on all seventeen, the 403 on one, and every
+reachable success shape off a live bridge — while the typed-bridge-failure legs (400/409/422/503 on
+most routes) stay declared-and-undriven with a reason, because the bridge fixture models the harness
+edge rather than a stale epoch or a socket that dies mid-write.
+
 ## Update History
 
+- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the seventeen route declarations and,
+  more importantly, the distinction the declarations had to encode — three of this route's statuses
+  carry the operation itself and not a refusal (202/422/503 on the interrupt trio, 202/404/409 on
+  withdraw, 200/202/422 all on submit), so the shared refusal table alone was a wrong declaration
+  and the conformance suite caught it on a real 422. Recorded that `_map_typed_error` being the
+  single mapper is what makes one six-status table the COMPLETE refusal surface of all seventeen,
+  and the `{**a, **b}`-is-a-merge trap every outcome table works around. Stated the enforcement
+  boundary: every handler returns a `JSONResponse` it built, so FastAPI validates nothing here and
+  the declarations mean only what `test_serving_response_conformance.py` drives. Repaired 2 line
+  citations in the `models.py` row, both moved +20 by the parent's field-default edits: L915-L1242 →
+  L935-L1262 (`InterruptOperation` → `ConversationTelemetry`) and L1265-L1282 → L1285-L1302
+  (`operation_fingerprint`). Added 2 reference rows (`control/api.py` declarations,
+  `conversation/response_contract.py` tables); all ranges read back. Verification metadata pinned
+  until closeout stamps the L4 commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `models.py` citation and narrowed
   the claim, which was partly false. The span is now L915-L1242 (`InterruptOperation` through
   `ConversationTelemetry`) plus L1265-L1282 (`operation_fingerprint`) — verified against what the

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,27 +26,56 @@ never a routine refusal path (L0 reviewer obligation O4).
 
 ## Code Commentary
 
+### 260731-EFA-L4 Current Delta — The Three Routes Declare Their Contract
+
+- `GET ""` (L126) declares `response_model=ConversationPage`.
+- `POST /agents/{agent_id}/history` (L160-L164) declares `response_model=AgentHistoryHydrated` —
+  the first model this assembled body has ever had. The comment above it states the rule this
+  card already documented: **a typed child failure is a SUCCESSFUL local outcome**, so the
+  failure vocabulary lives inside the 200 body's `status`/`code` and only parent-bridge refusals
+  reach `responses`.
+- `GET /events` (L204-L214) declares `response_model=ConversationEventEnvelope` — one envelope
+  per SSE frame's `data` — plus an explicit `200: {"content": {"text/event-stream": {}}}` entry.
+  The declaration is coherent here precisely because every failure on this route is typed
+  PRE-stream, which is why the handler returns an explicit `StreamingResponse` rather than being
+  a generator route.
+
+All three share `responses=CONVERSATION_RESPONSES` (from
+`serving/conversation/response_contract.py`), which is `CONTROL_RESPONSES` with the cursor
+refusals layered on: 400 and 409 carry `CursorRefusal`, the only refusals on this surface that
+may carry a machine-readable `reason`. That table is `_map_typed_error`'s ladder transcribed, so
+adding a status there without adding it to the table leaves this route emitting an undeclared
+shape.
+
+Nothing validates at runtime — the two JSON handlers return `JSONResponse` and the stream
+returns `StreamingResponse`, and FastAPI applies `response_model` only to values it serializes
+itself. `mcp/tests/test_serving_response_conformance.py` is the gate.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
+
 ### Logic
 
-`conversation_page` (L121-L150, `GET /api/terminal/{ar_session_id}/conversation`) invokes the
+`conversation_page` (L126-L155, `GET /api/terminal/{ar_session_id}/conversation`) invokes the
 two L0 dependency functions directly inside the handler (dependency-raised refusals would
 otherwise become untyped 500s before the handler runs — worker round-2 issue 1), decodes the
 optional `before` page cursor, and returns the atomically assembled page.
-`conversation_events` (L153-L186, `GET …/conversation/events`) runs every pre-stream check —
+`conversation_events` (L204-L247, `GET …/conversation/events`) runs every pre-stream check —
 authorization, epoch, dual-resume agreement (`after` query + `Last-Event-ID` header must name
-the same event cursor, `_resume_cursor` L106-L118), generation, retention floor — BEFORE the
+the same event cursor, `_resume_cursor` L111-L123), generation, retention floor — BEFORE the
 `StreamingResponse` exists, so all routine failures are typed HTTP responses.
-`_map_typed_error` (L72-L94) maps each typed refusal to one precise status: 409
+`_map_typed_error` (L77-L99) maps each typed refusal to one precise status: 409
 `bridge-epoch-mismatch` (with expected/actual), 403 `authorization-failed`, 503
 `composition-unavailable`/`control-unavailable`, the cursor family (400
 `cursor-invalid`/`cursor-conflict`, 403 `cursor-authorization`, 409
 `cursor-reset-required`), and the session-resolution family (404 `unknown-session`, 409
-`unsupported`). `_event_stream` (L226-L247) primes the stream with one `: connected` SSE comment
+`unsupported`). `_event_stream` (L250-L271) primes the stream with one `: connected` SSE comment
 (the first body chunk makes GZipMiddleware flush the response start, so a caught-up subscriber's
 headers arrive at connect; it carries no cursor and no event field), then yields
 `resume-replay`-marked replay envelopes, then live envelopes until the close sentinel or a gap
 mutation (returning after the gap frame), detaching the subscription in `finally`.
-`_sse_frame` (L250-L258) emits explicit wire frames (`event`/`data`/`retry`/`id`) rather than
+`_sse_frame` (L274-L282) emits explicit wire frames (`event`/`data`/`retry`/`id`) rather than
 the generator-route idiom: this FastAPI version only encodes `ServerSentEvent` objects after
 the stream starts, which would make pre-stream typed errors impossible (declared deviation,
 review-ruled legitimate).
@@ -85,6 +114,8 @@ and the production-route suite are the direct evidence.
 | The cursor error family mapped to exact statuses here. | L39-L82 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/cursor.py) |
 | The L0 request dependencies invoked directly in-handler for typed mapping. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
 | The production-route suite driving these routes over a real socket. | L362-L781 | [test_conversation_active_api.py](agents-remember/mcp/tests/test_conversation_active_api.py) |
+| The `CONVERSATION_RESPONSES` table these routes declare and the `AgentHistoryHydrated` model the child-history body finally has. | `CONVERSATION_RESPONSES`; `AgentHistoryHydrated` | [../response_contract.py](../response_contract.py.md) |
+| The suite that enforces the declarations by driving all three routes and validating the real bodies and SSE frames. | `test_serving_response_conformance` | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
 
 ## Cross-Repo References
 
@@ -103,13 +134,26 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 ## 260727-CHATS-IM-L2 Selected-Child Route Delta
 
 `POST /agents/{agent_id}/history` resolves the same authorization and exact bridge epoch as the
-page/event wires, then asks the active service to hydrate only that child (L153-L187). Typed
+page/event wires, then asks the active service to hydrate only that child (L160-L198). Typed
 child-local unavailable/not-eligible outcomes are successful response bodies with status, exact
 agent id, and optional detail/code; authority, epoch, composition, cursor, control, and session
 failures retain the existing typed HTTP mapping. The route never replaces the parent page or SSE
 stream.
 
 ## Update History
+
+- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three `response_model`
+  declarations (`ConversationPage`, the newly-modelled `AgentHistoryHydrated`, and
+  `ConversationEventEnvelope` as one SSE frame's `data`) and the shared `CONVERSATION_RESPONSES`
+  table — `CONTROL_RESPONSES` plus the cursor refusals that alone carry a machine-readable
+  `reason`, i.e. `_map_typed_error`'s ladder transcribed. Re-derived **6** in-file citations
+  that the new route decorators shifted: `_map_typed_error` L72-L94 → L77-L99, `_resume_cursor`
+  L106-L118 → L111-L123, `conversation_page` L121-L150 → L126-L155, `_event_stream` L226-L247 →
+  L250-L271, `_sse_frame` L250-L258 → L274-L282, and the selected-child route L153-L187 →
+  L160-L198. One of those was wrong before this leaf as well: the Logic section cited
+  `conversation_events` at L153-L186, which at the leaf base was `hydrate_agent_history`'s
+  decorator and body, not the events route — it is now L204-L247. Verification metadata pinned
+  until closeout stamps the L4 commit.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
   selected-child POST route was inserted ahead of them — `_event_stream` L189-L204→L226-L247 and

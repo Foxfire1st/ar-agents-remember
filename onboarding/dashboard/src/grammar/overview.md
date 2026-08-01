@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/grammar/`                         |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastUpdated            | 2026-08-01T10:05+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,8 +16,8 @@
 
 ## Purpose
 
-`grammar/` is the **shared primitives library** (note 08 "state grammar" — state carried by colour
-+ silhouette, never chrome). Each primitive is a small, reusable React component styled by
+`grammar/` is the **shared primitives library** (note 08 "state grammar" — state carried by colour +
+silhouette, never chrome). Each primitive is a small, reusable React component styled by
 co-located Panda `css()` / `cva()`. `ModeBar` is the route's sole React Aria wrapper; the remaining
 primitives are presentational or use native behavior. Panels and the shell compose these rather than
 re-styling raw elements (the slice-5d analogue of the device-management `libs/` discipline, minus
@@ -33,8 +33,22 @@ Material).
 - `ModeBar.tsx` — the viewport switcher: a **React Aria `ToggleButtonGroup`** (single-select
   radiogroup) styled by Panda `_selected` / `_focusVisible` conditions; roving focus + arrow-key
   nav, look unchanged from the old `.modebar`.
-- `Dot.tsx` — the state/severity dot: a Panda `cva` mapping lifecycle state / attention severity to
-  a colour (unknown → nominal amber).
+- `Dot.tsx` — the state/severity **mark**: one monospace cell (`width: 1ch`, centred, `flexShrink: 0`)
+  whose Panda `cva` sets **`color`** — not `background`, and no `border-radius` — plus a
+  distinguishing **glyph** per variant. Nine variants: the six `LIFECYCLE_STATES` (including
+  `awaiting-developer`) and the three attention severities `alarm`, `warn`, `info`. Colour is the
+  channel and deliberately GROUPS (`blocked` with `alarm`, `running` with `info`,
+  `awaiting-developer` with `warn`), so the glyph is what separates the pairs the palette's seven
+  tones cannot. The base is `muted` + `?` — "we could not classify this" — and must never borrow a
+  live variant's treatment; it used to be `amber`, which is literally `warn`'s colour, and that is
+  how `awaiting-developer` reached the developer looking like nothing special. The known-set is
+  **derived** from the recipe (`export const DOT_VARIANTS = dot.variantMap.variant`), never
+  hand-copied. `paused` moved off `dormant` — which stays the terminal tone with `abandoned` — to a
+  muted amber mixed **`in oklab`**: `color-mix` walks the shorter hue arc, and amber (h 75) to muted
+  (h 250) is 175°, so an `in oklch` mix runs through h 145 and renders green next to `mint`. Covered
+  by `Dot.test.tsx` (three flat properties: vocabulary equality against `LIFECYCLE_STATES` asserted
+  in both directions, every variant plus the unknown fallback rendering distinguishably, and every
+  variant carrying a `c_*` ink of its own).
 - `Affordance.tsx` — the display-only action affordance: a Panda `cva` (ready/off) over the reducer's
   precomputed enabled/reason; `aria-disabled`, never mutates (slice 06 enforces).
 - `ProgressFill.tsx` — the bottom-up cyan charge fill (task-step / provider-seed progress).
@@ -54,10 +68,10 @@ Material).
 - `EvidenceBadge.tsx` — the launch-evidence tier badge (260715-FEUI-L3, R7): five DISTINCT glyphs
   (`…` pending / `✓` readback / `◇` model-validated / `·` defaults / `✕` refused) with the tier
   WORD always in the accessible name (`aria-label`) at EVERY size and the glyph `aria-hidden`;
-  sizes `row`/`sm`, podracer token colors. The ONLY renderer of `data/launchEvidence` tiers —
-  directly consumed in production by `HeaderStrip`, `EvidencePane`, `StatusLine`, and
-  `FailedLaunchBanner`. Covered by `EvidenceBadge.test.tsx` (glyph Set-distinctness + the word at
-  both sizes for all five tiers).
+  sizes `row`/`sm`, podracer token colors. The ONLY renderer of `data/launchEvidence` tiers. Its
+  direct production consumers today are exactly **two**: `EvidencePane` (per-tier, `sm`) and
+  `FailedLaunchBanner` (`tier="refused"`, `showWord`). Covered by `EvidenceBadge.test.tsx` (glyph
+  Set-distinctness + the word at both sizes for all five tiers).
 
 ## Invariants And Boundaries
 
@@ -65,8 +79,31 @@ Material).
 - **Panda + one React Aria owner** — visuals use co-located Panda tokens/conditions; `ModeBar` alone
   imports React Aria for toggle-group behavior. `Panel`'s sticky-header contract replaces the old
   `.rail > .panel > h2` descendant rule — each Panel is self-contained.
-- **Determinism-safe** — animations (blocked/alarm `pulse`) use the shared global keyframe and freeze
-  under `?effects=off`.
+- **Determinism-safe, and motion is never an identity.** The dot's fault variants (`blocked`,
+  `alarm`) carry the shared global `pulse` keyframe; `awaiting-developer` carries the slow
+  `pulseSlow` breathe (the developer's 2026-07-16 ruling — never the fault strobe). All three also
+  declare `_motionReduce: { animation: "none" }`, so `prefers-reduced-motion` reaches the same
+  resting state that `?effects=off` already forces from `index.css`'s unlayered `!important` rule.
+  Because both paths null every animation, a variant whose only difference from another is that it
+  moves has no difference at all — which is why `Dot.test.tsx` strips the animation atoms out of its
+  appearance key before comparing marks.
+- **Per-variant tables are derived from the recipe and total, never hand-copied.** `Dot` exports
+  `DOT_VARIANTS = dot.variantMap.variant` and builds both its `KNOWN` set and its
+  `DOT_GLYPHS: Record<DotVariant, string>` from that single declaration. Re-introduce a second
+  hand-maintained key list and the shipped failure returns exactly as it was: the new variant misses
+  the copy, `variant` resolves to `undefined`, and the component renders the bare base. Keeping the
+  glyph table a total `Record` is the other half — a variant added to the recipe without a mark is a
+  `tsc -b` error rather than a dot that silently reads as some other state.
+- **The unclassified case gets a treatment of its own, never a live variant's.** No variant may
+  share the base's tone; every consumer can reach the base, because `Dot` takes a free
+  `variant: string` and `LifecycleList` passes `lifecycle.state` through untouched.
+- **This is not the only place a state becomes a visual, and the two do not share a table.**
+  `topology/model.ts` maps the same `State` union onto its own five-member `ConstelStatus`
+  vocabulary through a total `Record<State, ConstelStatus>` with an explicit `UNCLASSIFIED_STATUS`.
+  Neither module imports the other (no `grammar/` reference under `topology/`, no `topology`
+  reference under `grammar/`) — they are two independent tables held to the same two rules,
+  totality and a default that does not borrow a live state's answer. A new lifecycle state has to be
+  answered in both, and `Dot.test.tsx` is the one that catches it here.
 
 ## Repo-Internal References
 
@@ -75,10 +112,49 @@ Material).
 | The Panda runtime these primitives import (`css`/`cva`/`cx`). | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
 | The React Aria condition reconciliation (data-hovered/-focused). | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
 | The route's sole React Aria import wraps the viewport toggle group. | [ModeBar.tsx](ModeBar.tsx) |
-| The complete direct production `EvidenceBadge` renderer set. | [HeaderStrip.tsx](../panels/session-cockpit/HeaderStrip.tsx); [EvidencePane.tsx](../panels/session-cockpit/EvidencePane.tsx); [StatusLine.tsx](../panels/session-cockpit/StatusLine.tsx); [FailedLaunchBanner.tsx](../panels/session-cockpit/FailedLaunchBanner.tsx) |
+| The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). | [EvidencePane.tsx](../panels/session-cockpit/EvidencePane.tsx); [FailedLaunchBanner.tsx](../panels/session-cockpit/FailedLaunchBanner.tsx) |
 | The action-availability shape `Affordance` renders. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. | [types/projection.ts](../types/projection.ts); [Dot.test.tsx](Dot.test.tsx) |
+| The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. | [topology/model.ts](../topology/model.ts) |
+| The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. | [index.css](../index.css) |
+| The two panels rendered as siblings in one always-visible rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
 
 ## Update History
+
+- 2026-08-01T10:05+02:00 — 260731-EFA-L4 curator: **corrected a factually wrong route claim.** The
+  card said `Dot.tsx` was "a Panda `cva` mapping lifecycle state / attention severity to a colour
+  (unknown → nominal amber)". Every load-bearing part of that was false against the tree: the base
+  is `muted` + `?`, not amber (the amber base was literally `warn`'s colour, and it is how
+  `awaiting-developer` shipped looking like nothing special); the recipe sets `color` on a `1ch`
+  monospace cell, not `background` on a `border-radius: full` box; `awaiting-developer` is now a
+  declared variant, making nine; each variant also carries a distinguishing glyph, because seven
+  tones cannot separate nine variants and a base; the known-set is DERIVED from the recipe
+  (`DOT_VARIANTS = dot.variantMap.variant`) rather than a hand-copied `KNOWN` array; and `paused`
+  moved off `dormant` to a muted amber that must be mixed `in oklab` (an `in oklch` mix of amber and
+  muted takes the shorter 175° hue arc through h 145 and renders green). Recorded the new
+  `Dot.test.tsx` and the three properties it pins. Replaced the single-clause "Determinism-safe"
+  invariant with the motion rule as it now stands (`pulse` on the two fault variants, `pulseSlow` on
+  `awaiting-developer`, `_motionReduce` on all three, and the appearance key that excludes animation
+  atoms), and added three route invariants the correction depends on: derived-and-total per-variant
+  tables, an unclassified treatment that never borrows a live variant's, and the boundary with
+  `topology/model.ts` — the other state-to-visual table, which is deliberately separate (neither
+  module imports the other) and held to the same two rules.
+  Recorded explicitly because an earlier design direction here was cut and must not creep back: this
+  leaf contains **no dot suppression machinery**. Re-verified independently of the file-level
+  curator — `ls dashboard/src/grammar/` lists no `dotSuppression.ts`, a repo-wide `find` for
+  `*suppression*` returns nothing, `grep -rniE 'forced-colors|forcedColors|@media +print'` over
+  `dashboard/src/` returns nothing, and `dashboard/src/index.css` is byte-identical to the leaf base
+  (`git diff HEAD` empty; `sha256sum` matches `git show HEAD:` at
+  `a967c0c42978c8b0e56640b5a3be47ca4c55d518cfed434498c3960b09c832ea`). Nothing in this card describes
+  such a mechanism and nothing should. Four `Repo-Internal References` rows added.
+  Two PRE-EXISTING errors were found while confirming that every reference path in this card
+  resolves, and corrected here — neither is L4's doing (both are already false at the leaf base
+  `abc7cbc`, and `HeaderStrip.tsx` is untouched by this leaf): the `EvidenceBadge` consumer set was
+  claimed as four files, but `HeaderStrip.tsx` contains no `EvidenceBadge` reference at the leaf base
+  or in the working tree, and `panels/session-cockpit/StatusLine.tsx` exists in neither. The direct
+  production renderer set — re-derived by grepping `dashboard/src` — is exactly `EvidencePane` and
+  `FailedLaunchBanner`.
+  Verification metadata pinned until closeout stamps the commit.
 
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: refreshed the directly affected RankBadge route claim:
   `LifecycleList` is the sole production consumer at `row`, while `sm` remains a supported/tested

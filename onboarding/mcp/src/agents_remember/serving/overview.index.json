@@ -77,11 +77,13 @@
     "mcp/src/agents_remember/serving/pi_rpc_process.py",
     "mcp/src/agents_remember/serving/pi_rpc_protocol.py",
     "mcp/src/agents_remember/serving/projector.py",
+    "mcp/src/agents_remember/serving/response_contract.py",
     "mcp/src/agents_remember/serving/retire.py",
     "mcp/src/agents_remember/serving/retire_policy.py",
     "mcp/src/agents_remember/serving/scope.py",
     "mcp/src/agents_remember/serving/seat_binding.py",
     "mcp/src/agents_remember/serving/seat_events.py",
+    "mcp/src/agents_remember/serving/served_state.py",
     "mcp/src/agents_remember/serving/sim.py",
     "mcp/src/agents_remember/serving/static.py",
     "mcp/src/agents_remember/serving/supervisor.py",
@@ -97,8 +99,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 140,
-    "fileSidecars": 79,
+    "sourceFilesInScope": 143,
+    "fileSidecars": 81,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -141,6 +143,7 @@
     "codex_app_server_session",
     "codex_app_server_state",
     "configuration",
+    "contract",
     "control",
     "conversation",
     "daemon",
@@ -180,8 +183,7 @@
     "hosted_interactions",
     "hosted_readiness",
     "hosted_session_runtime",
-    "inbox",
-    "inbox_delivery"
+    "inbox"
   ],
   "hotPath": {
     "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",

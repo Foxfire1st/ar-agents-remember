@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T10:20+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -153,8 +153,60 @@ code must not use them as ordinary recovery APIs.
 - Structured question maps and permission responses use the direct session route with bridge-epoch
   evidence; the gate channel remains the fallback for forms that direct routing cannot represent.
 
+### 260731-EFA-L4 Typed Sub-Task Rows And Mirror-Checked Fixtures
+
+- `taskHierarchy.ts` — `ParentTaskMatch.ref` is a **`SeriesSubTaskNode`**, no longer the collapsed
+  `TaskSubTaskRefNode`. Those are two distinct server models (`projection.py::TaskSubTaskRefNode`
+  and `::SeriesSubTaskNode`, both `extra="forbid"`) that the browser mirror used to fold into one
+  interface, and the fold was not free: it invented a `createdAt` on master rows the server never
+  stamps, and lent `linkedLifecycleId` — the cross-series jump — to series rows that never carry
+  one. `findParentTaskMatch` reads `series.subTasks`, so its match is a SERIES row by construction;
+  the narrowed field just says so. `types/projection.ts` now declares both models plus a
+  `SubTaskRow` union for the renderer that shows either.
+- `orderedByCreation` is now **exported** and is this route's single creation-order sort.
+  `panels/DetailPanel.tsx` carried a byte-identical second copy (its own `function
+  orderedByCreation`) and now imports this one instead. The rule is **all-or-nothing**: rows are
+  reordered only when EVERY row carries a `createdAt`, so a partially-stamped list keeps its
+  authored order rather than sorting the stamped rows to the front. A row type that declares no
+  `createdAt` at all — a master's `TaskSubTaskRefNode` — therefore passes through untouched by
+  construction. It is an order-preserving safety net, not the thing that establishes the order:
+  `observer/snapshots.py::_series_subtask_nodes` already applies the same all-or-nothing rule
+  server-side before the rows are served.
+- The route's test suites no longer author their own wire nodes. **Six** of the route's seven
+  changed suites — `interactionAnswer`, `railModel`, `seatEvents`, `setClient`, `store`, and
+  `taskIdentity` — now import the shared builders from `test/fixtures/wire.ts`, which removed the
+  casts that let a fixture assert past the mirror (`as unknown as LifecycleProjection`,
+  `as TaskDocNode`, `as ObserverEvent`, `as never`). The seventh, `taskHierarchy.test.ts`, builds no
+  wire node at all — its only change is the same `TaskSubTaskRefNode` → `SeriesSubTaskNode`
+  narrowing as its source. The cost of the casts is measured rather than hypothetical: a test
+  asserted `refusedPolarity === "amber"` against a fixture that set the field itself on an
+  `extra="forbid"` model, and three tests built a master `TaskDocNode` carrying `createdAt`, which
+  no server model declares. Both compiled, because an assertion turns off excess-property checking.
+- `store.test.ts` is the one suite in the route where the conversion changed what is proven, not
+  just how the fixture is written. It consumed the snapshot as
+  `snapshot as unknown as WorkspaceProjection` — a double cast that turned off assignability, so
+  the fixture could drop a field the store reads and nothing here would notice. It now goes through
+  `test/servedProjection.ts::asServedProjection`, whose parameter type is the check. Its
+  hard-coded `expect(state.metrics?.lifecycleCount).toBe(2)` also became
+  `FIXTURE_LIFECYCLES = projection.lifecycles.length`: the snapshot grew from two lifecycles to six
+  once `contract.test.ts` began requiring every member of every closed vocabulary to be exercised,
+  and six states need six lifecycles.
+
 ## Invariants And Boundaries
 
+- **A test fixture is checked against the mirror; the mirror is not checked against the server.**
+  Every wire node a dashboard test builds comes from `test/fixtures/wire.ts` and is type-checked
+  against `types/projection.ts`. `test/contract.test.ts` then measures that mirror against
+  `fixtures/snapshot.json` in three directions, and `test/wireFixtureGuard.ts` sweeps the tree for
+  the one-token opt-outs plain `tsc` cannot see (a cast, a `@ts-expect-error`, a literal that lost
+  freshness through a variable, `Object.assign`, `JSON.parse`). Both `wire.ts` and `snapshot.json`
+  are **hand-maintained**; no generator exists anywhere in this repository, and `contract.test.ts`
+  files generating the fixture under LEFT FOR CODEGEN. So the chain proves `fixture ⊆ mirror` and
+  mirror-against-snapshot; the `mirror ⊆ server` link is held up by nothing except a person
+  remembering to edit both sides. A field the server starts sending that neither the snapshot nor
+  the mirror knows about is invisible to every gate here. Check it with `npm run typecheck`
+  (`tsc -b`) — a bare `tsc --noEmit` proves nothing in this repo, because the root tsconfig is
+  solution-style and compiles no files while still exiting 0.
 - The terminal catalog and bridge responses are authoritative; browser state is a projection and
   cache, never a replacement history database.
 - Session creation is response-authoritative: only a validated accepted server row may enter the
@@ -244,6 +296,9 @@ own server contracts, so no external code path is cited as authority.
 | Reliable submission and authoritative withdrawal. | [submitClient.ts](submitClient.ts) · [submissionLifecycleClient.ts](submissionLifecycleClient.ts) |
 | Lifecycle termination, residuals, and landed cleanup. | [sessionLifecycle.ts](sessionLifecycle.ts) |
 | Role/spawn hierarchy replacing legacy `sessionGroups`. | [railModel.ts](railModel.ts) |
+| The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | [taskHierarchy.ts](taskHierarchy.ts) · [DetailPanel.tsx](../panels/DetailPanel.tsx) |
+| The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | [types/projection.ts](../types/projection.ts) · [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| The hand-maintained wire mirror this route's suites now build fixtures from, and the two gates that measure it. | [wire.ts](../test/fixtures/wire.ts) · [contract.test.ts](../test/contract.test.ts) · [wireFixtureGuard.ts](../test/wireFixtureGuard.ts) |
 | Effective keymap and composer profile. | [keymap overview](keymap/overview.md) |
 | Product projection of this data plane. | [session-cockpit overview](../panels/session-cockpit/overview.md) |
 
@@ -263,6 +318,31 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-01T10:20+02:00 — 260731-EFA-L4 curator (route impact: one source file, one type contract
+  and one shared helper): `taskHierarchy.ts` is the only non-test source this leaf changed in the
+  route, and it moved twice. `ParentTaskMatch.ref` narrowed from the collapsed `TaskSubTaskRefNode`
+  to `SeriesSubTaskNode` — `findParentTaskMatch` reads `series.subTasks`, so the match was always a
+  series row, and the collapsed interface had been claiming a `createdAt` on master rows the server
+  never stamps plus a `linkedLifecycleId` on series rows that never carry one. And
+  `orderedByCreation` became exported: `panels/DetailPanel.tsx` held a byte-identical copy at the
+  leaf base (`git show HEAD:…/DetailPanel.tsx` L1219-L1224 against `taskHierarchy.ts` L134-L139 —
+  the same six lines) and now imports the one authority. Recorded the all-or-nothing rule and the
+  fact that `observer/snapshots.py::_series_subtask_nodes` already applies it server-side, so the
+  browser copy is a safety net rather than the source of the order. Also recorded the fixture
+  conversion — SIX of the seven changed suites now import `test/fixtures/wire.ts`; the seventh,
+  `taskHierarchy.test.ts`, builds no wire node and only follows the source's type narrowing
+  (checked by grepping each file for `test/fixtures/wire`) — and singled out `store.test.ts`, the
+  one suite where the conversion changed what is proven: `snapshot as unknown as
+  WorkspaceProjection` became `asServedProjection(snapshot)`, and a hard-coded lifecycle count of 2
+  became the fixture's own length, now 6. Recorded as an invariant exactly how far all of that
+  pins anything: `fixture ⊆ mirror` is enforced (`tsc -b` plus `wireFixtureGuard.ts`), mirror-against-
+  snapshot is enforced by `contract.test.ts` in three directions, and **`mirror ⊆ server` is enforced
+  by nothing** — both `test/fixtures/wire.ts` and `fixtures/snapshot.json` are hand-maintained and
+  no generator exists in this repository. Checks run: `npm run typecheck` (`tsc -b`) exits 0 across
+  the three referenced projects; `tsc --noEmit` is NOT a check here and was not used as one. Three
+  `Repo-Internal References` rows added. Verification metadata remains pinned until closeout stamps
+  the commit.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: roster derivation now accepts
   only explicit backend roster identities (`codex-agent-`/`claude-agent-`), so selected-child

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T16:10+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:40+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,9 +17,9 @@ Owns worktree closeout preview/apply behavior.
 ## Code Commentary
 
 Closeout validates source branch positions and explicit commit approval. When a code commit would
-be created **in any repository whose checkout carries the wrapper**, it runs the strict
-project-owned quality wrapper before any code, memory, ledger, contract, or
-applied-gate mutation. Only after that gate passes does it commit code, refresh
+be created **in any repository whose checkout carries the wrapper**, it stages the task worktree and
+then runs the strict project-owned quality wrapper over exactly that, before any code, memory,
+ledger, contract, or applied-gate mutation. Only after that gate passes does it commit code, refresh
 onboarding metadata, route overview metadata, generated route indexes, and
 entity fingerprints to the new code commit, run `memory_quality_check`, commit
 memory content, update the external memory ledger, and return the closeout
@@ -104,6 +104,99 @@ reopens the contract by clearing the integrated commit fields, setting
 does not reopen integration and avoids duplicating an existing ledger mapping,
 so a completed leaf stays completed when no new code or memory content exists.
 
+## 260731-EFA-L4: The Gate Stages Before It Gates
+
+`_gate_staged_code(code_worktree, *, diff_base)` replaces the bare
+`run_strict_code_quality_gate(...)` call in `closeout_result`. It is four steps, and **the order is
+the contract**:
+
+1. `_refuse_outside_a_linked_worktree(code_worktree)`
+2. `_refuse_conflicted_worktree(code_worktree)`
+3. `require_git(code_worktree, ["reset", "--mixed", "--quiet", "HEAD"])`
+4. `require_git(code_worktree, ["add", "-A"])` → `run_strict_code_quality_gate(code_worktree, diff_base=diff_base)`
+
+**Why stage at all.** Every rail of the wrapper reads the index: `derive_scope` lists what ruff and
+pyright are given with `git ls-files`, and `diff_coverage` diffs the base against the tracked tree.
+Closeout commits with `git add -A`, so until it staged first, any file the task **created** — as
+opposed to edited — went into the commit without a single rail reading a line of it, and the gate
+reported green having never seen it. Leaf 3's `abc7cbcc` shipped four files that way. The index cut
+both ways: a path the task deleted stayed in `ls-files` until the deletion was staged, so ruff was
+handed a file that no longer existed and took an `E902`. Staging first makes the gate's scope and
+the commit's content one set by construction, rather than by a second enumeration that has to be
+kept in step. Widening `derive_scope` to `--cached --others --exclude-standard` was the rejected
+alternative: it would redefine the pre-commit tier, where staged content is the point, and could not
+reach the coverage floor at all, since an untracked file has no diff against any base.
+
+**Why the mixed reset.** `add -A` alone does not make a retry mean the same thing as a first run:
+git applies ignore rules only to files it does not already track or have staged, so a path staged by
+a refused attempt survives even after the retry adds it to `.gitignore`, and the commit carries it.
+That is this leaf's own history — a `.dmypy.json` a type checker dropped in the worktree was staged
+by a refused attempt, ignored on the retry, and committed anyway. `--mixed` is index-only, so the
+tree the gate certifies is byte-for-byte what the task left on disk; each run recomputes the index
+from the working tree under the ignore rules in force *now*.
+
+**Why the reset goes after both refusals.** Ahead of the first it would inflict the exact damage
+that refusal prevents — a mixed reset in a checkout somebody works in discards their `git add -p`
+selection, and that refusal promises nothing in the checkout was touched. Ahead of the second it
+would disarm it silently: `git reset` drops the unmerged index entries and removes `MERGE_HEAD`, so
+`diff --diff-filter=U` would report nothing, the conflict refusal would never fire again, and
+`add -A` would stage the `<<<<<<<` markers it exists to keep out of a commit. Reset-then-add is one
+step wholly downstream of both checks.
+
+**`_refuse_outside_a_linked_worktree`** tests git's own definition of a linked worktree —
+`rev-parse --path-format=absolute --git-dir --git-common-dir` returning two different values — and
+raises when they are equal. Not the contract's `kind`: `kind` is a label sitting next to the path,
+while this constrains the path about to be written. A leaf contract whose `code_worktree` had been
+pointed at the primary checkout would pass a `kind` check and still stage in somebody's working
+repository, and a series contract genuinely pointing at a disposable worktree would be refused for
+no reason. This is not hypothetical — `default_series_contract` sets
+`code_worktree=code.repo_path` for a `kind: "series"` contract, i.e. the primary checkout itself,
+and nothing else stops such a contract reaching `worktree_closeout_apply`.
+
+**`_refuse_conflicted_worktree`** runs `diff --name-only --diff-filter=U` and refuses on any
+unmerged path, reporting the count and up to `PATH_SAMPLE_LIMIT` names. This is a **behaviour
+change, not a guard against the impossible**: `git add -A` over an unmerged index does not fail, it
+*resolves* every conflict by taking whatever the working tree holds — the file with the markers
+still in it — and closeout then committed that.
+
+**No snapshot, no restore.** A refused gate leaves the worktree staged and commits nothing. The
+staging is not undone because this is the task's own disposable checkout (which
+`_refuse_outside_a_linked_worktree` makes true rather than assumed), nobody holds a partial staging
+in it, and the reset means the next attempt does not inherit it anyway. The previous attempt at this
+saved the index file aside and copied it back; that machinery is **gone rather than fixed** — it
+could not survive `core.splitIndex` (the saved pointer outlives the `sharedindex.<sha>` that
+`add -A` expires, leaving `status` exiting 128), it could not survive `SIGTERM`, which is how an MCP
+server actually dies, and every guarantee it offered was about a person who is never in this
+checkout.
+
+**The preview says all of this.** `closeout_order` replaced its single
+`"run-strict-code-quality-if-code-commit"` entry with four:
+
+```
+refuse-if-gate-would-run-and-code-checkout-is-not-the-tasks-own-worktree
+refuse-if-gate-would-run-and-code-worktree-has-unresolved-merge-conflicts
+reset-and-stage-whole-task-worktree-if-gate-would-run
+run-strict-code-quality-over-that-staged-content
+```
+
+and the preview `summary` was rewritten to state that the staging step and its two refusals belong
+to the gate — so they apply exactly when the preview reports `code_quality_gate.status ==
+enforced`. A checkout carrying no wrapper runs no gate, stages nothing early, and commits as it
+always has.
+
+### Two smaller contract-integrity changes in the same leaf
+
+- The preview's commit-approval block now calls **`recovery_guidance("request_commit_approval",
+  tool="worktree_closeout_apply", ...)`** instead of `next_guidance` (the import changed with it).
+  The emitted keys are identical; `request_commit_approval` is a `RecoveryOperation` because this
+  payload is a gate rendered as a `FlexibleToolResponse`, not a lifecycle phase reaching
+  `WorktreeSummary`.
+- The end-of-closeout contract write splits in two: `amend_contract(replace(contract, <free-text
+  commits, notes and strategies>), ContractCells(human_review_status="approved",
+  closeout_status="completed", integration_status=..., cleanup=...))`. The four vocabulary cells go
+  through the typed record so pyright checks them; `replace` carries only the fields that have no
+  vocabulary to be checked against. The reopen logic itself is unchanged.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -120,7 +213,10 @@ No external Domain Documentation source is configured for this memory repo.
 | The gate policy threaded through `WorktreeArgs`. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
 | The gate log read during enforcement and appended to when marking `applied`. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
 | The strict source-quality adapter decides applicability, executes the current worktree wrapper, and fails before mutation. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
-| Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs quality before code commit. | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs quality before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| `require_git` — the runner all three staging commands go through. | [git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| `ContractCells` and `amend_contract`, plus the no-`replace`-keyword rule the closeout write follows. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -144,11 +240,36 @@ quality-checked.
 ## 260718-CHATS-L5I Incremental Commit-Gate Delta
 
 Preview exposes the strict quality requirement and places it first in `closeout_order`. Apply
-recomputes whether code would commit, runs `run_strict_code_quality_gate` before
-`commit_if_dirty`, and returns the gate result in the closeout payload.
+recomputes whether code would commit, runs the gate before `commit_if_dirty`, and returns the gate
+result in the closeout payload. **Since 260731-EFA-L4 the apply path calls `_gate_staged_code`
+rather than `run_strict_code_quality_gate` directly, and the single `closeout_order` gate entry
+became four** — see the L4 section above. `run_strict_code_quality_gate` remains imported and is
+still what actually runs the wrapper, one step inside `_gate_staged_code`.
 
 ## Update History
 
+- 2026-08-01T09:40+02:00 — 260731-EFA-L4 curator: the card said apply "runs
+  `run_strict_code_quality_gate` before `commit_if_dirty`" and that preview "places it first in
+  `closeout_order`" — both stale. Apply now calls the new `_gate_staged_code(contract.code_worktree,
+  diff_base=contract.code_base_commit)`, and `closeout_order`'s one gate entry became four
+  (transcribed verbatim into the new section). Added the "The Gate Stages Before It Gates" section
+  for the three new functions — `_refuse_outside_a_linked_worktree` (git's `--git-dir` vs
+  `--git-common-dir` test, not the contract's `kind`, because `default_series_contract` sets
+  `code_worktree=code.repo_path`), `_refuse_conflicted_worktree` (`diff --name-only
+  --diff-filter=U`, a real behaviour change: `add -A` over an unmerged index resolves conflicts to
+  the marker-bearing working tree rather than failing), and `_gate_staged_code` itself — with the
+  ordering rule that the `reset --mixed` must follow **both** refusals (`git reset` drops unmerged
+  entries and `MERGE_HEAD`, which would silently disable the conflict check), why the reset makes
+  staging recomputed rather than accumulated, and that there is no snapshot/restore because the
+  worktree is disposable. Corrected the preview summary description. Recorded the two smaller
+  changes in the same diff: `next_guidance` → `recovery_guidance` for the commit-approval gate, and
+  the contract write splitting into `amend_contract(replace(contract, <free text>),
+  ContractCells(...))` for the four vocabulary cells. New imports verified: `from pathlib import
+  Path`, `require_git` in the `modules.git` block, `recovery_guidance` replacing `next_guidance`,
+  and `ContractCells` / `amend_contract` from `worktree_contract`. Re-verified and kept unchanged:
+  the L1 three-call-sites section (all still pass `contract.code_worktree`), the L2
+  `VerifiedChange` threading, the gate-enforcement and Task 30 reopen sections. Added four
+  reference rows. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `_external_closeout_commits` now takes a `VerifiedChange` instead of `changed_paths` /
   `code_commit` / `code_commit_date` / `working_paths`, and threads it into the onboarding and

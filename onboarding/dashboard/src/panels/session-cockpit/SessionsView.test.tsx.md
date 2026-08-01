@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T10:00+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -63,7 +63,9 @@ through the accepted-row path rather than an empty `ok` response.
   **preventDefault observation** (`fireEvent` return value), not palette state alone.
 - **Focus model (S4)** — the full F6 cycle across rendered regions (stage lands on the
   composer), Shift+F6 backward, and composer-Esc → stage header.
-- **L6 stage surface + lifecycle honesty (L308-L422)** — seven cases against the real store
+- **L6 stage surface + lifecycle honesty (L1034-L1589)** — the block has grown well past the seven
+  cases below (17 `it`s at the time of writing); the seven originals are still there and still assert
+  what is described. Seven cases against the real store
   patch path: (1) a focused seat mounts the REAL `PtySurface` and the placeholder covers only
   the empty stage (the surface carries the `data-kbzone="pty"` contract); (2) the WorkingLine
   renders in the reserved stage slot ONLY for a working focused seat; (3) the InteractionBar
@@ -74,7 +76,7 @@ through the accepted-row path rather than an empty `ok` response.
   state (review F3): patching a pending interaction onto a working seat unmounts the line AND
   removes the command; (7) an UNFOCUSED seat's retire residual is captured by the sweep — the
   note renders with no handoff fired and no failure wording (review F1, sev-3).
-- **Launch integration (L3: R5/R6)** (L299-L346 on the L3 code state) — the palette lists
+- **Launch integration (L3: R5/R6)** (L1590-L1658) — the palette lists
   "Launch session…" and running it opens the flow (`launch-flow` appears); focusing the FLEET
   failed scout renders the banner with its bridgeError VERBATIM (and never on a healthy seat —
   asserted first), and 'Launch corrected…' opens the flow with the failed seat's harness
@@ -86,9 +88,22 @@ through the accepted-row path rather than an empty `ok` response.
 carry explicit `code` (tinykeys v4 drops synthetic events without it). `afterEach` clears
 localStorage (react-resizable-panels persists under autoSaveId). Relies on the vitest-only
 react-resizable-panels browser-build alias (`vitest.config.ts`) — the edge-light node build skips
-layout effects and would break the imperative panel API. Since L6, `vi.mock("../Terminal")` (L15)
-keeps xterm entirely out of jsdom — the mock renders an inert marker div, so `PtySurface` mounts
-for real while the canvas emulator never loads.
+layout effects and would break the imperative panel API. Since L6, `vi.mock("../Terminal")` (L121-L145)
+keeps xterm entirely out of jsdom — the mock now also pushes onto `mockTerminalMounts` /
+`mockTerminalUnmounts`, which is what makes a dispose/recreate observable at composition level, so
+`PtySurface` mounts for real while the canvas emulator never loads.
+
+**Conversation-wire fixtures come from the shared builders (260731-EFA-L4).** `L5Q_IDENTITY`,
+`l5qStatus`, the items and page in `seedWorkerL4Items`, and the answer case's lifecycle+gate are built
+with `conversationIdentity` / `conversationStatus` / `conversationItem` / `conversationPage`
+(`test/fixtures/conversationWire.ts`) and `lifecycle` / `gate` (`test/fixtures/wire.ts`) instead of
+literals cast with `as unknown as …`. Two consequences a future author should expect rather than
+rediscover: the seeded page's `capabilities` was literally `undefined as unknown as
+ConversationCapabilities` on a REQUIRED field and is now the full 23-leaf tree with every leaf
+`supported`; and `page.totalItems` is now set, so the timeline emits an `aria-setsize` it previously
+omitted. Both reach only `seedWorkerL4Items`, i.e. the F-ac scroll-restore case — every other live
+seed goes through `emptyProjection(L5Q_IDENTITY)`, which supplies its own capabilities and is
+untouched.
 
 ### Invariants And Boundaries
 
@@ -111,14 +126,16 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The component under test. | L192-L660 | [SessionsView.tsx](SessionsView.tsx) |
-| The L6 block: surface/WorkingLine/InteractionBar/residual/stop-gate cases (+ the Terminal jsdom mock). | L15-L19; L308-L422 | [SessionsView.test.tsx](SessionsView.test.tsx) |
+| The component under test (`SessionsViewImpl`, exported memoized). | L196-L660; L1336 | [SessionsView.tsx](SessionsView.tsx) |
+| The L6 block: surface/WorkingLine/InteractionBar/residual/stop-gate cases (+ the Terminal jsdom mock with its mount/unmount ledgers). | L121-L145; L1034-L1589 | [SessionsView.test.tsx](SessionsView.test.tsx) |
 | The notice store the residual cases reset and assert against. | L47-L146 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
 | The keys-page data the drift-proof assertions read. | L62-L150 | [../../data/keymap/reserved.ts](../../data/keymap/reserved.ts) |
 | The shared jsdom stubs (incl. the cmdk `scrollIntoView` stub) this suite relies on. | — | [../../test/setup.ts](../../test/setup.ts) |
 | The vitest alias to the browser development build of react-resizable-panels. | — | [vitest.config.ts](../../../vitest.config.ts) |
 | The L3 launch dialog + banner the integration cases exercise. | — | [LaunchFlow.tsx](LaunchFlow.tsx), [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
 | The envelope fixture the stubbed capability fetch serves. | — | [../../test/fixtures/capabilityEnvelopes.ts](../../test/fixtures/capabilityEnvelopes.ts) |
+| `conversationIdentity` / `conversationStatus` / `conversationItem` / `conversationPage` — and the header naming the `undefined as unknown as ConversationCapabilities` cast this file used to carry. | L1-L30; L170-L245 | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
+| `lifecycle` + `gate`, the projection builders the answer case's seed now uses. | L237-L262 | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
 
 ## Cross-Repo References
 
@@ -161,6 +178,25 @@ SSE-preferred working feedback, removal of the StatusLine/end-notice chrome, and
 to the kept-alive conversation stage.
 
 ## Update History
+
+- 2026-08-01T10:00+02:00 — 260731-EFA-L4 curator: recorded the conversation-wire fixture conversion and
+  repaired four stale ranges. New Conventions paragraph names the two deltas the conversion actually
+  produced in this file, both verified against the diff rather than assumed: the page's `capabilities`
+  went from `undefined as unknown as ConversationCapabilities` — an explicit `undefined` on a REQUIRED
+  field — to the full supported tree, and `page.totalItems` is now set (hence an `aria-setsize` that was
+  previously absent). I traced the blast radius before attesting: those come from `conversationPage`,
+  which only `seedWorkerL4Items` calls, which only the F-ac scroll-restore case uses; every other live
+  seed goes through `emptyProjection(L5Q_IDENTITY)` and supplies its own capabilities, so the two
+  NEGATIVE stop-command cases (L1469, L1484) still gate on the projection they always did and did not
+  become tolerant. The answer case's lifecycle now carries `state: "blocked"` from `BASE_LIFECYCLE`
+  where it previously had none, and its gate still sets `decisions: []` explicitly, so `BASE_GATE`'s
+  `["approve","revise"]` never applies. Suite re-run: 1 file, all cases pass. Citation repairs, each
+  re-anchored on its proving symbol: the L6 block `L308-L422` → `L1034-L1589` (and the "seven cases"
+  wording qualified — the block now holds 17 `it`s, the seven originals among them); launch integration
+  `L299-L346 on the L3 code state` → `L1590-L1658`; the Terminal mock `L15` → `L121-L145`, where it also
+  gained the `mockTerminalMounts`/`mockTerminalUnmounts` ledgers the card did not mention; the component
+  row `L192-L660` → `L196-L660; L1336` so it opens on `SessionsViewImpl` and reaches the memo export.
+  Two rows added for the builder modules.
 
 - 2026-07-24T13:17:17Z — Curator: recorded current stage-composition and retired-StatusLine
   regressions; verification fields remain pre-commit.

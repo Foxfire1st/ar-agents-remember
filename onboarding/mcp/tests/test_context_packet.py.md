@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T08:39+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:25+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -60,6 +60,18 @@ detail consumers at `provider_diagnostics`.
 
 ## Update History
 
+- 2026-08-01T09:25+02:00 — 260731-EFA-L4 curator: No content impact: the entire diff for this file
+  is one fixture literal — the active-worktree `ContractTask` now asks for
+  `workflow_kind="light-task"` instead of the bare `"light"`, because 260731-EFA-L4 removed the
+  un-reconciled `chat`/`light` members from `WorkflowKind` (they had zero occurrences across the
+  213 contracts on disk, no production writer, and were absent from `worktree_start`'s own
+  docstring; the equality is now held by
+  `test_wire_vocabulary_exhaustiveness.py::AdvertisedVocabularyTests`). This card documents what
+  the packet must report — repo, memory, compact provider summary, worktree, drift and freshness
+  facts — and has never named a workflow kind, so nothing it claims moved. Verified against the
+  source that no test was added, removed or renamed, that the four freshness cases and the
+  `taskRoot` `as_posix()` note still describe assertions actually present, and that the three
+  Repo-Internal targets still exist.
 - 2026-07-31T16:50+02:00 — No content impact: the active-worktree fixture now calls
   `default_contract` with the `ContractTask`, `LeafIdentity`, and `RepoBranchPlan` parameter
   objects instead of fourteen loose keywords, and one `contractPath` assignment was reflowed onto

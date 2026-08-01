@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "dashboard/src/grammar/Affordance.tsx",
+    "dashboard/src/grammar/Dot.test.tsx",
     "dashboard/src/grammar/Dot.tsx",
     "dashboard/src/grammar/EvidenceBadge.test.tsx",
     "dashboard/src/grammar/EvidenceBadge.tsx",
@@ -23,8 +24,8 @@
     "dashboard/src/grammar/TokenGauge.tsx"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 11,
-    "fileSidecars": 11,
+    "sourceFilesInScope": 12,
+    "fileSidecars": 12,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -48,6 +49,7 @@
     "candidateHints": [
       "dashboard/src/grammar",
       "dashboard/src/grammar/Affordance.tsx",
+      "dashboard/src/grammar/Dot.test.tsx",
       "dashboard/src/grammar/Dot.tsx",
       "dashboard/src/grammar/EvidenceBadge.test.tsx",
       "dashboard/src/grammar/EvidenceBadge.tsx",
@@ -62,6 +64,8 @@
     "anchorHints": [
       "Affordance.tsx",
       "Affordance",
+      "Dot.test.tsx",
+      "Dot.test",
       "Dot.tsx",
       "Dot",
       "EvidenceBadge.test.tsx",
@@ -84,7 +88,7 @@
       "TokenGauge",
       "dashboard/src/grammar/",
       "route-local-overview",
-      "31f58834f86c0d98e26b0896e099a2403a8729ee",
+      "e52edaf5b655f495580efd93306afdf922b19b51",
       "/overview.md",
       "grammar/",
       "css",
@@ -100,14 +104,12 @@
       "ToggleButtonGroup",
       "_selected",
       "_focusVisible",
-      "aria-disabled",
-      "inline",
-      "React.memo",
-      "orchestration",
-      "management",
-      "row",
-      "sm",
-      "LifecycleList"
+      "width: 1ch",
+      "flexShrink: 0",
+      "color",
+      "background",
+      "border-radius",
+      "LIFECYCLE_STATES"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T00:00+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -98,6 +98,24 @@ together.
 - Coupled leaf/master writes prepare every JSON and rendered markdown payload before replacing files,
   and reject duplicate output targets up front; that guard is necessary because a coupled operation
   would otherwise silently let one document target overwrite another.
+- **`cleanup: reopened` is written here and nowhere else.** `reopen.py` (line 86) is the package's
+  only producer of that contract cell; `worktrees/modules/start.py` (line 482) and
+  `observer/reducer.py` (line 318) only read it, both pairing it with `abandoned` as
+  recreate-fresh. That made this route the sole cause of a wire failure until 260731-EFA-L4:
+  `models/worktree.py` hand-wrote `CleanupStatus = Literal["pending", "completed", "abandoned"]`,
+  so a context packet for a reopened task raised a pydantic `ValidationError` **inside an MCP
+  tool handler that has no `except` for one** — for a value only this file writes. The fix is at
+  both ends. The reader now imports the contract's own `CleanupStatus`, which includes
+  `reopened`; and the four vocabulary cells `reopen_task` moves (`human_review_status`,
+  `closeout_status`, `integration_status`, `cleanup`) go through
+  `worktree_contract.ContractCells` + `amend_contract` (line 63) instead of being
+  `dataclasses.replace` keywords, because typeshed declares `replace(obj, /, **changes: Any)` and
+  pyright therefore checked none of them. The free-text resets (`code_commit`,
+  `memory_content_commit`, `ledger_commit`, `commit_approval_note`, `integration_strategy`, the
+  three `integrated_*` commits, `lifecycle_id`, `memory_state`, `approved_for_commit`) stay on
+  the inner `replace`, since they have no vocabulary to be checked against. The contract this
+  writes is byte-identical to before; what changed is that the writer is now checked against the
+  vocabulary the reader publishes.
 
 ## Repo-Internal References
 
@@ -116,6 +134,22 @@ Route indexes are intentionally not regenerated during this partitioned curator 
 
 ## Update History
 
+- 2026-08-01T00:00+02:00 — 260731-EFA-L4 curator: this route's only L4 change is `reopen.py`
+  (+27/-17), and it is worth a route-level invariant rather than a file-sidecar note, because the
+  fact it exposes belongs to the route: **`cleanup: reopened` has exactly one writer in the whole
+  package, and it is this file.** Verified by grep across `mcp/src/agents_remember` — the only
+  other occurrences are reads (`worktrees/modules/start.py` line 482,
+  `observer/reducer.py` line 318) and the `Literal` declaration itself
+  (`worktrees/worktree_contract.py` line 55). Verified against `abc7cbcc` that
+  `models/worktree.py` then declared `CleanupStatus = Literal["pending", "completed",
+  "abandoned"]` — no `reopened` — so the packet could not report a task this route had reopened.
+  Recorded the mechanism of the fix on this side: the four vocabulary cells now travel through
+  `ContractCells`/`amend_contract` (line 63) rather than as `dataclasses.replace` keywords, which
+  typeshed types `**changes: Any` and pyright therefore never checked, while the free-text resets
+  stay on the inner `replace`. Read both revisions of the function and confirmed the resulting
+  contract is unchanged — same fields, same values, same order. No task-document schema, render
+  rule, master-sync contract or file placement moved, so the Purpose, Hot Path Summary and Route
+  Model are untouched. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T16:55+02:00 — No route impact: re-verified the attestation below in the exact form the
   closeout gate reads. Both changed files in this route (`master_sync.py`, `render.py`) were parsed
   at the L2 base commit and at the current revision and their syntax trees are identical, so

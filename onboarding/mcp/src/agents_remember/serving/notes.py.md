@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-07T18:40+02:00                         |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`     |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-08-01T08:40+02:00                         |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`     |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -26,6 +26,31 @@ feeds the task reader's notes view (`dashboard/src/panels/TaskNotes.tsx` via
 `dashboard/src/data/notes.ts`).
 
 ## Code Commentary
+
+### 260731-EFA-L4 Current Delta — Both Routes Now Declare What They Answer With
+
+`GET /api/notes/list` declares `response_model=NotesListing` and `GET /api/notes/read` declares
+`response_model=NoteContents`, both under the shared `responses=SCOPED_READ_RESPONSES` table
+(L171-L176). All three come from `serving/response_contract.py`, which is where this module's
+one new import lives.
+
+`SCOPED_READ_RESPONSES` is exactly the two statuses `_notes_json` can produce — 400
+(`StatusRefusal`: `bad-request` from the single-segment `master` check, `bad-path` from
+`AuthorityError` or the `ValueError` L9R-1 case) and 404 (`UnknownRepoRefusal |
+UnknownScopeRefusal | MissingPathRefusal`: `unknown-repo` from `require_repo`, `not-found` from
+`FileNotFoundError`). The table is shared with the files and change-set routes because the
+refusal idiom is shared, not because it is boilerplate.
+
+Nothing on the wire changed and nothing is validated at runtime: both handlers return a
+`JSONResponse` they built themselves, and FastAPI applies `response_model` only to values it
+serializes for you. The declaration is the contract;
+`mcp/tests/test_serving_response_conformance.py` is the gate — it drives both routes through the
+real app and validates the real body against these models, whose `extra="forbid"` makes an
+undeclared key a failure.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current
+source behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
 
 ### Logic
 
@@ -74,7 +99,12 @@ confined to one honest path segment.
   per-child realpath check on listing) — the rest of the coordination tree (task docs,
   contracts, enclosures) is NOT reachable through this API.
 - A missing notes folder degrades to `[]`; a missing note file is `404 not-found`; the
-  status idiom matches the files/change-set APIs.
+  status idiom matches the files/change-set APIs — and since **260731-EFA-L4** that shared idiom
+  is declared once as `SCOPED_READ_RESPONSES`, so a new status here means adding it to the shared
+  table, not widening a per-route one.
+- The declared models are the contract, not the runtime guard: these handlers return `Response`
+  objects, so a key added to `list_notes` or `read_note` must land in `NotesListing` /
+  `NoteContents` in the same change or the conformance suite fails.
 
 ## Cross-Repo References
 
@@ -96,8 +126,18 @@ No meaningful cross-repo references found.
 | The same single-segment `master` confinement idiom on the change-set routes. | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
 | The browser client for these endpoints. | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
 | The test suite for this module (API-layer coverage). | [test_serving_notes.py](agents-remember/mcp/tests/test_serving_notes.py) |
+| `NotesListing`, `NoteContents`, and the shared `SCOPED_READ_RESPONSES` refusal table these two routes declare. | [response_contract.py](response_contract.py.md) |
+| The suite that enforces the declarations by driving both routes and validating the real body. | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
 
 ## Update History
+
+- 2026-08-01T08:40+02:00 — 260731-EFA-L4 curator: recorded the two `response_model`
+  declarations (L171-L176) and the shared `SCOPED_READ_RESPONSES` table, mapping its 400/404
+  entries onto the exact refusals `_notes_json` already produced (`bad-request`, `bad-path`,
+  `unknown-repo`, `not-found`). Noted that FastAPI validates neither handler — both return a
+  `JSONResponse` directly — so the gate is `test_serving_response_conformance.py`; added that to
+  the boundaries and two reference rows. No wire change. Verification metadata pinned until
+  closeout stamps the L4 commit.
 
 - 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): `read_note` now caps through the
   shared `scope.decode_capped`, cutting at a UTF-8 codepoint boundary so an oversize markdown note whose

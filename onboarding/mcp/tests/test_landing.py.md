@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_landing.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`       |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:52+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -99,6 +99,20 @@ index or a prefix match — a positional assertion here would have broken on the
 Landing tests continue to pin landing-state projection, with fixture contract paths updated from task-root contracts to leaf `series-contract.md` enclosures.
 
 ## Update History
+
+- 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: No content impact: the whole diff is one
+  fixture value, `_contract`'s `"workflow_kind": "chat"` becoming `"chat-task"`, forced by
+  `WorkflowKind` narrowing to `Literal["chat-task", "light-task"]`
+  (`worktrees/worktree_contract.py` L50). No test, class, mock, probe branch or assertion changed,
+  and the card names no workflow kind anywhere — it claims the landing-window gate, the
+  observed/planned/missing honesty axis, the origin-main semantics, the `gh` process boundary and
+  the shared-`subprocess`-module patching argument, none of which the fixture value reaches.
+  Re-verified every citation the L3 curator added against the current 218-line file, since they
+  were the only thing here that could have drifted: `GIT_REPOSITORY_SELECTOR_ENV` is still imported
+  at L21; `test_the_gh_probe_does_not_inherit_the_repository_selectors` still spans L171-L195
+  (decorator at L171, the `assertIn("PATH", environment)` at L195); `_pr_for`'s
+  `env=git_environment()` is still `landing.py` L124. Counted the tests: 9 across two classes,
+  `LandingRefsTests` 7 + `DefaultBranchTests` 2, matching the Purpose line.
 
 - 2026-07-31T21:38+02:00 — 260731-EFA-L3 curator: the suite gained
   `test_the_gh_probe_does_not_inherit_the_repository_selectors` (L171-L195) and the sidecar had not

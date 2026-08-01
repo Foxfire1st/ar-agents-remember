@@ -54,6 +54,7 @@
     ".git-blame-ignore-revs",
     "AGENTS.md",
     "README.md",
+    "dashboard/e2e-production/cockpit.production.spec.ts",
     "pyproject.toml",
     "scripts/harness/README.md",
     "scripts/harness/render_starter.py",
@@ -70,8 +71,8 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1074,
-    "fileSidecars": 17,
+    "sourceFilesInScope": 1089,
+    "fileSidecars": 18,
     "childRoutes": 8
   },
   "routingTerms": [
@@ -79,6 +80,7 @@
     "agents",
     "blame",
     "chats",
+    "cockpit",
     "dashboard",
     "design",
     "dev",
@@ -95,6 +97,7 @@
     "json",
     "lifecycles",
     "mcp",
+    "production",
     "ps1",
     "pyproject",
     "readme",
@@ -111,6 +114,7 @@
     "settings",
     "shared",
     "skills",
+    "spec",
     "src",
     "start",
     "starter",
@@ -132,6 +136,8 @@
       "git-blame-ignore-revs",
       "AGENTS.md",
       "README.md",
+      "dashboard/e2e-production",
+      "dashboard/e2e-production/cockpit.production.spec.ts",
       "pyproject.toml",
       "scripts/harness",
       "scripts/harness/README.md",
@@ -142,9 +148,7 @@
       "scripts/harness/shared/render-starter.ps1",
       "scripts/harness/shared/render-starter.sh",
       "scripts/harness/shared/session-start-directive.md",
-      "scripts/harness/shared/workspace-directive.md",
-      "scripts",
-      "scripts/run-gated-integration.py"
+      "scripts/harness/shared/workspace-directive.md"
     ],
     "anchorHints": [
       "git-blame-ignore-revs",
@@ -152,6 +156,8 @@
       "AGENTS",
       "README.md",
       "README",
+      "cockpit.production.spec.ts",
+      "cockpit.production.spec",
       "pyproject.toml",
       "pyproject",
       "render_starter.py",
@@ -192,9 +198,7 @@
       "max-complexity = 10",
       "PLR09xx",
       "EFA",
-      "CRAP",
-      "repo-overview",
-      "abc7cbcc74921cdcb57a61529445f61641e919e7"
+      "CRAP"
     ]
   },
   "fallback": {

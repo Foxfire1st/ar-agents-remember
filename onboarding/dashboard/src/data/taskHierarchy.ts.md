@@ -5,9 +5,9 @@
 | repository             | agents-remember                           |
 | path                   | `dashboard/src/data/taskHierarchy.ts`     |
 | doc_type               | `file-level-onboarding`                   |
-| lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash |                                           `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |                                           2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T09:05+02:00 |
+| lastVerifiedCommitHash |                                           `e52edaf5b655f495580efd93306afdf922b19b51`|
+| lastVerifiedCommitDate |                                           2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,17 @@ back to the matched ref's `number` only for rows without a projected child doc, 
 list still decides where the row appears. Operations can therefore show the leaf task's own number
 without parsing numbers from filenames, slugs, titles, or parent labels.
 
+`ParentTaskMatch.ref` is typed `SeriesSubTaskNode`, not `TaskSubTaskRefNode`. Those are two distinct
+`extra="forbid"` server models that the mirror once collapsed into one interface; the match is always
+read off `series.subTasks`, so it is a SERIES row — it carries `createdAt` and can never carry the
+cross-series `linkedLifecycleId` that only a master's own `subTasks` rows use.
+
+`orderedByCreation` is exported. It was file-private here while `DetailPanel.tsx` held a
+byte-identical second copy; the copy is gone and the panel imports this one. Within the panel the
+call also moved from `SubTaskIndex` (which renders the `SubTaskRow` union and so could never sort a
+master's rows, because `TaskSubTaskRefNode` declares no `createdAt` at all) to `seriesAsMasterDoc`,
+the only call site whose rows actually carry the field.
+
 The L14 helper block: `isOrchestrationDoc(doc)` is `kind === "master"` with a non-empty
 `orchestrates`; `masterCommandNames(doc)` returns the names a master answers to when matched against
 an `orchestrates` list — its task folder (the durable series key, `basename(pathDir(docPath))`), its
@@ -58,13 +69,18 @@ instead of duplicating selection prefixes.
 
 ### Invariants And Boundaries
 
-- Authored leaf display numbers come from `TaskDocNode.id`; the master sub-task ref `number` is only a
-  fallback for rows without a projected child doc. Creation order only controls row placement. Do not
-  derive display numbers from task-name, slug, filename, path prefixes, parent label strings, or local
-  indexes.
+- Authored leaf display numbers come from `TaskDocNode.id`; the parent series' sub-task ref
+  (`SeriesSubTaskNode`) `number` is only a fallback for rows without a projected child doc. Creation
+  order only controls row placement. Do not derive display numbers from task-name, slug, filename,
+  path prefixes, parent label strings, or local indexes.
 - The helper resolves parent navigation only from projected task/series metadata; it does not read the
   filesystem or contracts.
-- Missing `createdAt` preserves authored sub-task order rather than guessing a different order.
+- Missing `createdAt` preserves authored sub-task order rather than guessing a different order —
+  `orderedByCreation` reorders only when EVERY row carries the field, so a partially stamped list is
+  left alone instead of sorting the stamped rows to the front. A row type that declares no
+  `createdAt` therefore passes through untouched by construction, and
+  `snapshots.py::_series_subtask_nodes` has already applied the same rule server-side, which makes
+  this an order-preserving safety net rather than the thing that establishes the order.
 - The orchestration-command match (L14) is exact-string over declared names only (folder / doc id /
   title); no fuzzy matching, no title parsing, and never self-command. A doc without `orchestrates`
   participates in no command relation.
@@ -95,13 +111,15 @@ navigation aligned with the master task reader.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys. | L15-L58; L73-L88 | [taskHierarchy.ts](taskHierarchy.ts) |
-| The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows. | L68-L99; `commandFacts`; `seriesRow` | [taskHierarchy.ts](taskHierarchy.ts); [LifecycleList.tsx](../panels/LifecycleList.tsx) |
+| The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys. | L4-L10; L43-L82 | [taskHierarchy.ts](taskHierarchy.ts) |
+| The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows. | L84-L122; `commandFacts`; `seriesRow` | [taskHierarchy.ts](taskHierarchy.ts); [LifecycleList.tsx](../panels/LifecycleList.tsx) |
 | The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer. | L131-L205 | [railModel.ts](railModel.ts) |
-| The `TaskDocNode.orchestrates?` mirror these helpers read. | `TaskDocNode` | [projection.ts](../types/projection.ts) |
-| Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering. | L15-L20; L252-L312; L358-L390 | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
-| DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents. | L337-L361; L453-L487 | [DetailPanel.tsx](../panels/DetailPanel.tsx) |
-| Focused tests cover BY REPO hierarchy/indentation, numbered labels, and enclosure-opened leaf parent links. | L129-L257; L766-L778 | [LifecycleList.test.tsx](../panels/LifecycleList.test.tsx) |
+| The `TaskDocNode.orchestrates?` mirror these helpers read, and the two distinct sub-task row models `ParentTaskMatch.ref` had to choose between. | `TaskDocNode`; `TaskSubTaskRefNode`; `SeriesSubTaskNode` | [projection.ts](../types/projection.ts) |
+| `orderedByCreation` is exported here and shared with `DetailPanel`'s `seriesAsMasterDoc`, which replaced the panel's byte-identical private copy. | L136-L150; `seriesAsMasterDoc` | [taskHierarchy.ts](taskHierarchy.ts); [DetailPanel.tsx](../panels/DetailPanel.tsx) |
+| Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering. | L18-L25; L355-L390; L582-L631 | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
+| DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents. | L408-L412; L561-L566 | [DetailPanel.tsx](../panels/DetailPanel.tsx) |
+| Focused tests cover BY REPO hierarchy nesting/indentation and numbered leaf labels; the enclosure-opened leaf parent link is pinned in the DetailPanel suite. | L125-L225; L401-L456; L876-L959 | [LifecycleList.test.tsx](../panels/LifecycleList.test.tsx) |
+| The enclosure-opened leaf's parent-task link case. | L1057-L1066 | [DetailPanel.test.tsx](../panels/DetailPanel.test.tsx) |
 
 ## Cross-Repo References
 
@@ -112,6 +130,25 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is involved. | — | — |
 
 ## Update History
+
+- 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: recorded the two real changes in this file's diff
+  against `abc7cbc`. (1) `ParentTaskMatch.ref` is now `SeriesSubTaskNode` — the mirror split the
+  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair (`types/projection.ts` L326-L354),
+  and `createdAt` was REMOVED from the master row model, so the match's row type is now the only one
+  that declares the field the helper sorts on. (2) `orderedByCreation` is exported and shared:
+  `DetailPanel.tsx` deleted its byte-identical private copy, and inside the panel the call moved
+  from `SubTaskIndex` (union rows, could never sort) to `seriesAsMasterDoc`. Corrected the
+  "master sub-task ref" wording in the invariants and spelled out the all-or-nothing rule plus the
+  `snapshots.py::_series_subtask_nodes` server-side ordering it backstops. Re-anchored every drifted
+  citation: helper block L15-L58/L73-L88 → L4-L10/L43-L82 (now contains `ParentTaskMatch`,
+  `findParentTaskMatch`, `taskDocHierarchyLabel`, `taskDocParentKey`, `parentTaskLinkForDoc`); the
+  L14 block L68-L99 → L84-L122 (`L68-L99` stopped short of `orchestratorParentKey` at L109);
+  `LifecycleList.tsx` L252-L312 → L582-L631 (the old range named nothing — `taskDocHierarchyLabel`
+  is L592, `taskDocParentKey` L627); `DetailPanel.tsx` L337-L361/L453-L487 → L408-L412/L561-L566
+  (`parentTaskLinkForDoc` is called at L411 and L564, in neither old range); `LifecycleList.test.tsx`
+  L129-L257/L766-L778 → the hierarchy fixture + numbered-leaf + disclosure cases, and moved the
+  enclosure-opened parent-link claim onto `DetailPanel.test.tsx` L1057-L1066, where that test
+  actually lives.
 
 - 2026-07-24T13:17:50Z — Added cached parent-task index semantics. Verification hash/date remain
   pinned to the pre-commit source stamp.

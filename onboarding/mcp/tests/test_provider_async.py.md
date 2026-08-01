@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T23:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T09:24+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -41,9 +41,20 @@ Launcher tests inject a fake `runner`:
 success writes the state file, records `providerStateFile` in the finish
 summary, and unlinks the temp settings file from the thread; a failed payload
 finishes `failed` without a state file; a raising runner finishes `failed`
-with the typed error and still unlinks settings. Projection tests cover
+with the typed error and still unlinks settings. `ProviderSetupStatusTests` cover
 None (no progress, no state file), legacy `prepared`, and the failed-state
 `retryArgs` (worktree_name from `code_worktree.name`).
+
+`test_a_prepared_stack_reaches_the_status_payload` closes the gap those three leave: they prove
+`provider_setup_status` **computes** a projection, not that it reaches the wire. It calls
+`guidance.projected_status_payload(contract, landing=None)` twice against the same contract —
+before the state file exists, asserting `"providers"` is `assertNotIn` the payload, then after
+writing `<worktree_group>/provider-runtime/provider-state.json`, asserting
+`payload.get("providers") == {"state": "prepared"}`. The absence half is the assertion that
+carries the weight: `providers` is a `NotRequired` key on `WorktreeStatusFacts`, attached by
+`_status_payload_with_landing` only `if providers is not None`, so a projection that always
+emitted an empty value would pass the presence half alone. This is the only test in the suite
+that reads the composed status payload rather than the projector in isolation.
 
 `StartOrderingTests` pins the GitHub #53 core: with the extracted start-contract builder mocked,
 the contract file must exist on disk at the moment `run_or_launch_provider_setup`
@@ -73,10 +84,26 @@ No external documentation is needed for these standard-library unit tests.
 | Finding | Source Path |
 | --- | --- |
 | Launcher and projections under test. | [provider_async.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_async.py) |
+| `projected_status_payload` (L453) and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
 | Start ordering and retry path under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
 | Controller ownership helper under test. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
 
 ## Update History
+
+- 2026-08-01T09:24+02:00 — 260731-EFA-L4 curator: `ProviderSetupStatusTests` gained
+  `test_a_prepared_stack_reaches_the_status_payload` (L170-L183) and the suite gained a
+  `from ...modules.guidance import projected_status_payload` import; the card listed the three
+  older projection cases as the whole of that class, so it was incomplete. Documented what the new
+  case adds — it is the only test here that drives the composed payload rather than
+  `provider_setup_status` alone, and its `assertNotIn("providers", ...)` half is what makes the
+  `NotRequired` key meaningful. Verified against `worktrees/modules/guidance.py`:
+  `projected_status_payload` at L453, `providers: NotRequired[dict[str, Any]]` on
+  `WorktreeStatusFacts`, and the `if providers is not None` attach in
+  `_status_payload_with_landing` (L440-L441); added the `guidance.py` reference row that the card
+  previously lacked despite now importing from it. Re-read the rest of the card against the current
+  409-line file — the `ProviderSetupJob` positional slot, the keyword-only `runner`/`thread_factory`
+  seams, `call_args.args[0].settings_cleanup`, the disabled-memory `make_contract`, the dry-run and
+  retry/teardown guards all still hold; now 15 tests across 6 test classes plus `CapturedThreads`.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: recorded the parameter-object call shapes the
   `PLR0913` pass introduced here, since the card describes the launcher's seams closely enough that

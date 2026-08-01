@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T15:10+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -133,6 +133,10 @@ inside agents-remember.
 | Full-page route registration/default. | [Cockpit.tsx](../cockpit/Cockpit.tsx) |
 | Shared terminal, composer, selection-send, and contextual chat. | [Terminal.tsx](Terminal.tsx) · [SessionComposer.tsx](SessionComposer.tsx) · [HighlightComposer.tsx](HighlightComposer.tsx) · [RailChat.tsx](RailChat.tsx) |
 | Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
+| The lifecycle state vocabulary these panels render, declared as a live/terminal partition composed into `State`. | [observer/lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
+| The hand-maintained wire mirror the panels read (`State`, `Metrics`/`LifecycleStateCounts`, `metricsFor`, `SubTaskRow`). | [types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
+| The shared builders every panels suite now seeds wire nodes from, and the hand-kept payload their bases are assembled out of. | [test/fixtures/wire.ts](agents-remember/dashboard/src/test/fixtures/wire.ts) · [fixtures/snapshot.json](agents-remember/dashboard/src/fixtures/snapshot.json) |
+| The shared state mark whose `aria-hidden` glyph makes the naming a panel duty. | [grammar/Dot.tsx](agents-remember/dashboard/src/grammar/Dot.tsx) |
 ## Current L5I Route State
 
 The panels route now treats keep-alive shells as an explicit performance boundary: persistent
@@ -146,7 +150,115 @@ The Engine Room effects overlay and session-cockpit child-history behavior are i
 existing child routes. Panel inventory, cross-panel ownership, and the shared panel primitive are
 unchanged.
 
+## 260731-EFA-L4 Typed Vocabulary Route Impact
+
+The panel inventory is unchanged. What changed is the vocabulary the panels consume, and four rules
+now hold across the route rather than inside one file.
+
+- **The state mark is named by the panel, never by `Dot`.** `grammar/Dot` renders `aria-hidden="true"`,
+  so the accessible name for a severity or a lifecycle state is the wrapper's duty. `AttentionQueue.tsx`
+  wraps it in a `severityMark` span carrying `role="img"` + `aria-label="Severity: <severity>"`;
+  `LifecycleList.tsx`'s `data-testid="task-state"` span carries the same kind of label with NO role and
+  is correct only because it sits inside React Aria's `role="option"`, whose name-from-content absorbs
+  it. Drop the role from the AttentionQueue wrapper and the severity leaves the accessibility tree
+  entirely — `aria-label` on a bare `<span>` names a `generic`, which ARIA prohibits (axe-core
+  `aria-prohibited-attr`, `serious`) and no screen reader announces. Any new panel that renders a `Dot`
+  inherits this: supply a role that can hold a name, or sit inside one.
+- **Two vocabularies reach one dot, and only one of them is the document's.** Both Operations row
+  builders compute `lifecycle?.state ?? statusVariant(doc.status)` (`LifecycleList.tsx` `docRow` L595,
+  `seriesRow` L644; `lifecycleRow` L717 passes `lifecycle.state` straight through), so a bound lifecycle
+  hands `Dot` the RAW server state string and `statusVariant` only ever sees `TaskDocNode.status` /
+  `SeriesNode.status` — whose entire vocabulary is `tasks/document.py::DocStatus`
+  (planning · inProgress · Completed), assigned verbatim by `snapshots.py` at both build sites. That is
+  why L4 could delete its `blocked` / `paused` / `abandoned` arms with no behaviour change: they sat on
+  the right of the `??` and no served payload could enter them. Adding an `awaiting-developer` arm here
+  would repeat the same defect — the live state already arrives on the left.
+- **`awaiting-developer` is a rendered Operations state.** The lifecycle vocabulary is six states
+  composed from named halves server-side (`observer/lifecycle_state.py`: `LiveState` + `TerminalState`,
+  with `State = Literal[LiveState, TerminalState]` and `check_state_partition` refusing at import any
+  state filed on neither side); `awaiting-developer` is LIVE, not terminal. `LifecycleList.test.tsx`
+  pins the handover rather than the paint: an `awaiting-developer` row's mark must equal a bare
+  `<Dot variant="awaiting-developer">` and must NOT equal what an unrecognised variant renders, and a
+  `paused` row's mark must differ from an `abandoned` row's in the same list.
+- **Rollup buckets are derived, not restated.** `Metrics extends LifecycleStateCounts` in the mirror and
+  the bucket field names come from `ACTIVE_STATES` through `StateCountField<>`, so a seventh state adds
+  a REQUIRED field and every object claiming to be a `Metrics` stops compiling until it counts it. The
+  panels suites stopped hand-listing buckets: `LifecycleList.test.tsx` and `DetailPanel.test.tsx` build
+  metrics with `metricsFor(lifecycles)`, the client twin of `reducer.py::_metrics`.
+
+`DetailPanel`'s sub-task index now renders two different server rows. `SubTaskIndex` takes
+`SubTaskRow`, the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode` — two `extra="forbid"` server
+models that share five fields and differ in exactly one each. Only `TaskSubTaskRefNode` declares
+`linkedLifecycleId`, so the cross-series `→` jump is reachable only from a master task document; the
+branch is guarded by
+`"linkedLifecycleId" in ref` and is structurally unreachable for a series rendered through
+`seriesAsMasterDoc`. Only `SeriesSubTaskNode` declares `createdAt`, so creation ordering moved OFF the
+index — where it could never have sorted a master's rows — and onto `seriesAsMasterDoc`, the one path
+whose rows carry the field; `snapshots.py::_series_subtask_nodes` has normally already applied it, and
+both sides skip the sort unless every row carries a `createdAt`.
+
+**What the fixture conversion does and does not pin.** `EventRiver.test.tsx`, `RailChat.test.tsx` and
+`SessionComposer.test.tsx` no longer author wire nodes: every projection node comes from
+`dashboard/src/test/fixtures/wire.ts`, whose bases are assembled from `dashboard/src/fixtures/snapshot.json`
+and annotated with the mirror type, so a fixture that compiles is a shape the MIRROR can produce. Be
+exact about the reach — `wire.ts` and `snapshot.json` are both **hand-maintained**, no generator exists
+anywhere in this repository and no in-repo mechanism keeps the two sides in step. The chain is four
+nodes and **three** links, and the dashboard tests hold two of them: `tsc -b` binds `test/fixtures/wire.ts`
+to `types/projection.ts` (annotated bases, `Overrides<O, Node>` at every call site,
+`test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `test/contract.test.ts` then
+**measures the mirror against `snapshot.json`** — not a one-way `⊆`, but three TYPE-level directions
+(`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`) plus runtime `VOCABULARIES` assertions for the
+string unions `resolveJsonModule` widens to `string`. **The third link is held by nothing:
+`snapshot.json` ↔ `observer/projection.py` is maintained by hand**, so a field the server starts sending
+that neither the mirror nor the snapshot knows about is invisible to all of it.
+
 ## Update History
+
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
+  `observer/projection.py` citations inside the 12:20 entry below, after that module was
+  restructured. `L542-L559` → `L552-L569` (`TaskSubTaskRefNode`, ending on `linkedLifecycleId`
+  L569) and `L624-L639` → `L634-L649` (`SeriesSubTaskNode`, ending on `createdAt` L649). No body
+  claim changed.
+
+- 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "What the fixture
+  conversion does and does not pin" said *"`fixture ⊆ mirror` is what the dashboard tests enforce.
+  `mirror ⊆ server` is enforced by nothing"* — the outer two nodes of a four-node chain, which reads as
+  though nothing measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
+  `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
+  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror` — L29-L53) plus runtime `VOCABULARIES`
+  assertions (L269, L348, L368) for the string unions `resolveJsonModule` widens to `string`. The
+  paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
+  `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from
+  "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the strength the
+  evidence carries: no in-repo generator **and no in-repo mechanism keeping the two sides in step**.
+  Same correction applied to the 12:20 entry's restatement below. No component claim, table row, or
+  verification field changed.
+
+- 2026-08-01T12:20+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
+  the "Typed Vocabulary Route Impact" section. Both component changes in this route are real, not
+  incidental. `AttentionQueue.tsx` gained the `role="img"` `severityMark` wrapper because `Dot` is
+  `aria-hidden` and a bare-span `aria-label` names a `generic` (ARIA-prohibited; axe-core
+  `aria-prohibited-attr`, `serious`) — recorded as a route-wide rule with the reason `LifecycleList`
+  needs no role (React Aria `role="option"` name-from-content). `LifecycleList.tsx`'s `statusVariant`
+  lost its `blocked`/`paused`/`abandoned` arms; I verified this is behaviour-identical by reading both
+  call sites (`docRow` L595, `seriesRow` L644 — `lifecycle?.state ?? statusVariant(...)`, so the live
+  state never reaches the map) and the input vocabulary end to end
+  (`tasks/document.py::DocStatus` L30 = planning/inProgress/Completed → `snapshots.py` `status=doc.status`
+  at L1304 for `SeriesNode` and L1398 for `TaskDocNode`). Recorded `awaiting-developer` as a LIVE state
+  of the server-side partition (`observer/lifecycle_state.py`) with the two new `LifecycleList.test.tsx`
+  handover regressions, `Metrics extends LifecycleStateCounts` with `metricsFor` replacing hand-listed
+  buckets, and the `SubTaskRow` union with the two `extra="forbid"` server models it unions
+  (`projection.py` L552-L569 `TaskSubTaskRefNode` — no `createdAt`; L634-L649 `SeriesSubTaskNode` — no
+  `linkedLifecycleId`), which is why the `→` cross-series jump is master-task-doc-only and why the
+  creation sort moved to `seriesAsMasterDoc`. Stated the fixture chain's honest reach: `wire.ts` and
+  `snapshot.json` are hand-maintained with no generator anywhere in this repository, the fixture→mirror
+  and mirror→snapshot links are both test-enforced, and the `snapshot.json` ↔ `observer/projection.py`
+  crossing is held by nothing. (This bullet originally read "`fixture ⊆ mirror` is test-enforced and
+  `mirror ⊆ server` is enforced by nothing", which dropped the middle link; corrected in the 14:05
+  entry.) Added four two-cell
+  `Repo-Internal References` rows (this table is two columns; no ranges added to it). Evidence: the six
+  suites over this route's files run green (106 tests). Verification metadata pinned until closeout
+  stamps the commit.
 
 - 2026-07-30T12:51+02:00 — No route-model impact for 260727-CHATS-IM-L2. The
   Engine Room effects-root isolation is governed by the `engine-room/` child overview and the

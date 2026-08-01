@@ -121,7 +121,7 @@
       "update_history",
       "mcp/src/agents_remember/memory_quality/",
       "route-local-overview",
-      "abc7cbcc74921cdcb57a61529445f61641e919e7",
+      "e52edaf5b655f495580efd93306afdf922b19b51",
       "/../../overview.md",
       "memory_quality/",
       "c-02-memory-quality-control",
@@ -131,9 +131,9 @@
       "memoryRoot",
       "reportPath",
       "checkedAt",
-      "## Update History",
-      "drift_check",
-      "memory_quality_check"
+      "and the",
+      "TypedDict",
+      "required"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-27T23:09+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                                               |
-| lastVerifiedCommitDate |2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-08-01T09:10+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                                               |
+| lastVerifiedCommitDate |2026-08-01T11:01:51+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -50,7 +50,14 @@ rule in `guidance.carryover_done`.
   `lifecycle_guidance` on the `integration_status == "completed"` branch: a `(False, "")`
   return routes phase `carryover-pending` with `nextTool == "memory_carryover_apply"`;
   a `(True, "<iso>")` return routes `cleanup-pending` with `nextTool == "worktree_cleanup"`
-  and surfaces `carryoverDoneAt`.
+  and surfaces `carryoverDoneAt`. Note the asymmetry in how those keys are read: `phase`
+  with `guidance["phase"]`, but `nextTool` and `carryoverDoneAt` with `guidance.get(...)`.
+  That is the return type, not a style choice — `lifecycle_guidance` now returns a
+  `LifecycleGuidance` TypedDict (`worktrees/modules/guidance.py` L85-L96) on which
+  `phase`/`summary`/`nextOperation` are required and `nextTool`/`nextArgs`/`nextRequiredArgs`/
+  `carryoverDoneAt` are `NotRequired`, and `next_guidance` sets `nextTool` only `if tool`.
+  An absent next-move is an **omitted key**, never `""`, so subscripting it is a type error
+  even in the two phases that always carry one.
 - `CleanupCarryoverGuardTests` patch `cleanup.carryover_done` to `(False, "")`, write
   the contract, and assert `cleanup_result` RAISES `RuntimeError` (message mentions
   "carryover") — the hard guard that refuses to delete the parked memory branch before
@@ -132,6 +139,19 @@ No meaningful cross-repo references found.
 Cleanup/carryover tests keep the carryover-before-cleanup invariant while updating contract fixtures to the new series-contract schema.
 
 ## Update History
+
+- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: `GuidanceCarryoverRoutingTests` moved three
+  assertions from `guidance["nextTool"]` / `guidance["carryoverDoneAt"]` to `.get(...)`, and the
+  card described the reads closely enough that leaving that unexplained would mislead. Recorded
+  why: `lifecycle_guidance` now returns the `LifecycleGuidance` TypedDict, whose next-move and
+  `carryoverDoneAt` keys are `NotRequired` — verified at `worktrees/modules/guidance.py` L85-L96
+  (the TypedDict), L141-L157 (`next_guidance`, which sets `nextTool` only `if tool`) and L229
+  (`lifecycle_guidance`'s return annotation). Both routing verdicts, the expected tool names and
+  the `carryoverDoneAt` value are unchanged. Re-read the rest against the current 440-line file:
+  still 14 tests across 8 classes, `CarryoverDoneTests` / `CleanupCarryoverGuardTests` /
+  `SourceBranchProofTests` / `CleanupChildEdgeTests` / `CleanupDryRunDirectoryTests` /
+  `CleanupDriftSnapshotTests` / `RemoteBranchDeleteTests` all present and unrenamed, and all six
+  Repo-Internal reference paths resolve.
 
 - 2026-06-27T23:09+02:00 — Task 32 memory-mirror pruning: added `CleanupDriftSnapshotTests` and a drift snapshot fixture helper to prove cleanup dry-runs/removes the exact contract-owned code-worktree drift snapshot while preserving unrelated snapshots. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: cleanup/carryover tests now exercise the series-contract contract shape while preserving the code-first, memory-after cleanup expectations. Verification metadata pinned until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`       |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated | 2026-08-01T09:15+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -104,11 +104,18 @@ same tag after several ticks; swapping in a real change (tokens) makes a deadlin
 `_get_until` see 200 with a NEW tag and the fresh body. Plus the `servingBuild` presence on the
 state body and the pure `_if_none_match_matches` table (weak/strong forms, comma lists, `*`,
 mismatch, None). **`BuildInfoTests`** pin `resolve_serving_build`: in this checkout the commit
-short-hash resolves and rides `payload()`; anchored at a non-git tmp dir the commit is `None` and
-OMITTED from the payload (never faked); the payload shape is camelCase (`bootedAt`). The
+short-hash resolves and rides the wire form; anchored at a non-git tmp dir the commit is `None` and
+OMITTED (never faked); the shape is camelCase (`bootedAt`). The
 `dashboardBuild` assertion is now **present-or-omitted**, not an unconditional index: that only
 held while the fingerprint sidecar was committed alongside the bundle, and both are now generated
-at release time. The same class pins the dirty probe's tri-state
+at release time. **Since 260731-EFA-L4 `ServingBuild.payload()` returns the declared
+`ServingBuildPayload` model rather than a dict**, so every one of these assertions goes through the
+module-level helper `_build_wire(build)` (L128-L136), which is
+`build.payload().model_dump(mode="json", exclude_none=True)`. That `exclude_none=True` is where the
+honest-unknown rule is applied — absent, never null, never a fabricated "clean" — and it is applied
+identically by `serving.served_state.served_state_tail`, so what these tests compare against is the
+stamp exactly as the state body carries it. `StreamEventsTests.test_snapshot_carries_the_serving_build_stamp`
+uses the same helper for the SSE snapshot's `servingBuild` key. The same class pins the dirty probe's tri-state
 (`test_dirty_probe_is_tri_state_and_fails_open`: proven-dirty `True`, proven-clean `False`, and an
 unprovable probe — raising or non-zero — failing OPEN to `None`) and its end-to-end consequence
 (`test_status_failure_does_not_assert_a_pristine_tree`: `rev-parse` succeeds, `status` raises, so
@@ -233,25 +240,25 @@ are proven by repository source and the test suite itself.
 | The pure diff under test. | — | [serving/delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
 | The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
 | The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | L135-L178; L207-L269 | [serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| The app consumes one projector iterator, decorates every snapshot, preserves SSE framing, and explicitly closes the subscription. | L181-L203; L702-L707 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L430-L492 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | `stream_events` L300-L330 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L441-L503 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The raw event tail under test. | L125-L277 | [serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
 | The inactivity-based raw event retention helper under test. | — | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
 | The raw retention regressions: dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | — | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | L1916-L1984; L2011-L2041 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | L1927-L1995; L2022-L2052 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | L5 retention exemption: a protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The `protected_lifecycle_ids` parameter under test, and the series-retention set it carries. | `prune_expired_lifecycle_event_logs`, `series_retained_lifecycle_ids` | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | L2052-L2065; L2102-L2131 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | L2063-L2076; L2113-L2142 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The sim load/replay under test. | — | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
 | The action evaluation under test. | — | [serving/actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
 | The gate write-path the `/api/actions` gate verbs drive (slice 6b). | — | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
 | The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | — | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
 | The compact attention acknowledgement store asserted by `ActionDismissTests`. | — | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
-| Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | L1376-L1399; L1426-L1436; L1482-L1494 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | L1387-L1410; L1437-L1447; L1493-L1505 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
 | The CLI dispatcher + dashboard adapter under test. | — | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
 | The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | — | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| `BuildInfoTests`' dirty-probe cases and the seam they patch (`agents_remember.serving.build_info.run_git`). | L1034-L1058; L1060-L1079 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The probes under test: `_git_short_head` / `_git_worktree_dirty` call `run_git` with `timeout=_PROBE_TIMEOUT_SECONDS`, which is why the seam moved. | L36-L39; L67-L94 | [serving/build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
+| `BuildInfoTests`' dirty-probe cases and the seam they patch (`agents_remember.serving.build_info.run_git`). | L1045-L1069; L1071-L1090 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The probes under test: `_git_short_head` / `_git_worktree_dirty` call `run_git` with `timeout=_PROBE_TIMEOUT_SECONDS`, which is why the seam moved. | L40; L91-L118 | [serving/build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
 
 ## Cross-Repo References
 
@@ -282,6 +289,35 @@ point — both are 400s, and the code tells the caller which half of the address
 recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisionHelperTests`.)
 
 ## Update History
+
+- 2026-08-01T09:15+02:00 — 260731-EFA-L4 curator: `ServingBuild.payload()` now returns the declared
+  `ServingBuildPayload` model instead of a dict, so every assertion that used to index `payload()`
+  goes through the new module-level helper `_build_wire(build)` (L128-L136) —
+  `build.payload().model_dump(mode="json", exclude_none=True)`, which is the stamp exactly as the
+  state body carries it and the point at which the honest-unknown rule (absent, never null, never a
+  fabricated "clean") is applied. Seven call sites moved: the six in `BuildInfoTests` and
+  `StreamEventsTests.test_snapshot_carries_the_serving_build_stamp`. Rewrote the `BuildInfoTests`
+  passage, which described `payload()` as if it were still the wire dict. No assertion changed
+  value and no test was added, removed or renamed. **Citation repairs — 7 rows.** The file grew
+  2407 → 2418 lines, all of it at L128-L138, so every self-citation shifted by +11 and was
+  re-verified against the symbol it names: MX-FIX-1 trio L430-L492 → **L441-L503**
+  (`test_snapshot_subscription_cannot_lose_an_interleaved_projection` L441 …
+  `test_cancelled_waiting_stream_releases_its_subscription` L503); dirty probe
+  L1034-L1058; L1060-L1079 → **L1045-L1069; L1071-L1090**
+  (`test_dirty_probe_is_tri_state_and_fails_open`,
+  `test_status_failure_does_not_assert_a_pristine_tree`); actionable-drift dismiss
+  L1376-L1399; L1426-L1436; L1482-L1494 → **L1387-L1410; L1437-L1447; L1493-L1505**; Task 34
+  retention L1916-L1984; L2011-L2041 → **L1927-L1995; L2022-L2052** (still skipping the separately
+  cited protected-log test, now at L1997-L2020); raw stream ready/heartbeat
+  L2052-L2065; L2102-L2131 → **L2063-L2076; L2113-L2142** (`test_streams_backlog`,
+  `test_stream_does_not_emit_heartbeats`). Two cross-file rows moved because their modules changed
+  this leaf: `build_info.py` L36-L39; L67-L94 → **L40; L91-L118** (`_PROBE_TIMEOUT_SECONDS` at L40,
+  `_git_short_head` L91-L101, `_git_worktree_dirty` L104-L118 — the old ranges held neither probe),
+  and `app.py` L181-L203; L702-L707 → **`stream_events` L300-L330**, one range that now contains
+  all four claims the row makes (one subscription via `contextlib.aclosing` L319, the snapshot
+  decoration `served_state_tail` L328-L329, and the SSE framing L330). `projector.py`
+  L135-L178; L207-L269 was re-verified unmoved — that module is untouched by this leaf.
+  Verification metadata pinned until closeout stamps the L4 commit.
 
 - 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: `BuildInfoTests` changed seam. Both dirty-probe
   tests now patch `agents_remember.serving.build_info.run_git` instead of

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_agents.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:45+02:00 |
+| lastUpdated | 2026-08-01T17:40+02:00 |
 | lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
 | lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
 | governingOverview | `overview.md` |
@@ -18,8 +18,8 @@
 
 Library sub-agent grouping tests with fake native boundaries: codex
 sub-agent threads list through the probed camelCase `sourceKinds` vocabulary and group
-client-side under their parent's row via `parentThreadId`; claude `subagents/agent-*.jsonl`
-+ `.meta.json` children group under their parent session row with meta-bound identity.
+client-side under their parent's row via `parentThreadId`; claude `subagents/agent-*.jsonl` +
+`.meta.json` children group under their parent session row with meta-bound identity.
 Unproven shapes stay visibly unavailable through `agents_note` — never silently absent,
 never guessed.
 
@@ -105,6 +105,7 @@ experimental-gated on 0.145.0, which is why grouping is client-side.
 
 ## Update History
 
+- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the codex fixture now builds its library with
   `seams=AppServerSeams(env=..., transport_factory=...)` instead of the two loose keywords, so
   the Conventions paragraph names that parameter object; the import addition plus several `ruff

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`       |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated | 2026-08-01T10:45+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -189,7 +189,9 @@ The provider surface therefore distinguishes observed, configured-only, failed/d
 
 Task 28 adds the **NOTIFY-AND-CONTINUE turn end** to this route — the new ACTIVE turn-end path that
 supersedes (but parks, un-hinted) the `lifecycle_gate`/inbox stack. The write side gains a non-terminal
-`awaiting-developer` state in `lifecycle_state.py` (deliberately *not* in `TERMINAL_STATES`) plus
+`awaiting-developer` state in `lifecycle_state.py` (since 260731-EFA-L4 its non-terminality is
+structural rather than a second opinion: it is a member of `LiveState`, and `TERMINAL_STATES` is
+built from the *other* half of the partition, so it cannot be in both) plus
 `ambient.await_developer(*, summary)` / `resume_from_await` — a `block`/`resume` peer with no gate and no
 wait (the model declares the turn complete and stops), `resume_from_await` kept a separate method so
 `resume` keeps its blocked-only guard. The read side folds it in `reducer.py`: a
@@ -283,11 +285,35 @@ sidecar timestamp compare (N6), and the workspace crash-window ordering note (N2
   `worktree_provider_admission.series_retained_lifecycle_ids`). This backend policy is the Event
   River lifetime boundary; the dashboard keeps a memory-bounded sliding window but applies no
   shorter display cap.
-- `lifecycle_state.py` — the `State`/`Phase` Literals, the frozen
-  `LifecycleState` record, the typed errors (`LifecycleError`,
-  `GuardedStartError`), and the `coerce_phase` boundary validator. Pure
-  vocabulary with no I/O, so the later projection slice can reuse it. Task 28:
-  `State` gained the non-terminal `awaiting-developer` turn-end state.
+- `lifecycle_state.py` — the state/phase vocabulary, the frozen `LifecycleState`
+  record, the typed errors (`LifecycleError`, `GuardedStartError`,
+  `LifecycleVocabularyError`), and the `coerce_phase`/`coerce_end_outcome` boundary
+  validators. Pure vocabulary with no I/O, so the later projection slice can reuse it.
+  Task 28: `State` gained the non-terminal `awaiting-developer` turn-end state.
+  **260731-EFA-L4 declares `State` as a partition instead of one flat list.**
+  `LiveState = Literal["running", "paused", "blocked", "awaiting-developer"]`,
+  `EndOutcome = Literal["completed", "abandoned"]`, `TerminalState = EndOutcome`, and
+  `State = Literal[LiveState, TerminalState]`. PEP 586 flattens nested `Literal`
+  aliases, so `State` is exactly the same six-member union it was — `get_args(State)`
+  still returns six plain strings — but the six names are now written once, on the
+  halves, and `State` is composed from them. `TERMINAL_STATES` is no longer a
+  `frozenset` standing beside `State` and naming two of its members a second time; it
+  is `frozenset(vocabulary_names(TerminalState, ...))`, i.e. the terminal half read
+  back. `STATES`/`LIVE_STATES`/`PHASES` are the same runtime read of the other
+  aliases, so no module re-enumerates a vocabulary it does not own.
+  `check_state_partition(live=, terminal=, whole=)` runs at import and raises
+  `LifecycleVocabularyError` naming the offender for a state filed on both sides, a
+  state on `State` filed on neither, and a filed state absent from `State` — the last
+  of which is what makes appending a bare literal to the composition fail rather than
+  quietly create an unclassified state. `vocabulary_names` is the reader underneath
+  all of it: it walks flat literals, nested alias compositions and `X | Y` unions, and
+  refuses any non-string member by name.
+  `TerminalState` being *defined as* `EndOutcome` is the load-bearing part: terminality
+  is not an opinion filed beside the states, it is "this is what `lifecycle.ended`
+  writes", which is why `coerce_end_outcome` can be a membership test against
+  `TERMINAL_STATES` rather than an outcome→state mapping table. It defaults an
+  unrecognized or missing outcome to `DEFAULT_END_OUTCOME` (`"abandoned"`) — a policy
+  for the *read* side, which parses logs it did not write.
 - `save_gate.py` — the pure save-gate vocabulary: the landing-zone scope rule
   (`compute_scope` → `<repo_id>` / `0_unscoped` / `1_cross-repo`), the
   `SaveDecision` boundary (`coerce_save_decision`), and `SaveGateRequired`. No
@@ -306,6 +332,15 @@ sidecar timestamp compare (N6), and the workspace crash-window ordering note (N2
   (`self._store.root`) so a consumer outside this route — the MCP tool choke point in
   `mcp/tools/base.py` — can resolve the observer root and check the sibling `serving/` package's
   supervisor-sweep heartbeat on every tool call without constructing its own `McpRuntimeConfig`.
+  260731-EFA-L4 puts `end(outcome)` on the shared vocabulary: it checks membership against
+  `TERMINAL_STATES` and converts through `coerce_end_outcome`, so the write side has no
+  outcome→state rule of its own. The two sides stay deliberately asymmetric — the WRITE side
+  still *refuses* an unrecognized outcome with a `LifecycleError` naming the accepted set,
+  because `coerce_end_outcome`'s default-to-abandoned leniency exists for the reducer reading
+  logs it did not write, and a session ending itself must not have a typo silently recorded as
+  an abandonment. The unsaved-work discard branch in the switch path keeps its literal
+  `outcome="abandoned"`, which is a decision this branch makes rather than a classification;
+  it is intentionally not wired to `DEFAULT_END_OUTCOME`.
 
 The slice-3a projection read side:
 
@@ -343,6 +378,26 @@ The slice-3a projection read side:
   derives the orchestration > master > leaf hierarchy and rank insignia (additive, no bump).
   260707-HFX2-L1 adds R1/R4 fields to `AgentPickupNode` (attempt/backoff/escalation/owner) and a new
   `ExpectationRowNode` + `Analytics.expectationRows` (R2/R5 durable deadline surfacing). `version` is 2.
+  **260731-EFA-L4 makes the per-state `Metrics` buckets a function of the vocabulary.**
+  `ACTIVE_STATES = LIVE_STATES` (the live half itself, deliberately *not* `STATES -
+  TERMINAL_STATES`, so the answer is not re-derived from a second list that could be
+  wrong); `state_count_field(state)` computes the bucket name — first segment verbatim,
+  each later hyphen segment's first character upper-cased and its tail left alone, plus
+  `Count`, so `awaiting-developer` → `awaitingDeveloperCount`; and `STATE_COUNT_FIELDS =
+  state_count_fields(ACTIVE_STATES)` is the resulting one-to-one map. `state_count_fields`
+  raises `LifecycleVocabularyError` naming both states if two ever bucket into one field —
+  the transform is not injective (`a-b` and `aB` both give `aBCount`), and a shared bucket
+  would make the later count overwrite the earlier in the reducer's keyword expansion, i.e.
+  under-report with no field looking wrong. `Metrics` gains `awaitingDeveloperCount`, the
+  bucket the turn-end state never had. The `*Count` fields stay hand-declared because they
+  are the served contract the dashboard reads by name; what stops them drifting is that
+  `Metrics` is `extra="forbid"` (a bucket the vocabulary needs but the model does not
+  declare raises in `_metrics`, it does not become a silent zero) and that
+  `MetricsBucketVocabularyTests` asserts the declared `*Count` set minus `lifecycleCount`
+  equals the derived set in both directions.
+  `str.capitalize` is specifically wrong here and the code says why: it lower-cases the
+  tail, which both merges states differing only in tail case and disagrees with the
+  TypeScript mirror's `Capitalize<>`, which cannot lower-case a tail.
 - `reducer.py` — the pure fold: `project_lifecycle` (events → projection, with the
   inferred paused/abandoned layer, corrections, and token aggregation),
   `project_workspace` (tree assembly, including current-enclosure reconciliation for
@@ -355,7 +410,17 @@ The slice-3a projection read side:
   `_lifecycle_attention`'s `awaiting-developer` info item (via `_await_summary`), and the
   `... and lifecycle.gate is None` blocked-gate/gate-open dedup. Task 29 S7 keys actionable-drift
   attention by repository/branch, enriches its detail from snapshot provenance, and treats only
-  actionable drift as targetless dismissible attention.
+  actionable drift as targetless dismissible attention. 260731-EFA-L4 removes the last three
+  places the reducer restated the vocabulary: `_metrics` builds its buckets as
+  `Counter(lc.state for lc in lifecycles)` splatted through `STATE_COUNT_FIELDS` instead of
+  three `sum(1 for lc in lifecycles if lc.state == ...)` lines (those three lines are what
+  let an `awaiting-developer` lifecycle count towards `lifecycleCount` and `totalTokens` and
+  towards nothing else); `_ended_updates` returns `coerce_end_outcome(event.data.get("outcome"))`
+  instead of its own `"completed" if ... else "abandoned"`; and the module-level `_STATES`
+  membership set is `frozenset(STATES)` rather than `frozenset(get_args(State))` — deliberately,
+  because `get_args` on the *union* form (`Literal[...] | Other`) yields `Literal` objects
+  rather than strings, and a set of those would match no event payload, silently dropping
+  every state correction the fold applies.
 - `series_tokens.py` — the pure series-token aggregate helper: indexes non-master task documents by
   series directory plus markdown filename, joins master `subTasks[].file` rows to bound leaf
   lifecycles, and returns copied `SeriesNode`s with `seriesTokenTotal`.
@@ -386,7 +451,14 @@ The slice-3a projection read side:
   does) — the durable contract is the truth. Also derives `series_retained_lifecycle_ids` (+
   `_series_is_retired`/`_contract_finalized_at`, `ARCHIVED_CLEANUP_STATES`/`MASTER_ARCHIVE_GRACE_SECONDS`):
   every leaf id of a not-yet-retired master series, which the projection store feeds back to event
-  retention as the protection set.
+  retention as the protection set. 260731-EFA-L4 puts the module's last inline
+  `{"completed", "abandoned"}` (in `_enclosure_is_provider_relevant`) onto
+  `ARCHIVED_CLEANUP_STATES`, so all three archived-enclosure tests now read the one constant.
+  Note the vocabulary boundary this respects rather than crosses: `ARCHIVED_CLEANUP_STATES` is
+  the *contract cleanup* vocabulary (`worktrees.worktree_contract.CleanupStatus`, which also has
+  `pending` and `reopened`), and it coincides with `TERMINAL_STATES` by value only — an
+  enclosure being reclaimed and a lifecycle being over are different facts, so the two are
+  deliberately not the same constant.
 - `projection_store.py` — the I/O edge: `read_lifecycle_logs`, the atomic
   `latest-state.json`/`latest-metrics.json` writer, and the `project_and_write`
   orchestrator the serving layer drives. It prunes expired raw lifecycle event logs, derives admitted
@@ -433,6 +505,18 @@ The slice-3a projection read side:
   Any future reader here that consolidates onto the shared runner inherits the same
   obligation: the runner's failure surface is wider than a bare `subprocess.run` with
   no bound, and this route's degrade-never-raise promise is what pays for it.
+- **Every lifecycle state joins the live half or the terminal half, and nothing on this
+  route re-derives that split.** A seventh state is added to `LiveState` or to
+  `TerminalState`; adding it to `State` directly fails `check_state_partition` at import,
+  naming it. Filing it live grows `LIVE_STATES` → `ACTIVE_STATES` → `STATE_COUNT_FIELDS`,
+  and `_metrics`'s splat then requires the matching `Metrics` field to exist — `extra="forbid"`
+  turns a missing declaration into a `ValidationError` on the projection tick rather than a
+  bucket that silently reads zero. Filing it terminal commits to it being reachable only
+  through `lifecycle.ended`, because `TerminalState` *is* `EndOutcome`. What must not be
+  re-introduced is a second list: a `frozenset` of terminal names beside `State`, an
+  `ACTIVE_STATES` computed as `STATES - TERMINAL_STATES`, or a hand-written bucket list in
+  `_metrics` — each of those is a copy that can disagree, and the `awaiting-developer` bucket
+  gap is what disagreeing looked like.
 - Derived states are flagged `inferred` so a renderer never shows a projected
   state as a written fact ("never pretend declared is observed").
 - **Persistent lifecycle rows are current-enclosure-owned:** deleting or re-owning an enclosure removes
@@ -492,6 +576,9 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | Drift snapshot pathing and worktree-orphan pruning are centralized for producer/projection/cleanup parity. | [drift_snapshots.py](drift_snapshots.py) |
 | The shared per-tick contract snapshot and its cross-tick stat-identity parse cache (PTS-L2). | [contract_snapshot.py](contract_snapshot.py) |
 | The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
+| The partition, coverage and terminality suites that hold the vocabulary to the buckets: `MetricsBucketVocabularyTests`, `StatePartitionTests`, `TerminalityIsStructuralTests`, `StateVocabularyReaderTests`, `StateCountFieldTests`. | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| The write side's asymmetric refusal — `end()` rejects an unknown outcome instead of coercing it. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
+| The TypeScript mirror, which now carries the SAME partition shape as this route: `LIVE_STATES` / `TERMINAL_STATES` declared as halves, `LIFECYCLE_STATES` spread from them, and `ACTIVE_STATES = LIVE_STATES` rather than a difference. It refuses double-filing at compile time (`StatesAreFiledOnce`, a `never` constraint) where this route refuses it at import; the one thing it cannot follow is a duplicate WITHIN one half, which a TS tuple keeps and `Literal` collapses. | [dashboard/src/types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -525,7 +612,94 @@ On the read edge, `projection_store.project_and_write(config, *, now, refresh, t
 long-lived collaborators in `ProjectionTickState`, and `ProjectionInputState.read` takes
 `ProjectionReaders` + `RefreshPass`. The fold stays pure and every projected value is unchanged.
 
+## 260731-EFA-L4 The State Vocabulary Is A Checked Partition
+
+The defect this leaf closes on this route was not a typo, it was a **set difference**. `State`
+declared six states; `Metrics` bucketed three by hand; `_metrics` counted those three with three
+hand-written `sum(...)` lines. So an `awaiting-developer` lifecycle inflated `lifecycleCount` and
+`totalTokens` and landed in no bucket at all — the rollup could not show a lifecycle that had
+handed the turn back to the developer, and nothing anywhere failed.
+
+The fix is structural, in three steps, each of which removes one copy that could disagree:
+
+1. **`State` is composed, not declared.** `LiveState` and `TerminalState` hold the names;
+   `State = Literal[LiveState, TerminalState]`. PEP 586 flattens nested `Literal` aliases, so the
+   union is byte-for-byte the same six-member type a checker saw before — this buys checkability,
+   not a new vocabulary. The state names are still hand-written, and always will be; what is gone
+   is the *second* hand-written list. `check_state_partition` runs at import and refuses a state
+   filed on both sides, on neither, or filed but absent from `State`.
+2. **`TerminalState` IS `EndOutcome`.** A lifecycle reaches a terminal state exactly one way — by
+   being ended — and `lifecycle.ended`'s `outcome` names which one. So terminality stops being an
+   opinion in a set and becomes "this is what ending writes", which is why `coerce_end_outcome` is
+   a membership test rather than a mapping table, and why the reducer and `AmbientLifecycle.end`
+   share it instead of each carrying a `"completed" if ... else "abandoned"`.
+3. **The buckets are computed from the live half.** `ACTIVE_STATES = LIVE_STATES` (not
+   `STATES - TERMINAL_STATES`), `state_count_field` derives the *field name* from the state name,
+   and `STATE_COUNT_FIELDS` is the one-to-one map `_metrics` splats. Two states that would collide
+   on one bucket are refused where the map is built, because the splat is keyed by bucket and a
+   collision would silently drop a count.
+
+**What is genuinely derived and what is not, stated plainly.** `STATES`, `LIVE_STATES`,
+`TERMINAL_STATES`, `PHASES`, `ACTIVE_STATES` and `STATE_COUNT_FIELDS` are all read out of the
+`Literal` aliases at runtime (`vocabulary_names` → `get_args`); none of them is a list of strings
+typed a second time. The `Metrics.*Count` *field declarations* are still hand-written, and
+deliberately so — they are the served contract the dashboard reads by name and pyright checks by
+name, and pydantic has no way to synthesize them from a mapping. That remaining hand-written half
+is closed on both sides rather than trusted: `extra="forbid"` makes an undeclared bucket raise
+inside `_metrics` on the projection tick, and `MetricsBucketVocabularyTests` asserts the declared
+set equals the derived set in both directions (a bucket no state can fill fails too). The coverage
+test also re-derives the live set as `STATES - TERMINAL_STATES` on purpose, so the measurement is
+not taken with `ACTIVE_STATES`, the instrument it is checking.
+
+Two smaller boundary widenings ride along in `snapshots.py`: `read_engine_process_facts` passes
+`dict(lifecycle_guidance(contract))` and `_cached_local_status` passes
+`dict(projected_status_payload(...))`. Both producers now return TypedDicts
+(`guidance.LifecycleGuidance`, `guidance.WorktreeStatusPayload`); `EngineProcessFacts` is the
+projection's untyped input carrier that the reducer folds by key name, so the widening is at the
+carrier, not in the producers.
+
 ## Update History
+
+- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change), **one corrected claim
+  only**: `dashboard/src/types/projection.ts` adopted this route's partition after the 09:26 entry
+  below was written, so the Repo-Internal References row calling it "the TypeScript mirror that
+  still carries the two-list shape this route dropped" became false. Verified against the current
+  file: `LIVE_STATES` (L42) and `TERMINAL_STATES` (L48) are the halves,
+  `LIFECYCLE_STATES = [...LIVE_STATES, ...TERMINAL_STATES]` (L59), and `ACTIVE_STATES = LIVE_STATES`
+  (L72) — not a difference. The row now records what the two sides share and the one asymmetry that
+  remains (a duplicate within one half: `Literal["a","a"]` collapses here, a TypeScript tuple does
+  not, so the mirror falls back to a runtime check). `projection.py`'s "STATE OF THE MIRROR" comment
+  (L194-L226) was rewritten in the same change and now says the same thing. Nothing else on this
+  route was touched — the `260731-EFA-L4 The State Vocabulary Is A Checked Partition` section
+  (L615-L659) was re-read and every claim in it still holds.
+- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: the state vocabulary became a **checked
+  partition** and the metrics buckets became a function of it, so this route's model was corrected
+  rather than attested. Recorded that `State = Literal[LiveState, TerminalState]` (PEP 586 flattens
+  nested aliases — verified at runtime: `get_args(State)` returns the same six plain strings), that
+  `TERMINAL_STATES` is now the terminal half read back rather than a set standing beside `State`,
+  and that `check_state_partition`/`vocabulary_names`/`LifecycleVocabularyError` refuse a
+  mis-filed or unfiled state at import. Recorded `TerminalState = EndOutcome` as the load-bearing
+  identity that lets `coerce_end_outcome` be a membership test, and the deliberate write/read
+  asymmetry (`AmbientLifecycle.end` refuses an unknown outcome; the reducer coerces it, because it
+  parses logs it did not write). On the projection side, recorded `ACTIVE_STATES`,
+  `state_count_field`, the collision-refusing `state_count_fields`, `STATE_COUNT_FIELDS` and the
+  new `Metrics.awaitingDeveloperCount`, plus the reducer's `Counter` + splat replacing the three
+  hand-written `sum(...)` lines and `_ended_updates`/`_STATES` moving onto the shared vocabulary.
+  **Answered the derivation question explicitly in the body rather than leaving it implied:** the
+  maps are genuinely derived at runtime; the `Metrics.*Count` field *declarations* remain
+  hand-written by design and are held to the derivation by `extra="forbid"` plus a bidirectional
+  test — so this is not a relocated hand-written list, but it is not a fully generated model
+  either, and the card now says which is which. Added the partition invariant (what a seventh state
+  must do, and which three second-lists must never come back), corrected the Task-28 parenthetical
+  that still described `awaiting-developer`'s non-terminality as an absence from `TERMINAL_STATES`,
+  noted `worktree_provider_admission.py`'s last inline `{"completed","abandoned"}` moving onto
+  `ARCHIVED_CLEANUP_STATES` **and** why that constant is deliberately not `TERMINAL_STATES` (it is
+  the contract-cleanup vocabulary, equal by value only), and recorded the two `snapshots.py`
+  TypedDict boundary widenings. Added three reference rows, including the TypeScript mirror
+  (`dashboard/src/types/projection.ts`, owned elsewhere and untouched here), which still carries
+  the two-list shape this route dropped — verified against that file: `LIFECYCLE_STATES` and
+  `TERMINAL_STATES` are two independent hand-written lists and `ACTIVE_STATES` is their difference.
+  Verification metadata pinned until closeout stamps the L4 commit.
 
 - 2026-07-31T22:45+02:00 — 260731-EFA-L3 curator (re-verification pass): **the "No route impact"
   attestation below no longer covers `snapshots.py`, which changed again after it was written.**

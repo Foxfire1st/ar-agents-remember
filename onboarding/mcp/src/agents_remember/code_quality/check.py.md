@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:40+02:00                     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -102,6 +102,34 @@ exact failure this module exists to prevent.
 **The wrapper takes no path arguments at all.** There is no supported way to narrow what the
 gate certifies.
 
+#### Reading The Index Puts An Obligation On The Caller
+
+Because `git ls-files` reads the *index*, this gate certifies **what is staged**, not what is on
+disk — and since the wrapper takes no path arguments, it cannot be told otherwise. That places one
+obligation on every caller: whatever the caller means this gate to certify has to be in the index
+*before* it invokes the wrapper. 260731-EFA-L4 wrote that contract into `derive_scope`'s docstring.
+It is the **only** part of this file L4 touched, and it changed no behaviour — 13 added lines, all
+inside the docstring, zero executable lines altered.
+
+The two tiers meet the obligation differently:
+
+- The **pre-commit tier** gets it for free. There the staged content *is* the commit, so the index
+  already names exactly what that tier certifies.
+- The **closeout tier** does not, because it commits with `git add -A`. It therefore stages its
+  whole worktree first: `worktrees/modules/closeout.py:_gate_staged_code` runs
+  `git reset --mixed HEAD` and then `git add -A`, and only then calls this wrapper. Until it did,
+  every file a task **created** rather than edited went into the commit without ruff, pyright or
+  the changed-lines floor reading a line of it, and a file the task **deleted** stayed in
+  `ls-files` until the deletion was staged, so ruff was handed a path that no longer existed and
+  took an `E902` for it. The docstring names the cost rather than describing it abstractly: L3's
+  `abc7cbc` — the commit this card is pinned to — shipped four files that way.
+
+**Widening the enumeration here would have been the wrong fix, twice over**, and the docstring says
+so. Enumerating `--cached --others --exclude-standard` would redefine the pre-commit tier, making
+ruff and pyright certify files deliberately held out of the commit; and it cannot reach
+`run_diff_coverage` at all, because an untracked file has no diff against any base. The fix belongs
+in the caller, and that is where it landed — this module's own logic is unchanged.
+
 #### The Scope Query Runs On The Package's One Git Runner
 
 `git_ls_files` does not spawn `git` itself. It builds `["ls-files", "-z", "--", *patterns]` and
@@ -154,6 +182,11 @@ the report to a temporary directory unless `--coverage-json` is given.
 
 - The wrapper is a fixed quality suite, not a generic shell command surface.
 - Scope is derived, never passed: no CLI path arguments exist, and no caller can narrow it.
+- Scope is the **index**, so the caller owns what gets certified. The wrapper cannot be pointed at
+  unstaged or untracked work, and a caller that commits with `git add -A` must stage before
+  invoking it. Undo the `git reset --mixed` + `git add -A` in `closeout.py:_gate_staged_code` and
+  closeout silently returns to certifying only the files a task edited, reporting green on files no
+  rail ever read.
 - A step is enforcing unless it carries a `report_note`; only the two Radon steps carry one.
 - A report step that exits non-zero still fails the gate, reported as a broken tool.
 - The four complexity codes are enforced by `ruff` directly. Any `--select`/`--ignore`/
@@ -189,8 +222,26 @@ the report to a temporary directory unless `--coverage-json` is given.
 | The shared tiered hook body derives the same `git ls-files` scope and runs this wrapper as its full tier. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | [pyproject.toml](agents-remember/pyproject.toml) |
 | Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | [AGENTS.md](agents-remember/AGENTS.md) |
+| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
 
 ## Update History
+
+- 2026-08-01T09:40+02:00 — 260731-EFA-L4 curator: recorded the caller obligation that follows from
+  reading the index. **Only this file's `derive_scope` docstring changed in L4 — 13 added lines, no
+  deletions, zero executable lines; the wrapper's own logic is untouched.** The behaviour change is
+  entirely in its caller: `worktrees/modules/closeout.py:_gate_staged_code` now runs
+  `git reset --mixed HEAD` + `git add -A` before invoking the wrapper, so files a task created (and
+  deletions it made) are visible to ruff, pyright and the changed-lines floor where previously they
+  were not. Added "Reading The Index Puts An Obligation On The Caller" under *Scope Is Derived From
+  The Tree*, stating the pre-commit tier meets that obligation for free while the closeout tier had
+  to be made to (the docstring records that L3's `abc7cbc` shipped four files ungated), and stating
+  why widening this module's enumeration to `--cached --others --exclude-standard` was rejected:
+  it would redefine the pre-commit tier and cannot reach `run_diff_coverage`, since an untracked
+  file has no diff against any base. Added the matching invariant and one `closeout.py` reference
+  row. Checked the card against `crap_calculator.py:83` — the body names no CRAP number, so nothing
+  here contradicts `DEFAULT_CRAP_THRESHOLD = 20.0`. This card carries no line-range citations (its
+  reference table is source paths only, two columns), so nothing needed re-anchoring. Verification
+  metadata pinned until closeout stamps the commit.
 
 - 2026-07-31T20:48+02:00 — 260731-EFA-L3 curator: `git_ls_files` no longer spawns `git` itself.
   It builds `["ls-files", "-z", "--", *patterns]` and calls

@@ -5,17 +5,79 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-01T09:30+02:00     |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
 Builds lifecycle status payloads and typed next-operation guidance for worktree
-tools.
+tools. Since 260731-EFA-L4 it is also **where the phase and next-move vocabularies are
+declared** — `models.worktree` imports them from here rather than keeping a second copy.
 
 ## Code Commentary
+
+### 260731-EFA-L4: this module owns the guidance vocabulary
+
+Five `Literal` aliases and four `TypedDict`s now sit above the state machine that produces them.
+
+| Alias | Members |
+| --- | --- |
+| `WorktreePhase` | `worktree-started`, `closeout-pending`, `integration-pending`, `integration-blocked`, `carryover-pending`, `cleanup-pending`, `cleanup-completed`, `abandoned` |
+| `NextOperation` | `continue_work`, `closeout`, `request_integration_decision`, `developer_decision`, `request_carryover_decision`, `request_cleanup_decision`, `done` |
+| `NextTool` | `worktree_status`, `worktree_closeout_apply`, `worktree_integrate`, `memory_carryover_apply`, `worktree_cleanup` |
+| `RecoveryOperation` | `request_commit_approval`, `choose_memory_recovery`, `choose_provider_setup_recovery`, `choose_stale_base_recovery`, `choose_memory_sync_recovery` |
+| `RecoveryTool` | `worktree_start`, `worktree_sync`, `worktree_closeout_apply` |
+
+**Why here.** This module is the state machine that emits every one of these values, and
+`models.worktree.WorktreeSummary` imports `WorktreePhase` / `NextOperation` / `NextTool` for the
+response boundary instead of restating them. The second hand-written copy is what drifted:
+`carryover-pending`, `abandoned`, `request_carryover_decision` and `memory_carryover_apply` were all
+emitted below and all rejected by the packet's model.
+
+**Why `recovery_guidance` is a separate function.** `next_guidance(operation: NextOperation, *,
+tool: NextTool | None = None, args=None, required_args=None) -> NextGuidance` is now narrowed to the
+phase machine's vocabulary. The *other* users of the same next-move key shape — the closeout
+preview's commit-approval gate and the four blocked-start / blocked-sync recovery payloads — get
+`recovery_guidance(operation: RecoveryOperation, *, tool: RecoveryTool, args, required_args=None)
+-> dict[str, object]` instead. It emits exactly the same keys in the same order, so **nothing on the
+wire changed**; the split is in the type. Every one of those callers hands its result to a
+`FlexibleToolResponse` and none reaches `WorktreeSummary`, whose only producer is
+`lifecycle_guidance` via `worktrees.status` — so widening `next_guidance` to fit them would have
+silently widened `WorktreeSummary.nextOperation`, putting "requires developer approval" and "blocked
+on a stale base" back into the set the context packet's `nextOperation` claims to be. `tool` and
+`args` are *required* on `recovery_guidance` (they are optional on `next_guidance`) because a block
+that cannot say how to recover is not worth emitting.
+
+The four payload types:
+
+- **`NextGuidance`** — `nextOperation` required; `nextTool` / `nextArgs` / `nextRequiredArgs`
+  `NotRequired`. `nextTool` is deliberately *absent*, not blank, when the operation needs no call
+  (`done`); the wire model declares it optional for exactly that reason and the packet projection
+  reads it with `.get`.
+- **`LifecycleGuidance`** — everything `lifecycle_guidance` returns: `phase`, `summary`, the
+  next-move keys, plus `NotRequired` `carryoverDoneAt` (only the `cleanup-pending` phase carries it).
+- **`WorktreeStatusFacts`** — the local, contract-derived half, snake_case because it is the
+  tool-response shape. Carries `NotRequired` `unknown_contract_cells`, `providers`, `freshness`,
+  `landing`.
+- **`WorktreeStatusPayload(WorktreeStatusFacts, LifecycleGuidance)`** — a full `worktree_status`
+  payload: the facts plus the guidance.
+
+`lifecycle_guidance` is now typed `-> LifecycleGuidance`, and the three phase helpers return
+`LifecycleGuidance | None` / `LifecycleGuidance` (not `dict | None` / `dict`).
+`status_payload` and `projected_status_payload` return `WorktreeStatusPayload`.
+
+**`unknown_contract_cells`.** `_status_payload_with_landing` adds
+`facts["unknown_contract_cells"] = list(contract.unknown_cells)` when the contract carried a cell
+outside its vocabulary that `worktree_contract._vocabulary_cell` substituted for. It is the one
+place a degraded read becomes visible to whoever called a worktree tool, and it says so explicitly:
+the phase reported beside it was computed from the substituted values. Absent is the normal shape,
+so the key is an exception report, not a flag.
+
+Finally, the payload is assembled as `return {**facts, **guidance}` rather than
+`payload.update(guidance)`, so the checker sees one payload of a declared type. The guidance keys
+still come last and the emitted key order is unchanged.
 
 The module converts a `WorktreeContract` into stable MCP-facing lifecycle phases
 keyed off its **lifecycle position** (disposal/integration/closeout/approval
@@ -41,11 +103,11 @@ one helper per group, and **the order is the contract** — read back to front: 
 is done, an integrated one is waiting on carryover/cleanup, and everything else is still working
 toward closeout.
 
-- `_reclaimed_phase(contract) -> dict | None` — the terminal phases, where the worktrees are gone:
-  `cleanup-completed` and `abandoned`.
-- `_post_integration_phase(contract) -> dict | None` — integration has been attempted:
+- `_reclaimed_phase(contract) -> LifecycleGuidance | None` — the terminal phases, where the
+  worktrees are gone: `cleanup-completed` and `abandoned`.
+- `_post_integration_phase(contract) -> LifecycleGuidance | None` — integration has been attempted:
   `integration-blocked`, or it landed and `carryover-pending` / `cleanup-pending` follow.
-- `_pre_integration_phase(contract) -> dict` — still working: `integration-pending`,
+- `_pre_integration_phase(contract) -> LifecycleGuidance` — still working: `integration-pending`,
   closeout-approved, closeout-pending, `worktree-started`. This one always returns a phase, which
   is why it terminates the chain.
 
@@ -146,12 +208,50 @@ No external Domain Documentation source is configured for this memory repo.
 | Cleanup hard-guards on `carryover_done` (and imports it from here) before deleting the parked memory branch. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
 | The `carryover-pending`/`cleanup-pending` routing + `carryover_done` are pinned here. | [test_cleanup_carryover.py](agents-remember/mcp/tests/test_cleanup_carryover.py) |
 | MCP skill tools return the typed next-operation payloads produced here. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
+| `WorktreeSummary` imports `WorktreePhase` / `NextOperation` / `NextTool` from this module rather than restating them. | [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
+| The six persisted contract vocabularies this module imports for `WorktreeStatusFacts`, and `unknown_cells`, the source of `unknown_contract_cells`. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
+| The fourth: the closeout preview's `request_commit_approval` gate. | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| The fifth: `_memory_sync_block`'s `choose_memory_sync_recovery`. | [sync.py](agents-remember/mcp/src/agents_remember/worktrees/modules/sync.py) |
+| Exhaustiveness of every declared vocabulary against its producers, and the packet boundary, are pinned here. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
+
+## Invariants And Boundaries
+
+- **One declaration per vocabulary.** `WorktreePhase`, `NextOperation` and `NextTool` are declared
+  here and imported by `models.worktree`; do not restate a member at the response boundary. A
+  second copy is what the packet's 260731-EFA-L4 failures were made of.
+- **A phase payload uses `next_guidance`; a block or gate uses `recovery_guidance`.** Do not widen
+  `NextOperation`/`NextTool` to admit a recovery caller — that vocabulary is what
+  `WorktreeSummary.nextOperation` publishes, and a `worktree_status` response can never contain
+  `choose_stale_base_recovery`.
+- A next-move key with nothing to say is omitted, never defaulted. `next_guidance` writes `nextTool`
+  / `nextArgs` / `nextRequiredArgs` only when there is a value, and the packet projection preserves
+  the absence.
+- `unknown_contract_cells` is additive and normally absent; its presence means the phase beside it
+  was computed from substituted values.
 
 ## Series-Contract Notes
 
 Guidance/status payloads now expose contract `kind`, `leaf_id`, `enclosure_path`, and optional `parent_contract_path`, making the leaf/root split visible to dashboard and tool callers.
 
 ## Update History
+- 2026-08-01T09:30+02:00 — 260731-EFA-L4 curator: the card described the phase machine but not the
+  vocabulary it now declares, and the three L2 helper signatures it quoted (`-> dict | None` /
+  `-> dict`) had become false — they are `-> LifecycleGuidance | None` / `-> LifecycleGuidance`.
+  Corrected those and added the section for what this leaf put above the state machine: the
+  `WorktreePhase` / `NextOperation` / `NextTool` / `RecoveryOperation` / `RecoveryTool` `Literal`s
+  (members transcribed from the source, not from the summary) and the `NextGuidance` /
+  `LifecycleGuidance` / `WorktreeStatusFacts` / `WorktreeStatusPayload` `TypedDict`s, backed by the
+  new `from typing import Any, Literal, NotRequired, TypedDict` and the six vocabulary imports from
+  `worktree_contract`. Recorded the new `recovery_guidance` function and, checked against all five
+  of its call sites, why it is separate rather than a widened `next_guidance`: identical keys on the
+  wire, but its callers render as `FlexibleToolResponse` and never reach `WorktreeSummary`, whose
+  `nextOperation` would otherwise have had to admit them. Also recorded `next_guidance`'s narrowed
+  signature, the new `unknown_contract_cells` key in `_status_payload_with_landing`, the
+  `{**facts, **guidance}` merge that replaced `payload.update(guidance)` (key order unchanged), and
+  the `-> WorktreeStatusPayload` return on both `status_payload` and `projected_status_payload`.
+  Added an Invariants section and six reference rows. Verification metadata pinned until closeout
+  stamps the L4 commit.
 - 2026-07-31T20:56+02:00 — 260731-EFA-L3 curator: the Code Commentary said `run_git` comes from
   `modules.git`; that import is gone (`from agents_remember.kernel.git_command import run_git`,
   `modules.git` now supplies only `worktree_dirty`) and `modules.git` no longer defines a runner at

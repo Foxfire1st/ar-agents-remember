@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/observer/series_tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                         |
-| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T15:10+02:00                     |
+| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
+| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00                  |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -63,9 +63,9 @@ scope; this file implements an internal projection rollup.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The reducer calls this helper after lifecycle projection and before `build_analytics`, then serves the enriched series list. | L148-L162 | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| `SeriesNode` exposes the served `seriesTokenTotal` field that this helper writes. | L497-L523 | [projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| Projection tests prove two linked leaf lifecycles sum to the master `seriesTokenTotal` and missing rows contribute nothing. | L690-L763 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| The reducer calls this helper after lifecycle projection and before `build_analytics`, then serves the enriched series list. | L155-L169 | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
+| `SeriesNode` exposes the served `seriesTokenTotal` field that this helper writes. | L662-L688 (`seriesTokenTotal` L684) | [projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| Projection tests prove two linked leaf lifecycles sum to the master `seriesTokenTotal` and missing rows contribute nothing. | L713-L786 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
 
 ## Cross-Repo References
 
@@ -78,6 +78,23 @@ agents-remember workspace projection only.
 
 ## Update History
 
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the three reference
+  citations; two were broken and are repaired. `reducer.py` L148-L162 → **L155-L169** — the same
+  window the 17:20 entry below describes, moved +7 by later edits to that file: `_attach_gates`
+  closes lifecycle projection at L155, `attach_series_token_totals` is called at L163, and
+  `build_analytics` spans L164-L169 consuming `series=series_nodes` at L166.
+  `test_observer_projection.py` L690-L763 → **L713-L786** —
+  `test_series_token_total_sums_linked_leaf_lifecycles` in `WorkspaceTests`, with LC1 at 100 tokens
+  (L722), LC2 at 50 (L733), the doc-less `03_c.md` row at L772-L774 and the 150 assertion at L786;
+  the old range ended 23 lines before that assertion, so neither number it cites was inside it.
+  `projection.py` `SeriesNode` L662-L688 (`seriesTokenTotal` L684) was re-read and left unchanged.
+  Every body claim was re-read against the 43-line source and still holds, so no prose changed.
+  Squared two ragged frontmatter cells.
+- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): the `projection.py` citation was
+  stale by a much larger margin than the rest of the tree. `SeriesNode` L497-L523 was correct
+  against an older commit (`b7d38a7`); the class is now L662-L688 with `seriesTokenTotal` at L684,
+  so the range is repaired and the field line called out. Also aligned `lastUpdated` with this
+  entry — it had lagged behind the 2026-07-31T17:20 entry below. No body text changed.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the 2 approximate cross-file citations
   the previous entry flagged, so the numbers are exact again. `reducer.py` L148-L162 is the real
   window — `_attach_gates` closes lifecycle projection at L148, `attach_series_token_totals` is

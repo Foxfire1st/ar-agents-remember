@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/conversation/store.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastUpdated | 2026-08-01T09:56+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,10 +18,11 @@
 
 The store-orchestration proof added in fix round 1 to close finding F4 — the round-1 report had
 claimed keep-alive/LRU were "covered by store tests" when no such test existed, so this file makes the
-claim true. Four vitest cases drive `connectConversation`/`disconnectConversation`/`applyPage`
-through an injected no-op `EventSource` and fake `fetch`, proving keep-alive, bounded LRU, typed
-error threading, and (260718-CHATS-L5F R10) the transient boot-race retry — all without a real
-network. The R10 case pins the honesty boundary that kills the codex-launch cried-wolf red strip: a
+claim true. It started as four cases and has grown with each round: today it is seventeen `it` cases
+plus a three-row `it.each` (twenty runs) across five describes, all driving
+`connectConversation`/`disconnectConversation`/`applyPage` through an injected no-op `EventSource`
+and fake `fetch` without a real network. The four founding cases prove keep-alive, bounded LRU, typed
+error threading, and (260718-CHATS-L5F R10) the transient boot-race retry. The R10 case pins the honesty boundary that kills the codex-launch cried-wolf red strip: a
 hard 4xx fails loud immediately while a transient boot-race (503 / connection-refused) retries
 quietly on the `connecting` phase and never flashes the fail-loud alarm.
 
@@ -53,6 +54,13 @@ quietly on the `connecting` phase and never flashes the fail-loud alarm.
 - The injected `FakeEventSource`/`okFetch`/`errorFetch` exercise the real store orchestration
   (generation guards, `enforceLru`, `failStream`) — only transport is faked.
 - `afterEach` disconnects every session and `reset()`s the store so cases do not leak runtime.
+- The page every fake `fetch` answers with is built by
+  `test/fixtures/conversationWire.ts::conversationPage` (identity and status through
+  `conversationIdentity`/`conversationStatus`). It replaced a local literal whose `capabilities` was
+  `{} as unknown as ConversationCapabilities` — an empty tree where the wire model declares
+  twenty-three filled `FeatureCapability` leaves — and whose `status` was a lone `turn` object cast
+  past its five sibling fields. The suite never asserts on either, but the fixture is now a page the
+  server could actually send rather than one it could not.
 
 ### 2026-07-24 Curator Delta
 
@@ -74,9 +82,10 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The store orchestration under test (connect/disconnect/enforceLru/failStream). | — | [store.ts](store.ts.md) |
-| The stream ctor injected as a no-op. | — | [stream.ts](stream.ts.md) |
-| The typed error shape threaded to the banner. | — | [types.ts](types.ts.md) |
+| The store orchestration under test (connect/disconnect/enforceLru/failStream). | `connectConversation`; `enforceLru`; `failStream` | [store.ts](store.ts.md) |
+| The stream ctor injected as a no-op. | `EventSourceCtor` | [stream.ts](stream.ts.md) |
+| The typed error shape threaded to the banner. | `ConversationPage`; `ConversationCapabilities` | [types.ts](types.ts.md) |
+| The shared page/status/identity builders the fake `fetch` answers with. | `conversationPage`; `conversationStatus`; `conversationIdentity` | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
 
 ## Cross-Repo References
 
@@ -89,13 +98,31 @@ cross-repository implementation source that governs its behavior.
 
 ## 260727-CHATS-IM-L2 Child-Hydration Regression Delta
 
-The suite now proves selected-child-only POST routing and encoded identity (L66-L99), concurrent
-same-child singleflight (L101-L131), and the exact 64-request/64-state capacity bound with visible
-local-resource refusal (L133-L180). Its table-driven error cases preserve non-2xx, invalid payload,
-network, and timeout reasons as child-local state, and the recovery case proves a retry succeeds
-without changing the parent stream.
+The suite now proves selected-child-only POST routing and encoded identity (L59-L92), concurrent
+same-child singleflight (L94-L124), and the exact 64-request/64-state capacity bound — written as the
+exported `AGENT_HISTORY_CHILD_LIMIT`, not as a repeated literal — with visible local-resource refusal
+(L126-L173). Its three-row `it.each` (L175-L242) preserves non-2xx, network, and timeout reasons as
+child-local state while the parent stream stays `live` and `errorBySession` stays clear, and each row
+then proves a retry recovers without changing the parent stream.
 
 ## Update History
+
+- 2026-08-01T09:56+02:00 — 260731-EFA-L4 curator: corrected two body claims and re-anchored the
+  IM-L2 delta's citations. (1) "Four vitest cases" was stale by four rounds of growth — the source is
+  seventeen `it` cases plus a three-row `it.each` across five describes. (2) The delta section listed
+  four table-driven error reasons ("non-2xx, invalid payload, network, and timeout"); the `it.each`
+  table (L175-L202) carries three, and there is no invalid-payload case anywhere in the file. The
+  64-request/64-state bound in the same sentence checks out and is kept — `AGENT_HISTORY_CHILD_LIMIT`
+  is 64 (`store.ts` L45) and the case asserts through the constant.
+  The diff against `abc7cbc` removed seven lines from the fixture block, so L66-L99 / L101-L131 /
+  L133-L180 had all slid off their cases — re-anchored to L59-L92 / L94-L124 / L126-L173. Recorded
+  in Invariants what the fixture swap actually replaced: `capabilities: {} as unknown as
+  ConversationCapabilities` (an empty tree against a model declaring twenty-three filled leaves) and
+  a `status` cast past five of its six fields. Left every behavioral bullet untouched after checking
+  the consumers — `data/conversation/store.ts` never mentions `capabilities`, `reducer.ts` never
+  mentions `capabilities` or `totalItems`, and the only `.status` this suite asserts on is
+  `errorBySession.s1.status` at L309 (the F15 `cursor-reset-required` case), which comes from the
+  error body and not from the page fixture at all.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded selected-child routing,
   singleflight, capacity, visible failure, and recovery coverage. Verification metadata remains

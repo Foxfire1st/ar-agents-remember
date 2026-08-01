@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/mcp/tools/next_step.py`       |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`             |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-01T01:15+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`             |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -89,8 +89,8 @@ gate moments, keyed on the just-completed tool + contract sub-state:
 `worktree_integrate` && `closeout_status=="completed"` && `integration_status!="completed"`
 (integration); `lifecycle_finalize_task` && `integration_status=="completed"`
 && `cleanup!="completed"` (cleanup). At each, task 28 returns a
-`lifecycle_turn_end_notification` hint (`nextTool="lifecycle_turn_end_notification"`
-+ a context `summary`) — notify and stop, no gate, no wait — replacing the prior
+`lifecycle_turn_end_notification` hint (`nextTool="lifecycle_turn_end_notification"` +
+a context `summary`) — notify and stop, no gate, no wait — replacing the prior
 `closeout-approval`/`integration-approval`/`cleanup-approval` gate raises. Closeout
 uses distinct preview/apply tools, but integrate/finalize reuse one tool with a
 `dry_run` arg — so the not-yet-applied contract state (not the args) distinguishes
@@ -101,22 +101,38 @@ dry-run from apply.
 `nextOperation`/`nextTool` via `_opt_str` (non-empty `str` else `None`),
 `nextArgs` only if it `isinstance(dict)`, `nextRequiredArgs` only if a `list`.
 
-Edge / I/O layer: `next_step_for(amb, tool_name)` → JSON dict or `None`. Reads
-`amb.current` (the live `LifecycleState`), loads the contract via `_load_contract`,
-runs guidance via `_guidance_for`, calls `compute_next_step`, and returns
-`step.model_dump(mode="json", exclude_none=True)`. The WHOLE body is wrapped in
+Edge / I/O layer: `next_step_for(amb, tool_name)` (L260-L281) → `NextStep | None`.
+Reads `amb.current` (the live `LifecycleState`), loads the contract via
+`_load_contract`, runs guidance via `_guidance_for`, and **returns
+`compute_next_step(...)` directly**. The WHOLE body is wrapped in
 `try/except Exception: return None` — `_tool_payload` must never raise into a
 tool call, so any failure simply drops the hint.
 
-`_load_contract(state)` looks-before-leaping: `not state.enclosure` → `None`;
-`enclosure` path not a file → `None` (the `worktree_start --dry-run` window where
-a promoted lifecycle has no contract on disk yet — an EXPECTED state, front-half
-fallback); the narrow `try/except` around `load_contract` then catches only a
-genuinely torn/unparseable contract (e.g. a racing closeout rewrite) → `None`.
+**Since 260731-EFA-L4 this edge returns the MODEL, not a dump of it.** It used to
+end with `step.model_dump(mode="json", exclude_none=True) if step is not None
+else None`. The hint is a declared field of the response envelope
+(`models.base.ResponseModel.nextStep` / `FlexibleResponseEnvelope.nextStep`), so
+serializing it belongs to the choke point's single `model_dump` — dumping it here
+is what made the hint a key *written into an already-dumped, already-token-counted
+dict*, which is how the advertised token count came to under-report every
+in-lifecycle response. `_tool_payload` now assigns `response.nextStep =
+next_step_for(amb, tool_name)` and dumps once afterwards. The hint's rendered JSON
+is unchanged: the envelope is dumped with the same `mode="json", exclude_none=True`.
 
-`_guidance_for(contract)` returns `None` for `contract is None`, else
-`lifecycle_guidance(contract)` with its own `try/except → None`, so a guidance
-failure still lets the (contract-independent) `_gate_after` overlay fire.
+`_load_contract(state)` (L297-L314) looks-before-leaping: `not state.enclosure` →
+`None`; `enclosure` path not a file → `None` (the `worktree_start --dry-run`
+window where a promoted lifecycle has no contract on disk yet — an EXPECTED state,
+front-half fallback); the narrow `try/except` around `load_contract` then catches
+only a genuinely torn/unparseable contract (e.g. a racing closeout rewrite) →
+`None`.
+
+`_guidance_for(contract)` (L284-L294) returns `None` for `contract is None`, else
+`dict(lifecycle_guidance(contract))` with its own `try/except → None`, so a
+guidance failure still lets the (contract-independent) `_gate_after` overlay fire.
+The `dict(...)` is a deliberate widening (260731-EFA-L4): this hint layer reads
+guidance defensively by key (`_from_guidance` coerces every field it takes) and
+never re-emits its vocabulary, so it takes the plain payload rather than the
+producer's narrower typed shape.
 
 ### Conventions
 
@@ -136,6 +152,12 @@ failure still lets the (contract-independent) `_gate_after` overlay fire.
 
 - `next_step_for` must NEVER raise into the tool path; broad containment here plus
   narrow containment in the helpers guarantees a failure degrades to "no hint."
+- **This edge does not serialize.** `next_step_for` returns `NextStep | None`; the
+  one `model_dump` lives at the `_tool_payload` choke point, after the hint has
+  been set on the envelope. Do not re-add a `model_dump` here — a separately
+  dumped hint is a key outside the response model and outside
+  `finalize_payload_tokens`, which is exactly the token under-count 260731-EFA-L4
+  removed.
 - The engine only HINTS; it must not call `lifecycle_turn_end_notification` or
   `lifecycle_gate`. Human approval moments
   (`closeout`/`integration`/`cleanup`/`plan`/`worktree-intent`) stay
@@ -170,15 +192,15 @@ No relevant documentation found after checking live sources.
 the `NextStep` model, the worktree guidance state machine, the contract loader,
 and the ambient lifecycle / phase definitions.
 
-| Finding | Source Path |
-| --- | --- |
-| Choke point that calls `next_step_for` and stamps `nextStep` onto every payload. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| `NextStep` model + the `nextStep` field on the response envelopes. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
-| `lifecycle_guidance` state machine delegated to in the linear half. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| `amb.current` — the live `LifecycleState` resolved at the edge. | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …). | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| Engine tests. | [test_next_step.py](agents-remember/mcp/tests/test_next_step.py) |
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Choke point that calls `next_step_for` and now SETS `nextStep` on the response model before the single dump, rather than stamping it onto a dumped dict. | `_attach_lifecycle_tail` L99-L129 (`response.nextStep` L128); `_tool_payload` L132-L148 | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
+| `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. | `ResponseModel.nextStep` L51; `FlexibleResponseEnvelope.nextStep` L77 | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | — | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
+| `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | — | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| `amb.current` — the live `LifecycleState` resolved at the edge. | — | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
+| `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads. | `LifecycleState` L187-L210; `LiveState` L109; `Phase` L124-L131 | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
+| Engine tests. | — | [test_next_step.py](agents-remember/mcp/tests/test_next_step.py) |
 
 As of HFX-L6, the FRONT_HALF_RUNDOWN reframe bullet names the architect lifecycle explicitly
 (`l-01-agent-lifecycles` `roles/architect.md`); the rundown's flow semantics are unchanged — the
@@ -195,6 +217,18 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-01T01:15+02:00 — 260731-EFA-L4 curator: the Logic section said the edge returns "JSON dict
+  or `None`" via `step.model_dump(mode="json", exclude_none=True)`. Verified against the diff and
+  the current source: `next_step_for` (L260-L281) is now typed `-> NextStep | None` and returns
+  `compute_next_step(...)` directly. Corrected the claim and recorded why it matters — the hint is a
+  declared field of the response envelope, so dumping it here is what made it a key written into an
+  already-dumped, already-token-counted dict at the `_tool_payload` choke point; the rendered JSON
+  is unchanged because the envelope is dumped with the same options. Also recorded the second
+  change: `_guidance_for` (L284-L294) now returns `dict(lifecycle_guidance(contract))`, a
+  deliberate widening for a layer that reads guidance defensively by key and never re-emits its
+  vocabulary. Added an invariant that this edge does not serialize, line ranges for
+  `next_step_for`/`_guidance_for`/`_load_contract`, and citations across the reference table
+  (whose header was two columns and is now three).
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2: `compute_next_step`'s inline branches were extracted into
   `_terminal_step` / `_parked_step` / `_front_half_step` / `_linear_half_step` to bring the function
   under the now-armed complexity rules. No hint, condition or ordering changed. Verification

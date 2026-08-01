@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-01T10:50+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -83,9 +83,229 @@ the drift is invisible, because the driver side simply reads `any`.
 
 No production cockpit behaviour, panel, store or authority boundary changed in this leaf.
 
+## 260731-EFA-L4 — Wire Contracts And Typed Vocabularies
+
+This leaf is about what the dashboard's server contract is actually pinned by. Read the first
+subsection before writing anything anywhere that cites `fixtures/snapshot.json` or
+`types/projection.ts`.
+
+### There is no generator; the chain terminates at a person
+
+`dashboard/src/fixtures/snapshot.json` is **hand-maintained**. Nothing in this repository derives it
+from `mcp/src/agents_remember/observer/projection.py`. Exactly seven files reference `snapshot.json`
+and **every one of them is a reader** (`test/contract.test.ts`, `test/servedProjection.ts`,
+`test/fixtures/wire.ts`, `test/wireFixtureGuard.test.ts`, `data/store.test.ts`, `dev/fixtures.ts`,
+`e2e-production/cockpit.production.spec.ts`); no script under `mcp/`, `scripts/` or `dashboard/`
+writes it; `dashboard/package.json`'s only `codegen` script is `panda codegen` (Panda CSS, unrelated);
+neither dependency set carries a schema-to-type tool; and no Python source or test reads it or the
+mirror — `projection.py` and `mcp/tests/test_observer_projection.py` only *describe* the mirror in a
+comment and a docstring, and assert only against Python.
+
+State the strength exactly. That establishes **no in-repo generator and no in-repo mechanism keeping
+the two sides in step**. It cannot exclude a generator run outside this repository — no search of
+this tree could — so write "no generator exists *in this repository*", never "no generator exists".
+
+`test/fixtures/wire.ts` is likewise a hand-written builder set, and `types/projection.ts`
+is a hand-written mirror whose own header says so ("codegen from pydantic is deferred; keep these in
+lockstep by hand for now"). The chain has **four nodes and three links** — count the links, because
+the two-set shorthand (`fixture ⊆ mirror` / `mirror ⊆ server`) collapses the middle one out of
+existence, and that is the form that has been copied onward:
+
+```text
+test/fixtures/wire.ts --A--> types/projection.ts --B--> fixtures/snapshot.json --C--> observer/projection.py
+```
+
+- **Link A — the fixture builders against the mirror.** Enforced by `tsc -b`. Every base in
+  `test/fixtures/wire.ts` is assembled from `snapshot.json` **and annotated with its mirror type**,
+  so it is pinned from both sides: a required field the mirror gains fails to compile until it is
+  filled, and it can only be filled from a served row. Call-site overrides go through
+  `Overrides<O, Node>` rather than `Partial<Node>`. `test/wireFixtureGuard.test.ts` refuses the
+  one-token moves by which a fixture opts out of the mirror altogether.
+- **Link B — the mirror against the sampled payload.** Enforced by `test/contract.test.ts`, and it
+  is **not** a one-way containment. Three type-level directions: the mirror declares everything the
+  sample carries (`ServedOnlyPaths` fed to `mirrorMustDeclare`, which fails naming the missing
+  path); the sample carries everything the mirror declares (`asServedProjection`, whose *parameter*
+  type is the check); and the sample **reaches** every path the mirror declares (`fixtureMustSample`
+  — the oracle checking itself, because a path the sample never touches, or an empty array, is
+  invisible to the other two). Plus runtime `VOCABULARIES` assertions for the closed string unions
+  that `resolveJsonModule` widens to `string`, which nothing type-level on this side can see.
+- **Link C — the sampled payload against the server.** Enforced by **nothing**. `snapshot.json` is
+  written by hand to stand in for `observer/projection.py`; codegen is what would close it.
+
+**Two phrases that differ by one letter, and only one of them is true.** `mirror ⊆ served` — every
+field the mirror declares is present in the sampled payload — **is** enforced, by
+`asServedProjection` under link B. `mirror ⊆ server` is enforced by nothing at all. The set
+shorthand invites exactly that substitution, so prefer naming the two files over naming two sets.
+
+So a green dashboard build claims only this: the mirror could produce this shape, and the mirror
+agrees with a payload a person wrote to stand in for the server. It does not claim the server agrees.
+Any sentence in this memory tree saying `snapshot.json` is generated, derived, regenerated, synced or
+automatically kept in step is false, and it is the exact falsehood this leaf existed to remove. The
+authoritative statements are in the code: `test/fixtures/wire.ts` ("BE PRECISE ABOUT WHAT PINS
+WHAT"), `test/wireFixtureGuard.test.ts`, `test/contract.test.ts` ("LEFT FOR CODEGEN") and
+`dev/fixtures.ts` all now carry it.
+
+### What `wireFixtureGuard.ts` guards, and exactly where its coverage ends
+
+An AST + type-checker sweep over `src/`, `e2e/`, `e2e-production/`, `e2e-chats/` and `perf/`
+(`SCANNED_ROOTS`), answering one question: can a test assert against a payload the server could never
+send? `tsc` alone cannot, because every opt-out is one token wide (`as Wire`, `as unknown as Wire`,
+`as never`, a `@ts-expect-error`, a literal that lost freshness through a variable, `Object.assign`,
+`JSON.parse`). Five rules. Rule 1 — an assertion naming a wire type — runs over every scanned file.
+Rules 2–5 run over the **fixture surface** only: files ending `.test.ts(x)` / `.spec.ts(x)`, a path
+segment named `fixture(s).ts(x)` or a `fixture(s)/` directory, everything under `src/test/` and
+`src/dev/`, any top-level directory whose name starts with `e2e`, and `perf/` (`isFixtureSurface`,
+which the guard's test pins with worked examples on both sides). Outside that
+surface a cast to a wire type is the decode boundary trusting the server, a different and legitimate
+act; those sites live in the test's `SANCTIONED_WIRE_SITES` registry with a written reason, counted
+exactly and reconciled in both directions (an entry that stops matching fails too).
+
+**How it discovers the vocabulary, and the blind spot that follows.** It holds no list. `isWireModule`
+admits a module when its path starts with `src/types/` **or** its first line matches `MIRROR_MARKER`
+— `// TypeScript mirror of` or `// Browser mirror of` (`declaresItselfAMirror`). Seven modules carry
+the marker today and `wireFixtureGuard.test.ts` pins that exact set, so a mirror that **loses** its
+marker fails loudly. The discovery is fail-closed in one direction only: a module that **never**
+carried a marker never enters the vocabulary, and the assertion still passes. Live instances, named
+in the guard header and in the test's KNOWN GAP note: `data/harnessCatalog.ts`,
+`data/submissionLifecycleClient.ts`, `data/changeset.ts`, `data/files.ts`, `data/notes.ts` — API
+clients that declare wire-shaped response types inline beside client-side option and handler types.
+Fixtures for those routes are unguarded, and both impossible fixtures this leaf deleted (a `control`
+field on the harness-catalog row, a `bridgeEpoch` on `WithdrawalResultWire`) lived in that gap.
+Widening the rule to "the header cites a `.py` file" was measured and rejected — it sweeps up the
+option types too. The fix is to move those response types into a marker-carrying module: app-code
+refactor, not fixture work, and not done here.
+
+Four further holes are recorded in the guard's header rather than left to be inferred from a clean
+run: rule 4 reads only `Identifier` / `CallExpression` / `PropertyAccessExpression` / object literal,
+so `rows[0]`, `await`, `new` and `rows.at(0)!` escape it; one generic helper defeats rules 1 and 4
+together; type predicates and assertion functions narrow with no `as` anywhere; and every rule
+measures property **names**, so a correct name carrying an explicit `undefined` is invisible to all
+five (which is what `test/fixtures/overrides.ts` exists to cover).
+
+### The state vocabulary — parallel to the server, not tied to it, and now the same shape
+
+`observer/lifecycle_state.py` **composes** the server's `State` from named halves
+(`LiveState` / `EndOutcome` → `TerminalState`), and `check_state_partition` refuses at import any
+state filed on neither side, so "which states exist" and "which states are terminal" cannot become
+two lists that disagree.
+
+`types/projection.ts` now declares the same partition in the same shape: `LIVE_STATES` and
+`TERMINAL_STATES` are written out as the two halves, `LIFECYCLE_STATES` is spread from them
+(`[...LIVE_STATES, ...TERMINAL_STATES]`), `State` and `ActiveState` are derived, and `ACTIVE_STATES`
+is bound to `LIVE_STATES` **directly** rather than as `Exclude<State, TerminalState>` — so the
+second list that could disagree is gone on this side too. It replaced exactly the whole-plus-second-
+list shape the Python side had stopped having, which `projection.py`'s "STATE OF THE MIRROR" comment
+used to name as not done and now records as done.
+
+**Where the two sides differ is what each can REFUSE, and only in the server's favour.** Composition
+makes two of `check_state_partition`'s three refusals unrepresentable on either side. The third —
+one state filed on BOTH halves — Python refuses at import; TypeScript refuses at compile time, via
+`StatesAreFiledOnce = FiledOnce<ActiveState & TerminalState>` with `FiledOnce<S extends never>`, so
+`tsc -b` fails naming the offender (`TS2344`). What TypeScript **cannot** refuse is a duplicate
+within one half: `Literal["a", "a"]` collapses to one member in Python, while a tuple keeps both, so
+`LIVE_STATES = ["running", "running", …]` type-checks clean and is caught only at runtime by
+`test/contract.test.ts` (three failures, including "gives each live state a bucket of its own").
+Weaker than the server's gate, not absent.
+
+What the two sides also share is the naming rule, and they share it by having been made to agree
+once: Python moved to the TypeScript spelling, not the other way round. **Nothing enforces the
+agreement.** No code executes across the boundary, no test compares the two vocabularies, and the
+mirror is measured only against `snapshot.json` — this is link C again, in its most load-bearing
+instance. The two partitions match today because someone made them match, and the next state added
+on one side alone would compile, test and ship green on both.
+
+The sixth state `awaiting-developer` is the notify-and-continue turn end: non-terminal, neither
+healthy nor a fault, so every state→colour surface owes it a "your move" treatment rather than a
+fall-through to running/ok.
+
+`Metrics` no longer lists buckets. It extends `LifecycleStateCounts`, a mapped type keyed by
+`StateCountField<S>` over `ActiveState`, so adding a state adds a **required** field and every object
+claiming to be a `Metrics` stops compiling until it counts the new one. That derivation is what the
+former hand-written three-bucket list could not do, and why `awaiting-developer` was counted nowhere.
+`stateCountField()` is its runtime twin; `metricsFor()` builds the whole rollup from a lifecycle
+list, so fixtures state lifecycles instead of re-listing buckets. The camelCase rule is duplicated by
+construction (`Camel<>` here, `projection.py::state_count_field` there) and the Python side was moved
+to `word[:1].upper() + word[1:]` to agree, because `Capitalize<>` cannot lower-case a tail.
+
+`cockpit/Cockpit.tsx`'s top bar appends a `N awaiting you` segment to the task-metrics chip only
+while `metrics.awaitingDeveloperCount > 0` — never a standing `0 awaiting you`, and it does not
+displace the running/blocked/tokens rhythm. Before it, the bucket rode the wire and no surface read
+it.
+
+Other mirror repairs in the same file: `TaskSubTaskRefNode` and the new `SeriesSubTaskNode` are split
+back to one interface per Python model (the collapse had invented a `createdAt` the server never
+sends and lent `linkedLifecycleId` to series rows that never carry it); `SeriesSectionNode` gets a
+name and a slot while being honest that it is field-identical to `TaskSectionNode` and therefore
+structurally interchangeable — it buys a landing place for a future divergence, not a check.
+`EngineProcessEdge.refusedPolarity` and its `refused` state are **removed**; the renderer derives
+flash polarity from `state`. `ATTENTION_SEVERITIES`, `ATTENTION_LANES`, `PROCESS_FACT_STATES` and
+`PROCESS_HEALTHS` became tuples with derived types, because `projection.py` types those fields as
+bare `str` — the mirror is deliberately narrower than the wire, and only a runtime membership check
+against a runtime list can catch the day that stops being true. Three fields are marked `LATE MIRROR`
+(`GateNode.evidenceRefs`, `LifecycleProjection.stateEnteredAt`, `Analytics.expectationRows`): always
+on the wire, declared optional purely as client tolerance.
+
+### Totality replaces defaults in `topology/`
+
+`topology/model.ts` replaced an if-chain ending in `return "ok"` with
+`CONSTEL_STATUS_BY_STATE: Record<State, ConstelStatus>` — total by type, so a seventh state stops
+that object literal compiling. `CONSTEL_STATUSES` is the tuple `ConstelStatus` derives from, and `UNCLASSIFIED_STATUS` is
+the declared answer (`"warn"`) for a state from a newer server.
+
+The subtle part is `STATUS_BY_DECLARED_STATE`, a `Partial<Record<string, ConstelStatus>>` **read
+view** over the same table. Indexing `Record<State, …>` directly types the miss away — `tsc` hands
+back `ConstelStatus`, never `undefined` — which would make `?? UNCLASSIFIED_STATUS` in
+`lifecycleStatus()` read as deletable dead code. The read view is what makes that fallback
+load-bearing: delete the `??` and `tsc -b` fails at that line. Remove the alias instead and the
+compiler goes quiet while an unclassified state's `undefined` flows onward.
+`noUncheckedIndexedAccess` would say the same thing project-wide; it is not on (measured: 601 errors
+across 81 files).
+
+`topology/constel.ts` closed the other half of the same defect: the palette was
+`Record<string, string>` read through `COLORS[status] ?? COLORS.ok`, so an unclassified state came
+out cyan — the healthy fill. It is now `constelColors(cssVar): Record<ConstelStatus, string>`,
+extracted out of `mountConstel` so `constel.test.ts` can prove totality without a canvas, with **no**
+fallback at the lookup because that key really is a value this package produced.
+
+### Fixture ergonomics: the two type-level devices worth knowing
+
+- `test/servedProjection.ts` — `resolveJsonModule` widens every literal in the payload (`"running"`
+  becomes `string`, `3` becomes `number`), so `snapshot.json` can never be *assigned* to a mirror
+  that types its vocabularies as literal unions. The old reflex was a double cast
+  (`snapshot as unknown as WorkspaceProjection`), which turned off assignability and
+  excess-property checking together.
+  `AsJsonModule<T>` applies exactly the import's widening to the mirror and nothing else, so
+  `asServedProjection()` is a full structural check of everything widening does not touch. Every
+  test reading `snapshot.json` must come through it; a second `as unknown as` elsewhere silently
+  re-opens the hole for that file.
+- `test/fixtures/overrides.ts` — `Overrides<O, T>` replaces `Partial<T>` in the builders because
+  `exactOptionalPropertyTypes` is **not set** on this project, so a `Partial<T>` slot admits an
+  explicit `undefined` and `lifecycle({ state: undefined })` compiles a required field into absence
+  with no cast for the guard to find. `Overrides` binds at the call site, in whichever tsconfig
+  project the caller sits in. Its limits are stated in its own header: the override must stay a
+  fresh literal, it reaches one level deep, and it binds only `fixtures/wire.ts` and
+  `fixtures/conversationWire.ts`. Turning the flag on project-wide was measured at 222 errors across
+  71 files and deliberately not attempted here.
+- `dev/fixtures.ts` now delegates every node builder to `test/fixtures/wire.ts` and derives `metrics`
+  through `metricsFor()`; the gallery keeps its own display defaults by passing them explicitly, and
+  no longer keeps a second copy of the required-field list. `dev/cockpitScenarios.ts`'s
+  `/api/harnesses` stub uses `satisfies HarnessInfo[]` precisely because `data/harnessCatalog.ts` is
+  one of the unmarked modules the guard cannot see. `dev/` remains fixtures, not a production
+  authority.
+
+### Checking this route
+
+`dashboard/tsconfig.json` is a **solution-style** config (`"files": []` plus three project
+references). `tsc --noEmit` there compiles nothing and exits 0 vacuously — it is evidence of nothing.
+The real gate is `npm run typecheck` (`tsc -b`), which is what every "stops compiling" claim above
+means. Most of this leaf's guarantees are type-level and free at runtime, so a green `vitest run`
+alone does not exercise them.
+
 ## Layered Architecture
 
-1. Types mirror server wire/projection shapes; they do not infer missing evidence.
+1. Types mirror server wire/projection shapes **by hand**; they do not infer missing evidence. The
+   mirror is checked against a hand-maintained sample, never against the server — see the
+   260731-EFA-L4 section above before treating any of it as automatic.
 2. Data modules normalize, reconcile, and retain browser projection state around explicit server
    authorities.
 3. Grammar primitives provide shared state words, badges, panels, and markdown treatment.
@@ -136,8 +356,8 @@ capability reasons.
 
 The two capabilities are both served and stay distinct: the **active transcript**
 ([data/conversation](data/conversation/overview.md) + the `conversation/` grammar) and the
-**previous-conversation library/index** ([data/conversation-library](data/conversation-library/overview.md)
-+ the `conversation-library/` browser). Both obtain normalized history/index/resume from the server
+**previous-conversation library/index** ([data/conversation-library](data/conversation-library/overview.md) +
+the `conversation-library/` browser). Both obtain normalized history/index/resume from the server
 contracts and hold only a projection/cache — no durable browser conversation database (R1). UA-1 is
 no longer absent. Two forward constraints remain L5 hardening: interrupt capability gating is
 attempt-and-reflect on the L3 evidence until a control-capabilities GET or L1-view refresh lands, and
@@ -215,6 +435,11 @@ references informed product framing only; current code truth stays in agents-rem
 | Panel composition. | [panels overview](panels/overview.md) |
 | Sole Chats route, deletion map, and future boundary. | [session-cockpit overview](panels/session-cockpit/overview.md) |
 | Dev scenario authority and end-to-end states. | [dev/cockpitScenarios.ts](dev/cockpitScenarios.ts) |
+| The four-node chain and which link stops: links A and B are enforced, link C (`snapshot.json` against `observer/projection.py`) by nothing. No in-repo generator. | [test/fixtures/wire.ts](test/fixtures/wire.ts) · [test/contract.test.ts](test/contract.test.ts) |
+| Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | [test/wireFixtureGuard.ts](test/wireFixtureGuard.ts) · [test/wireFixtureGuard.test.ts](test/wireFixtureGuard.test.ts) |
+| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | [types/projection.ts](types/projection.ts) |
+| Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | [topology/model.ts](topology/model.ts) · [topology/constel.ts](topology/constel.ts) |
+| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | [test/servedProjection.ts](test/servedProjection.ts) · [test/fixtures/overrides.ts](test/fixtures/overrides.ts) |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -229,6 +454,90 @@ unchanged.
 
 ## Update History
 
+- 2026-08-01T10:50+02:00 — 260731-EFA-L4 curator, **fixture-provenance label repair**. The chain
+  bullets said `fixture ⊆ mirror` — enforced / `mirror ⊆ server` — enforced by nothing, and the
+  first bullet's *body* then correctly described three directions including the opposite
+  containment. Everything after the label was right; the label is the part that travels, and three
+  other cards copied the two-set shorthand and lost the middle link entirely. The chain is now
+  stated as **four nodes and three links** (`test/fixtures/wire.ts` →A→ `types/projection.ts` →B→
+  `fixtures/snapshot.json` →C→ `observer/projection.py`) with one bullet per link, each labelled by
+  its two endpoint files rather than by a set relation: A enforced by `tsc -b` (mirror-annotated
+  bases, `Overrides<O, Node>`, `wireFixtureGuard.test.ts`), B enforced by `contract.test.ts` in
+  three type-level directions (`ServedOnlyPaths`/`mirrorMustDeclare`, `asServedProjection`,
+  `fixtureMustSample`) plus runtime `VOCABULARIES`, C enforced by nothing. Added the one-letter
+  trap explicitly: `mirror ⊆ served` **is** enforced (by `asServedProjection`) while
+  `mirror ⊆ server` is not. Restated the no-generator negative at the strength the evidence
+  supports — seven files reference `snapshot.json` and all seven are readers, no script writes it,
+  `package.json`'s `codegen` is `panda codegen`, neither dependency set carries a schema-to-type
+  tool — which establishes **no in-repo generator and no in-repo mechanism keeping the two sides in
+  step** and cannot exclude a generator outside this repository. Re-pointed the Repo-Internal
+  References row and the state-vocabulary section's closing line from `mirror ⊆ server` to link C,
+  and added there that nothing enforces the two partitions' agreement in either direction. Marked
+  the two clauses in the 09:33 entry that the post-wave source change falsified (the two-set
+  shorthand; "the TypeScript side did **not** adopt the partition") in place rather than rewriting
+  them, so the historical record stands and the false reading cannot be picked up by grep. The
+  partition body itself had already been corrected by the 10:45 entry below; independently
+  re-verified here — double-filing `"completed"` onto `LIVE_STATES` fails with
+  `error TS2344: Type '"completed"' does not satisfy the constraint 'never'`, a duplicate *within*
+  one half compiles clean (exit 0), and that duplicate then fails three assertions in
+  `contract.test.ts` (3 failed / 12 passed). Verification metadata pinned until closeout.
+- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change), **one corrected section
+  only**: `types/projection.ts` adopted the server's partition after the 09:33 entry below was
+  written, so "The state vocabulary — parallel to the server, not tied to it, and not the same
+  shape" was describing a file that no longer exists. It said the mirror declares `LIFECYCLE_STATES`
+  as one tuple of six with `TERMINAL_STATES` as a second tuple beside it and `ActiveState` as the
+  subtraction `Exclude<State, TerminalState>`; verified against the current file, the halves are
+  written out first (`LIVE_STATES` L42, `TERMINAL_STATES` L48), `LIFECYCLE_STATES` is spread from
+  them (L59), and `ACTIVE_STATES = LIVE_STATES` (L72) with no subtraction anywhere. The heading and
+  the paragraph were corrected, and the section now states the ONE asymmetry that survives, because
+  "same shape" on its own would overclaim: TypeScript refuses double-filing at compile time
+  (`StatesAreFiledOnce`, verified by mutation to fail with `TS2344`) but cannot refuse a duplicate
+  within one half, which `Literal` collapses and a tuple does not — `contract.test.ts` catches that
+  at runtime with three failing tests. The 09:33 entry below records the pre-change reading and is
+  left as written. Nothing else on this route was touched.
+- 2026-08-01T09:33+02:00 — 260731-EFA-L4 (wire contracts and typed vocabularies; 22 governed files
+  under `dashboard/src/`, nine of them new): added the `260731-EFA-L4` body section and amended
+  Layered Architecture point 1. The load-bearing addition is a provenance statement this card had
+  never made in any form: `fixtures/snapshot.json` is **hand-maintained** and no generator exists
+  (verified by search — nothing under `mcp/`, `scripts/` or `dashboard/`, and no `package.json`
+  script, writes it; no Python source or test reads it or the mirror — `projection.py` and
+  `test_observer_projection.py` only *describe* the mirror in comments and docstrings), so
+  `fixture ⊆ mirror` is
+  enforced by `test/wireFixtureGuard.test.ts` + `test/contract.test.ts` while `mirror ⊆ server` is
+  enforced by nothing and codegen is what would close it.
+  **[Corrected 2026-08-01T10:50 — two things. That two-set shorthand is what this entry got wrong,
+  and it is what three other cards copied: it reads as one link where the chain has three, and
+  `contract.test.ts` is a link of its own (link B), not a co-enforcer of the first. And read "no
+  generator exists" above as "no generator exists *in this repository*" — the search is exhaustive
+  over this tree and cannot speak to anything outside it. See the body section, which now names the
+  four nodes, all three links, and the exact strength of the negative.]** Also recorded, each with the mechanism
+  that breaks if it is undone: what `wireFixtureGuard.ts` scans (`SCANNED_ROOTS`), the fixture
+  surface rules 2–5 are confined to, the `SANCTIONED_WIRE_SITES` registry, and the precise coverage
+  boundary — `isWireModule` discovers the vocabulary from a `// TypeScript mirror of` /
+  `// Browser mirror of` first line, which is fail-closed only against a mirror that *loses* its
+  marker, so the five unmarked `data/` API clients (`harnessCatalog`, `submissionLifecycleClient`,
+  `changeset`, `files`, `notes`) are a real, reproduced blind spot; the sixth `awaiting-developer`
+  state, and the fact — checked against `projection.py`'s own "STATE OF THE MIRROR" comment — that
+  the TypeScript side did **not** adopt the server's new partition shape but keeps
+  `LIFECYCLE_STATES` and a separate `TERMINAL_STATES` that can silently disagree
+  **[NO LONGER TRUE — a worker landed the partition in `types/projection.ts` after this entry was
+  written; `projection.py`'s "STATE OF THE MIRROR" comment was updated with it and now records the
+  mirror as holding the same partition in the same shape. Read the body section, not this clause.]**;
+  `Metrics extends
+  LifecycleStateCounts` deriving one required bucket per `ActiveState` (plus `stateCountField()` /
+  `metricsFor()`); the `TaskSubTaskRefNode` / `SeriesSubTaskNode` split, the new `SeriesSectionNode`,
+  the removal of `EngineProcessEdge.refusedPolarity`, the tuple-derived attention/process
+  vocabularies, and the three `LATE MIRROR` fields; `topology/` totality
+  (`CONSTEL_STATUS_BY_STATE: Record<State, ConstelStatus>`, `UNCLASSIFIED_STATUS`, the
+  `STATUS_BY_DECLARED_STATE` read view that makes `?? UNCLASSIFIED_STATUS` load-bearing to `tsc -b`,
+  and `constelColors()` replacing `COLORS[status] ?? COLORS.ok`); the conditional `awaiting you`
+  top-bar segment in `cockpit/Cockpit.tsx`; `asServedProjection()` and `Overrides<O, T>` with the
+  measured reason `exactOptionalPropertyTypes` stays off; and the checking note that this project's
+  solution-style `tsconfig.json` makes `tsc --noEmit` vacuous, so `tsc -b` is the only real
+  typecheck. Per-file detail belongs to the file cards under `test/`, `topology/`, `types/`,
+  `cockpit/` and `dev/`; `data/`, `panels/`, `grammar/` and `fixtures/snapshot.json` are owned by
+  their own cards and are referenced here only where the architecture requires it. Verification
+  metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: no production cockpit change. `dev/` gained
   `benchProbes.ts`, the single declaration of the browser→driver probe contract (and the `Window`
   augmentation), deliberately import-free so the new `tsconfig.driver.json` project can name it

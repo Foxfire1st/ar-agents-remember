@@ -52,13 +52,32 @@ python -m pip install -e "mcp[dev]"
 After activation, prefer the fixed source quality wrapper for full local checks:
 
 ```text
+git add -A          # see below: the wrapper is blind to unstaged new files
 python -m agents_remember.code_quality.check
 ```
 
+**Stage before you run it by hand.** `derive_scope`
+(`mcp/src/agents_remember/code_quality/check.py:199-221`) builds the lint, type and
+coverage scope from `git ls-files`, which reads the *index*. A file you have created but
+not `git add`-ed is therefore invisible to ruff, to Pyright and to the per-diff coverage
+floor, and the wrapper will exit 0 without ever having looked at it. The index cuts the
+other way too: a file you have deleted but whose removal is unstaged is still handed to
+ruff, which fails with `E902 No such file or directory` against nothing real.
+
+That scoping is deliberate for the `pre-commit` hook, which certifies exactly the staged
+content (`.githooks/_gate.sh` stashes unstaged and untracked work with `--keep-index` so
+the gate cannot see it). `worktree_closeout_apply` handles this for you — it stages the
+whole worktree before gating and rolls that staging back if the gate refuses — but a
+hand-run has no such wrapper, so stage first.
+
 The wrapper runs `ruff check`, Pyright static type checking, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, and CRAP-Calculator. Use the individual tool commands below for focused implementation checks.
 CRAP threshold enforcement is part of the default wrapper. Every function with
-a score at or above the configured threshold (30 by default) makes the wrapper
-exit non-zero; no additional threshold-enforcement flag is required.
+a score at or above the configured threshold makes the wrapper exit non-zero; no
+additional threshold-enforcement flag is required. The default is
+`DEFAULT_CRAP_THRESHOLD = 20.0` (`mcp/src/agents_remember/code_quality/crap_calculator.py:83`),
+which both the wrapper's `--threshold` argument (`code_quality/check.py:524`) and the
+calculator's own CLI (`crap_calculator.py:496`) take as their default. This file
+previously said 30; that was never the configured value in this repository.
 
 For implementation work, focused commands are iteration aids, not the final
 test standard. A code implementation is not closeout-ready until the full
@@ -242,6 +261,29 @@ the standalone CRAP-Calculator command.
 - When behavior changes while files are renamed, split, merged, or deleted, check whether existing behavior moved from one source location to another. Reuse the still-accurate fine print in the new target onboarding and update only the parts that changed.
 - Treat onboarding deletion as the last option. It is appropriate only when the documented behavior is gone and no safe target remains for the preserved knowledge.
 - During refactor closeout, make the source move and the onboarding move visible together so reviewers can see which behavior was preserved, which behavior changed, and which metadata was refreshed.
+
+---
+
+## Dashboard Checks
+
+Run these from `dashboard/`:
+
+```text
+npm run lint         # eslint .
+npm run typecheck    # tsc -b
+npx vitest run
+```
+
+**Never type-check the dashboard with `tsc --noEmit`.** It exits 0 without checking
+anything. `dashboard/tsconfig.json` is solution-style — `"files": []`, no `include`, and
+three `references` (`tsconfig.app.json`, `tsconfig.node.json`, `tsconfig.driver.json`) —
+and `--noEmit` does not follow project references, so it compiles an empty file list and
+reports success. Only `tsc -b` (which `npm run typecheck` and `npm run build` both use)
+walks the referenced projects.
+
+This was measured, not inferred: a change that `tsc --noEmit` passed produced **11 errors**
+under `tsc -b`. The vacuous form is the conventional one to reach for, which is exactly why
+it is worth knowing here.
 
 ---
 

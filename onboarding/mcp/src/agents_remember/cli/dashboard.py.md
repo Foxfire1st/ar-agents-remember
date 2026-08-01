@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-31T00:00+02:00                       |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-07-31T22:05+02:00                       |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`   |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -85,8 +85,9 @@ the root's life: dropping the reference instead would leave the directory to
 `TemporaryDirectory`'s finaliser, which is a ResourceWarning, not a cleanup.
 
 `_dev_app()` is the zero-arg import-string app **factory** for the reload path: uvicorn's reloader
-re-imports the app per worker restart, so it needs a factory, not a pre-built app object (passing
-an object silently disables reload). The factory re-reads the resolved config from
+re-imports the app per worker restart, so it needs a factory, not a pre-built app object. Passing
+an object does **not** silently disable reload — uvicorn refuses to start and exits `1` (pinned
+citation in the `--reload` invariant below). The factory re-reads the resolved config from
 `AR_DASHBOARD_DEV_CONFIG` (`load_config(...)`), the interval from `AR_DASHBOARD_DEV_INTERVAL`
 (default `1.0`), and (260712-PTS-L3) the optional heartbeat from `AR_DASHBOARD_DEV_HEARTBEAT`
 (absent/empty ⇒ `heartbeat=None`, the serving default) — the env vars the parent `run` set — and
@@ -110,7 +111,13 @@ established CLI convention); `import agents_remember` is local to the reload bra
   frontend cannot tell sim from live.
 - **`--reload` is live-state only** — it is mutually exclusive with `--sim` (rejected with exit
   `1`), and it must hand uvicorn the `_dev_app` import-string factory (`factory=True`), never a
-  built app object, or hot-reload silently no-ops.
+  built app object. Handing uvicorn a built object does **not** make hot-reload silently no-op —
+  uvicorn **refuses to start, loudly**. Pinned: **uvicorn 0.49.0**, `uvicorn/main.py` lines
+  **604-607** — `if (config.reload or config.workers > 1) and not isinstance(app, str):` logs the
+  `uvicorn.error` warning `"You must pass the application as an import string to enable 'reload' or
+  'workers'."` and calls `sys.exit(1)`. Measured: `uvicorn.run(<built app object>, reload=True)`
+  under the repo `.venv` printed that warning and exited with code **1**, before binding the port.
+  So a `factory=True` regression is a hard startup failure, not a silently degraded dev loop.
 
 ## Repo-Internal References
 
@@ -135,6 +142,20 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-07-31T22:05+02:00 — 260731-EFA-L4 curator: the previous claim that handing uvicorn a built
+  app object instead of the `_dev_app` import-string factory makes hot-reload "silently no-op" was
+  **false**. It appeared twice in this sidecar (the `_dev_app` commentary and the `--reload`
+  invariant) and once as a source comment. uvicorn does not silently no-op — it refuses to start.
+  Verified against **uvicorn 0.49.0**: `uvicorn/main.py:604-607` guards
+  `if (config.reload or config.workers > 1) and not isinstance(app, str):`, logs the `uvicorn.error`
+  warning "You must pass the application as an import string to enable 'reload' or 'workers'." and
+  calls `sys.exit(1)`. Measured by running `uvicorn.run(<built app object>, host=..., port=...,
+  reload=True)` under the repo `.venv`: the warning printed and the process exited with code **1**
+  before binding the port. Both prose sites now carry that version-pinned citation, and the same
+  false belief was corrected in the source comment at
+  `mcp/src/agents_remember/cli/dashboard.py:27-33` (comment text only — no code, no argument and no
+  `factory=True` change; the code was already correct, only its stated reason was wrong).
+  Verification metadata unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915` armed with no
   exemptions): `run` was split into `_resolve_settings` (discover + load, one refusal path for
   `ConfigDiscoveryError` and `ConfigError`), `_run_reload_server` and `_build_app` (returning the

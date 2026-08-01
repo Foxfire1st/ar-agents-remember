@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-01T09:45+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ the shared `FLEET` fixtures.
   dots' `data-state`/color/pulse attributes (two surfaces, not one function twice).
 - **Zero state (R9)** — the empty rail explains itself; waiting(reason) renders steady
   muted-amber when supplied.
-- **L6 block (R5/R7, 6 cases)** (L361-L473) — End arms an inline confirm NAMING session · leaf ·
+- **L6 block (R5/R7, 6 cases)** (L648-L776) — End arms an inline confirm NAMING session · leaf ·
   state with ZERO terminates while armed and the exact terminate URL after confirm; a FAILED
   terminate POST (502 + body) renders `role="alert"` with the VERBATIM server words and retry
   fires exactly one terminate after recovery (review finding 4's net); cancel disarms without a
@@ -64,6 +64,13 @@ the shared `FLEET` fixtures.
 DOM-position and DOM-negative assertions are the anatomy/vocabulary regression net; fetch is
 stubbed per case; stores (incl. the L6 `lifecycleNoticeStore` + `ptyHarvestStore`) reset between
 cases. Test-only.
+
+**Wire nodes come from the typed builders (260731-EFA-L4).** The two `gate + brief joins` cases no
+longer cast object literals (`{…} as never`, `{…} as unknown as Analytics`): they call
+`lifecycleWithGate`, `taskDoc`, `agentPickup` and `analytics` from `test/fixtures/wire.ts`, so a field
+the mirror does not declare fails `tsc -b` at the call site instead of being erased by the assertion.
+Seat rows themselves still come from `FLEET`/`catalogRow` — that is a client-side catalog shape, not a
+projection node, and it is unaffected.
 
 ## Docs References
 
@@ -84,6 +91,8 @@ the reviewed task evidence for any current behavioral claim.
 | The grammar the matrix compares against. | L44-L106 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
 | The notice store + harvest store the L6 block seeds. | L46-L118 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
 | The harvest store the bell/hint cases drive. | L51-L126 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
+| The typed wire builders the gate/brief cases now call (`lifecycleWithGate`, `taskDoc`, `agentPickup`, `analytics`). | L233-L322 | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
+| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | L378-L414 | [../../data/railModel.ts](../../data/railModel.ts) |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -107,6 +116,24 @@ The rail suite now pins immediate single-seat termination, retained bulk confirm
 recovery, and the absence of the duplicate bus-footer presentation.
 
 ## Update History
+
+- 2026-08-01T09:45+02:00 — 260731-EFA-L4 curator: two edits. (1) The inline citation for the L6 block
+  was `L361-L473`, which now lands inside `completed folder + bulk end`; the
+  `L6/F-g: immediate terminate …` describe is `L648-L776`, so it was repaired. (2) Recorded the fixture
+  conversion in Invariants: the `gate + brief joins` cases dropped `{…} as never` /
+  `{…} as unknown as Analytics` for `lifecycleWithGate` / `taskDoc` / `agentPickup` / `analytics`. I
+  verified the described behaviours are unaffected rather than assuming it, because the new bases are
+  materially richer: `LC1` now carries `state: "blocked"`, `phase`, `tokens: 1200` and the rest of
+  `BASE_LIFECYCLE`, where it previously had only `{ id, gate }`; the task doc gained every required
+  `TaskDocNode` field; and the ten `Analytics` lists that were `undefined` are now `[]`. `SessionRail.tsx`
+  reads `state.lifecycles` and `analytics.taskDocuments` at L505-L539 and nowhere else, and the sole
+  consumer is `heldGatesByLeafKey` (`data/railModel.ts` L378-L392), which touches only `doc.lifecycleId`,
+  `lifecycles[id]?.gate?.state` and `qualifiedLeafKey`'s `repository`/`docPath`/`id` — all explicitly
+  overridden by the case. `briefPendingSessionIds` (L397-L414) reads `messageKind`, `state` and
+  `deliveredToSession`, also all overridden, and `git diff -U2` confirms no field value inside either
+  literal changed. The two residual deltas the sweep warns about do not reach here: this gate sets
+  `decisions: []` explicitly (so `BASE_GATE`'s `["approve","revise"]` never applies), and no assertion
+  reads a lifecycle state. Behaviour bullets left as written.
 
 - 2026-07-24T13:17:17Z — Curator: recorded immediate-end and rail-declutter regression coverage;
   verification fields remain pre-commit.

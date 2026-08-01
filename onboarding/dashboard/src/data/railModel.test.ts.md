@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/railModel.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastUpdated | 2026-08-01T09:32+02:00 |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,8 +47,15 @@ as a pure-function case over the shared catalog fixtures.
 
 ### Invariants And Boundaries
 
-Pure-logic suite over `test/fixtures/catalogRows.ts` (`catalogRow`/`FLEET`) — no DOM. The
-determinism and tiebreak cases are the anti-reflow / R12 regression net. Test-only.
+Pure-logic suite — no DOM — over two shared fixture modules. The seat/rail cases run on
+`test/fixtures/catalogRows.ts` (`catalogRow`/`FLEET`); the **projection joins** describe runs on
+`test/fixtures/wire.ts` (`taskDoc`, `gate`, `lifecycle`, `agentPickup`), whose bases are drawn from
+`fixtures/snapshot.json` and type-checked against `types/projection.ts`. The join fixtures state only
+the fields the joins read and inherit the rest as served default, which is deliberate: the comments
+at the two call sites name which fields are load-bearing (`repository` + docPath folder + `id` for
+`qualifiedLeafKey`, `lifecycleId` for the gate join, `messageKind` for the brief column,
+`state`/`ttlSeconds` for the 720 = 900·0.8 critical-bus threshold). The determinism and tiebreak
+cases are the anti-reflow / R12 regression net. Test-only.
 
 ## Docs References
 
@@ -66,7 +73,9 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The module under test. | L17-L464 | [railModel.ts](railModel.ts) |
 | The shared full-wire-shape fixtures: the `catalogRow` builder (spreads overrides, so the plural pending list flows through) and `FLEET`; the multiplexed parent+sub-agent fixture is `L7_MULTIPLEXED_INTERACTIONS`. | L10-L26; L32-L172; L410-L446 | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
-| The N1 agent-only-blocked triage pin. | L349-L365 | [railModel.test.ts](railModel.test.ts) |
+| The N1 agent-only-blocked triage pin. | L342-L358 | [railModel.test.ts](railModel.test.ts) |
+| The served builders the projection-joins describe uses (`taskDoc`/`gate`/`lifecycle`/`agentPickup`), and the bases they draw from `snapshot.json`. | L96-L233; L237-L297 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
+| The projection-joins describe itself: the doc/gate/lifecycle/pickup fixtures and the three join cases. | L256-L318 | [railModel.test.ts](railModel.test.ts) |
 
 ## Cross-Repo References
 
@@ -78,6 +87,24 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | Import and task-boundary review | — |
 
 ## Update History
+
+- 2026-08-01T09:32+02:00 — 260731-EFA-L4 curator: the Invariants section claimed the whole suite was
+  "Pure-logic suite over `test/fixtures/catalogRows.ts` (`catalogRow`/`FLEET`)", which the diff
+  against `abc7cbc` made incomplete — the **projection joins** describe (L256-L318) now builds its
+  nodes with `test/fixtures/wire.ts`'s `taskDoc`/`gate`/`lifecycle`/`agentPickup` instead of object
+  literals closed with `as TaskDocNode` / `as unknown as LifecycleProjection`. Corrected it and
+  named which fields are load-bearing at each call site. The behavioral bullets are unchanged
+  because I checked the residual data deltas against the consumers rather than assuming them:
+  `gate()` now hands the joins `decisions: ["approve","revise"]` where the old literal wrote `[]`,
+  and `lifecycle()` gives LC1/LC2 a full served lifecycle (`state: "blocked"`, phase, tokens) where
+  the old cast gave them only an `id` — but `railModel.ts::heldGatesByLeafKey` (L378-L392) reads
+  exactly `doc.lifecycleId`, `lifecycles[…].gate` and `gate.state !== "open"`, and never `decisions`
+  or any lifecycle field, so R13 still measures undecided-ness by state alone. Likewise the doc
+  fixture stopped stating `status`/`stepsDone`/`stepsTotal`/`steps` and now inherits them from the
+  served row, which `qualifiedLeafKey` (`taskIdentity.ts` L64-L70) cannot see — it composes
+  `repository`/docPath folder/`id`. Re-anchored the N1 pin from L349-L365 to L342-L358 (the
+  conversion shortened the file by 7 lines, so the old range no longer contained the case) and added
+  rows for the builders and the joins describe.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the N1 triage pin — a seat blocked
   SOLELY on a multiplexed sub-agent approval (plural-only `controlPendingInteractions` with

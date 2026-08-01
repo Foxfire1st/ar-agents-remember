@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/setup.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:25+02:00                           |
+| lastUpdated            | 2026-07-31T22:05+02:00                           |
 | lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
 | lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `../overview.md`                                 |
@@ -33,12 +33,33 @@ missing globals. Grown in slice 5f S1 from an empty placeholder to carry those s
   scroll geometry.
 - Assigns inert SVG geometry stubs (`getBBox`/`getTotalLength`/`getPointAtLength`) across the SVG prototype
   chain (`SVGElement`/`SVGGraphicsElement`/`SVGGeometryElement`) — GSAP's DrawSVG/MotionPath (the engine-room
-  timeline, 05n) call these when the effects-on GSAP-gate test builds the context, and jsdom omits or
-  stubs-them-to-throw.
+  timeline, 05n) call these when the effects-on GSAP-gate test builds the context, and **jsdom omits them**
+  (it does not stub-them-to-throw — see the pinned citation in the next bullet). Note that in jsdom 25.0.1
+  `globalThis.SVGGeometryElement` is itself `undefined`, so the loop's `if (!proto) continue` skips that
+  third entry entirely: only `SVGElement.prototype` and `SVGGraphicsElement.prototype` actually receive stubs.
 - The `matchMedia`/`ResizeObserver` stubs are guarded (`typeof … === "undefined"`/`!== "function"`) so they
   only fill genuine gaps; per-test code may still replace them (e.g. `useShouldAnimate.test` swaps in its own
-  `matchMedia`). The SVG geometry stubs are assigned unconditionally (jsdom's `getBBox` throws rather than
-  being absent), but their return values are inert and never asserted.
+  `matchMedia`). The SVG geometry stubs are assigned **unconditionally**, and their return values are inert
+  and never asserted. The reason this file once gave for that asymmetry — "jsdom's `getBBox` throws rather
+  than being absent" — is **false**. Nothing throws: there is no method to throw. Pinned: **jsdom 25.0.1**
+  (`dashboard/package.json` declares `"jsdom": "^25.0.1"`). In jsdom's own source, `getBBox`,
+  `getTotalLength` and `getPointAtLength` appear **zero** times anywhere under `jsdom/lib/`;
+  `lib/jsdom/living/nodes/SVGGraphicsElement-impl.js:7` is the entire implementation
+  (`class SVGGraphicsElementImpl extends SVGElementImpl {}` — an empty body); and the interface registry at
+  `lib/jsdom/living/interfaces.js:114-120` exposes `SVGElement`/`SVGGraphicsElement`/`SVGSVGElement`/
+  `SVGTitleElement` with **no `SVGGeometryElement` entry**. Measured in a `new JSDOM(...)` window: all three
+  methods are `typeof undefined` on `<svg>` and `<path>` instances *and* on `SVGElement.prototype` /
+  `SVGGraphicsElement.prototype` (`"getBBox" in path` is `false`; no own property either);
+  `window.SVGGeometryElement` and `window.SVGPathElement` are `undefined`; and `path.getBBox()` raises the
+  ordinary `TypeError: path.getBBox is not a function` — the calling-undefined error, not a jsdom throw.
+- **Risk carried by the unconditional assignment** (260731-EFA-L4): because the methods are *absent* rather
+  than throwing, the unconditional assignment is pure gap-filling **today**. But if a future jsdom minor
+  ships a real `getBBox`/`getTotalLength`/`getPointAtLength` (or starts defining `SVGGeometryElement`), this
+  same unconditional assignment will **silently overwrite the real implementation** with the inert stub —
+  tests would keep passing against fabricated geometry with no signal that anything changed. The guarded
+  `typeof … === "undefined"` pattern used ~20 lines earlier for `matchMedia`/`ResizeObserver` would be immune
+  to that. Switching `setup.ts` to the guarded pattern is test-infrastructure work outside 260731-EFA-L4's
+  scope; it is recorded here so the next jsdom bump weighs it.
 
 ### Invariants And Boundaries
 
@@ -61,6 +82,21 @@ calls without relying on browser playback that jsdom does not implement.
 
 ## Update History
 
+- 2026-07-31T22:05+02:00 — 260731-EFA-L4 curator: the claim that "jsdom's `getBBox` throws rather than
+  being absent" — recorded here as the reason the SVG geometry stubs are assigned unconditionally while
+  `matchMedia`/`ResizeObserver` are guarded — was **false**. jsdom omits those methods; it does not stub
+  them to throw. Verified against **jsdom 25.0.1** by running a `new JSDOM(...)` window: `getBBox`,
+  `getTotalLength` and `getPointAtLength` are `undefined` on `<svg>`/`<path>` instances and on
+  `SVGElement.prototype`/`SVGGraphicsElement.prototype` (the `in` operator is `false`, no own property),
+  `window.SVGGeometryElement` and `window.SVGPathElement` are `undefined` entirely, and `path.getBBox()`
+  raises the ordinary `TypeError: path.getBBox is not a function`. Confirmed in jsdom's source: the three
+  names occur **zero** times under `lib/`, `lib/jsdom/living/nodes/SVGGraphicsElement-impl.js:7` is an empty
+  class body, and `lib/jsdom/living/interfaces.js:114-120` registers no `SVGGeometryElement`. The earlier
+  hedge in this file ("omits **or** stubs-them-to-throw") was folded into the verified fact rather than left
+  to contradict it, and the consequence is now recorded as a risk: since the methods are absent rather than
+  throwing, the unconditional assignment fills a gap today but would silently overwrite a real
+  implementation if a jsdom minor ever ships one. `setup.ts` itself was deliberately **not** changed —
+  moving it to the guarded pattern is out of this leaf's scope. Verification metadata unchanged.
 - 2026-07-24T13:17:50Z — Added media playback stubs for visibility-gate tests. Verification hash/date
   remain pinned to the pre-commit source stamp.
 

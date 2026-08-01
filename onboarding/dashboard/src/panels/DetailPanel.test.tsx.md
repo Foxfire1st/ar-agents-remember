@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T12:07+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastUpdated            | 2026-08-01T10:05+02:00                           |
+| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
+| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -95,13 +95,27 @@ renders the task detail but no `gate-review`, no `gate-banner`, and no `gate-res
 ask-only task-local response box stays removed.
 
 The slice-6g cases build a master+slice projection with a local `taskDoc` factory + `seedSeries`
-helper (a folder-keyed `SeriesNode` master in `analytics.series`, a `subTasks` index, a cross-master
-"→" row with `linkedLifecycleId`, and one authored slice in `analytics.taskDocuments`). They assert:
+helper (a folder-keyed `SeriesNode` master in `analytics.series`, a `subTasks` index whose rows carry
+`createdAt`, and one authored slice in `analytics.taskDocuments`). They assert:
 the index renders pinned above the description (`compareDocumentPosition`) with the in-section copy
 kept; clicking a sub-task opens its `TaskReader` and the header breadcrumb returns; a GFM table renders
-as a real `<table>` (not raw pipes); the "→" row calls `onOpenLifecycle` with the target lifecycle; and
+as a real `<table>` (not raw pipes); and
 `seedSeriesOrdering` proves rows sort by `createdAt` while rendering task-specific `01.` / `99.` numbers
-instead of generated `1.` / `2.` counters. `seedSeries` can also attach an enclosure whose `taskId` is the root
+instead of generated `1.` / `2.` counters. That ordering assertion now exercises `seriesAsMasterDoc`
+rather than `SubTaskIndex` — the sort moved to the series adapter, and `seedSeriesOrdering` seeds a
+`SeriesNode`, so the test's meaning is intact while its subject changed.
+
+The cross-master "→" jump has its own fixture, on a master **task document**, not on `seedSeries`.
+`seedSeries`'s rows are `SeriesSubTaskNode`s and the server never stamps one with
+`linkedLifecycleId`, so seeding the cross-link there described a projection the server cannot produce.
+The test now builds a `kind: "master"` `taskDoc` whose second `subTasks` row carries
+`linkedLifecycleId: "LC-OTHER"`, seeds it with `seedTaskDocuments`, selects it by
+`taskdoc:/tasks/repo-a/planning/task.json`, clicks `subtask-open-link-2`, and expects
+`onOpenLifecycle("LC-OTHER")`. Relatedly, the three master-doc fixtures in this block dropped the
+`createdAt` they used to put on `subTasks` rows: `TaskSubTaskRefNode` has no such field, and the
+literals only typechecked while they were cast.
+
+`seedSeries` can also attach an enclosure whose `taskId` is the root
 selected lifecycle id and whose `taskName` is the folder-keyed series id; the regression asserts that
 this selection renders master objective/sections instead of the master-less slice list or no-doc
 fallback. The paired leaf regressions deliberately use the same parent `taskName` mapping on a non-root
@@ -156,30 +170,56 @@ Failure coverage is one request plus honest fallback, not a retry-loop test. The
 which requests mount first in jsdom; the separate task evidence records the natural-browser smoke over
 the real live backend.
 
+Fixtures must state shapes the server can actually send. `linkedLifecycleId` belongs on a master task
+document's rows (`TaskSubTaskRefNode`) and `createdAt` on a series' rows (`SeriesSubTaskNode`); putting
+either on the other model describes a projection that cannot arrive, and — because both models are
+`extra="forbid"` — one the server would reject outright. Every seeded `WorkspaceProjection` here now
+derives its `metrics` from `metricsFor(lifecycles)` instead of hand-listing buckets, so a new lifecycle
+state fails these seeds at compile time; no assertion in this file reads `metrics`.
+
 ## Repo-Internal References
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The body-first cases pin request ordering, complete-field rendering, unavailable fallback, retained summary content, one step copy, and revision cache invalidation. | L799-L1038 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The hook records body availability and merges absent arrays; the component delays ancillary mounts and renders loading/fallback messages. | L1-L72; L380-L388; L670-L687; L1044-L1085; L1309-L1388 | [useTaskDocumentBody.ts](../data/useTaskDocumentBody.ts); [DetailPanel.tsx](DetailPanel.tsx) |
-| The drawer under test renders selected series from `analytics.series`, maps only selected root-task lifecycles through enclosure `taskId`/`taskName`, displays child task-document id labels in creation order, and shows top-level task-doc progress. | L305-L452; L496-L508; L553-L556; L717-L785 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The task/series fixture factories include `TaskDocNode.createdAt`, `SeriesNode`, optional task-id/name enclosure mapping, and a nested-progress fixture where top-level progress intentionally differs from backend `stepsDone/stepsTotal`. | L21-L57; L77-L190 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The ordering assertion pins creation-time placement while expecting child task-document id labels and rejecting generated local counters. | L671-L678 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The top-level progress regression rejects a `40/42` nested count in both the master row and opened leaf reader, expecting `6/7`. | L660-L676 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The aggregate-token regression pins the master reader's `series tokens` display from `seriesTokenTotal`. | L676-L683 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The typed taskdoc selection regressions cover unbound planning leaf/master docs, lifecycle-bound master sibling-pool navigation, static missing-leaf rows, and structured step/example id display. | L405-L458; L460-L550; L552-L592 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The root-task lifecycle regression proves enclosure `taskId`/`taskName` selects the folder-keyed series master for the master row. | L678-L690 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The missing-doc leaf lifecycle regression proves parent `taskName` alone does not render the master for leaf rows. | L692-L704 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The direct leaf lifecycle regression proves a projected leaf `TaskDocNode` wins over parent `taskName` mapping, preventing leaf sidebar rows from rendering the master. | L706-L718 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The promoted-leaf fixture now carries parent master/series metadata, and the backlink regression proves `master-parent-link` targets the parent master task document. | L301-L399; L766-L778 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The shared hierarchy helper resolves the parent link from projected series sub-task refs. | L45-L58; L85-L88 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
-| The helper that separates visible lifecycle labels from direct task-doc filtering. | L1-L63 | [taskIdentity.ts](../data/taskIdentity.ts) |
-| The gate-review test opens the shared responder and expects the rendered preview label `Changed paths`. | L408-L417 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The ask-only attention detail regression asserts the obsolete task-local response box is absent when no durable gate exists. | — | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The shared responder rendered by the gate cases. | L1-L124 | [GateResponder.tsx](GateResponder.tsx) |
-| The `gate-review` / `blocked` fixtures seeded. | L151-L290 | [dev/fixtures.ts](../dev/fixtures.ts) |
+| The body-first cases pin request ordering, complete-field rendering, unavailable fallback, retained summary content, one step copy, and revision cache invalidation. | L793-L1034 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The hook records body availability and merges absent arrays; the component delays ancillary mounts and renders loading/fallback messages. | L1-L72; L380-L388; L670-L687; L1044-L1098; L1296-L1382 | [useTaskDocumentBody.ts](../data/useTaskDocumentBody.ts); [DetailPanel.tsx](DetailPanel.tsx) |
+| The drawer under test resolves `selectedSeries` from `analytics.series` for root-task lifecycles only, sorts a series' rows in `seriesAsMasterDoc`, renders them unsorted in `SubTaskIndex`, and derives progress with `topLevelStepProgress`. | L369-L379; L932-L935; L954-L969; L1157-L1175 | [DetailPanel.tsx](DetailPanel.tsx) |
+| `SubTaskIndex` reads the cross-link as `"linkedLifecycleId" in ref`, so only a task-doc master's rows reach the `→` branch. | L1176-L1195 | [DetailPanel.tsx](DetailPanel.tsx) |
+| The `taskDoc`/`seriesNode`/`enclosure` factories, the `seedSeries` helper, and `nestedProgressSteps` (top-level progress deliberately differing from backend `stepsDone/stepsTotal`). | L22-L61; L62-L193 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| `seedSeriesOrdering` seeds a `SeriesNode` whose rows carry `createdAt`, so the ordering assertion exercises `seriesAsMasterDoc`. | L194-L240 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The ordering assertion pins creation-time placement while expecting child task-document id labels and rejecting generated local counters. | L721-L729 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The cross-master jump now seeds a `kind: "master"` task doc carrying `linkedLifecycleId`, selected by its `taskdoc:` key. | L667-L700 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The top-level progress regression rejects a `40/42` nested count in both the master row and opened leaf reader, expecting `6/7`. | L731-L750 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The aggregate-token regression pins the master reader's `series tokens` display from `seriesTokenTotal`. | L712-L720 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The typed taskdoc selection regressions cover unbound planning leaf/master docs, lifecycle-bound master sibling-pool navigation, static missing-leaf rows, and structured step/example id display. | L445-L634 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The root-task lifecycle regression proves enclosure `taskId`/`taskName` selects the folder-keyed series master for the master row. | L751-L764 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The missing-doc leaf lifecycle regression proves parent `taskName` alone does not render the master for leaf rows. | L765-L778 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The direct leaf lifecycle regression proves a projected leaf `TaskDocNode` wins over parent `taskName` mapping, preventing leaf sidebar rows from rendering the master. | L779-L792 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| `seedPromotedLeaf` carries parent master/series metadata, and the backlink regression proves `master-parent-link` targets the parent master task document. | L292-L394; L1057-L1071 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| `findParentTaskMatch`/`parentTaskLinkForDoc` resolve the parent link from projected series sub-task refs. | L43-L90 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
+| `TaskSubTaskRefNode` vs `SeriesSubTaskNode` — which fixture row may carry `linkedLifecycleId` and which may carry `createdAt`. | L326-L354 | [types/projection.ts](../types/projection.ts) |
+| `taskLabel`/`taskDocumentLabel` — the helpers that separate visible lifecycle labels from direct task-doc filtering. | L213-L244 | [taskIdentity.ts](../data/taskIdentity.ts) |
+| The gate-review test opens the shared responder and expects the rendered preview label `Changed paths`. | L424-L433 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The ask-only attention detail regression asserts the obsolete task-local response box is absent when no durable gate exists. | L434-L442 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
+| The shared responder rendered by the gate cases. | L217-L460 | [GateResponder.tsx](GateResponder.tsx) |
+| The `blocked` and `gate-review` fixtures seeded. | L169-L205; L441-L488 | [dev/fixtures.ts](../dev/fixtures.ts) |
 
 ## Update History
+
+- 2026-08-01T10:05+02:00 — 260731-EFA-L4 curator: corrected a body claim that had become false.
+  `seedSeries` no longer carries `linkedLifecycleId` on its `SeriesSubTaskNode` rows — the server never
+  stamps one there — so the cross-master `→` test builds its own `kind: "master"` `taskDoc`, seeds it
+  with `seedTaskDocuments`, and selects it by `taskdoc:` key. Recorded that the ordering assertion still
+  passes but now exercises `seriesAsMasterDoc`'s `orderedByCreation` instead of `SubTaskIndex`'s
+  (verified `seedSeriesOrdering` seeds `analytics.series`, so the series adapter is the sort site), and
+  that the three master-doc fixtures dropped `subTasks[].createdAt`, which `TaskSubTaskRefNode` does not
+  declare. Added the fixture-honesty and `metricsFor` boundaries. Repaired fourteen citations against
+  the current sources; the drifted ones were mostly wholesale, e.g. the ordering assertion L671-L678 →
+  L721-L729, the top-level-progress regression L660-L676 → L731-L750, the aggregate-token regression
+  L676-L683 → L712-L720, the three lifecycle-identity regressions L678-L690/L692-L704/L706-L718 →
+  L751-L764/L765-L778/L779-L792, the backlink test L766-L778 → L1057-L1071, `GateResponder` L1-L124 →
+  L217-L460 (the old range held only the styles; `GateResponder` is at L217 and `gate-respond-open` at
+  L404), and the fixtures row L151-L290, which covered `blocked` but not `gate-review` (L442) at all.
 
 - 2026-07-12T12:07+02:00 — 260712-TRH-L1: added the deferred-body request-order regression, expanded
   complete-content coverage to every reader field class, pinned path/revision cache behavior, and made
