@@ -233,21 +233,24 @@ error that must be raised instead of a download.
 ## Cross-Repo References
 
 The boundary this suite defends is the third-party `tiktoken` package and the Azure blob URL it
-would otherwise fetch from. Every fact below was re-read against tiktoken **0.13.0** as installed
-in this environment, and against the same files at the `0.13.0` tag upstream. Line numbers are from
-the installed 0.13.0 sources. The decisive one is that **`read_file_cached` does not fail closed on
-a hash mismatch** — it repairs, from the network — which is why the digest check lives in
+would otherwise fetch from. tiktoken is admitted only through the permissive `tiktoken>=0.12,<1`
+requirement with no resolved version in this repository, so every fact below is anchored to the
+tracked cold-start test and `models/tokens.py` rather than to line numbers inside the installed
+dependency. The decisive one is that **`read_file_cached` does not fail closed on a hash
+mismatch** — it repairs, from the network — which is why the digest check lives in
 `models/tokens.py` and why `CorruptVendoredVocabularyTests` exists at all.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_file_cached` prefers `TIKTOKEN_CACHE_DIR`, then `DATA_GYM_CACHE_DIR`, then `<tmpdir>/data-gym-cache`, and looks a download up under `hashlib.sha1(blobpath.encode()).hexdigest()` — which is why the probe must point all of them at an empty directory and why the shipped file's name is that digest. | `read_file_cached`, "cache_key = hashlib.sha1(blobpath.encode()).hexdigest()" | tiktoken/load.py:35-53 |
-| A cached file whose SHA-256 does not match `expected_hash` is **not** rejected: the mismatch branch removes the cached copy, re-reads the blob from its source URL and writes the result back over it. This is the exact mechanism that let a CRLF-mangled and a half-truncated vendored blob both report "8 passed" while the file was silently re-downloaded into the package directory — the defect that made this file's module-scope import fatal to its own purpose. | "the cached file does not match the hash, remove it and re-fetch", "contents = read_file(blobpath)" | tiktoken/load.py:54-80 |
-| The write-back re-raises `OSError` when the cache directory was caller-specified and swallows it only for tiktoken's own default — so on a read-only install the repair path would surface as `PermissionError` rather than the designed refusal. | `user_specified_cache`, "don't raise if we can't write to the default cache" | tiktoken/load.py:81-84 |
-| `o200k_base()` passes the vendored URL and `expected_hash="446a9538...1a2d"` to `load_tiktoken_bpe`; these are the values `test_the_shipped_file_is_the_one_tiktoken_asks_for` records and compares against both the shipped bytes and `VENDORED_VOCABULARY_SHA256`. | `o200k_base`, "446a9538cb6c348e3516120d7c08b09f57c36495e2acfffe59a5bf8b0cfb1a2d" | tiktoken_ext/openai_public.py:95-99 |
-| The pin those four ranges are read under. Nothing offline can check a line number inside a dependency, so the version this package admits is the anchor that makes them falsifiable: a release outside it invalidates every range above, and `test_the_shipped_file_is_the_one_tiktoken_asks_for` is what fails when it does. Resolved to 0.13.0 in this environment. | "tiktoken>=0.12,<1" | mcp/pyproject.toml:23-26 |
+| The probe empties every cache path `read_file_cached` consults — `TIKTOKEN_CACHE_DIR`, `DATA_GYM_CACHE_DIR`, and the default `<tmp>/data-gym-cache` — and the shipped file's name is the SHA-1 of the source URL, the digest under which tiktoken looks a download up. | `read_file_cached`, `TIKTOKEN_CACHE_DIR`, `DATA_GYM_CACHE_DIR`, "SHA-1 of the source URL" | mcp/tests/test_cold_start.py:17-21; mcp/src/agents_remember/models/tokens.py:57-67 |
+| A cached file whose SHA-256 does not match `expected_hash` is **not** rejected: `read_file_cached` removes the offending copy and downloads a replacement over it — the exact mechanism that let the mismatching vendored bytes silently re-download into the package directory and all eight tests report green, the defect that made this file's module-scope import fatal to its own purpose. | `read_file_cached`, "deleting the cached copy and downloading a replacement over it", "does not fail closed" | mcp/src/agents_remember/models/tokens.py:40-46; mcp/src/agents_remember/models/tokens.py:73-80; mcp/tests/test_cold_start.py:27-31 |
+| The write-back re-raises write failures when the cache directory was caller-specified and swallows them only for tiktoken's own default — so on a read-only install the repair path would surface as `PermissionError` rather than the designed refusal. | `read_file_cached`, "re-raises write failures for a caller-specified cache directory", `PermissionError` | mcp/src/agents_remember/models/tokens.py:73-80; mcp/src/agents_remember/models/tokens.py:117-121 |
+| `test_the_shipped_file_is_the_one_tiktoken_asks_for` records what `o200k_base()` passes to `load_tiktoken_bpe` — the vendored URL and the expected hash — and asserts both against the shipped bytes and `VENDORED_VOCABULARY_SHA256`. | `test_the_shipped_file_is_the_one_tiktoken_asks_for`, `o200k_base`, `load_tiktoken_bpe`, `VENDORED_VOCABULARY_SHA256` | mcp/tests/test_cold_start.py:222-244; mcp/src/agents_remember/models/tokens.py:40-47 |
+| tiktoken is admitted through the permissive `tiktoken>=0.12,<1` requirement with no resolved version pinned in this repository, so dependency-internal line ranges are not offline-verifiable; the rows above cite the tracked cold-start test and `models/tokens.py`, and `test_the_shipped_file_is_the_one_tiktoken_asks_for` is what fails when a release changes the URL or expected hash. | "tiktoken>=0.12,<1", `test_the_shipped_file_is_the_one_tiktoken_asks_for` | mcp/pyproject.toml:23-26; mcp/tests/test_cold_start.py:222-244 |
 
 ## Update History
+
+- 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: replaced the four tiktoken-internal citations (tiktoken/load.py:35-53, 54-80, 81-84; tiktoken_ext/openai_public.py:95-99), which are not offline-verifiable because tiktoken has only the permissive tiktoken>=0.12,<1 requirement and no resolved version, with tracked evidence from mcp/tests/test_cold_start.py and mcp/src/agents_remember/models/tokens.py; reworded the cross-repo prose and the permissive-pin row to match the tracked sources.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
   exact non-fixing check returns zero findings.

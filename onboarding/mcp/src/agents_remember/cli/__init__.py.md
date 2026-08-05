@@ -31,12 +31,14 @@ This package marker is documented by the nearest mcp route overview and the real
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package docstring names the CLI adapter role. | `Command-line adapters for the application layer` | mcp/src/agents_remember/cli/__init__.py:1-1 |
-| The nearest route overview documents the umbrella CLI under `cli/`. | `agents-remember` CLI under `cli/` | mcp/overview.md:803-803 |
+| The package docstring names the CLI adapter role. | "Command-line adapters for the application layer" | mcp/src/agents_remember/cli/__init__.py:1-1 |
+| The nearest route overview documents the umbrella CLI under `cli/`. | "`agents-remember` CLI under `cli/`" | onboarding/mcp/overview.md:803-803 |
 | The umbrella entrypoint dispatches subcommands for this package. | `main` | mcp/src/agents_remember/cli/__main__.py:31-33 |
 | The dashboard subcommand adapter registered by the umbrella parser. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | The context-packet CLI adapter peer. | `main` | mcp/src/agents_remember/cli/context_packet.py:17-60 |
 
 ## Update History
+
+- 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: fixed two Repo-Internal Reference rows: the package-docstring anchor is now the double-quoted literal "Command-line adapters for the application layer" (the backticked span was not anchor-shaped), and the route-overview row was repointed from the vanished mcp/overview.md:803-803 to the memory-tree onboarding/mcp/overview.md:803-803 with the quoted literal "`agents-remember` CLI under `cli/`" as anchor.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.
