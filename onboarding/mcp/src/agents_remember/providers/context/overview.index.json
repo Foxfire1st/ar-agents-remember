@@ -50,7 +50,7 @@
       "GrepAI",
       "mcp/src/agents_remember/providers/context/",
       "route-local-overview",
-      "ab7e21b4ab4b8526adcdad8ea2243657b8aea7a0",
+      "5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
       "/../../../overview.md",
       "context/",
       "providers/cgc/context/",
@@ -75,14 +75,14 @@
       "lastUpdated",
       "T07",
       "lastVerifiedCommitHash",
+      "ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
       "lastVerifiedCommitDate",
-      "T08",
+      "T12",
       "governingOverview",
       "CodeGraphContext",
       "API",
       "context_providers",
-      "T17",
-      "EFA"
+      "T17"
     ]
   },
   "fallback": {
