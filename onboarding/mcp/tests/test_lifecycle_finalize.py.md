@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash |                                            `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -44,14 +44,16 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Finalizer behavior under test lives here. | [finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
-| Task document read/write behavior used by the fixture lives here. | [document.py](agents-remember/mcp/src/agents_remember/tasks/document.py) |
-| Git fixture helpers come from the existing worktree support tests. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Public response model registry is checked for the finalizer entry. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
+| Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
+| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:573-3049 |
+| Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 4 repo-internal citation rows and preserved verification metadata.
 
 - 2026-07-31T16:50+02:00 — No content impact: the fixture's `default_contract` call now passes the
   `ContractTask` / `LeafIdentity` / `RepoBranchPlan` parameter objects added for PLR0913 instead of

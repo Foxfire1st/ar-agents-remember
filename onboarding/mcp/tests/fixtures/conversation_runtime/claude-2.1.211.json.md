@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash |  `22562e0f2161c2d980385a462275dc370deb72eb`|
-| lastVerifiedCommitDate |  2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -71,29 +71,31 @@ Update observations only from a later production-seam exercise with the same red
 No Domain Documentation source is configured; the production-seam observation is the fixture's
 direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Foundation tests require this exact runtime/helper tuple and explicitly assert the helper observation stays not-exercised/unverified. | L102-L123 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The helper manifest pins the Claude SDK version named by this fixture. | L13-L16 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
-| The installed honesty test enforces the version-mismatch `not-exercised` reason on this row. | L340-L362 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
-| The L2 installed suite proves the implemented helper's incompatible handshake on the real machine. | L562-L590 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| The L2E installed honesty test enforces the version-mismatch `not-exercised` reason on the `control-plane/interrupt-and-assets` row. | L366-L384 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
+| Foundation tests require this exact runtime/helper tuple and explicitly assert the helper observation stays not-exercised/unverified. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement` | mcp/tests/test_conversation_foundation.py:163-188 |
+| The helper manifest pins the Claude SDK version named by this fixture. | `test_helper_package_and_lock_select_only_the_exact_repository_dependencies` | mcp/tests/test_conversation_foundation.py:125-136 |
+| The installed honesty test enforces the version-mismatch `not-exercised` reason on this row. | `ClaudeInstalledHonestyTests` | mcp/tests/test_harness_control_evidence_installed.py:355-377 |
+| The L2 installed suite proves the implemented helper's incompatible handshake on the real machine. | `ClaudeGateHonestyTests` | mcp/tests/test_conversation_library_installed.py:554-586 |
+| The L2E installed honesty test enforces the version-mismatch `not-exercised` reason on the `control-plane/interrupt-and-assets` row. | `ClaudeInstalledHonestyTests` | mcp/tests/test_harness_control_plane_installed.py:376-394 |
 
 ## Cross-Repo References
 
 No neighboring repository is involved.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 10 citation findings; scoped check passed.
 
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the appended
   `control-plane/interrupt-and-assets` row, kept honestly `not-exercised` with the exact

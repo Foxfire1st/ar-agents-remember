@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,26 +39,27 @@ public resolver facade.
 
 No external documentation is needed for this package-local settings selector.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| JSON parsing owns the preferred settings format. | JSON parser | [json_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/json_settings.py) |
-| Markdown parsing owns legacy fenced settings fallback. | Markdown parser | [markdown_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
-| Resolver assembly calls this selector before building the final context. | resolver | [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
+| JSON parsing owns the preferred settings format. | `parse_json_settings` | mcp/src/agents_remember/kernel/coordination_context/json_settings.py:25-40 |
+| Markdown parsing owns the legacy fenced-settings fallback and invokes the parser body. | `parse_settings_block`; `parse` | mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py:34-38; mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py:68-77 |
+| The settings facade prefers sibling JSON and otherwise scans fenced Markdown through `parse_coordination_settings`. | `parse_coordination_settings` | mcp/src/agents_remember/kernel/coordination_context/settings.py:50-72 |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed for settings selection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: anchored the JSON, Markdown, and resolver consumers of the settings facade, including the Markdown parser body and JSON-first fallback branch.
 - 2026-05-25T20:57+02:00: Created as the JSON-first settings facade after parser details moved into focused modules.

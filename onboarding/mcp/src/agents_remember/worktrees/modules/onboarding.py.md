@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -133,28 +133,35 @@ None known for the MX-FIX-4 closeout caller boundary.
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | drift integrity | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
-| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | L345-L363 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py); [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, entity fingerprints, and explicit initialized-memory storage authority. | L234-L262 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
+| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | `build_route_indexes`; `route_index_source_snapshot` | mcp/src/agents_remember/kernel/route_index.py:182-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
+| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. | "test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit" | mcp/tests/test_worktree_support.py:1573-1592; mcp/tests/test_worktree_support.py:1631-1673; mcp/tests/test_worktree_support.py:1674-1694; mcp/tests/test_worktree_support.py:2041-2094 |
 
 ## Cross-Repo References
 
 Closeout can coordinate code and external-memory worktrees, but no external
 implementation governs this module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T18:47+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the four drifted test ranges
+  in the worktree-tests row (long-sidecar 1573-1592, metadata refresh 1631-1673, missing-sidecar
+  blocking 1674-1694, entity fingerprint 2041-2094) and narrowed the claim: the "explicit
+  initialized-memory storage authority" sub-claim is evidenced by none of the four cited tests, so
+  it was dropped rather than pointed at an unrelated route-index test.
+- 2026-08-03T10:55+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 7 assigned citation findings (3 missing anchors and 4 malformed sources); final scoped check is clean.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0913` armed with no
   exemptions): `classify_route_overview_updates`'s body was extracted into `_overview_revision`,

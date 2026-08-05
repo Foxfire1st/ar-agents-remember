@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_leaf_assignment.py` |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`              |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`              |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -25,25 +25,25 @@ duplicating conflict logic in separate call paths.
 
 ### 260707-HFX2-L17 Role-Aware Attach
 
-Assignment now accepts an explicit role, defaults a spawned harness to its provenance role, keeps a
-previously typed binding, fixes terminals to `terminal`, and returns `role-required` for an untyped
-hand-opened harness. Conflict detection is pair-scoped and probes the recorded tmux owner before
-refusing: a dead same-role row is marked exited, whereas a live same-role row owns the pair.
-Successful reattachment writes leaf and role in one catalog upsert and reports both previous values.
+Assignment accepts an explicit role, defaults a spawned harness to its provenance role, returns
+`role-required` for an untyped hand-opened harness, and writes the `(leaf_key, seat_role)` binding
+together. Conflict detection is pair-scoped and probes the recorded tmux owner before refusing: a
+dead same-role row is marked exited, whereas a live same-role row owns the pair. Successful
+reattachment reports both previous binding values.
 
 ### Logic
 
 `LeafAssignmentResult` is a small frozen result object carrying the requested session, target leaf,
-status (`attached`, `leaf-taken`, or `unknown-session`), the previous leaf when known, the conflicting
-owner when any, and the session role. `leaf_conflict_owner` is the reusable role-scoped lookup over
+status (`attached`, `leaf-taken`, or `unknown-session`), the previous leaf and seat role when known,
+the conflicting owner when any, and the session role. `leaf_conflict_owner` is the reusable role-scoped lookup over
 `TerminalCatalog.active_for_leaf`: no leaf means no conflict, the same session is allowed to re-own its
 leaf, and only a different running owner of the same role returns a session id.
 
 `assign_terminal_session_to_leaf` performs the durable move. It rejects a missing or non-running row as
 `unknown-session`, reports `leaf-taken` without mutating the catalog when another running same-role
-session owns the target leaf, and otherwise writes `entry.with_leaf_key(leaf_key)` back through
-`TerminalCatalog.upsert`. A successful move records the previous leaf in the result so tool callers can
-report what changed without re-reading the catalog.
+session owns the target leaf, and otherwise writes `entry.with_leaf_binding(leaf_key, seat_role)` back
+through `TerminalCatalog.upsert`. A successful move records the previous leaf and role in the result
+so tool callers can report what changed without re-reading the catalog.
 
 ### Conventions
 
@@ -71,30 +71,30 @@ No known follow-up in this file.
 No relevant external/domain documentation defines the dashboard terminal catalog move policy; the
 same-repository catalog, route, tool, and tests are the source of truth.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this local catalog reassignment policy. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
 
 ## Repo-Internal References
 
 The helper is intentionally shared by the dashboard HTTP route and the agent-facing MCP tool.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog rows carry role-derived leaf ownership, a `with_leaf_key` copy helper, and a running-only role-scoped `active_for_leaf` uniqueness probe. | L14-L24; L131-L138; L169-L190 | [terminal_catalog.py](terminal_catalog.py) |
-| The dashboard attach route delegates the existing-session leaf move to `assign_terminal_session_to_leaf` and maps its statuses to 404/409/200 HTTP responses. | L709-L733 | [app.py](app.py) |
-| The MCP payload builder calls the same helper and returns previous leaf, owner, status, and role in one validated payload. | L16-L42 | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| Unit tests cover successful move, leaf-taken no-mutation behavior, and the tool payload using the dashboard catalog path. | L54-L108 | [../../../tests/test_terminal_leaf_assignment.py](../../../tests/test_terminal_leaf_assignment.py) |
+| Catalog rows carry role-derived leaf ownership, a `with_leaf_binding` copy helper, and a running-only role-scoped `active_for_leaf` uniqueness probe. | `leaf_key`; `seat_role`; `with_leaf_binding`; `active_for_leaf` | mcp/src/agents_remember/serving/terminal_catalog.py:100-100; mcp/src/agents_remember/serving/terminal_catalog.py:105-105; mcp/src/agents_remember/serving/terminal_catalog.py:354-357; mcp/src/agents_remember/serving/terminal_catalog.py:543-559 |
+| The dashboard attach route delegates the existing-session leaf move to `assign_terminal_session_to_leaf` and maps its statuses to 404/409/200 HTTP responses. | `_attach_leaf_response` | mcp/src/agents_remember/serving/app.py:1553-1600 |
+| The MCP payload builder calls the same helper and returns previous leaf, owner, status, and role in one validated payload. | `attach_terminal_session_to_leaf_tool` | mcp/src/agents_remember/application/terminal_tools.py:140-177 |
+| Unit tests cover successful move, leaf-taken no-mutation behavior, and the tool payload using the dashboard catalog path. | `test_assign_terminal_session_to_leaf_moves_existing_catalog_row`; `test_assign_terminal_session_to_leaf_reports_leaf_taken_without_mutating`; `test_attach_terminal_session_to_leaf_payload_uses_dashboard_catalog` | mcp/tests/test_terminal_leaf_assignment.py:110-126; mcp/tests/test_terminal_leaf_assignment.py:128-145; mcp/tests/test_terminal_leaf_assignment.py:147-172 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This helper mutates only the local dashboard terminal catalog. | - | - |
 
 ## Update History
+
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: corrected role-aware `(leaf_key, seat_role)` binding semantics, removed source-clear placeholders, and normalized scoped citation evidence.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added explicit/defaulted seat-role attachment,
   `role-required` for untyped hand-opened harnesses, live same-pair arbitration, and atomic

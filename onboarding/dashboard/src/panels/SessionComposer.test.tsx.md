@@ -16,42 +16,44 @@
 
 ## Purpose
 
-Vitest render + interaction tests for `SessionComposer` (slice 6e-3). The composer is pure +
-presentational (React Aria, no backend/xterm), so the tests drive it directly.
+Vitest render + interaction tests for `SessionComposer` (slice 6e-3). The suite covers the
+CodeMirror-backed draft/editor surface, reliable submission and queue/withdrawal behavior, race and
+IME handling, answer mode, and the raw-terminal gate.
 
 ## Code Commentary
 
 ### Logic
 
-Three cases via `fireEvent` on the `<textarea>`: (1) typing + `Send` reports the **trimmed** draft and
-clears the field; (2) ⌘/Ctrl+Enter sends; (3) an empty / whitespace-only draft never sends (the Send
-button is disabled and the keystroke no-ops). `fireEvent.change` / `fireEvent.keyDown` is the repo idiom
-for driving React Aria interaction.
+The suite drives the editor and session cockpit stores directly. It covers reliable draft submission,
+queue and withdrawal state, response/poll ordering, delivered-vs-withdraw races, IME composition,
+slash commands, answer-mode interaction submission, and the raw-session gate. The tests assert the
+current draft/revision and server-confirmed outcomes rather than a direct PTY write.
 
 ### Invariants And Boundaries
 
-Render + interaction only; no backend, no WebSocket, no xterm. Asserts the reported value + the cleared
-field, not the stdin write (that wiring lives in `Chats`).
+Render and interaction coverage includes the session draft/client seam but does not open a backend,
+WebSocket, or xterm in this unit suite. Controlled prompt delivery uses the reliable draft path;
+raw-terminal delivery remains owned by the vendor TUI rather than this composer.
 
 ## Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | — | [SessionComposer.tsx](SessionComposer.tsx) |
+| The component under test. | "export const SessionComposer" | dashboard/src/panels/SessionComposer.tsx:231-231 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -77,16 +79,15 @@ Send.
 
 ## Update History
 
-- 2026-08-01T11:22+02:00 — 260731-EFA-L4 curator: No content impact: the only change is the answer-mode
-  seed swapping `{ id, gate } as unknown as LifecycleProjection` for
-  `lifecycleWithGate({ id: "lc-answer-mode" }, { …the same gate… })`, and I checked the thing that could
-  have made it consequential — whether the extra fields the builder now supplies can reach an assertion.
-  `findInteractionGate` (`data/interactionAnswer.ts` L258-L274) is the only consumer of this seed, and it
-  reads `lifecycle.gate.kind`, `gate.state`, `gate.packet.adapterInteraction.{sessionId,interactionId}`
-  and `lifecycle.id` — nothing else. The gate override is total for all four fields and
-  `lifecycleWithGate` applies `over` last, so `id` still wins; `BASE_LIFECYCLE`'s `state`/`phase`/`tokens`
-  are inert here. The suite's described cases, assertions and boundaries are unchanged, so the body
-  stands.
+- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D12 by narrowing the answer-mode history assertion to the actual `lifecycleWithGate(...)` call use; rechecked this card through the locked exact-document fixer/check.
+
+- 2026-08-01T11:22+02:00 — 260731-EFA-L4 curator: No content impact: the answer-mode lifecycle map
+  entry calls `lifecycleWithGate`, cit:(["lifecycleWithGate("], dashboard/src/panels/SessionComposer.test.tsx:712-712).
+  Gate resolution is implemented by `findInteractionGate`,
+  cit:(["function findInteractionGate"], dashboard/src/data/interactionAnswer.ts:258-258), and the fixture
+  builder is `lifecycleWithGate`, cit:(["lifecycleWithGate"], dashboard/src/test/fixtures/wire.ts:256-256).
+  These use/declaration facts avoid asserting behavior or argument equivalence that those cited lines
+  do not establish.
 
 - 2026-07-24T13:17:17Z — Curator: recorded the live composer behavior and evidence-gating
   regressions; verification fields remain pre-commit.

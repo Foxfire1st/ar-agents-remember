@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T09:38+02:00                             |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`         |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -61,17 +61,22 @@ deciding anything.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The worktree helpers under test: `_docker_rm_f` / `_docker_network_rm` (`modules/provider_teardown.py`), `delete_branch_if_merged` (`modules/cleanup.py` L43), `route_overview_metadata_refresh_plan_for_context` (`modules/onboarding.py` L123), `_parent_series_contract` (`modules/start_contract.py`), and `archive_completed_root_task` + `series_contract_path` (`task_resolver.py` L147). | [worktrees/](agents-remember/mcp/src/agents_remember/worktrees/) |
-| The observer helpers under test: `_inspect_containers` (L377) and `_inspect_containers_individually` (L402). Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| The lifecycle suites whose happy paths these arms complete. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py), [test_worktree_edge_paths.py](agents-remember/mcp/tests/test_worktree_edge_paths.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The worktree provider-teardown helpers under test are `_docker_rm_f` / `_docker_network_rm`. | "def _docker_rm_f"; "def _docker_network_rm" | mcp/src/agents_remember/worktrees/modules/provider_teardown.py:120-120; mcp/src/agents_remember/worktrees/modules/provider_teardown.py:135-135 |
+| The cleanup helper under test is `delete_branch_if_merged`. | "def delete_branch_if_merged(repo: Path, branch: str, dry_run: bool) -> dict[str, object]:" | mcp/src/agents_remember/worktrees/modules/cleanup.py:64-64 |
+| The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:123-123 |
+| The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/start_contract.py:117-117 |
+| The task-resolver helpers under test are `archive_completed_root_task` and `series_contract_path`. | "def archive_completed_root_task"; "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47; mcp/src/agents_remember/worktrees/task_resolver.py:147-147 |
+| The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/observer/snapshots.py:370-392; mcp/src/agents_remember/observer/snapshots.py:395-418 |
+| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:95-164; mcp/tests/test_worktree_support.py:573-3091 |
 
 ## Update History
 
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:38+02:00 — 260731-EFA-L4 curator: `ParentSeriesContractTests` moved both its
   fixtures from `workflow_kind="master-task"` to `"light-task"`, because `WorkflowKind` is now
-  `Literal["chat-task", "light-task"]` (`worktrees/worktree_contract.py` L50). The Classes-table
+  `Literal["chat-task", "light-task"]` (cit:([`WorkflowKind`], mcp/src/agents_remember/worktrees/worktree_contract.py:63-63)). The Classes-table
   claim "mint one for a master task" survives, and the note added under the table says why it is
   now a demonstration rather than a coincidence: `_parent_series_contract` reads `**Type:** Master`
   off the `task.md` the fixture writes, so with the workflow kind no longer able to say "master",

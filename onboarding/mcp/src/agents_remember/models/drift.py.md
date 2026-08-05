@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/drift.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:31+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,12 +16,12 @@
 
 ## Code Commentary
 
-`DriftSummary` (L13-L23) is strict and exposes the check status, optional total
+`DriftSummary` is strict and exposes the check status, optional total
 and actionable counts, an optional report path, a bounded actionable sample, and
-— since 260731-EFA-L4 — an optional `error` (L23).
+An optional error field is also part of the strict summary.
 
 `status` is `DriftStatus`, **imported** from
-`memory_quality.integrity.onboarding_drift_check.models` (L14 there), the module
+`memory_quality.integrity.onboarding_drift_check.models`, the module
 that produces it: `notChecked | checked | error`. This file used to declare its
 own `DriftStatus = Literal["notChecked", "checked"]`, one of three hand-written
 copies of the same vocabulary in the package, and the only one missing `error`.
@@ -48,15 +48,20 @@ context packet had not.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Context packet construction validates drift output through this model; `_drift_packet` (L169-L180) is now typed `-> DriftSummaryPacket`. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
-| `DriftStatus` (L14) and the `DriftSummaryPacket` TypedDict (L17-L20) this model is the wire face of. | [onboarding_drift_check/models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
-| The second wire face of the same alias — `DriftCheckResponse.status`, which already carried `error` on both halves. | [memory.py](agents-remember/mcp/src/agents_remember/models/memory.py) |
-| `test_the_drift_error_diagnostic_survives_its_own_boundary` and `test_every_drift_status_validates_at_both_of_its_wire_models` pin this. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The strict `DriftSummary` model exposes status and the optional diagnostic error. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
+| Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. | "drift=DriftSummary.model_validate"; "def _drift_packet"; "-> DriftSummaryPacket" | mcp/src/agents_remember/application/context_packet.py:97-97; mcp/src/agents_remember/application/context_packet.py:169-169; mcp/src/agents_remember/application/context_packet.py:173-173 |
+| The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. | `DriftStatus`; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
+| Both wire models expose the shared `DriftStatus` and optional `error` diagnostic. | "class DriftSummary"; "class DriftCheckResponse"; "status: DriftStatus"; "error: str" | mcp/src/agents_remember/models/drift.py:13-14; mcp/src/agents_remember/models/drift.py:23-23; mcp/src/agents_remember/models/memory.py:13-13; mcp/src/agents_remember/models/memory.py:18-18; mcp/src/agents_remember/models/memory.py:23-23 |
+| These tests pin the drift diagnostic and both wire-model status validations. | `test_the_drift_error_diagnostic_survives_its_own_boundary`; `test_every_drift_status_validates_at_both_of_its_wire_models` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:731-736; mcp/tests/test_wire_vocabulary_exhaustiveness.py:767-776 |
 
 ## Update History
 
+- 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: reissued whole-claim evidence for context validation and both drift wire-model faces for same-reviewer closure.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:31+02:00 — 260731-EFA-L4 curator: body corrected. The card described a model that
   "exposes whether drift was checked" plus counts, report path and sample — and that was the whole
   of it, which is precisely the defect: `DriftSummary` had no `error` member on `status` and no
@@ -64,12 +69,11 @@ context packet had not.
   the onboarding root is missing. `include_drift=true` against a repo without onboarding therefore
   raised a `ValidationError` out of the `context_packet` tool instead of reporting the reason —
   the diagnostic path was the one that crashed. `status` is now `DriftStatus` imported from
-  `memory_quality.integrity.onboarding_drift_check.models` (L14 there:
+  `memory_quality.integrity.onboarding_drift_check.models` (the producer of the shared vocabulary:
   `notChecked | checked | error`), the local `DriftStatus = Literal["notChecked", "checked"]` is
-  deleted, and `error: str | None = None` is declared (L23). Added three invariants. Citations:
-  `DriftSummary` pinned to L13-L23 and `error` to L23; the controller row gained `_drift_packet`
-  L169-L180 with its new `DriftSummaryPacket` return type, and rows were added for the producing
-  models module (L14, L17-L20), for `models/memory.py` as the second wire face, and for the two
-  exhaustiveness tests that pin it. Verification metadata pinned until closeout stamps the L4
+  deleted, and `error: str | None = None` is declared. Added three invariants. The controller row
+  gained `_drift_packet` with its new `DriftSummaryPacket` return type, and rows were added for the
+  producing models module, for `models/memory.py` as the second wire face, and for the two
+  exhaustiveness tests that pin it. Verification metadata pinned until closeout stamps the architecture slice.
   commit.
 - 2026-05-28T19:52+02:00: Created for the context-packet drift summary model.

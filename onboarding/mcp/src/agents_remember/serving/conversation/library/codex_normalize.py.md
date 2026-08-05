@@ -57,7 +57,7 @@ None.
 
 No Domain Documentation source is configured for this internal parser.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -66,22 +66,23 @@ No Domain Documentation source is configured for this internal parser.
 The ports suite proves the normalized grammar (strict `ConversationItem` validators included)
 on fake native payloads; the shared primitives module owns the capping/extraction helpers.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Codex reads normalize items with ordinals, windows, roles, blocks, and provenance through the strict contract validators. | L255-L289 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| Shared capping, provenance, and text-extraction primitives this parser builds on. | L18-L69 | [normalize_common.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/normalize_common.py) |
-| The normalized item/block/provenance grammar this parser targets. | L311-L399 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Codex reads normalize items with ordinals, windows, roles, blocks, and provenance through the strict contract validators. | `CodexLibraryTests` | mcp/tests/test_conversation_library_ports.py:221-410 |
+| Shared capping, provenance, and text-extraction primitives this parser builds on. | `capped_text`, `native_provenance`, `text_content_parts` | mcp/src/agents_remember/serving/conversation/library/normalize_common.py:18-23; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:26-31; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:51-56 |
+| The normalized item/block/provenance grammar this parser targets. | `ConversationItem` | mcp/src/agents_remember/serving/conversation/models.py:337-426 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local parser.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 repository-internal citations for the Codex port tests, shared normalizers, and normalized item grammar.
 - 2026-07-31T16:50+02:00 — No content impact: the leaf's whole edit to this parser is the deletion
   of the trailing `# noqa: UP040 - Python 3.11 support` from the `ToolPhase` line. The declaration
   `ToolPhase: TypeAlias = Literal["completed", "failed", "interrupted"]` and its docstring are

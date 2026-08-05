@@ -40,25 +40,27 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Cross-Repo References
 
 The suite tests a repository-local module and browser storage doubles; no cross-repository source applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Unit under test. | [preferences.ts](preferences.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Unit under test. | `resolveKeymap` | dashboard/src/data/keymap/preferences.ts:141-231 |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 1 citation row: the unit-under-test row now cites dashboard/src/data/keymap/preferences.ts L1-L374 with anchor `resolveKeymap` (was a range-less markdown link). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-24T13:17:50Z — Updated default submit-chord preference coverage. Verification hash/date
   remain pinned to the pre-commit source stamp.

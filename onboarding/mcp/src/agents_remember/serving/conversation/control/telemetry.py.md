@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/telemetry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,14 +27,13 @@ comparison — and the runtime/helper versions ride the metric as informational 
 
 ### Logic
 
-`conversation_telemetry` (L41-L73) resolves caller/epoch, reads the telemetry capability set, and emits
+cit:([`conversation_telemetry`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:41-73) resolves caller/epoch, reads the telemetry capability set, and emits
 only capability-cleared metrics. The single currently-supported metric is codex cumulative token
-usage: `_codex_usage` (L76-L121) reads the latest `thread/tokenUsage/updated` frame in the bounded evidence
+usage: cit:([`_codex_usage`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:76-121) reads the latest `thread/tokenUsage/updated` frame in the bounded evidence
 window and projects the cumulative breakdown with unit `tokens`, scope `conversation`, observed time
 (frame `createdAt`), and precision `exact`; reasoning tokens have no model field and are omitted rather
-than misfiled. `_freshness` (L124-L132) classifies fresh/stale/unknown against the `_FRESH_WINDOW_MS`
-15 s window (L38). `_telemetry_key` (L135-L141) drives the semantic revision (stable on no-change,
-bumps on new evidence/freshness transitions). `_int_or_none` (L144-L145) keeps absent values absent.
+than misfiled. cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:124-132) classifies fresh/stale/unknown against the `_FRESH_WINDOW_MS`
+15 s window. The telemetry implementation exposes the `revision` value here, cit:([`revision`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:70-70), while `_telemetry_key` constructs the semantic key, cit:([`_telemetry_key`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:135-141). cit:([`_int_or_none`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:144-145) keeps absent values absent.
 
 ### Conventions
 
@@ -61,7 +60,7 @@ None.
 
 No Domain Documentation source is configured; the telemetry contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -70,21 +69,27 @@ No Domain Documentation source is configured; the telemetry contract is reposito
 The metric DTOs and capability evidence live in the contract; the token-usage frame comes from the
 L0E evidence window; the capability gate decides what may emit.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `ConversationTelemetry`/`MetricEvidence`/`UsageMetricValue` DTOs. | L1185-L1242 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The telemetry capability gate — contract-verified, no version demotion (L5F R4). | L323-L347 | [capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
-| The bounded evidence window the `thread/tokenUsage/updated` frame is read from. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| `MetricEvidence` carries the evidence-bound metric provenance used by telemetry. | `MetricEvidence` | mcp/src/agents_remember/serving/conversation/models.py:1213-1223 |
+| `ConversationTelemetry` is the wire envelope for the projected telemetry metrics. | `ConversationTelemetry` | mcp/src/agents_remember/serving/conversation/models.py:1255-1262 |
+| `telemetry_capabilities_for` is the telemetry capability-gate entry. | `telemetry_capabilities_for` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:342-352 |
+| The harness control bridge appends diverted evidence frames into the bounded evidence buffer. | `_append_evidence` | mcp/src/agents_remember/serving/harness_control_bridge.py:505-528 |
+| The harness control bridge's event-consumption path diverts evidence into the bounded buffer. | `_run_events` | mcp/src/agents_remember/serving/harness_control_bridge.py:415-458 |
+| The control client validates and reads evidence-window pages. | `read_control_evidence` | mcp/src/agents_remember/serving/harness_control_client.py:346-366 |
+| Telemetry scans the resulting token-usage frames. | `_codex_usage` | mcp/src/agents_remember/serving/conversation/control/telemetry.py:76-121 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 repairs and the pre-PASS whole-claim audit; narrowed the revision sentence to the generated revision extent while retaining the semantic-key body citation, then rechecked this card through the locked exact-document fixer/check.
 
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 5 stale self-citations (plus the
   `_FRESH_WINDOW_MS` line riding the same sentence). Everything had slipped one or two lines and

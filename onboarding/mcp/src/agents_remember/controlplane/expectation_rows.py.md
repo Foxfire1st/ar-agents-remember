@@ -166,27 +166,27 @@ None.
 
 No meaningful external design-doc references found yet (created this leaf).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `write_expectation_row` is the create-plus-append helper every dispatch surface calls, so the row is never a forgettable follow-up to the dispatch. | L337-L355 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
-| `ExpectationRowStore.find_by_source` is the fulfillment lookup and `overdue` is the L2 sweep's predicate input. | L219-L248 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
-| `append` checks the declared writer and holds `exclusive_access` around the fsyncing append. | L165-L169 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
-| The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | L137-L144; L171-L217 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
-| `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | L286-L334 | [expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
-| `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard supervisor sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. | L592-L610 | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| `write_expectation_row` is the create-plus-append helper every dispatch surface calls, so the row is never a forgettable follow-up to the dispatch. | `write_expectation_row` | mcp/src/agents_remember/controlplane/expectation_rows.py:339-357 |
+| `ExpectationRowStore.find_by_source` is the fulfillment lookup and `overdue` is the L2 sweep's predicate input. | `overdue` | mcp/src/agents_remember/controlplane/expectation_rows.py:237-247 |
+| `append` checks the declared writer and holds `exclusive_access` around the fsyncing append. | "def write_expectation_row" | mcp/src/agents_remember/controlplane/expectation_rows.py:339-339 |
+| The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | "def _pending_rows" | mcp/src/agents_remember/controlplane/expectation_rows.py:137-137 |
+| `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | "def append(self" | mcp/src/agents_remember/controlplane/expectation_rows.py:165-165 |
+| `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard supervisor sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:152-162 |
+| `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. | "def read_expectation_rows" | mcp/src/agents_remember/observer/snapshots.py:598-598 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
@@ -195,16 +195,20 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors, converted the history `read_expectation_rows` citation, and corrected the
+  read/projection row; exact non-fixing check returns zero findings.
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **One stale citation and one
   unsourced number.** The `EXPECTATION_ROW_OWNERSHIP` row cited `durable_store.py` **L270-L280**;
   the constant is at **L338** — the file grew 598 → 699 lines mid-pass and every range written
   earlier is off. Replaced with a symbol-name citation and no range, as this leaf's test cards do,
   because a number that was wrong within the hour is worse than no number. Re-read every other
   citation on this card against the current files and left them: `write_expectation_row` L337-L355
-  (`def` L339), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
+  cit:([`def`], mcp/src/agents_remember/controlplane/expectation_rows.py:339-339), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
-  `_replace` L327), and `read_expectation_rows` L592-L610 (`def` L592). The **10.20 percent** figure
+  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows"], mcp/src/agents_remember/observer/snapshots.py:598-598). The **10.20 percent** figure
   is now attributed rather than asserted: it appears only in the `durable_store.py` docstring, unlike
   31.45 percent and 11.50 percent, which several independent sites carry. Named the harness that
   produces a loss rate and recorded that no base-commit run of it is stored in the tree, so a reader

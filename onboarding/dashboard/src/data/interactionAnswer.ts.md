@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/interactionAnswer.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,8 +33,8 @@ the ONE interaction looked up across BOTH slots.
 
 ### Logic
 
-- **`representPendingInteraction(raw)`** (L136-L184) — kind-aware classification of ONE
-  `controlPendingInteraction` payload into the `InteractionRepresentation` union (L53-L61):
+- **`representPendingInteraction(raw)`** cit:([`representPendingInteraction`], dashboard/src/data/interactionAnswer.ts:136-184) — kind-aware classification of ONE
+  `controlPendingInteraction` payload into the `InteractionRepresentation` union cit:([`InteractionRepresentation`], dashboard/src/data/interactionAnswer.ts:53-61):
   structured questions → `questions` (per-question pages through the direct route); choices exactly
   allow/deny → `permission` (direct-route `response`); other choices → `choices` (legacy gate
   buttons); none → `composer` (the composer becomes the answer input, still routed through the
@@ -42,28 +42,28 @@ the ONE interaction looked up across BOTH slots.
   with an honest reason pointing at the inspector's raw payload — never dead buttons, never
   silently dropped. A missing prompt stays answerable: `prompt` is the empty string, reported not
   invented. Absent payload → `null` (no bar).
-- **`pendingInteractionAgentLabel(raw)`** (L186-L199) — the adapter-bound sub-agent label on a
+- **`pendingInteractionAgentLabel(raw)`** cit:([`pendingInteractionAgentLabel`], dashboard/src/data/interactionAnswer.ts:192-199) — the adapter-bound sub-agent label on a
   multiplexed pending interaction, read from `raw.raw.agentLabel` ONLY (the codex adapter binds it
   when a sub-agent thread raises the request). Absent on the parent thread's singular slot;
   missing/blank → `undefined` — the bar badges WHO is asking only from this evidence, never a
   fabricated name.
-- **`pendingInteractionPayloads(session)`** (L201-L223) — every pending interaction payload on the
+- **`pendingInteractionPayloads(session)`** cit:([`pendingInteractionPayloads`], dashboard/src/data/interactionAnswer.ts:208-223) — every pending interaction payload on the
   row: the parent-thread singular slot first, then the multiplexed sub-agent entries from the
   additive plural `controlPendingInteractions`, de-duplicated by interactionId (multiplexed bridges carry
   the parent in BOTH slots). Entries without an interactionId still render (the bar says why they
   cannot be answered) but never dedupe against each other.
-- **`representSessionPendingInteraction(session, interactionId)`** (L225-L246) — the
+- **`representSessionPendingInteraction(session, interactionId)`** cit:([`representSessionPendingInteraction`], dashboard/src/data/interactionAnswer.ts:231-246) — the
   representation of ONE pending interaction by id, looked up across the singular slot AND the
   multiplexed sub-agent entries (`unrepresentable` payloads skipped). Answer-channel routing must
   see an agent permission/questions payload exactly like the parent's — routing against only the
   singular slot silently dropped agent answers into the legacy gate fallback.
-- **`findInteractionGate(lifecycles, sessionId, interactionId)`** (L258-L274) — walks the
+- **`findInteractionGate(lifecycles, sessionId, interactionId)`** cit:([`findInteractionGate`], dashboard/src/data/interactionAnswer.ts:258-274) — walks the
   projection for the OPEN `agent-question` gate whose
   `packet.adapterInteraction.{sessionId,interactionId}` matches — the exact identity the
   synchronizer stamps (`hosted_interactions.py`). Null = the gate has not appeared in the
   projection yet (gate creation is observe/poll-bounded) — the caller states that instead of
   inventing an answer path. No invented fields, no fuzzy matching.
-- **`answerPendingInteraction(args)`** (L449-L481) — the legacy gate fallback. It trims + rejects
+- **`answerPendingInteraction(args)`** cit:([`answerPendingInteraction`], dashboard/src/data/interactionAnswer.ts:449-481) — the legacy gate fallback. It trims + rejects
   an empty answer; with no matching gate it splits the copy on the seat's lifecycle binding: a seat
   WITH `sessionLifecycleId` gets the poll-bounded "retry in a moment" truth, a seat WITHOUT one
   gets "cannot be answered from the cockpit" — its gate never projects, since gates ride lifecycles
@@ -71,10 +71,10 @@ the ONE interaction looked up across BOTH slots.
   `postGateDecisionDetailed(lifecycleId, "approve", {gateId, note: answer})` — one verb, the note
   IS the vendor response (the durable gate record reads "approved + note"; developer-attributed).
   Failures return the server's words verbatim (retryable by the caller with the same answer).
-- **`submitInteractionAnswer(args)`** (L504-L618) — acquires the per-interaction store lock,
+- **`submitInteractionAnswer(args)`** cit:([`submitInteractionAnswer`], dashboard/src/data/interactionAnswer.ts:504-618) — acquires the per-interaction store lock,
   retains the exact retry payload, then derives channel routing from the session's CURRENT pending
   interaction via `representSessionPendingInteraction(args.session, args.interactionId)`
-  (L531-L533) — across the singular slot AND the multiplexed agent entries, never the caller's
+  cit:([`representSessionPendingInteraction`], dashboard/src/data/interactionAnswer.ts:231-246) — across the singular slot AND the multiplexed agent entries, never the caller's
   say-so and never the parent's singular slot alone. Structured maps → direct-route answers
   covering EVERY question (the backend's all-or-nothing contract — a partial map is refused
   client-side first); permission-kind → direct-route `response`; anything else → the legacy gate
@@ -100,30 +100,30 @@ the ONE interaction looked up across BOTH slots.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Kind classification, the agent label, the multiplexed payload set, and the per-interaction lookup. | L136-L246 | [interactionAnswer.ts](interactionAnswer.ts) |
-| Gate matching, the direct-route POST + epoch retry, the legacy gate fallback, and the locked submit. | L258-L274; L351-L481; L504-L618 | [interactionAnswer.ts](interactionAnswer.ts) |
-| The `OpenSession` mirror of both pending slots + the catalog mapping that carries them. | L73-L74; L520-L525 | [sessions.ts](sessions.ts) |
-| The detailed gate-decision POST carrying the verbatim body back. | L40-L83 | [actions.ts](actions.ts) |
-| The server side: interaction → gate projection + verbatim note return. | L59-L127; L391-L436 | [../../../mcp/src/agents_remember/serving/hosted_interactions.py](../../../mcp/src/agents_remember/serving/hosted_interactions.py) |
-| The bar that renders one bar per pending payload and badges the agent label. | L242-L262; L405-L408 | [../panels/session-cockpit/InteractionBar.tsx](../panels/session-cockpit/InteractionBar.tsx) |
-| The rail preview naming WHO asks via the same label helper. | L648-L657 | [../panels/session-cockpit/SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
-| The waiting-seat triage titles deriving asker + preview from the helpers. | L643-L651 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
-| The round-trip state slice this path's outcomes land in. | L148-L156; L329-L345; L504-L510 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| The suite: kind matrix, gate matching, structured/direct-route round-trips, agent-label pins, NOT-YET vs CANNOT. | L64-L252; L294-L620 | [interactionAnswer.test.ts](interactionAnswer.test.ts) |
+| Kind classification, the agent label, the multiplexed payload set, and the per-interaction lookup. | `representPendingInteraction`; `pendingInteractionAgentLabel`; `pendingInteractionPayloads`; `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:136-184; dashboard/src/data/interactionAnswer.ts:192-199; dashboard/src/data/interactionAnswer.ts:208-223; dashboard/src/data/interactionAnswer.ts:231-246 |
+| Gate matching, the direct-route POST + epoch retry, the legacy gate fallback, and the locked submit. | `findInteractionGate`; `answerPendingInteraction`; `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:258-274; dashboard/src/data/interactionAnswer.ts:449-481; dashboard/src/data/interactionAnswer.ts:504-618 |
+| The `OpenSession` mirror of both pending slots + the catalog mapping that carries them. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
+| The detailed gate-decision POST carrying the verbatim body back. | `postGateDecisionDetailed` | dashboard/src/data/actions.ts:49-82 |
+| The server side: interaction → gate projection + verbatim note return. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-264 |
+| The bar that renders one bar per pending payload and badges the agent label. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:242-281 |
+| The rail preview naming WHO asks via the same label helper. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| The waiting-seat triage titles deriving asker + preview from the helpers. | `SessionsView` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
+| The round-trip state slice this path's outcomes land in. | `sessionCockpitStore` | dashboard/src/data/sessionCockpitStore.ts:279-511 |
+| The suite: kind matrix, gate matching, structured/direct-route round-trips, agent-label pins, NOT-YET vs CANNOT. | "representPendingInteraction (kind-awareness, F8)" | dashboard/src/data/interactionAnswer.test.ts:67-115 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -135,6 +135,9 @@ clearing is revision-CAS so a concurrent operator edit survives. This remains wh
 prompt submission and PTY input: a normal message can never satisfy a vendor interaction.
 
 ## Update History
+
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 4 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 111, 112; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 18 citation entries (27 findings); no Tier-3 findings.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: documented the R6 multiplexed pending-interaction
   path — `pendingInteractionPayloads` (singular slot first, then the additive plural, de-duplicated

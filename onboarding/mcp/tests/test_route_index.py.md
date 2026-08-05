@@ -67,28 +67,30 @@ Refresh verification metadata only after the code candidate is committed during 
 No Domain Documentation source is configured for this repository. The test matrix exercises local
 production code and real Git fixtures.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Source census validates the root and freezes tracked/untracked membership plus eligible paths. | L1-L226 | [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py) |
-| Rendering consumes one snapshot and writes only changed index bytes. | L101-L249 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
-| Shared Git execution scrubs selectors and uses surrogate-preserving decoding. | L9-L42 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| Matrix sections cover contamination, symlink/sparse/gitlink identity, selectors, failures, non-UTF-8 paths, and convergence. | L199-L907 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| Source census validates the root and freezes tracked/untracked membership plus eligible paths. | "def route_index_source_snapshot" | mcp/src/agents_remember/kernel/route_index_census.py:41-41 |
+| Rendering consumes one snapshot and writes only changed index bytes. | "def build_route_indexes" | mcp/src/agents_remember/kernel/route_index.py:182-182 |
+| Shared Git execution scrubs selectors and uses surrogate-preserving decoding. | "def git_environment" | mcp/src/agents_remember/kernel/git_command.py:76-76 |
+| Matrix sections cover contamination, symlink/sparse/gitlink identity, selectors, failures, non-UTF-8 paths, and convergence. | `RouteIndexTests` | mcp/tests/test_route_index.py:82-907 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is required; linked-worktree fixtures are created locally.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 8 citation finding(s); scoped recheck clean.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 self-file line citation. The matrix-sections row ended on the `unittest.main()` guard; it now runs L199-L907 — the shared `_write_scoped_fixture` helper through the last line of `test_non_git_source_root_fails_instead_of_walking_the_filesystem` in the 911-line file. Repeat convergence is proven by the `written == 0` re-build assertions at L503-L511, L808-L818, and L858-L876.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the contamination test was split for

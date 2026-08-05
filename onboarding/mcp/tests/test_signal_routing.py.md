@@ -103,29 +103,29 @@ None.
 
 No meaningful external design-doc references found yet (created this leaf).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | L42-L65 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
-| One-hop-only regression: a worker's signal never chases the chain past its manager. | L68-L86 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
-| `decision-item` reserved-role routing and the three no-route negative cases. | L88-L108 | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
-| Two-hop, dead-node-skipping owner derivation: live chain, dead intermediate, dead-ceiling, unknown sender, and role-only-address cases. | `SkipLevelOwnerTests` | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
-| The shared liveness primitive both the ladder and the two-hop walk read. | `IsSeatDeadTests` | [test_signal_routing.py](agents-remember/mcp/tests/test_signal_routing.py) |
+| Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | `test_worker_signal_routes_to_its_manager`; `test_manager_signal_routes_to_orchestrator` | mcp/tests/test_signal_routing.py:49-62; mcp/tests/test_signal_routing.py:222-237 |
+| One-hop-only regression: a worker's signal never chases the chain past its manager. | `test_no_layer_is_addressed_its_grandchildrens_noise` | mcp/tests/test_signal_routing.py:239-259 |
+| `decision-item` reserved-role routing always targets the architect regardless of provenance. | `test_decision_item_routes_to_architect_regardless_of_provenance` | mcp/tests/test_signal_routing.py:261-266 |
+| Two-hop, dead-node-skipping owner derivation: live chain, dead intermediate, dead-ceiling, unknown sender, and role-only-address cases. | `SkipLevelOwnerTests` | mcp/tests/test_signal_routing.py:353-441 |
+| The shared liveness primitive both the ladder and the two-hop walk read. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:444-472 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound one-hop routing and decision-item behavior to exact tests and removed empty reference placeholders.
 
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
   `mcp/tests/test_signal_routing.py` and moved the lines this card cites, so the Citations column

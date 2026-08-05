@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_routes.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -72,14 +72,17 @@ shape, optionally protocol-backed). `_write_task_documents` writes a real master
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The routes and handlers under test. | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The happy paths these arms sit beside. | [test_serving.py](agents-remember/mcp/tests/test_serving.py), [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
-| The same app's background loops and lifespan wiring. | [test_serving_app_background_loops.py](agents-remember/mcp/tests/test_serving_app_background_loops.py) |
-| Helper-level arms of the same module. | [test_serving_helper_behaviour.py](agents-remember/mcp/tests/test_serving_helper_behaviour.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The routes and handlers under test. | "async def stream_events" | mcp/src/agents_remember/serving/app.py:315-315 |
+| The happy paths these arms sit beside. | `AppTests`, `TerminalWebSocketTests` | mcp/tests/test_serving.py:521-595; mcp/tests/test_terminal_ws.py:424-1009 |
+| The same app's background loops and lifespan wiring. | `SupervisorLoopTests` | mcp/tests/test_serving_app_background_loops.py:220-272 |
+| Helper-level arms of the same module. | `ImageSniffTests` | mcp/tests/test_serving_helper_behaviour.py:100-139 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   dashboard route-failure suite. Verification metadata is pinned to the leaf's reformat

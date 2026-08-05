@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/mcp/tools/hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | mcp/src/agents_remember/mcp/tools/overview.md |
 
 ## Governing Overview
@@ -55,11 +55,11 @@ direct evidence.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The readiness predicate, `ReadinessWait`, and `MAX_HOSTED_READINESS_WAIT_SECONDS`. | [serving/hosted_readiness.py](agents-remember/mcp/src/agents_remember/serving/hosted_readiness.py) |
-| The tool declaration that exposes `session_id` / `wait_seconds`. | [registration/sessions.py](agents-remember/mcp/src/agents_remember/mcp/registration/sessions.py) |
-| The dispatch path that requires `status=ready` before creating a durable brief row. | [dispatch_brief.py](agents-remember/mcp/src/agents_remember/mcp/tools/dispatch_brief.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The readiness predicate, `ReadinessWait`, and `MAX_HOSTED_READINESS_WAIT_SECONDS`. | `hosted_session_readiness`; `ReadinessWait`; `MAX_HOSTED_READINESS_WAIT_SECONDS` | mcp/src/agents_remember/serving/hosted_readiness.py:21-21; mcp/src/agents_remember/serving/hosted_readiness.py:40-52; mcp/src/agents_remember/serving/hosted_readiness.py:59-90 |
+| The tool declaration that exposes `session_id` / `wait_seconds`. | `hosted_session_readiness` | mcp/src/agents_remember/mcp/registration/sessions.py:143-156 |
+| The dispatch path that requires `status=ready` before creating a durable brief row. | `require_dispatch_target` | mcp/src/agents_remember/serving/dispatch_brief.py:110-131 |
 
 ## Cross-Repo References
 
@@ -73,6 +73,9 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-04T18:11+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 3 citation rows with exact anchors (`hosted_session_readiness`/`ReadinessWait`/`MAX_HOSTED_READINESS_WAIT_SECONDS`, the registration declaration, `require_dispatch_target`) and ledger-verified ranges; re-pointed the dispatch-brief citation from the removed `mcp/tools/dispatch_brief.py` to `serving/dispatch_brief.py`. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
+
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: the wait now travels as `ReadinessWait(seconds=...)`
   into `hosted_session_readiness`. Replaced the placeholder body (Purpose, Logic and References had
   been one repeated sentence) with the builder's actual validation, collaborator resolution and

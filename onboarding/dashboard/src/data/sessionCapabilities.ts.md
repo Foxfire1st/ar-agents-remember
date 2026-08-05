@@ -46,28 +46,30 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact-session classification, menu rules, cycling, and effective selection. | L1-L248 | [sessionCapabilities.ts](sessionCapabilities.ts) |
-| Boundary and derivation tables, including fresh Claude and provider-qualified Pi keys. | L36-L238 | [sessionCapabilities.test.ts](sessionCapabilities.test.ts) |
-| Wire shapes validated by the client. | L1-L117 | [../types/harnessCapabilities.ts](../types/harnessCapabilities.ts) |
-| Exact-session serializer and error contract implemented by the daemon. | L162-L227 | [harness_capabilities.py](../../../mcp/src/agents_remember/serving/harness_capabilities.py) |
+| Exact-session classification, menu rules, cycling, and effective selection. | `fetchSessionCapabilities` | dashboard/src/data/sessionCapabilities.ts:98-118 |
+| Boundary and derivation tables, including fresh Claude and provider-qualified Pi keys. | `classifySessionCapabilitiesResponse` | dashboard/src/data/sessionCapabilities.ts:71-92 |
+| Wire shapes validated by the client. | `CapabilitySnapshotWire` | dashboard/src/types/harnessCapabilities.ts:59-65 |
+| Exact-session serializer and error contract implemented by the daemon. | `capability_snapshot_json` | mcp/src/agents_remember/serving/harness_capabilities.py:162-168 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here; the API implementation is in this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 8 citation findings; scoped check passed.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

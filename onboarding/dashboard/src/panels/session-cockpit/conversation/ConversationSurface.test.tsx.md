@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,27 +44,28 @@ None recorded.
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
+| No relevant domain documentation was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Helpers seed projection/visibility variants for the surface. | L1-L88 | [ConversationSurface.test.tsx](ConversationSurface.test.tsx) |
-| Hidden gating, latest chip, and scroll wiring are covered. | L89-L314 | [ConversationSurface.test.tsx](ConversationSurface.test.tsx) |
-| Implementation under test. | L55-L226 | [ConversationSurface.tsx](ConversationSurface.tsx) |
+| Helpers seed projection/visibility variants for the surface. | `seed` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:59-70 |
+| Hidden gating, latest chip, and scroll wiring are covered. | "ConversationSurface hidden keep-alive gating (F-j)"; "ConversationSurface — latest chip (B3)"; "ConversationSurface — the scroll-up trap, production wiring (L5I interactive fix)" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:89-122; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:124-184; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:186-314 |
+| Implementation under test. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
 
+- 2026-08-03T02:38:40+02:00 — W3-B01 curator: curated 3 Repo-Internal table citations with exact test helper, regression-suite, and implementation anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-24T13:17:17Z — Curator: created the conversation-surface regression-suite sidecar. It is
   uncommitted, so verification fields are intentionally blank until closeout stamps the code commit.

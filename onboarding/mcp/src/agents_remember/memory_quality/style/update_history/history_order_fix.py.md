@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -43,13 +43,14 @@ without writing them.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The diagnostic checker provides the timestamp and section parsing helpers. | [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
-| The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Tests cover successful reordering and skipped missing-timestamp sections. | [test_memory_quality.py](agents-remember/mcp/tests/test_memory_quality.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The diagnostic checker provides the timestamp and section parsing helpers. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
+| The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | `rel` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
+| Tests cover successful reordering and skipped missing-timestamp sections. | `test_history_order_fix_reorders_update_history_entries`, `test_history_order_fix_skips_missing_timestamp` | mcp/tests/test_memory_quality.py:141-165; mcp/tests/test_memory_quality.py:167-190 |
 
 ## Update History
 
+- 2026-08-03T02:54:51+02:00 — W3-B05 curator: anchored 2 Tier-2 table citations with exact source paths; fixer generated all ranges.
 - 2026-05-31T12:50+02:00 — Removed the local `relative_path` helper; `fix_onboarding_root` now calls the shared `rel(path, onboarding_root)` imported from `agents_remember.memory_quality.integrity.onboarding_drift_check.discovery`. Noted the shared helper in Logic and added a References row (1.0.0 review remediation).
 - 2026-05-24T03:09+02:00: Created for the dedicated update-history ordering fix script.

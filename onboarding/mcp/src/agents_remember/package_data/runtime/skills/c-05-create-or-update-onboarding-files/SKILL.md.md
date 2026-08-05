@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
 | lastUpdated            | 2026-07-08T00:00+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -50,35 +50,37 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 No external domain documentation applies to the repository-local onboarding maintenance contract. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this package behavior is repository source.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found after checking live sources. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
 `c-05-create-or-update-onboarding-files` skill is the content-update counterpart to `c-02-memory-quality-control` skill's detection.
 
-| Finding                                                                                                  | Citations | Source Path                                                                                                 |
-| -------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
-| Routing sends file-level onboarding, repo-level entity catalog work, and route/slice maintenance to different workflows or `c-03-repo-bootstrap` skill modes. | L21-L34 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| `c-05-create-or-update-onboarding-files` skill handles simple file/entity updates directly, requires proof before treating deleted files as cleanup-only, and routes package/module/source-route creation, refresh, move, split, merge, relocation, or deletion cleanup to `c-03-repo-bootstrap` skill when file-by-file work would lose structure. | L36-L56 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| The onboarding preservation rule treats existing onboarding as durable memory, moves one-to-one behavior-preserving sidecars, reuses accurate old content after splits/merges/relocation, and deletes or retires only when no safe current target remains. | L58-L65 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| Sidecar placement rules now use the resolved onboarding root directly, include route-local `overview.md` files under mirrored source folders, and record generated route indexes with hot-path summary/hints. | L67-L86 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| Quick rules require file-level onboarding to stay self-sufficient, link to the nearest governing overview, preserve reference explanations, maintain deterministic entity fingerprints, refresh route indexes, keep `Hot Path Summary` current, and avoid deleting onboarding before checking whether behavior moved. | L88-L107 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| Route index refresh derives coverage, scope, copied `hotPath.summary`, candidate hints, anchor hints, and indexed sidecar absence from current onboarding/source state. | L109-L135 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| Source discovery requires the resolved `Domain Documentation` category, treats live registry-named documentation sources as authoritative, uses local mirrors only as orientation caches, and triggers live retrieval before reporting no domain docs. | L137-L148 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| Reference and lifecycle rules require verified links, correct bucket selection, metadata refresh, preservation-first handling for moves/splits/merges/relocation/deletion, entity cleanup review for removed/renamed/moved cases, and `c-03-repo-bootstrap` skill routing for package/module/source-route moves or deletions. | L150-L184 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| Worktree-backed onboarding maintenance checks `worktree_status` and runs needed `worktree_sync` before writing memory entries. | L17-L26; L108-L109 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Routing sends file-level onboarding, repo-level entity catalog work, and route/slice maintenance to different workflows or `c-03-repo-bootstrap` skill modes. | `## Routing` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:40-54 |
+| `c-05-create-or-update-onboarding-files` skill handles simple file/entity updates directly, requires proof before treating deleted files as cleanup-only, and routes package/module/source-route creation, refresh, move, split, merge, relocation, or deletion cleanup to `c-03-repo-bootstrap` skill when file-by-file work would lose structure. | `## Route-Level Maintenance Routing` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:55-76 |
+| The onboarding preservation rule treats existing onboarding as durable memory, moves one-to-one behavior-preserving sidecars, reuses accurate old content after splits/merges/relocation, and deletes or retires only when no safe current target remains. | `## Onboarding Preservation Rule` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:77-85 |
+| Sidecar placement rules now use the resolved onboarding root directly, include route-local `overview.md` files under mirrored source folders, and record generated route indexes with hot-path summary/hints. | `## Sidecar Placement Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:86-106 |
+| Quick rules require file-level onboarding to stay self-sufficient, link to the nearest governing overview, preserve reference explanations, maintain deterministic entity fingerprints, refresh route indexes, keep `Hot Path Summary` current, and avoid deleting onboarding before checking whether behavior moved. | `## Quick Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:107-129 |
+| Route index refresh derives coverage, scope, copied `hotPath.summary`, candidate hints, anchor hints, and indexed sidecar absence from current onboarding/source state. | `## Route Index Refresh` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:130-172 |
+| Source discovery requires the resolved `Domain Documentation` category, treats live registry-named documentation sources as authoritative, uses local mirrors only as orientation caches, and triggers live retrieval before reporting no domain docs. | `## Source Discovery Rule` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:173-185 |
+| Reference and lifecycle rules require verified links, correct bucket selection, metadata refresh, preservation-first handling for moves/splits/merges/relocation/deletion, entity cleanup review for removed/renamed/moved cases, and `c-03-repo-bootstrap` skill routing for package/module/source-route moves or deletions. | `## Reference Section Rule` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:186-202 |
+| Worktree-backed onboarding maintenance checks `worktree_status` and runs needed `worktree_sync` before writing memory entries. | `## Lifecycle Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:203-231 |
 
 ## Cross-Repo References
 
 `c-05-create-or-update-onboarding-files` skill can handle cross-repo references when actual boundary evidence exists, but this skill doc does not require a sibling repository citation.
 
-| Finding                                                                | Citations | Source Path |
-| ---------------------------------------------------------------------- | --------- | ----------- |
-| No meaningful cross-repo references found for current skill semantics. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found for current skill semantics. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 9 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-08T00:00+02:00 — 260707-HFX-L11 curator activation (c-05 rewiring, R3): added the "Seat
   routing" paragraph documenting that onboarding create/update duty during leaf work routes to the

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,13 +26,13 @@ never mutates any live conversation.
 
 ### Logic
 
-- **States** (L37-L57): typed `error` renders a `role="alert"`; `loading` prints `loading preview…`;
+- **States** cit:([`ConversationHistoryPreview`], dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx:28-84): typed `error` renders a `role="alert"`; `loading` prints `loading preview…`;
   an absent `page` prints the A1 placeholder `Select a conversation to preview it here.`
-- **Honest partial note** (L58-L66, F13): when either `completeness` or `toolCompleteness` is not
+- **Honest partial note** cit:([`partialReason`], dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx:61-66) (F13): when either `completeness` or `toolCompleteness` is not
   `supported`, the note prints the reason from the capability that is *actually* unsupported —
   `toolCompleteness.reason` is preferred only when tool-completeness is the failing one; otherwise
   `completeness.reason`. It never prints a supported capability's reason text (the round-1 bug).
-- **Body** (L67-L82): the label, the optional partial note, then a `role="list"` scroll region
+- **Body** cit:([`ConversationHistoryPreview`], dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx:28-84): the label, the optional partial note, then a `role="list"` scroll region
   labeled `History preview (read only)` whose items each render through `ConversationItemView` — the
   same dispatcher the live feed uses, so the preview reads identically to the live grammar.
 
@@ -49,28 +49,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared kind-dispatcher that keeps historical and live grammar identical. | L8 | [../conversation/ConversationItemView.tsx](../conversation/ConversationItemView.tsx) |
-| The historical page wire type (items + `historicalCapabilities`). | L7 | [../../../data/conversation-library/types.ts](../../../data/conversation-library/types.ts) |
-| The surface that mounts this preview column. | L147-L152 | [ConversationLibrarySurface.tsx](ConversationLibrarySurface.tsx) |
+| The shared kind-dispatcher that keeps historical and live grammar identical. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
+| The historical page wire type (items + `historicalCapabilities`). | `historicalCapabilities` | dashboard/src/data/conversation-library/types.ts:67-67 |
+| The surface that mounts this preview column. | `ConversationLibrarySurface` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 2 repository-internal references and normalized 2 prose citation references for the shared conversation dispatcher and history-library surface; final scoped result 0 (checker-clean).
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the read-only history
   preview — same block grammar as the live feed via `ConversationItemView`, the `history preview ·

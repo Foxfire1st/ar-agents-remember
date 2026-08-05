@@ -32,7 +32,7 @@ pass through the removed direct `response.json()` implementation.
 
 ### Logic
 
-- **Selection reducers (R4)** (L35-L128) — over the recorded Claude/Codex/Pi envelopes:
+- **Selection reducers (R4)** cit:([`chooseModel`, `chooseEffort`, `launchableEfforts`, `launchSelectionBody`, `selectionComplete`, `EMPTY_SELECTION`], dashboard/src/data/launchFlow.ts:27-31; dashboard/src/data/launchFlow.ts:34-36; dashboard/src/data/launchFlow.ts:47-59; dashboard/src/data/launchFlow.ts:62-71; dashboard/src/data/launchFlow.ts:77-79; dashboard/src/data/launchFlow.ts:82-90) — over the recorded Claude/Codex/Pi envelopes:
   Codex `gpt-5.6-sol` re-gates effort to its advertised `low`, switching to `spark` re-gates to
   `high` (never carried over); Claude rows advertise no default ⇒ effort `null`, selection
   incomplete; a `defaultEffort` that is NOT launch-settable is not silently selected (the trap
@@ -43,13 +43,13 @@ pass through the removed direct `response.json()` implementation.
   verbatim and a bare id matches nothing; `launchSelectionBody` emits both knobs or `{}` and
   throws `/incomplete/` on either partial; the fresh-Claude exact-session snapshot keeps
   `selectedEffort` null with only the model config category.
-- **Classifier table (R5/R8)** (L132-L197) — every open fixture: 200-starting → `opened`
+- **Classifier table (R5/R8)** cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:131-179) — every open fixture: 200-starting → `opened`
   carrying the requested pair verbatim; 200 vendor-defaults → both knobs null; 400
   `launch-selection-invalid` ×2 (partial pair / non-native, verbatim details); 400 bad-kind →
   `open-refused` with verbatim status+detail; 409 leaf-taken → owning session named; 409
   launch-selection-conflict → the LIVE retained pair, provenance untouched; transport-null / 500
   / 502 / garbage-200 / unrecognized-409 all → `outcome-unknown` (F9).
-- **`openHostedSession`** (L199-L245) — asserts the exact POST URL (`/api/terminal/launch-1`)
+- **`openHostedSession`** cit:([`openHostedSession`], dashboard/src/data/launchFlow.ts:193-226) — asserts the exact POST URL (`/api/terminal/launch-1`)
   and body `{kind, harness, model, effort, label}` for a complete pair; a vendor-defaults launch
   sends NEITHER knob (`"model" in body === false`); a thrown fetch becomes `outcome-unknown`
   (the caller keeps the id and reconciles).
@@ -75,28 +75,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The machines + client under test. | L19-L222 | [launchFlow.ts](launchFlow.ts) |
-| Recorded-catalog envelope/snapshot builders (incl. the non-launch-settable-default trap). | — | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts) |
-| The open-response fixtures the classifier table covers exhaustively. | — | [../test/fixtures/openResponses.ts](../test/fixtures/openResponses.ts) |
+| The machines + client under test. | `launchSelectionBody` | dashboard/src/data/launchFlow.ts:82-90 |
+| Recorded-catalog envelope/snapshot builders (incl. the non-launch-settable-default trap). | `modelRow`; `preSessionSnapshot` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52; dashboard/src/test/fixtures/capabilityEnvelopes.ts:156-158 |
+| The open-response fixtures the classifier table covers exhaustively. | `OPENED_STARTING`; `OPENED_VENDOR_DEFAULTS`; `INVALID_PARTIAL_PAIR` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:36-43; dashboard/src/test/fixtures/openResponses.ts:46-49 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 9 citation findings, converting 3 legacy prose line references and 3 unanchored/malformed fixture rows into exact citations.
 
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The
   `openHostedSession` describe block ends at the last line of the file, so its range was corrected

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gated_integration_runner.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -84,14 +84,16 @@ registers it in `sys.modules` before executing it.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The runner under test: `PATHS`, `BY_NAME`, `write_settings`, `child_environment`, `readiness`, `verify_passed`, `pytest_command`. | [run-gated-integration.py](agents-remember/scripts/run-gated-integration.py) |
-| Where the eight markers are registered. | [pyproject.toml](agents-remember/pyproject.toml) |
-| The CI job that must name every credential-free path. | [integration-gated.yml](agents-remember/.github/workflows/integration-gated.yml) |
-| The complementary registry check: markers reconciled against the suite's real `AR_*` environment gates. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The runner under test: `PATHS`, `BY_NAME`, `write_settings`, `child_environment`, `readiness`, `verify_passed`, `pytest_command`. | `PATHS`; `write_settings`; `verify_passed`; `readiness` | scripts/run-gated-integration.py:76-173; scripts/run-gated-integration.py:203-221; scripts/run-gated-integration.py:282-307; scripts/run-gated-integration.py:310-314 |
+| Where the eight markers are registered. | "ar_run_pi_rpc_smoke" | pyproject.toml:194-204 |
+| The CI job that must name every credential-free path. | "ar-run-pi-rpc-smoke"; "agents-remember-real-mcp-config" | .github/workflows/integration-gated.yml:75-112 |
+| The complementary registry check: markers reconciled against the suite's real `AR_*` environment gates. | `test_registered_markers_and_the_suite_environment_gates_agree` | mcp/tests/test_code_quality_check.py:741-749 |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows: the runner under test (run-gated-integration.py PATHS/write_settings/verify_passed/readiness extents), the pyproject marker registry L194-L204, the CI job L75-L112, and the complementary registry check L741-L749. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   gated-integration inventory and runner-behaviour suite. Verification metadata is pinned

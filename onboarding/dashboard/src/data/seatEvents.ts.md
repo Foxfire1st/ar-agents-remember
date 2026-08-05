@@ -30,7 +30,7 @@ holds — one connection, two consumers.
 
 ### Logic
 
-- `applySeatEvent(event)` (L40-L92) — kind-gated (`SEAT_EVENT_KINDS`); resolves the session by
+- cit:([`applySeatEvent`], dashboard/src/data/seatEvents.ts:40-92) — kind-gated (`SEAT_EVENT_KINDS`); resolves the session by
   `event.sessionId ?? data.session`; **unknown sessions are ignored** (the poll brings new rows,
   push never invents one). Per kind:
   - `seat.retired` — a terminal mark: no-op when already `terminated`/`landed` (never resurrect,
@@ -43,9 +43,9 @@ holds — one connection, two consumers.
     classification 4× as often and usually got here first; equal-or-older must never regress the
     row). ISO strings compared lexicographically — same-producer server stamps, flagged as
     acceptable in the worker report.
-- `applySeatEventLine(line)` (L95-L104) — the JSONL adapter for `connectEvents`; malformed lines
+- cit:([`applySeatEventLine`], dashboard/src/data/seatEvents.ts:95-104) — the JSONL adapter for `connectEvents`; malformed lines
   and non-seat kinds are ignored, never break the feed.
-- `createGatedSeatEventApplier()` (L113-L130) — the **per-connection backlog gate** (review
+- cit:([`createGatedSeatEventApplier`], dashboard/src/data/seatEvents.ts:113-130) — the **per-connection backlog gate** (review
   finding 2 fix): the channel replays history before EACH connection's `ready` marker (a reconnect
   with an undecodable cursor replays the full initial window), and replayed history must never
   touch live rows. Lines apply only between a `ready` (`onReady` opens) and the next interruption
@@ -67,31 +67,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Kind gate, per-kind application, strictly-newer dedup, JSONL adapter, backlog gate. | L15-L130 | [seatEvents.ts](seatEvents.ts) |
-| The server emitter defining the four kinds + data field names. | — | [serving/seat_events.py](../../../mcp/src/agents_remember/serving/seat_events.py) |
-| The `ready`/`error` transport hooks the gate rides (`connectEvents` + `onInterrupt`). | L42-L56 | [stream.ts](stream.ts) |
-| The one-EventSource-two-consumers wiring + gate lifecycle. | L331-L350 | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The `patch`/`setStatus` store actions this applies through. | — | [sessions.ts](sessions.ts) |
-| The unit suite: never-resurrect, unknown-session, strict-newer dedup, vocabulary guard, malformed lines, per-connection gate. | L34-L185 | [seatEvents.test.ts](seatEvents.test.ts) |
+| Kind gate, per-kind application, strictly-newer dedup, JSONL adapter, backlog gate. | `applySeatEvent` | dashboard/src/data/seatEvents.ts:40-92 |
+| The server emitter defining the four kinds + data field names. | `log_retire_event`, `log_landed_event`, `log_rename_event`, `log_turn_state_change_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:48-68; mcp/src/agents_remember/serving/seat_events.py:71-89; mcp/src/agents_remember/serving/seat_events.py:92-110 |
+| The `ready`/`error` transport hooks the gate rides (`connectEvents` + `onInterrupt`). | `connectEvents` | dashboard/src/data/stream.ts:129-140 |
+| The one-EventSource-two-consumers wiring + gate lifecycle. | `onInterrupt` | dashboard/src/cockpit/Cockpit.tsx:379-379 |
+| The `patch`/`setStatus` store actions this applies through. | `patch`, `setStatus` | dashboard/src/data/sessions.ts:153-153; dashboard/src/data/sessions.ts:158-158 |
+| The unit suite: never-resurrect, unknown-session, strict-newer dedup, vocabulary guard, malformed lines, per-connection gate. | "createGatedSeatEventApplier (per-connection backlog gate — review finding 2)" | dashboard/src/data/seatEvents.test.ts:161-186 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 6 Repo-Internal citation rows with 10 exact
+  identifiers and repository-relative sources; preserved the no-Domain-Documentation and no-cross-repo
+  statements and left verification metadata unchanged.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

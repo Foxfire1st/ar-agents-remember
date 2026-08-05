@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/files.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,16 +34,16 @@ The module is data contracts plus five fetch helpers:
   `"overview"` variant carries the doc body itself: `{ scope; onboardingPath; kind: "overview"; route;
   body: string | null }` (it previously had only `route`), so a partnerless overview/entities/index doc
   can be rendered by the file reader without a second fetch; `body` is `null` when no markdown is
-  available. (L10-L68)
-- `FilesApiError` carries the HTTP status plus the server's `status` string code so the UI can show
-  the precise reason. (L72-L80)
-- `getJson<T>` is the shared transport: it `fetch`es a URL and, on a non-ok response, reads the body's
+  available. cit:([`ReversePairing`], dashboard/src/data/files.ts:68-72)
+- cit:([`FilesApiError`], dashboard/src/data/files.ts:76-84) carries the HTTP status plus the server's `status` string code so the UI can show
+  the precise reason.
+- cit:([`getJson`, `FilesApiError`, `qs`], dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97; dashboard/src/data/files.ts:99-100) is the shared transport: it `fetch`es a URL and, on a non-ok response, reads the body's
   `status` field (falling back to `statusText`) and throws a `FilesApiError`. As of L4 (D6) `getJson` and
   the `qs` query-string builder are **exported** so the L3 change-set client (`data/changeset.ts`) reuses
-  the same fetch wrapper + serving error idiom. (L82-L92)
-- `fetchRepos`, `listDir`, `readFile`, `resolveForward`, and `resolveReverse` each take a trailing
+  the same fetch wrapper + serving error idiom.
+- cit:([`fetchRepos`, `listDir`, `readFile`, `resolveForward`, `resolveReverse`], dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:113-114; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141) each take a trailing
   `base` arg, build their query string with `qs` (`URLSearchParams`), and delegate to `getJson`. The
-  two onboarding helpers differ only by the `direction=forward|reverse` query param. (L91-L124)
+  two onboarding helpers differ only by the `direction=forward|reverse` query param.
 
 ### Conventions
 
@@ -73,36 +73,45 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing). | L10-L68 | [files.ts](files.ts) |
-| `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code. | L72-L89 | [files.ts](files.ts) |
-| Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs. | L91-L124 | [files.ts](files.ts) |
-| The serving layer registers the four `/api/files/*` endpoints this client calls. | L291-L312 | [serving/files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
-| `run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404). | L207-L227 | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
-| `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. | L11-L21, L112, L162-L214 | [FileViewer.tsx](agents-remember/dashboard/src/panels/file-viewer/FileViewer.tsx) |
-| `useFilesTree` calls `listDir` per directory level to lazy-load each tree side. | L11, L47 | [useFilesTree.ts](agents-remember/dashboard/src/panels/file-viewer/useFilesTree.ts) |
-| `FileTree` consumes the `DirEntry` and `Scope` types. | L8 | [FileTree.tsx](agents-remember/dashboard/src/panels/file-viewer/FileTree.tsx) |
-| `DualPane` consumes the `FileContent` type for its code side. | L8 | [DualPane.tsx](agents-remember/dashboard/src/panels/file-viewer/DualPane.tsx) |
-| The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping. | L1-L35 | [files.test.ts](files.test.ts) |
-| House-style sibling client: `base` arg, typed results, no store mutation. | — | [stream.ts](stream.ts) |
+| Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing). | `RepoCatalog`; `DirListing`; `FileContent`; `ForwardPairing`; `ReversePairing` | dashboard/src/data/files.ts:27-29; dashboard/src/data/files.ts:38-43; dashboard/src/data/files.ts:51-59; dashboard/src/data/files.ts:62-66; dashboard/src/data/files.ts:68-72 |
+| `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code. | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97 |
+| Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs. | `fetchRepos`; `listDir`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:113-114; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141 |
+| The serving layer registers the four `/api/files/*` endpoints this client calls. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
+| `run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404). | `run_scoped` | mcp/src/agents_remember/serving/scope.py:207-227 |
+| `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. | `FileViewerImpl`; `FilesApiError` | dashboard/src/panels/file-viewer/FileViewer.tsx:112-112; dashboard/src/panels/file-viewer/FileViewer.tsx:151-273 |
+| `useFilesTree` calls `listDir` per directory level to lazy-load each tree side. | `useFilesTree`; `listDir` | dashboard/src/panels/file-viewer/useFilesTree.ts:19-55 |
+| `FileTree` consumes the `DirEntry` and `Scope` types. | `FileTree`; `DirEntry`; `Scope` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
+| `DualPane` consumes the `FileContent` type for its code side. | `DualPane`; `FileContent` | dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
+| The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping. | `FilesApiError` | dashboard/src/data/files.test.ts:1-35 |
+| House-style sibling client: `base` arg and typed results. Unlike this request/response client, `stream.ts` is stateful: it applies snapshots/deltas and connection status directly to the stream store. | "export function openConversationStream" | dashboard/src/data/conversation/stream.ts:86-86 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: rebound the stream-sibling row to
+  the real `openConversationStream`; exact non-fixing check returns zero findings.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected the sibling comparison: `stream.ts`
+  mutates its store with snapshots, deltas, and connection state. The new range is explicit `:1-1`
+  curator input.
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 8 table citations and 4 prose citations; left 1 contradicted house-style claim unresolved as Tier 3.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that split when
   the serving-side error mapper left `serving/files.py`. The old `L298-L332` row asserted one file

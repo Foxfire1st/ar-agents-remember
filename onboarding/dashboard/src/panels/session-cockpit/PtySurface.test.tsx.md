@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/PtySurface.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
+| lastUpdated | 2026-08-04T00:41+02:00 |
 | lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
 | lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview      | `overview.md`                                   |
@@ -17,7 +17,7 @@
 ## Purpose
 
 The jsdom PtySurface suite (260715-FEUI-L6 R1/R2/R3/R7/R9): archetype honesty, keep-alive layers,
-accessible names, the screen-reader toggle, and the reserved slots — with **xterm kept OUT of
+accessible names, the screen-reader toggle, and the removed pane-chrome boundary — with **xterm kept OUT of
 jsdom**: `vi.mock("../Terminal")` replaces the Terminal with a prop-reflecting div (the real
 terminal behavior stays Terminal.tsx's own suite).
 
@@ -25,20 +25,21 @@ terminal behavior stays Terminal.tsx's own suite).
 
 ### Logic
 
-- **The Terminal mock** (L15-L35): reflects `readOnly`/`renderer`/`screenReaderMode`/`ariaLabel`
+- **The Terminal mock** cit:(["../Terminal"], dashboard/src/panels/session-cockpit/PtySurface.test.tsx:15-37): reflects `readOnly`/`renderer`/`screenReaderMode`/`ariaLabel`
   and the PRESENCE of `hooks`/`keyEventFilter` as data attributes — the surface's wiring is
   asserted without a single xterm/canvas import.
-- **Two archetypes (R1)** (L51-L77): controlled panes labeled "runner line-log" +
+- **Two archetypes (R1)** cit:(["const controlled = () => fromTerminalSessionInfo(L6_CONTROLLED_WORKING);", "const raw = () => fromTerminalSessionInfo(L6_LEGACY_RAW);"], dashboard/src/panels/session-cockpit/PtySurface.test.tsx:39-40): controlled panes labeled "runner line-log" +
   `data-has-hooks="false"`; legacy raw labeled "vendor TUI" + `data-has-hooks="true"`;
   `data-pty-archetype` per layer; the measured `PTY_RENDERER` passes through to every pane.
-- **Keep-alive** (L79-L105): focus switch keeps the previous layer mounted with `display:none` +
+- **Keep-alive** cit:(["controlledLayer.style.display"], dashboard/src/panels/session-cockpit/PtySurface.test.tsx:104-104): focus switch keeps the previous layer mounted with `display:none` +
   `aria-hidden="true"` while the new one is visible; landed panes render read-only.
-- **Accessibility + reserved slots (R2/R3)** (L107-L145): every pane's `aria-label` carries
+- **Accessibility + removed badge chrome (R2/R3)** cit:(["aria-label={props.ariaLabel}", "pty-scrollback-badge-slot"], dashboard/src/panels/session-cockpit/PtySurface.test.tsx:34-34; dashboard/src/panels/session-cockpit/PtySurface.test.tsx:216-216): every pane's `aria-label` carries
   label + harness + state; the screen-reader toggle is `aria-pressed`, names the perf cost,
   flips the pane prop live, and persists to `cockpit.sessions.screen-reader-mode`; the
-  scrollback-paused badge slot exists and stays EMPTY (never faked); the reserved-chord key
-  filter reaches every pane.
-- **Bell acknowledgment (R7)** (L147-L153): focusing a seat clears its pending bell in
+  focused absence assertion proves the pane-chrome bar and its former
+  `pty-scrollback-badge-slot` are gone, so no reserved slot or badge is faked; the
+  reserved-chord key filter reaches every pane.
+- **Bell acknowledgment (R7)** cit:([`ptyHarvestStore`], dashboard/src/data/ptyHarvest.ts:51-73): focusing a seat clears its pending bell in
   `ptyHarvestStore`.
 
 ### Invariants And Boundaries
@@ -52,18 +53,18 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | L110-L252 | [PtySurface.tsx](PtySurface.tsx) |
-| The L6 archetype fixtures every case hydrates. | L179-L204 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
-| The harvest store the bell case drives. | L51-L75 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
-| The mocked-away real terminal (its own suite covers xterm wiring). | — | [../Terminal.tsx](../Terminal.tsx) |
+| The component under test. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
+| The L6 archetype fixtures every case hydrates. | `L6_CONTROLLED_WORKING`; `L6_LEGACY_RAW` | dashboard/src/test/fixtures/catalogRows.ts:179-191; dashboard/src/test/fixtures/catalogRows.ts:195-202 |
+| The harvest store the bell case drives. | `ptyHarvestStore` | dashboard/src/data/ptyHarvest.ts:51-73 |
+| The mocked-away real terminal (its own suite covers xterm wiring). | `Terminal` | dashboard/src/panels/Terminal.tsx:117-459 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -77,9 +78,9 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -88,6 +89,15 @@ boundary that prevents hidden panes or ended states from participating in stage 
 
 ## Update History
 
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T00:41:58+02:00 — 260731-EFA-L6 S18-SR1 worker: removed the B06 semantic-residual
+  scaffold for the retired scrollback badge slot. Live prose now follows the focused absence
+  assertion: pane chrome and `pty-scrollback-badge-slot` are gone, so the test promises no
+  reserved slot. Preserved the existing generated citation ranges and the prior curator entry; did not
+  run citation mechanics. Verification metadata remains pinned until closeout stamps the L6 code
+  commit.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the focused PTY citations and marked the obsolete badge-slot statement as a semantic residual; final exact frozen-snapshot check is clean.
 - 2026-07-24T13:17:17Z — Curator: recorded PTY declutter and hidden-focus regression coverage;
   verification fields remain pre-commit.
 

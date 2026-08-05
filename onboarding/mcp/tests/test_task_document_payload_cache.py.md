@@ -46,15 +46,18 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Cache under test. | [task_document_cache.py](agents-remember/mcp/src/agents_remember/observer/task_document_cache.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Cache under test. | "class TaskDocumentPayloadCache" | mcp/src/agents_remember/observer/task_document_cache.py:23-23 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` row with an
+  exact anchor and source-backed range; exact non-fixing check returns zero findings.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for the
   task-document parse-cache regression. Verification metadata remains blank until commit.

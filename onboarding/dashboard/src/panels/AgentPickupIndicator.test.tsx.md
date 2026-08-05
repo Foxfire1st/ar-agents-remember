@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/AgentPickupIndicator.test.tsx` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -30,12 +30,14 @@ The tests render `AgentPickupIndicator` in pending and overdue backend-projected
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Component under test. | [AgentPickupIndicator.tsx](AgentPickupIndicator.tsx) |
-| Client helper mocked by the dismiss test. | [operatorInbox.ts](../data/operatorInbox.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Component under test. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
+| Client helper mocked by the dismiss test. | `dismissOperatorInboxEntry` | dashboard/src/data/operatorInbox.ts:34-48 |
 
 ## Update History
+
+- 2026-08-03T02:36+02:00 — W3-B01 curator: curated 2 Repo-Internal table citations with exact component and dismissal-helper anchors. Verification metadata remains unchanged for closeout.
 
 - 2026-07-12T17:50 — 260712-TRH-L6: refreshed coverage for static delivery/acknowledgment wording and the no-spinner contract; metadata is pinned to the current code HEAD until closeout.
 - 2026-07-04T12:31+02:00 - L3: updated pickup fixtures with message-kind and

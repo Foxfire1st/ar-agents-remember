@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_pane_signals.py`           |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -65,27 +65,30 @@ No known follow-up in this file.
 No relevant external documentation found after checking the repo Domain Documentation; this is a
 same-repository unit-test suite for internal control-plane plumbing with no external spec.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines pane-signal classification; the leaf task doc (R2a) is the source of truth this suite pins. | L1-L62 | [test_pane_signals.py](test_pane_signals.py) |
+| No external/domain document defines pane-signal classification; the leaf task doc (R2a) is the source of truth this suite pins. | `PaneSignalClassifierTests` | mcp/tests/test_pane_signals.py:16-43 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The classifier under test, including the precedence order and per-harness override tables this suite pins. | whole module | [../src/agents_remember/serving/pane_signals.py](../src/agents_remember/serving/pane_signals.py) |
-| The chip-counting helper the delivery-stalled fixtures exercise indirectly through the classifier. | `count_paste_chips` | [../src/agents_remember/serving/terminal_paste.py](../src/agents_remember/serving/terminal_paste.py) |
+| The classifier under test, including the precedence order and per-harness override tables this suite pins. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
+| The chip-counting helper the delivery-stalled fixtures exercise indirectly through the classifier. | `_chip_is_live_draft` | mcp/src/agents_remember/serving/terminal_paste.py:587-598 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Classifier-local behavior only. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 repository-internal references for the pane-signal test class, classifier, and live-draft chip helper; scoped citation verification follows.
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: removed screen-delivery predicate tests;
   retained supervisor intervention/failure diagnostics only. Verification metadata remains pinned
   until closeout stamps the eventual L15 code commit.

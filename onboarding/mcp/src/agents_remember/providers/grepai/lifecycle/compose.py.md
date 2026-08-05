@@ -70,32 +70,27 @@ legacy unlabeled provider resources.
 - GrepAI Docker resources must render with generated Agents Remember ownership
   labels; missing `instance.labels` is an invalid settings shape.
 
-## Docs References
-
-No external domain documentation is configured for this repository; the
-resolved `system/sources.md` currently contains no entries.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No relevant external documentation source is configured for this file. | L1-L3 | [system/sources.md](../../../../../../../../../../system/sources.md) |
-
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `grepai_compose_render()` fills Postgres, Ollama, runner build, watcher user/environment, ownership labels, mounts, workspace, log mount, and network values into the package override template, using shared port mapping rendering for `auto` ports. | L42-L99 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| The optional POSIX UID/GID Compose user block for the watcher is rendered via the shared `host_user_block()` helper. | L79 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
-| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L96-L102 | [compose.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/compose.py) |
+| `grepai_compose_render()` fills the package override template and shared port mapping values. | `grepai_compose_render` | mcp/src/agents_remember/providers/grepai/lifecycle/compose.py:42-99 |
+| The watcher user block is supplied by `host_user_block()`. | "host_user_block(" | mcp/src/agents_remember/providers/grepai/lifecycle/compose.py:79-79 |
+| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | `grepai_compose_summary` | mcp/src/agents_remember/providers/grepai/lifecycle/compose.py:102-108 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary is required beyond mounted runtime roots configured by provider settings. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: anchored compose rendering, watcher user,
+  and summary claims to exact symbols; removed the unsupported source-free documentation claim and
+  narrowed the helper row to the cited call.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that shifted when `grepai_compose_render` took the `ports: GrepaiServicePorts` argument. `grepai_compose_render` is now L42-L99 (was L40-L97) and the `WATCHER_USER_BLOCK: host_user_block()` value is now L79 (was L76); both read back and confirmed.
 

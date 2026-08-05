@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,27 +42,29 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Dual-region and repeated-message cases. | L15-L39 | [CockpitLiveRegions.test.tsx](CockpitLiveRegions.test.tsx) |
-| Component under test. | L1-L44 | [CockpitLiveRegions.tsx](CockpitLiveRegions.tsx) |
-| Announcement store under test. | L1-L102 | [../../data/announcer.ts](../../data/announcer.ts) |
+| Dual-region and repeated-message cases. | `CockpitLiveRegions` | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-45 |
+| Component under test. | `CockpitLiveRegions` | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-45 |
+| Announcement store under test. | `announcerStore` | dashboard/src/data/announcer.ts:25-28 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 6 citation findings; scoped check passed.
 
 - 2026-07-17T08:33+02:00 — Created for the 260715-FEUI-L4 R8 live-region regression after
   final reviewer PASS. Base verification metadata is temporary until code commit.

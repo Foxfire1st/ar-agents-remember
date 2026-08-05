@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:26+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,34 +19,34 @@ response contract for `context_packet`.
 
 The model separates repository Git facts, resolved paths, memory/storage facts,
 worktree summary, provider summary, and drift summary into explicit nested
-objects. `ContextPacketV2` (L115-L125) fixes `contextPacketVersion` to `2` and
+objects. cit:([`ContextPacketV2`], mcp/src/agents_remember/models/context_packet.py:115-125) fixes `contextPacketVersion` to `2` and
 carries a diagnostics hint pointing agents at `provider_diagnostics` for raw
 provider details.
 
 **Three of this file's vocabularies are imported from their producers, not
-retyped here** (L9-L15) — the same rule the four gate/lifecycle/inbox/
+retyped here** (cit:([`RepoState`, `FreshnessState`, `MemoryMode`], mcp/src/agents_remember/models/context_packet.py:9-15)) — the same rule the four gate/lifecycle/inbox/
 orchestration models already followed:
 
-- `RepoSummary.state` (L27) is `RepoState`, from `kernel.git_facts` (L22 there),
+- `RepoSummary.state` (cit:([`RepoState`], mcp/src/agents_remember/models/context_packet.py:27-27)) is `RepoState`, from `kernel.git_facts` (cit:([`RepoState`], mcp/src/agents_remember/kernel/git_facts.py:22-22)),
   the module that decides it. The packet assembles this block as
   `RepoSummary.model_validate(git_facts_to_packet(...))` over an untyped dict, so
   a retyped copy here would let a new degrade path reach pydantic before it
   reaches a reviewer.
-- `MemorySummary.mode` (L85) is `MemoryMode`, from
-  `worktrees.worktree_contract` (L51 there). It **was**
+- `MemorySummary.mode` (cit:([`MemoryMode`], mcp/src/agents_remember/models/context_packet.py:85-85)) is `MemoryMode`, from
+  `worktrees.worktree_contract` (cit:([`MemoryMode`], mcp/src/agents_remember/worktrees/worktree_contract.py:64-64)). It **was**
   `Literal["internal", "external"]` and was the only copy in the package missing
   `disabled` — `CoordinationContext.memory_mode` has always been able to carry it
   and `WorktreeSummary.memoryMode` in the *same response* declared it correctly,
   so one packet could pass `memoryMode="disabled"` and fail `memory.mode` on the
   identical value.
-- `BranchFreshness.state` (L99) is `FreshnessState`, from
-  `kernel.git_freshness` (L29-L38 there). `freshness_to_packet` hands over a
+- `BranchFreshness.state` (cit:([`FreshnessState`], mcp/src/agents_remember/models/context_packet.py:99-99)) is `FreshnessState`, from
+  `kernel.git_freshness` (cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:29-38)). `freshness_to_packet` hands over a
   plain dict, and half that vocabulary exists only on degrade paths a hand-copied
   `Literal` would be the last to hear about.
 
-`FreshnessSummary` (L103-L108, issue #54) is the opt-in branch-freshness section:
+`FreshnessSummary` (cit:([`FreshnessSummary`], mcp/src/agents_remember/models/context_packet.py:103-108), issue #54) is the opt-in branch-freshness section:
 `status` is `checked`/`not-checked` (defaulting like drift's not-checked), with
-optional `BranchFreshness` blocks (L90-L100) for the code and memory repos
+optional `BranchFreshness` blocks (cit:([`BranchFreshness`], mcp/src/agents_remember/models/context_packet.py:90-100)) for the code and memory repos
 (`branch`, `upstream`, `fetched`, `ahead`/`behind`, `state`) plus
 `ledgerMapsCodeHead`/`ledgerError`. The eight `state` members —
 `current`/`behind`/`ahead`/`diverged` for a comparison that succeeded,
@@ -55,8 +55,8 @@ are now read off `FreshnessState` rather than listed here.
 `ContextPacketV2.freshness` uses `default_factory=FreshnessSummary` so omitted
 requests serialize as `{"status": "not-checked"}` under `exclude_none`.
 
-`ContextPacketV2.worktree` is a `WorktreeSummary`, and its controller no longer
-validates a dict into it — `worktrees.status.worktree_status_packet` returns the
+`ContextPacketV2.worktree` is a `WorktreeSummary`, and its application entry point no longer
+validates a dict into it — `application.worktree_status.worktree_status_packet` returns the
 model. `ContextPacketV2.drift` is `DriftSummary`, which since L4 also carries an
 `error` field so `include_drift=true` against a repo with no onboarding root
 reports why instead of raising.
@@ -81,33 +81,39 @@ reports why instead of raising.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The context controller constructs `ContextPacketV2` from resolver, Git, provider, worktree, and drift facts. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
-| Provider readiness in the packet uses compact provider summary models. | [providers.py](agents-remember/mcp/src/agents_remember/models/providers.py) |
-| `RepoState` (L22) and its `VALID_REPO_STATES` (L26); `git_facts_to_packet` (L104-L115) is the untyped dict `RepoSummary` validates. | [git_facts.py](agents-remember/mcp/src/agents_remember/kernel/git_facts.py) |
-| `FreshnessState` (L29-L38) and `VALID_FRESHNESS_STATES` (L41); `freshness_to_packet` (L158-L169). | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
-| `MemoryMode` (L51) — the one declaration `memory.mode` and `worktree.memoryMode` now share. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| `worktree_status_packet` (L14-L49) returns `WorktreeSummary` directly, so this packet's `worktree` block is constructed, not validated. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The context application entry point constructs `ContextPacketV2` from resolver, Git, provider, worktree, and drift facts. | `ContextPacketV2` | mcp/src/agents_remember/application/context_packet.py:79-96 |
+| Provider readiness in the packet uses compact provider summary models. | `ProviderSummary` | mcp/src/agents_remember/models/providers.py:75-93 |
+| `RepoState` (L22) and its `VALID_REPO_STATES` (L26); `git_facts_to_packet` (L104-L115) is the untyped dict `RepoSummary` validates. | `RepoState`; `VALID_REPO_STATES`; `git_facts_to_packet` | mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:104-115 |
+| `FreshnessState` (L29-L38) and `VALID_FRESHNESS_STATES` (L41); `freshness_to_packet` (L158-L169). | `FreshnessState`; `VALID_FRESHNESS_STATES`; `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:29-38; mcp/src/agents_remember/kernel/git_freshness.py:41-41; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
+| `MemoryMode` (L64) — the one declaration `memory.mode` and `worktree.memoryMode` now share. | `MemoryMode` | mcp/src/agents_remember/worktrees/worktree_contract.py:64-64 |
+| `worktree_status_packet` (L14-L49) returns `WorktreeSummary` directly, so this packet's `worktree` block is constructed, not validated. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 
 ## Update History
 
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: corrected 4 citations: `MemoryMode` is declared at worktrees/worktree_contract.py L64 (was L63); the table row's inline line note updated to match. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
+
+- 2026-08-03T10:15+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 20 assigned citation findings (5 missing anchors, 5 malformed sources, and 10 prose citations); final scoped check is clean.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: body corrected. Three fields here declared their
   own copy of a vocabulary owned elsewhere, and one copy was wrong: `MemorySummary.mode` was
   `Literal["internal", "external"]` while `CoordinationContext.memory_mode` and
   `WorktreeSummary.memoryMode` — the latter in the SAME response — both accepted `disabled`, so
   one packet could pass `memoryMode="disabled"` and fail `memory.mode` on the identical value. All
-  three now import: `RepoSummary.state` → `RepoState` (`kernel.git_facts` L22),
-  `MemorySummary.mode` → `MemoryMode` (`worktrees.worktree_contract` L51),
-  `BranchFreshness.state` → `FreshnessState` (`kernel.git_freshness` L29-L38). Rewrote the
+  three now import: `RepoSummary.state` → `RepoState` (cit:([`RepoState`], mcp/src/agents_remember/kernel/git_facts.py:22-22)),
+  `MemorySummary.mode` → `MemoryMode` (cit:([`MemoryMode`], mcp/src/agents_remember/worktrees/worktree_contract.py:64-64)),
+  `BranchFreshness.state` → `FreshnessState` (cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:29-38)). Rewrote the
   `FreshnessSummary` paragraph, which had listed four of the eight `state` members inline — that
   hand-list is exactly the artefact the import removes. Noted that `worktree` is now constructed
   rather than `model_validate`d and that `DriftSummary` gained an `error` field. Added two
-  invariants. Citations: `ContextPacketV2` L115-L125, `FreshnessSummary` L103-L108,
-  `BranchFreshness` L90-L100, `RepoSummary.state` L27, `MemorySummary.mode` L85,
-  `BranchFreshness.state` L99, import block L9-L15; new reference rows for `git_facts.py`
-  (L22/L26/L104-L115), `git_freshness.py` (L29-L38/L41/L158-L169), `worktree_contract.py` (L51)
-  and `worktrees/status.py` (L14-L49). Verification metadata pinned until closeout stamps the L4
+  invariants. Citations: cit:([`ContextPacketV2`], mcp/src/agents_remember/models/context_packet.py:115-125), cit:([`FreshnessSummary`], mcp/src/agents_remember/models/context_packet.py:103-108),
+  cit:([`BranchFreshness`], mcp/src/agents_remember/models/context_packet.py:90-100), cit:([`RepoState`], mcp/src/agents_remember/models/context_packet.py:27-27), cit:([`MemoryMode`], mcp/src/agents_remember/models/context_packet.py:85-85),
+  cit:([`FreshnessState`], mcp/src/agents_remember/models/context_packet.py:99-99), cit:([`RepoState`, `FreshnessState`, `MemoryMode`], mcp/src/agents_remember/models/context_packet.py:9-15); new reference rows for `git_facts.py`
+  (cit:([`RepoState`, `VALID_REPO_STATES`, `git_facts_to_packet`], mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:104-115), cit:([`FreshnessState`, `VALID_FRESHNESS_STATES`, `freshness_to_packet`], mcp/src/agents_remember/kernel/git_freshness.py:29-38; mcp/src/agents_remember/kernel/git_freshness.py:41-41; mcp/src/agents_remember/kernel/git_freshness.py:158-169), cit:([`MemoryMode`], mcp/src/agents_remember/worktrees/worktree_contract.py:64-64))
+  and cit:([`worktree_status_packet`], mcp/src/agents_remember/application/worktree_status.py:21-56). Verification metadata pinned until closeout stamps the L4
   commit.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

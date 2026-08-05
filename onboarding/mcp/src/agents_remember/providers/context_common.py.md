@@ -35,11 +35,14 @@ It defines `ContextProviderError` (subclass of `AgentsRememberError`), `to_conta
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC and GrepAI context modules import shared error, path, pin, and removal helpers from here. | [CGC core](../cgc/context/core.py.md); [GrepAI core](../grepai/context/core.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC context module imports shared error, path, pin, and removal helpers from here. | "from agents_remember.providers.context_common import" | mcp/src/agents_remember/providers/cgc/context/core.py:27-27 |
+| GrepAI context module imports shared error, path, pin, and removal helpers from here. | "from agents_remember.providers.context_common import" | mcp/src/agents_remember/providers/grepai/context/layout.py:10-10 |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 3 initial citation findings (1 anchor, 0 prose, 2 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-06-10T07:25+02:00 — Module moved from `providers/context/common.py` to `providers/context_common.py`: living inside the facade package made importing it initialize the facade, whose star-import of a mid-init `cgc.context` collected nothing (import-order-dependent ImportError; GitHub #58). Sidecar moved with it.
 - 2026-06-10T07:05+02:00 — `to_container_path` moved here from `cgc/context/core.py` (re-export kept there): provider-agnostic, and cycle-safe to import from `cgc/seed.py` for the GitHub #58 container-path fix. Added the minimal-imports invariant.

@@ -91,7 +91,7 @@ None.
 
 No Domain Documentation source is configured for this internal port.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -103,24 +103,29 @@ sub-agent grouping, capability-honesty notes, agent reads, and the resume fail-c
 helper boundaries; the installed suite proves the library gates on CONTRACT, not version; the
 locked helper implements the native seam, including the on-disk `subagents/` enumeration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Claude list rows and paging, read block/role/provenance mapping, and argv resume minting on fake helper boundaries. | L479-L626 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| A range-absurd but type-valid `lastModified` fails as a typed store error. | L504-L518 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| Sub-agent grouping with meta identity, helper-without-evidence and empty-catalog unavailability notes, nested spawnDepth naming, agent read routing, agent resume fail-closed, and agent-row shape failures. | L471-L648 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
-| The installed suite proves the claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. | L562-L590 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| The locked helper's scope-exact listSessions (with per-row `agents` children and the `agentsEnumerated` marker), getSessionMessages read, and getSessionInfo resume resolution. | L80-L134; L372-L445 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
-| The locked helper's sub-agent on-disk authority: project-dir slug rule (sdk-verified, base36 Java-hash truncation), `subagents/` sweep, `.meta.json` identity parsing, and agent transcript reads. | L135-L370 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
+| Claude list rows and paging, read block/role/provenance mapping, and argv resume minting on fake helper boundaries. | `ClaudeLibraryTests` | mcp/tests/test_conversation_library_ports.py:465-573 |
+| A range-absurd but type-valid `lastModified` fails as a typed store error. | `ClaudeLibraryTests` | mcp/tests/test_conversation_library_ports.py:465-573 |
+| Sub-agent grouping with meta identity, helper-without-evidence and empty-catalog unavailability notes, nested spawnDepth naming, agent read routing, agent resume fail-closed, and agent-row shape failures. | `ClaudeLibraryAgentTests` | mcp/tests/test_conversation_library_agents.py:471-648 |
+| The installed suite proves the Claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. | `test_installed_claude_library_gates_on_contract_not_version` | mcp/tests/test_conversation_library_installed.py:562-586 |
+| The locked helper defines the session-listing call. | "listSessions({" | mcp/native_helpers/conversation_library/src/claude.ts:83-83 |
+| The locked helper defines the session-messages call. | "getSessionMessages(" | mcp/native_helpers/conversation_library/src/claude.ts:377-377 |
+| The locked helper defines the session-info call. | "getSessionInfo(" | mcp/native_helpers/conversation_library/src/claude.ts:426-426 |
+| The locked helper enumerates sub-agent transcripts and their metadata. | `listSubagents` | mcp/native_helpers/conversation_library/src/claude.ts:180-204 |
+| The locked helper reads sub-agent transcripts through the on-disk authority. | `readClaudeAgentTranscript` | mcp/native_helpers/conversation_library/src/claude.ts:313-369 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local port.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/conversation/library/claude.py` since the L2 base commit is the

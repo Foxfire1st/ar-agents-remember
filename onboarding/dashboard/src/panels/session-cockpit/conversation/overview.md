@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
 | lastUpdated | 2026-08-01T13:05+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                  |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -218,30 +218,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This route relies on its direct agents-remember source/tests and the reviewed
 task/worker/verdict evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for the structured renderer. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for the structured renderer. | — | — |
 
 ## Cross-Repo References
 
 The renderer composes repository-local components over this package's own conversation contracts; no
 cross-repository implementation source governs it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The reconstructable projection this renderer reads. | [data/conversation overview](../../../data/conversation/overview.md) |
-| The sibling in-stage history browser. | [conversation-library overview](../conversation-library/overview.md) |
-| The one-roof composition that mounts this renderer. | [session-cockpit overview](../overview.md) |
-| The interrupt chord/aria-derivation the hook consumes. | [../../../data/keymap/overview.md](../../../data/keymap/overview.md) |
-| The control routes whose evidence gates interrupt + the renderer-facing rulings. | [control overview](../../../../../mcp/src/agents_remember/serving/conversation/control/overview.md) |
-| The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints. | [test/fixtures/conversationWire.ts](agents-remember/dashboard/src/test/fixtures/conversationWire.ts) |
-| The registry that records those three mints as the only permitted casts, each with its reason. | [test/wireFixtureGuard.test.ts](agents-remember/dashboard/src/test/wireFixtureGuard.test.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reconstructable projection this renderer reads. | `# dashboard/src/data/conversation/ — Reconstructable Active-Conversation Projection Overview` | onboarding/dashboard/src/data/conversation/overview.md:1-300 |
+| The sibling in-stage history browser. | `# dashboard/src/panels/session-cockpit/conversation-library/ — In-Stage History Browser Overview` | onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.md:1-173 |
+| The one-roof composition that mounts this renderer. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
+| The interrupt chord/aria-derivation the hook consumes. | `# dashboard/src/data/keymap/ — Keyboard Zone Contract Overview` | onboarding/dashboard/src/data/keymap/overview.md:1-154 |
+| The control routes whose evidence gates interrupt + the renderer-facing rulings. | `# Structured Conversation Control Route Overview` | onboarding/mcp/src/agents_remember/serving/conversation/control/overview.md:1-433 |
+| The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints. | `pageCursor`; `eventCursor`; `libraryConversationKey`; `conversationCapabilities` | dashboard/src/test/fixtures/conversationWire.ts:53-55; dashboard/src/test/fixtures/conversationWire.ts:58-60; dashboard/src/test/fixtures/conversationWire.ts:63-65; dashboard/src/test/fixtures/conversationWire.ts:103-146 |
+| The registry that records those three mints as the only permitted casts, each with its reason. | `SANCTIONED_WIRE_SITES` | dashboard/src/test/wireFixtureGuard.test.ts:51-188 |
 
 ## Empty-Well Honesty And Scroll-Restoration Route State
 
@@ -292,6 +292,7 @@ Rulings Register's interrupt gate is an argument ABOUT capability evidence.
 
 ## Update History
 
+- 2026-08-03T02:40:00+02:00 — W3-B01 curator: curated 7 Repo-Internal table citations (5 memory-overview and 2 code-source references) with exact headings, builder identifiers, and registry anchor. Verification metadata remains unchanged for closeout.
 - 2026-08-01T13:05+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
   the "Fixture Contract For This Renderer" section. No renderer component changed; both changed sources
   are suites whose capability seeds were shapes the server cannot send — an empty

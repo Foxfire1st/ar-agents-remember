@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastUpdated | 2026-08-04T03:03+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,33 +27,36 @@ navigation, and unknown-vendor run collapse — and no data/cursor logic.
 
 ### Logic
 
-- **ARIA honesty** (L1128, L1147, L1179-L1181, R5): `aria-posinset` is the item's server
+- **ARIA honesty** cit:([`knownTotal`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:1170-1170) (R5): `aria-posinset` is the item's server
   `globalOrdinal` (or the run's first ordinal), NOT the array index; `aria-setsize` is emitted ONLY
   when `totalItems` is a known number (`knownTotal`), else omitted and the older-paging button reads
-  `Load older (total unknown)` (L1147). Every article is `aria-live="off"` (the surface owns
-  announcements).
-- **Focus pinning** (L439-L464, F18): `rangeExtractor` pins the focused row AND unconditionally the
+  `Load older (total unknown)`. The button copy and article attributes are owned by the render body
+  cit:(["Load older (total unknown)", "aria-posinset={posinset}", "aria-setsize\": knownTotal", "aria-live"], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:1189-1189; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:1221-1223); every article is
+  `aria-live="off"` because the surface owns announcements.
+- **Focus pinning** cit:([`rangeExtractor`, `tabbable`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:445-460; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:1210-1211; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:1168-1169) (F18): `rangeExtractor` pins the focused row AND unconditionally the
   last row (`rows.length - 1`), so a tabbable article always stays mounted even when both scroll out of
-  the virtual window — incoming data can never relocate focus to the container. `tabbable`
-  (L1168-L1177) gives the focused row, or the last row when nothing is focused, `tabIndex=0`.
-- **Bottom-follow** (L638-L680, `BOTTOM_FOLLOW_PX=120` L44): `handleScroll` tracks `nearBottom`;
-  a new last row while near-bottom scrolls to end, otherwise increments `pendingUpdates` and shows the
-  NON-animated latest chip with the `N new updates` count (L1198-L1215). Older prepend restores the
-  captured top stable row + pixel offset (anchor-preserving paging).
-- **Widget-scoped keyboard nav** (L1033-L1060, §14.4/F14 accepted deviation): `onKeyDown` on the `feed`
+  the virtual window — incoming data can never relocate focus to the container. `tabbable` gives the
+  focused row, or the last row when nothing is focused, `tabIndex=0`.
+- **Bottom-follow** cit:([`handleScroll`, `pendingUpdates`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:372-372; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:659-745) (`BOTTOM_FOLLOW_PX=120`): `handleScroll` tracks `nearBottom`.
+  The append effect cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-1265) scrolls a new last row to the end while near-bottom and
+  otherwise increments `pendingUpdates`. The latest chip render and its `N new updates` count are
+  owned by the timeline cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-1265), while its update-state emphasis is static color/border styling rather than a continuous animation
+  cit:([`latestChipWithUpdates`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:221-224). Older prepend restores the captured top stable row + pixel
+  offset through `prevFirstKeyRef` and the saved anchor cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-1265).
+- **Widget-scoped keyboard nav** cit:([`onKeyDown`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:1073-1103) (§14.4/F14 accepted deviation): `onKeyDown` on the `feed`
   element (the ARIA feed pattern), NOT a global document handler. `]`/`[` move next/prev; `Home`/`End`
-  jump ends. The exclusion list is complete — `isEditableTarget` (L263-L271) skips
+  jump ends. The exclusion list is complete — cit:([`isEditableTarget`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:264-272) skips
   `INPUT/TEXTAREA/SELECT/contentEditable` and any `closest('button,a,[contenteditable],.cm-editor')`;
-  `inOverflowRegion` (L273-L276) plus an active text selection make Home/End YIELD to labeled overflow
+  cit:([`inOverflowRegion`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:274-277) plus an active text selection make Home/End YIELD to labeled overflow
   regions (`[role="group"], pre`) and to selections instead of hijacking them.
-- **Operator scroll keys** (L111-L125): `OPERATOR_SCROLL_KEYS` — Home/End, PageUp/PageDown, ArrowUp,
+- **Operator scroll keys** cit:([`OPERATOR_SCROLL_KEYS`, `onScrollKey`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:117-126; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:1141-1143): `OPERATOR_SCROLL_KEYS` — Home/End, PageUp/PageDown, ArrowUp,
   Space, `[`/`]` — is the "the operator is scrolling this feed" set for the trusted-input restore
-  cancel (a programmatic clamp never carries input; consumed at L1099-L1105 beside the
+  cancel (a programmatic clamp never carries input; consumed beside the
   wheel/touch/pointer listeners). ArrowDown is deliberately ABSENT: on a non-empty roster the
   conversation surface hijacks ArrowDown into the agents line, so it is no longer a scroll key here
   — PageUp/PageDown, `[`/`]` and the wheel remain the downward scroll paths. The set is EXPORTED for
   the surface keyboard-contract tests.
-- **Unknown-vendor run collapse** (`groupUnknownVendorRuns` consumed at L356): a run of ≥3
+- **Unknown-vendor run collapse** cit:([`groupUnknownVendorRuns`], dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55): a run of ≥3
   identical-summary unknown-vendor items folds into one de-emphasized expandable `unknown-run` row;
   members stay addressable (`#ordinal · evidenceRef`), identity is never mutated. The collapsed
   run is a dim mono GUTTER line (`runRow`/`runSummary`, `whiteSpace:nowrap` + ellipsis, full text in
@@ -102,30 +105,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, the scroll-key set, run collapse. | L356-L1223 | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
-| The pure unknown-vendor run grouping this feed renders. | — | [collapse.ts](collapse.ts) |
-| The kind dispatcher + stable accessible-name helper per article. | — | [ConversationItemView.tsx](ConversationItemView.tsx) |
-| The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads. | — | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line. | — | [ConversationSurface.tsx](ConversationSurface.tsx) |
-| The feed ARIA + default-closed diagnostics render suite. | — | [renderer.test.tsx](renderer.test.tsx) |
-| The surface keyboard-contract suite pinning the ArrowDown absence from the scroll-key set. | — | [ConversationAgentFocus.test.tsx](ConversationAgentFocus.test.tsx) |
+| Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, the scroll-key set, run collapse. | `ConversationTimeline`, `OPERATOR_SCROLL_KEYS` | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:117-126; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-1265 |
+| The pure unknown-vendor run grouping this feed renders. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
+| The kind dispatcher + stable accessible-name helper per article. | `ConversationItemView`, `itemAccessibleName` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:15-42; dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
+| The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
+| The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The feed ARIA + default-closed diagnostics render suite. | "ConversationTimeline — one navigable role=feed (R5, §14.2)" | dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:33-68 |
+| The surface keyboard-contract suite pinning the ArrowDown absence from the scroll-key set. | "ConversationSurface agent focus" | dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:144-410 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -136,6 +139,21 @@ input cancel any pending restore. A latest chip is outside the scroller so it re
 measurement anchoring protects a reader's visible row during virtual-row size changes.
 
 ## Update History
+
+- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the four whole-claim ranges (4 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
+- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
+  three underbound append, latest-chip, and prepend fragment records with whole timeline ownership;
+  the static update-state styling is split onto its own exact symbol. All changed bindings are
+  provisional `:1-1` inputs for the fresh Luna curator; no citation mechanics ran.
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: retained the valid
+  `knownTotal`/scroll-handler ranges and source-first bound the omitted ARIA render ownership,
+  append-follow effect, prepend-anchor restore, and latest-chip rendering with provisional `:1-1`
+  citations. No final ranges were hand-authored and no citation mechanics ran.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped conversation-timeline citations; final exact frozen-snapshot check is clean.
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 49; retained the first occurrence/order, all unique anchors and source coverage; scoped non-fixing result 0.
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 7 repository-internal references and normalized 4 prose citation references for the timeline, collapse helper, item dispatcher, wire type, mounting surface, and focused test suites; final scoped result 0 (checker-clean).
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the updated scroll-key contract —
   `OPERATOR_SCROLL_KEYS` is now EXPORTED (for the surface keyboard-contract tests) and ArrowDown is

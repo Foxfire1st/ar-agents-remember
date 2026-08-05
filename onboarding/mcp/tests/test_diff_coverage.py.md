@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -106,15 +106,18 @@ uncovered changed lines**.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The module under test: base resolution, changed-line collection, and the measurement. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
-| The wrapper that runs the floor as a step and exposes its two flags. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| The tier that carries the floor, and why the fast tier cannot. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
-| The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:145-173; mcp/src/agents_remember/code_quality/diff_coverage.py:176-197; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
+| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:396-439; mcp/src/agents_remember/code_quality/check.py:496-496; mcp/src/agents_remember/code_quality/check.py:505-505 |
+| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:157-157; .githooks/_gate.sh:177-177 |
+| The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70 |
+| The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390 |
 
 ## Update History
+
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 111; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 4 citation entries (8 findings); no Tier-3 findings.
 
 - 2026-07-31T21:20+02:00 — 260731-EFA-L3 curator: `BaseResolutionTests` gained two tests this leaf
   and the card did not mention them. Added both to the `BaseResolutionTests` section:

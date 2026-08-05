@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/file-viewer/FileViewer.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,13 +46,13 @@ is a breaking change.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | L151-L252 | [FileViewer.tsx](FileViewer.tsx) |
-| `CockpitShell` registers the "File Viewer" mode and keeps it mounted via `display`. | L36, L171-L172, L239-L246 | [../../cockpit/Cockpit.tsx](../../cockpit/Cockpit.tsx) |
-| The empty-state backdrop prompt copy ("Select a code file") asserted here. | L99-L112 | [DualPane.tsx](DualPane.tsx) |
-| `applySnapshot` loads the projection under test. | L129-L144 | [../../data/store.ts](../../data/store.ts) |
-| The `engine-fleet` GALLERY fixture. | L152 | [../../dev/fixtures.ts](../../dev/fixtures.ts) |
+| The component under test. | `FileViewer` | dashboard/src/panels/file-viewer/FileViewer.tsx:278-278 |
+| `CockpitShell` registers the "File Viewer" mode and keeps it mounted via `display`. | `CockpitShell`; "File Viewer" | dashboard/src/cockpit/Cockpit.tsx:74-74; dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| The empty-state backdrop prompt copy ("Select a code file") asserted here. | "Select a code file" | dashboard/src/panels/file-viewer/DualPane.tsx:99-112 |
+| `applySnapshot` loads the projection under test. | `applySnapshot` | dashboard/src/data/store.ts:43-43 |
+| The `engine-fleet` GALLERY fixture. | `GALLERY`; "engine-fleet" | dashboard/src/dev/fixtures.ts:146-490; dashboard/src/dev/fixtures.ts:484-490; dashboard/src/panels/engine-room/fixtures.ts:724-724 |
 
 ## Current L5I Maintenance
 
@@ -60,6 +60,8 @@ The focused viewer suite now proves that a hidden mounted viewer makes no files 
 selection makes exactly one catalog read, and later hide/show cycles retain the settled catalog.
 
 ## Update History
+
+- 2026-08-04T18:00+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 3 citation rows with exact anchors (`FileViewer`/`CockpitShell`/"File Viewer"/`GALLERY`/"engine-fleet") and ledger-verified ranges, added the applySnapshot implementation range beside its interface signature, and bound the engine-fleet entry to its GALLERY spread-map and scenario definition. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-24T13:17:17Z — Curator: recorded first-visible catalog-read regressions; verification
   fields remain pre-commit.

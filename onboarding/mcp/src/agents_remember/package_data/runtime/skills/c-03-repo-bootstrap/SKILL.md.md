@@ -35,22 +35,22 @@ If bootstrap gains executable helpers, use `c-08-ar-coordination-context-resolve
 
 No external documentation is needed for this repository-local skill.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding                                                                                                                                        | Citations        | Source Path                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------- |
-| `c-03-repo-bootstrap` skill defines root overview as the minimum bootstrap, under the resolved onboarding root, and introduces targeted work for existing-memory source slices. | L8-L31 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy, generated route indexes with hot-path hints, and self-sufficient file-level onboarding. | L37-L129 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| `c-03-repo-bootstrap` skill preserves thin orchestrator behavior, confidence tags, `c-08-ar-coordination-context-resolver` skill topology resolution, cross-repo read-only semantics, and `c-05-create-or-update-onboarding-files` skill ownership of file-level onboarding. | L132-L143 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults. | L181-L307 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff. | L348-L366 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so `c-02-memory-quality-control` skill can compare recorded `sourceRoute` scopes and `c-04-retrieval-strategy-router` skill can use compact route hints inside the Intent substrate. | L686-L721; L879-L907 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| Existing-memory slice maintenance reuses current memory, covers expansion, refresh, move handling, deleted-slice cleanup, asks whether moved/deleted route behavior relocated before removal, and supports cleanup, move, preservation, or removal plans. | L464-L527 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. | L756-L808; L1042-L1057 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `c-03-repo-bootstrap` skill defines root overview as the minimum bootstrap, under the resolved onboarding root, and introduces targeted work for existing-memory source slices. | `# Repo Bootstrap` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:6-1265 |
+| The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy, generated route indexes with hot-path hints, and self-sufficient file-level onboarding. | `### Locality-first memory` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:37-61 |
+| `c-03-repo-bootstrap` skill preserves thin orchestrator behavior, confidence tags, `c-08-ar-coordination-context-resolver` skill topology resolution, cross-repo read-only semantics, and `c-05-create-or-update-onboarding-files` skill ownership of file-level onboarding. | `## Behavior To Preserve` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:148-162 |
+| Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults. | `## Control Modes` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:179-241 |
+| The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff. | `## Templates` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:364-385 |
+| Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so `c-02-memory-quality-control` skill can compare recorded `sourceRoute` scopes and `c-04-retrieval-strategy-router` skill can use compact route hints inside the Intent substrate. | `sourceRoute` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:686-721 |
+| Existing-memory slice maintenance reuses current memory, covers expansion, refresh, move handling, deleted-slice cleanup, asks whether moved/deleted route behavior relocated before removal, and supports cleanup, move, preservation, or removal plans. | `### Existing-memory slice maintenance` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:491-532 |
+| Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. | `## Phase 4 — Bottom-Up Memory Build` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:745-1064 |
 
 As of the 260703-L9 lifecycle convergence, the bootstrap-trigger table row names `l-01-agent-lifecycles` (an active orchestrator job entering an uncovered area may trigger targeted bootstrap); the bootstrap flow itself is unchanged.
 
@@ -58,11 +58,13 @@ As of the 260703-L9 lifecycle convergence, the bootstrap-trigger table row names
 
 No sibling repository evidence is needed for this skill.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 14 citation findings; scoped check passed.
 
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the trigger table row now names l-01-agent-lifecycles. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-02T04:25+02:00: Replaced the `W-01-heavy-task-workflow` row in the related-skills table with `l-01-agent-lifecycles` after W-01 retirement. L-01 series, Sub-task B/S6, mcp 1.1.0.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-01T08:46+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`     |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`     |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -30,13 +30,13 @@ so the viewer works with no live worktree.
 
 ### 260731-EFA-L4 Current Delta — The Three Routes Now Declare What They Answer With
 
-- `GET /api/changeset/task` (L511-L515) declares `response_model=LeafChangeSet | TaskChangeSet`
+- `GET /api/changeset/task` cit:(["/api/changeset/task"], mcp/src/agents_remember/serving/changeset.py:512-525) declares `response_model=LeafChangeSet | TaskChangeSet`
   with `responses=SCOPED_READ_RESPONSES`. **Two success shapes**, because the `leaf` selector is
   what picks between them: `LeafChangeSet` is `TaskChangeSet` plus the `mode` echo, so the union
   is the route's real answer, not a convenience.
-- `GET /api/changeset/file-diff` (L526) declares `response_model=FileDiff` with
+- `GET /api/changeset/file-diff` cit:(["/api/changeset/file-diff"], mcp/src/agents_remember/serving/changeset.py:526-545) declares `response_model=FileDiff` with
   `responses=SCOPED_READ_RESPONSES`.
-- `GET /api/changeset/master` (L546) declares `response_model=MasterChangeSet` and **no
+- `GET /api/changeset/master` cit:(["/api/changeset/master"], mcp/src/agents_remember/serving/changeset.py:546-554) declares `response_model=MasterChangeSet` and **no
   `responses=` table at all** — an unresolvable master degrades to empty lists rather than
   refusing, so this route has no refusal shape to declare. That absence is a fact about
   `master_changeset`'s degrade-never-500 behaviour, not an omission.
@@ -81,16 +81,16 @@ through `_leaf_json` — it validates the selector (a `leaf` without `master`, o
 `mode`, is a `400`) and maps domain errors to the same `400`/`404` idiom. `file-diff`'s
 `master`-only branch keeps its own `JSONResponse` mapping; `master` (the list route) wraps its own.
 
-`task_changeset(scope)` (L78-L97) is the per-**enclosure** change-set.
-`_require_contract(scope)` (L59-L66) loads the leaf contract for the base commits and
+cit:([`task_changeset`], mcp/src/agents_remember/serving/changeset.py:78-97) is the per-**enclosure** change-set.
+cit:([`_require_contract`], mcp/src/agents_remember/serving/changeset.py:59-66) loads the leaf contract for the base commits and
 raises `FileNotFoundError` (→ `404 not-found`) for a mainline scope or an unreadable
 contract — mainline has no base, so it has no change-set. Code = `changed_files_with_counts(scope.code_root,
 contract.code_base_commit, None)` (base → the live worktree), each entry tagged with
 `hasSidecar` via `route_sidecar_status`; memory = the same over `contract.memory_worktree` +
-`contract.memory_base_commit` (skipped when there is no memory tree). `_sum` (L69-L75)
+`contract.memory_base_commit` (skipped when there is no memory tree). cit:([`_sum`], mcp/src/agents_remember/serving/changeset.py:69-75)
 produces the `{files, insertions, deletions}` counters (binary `None` counts → 0).
 
-`file_diff(scope, kind, rel)` (L100-L125) emits BEFORE + AFTER content (not unified-diff
+cit:([`file_diff`], mcp/src/agents_remember/serving/changeset.py:100-125) emits BEFORE + AFTER content (not unified-diff
 text) so the L4 pane feeds CodeMirror MergeView `a`/`b` directly. `kind="memory"` diffs
 the memory worktree, anything else the code worktree; `before =
 commit_text_or_none(root, base, relp)` (the `git show base:path` reader — `None` for an
@@ -99,7 +99,7 @@ from `language_for`. The path is confined with `confine_rel`.
 
 `master_changeset(config, repo_id, master)` is the series **NET** change-set —
 `git diff <master-base> <series-tip>` for code + memory, **not** a sum of the leaves.
-`_load_master_contract` (L160-L170) loads the series (root) contract at
+cit:([`_load_master_contract`], mcp/src/agents_remember/serving/changeset.py:160-170) loads the series (root) contract at
 `tasks/<repo>/<master>/series-contract.md`, with `master` confined to a single path segment
 (no `/` `\` or leading `.`) so a wire value cannot escape the tasks tree. `_series_tip`
 resolves the shared series tip for both counters and file view: it uses the contract's
@@ -108,7 +108,7 @@ state), then falls back to `code_source_branch` / `memory_source_branch` once th
 landed and the work branch has been deleted. `_net_changed` runs
 `changed_files_with_counts(repo, base, resolved_tip)` over the code repo and the memory repo;
 code entries are tagged with `hasSidecar` via `route_sidecar_status` on
-`memory_repo_path/onboarding`. `_master_leaf_summaries` (L200-L222)
+`memory_repo_path/onboarding`. cit:([`_master_leaf_summaries`], mcp/src/agents_remember/serving/changeset.py:200-222)
 keeps the per-leaf `{leafId, counters}` breakdown alongside (each leaf vs its own base, via
 `_leaf_counts` L128-L142). It degrades to an empty net (never a 500) on a missing contract /
 ref. `master_file_diff(config, repo_id, master, kind, rel)` makes every net-changed file
@@ -117,7 +117,7 @@ relp)`, AFTER = `commit_text_or_none(repo, resolved_series_tip, relp)` (both com
 
 `leaf_changeset(config, repo_id, master, leaf, mode)` + `leaf_file_diff(...)` are the L4a
 doc-reader leaf views. `_load_leaf_contract` resolves the leaf enclosure contract by
-`slugify(leaf) == contract.leaf_id` over `iter_leaf_enclosure_contracts`, scoped to `master`
+`slugify(leaf) == contract.leaf_id` over `_master_enclosure_contracts`, scoped to `master`
 (matched against the contract's parent/task name) and skipping `cleanup == "abandoned"` — the
 contract persists after the worktree is cleaned up, so a **completed** leaf still resolves; `leaf`
 is confined to a single path segment. `_leaf_range(contract, *, memory, mode)` selects the range:
@@ -162,16 +162,16 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
-| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | [worktrees/modules/git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
-| The sidecar-pairing helpers (`route_sidecar_status`, `confine_rel`) reused for `hasSidecar` + confinement. | [kernel/sidecar_pairing.py](agents-remember/mcp/src/agents_remember/kernel/sidecar_pairing.py) |
-| The leaf-enclosure contract enumerator + `WorktreeContract`/`load_contract` for master accumulation. | [worktrees/task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
-| The app factory that calls `register_changeset_routes` before `mount_static`. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The test suite for this module. | [test_serving_changeset.py](agents-remember/mcp/tests/test_serving_changeset.py) |
-| The declared response models and the shared `SCOPED_READ_RESPONSES` table these three routes name (`TaskChangeSet`, `LeafChangeSet`, `FileDiff`, `MasterChangeSet`). | [response_contract.py](response_contract.py.md) |
-| The suite that enforces the declarations by driving each route and validating the real body. | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | `FileScope`; `run_scoped`; `language_for` | mcp/src/agents_remember/serving/scope.py:65-67; mcp/src/agents_remember/serving/scope.py:96-107; mcp/src/agents_remember/serving/scope.py:207-227 |
+| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:33-34; mcp/src/agents_remember/worktrees/modules/git.py:105-108; mcp/src/agents_remember/worktrees/modules/git.py:159-198 |
+| The sidecar-pairing helpers (`route_sidecar_status`, `confine_rel`) reused for `hasSidecar` + confinement. | `route_sidecar_status`; `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47; mcp/src/agents_remember/kernel/sidecar_pairing.py:50-65 |
+| The persisted contract model (`WorktreeContract`) and loader (`load_contract`) behind master/leaf accumulation, with leaf-id normalization via `slugify`. | `WorktreeContract`; `load_contract`; `slugify` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/worktrees/task_resolver.py:18-23 |
+| The app factory that calls `register_changeset_routes` before `mount_static`. | `register_changeset_routes` | mcp/src/agents_remember/serving/app.py:754-776 |
+| The test suite for this module. | `TaskChangesetTests` | mcp/tests/test_serving_changeset.py:179-259 |
+| The declared response models and the shared `SCOPED_READ_RESPONSES` table these three routes name (`TaskChangeSet`, `LeafChangeSet`, `FileDiff`, `MasterChangeSet`). | `TaskChangeSet`; `LeafChangeSet`; `MasterChangeSet`; `FileDiff`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:788-794; mcp/src/agents_remember/serving/response_contract.py:797-800; mcp/src/agents_remember/serving/response_contract.py:810-817; mcp/src/agents_remember/serving/response_contract.py:826-834; mcp/src/agents_remember/serving/response_contract.py:1057-1063 |
+| The suite that enforces the declarations by driving each route and validating the real body. | `test_changeset_routes_conform` | mcp/tests/test_serving_response_conformance.py:1287-1311 |
 
 ## 260731-EFA-L2 Current Delta
 
@@ -186,6 +186,15 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T18:46+02:00 — 260731-EFA-L6 S18-B17 curator: rewrote the three superseded `(L…)`
+  route-declaration cites as cit forms with exact decorator+handler extents, repaired the eight
+  malformed table rows with ledger-verified anchors (scope/git/sidecar helpers, the app factory,
+  both test suites, and the response-contract models — the last previously linked at the
+  response_contract.py.md CARD instead of the code), and fixed two genuine mis-citations: the
+  contract row now points at `WorktreeContract`/`load_contract` in `worktree_contract.py` (they
+  were never in `task_resolver.py`; `slugify` is what task_resolver contributes), and the
+  `_load_leaf_contract` prose now names `_master_enclosure_contracts`, the enumerator the code
+  actually iterates. Row 170's wording was adjusted to match that evidence.
 - 2026-08-01T08:46+02:00 — 260731-EFA-L4 curator: recorded the three `response_model`
   declarations — `LeafChangeSet | TaskChangeSet` on `/api/changeset/task` (two real success
   shapes, picked by the `leaf` selector), `FileDiff` on `/api/changeset/file-diff`, both under

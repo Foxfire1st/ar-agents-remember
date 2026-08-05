@@ -59,25 +59,25 @@ existing honest endgame rather than polling or displaying delivering forever.
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Withdrawal, central settlement, poll cadence, response-loss convergence, and recovery. | L403-L1018 | [submissionLifecycleClient.ts](submissionLifecycleClient.ts) |
-| The pure evidence fold defines admissible lifecycle progression. | — | [submitMachine.ts](submitMachine.ts) |
-| The cockpit store owns pending-withdrawal and recovery-slot projections. | — | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| The composer binds Alt+Up and renders the queue/recovery affordances. | — | [../panels/SessionComposer.tsx](../panels/SessionComposer.tsx) |
-| Tests exercise withdrawal races, lost responses, CAS recovery, exact dismissal, and poll order. | — | [submissionLifecycleClient.test.ts](submissionLifecycleClient.test.ts) |
+| Withdrawal, central settlement, poll cadence, response-loss convergence, and recovery. | `applySubmissionLifecycle`, `withdrawLastQueuedSubmission`, `restoreWithdrawnRecovery` | dashboard/src/data/submissionLifecycleClient.ts:569-586; dashboard/src/data/submissionLifecycleClient.ts:1043-1068; dashboard/src/data/submissionLifecycleClient.ts:1096-1108 |
+| The pure evidence fold defines admissible lifecycle progression. | `settleSubmissionObservation`, `projectSubmissionLifecycle` | dashboard/src/data/submitMachine.ts:155-186; dashboard/src/data/submitMachine.ts:265-294 |
+| The cockpit store owns pending-withdrawal and recovery-slot projections. | `setWithdrawal`, `replaceComposerDraftIfRevision` | dashboard/src/data/sessionCockpitStore.ts:231-231; dashboard/src/data/sessionCockpitStore.ts:257-257 |
+| The composer binds Alt+Up and renders the queue/recovery affordances. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:231-723 |
+| Tests exercise withdrawal races, lost responses, CAS recovery, exact dismissal, and poll order. | "atomic Alt+Up withdrawal", "polls immediately then at the visible cadence, keeps polling past dispatch, and stops on delivered" | dashboard/src/data/submissionLifecycleClient.test.ts:194-233; dashboard/src/data/submissionLifecycleClient.test.ts:339-1127 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The lifecycle client is internal to the dashboard/daemon protocol. | — | — |
 
@@ -90,6 +90,7 @@ leaf base; closeout owns commit stamping.
 
 ## Update History
 
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 10 citation findings (5 rows); scoped recheck clean.
 - 2026-07-24T13:17:50Z — Added bounded lifecycle transport and post-dispatch watch semantics.
   Verification hash/date remain pinned to the pre-commit source stamp.
 

@@ -51,31 +51,32 @@ None.
 
 No external documentation is needed for this local setup reporting module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed for this provider setup summary behavior. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Setup finalization computes strict `ok`, recovered `ready`, setup state, failed phases, final status, result counts, and summary output. | L45-L66 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Setup state keeps `ready-with-failed-phases` distinct from `ok`, failed, and failed-unchecked states. | L69-L77 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Setup summary files are written under `logs/providers/setup/` as `last-<action>.json`, a timestamped snapshot, and `last-<action>-full.json` (full untrimmed payload), with dry-runs returning paths but writing nothing. | L117-L154 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Summary payloads omit nested settings internals and include action, readiness, enabled providers, result counts, failed phases, final status, and compacted results. | L157-L179 | [setup_reporting.py](agents-remember/mcp/src/agents_remember/providers/setup_reporting.py) |
-| Tests assert dry-run no-write behavior, compact summary files, recovered final status reporting, and omission of raw stdout. | L51-L193 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| Provider setup delegates final payload augmentation and summary persistence to this module. | L24; L562-L588 | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| Setup finalization computes strict `ok`, recovered `ready`, setup state, failed phases, final status, result counts, and summary output. | `finalize_setup_payload` | mcp/src/agents_remember/providers/setup_reporting.py:45-66 |
+| Setup state keeps `ready-with-failed-phases` distinct from `ok`, failed, and failed-unchecked states. | `ok` | mcp/src/agents_remember/providers/setup_reporting.py:69-77 |
+| Setup summary files are written under `logs/providers/setup/` as `last-<action>.json`, a timestamped snapshot, and `last-<action>-full.json` (full untrimmed payload), with dry-runs returning paths but writing nothing. | `write_setup_summary` | mcp/src/agents_remember/providers/setup_reporting.py:117-151 |
+| Summary payloads omit nested settings internals and include action, readiness, enabled providers, result counts, failed phases, final status, and compacted results. | `compact_result` | mcp/src/agents_remember/providers/setup_reporting.py:100-114 |
+| Tests assert dry-run no-write behavior, compact summary files, recovered final status reporting, and omission of raw stdout. | `ProviderSetupTests` | mcp/tests/test_provider_setup.py:25-899 |
+| Provider setup delegates final payload augmentation and summary persistence to this module. | `finalize_setup_payload` | mcp/src/agents_remember/providers/provider_setup.py:584-584 |
 
 ## Cross-Repo References
 
 No sibling repository boundary is needed to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 5 repository-internal citations for finalization, summary writing/compaction, provider-setup tests, and delegation.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The
   delegation row pointed at `provider_setup.py` L1-L66 (imports and the `ProviderSetupRequest`
   dataclass); the single call is `setup_reporting.finalize_setup_payload(...)` inside

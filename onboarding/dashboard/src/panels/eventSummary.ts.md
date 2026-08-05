@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/eventSummary.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-28T05:38+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -81,22 +81,24 @@ repository's observer event contract.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The raw observer event envelope rendered by this formatter. | — | [types/event.ts](../types/event.ts) |
-| Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. | L77-L108 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
-| Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. | — | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The Event River component consumes these summaries for rendering. | — | [EventRiver.tsx](EventRiver.tsx) |
-| Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. | L219-L239 | [EventRiver.test.tsx](EventRiver.test.tsx) |
-| `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. | L145-L158 | [eventSummary.ts](eventSummary.ts) |
-| `EventRiver` drops not-ready rows before calling `summarizeEvent`. | L43-L57 | [EventRiver.tsx](EventRiver.tsx) |
-| The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives. | L176-L200 | [EventRiver.test.tsx](EventRiver.test.tsx) |
+| The raw observer event envelope rendered by this formatter. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
+| Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. | `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:204-211; dashboard/src/data/taskIdentity.ts:213-230; dashboard/src/data/taskIdentity.ts:232-237; dashboard/src/data/taskIdentity.ts:239-244 |
+| Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. | "tool.completed", "read.packet", "lifecycle.phase-changed", "lifecycle.blocked" | mcp/src/agents_remember/observer/ambient.py:183-422 |
+| The Event River component consumes these summaries for rendering. | `eventSummaryContextReady`, `summarizeEvent` | dashboard/src/panels/EventRiver.tsx:62-73 |
+| Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. | "uses task document labels when event history no longer has a live lifecycle row" | dashboard/src/panels/EventRiver.test.tsx:312-332 |
+| `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:145-158 |
+| `EventRiver` drops not-ready rows before calling `summarizeEvent`. | `eventSummaryContextReady`, `summarizeEvent` | dashboard/src/panels/EventRiver.tsx:62-73 |
+| The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives. | "uses task document labels when event history no longer has a live lifecycle row" | dashboard/src/panels/EventRiver.test.tsx:312-332 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 14 citation claims (7 table rows, 7 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-06-28T05:38+02:00 — Task 29: added `eventSummaryContextReady`, the Event River display-shaping
   gate that suppresses lifecycle/enclosure-bound rows until lifecycle, enclosure, or task-document context

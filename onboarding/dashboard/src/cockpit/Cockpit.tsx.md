@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -187,9 +187,11 @@ No task-independent technical debt was identified during FEUI-L9R review.
 ### 2026-07-24 Curator Delta
 
 The shell now keeps rails and Engine Room mounted across view changes, passing visibility as a prop and
-memoizing persistent layers so a tab switch does not reconcile unchanged subtrees. It starts the visible
-tab's wake lock, marks a dirty serving checkout with a compact `*` label, and exposes a real client/
-serving bundle mismatch through the stamp tooltip rather than a redundant reload control.
+memoizing persistent layers so a tab switch does not reconcile unchanged subtrees. It starts the
+shell-level screen wake lock once on mount and the helper releases it while the tab is hidden
+cit:([`startScreenWakeLock`], dashboard/src/cockpit/Cockpit.tsx:390-393). It marks a dirty serving checkout
+with a compact `*` label and exposes a real client/serving bundle mismatch through the stamp tooltip
+rather than a redundant reload control.
 
 ## Docs References
 
@@ -197,35 +199,36 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
+| No relevant domain documentation was found for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `bodyGrid` `bleed` variant, the `fullBleed` derivation, and the gated `railEnter` fade on `rail--left`. | L204-L220; L437-L442; L493; L548-L554 | [Cockpit.tsx](Cockpit.tsx) |
-| The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | L63-L80; L437-L442 | [Cockpit.tsx](Cockpit.tsx) |
-| The `chatsLayer` keep-alive const and the layer div that toggles display/aria-hidden without remount. | L318-L328; L612-L621 | [Cockpit.tsx](Cockpit.tsx) |
-| The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | L1067-L1078; L1336 | [panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
-| `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | — | [Cockpit.tsx](Cockpit.tsx) |
-| The boot-time effects flag it persists to. | — | [main.tsx](../main.tsx) |
-| The honest-motion gate the rail transition + the toggle drive. | — | [panels/engine-room/useShouldAnimate.ts](../panels/engine-room/useShouldAnimate.ts) |
-| The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`. | L360-L389 | [Cockpit.tsx](Cockpit.tsx) |
-| The seat-event application + per-connection backlog gate this shell holds (`applySeatEventLine`, `createGatedSeatEventApplier`). | L95-L130 | [../data/seatEvents.ts](../data/seatEvents.ts) |
-| The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`). | L101-L122 | [../data/catalogPoll.ts](../data/catalogPoll.ts) |
-| Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
-| The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | — | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
-| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | L245-L257; L312 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
-| The sole Chats layer passes `selectedLifecycleId` / `selectedLeafKey` / `taskDocuments` / `contextMaster` into `SessionsView` while staying persistently mounted. | L617-L628 | [Cockpit.tsx](Cockpit.tsx) |
-| The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | L74-L183 | [ChatContextBar.tsx](../panels/session-cockpit/ChatContextBar.tsx) |
-| The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | — | [panels/HighlightComposer.tsx](../panels/HighlightComposer.tsx) |
-| The frontend projection type exposes `Analytics.engineProcesses`, the process-map input Cockpit now threads into `RailChat`. | L663-L678 | [types/projection.ts](../types/projection.ts) |
-| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | L206-L257 | [types/projection.ts](../types/projection.ts) |
-| The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | L524-L547 | [observer/reducer.py](../../../mcp/src/agents_remember/observer/reducer.py) |
-| `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | L38; L259-L294 | [store.ts](../data/store.ts) |
-| The `SupervisorHeartbeat` type this badge's props shape mirrors. | L701-L709 | [projection.ts](../types/projection.ts) |
+| `bodyGrid` `bleed` variant, the `fullBleed` derivation, and the gated `railEnter` fade on `rail--left`. | `bodyGrid`, `fullBleed`, `railEnter` | dashboard/src/cockpit/Cockpit.tsx:204-220; dashboard/src/cockpit/Cockpit.tsx:438-442; dashboard/src/cockpit/Cockpit.tsx:493-493 |
+| The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:63-70; dashboard/src/cockpit/Cockpit.tsx:72-80 |
+| The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:322-328 |
+| The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/SessionsView.tsx:196-1331 |
+| `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:855-882 |
+| The boot-time effects flag it persists to. | "calm-cockpit" | dashboard/src/main.tsx:15-15 |
+| The honest-motion gate the rail transition + the toggle drive. | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
+| The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:359-383 |
+| The seat-event application + per-connection backlog gate this shell holds (`applySeatEventLine`, `createGatedSeatEventApplier`). | `applySeatEventLine`, `createGatedSeatEventApplier` | dashboard/src/data/seatEvents.ts:95-104; dashboard/src/data/seatEvents.ts:113-130 |
+| The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`). | `startCatalogPollDriver` | dashboard/src/data/catalogPoll.ts:179-192 |
+| Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:22-45; dashboard/src/data/taskIdentity.ts:47-58; dashboard/src/data/taskIdentity.ts:64-70 |
+| The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/DetailPanel.tsx:408-409 |
+| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:254-519 |
+| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:625-625 |
+| The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:132-206 |
+| The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:244-696 |
+| The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:83-83 |
+| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:648-648 |
+| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | `Metrics`, `LifecycleStateCounts`, `StateCountField`, `metricsFor` | dashboard/src/types/projection.ts:282-282; dashboard/src/types/projection.ts:284-284; dashboard/src/types/projection.ts:303-307; dashboard/src/types/projection.ts:309-316 |
+| The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | `_metrics` | mcp/src/agents_remember/observer/reducer.py:527-550 |
+| `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:725-752 |
+| The `SupervisorHeartbeat` type this badge's props shape mirrors. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 
@@ -239,11 +242,14 @@ This section records the FEUI-L8 review point. That candidate subsequently lande
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: rebound the keep-alive, Analytics, and RailChat claims to their frozen implementation/type bodies; same-reviewer delta pending.
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 15 citation rows and rewrote 2 prose citations; scoped citation fixing regenerated the source ranges.
 
 - 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
   server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
@@ -257,7 +263,7 @@ cross-repository implementation source that governs its behavior.
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: corrected the top-bar counts claim, which still said
   the span renders only `tasks N running · N blocked · N tok`. It now carries
   `data-testid="task-metrics"` and appends `· {metrics.awaitingDeveloperCount} awaiting you` while that
-  count is `> 0` only (`Cockpit.tsx` L775-L795); recorded that `Metrics extends LifecycleStateCounts` and
+  count is `> 0` only (cit:([`TopBar`], dashboard/src/cockpit/Cockpit.tsx:756-804)); recorded that `Metrics extends LifecycleStateCounts` and
   that `metricsFor()` is the client mirror seeds now call, and that server-side `_metrics` expands
   `STATE_COUNT_FIELDS` instead of three hand-written `sum(...)` lines. Added the left-rail invariant the
   new in-file comment states (`AttentionQueue` + `LifecycleList` are siblings in `rail--left`, so the
@@ -271,7 +277,7 @@ cross-repository implementation source that governs its behavior.
   `applySeatEventLine` L106-L130 → L95-L130; `RailChat` `engineProcesses` L479-L485 → L245-L257; L312;
   `Analytics.engineProcesses` L395-L408 → L626-L641; and the two previously uncited rows
   (`store.supervisorHeartbeat`, `SupervisorHeartbeat`) given real ranges. Also narrowed the
-  `SessionsView.tsx` row: it composes `ChatContextBar` + `SessionRail` (L1067-L1078) and reaches
+  `SessionsView.tsx` row: it composes `ChatContextBar` + `SessionRail` (cit:([`SessionsViewImpl`], dashboard/src/panels/session-cockpit/SessionsView.tsx:196-1331)) and reaches
   `PtySurface` through `ChatsStageBody`, not directly — the file no longer names `PtySurface` at all.
 
 - 2026-07-24T13:17:50Z — Documented persistent-layer memoization, wake-lock ownership, and serving

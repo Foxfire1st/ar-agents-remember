@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ discipline that the review's F8/F16/F22/F23 findings and the height-containment 
 
 ### Logic
 
-- **Data reads** (L90-L92): pulls `list`/`preview`/`selectedKey` from `useConversationLibrary`; the
+- **Data reads**: pulls `list`/`preview`/`selectedKey` from `useConversationLibrary` (cit:([`useConversationLibrary`], dashboard/src/data/conversation-library/store.ts:86-88)); the
   loaders (`loadLibraryList`, `loadLibraryPreview`) are stable module functions from the library store.
 - **Heading focus on open** (L95-L100, §14.1): the mount effect focuses the surface's own heading
   (`tabIndex={-1}`), NEVER a result row, then loads the list once for this harness/scope; async
@@ -35,17 +35,17 @@ discipline that the review's F8/F16/F22/F23 findings and the height-containment 
 - **§4.4 return paths** (L104-L118, F16): `Escape` (when the target is not an input/textarea/
   contenteditable) calls `onBack`, which consumes the same focus-return token as the `← back to
   current chat` button (L131) and the palette `conversation.backToChat` command in `SessionsView`.
-- **List mount + `agentsNote` pass-through** (L137-L150): the list receives rows/cursor/loading/
-  error and `agentsNote={list?.agentsNote}` (L144) — a pure pass-through; the list
+- **List mount + `agentsNote` pass-through**: the list receives rows/cursor/loading/
+  error and `agentsNote={list?.agentsNote}` (cit:([`agentsNote`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:144-144)) — a pure pass-through; the list
   owns the verbatim render and the nested agent child rows.
 - **Selection → preview only** (L145): selecting a row loads its preview; it never opens/activates.
-- **`OpenConversationAction`** is mounted only for the selected row (L157-L167), so the sole resume
+- **`OpenConversationAction`** is mounted only for the selected row (cit:([`ConversationLibrarySurface`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171)), so the sole resume
   affordance appears once a row is chosen.
 
 ### Invariants And Boundaries
 
 - **Height containment is the whole point of the CSS here (F23).** The `columns`
-  flex box is `nowrap` (L61-L67): a *wrapping* flex container is multi-line, so each line's cross-size
+  flex box is cit:([`nowrap`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:61-67): a *wrapping* flex container is multi-line, so each line's cross-size
   is sized to content — the columns would then grow to full content height inside this
   `overflow:hidden` clip and the interior `overflow-y:auto` scrollers would never engage, pushing
   `Open as new chat`/`Load more` past the fold and out of pointer reach. `nowrap` keeps one flex line
@@ -69,34 +69,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The library store the surface reads and drives (list/preview/open loaders). | L12-L17 | [../../../data/conversation-library/store.ts](../../../data/conversation-library/store.ts) |
-| The native list column. | L137-L150 | [ConversationLibraryList.tsx](ConversationLibraryList.tsx) |
-| The read-only preview column in the same block grammar. | L151-L156 | [ConversationHistoryPreview.tsx](ConversationHistoryPreview.tsx) |
-| The sole resume action mounted for the selected row. | L157-L167 | [OpenConversationAction.tsx](OpenConversationAction.tsx) |
-| The harness label used for the heading. | L10 | [../../../data/conversation/format.ts](../../../data/conversation/format.ts) |
-| The stage body that renders this surface, keeps the live surface inert behind it, and suppresses the drawer while it is up. | — | [../ChatsStageBody.tsx](../ChatsStageBody.tsx) |
+| The library store the surface reads and drives (list/preview/open loaders). | `useConversationLibrary` | dashboard/src/data/conversation-library/store.ts:86-88 |
+| The native list column. | `ConversationLibraryList` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:104-205 |
+| The read-only preview column in the same block grammar. | `ConversationHistoryPreview` | dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx:28-84 |
+| The sole resume action mounted for the selected row. | `OpenConversationAction` | dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx:72-174 |
+| The harness label used for the heading. | `harnessLabel` | dashboard/src/data/conversation/format.ts:89-100 |
+| The stage body that renders this surface, keeps the live surface inert behind it, and suppresses the drawer while it is up. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-03T02:41:46+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and 5 Tier-2 prose citations with exact source paths; fixer generated all ranges.
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the one-line `agentsNote` pass-through
-  (`agentsNote={list?.agentsNote}`, L144) into the list; all line citations re-stamped against the
+  (`agentsNote={list?.agentsNote}`) (cit:([`agentsNote`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:144-144)) into the list; all line citations re-stamped against the
   post-L7 source (several pre-existing citations had also drifted and are corrected). The L7 source is
   uncommitted, so lastVerifiedCommit* stays on the prior stamp and closeout re-stamps verification.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V10 stack-threshold raise (`@container`

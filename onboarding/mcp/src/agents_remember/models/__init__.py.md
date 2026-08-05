@@ -29,11 +29,13 @@ import surface with an explicit `__all__`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Concrete response model modules live beside this initializer. | [models overview](overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| This initializer declares the public model export list. | `__all__` | mcp/src/agents_remember/models/__init__.py:87-162 |
 
 ## Update History
+
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound the public model-export claim to exact initializer anchors and normalized scoped citation evidence.
 
 - 2026-06-11T06:47+02:00 — No content impact: `DirectCloseoutPreviewResponse`/`DirectCloseoutApplyResponse` left the export surface (import block and `__all__`) with the issue #62 worktree-only closeout; the exports-only contract this sidecar describes is unchanged.
 - 2026-06-01T20:45+02:00 — Added `WorktreeAbandonResponse` to the response-model export surface for the `worktree_abandon` tool.

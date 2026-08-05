@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/dev.css`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-19T23:58+02:00                          |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -46,11 +46,13 @@ co-located CSS deliberately — it is dev tooling, not a shipped component famil
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Imported by the DEV harness router. | — | [DevApp.tsx](DevApp.tsx) |
+| Imported by the DEV harness router. | `DevApp` | dashboard/src/dev/DevApp.tsx:12-42 |
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 1 repository-reference citation (1/1 anchored and sourced; scoped citation check clean).
 
 - 2026-06-22T16:00 — slice 5o: pinned the player transport's size — `.player` switched from `min-width: 32rem`
   to a FIXED `width: 40rem` (`box-sizing: border-box`, `max-width: 92vw`) and `.player__caption` became a

@@ -28,16 +28,16 @@ archetypes + interaction kinds + stop residuals, the `L5I_*` structured-interact
 
 ### Logic
 
-- `catalogRow` (L10-L27): defaults = a running claude harness row with `seatRole: "chat"`; every
+- cit:([`catalogRow`], dashboard/src/test/fixtures/catalogRows.ts:10-27): defaults = a running claude harness row with `seatRole: "chat"`; every
   field overridable; ids auto-increment.
-- `FLEET` (L32-L172): the spec-mockup fleet — a flat command spine (architect turn-ended,
+- cit:([`FLEET`], dashboard/src/test/fixtures/catalogRows.ts:32-172): the spec-mockup fleet — a flat command spine (architect turn-ended,
   orchestrator working), a manager with a leaf claim under one master, a 04_serving leaf
   cluster (worker working with requested model/effort provenance, reviewer + curator turn-ended),
   a second cluster (05_capabilities), two landed 01_protocol seats (the completed folder), an
   awaiting-input worker under a second master with a REAL `controlPendingInteraction` (id, kind,
   prompt, choices — the R16 preview source), a failed scout (`controlState: "failed"`,
   `bridgeError` in `controlRaw`, liveness evidence), and a landed unattached pi probe.
-- **The `L6_*` pack** (L178-L255; L384-L409): `L6_CONTROLLED_WORKING` (archetype 1 —
+- **The `L6_*` pack** (the archetype/interaction rows plus the residual pair): `L6_CONTROLLED_WORKING` (archetype 1 —
   `controlState: "ready"`, working; the PTY shows the runner line-log) and `L6_LEGACY_RAW`
   (archetype 2 — `controlState: "unsupported"`, the vendor TUI in tmux; bell/OSC harvesting
   applies to THIS archetype only); the three interaction kinds — `L6_INTERACTION_CHOICES`
@@ -47,13 +47,13 @@ archetypes + interaction kinds + stop residuals, the `L5I_*` structured-interact
   `controlRaw.retireControlStopError`, the sweep's target) and
   `L6_TERMINATE_RESPONSE_WITH_RESIDUAL` (the terminate ROUTE response shape with
   `controlStopDetail` — a response fixture, not a catalog row).
-- **The `L5I_*` pack** (L257-L380): `L5I_INTERACTION_QUESTIONS` (a structured AskUserQuestion
+- **The `L5I_*` pack** (the structured interaction rows): `L5I_INTERACTION_QUESTIONS` (a structured AskUserQuestion
   interaction — two question pages, one multiSelect, each with ITS OWN option group),
   `L5I_INTERACTION_NO_LIFECYCLE` (one structured question on a seat WITHOUT a lifecycle —
   answerable via the direct session route), `L5I_INTERACTION_PERMISSION` (choices exactly
   allow/deny, direct-route `response`), and `L5I_INTERACTION_LEGACY_RUNNER` (a PRE-FIX runner row:
   no top-level `questions`, the claude-native structure at `raw.input.questions`).
-- **The `L7_*` multiplexed fixture** (L411-L446): `L7_MULTIPLEXED_INTERACTIONS` — a multiplexed seat
+- **The `L7_*` multiplexed fixture** (the multiplexed fixture): `L7_MULTIPLEXED_INTERACTIONS` — a multiplexed seat
   (review R6): the parent's SINGULAR `controlPendingInteraction` slot PLUS the
   additive plural `controlPendingInteractions` carrying the parent AND a sub-agent approval with
   its adapter-bound label (`raw: { threadId: "agent-thread-1", agentLabel: "agent agent-t" }`) —
@@ -76,35 +76,42 @@ responses without a lifecycle, and a legacy runner's nested native question shap
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The builder + the FLEET scenario. | L10-L172 | [catalogRows.ts](catalogRows.ts) |
-| The appended packs: `L6_*` archetypes/kinds/residuals, `L5I_*` structured rows, `L7_*` multiplexed seat. | L178-L409; L411-L446 | [catalogRows.ts](catalogRows.ts) |
-| The wire type the fixtures instantiate. | L24-L93 | [../../types/terminalCatalog.ts](../../types/terminalCatalog.ts) |
-| The heaviest consumers (rail-state matrix, model suites). | — | [../../panels/session-cockpit/SessionRail.test.tsx](../../panels/session-cockpit/SessionRail.test.tsx) |
-| The appended packs' consumers: lifecycle flows, interaction bar (incl. the multiplex suite), archetype surface. | — | [../../data/sessionLifecycle.test.ts](../../data/sessionLifecycle.test.ts), [../../panels/session-cockpit/InteractionBar.test.tsx](../../panels/session-cockpit/InteractionBar.test.tsx), [../../panels/session-cockpit/PtySurface.test.tsx](../../panels/session-cockpit/PtySurface.test.tsx) |
+| The shared row builder. | "export function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:10-10 |
+| The mockup-mirroring `FLEET` scenario. | "export const FLEET" | dashboard/src/test/fixtures/catalogRows.ts:32-32 |
+| The appended L6 PTY, interaction, and residual fixture pack. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:179-191 |
+| The appended L5I structured-interaction fixture pack. | `L5I_INTERACTION_QUESTIONS` | dashboard/src/test/fixtures/catalogRows.ts:260-297 |
+| The appended L7 multiplexed-interaction fixture. | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:414-446 |
+| The wire type instantiated by these fixtures. | "interface TerminalCatalogRow" | dashboard/src/types/terminalCatalog.ts:24-24 |
+| The rail-state fixture consumer. | "hydrate(FLEET" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:57-57 |
+| The lifecycle-flow consumer of the appended fixtures. | "const retired = fromTerminalSessionInfo(L6_RETIRED_WITH_STOP_ERROR)" | dashboard/src/data/sessionLifecycle.test.ts:89-89 |
+| The interaction-bar consumer, including the multiplex suite. | "const multiplexedSession" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:483-483 |
+| The PTY archetype-surface consumer. | "const controlled = () => fromTerminalSessionInfo(L6_CONTROLLED_WORKING)" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:39-39 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
 ## Update History
 
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 10 repository-reference citations and normalized 2 prose citations (10/10 anchored and sourced; scoped citation check clean).
+
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: documented the appended
   `L7_MULTIPLEXED_INTERACTIONS` seat (parent singular slot + plural list carrying the parent AND a
   labeled sub-agent approval) and the previously undocumented L5I structured pack; corrected the
-  stale "L6 pack L173-L282" citation (the L6 rows are L178-L255 with the residuals at L384-L409,
-  the L5I rows interleaved at L257-L380). The L7 code is uncommitted in the code worktree;
+  stale L6 pack citation (the L6 rows include the two archetypes, interaction kinds, and residuals,
+  with the L5I rows interleaved). The L7 code is uncommitted in the code worktree;
   closeout re-stamps verification.
 
 - 2026-07-24T13:17:50Z — Added interaction-routing fixture coverage. Verification hash/date remain

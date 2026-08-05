@@ -45,27 +45,29 @@ No task-independent technical debt was identified during FEUI-L9R review.
 No relevant documentation was found after checking the configured sources; current claims are
 proven by repository source and build configuration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation is configured for this ambient declaration. | Source discovery checked | — |
+| No relevant external or domain documentation is configured for this ambient declaration. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Consumes the declared build constant. | L1-L10 | [data/buildIdentity.ts](data/buildIdentity.ts) |
-| Supplies the build-time value. | L65 | [vite.config.ts](../vite.config.ts) |
+| Consumes the declared build constant. | `CLIENT_DASHBOARD_BUILD` | dashboard/src/data/buildIdentity.ts:4-4 |
+| Supplies the build-time value. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local ambient
 declaration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 2 citation items; scoped citation check now passes.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: created the missing one-to-one card for the modified ambient
   declaration; verification metadata stays blank until the code candidate is committed and closeout

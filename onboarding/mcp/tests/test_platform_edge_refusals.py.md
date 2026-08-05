@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_edge_refusals.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -60,13 +60,18 @@ naming the field the caller left out. Not "it ran".
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Provider lifecycle, backends and watchers. | [providers/](agents-remember/mcp/src/agents_remember/providers/) |
-| Task-document edit operations and their required objects. | [task_document.py](agents-remember/mcp/src/agents_remember/task_document.py) |
-| The sibling long-tail refusal collection. | [test_platform_long_tail.py](agents-remember/mcp/tests/test_platform_long_tail.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Provider lifecycle, backends and watchers. | "def cgc_backend_start("; "def cgc_watcher_running("; "def watchers_run(" | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-390; mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:89-89; mcp/src/agents_remember/providers/lifecycle/watchers.py:186-186 |
+| Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_doc_tools.py:135-135; mcp/src/agents_remember/tasks/document.py:113-113 |
+| The sibling long-tail refusal collection. | "class RequestedHarnessTests(unittest.TestCase):"; "class OpenTerminalRefusalTests(unittest.TestCase):" | mcp/tests/test_platform_long_tail.py:374-374; mcp/tests/test_platform_long_tail.py:408-408 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: regenerated the task-doc row
+  ranges via the scoped fixer; exact non-fixing check returns zero findings.
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 3 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   platform-refusal suite. Verification metadata is pinned to the leaf's reformat commit

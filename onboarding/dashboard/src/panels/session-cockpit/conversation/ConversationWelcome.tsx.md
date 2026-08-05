@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,31 +41,19 @@ honest when the process is disconnected or no current process state exists.
 
 None recorded.
 
-## Docs References
-
-No Domain Documentation entries are configured in `system/sources.md`.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
-
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component gates its welcome state on `processState`. | L1-L206 | [ConversationWelcome.tsx](ConversationWelcome.tsx) |
-| The surface supplies harness and current process state only for an empty live timeline. | L202-L226 | [ConversationSurface.tsx](ConversationSurface.tsx) |
-| Focused cases cover each readiness wording. | L9-L61 | [ConversationWelcome.test.tsx](ConversationWelcome.test.tsx) |
-
-## Cross-Repo References
-
-No cross-repository boundary is owned here.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No cross-repository evidence applies. | — | — |
+| The component gates its welcome state on optional `processState`, selecting `UNKNOWN_LINK` when it is undefined and otherwise `LINK_STATES[processState]`. | `processState`; `UNKNOWN_LINK`; `LINK_STATES`; "processState === undefined"; "LINK_STATES[processState]" | dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:144-150; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:152-152; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:160-160; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:162-162 |
+| The surface supplies harness and current process state only for an empty live timeline. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| Focused cases cover each readiness wording. | "never claims the link is ready when the process is %s"; "mirrors the uncertainty when the projection has applied no status frame yet"; "says the link is ready — with the mint live dot — only for a connected process" | dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx:31-41; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx:43-51; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx:53-60 |
 
 ## Update History
+
+- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the process-state gate through its operative selection and regenerated the final range with the scoped fixer.
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
 
 - 2026-07-24T13:17:17Z — Curator: created the honest empty-conversation welcome sidecar. It is
   uncommitted, so verification fields are intentionally blank until closeout stamps the code commit.

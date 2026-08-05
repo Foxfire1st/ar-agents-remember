@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/DetailPanel.test.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:05+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 Vitest + Testing Library coverage for the `DetailPanel` gate surface. Task 11 asserts the durable gate
-renders the shared Respond control with its full request packet; L8 asserts a proto-gate/ask-only
+renders the shared Respond control with its full request packet; the proto-gate/ask-only regression asserts
 attention detail no longer renders the obsolete task-local response box. Slice 6g adds master-series
 navigation coverage: the master overview + a sub-task index pinned above the description (with an
 in-section copy), drill-in into a slice reader + return via the header breadcrumb, GFM markdown (a
@@ -28,8 +28,9 @@ folder-keyed `analytics.series` selection, selected root-task lifecycle mapping 
 `taskId`/`taskName`, structured creation-order sorting, and task-specific leaf labels. The corrected
 Task 17 assertions expect the child task document `id` in authored leaf labels while keeping creation
 time as the row-order source; parent sub-task `number` is fallback data only. The progress-count
-regression covers a leaf whose backend projection reports
-`40/42` nested progress but whose visible top-level implementation-step summary is `6/7`. A lifecycle
+regression covers a leaf whose backend projection reports 46/49 while its visible top-level
+implementation-step summary is 6/7; both rendered progress surfaces must preserve the projected
+counters. A lifecycle
 identity regression covers both live leaf shapes: a leaf lifecycle that carries parent `taskName`
 metadata but no projected task doc must not render the parent master, and a leaf lifecycle with its own
 projected `TaskDocNode` must render that leaf body. Task 17 follow-up coverage also proves unbound
@@ -44,18 +45,18 @@ must render both the `series tokens` label and formatted token value. Task 33: e
 fixture seeded here — the inline objects and the `seedProjection` builder — now sets the required
 top-level `activeWorktreeGroups: []`, so the seeded snapshots satisfy the current projection contract
 (the field is required because the server always serves it); no DetailPanel assertion depends on its
-value. **L4a** adds doc-reader change-set bar coverage: rendering a leaf doc reader with `onOpenChangeSet`
+value. The doc-reader change-set bar coverage adds rendering a leaf doc reader with `onOpenChangeSet`
 shows a single **committed** button whose click opens the leaf target `{repo, master, leaf, mode}`; a
 master doc reader shows a **series** button; a leaf whose enclosure is live (seeded `enclosures` +
 `activeWorktreeGroups`) shows both **committed** + **working**; and with no `onOpenChangeSet` wired the bar
-is omitted entirely. **L5 fix 1** adds a `DetailPanel viewed-leaf reporting` describe block that pins the
+is omitted entirely. The viewed-leaf reporting coverage adds a `DetailPanel viewed-leaf reporting` describe block that pins the
 new `onViewLeaf` prop: a master overview reports `undefined`, drilling into a sub-task reports the leaf's
 qualified id (`repo-a/series/1`, not the master), the breadcrumb back clears it again, and a
 directly-opened leaf doc reports its own `repo/master/leaf-id`.
 
 ## Code Commentary
 
-### 260707-HFX2-L13 On-Demand Task Bodies
+### 260707-HFX2 On-Demand Task Bodies
 
 The shared fetch doubles used by the detail-panel and notes integrations now recognize
 `/api/task-document?path=...` and return the matching projected fixture as a full document before
@@ -63,7 +64,7 @@ falling through to change-set or notes responses. This is test-harness plumbing 
 on-demand body request; it keeps all pre-existing interaction assertions meaningful without making a
 real network request.
 
-### 260707-HFX2-L16 R7 Reader Completion
+### 260707-HFX2 R7 Reader Completion
 
 The on-demand reader tests now distinguish the bounded summary from a fetched full body. One async
 case first observes the summary, then verifies fetched objective, requirements, decision, and
@@ -72,7 +73,7 @@ waits for the explicit unavailable-body message, and proves the summary remains 
 step-label assertions were corrected from two copies to one after removal of the duplicate Progress
 section.
 
-### 260712-TRH-L1 Body-First Reader Regression
+### 260712-TRH Body-First Reader Regression
 
 A lifecycle-backed reader test holds `/api/task-document` unresolved while an active enclosure,
 change-set handler, and notes-capable reader are present. It proves the summary and loading status are
@@ -85,10 +86,10 @@ change. Existing change-set cases await hydration before asserting their buttons
 
 ### Logic
 
-Since L11 the local `enclosure(...)` fixture defaults the REQUIRED `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true` (a live worktree) — DetailPanel itself does not filter on existence, so no assertion changed.
+Since the enclosure-fixture update, the local `enclosure(...)` fixture defaults the REQUIRED `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true` (a live worktree) — DetailPanel itself does not filter on existence, so no assertion changed.
 
-Seeds a `GALLERY` fixture into `dashboardStore` (`applySnapshot`) and renders `<DetailPanel selectedId=…>`.
-Task 11/L8 gate cases: the `gate-review` scene renders `gate-review` + `gate-respond-open`, no old
+Seeds a `GALLERY` fixture into `dashboardStore` (`applySnapshot`) and renders the selected detail panel.
+The gate cases: the `gate-review` scene renders `gate-review` + `gate-respond-open`, no old
 decision-verb buttons, and the opened dialog contains the Task 19 human-readable request preview
 (`Changed paths`) instead of the raw JSON key; the `blocked` scene (proto-gate `ask`, no durable gate)
 renders the task detail but no `gate-review`, no `gate-banner`, and no `gate-respond-open`, proving the
@@ -99,7 +100,7 @@ helper (a folder-keyed `SeriesNode` master in `analytics.series`, a `subTasks` i
 `createdAt`, and one authored slice in `analytics.taskDocuments`). They assert:
 the index renders pinned above the description (`compareDocumentPosition`) with the in-section copy
 kept; clicking a sub-task opens its `TaskReader` and the header breadcrumb returns; a GFM table renders
-as a real `<table>` (not raw pipes); and
+as a real table (not raw pipes); and
 `seedSeriesOrdering` proves rows sort by `createdAt` while rendering task-specific `01.` / `99.` numbers
 instead of generated `1.` / `2.` counters. That ordering assertion now exercises `seriesAsMasterDoc`
 rather than `SubTaskIndex` — the sort moved to the series adapter, and `seedSeriesOrdering` seeds a
@@ -123,8 +124,9 @@ lifecycle: one moves the only slice doc to another lifecycle and expects the no-
 than master content, and one keeps a direct `TaskDocNode` for the selected lifecycle and expects the
 leaf body. Together they document that `taskName` is parent/root identity metadata for leaf lifecycles,
 not their content selector.
-`nestedProgressSteps` simulates the inflated nested-progress case, and the corresponding regression
-asserts that the master sub-task row and opened reader progress fill both show `6/7`, never `40/42`.
+`nestedProgressSteps` deliberately gives the visible top-level list a 6/7 summary while the
+projection reports 46/49; the corresponding regression asserts that the master sub-task row and
+opened reader progress fill both show 46/49 and reject the locally derivable 6/7.
 `seedTaskDocuments` builds document-only projections with no lifecycles/enclosures, proving planning
 docs remain readable before worktree creation. `seedProjection` also supports a lifecycle-bound selected
 master regression: selected master `docs` may contain only the master itself, so the component must use
@@ -141,25 +143,25 @@ leaf's real `subTask` document. The test asserts that the detail panel renders t
 objective, step, and freeform section while rejecting parent-doc text, raw lifecycle id text, and
 `series-contract.md` schema strings. The paired backlink test uses the same fixture, clicks
 `master-parent-link`, and expects navigation to the parent master document's typed `taskdoc:` key.
-The L5 viewed-leaf cases pass a `vi.fn()` as `onViewLeaf` and assert its **last** call: `series` →
+The viewed-leaf cases pass a `vi.fn()` as `onViewLeaf` and assert its **last** call: `series` →
 `undefined` while the master overview shows, `subtask-open-1` → `repo-a/series/1`, `series-breadcrumb` →
-`undefined` again; the directly-opened-leaf case seeds a leaf `taskDoc` (`id: "260628-L5"`, repo
+`undefined` again; the directly-opened-leaf case seeds a leaf `taskDoc` (`id: "260628-leaf"`, repo
 `agents-remember`, an operations-integration docPath) and asserts the reported key is the doc's
 `qualifiedLeafKey`.
 
-The L9 series-notes block (`stubNotes` — a per-URL fetch stub answering `/api/notes/list` and
+The series-notes block (`stubNotes` — a per-URL fetch stub answering `/api/notes/list` and
 `/api/notes/read`, everything else a bare ok) proves the DetailPanel wiring: a leaf reader fetches
 the notes list for the doc's OWN series (the exact
 `/api/notes/list?repo=agents-remember&master=260703_agent-orchestration` URL is asserted, pinning
-the repo/master derivation from the doc node), and — since L17 — a notes-file reference renders as
+the repo/master derivation from the doc node), and since the notes-file update a notes-file reference renders as
 `note-ref-1` whose click fires the `onOpenNotes` callback with `{repo, master, path}` (the
-notes-reader takeover; no inline `note-view` remains) while a code-path reference gets no link
+  notes-reader takeover; no inline `note-view` remains) while a code-path reference gets no link
 (`note-ref-2` absent), and a master overview shows the "Series notes" list.
 
 ### Invariants And Boundaries
 
 Component-level (jsdom) — no real backend. Reuses the
-`GALLERY` bench fixtures (`gate-review`/`blocked`) so the test data matches the dev bench.
+`GALLERY` bench fixtures so the test data matches the dev bench.
 The promoted-leaf case is a component contract only: it proves the panel does not use contract text as
 readable task content, but it does not exercise the Python reader that populates `analytics.taskDocuments`.
 The planning-doc cases are also component-level; observer reader tests prove projection of unbound and
@@ -179,34 +181,48 @@ state fails these seeds at compile time; no assertion in this file reads `metric
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The body-first cases pin request ordering, complete-field rendering, unavailable fallback, retained summary content, one step copy, and revision cache invalidation. | L793-L1034 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The hook records body availability and merges absent arrays; the component delays ancillary mounts and renders loading/fallback messages. | L1-L72; L380-L388; L670-L687; L1044-L1098; L1296-L1382 | [useTaskDocumentBody.ts](../data/useTaskDocumentBody.ts); [DetailPanel.tsx](DetailPanel.tsx) |
-| The drawer under test resolves `selectedSeries` from `analytics.series` for root-task lifecycles only, sorts a series' rows in `seriesAsMasterDoc`, renders them unsorted in `SubTaskIndex`, and derives progress with `topLevelStepProgress`. | L369-L379; L932-L935; L954-L969; L1157-L1175 | [DetailPanel.tsx](DetailPanel.tsx) |
-| `SubTaskIndex` reads the cross-link as `"linkedLifecycleId" in ref`, so only a task-doc master's rows reach the `→` branch. | L1176-L1195 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The `taskDoc`/`seriesNode`/`enclosure` factories, the `seedSeries` helper, and `nestedProgressSteps` (top-level progress deliberately differing from backend `stepsDone/stepsTotal`). | L22-L61; L62-L193 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| `seedSeriesOrdering` seeds a `SeriesNode` whose rows carry `createdAt`, so the ordering assertion exercises `seriesAsMasterDoc`. | L194-L240 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The ordering assertion pins creation-time placement while expecting child task-document id labels and rejecting generated local counters. | L721-L729 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The cross-master jump now seeds a `kind: "master"` task doc carrying `linkedLifecycleId`, selected by its `taskdoc:` key. | L667-L700 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The top-level progress regression rejects a `40/42` nested count in both the master row and opened leaf reader, expecting `6/7`. | L731-L750 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The aggregate-token regression pins the master reader's `series tokens` display from `seriesTokenTotal`. | L712-L720 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The typed taskdoc selection regressions cover unbound planning leaf/master docs, lifecycle-bound master sibling-pool navigation, static missing-leaf rows, and structured step/example id display. | L445-L634 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The root-task lifecycle regression proves enclosure `taskId`/`taskName` selects the folder-keyed series master for the master row. | L751-L764 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The missing-doc leaf lifecycle regression proves parent `taskName` alone does not render the master for leaf rows. | L765-L778 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The direct leaf lifecycle regression proves a projected leaf `TaskDocNode` wins over parent `taskName` mapping, preventing leaf sidebar rows from rendering the master. | L779-L792 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| `seedPromotedLeaf` carries parent master/series metadata, and the backlink regression proves `master-parent-link` targets the parent master task document. | L292-L394; L1057-L1071 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| `findParentTaskMatch`/`parentTaskLinkForDoc` resolve the parent link from projected series sub-task refs. | L43-L90 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
-| `TaskSubTaskRefNode` vs `SeriesSubTaskNode` — which fixture row may carry `linkedLifecycleId` and which may carry `createdAt`. | L326-L354 | [types/projection.ts](../types/projection.ts) |
-| `taskLabel`/`taskDocumentLabel` — the helpers that separate visible lifecycle labels from direct task-doc filtering. | L213-L244 | [taskIdentity.ts](../data/taskIdentity.ts) |
-| The gate-review test opens the shared responder and expects the rendered preview label `Changed paths`. | L424-L433 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The ask-only attention detail regression asserts the obsolete task-local response box is absent when no durable gate exists. | L434-L442 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| The shared responder rendered by the gate cases. | L217-L460 | [GateResponder.tsx](GateResponder.tsx) |
-| The `blocked` and `gate-review` fixtures seeded. | L169-L205; L441-L488 | [dev/fixtures.ts](../dev/fixtures.ts) |
+| The body-first cases pin request ordering, complete-field rendering, unavailable fallback, retained summary content, one step copy, and revision cache invalidation. | "loads the complete task body before mounting reader ancillary requests"; "renders the complete on-demand task-document body while retaining its summary"; "shows the available summary when the on-demand task-document body is absent"; "reuses an unchanged task body and refetches when its revision changes" | dashboard/src/panels/DetailPanel.test.tsx:855-956; dashboard/src/panels/DetailPanel.test.tsx:958-1025; dashboard/src/panels/DetailPanel.test.tsx:1027-1049; dashboard/src/panels/DetailPanel.test.tsx:1051-1095 |
+| The hook records body availability and merges absent arrays; the component delays ancillary mounts and renders loading/fallback messages. | `useTaskDocumentBody`; `TaskReader`; `TaskBodyNotice` | dashboard/src/data/useTaskDocumentBody.ts:29-74; dashboard/src/panels/DetailPanel.tsx:350-395; dashboard/src/panels/DetailPanel.tsx:1303-1388; dashboard/src/panels/DetailPanel.tsx:1390-1404 |
+| The drawer selects the series for direct or root-task selection. | `selectedSeries` | dashboard/src/panels/DetailPanel.tsx:380-386 |
+| `seriesAsMasterDoc` sorts a series' rows before the index renders them in received order. | `seriesAsMasterDoc`; `SubTaskIndex` | dashboard/src/panels/DetailPanel.tsx:961-976; dashboard/src/panels/DetailPanel.tsx:1148-1230 |
+| Projected step progress is declared for the drawer. | `taskStepProgress` | dashboard/src/panels/DetailPanel.tsx:939-942 |
+| The index forwards projected step progress through its received rows. | `SubTaskIndex` | dashboard/src/panels/DetailPanel.tsx:1148-1230 |
+| The reader consumes projected step progress for the opened document. | `TaskReader` | dashboard/src/panels/DetailPanel.tsx:1303-1388 |
+| `SubTaskIndex` reads the `linkedLifecycleId` property from each row, so only a task-doc master's rows reach the cross-link branch. | `SubTaskIndex`; `linkedLifecycleId` | dashboard/src/panels/DetailPanel.tsx:1148-1230 |
+| The `taskDoc`/`seriesNode`/`enclosure` factories, the `seedSeries` helper, and `nestedProgressSteps` (top-level progress deliberately differing from backend `stepsDone`/`stepsTotal`). | `taskDoc`; `seriesNode`; `enclosure`; `seedSeries`; `nestedProgressSteps`; `stepsDone`; `stepsTotal` | dashboard/src/panels/DetailPanel.test.tsx:22-45; dashboard/src/panels/DetailPanel.test.tsx:47-63; dashboard/src/panels/DetailPanel.test.tsx:65-83; dashboard/src/panels/DetailPanel.test.tsx:86-185; dashboard/src/panels/DetailPanel.test.tsx:187-198 |
+| `seedSeriesOrdering` seeds a `SeriesNode` whose rows carry `createdAt`, so the ordering assertion exercises `seriesAsMasterDoc`. | `seedSeriesOrdering` | dashboard/src/panels/DetailPanel.test.tsx:200-248 |
+| The ordering assertion pins creation-time placement while expecting child task-document id labels and rejecting generated local counters. | "orders master leaves by creation time and displays task-specific numbers" | dashboard/src/panels/DetailPanel.test.tsx:783-791 |
+| The cross-master fixture carries a master task document with the `linkedLifecycleId` metadata. | `linkedLifecycleId` | dashboard/src/panels/DetailPanel.test.tsx:734-751 |
+| The cross-master fixture is selected by its `taskdoc` key. | `taskdoc` | dashboard/src/panels/DetailPanel.test.tsx:756-756 |
+| The projected-progress regression expects 46/49 in both the master row and opened leaf reader and rejects the locally derivable 6/7. | "summarizes task progress with every declared parent and nested step" | dashboard/src/panels/DetailPanel.test.tsx:793-811 |
+| The aggregate-token regression pins the master reader's `series tokens` display from `seriesTokenTotal`. | `seriesTokenTotal`; "renders aggregate series tokens on the master reader" | dashboard/src/panels/DetailPanel.tsx:959-959; dashboard/src/panels/DetailPanel.test.tsx:107-112; dashboard/src/panels/DetailPanel.test.tsx:774-781 |
+| The typed taskdoc selection regressions cover unbound planning leaf/master docs, lifecycle-bound master sibling-pool navigation, static missing-leaf rows, and structured step/example id display. | "renders an unbound planning leaf task document by typed taskdoc selection"; "renders an unbound master task document by kind"; "opens authored master leaves from the full projected pool when the master is lifecycle-bound"; "keeps master rows static when the referenced leaf has no authored task document"; "renders structured ids with step and code example titles" | dashboard/src/panels/DetailPanel.test.tsx:460-477; dashboard/src/panels/DetailPanel.test.tsx:479-513; dashboard/src/panels/DetailPanel.test.tsx:515-580; dashboard/src/panels/DetailPanel.test.tsx:582-607; dashboard/src/panels/DetailPanel.test.tsx:609-651 |
+| The root-task lifecycle regression proves enclosure `taskId`/`taskName` selects the folder-keyed series master for the master row. | "renders master content when a selected task-id lifecycle maps to the series task name" | dashboard/src/panels/DetailPanel.test.tsx:813-825 |
+| The missing-doc leaf lifecycle regression proves parent `taskName` alone does not render the master for leaf rows. | "does not use parent taskName as content for a leaf lifecycle without a projected doc" | dashboard/src/panels/DetailPanel.test.tsx:827-839 |
+| The direct leaf lifecycle regression proves a projected leaf `TaskDocNode` wins over parent `taskName` mapping, preventing leaf sidebar rows from rendering the master. | "keeps a direct leaf lifecycle document ahead of the parent series mapping" | dashboard/src/panels/DetailPanel.test.tsx:841-853 |
+| `seedPromotedLeaf` carries the parent master/series metadata. | `seedPromotedLeaf` | dashboard/src/panels/DetailPanel.test.tsx:304-399 |
+| The backlink regression clicks "master-parent-link" and expects navigation to the parent master task document. | "links an enclosure-opened leaf back to its parent task document" | dashboard/src/panels/DetailPanel.test.tsx:1120-1132 |
+| `findParentTaskMatch`/`parentTaskLinkForDoc` resolve the parent link from projected series sub-task refs. | `findParentTaskMatch`; `parentTaskLinkForDoc` | dashboard/src/data/taskHierarchy.ts:43-51; dashboard/src/data/taskHierarchy.ts:68-82 |
+| `SeriesSubTaskNode` vs `TaskSubTaskRefNode` — which fixture row may carry `createdAt` and which may carry `linkedLifecycleId`. | `SeriesSubTaskNode`; `TaskSubTaskRefNode` | dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:494-501 |
+| `taskLabel`/`taskDocumentLabel` — the helpers that separate visible lifecycle labels from direct task-doc filtering. | `taskLabel`; `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:213-230; dashboard/src/data/taskIdentity.ts:239-244 |
+| The gate-review test opens the shared responder and expects the rendered preview label `Changed paths`. | "renders the gate respond drawer with the full request packet" | dashboard/src/panels/DetailPanel.test.tsx:439-447 |
+| The ask-only attention detail regression asserts the obsolete task-local response box is absent when no durable gate exists. | "does not render the obsolete task-local response box for ask-only attention details" | dashboard/src/panels/DetailPanel.test.tsx:449-456 |
+| The blocked fixture is the ask-only scene without a durable gate. | "blocked" | dashboard/src/dev/fixtures.ts:171-206 |
+| The gate-review fixture supplies the durable gate scene. | "gate-review" | dashboard/src/dev/fixtures.ts:443-480 |
+| The shared responder rendered by the gate cases. | `GateResponder`; "gate-respond-open" | dashboard/src/panels/GateResponder.tsx:217-539 |
 
 ## Update History
 
-- 2026-08-01T10:05+02:00 — 260731-EFA-L4 curator: corrected a body claim that had become false.
+- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: audited whole-claim coverage, split selection/progress and fixture owners, and retained the generated seed/backlink ranges at 304-399 and 1120-1132 pending the final scoped fixer gate.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected the progress regression to its
+current authority: projected 46/49 wins on both surfaces and locally derivable 6/7 is rejected.
+  Row 188's still-true fixture mismatch description is unchanged; the current test binding is
+  retained for the final scoped citation fixer.
+
+- 2026-08-01T10:05+02:00 — 260731-EFA curator: corrected a body claim that had become false.
   `seedSeries` no longer carries `linkedLifecycleId` on its `SeriesSubTaskNode` rows — the server never
   stamps one there — so the cross-master `→` test builds its own `kind: "master"` `taskDoc`, seeds it
   with `seedTaskDocuments`, and selects it by `taskdoc:` key. Recorded that the ordering assertion still
@@ -214,53 +230,51 @@ state fails these seeds at compile time; no assertion in this file reads `metric
   (verified `seedSeriesOrdering` seeds `analytics.series`, so the series adapter is the sort site), and
   that the three master-doc fixtures dropped `subTasks[].createdAt`, which `TaskSubTaskRefNode` does not
   declare. Added the fixture-honesty and `metricsFor` boundaries. Repaired fourteen citations against
-  the current sources; the drifted ones were mostly wholesale, e.g. the ordering assertion L671-L678 →
-  L721-L729, the top-level-progress regression L660-L676 → L731-L750, the aggregate-token regression
-  L676-L683 → L712-L720, the three lifecycle-identity regressions L678-L690/L692-L704/L706-L718 →
-  L751-L764/L765-L778/L779-L792, the backlink test L766-L778 → L1057-L1071, `GateResponder` L1-L124 →
-  L217-L460 (the old range held only the styles; `GateResponder` is at L217 and `gate-respond-open` at
-  L404), and the fixtures row L151-L290, which covered `blocked` but not `gate-review` (L442) at all.
+  the current sources; the drifted references were mostly wholesale range moves across the ordering,
+  progress, lifecycle-identity, backlink, and `GateResponder` claims (the old responder range held only
+  styles). The dated entry preserves this historical progress correction without reopening its completed
+  gate and fixture citation repair.
 
-- 2026-07-12T12:07+02:00 — 260712-TRH-L1: added the deferred-body request-order regression, expanded
+- 2026-07-12T12:07+02:00 — 260712-TRH: added the deferred-body request-order regression, expanded
   complete-content coverage to every reader field class, pinned path/revision cache behavior, and made
   affected change-set assertions await body hydration. Verification metadata stays pinned until
   closeout stamps the code commit.
 
-- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 R7: added async full-body merge and 404 summary-fallback
+- 2026-07-10T13:41+02:00 — 260707-HFX2 R7: added async full-body merge and 404 summary-fallback
   regressions, and changed step assertions to require exactly one Implementation steps copy.
-  Verification metadata stays pinned until closeout stamps the eventual L16 code commit.
+  Verification metadata stays pinned until closeout stamps the eventual code commit.
 
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13: taught the shared fetch stubs to serve full task
+- 2026-07-10T01:14+02:00 — 260707-HFX2: taught the shared fetch stubs to serve full task
   documents for the on-demand reader path while preserving change-set and notes API behavior.
-  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
+  Verification metadata remains pinned until closeout stamps the eventual code commit.
 
-- 2026-07-07T14:00+02:00 — agent-orchestration L17: the "series notes" test's resolved-reference click now
+- 2026-07-07T14:00+02:00 — agent-orchestration follow-up: the "series notes" test's resolved-reference click now
   asserts the `onOpenNotes` callback fires with `{repo, master, path}` (the reader takeover opens) instead
   of an inline `note-view`; the master-overview list test is unchanged. (Also normalized the malformed
-  `lastUpdated` frontmatter value.) Verification metadata pinned until closeout stamps the L17 commit.
-- 2026-07-06T10:45+02:00 — L11 body note: the enclosure fixture carries the required existence flags (default true); no assertion change. Verification metadata pinned until closeout stamps the L11 commit.
-- 2026-07-06T03:05+02:00 — 260703-L11: the local `enclosure(...)` fixture now defaults the new required
+  `lastUpdated` frontmatter value.) Verification metadata pinned until closeout stamps the eventual commit.
+- 2026-07-06T10:45+02:00 — Body note: the enclosure fixture carries the required existence flags (default true); no assertion change. Verification metadata pinned until closeout stamps the eventual commit.
+- 2026-07-06T03:05+02:00 — Projection-contract fixture update: the local `enclosure(...)` fixture now defaults the new required
   `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true` (a live worktree), matching
   the projection contract; no assertion change — DetailPanel does not filter on existence. Verification
-  metadata pinned until closeout stamps the L11 commit.
-- 2026-07-06T02:40+02:00 — agent-orchestration L9: added the `DetailPanel series notes` describe
+  metadata pinned until closeout stamps the eventual commit.
+- 2026-07-06T02:40+02:00 — agent-orchestration follow-up: added the `DetailPanel series notes` describe
   block (per-URL `stubNotes` fetch stub) pinning the notes-list wiring on a leaf reader (exact
   list URL → the doc's own repo/master), reference-link resolution (notes file → openable
   `note-ref-1`; code path → plain text), and the master-overview "Series notes" section.
-  Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-02T16:18+02:00 — L8: changed the ask-only attention detail regression to assert no
+  Verification metadata pinned until closeout stamps the eventual commit.
+- 2026-07-02T16:18+02:00 — Ask-only attention-detail follow-up: changed the ask-only attention detail regression to assert no
   `GateResponder`/`gate-banner`/`gate-respond-open` is rendered when only `activeLifecycle.ask` exists,
-  while durable gate coverage remains intact. Verification metadata pinned until closeout stamps the L8
+  while durable gate coverage remains intact. Verification metadata pinned until closeout stamps the
   commit.
-- 2026-06-30T00:00:00+02:00 — L5 follow-up: added a `DetailPanel viewed-leaf reporting` describe block pinning the new
+- 2026-06-30T00:00:00+02:00 — Viewed-leaf follow-up: added a `DetailPanel viewed-leaf reporting` describe block pinning the new
   `onViewLeaf` prop — a master overview reports `undefined`, drilling a sub-task reports the leaf's
   qualified id (not the master), the breadcrumb clears it, and a directly-opened leaf doc reports its own
-  `repo/master/leaf-id`. Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-06-29T23:00+02:00 — L4a: added a `DetailPanel doc-reader change-set bar` describe block (a
+  `repo/master/leaf-id`. Verification metadata pinned until closeout stamps the eventual commit.
+- 2026-06-29T23:00+02:00 — Doc-reader change-set-bar follow-up: added a `DetailPanel doc-reader change-set bar` describe block (a
   `stubCounters` fetch stub; `afterEach` now also `vi.unstubAllGlobals()`) — committed button + leaf target
   on a leaf reader, series button on a master reader, working button only when the leaf's enclosure is
   live, and the bar omitted with no `onOpenChangeSet`. Verification metadata pinned until closeout stamps
-  the L4a commit.
+  the eventual commit.
 - 2026-06-28T07:30+02:00 — Task 33: the inline/`seedProjection` `WorkspaceProjection` fixtures gained
   `activeWorktreeGroups: []` for the new required projection field; no behavioural assertion change.
   Verification metadata pinned until closeout stamps the code commit.
@@ -297,10 +311,11 @@ state fails these seeds at compile time; no assertion in this file reads `metric
   `taskName` metadata case on a selected leaf lifecycle with its own direct task doc, proving the leaf
   body renders and the master body does not. Verification metadata pinned until closeout stamps the
   follow-up code commit.
-- 2026-06-24T13:59+02:00 — Task 17 progress-count regression: `seedSeries` can override the slice doc,
-  `nestedProgressSteps` models `40/42` nested backend progress over seven top-level steps, and the test
-  now proves the master row plus reader progress fill show `6/7`. Verification metadata pinned until
-  closeout stamps the follow-up code commit.
+- 2026-06-24T13:59+02:00 — Task 17 progress-count regression: the then-current `seedSeries` fixture
+  modeled 40/42 nested backend progress over seven top-level steps and asserted 6/7 on both surfaces.
+  The later S18-T3 correction supersedes those expected values with the projected 46/49 behavior;
+  this entry remains historical provenance. Verification metadata pinned until closeout stamps the
+  follow-up code commit.
 - 2026-06-24T12:53+02:00 — Master selection follow-up: `seedSeries` can attach a selected task-id
   enclosure, and a regression now proves that `DetailPanel` maps through enclosure `taskName` to render
   master content instead of the no-doc fallback. Verification metadata pinned until closeout stamps the

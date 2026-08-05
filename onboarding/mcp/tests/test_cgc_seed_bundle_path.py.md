@@ -79,27 +79,28 @@ used for path resolution are always the same.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `_seed_target_runtime_root` and `_cgc_settings_path` live in the CGC seed module. | [seed.py](agents-remember/mcp/src/agents_remember/providers/cgc/seed.py) |
-| `cgc_extra_args` uses `_cgc_settings_path` with the same priority chain verified here. | [seed.py](agents-remember/mcp/src/agents_remember/providers/cgc/seed.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `_seed_target_runtime_root` and `_cgc_settings_path` live in the CGC seed module. | "The settings path cgc runs against (the isolated worktree settings for a worktree seed)."; "Runtime root the rewritten target bundle is written under." | mcp/src/agents_remember/providers/cgc/seed.py:54-54; mcp/src/agents_remember/providers/cgc/seed.py:147-147 |
+| `cgc_extra_args` uses `_cgc_settings_path` with the same priority chain verified here. | `cgc_extra_args`; "cgc_from_settings" | mcp/src/agents_remember/providers/cgc/seed.py:56-56; mcp/src/agents_remember/providers/cgc/seed.py:62-64 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T03:10:44+02:00 — W3-B04 curator: curated 2 table citations (2 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_cgc_seed_bundle_path.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 4 line(s) with no token change whatsoever. Checked

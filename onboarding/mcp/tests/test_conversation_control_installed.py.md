@@ -27,8 +27,8 @@ routes — never through scenario fixtures.
 
 ### Logic
 
-`_LiveHost` (L83), `_ControlledEntry` (L89), and `_LiveHarness` (L97) build the live seam against the
-installed harnesses. `CodexInstalledControlApiTests` (L200): typed submit → live turn id →
+cit:([`_LiveHost`], mcp/tests/test_conversation_control_installed.py:83-86), cit:([`_ControlledEntry`], mcp/tests/test_conversation_control_installed.py:89-94), and cit:([`_LiveHarness`], mcp/tests/test_conversation_control_installed.py:97-192) build the live seam against the
+installed harnesses. cit:([`CodexInstalledControlApiTests`], mcp/tests/test_conversation_control_installed.py:195-484): typed submit → live turn id →
 `POST /conversation/interrupt` 202 accepted → native `turn/completed status=interrupted` →
 `interrupt-status` 200 `interrupted` with advanced revision; withdrawal recovery with the exact body;
 typed attachment submit as `localImage`; telemetry usage with `runtimeVersion: 0.144.5` and the
@@ -36,9 +36,9 @@ fixture id on the wire. Those last three stages live in
 `_assert_withdrawal_recovers_the_exact_body`, `_assert_typed_attachment_submit_is_accepted`, and
 `_assert_telemetry_carries_exact_usage` — ordered helper stages of
 `test_live_interrupt_settlement_queue_recovery_assets_and_telemetry`, sharing its one live harness
-and turn sequence, not standalone tests. `PiInstalledControlApiTests` (L492): guarded abort
+and turn sequence, not standalone tests. cit:([`PiInstalledControlApiTests`], mcp/tests/test_conversation_control_installed.py:487-557): guarded abort
 accepted → settlement polls to `interrupted`; stale expected identity after settlement → 422
-rejected. `ClaudeInstalledHonestyTests` (L560): the control gate stays `unverified` at the
+rejected. cit:([`ClaudeInstalledHonestyTests`], mcp/tests/test_conversation_control_installed.py:560-578): the control gate stays `unverified` at the
 installed-vs-locked version mismatch (a plain `TestCase`, no live harness needed).
 
 ### 260718-CHATS-L5 F1 — installed twin-suppression regression (real codex wire)
@@ -83,7 +83,7 @@ None.
 
 No Domain Documentation source is configured; the installed contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -91,29 +91,31 @@ No Domain Documentation source is configured; the installed contract is reposito
 
 The suite drives the registered routes against the live installed adapters.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The seventeen registered routes proven live. | L131-L631 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
-| The interrupt ledger whose live settlement this proves. | L95-L511 | [control/operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
-| The control capability gate whose Claude version-mismatch honesty this pins. | L305-L347 | [control/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
+| The seventeen registered routes proven live. | "async def conversation_interrupt(" | mcp/src/agents_remember/serving/conversation/control/api.py:156-156 |
+| The interrupt ledger whose live settlement this proves. | "class InterruptRecord:" | mcp/src/agents_remember/serving/conversation/control/operations.py:73-73 |
+| The control capability gate whose Claude version-mismatch honesty this pins. | "def control_capabilities_for(" | mcp/src/agents_remember/serving/conversation/control/capabilities.py:318-318 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 3 citation rows and 3 historical prose citations with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that the same
   hardening sweep moved on the other side of the link. `control/api.py` L57-L570 became L131-L631 —
-  the seventeen decorated handlers from `@router.post("/conversation/interrupt")` (L131) through the
-  end of `conversation_telemetry` (L631), counted on the file and excluding the multipart helpers
+  the seventeen decorated handlers from `@router.post("/conversation/interrupt")` cit:(["async def conversation_interrupt("], mcp/src/agents_remember/serving/conversation/control/api.py:156-156) through the
+  end of `conversation_telemetry` cit:(["async def conversation_telemetry("], mcp/src/agents_remember/serving/conversation/control/api.py:716-716), counted on the file and excluding the multipart helpers
   below them. `control/operations.py` L87-L449 became L95-L511, the acknowledge-plus-settle
   machinery this suite proves live: `interrupt`/`interrupt_status` through `_drive_interrupt`,
-  `_observe_settlement`, and the per-harness terminal readers ending at `_pi_stop_reason` (L511) —
+  `_observe_settlement`, and the per-harness terminal readers ending at `_pi_stop_reason` cit:(["async def _pi_stop_reason("], mcp/src/agents_remember/serving/conversation/control/operations.py:484-484) —
   the old range stopped inside the claude branch and never reached the pi settlement this sidecar
   says it proves.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. Three changes hit

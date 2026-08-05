@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,27 +59,29 @@ None.
 No Domain Documentation source is configured. The repository sources and installed-runtime
 fixture contract are direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The route module and its outcome/error mapping authority under test. | L93-L259 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
-| The foundation pin asserting exactly the five owned routes this suite exercises. | L32-L56 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The installed-runtime suite covering the same routes' live native boundaries. | L1-L9 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The route module and its outcome/error mapping authority under test. | `api_library_list` | mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
+| The foundation pin asserting exactly the five owned routes this suite exercises. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
+| The installed-runtime suite covering the same routes' live native boundaries. | `ClaudeGateHonestyTests` | mcp/tests/test_conversation_library_installed.py:554-586 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this route suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 6 citation findings; scoped check passed.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: named the new request seam the card's peer
   claims now depend on. `asgi_request` no longer takes the app and a `client=(host, port)` keyword

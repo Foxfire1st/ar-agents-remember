@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/setAcceptance.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,29 +45,31 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Route classification, reducer, readback promotion, and refetch predicate. | L1-L250 | [setAcceptance.ts](setAcceptance.ts) |
-| Exhaustive acceptance, HTTP, clamp, and readback tables. | L39-L264 | [setAcceptance.test.ts](setAcceptance.test.ts) |
-| Store snapshots and pending phases consumed by the reducer. | L1-L425 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| Set acceptance vocabulary mirrored by the frontend. | L1-L117 | [../types/harnessCapabilities.ts](../types/harnessCapabilities.ts) |
+| Route classification, reducer, readback promotion, and refetch predicate. | `classifySetResponse`, `reduceSetResult`, `resolvePendingsByReadback`, `shouldRefetchOnTurnEnded` | dashboard/src/data/setAcceptance.ts:55-70; dashboard/src/data/setAcceptance.ts:101-153; dashboard/src/data/setAcceptance.ts:204-232; dashboard/src/data/setAcceptance.ts:240-250 |
+| Exhaustive acceptance, HTTP, clamp, and readback tables. | "reduceSetResult — the exhaustive acceptance × kind × clamp table" | dashboard/src/data/setAcceptance.test.ts:39-128 |
+| Store snapshots and pending phases consumed by the reducer. | `PerSessionCockpit`, `PendingSet` | dashboard/src/data/sessionCockpitStore.ts:20-24; dashboard/src/data/sessionCockpitStore.ts:113-153 |
+| Set acceptance vocabulary mirrored by the frontend. | `SetAcceptance`, `SetResultWire` | dashboard/src/types/harnessCapabilities.ts:86-86; dashboard/src/types/harnessCapabilities.ts:89-96 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here; normalized server values are mirrored in
 same-repo wire types.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 4 citation rows; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                             |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                             |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -198,28 +198,28 @@ Hysteresis constants remain code defaults, not settings-backed knobs (builder-di
 No external documentation governs this module; the HFX-L5 leaf doc and review are the design
 record.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. | module docstring; constants | [terminal_liveness.py](terminal_liveness.py) |
+| No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. | `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `_tmux_probe_session` | [terminal.py](terminal.py) |
-| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | [terminal_catalog.py](terminal_catalog.py) |
-| The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | [app.py](app.py) |
-| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
-| The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | [turn_state.py](turn_state.py) |
-| The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | `capture_pane` | [terminal_paste.py](terminal_paste.py) |
-| `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `TerminalCatalogLivenessSweeper(...)` construction | [app.py](app.py) |
-| Failing-first tests for turn-state classification wiring: scripted pane fixtures, precedence ordering, "plain terminals never classified", `turn_state_changed` gating. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
+| The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:61-66 |
+| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:425-455; mcp/src/agents_remember/serving/terminal_catalog.py:457-489 |
+| The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
+| The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
+| The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | "Public pane capture used by liveness and bounded dispatch retry/failure evidence." | mcp/src/agents_remember/serving/terminal_paste.py:202-202 |
+| `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| Failing-first tests for turn-state classification wiring: scripted pane fixtures, precedence ordering, "plain terminals never classified", `turn_state_changed` gating. | `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:467-532 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local liveness plumbing. | — | — |
 
@@ -257,6 +257,8 @@ The observation semantics and exit-marking rules themselves are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 5 citation claims and preserved verification metadata.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `LivenessProbe` / `DEFAULT_LIVENESS_PROBE` and the relocation of the hysteresis config to `terminal_catalog.py`.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.

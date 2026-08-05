@@ -80,7 +80,7 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
@@ -89,20 +89,21 @@ source was available for this test-file curation pass.
 The test source is the direct authority for byte-boundary classification; the client implementation
 owns the corresponding exact-session request encoding and unknown-result conversion.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Socket failures before and after the first accepted byte produce false and true `may_have_sent` respectively. | L32-L83 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| Post-write submit loss and a mismatched receipt both remain unknown under the original request id with one request call. | L86-L120 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| A post-write setter failure returns unknown for the requested model and is not retried. | L122-L131 | [test_harness_control_client.py](agents-remember/mcp/tests/test_harness_control_client.py) |
-| The blocking client preserves whole UTF-8 JSON text, records the first accepted byte, and reports the exact failure stage. | L205-L263 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Submit and set helpers convert only post-write uncertainty into normalized unknown evidence while pre-write failures stay loud. | L99-L136; L282-L317 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| `_connect_unavailable_detail` maps a refused control socket to the honest exit note and unlinks the stale socket (R6). | — | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The pre-accept socket case keeps `may_have_sent` false before any byte is accepted. | "test_may_have_sent_is_false_until_socket_accepts_a_byte"; `send_error` | mcp/tests/test_harness_control_client.py:182-191 |
+| The post-accept socket case records `may_have_sent` true after the first byte is accepted. | "test_may_have_sent_is_true_after_socket_accepts_a_byte"; `sendall_error` | mcp/tests/test_harness_control_client.py:193-202 |
+| Post-write submit loss and a mismatched receipt both remain unknown under the original request id with one request call. | `test_post_write_submit_failure_returns_unknown_with_same_request_id`; `test_mismatched_receipt_stays_unknown_and_is_not_resent`; "response timed out"; "different-request" | mcp/tests/test_harness_control_client.py:204-215; mcp/tests/test_harness_control_client.py:262-282 |
+| A post-write setter failure returns unknown for the requested model and is not retried. | `test_post_write_set_failure_returns_unknown_without_retry`; "response reset" | mcp/tests/test_harness_control_client.py:284-294 |
+| The blocking client preserves whole UTF-8 JSON text, records the first accepted byte, and reports the exact failure stage. | `request_control`; `_encode_control_request`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:479-491; mcp/src/agents_remember/serving/harness_control_client.py:494-508; mcp/src/agents_remember/serving/harness_control_client.py:534-568 |
+| Submit and set helpers convert only post-write uncertainty into normalized unknown evidence while pre-write failures stay loud. | `submit_control_prompt`; `_set_control_value`; `_unknown_set_result`; `_submission_receipt` | mcp/src/agents_remember/serving/harness_control_client.py:214-252; mcp/src/agents_remember/serving/harness_control_client.py:646-664; mcp/src/agents_remember/serving/harness_control_client.py:608-634; mcp/src/agents_remember/serving/harness_control_client.py:637-643 |
+| `_connect_unavailable_detail` maps a refused control socket to the honest exit note and unlinks the stale socket (R6). | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:511-531 |
 
 ## Cross-Repo References
 
 No sibling repository is needed to prove this local Unix-socket retry-safety boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -124,6 +125,8 @@ A new class covering the submission-status lookup decoder, all of it refusal-sha
   no usable lifecycle state are each refused rather than defaulted.
 
 ## Update History
+
+- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound post-write submit, mismatched-receipt, and setter claims to complete focused-test function extents containing their calls and assertions; the scoped fixer/check remain green.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 

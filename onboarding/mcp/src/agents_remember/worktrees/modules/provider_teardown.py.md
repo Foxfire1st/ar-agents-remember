@@ -67,19 +67,19 @@ platforms; if either is unavailable the reclaim is reported as unsupported.
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `abandon.py` calls `teardown_worktree_providers` and `remove_tree` from this module. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
-| `cleanup.py` calls `teardown_worktree_providers` when `args.teardown_providers` is set. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| `docker_command` and `run_command` are provided by the provider lifecycle shared layer. | [docker_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py); [command_runner.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
-| Unit tests cover resource derivation, dry-run teardown, reclaim-image selection, and branch-safety helpers. | [test_worktree_abandon.py](agents-remember/mcp/tests/test_worktree_abandon.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `docker_command` and `run_command` are provided by the provider lifecycle shared layer. | "def docker_command"; "def run_command" | mcp/src/agents_remember/providers/lifecycle/command_runner.py:15-15; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:18-18 |
 
 ## Update History
+- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled abandon/cleanup ownership and the focused test evidence, and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 4 citation items; scoped citation check now passes.
 
 - 2026-06-01T00:00+02:00 — Created onboarding for the new provider teardown module.

@@ -47,27 +47,29 @@ None recorded. The final reviewer PASS specifically confirmed the fix-round-3 ro
 
 No Domain Documentation source is configured; the behavior is proven by repository code and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pure state, step/result/readback transitions, route provenance, and copy. | L1-L219 | [pairChange.ts](pairChange.ts) |
-| Exhaustive acceptance, guard, readback, route, and copy tables. | L30-L199 | [pairChange.test.ts](pairChange.test.ts) |
-| I/O driver consuming directives. | L1-L433 | [setClient.ts](setClient.ts) |
+| Pure state, step/result/readback transitions, route provenance, and copy. | `startPairChange`; `applyPairStepResult`; `applyPairRouteError`; `applyPairReadback`; `pairProgressCopy`; `pairRouteTerminationCopy`; `pairPartialFailureCopy` | dashboard/src/data/pairChange.ts:50-52; dashboard/src/data/pairChange.ts:58-111; dashboard/src/data/pairChange.ts:119-150; dashboard/src/data/pairChange.ts:156-196; dashboard/src/data/pairChange.ts:199-203; dashboard/src/data/pairChange.ts:207-209; dashboard/src/data/pairChange.ts:216-219 |
+| Exhaustive acceptance, guard, readback, route, and copy tables. | "step 1 (model) — every acceptance"; "step 2 (effort) — every acceptance"; "readback resolution of an unknown-held step"; "route failures end the pair story"; "machine guards"; "copy (R5 — one source, tests assert the words)" | dashboard/src/data/pairChange.test.ts:30-60; dashboard/src/data/pairChange.test.ts:62-101; dashboard/src/data/pairChange.test.ts:103-123; dashboard/src/data/pairChange.test.ts:125-153; dashboard/src/data/pairChange.test.ts:155-172; dashboard/src/data/pairChange.test.ts:174-199 |
+| I/O driver consuming directives. | `commitPairDirective` | dashboard/src/data/setClient.ts:304-320 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

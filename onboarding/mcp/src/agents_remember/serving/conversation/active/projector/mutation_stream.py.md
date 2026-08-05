@@ -51,10 +51,10 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Canonical item/revision behavior. | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| Gap and overflow regressions. | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Canonical item/revision behavior. | `apply_item` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249 |
+| The `OverflowGapTests` regression suite. | `OverflowGapTests` | mcp/tests/test_conversation_active_service.py:1435-1478 |
 
 ## Cross-Repo References
 
@@ -62,6 +62,7 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py` since the L2
   base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s) with

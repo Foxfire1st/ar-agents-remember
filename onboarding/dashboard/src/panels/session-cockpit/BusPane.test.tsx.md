@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/BusPane.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,28 +43,29 @@ None recorded; browser-level long-list/off-tab smoke remains a leaf integration 
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Fleet, filter, focus-loss, and draft persistence cases. | L50-L145 | [BusPane.test.tsx](BusPane.test.tsx) |
-| Exact POST and lifecycle-only zero-write cases. | L146-L204, L297-L338 | [BusPane.test.tsx](BusPane.test.tsx) |
-| Virtualized per-entry async state case. | L205-L296 | [BusPane.test.tsx](BusPane.test.tsx) |
-| Shared coherent and legacy fixture pack. | L1-L117 | [../../test/fixtures/busScenarios.ts](../../test/fixtures/busScenarios.ts) |
+| Fleet, filter, focus-loss, and draft persistence cases. | "keeps a reply draft keyed to its entry across focused-seat filter unmounts" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:121-144 |
+| Exact POST and lifecycle-only zero-write cases. | "posts a developer decision to the original sender through /api/operator-inbox only"; "renders a lifecycle-only source as unavailable and performs zero POSTs" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:146-184; dashboard/src/panels/session-cockpit/BusPane.test.tsx:186-203 |
+| Virtualized per-entry async state case. | "keeps each reply's open, draft, posted, and error state across >100-row unmounts" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:205-293 |
+| Shared coherent and legacy fixture pack. | `L7_PICKUPS` | dashboard/src/test/fixtures/busScenarios.ts:108-112 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 4 repository-reference citations (4/4 anchored and sourced; scoped citation check clean).
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
   metadata remains pinned to the leaf base until closeout.

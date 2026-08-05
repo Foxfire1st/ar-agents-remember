@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -51,13 +51,15 @@ Git subprocesses still cannot consume MCP stdio transport input, but the guarant
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `entities.py` recomputes entity fingerprints and change notes through these helpers. | [entities.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
-| `sidecar.py` imports the `local_change_note` / `local_route_change_note` helpers from here; its own `cat-file` and `diff --quiet` calls go straight to the kernel runner. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
-| `run_git` lives here now: selector scrubbing, DEVNULL stdin, and the local/remote/metadata timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `entities.py` recomputes entity fingerprints and change notes through these helpers. | `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
+| `sidecar.py`'s external classifier calls the imported `local_change_note` helper; its own `cat-file` and `diff --quiet` calls go straight to the kernel runner. | `classify_external_onboarding` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:33-112 |
+| `run_git` lives here now: selector scrubbing, DEVNULL stdin, and the local/remote/metadata timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.
 
 - 2026-07-31T20:54+02:00 — 260731-EFA-L3 curator: the local `run_git` was deleted and every helper
   re-pointed at `kernel.git_command.run_git`, so the Logic sentence describing this module's own

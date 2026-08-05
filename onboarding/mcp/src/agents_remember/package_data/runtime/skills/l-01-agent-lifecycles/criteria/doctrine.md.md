@@ -50,25 +50,27 @@ No TODO is recorded for this catalog.
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [doctrine.md](agents-remember/skills/l-01-agent-lifecycles/criteria/doctrine.md) |
-| The reviewer role that binds this catalog per review type. | n/a | [reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md) |
+| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Doctrine Review` | skills/l-01-agent-lifecycles/criteria/doctrine.md:1-58 |
+| The reviewer role that binds this catalog per review type. | "Criteria Catalogs (the review test bench — bound here)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:56-56 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 4 initial citation findings (2 anchor, 0 prose, 2 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `criteria/doctrine.md` seed catalog (leaf 260703-L12): D-1 doctrine-vs-code anchoring (AR-5), D-2 cross-file contradiction sweep (L10 chat-build survivors), D-3 stuck-state walk (L8 round-2 seam deadlock), with the exploratory mandate and the promotion ratchet. Verification metadata pinned until closeout stamps the L12 commit.

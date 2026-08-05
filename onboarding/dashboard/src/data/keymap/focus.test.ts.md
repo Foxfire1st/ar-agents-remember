@@ -41,12 +41,14 @@ including forward/backward wrapping and collapsed-region handling.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The cycle logic under test. | L13-L28 | [focus.ts](focus.ts) |
-| The DOM-level F6/Shift+F6 counterpart over the rendered view. | L210-L246 | [../../panels/session-cockpit/SessionsView.test.tsx](../../panels/session-cockpit/SessionsView.test.tsx) |
+| The cycle logic under test. | `FOCUS_REGIONS`; `nextRegion` | dashboard/src/data/keymap/focus.ts:9-9; dashboard/src/data/keymap/focus.ts:14-24 |
+| The DOM-level F6/Shift+F6 counterpart over the rendered view. | "F6 from the pty zone exits to chrome (the stage header)"; "F6 skips the default-closed inspector, then includes it after deliberate reopen"; "Shift+F6 cycles backward" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:395-405; dashboard/src/panels/session-cockpit/SessionsView.test.tsx:425-471; dashboard/src/panels/session-cockpit/SessionsView.test.tsx:648-667 |
 
 ## Update History
+
+- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: converted the focus references to exact source anchors and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
 
 - 2026-07-24T13:17:50Z — Updated F6-cycle regression coverage for the removed StatusLine region.
   Verification hash/date remain pinned to the pre-commit source stamp.

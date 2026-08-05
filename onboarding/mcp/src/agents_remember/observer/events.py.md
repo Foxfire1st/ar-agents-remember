@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/events.py`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Purpose
@@ -45,13 +45,14 @@ Python attribute name — so records must be dumped with
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The store serializes and reads these events. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| Ids come from the local ULID mint. | [ulid.py](agents-remember/mcp/src/agents_remember/observer/ulid.py) |
-| The response-contract convention this envelope mirrors (camelCase fields, strict extras). | [models/base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The store serializes and reads these events. | `append`, `read`, `read_log` | mcp/src/agents_remember/observer/store.py:119-132; mcp/src/agents_remember/observer/store.py:134-148; mcp/src/agents_remember/observer/store.py:150-163 |
+| Ids come from the local ULID mint. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
+| The response-contract convention this envelope mirrors (camelCase fields, strict extras). | `StrictResponseModel` | mcp/src/agents_remember/models/base.py:10-13 |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
 - 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
   until closeout stamps the 2a code commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-09T10:40+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -61,29 +61,33 @@ PR-6 is a candidate criterion, not an immediate mechanization TODO.
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This package-data catalog copy now includes the PR-6 design-time scaling and reclamation candidate, including cap, budget, compactor/reclamation owner, and scaling-proof questions. | L53-L66 | [plan-review.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md) |
-| Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | L14-L15; L43-L55 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
-| The reviewer role binds `plan-review` with `report-verification` for orchestration-task plan reviews, and keeps the promotion ratchet as the catalog amendment path. | L56-L74 | [reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md) |
-| The orchestration-task template requires cited shown work for dependency edges, blast radius, leaf moves, coherence findings, sprint order, and evidence inventory; it explicitly names `plan-review.md` as the adversarial review catalog. | L9-L31; L50-L88 | [orchestration-task.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md) |
-| The strategist lifecycle produces the orchestration task, acts as the portfolio loop's builder, and runs the eight-phase method whose outputs the plan-review criteria attack. | L21-L37; L59-L109 | [strategist.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md) |
+| This package-data catalog copy now includes the PR-6 design-time scaling and reclamation candidate, including cap, budget, compactor/reclamation owner, and scaling-proof questions. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-84 |
+| Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | "class SkillTarget" | scripts/sync-skills.py:27-27 |
+| The reviewer role binds `plan-review` with `report-verification` for orchestration-task plan reviews, and keeps the promotion ratchet as the catalog amendment path. | `# Lifecycle — Adversarial Reviewer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:1-187 |
+| The orchestration-task template requires cited shown work for dependency edges, blast radius, leaf moves, coherence findings, sprint order, and evidence inventory; it explicitly names `plan-review.md` as the adversarial review catalog. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-91 |
+| The strategist lifecycle produces the orchestration task, acts as the portfolio loop's builder, and runs the eight-phase method whose outputs the plan-review criteria attack. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-204 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
+  exact anchors (headings/class) and fixer-generated ranges; exact non-fixing check returns zero
+  findings.
 
 - 2026-07-09T10:40+02:00 — 260707-HFX2-L8: refreshed after synced PR-6 scaling &
   reclamation at design time entered the plan-review candidate catalog, requiring plans to name

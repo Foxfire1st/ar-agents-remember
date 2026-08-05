@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T00:28+02:00                      |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                      |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -31,7 +31,7 @@ the request thread both append to the same single-writer per-lifecycle log.
 Signals: `start` (guarded — raises `GuardedStartError` while a lifecycle is
 active; mints the id, becomes `running`, emits `lifecycle.started`, starts the
 ticker, sweeps); `block` (`running`→`blocked`, carrying an optional structured
-ask via `build_ask`); `resume` (`blocked`→`running`); `end` (L237-L268 — emits
+ask via `build_ask`); `resume` (`blocked`→`running`); `end` (L243-L274 — emits
 `lifecycle.ended` *before* clearing the ambient, so the end call's own
 `tool.completed` is dropped — the terminal signal is the record — and returns the
 terminal snapshot); `phase` (orthogonal phase move); `switch` (leave the current — persistent paused
@@ -56,9 +56,11 @@ conditional `terminal: State = "completed" if outcome == "completed" else "aband
 — which is a copy, and a copy fails silently: a third terminal state would be one
 the reducer projects and no session could write, and a renamed one would pass the
 guard and then be mapped to the wrong state by the conditional. Both halves now
-read `lifecycle_state`: the guard is `if outcome not in TERMINAL_STATES:` (L254,
-its message built from `'|'.join(sorted(TERMINAL_STATES))` at L256) and the
-conversion is `terminal = coerce_end_outcome(outcome)` (L261). Membership is
+read `lifecycle_state`: the guard is `if outcome not in TERMINAL_STATES:`
+cit:([`TERMINAL_STATES`], mcp/src/agents_remember/observer/ambient.py:260-263)
+(its message built from `'|'.join(sorted(TERMINAL_STATES))`) and the
+conversion is `terminal = coerce_end_outcome(outcome)`
+cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/ambient.py:267-267). Membership is
 already established by the guard, so that call is the identity conversion — it is
 made anyway, rather than `cast`, so the outcome→state rule has exactly one owner
 and the write side reads it from the same function the reducer's `_ended_updates`
@@ -70,7 +72,7 @@ reducer, which reads logs it did not write; a session ending *itself* must not
 have a typo silently recorded as an abandonment.
 
 One literal `"abandoned"` deliberately remains, in the `discard` branch of
-`_leave_current_locked` (L508): that branch is *naming one outcome*, not
+`_leave_current_locked` cit:([`_leave_current_locked`], mcp/src/agents_remember/observer/ambient.py:436-465): that branch is *naming one outcome*, not
 classifying, so the literal is the decision. It is deliberately not
 `DEFAULT_END_OUTCOME`, which is the separate policy for coercing a free-form
 outcome at the tool boundary — discard would follow that constant anywhere it
@@ -174,7 +176,7 @@ existing seam rather than adding a second one.
   reads `TERMINAL_STATES` for the guard and `coerce_end_outcome` for the
   conversion; a new terminal state is added by filing it on `lifecycle_state`'s
   terminal half and nothing here changes. The one surviving `"abandoned"` literal
-  (the `discard` branch, L508) names a single outcome as a decision and is not a
+  (the `discard` branch, L462) names a single outcome as a decision and is not a
   classification — do not route it through `DEFAULT_END_OUTCOME`.
 - **The write side refuses; the read side coerces.** `end` raises
   `LifecycleError` on an unknown outcome even though `coerce_end_outcome` would
@@ -211,35 +213,44 @@ existing seam rather than adding a second one.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| `end` is pinned to hold no string constant from `TERMINAL_STATES` and to convert through the shared function — a structural test, because a copy that happens to agree passes a behavioural one. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
-| The append-only store the ambient writes events to. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The `ar-observer-event/v1` envelope every signal emits. | [events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The choke point that calls `ambient().emit_tool(...)` for every public tool, and (260707-HFX2-L2) reads `.root` to check the supervisor heartbeat. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| The supervisor heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | [serving/supervisor_heartbeat.py](../serving/supervisor_heartbeat.py.md) |
-| The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | [served_store.py](agents-remember/mcp/src/agents_remember/observer/served_store.py) |
-| The `read_ar_files` controller that calls `emit_read_packet` + the `is_served`/`record_served`/`reset_served` dedup surface. | [controllers/read_files.py](agents-remember/mcp/src/agents_remember/controllers/read_files.py) |
-| The heartbeat/stale idiom this generalizes. | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
-| The shared timing thresholds + age helper this imports. | [timeutil.py](agents-remember/mcp/src/agents_remember/observer/timeutil.py) |
-| The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays. | [event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). | `TERMINAL_STATES`; `coerce_end_outcome`; `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158; mcp/src/agents_remember/observer/lifecycle_state.py:187-210 |
+| `end` is pinned to hold no string constant from `TERMINAL_STATES` and to convert through the shared function — a structural test, because a copy that happens to agree passes a behavioural one. | `test_the_end_signal_names_no_terminal_state_of_its_own` | mcp/tests/test_observer_ambient.py:172-180 |
+| The append-only store the ambient writes events to. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| The `ar-observer-event/v1` envelope every signal emits. | `OBSERVER_EVENT_SCHEMA` | mcp/src/agents_remember/observer/events.py:23-23 |
+| `mcp/tools/base.py::_tool_payload` delegates to `application/tool_response.py::complete_tool_response`, the choke point that calls `ambient().emit_tool(...)` for every public tool and (260707-HFX2-L2) reads `.root` to check the supervisor heartbeat. | `complete_tool_response`; `emit_tool` | mcp/src/agents_remember/mcp/tools/base.py:73-75; mcp/src/agents_remember/application/tool_response.py:47-61 |
+| The supervisor heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "supervisor_heartbeat.py" | onboarding/mcp/src/agents_remember/serving/supervisor_heartbeat.py.md:19-25 |
+| The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | `ServedStore` | mcp/src/agents_remember/observer/served_store.py:78-121 |
+| The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:105-133; mcp/src/agents_remember/application/read_files.py:301-303; mcp/src/agents_remember/application/read_files.py:357-379 |
+| The heartbeat/stale idiom this generalizes. | `SetupProgressFile` | mcp/src/agents_remember/providers/setup_progress.py:54-170 |
+| The shared timing thresholds + `Clock` this imports (the `age_seconds` stamp-ager now lives in `controlplane.stamps`). | `HEARTBEAT_SECONDS`; `age_seconds` | mcp/src/agents_remember/observer/timeutil.py:29-29; mcp/src/agents_remember/controlplane/stamps.py:22-35 |
+| The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). | `project_lifecycle`; `_project_inferred` | mcp/src/agents_remember/observer/reducer.py:81-108; mcp/src/agents_remember/observer/reducer.py:457-471 |
+| The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays. | `FLEETING_INACTIVE_TTL_SECONDS`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:37-37; mcp/src/agents_remember/observer/event_retention.py:73-107 |
+| The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:40-133; docs/design/observable-lifecycle.md:156-171; docs/design/observable-lifecycle.md:391-402 |
 
 ## Update History
 
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired all 13 citation rows and converted 5 superseded prose line citations to cit: forms against the frozen source (end guard L260-L263, conversion L267, discard branch L436-L465, end L243-L274). Three claims re-bound to moved code: the choke point now lives in application/tool_response.py (`complete_tool_response`, delegated from mcp/tools/base.py L73-L75), the served dedup surface is `amb.served.is_served`/`record`/`reset`, and `age_seconds` now lives in controlplane/stamps.py. Two unflagged stale line numbers in touched sentences corrected. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T00:28+02:00 — 260731-EFA-L4 curator: the card described `end` only as "emits
   `lifecycle.ended` before clearing the ambient" and never mentioned that this method held the
   last hand-written copy of the live/terminal split. Verified against the diff and the current
   source and corrected it: the accept-tuple `("completed", "abandoned")` is now
-  `if outcome not in TERMINAL_STATES:` (L254, message from `sorted(TERMINAL_STATES)` at L256) and
-  the outcome→state conditional is now `terminal = coerce_end_outcome(outcome)` (L261) — the
+  `if outcome not in TERMINAL_STATES:`
+  cit:([`TERMINAL_STATES`], mcp/src/agents_remember/observer/ambient.py:260-263)
+  (message from `sorted(TERMINAL_STATES)`) and
+  the outcome→state conditional is now `terminal = coerce_end_outcome(outcome)`
+  cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/ambient.py:267-267) — the
   identity conversion, called anyway rather than `cast`, so the rule has one owner. Recorded the
   deliberate asymmetry (`end` refuses an unknown outcome; `coerce_end_outcome` defaults it,
   because the reducer reads foreign logs), and the one surviving `"abandoned"` literal in the
-  `discard` branch of `_leave_current_locked` (L508), which names one outcome as a decision and
-  is deliberately not `DEFAULT_END_OUTCOME`. Added `end`'s line range (L237-L268), two invariants,
+  `discard` branch of `_leave_current_locked`
+  cit:([`_leave_current_locked`], mcp/src/agents_remember/observer/ambient.py:436-465), which names one outcome as a decision and
+  is deliberately not `DEFAULT_END_OUTCOME`. Added `end`'s line range
+  cit:([`end`], mcp/src/agents_remember/observer/ambient.py:243-274), two invariants,
   and a reference row for the structural test that pins `end` to hold no such string constant.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   the `AmbientLifecycle` constructor's `heartbeat_seconds` / `ttl_seconds` /

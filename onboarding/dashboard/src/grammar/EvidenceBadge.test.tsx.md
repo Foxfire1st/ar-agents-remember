@@ -25,17 +25,17 @@ strip the evidence word.
 
 ### Logic
 
-- **Glyph distinctness** (L17-L20): maps all five tiers through `EVIDENCE_GLYPHS` and asserts
+- **Glyph distinctness** (cit:([`EVIDENCE_GLYPHS`], dashboard/src/grammar/EvidenceBadge.tsx:13-19)): maps all five tiers through `EVIDENCE_GLYPHS` and asserts
   `new Set(...).size === 5` — a dropped or duplicated glyph fails loudly.
-- **Leaf-doc glyph anatomy** (L22-L28): pins the exact marks — `✓` readback / `◇`
+- **Leaf-doc glyph anatomy** (cit:([`EVIDENCE_GLYPHS`], dashboard/src/grammar/EvidenceBadge.tsx:13-19)): pins the exact marks — `✓` readback / `◇`
   model-validated / `·` defaults / `✕` refused / `…` pending (provenance-in-flight, never a
   verification mark).
-- **Word at EVERY size** (L30-L41): renders all five tiers × both sizes (`row`, `sm`) and
+- **Word at EVERY size** (cit:(["data-evidence-size"], dashboard/src/grammar/EvidenceBadge.test.tsx:35-35)): renders all five tiers × both sizes (`row`, `sm`) and
   asserts `data-evidence-size` plus the tier word inside `aria-label`.
-- **Glyph aria-hidden** (L43-L48): the mark is `aria-hidden`; the `role="img"` wrapper carries
+- **Glyph aria-hidden** (cit:(["aria-hidden='true'"], dashboard/src/grammar/EvidenceBadge.test.tsx:45-45)): the mark is `aria-hidden`; the `role="img"` wrapper carries
   the accessible content.
-- **`showWord`** (L50-L53): the visible tier word renders for banner usage.
-- **Token colors** (L55-L61): refused wears `c_alarm`, readback `c_mint` (Panda class
+- **`showWord`** (cit:(["showWord renders the tier word visibly (banner usage)"], dashboard/src/grammar/EvidenceBadge.test.tsx:50-53)): the visible tier word renders for banner usage.
+- **Token colors** (cit:(["c_alarm", "c_mint"], dashboard/src/grammar/EvidenceBadge.test.tsx:57-57; dashboard/src/grammar/EvidenceBadge.test.tsx:60-60)): refused wears `c_alarm`, readback `c_mint` (Panda class
   assertions).
 
 ### Conventions
@@ -51,12 +51,18 @@ drops the tier word.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component + glyph record under test. | L13-L69 | [EvidenceBadge.tsx](EvidenceBadge.tsx) |
-| The `EvidenceTier` union the tier list types against. | — | [../data/sessionCockpitStore.ts](../data/sessionCockpitStore.ts) |
+| The component + glyph record under test. | `EvidenceBadge`; `EVIDENCE_GLYPHS` | dashboard/src/grammar/EvidenceBadge.tsx:13-19; dashboard/src/grammar/EvidenceBadge.tsx:46-69 |
+| The `EvidenceTier` union the tier list types against. | `EvidenceTier` | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
+  exact non-fixing check returns zero findings.
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 7 citation claims
+  (6 Logic citations and 1 Repo-Internal reference row); scoped result 0 findings.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R7: glyph Set-distinctness, exact glyph
   anatomy, tier word in the accessible name at both sizes for all five tiers, aria-hidden mark,

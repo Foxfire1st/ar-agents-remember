@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/gate_policy.py` |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`          |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`          |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Purpose
@@ -59,16 +59,19 @@ already proved it. Refusal messages and their order are identical to before the 
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Gate records carry `decidedBy`/`decidedVia`/`decidingRole` and evidence refs checked here. | [records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
-| The pure resolver consumes this policy. | [enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
-| MCP settings parse the named/custom policy into this model. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| Gate decision payloads reject invalid orchestration decisions before appending. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Gate records carry `decidedBy`/`decidedVia`/`decidingRole` and evidence refs checked here. | "class GateRecord" | mcp/src/agents_remember/controlplane/records.py:84-84 |
+| The pure resolver consumes this policy. | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:35-35 |
+| MCP settings parse the named/custom policy into this model. | "class McpRuntimeConfig" | mcp/src/agents_remember/mcp/config.py:114-114 |
+| Gate decision payloads reject invalid orchestration decisions before appending. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:34-34 |
 
 As of the 260703-L8 seam ruling: `master-handover-approval` joins DELEGABLE_GATE_KINDS; SEAM_GATE_KINDS names the seam set; `apply_seam_verdict_requirement(policy)` binds reviewer-verdict evidence to every DELEGATED seam rule (the requireReviewerVerdictAtSeams wiring — human-decided seam kinds are untouched since the human sees the attached verdict); the named policy manager-decides-leaf-gates now also routes the master-exit handover to the ORCHESTRATOR.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911` armed with no exemptions):
   extracted `_decision_attribution_failure_reason(gate)` — the identity half of

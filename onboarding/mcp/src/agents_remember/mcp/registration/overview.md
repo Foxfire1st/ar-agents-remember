@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-01T00:00+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                           |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -86,7 +86,7 @@ lists, which `mcp/tests/test_tools.py` checks against a live server's `list_tool
 ## Hot Path Summary
 
 A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the
-payload builder and its controller take, and return the builder's result unchanged. The packing is
+payload builder and its application entry point take, and return the builder's result unchanged. The packing is
 the whole content — `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`,
 `CloseoutCommitMessages`, `TaskIdentity`/`TaskBases`/`StartExecution`, `BenchmarkSelection`/
 `BenchmarkPreparation`/`CodexBenchmarkRun`, `TaskDocTarget`/`TaskDocEdit`, `InboxAddress`/
@@ -123,25 +123,28 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
   `TOOL_REGISTRARS`. `create_server` itself should not grow a special case.
 - Registration order in `TOOL_REGISTRARS` is the order the server advertises tools in; the
   `PUBLIC_TOOLS` equality check is set-based for `list_tools()` but exact-list for `server_info`.
-- Request validation belongs in the payload builders and controllers; response validation belongs
+- Request validation belongs in the payload builders and application entry points; response validation belongs
   to `base._tool_payload`. This layer validates nothing.
 - Do not add a raw shell or arbitrary-command tool to this surface.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| The payload builders every declaration forwards to. | [tools overview](../tools/overview.md) |
-| `PUBLIC_TOOLS` — the advertised name list this package must match. | [tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| The `PLR0913` per-file-ignore and the reasoning recorded beside it. | [pyproject.toml](agents-remember/pyproject.toml) |
-| The AST suite that holds the exemption to published tool declarations only. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
-| What each declaration hands its payload builder, proved through a live FastMCP instance. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
-| The advertised-name and docstring-presence checks against a live server. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
-| `TaskRef` — the shared task locator three read-side tools pack. | [controllers/task_ref.py](agents-remember/mcp/src/agents_remember/controllers/task_ref.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
+| The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
+| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:376-389 |
+| What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
+| The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
+| `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
 
 ## Update History
 
+- 2026-08-03T02:53:38+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and normalized one pre-existing transient source range with exact anchors and paths; fixer generated all ranges.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T00:00+02:00 — No route impact: 260731-EFA-L4 touches exactly one file under this
   path, `closeout.py` (+16/-7), and the change is **entirely inside two published docstrings** —
   `worktree_closeout_preview` and `worktree_closeout_apply` now describe closeout's new

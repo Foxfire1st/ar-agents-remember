@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `00e83791d4d21bf56fd5b3cc0af194bc5e28112a` |
-| lastVerifiedCommitDate | 2026-07-31T05:07:07+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -166,13 +166,16 @@ off by default and there was nowhere to declare a marker.
   count of 3** — exact, not a ceiling, so paying one off forces the number down in the same
   commit and adding one is a visible edit to a test.
 - `markers` registers the **eight** environment-gated integration paths (`AR_*`, plus the
-  older `AGENTS_REMEMBER_REAL_MCP_CONFIG` naming), guarding fifteen tests. Registering a
+  older `AGENTS_REMEMBER_REAL_MCP_CONFIG` naming), guarding fifteen tests, and also registers
+  `fitness` as an ordinary non-gated marker. Registering a
   marker is not applying one, and for a while this list was only the first: every entry was
   registered while the tests carried no `@pytest.mark.<name>` at all, so
   `pytest -m ar_run_pi_rpc_smoke` selected **0 of 3402** and reported a successful run of an
   empty selection — `--strict-markers` rejects an *unknown* marker and has nothing to say
   about a registered one decorating nothing. All eight are applied now, selecting 15, and
-  `mcp/tests/test_gated_integration_runner.py` fails if any of them selects zero tests again.
+  `mcp/tests/test_gated_integration_runner.py` derives the gated inventory only from marker
+  descriptions that name an environment variable and fails if any gated path selects zero tests.
+  A separate assertion keeps `fitness` registered while excluding it from the gated runner.
   `scripts/run-gated-integration.py` is the one command per path;
   `.github/workflows/integration-gated.yml` runs the two that need no vendor account.
 
@@ -193,22 +196,40 @@ off by default and there was nowhere to declare a marker.
 - Radon configuration shapes a *report*. It never decides what the gate certifies.
 - `branch = true` is a prerequisite, not a preference: two enforcing rails refuse to score
   without it.
-- The `filterwarnings` cap and the marker inventory are both asserted by tests, in both
-  directions.
+- The `filterwarnings` cap and the full marker registry are asserted by tests. The gated-runner
+  inventory is the environment-backed subset; ordinary markers such as `fitness` must remain outside it.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The wrapper reads `testpaths` from this file and lints exactly what is selected here, with no rule routed off its command line. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| CRAP consumes the branch fields this file enables and refuses a report without them. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| The changed-lines coverage floor reuses that reader and inherits the same requirement. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
-| Tests assert the strictness switches, the exact three-entry warning cap, `python_classes`, marker/environment-gate agreement, and that the tool-signature exemption cannot widen. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
-| The one command per registered marker, and the inventory test that keeps the two in step. | [run-gated-integration.py](agents-remember/scripts/run-gated-integration.py); [test_gated_integration_runner.py](agents-remember/mcp/tests/test_gated_integration_runner.py) |
-| The supported Python floor and supported platforms are declared as package classifiers. | [mcp/pyproject.toml](agents-remember/mcp/pyproject.toml) |
-| Source-checkout instructions state the gate command and that Radon reports rather than enforces. | [AGENTS.md](agents-remember/AGENTS.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:50-51 |
+| The repository enables branch measurement. | "branch = true" | pyproject.toml:70-70 |
+| The changed-lines coverage floor reuses the CRAP reader, which refuses reports without branch data. | "by_key = crap_calculator.load_coverage_by_path"; "require_branch_measurement(data, coverage_json)"; "def require_branch_measurement("; "if branch is not True: raise RuntimeError("; "meta.branch_coverage is"; "CRAP is defined over branch coverage" | mcp/src/agents_remember/code_quality/crap_calculator.py:115-115; mcp/src/agents_remember/code_quality/crap_calculator.py:135-135; mcp/src/agents_remember/code_quality/crap_calculator.py:139-142; mcp/src/agents_remember/code_quality/diff_coverage.py:238-238 |
+| The code-quality test asserts the `python_classes` naming pattern. | `python_classes` | mcp/tests/test_code_quality_check.py:716-716 |
+| The runner declares the `GatedPath` inventory type. | "class GatedPath" | scripts/run-gated-integration.py:65-65 |
+| The runner defines its environment-gated paths in `PATHS`. | "PATHS: tuple[GatedPath" | scripts/run-gated-integration.py:76-76 |
+| The runner declares the `pytest_command` helper. | "def pytest_command(" | scripts/run-gated-integration.py:233-233 |
+| The inventory test enumerates the registered gated markers. | "def test_the_runner_covers_every_registered_gated_marker_and_invents_none("; "set(registered_gated_markers())" | mcp/tests/test_gated_integration_runner.py:102-102; mcp/tests/test_gated_integration_runner.py:105-105 |
+| The inventory equality is asserted by `test_the_runner_covers_every_registered_gated_marker_and_invents_none`. | `test_the_runner_covers_every_registered_gated_marker_and_invents_none` | mcp/tests/test_gated_integration_runner.py:102-106 |
+| The inventory comes from `registered_gated_markers`. | `registered_gated_markers` | mcp/tests/test_gated_integration_runner.py:53-56 |
+| `fitness` is registered but ordinary in `pyproject.toml`. | "fitness" | pyproject.toml:195-195 |
+| The ordinary-marker rule is asserted by `test_fitness_is_registered_as_an_ordinary_non_gated_marker`. | `test_fitness_is_registered_as_an_ordinary_non_gated_marker` | mcp/tests/test_gated_integration_runner.py:108-113 |
+| The supported Python floor and supported platforms are declared as package classifiers. | "requires-python = "; "Programming Language :: Python :: 3.11"; "Operating System :: POSIX :: Linux"; "Operating System :: MacOS" | mcp/pyproject.toml:10-10; mcp/pyproject.toml:17-17; mcp/pyproject.toml:20-21 |
+| Source-checkout instructions state the gate command and that Radon reports rather than enforces. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-200 |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: split the runner command, exact-inventory,
+  and ordinary-`fitness` claims into separately owned anchored rows; bound branch config, the reader's
+  validator call, and the refusal body plus real package classifier values, narrowed the quality-test
+  claim, and bound runner cardinality/equality to operative code and assertions.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: separated the full registered-marker set from
+  the environment-gated runner subset. `fitness` remains an ordinary registered marker and is
+  intentionally absent from gated commands. New ranges were provisional fixer input only.
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 12 citation findings; scoped check passed.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired this card's claims that the
   four complexity codes are held by `quality/complexity-baseline.txt` and that `PLR0913` is

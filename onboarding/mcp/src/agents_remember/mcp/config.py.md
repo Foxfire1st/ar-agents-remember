@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T13:07:21+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-04T03:03+02:00    |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -121,7 +121,7 @@ LOCAL MCP-authority boot-snapshot setting (like `dashboard`), NOT the global age
 settings file (unlike `orchestration.gateDelegation`, which moved there in 260703-L13) — these are
 per-process server-behavior toggles for THIS server's completion-edge hooks
 (`worktree_integrate_tool`/`lifecycle_finalize_task_tool`'s `_auto_land_completed_seats` calls in
-`controllers/worktree_tools.py`), not portfolio-wide policy.
+`application/worktree_tools.py`), not portfolio-wide policy.
 
 ### Invariants And Boundaries
 
@@ -162,23 +162,47 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `create_server` loads this config and hands it to every tool registrar. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
-| The daemon supervisor consuming `DashboardSettings` (autoStart/port). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
-| Gate delegation policy validation lives in controlplane. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
-| The dedicated `providerDegradation` settings parser this file wraps into `ConfigError` (260707-HFX-L7). | [mcp/provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py) |
-| The degradation detector consuming `McpRuntimeConfig.provider_degradation` every evaluation. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The agentic-settings loader supplying the boot-snapshot gateDelegation and the shared `parse_gate_delegation`. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
-| Launch-authority consumers: worktree start, watcher/query gating, benchmark filtering, runtime rebind derivation. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py); [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py); [benchmark_tools.py](agents-remember/mcp/src/agents_remember/controllers/benchmark_tools.py); [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
-| `RetirementSettings`/`config.retirement` is consumed by the two completion-edge auto-land hooks. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar. | `main`; `create_server` | mcp/src/agents_remember/mcp/server.py:18-28; mcp/src/agents_remember/mcp/server.py:35-57 |
+| Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | `McpConfigTests` | mcp/tests/test_config.py:73-438 |
+| `DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port. | `DashboardSettings`; `maybe_autostart_dashboard`; `_autostart` | mcp/src/agents_remember/mcp/config.py:85-90; mcp/src/agents_remember/serving/daemon.py:336-356; mcp/src/agents_remember/serving/daemon.py:359-364 |
+| Gate delegation policy validation lives in controlplane. | `make_gate_policy`; `apply_seam_verdict_requirement` | mcp/src/agents_remember/controlplane/gate_policy.py:73-105; mcp/src/agents_remember/controlplane/gate_policy.py:128-147 |
+| The dedicated `providerDegradation` parser validates the authority block and constructs typed settings. | `parse_provider_degradation_settings` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:58-128 |
+| `config_from_mapping` calls that parser and translates `ProviderDegradationSettingsError` into `ConfigError`. | `config_from_mapping` | mcp/src/agents_remember/mcp/config.py:241-290 |
+| `evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation. | `evaluate_provider_degradation`; `provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
+| `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. | `load_agentic_settings`; `_parse_orchestration`; `parse_gate_delegation` | mcp/src/agents_remember/kernel/agentic_settings.py:445-480; mcp/src/agents_remember/kernel/agentic_settings.py:644-680; mcp/src/agents_remember/kernel/agentic_settings.py:880-932 |
+| `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. | `parse_orchestration_settings`; `_parse_legacy_authority_gate_delegation` | mcp/src/agents_remember/mcp/config.py:479-512; mcp/src/agents_remember/mcp/config.py:515-547 |
+| `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
+| The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. | `_provider_operation_result`; `ProviderOperation.required_provider` | mcp/src/agents_remember/application/provider_tools.py:736-783 |
+| Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:83-162 |
+| Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. | `codex_benchmark_prepare_tool`; `codex_benchmark_run_tool`; `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:64-84; mcp/src/agents_remember/application/benchmark_tools.py:137-144; mcp/src/agents_remember/application/benchmark_tools.py:87-134 |
+| Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615 |
+| Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | `ReloadProviderAuthorityTests`; `WorktreeStartVetoTests`; `QueryFunnelGateTests`; `RuntimeRebindDerivationTests`; `BenchmarkProviderFilterTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:124-177; mcp/tests/test_provider_containment.py:180-196; mcp/tests/test_provider_containment.py:199-206; mcp/tests/test_provider_containment.py:209-273 |
+| `RetirementSettings` defines the two default-on toggles; worktree integration and lifecycle finalization each consult the corresponding `config.retirement` flag before calling `_auto_land_completed_seats`. | `RetirementSettings`; `worktree_integrate_tool`; `lifecycle_finalize_task_tool`; `_auto_land_completed_seats` | mcp/src/agents_remember/application/worktree_tools.py:330-359; mcp/src/agents_remember/application/worktree_tools.py:457-487; mcp/src/agents_remember/application/worktree_tools.py:424-454; mcp/src/agents_remember/mcp/config.py:101-110 |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
 
+- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the seven configuration relationship groups (9 repairs, 2 normalisations, 0 declines); the runtime group was split across both install owners, and the locked final rerun was clean with frozen zero source/tokenize/parse/build telemetry.
+- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: corrected seven
+  underbound relationship groups without changing their approved meaning: server config ownership;
+  degradation parsing/translation; agentic/global-versus-legacy orchestration loading; watcher
+  gating; worktree setup; benchmark filtering; and runtime install derivation. Cross-owner groups
+  were split where needed, and every changed binding is a provisional `:1-1` input for the fresh
+  Luna curator; no citation mechanics ran.
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T00:59:36+02:00 — 260731-EFA-L6 S18-SR1 worker correction: source-first repaired the
+  seven B06 configuration relationship groups. Loading is owned by `main`/`load_config`; daemon,
+  provider-degradation, boot-snapshot gate-delegation, live provider-authority funnels, and both
+  retirement hooks now point to their actual consumers. New or rewritten bindings remain honest
+  `:1-1` inputs for the later scoped fixer; preserved the prior B06 entry and ran no citation
+  mechanics. Verification metadata remains pinned until closeout stamps the L6 code commit.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped configuration citations; final exact frozen-snapshot check is clean.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **mechanical only, attested unchanged.** The
   file's diff against `c1dc505` is two `ruff format` line rewraps —
   `require_provider_launch_authority`'s parameter list and one

@@ -43,23 +43,24 @@ No open file-local todos.
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Method 2 (workflow × UI-state matrix) that drives this template. | whole file | [owned-methods.md](agents-remember/dev-skills/dashboard-experience-review/owned-methods.md) |
+| Method 2 (workflow × UI-state matrix) that drives this template. | `## Method 2 — Workflow × UI-state matrix → missing views (Stage 3b)` | dev-skills/dashboard-experience-review/owned-methods.md:50-64 |
 
 ## Cross-Repo References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 1 table citation for the workflow-to-missing-view method heading; fixer-generated range verified.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

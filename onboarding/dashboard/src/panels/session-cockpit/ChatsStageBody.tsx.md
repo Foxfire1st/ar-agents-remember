@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ diagnostic; a legacy-raw session keeps its interactive PTY as the primary body, 
   undefined focus renders nothing; a non-controlled (legacy-raw) session renders the interactive
   `PtySurface` as the primary body under the honest label `legacy terminal · structured conversation
   unavailable` (`data-mode="legacy-raw"`, §4.3).
-- **Epoch resolution + connect lifecycle** (L71-L102): `connect` reads the bridge epoch from
+- **Epoch resolution + connect lifecycle** cit:([`EPOCH_RESOLVE_WINDOW_MS`], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:127-127): `connect` reads the bridge epoch from
   `readSubmissionAuthority` — the LANDED L5 submission authority is REUSED for the epoch, not
   re-discovered, so no second submission/epoch authority is created — then calls
   `connectConversation(sessionId, descriptor.bridgeEpoch)` (the data-layer store orchestration). A
@@ -42,7 +42,7 @@ diagnostic; a legacy-raw session keeps its interactive PTY as the primary body, 
   session startup (`submission-authority` 503), so the first failure schedules ONE 800 ms retry before
   escalating `epochState` to `failed`; fail-loud is preserved — a second failure still renders the
   visible projection-failed banner (`ConversationReconnect phase="projection-failed"`).
-- **Library overlay + diagnostics mutual exclusion** (L118-L158): when the library is open
+- **Library overlay + diagnostics mutual exclusion** cit:([`hiddenBehind`], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:35-35): when the library is open
   (`showLibrary`, controlled harness only) the active surface stays mounted but goes inert behind it
   (`display:none`), and the `TerminalDiagnosticsDrawer` is NOT rendered at all — so the library and the
   drawer can never overlay/z-fight (F8). A successful open closes the library and focuses the new
@@ -64,29 +64,29 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Thin composition, epoch resolve, bounded auto-retry, library/diagnostics exclusion. | L49-L160 | [ChatsStageBody.tsx](ChatsStageBody.tsx) |
-| The reconstructable active-conversation store connect/disconnect orchestration. | L226-L256 | [../../data/conversation/store.ts](../../data/conversation/store.ts) |
-| The reused L5 submission authority the epoch comes from. | — | [../../data/submissionLifecycleClient.ts](../../data/submissionLifecycleClient.ts) |
-| The default structured surface, the library surface, the reconnect banner, and the default-off drawer. | — | [conversation/ConversationSurface.tsx](conversation/ConversationSurface.tsx) · [conversation-library/ConversationLibrarySurface.tsx](conversation-library/ConversationLibrarySurface.tsx) · [conversation/ConversationReconnect.tsx](conversation/ConversationReconnect.tsx) · [conversation/TerminalDiagnosticsDrawer.tsx](conversation/TerminalDiagnosticsDrawer.tsx) |
-| The controlled-session predicate and the legacy-raw PTY body. | — | [lifecycleCopy.ts](lifecycleCopy.ts) · [PtySurface.tsx](PtySurface.tsx) |
-| The view that mounts this body and owns the surrounding authorities. | — | [SessionsView.tsx](SessionsView.tsx) |
+| Thin composition, epoch resolve, bounded auto-retry, library/diagnostics exclusion. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
+| The reconstructable active-conversation store connect/disconnect orchestration. | `connectConversation`; `disconnectConversation` | dashboard/src/data/conversation/store.ts:567-612; dashboard/src/data/conversation/store.ts:614-630 |
+| The reused L5 submission authority the epoch comes from. | `readSubmissionAuthority` | dashboard/src/data/submissionLifecycleClient.ts:310-321 |
+| The default structured surface, the library surface, the reconnect banner, and the default-off drawer. | `ConversationSurface`; `ConversationLibrarySurface`; `copyFor`; `TerminalDiagnosticsDrawer` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:47-66; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381; dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:77-117 |
+| The controlled-session predicate and the legacy-raw PTY body. | "legacy raw — the vendor TUI runs in this pane"; `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:122-122 |
+| The view that mounts this body and owns the surrounding authorities. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/SessionsView.tsx:196-1331 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -98,6 +98,8 @@ retries only transient failures in a bounded 30-second window and otherwise fail
 layers freeze their last visible box so composer chrome cannot provoke terminal refits.
 
 ## Update History
+
+- 2026-08-03T02:45+02:00 — W3-B01 curator: curated 11 Repo-Internal table source citations across 6 rows and 2 prose citations for the stage composition, conversation store, submission authority, surfaces, and view owner. Verification metadata remains unchanged for closeout.
 
 - 2026-07-24T13:17:17Z — Curator: corrected warm/cold projection, bounded keep-alive, scroll-geometry,
   visible-PTY-box, and honest boot-retry invariants; verification fields remain pre-commit.

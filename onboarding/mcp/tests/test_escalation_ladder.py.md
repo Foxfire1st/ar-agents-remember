@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_escalation_ladder.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -84,27 +84,30 @@ No relevant external documentation found after checking the repo Domain Document
 same-repository unit-test suite for internal control-plane plumbing with no external spec — the
 leaf task doc (R2/R3/R6) is the source of truth this suite pins.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines the ladder/orphan-policy behavior under test; the leaf task doc is authoritative. | L1-L207 | [test_escalation_ladder.py](test_escalation_ladder.py) |
+| No external/domain document defines the ladder/orphan-policy behavior under test; the leaf task doc is authoritative. | `RungDueTests` | mcp/tests/test_escalation_ladder.py:68-110 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: rung-due dwell logic, per-rung routing, and seat-suspect liveness. | whole module | [../src/agents_remember/controlplane/escalation_ladder.py](../src/agents_remember/controlplane/escalation_ladder.py.md) |
-| The orphan-detection hook under test. | `find_orphaned_workers` | [../src/agents_remember/controlplane/orphan_policy.py](../src/agents_remember/controlplane/orphan_policy.py.md) |
-| The catalog entry fixture fields (`spawn_role`/`spawned_by_session`/`turn_state`) this suite seeds. | `TerminalCatalogEntry` | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py.md) |
+| The module under test: rung-due dwell logic, per-rung routing, and seat-suspect liveness. | "def next_step(" | mcp/src/agents_remember/controlplane/escalation_ladder.py:123-123 |
+| The orphan-detection hook under test. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
+| The catalog entry fixture fields (`spawn_role`/`spawned_by_session`/`turn_state`) this suite seeds. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository unit-test suite only. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: `_entry` stopped being a `**overrides`
   dict-layering builder and is now keyword-only over `agent_id`/`recipient_role`, calling

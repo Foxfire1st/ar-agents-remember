@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/ptyHarvest.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,25 +29,25 @@ wired only for the raw archetype in `PtySurface`.
 
 ### Logic
 
-- **`PtyHarvest` per session** (L21-L28): `bellPending` (+`lastBellAt`) — bell observed and not
+- **`PtyHarvest` per session**: `bellPending` (+`lastBellAt`) — bell observed and not
   yet acknowledged; `title` — the vendor TUI's own OSC 0/2 window title, a label HINT, never the
   catalog label; `turnHint` — the last parsed `PtyTurnHint`
-  (`prompt | command-running | command-finished | progress[percent] | progress-done`, L13-L19).
-- **The store** (L51-L73): zustand vanilla, `bySession` keyed by sessionId with the
-  copy-on-write `withHarvest` helper (L42-L49). `recordBell` sets the pending marker;
+  (`prompt | command-running | command-finished | progress[percent] | progress-done`). cit:([`PtyHarvest`], dashboard/src/data/ptyHarvest.ts:21-28) cit:([`PtyTurnHint`], dashboard/src/data/ptyHarvest.ts:13-19)
+- **The store**: zustand vanilla, `bySession` keyed by sessionId with the
+  copy-on-write `withHarvest` helper. `recordBell` sets the pending marker;
   `acknowledgeBell` clears it — **focusing the seat IS the acknowledgment** (the marker exists to
   pull attention there), and it is a no-op without a pending bell (no state churn, L58-L61);
   `recordTitle`/`recordTurnHint` are per-session and independent; `clear` drops a session's
-  harvest.
+  harvest. cit:([`ptyHarvestStore`], dashboard/src/data/ptyHarvest.ts:51-73) cit:([`withHarvest`], dashboard/src/data/ptyHarvest.ts:42-49)
 - **Pure OSC parsers** (unit-tested; xterm stays out of jsdom):
-  - `parseOsc133(data, at)` (L85-L91) — FinalTerm shell-integration marks: `A`/`B` → `prompt`,
+  - cit:([`parseOsc133`], dashboard/src/data/ptyHarvest.ts:85-91) — FinalTerm shell-integration marks: `A`/`B` → `prompt`,
     `C` → `command-running`, `D[;exit]` → `command-finished`; anything else → null — never a
     fabricated hint.
-  - `parseOsc94(data, at)` (L98-L110) — ConEmu progress: `4;st;pr` with st 0 → `progress-done`,
+  - cit:([`parseOsc94`], dashboard/src/data/ptyHarvest.ts:98-110) — ConEmu progress: `4;st;pr` with st 0 → `progress-done`,
     active states → `progress` with the percent clamped to 0–100 (indeterminate st 3 → no
     percent). xterm's handler registration strips the leading `9`, so `data` starts at `4;…`;
     non-progress OSC 9 payloads (e.g. notifications) → null.
-  - `turnHintWord(hint)` (L113-L126) — the dim, clearly-hint-labeled words the rail tooltip
+  - cit:([`turnHintWord`], dashboard/src/data/ptyHarvest.ts:113-126) — the dim, clearly-hint-labeled words the rail tooltip
     renders (`at prompt`, `command running`, `progress 42%`, …).
 
 ### Invariants And Boundaries
@@ -64,32 +64,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Store, parsers, and hint vocabulary. | L13-L126 | [ptyHarvest.ts](ptyHarvest.ts) |
-| The xterm-side hooks (onBell/onTitleChange/OSC 133/OSC 9), observe-only. | L178-L189 | [../panels/Terminal.tsx](../panels/Terminal.tsx) |
-| The archetype gate (hooks only when NOT controlled) + acknowledge-on-focus. | L141; L186-L208 | [../panels/session-cockpit/PtySurface.tsx](../panels/session-cockpit/PtySurface.tsx) |
-| The rail consumers: bell attention marker + labeled tooltip hints. | L389; L450-L467 | [../panels/session-cockpit/SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
-| The grammar this store must never feed. | — | [stateGrammar.ts](stateGrammar.ts) |
-| The unit suite: parser matrices, clamps, no-fabrication, bell/ack semantics. | L11-L70 | [ptyHarvest.test.ts](ptyHarvest.test.ts) |
+| Store, parsers, and hint vocabulary. | `ptyHarvestStore`, `parseOsc133`, `parseOsc94`, `turnHintWord` | dashboard/src/data/ptyHarvest.ts:51-73; dashboard/src/data/ptyHarvest.ts:85-91; dashboard/src/data/ptyHarvest.ts:98-110; dashboard/src/data/ptyHarvest.ts:113-126 |
+| The xterm-side hooks (onBell/onTitleChange/OSC 133/OSC 9), observe-only. | `TerminalStreamHooks` | dashboard/src/panels/Terminal.tsx:107-115 |
+| The archetype gate (hooks only when NOT controlled) + acknowledge-on-focus. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
+| The rail consumers: bell attention marker + labeled tooltip hints. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| The grammar this store must never feed. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
+| The unit suite: parser matrices, clamps, no-fabrication, bell/ack semantics. | "parseOsc133 (shell-integration marks)", "parseOsc94 (ConEmu progress)", "turnHintWord", "harvest store" | dashboard/src/data/ptyHarvest.test.ts:11-23; dashboard/src/data/ptyHarvest.test.ts:25-37; dashboard/src/data/ptyHarvest.test.ts:39-44; dashboard/src/data/ptyHarvest.test.ts:46-70 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 10 citations (four local prose citations and six repository-internal references); existing parser prose citations were already current.
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
   is unchanged by this memory-only governance move; verification hash/date remain pinned.

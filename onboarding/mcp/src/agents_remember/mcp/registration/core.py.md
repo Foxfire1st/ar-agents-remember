@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-31T15:31+02:00                                   |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`               |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                                   |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`               |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -53,19 +53,22 @@ The docstrings are the model-visible contract and carry the semantics that are n
 - `runtime_install` and `skills_install` register `dry_run=False` — act-by-default. The docstrings
   say to preview first; the default does not.
 - No behaviour here. `read_ar_files`'s onboarding-lookup status vocabulary, the route-index rule,
-  and the per-session dedup all live in `controllers/read_files.py`.
+  and the per-session dedup all live in `application/read_files.py`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Six of the seven payload builders (all but `read_ar_files_payload`). | [tools/core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
-| `read_ar_files_payload`, imported through the `mcp.tools` facade. | [tools/read_files.py](agents-remember/mcp/src/agents_remember/mcp/tools/read_files.py) |
-| `TaskRef` — the locator bundle `resolve_context` packs. | [controllers/task_ref.py](agents-remember/mcp/src/agents_remember/controllers/task_ref.py) |
-| What each declaration hands its builder, proved through a live server. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Six of the seven payload builders (all but `read_ar_files_payload`). | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
+| `read_ar_files_payload`, imported through the `mcp.tools` facade. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
+| `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
+| What each declaration hands its builder, proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
 
 ## Update History
 
+- 2026-08-03T02:42:00+02:00 — W3-B01 curator: curated 2 Repo-Internal table citations with exact `TaskRef` and registration-wiring test anchors. Verification metadata remains unchanged for closeout.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. These seven declarations
   moved verbatim out of `server.py`; `resolve_context` additionally packs its locators into the new
   `TaskRef`. Verification metadata pinned to the pre-change commit until closeout stamps the L2 code

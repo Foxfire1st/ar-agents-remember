@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T20:08+02:00 |
-| lastVerifiedCommitHash |  |
-| lastVerifiedCommitDate |  |
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ None known.
 
 No Domain Documentation entries are configured in the resolved source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live documentation source was available for this pass. | — | — |
 
@@ -56,20 +56,24 @@ No Domain Documentation entries are configured in the resolved source registry.
 The Claude adapter suite loads both frames and proves permission and question responses through the
 same durable interaction boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture loader selects the 2.1.210 directory and parses each JSONL frame. | L29-L36 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| The interaction test consumes both frames and verifies the explicit permission and question responses. | L391-L432 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| The fixture loader selects the 2.1.210 directory. | `FIXTURE_ROOT` | mcp/tests/test_harness_control_claude.py:40-40 |
+| The fixture loader parses each JSONL frame through `_load_fixture`. | `_load_fixture` | mcp/tests/test_harness_control_claude.py:49-50 |
+| The interaction test consumes both frames and verifies the explicit permission and question responses. | `test_permissions_and_ask_user_question_use_durable_interaction_response` | mcp/tests/test_harness_control_claude.py:694-745 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references were needed for this fixture.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: anchored fixture loading and durable
+  permission/question response coverage to exact test symbols.
 
 - 2026-07-15T20:08+02:00 — 260714-ACPUI-L1 curator: created the strict sidecar for the current
   versioned permission and `AskUserQuestion` fixture. Verification metadata remains empty until

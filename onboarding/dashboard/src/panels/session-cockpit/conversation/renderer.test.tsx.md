@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,21 +25,21 @@ grammar.
 
 ### Logic
 
-- **jsdom geometry shim** (L8-L12): jsdom has no layout engine, so `offsetHeight`/`offsetWidth` are
-  stubbed (600/800) for this file so `@tanstack/react-virtual` measures a non-zero viewport and
-  actually renders feed rows for the semantics assertions.
-- **`ConversationTimeline` — role=feed (R5)** (L33-L68): a `role="feed"` exists; each `article`'s
+- **jsdom geometry note**: the suite records that `@tanstack/react-virtual` reads
+  `offsetWidth`/`offsetHeight` through `getRect` synchronously on mount. cit:(["getRect"], dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:9-9)
+- **`ConversationTimeline` — role=feed (R5)**: a `role="feed"` exists; each `article`'s
   `aria-posinset` equals the server `globalOrdinal` (7/8, NEVER the array index), `aria-setsize` is
   present only when `totalItems` is known, and streaming articles carry `aria-live="off"`. The second
   case proves `aria-setsize` is OMITTED and the pager reads `total unknown` when the total is not
-  honestly known.
-- **`MessageItem` — grammar/images/clamp (R3)** (L1314-L1373): an `image-ref` renders a non-empty
+  honestly known. cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-1265)
+- **`MessageItem` — grammar/images/clamp (R3)**: an `image-ref` renders a non-empty
   accessible alt + provenance and NO `<img>` (no invented `/api/assets` URL — F11); a long completed
   assistant message clamps behind a real `<button aria-expanded>` whose label carries an exact
   `+N lines` count; an agent-bus delivery is source-badged (`agent bus`) while an ordinary operator
-  message is not (badge only when origin changes interpretation).
-- **`TerminalDiagnosticsDrawer` — default off (R2/R7)** (L1375-L1385): closed by default →
+  message is not (badge only when origin changes interpretation). cit:(["MessageItem — grammar, images, clamp (R3, §12.2)"], dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:1375-1434)
+- **`TerminalDiagnosticsDrawer` — default off (R2/R7)**: closed by default →
   `data-open="false"`, `aria-hidden="true"`, `inert`, and NO PTY frame mounted (the R7 negative proof).
+  cit:(["TerminalDiagnosticsDrawer — default off (R2/R7, §12.6)"], dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:1436-1446)
 - **`ConversationTimeline` — 10k tool-heavy DOM/interaction baseline (R5.2/R5.10, L4.4)** (added by
   260718-CHATS-L5, L132-L217): mounts 10,000 rotating message/thinking/tool-call/tool-result items
   through the landed L4 renderer + `@tanstack/react-virtual`. The load-bearing invariant is that the
@@ -72,28 +72,28 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The virtualized feed under test (posinset/setsize/live). | L15 | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
-| The message item under test (image ref, clamp, source badge). | L16 | [MessageItem.tsx](MessageItem.tsx) |
-| The default-off diagnostics drawer under test. | L17 | [TerminalDiagnosticsDrawer.tsx](TerminalDiagnosticsDrawer.tsx) |
-| The item wire type the fixtures build. | L14 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The axe-core dev dependency this suite requires (added by the leaf). | L1 | [../../../../package.json](../../../../package.json) |
+| The virtualized feed under test (posinset/setsize/live). | `ConversationTimeline` | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-1265 |
+| The message item under test (image ref, clamp, source badge). | `MessageItem` | dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156 |
+| The default-off diagnostics drawer under test. | `TerminalDiagnosticsDrawer` | dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:77-117 |
+| The item wire type the fixtures build. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
+| The axe-core dev dependency this suite requires (added by the leaf). | "axe-core" | dashboard/package.json:66-66 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -104,11 +104,14 @@ renderer/a11y coverage for the conversation grammar.
 
 ## Update History
 
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations. The scroll-memory
-  / intent-lock / upscroll-anchor matrix (L70-L1312) was inserted between the feed-semantics suite and
-  the grammar suites, so `MessageItem` moved L70-L118 -> L1314-L1373 and `TerminalDiagnosticsDrawer`
-  moved L120-L130 -> L1375-L1385; both cited ranges had been pointing into the scroll-memory tests.
-  The `ConversationTimeline` role=feed range (L33-L68) was re-checked and is still exact.
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 11 repository-reference citations (11/11 anchored and sourced; scoped citation check clean).
+
+  / intent-lock / upscroll-anchor matrix was inserted between the feed-semantics suite and the
+  grammar suites, so `MessageItem` and `TerminalDiagnosticsDrawer` moved after the scroll-memory tests;
+  both cited ranges had been pointing into the scroll-memory tests. cit:(["MessageItem — grammar, images, clamp (R3, §12.2)"], dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:1375-1434) cit:(["TerminalDiagnosticsDrawer — default off (R2/R7, §12.6)"], dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:1436-1446)
+  The `ConversationTimeline` role=feed range was re-checked and is still exact. cit:(["ConversationTimeline — one navigable role=feed (R5, §14.2)"], dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:33-68)
 
 - 2026-07-24T13:17:17Z — Curator: recorded the scroll-restoration regression matrix and latest-chip
   behavior; verification fields remain pre-commit.

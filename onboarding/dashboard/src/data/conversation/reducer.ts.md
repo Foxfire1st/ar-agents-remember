@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/reducer.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -83,30 +83,34 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The wire types the reducer reduces. | L17-L28 | [types.ts](types.ts) |
-| The store that drives page/event application and consumes `recovery`. | L63-L104 | [store.ts](store.ts) |
-| The 14-test suite pinning no-dup-item, cursor order/idempotence, gap→repage, L1.5, revision→reset. | — | [reducer.test.ts](reducer.test.ts) |
-| The interrupt hook that reads `orderedItemIds`/`status` for turn-id correlation. | L61-L78 | [../../panels/session-cockpit/conversation/useConversationControls.ts](../../panels/session-cockpit/conversation/useConversationControls.ts) |
-| The server active-serving routes whose events this reduces. | — | [active/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
+| The wire page and event-envelope types consumed by the reducer entry points. | `ConversationPage`; `ConversationEventEnvelope` | dashboard/src/data/conversation/types.ts:286-298; dashboard/src/data/conversation/types.ts:327-336 |
+| The reducer's initial and older-page entry points apply typed page baselines. | `applyInitialPage`; `applyOlderPage` | dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:205-229 |
+| The reducer's live event entry point applies identity, cursor, dedupe, and gap rules. | `applyEvent` | dashboard/src/data/conversation/reducer.ts:246-286 |
+| The store applies pages/events and consumes the reducer's `recovery` signal. | `activeConversationStore`; `handleRecovery` | dashboard/src/data/conversation/store.ts:84-191; dashboard/src/data/conversation/store.ts:427-435 |
+| The active conversation reducer suite is the focused regression source for cursor, dedupe, gap, revision, identity, replacement, and replay behavior. | "active conversation reducer" | dashboard/src/data/conversation/reducer.test.ts:50-193 |
+| The interrupt hook reads reducer status and ordered item ids for working-turn correlation. | `resolveWorkingTurnId` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78 |
+| The active serving API supplies page and event evidence consumed by the reducer. | `conversation_page`; `conversation_events`; `applyInitialPage`; `applyEvent` | dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:246-286; mcp/src/agents_remember/serving/conversation/active/api.py:126-155; mcp/src/agents_remember/serving/conversation/active/api.py:204-247 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the frozen-source ledger, split pooled reducer references by source owner, and supplied exact anchors with scoped fixer input for generated ranges. Verification metadata unchanged.
 
 - 2026-07-24T13:17:50Z — Removed the stale reducer-owned scroll-anchor description and recorded the
   protocol/UI boundary. Verification hash/date remain pinned to the pre-commit source stamp.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/AttentionQueue.test.tsx`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,15 +45,17 @@ yet), so no "Open" or dismissal affordance is asserted.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The panel under test (generic severity-keyed rendering). | — | [AttentionQueue.tsx](AttentionQueue.tsx) |
-| The reducer source of the `blocked-start` item (§9). | — | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The `GALLERY` projection seed + the store `applySnapshot`. | — | [dev/fixtures.ts](../dev/fixtures.ts) |
-| Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target. | L126-L142 | [AttentionQueue.test.tsx](AttentionQueue.test.tsx) |
-| Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms. | L144-L190 | [AttentionQueue.test.tsx](AttentionQueue.test.tsx) |
+| The panel under test (generic severity-keyed rendering). | `item`; `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:21-40; dashboard/src/panels/AttentionQueue.tsx:130-265 |
+| The reducer source of the `blocked-start` item (§9). | `_start_attention` | mcp/src/agents_remember/observer/reducer.py:968-991 |
+| The store `applySnapshot` path used by this fixture's projection seed. | `applySnapshot` | dashboard/src/panels/AttentionQueue.test.tsx:59-59 |
+| Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target. | "dismisses actionable drift without a lifecycle target and hides it immediately" | dashboard/src/panels/AttentionQueue.test.tsx:129-145 |
+| Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms. | "Clear all dismisses dismissible listed items, not worktree alarms" | dashboard/src/panels/AttentionQueue.test.tsx:147-193 |
 
 ## Update History
+
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound each queue claim to its implementation or focused test anchor and normalized scoped citation evidence.
 
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: added/recorded coverage that actionable drift dismisses
   without a lifecycle target, hides optimistically, and participates in Clear all while worktree alarms

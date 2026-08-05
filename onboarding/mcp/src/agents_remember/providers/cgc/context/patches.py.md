@@ -38,11 +38,13 @@ managed patch application path belongs to the Docker runner image build.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Docker runner patch assets and patch-helper tests use these marker-based text transformations without requiring host CGC installation. | [patch_cgc.py](../../../package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py.md); [test_context_providers.py](../../../../../tests/test_context_providers.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Docker runner patch assets and patch-helper tests use these marker-based text transformations without requiring host CGC installation. | "def apply_cgc_timer_pop_patch("; "def test_patch_script_carries_the_timer_pop_operation(self) -> None:" | mcp/src/agents_remember/providers/cgc/context/patches.py:44-44; mcp/tests/test_context_providers.py:620-620 |
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 1 citation row with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-03T01:55+02:00 — L12 adds cgc_timer_pop_patch_applied/apply_cgc_timer_pop_patch for core/watcher.py, mirroring the cgcignore patch pattern (marker check, exact-snippet replace, idempotent).
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.

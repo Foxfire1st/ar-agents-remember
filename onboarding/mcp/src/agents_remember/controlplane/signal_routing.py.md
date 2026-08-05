@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -123,27 +123,29 @@ No meaningful external design-doc references found yet (created this leaf); the 
 addressed its grandchildren's noise" rule is a developer ruling recorded in the leaf spec, not an
 existing design doc.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The owner address is read straight off the sender's own `spawned_by_session`/`spawned_by_lifecycle` catalog fields. | L48-L59 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The two callers of the two-hop walk: rung 2's skip-level target and the dead-upstream grandparent signal. | `derive_skip_level_owner` | [../serving/supervisor.py](../serving/supervisor.py.md) |
-| `next_step`'s rung-2 branch calls this walker directly and detects the hierarchy-ceiling empty-owner case. | `derive_skip_level_owner` | [escalation_ladder.py](escalation_ladder.py.md) |
+| The owner address is read straight off the sender's own `spawned_by_session`/`spawned_by_lifecycle` catalog fields. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
+| The two callers of the two-hop walk: rung 2's skip-level target and the dead-upstream grandparent signal. | `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
+| `next_step`'s rung-2 branch calls this walker directly and detects the hierarchy-ceiling empty-owner case. | `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/controlplane/signal_routing.py` since the L2 base commit is the whole-

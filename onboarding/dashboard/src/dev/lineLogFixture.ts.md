@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/lineLogFixture.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00                           |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -29,19 +29,19 @@ dev surfaces.
 
 ### Logic
 
-- **`RUNNER_LINE_LOG_BOOT`** (L9-L19): one boot's worth of runner output — protocol banner,
+- **`RUNNER_LINE_LOG_BOOT`** — cit:([`RUNNER_LINE_LOG_BOOT`], dashboard/src/dev/lineLogFixture.ts:9-19): one boot's worth of runner output — protocol banner,
   `[control] ready` status transitions (idle→running→idle), user/assistant/result transcript
   lines with request ids.
-- **`RUNNER_LINE_LOG_STREAM`** (L22-L30): steady-state lines the bench cycles to simulate a
+- **`RUNNER_LINE_LOG_STREAM`** — cit:([`RUNNER_LINE_LOG_STREAM`], dashboard/src/dev/lineLogFixture.ts:22-30): steady-state lines the bench cycles to simulate a
   working controlled pane, including the queued-submission echo
   (`[control] submission req-77 queued: retained for the next turn`).
-- **`MockLineLogSocket`** (L34-L82): a WebSocket lookalike — `queueMicrotask` fires `onopen`,
+- **`MockLineLogSocket`** — cit:([`MockLineLogSocket`], dashboard/src/dev/lineLogFixture.ts:34-82): a WebSocket lookalike — `queueMicrotask` fires `onopen`,
   emits the boot log, then `setInterval` drips stream lines as `ArrayBuffer` messages (binary,
-  like the real terminal WS). **`send` models the controlled-stdin trap** (L55-L71): a stdin
+  like the real terminal WS). **`send` models the controlled-stdin trap** — cit:([`send`], dashboard/src/dev/lineLogFixture.ts:55-71): a stdin
   message containing `\r` echoes the runner's queued-submission acceptance line — exactly the
   behavior the InteractionBar honesty hint names (typing into a controlled pane queues for the
   NEXT turn; it never answers the pending interaction).
-- **Factories** (L85-L90): `mockControlledLineLogSocketFactory` (one line / 2 s — the
+- **Factories** — cit:([`mockControlledLineLogSocketFactory`, `benchLineLogSocketFactory`], dashboard/src/dev/lineLogFixture.ts:85-86; dashboard/src/dev/lineLogFixture.ts:89-90): `mockControlledLineLogSocketFactory` (one line / 2 s — the
   calm controlled pane) and `benchLineLogSocketFactory(linesPerSecond)` (the OQ-B firehose,
   floored at a 5 ms interval).
 
@@ -55,16 +55,19 @@ dev surfaces.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Boot/stream line sets, the mock socket incl. the queued-submission stdin echo, both factories. | L9-L91 | [lineLogFixture.ts](lineLogFixture.ts) |
-| The socket-factory context type this plugs into. | — | [../data/terminal.ts](../data/terminal.ts) |
-| The bench consuming the firehose factory + stream lines (serialize probe fill). | L5, L83, L118 | [PtyRenderBench.tsx](PtyRenderBench.tsx) |
-| The pre-existing generic dev echo socket this complements (Chats bench). | — | [mockTerminalSocket.ts](mockTerminalSocket.ts) |
-| The honesty hint whose trap the `send` echo models. | L57-L58 | [../panels/session-cockpit/lifecycleCopy.ts](../panels/session-cockpit/lifecycleCopy.ts) |
+| Boot/stream line sets, the mock socket incl. the queued-submission stdin echo, both factories. | `RUNNER_LINE_LOG_BOOT`; `RUNNER_LINE_LOG_STREAM`; `MockLineLogSocket`; `mockControlledLineLogSocketFactory`; `benchLineLogSocketFactory` | dashboard/src/dev/lineLogFixture.ts:9-19; dashboard/src/dev/lineLogFixture.ts:22-30; dashboard/src/dev/lineLogFixture.ts:34-82; dashboard/src/dev/lineLogFixture.ts:85-86; dashboard/src/dev/lineLogFixture.ts:89-90 |
+| The socket-factory context type this plugs into. | `TerminalSocketFactory` | dashboard/src/data/terminal.ts:46-46 |
+| The bench consuming the firehose factory + stream lines (serialize probe fill). | `PtyRenderBench` | dashboard/src/dev/PtyRenderBench.tsx:83-164 |
+| The pre-existing generic dev echo socket this complements (Chats bench). | `MockTerminalSocket`; `createMockTerminalSocketFactory` | dashboard/src/dev/mockTerminalSocket.ts:11-56; dashboard/src/dev/mockTerminalSocket.ts:58-63 |
+| The honesty hint whose trap the `send` echo models. | `INTERACTION_HONESTY_HINT` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73 |
 
 ## Update History
 
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 15 citation finding(s); scoped recheck clean.
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R1/R9 (design §8.1): the controlled-pane
   line-log content (verbatim runner shapes incl. the queued-submission echo) + the mock socket
   with the controlled-stdin queue trap, in slow-drip and bench-firehose factory variants.

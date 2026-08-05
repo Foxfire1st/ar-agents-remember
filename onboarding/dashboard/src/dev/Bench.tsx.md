@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/Bench.tsx`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -62,21 +62,23 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `happy-build`→`build-up` legacy-deep-link alias (05k). | L13-L16 | [Bench.tsx](Bench.tsx) |
-| Grouped `<select>` picker + mounts the player beneath the real shell. | L36-L60 | [Bench.tsx](Bench.tsx) |
-| The scenario model + player it drives. | — | [scenarios.ts](scenarios.ts) · [ScenarioPlayer.tsx](ScenarioPlayer.tsx) |
-| The real cockpit shell it renders (also the shell rendered against fixtures). | — | [Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The gallery fixtures hydrated by the legacy `?state=` path. | — | [fixtures.ts](fixtures.ts) |
-| The dev terminal mock provided via context (slice 6e-1). | — | [mockTerminalSocket.ts](mockTerminalSocket.ts) |
-| Picker/player styles. | — | [dev.css](dev.css) |
+| The `happy-build`→`build-up` legacy-deep-link alias (05k). | "?scenario=happy-build" | dashboard/src/dev/Bench.tsx:20-20 |
+| The grouped scenario picker is a compact selector. | `htmlFor` | dashboard/src/dev/Bench.tsx:51-51 |
+| The selected scenario mounts the real cockpit shell. | "chats" | dashboard/src/dev/Bench.tsx:41-41 |
+| The scenario model validates named engine-room scenarios before building frames. | "scenario player: unknown engine-room scenario" | dashboard/src/dev/scenarios.ts:35-35 |
+| The real cockpit shell it renders (also the shell rendered against fixtures). | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| The gallery fixtures hydrated by the legacy `?state=` path. | "calm" | dashboard/src/dev/fixtures.ts:148-148 |
+| The dev terminal mock provided via context (slice 6e-1). | `mockTerminalSocketFactory` | dashboard/src/dev/mockTerminalSocket.ts:65-65 |
+| Picker styles. | "bench-overlay" | dashboard/src/dev/dev.css:26-26 |
+| Player active-control styles. | "player__controls button.is-on" | dashboard/src/dev/dev.css:120-120 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -90,11 +92,12 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 8 repository-reference citations (8/8 anchored and sourced; scoped citation check clean).
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

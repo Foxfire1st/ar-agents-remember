@@ -17,70 +17,66 @@
 ## Purpose
 
 `test_terminal_paste.py` covers the server-side capture-verified paste helper
-(`serving.terminal_paste`, L2, hardened by 260707-HFX-L3). The paster mirrors the frontend
-`pasteAndConfirm` / `submitAndConfirm` over tmux primitives; every tmux operation is injectable, so
-the confirmation loop runs against in-memory fake panes — no real tmux server and no real sleeping
-(an injected clock + a no-op sleep make the timeouts deterministic). The `DeliveryIntegrityTests`
-class encodes 260707-HFX-L3: the SF-1 blind seat (codex chip vocabulary unrecognized → false
-verdicts) and the F-V duplicate stack (blind retry re-pasted a landed paste up to 7 times) — each
-scenario failed against the pre-fix seam by construction.
+(`serving.terminal_paste`). The paster mirrors the frontend `pasteAndConfirm` / `submitAndConfirm`
+over tmux primitives; every tmux operation is injectable through cit:([`TerminalPasterSeams`], mcp/src/agents_remember/serving/terminal_paste.py:117-131),
+so the confirmation ladder runs against an in-memory tmux double — no real tmux server and no real
+sleeping (a stepped clock makes the timeouts deterministic). The suite is module-level pytest
+functions (24 tests): the paste ladder's acceptance/retry/failure arms, the dispatch policy's
+suppression-window discipline, and the sanitizer.
 
 ## Code Commentary
 
 ### Logic
 
-**260707-HFX2-L15 coverage.** The suite now drives an acceptance callback rather than pane echo.
-It pins the full calibrated-window order, one Enter re-press, one re-paste only after verified
-absence, final failure capture, payload-specific/generic chip duplicate blocking, clear-before-
-replacement, unobservable fail-closed behavior, the >=100 ms settle floor, pre-bind command
-non-acceptance, sanitization, and Escape refusal.
+The suite drives an acceptance callback and pane-verified absence rather than pane echo.
+`_Clock` (cit:([`_Clock`], mcp/tests/test_terminal_paste.py:16-23)) advances a fixed step per call so timeouts are hit
+deterministically, `_Tmux` (cit:([`_Tmux`], mcp/tests/test_terminal_paste.py:26-70)) is an in-memory tmux double whose
+`load`/`paste`/`key`/`capture`/`sleep` seams can also REFUSE per command (`paste_results`,
+`failing_keys`) — each failure maps to a different paster verdict — and cit:([`_paster`], mcp/tests/test_terminal_paste.py:73-83)
+wires the double plus the clock into a `TerminalPaster` through `TerminalPasterSeams`.
 
-`_FakePane` is an in-memory pane: `load_buffer` (the renamed injectable seam) / `paste_buffer`
-(appends a `[Pasted text #1]` echo when `echo` is on) / `send_key` (appends output on `Enter` when
-`submit_echo` is on) / `capture` (returns the growing visible content). Two 260707-HFX-L3 fakes model
-the forensic panes: `_CodexChipPane` renders a large paste ONLY as the codex
-`[Pasted Content N chars]` chip (the SF-1 shape), and `_LaggyChipPane` renders that chip a
-configurable number of captures BEHIND the paste — past the first attempt's echo window, so only the
-retry path's re-capture guard can see it landed (the F-V race). `_Clock` advances a fixed step per
-call so timeouts are hit deterministically, and `_paster` wires all four tmux callables + the clock +
-a no-op sleep into a `TerminalPaster`.
-
-- `SanitizeTests` pins `sanitize_for_injection`: it strips the `0x1a` suspend byte, the bracketed-paste
-  markers, and CR while keeping NEWLINE and TAB (and ordinary text).
-- `ChipCountTests` pins `count_paste_chips` across BOTH harness chip vocabularies — claude
-  `[Pasted text #N]` (with and without the number) and codex `[Pasted Content N chars]`
-  (case-tolerant) count; near-miss strings do not; a plain pane counts zero.
-- `PasteTests` pin the loop: an echo-confirmed paste **without** submit delivers and leaves a draft (one
-  bracketed paste of the sanitized text, no `Enter`); a paste **with** submit presses `Enter` and
-  confirms; a **verifiably-unlanded** paste re-pastes across the boot window (the idempotence guard
-  re-captured first and found no trace each time) and reports unconfirmed delivery, boot output
-  without a pasted draft/chip does not count as delivered (never submitting either case), and a
-  submit whose `Enter` produces no output reports `delivered=True, submitted=False`.
-- `DeliveryIntegrityTests` pin the 260707-HFX-L3 contract: the codex chip confirms delivery with
-  exactly ONE paste (`_CodexChipPane`, `len(pane.pasted) == 1`); a late-rendering chip is seen by
-  the retry path's re-capture and NEVER re-pasted (`_LaggyChipPane` — one paste, one chip; duplicate
-  stacking impossible); an unverifiable delivery returns `delivered=False` WITH the final pane
-  capture attached (`result.capture == pane.content`); a successful delivery also carries its
-  confirming capture; `_press("Escape")` raises `ValueError` with no key sent (run discipline —
-  Escape interrupts a codex session); and a full paste+submit flow sends ONLY `Enter`.
+- Sanitization: cit:([`test_sanitize_strips_control_noise_and_nested_paste_markers`], mcp/tests/test_terminal_paste.py:86-88)
+  pins `sanitize_for_injection` against control noise and nested bracketed-paste markers.
+- Success path: cit:([`test_success_uses_log_probe_and_never_captures_pane`], mcp/tests/test_terminal_paste.py:91-97) — a
+  confirmed paste uses the log probe and never captures the pane.
+- Ladder windows: cit:([`test_first_absence_waits_full_window_before_enter_repress`], mcp/tests/test_terminal_paste.py:201-217),
+  cit:([`test_repaste_happens_only_after_enter_repress_window`], mcp/tests/test_terminal_paste.py:220-236), and
+  cit:([`test_exhausted_ladder_returns_the_final_failure_capture`], mcp/tests/test_terminal_paste.py:239-252) pin the full
+  calibrated-window order, one Enter re-press, one re-paste only after verified absence, and the
+  final failure capture.
+- Chip guards: cit:([`test_duplicate_chip_blocks_repaste_when_clear_does_not_remove_it`], mcp/tests/test_terminal_paste.py:255-276),
+  cit:([`test_visible_composer_chip_is_cleared_before_replacement`], mcp/tests/test_terminal_paste.py:279-299), and
+  cit:([`test_unobservable_pane_blocks_repaste`], mcp/tests/test_terminal_paste.py:302-315) pin duplicate-chip blocking,
+  clear-before-replacement, and unobservable fail-closed behavior.
+- Discipline: cit:([`test_settle_guard_is_at_least_100ms`], mcp/tests/test_terminal_paste.py:318-335),
+  cit:([`test_unbound_command_never_claims_log_acceptance`], mcp/tests/test_terminal_paste.py:338-344), and
+  cit:([`test_escape_is_refused`], mcp/tests/test_terminal_paste.py:347-349) pin the >=100 ms settle floor, pre-bind command
+  non-acceptance, and the Escape refusal.
+- Dispatch policy: cit:([`test_dispatch_settle_is_strictly_beyond_codex_suppression_window`], mcp/tests/test_terminal_paste.py:352-353)
+  plus cit:([`test_initial_dispatch_uses_one_paste_and_one_enter`], mcp/tests/test_terminal_paste.py:356-368) through
+  cit:([`test_early_enter_control_is_suppressed_but_dispatch_enter_submits`], mcp/tests/test_terminal_paste.py:461-499) pin the
+  dispatch ladder — one paste + one Enter initially, retry submitting a visible same draft without
+  re-paste, re-paste only after verified absence, ambiguous duplicates and unrelated/historical
+  drafts left pending, and Enter suppression outside the dispatch window.
 
 ### Conventions
 
-`unittest` + the `sys.path` insertion idiom. The fake pane models the composer echo (a paste advances
-the visible content) and the submit echo (Enter advances it) so the `capture-pane` before/after
-confirmation loop can be exercised deterministically; `echo`/`submit_echo` toggles drive the
-unconfirmed paths. Timeouts are passed explicitly (`echo_timeout` / `boot_deadline` / `submit_timeout`)
-so the boot-window retry and unconfirmed-submit cases terminate quickly against the stepped clock.
+Module-level `pytest` functions over two local doubles. The `_Tmux` double records every command
+and can refuse per command (`paste_results`, `failing_keys`), because the paster's contract differs
+per failure — an unwritten buffer is not delivered, a refused Enter is delivered but unsubmitted.
+The stepped `_Clock` monotonic plus the injected `sleep` seam make every window (settle floor,
+Enter re-press, re-paste) deterministic without real sleeping.
 
 ### Invariants And Boundaries
 
-- No real tmux, no real sleep — the loop runs against the fake panes + injected clock/sleep.
-- The loop must never submit an unconfirmed paste; the unechoed case asserts no `Enter` was sent.
-- Delivery truth is capture-based (260707-HFX-L3): a landed chip in either vocabulary confirms with
-  one paste, a landed-late chip must not be re-pasted, and a failed verification must carry the
-  final capture — the pre-fix seam fails each of these by construction.
-- Only `Enter` may cross the seam; the Escape refusal is itself the contract under test.
-- Sanitization keeps NEWLINE + TAB and drops control noise, mirroring the frontend.
+- No real tmux, no real sleep — the ladder runs against the tmux double + injected clock/sleep.
+- The ladder must never submit an unconfirmed paste; the unwritable-buffer and refused-Enter cases
+  assert no blind `Enter` crosses.
+- Delivery truth is acceptance-probe + verified-absence based: a re-paste requires pane-verified
+  absence, a duplicate chip that clear cannot remove blocks the re-paste, and an exhausted ladder
+  returns the final failure capture.
+- Escape never crosses the seam; the refusal is itself the contract under test.
+- Sanitization strips control noise and nested paste markers before any buffer write.
 
 ### Todos
 
@@ -91,22 +87,22 @@ No known follow-up in this file.
 No relevant external/domain documentation found; the behavior mirrors the frontend `data/terminal.ts`
 paste loop, a local convention.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests pin the local server-side paste loop, not an external protocol. | L87-L122 | [test_terminal_paste.py](test_terminal_paste.py) |
+| The tests pin the local server-side paste loop, not an external protocol. | `_paster` | mcp/tests/test_terminal_paste.py:73-83 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The paster + sanitizer under test (injectable tmux ops + confirmation loop). | L57-L229 | [../src/agents_remember/serving/terminal_paste.py](../src/agents_remember/serving/terminal_paste.py) |
-| The frontend paste/submit loop remains a separately ruled follow-up surface. | — | [terminal.ts](agents-remember/dashboard/src/data/terminal.ts) |
+| The paster + sanitizer under test (injectable tmux ops + confirmation loop). | `TerminalPaster` | mcp/src/agents_remember/serving/terminal_paste.py:48-51; mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
+| The frontend paste/submit loop remains a separately ruled follow-up surface. | `pasteAndConfirm` | dashboard/src/data/terminal.ts:174-188 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The tests cover local serving behavior only. | - | - |
 
@@ -128,6 +124,8 @@ Five tests covering what the paste ladder does when a step will not take:
 - dispatch recovery reports failure when the verified repaste cannot be written.
 
 ## Update History
+
+- 2026-08-04T18:50+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 3 citation rows with exact anchors (`_paster` wiring, `TerminalPaster` with the sanitizer/seams extents, `pasteAndConfirm` frontend loop) and ledger-verified ranges. The frozen source showed the Purpose/Logic/Conventions/Invariants sections still described the removed 260707-HFX-L3 chip-echo suite (`_FakePane`/`_CodexChipPane`/`_LaggyChipPane`/`SanitizeTests`/`ChipCountTests`/`PasteTests`/`DeliveryIntegrityTests`/`count_paste_chips` — none present in the file), so those sections were rewritten against the actual ladder-based module-level pytest suite (`_Clock`/`_Tmux` doubles, `_paster` wiring, the 24 test functions) with cit citations. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 

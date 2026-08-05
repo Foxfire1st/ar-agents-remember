@@ -5,15 +5,15 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-24T14:31Z                      |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
 `test_tools.py` verifies public MCP tool payloads, server registration, and
-controller-to-service behavior.
+application-to-service behavior.
 
 ## Code Commentary
 
@@ -55,7 +55,7 @@ Payload tests track the act-by-default `dry_run` contract: the `skills_install`,
 `scope=DRY_RUN_SCOPE` per call (the module-level `ProviderQueryScope(dry_run=True)`)
 because the planned provider command is only exposed in the preview path.
 
-Provider and controller payload builders are addressed through parameter objects rather
+Provider and application entry point payload builders are addressed through parameter objects rather
 than loose keywords: GrepAI search/trace take a `GrepaiSearchQuery` / `GrepaiTraceQuery`
 plus an optional `repos=GrepaiRepoScope(...)` and `scope=ProviderQueryScope(...)`,
 `memory_carryover_plan_payload` takes a `CarryoverSelection`, and
@@ -106,15 +106,15 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | [tools/](agents-remember/mcp/src/agents_remember/mcp/tools) |
-| Public response model registry validates payload shapes. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| Server registration lives in `server.py`. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| Domain controller modules convert public MCP payloads into service calls. | [controllers overview](agents-remember/mcp/src/agents_remember/controllers/overview.md) |
-| Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Inbox tool names are now pinned in the public tool subset. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
-| Terminal leaf reassignment and agent-facing session spawn are pinned in the public tool subset. | [test_tools.py](test_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
+| Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
+| Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |
+| Inbox tool names are now pinned in the public tool subset. | "operator_inbox_post" | mcp/tests/test_tools.py:335-335 |
+| Terminal leaf reassignment and agent-facing session spawn are pinned in the public tool subset. | "attach_terminal_session_to_leaf"; "spawn_agent_session" | mcp/tests/test_tools.py:338-339 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -127,6 +127,9 @@ mandatory CRAP enforcement. Preview must say it runs before the code commit; app
 before any code mutation and that approval precedes apply.
 
 ## Update History
+- 2026-08-03T03:07:44+02:00 — W3-B05 curator: resolved 7 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the provider, memory, and benchmark
   payload builders moved their loose keywords into parameter objects, so the GrepAI and CGC cases
   now pass `GrepaiSearchQuery` / `GrepaiTraceQuery` / `GrepaiRepoScope` and a module-level

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T19:49+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -66,8 +66,7 @@ named leaf, and the redelivery sweep processes one row under the default budget 
 multiplying the calibrated synchronous log wait across a backlog. Delivery fakes use log evidence,
 not pane movement.
 
-Twenty-five tests (sixteen original R2/R6 tests plus nine new 260707-HFX2-L4 tests), `NOW =
-datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
+The suite uses `NOW = datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
 
 - **Pane predicate (R2a):** `test_mid_turn_pane_fires_a_finding`, `test_normal_pane_fires_nothing`,
   `test_terminal_kind_rows_are_never_pane_classified` (a `kind="terminal"` row is skipped
@@ -124,9 +123,9 @@ datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared fixed clock:
   durable `ladder-resolved`, emits one supervisor observer event, and is not redelivered, plus a
   budget integration asserting a low `redeliver_budget` caps attempts while heartbeat backlog metrics
   still tick. HFX2-L9 adds four more sweep/action regressions:
-  `test_repeated_seat_liveness_sweeps_emit_one_signal_per_cooldown` posts one owner signal during
-  the cooldown and a second only after 901 seconds;
-  `test_mid_turn_pane_signal_is_observed_without_owner_inbox_noise` proves `pane-signal: mid-turn`
+  `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row` renews the same durable signal
+  row with a newer timestamp after the cooldown;
+  `test_diagnostic_pane_signal_is_not_actionable` proves `pane-signal: mid-turn`
   returns skipped with no inbox row;
   `test_pending_backlog_does_not_burst_redeliver_before_floor_after_restart` seeds delivered rows at
   +900s and proves a +60s restarted sweep performs no redelivery; and
@@ -191,31 +190,32 @@ No relevant external documentation found after checking the repo Domain Document
 same-repository unit/integration-test suite for internal control-plane plumbing with no external
 spec.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines the supervisor sweep; the leaf task doc (R1-R6) and the P-15 pilot-observer log are the source of truth this suite pins. | L1-L449 | [test_supervisor.py](test_supervisor.py) |
+<!-- No external/domain document defines the supervisor sweep; task provenance is not a source citation. -->
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: every predicate, the action dispatcher, and the sweep entry point. | whole module | [../src/agents_remember/serving/supervisor.py](../src/agents_remember/serving/supervisor.py) |
-| The heartbeat store the zero-drift and second-sweep tests exercise directly. | `SupervisorHeartbeatStore` | [../src/agents_remember/serving/supervisor_heartbeat.py](../src/agents_remember/serving/supervisor_heartbeat.py) |
-| The catalog entry fixture builder's typed fields come from this module's `Literal` aliases. | `TerminalCatalogEntry` | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
-| The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `cast(TerminalHost, fake)` | [test_terminal_ws.py](test_terminal_ws.py.md) |
-| The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | [../src/agents_remember/controlplane/escalation_ladder.py](../src/agents_remember/controlplane/escalation_ladder.py.md) |
-| The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | [../src/agents_remember/controlplane/orphan_policy.py](../src/agents_remember/controlplane/orphan_policy.py.md) |
-| The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py.md) |
-| The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `SupervisorSignalCooldownStore` | [../src/agents_remember/controlplane/supervisor_signals.py](../src/agents_remember/controlplane/supervisor_signals.py.md) |
-| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | L747-L777 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
-| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | L477-L505 | [supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
-| HFX2-L9 tests cover signal cooldown, mid-turn suppression, restart non-burst before the 900-second floor, and one-second sweeps without per-second signal rows. | L526-L621 | [test_supervisor.py](agents-remember/mcp/tests/test_supervisor.py) |
+| The module under test: every predicate, the action dispatcher, and the sweep entry point. | `evaluate_escalation_findings`; `act_on_finding`; `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:400-429; mcp/src/agents_remember/serving/supervisor.py:1176-1189; mcp/src/agents_remember/serving/supervisor.py:1195-1282 |
+| The heartbeat store the zero-drift and second-sweep tests exercise directly. | `SupervisorHeartbeatStore` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121 |
+| The terminal catalog declares the typed `Literal` aliases. | `Literal` | mcp/src/agents_remember/serving/terminal_catalog.py:42-44 |
+| The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_supervisor.py:72-96 |
+| The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; `TerminalHost` | mcp/tests/test_terminal_ws.py:44-44; mcp/tests/test_terminal_ws.py:234-389; mcp/tests/test_terminal_ws.py:441-441; mcp/tests/test_terminal_ws.py:1024-1024 |
+| The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
+| The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
+| The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:319-341 |
+| The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
+| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_supervisor.py:747-777 |
+| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | `_delivery_failure_still_retrying`; `evaluate_escalation_findings` | mcp/src/agents_remember/serving/supervisor.py:376-384; mcp/src/agents_remember/serving/supervisor.py:400-429 |
+| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_supervisor.py:600-635; mcp/tests/test_supervisor.py:671-691 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Sweep-local behavior only. | — | — |
 
@@ -231,6 +231,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: split terminal-catalog aliases from the consuming supervisor fixture builder; the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2: recorded the `_entry` rewrite this leaf already made to
   the body. The fixture no longer mirrors `TerminalCatalogEntry`'s shape, so its `turn_state`,
   `turn_state_changed_at` and `liveness_failures` parameters (and the `SeatTurnState` import) are

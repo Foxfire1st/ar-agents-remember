@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/commands.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,22 +47,22 @@ Pure logic suite — the rendered palette behavior (open/close/focus-return/page
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry + default set under test. | L56-L179 | [commands.ts](commands.ts) |
-| The DOM-level palette counterpart (ctrl+k open, Enter run, Esc close + focus return). | L112-L175 | [../panels/session-cockpit/SessionsView.test.tsx](../panels/session-cockpit/SessionsView.test.tsx) |
+| The registry + default set under test. | `createCommandRegistry`, `registerDefaultCommands` | dashboard/src/data/commands.ts:57-81; dashboard/src/data/commands.ts:88-191 |
+| The DOM-level palette counterpart (ctrl+k open, Enter run, Esc close + focus return). | "opens on ctrl+k from the chrome zone and closes on Escape, returning focus to the invoker" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:301-315 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -73,6 +73,8 @@ slash-opened palette commands receive the intended initial query. It guards the 
 composer Alt+Up is pop-back, while the chrome/session navigation chord remains separate.
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 2 citation rows; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

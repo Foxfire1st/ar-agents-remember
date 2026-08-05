@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -48,16 +48,16 @@ No current todo is recorded for this template.
 
 No external domain documentation applies to this repository-local template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `w-02-light-task-workflow` skill lists `master-template.md` as a companion and adds the master-task composition section + invariant 13. | n/a | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
-| The `w-02-light-task-workflow` skill workflow's "Master Task Series" section describes the one-worktree / commit-per-slice / one-integrate lifecycle. | n/a | [`w-02-light-task-workflow` workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md) |
+| The `w-02-light-task-workflow` skill lists `master-template.md` as a companion and adds the master-task composition section + invariant 13. | `# w-02-light-task-workflow Light Task Workflow` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:6-117 |
+| The `w-02-light-task-workflow` skill workflow's "Master Task Series" section describes the one-worktree / commit-per-slice / one-integrate lifecycle. | `# Light Task Workflow` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:1-268 |
 
 As of HFX-L6 the escalation line names the architect lifecycle's `decide` step plainly.
 
@@ -65,7 +65,7 @@ As of HFX-L6 the escalation line names the architect lifecycle's `decide` step p
 
 No sibling repository evidence is needed for this template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -74,6 +74,9 @@ No sibling repository evidence is needed for this template.
 The master template's execution model now says a master provides the integration branch and each active sub-task gets its own leaf enclosure/worktree, replacing the previous single shared worktree guidance.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  heading anchors; exact non-fixing check returns zero findings.
 
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: changed the
   master-template escalation pointer from the orchestrator lifecycle's decide step to the

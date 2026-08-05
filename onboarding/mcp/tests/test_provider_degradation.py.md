@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_degradation.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T01:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -88,31 +88,32 @@ for the store/config layers.
 No external documentation governs this suite; it is a repository-internal failing-first test
 file for a repository-internal protocol.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking; the protocol is repo-internal doctrine. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The detector and evaluator under test. | whole module | [../src/agents_remember/providers/degradation.py](../src/agents_remember/providers/degradation.py.md) |
-| The settings dataclass this suite constructs directly to tune thresholds per test. | whole module | [../src/agents_remember/mcp/provider_degradation_settings.py](../src/agents_remember/mcp/provider_degradation_settings.py.md) |
-| The metrics store/schema rows the classifier tests construct as fixtures. | `PROVIDER_INDEX_STATE_SCHEMA`, `ContainerSample`, `MetricsSnapshot` | [../src/agents_remember/providers/metrics.py](../src/agents_remember/providers/metrics.py) |
-| The terminal catalog entries seeded as alert recipients. | `TerminalCatalogEntry` | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
-| The operator inbox store read back to assert alert rows/roles/responses. | whole module | [../src/agents_remember/controlplane/operator_inbox_store.py](../src/agents_remember/controlplane/operator_inbox_store.py) |
-| The task requirement this suite's hysteresis/delivery/failsafe tests are the failing-first proof for. | requirements[8] | [../../ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/08_degradation-protocol-and-system-specialist.json](../../../../../../ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/08_degradation-protocol-and-system-specialist.json) |
+| The detector and evaluator under test. | `classify_degradation`; `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323; mcp/src/agents_remember/providers/degradation.py:326-345 |
+| The settings dataclass this suite constructs directly to tune thresholds per test. | `ProviderDegradationSettings` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:36-55 |
+| The metrics store/schema rows the classifier tests construct as fixtures. | `PROVIDER_INDEX_STATE_SCHEMA`; `ContainerSample`; `MetricsSnapshot` | mcp/src/agents_remember/providers/metrics.py:63-63; mcp/src/agents_remember/providers/metrics.py:146-157; mcp/src/agents_remember/providers/metrics.py:160-176 |
+| The terminal catalog entries seeded as alert recipients. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
+| The operator inbox store read back to assert alert rows/roles/responses. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Test-only, repository-local fixtures and imports. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 101; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T22:20+02:00 — 260731-EFA-L6 W2-B05 curator: curated 3 repo-internal citation rows; deleted 1 unsupported external task-requirement row under the 2026-08-02 14:10 ruling; scoped citation check now passes.
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 touched this suite only through the
   `deliver_inbox_entry` parameter-object change plus `ruff format` reflow. That function now takes
   an `InboxDeliveryLog` (store, entry, timestamp, redelivery floor) as its first positional

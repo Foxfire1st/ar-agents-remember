@@ -25,16 +25,16 @@ pre-canonical mapping exactly.
 
 ### Logic
 
-`ClassificationTests` (L72-L157) pins the evidence classification per adapter state: pending
+cit:([`ClassificationTests`], mcp/tests/test_conversation_active_status.py:73-165) pins the evidence classification per adapter state: pending
 interaction → `pending-interaction`/exact with interaction id; blocked without interaction →
 `declared-external-wait`; running → `active-native-turn` with the codex-only turn id (absent for
 other harnesses); per-harness settling variants (claude compaction/retry, pi
 compaction/auto-retry, generic reconciling); idle+ready → `settled-dispatchable`; unknown and
 starting snapshots carry no turn evidence; and the process mapping (connected/starting/
-disconnected/failed). `SeatParityTests` (L159-L216) drives the full 5×5 control×activity
+disconnected/failed). cit:([`SeatParityTests`], mcp/tests/test_conversation_active_status.py:168-250) drives the full 5×5 control×activity
 product through `snapshot_turn_state` (the delegated orchestration entry point) and proves
 working/awaiting-input/turn-ended/stale in every cell matches the pre-canonical mapping, plus
-the single projection rule's pending-interaction preference. `StatusServiceTests` (L218-L289)
+the single projection rule's pending-interaction preference. cit:([`StatusServiceTests`], mcp/tests/test_conversation_active_status.py:253-355)
 pins the revisioned envelope: honest initial waiting/unknown, revision advance only on semantic
 change (identical observations keep the revision), terminal outcomes from native evidence, a
 completed outcome surviving the settling → ready transition, needs-input carrying the
@@ -61,23 +61,23 @@ None.
 The resolved `Domain Documentation` registry has no entries; the canonical vocabulary contract
 is repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this suite. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical status authority under test: classification, seat projection, revisioned service. | L101-L224; L306-L508 | [status.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/status.py) |
-| The delegated orchestration entry point driven by the parity suite. | L71-L91 | [hosted_control_projection.py](agents-remember/mcp/src/agents_remember/serving/hosted_control_projection.py) |
-| `CANONICAL_TURN_STATE_BY_EVIDENCE` fixes the vocabulary the classification tests pin. | L429-L439 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The canonical status authority under test: classification, seat projection, revisioned service. | `classify_snapshot` | mcp/src/agents_remember/serving/conversation/active/status.py:153-162 |
+| The delegated orchestration entry point driven by the parity suite. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
+| `CANONICAL_TURN_STATE_BY_EVIDENCE` fixes the vocabulary the classification tests pin. | `CANONICAL_TURN_STATE_BY_EVIDENCE` | mcp/src/agents_remember/serving/conversation/models.py:453-463 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -88,6 +88,8 @@ Status regressions now cover freshness classification against evidence-expected 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 4 citation findings; scoped check passed.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
   `serving/conversation/active/status.py` (523 lines). Classification plus seat projection —

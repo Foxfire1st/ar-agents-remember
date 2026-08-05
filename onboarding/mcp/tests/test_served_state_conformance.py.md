@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T08:45+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -21,58 +21,58 @@ Conformance for the **served** state contract (`serving/served_state.py`) — th
 validated `/api/state`, the SSE `snapshot` event, or the projection *as served*: both keys of the
 serve-time tail (`servingBuild`, `supervisorHeartbeat`) were injected into the dumped projection
 with nothing declaring them, so the emitted body validated against no model at all —
-`WorkspaceProjection` (`extra="forbid"`) included (L3-L8).
+`WorkspaceProjection` (`extra="forbid"`) included cit:(["class ServedWorkspaceProjection"], mcp/src/agents_remember/serving/served_state.py:47-47).
 
 The suite drives the **real** route and the **real** SSE generator and validates what comes back
 against `ServedWorkspaceProjection`, pinning the three shapes the assembly is allowed to take:
 the 200 body carries the tail, the 304 branch carries no body at all, and a `delta` event is a bare
-projection node — the asymmetry that stops the tail from being a projection field (L10-L14).
+projection node — the asymmetry that stops the tail from being a projection field cit:(["def served_state_tail"], mcp/src/agents_remember/serving/served_state.py:63-63).
 
 ## Code Commentary
 
 ### Logic
 
-#### `ServedStateTailTests` (L213-L257) — the tail is exactly the model's extension
+#### cit:([`ServedStateTailTests`], mcp/tests/test_served_state_conformance.py:213-257) — the tail is exactly the model's extension
 
-- `test_tail_keys_are_the_declared_extension_over_the_projection` (L216-L222): the set difference
+- cit:([`test_tail_keys_are_the_declared_extension_over_the_projection`], mcp/tests/test_served_state_conformance.py:216-222): the set difference
   `ServedWorkspaceProjection.model_fields - WorkspaceProjection.model_fields` must equal
   `SERVED_TAIL_FIELDS`, **and** the assembled `served_state_tail(...)` must produce exactly those
   keys. The declaration and the assembly cannot drift apart silently.
-- `test_absent_halves_contribute_no_keys` (L224-L231): `stream_events` may be driven with neither
+- cit:([`test_absent_halves_contribute_no_keys`], mcp/tests/test_served_state_conformance.py:224-231): `stream_events` may be driven with neither
   collaborator or with only one; **a missing half is a missing key, never a null placeholder**.
-- `test_the_two_halves_serialize_under_opposite_null_rules` (L233-L243): the build stamp **omits**
+- cit:([`test_the_two_halves_serialize_under_opposite_null_rules`], mcp/tests/test_served_state_conformance.py:233-243): the build stamp **omits**
   what it could not prove (`commit`, `dirty`); the heartbeat **reports** a never-ticked supervisor
   as an explicit `null` (`lastTickAt`, `ageSeconds`). One shared `exclude_none` dump cannot do
   both, which is why `served_state_tail` is two dumps.
-- `test_the_tail_is_json_native` (L245-L248): it is merged into a dict handed to
+- cit:([`test_the_tail_is_json_native`], mcp/tests/test_served_state_conformance.py:245-248): it is merged into a dict handed to
   `JSONResponse`/`ServerSentEvent`, so a pydantic model in there would only fail at encode time.
-- `test_serving_only_fields_stay_out_of_the_persisted_projection` (L250-L257): the second consumer.
+- cit:([`test_serving_only_fields_stay_out_of_the_persisted_projection`], mcp/tests/test_served_state_conformance.py:250-257): the second consumer.
   `latest-state.json` is a `WorkspaceProjection` artifact, so declaring the tail on the projection
   would have put serve-time facts into it.
 
-#### `ServedStateRouteConformanceTests` (L260-L352) — `/api/state`, for real
+#### cit:([`ServedStateRouteConformanceTests`], mcp/tests/test_served_state_conformance.py:260-352) — `/api/state`, for real
 
 The class builds a real app (`create_app(_config(tmp), cadence=ProjectionCadence(interval=100))`,
 L277-L280 — `interval=100` so prime publishes once and the ETag is stable for the 304 leg) and
-disables the app's own supervisor loop in `setUp` (L267-L274), so the heartbeat row is entirely
+disables the app's own supervisor loop in `setUp` cit:([`setUp`], mcp/tests/test_served_state_conformance.py:263-275), so the heartbeat row is entirely
 this test's to write while the route still reads and serves it exactly as in production.
 
-- `test_state_body_validates_against_the_served_model` (L310-L328) makes four claims in order:
+- cit:([`test_state_body_validates_against_the_served_model`], mcp/tests/test_served_state_conformance.py:310-328) makes four claims in order:
   (a) the body **is** a `ServedWorkspaceProjection`, with a stale heartbeat six hours past the 60s
   cutoff; (b) it is **not** a bare `WorkspaceProjection` — `assertRaises(ValidationError)`, the
   assertion that used to be unmakeable because nothing declared the tail; (c) it carries no key
-  beyond what the served model declares; (d) `_assert_populated` (L285-L308).
-- `test_a_never_ticked_supervisor_still_serves_a_valid_body` (L330-L338): no heartbeat row at all —
+  beyond what the served model declares; (d) cit:([`_assert_populated`], mcp/tests/test_served_state_conformance.py:285-308).
+- cit:([`test_a_never_ticked_supervisor_still_serves_a_valid_body`], mcp/tests/test_served_state_conformance.py:330-338): no heartbeat row at all —
   the nulls are reported rather than dropped, `stale` still reads true, and the body still
   validates.
-- `test_the_304_branch_serves_the_etag_and_no_body` (L340-L352): the change gate must survive the
+- cit:([`test_the_304_branch_serves_the_etag_and_no_body`], mcp/tests/test_served_state_conformance.py:340-352): the change gate must survive the
   tail being declared. The heartbeat is volatile and deliberately outside the content revision, so
   the test moves it (6h → 9h) between requests and requires **304, the same ETag, and
   `content == b""`**.
 
-#### `ServedSnapshotConformanceTests` (L355-L410) — the SSE side and the asymmetry
+#### cit:([`ServedSnapshotConformanceTests`], mcp/tests/test_served_state_conformance.py:355-410) — the SSE side and the asymmetry
 
-`test_snapshot_validates_and_delta_carries_no_tail` (L364-L394) drives the real `stream_events`
+cit:([`test_snapshot_validates_and_delta_carries_no_tail`], mcp/tests/test_served_state_conformance.py:364-394) drives the real `stream_events`
 generator off a primed `Projector`: the first frame is a `snapshot` whose `data` validates as a
 `ServedWorkspaceProjection` carrying both tail halves and no undeclared key; then a delta is
 broadcast and the second frame is asserted to be **one bare projection node** — `event ==
@@ -80,7 +80,7 @@ broadcast and the second frame is asserted to be **one bare projection node** �
 `LifecycleProjection.model_validate(delta.data)`. A delta is not a state body, so the
 whole-workspace tail has nothing there to be a field of.
 
-`test_a_snapshot_without_a_tail_is_still_a_valid_served_body` (L396-L410) covers the path both tail
+cit:([`test_a_snapshot_without_a_tail_is_still_a_valid_served_body`], mcp/tests/test_served_state_conformance.py:396-410) covers the path both tail
 fields are optional *for*: `stream_events(projector)` with neither collaborator.
 
 #### The fixture is populated on purpose (L16-L24, `_populate` L134-L173)
@@ -95,22 +95,22 @@ could not be caught.
 at different lifecycle positions (one still working, one landed and reclaimed — `_write_enclosure`,
 L103-L131, using `amend_contract(contract, ContractCells(...))` for the landed cells), one observer
 `lifecycle.started` event, and one provider `current.json` snapshot. `_assert_populated`
-(L285-L308) then refuses a body whose collections are empty, and asserts *identities* rather than
+cit:([`_assert_populated`], mcp/tests/test_served_state_conformance.py:285-308) then refuses a body whose collections are empty, and asserts *identities* rather than
 counts: the lifecycle id, both enclosure worktree names, both distinct `cleanup` values (so a
 projection that collapsed the contract's state cells would fail), and that the Engine Room admits
 only the still-live worktree group.
 
-`_config` (L86-L100) deliberately declares **no** `providers` entry: `read_providers` projects the
+cit:([`_config`], mcp/tests/test_served_state_conformance.py:86-100) deliberately declares **no** `providers` entry: `read_providers` projects the
 `current.json` snapshot on disk rather than the configured scopes, so declaring a scope would make
 the projection tick try to *refresh* it against a real provider runtime — the same served bytes,
 with a stack trace in the log for a collaborator this file is not testing.
 
 ### Conventions
 
-`sys.path.insert(0, str(MCP_SRC))` after the third-party `fastapi.testclient` import (L38-L41) —
-the suite idiom. Fixed `_TS` / `_REPO` / `_LEAVES` module constants (L79-L83) keep the fixture
+`sys.path.insert(0, str(MCP_SRC))` after the third-party `fastapi.testclient` import cit:(["fastapi.testclient"], mcp/tests/test_served_state_conformance.py:38-41) —
+the suite idiom. Fixed `_TS` / `_REPO` / `_LEAVES` module constants cit:(["_REPO ="], mcp/tests/test_served_state_conformance.py:80-80) keep the fixture
 deterministic. The async class is `unittest.IsolatedAsyncioTestCase`; the generator legs always
-`await gen.aclose()` in a `finally`. `_tick_supervisor(age=timedelta(...))` (L282-L283) writes the
+`await gen.aclose()` in a `finally`. `_tick_supervisor(age=timedelta(...))` cit:([`_tick_supervisor`], mcp/tests/test_served_state_conformance.py:282-283) writes the
 heartbeat row directly through `SupervisorHeartbeatStore(...).tick(now=...)`.
 
 ### Invariants And Boundaries
@@ -140,37 +140,41 @@ None recorded. The route-wide sibling for the other 60 HTTP routes is
 No external Domain Documentation source is configured for this memory repo (`system/sources.md`
 records `No entries configured yet.`), so every claim here is proven by repository source.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local test module; live retrieval was not available and the registry is empty. | `system/sources.md` — "No entries configured yet." | — |
+| No relevant external or domain documentation was found for this repository-local test module; live retrieval was not available and the registry is empty. | — | — |
 
 ## Repo-Internal References
 
 The suite holds one declaration shut against one route and one generator, so its evidence is the
 served-state module plus the two producers of the tail.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract under test: `ServedWorkspaceProjection`, `SERVED_TAIL_FIELDS`, `served_state_tail`, and the five reasons the tail lives here rather than on `WorkspaceProjection` (layer, the dump memo, the ETag, `latest-state.json`, and the snapshot/delta shape asymmetry). | L1-L63 | [served_state.py](agents-remember/mcp/src/agents_remember/serving/served_state.py) |
-| The route and the SSE generator driven for real; the tail rides the `snapshot` only. | `create_app`; `stream_events` L300-L330 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The build half of the tail, whose payload omits what it could not prove (`commit`, `dirty`, `dashboardBuild`). | `ServingBuildPayload` L43-L63; `ServingBuild.payload` L77-L88 | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
-| The heartbeat half, which reports a never-ticked supervisor as explicit nulls, plus the store the fixture ticks. | `SupervisorHeartbeatPayload`, `SupervisorHeartbeatStore.tick` | [supervisor_heartbeat.py](agents-remember/mcp/src/agents_remember/serving/supervisor_heartbeat.py) |
-| The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection`, `LifecycleProjection` | [projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The second consumer that must not gain serve-time fields. | `write_projection` L157-L164 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`, `amend_contract`, `write_contract` | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | `DeclaredSurfaceCoverageTests` | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
-| The serving suite that owns the ETag change gate and the build stamp in general; this file only pins that the declared tail does not break them. | `StateEtagTests`, `BuildInfoTests` | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The contract under test: `ServedWorkspaceProjection`, `SERVED_TAIL_FIELDS`, `served_state_tail`, and the five reasons the tail lives here rather than on `WorkspaceProjection` (layer, the dump memo, the ETag, `latest-state.json`, and the snapshot/delta shape asymmetry). | "class ServedWorkspaceProjection", "def served_state_tail" | mcp/src/agents_remember/serving/served_state.py:47-47; mcp/src/agents_remember/serving/served_state.py:63-63 |
+| The route and the SSE generator driven for real; the tail rides the `snapshot` only. | `create_app`; `stream_events` | mcp/src/agents_remember/serving/app.py:315-345; mcp/src/agents_remember/serving/app.py:718-777 |
+| The build half of the tail, whose payload omits what it could not prove (`commit`, `dirty`, `dashboardBuild`). | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
+| The heartbeat half, which reports a never-ticked supervisor as explicit nulls, plus the store the fixture ticks. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
+| The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The second consumer that must not gain serve-time fields. | `write_projection` | mcp/src/agents_remember/observer/projection_store.py:156-162 |
+| The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:201-229; mcp/src/agents_remember/worktrees/worktree_contract.py:345-395; mcp/src/agents_remember/worktrees/worktree_contract.py:474-477 |
+| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | `DeclaredSurfaceCoverageTests` | mcp/tests/test_serving_response_conformance.py:2432-2489 |
+| The serving suite that owns the ETag change gate and the build stamp in general; this file only pins that the declared tail does not break them. | `StateEtagTests`; `BuildInfoTests` | mcp/tests/test_serving.py:598-682; mcp/tests/test_serving.py:947-1091 |
 
 ## Cross-Repo References
 
 The reviewed behaviour is wholly repository-local. The served camelCase body is consumed by the
 cockpit bundle, which lives in this same repository under `dashboard/`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | `dashboard/src/types/projection.ts` | [projection.ts](agents-remember/dashboard/src/types/projection.ts) |
+| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:517-517 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: converted the history `(L…)`
+  citations and rebound the contract/projection rows; exact non-fixing check returns zero
+  findings.
 
 - 2026-08-01T08:45+02:00 — 260731-EFA-L4 curator: created for the new served-state conformance
   suite, verified against the current 414-line source. Recorded the three classes and their exact

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:20+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ refusal path — the exact behaviors the review caught as falsely claimed in rou
 
 ### Logic
 
-- **Fixtures (260731-EFA-L4)** (L11-L54): the local `capabilities()` helper is gone. It built
+- **Fixtures (260731-EFA-L4)** cit:([`capabilitiesWithInterrupt`], dashboard/src/test/fixtures/conversationWire.ts:149-153): the local `capabilities()` helper is gone. It built
   `{ controls: { interrupt: … } } as unknown as ConversationCapabilities` — a tree with ONE leaf and
   twenty-two missing, on a model the server fills completely — and is replaced by
   `capabilitiesWithInterrupt`, imported under the same local name `capabilities`, from
@@ -32,18 +32,18 @@ refusal path — the exact behaviors the review caught as falsely claimed in rou
   `reason: \`interrupt ${state}\`` string the reason assertions compare against. `IDENTITY`,
   `streamingItem` and `status` likewise build on `conversationIdentity` / `conversationItem` /
   `conversationStatus`.
-- **`resolveWorkingTurnId` (F1)** (L56-L84): prefers the canonical status turn id; correlates from the
+- **`resolveWorkingTurnId` (F1)** cit:([`resolveWorkingTurnId`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78): prefers the canonical status turn id; correlates from the
   newest streaming item's `turnId` when status omits it on the hosted-codex topology (L4.R1); is null
   when the turn is not `working` even if items carry a `turnId`; is null when a working turn's id is
   genuinely unresolvable.
-- **`useConversationInterrupt` — enable / honest reasons** (L85-L170):
+- **`useConversationInterrupt` — enable / honest reasons** cit:([`useConversationInterrupt`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170):
   - ENABLES the stop when working + the id resolves from item evidence, with a stale L1 `unverified`
     capability present, and asserts `keyshortcut === "Control+Shift+."` AND `reason === undefined` —
     the F24 guard that the known-stale L1 text never leaks onto the enabled control.
   - a genuinely unresolvable working turn renders disabled with the HONEST reason
     `turn identity unavailable on this wire` (never the stale capability text).
   - a not-working turn offers no stop; a hard-`unavailable` capability disables with its exact reason.
-  - **the F26/F5a refusal path** (L130-L169): a mocked typed 422 envelope (no `acknowledgement`) goes
+  - **the F26/F5a refusal path** cit:([`useConversationInterrupt`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170): a mocked typed 422 envelope (no `acknowledgement`) goes
     through the REAL client parse — never guessed into an accepted interrupt — so a dispatch disables
     the control for THAT turn with the server's exact `detail`, `onStop === undefined`; a later working
     turn (new id) clears the turn-scoped refusal and re-enables the stop with `reason === undefined`.
@@ -61,30 +61,34 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The hook + `resolveWorkingTurnId` under test (imported at L17). | L17 | [useConversationControls.ts](useConversationControls.ts) |
-| The store seeded with projections (`activeConversationStore`, imported at L5). | L5 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts) |
-| The reducer `emptyProjection`/projection type (imported at L4). | L4 | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts) |
-| The status/capability/item wire types the fixtures build (imported at L6-L10). | L6-L10 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| `capabilitiesWithInterrupt` (aliased to `capabilities` here) and the full `conversationCapabilities` tree it overrides one leaf of. | L103-L153 | [../../../test/fixtures/conversationWire.ts](../../../test/fixtures/conversationWire.ts) |
+| The hook + `resolveWorkingTurnId` under test (imported at L17). | `resolveWorkingTurnId` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78 |
+| The store seeded with projections (`activeConversationStore`, imported at L5). | `activeConversationStore` | dashboard/src/data/conversation/store.ts:84-191 |
+| The reducer `emptyProjection`/projection type (imported at L4). | `emptyProjection` | dashboard/src/data/conversation/reducer.ts:68-81 |
+| The status/capability/item wire types the fixtures build (imported at L6-L10). | `ConversationStatus`, `ConversationCapabilities`, `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176; dashboard/src/data/conversation/types.ts:197-229; dashboard/src/data/conversation/types.ts:253-283 |
+| `capabilitiesWithInterrupt` (aliased to `capabilities` here) and the full `conversationCapabilities` tree it overrides one leaf of. | `capabilitiesWithInterrupt` | dashboard/src/test/fixtures/conversationWire.ts:149-153 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 2 Repo-Internal citation rows and converted
+  4 prose citations to the explicit `cit:` grammar, using exact current TypeScript identifiers and
+  repository-relative paths; verification metadata remains unchanged.
 
 - 2026-08-01T11:20+02:00 — 260731-EFA-L4 curator: the Logic section did not mention the fixtures at
   all, and the local `capabilities()` helper it would have described no longer exists, so a Fixtures

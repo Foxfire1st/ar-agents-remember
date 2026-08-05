@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/errors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ None.
 
 No Domain Documentation source is configured for this internal error family.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -62,20 +62,22 @@ No Domain Documentation source is configured for this internal error family.
 The route module maps every member of this family to one precise status; the shared error base
 keeps existing handlers compatible.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The route table maps each family member subclass-before-base to one exact HTTP status. | L243-L259 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
-| The shared base types this family subclasses keep `except ValueError` handlers working. | L12-L13 | [errors.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/errors.py) |
+| The route table maps each family member subclass-before-base to one exact HTTP status. | `_error_response`; `_ERROR_STATUS_TABLE`; `LIBRARY_RESPONSES` | mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305; mcp/src/agents_remember/serving/conversation/library/api.py:54-56; mcp/src/agents_remember/serving/conversation/response_contract.py:125-136 |
+| The shared base types this family subclasses keep `except ValueError` handlers working. | `ConversationLibraryError`; `LibraryScopeError` | mcp/src/agents_remember/serving/conversation/library/errors.py:15-16; mcp/src/agents_remember/serving/conversation/library/errors.py:23-24 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local error module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-03T10:50+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 4 assigned citation findings (2 missing anchors and 2 malformed sources); final scoped check is clean.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the leaf-local typed error family
   sidecar. Verification is blank until closeout commits and stamps the new source.

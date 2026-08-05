@@ -38,22 +38,22 @@ action against the authority route; this view never mutates queue order or remov
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared composer mounts the preview and owns the Alt+Up action. | — | [../SessionComposer.tsx](../SessionComposer.tsx) |
-| The lifecycle client hydrates only raw-free authoritative status rows. | — | [../../data/submissionLifecycleClient.ts](../../data/submissionLifecycleClient.ts) |
+| The shared composer mounts the preview and owns the Alt+Up action. | "withdrawing queued message…" | dashboard/src/panels/SessionComposer.tsx:323-323 |
+| The lifecycle client hydrates only raw-free authoritative status rows. | "invalid submission status" | dashboard/src/data/submissionLifecycleClient.ts:207-207 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This is a repository-local cockpit projection. | — | — |
 
@@ -64,6 +64,7 @@ a real working turn. Steering requests that exact-turn interrupt; it never withd
 or locally reorders queued messages, so the server dispatches the same head after settlement.
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 2 citation claims; scoped result 0 findings.
 
 - 2026-07-24T13:17:17Z — Curator: documented wire-evidenced queue steering and its no-local-queue-
   mutation boundary; verification fields remain pre-commit.

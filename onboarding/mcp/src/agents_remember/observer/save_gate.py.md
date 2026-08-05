@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/save_gate.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T18:45+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -42,14 +42,15 @@ per-repo folders in the dashboard hangar (slice 4).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The ambient methods that raise/consume this vocabulary (`switch`/`attach`/`promote`). | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The typed-error family base (`LifecycleError` → `AgentsRememberError`). | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The design's save gate, landing zones, and promotion event (§1.5, §2.2). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The ambient methods that raise/consume this vocabulary (`switch`/`attach`/`promote`). | `switch`; `attach`; `promote` | mcp/src/agents_remember/observer/ambient.py:284-315; mcp/src/agents_remember/observer/ambient.py:333-370; mcp/src/agents_remember/observer/ambient.py:317-331 |
+| The typed-error family base (`LifecycleError` → `AgentsRememberError`). | `LifecycleError` | mcp/src/agents_remember/observer/lifecycle_state.py:161-162 |
+| The design separates fleeting and persistent sessions with a save gate and TTL. | "Fleeting vs persistent"; "save gate"; "TTL" | docs/design/observable-lifecycle.md:98-118 |
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-06-13T18:45+02:00: Created for slice 2c — the pure save-gate vocabulary
   (`SaveDecision`, `coerce_save_decision`, `SaveGateRequired`, `compute_scope`,
   and the landing-zone scope constants `UNSCOPED_SCOPE`/`CROSS_REPO_SCOPE`).

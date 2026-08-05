@@ -25,18 +25,18 @@ boundary.
 
 ### Logic
 
-`AttachmentStageTests` (L72): caller/session/epoch/request/kind binding; the fixture-backed MIME
+cit:([`AttachmentStageTests`], mcp/tests/test_conversation_control_attachments.py:72-155): caller/session/epoch/request/kind binding; the fixture-backed MIME
 allow-list, 4-count, and 5 MiB+1 boundary refusals; unsupported kind → 422; idempotent stage under
 identical content; changed content + same request id → `request-conflict`; server-computed sha256 and
-alt provenance. `AttachmentSubmitTests` (L158): one-use consumption through the L2E asset channel;
-tampered block (changed digest/name/alt) refuses pre-dispatch; a second use of one asset is typed;
-identical submit replay returns the stored answer with zero re-dispatch. `AttachmentRebindTests`
-(L236): withdrawal → recoverable under the same lease; atomic exchange of one authorized recovery
+alt provenance. cit:([`AttachmentSubmitTests`], mcp/tests/test_conversation_control_attachments.py:158-233): one-use consumption through the L2E asset channel;
+  the focused tamper test mutates the digest only before asserting pre-dispatch refusal; a second use of one asset is typed;
+  identical submit replay returns the stored answer with zero re-dispatch. cit:([`AttachmentRebindTests`], mcp/tests/test_conversation_control_attachments.py:236-402):
+  withdrawal → recoverable under the same lease; atomic exchange of one authorized recovery
 asset for a new one-use staged asset (same-request replay idempotent, different request conflicts,
 consumed asset conflicts); `keep-current-draft` deletes recoverable bytes on disk.
-`AttachmentReconcileTransitionTests` (L405): unknown retained, advancing only into accepted (bytes
+cit:([`AttachmentReconcileTransitionTests`], mcp/tests/test_conversation_control_attachments.py:405-569): unknown retained, advancing only into accepted (bytes
 deleted) or failed from the retained timeline; staged expiry deletes bytes on the TTL.
-`PolicyTelemetryTests` (L572): read-only policy (repoPolicy vs harnessMode, GET-only) and
+cit:([`PolicyTelemetryTests`], mcp/tests/test_conversation_control_attachments.py:572-650): read-only policy (repoPolicy vs harnessMode, GET-only) and
 evidence-bound codex usage with absent-not-zero missing data.
 
 ### Conventions
@@ -64,7 +64,7 @@ None.
 No Domain Documentation source is configured; the attachment/policy/telemetry contracts are
 repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -73,31 +73,27 @@ repository-owned.
 The suite exercises the attachment lifecycle, spool, policy, and telemetry modules over the shared
 topology.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The typed attachment lifecycle under test. | L101-L780 | [control/attachments.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/attachments.py) |
-| The spool boundary whose on-disk deletion the rebind/expiry tests assert. | L34-L215 | [control/asset_spool.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/asset_spool.py) |
-| The read-only policy and evidence-bound telemetry projections. | L57-L147 | [control/telemetry.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/telemetry.py) |
-| The shared fake-topology harness with the L2E asset channel + spool. | L406-L518 | [_control_plane.py](agents-remember/mcp/tests/_control_plane.py) |
+| The typed attachment lifecycle under test. | `AttachmentOperation`; `stage`; `submit`; `attachment_status`; `rebind`; `mark_recoverable`; `delete_recoverable` | mcp/src/agents_remember/serving/conversation/control/attachments.py:101-115; mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201; mcp/src/agents_remember/serving/conversation/control/attachments.py:204-270; mcp/src/agents_remember/serving/conversation/control/attachments.py:345-372; mcp/src/agents_remember/serving/conversation/control/attachments.py:375-433; mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481; mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497 |
+| The asset-spool deletion primitive whose on-disk effect the rebind/expiry tests assert. | `delete_asset_bytes` | mcp/src/agents_remember/serving/conversation/control/asset_spool.py:161-168 |
+| The read-only policy and evidence-bound telemetry projections. | `conversation_policy`; `_harness_mode`; `conversation_telemetry`; `_codex_usage` | mcp/src/agents_remember/serving/conversation/control/policy.py:58-101; mcp/src/agents_remember/serving/conversation/control/policy.py:104-130; mcp/src/agents_remember/serving/conversation/control/telemetry.py:41-73; mcp/src/agents_remember/serving/conversation/control/telemetry.py:76-121 |
+| The shared fake-topology harness with the L2E asset channel + spool. | `FakeControlAdapter`; `ControlHarness`; `make_harness` | mcp/tests/_control_plane.py:89-425; mcp/tests/_control_plane.py:436-518; mcp/tests/_control_plane.py:521-532 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
-  `control/attachments.py` (795 lines). The same `ControlRequest` expansion and `ruff format` reflow
-  recorded below moved the module's own anchors, so the lifecycle row now cites L101-L780 rather
-  than `L128-L781`: it opens on the `AttachmentOperation` dataclass at L101 instead of landing
-  mid-DTO-block, and closes on `_as_operation` at L780 instead of inside the `__all__` list
-  (L783-L795). Read both ends and confirmed the range still spans every entry point the suite
-  drives — `stage` L135, `submit` L204, `attachment_status` L345, `rebind` L375, `mark_recoverable`
-  L460, `delete_recoverable` L484.
+- 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: narrowed the attachment claim to the focused test's digest-only mutation; the landing provenance mismatch remains an explicit Tier-3 item.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the lifecycle citation after the
+  `ControlRequest` expansion and formatter reflow; the current attachment reference row binds the
+  dataclass and its entry points by generated ranges.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2: `attachments.stage(...)` now takes a single
   `ControlRequest(service=…, authorization=…, ar_session_id=…, expected_bridge_epoch=…)` where it
   took four leading arguments, and that expansion — together with the leaf's `ruff format` reflow of

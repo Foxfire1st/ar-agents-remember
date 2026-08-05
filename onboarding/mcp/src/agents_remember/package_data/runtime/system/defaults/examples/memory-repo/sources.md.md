@@ -35,27 +35,28 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 No external documentation is needed for this package starter. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this example is repository source.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The memory-repo sources example tells users to install it into a memory layer and defines task, domain, tech-stack, and schema sections. | L1-L22 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md) |
-| Domain documentation placeholders name the authoritative live source and retrieval tool/MCP, treat local mirrors as orientation caches, and require live retrieval before recording that no domain docs exist. | L11-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md) |
+| The memory-repo sources example tells users to install it into a memory layer and defines task, domain, tech-stack, and schema sections. | "Copy or rename this file", `## Task Sources (e.g. Github/Gitlab, MCPs, etc.)`, `## Domain Documentation`, `## Techstack Documentation`, `## Database Schema` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md:3-3; mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md:7-22 |
+| Domain documentation placeholders name the authoritative live source and retrieval tool/MCP, treat local mirrors as orientation caches, and require live retrieval before recording that no domain docs exist. | "authoritative online/intranet source", "Treat local mirrors as orientation caches only", "live retrieval path named above" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md:13-14 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T03:02:32+02:00 — W3-B04 curator: curated 2 table citations (2 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-22T13:32+02:00: Updated after the starter source registry made live domain documentation authoritative and local mirrors orientation-only in provider-neutral terms. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-13T13:38: Created onboarding for the memory-repo sources example.

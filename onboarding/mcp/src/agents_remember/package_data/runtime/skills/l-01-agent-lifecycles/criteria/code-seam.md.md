@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -68,27 +68,29 @@ graduates into a gate. No separate immediate TODO is recorded for this catalog.
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This package-data catalog copy carries promoted CS-6 scaling and reclamation with D1-D4, the health-first queue invariant, two catching engagements, and the future gate mechanization seam. | L63-L84 | [code-seam.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md) |
-| Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | L14-L15; L43-L55 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
-| The reviewer role binds `code-seam` at master-exit, super-exit, and applicable leaf full-loop reviews, and keeps the promotion ratchet as the catalog amendment path. | L56-L74 | [reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md) |
+| This package-data catalog copy carries promoted CS-6 scaling and reclamation with D1-D4, the health-first queue invariant, two catching engagements, and the future gate mechanization seam. | `### CS-6 — Scaling & reclamation *(promoted — 2 catches)*` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md:70-83 |
+| Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | `CANONICAL_SKILLS`, `TARGETS`, `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56; scripts/sync-skills.py:195-203 |
+| The reviewer role binds `code-seam` at master-exit, super-exit, and applicable leaf full-loop reviews, and keeps the promotion ratchet as the catalog amendment path. | "code-seam", "master-exit", "super-exit" | skills/l-01-agent-lifecycles/roles/reviewer.md:64-66 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 6 citation claims (3 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-07-10T02:39+02:00 — HFX3 retro curation: refreshed CS-6 from candidate/D1-D3 wording to
   its promoted standing form, including D4 zero-input quiescence and the developer-ruled

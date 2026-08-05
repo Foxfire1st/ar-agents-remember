@@ -48,27 +48,28 @@ the Docker build fails instead of silently producing an unpatched runner image.
 No external domain documentation is configured for this repository; the
 resolved `system/sources.md` currently contains no entries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation source is configured for this file. | L1-L3 | [system/sources.md](../../../../../../../../../../../../../system/sources.md) |
+| No relevant external documentation source is configured for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The script locates the installed CodeGraphContext package and applies a static list of patch operations. | L1-L7; L124-L137 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
-| Patch operations fail fast when neither the patched text nor an acceptable original snippet is present. | L127-L133 | [patch_cgc.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py) |
-| The CGC Dockerfile copies and executes this patch script during runner image build. | L10-L13 | [Dockerfile](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
+| The script locates the installed CodeGraphContext package and applies a static list of patch operations. | "purelib" | mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py:6-6 |
+| Patch operations fail fast when neither the patched text nor an acceptable original snippet is present. | `SystemExit` | mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py:133-133 |
+| The CGC Dockerfile copies and executes this patch script during runner image build. | "COPY patch_cgc.py" | mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile:13-13 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary is required beyond patching the installed third-party package inside the Docker image. | n/a | n/a |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 4 citation claims; scoped result 0 findings.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that no longer
   matched the 137-line script. The locate-and-apply claim now cites L1-L7 (the `sysconfig` purelib

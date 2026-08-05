@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-12T17:40+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -53,27 +53,31 @@ None. Reviewer residuals F3-F6 are follow-up implementation work, not missing L5
 No domain documentation is configured; the L5 task contract and production source are the direct
 evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain source was available. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The regression classes and no-op event guard are implemented in this suite. | L87-L174; L189-L348 | [test_inbox_reclamation.py](agents-remember/mcp/tests/test_inbox_reclamation.py) |
-| The tested transaction resolves and compacts before redelivery. | L362-L403 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
+| ConfirmedGonePolicyTests and ReconcileAndCompactTests are implemented in this suite. | `ConfirmedGonePolicyTests`, `ReconcileAndCompactTests` | mcp/tests/test_inbox_reclamation.py:87-181; mcp/tests/test_inbox_reclamation.py:184-249 |
+| The store transaction resolves and compacts the selected entries atomically. | `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:184-225 |
+| The integration suite exercises resolution/compaction before redelivery. | `reconcile_and_compact` | mcp/tests/test_inbox_reclamation.py:203-302 |
+| The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/serving/supervisor.py:1195-1262 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| None. | N/A | N/A |
 
 ## Update History
 
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bounded the class claim to
+  `ConfirmedGonePolicyTests` and `ReconcileAndCompactTests` through their complete suite range.
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: recorded the inbox-entry parameter objects and
   re-anchored the self-citations. `_inbox_entry` now calls `create_operator_inbox_entry` with
   `InboxMessage` (holding `InboxSubject`), `InboxRouting` over `InboxAddress`, and `InboxPoster`,

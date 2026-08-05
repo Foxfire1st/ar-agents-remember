@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/analysis.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,11 +35,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | [runner_modules overview](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.analysis import *" | mcp/src/agents_remember/benchmarks/runner.py:11-11 |
+| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:573-3091; mcp/tests/test_worktree_support.py:3167-3226 |
 
 ## Cross-Repo References
 
@@ -47,5 +47,10 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-08-04T18:25+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the test-slice ranges — the
+  `WorktreeSupportTests` class extent had overshot into the next class (573-3049 → 573-3093) and
+  the benchmark-provider-ids test citation pointed past its method (3125-3125 → 3167-3226, inside
+  `BenchmarkRunnerPortabilityTests`). Claim wording unchanged.
+- 2026-08-03T02:55:58+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-05-31T12:30+02:00 — Rewrote Logic/Invariants for type-driven event parsing: per-turn `usage` summing via `USAGE_TOKEN_KEYS`, typed `command_execution`/`agent_message` items, fixed `TOKEN_KEYS`→`USAGE_TOKEN_KEYS` citation (1.0.0 review remediation).
 - 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

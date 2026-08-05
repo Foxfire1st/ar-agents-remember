@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/types.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,35 +27,35 @@ the active-side `../conversation/types.ts`; the two projections are deliberately
 
 ### Logic
 
-- **Branded cursor/key types** (L14-L16): `LibraryListCursor`, `LibraryReadCursor`,
+- **Branded cursor/key types**: `LibraryListCursor`, `LibraryReadCursor`,
   `LibraryConversationKey` are opaque `string & { __brand }` values — the browser never parses or
-  mints them; it echoes the server's exact tokens (the purpose-bound cursor discipline).
-- **`HistoryCapabilities`** (L18-L24): per-conversation `list`/`read`/`resume`/`completeness`/
+  mints them; it echoes the server's exact tokens (the purpose-bound cursor discipline). cit:([`LibraryListCursor`, `LibraryReadCursor`, `LibraryConversationKey`], dashboard/src/data/conversation-library/types.ts:14-16)
+- **`HistoryCapabilities`**: per-conversation `list`/`read`/`resume`/`completeness`/
   `toolCompleteness` `FeatureCapability` states (reused from the active-side types). These drive the
   read-only preview's honest partial-history note (the preview prints the reason from the capability
-  that is actually unsupported — F13).
-- **`ConversationLibraryRow`** (L26-L36): one dormant row — `conversationKey`, `identityDigest`,
+  that is actually unsupported — F13. cit:([`HistoryCapabilities`], dashboard/src/data/conversation-library/types.ts:18-24)
+- **`ConversationLibraryRow`**: one dormant row — `conversationKey`, `identityDigest`,
   `title`, optional `safeNativeIdSuffix`/`lastActivityAt`, its capability block, and
   an optional `agents` list of harness sub-agent conversations grouped under it. Each child's
-  `conversationKey` is minted server-side and opens through the exact same read/open path.
-- **`ConversationLibraryAgentRow`** (L38-L50): one grouped sub-agent conversation —
+  `conversationKey` is minted server-side and opens through the exact same read/open path. cit:([`ConversationLibraryRow`], dashboard/src/data/conversation-library/types.ts:26-36)
+- **`ConversationLibraryAgentRow`**: one grouped sub-agent conversation —
   its own `conversationKey`/`identityDigest`/`title` plus optional `agentPath`/`nickname`/`role`/
   `model`/`joinKey`/`safeNativeIdSuffix`/`lastActivityAt`. It carries NO `HistoryCapabilities` of its
-  own; consumers inherit the parent's read-path capabilities.
-- **`ConversationLibraryPage`** (L52-L59): a scope-stamped page (`harnessId`,
+  own; consumers inherit the parent's read-path capabilities. cit:([`ConversationLibraryAgentRow`], dashboard/src/data/conversation-library/types.ts:39-50)
+- **`ConversationLibraryPage`**: a scope-stamped page (`harnessId`,
   `canonicalProjectScope`, `queryDigest`) of rows plus `nextCursor` for accessible paging, and
   an optional `agentsNote` — capability honesty: the exact native reason sub-agent
-  conversations are (partially) unavailable on this page, when they are, never silently absent.
-- **`HistoricalConversationPage`** (L61-L68): the read-only preview page — a `NativeConversationRef`,
+  conversations are (partially) unavailable on this page, when they are, never silently absent. cit:([`ConversationLibraryPage`], dashboard/src/data/conversation-library/types.ts:52-59)
+- **`HistoricalConversationPage`**: the read-only preview page — a `NativeConversationRef`,
   `ConversationItem[]` (the SAME block grammar the active surface renders), `olderCursor`/`hasOlder`,
-  optional exact `totalItems`, and its own `historicalCapabilities`.
-- **Open operation types** (L72-L110): `OpenPhase` (`requested`→`launching`→`catalog-wait`→`opened`/
+  optional exact `totalItems`, and its own `historicalCapabilities`. cit:([`HistoricalConversationPage`], dashboard/src/data/conversation-library/types.ts:61-68)
+- **Open operation types**: `OpenPhase` (`requested`→`launching`→`catalog-wait`→`opened`/
   `retiring`/`failed`/`unknown`) and `OpenOutcome` (`pending`/`opened`/`unsupported`/`stale-identity`/
   `launch-failed`/`identity-mismatch`/`timeout-unknown`/`request-conflict`). `OpenConversationOperation`
   carries `requestId`, `requestFingerprint`, monotonic `revision`, phase/outcome, optional
-  `arSessionId`/`bridgeEpoch`/`identity`/`catalogGeneration`, a `rollback` disposition, and `detail`.
-- **`LibraryRouteError`** (L112-L117): the typed failure shape (`status`/`detail`/`httpStatus`/optional
-  `capabilityState`) the client returns instead of guessing a refusal into success.
+  `arSessionId`/`bridgeEpoch`/`identity`/`catalogGeneration`, a `rollback` disposition, and `detail`. cit:([`OpenPhase`, `OpenOutcome`, `OpenConversationOperation`], dashboard/src/data/conversation-library/types.ts:72-79; dashboard/src/data/conversation-library/types.ts:81-89; dashboard/src/data/conversation-library/types.ts:91-110)
+- **`LibraryRouteError`**: the typed failure shape (`status`/`detail`/`httpStatus`/optional
+  `capabilityState`) the client returns instead of guessing a refusal into success. cit:([`LibraryRouteError`], dashboard/src/data/conversation-library/types.ts:112-117)
 
 ### Invariants And Boundaries
 
@@ -80,31 +80,36 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared active-side types (`ConversationItem`, `FeatureCapability`, `HarnessId`, `NativeConversationRef`) reused here. | L7-L12 | [../conversation/types.ts](../conversation/types.ts) |
-| The client that returns these types as or-null reads / typed open evidence. | — | [client.ts](client.ts) |
-| The store that holds the paged list, preview, and open-operation state over these types. | — | [store.ts](store.ts) |
-| The wire authority these types mirror (native library routes + models). | — | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) · [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | L755-L775, L784, L799 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The harness listers that group sub-agent rows and mint the `agents_note` (Claude: `_AGENTS_UNAVAILABLE_NOTE`; Codex: degraded-to-note listing). | L75, L235-L281 · L292-L346, L477-L500 | [library/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py) · [library/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/codex.py) |
+| Shared active-side types (`ConversationItem`, `FeatureCapability`, `HarnessId`, `NativeConversationRef`) reused here. | `ConversationItem`; `FeatureCapability`; `HarnessId`; `NativeConversationRef` | dashboard/src/data/conversation/types.ts:10-10; dashboard/src/data/conversation/types.ts:12-17; dashboard/src/data/conversation/types.ts:158-176; dashboard/src/data/conversation/types.ts:234-244 |
+| The client that returns these types as or-null reads / typed open evidence. | `fetchLibraryList`; `openConversation` | dashboard/src/data/conversation-library/client.ts:36-54; dashboard/src/data/conversation-library/client.ts:127-135 |
+| The store that holds the paged list, preview, and open-operation state over these types. | `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84 |
+| The native library route authority these types mirror. | `api_library_list` | mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
+| The wire model authority these types mirror. | `ConversationLibraryPage` | mcp/src/agents_remember/serving/conversation/models.py:813-819 |
+| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | `ConversationLibraryAgentRow` | mcp/src/agents_remember/serving/conversation/models.py:775-794 |
+| The Claude harness lister's unavailable-agent note. | `_AGENTS_UNAVAILABLE_NOTE` | mcp/src/agents_remember/serving/conversation/library/claude.py:75-77 |
+| The Codex harness lister's degraded/truncated agent-page note. | `_agent_page` | mcp/src/agents_remember/serving/conversation/library/codex.py:477-500 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 3 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 56, 91; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 22 initial citation findings (6 anchor, 8 prose, 8 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the harness-lister citation. `_AGENTS_UNAVAILABLE_NOTE`
   is still `claude.py` L75, but the grouping/note-minting body moved to `ClaudeConversationLibrary._rows`

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_process.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ None known for the L3 cancellation boundary.
 No Domain Documentation source is configured for this repository, so no live
 domain-documentation pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -61,16 +61,16 @@ domain-documentation pass was available for this update.
 The configuration transaction depends on cancellation reclaim so its finite timeout cannot poison
 the shared reader.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Configuration wraps mutation plus state/catalog readback in one finite timeout; cancellation propagates into this transport. | L145-L179 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
-| Adapter owns this transport and delegates live setters to the configuration transaction. | L68-L127; L208-L214 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
+| Configuration wraps mutation plus state/catalog readback in one finite timeout; cancellation propagates into this transport. | `PiRpcConfiguration`, `_transaction` | mcp/src/agents_remember/serving/pi_rpc_configuration.py:50-193 |
+| Adapter owns this transport and delegates live setters to the configuration transaction. | `PiRpcAdapter`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented beyond the installed Pi child process.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -83,6 +83,7 @@ unknown classification.
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 4 citations (citation_anchor_missing=2, citation_prose_not_in_cit_form=0, citation_source_malformed=2); final scoped citation check clean.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented token-guarded shared writes, cleanup, and first-byte
   classification.
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented pending-future reclamation on

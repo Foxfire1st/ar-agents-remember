@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Hangar.tsx`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -57,14 +57,16 @@ instructional chat injections through `GateResponder`, not enclosure status muta
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on. | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The shared `hasLiveWorktree` tasks-surface visibility rule. | — | [data/selectors.ts](../data/selectors.ts) |
-| The shared chat-routed gate responder. | — | [GateResponder.tsx](GateResponder.tsx) |
-| The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone). | L36-L139 | [Hangar.test.tsx](Hangar.test.tsx) |
+| The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on. | `EnclosureNode` | mcp/src/agents_remember/observer/projection.py:141-172 |
+| The shared `hasLiveWorktree` tasks-surface visibility rule. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
+| The shared chat-routed gate responder. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone). | "renders a row ONLY while a worktree physically exists — never from a cleanup-state proxy"; "hides a reopened contract with no worktrees on disk (reset-awaiting-restart, not live work)"; "shows a reopened leaf again once worktree_start recreates its worktrees"; "fully reduces to the empty state once every worktree is physically gone" | dashboard/src/panels/Hangar.test.tsx:37-71; dashboard/src/panels/Hangar.test.tsx:73-93; dashboard/src/panels/Hangar.test.tsx:95-113; dashboard/src/panels/Hangar.test.tsx:115-138 |
 
 ## Update History
+
+- 2026-08-04T17:54+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 2 citation rows with exact anchors (GateResponder definition, quoted Hangar render-test names) and ledger-verified ranges; widened the EnclosureNode citation to its complete class extent (statuses + existence flags). Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
 

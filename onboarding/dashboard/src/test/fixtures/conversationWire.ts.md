@@ -21,7 +21,7 @@
 `data/conversation-library/types.ts` (← `library/api.py`). Companion to `fixtures/wire.ts`, which does
 the same job for the served projection; that file's header carries the R6 reasoning both share.
 
-This grammar had **two failure modes of its own, and both were one token wide** (L6-L20):
+This grammar had **two failure modes of its own, and both were one token wide** (cit:(["{} as unknown as ConversationCapabilities", "undefined as unknown as ConversationCapabilities"], dashboard/src/test/fixtures/conversationWire.ts:8-8; dashboard/src/test/fixtures/conversationWire.ts:14-14)):
 
 - `{} as unknown as ConversationCapabilities` — a page whose capability tree is EMPTY. The wire model
   declares **twenty-three** capability leaves and the server fills every one, so the fixture asserted
@@ -38,30 +38,24 @@ builders take `Overrides<O, Node>` rather than a bare `Partial<Node>`.
 
 ### Logic
 
-- **The three brand mints** (L50-L65) — `pageCursor`, `eventCursor`, `libraryConversationKey`.
-  `ActivePageCursor` / `ActiveEventCursor` / `LibraryConversationKey` are `string & { __brand }`: opaque
-  server-issued strings whose brand exists only so a page cursor can never be handed to an event route.
-  There is no structure to get wrong and no other way to make one, so the previously scattered
-  `"evt-0" as ActiveEventCursor` casts (seventeen of them, per the header) collapse into these three.
-  Each is registered in `wireFixtureGuard.test.ts` with its reason — **which is what makes them the only
-  three rather than the first three.**
-- **`featureCapability`** (L69-L74) defaults to `{ state: "supported", reason: "", evidenceTier:
-  "adapter" }`; **`attachmentCapability`** (L76-L88) extends it with `allowedMimeTypes`, `maxBytes`,
+- **The three brand mints** (cit:([`pageCursor`, `eventCursor`, `libraryConversationKey`], dashboard/src/test/fixtures/conversationWire.ts:53-55; dashboard/src/test/fixtures/conversationWire.ts:58-60; dashboard/src/test/fixtures/conversationWire.ts:63-65)) — the fixture defines `pageCursor`, `eventCursor`, and `libraryConversationKey` as its three explicit brand-mint functions.
+- **`featureCapability`** (cit:([`featureCapability`], dashboard/src/test/fixtures/conversationWire.ts:69-74)) defaults to `{ state: "supported", reason: "", evidenceTier:
+  "adapter" }`; **`attachmentCapability`** extends it with `allowedMimeTypes`, `maxBytes`,
   `maxCount`, `description`.
-- **`ConversationCapabilityOverrides`** (L99-L101) is DERIVED from the wire type
+- **`ConversationCapabilityOverrides`** (cit:([`ConversationCapabilityOverrides`], dashboard/src/test/fixtures/conversationWire.ts:99-101)) is DERIVED from the wire type
   (`{ [Group in keyof ConversationCapabilities]?: Partial<ConversationCapabilities[Group]> }`) rather
   than re-listed, so a group the server adds is overridable the day the mirror declares it, and a group
-  it drops stops being nameable. **`conversationCapabilities`** (L103-L146) fills the full tree —
+  it drops stops being nameable. **`conversationCapabilities`** (cit:([`conversationCapabilities`], dashboard/src/test/fixtures/conversationWire.ts:103-146)) fills the full tree —
   `live` (6 leaves), `history` (5), `controls` (4 + a 3-leaf `attachments` block), `telemetry` (5) — so a
   test that cares about `controls.interrupt` names `controls.interrupt` and gets the other twenty-two
-  for free. `capabilitiesWithInterrupt` (L148-L153) is the shape the controls tests want.
-- **`historyCapabilities`** (L155-L168) — the dormant-library capability block.
-- **Identity, status, items, pages** (L170-L243) — `conversationIdentity`, `conversationStatus` (which
+  for free. cit:([`capabilitiesWithInterrupt`], dashboard/src/test/fixtures/conversationWire.ts:149-153) is the shape the controls tests want.
+- **`historyCapabilities`** (cit:([`historyCapabilities`], dashboard/src/test/fixtures/conversationWire.ts:155-168)) — the dormant-library capability block.
+- **Identity, status, items, pages** (cit:([`conversationIdentity`, `conversationStatus`, `conversationItem`, `conversationPage`], dashboard/src/test/fixtures/conversationWire.ts:172-185; dashboard/src/test/fixtures/conversationWire.ts:187-207; dashboard/src/test/fixtures/conversationWire.ts:209-226; dashboard/src/test/fixtures/conversationWire.ts:228-243)) — `conversationIdentity`, `conversationStatus` (which
   fills `freshness`, `process`, `turn` and `evidence` sub-objects), `conversationItem` (override REQUIRED
   on `itemId` and `globalOrdinal`, with a derived default block id), and `conversationPage`. Note
   `conversationPage`'s ordering: `...over` is spread BEFORE `items`, and `items` is bound once at the top
-  (L232) so `page.totalItems` and the final `items` cannot disagree.
-- **The dormant library** (L245-L272) — `conversationLibraryRow` and `conversationLibraryAgentRow`.
+  so `page.totalItems` and the final `items` cannot disagree.
+- **The dormant library** (cit:([`conversationLibraryRow`, `conversationLibraryAgentRow`], dashboard/src/test/fixtures/conversationWire.ts:247-260; dashboard/src/test/fixtures/conversationWire.ts:262-272)) — `conversationLibraryRow` and `conversationLibraryAgentRow`.
 
 ### Conventions
 
@@ -103,28 +97,29 @@ assignability as well as excess-property checking, and with `exactOptionalProper
 slot still admits an explicit `undefined`. The branded-string pattern is the standard nominal-typing
 idiom for opaque server-issued tokens.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| An assertion through `unknown` is the documented way to assert between unrelated types, which is precisely why `{} as unknown as ConversationCapabilities` compiled against a required, fully-populated wire model. | Type Assertions | [TypeScript Handbook — Everyday Types / Type Assertions](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions) |
-| With `exactOptionalPropertyTypes` off, an optional property's type implicitly includes `undefined` — the reason removing the cast did not close the hole and the builders needed `Overrides`. | `exactOptionalPropertyTypes` | [TSConfig Reference — exactOptionalPropertyTypes](https://www.typescriptlang.org/tsconfig/#exactOptionalPropertyTypes) |
-| Intersecting a primitive with a unique object type ("branding") is the idiom behind `string & { __brand }`, which gives an opaque token nominal identity without changing its wire form. | Nominal typing / branding | [TypeScript Handbook — Object Types / Intersection Types](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) |
+| The fixture header documents the former empty-capability double assertion as a failure mode. | "a page whose capability tree is EMPTY" | dashboard/src/test/fixtures/conversationWire.ts:8-8 |
+| The overrides fixture records the optional-property `"does not set"` case. | "does not set" | dashboard/src/test/fixtures/overrides.ts:3-3 |
+| The library grammar's branded string alias is `LibraryConversationKey`. | `LibraryConversationKey` | dashboard/src/data/conversation-library/types.ts:16-16 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The two one-token failure modes, and why removing the cast alone did not close the second one. | L1-L28 | [conversationWire.ts](conversationWire.ts) |
-| The three brand mints that replaced the scattered inline casts. | L50-L65 | [conversationWire.ts](conversationWire.ts) |
-| `ConversationCapabilityOverrides` derived from the wire type, and the full twenty-three-leaf tree `conversationCapabilities` produces. | L90-L146 | [conversationWire.ts](conversationWire.ts) |
-| `conversationPage` binding `items` once so the page's `totalItems` cannot disagree with its contents. | L228-L243 | [conversationWire.ts](conversationWire.ts) |
-| `ConversationPage.capabilities` is REQUIRED — the fact that made the second defect an impossible fixture rather than an unusual one. | L286-L298 | [../../data/conversation/types.ts](../../data/conversation/types.ts) |
-| The full `ConversationCapabilities` tree the builder must fill, and the branded cursor types the mints produce. | L26-L27; L253-L284 | [../../data/conversation/types.ts](../../data/conversation/types.ts) |
-| `LibraryConversationKey` and the library rows the last two builders produce. | L16; L27; L40 | [../../data/conversation-library/types.ts](../../data/conversation-library/types.ts) |
-| The override constraint every flat builder here takes, and the "one level deep only" limit that exempts `conversationCapabilities`. | L23-L69 | [overrides.ts](overrides.ts) |
-| The registry entries that make the three mints the only three assertions allowed in this file. | L158-L169 | [../wireFixtureGuard.test.ts](../wireFixtureGuard.test.ts) |
-| `ConversationCapabilities` asserted present in the guard's discovered vocabulary, so these builders are policed rather than merely conventional. | L209-L215 | [../wireFixtureGuard.test.ts](../wireFixtureGuard.test.ts) |
-| The probe proving `conversationPage({ capabilities: undefined })` is now rejected at the call site. | L29-L38; L91-L99 | [../fixtureOverrides.test.ts](../fixtureOverrides.test.ts) |
-| The companion builder module for the served projection, whose header carries the shared R6 reasoning. | L1-L46 | [wire.ts](wire.ts) |
+| The two one-token failure modes, and why removing the cast alone did not close the second one. | "{} as unknown as ConversationCapabilities"; "undefined as unknown as ConversationCapabilities" | dashboard/src/test/fixtures/conversationWire.ts:8-8; dashboard/src/test/fixtures/conversationWire.ts:14-14 |
+| The three brand mints that replaced the scattered inline casts. | `pageCursor`; `eventCursor`; `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:53-55; dashboard/src/test/fixtures/conversationWire.ts:58-60; dashboard/src/test/fixtures/conversationWire.ts:63-65 |
+| The attachment builder extends the feature capability with the image contract. | `attachmentCapability` | dashboard/src/test/fixtures/conversationWire.ts:76-88 |
+| `ConversationCapabilityOverrides` derived from the wire type, and the full twenty-three-leaf tree `conversationCapabilities` produces. | `ConversationCapabilityOverrides`; `conversationCapabilities` | dashboard/src/test/fixtures/conversationWire.ts:99-101; dashboard/src/test/fixtures/conversationWire.ts:103-146 |
+| `conversationPage` binding `items` once so the page's `totalItems` cannot disagree with its contents. | `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243 |
+| `ConversationPage.capabilities` is REQUIRED — the fact that made the second defect an impossible fixture rather than an unusual one. | `ConversationPage` | dashboard/src/data/conversation/types.ts:286-298 |
+| The full `ConversationCapabilities` interface and fixture builder construct the twenty-three-leaf capability tree. | `ConversationCapabilities`; `conversationCapabilities` | dashboard/src/data/conversation/types.ts:253-283; dashboard/src/test/fixtures/conversationWire.ts:103-146 |
+| The fixture's `LibraryConversationKey` alias and the two library-row builders. | "export type LibraryConversationKey"; "export function conversationLibraryRow"; "export function conversationLibraryAgentRow" | dashboard/src/data/conversation-library/types.ts:16-16; dashboard/src/test/fixtures/conversationWire.ts:247-247; dashboard/src/test/fixtures/conversationWire.ts:262-262 |
+| The shared `Overrides` mapped type constrains required keys, while `ConversationCapabilityOverrides` gives `conversationCapabilities` its separate per-group override type. | `Overrides`; `ConversationCapabilityOverrides`; `conversationCapabilities` | dashboard/src/test/fixtures/overrides.ts:60-66; dashboard/src/test/fixtures/conversationWire.ts:99-101; dashboard/src/test/fixtures/conversationWire.ts:103-146 |
+| The registry entries that make the page-cursor and library-key mints the assertions allowed in this file. | "src/test/fixtures/conversationWire.ts :: as ActivePageCursor"; "src/test/fixtures/conversationWire.ts :: as LibraryConversationKey" | dashboard/src/test/wireFixtureGuard.test.ts:164-164; dashboard/src/test/wireFixtureGuard.test.ts:172-172 |
+| `ConversationCapabilities` asserted present in the guard's discovered vocabulary, so these builders are policed rather than merely conventional. | `ConversationCapabilities` | dashboard/src/test/wireFixtureGuard.test.ts:209-215 |
+| The probe proving `conversationPage({ capabilities: undefined })` is now rejected at the call site. | "a builder override cannot state that a required field is absent" | dashboard/src/test/fixtureOverrides.test.ts:91-117 |
+| The companion builder module for the served projection, whose header carries the shared R6 reasoning. | "R6 in one sentence"; `SERVED` | dashboard/src/test/fixtures/wire.ts:3-3; dashboard/src/test/fixtures/wire.ts:66-66 |
 
 ## Cross-Repo References
 
@@ -133,12 +128,16 @@ No cross-repository boundary. The conversation grammar's producing models
 `agents-remember`; the harnesses these conversations come from are external processes, but no fixture
 here crosses that boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The mirror's own header names its in-repo Python sources, confirming the boundary is a language seam inside this repository rather than a repository boundary. | L1-L4 | [../../data/conversation/types.ts](../../data/conversation/types.ts) |
-| The library grammar's mirror likewise cites in-repo `library/api.py` / `models.py`. | L1-L2 | [../../data/conversation-library/types.ts](../../data/conversation-library/types.ts) |
+| The mirror's own header names its in-repo Python source, confirming a language seam inside this repository rather than a repository boundary. | "mcp/src/agents_remember/serving/conversation/models.py" | dashboard/src/data/conversation/types.ts:2-2 |
 
 ## Update History
+
+- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D6-D8 documented failure-mode, capability-construct, and mapped-override evidence for the same-reviewer residual delta.
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 23 citation claims
+  (9 Logic citations and 14 Repo-Internal/Cross-Repo reference rows); repaired 1 exact range and normalized 2 duplicate range lists; scoped result clean (0 findings).
 
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): repaired one citation. The
   `ConversationCapabilities`-in-the-vocabulary row cited `wireFixtureGuard.test.ts` L202-L208, which

@@ -35,7 +35,7 @@ No TODO markers are present in this report template.
 
 No external domain documentation applies to this repository-local report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -43,22 +43,24 @@ No external domain documentation applies to this repository-local report templat
 
 This bundle copy is written by fan-out sub-agents and consumed by the reviewer's onboarding-vs-code lens and the orchestrator's memory-quality checks.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | n/a | [onboarding-coherency.md](agents-remember/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md) |
-| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence. | n/a | [adversarial-reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md) |
-| The orchestrator's memory-quality checks consume this report; its fan-out sub-agents write it while AR mutations stay in the orchestrator main loop. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
-| The frame defines the onboarding-vs-code lens as paired read_ar_files + memory_quality_check + drift. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| Sync-propagated bundle copy of the canonical templates source. | `# Onboarding-Coherency Template` | skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48 |
+| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence. | "../templates/onboarding-coherency.md" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:88-88 |
+| The orchestrator's memory-quality checks consume this report; its fan-out sub-agents write it while AR mutations stay in the orchestrator main loop. | `## Sub-Agent Fan-Out (capability doctrine — any harness that has it)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:380-402 |
+| The frame defines the onboarding-vs-code lens as paired read_ar_files + memory_quality_check + drift. | `## The Three Review Lenses` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:76-89 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 4 citation items; scoped citation check now passes.
 
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/ (content unchanged). Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-01-agent-lifecycles` onboarding-coherency report template (leaf 260703-L1) — the reviewer's onboarding-vs-code lens report (paired read_ar_files + memory_quality_check + drift_check) checking same-pass sidecar refresh, new-file missing onboarding, drift/quality, and current overviews, on the "orchestrator quality ∝ memory-repo quality" doctrine. Verification metadata pinned until closeout stamps the L1 commit.

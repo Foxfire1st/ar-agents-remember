@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_native_history.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,33 +50,34 @@ None known.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The history reader implements the contracts exercised by this suite. | L41-L681 | [codex_app_server_history.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_history.py) |
-| Typed native-history errors preserve codes and byte evidence. | L124-L144 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
+| The history reader implements the contracts exercised by this suite. | `CodexNativeHistoryReader`; `read_page` | mcp/src/agents_remember/serving/codex_app_server_history.py:110-612 |
+| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:146-151; mcp/src/agents_remember/errors.py:154-166 |
 
 ## Cross-Repo References
 
 No cross-repository fixture is used.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-02T21:13:21+02:00 — W2-B07 curator: repaired 2 repository-reference citations and normalized 1 historical prose citation after bounded source reads; the scoped citation check is clean.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose end ran
   14 lines past `serving/codex_app_server_history.py`, which is 681 lines. Narrowed it to L41-L681
   and read both ends: L41 is still the `SourceContract` literal that opens the contract vocabulary
   and L681 is the last line of `_decode_bounded_cursor`'s walk-id validation, so the range covers
   the whole reader — constants, `_BoundedWalk`/`_OutputWindow`/`BoundedPageRequest`,
-  `CodexNativeHistoryReader` (L111), and the cursor codec (L615 onward).
+  `CodexNativeHistoryReader`, and the cursor codec.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: created strict 1:1 onboarding for the
   native-history unit/resource suite. Verification metadata remains blank because the new test is
   uncommitted.

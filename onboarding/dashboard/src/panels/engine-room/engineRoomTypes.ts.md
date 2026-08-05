@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/engineRoomTypes.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -36,14 +36,17 @@ Two exported interfaces, both pure type declarations (no runtime code).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `EngineProcessView` joins a process node + lifecycle + `enclosureKey` | L13-L22 | [engineRoomTypes.ts](engineRoomTypes.ts) |
-| `EngineRoomModel` fields: processes, workspaceEngines, fallbackStacks, usesFallback | L24-L34 | [engineRoomTypes.ts](engineRoomTypes.ts) |
-| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` source types | L7-L11 | [projection.ts](../../types/projection.ts) |
-| `EngineStack` source type + `groupEngines` fallback producer | L6 | [selectors.ts](../../data/selectors.ts) |
+| `EngineProcessView` joins a process node + lifecycle + `enclosureKey` | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
+| `EngineRoomModel` fields: processes, workspaceEngines, fallbackStacks, usesFallback | `EngineRoomModel` | dashboard/src/panels/engine-room/engineRoomTypes.ts:28-37 |
+| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` source types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:162-202; dashboard/src/types/projection.ts:258-276; dashboard/src/types/projection.ts:325-336 |
+| `EngineStack` source type + `groupEngines` fallback producer | `EngineStack`; `groupEngines` | dashboard/src/data/selectors.ts:132-137; dashboard/src/data/selectors.ts:147-165 |
 
 ## Update History
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 3 citation claims
+  (Repo-Internal reference rows); scoped result 0 findings.
 
 - 2026-06-23T13:45+02:00 — Task 11: added `gate?: GateNode` to `EngineProcessView`, populated by
   `buildEngineRoomModel` from the joined lifecycle for the secondary Engine Room Respond surface.

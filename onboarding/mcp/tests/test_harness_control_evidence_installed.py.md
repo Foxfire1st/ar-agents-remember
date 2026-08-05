@@ -70,31 +70,32 @@ confidence register entries 3/9); a later tuning leaf owns realistic pressure ev
 No Domain Documentation source is configured. The installed production seam is the direct
 evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The redacted codex `substrate-evidence/*` rows this suite captures and honors. | L35-L79 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
-| The redacted pi `substrate-evidence/*` rows this suite captures and honors. | L37-L69 | [pi-0.80.7.json](agents-remember/mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json) |
-| The claude row whose version-mismatch reason this suite enforces. | L37-L43 | [claude-2.1.211.json](agents-remember/mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json) |
-| Foundation tests require non-enablement and a raw-free fixture set across these files. | L102-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The deterministic contract suite whose fake-transport claims this file re-proves live. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The redacted codex `substrate-evidence/*` rows this suite captures and honors. | "substrate-evidence/live-frames-page" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:40-40 |
+| The redacted pi `substrate-evidence/*` rows this suite captures and honors. | "substrate-evidence/live-frames-page" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:40-40 |
+| The claude row whose version-mismatch reason this suite enforces. | "Installed 2.1.214 mismatches the locked 2.1.211 gate;" | mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:43-43 |
+| Foundation tests require non-enablement and a raw-free fixture set across these files. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement`; `test_runtime_fixtures_contain_no_raw_secret_path_or_conversation_material` | mcp/tests/test_conversation_foundation.py:163-188; mcp/tests/test_conversation_foundation.py:191-202 |
+| The deterministic contract suite whose fake-transport claims this file re-proves live. | `test_reserved_key_round_trip_and_no_leak`; `test_native_page_bridge_epoch_stamped_and_frames_validated`; `test_submission_provenance_all_sources_epoch_and_bounds`; `test_fixture_shaped_response_without_live_epoch_fails_validation` | mcp/tests/test_harness_control_evidence.py:370-418; mcp/tests/test_harness_control_evidence.py:743-786; mcp/tests/test_harness_control_evidence.py:816-897; mcp/tests/test_harness_control_evidence.py:899-922 |
 
 ## Cross-Repo References
 
 No neighboring repository participates; installed harness binaries are local tools, not repo
 boundaries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T03:11:47+02:00 — W3-B04 curator: curated 5 table citations (5 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the codex live test was split for C901, so
   the whole-family assertions now live in `_assert_evidence_family(page)` and the persisted-thread
   plus factory-resume half in `_assert_resume_channel_reaches_the_persisted_thread(root)`; both live

@@ -5,15 +5,15 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
 
 `lifecycle_service.py` is the typed provider lifecycle service boundary for MCP
-callers. It lets MCP controllers run provider operations from trusted lifecycle
+callers. It lets MCP application entry points run provider operations from trusted lifecycle
 settings without building CLI `argv` or invoking `lifecycle.main()`.
 
 ## Code Commentary
@@ -55,14 +55,18 @@ structured `ok: false` payloads for MCP callers.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| MCP provider tool controllers call this service layer. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
-| CLI/operator implementation functions remain behind the lifecycle facade. | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| Tests verify service calls do not route through `lifecycle.main()`. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| MCP provider tool application entry points call this service layer. | ["from agents_remember.providers import lifecycle_service"] | mcp/src/agents_remember/application/provider_tools.py:18-18 |
+| CLI/operator implementation functions remain behind the lifecycle facade. | `_EXPORT_MODULES`, `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24; mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
+| Tests verify service calls do not route through `lifecycle.main()`. | `test_typed_cgc_payloads_build_fixed_native_commands` | mcp/tests/test_tools.py:581-661 |
 
 ## Update History
 
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 3 repository-internal application, facade, and service-boundary test references; final scoped result 0 (checker-clean).
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `run_cgc_lifecycle` was re-signed from five keywords to `(service_config, request:
   CgcLifecycleRequest)`. The supported actions, the refusal and the returned payload are unchanged.

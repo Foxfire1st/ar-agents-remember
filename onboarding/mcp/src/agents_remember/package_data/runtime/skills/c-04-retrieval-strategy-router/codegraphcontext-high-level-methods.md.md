@@ -67,29 +67,31 @@ No external documentation is cited here. The document records verified local CGC
 command shapes from the managed provider wrapper, then presents only synthetic
 example outputs.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The CGC catalog states the typed MCP tool contract and says generic `cgc_query` is removed. | L1-L42 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Symbol search, callees, callers, dependencies, and complexity sections show placeholder tool calls and synthetic output shapes. | L44-L175 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| Practical rules explain when to use each typed CGC tool and require source confirmation before edits. | L174-L184 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
-| The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Relationship section. | L107-L111 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
+| The CGC catalog states the typed MCP tool contract and says generic `cgc_query` is removed. | `cgc_query` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md:1-42 |
+| Symbol search, callees, callers, dependencies, and complexity sections show placeholder tool calls and synthetic output shapes. | `# CodeGraphContext High-Level Methods` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md:1-184 |
+| Practical rules explain when to use each typed CGC tool and require source confirmation before edits. | `## Practical Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md:174-184 |
+| The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Relationship section. | `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:82-130 |
 
 ## Cross-Repo References
 
 The example outputs are synthetic response-shape illustrations. They do not
 contain private sibling repository names, symbols, paths, or code.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No source-code contract is imported from a sibling repository. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 line citation. The catalog is 184 lines,
   so the Practical Rules row's L177-L185 ran past the end; the `## Practical Rules` section now reads

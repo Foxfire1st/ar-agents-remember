@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLifecycle.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -26,20 +26,20 @@ against the real `sessionStore` (hydrated from the L6 fixtures) with fetch stubb
 
 ### Logic
 
-- **`terminateSessionDetailed`** (L40-L84): `controlStopDetail` kept from the response body
+- **`terminateSessionDetailed`** cit:(["keeps controlStopDetail from the terminate response instead of discarding the body"], dashboard/src/data/sessionLifecycle.test.ts:41-54): `controlStopDetail` kept from the response body
   (`L6_TERMINATE_RESPONSE_WITH_RESIDUAL`); a clean terminate carries no residual; a FAILED POST
   (502 + body) keeps the server's words verbatim — `{ok:false, error:"bridge host unavailable"}`
   (review finding 4 regression).
-- **Retire-residual sweep (review F1, sev-3)** (L74-L104): hydrating an UNFOCUSED tombstoned row
+- **Retire-residual sweep (review F1, sev-3)** cit:(["captures retireControlStopError for an UNFOCUSED tombstoned row"], dashboard/src/data/sessionLifecycle.test.ts:87-108): hydrating an UNFOCUSED tombstoned row
   (`L6_RETIRED_WITH_STOP_ERROR`) captures the residual exactly once — repeated hydrates (the
   catalog serves the row every beat) never duplicate it, and a dismissal stays dismissed across
   later beats (the swept-set remembers). Rows already in the store when the sweep starts are
-  captured too — the reload path (L98-L103).
-- **`endSessionDetailed`** (L120-L144): tombstones the row out of the store AND records the stop
+  captured too — the reload path cit:(["rows already in the store when the sweep starts are captured too (reload path)"], dashboard/src/data/sessionLifecycle.test.ts:110-117).
+- **`endSessionDetailed`** cit:(["tombstones the row and records the stop residual as an informational notice"], dashboard/src/data/sessionLifecycle.test.ts:121-143): tombstones the row out of the store AND records the stop
   residual as an informational notice.
-- **`endLandedDetailed`** (L146-L213): records the route's own closed + skipped outcome — skips
+- **`endLandedDetailed`** cit:(["bulk cleanup honesty"], dashboard/src/data/sessionLifecycle.test.ts:146-213): records the route's own closed + skipped outcome — skips
   never vanish; `cleanupOutcomeCopy` renders `ended 1 · skipped 1 (landed-b: status:running)`.
-- **Copy honesty** (L166-L185): the terminate confirm NAMES session · leaf · state (fixture
+- **Copy honesty** cit:(["lifecycleCopy honesty rules"], dashboard/src/data/sessionLifecycle.test.ts:215-234): the terminate confirm NAMES session · leaf · state (fixture
   label, `leaf 06_pty-stage-interactions-lifecycle`, `state working`); terminate AND retire
   residual copy contain "informational" + the verbatim detail, and `"fail"` never appears
   (case-insensitive).
@@ -50,18 +50,18 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | L21-L191 | [sessionLifecycle.ts](sessionLifecycle.ts) |
-| The centralized copy the honesty cases pin. | L14-L47 | [../panels/session-cockpit/lifecycleCopy.ts](../panels/session-cockpit/lifecycleCopy.ts) |
-| The L6 fixtures driven through the real store. | — | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
-| The view-level companions (unfocused-residual render, rail End/error-row cases). | — | [../panels/session-cockpit/SessionsView.test.tsx](../panels/session-cockpit/SessionsView.test.tsx) |
+| The module under test. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
+| The centralized copy the honesty cases pin. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23 |
+| The L6 fixtures driven through the real store. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:179-191 |
+| The view-level companions (unfocused-residual render, rail End/error-row cases). | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:164-206 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -75,9 +75,9 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 

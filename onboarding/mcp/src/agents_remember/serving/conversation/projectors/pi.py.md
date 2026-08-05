@@ -26,24 +26,24 @@ they honestly carry `unknown-input` provenance.
 
 ### Logic
 
-`map_native_frame` (L56-L109) maps one durable `SessionEntry`: `message` entries delegate to
+cit:([`map_native_frame`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:56-109) maps one durable `SessionEntry`: `message` entries delegate to
 `_map_message`; `compaction` and `thinking_level_change`/`model_change` entries become system
 `notice` items; every other entry type becomes `MappedUnknownVendor` with the native id/parent
-preserved. `_map_message` (L170-L199) routes by role: user messages (L210-L256) map string or
+preserved. cit:([`_map_message`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:170-207) routes by role: user messages cit:([`_map_user_message`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:210-256) map string or
 part-list content (unknown part types preserved) with unknown-input provenance; assistant
-messages (L259-L331) split text/thinking parts into blocks, mint one stable-ID tool-call item
+messages cit:([`_map_assistant_message`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:259-331) split text/thinking parts into blocks, mint one stable-ID tool-call item
 per `toolCall` part (input block, phase `streaming`, parented on the message), classify the
-message phase from `stopReason`, and emit terminal outcomes — `stop`/`toolUse`/`length` (L53)
+message phase from `stopReason`, and emit terminal outcomes — `stop`/`toolUse`/cit:([`length`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:53-53)
 complete the turn without a separate marker (the assistant message itself is the settlement),
 while `aborted`/`error` mint an in-place `turn-result` item plus `MappedTurnOutcome`
-(L334-L360); `toolResult` messages (L363-L398) upsert the same `toolCallId` item with the output
-block. `map_evidence_frame` (L112-L167) maps live `tool_execution_start` (with the input block),
+cit:([`MappedTurnOutcome`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:334-360); `toolResult` messages cit:([`_map_tool_result_message`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:363-398) upsert the same `toolCallId` item with the output
+block. cit:([`map_evidence_frame`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:112-167) maps live `tool_execution_start` (with the input block),
 `tool_execution_update`/`_end` (output only) to partial-block upserts by `toolCallId`;
 `message_end`/`message_update`/`agent_end` mint nothing — completed messages mint from durable
 entries via the engine's eager native continuation, and in-flight deltas stay in the substrate
 buffer so no provisional identity is ever minted. Unknown live events become
 `MappedUnknownVendor`. The signature also accepts the protocol-wide
-`parent_thread_id` keyword (L116) — the multiplexed-harness demux context — and deliberately
+`parent_thread_id` keyword cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:116-116) — the multiplexed-harness demux context — and deliberately
 ignores it (`noqa: ARG001`): pi carries no sub-agent threads.
 
 ### Conventions
@@ -77,7 +77,7 @@ The resolved `Domain Documentation` registry has no entries. The schema authorit
 module — the locked Pi RPC documentation (`rpc.md`) and the pinned `SessionEntry`/message
 shapes — are repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this mapper. | — | — |
 
@@ -86,31 +86,35 @@ shapes — are repository-owned and cited below.
 The Pi adapter reads durable entries and emits the RPC event surface; the pi fixture records the
 observed entry/tool shapes; the store's block union converges the split tool items.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Pi RPC adapter streams live RPC events (tool lifecycle frames) and pages durable entries with native id/parent coordinates. | L266-L305; L580-L612 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
-| The pi fixture records the observed message_end live frame and durable-entry native page rows through the production seam. | L41-L61 | [pi-0.80.7.json](agents-remember/mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json) |
-| The store unions tool-call blocks by `block_id` so start → update → end keeps the input block. | L127-L136; L431-L448 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The engine continues native reads eagerly for pi so live items always carry native identity. | L154-L156; L244-L268 | [projector/native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) |
+| The Pi RPC adapter streams live RPC events (tool lifecycle frames) and pages durable entries with native id/parent coordinates. | `_event_stream`; `read_native_page` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:268-305; mcp/src/agents_remember/serving/pi_rpc_adapter.py:576-611 |
+| The pi fixture records the observed message_end live frame and durable-entry native page rows through the production seam. | "message_end full frame[observed]"; "substrate-evidence/native-page-get-entries" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:39-61 |
+| The store unions tool-call blocks by `block_id` so start → update → end keeps the input block. | `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
+| The engine continues native reads eagerly for pi so live items always carry native identity. | `poll_native_continuation` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:244-268 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this mapper; the Pi process is a local
 subprocess reached through this repository's own adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows (RPC adapter stream/paging, pi fixture rows, store `_union_blocks`, eager `poll_native_continuation`) and converted 6 superseded prose line citations plus 2 single-line parenthesized shorthand forms to cit: forms; all pi.py mapper ranges verified against the frozen source. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose target
   file no longer exists. `serving/conversation/active/projector.py` was split into the
   `active/projector/` package; the eager native continuation now lives in
   `projector/native_ingestion.py` — `poll_native_continuation` returns immediately unless
-  `mapper.eager_native_continuation` and otherwise drains native pages (L244-L268), and the lazy
+  `mapper.eager_native_continuation` and otherwise drains native pages
+  cit:([`poll_native_continuation`], mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:244-268), and the lazy
   `native_dirty` path at L154-L156 is skipped for eager mappers. Re-verified that `_PiProjector`
-  is the only projector setting `eager_native_continuation = True` (`projectors/__init__.py` L99).
+  is the only projector setting `eager_native_continuation = True`
+  cit:([`eager_native_continuation`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:99-99).
   Repointed both the link path and the range; no claim text changed.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
@@ -126,7 +130,7 @@ subprocess reached through this repository's own adapter.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-26T15:34 — 260718-CHATS-L7: `map_evidence_frame` gained the protocol-wide optional
-  `parent_thread_id` keyword (L116), accepted and ignored (`noqa: ARG001`) because pi carries
+  `parent_thread_id` keyword cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:116-116), accepted and ignored (`noqa: ARG001`) because pi carries
   no sub-agent threads. Sidecar: documented the ignored demux seam and the no-fabricated-agent-
   attribution invariant; refreshed body citations shifted by the signature growth (_map_message
   L170-L199, user L202-L250, assistant L251-L325, terminal outputs L326-L354, toolResult

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/servedAges.ts`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,28 +62,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The server half: stable-form diff + the canonical volatile set. | [delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
-| The consuming merge (identity reuse + stamping on apply). | [store.ts](agents-remember/dashboard/src/data/store.ts) |
-| Display sites (`servedAgeSeconds` + `useNowMs`): Hangar, AttentionQueue, MemoryMirror, LifecycleList. | [panels/](agents-remember/dashboard/src/panels/Hangar.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The server half: stable-form diff + the canonical volatile set. | `VOLATILE_AGE_FIELDS` | mcp/src/agents_remember/serving/delta.py:36-38 |
+| The consuming merge (identity reuse + stamping on apply). | `mergeKeyed` | dashboard/src/data/store.ts:66-67; dashboard/src/data/store.ts:91-111 |
+| Display sites (`servedAgeSeconds` + `useNowMs`): Hangar, AttentionQueue, MemoryMirror, LifecycleList. | `servedAgeSeconds` | dashboard/src/panels/Hangar.tsx:3-3; dashboard/src/panels/AttentionQueue.tsx:7-7; dashboard/src/panels/MemoryMirror.tsx:3-3; dashboard/src/panels/LifecycleList.tsx:14-14 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 3 citation rows: the server half (serving/delta.py L33-L56, `VOLATILE_AGE_FIELDS`), the consuming merge (data/store.ts L66-L67 + L88-L110, `mergeKeyed`), and the four display-site import lines (Hangar/AttentionQueue/MemoryMirror/LifecycleList, `servedAgeSeconds`). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-24T13:17:50Z — Added active-layer local-age scheduling semantics. Verification hash/date
   remain pinned to the pre-commit source stamp.

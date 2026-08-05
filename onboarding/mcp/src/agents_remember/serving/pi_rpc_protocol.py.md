@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ set-model and clamping set-thinking semantics.
 No Domain Documentation source is configured for this repository, so the previously recorded live
 Pi link was not treated as configured evidence for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -77,20 +77,22 @@ Pi link was not treated as configured evidence for this update.
 The adapter consumes these parsers in a deliberate startup/discovery order, while the process module
 owns raw subprocess transport.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Adapter startup/discovery reads state and catalog, validates current selection, and keeps entries out of discovery. | L87-L156; L318-L384 | [pi_rpc_adapter.py](pi_rpc_adapter.py) |
-| Process transport uses this module's JSONL encoder/decoder and exact response correlation. | L33-L147 | [pi_rpc_process.py](pi_rpc_process.py) |
+| Adapter startup/discovery reads state and catalog, validates current selection, and keeps entries out of discovery. | `_read_state`; `_read_available_models`; `_read_entries`; `_current_capabilities` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:540-544; mcp/src/agents_remember/serving/pi_rpc_adapter.py:566-574; mcp/src/agents_remember/serving/pi_rpc_adapter.py:613-614; mcp/src/agents_remember/serving/pi_rpc_adapter.py:631-657 |
+| Process transport uses this module's JSONL encoder/decoder and exact response correlation. | `PiRpcSubprocess` | mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this protocol parser.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 2 citation items; scoped citation check now passes.
 
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented `pi_entry_identity` (fail-closed
   durable id/parentId/type coordinates) and `pi_entry_created_at` (honest optional timestamp) as

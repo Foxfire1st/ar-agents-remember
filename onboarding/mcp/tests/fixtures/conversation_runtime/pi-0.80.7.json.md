@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash |  `22562e0f2161c2d980385a462275dc370deb72eb`|
-| lastVerifiedCommitDate |  2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -73,29 +73,34 @@ the same redaction policy.
 No Domain Documentation source is configured; the production-seam observation is the fixture's
 direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Foundation tests require this exact runtime/helper tuple, false enablement, and raw-free fixture set. | L102-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The helper manifest pins the Pi package version named by this fixture. | L13-L16 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
-| The opt-in installed suite captures these `substrate-evidence/*` rows through the production seam and asserts their shapes. | L273-L340 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
-| The L2 installed-runtime suite produces the live helper gate and real Pi open evidence this row records. | L217-L263; L366-L413 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| The L2E installed-runtime suite captures these `control-plane/*` rows through the production control seam and asserts their shapes. | L262-L364 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
+| Foundation tests require this exact runtime/helper tuple, false enablement, and raw-free fixture set. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement` | mcp/tests/test_conversation_foundation.py:163-188 |
+| The helper manifest pins the Pi package version named by this fixture. | "0.80.7" | mcp/native_helpers/conversation_library/package.json:15-15 |
+| The fixture records the live-frames substrate evidence shape used by the installed evidence suite. | "substrate-evidence/live-frames-page" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:40-40 |
+| The opt-in installed evidence suite exercises and asserts the Pi production-seam shapes. | `PiInstalledEvidenceTests` | mcp/tests/test_harness_control_evidence_installed.py:281-352 |
+| The fixture records the "locked-helper/list-listAll-resolve" operation with `result` set to `observed`. | "\"operation\": \"locked-helper/list-listAll-resolve\", \"shape\": [ \"handshake/ready\", \"SessionManager.list\", \"SessionManager.open+getBranch\", \"resolve/sessionFile\" ], \"result\": \"observed\"" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:23-30 |
+| The installed library suite verifies the live gate, list/read/resolve, and exact-identity open behavior. | `test_live_list_read_resolve` | mcp/tests/test_conversation_library_installed.py:233-263 |
+| The fixture records the control-plane abort-write shape. | "control-plane/abort-write-ack" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:72-72 |
+| The installed control-plane suite exercises and asserts the corresponding Pi abort, timeline, and asset behavior. | `PiInstalledControlPlaneTests` | mcp/tests/test_harness_control_plane_installed.py:269-373 |
 
 ## Cross-Repo References
 
 No neighboring repository is involved.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D1 by binding the locked-helper operation and its structured `result: observed` value as pooled evidence, with no gate-field claim; rechecked this card through the locked exact-document fixer/check.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
   `mcp/tests/test_conversation_library_installed.py`. The live-helper-gate range is now L217-L263

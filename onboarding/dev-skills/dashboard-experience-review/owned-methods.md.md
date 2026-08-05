@@ -48,24 +48,27 @@ No open file-local todos.
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split. | whole file | [SKILL.md](agents-remember/dev-skills/dashboard-experience-review/SKILL.md) |
-| The doctrine whose violations raise severity by a tier. | whole file | [docs/design/dashboard/review-doctrine.md](agents-remember/docs/design/dashboard/review-doctrine.md) |
+| The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split. | `# dashboard-experience-review Dashboard Experience Review` | dev-skills/dashboard-experience-review/SKILL.md:6-134 |
+| The doctrine whose violations raise severity by a tier. | `# Cockpit Dashboard — Review Doctrine` | docs/design/dashboard/review-doctrine.md:1-112 |
 
 ## Cross-Repo References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  heading anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

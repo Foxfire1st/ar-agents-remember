@@ -47,28 +47,33 @@ they are not release blockers for this leaf.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Set, snapshot, promotion, pair, cycling, and watcher cases. | L63-L694 | [setClient.test.ts](setClient.test.ts) |
-| Driver under test. | L1-L433 | [setClient.ts](setClient.ts) |
-| Shared deterministic fixtures. | — | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts) |
-| The shared `observerEvent` builder the R4 promotion-watcher case (L671) now feeds `applySeatEvent`; it supplies the `schema`/`id`/`trust`/`actor` defaults the old inline envelope lacked. | L369-L381 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
+| Set, snapshot, promotion, pair, cycling, and watcher cases. | "sendSet — wire + honesty table application"; "refreshSessionSnapshot (R1/F16)"; "queued promotion by readback (R4)"; "serialized pair change (R5)"; "cycleEffortRequested (R7)"; "startSetPromotionWatcher (R4 + v3 drift delta)" | dashboard/src/data/setClient.test.ts:64-228; dashboard/src/data/setClient.test.ts:230-265; dashboard/src/data/setClient.test.ts:267-338; dashboard/src/data/setClient.test.ts:340-536; dashboard/src/data/setClient.test.ts:538-607; dashboard/src/data/setClient.test.ts:609-697 |
+| Driver under test. | `refreshSessionSnapshot`; `applySnapshotReadback`; `sendSet`; `applySetResult`; `commitPairDirective`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested`; `startSetPromotionWatcher` | dashboard/src/data/setClient.ts:68-115; dashboard/src/data/setClient.ts:118-148; dashboard/src/data/setClient.ts:304-320; dashboard/src/data/setClient.ts:157-244; dashboard/src/data/setClient.ts:247-300; dashboard/src/data/setClient.ts:327-335; dashboard/src/data/setClient.ts:338-343; dashboard/src/data/setClient.ts:352-374; dashboard/src/data/setClient.ts:398-445 |
+| Shared deterministic fixtures. | `ENVELOPES_BY_CACHE_STATUS` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:175-179 |
+| The shared `observerEvent` builder supplies `schema`/`id`/`trust`/`actor` defaults to every event it creates. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
+| The R4 promotion-watcher test routes the turn-ended L2 SEAT-EVENT through `applySeatEvent` using the shared observer-event fixture. | "fires on a turn-ended delivered by L2's SEAT-EVENT channel"; "applySeatEvent("; "observerEvent(" | dashboard/src/data/setClient.test.ts:655-655; dashboard/src/data/setClient.test.ts:670-671 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-04T17:16:00+02:00 — 260731-EFA-L6 S18-B08 curator: split the shared observer-event builder from the R4 SEAT-EVENT test dataflow, regenerated the unique observer-event call extent, and rechecked the narrowed title/call claim. Residual repair after the delta verdict: the R4 routing claim's `applySeatEvent` anchor was bound to the in-test dynamic import, not the routing invocation; rebound it as the exact call anchor `"applySeatEvent("`, and the scoped fixer regenerated the row's sources to the test title and the full routing-call extent that passes the shared observer-event fixture to `applySeatEvent`, dropping the import occurrence. Single-document recheck clean (0 findings).
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 7 citation claims (4 table rows, 3 prose citations); scoped recheck clean (0 findings).
 
 - 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **the 09:22 entry's analysis is
   sound and is kept in full; its `No content impact:` header was not.** The conversion introduced a
@@ -77,7 +82,7 @@ No meaningful cross-repo boundary is owned here.
   "Shared deterministic fixtures" row named only `capabilityEnvelopes.ts`. A card that needs a new
   reference row has content impact by definition, so the attestation is re-stated as **no
   behavioural impact**, which is what the 09:22 analysis actually establishes. Added the missing row
-  pointing at `../test/fixtures/wire.ts` (`observerEvent`, L369-L381), matching the row the same
+  pointing at cit:([`observerEvent`], dashboard/src/test/fixtures/wire.ts:373-385), matching the row the same
   curator added on `railModel.test.ts.md`, `interactionAnswer.test.ts.md` and `store.test.ts.md` for
   this identical change; the table is three-column here, so the new row carries three cells.
   Re-verified the kept citations from the working tree: the six describes are at L64/L230/L267/L340/
@@ -87,12 +92,12 @@ No meaningful cross-repo boundary is owned here.
 
 - 2026-08-01T09:22+02:00 — 260731-EFA-L4 curator: No behavioural impact (this entry originally read
   "No content impact"; corrected 11:40 — the card gained a `wire.ts` reference row): the whole diff against
-  `abc7cbc` is one fixture conversion in the R4 promotion-watcher case (L667-L680) — the seat event
+  `abc7cbc` is one fixture conversion in the R4 promotion-watcher case (cit:([`startSetPromotionWatcher`], dashboard/src/data/setClient.ts:398-445)) — the seat event
   it feeds `applySeatEvent` moved from an inline object closed with `as never` to
   `test/fixtures/wire.ts::observerEvent`, and the card makes no claim about how fixtures are built.
   The check that could have made this consequential: `observerEvent` ADDS `schema`, `id`, `trust`
   and `actor` to an envelope that previously carried none of them, so I read the consumer —
-  `seatEvents.ts::applySeatEvent` (L40-L92) branches only on `event.kind`, resolves the row through
+  cit:([`applySeatEvent`], dashboard/src/data/seatEvents.ts:40-92) branches only on `event.kind`, resolves the row through
   `event.sessionId ?? event.data.session`, and reads `event.ts` and `event.data.*`; it never looks at
   `trust`, `actor` or `schema`. The one value the R4 case actually measures, the strictly-newer
   `ts: "2099-01-01T00:00:00Z"` against the stored transition (the L86 dedup guard), is byte-identical

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661`|
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -92,16 +92,17 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog implementation under test, including typed optional reads and required/optional JSON projection. | `TerminalCatalogEntry.from_json`; `TerminalCatalogEntry.to_json` | [serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
-| The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | L325-L415; L571-L583 | [test_terminal_ws.py](test_terminal_ws.py) |
+| The catalog implementation under test, including typed optional reads and required/optional JSON projection. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
+| The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | `test_get_terminal_sessions_lists_catalog_entries`; `test_post_open_spawns_shell_at_workspace_root`; `test_terminate_marks_catalog_and_kills_tmux`; `test_saves_under_session_cwd_and_returns_path` | mcp/tests/test_terminal_ws.py:523-550; mcp/tests/test_terminal_ws.py:552-571; mcp/tests/test_terminal_ws.py:642-651; mcp/tests/test_terminal_ws.py:1032-1043 |
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 2 citation claims; scoped result 0 findings.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented additive control metadata
   round-trip and legacy omission coverage.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

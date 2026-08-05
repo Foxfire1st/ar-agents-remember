@@ -25,20 +25,20 @@ session factory consumes.
 
 ### Logic
 
-`HarnessProjector` (L24-L52) is a `Protocol` with four channel flags — `harness_id`,
+cit:([`HarnessProjector`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:24-52) is a `Protocol` with four channel flags — `harness_id`,
 `uses_native_pages`, `uses_transcript_echo`, `eager_native_continuation` — and three mapping
 entry points (`map_native_frame`, `map_evidence_frame`, `map_transcript_echo`).
-`map_evidence_frame` (L39-L45) also takes the optional keyword
-`parent_thread_id`: the multiplexed-harness demux context (the parent thread's vendor id) that
+cit:([`map_evidence_frame`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:39-45) also takes the optional keyword
+  `parent_thread_id`: the multiplexed-harness demux context (the parent thread's vendor id) that
 lets codex/claude mappers route a frame to its sub-agent thread; harnesses without sub-agent
-threads (pi) accept and ignore it. Three private
-adapter classes (L55-L110) bind the module-level mapper functions and declare each harness's
+threads (pi) accept and ignore it. cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:44-44) Three private adapter classes bind the module-level mapper
+functions and declare each harness's
 honest channel set: codex pages native threads with lazy continuation and no echo; claude is
 stream/replay-only (its `map_native_frame` raises `NotImplementedError`) and consumes the
 submission echo; pi pages durable entries with eager native continuation so live items always
-carry native identity. `PROJECTORS` (L113-L117) maps harness id to the bound projector;
-`projector_for` (L120-L121) returns `None` for harnesses without a projector so the factory
-fails closed typed.
+carry native identity. cit:([`_CodexProjector`, `_ClaudeProjector`, `_PiProjector`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:55-72; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:75-90; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:93-110) cit:([`PROJECTORS`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:113-117) maps harness id to the bound projector;
+cit:([`projector_for`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:120-121) returns `None` for harnesses without a projector so the factory
+  fails closed typed.
 
 ### Conventions
 
@@ -66,7 +66,7 @@ The resolved `Domain Documentation` registry has no entries. The per-harness sch
 (the codex app-server v2 generated protocol, the locked claude stream-json fixtures, the locked
 Pi RPC documentation) are cited by the individual mapper sidecars.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this registry. | — | — |
 
@@ -76,22 +76,26 @@ The three mapper modules own the actual frame grammars; the engine in the `activ
 package drives mappers through these flags; the factory in `active/factories.py` resolves
 harnesses through `projector_for`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine's native ingest reads all three channel flags: `uses_native_pages` seeds `native_complete` and gates the dirty-tip refresh, `uses_transcript_echo` arms the echo-zipper eviction guard and diverts frames to the echo buffer, and `eager_native_continuation` picks lazy tip-refresh vs the eager continuation poll. | L60; L106-L113; L131-L138; L148-L157; L244-L246 | [projector/native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) |
-| The same flags gate the echo poll, the child-agent native history walk, and the rebuild's parent-history re-derivation. | L64-L66; L67-L73; L159-L161 | [projector/echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py); [projector/child_history.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/child_history.py); [projector/rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
-| The session factory resolves the per-harness projector and fails closed when none exists. | L88-L92 | [factories.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/factories.py) |
-| Mapper output types the protocol's entry points return are defined in the shared module. | L56-L99 | [common.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/common.py) |
+| The engine's native ingest reads all three channel flags: `uses_native_pages` seeds `native_complete` and gates the dirty-tip refresh, `uses_transcript_echo` arms the echo-zipper eviction guard and diverts frames to the echo buffer, and `eager_native_continuation` picks lazy tip-refresh vs the eager continuation poll. | `NativeEvidenceIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:44-268 |
+| The echo projector applies the transcript-echo channel flag. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:35-187 |
+| The child-history projector applies the native-pages channel flag. | `ChildHistoryProjection` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:25-173 |
+| The rebuild coordinator applies the native-pages channel flag for parent-history re-derivation. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
+| The session factory resolves the per-harness projector and fails closed when none exists. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:79-105 |
+| Mapper output types the protocol's entry points return are defined in the shared module. | `MappedItem` | mcp/src/agents_remember/serving/conversation/projectors/common.py:56-60 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 6 repository-reference citations (6/6 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the channel-flag citation, broken when
   `active/projector.py` became the `active/projector/` package (commit `3a8ff70`). Grepped all
@@ -116,8 +120,9 @@ No cross-repository implementation participates in this registry.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
 - 2026-07-26T15:34 — 260718-CHATS-L7: `map_evidence_frame` gained the optional keyword-only
-  `parent_thread_id` parameter (L39-L45) — the multiplexed demux context for harnesses with
+  `parent_thread_id` parameter — the multiplexed demux context for harnesses with
   sub-agent threads (codex/claude); pi accepts and ignores it. Sidecar: documented the seam and
+  cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:44-44)
   its `None`-means-parent invariant; refreshed all line citations (protocol L24-L52, adapters
   L55-L110, registry L113-L117, lookup L120-L121) and re-pointed the projector.py flag-
   consumption citations, which the L7 multiplexed-projection rewrite had displaced

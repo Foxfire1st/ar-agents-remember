@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -94,11 +94,13 @@ otherwise reject.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC. | [core.py](../lifecycle/core.py.md); [installation.py](../lifecycle/installation.py.md); [process_control.py](../lifecycle/process_control.py.md); [runner.py](../lifecycle/runner.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC. | "return cgc_runtime_layout("; "cleanup_cgc_runtime_artifacts("; "cleanup_cgc_runtime_artifacts("; `cgc_install_preflight`; `cgc_start_preflight`; "def cgc_runner_image_build(" | mcp/src/agents_remember/providers/cgc/lifecycle/core.py:50-50; mcp/src/agents_remember/providers/cgc/lifecycle/core.py:300-300; mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:136-149; mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:185-185; mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:162-172; mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-37 |
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 1 citation item; scoped citation check now passes.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `cgc_runtime_layout` was re-signed onto `CgcRepo` + the optional `CgcInstance` / `CgcWatcher` /

@@ -23,16 +23,16 @@ with a frozen clock (`now` prop) over the shared `L6_CONTROLLED_WORKING` fixture
 
 ### Logic
 
-- **`formatApproxElapsed`** (L36-L44): ~-labeled at every magnitude (`~9s`, `~119s`, `~2m14s`,
+- **`formatApproxElapsed`** cit:([`formatApproxElapsed`], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:36-44): ~-labeled at every magnitude (`~9s`, `~119s`, `~2m14s`,
   `~1h02m`), clamped at `~0s` for negatives.
-- **Render gate** (L44-L54): a `turn-ended` seat renders NOTHING; the working seat renders the
+- **Render gate** cit:(["renders ONLY while the seat state is working"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:47-57): a `turn-ended` seat renders NOTHING; the working seat renders the
   line.
-- **Never whimsy** (L56-L61): with no real activity form the verb is exactly `working`.
-- **Elapsed honesty** (L63-L73): `~2m14s` from `workingSince`, the sweep-bound tooltip present;
+- **Never whimsy** cit:(["says plain 'working' when no real activity form is known — never a whimsy verb"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:59-64): with no real activity form the verb is exactly `working`.
+- **Elapsed honesty** cit:(["shows the ~elapsed from the client turnClock, omitting it when unobserved"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:66-76): `~2m14s` from `workingSince`, the sweep-bound tooltip present;
   `workingSince: null` ⇒ the elapsed span is ABSENT (never a fake clock).
-- **Welded stop** (L75-L83): `disabled === true`, `data-disabled-reason` is the exact
+- **Welded stop** cit:(["keeps the line-hosted stop for the raw-terminal path, disabled with the UA-7 reason"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:85-98): `disabled === true`, `data-disabled-reason` is the exact
   `STOP_TURN_DISABLED_REASON`, the title names UA-7.
-- **Spinner ruling** (L85-L94): aria-hidden `◐` only, and `PULSE_ANIMATION` pinned to the ruled
+- **Spinner ruling** cit:([`PULSE_ANIMATION`], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:100-109): aria-hidden `◐` only, and `PULSE_ANIMATION` pinned to the ruled
   `pulseSlow 2.4s ease-in-out infinite` literal — the drift net for the component's hard-coded
   Panda string (jsdom cannot assert the rendered animation; the constant pin is the acknowledged
   proxy).
@@ -47,25 +47,25 @@ and empty `echoEvidence` defaults; WorkingLine behavior and assertions are uncha
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component + pure formatter under test. | L57-L129 | [WorkingLine.tsx](WorkingLine.tsx) |
-| The ruled pulse constant the spinner case pins. | L14 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
-| The UA-7 reason asserted verbatim. | L52 | [lifecycleCopy.ts](lifecycleCopy.ts) |
-| The working fixture. | L179-L194 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
-| The view-level cases (slot containment, `turn.stop` gate alignment). | L320-L400 | [SessionsView.test.tsx](SessionsView.test.tsx) |
+| The component + pure formatter under test. | `formatApproxElapsed` | dashboard/src/panels/session-cockpit/WorkingLine.tsx:80-86 |
+| The ruled pulse constant the spinner case pins. | `PULSE_ANIMATION` | dashboard/src/data/stateGrammar.ts:14-14 |
+| The UA-7 reason asserted verbatim. | `STOP_TURN_DISABLED_REASON` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:66-67 |
+| The working fixture. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:179-191 |
+| The view-level cases (slot containment, `turn.stop` gate alignment). | "renders the WorkingLine in the reserved slot ONLY for a working focused seat" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:1121-1154; dashboard/src/panels/session-cockpit/SessionsView.test.tsx:1484-1512 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -81,6 +81,8 @@ wired interrupt (disabled honest control), retaining raw-terminal stop behavior 
 the controlled composer action.
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 5 citation rows and rewrote 6 superseded prose line citations as cit: forms; the suite had shifted, so the case ranges are re-pinned to the frozen source (formatter L36-L44 kept; render gate L47-L57, never-whimsy L59-L64, elapsed L66-L76, welded stop L85-L98, spinner L100-L109). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived the stale `formatApproxElapsed`
   self-citation — the formatter matrix `describe` is now L36-L44 (was L33-L41) after the hand-built

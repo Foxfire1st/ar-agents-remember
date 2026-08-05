@@ -22,7 +22,7 @@ unknown-key discipline, absent-file defaults, and the typed models — plus, sin
 260703-L16, the free-form role knobs (`FreeFormRoleKnobTests`), the per-level
 overrides (`RolesPerLevelTests`), the harness-definition family
 (`HarnessesFamilyTests`), the supervisor sweep's own knob family (since 260707-HFX2-L2,
-`SupervisorFamilyTests`), and — since 260707-HFX2-L4 — the escalation ladder's own knob family
+now the supervisor cases inside `TypedModelTests`), and — since 260707-HFX2-L4 — the escalation ladder's own knob family
 (`EscalationSettingsTests`).
 
 ## Code Commentary
@@ -82,7 +82,7 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   (`{"harness": "claude", "model": "fable"}`) to the settings fixture and asserts
   `settings.roles["system-specialist"] == RoleKnobs(harness="claude", model="fable")`, pinning
   the ninth `KNOWN_ROLES` member's flat role-knob parsing.
-- `FreeFormRoleKnobTests` (L16) — launchArgs/promptKeywords/sessionCommands
+- `FreeFormRoleKnobTests` cit:([`FreeFormRoleKnobTests`], mcp/tests/test_agentic_settings.py:564-645) (260703-L16) — launchArgs/promptKeywords/sessionCommands
   parse ADDITIVELY into `RoleKnobs` tuples (old files unchanged, empty-tuple
   defaults), effort stays a FREE string at load (the developer's `ultracode`
   file boots; per-harness vocabulary is dispatch-time), and shape violations
@@ -112,7 +112,7 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   the three bad shapes (`/set {mode}={value}`, `{}`, an unmatched brace) refuse
   naming the harness, the builtin-override-supplying-only-the-command path is
   validated, and a `{value}`-only template is accepted.
-- `SupervisorFamilyTests` (260707-HFX2-L2, R1/R5) — an absent `orchestration.supervisor` block
+- Supervisor-family tests cit:([`test_supervisor_knobs_parse`], mcp/tests/test_agentic_settings.py:426-445) (260707-HFX2-L2, R1/R5; the `SupervisorFamilyTests` class is now folded into `TypedModelTests`) — an absent `orchestration.supervisor` block
   yields the documented defaults (`enabled=True`, `interval_seconds=10.0`,
   `stale_cutoff_seconds=60.0`, `redeliver_rate_limit_seconds=None`,
   `signal_cooldown_seconds=900.0`, `redeliver_budget=250`);
@@ -154,27 +154,33 @@ No known follow-up in this file.
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The documented merge/fail-loud/default semantics these tests pin. | Agentic Settings section | [settings-json.md](agents-remember/docs/reference/settings-json.md) |
+| The documented merge/fail-loud/default semantics these tests pin. | `## Agentic Settings (global + repo-local)` | docs/reference/settings-json.md:258-526 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader under test. | whole module | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
-| The harness registry bounding harness-id validation. | L41-L49 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
-| Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | L419-L464 | [test_agentic_settings.py](agents-remember/mcp/tests/test_agentic_settings.py) |
+| The loader under test. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:445-480 |
+| The harness registry bounding harness-id validation. | `find_harness` | mcp/src/agents_remember/serving/harnesses.py:61-70 |
+| Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | `test_supervisor_knobs_parse`; `test_supervisor_signal_cooldown_must_be_at_least_15_minutes` | mcp/tests/test_agentic_settings.py:426-445; mcp/tests/test_agentic_settings.py:463-465 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Loader-local behavior only. | - | - |
 
 ## Update History
+- 2026-08-04T18:49+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows
+  (settings-json.md `## Agentic Settings` section, `load_agentic_settings`, `find_harness`, and the
+  supervisor test spans) and rewrote the parenthesized L16 series-tag spellings as cit forms. Renamed construct
+  resolved deterministically: `SupervisorFamilyTests` no longer exists — the supervisor cases were
+  folded into `TypedModelTests` (defaults/parse at 416-446, floor refusal at 463-466) — so the two
+  body mentions now say so; the pinned behavior is unchanged. NOT a Tier-3 deletion.
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
   `mcp/tests/test_agentic_settings.py` and moved the lines this card cites, so the Citations
   column no longer pointed at the code its rows name. Corrected the ranges (L443-L488 →

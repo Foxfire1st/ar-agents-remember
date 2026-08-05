@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,28 +27,28 @@ settlement.
 
 ### Logic
 
-`InterruptRecord` (L72-L87) is the immutable ledger row (fingerprint, ack, settlement, revision, the
-recorded evidence floor); `InterruptAnswer` (L90-L92) is its projection payload. `interrupt` (L95-L156)
+cit:([`InterruptRecord`], mcp/src/agents_remember/serving/conversation/control/operations.py:72-87) is the immutable ledger row (fingerprint, ack, settlement, revision, the
+recorded evidence floor); cit:([`InterruptAnswer`], mcp/src/agents_remember/serving/conversation/control/operations.py:90-92) is its projection payload. cit:([`interrupt`], mcp/src/agents_remember/serving/conversation/control/operations.py:95-156)
 serializes on the service's per-session lock, gates on the control capability, admits under the
 fingerprint (identical replay returns the stored projection with no second native write; a reused id
-with a different tuple is `request-conflict`), then `_drive_interrupt` (L219-L270) performs the L2E
-epoch-guarded native write and `_apply_interrupt_result` (L273-L295) records the acknowledgement.
-`interrupt_status` (L159-L201) re-observes settlement; `_redrive_unknown` (L298-L326) re-drives a lost
+with a different tuple is `request-conflict`), then cit:([`_drive_interrupt`], mcp/src/agents_remember/serving/conversation/control/operations.py:219-270) performs the L2E
+epoch-guarded native write and cit:([`_apply_interrupt_result`], mcp/src/agents_remember/serving/conversation/control/operations.py:273-295) records the acknowledgement.
+cit:([`interrupt_status`], mcp/src/agents_remember/serving/conversation/control/operations.py:159-201) re-observes settlement; cit:([`_redrive_unknown`], mcp/src/agents_remember/serving/conversation/control/operations.py:298-326) re-drives a lost
 `may_have_sent` response through the substrate's replay-once cache (one native write total).
-`_observe_settlement` (L329-L351) correlates the terminal native event: `_codex_terminal_outcome` (L354-L383)
-reads the completion surface on event kind `"completed"` against `_CODEX_TERMINAL_STATUSES` (L66);
-`_pi_terminal_outcome` (L452-L481) + `_pi_stop_reason` (L484-L511) read pi's `stopReason` from the evidence
-buffer. The **Finding 1 fix** lives at the `_pi_stop_reason` frame filter (L500-L501): it matches
+cit:([`_observe_settlement`], mcp/src/agents_remember/serving/conversation/control/operations.py:329-351) correlates the terminal native event: cit:([`_codex_terminal_outcome`], mcp/src/agents_remember/serving/conversation/control/operations.py:354-383)
+reads the completion surface on event kind `"completed"` against cit:([`_CODEX_TERMINAL_STATUSES`], mcp/src/agents_remember/serving/conversation/control/operations.py:66-66);
+cit:([`_pi_terminal_outcome`], mcp/src/agents_remember/serving/conversation/control/operations.py:452-481) + cit:([`_pi_stop_reason`], mcp/src/agents_remember/serving/conversation/control/operations.py:484-511) read pi's `stopReason` from the evidence
+buffer. The **Finding 1 fix** lives at the `_pi_stop_reason` frame filter cit:([`_pi_stop_reason`], mcp/src/agents_remember/serving/conversation/control/operations.py:484-511): it matches
 `frame.raw.get("type") == "message_end"` (payload type) instead of the old `frame.kind ==
 "pi:message_end"` (event kind), so BOTH the content-less (`pi:message_end`) and content-ful
 (`transcript`) message_end classes contribute their `stopReason` — without this an accepted abort
 whose turn finished naturally with text stalled `pending` forever. The **Finding 2** class (a
 `message_end` frame over the 32 KiB evidence clip) is closed by the L3E substrate fix (the truncation
 envelope now preserves `type` + `message.stopReason`), which this evidence read consumes unchanged.
-`_pi_terminal_outcome` returns `None` (L475-L476 → stays `pending`) when no `stopReason` is
-recoverable; the latest-wins scan (L505-L507) settles on the most recent visible reason. `_store`
-(L514-L525), `_projection` (L528-L544), `_as_record` (L547-L549), and `interrupt_http_status`
-(L552-L561) are the ledger plumbing and the O4 status map.
+`_pi_terminal_outcome` returns `None` (cit:([`_pi_terminal_outcome`], mcp/src/agents_remember/serving/conversation/control/operations.py:452-481) — stays `pending`) when no `stopReason` is
+recoverable; the latest-wins scan cit:([`_pi_stop_reason`], mcp/src/agents_remember/serving/conversation/control/operations.py:484-511) settles on the most recent visible reason. `_store`
+cit:([`_store`], mcp/src/agents_remember/serving/conversation/control/operations.py:514-525), cit:([`_projection`], mcp/src/agents_remember/serving/conversation/control/operations.py:528-544), cit:([`_as_record`], mcp/src/agents_remember/serving/conversation/control/operations.py:547-549), and `interrupt_http_status`
+cit:([`interrupt_http_status`], mcp/src/agents_remember/serving/conversation/control/operations.py:552-561) are the ledger plumbing and the O4 status map.
 
 ### Conventions
 
@@ -80,7 +80,7 @@ None.
 
 No Domain Documentation source is configured; the interrupt contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -89,18 +89,18 @@ No Domain Documentation source is configured; the interrupt contract is reposito
 The native write and its replay cache belong to the L2E substrate; the pi/codex terminal frame
 shapes come from the vendor mappers; the L3E envelope preservation is what the pi settlement reads.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The L2E epoch-guarded native interrupt write and replay-once cache. | L291-L318, L336-L339; L91-L106 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py); [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The pi mapper's two message_end emission classes (`pi:message_end` content-less L237, `transcript` content-ful L241). | L131-L302 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
-| The L3E truncation-envelope identity preservation (`type` + `message.stopReason`) this read consumes. | L569-L667 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The service seams (per-session lock, epoch verify, identity, timeline) this ledger composes. | L168-L266 | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
+| The L2E epoch-guarded native interrupt write and replay-once cache. | "One native interrupt write, epoch-guarded and bridge-stamped."; `InterruptCapableAdapter` | mcp/src/agents_remember/serving/harness_control_bridge.py:273-300; mcp/src/agents_remember/serving/harness_control_adapter.py:91-106 |
+| The pi mapper's two message_end emission classes (`pi:message_end` content-less L237, `transcript` content-ful L241). | `transcript` | mcp/src/agents_remember/serving/pi_rpc_events.py:302-302 |
+| The L3E truncation-envelope identity preservation (`type` + `message.stopReason`) this read consumes. | `_preserved_evidence_identity`, `clip_evidence_payload` | mcp/src/agents_remember/serving/harness_control_models.py:727-754; mcp/src/agents_remember/serving/harness_control_models.py:786-838 |
+| The service seams (per-session lock, epoch verify, identity, timeline) this ledger composes. | `session_lock`, `verify_epoch`, `build_identity`, `read_full_timeline` | mcp/src/agents_remember/serving/conversation/control/service.py:252-262; mcp/src/agents_remember/serving/conversation/control/service.py:294-298; mcp/src/agents_remember/serving/conversation/control/service.py:308-318; mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -126,6 +126,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-03T03:06:44+02:00 — W3-B04 curator: curated 3 table citations and 8 prose citations (11 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 19 stale self-citations after the
   `InterruptTicket` extraction and the `_claude_terminal_outcome`/`_claude_result_settlement` pair
   landed between the codex and pi readers, which pushed the whole back half of the file down ~100
@@ -139,14 +140,13 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   filter L431-L432→L500-L501 and the latest-wins scan L437-L439→L505-L507, `_store` L413→L514-L525,
   `_projection` L427→L528-L544, `_as_record` L479→L547-L549, and `interrupt_http_status`
   L484→L552-L561. No claim text changed; every range was read back against the current source.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `L1-L120` of
-  `harness_control_bridge.py` is the module docstring, imports and `BridgeLimits`; the epoch-guarded
-  native write is `HarnessControlBridge.interrupt` (L291-L318, which calls `_require_epoch` first
-  and re-stamps the result with the queue's bridge epoch) plus `_require_epoch` itself (L336-L339).
-  The row's second half — the replay-once cache — is contracted on the
-  `InterruptCapableAdapter` protocol, so the row now also cites
-  `harness_control_adapter.py` L91-L106, where "a repeat naming the same (expected, active) pair
-  replays the first acknowledgement with no second write" is stated. No claim text changed.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The epoch-guarded
+  native write is `HarnessControlBridge.interrupt` cit:([`interrupt`], mcp/src/agents_remember/serving/harness_control_bridge.py:273-300),
+  which calls `_require_epoch` first cit:([`_require_epoch`], mcp/src/agents_remember/serving/harness_control_bridge.py:302-305)
+  and re-stamps the result with the queue's bridge epoch. The row's second half — the replay-once
+  cache — is contracted on the `InterruptCapableAdapter` protocol cit:([`InterruptCapableAdapter`], mcp/src/agents_remember/serving/harness_control_adapter.py:91-106),
+  where a repeat naming the same (expected, active) pair replays the first acknowledgement with no
+  second write. No claim text changed.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `InterruptTicket` and the `_claude_result_settlement` reader.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.

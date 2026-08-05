@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/fixtures.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                          |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -114,32 +114,32 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card is verified from its direct source and the shared wire fixtures it
 now delegates to.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
 The gallery is now a consumer of the shared wire builders rather than a second definition of the wire
 shape, so both sides of that delegation are cited.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The header stating the split (scenarios here, nodes in `wire.ts`) and the import block pulling `EMPTY_ANALYTICS` plus the five `served*` builders. | L1-L30 | [fixtures.ts](fixtures.ts) |
-| `project()` delegating to `servedProjection`, with the comment recording that `metrics` used to be three hand-written filters that missed `awaiting-developer`. | L48-L58 | [fixtures.ts](fixtures.ts) |
-| `lifecycle()`, `providerRole`/`ok`/`down`/`indexing`, `enclosure()`, and `evt()` delegating while keeping their gallery defaults ahead of `...over`. | L31-L46; L60-L94; L95-L124 | [fixtures.ts](fixtures.ts) |
-| Engine Room scenes spread into the gallery (the `engine-boot-*` frames filtered out of the tab strip). | L481-L488 | [fixtures.ts](fixtures.ts) |
-| `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. | L215-L233 | [test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| `projection()` derives `metrics` from `metricsFor(lifecycles)` instead of restating buckets, and the header records that `snapshot.json` is hand-maintained with no generator. | L22-L36; L320-L341 | [test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| The `ENGINE_ROOM_SCENARIOS` (`processes` + `workspace`) consumed here. | L722-L1198 | [engine-room/fixtures.ts](../panels/engine-room/fixtures.ts) |
-| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | L626-L640 | [projection.ts](../types/projection.ts) |
+| The header stating the split (scenarios here, nodes in `wire.ts`) and the import block pulling `EMPTY_ANALYTICS` plus the five `served*` builders. | `EMPTY_ANALYTICS` | dashboard/src/dev/fixtures.ts:1-30 |
+| `project()` calls `servedProjection`. | "function project(over: Partial<WorkspaceProjection> = {}): WorkspaceProjection {"; "return servedProjection({" | dashboard/src/dev/fixtures.ts:49-49; dashboard/src/dev/fixtures.ts:54-54 |
+| `lifecycle()`, provider states, `enclosure()`, and `evt()` retain gallery defaults ahead of `...over`. | `lifecycle`; `providerRole`; `ok`; `down`; `indexing`; `enclosure`; `evt` | dashboard/src/dev/fixtures.ts:32-47; dashboard/src/dev/fixtures.ts:61-62; dashboard/src/dev/fixtures.ts:64-94; dashboard/src/dev/fixtures.ts:96-116; dashboard/src/dev/fixtures.ts:118-125 |
+| The gallery maps Engine Room scenarios through `engineRoomProjection`. | "export const GALLERY: GalleryEntry[] = ["; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:146-146; dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487 |
+| `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
+| `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:333-333 |
+| The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. | "processes: EngineProcessNode[];"; "workspace: ProviderNode[];"; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487; dashboard/src/panels/engine-room/fixtures.ts:21-22 |
+| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:79-93; dashboard/src/types/projection.ts:517-528 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The projection shapes these fixtures build mirror server
 models in `mcp/` inside this same repository; nothing here crosses a repository boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -148,6 +148,10 @@ models in `mcp/` inside this same repository; nothing here crosses a repository 
 The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` on each `EnclosureNode`, matching the server projection after leaf enclosure contracts moved under `enclosures/<leaf-id>/series-contract.md`. Since 260703-L11 the `enclosure(...)` factory also defaults the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` to `true`, so the seeded gallery enclosures render as live worktrees under the tasks surface's existence-only visibility rule.
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: bound fixture delegation, gallery scenes,
+  engine-room scenario inputs and their gallery consumer, and analytics ownership to exact anchors;
+  narrowed the projection and metrics rows to their cited facts and removed unscoped links.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

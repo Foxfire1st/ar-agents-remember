@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -41,7 +41,7 @@ analysis, service payloads, and CLI wiring independently navigable and testable.
   is NOT provider launch authority (containment R1, 260707-HFX-L1):
   `workspace.filter_benchmark_provider_ids` filters manifest provider ids
   against the caller's `allowed_provider_ids` — the live MCP authority set the
-  benchmark controllers always pass (`None` = no authority context, FAIL-CLOSED
+  benchmark application entry points always pass (`None` = no authority context, FAIL-CLOSED
   since review B4; the explicit `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env
   escape restores an unfiltered direct-script run) — before any workspace
   registration is written or a provider launches, and reports skipped ids
@@ -72,12 +72,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public facade re-exports this package for existing callers. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| MCP controllers call the benchmark service entry points through the facade. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
-| The shared seed resolvers refuse a benchmark-scoped target as defense-in-depth for the hermetic boundary. | [grepai/seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
-| Focused benchmark tests exercise facade compatibility, provider setup, MCP registration, Codex execution policy, repository prep, and skill exposure behavior. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public facade re-exports this package for existing callers. | "def prepare_repo" | mcp/src/agents_remember/benchmarks/runner.py:28-28 |
+| MCP application entry points call the benchmark service entry points through the facade. | `skills_install_tool` | mcp/src/agents_remember/application/skill_tools.py:11-28 |
+| The shared seed resolvers refuse a benchmark-scoped target as defense-in-depth for the hermetic boundary. | `GrepaiSeedOptions` | mcp/src/agents_remember/providers/grepai/seed.py:30-35 |
+| Focused benchmark tests exercise facade compatibility, provider setup, MCP registration, Codex execution policy, repository prep, and skill exposure behavior. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support.py:3094-3722 |
 
 ## Cross-Repo References
 
@@ -97,6 +97,8 @@ intact.
 
 ## Update History
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T20:59+02:00 — 260731-EFA-L3 curator: extended the `commands.py` hot-path bullet, which
   previously recorded only the stdio-isolation half of the subprocess hygiene contract. Both
   `run_command` and `repo_has_commit` now also pass `env=git_environment()`

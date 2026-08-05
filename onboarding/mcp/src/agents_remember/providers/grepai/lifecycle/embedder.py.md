@@ -80,15 +80,19 @@ fallback runs. The failed seed result is attached to the response as
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Embedder settings and container endpoint are derived in GrepAI core. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
-| GrepAI install/start composes backend, embedder, and runner lifecycle steps. | [actions.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
-| GrepAI project migration lives with backend startup and is reused here. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
-| `isolated.py` populates `seedFromContainer` in worktree embedder settings. | [isolated.py](agents-remember/mcp/src/agents_remember/providers/grepai/isolated.py) |
-| Unit tests cover the tar-pipe command shape, no-source guard, successful-seed-skips-pull, and failed-seed-falls-back-to-pull paths. | [test_ollama_model_seed.py](agents-remember/mcp/tests/test_ollama_model_seed.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Embedder settings and container endpoint are derived in GrepAI core. | `grepai_embedder_backend_settings` | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:220-290 |
+| `grepai_install_workspace` is the GrepAI install/start entry. | `grepai_install_workspace` | mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:358-378 |
+| `grepai_backend_start` is the GrepAI backend startup entry. | `grepai_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:444-463 |
+| The embedder lifecycle is the compose-owned startup path that consumes the migrated settings. | `grepai_embedder_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:392-415 |
+| `isolated.py` populates `seedFromContainer` in worktree embedder settings. | `seedFromContainer` | mcp/src/agents_remember/providers/grepai/isolated.py:282-282 |
+| The seed guard and tar-pipe paths are covered by the focused seed tests. | `SeedFromSourceTests` | mcp/tests/test_ollama_model_seed.py:30-55 |
+| The ensure-model short-circuits and pull fallback are covered by the focused ensure tests. | `EnsureModelTests` | mcp/tests/test_ollama_model_seed.py:58-122 |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `grepai_embedder_start_context` now returns `GrepaiEmbedderContext` instead of a tuple. Emitted

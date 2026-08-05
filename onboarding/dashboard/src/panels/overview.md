@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -111,32 +111,41 @@ the Chats refactor does not move those routes.
 The curator checked `system/sources.md`; no Domain Documentation source is configured. This compact
 parent was refreshed from its repository-local child overviews, source/tests, and reviewed L8 record.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for panels. | Source discovery checked | — |
+| No relevant domain documentation was found for panels. | — | — |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs the panels route; all production imports resolve
 inside agents-remember.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Sole Chats product route and legacy duty map. | [session-cockpit overview](session-cockpit/overview.md) |
-| State/authority ownership. | [data overview](../data/overview.md) |
-| Full-page route registration/default. | [Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| Shared terminal, composer, selection-send, and contextual chat. | [Terminal.tsx](Terminal.tsx) · [SessionComposer.tsx](SessionComposer.tsx) · [HighlightComposer.tsx](HighlightComposer.tsx) · [RailChat.tsx](RailChat.tsx) |
-| Operations task navigation and reader. | [LifecycleList.tsx](LifecycleList.tsx) · [DetailPanel.tsx](DetailPanel.tsx) |
-| The lifecycle state vocabulary these panels render, declared as a live/terminal partition composed into `State`. | [observer/lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The hand-maintained wire mirror the panels read (`State`, `Metrics`/`LifecycleStateCounts`, `metricsFor`, `SubTaskRow`). | [types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
-| The shared builders every panels suite now seeds wire nodes from, and the hand-kept payload their bases are assembled out of. | [test/fixtures/wire.ts](agents-remember/dashboard/src/test/fixtures/wire.ts) · [fixtures/snapshot.json](agents-remember/dashboard/src/fixtures/snapshot.json) |
-| The shared state mark whose `aria-hidden` glyph makes the naming a panel duty. | [grammar/Dot.tsx](agents-remember/dashboard/src/grammar/Dot.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:72-80 |
+| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "display: view === \"chats\" ? \"flex\" : \"none\""; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:612-612; dashboard/src/cockpit/Cockpit.tsx:619-619; dashboard/src/cockpit/Cockpit.tsx:622-622 |
+| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLifecycleId={selectedLifecycleId}"; "selectedLeafKey={viewedLeafKey}"; "taskDocuments={taskDocuments}"; "contextMaster={contextMaster}" | dashboard/src/cockpit/Cockpit.tsx:622-628 |
+| Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
+| The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
+| The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:359-383 |
+| `CockpitShell` defaults `initialView="operations"`. | `initialView` | dashboard/src/cockpit/Cockpit.tsx:385-385 |
+| The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:117-459 |
+| The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:231-723 |
+| Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `send`; `successful` | dashboard/src/panels/HighlightComposer.tsx:240-242; dashboard/src/panels/HighlightComposer.tsx:244-696 |
+| Contextual task-side chat builds a leaf context package and routes it to running sessions or detected harnesses. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForLeaf` | dashboard/src/data/sessions.ts:477-486; dashboard/src/panels/RailChat.tsx:213-252; dashboard/src/panels/RailChat.tsx:254-519 |
+| `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({"; "const rows = operationRows({"; "const selectedKey = selectedSelection ? selectionKey(selectedSelection) : selectedId;"; "onSelectionChange={(keys) => {"; "Re-showing passes active=true" | dashboard/src/panels/LifecycleList.tsx:224-419 |
+| `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. | `DetailPanelImpl`; `selectedTaskDoc`; `displayedReaderDoc`; `TaskReader` | dashboard/src/panels/DetailPanel.tsx:332-718; dashboard/src/panels/DetailPanel.tsx:841-886; dashboard/src/panels/DetailPanel.tsx:1303-1388 |
+| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel. | `State`; `LIVE_STATES`; `TERMINAL_STATES`; `LifecycleList` | dashboard/src/panels/LifecycleList.tsx:425-425; dashboard/src/panels/LifecycleList.tsx:852-852; mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:136-139 |
+| The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. | `SERVED_LIFECYCLE`; `BASE_LIFECYCLE`; `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:78-78; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
+| The typed fixture factories provide lifecycle and projection nodes. | `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
+| The hand-kept snapshot payload provides the generated timestamp. | `generatedAt` | dashboard/src/fixtures/snapshot.json:3-3 |
+| `Dot` renders its state glyph inside `aria-hidden="true"`. | `Dot`; "aria-hidden=\"true\"" | dashboard/src/grammar/Dot.tsx:119-129 |
 ## Current L5I Route State
 
 The panels route now treats keep-alive shells as an explicit performance boundary: persistent
@@ -201,18 +210,21 @@ both sides skip the sort unless every row carries a `createdAt`.
 `SessionComposer.test.tsx` no longer author wire nodes: every projection node comes from
 `dashboard/src/test/fixtures/wire.ts`, whose bases are assembled from `dashboard/src/fixtures/snapshot.json`
 and annotated with the mirror type, so a fixture that compiles is a shape the MIRROR can produce. Be
-exact about the reach — `wire.ts` and `snapshot.json` are both **hand-maintained**, no generator exists
-anywhere in this repository and no in-repo mechanism keeps the two sides in step. The chain is four
-nodes and **three** links, and the dashboard tests hold two of them: `tsc -b` binds `test/fixtures/wire.ts`
-to `types/projection.ts` (annotated bases, `Overrides<O, Node>` at every call site,
-`test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `test/contract.test.ts` then
-**measures the mirror against `snapshot.json`** — not a one-way `⊆`, but three TYPE-level directions
-(`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`) plus runtime `VOCABULARIES` assertions for the
-string unions `resolveJsonModule` widens to `string`. **The third link is held by nothing:
-`snapshot.json` ↔ `observer/projection.py` is maintained by hand**, so a field the server starts sending
-that neither the mirror nor the snapshot knows about is invisible to all of it.
+exact about the reach — `wire.ts` and `snapshot.json` are hand-maintained fixture/sample artifacts,
+while `types/projection.ts` is generated and stale-checked from the Pydantic projection schema.
+`tsc -b` binds `test/fixtures/wire.ts` to that generated mirror (annotated bases,
+`Overrides<O, Node>` at every call site, `test/wireFixtureGuard.test.ts` refusing one-token opt-outs),
+and `test/contract.test.ts` measures how completely `snapshot.json` exercises it in three type-level
+directions plus runtime vocabulary assertions. The producer-to-TypeScript contract is held by the
+generator and its stale check; the manual boundary is sample coverage.
 
 ## Update History
+
+- 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound Chats mount/props, lifecycle navigation/reader ownership, and served-fixture seeding to the packet-specified operative spans. Verification metadata unchanged.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected panel-route provenance: panels
+  consume a generated schema mirror, while fixture builders and the manual snapshot remain measured
+  consumers of it. New ranges are explicit scoped fixer output.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations inside the 12:20 entry below, after that module was

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/Panel.tsx`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-17T22:45                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,18 +46,21 @@ the panel within its rail/viewport slot comes from the `className` prop, not fro
 
 Presentational only. The sticky-header contract (flush top, opaque bg, `z-index:2`) is the slice-5d
 replacement for the removed `.rail > .panel > h2` rule and must keep rows scrolling under the header. The
-`fill` variant is opt-in and backward-compatible (default `false` = the original self-scroll block), so
-every existing panel is unchanged; only the Engine Room passes `fill`.
+`fill` variant is opt-in and backward-compatible (default `false` = the original self-scroll block); the
+Engine Room uses it for its internal 3-zone layout, while other callers use the ordinary panel surface or
+their own layout props.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Every panel composes this chrome. | L36-L52 | [panels/overview.md](../panels/overview.md) |
-| The Engine Room passes `fill` to bound its 3-zone grid. | — | [panels/EngineRoom.tsx](../panels/EngineRoom.tsx) |
-| The bg/border tokens it uses. | L1-L46 | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
+| `Panel` is the shared panel chrome primitive. | `Panel` | dashboard/src/grammar/Panel.tsx:48-69 |
+| The Engine Room passes `fill` to bound its 3-zone grid. | `fill` | dashboard/src/panels/EngineRoom.tsx:288-288 |
+| The Panel shell uses the `bgPanel` background and `grid` border tokens in its styles. | "background: \"bgPanel\""; "borderColor: \"grid\""; "bgPanel: { value:"; "grid: { value:" | dashboard/src/grammar/Panel.tsx:14-20; dashboard/src/grammar/Panel.tsx:34-46; dashboard/panda.config.ts:32-38 |
 
 ## Update History
+
+- 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: reissued whole-claim evidence for Panel token usage and token definitions for same-reviewer closure.
 
 - 2026-06-17T22:45 — engine-room visual-parity pass: `shell` became a Panda `cva` with an opt-in `fill`
   variant (`display:flex` + `flexDirection:column` + `overflow:hidden` vs the default `display:block` +

@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/models/__init__.py",
+    "mcp/src/agents_remember/models/application_requests.py",
     "mcp/src/agents_remember/models/base.py",
     "mcp/src/agents_remember/models/benchmarks.py",
     "mcp/src/agents_remember/models/context_packet.py",
@@ -30,16 +31,19 @@
     "mcp/src/agents_remember/models/terminal.py",
     "mcp/src/agents_remember/models/tokens.py",
     "mcp/src/agents_remember/models/tool_registry.py",
+    "mcp/src/agents_remember/models/tool_response.py",
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 21,
-    "fileSidecars": 21,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
+    "application",
+    "application_requests",
     "base",
     "benchmarks",
     "context",
@@ -67,6 +71,8 @@
     "read_files",
     "registry",
     "remember",
+    "requests",
+    "response",
     "runtime",
     "skills",
     "src",
@@ -76,6 +82,7 @@
     "tokens",
     "tool",
     "tool_registry",
+    "tool_response",
     "worktree"
   ],
   "hotPath": {
@@ -83,6 +90,7 @@
     "candidateHints": [
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/__init__.py",
+      "mcp/src/agents_remember/models/application_requests.py",
       "mcp/src/agents_remember/models/base.py",
       "mcp/src/agents_remember/models/benchmarks.py",
       "mcp/src/agents_remember/models/context_packet.py",
@@ -102,11 +110,14 @@
       "mcp/src/agents_remember/models/terminal.py",
       "mcp/src/agents_remember/models/tokens.py",
       "mcp/src/agents_remember/models/tool_registry.py",
+      "mcp/src/agents_remember/models/tool_response.py",
       "mcp/src/agents_remember/models/worktree.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "application_requests.py",
+      "application_requests",
       "base.py",
       "base",
       "benchmarks.py",
@@ -145,14 +156,12 @@
       "tokens",
       "tool_registry.py",
       "tool_registry",
+      "tool_response.py",
+      "tool_response",
       "worktree.py",
       "worktree",
       "launch-selection-invalid",
-      "resolvedModel",
-      "resolvedEffort",
-      "sessionCommands",
-      "role-required",
-      "seatRole"
+      "resolvedModel"
     ]
   },
   "fallback": {

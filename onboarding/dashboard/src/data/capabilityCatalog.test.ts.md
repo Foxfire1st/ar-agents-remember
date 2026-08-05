@@ -25,10 +25,10 @@ and 4.
 
 ### Logic
 
-- **State transitions** (L29-L60) — first read observes `loading` mid-fetch then settles
+- **State transitions** cit:(["first read: idle → loading → envelope stored whole (cacheStatus hit)"], dashboard/src/data/capabilityCatalog.test.ts:40-55) — first read observes `loading` mid-fetch then settles
   `idle` + envelope stored whole (cacheStatus `hit`); `refresh: true` sends `?refresh=true`,
   shows `refreshing`, and replaces the envelope whole (`refreshed`).
-- **Verbatim errors + drop** (L62-L97) — loops ALL of `CAPABILITY_ERROR_BODIES` (404 not-installed,
+- **Verbatim errors + drop** cit:(["renders 404/409/503 errors with the VERBATIM status + detail and DROPS the envelope"], dashboard/src/data/capabilityCatalog.test.ts:73-91) — loops ALL of `CAPABILITY_ERROR_BODIES` (404 not-installed,
   409 capability-unavailable, 503 control-unavailable): `fetchState: "error"`, error equals the
   verbatim `{httpStatus, status, detail}`, and the previously-held envelope is GONE from both the
   resolved entry and the store (the quarantine mirror). A thrown fetch is
@@ -44,8 +44,8 @@ and 4.
   in-flight plain read: it chains a REAL refresh (exactly 2 fetches, second `?refresh=true`), a
   second refresh joins the chained refresh (no stampede), and refresh callers resolve with the
   `refreshed` envelope.
-- **Memory-only** (L177-L180) — a fresh store starts empty; nothing survives a reload.
-- **Cost honesty (R2)** (L183-L199) — miss/initial and refresh loading copy carry the SAME
+- **Memory-only** cit:(["snapshots are memory-only"], dashboard/src/data/capabilityCatalog.test.ts:213-216) — a fresh store starts empty; nothing survives a reload.
+- **Cost honesty (R2)** cit:(["miss/initial loading and explicit refresh carry the SAME generic cost naming"], dashboard/src/data/capabilityCatalog.test.ts:220-228) — miss/initial and refresh loading copy carry the SAME
   generic `capabilityCostNote`, with a no-digits regex (`/\d+\s*(s|sec|second)/` must not match)
   pinning that no seconds constant ever creeps into the treatment; `cacheStatusNote` names
   whether discovery actually ran (miss reads like refresh).
@@ -72,25 +72,25 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | L22-L243 | [capabilityCatalog.ts](capabilityCatalog.ts) |
-| The envelope builder + verbatim error-body fixtures the suite loops. | — | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts) |
+| The module under test. | "export function fetchHarnessCapabilities" | dashboard/src/data/capabilityCatalog.ts:192-192 |
+| The envelope builder + verbatim error-body fixtures the suite loops. | "export const CAPABILITY_ERROR_BODIES" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:336-336 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 

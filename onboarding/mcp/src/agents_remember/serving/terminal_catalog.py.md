@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -71,10 +71,10 @@ the opener/API can report an explicit unsupported state without treating pane te
 
 `TerminalCatalogEntry` gained the additive `control_pending_interactions` column (JSON
 `controlPendingInteractions`) beside the untouched singular
-`control_pending_interaction` parent-thread slot (L149-L152). It rides the same migration-safe
+`control_pending_interaction` parent-thread slot (cit:([`control_pending_interaction`], mcp/src/agents_remember/serving/terminal_catalog.py:148-148)). It rides the same migration-safe
 optional pattern as every other control column: `from_json` reads it through the new
-`_optional_object_list` helper (L232-L234; helper at L900-L906) and `to_json` emits it through the
-`None`-filtered optional fold (L302), so legacy rows read back as `None` and unset values never
+`_optional_object_list` helper (cit:([`from_json`, `_optional_object_list`], mcp/src/agents_remember/serving/terminal_catalog.py:186-253; mcp/src/agents_remember/serving/terminal_catalog.py:891-897)) and `to_json` emits it through the
+`None`-filtered optional fold (cit:([`to_json`], mcp/src/agents_remember/serving/terminal_catalog.py:255-324)), so legacy rows read back as `None` and unset values never
 enter the JSON. The read helper is fail-closed on shape: a non-list value, or a list containing
 even one non-object entry, degrades the WHOLE field to `None` rather than persisting a partial or
 malformed pending set.
@@ -251,31 +251,32 @@ No known follow-up in this file.
 No Domain Documentation entries are configured in the resolved `system/sources.md`; this catalog's
 shape and migration rules are same-repository runtime behavior proven by source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this catalog shape; the implementation is the source of truth. | L15-L30; L141-L216 | [terminal_catalog.py](terminal_catalog.py) |
+| No external/domain document defines this catalog shape; the implementation is the source of truth. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
 
 ## Repo-Internal References
 
 `serving.app` is the catalog's only runtime orchestrator, and `terminal.py` supplies the tmux probe/kill
 operations that keep catalog state honest.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The FastAPI app injects/creates the catalog, refreshes stale rows, rehydrates WebSockets from catalog metadata, persists opener rows, marks terminations, and uses catalog cwd for image uploads. | L334-L351; L291-L331; L481-L515; L528-L638 | [app.py](app.py) |
-| The terminal host exposes the tmux probe and terminate hooks that app.py uses before rehydrate and during explicit termination. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
-| Unit tests pin catalog path, JSON schema/order, complete optional-field round-trip, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | `TerminalCatalogTests` | [../../../tests/test_terminal_catalog.py](../../../tests/test_terminal_catalog.py) |
-| The liveness sweeper + shared observation path that drive `record_liveness_probe` and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
-| Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | [../../../tests/test_terminal_liveness.py](../../../tests/test_terminal_liveness.py) |
-| `mark_retired`/`mark_landed`/`set_label`/`record_turn_state` are called from the manual retire/rename tools and endpoints, the landed cleanup endpoint, and the integrate/finalize auto-land hooks. | `retire_entry`; `TerminalCatalog.mark_landed`; `TerminalCatalog.set_label`; `record_turn_state` | [retire.py](retire.py); [landing.py](landing.py); [terminal.py (mcp/tools)](../mcp/tools/terminal.py.md); [worktree_tools.py](../controllers/worktree_tools.py.md); [app.py](app.py) |
-| The retire authority policy (`check_retire_authority`) is evaluated against `SeatRef`s built from this catalog's `spawn_role`/`leaf_key` fields before any `mark_retired` call. | `SeatRef`; `master_of` | [retire_policy.py](retire_policy.py) |
-| Failing-first + regression tests for the retire/rename/turn-state mechanics, the retire-vs-liveness interplay, and idempotent provenance. | `test_seat_lifecycle.py` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
+| The FastAPI app injects/creates the catalog, refreshes stale rows, rehydrates WebSockets from catalog metadata, persists opener rows, marks terminations, and uses catalog cwd for image uploads. | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| The terminal host exposes the tmux probe and terminate hooks that app.py uses before rehydrate and during explicit termination. | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
+| Unit tests pin catalog path, JSON schema/order, complete optional-field round-trip, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |
+| The liveness sweeper + shared observation path that drive `record_liveness_probe` and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
+| Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
+| Worktree integrate/finalize completion hooks call `_auto_land_completed_seats`, which archives selected roles through `land_seats_for_leaf`; this is completion-edge auto-land, not manual retirement authority. | "def _auto_land_completed_seats"; "def land_seats_for_leaf" | mcp/src/agents_remember/application/worktree_tools.py:457-457; mcp/src/agents_remember/serving/landing.py:9-9 |
+| The serving manual-retire route assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | `_retire_response` | mcp/src/agents_remember/serving/app.py:1754-1807 |
+| The MCP manual-retire tool assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | `session_retire_tool` | mcp/src/agents_remember/application/terminal_tools.py:944-1001 |
+| Failing-first + regression tests for the retire/rename/turn-state mechanics, the retire-vs-liveness interplay, and idempotent provenance. | `TerminalMarkVsLivenessInterplayTests` | mcp/tests/test_seat_lifecycle.py:538-578 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local dashboard catalog. | — | — |
 
@@ -313,6 +314,12 @@ accumulate. Values are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: separated completion-edge auto-land from manual-retire authority and provisionally bound both FastAPI and MCP manual paths through SeatRef construction, authority check, and retirement.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 5 repository-internal table citations and normalized 3 current prose-citation groups for catalog ownership, serving seams, lifecycle callers, pending-interaction fields, and regression tests; final scoped check is clean.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded that `TerminalCatalogLivenessConfig`, `DEFAULT_LIVENESS_HYSTERESIS` and the four `DEFAULT_LIVENESS_*` constants now live in this module (moved from `terminal_liveness.py`); values unchanged.
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `control_pending_interactions`
   column (multiplexed sub-agent pendings, review R6) — `_optional_object_list` read (fail-closed:

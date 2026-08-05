@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -68,27 +68,29 @@ No TODO is recorded for this template beyond the deferred L14 first-class wiring
 
 No external domain documentation applies to this repository-local template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [orchestration-task.md](agents-remember/skills/l-01-agent-lifecycles/templates/orchestration-task.md) |
-| The strategist role that fills this template as method phase 8. | n/a | [strategist.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md) |
-| The plan-review criteria catalog the reviewer runs against a filled orchestration task. | n/a | [plan-review.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md) |
+| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-91 |
+| The strategist role that fills this template as method phase 8. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-204 |
+| The plan-review criteria catalog the reviewer runs against a filled orchestration task. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-84 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.
 
 - 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: replaced the mandatory-strategist premise
   with the two valid authorship paths—approved strategist draft or orchestrator-authored task after

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -118,20 +118,25 @@ surface.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Provider response models define summary, diagnostics, watcher, and native provider payload shapes. | [providers.py](agents-remember/mcp/src/agents_remember/models/providers.py) |
-| Context packet construction consumes the compact provider summary. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
-| Provider MCP controllers expose status, diagnostics, watcher, GrepAI, and CGC tools. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
-| Current-state projection and persistence live in the current-state module. | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Restart/rebind recovery wording is shared with runtime-install recovery reporting. | [recovery.py](agents-remember/mcp/src/agents_remember/providers/recovery.py) |
-| The containment metrics store whose rolling current snapshot rides the status packet (containment R4). | [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
-| Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
-| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| `refresh_current_provider_state` calls the regular provider-status projection and returns the current-state payload for dashboard-owned refreshes. | L138-L176 | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Provider response models define summary, diagnostics, watcher, and native provider payload shapes. | "class ProviderSummary" | mcp/src/agents_remember/models/providers.py:75-75 |
+| Context packet construction consumes the compact provider summary. | "def build_context_packet" | mcp/src/agents_remember/application/context_packet.py:59-59 |
+| Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools. | "def provider_status_tool" | mcp/src/agents_remember/application/provider_tools.py:32-32 |
+| Current-state projection and persistence live in the current-state module. | "def build_current_provider_state" | mcp/src/agents_remember/providers/current_state.py:16-16 |
+| Restart/rebind recovery wording is shared with runtime-install recovery reporting. | `PROVIDER_WATCHER_RESTART_RECOVERY` | mcp/src/agents_remember/providers/recovery.py:3-7 |
+| The containment metrics store whose rolling current snapshot rides the status packet (containment R4). | "class MetricsSnapshot" | mcp/src/agents_remember/providers/metrics.py:161-161 |
+| Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | "def refresh_current_provider_state" | mcp/src/agents_remember/providers/status.py:157-157 |
+| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | `noWorkspace` | mcp/tests/test_provider_current_state.py:139-139 |
+| `refresh_current_provider_state` calls the regular provider-status projection and returns the current-state payload for dashboard-owned refreshes. | `refresh_current_provider_state` | mcp/src/agents_remember/providers/status.py:157-167 |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
+
+- 2026-08-02T01:05+02:00 — No content impact: repaired this document's `Repo-Internal References` table shape. Rows carrying a citation cell were rendering short: the header declared two columns while those rows held three, and GFM TRUNCATES the extra cell, so the citation was in the source but invisible in the rendered table (`memory_quality/style/document_shape/tables.py`, `table_row_cell_count_mismatch`). Widened the header and its delimiter row to `| Finding | Citations | Source Path |` — the shape 1,941 rows in this tree already use — and padded the two-cell rows with `n/a`, which is this tree's own no-citation value (489 uses; zero empty citation cells exist). No finding text and no citation was changed by the widening. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/status.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 6 line(s), touching only redundant grouping

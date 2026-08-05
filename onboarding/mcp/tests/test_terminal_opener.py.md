@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`        |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`        |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -16,9 +16,9 @@
 
 ## Purpose
 
-`test_terminal_opener.py` covers the shared hosted-session opener (`serving.terminal_opener`, L2) — the
+`test_terminal_opener.py` covers the shared hosted-session opener (`serving.terminal_opener`) — the
 ONE spawn path both the dashboard `POST /api/terminal/{session}` route and the agent-facing
-`spawn_agent_session` MCP tool compose over. It drives `open_terminal_session` against a fake host
+`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:620-672) cit:([`_open_terminal_response`], mcp/src/agents_remember/serving/app.py:1461-1550) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
 (records the `ensure` call, no real tmux) + a real JSON catalog, pinning the leaf-claim / provenance /
 env-seed behaviour both call paths inherit — and, since 260703-L16, the per-harness knob→argv
 application (`KnobApplicationTests`).
@@ -71,12 +71,12 @@ asserts the selection is structured inside `RunnerConfig`; the opener does not s
 cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalog` over a temp dir + a
 `_detected` `which`. The cases:
 
-- **opened** (`test_opened_records_provenance_env_and_leaf`): the result is `opened`, the catalog row
-  carries the leaf, the spawned-by session/lifecycle, the harness, and (L14) the `spawn_role` read
+- **opened** (`test_opened_records_provenance_env_and_leaf`, cit:([`test_opened_records_provenance_env_and_leaf`], mcp/tests/test_terminal_opener.py:174-209)): the result is `opened`, the catalog row
+  carries the leaf, the spawned-by session/lifecycle, the harness, and the `spawn_role` read
   from the env's `AR_SPAWN_ROLE`; the knob env was seeded into the
   detached tmux spawn; and the provenance survives the catalog camelCase round-trip
   (`spawnedBySession` / `spawnedByLifecycle` / `spawnRole`).
-- **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, L14): a
+- **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, cit:([`test_reopen_preserves_spawn_role_and_hand_open_records_none`], mcp/tests/test_terminal_opener.py:236-249)): a
   role-less re-open keeps the recorded `spawn_role` (write-once, like the spawned-by pair), and a
   hand-opened session (no env role) records `None` with `spawnRole` absent from its JSON.
 
@@ -125,27 +125,20 @@ No known follow-up in this file.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared-opener tests preserve role/spawn provenance, role-scoped leaf ownership, dead-seat replacement, and the worker/reviewer/curator/manager pipeline on one canonical leaf. | L108-L255 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
-| Same-pair live reopen returns unchanged truth; changed pair/identity conflicts; dead replacement creates a fresh generation; concurrent differing pairs create one process and one durable truth. | L291-L400 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
-| The opener treats a live catalog row as immutable process truth and distinguishes idempotent reopen from launch conflict. | L170-L257 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The full open transaction owns leaf conflict, host ensure, resolved pair, control generation, and catalog upsert. | L425-L552 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The public opener runs the full transaction inside the catalog batch fence. | L555-L648 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The batch context serializes cross-thread/process access and commits one in-memory unit of work. | L695-L720 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The agent-facing role spawn path passes its resolved launch and provenance into this same opener and maps launch conflict to `launch-selection-invalid`. | L569-L606 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -170,6 +163,7 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 - A dead pre-bridge row is replaced by a **controlled spawn** rather than being reattached to.
 
 ## Update History
+2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: recorded that two prose citations were converted and seven rangeless internal rows were deleted; no deleted row was retained as anchored evidence. Verification metadata unchanged.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 

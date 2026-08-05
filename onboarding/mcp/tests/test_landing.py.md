@@ -87,12 +87,12 @@ index or a prefix match — a positional assertion here would have broken on the
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The landing-arc observation under test (`landing_refs` + `_default_branch`), and the `_pr_for` `env=git_environment()` (L124) the selector test asserts. | [landing.py](agents-remember/mcp/src/agents_remember/worktrees/modules/landing.py) |
-| The `WorktreeContract` dataclass the fixture builds. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| `GIT_REPOSITORY_SELECTOR_ENV` (imported, not restated — L21) and the `run_git` whose spawn the shared-module patch also intercepts. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| The package-wide AST sweep that covers git spawns but deliberately not `gh`, which is why the `gh` property is asserted here instead. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The landing-arc observation under test (`landing_refs` + `_default_branch`), and the `_pr_for` `env=git_environment()` (L124) the selector test asserts. | `landing_refs`, `_default_branch`, `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:69-90; mcp/src/agents_remember/worktrees/modules/landing.py:93-150; mcp/src/agents_remember/worktrees/modules/landing.py:229-258 |
+| The `WorktreeContract` dataclass the fixture builds. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-287 |
+| `GIT_REPOSITORY_SELECTOR_ENV` (imported, not restated — L21) and the `run_git` whose spawn the shared-module patch also intercepts. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42 |
+| The package-wide AST sweep that covers git spawns but deliberately not `gh`, which is why the `gh` property is asserted here instead. | `gh` | mcp/tests/test_git_command.py:529-529 |
 
 ## Series-Contract Notes
 
@@ -100,10 +100,14 @@ Landing tests continue to pin landing-state projection, with fixture contract pa
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows and
+  the history `worktree_contract.py` citation with exact anchors; exact non-fixing check returns
+  zero findings.
+
 - 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: No content impact: the whole diff is one
   fixture value, `_contract`'s `"workflow_kind": "chat"` becoming `"chat-task"`, forced by
   `WorkflowKind` narrowing to `Literal["chat-task", "light-task"]`
-  (`worktrees/worktree_contract.py` L50). No test, class, mock, probe branch or assertion changed,
+  cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/worktrees/worktree_contract.py:63-63). No test, class, mock, probe branch or assertion changed,
   and the card names no workflow kind anywhere — it claims the landing-window gate, the
   observed/planned/missing honesty axis, the origin-main semantics, the `gh` process boundary and
   the shared-`subprocess`-module patching argument, none of which the fixture value reaches.
@@ -115,7 +119,7 @@ Landing tests continue to pin landing-state projection, with fixture contract pa
   `LandingRefsTests` 7 + `DefaultBranchTests` 2, matching the Purpose line.
 
 - 2026-07-31T21:38+02:00 — 260731-EFA-L3 curator: the suite gained
-  `test_the_gh_probe_does_not_inherit_the_repository_selectors` (L171-L195) and the sidecar had not
+  cit:([`test_the_gh_probe_does_not_inherit_the_repository_selectors`], mcp/tests/test_landing.py:171-195) and the sidecar had not
   been touched this leaf, so it was stale in three places. "8 tests across two classes" is now 9
   (LandingRefsTests 7 + DefaultBranchTests 2) — counted, then confirmed by running the module: 9
   tests, all ok. Documented the new test (what it captures, the eight selectors from the imported

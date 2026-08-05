@@ -6,8 +6,8 @@
 | path | `mcp/native_helpers/conversation_library/src/pi.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ None.
 No Domain Documentation source is configured; the pinned manifest/lock and the local tests are
 the direct contract evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -69,11 +69,11 @@ The protocol module owns the serve loop, handshake, paging, and error vocabulary
 consumes; the Python Pi port drives it on the production seam; the installed suite proves the
 live gate and the real open.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | L102-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
-| The Python Pi port calls list/read/resolve-resume-target through the locked helper host. | L88-L182 | [pi.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/pi.py) |
-| The installed suite proves the live Pi gate, the list/read/resolve round-trip, and the real end-to-end open through this helper. | L217-L231; L233-L263; L284-L413 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | `serveJsonLines`, `buildHandshake`, `pageByOffset`, `windowByOrdinal`, `signatureOf`, `failureFor`, `raiseHelperError` | mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:150-178; mcp/native_helpers/conversation_library/src/protocol.ts:181-188; mcp/native_helpers/conversation_library/src/protocol.ts:239-241; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286; mcp/native_helpers/conversation_library/src/protocol.ts:306-325 |
+| The Python Pi port calls list/read/resolve-resume-target through the locked helper host. | `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/pi.py:72-320 |
+| The installed suite proves the live Pi gate, the list/read/resolve round-trip, and the real end-to-end open through this helper. | `test_live_helper_gate_supports_pi_history`, `test_live_list_read_resolve`, `PiOpenEndToEndTests` | mcp/tests/test_conversation_library_installed.py:217-231; mcp/tests/test_conversation_library_installed.py:233-263; mcp/tests/test_conversation_library_installed.py:284-413 |
 
 ## Cross-Repo References
 
@@ -81,17 +81,17 @@ The installed `@earendil-works/pi-coding-agent` npm dependency is a third-party 
 resolved only from this repository's package/lock; no neighboring workspace repository
 participates.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that drifted
   as `test_conversation_library_installed.py` grew. The three proofs the row names are now
-  `PiInstalledTests.test_live_helper_gate_supports_pi_history` (L217-L231),
-  `test_live_list_read_resolve` (L233-L263), and the `PiOpenEndToEndTests` class (L284-L413,
-  tracked opener → tmux → control runner → pi RPC resume → proof → retire). No claim text changed.
+  cit:([`test_live_helper_gate_supports_pi_history`, `test_live_list_read_resolve`, `PiOpenEndToEndTests`], mcp/tests/test_conversation_library_installed.py:217-231; mcp/tests/test_conversation_library_installed.py:233-263; mcp/tests/test_conversation_library_installed.py:284-413)
+  (tracked opener → tmux → control runner → pi RPC resume → proof → retire). No claim text changed.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the locked Pi helper entry
   sidecar. Verification is blank until closeout commits and stamps the new source.

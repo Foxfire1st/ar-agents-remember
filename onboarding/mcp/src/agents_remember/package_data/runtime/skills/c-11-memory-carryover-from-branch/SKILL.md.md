@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
 | lastUpdated            | 2026-06-10T10:26+02:00                     |
-| lastVerifiedCommitHash | `610b8568b6517a78a80d35583101b32ed396e2a7`                           |
-| lastVerifiedCommitDate | 2026-06-11T15:49:54+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                           |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -53,27 +53,28 @@ Future versions can add structural onboarding merges after the first whole-file 
 
 No external documentation is needed for this repository-local workflow skill.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding                                                                                                                                  | Citations | Source Path                                                                                                                     |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | L8-L62    | [`c-11-memory-carryover-from-branch` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md)                          |
-| The package carryover service implements the plan/apply behavior described by this skill.                                                         | n/a | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | `# c-11-memory-carryover-from-branch Memory Carryover From Branch` | mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md:6-76 |
+| The package carryover service implements the plan/apply behavior described by this skill. | `build_plan_for_request`; `apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:541-614; mcp/src/agents_remember/memory/carryover.py:776-862 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for the skill itself.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-11T15:05+02:00 — The skill doc gained a Candidate Kinds section (file-sidecar, route-overview, memory-only-doc, entity-catalog with selection keys), memory-only evidence values, the `entity_fingerprint_validation` output field, and the corrected `exact-landed-commit` wording (EVERY touching commit must have landed, not at least one).
 - 2026-06-10T10:26+02:00 — GitHub #54: documented the `ledger-mapped-head` output state and the `memory_main_advance` block (carryover fast-forwards memory main to the official checkout tip; push on developer approval).
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ Responsive collapse now preserves the sole chat-creation entrance: an empty narr
 the rail rather than applying ordinary auto-collapse, while populated cockpits keep the established
 edge-based policy. A collapsed rail is both visually hidden and `aria-hidden`, so off-screen controls
 do not remain in the accessibility tree. LaunchFlow remains outside the collapsible panel without
-becoming a second entrance. **V11:** the collapsed rail `<aside>` is now
+becoming a second entrance. **V11:** the collapsed rail aside is now
 `display:none` (was `visibility:hidden`), which removes the aside's own ~21px padding/border box — the
 0px panel is truly empty, not a dead sliver. The drag min stays `RAIL_MIN_PERCENT` (12%); below it the
 panel snaps fully collapsed and the `☰ rail` title-row chip + the in-place resize handle are the
@@ -52,11 +52,9 @@ is percentage-only and the 280px calibration contract is pinned; see the worker 
 
 ### Inspector Composition (superseded status details corrected below)
 
-- **Narrow data seam** (L203-L206): the view selects existing `pollHealth`, projected
-  `agentPickups`, and `supervisorHeartbeat` facts; it does not derive inspector-domain rows.
-- **Inspector composition** (L735-L740): passes the focused session/cockpit plus fleet pickups and
-  heartbeat into `SeatInspector`. The inspector owns its accessible stable-mounted tab host and
-  delegates Evidence, Capabilities, and Bus logic to focused files.
+- **Narrow data seam** (cit:([`projectedTaskDocuments`], dashboard/src/panels/session-cockpit/SessionsView.tsx:261-263)): the view selects existing projected task documents.
+- The same seam selects fleet pickups and supervisor heartbeat facts (cit:([`pickups`; `supervisorHeartbeat`], dashboard/src/panels/session-cockpit/SessionsView.tsx:265-270)).
+- **Inspector composition** (cit:(["export function SeatInspector({"], dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-60)): the `SeatInspector` component is declared in its focused file.
 - **Current action composition:** focused-session actions and rail/inspector reopen controls render
   on `SessionStage`'s title row. There is no StatusLine footer; detailed evidence remains in the
   inspector and the data stores that own it.
@@ -65,147 +63,50 @@ is percentage-only and the 280px calibration contract is pinned; see the worker 
 
 ### Set-Control Wiring
 
-- **One control, two entry surfaces** (L236-L239, L329-L355, L665-L672): view-owned
-  `controlPopoverOpen` is passed through SessionStage/HeaderStrip to the one
-  `ModelEffortControl`; the dynamic `control.setModel` and `control.setEffort` palette commands
-  open it only for a live harness session. Focus switches close the prior seat's popover.
-- **Promotion and announcements** (L247-L253): refcounted `startSetPromotionWatcher` and
-  `startSeatStateAnnouncer` live beside the existing feed/sweep subscriptions, covering
-  turn/focus snapshot rechecks and assertive failed/awaiting-input transitions.
-- **Attention and cycle wiring** (L262-L268, L519-L527): rail-rollup unacknowledged ids use the
-  shared `hasUnackedSetAttention` predicate, and the default effort commands now call
-  `cycleEffortRequested` for the focused session instead of the earlier stub.
-- **Composer hint and durable outcomes** (L718-L728, L816-L824): queued sets add the exact
-  promotion hint adjacent to the composer; `SetOutcomeToasts` persists unfocused results until
-  explicit acknowledgment; `CockpitLiveRegions` keeps both urgency channels mounted.
+- **One control, two entry surfaces** (cit:(["one control, two surfaces"], dashboard/src/panels/session-cockpit/SessionsView.tsx:281-281)): the file records the one-control/two-surface design seam.
+- **Promotion and announcements** (cit:(["The promotion/drift watcher"], dashboard/src/panels/session-cockpit/SessionsView.tsx:299-299)): the file names the promotion/drift watcher seam.
+- **Attention and cycle wiring** (cit:(["hasUnackedSetAttention(perSession[session.id])"; "cycleEffortRequested(focusedSessionId, direction)"], dashboard/src/panels/session-cockpit/SessionsView.tsx:349-349; dashboard/src/panels/session-cockpit/SessionsView.tsx:907-907)): the view invokes `hasUnackedSetAttention` for the rail rollup and `cycleEffortRequested` for focused effort commands.
+- **Composer hint and durable outcomes** (cit:(["queuedSetHint={queuedComposerHint(perSession[focused.id])}"; "<SetOutcomeToasts"; "<CockpitLiveRegions />"], dashboard/src/panels/session-cockpit/SessionsView.tsx:1240-1240; dashboard/src/panels/session-cockpit/SessionsView.tsx:1323-1323; dashboard/src/panels/session-cockpit/SessionsView.tsx:1328-1328)): the stage mounts the queued composer hint, `SetOutcomeToasts`, and `CockpitLiveRegions`.
 
 ### PTY Stage, Interactions, And Lifecycle Wiring
 
-- **Stage body fill** (L622-L649): `SessionStage` now receives `workingLine`
-  (`<WorkingLine session={focused} cockpit={perSession[focused.id]}>` — the reserved slot,
-  rendered only with a focused seat) and children in the ruled order: `<StopResidualNotes />`
-  (the dismissable informational stop-residual lines), then `<PtySurface focused={…}
-  onVisibleCols={setPtyCols}>` for a focused seat OR the explained placeholder (copy updated:
-  "no focused session — the terminal renders here once a seat is focused…") — the placeholder is
-  now the EMPTY-stage identity only, and the real surface carries the same `data-kbzone="pty"`
-  contract (jsdom-tested both ways; no zone test weakened), then
-  `<InteractionBar session={focused} composerRef={composerRef}>` directly ABOVE the composer —
-  the composer is never replaced (R4; position pinned by test), and the textarea now carries
-  `ref={composerRef}` (L646) so the bar's no-choices answer-mode can mark it and read its text.
-- **R8 floor chip prefers pane truth** (L205, L606-L619): `ptyCols` state is fed by the VISIBLE
-  pane's real column count (`PtySurface`'s `onVisibleCols`, from `Terminal`'s post-fit
-  `onResizeCols`); when a pane reports, the chip renders `pane N cols (< 80)` with the measured
-  count in the tooltip — the pixel estimate (`stageNarrow`) remains the pane-less fallback
-  only.
-- **F1 retire-residual sweep** (L229, L279): `useEffect(() => startRetireResidualSweep(), [])`
-  mounts the focus-independent data-layer sweep beside the poll driver/mirror — the former
-  focused-handoff residual-capture block is REMOVED (ownership moved to
-  `data/sessionLifecycle.ts`; an unfocused/tombstoned seat's `retireControlStopError` still
-  surfaces, and resurfaces after a reload).
-- **`conversation.stop` palette command** (L579-L588): the §9.5 exact-turn interrupt — the palette
-  command AND the `ctrl+shift+.` chord dispatch the same handler. `when` is the conversation
-  projection's own interrupt availability (`chatsInterruptRef.current.available`) and `run()` calls
-  that same ref's `onStop`, so the command is offered only for an interruptible working turn and
-  never for a dead stop. The availability comes from `useConversationInterrupt(focusedSessionId)`
-  held in a ref (L334-L339) so a projection tick never re-registers the command; the registration
-  effect (L551-L593, shared with the stage-mode toggles) carries `focused` in its deps. There is no
-  longer a UA-7-honest `turn.stop` registration: the title is the plain `Stop turn`, not
-  `Stop turn — unavailable: <STOP_TURN_DISABLED_REASON>`; the gate is no longer
-  `seatVisualState(focused).key === "working"`; and `run()` no longer focuses the welded disabled
-  `working-line-stop` control. `STOP_TURN_DISABLED_REASON` survives only as the disabled stop
-  button's title/aria-label in `WorkingLine.tsx` (L168-L170) and `SessionComposer.tsx` (L697-L699).
-- **Triage focuses the bar in place** (L643-L673): the per-seat question-triage commands now
-  focus the seat AND then the `interaction-bar` button — answering was the user's explicit
-  palette intent, so this is the invoked action, not a focus steal (R4's never-steal rule is
-  about spontaneous arrival). The 60-char preview resolves
-  `sessionPendingInteractionPayload(seat)` (review N1) — the parent's singular slot first, else the
-  first multiplexed sub-agent entry — and prefixes the adapter-bound agent label
-  (`<asker>: <preview>`, L647-L651), so the command title never implies the parent is asking.
+- **Stage body fill** (cit:(["<ChatsStageBody"; "<ConversationWorkingLine sessionId={focused.id} />"; "<InteractionBar session={focused} composerRef={composerRef} />"], dashboard/src/panels/session-cockpit/SessionsView.tsx:1195-1195; dashboard/src/panels/session-cockpit/SessionsView.tsx:1216-1216; dashboard/src/panels/session-cockpit/SessionsView.tsx:1231-1231)): the stage fill includes `ChatsStageBody`, `ConversationWorkingLine`, and `InteractionBar`.
+- **R8 floor chip prefers pane truth** (cit:(["With a live pane the chip reflects the pane's REAL column count"], dashboard/src/panels/session-cockpit/SessionsView.tsx:1158-1158)): the file records the live-pane column-count rule.
+- **F1 retire-residual sweep** (cit:(["useEffect(() => startRetireResidualSweep(), []);"], dashboard/src/panels/session-cockpit/SessionsView.tsx:298-298); cit:([`startRetireResidualSweep`], dashboard/src/data/sessionLifecycle.ts:136-154)): SessionsView mounts `startRetireResidualSweep`, whose subscription is refcounted.
+- **conversation.stop palette command** (cit:(["id: \"conversation.stop\""; "title: \"Stop turn\""; "keywords: [\"stop\", \"interrupt\", \"cancel\", \"turn\", \"abort\"]"; "when: () => chatsInterruptRef.current.available"; "run: () => chatsInterruptRef.current.onStop?.()"], dashboard/src/panels/session-cockpit/SessionsView.tsx:582-584; dashboard/src/panels/session-cockpit/SessionsView.tsx:586-587)): the palette command registers its id, title, keywords, availability gate, and stop callback; the disabled WorkingLine reason is assigned by (cit:(["data-disabled-reason={interrupt.reason ?? STOP_TURN_DISABLED_REASON}"], dashboard/src/panels/session-cockpit/WorkingLine.tsx:170-170)).
+- **Triage focuses the bar in place** (cit:(["for (const seat of waitingSeats(sessions))"; "const payload = sessionPendingInteractionPayload(seat)"; "const rawPreview = interactionPromptPreview(payload, 60)"; "const asker = pendingInteractionAgentLabel(payload)"; "focusSession(seat.id)"], dashboard/src/panels/session-cockpit/SessionsView.tsx:644-644; dashboard/src/panels/session-cockpit/SessionsView.tsx:647-649; dashboard/src/panels/session-cockpit/SessionsView.tsx:660-660); cit:(["window.requestAnimationFrame(() => rootRef.current ?.querySelector<HTMLElement>("], dashboard/src/panels/session-cockpit/SessionsView.tsx:661-663); cit:(["interaction-bar"; "?.focus(),"], dashboard/src/panels/session-cockpit/SessionsView.tsx:662-666)): each pending-seat command derives the payload/agent preview, focuses `seat.id`, then schedules the `interaction-bar` button focus.
 
-- **The shared feed** (L212-L215): `startCatalogPollDriver()` + `startCockpitMirror()` —
-  refcounted, shared with Cockpit's unconditional subscription, so the keep-alive layer never
-  double-polls.
-- **One derivation, two surfaces** (L218-L235): `masterLabels(taskDocuments)` →
-  `buildRailModel(sessions, labels)` and
-  `attentionRollup(sessions, {unackedIds, criticalBus})` (unacked joined from the cockpit store's
-  unacknowledged set ledgers; critical bus from `criticalBusSessionIds(pickups, sessions)`) are
-  memoized ONCE and passed to `SessionRail` as props AND consumed by the palette commands —
-  same-snapshot consistency by construction.
-- **R9 smart-default focus + F17 handoff** (L242-L270): refocus happens ONLY when nothing is
-  focused or the focused seat stopped running UNDER us — a user deliberately inspecting a landed
-  row is never fought. When the focused seat retires/lands, a reason-bearing handoff note is set
-  (`<label> landed/retired — <why> · focus handed off`) and focus moves by `smartDefaultFocus`
-  priority; a null focus with live seats picks the smart default on entry. **R6:**
-  `lastFocusRef` now also remembers the focused seat's human LABEL, so once the row is gone from
-  `sessions` at handoff time the banner names `previous.label` (the seat the operator knows) and, only if
-  that is unavailable too, falls back to `shortId(previous.id)` — never leading with a raw UUID.
-- **Store mirrors** (L272-L278): the view-owned `railCollapsed`/`inspectorCollapsed` and
-  `palette.open` are mirrored ONE-WAY into `sessionCockpitStore` (design §4.3 — the view keeps
-  ownership via its imperative panel handles).
-- **L2 palette commands** (L280-L344): dynamic registrations over the shared registry — the tree
-  toggle (title flips with state), `attention.jump` (when-gated on a live target), sprint- and
-  per-master bulk-end mirrors whose titles carry the HONEST counts + names (`End N completed —
-  sprint: a, b, …` — the palette row IS the preview), and per-seat question triage
-  (`Answer pending question — <label>: “<preview>”`, newest first; selecting focuses
-  the seat AND its InteractionBar in place). All disposed and re-registered per dependency change.
-- **Live `switchSession`** (L890-L902): alt+↑/↓ now cycles `railCycleOrder(model)` around the
-  focused seat (the former stub replaced — command ids/chords unchanged).
+- **The shared feed** (cit:(["useEffect(() => startCockpitMirror(), []);"], dashboard/src/panels/session-cockpit/SessionsView.tsx:295-295); cit:(["useEffect(() => startCatalogPollDriver(), []);"], dashboard/src/cockpit/Cockpit.tsx:388-388)): the view starts the cockpit mirror and the shell starts the catalog poll driver.
+- **One derivation, two surfaces** (cit:(["buildRailModel(sessions, { masterLabel: (key) => labels.get(key) })"; "attentionRollup(sessions, {"], dashboard/src/panels/session-cockpit/SessionsView.tsx:343-343; dashboard/src/panels/session-cockpit/SessionsView.tsx:359-359)): the view derives the rail model and attention rollup.
+- **R9 smart-default focus + F17 handoff** (cit:(["Smart-default focus (never an empty landing) + focus handoff."], dashboard/src/panels/session-cockpit/SessionsView.tsx:429-429)): the file records the smart-default focus/handoff design seam.
+- **Store mirrors** (cit:([`setLayout`; `setPaletteOpen`], dashboard/src/panels/session-cockpit/SessionsView.tsx:505-505; dashboard/src/panels/session-cockpit/SessionsView.tsx:508-508)): the view calls `setLayout` and `setPaletteOpen`.
+- **L2 palette commands** (cit:(["rail.treeToggle"; "attention.jump"], dashboard/src/panels/session-cockpit/SessionsView.tsx:600-600; dashboard/src/panels/session-cockpit/SessionsView.tsx:609-609)): the dynamic command registration includes `rail.treeToggle` and `attention.jump`.
+- **Live `switchSession`** (cit:(["switchSession: (direction) => {"], dashboard/src/panels/session-cockpit/SessionsView.tsx:891-891)): the live command wiring exposes `switchSession`.
 
 ### Launch Surfaces (pure appends — no existing node reshaped or reordered)
 
-- **The `launch` state** (L272-L279): `{open, prefill?}` — the LaunchFlow dialog's open state,
+- **The `launch` state** (cit:([`launch`], dashboard/src/panels/session-cockpit/SessionsView.tsx:274-279)): `{open, prefill?}` — the LaunchFlow dialog's open state,
   set by the palette command or the banner's corrected-launch prefill.
-- **The `session.launch` palette command** (L511-L519): one self-contained registry effect
-  ("Launch session…") — the palette is the flow's entry point (design §7.1); no chord minted
-  (consistent with the established chord-audit posture).
-- **FailedLaunchBanner for a focused FAILED seat** (L589-L597): mounted inside the stage children
-  BEFORE the pty placeholder when `focused?.controlState === "failed"` (R6 — the refusal renders
-  verbatim, never hidden, never auto-retried); `onLaunchCorrected` opens the flow pre-filled.
-  NOTE: this insert sits textually adjacent to the pty placeholder the stage fill owns —
-  structurally additive; resolution is "banner above pty surface" (review finding 5, no-action).
-- **`<LaunchFlow>`** (L687-L693): mounted after `<CommandPalette>` with the live `sessions` list
-  (the F9 unknown-outcome reconciler watches it) and `focusSession` as the focus sink.
+- **The `session.launch` palette command** (cit:(["session.launch"; "Launch session…"], dashboard/src/panels/session-cockpit/SessionsView.tsx:514-515)): the view registers the `session.launch` command with title `Launch session…`.
+- **FailedLaunchBanner for a focused FAILED seat** (cit:(["focusedLive && focused.controlState === \"failed\" ? ("; "<FailedLaunchBanner"], dashboard/src/panels/session-cockpit/SessionsView.tsx:1183-1184)): a failed focused seat conditionally renders `FailedLaunchBanner`.
+- **LaunchFlow** (cit:(["<LaunchFlow"], dashboard/src/panels/session-cockpit/SessionsView.tsx:1314-1314)): SessionsView mounts `LaunchFlow`.
 
 ### Logic
 
-- **Panel group** (L364-L465): `PanelGroup` `autoSaveId="cockpit.sessions.panels"` with rail
-  (collapsible, `collapsedSize=0`, `defaultSize=RAIL_FALLBACK_PERCENT`, min 12 / max 40 — the
-  bounds shared with calibration), stage (`defaultSize=54`, `minSize=35`), inspector
-  (collapsible, `defaultSize=24`, min 14 / max 40). An explicit `defaultSize` on EVERY panel
-  keeps the group's layout state complete before any DOM measurement — the imperative
-  collapse/expand handles depend on it. `onCollapse`/`onExpand` mirror panel state into
-  `railCollapsed`/`inspectorCollapsed`; the status-line footer surfaces `☰ rail` / `◫ inspector`
-  reopen buttons while collapsed (R3 reopenable), alongside the `ctrl+k palette · ? keys · F6
-  regions` hint.
+- **Panel group** (cit:(["autoSaveId={PANELS_AUTOSAVE_ID}"; "onLayout={handlePanelLayout}"], dashboard/src/panels/session-cockpit/SessionsView.tsx:1038-1039)): the `PanelGroup` carries the auto-save id and layout callback.
 - **Command wiring**: one memoized `registerDefaultCommands(createCommandRegistry())`
   instance; `buildContext` supplies live actions (palette open/close, panel toggles via the
   imperative refs, focus moves, session switch, and the effort cycle) plus the honest composer
   stub — routed through a `contextRef` so
   `dispatch(commandId)` always runs against fresh state; `useKeyboardZones({ active, dispatch })`
   installs the chords.
-- **Palette focus discipline** (L235-L251): `openPalette` records the ORIGINAL invoker only on a
+- **Palette focus discipline** (cit:([`openPalette`; `closePalette`], dashboard/src/panels/session-cockpit/SessionsView.tsx:721-733; dashboard/src/panels/session-cockpit/SessionsView.tsx:735-741)): `openPalette` records the ORIGINAL invoker only on a
   closed→open transition (an in-palette page switch keeps it); `closePalette` returns focus to
   the invoker when still connected (R7).
-- **F6 cycle** (L218-L233): availability filters collapsed panels out, the current region is
-  resolved from `document.activeElement`'s `[data-region]` host, and `data/keymap/focus.nextRegion`
-  decides.
-- **The ~80-col floor chip** (L300-L326, L410-L418): `measureStage()` sets `stageNarrow` from
-  `stageBelowPtyFloor(stage.clientWidth)`. Review round 2 (finding 1) wired it into EVERY
-  width-changing path: `PanelGroup onLayout={handlePanelLayout}` (divider drags AND
-  collapse/expand, incl. palette/button-driven — none of which resize the view root; also the
-  deterministic jsdom-testable path) plus the ResizeObserver observing the STAGE element alongside
-  the root. The chip carries the honest tooltip ("a squeezed hosted TUI is a layout fact, not
-  harness misbehavior").
-- **~280px rail calibration** (L309-L319, review round 2 finding 4): `calibrateRail(rootWidth)` is
-  ONE-SHOT on the first non-zero root measurement (a 0-width hidden-layer measure does not consume
-  it), skipped entirely when `hasPersistedPanelLayout` reports a saved layout, applied via
-  `railRef.resize(railDefaultPercent(...))`; `defaultSize` stays the 22% reference fallback for
-  the unmeasured case.
-- **Narrow-width rules** (L330-L355): the root-measuring effect ignores 0-width (the hidden
-  keep-alive layer must never react), records `lastWidthRef`, and drives collapse/expand through
-  `autoCollapseTransition`'s edge semantics — a collapse triggered here re-enters via `onLayout`,
-  so the post-layout re-measure always lands last (the round-1 read-before-collapse ordering flaw
-  is structurally gone).
+- **F6 cycle** (cit:(["The F6 cycle: rail → stage → inspector → status line"], dashboard/src/panels/session-cockpit/SessionsView.tsx:700-700); cit:([`nextRegion`], dashboard/src/data/keymap/focus.ts:14-24)): the file documents the F6 cycle and `nextRegion` supplies the ordered transition.
+- **The ~80-col floor chip** (cit:([`measureStage`], dashboard/src/panels/session-cockpit/SessionsView.tsx:946-948)): `measureStage()` computes `stageNarrow` from `stageBelowPtyFloor`.
+- **~280px rail calibration** (cit:([`calibrateRail`], dashboard/src/panels/session-cockpit/SessionsView.tsx:955-962)): `calibrateRail` skips non-positive widths, bypasses persisted layouts, and resizes the rail by `railDefaultPercent`.
+- **Narrow-width rules** (cit:(["Narrow-width rules: rail behavior is unchanged."], dashboard/src/panels/session-cockpit/SessionsView.tsx:971-971)): the file records unchanged narrow-width rail behavior.
 
 ### Conventions
 
@@ -220,13 +121,14 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 - `[data-view="sessions"]` must stay on THIS root — the WebTUI scope and the palette overlay
   anchor (`position: relative`).
 - The component must stay safe as a never-unmounted hidden layer: 0-width measures are ignored;
-  `active` (from `Cockpit.tsx`) gates all key bindings.
+  `active` is passed from Cockpit.tsx (cit:(["active={view === \"chats\" && !takeover}"], dashboard/src/cockpit/Cockpit.tsx:623-623)) into this view, which passes it to `useKeyboardZones` (cit:(["useKeyboardZones({ active, dispatch });"], dashboard/src/panels/session-cockpit/SessionsView.tsx:940-940)).
 - The keyboard-zone contract (`data-kbzone="pty"/"composer"`) survives the stage fill: the real
   `PtySurface` carries the pty zone marker (tested), the placeholder keeps it for the empty
   stage, and the composer textarea (the earlier placeholder, now ref-exposed) keeps the composer zone.
-- All decisions (thresholds, floor, calibration percentages) live in `data/sessionLayout.ts`, and
-  ALL rail/attention/focus derivations live in `data/railModel.ts` — this file only measures,
-  derives once, and wires.
+- All decisions (thresholds, floor, calibration percentages) live in data/sessionLayout.ts
+  (cit:([`ptyFloorPx`; `railDefaultPercent`; `hasPersistedPanelLayout`; `stageBelowPtyFloor`; `autoCollapseTransition`], dashboard/src/data/sessionLayout.ts:21-23; dashboard/src/data/sessionLayout.ts:36-43; dashboard/src/data/sessionLayout.ts:50-61; dashboard/src/data/sessionLayout.ts:64-66; dashboard/src/data/sessionLayout.ts:74-85)), and
+  The named rail/attention/focus derivations are implemented in data/railModel.ts
+  (cit:([`masterLabels`; `buildRailModel`; `attentionRollup`; `smartDefaultFocus`], dashboard/src/data/railModel.ts:120-129; dashboard/src/data/railModel.ts:131-205; dashboard/src/data/railModel.ts:283-298; dashboard/src/data/railModel.ts:357-373)).
 - Focus handoff must never fight a deliberate landed-row inspection (the F17 only-under-us rule).
 - Model/effort palette commands and the header trigger must share one popover; queued hints,
   toasts, rail attention, and live regions must derive from the same cockpit evidence.
@@ -235,52 +137,37 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 
 No task-independent technical debt was identified during review.
 
-## Docs References
-
-No Domain Documentation source is configured for this repository; repository code and tests are the authority.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
-
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Panel group, floor chip, calibration, narrow rules, palette + keyboard wiring. | L192-L660 | [SessionsView.tsx](SessionsView.tsx) |
-| The stage fill: sweep mount, live-turn merge, `conversation.stop` + triage-bar focus, pane-cols chip, workingLine + surface/bar/notes children. | L298; L310-L321; L582; L643-L673; L1158-L1245 | [SessionsView.tsx](SessionsView.tsx) |
-| The payload selector + agent label the question-triage preview resolves (N1). | L463-L472; L192-L201 | [../../data/sessions.ts](../../data/sessions.ts), [../../data/interactionAnswer.ts](../../data/interactionAnswer.ts) |
-| The pane surface the stage mounts per focused seat (archetypes, keep-alive, cols reporting). | L110-L244 | [PtySurface.tsx](PtySurface.tsx) |
-| The one interaction axis rendered above the composer (multiplexed per pending payload). | L242-L281, L283-L525 | [InteractionBar.tsx](InteractionBar.tsx) |
-| The turn theater rendered into the stage's reserved slot (its grammar gate is the `turn.stop` gate). | L76-L126 | [WorkingLine.tsx](WorkingLine.tsx) |
-| The focus-independent retire-residual sweep this view mounts (F1). | L47-L146 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
-| The shell that mounts this view as a keep-alive hidden layer and gates `active`. | — | [../../cockpit/Cockpit.tsx](../../cockpit/Cockpit.tsx) |
-| The pure decisions this shell feeds widths into. | L5-L85 | [../../data/sessionLayout.ts](../../data/sessionLayout.ts) |
-| The registry + default commands the context actions serve. | L56-L179 | [../../data/commands.ts](../../data/commands.ts) |
-| The snapshot/set/pair/cycle/promotion driver mounted by this view. | L1-L433 | [../../data/setClient.ts](../../data/setClient.ts) |
-| The sole live model/effort UI controlled from this view. | L148-L383 | [ModelEffortControl.tsx](ModelEffortControl.tsx) |
-| Persistent background outcomes and screen-reader regions. | L58-L142; L19-L44 | [SetOutcomeToasts.tsx](SetOutcomeToasts.tsx), [CockpitLiveRegions.tsx](CockpitLiveRegions.tsx) |
-| The F6 cycle + focus selectors used by `cycleRegion`/`focusStageHeader`/`focusTerminal`. | L8-L34 | [../../data/keymap/focus.ts](../../data/keymap/focus.ts) |
-| The end-to-end suite: structure, chip re-measure paths, calibration, palette, zones, focus, + the entry-focus/handoff/cycling cases. | L14-L300 | [SessionsView.test.tsx](SessionsView.test.tsx) |
-| The one WebTUI mapping file whose scope root this component carries. | L17-L42 | [../../styles/webtui.css](../../styles/webtui.css) |
-| The rail renderer receiving the once-derived model/rollup as props. | L364-L372 | [SessionRail.tsx](SessionRail.tsx) |
-| The stage container + header line the stage panel mounts. | L46-L87 | [SessionStage.tsx](SessionStage.tsx) |
-| The accessible stable-mounted Evidence / Capabilities / Bus tab host. | L18-L151 | [SeatInspector.tsx](SeatInspector.tsx) |
-| The pure derivations this view memoizes once per render. | L131-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
-| The cockpit store (focus, mirrors, perSession) + the catalog mirror this view starts. | L107-L309 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
-| The shared poll driver subscription. | L60-L77 | [../../data/catalogPoll.ts](../../data/catalogPoll.ts) |
-| The launch dialog this view opens (palette command / corrected-launch prefill). | L165-L613 | [LaunchFlow.tsx](LaunchFlow.tsx) |
-| The failed-launch banner mounted above the pty placeholder for a failed focused seat. | L70-L182 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
-| R9: the conversation projection store this view reads to compute the focused seat's `liveTurnWorking`. | L296-L318 | [../../data/conversation/store.ts](../../data/conversation/store.ts) |
-| R9: the seat-state grammar that prefers `liveTurnWorking` over the lagging catalog turn-state. | L106-L115 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
-
-## Cross-Repo References
-
-No meaningful cross-repo references found.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+| The view names the panel, floor-chip, calibration, narrow-rule, and keyboard-wiring seams. | "useKeyboardZones({ active, dispatch });"; "The ~80-col floor chip"; "~280px rail default"; "Narrow-width rules: rail behavior is unchanged." | dashboard/src/panels/session-cockpit/SessionsView.tsx:940-940; dashboard/src/panels/session-cockpit/SessionsView.tsx:942-942; dashboard/src/panels/session-cockpit/SessionsView.tsx:950-950; dashboard/src/panels/session-cockpit/SessionsView.tsx:971-971 |
+| The stage fill mounts the sweep, live-turn selector, `conversation.stop` registration fields, `ChatsStageBody`, and `InteractionBar`. | "useEffect(() => startRetireResidualSweep(), []);"; "const focusedLiveTurnWorking = useActiveConversation((state) => {"; "id: \"conversation.stop\""; "title: \"Stop turn\""; "keywords: [\"stop\", \"interrupt\", \"cancel\", \"turn\", \"abort\"]"; "when: () => chatsInterruptRef.current.available"; "run: () => chatsInterruptRef.current.onStop?.()"; "<ChatsStageBody"; "<InteractionBar session={focused} composerRef={composerRef} />" | dashboard/src/panels/session-cockpit/SessionsView.tsx:298-298; dashboard/src/panels/session-cockpit/SessionsView.tsx:310-310; dashboard/src/panels/session-cockpit/SessionsView.tsx:582-584; dashboard/src/panels/session-cockpit/SessionsView.tsx:586-587; dashboard/src/panels/session-cockpit/SessionsView.tsx:1195-1195; dashboard/src/panels/session-cockpit/SessionsView.tsx:1231-1231 |
+| The payload selector + agent label the question-triage preview resolves (N1). | `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:467-471 |
+| The pending interaction agent label used by the question-triage preview. | `pendingInteractionAgentLabel` | dashboard/src/data/interactionAnswer.ts:192-199 |
+| The pane surface the stage mounts per focused seat (archetypes, keep-alive, cols reporting). | `ChatsStageBody`; "<PtySurface" | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
+| The stage renders one `InteractionBar` above the composer. | "<InteractionBar session={focused} composerRef={composerRef} />" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1231-1231 |
+| The stage renders `ConversationWorkingLine`/`WorkingLine` and the complete `conversation.stop` command registration. | "<ConversationWorkingLine sessionId={focused.id} />"; "<WorkingLine"; "id: \"conversation.stop\""; "title: \"Stop turn\""; "when: () => chatsInterruptRef.current.available"; "run: () => chatsInterruptRef.current.onStop?.()" | dashboard/src/panels/session-cockpit/SessionsView.tsx:582-583; dashboard/src/panels/session-cockpit/SessionsView.tsx:586-587; dashboard/src/panels/session-cockpit/SessionsView.tsx:1216-1216; dashboard/src/panels/session-cockpit/SessionsView.tsx:1218-1218 |
+| The retire-residual sweep implementation. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
+| The view mounts the focus-independent retire-residual sweep. | "useEffect(() => startRetireResidualSweep(), []);" | dashboard/src/panels/session-cockpit/SessionsView.tsx:298-298 |
+| The shell passes the active expression to this view. | "active={view === \"chats\" && !takeover}" | dashboard/src/cockpit/Cockpit.tsx:623-623 |
+| The pure decisions this shell feeds widths into. | `ptyFloorPx`; `railDefaultPercent`; `hasPersistedPanelLayout`; `stageBelowPtyFloor`; `autoCollapseTransition` | dashboard/src/data/sessionLayout.ts:21-23; dashboard/src/data/sessionLayout.ts:36-43; dashboard/src/data/sessionLayout.ts:50-61; dashboard/src/data/sessionLayout.ts:64-66; dashboard/src/data/sessionLayout.ts:74-85 |
+| The registry + default commands the context actions serve. | `createCommandRegistry`; `registerDefaultCommands` | dashboard/src/data/commands.ts:57-81; dashboard/src/data/commands.ts:88-191 |
+| The snapshot/set/pair/cycle/promotion drivers are defined in `setClient.ts`. | `refreshSessionSnapshot`; `sendSet`; `startPairChangeFlow`; `cycleEffortRequested`; `startSetPromotionWatcher` | dashboard/src/data/setClient.ts:68-115; dashboard/src/data/setClient.ts:157-244; dashboard/src/data/setClient.ts:327-335; dashboard/src/data/setClient.ts:352-374; dashboard/src/data/setClient.ts:398-445 |
+| The `ModelEffortControl` component is declared here. | "export function ModelEffortControl({" | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:149-149 |
+| Persistent background outcomes and screen-reader regions. | `SetOutcomeToasts` | dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx:58-142 |
+| Persistent screen-reader regions. | `CockpitLiveRegions` | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-45 |
+| `nextRegion` supplies the ordered F6 region transition. | `nextRegion` | dashboard/src/data/keymap/focus.ts:14-24 |
+| The rail renderer receiving the once-derived model/rollup as props. | `SessionRail`; `model`; `rollup` | dashboard/src/panels/session-cockpit/SessionRail.tsx:480-481; dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| `SessionStage` is the stage container component. | "export function SessionStage({" | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
+| The accessible stable-mounted Evidence / Capabilities / Bus tab host. | `SeatInspector` | dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-161 |
+| The pure rail/attention/focus derivations are defined in `railModel.ts`. | `masterLabels`; `buildRailModel`; `attentionRollup`; `smartDefaultFocus` | dashboard/src/data/railModel.ts:120-129; dashboard/src/data/railModel.ts:131-205; dashboard/src/data/railModel.ts:283-298; dashboard/src/data/railModel.ts:357-373 |
+| The cockpit store and catalog mirror are defined in `sessionCockpitStore.ts`. | `sessionCockpitStore`; `startCockpitMirror` | dashboard/src/data/sessionCockpitStore.ts:279-511; dashboard/src/data/sessionCockpitStore.ts:522-542 |
+| The shared poll driver subscription is owned by the shell. | "useEffect(() => startCatalogPollDriver(), []);" | dashboard/src/cockpit/Cockpit.tsx:388-388 |
+| The `LaunchFlow` component implementation. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-619 |
+| The `FailedLaunchBanner` component implementation. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| SessionsView reads `focusedLiveTurnWorking` from the active conversation projection. | "const focusedLiveTurnWorking = useActiveConversation((state) => {" | dashboard/src/panels/session-cockpit/SessionsView.tsx:310-310 |
+| The seat-state grammar declares `liveTurnWorking`. | `liveTurnWorking` | dashboard/src/data/stateGrammar.ts:92-92 |
 
 ## Reliable Submit Delta
 
@@ -299,7 +186,7 @@ leaf base; closeout owns commit stamping.
 ## Structured Chats Renderer Candidate Delta
 
 The stage body composition changed: the previously **unconditional** `PtySurface` body is replaced by
-`<ChatsStageBody>` for the focused seat (+77/−8). SUPERSEDES the earlier "keeps `PtySurface`
+ChatsStageBody for the focused seat (+77/−8). SUPERSEDES the earlier "keeps PtySurface
 unconditional" claim above — a controlled seat now defaults to the structured `ConversationSurface`,
 and `PtySurface` survives only inside the default-off read-only terminal-diagnostics drawer and as the
 legacy-raw primary body (both composed by `ChatsStageBody`, not this file). The keep-alive/handoff
@@ -310,7 +197,7 @@ New view-owned wiring:
   `ChatsStageBody`; `onSessionOpened` focuses a newly-opened history session.
 - **Focus-return tokens** — `toggleChatsDiagnostics` captures a focus-return token on open and restores
   it on close (F9), and the library close/back path consumes the same token idiom (F16), so neither
-  drops focus to `<body>`.
+  drops focus to the document body.
 - **Palette commands** — `chats.browseHistory` (opens the in-stage library, controlled sessions) and
   `chats.terminalDiagnostics` (toggles the drawer) join the registry, plus `conversation.backToChat`
   (when-gated on library open).
@@ -324,20 +211,12 @@ uncommitted; verification stays pinned to the prior base until closeout stamps t
 
 ## Streaming Turn-State Honesty Delta (audit V5)
 
-The route now imports `useActiveConversation` (`data/conversation/store`) and computes
-`focusedLiveTurnWorking` for the FOCUSED seat only (L296-L318): it reads that seat's conversation
-projection and returns true only when `projection.stream === "live"`, the status exists and its
-`freshness.state !== "stale"`, and `status.turn.state ∈ {working, settling, retrying, compacting}`.
-`focused` is then the base session row merged with `{ liveTurnWorking: true }` when that holds,
-otherwise the plain base row. That flag flows through `stateGrammar.seatVisualState` (which prefers
-it over the sweep-lagging catalog `turnState` but only below the terminal/fault/blocked/wait guards)
-into the stage authorities — HeaderStrip StateDot and working cues — so a live streaming
-turn stops reading a settled-green `turn-ended`. This is the honest display-preference: a
-stale/disconnected projection is never trusted, and a real terminal/fault/blocked catalog state
-still wins. **Recorded remainder (durable):** only the focused stage seat is covered here; the rail
-chip is a separate store-driven per-row derivation (`SessionRail`), and wiring the projection signal
-into non-focused rail rows is left as a follow-on — the stage (the surface shown in the review
-screenshots) is covered, the rail chip is not.
+The focused seat's live conversation projection wins over lagging catalog turn state only while the
+projection is live, present, and fresh, and while its turn is in one of the active working states.
+The focused row then carries the live-working flag into the stage grammar, where it is preferred below
+terminal, fault, blocked, and waiting guards. A stale or disconnected projection is never trusted,
+and a real terminal or fault catalog state still wins. Only the focused stage seat is covered here;
+the rail chip remains a separate store-driven per-row derivation.
 
 ## Decluttered Stage Maintenance
 
@@ -350,100 +229,7 @@ through to the stage so scroll geometry can restore after a view switch.
 
 ## Update History
 
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations and rewrote 1
-  false claim. The `turn.stop` bullet cited L317-L331, which is now the `focusedLiveTurnWorking`
-  selector — and the command it described no longer exists: the registration is `conversation.stop`
-  (L579-L588) with the plain title `Stop turn`, a `ctrl+shift+.` chord, `when` reading
-  `chatsInterruptRef.current.available` (from `useConversationInterrupt`, L334-L339) and `run()`
-  calling that ref's `onStop` — not a `STOP_TURN_DISABLED_REASON`-titled command gated on
-  `seatVisualState(focused).key === "working"` whose `run()` focused the disabled
-  `working-line-stop` control; the bullet now states the current behaviour and names what is gone.
-  `switchSession` cited L404-L416 (now inside the panel group) → L890-L902, the keymap action that
-  cycles `railCycleOrder(model)`. The `launch` state cited L213-L217 → L272-L279, and the
-  `session.launch` registry effect cited L287-L296 → L511-L519. Source uncommitted; closeout
-  re-stamps verification.
-
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the review-N1 question-triage preview
-  fix — the `waitingSeats` loop resolves `sessionPendingInteractionPayload(seat)` (parent's
-  singular slot first, else the first multiplexed sub-agent entry) and prefixes the adapter-bound
-  agent label (`<asker>: <preview>`) so the palette title never implies the parent is asking;
-  refreshed the L6-stage-fill and InteractionBar reference ranges to the current source. The
-  historical L6 prose bullet citations (`L622-L649`, `L646`) predate the L4 recomposition and are
-  superseded by the table ranges. Source uncommitted; closeout re-stamps verification.
-
-- 2026-07-24T13:17:17Z — Curator: corrected stage composition, focus handoff, source-selected working
-  feedback, stop placement, view visibility, and removed StatusLine/stop-notification chrome. This
-  is the current replacement owner for the retired StatusLine composition knowledge.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) focused-seat
-  live-turn merge. The view imports `useActiveConversation` and computes `focusedLiveTurnWorking`
-  from the focused seat's projection (`stream === "live"`, non-stale freshness, `turn.state ∈
-  {working,settling,retrying,compacting}`), merging `{ liveTurnWorking: true }` into `focused` so
-  `seatVisualState` shows a working stage over the lagging catalog `turn-ended`. Documented the
-  honest fallbacks and the recorded remainder (rail chip left to a follow-on). Source uncommitted;
-  closeout re-stamps verification.
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded V11 (collapsed rail aside `display:none`,
-  removing the ~21px residual sliver; drag min stays 12%) and R6 (the focus-handoff banner remembers the
-  focused seat's human label via `lastFocusRef.label`, falling back to `shortId(previous.id)` — never a
-  raw UUID). Composition/keep-alive/focus-model unchanged. Verification pinned to the leaf base
-  (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
-  the composition change from the unconditional `PtySurface` body to `ChatsStageBody` (structured
-  surface default; PTY demoted to the read-only diagnostics drawer + legacy-raw body — supersedes the
-  FEUI-L8 unconditional-PTY claim), the browse-history/diagnostics stage-mode state and focus-return
-  tokens (F9/F16), the new `chats.browseHistory`/`chats.terminalDiagnostics`/`conversation.backToChat`
-  palette commands, and the `conversation.stop` chord + `WorkingLine` interrupt-hook feed replacing the
-  stale `turn.stop` (F2). Verification metadata remains pinned to the leaf base until closeout.
-- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: removed the view-level raw opener and delegated accepted
-  server-id focus from ChatContextBar, eliminating focus on failed or contradictory opens.
-  Verification metadata remains pinned until closeout.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: documented the empty-narrow rail exception and collapsed
-  accessibility semantics; verification metadata remains pinned pending candidate closeout.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 kept this packed route to a narrow composition seam:
-  it selects projected pickups, supervisor heartbeat, and poll health; passes them into the
-  stable-mounted inspector; and composes the contractual StatusLine with existing reopen actions.
-  Domain logic remains in focused files. Verification metadata remains pinned to the leaf base
-  until closeout.
-- 2026-07-17T21:39+02:00 — FEUI-L5: replaced the composer stub with live submit/pop-back wiring,
-  slash palette query, queue/recovery UI, and explicit answer-channel separation.
-
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2/R4/R6–R8 wired the one controlled model/effort
-  popover to header and palette, live effort cycling, promotion/drift and seat-state watchers,
-  queued composer hint, shared attention rollup, persistent background toasts, and dual live
-  regions. Verification metadata is pinned to the contract base until the uncommitted code lands.
-- 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R5/R6): launch surfaces appended — the `launch` state,
-  the `session.launch` palette registration, the FailedLaunchBanner block for a focused failed
-  seat (prepended inside the stage children before the pty placeholder; L6-adjacency merge note
-  recorded — post-merge resolution: banner above the pty surface), and the `<LaunchFlow>` element
-  after the palette. Pure appends — no existing L1/L2 node reshaped or reordered
-  (reviewer-verified hunk by hunk). Verification metadata pinned to the leaf base until closeout
-  stamps the L3 code commit.
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (incl. review fix round F1/F3): the stage body is
-  FILLED — `PtySurface` for the focused seat (placeholder now empty-stage-only, zone contract
-  carried by the real surface), `StopResidualNotes` above it, `InteractionBar` above the
-  never-replaced composer (textarea ref-exposed for answer-mode), `WorkingLine` into the
-  reserved slot; the ~80-col chip prefers the visible pane's REAL cols (`pane N cols (< 80)`)
-  over the pixel estimate; `startRetireResidualSweep()` mounted focus-independent (the
-  handoff-effect capture block removed — F1); `turn.stop` palette command gated on the
-  WorkingLine's own grammar state (F3) with the UA-7 gap named in the title and run() focusing
-  the welded control; triage commands now focus the InteractionBar in place. Verification
-  metadata pinned to the leaf base until closeout stamps the L6 code commit.
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2: the shell's panels are FILLED — SessionRail (model +
-  rollup derived once and shared with the palette), SessionStage + HeaderStrip (floor chip moves
-  into `headerExtra`), SeatInspector in the inspector pane; added the shared poll-driver/mirror
-  subscriptions, R9 smart-default focus + F17 reason-bearing focus handoff (never fighting a
-  deliberate landed-row inspection), one-way layout/palette store mirrors, the dynamic L2 palette
-  commands (tree toggle, attention.jump, bulk-end mirrors with counts+names in the title,
-  question triage), and the live alt+↑/↓ `switchSession` over `railCycleOrder`. Verification
-  metadata pinned to the leaf base until closeout stamps the L2 code commit.
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S2 (R3), including the review round-2
-  fixes: the rail/stage/inspector shell with edge-transition auto-collapse + reopen affordances,
-  the ~80-col floor chip re-measured from every width path (`onLayout` + stage ResizeObserver —
-  finding 1), the one-shot ~280px rail percentage calibration that never overrides a persisted
-  layout (finding 4), the command-context wiring, palette invoker focus-return, and the F6 cycle.
-  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: replaced stale SessionsView line citations with
+  exact anchors; completed the whole triage dataflow audit, bound the full conversation.stop registration,
+  narrowed JSX/comment-only claims, preserved the generated interaction-bar focus body, and split pooled
+  reference rows by source owner.

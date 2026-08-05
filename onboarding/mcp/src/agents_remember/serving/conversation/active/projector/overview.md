@@ -79,17 +79,18 @@ repository-owned and cited through the source and tests below.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The active service creates and retires projector instances. | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/service.py) |
-| The package mutates one canonical projection store. | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| Focused regressions cover projection, restart, overflow, child hydration, and singleflight. | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py), [test_active_projector_singleflight.py](agents-remember/mcp/tests/test_active_projector_singleflight.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The active service creates and retires projector instances. | `ActiveConversationService` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259 |
+| The package mutates one canonical projection store. | `ProjectionStore` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445 |
+| Focused regressions cover projection, restart, overflow, child hydration, and singleflight. | `test_settled_live_turns_project_once_when_native_ids_disjoint`; `test_concurrent_reconnect_replaces_a_retired_projector_once` | mcp/tests/test_active_projector_singleflight.py:24-94; mcp/tests/test_conversation_active_service.py:329-414 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this package.
 
 ## Update History
+- 2026-08-03T03:02:37+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: added `wiring.py` (`SessionProjectionSpine`, `BridgeReaders`, `LIVE_BRIDGE_READERS`) to the ownership map and recorded the one-spine/one-reader-set invariant every component is now built from; also recorded `ProjectedSession` (facade entry) and `IngestionComponents` (rebuild order). Verification metadata stays pinned until closeout.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: replaced the deleted monolith's

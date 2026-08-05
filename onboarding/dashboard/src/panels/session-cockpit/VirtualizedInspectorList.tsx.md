@@ -44,27 +44,29 @@ full-suite/typecheck run; standalone full-suite reruns passed.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Threshold, ordinary list, and virtualized list implementations. | L7-L107 | [VirtualizedInspectorList.tsx](VirtualizedInspectorList.tsx) |
-| Bus caller that lifts interaction state above virtual rows. | L116-L222 | [BusPane.tsx](BusPane.tsx) |
-| Evidence caller for large set/receipt ledgers. | L169-L374 | [EvidencePane.tsx](EvidencePane.tsx) |
+| Threshold, ordinary list, and virtualized list implementations. | `INSPECTOR_VIRTUALIZE_THRESHOLD` | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx:11-11 |
+| Bus caller that lifts interaction state above virtual rows. | `pickupMatchesFocusedSeat` | dashboard/src/panels/session-cockpit/BusPane.tsx:46-60 |
+| Evidence caller for large set/receipt ledgers. | `setLedgerEntryLine`; `submitEvidenceLines` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:36-43; dashboard/src/panels/session-cockpit/EvidencePane.tsx:50-93 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Documents the
   100/101 threshold, accessible logical total, and caller-owned interaction-state boundary.

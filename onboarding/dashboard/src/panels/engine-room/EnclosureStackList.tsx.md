@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureStackList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -38,17 +38,21 @@ One exported component, `EnclosureStackList`, taking `views: EngineProcessView[]
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`) | L18-L26 | [EnclosureStackList.tsx](EnclosureStackList.tsx) |
-| Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange` | L28-L44 | [EnclosureStackList.tsx](EnclosureStackList.tsx) |
-| Per-enclosure `ListBoxItem` keyed by `node.worktreeGroup`; `textValue` = taskName + repoName | L45-L52 | [EnclosureStackList.tsx](EnclosureStackList.tsx) |
-| Phase chip + gate-state chips (review/closeout/integration), conditional integ + lifecycle | L53-L68 | [EnclosureStackList.tsx](EnclosureStackList.tsx) |
-| `EngineProcessView` view type ({ enclosureKey, node, lifecycle }) | L1-L22 | [engineRoomTypes.ts](engineRoomTypes.ts) |
-| `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) | L251-L283 | [projection.ts](../../types/projection.ts) |
-| `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes + `stackList`/`chip` styles | L48-L177 | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`) | `EnclosureStackList` | dashboard/src/panels/engine-room/EnclosureStackList.tsx:27-85 |
+| Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange` | "single"; `onSelectionChange`; `typeof` | dashboard/src/panels/engine-room/EnclosureStackList.tsx:39-39; dashboard/src/panels/engine-room/EnclosureStackList.tsx:42-42; dashboard/src/panels/engine-room/EnclosureStackList.tsx:45-45 |
+| Per-enclosure `ListBoxItem` keyed by `node.worktreeGroup`; `textValue` = taskName + repoName | `worktreeGroup`; `textValue` | dashboard/src/panels/engine-room/EnclosureStackList.tsx:58-60 |
+| Phase chip + gate-state chips (review/closeout/integration), conditional integ + lifecycle | `phase`; `state`; `humanReviewStatus`; `closeoutStatus`; `integrationStatus`; "not-started" | dashboard/src/panels/engine-room/EnclosureStackList.tsx:69-69; dashboard/src/panels/engine-room/EnclosureStackList.tsx:73-77 |
+| `EngineProcessView` view type ({ enclosureKey, node, lifecycle }) | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
+| `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) | `EngineProcessNode` | dashboard/src/types/projection.ts:162-202 |
+| `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes | `stackItem`; `healthDot`; `phaseChip` | dashboard/src/panels/engine-room/engineRoomStyles.ts:134-162; dashboard/src/panels/engine-room/engineRoomStyles.ts:201-222; dashboard/src/panels/engine-room/engineRoomStyles.ts:237-263 |
+| `stackList` layout keeps the enclosure rail vertically scrollable | `stackList` | dashboard/src/panels/engine-room/engineRoomStyles.ts:119-132 |
+| `chip` styles define the compact status-chip presentation | `chip` | dashboard/src/panels/engine-room/engineRoomStyles.ts:224-235 |
 
 ## Update History
+
+- 2026-08-03T02:39+02:00 — W3-B01 curator: curated the component, selection, item, phase/status, and style citations; the W3-REV-2 correction delta repaired four generated extents so single selection/key coercion, the keyed `ListBoxItem`/`textValue` implementation, the full phase/status-chip behavior, and the `chip` definition/styles are each supported. Verification metadata remains unchanged for closeout.
 
 - 2026-06-24T08:09+02:00 — Engine Room leaf identity: stack rows now use `leafId` as the primary label when present and render the parent `taskName` plus repo as secondary context, so parallel series leaves no longer appear as duplicate parent tasks. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-17T16:15 — slice 5g G5 (side-panel fix): the repo label moved to its own `stackRepo` line above the

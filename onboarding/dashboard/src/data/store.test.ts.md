@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:16+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ No file-local todos.
 No relevant external documentation found after checking live sources. This file exercises repo-local
 dashboard store behavior with the in-repo vitest harness.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found after checking live sources for the dashboard store unit tests. | n/a | n/a |
 
@@ -120,26 +120,32 @@ dashboard store behavior with the in-repo vitest harness.
 The suite is the contract guard for the dashboard store reducers; the task-34 sliding-window test pins
 the bounded buffer documented in the store sidecar.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| System under test: the Zustand store these reducers belong to. | — | [store.ts](store.ts) |
-| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | L36-L49 | [store.test.ts](store.test.ts) |
-| Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | L51-L82 | [store.test.ts](store.test.ts) |
-| `supervisorHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | L121-L159 | [store.test.ts](store.test.ts) |
-| The fixture narrowing and the fixture-derived lifecycle count. | L9-L20; `asServedProjection`; `FIXTURE_LIFECYCLES` | [store.test.ts](store.test.ts) |
-| The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | [../test/servedProjection.ts](../test/servedProjection.ts) |
-| `reparsed` (the `structuredClone` behind `volatileBump`) and the `supervisorHeartbeat` builder. | `reparsed`; `supervisorHeartbeat` | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| Projection / observer-event types the store maps over. | — | [../types/projection.ts](../types/projection.ts) |
+| System under test: the Zustand store these reducers belong to. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
+| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | `EVENT_WINDOW` | dashboard/src/data/store.ts:56-56 |
+| Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | "folds a snapshot into id-keyed maps and goes live" | dashboard/src/data/store.test.ts:51-82 |
+| `supervisorHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | `supervisorHeartbeat` | dashboard/src/data/store.test.ts:121-159 |
+| The fixture narrowing and the fixture-derived lifecycle count. | `asServedProjection` | dashboard/src/data/store.test.ts:4-20 |
+| The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/servedProjection.ts:41-43 |
+| `reparsed` (the `structuredClone` behind `volatileBump`) and the `supervisorHeartbeat` builder. | `reparsed`; `supervisorHeartbeat` | dashboard/src/test/fixtures/wire.ts:352-366; dashboard/src/test/fixtures/wire.ts:396-398 |
+| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. These tests are local to the dashboard store.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 6 citation rows
+  (deduplicated the servedProjection citation; bound the fold, heartbeat and fixture rows to
+  51-82, 121-159 and 4-20) and rewrote the historical single-number line shorthand below (the
+  snapshot-fold and long-session line references) as plain prose, which the checker otherwise
+  counts as unchecked prose ranges. Zero findings and zero unchecked spans/ranges remain.
 
 - 2026-08-01T09:16+02:00 — 260731-EFA-L4 curator: corrected two Conventions/Logic claims the diff
   against `abc7cbc` falsified. (1) "`../fixtures/snapshot.json` is cast to `WorkspaceProjection`" —
@@ -148,8 +154,8 @@ No meaningful cross-repo references found. These tests are local to the dashboar
   so this file gained assignability checking it did not have. (2) "`volatileBump` … (JSON
   round-trip, like a real wire parse)" — it now calls `test/fixtures/wire.ts::reparsed`, which is a
   `structuredClone`; the JSON round-trip is gone precisely because it answered `any`. Also recorded
-  `FIXTURE_LIFECYCLES`, which replaced the hard-coded `2` in the snapshot-fold (L57) and
-  long-session (L238) assertions — the fixture now carries six lifecycles, so the literal was about
+  `FIXTURE_LIFECYCLES`, which replaced the hard-coded `2` in the snapshot-fold and
+  long-session assertions (then at lines 57 and 238) — the fixture now carries six lifecycles, so the literal was about
   to become wrong. Re-anchored the three test citations, all of which the +15-line header shift had
   broken: L22-L35 → L36-L49 (the sliding-window `it`), L37-L68 → L51-L82 (fold/delta/metrics/conn),
   L106-L146 → L121-L159 (the two `supervisorHeartbeat` cases).

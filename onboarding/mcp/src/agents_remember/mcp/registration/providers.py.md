@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/mcp/registration/providers.py`       |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-07-31T15:31+02:00                                        |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                    |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                                        |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                    |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ two of the actions are not interchangeable: `restart` stops and starts the watch
 changes up through their incremental scan **without** rebuilding indexes (the way to wake a stale
 watcher), while `invalidate-indexes` DELETEs and rebuilds every index from scratch — a full re-embed
 plus a full graph re-index, slow and CPU-heavy. The retired `refresh` action is not listed; the
-controller rejects it with guidance. Indexing runs inside the watcher and is never time-capped.
+application entry point rejects it with guidance. Indexing runs inside the watcher and is never time-capped.
 
 All three forward keyword-for-keyword to `mcp/tools/providers.py`; the diagnostics and watcher
 payloads are report-filed and compacted there, not here.
@@ -47,13 +47,17 @@ payloads are report-filed and compacted there, not here.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The payload builders and their compact/report-filing helpers. | [tools/providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py) |
-| Watcher action handling and the `refresh` rejection. | [controllers/provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The payload builders and their compact/report-filing helpers. | `provider_status_payload`, `provider_diagnostics_payload`, `provider_watchers_payload` | mcp/src/agents_remember/mcp/tools/providers.py:33-37; mcp/src/agents_remember/mcp/tools/providers.py:40-52; mcp/src/agents_remember/mcp/tools/providers.py:73-87 |
+| Watcher action handling and the `refresh` rejection. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
 
 ## Update History
 
+- 2026-08-02T21:06:18+02:00 — 260731-EFA-L6 curator W2-B10: repaired 4 citation findings (2 reference rows); scoped recheck clean.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The three provider
   declarations moved out of `server.py` unchanged. Verification metadata pinned to the pre-change
   commit until closeout stamps the L2 code commit.

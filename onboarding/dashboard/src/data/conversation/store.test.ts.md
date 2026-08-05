@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/store.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:56+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,46 +74,49 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The store orchestration under test (connect/disconnect/enforceLru/failStream). | `connectConversation`; `enforceLru`; `failStream` | [store.ts](store.ts.md) |
-| The stream ctor injected as a no-op. | `EventSourceCtor` | [stream.ts](stream.ts.md) |
-| The typed error shape threaded to the banner. | `ConversationPage`; `ConversationCapabilities` | [types.ts](types.ts.md) |
-| The shared page/status/identity builders the fake `fetch` answers with. | `conversationPage`; `conversationStatus`; `conversationIdentity` | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
+| The store orchestration under test (`connectConversation`, `disconnectConversation`, `enforceLru`, and `failStream`) records typed stream errors in `errorBySession`. | "failStream: (sessionId, error) =>"; "return { bySession, errorBySession"; `connectConversation`; `disconnectConversation`; `enforceLru` | dashboard/src/data/conversation/store.ts:151-151; dashboard/src/data/conversation/store.ts:158-158; dashboard/src/data/conversation/store.ts:567-612; dashboard/src/data/conversation/store.ts:803-820; dashboard/src/data/conversation/store.ts:614-630 |
+| The `FakeEventSource` is a no-op `EventSourceCtor` transport double; the F15 case passes it as `eventSourceCtor`. | `FakeEventSource`; "A no-op EventSource"; "eventSourceCtor: FakeEventSource" | dashboard/src/data/conversation/store.test.ts:38-42; dashboard/src/data/conversation/store.test.ts:39-42; dashboard/src/data/conversation/store.test.ts:385-385 |
+| The F15 first-connect case records the server's typed error and leaves no fabricated projection. | "threads the server's typed error to the store on a first-connect page failure (F15)" | dashboard/src/data/conversation/store.test.ts:382-394 |
+| The shared page/status/identity builders the fake `fetch` answers with. | `conversationPage`; `conversationStatus`; `conversationIdentity` | dashboard/src/test/fixtures/conversationWire.ts:172-185; dashboard/src/test/fixtures/conversationWire.ts:187-207; dashboard/src/test/fixtures/conversationWire.ts:228-243 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## 260727-CHATS-IM-L2 Child-Hydration Regression Delta
 
-The suite now proves selected-child-only POST routing and encoded identity (L59-L92), concurrent
-same-child singleflight (L94-L124), and the exact 64-request/64-state capacity bound — written as the
+The suite now proves selected-child-only POST routing and encoded identity (cit:(["requests native history only for the selected child on the warm session"], dashboard/src/data/conversation/store.test.ts:60-93)), concurrent
+same-child singleflight (cit:(["singleflights concurrent requests for the same selected child"], dashboard/src/data/conversation/store.test.ts:95-125)), and the exact 64-request/64-state capacity bound — written as the
 exported `AGENT_HISTORY_CHILD_LIMIT`, not as a repeated literal — with visible local-resource refusal
-(L126-L173). Its three-row `it.each` (L175-L242) preserves non-2xx, network, and timeout reasons as
+(cit:(["bounds concurrent and retained selected-child bookkeeping per session"], dashboard/src/data/conversation/store.test.ts:127-174)). Its three-row `it.each` (cit:(["keeps a $label failure child-scoped and retryable while the parent stream stays live"], dashboard/src/data/conversation/store.test.ts:176-243)) preserves non-2xx, network, and timeout reasons as
 child-local state while the parent stream stays `live` and `errorBySession` stays clear, and each row
 then proves a retry recovers without changing the parent stream.
 
 ## Update History
 
+- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): narrowed the `FakeEventSource` claim to its two-method `EventSourceCtor` transport double plus the use-bearing F15 `eventSourceCtor` handoff line; the `connectConversation` call context stays documented in the F15 row (382-394); the scoped fixer regenerated the final extents.
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 6 citation claims; scoped citation check now passes.
+
 - 2026-08-01T09:56+02:00 — 260731-EFA-L4 curator: corrected two body claims and re-anchored the
   IM-L2 delta's citations. (1) "Four vitest cases" was stale by four rounds of growth — the source is
   seventeen `it` cases plus a three-row `it.each` across five describes. (2) The delta section listed
   four table-driven error reasons ("non-2xx, invalid payload, network, and timeout"); the `it.each`
-  table (L175-L202) carries three, and there is no invalid-payload case anywhere in the file. The
+  table (cit:(["keeps a $label failure child-scoped and retryable while the parent stream stays live"], dashboard/src/data/conversation/store.test.ts:176-243)) carries three, and there is no invalid-payload case anywhere in the file. The
   64-request/64-state bound in the same sentence checks out and is kept — `AGENT_HISTORY_CHILD_LIMIT`
-  is 64 (`store.ts` L45) and the case asserts through the constant.
+  is 64 (cit:([`AGENT_HISTORY_CHILD_LIMIT`], dashboard/src/data/conversation/store.ts:46-46)) and the case asserts through the constant.
   The diff against `abc7cbc` removed seven lines from the fixture block, so L66-L99 / L101-L131 /
   L133-L180 had all slid off their cases — re-anchored to L59-L92 / L94-L124 / L126-L173. Recorded
   in Invariants what the fixture swap actually replaced: `capabilities: {} as unknown as

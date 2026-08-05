@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/withdrawals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,28 +28,24 @@ asset-exchange refs cross only through an authenticated, unacknowledged fetch.
 
 ### Logic
 
-`RecoveryRecord` (L90-L101) and `WithdrawalRecord` (L104-L118) are the bounded ledger rows.
-`withdraw` (L121-L184) serializes on the per-session lock; `_verify_refs` (L757-L769) re-binds the
+cit:([`RecoveryRecord`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:90-101) and cit:([`WithdrawalRecord`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:104-118) are the bounded ledger rows.
+cit:([`withdraw`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:121-184) serializes on the per-session lock; cit:([`_verify_refs`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:757-769) re-binds the
 withdrawal+operation ref pair — it decodes BOTH refs under the one caller/session/epoch
 `RefBinding` and refuses a pair that does not name the same operation identity — while the live
-queue row is checked one step later: `_drive_withdrawal` (L358-L398) reads `_live_row` (L631-L648)
+queue row is checked one step later: cit:([`_drive_withdrawal`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:358-398) reads cit:([`_live_row`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:631-648)
 and settles a failure unless the row is a still-`queued` cockpit-source row, then drives the
-substrate atomic withdraw and `_apply_withdrawal_result` (L401-L413) records the outcome —
-`_build_withdrawn_record` (L442-L511) captures recovery via `recovery_assembly` and anchors the
+substrate atomic withdraw and cit:([`_apply_withdrawal_result`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:401-413) records the outcome —
+cit:([`_build_withdrawn_record`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:442-511) captures recovery via `recovery_assembly` and anchors the
 900 s lease (`withdrawn_at = clock()`, expiry at `withdrawn_at + RECOVERY_TTL_SECONDS`, L457-L458),
-while `_failure_for_result` (L416-L439) / `_settled_failure` (L514-L545) / `_unknown_withdrawal`
-(L548-L574) type every other outcome.
-`pending_recoveries` (L226) lists opaque identity/state/expiry only — no text, no preview.
-`fetch_recovery` (L266-L297) returns the exact text/asset refs only while `withdrawn && unacknowledged`;
-`acknowledge_recovery` (L300-L337) records the disposition, advances the operation revision, and permits
-disposal (post-ack replays return the same outcome/revision with the body disposed). `withdraw_status`
-(L187) and `_redrive_withdrawal` (L577) reconcile a lost `may_have_sent` response through the same
+while cit:([`_failure_for_result`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:416-439) / cit:([`_settled_failure`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:514-545) / cit:([`_unknown_withdrawal`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:548-574) type every other outcome.
+cit:([`pending_recoveries`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:226-263) lists opaque identity/state/expiry only — no text, no preview.
+cit:([`fetch_recovery`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:266-297) returns the exact text/asset refs only while `withdrawn && unacknowledged`;
+cit:([`acknowledge_recovery`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:300-337) records the disposition, advances the operation revision, and permits
+disposal (post-ack replays return the same outcome/revision with the body disposed). cit:([`withdraw_status`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:187-223) and cit:([`_redrive_withdrawal`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:577-628) reconcile a lost `may_have_sent` response through the same
 `withdrawRequestId` — the substrate replay is idempotent and carries no recovery, so the journal is
-the recovery source of last resort. `sweep_recoveries` (L651) lazily disposes text and bytes at lease
-expiry (L652-L660) and flips `recoveryState` to `expired`. `_replay_response` (L708-L732), the ref
-mint `_mint_operation_ref` (L748-L754), and the projection/coercions (`_withdrawal_projection`
-L735-L745, `_as_withdrawal` L772-L774, `_as_recovery` L777-L779) plus `withdraw_http_status`
-(L782-L791) complete the wire surface.
+the recovery source of last resort. cit:([`sweep_recoveries`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:651-669) lazily disposes text and bytes at lease
+expiry and flips `recoveryState` to `expired`. cit:([`_replay_response`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:708-732), the ref
+mint cit:([`_mint_operation_ref`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:748-754), and cit:([`_withdrawal_projection`, `_as_withdrawal`, `_as_recovery`, `withdraw_http_status`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:735-745; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:772-774; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:777-779; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:782-791) the projection/coercions complete the wire surface.
 
 ### Conventions
 
@@ -81,7 +77,7 @@ None.
 
 No Domain Documentation source is configured; the withdrawal/recovery contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -90,18 +86,18 @@ No Domain Documentation source is configured; the withdrawal/recovery contract i
 The substrate owns the atomic withdraw + pre-tombstone recovery payload; the recovery assembly and
 attachment recoverable-marking are sibling modules; the ref authority re-binds every wire.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The L2E atomic `cockpit_only` withdraw and pre-tombstone recovery capture. | L1-L120 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| Recovery content/digest/asset-ref assembly extracted to the sibling module. | L37-L123 | [recovery_assembly.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py) |
-| Attachment recoverable-marking and byte deletion under the same lease. | L460-L500 | [attachments.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/attachments.py) |
-| The withdrawal/operation/recovery ref brands re-bound on every wire. | L37-L44; L113-L219 | [refs.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/refs.py) |
+| The L2E atomic `cockpit_only` withdraw and pre-tombstone recovery capture. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
+| Recovery content/digest/asset-ref assembly extracted to the sibling module. | `recovery_text`; `recovery_digest`; `recovery_payload`; `recover_attachment_refs`; `attachment_recovery_ref` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:50-61; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:64-77; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:80-93; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123 |
+| Attachment recoverable-marking and byte deletion under the same lease. | `mark_recoverable`; `delete_recoverable` | mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481; mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497 |
+| The withdrawal/operation/recovery ref brands re-bound on every wire. | `RefBinding`; `mint_ref`; `decode_ref`; `ref_identity` | mcp/src/agents_remember/serving/conversation/control/refs.py:113-124; mcp/src/agents_remember/serving/conversation/control/refs.py:136-161; mcp/src/agents_remember/serving/conversation/control/refs.py:164-193; mcp/src/agents_remember/serving/conversation/control/refs.py:221-233 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -122,6 +118,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-03T02:54:18+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations and 5 prose citation groups with exact authority, recovery, attachment, ref, withdrawal, lease, projection, and status anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 11 stale self-citations in Logic and
   corrected one wrong claim they were hiding. The `WithdrawalTicket` refactor moved the record
   builders up and the wire helpers down, so: `RecoveryRecord` L87 → L90-L101, `WithdrawalRecord`
@@ -131,8 +128,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   L792 → L757-L769, and `withdraw_http_status` L832 → L782-L791 (L832 was past the end of an
   802-line file). The claim that `_verify_refs` re-binds the ref pair "against the live `_live_row`"
   is not what the code does: `_verify_refs` only decodes both refs under one `RefBinding` and
-  refuses a pair naming different operation identities; `_live_row` is called from
-  `_drive_withdrawal` (L365) to refuse anything that is not a still-`queued` cockpit-source row.
+  refuses a pair naming different operation identities; `_live_row` is called from `_drive_withdrawal`
+  (cit:([`_live_row`, `_drive_withdrawal`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:358-398; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:631-648)) to refuse anything that is not a still-`queued` cockpit-source row.
   Rewritten to say that, with `_drive_withdrawal` L358 → L358-L398,
   `_apply_withdrawal_result` L401 → L401-L413, `_build_withdrawn_record` L442 → L442-L511, the ref
   mint L775 → `_mint_operation_ref` L748-L754, and the projection/coercions L735/L822/L827 →

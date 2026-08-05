@@ -27,10 +27,11 @@ mode used by `InteractionBar` without turning a terminal line into an interactio
 
 ### Logic
 
-A React Aria `TextField` (`value`/`onChange`) wrapping a `TextArea` + a `Button`. `submit()` trims the
-draft, no-ops when empty, calls `onSend(value)`, and clears. Send fires on the `Button` `onPress` **or**
-⌘/Ctrl+Enter (a `TextArea` `onKeyDown`; plain Enter stays a newline). The `Button` is `isDisabled` while
-the trimmed draft is empty.
+The component owns a CodeMirror editor backed by the per-session draft/revision store. `submit()`
+ignores composition and empty drafts, routes pending interaction answers through
+`submitInteractionAnswer`, and routes ordinary drafts through `submitSessionDraft`; blocked outcomes
+become the component's status notice. The editor also owns the Enter/Ctrl+Enter, slash-command, escape,
+and withdrawal interactions described by the session cockpit.
 
 ### Conventions
 
@@ -40,32 +41,33 @@ React Aria primitives (coding-guidelines: don't hand-roll interactive widgets); 
 
 ### Invariants And Boundaries
 
-Presentational + controlled: no backend, no WebSocket, no xterm — so it is unit-tested directly
-(`SessionComposer.test.tsx`). It only *reports* the draft; `Chats` owns the bracketed-paste wrap, the
-write to the active session's stdin, and the **no-auto-submit** decision (injected text lands as a
-paste; the operator submits in the terminal).
+Controlled editor and client seam: the component does not own a raw terminal or PTY paste path, and it
+is unit-tested directly (`SessionComposer.test.tsx`). `SessionsView` mounts it only for a focused live
+non-terminal seat; ordinary drafts use the reliable submission client, while the vendor TUI owns raw
+terminal input.
 
 ## Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical Chats view mounts this over the reliable-submit client for the focused live seat. | — | [SessionsView.tsx](session-cockpit/SessionsView.tsx) |
-| The connection whose `sendInput` receives the bracketed-paste injection (+ the `bracketedPaste` helper). | — | [data/terminal.ts](../data/terminal.ts) |
-| The render + interaction tests for this composer. | — | [SessionComposer.test.tsx](SessionComposer.test.tsx) |
+| `SessionsView` names the focused-live seat condition used by the composer boundary. | `focusedLive` | dashboard/src/panels/session-cockpit/SessionsView.tsx:324-325 |
+| Ordinary composer drafts call `submitSessionDraft`. | "void submitSessionDraft" | dashboard/src/panels/SessionComposer.tsx:305-305 |
+| Pending interaction answers call `submitInteractionAnswer`. | "submitInteractionAnswer(" | dashboard/src/panels/SessionComposer.tsx:297-297 |
+| The test suite declares the `SessionComposer` render/interaction block. | "describe(\"SessionComposer" | dashboard/src/panels/SessionComposer.test.tsx:57-57 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -124,6 +126,8 @@ in a tooltip rather than standing footer chrome. The exact-turn stop action belo
 working controlled seats; raw terminal seats mount no dashboard composer.
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 
 - 2026-07-24T13:17:17Z — Curator: corrected composer input, queue-honesty, declutter, boot-deferral,
   and stop-control ownership semantics; verification fields remain pre-commit.

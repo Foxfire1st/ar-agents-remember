@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/paths.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -43,26 +43,32 @@ longer scans `workspace_root.iterdir()` for name matches, so it cannot raise the
 
 No external documentation is needed for this package-local path policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Resolver selection uses these path primitives for topology and settings discovery. | resolver selection | [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py) |
-| Worktree support tests cover installed-runtime root detection and `.env` non-authority. | path policy tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Resolver selection uses these path primitives for topology and settings discovery. | `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:77-86; mcp/src/agents_remember/kernel/coordination_context/resolver.py:89-104; mcp/src/agents_remember/kernel/coordination_context/resolver.py:151-164 |
+| Worktree support tests cover installed-runtime root detection and `.env` non-authority. | `test_resolver_uses_installed_runtime_root_as_coordination_root`, `test_resolver_ignores_dot_env_example_at_runtime` | mcp/tests/test_worktree_support.py:2326-2346; mcp/tests/test_worktree_support.py:2348-2369 |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed for local path policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: re-anchored the worktree-support test
+  row after the source file shifted: `test_resolver_uses_installed_runtime_root_as_coordination_root`
+  at 2326-2346 and `test_resolver_ignores_dot_env_example_at_runtime` at 2348-2369. Zero findings
+  remain.
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 2 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-05-31T12:50+02:00 — `find_code_repository_root` dropped its `workspace_root.iterdir()` name-match scan and the "multiple code repositories" `ValueError`, leaving only absolute-path and direct-join resolution; corrected the Logic section to describe direct-join-only resolution and the removed ambiguity error (1.0.0 review remediation).
 - 2026-05-25T20:57+02:00: Created by extracting `c-08-ar-coordination-context-resolver` skill path and topology helpers from the monolithic resolver.

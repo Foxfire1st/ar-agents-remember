@@ -65,7 +65,7 @@ None.
 
 No Domain Documentation source is configured for this internal port.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -75,21 +75,23 @@ The ports suite proves rows/paging, role/tool/notice mapping, and session-file a
 fake helpers; the installed suite proves the live gate, the round-trip, and the real end-to-end
 open; the locked helper implements the native seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pi read maps roles, tools, and notices; resolve mints the session-file argv target on fake helper boundaries. | L638-L692 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| The installed suite proves the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. | L217-L263; L284-L413 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| The locked helper's SessionManager list/branch-read/session-file resolution implementations. | L69-L159 | [pi.ts](agents-remember/mcp/native_helpers/conversation_library/src/pi.ts) |
+| Pi read maps roles, tools, and notices; resolve mints the session-file argv target on fake helper boundaries. | "def test_read_maps_roles_tools_and_notices(self) -> None:"; "def test_resolve_mints_session_file_argv(self) -> None:" | mcp/tests/test_conversation_library_ports.py:647-647; mcp/tests/test_conversation_library_ports.py:672-672 |
+| The installed suite proves the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. | "def test_live_helper_gate_supports_pi_history(self) -> None:"; "def test_live_list_read_resolve(self) -> None:"; "def test_open_real_pi_session_proves_exact_identity(self) -> None:" | mcp/tests/test_conversation_library_installed.py:217-217; mcp/tests/test_conversation_library_installed.py:233-233; mcp/tests/test_conversation_library_installed.py:366-366 |
+| The locked helper's SessionManager list/branch-read/session-file resolution implementations. | "export async function handlePi(request: HelperRequest): Promise<unknown> {"; "async function listPiSessions("; "async function readPiSession("; "async function resolvePiResumeTarget(" | mcp/native_helpers/conversation_library/src/pi.ts:54-54; mcp/native_helpers/conversation_library/src/pi.ts:69-69; mcp/native_helpers/conversation_library/src/pi.ts:101-101; mcp/native_helpers/conversation_library/src/pi.ts:133-133 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local port.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 3 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
   `test_conversation_library_installed.py`. The live Pi helper gate + list/read/resolve round-trip now

@@ -81,27 +81,24 @@ ambiguous ("too many colons").
 No external domain documentation is configured for this repository; the
 resolved `system/sources.md` currently contains no entries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation source is configured for this file. | L1-L3 | [system/sources.md](../../../../../../../../../../system/sources.md) |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `cgc_compose_render()` fills backend image, container, port, data volume, runner image/build context, ownership labels, mounts, environment, watcher services, and network name into the package override template, using shared port mapping rendering for `auto` ports. | L24-L75 | [compose.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
-| CGC watcher service names are derived from layout repo IDs, and watcher fragments mount runtime and code roots with generated environment. | L77-L116 | [compose.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
-| The summary reports Compose project, package base file, override SHA-256, and stdin override mode. | L119-L125 | [compose.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/compose.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary is required beyond mounted repository roots configured by provider settings. | n/a | n/a |
 
 ## Update History
+- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: deleted the three rangeless legacy rows; no current Compose claim was retained as anchored evidence. Verification metadata unchanged.
 
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the `cgc-watch-guard.py` watcher entrypoint into Logic alongside the existing `dataDestination` prose (documentation only).
 - 2026-06-09T22:10+02:00 — FalkorDB data volume now binds to the configurable backend `dataDestination` (default `/var/lib/falkordb/data`) instead of hardcoded `/data`, fixing graph data loss on container recreate; the watcher service template gained a `cgc-watch-guard.py` entrypoint that clears poisoned empty graph keys before exec'ing `cgc watch`.

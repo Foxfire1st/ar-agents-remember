@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T20:57+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,25 +38,26 @@ legacy cross-repo branch here.
 
 No external documentation is needed for this local fallback parser helper.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Markdown parser delegates legacy cross-repo lines to this module. | Markdown parser | [markdown_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
-| Runtime cross-repo resolution consumes parsed entries after settings selection. | cross-repo resolver | [cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py) |
+| The Markdown parser delegates legacy cross-repo lines to this module through `handle_cross_repo_line`. | `handle_cross_repo_line` | mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py:101-101 |
+| Runtime cross-repo resolution consumes parsed entries through `resolve_cross_repo_entry` after settings selection. | `resolve_cross_repo_entry` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:52-73 |
 
 ## Cross-Repo References
 
 No static cross-repository evidence is needed for legacy fallback parsing.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 2 table citations for cross-repository markdown handling and entry resolution; fixer-generated ranges verified.
 
 - 2026-05-25T20:57+02:00: Created by extracting legacy Markdown cross-repo parsing from `markdown_settings.py`.

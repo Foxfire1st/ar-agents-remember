@@ -28,30 +28,30 @@ focus signal ONLY on exact opened-catalog proof.
 
 ### Logic
 
-- **State shape** (L31-L75): `list?: LibraryListView` (rows + `nextCursor` + scope + `agentsNote` +
+- **State shape** (cit:([`ConversationLibraryState`], dashboard/src/data/conversation-library/store.ts:65-75)): `list?: LibraryListView` (rows + `nextCursor` + scope + `agentsNote` +
   loading/error), `preview?: LibraryPreview`, `selectedKey`, and `open?: OpenTracker`. `OpenTracker` carries
   `requestId`, `dispatching` (from dispatch until the first response — blocks a double-dispatch, F6c),
   `pollsExhausted` (poll budget spent while non-terminal — offer a manual reconcile, F6a), and
   `openedForFocus` (true ONLY when `phase==="opened" && outcome==="opened"` — the sole focus gate).
-- **`loadLibraryList`** (L98-L141): sets a loading view (preserving prior rows when appending under a
+- **`loadLibraryList`** (cit:([`loadLibraryList`], dashboard/src/data/conversation-library/store.ts:98-141)): sets a loading view (preserving prior rows when appending under a
   cursor), fetches, and either records `history unavailable for this harness` on `null` or merges
   rows and threads `canonicalProjectScope`/`nextCursor`. Append is detected by a non-null cursor on
   the same harness. **Agents note:** the previous view's `agentsNote` is carried
   through the loading and error states; on success the FRESHEST page's note wins (`page.agentsNote
   ?? null`) — it describes the query's current agent availability.
-- **`loadLibraryPreview`** (L143-L159): sets `selectedKey`, shows a loading preview, fetches the
+- **`loadLibraryPreview`** (cit:([`loadLibraryPreview`], dashboard/src/data/conversation-library/store.ts:143-159)): sets `selectedKey`, shows a loading preview, fetches the
   historical read page, and DROPS a stale preview if the selection moved on (`selectedKey !== key`).
-- **`applyOpen`** (L164-L177): folds an `OpenResult` into the tracker — on failure it KEEPS the
+- **`applyOpen`** (cit:([`applyOpen`], dashboard/src/data/conversation-library/store.ts:164-177)): folds an `OpenResult` into the tracker — on failure it KEEPS the
   requestId (F6b, reconcile under the same id) and clears `dispatching`/`openedForFocus`; on success
   it stores the operation and sets `openedForFocus` only for the opened/opened terminal.
-- **`isTerminalOpen`** (L179-L182): `pending`/`timeout-unknown` keep polling under the same id;
+- **`isTerminalOpen`** (cit:([`isTerminalOpen`], dashboard/src/data/conversation-library/store.ts:179-182)): `pending`/`timeout-unknown` keep polling under the same id;
   every other outcome is terminal.
-- **`beginOpen`** (L189-L223): sets `dispatching:true` BEFORE the first POST (F6c — a second click
+- **`beginOpen`** (cit:([`beginOpen`], dashboard/src/data/conversation-library/store.ts:189-223)): sets `dispatching:true` BEFORE the first POST (F6c — a second click
   cannot open a second operation into the TOCTOU window), dispatches `openConversation`, folds the
   result, and starts polling only if non-terminal.
-- **`reconcileOpen`** (L229-L251): the poll-exhaustion / transport-retry re-drive — reuses the
+- **`reconcileOpen`** (cit:([`reconcileOpen`], dashboard/src/data/conversation-library/store.ts:229-251)): the poll-exhaustion / transport-retry re-drive — reuses the
   EXISTING requestId and re-enters the poll loop with `reconcileFirst`, never minting a fresh id.
-- **`runOpenPolls`** (L260-L294): the bounded poll loop (`OPEN_POLL_MS`=1200, `OPEN_POLL_LIMIT`=25).
+- **`runOpenPolls`** (cit:([`runOpenPolls`], dashboard/src/data/conversation-library/store.ts:260-294; dashboard/src/data/conversation-library/store.ts:161-162)): the bounded poll loop (`OPEN_POLL_MS`=1200, `OPEN_POLL_LIMIT`=25).
   It escalates `open-status`→`open-reconcile` every 5th poll (or immediately on a re-drive), aborts if
   the tracked requestId is superseded, and on budget exhaustion while still non-terminal sets
   `pollsExhausted` and stops (no dead-end "reconciling…" forever).
@@ -77,31 +77,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The client verbs (list/read/open/status/reconcile) this store orchestrates. | L13-L21 | [client.ts](client.ts) |
-| The wire types the tracker and views hold. | L22-L29 | [types.ts](types.ts) |
-| The in-stage browser view that reads this store and renders list/preview/open. | — | [../../panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx](../../panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx) |
-| The sole resume action consuming `beginOpen`/`reconcileOpen` and the `openedForFocus` gate. | — | [../../panels/session-cockpit/conversation-library/OpenConversationAction.tsx](../../panels/session-cockpit/conversation-library/OpenConversationAction.tsx) |
-| The open-flow (R4/F6) regression suite over this store. | — | [store.test.ts](store.test.ts) |
+| The client verbs (list/read/open/status/reconcile) this store orchestrates. | `openConversation` | dashboard/src/data/conversation-library/client.ts:127-135 |
+| The wire types the tracker and views hold. | `OpenConversationOperation` | dashboard/src/data/conversation-library/types.ts:91-110 |
+| The in-stage browser view that reads this store and renders list/preview/open. | `ConversationLibrarySurface` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171 |
+| The sole resume action consuming `beginOpen`/`reconcileOpen` and the `openedForFocus` gate. | `OpenConversationAction` | dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx:72-174 |
+| The open-flow (R4/F6) regression suite over this store. | "conversation library open flow (R4 — focus only on exact opened proof)" | dashboard/src/data/conversation-library/store.test.ts:34-136 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 18 citation findings. Converted the
+  eight Logic line-cite parentheticals to cit form with exact anchors/ranges (`ConversationLibraryState`
+  through `runOpenPolls`), and re-anchored + re-ranged the five Repo-Internal References rows (client
+  verbs, wire types, library surface, resume action, open-flow suite). Scoped recheck clean.
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the page-level `agentsNote` on
   `LibraryListView` — `loadLibraryList` carries the previous note through loading/error states and
   takes the freshest page's note on success; all downstream line citations re-stamped against the

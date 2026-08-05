@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_index_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T20:45+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -117,30 +117,31 @@ docker or network access is required anywhere.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `seed_commit_divergence` / `_seed_commit_mismatch` under test. | [cgc/seed.py](agents-remember/mcp/src/agents_remember/providers/cgc/seed.py) |
-| `_seed_catchup_results` and the delta bound under test. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
-| The index-state schema/row the catch-up test asserts in the store. | [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
-| `_sync_worktree_memory_mtimes` and `_memory_divergence_paths` under test. | [worktrees/modules/start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
-| The fallback-default flip the sibling setup suite pins. | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `seed_commit_divergence` / `_seed_commit_mismatch` under test. | `seed_commit_divergence`; `_seed_commit_mismatch` | mcp/src/agents_remember/providers/cgc/seed.py:424-462; mcp/src/agents_remember/providers/cgc/seed.py:465-497 |
+| `_seed_catchup_results` and the delta bound under test. | `_seed_catchup_results` | mcp/src/agents_remember/providers/provider_setup.py:250-311 |
+| The index-state schema/row the catch-up test asserts in the store. | `record_index_state`; `read_recent_index_states` | mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:293-300 |
+| `_sync_worktree_memory_mtimes` and `_memory_divergence_paths` under test. | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/start.py:975-1026; mcp/src/agents_remember/worktrees/modules/start.py:1029-1046 |
+| The fallback-default flip the sibling setup suite pins. | `test_cgc_refresh_fallback_is_off_by_default` | mcp/tests/test_provider_setup.py:324-349 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-02T21:13:21+02:00 — W2-B07 curator: repaired 4 repository-reference citations after bounded source reads; the scoped citation check is clean.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_provider_index_lifecycle.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 25 line(s), touching only magic trailing commas.

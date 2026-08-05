@@ -30,11 +30,12 @@
     "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
     "mcp/src/agents_remember/worktrees/modules/start.py",
     "mcp/src/agents_remember/worktrees/modules/start_contract.py",
-    "mcp/src/agents_remember/worktrees/modules/sync.py"
+    "mcp/src/agents_remember/worktrees/modules/sync.py",
+    "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 21,
-    "fileSidecars": 21,
+    "sourceFilesInScope": 22,
+    "fileSidecars": 22,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -75,6 +76,9 @@
     "start_contract",
     "sync",
     "teardown",
+    "terminal",
+    "terminal_validation",
+    "validation",
     "worktrees"
   ],
   "hotPath": {
@@ -101,7 +105,8 @@
       "mcp/src/agents_remember/worktrees/modules/provider_teardown.py",
       "mcp/src/agents_remember/worktrees/modules/start.py",
       "mcp/src/agents_remember/worktrees/modules/start_contract.py",
-      "mcp/src/agents_remember/worktrees/modules/sync.py"
+      "mcp/src/agents_remember/worktrees/modules/sync.py",
+      "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -146,12 +151,12 @@
       "start_contract",
       "sync.py",
       "sync",
+      "terminal_validation.py",
+      "terminal_validation",
       "from agents_remember.kernel.git_command import run_git",
       "require_git",
       "committed_changed_paths",
-      "base..HEAD",
-      "verified..HEAD",
-      "EFA"
+      "base..HEAD"
     ]
   },
   "fallback": {

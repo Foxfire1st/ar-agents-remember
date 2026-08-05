@@ -35,13 +35,15 @@ register MCP tools or runtime behavior.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CRAP-Calculator lives in this package. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| The source quality suite wrapper lives in this package. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| The changed-lines coverage floor lives in this package. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CRAP-Calculator lives in this package. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92 |
+| The source quality suite wrapper lives in this package. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:119-178 |
+| The changed-lines coverage floor lives in this package. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 **mechanical only, attested**. The leaf's only edit
   to this file was the whole-tree `ruff format` in `00e8379`, which removed a trailing blank

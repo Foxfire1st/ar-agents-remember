@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ is documented here but **enforced in leaf L4**; until then hand-offs follow the
 
 ### Invariants And Boundaries
 
-**The spirit test does NOT apply to this seat — it belongs to the backend orchestrator or architect owner seat.** The manager gets **no
+**The spirit test does NOT apply to this seat — it is orchestrator-only.** The manager gets **no
 creative-liberty prompting in either direction**: the **default agent behavior stands** (fulfill the
 task, fill small unambiguous blanks a competent implementer would fill, and no more). A **plan delta
 beyond blank-filling ESCALATES to the orchestrator** — never a reshape, and **never straight to the
@@ -154,7 +154,7 @@ No other TODO is recorded for this job file.
 
 No external domain documentation applies to this repository-local orchestration job file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -171,13 +171,13 @@ override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
 
 The manager spawns workers, spawns the master-exit reviewer, and hands its master up to the orchestrator.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [manager.md](agents-remember/skills/l-01-agent-lifecycles/roles/manager.md) |
-| The frame that houses this seat and owns the escalation ladder, gate-delegation doctrine, and the two adversarial seams. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The worker seat the manager spawns fresh per leaf and whose turn report it reviews. | n/a | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md) |
-| The adversarial reviewer spawned at the master-exit seam, whose blocking verdict decomposes into fix leaves the manager dispatches. | L1-L35 | [reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md) |
-| The orchestrator seat the manager escalates to and hands the completed master over to. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
+| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Manager` | skills/l-01-agent-lifecycles/roles/manager.md:1-242 |
+| The frame that houses this seat and owns the escalation ladder, gate-delegation doctrine, and the two adversarial seams. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
+| The worker seat the manager spawns fresh per leaf and whose turn report it reviews. | `# Lifecycle — Worker` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:1-154 |
+| The adversarial reviewer spawned at the master-exit seam, whose blocking verdict decomposes into fix leaves the manager dispatches. | `# Lifecycle — Adversarial Reviewer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:1-187 |
+| The orchestrator seat the manager escalates to and hands the completed master over to. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-463; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:283-290 |
 
 As of the 260703-L8 reopened pass the file carries two additions: a flat-run note (in a flat series the ORCHESTRATOR wears this hat — same duties, same artifacts, one chair) and the reopen-and-reshape rule in the leaf-review bullet (a leaf whose deliverable came out wrong is reopened under its own id via task_reopen and its doc reshaped — never duplicated into a redo sibling; new leaves are for genuinely new changes).
 
@@ -187,7 +187,7 @@ As of cycle 4 the master-exit procedure is operable as-built: the manager RAISES
 
 As of cycle 5: the seam channel is exact: raise with lifecycle_gate(..., wait=false) → carry the returned gateId in the handover packet; identity truth restated (gate ids are model-visible, lifecycle ids stay server-side); the integrate-step sentence now defines the series' standing approval (the developer's portfolio-gate approval recorded in the planner master) and the seat's own hand-off idiom (gates + inbox, never the developer-facing notification). Cycle 6 completes the raise's address: §3's call now carries `enclosure="<master task name>"` — the master identity integration enforcement matches the gate by — and adds the all-human conditional (under an all-human policy the raise blocks and the developer decides; do not pass wait=false). Cycle 7 pins the address as a contract, not a convention: §3 now states the match is exact-string — the EXACT master task name as the contracts carry it (`worktree_start`'s `task_name`) — and that a wait=false raise without an enclosure is refused.
 
-As of 260703-L12 the leaf dispatch loop opens with **loop-tier scoring at dispatch** (blast radius · novelty · size → direct | builder-verified | full loop; round 2 (L12R-4) pins the direct tier so it cannot read manager-implements: NO loop machinery — the leaf's worker implements as usual, this seat still dispatches per leaf and never grows a build surface; the strategist's blast-radius register is the scoring input when an orchestration task exists; the mark — tier + scope manager|orchestrator — lands on the leaf doc with a decision-log entry; **a master whose leaves all score direct is a workflow-free manager**), and a full-loop leaf runs under this level's loop controls: hard cap 3 FULL rounds (delta-verifies by the same reviewer close rounds and do not count; fix rounds resume the same builder), and a non-shrinking round escalates to the orchestrator immediately with the full round history. The Comms escalation bullet adds the **quo-vadis test** — a high-blast-radius truth is flagged as quo-vadis when raised so the orchestrator relays it to the developer immediately; presentation-grade choices are decided and logged, never escalated.
+As of 260703-L12 the leaf dispatch loop opens with **loop-tier scoring at dispatch** (blast radius · novelty · size → direct | builder-verified | full loop; round 2 (L12R-4) pins the direct tier so it cannot read manager-implements: NO loop machinery — the leaf's worker implements as usual, this seat still dispatches per leaf and never grows a build surface; the strategist's blast-radius register is the scoring input when an orchestration task exists; the mark — tier + scope manager|orchestrator — lands on the leaf doc with a decision-log entry; **a master whose leaves all score direct is a workflow-free manager**), and a full-loop leaf runs under this level's loop controls: hard cap 3 FULL rounds (delta-verifies by the same reviewer close rounds and do not count; fix rounds resume the same builder), and a non-shrinking round escalates to the orchestrator immediately with the full round history. The Comms escalation bullet adds the **quo-vadis test** — a high-blast-radius truth is flagged as quo-vadis when raised so the orchestrator relays it to the architect immediately; presentation-grade choices are decided and logged, never escalated.
 
 ### 260707-HFX2-L11 Seat Cleanup Addition
 
@@ -211,7 +211,7 @@ cases.
 
 No sibling repository evidence is needed for this orchestration job file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -228,6 +228,11 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 10 citation findings and two wording
+  drifts. Re-anchored the five role/frame rows to their `#`-heading anchors with exact spans (canonical
+  manager.md 1-242 byte-identical to this copy; SKILL.md 6-416; worker 1-80; reviewer 1-151;
+  orchestrator 1-8/283-290). Aligned the spirit-test line to the source's "orchestrator-only" and the
+  quo-vadis relay to the architect (was "developer"). Scoped recheck clean.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 

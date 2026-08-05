@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/keymap/zones.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -50,13 +50,15 @@ browser-forbidden list fails here. Test-only; jsdom-free (pure logic).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract under test. | L28-L67 | [zones.ts](zones.ts) |
-| The reserved set + verification records the hygiene describe walks. | L62-L177 | [reserved.ts](reserved.ts) |
-| The DOM-level counterpart (real markers, tinykeys, preventDefault observation). | L177-L208 | [../../panels/session-cockpit/SessionsView.test.tsx](../../panels/session-cockpit/SessionsView.test.tsx) |
+| The contract under test. | `zoneForTarget` | dashboard/src/data/keymap/zones.ts:28-32 |
+| The reserved set + verification records the hygiene describe walks. | `BROWSER_FORBIDDEN` | dashboard/src/data/keymap/reserved.ts:153-202 |
+| The DOM-level counterpart (real markers, tinykeys, preventDefault observation). | `preventDefault` | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:417-417 |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 6 initial citation findings (3 anchor, 0 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4/S5: the zone-routing contract suite —
   PTY passthrough (incl. bare Esc + harness-owned chords), bound-reserved interception,

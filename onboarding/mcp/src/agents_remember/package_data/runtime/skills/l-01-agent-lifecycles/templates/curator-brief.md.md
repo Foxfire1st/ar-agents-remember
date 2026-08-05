@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -84,24 +84,25 @@ not a curator-suffixed leaf key.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [curator-brief.md](agents-remember/skills/l-01-agent-lifecycles/templates/curator-brief.md) |
-| The l-01 spine's Companion Files registry, which lists this template among the on-disk templates. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The curator role lifecycle this brief is the session start for. | n/a | [curator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md) |
-| The manager role lifecycle that compiles this brief and gates the closeout preview on the resulting memory pass. | n/a | [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md) |
-| `manager-brief.md`'s Dispatch defaults section, updated in the same leaf to reference this template. | n/a | [manager-brief.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md) |
+| Canonical source this bundle copy is sync-propagated from. | `# Template — Curator Brief` | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-105 |
+| The l-01 spine's Companion Files registry, which lists this template among the on-disk templates. | `## Companion Files` | skills/l-01-agent-lifecycles/SKILL.md:372-387 |
+| The curator role lifecycle this brief is the session start for. | `# Lifecycle — Curator` | skills/l-01-agent-lifecycles/roles/curator.md:1-132 |
+| The manager role lifecycle that compiles this brief and gates the closeout preview on the resulting memory pass. | `### 2 — Leaf dispatch loop (per leaf)` | skills/l-01-agent-lifecycles/roles/manager.md:95-174 |
+| `manager-brief.md`'s Dispatch defaults section, updated in the same leaf to reference this template. | `AR_SPAWN_ROLE` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md:38-43 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this doctrine file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02 repaired 5 Repo-Internal citation rows, resolving 10 manifest findings with exact current headings and code-repository-relative sources; verification metadata was preserved.
 - 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: documented
   `AR_SPAWN_ROLE=curator` plus the qualified leaf as the curator's `(leaf, role)` pair claim, with
   no role-suffixed leaf key. Verification metadata remains pinned until closeout stamps the L17

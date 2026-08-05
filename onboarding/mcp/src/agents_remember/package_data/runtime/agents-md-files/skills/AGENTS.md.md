@@ -52,27 +52,29 @@ None.
 No external domain documentation is needed for this repository-local routing
 guide.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
 The route list itself is the primary implementation evidence.
 
-| Finding                                                                                                             | Citations | Source Path |
-| ------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| Core-skill routing maps common memory, retrieval strategy, lifecycle, baseline, and carryover needs to C-* IDs. | L1-L33    | [mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Core-skill routing maps common memory, retrieval strategy, lifecycle, baseline, and carryover needs to C-* IDs. | "c-08-ar-coordination-context-resolver" | mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md:6-6 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this routing guide.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 2 initial citation findings (1 anchor, 0 prose, 1 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep, synced from root `agents-md-files/` via `sync-runtime.py`): the Reference Style section's lifecycle example now cites the `l-01-agent-lifecycles` skill instead of the retired `l-01-session-job-lifecycle`; the routing map itself is unchanged. Documented the Reference Style section in Conventions. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.

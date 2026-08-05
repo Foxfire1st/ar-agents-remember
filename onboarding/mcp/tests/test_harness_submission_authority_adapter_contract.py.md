@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_submission_authority_adapter_contract.py` |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-31T15:32+02:00                                            |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                        |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                        |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -54,13 +54,15 @@ successor stayed undispatched" is asserted rather than assumed.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The submission authority under test. | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The timeline-shaped suite that uses the repairing double. | [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
-| Log-side acceptance evidence the authority reads. | [test_harness_logs_user_message_readers.py](agents-remember/mcp/tests/test_harness_logs_user_message_readers.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The submission authority under test. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
+| The timeline-shaped suite that uses the repairing double. | `HarnessSubmissionAuthorityTests` | mcp/tests/test_harness_submission_authority.py:230-755 |
+| Log-side acceptance evidence the authority reads. | `test_claude_non_submission_records_never_prove_delivery` | mcp/tests/test_harness_logs_user_message_readers.py:46-82 |
 
 ## Update History
+
+- 2026-08-03T03:03:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 3 Repo-Internal table citations with exact authority, timeline-suite, and log-reader test anchors. Verification metadata remains unchanged for closeout.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   adapter-contract re-verification suite. Verification metadata is pinned to the leaf's

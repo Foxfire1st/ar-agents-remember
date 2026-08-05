@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-08-01T13:20+02:00                       |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`   |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated            | 2026-08-04T03:03+02:00                       |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -165,20 +165,21 @@ against the same coordination root as a live MCP server. Closing it means declar
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The umbrella dispatcher that registers this subcommand. | [__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
-| The trusted-settings discovery the optional `--config` falls back to. | [discovery.py](agents-remember/mcp/src/agents_remember/cli/discovery.py) |
-| The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
-| The heartbeat default (`DEFAULT_HEARTBEAT_SECONDS`) and the change-driven pacing (`ChangePacer`) that `--interval`/`--heartbeat` configure (260712-PTS-L3). | [serving/change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| Daemon CLI dispatch tests (status/stop/port precedence/failure exits/sim rejection). | [test_dashboard_daemon.py](agents-remember/mcp/tests/test_dashboard_daemon.py) |
-| Discovery unit tests (hits, precedence, template skip, miss error). | [test_cli_discovery.py](agents-remember/mcp/tests/test_cli_discovery.py) |
-| The app factory it serves (and the `now`/`before_tick` seams it passes). | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The sim builder / clock / feeder / speed parser it wires. | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
-| The `--config` → `McpRuntimeConfig` contract it mirrors. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| Tests covering the serving CLI (including the `--reload` path). | [tests/test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | [mcp/server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The umbrella dispatcher that registers this subcommand. | `build_parser` | mcp/src/agents_remember/cli/__main__.py:16-28 |
+| The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
+| The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
+| The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:283-376 |
+| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:84-158; mcp/src/agents_remember/cli/dashboard.py:211-232; mcp/src/agents_remember/cli/dashboard.py:246-267; mcp/src/agents_remember/cli/dashboard.py:270-297 |
+| Daemon CLI dispatch tests (status/stop/port precedence/failure exits/sim rejection). | `CliDaemonDispatchTests` | mcp/tests/test_dashboard_daemon.py:421-503 |
+| Discovery unit tests (hits, precedence, template skip, miss error). | `DiscoverConfigTests` | mcp/tests/test_cli_discovery.py:42-142 |
+| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:137-148 |
+| The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/mcp/config.py:113-137 |
+| Tests covering the serving CLI (including the `--reload` path). | `CliRunTests` | mcp/tests/test_serving.py:1600-1699 |
+| The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84 |
+| The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -188,9 +189,23 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the cadence-owner range (1 repair, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
+- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
+  underbound declaration/call fragments with the five complete CLI owners that define and consume
+  cadence across reload parent/worker, live, sim, and daemon paths. The changed binding is a
+  provisional `:1-1` input for the fresh Luna curator; no citation mechanics ran.
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: source-first separated
+  `ChangePacer`/heartbeat-default ownership from this CLI's flag definitions and cadence wiring.
+  Preserved both generated serving ranges and added one honest `:1-1` CLI binding covering reload,
+  live, daemon, and the deliberate sim exception; no citation mechanics ran.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped dashboard CLI citation claims; final exact frozen-snapshot check is clean.
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 12 citation claims and preserved verification metadata.
+
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: this file's change is **small, and is recorded as
-  small** — seven lines, one import (L20) and `declare_process_role("dashboard")` as the first
-  statement of `run` (L148). Nothing else in the file moved. Recorded the placement rule (entry
+  small** — seven lines, one import and `declare_process_role("dashboard")` as the first
+  statement of `run` cit:([`run`], mcp/src/agents_remember/cli/dashboard.py:161-196). Nothing else in the file moved. Recorded the placement rule (entry
   point, never `create_app`, because the factory is called in-process by tests and `_declared` has
   no reset) and, more usefully, **which serving processes the declaration actually reaches**:
   foreground live/sim yes; the `--daemon` child yes, because `serving/daemon.py` L201-L214 spawns

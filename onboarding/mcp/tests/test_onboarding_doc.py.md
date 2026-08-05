@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T04:47+02:00                     |
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4`                                  |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -40,11 +40,13 @@ No external documentation is needed for this standard-library test.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Module under test. | [onboarding_doc.py](agents-remember/mcp/src/agents_remember/kernel/onboarding_doc.py) |
-| Git-fixture gate coverage consuming the same helpers. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Module under test. | `meaningful_body` | mcp/src/agents_remember/kernel/onboarding_doc.py:94-108 |
+| Git-fixture gate coverage consuming the same helpers. | `RequireUpdatedSidecarContentTests` | mcp/tests/test_worktree_support.py:3683-3838 |
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.
 
 - 2026-06-10T04:47+02:00 — Created with the kernel helper extraction (issue #56 sub-task 1).

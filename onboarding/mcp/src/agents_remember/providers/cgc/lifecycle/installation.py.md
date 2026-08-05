@@ -66,13 +66,16 @@ removed from this lifecycle path.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC layout and backend settings come from the CGC core module. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
-| CGC backend install/start behavior is delegated to the backend module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| Docker runner image build and command helpers live in the runner module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC layout and backend settings come from the CGC core module. | `cgc_layout_from_args` | mcp/src/agents_remember/providers/cgc/lifecycle/core.py:37-56 |
+| CGC backend install/start behavior is delegated to the backend module. | `cgc_backend_start` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-409 |
+| Docker runner image build and command helpers live in the runner module. | `cgc_runner_image_build` | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-74 |
 
 ## Update History
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 3 citation claims
+  (Repo-Internal reference rows); scoped result 0 findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/cgc/lifecycle/installation.py` since the L2 base commit is

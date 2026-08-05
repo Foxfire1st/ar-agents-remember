@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,10 +25,10 @@ labeled, keyboard-scrollable overflow region so a long line never widens the pag
 
 ### Logic
 
-- `MarkdownBlockImpl` (L73-L84) renders `react-markdown` with `remark-gfm` inside a `prose` container that
+- cit:([`MarkdownBlockImpl`], dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:73-84) renders `react-markdown` with `remark-gfm` inside a `prose` container that
   is `tabIndex={-1}` and carries a stable `data-testid` (default `conversation-markdown`, overridable
   via `testId`).
-- `export const MarkdownBlock = memo(...)` (L83): re-renders only when the `markdown` string actually
+- cit:([`MarkdownBlock`], dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88): re-renders only when the `markdown` string actually
   changes. The reducer mutates the block's string in place per delta, so a stable memo keeps React
   notification batched (§12.3).
 - The `prose` recipe (L13) scopes wrapping/typography and puts fenced code (`& pre`) in its own
@@ -58,27 +58,29 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Consumed by message/thinking/interaction/tool/result items as the shared prose renderer. | — | [MessageItem.tsx](MessageItem.tsx) · [ThinkingItem.tsx](ThinkingItem.tsx) · [InteractionItem.tsx](InteractionItem.tsx) · [TurnResultItem.tsx](TurnResultItem.tsx) |
-| The house Markdown primitive precedent (react-markdown + remark-gfm, memoized) elsewhere in the cockpit. | — | [../../../grammar/Markdown.tsx](../../../grammar/Markdown.tsx) |
+| Consumed by message/thinking/interaction/tool/result items as the shared prose renderer. | `MessageItem`; `ThinkingItem`; `InteractionItem`; `TurnResultItem` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156; dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:35-56; dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-82 |
+| The house Markdown primitive precedent (react-markdown + remark-gfm, memoized) elsewhere in the cockpit. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims (2 table rows, 1 prose citation); scoped recheck clean (0 findings).
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The `prose`
   recipe grew the V10 wrapping rules, pushing `MarkdownBlockImpl` from L68 (now a `& th, & td`

@@ -54,30 +54,31 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The gold/purple tier tokens (+dim/ghost) this badge colours by. | theme.tokens.colors | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
-| Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. | render body + `commandFacts` | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
-| Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`. | L38; L336 | [LifecycleList.tsx](../panels/LifecycleList.tsx) |
-| Glyph-anatomy and both-size tests keep `sm` supported even though production currently uses only `row`. | L11-L50 | [RankBadge.test.tsx](RankBadge.test.tsx) |
+| The gold/purple tier tokens (+dim/ghost) this badge colours by. | `goldGhost`, `purpleGhost` | dashboard/panda.config.ts:48-48; dashboard/panda.config.ts:51-51 |
+| Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. | `commandFacts` | dashboard/src/panels/LifecycleList.tsx:572-580 |
+| Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`. | "../grammar/RankBadge" | dashboard/src/panels/LifecycleList.tsx:38-38 |
+| Glyph-anatomy and both-size tests keep `sm` supported even though production currently uses only `row`. | "keeps the viewBox fixed and shrinks only the rendered box for the sm size" | dashboard/src/grammar/RankBadge.test.tsx:32-43 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.
 - 2026-07-18T16:02+02:00 — FEUI MX-FIX-3 / missing FEUI-L8 history repair: recorded the landed
   retirement of the Chats/`SessionList` rank consumer. `LifecycleList` is now the sole production
   owner at `row`; `sm` remains supported and test-pinned with no production caller. This explicitly

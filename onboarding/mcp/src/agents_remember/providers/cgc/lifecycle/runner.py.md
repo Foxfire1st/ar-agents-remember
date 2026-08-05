@@ -54,14 +54,15 @@ Docker network, and route FalkorDB access through the backend container name.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Install/status/doctor behavior consumes runner image build and status helpers. | [installation.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
-| Watcher process control consumes Docker watcher command helpers. | [process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
-| Refresh and bounded query commands run through Docker command helpers. | [refresh.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py); [query.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/query.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Install/status/doctor behavior consumes runner image build and status helpers. | `cgc_install_commands`; `cgc_status`; `cgc_doctor` | mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:52-64; mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:317-352; mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:388-440 |
+| Watcher process control consumes Docker watcher command helpers. | `cgc_start_watch_process`; `cgc_start_all_watch_process` | mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:89-101; mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:104-116 |
+| Refresh and bounded query commands run through Docker command helpers. | `cgc_refresh_command`; `cgc_run_command` | mcp/src/agents_remember/providers/cgc/lifecycle/query.py:51-60; mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:34-50 |
 
 ## Update History
 
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped CGC lifecycle citation claims; final exact frozen-snapshot check is clean.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/cgc/lifecycle/runner.py` since the L2 base commit is the
   whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change

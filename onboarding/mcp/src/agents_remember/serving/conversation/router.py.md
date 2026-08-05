@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/router.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,28 +52,30 @@ None; child endpoint implementations are independently owned.
 
 No Domain Documentation source is configured for this internal FastAPI composition seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The three child routers reserve disjoint route prefixes and are behavior-empty at this gate. | L31-L46 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The foundation topology pins the exact one-call registration carrying the runtime. | L50-L62 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| Harness-control route registration constructs the runtime and mounts this root exactly once. | L144-L162 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| The install-once and fail-closed retrieval semantics the seam delegates to. | L81-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
+| The three child routers reserve disjoint route prefixes and are behavior-empty at this gate. | `test_exactly_two_conversation_ports_exist` | mcp/tests/test_conversation_foundation.py:22-29 |
+| The foundation topology pins the exact one-call registration carrying the runtime. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
+| Harness-control route registration constructs the runtime and mounts this root exactly once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
+| The install-once and fail-closed retrieval semantics the seam delegates to. | `install_conversation_runtime`, `conversation_runtime_from_app` | mcp/src/agents_remember/serving/conversation/runtime.py:81-87; mcp/src/agents_remember/serving/conversation/runtime.py:90-101 |
 
 ## Cross-Repo References
 
 No cross-repository boundary participates in local route composition.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 8 initial citation findings (4 anchor, 0 prose, 4 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-time composition binding —
   `register_conversation_routes(app, runtime)` now installs the immutable `ConversationRuntime`

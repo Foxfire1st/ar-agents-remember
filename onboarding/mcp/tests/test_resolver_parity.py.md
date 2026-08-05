@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_resolver_parity.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:59+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -33,16 +33,20 @@ deleted runtime skill script.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The package resolver module provides the tested CLI. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| Worktree contracts supply the contract-backed fixture. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The package resolver module provides the tested CLI. | `main` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:1-11 |
+| Worktree contracts supply the contract-backed fixture. | `default_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:345-395; mcp/src/agents_remember/worktrees/worktree_contract.py:398-404 |
 
 ## Series-Contract Notes
 
 Resolver parity tests now pin task-name lookup over active roots, nested parent disambiguation, leaf-id selection, archive exclusion, and parity between source API and MCP wrapper arguments.
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 2 citation rows
+  (`main` re-export at coordination_context_resolver.py 1-11; the contract fixture builders at
+  worktree_contract.py 345-395 and 398-404). Zero findings remain.
 
 - 2026-08-01T09:59+02:00 — 260731-EFA-L4 curator: No content impact: three fixture values moved
   onto the narrowed `WorkflowKind` (`Literal["chat-task", "light-task"]`,

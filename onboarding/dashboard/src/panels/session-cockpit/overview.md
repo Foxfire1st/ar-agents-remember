@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T14:05+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -286,33 +286,33 @@ The curator checked `system/sources.md`; no Domain Documentation source is confi
 interaction claims were verified from same-repository source/tests, the final reviewer PASS, the L8
 task evidence, and the recovered same-repository history pack.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for the canonical Chats route. | Source discovery checked | — |
+| No relevant domain documentation was found for the canonical Chats route. | — | — |
 
 ## Cross-Repo References
 
 The route composes repository-local data and server clients. Toad/T3 were historical design
 references, not imported governing implementations, so no cross-repository source is cited here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository implementation source governs FEUI-L8. | Import and recovered-history review | — |
+| No applicable cross-repository implementation source governs FEUI-L8. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Full-route composition and shell ownership. | [SessionsView.tsx](SessionsView.tsx) · [../../cockpit/Cockpit.tsx](../../cockpit/Cockpit.tsx) |
-| Legacy duty bar. | [ChatContextBar.tsx](ChatContextBar.tsx) |
-| Role/spawn rail and data derivation. | [SessionRail.tsx](SessionRail.tsx) · [../../data/railModel.ts](../../data/railModel.ts) |
-| PTY/ended continuity. | [PtySurface.tsx](PtySurface.tsx) · [EndedSessionState.tsx](EndedSessionState.tsx) |
-| Cleanup authority notice. | [LandedCleanupNotice.tsx](LandedCleanupNotice.tsx) |
-| Effective keyboard contract. | [../../data/keymap/overview.md](../../data/keymap/overview.md) |
-| Dev end-to-end scenario authority. | [../../dev/cockpitScenarios.ts](../../dev/cockpitScenarios.ts) |
-| The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | [test/fixtures/wire.ts](agents-remember/dashboard/src/test/fixtures/wire.ts) · [test/fixtures/conversationWire.ts](agents-remember/dashboard/src/test/fixtures/conversationWire.ts) |
-| The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | [test/wireFixtureGuard.ts](agents-remember/dashboard/src/test/wireFixtureGuard.ts) |
-| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | [data/harnessCatalog.ts](agents-remember/dashboard/src/data/harnessCatalog.ts) · [serving/response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Full-route composition and shell ownership. | `SessionsView`, `Cockpit` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336; dashboard/src/cockpit/Cockpit.tsx:359-383 |
+| Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
+| Role/spawn rail and data derivation. | `SessionRail`, `buildRailModel` | dashboard/src/data/railModel.ts:131-205; dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| PTY/ended continuity. | `PtySurface`, `EndedSessionState` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-60 |
+| Cleanup authority notice. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
+| Effective keyboard contract. | `useEffectiveKeymap`, `useKeyboardZones` | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| Dev end-to-end scenario authority. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:113-207 |
+| The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | `SERVED`, `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243; dashboard/src/test/fixtures/wire.ts:66-66 |
+| The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | `collectWireFixtureFindings` | dashboard/src/test/wireFixtureGuard.ts:484-587 |
+| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:355-360 |
 
 ## Current L5I Route State
 
@@ -385,13 +385,14 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 10 route-reference rows and 3 prose citation groups, including the contract-test and harness-response evidence; no route behavior claims were changed.
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "Fixture Contract For
   This Route" closed with *"`fixture ⊆ mirror` is what these suites enforce; `mirror ⊆ server` is
   enforced by nothing"* — the outer two nodes of a four-node chain, which reads as though nothing
   measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
   `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
-  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror` — L29-L53) plus runtime `VOCABULARIES`
-  assertions (L269, L348, L368) for the string unions `resolveJsonModule` widens to `string`. The
+  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`; cit:(["mirror ⊇ served", "served ⊇ mirror", "fixture ⊇ mirror"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)) plus runtime `VOCABULARIES`
+  assertions cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:268-283) for the string unions `resolveJsonModule` widens to `string`. The
   paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
   `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from
   "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the strength the
@@ -411,8 +412,9 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
   recorded as a LOSS: its three `control: "starting"` keys are gone, so the surviving
   `not.toContain("adapter starting")` assertions can no longer fail and that guarantee is marked
   superseded here — verified `DetectedHarness` declares exactly `id`/`name`/`detected`
-  (`serving/response_contract.py` L355-L360) on a `WireResponse` with `extra="forbid"` (L88-L100), and
-  that `HarnessInfo` mirrors the same three (`data/harnessCatalog.ts` L5-L9). Recorded the replacement
+  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:355-360) on a `WireResponse` with `extra="forbid"`
+  cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:88-100), and
+  that `HarnessInfo` mirrors the same three cit:([`HarnessInfo`], dashboard/src/data/harnessCatalog.ts:5-9). Recorded the replacement
   guarantee (typed `HARNESSES` annotation + the per-row `Object.keys` assertion) and the reason the
   chooser needs a local belt at all: `wireFixtureGuard.ts` discovers vocabulary from a first-line
   `// TypeScript mirror of` marker, `harnessCatalog.ts` has none, and the guard's own note lists it

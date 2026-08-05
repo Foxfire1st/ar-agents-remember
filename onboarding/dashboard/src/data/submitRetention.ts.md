@@ -38,26 +38,28 @@ full-text request records in a long-running dashboard.
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The cockpit store invokes these compactors for per-session history and queue state. | — | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| Retention tests protect active rows and cap only settled tails. | — | [submitRetention.test.ts](submitRetention.test.ts) |
+| The cockpit store invokes these compactors for per-session history and queue state. | `enqueueSubmit`, `upsertSubmitRecord` | dashboard/src/data/sessionCockpitStore.ts:254-254; dashboard/src/data/sessionCockpitStore.ts:256-256 |
+| Retention tests protect active rows and cap only settled tails. | "reliable-submit retention policy (F4)" | dashboard/src/data/submitRetention.test.ts:25-78 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Retention is internal to the dashboard projection. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 2 citation rows; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

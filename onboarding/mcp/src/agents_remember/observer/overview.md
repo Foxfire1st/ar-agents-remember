@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -282,7 +282,7 @@ sidecar timestamp compare (N6), and the workspace crash-window ordering note (N2
   activity — keyed on inactivity, **not** a `lifecycle.ended` event, so dormant logs age
   out on their own), and a bounded recent-window replay on a fresh connect (not
   whole-history). `prune_expired_lifecycle_event_logs` now takes a `protected_lifecycle_ids`
-  exemption checked before dormancy (L5): logs in that set are never pruned by inactivity, so a
+  exemption checked before dormancy in the L5 retention change: logs in that set are never pruned by inactivity, so a
   live master series' history survives (the set comes from
   `worktree_provider_admission.series_retained_lifecycle_ids`). This backend policy is the Event
   River lifetime boundary; the dashboard keeps a memory-bounded sliding window but applies no
@@ -561,7 +561,7 @@ The slice-3a projection read side:
   worktree snapshots stay only while their leaf contract still points at an existing code worktree.
   Projection-time pruning removes valid orphaned snapshots before the analytical surface is read, and
   cleanup removes the exact snapshot for the contract it is reclaiming.
-- **Raw event retention is inactivity-keyed (task 34), but a live master series supersedes it (L5):** a
+- **Raw event retention is inactivity-keyed (task 34), but a live master series supersedes it in L5:** a
   lifecycle log is pruned after >1h with no real (non-heartbeat) activity — fleeting and enclosure
   lifecycles alike — keyed on inactivity rather than a `lifecycle.ended` event, and the heartbeat ticker
   decays after ~10 min idle so a dormant lifecycle stops refreshing its own activity and ages out;
@@ -571,7 +571,7 @@ The slice-3a projection read side:
   sibling leaf's) history; the series releases only when all leaves are archived plus the one-week
   grace. The frontend keeps a memory-bounded sliding window and virtualizes it, adding no shorter
   display cutoff.
-- **The durable enclosure — not the lifecycle log — is the source of truth for liveness (L5):** a
+- **The durable enclosure — not the lifecycle log — is the source of truth for liveness in L5:** a
   *missing* lifecycle log (pruned for inactivity) never retires a live enclosure from either admission
   set; only a *present*, genuinely terminal/post-phase log demotes it. This is what keeps a running
   worktree visible in the Engine Room even after its event log ages out.
@@ -586,24 +586,31 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The design this substrate implements (entities, store layout, retention, TTL project-and-prune). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
-| The persisted-record envelope is the peer of the MCP response contracts. | [models/](agents-remember/mcp/src/agents_remember/models/) |
-| Provider-node projection is a route-local read-side helper used by the snapshot reader. | [provider_nodes.py](provider_nodes.py) |
-| Raw event retention is centralized before `/api/events` replay and projection ticks prune expired lifecycle logs. | [event_retention.py](event_retention.py) |
-| Active-enclosure worktree admission gates provider/setup/runtime facts before projection. | [worktree_provider_admission.py](worktree_provider_admission.py) |
-| Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | [series_tokens.py](series_tokens.py) |
-| Drift snapshot pathing and worktree-orphan pruning are centralized for producer/projection/cleanup parity. | [drift_snapshots.py](drift_snapshots.py) |
-| The shared per-tick contract snapshot and its cross-tick stat-identity parse cache (PTS-L2). | [contract_snapshot.py](contract_snapshot.py) |
-| The span/heartbeat idiom the store generalizes (schema-versioned, atomic writes, stale projection). | [providers/setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
-| The partition, coverage and terminality suites that hold the vocabulary to the buckets: `MetricsBucketVocabularyTests`, `StatePartitionTests`, `TerminalityIsStructuralTests`, `StateVocabularyReaderTests`, `StateCountFieldTests`. | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
-| The write side's asymmetric refusal — `end()` rejects an unknown outcome instead of coercing it. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
-| The gate store's two read policies and its `projected_current` fold — the tolerant half this route's projection uses, and the strict `read` the enforcement fold uses. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
-| The expectation-row store's `pending_for_projection`, whose docstring names this route's `suppress`-plus-strict-read defect as the reason it exists. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
-| Where gate-log reclamation went: the owner process, on terminal decisions, behind a non-raising ownership question. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The `ar-durable-store/1.0` contract that declares the strict/tolerant split and the unconditional per-log lock. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The TypeScript mirror, which now carries the SAME partition shape as this route: `LIVE_STATES` / `TERMINAL_STATES` declared as halves, `LIFECYCLE_STATES` spread from them, and `ACTIVE_STATES = LIVE_STATES` rather than a difference. It refuses double-filing at compile time (`StatesAreFiledOnce`, a `never` constraint) where this route refuses it at import; the one thing it cannot follow is a duplicate WITHIN one half, which a TS tuple keeps and `Literal` collapses. | [dashboard/src/types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The foundational approved design for this substrate: entities, store layout, retention, and TTL project-and-prune; current retention has evolved beyond that design. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
+| `Event` is the observer event model. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
+| `StrictResponseModel` is the shared response-model base. | `StrictResponseModel` | mcp/src/agents_remember/models/base.py:10-13 |
+| The raw event stream entry is `stream_raw_events`. | "def stream_raw_events" | mcp/src/agents_remember/serving/events.py:230-277 |
+| The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`. | "def prune_expired_lifecycle_event_logs" | mcp/src/agents_remember/observer/event_retention.py:73-107 |
+| `workspace_provider_nodes` is one of the route-local provider-node helper symbols. | `workspace_provider_nodes` | mcp/src/agents_remember/observer/provider_nodes.py:16-39 |
+| Active-enclosure admission is implemented by `admitted_worktree_groups`. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
+| Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/observer/projection_inputs.py:189-407 |
+| Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
+| `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/observer/drift_snapshots.py:19-22 |
+| Projection input invokes the orphan-pruning helper. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/observer/projection_inputs.py:349-349 |
+| The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/observer/drift_snapshots.py:36-69 |
+| `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/observer/contract_snapshot.py:38-38 |
+| `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/observer/contract_snapshot.py:60-126 |
+| `progress_status` is the setup-progress status record. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
+| The `MetricsBucketVocabularyTests` suite pins the bucket vocabulary. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection.py:1627-1732 |
+| The ambient `end()` entry and its focused terminal-state test are named here. | "def end"; `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` | mcp/src/agents_remember/observer/ambient.py:243-243; mcp/tests/test_observer_ambient.py:166-166 |
+| `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
+| The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:215-217 |
+| `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
+| The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:42-42; mcp/src/agents_remember/controlplane/durable_store.py:14-24 |
+| `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:217-217 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -724,6 +731,8 @@ strict read is not per-row tolerance, it is whole-file silence.**
 
 ## Update History
 
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 repairs and the pre-PASS whole-claim audit; narrowed the ContractSnapshot row to its generated declaration extent and rechecked this card through the locked exact-document fixer/check.
+
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction): **two overstatements of the read
   policy, in the route whose readers are the tolerant ones.** Both came from the 13:20 entry below.
   (1) The L5 section said "Every store on the `ar-durable-store/1.0` contract now offers both" and
@@ -755,22 +764,19 @@ strict read is not per-row tolerance, it is whole-file silence.**
   a route-level rule with its concrete trap: `ValidationError` subclasses `ValueError`, so
   `suppress(OSError, ValueError)` around a strict read discards the file rather than the row, which
   is exactly what `read_expectation_rows` was doing. Added four reference rows (`controlplane/store.py`,
-  `controlplane/expectation_rows.py`, `mcp/tools/gates.py`, `controlplane/durable_store.py`). The
-  file card for `snapshots.py` carries the reader-level detail and the full citation repair pass —
-  the L5 diff shifted every `snapshots.py` citation past L134. Verification metadata pinned until
-  closeout stamps the L5 code commit.
+  `controlplane/expectation_rows.py`, `controlplane/gate_decisions.py`, `controlplane/durable_store.py`). The
+  file card for `snapshots.py` carries the reader-level detail and the full citation repair pass.
+  Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change), **one corrected claim
   only**: `dashboard/src/types/projection.ts` adopted this route's partition after the 09:26 entry
   below was written, so the Repo-Internal References row calling it "the TypeScript mirror that
   still carries the two-list shape this route dropped" became false. Verified against the current
-  file: `LIVE_STATES` (L42) and `TERMINAL_STATES` (L48) are the halves,
-  `LIFECYCLE_STATES = [...LIVE_STATES, ...TERMINAL_STATES]` (L59), and `ACTIVE_STATES = LIVE_STATES`
-  (L72) — not a difference. The row now records what the two sides share and the one asymmetry that
-  remains (a duplicate within one half: `Literal["a","a"]` collapses here, a TypeScript tuple does
-  not, so the mirror falls back to a runtime check). `projection.py`'s "STATE OF THE MIRROR" comment
-  (L194-L226) was rewritten in the same change and now says the same thing. Nothing else on this
-  route was touched — the `260731-EFA-L4 The State Vocabulary Is A Checked Partition` section
-  (L615-L659) was re-read and every claim in it still holds.
+file: `LIVE_STATES` and `TERMINAL_STATES` are the halves, and
+  `LIFECYCLE_STATES = [...LIVE_STATES, ...TERMINAL_STATES]` and `ACTIVE_STATES = LIVE_STATES` — not
+  a difference.
+  The remaining asymmetry is a duplicate within one half: `Literal["a","a"]` collapses here, a
+  TypeScript tuple does not, so the mirror falls back to a runtime check. `projection.py`'s
+  "STATE OF THE MIRROR" comment was rewritten in the same change.
 - 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: the state vocabulary became a **checked
   partition** and the metrics buckets became a function of it, so this route's model was corrected
   rather than attested. Recorded that `State = Literal[LiveState, TerminalState]` (PEP 586 flattens

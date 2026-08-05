@@ -5,7 +5,7 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/retire.py`     |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-07-09T13:36:16+02:00                        |
+| lastUpdated            | 2026-08-02T01:42+02:00                           |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                    |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                   |
@@ -16,28 +16,20 @@
 
 ## Purpose
 
-`retire.py` is the shared explicit seat-retirement mechanics module (260707-HFX-L8, issue #12):
-kill the tmux session, then persist the catalog's terminal mark + retirement provenance. It exists
-so the manual retire paths (`session_retire` MCP tool, `POST /api/terminal/{session}/retire`) and
-explicit landed archive cleanup (`POST /api/terminal/landed-cleanup`) share the same one-seat
-"kill + mark" primitive. Normal successful completion no longer uses this module; HFX2-L11 moved
-that edge to non-destructive landing in `landing.py`.
+`retire.py` owns the single-seat retirement primitive: it optionally stops the
+control session, terminates the terminal host session, and persists a
+`SeatClosure` through the terminal catalog.
 
 ## Code Commentary
 
 ### Logic
 
-`retire_entry(catalog, host, entry, *, at, by_session, reason, edge)` is the atomic single-seat
-retire: calls `host.terminate(entry.id, tmux_name=entry.tmux_name)` (idempotent against an
-already-gone tmux session — the terminate endpoint already relies on this same idempotence), then
-`catalog.mark_retired(entry.id, at=at, by_session=by_session, reason=reason, edge=edge)`. Returns
-the updated row, `None` if the catalog no longer has the id (a concurrent retire/terminate raced
-this one), or the unchanged entry if it was already retired (`mark_retired`/`with_retirement` is
-idempotent — see `terminal_catalog.py`).
-
-The module intentionally has no leaf-scoped bulk-retire helper after HFX2-L11. Completion edges call
-`land_seats_for_leaf` instead, and the landed cleanup endpoint performs its own per-session
-server-side recheck before calling `retire_entry`.
+`retire_entry` accepts a `SeatClosure` rather than separate provenance
+keywords. When a control endpoint exists it first calls
+`stop_control_session`. A `HarnessControlError` is recorded in
+`control_raw["retireControlStopError"]` and the entry is upserted so an
+orphaned terminal can still be reaped. The function then calls
+`host.terminate` and `catalog.mark_retired` with the closure's four fields.
 
 ### Conventions
 
@@ -48,12 +40,10 @@ import cycle — callers pass a real `TerminalHost` instance at call time.
 
 - Transcripts are never touched here — retiring is a catalog-and-tmux operation only; this module
   has no knowledge of transcript storage.
-- Manual-path callers always call `check_retire_authority` before invoking `retire_entry` (see
-  `mcp/tools/terminal.py`, `serving/app.py`). The landed cleanup endpoint has no acting seat; it
-  limits itself by re-reading each requested catalog row and accepting only rows still
-  `status:"landed"`.
-- `retire_entry` itself does not catch exceptions from catalog I/O or `host.terminate`; callers own
-  route-specific error handling and reporting.
+- A graceful control-stop failure is retained on the catalog entry before
+  terminal termination continues.
+- Exceptions other than the explicitly handled `HarnessControlError` are
+  not swallowed by this module.
 
 ### Todos
 
@@ -65,52 +55,32 @@ No relevant external documentation found after checking the repo Domain Document
 seat-retirement-specific behavior; this file is same-repository runtime plumbing implementing a
 developer-ruled cleanup automation, not an external standard.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this retire mechanics shape; the leaf task doc's E2 example and this implementation are the source of truth. | L1-L70 | [retire.py](retire.py) |
+| No relevant external/domain document is needed; the module's implementation is the source of truth. | n/a | n/a |
 
 ## Repo-Internal References
 
-`retire.py` is called from the manual MCP/serving retire paths (after policy approval) and from the
-landed archive cleanup endpoint after that endpoint rechecks current catalog status.
-
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `check_retire_authority` gates the manual path BEFORE `retire_entry` is ever called; `retire_entry` itself performs no authority check. | `check_retire_authority` | [retire_policy.py](retire_policy.py) |
-| `mark_retired`/`with_retirement` are the catalog-side terminal mark this module writes; idempotence (a no-op on an already-`terminated` row) originates there, not in this file. | `TerminalCatalog.mark_retired`; `with_retirement` | [terminal_catalog.py](terminal_catalog.py) |
-| `session_retire_payload` calls `retire_entry` after its own authority check, with `edge="manual"`. | `session_retire_payload` | [../../mcp/tools/terminal.py](../../mcp/tools/terminal.py) |
-| `POST /api/terminal/{session}/retire` calls `retire_entry` identically to the MCP tool path after policy approval. | `api_terminal_retire` | [app.py](app.py) |
-| `POST /api/terminal/landed-cleanup` rechecks each requested row and calls `retire_entry` only for rows still `status:"landed"`. | `api_terminal_landed_cleanup` | [app.py](app.py) |
-| Normal successful completion calls `land_seats_for_leaf`, not retire mechanics. | `_auto_land_completed_seats` | [../../controllers/worktree_tools.py](../../controllers/worktree_tools.py) |
-| `log_retire_event` is called by every caller of this module AFTER a successful retire, never from inside this module itself (retire mechanics and observer-event emission stay separate). | `log_retire_event` | [seat_events.py](seat_events.py) |
+| The closure record carries timestamp, reason, edge, and acting session. | `SeatClosure` | mcp/src/agents_remember/serving/retire.py:21-34 |
+| Retirement handles graceful control-stop failure, terminal termination, and catalog marking. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
+| The control-session stop failure type is handled explicitly. | "except HarnessControlError as exc" | mcp/src/agents_remember/serving/retire.py:52-52 |
+| Retirement invokes the control-session stop path when configured. | "stop_control_session(entry)" | mcp/src/agents_remember/serving/retire.py:51-51 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local retire-mechanics module. | — | — |
 
-### 260713-PHA-L5 Adapter Shutdown
-
-Retirement observes adapter-owned terminal state and uses the bridge shutdown path for hosted
-sessions; it does not infer completion from pane timing or create a parallel delivery channel.
-
-## 260731-EFA-L2 Current Delta
-
-**`SeatClosure`** (`at`, `reason`, `edge`, `by_session`) now carries the terminal mark's whole
-provenance: **why a seat stopped, when, and on whose authority**. Both closure paths write it —
-retirement (`killed`) and landing (`archived`, in [landing.py](landing.py.md)) — and the four facts
-are one record: a timestamp with no reason is an unexplained tombstone, and a reason with no edge
-cannot be traced back to the chain step that closed the seat. They are therefore chosen together at
-the one place that decides to close the seat. The retire authority policy (owner never self-retires,
-a manager retires only its own master's worker/reviewer seats, the orchestrator retires anything) is
-unchanged.
-
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
+- 2026-08-02T01:42+02:00 — No content impact: corrected Source Path link depth. The link(s) in this document carried one `../` too many and had never resolved from this card's directory — not code moving out from under a citation, the path as written. Enumerating every depth in both trees leaves exactly one that resolves and it is exactly one level shallower, so there was nothing to judge (`memory_quality/style/citations`, `citation_link_depth_wrong`). No claim, range or target document changed. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `SeatClosure` as the shared terminal-mark provenance for both retirement and landing; authority policy unchanged.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented protocol-aware retirement boundary.
 

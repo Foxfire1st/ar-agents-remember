@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `dashboard/src/panels/file-viewer/FilePane.tsx`    |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-29T09:06+02:00                             |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`         |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-08-04T03:03+02:00                             |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -53,13 +53,29 @@ L1 `language` id.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The CodeMirror theme bundle (chrome + syntax `HighlightStyle`) it loads. | L9-L41 | [codemirrorTheme.ts](codemirrorTheme.ts) |
-| The lazy language-by-extension map it awaits. | L8-L49 | [langByExtension.ts](langByExtension.ts) |
-| The dual pane that mounts it on the code side. | L58-L70 | [DualPane.tsx](DualPane.tsx) |
-| The route overview that governs this component. | — | [overview.md](overview.md) |
+| The sibling theme module defines the CodeMirror chrome plus syntax `HighlightStyle` bundle. | `chrome`; `"HighlightStyle.define"`; `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:9-27; dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49 |
+| The `FilePane` module imports the sibling `codeTheme`. | "import { codeTheme }" | dashboard/src/panels/file-viewer/FilePane.tsx:10-10 |
+| `FilePane` installs `codeTheme` in the `EditorState` extension list. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| The sibling language module defines the lazy language-by-extension map. | `langExtension` | dashboard/src/panels/file-viewer/langByExtension.ts:8-49 |
+| The `FilePane` module imports the sibling `langExtension`. | "import { langExtension }" | dashboard/src/panels/file-viewer/FilePane.tsx:11-11 |
+| `FilePane` awaits `langExtension` for the requested language, appends a returned extension, and then creates the `EditorView`. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| The dual pane that mounts it on the code side. | `CodeSide`; `DualPane` | dashboard/src/panels/file-viewer/DualPane.tsx:59-71; dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
+| The route overview that governs this component. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-109 |
 
 ## Update History
 
+- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the four whole-claim ranges (4 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
+- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: split both
+  underbound import-plus-behavior groups into source-local import claims and whole-`FilePane`
+  behavioral claims. All four changed bindings are provisional `:1-1` inputs for the fresh Luna
+  curator; no citation mechanics ran.
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: source-first separated the
+  sibling theme/language definitions from `FilePane`'s actual imports and consumption. Preserved
+  the already-correct generated definition ranges and added only honest `:1-1` bindings for the
+  component-owned install/await relationships; no citation mechanics ran.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped file-viewer citation claims; final exact frozen-snapshot check is clean.
 - 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the reusable read-only CodeMirror 6 code pane (read-only + non-editable, line numbers, line wrapping, the podracer theme, and lazily code-split language packs; imperative `EditorView` lifecycle with a `disposed` guard); reused by L4 via `@codemirror/merge`. Verification metadata pinned to the task base until closeout stamps the L2 code commit.

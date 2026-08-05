@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ helper contract probe, so an auto-updated runtime that answers `list` enables th
 
 No Domain Documentation source is configured for this internal gate registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -82,18 +82,18 @@ The gate suite now covers contract-probe pass/fail (a version drift still enable
 passes), missing binaries, and helper preflight; the installed suite re-proves the same gates live;
 the helper host reports the runtime/helper versions as informational evidence (no version compare).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| A codex version drift still ENABLES the surface when the connect+list probe passes; a failed probe demotes to unverified. | (test) | [test_conversation_library_gates.py](agents-remember/mcp/tests/test_conversation_library_gates.py) |
-| Helper success enables Pi fully; helper failure and missing locked dependencies demote to unverified. | L158-L209 | [test_conversation_library_gates.py](agents-remember/mcp/tests/test_conversation_library_gates.py) |
-| The helper host reports observed runtime/helper versions as informational evidence only; the operation result is the gate (no version comparison). | L145-L151 | [helper_host.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/helper_host.py) |
-| The installed-runtime suite re-proves the Codex and Pi gates on real harnesses (the exact-identity checks still skip on version drift — recorded conservatism). | L136-L153; L217-L231 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| A codex version drift still ENABLES the surface when the connect+list probe passes; a failed probe demotes to unverified. | "def test_version_drift_still_enables_codex_when_the_probe_passes(self) -> None:"; "def test_failed_probe_is_unverified_not_unavailable(self) -> None:" | mcp/tests/test_conversation_library_gates.py:100-100; mcp/tests/test_conversation_library_gates.py:119-119 |
+| Helper success enables Pi fully; helper failure and missing locked dependencies demote to unverified. | "def test_helper_success_enables_pi_with_full_completeness(self) -> None:"; "def test_helper_failure_is_unverified(self) -> None:"; "def test_missing_helper_dependencies_are_unverified(self) -> None:" | mcp/tests/test_conversation_library_gates.py:165-165; mcp/tests/test_conversation_library_gates.py:184-184; mcp/tests/test_conversation_library_gates.py:201-201 |
+| The helper host reports observed runtime/helper versions as informational evidence only; the operation result is the gate (no version comparison). | "def helper_preflight(" | mcp/src/agents_remember/serving/conversation/library/helper_host.py:74-74 |
+| The installed-runtime suite re-proves the Codex and Pi gates on real harnesses (the exact-identity checks still skip on version drift — recorded conservatism). | "def test_live_gate_supports_list_read_and_partial_completeness(self) -> None:"; "def test_live_helper_gate_supports_pi_history(self) -> None:"; "def test_open_real_pi_session_proves_exact_identity(self) -> None:" | mcp/tests/test_conversation_library_installed.py:136-136; mcp/tests/test_conversation_library_installed.py:217-217; mcp/tests/test_conversation_library_installed.py:366-366 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local gate registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -109,6 +109,8 @@ real probe. The gate verdicts themselves are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 4 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `GateProbes` / `DEFAULT_GATE_PROBES` as the one substitutable installed-ness surface.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling

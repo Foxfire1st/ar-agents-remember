@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EventRiver.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T11:15+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -82,19 +82,20 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The panel under test (now a virtualized list; the `read.packet` per-kind row on an otherwise-generic river). | — | [EventRiver.tsx](EventRiver.tsx) |
-| The summary layer whose known-kind behavior, lifecycle-only task-document label fallback, and context-ready gate the render tests exercise. | L99-L110; L145-L158; L296-L357 | [eventSummary.ts](eventSummary.ts) |
-| The render regression pins that a lifecycle-bound row stays hidden until task-document context is available. | L234-L260 | [EventRiver.test.tsx](EventRiver.test.tsx) |
-| The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts). | L21-L36; L138-L147; L190-L213 | [EventRiver.test.tsx](EventRiver.test.tsx) |
-| `ev` delegates to the shared `observerEvent` builder and drops the `as ObserverEvent` cast. | L48-L56 | [EventRiver.test.tsx](EventRiver.test.tsx) |
-| `observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror. | L364-L381 | [test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| The `read.packet` emitter that carries `data.repoId` + facts-only `files`. | — | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The `ObserverEvent` shape (trust/actor/kind/data) the helper builds. | — | [types/event.ts](../types/event.ts) |
-| `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | L64-L108 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
+| The panel under test (now a virtualized list; the `read.packet` per-kind row on an otherwise-generic river). | "Event river" | dashboard/src/panels/EventRiver.tsx:89-89 |
+| The summary layer whose known-kind behavior, lifecycle-only task-document label fallback, and context-ready gate the render tests exercise. | `summarizeReadPacket` | dashboard/src/panels/eventSummary.ts:175-195 |
+| The render regression pins that a lifecycle-bound row stays hidden until task-document context is available. | "waits for lifecycle summary context before rendering lifecycle-bound rows" | dashboard/src/panels/EventRiver.test.tsx:240-265 |
+| The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts). | "retains and virtualizes the full window beyond the old newest-60 cap" | dashboard/src/panels/EventRiver.test.tsx:196-218 |
+| `ev` delegates to the shared `observerEvent` builder and drops the `as ObserverEvent` cast. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
+| `observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
+| The `read.packet` emitter that carries `data.repoId` + facts-only `files`. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:395-422 |
+| The `ObserverEvent` shape (trust/actor/kind/data) the helper builds. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
+| `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | `leafTitleForKey` | dashboard/src/data/taskIdentity.ts:95-100 |
 
 ## Update History
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 8 repository-reference citations and normalized 1 prose citation (8/8 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T11:15+02:00 — 260731-EFA-L4 curator: corrected the `ev(...)` description. It no longer
   assembles the envelope and defaults `trust` itself — it delegates to `test/fixtures/wire::observerEvent`,
@@ -102,16 +103,16 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
   `Partial<ObserverEvent> & Pick<ObserverEvent, "kind">` parameter. Traced the spread order through both
   functions to confirm the effective defaults are unchanged (`id` `e-<kind>-<random>`, the frozen
   `ts`, `actor: "model"`, and an explicit `partial.id` still winning), so no assertion moves. Repaired
-  three citations: the context-ready test L233-L258 → L234-L260, the hydration/virtualization row
-  L19-L34;L137-L145;L189-L211 → L21-L36;L138-L147;L190-L213, and the `taskIdentity` row L77-L108 →
-  L64-L108 so it actually contains `qualifiedLeafKey` (L64).
+  three citations: the context-ready test range was refreshed, the hydration/virtualization row
+  ranges were refreshed, and the `taskIdentity` row was widened so it actually contains
+  `qualifiedLeafKey`.
 
-- 2026-07-06T10:45+02:00 — L11 body note: enclosure fixtures carry the required existence flags (default true); river behavior unchanged. Verification metadata pinned until closeout stamps the L11 commit.
+- 2026-07-06T10:45+02:00 — Enclosure-fixture body note: the fixtures carry the required existence flags (default true); river behavior unchanged. Verification metadata pinned until closeout stamps the leaf commit.
 
-- 2026-07-06T03:10+02:00 — 260703-L11: the local `enclosure(...)` fixture now defaults the new required
+- 2026-07-06T03:10+02:00 — 260703 enclosure-fixture update: the local `enclosure(...)` fixture now defaults the new required
   `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags to `true`, matching the projection
   contract; no assertion change — the river does not filter rows on worktree existence. Verification
-  metadata pinned until closeout stamps the L11 commit.
+  metadata pinned until closeout stamps the leaf commit.
 - 2026-06-28T13:54+02:00 — Task 34: the suite now renders a **virtualized** EventRiver — a `beforeAll`
   stubs `HTMLElement.prototype.offsetHeight`/`offsetWidth` so TanStack measures a non-zero viewport in
   jsdom (otherwise no rows mount). The old "renders events beyond the newest-60 window" test is now

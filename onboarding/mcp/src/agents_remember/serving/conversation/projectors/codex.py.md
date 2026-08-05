@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/codex.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,15 +37,15 @@ parent-scoped.
 
 ### Logic
 
-`map_native_frame` (L130-L141) parses one `thread/read` item frame and delegates to
+cit:([`map_native_frame`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:132-145) parses one `thread/read` item frame and delegates to
 `_map_thread_item`; turn parenting comes from the frame's `nativeParentId`. `map_evidence_frame`
-(L144-L275) discriminates live evidence by adapter event kind, then — for `codex-notification`
-frames — by the native METHOD the adapter preserves on `frame.native_method` (L212; the method
+discriminates live evidence by adapter event kind, then — for `codex-notification`
+frames — by the native METHOD the adapter preserves on cit:([`native_method`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:212-212) (the method
 used to be dropped before the projector, so shapeless startup notices
 flooded as one `unknown-vendor` row per configured MCP server). It also accepts the multiplexed
-demux context `parent_thread_id` (L152), consulted only where parent-vs-agent
+demux context cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:152-152), consulted only where parent-vs-agent
 cannot be told from the frame alone (`thread/started`) — without it those frames keep the
-pre-multiplexing silent behavior rather than guess. `_SILENT_NOTIFICATION_METHODS` (L83-L93) drops the
+pre-multiplexing silent behavior rather than guess. cit:([`_SILENT_NOTIFICATION_METHODS`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:83-93) drops the
 codex 0.144.5 session lifecycle/status/telemetry burst — one `mcpServer/startupStatus/updated`
 per configured MCP server, `remoteControl/status/changed`, the `warning`/`configWarning`
 advisory family, plus `account/rateLimits/updated` and `thread/tokenUsage/updated` — by method,
@@ -56,42 +56,41 @@ config note). Sub-agent multiplexing changed this set at both ends: `thread/sett
 `codex-notification` and is equally timeline-less), and `thread/started` was REMOVED — it is no
 longer blanket-silent but mapped by `_map_thread_started`. Frames without a known drop method
 fall through the schema-disjoint params-shape branches: `completed` frames map `turn/completed`
-to a `turn-result` item plus `MappedTurnOutcome` (via `_map_turn_completed`, L1010-L1051);
+to a `turn-result` item plus `MappedTurnOutcome` (via cit:([`stop_reason`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1206-1206));
 `transcript` frames carry full `item/completed` items; `state` frames feed canonical status only
 and mint no items; item-bearing `startedAtMs` frames resolve item started/completed, indexed
 deltas (`summaryIndex`/`contentIndex`) to their named blocks, bare deltas (agentMessage/plan/
 commandExecution output share one shape) to an empty block id the engine resolves through the
 item kind, `patchUpdated` change lists to diff-block tool items, and token-usage/rate-limit
-frames to nothing (L3 telemetry evidence, never token-theater rows). A method that matches no
-drop and no shape becomes `MappedUnknownVendor` (L247-L259) but NAMES the method
+frames to nothing (telemetry evidence, never token-theater rows). A method that matches no
+drop and no shape becomes cit:([`MappedUnknownVendor`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:247-259) but NAMES the method
 (`codex:notification:<method>` / `unrecognized codex notification <method>`), so a genuinely
 novel notification stays visible AND identifiable rather than anonymous.
 
-Sub-agent roster mapping (L722-L1164). The four agent-thread lifecycle methods are no longer four
+Sub-agent roster mapping cit:(["codex app-server thread/started (sub-agent registration)"], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1027-1027). The four agent-thread lifecycle methods are no longer four
 branches inside `map_evidence_frame`: they are entries in the `_AGENT_THREAD_NOTIFICATIONS` dispatch
-table (L1159-L1164), consulted once by `_map_codex_notification` (L217-L221) after the silent-method
+table cit:(["codex app-server thread/started (sub-agent registration)"], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1027-1027), consulted once by `_map_codex_notification` cit:([`native_method`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:212-212) after the silent-method
 drop and before the params-shape fallthrough. `thread/started` →
-`_map_thread_started` (L1002-L1032: parent occurrences and context-less frames stay silent; a
+cit:(["codex app-server thread/started (sub-agent registration)"], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1027-1027) (parent occurrences and context-less frames stay silent; a
 proven non-parent registers the agent), `thread/status/changed` → `_map_agent_thread_status`
-(L1051-L1076), `turn/started` → `_map_agent_turn_started` (L1079-L1096), and `turn/completed` →
-`_map_agent_turn_completed` (L1099-L1150), which mints a roster terminal status plus an
+(cit:(["codex app-server thread/status/changed (sub-agent)"], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1071-1071)), `turn/started` → cit:([`_map_agent_turn_started`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1079-1096), and `turn/completed` →
+cit:([`_map_agent_turn_completed`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1099-1150), which mints a roster terminal status plus an
 agent-bound `turn-result:{turnId}` item (carrying a `ConversationAgentRef`) but NEVER a
-`MappedTurnOutcome`. `_agent_notification_thread_id` (L1035-L1048) is the defense-in-depth guard:
+`MappedTurnOutcome`. cit:([`_agent_notification_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:1035-1048) is the defense-in-depth guard:
 the adapter already emits these methods as `codex-notification` only for non-parent threads, and
 the `parent_thread_id` comparison ensures a parent occurrence could never mint a roster row for
-the seat itself. On the item side, `_map_thread_item` (L278-L435) gained two collab types:
-`collabAgentToolCall` → `_map_collab_tool_call` (L926-L968) emits the collab call itself as a
+the seat itself. On the item side, cit:([`_map_thread_item`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:372-408) gained two collab types:
+`collabAgentToolCall` → cit:([`_map_collab_tool_call`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:926-968) emits the collab call itself as a
 parent-timeline tool-call item — tagged with a `ConversationAgentRef` only when it belongs to
 exactly one receiver (`sendInput`/`resumeAgent`/`wait`/`closeAgent`); a `spawnAgent` call is the
 parent's own act and stays untagged — plus one roster upsert per involved agent
 (`receiverThreadIds` union `agentsStates` keys, with the agent's final message as a
 `final-message` text block when the collab state carries one); `subAgentActivity` →
-`_map_sub_agent_activity` (L971-L999) upserts the same roster row, binding `agentPath`. Both
+cit:([`_map_sub_agent_activity`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:971-999) upserts the same roster row, binding `agentPath`. Both
 return `None` for off-shape items, which falls through to `MappedUnknownVendor` — degrade,
-never fatal. `_roster_item` (L722-L753) mints the shared `codex-agent-<threadId>` notice row
-with a status-derived phase (`_ROSTER_ITEM_PHASE`, L115-L121); `_COLLAB_AGENT_STATUS`
-(L101-L113) is the probe-locked collab/`subAgentActivity.kind` vocabulary — anything outside the
-table stays honest `unknown` instead of a guess; `_THREAD_STATUS_ROSTER` (L126-L129) admits only
+never fatal. cit:([`_roster_item`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:722-753) mints the shared `codex-agent-<threadId>` notice row
+with a status-derived phase cit:([`_ROSTER_ITEM_PHASE`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:115-121); cit:(["errored"], mcp/src/agents_remember/serving/conversation/projectors/codex.py:110-110) is the probe-locked collab/`subAgentActivity.kind` vocabulary — anything outside the
+table stays honest `unknown` instead of a guess; cit:([`_THREAD_STATUS_ROSTER`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:126-129) admits only
 `active`→running and `systemError`→failed, because `idle` says only "no active turn" and mints
 nothing rather than regressing a richer collab-derived roster status. `_map_thread_item` keys
 every other item on its native `id` and maps `userMessage` (content parts to
@@ -156,7 +155,7 @@ The resolved `Domain Documentation` registry has no entries. The schema authorit
 module is the codex app-server v2 generated protocol plus the landed installed-runtime fixture
 rows, both repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this mapper. | — | — |
 
@@ -169,23 +168,24 @@ resolves bare-delta targets and provenance. The sub-agent mapping adds the roste
 seam (the engine passes the projection's vendor conversation id as `parent_thread_id`), the
 store's roster-aware upsert rules, and a dedicated collab/engine test module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam); the same emit routes its params through `_route_delta_params`, which binds a delta frame's thread from the item index for the multiplexed stream. | L845-L861; L1369-L1383 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod`. | L455-L469; L620-L621 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). | L311-L334; L371 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The engine passes the multiplexed demux context: the one mapper call site sets `parent_thread_id=self._identity.vendor_conversation_id` on `map_evidence_frame`. | L182-L186 | [native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) |
-| The codex fixture rows record the observed live item/notification shapes and native thread pages through the production seam. | L34-L58 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
-| The store's tool-call block union keeps full-item re-maps byte-identical while converging partial-block tools; roster-aware rules preserve a roster notice's `final-message` block across later block-less lifecycle upserts, and a late `streaming` tagging upsert never regresses a terminal phase. | L124-L137; L153-L160 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The engine resolves bare-delta target blocks through the mapped item's kind. | L341-L354 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The collab/sub-agent behavior is pinned by a dedicated test module: mapper-level collab roster tests and multiplexed engine tests over a scripted bridge. | L133; L440 | [test_conversation_projector_codex_agents.py](agents-remember/mcp/tests/test_conversation_projector_codex_agents.py) |
+| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:726-726 |
+| The router itself moved out of the adapter in 260731-EFA-L6 and was renamed with it, so the adapter-private name is gone from the tree. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_threads.py:215-229 |
+| `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod`. | "nativeMethod" | mcp/src/agents_remember/serving/harness_control_models.py:621-621 |
+| `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). | `parent_agent_id` | mcp/src/agents_remember/serving/conversation/models.py:333-333 |
+| The engine passes the multiplexed demux context: the one mapper call site sets `parent_thread_id=self._identity.vendor_conversation_id` on `map_evidence_frame`. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:159-200 |
+| The codex fixture rows record the observed live item/notification shapes and native thread pages through the production seam. | "codex-0.144.5-installed-20260718" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:3-3 |
+| The store's tool-call block union keeps full-item re-maps byte-identical while converging partial-block tools; roster-aware rules preserve a roster notice's `final-message` block across later block-less lifecycle upserts, and a late `streaming` tagging upsert never regresses a terminal phase. | `apply_item` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249 |
+| The engine resolves bare-delta target blocks through the mapped item's kind. | `apply_delta` | mcp/src/agents_remember/serving/conversation/active/store.py:251-273 |
+| The collab/sub-agent behavior is pinned by a dedicated test module: mapper-level collab roster tests and multiplexed engine tests over a scripted bridge. | `test_agent_thread_lifecycle_drives_roster_status` | mcp/tests/test_conversation_projector_codex_agents.py:276-334 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this mapper; the Codex app-server is a local
 subprocess reached through this repository's own adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -231,11 +231,14 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-02T21:21:38+02:00 — 260731-EFA-L6 curator W2-B10: repaired 24 citation findings (7 reference rows and 10 prose pointers); scoped recheck clean.
+
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 6 stale self-citations in the sub-agent
   roster paragraph and rewrote the routing claim that was no longer true. The four agent-thread
   lifecycle methods are NOT four branches in `map_evidence_frame` any more: notification routing was
-  extracted into `_map_codex_notification` (L217-L221), which looks the method up in the
-  `_AGENT_THREAD_NOTIFICATIONS` dispatch table (L1159-L1164) — so the "(L198-L215) four new method
+  extracted into `_map_codex_notification`, which looks the method up in the
+  `_AGENT_THREAD_NOTIFICATIONS` dispatch table — so the "four new method
   branches" sentence was replaced with the table + router it actually is. The roster helpers all
   moved down: `_roster_item` L663-L699 → L722-L753, `_map_collab_tool_call` L731-L834 → L926-L968,
   `_map_sub_agent_activity` L837-L860 → L971-L999, `_agent_notification_thread_id` L894-L907 →
@@ -243,7 +246,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   L958-L1007 → L1099-L1150; the paragraph's opening span is L722-L1164, and the two co-cited
   neighbours in the same sentence were re-read as well (`_map_thread_started` L1002-L1032,
   `_map_agent_thread_status` L1051-L1076). The `MappedUnknownVendor` fall-through citation
-  (L247-L259) was verified as still exact and left alone; the top-of-file tables
+  was verified as still exact and left alone; the top-of-file tables
   (`_SILENT_NOTIFICATION_METHODS` L83-L93, `_COLLAB_AGENT_STATUS` L101-L113, `_ROSTER_ITEM_PHASE`
   L115-L121, `_THREAD_STATUS_ROSTER` L126-L129) did not move. Behaviour claims re-verified against
   the source, including `_collab_call_agent`'s single-receiver / never-`spawnAgent` tagging rule.

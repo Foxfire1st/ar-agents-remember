@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T22:34+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -49,12 +49,14 @@ the `cgc.lifecycle` import), and no longer present in `cgc_cli_handlers()`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Public facade imports `main()` from this module. | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| CGC and GrepAI implementations are dispatched from this CLI layer. | [cgc/__init__.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py); [grepai/__init__.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Public facade imports `main()` from this module. | `main` | mcp/src/agents_remember/providers/lifecycle/cli.py:344-359 |
+| CGC and GrepAI implementations are dispatched from this CLI layer. | `cgc_backend_start`; `grepai_run` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-409; mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:491-506 |
 
 ## Update History
+
+- 2026-08-03T10:40+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 5 assigned citation findings (2 missing anchors and 3 malformed sources); final scoped check is clean.
 
 - 2026-07-06T22:34+02:00 — 260703-L13 ride-along: `--from-settings` help text rewritten for
   both providers — server-generated lifecycle settings JSON, no coordinator settings

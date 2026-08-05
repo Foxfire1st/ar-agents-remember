@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_containment.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-21T11:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -16,17 +16,11 @@
 
 ## Purpose
 
-`test_provider_containment.py` pins the provider containment layer of task
-260707-HFX-L1: unconfigured on disk means no launch, ever. The 2026-07-07 WSL
-OOM proved two bypasses of the settings gate — the boot snapshot (running
-servers never re-read the authority file) and benchmark self-arming (the case
-manifest synthesized and persisted its own providers map). The suite covers
-the authority reload's fail-closed semantics, the worktree-start veto and
-armed-path live-map launch, the per-provider query funnel gate, the runtime
-rebind derivation, the benchmark manifest filter (including the fail-closed
-`None` default, the env escape, and the stale-registration sweep), the
-host-scoped fleet setup lock (containment R2), and the metrics feed
-(containment R4).
+`test_provider_containment.py` exercises provider-authority reload and
+fail-closed launch checks, the worktree-start veto and armed path, the
+provider-specific query gate, runtime rebind derivation, benchmark filtering
+and stale-registration narrowing, the host-scoped setup lock, and the metrics
+parser/sampler/store behavior.
 
 ## Code Commentary
 
@@ -44,10 +38,9 @@ The `_armed_boot_config(tmp, disk_providers=...)` helper builds a real
   refuses a disk-disabled config with a `ConfigError` naming containment R1
   and the stale boot-snapshot ids, and returns the live-map config when armed.
 - `WorktreeStartVetoTests` — with `git_worktree_manager.start_result` mocked
-  (the gate under test is the controller's, not the git layer's): a stale
-  armed snapshot vetoed by the disk produces NO settings file and no
-  `provider_setup_config` (the launch side-channel never materializes) and the
-  result's `providersAuthority` block names the `bootSnapshotProviders`; a
+  (the gate under test is the application entry point's, not the git layer's): a stale
+  armed snapshot vetoed by the disk produces no `provider_setup_config` and the
+  result's `providersAuthority` block names `bootSnapshotProviders`; a
   disk-armed run hands the worktree manager a setup config whose written
   settings have `contextProviders.enabled: true` (read inside the mock, while
   the temp file still exists) and carries no `providersAuthority` block.
@@ -107,7 +100,7 @@ is required anywhere.
 ### Invariants And Boundaries
 
 - No test touches the real coordination root or creates a real worktree; the
-  worktree tests pin the controller's gate, not the git layer.
+  worktree tests pin the application entry point's gate, not the git layer.
 - The launch-authority tests assert fail-closed semantics: an unreadable or
   invalid authority file must behave like "no launch authority", never fall
   back to the boot snapshot.
@@ -118,34 +111,34 @@ is required anywhere.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `ProviderAuthority` / `reload_provider_authority` / `require_provider_launch_authority` under test. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The worktree-start authority reload, live-map settings write, and `providersAuthority` veto block. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
-| The benchmark manifest filter under test. | [workspace.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/workspace.py) |
-| The stale-registration sweep under test (review B3). | [mcp_registration.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py) |
-| The per-provider query funnel gate under test. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
-| The fleet setup lock under test (containment R2). | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
-| The metrics sampler, parsers, and store under test (containment R4). | [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
-| The rebind derivation these tests replicate lives in the runtime installer. | [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| The lifecycle settings generator used by the rebind-derivation test. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Authority reload and launch-authority refusal/acceptance. | `test_disk_disabled_yields_empty_map_without_error`; `test_disk_armed_yields_live_map`; `test_missing_file_fails_closed`; `test_invalid_json_fails_closed`; `test_require_launch_authority_refuses_disk_disabled`; `test_require_launch_authority_returns_live_config_when_armed` | mcp/tests/test_provider_containment.py:79-84; mcp/tests/test_provider_containment.py:86-91; mcp/tests/test_provider_containment.py:93-99; mcp/tests/test_provider_containment.py:101-107; mcp/tests/test_provider_containment.py:109-115; mcp/tests/test_provider_containment.py:117-121 |
+| Worktree-start veto and live-map launch. | `test_stale_armed_snapshot_is_vetoed_by_disk`; `test_disk_armed_snapshot_launches_with_live_map` | mcp/tests/test_provider_containment.py:125-146; mcp/tests/test_provider_containment.py:148-177 |
+| Provider-specific query gate and runtime rebind. | `test_query_funnel_requires_its_specific_provider`; `test_live_disabled_disables_rebind_settings` | mcp/tests/test_provider_containment.py:181-196; mcp/tests/test_provider_containment.py:200-206 |
+| Benchmark filtering and stale-registration narrowing. | `test_manifest_cannot_arm_outside_authority`; `test_empty_authority_filters_everything`; `test_none_authority_context_is_fail_closed`; `test_env_escape_allows_unfiltered_direct_script_use`; `test_stale_registration_sweep_narrows_to_authority` | mcp/tests/test_provider_containment.py:210-216; mcp/tests/test_provider_containment.py:218-222; mcp/tests/test_provider_containment.py:224-228; mcp/tests/test_provider_containment.py:230-233; mcp/tests/test_provider_containment.py:235-273 |
+| Host-scoped setup-lock contention and no-op paths. | `test_second_setup_waits_and_times_out_loudly`; `test_lock_is_noop_when_uncontended`; `test_lock_path_is_host_scoped_outside_prunable_roots` | mcp/tests/test_provider_containment.py:277-300; mcp/tests/test_provider_containment.py:302-307; mcp/tests/test_provider_containment.py:309-315 |
+| Metrics parsers, sampler errors, collection, and store tolerance. | `test_parsers`; `test_sampler_reports_docker_ps_failure`; `test_sampler_bounds_docker_ps_timeout_into_error_sample`; `test_sampler_dockerless_host_yields_error_sample`; `test_sampler_collects_labeled_containers_with_stats`; `test_sampler_tolerates_stats_failure_and_flags_restarting`; `test_store_roundtrip_and_torn_line_tolerance` | mcp/tests/test_provider_containment.py:319-327; mcp/tests/test_provider_containment.py:329-340; mcp/tests/test_provider_containment.py:342-357; mcp/tests/test_provider_containment.py:359-367; mcp/tests/test_provider_containment.py:369-405; mcp/tests/test_provider_containment.py:407-433; mcp/tests/test_provider_containment.py:435-450 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass rewrote two call shapes this
   card describes, and this entry records both. `QueryFunnelGateTests` now drives
   `_provider_operation_result(config, ProviderOperation(operation=…, required_provider=…, run=…))`

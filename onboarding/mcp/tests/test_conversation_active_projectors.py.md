@@ -24,18 +24,18 @@ for the codex, claude, and pi mappers — without any engine or IPC.
 
 ### Logic
 
-`CodexMapperTests` (L84-L404): native user messages carry unknown-input provenance with
+cit:([`CodexMapperTests`], mcp/tests/test_conversation_active_projectors.py:84-404): native user messages carry unknown-input provenance with
 `clientId` correlation; agent messages map to markdown; reasoning maps summary/content thinking
 blocks; command executions map input+output tool blocks with phase from native status; file
 changes map diff blocks; MCP tool calls map input/output; unknown native item types keep their
 native id as unknown-vendor evidence; live item started/completed phases; indexed and bare
 deltas target the right block ids; `turn/completed` maps the turn-result item plus outcome;
 usage/rate frames mint no items; unknown notifications are preserved.
-`ClaudeMapperTests` (L407-L711): assistant frames split text/thinking and mint stable-ID tool
+cit:([`ClaudeMapperTests`], mcp/tests/test_conversation_active_projectors.py:407-710): assistant frames split text/thinking and mint stable-ID tool
 items; `tool_result` upserts the same item; result frames classify terminal outcomes; the
 transcript echo is the exact submission user item (replay uuid identity, request-id
 correlation, unknown-input until the batch resolves); system frames mint nothing; unknown frame
-types are preserved. `PiMapperTests` (L713-L902): entry user messages stay unknown-input;
+types are preserved. cit:([`PiMapperTests`], mcp/tests/test_conversation_active_projectors.py:713-901): entry user messages stay unknown-input;
 assistant entries split blocks and tools; `toolResult` messages converge by `toolCallId`;
 aborted assistants mint the in-place turn-result; compaction/model entries are notices; unknown
 entry types keep their native id; live tool-execution events upsert by `toolCallId`;
@@ -79,25 +79,25 @@ None.
 The resolved `Domain Documentation` registry has no entries; the mapper schema authorities are
 repository-owned and cited in the mapper sidecars.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this suite. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The codex mapper under test: live discrimination, thread items, deltas, turn outcomes. | L132-L336; L372-L483; L1167-L1208 | [codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) |
-| The claude mapper under test: frame mapping plus the exact submission echo. | L54-L123 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
-| The pi mapper under test: entry mapping plus live tool upserts. | L56-L162 | [pi.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/pi.py) |
-| The mapper output vocabulary the assertions match. | L55-L94 | [common.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/common.py) |
-| The evidence frame products constructed by the suite. | L310-L350 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The codex mapper under test: live discrimination, thread items, deltas, turn outcomes. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:148-201 |
+| The claude mapper under test: frame mapping plus the exact submission echo. | `map_evidence_frame`; `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-239; mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662 |
+| The pi mapper under test: entry mapping plus live tool upserts. | `map_native_frame`; `map_evidence_frame`; `_live_tool_item` | mcp/src/agents_remember/serving/conversation/projectors/pi.py:56-109; mcp/src/agents_remember/serving/conversation/projectors/pi.py:112-167; mcp/src/agents_remember/serving/conversation/projectors/pi.py:429-461 |
+| The mapper output vocabulary the assertions match. | `MappedItem`; `MappedBlockDelta`; `MappedTurnOutcome` | mcp/src/agents_remember/serving/conversation/projectors/common.py:56-60; mcp/src/agents_remember/serving/conversation/projectors/common.py:63-69; mcp/src/agents_remember/serving/conversation/projectors/common.py:72-78 |
+| The evidence frame products constructed by the suite. | `EvidenceFrame` | mcp/src/agents_remember/serving/harness_control_models.py:455-478 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -114,6 +114,7 @@ coverage keeps every extracted mutation parser below the mandatory threshold.
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the 3 stale class self-citations in the
   Logic paragraph. The suite grew to 905 lines, so `ClaudeMapperTests` L290-L404→L407-L711 and

@@ -62,14 +62,15 @@ only when Docker labels do not show the expected Compose project.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Backend settings and Docker network name are derived in GrepAI core. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
-| Tests require the Postgres wait helper to run both `pg_isready` and a database query. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
-| Shared Compose helpers provide unmanaged container and network migration. | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Backend settings and Docker network name are derived in GrepAI core. | `grepai_backend_settings`, `grepai_network_name` | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:148-152; mcp/src/agents_remember/providers/grepai/lifecycle/core.py:339-362 |
+| Tests require the Postgres wait helper to run both `pg_isready` and a database query. | `pg_isready` | mcp/tests/test_provider_lifecycle.py:1139-1139 |
+| Shared Compose helpers provide unmanaged container and network migration. | `remove_unmanaged_compose_container`, `remove_unmanaged_compose_network` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:252-269; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:272-289 |
 
 ## Update History
 
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 2 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `grepai_backend_start_context` now returns `GrepaiBackendContext`, and the host-reconciliation
   trio travels as `BackendStartReconciliation`. Emitted payloads are unchanged. Verification

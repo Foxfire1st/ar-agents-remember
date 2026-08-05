@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |
 | doc_type               | `route-local-overview`                                              |
 | lastUpdated            | 2026-08-01T13:28+02:00                                              |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                         |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                                    |
 
 ## Governing Overview
@@ -106,28 +106,32 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This route relies on its direct agents-remember source/tests and the reviewed
 task/worker/verdict evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for the in-stage history browser. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for the in-stage history browser. | — | — |
 
 ## Cross-Repo References
 
 The browser composes repository-local components over this package's own library contract; no
 cross-repository implementation source governs it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The reconstructable library projection this browser reads. | [data/conversation-library overview](../../../data/conversation-library/overview.md) |
-| The one-roof composition that mounts this browser in-stage. | [session-cockpit overview](../overview.md) |
-| The live renderer whose block grammar the read-only preview reuses. | [conversation overview](../conversation/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reconstructable library projection this browser reads. | `# dashboard/src/data/conversation-library/ — Dormant Conversation Library Projection Overview` | onboarding/dashboard/src/data/conversation-library/overview.md:1-150 |
+| The one-roof composition that mounts this browser in-stage. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
+| The live renderer whose block grammar the read-only preview reuses. | `# dashboard/src/panels/session-cockpit/conversation/ — Structured Conversation Renderer Overview` | onboarding/dashboard/src/panels/session-cockpit/conversation/overview.md:1-360 |
 
 ## Update History
+
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 3 Repo-Internal onboarding-overview citation
+  rows with exact current headings and memory-repository-relative paths; verification metadata and
+  route prose remain unchanged.
 
 - 2026-08-01T13:28+02:00 — No route impact: 260731-EFA-L4's single change under this route is
   `ConversationLibraryList.test.tsx`, and the whole diff is fixture plumbing — the local

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionsView.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T10:00+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -63,9 +63,9 @@ through the accepted-row path rather than an empty `ok` response.
   **preventDefault observation** (`fireEvent` return value), not palette state alone.
 - **Focus model (S4)** — the full F6 cycle across rendered regions (stage lands on the
   composer), Shift+F6 backward, and composer-Esc → stage header.
-- **L6 stage surface + lifecycle honesty (L1034-L1589)** — the block has grown well past the seven
-  cases below (17 `it`s at the time of writing); the seven originals are still there and still assert
-  what is described. Seven cases against the real store
+- **L6 stage surface + lifecycle honesty (cit:(["L6: stage surface, WorkingLine, InteractionBar, stop residuals"], dashboard/src/panels/session-cockpit/SessionsView.test.tsx:1034-1588))** — the block contains 14 tests; the seven
+  original cases are still there and assert what is described. Residual behavior records lifecycle
+  notice-store state without stacking a separate DOM notice. Seven cases against the real store
   patch path: (1) a focused seat mounts the REAL `PtySurface` and the placeholder covers only
   the empty stage (the surface carries the `data-kbzone="pty"` contract); (2) the WorkingLine
   renders in the reserved stage slot ONLY for a working focused seat; (3) the InteractionBar
@@ -76,7 +76,7 @@ through the accepted-row path rather than an empty `ok` response.
   state (review F3): patching a pending interaction onto a working seat unmounts the line AND
   removes the command; (7) an UNFOCUSED seat's retire residual is captured by the sweep — the
   note renders with no handoff fired and no failure wording (review F1, sev-3).
-- **Launch integration (L3: R5/R6)** (L1590-L1658) — the palette lists
+- **Launch integration (L3: R5/R6)** (cit:(["launch flow + failed-launch banner integration"], dashboard/src/panels/session-cockpit/SessionsView.test.tsx:1590-1649)) — the palette lists
   "Launch session…" and running it opens the flow (`launch-flow` appears); focusing the FLEET
   failed scout renders the banner with its bridgeError VERBATIM (and never on a healthy seat —
   asserted first), and 'Launch corrected…' opens the flow with the failed seat's harness
@@ -87,11 +87,11 @@ through the accepted-row path rather than an empty `ok` response.
 `setClientWidth` pins `clientWidth` via `defineProperty` (jsdom has no layout). All keyDown inits
 carry explicit `code` (tinykeys v4 drops synthetic events without it). `afterEach` clears
 localStorage (react-resizable-panels persists under autoSaveId). Relies on the vitest-only
-react-resizable-panels browser-build alias (`vitest.config.ts`) — the edge-light node build skips
-layout effects and would break the imperative panel API. Since L6, `vi.mock("../Terminal")` (L121-L145)
-keeps xterm entirely out of jsdom — the mock now also pushes onto `mockTerminalMounts` /
-`mockTerminalUnmounts`, which is what makes a dispose/recreate observable at composition level, so
-`PtySurface` mounts for real while the canvas emulator never loads.
+  react-resizable-panels browser-build alias (`vitest.config.ts`) — the edge-light node build skips
+  layout effects and would break the imperative panel API. Since L6, `vi.mock("../Terminal")` keeps
+  xterm entirely out of jsdom (cit:(["\"../Terminal\""], dashboard/src/panels/session-cockpit/SessionsView.test.tsx:121-145)).
+  The L6 block contains the composition-level mount-ledger cases
+  (cit:(["L6: stage surface, WorkingLine, InteractionBar, stop residuals"], dashboard/src/panels/session-cockpit/SessionsView.test.tsx:1034-1588)).
 
 **Conversation-wire fixtures come from the shared builders (260731-EFA-L4).** `L5Q_IDENTITY`,
 `l5qStatus`, the items and page in `seedWorkerL4Items`, and the answer case's lifecycle+gate are built
@@ -118,30 +118,39 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test (`SessionsViewImpl`, exported memoized). | L196-L660; L1336 | [SessionsView.tsx](SessionsView.tsx) |
-| The L6 block: surface/WorkingLine/InteractionBar/residual/stop-gate cases (+ the Terminal jsdom mock with its mount/unmount ledgers). | L121-L145; L1034-L1589 | [SessionsView.test.tsx](SessionsView.test.tsx) |
-| The notice store the residual cases reset and assert against. | L47-L146 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
-| The keys-page data the drift-proof assertions read. | L62-L150 | [../../data/keymap/reserved.ts](../../data/keymap/reserved.ts) |
-| The shared jsdom stubs (incl. the cmdk `scrollIntoView` stub) this suite relies on. | — | [../../test/setup.ts](../../test/setup.ts) |
-| The vitest alias to the browser development build of react-resizable-panels. | — | [vitest.config.ts](../../../vitest.config.ts) |
-| The L3 launch dialog + banner the integration cases exercise. | — | [LaunchFlow.tsx](LaunchFlow.tsx), [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
-| The envelope fixture the stubbed capability fetch serves. | — | [../../test/fixtures/capabilityEnvelopes.ts](../../test/fixtures/capabilityEnvelopes.ts) |
-| `conversationIdentity` / `conversationStatus` / `conversationItem` / `conversationPage` — and the header naming the `undefined as unknown as ConversationCapabilities` cast this file used to carry. | L1-L30; L170-L245 | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
-| `lifecycle` + `gate`, the projection builders the answer case's seed now uses. | L237-L262 | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
+| The component under test (`SessionsViewImpl`, exported memoized). | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/SessionsView.tsx:196-1331 |
+| The L6 block contains the surface, WorkingLine, InteractionBar, residual, and stop-gate cases. | "L6: stage surface, WorkingLine, InteractionBar, stop residuals" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:1034-1588 |
+| The Terminal mount ledger is declared here. | "const mockTerminalMounts: string[] = [];" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:119-119 |
+| The Terminal unmount ledger is declared here. | "const mockTerminalUnmounts: string[] = [];" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:120-120 |
+| The Terminal jsdom mock implementation is defined here. | "\"../Terminal\"" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:121-145 |
+| The notice store the residual cases reset and assert against. | `lifecycleNoticeStore` | dashboard/src/data/sessionLifecycle.ts:68-121 |
+| The keys-page binding text the drift-proof assertions render. | "ctrl+alt+pagedown" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:329-329 |
+| The shared jsdom stubs (incl. the cmdk `scrollIntoView` stub) this suite relies on. | "Element.prototype.scrollIntoView =" | dashboard/src/test/setup.ts:29-29 |
+| The vitest alias to the browser development build of react-resizable-panels. | "react-resizable-panels.browser" | dashboard/vitest.config.ts:20-20 |
+| The L3 launch dialog the integration cases exercise. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-619 |
+| The failed-launch banner rendered by the integration cases. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| The integration cases that exercise the launch flow and failed-launch banner. | "launch flow + failed-launch banner integration" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:1590-1649 |
+| The envelope fixture the stubbed capability fetch serves. | `capabilityEnvelope` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-172 |
+| The `conversationIdentity` fixture builder is defined here. | `conversationIdentity` | dashboard/src/test/fixtures/conversationWire.ts:172-185 |
+| The `conversationStatus` fixture builder is defined here. | `conversationStatus` | dashboard/src/test/fixtures/conversationWire.ts:187-207 |
+| The `conversationItem` fixture builder is defined here. | `conversationItem` | dashboard/src/test/fixtures/conversationWire.ts:209-226 |
+| The `conversationPage` fixture builder is defined here. | `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243 |
+| The lifecycle builder is defined for the answer-case fixtures. | "function lifecycle<" | dashboard/src/test/fixtures/wire.ts:241-241 |
+| The gate builder is defined for the answer-case fixtures. | "function gate" | dashboard/src/test/fixtures/wire.ts:248-248 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -178,6 +187,8 @@ SSE-preferred working feedback, removal of the StatusLine/end-notice chrome, and
 to the kept-alive conversation stage.
 
 ## Update History
+
+- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D14 by splitting the Terminal mount/unmount ledger declarations from the complete jsdom mock implementation and binding the prose claim to that implementation; rechecked this card through the locked exact-document fixer/check.
 
 - 2026-08-01T10:00+02:00 — 260731-EFA-L4 curator: recorded the conversation-wire fixture conversion and
   repaired four stale ranges. New Conventions paragraph names the two deltas the conversion actually

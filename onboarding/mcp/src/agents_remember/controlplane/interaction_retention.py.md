@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
 | lastUpdated            | 2026-08-01T19:45+02:00                                                 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ that an approval was spent: `enforcement.evaluate_gate` refuses a second consume
 finds one in the fold. Delete it and the fold returns to permitted-gateless — "no gate; existing
 approval channel governs" — and the same approval buys a second mutation, with no error and no log
 line. Until this leaf the pass below pruned `applied` **at any age**, so any later decision on the
-lifecycle erased the marker within milliseconds (`mcp/tools/gates.py::_reclaim_gate_log` runs after
+lifecycle erased the marker within milliseconds (`controlplane/gate_decisions.py::_reclaim_gate_log` runs after
 every decision, and an answered `agent-question` is enough). It was already wrong before this leaf —
 the same states were pruned on the dashboard's 30s projection tick, so the marker survived at most
 half a minute — and moving reclamation into the deciding process made it prompt and deterministic
@@ -82,13 +82,25 @@ of these three that is the *intended* meaning; for the third it is the replay:
 - **`cancelled` — the gate was withdrawn.** It never carried an approval, and cancelling it says
   precisely "this gate no longer governs", so falling back to the chat/commit approval channel is
   the correct outcome. Retention is not even what removes it in production:
-  `mcp/tools/gates.py::gate_decide_payload` calls `GateStore.delete` on the record at the moment the
+  `application/gate_tools.py::gate_decide_tool` calls `GateStore.delete` on the record at the moment the
   cancel is recorded.
 - **`expired` — the gate was superseded.** `expire_gate` is written only when a newer gate opens on
   the same lifecycle, so the replacement is in the *same log with a newer `ts`* and governs the fold.
   Dropping the expired snapshot drops history, never authority.
 - **`applied` — the gate was granted and spent.** There is nothing to fall back to. The approval
   exists, it was consumed, and the only record saying so is this one.
+
+### 260731-EFA-L6 Source-Path Alignment
+
+This leaf did not change the retention policy; it changed where the paths this card names live.
+`age_seconds` is now imported from `controlplane/stamps.py` instead of `observer/timeutil.py`
+and is still the projection clock used by `_keep_gate`, `_keep_inbox_entry`, `pickup_state`,
+and `pickup_age_seconds`. The two reclamation-path references above were corrected to
+`controlplane/gate_decisions.py::_reclaim_gate_log` and
+`application/gate_tools.py::gate_decide_tool`, matching the `controllers/` → `application/`
+move. The authority-branch comment also dropped its closing sentence about why a count cannot be
+wrong about human retry time; the retained bound is still "bounded by approvals granted and
+consumed, with a cap (not a TTL) as the future escape hatch".
 
 ### 260712-TRH-L5 Confirmed-Gone Secondary Retention
 
@@ -145,6 +157,12 @@ HFX2-L1 immortal-pending rule that contributed to the 2026-07-09 escalation stor
 
 ## Update History
 
+- 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: aligned this card with the current source
+  paths: `age_seconds` comes from `controlplane/stamps.py`, the deciding-process reclaimer is
+  `controlplane/gate_decisions.py::_reclaim_gate_log`, and the cancellation deletion is
+  `application/gate_tools.py::gate_decide_tool`. Retention policy (the `applied` authority
+  branch, no-TTL bound, inbox 48h/500-row cap) is unchanged. Verification metadata pinned until
+  closeout stamps the code commit.
 - 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). This card carried **no** L5
   content and described a retention policy that no longer exists. Recorded: `applied` is out of
   `PRUNE_IMMEDIATE_GATE_STATES` (now exactly `{"cancelled", "expired"}`); the new

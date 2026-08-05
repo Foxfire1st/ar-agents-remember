@@ -76,7 +76,7 @@ qualified-leaf-key/curator-chain dispatch defaults.
 
 No sibling repository evidence is needed for this doctrine file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 

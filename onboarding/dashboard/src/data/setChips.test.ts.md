@@ -43,22 +43,22 @@ The two documented sev-4 presentation edges are not closed by this suite.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pure presentation model under test. | L1-L232 | [setChips.ts](setChips.ts) |
-| Pair copy/provenance source. | L1-L219 | [pairChange.ts](pairChange.ts) |
+| Pure presentation model under test. | `deriveSetChips`; `queuedComposerHint`; `hasUnackedSetAttention` | dashboard/src/data/setChips.ts:58-216; dashboard/src/data/setChips.ts:219-225; dashboard/src/data/setChips.ts:228-232 |
+| Pair copy/provenance source. | `startPairChange`; `applyPairStepResult`; `pairProgressCopy`; `pairPartialFailureCopy` | dashboard/src/data/pairChange.ts:50-52; dashboard/src/data/pairChange.ts:58-111; dashboard/src/data/pairChange.ts:199-203; dashboard/src/data/pairChange.ts:216-219 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -70,6 +70,7 @@ model/effort chips and prompt lifecycle authority.
 
 ## Update History
 
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped repository-internal citation rows; final exact frozen-snapshot check is clean.
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
   is unchanged by this memory-only governance move; verification hash/date remain pinned.

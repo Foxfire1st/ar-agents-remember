@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/collapse.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,12 +26,12 @@ item passes through unchanged and identity is never mutated.
 
 Three cases over `groupUnknownVendorRuns`:
 
-- **collapse a run of ≥3** (L25-L39): a `[message, unknown×3, message]` sequence maps to
+- **collapse a run of ≥3** cit:([`groupUnknownVendorRuns`], dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:25-39): a `[message, unknown×3, message]` sequence maps to
   `[item, unknown-run, item]`; the run holds all three members and its `ordinal` is the FIRST member's
   server `globalOrdinal` (posinset honesty — the collapsed row advertises the run's starting ordinal).
-- **do NOT collapse a short run (<3)** (L41-L44): two consecutive unknown-vendor items stay as two
+- **do NOT collapse a short run (<3)** cit:([`groupUnknownVendorRuns`], dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:41-44): two consecutive unknown-vendor items stay as two
   separate `item` rows, each keeping its own article.
-- **do not merge different summaries** (L46-L58): two runs of three with different `safeSummary`
+- **do not merge different summaries** cit:([`groupUnknownVendorRuns`], dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:46-58): two runs of three with different `safeSummary`
   values yield two distinct `unknown-run` rows — grouping is by identical summary only.
 
 ### Invariants And Boundaries
@@ -47,28 +47,32 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure grouping function under test. | L4 | [collapse.ts](collapse.ts) |
-| The item wire type the fixtures build. | L3 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The timeline consumer that virtualizes the grouped display rows. | — | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
+| The pure grouping function under test. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
+| The item wire type the fixtures build. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
+| The timeline consumer that virtualizes the grouped display rows. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:357-357; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:462-462 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: converted the three case prose
+  citations to cit form (25-39, 41-44, 46-58) and normalized the 3 reference rows (collapse.ts
+  23-55, types.ts 158-176, ConversationTimeline.tsx 357 + 462). Zero findings remain.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the F10 collapse
   proof — ≥3 identical-summary unknown-vendor runs collapse to one row keyed to the first member's

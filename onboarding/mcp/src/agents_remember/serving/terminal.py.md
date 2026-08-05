@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -169,19 +169,20 @@ No task-independent technical debt was identified during FEUI-L9R review.
 No relevant documentation was found after checking the configured sources; terminal-host behavior
 is proven by repository source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local terminal host. | Source discovery checked | — |
+| No relevant external or domain documentation was found for this repository-local terminal host. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The serving layer this host joins (transport; localhost posture). | Current FEUI-L9R runtime-truth repair | [serving overview](overview.md) |
-| The FastAPI app that wires the WebSocket bridge over this host. | L809-L881 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The catalog rows that persist tmux name, command, cwd, lifecycle, and status across dashboard restarts. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
-| The shared opener that seeds this host's `env` at `ensure` (the L2 knob-injection call site). | L137-L146 | [terminal_opener.py](terminal_opener.py) |
-| The environment and real-tmux regressions that prove current client identity. | L134-L181; L549-L600 | [test_terminal.py](../../../tests/test_terminal.py) |
+| The serving layer this host joins (transport; localhost posture). | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
+| The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | `_serve_terminal_websocket`; `_register_terminal_session_routes` | mcp/src/agents_remember/serving/app.py:1322-1348; mcp/src/agents_remember/serving/app.py:1366-1395 |
+| Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and `TerminalCatalog` persists and reads those entries. | `TerminalCatalogEntry`; `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510; mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
+| The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. | `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:534-617 |
+| The terminal host registry behavior is exercised by the dedicated registry test class. | `TerminalHostRegistryTests` | mcp/tests/test_terminal.py:300-466 |
+| The optional real-tmux integration is exercised by the dedicated integration test class. | `TerminalHostTmuxIntegrationTests` | mcp/tests/test_terminal.py:792-844 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -198,9 +199,9 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 
 No meaningful cross-repository implementation source governs this repository-local terminal host.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -237,6 +238,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: restored the terminal application route family, catalog field/persistence body, and opener environment/spec/ensure/upsert flow with a single full-transaction anchor; the scoped fixer will generate citation ranges.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `TerminalSessionSpec` (shared by open/ensure/attach, with `tmux_name_for`) and `TerminalHostSeams` (the one impure OS boundary).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 

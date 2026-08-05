@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/static.py`  |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T04:28+02:00                       |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6`   |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -85,39 +85,38 @@ No task-independent technical debt is recorded for this module.
 No relevant documentation was found after checking the configured sources (`system/sources.md` has
 no entries); static-serving behavior is proven by repository source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local static mount. | Source discovery checked | — |
+| No relevant external or domain documentation was found for this repository-local static mount. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface. | L94-L129 | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`. | L53-L91 | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The release build step places the tree this module resolves; it refuses to place a stale one. | L138-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| The serving app registers API routes before the static mount. | L1-L80 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Both halves of the contract are pinned deterministically, without reading the repository's own bundle. | L29-L144 | [test_static.py](agents-remember/mcp/tests/test_static.py) |
-| The end-to-end app tests cover the served bundle and the missing-bundle diagnosis through `create_app`. | L526-L558 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| `dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface. | "def dashboard_static_dir" | mcp/src/agents_remember/serving/static.py:104-104 |
+| The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`. | "def mount_static" | mcp/src/agents_remember/serving/static.py:112-112 |
+| The release build step places the tree this module resolves; it refuses to place a stale one. | "def sync" | scripts/sync-dashboard.py:138-138 |
+| The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:776-776 |
+| Both halves of the contract are pinned deterministically, without reading the repository's own bundle. | `test_missing_bundle_does_not_turn_a_method_error_into_an_outage` | mcp/tests/test_static.py:120-136 |
+| The end-to-end app test covers the served bundle through `create_app`. | `test_root_serves_dashboard_bundle` | mcp/tests/test_serving.py:538-555 |
+| The end-to-end app test covers the missing-bundle diagnosis through `create_app`. | `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:557-570 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local static mount.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations into the two
-  test modules. `mcp/tests/test_serving.py` is now L526-L558, the contiguous pair
-  `test_root_serves_dashboard_bundle` (L526-L543) and
-  `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` (L545-L558) — both of which now patch
-  `dashboard_static_dir` rather than reading the repository bundle. `mcp/tests/test_static.py` is
-  now L29-L144, from `DashboardStaticDirTests` through the last assertion of
-  `test_missing_bundle_covers_every_path_the_bundle_would_have`; the old L29-L143 clipped that final
-  assertion by one line.
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 7 repository-reference citations and normalized 2 historical prose citations (7/7 anchored and sourced; scoped citation check clean).
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file citations into the two
+  test modules. The serving tests cover the contiguous bundle-serving and missing-bundle diagnosis
+  pair, both of which patch `dashboard_static_dir` rather than reading the repository bundle. The
+  static tests cover the dashboard-dir suite through the final deep-path assertion.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1: the shipped bundle left version control (master decision
   OQ6), so "no bundle" became a normal state for a source checkout. Added `MissingDashboardBundle`

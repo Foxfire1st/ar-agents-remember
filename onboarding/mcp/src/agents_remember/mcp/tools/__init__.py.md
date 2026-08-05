@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-08T02:43+02:00                     |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -42,21 +42,22 @@ only the advertised MCP tools.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Conformance test reaches `tools._tool_payload`. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
-| `gate_response_wait_payload` is imported from `gates` and listed in `__all__`. | [__init__.py](agents-remember/mcp/src/agents_remember/mcp/tools/__init__.py) |
-| The gate response wait payload builder owned by the `gates` submodule. | [gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The inbox payload builders re-exported by this facade. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| The orchestration nudge payload builder re-exported by this facade. | [orchestration.py](agents-remember/mcp/src/agents_remember/mcp/tools/orchestration.py) |
-| The lifecycle finalizer payload builder re-exported by this facade. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
-| The terminal payload builders (`attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) re-exported by this facade. | [terminal.py](terminal.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Conformance test reaches `tools._tool_payload`. | `_tool_payload` | mcp/tests/test_tool_response_conformance.py:568-574 |
+| `gate_response_wait_payload` is imported from `gates` and listed in `__all__`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/__init__.py:21-28; mcp/src/agents_remember/mcp/tools/__init__.py:93-112 |
+| The gate response wait payload builder is owned by the `gates` submodule. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:131-148 |
+| The inbox payload builders re-exported by this facade. | `operator_inbox_post_payload`, `operator_inbox_poll_payload`, `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36; mcp/src/agents_remember/mcp/tools/operator_inbox.py:50-65; mcp/src/agents_remember/mcp/tools/operator_inbox.py:68-83; mcp/src/agents_remember/mcp/tools/__init__.py:50-54 |
+| The orchestration nudge payload builder re-exported by this facade. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36; mcp/src/agents_remember/mcp/tools/__init__.py:55-55 |
+| The lifecycle finalizer payload builder re-exported by this facade. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32; mcp/src/agents_remember/mcp/tools/__init__.py:39-39 |
+| The terminal payload builders (`attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) re-exported by this facade. | `attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43; mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95; mcp/src/agents_remember/mcp/tools/__init__.py:71-76 |
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02 repaired 7 Repo-Internal citation rows, including 14 manifest findings, with exact current builder anchors and repository-relative ranges; verification metadata was preserved.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-08T02:43+02:00 — No content impact: 260707-HFX-L8 adds `session_rename_payload`/

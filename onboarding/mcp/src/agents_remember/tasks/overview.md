@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-01T00:00+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -19,17 +19,19 @@
 `tasks/` owns the **JSON-primary task document**: the persisted `ar-task-document/v1`
 record is the source of truth for a task's plan and progress, and `task.md` (or
 `<slug>.md` for a sub-task) is a deterministic *render* of it. The JSON is never
-produced by parsing markdown back. Since L11 the route also owns leaf reopen semantics: `reopen.py` (the `task_reopen`
-tool's implementation — reset a fully landed leaf back to planning under its exact
-leaf id) and `leaf_doc.py` (exact case-insensitive leaf-doc lookup plus the explicit
-`lifecycleId` restamp worktree start applies across restarts). This is the work-content layer the observer projects as active
+produced by parsing markdown back. From L11 until 260731-EFA-L6 the route also owned leaf reopen
+semantics; `reopen.py` has since moved to `worktrees/reopen.py`, because reopening rewrites the
+leaf's enclosure contract and ranking it as a task operation made `tasks` and `worktrees` mutually
+dependent (`layers.toml`). What stays here is `leaf_doc.py` (exact case-insensitive leaf-doc lookup
+plus the explicit `lifecycleId` restamp worktree start applies across restarts) and the document
+reset itself, which reopen still drives through this route's `store.py`. This is the work-content layer the observer projects as active
 task documents, with lifecycle/enclosure bindings attached when available, so the dashboard can show
 planned and running work from the same JSON source (slice 3c; closes note-03 gap #8).
 
 ## Hot Path Summary
 
-The `task_doc` MCP tool authors documents: its controller
-(`controllers/task_doc_tools.py`) loads or creates the JSON, applies one operation,
+The `task_doc` MCP tool authors documents: its application entry point
+(`application/task_doc_tools.py`) loads or creates the JSON, applies one operation,
 and rewrites both the JSON and the rendered markdown through this package. Leaf writes
 can also plan a same-root master-row update through `master_sync.py`, so the parent
 master `subTasks[]` checklist follows deterministic leaf facts without overwriting
@@ -82,9 +84,9 @@ together.
   fully regenerates the body, so any prose not in the model is dropped. Series *master*
   files (with bespoke sections) are covered too: a master keeps its prose in ordered
   `freeform` `sections` (rendered verbatim) and its machine-readable parts in
-  `subTasks` + `decisions`, so the round-trip is lossless. Live adoption of the format
-  follows the runtime shipping `task_doc`; the documents themselves stay hand-authored
-  markdown until then.
+  `subTasks` + `decisions`, so the round-trip is lossless. The shipped `task_doc` runtime
+  authors the JSON source and regenerates its markdown view; hand-editing the rendered
+  markdown is outside the contract and is overwritten by the next write.
 - The fold is pure data: the renderer takes an already-validated model; all I/O lives
   in `store.py`, and reads go through `model_validate_json`.
 - Step/substep status carries dashboard granularity (4-state); the markdown checkbox
@@ -98,9 +100,12 @@ together.
 - Coupled leaf/master writes prepare every JSON and rendered markdown payload before replacing files,
   and reject duplicate output targets up front; that guard is necessary because a coupled operation
   would otherwise silently let one document target overwrite another.
-- **`cleanup: reopened` is written here and nowhere else.** `reopen.py` (line 86) is the package's
-  only producer of that contract cell; `worktrees/modules/start.py` (line 482) and
-  `observer/reducer.py` (line 318) only read it, both pairing it with `abandoned` as
+- **`cleanup: reopened` is no longer written in this route.** Its sole producer, `reopen.py`, moved
+  to `worktrees/reopen.py` in 260731-EFA-L6 — see that file's sidecar for the current account. The
+  history below is kept because the failure it describes was this route's, and because the reader
+  reset it documents still runs through this route's `store.py`. `reopen.py` (now line 94) remains
+  the package's only producer of that contract cell; `worktrees/modules/start.py` (line 482) and
+  `observer/reducer.py` (line 319) only read it, both pairing it with `abandoned` as
   recreate-fresh. That made this route the sole cause of a wire failure until 260731-EFA-L4:
   `models/worktree.py` hand-wrote `CleanupStatus = Literal["pending", "completed", "abandoned"]`,
   so a context packet for a reopened task raised a pydantic `ValidationError` **inside an MCP
@@ -108,7 +113,7 @@ together.
   both ends. The reader now imports the contract's own `CleanupStatus`, which includes
   `reopened`; and the four vocabulary cells `reopen_task` moves (`human_review_status`,
   `closeout_status`, `integration_status`, `cleanup`) go through
-  `worktree_contract.ContractCells` + `amend_contract` (line 63) instead of being
+  `worktree_contract.ContractCells` + `amend_contract` (now line 71) instead of being
   `dataclasses.replace` keywords, because typeshed declares `replace(obj, /, **changes: Any)` and
   pyright therefore checked none of them. The free-text resets (`code_commit`,
   `memory_content_commit`, `ledger_commit`, `commit_approval_note`, `integration_strategy`, the
@@ -119,21 +124,27 @@ together.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The `task_doc` controller authors documents through this package. | [task_doc_tools.py](agents-remember/mcp/src/agents_remember/controllers/task_doc_tools.py) |
-| Leaf writes keep same-root master rows synchronized through the dedicated planner. | [master_sync.py](agents-remember/mcp/src/agents_remember/tasks/master_sync.py) |
-| The render-back precedent: the worktree contract regenerates its markdown from its model. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The persisted-contract peer this schema mirrors. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:135-186 |
+| Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
+| The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
+| The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:691-742 |
+| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
-Task reopening now clears the completed landing-final artifact as part of restoring live task state and exposes a clearing failure. The tasks route therefore does not let a historical completed landing projection survive as the current truth for reopened work.
+Task reopening now clears the completed landing-final artifact as part of restoring live task state and exposes a clearing failure, so a historical completed landing projection does not survive as the current truth for reopened work. Since 260731-EFA-L6 that clearing lives in `worktrees/reopen.py`, not in this route; the document half of the same reset still runs through this route's `store.py`.
 
 Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
 
 ## Update History
 
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: replaced the obsolete pre-runtime hand-authoring statement with the shipped JSON-authoring/render contract and separated the task renderer from the worktree model-to-text precedent.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:05+02:00 — 260731-EFA-L6 route impact: **`reopen.py` LEFT this route** for `worktrees/reopen.py`. Reopen rewrites the leaf's enclosure contract, emits a `WorktreeCommandResult` and renders through the worktree status payload; ranked as a task operation it made `tasks` and `worktrees` mutually dependent (`layers.toml`) — the task-document store could not be loaded without the whole worktree lifecycle. Corrected the three places this overview claimed the ownership: the Purpose's "since L11 the route also owns leaf reopen semantics", the `cleanup: reopened` invariant's "written here and nowhere else", and the CHATS-L5I landing-final clearing. What genuinely stays is `leaf_doc.py` and the document half of the reset, which reopen still drives through this route's `store.py`, so the invariant's account is kept rather than deleted and now points at the new home. Three cross-file anchors in it were stale and were re-derived against the moved file: the `cleanup: reopened` write line 86 → 94, `amend_contract` line 63 → 71, and `observer/reducer.py` line 318 → 319 (`start.py` line 482 verified correct). Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T00:00+02:00 — 260731-EFA-L4 curator: this route's only L4 change is `reopen.py`
   (+27/-17), and it is worth a route-level invariant rather than a file-sidecar note, because the
   fact it exposes belongs to the route: **`cleanup: reopened` has exactly one writer in the whole

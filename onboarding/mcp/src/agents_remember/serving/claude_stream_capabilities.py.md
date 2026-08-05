@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ None known for L1.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -69,20 +69,22 @@ pass was available for this update.
 Protocol framing and startup sequencing are separate so catalog parsing remains independently
 testable and token-free.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The protocol builds the correlated `list_models` control request. | L64-L69 | [claude_stream_protocol.py](claude_stream_protocol.py) |
-| Startup passes the `system/init` current model into this parser before returning the catalog. | L84-L109 | [claude_stream_startup.py](claude_stream_startup.py) |
+| The protocol builds the correlated `list_models` control request. | `list_models` | mcp/src/agents_remember/serving/claude_stream_protocol.py:156-160 |
+| Startup passes the `system/init` current model into this parser before returning the catalog. | `_negotiate`; `negotiate_claude_catalog`; `parse_list_models_response` | mcp/src/agents_remember/serving/harness_control_claude.py:176-223; mcp/src/agents_remember/serving/claude_stream_startup.py:84-111; mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this parser.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: widened the correlated list-model request input so the fixer retains the complete protocol construction span.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/claude_stream_capabilities.py` since the L2 base commit is the

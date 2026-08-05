@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_abandon.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T04:10+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -93,29 +93,33 @@ blocking conditions (not already-absent).
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `teardown_worktree_providers` and Docker resource derivation helpers. | [provider_teardown.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
-| `_abandon_branch` and `_abandon_blockers`. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
-| `lifecycle_guidance`, whose `cleanup == "abandoned"` branch the 05l-P1 phase test pins. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| `git`/`init_repo` test utilities from the worktree support test module. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `teardown_worktree_providers` loads worktree provider settings, removes the derived resources, and reclaims the provider-runtime tree. | `teardown_worktree_providers` | mcp/src/agents_remember/worktrees/modules/provider_teardown.py:27-46 |
+| `_worktree_provider_docker_resources` derives the provider container/network resources used by teardown. | `_worktree_provider_docker_resources` | mcp/src/agents_remember/worktrees/modules/provider_teardown.py:60-74 |
+| `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:339-372; mcp/src/agents_remember/worktrees/modules/abandon.py:431-445 |
+| `lifecycle_guidance` delegates terminal cleanup states to `_reclaimed_phase`, including the `cleanup == "abandoned"` branch pinned by the 05l-P1 phase test. | `lifecycle_guidance`; `_reclaimed_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:230-240; mcp/src/agents_remember/worktrees/modules/guidance.py:243-257 |
+| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:90-90; mcp/tests/test_worktree_support.py:103-103 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: regenerated teardown/resource-derivation and reclaimed-phase extents so cleanup predicates retain their operative branches.
+
+- 2026-08-02T21:13:21+02:00 — W2-B07 curator: repaired 2 repository-reference citations after bounded source reads; the scoped citation check is clean.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_worktree_abandon.py` since the L2 base commit is the whole-tree `ruff format`
   pass in `00e8379`, which re-wrapped 6 line(s) with no token change whatsoever. Checked by

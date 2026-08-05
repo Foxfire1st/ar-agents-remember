@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:34+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,10 +17,10 @@ memory initialization, baseline, and carryover MCP tools.
 
 ## Code Commentary
 
-`DriftCheckResponse` (L13-L23) is strict because drift summaries have a stable
-status, count, report, and actionable-sample shape. Its `status` (L18) is
+cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:13-27) is strict because drift summaries have a stable
+status, count, report, and actionable-sample shape. Its cit:([`status`], mcp/src/agents_remember/models/memory.py:18-18) is
 `DriftStatus`, **imported** from
-`memory_quality.integrity.onboarding_drift_check.models` (L14 there):
+`memory_quality.integrity.onboarding_drift_check.models`:
 `notChecked | checked | error`. The local
 `DriftCheckStatus = Literal["notChecked", "checked", "error"]` this module used
 to declare was the last of three hand-copies of one vocabulary — identical in
@@ -49,23 +49,29 @@ apply model adds `carriedPaths` (paths whose onboarding actually carried).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Memory MCP controllers route these tools to drift, quality, route-index, init, baseline, and carryover services. | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py) |
-| `DriftStatus` (L14) — the one declaration `DriftCheckResponse.status` and `DriftSummary.status` now share. | [onboarding_drift_check/models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
-| The context-packet wire face of the same alias, which gained the matching `error` field this leaf. | [drift.py](agents-remember/mcp/src/agents_remember/models/drift.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Memory MCP application entry points route these tools to drift, quality, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:168-186; mcp/src/agents_remember/application/memory_tools.py:189-212; mcp/src/agents_remember/application/memory_tools.py:240-272; mcp/src/agents_remember/application/memory_tools.py:275-292; mcp/src/agents_remember/application/memory_tools.py:295-321; mcp/src/agents_remember/application/memory_tools.py:324-355; mcp/src/agents_remember/application/memory_tools.py:358-380; mcp/src/agents_remember/application/memory_tools.py:383-395; mcp/src/agents_remember/application/memory_tools.py:443-450; mcp/src/agents_remember/application/memory_tools.py:453-469; mcp/src/agents_remember/application/memory_tools.py:472-477; mcp/src/agents_remember/application/memory_tools.py:480-495 |
+| `DriftStatus` is the shared status declaration. | `DriftStatus` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14 |
+| `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
+| `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
+| The context-packet wire face includes its matching `error` field. | `DriftSummary`; `error` | mcp/src/agents_remember/models/drift.py:13-23 |
 
 ## Update History
 
+- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: split the shared status declaration from both response consumers and the context-packet error field, with regenerated model extents.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:34+02:00 — 260731-EFA-L4 curator: body corrected. `DriftCheckStatus =
   Literal["notChecked", "checked", "error"]` — this module's local copy, the third in the package
-  — is deleted; `DriftCheckResponse.status` (L18) now reads `DriftStatus` from
-  `memory_quality.integrity.onboarding_drift_check.models` (L14 there). The Invariants line was
+  — is deleted; `DriftCheckResponse.status` (cit:([`status`], mcp/src/agents_remember/models/memory.py:18-18)) now reads `DriftStatus` from
+  `memory_quality.integrity.onboarding_drift_check.models`. The Invariants line was
   also wrong on its face: it said "checked/not-checked/error", and the actual members are
   `notChecked` / `checked` / `error` — `not-checked` is `FreshnessSummary.status`, an unrelated
   vocabulary. Corrected the spelling and added the no-local-copy invariant. Citations:
-  `DriftCheckResponse` pinned to L13-L23 and its `status` to L18; reference rows added for the
-  producing models module (L14) and for `models/drift.py`, the sibling wire face that gained the
+  `DriftCheckResponse` pinned to cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:13-27) and its `status` to cit:([`status`], mcp/src/agents_remember/models/memory.py:18-18); reference rows added for the
+  producing models module and for `models/drift.py`, the sibling wire face that gained the
   matching `error` field this leaf. Verification metadata pinned until closeout stamps the L4
   commit.
 

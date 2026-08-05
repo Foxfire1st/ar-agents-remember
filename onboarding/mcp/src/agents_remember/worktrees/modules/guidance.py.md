@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:30+02:00     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -44,7 +44,7 @@ preview's commit-approval gate and the four blocked-start / blocked-sync recover
 -> dict[str, object]` instead. It emits exactly the same keys in the same order, so **nothing on the
 wire changed**; the split is in the type. Every one of those callers hands its result to a
 `FlexibleToolResponse` and none reaches `WorktreeSummary`, whose only producer is
-`lifecycle_guidance` via `worktrees.status` — so widening `next_guidance` to fit them would have
+`lifecycle_guidance` via `application.worktree_status` — so widening `next_guidance` to fit them would have
 silently widened `WorktreeSummary.nextOperation`, putting "requires developer approval" and "blocked
 on a stale base" back into the set the context packet's `nextOperation` claims to be. `tool` and
 `args` are *required* on `recovery_guidance` (they are optional on `next_guidance`) because a block
@@ -200,20 +200,20 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Context packet worktree status consumes the facade-exported status payload. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
-| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | [landing.py](agents-remember/mcp/src/agents_remember/worktrees/modules/landing.py) |
-| `carryover_done` reads the official ledger via `load_ledger`/`find_mapping`. | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| Cleanup hard-guards on `carryover_done` (and imports it from here) before deleting the parked memory branch. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| The `carryover-pending`/`cleanup-pending` routing + `carryover_done` are pinned here. | [test_cleanup_carryover.py](agents-remember/mcp/tests/test_cleanup_carryover.py) |
-| MCP skill tools return the typed next-operation payloads produced here. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
-| `WorktreeSummary` imports `WorktreePhase` / `NextOperation` / `NextTool` from this module rather than restating them. | [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
-| The six persisted contract vocabularies this module imports for `WorktreeStatusFacts`, and `unknown_cells`, the source of `unknown_contract_cells`. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
-| The fourth: the closeout preview's `request_commit_approval` gate. | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
-| The fifth: `_memory_sync_block`'s `choose_memory_sync_recovery`. | [sync.py](agents-remember/mcp/src/agents_remember/worktrees/modules/sync.py) |
-| Exhaustiveness of every declared vocabulary against its producers, and the packet boundary, are pinned here. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Context packet worktree status consumes the facade-exported status payload. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
+| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
+| `carryover_done` reads the official ledger via `load_ledger`/`find_mapping`. | "row = find_mapping(load_ledger(ledger_path), landed)" | mcp/src/agents_remember/worktrees/modules/guidance.py:221-221 |
+| Cleanup hard-guards on `carryover_done` before deleting the parked memory branch. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/cleanup.py:432-437 |
+| The `carryover-pending`/`cleanup-pending` routing + `carryover_done` are pinned here. | "def test_routes_carryover_pending_when_not_carried(self, cd: MagicMock) -> None:"; "def test_routes_cleanup_pending_with_done_at_when_carried(self, cd: MagicMock) -> None:" | mcp/tests/test_cleanup_carryover.py:166-166; mcp/tests/test_cleanup_carryover.py:173-173 |
+| `WorktreeSummary` imports `WorktreePhase` / `NextOperation` / `NextTool` from this module rather than restating them. | "    NextOperation,"; "    NextTool,"; "    WorktreePhase," | mcp/src/agents_remember/models/worktree.py:16-18 |
+| The six persisted contract vocabularies imported for `WorktreeStatusFacts`. | `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus` | mcp/src/agents_remember/worktrees/worktree_contract.py:63-68 |
+| `unknown_cells` is the source of `unknown_contract_cells`. | `unknown_cells` | mcp/src/agents_remember/worktrees/worktree_contract.py:287-287 |
+| Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:121-121; mcp/src/agents_remember/worktrees/modules/start.py:177-177; mcp/src/agents_remember/worktrees/modules/start.py:356-356 |
+| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:382-382 |
+| The fifth: `_memory_sync_block`'s `choose_memory_sync_recovery`. | "def _memory_sync_block("; "choose_memory_sync_recovery" | mcp/src/agents_remember/worktrees/modules/sync.py:149-149; mcp/src/agents_remember/worktrees/modules/sync.py:165-165 |
+| The two named exhaustiveness tests are defined in this module. | "def test_every_contract_literal_validates_at_its_wire_field(self) -> None:"; "def test_a_live_contract_projects_onto_the_wire_model(self) -> None:" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:638-638; mcp/tests/test_wire_vocabulary_exhaustiveness.py:1191-1191 |
 
 ## Invariants And Boundaries
 
@@ -235,6 +235,13 @@ No external Domain Documentation source is configured for this memory repo.
 Guidance/status payloads now expose contract `kind`, `leaf_id`, `enclosure_path`, and optional `parent_contract_path`, making the leaf/root split visible to dashboard and tool callers.
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: corrected the worktree-status and carryover
+  source owners, removed the false skill-tool claim, and split persisted vocabularies from unknown cells.
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 10 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:30+02:00 — 260731-EFA-L4 curator: the card described the phase machine but not the
   vocabulary it now declares, and the three L2 helper signatures it quoted (`-> dict | None` /
   `-> dict`) had become false — they are `-> LifecycleGuidance | None` / `-> LifecycleGuidance`.

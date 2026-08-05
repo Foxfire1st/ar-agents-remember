@@ -70,31 +70,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test (the `buildTaskTree` / `findMasterPath` / `masterFolderForSelection` helpers). | `buildTaskTree`; `findMasterPath`; `masterFolderForSelection` | [taskIdentity.ts](taskIdentity.ts) |
-| The leaf-key composer the assertions read through: `repository` + docPath folder + `id`, nothing else. | `qualifiedLeafKey` | [taskIdentity.ts](taskIdentity.ts) |
-| The `doc` factory and the analytics bundle, both now built from the shared served builders. | L7-L12; L60-L64 | [taskIdentity.test.ts](taskIdentity.test.ts) |
-| The `taskDoc` / `analytics` builders and the thirteen-key `EMPTY_ANALYTICS` base. | L219-L233; L278-L318 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| The picker these tree helpers feed (it drills `buildTaskTree`'s output and pre-drills with `findMasterPath`). | — | [panels/LeafAttachPicker.tsx](../panels/LeafAttachPicker.tsx) |
+| The module under test (the `buildTaskTree` / `findMasterPath` / `masterFolderForSelection` helpers). | `buildTaskTree`; `findMasterPath`; `masterFolderForSelection` | dashboard/src/data/taskIdentity.ts:126-165; dashboard/src/data/taskIdentity.ts:169-176; dashboard/src/data/taskIdentity.ts:180-194 |
+| The leaf-key composer the assertions read through: `repository` + docPath folder + `id`, nothing else. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
+| The test file's `doc` fixture helper. | `doc` | dashboard/src/data/taskIdentity.test.ts:10-12 |
+| The `taskDoc` / `analytics` builders and the thirteen-key `EMPTY_ANALYTICS` base. | `EMPTY_ANALYTICS`; `taskDoc`; `analytics` | dashboard/src/test/fixtures/wire.ts:223-237; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:317-322 |
+| ChatSessionActions derives its task tree from taskDocuments. | "const leafTree = useMemo(() => buildTaskTree(taskDocuments), [taskDocuments]);" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:140-140 |
+| ChatSessionActions renders LeafAttachPicker. | "<LeafAttachPicker" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:184-184 |
+| LeafAttachPicker pre-drills to the context master with findMasterPath. | "setPath(contextMaster ? findMasterPath(tree, contextMaster) : []);" | dashboard/src/panels/LeafAttachPicker.tsx:232-232 |
+| Master rows drill further through drillInto. | "onClick={() => drillInto(node)}" | dashboard/src/panels/LeafAttachPicker.tsx:333-333 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-01T09:44+02:00 — 260731-EFA-L4 curator: the card stated twice that the fixtures are casts —
   "casting via `as unknown as TaskDocNode`" in Logic and "minimal `doc(...)` partials cast to
   `TaskDocNode`" in Conventions — and the diff against `abc7cbc` removed both casts. `doc()` now

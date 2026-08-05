@@ -67,13 +67,13 @@ an invalid UID/GID override.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Public lifecycle exports are collected by the package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| Package execution delegates to the lifecycle CLI. | [__main__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__main__.py) |
-| CGC lifecycle implementation is grouped under the CGC provider package. | [CGC lifecycle overview](../cgc/lifecycle/overview.md) |
-| GrepAI lifecycle implementation is grouped under the GrepAI provider package. | [GrepAI lifecycle overview](../grepai/lifecycle/overview.md) |
-| Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Public lifecycle exports are collected by the package facade. | `_EXPORT_MODULES` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24 |
+| Package execution delegates to the lifecycle CLI. | `main` | mcp/src/agents_remember/providers/lifecycle/__main__.py:1-8 |
+| CGC lifecycle implementation is grouped under the CGC provider package. | `## Purpose` | onboarding/mcp/src/agents_remember/providers/cgc/lifecycle/overview.md:17-22 |
+| GrepAI lifecycle implementation is grouped under the GrepAI provider package. | `## Purpose` | onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/overview.md:17-22 |
+| Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | `test_grepai_settings_backed_run_uses_docker_without_host_binary` | mcp/tests/test_provider_lifecycle.py:318-352; mcp/tests/test_provider_lifecycle.py:1058-1112; mcp/tests/test_provider_lifecycle.py:1143-1224 |
 
 ## 260731-EFA-L2 — One More Shared Primitive, One Fewer Unused Knob
 
@@ -100,6 +100,8 @@ because that detail is what makes a failure debuggable). The success/failure asy
 of the module and is now readable at the call site.
 
 ## Update History
+
+- 2026-08-04T18:23+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 5 citation rows with exact anchors (`_EXPORT_MODULES`, `main`, the sibling-overview `## Purpose` headings, and the named provider-lifecycle tests) and ledger-verified ranges; the CGC/GrepAI overview citations now use the `onboarding/`-prefixed memory path form. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `compose_runtime.py` gained the shared
   `BackendStartReconciliation` bundle both provider backends now pass; `command_runner.run_command`

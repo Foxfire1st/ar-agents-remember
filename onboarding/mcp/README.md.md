@@ -6,8 +6,8 @@
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T11:55+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -116,16 +116,18 @@ the workspace and never the user's home directory.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py); [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | [pyproject.toml](agents-remember/mcp/pyproject.toml) |
-| The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py); [mcp-tools.md](agents-remember/docs/reference/mcp-tools.md) |
-| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | `main`; `require_config_path` | mcp/src/agents_remember/mcp/config.py:224-238; mcp/src/agents_remember/mcp/server.py:35-57 |
+| The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | "agents-remember-mcp =" | mcp/pyproject.toml:69-69 |
+| The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
+| The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | `create_server`; `# MCP Tool Reference` | docs/reference/mcp-tools.md:1-137; mcp/src/agents_remember/mcp/server.py:18-28 |
+| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | `parse_timeout_caps` | mcp/src/agents_remember/mcp/config.py:573-592 |
+| The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | `RuntimeInstallRequest` | mcp/src/agents_remember/install/runtime.py:105-119 |
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 6 citation items; scoped citation check now passes.
 
 - 2026-07-31T21:45+02:00 — 260731-EFA-L2 curator: No content impact: the leaf changed two
   Troubleshooting lines in `mcp/README.md` from `provider_watchers(action="refresh")` to

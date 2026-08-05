@@ -52,28 +52,31 @@ None recorded.
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
+| No relevant domain documentation was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixtures — `identity`, `capabilities`, `page`, `queued`, `seed` — that build interrupt-capability and working-turn evidence. | L25-L92 | [QueuePreview.test.tsx](QueuePreview.test.tsx) |
-| The five cases proving visibility gating and the no-withdraw/no-duplicate steer request. | L94-L167 | [QueuePreview.test.tsx](QueuePreview.test.tsx) |
-| Implementation under test (`QueuePreview`). | L74-L141 | [QueuePreview.tsx](QueuePreview.tsx) |
-| `conversationCapabilities` / `featureCapability` — the full 23-leaf tree these fixtures now override three leaves of. | L69-L153 | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
+| The fixtures — `identity`, `capabilities`, `page`, `queued`, `seed` — that build interrupt-capability and working-turn evidence. | `conversationIdentity`, `conversationCapabilities`, `conversationPage`, `queued`, `seed` | dashboard/src/panels/session-cockpit/QueuePreview.test.tsx:28-28; dashboard/src/panels/session-cockpit/QueuePreview.test.tsx:39-39; dashboard/src/panels/session-cockpit/QueuePreview.test.tsx:61-61; dashboard/src/panels/session-cockpit/QueuePreview.test.tsx:68-77; dashboard/src/panels/session-cockpit/QueuePreview.test.tsx:81-83 |
+| The component gates its interrupt-capability read on a defined session id. | `interruptCapability` | dashboard/src/panels/session-cockpit/QueuePreview.tsx:100-104 |
+| Implementation under test (`QueuePreview`). | `QueuePreview` | dashboard/src/panels/session-cockpit/QueuePreview.tsx:91-146 |
+| `conversationCapabilities` / `featureCapability` — the full 23-leaf tree these fixtures now override three leaves of. | `conversationCapabilities`, `featureCapability` | dashboard/src/test/fixtures/conversationWire.ts:69-74; dashboard/src/test/fixtures/conversationWire.ts:103-146 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bound the interrupt-capability selector,
+  read, and gate to the complete component expression through the scoped fixer.
 
 - 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator: recorded that the capability/identity/status/page
   fixtures moved to `test/fixtures/conversationWire.ts` and that `capabilities()` is now a three-leaf

@@ -45,23 +45,23 @@ The production sev-4 trigger-visual caveat remains documented in `ModelEffortCon
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Sourcing, failure, menu, apply, and chip cases. | L62-L371 | [ModelEffortControl.test.tsx](ModelEffortControl.test.tsx) |
-| Component under test. | L148-L383 | [ModelEffortControl.tsx](ModelEffortControl.tsx) |
-| Capability fixtures. | — | [../../test/fixtures/capabilityEnvelopes.ts](../../test/fixtures/capabilityEnvelopes.ts) |
+| Sourcing, failure, menu, apply, and chip cases. | "ModelEffortControl" | dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx:1-391 |
+| Component under test. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:149-379 |
+| Capability fixtures. | `effortOption`; `modelRow`; `SET_RESULTS` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:20-32; dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52; dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -72,6 +72,7 @@ the live-menu selection cases that distinguish actual state from launch fallback
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-24T13:17:17Z — Curator: recorded evidence-only model/effort trigger coverage;
   verification fields remain pre-commit.
 

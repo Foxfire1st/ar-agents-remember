@@ -43,12 +43,14 @@ Marker tests drive `grepai_scan_state_from_log` with real watcher log shapes.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The watchdog and clone under test. | [seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
-| The scan-marker parser under test. | [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The watchdog and clone under test. | `_StallWatchdog`; `_run_with_stall_watchdog`; `_clone_database`; `GrepaiCloneContext` | mcp/src/agents_remember/providers/grepai/seed.py:38-52; mcp/src/agents_remember/providers/grepai/seed.py:266-310; mcp/src/agents_remember/providers/grepai/seed.py:313-324; mcp/src/agents_remember/providers/grepai/seed.py:327-379 |
+| The scan-marker parser under test. | `grepai_scan_state_from_log`; `GREPAI_SCAN_PROGRESS_MARKERS`; `GREPAI_SCAN_COMPLETE_MARKER` | mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:77-78; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:137-142 |
 
 ## Update History
+
+- 2026-08-03T11:20+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 4 assigned citation findings (2 missing anchors and 2 malformed sources); final scoped check is clean.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
   `_run_with_stall_watchdog` now takes its `progress`/`stall_seconds`/`poll_seconds` trio as a

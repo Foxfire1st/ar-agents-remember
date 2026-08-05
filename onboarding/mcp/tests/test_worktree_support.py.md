@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-01T10:04+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -149,38 +149,38 @@ Add fuller Git fixture tests for compatible external-memory start. Refresh verif
 
 No external documentation is needed for this standard-library test.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding                                                                                                                                                                                                                                                                                                                           | Citations            | Source Path                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------------- |
-| The test module imports `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `c-11-memory-carryover-from-branch` skill, drift, resolver, ledger, contract, and benchmark helpers from MCP package modules and creates minimal file-level onboarding fixtures for adoption and carryover checks.                                                                                                             | L22-L74; L112-L134 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests.                                                                                                                                        | L409-L479 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| The resolver regression test proves `c-08-ar-coordination-context-resolver` skill returns `ar-coordination/tasks/<repo>` when no task name is supplied.                                                                                                                                                                                                                       | L745-L762 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| External-memory start blocks dirty source memory repos before worktree creation.                                                                                                                                                                                                                                                    | L1069-L1108 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading.                                                                                                                                                    | L1280-L1350 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / `request_commit_approval` (closeout owns the commit gate). | L1352-L1591 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| `test_status_reports_integration_pending_for_dirty_closed_contract` (slice 09) pins the corrected `status_payload` behavior: a closed-out contract reports its honest lifecycle position (`integration-pending` / `request_integration_decision`) even when the worktree is dirty — `git status` no longer fabricates `commit-approval-pending`. | L1950-L1962 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | closeout regression tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | L234-L262 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| `c-09-git-worktree-manager` skill integration and cleanup tests cover ff-only source fast-forwarding, cleanup-pending status, cleanup removal, idempotent cleanup, cleanup blocking before integration, replay after parallel non-overlapping changes with a fresh ledger mapping, code conflict blocking before main moves, and `_merge_integrated_commits` refusing a non-fast-forward integrated code commit with a "not a fast-forward" `RuntimeError` while leaving `HEAD` unmoved. | `c-09-git-worktree-manager` skill integration tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Resolver and drift-report path tests check `code_repository_name`, `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, absolute-path containment, and explicit memory-root report redirection back to temp.                                           | L2281-L2324 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Deterministic `c-02-memory-quality-control` skill drift tests build route overview and entity catalog fixtures, then cover clean route scopes, changed route scopes, clean fingerprints, changed fingerprints, missing evidence paths, missing fingerprint tables, missing fingerprint rows, and orphaned fingerprint rows. | L136-L205; L2326-L2522 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Resolver tests cover arbitrary installed runtime roots by making a non-`ar-coordination` directory with `skills/`, `system/`, `tasks/`, and `memory-repos/`, then proving `c-08-ar-coordination-context-resolver` skill uses it as the coordination root; adjacent tests prove source-checkout `.env` and `.env.example` no longer override coordination-root selection. | L2159-L2224 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| `c-10-adopt-memory-baseline` skill tests cover ready status without a ledger, `code_repository_name`/`code_repository_root` resolver args, drift report placement outside task folders, drift blocking without explicit acceptance, and initial ledger creation with docs `.gitkeep`.                                                                           | L2582-L2682 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| `c-11-memory-carryover-from-branch` skill tests pass `code_repository_name` and `code_repository_root`, then cover auto-carry for landed source branch code with new onboarding, refreshed official verification metadata, official ledger prepending, review-required same-path ambiguity, earlier-only-landed same-path commits yielding `same-path-changed`/`review-required` rather than `exact-landed-commit`, rejected unlanded source branch memory, and mapping an unmapped official code HEAD (e.g. a PR merge commit) to current memory content when nothing is actionable to carry (`ledger-mapped-head`).                                | `c-11-memory-carryover-from-branch` skill tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Benchmark runner portability tests cover manifest path containment, non-string path rejection, manifest path component validation, read-only generated tree removal, stale directory symlink removal without deleting the target, Windows `.cmd` shim selection for `codex`, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped provider selection, generated provider settings without coordinator `system/settings.json` and with central provider log paths, workspace-local `.codex` benchmark MCP registration, temporary provider setup settings handoff, cached repository reuse without clone or fetch, changed-pinned-commit fetching, force-clone cache discard, and copy-only benchmark skill exposure without the deleted shell installer. | L2949-L3582 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The file-level onboarding helper creates minimal onboarding fixtures for adoption and carryover checks. | `write_file_onboarding` | mcp/tests/test_worktree_support.py:123-144 |
+| The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | `closed_external_contract_fixture` | mcp/tests/test_worktree_support.py:469-538 |
+| The resolver regression test proves `c-08-ar-coordination-context-resolver` skill returns `ar-coordination/tasks/<repo>` when no task name is supplied. | `test_resolver_returns_repo_task_root_without_task_name` | mcp/tests/test_worktree_support.py:805-822 |
+| External-memory start blocks dirty source memory repos before worktree creation. | `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support.py:1129-1168 |
+| Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading. | `test_worktree_contract_roundtrip` | mcp/tests/test_worktree_support.py:1340-1410 |
+| Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / `request_commit_approval` (closeout owns the commit gate). | `request_commit_approval` | mcp/tests/test_worktree_support.py:1352-1591 |
+| `test_status_reports_integration_pending_for_dirty_closed_contract` (slice 09) pins the corrected `status_payload` behavior: a closed-out contract reports its honest lifecycle position (`integration-pending` / `request_integration_decision`) even when the worktree is dirty — `git status` no longer fabricates `commit-approval-pending`. | `test_status_reports_integration_pending_for_dirty_closed_contract` | mcp/tests/test_worktree_support.py:2095-2107 |
+| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support.py:1509-1539; mcp/tests/test_worktree_support.py:1541-1554; mcp/tests/test_worktree_support.py:1573-1591 |
+| The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:276-304 |
+| `c-09-git-worktree-manager` integration and cleanup tests cover ff-only fast-forwarding, cleanup blocking, replay of parallel non-overlapping changes, code-conflict blocking, and non-fast-forward refusal without moving `HEAD`. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_cleanup_blocks_before_integration_completed`; `test_integrate_replay_handles_parallel_non_overlapping_changes`; `test_integrate_replay_blocks_code_conflicts_before_main_moves`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support.py:2109-2164; mcp/tests/test_worktree_support.py:2166-2172; mcp/tests/test_worktree_support.py:2174-2219; mcp/tests/test_worktree_support.py:2221-2252; mcp/tests/test_worktree_support.py:3056-3091 |
+| Resolver and drift-report path tests check `code_repository_name`, `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, absolute-path containment, and explicit memory-root report redirection back to temp. | `test_drift_report_paths_use_temp_root` | mcp/tests/test_worktree_support.py:2426-2469 |
+| Deterministic `c-02-memory-quality-control` skill drift tests build route overview and entity catalog fixtures, then cover clean route scopes, changed route scopes, clean fingerprints, changed fingerprints, missing evidence paths, missing fingerprint tables, missing fingerprint rows, and orphaned fingerprint rows. | `test_drift_detects_clean_route_local_overview`; `test_drift_detects_changed_route_local_overview_scope`; `test_drift_detects_clean_entity_fingerprint`; `test_drift_detects_entity_fingerprint_change`; `test_drift_detects_missing_entity_evidence_path`; `test_drift_detects_entity_inventory_without_fingerprint_table`; `test_drift_detects_entity_inventory_entry_missing_fingerprint`; `test_drift_detects_orphaned_entity_fingerprint_row` | mcp/tests/test_worktree_support.py:2471-2489; mcp/tests/test_worktree_support.py:2491-2509; mcp/tests/test_worktree_support.py:2511-2534; mcp/tests/test_worktree_support.py:2536-2561; mcp/tests/test_worktree_support.py:2563-2584; mcp/tests/test_worktree_support.py:2586-2610; mcp/tests/test_worktree_support.py:2612-2637; mcp/tests/test_worktree_support.py:2639-2667 |
+| Resolver tests cover arbitrary installed runtime roots and prove source-checkout `.env` and `.env.example` do not override coordination-root selection. | `test_resolver_uses_installed_runtime_root_as_coordination_root`; `test_resolver_ignores_dot_env_override_for_coordination_root`; `test_resolver_ignores_dot_env_example_at_runtime` | mcp/tests/test_worktree_support.py:2304-2324; mcp/tests/test_worktree_support.py:2326-2346; mcp/tests/test_worktree_support.py:2348-2369 |
+| `c-10-adopt-memory-baseline` skill tests cover ready status without a ledger, resolver arguments, drift report placement, drift blocking without explicit acceptance, and initial ledger creation with docs `.gitkeep`. | `test_adopt_memory_baseline_status_ready_without_ledger`; `test_adopt_memory_baseline_blocks_drift_without_acceptance`; `test_adopt_memory_baseline_creates_initial_ledger` | mcp/tests/test_worktree_support.py:2727-2770; mcp/tests/test_worktree_support.py:2772-2795; mcp/tests/test_worktree_support.py:2797-2827 |
+| `c-11-memory-carryover-from-branch` tests cover landed-branch auto-carry, same-path ambiguity, unmapped official heads, earlier-only-landed changes, and rejected unlanded branch memory. | `test_memory_carryover_applies_landed_branch_onboarding`; `test_memory_carryover_requires_review_for_same_path_ambiguity`; `test_memory_carryover_maps_unmapped_official_head_when_nothing_to_carry`; `test_memory_carryover_requires_review_when_only_earlier_path_commit_landed`; `test_memory_carryover_rejects_branch_memory_when_code_did_not_land` | mcp/tests/test_worktree_support.py:2829-2883; mcp/tests/test_worktree_support.py:2885-2928; mcp/tests/test_worktree_support.py:2930-2980; mcp/tests/test_worktree_support.py:2982-3024; mcp/tests/test_worktree_support.py:3026-3054 |
+| Benchmark runner portability tests cover manifest path containment, non-string path rejection, manifest path component validation, read-only generated tree removal, stale directory symlink removal without deleting the target, Windows `.cmd` shim selection for `codex`, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped provider selection, generated provider settings without coordinator `system/settings.json` and with central provider log paths, workspace-local `.codex` benchmark MCP registration, temporary provider setup settings handoff, cached repository reuse without clone or fetch, changed-pinned-commit fetching, force-clone cache discard, and copy-only benchmark skill exposure without the deleted shell installer. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support.py:3094-3722 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for the test itself.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Series-Contract Notes
 
@@ -192,28 +192,23 @@ the L3 memory-base regression: `memory_base_for_source` records the memory base 
 tip, not the repo HEAD when the memory repo is checked out on an unrelated branch.
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: narrowed and rebound integration, cleanup, and carryover claims to their complete test bodies under the adversarial verdict, then the exact scoped fixer/check passed.
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 34 citation findings; scoped check passed.
 
 - 2026-08-01T10:04+02:00 — 260731-EFA-L4 curator: No content impact: five one-for-one line
   replacements, none of which this card describes. Four are fixture values moving to the narrowed
-  `WorkflowKind` — `workflow_kind="chat"` becoming `"chat-task"` in
-  `open_external_contract_fixture` (L279), `committed_range_external_contract_fixture` (L353),
-  `closed_external_contract_fixture` (L425) and the atomic-integrate contract (L2930) — forced by
-  `WorkflowKind = Literal["chat-task", "light-task"]` (`worktrees/worktree_contract.py` L50). The
-  fifth is inside `test_status_reports_integration_pending_for_dirty_closed_contract`, where
+  `WorkflowKind` — `workflow_kind="chat"` becoming `"chat-task"` in the external-contract fixtures
+  and atomic-integrate contract — forced by the two-value workflow contract. The fixture definitions
+  and contract vocabulary were re-read directly: cit:([`open_external_contract_fixture`, `committed_range_external_contract_fixture`, `closed_external_contract_fixture`], mcp/tests/test_worktree_support.py:307-358; mcp/tests/test_worktree_support.py:392-452; mcp/tests/test_worktree_support.py:469-538); cit:([`DEFAULT_WORKFLOW_KIND`], mcp/src/agents_remember/worktrees/worktree_contract.py:84-84).
+  The fifth is inside `test_status_reports_integration_pending_for_dirty_closed_contract`, where
   `payload["nextTool"]` became `payload.get("nextTool")`: `status_payload` now returns a
   `WorktreeStatusPayload` whose `nextTool` is `NotRequired` (omitted rather than `""`), so the
   subscript is a type error. Same expected value, `"worktree_integrate"`, and the paired
   `assertNotIn("next_command", payload)` is untouched — the card's claim for that row is the
   `integration-pending` / `request_integration_decision` position, which is unchanged, and the card
-  names `nextTool` nowhere. Nothing shifted a line: the file is still 3845 lines, so I re-verified
-  all fifteen Repo-Internal citations at their recorded positions rather than assuming them —
-  L22-L74 and L112-L134 (imports + `write_file_onboarding`), L136-L205 (`write_route_overview`),
-  L234-L262 (`initialized_memory_repo`), L409-L479 (`closed_external_contract_fixture`), L745-L762,
-  L1069-L1108, L1280-L1350 (the roundtrip test, whose `worktree_manager.command_status(` call at
-  L1343 is the "direct contract-path status loading" the row claims), L1352-L1591, L1950-L1962,
-  L2159-L2224 (which does contain `test_resolver_uses_installed_runtime_root_as_coordination_root`),
-  L2281-L2324, L2326-L2522, L2582-L2682 and L2949-L3582 (`BenchmarkRunnerPortabilityTests`). All
-  land on the symbols their claims name. No test method was added, removed or renamed.
+  names `nextTool` nowhere. All Repo-Internal citations were re-read against their named helpers,
+  tests, and benchmark class; no test method was added, removed or renamed.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the PLR0913 pass moved the call shapes this
   suite uses. `default_contract` now takes a `ContractTask` plus `leaf`/`code`/`memory` objects,
@@ -247,7 +242,7 @@ tip, not the repo HEAD when the memory repo is checked out on an unrelated branc
   (naming both branches, nothing committed) when the official memory repo is checked out off the
   memory source branch. Post-merge onboarding refresh (developer-approved) verified against main
   @ e358c4a.
-- 2026-06-29T23:18+02:00 — Memory-base fix (L3): added `test_memory_base_for_source_uses_source_branch_tip_not_head` — proves `worktree_start` records the memory base from the source-branch tip, not the repo HEAD (repo on a divergent branch). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-29T23:18+02:00 — Memory-base fix in L3: added `test_memory_base_for_source_uses_source_branch_tip_not_head` — proves `worktree_start` records the memory base from the source-branch tip, not the repo HEAD (repo on a divergent branch). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-28T20:30+02:00 — Post-landing cleanup (task 260628_post-landing-cleanup): added `test_find_worktree_contract_skips_archived_contract` covering the `0_archive/` skip in `find_worktree_contract`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): documented the MCP 2.9.3 worktree-name resolution tests (`test_resolver_resolves_contract_by_worktree_name`, `…returns_empty_for_unknown_worktree_name`, `…prefers_task_name_over_worktree_name`, `test_find_worktree_contract_matches_group_or_returns_none`) and the `worktree_group_for` import. Grafted onto the series' task-30 re-closeout / leaf-enclosure coverage.
 - 2026-06-27T21:10+02:00 — Task 30: added

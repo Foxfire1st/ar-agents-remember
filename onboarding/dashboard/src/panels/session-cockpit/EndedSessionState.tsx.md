@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/EndedSessionState.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate |  2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,25 +35,26 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Cross-Repo References
 
 The ended-state projection uses repository-local session/state grammar only; no cross-repository source applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Host and inspectability boundary. | [PtySurface.tsx](PtySurface.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Host and inspectability boundary. | `isInspectable`; `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:132-134; dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
 
 ## Update History
 
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped ended-session citation claim; final exact frozen-snapshot check is clean.
 - 2026-07-18T07:22+02:00 — Created for FEUI-L8 ended-versus-landed presentation; verification
   metadata remains blank until commit.

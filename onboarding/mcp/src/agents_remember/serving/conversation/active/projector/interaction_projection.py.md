@@ -51,16 +51,18 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Snapshot pending-interaction model. | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| Projection transition regressions. | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Snapshot pending-interaction model. | `PendingInteraction` | mcp/src/agents_remember/serving/harness_control_models.py:185-193 |
+| Projection transition regressions. | `test_multiplexed_pending_interactions_project_labeled_and_resolve`; `test_concurrent_parent_pendings_all_project_and_resolve_per_id`; `test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live` | mcp/tests/test_conversation_projector_codex_agents.py:681-735; mcp/tests/test_conversation_projector_codex_agents.py:737-792; mcp/tests/test_conversation_projector_codex_agents.py:794-843 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation items; scoped citation check now passes.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py` since

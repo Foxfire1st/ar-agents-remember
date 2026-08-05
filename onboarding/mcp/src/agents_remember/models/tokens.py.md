@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T22:29+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -24,13 +24,13 @@ character length divided by four) remains available as a deterministic fallback.
 
 ### 260731-EFA-L3 — The Vocabulary Is Vendored, Never Downloaded
 
-`DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` is built at **module scope** (L205) and
+`DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` is built at **module scope** and
 `mcp/tools/base.py` imports this module (`from agents_remember.models.tokens import
 finalize_payload_tokens`), so the encoding is loaded while the MCP tool surface is still
 importing. That load used to be a network round trip: `tiktoken.get_encoding` fetches the
 `o200k_base` vocabulary from `openaipublic.blob.core.windows.net` on a cold cache, and
 nothing in the tree warmed one — a fresh container, an offline machine and a hermetic CI
-job could not start the server at all.
+job could not start the server at all. cit:(["DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()"], mcp/src/agents_remember/models/tokens.py:205-205)
 
 The vocabulary now ships inside the package and the load is scoped to it:
 
@@ -40,24 +40,24 @@ def __post_init__(self) -> None:
         object.__setattr__(self, "_encoding", tiktoken.get_encoding(self.encodingName))
 ```
 
-- `vendored_vocabulary_path()` (L57-L67) derives the file name rather than hard-coding it:
+- cit:([`vendored_vocabulary_path`], mcp/src/agents_remember/models/tokens.py:57-67) derives the file name rather than hard-coding it:
   `hashlib.sha1(VENDORED_VOCABULARY_URL.encode()).hexdigest()` →
   `package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`. That digest is not a
   choice — `tiktoken.load.read_file_cached` looks a download up under the SHA-1 of its
   source URL, so it is the only name a cache hit can have.
-- `_verify_vendored_vocabulary(encoding_name) -> Path` (L70-L106) is the gate, and it runs
+- `_verify_vendored_vocabulary(encoding_name) -> Path` is the gate, and it runs
   **before** the environment variable is touched. It refuses on three conditions, always
-  with `TokenizerVocabularyError` (`agents_remember.errors`), across two messages. The first
-  (L88-L93) covers an `encoding_name` other than `VENDORED_ENCODING_NAME` (`"o200k_base"`)
+  with `TokenizerVocabularyError` (`agents_remember.errors`), across two messages. cit:(["def _verify_vendored_vocabulary"], mcp/src/agents_remember/models/tokens.py:70-70) The first
+  covers an `encoding_name` other than `VENDORED_ENCODING_NAME` (`"o200k_base"`)
   and an absent file (`not path.is_file()`) — the pre-existing "this package ships
-  o200k_base only" refusal. The second (L94-L105) is new and is the one that needs saying:
-  `hashlib.sha256(path.read_bytes()).hexdigest() != VENDORED_VOCABULARY_SHA256` (L47), whose
+  o200k_base only" refusal. cit:(["if encoding_name != VENDORED_ENCODING_NAME"], mcp/src/agents_remember/models/tokens.py:88-88) The second is new and is the one that needs saying:
+  `hashlib.sha256(path.read_bytes()).hexdigest() != VENDORED_VOCABULARY_SHA256`, whose
   message deliberately names both the expected and the found digest, because an operator's
-  next move is to compare their file against the one tiktoken asks for. On success it
+  next move is to compare their file against the one tiktoken asks for. cit:(["if digest != VENDORED_VOCABULARY_SHA256", "VENDORED_VOCABULARY_SHA256 ="], mcp/src/agents_remember/models/tokens.py:47-47; mcp/src/agents_remember/models/tokens.py:95-95) On success it
   returns the verified `Path`.
-- `vendored_vocabulary_cache(encoding_name)` (L109-L146) is a `@contextmanager` that calls
+- cit:([`vendored_vocabulary_cache`], mcp/src/agents_remember/models/tokens.py:109-146) is a `@contextmanager` that calls
   the verifier first and then points `TIKTOKEN_CACHE_DIR` at **`str(path.parent)` — the
-  directory of the file it just verified** (L139), not at the `VENDORED_VOCABULARY_DIR`
+  directory of the file it just verified**, not at the `VENDORED_VOCABULARY_DIR`
   constant re-derived independently, so tiktoken can never be handed a directory whose
   contents were not checked. It restores the previous value (or pops it) in a `finally`.
   It **overrides** an operator-exported `TIKTOKEN_CACHE_DIR`: theirs may be cold, and
@@ -66,7 +66,7 @@ def __post_init__(self) -> None:
   which is routinely read-only — left set, any *other* tiktoken encoding loaded later would
   try to write its download there, and `read_file_cached` re-raises write failures for a
   caller-specified cache dir (it swallows them only for its own default).
-- `_CACHE_DIR_LOCK` (L54) is a **`threading.RLock()`**, not a plain `Lock`. The guarded
+- cit:([`_CACHE_DIR_LOCK`], mcp/src/agents_remember/models/tokens.py:54-54) is a **`threading.RLock()`**, not a plain `Lock`. The guarded
   region spans the `yield` of a public context manager, so the obvious use of what this
   module exports — `with vendored_vocabulary_cache(name): TiktokenTokenCounter()` — has the
   counter's own `__post_init__` re-enter the manager on the same thread. On a plain `Lock`
@@ -142,17 +142,19 @@ operation-less responses such as `ping`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Shared response envelopes define the token metadata fields on the `ResponseModel` base. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
-| `_tool_payload` finalizes token metadata on every public tool response via this module. | [tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| Direct tests for the counters, serializers, and the fixpoint self-consistency guarantee. | [test_tokens.py](agents-remember/mcp/tests/test_tokens.py) |
-| `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
-| The shipped vocabulary, why its name is `sha1(url)`, the SHA-256 this module checks before every load, and how to refresh it (including replacing `VENDORED_VOCABULARY_SHA256`). | [package_data/tiktoken/README.md](agents-remember/mcp/src/agents_remember/package_data/tiktoken/README.md) |
-| The cold-start guard: `ColdStartTests` starts the server in a child with every socket blocked and cold tiktoken caches; `VendoredVocabularyTests` re-derives both hashes from the installed tiktoken (asserting `VENDORED_VOCABULARY_SHA256` equals the one it asks for), proves the cache-dir override does not outlive the load, pins the `.gitattributes` entry to the shipped file name, and joins a re-entrant load on a timeout to catch an `RLock` downgrade; `CorruptVendoredVocabularyTests` corrupts *copies* of the blob in a temp directory — CRLF-mangled, truncated, one flipped byte — and requires the refusal each time. | [test_cold_start.py](agents-remember/mcp/tests/test_cold_start.py) |
-| The `-text` attribute that stops a line-ending filter from changing the bytes this module hashes. | [.gitattributes](agents-remember/.gitattributes) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared response envelopes define the token metadata fields on the `ResponseModel` base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:41-60 |
+| `_tool_payload` finalizes token metadata on every public tool response via this module. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| Direct tests for the counters, serializers, and the fixpoint self-consistency guarantee. | `FinalizePayloadTokensTests` | mcp/tests/test_tokens.py:80-104 |
+| `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:40-48 |
+| The shipped vocabulary, why its name is `sha1(url)`, the SHA-256 this module checks before every load, and how to refresh it (including replacing `VENDORED_VOCABULARY_SHA256`). | `VENDORED_VOCABULARY_SHA256` | mcp/src/agents_remember/package_data/tiktoken/README.md:46-46 |
+| The cold-start guard: `ColdStartTests` starts the server in a child with every socket blocked and cold tiktoken caches; `VendoredVocabularyTests` re-derives both hashes from the installed tiktoken (asserting `VENDORED_VOCABULARY_SHA256` equals the one it asks for), proves the cache-dir override does not outlive the load, pins the `.gitattributes` entry to the shipped file name, and joins a re-entrant load on a timeout to catch an `RLock` downgrade; `CorruptVendoredVocabularyTests` corrupts *copies* of the blob in a temp directory — CRLF-mangled, truncated, one flipped byte — and requires the refusal each time. | `ColdStartTests`; `VendoredVocabularyTests`; `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:199-218; mcp/tests/test_cold_start.py:221-331; mcp/tests/test_cold_start.py:334-417 |
+| The `-text` attribute that stops a line-ending filter from changing the bytes this module hashes. | "-text" | .gitattributes:13-13 |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 12 initial citation findings (3 anchor, 6 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-31T22:10+02:00 — 260731-EFA-L3 curator: reconciled against the fix that followed the
   earlier entry below. Corrected the claim that "tiktoken asserts their SHA-256 on load" — it
@@ -160,23 +162,23 @@ operation-less responses such as `ping`.
   mismatch with `os.remove(cache_path)` then `read_file(blobpath)` and writes the download
   back, which against this package's directory means a startup fetch that rewrites the
   installed tree (or a `PermissionError` on a read-only install). Documented the new
-  `VENDORED_VOCABULARY_SHA256` (L47) and `_verify_vendored_vocabulary()` (L70-L106), which
+  cit:([`VENDORED_VOCABULARY_SHA256`], mcp/src/agents_remember/models/tokens.py:47-47) and cit:([`_verify_vendored_vocabulary`], mcp/src/agents_remember/models/tokens.py:70-106), which
   runs before `TIKTOKEN_CACHE_DIR` is touched and adds the digest refusal alongside the
   existing absent/wrong-encoding ones; recorded that `vendored_vocabulary_cache` now hands
-  tiktoken `str(path.parent)` of the file it just verified (L139) rather than re-deriving the
-  constant. Corrected `_CACHE_DIR_LOCK` from `threading.Lock` to `threading.RLock` (L54) and
+  tiktoken `str(path.parent)` of the file it just verified rather than re-deriving the
+  constant. Corrected `_CACHE_DIR_LOCK` from `threading.Lock` to `threading.RLock` and
   said why — the guarded region spans a `yield`, so `with vendored_vocabulary_cache(...):
   TiktokenTokenCounter()` re-enters on the same thread and hangs forever on a plain `Lock`.
   Narrowed the `TIKTOKEN_CACHE_DIR` invariant to what the lock actually buys: the variable is
   process-global and a non-participating thread can still observe or clobber it. Re-derived
-  every citation — `DEFAULT_TOKEN_COUNTER` L154 → **L205**, `vendored_vocabulary_path()`
-  L44-L54 → **L57-L67**, `vendored_vocabulary_cache()` L57-L95 → **L109-L146** — and rewrote
+  every citation — `DEFAULT_TOKEN_COUNTER`, `vendored_vocabulary_path()`, and
+  `vendored_vocabulary_cache()` — and rewrote
   the `test_cold_start.py` reference row, which described only two test classes and missed
   `CorruptVendoredVocabularyTests`, the `.gitattributes` name test and the deadlock guard.
   Verified by running the 11 in-process tests of `mcp/tests/test_cold_start.py` (all pass) and
   by re-deriving `sha256(fb374d419588a4632f3f557e76b4b70aebbca790)` =
   `446a9538...1a2d`, equal to `expected_hash` in the installed tiktoken 0.13.0's
-  `tiktoken_ext/openai_public.py::o200k_base` (L98). Metadata cells untouched.
+  `tiktoken_ext/openai_public.py::o200k_base`. cit:([`test_the_shipped_file_is_the_one_tiktoken_asks_for`], mcp/tests/test_cold_start.py:222-244) Metadata cells untouched.
 
 - 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: the tokenizer no longer downloads its
   vocabulary. Recorded the vendored `o200k_base` file

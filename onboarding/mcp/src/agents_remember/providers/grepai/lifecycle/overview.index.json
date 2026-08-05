@@ -93,15 +93,15 @@
       "grepai.context",
       "context.common",
       "providers.context",
+      "_EXPORT_MODULES",
+      "test_grepai_settings_backed_run_uses_docker_without_host_binary",
+      "test_grepai_direct_run_does_not_special_case_native_watcher_commands",
+      "test_grepai_runner_image_build_no_cache_inserts_flag_in_dry_run",
       "GrepaiBackendContext",
       "settings_path",
       "provider_settings",
       "layout",
-      "network_name",
-      "grepai_backend_start_context(args",
-      "GrepaiEmbedderContext",
-      "grepai_embedder_start_context(args",
-      "GrepaiWatcherStart"
+      "network_name"
     ]
   },
   "fallback": {

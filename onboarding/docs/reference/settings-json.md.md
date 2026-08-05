@@ -6,8 +6,8 @@
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -63,15 +63,16 @@ spawn-surface manual.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Agentic settings parser that implements the documented `orchestration.*` families. | [../../mcp/src/agents_remember/kernel/agentic_settings.py](../../mcp/src/agents_remember/kernel/agentic_settings.py.md) |
-| Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | [../../mcp/src/agents_remember/mcp/tools/terminal.py](../../mcp/src/agents_remember/mcp/tools/terminal.py.md) |
-| Serving app that reads supervisor settings per sweep. | [../../mcp/src/agents_remember/serving/app.py](../../mcp/src/agents_remember/serving/app.py.md) |
-| Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | [../../mcp/src/agents_remember/serving/supervisor.py](../../mcp/src/agents_remember/serving/supervisor.py.md) |
-| Backoff math enforcing the shared 900-second redelivery floor documented here. | [../../mcp/src/agents_remember/controlplane/inbox_backoff.py](../../mcp/src/agents_remember/controlplane/inbox_backoff.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:449-449 |
+| Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
+| Serving app that reads supervisor settings per sweep. | "supervisor sweep failed; retrying next interval" | mcp/src/agents_remember/serving/app.py:871-871 |
+| Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:1195-1282 |
+| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:45-45 |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed the settings contract for Codex argv knobs,

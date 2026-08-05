@@ -6,8 +6,8 @@
 | path                   | `docs/reference/skills.md`              |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-08T01:00+02:00                  |
-| lastVerifiedCommitHash |                                         `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                         2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash |                                         `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                         2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -50,12 +50,15 @@ inferred from the MCP settings location; packaged skills are flat, one folder pe
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Canonical role registry and three-condition router this page summarizes. | [skills/l-01-agent-lifecycles/SKILL.md](../../../skills/l-01-agent-lifecycles/SKILL.md) |
-| Sync script the page instructs running after skill edits. | [scripts/sync-skills.py](../../../scripts/sync-skills.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Canonical role registry and three-condition router this page summarizes. | `# l-01-agent-lifecycles — The Agent Lifecycles` | skills/l-01-agent-lifecycles/SKILL.md:6-416 |
+| Sync script the page instructs running after skill edits. | "class SkillTarget" | scripts/sync-skills.py:27-27 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: the source page's l-01 row now
   lists all nine roles including **system-specialist**, the provider-degradation investigate-first

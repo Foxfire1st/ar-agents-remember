@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate |                                                  2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash |                                                  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,33 +119,36 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | — | [servedAges.ts](servedAges.ts) |
-| Projection types the store maps over (incl. the optional `servingBuild`). | — | [../types/projection.ts](../types/projection.ts) |
-| Observer event type for the Event River tail. | — | [../types/event.ts](../types/event.ts) |
-| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | L29-L31; L120-L122 | [store.ts](store.ts) |
-| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | L42-L46; L139-L180 | [store.ts](store.ts) |
-| `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | — | [../panels/EventRiver.tsx](../panels/EventRiver.tsx) |
-| `SupervisorHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors. | — | [../types/projection.ts](../types/projection.ts.md) |
-| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | — | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx.md) |
+| The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:526-526 |
+| Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
+| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:225-225 |
+| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:349-349 |
+| `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
+| `SupervisorHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
+| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:725-752 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and source-backed ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

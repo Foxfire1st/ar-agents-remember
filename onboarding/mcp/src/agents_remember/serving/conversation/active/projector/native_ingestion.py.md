@@ -56,10 +56,10 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Harness-specific mapping contracts. | [projectors/](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/) |
-| Project-once and ordering regressions. | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Harness-specific mapping contracts. | `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:120-121 |
+| Project-once and ordering regressions. | `test_settled_live_turns_project_once_when_native_ids_disjoint` | mcp/tests/test_conversation_active_service.py:329-414 |
 
 ## Cross-Repo References
 
@@ -78,6 +78,7 @@ are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-03T03:01:58+02:00 — W3-B05 curator: resolved 2 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: constructor now takes `SessionProjectionSpine` + `BridgeReaders`.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the native-ingestion

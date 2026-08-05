@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:10+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                                               |
-| lastVerifiedCommitDate |2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                               |
+| lastVerifiedCommitDate |2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ rule in `guidance.carryover_done`.
   and surfaces `carryoverDoneAt`. Note the asymmetry in how those keys are read: `phase`
   with `guidance["phase"]`, but `nextTool` and `carryoverDoneAt` with `guidance.get(...)`.
   That is the return type, not a style choice — `lifecycle_guidance` now returns a
-  `LifecycleGuidance` TypedDict (`worktrees/modules/guidance.py` L85-L96) on which
+  `LifecycleGuidance` TypedDict (cit:([`LifecycleGuidance`], mcp/src/agents_remember/worktrees/modules/guidance.py:86-96)) on which
   `phase`/`summary`/`nextOperation` are required and `nextTool`/`nextArgs`/`nextRequiredArgs`/
   `carryoverDoneAt` are `NotRequired`, and `next_guidance` sets `nextTool` only `if tool`.
   An absent next-move is an **omitted key**, never `""`, so subscripting it is a type error
@@ -84,7 +84,7 @@ rule in `guidance.carryover_done`.
   reports the contract-owned code snapshot as `would_remove`, while real cleanup deletes only
   that exact snapshot and preserves an unrelated one.
 
-14 tests, all green.
+47 test methods across 11 test classes; this residual-only curation does not assert a fresh runtime test result.
 
 ### Conventions
 
@@ -121,14 +121,21 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `carryover_done` + the `carryover-pending`/`cleanup-pending` routing under test. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| The cleanup carryover-guard, source-branch work-branch deletion, child-edge source preservation, dry-run directory plan, and `delete_remote_branch_if_present` under test. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| Shared drift snapshot path/removal helper used by cleanup and the drift snapshot cleanup tests. | [observer/drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| The official ledger reader/writer the carryover-done signal is built on. | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| The shared `git` / `init_repo` worktree test helpers reused here. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| The typed `WorktreeArgs` DTO `cleanup_result` consumes. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `carryover_done` reads the official ledger mapping used as the carryover-complete signal. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:204-227 |
+| `_post_integration_phase` routes completed integrations through `carryover-pending` or `cleanup-pending` and selects the corresponding carryover or cleanup tool. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:260-306 |
+| `GuidanceCarryoverRoutingTests` proves both carryover-pending and cleanup-pending routes. | `GuidanceCarryoverRoutingTests` | mcp/tests/test_cleanup_carryover.py:155-178 |
+| The cleanup carryover guard and result contract under test. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:422-465 |
+| Source-branch work-branch deletion is proved by the cleanup helper. | `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:82-112 |
+| Child-edge source preservation is tracked by the cleanup deletion set. | `_deleted_branches` | mcp/src/agents_remember/worktrees/modules/cleanup.py:302-342 |
+| Dry-run directory planning and empty-directory removal are owned by the cleanup state helpers. | `remove_empty_dir`; `_scheduled_removal_paths`; `_cleanup_state` | mcp/src/agents_remember/worktrees/modules/cleanup.py:267-282; mcp/src/agents_remember/worktrees/modules/cleanup.py:345-357; mcp/src/agents_remember/worktrees/modules/cleanup.py:373-392 |
+| Remote branch deletion is handled by the cleanup helper. | `delete_remote_branch_if_present` | mcp/src/agents_remember/worktrees/modules/cleanup.py:174-190 |
+| Shared drift snapshot path/removal helper used by cleanup and the drift snapshot cleanup tests. | `remove_drift_snapshot` | mcp/src/agents_remember/observer/drift_snapshots.py:25-33 |
+| The official ledger reader and mapping lookup the carryover-done signal is built on. | `load_ledger`; `find_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:232-234 |
+| The shared `git` and `init_repo` helper definitions reused here. | `git`; `init_repo` | mcp/tests/test_worktree_support.py:90-100; mcp/tests/test_worktree_support.py:103-120 |
+| This cleanup suite's `_official_memory` helper exercises the shared `git` and `init_repo` helpers. | `_official_memory` | mcp/tests/test_cleanup_carryover.py:120-133 |
+| The typed `WorktreeArgs` DTO `cleanup_result` consumes. | `WorktreeArgs`; `cleanup_result` | mcp/src/agents_remember/worktrees/modules/args.py:20-82; mcp/src/agents_remember/worktrees/modules/cleanup.py:422-465 |
 
 ## Cross-Repo References
 
@@ -139,6 +146,9 @@ No meaningful cross-repo references found.
 Cleanup/carryover tests keep the carryover-before-cleanup invariant while updating contract fixtures to the new series-contract schema.
 
 ## Update History
+
+- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): replaced the stale 14-test claim with the actual 47 test methods across 11 classes without asserting green runtime status; routing is bound to `_post_integration_phase` (260-306) and its focused tests; the ledger claim is narrowed to the `load_ledger`/`find_mapping` reads with no writer in `carryover_done`; the shared `git`/`init_repo` helpers and their `_official_memory` use are bound by source owner; the scoped fixer generated the final routing range.
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 4 repository-internal reference rows for drift snapshots, the memory ledger, shared worktree test helpers, and `WorktreeArgs`; scoped citation verification follows.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: `GuidanceCarryoverRoutingTests` moved three
   assertions from `guidance["nextTool"]` / `guidance["carryoverDoneAt"]` to `.get(...)`, and the

@@ -33,14 +33,14 @@ A bare `ConversationControlService(cast(Any, object()))` is sufficient because `
 secret, never the runtime authorities. `_item(seq)` builds an `OperationTimelineItem` for the queue
 rows.
 
-`SessionLockLeakTests` (L48): `test_release_session_drops_lock_and_every_epoch_channel` proves
+cit:([`SessionLockLeakTests`], mcp/tests/test_chats_l5f_leaks.py:48-77): `test_release_session_drops_lock_and_every_epoch_channel` proves
 `release_session(ar_session_id)` removes the session's `_locks` entry and every per-epoch channel;
 `test_locks_are_bounded_by_construction_evicting_idle_first` proves `_locks` (an `OrderedDict`) is
 capped at `MAX_SESSION_LOCKS_PER_APP` and `_evict_idle_locks` drops the oldest UNLOCKED lock first;
 `test_a_held_lock_is_never_evicted` proves the eviction guard never drops a currently-held lock (so
 an in-use serializer is never broken).
 
-`QueueRowsBoundTests` (L80): `test_queue_rows_are_bounded_with_oldest_key_eviction` proves
+cit:([`QueueRowsBoundTests`], mcp/tests/test_chats_l5f_leaks.py:80-98): `test_queue_rows_are_bounded_with_oldest_key_eviction` proves
 `_queue_row` caps `channel.queue_rows` (also an `OrderedDict`) at `MAX_QUEUE_ROWS_PER_CHANNEL`,
 evicting the oldest key (`popitem(last=False)`) — a settled operation never reappears, so the bound
 is invisible to live rows; `test_the_real_cap_is_a_named_constant` pins the cap as a named module
@@ -78,7 +78,7 @@ idle-self-release, not by an explicit end-hook. Wiring locus recorded as a follo
 The resolved `Domain Documentation` registry has no entries; the leak-fix contract is
 repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this suite. | — | — |
 
@@ -86,22 +86,25 @@ repository-owned and cited below.
 
 The suite pins the control service's bounded/released lock map and the capped queue-revision map.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `_locks` `OrderedDict`, `MAX_SESSION_LOCKS_PER_APP` cap, idle-first `_evict_idle_locks`, and `release_session` under test. | L58; L230-L287 | [control/service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
-| The frozen `ControlScope` parameter object this suite now builds to call `_queue_row`. | L184-L196 | [control/service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
-| The `queue_rows` cap enforcement (`MAX_QUEUE_ROWS_PER_CHANNEL`, oldest-key `popitem`) under test. | L81-L110 | [control/queue_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/queue_projection.py) |
-| The active-projector dormant-release companion to these control-side leak pins. | — | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
+| The `_locks` `OrderedDict`, `MAX_SESSION_LOCKS_PER_APP` cap, idle-first `_evict_idle_locks`, and `release_session` under test. | "def utc_clock" | mcp/src/agents_remember/serving/conversation/control/service.py:81-81 |
+| The frozen `ControlScope` parameter object this suite now builds to call `_queue_row`. | "class ControlOperationError" | mcp/src/agents_remember/serving/conversation/control/service.py:102-102 |
+| The `queue_rows` cap enforcement (`MAX_QUEUE_ROWS_PER_CHANNEL`, oldest-key `popitem`) under test. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:47-47 |
+| The active-projector dormant-release companion to these control-side leak pins. | `CodexEngineTests` | mcp/tests/test_conversation_active_service.py:233-550 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` parameter-object pass reached this
   suite, so the card's call-shape and every line citation it carries were re-derived from the

@@ -68,23 +68,18 @@ closeout.
 
 ### Logic
 
-The `router` (L75-L78) mounts at `/api/terminal/{ar_session_id}` with the structured-control tag. The
-seventeen routes: interrupt (L151), interrupt-status (L184), interrupt-reconcile (L218) [R1];
-`GET /operation-queue` (L252), withdraw (L280), withdraw-status (L314), withdraw-reconcile (L346),
-`GET .../pending-withdrawal-recoveries` (L378), withdraw-recovery (L406), withdraw-recovery-ack
-(L436) [R2/R3]; attachments (L482), attachments/rebind (L531), `GET .../attachments/{request_id}/
-status` (L567), attachments/{request_id}/reconcile (L598), submit (L635) [R4]; `GET .../conversation/
-policy` (L685) [R5]; `GET .../conversation/telemetry` (L711) [R6]. Each handler invokes the two L0
+The cit:([`router`], mcp/src/agents_remember/serving/conversation/control/api.py:75-78) mounts at `/api/terminal/{ar_session_id}` with the structured-control tag. The
+seventeen routes are covered by cit:([`conversation_interrupt`, `conversation_interrupt_status`, `conversation_interrupt_reconcile`, `conversation_operation_queue`, `conversation_withdraw`, `conversation_withdraw_status`, `conversation_withdraw_reconcile`, `conversation_pending_recoveries`, `conversation_fetch_recovery`, `conversation_ack_recovery`, `conversation_stage_attachments`, `conversation_rebind_attachment`, `conversation_attachment_status`, `conversation_attachment_reconcile`, `conversation_submit`, `conversation_policy`, `conversation_telemetry`], mcp/src/agents_remember/serving/conversation/control/api.py:151-181; mcp/src/agents_remember/serving/conversation/control/api.py:184-215; mcp/src/agents_remember/serving/conversation/control/api.py:218-249; mcp/src/agents_remember/serving/conversation/control/api.py:252-275; mcp/src/agents_remember/serving/conversation/control/api.py:280-311; mcp/src/agents_remember/serving/conversation/control/api.py:314-343; mcp/src/agents_remember/serving/conversation/control/api.py:346-375; mcp/src/agents_remember/serving/conversation/control/api.py:378-403; mcp/src/agents_remember/serving/conversation/control/api.py:406-433; mcp/src/agents_remember/serving/conversation/control/api.py:436-464; mcp/src/agents_remember/serving/conversation/control/api.py:482-528; mcp/src/agents_remember/serving/conversation/control/api.py:531-564; mcp/src/agents_remember/serving/conversation/control/api.py:567-595; mcp/src/agents_remember/serving/conversation/control/api.py:598-626; mcp/src/agents_remember/serving/conversation/control/api.py:635-682; mcp/src/agents_remember/serving/conversation/control/api.py:685-708; mcp/src/agents_remember/serving/conversation/control/api.py:711-734) across R1-R6. Each handler invokes the two L0
 dependencies (`get_conversation_runtime`, `resolve_conversation_authorization`), gets the per-app
 service via `conversation_control_service`, and delegates to the owning module (operations,
-withdrawals, attachments, policy, telemetry, queue_projection). `_map_typed_error` (L124) maps the
+withdrawals, attachments, policy, telemetry, queue_projection). cit:([`_map_typed_error`], mcp/src/agents_remember/serving/conversation/control/api.py:124-141) maps the
 `_TYPED_ERRORS` tuple (L80-L88 — AuthorityError, ConversationCompositionError,
 HarnessBridgeEpochMismatchError, HarnessControlError, ControlRefError, ControlOperationError,
-SessionResolutionError) to the serving status idiom via `_error` (L117); `_dump` (L144) serializes
-wire models with `exclude_none=True`. Multipart staging parses through `_parse_uploads` (L737-L748),
-`_parse_metadata_array` (L751), and `_upload_for` (L765-L786) with the `MAX_SUBMIT_ASSET_BYTES`
+SessionResolutionError) to the serving status idiom via cit:([`_error`], mcp/src/agents_remember/serving/conversation/control/api.py:117-121); cit:([`_dump`], mcp/src/agents_remember/serving/conversation/control/api.py:144-145) serializes
+wire models with `exclude_none=True`. Multipart staging parses through cit:([`_parse_uploads`], mcp/src/agents_remember/serving/conversation/control/api.py:737-748),
+cit:([`_parse_metadata_array`], mcp/src/agents_remember/serving/conversation/control/api.py:751-762), and cit:([`_upload_for`], mcp/src/agents_remember/serving/conversation/control/api.py:765-786) with the `MAX_SUBMIT_ASSET_BYTES`
 bounded read. The request bodies
-`InterruptBody`/`WithdrawStatusBody`/`RecoveryFetchBody`/`RecoveryAckBody`/`RebindBody` (L93-L114) are
+`InterruptBody`/`WithdrawStatusBody`/`RecoveryFetchBody`/`RecoveryAckBody`/cit:([`RebindBody`], mcp/src/agents_remember/serving/conversation/control/api.py:112-114) are
 strict wire models.
 
 ### Conventions
@@ -120,7 +115,7 @@ foundation suite.)
 
 No Domain Documentation source is configured for this internal route boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -129,22 +124,22 @@ No Domain Documentation source is configured for this internal route boundary.
 Each route delegates to an owning control module; the wire products are the SC1 contract; the
 foundation suite pins the exact seventeen routes.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. | L95-L201; L552-L564 | [operations.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/operations.py) |
-| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). | L831-L1262 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | L36-L101 | [policy.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/policy.py) |
-| The two L0 request dependencies every handler consumes. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The foundation regression pins the exact seventeen owned routes (GET-only on policy/telemetry/queue/pending). | L54-L82 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The shared `CONTROL_RESPONSES` table plus the two outcome tables and the three route-assembled models these routes declare. | `CONTROL_RESPONSES`; `INTERRUPT_OUTCOME_RESPONSES`; `WITHDRAW_OUTCOME_RESPONSES`; `StagedAttachments`; `ConversationSubmitted` | [../response_contract.py](../response_contract.py.md) |
-| The two 422-carrying control errors that force `/conversation/submit`'s 422 to union the shared refusal with the success model. | `CapabilityRefusedError`; `OperationRejectedError` | [service.py](service.py.md) |
-| The suite that enforces the declarations, drives all seventeen routes, and validates in alias form only (`by_name=False`) so camelCase is pinned. | `validate_wire`; `test_serving_response_conformance` | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
+| The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. | `__all__` | mcp/src/agents_remember/serving/conversation/control/operations.py:564-564 |
+| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). | "class ConversationTelemetry" | mcp/src/agents_remember/serving/conversation/models.py:1255-1255 |
+| The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | `conversation_policy` | mcp/src/agents_remember/serving/conversation/control/policy.py:58-101 |
+| The two L0 request dependencies every handler consumes. | `__all__` | mcp/src/agents_remember/serving/conversation/dependencies.py:39-39 |
+| The foundation regression pins the exact seventeen owned routes (GET-only on policy/telemetry/queue/pending). | `control_paths` | mcp/tests/test_conversation_foundation.py:58-62 |
+| The shared `CONTROL_RESPONSES` table plus the two outcome tables and the three route-assembled models these routes declare. | `CONTROL_RESPONSES`; `INTERRUPT_OUTCOME_RESPONSES`; `WITHDRAW_OUTCOME_RESPONSES`; `StagedAttachments`; `ConversationSubmitted` | mcp/src/agents_remember/serving/conversation/response_contract.py:57-61; mcp/src/agents_remember/serving/conversation/response_contract.py:64-78; mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:140-153; mcp/src/agents_remember/serving/conversation/response_contract.py:160-173 |
+| The two 422-carrying control errors that force `/conversation/submit`'s 422 to union the shared refusal with the success model. | `CapabilityRefusedError`; `OperationRejectedError` | mcp/src/agents_remember/serving/conversation/control/service.py:123-127; mcp/src/agents_remember/serving/conversation/control/service.py:130-134 |
+| The suite that enforces the declarations, drives all seventeen routes, and validates in alias form only (`by_name=False`) so camelCase is pinned. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:783-1861 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local route surface.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -166,6 +161,8 @@ codes are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 18 citation finding(s); scoped recheck clean.
 
 - 2026-08-01T09:28+02:00 — 260731-EFA-L4 curator: recorded the seventeen `response_model`
   declarations and the shared `CONTROL_RESPONSES` table (complete because `_map_typed_error` is
@@ -193,8 +190,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations and rewrote
   both claims. The `operations.py` row cited L87-L570 against a 564-line file and claimed six owning
   modules while linking only one; `operations.py` is the interrupt ledger alone, so the claim now
-  names its actual public surface — `interrupt` (L95-L156), `interrupt_status` (L159-L201) and
-  `interrupt_http_status` (L552-L561) with `__all__` on L564 — cited L95-L201; L552-L564. The
+  names its actual public surface — cit:([`__all__`], mcp/src/agents_remember/serving/conversation/control/operations.py:564-564) — with the
+  public names listed in `__all__`. The
   `models.py` row cited L786-L1250 and listed "policy" among the wire products, but no policy model
   lives in `models.py`; the control wire block is now L811-L1242 (`OpenConversationOperation`
   through `ConversationTelemetry`, stopping before `RuntimeFixtureObservation`) and "policy" was

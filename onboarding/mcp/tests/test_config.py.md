@@ -80,11 +80,11 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The tested loader lives in MCP config. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
-| The `providerDegradation` parser under test (260707-HFX-L7). | [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The tested loader lives in MCP config. | `load_config` | mcp/src/agents_remember/mcp/config.py:140-148 |
+| Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
+| The `providerDegradation` parser under test (260707-HFX-L7). | `parse_provider_degradation_settings` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:58-128 |
 
 ## Series-Contract Notes
 
@@ -93,6 +93,7 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 As of the 260703-L8 seam ruling the orchestration settings tests prove the parse path consumes requireReviewerVerdictAtSeams (the delegated handover rule comes back verdict-bound; non-seam rules untouched).
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 3 citation claims; scoped result 0 findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_config.py` since
   the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 21

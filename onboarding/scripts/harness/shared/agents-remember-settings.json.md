@@ -51,13 +51,15 @@ as placeholders that `render-starter.py` substitutes at render time:
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The generator that fans this file out verbatim, including to `.vscode/mcp/`. | [sync-harness.py](agents-remember/scripts/sync-harness.py) |
-| `render_settings` performs the placeholder substitution in a rendered workspace. | [render_starter.py](agents-remember/scripts/harness/render_starter.py) |
-| The settings schema this template instantiates. | [docs/reference/settings-json.md](agents-remember/docs/reference/settings-json.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The generator that fans this file out verbatim, including to `.vscode/mcp/`. | `generated_files` | scripts/sync-harness.py:576-621 |
+| `render_settings` performs the placeholder substitution in a rendered workspace. | `render_settings` | scripts/harness/render_starter.py:108-115 |
+| The settings schema this template instantiates. | `# settings.json Reference` | docs/reference/settings-json.md:1-526 |
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 2 citation items; scoped citation check now passes.
 
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for eight
   byte-identical copies plus the `.vscode/` mirror (requirement L2-R12). Verification

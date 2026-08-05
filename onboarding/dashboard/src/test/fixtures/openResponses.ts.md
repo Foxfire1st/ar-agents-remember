@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/openResponses.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -27,25 +27,23 @@ ASYNC. Failed rows are built with L2's shared `catalogRow` builder (extended, no
 
 ### Logic
 
-- `OPENED_STARTING` (L17-L33): 200 — controlState `'starting'`, the REQUESTED pair persisted
-  before validation (`claude-fable-5[1m]`/`max`). `OPENED_VENDOR_DEFAULTS` (L36-L43): the
+- cit:([`OPENED_STARTING`], dashboard/src/test/fixtures/openResponses.ts:17-33): 200 — controlState `'starting'`, the REQUESTED pair persisted
+  before validation (`claude-fable-5[1m]`/`max`). cit:([`OPENED_VENDOR_DEFAULTS`], dashboard/src/test/fixtures/openResponses.ts:36-43): the
   intentionally selectionless open — BOTH knobs omitted ⇒ both retained as null.
-- 400s: `INVALID_PARTIAL_PAIR` (L46-L49, "model and effort must be provided together"),
-  `INVALID_NON_NATIVE` (L52-L55) — the ONLY synchronous selection refusals — and `BAD_KIND`
-  (L58-L61).
-- 409s: `LEAF_TAKEN` (L64-L68) NAMES the owning session (`worker-l3-live`); `LAUNCH_CONFLICT`
-  (L72-L86) carries the LIVE row's retained pair (process truth) with the attempted pair only in
+- 400s: cit:([`INVALID_PARTIAL_PAIR`], dashboard/src/test/fixtures/openResponses.ts:46-49) and cit:([`INVALID_NON_NATIVE`], dashboard/src/test/fixtures/openResponses.ts:52-55) model the pair/kind refusal payloads; the server's paired/native selection guard is cit:([`resolve_terminal_open_selection`], mcp/src/agents_remember/serving/harness_control_api.py:156-179), and the route reports its control error as cit:([`_open_terminal_response`, "launch-selection-invalid"], mcp/src/agents_remember/serving/app.py:1461-1550).
+- 409s: cit:([`LEAF_TAKEN`], dashboard/src/test/fixtures/openResponses.ts:64-68) NAMES the owning session (`worker-l3-live`); cit:([`LAUNCH_CONFLICT`], dashboard/src/test/fixtures/openResponses.ts:72-86)
+  carries the LIVE row's retained pair (process truth) with the attempted pair only in
   `detail` — provenance never rewritten.
-- Failed rows (L93-L144): `FAILED_CLAUDE_ROW` (unknown model), `FAILED_CODEX_ROW` (effort not
-  launch-settable for the model), `FAILED_PI_ROW` (bare id instead of the provider-qualified
+- Failed rows: cit:([`FAILED_CLAUDE_ROW`], dashboard/src/test/fixtures/openResponses.ts:93-106) (unknown model), cit:([`FAILED_CODEX_ROW`], dashboard/src/test/fixtures/openResponses.ts:108-122) (effort not
+  launch-settable for the model), cit:([`FAILED_PI_ROW`], dashboard/src/test/fixtures/openResponses.ts:124-138) (bare id instead of the provider-qualified
   key) — each `controlState: "failed"` with the refused pair retained verbatim in
   `resolvedModel`/`resolvedEffort` and a `bridgeError` in the server's exact
   `validate_launch_selection` wording NAMING the advertised alternatives;
-  `FAILED_LAUNCH_ROWS` (L140-L144) is the ×3 sweep the tier-uniformity tests iterate.
-- `FAILED_CLAUDE_EFFORT_ROW` (L147-L160): the second refusal shape — the EFFORT is what the
+  cit:([`FAILED_LAUNCH_ROWS`], dashboard/src/test/fixtures/openResponses.ts:140-144) is the ×3 sweep the tier-uniformity tests iterate.
+- cit:([`FAILED_CLAUDE_EFFORT_ROW`], dashboard/src/test/fixtures/openResponses.ts:147-160): the second refusal shape — the EFFORT is what the
   catalog refused — plus a `paneDiagnostic` ("runner kept the refusal addressable until
   retired").
-- `PENDING_INTERACTION_ROW` (L164-L178): a READY row holding `controlPendingInteraction`
+- cit:([`PENDING_INTERACTION_ROW`], dashboard/src/test/fixtures/openResponses.ts:164-178): a READY row holding `controlPendingInteraction`
   (`ix_7`, approval, prompt + choices) mirroring L2's FLEET shape — answering it is L6's
   surface.
 
@@ -59,17 +57,21 @@ ASYNC. Failed rows are built with L2's shared `catalogRow` builder (extended, no
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Every response-path fixture + the failed/pending rows. | L17-L178 | [openResponses.ts](openResponses.ts) |
-| The response-body mirrors these instantiate. | L10-L63 | [../../types/terminalOpen.ts](../../types/terminalOpen.ts) |
-| The shared row builder the failed/pending rows extend. | L10-L27 | [catalogRows.ts](catalogRows.ts) |
-| The route whose bodies are mirrored field-for-field. | L956-L1046 | [app.py](../../../../mcp/src/agents_remember/serving/app.py) |
-| The classifier table consuming every fixture here. | — | [../../data/launchFlow.test.ts](../../data/launchFlow.test.ts) |
-| Tier uniformity ×3 harnesses over `FAILED_LAUNCH_ROWS`. | — | [../../data/launchEvidence.test.ts](../../data/launchEvidence.test.ts) |
-| Verbatim bridgeError rendering over the failed rows. | — | [../../panels/session-cockpit/FailedLaunchBanner.test.tsx](../../panels/session-cockpit/FailedLaunchBanner.test.tsx) |
+| Every response-path fixture + the failed/pending rows. | `OPENED_STARTING`; `OPENED_VENDOR_DEFAULTS`; `INVALID_PARTIAL_PAIR`; `INVALID_NON_NATIVE`; `BAD_KIND`; `LEAF_TAKEN`; `LAUNCH_CONFLICT`; `FAILED_CLAUDE_ROW`; `FAILED_CODEX_ROW`; `FAILED_PI_ROW`; `FAILED_LAUNCH_ROWS`; `FAILED_CLAUDE_EFFORT_ROW`; `PENDING_INTERACTION_ROW` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:36-43; dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:52-55; dashboard/src/test/fixtures/openResponses.ts:58-61; dashboard/src/test/fixtures/openResponses.ts:64-68; dashboard/src/test/fixtures/openResponses.ts:72-86; dashboard/src/test/fixtures/openResponses.ts:93-106; dashboard/src/test/fixtures/openResponses.ts:108-122; dashboard/src/test/fixtures/openResponses.ts:124-138; dashboard/src/test/fixtures/openResponses.ts:140-144; dashboard/src/test/fixtures/openResponses.ts:147-160; dashboard/src/test/fixtures/openResponses.ts:164-178 |
+| The response-body mirrors these instantiate. | `TerminalOpenSuccessBody`; `TerminalOpenSelectionInvalidBody`; `TerminalOpenBadKindBody` | dashboard/src/types/terminalOpen.ts:10-26; dashboard/src/types/terminalOpen.ts:31-34; dashboard/src/types/terminalOpen.ts:37-40 |
+| The shared row builder the failed/pending rows extend. | `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27 |
+| The route decorator exposes the terminal-open API. | `api_terminal_open` | mcp/src/agents_remember/serving/app.py:1881-1896 |
+| The terminal response body is assembled by `_terminal_entry_payload`. | `_terminal_entry_payload` | mcp/src/agents_remember/serving/app.py:1443-1458 |
+| The shared opener returns the resolved terminal-open response. | `_open_terminal_response` | mcp/src/agents_remember/serving/app.py:1461-1550 |
+| The `launchFlow` classifier is declared for the response-path cases. | `launchFlow` | dashboard/src/data/launchFlow.test.ts:29-29 |
+| Tier uniformity ×3 harnesses over `FAILED_LAUNCH_ROWS`. | `FAILED_LAUNCH_ROWS` | dashboard/src/data/launchEvidence.test.ts:90-94 |
+| Verbatim bridgeError rendering over the failed rows. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:30-39 |
 
 ## Update History
+
+- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound the invalid-selection fixture, resolver, and route response to their respective whole implementation extents and removed the unsupported exclusivity wording.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R3/R6 (open + failed-launch fixtures):
   200-starting and 200-vendor-defaults, both 400 `launch-selection-invalid` shapes + `bad-kind`,

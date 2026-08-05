@@ -27,18 +27,18 @@ landed L1 cursor authority.
 
 ### Logic
 
-Four purpose brands map through `_PREFIX_BY_PURPOSE` (L39): `ar-oqr1.` operationRef (stable
+Four purpose brands map through cit:([`_PREFIX_BY_PURPOSE`], mcp/src/agents_remember/serving/conversation/control/refs.py:39-44): `ar-oqr1.` operationRef (stable
 queue-row identity kind/operationId/sequence), `ar-wdr1.` withdrawalRef (caller/session/epoch/
 operation-bound withdraw target, adds the withdraw ledger salt), `ar-wrr1.` recoveryRef (opaque
 pending-recovery identity, adds the `withdrawRequestId`, never any content), and `ar-war1.`
-recoveryAssetRef (one recoverable staged asset's exchange identity). `mint_ref` (L136-L161) canonically
-serializes (`_canonical`, L103 — sorted keys, no spaces) the payload, appends the app-scoped-secret
-HMAC-SHA256 signature (`_sign`, L109), and base64url-encodes under the brand prefix. `decode_ref`
-(L144) splits the prefix, base64-decodes, verifies the signature **before** parsing the payload
-(no oracle), then `_check_payload` (L196-L218) re-compares every decoded binding field against the
-authorized request context — the actual authorization mechanism. `OperationIdentity` (L75-L91) is the
+recoveryAssetRef (one recoverable staged asset's exchange identity). cit:([`mint_ref`], mcp/src/agents_remember/serving/conversation/control/refs.py:136-161) canonically
+serializes (`_canonical` cit:(["def _canonical"], mcp/src/agents_remember/serving/conversation/control/refs.py:103-103) — sorted keys, no spaces) the payload, appends the app-scoped-secret
+HMAC-SHA256 signature cit:([`_sign`], mcp/src/agents_remember/serving/conversation/control/refs.py:109-110), and base64url-encodes under the brand prefix. `decode_ref`
+cit:(["def decode_ref"], mcp/src/agents_remember/serving/conversation/control/refs.py:164-164) splits the prefix, base64-decodes, verifies the signature **before** parsing the payload
+(no oracle), then cit:([`_check_payload`], mcp/src/agents_remember/serving/conversation/control/refs.py:196-218) re-compares every decoded binding field against the
+authorized request context — the actual authorization mechanism. cit:([`OperationIdentity`], mcp/src/agents_remember/serving/conversation/control/refs.py:75-91) is the
 value-equal (kind, operation_id, sequence) triple carried in operation/withdrawal refs;
-`ref_identity` (L221) extracts it. `REF_SCHEMA_VERSION = 1` (L34) rides every payload.
+cit:([`ref_identity`], mcp/src/agents_remember/serving/conversation/control/refs.py:221-233) extracts it. `REF_SCHEMA_VERSION = 1` cit:(["REF_SCHEMA_VERSION = 1"], mcp/src/agents_remember/serving/conversation/control/refs.py:35-35) rides every payload.
 
 ### Conventions
 
@@ -66,7 +66,7 @@ None.
 
 No Domain Documentation source is configured; the ref grammar is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -75,18 +75,18 @@ No Domain Documentation source is configured; the ref grammar is repository-owne
 The ref authority mirrors the L1 cursor authority's posture and binds the L0 authorization DTO; the
 service owns the app-scoped secret this module signs with.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `AuthorizationBinding` (principal/tenant) re-bound in every payload check. | L1-L40 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The app-scoped control secret this module signs/verifies with. | L179-L183 | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
-| The L1 cursor authority whose signed-purpose-branded posture this mirrors. | L1-L272 | [active/cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/cursor.py) |
-| Consumers: the queue projection mints operation/withdrawal refs; withdrawals/attachments decode and re-bind them. | L111-L138 | [queue_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/queue_projection.py) |
+| The `AuthorizationBinding` (principal/tenant) re-bound in every payload check. | `AuthorizationBinding` | mcp/src/agents_remember/serving/conversation/models.py:134-136 |
+| The app-scoped control secret this module signs/verifies with. | "def secret" | mcp/src/agents_remember/serving/conversation/control/service.py:233-233 |
+| The L1 cursor authority whose signed-purpose-branded posture this mirrors. | "CURSOR_SCHEMA_VERSION = 1" | mcp/src/agents_remember/serving/conversation/active/cursor.py:34-34 |
+| Consumers: the queue projection mints operation/withdrawal refs; withdrawals/attachments decode and re-bind them. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:47-47 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -108,8 +108,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded
+  `(L…)` prose citations and the `n/a` table rows with exact anchors and fixer-generated
+  ranges; exact non-fixing check returns zero findings.
+
 - 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations pushed down by
-  this leaf's own `RefBinding`/`RefTarget` dataclasses (L113-L134): `mint_ref` is L136-L161 (was
+  this leaf's own `RefBinding`/`RefTarget` dataclasses cit:(["class RefBinding"], mcp/src/agents_remember/serving/conversation/control/refs.py:114-114): `mint_ref` is L136-L161 (was
   L112, now inside `RefBinding`), `_check_payload` is L196-L218 (was L179, mid-`decode_ref`), and
   `OperationIdentity` is L75-L91 (was L74, the blank line above it). Signing, sign-before-parse
   decode and the binding re-check are unchanged. Still stale and left for the next citation pass

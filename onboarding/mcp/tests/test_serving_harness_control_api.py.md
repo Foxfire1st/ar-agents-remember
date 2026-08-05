@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
@@ -85,23 +85,25 @@ source was available for this test-file curation pass.
 The test source directly freezes the public HTTP boundary; the route and serializers provide the
 same-repository implementation evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pre-session endpoint forwards refresh and returns the exact normalized envelope; refresh failure is 503 without stale capabilities. | L129-L160 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Live capabilities remain vendor-neutral and set routes return honest queued/unsupported results for the exact catalog session. | L161-L191 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Submit preserves one whole multiline message and normalized correlation while omitting private raw, argv, and environment data. | L192-L227 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Reconcile preserves the same request/vendor correlation and strips private vendor/auth details. | L482-L506 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Unknown/stopped/dead rows are 404 before live plain/legacy rows become 409; a live native row reaches the control client. | L656-L725 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| Daemon routes call exact-session advertise/set/submit/reconcile helpers and use explicit public serializers for submit and reconcile. | L204-L252; L255-L340 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| Liveness observation precedes live endpoint-support classification. | L539-L572 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| Public receipt and reconciliation serializers retain normalized evidence while intentionally omitting internal `raw`. | L274-L296 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| Exact-session request encoding preserves Unicode with `ensure_ascii=False` and sends one newline-framed JSON request. | L220-L234 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| The pre-session endpoint forwards refresh and returns the exact normalized envelope. | `test_pre_session_capabilities_freeze_envelope_and_refresh` | mcp/tests/test_serving_harness_control_api.py:129-147 |
+| Failed pre-session refresh uses the capability catalog's server-vocabulary error reader instead of stale capabilities. | `readError` | dashboard/src/data/capabilityCatalog.ts:138-152 |
+| The shared SetResult contract preserves the exact acceptance vocabulary used by the route outcomes. | `test_set_result_serialization_keeps_the_five_value_acceptance_contract` | mcp/tests/test_harness_capabilities.py:132-156 |
+| Submit preserves one whole multiline message and normalized correlation while omitting private raw, argv, and environment data. | `test_submit_preserves_whole_message_request_and_vendor_correlation` | mcp/tests/test_serving_harness_control_api.py:192-227 |
+| Reconcile preserves the same request/vendor correlation and strips private vendor/auth details. | `test_reconcile_keeps_the_same_request_correlation` | mcp/tests/test_serving_harness_control_api.py:482-506 |
+| Unknown/stopped/dead rows are 404 before live plain/legacy rows become 409; a live native row reaches the control client. | `test_status_order_is_unknown_or_dead_then_live_unsupported_then_native` | mcp/tests/test_serving_harness_control_api.py:677-725 |
+| The capability registrar owns exact-session advertise and set routes. | `_register_capability_routes` | mcp/src/agents_remember/serving/harness_control_api.py:220-289 |
+| `_register_submission_routes` delegates to `_register_submission_write_routes`, which installs `api_terminal_submit` and `api_terminal_reconcile` with public serializers. | `_register_submission_routes`; `_register_submission_write_routes`; `api_terminal_submit`; `api_terminal_reconcile` | mcp/src/agents_remember/serving/harness_control_api.py:292-298; mcp/src/agents_remember/serving/harness_control_api.py:342-423 |
+| Liveness observation precedes live endpoint-support classification. | `_running_control_entry` | mcp/src/agents_remember/serving/harness_control_api.py:633-666 |
+| Public receipt and reconciliation serializers retain normalized evidence while intentionally omitting internal `raw`. | `public_receipt_json`; `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941; mcp/src/agents_remember/serving/harness_control_models.py:944-955 |
+| The exact-session client encodes Unicode with `ensure_ascii=False` and sends one newline-framed JSON request. | "ensure_ascii=False" | mcp/src/agents_remember/serving/harness_control_client.py:505-505 |
 
 ## Cross-Repo References
 
 No sibling repository, Toad host, or ACP transport is involved in this own-adapter HTTP contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -120,14 +122,11 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations into
-  `harness_control_api.py`, whose routes were split into three private registrars. The daemon-route
-  row now cites `_register_capability_routes` L204-L252 (harness/terminal capabilities, set-model,
-  set-effort) and `_register_submission_routes` L255-L340, where `/submit` and `/reconcile` go
-  through `public_receipt_json` (L310) and `public_reconciliation_json` (L331). The liveness row
-  now cites `_running_control_entry` L539-L572, where `observe_terminal_liveness` (L553-L559) runs
-  before the `kind != "harness" or control_endpoint is None` 409 classification (L563-L570), with a
-  `_ControlLivenessMemo` hit short-circuiting at L550-L552. No claim text changed.
+- 2026-08-04T15:58:25+02:00 — 260731-EFA-L6 S18-B12 curator: expanded the pre-session success claim to its complete refresh-and-normalized-envelope test owner while retaining the route, serializer, liveness, and exact-session client ownership.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired two cross-file route and liveness
+  citations after `harness_control_api.py` split its handlers into private registrars. The current
+  table carries the generated registrar, serializer, and liveness-owner citations; no claim text
+  changed.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected the registration claim and every
   self-citation. The Conventions sentence asserting that the call "passes the required

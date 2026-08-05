@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/flowModels.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -33,13 +33,13 @@ spawned backend event loop. The strategist remains the spawn-first sprint planne
 
 ### Logic
 
-**Types (L9-L52).** `Status = "current" | "proposed"` (L9) drives edge colour (mint vs amber dashed).
+**Types** cit:([`Status`, `FlowSegment`], dashboard/src/panels/flowModels.ts:9-9; dashboard/src/panels/flowModels.ts:42-42): `Status = "current" | "proposed"` drives edge colour (mint vs amber dashed).
 The four segment shapes form the `FlowSegment` union (L42): `FlowStart` (a labelled entry pill +
 optional `next`/`nextStatus` edge), `FlowNode` (`phase`, monospace `tool`, optional `detail`,
 optional `rides` = the gate/seam whose notification rides this call, optional `ridesNote` overriding the
 default rider line, and the outgoing `next`/`nextStatus` edge), `FlowRundown` (a titled card of
 `{ line; junction? }` prose lines for non-linear stretches), and `FlowDivider` (a caption).
-`FlowModel` (L44-52) bundles `id`, `label`, `title`, `takeaway`, and `segments`.
+cit:([`FlowModel`], dashboard/src/panels/flowModels.ts:44-52) bundles `id`, `label`, `title`, `takeaway`, and `segments`.
 
 **The 9 models** (HFX-L6 adds the architect), in `FLOW_MODELS` order: ROUTER · ARCHITECT · DESIGNER ·
 STRATEGIST · ORCHESTRATOR · MANAGER · WORKER · REVIEWER · COMMS:
@@ -105,7 +105,7 @@ STRATEGIST · ORCHESTRATOR · MANAGER · WORKER · REVIEWER · COMMS:
 ### Conventions
 
 Plain TypeScript data module — no React, no styling, no store. Each model is a `const` typed as
-`FlowModel`, and `FLOW_MODELS` (L437) is the ordered export the nav renders; `FLOW_MODELS[0]`
+`FlowModel`, and cit:([`FLOW_MODELS`], dashboard/src/panels/flowModels.ts:437-437) is the ordered export the nav renders; `FLOW_MODELS[0]`
 (`ROUTER`) is FlowTab's default/fallback, so ordering is load-bearing for the default view. Prose
 carries the series' typographic conventions (`⟁` for a junction/decision, `⊘` for a gate/seam rider,
 `·` separators, mint/amber via `nextStatus`). A gate/seam node sets `rides`; when it needs a bespoke
@@ -144,14 +144,11 @@ same-repository (see Repo-Internal References).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The renderer + nav that consume this registry (segment switch, gate rider default, model fallback). | L57-L58; L81-L133 | [FlowTab.tsx](FlowTab.tsx) |
-| The coverage that asserts the render census + several invariant strings on these models. | L38-L94 | [FlowTab.test.tsx](FlowTab.test.tsx) |
-| The next-step engine historically specced by the retired `build-job` model (pre-convergence). | — | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| `lifecycle_start`, which emits the orchestrator lifecycle's front-half prose rundown. | — | [tools/lifecycle.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle.py) |
-| The orchestration series design record these 9 models encode (roles, seams, DAG topology, gate delegation, spirit test). | — | [design-agent-orchestration.md](agents-remember/tasks/agents-remember/260703_agent-orchestration/notes/design-agent-orchestration.md) |
-| The three-party-loops design the strategist model and the loop ride-along lines encode (L12 ruled design: §3 rounds/cap/convergence, §4 catalogs, §5/5b strategist + method, §6 knobs). | — | [design-three-party-loops.md](agents-remember/tasks/agents-remember/260703_agent-orchestration/notes/design-three-party-loops.md) |
+| The renderer + nav that consume this registry (segment switch, gate rider default, model fallback). | "Flow model" | dashboard/src/panels/FlowTab.tsx:119-119 |
+| The coverage that asserts the render census + several invariant strings on these models. | "renders every registered model without crashing" | dashboard/src/panels/FlowTab.test.tsx:39-55 |
+| `lifecycle_start`, which emits the orchestrator lifecycle's front-half prose rundown. | `lifecycle_start_payload` | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-21 |
 
 As of the 260703-L8 remediation the registry drew the then-converged doctrine: a ROUTER model (three conditions, edge cases, the D·P·O event loop, the task-doc→branch→worktree ladder) replaced the retired FRAME and BUILD-JOB models; the worker model was brief-started with no lifecycle machinery; the manager raised master-handover-approval; the orchestrator model drew the event loop with the super-branch INTENT as a branch-only act; and the comms takeaway scoped the spirit test to the bird's-eye coordination rung. Cycle 6 aligned the two seam nodes with the ruled channel: the manager's handover node draws the non-blocking raise (`wait=false`) with the returned gateId riding the packet, and the backend orchestrator's handover node draws the decide-by-packet-carried-gateId — a canvas-onboarded manager no longer reproduces the blocking raise. Cycle 7 completes the raise node's address (AR4-4): its detail now names `enclosure="<master task name>"` as the exact address integration enforcement matches the gate by, so a canvas-onboarded manager raises an addressed (matchable) gate instead of an unaddressed one.
 
@@ -160,6 +157,11 @@ As of the 260703-L8 remediation the registry drew the then-converged doctrine: a
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded Types
+  prose citation and the `n/a` table rows with exact anchors; deleted the unresolvable
+  design-doc rows (task-provenance sources outside the code/memory roots) and the removed
+  `next_step.py` row; exact non-fixing check returns zero findings.
 
 - 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: the FlowTab registry now has
   a 9-model census with an ARCHITECT model between Router and Designer; the Router model routes

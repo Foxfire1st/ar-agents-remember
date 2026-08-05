@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T23:57:42+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                        |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ parsing markdown back.
 `extra="forbid", populate_by_name=True` — unknown keys are a schema error and field
 name or alias both validate. The `schema_` field defaults to `TASK_DOCUMENT_SCHEMA`
 and serializes under the `schema` alias. `DocKind` is `light`|`subTask`|`master` — `light` is
-retained only so any legacy `light` document still loads; the `task_doc` controller no longer authors
+retained only so any legacy `light` document still loads; the `task_doc` application entry point no longer authors
 new ones (every task is master/leaf). `DocStatus` stays in the `w-02-light-task-workflow` template vocabulary
 (`planning`|`inProgress`|`Completed`) so the rendered `**Status:**` line is always
 valid; `StepStatus` is a 4-state (`pending`|`inProgress`|`blocked`|`done`) carrying the
@@ -80,7 +80,7 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 - The markdown checkbox is binary; the richer `StepStatus` lives only in the JSON.
 - `schema_` must serialize as `schema` (alias) — always dump `by_alias=True`.
 - **`light` is load-compatibility only:** the `DocKind` literal keeps `light` so legacy documents still
-  deserialize, but `task_doc` create/replace refuse to author it (`controllers/task_doc_tools.py`) — new
+  deserialize, but `task_doc` create/replace refuse to author it (`application/task_doc_tools.py`) — new
   tasks are `master` or `subTask` (leaf).
 - A master carries **no authored `lifecycleId`** (validator-enforced): it spans the series, not one
   leaf lifecycle. The observer still projects the master as an active task document with
@@ -102,14 +102,17 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The renderer consumes this model. | [render.py](agents-remember/mcp/src/agents_remember/tasks/render.py) |
-| The store reads/writes this model. | [store.py](agents-remember/mcp/src/agents_remember/tasks/store.py) |
-| The persisted-contract peer this mirrors. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
+| The store reads/writes this model. | `read_task_doc`; `write_task_doc` | mcp/src/agents_remember/tasks/store.py:32-33; mcp/src/agents_remember/tasks/store.py:36-37 |
+| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:608-654 |
 
 ## Update History
 
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped task-document citation claims; final exact frozen-snapshot check is clean.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-06T23:57:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TaskDocument` gained
   `orchestrates: list[str]` (default `[]`) — the orchestration-command relation; a master doc with a
   non-empty list IS an orchestration task naming the masters it commands. The kind validator now

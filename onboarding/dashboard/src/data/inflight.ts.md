@@ -42,26 +42,31 @@ None.
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | Source discovery checked | — |
+| No relevant external documentation is configured. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The map shares a pending promise and releases it by identity on settle. | L15-L30 | [inflight.ts](inflight.ts) |
-| Repository and terminal catalogs use the helper for boot contention. | L94-L108 | [files.ts](files.ts) |
+| The map shares a pending promise and releases it by identity on settle. | `shareInflight` | dashboard/src/data/inflight.ts:21-30 |
+| Repository and terminal catalogs use the helper for boot contention. | `shareInflight` | dashboard/src/data/files.ts:108-111; dashboard/src/data/terminal.ts:368-387 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This is repository-local browser state coordination. | L1-L30 | [inflight.ts](inflight.ts) |
+| This is repository-local browser state coordination. | `shareInflight` | dashboard/src/data/inflight.ts:21-30 |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 3 citation rows to plain
+  sources with `shareInflight` anchors (inflight.ts 15-30) and added the terminal catalog range
+  (terminal.ts 368-387) beside files.ts 108-111 so the repository+terminal claim carries both
+  consumers. Zero findings remain.
 
 - 2026-07-24T13:17:50Z — Created for bounded boot-read single-flight ownership. Verification hash/date
   remain pinned to the pre-commit source stamp.

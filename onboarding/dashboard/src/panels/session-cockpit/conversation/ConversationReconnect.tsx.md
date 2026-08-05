@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ say what is happening, never a fabricated calm.
 
 ### Logic
 
-- **`copyFor(phase)`** (L47-L66): the per-`StreamPhase` copy/tone/action map. `connecting`/`reconnecting`/
+- **`copyFor(phase)`** cit:([`copyFor`], dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:47-66): the per-`StreamPhase` copy/tone/action map. `connecting`/`reconnecting`/
   `gap` are calm/warn and keep items visible with no destructive action; `identity-changed`/
   `projection-failed`/`failed` are alarm-toned and expose `retry`/`diagnostics`. `live`/`idle` return
   `null` (no banner).
@@ -46,28 +46,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The phase→copy/tone/action map and the typed-reason append. | L47-L102 | [ConversationReconnect.tsx](ConversationReconnect.tsx) |
-| The `StreamPhase` union this banner switches on. | — | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The surface + stage body that mount this banner and supply the typed reason. | — | [ConversationSurface.tsx](ConversationSurface.tsx) · [../ChatsStageBody.tsx](../ChatsStageBody.tsx) |
+| The phase-to-copy/tone/action map and typed-reason append live in the component. | `copyFor`; `ConversationReconnect` | dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:47-66; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:68-102 |
+| The `StreamPhase` union this banner switches on. | `StreamPhase` | dashboard/src/data/conversation/types.ts:391-399 |
+| The surface mounts this banner and supplies the typed route-error reason. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The stage body mounts this banner directly without a typed route-error reason. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the fail-loud
   reconnect/gap/projection-failed banner — the per-phase copy/tone/action map with retry +

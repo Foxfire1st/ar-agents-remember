@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -74,12 +74,12 @@ a file is selected; kept mounted so state survives a tab switch.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The L1 read-only files API this view consumes. | [serving/files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
-| The same-origin client wrapping that API. | [data/files.ts](agents-remember/dashboard/src/data/files.ts) |
-| The shell that registers + keeps this view mounted. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| The markdown renderer the sidecar pane reuses. | [grammar/Markdown.tsx](agents-remember/dashboard/src/grammar/Markdown.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The L1 read-only files API this view consumes. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
+| The same-origin client wrapping that API. | `fetchRepos` | dashboard/src/data/files.ts:108-111 |
+| The shell that registers + keeps this view mounted. | `filesLayer` | dashboard/src/cockpit/Cockpit.tsx:332-332 |
+| The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Current L5I Route State
 
@@ -88,6 +88,8 @@ its first selected view, retains that settled result across later visibility cha
 in-flight read during development effect replay.
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 8 citation findings (4 rows); scoped recheck clean.
 
 - 2026-07-24T13:17:17Z — Curator: documented first-visible catalog loading and settled keep-alive
   behavior. Verification metadata remains pre-commit.

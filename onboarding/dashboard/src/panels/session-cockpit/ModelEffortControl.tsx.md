@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ModelEffortControl.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
+| lastUpdated | 2026-08-02T01:42+02:00|
 | lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
 | lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
 | governingOverview | `overview.md` |
@@ -49,24 +49,24 @@ inherits an old row's effort options, or treats a missing echoed effort as an em
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Trigger, exact-session menus, staging, serialized apply, error, and chip UI. | L148-L383 | [ModelEffortControl.tsx](ModelEffortControl.tsx) |
-| Sourcing, corrected menu, apply, and chip regression matrix. | L62-L371 | [ModelEffortControl.test.tsx](ModelEffortControl.test.tsx) |
-| Live-session client and actions. | L1-L433 | [../../data/setClient.ts](../../data/setClient.ts) |
-| Menu and effective-marker derivation. | L1-L248 | [../../data/sessionCapabilities.ts](../../data/sessionCapabilities.ts) |
+| Trigger, exact-session menus, staging, serialized apply, error, and chip UI. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:149-379 |
+| Sourcing, corrected menu, apply, and chip regression matrix. | "model + effort staged runs the SERIALIZED pair flow" | dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx:270-304 |
+| Live-session client and actions. | `sendSet` | dashboard/src/data/setClient.ts:157-244 |
+| Menu and effective-marker derivation. | `effectiveSelection` | dashboard/src/data/sessionCapabilities.ts:219-248 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -78,6 +78,9 @@ sentinel; the live menu remains the authority for choosing a value.
 
 ## Update History
 
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 8 citation findings; scoped check passed.
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-24T13:17:17Z — Curator: corrected missing-effort presentation to omission rather than a
   fabricated sentinel; verification fields remain pre-commit.
 

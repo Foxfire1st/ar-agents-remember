@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-12T12:55+02:00                                 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`             |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`ChangeSetViewer` is the **Change-Set Viewer screen** (L4): the up-to-3-column takeover that shows what
+`ChangeSetViewer` is the **Change-Set Viewer screen**: the up-to-3-column takeover that shows what
 a task (`scope` = one active enclosure), a series master (`master` = the NET diff since the series base),
 or — L4a — a single `leaf` (in `committed` or `working` `mode`) changed. It is opened
 by a `DetailPanel` change-set button and hosted by `CockpitShell` as a full-bleed takeover (its `onBack`
@@ -43,7 +43,8 @@ A second effect **polls the working view** every 2.5s (gated on `mode === "worki
 currently-open file's diff (`active`) so an edit to the file you are LOOKING AT updates in place. The
 open-diff re-fetch is non-disruptive: the DiffPane only rebuilds when the before/after content actually
 changed, so an unchanged poll is a no-op (no flicker / scroll-reset) — it re-renders only when that file is
-the one edited. Committed/series/scope are immutable snapshots of committed state and never poll.
+the one edited. Committed and series views are snapshots; the working leaf view polls its working tree,
+while the scope view reflects the selected task/base-worktree state and may change independently.
 
 The header is a back button (`changeset-back`) + a title (`committed · {leaf}` / `working · {leaf} ·
 uncommitted` for a leaf, `series {master} · net since series start` for the series, else the scope) +
@@ -81,26 +82,28 @@ whose own `empty-backdrop` testid appears only when motion is enabled), `changes
 
 Read-only over the L3/L4a API; owns its own component state (no store mutation). Every target opens real
 per-file diffs: an enclosure `scope` diffs base→worktree, **master mode** the NET series range
-(`master_base → tip`) via `masterFileDiff`, and a **leaf** (L4a) its `committed` (base→code_commit) or
+(`master_base → tip`) via `masterFileDiff`, and a **leaf** its `committed` (base→code_commit) or
 `working` (HEAD→worktree uncommitted) range via `leafFileDiff` — a `leaf` always carries its `master`
 qualifier. The back link is the only exit it controls (the Cockpit host also clears the takeover on a
 mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Fetches the task or master change-set on mount and on target change. | L152-L167 | [ChangeSetViewer.tsx](ChangeSetViewer.tsx) |
-| `open` → `loadDiff`: `masterFileDiff` in master mode, else `fileDiff(scope)` — so master rows are inspectable. | L179-L187 | [ChangeSetViewer.tsx](ChangeSetViewer.tsx) |
-| code↔sidecar partner mapping (forward `onboarding/<path>.md`, reverse strip). | L137-L142, L169-L177 | [ChangeSetViewer.tsx](ChangeSetViewer.tsx) |
-| The L3 change-set client it calls. | L52-L69 | [data/changeset.ts](../../data/changeset.ts) |
-| The per-column diff/toggle pane it mounts for the file + partner columns. | L47-L106 | [ChangeSetPane.tsx](ChangeSetPane.tsx) |
-| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | L233-L243 | [cockpit/Cockpit.tsx](../../cockpit/Cockpit.tsx) |
-| The siege-tank empty-state backdrop shown until a file is picked (motion-gated). | L51-L83 | [EmptyStateBackdrop.tsx](../EmptyStateBackdrop.tsx) |
-| The DetailPanel button that opens it with a `{repo, scope|master}` target. | L573-L616 | [DetailPanel.tsx](../DetailPanel.tsx) |
-| The render/back/master-placeholder behaviour pinned in the test. | L44-L108 | [ChangeSetViewer.test.tsx](ChangeSetViewer.test.tsx) |
+| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "useEffect(() =>"; "const req = leaf"; "leafChangeset("; "masterChangeset("; "taskChangeset("; "void req.then"; "[repo, scope, master, leaf, mode]" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:168-187 |
+| The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind, file.path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:233-233; dashboard/src/panels/changeset/ChangeSetViewer.tsx:237-238; dashboard/src/panels/changeset/ChangeSetViewer.tsx:240-240; dashboard/src/panels/changeset/ChangeSetViewer.tsx:245-245 |
+| Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath`; `partnerOf` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:149-154; dashboard/src/panels/changeset/ChangeSetViewer.tsx:221-229 |
+| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo"; "masterChangeset(repo"; "taskChangeset(repo"; "fileDiff(repo" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:168-187; dashboard/src/panels/changeset/ChangeSetViewer.tsx:233-247 |
+| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:342-342; dashboard/src/panels/changeset/ChangeSetViewer.tsx:353-353; dashboard/src/panels/changeset/ChangeSetViewer.tsx:357-357 |
+| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:502-502 |
+| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; ") : ("; "No file picked yet: the same faint boomerang backdrop"; "EmptyStateBackdrop src="; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:341-341; dashboard/src/panels/changeset/ChangeSetViewer.tsx:343-344; dashboard/src/panels/changeset/ChangeSetViewer.tsx:347-348 |
+| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/DetailPanel.tsx:730-772; dashboard/src/panels/DetailPanel.tsx:783-829 |
+| The loading, back, and master-file NET-diff behavior pinned in the tests. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
 
 ## Update History
+
+- 2026-08-04T14:53+02:00 — 260731-EFA-L6 S18-B13 curator: closed D5 false-branch connector evidence by fixer-generated ternary/backdrop ranges for the same-reviewer closing delta.
 
 - 2026-07-12T12:55+02:00 — 260712-TRH-L2: added honest loading state, kept explicit errors, opted series loads out of per-leaf summaries, and replaced overlapping working polling with settle-then-schedule refreshes. Verification metadata pinned until closeout stamps the L2 code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/supervisor_heartbeat.py`    |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-01T08:24+02:00                                        |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                    |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                    |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -31,9 +31,9 @@ already surfaces the boot stamp.
 
 This module now owns **two** shapes, not one, and the distinction is the point:
 
-- `SupervisorHeartbeat` (L21-L27) is the durable **row** — what `tick()` writes and `read()`
+- cit:([`SupervisorHeartbeat`, `tick`, `read`], mcp/src/agents_remember/serving/supervisor_heartbeat.py:22-28; mcp/src/agents_remember/serving/supervisor_heartbeat.py:70-90; mcp/src/agents_remember/serving/supervisor_heartbeat.py:92-121) is the durable **row** — what `tick()` writes and `read()`
   parses.
-- `SupervisorHeartbeatPayload` (L30-L51) is what a reader computes **about** that row at
+- cit:([`SupervisorHeartbeatPayload`, `heartbeat_age_seconds`], mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52; mcp/src/agents_remember/serving/supervisor_heartbeat.py:124-132) is what a reader computes **about** that row at
   response time: the row's own counters plus `ageSeconds` and the `stale` verdict against the
   configured cutoff. Serving-layer arithmetic on a tick-time artifact, which is exactly why it
   is not a projection field.
@@ -44,13 +44,13 @@ write it straight into an already-dumped, already-validated projection body unde
 `serving/served_state.py` declares the key on `ServedWorkspaceProjection`. No bytes moved: the
 model is `extra="forbid"` with the same seven camelCase field names the dict carried
 (`lastTickAt`, `ageSeconds`, `staleCutoffSeconds`, `stale`, `pendingInboxCount`,
-`redeliverableInboxCount`, `lastSweepDurationSeconds`).
+`redeliverableInboxCount`, `lastSweepDurationSeconds`) cit:([`_supervisor_heartbeat_payload`], mcp/src/agents_remember/serving/app.py:949-968) cit:([`ServedWorkspaceProjection`], mcp/src/agents_remember/serving/served_state.py:47-55).
 
 It is deliberately serialized **without** `exclude_none` (`served_state_tail` dumps it plainly,
 while it dumps the build stamp with `exclude_none=True`): a supervisor that has never ticked
 reports `lastTickAt`/`ageSeconds` as explicit nulls, because the cockpit distinguishes "never
 ticked" from "this server does not report a heartbeat at all". That asymmetry between the two
-halves of the tail is why they are two dumps and not one.
+halves of the tail is why they are two dumps and not one cit:([`served_state_tail`], mcp/src/agents_remember/serving/served_state.py:63-78).
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current
 source behavior above; verification metadata stays pinned to the pre-commit source history until
@@ -117,33 +117,29 @@ No relevant external documentation found after checking the repo Domain Document
 supervisor-heartbeat-specific behavior; this is same-repository control-plane plumbing whose design
 source is the leaf task doc (R5), not an external spec.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this heartbeat mechanism; the leaf task doc's R5 and this implementation are the source of truth. | `SupervisorHeartbeatStore`; `supervisor_staleness_banner` | [supervisor_heartbeat.py](supervisor_heartbeat.py) |
+| No external/domain document defines this heartbeat mechanism; the leaf task doc's R5 and this implementation are the source of truth. | `SupervisorHeartbeatStore`; `supervisor_staleness_banner` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121; mcp/src/agents_remember/serving/supervisor_heartbeat.py:135-151 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `run_supervisor_sweep` ticks this store unconditionally at the end of every sweep, even a zero-finding one. | `SupervisorHeartbeatStore.tick` | [supervisor.py](supervisor.py.md) |
-| `_tool_payload` calls `supervisor_staleness_banner` on every MCP tool response, resolving the observer root via `AmbientLifecycle.root`. | `supervisor_staleness_banner` | [../mcp/tools/base.py](../mcp/tools/base.py.md) |
-| `_supervisor_heartbeat_payload` reads this store and returns a `SupervisorHeartbeatPayload` (no longer a bare dict) for the `supervisorHeartbeat` key on `/api/state` and the SSE snapshot. | `heartbeat_age_seconds`; `SupervisorHeartbeatPayload` | [app.py](app.py.md) |
-| The declaration of that key on the served body, and the tail builder that dumps this payload WITHOUT `exclude_none` while dumping the build stamp WITH it. | `ServedWorkspaceProjection`; `served_state_tail` | [served_state.py](served_state.py.md) |
-| The `root` accessor this module's MCP-tool consumer resolves the observer root through. | `AmbientLifecycle.root` | [../observer/ambient.py](../observer/ambient.py.md) |
-| Failing-first tests for read/tick/age/banner behavior, including the never-ticked-is-silent case. | `SupervisorHeartbeatTests` | [../../../tests/test_supervisor.py](../../../tests/test_supervisor.py.md) |
+| The application computes response-time heartbeat age/staleness, while the served body declares the key and `served_state_tail` serializes the payload without `exclude_none`. | "def _supervisor_heartbeat_payload"; `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/app.py:949-968; mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local heartbeat store. | — | — |
 
 ## Update History
+- 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: bound application response-time heartbeat payload computation to its operative source span. Verification metadata unchanged.
 
 - 2026-08-01T08:24+02:00 — 260731-EFA-L4 curator: recorded the new
-  `SupervisorHeartbeatPayload` (L30-L51) and the row-vs-read-side split it makes explicit. The
+  cit:([`SupervisorHeartbeatPayload`], mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52) and the row-vs-read-side split it makes explicit. The
   seven-key answer `app._supervisor_heartbeat_payload` used to build as a bare `dict[str, Any]`
   and write into an already-dumped projection body is now a declared `extra="forbid"` model, and
   the `supervisorHeartbeat` key it rides is declared on

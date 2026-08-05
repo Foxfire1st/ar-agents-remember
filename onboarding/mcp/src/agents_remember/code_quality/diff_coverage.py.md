@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/diff_coverage.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -218,19 +218,21 @@ every ordinary negative into a gate crash, which is what
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The wrapper's `run_diff_coverage` step, the `--diff-base`/`--diff-floor` flags, and the single pytest coverage run this module reads. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| `load_coverage_by_path`, `FileCoverage`, and the refusal of a report without branch data, all reused here. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. `BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives all three wrappers against a missing root and against a patched `git_command.run_git` raising `TimeoutExpired`; `::test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` keeps a missing revision and an absent merge base as `False` / `None`. | [test_diff_coverage.py](agents-remember/mcp/tests/test_diff_coverage.py) |
-| `[tool.coverage.run] branch = true`, without which this step refuses to score. | [pyproject.toml](agents-remember/pyproject.toml) |
-| The full hook tier that runs the wrapper, and the note telling leaf branches to export `AR_GATE_DIFF_BASE`. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
-| CI checkout uses `fetch-depth: 0` so a merge base exists; a shallow clone would silently degrade this step to the empty tree. | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
-| The contributor-facing statement of the floor and why it is 100%. | [CONTRIBUTING.md](agents-remember/CONTRIBUTING.md) |
-| `run_git` — the runner `_git` calls — strips `GIT_REPOSITORY_SELECTOR_ENV`, keeps stdin on `DEVNULL`, and bounds every call with the local/remote/metadata timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `diff_coverage.run_git` still reads the repository it was handed, and that a non-repository and an unrunnable git both surface as `DiffScopeError`. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The wrapper's `run_diff_coverage` step, the `--diff-base`/`--diff-floor` flags, and the single pytest coverage run this module reads. | `run_diff_coverage` | mcp/src/agents_remember/code_quality/check.py:396-439 |
+| `load_coverage_by_path`, `FileCoverage`, and the refusal of a report without branch data, all reused here. | `load_coverage_by_path`; `FileCoverage` | mcp/src/agents_remember/code_quality/crap_calculator.py:41-59; mcp/src/agents_remember/code_quality/crap_calculator.py:113-132 |
+| Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. `BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives all three wrappers against a missing root and against a patched `git_command.run_git` raising `TimeoutExpired`; `::test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` keeps a missing revision and an absent merge base as `False` / `None`. | `BaseResolutionTests` | mcp/tests/test_diff_coverage.py:81-254; mcp/tests/test_diff_coverage.py:221-255 |
+| `[tool.coverage.run] branch = true`, without which this step refuses to score. | "branch = true" | pyproject.toml:68-70 |
+| The full hook tier that runs the wrapper, and the note telling leaf branches to export `AR_GATE_DIFF_BASE`. | `AR_GATE_DIFF_BASE` | .githooks/_gate.sh:157-172 |
+| CI checkout uses `fetch-depth: 0` so a merge base exists; a shallow clone would silently degrade this step to the empty tree. | "fetch-depth: 0" | .github/workflows/quality-checks.yml:34-34 |
+| The contributor-facing statement of the floor and why it is 100%. | `### The coverage floor is on your diff, not on the tree` | CONTRIBUTING.md:95-131 |
+| `run_git` — the runner `_git` calls — strips `GIT_REPOSITORY_SELECTOR_ENV`, keeps stdin on `DEVNULL`, and bounds every call with the local/remote/metadata timeout classes. | `run_git`; `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `diff_coverage.run_git` still reads the repository it was handed, and that a non-repository and an unrunnable git both surface as `DiffScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390 |
 
 ## Update History
+
+- 2026-08-04T18:07+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 8 citation rows with exact anchors (definition identifiers, quoted config literals, and the exact-level CONTRIBUTING heading) and ledger-verified ranges across crap_calculator, test_diff_coverage, pyproject, _gate.sh, quality-checks.yml, CONTRIBUTING, git_command, and test_git_command; the fixer normalized the CONTRIBUTING section extent. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T21:20+02:00 — 260731-EFA-L3 curator (second pass): the fix worker moved the
   `OSError`/`SubprocessError` → `DiffScopeError` conversion out of `run_git` and **into `_git`**

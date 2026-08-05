@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/useTaskDocumentBody.ts`       |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                   `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate |                                                   2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash |                                                   `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                   2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,30 +71,38 @@ components unmounted until body hydration reaches a terminal state.
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured external document defines this same-repository React state seam. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results. | L1-L73 | [useTaskDocumentBody.ts](agents-remember/dashboard/src/data/useTaskDocumentBody.ts) |
-| DetailPanel resolves the displayed document and uses hook state to delay its notes and change-set request components. | L380-L388; L629-L687; L1044-L1085; L1309-L1388 | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
-| The transport adapter owns the same-origin endpoint and non-OK rejection. | L1-L9 | [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts) |
-| Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | L799-L1038 | [DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
-| Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. | L329-L434 | [Cockpit.test.tsx](agents-remember/dashboard/src/cockpit/Cockpit.test.tsx) |
+| The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
+| `DetailPanelImpl` resolves the displayed reader document and passes it through the body hook. | `DetailPanelImpl`; `useTaskDocumentBody` | dashboard/src/panels/DetailPanel.tsx:332-718 |
+| The enclosure change-set controls wait until the body reader is no longer loading. | `taskDocumentBodyState`, `changeSetBar` | dashboard/src/panels/DetailPanel.tsx:205-205; dashboard/src/panels/DetailPanel.tsx:394-395 |
+| The task-document reader delays its notes until the body reader is no longer loading. | `TaskNotes` | dashboard/src/panels/DetailPanel.tsx:1085-1093; dashboard/src/panels/DetailPanel.tsx:1369-1377 |
+| The transport adapter owns the same-origin endpoint and non-OK rejection. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
+| Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | "DetailPanel doc-reader change-set bar (L4a)" | dashboard/src/panels/DetailPanel.test.tsx:1276-1399 |
+| Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. | "Operations click-to-detail body hydration" | dashboard/src/cockpit/Cockpit.test.tsx:335-441 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists; selection, hydration, serving, and task-document parsing all
 live in `agents-remember`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository dashboard reader state only. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: rebound the enclosure change-set
+  wait claim to `taskDocumentBodyState`/`changeSetBar` with fixer-generated ranges; exact
+  non-fixing check returns zero findings.
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 10 citation findings across the five repo-internal reference rows with exact symbols and test heading evidence. Max-reviewer subject-binding addendum split the pooled DetailPanel row into exact body-reader, change-set, and notes behavior rows.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

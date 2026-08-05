@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/paths.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T20:48+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -44,15 +44,17 @@ between the two sides (North-Star #5).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The writer that resolves the root here to install the ambient `EventStore`. | [mcp/server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| The reader I/O edge that resolves the same root. | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The drift snapshot reader using `drift_snapshot_dir` + the schema (3b). | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b). | [onboarding_drift_check/summary.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
-| The store-layout + one-read-abstraction design. | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The writer that resolves the root here to install the ambient `EventStore` (`create_server` → `initialize_mcp_application`). | `install_ambient`; `observer_root` | mcp/src/agents_remember/application/server_startup.py:15-17; mcp/src/agents_remember/mcp/server.py:17-21 |
+| The reader I/O edge that resolves the same root. | `observer_root` | mcp/src/agents_remember/observer/projection_store.py:211-222 |
+| The drift snapshot reader using `drift_snapshot_dir` + the schema (3b). | `read_drift_snapshots` | mcp/src/agents_remember/observer/snapshots.py:934-970 |
+| The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b). | `drift_snapshot_dir` | mcp/src/agents_remember/observer/paths.py:37-39 |
+| The store-layout + one-read-abstraction design. | `### 2.3 Store layout` | docs/design/observable-lifecycle.md:172-194 |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows; the writer row was re-bound to the moved install path — `create_server` (mcp/server.py L17-L21) now delegates to `initialize_mcp_application` (application/server_startup.py L15-L17), which installs the ambient EventStore with `observer_root`. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-06-13T20:48+02:00: Slice 3b — added the shared drift-snapshot contract
   (`observer_logs_root`, `drift_snapshot_dir`, `DRIFT_SNAPSHOT_SCHEMA`) so the

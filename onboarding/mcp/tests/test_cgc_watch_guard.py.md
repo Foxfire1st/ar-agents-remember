@@ -44,12 +44,16 @@ becomes ready or no graph name is set).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The asset under test, baked into the runner image as `/usr/local/bin/cgc-watch-guard.py`. | [watch_guard.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
-| The watcher Compose template sets the guard as the watcher entrypoint. | [codegraphcontext.watcher.yaml.tmpl](agents-remember/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The tests resolve the packaged watch guard through `GUARD_PATH`. | `GUARD_PATH` | mcp/tests/test_cgc_watch_guard.py:17-27 |
+| The packaged watch guard defines its executable `main`. | `main` | mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py:88-106 |
+| The provider Dockerfile copies the guard to `/usr/local/bin/cgc-watch-guard.py`. | "cgc-watch-guard.py" | providers/docker/codegraphcontext/Dockerfile:16-16 |
+| The watcher Compose template sets the guard as the watcher entrypoint. | `entrypoint` | providers/compose/codegraphcontext.watcher.yaml.tmpl:25-25 |
 
 ## Update History
+
+- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: split test-path resolution, packaged entrypoint, Dockerfile copy, and Compose entrypoint so each whole claim has one owner.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_cgc_watch_guard.py`
   since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3

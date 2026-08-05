@@ -6,8 +6,8 @@
 | path                   | `mcp/requirements.txt`                     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `bf3a3c4e310fb11032da885083d026a74a31ee9c` |
-| lastVerifiedCommitDate | 2026-05-28T20:06:49+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -28,11 +28,13 @@ contract dependencies `pydantic>=2,<3` and `tiktoken>=0.12,<1`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| MCP package metadata declares the same runtime dependencies. | [pyproject.toml](agents-remember/mcp/pyproject.toml) |
-| Pydantic response contracts live under the models package. | [models overview](agents-remember/mcp/src/agents_remember/models/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| MCP package metadata declares the same runtime dependencies. | "pydantic>=2,<3" | mcp/pyproject.toml:25-25 |
+| Pydantic response contracts live under the models package. | `# mcp/src/agents_remember/models/ - Response Contract Models Overview` | onboarding/mcp/src/agents_remember/models/overview.md:1-506 |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (4 findings); no Tier-3 findings.
 
 - 2026-05-28T19:52+02:00: Created after requirements added Pydantic/tiktoken and restored the MCP dependency to `1.27.1`.

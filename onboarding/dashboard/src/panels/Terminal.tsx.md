@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ tears down and reconnects the data subscription correctly.
   `session-cockpit/PtySurface.tsx` — PtySurface owns the two-archetype switch, keep-alive layers,
   and pane chrome; this component stays the one xterm engine. Chats/RailChat call sites are
   unchanged in behavior (they gained only `ariaLabel`).
-- **Accessible-name guarantee (F6)** (L302-L318): the host div is now `role="group"` with
+- **Accessible-name guarantee (F6)** cit:([`aria-label`, `tabIndex`], dashboard/src/panels/Terminal.tsx:451-451): the host div is now `role="group"` with
   `aria-label={ariaLabel ?? `terminal session ${sessionId}`}` — the landmark can NEVER be unnamed
   regardless of caller. The cockpit passes the full `paneAccessibleName` (label + harness +
   state); legacy views pass `terminal: <label>`. The host also carries `tabIndex={-1}` with focus
@@ -108,7 +108,7 @@ tears down and reconnects the data subscription correctly.
   → `lastOutputAt`); `onSocketState` relays the socket's own
   `connected`/`reconnecting`/`dropped` (from `data/terminal.ts`'s additive option; a deliberate
   `dispose()` reports nothing);
-  `onResizeCols(term.cols)` fires after EVERY successful `refit()` (L271) — the R8 ~80-col floor
+  `onResizeCols(term.cols)` fires after EVERY successful `refit()` cit:([`onResizeColsRef`, `refit`], dashboard/src/panels/Terminal.tsx:169-169; dashboard/src/panels/Terminal.tsx:362-399) — the R8 ~80-col floor
   chip's real-pane truth.
 
 ### Conventions
@@ -143,21 +143,21 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
+| No relevant domain documentation was found for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The WebSocket client this adapts a `Terminal` onto (incl. the L6 `onSocketState` option). | — | [data/terminal.ts](../data/terminal.ts) |
-| The canonical keep-alive owner lazy-loads and mounts this per inspectable session. | — | [PtySurface.tsx](session-cockpit/PtySurface.tsx) |
-| The cockpit surface that mounts this per seat: archetypes, keep-alive layers, hooks/filter wiring, accessible names. | L40-L47; L102-L108; L110-L244 | [session-cockpit/PtySurface.tsx](session-cockpit/PtySurface.tsx) |
-| The wrapper enables xterm viewport scrolling, creates the terminal with explicit scrollback, defers wheel to xterm when mouse tracking is active, scrolls the viewport for normal scrollback, and maps mouse-less alternate-buffer wheel input to PageUp/PageDown. | L13-L26; L44-L83; L229-L258 | [Terminal.tsx](Terminal.tsx) |
-| The L6 additive surface: props, live screenReaderMode, hooks, filter, webgl escalation, named group landmark. | L85-L129; L149-L155; L173-L212; L302-L318 | [Terminal.tsx](Terminal.tsx) |
-| The focused component test mocks xterm (extended for options/parser/onBell/onTitleChange/attachCustomKeyEventHandler) and asserts scrollback, wheel precedence, hooks, and the always-named landmark. | L22-L70; L80-L240 | [Terminal.test.tsx](Terminal.test.tsx) |
-| The renderer measurement behind the DOM default (master OQ-B). | L108-L189 | [../dev/PtyRenderBench.tsx](../dev/PtyRenderBench.tsx) |
+| The WebSocket client this adapts a `Terminal` onto (incl. the L6 `onSocketState` option). | `onSocketState` | dashboard/src/data/terminal.ts:55-55 |
+| The canonical keep-alive owner lazy-loads and mounts this per inspectable session. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
+| The cockpit surface that mounts this per seat: archetypes, keep-alive layers, hooks/filter wiring, accessible names. | `PTY_RENDERER` | dashboard/src/panels/session-cockpit/PtySurface.tsx:39-39 |
+| The wrapper handles wheel input with three-way precedence: app mouse tracking passes through, normal-buffer viewport scrolls, and mouse-less alternate-buffer wheel input maps to PageUp/PageDown. | `handleWheel` | dashboard/src/panels/Terminal.tsx:316-338 |
+| The L6 additive surface includes the always-named group landmark (`role="group"` + `aria-label` fallback). | `tabIndex` | dashboard/src/panels/Terminal.tsx:451-451 |
+| The focused component test mocks xterm (extended for options/parser/onBell/onTitleChange/attachCustomKeyEventHandler) and asserts the always-named landmark plus scrollback. | "the group landmark is ALWAYS named", `attachCustomKeyEventHandler`, `onBell` | dashboard/src/panels/Terminal.test.tsx:74-76; dashboard/src/panels/Terminal.test.tsx:95-97; dashboard/src/panels/Terminal.test.tsx:132-143 |
+| The renderer measurement behind the DOM default (master OQ-B). | `PtyRenderBench` | dashboard/src/dev/PtyRenderBench.tsx:83-164 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -171,9 +171,9 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -185,6 +185,12 @@ the last fitted visible box, corrects only genuinely overflowing rows, and does 
 PTY winsize on a keep-alive re-show; disposal is synchronous after all listeners are detached.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the seven `n/a`-anchor
+  table citations and the two superseded `(L…​)` prose citations with exact frozen-source anchors
+  and fixer-generated ranges (`data/terminal.ts:55`, `PtySurface.tsx:39,136-336`,
+  `Terminal.tsx:316-338,451`, `Terminal.test.tsx:74-76;95-97;132-143`,
+  `dev/PtyRenderBench.tsx:83-164`); the exact non-fixing check returns zero findings.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations. `renderer`
   cited L190-L212, which is now the serving-boot reattach effect and the xterm constructor; the

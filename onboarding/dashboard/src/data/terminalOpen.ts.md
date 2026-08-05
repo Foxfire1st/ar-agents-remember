@@ -68,31 +68,32 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 No Domain Documentation source is configured for this repository. The direct source, producer,
 callers, and reviewed regression tests are the current evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
+| No relevant domain documentation was found for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The result union and exact accepted-response identity checks. | L16-L54; L76-L199 | [terminalOpen.ts](terminalOpen.ts) |
-| The sole POST plus network, body, HTTP, and harness-failure classification. | L201-L300 | [terminalOpen.ts](terminalOpen.ts) |
-| The compatibility import surface re-exports this authority instead of owning a second opener. | L320-L337 | [terminal.ts](terminal.ts) |
-| The session store mutates and broadcasts only after `outcome: opened`. | L598-L621 | [sessions.ts](sessions.ts) |
-| Hosted launch delegates to this opener while preserving its established response grammar. | L189-L225 | [launchFlow.ts](launchFlow.ts) |
-| Direct parser and caller regressions cover accepted identity and every failure family. | L343-L537 | [terminal.test.ts](terminal.test.ts) |
+| The result union and exact accepted-response identity checks. | "export type TerminalOpenResult =" | dashboard/src/data/terminalOpen.ts:38-38 |
+| The sole POST plus network, body, HTTP, and harness-failure classification. | "export async function openTerminalSession" | dashboard/src/data/terminalOpen.ts:211-211 |
+| The compatibility import surface re-exports this authority instead of owning a second opener. | "from \"./terminalOpen\"" | dashboard/src/data/terminal.ts:340-340 |
+| The session store mutates and broadcasts only after `outcome: opened`. | "sessionStore.getState().upsert(result.session, true)" | dashboard/src/data/sessions.ts:696-696 |
+| Hosted launch delegates to this opener while preserving its established response grammar. | "export async function openHostedSession" | dashboard/src/data/launchFlow.ts:193-193 |
+| Direct parser and caller regressions cover accepted identity and every failure family. | "POSTs raw metadata and accepts the exact server-owned row" | dashboard/src/data/terminal.test.ts:356-392 |
 
 ## Cross-Repo References
 
 The module implements a repository-local browser/server contract and imports no adjacent-repository
 authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 6 table citations for terminal-open result, route, store, hosted-session, and raw-metadata behavior; fixer-generated ranges verified.
 
 - 2026-07-18T15:22+02:00 — Created for FEUI MX-FIX-2 after same-reviewer Round 2 PASS: recorded the
   sole discriminated opener, five failure classes, exact raw/harness response identity, server-row

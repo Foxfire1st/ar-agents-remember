@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-Payload builders for the `operator_inbox_*` MCP tools that post, poll, consume,
-and optionally push durable operator or agent-to-agent messages.
+Transport-thin response adapters for the `operator_inbox_*` MCP tools. They delegate post, poll, and
+consume behavior to the application layer, then validate the returned dictionaries through
+`_tool_payload`.
 
 ## Code Commentary
 
@@ -29,12 +30,11 @@ compaction prevents a concurrent in-flight delivery from recreating a pending cu
 
 ### 260707-HFX2-L13 Completion Wake Routing
 
-Posting now derives both the current owner and leaf anchor from the sender catalog row. For
-`turn-report` and `master-handover`, `_post_address` replaces stale caller-supplied addressing with
-the resolved current owner before the durable row, ack-by expectation, and optional hosted delivery
-are created. The row records `leafKey` and `subjectAgentId`, so later supervisor passes can re-check
-chain progress without trusting the old mailbox. Ordinary peer-message addressing remains explicit
-and unchanged.
+Completion-wake routing is no longer implemented in this MCP adapter. The application post command
+delegates to `serving.operator_inbox_posts`, where `_post_address` derives the current owner and leaf
+anchor, `_persist_post` creates the durable row and ack-by expectation, and `_deliver_post` attempts
+optional hosted delivery. For `turn-report` and `master-handover`, that serving owner replaces stale
+caller-supplied addressing with the resolved current owner; ordinary peer addressing remains explicit.
 
 ### Current Signatures (260731-EFA-L2)
 
@@ -45,64 +45,40 @@ operator_inbox_poll_payload(config, *, lifecycle_id, agent_id, recipient_role=No
 operator_inbox_consume_payload(config, *, entry_id, consumed_by, consumed_via, ...)
 ```
 
-Post's arguments now arrive as four concepts: **where** it goes (`InboxAddress` —
+The adapter accepts the same four concepts: **where** it goes (`InboxAddress` —
 lifecycle/agent/recipient role), **what** it says (`InboxMessage` — ask, response, message kind,
 gate id, artifact path), **who** sent it (`InboxPoster` — `created_by`/`created_via` plus the
 sender's agent id and role), and **how** it is pushed (`HostedDelivery` from `dispatch_brief.py`,
 bundling `enabled` with the catalog/host/paster/readiness/gate seams; `HOSTED_DELIVERY` is the real
-default). The internal helpers were threaded the same way — `_post_address` returns an
-`InboxAddress` rather than a three-tuple, and `_persist_post` takes one.
+default). The application and serving owners receive those bundles unchanged.
 
 ### Logic
 
-`_store(config)` roots `OperatorInboxStore` under `observer_root(config)`.
-`operator_inbox_post_payload(...)` mints a ULID and timestamp, creates an
-`OperatorInboxEntry`, appends it, and returns a strict `operator_inbox_post`
-payload with metadata and delivery fields. The trusted caller supplies
-`poster.created_by` / `poster.created_via`; `mcp/registration/orchestration.py` fixes those to
-`model` / `cli` for the public MCP route, so an agent cannot post as the developer. When the
-delivery seams are available and `delivery.enabled` is true, it attempts immediate hosted-session
-push through `serving.inbox_delivery`.
+Each public function delegates once to its application counterpart and passes that result through
+`_tool_payload`. The application layer roots `OperatorInboxStore` under `observer_root(config)`,
+composes post requests, lists pending mailbox entries, and consumes/acknowledges entries. The serving
+post owner derives completion routing, persists entries and ack-by expectations, and attempts hosted
+delivery using the configured supervisor redelivery floor. Consume remains the operation that marks
+the matching pending ack-by expectation met; the consumed snapshot is retained until compaction.
 
-Since 260707-HFX2-L1: before creating the entry, `operator_inbox_post_payload` resolves (or reuses
-the caller-supplied) `TerminalCatalog` and calls `signal_routing.derive_signal_owner(catalog,
-sender_agent_id=, message_kind=)` (R4) to derive the routed owner address, stamped onto the entry's
-`owner_role`/`owner_agent_id`/`owner_lifecycle_id` fields and echoed on the response. Right after
-the store append + compaction, in the SAME call, it writes an `ack-by` expectation row
-(`expectation_rows.write_expectation_row`, R2) keyed to the new entry id, with its SLA read from
-`orchestration.expectations.defaults` (falling back to `DEFAULT_EXPECTATION_SLA_SECONDS` when
-`config` carries no coordination root) — so the deadline is never a forgettable follow-up step.
-
-`operator_inbox_poll_payload(...)` lists pending entries for a lifecycle, agent,
-recipient role, or combined mailbox key, serializes each record with the `schema`
-alias, and returns `entryCount` plus the entry list.
-`operator_inbox_consume_payload(...)` marks
-one entry consumed through the store, reports whether this call consumed it now
-or observed an already-consumed entry, then retains the terminal snapshot until compaction. Since
-260707-HFX2-L1 (R1/R2): when this call is the one
-that actually consumed the entry (`consumed_now`), it looks up that entry's pending `ack-by`
-expectation row (`ExpectationRowStore.find_by_source`) and marks it `met` — consume=ack is the
-ONLY terminal delivery outcome, so this is the one place the ack-by deadline is fulfilled.
-
-HFX2-L14 adds `_redelivery_floor_seconds(config)`: hosted push attempts made directly by this MCP
-tool read `settings.supervisor.redeliver_rate_limit_seconds` and pass it into
-`deliver_inbox_entry`, so the first send's durable `nextAttemptAt` is scheduled at the same
-floor-aware cadence as supervisor redelivery. A missing/injected test config still passes `None`,
-which inherits the store default.
+The trusted caller still supplies `poster.created_by` / `poster.created_via`.
+`mcp/registration/orchestration.py` fixes those to `model` / `cli` for the public MCP route, so an
+agent cannot post as the developer. The dashboard path supplies trusted developer/dashboard
+attribution directly to the serving post owner.
 
 ### Conventions
 
-The builders stay config-rooted and transport-thin like `gates.py`: persistence
-lives in `controlplane/`, response validation happens through `_tool_payload`,
-and attribution is explicit rather than inferred.
+The MCP functions stay transport-thin: application and serving modules own composition, persistence,
+routing, delivery, and acknowledgement; this file owns response adaptation through `_tool_payload`.
+Attribution is explicit rather than inferred.
 
 ### Invariants And Boundaries
 
 - Public MCP registration must not let a model claim developer/dashboard
   attribution; `mcp/registration/orchestration.py` fixes model/cli on the `InboxPoster` it builds
   for every MCP call.
-- The dashboard serving endpoint calls the post payload builder directly with trusted
-  developer/dashboard attribution when the task-11 hosted-session route has no chat to inject into.
+- The dashboard serving endpoint calls `serving.operator_inbox_posts.post_operator_inbox_entry`
+  directly with trusted developer/dashboard attribution; it does not route through this MCP adapter.
 - Polling requires at least one mailbox key because an unaddressed read would
   not represent an addressable agent inbox.
 - A consumed row keeps its terminal snapshot until normal compaction removes it (260707-HFX2-L20);
@@ -122,25 +98,26 @@ The observable-lifecycle design describes pull-based return channels over
 durable gate state; these builders expose the active pull mailbox for chats that
 cannot receive direct session injection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Passive/active pull and gate-wait are the return-channel layers available when push cannot be guaranteed. | L251-L266 | [observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Passive/active pull and gate-wait are the return-channel layers available when push cannot be guaranteed. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tool module roots the inbox store under `observer_root(config)` and serializes entries with aliases. | L23-L29 | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| Post, poll, and consume payloads append/list/acknowledge inbox entries and return through `_tool_payload`. | L31-L111 | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| Hosted delivery reads the supervisor redelivery floor from agentic settings and passes it to `deliver_inbox_entry`. | L52-L55; L124-L133 | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| The tool declarations fix public-route attribution to model/cli. | n/a | [registration/orchestration.py](agents-remember/mcp/src/agents_remember/mcp/registration/orchestration.py) |
-| The dashboard serving endpoint fixes trusted developer/dashboard attribution for no-hosted-session responses. | L358-L376 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The MCP module delegates post, registered-post, poll, and consume commands to the application layer and validates each response through `_tool_payload`. | `operator_inbox_post_payload`; `registered_operator_inbox_post_payload`; `operator_inbox_poll_payload`; `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36; mcp/src/agents_remember/mcp/tools/operator_inbox.py:39-47; mcp/src/agents_remember/mcp/tools/operator_inbox.py:50-65; mcp/src/agents_remember/mcp/tools/operator_inbox.py:68-83 |
+| The application layer roots the store, composes post requests, polls pending entries, and consumes entries while fulfilling acknowledgements. | `_store`; `operator_inbox_post_tool`; `operator_inbox_poll_tool`; `operator_inbox_consume_tool` | mcp/src/agents_remember/application/operator_inbox_tools.py:40-41; mcp/src/agents_remember/application/operator_inbox_tools.py:48-68; mcp/src/agents_remember/application/operator_inbox_tools.py:101-124; mcp/src/agents_remember/application/operator_inbox_tools.py:127-158 |
+| The serving post owner derives routing, persists the row and ack-by expectation, and performs optional hosted delivery. | `_post_address`; `_persist_post`; `_deliver_post`; `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:104-119; mcp/src/agents_remember/serving/operator_inbox_posts.py:144-175; mcp/src/agents_remember/serving/operator_inbox_posts.py:178-199; mcp/src/agents_remember/serving/operator_inbox_posts.py:202-288 |
+| Hosted delivery reads the supervisor redelivery floor and passes it into the delivery attempt. | `_redelivery_floor_seconds`; `_deliver_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:70-73; mcp/src/agents_remember/serving/operator_inbox_posts.py:178-199 |
+| The tool declarations fix public-route attribution to model/cli. | `register_orchestration_tools` | mcp/src/agents_remember/mcp/registration/orchestration.py:26-116 |
+| The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution. | `api_operator_inbox`; `_operator_inbox_response` | mcp/src/agents_remember/serving/app.py:1233-1275; mcp/src/agents_remember/serving/app.py:1302-1308 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
@@ -156,6 +133,11 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: regenerated the assigned route/helper and trusted-attribution whole-claim binding with the locked scoped fixer and inspected both extents; no approved semantic claim changes.
+- 2026-08-04T03:03:32+02:00 — S18-SR3-B05 worker: made the route-to-helper ownership explicit, selected both parser-visible functions, and returned the whole trusted-attribution binding to provisional fixer input.
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: corrected ownership after the architecture split: this file is an MCP response adapter, application owns commands/store access, serving owns post routing/persistence/delivery, and the dashboard calls the serving owner directly; new bindings remain provisional.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: `operator_inbox_post_payload` took
   `address`/`message`/`poster`/`delivery` parameter objects (`InboxAddress`, `InboxMessage`,
   `InboxPoster`, `HostedDelivery`), and the internal `_post_address`/`_persist_post` helpers were

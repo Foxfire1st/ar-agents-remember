@@ -132,22 +132,22 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
+| No relevant domain documentation was found for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog-change helper accepts and forwards the L9 `"leaf"` reason for reassignment invalidation. | L32-L85 | [data/sessions.ts](sessions.ts) |
-| The L9 store test proves server-authoritative `applyLeafAssignment` overrides a stale same-role local owner. | L202-L212 | [sessions.test.ts](sessions.test.ts) |
-| The catalog-sync test now receives a remote `"leaf"` event and ignores the sender tab's own broadcast. | L315-L336 | [sessions.test.ts](sessions.test.ts) |
-| The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. | L433-L459 | [data/sessions.ts](sessions.ts) |
-| The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. | L364-L417 | [sessions.test.ts](sessions.test.ts) |
-| `PtySurface` pins visited-pane identity and hidden keep-alive behavior across focus changes and transient handoff. | L87-L160 | [PtySurface.test.tsx](../panels/session-cockpit/PtySurface.test.tsx) |
-| `SessionsView` pins the full cockpit composition, hidden keyboard boundary, and focus/inspection handoff. | L65-L108; L279-L319; L647-L674 | [SessionsView.test.tsx](../panels/session-cockpit/SessionsView.test.tsx) |
-| Cockpit S5 pins the one persistent `sessions-view` owner behind the Chats product label. | L640-L667 | [Cockpit.test.tsx](../cockpit/Cockpit.test.tsx) |
+| The catalog-change helper accepts and forwards the L9 `"leaf"` reason for reassignment invalidation. | "export function notifySessionCatalogChanged" | dashboard/src/data/sessions.ts:113-113 |
+| The L9 store test proves server-authoritative `applyLeafAssignment` overrides a stale same-role local owner. | "applies a server-authoritative leaf assignment over a stale local same-role owner" | dashboard/src/data/sessions.test.ts:289-299 |
+| The catalog-sync test now receives a remote `"leaf"` event and ignores the sender tab's own broadcast. | "receives remote catalog-change notifications and ignores this tab's own broadcast" | dashboard/src/data/sessions.test.ts:570-594 |
+| The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. | "export const sessionStore" | dashboard/src/data/sessions.ts:271-271 |
+| The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. | "queues sendToSession into pending and flushes in order once the terminal registers" | dashboard/src/data/sessions.test.ts:649-657 |
+| `PtySurface` pins visited-pane identity and hidden keep-alive behavior across focus changes and transient handoff. | "keeps the exact visited terminal node across a transient removed-focus gap" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:111-132 |
+| `SessionsView` pins the full cockpit composition, hidden keyboard boundary, and focus/inspection handoff. | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:164-206 |
+| Cockpit S5 pins the one persistent `sessions-view` owner behind the Chats product label. | "keeps one Chats cockpit mounted" | dashboard/src/cockpit/Cockpit.test.tsx:767-794 |
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
@@ -161,9 +161,9 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 

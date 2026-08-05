@@ -49,39 +49,41 @@ None known.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The protocol accepts valid payloads through the separate 128 MiB emergency fuse. | L18-L23; L217-L240 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
-| The active projector hydrates only selected children and contains typed failures. | L67-L137 | [projector/child_history.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/child_history.py) |
-| `refresh_agent_native` on the facade — the entry point this test drives — hydrates then delegates to that child-history projection. | L159-L160; L146-L148 | [projector/facade.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/facade.py); [projector/rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
+| The protocol accepts valid payloads through the separate 128 MiB emergency fuse. | `CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:22-22 |
+| The active projector hydrates only selected children and contains typed failures. | `ChildHistoryProjection` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:25-173 |
+| `refresh_agent_native` on the facade — the entry point this test drives — hydrates then delegates to that child-history projection. | `refresh_agent_native`, `refresh_child` | mcp/src/agents_remember/serving/conversation/active/projector/facade.py:159-160; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:146-148 |
 
 ## Cross-Repo References
 
 The fake Codex process is repository-local; no external repository is executed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 12 citation findings (3 rows and 6 historical pointers); scoped recheck clean.
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the citation broken by the
   `active/projector.py` -> `active/projector/` package split (commit `3a8ff70`). The selected-child
   behaviour this test drives now lives in `projector/child_history.py`: `ChildHistoryProjection`
-  L67-L137 — the four-way eligibility gate and `already-hydrated` short-circuit (L67-L76), the
-  `MAX_AGENT_NATIVE_INFLIGHT`=64 capacity refusal and per-thread singleflight task (L77-L97), and
+  cit:([`ChildHistoryProjection`], mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:25-173) — the four-way eligibility gate and `already-hydrated` short-circuit cit:([`ChildHistoryProjection`], mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:25-173), the
+  `MAX_AGENT_NATIVE_INFLIGHT`=64 capacity refusal and per-thread singleflight task cit:([`ChildHistoryProjection`], mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:25-173), and
   `_hydrate`'s containment of `NativeHistoryLimitExceeded` / `NativeHistoryUnavailable` into an
   `unavailable` `AgentHistoryHydration` plus an `agent_history_state_item`, with the symmetric
-  `recovered` emission on a later successful retry (L99-L137) — which is exactly the
-  `cyclic.status == "unavailable"` + sibling-continuity assertion at L346-L349 of this test. Added a
-  second row for the call path the test actually touches: `facade.refresh_agent_native` (L159-L160)
-  -> `RebuildCoordinator.refresh_child` (L146-L148) -> that projection.
+  `recovered` emission on a later successful retry cit:([`ChildHistoryProjection`], mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:25-173) — which is exactly the
+  `cyclic.status == "unavailable"` + sibling-continuity assertion at cit:([`test_measured_history_crosses_transport_probe_ipc_and_selected_projection`], mcp/tests/test_codex_history_production_path.py:281-365) of this test. Added a
+  second row for the call path the test actually touches: `facade.refresh_agent_native` cit:([`refresh_agent_native`], mcp/src/agents_remember/serving/conversation/active/projector/facade.py:159-160)
+  -> `RebuildCoordinator.refresh_child` cit:([`refresh_child`], mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:146-148) -> that projection.
 
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
   leaf diff. The single test body was split for the complexity gate — projector construction moved

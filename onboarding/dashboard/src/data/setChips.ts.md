@@ -49,27 +49,29 @@ spins only while an actual step remains active.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Chip ordering, copy selection, composer hint, and attention gate. | L1-L232 | [setChips.ts](setChips.ts) |
-| Full chip/pair/route/hint matrix. | L35-L232 | [setChips.test.ts](setChips.test.ts) |
-| Copy source consumed by every chip. | L1-L127 | [setControlsCopy.ts](setControlsCopy.ts) |
+| Chip ordering, copy selection, composer hint, and attention gate. | `deriveSetChips`; `queuedComposerHint`; `hasUnackedSetAttention` | dashboard/src/data/setChips.ts:58-216; dashboard/src/data/setChips.ts:219-225; dashboard/src/data/setChips.ts:228-232 |
+| Full chip/pair/route/hint matrix. | "a 503 route error renders alarm with retry; other route errors carry no retry"; "true for unacked ledger entries and finished failed pairs; false otherwise" | dashboard/src/data/setChips.test.ts:158-189; dashboard/src/data/setChips.test.ts:217-232 |
+| Copy source consumed by every chip. | `setWaitingCopy`; `setRouteErrorCopy` | dashboard/src/data/setControlsCopy.ts:19-21; dashboard/src/data/setControlsCopy.ts:60-74 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 3 repo-internal citation rows and preserved verification metadata.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

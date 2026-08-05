@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,12 +59,14 @@ a guard nobody can show is right**.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The platform helpers under test, spread across the MCP tool, orchestration, provider and benchmark layers. | [agents_remember/](agents-remember/mcp/src/agents_remember/) |
-| The sibling refusal collection for provider/seed/dispatch paths. | [test_platform_edge_refusals.py](agents-remember/mcp/tests/test_platform_edge_refusals.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The sibling refusal collection for provider/seed/dispatch paths. | `CgcBackendPortsTests` | mcp/tests/test_platform_edge_refusals.py:76-123 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` row with an exact
+  anchor (deleting the unresolvable directory row); exact non-fixing check returns zero findings.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   long-tail guard suite. Verification metadata is pinned to the leaf's reformat commit until

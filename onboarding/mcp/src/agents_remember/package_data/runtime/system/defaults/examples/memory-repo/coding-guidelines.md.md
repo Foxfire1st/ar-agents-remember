@@ -35,26 +35,29 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The example says repository-specific coding guidance belongs in the target memory root. | L1-L10 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md) |
-| The example documents compatibility and cleanup rules for memory-layer coding guidance. | L12-L37 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md) |
+| The example says repository-specific coding guidance belongs in the target memory root. | `## Coding Style` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md:1-37 |
+| The example documents compatibility and cleanup rules for memory-layer coding guidance. | `## Coding Style` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md:1-37 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  heading anchors; exact non-fixing check returns zero findings.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-13T13:38: Created onboarding for the memory-repo coding-guidelines example.

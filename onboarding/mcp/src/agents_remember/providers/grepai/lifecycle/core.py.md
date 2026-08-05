@@ -88,13 +88,14 @@ seed target without the caller needing to pass it separately.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| GrepAI PostgreSQL backend lifecycle consumes backend settings from this module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py) |
-| GrepAI Ollama lifecycle consumes embedder settings from this module. | [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py) |
-| GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| GrepAI PostgreSQL backend lifecycle consumes backend settings from this module through `grepai_backend_start`. | `grepai_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:444-463 |
+| GrepAI Ollama lifecycle consumes embedder settings from this module through `grepai_embedder_backend_start`. | `grepai_embedder_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:392-415 |
+| GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module through `grepai_watcher_container_start` and `grepai_runner_image_build`. | `grepai_watcher_container_start`; `grepai_runner_image_build` | mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:37-74; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:245-257 |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 3 table citations for GrepAI backend, embedder, watcher, and runner-image lifecycle paths; fixer-generated ranges verified.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `GrepaiWorkspaceConfig` and `GrepaiServicePorts` (plus the

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -89,14 +89,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | [runner_modules overview](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
-| The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. | [grepai/seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
-| The service entry points open every prepare/run pass with the registration sweep. | [services.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/services.py) |
-| Containment tests pin the sweep's narrow/idempotent/None behavior. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.mcp_registration import *" | mcp/src/agents_remember/benchmarks/runner.py:21-21 |
+| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
+| The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. | `_clone_inputs` | mcp/src/agents_remember/providers/grepai/seed.py:145-167 |
+| The service entry points open every prepare/run pass with the registration sweep. | `disarm_stale_benchmark_registrations` | mcp/src/agents_remember/benchmarks/runner_modules/services.py:39-92 |
+| Containment tests pin the sweep's narrow/idempotent/None behavior. | `test_stale_registration_sweep_narrows_to_authority` | mcp/tests/test_provider_containment.py:235-273 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:573-3091; mcp/tests/test_worktree_support.py:3167-3226 |
 
 ## Cross-Repo References
 
@@ -104,6 +104,12 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-08-04T18:27+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the six malformed rows with
+  ledger-verified anchors and plain sources — the facade re-export literal (runner.py:21), the
+  route overview memory card with its `#` heading anchor, `_clone_inputs` (seed.py:145-153, the
+  benchmark-hermetic skip), `disarm_stale_benchmark_registrations` (services.py:39-92, first act of
+  both entry points), the containment sweep test (235-275), and the corrected worktree test-slice
+  ranges. Spurious `agents-remember/` prefixes dropped; claim wording unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `benchmark_mcp_config`, `benchmark_lifecycle_settings`, `write_benchmark_mcp_registration` and
   `prepare_configured_providers` were re-signed onto `BenchmarkWorkspace`; `benchmark_repo_id(case)`

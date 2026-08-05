@@ -46,21 +46,21 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The memory-repo tools example says it belongs in memory-layer `system/tools.md`, can carry branch workflow notes/checks/code-quality commands, and should point implementation reporting at a project-adjusted quality report template. | L1-L23 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
+| The memory-repo tools example says it belongs in memory-layer `system/tools.md`, can carry branch workflow notes/checks/code-quality commands, and should point implementation reporting at a project-adjusted quality report template. | `# Tools Example` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md:1-24 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 

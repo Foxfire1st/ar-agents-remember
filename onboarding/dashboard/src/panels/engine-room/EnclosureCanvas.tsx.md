@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureCanvas.tsx` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`             |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -50,18 +50,15 @@ conduit endpoints anchored to box edges so a line never crosses a box; **5g G5**
 return lane; the **column re-space** below adds the `integration-mem` mirror). **Column re-space (06‑21):** the
 three middle columns are now anchored on three centre constants — `COL_MAIN_CX = 365` (official line · main),
 `COL_FEAT_CX = 595` (feat/source landing tier in the gap), `COL_WT_CX = 835` (worktree code/memory) — evenly
-spaced for ~72px edge-to-edge gaps either side of feat, symmetric about the ~600 stage centre. **Every
-dependent coordinate is DERIVED from these centres** (POS box x = centre − w/2; `COUPLER_X`/
-`OFFICIAL_COUPLER_X` sit ON the worktree/main centres; `EDGE_GEOM` `worktree-add`/`ledger-map`/`sync`/
-`integration` anchor to column edges; `REMOTE_POS` chips centre on their columns; `PR_CX` is the
-main↔feat gap midpoint; the official/worktree engine→node wires; the four `LandingFlow` path strings — now
-clean verticals because the chips align to their column centres; the enclosure border's left edge =
-`COL_WT_CX − 126`, width = `1148 − (COL_WT_CX − 126)`), so a future re-space is a small, local edit. **5g G5** also adds `TerminalStop` (the t14c integration-conflict STOP, drawn instead of a
+spaced for ~72px edge-to-edge gaps either side of feat, symmetric about the ~600 stage centre. The
+three constants derive the middle-column x positions and the related coupler, edge, remote-chip,
+wire, flow, and enclosure-border x geometry. Engine pod positions and the scene's many y coordinates
+remain fixed values rather than derivatives of those centres. **5g G5** also adds `TerminalStop` (the t14c integration-conflict STOP, drawn instead of a
 `Gate` when `phase === "integration-blocked"`, with recovery chips suppressed) and an engine **palette
 shift**: an active (`nominal`) gauge now reads **green** (`mint`), not amber. **5h H2** adds the landing
 arc: a `CloseoutTrain` (the T13 derived 5-beat closeout-order strip, rendered on
-`phase === "closeout-pending"`); `Conduit` now takes an `integrationStrategy` and **bends** the
-`integration` lane for `replay` (T14b) vs the straight `ff-only` fast-forward (T14); and a
+`phase === "closeout-pending"`); `Conduit` now takes an `integrationStrategy` to select the
+replay or ff-only strategy while the integration geometry remains straight; and a
 `lane-landing-source` `LaneFlag` advances the official line to its `landing` source tip
 (origin-main/origin-feat) while a strategy is recorded — read **null-safe** (`node.landing?.find`) so a
 projection produced before the slice-5h `landing` field renders no flag instead of crashing. **5h coupler fix** re-frames `WarpCoupler` as the
@@ -145,8 +142,8 @@ CSS-substrate state slice **05k** then corrects to all-GSAP/Motion):
   `engineRoomStyles`) eases opacity/transform/fill/stroke as the projection advances frame to frame
   (`stroke-dashoffset` excluded — GSAP owns it alone); `data-effects=off` freezes it to the instant
   end-state, so the count/presence tests stay synchronous.
-- **Three-tier landing (5f §7.4).** The official-line nodes are **always `main`** (`mainRef()` flips only
-  the branch label) — in the build-up and the landing — so they never relabel/remount. The feat/fix SOURCE
+- **Three-tier landing (5f §7.4).** The source nodes render the current `CommitRefNode` under the
+  visible label **Integration line**. The feat/fix SOURCE
   the worktree was branched off renders as its own tier in the gap (`POS.featCode`/`featMemory` at x512),
   shown only while landing (`showLanding`), fading in via `landingIn` — so closeout reads
   **main ◂ feat ◂ worktree**, never collapsing main and feat.
@@ -171,7 +168,7 @@ CSS-substrate state slice **05k** then corrects to all-GSAP/Motion):
 **5i — the canvas motion split: CSS → GSAP timelines + Motion (the `05f` §8 end state).** The structure +
 colour honesty above are unchanged; only HOW it animates changed, and the property-split law (§8.1) is now
 clean: **every animated element is a `motion.*`** (`motion.g`/`motion.rect`/`motion.line`/`motion.path`),
-and Motion owns opacity/transform/scaleY/fill + enter/exit:
+and Motion owns opacity/transform/scaleY + enter/exit; the `engineCharge` class owns fill:
 - **`useEngineTimeline` is wired to the `<svg>` root.** A `rootRef` on the `<svg>` is passed to
   `useEngineTimeline(rootRef, node)`, which owns the GSAP side as ONE `gsap.context` scoped to that root —
   the DrawSVG draw-ons (`[data-draw='on']`, one-shot per lane — 05n; `pathLength` is gone, DrawSVG measures
@@ -281,7 +278,7 @@ The `integration` / `integration-mem` kind arms are kept even though today's red
 worktree-add, cgc-seed, ledger-map, grepai-clone and sync. (Both edge builders were checked:
 `reducer.py::_process_edges` and `reducer.py::_start_process_node`. The in-code comment beside
 `refusedPolarityOf` used to cite a `_engine_edges` that has never existed in this repository;
-260731-EFA-L4 corrected it in place to name the two real builders, so `EnclosureCanvas.tsx` L219-L220
+260731-EFA-L4 corrected it in place to name the two real builders, so the current source comment
 now agrees with `reducer.py`. Do not re-report this: the only remaining occurrences of `_engine_edges`
 anywhere are in prose describing the correction.) The honest reason is **not**
 forward-compatibility — nothing is scheduled to start emitting them. It is that `integration` IS in
@@ -359,8 +356,8 @@ fact-states), and `CanopyFrame` is `aria-hidden` (pure chrome). `data-testid` ho
 `data-runtime`/`data-bound`/`data-kind`/`data-tone`/`data-state` are load-bearing for the render tests. The center-out engine charge, the conduit draw-on, and the travelling
 `flowPacket` landed in G2; the failure overlays landed in G3 — a steady `Gate` over each blocked/failed edge,
 a local `ReasonBadge` (the node summary), the breathing `Attention` parity, and `RecoveryChips`
-(`nextAction` + enabled actions); a fleeting pre-contract block defers the scene gate to the `FleetingBanner`
-in `EnclosureProcessMap`. **G4** added the engine fault/reroute: a `down` provider's engine flickers
+(`nextAction` + enabled actions); a fleeting pre-contract block renders `FleetingEnclosure` directly.
+**G4** added the engine fault/reroute: a `down` provider's engine flickers
 (isolated), `seedFallback` puts the CGC gauge in an amber `reindex` pulse, and `retryArgs` adds a retry chip.
 Branch text truncates to the box with the full string in a `<title>` (hover).
 
@@ -370,35 +367,36 @@ Landing refs with `factState: stale` remain visible, carry an explicit state wor
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `EnclosureCanvas` — the two-world SVG scene (the only export; `node` + `workspaceEngines`). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `BranchNode` / `EngineGauge` (spine + petals) / `WarpCoupler` (`x`/`testid`) / `Conduit` sub-components. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `CanopyFrame` (HUD housing) + `LaneFlag` (lane annotations) decals. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `RemoteStrip` / `RemoteChip` / `PrBadge` + `remoteTone` — the remote/landing dock (`landing[]` refs; 5i positions them by `REMOTE_POS`, PR as a merge-arrow). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `LandingFlows` / `LandingFlow` + `landingFlowState` (`FlowState` active/settled/hidden) — the directional push/pull/carry flows wiring the dock to the branch nodes (cyan-active / amber-settled, GSAP draw-on); paths derived from the column centres. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` column-centre constants — every `POS`/coupler/`EDGE_GEOM`/`REMOTE_POS`/wire/flow/border coordinate is derived from them. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `EDGE_GEOM["integration-mem"]` (memory-lane y=403 worktree→feat mirror of `integration`) + `Conduit`'s widened `isReplay` check + the `retiring` fade. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `chargeMotion` + the `booting` one-shot opacity pulse (`onAnimationComplete` + timer backstop) — Motion owns scaleY/opacity, the `engineCharge` class owns fill (second-cycle fill fix). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `branchEnter` / `mainRef` (5i) — the build-up materialisation axis + the always-`main` official-line relabel (three-tier landing). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `useEngineTimeline(rootRef, node)` wired to the `<svg>` root (05k) — GSAP owns the draw-ons (`[data-draw='on']`) + the fx (`[data-fx=…]`); the per-component `gsap.fromTo` + inline packet were removed. | L168-L247 | [useEngineTimeline.ts](useEngineTimeline.ts) |
-| `refusedPolarityOf` derives the flash polarity from `edge.state` alone (`failed`→red, `stale`→amber) and documents why the `integration`/`integration-mem` kind arms stay while the `refused` state arm went. | L204-L241 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `refusedEdges` — the `(edge, polarity)` list that drives the topmost flash; `RefusedConduit` renders it and stamps `data-polarity`/`data-refused-polarity` from the DERIVED polarity (the conduit itself carries neither). | L926-L942; L1307-L1312 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute. | L624-L680 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field. | L762-L781 | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| `_process_edges` emits only worktree-add, cgc-seed, ledger-map, grepai-clone and sync, so no served payload reaches the integration arms. | L1501-L1574 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| `_start_process_node` — the other edge builder, checked for the same reason and emitting the same four kinds. | L1086-L1150 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The `data-fx` markers replacing the deleted CSS keyframes (`fault`/`reindex`/`surge`/`breath`/`stop`/`packet`) + `chargeMotion` (Motion's scaleY). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train. | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `useShouldAnimate` gate — suppresses both GSAP (no context/ticker) and Motion (`initial={false}`) under effects-off / reduced-motion. | — | [useShouldAnimate.ts](useShouldAnimate.ts) |
-| Left official-line engines + `officialWire` conduits + official coupler (from `workspaceEngines`). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| The `engineState` selector that derives each workspace engine's runtime. | — | [selectors.ts](../../data/selectors.ts) |
-| The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). | — | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| Projection types `EngineProcessEdge`/`EngineProcessNode`. | L538-L608 | [projection.ts](../../types/projection.ts) |
-| Projection types `CommitRefNode`/`ProviderBootNode`/`LandingRefNode`, and `ProviderNode`. | L143-L154; L521-L565 | [projection.ts](../../types/projection.ts) |
-| 05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx="scan">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| The `scanRing`/`ghostedLane` recipes + the `cx` combiner. | — | [engineRoomStyles.ts](engineRoomStyles.ts) |
-| The design prototype the geometry + decals are ported from. | — | `dashboard/public/_proto/podstage.html` |
+| `EnclosureCanvas` — the two-world SVG scene (the only export; `node` + `workspaceEngines`). | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| `BranchNode` / `EngineGauge` (spine + petals) / `WarpCoupler` (`x`/`testid`) / `Conduit` sub-components. | `BranchNode`; `EngineGauge`; `WarpCoupler`; `Conduit` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:264-320; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:339-450; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:530-623; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691 |
+| `CanopyFrame` (HUD housing) + `LaneFlag` (lane annotations) decals. | `CanopyFrame`; `LaneFlag` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:127-144; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:946-970 |
+| `RemoteStrip` / `RemoteChip` / `PrBadge` + `remoteTone` — the remote/landing dock (`landing[]` refs; 5i positions them by `REMOTE_POS`, PR as a merge-arrow). | `RemoteStrip`; `RemoteChip`; `PrBadge`; `remoteTone`; `REMOTE_POS` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1014-1018; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1025-1030; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1046-1071; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1076-1098; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1104-1122 |
+| `LandingFlows` / `LandingFlow` + `landingFlowState` (`FlowState` active/settled/hidden) — the directional push/pull/carry flows wiring the dock to the branch nodes (cyan-active / amber-settled, GSAP draw-on); paths derived from the column centres. | `LandingFlows`; `LandingFlow`; `landingFlowState` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1131-1156; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1161-1174; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1176-1189 |
+| `COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` define the main, feat, and worktree column centres; `ENGINE` declares the fixed engine-pod positions in the geometry constants. | `COL_MAIN_CX`; `COL_FEAT_CX`; `COL_WT_CX`; `ENGINE` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:154-156; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:168-172 |
+| The consumer sites apply those centres to remote chips and PR placement, landing-flow paths, official/worktree wires and couplers, and the enclosure border. | `RemoteStrip`; `LandingFlows`; `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1104-1122; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1176-1189; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| `EDGE_GEOM["integration-mem"]` (memory-lane y=403 worktree→feat mirror of `integration`) + `Conduit`'s widened `isReplay` check + the `retiring` fade. | `EDGE_GEOM`; `Conduit`; `isReplay`; `retiring` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:177-199; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691 |
+| `chargeMotion` + the `booting` one-shot opacity pulse (`onAnimationComplete` + timer backstop) — Motion owns scaleY/opacity, the `engineCharge` class owns fill (second-cycle fill fix). | `chargeMotion`; `EngineGauge`; `booting` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:327-337; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:339-450 |
+| `branchEnter` maps fact state to branch-node opacity/x materialisation. | `branchEnter` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:248-262 |
+| `useEngineTimeline(rootRef, node, fxRootRef)` wires the structural SVG root and sparse sibling `EngineFxOverlay` into one GSAP selector scope: `useEngineTimeline` owns draw-on/retract selection, `buildFx` selects `data-fx` markers, the overlay renders repeating surge/reindex/breath primitives, and Motion owns structural opacity/transform. | `EnclosureCanvas`; `EngineFxOverlay`; `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711; dashboard/src/panels/engine-room/EngineFxOverlay.tsx:35-125; dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
+| `refusedPolarityOf` derives the flash polarity from `edge.state` alone (`failed`→red, `stale`→amber); the full rationale comment records the two current edge builders, their documented-kind distinction, fixture/test coverage, and why the integration arms remain despite no served payload driving them. | `refusedPolarityOf`; "Refused-conduit flash polarity (T9B/T9C/T14C), DERIVED from the edge state — never a class, and never"; "never a field on the edge. A"; "lane is a fault (red), a"; "lane a reroute (amber)."; "Any other kind/state → no flash."; "are dead against TODAY's reducer: its two edge builders --"; "_process_edges"; "_start_process_node"; "so no served payload reaches these two"; "arms. They are kept anyway, and the honest reason is NOT forward-compatibility — nothing is"; "scheduled to start emitting them. It is that (a)"; "s own documented kind vocabulary ("; "valid kind, unlike the"; "STATE removed alongside, which that model's state comment never"; "listed; and (b) the whole integration lane — geometry, the T14C conflict scenario, the replay"; "strategy — is authored in the dev fixtures and covered by tests, so the arms are exercised even"; "though the server does not drive them. Delete the lane and its coverage together, or not at all."; "is the memory-side mirror and is not itself in that documented list; it lives"; "or dies with" | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:215-217; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:219-241 |
+| `refusedEdges` — the `(edge, polarity)` list that drives the topmost flash; `RefusedConduit` renders it and stamps `data-polarity`/`data-refused-polarity` from the DERIVED polarity (the conduit itself carries neither). | `refusedEdges`; `RefusedConduit`; `Conduit` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:927-943; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1311-1313 |
+| `Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute. | `Conduit` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691 |
+| `EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:785-804 |
+| `_process_edges` emits only worktree-add, cgc-seed, ledger-map, grepai-clone and sync, so no served payload reaches the integration arms. | `_process_edges` | mcp/src/agents_remember/observer/reducer.py:1504-1577 |
+| `_start_process_node` — the other edge builder, checked for the same reason and emitting the same four kinds. | `_start_process_node` | mcp/src/agents_remember/observer/reducer.py:1089-1180 |
+| Current `data-fx` marker ownership is split by renderer: `EngineGauge` renders `fault` and the structural reindex charge; `EngineFxOverlay` renders repeating `surge`/`reindex`/`breath`; `Conduit` and `LandingFlow` render `packet` dots; `TerminalStop` renders `stop`. | `EngineFxOverlay`; `EngineGauge`; `Conduit`; `LandingFlow`; `TerminalStop` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:339-450; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:899-920; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1131-1156; dashboard/src/panels/engine-room/EngineFxOverlay.tsx:35-125 |
+| `AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train. | `EnclosureCanvas`; `CloseoutTrain` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:977-1004; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| `shouldAnimate` returns false for the effects-off or reduced-motion conditions, and `useShouldAnimate` resynchronizes that gate; `useEngineTimeline` is the GSAP consumer while `EngineGauge`/`Conduit`/`LandingFlow` are Motion consumers that use the boolean to render the end state. | `shouldAnimate`; `useShouldAnimate`; `useEngineTimeline`; `EngineGauge`; `Conduit`; `LandingFlow` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:339-450; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1131-1156; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247; dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16; dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
+| Left official-line engines + `officialWire` conduits + official coupler (from `workspaceEngines`). | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| The `engineState` selector that derives each workspace engine's runtime. | `engineState` | dashboard/src/data/selectors.ts:123-127 |
+| The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). | `engineSpine`; `enginePetal`; `officialWire`; `canopyStroke`; `laneFlag` | dashboard/src/panels/engine-room/engineRoomStyles.ts:749-765; dashboard/src/panels/engine-room/engineRoomStyles.ts:769-775; dashboard/src/panels/engine-room/engineRoomStyles.ts:792-792; dashboard/src/panels/engine-room/engineRoomStyles.ts:797-805 |
+| Projection types `EngineProcessEdge`/`EngineProcessNode`. | `EngineProcessEdge`; `EngineProcessNode` | dashboard/src/types/projection.ts:152-160; dashboard/src/types/projection.ts:162-202 |
+| Projection types `CommitRefNode`/`ProviderBootNode`/`LandingRefNode`, and `ProviderNode`. | `CommitRefNode`; `ProviderBootNode`; `LandingRefNode`; `ProviderNode` | dashboard/src/types/projection.ts:111-119; dashboard/src/types/projection.ts:229-239; dashboard/src/types/projection.ts:318-323; dashboard/src/types/projection.ts:325-336 |
+| 05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx="scan">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost). | `EnclosureCanvas`; `Conduit` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`. | `scanRing`; `ghostedLane`; `Conduit` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:625-691; dashboard/src/panels/engine-room/engineRoomStyles.ts:982-988; dashboard/src/panels/engine-room/engineRoomStyles.ts:996-996 |
+| The design prototype supplies the ported canopy bracket geometry, provider wire/flow links, and engine spine/petal decals: its canopy path, `wire`/`flow-g` links, provider geometry, and `.e-spine`/`.e-petal` recipes are present in the prototype. | "class=\"canopy\""; "M58 22 L22 22 L22 58"; "class=\"wire\" id=\"w-m-cgc\""; "class=\"flow-g\" id=\"flow-int-code\""; "id=\"m-cgc\" transform=\"translate(81,102)\""; ".prov .e-spine{stroke:var(--amber);stroke-width:.8;opacity:.28}"; ".prov .e-petal{stroke:var(--amber);stroke-width:1.4;opacity:0;stroke-linecap:round}" | dashboard/public/_proto/podstage.html:76-77; dashboard/public/_proto/podstage.html:186-186; dashboard/public/_proto/podstage.html:189-189; dashboard/public/_proto/podstage.html:208-208; dashboard/public/_proto/podstage.html:240-240; dashboard/public/_proto/podstage.html:270-270 |
 
 ## Series-Contract Notes
 
@@ -419,30 +417,18 @@ view-box geometry and style classes preserve the visual composition.
 
 ## Update History
 
-- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
-  `observer/projection.py` citations — the reference row and the restatement in the 10:32 entry
-  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` (L762),
-  `extra="forbid"` (L770), the `kind` vocabulary comment (L775-L777), the nine-state comment (L778)
-  above `state: str` (L779), and the last field `detail` (L781) — every symbol the finding names is
-  inside the range. No body claim changed.
+- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: narrowed the column-geometry claim to its definitions, kept consumer sites in their own finding, and regenerated the final range with the scoped fixer.
 
-- 2026-08-01T10:32+02:00 — 260731-EFA-L4 curator: corrected the `refusedPolarityOf` description, which
-  claimed a third arm — "a `refused` lane → its explicit `edge.refusedPolarity` (default amber)" — that
-  no longer exists and never could have fired. Verified: `EngineProcessEdge` (`observer/projection.py`
-  L762-L781) declares no `refusedPolarity` field and its state comment lists
-  nominal|running|blocked|failed|stale|skipped|complete|planned|unknown with no `refused`;
-  `git log --all -S 'state="refused"'` returns zero commits ever. Also corrected the claim that `Conduit`
-  "now carries `data-refused-polarity` (from `edge.refusedPolarity`)" — it carries no such attribute;
-  `RefusedConduit` stamps `data-polarity`/`data-refused-polarity` from the polarity `refusedPolarityOf`
-  derived. Recorded the kept `integration`/`integration-mem` arms with their ACTUAL justification —
-  `integration` is in the model's own documented `kind` vocabulary and the lane is fixture-authored and
-  test-covered — explicitly not forward-compatibility, and noted `integration-mem` is not itself in that
-  list and rides with `integration`. Checked both reducer edge builders (`_process_edges` L1501-L1574 and
-  `_start_process_node` L1086-L1150); neither emits either kind. The in-code comment beside
-  `refusedPolarityOf` cited a non-existent `_engine_edges`; that was corrected in the source during
-  this same leaf, so the comment now names both real builders and this card no longer reports it. Repaired citations: `useEngineTimeline` L884 → L168-L247 (L884
-  is a line number in the CANVAS, not in the hook file), and the projection-types row L224-L285 → split
-  into L538-L608 for the engine types and L143-L154;L521-L565 for `ProviderNode`/`CommitRefNode`.
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: resolved both developer-owned semantic
+  findings: column centres govern a scoped set of x geometry rather than every coordinate, and the
+  current source-node label is `Integration line` with no `mainRef` helper. New ranges are explicit
+  normalized by the scoped fixer.
+
+- 2026-08-03T07:46:25+02:00 — 260731-EFA-L6 W3-B12 curator (same-reviewer row-384 ownership correction, developer residuals): resolved 46 of 50 manifest findings (40 table findings across 20 rows and 6 prose findings), preserved the two original substantive Tier-3 rows in the accepted pending-developer form, and retained the four honest residual diagnostics (two `citation_anchor_missing` and two `citation_source_malformed`). Corrected row 384 to the current three-argument `useEngineTimeline` ownership: the hook owns draw-on/retract selection, `buildFx` selects `data-fx` markers, `EngineFxOverlay` renders repeating surge/reindex/breath primitives, and Motion owns structural opacity/transform; rows 385, 391, 393, 400, and 401 remain corrected against current source truth. All 25 surviving numeric table rows retain fixer-generated final source ranges, and developer decisions remain required for rows 380 and 383.
+
+- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two observer/projection.py citations — the reference row and the restatement in the 10:32 entry below. The current model definition, forbidden-extra configuration, kind vocabulary, state vocabulary, and detail field are cited in cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:785-804); every named symbol is inside the generated range. No body claim changed.
+
+- 2026-08-01T10:32+02:00 — 260731-EFA-L4 curator: corrected the `refusedPolarityOf` description, which claimed a third arm — "a `refused` lane → its explicit `edge.refusedPolarity` (default amber)" — that no longer exists and never could have fired. Verified: `EngineProcessEdge` declares no `refusedPolarity` field and its state vocabulary has no `refused` in cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:785-804); `git log --all -S 'state="refused"'` returns zero commits ever. Also corrected the claim that `Conduit` carries `data-refused-polarity`; `RefusedConduit` stamps `data-polarity`/`data-refused-polarity` from the derived polarity in cit:([`refusedPolarityOf`, `RefusedConduit`], dashboard/src/panels/engine-room/EnclosureCanvas.tsx:231-241; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:927-943). The kept `integration`/`integration-mem` arms have their actual justification: `integration` is in the model's documented kind vocabulary and the lane is fixture-authored and test-covered, not forward-compatibility. Both reducer edge builders are checked in cit:([`_process_edges`, `_start_process_node`], mcp/src/agents_remember/observer/reducer.py:1089-1180; mcp/src/agents_remember/observer/reducer.py:1504-1577); neither emits either kind. The in-code comment now names both real builders; related `useEngineTimeline` and projection-type citation rows were repaired in their current cards.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: documented the sparse sibling
   `EngineFxOverlay`: animated surge/reindex/attention primitives move out of the text-heavy

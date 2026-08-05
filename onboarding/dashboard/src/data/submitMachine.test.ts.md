@@ -45,26 +45,28 @@ start, terminal completion, phase exclusions, and bounded expiry.
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The system under test owns the normalized phase and partial-order rules. | — | [submitMachine.ts](submitMachine.ts) |
-| Shared scenario fixtures provide named lifecycle examples used across UI tests. | — | [../test/fixtures/submitScenarios.ts](../test/fixtures/submitScenarios.ts) |
+| The system under test owns the normalized phase and partial-order rules. | `settleSubmissionObservation` | dashboard/src/data/submitMachine.ts:155-186 |
+| Shared scenario fixtures provide named lifecycle examples used across UI tests. | `submitReceipt` | dashboard/src/test/fixtures/submitScenarios.ts:87-108 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This is a repository-local unit suite. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 4 citation findings; scoped check passed.
 
 - 2026-07-24T13:17:50Z — Added receipt-honesty and lifecycle-watch coverage. Verification hash/date
   remain pinned to the pre-commit source stamp.

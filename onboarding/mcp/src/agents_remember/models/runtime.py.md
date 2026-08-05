@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `642cca15f206cf8cf43ff7ffd6dadc5c27af2879` |
-| lastVerifiedCommitDate | 2026-06-10T01:44:33+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -34,12 +34,15 @@ context dictionary.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Runtime install controller produces the installer response payload. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py) |
-| Coordination controller exposes resolver output through MCP. | [coordination_tools.py](agents-remember/mcp/src/agents_remember/controllers/coordination_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Runtime install application entry point produces the installer response payload. | `run_runtime_install` | mcp/src/agents_remember/application/runtime_install.py:13-17 |
+| Coordination application entry point exposes resolver output through MCP. | `resolve_context_tool` | mcp/src/agents_remember/application/coordination_tools.py:20-50 |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 2 citation claims; scoped result 0 findings.
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-10T05:30+02:00 — `RuntimeInstallResponse` gains a documented optional `reportPath` field for the S4 response-budget compaction (2.5.1).
 - 2026-05-28T19:52+02:00: Created for runtime and resolver response contracts.

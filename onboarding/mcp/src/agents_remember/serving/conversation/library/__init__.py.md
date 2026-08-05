@@ -41,25 +41,27 @@ None.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The sibling router reserves the harness-native conversation-library prefix. | L1-L8 | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
+| The sibling router reserves the harness-native conversation-library prefix. | "/api/harnesses/{harness_id}/conversations" | mcp/src/agents_remember/serving/conversation/library/api.py:59-59 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 2 citation finding(s); scoped recheck clean.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: re-pointed the governing overview link to
   the new library route-local overview created for the implemented slice. The source marker is

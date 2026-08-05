@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/engine-room/useElementVisible.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,27 +46,29 @@ None recorded.
 No Domain Documentation entries are configured in `system/sources.md`; no external documentation was
 used for this repository-local hook.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
+| No relevant domain documentation was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The hook defaults visible, observes an element when supported, and disconnects at cleanup. | L15-L27 | [useElementVisible.ts](useElementVisible.ts) |
-| The GSAP owner consumes this signal to pause, rather than rebuild, a scoped animation context. | L96-L134 | [useEngineTimeline.ts](useEngineTimeline.ts) |
-| Focused tests model observer availability and explicit hide/show transitions. | L7-L77 | [useElementVisible.test.tsx](useElementVisible.test.tsx) |
+| The hook defaults visible, observes an element when supported, and disconnects at cleanup. | `useElementVisible` | dashboard/src/panels/engine-room/useElementVisible.ts:15-27 |
+| The GSAP owner consumes this signal to pause, rather than rebuild, a scoped animation context. | `useEngineTimeline`; `visible` | dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
+| Focused tests cover observer-unavailable visibility, hide/show transitions, and disconnect on unmount. | `MockIntersectionObserver`; `fireIntersection`; "stays visible when IntersectionObserver is unavailable"; "flips false on hide and true on re-show"; "expect(observed.size).toBe(0)" | dashboard/src/panels/engine-room/useElementVisible.test.tsx:10-22; dashboard/src/panels/engine-room/useElementVisible.test.tsx:34-41; dashboard/src/panels/engine-room/useElementVisible.test.tsx:56-60; dashboard/src/panels/engine-room/useElementVisible.test.tsx:62-77 |
+
+## Update History
+
+- 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: reissued whole-claim evidence for observer availability, transitions, and cleanup for same-reviewer closure.
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
-
-## Update History
 
 - 2026-07-24T13:17:17Z — Curator: created the sidecar for the new Engine Room visibility gate.
   It is uncommitted, so verification fields are intentionally blank until closeout stamps the code commit.

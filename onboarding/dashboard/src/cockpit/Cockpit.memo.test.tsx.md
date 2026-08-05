@@ -6,8 +6,8 @@
 | path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -44,27 +44,29 @@ None.
 No Domain Documentation entries are configured in this memory worktree's source registry; no external
 documentation was invented.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | Source discovery checked | — |
+| No relevant external documentation is configured. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`). | L18-L103 | [Cockpit.memo.test.tsx](Cockpit.memo.test.tsx) |
-| The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches). | L250-L287 | [Cockpit.memo.test.tsx](Cockpit.memo.test.tsx) |
-| The production shell owns the persistent layers under test: the `chatsLayer`/`filesLayer`/`operationsLayer`/`engineLayer` consts and the four divs that toggle their `display`. | L318-L343; L579-L629 | [Cockpit.tsx](Cockpit.tsx) |
+| The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`). | "function CountedEngineRoom()", "function CountedDetailPanel(props: ComponentProps<typeof Real>)", "function CountedSessionsView(props: ComponentProps<typeof Real>)", "function CountedFileViewer(props: ComponentProps<typeof Real>)", "function CountedAttentionQueue(props: ComponentProps<typeof Real>)", "function CountedLifecycleList(props: ComponentProps<typeof Real>)", "function CountedEventRiver()" | dashboard/src/cockpit/Cockpit.memo.test.tsx:32-32; dashboard/src/cockpit/Cockpit.memo.test.tsx:43-43; dashboard/src/cockpit/Cockpit.memo.test.tsx:54-54; dashboard/src/cockpit/Cockpit.memo.test.tsx:65-65; dashboard/src/cockpit/Cockpit.memo.test.tsx:76-76; dashboard/src/cockpit/Cockpit.memo.test.tsx:87-87; dashboard/src/cockpit/Cockpit.memo.test.tsx:98-98 |
+| The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches). | "keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:253-290 |
+| The production shell owns the persistent layers under test: the `chatsLayer`/`filesLayer`/`operationsLayer`/`engineLayer` consts and the four divs that toggle their `display`. | "const chatsLayer = css({", "const filesLayer = chatsLayer;", "const operationsLayer = chatsLayer;", "const engineLayer = chatsLayer;", "className={engineLayer}", "className={operationsLayer}", "className={filesLayer}", "className={chatsLayer}" | dashboard/src/cockpit/Cockpit.tsx:322-322; dashboard/src/cockpit/Cockpit.tsx:332-332; dashboard/src/cockpit/Cockpit.tsx:337-337; dashboard/src/cockpit/Cockpit.tsx:343-343; dashboard/src/cockpit/Cockpit.tsx:581-581; dashboard/src/cockpit/Cockpit.tsx:590-590; dashboard/src/cockpit/Cockpit.tsx:606-606; dashboard/src/cockpit/Cockpit.tsx:618-618 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This is dashboard-local test coverage. | L1-L319 | [Cockpit.memo.test.tsx](Cockpit.memo.test.tsx) |
+| This is dashboard-local test coverage. | "persistent layers skip the setView reconcile (260721 tab-switch CPU)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:218-322 |
 
 ## Update History
+
+- 2026-08-03T02:33:03+02:00 — W3-B04 curator: curated 4 table citations and 3 prose citations (7 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 
 - 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **three corrections to the entry
   below, whose own stated purpose was repairing out-of-bounds citations.** (1) It said the file shrank
@@ -75,13 +77,13 @@ No meaningful cross-repository references found.
   the master's `subTasks[0]` shed a `createdAt` "that `TaskSubTaskRefNode` declares on neither side" —
   **false in both directions**. `git show abc7cbc:dashboard/src/types/projection.ts` declares
   `createdAt?: string` on `TaskSubTaskRefNode` at L206-L214, and this same leaf removed it there
-  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (L380-L387) as part of splitting one
+  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:369-376)) as part of splitting one
   interface back into the two `extra="forbid"` server models it had collapsed. So the fixture edit was
   compile-forced by that mirror split, not a tidy-up. The card's conclusion survives — nothing reads
   the subtask row's `createdAt` either way — so only the stated reason changed. Also re-verified the two
-  kept ranges by opening them: `L18-L103` starts at `const counts = vi.hoisted(() => ({` (L18) and ends at the
-  close of the `CountedEventRiver` probe (L103); `L250-L287` is exactly the
-  `keeps the visibility/aria contract and DOM identity across switches` case. Widened the `Cockpit.tsx`
+  kept ranges by opening them: the first starts at `const counts = vi.hoisted(() => ({` and ends at the
+  close of the `CountedEventRiver` probe (cit:(["const counts = vi.hoisted(() => ({", "function CountedEventRiver()"], dashboard/src/cockpit/Cockpit.memo.test.tsx:18-18; dashboard/src/cockpit/Cockpit.memo.test.tsx:98-98));
+  the keep-alive identity case is exactly the test cited by cit:(["keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)"], dashboard/src/cockpit/Cockpit.memo.test.tsx:253-290). Widened the `Cockpit.tsx`
   row from `L579-L628` to `L579-L629`: the four `className={*Layer}` divs open at L581/L590/L606/L618
   and the fourth one's `</div>` is at L629, so the old range stopped one line short of enclosing it
   (the four `*Layer` consts at L322/L332/L337/L343 are all inside `L318-L343` as written). Verification

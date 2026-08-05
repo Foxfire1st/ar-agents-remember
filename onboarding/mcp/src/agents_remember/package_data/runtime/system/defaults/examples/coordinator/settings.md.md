@@ -61,30 +61,31 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The example states that coordinator settings are workspace-wide and do not replace per-repository memory settings. | L1-L8 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The scope list names global instructions, shared commands, workspace sources, roots, notes, selected memory repos, and operator conventions as coordinator concerns. | L10-L25 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The routing section tells agents to invoke `c-08-ar-coordination-context-resolver` skill and treat repository-specific memory guidance as more specific. | L40-L48 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The context provider section defines semantic, relationship, and intent retrieval substrates, keeps provider authority in MCP settings, routes lifecycle behavior through MCP/package-owned tooling, removes `_bin` and `_venvs` from the managed provider contract, and prefers Docker-wrapped providers/backends instead of host-level services or global daemons. | L49-L81 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The GrepAI notes require a workspace-mode `roots` array for external memory repos and repo-internal `ar-memory/` roots, index live roots in place with per-root `.grepai/` git-ignore containment, keep GrepAI config/state/cache/home artifacts under `providers/runners/grepai/`, store operator logs under `logs/providers/grepai/`, store durable PostgreSQL/pgvector data under `providers/data/grepai/postgres/`, and run Ollama and GrepAI through Docker-owned containers. | L83-L94 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The CGC notes require configured code roots, per-repo runtime instances under `providers/runners/codegraphcontext`, Docker-owned CGC runner execution, a shared lifecycle-owned FalkorDB Docker DBMS with durable state under `providers/data/`, process-env separation, and explicit destructive actions for database deletion. | L96-L123 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
+| The example states that coordinator settings are workspace-wide and do not replace per-repository memory settings. | `workspace` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:3-8 |
+| The routing section tells agents to invoke "c-08-ar-coordination-context-resolver" and treat repository-specific memory guidance as more specific. | "c-08-ar-coordination-context-resolver" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:39-47 |
+| The provider section defines semantic, relationship, and intent retrieval substrates and keeps provider authority in MCP settings. | `semantic`, `relationship`, `intent` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:49-68 |
+| The provider lifecycle section routes behavior through MCP/package-owned tooling, removes `_bin` and `_venvs` from the managed contract, and prefers Docker-wrapped providers/backends over host services. | `lifecycle`, `_bin`, `_venvs`, `Docker` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:70-86 |
+| The GrepAI notes define workspace roots, live-root indexing, `.grepai/` containment, runner/config/log/data locations, and Docker-owned execution. | `GrepAI` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:88-102 |
+| The CGC notes define configured code roots, per-repository runners, Docker-owned execution, shared FalkorDB state, environment separation, and explicit database deletion. | `CGC` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:104-129 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: removed empty placeholder findings and split
+  coordinator, provider-authority, GrepAI, and CGC claims onto their exact example source.
 
 - 2026-06-06T12:15: Updated GrepAI provider doctrine after managed mode switched from mirror-root indexing to live-root indexing with per-root `.grepai/` git-ignore containment.
 - 2026-05-28T12:32+02:00: Updated after provider operator logs moved from `providers/logs/` into the central `logs/providers/` tree.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/drift_snapshots.py`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-31T00:00+02:00                                 |
-| lastVerifiedCommitHash |                                                        `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                                        2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                                        `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                        2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -87,16 +87,17 @@ No external Domain Documentation source is configured for this memory repo.
 This helper is intentionally small but load-bearing because it sits between the
 drift producer, the observer projection tick, and worktree cleanup.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload. | L19-L33 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots. | L36-L69 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses. | L36-L44; L72-L80 | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes. | L1-L112 | [contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
-| `project_and_write` drives one `ProjectionInputState` per tick; that state builds the contract snapshot once during task refresh (with enclosure discovery) and passes it to the pruner before `read_drift_snapshots`, so the reducer sees the pruned snapshot set. | L214-L237 · L225-L238, L266-L270, L345-L350 | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) · [projection_inputs.py](agents-remember/mcp/src/agents_remember/observer/projection_inputs.py) |
-| PTS-L2 tests pin prune-key parity with and without the shared snapshot. | L669-L700 | [test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) |
-| Cleanup removes the contract's exact code-worktree snapshot and returns that result under `drift_snapshots`. | L325-L364 | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| Tests cover shared drift-snapshot path usage by reader/producer suites and projection-time pruning of orphaned worktree snapshots (line ranges repaired 2026-07-31; the dry-run/exact cleanup-removal coverage now lives with the worktree cleanup tests). | L2104-L2150; L2484-L2558; L2693-L2750 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload. | `drift_snapshot_path`, `remove_drift_snapshot`, `_remove_snapshot_file` | mcp/src/agents_remember/observer/drift_snapshots.py:19-22; mcp/src/agents_remember/observer/drift_snapshots.py:25-33; mcp/src/agents_remember/observer/drift_snapshots.py:95-112 |
+| Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots. | `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`, `_read_valid_snapshot` | mcp/src/agents_remember/observer/drift_snapshots.py:36-69; mcp/src/agents_remember/observer/drift_snapshots.py:72-82; mcp/src/agents_remember/observer/drift_snapshots.py:85-92 |
+| `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses. | `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys` | mcp/src/agents_remember/observer/drift_snapshots.py:36-69; mcp/src/agents_remember/observer/drift_snapshots.py:72-82 |
+| The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes. | `ContractSnapshot`, `ContractSnapshotCache` | mcp/src/agents_remember/observer/contract_snapshot.py:37-49; mcp/src/agents_remember/observer/contract_snapshot.py:60-126 |
+| The projection-input module exposes the `read` and refresh entries. | "def read(", "def _refresh_tasks(", "def _refresh_drift(" | mcp/src/agents_remember/observer/projection_inputs.py:214-214; mcp/src/agents_remember/observer/projection_inputs.py:266-266; mcp/src/agents_remember/observer/projection_inputs.py:345-345 |
+| The projection-store module exposes the `project_and_write` entry. | "def project_and_write(" | mcp/src/agents_remember/observer/projection_store.py:212-212 |
+| PTS-L2 tests pin prune-key parity with and without the shared snapshot. | `ContractSnapshotSharedPassTests`, `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:590-858 |
+| Cleanup binds the `cleanup_result`. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:422-465 |
+| Tests cover shared drift-snapshot path usage by reader/producer suites and projection-time pruning of orphaned worktree snapshots (the dry-run/exact cleanup-removal coverage now lives with the worktree cleanup tests). | `DriftSnapshotReaderTests`, `DriftSnapshotProducerTests`, `test_project_and_write_prunes_orphaned_worktree_drift_snapshots`, `_write_snapshot` | mcp/tests/test_observer_projection.py:2528-2574; mcp/tests/test_observer_projection.py:2936-3010; mcp/tests/test_observer_projection.py:3145-3183; mcp/tests/test_observer_projection.py:3185-3202 |
 
 ## Cross-Repo References
 
@@ -104,15 +105,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations and reworded one
-  claim. The tick-time pruner call is no longer in `projection_store.py`: `project_and_write` (L214-L237)
-  now delegates to `ProjectionInputState`, whose `read` orders the refreshes (L225-L238), whose
-  `_refresh_tasks` builds the contract snapshot once and does enclosure discovery (L266-L270), and whose
-  `_refresh_drift` passes `contracts=` to `prune_orphaned_drift_snapshots` immediately before
-  `read_drift_snapshots` (L345-L350) — so the row now cites both files and names the state object. The
-  `test_observer_projection.py` row now cites `DriftSnapshotReaderTests` L2104-L2150,
-  `DriftSnapshotProducerTests` L2484-L2558, and the prune test plus its `_write_snapshot` helper
-  L2693-L2750 (was L2027-L2060; L2616-L2671, which had drifted onto unrelated reader suites).
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 repairs and the pre-PASS whole-claim audit; split the pooled projection-flow row into path-correct generated entry-point claims and rechecked this card through the locked exact-document fixer/check.
+
+- 2026-08-03T03:00:24+02:00 — W3-B04 curator: curated 7 table citations and 5 prose citations (12 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the projection input/store references and focused test row after the source move; the current operative ranges are recorded in Repo-Internal References above.
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
   `mcp/src/agents_remember/observer/drift_snapshots.py` and moved the lines this card cites, so
   the Citations column no longer pointed at the code its rows name. Corrected the ranges (L36-L71

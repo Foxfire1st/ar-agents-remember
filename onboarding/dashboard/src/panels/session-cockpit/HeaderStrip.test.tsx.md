@@ -31,12 +31,13 @@ The jsdom suite for the HeaderStrip AND the SessionStage container (260715-FEUI-
   changed this from the prior `ws —` placeholder assertion — with the real state + quiet age when
   known and the 10 s sweep bound still in the tooltip; a hand-opened session renders NO provenance
   chips (absent, never invented).
-- **Derived provenance tiers (R7, rewritten by L3)** (L68-L107) — the tier assertion runs on a
+- **Derived provenance tiers (R7, rewritten by L3)** — the tier assertion runs on a
   PURPOSE-BUILT row (review finding 7 — not FLEET's `worker-l4`, whose claude-harness/codex-key
   pairing is an L2 fixture quirk that could silently flip the assertion if ever corrected): a
   ready claude row with `claude-fable-5[1m] · max` renders "(model-validated)" + the badge's
   `data-evidence-tier="model-validated"` (stream-json emits no launch-effort echo — the pair's
   honest ceiling); a NEW case pins a STARTING row to "(requested)" + tier `pending`.
+  cit:([`launchTier`], dashboard/src/data/launchEvidence.ts:29-41) cit:(["the pending-interaction fixture (ready, claude pair) sits at model-validated"], dashboard/src/data/launchEvidence.test.ts:96-98) cit:(["open 200-starting responses render the retained pair at 'pending'"], dashboard/src/data/launchEvidence.test.ts:68-77)
 - **SessionStage (R10)** — the reserved `data-slot="working-line"` sits DIRECTLY under the header
   (rendered by L6); the focus-handoff note (F17) and the EXPLAINED empty-stage identity (R9)
   render.
@@ -51,23 +52,23 @@ must not be swapped back to shared FLEET rows — finding 7). Test-only.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The two components under test. | — | [HeaderStrip.tsx](HeaderStrip.tsx) |
-| The stage container (slot order, handoff note, empty identity). | L62-L87 | [SessionStage.tsx](SessionStage.tsx) |
-| The tier machine whose derivation the R7 cases pin. | L29-L41 | [../../data/launchEvidence.ts](../../data/launchEvidence.ts) |
+| The two components under test. | "export function HeaderStrip({", "export function SessionStage({" | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-88; dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
+| The stage container (slot order, handoff note, empty identity). | "export function SessionStage({" | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
+| The tier machine whose derivation the R7 cases pin. | `launchTier`, `TIER_SENSE` | dashboard/src/data/launchEvidence.ts:29-41; dashboard/src/data/launchEvidence.ts:44-51 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -82,6 +83,8 @@ The header tests now pin the absence of duplicate provenance/seat chrome and the
 unclassified-state fallback, alongside existing identity and control rendering checks.
 
 ## Update History
+
+- 2026-08-03T02:43:48+02:00 — W3-B04 curator: curated 3 table citations and 3 prose citations (6 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 
 - 2026-07-24T13:17:17Z — Curator: recorded header declutter and state-accessibility regressions;
   verification fields remain pre-commit.

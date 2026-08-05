@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/context/core.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-02T01:15+02:00                     |
-| lastVerifiedCommitHash | `ab8dda6269c2f8a69c341ae950c2e74d4ab3fe44` |
-| lastVerifiedCommitDate | 2026-06-02T01:10:22+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -31,12 +31,13 @@ It imports public names from `constants.py`, `layout.py`, and `workspace.py`. It
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| GrepAI layout and constants now live in focused sibling modules. | [layout.py](layout.py.md); [constants.py](constants.py.md) |
-| GrepAI lifecycle modules consume these exports through `providers.context`. | [core.py](../lifecycle/core.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| GrepAI lifecycle modules consume these exports through the context package. | "providers.grepai.context" | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:22-22 |
 
 ## Update History
+
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored module references with exact local anchors and generated final ranges with the scoped fixer.
 
 - 2026-06-02T01:15+02:00: Dropped the `artifacts.py` re-export after the module was removed.
 - 2026-05-25T19:33+02:00: Reduced to a facade after GrepAI context responsibilities were split into constants, layout, workspace, and artifact modules.

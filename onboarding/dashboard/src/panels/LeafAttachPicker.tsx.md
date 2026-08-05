@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/LeafAttachPicker.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -99,18 +99,20 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `TaskTreeNode` shape it drills and `findMasterPath` it pre-drills with (and `buildTaskTree` that produces the `tree` prop). | L104-L176 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
-| `RailChat` builds the tree, passes `align="right"`, and performs server-first attach/move with the returned leaf-role pair. | L377-L395; L460-L471 | [RailChat.tsx](RailChat.tsx) |
-| `ChatContextBar` builds the tree, restricts terminal role options when needed, and attaches/moves the focused session server-first. | L88-L122; L172-L182 | [ChatContextBar.tsx](session-cockpit/ChatContextBar.tsx) |
-| Render/drill tests cover role selection, disabled leaf rows, and the two-argument callback. | — | [LeafAttachPicker.test.tsx](LeafAttachPicker.test.tsx) |
+| The `TaskTreeNode` shape it drills and `findMasterPath` it pre-drills with (and `buildTaskTree` that produces the `tree` prop). | `TaskTreeNode`; `findMasterPath`; `buildTaskTree` | dashboard/src/data/taskIdentity.ts:110-116; dashboard/src/data/taskIdentity.ts:126-165; dashboard/src/data/taskIdentity.ts:169-176 |
+| `RailChat` builds the nested task tree used by the attach picker. | `buildTaskTree` | dashboard/src/panels/RailChat.tsx:388-388 |
+| `RailChat` renders the picker with right alignment and passes the selected leaf/role pair to its attach callback. | `LeafAttachPicker`; "right" | dashboard/src/panels/RailChat.tsx:472-478 |
+| `RailChat` performs the server-first attach/move and applies the returned leaf-role assignment only after success. | `attachSessionToLeaf`; "leaf-taken" | dashboard/src/panels/RailChat.tsx:394-399 |
+| `ChatContextBar` builds the tree, restricts terminal role options when needed, and attaches/moves the focused session server-first. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
+| Render/drill tests cover role selection, disabled leaf rows, and the two-argument callback. | "LeafAttachPicker drill-down" | dashboard/src/panels/LeafAttachPicker.test.tsx:35-134 |
 
 ## Cross-Repo References
 
@@ -124,6 +126,11 @@ available height. Horizontal placement remains edge-aware, preventing both rail 
 fixed-height menu that runs off-screen.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: rebased the `RailChat` rows to their
+  source occurrences; exact non-fixing check returns zero findings.
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 4 citation findings for the task-tree implementation and picker regression rows. Max-reviewer subject-binding addendum split the pooled RailChat row into exact tree, alignment/callback, and server-first attach behavior rows.
 
 - 2026-07-24T13:17:17Z — Curator: documented viewport-aware vertical popover placement and its
   bounded height; verification fields remain pre-commit.

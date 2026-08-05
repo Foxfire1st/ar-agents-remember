@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,27 +44,28 @@ None recorded.
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
+| No relevant domain documentation was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| SSE status drives working, elapsed, and stale rendering without any control. | L1-L98 | [ConversationWorkingLine.tsx](ConversationWorkingLine.tsx) |
-| Stage composition selects this only for a live harness stream. | L1199-L1230 | [../SessionsView.tsx](../SessionsView.tsx) |
-| Focused tests pin cue-only behavior. | L63-L126 | [ConversationWorkingLine.test.tsx](ConversationWorkingLine.test.tsx) |
+| SSE status drives working, elapsed, and stale rendering without any control. | `ConversationWorkingLine` | dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx:47-98 |
+| Stage composition selects this only for a live harness stream. | `focusedConversationLive`, `ConversationWorkingLine` | dashboard/src/panels/session-cockpit/SessionsView.tsx:327-327; dashboard/src/panels/session-cockpit/SessionsView.tsx:330-333; dashboard/src/panels/session-cockpit/SessionsView.tsx:1216-1216 |
+| Focused tests pin cue-only behavior. | "working-line-stop" | dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:116-124 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
 
+- 2026-08-03T02:43:37+02:00 — W3-B05 curator: anchored 3 Tier-2 table citations with exact source paths; fixer generated all ranges.
 - 2026-07-24T13:17:17Z — Curator: created the SSE working-cue sidecar. It is uncommitted, so
   verification fields are intentionally blank until closeout stamps the code commit.

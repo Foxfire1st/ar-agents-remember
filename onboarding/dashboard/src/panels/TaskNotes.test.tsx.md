@@ -58,21 +58,22 @@ render or a callback dispatch; there is nothing to submit, and nothing here read
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | A stubbed-fetch component suite; nothing crosses repositories. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The component under test. | [panels/TaskNotes.tsx](agents-remember/dashboard/src/panels/TaskNotes.tsx) |
-| The data types the stubs shape. | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
-| The sibling panel suite whose render/fireEvent idiom this mirrors. | [panels/DetailPanel.test.tsx](agents-remember/dashboard/src/panels/DetailPanel.test.tsx) |
-| The moved note-content suite (markdown, text fallback, binary placeholder, truncation) covering the reader this surface opens. | [panels/notes-reader/NotesReaderViewer.test.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The component under test. | `TaskNotes` | dashboard/src/panels/TaskNotes.tsx:73-161 |
+| The listing entry type shaped by the suite's stub payload. | `NoteEntry` | dashboard/src/panels/TaskNotes.test.tsx:13-15; dashboard/src/data/notes.ts:10-15 |
+| The component suite's `stubNotesApi` returns the directly evidenced listing payload. | `stubNotesApi` | dashboard/src/panels/TaskNotes.test.tsx:18-30 |
+| The moved note-content suite (markdown, text fallback, binary placeholder, truncation) covering the reader this surface opens. | "NotesReaderViewer content pane (reuses the File Viewer DualPane)" | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:110-179 |
 
 ## Update History
 
+- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): narrowed the stub-shape claim to `NoteEntry` (bound to the suite's `entry()` use and the type definition) and the directly evidenced listing payload; `NoteContent` removed from this test's claim; moved note-reader ownership retained; the scoped fixer confirmed the final ranges with no writes.
 - 2026-07-07T14:00+02:00 — agent-orchestration L17: rewritten to the entry-surface contract — the list +
   resolved references now assert the `onOpenNotes` callback (with `{repo, master, path}`) instead of an
   inline `note-view`. The note-CONTENT tests (formatted markdown, preformatted text, binary placeholder,

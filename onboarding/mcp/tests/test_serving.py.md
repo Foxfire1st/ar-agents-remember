@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T14:20+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -110,7 +110,7 @@ OMITTED (never faked); the shape is camelCase (`bootedAt`). The
 held while the fingerprint sidecar was committed alongside the bundle, and both are now generated
 at release time. **Since 260731-EFA-L4 `ServingBuild.payload()` returns the declared
 `ServingBuildPayload` model rather than a dict**, so every one of these assertions goes through the
-module-level helper `_build_wire(build)` (L128-L136), which is
+module-level helper cit:([`_build_wire`], mcp/tests/test_serving.py:129-137), which is
 `build.payload().model_dump(mode="json", exclude_none=True)`. That `exclude_none=True` is where the
 honest-unknown rule is applied — absent, never null, never a fabricated "clean" — and it is applied
 identically by `serving.served_state.served_state_tail`, so what these tests compare against is the
@@ -196,7 +196,7 @@ targetless actionable-drift dismissals, the store keeps actionable-drift current
 lifecycle pruning, and `/api/actions/dismiss` records a targetless acknowledgement row.
 
 **Since 260731-EFA-L5 (R5), "prunes to nothing" is asserted as an EMPTY FILE, never a missing
-one.** `test_attention_store_upserts_and_prunes_lifecycle_rows` (L1412-L1445) ended
+one.** cit:([`test_attention_store_upserts_and_prunes_lifecycle_rows`], mcp/tests/test_serving.py:1413-1446) ended
 `assertFalse(store.log_path().exists())`; that unlink is the defect the leaf removed. `dismiss` is
 a whole-file read-modify-write reached from the dashboard's HTTP dismiss route, so a concurrent
 dismisser holding a handle across the unlink wrote into an inode with no remaining links and the
@@ -239,46 +239,46 @@ No task-independent technical debt was identified during FEUI-L9R review.
 No relevant documentation was found after checking the configured sources; the regression claims
 are proven by repository source and the test suite itself.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local test module. | Source discovery checked | — |
+| No relevant external or domain documentation was found for this repository-local test module. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure diff under test. | — | [serving/delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
-| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | L135-L178; L207-L269 | [serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | `stream_events` L300-L330 | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L441-L503 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The raw event tail under test. | L125-L277 | [serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| The inactivity-based raw event retention helper under test. | — | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| The raw retention regressions: dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | — | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | L1937-L2005; L2032-L2062 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| L5 retention exemption: a protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The `protected_lifecycle_ids` parameter under test, and the series-retention set it carries. | `prune_expired_lifecycle_event_logs`, `series_retained_lifecycle_ids` | [observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | L2073-L2086; L2123-L2152 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The sim load/replay under test. | — | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
-| The action evaluation under test. | — | [serving/actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
-| The gate write-path the `/api/actions` gate verbs drive (slice 6b). | — | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | — | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| The compact attention acknowledgement store asserted by `ActionDismissTests`; `dismiss` is a whole-file read-modify-write and `prune_lifecycles` now empties the log through the contract's rewrite instead of unlinking it. | `dismiss`, `prune_lifecycles`, `_replace` | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
-| The rewrite that makes "emptied, not unlinked" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The prune-to-emptiness assertion this leaf rewrote, and the loss it used to hide. | `test_attention_store_upserts_and_prunes_lifecycle_rows` L1412-L1445 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | L1387-L1410; L1447-L1457; L1503-L1515 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The CLI dispatcher + dashboard adapter under test. | — | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
-| The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | — | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| `BuildInfoTests`' dirty-probe cases and the seam they patch (`agents_remember.serving.build_info.run_git`). | L1045-L1069; L1071-L1090 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The probes under test: `_git_short_head` / `_git_worktree_dirty` call `run_git` with `timeout=_PROBE_TIMEOUT_SECONDS`, which is why the seam moved. | L40; L91-L118 | [serving/build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
+| The pure diff under test. | `diff_projection` | mcp/src/agents_remember/serving/delta.py:102-145 |
+| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
+| The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | `stream_events` | mcp/src/agents_remember/serving/app.py:315-345 |
+| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:420-518 |
+| The raw event tail under test. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
+| The inactivity-based raw event retention helper under test. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
+| The raw retention regressions: dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | `RawEventTests` | mcp/tests/test_serving.py:1702-2068 |
+| Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | `RawEventTests` | mcp/tests/test_serving.py:1702-2068 |
+| L5 retention exemption: a protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | mcp/tests/test_serving.py:2013-2036 |
+| The `protected_lifecycle_ids` parameter under test, and the series-retention set it carries. | `prune_expired_lifecycle_event_logs`; `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
+| Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | `StreamRawEventsTests` | mcp/tests/test_serving.py:2071-2177 |
+| The sim load/replay under test. | `ReplayFeeder`; `ReplayClock`; `build_sim` | mcp/src/agents_remember/serving/sim.py:72-84; mcp/src/agents_remember/serving/sim.py:87-106; mcp/src/agents_remember/serving/sim.py:137-148 |
+| The action evaluation under test. | `evaluate_action` | mcp/src/agents_remember/serving/actions.py:149-167 |
+| The gate write-path the `/api/actions` gate verbs drive (slice 6b). | `gate_create_payload`; `gate_decide_payload` | mcp/src/agents_remember/mcp/tools/gates.py:34-44; mcp/src/agents_remember/mcp/tools/gates.py:67-84 |
+| The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
+| The compact attention acknowledgement store asserted by `ActionDismissTests`; `dismiss` is a whole-file read-modify-write and `prune_lifecycles` now empties the log through the contract's rewrite instead of unlinking it. | `dismiss`; `prune_lifecycles`; `_replace` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
+| The rewrite that makes "emptied, not unlinked" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| The prune-to-emptiness assertion this leaf rewrote, and the loss it used to hide. | `test_attention_store_upserts_and_prunes_lifecycle_rows` | mcp/tests/test_serving.py:1413-1446 |
+| Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | `ActionDismissTests` | mcp/tests/test_serving.py:1329-1571 |
+| The CLI dispatcher + dashboard adapter under test. | `main` | mcp/src/agents_remember/cli/__main__.py:31-33 |
+| The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
+| `BuildInfoTests`' dirty-probe cases and the seam they patch (`agents_remember.serving.build_info.run_git`). | `BuildInfoTests` | mcp/tests/test_serving.py:947-1091 |
+| The probes under test: `_git_short_head` / `_git_worktree_dirty` call `run_git` with `timeout=_PROBE_TIMEOUT_SECONDS`, which is why the seam moved. | `_git_short_head`; `_git_worktree_dirty` | mcp/src/agents_remember/serving/build_info.py:91-101; mcp/src/agents_remember/serving/build_info.py:104-118 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local test module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -301,10 +301,13 @@ point — both are 400s, and the code tells the caller which half of the address
 recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisionHelperTests`.)
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: bound the build probes to their complete run_git call bodies under the adversarial verdict, then the exact scoped fixer/check passed.
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: applied 20 citation updates (19 repairs, 1 normalization; 4 prose citations); scoped recheck clean (0 findings).
 
 - 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: one assertion changed and every self-citation
   below it moved. **Coverage:**
-  `ActionDismissTests::test_attention_store_upserts_and_prunes_lifecycle_rows` (L1412-L1445) ended
+  cit:([`test_attention_store_upserts_and_prunes_lifecycle_rows`], mcp/tests/test_serving.py:1413-1446) ended
   `assertFalse(store.log_path().exists())` and now asserts `store.read() == []`,
   `log_path().is_file()` and `log_path().read_bytes() == b""`. That unlink is the defect
   260731-EFA-L5 removed (R5): `AttentionDismissalStore._replace` called
@@ -322,13 +325,13 @@ recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisi
   dismiss row L1437-L1447; L1493-L1505 → **L1447-L1457; L1503-L1515** (its first range, L1387-L1410,
   sits above the hunk and was re-verified unmoved); Task 34 retention L1927-L1995; L2022-L2052 →
   **L1937-L2005; L2032-L2062**; raw stream L2063-L2076; L2113-L2142 → **L2073-L2086; L2123-L2152**.
-  The MX-FIX-1 trio (L441-L503), both dirty-probe rows (L1045-L1069; L1071-L1090) and the
-  `_build_wire` helper (L128-L136) are above the hunk and were re-verified unmoved. No test was
+  The MX-FIX-1 trio cit:([`StreamEventsTests`], mcp/tests/test_serving.py:420-518), both dirty-probe rows cit:([`BuildInfoTests`], mcp/tests/test_serving.py:947-1091) and the
+  `_build_wire` helper cit:([`_build_wire`], mcp/tests/test_serving.py:129-137) are above the hunk and were re-verified unmoved. No test was
   added, removed or renamed. Verification metadata pinned until closeout stamps the L5 commit.
 
 - 2026-08-01T09:15+02:00 — 260731-EFA-L4 curator: `ServingBuild.payload()` now returns the declared
   `ServingBuildPayload` model instead of a dict, so every assertion that used to index `payload()`
-  goes through the new module-level helper `_build_wire(build)` (L128-L136) —
+  goes through the new module-level helper cit:([`_build_wire`], mcp/tests/test_serving.py:129-137) —
   `build.payload().model_dump(mode="json", exclude_none=True)`, which is the stamp exactly as the
   state body carries it and the point at which the honest-unknown rule (absent, never null, never a
   fabricated "clean") is applied. Seven call sites moved: the six in `BuildInfoTests` and

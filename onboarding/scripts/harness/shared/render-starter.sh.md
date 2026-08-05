@@ -44,13 +44,14 @@ Python exit status is the script's exit status.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The generator that fans this file out verbatim to all eight starter packages. | [sync-harness.py](agents-remember/scripts/sync-harness.py) |
-| The program this script launches. | [render_starter.py](agents-remember/scripts/harness/render_starter.py) |
-| The PowerShell counterpart. | [render-starter.ps1](agents-remember/scripts/harness/shared/render-starter.ps1) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The generator that fans this file out verbatim to all eight starter packages. | `generated_files` | scripts/sync-harness.py:576-621 |
+| The program this script launches. | `main` | scripts/harness/render_starter.py:270-285 |
+| The PowerShell counterpart. | "render-starter.py" | scripts/harness/shared/render-starter.ps1:4-4 |
 
 ## Update History
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for eight
   byte-identical copies (requirement L2-R12). Verification metadata is pinned to the

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/context.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -37,16 +37,18 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The kernel resolver owns topology, storage, path rules, and cross-repo resolution. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| Closeout planning uses this module before refreshing onboarding metadata. | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The kernel resolver owns topology, storage, path rules, and cross-repo resolution. | `resolve_coordination_context`; `build_coordination_context`; `path_rules`; `cross_repo` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146; mcp/src/agents_remember/kernel/coordination_context/resolver.py:151-164; mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-312 |
+| Closeout planning uses this module before refreshing onboarding metadata. | `_memory_refresh_preview`; `onboarding_refresh_plan`; `_closeout_contract_context`; `_external_closeout_commits`; `refresh_onboarding_metadata` | mcp/src/agents_remember/worktrees/modules/closeout.py:237-318; mcp/src/agents_remember/worktrees/modules/closeout.py:578-580; mcp/src/agents_remember/worktrees/modules/closeout.py:669-718 |
 
 ## Series-Contract Notes
 
 The context wrapper forwards `parent_task` and `leaf_id` from `WorktreeArgs` to the resolver before operation modules build or load contracts.
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 2 table citations and normalized 2 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for the kernel resolver's new
   signature — `resolve_context` builds a `CoordinationHints` + `EnclosureSelector`, and

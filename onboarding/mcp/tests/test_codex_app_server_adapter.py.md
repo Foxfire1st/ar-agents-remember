@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ hidden models and their model-specific effort menus, leaves current selections u
 thread exists, and proves discovery never calls `thread/*` or `turn/*`. A repeated pagination cursor
 fails loudly and still forces the transient app-server process to stop.
 
-The experimental server-request case (`test_unknown_server_request_is_declined_while_experimental_history_stays_enabled`,
-L1091-L1129) pins the remediation contract: an unknown/experimental request METHOD is still
+The experimental server-request case (`test_unknown_server_request_is_declined_while_experimental_history_stays_enabled`)
+pins the remediation contract: an unknown/experimental request METHOD is still
 DECLINED (`respond_error` -32601 — no experimental API is ever enabled), but the failure contract
 deliberately changed: the method is vendor traffic that degrades to preserved raw evidence on any
 thread, so the bridge stays `ready` with nothing left outstanding instead of marking `failed`
@@ -123,7 +123,7 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
@@ -132,33 +132,32 @@ source was available for this test-file curation pass.
 The test module and native Codex implementation directly prove the catalog-retention and
 thread-free discovery contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The started-adapter test verifies cached advertisement, retained descriptions, current model/effort, and the exact initialize/model-list/thread-start request sequence after startup. | L301-L360 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | L388-L454 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Model and effort changes remain queued until one same-thread turn accepts their exact override, with no reconnect or resume. | L590-L637 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Turn statuses promote only `inProgress`/`completed`; failed/interrupted starts reject and retain the fresh-turn requirement. | L638-L670 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | L869-L925 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | L926-L1028 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| Idempotent setters return immediate without falsely claiming an effective echo. | L1029-L1044 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| The experimental-request case pins the decline-not-fail remediation contract. | L1091-L1129 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| The shared `TEST_SETTINGS` baseline and the `drain_events`/`assert_notification_is_inert`/`next_event_of_kind` helpers every correlation case reuses. | L225-L284 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
-| The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | L152-L205 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | L173-L208; L311-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | L241-L328 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | L329-L370 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | L528-L593; L657-L701 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Session state validates dynamic model-local effort, separates desired from effective state, promotes only an accepted selection, and guards settings notifications against unrelated drift. | L210-L319 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| The fixture path remains an explicit test baseline rather than a runtime catalog source. | L34; L1251-L1259 | [test_codex_app_server_adapter.py](agents-remember/mcp/tests/test_codex_app_server_adapter.py) |
+| The started-adapter test verifies cached advertisement, retained descriptions, current model/effort, and the exact initialize/model-list/thread-start request sequence after startup. | `test_handshake_uses_stable_protocol_and_exposes_effort_menu` | mcp/tests/test_codex_app_server_adapter.py:299-356 |
+| Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | `test_discover_retains_paginated_hidden_catalog_without_opening_a_thread`; `test_discover_rejects_repeated_model_cursor_without_opening_a_thread` | mcp/tests/test_codex_app_server_adapter.py:386-432; mcp/tests/test_codex_app_server_adapter.py:435-450 |
+| Model and effort changes remain queued until one same-thread turn accepts their exact override, with no reconnect or resume. | `test_set_model_and_effort_stay_pending_until_same_thread_turn_accepts` | mcp/tests/test_codex_app_server_adapter.py:588-624 |
+| Turn statuses promote only `inProgress`/`completed`; failed/interrupted starts reject and retain the fresh-turn requirement. | `test_turn_start_promotes_only_successful_submission_status`; `test_turn_acceptance_blocking_and_terminal_mapping` | mcp/tests/test_codex_app_server_adapter.py:533-567; mcp/tests/test_codex_app_server_adapter.py:627-666 |
+| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | `test_busy_second_submit_certifies_zero_bytes_without_steer_or_adapter_queue`; `test_reversing_pending_codex_settings_clears_fresh_turn_barrier` | mcp/tests/test_codex_app_server_adapter.py:570-585; mcp/tests/test_codex_app_server_adapter.py:895-921 |
+| Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | `test_codex_set_rejects_unadvertised_model_and_model_local_effort_without_rpc`; `test_pending_codex_settings_force_fresh_turn_instead_of_steering_active_turn`; `test_settings_notification_promotes_only_deliberate_match_and_keeps_drift_guard` | mcp/tests/test_codex_app_server_adapter.py:924-946; mcp/tests/test_codex_app_server_adapter.py:949-970; mcp/tests/test_codex_app_server_adapter.py:973-1024 |
+| Idempotent setters return immediate without falsely claiming an effective echo. | `test_idempotent_codex_set_is_immediate_without_invented_effective_evidence` | mcp/tests/test_codex_app_server_adapter.py:1027-1040 |
+| The experimental-request case pins the decline-not-fail remediation contract. | `test_unknown_server_request_is_declined_while_experimental_history_stays_enabled` | mcp/tests/test_codex_app_server_adapter.py:1089-1125 |
+| The shared `TEST_SETTINGS` baseline and the `drain_events`/`assert_notification_is_inert`/`next_event_of_kind` helpers every correlation case reuses. | `TEST_SETTINGS`; `drain_events`; `assert_notification_is_inert`; `next_event_of_kind` | mcp/tests/test_codex_app_server_adapter.py:225-229; mcp/tests/test_codex_app_server_adapter.py:255-262; mcp/tests/test_codex_app_server_adapter.py:265-274; mcp/tests/test_codex_app_server_adapter.py:277-282 |
+| The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | `CodexAppServerAdapter`; `start`; `discover` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
+| Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | `CodexAppServerSession`; `discover`; `_read_models` | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458 |
+| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | `set_model`; `set_effort`; `set_desired_model`; `set_desired_effort` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224; mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253 |
+| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | `submit`; `_start_turn`; `preflight_operation` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:229-237; mcp/src/agents_remember/serving/codex_app_server_adapter.py:239-264; mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480 |
+| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | `_start_turn`; `_accept_started_turn`; `accept_settings_selection` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480; mcp/src/agents_remember/serving/codex_app_server_adapter.py:533-568; mcp/src/agents_remember/serving/codex_app_server_session.py:265-283 |
+| Session state validates dynamic model-local effort, separates desired from effective state, promotes only an accepted selection, and guards settings notifications against unrelated drift. | `set_desired_model`; `set_desired_effort`; `accept_settings_selection`; `accept_settings_update` | mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253; mcp/src/agents_remember/serving/codex_app_server_session.py:265-283; mcp/src/agents_remember/serving/codex_app_server_session.py:285-303 |
+| The fixture path remains an explicit test baseline rather than a runtime catalog source. | `fixture`; `TEST_SETTINGS` | mcp/tests/test_codex_app_server_adapter.py:134-135; mcp/tests/test_codex_app_server_adapter.py:225-229 |
 
 ## Cross-Repo References
 
 The earlier coordination-repo review remains useful historical evidence for the pre-ACPUI Codex
 protocol contract; it does not replace the current source tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The prior reviewer verdict confirms initialize/model-list/thread behavior, protocol-only effort handling, normalized state, interactions, reconnect, and fixture provenance. | L24-L33 | [260713-PHA-L3 reviewer verdict](ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -176,6 +175,8 @@ requests are accepted; the dedicated history-reader tests own runtime method pro
 
 ## Update History
 
+- 2026-08-02T21:13:21+02:00 — W2-B07 curator: repaired 16 repository-reference citations and normalized 2 prose citations after bounded source reads; all 16 surviving rows use exact anchors and generated ranges. Under the 2026-08-02 14:10 R27 ruling, deleted 1 legacy reviewer-verdict row because it is true legacy review evidence rather than a semantic Tier-3 source-code claim, and no resolver-supported code/memory mirror exists.
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The turn-start
   override material is now split across two methods in `codex_app_server_adapter.py`: `_start_turn`
   plus `_turn_start_params` at L528-L593 (which carries `evidence.model.model` / `evidence.effort` and
@@ -207,8 +208,8 @@ requests are accepted; the dedicated history-reader tests own runtime method pro
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the deliberately changed
   experimental-request failure contract — the decline is unchanged (`respond_error` -32601, no
   experimental API), but an unknown/experimental request METHOD now degrades to preserved evidence
-  with the bridge `ready` instead of marking it `failed` — and added the matching invariant plus a
-  reference row (L1078-L1118). Re-anchored the four adapter-source citations the remediation
+with the bridge `ready` instead of marking it `failed` — and added the matching invariant plus a
+reference row. Re-anchored the four adapter-source citations the remediation
   shifted (L88-L126 → L137-L190; L153-L208 → L226-L313; L220-L272 → L314-L355; L344-L415 →
   L519-L615). Verification metadata stays pinned at the file's last committed touch; the adapter
   change itself is uncommitted.

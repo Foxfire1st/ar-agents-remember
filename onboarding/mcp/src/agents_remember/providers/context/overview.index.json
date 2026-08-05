@@ -61,12 +61,14 @@
       "common.py",
       "cgc.context",
       "grepai.context",
+      "## Layout Construction Is Now Four Named Things",
+      "## Layout Construction Is Now Three Named Things",
       "providers/context_common.py",
       "grepai/core.py",
       "mcp/overview.md",
-      "agents-remember/mcp/src/agents_remember/providers/context/__init__.py",
-      "/cgc/context/overview.md",
-      "/grepai/context/overview.md",
+      "mcp/src/agents_remember/providers/context/__init__.py",
+      "onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md",
+      "onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md",
       "agents_remember",
       "sourceRoute",
       "doc_type",
@@ -79,9 +81,8 @@
       "CodeGraphContext",
       "API",
       "context_providers",
-      "T12",
-      "T21",
-      "T19"
+      "T17",
+      "EFA"
     ]
   },
   "fallback": {

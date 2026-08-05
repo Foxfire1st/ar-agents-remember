@@ -36,25 +36,27 @@ normal display window.
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The system under test defines protected phases and settled-tail bounds. | — | [submitRetention.ts](submitRetention.ts) |
+| The system under test defines protected phases and settled-tail bounds. | `SUBMIT_HISTORY_INSPECTOR_WINDOW`, `SUBMIT_QUEUE_RETENTION_WINDOW`, `PROTECTED_SUBMIT_PHASES`, `compactSubmitHistory`, `compactSubmitQueue` | dashboard/src/data/submitRetention.ts:8-9; dashboard/src/data/submitRetention.ts:11-20; dashboard/src/data/submitRetention.ts:27-40; dashboard/src/data/submitRetention.ts:43-45 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This is a repository-local unit suite. | — | — |
 
 ## Update History
+
+- 2026-08-03T02:39:28+02:00 — W3-B04 curator: curated 1 table citation (1 total), supplying exact anchors and path; the scoped fixer generated all final extents.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

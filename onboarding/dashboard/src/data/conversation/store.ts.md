@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/store.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-27T14:20+02:00                           |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -103,38 +103,38 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure reducer whose page/event/recovery this store drives. | L19-L26 | [reducer.ts](reducer.ts.md) |
-| The page/telemetry/interrupt client this store fetches through. | L15-L18 | [client.ts](client.ts.md) |
-| The SSE controller this store opens/reconnects/stops. | L27 | [stream.ts](stream.ts.md) |
-| The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | — | [store.test.ts](store.test.ts.md) |
-| The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). | L44-L48 · L103-L109 | [agents.ts](agents.ts.md) |
-| The focus LRU-survival + reset pins for `agentFocusBySession`. | L44-L48 · L131-L134 | [agents.test.ts](agents.test.ts.md) |
-| The stage body that connects/disconnects on focus + epoch resolution. | L71-L102 | [../../panels/session-cockpit/ChatsStageBody.tsx](../../panels/session-cockpit/ChatsStageBody.tsx.md) |
-| The house vanilla-zustand store idiom this matches. | — | [../store.ts](../store.ts.md) · [../sessionCockpitStore.ts](../sessionCockpitStore.ts.md) |
+| The pure reducer whose page/event/recovery this store drives. | `applyInitialPage` | dashboard/src/data/conversation/reducer.ts:33-40; dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:246-286 |
+| The page/telemetry/interrupt client this store fetches through. | `fetchConversationPage` | dashboard/src/data/conversation/client.ts:74-98; dashboard/src/data/conversation/client.ts:101-119; dashboard/src/data/conversation/client.ts:260-269 |
+| The SSE controller this store opens/reconnects/stops. | `openConversationStream` | dashboard/src/data/conversation/stream.ts:86-242 |
+| The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | `LRU_LIMIT` | dashboard/src/data/conversation/store.test.ts:245-303; dashboard/src/data/conversation/store.test.ts:382-417 |
+| The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). | `effectiveAgentFocus` | dashboard/src/data/conversation/agents.ts:106-112 |
+| The focus LRU-survival + reset pins for `agentFocusBySession`. | `setAgentFocus` | dashboard/src/data/conversation/agents.test.ts:197-235 |
+| The stage body that connects/disconnects on focus + epoch resolution. | `connectConversation` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:175-220; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:265-276 |
+| The house vanilla-zustand store idiom this matches. | `createStore` | dashboard/src/data/store.ts:225-225; dashboard/src/data/sessionCockpitStore.ts:279-279 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## 260727-CHATS-IM-L2 Selected-Child Store Delta
 
 `agentHistoryBySession` is child-scoped UI acquisition state and never changes the parent's stream
-phase (L47-L74; L132-L146). `hydrateAgentConversation` sends one request for the selected child,
+phase cit:([`agentHistoryBySession`], dashboard/src/data/conversation/store.ts:64-64; dashboard/src/data/conversation/store.ts:143-143). `hydrateAgentConversation` sends one request for the selected child,
 singleflights duplicate callers, retains successful child ids in LRU order, and publishes
-loading/ready/failed states without calling `failStream` (L470-L563). Both in-flight and retained
+loading/ready/failed states without calling `failStream` cit:([`hydrateAgentConversation`], dashboard/src/data/conversation/store.ts:656-748). Both in-flight and retained
 child bookkeeping are capped at 64. This explicit bound is necessary because multiple mounted
 consumers can call the exported function and abandoned requests/success rows otherwise form
 unbounded browser state; capacity refusal is a visible `local-resource-limit`, not silent defense.
@@ -144,6 +144,12 @@ survives and is revalidated against the next roster. A failed child is retryable
 child is not re-posted within the same runtime.
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized 8 repo-internal rows from
+  markdown links to plain anchored sources, and corrected the child-history prose citations — the
+  old L470-L563 named `repageAndResume` (which does call `failStream`), so the no-`failStream`
+  claim now binds `hydrateAgentConversation` at 656-748, and the `agentHistoryBySession` prose
+  citation is in cit form. Zero findings remain.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented child-scoped history state,
   same-child singleflight, visible retry/failure, the necessary 64-entry in-flight/retained bounds,

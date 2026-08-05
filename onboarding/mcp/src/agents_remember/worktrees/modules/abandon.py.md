@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:52+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -72,22 +72,28 @@ is unchanged.
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Provider teardown is delegated to `provider_teardown.py`. | [provider_teardown.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
-| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, `remove_empty_dir` are reused from `cleanup.py`. | [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py) |
-| `WorktreeArgs` types the abandon input. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
-| The server registers `worktree_abandon` with `force` forwarded from the MCP layer. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | [test_worktree_abandon.py](agents-remember/mcp/tests/test_worktree_abandon.py) |
-| `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `abandoned` stamp belongs to and the typed write it takes. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/worktrees/modules/provider_teardown.py:27-46 |
+| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:46-61; mcp/src/agents_remember/worktrees/modules/cleanup.py:64-79; mcp/src/agents_remember/worktrees/modules/cleanup.py:115-131; mcp/src/agents_remember/worktrees/modules/cleanup.py:267-282 |
+| `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
+| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:109-109 |
+| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:125-145; mcp/tests/test_worktree_abandon.py:174-180; mcp/tests/test_worktree_abandon.py:182-185; mcp/tests/test_worktree_abandon.py:189-199 |
+| `CleanupStatus`, `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | `CleanupStatus`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:68-68; mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: regenerated the reused-cleanup
+  helper ranges and the closeout registrar row via the scoped fixer; exact non-fixing check
+  returns zero findings.
+
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: the `cleanup="abandoned"` stamp changed mechanism.
   `abandon_result` now writes `amend_contract(contract, ContractCells(cleanup="abandoned"))`, the

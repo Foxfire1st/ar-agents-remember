@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/ProgressFill.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -34,11 +34,14 @@ Presentational; the only inline style is the dynamic fill height. Cyan = the pro
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The detail panel renders this for task-step progress. | L200-L208 | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
+| The detail panel renders this for task-step progress. | `ProgressFill` | dashboard/src/panels/DetailPanel.tsx:1322-1322 |
 
 ## Update History
 
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the single Repo-Internal row —
+  rebound the detail-panel render claim to the exact `ProgressFill` JSX mount line with a fixer-verified
+  range. Claim wording unchanged.
 - 2026-06-15T17:00 — Created for slice 5d: `ProgressFill` migrated to Panda `css()` (was `.fill*`).
   Verification metadata pinned until closeout stamps the 5d code commit.

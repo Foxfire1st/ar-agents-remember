@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/event_retention.py` |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`          |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`          |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Governing Overview
@@ -123,7 +123,7 @@ No file-local todos.
 No relevant external documentation was found after checking the in-repo design docs.
 This file implements repository-local dashboard retention policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found after checking in-repo design docs for raw dashboard retention mechanics. | n/a | n/a |
 
@@ -134,28 +134,30 @@ tests pin dormant pruning without a terminal event, heartbeat-skipping activity
 reads, bounded active-window replay, and no global cap across parallel active
 lifecycles.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary. | L36-L61 | [event_retention.py](event_retention.py) |
-| `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. | L83-L135 | [event_retention.py](event_retention.py) |
-| Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. | L64-L80 | [event_retention.py](event_retention.py) |
-| `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. | L64-L91 | [event_retention.py](event_retention.py) |
-| The protection set is derived from durable enclosure state (a live master series) by the admission module. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](worktree_provider_admission.py) |
-| A protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | [test_serving.py](../../../tests/test_serving.py) |
-| `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. | L138-L151 | [event_retention.py](event_retention.py) |
-| The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | L199-L213 | [serving/events.py](../serving/events.py) |
-| Raw-event tests cover dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, and uncapped parallel active history. | L888-L1074 | [test_serving.py](../../../tests/test_serving.py) |
+| Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary. | `initial_event_offsets` | mcp/src/agents_remember/observer/event_retention.py:44-70 |
+| `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. | `lifecycle_is_dormant`; `_retention_facts`; `last_activity_at` | mcp/src/agents_remember/observer/event_retention.py:155-166; mcp/src/agents_remember/observer/event_retention.py:169-171; mcp/src/agents_remember/observer/event_retention.py:186-207 |
+| Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
+| `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. | `protected_lifecycle_ids`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
+| The protection set is derived from durable enclosure state (a live master series) by the admission module. | `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101 |
+| A protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | mcp/tests/test_serving.py:2013-2036 |
+| `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. | `_first_retained_offset` | mcp/src/agents_remember/observer/event_retention.py:210-223 |
+| The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | `stream_raw_events`; `initial_event_offsets`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/serving/events.py:230-277 |
+| Raw-event tests cover dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, and uncapped parallel active history. | `test_fresh_connection_does_not_cap_parallel_active_lifecycle_history`; `test_read_new_events_skips_heartbeats`; `test_read_new_events_limit_bounds_batch`; `test_dormant_promoted_lifecycle_pruned_without_terminal_event`; `test_dormant_fleeting_lifecycle_pruned_without_terminal_event`; `test_protected_lifecycle_log_survives_inactivity`; `test_initial_offsets_bound_active_replay_to_recent_window` | mcp/tests/test_serving.py:1915-1941; mcp/tests/test_serving.py:1943-1959; mcp/tests/test_serving.py:1961-1974; mcp/tests/test_serving.py:1976-1997; mcp/tests/test_serving.py:1999-2011; mcp/tests/test_serving.py:2013-2036; mcp/tests/test_serving.py:2053-2068 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. This policy is local to the observer
 log layout.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 6 table citations and normalized 6 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7: made workspace-river compaction live and
   virtual-cursor-aware, then changed dormant unprotected lifecycle cleanup to reclaim the complete

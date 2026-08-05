@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:50+02:00                     |
-| lastVerifiedCommitHash | `4c24fa63b9d1aa23ae8a8500b4ea4be3eb75e9a4`                                  |
-| lastVerifiedCommitDate | 2026-06-10T05:56:31+02:00|
+| lastUpdated            | 2026-08-04T03:03+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -49,7 +49,7 @@ case-insensitive, colon required.
   marker use stays visible at the commit-approval gate.
 - Any `## ` heading ends the Update History section; a marker outside the
   history section never attests anything.
-- This module is kernel-level: it must not import worktree, controller, or
+- This module is kernel-level: it must not import worktree, application entry point, or
   provider modules.
 
 ## Docs References
@@ -58,12 +58,30 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The closeout sidecar/overview gates consume these helpers and re-export the moved names. | [onboarding.py](agents-remember/mcp/src/agents_remember/worktrees/modules/onboarding.py) |
-| Helper unit tests cover body stripping, history extraction, and marker detection. | [test_onboarding_doc.py](agents-remember/mcp/tests/test_onboarding_doc.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The kernel module defines metadata-row rewriting plus Update History extraction and delta helpers. | `onboarding_metadata_row`; `update_history_section`; `new_history_lines` | mcp/src/agents_remember/kernel/onboarding_doc.py:24-30; mcp/src/agents_remember/kernel/onboarding_doc.py:115-126; mcp/src/agents_remember/kernel/onboarding_doc.py:129-132 |
+| The closeout onboarding module imports the body/history classifiers and metadata-row helper from this kernel module. | "    has_no_impact_marker,"; "    meaningful_body_changed,"; "    new_history_lines,"; "    onboarding_metadata_row," | mcp/src/agents_remember/worktrees/modules/onboarding.py:12-12; mcp/src/agents_remember/worktrees/modules/onboarding.py:14-15; mcp/src/agents_remember/worktrees/modules/onboarding.py:17-17 |
+| Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. | `_overview_revision`; `_governing_overview_bucket`; `_route_overview_bucket`; `classify_sidecar_updates` | mcp/src/agents_remember/worktrees/modules/onboarding.py:218-239; mcp/src/agents_remember/worktrees/modules/onboarding.py:242-250; mcp/src/agents_remember/worktrees/modules/onboarding.py:253-278; mcp/src/agents_remember/worktrees/modules/onboarding.py:592-646 |
+| Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:358-389; mcp/src/agents_remember/worktrees/modules/onboarding.py:751-783 |
+| The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. | "from agents_remember.worktrees.modules.onboarding import"; "    onboarding_metadata_row,"; "\"onboarding_metadata_row\"," | mcp/src/agents_remember/worktrees/git_worktree_manager.py:76-76; mcp/src/agents_remember/worktrees/git_worktree_manager.py:84-84; mcp/src/agents_remember/worktrees/git_worktree_manager.py:163-163 |
+| Helper unit tests cover body stripping, history extraction, and marker detection. | `test_strips_metadata_rows_and_update_history`; `test_extracts_history_lines_without_heading`; `test_detects_content_marker` | mcp/tests/test_onboarding_doc.py:43-50; mcp/tests/test_onboarding_doc.py:76-78; mcp/tests/test_onboarding_doc.py:99-102 |
 
 ## Update History
 
+- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the three split consumer ranges (3 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
+- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: split the
+  underbound import-only record into explicit import, classification-consumer, and metadata-refresh
+  claims with complete owning symbols. All three changed bindings are provisional `:1-1` inputs
+  for the fresh Luna curator; no citation mechanics ran.
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: source-first separated the
+  kernel helper definitions from closeout consumption and the public facade re-export. Preserved
+  all three generated definition ranges and added only honest `:1-1` consumer/re-export bindings;
+  no citation mechanics ran.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the helper and focused-test citation rows after resolving exact-anchor ambiguity; final exact frozen-snapshot check is clean.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: added `discover_route_overviews` (doc_type-verified route discovery) for carryover overview candidates.
 - 2026-06-10T04:47+02:00 — Created: extracted shared metadata/route helpers from `worktrees/modules/onboarding.py` and added the body/history classification helpers (`meaningful_body`, `meaningful_body_changed`, `update_history_section`, `new_history_lines`, `has_no_impact_marker`) for the issue #56 memory-integrity gates.

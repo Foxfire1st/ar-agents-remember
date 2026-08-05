@@ -46,22 +46,22 @@ submission gate, and continued lifecycle polling after non-terminal authority st
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The system under test owns transport classification and store-driving. | — | [submitClient.ts](submitClient.ts) |
-| Shared fixtures name accepted, ambiguous, queued, and withdrawal scenarios. | — | [../test/fixtures/submitScenarios.ts](../test/fixtures/submitScenarios.ts) |
+| The system under test owns transport classification and store-driving. | `createFetchSubmitTransport` | dashboard/src/data/submitClient.ts:197-254 |
+| Shared fixtures name accepted, ambiguous, queued, and withdrawal scenarios. | `RECEIPT_ACCEPTANCES` | dashboard/src/test/fixtures/submitScenarios.ts:79-85 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This is a repository-local unit suite. | — | — |
 
@@ -73,6 +73,7 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 2 table citations for the submit transport and receipt acceptances; fixer-generated ranges verified.
 
 - 2026-07-24T13:17:50Z — Added submit honesty and continued-watch coverage. Verification hash/date
   remain pinned to the pre-commit source stamp.

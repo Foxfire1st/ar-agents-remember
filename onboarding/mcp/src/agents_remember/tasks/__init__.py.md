@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-26T20:18+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,14 +32,14 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 ### Invariants And Boundaries
 
-- Consumers (the `task_doc` controller, the observer S7 reader) import from
+- Consumers (the `task_doc` application entry point, the observer S7 reader) import from
   `agents_remember.tasks`; keep the facade re-exporting the full set.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The schema, renderer, and store owned by this package. | [document.py](agents-remember/mcp/src/agents_remember/tasks/document.py); [render.py](agents-remember/mcp/src/agents_remember/tasks/render.py); [store.py](agents-remember/mcp/src/agents_remember/tasks/store.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path, docs: list[TaskDocument]) -> list[tuple[Path, Path]]:" | mcp/src/agents_remember/tasks/document.py:141-141; mcp/src/agents_remember/tasks/render.py:28-28; mcp/src/agents_remember/tasks/store.py:40-40 |
 
 ## Series-Contract Notes
 
@@ -47,6 +47,12 @@ The package facade exports `TaskEnclosureRef` so task-document callers can const
 
 ## Update History
 
+- 2026-08-04T18:31+02:00 — 260731-EFA-L6 S18-B14 curator: re-derived 2 stale citation ranges (`class TaskDocument` document.py:141, `def render_markdown` render.py:28); scoped citation recheck is green. Verification metadata remains pinned until closeout.
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 1 citation row with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: facade now exports `write_task_docs` so the
   controller can persist coupled leaf/master task-document updates through the package surface. Verification
   metadata pinned until closeout stamps the code commit.

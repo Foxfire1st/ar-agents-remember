@@ -78,7 +78,7 @@ probe (no locked-version gate remains anywhere in this contract).
 No Domain Documentation source is configured. Local manifest, lock, and tests are the direct
 contract evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -87,24 +87,25 @@ contract evidence.
 The helper entries implement the operations this module frames; the Python host correlates
 against this exact contract; the helper suite covers the admission and privacy matrix.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The private manifest and lock select the exact dependency versions represented by the protocol constants. | L1-L22 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
-| Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. | L14-L210 | [protocol.test.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.test.ts) |
-| Python foundation tests forbid incidental resolution in production helper source. | L102-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The Python host spawns this contract's entries and correlates handshake plus one operation per process. | L100-L148 | [helper_host.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/helper_host.py) |
-| The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives. | L3-L22; L4-L17 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts), [pi.ts](agents-remember/mcp/native_helpers/conversation_library/src/pi.ts) |
+| The private manifest and lock select the exact dependency versions represented by the protocol constants. | "@anthropic-ai/claude-agent-sdk", "@earendil-works/pi-coding-agent" | mcp/native_helpers/conversation_library/package.json:14-15 |
+| Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. | "the exact locked helper versions are protocol constants", "request parser rejects malformed framing and wrong protocol", "request parser rejects unknown fields for every operation", "request parser rejects known fields when they belong to another operation", "helper crash detail is fixed allow-listed copy for secrets, paths, and long input" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17; mcp/native_helpers/conversation_library/src/protocol.test.ts:41-66; mcp/native_helpers/conversation_library/src/protocol.test.ts:68-123; mcp/native_helpers/conversation_library/src/protocol.test.ts:125-179; mcp/native_helpers/conversation_library/src/protocol.test.ts:181-218 |
+| Python foundation tests forbid incidental resolution in production helper source. | `test_helper_runtime_source_has_no_incidental_module_resolution` | mcp/tests/test_conversation_foundation.py:139-160 |
+| The Python host spawns this contract's entries and correlates handshake plus one operation per process. | `ConversationLibraryHelperHost` | mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-221 |
+| The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives. | `handleClaude`, `handlePi` | mcp/native_helpers/conversation_library/src/claude.ts:65-78; mcp/native_helpers/conversation_library/src/pi.ts:54-67 |
 
 ## Cross-Repo References
 
 No neighboring workspace repository participates in the helper process boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T02:44:44+02:00 — W3-B05 curator: anchored 5 Tier-2 table citations with exact source paths; fixer generated all ranges.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the additive optional `agentId` on
   the `read` operation (sub-agent transcript reads only): admitted into the exact-key set,
   type-checked when present, copied only as a string, invisible to pre-L7 callers. Verification

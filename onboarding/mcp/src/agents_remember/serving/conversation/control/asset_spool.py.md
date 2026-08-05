@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/asset_spool.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `0be0099744bf1287805acf0b95072127b70f7104`|
-| lastVerifiedCommitDate |  2026-07-20T15:34:11+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,17 +26,20 @@ the disk mechanics and the staged asset data types; the lifecycle policy lives i
 
 ### Logic
 
-`StagedUpload` (L35, frozen) is the inbound bytes+kind+name+alt; `AssetRecord` (L46) is the persisted
-record whose `reference` (L58) yields the `AssetReference` the wire carries. `stage_one` (L67) validates
-via `validate_upload` (L85 — MIME allow-list + byte cap against the `AttachmentCapability`), computes
-sha256, and writes bytes through `_stage_bytes` (L100) into `confined_path` (L170). `confined_path`
-composes `<assets_root>/<requestId>/<assetId>` and `require_safe_component` (L178) rejects any
+`StagedUpload` (frozen) is the inbound bytes+kind+name+alt; `AssetRecord` is the persisted record
+whose `reference` yields the `AssetReference` the wire carries. cit:([`StagedUpload`, `AssetRecord`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:35-43; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:46-65) cit:([`AssetReference`], mcp/src/agents_remember/serving/harness_control_models.py:254-262)
+`stage_one` validates via `validate_upload` (MIME allow-list + byte cap against the
+`AttachmentCapability`), computes sha256, and writes bytes through `_stage_bytes` into `confined_path`.
+cit:([`stage_one`, `validate_upload`, `_stage_bytes`, `confined_path`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:68-83; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:86-98; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:101-122; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:171-176) cit:([`AttachmentCapability`], mcp/src/agents_remember/serving/conversation/models.py:693-705)
+`confined_path` composes `<assets_root>/<requestId>/<assetId>` and `require_safe_component` rejects any
 component that is empty, over 255 bytes, or carries separators/dot-segments before it is joined;
-directories are created 0700 and files written 0600. `exchange_bytes` (L124) performs the rebind
-byte swap and `verify_recoverable_bytes` (L148) re-verifies the digest on recovery. `alt_for` (L154)
-resolves the accessible label + provenance (supplied description vs truthful `name`/`mime` fallback).
-`delete_asset_bytes` (L160) removes bytes on disposal. `wire_asset` (L189), `upload_identity` (L198),
-and `upload_identity_from_record` (L208) build the identity dicts the receipts and digest parity use.
+directories are created 0700 and files written 0600. cit:([`require_safe_component`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:179-187)
+`exchange_bytes` performs the rebind byte swap and `verify_recoverable_bytes` re-verifies the digest on
+recovery. `alt_for` resolves the accessible label + provenance (supplied description vs truthful
+`name`/`mime` fallback). cit:([`exchange_bytes`, `verify_recoverable_bytes`, `alt_for`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:125-146; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:149-152; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:155-158)
+`delete_asset_bytes` removes bytes on disposal. `wire_asset`, `upload_identity`, and
+`upload_identity_from_record` build the identity dicts the receipts and digest parity use.
+cit:([`delete_asset_bytes`, `wire_asset`, `upload_identity`, `upload_identity_from_record`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:161-168; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:190-196; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:199-206; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:209-216)
 
 ### Conventions
 
@@ -62,7 +65,7 @@ None.
 
 No Domain Documentation source is configured; the spool convention is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -71,21 +74,27 @@ No Domain Documentation source is configured; the spool convention is repository
 The asset reference type and byte reader are the L2E substrate; the lifecycle policy consuming this
 boundary is the sibling attachments module; the confinement mirrors the L2E runner-side check.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `AssetReference` type and `read_asset_bytes` this module produces/consumes. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The lifecycle policy that stages/exchanges/deletes through this boundary: `stage`, `submit`, `attachment_status`, `rebind`, `mark_recoverable`, `delete_recoverable`, plus the expiry sweep, live-store eviction, and spool byte deletion. | L135-L497; L710-L741 | [attachments.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/attachments.py) |
-| The `AttachmentCapability` limits `validate_upload` enforces (allow-listed MIME types, `max_bytes`, `max_count`, `description` required/fallback, and the supported-state actionability validator). | L678-L690 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The `AssetReference` type and `read_asset_bytes` this module produces/consumes. | `AssetReference`; `read_asset_bytes` | mcp/src/agents_remember/serving/harness_control_models.py:254-262; mcp/src/agents_remember/serving/harness_control_models.py:1066-1073 |
+| The lifecycle policy that stages/exchanges/deletes through this boundary: `stage`, `submit`, `attachment_status`, `rebind`, `mark_recoverable`, `delete_recoverable`, plus the expiry sweep, live-store eviction, and spool byte deletion. | `stage`; `submit`; `attachment_status`; `rebind`; `mark_recoverable`; `delete_recoverable` | mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201; mcp/src/agents_remember/serving/conversation/control/attachments.py:204-270; mcp/src/agents_remember/serving/conversation/control/attachments.py:345-372; mcp/src/agents_remember/serving/conversation/control/attachments.py:375-433; mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481; mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497 |
+| The `AttachmentCapability` limits `validate_upload` enforces (allow-listed MIME types, `max_bytes`, `max_count`, `description` required/fallback, and the supported-state actionability validator). | `AttachmentCapability` | mcp/src/agents_remember/serving/conversation/models.py:693-705 |
+| The upload validator applies those limits at the spool boundary. | `validate_upload` | mcp/src/agents_remember/serving/conversation/control/asset_spool.py:86-98 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
+  exact non-fixing check returns zero findings.
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 16 repository-reference citations (16/16 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that drifted as both targets grew. The attachments lifecycle policy is now L135-L497 (`stage` L135, `submit` L204, `attachment_status` L345, `rebind` L375, `mark_recoverable` L460, `delete_recoverable` L484) plus L710-L741 (expiry sweep, eviction, spool byte deletion) in a 795-line file. `AttachmentCapability` in `models.py` is L678-L690, not L406-L678; both claims were made specific about what the ranges cover.
 

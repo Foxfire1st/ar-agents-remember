@@ -45,21 +45,21 @@ and a field on the matching bundle in `models.py`.
 
 No external documentation is needed for this standard-library CLI adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The public facade delegates its module entrypoint to this CLI. | facade entrypoint | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| The public facade delegates its module entrypoint to this CLI. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:151-164 |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed for this CLI adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -69,6 +69,7 @@ The CLI mirrors the resolver API by accepting `--parent-task` and `--leaf-id`; `
 
 ## Update History
 
+- 2026-08-03T02:41:30+02:00 — W3-B01 curator: curated 1 Repo-Internal table citation with the current resolver identifier and source path. Verification metadata remains unchanged for closeout.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `main()` now builds `CoordinationHints` and `EnclosureSelector` from the parsed flags and passes
   them as `hints=` / `selector=`. No flag was added, removed or renamed, and the emitted JSON/text

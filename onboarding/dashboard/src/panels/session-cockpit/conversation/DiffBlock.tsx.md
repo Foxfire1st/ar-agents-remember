@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,13 +25,13 @@ forces page-level horizontal scroll (§14.3).
 
 ### Logic
 
-- `body = unified ?? synthesizeUnified(oldText, newText)` (L48): the server's `unified` string is
-  preferred; when only old/new text is present, `synthesizeUnified` (L81) prints a MINIMAL labeled
+- `body = unified ?? synthesizeUnified(oldText, newText)` cit:([`body`], dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:48-48): the server's `unified` string is
+  preferred; when only old/new text is present, cit:([`synthesizeUnified`], dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:81-88) prints a MINIMAL labeled
   `- old` / `+ new` pair rather than fabricating hunk headers — honesty over guessed diff math.
 - Clamp at `DIFF_THRESHOLD_LINES` (24, L11): `sourceLineCount(body)` decides `clampable`, and a
   collapsed diff slices the lines to the threshold and reports the exact `hiddenLines` on the
   `ClampButton`.
-- `DiffLine` (L29) colors `+`/`-` lines `mint`/`alarm` (skipping `+++`/`---` file headers). The diff
+- cit:([`DiffLine`], dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:29-33) colors `+`/`-` lines `mint`/`alarm` (skipping `+++`/`---` file headers). The diff
   renders inside a `role="group"` / `aria-label={`diff of ${path}`}` / `tabIndex={-1}` region with
   `white-space: pre` so it scrolls inside itself — Home/End land as region scroll, not feed nav.
 
@@ -48,28 +48,29 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared ClampButton, `sourceLineCount`, and `useClampIds`. | L9, L46-L76 | [primitives.tsx](primitives.tsx) |
-| The tool item that routes a `diff` block here (path/unified/old/new). | L102-L110 | [ToolItem.tsx](ToolItem.tsx) |
+| The shared ClampButton, `sourceLineCount`, and `useClampIds`. | `ClampButton`, `sourceLineCount`, `useClampIds` | dashboard/src/panels/session-cockpit/conversation/primitives.tsx:38-68; dashboard/src/panels/session-cockpit/conversation/primitives.tsx:71-74; dashboard/src/panels/session-cockpit/conversation/primitives.tsx:161-164 |
+| The tool item that routes a `diff` block here (path/unified/old/new). | `diff` | dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx:102-110 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 2 citations for the body fallback and shared diff primitives.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the diff block —
   full-to-threshold with an exact hidden-line clamp, a labeled keyboard-scrollable `role="group"`
   region, and honest `synthesizeUnified` (no fabricated hunk headers). Verification is pinned to the

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/file-viewer/FileViewer.tsx`    |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`           |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`           |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -72,14 +72,14 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape. | L89-L116 | [DualPane.tsx](DualPane.tsx) |
-| The one tree explorer rendered twice (code + onboarding sides). | L44-L96 | [FileTree.tsx](FileTree.tsx) |
-| The persisted split/single flag (`localStorage`-backed). | L6-L25 | [usePersistedFlag.ts](usePersistedFlag.ts) |
-| The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | L93-L125 | [files.ts](agents-remember/dashboard/src/data/files.ts) |
-| The shell that registers + keeps this view mounted across tab switches. | L246 | [Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| The route overview that governs this page. | — | [overview.md](overview.md) |
+| The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape. | `SidecarView` | dashboard/src/panels/file-viewer/DualPane.tsx:14-18 |
+| The one tree explorer rendered twice (code + onboarding sides). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
+| The persisted split/single flag (`localStorage`-backed). | `localStorage` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:1-1 |
+| The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | `fetchRepos`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141 |
+| The shell that registers + keeps this view mounted across tab switches. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| The route overview that governs this page. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-107 |
 
 ## Current L5I Maintenance
 
@@ -89,6 +89,8 @@ StrictMode effects share the in-flight request instead of multiplying boot reads
 memoized between meaningful `active` transitions.
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 5 citation items; scoped citation check now passes.
 
 - 2026-07-24T13:17:17Z — Curator: documented first-visible catalog loading, settled read posture,
   and the keep-alive memo boundary; verification fields remain pre-commit.

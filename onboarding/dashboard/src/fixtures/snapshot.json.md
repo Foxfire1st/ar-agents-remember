@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:30+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,27 +16,25 @@
 
 ## Purpose
 
-The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 737 lines, shaped like the
+The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 764 lines, shaped like the
 persisted `latest-state.json`. Three things read it — `test/contract.test.ts` (which measures the
 TypeScript mirror against it in three directions), `test/fixtures/wire.ts` (which takes every builder
 base from it), and `data/store.test.ts`; `e2e-production/cockpit.production.spec.ts` reads it off disk.
 
-**It is NOT generated.** No generator exists — nothing under `mcp/`, `scripts/` or `dashboard/` writes
-this file — and it is hand-maintained; 260731-EFA-L4 alone edited it by +642/-15 lines. That single
-fact is the most important thing about the file, because it sets the reach of everything built on it.
-`fixtures/wire.ts`'s header draws the chain (L22-L37):
+**It is NOT generated.** This file is a hand-maintained sample. The TypeScript mirror it is checked
+against is generated and stale-checked from the Pydantic projection schema, so sample coverage and
+producer-to-TypeScript provenance are separate claims. `fixtures/wire.ts` draws that boundary:
 
 ```text
-a fixture  --type-checked against-->  types/projection.ts  --measured against-->  snapshot.json
-                                                                        ↕ BY HAND
-                                                                observer/projection.py
+observer/projection.py schema  --generated + stale-checked-->  types/projection.ts
+                                                               ↑ typed fixture builders
+                                                               ↕ measured sample coverage
+                                                        snapshot.json (manual)
 ```
 
-So a green build claims: *the mirror could produce this shape, and the mirror agrees with a payload a
-person wrote to stand in for the server.* **The mirror↔server link is the hand-maintained one, and it
-is the only link in the chain no test can hold up.** A field the server starts sending that neither
-this file nor the mirror knows about is invisible to all of it. `contract.test.ts` files generating
-this payload from the pydantic models under `LEFT FOR CODEGEN (R3)`.
+So a green sample-coverage build claims that this manual payload exercises the generated mirror.
+The projection generator separately binds that mirror to the producer schema, including fields a
+sample could miss because their values are currently null or absent.
 
 ## Code Commentary
 
@@ -45,25 +43,25 @@ this payload from the pydantic models under `LEFT FOR CODEGEN (R3)`.
 Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclosures`, `providers`,
 `activeWorktreeGroups`, `metrics`, `analytics`.
 
-- **`lifecycles` (L4-L112) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
+- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:4-112) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
   `awaiting-003`, `completed-004`, `abandoned-005`, and their phases spread across all six of `build`,
   `reframe-research`, `request`, `trust-checkpoint`, `decide`, `close`. Two rows carry a `gate`
   (`GATE-1` open with `decisions: ["approve","revise"]`, `GATE-0` decided), both with a non-empty
   `evidenceRefs`. Every row carries `stateEnteredAt`. The `awaiting-developer` row is the state the
   mirror had never declared, and it is here so the vocabulary check can bite.
-- **`enclosures` (L113-L135)** — one enclosure; **`providers` (L136-L158)** — two (a code provider and
-  a memory provider, joined by `worktreeGroup: "sim-group"`); **`activeWorktreeGroups` (L159)** —
+- **cit:([`enclosures`], dashboard/src/fixtures/snapshot.json:113-135)** — one enclosure; **cit:([`providers`], dashboard/src/fixtures/snapshot.json:136-158)** — two (a code provider and
+  a memory provider, joined by `worktreeGroup: "sim-group"`); **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:159-159)** —
   `["sim-group"]`.
-- **`metrics` (L160-L168)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
+- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:160-168)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
   `blockedCount`, `pausedCount`, `awaitingDeveloperCount`, each 1), `totalTokens: 2800`, and a
   `stalenessHistogram` of `{ fresh, aging }`. The four buckets are exactly the keys `metricsFor([])`
   produces, which is what `contract.test.ts` asserts set-equality on — the terminal pair deliberately
   has no bucket.
-- **`analytics` (L169-L736)** — all thirteen keys present and none empty: `driftSnapshots` (L170),
-  `stalestSidecars` (L183), `setupSummaries` (L191), `setupProgress` (L202), `routeCoverage` (L212),
-  `toolReports` (L221), `agentPickups` (L229), `expectationRows` (L255), `ledgers` (L269),
-  `taskDocuments` (L287), `attentionQueue` (L348, three rows), `engineProcesses` (L386, eight pods),
-  `series` (L703).
+- **`analytics`** cit:([`analytics`], dashboard/src/fixtures/snapshot.json:169-763) — all thirteen keys present and none empty: cit:([`driftSnapshots`], dashboard/src/fixtures/snapshot.json:170-170),
+  cit:([`stalestSidecars`], dashboard/src/fixtures/snapshot.json:183-183), cit:([`setupSummaries`], dashboard/src/fixtures/snapshot.json:191-191), cit:([`setupProgress`], dashboard/src/fixtures/snapshot.json:202-202), cit:([`routeCoverage`], dashboard/src/fixtures/snapshot.json:212-212),
+  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:221-221), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:229-229), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:255-255), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:269-269),
+  cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:287-287), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
+  cit:([`series`], dashboard/src/fixtures/snapshot.json:730-762).
 
 **The payload is composed to satisfy specific checks, not sampled at random.** `contract.test.ts`
 requires that every closed vocabulary in the mirror is exercised in FULL, pooled per vocabulary rather
@@ -126,23 +124,15 @@ node be present.
 
 1. **It is a sample, not a schema.** A server field typed `T | None` that happens to be null is *omitted*
    by `exclude_none=True`, so no sampled payload can reveal it. Only the schema can.
-2. **It cannot invent a vocabulary member the mirror never heard of.** The full-coverage assertion forces
-   this file to exercise every member the MIRROR knows; a member the SERVER declares and the mirror does
-   not is outside its reach in both directions.
+2. **It cannot establish producer vocabulary.** The full-coverage assertion forces this sample to
+   exercise every member the generated mirror knows; schema generation owns producer-to-mirror vocabulary.
 3. **It cannot separate two field-identical models.** `SeriesSectionNode` and `TaskSectionNode` declare
    the same three fields, so no payload and no structural walk distinguishes them.
-4. **No generator, no test on the mirror↔server link.** Restated because it is the ceiling on 1-3: this
-   payload is a person's account of what the server sends. Codegen from the pydantic models is the fix
-   and is deferred (R3).
-5. **Provenance wording is consistent across the tree as of 260731-EFA-L4 — keep it that way.** Three
-   places describe where this payload comes from, and all three now agree it is hand-maintained:
-   `test/fixtures/wire.ts` L22-L37 ("BE PRECISE ABOUT WHAT PINS WHAT"), `test/contract.test.ts` L32
-   and L44 ("measured against a hand-kept payload") plus L59 (`LEFT FOR CODEGEN (R3)`), and
-   `e2e-production/cockpit.production.spec.ts` L12-L19. Both `wire.ts` and the production spec still
-   said "GENERATED from the pydantic models" earlier **within this same leaf** — `wire.ts` in three
-   docstrings, the spec at its line 12 — and both were corrected. **Nothing tests this wording**, so a
-   fourth description reintroducing "generated" is the drift to watch for; it is the same false claim
-   that has now been written and retracted three times.
+4. **The sample remains manual while the mirror is generated.** Do not describe this JSON payload as
+   generated, and do not describe its coverage limits as a missing producer-to-TypeScript contract.
+5. **Provenance wording must preserve that split.** `test/fixtures/wire.ts`, `contract.test.ts`, and
+   `e2e-production/cockpit.production.spec.ts` all distinguish manual sample coverage from generated
+   mirror provenance.
 
 ## Docs References
 
@@ -150,40 +140,51 @@ The payload's shape is fixed by pydantic serialization behaviour on this reposit
 `model_dump(by_alias=True, exclude_none=True)` — which is what makes a null-valued optional field
 absent from the file rather than present as `null`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. | `exclude_none` | [Pydantic — Serialization / model_dump](https://docs.pydantic.dev/latest/concepts/serialization/) |
+| `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. | `write_projection` | mcp/src/agents_remember/observer/projection_store.py:156-162 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | L4-L112 | [snapshot.json](snapshot.json) |
-| One enclosure, two providers, and the `activeWorktreeGroups` join value. | L113-L159 | [snapshot.json](snapshot.json) |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | L160-L168 | [snapshot.json](snapshot.json) |
-| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | L169-L736 | [snapshot.json](snapshot.json) |
-| The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | L157-L164 | [projection_store.py](../../../mcp/src/agents_remember/observer/projection_store.py) |
-| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | L1-L9 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
-| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | L24-L73 | [../test/contract.test.ts](../test/contract.test.ts) |
-| The derived `VOCABULARIES` registry (11 paths, 6 vocabularies) and the full-coverage assertion this payload is composed to satisfy. | L269-L284; L358-L376 | [../test/contract.test.ts](../test/contract.test.ts) |
-| `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | L222-L230; L333-L343 | [../test/contract.test.ts](../test/contract.test.ts) |
-| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | L177-L187 | [../test/contract.test.ts](../test/contract.test.ts) |
-| The statement that this file is hand-maintained with no generator, and the chain diagram showing which link no test holds. | L22-L37 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| `demandServed` and the eight anchor rows the builders require this payload to keep. | L71-L94 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | L1-L43 | [../test/servedProjection.ts](../test/servedProjection.ts) |
-| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | L7 | [../data/store.test.ts](../data/store.test.ts) |
-| Production e2e consumer, which reads the file off disk (`readFileSync`) rather than importing it — and whose header now states this file's provenance outright: hand-maintained, no generator, type-checked against a mirror that is itself hand-maintained, so the chain ends at a human. | L12-L19; L32-L33 | [../../e2e-production/cockpit.production.spec.ts](../../e2e-production/cockpit.production.spec.ts) |
+| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:4-112 |
+| One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:113-159 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:160-168 |
+| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:169-763 |
+| The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/observer/projection_store.py:156-162 |
+| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:53-53; mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:315-329; dashboard/src/test/contract.test.ts:331-333; dashboard/src/test/contract.test.ts:486-488 |
+| The derived `VOCABULARIES` registry (11 paths, 6 vocabularies) and the full-coverage assertion this payload is composed to satisfy. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
+| `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
+| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
+| The provenance boundary: this snapshot is manual, while the TypeScript contract is generated and stale-checked from the Pydantic schema. | "is NOT generated" | dashboard/src/test/fixtures/wire.ts:22-35; scripts/sync-projection-types.py:43-65 |
+| `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
+| The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | `asServedProjection` | dashboard/src/test/servedProjection.ts:22-43 |
+| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | `asServedProjection` | dashboard/src/data/store.test.ts:4-20; dashboard/src/data/store.test.ts:121-159 |
+| Production e2e consumer, which reads this manual sample off disk and states that it is checked against the generated mirror while the projection generator/stale gate hold that mirror to the Pydantic schema. | "reuse, NOT provenance"; "projection generator and stale gate" | dashboard/e2e-production/cockpit.production.spec.ts:12-19; dashboard/e2e-production/cockpit.production.spec.ts:31-34 |
 
 ## Cross-Repo References
 
 No cross-repository boundary. The payload imitates this repository's own Python serving layer; both
 sides live in `agents-remember`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The producer this fixture stands in for is in-repo (`observer/projection.py` via `observer/projection_store.py`), not a sibling repo or external service. | L1-L9 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
+| The producer this fixture stands in for is in-repo (`observer/projection.py` via `observer/projection_store.py`), not a sibling repo or external service. | `write_projection` | mcp/src/agents_remember/observer/projection.py:990-990; mcp/src/agents_remember/observer/projection_store.py:156-162 |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: re-anchored `series` to the analytics
+  sub-key (730-762), corrected the `analytics` extent (169-763) and the file size in Purpose (764
+  lines), generated final ranges for the S18-T3 provenance rows (wire.ts 22-35,
+  sync-projection-types.py 43-65, e2e-production spec 12-19 + 31-34), replaced the external
+  Pydantic URL with the in-repo `write_projection` evidence, and corrected the stale
+  `attentionQueue`/`engineProcesses` line numbers (368/406). Zero findings remain.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: preserved this file's manual-sample
+  provenance while correcting the surrounding contract: the TypeScript mirror is generated and
+  stale-checked from the Pydantic schema. New ranges are explicit `:1-1` curator input.
 
 - 2026-08-01T09:50+02:00 — 260731-EFA-L4 curator (second pass): re-verified the card created earlier
   this leaf and repaired the two claims that had gone stale *after* it was written. (1) The

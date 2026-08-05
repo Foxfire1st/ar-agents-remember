@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T19:55+02:00                     |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -26,7 +26,7 @@ actual operation logic into smaller files for Git adapters, guidance, start,
 onboarding refresh, closeout, integration, cleanup, and CLI parsing. It also
 re-exports the typed `WorktreeArgs` dataclass DTO (from
 `worktrees/modules/args.py`), which replaces the loosely typed
-`argparse.Namespace` previously flowed from MCP controllers and the CLI into
+`argparse.Namespace` previously flowed from MCP application entry points and the CLI into
 the worktree domain functions.
 
 The MCP path still calls result-returning service functions such as
@@ -45,7 +45,7 @@ facade re-exports `heal_contract_leaf_ids` (from `worktrees/worktree_contract.py
 and `command_heal_leaf_ids` (from `modules/cli.py`) in `__all__`, so the explicit
 one-shot legacy-id migration is reachable through the stable facade path like
 the lifecycle operations. CLI command functions remain print adapters over those
-payloads, so MCP controllers do not need to run `main(argv)` and parse stdout.
+payloads, so MCP application entry points do not need to run `main(argv)` and parse stdout.
 The former direct-closeout re-exports (`direct_closeout_result`,
 `direct_closeout_preview_payload`, `validate_direct_external_context`,
 `command_direct_closeout`) were removed with the direct-closeout surface
@@ -54,7 +54,7 @@ The former direct-closeout re-exports (`direct_closeout_result`,
 Worktree lifecycle payloads expose typed MCP next hints through
 `nextOperation`, `nextTool`, `nextArgs`, and optional `nextRequiredArgs` instead
 of CLI-shaped `next_command` strings. Provider setup for worktree start is fed
-through an internal `WorktreeProviderSetupConfig` created by the MCP controller,
+through an internal `WorktreeProviderSetupConfig` created by the MCP application entry point,
 so callers no longer pass provider coordination roots, settings paths, or
 runtime roots into the worktree start surface.
 
@@ -84,19 +84,22 @@ documented by the `modules/overview.md` route overview.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| MCP worktree start writes temporary lifecycle settings and passes them to this module. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
-| Provider setup performs isolated CGC seed and runtime preparation. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
-| Worktree status packets project lifecycle payloads into context packets. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
-| Worktree contract serialization lives in the package worktree contract module. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Extracted worktree lifecycle implementation modules live under this route. | [overview.md](agents-remember/mcp/src/agents_remember/worktrees/modules/overview.md) |
-| Terminal lifecycle finalization is implemented here and re-exported by this facade. | [finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
-| Long-path-safe filesystem wrappers live in the kernel filesystem helper. | [filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
-| Worktree support tests cover memory-worktree settings and long-path closeout planning regressions. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| MCP worktree start writes temporary lifecycle settings and passes them to this module. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:83-162 |
+| Provider setup performs isolated provider seed and runtime preparation. | `ProviderSetupRequest`; `prepare_enabled_providers`; `write_isolated_provider_settings` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:219-233; mcp/src/agents_remember/providers/provider_setup.py:591-629 |
+| Worktree status packets project lifecycle payloads into context packets. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
+| Worktree contract serialization lives in the package worktree contract module. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:691-742 |
+| The facade declares its public worktree lifecycle result exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:109-191 |
+| Terminal lifecycle finalization is implemented in the extracted module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:55-141 |
+| Long-path-safe filesystem wrappers live in the kernel filesystem helper. | `extended_path`; `exists`; `is_file` | mcp/src/agents_remember/kernel/filesystem.py:16-25; mcp/src/agents_remember/kernel/filesystem.py:28-29; mcp/src/agents_remember/kernel/filesystem.py:32-33 |
 
 ## Update History
 
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound lifecycle, provider, status, contract, facade, filesystem, and test claims to exact anchors.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1: re-exported `heal_contract_leaf_ids` (from
   `worktree_contract.py`) and `command_heal_leaf_ids` (from `modules/cli.py`) and added both to
   `__all__`, putting the explicit one-shot legacy leaf-id heal on the stable facade surface.

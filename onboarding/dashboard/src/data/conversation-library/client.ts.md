@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/client.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,17 +26,18 @@ it without a network (design §9.4, §11.2).
 
 ### Logic
 
-- **`libraryBase`** (L18-L20): builds the per-harness route root with an encoded `harnessId`.
-- **`fetchLibraryList`** (L36-L54): `GET` the scoped list with optional `cwd`/`cursor`/`limit`;
-  returns the `ConversationLibraryPage` or `null` on a non-OK response or transport throw.
-- **`fetchLibraryRead`** (L56-L76): `GET` one conversation's read-only historical page with optional
-  `before`/`limit`; returns the `HistoricalConversationPage` or `null`.
-- **`parseOpen`** (L82-L97): the discriminator — a body carrying both `outcome` and `phase` is the
+- **`libraryBase`** — builds the per-harness route root with an encoded `harnessId`. cit:([`libraryBase`], dashboard/src/data/conversation-library/client.ts:18-20)
+- **`fetchLibraryList`** — `GET` the scoped list with optional `cwd`/`cursor`/`limit`;
+  returns the `ConversationLibraryPage` or `null` on a non-OK response or transport throw. cit:([`fetchLibraryList`], dashboard/src/data/conversation-library/client.ts:36-54)
+- **`fetchLibraryRead`** — `GET` one conversation's read-only historical page with optional
+  `before`/`limit`; returns the `HistoricalConversationPage` or `null`. cit:([`fetchLibraryRead`], dashboard/src/data/conversation-library/client.ts:56-76)
+- **`parseOpen`** — the discriminator — a body carrying both `outcome` and `phase` is the
   typed operation (`ok:true`); anything else is parsed into a typed `LibraryRouteError` (`ok:false`),
-  defaulting `status:"transport"` and `detail:"HTTP <n>"`. A refusal is NEVER guessed into success.
-- **`postOpen`** (L106-L125): the shared `POST` for `open`/`open-status`/`open-reconcile`; a network
+  defaulting `status:"transport"` and `detail:"HTTP <n>"`. A refusal is NEVER guessed into success. cit:([`parseOpen`], dashboard/src/data/conversation-library/client.ts:82-97)
+- **`postOpen`** — the shared `POST` for `open`/`open-status`/`open-reconcile`; a network
   throw returns a `transport`/`network`/`httpStatus:0` typed error (still `ok:false`, never a fake row).
-- **`openConversation`/`openStatus`/`openReconcile`** (L127-L155): the three exact-open verbs.
+- **`openConversation`/`openStatus`/`openReconcile`** — the three exact-open verbs. cit:([`postOpen`], dashboard/src/data/conversation-library/client.ts:106-125)
+  cit:([`openConversation`, `openStatus`, `openReconcile`], dashboard/src/data/conversation-library/client.ts:127-135; dashboard/src/data/conversation-library/client.ts:137-145; dashboard/src/data/conversation-library/client.ts:147-155)
   `openConversation` carries the full `OpenRequestBody` (`requestId`, `expectedIdentityDigest`, optional
   `cwd`/`launchContext`); status/reconcile carry only `{ requestId }` — the caller-stable id is the
   correlation key.
@@ -59,29 +60,31 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `FetchLike` injection type reused from the active-side client. | L6 | [../conversation/client.ts](../conversation/client.ts) |
-| The wire types this client returns (page/read/open/error). | L8-L16 | [types.ts](types.ts) |
-| The store orchestrating list/preview/open over this client. | — | [store.ts](store.ts) |
-| The landed native-library routes this client talks to. | — | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
+| The `FetchLike` injection type reused from the active-side client. | `FetchLike` | dashboard/src/data/conversation/client.ts:17-17 |
+| The wire types this client returns (page/read/open/error). | `ConversationLibraryPage` | dashboard/src/data/conversation-library/types.ts:52-59 |
+| The store orchestrating list/preview/open over this client. | `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84 |
+| The landed native-library routes this client talks to. | `api_library_list` | mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 12 initial citation findings (3 anchor, 6 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the native-library HTTP
   client — or-null list/read, the typed open/open-status/open-reconcile verbs behind one caller-stable

@@ -66,28 +66,30 @@ None known for the MX-FIX-4 official-settings authority boundary.
 No Domain Documentation source is configured for this repository. Current authority semantics are
 grounded in the package settings parser, this raw preflight, and paired tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Carryover invokes this preflight once after cleanliness proof and reuses the returned storage settings for route-index refresh. | apply path | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
-| The coordination settings parser remains the typed semantic authority that the raw preflight mirrors. | parser API | [settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/settings.py) |
-| Full-apply JSON/Markdown tests cover missing, invalid, empty/reset, unsupported, retained, repopulated, fallback, and official-over-source cases. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
+| `apply_carryover_for_request` obtains `official_storage` from `required_official_storage` and passes it to `_refresh_official_route_indexes` after carried onboarding. | "official_storage = required_official_storage(official_memory)"; "if carried:"; "route_index_refresh = _refresh_official_route_indexes"; "official_storage," | mcp/src/agents_remember/memory/carryover.py:790-790; mcp/src/agents_remember/memory/carryover.py:825-826; mcp/src/agents_remember/memory/carryover.py:829-829 |
+| The raw preflight exposes the required official storage authority. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
+| Full-apply JSON/Markdown tests cover the missing, invalid, empty/reset, unsupported, retained, repopulated, fallback, and official-over-source cases. | `test_missing_official_settings_refuses_before_any_mutation`; `test_semantically_empty_json_authority_refuses_before_any_mutation`; `test_markdown_reset_lists_remove_final_rule_contribution_before_mutation`; `test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative`; `test_unsupported_json_storage_labels_refuse_before_any_mutation`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation`; `test_official_settings_override_conflicting_source_settings` | mcp/tests/test_carryover.py:374-387; mcp/tests/test_carryover.py:424-450; mcp/tests/test_carryover.py:692-783; mcp/tests/test_carryover.py:820-936; mcp/tests/test_carryover.py:1100-1139; mcp/tests/test_carryover.py:1173-1207; mcp/tests/test_carryover.py:1209-1234 |
 
 ## Cross-Repo References
 
 The module reads official external-memory settings while running from the code package, but no
 sibling repository provides implementation authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D10 caller/call/storage dataflow evidence for the same-reviewer residual delta.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911` armed with no exemptions):
   extracted `_json_path_rule_list_state` from `_json_path_rule_state`'s list branch. No verdict

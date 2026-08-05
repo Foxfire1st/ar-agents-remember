@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/sessions.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:31+02:00                                       |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                   |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -76,13 +76,15 @@ The other four forward their arguments as keywords:
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The payload builders and the `SpawnSeat`/`RetiredSpawnInputs`/`SpawnedBy` definitions. | [tools/terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| The readiness builder and its finite-wait bound. | [tools/hosted_readiness.py](agents-remember/mcp/src/agents_remember/mcp/tools/hosted_readiness.py) |
-| Each argument lands in exactly one of the three spawn groups. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The payload builders and the `SpawnSeat`/`RetiredSpawnInputs`/`SpawnedBy` definitions. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
+| The readiness builder and its finite-wait bound. | `hosted_session_readiness_payload` | mcp/src/agents_remember/mcp/tools/hosted_readiness.py:13-30 |
+| Each argument lands in exactly one of the three spawn groups. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 6 citation findings; scoped check passed.
 
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The five session
   declarations moved out of `server.py`; `spawn_agent_session` now packs its arguments into

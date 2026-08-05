@@ -107,19 +107,22 @@ Material).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The Panda runtime these primitives import (`css`/`cva`/`cx`). | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
-| The React Aria condition reconciliation (data-hovered/-focused). | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
-| The route's sole React Aria import wraps the viewport toggle group. | [ModeBar.tsx](ModeBar.tsx) |
-| The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). | [EvidencePane.tsx](../panels/session-cockpit/EvidencePane.tsx); [FailedLaunchBanner.tsx](../panels/session-cockpit/FailedLaunchBanner.tsx) |
-| The action-availability shape `Affordance` renders. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. | [types/projection.ts](../types/projection.ts); [Dot.test.tsx](Dot.test.tsx) |
-| The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. | [topology/model.ts](../topology/model.ts) |
-| The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. | [index.css](../index.css) |
-| The two panels rendered as siblings in one always-visible rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The Panda runtime these primitives import (`css`/`cva`/`cx`). | "export default defineConfig" | dashboard/panda.config.ts:3-3 |
+| The React Aria condition reconciliation (data-hovered/-focused). | "[data-hovered]" | dashboard/panda.config.ts:21-21 |
+| The route's sole React Aria import wraps the viewport toggle group. | "export function ModeBar" | dashboard/src/grammar/ModeBar.tsx:48-48 |
+| The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). | "export function EvidencePane", "export function FailedLaunchBanner" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:169-169; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-70 |
+| The action-availability shape `Affordance` renders. | `Affordance` | dashboard/src/grammar/Affordance.tsx:27-42 |
+| The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. | "export type State = ", "const ALL_VARIANTS" | dashboard/src/types/projection.ts:15-15; dashboard/src/grammar/Dot.test.tsx:17-17 |
+| The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. | `UNCLASSIFIED_STATUS` | dashboard/src/topology/model.ts:68-68 |
+| The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. | "@keyframes pulse {" | dashboard/src/index.css:88-88 |
+| The two panels rendered as siblings in one always-visible rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:63-63 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and source-backed ranges; exact non-fixing check returns zero findings.
 
 - 2026-08-01T10:05+02:00 — 260731-EFA-L4 curator: **corrected a factually wrong route claim.** The
   card said `Dot.tsx` was "a Panda `cva` mapping lifecycle state / attention severity to a colour

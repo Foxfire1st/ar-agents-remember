@@ -134,7 +134,7 @@ No open file-local todos.
 No relevant external documentation was found after checking the repository source registry; this file
 implements project-local projection modeling logic.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -144,30 +144,32 @@ The model is the adapter between the served projection contract and the imperati
 is also where the state vocabulary crosses from the wire mirror into a colour-bearing one, so both
 ends of that crossing are cited below: `LIFECYCLE_STATES`/`State` upstream, `constelColors` downstream.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. It is now COMPOSED from the two declared halves (`LIVE_STATES` + `TERMINAL_STATES`), so the six names are read off L42/L48. | L42-L61 | [types/projection.ts](../types/projection.ts) |
-| `WorkspaceProjection.activeWorktreeGroups` (worktree-group basenames with a live enclosure lifecycle) is the bounded set `activeTopologyInputs` filters on; `ProviderNode.worktreeGroup` is a basename while `EnclosureNode.worktreeGroup` is a full path. | L156-L189; L711-L721 | [types/projection.ts](../types/projection.ts) |
-| `CONSTEL_STATUSES` + the derived `ConstelStatus`, the total `CONSTEL_STATUS_BY_STATE`, the declared `UNCLASSIFIED_STATUS`, the `STATUS_BY_DECLARED_STATE` partial read view, and `lifecycleStatus` with its inferred-degrades-healthy-only rule. | L12-L18; L39-L93 | [model.ts](model.ts) |
-| `activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node via `lifecycleStatus` and parents providers by `groupKey` worktree group, then repo id, then workspace core. | L99-L115; L184-L218 | [model.ts](model.ts) |
-| The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`. | L114-L122; L175 | [reducer.py](../../../mcp/src/agents_remember/observer/reducer.py) |
-| The projection store passes that structural set through to the served projection. | L247 | [projection_store.py](../../../mcp/src/agents_remember/observer/projection_store.py) |
-| `constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar. | L31-L39; L71-L75 | [constel.ts](constel.ts) |
-| `model.test.ts` pins the grammar: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the inferred degrade, and `buildTopology` driven over the whole vocabulary. | L92-L138; L154-L187 | [model.test.ts](model.test.ts) |
-| `Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`. | L96-L101; L118 | [panels/Topology.tsx](../panels/Topology.tsx) |
+| `LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. It is now COMPOSED from the two declared halves (`LIVE_STATES` + `TERMINAL_STATES`), so the six names are read off L42/L48. | `LIFECYCLE_STATES` | dashboard/src/types/projection.ts:13-13 |
+| `WorkspaceProjection.activeWorktreeGroups` (worktree-group basenames with a live enclosure lifecycle) is the bounded set `activeTopologyInputs` filters on; `ProviderNode.worktreeGroup` is a basename while `EnclosureNode.worktreeGroup` is a full path. | `activeTopologyInputs` | dashboard/src/topology/model.ts:105-115 |
+| `CONSTEL_STATUSES` + the derived `ConstelStatus`, the total `CONSTEL_STATUS_BY_STATE`, the declared `UNCLASSIFIED_STATUS`, the `STATUS_BY_DECLARED_STATE` partial read view, and `lifecycleStatus` with its inferred-degrades-healthy-only rule. | `lifecycleStatus` | dashboard/src/topology/model.ts:85-93 |
+| `activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node via `lifecycleStatus` and parents providers by `groupKey` worktree group, then repo id, then workspace core. | `activeTopologyInputs`, `buildTopology`, `groupKey` | dashboard/src/topology/model.ts:99-99; dashboard/src/topology/model.ts:105-115; dashboard/src/topology/model.ts:117-221 |
+| The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:126-179 |
+| The projection store passes that structural set through to the served projection. | `active_worktree_groups` | mcp/src/agents_remember/observer/projection_store.py:245-245 |
+| `constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar. | `constelColors` | dashboard/src/topology/constel.ts:31-39 |
+| `model.test.ts` pins the grammar: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the inferred degrade, and `buildTopology` driven over the whole vocabulary. | "classifies every state the vocabulary declares" | dashboard/src/topology/model.test.ts:94-102 |
+| `Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`. | `Topology` | dashboard/src/panels/Topology.tsx:82-155 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The behavior is within the `agents-remember` dashboard
 projection/model/render boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+
+- 2026-08-02T21:00:19+02:00 — 260731-EFA-L6 curator W2-B10: repaired 16 citation findings (8 reference rows); scoped recheck clean.
 
 - 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
   server's state partition — `LIVE_STATES` and `TERMINAL_STATES` are declared halves and

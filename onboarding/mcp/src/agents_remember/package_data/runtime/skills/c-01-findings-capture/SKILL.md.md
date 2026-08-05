@@ -50,20 +50,20 @@ Refresh verification metadata after this skill entrypoint update is committed.
 
 No external documentation is needed for this repository-local skill entrypoint.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
 This onboarding is backed by the skill entrypoint and its companion workflow.
 
-| Finding | Citations | Source Path |
-| ------- | --------- | ----------- |
-| The skill entrypoint applies when durable knowledge emerges during developer discussion, task execution, review, or direct clarification. | L6-L17 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
-| Durable destinations include task-local artifacts and onboarding through `c-05-create-or-update-onboarding-files` skill when a verified factual current-state clarification should survive outside the task. | L19-L26 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
-| The entrypoint now requires code/onboarding verification and forbids copying developer clarifications into onboarding verbatim when code reality contradicts or only partially supports them. | L28-L39 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md) |
-| The companion workflow requires verification before capture, only propagates factual current-state findings to onboarding after the guardrail passes, and preserves evidence/capture summaries. | L38-L42; L70-L95; L97-L105 | [mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The skill entrypoint applies when durable knowledge emerges during developer discussion, task execution, review, or direct clarification. | `# c-01-findings-capture Findings Capture` | mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md:6-39 |
+| Durable destinations include task-local artifacts and onboarding through `c-05-create-or-update-onboarding-files` skill when a verified factual current-state clarification should survive outside the task. | `## Durable Destinations` | mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md:19-27 |
+| The entrypoint now requires code/onboarding verification and forbids copying developer clarifications into onboarding verbatim when code reality contradicts or only partially supports them. | `## Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md:28-39 |
+| The companion workflow requires verification before capture, only propagates factual current-state findings to onboarding after the guardrail passes, and preserves evidence/capture summaries. | `### 2. Verify before capture`; `### 5. Apply the onboarding guardrail`; `### 7. Return a capture summary` | mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md:38-106 |
 
 As of the 260703-L9 lifecycle convergence, the task-workflow trigger names an `l-01-agent-lifecycles` orchestrator build job (the retired session-job skill name is gone); the capture workflow itself is unchanged.
 
@@ -73,12 +73,17 @@ As of the 260703-L8 remediation the trigger names an orchestrator build phase (t
 
 No sibling repository evidence is needed for this package skill.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T18:41+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows with
+  `#`-heading anchors and exact markdown extents — the entrypoint trigger (`# c-01-findings-capture
+  Findings Capture`, SKILL.md:6-8), `## Durable Destinations` (19-26), `## Rules` (28-33), and the
+  three workflow step headings (findings-capture-workflow.md:38-106). Spurious `agents-remember/`
+  prefixes dropped; claim wording unchanged.
 - 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): retired build-job vocabulary removed. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the task-workflow reference now names the l-01-agent-lifecycles orchestrator build job. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-02T04:25+02:00: Redirected the Operating Modes "inside a heavy-task-workflow task" reference to an L-01 build job or W-02 task (incl. master + light sub-task series) after W-01 retirement; behavior unchanged. L-01 series, Sub-task B/S6, mcp 1.1.0.

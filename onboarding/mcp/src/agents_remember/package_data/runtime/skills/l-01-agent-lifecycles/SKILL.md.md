@@ -138,22 +138,22 @@ Reviewer notes N1-N5 and N-d1 remain nonblocking/out of scope for this curation 
 
 No external domain documentation is configured for this repository-local lifecycle doctrine.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants. | L12-L38; L90-L96; L156-L177; L229-L235 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| Canonical skills are propagated into package data and harness mirrors by the sync script. | L14-L55 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
+| The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
+| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:195-203 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this doctrine file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -170,6 +170,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-02T16:46+02:00 — 260731-EFA-L6 curator W1-B03: repaired 2 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
+
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the synchronized dynamic
   model-gated launch doctrine, complete role examples, native per-harness launch channels,

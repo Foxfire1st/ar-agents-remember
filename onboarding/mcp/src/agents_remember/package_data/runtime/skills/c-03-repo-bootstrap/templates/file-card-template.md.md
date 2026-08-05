@@ -35,27 +35,29 @@ Fill verification metadata after the source file is committed.
 
 No external documentation is needed for this repository-local template.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding                                                                                      | Citations | Source Path                                                                       |
-| -------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------- |
-| The file card template records classification, governing context, worker inputs, allowed/disallowed reads, required sections, reference expectations, traps, questions, and done criteria. | L1-L100   | [file-card-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/file-card-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4G writes file cards for priority source files and requires them before file-level onboarding unless the repo is tiny. | L861-L884 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| `c-03-repo-bootstrap` skill Phase 4H says each file worker receives one file card and follows `c-05-create-or-update-onboarding-files` skill for file-level onboarding. | L886-L916 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The file card template records classification, governing context, worker inputs, allowed/disallowed reads, required sections, reference expectations, traps, questions, and done criteria. | `# File Card — <source path>` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/file-card-template.md:1-100 |
+| `c-03-repo-bootstrap` skill Phase 4G writes file cards for priority source files and requires them before file-level onboarding unless the repo is tiny. | `### 4G — File Card Generation` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:960-984 |
+| `c-03-repo-bootstrap` skill Phase 4H says each file worker receives one file card and follows `c-05-create-or-update-onboarding-files` skill for file-level onboarding. | `### 4H — File-Level Onboarding Waves` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:985-1020 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 3 repo-internal citation rows and preserved verification metadata.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-14T18:00+02:00: Created onboarding for the file card template. Verification metadata remains blank until the source file is committed.

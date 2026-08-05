@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/change_watcher.py`  |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash |                                                      `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate |                                                      2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash |                                                      `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                      2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -163,7 +163,7 @@ dependency `watchfiles>=1.1,<2`) is documented at its own upstream site; the loa
 facts (awatch batching defaults, missing-path refusal, `DefaultFilter`) are recorded here and
 pinned by the real-backend integration test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources; no Domain Documentation entries are configured. | N/A | N/A |
 
@@ -173,28 +173,28 @@ The watch roots are derived from — and must stay in lock-step with — the rea
 `project_and_write`; the projector consumes the pacer; `create_app` decides when a watcher exists;
 the CLI/daemon own the `--heartbeat` knob's plumbing.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Module docstring: the R1 root-derivation table (root → readers), the deliberate blind spots, self-trigger safety (now naming the suffix-filtered lockfiles), the R5 freshness bounds, and the R7 failure posture at L68-L70. | L1-L71 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| Constants (heartbeat 15s L109, debounce 0.1s L113, awatch 200/50ms batching L118-L119, 30s refresh L123), the output/workspace name-filter sets (L126, L133-L140), and `_DURABLE_LOG_LOCK_SUFFIX` with the rationale comment that says why it is derived (L142-L156). | L107-L156 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| `projection_input_roots` (L159; existing-dirs-only, nothing under `worktrees/` — container data is unreadable and high-churn) and `is_projection_input_event` (L187; tmp/dotfile/lockfile-suffix/output/workspace-churn filter, the lockfile test at L197-L198). | L159-L205 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| `projection_domains_for_paths` — accepted paths mapped to reader domains, unmapped ⇒ every domain. | L208-L252 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| `ProjectionWake`, the `WakeTarget`/`ChangeWatch` protocols, and `ChangePacer` (`_next_deadline` scheduling core, degraded boot state, consume-at-wake). | L255-L376 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| `ProjectionInputWatcher`: derivation inside the retry guard, empty-roots idle path, reconcile-on-re-establish, awatch generation restart on root-set change (`_stop_when_roots_change`, L480-L487), loud degrade + 30s retry. | L379-L487 | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| `lock_path_for` — the single source this module derives its lockfile suffix from, so the filter cannot drift out of step with the stores again. | `lock_path_for` | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The tick entry whose readers define the watched input surfaces. | `project_and_write` | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The projector side: `ProjectionRefreshers` (all three live inputs enabled together), pacer construction (watcher present ⇒ `ChangePacer` at L151-L158, absent ⇒ legacy `sleep(self._interval)` at L213), change-or-heartbeat waking in `run` (L193-L236), and the `_on_watch_task_done` fail-open callback (L238-L250). | L107-L119; L145-L160; L193-L250 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| `create_app(cadence=ProjectionCadence(heartbeat=…), live_inputs=LiveProjectionInputs(change_watch=…))` at L659: watcher enabled iff `replay.before_tick is None` (sim replay stays time-driven) via `change_watcher=ProjectionInputWatcher(config) if enabled.change_watch else None` at L686; since 260731-EFA-L2 the three live-input toggles resolve together in `LiveProjectionInputs.resolved()` at L627-L635. | L606-L688 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The `--interval` flag re-documented as the fast-path cadence floor (L101-L109) and the `--heartbeat` flag (L110-L118), plus the reload/daemon heartbeat plumbing (`_dev_app` L76-L80, the reload env hand-off L218-L221, `serving_daemon.ensure` L294). | L101-L118; L76-L80; L218-L221 | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| The client-side volatile-age advancement that makes heartbeat-resolution time-derived fields acceptable (R4). | `VOLATILE_AGE_FIELDS` mirror | [servedAges.ts](agents-remember/dashboard/src/data/servedAges.ts) |
-| The R1-R7 regression suite: root derivation (L48), event filter incl. the lockfile-suffix cases (L98), domain mapping (L142), pure pacer deadlines (L173), projector integration — heartbeat-only quiet world, debounce-bounded change, burst coalescing, loud degrades, derivation-failure retry, legacy no-watcher pacing (L252) — and one real-inotify end-to-end pass (L444). | L1-L489 | [test_change_watcher.py](agents-remember/mcp/tests/test_change_watcher.py) |
-| The new runtime dependency this module degrades without. | `watchfiles>=1.1,<2` | [pyproject.toml](agents-remember/mcp/pyproject.toml) |
+| Module docstring: the R1 root-derivation table (root → readers), the deliberate blind spots, self-trigger safety (now naming the suffix-filtered lockfiles), the R5 freshness bounds, and the R7 failure posture. | "Failure posture (R7)" | mcp/src/agents_remember/serving/change_watcher.py:68-68 |
+| Constants (heartbeat 15s L109, debounce 0.1s L113, awatch 200/50ms batching L118-L119, 30s refresh L123), the output/workspace name-filter sets (L126, L133-L140), and `_DURABLE_LOG_LOCK_SUFFIX` with the rationale comment that says why it is derived (L142-L156). | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:156-156 |
+| `projection_input_roots` (existing-dirs-only, nothing under `worktrees/` — container data is unreadable and high-churn) and `is_projection_input_event` (tmp/dotfile/lockfile-suffix/output/workspace-churn filter). | `projection_input_roots`, `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:159-184; mcp/src/agents_remember/serving/change_watcher.py:187-205 |
+| `projection_domains_for_paths` — accepted paths mapped to reader domains, unmapped ⇒ every domain. | `projection_domains_for_paths` | mcp/src/agents_remember/serving/change_watcher.py:208-252 |
+| `ProjectionWake`, the `WakeTarget`/`ChangeWatch` protocols, and `ChangePacer` (`_next_deadline` scheduling core, degraded boot state, consume-at-wake). | `ProjectionWake`, `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:255-260; mcp/src/agents_remember/serving/change_watcher.py:283-376 |
+| `ProjectionInputWatcher`: derivation inside the retry guard, empty-roots idle path, reconcile-on-re-establish, awatch generation restart on root-set change (`_stop_when_roots_change`), loud degrade + 30s retry. | `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:379-487 |
+| `lock_path_for` — the single source this module derives its lockfile suffix from, so the filter cannot drift out of step with the stores again. | `lock_path_for` | mcp/src/agents_remember/controlplane/durable_store.py:291-298 |
+| The tick entry whose readers define the watched input surfaces. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
+| The projector side: `ProjectionRefreshers` (all three live inputs enabled together), pacer construction (watcher present ⇒ `ChangePacer`, absent ⇒ legacy `sleep(self._interval)`), change-or-heartbeat waking in `run`, and the `_on_watch_task_done` fail-open callback. | `ProjectionRefreshers`, `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:107-118; mcp/src/agents_remember/serving/projector.py:238-249 |
+| `create_app(cadence=ProjectionCadence(heartbeat=…), live_inputs=LiveProjectionInputs(change_watch=…))`: watcher enabled iff `replay.before_tick is None` (sim replay stays time-driven) via `change_watcher=ProjectionInputWatcher(config) if enabled.change_watch else None`; the three live-input toggles resolve together in `LiveProjectionInputs.resolved()`. | `LiveProjectionInputs` | mcp/src/agents_remember/serving/app.py:604-626 |
+| The `--interval` flag re-documented as the fast-path cadence floor (L101-L109) and the `--heartbeat` flag (L110-L118), plus the reload/daemon heartbeat plumbing (`_dev_app` L76-L80, the reload env hand-off L218-L221, `serving_daemon.ensure` L294). | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
+| The client-side volatile-age advancement that makes heartbeat-resolution time-derived fields acceptable (R4). | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
+| The R1-R7 regression suite: root derivation, event filtering including lockfile-suffix cases, domain mapping, pure pacer deadlines, projector integration (heartbeat-only quiet world, debounce-bounded change, burst coalescing, loud degrades, derivation-failure retry, legacy no-watcher pacing), and one real-inotify end-to-end pass. | `ProjectionInputRootsTests`, `InputEventFilterTests`, `ProjectionDomainMappingTests`, `ChangePacerDeadlineTests`, `AdaptiveProjectorTests`, `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:48-95; mcp/tests/test_change_watcher.py:98-139; mcp/tests/test_change_watcher.py:142-170; mcp/tests/test_change_watcher.py:173-221; mcp/tests/test_change_watcher.py:252-441; mcp/tests/test_change_watcher.py:444-485 |
+| The new runtime dependency this module degrades without. | "watchfiles>=1.1,<2" | mcp/pyproject.toml:31-31 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository serving concern only. | N/A | N/A |
 
@@ -205,6 +205,8 @@ domains through debounce/max-wait and returns a `ProjectionWake`; an unmapped ac
 all domains so correctness fails open to a full refresh.
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 16 initial citation findings (8 anchor, 0 prose, 8 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). The card described the
   lockfile exclusion as a name in `_EXCLUDED_WORKSPACE_NAMES` (`operator-inbox.lock`), which is both

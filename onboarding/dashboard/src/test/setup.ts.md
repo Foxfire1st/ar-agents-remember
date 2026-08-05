@@ -74,13 +74,16 @@ calls without relying on browser playback that jsdom does not implement.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `matchMedia` stub consumed by the honest-motion gate. | — | [panels/engine-room/useShouldAnimate.ts](../panels/engine-room/useShouldAnimate.ts) |
-| Wired as the vitest setup file. | — | [vitest.config.ts](../../vitest.config.ts) |
-| The render test that depends on these stubs. | — | [cockpit/Cockpit.test.tsx](../cockpit/Cockpit.test.tsx) |
+| `matchMedia` stub consumed by the honest-motion gate. | "export function useShouldAnimate" | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19 |
+| Wired as the vitest setup file. | `setupFiles` | dashboard/vitest.config.ts:32-32 |
+| The render test that depends on these stubs. | "renders complete bodies for direct" | dashboard/src/cockpit/Cockpit.test.tsx:336-396 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T22:05+02:00 — 260731-EFA-L4 curator: the claim that "jsdom's `getBBox` throws rather than
   being absent" — recorded here as the reason the SVG geometry stubs are assigned unconditionally while

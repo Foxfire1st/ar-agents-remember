@@ -100,8 +100,8 @@
       "agent-<agentId>.jsonl",
       "stale-identity",
       "helper-failed",
-      "package.json.md",
-      "package-lock.json.md"
+      "CodexInstalledTests",
+      "package.json.md"
     ]
   },
   "fallback": {

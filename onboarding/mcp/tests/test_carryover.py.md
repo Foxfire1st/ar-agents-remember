@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_carryover.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-18T20:03+02:00                     |
-| lastVerifiedCommitHash | `7ca29c3b6dd2c0184253e2690f1ebe78c511573b` |
-| lastVerifiedCommitDate | 2026-07-18T20:18:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -62,29 +62,30 @@ Refresh verification metadata only after closeout commits the candidate.
 No Domain Documentation source is configured for this repository. The full-apply fixtures and local
 typed parser are the authority evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Carryover invokes official settings authority before any content/ledger/index/commit mutation. | apply path | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py) |
-| Raw JSON/Markdown preflight mirrors typed parser semantics while rejecting default-only write authority. | L1-L415 | [carryover_authority.py](agents-remember/mcp/src/agents_remember/memory/carryover_authority.py) |
-| Authority matrix spans missing/invalid/empty/reset/unsupported refusals and retention/repopulation/fallback positive controls. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
-| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | carryover tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Carryover invokes official settings authority before any content/ledger/index/commit mutation. | `apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:776-862 |
+| Raw JSON/Markdown preflight mirrors typed parser semantics while rejecting default-only write authority. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
+| Authority matrix spans missing/invalid/empty/reset/unsupported refusals and retention/repopulation/fallback positive controls. | `test_missing_official_settings_refuses_before_any_mutation`; `test_supported_nonempty_path_rules_remain_authoritative`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation` | mcp/tests/test_carryover.py:374-387; mcp/tests/test_carryover.py:1059-1098; mcp/tests/test_carryover.py:1173-1207 |
+| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | `test_memory_ledger_roundtrip_and_prepend`; `test_memory_carryover_applies_landed_branch_onboarding` | mcp/tests/test_worktree_support.py:750-761; mcp/tests/test_worktree_support.py:2787-2841 |
 
 ## Cross-Repo References
 
 Fixtures model separate code and external-memory repositories locally; no sibling repository is a
 test dependency.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 4 citation claims; scoped result 0 findings.
 
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: added full-apply JSON/Markdown official-settings
   authority matrices, typed-parser equivalence controls, retained/repopulated rule semantics,

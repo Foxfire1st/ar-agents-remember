@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/harnessCatalog.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,28 +54,29 @@ returns the existing network-error classification and releases the key.
 No relevant documentation was found after checking the configured sources; current claims are
 proven by repository source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation is configured for this repository-local reader. | Source discovery checked | — |
+| No relevant external or domain documentation is configured for this repository-local reader. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Owns timeout, retry, and stale-request cancellation around this pure read. | L5-L83 | [useHarnessCatalogRead.ts](../panels/session-cockpit/useHarnessCatalogRead.ts) |
-| Renders the explicit catalog states in the chooser. | L199-L204 | [LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx) |
-| The serving endpoint returns exactly the narrow row shape. | L884-L901 | [serving/app.py](../../../mcp/src/agents_remember/serving/app.py) |
+| Owns timeout, retry, and stale-request cancellation around this pure read. | `useHarnessCatalogRead` | dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts:22-84 |
+| Renders the explicit catalog states in the chooser. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-619 |
+| The serving endpoint returns exactly the narrow row shape. | `api_harnesses` | mcp/src/agents_remember/serving/app.py:1393-1395 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local HTTP reader.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 repository-internal citations for the hook, chooser, and serving endpoint; no content claims changed.
 - 2026-07-24T13:17:50Z — Documented bounded, signal-aware harness-catalog single-flight behavior.
   Verification hash/date remain pinned to the pre-commit source stamp.
 

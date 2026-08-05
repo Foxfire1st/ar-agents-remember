@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -67,21 +67,24 @@ the reader kept mounted-hidden so selection survives.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The unchanged L9 read-only notes API this screen consumes. | [serving/notes.py](agents-remember/mcp/src/agents_remember/serving/notes.py) |
-| The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`). | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
-| The reused File Viewer content pane (markdown/code/placeholder). | [panels/file-viewer/DualPane.tsx](agents-remember/dashboard/src/panels/file-viewer/DualPane.tsx) |
-| The shell that hosts the takeover + lifts its selection. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| The entry surface (compact list + references) that opens this reader. | [panels/TaskNotes.tsx](agents-remember/dashboard/src/panels/TaskNotes.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The read-only notes routes. | `register_notes_routes`; `list_notes`; `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136; mcp/src/agents_remember/serving/notes.py:168-177 |
+| The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`). | `listNotes`; `readNote`; `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:35-41; dashboard/src/data/notes.ts:52-65 |
+| The reused File Viewer content pane (markdown/code/placeholder). | `noteAsFileContent`; `dualPaneProps`; "<DualPane {...dualPaneProps(note)} split={false} />"; `CodeSide`; `SidecarSide`; `DualPane` | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:118-129; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:131-135; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:230-230; dashboard/src/panels/file-viewer/DualPane.tsx:59-71; dashboard/src/panels/file-viewer/DualPane.tsx:73-88; dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
+| Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:472-472 |
+| Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:479-479 |
+| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:517-517 |
+| TaskNotes resolves a note reference into a reader target. | "const target = resolveNoteReference(reference, notePaths);" | dashboard/src/panels/TaskNotes.tsx:113-113 |
 
 ## Current L5I Route State
 
-The Notes Reader remains a controlled mounted-hidden takeover, now memoized so unchanged shell view
-switches do not reconstruct its note-reader subtree or disturb selected-note state.
+The current source-backed Notes Reader integration is recorded by the repository-local references
+above.
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-01T13:20+02:00 — No route impact: 260731-EFA-L4's single change under this route is
   `NotesReaderViewer.test.tsx`, and the entire diff is one import plus the two cockpit-takeover seed
   helpers — `masterDoc()` dropped its trailing `as unknown as TaskDocNode` (the literal is otherwise

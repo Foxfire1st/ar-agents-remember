@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ None.
 
 No Domain Documentation source is configured for this internal port.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -107,19 +107,19 @@ fail-closed ungroupable rows on fake native boundaries; the installed suite re-p
 list/read/resolve round-trip against the real app-server; the substrate supplies the validated
 initialize/state helpers.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Codex list maps rows/keys/next-cursor, generation mismatch resets, reads window by ordinal, and resolve mints the exact codex-thread-resume target. | L227-L460 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| Shape-skewed list/read payloads and range-absurd timestamps fail as typed store errors. | L297-L387; L504-L518 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
-| Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | L256-L412 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
-| The installed suite proves the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). | L136-L186 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | L127-L155; L527-L542; L551-L572 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
+| Codex list maps rows/keys/next-cursor, generation mismatch resets, reads window by ordinal, and resolve mints the exact codex-thread-resume target. | `test_list_maps_rows_keys_and_next_cursor`, `test_list_generation_mismatch_resets_cursor`, `test_read_normalizes_items_with_ordinals_and_window`, `test_resolve_mints_exact_resume_target` | mcp/tests/test_conversation_library_ports.py:229-246; mcp/tests/test_conversation_library_ports.py:248-262; mcp/tests/test_conversation_library_ports.py:264-297; mcp/tests/test_conversation_library_ports.py:390-410 |
+| Shape-skewed list/read payloads and range-absurd timestamps fail as typed store errors. | `test_shape_skewed_list_payloads_fail_as_store_errors`, `test_shape_skewed_read_payloads_fail_as_store_errors`, `test_range_absurd_timestamp_fails_as_store_error` | mcp/tests/test_conversation_library_ports.py:299-351; mcp/tests/test_conversation_library_ports.py:353-388; mcp/tests/test_conversation_library_ports.py:506-519 |
+| Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | `test_agents_group_under_parent_with_probed_source_kinds`, `test_agent_conversation_reads_native_agent_thread`, `test_unproven_agent_kinds_degrade_to_exact_note`, `test_truncated_agent_listing_is_visible`, `test_nested_depth2_agents_are_named_not_silently_absent`, `test_ungroupable_agent_row_fails_closed` | mcp/tests/test_conversation_library_agents.py:284-326; mcp/tests/test_conversation_library_agents.py:328-347; mcp/tests/test_conversation_library_agents.py:349-362; mcp/tests/test_conversation_library_agents.py:364-370; mcp/tests/test_conversation_library_agents.py:372-402; mcp/tests/test_conversation_library_agents.py:404-412 |
+| The installed suite proves the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). | `test_live_gate_supports_list_read_and_partial_completeness`, `test_live_list_read_and_resolve_round_trip` | mcp/tests/test_conversation_library_installed.py:136-153; mcp/tests/test_conversation_library_installed.py:155-176 |
+| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:127-153; mcp/src/agents_remember/serving/codex_app_server_state.py:527-532; mcp/src/agents_remember/serving/codex_app_server_state.py:551-554; mcp/src/agents_remember/serving/codex_app_server_state.py:561-565; mcp/src/agents_remember/serving/codex_app_server_state.py:568-572 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local port.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -136,13 +136,16 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The sub-agent
-  row's `L257-L474` into `mcp/tests/test_conversation_library_agents.py` had slid off the codex
-  class and across the module-level `CLAUDE_AGENT_LIST` fixture into the claude suite. Retargeted it
-  to `CodexLibraryAgentTests` at L256-L412 and confirmed by reading that the class still holds
-  exactly the six named cases: probed source kinds (L284), agent-thread read (L328), RPC-refusal
-  degrade note (L349), truncation note (L364), nested depth-2 naming (L372), and ungroupable-row
-  fail-closed (L404).
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 10 initial citation findings (5 anchor, 0 prose, 5 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file citation. The sub-agent
+  row had slid off the codex class and across the module-level `CLAUDE_AGENT_LIST` fixture into
+  the claude suite; it was retargeted to `CodexLibraryAgentTests`, which still holds the six named
+  cases: `test_agents_group_under_parent_with_probed_source_kinds`,
+  `test_agent_conversation_reads_native_agent_thread`,
+  `test_unproven_agent_kinds_degrade_to_exact_note`, `test_truncated_agent_listing_is_visible`,
+  `test_nested_depth2_agents_are_named_not_silently_absent`, and
+  `test_ungroupable_agent_row_fails_closed`.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `AppServerSeams` / `DEFAULT_APP_SERVER_SEAMS` as the single env+transport substitution.
 - 2026-07-26T15:34 — 260718-CHATS-L7: sub-agent grouping — the port now fetches one probed
   sub-agent thread page (`_AGENT_SOURCE_KINDS`, capped at 100), groups agent rows under their

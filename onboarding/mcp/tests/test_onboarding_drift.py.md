@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_drift.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -35,12 +35,15 @@ exit plus a written report.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The inline classifier under test. | [inline.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py) |
-| The CLI facade under test and the reused fixture. | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The inline classifier under test. | `extract_inline_onboarding_block`; `compute_inline_source_digest`; `classify_inline_source` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:61-82; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:85-88; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:91-175 |
+| The CLI facade under test. | `main` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:225-315 |
+| The CLI test and reused fixture. | `DriftMainCliTests`; `initialize_clean_memory_fixture` | mcp/tests/test_onboarding_drift.py:124-153; mcp/tests/test_memory_quality.py:256-274 |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 4 citation findings for inline classification, CLI, and shared-memory-fixture evidence.
 
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-29T12:10+02:00: Created with the drift.py split tests; metadata pending closeout refresh to the split commit.

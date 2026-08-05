@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ rail view.
 
 ### Logic
 
-- **Props vs store** (L368-L389): `model`/`rollup` arrive as PROPS — derived once in
+- **Props vs store** cit:(["export function SessionRail"], dashboard/src/panels/session-cockpit/SessionRail.tsx:487-487): `model`/`rollup` arrive as PROPS — derived once in
   `SessionsView` and shared with the palette commands (one derivation, two surfaces; same-snapshot
   consistency, worker flag 5) — while `sessions`, the tree toggle, poll health, the projection
   slices (`taskDocuments`, `lifecycles`, `agentPickups`, `supervisorHeartbeat`), the lifecycle
@@ -57,7 +57,7 @@ rail view.
   L780-L782), so the tooltip never implies the parent is asking. Geometry is e2e-pinned
   (`cockpit.spec.ts`) at 1440 / 1100 / 900 / min-rail: armed confirm 55×15, cancel 40×15, single-line,
   both fully inside the aside, chip dropped.
-- **Accessible state dot (R8)** (L491-L501): the rail supplies `ariaLabel="state: <word>"`
+- **Accessible state dot (R8)** cit:(["export function StateDot"], dashboard/src/panels/session-cockpit/StateDot.tsx:38-38): the rail supplies `ariaLabel="state: <word>"`
   to the shared `StateDot`, making the truncation-surviving signal a named image. Header dots stay
   hidden because the visible state word already sits beside them.
 - **Honest single-End flow (R5)** (L381-L385, L424-L432, L548-L614): the End segment renders
@@ -80,7 +80,7 @@ rail view.
   rang"), cleared by focusing the seat (PtySurface acknowledges); harvested OSC title/turn hints
   join the row TOOLTIP as clearly-labeled `pty title:` / `pty hint:` parts — NEVER the grammar
   dot (the dot stays pure grammar, test-pinned).
-- **Cleanup-outcome note (R5)** (L755-L770): the landed-cleanup route's OWN outcome —
+- **Cleanup-outcome note (R5)** cit:(["export function cleanupOutcomeCopy"], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40): the landed-cleanup route's OWN outcome —
   `ended N · skipped M (session: reason)` via `cleanupOutcomeCopy` — renders as a dismissable
   `role="status"` row instead of dropping the skips.
 - **Ruled hierarchy render** (L619-L681, L800-L834): spine rows flat; `renderMaster` — master box
@@ -152,26 +152,26 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | L487-L1115 | [SessionRail.tsx](SessionRail.tsx) |
-| The pure model/rollup/join derivations this renders. | L17-L464 | [../../data/railModel.ts](../../data/railModel.ts) |
-| The payload selector + agent label the `input?` chip tooltip resolves (N1). | L463-L472 | [../../data/sessions.ts](../../data/sessions.ts) |
-| The adapter-bound agent label the tooltip prefixes. | L192-L201 | [../../data/interactionAnswer.ts](../../data/interactionAnswer.ts) |
-| The single dot renderer + grammar. | L38-L49 | [StateDot.tsx](StateDot.tsx) |
-| The view deriving props and wiring focus + palette mirrors. | L206-L344 | [SessionsView.tsx](SessionsView.tsx) |
-| The detailed terminate/cleanup flows + notice store the End paths run through. | L120-L191 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
-| The confirm + cleanup-outcome copy. | L13-L47 | [lifecycleCopy.ts](lifecycleCopy.ts) |
-| The harvest store + hint words the markers/tooltips read. | L51-L126 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
-| Shared set-attention predicate feeding the `set!` marker. | L1-L232 | [../../data/setChips.ts](../../data/setChips.ts) |
-| The poll-health + tree-toggle store slices. | L107-L172 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
-| The jsdom suite: state matrix, anatomy order, model-leakage negative, hierarchy, attention, joins, completed/bulk, footer honesty, cross-surface dot, + the End/cleanup/harvest block. | L61-L473 | [SessionRail.test.tsx](SessionRail.test.tsx) |
+| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | "export function SessionRail" | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-487 |
+| The pure model/rollup/join derivations this renders. | "export function buildRailModel" | dashboard/src/data/railModel.ts:131-131 |
+| The payload selector + agent label the `input?` chip tooltip resolves (N1). | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
+| The adapter-bound agent label the tooltip prefixes. | "export interface InteractionQuestionOption" | dashboard/src/data/interactionAnswer.ts:29-29 |
+| The single dot renderer + grammar. | "export function StateDot" | dashboard/src/panels/session-cockpit/StateDot.tsx:38-38 |
+| The view deriving props and wiring focus + palette mirrors. | "export const SessionsView" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
+| The detailed terminate/cleanup flows + notice store the End paths run through. | "export function startRetireResidualSweep" | dashboard/src/data/sessionLifecycle.ts:136-136 |
+| The confirm + cleanup-outcome copy. | "export function cleanupOutcomeCopy" | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
+| The harvest store + hint words the markers/tooltips read. | "export interface PtyHarvest" | dashboard/src/data/ptyHarvest.ts:21-21 |
+| Shared set-attention predicate feeding the `set!` marker. | "export function deriveSetChips" | dashboard/src/data/setChips.ts:58-58 |
+| The poll-health + tree-toggle store slices. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
+| The jsdom suite: state matrix, anatomy order, model-leakage negative, hierarchy, attention, joins, completed/bulk, footer honesty, cross-surface dot, + the End/cleanup/harvest block. | "every row's dot carries exactly the stateGrammar visual for that seat" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:77-96 |
 
 ## Sole Chats Rail Candidate Delta
 
@@ -185,9 +185,9 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Single-Seat End And Decluttered Rail Maintenance
 
@@ -197,6 +197,10 @@ instead of heartbeat age, and its former bus footer is removed because inbox and
 already have their authority in the top bar and detailed inspector.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the superseded `(L…)`
+  prose citations and the `n/a` rows with exact anchors and fixer-generated ranges; exact
+  non-fixing check returns zero findings.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the review-N1 tooltip asker fix — the
   `input?` chip's prompt preview now reads `sessionPendingInteractionPayload(session)` (parent's

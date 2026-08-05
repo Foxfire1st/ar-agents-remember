@@ -55,32 +55,38 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics. | L1-L97 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md) |
-| The examples README documents that the memory layer owns this landing-flow file. | n/a | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
+| The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics. | `# Git Workflow Example`; `## The landing flow`; `## PR merge: prefer a merge commit over squash`; `## Commit and push quality gates`; `## Release And Changelog Convention` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:1-97 |
+| The examples README documents that the memory layer owns this landing-flow file. | `## Memory Repo` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md:19-36 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 whole-file line citation that ran past
-  the end of the example (cited L1-L120; the file is 97 lines). Corrected to L1-L97 after reading
-  the example back end to end — the copy-to-`system/git-workflow.md` instruction (L3-L7), Spine
-  (L11-L18), issue/PR table (L22-L27), landing flow and gates (L31-L53), merge-commit convention
-  (L57-L64), quality gates (L68-L82), and release convention (L86-L97) are all still present.
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: repaired 2 table rows and 7 prose citations (9 citation items); scoped citation check now passes.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 whole-file citation that ran past the
+  end of the example (the file is 97 lines). Corrected after reading the example end to end — the
+  copy-to-`system/git-workflow.md` instruction cit:(["Copy or rename this file"], mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:3-3),
+  Spine cit:([`## Spine`], mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:11-21),
+  issue/PR table cit:([`## When you need an issue + PR`], mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:22-30),
+  landing flow and gates cit:([`## The landing flow`; `### Gates, in one line`], mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:31-56),
+  merge-commit convention cit:([`## PR merge: prefer a merge commit over squash`], mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:57-67),
+  quality gates cit:([`## Commit and push quality gates`], mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:68-85),
+  and release convention cit:([`## Release And Changelog Convention`], mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md:86-97) are all still present.
 
 - 2026-07-24T14:31Z — 260718-CHATS-L5I CRAP/commit-gate curation: replaced the
   former optional CI/pre-push framing with one mandatory default repository

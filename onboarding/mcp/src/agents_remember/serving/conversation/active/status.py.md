@@ -27,26 +27,25 @@ timeline mutation.
 
 ### Logic
 
-`classify_process` (L101-L110) maps adapter control state to the canonical process vocabulary
-(connected/starting/disconnected/failed). `classify_turn` (L103-L140) maps activity/raw
+cit:([`classify_process`], mcp/src/agents_remember/serving/conversation/active/status.py:101-110) maps adapter control state to the canonical process vocabulary
+(connected/starting/disconnected/failed). cit:([`classify_turn`], mcp/src/agents_remember/serving/conversation/active/status.py:113-150) maps activity/raw
 evidence to one canonical turn evidence value: pending interaction (exact, carrying the
 interaction id), blocked-without-interaction (`declared-external-wait`), running
 (`active-native-turn`, codex-only turn id from raw, L193-L200), settling (per-harness raw keys —
 claude `claudeStatus`/`retryAttempt`, pi `isCompacting`/`auto_retry_start`, L203-L234), and
 idle+ready (`settled-dispatchable`); unusable evidence returns `None` so callers retain their
-last known turn state. `snapshot_seat_turn_state` (L205-L223) is the single orchestration seat
-projection: `seat_turn_state_for` (L165-L202) reproduces the pre-canonical mapping exactly
+last known turn state. cit:([`snapshot_seat_turn_state`], mcp/src/agents_remember/serving/conversation/active/status.py:205-223) is the single orchestration seat
+projection: cit:([`seat_turn_state_for`], mcp/src/agents_remember/serving/conversation/active/status.py:165-202) reproduces the pre-canonical mapping exactly
 (live turn states → `working`, wait states → `awaiting-input`, settled-with-connected →
 `turn-ended`, else `stale`), pinned over the full control×activity product.
-`ConversationStatusService` (L252-L447) folds observations into the revisioned envelope per
-exact identity: `_apply` (L324-L365) prefers observed terminal settlements (exact strength,
+cit:([`ConversationStatusService`], mcp/src/agents_remember/serving/conversation/active/status.py:306-508) folds observations into the revisioned envelope per
+exact identity: cit:([`_apply`], mcp/src/agents_remember/serving/conversation/active/status.py:361-412) prefers observed terminal settlements (exact strength,
 interrupted/failed map directly, completed settles) over activity classification, preserves a
-completed outcome across the settling → ready transition (L348-L354), and `_set_turn`
-(L350-L379) advances state only on semantic change. The revision (L283-L300) advances only on
-semantic transitions — turn/process/stale changes; freshness timestamps are derived metadata
-recomputed per observation under the same revision (`_envelope` L437-L465), never a mutation
-trigger. Staleness is one liveness-sweep cadence plus slack (`STALE_AFTER_MS` L46), and the
-observation bound is honestly `poll` (`OBSERVATION_BOUND`, L59-L60).
+completed outcome across the settling → ready transition, and cit:([`_set_turn`], mcp/src/agents_remember/serving/conversation/active/status.py:414-434) advances state only on semantic change. The revision
+advances only on semantic transitions — turn/process/stale changes; freshness timestamps are derived metadata
+recomputed per observation under the same revision cit:([`_envelope`], mcp/src/agents_remember/serving/conversation/active/status.py:480-508), never a mutation
+trigger. Staleness is one liveness-sweep cadence plus slack cit:([`STALE_AFTER_MS`], mcp/src/agents_remember/serving/conversation/active/status.py:46-46), and the
+observation bound is honestly `poll` cit:([`OBSERVATION_BOUND`], mcp/src/agents_remember/serving/conversation/active/status.py:59-59).
 
 ### Conventions
 
@@ -75,7 +74,7 @@ None.
 The resolved `Domain Documentation` registry has no entries. The canonical vocabulary and
 revision rules are the repository-owned strict wire contract cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this authority. | — | — |
 
@@ -85,19 +84,19 @@ The canonical evidence→state map and status envelope models live in the parent
 orchestration consumes this authority through the one delegated projection; the projector feeds
 it observations and terminal settlements.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `CANONICAL_TURN_STATE_BY_EVIDENCE` fixes the evidence-to-turn-state vocabulary this service classifies into. | L429-L439 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | L514-L571 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| Orchestration's `snapshot_turn_state` delegates here with a documented function-local import; signature unchanged. | L71-L91 | [hosted_control_projection.py](agents-remember/mcp/src/agents_remember/serving/hosted_control_projection.py) |
-| The projector observes snapshots and pending terminal settlements through this service per poll. | L84; L129-L144 | [projector/rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
-| `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | L38 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
+| `CANONICAL_TURN_STATE_BY_EVIDENCE` fixes the evidence-to-turn-state vocabulary this service classifies into. | `CANONICAL_TURN_STATE_BY_EVIDENCE` | mcp/src/agents_remember/serving/conversation/models.py:453-463 |
+| `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | `ConversationStatus` | mcp/src/agents_remember/serving/conversation/models.py:548-561 |
+| Orchestration's `snapshot_turn_state` delegates here with a documented function-local import; signature unchanged. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
+| The projector observes snapshots and pending terminal settlements through this service per poll. | `ConversationStatusService`, `poll_once` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:84-84; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:129-144 |
+| `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | `SeatTurnState` | mcp/src/agents_remember/serving/terminal_catalog.py:49-49 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this status authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -120,6 +119,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=1, citation_prose_not_in_cit_form=4, citation_source_malformed=1); final scoped citation check clean.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations in Logic, all
   read back. `classify_process` L91-L100 → L101-L110; `snapshot_seat_turn_state` L178-L190 → its
   full body L205-L223, and `seat_turn_state_for` in the same sentence L155-L175 → L165-L202 (the

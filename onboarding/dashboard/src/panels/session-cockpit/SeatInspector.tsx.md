@@ -52,31 +52,14 @@ test/import surface; evidence ownership itself resides in that pane.
 
 None recorded.
 
-## Docs References
-
-No Domain Documentation source is configured.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
-
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Tab identities, keyboard behavior, and stable mounted panels. | L18-L151 | [SeatInspector.tsx](SeatInspector.tsx) |
-| Full audit surface and explicit set mark-seen action. | L34-L374 | [EvidencePane.tsx](EvidencePane.tsx) |
-| Exact-session capability surface. | L35-L240 | [CapabilitiesPane.tsx](CapabilitiesPane.tsx) |
-| Fleet-first pickup and heartbeat surface. | L41-L274 | [BusPane.tsx](BusPane.tsx) |
-| Host integration and off-tab state regressions. | L28-L185 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
-
-## Cross-Repo References
-
-No meaningful cross-repo boundary is owned here.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+| Tab identities, keyboard behavior, and stable mounted panels. | `SeatInspector`; `tab`; `panel` | dashboard/src/panels/session-cockpit/SeatInspector.tsx:37-58; dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-161 |
+| Full audit surface and explicit set mark-seen action. | `EvidencePane` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:169-374 |
+| Exact-session capability surface. | `CapabilitiesPane` | dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx:84-240 |
+| Fleet-first pickup and heartbeat surface. | `BusPane` | dashboard/src/panels/session-cockpit/BusPane.tsx:116-276 |
 
 ## Current L5I Maintenance
 
@@ -84,6 +67,8 @@ The inspector threads visibility and active-tab truth to `BusPane`, allowing its
 only when the visible inspector is actually on the bus tab.
 
 ## Update History
+
+- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: retained the four exact component-source anchors (`SeatInspector`, `EvidencePane`, `CapabilitiesPane`, and `BusPane`); no test source was claimed.
 
 - 2026-07-24T13:17:17Z — Curator: documented visible-bus age-clock ownership; verification fields
   remain pre-commit.

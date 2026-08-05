@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-dashboard.py`                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00                     |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -98,31 +98,33 @@ signal the sidecar exists to carry.
 No relevant documentation was found after checking the configured sources (`system/sources.md` has
 no entries); the placement contract is proven by repository source, the release workflow, and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation exists for this repository-local build step. | Source discovery checked | — |
+| No relevant external or domain documentation exists for this repository-local build step. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The script refuses an absent or non-current `dist`, places the tree, then writes the sidecar. | L107-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| Vite compiles the same fingerprint into the bundle as `__AR_DASHBOARD_BUILD__`, which is the literal `bundle_is_current` searches for. | L36-L66 | [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
-| The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar. | job `build` | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
-| The suite proves placement, every refusal path, and that `--check` no longer exists. | L63-L268 | [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
-| The serving resolver mounts what this script placed, or answers 503 when nothing was placed. | L94-L129 | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The sidecar this script writes is what the build stamp publishes as `dashboardBuild`. | L105-L125 | [serving/build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
-| Both generated paths are git-ignored with the reason recorded inline. | ignore rules for `package_data/dashboard` | [.gitignore](agents-remember/.gitignore) |
+| The script refuses an absent or non-current `dist`, places the tree, then writes the sidecar. | `sync`; `replace_tree` | scripts/sync-dashboard.py:120-135; scripts/sync-dashboard.py:138-159 |
+| Vite compiles the same fingerprint into the bundle as `__AR_DASHBOARD_BUILD__`, which is the literal `bundle_is_current` searches for. | `dashboardSourceFingerprint`; `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:36-55; dashboard/vite.config.ts:65-65 |
+| The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar. | "Build dashboard bundle"; "Place dashboard bundle into MCP package data"; "Verify the distributions ship the dashboard bundle" | .github/workflows/publish-mcp-to-pypi.yml:57-120 |
+| The suite proves placement, every refusal path, and that `--check` no longer exists. | `BuildPlacementTests`; `test_places_bundle_and_records_the_identity_the_bundle_itself_carries`; `test_refuses_when_dist_is_absent`; `test_refuses_a_dist_built_from_different_source`; `test_refuses_without_a_dashboard_source_tree`; `test_refuses_after_a_source_edit_that_was_never_rebuilt`; `test_refuses_after_a_production_config_edit`; `test_test_modules_are_not_build_inputs`; `test_check_mode_no_longer_exists` | mcp/tests/test_sync_dashboard.py:63-219; mcp/tests/test_sync_dashboard.py:253-268 |
+| The serving resolver mounts what this script placed, or answers 503 when nothing was placed. | `dashboard_static_dir`; `mount_static`; `MissingDashboardBundle` | mcp/src/agents_remember/serving/static.py:53-91; mcp/src/agents_remember/serving/static.py:104-109; mcp/src/agents_remember/serving/static.py:112-129 |
+| The sidecar this script writes is what the build stamp publishes as `dashboardBuild`. | `dashboardBuild` | mcp/src/agents_remember/serving/build_info.py:61-61 |
+| Both generated paths are git-ignored with the reason recorded inline. | "mcp/src/agents_remember/package_data/dashboard/"; "mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:19-24 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local build step.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 6 citation rows across the sync implementation, Vite fingerprint, release workflow, regression suite, serving resolver, and ignore rules; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 rewrote this card. The script is now a release build step,
   not a commit-gate drift check: `--check`, the `dist`↔`package_data` tree comparison, the

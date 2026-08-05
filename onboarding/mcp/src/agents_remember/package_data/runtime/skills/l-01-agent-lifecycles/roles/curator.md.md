@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |                                            `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate |                                            2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -54,7 +54,7 @@ rejected as a default, not just discouraged.
 The loop remains: brief -> intake -> inspect diff + evidence -> write onboarding -> indexes/checks ->
 memory-pass report -> end. Code worktree access is read-only for changed source confirmation. Memory
 worktree writes are limited to onboarding surfaces: sidecars, route overviews when route meaning
-changed, generated route indexes through local `build_route_indexes(...)`, and entity catalog
+changed, and entity catalog
 entries only for real load-bearing entity changes. The curator uses the c-05 file-level onboarding
 workflow for sidecars and catalogs.
 
@@ -80,23 +80,9 @@ closeout preview before this pass exists"), not just a descriptive line.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [curator.md](agents-remember/skills/l-01-agent-lifecycles/roles/curator.md) |
-| The l-01 spine that registers curator, lists `curator-brief` among the on-disk templates, and documents the role-seat immutability rule. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| Manager lifecycle that compiles the curator-brief, spawns a fresh curator per leaf, and consumes the memory-pass report; gates the closeout preview on this pass existing. | n/a | [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md) |
-| Worker lifecycle that produces changed paths and code-diff evidence for the curator (builder = code + report only). | n/a | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md) |
-| The dispatch-pack template this leaf added; the curator's entire session start is compiled from it. | n/a | `agents-remember/skills/l-01-agent-lifecycles/templates/curator-brief.md` (new; onboarding sidecar to be created this pass) |
-| `c-12-closeout` skill, now framed as verifying (not authoring) the curator's onboarding output. | n/a | [c-12-closeout SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md) |
-| `c-05-create-or-update-onboarding-files` skill, whose "Seat routing" paragraph names the curator as the seat that runs it during leaf work. | n/a | [c-05-create-or-update-onboarding-files SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-
-## Cross-Repo References
-
-No sibling repository evidence is needed for this orchestration role file.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| `c-05-create-or-update-onboarding-files` skill, whose "Seat routing" paragraph names the curator as the seat that runs it during leaf work. | "Seat routing"; "builder produces code and a turn report only"; "workflows from a change set"; "L3 Operational-Notes" | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:19-19; mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:21-22; mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:24-24 |
 
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
@@ -104,6 +90,8 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 
 ## Update History
+
+- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the seat-routing claim through the operative ownership paragraph and regenerated the final range with the scoped fixer.
 
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-08T00:00+02:00 — 260707-HFX-L11 curator activation (R1/R2/R3/R4): rewrote "What This

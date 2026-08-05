@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -94,12 +94,14 @@ classification, self-heal, and sweep cadence/overlap only.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweeper + shared observation path under test. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [serving/terminal_liveness.py](../src/agents_remember/serving/terminal_liveness.py) |
-| The liveness transition copiers + `record_liveness_probe` the cases drive through the catalog. | `with_liveness_failure`; `with_liveness_success` | [serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
-| The production stderr-aware probe classifier the `_TmuxSubprocessProbeHost` cases exercise for real. | `_tmux_probe_session` | [serving/terminal.py](../src/agents_remember/serving/terminal.py) |
-| The catalog JSON/storage unit tests this file deliberately does not duplicate. | `TerminalCatalogTests` | [test_terminal_catalog.py](test_terminal_catalog.py) |
+| The sweeper + shared observation path under test. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
+| The liveness transition copiers retain success-side healing and thresholded failure behavior. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:425-455; mcp/src/agents_remember/serving/terminal_catalog.py:457-489 |
+| The catalog records each probe through the success/failure transition copiers. | "def record_liveness_probe("; "updated = entry.with_liveness_success()"; "updated = entry.with_liveness_failure("; "pane_gone_failure_threshold=hysteresis.pane_gone_failure_threshold, ) if updated != entry: entries[index] = updated self._write(entries)" | mcp/src/agents_remember/serving/terminal_catalog.py:592-592; mcp/src/agents_remember/serving/terminal_catalog.py:609-609; mcp/src/agents_remember/serving/terminal_catalog.py:613-613; mcp/src/agents_remember/serving/terminal_catalog.py:618-622 |
+| The production observer caller drives the catalog probe on alive and failed paths. | "def observe_terminal_liveness("; "if session is not None and session.is_alive: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "if tmux.exists: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "updated = catalog.record_liveness_probe( entry.id, alive=False, checked_at=checked_at, evidence=_failure_evidence(tmux)"; "return TerminalLivenessObservation(entry=updated or entry, alive=False)" | mcp/src/agents_remember/serving/terminal_liveness.py:215-215; mcp/src/agents_remember/serving/terminal_liveness.py:229-230; mcp/src/agents_remember/serving/terminal_liveness.py:236-237; mcp/src/agents_remember/serving/terminal_liveness.py:242-246; mcp/src/agents_remember/serving/terminal_liveness.py:249-249 |
+| The production stderr-aware probe classifier the `_TmuxSubprocessProbeHost` cases exercise for real. | `_tmux_missing_session_stderr`; `tmux_probe_session` | mcp/src/agents_remember/serving/terminal_tmux.py:149-176; mcp/src/agents_remember/serving/terminal_tmux.py:179-181 |
+| The catalog JSON/storage unit tests this file deliberately does not duplicate. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -108,6 +110,10 @@ Liveness regressions now pin the one-second starting-row path and multi-read dis
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rebound the production stderr-classifier
+  reference to the exact terminal-tmux symbols and completed the catalog copier, probe-record, and
+  observer-caller ownership chain.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
   `TerminalCatalogLivenessSweeper` now takes one `probe=LivenessProbe(...)` argument in place of

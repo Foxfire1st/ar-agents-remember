@@ -131,18 +131,20 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Provider-level CGC setup calls this module before optional refresh fallback. | [setup.py](setup.py.md) |
-| Bundle path rewriting is delegated to the CGC bundle module. | [bundle.py](bundle.py.md) |
-| The GrepAI seed applies the same benchmark-scope hermetic guard. | [../grepai/seed.py](agents-remember/mcp/src/agents_remember/providers/grepai/seed.py) |
-| Worktree setup constructs CGC seed options through the provider setup request. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| The post-watcher catch-up stage consuming the stashed divergence. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
-| Index-lifecycle tests pin relatable/unrelatable divergence and the proceed/stash/refuse mismatch paths. | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
-| `run_git`, the one runner both git calls here use: `GIT_REPOSITORY_SELECTOR_ENV` + `git_environment` strip the selectors, and `GIT_LOCAL_TIMEOUT_SECONDS` is the default bound `git_head_or_none` inherits. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| `DecoyRepositoryTests` proves a set `GIT_DIR` cannot make a runner call answer from another repository, and `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` stops a private copy from reappearing here. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Provider-level CGC setup calls this module before optional refresh fallback. | "def prepare_enabled_provider(" | mcp/src/agents_remember/providers/cgc/setup.py:241-241 |
+| Bundle path rewriting is delegated to the CGC bundle module. | "def rewrite_cgc_bundle_paths(" | mcp/src/agents_remember/providers/cgc/bundle.py:79-79 |
+| The GrepAI seed applies the same benchmark-scope hermetic guard. | "benchmark grepai-memory is hermetic; seeding/cloning is disabled" | mcp/src/agents_remember/providers/grepai/seed.py:153-153 |
+| Worktree setup constructs CGC seed options through the provider setup request. | "cgc_seed=provider_setup.CgcSeedOptions(" | mcp/src/agents_remember/worktrees/modules/start.py:851-851 |
+| The post-watcher catch-up stage consuming the stashed divergence. | "def _seed_catchup_results(" | mcp/src/agents_remember/providers/provider_setup.py:250-250 |
+| Index-lifecycle tests pin relatable/unrelatable divergence and the proceed/stash/refuse mismatch paths. | "def test_relatable_heads_report_the_changed_files(self) -> None:"; "def test_unrelatable_heads_return_none(self) -> None:"; "def test_relatable_divergence_proceeds_and_stashes_the_delta(self) -> None:"; "def test_unrelatable_heads_still_refuse(self) -> None:" | mcp/tests/test_provider_index_lifecycle.py:62-62; mcp/tests/test_provider_index_lifecycle.py:75-75; mcp/tests/test_provider_index_lifecycle.py:92-92; mcp/tests/test_provider_index_lifecycle.py:121-121 |
+| `run_git`, the one runner both git calls here use: `GIT_REPOSITORY_SELECTOR_ENV` + `git_environment` strip the selectors, and `GIT_LOCAL_TIMEOUT_SECONDS` is the default bound `git_head_or_none` inherits. | "GIT_REPOSITORY_SELECTOR_ENV = ("; "GIT_LOCAL_TIMEOUT_SECONDS = 300"; "def git_environment() -> dict[str, str]:" | mcp/src/agents_remember/kernel/git_command.py:33-33; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-76 |
+| `DecoyRepositoryTests` proves a set `GIT_DIR` cannot make a runner call answer from another repository, and `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` stops a private copy from reappearing here. | "class DecoyRepositoryTests(unittest.TestCase):"; "class SingleRunnerTests(unittest.TestCase):"; "def test_only_the_kernel_module_defines_a_git_runner(self) -> None:" | mcp/tests/test_git_command.py:155-155; mcp/tests/test_git_command.py:393-393; mcp/tests/test_git_command.py:448-448 |
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 8 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: this module lost both of its local
   `subprocess.run` calls. `git_head_or_none` and `seed_commit_divergence` now call

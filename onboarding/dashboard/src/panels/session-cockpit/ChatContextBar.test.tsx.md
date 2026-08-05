@@ -56,25 +56,25 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Cross-Repo References
 
 The suite exercises repository-local routing and browser broadcast doubles; no cross-repository source applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Unit under test. | [ChatContextBar.tsx](ChatContextBar.tsx) |
-| The typed `taskDoc` builder `leafDoc()` now returns, replacing an `as unknown as TaskDocNode` cast. | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
-| `buildTaskTree` — the only consumer of the seeded doc, and the reason the richer base changes nothing. | [../../data/taskIdentity.ts](../../data/taskIdentity.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Unit under test. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
+| The typed `taskDoc` builder `leafDoc()` now returns, replacing an `as unknown as TaskDocNode` cast. | `taskDoc` | dashboard/src/test/fixtures/wire.ts:282-287 |
+| `buildTaskTree` — the only consumer of the seeded doc, and the reason the richer base changes nothing. | `buildTaskTree` | dashboard/src/data/taskIdentity.ts:126-165 |
 
 ## Current L5I Maintenance
 
@@ -83,6 +83,8 @@ actions, including history availability and the server-first leaf assignment pat
 
 ## Update History
 
+- 2026-08-03T09:40+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 4 citation findings (1 missing anchor, 1 malformed source, and 2 prose citations) for the assigned component and task-identity references; all ranges were independently checked against the frozen source index.
+
 - 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **corrected the `buildTaskTree`
   field enumeration in the 11:05 entry below, which was incomplete in the one place that mattered.**
   It said `buildTaskTree` "reads only `kind`, `docPath`, `title`, `lifecycleId` and
@@ -90,7 +92,7 @@ actions, including history availability and the server-first leaf assignment pat
   those five directly (`doc.kind` L131/L152, `masterFolderOf(doc)` → `doc.docPath` L132/L157,
   `doc.title` L134/L155, `doc.lifecycleId` L137, `doc.masterLifecycleId` L142/L158) **and two more
   through `qualifiedLeafKey`**, which it calls at L153 for every leaf: that function is declared
-  `Pick<TaskDocNode, "repository" | "docPath" | "id">` (L64-L65) and reads `doc.repository` and
+  `Pick<TaskDocNode, "repository" | "docPath" | "id">` (cit:([`qualifiedLeafKey`], dashboard/src/data/taskIdentity.ts:64-70)) and reads `doc.repository` and
   `doc.id` at L67-L69. Seven fields, not five. The entry's conclusion survives — `leafDoc()` still
   passes `id: "260628-L5"` and `repository: "agents-remember"` explicitly, so the leaf key is
   unchanged — but the omission mattered: `repository` and `id` are exactly the two fields
@@ -106,7 +108,7 @@ actions, including history availability and the server-first leaf assignment pat
   responses, alert copy, focus, and leaf attach/move routing — none of which reads a task-document
   field. I checked the one place that does rather than assuming: `ChatContextBar.tsx` L140 passes
   `taskDocuments` into `buildTaskTree` and nothing else, and `buildTaskTree`
-  (`data/taskIdentity.ts` L126-L165) reads **seven** fields: `kind`, `docPath`, `title`, `lifecycleId`
+  (cit:([`buildTaskTree`], dashboard/src/data/taskIdentity.ts:126-165)) reads **seven** fields: `kind`, `docPath`, `title`, `lifecycleId`
   and `masterLifecycleId` directly, plus `repository` and `id` through `qualifiedLeafKey` (L64-L70,
   whose parameter is `Pick<TaskDocNode, "repository" | "docPath" | "id">`), which it calls at L153 to
   key every leaf node. All of `kind`, `docPath`, `title`, `repository` and `id` were already set by

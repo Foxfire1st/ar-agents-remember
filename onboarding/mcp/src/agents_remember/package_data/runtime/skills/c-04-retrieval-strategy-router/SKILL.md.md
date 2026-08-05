@@ -102,34 +102,35 @@ None.
 No external documentation is cited here. The skill is a repository-local
 retrieval contract over installed provider tooling and durable onboarding.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | L8-L28 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | L30-L78 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | L80-L122 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | L41-L44; L90-L92 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | L75-L78; L118-L122 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | L129-L163 | [`c-04-retrieval-strategy-router` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md) |
-| The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | L1-L200 | [grepai-high-leverage-usage.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md) |
-| The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only. | L1-L44; L174-L184 | [codegraphcontext-high-level-methods.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md) |
+| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | `## Retrieval Substrates` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-31 |
+| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | `## Semantics: GrepAI` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:32-81 |
+| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:82-130 |
+| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | `## Semantics: GrepAI`, `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:32-130 |
+| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | "grepai-high-leverage-usage.md", "codegraphcontext-high-level-methods.md" | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:80-80; mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:124-124 |
+| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | `## Intent: Onboarding And Source` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:131-170 |
+| The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
+| The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only. | `analyze` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md:1-44 |
 
 ## Cross-Repo References
 
 The CGC examples in the source docs are synthetic response-shape illustrations.
 They do not contain private sibling repository names, symbols, paths, or code.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No source-code contract is imported from a sibling repository. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 7 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran far past the end of the target. `codegraphcontext-high-level-methods.md` is 184 lines, so the sibling-CGC-catalog row moved from `L1-L38, L321-L332` to `L1-L44; L174-L184` (intro plus the Choosing A Method table, then the Practical Rules section). Reworded the claim to name the typed `cgc_*` tools, since the doc now routes through MCP tools rather than raw `cgc analyze` calls.
 - 2026-07-06T13:35+02:00 — 260703-L10 round 2 (L10R-2, synced from root `skills/` via `sync-skills.py`): the research-phase rule's "build/job decision" became "build decision" (the l-01 vocabulary) in the Rules list; no strategy, recipe, or routing change. Verification metadata pinned until closeout stamps the L10 commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5 sync): this generated `c-04` skill mirror was re-synced to carry the `read_ar_files` **research-phase read** doctrine on the Intent strategy — `read_ar_files` is the preferred paired onboarding + bounded source read (the recipe batched), used during the research phase instead of native read, counted as research evidence, with native read reserved as the edit precondition. Generated-mirror note only; the authored skill source owns the wording. Verification metadata pinned until closeout stamps the slice-07 code commit.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                  |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                  |
 
 ## Purpose
@@ -48,8 +48,25 @@ field on the bundle that owns the subject; it is not a new `cgc_runtime_layout` 
 `CgcRuntimeLayout` itself — the returned value, its field names, and the resolution rules that
 produce them — is unchanged, so every reader of a layout is unaffected. Only construction moved.
 
+## 260731-EFA-L6 Instance-Bundle Extraction
+
+`cgc_runtime_layout_from_provider_settings` now builds the `CgcInstance` bundle through a
+dedicated `_cgc_instance` helper. Its `requirements_file` and `patches_root` go through
+`_unresolved_template_path` — template expansion deliberately **without** `.resolve()`, because
+those two settings are read back and compared against what the runtime installer wrote, and
+resolving them would turn an equal pair into an unequal one on a checkout reached through a
+symlink. The defaults
+(`<coordination_root>/providers/requirements/codegraphcontext.txt` and
+`<coordination_root>/providers/patches/codegraphcontext`), the produced `CgcRuntimeLayout`, and
+the runner-image/layer-revision doctrine are unchanged.
+
 ## Update History
 
+- 2026-08-05T03:47+02:00 — 260731-EFA-L6: extracted `CgcInstance` construction into
+  `_cgc_instance` and documented why the two templated path fields are deliberately left
+  unresolved (`_unresolved_template_path` — read-back comparison against the runtime installer on
+  symlinked checkouts). Layout fields, defaults, and image doctrine unchanged. Verification
+  metadata pinned until closeout stamps the code commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `cgc_runtime_layout`'s nineteen flat keywords became the
   `CgcRepo` / `CgcInstance` / `CgcWatcher` / `CgcBackend` bundles with frozen module-level defaults
   standing for conventional placement. The produced `CgcRuntimeLayout` is identical; the runner

@@ -57,28 +57,30 @@ If `c-00-initialize-memory-repo` skill gets an executable helper later, mirror t
 
 No external documentation is needed for this repository-local skill.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-00-initialize-memory-repo` skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content; package-based first-run setup gets harness skills from copied starter packages and uses `skills_install` only for maintenance/manual paths. | L8-L18; L43-L49 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
-| Internal memory resolves to repo-local `ar-memory/`; explicit external memory resolves to `ar-coordination/memory-repos/ar-<repo>/` after runtime install is verified. | L63-L92 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
-| Starter settings examples keep storage and path rules under memory-layer `system/settings.json` and seed common generated/vendor/build/local excludes. | L157-L245 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
-| Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. | L302-L318 | [`c-00-initialize-memory-repo` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md) |
+| `c-00-initialize-memory-repo` skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content; package-based first-run setup gets harness skills from copied starter packages and uses `skills_install` only for maintenance/manual paths. | `skills_install` | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:45-46 |
+| Internal memory resolves to repo-local `ar-memory/`; explicit external memory resolves to `ar-coordination/memory-repos/ar-<repo>/` after runtime install is verified. | "<code_repository_root>/ar-memory" | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:68-68 |
+| Starter settings examples keep storage and path rules under memory-layer `system/settings.json` and seed common generated/vendor/build/local excludes. | "Machine-readable storage, pathRules, and cross-repo data" | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:150-150 |
+| Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. | "Preserve existing" | mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md:314-314 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this skill.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 6 initial citation findings (3 anchor, 0 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-06-03T18:58+02:00: Updated for package-first first-run setup: this skill initializes or repairs memory roots only, requests `runtime_install` only for missing/stale coordinator scaffold, and leaves initial harness skills/files to copied starter packages; `skills_install` is maintenance/manual. Verification metadata stays pinned until closeout.
 - 2026-06-02T11:30+02:00: Dropped the removed `layout="tree"` argument from the `c-00-initialize-memory-repo` skill setup-example `skills_install` call (the `layout` input was removed in 2.0.0; the installer is always flat). Example-only correction, in place at L35 — documented behavior and citations unchanged. Verification metadata stays pinned until closeout. docs/hn-launch-hardening branch.

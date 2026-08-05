@@ -69,19 +69,19 @@ visible window mounts; backend retention and the store reset/reload boundary own
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The raw event channel (single-encoded) it consumes. | — | [serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| The `ObserverEvent` shape (trust/actor/kind/data). | — | [types/event.ts](../types/event.ts) |
-| The formatter layer that owns per-kind Event River copy. | — | [eventSummary.ts](eventSummary.ts) |
-| The emitter of `tool.completed` and `read.packet` facts this row renders. | — | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| Existing lifecycle/enclosure/task-document helpers used for task labels. | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
-| The store's bounded sliding window this virtualizes over. | — | [data/store.ts](../data/store.ts) |
-| The render tests pinning readable event rows (now over a virtualized list). | — | [EventRiver.test.tsx](EventRiver.test.tsx) |
-| `EventRiver` memoizes the displayed list (reverse to newest-first, gate on `eventSummaryContextReady`, drop hidden rows). | L64-L74 | [EventRiver.tsx](EventRiver.tsx) |
-| `eventSummaryContextReady` requires lifecycle/enclosure/task-document context for bound events. | L145-L158 | [eventSummary.ts](eventSummary.ts) |
-| The reload-order regression keeps a lifecycle-bound tool row hidden until task-document context arrives. | L233-L258 | [EventRiver.test.tsx](EventRiver.test.tsx) |
-| `EventRiver` virtualizes the displayed rows with `@tanstack/react-virtual` (`useVirtualizer`) over a state-backed scroll ref; only the visible window mounts as absolutely-positioned measured rows, with no newest-N slice. | L3; L78-L154 | [EventRiver.tsx](EventRiver.tsx) |
+| The raw event channel (single-encoded) it consumes. | `RawEvent` | mcp/src/agents_remember/serving/events.py:63-77 |
+| The `ObserverEvent` shape (trust/actor/kind/data). | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
+| The formatter layer that owns per-kind Event River copy. | `summarizeEvent` | dashboard/src/panels/eventSummary.ts:113-143 |
+| The emitter of `tool.completed` and `read.packet` facts this row renders. | `emit_tool`; `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:374-393; mcp/src/agents_remember/observer/ambient.py:395-422 |
+| Existing lifecycle/enclosure/task-document helpers used for task labels. | `taskLabel` | dashboard/src/data/taskIdentity.ts:213-230 |
+| The store's bounded sliding window this virtualizes over. | `EVENT_WINDOW` | dashboard/src/data/store.ts:56-56 |
+| The render tests pinning readable event rows (now over a virtualized list). | "EventRiver readable activity feed" | dashboard/src/panels/EventRiver.test.tsx:143-351 |
+| `EventRiver` memoizes the displayed list (reverse to newest-first, gate on `eventSummaryContextReady`, drop hidden rows). | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
+| `eventSummaryContextReady` requires lifecycle/enclosure/task-document context for bound events. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:145-158 |
+| The reload-order regression keeps a lifecycle-bound tool row hidden until task-document context arrives. | "waits for lifecycle summary context before rendering lifecycle-bound rows" | dashboard/src/panels/EventRiver.test.tsx:240-265 |
+| `EventRiver` virtualizes the displayed rows with `@tanstack/react-virtual` (`useVirtualizer`) over a state-backed scroll ref; only the visible window mounts as absolutely-positioned measured rows, with no newest-N slice. | `virtualizer` | dashboard/src/panels/EventRiver.tsx:79-85 |
 
 ## Current L5I Maintenance
 
@@ -90,6 +90,9 @@ view changes no longer reconstruct this virtualized subtree; its own dashboard-s
 remain the source of genuine event updates.
 
 ## Update History
+
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 77; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 9 citation entries (18 findings); no Tier-3 findings.
 
 - 2026-07-24T13:17:17Z — Curator: documented the keep-alive memo boundary for tab-switch CPU;
   verification fields remain pre-commit.

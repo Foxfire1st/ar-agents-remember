@@ -61,15 +61,16 @@ The body states the three-condition session routing that `l-01-agent-lifecycles`
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The generator that composes this body into six files with per-harness framing. | [sync-harness.py](agents-remember/scripts/sync-harness.py) |
-| The workspace-root variant of the same directive. | [workspace-directive.md](agents-remember/scripts/harness/shared/workspace-directive.md) |
-| The hook fragments that read this file at run time. | [session_start_hook.py](agents-remember/scripts/harness/session_start_hook.py) |
-| The lifecycle this directive routes a session into. | [l-01-agent-lifecycles](agents-remember/skills/l-01-agent-lifecycles/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The generator that composes this body into six files with per-harness framing. | `generated_files`, `compose` | scripts/sync-harness.py:576-621; scripts/sync-harness.py:631-633 |
+| The workspace-root variant of the same directive. | "as workspace instructions" | scripts/harness/shared/workspace-directive.md:9-9 |
+| The hook fragments that read this file at run time. | `DIRECTIVE_PATH`, `emit` | scripts/harness/session_start_hook.py:23-23; scripts/harness/session_start_hook.py:57-59 |
+| The lifecycle this directive routes a session into. | `# l-01-agent-lifecycles — The Agent Lifecycles` | skills/l-01-agent-lifecycles/SKILL.md:6-416 |
 
 ## Update History
 
+- 2026-08-03T03:06:00+02:00 — Curator W3-B02 repaired 4 Repo-Internal citation rows, resolving 8 manifest findings with exact generator, directive, hook, and lifecycle anchors; verification metadata was preserved.
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for six
   copies of the session-start directive (requirement L2-R12). Verification metadata is
   pinned to the leaf's reformat commit until closeout stamps the code commit.

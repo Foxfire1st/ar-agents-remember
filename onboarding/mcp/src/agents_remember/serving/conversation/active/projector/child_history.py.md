@@ -53,10 +53,11 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Public hydration result and unavailable/recovered rows. | [agent_history.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/agent_history.py) |
-| Production and singleflight regressions. | [test_codex_history_production_path.py](agents-remember/mcp/tests/test_codex_history_production_path.py), [test_active_projector_singleflight.py](agents-remember/mcp/tests/test_active_projector_singleflight.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Public `AgentHistoryHydration` records status/detail/code, and `agent_history_state_item` renders unavailable/recovered child-local rows. | `AgentHistoryHydration`; `agent_history_state_item` | mcp/src/agents_remember/serving/conversation/active/agent_history.py:19-26; mcp/src/agents_remember/serving/conversation/active/agent_history.py:29-70 |
+| The measured production regression crosses the transport and selected projection path. | `test_measured_history_crosses_transport_probe_ipc_and_selected_projection` | mcp/tests/test_codex_history_production_path.py:281-365 |
+| Concurrent reconnect requests share one active projector and return the same page/events/`child_history` object. | `test_concurrent_reconnect_replaces_a_retired_projector_once` | mcp/tests/test_active_projector_singleflight.py:24-94 |
 
 ## Cross-Repo References
 
@@ -81,6 +82,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: split hydration-result and regression-test ownership, restoring the public row renderer and concurrent reconnect return-value spans.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: constructor now takes `SessionProjectionSpine` + `BridgeReaders` (plus the native ingestion peer); parent thread id and epoch come from the spine.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the selected-child
   history sidecar and recorded its demand, singleflight, capacity, and failure-containment

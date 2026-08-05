@@ -44,7 +44,7 @@ None.
 
 No external documentation is needed for this local package marker.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed for the package marker. | n/a | n/a |
 
@@ -52,18 +52,19 @@ No external documentation is needed for this local package marker.
 
 The source file itself is the direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The initializer identifies the package as runtime installation services and contains no executable behavior. | L1-L1 | [__init__.py](agents-remember/mcp/src/agents_remember/install/__init__.py) |
+| The initializer identifies the package as runtime installation services and contains no executable behavior. | "Runtime installation services for Agents Remember." | mcp/src/agents_remember/install/__init__.py:1-1 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is documented here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T02:32:19+02:00: Curator W3-B02 anchored 1 Repo-Internal citation row with 1 exact string-literal citation.
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

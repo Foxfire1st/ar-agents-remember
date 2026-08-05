@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -130,24 +130,25 @@ the source rather than being repeated here; it is the same string
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | [models overview](agents-remember/mcp/src/agents_remember/models/overview.md) |
-| CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| The MCP console entry point resolves through `agents_remember.mcp.__main__`. | [__main__.py](agents-remember/mcp/src/agents_remember/mcp/__main__.py) |
-| MCP server payloads report the package-level `SERVER_VERSION`. | [__init__.py](agents-remember/mcp/src/agents_remember/mcp/__init__.py) |
-| The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | [README.md](agents-remember/mcp/README.md) |
-| `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| The release job builds the frontend, places the bundle, packages, and then verifies both distributions carry the bundle and its fingerprint sidecar. | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
-| The placement step whose output this recursive glob picks up at build time. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| Both generated dashboard paths are git-ignored, with the reason recorded inline. | [.gitignore](agents-remember/.gitignore) |
-| An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | [serving/static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The Ruff `target-version` that must track the floor declared here lives in the repository-root project file. | [pyproject.toml](agents-remember/pyproject.toml) |
-| The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, Pyright, pytest, CRAP, and changed-lines coverage enforce.", `quality_steps` | mcp/src/agents_remember/code_quality/check.py:3-3; mcp/src/agents_remember/code_quality/check.py:119-178 |
+| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
+| CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:234-234 |
+| The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
+| MCP server payloads report the package-level `SERVER_VERSION`. | "SERVER_VERSION = version" | mcp/src/agents_remember/mcp/__init__.py:9-9 |
+| The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
+| `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:593-593 |
+| The release job builds the frontend, places the bundle, packages, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build", "python scripts/sync-dashboard.py", "run: python -m build", "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:62-62; .github/workflows/publish-mcp-to-pypi.yml:71-71; .github/workflows/publish-mcp-to-pypi.yml:78-78; .github/workflows/publish-mcp-to-pypi.yml:94-94 |
+| The placement step whose output this recursive glob picks up at build time. | "TARGET = REPO_ROOT", "def sync() -> int:" | scripts/sync-dashboard.py:38-38; scripts/sync-dashboard.py:138-138 |
+| Both generated dashboard paths are git-ignored, with the reason recorded inline. | "/mcp/src/agents_remember/package_data/dashboard/", "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:23-24 |
+| An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | "no built cockpit bundle in this installation", "No dashboard bundle at %s; serving 503 on the static surface. Build it with: %s" | mcp/src/agents_remember/serving/static.py:73-73; mcp/src/agents_remember/serving/static.py:123-123 |
+| The Ruff `target-version` that must track the floor declared here lives in the repository-root project file. | "py311" | pyproject.toml:4-4 |
+| The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | "3.11" | .github/workflows/quality-checks.yml:27-27 |
 
 ## Update History
 
+- 2026-08-03T02:52:34+02:00 — W3-B04 curator: curated 12 table citations (12 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T16:45+02:00 — 260731-EFA-L2 (R13, supported-platform decision of 2026-07-31): added a
   `classifiers` block declaring Python 3.11/3.12/3.13 and the `POSIX :: Linux` / `MacOS` platforms,
   with an inline comment recording that Windows is supported through WSL and therefore carries no

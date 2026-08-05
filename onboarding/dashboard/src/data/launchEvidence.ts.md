@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchEvidence.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,13 +27,13 @@ seat can never show two tiers — the `stateGrammar` doctrine, applied to eviden
 
 ### Logic
 
-- `hasLaunchEcho(harness)` (L24-L26) — whether a READY harness natively echoed the launched pair
+- cit:([`hasLaunchEcho`], dashboard/src/data/launchEvidence.ts:24-26) — whether a READY harness natively echoed the launched pair
   (L5 evidence, per the ACPUI handover): `codex` (model+effort via the app-server thread) and
   `pi` (model+thinking via `get_state`) → `true`; Claude stream-json echoes the launch MODEL but
   emits NO launch-effort echo — the pair as a whole never reaches readback. The two harness-id
   literals here are per-harness echo evidence the leaf doc itself mandates, not catalog data
   (reviewer-audited against the dynamic-only ruling).
-- `launchTier(row)` (L29-L41) — controlState × retained pair → ONE of the five tiers, exactly the
+- cit:([`launchTier`], dashboard/src/data/launchEvidence.ts:29-41) — controlState × retained pair → ONE of the five tiers, exactly the
   leaf-doc sketch in order: both-null pair → `defaults` (no selection was ever sent — checked
   FIRST, so a pairless failed row is `defaults`, not `refused`); `starting` → `pending` (requested
   provenance, no verification glyph); `failed` → `refused` (render beside bridgeError, never as
@@ -41,9 +41,9 @@ seat can never show two tiers — the `stateGrammar` doctrine, applied to eviden
   (disconnected/unsupported/absent) → `pending`, no promotion. Single pair tier, weakest wins
   (worker decision 3, reviewer-accepted): Claude is capped at `model-validated` even though the
   launch MODEL echoes — per-knob set-evidence is L4's domain.
-- `TIER_SENSE` (L44-L51) — the honest one-line meaning per tier, shared by the EvidenceBadge
+- cit:([`TIER_SENSE`], dashboard/src/data/launchEvidence.ts:44-51) — the honest one-line meaning per tier, shared by the EvidenceBadge
   `title` and the launch flow.
-- `verbatimBridgeError(controlRaw)` (L57-L66) — the retained verbatim bridge error off
+- cit:([`verbatimBridgeError`], dashboard/src/data/launchEvidence.ts:57-66) — the retained verbatim bridge error off
   `controlRaw` (R6): a string renders verbatim; any other retained shape is `JSON.stringify`-
   serialized rather than reworded; `null` when nothing was retained (the banner states absence,
   never invents).
@@ -62,32 +62,34 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The echo predicate, tier machine, tier senses, and verbatim bridge-error reader. | L24-L66 | [launchEvidence.ts](launchEvidence.ts) |
-| The `EvidenceTier` vocabulary this returns (L2-seeded store type). | — | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| The requested-pair persistence this refuses to treat as proof. | — | [terminal_opener.py](../../../mcp/src/agents_remember/serving/terminal_opener.py) |
-| The badge rendering the tier word + glyph. | — | [../grammar/EvidenceBadge.tsx](../grammar/EvidenceBadge.tsx) |
-| Header derivation from row truth (`launchTier(session)`). | — | [../panels/session-cockpit/HeaderStrip.tsx](../panels/session-cockpit/HeaderStrip.tsx) |
-| The failed-launch banner consuming `verbatimBridgeError` + the refused tier. | — | [../panels/session-cockpit/FailedLaunchBanner.tsx](../panels/session-cockpit/FailedLaunchBanner.tsx) |
-| The exhaustive table suite incl. the claude-never-readback invariant. | — | [launchEvidence.test.ts](launchEvidence.test.ts) |
+| The echo predicate, tier machine, tier senses, and verbatim bridge-error reader. | `hasLaunchEcho`, `launchTier`, `TIER_SENSE`, `verbatimBridgeError` | dashboard/src/data/launchEvidence.ts:24-26; dashboard/src/data/launchEvidence.ts:29-41; dashboard/src/data/launchEvidence.ts:44-51; dashboard/src/data/launchEvidence.ts:57-66 |
+| The `EvidenceTier` vocabulary this returns (L2-seeded store type). | `EvidenceTier` | dashboard/src/data/sessionCockpitStore.ts:18-18 |
+| The requested-pair persistence this refuses to treat as proof. | `_resolved_pair` | mcp/src/agents_remember/serving/terminal_opener.py:411-414 |
+| The badge rendering the tier word + glyph. | `EvidenceBadge` | dashboard/src/grammar/EvidenceBadge.tsx:46-69 |
+| Header derivation from row truth (`launchTier(session)`). | `HeaderStrip` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
+| The failed-launch banner consuming `verbatimBridgeError` + the refused tier. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| The exhaustive table suite incl. the claude-never-readback invariant. | "launchTier — exhaustive controlState × harness × pair table" | dashboard/src/data/launchEvidence.test.ts:19-65 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:41:24+02:00 — L6 W2-B02 curator: anchored 6 repository-internal reference rows for the launch-evidence machine, opener persistence, UI consumers, and exhaustive tests; final scoped result 0 (checker-clean).
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

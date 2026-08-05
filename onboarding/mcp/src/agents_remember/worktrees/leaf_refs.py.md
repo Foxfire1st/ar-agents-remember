@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:20+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -102,18 +102,20 @@ walk. `repo_name` only shapes the internal qualified ids, never the returned doc
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Task-root and raw contract path helpers imported by this resolver. | [task_resolver.py](task_resolver.py.md) |
-| Worktree start adapter returning doc ids or command refusals. | [modules/leaf_ref_start.py](modules/leaf_ref_start.py.md) |
-| Worktree contract WRITES and the explicit `heal_contract_leaf_ids` sweep normalize legacy `leaf_id` values through this resolver; since 260712-PTS-L1 contract reads never call into this module. | [worktree_contract.py](worktree_contract.py.md) |
-| The heal consumes `canonical_leaf_doc_ids` as its per-task-root cheap-skip index. | [worktree_contract.py](worktree_contract.py.md) |
-| Terminal serving adapter persists qualified catalog keys from this resolver. | [../serving/leaf_ref_validation.py](../serving/leaf_ref_validation.py.md) |
-| `LeafAssignmentStatus` and `SpawnAgentSessionStatus` fold in the `LeafRefStatus` alias declared here rather than restating its two members. | [../models/terminal.py](../models/terminal.py.md) |
-| `leaf_ref_refusal_payload` copies `LeafRefResolutionError.status` onto the terminal-tool refusal verbatim. | [../mcp/tools/leaf_ref.py](../mcp/tools/leaf_ref.py.md) |
-| Focused resolver tests pin accepted forms, ambiguity, no-match candidates, missing optional master docs, schema-marked malformed doc failures, sibling artifact skips, read-path contract tolerance, and light-task indexing. | [test_leaf_ref_resolution.py](../../../tests/test_leaf_ref_resolution.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Task-root and raw contract path helpers imported by this resolver. | "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47 |
+| Worktree start adapter returning doc ids or command refusals. | "def resolve_start_leaf_doc_id" | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:15-15 |
+| Worktree contract WRITES and the explicit `heal_contract_leaf_ids` sweep normalize legacy `leaf_id` values through this resolver; since 260712-PTS-L1 contract reads never call into this module. | "def heal_contract_leaf_ids" | mcp/src/agents_remember/worktrees/worktree_contract.py:480-480 |
+| The heal consumes `canonical_leaf_doc_ids` as its per-task-root cheap-skip index. | "canonical_leaf_doc_ids(contract.repo_name, task_root)" | mcp/src/agents_remember/worktrees/worktree_contract.py:517-517 |
+| Terminal serving adapter persists qualified catalog keys from this resolver. | "def resolve_catalog_leaf_key" | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-18 |
+| `LeafAssignmentStatus` and `SpawnAgentSessionStatus` fold in the `LeafRefStatus` alias declared here rather than restating its two members. | "LeafAssignmentStatus = Literal["; "SpawnAgentSessionStatus = Literal[" | mcp/src/agents_remember/models/terminal.py:21-21; mcp/src/agents_remember/models/terminal.py:45-45 |
+| `leaf_ref_refusal_payload` copies `LeafRefResolutionError.status` onto the terminal-tool refusal verbatim. | `leaf_ref_refusal_payload` | mcp/src/agents_remember/mcp/tools/leaf_ref.py:18-35 |
+| Focused resolver tests pin accepted forms, ambiguity, no-match candidates, missing optional master docs, schema-marked malformed doc failures, sibling artifact skips, read-path contract tolerance, and light-task indexing. | `LeafRefResolutionTests` | mcp/tests/test_leaf_ref_resolution.py:103-464 |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 14 citation finding(s); scoped recheck clean.
 
 - 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: the card said `LeafRefResolutionError.status` is
   "either `leaf-ref-not-found` or `leaf-ref-ambiguous`", which was true but no longer the whole

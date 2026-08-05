@@ -48,14 +48,15 @@ Linux runner on Windows hosts.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC status checks are provided by the installation module. | [installation.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/installation.py) |
-| `cgc_backend_status` (backend-only readiness) is provided by the backend module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| Docker command construction is provided by the runner module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
-| Provider lifecycle tests cover visualizer rejection, dry-run visualize command construction, and bounded `cgc run`; the `cgc run` test now stubs `cgc_backend_status`. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC status checks are provided by the installation module. | "def cgc_status" | mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:317-317 |
+| `cgc_backend_status` (backend-only readiness) is provided by the backend module. | `cgc_backend_status` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:194-237 |
+| Docker command construction is provided by the runner module. | `cgc_runner_image_build` | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-74 |
+| Provider lifecycle tests cover visualizer rejection, dry-run visualize command construction, and bounded `cgc run`; the `cgc run` test now stubs `cgc_backend_status`. | `test_run_rejects_visualizer_server` | mcp/tests/test_provider_lifecycle.py:1030-1056 |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 3 citation claims; scoped result 0 findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/cgc/lifecycle/query.py` since the L2 base commit is the

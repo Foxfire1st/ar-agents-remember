@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:47+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -30,7 +30,7 @@ three stages, each of which owns one decision and can return early:
 1. `_existing_contract_result(context, contract, args) -> WorktreeCommandResult | None` — attach to
    a live contract at this path instead of recreating its worktrees. Returns `None` (recreate
    fresh) when no contract exists, or when the one on disk is `abandoned` (a tombstone) or
-   `reopened` (L11, a reset) — either way its worktrees and branches are gone. With
+   `reopened` (a reset) — either way its worktrees and branches are gone. With
    `args.retry_provider_setup` a live contract routes to `_retry_provider_setup_result`.
 2. `_preflighted_contract(context, contract, args) -> WorktreeContract | WorktreeCommandResult` —
    the pre-creation preflights: stale base (records a `stale-base-blocked` beat, then refuses), the
@@ -79,7 +79,7 @@ fast); `run_or_launch_provider_setup` keeps dry runs fully synchronous
 `provider_async.ProviderSetupJob(request=…, contract=…, write_state_file=…, settings_cleanup=…)`
 and returning `starting` with the progress
 file. The settings path transfers to the launcher's cleanup only when
-`provider_setup_config.unlink_settings_after_setup` is set (the controller's
+`provider_setup_config.unlink_settings_after_setup` is set (the application entry point's
 temp-file ownership handshake). `prepare_providers_for_start` remains as the
 facade/CLI wrapper composing both halves in one call. Contract construction moved
 out to `start_contract.py`: it validates `args.leaf_id or args.worktree_name`
@@ -211,19 +211,19 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
-| Provider setup requests are implemented by the providers package. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
-| Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| Launcher, ordering, retry, and guard coverage for the async path. | [test_provider_async.py](agents-remember/mcp/tests/test_provider_async.py) |
-| Background launcher and status projection. | [provider_async.py](provider_async.py.md) |
-| mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | [test_worktree_mtime_sync.py](agents-remember/mcp/tests/test_worktree_mtime_sync.py) |
-| Index-lifecycle tests pin the divergence exclusion (real git worktree fixtures: divergent files stay fresh, equal heads sync everything). | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
-| Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | [test_worktree_stale_base.py](agents-remember/mcp/tests/test_worktree_stale_base.py) |
-| Branch freshness facts come from the shared kernel. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
+| Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
+| Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | `test_memory_base_for_source_uses_source_branch_tip_not_head`, `test_start_reports_compatible_external_memory`, `test_start_reports_internal_memory_mode`, `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support.py:574-591; mcp/tests/test_worktree_support.py:1129-1168; mcp/tests/test_worktree_support.py:1170-1202; mcp/tests/test_worktree_support.py:1204-1226 |
+| Launcher, ordering, retry, and guard coverage for the async path. | `test_successful_setup_writes_state_file_and_finishes_ok`, `test_contract_is_written_before_provider_launch`, `test_retry_refused_while_setup_is_running`, `test_retry_relaunches_after_failure`, `test_cleanup_blocks_while_setup_running`, `test_abandon_blocks_without_force_while_setup_running` | mcp/tests/test_provider_async.py:99-122; mcp/tests/test_provider_async.py:220-263; mcp/tests/test_provider_async.py:326-336; mcp/tests/test_provider_async.py:338-363; mcp/tests/test_provider_async.py:376-386; mcp/tests/test_provider_async.py:388-398 |
+| Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/worktrees/modules/provider_async.py:58-69; mcp/src/agents_remember/worktrees/modules/provider_async.py:72-120; mcp/src/agents_remember/worktrees/modules/provider_async.py:123-146; mcp/src/agents_remember/worktrees/modules/provider_async.py:149-154 |
+| mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | `test_syncs_matching_files_to_source_mtime`, `test_target_only_file_is_left_untouched`, `test_git_dir_is_skipped`, `test_dry_run_changes_nothing` | mcp/tests/test_worktree_mtime_sync.py:51-57; mcp/tests/test_worktree_mtime_sync.py:59-61; mcp/tests/test_worktree_mtime_sync.py:63-66; mcp/tests/test_worktree_mtime_sync.py:68-71 |
+| Index-lifecycle tests pin the divergence exclusion (real git worktree fixtures: divergent files stay fresh, equal heads sync everything). | `test_divergent_files_keep_fresh_mtimes`, `test_equal_heads_sync_everything` | mcp/tests/test_provider_index_lifecycle.py:365-399; mcp/tests/test_provider_index_lifecycle.py:401-417 |
+| Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | `test_behind_code_source_branch_blocks_with_recovery_guidance`, `test_fast_forward_recovers_non_checked_out_branch`, `test_fast_forward_recovers_checked_out_branch`, `test_fast_forward_cannot_recover_diverged_branch`, `test_offline_fetch_reports_unknown_and_does_not_block`, `test_behind_memory_source_branch_blocks`, `test_missing_memory_source_branch_is_created_from_official_tip` | mcp/tests/test_worktree_stale_base.py:42-59; mcp/tests/test_worktree_stale_base.py:75-91; mcp/tests/test_worktree_stale_base.py:93-108; mcp/tests/test_worktree_stale_base.py:110-127; mcp/tests/test_worktree_stale_base.py:129-137; mcp/tests/test_worktree_stale_base.py:139-152; mcp/tests/test_worktree_stale_base.py:156-184 |
+| Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:62-68; mcp/src/agents_remember/worktrees/modules/guidance.py:143-157; mcp/src/agents_remember/worktrees/modules/guidance.py:160-183; mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
+| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:182-197; mcp/src/agents_remember/worktrees/worktree_contract.py:200-228 |
 
 ## Series-Contract Notes
 
@@ -231,6 +231,10 @@ For master task starts, `start_contract.py` creates or loads the root series con
 
 ## Update History
 
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 20 initial citation findings (10 anchor, 0 prose, 10 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:47+02:00 — 260731-EFA-L4 curator: unlike L3's one-import diff, this leaf changed
   three things in the file and the card described none. (1) All three blocked returns —
   `_blocked_memory_start_result`, `_blocked_provider_start_result`, `_stale_base_preflight` — now

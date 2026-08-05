@@ -27,12 +27,12 @@ and the authority's idempotence digest always agree for the same content.
 
 ### Logic
 
-`payload_digest` (L28) is the authority-parity digest, `sha256:`-prefixed: text-only is
+cit:([`payload_digest`], mcp/src/agents_remember/serving/conversation/control/previews.py:28-48) is the authority-parity digest, `sha256:`-prefixed: text-only is
 byte-identical to the authority's construction; canonical asset identity is covered only when assets
-are present. `redacted_preview` (L51) strips control characters, collapses whitespace, applies
-`redact_secrets`, and bounds via `_clusters` (L65) to `MAX_PREVIEW_CLUSTERS = 96` (L22), returning
+are present. cit:([`redacted_preview`], mcp/src/agents_remember/serving/conversation/control/previews.py:51-62) strips control characters, collapses whitespace, applies
+`redact_secrets`, and bounds via cit:([`_clusters`], mcp/src/agents_remember/serving/conversation/control/previews.py:65-91) to cit:([`MAX_PREVIEW_CLUSTERS`], mcp/src/agents_remember/serving/conversation/control/previews.py:22-22), returning
 `(preview, truncated)`. `_clusters` approximates grapheme clusters with stdlib only — base characters
-plus combining marks, `_VARIATION_SELECTORS` (L25), and `_ZWJ` (L24) continuations — so it never
+plus combining marks, cit:([`_VARIATION_SELECTORS`], mcp/src/agents_remember/serving/conversation/control/previews.py:25-25), and cit:([`_ZWJ`], mcp/src/agents_remember/serving/conversation/control/previews.py:24-24) continuations — so it never
 splits a cluster at the cut edge (proven over ZWJ chains) and only ever conservatively merges two.
 
 ### Conventions
@@ -57,7 +57,7 @@ None.
 
 No Domain Documentation source is configured; the transform is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -66,21 +66,23 @@ No Domain Documentation source is configured; the transform is repository-owned.
 The redaction policy is the repository tool-report helper; the asset reference type and the
 authority's digest construction are the parity targets.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The repository `redact_secrets` policy applied to every preview. | L25-L27; L72-L79 | [tool_reports.py](agents-remember/mcp/src/agents_remember/mcp/tool_reports.py) |
-| The `AssetReference` type covered by the asset-form digest. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The submission authority's payload-digest construction this mirrors byte-for-byte. | L1-L120 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
+| The repository `redact_secrets` policy applied to every preview. | `redact_secrets` | mcp/src/agents_remember/mcp/tool_reports.py:72-79 |
+| The `AssetReference` type covered by the asset-form digest. | `AssetReference` | mcp/src/agents_remember/serving/harness_control_models.py:254-262 |
+| The submission authority's payload-digest construction this mirrors byte-for-byte. | `_payload_digest` | mcp/src/agents_remember/serving/harness_submission_authority.py:987-1008 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 1 prose citation and 1 table citation; no unresolved Tier-3 claims.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past
   the end of `mcp/src/agents_remember/mcp/tool_reports.py` (cited L1-L80; the file is 79 lines).

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T12:30+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -37,7 +37,7 @@ No current todo is recorded for this workflow skill.
 
 No external domain documentation applies to this repository-local workflow skill.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -45,17 +45,17 @@ No external domain documentation applies to this repository-local workflow skill
 
 `w-02-light-task-workflow` skill is the approved workflow used by the preliminary onboarding task and the worktree task stack.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | L25-L36 | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
-| Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, waiting for commit approval before closeout commits, and leaving completion to `lifecycle_finalize_task` after the branch lands. | L59-L74 | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
-| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | L64-L77 | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md) |
+| The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | `## Task Artifact` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:26-38 |
+| Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, waiting for commit approval before closeout commits, and leaving completion to `lifecycle_finalize_task` after the branch lands. | `## Agent Responsibilities` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:61-76 |
+| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | `## Invariants` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:87-112 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for the current workflow skill.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -64,6 +64,8 @@ No sibling repository evidence is needed for the current workflow skill.
 The packaged light-task workflow describes master series as integration-branch wrappers and leaf sub-tasks as the worktree-backed units with their own enclosure contracts and closeout/finalization.
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-06T12:30+02:00 — L10 owner ruling (builder escalation #1): the JSON-primary paragraph's 'chat build' thin-doc example is re-anchored to the smallest single-session build — chat is never a build route; the thin doc IS the minimum artifact. Verification metadata pinned until closeout stamps the L10 commit.
 

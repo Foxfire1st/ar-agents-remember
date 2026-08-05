@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T15:20+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -96,35 +96,36 @@ todo is resolved by the `initialScan` marker probe).
 
 No external documentation is needed for this local status projection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed for this provider state projection. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Current state payloads include version, kind, instance, aggregate state, `ok`, check time, settings file, enabled providers, process namespace, and per-provider state. | L16-L34 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Current state files are written under `logs/providers/status/<scope>/<instance>/current.json`. | L37-L58 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Instance identity uses the shared configured provider scope/id or a deterministic mixed digest when providers differ. | L61-L82 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| GrepAI and CGC status mappers keep provider-specific resources, watcher state, and indexing state separate. | L136-L203 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state. | L100-L109; L136-L176 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| GrepAI lifecycle settings use the same repository memory-root mapping for roots (`projectId == repoId`). | L52-L56 | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
-| GrepAI readiness is gated on workspace presence: `grepai_workspace_present` reads the watcher `workspaceStatus` stdout, `grepai_current_state` downgrades to `degraded`, and `grepai_indexing_state` returns `noWorkspace` when absent. | L136-L168; L302-L332 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload. | L233-L268 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Aggregate state ignores disabled providers and reports ready, degraded, failed, unknown, disabled, or noProviders from current provider facts. | L271-L295 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| Provider status writes this current-state payload and returns both the file path and current-state object to MCP callers. | L64-L80 | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
-| Unit tests assert the file path, current truth shape, disabled-provider behavior, workflow-local instance paths, and provider-status integration. | L42-L174 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
+| Current state payloads include version, kind, instance, aggregate state, `ok`, check time, settings file, enabled providers, process namespace, and per-provider state. | `ok` | mcp/src/agents_remember/providers/current_state.py:16-34 |
+| Current state files are written under `logs/providers/status/<scope>/<instance>/current.json` by `current_state_path`. | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:52-62 |
+| Instance identity uses the shared configured provider scope/id or a deterministic mixed digest through `current_state_instance`. | `current_state_instance` | mcp/src/agents_remember/providers/current_state.py:65-86 |
+| GrepAI and CGC status mappers keep provider-specific resources, watcher state, and indexing state separate through `grepai_current_state` and `cgc_current_state`. | `grepai_current_state`; `cgc_current_state` | mcp/src/agents_remember/providers/current_state.py:136-168; mcp/src/agents_remember/providers/current_state.py:179-203 |
+| GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state. | `targetRepos` | mcp/src/agents_remember/providers/current_state.py:167-167 |
+| GrepAI lifecycle settings use the same repository memory-root mapping for roots (`projectId == repoId`) through `_grepai_roots`. | `_grepai_roots` | mcp/src/agents_remember/providers/settings.py:82-91 |
+| GrepAI readiness is gated on workspace presence: `grepai_workspace_present` reads the watcher `workspaceStatus` stdout, `grepai_current_state` downgrades to `degraded`, and `grepai_indexing_state` returns `noWorkspace` when absent. | `grepai_workspace_present`; `grepai_current_state`; `grepai_indexing_state` | mcp/src/agents_remember/providers/current_state.py:136-168; mcp/src/agents_remember/providers/current_state.py:302-314; mcp/src/agents_remember/providers/current_state.py:317-333 |
+| Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload through `normalize_container_state` and `resource_state`. | `normalize_container_state`; `resource_state` | mcp/src/agents_remember/providers/current_state.py:250-257; mcp/src/agents_remember/providers/current_state.py:260-272 |
+| Aggregate state ignores disabled providers and reports ready, degraded, failed, unknown, disabled, or noProviders from current provider facts through `aggregate_state`. | `aggregate_state` | mcp/src/agents_remember/providers/current_state.py:285-299 |
+| Provider status writes this current-state payload and returns both the file path and current-state object to MCP callers through `provider_status_packet` and `refresh_current_provider_state`. | `provider_status_packet`; `refresh_current_provider_state` | mcp/src/agents_remember/providers/status.py:53-87; mcp/src/agents_remember/providers/status.py:157-167 |
+| Unit tests assert the file path, current truth shape, disabled-provider behavior, workflow-local instance paths, and provider-status integration in `ProviderCurrentStateTests`. | `ProviderCurrentStateTests` | mcp/tests/test_provider_current_state.py:26-539 |
 
 ## Cross-Repo References
 
 No sibling repository boundary is needed to explain this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 9 table citations for current-state paths, provider aggregation, normalization, refresh, and tests; fixer-generated ranges verified.
 
 - 2026-08-01T15:20+02:00 — 260731-EFA-L4 citation repair (no behaviour claim changed). Three ranges in `Repo-Internal References` had drifted off the symbols their findings name and were re-anchored against the current source: the status-mapper row `L85-L198` → **L136-L203** (`grepai_current_state` L136, `grepai_target_repos` L171, `cgc_current_state` L179, its `"watchers"` block closing L203 — the old range began inside `current_state_instance` and stopped mid-mapper); the `targetRepos` row `L101-L105; L132-L172` → **L100-L109; L136-L176** (the grepai branch passing `target_repos=grepai_target_repos(config)` at L108, and `payload["targetRepos"]` at L167); and the workspace-presence row `L132-L164, L298-L329` → **L136-L168; L302-L332** (`degraded` L150, `grepai_workspace_present` L302 reading `workspaceStatus` L311, `grepai_indexing_state` L317 returning `noWorkspace` L321). The card was flagged by the L4 citation sweep as drifting the same way as its two sibling observer cards; every range above was opened and read before being written. Prose unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed

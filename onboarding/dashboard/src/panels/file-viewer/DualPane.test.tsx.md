@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/file-viewer/DualPane.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-06-30 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,12 +48,15 @@ path, and the `0.18` opacity), so renaming those or changing the clip/opacity is
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`. | L73-L134 | [DualPane.tsx](DualPane.tsx) |
-| The effects-gated boomerang backdrop whose `video` `src`/`opacity` are asserted. | L51-L83 | [EmptyStateBackdrop.tsx](agents-remember/dashboard/src/panels/EmptyStateBackdrop.tsx) |
-| The route overview that governs this test. | — | [overview.md](overview.md) |
+| The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`. | `DualPane`; `SidecarSide` | dashboard/src/panels/file-viewer/DualPane.tsx:73-88; dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
+| The effects-gated boomerang backdrop whose `video` `src`/`opacity` are asserted. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
+| The route overview that governs this test. | `## Route Model` | onboarding/dashboard/src/panels/file-viewer/overview.md:26-58 |
 
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 6 citation finding(s); scoped recheck clean.
 
 - 2026-06-30T00:00:00+02:00 — Created for operations-integration L5: the vitest/RTL test for `DualPane` covering the siege-tank empty-state backdrop (src `/assets/sc2-siege-tank-boomerang.mp4`, opacity `0.18`, no per-side placeholders), the partnerless-overview markdown full-pane in single and split mode, and the overview placeholder fallback when the body is unavailable. Verification metadata pinned to the task base until closeout stamps the L5 code commit.

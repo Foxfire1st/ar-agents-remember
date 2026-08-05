@@ -31,11 +31,12 @@ It re-exports GrepAI constants, layout, and workspace-config helpers from the fo
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public context facade imports GrepAI exports through this subpackage facade. | [context facade](../../context/__init__.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: removed the unanchorable star-import facade row under the R27/R28 max-reviewer correction. The three exact star imports remain visible in the frozen source and the Logic prose, but no citation row is retained without an allowed anchor.
 
 - 2026-06-02T01:15+02:00: Dropped the `artifacts.py` re-export after the module was removed (roots are watched live; `.grepai/` is git-ignored instead of guarded).
 - 2026-05-25T19:33+02:00: Updated after GrepAI context logic was split from `core.py` into `constants.py`, `layout.py`, `workspace.py`, and `artifacts.py`.

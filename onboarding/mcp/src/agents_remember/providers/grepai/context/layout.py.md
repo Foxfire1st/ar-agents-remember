@@ -53,13 +53,14 @@ coordination log tree at `logs/providers/grepai`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Workspace YAML rendering consumes `GrepaiRuntimeLayout` and its normalized roots. | [workspace.py](workspace.py.md) |
-| Lifecycle GrepAI backend and runner code use this layout through the public context facade. | [backend.py](../lifecycle/backend.py.md); [runner.py](../lifecycle/runner.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Workspace YAML rendering consumes `GrepaiRuntimeLayout` and its normalized roots. | `grepai_workspace_config_text`; `write_grepai_workspace_config` | mcp/src/agents_remember/providers/grepai/context/workspace.py:23-42; mcp/src/agents_remember/providers/grepai/context/workspace.py:112-128 |
+| Lifecycle GrepAI backend and runner code use this layout through the public context facade. | `grepai_backend_state`; `grepai_watcher_workspace_status` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:178-213; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:155-175 |
 
 ## Update History
 
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `grepai_runtime_layout` was re-signed onto `GrepaiWorkspace` + the optional `GrepaiInstance` /
   `GrepaiBackend` bundles (with `DEFAULT_GREPAI_*` frozen singletons as defaults). The resolved

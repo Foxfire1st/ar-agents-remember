@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/seat_events.py`        |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`              |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`              |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -81,35 +81,40 @@ No relevant external documentation found after checking the repo Domain Document
 observer-event-specific behavior; this file follows an existing internal event-logging convention,
 not an external standard.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this event shape; the existing `orchestration_nudge_manager` precedent and the `ar-observer-event/v1` schema are the source of truth. | L1-L85 | [seat_events.py](seat_events.py) |
+| No external/domain document defines this event shape; the existing `orchestration_nudge_manager` precedent and the `ar-observer-event/v1` schema are the source of truth. | "def log_retire_event" | mcp/src/agents_remember/serving/seat_events.py:24-24 |
 
 ## Repo-Internal References
 
 `seat_events.py` reuses the `observer/` event infrastructure and mirrors an existing event-logging
 pattern; it is called by every retire/rename/turn-state mutation path.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `Event`/`now_iso` define the record shape and timestamp helper this module builds every event from. | `Event`; `now_iso` | [../observer/events.py](../observer/events.py) |
-| `observer_root`/`EventStore` are the append-only durable log this module writes to. | `observer_root`; `EventStore.append` | [../observer/paths.py](../observer/paths.py); [../observer/store.py](../observer/store.py) |
-| `new_ulid` generates the event `id`. | `new_ulid` | [../observer/ulid.py](../observer/ulid.py) |
-| `orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape). | `orchestration_nudge_manager` | [../mcp/tools/orchestration.py](../mcp/tools/orchestration.py) |
-| `session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation. | `session_retire_payload`; `session_rename_payload` | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | [app.py](app.py) |
-| `_auto_land_completed_seats` calls `log_landed_event` for every completion-edge landed seat, inside the same best-effort `try/except Exception` guard that wraps the landing body. | `_auto_land_completed_seats` | [../controllers/worktree_tools.py](../controllers/worktree_tools.py) |
+| `Event`/`now_iso` define the record shape and timestamp helper this module builds every event from. | `Event`; `now_iso` | mcp/src/agents_remember/observer/events.py:34-36; mcp/src/agents_remember/observer/events.py:39-64 |
+| `observer_root`/`EventStore` are the append-only durable log this module writes to. | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34; mcp/src/agents_remember/observer/store.py:106-107 |
+| `new_ulid` generates the event `id`. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
+| `orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape). | "def orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-19 |
+| `session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation. | `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
+| `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | mcp/src/agents_remember/serving/app.py:718-777; mcp/src/agents_remember/serving/app.py:1877-1879; mcp/src/agents_remember/serving/app.py:1939-1951; mcp/src/agents_remember/serving/app.py:1953-1959 |
+| `_auto_land_completed_seats` calls `log_landed_event` for every completion-edge landed seat, inside the same best-effort `try/except Exception` guard that wraps the landing body. | `_auto_land_completed_seats` | mcp/src/agents_remember/application/worktree_tools.py:457-487 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The observer event feed is consumed by the local dashboard/watcher surface, not a cross-repo boundary. | — | — |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and removed duplicated ranges; exact non-fixing check returns zero findings.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added current binding-role provenance to seat events
   while retaining immutable spawn-role history.
 

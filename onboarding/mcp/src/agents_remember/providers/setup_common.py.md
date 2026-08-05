@@ -44,12 +44,16 @@ while announcing phases (GitHub #53).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The provider setup facade re-exports these helpers for existing callers and tests. | [provider_setup.py](provider_setup.py.md) |
-| Lifecycle calls are dispatched through the direct lifecycle facade. | [lifecycle package](lifecycle/__init__.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The provider setup facade re-exports these helpers for existing callers and tests. | "re-exports only the narrow set of symbols callers and tests still use" | onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:15-18; onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:41-46 |
+| Lifecycle calls are dispatched through the direct lifecycle facade. | "Callers import this facade directly" | onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:19-22; onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:36-39 |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 2 facade rows to
+  memory-repo `onboarding/` citations with literal anchors (provider_setup.py.md 15-18 + 41-46,
+  lifecycle/__init__.py.md 19-22 + 36-39). Zero findings remain.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `LifecycleCommand` and re-signed `run_lifecycle(coordination_root,

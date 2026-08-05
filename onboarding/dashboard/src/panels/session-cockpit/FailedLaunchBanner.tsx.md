@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -38,16 +38,16 @@ SessionsView for any focused seat with `controlState === "failed"`, above the pt
   in the headline (L100); a pairless failed row states "no selection was sent (vendor defaults) —
   the failure is the runner's own refusal".
 - **Retire** (L84-L95, L117-L126, L146-L179): the `retire…` button only ARMS the inline confirm;
-  the confirm names the session label and its leaf (`leafIdFromKey`, L148-L152) — the honest
+  the confirm names the session label and its leaf cit:([`leafIdFromKey`], dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:148-152) — the honest
   naming the leaf demands. Confirming sends ONE `terminateTerminalSession(session.id)` POST
   (retire = the operator terminate route: `/api/terminal/{id}/retire` requires the retiring
   seat's OWN `actor_session`, which the dashboard operator does not have — worker decision 6,
   reviewer-verified as genuinely unusable from this surface; the resulting `terminated` status
   renders as the grammar's "retired". Provenance-recording retires need an upstream operator
   actor-identity decision — logged as an upstream ask). A failed terminate states "the server did
-  not confirm; the row is unchanged" (L89-L92); success re-hydrates the catalog. `keep` disarms
+  not confirm; the row is unchanged" cit:(["retire failed — the server did not confirm; the row is unchanged"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:90-90); success re-hydrates the catalog. `keep` disarms
   and sends nothing.
-- **Launch corrected…** (L127-L143): hands `{harness, modelKey, effort}` from the refused pair to
+- **Launch corrected…** cit:(["launch corrected…"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:142-142): hands `{harness, modelKey, effort}` from the refused pair to
   `onLaunchCorrected` — SessionsView opens the LaunchFlow pre-filled (applied only where the live
   catalog still advertises the pair; the re-gating lives in the flow, not here).
 - **Stays visible** (L144): the copy states "the failed row stays visible until retired — the
@@ -64,18 +64,20 @@ SessionsView for any focused seat with `controlState === "failed"`, above the pt
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The banner: verbatim error, refused pair, armed retire confirm, corrected-launch prefill. | L70-L182 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
-| `verbatimBridgeError` (serialize-never-reword) + the tier machine behind 'refused'. | L1-L66 | [../../data/launchEvidence.ts](../../data/launchEvidence.ts) |
-| The refused-tier badge with the word in the accessible name. | L13-L69 | [../../grammar/EvidenceBadge.tsx](../../grammar/EvidenceBadge.tsx) |
-| The operator terminate route this retire uses. | — | [../../data/terminal.ts](../../data/terminal.ts) |
-| The owner mounting it for a focused FAILED seat and opening the pre-filled flow. | L589-L597 | [SessionsView.tsx](SessionsView.tsx) |
-| The flow consuming the refused-pair prefill. | L36-L42, L227-L236 | [LaunchFlow.tsx](LaunchFlow.tsx) |
-| The failed-row fixtures ×3 harnesses (verbatim bridgeErrors, retained refused pairs). | L93-L178 | [../../test/fixtures/openResponses.ts](../../test/fixtures/openResponses.ts) |
-| The suite: verbatim ×3, never-validated, prefill, honest confirm, decline, stated absence. | L30-L106 | [FailedLaunchBanner.test.tsx](FailedLaunchBanner.test.tsx) |
+| The banner: verbatim error, refused pair, armed retire confirm, corrected-launch prefill. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| `verbatimBridgeError` (serialize-never-reword) + the tier machine behind 'refused'. | `verbatimBridgeError` | dashboard/src/data/launchEvidence.ts:57-66 |
+| The refused-tier badge with the word in the accessible name. | `EvidenceBadge` | dashboard/src/grammar/EvidenceBadge.tsx:46-69 |
+| The operator terminate route this retire uses. | `terminateTerminalSession` | dashboard/src/data/terminal.ts:397-406 |
+| The owner mounting it for a focused FAILED seat and opening the pre-filled flow. | `onLaunchCorrected` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1186-1186 |
+| The flow consuming the refused-pair prefill. | `LaunchPrefill` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:41-47 |
+| The failed-row fixtures ×3 harnesses (verbatim bridgeErrors, retained refused pairs). | `FAILED_LAUNCH_ROWS` | dashboard/src/test/fixtures/openResponses.ts:140-144 |
+| The suite: verbatim ×3, never-validated, prefill, honest confirm, decline, stated absence. | "FailedLaunchBanner (R6) — uniform across Claude, Codex, and Pi" | dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:30-106 |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 9 citation claims and preserved verification metadata.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R6 (uniform async fail-loud): the
   focused-failed-seat banner rendering the bridgeError verbatim (absence stated), the retained

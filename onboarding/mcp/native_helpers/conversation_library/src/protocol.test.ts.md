@@ -6,8 +6,8 @@
 | path | `mcp/native_helpers/conversation_library/src/protocol.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -54,26 +54,28 @@ Add native operation tests only when actual helper behavior lands behind the sam
 
 No Domain Documentation source is configured; the repository protocol is the direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Production protocol code implements the exact versions, handshake, fixed error output, and per-operation key validator under test. | L3-L139; L141-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
-| The Python foundation suite separately checks exact package/lock pins and forbidden ambient resolution. | L63-L99 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Production protocol code implements the exact versions, handshake, fixed error output, and per-operation key validator under test. | `PROTOCOL_VERSION`; `CLAUDE_SDK_VERSION`; `PI_CODING_AGENT_VERSION`; `redactHelperError`; `buildHandshake`; `parseHelperRequest`; `validateOperationShape`; `requireExactKeys` | mcp/native_helpers/conversation_library/src/protocol.ts:13-15; mcp/native_helpers/conversation_library/src/protocol.ts:98-102; mcp/native_helpers/conversation_library/src/protocol.ts:13-13; mcp/native_helpers/conversation_library/src/protocol.ts:306-325; mcp/native_helpers/conversation_library/src/protocol.ts:327-345; mcp/native_helpers/conversation_library/src/protocol.ts:347-445; mcp/native_helpers/conversation_library/src/protocol.ts:447-452 |
+| The Python foundation suite separately checks exact package/lock pins and forbidden ambient resolution. | `test_helper_package_and_lock_select_only_the_exact_repository_dependencies`; `test_helper_runtime_source_has_no_incidental_module_resolution` | mcp/tests/test_conversation_foundation.py:125-136; mcp/tests/test_conversation_foundation.py:139-160 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this repository-local test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 2 table citations and normalized 2 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the handshake coverage for the R4
   version-gate removal — the new `handshake reports observed versions and is ready by contract, never

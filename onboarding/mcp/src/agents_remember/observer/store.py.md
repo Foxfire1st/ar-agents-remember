@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/store.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -58,12 +58,14 @@ will read more richly).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The event envelope serialized/validated here. | [events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The store layout, retention tiers, and TTL prune rule. | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The event envelope serialized and validated by the observer model. | "class Event" | mcp/src/agents_remember/observer/events.py:39-39 |
+| The store layout, retention tiers, and TTL prune rule. | "TTL is fleeting-only" | docs/design/observable-lifecycle.md:107-107 |
 
 ## Update History
+
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/observer/store.py` since the L2 base commit is the whole-tree `ruff

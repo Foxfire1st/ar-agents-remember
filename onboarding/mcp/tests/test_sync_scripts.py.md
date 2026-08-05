@@ -6,13 +6,13 @@
 | path                   | `mcp/tests/test_sync_scripts.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T10:45+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
 
-Two different jobs, in two classes, and the module docstring (L1-L7) says so.
+Two different jobs, in two classes, and the module docstring cit:(["Two different jobs live here"], mcp/tests/test_sync_scripts.py:3-3) says so.
 `ReplaceTreeTests` exercises the crash-safe copy-then-swap (`replace_tree`) and
 the Windows extended-length path helper (`extended_length`) shared by
 `scripts/sync-skills.py` and `scripts/sync-runtime.py`, over throwaway trees.
@@ -23,12 +23,12 @@ checkout** and fails if any generated copy disagrees with its canonical source.
 
 ### Logic
 
-The scripts have dashed filenames, so `load_script` (L23-L33) loads them via
+The scripts have dashed filenames, so cit:([`load_script`], mcp/tests/test_sync_scripts.py:23-33) loads them via
 `importlib.util.spec_from_file_location`, registering each module in
 `sys.modules` first (`@dataclass` resolves its defining module there at class
 creation).
 
-`ReplaceTreeTests` (L57-L156) has six tests and they are **unchanged by
+cit:([`ReplaceTreeTests`], mcp/tests/test_sync_scripts.py:57-156) has six tests and they are **unchanged by
 260731-EFA-L4 and still load-bearing**: target replaced with source content and
 stale files removed, a crash during `copytree` leaving the live target untouched
 (the crash-safety contract), re-runs healing stale `.ar-sync-new`/`.ar-sync-old`
@@ -39,7 +39,7 @@ replaced them.
 
 ### 260731-EFA-L4 The Enforcing Half
 
-`drifted_files(module, target)` (L36-L54) is a module-level reader shared by both
+cit:([`drifted_files`], mcp/tests/test_sync_scripts.py:36-54) is a module-level reader shared by both
 scripts. It works for both because both publish the same reading surface — a
 `diff_target(target)` returning `missing` / `extra` / `changed` tuples of
 tree-relative paths, plus `repo_relative` — so one reader serves both. Each entry
@@ -47,7 +47,7 @@ is rebased onto the target (`repo_relative(target.path / rel_path)`), so a
 failure names the copy that has to be fixed rather than the path it shares with
 eight others.
 
-`RealTreeDriftTests` (L159-L207) holds two tests, each iterating the script's own
+cit:([`RealTreeDriftTests`], mcp/tests/test_sync_scripts.py:159-207) holds two tests, each iterating the script's own
 `TARGETS` tuple:
 
 - `test_every_skill_copy_matches_the_canonical_tree` — all **9** entries of
@@ -65,7 +65,7 @@ Both failure messages name the exact repair command
 `test_sync_harness.py::test_every_generated_harness_file_matches_its_source`
 already used.
 
-`maxDiff = None` (L177) is deliberate, not tidiness. `diff_target` on a wholly
+`maxDiff = None` cit:([`maxDiff`], mcp/tests/test_sync_scripts.py:177-177) is deliberate, not tidiness. `diff_target` on a wholly
 absent mirror returns every source path as `missing` — 65 entries today
 (`find skills -type f | wc -l` = 65) — and unittest's 640-character truncation
 would elide exactly the filenames the test exists to print.
@@ -112,24 +112,28 @@ L85 is the third script, `sync-harness.py`, already enforced by
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The scripts under test. | [sync-skills.py](agents-remember/scripts/sync-skills.py); [sync-runtime.py](agents-remember/scripts/sync-runtime.py) |
-| `TARGETS` (9 skill copies) with `repo_relative` / `file_digests` / `diff_target` — the reading surface `drifted_files` consumes, including `file_digests` returning `{}` for an absent tree so every source path reports `missing`. | [sync-skills.py](agents-remember/scripts/sync-skills.py) L43-L56 (TARGETS); L79-L80 (repo_relative); L103-L114 (file_digests); L117-L129 (diff_target) |
-| `TARGETS` (4 runtime asset targets) and the matching `repo_relative` / `diff_target`. | [sync-runtime.py](agents-remember/scripts/sync-runtime.py) L44-L53 (TARGETS); L73-L74 (repo_relative); L111-L123 (diff_target) |
-| The completeness assertion the runtime side has and the skill side does not — an exact `assertEqual` over the runtime target labels. | [test_sync_runtime.py](test_sync_runtime.py.md) `test_default_targets_only_write_to_mcp_package_data` L72-L84 |
-| The model for this class, including naming the repair command in the failure message. | [test_sync_harness.py](test_sync_harness.py.md) `test_every_generated_harness_file_matches_its_source` L40-L51 |
-| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | [.githooks/_gate.sh](agents-remember/.githooks/_gate.sh) `sync-skills.py --check` L81; `sync-runtime.py --check` L83 |
-| Why CI reaches these tests: `testpaths` is the single declaration the quality wrapper reads to build its pytest step. | [pyproject.toml](../../pyproject.toml.md) L187-L196 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The scripts under test. | "class SkillTarget", "class RuntimeTarget" | scripts/sync-runtime.py:27-27; scripts/sync-skills.py:27-27 |
+| `TARGETS` (9 skill copies) with `repo_relative` / `file_digests` / `diff_target` — the reading surface `drifted_files` consumes, including `file_digests` returning `{}` for an absent tree so every source path reports `missing`. | `TARGETS`, `repo_relative`, `file_digests`, `diff_target` | scripts/sync-skills.py:43-56; scripts/sync-skills.py:79-80; scripts/sync-skills.py:103-114; scripts/sync-skills.py:117-129 |
+| `TARGETS` (4 runtime asset targets) and the matching `repo_relative` / `diff_target`. | `TARGETS`, `repo_relative`, `diff_target` | scripts/sync-runtime.py:44-53; scripts/sync-runtime.py:73-74; scripts/sync-runtime.py:111-123 |
+| The completeness assertion the runtime side has and the skill side does not — an exact `assertEqual` over the runtime target labels. | `test_default_targets_only_write_to_mcp_package_data` | mcp/tests/test_sync_runtime.py:72-84 |
+| The model for this class, including naming the repair command in the failure message. | `test_every_generated_harness_file_matches_its_source` | mcp/tests/test_sync_harness.py:40-51 |
+| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | "scripts/sync-skills.py", "scripts/sync-runtime.py" | .githooks/_gate.sh:73-74 |
+| Why CI reaches these tests: `testpaths` is the single declaration the quality wrapper reads to build its pytest step. | `testpaths` | pyproject.toml:112-112 |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: converted the reference rows to
+  exact `path:start-end` sources with anchors, rebased `testpaths` to `pyproject.toml:112`, and
+  converted the history `(L…)` citations; exact non-fixing check returns zero findings.
+
 - 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator: this card described a file that tested only
   `replace_tree` semantics; the module now has a second, enforcing class and the card said nothing
-  about it. Recorded `drifted_files` (L36-L54), the shared reader that works for both scripts
+  about it. Recorded cit:([`drifted_files`], mcp/tests/test_sync_scripts.py:36-54), the shared reader that works for both scripts
   because both publish `diff_target` (`missing`/`extra`/`changed`) plus `repo_relative`, and
-  `RealTreeDriftTests` (L159-L207) with its two tests over all 9 `sync-skills.TARGETS` and all 4
-  `sync-runtime.TARGETS`. Recorded why `maxDiff = None` (L177) is load-bearing rather than tidy:
+  cit:([`RealTreeDriftTests`], mcp/tests/test_sync_scripts.py:159-207) with its two tests over all 9 `sync-skills.TARGETS` and all 4
+  `sync-runtime.TARGETS`. Recorded why `maxDiff = None` cit:([`maxDiff`], mcp/tests/test_sync_scripts.py:177-177) is load-bearing rather than tidy:
   an absent mirror reports every source path as `missing`, 65 today, and unittest truncates at 640
   characters. Stated explicitly that the six `ReplaceTreeTests` are **unchanged and still
   valuable** — they pin `replace_tree`'s semantics, a different property from real-tree drift —
@@ -143,7 +147,7 @@ L85 is the third script, `sync-harness.py`, already enforced by
   CI; and the reach of both tests is exactly `TARGETS`, with **no completeness assertion on the
   skill target tuple** — a tenth mirror added without registering it reports an empty drift list,
   indistinguishable from a healthy tree — in contrast to
-  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` (L72-L84), which pins
+  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` cit:([`test_default_targets_only_write_to_mcp_package_data`], mcp/tests/test_sync_runtime.py:72-84), which pins
   the runtime label set with an exact `assertEqual`. Ran the suite to confirm the description:
   8 tests, all pass. Added six reference rows; the pre-existing row was re-checked and still lands.
   Verification metadata pinned until closeout stamps the L4 commit.

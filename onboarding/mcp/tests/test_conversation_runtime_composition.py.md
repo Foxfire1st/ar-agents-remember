@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_runtime_composition.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,29 +73,30 @@ None known for this leaf.
 No Domain Documentation source is configured. The repository composition sources are direct
 evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The immutable runtime/scope types, install-once, and fail-closed retrieval under test. | L47-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
-| The production seam accepts the already-built runtime and installs it once. | L166-L179 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| The live composition that constructs the runtime and mints the resolver the identity scan looks for. | L714-L732 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The root registration installs the runtime then mounts the unchanged root router. | L22-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The typed composition error asserted by every failure-shape case. | L30-L38 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
+| The immutable runtime/scope types, install-once, and fail-closed retrieval under test. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
+| The production seam accepts the already-built runtime and installs it once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
+| The live composition that constructs the runtime and mints the resolver the identity scan looks for. | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| The root registration installs the runtime then mounts the unchanged root router. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
+| The typed composition error asserted by every failure-shape case. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:30-37 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this composition suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-03T03:05:21+02:00 — W3-B05 curator: resolved 5 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the production seam changed shape, so the
   Logic and reference rows were rewritten rather than attested.

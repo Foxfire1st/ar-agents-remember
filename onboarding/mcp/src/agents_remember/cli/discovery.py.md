@@ -71,14 +71,15 @@ over three named helpers that carry that totality explicitly:
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | [dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| The settings loader the discovered path feeds (`load_config`). | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| Unit tests: convention/registration hits, precedence, nearest-wins, malformed tolerance, template skip, miss error. | [test_cli_discovery.py](agents-remember/mcp/tests/test_cli_discovery.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()", "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:204-204; mcp/src/agents_remember/cli/dashboard.py:206-206 |
+| The settings loader the discovered path feeds (`load_config`). | `load_config` | mcp/src/agents_remember/mcp/config.py:140-148 |
+| Unit tests: convention/registration hits, precedence, nearest-wins, malformed tolerance, template skip, miss error. | `DiscoverConfigTests`, "test_miss_raises_with_both_patterns_and_the_origin" | mcp/tests/test_cli_discovery.py:42-142 |
 
 ## Update History
 
+- 2026-08-03T02:56:49+02:00 — W3-B04 curator: curated 2 table citations (2 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911` armed with no
   exemptions): `_config_from_mcp_registration` was rebuilt on the new `_json_object`,
   `_nested_object` and `_config_argument` helpers, and `_is_usable_settings` now reuses

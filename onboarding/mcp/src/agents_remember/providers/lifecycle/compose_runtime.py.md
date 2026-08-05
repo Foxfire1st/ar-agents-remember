@@ -78,29 +78,31 @@ the Windows/Pyright contract.
 No external domain documentation is configured for this repository; the
 resolved `system/sources.md` currently contains no entries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation source is configured for this file. | L1-L3 | [system/sources.md](../../../../../../../../../system/sources.md) |
+| No relevant external documentation source is configured for this file. | `# Sources` | system/sources.md:1-3 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | L58-L83 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | L98-L141 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | L151-L160 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | L151-L189; L239-L276 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
-| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | L174-L215 | [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | `run_compose` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:72-84 |
+| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | `auto` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:98-141 |
+| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | `host_user` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:151-156 |
+| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | `container_managed_by_project`; `network_managed_by_project` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:173-174; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:202-203 |
+| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | `remove_container_command`; `remove_network_command` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:206-207; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:210-211 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary is required beyond Docker/Compose runtime execution. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 5 citation items; scoped citation check now passes.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `BackendStartReconciliation` so the CGC and GrepAI backend starts report host

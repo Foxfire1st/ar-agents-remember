@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`             |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -187,23 +187,29 @@ The recurring projection path uses projected status plus the latest landing snap
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The shared store-root resolver. | [paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
-| The append-only store whose logs are read back. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The pure fold this drives. | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The surface readers it pulls — structural, analytical, and the slice-5e engine readers `read_engine_process_facts` / `read_start_progress_entries`. | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| The projection-time drift snapshot pruner that removes valid snapshots for deleted worktrees before the analytical read. | [drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| The shared per-tick contract snapshot: module-level cache (L102-L108), one build per tick handed to enclosures/pruning/engine facts (L211-L230; L250-L258). | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py), [contract_snapshot.py](agents-remember/mcp/src/agents_remember/observer/contract_snapshot.py) |
-| PTS-L2 test proves a full `project_and_write` tick performs one contract enumeration and re-parses nothing unchanged on the next tick. | [test_projection_scaling_cs6.py](agents-remember/mcp/tests/test_projection_scaling_cs6.py) (L592-L630) |
-| The pure fold that consumes the threaded `engine_process_facts` / `engine_start_progress` keywords (slice 5e). | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| Compact lifecycle-scoped attention acknowledgement store pruned by `project_and_write`. | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
-| The atomic-write design requirement + serving placement (§2.5, §5). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
-| `ProviderStateRefresher` implements the `ProviderStateRefresh` protocol, TTL-gates provider current-state refreshes, and logs probe failures before `project_and_write` reads provider snapshots. (L167-L199; L225-L226) | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Task 29 projection entry prunes expired lifecycle event logs, computes provider and engine admission groups, reads admitted provider/setup/engine surfaces, and keeps gates/pickups/task docs on the fast path. (L151-L199) | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. (L80-L86; L334-L358) | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| Admission policy is centralized in the worktree provider admission helper. (L18-L84) | [worktree_provider_admission.py](agents-remember/mcp/src/agents_remember/observer/worktree_provider_admission.py) |
-| Projection tests prove cached repo surfaces do not cache provider reads. (L2358-L2399) | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared store-root resolver. | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34 |
+| The append-only store whose logs are read back. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| The pure fold this drives. | `project_lifecycle`; `project_workspace` | mcp/src/agents_remember/observer/reducer.py:81-108; mcp/src/agents_remember/observer/reducer.py:128-181 |
+| The worker-owned state refreshes task inputs. | `_refresh_tasks` | mcp/src/agents_remember/observer/projection_inputs.py:266-275 |
+| The worker-owned state refreshes engine facts. | `_refresh_engine_facts` | mcp/src/agents_remember/observer/projection_inputs.py:318-343 |
+| The worker-owned state refreshes progress inputs. | `_refresh_progress` | mcp/src/agents_remember/observer/projection_inputs.py:371-377 |
+| Input acquisition and reclamation belong to the worker-owned state. | `ProjectionInputState` | mcp/src/agents_remember/observer/projection_inputs.py:189-407 |
+| The complete acquired input bundle is represented by `ProjectionInputs`. | `ProjectionInputs` | mcp/src/agents_remember/observer/projection_inputs.py:120-140 |
+| `project_and_write` invokes the input state rather than owning those reads itself. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
+| `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read. | `_refresh_drift`; "prune_orphaned_drift_snapshots(" | mcp/src/agents_remember/observer/drift_snapshots.py:36-36; mcp/src/agents_remember/observer/projection_inputs.py:345-350 |
+| The shared per-tick contract snapshot is built once for the projection pass. | `_contract_snapshot_cache`; `build`; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" | mcp/src/agents_remember/observer/contract_snapshot.py:82-112; mcp/src/agents_remember/observer/projection_inputs.py:269-269; mcp/src/agents_remember/observer/projection_store.py:98-98; mcp/src/agents_remember/observer/projection_store.py:101-101; mcp/src/agents_remember/observer/projection_store.py:225-225 |
+| The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. | `read`; `_refresh_tasks`; `_refresh_providers`; `_refresh_drift` | mcp/src/agents_remember/observer/projection_inputs.py:214-264; mcp/src/agents_remember/observer/projection_inputs.py:266-275; mcp/src/agents_remember/observer/projection_inputs.py:297-316; mcp/src/agents_remember/observer/projection_inputs.py:345-350 |
+| A scaling test proves a full `project_and_write` tick enumerates contracts once and reparses nothing unchanged on the next tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged` | mcp/tests/test_projection_scaling_cs6.py:690-728 |
+| The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
+| The compact lifecycle-scoped attention acknowledgement store is pruned by `project_and_write`. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
+| The atomic-write design requirement and serving placement are specified in §2.5 and §5. | `### 2.5 The observer and its projections`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:241-251; docs/design/observable-lifecycle.md:323-338 |
+| The tick calls the TTL-gated provider refresher before `ProjectionInputState.read`, whose delegated `_refresh_providers` performs provider reads. | "tick.provider_refresher.maybe_refresh("; "inputs = state.read("; `_refresh_providers` | mcp/src/agents_remember/observer/projection_store.py:223-235; mcp/src/agents_remember/observer/projection_inputs.py:297-316 |
+| `ProjectionInputState.read` owns the delegated domain refreshes and returns the complete input bundle. | "def read("; "return ProjectionInputs" | mcp/src/agents_remember/observer/projection_inputs.py:214-264 |
+| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | `_repo_surface_cache`; `_repo_surface_cache_key`; `_gather_repo_surfaces_cached` | mcp/src/agents_remember/observer/projection_store.py:85-85; mcp/src/agents_remember/observer/projection_store.py:332-343; mcp/src/agents_remember/observer/projection_store.py:346-356 |
+| Admission policy is centralized in the worktree provider admission helper. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
+| Projection tests prove cached repo surfaces do not cache provider reads. | `test_project_and_write_keeps_provider_reads_on_fast_path_with_cached_surfaces` | mcp/tests/test_observer_projection.py:3125-3143 |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -221,6 +227,9 @@ repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` a
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
 
 ## Update History
+- 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound delegated input refresh, provider ordering, and complete returned bundle claims to operative spans, and bound the shared contract snapshot to its cache threading and in-pass build plus the tick's refresher-before-read call order. Verification metadata unchanged.
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 14 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that had been

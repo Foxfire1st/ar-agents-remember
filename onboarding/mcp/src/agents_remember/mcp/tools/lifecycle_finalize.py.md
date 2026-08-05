@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:31+02:00                     |
-| lastVerifiedCommitHash |                                            `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,13 +21,13 @@ dry_run=False, teardown_providers=True)` is intentionally transport-thin. It for
 config and contract path positionally, the three task-document inputs as one `FinalizeTaskDocs`
 (`task_doc_path`, `master_doc_path`, `subtask_number` — 260731-EFA-L2; `NO_TASK_DOCS` is the shared
 "finalize without touching documents" value), and the dry-run and provider-teardown flags, to
-`controllers.worktree_tools.lifecycle_finalize_task_tool`, then validates the returned payload
+`application.worktree_tools.lifecycle_finalize_task_tool`, then validates the returned payload
 through `base._tool_payload` under the `lifecycle_finalize_task` public tool name.
 
 The published MCP tool still takes the three document arguments flat; `mcp/registration/tasks.py`
 builds the `FinalizeTaskDocs`.
 
-This module owns no lifecycle or Git behavior. The controller owns path
+This module owns no lifecycle or Git behavior. The application entry point owns path
 containment, and the worktree finalizer owns readiness, cleanup, and
 task-document reconciliation.
 
@@ -37,14 +37,19 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Controller function validates coordination-contained paths and delegates to the worktree finalizer. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
-| The shared payload helper validates public response shape. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| The response model is registered in the public tool registry. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Application entry point validates coordination-contained paths and delegates to the worktree finalizer. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:424-454 |
+| The shared payload helper is `_tool_payload`. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The response boundary is `complete_tool_response`. | "def complete_tool_response" | mcp/src/agents_remember/application/tool_response.py:47-47 |
+| The response model is registered in the public tool registry. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:167-167 |
 
 ## Update History
 
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2: the three task-document keyword arguments became one
   `FinalizeTaskDocs` (default `NO_TASK_DOCS`), and `contract_path` moved to a positional argument.
   Verification metadata pinned until closeout stamps the L2 code commit.

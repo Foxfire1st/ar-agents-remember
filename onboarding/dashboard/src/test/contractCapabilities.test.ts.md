@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contractCapabilities.test.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ are test evidence ONLY — the dynamic-only invariant forbids them from producti
 
 ### Logic
 
-- **Capability envelopes** (L31-L118): the pack carries ALL THREE `cacheStatus` values under the
+- **Capability envelopes** (cit:(["capability envelopes"], dashboard/src/test/contractCapabilities.test.ts:31-118)): the pack carries ALL THREE `cacheStatus` values under the
   v1 schema; Claude mirrors the recorded five row keys (`default`/`opus[1m]`/
   `claude-fable-5[1m]`/`sonnet`/`haiku`) with an effortless Haiku (`effortOptions: []`,
   `supportsEffort: false`) and the five-key effort menu on fable; Codex mirrors the recorded
@@ -35,12 +35,12 @@ are test evidence ONLY — the dynamic-only invariant forbids them from producti
   fresh Claude exact-session snapshot has NULL `selectedEffort` and only the `model` config
   category; pre-session envelopes carry no selection; the 404/409/503 error fixtures wear the
   verbatim status words per HTTP code.
-- **Vocabulary equality** (L120-L161): SetResult fixtures cover EXACTLY the five acceptances,
+- **Vocabulary equality** (cit:(["SetResult / receipt / reconciliation vocabularies"], dashboard/src/test/contractCapabilities.test.ts:120-161)): SetResult fixtures cover EXACTLY the five acceptances,
   receipts exactly five, reconciliations exactly four — asserted by sorted-key equality, so a
   dropped OR added value fails loudly; `queued`/`unknown` never carry an `effectiveValue`
   (the marker must not move early); every reconciliation reuses the ambiguous receipt's
   `requestId` (same id, no resend).
-- **Open responses + failed rows** (L163-L200): the 200-starting body echoes the REQUESTED pair
+- **Open responses + failed rows** (cit:(["open responses + failed rows"], dashboard/src/test/contractCapabilities.test.ts:163-200)): the 200-starting body echoes the REQUESTED pair
   verbatim and the vendor-defaults body carries null/null; the conflict body carries the LIVE
   row's retained pair; leaf-taken names the owning session; failed rows exist for ALL THREE
   harnesses, retain the refused pair, and their `bridgeError` names the advertised alternatives;
@@ -56,15 +56,18 @@ are test evidence ONLY — the dynamic-only invariant forbids them from producti
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The three describe blocks (envelopes / vocabularies / open+failed). | L31-L200 | [contractCapabilities.test.ts](contractCapabilities.test.ts) |
-| Envelope/model/SetResult/error fixtures under assertion. | L60-L273 | [fixtures/capabilityEnvelopes.ts](fixtures/capabilityEnvelopes.ts) |
-| Receipt/reconciliation fixtures under assertion. | L14-L86 | [fixtures/controlMessages.ts](fixtures/controlMessages.ts) |
-| Open-response + failed-row fixtures under assertion. | L17-L178 | [fixtures/openResponses.ts](fixtures/openResponses.ts) |
-| The wire mirrors the assertions type against (`SetAcceptance`, schema). | L11-L117 | [../types/harnessCapabilities.ts](../types/harnessCapabilities.ts) |
+| The three describe blocks (envelopes / vocabularies / open+failed). | "capability envelopes"; "SetResult / receipt / reconciliation vocabularies"; "open responses + failed rows" | dashboard/src/test/contractCapabilities.test.ts:31-118; dashboard/src/test/contractCapabilities.test.ts:120-161; dashboard/src/test/contractCapabilities.test.ts:163-200 |
+| Envelope/model/SetResult/error fixtures under assertion. | `ENVELOPES_BY_CACHE_STATUS`; `SET_RESULTS`; `CAPABILITY_ERROR_BODIES` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:175-179; dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247; dashboard/src/test/fixtures/capabilityEnvelopes.ts:336-358 |
+| Receipt/reconciliation fixtures under assertion. | `SUBMISSION_RECEIPTS`; `RECONCILIATIONS` | dashboard/src/test/fixtures/controlMessages.ts:15-61; dashboard/src/test/fixtures/controlMessages.ts:63-100 |
+| Open-response + failed-row fixtures under assertion. | `OPENED_STARTING`; `OPENED_VENDOR_DEFAULTS`; `LAUNCH_CONFLICT`; `LEAF_TAKEN`; `FAILED_LAUNCH_ROWS`; `PENDING_INTERACTION_ROW` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:36-43; dashboard/src/test/fixtures/openResponses.ts:64-68; dashboard/src/test/fixtures/openResponses.ts:72-86; dashboard/src/test/fixtures/openResponses.ts:140-144; dashboard/src/test/fixtures/openResponses.ts:164-178 |
+| The wire mirrors the assertions type against (`SetAcceptance`, schema). | `SetAcceptance` | dashboard/src/types/harnessCapabilities.ts:86-86 |
 
 ## Update History
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 7 citation claims
+  (3 Logic citations and 4 Repo-Internal reference rows); scoped result 0 findings.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R3 (contract conformance): recorded-L5 row
   keys (effortless Haiku, hidden codex-auto-review + per-row defaults, Pi provider-qualified),

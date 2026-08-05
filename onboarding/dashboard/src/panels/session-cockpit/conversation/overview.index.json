@@ -12,6 +12,7 @@
   "coveredFiles": [
     "dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx",
+    "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx",
     "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx",
@@ -41,8 +42,8 @@
     "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 29,
-    "fileSidecars": 29,
+    "sourceFilesInScope": 30,
+    "fileSidecars": 30,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -82,6 +83,7 @@
       "dashboard/src/panels/session-cockpit/conversation",
       "dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx",
+      "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx",
@@ -101,14 +103,15 @@
       "dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx",
       "dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx",
-      "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx",
-      "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts"
+      "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx"
     ],
     "anchorHints": [
       "AgentsArea.test.tsx",
       "AgentsArea.test",
       "AgentsArea.tsx",
       "AgentsArea",
+      "AmbientTelemetry.test.tsx",
+      "AmbientTelemetry.test",
       "AmbientTelemetry.tsx",
       "AmbientTelemetry",
       "ConversationAgentFocus.test.tsx",
@@ -150,9 +153,7 @@
       "TurnResultItem.tsx",
       "TurnResultItem",
       "collapse.test.ts",
-      "collapse.test",
-      "collapse.ts",
-      "collapse"
+      "collapse.test"
     ]
   },
   "fallback": {

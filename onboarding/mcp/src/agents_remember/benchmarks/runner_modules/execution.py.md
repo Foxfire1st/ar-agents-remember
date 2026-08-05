@@ -42,11 +42,6 @@ live-authority set still flows from the service request to the workspace provide
 
 `execution.py` resolves `codex` from PATH, validates the allowlisted sandbox modes, writes per-run metadata, runs prompt variants, builds batches, executes them concurrently, writes summaries, and reports subprocess failures. `benchmark_mcp_config_overrides(cwd)` reads the benchmark workspace's `.codex/config.toml` `mcp_servers` table and emits `-c mcp_servers.<name>.<key>=<literal>` overrides (scalars, `env`, and `env_vars`), which `codex_command` appends so the benchmarked Codex talks to the benchmark's **own** isolated MCP server rather than inheriting the host workspace's MCP configuration.
 
-`maybe_prepare_case` and `run_case` accept `allowed_provider_ids` (default
-`None`) and thread it into `prepare_case`, carrying the containment R1
-(260707-HFX-L1) live-authority set from the service request down to the
-workspace provider filter.
-
 ### Invariants And Boundaries
 
 - Codex execution remains benchmark-only host execution and must not accept arbitrary executable paths or shell snippets.
@@ -59,11 +54,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| The benchmark MCP registration writes the `.codex/config.toml` whose `mcp_servers` table these overrides read. | [mcp_registration.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py) |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.execution import *" | mcp/src/agents_remember/benchmarks/runner.py:17-17 |
+| The benchmark MCP registration writes the `.codex/config.toml` whose `mcp_servers` table these overrides read. | `benchmark_agents_config_text` | mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:131-151 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `test_codex_command_forwards_benchmark_mcp_config` | mcp/tests/test_worktree_support.py:3498-3552 |
 
 ## Cross-Repo References
 
@@ -71,6 +66,11 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 6 citation findings and cut one false
+  paragraph. `allowed_provider_ids` rides `BenchmarkPreparation` into `prepare_case`; the stale
+  threaded-parameter paragraph was removed (the correct L2 form directly above it stands). Re-anchored
+  the facade (runner.py:17), config-text (mcp_registration.py:131-151), and benchmark-test
+  (3498-3553) rows. Scoped recheck clean.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0913` armed with no
   exemptions): `run_case`, `maybe_prepare_case`, `run_one` and `run_dry_batches` were re-signed
   onto `BenchmarkRunRequest` / `BenchmarkPreparation` / `BenchmarkRun` / `BenchmarkTask`, and

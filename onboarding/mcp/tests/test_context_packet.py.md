@@ -5,14 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:25+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
-`test_context_packet.py` verifies the package context-packet controller and CLI
+`test_context_packet.py` verifies the package context-packet application entry point and CLI
 against configured repository fixtures.
 
 ## Code Commentary
@@ -28,7 +28,7 @@ rejection before filesystem resolution, non-Git repo error reporting, active
 worktree contract reporting without worktree raw status, and CLI JSON output.
 Skipped-provider regression coverage goes through `context_packet_payload(...)`
 so the test exercises the public MCP payload wrapper's second validation pass,
-not just the direct controller call.
+not just the direct application entry point call.
 The `taskRoot` expectation is built with `Path.as_posix()` because the packet
 emits posix paths on every host (including Windows, where `str(Path)` would use
 backslashes).
@@ -52,14 +52,17 @@ detail consumers at `provider_diagnostics`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The context packet controller builds the tested payload. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
-| `ContextPacketV2` defines the compact public response contract. | [context_packet.py](agents-remember/mcp/src/agents_remember/models/context_packet.py) |
-| MCP config fixtures come from `test_config.py`. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The context packet application entry point builds the tested payload. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
+| `ContextPacketV2` defines the compact public response contract. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:115-125 |
+| Shared MCP config fixture helpers provide the settings payload and JSON writer used by this suite. | `settings_payload`; `write_json` | mcp/tests/test_config.py:24-26; mcp/tests/test_config.py:29-46 |
 
 ## Update History
+- 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:25+02:00 — 260731-EFA-L4 curator: No content impact: the entire diff for this file
   is one fixture literal — the active-worktree `ContractTask` now asks for
   `workflow_kind="light-task"` instead of the bare `"light"`, because 260731-EFA-L4 removed the

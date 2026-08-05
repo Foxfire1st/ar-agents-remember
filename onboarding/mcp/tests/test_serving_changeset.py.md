@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_changeset.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T12:55+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -91,15 +91,15 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The change-set API under test (`task_changeset`, `file_diff`, `master_changeset`). | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
-| The git primitive under test (`changed_files_with_counts`). | [worktrees/modules/git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
-| The shared scope layer the extraction test checks (`resolve_scope`, `run_scoped`, `FileScope`). | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
-| The files module re-exporting `FileScope`/`_resolve_within` (asserted here). | [serving/files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
-| `WorktreeContract` / `write_contract` used to drive the change-set scope. | [worktrees/worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| `McpRuntimeConfig` / `RepositoryScope` constructed by the master test. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The L1 files test whose harness/style this mirrors. | [test_serving_files.py](agents-remember/mcp/tests/test_serving_files.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The change-set API under test (`task_changeset`, `file_diff`, `master_changeset`). | `task_changeset`; `file_diff`; `master_changeset` | mcp/src/agents_remember/serving/changeset.py:78-97; mcp/src/agents_remember/serving/changeset.py:100-125; mcp/src/agents_remember/serving/changeset.py:225-269 |
+| The git primitive under test (`changed_files_with_counts`). | `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:159-198 |
+| The shared scope layer the extraction test checks (`resolve_scope`, `run_scoped`, `FileScope`). | `resolve_scope`; `run_scoped`; `FileScope` | mcp/src/agents_remember/serving/scope.py:96-107; mcp/src/agents_remember/serving/scope.py:147-193; mcp/src/agents_remember/serving/scope.py:207-227 |
+| The files module re-exporting `FileScope`/`_resolve_within` (asserted here). | "def list_dir(scope: FileScope, rel_dir: str) -> dict[str, Any]:"; "_resolve_within," | mcp/src/agents_remember/serving/files.py:54-54; mcp/src/agents_remember/serving/files.py:161-161 |
+| `WorktreeContract` / `write_contract` used to drive the change-set scope. | `WorktreeContract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-287; mcp/src/agents_remember/worktrees/worktree_contract.py:474-477 |
+| `McpRuntimeConfig` / `RepositoryScope` constructed by the master test. | `McpRuntimeConfig`; `RepositoryScope` | mcp/src/agents_remember/mcp/config.py:68-73; mcp/src/agents_remember/mcp/config.py:113-137 |
+| The L1 files test whose harness/style this mirrors. | `PathGuardTests` | mcp/tests/test_serving_files.py:80-111 |
 
 ## 260731-EFA-L2 Delta — the scope-resolution fall-through
 
@@ -111,6 +111,14 @@ Five tests pinning which diff a file request resolves to when it names no leaf:
 - a scoped file diff **reports an unknown scope rather than guessing** one.
 
 ## Update History
+
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 4 citation findings, all duplicate
+  sources: deduplicated the repeated ranges in the scope-layer row (21× `scope.py:96-107`, 6×
+  `147-193`), the `WorktreeContract` row (6× `231-286`), and the config row (6× `config.py:68-73`),
+  keeping one copy of each operative span plus the `run_scoped`, `write_contract`, and
+  `McpRuntimeConfig` ranges. Scoped recheck clean.
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 6 citation items; scoped citation check now passes.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 

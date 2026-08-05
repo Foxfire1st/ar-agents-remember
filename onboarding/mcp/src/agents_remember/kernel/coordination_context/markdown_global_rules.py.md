@@ -38,25 +38,27 @@ storage rule to the parser's settings object.
 
 No external documentation is needed for this local fallback parser helper.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Markdown parser delegates global path-rule branches to this module. | Markdown parser | [markdown_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
-| Storage evaluation consumes parsed include/exclude paths and file types. | storage policy | [storage.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/storage.py) |
+| The Markdown parser delegates global path-rule branches to this module. | `handle_global_rule_line` | mcp/src/agents_remember/kernel/coordination_context/markdown_global_rules.py:6-12 |
+| Storage evaluation consumes parsed include/exclude paths and file types. | `resolve_storage_for_source` | mcp/src/agents_remember/kernel/coordination_context/storage.py:103-114 |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed for local path-rule parsing.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 4 citation findings; scoped check passed.
 
 - 2026-05-25T20:57+02:00: Created by extracting global Markdown path-rule parsing from `markdown_settings.py`.

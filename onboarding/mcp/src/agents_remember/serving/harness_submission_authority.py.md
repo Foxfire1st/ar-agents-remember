@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,14 +16,10 @@
 
 ## Purpose
 
-Owns the authoritative, epoch-bound prompt/setter timeline for one live harness bridge. It is the
-only component allowed to admit queued prompts, linearize withdrawal against dispatch, bind exact
-adapter operations, and retain normalized lifecycle truth. One additive read-only provenance batch
-rides over its existing per-operation records. The paged never-bodies `operation_timeline`
-enumeration runs over the same retained ledger (with the eviction floor tracked at the sole pop
-site), alongside the pre-tombstone withdrawal-recovery capture and the asset-carrying submit
-channel (capability gate, dispatch routing, additive digest extension, and receipt `assetIds`
-evidence). `respond` is multiplex-aware: interaction responses match against the parent-thread
+The authority owns ordered dispatch, the active operation, adapter invocation, admission, withdrawal,
+asset routing, and recovery capture. Its `SubmissionLedger`, under the same lifecycle lock, owns
+retained records, tombstones, eviction accounting, provenance, and timeline reads. `respond` is
+multiplex-aware: interaction responses match against the parent-thread
 singular pending slot OR the plural sub-agent pending tuple, with the active-operation guard kept
 parent-only — parent-ness decided by the matched entry's own THREAD, so a concurrent parent
 pending riding the plural tuple is guarded exactly like the singular slot.
@@ -52,7 +48,7 @@ pending riding the plural tuple is guarded exactly like the singular slot.
 1. `_pre_admission_receipt_locked` — the receipt the request is already owed before any record
    exists: the idempotent duplicate receipt (same source **and** payload digest; a different one
    under the same id is `HarnessRequestConflictError`), or the ledger-full `rejected` receipt.
-2. `_enrol_prompt_locked` — register the admitted prompt as a queued `_OperationRecord` and bind its
+2. `_enrol_prompt_locked` — register the admitted prompt as a queued `OperationRecord` and bind its
    request id, before it reaches the timeline.
 3. `_unsupported_prompt_locked` — retire a prompt this hosted harness cannot carry at all. Two
    cases: the snapshot says `control == "unsupported"`, or the request carries assets and the
@@ -105,19 +101,20 @@ receipt; such definitive completion dominates a later unknown observation. Respo
 a bypass lane but share each adapter's write lock. Status/withdrawal read only normalized state and
 never wait on vendor I/O while holding the lifecycle lock.
 
-The multiplex-aware `respond` (L341-L399) resolves an interaction response against TWO pending sets: the singular
+The multiplex-aware cit:([`respond`], mcp/src/agents_remember/serving/harness_submission_authority.py:300-356) resolves an interaction response against TWO pending sets: the singular
 `snapshot.pending_interaction` (the parent thread's OLDEST pending) and the plural
 `snapshot.pending_interactions` (multiplexed entries, including concurrent parent-thread pendings
 beyond the oldest — the adapter keeps a per-thread pending map). A response matching
 neither raises the same typed `HarnessInteractionNotPendingError` as before — the not-pending
 contract is unchanged, only the match set widened. Parent-ness is decided by the matched entry's
-own thread, not by which slot carries it (L352-L366): a singular-slot match is parent, and a tuple
+own thread, not by which slot carries it: a singular-slot match is parent, and a tuple
 entry whose `raw.threadId` equals the snapshot's `vendor_session_id` is parent too, so a concurrent
-parent pending riding the tuple gets the "active ordinary operation" guard (L371-L376) exactly like
+parent pending riding the tuple gets the "active ordinary operation" guard exactly like
 the singular slot. Genuinely foreign (sub-agent) pendings own no parent operation, so their
-responses cross to the adapter with `operation=None` (`replace(response, operation=operation)` at
-L384) instead of being refused for lacking an active record. The `_responded_interactions` dedupe
-and the post-response identity check apply uniformly to both classes.
+responses cross to the adapter with `operation=None` via
+cit:([`respond`, "replace(response, operation=operation)"], mcp/src/agents_remember/serving/harness_submission_authority.py:300-356)
+instead of being refused for lacking an active record. The `_responded_interactions` dedupe and the
+post-response identity check apply uniformly to both classes in that response path.
 
 Retention is bounded (timeline 64, duplicate/terminal ledger 256 by the configured defaults): live,
 active, and unknown rows are never evicted; terminal rows discard full prompt text while retaining
@@ -135,10 +132,10 @@ record fields and mutates nothing.
 The `operation_timeline(expected_bridge_epoch, *, after_sequence, limit, byte_budget)` read pages
 those same records under the lifecycle lock: epoch-checked, positive limit/byte budget, items in
 sequence order strictly after `afterSequence`, the greedy loop bounded by both
-`MAX_OPERATION_TIMELINE_PAGE` and the shared `EVIDENCE_PAGE_BYTE_BUDGET` (an oversized first item
-still makes progress; identity is never clipped), and every page carrying `latestSequence` (the
-mint counter), `evictedBeforeSequence` (tracked additively in `_make_ledger_room` at the sole
-`_records.pop` site), `truncated`, and `bridgeEpoch`. Completeness is the union of pages through
+   `MAX_OPERATION_TIMELINE_PAGE` and the shared `EVIDENCE_PAGE_BYTE_BUDGET` (an oversized first item
+   still makes progress; identity is never clipped), and every page carrying `latestSequence` (the
+   mint counter), `evictedBeforeSequence` (tracked additively at the sole `SubmissionLedger.make_room`
+   eviction site), `truncated`, and `bridgeEpoch`. Completeness is the union of pages through
 `latestSequence`. The asset channel extends admission: `_payload_digest` covers canonical asset
 identity only when assets are present (asset-free digests stay byte-identical), a non-
 `AssetSubmitCapable` adapter receives an `unsupported` terminal receipt with the exact reason
@@ -146,7 +143,7 @@ before any dispatch (`_unsupported_prompt_locked`), and `_invoke_adapter` routes
 `submit_with_assets`. The old defensive re-check there — a `HarnessControlError("asset submission
 dispatch reached a non-capable adapter")` — is now literally `assert isinstance(capable,
 AssetSubmitCapable)`, because it was always the assert class: it can only fire if the admission gate
-above it stopped deciding. `_OperationRecord.assets` clears at exactly the tombstone moment text clears.
+above it stopped deciding. `OperationRecord.assets` clears at exactly the tombstone moment text clears.
 Withdrawal captures `WithdrawalRecovery(text, assets)` at the true queued → withdrawn transition
 immediately before `_mark_terminal`, so the exact body crosses once inside the already
 `cockpit_only` response and idempotent replays carry `recovery=None`. `_receipt` adds raw
@@ -154,8 +151,8 @@ immediately before `_mark_terminal`, so the exact body crosses once inside the a
 
 ### Invariants And Boundaries
 
-- There is exactly one prompt/setter authority per bridge generation. Native queues, browser
-  optimistic queues, and the legacy queue facade are not co-authorities.
+- There is exactly one prompt/setter authority per bridge generation. Native queues and browser
+  optimistic queues are not co-authorities.
 - A request id is idempotent only for the same source and payload digest; conflicting reuse is 409.
 - Epoch mismatch is rejected before mutation or lifecycle disclosure.
 - Withdrawal can succeed only while the row is authoritatively queued; dispatching/delivered work
@@ -169,7 +166,7 @@ immediately before `_mark_terminal`, so the exact body crosses once inside the a
 - The operation timeline never carries bodies — identity/source/kind/sequence/state/timestamps,
   digest-presence, and vendor correlation only; completeness is the union of pages through
   `latestSequence`, and the eviction floor disclosed on every page is tracked at the sole
-  `_records.pop` site so no retained row is ever hidden.
+  `SubmissionLedger.make_room` site so no retained row is ever hidden.
 - The recovery payload crosses exactly once, at the true queued → withdrawn transition before the
   tombstone fires; replays carry none, and the tombstone timing/class, `cockpit_only` hardcode,
   and epoch verification stay byte-preserved.
@@ -198,28 +195,32 @@ None known.
 No Domain Documentation source is configured for this repository; the authority protocol is
 repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Records, locks, idempotent admission, dispatch/withdraw, exact completion, retention, the timeline read, the recovery capture, and the entry-thread multiplexed respond. | L56-L1186 | [harness_submission_authority.py](harness_submission_authority.py) |
-| The queue module is now only a compatibility facade over this authority. | — | [harness_control_queue.py](harness_control_queue.py) |
-| The bridge wires direct adapter events here before coalesced publication. | — | [harness_control_bridge.py](harness_control_bridge.py) |
-| The API exposes raw-free authority/status/withdrawal projections. | — | [harness_control_api.py](harness_control_api.py) |
-| Dedicated tests exercise races, early completion, full-ref reuse, bounds, privacy, and epochs. | — | [../../../tests/test_harness_submission_authority.py](../../../tests/test_harness_submission_authority.py) |
-| The evidence contract suite exercises the provenance batch end-to-end through bridge → queue → authority → IPC → validated client, including all three sources, not-found, epoch mismatch, and the 1..64 uniqueness bound. | L463-L791 | [test_harness_control_evidence.py](../../../tests/test_harness_control_evidence.py) |
-| The control-plane contract suite exercises the timeline enumeration (all sources/kinds, paged union, eviction floor, 256-record budget edge), the asset channel (capability gate, digest conflict/dedupe, receipt `assetIds`), and the first-vs-replay recovery through this authority. | L773-L1010; L1175-L1268; L1397-L1473 | [test_harness_control_plane.py](../../../tests/test_harness_control_plane.py) |
-| The common conformance suite pins the multiplexed respond: respond-without-parent-operation for agent entries, the entry-thread operation guard for concurrent parent tuple entries, and the plural pending serialization round-trips. | L752-L928 | [test_harness_control.py](../../../tests/test_harness_control.py) |
+| Locks, idempotent admission, dispatch/withdraw, exact completion, the recovery capture, and the entry-thread multiplexed respond. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
+| The records, the retention and the timeline read named in the old single-row claim are no longer in this module: 260731-EFA-L6 split `OperationRecord` and `SubmissionLedger` into their own file, which is where enrolment, eviction (`make_room`) and `operation_timeline` now live. | `OperationRecord`; `SubmissionLedger` | mcp/src/agents_remember/serving/harness_submission_ledger.py:57-252; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
+| The bridge wires direct adapter events here before coalesced publication. | `_run_events` | mcp/src/agents_remember/serving/harness_control_bridge.py:415-458 |
+| The API registers the submission-ledger routes. | `_register_submission_ledger_routes` | mcp/src/agents_remember/serving/harness_control_api.py:301-339 |
+| The API exposes the submission-authority route. | `api_submission_authority` | mcp/src/agents_remember/serving/harness_control_api.py:306-316 |
+| The status serializer produces the raw-free submission batch. | `submission_status_batch_json` | mcp/src/agents_remember/serving/harness_control_models.py:987-991 |
+| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:952-956 |
+| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:986-995 |
+| Dedicated tests exercise races, early completion, full-ref reuse, bounds, privacy, and epochs. | `HarnessSubmissionAuthorityTests`; `SubmissionLedgerTests` | mcp/tests/test_harness_submission_authority.py:230-755; mcp/tests/test_harness_submission_authority.py:758-926 |
+| The evidence contract suite exercises provenance end-to-end through bridge → authority → IPC → validated client, including all three sources, not-found, epoch mismatch, and the 1..64 unique-id bound. | `test_submission_provenance_all_sources_epoch_and_bounds` | mcp/tests/test_harness_control_evidence.py:816-897 |
+| The control-plane contract suite exercises the timeline enumeration (all sources/kinds, paged union, eviction floor, 256-record budget edge), the asset channel (capability gate, digest conflict/dedupe, receipt `assetIds`), and the first-vs-replay recovery through this authority. | `OperationTimelineTests`; `AssetChannelTests`; `AssetNativeConstructionTests`; `WithdrawalRecoveryTests` | mcp/tests/test_harness_control_plane.py:966-1194; mcp/tests/test_harness_control_plane.py:1214-1480; mcp/tests/test_harness_control_plane.py:1483-1643; mcp/tests/test_harness_control_plane.py:1651-1723 |
+| The common conformance suite pins the multiplexed respond: respond-without-parent-operation for agent entries, the entry-thread operation guard for concurrent parent tuple entries, and the plural pending serialization round-trips. | `test_subagent_pending_interaction_responds_without_parent_operation`; `test_parent_thread_tuple_entry_gets_the_operation_guard`; `test_multiplexed_pending_interactions_serialize_through_every_surface` | mcp/tests/test_harness_control.py:810-864; mcp/tests/test_harness_control.py:866-924; mcp/tests/test_harness_control.py:926-985 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The authority is internal to agents-remember's hosted-control bridge. | — | — |
 
@@ -237,6 +238,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound the operation-none and dedupe/identity claim to the complete `respond` body, including the operative adapter replacement.
+
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `BridgeSnapshotPort` / `SubmissionLimits`
   constructor concepts, the three-step locked admission (`_pre_admission_receipt_locked`,
   `_enrol_prompt_locked`, `_unsupported_prompt_locked` as the single capability decision point),
@@ -247,8 +252,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   beyond the singular slot's oldest ride the plural tuple now that the adapter keeps a per-thread
   pending map) — a tuple entry whose `raw.threadId` is the session's vendor thread gets the
   active-operation guard exactly like the singular slot, while genuinely foreign agent entries
-  still cross with `operation=None`. Re-anchored the respond citations (L276-L334; guard
-  L306-L311; `replace(response, …)` L319) and the whole-file row (L56-L1186), and added the
+  still cross with `operation=None`. Re-anchored the respond behavior to cit:([`respond`], mcp/src/agents_remember/serving/harness_submission_authority.py:300-356) and added the
   conformance-suite row. Verification metadata stays pinned to the pre-commit source history until
   closeout (the change is uncommitted).
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex-aware `respond` — match

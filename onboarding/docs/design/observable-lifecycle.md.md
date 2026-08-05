@@ -6,8 +6,8 @@
 | path                   | `docs/design/observable-lifecycle.md`   |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-08T23:59+02:00                      |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`|
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                           |
 
 ## Governing Overview
@@ -45,13 +45,15 @@ metrics and compact normally.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Retention policy implementation follows this design split. | [controlplane/interaction_retention.py](../../mcp/src/agents_remember/controlplane/interaction_retention.py) |
-| Projection readers apply interaction TTL and pickup feedback. | [observer/snapshots.py](../../mcp/src/agents_remember/observer/snapshots.py) |
-| MCP `lifecycle_gate` exposes the unified public gate junction. | [mcp/server.py](../../mcp/src/agents_remember/mcp/server.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Retention policy implementation follows this design split. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
+| Projection readers apply interaction TTL and pickup feedback. | `read_agent_pickups` | mcp/src/agents_remember/observer/snapshots.py:549-594 |
+| MCP `lifecycle_gate` exposes the unified public gate junction. | `lifecycle_gate_tool` | mcp/src/agents_remember/application/gate_tools.py:384-454 |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R6): added the documented
   non-destructive operator-inbox storm recovery runbook: save live work first, quarantine

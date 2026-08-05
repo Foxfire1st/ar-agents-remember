@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/keymap/zones.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -28,18 +28,18 @@ React binding and the tests resolve zones the same way.
 
 ### Logic
 
-- `zoneForTarget(target)` (L28-L32): nearest `[data-kbzone]` container via `closest`; `pty` and
+- cit:([`zoneForTarget`], dashboard/src/data/keymap/zones.ts:28-32): nearest `[data-kbzone]` container via `closest`; `pty` and
   `composer` are recognized, everything else (unknown values, no container, null target) defaults
   to `chrome`.
-- `isEditableTarget` (L35-L42): contenteditable, TEXTAREA, SELECT, and non-readOnly INPUT consume
+- cit:([`isEditableTarget`], dashboard/src/data/keymap/zones.ts:35-42): contenteditable, TEXTAREA, SELECT, and non-readOnly INPUT consume
   plain typing.
-- `isPrintable` (L45-L47): single-character key with no ctrl/alt/meta; shift allowed (`?` etc.).
-- `routeKey(zone, ev, target)` (L54-L58) — the contract: `pty` handles ONLY a
+- cit:([`isPrintable`], dashboard/src/data/keymap/zones.ts:45-47): single-character key with no ctrl/alt/meta; shift allowed (`?` etc.).
+- cit:([`routeKey`], dashboard/src/data/keymap/zones.ts:54-58) — the contract: `pty` handles ONLY a
   `matchReservedChord` hit (everything else passes through); chrome/composer pass printable keys
   through when the target is editable (the GENERIC R7 suppression — there is deliberately no
   per-chord printable flag; review round 2 removed one from `chords.ts`), and handle everything
   else.
-- `slashOpensPalette(value, selectionStart)` (L64-L67): the composer `/`-rule — true only at
+- cit:([`slashOpensPalette`], dashboard/src/data/keymap/zones.ts:64-67): the composer `/`-rule — true only at
   caret position 0 or right after a newline. Pure over the editor's value + caret so CM6 (L5) and
   the placeholder textarea share it.
 
@@ -55,14 +55,15 @@ React binding and the tests resolve zones the same way.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Zone resolution, editable/printable classification, the routing contract, and the `/` rule. | L28-L67 | [zones.ts](zones.ts) |
-| The reserved-set gate the pty branch defers to. | L193-L199 | [reserved.ts](reserved.ts) |
-| The React binding that calls `zoneForTarget`/`routeKey`/`slashOpensPalette` per event. | L39-L77 | [../../panels/session-cockpit/useKeyboardZones.ts](../../panels/session-cockpit/useKeyboardZones.ts) |
-| The contract suite: PTY passthrough (incl. bare Esc + harness-owned chords), printable suppression, the `/` rule. | L35-L160 | [zones.test.ts](zones.test.ts) |
+| Zone resolution, editable/printable classification, the routing contract, and the `/` rule. | `zoneForTarget` | dashboard/src/data/keymap/zones.ts:28-32 |
+| The reserved-set gate the pty branch defers to. | `PTY_RESERVED` | dashboard/src/data/keymap/reserved.ts:62-150 |
+| The React binding that calls `zoneForTarget`/`routeKey`/`slashOpensPalette` per event. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| The contract suite: PTY passthrough (incl. bare Esc + harness-owned chords), printable suppression, the `/` rule. | "passes bare Esc — and any Esc chord — to the hosted harness (Claude owns Esc Esc)"; "printable keys never fire as bindings in editable targets"; "opens the palette only at the start of a line" | dashboard/src/data/keymap/zones.test.ts:46-49; dashboard/src/data/keymap/zones.test.ts:117-120; dashboard/src/data/keymap/zones.test.ts:154-159 |
 
 ## Update History
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 4 repository-reference citations (4/4 anchored and sourced; scoped citation check clean).
 
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (R5/R7): zone resolution over
   `data-kbzone` markers, the `routeKey` contract (PTY = reserved-set-only interception with

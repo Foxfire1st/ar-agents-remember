@@ -48,22 +48,22 @@ Concrete per-harness implementations belong to later active/library leaves.
 
 No Domain Documentation source is configured for this repository-owned port boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally. | L84-L190; L723-L775 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The topology regression requires exactly these two ports and forbids a control port. | L21-L28 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally. | "class ConversationEventEnvelope" | mcp/src/agents_remember/serving/conversation/models.py:633-633 |
+| The topology regression requires exactly these two ports and forbids a control port. | `test_exactly_two_conversation_ports_exist` | mcp/tests/test_conversation_foundation.py:22-29 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for these local protocols.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 

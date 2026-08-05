@@ -6,8 +6,8 @@
 | sourceRoute | skills/l-01-agent-lifecycles |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-15T23:31+02:00 |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`|
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -41,7 +41,23 @@ readiness and liveness, correlated receipts sit beneath durable inbox rows, inte
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
+### 260731-EFA-L6 Route Contract Review
+
+Three changes landed on this route. `roles/curator.md` (and its brief template) now make the
+curator's self-check explicit: `route_index_refresh`, `memory_quality_check`, and `drift_check`
+are scoped to the leaf by passing the enclosure `contract_path`; without it they resolve the
+official memory repo, and `route_index_refresh` writes there, leaving a repo the curator does not
+own dirty. `criteria/report-verification.md` promotes RV-5 (canonical invocation target
+provenance) from candidate to standing, with two catches including this leaf's S31 round-1
+contract-name finding. `criteria/code-seam.md` now names the `application` entry point instead of
+the controller in its production-wiring walk, matching the `controllers/` → `application/` move.
+
 ## Update History
+
+- 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: recorded the curator self-check doctrine
+  (`contract_path`-scoped `route_index_refresh`/`memory_quality_check`/`drift_check`), RV-5's
+  promotion to a standing criterion, and the controller → application-entry-point language in
+  `criteria/code-seam.md`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-07-15T23:31+02:00 — 260714-ACPUI-L2 closeout-preview delta: documented complete
   settings-owned role selections, dynamic model-local validation, native Claude/Codex/Pi initial
   configuration, provenance-only spawn env, and the no-composer/no-default-substitution boundary.

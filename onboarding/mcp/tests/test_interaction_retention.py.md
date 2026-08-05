@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_interaction_retention.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T14:20+02:00                     |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ operator-inbox entries and asserts `read_agent_pickups` returns `waiting-for-age
 5-minute pickup TTL and `check-chat` after it.
 
 The gate case is `test_an_open_gate_past_24h_leaves_the_projection_then_leaves_the_log`
-(L30-L75), and 260731-EFA-L5 split it into **two proven claims where there had been one**. It is
+cit:([`test_an_open_gate_past_24h_leaves_the_projection_then_leaves_the_log`], mcp/tests/test_interaction_retention.py:31-76), and 260731-EFA-L5 split it into **two proven claims where there had been one**. It is
 worth reading as the exception among that leaf's five updated suites: everywhere else the change
 was "assert emptiness instead of absence", and here that would have been the wrong repair.
 
@@ -67,20 +67,23 @@ strict reader proves the records physically left rather than that a file disappe
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Retention constants and policy helpers under test. | `INTERACTION_RECORD_TTL_SECONDS`, `gate_keep_ids` | [controlplane/interaction_retention.py](agents-remember/mcp/src/agents_remember/controlplane/interaction_retention.py) |
-| The compaction the test now drives directly, and the strict read it checks the result with; `_replace` routes through the contract's rewrite, which never unlinks. | `compact`, `read`, `_replace` | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
-| The rewrite that makes "emptied, not unlinked" true for every store at once: an empty record set is written as an empty file. | `rewrite_lines` | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The projection this test now asserts is non-destructive, and its own record that the 30 s physical prune was removed because it ran in a process that owns nothing here. | `read_gates` L514-L537 | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| Agent-pickup projection exercised by the state test. | `read_agent_pickups` L553-L589 | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| The suite that measures the loss this test's removed rewrite was causing, across all six stores and against the leaf's base commit. | L97-L168; L270-L310 | [test_controlplane_store_durability.py](agents-remember/mcp/tests/test_controlplane_store_durability.py) |
+| Retention constants and policy helpers under test. | `INTERACTION_RECORD_TTL_SECONDS`; `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:16-16; mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
+| The compaction the test now drives directly, and the strict read it checks the result with; `_replace` routes through the contract's rewrite, which never unlinks. | `compact`; `read`; `_replace` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:247-277; mcp/src/agents_remember/controlplane/store.py:316-325 |
+| The rewrite that makes "emptied, not unlinked" true for every store at once: an empty record set is written as an empty file. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| The projection this test now asserts is non-destructive, and its own record that the 30 s physical prune was removed because it ran in a process that owns nothing here. | `read_gates` | mcp/src/agents_remember/observer/snapshots.py:512-546 |
+| Agent-pickup projection exercised by the state test. | `read_agent_pickups` | mcp/src/agents_remember/observer/snapshots.py:549-594 |
+| The suite that measures the loss this test's removed rewrite was causing, across all six stores and against the leaf's base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:208-336 |
 
 ## Update History
 
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 9 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 72, 73; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (3 findings); no Tier-3 findings.
+
 - 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: this file is the **exception** among the leaf's
   five updated suites and the card now says so. `test_read_gates_prunes_open_gates_after_24h`
-  became `test_an_open_gate_past_24h_leaves_the_projection_then_leaves_the_log` (L30-L75), and the
+  became cit:([`test_an_open_gate_past_24h_leaves_the_projection_then_leaves_the_log`], mcp/tests/test_interaction_retention.py:31-76), and the
   reason is not the one that applies to the other four. Its `store.read("L1") == []` assertion was
   never a claim about absence: it passed only because the base commit's `read_gates` physically
   rewrote every gate log on the projection tick (`store.compact_current(..., rewrite=prune)`),

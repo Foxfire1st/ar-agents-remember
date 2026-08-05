@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `22562e0f2161c2d980385a462275dc370deb72eb` |
-| lastVerifiedCommitDate | 2026-07-20T00:45:01+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ None known for the normalized L3 adapter port.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -87,20 +87,20 @@ pass was available for this update.
 Capability data and mutation evidence have a dedicated model module; bridge lifecycle remains a
 separate consumer of the adapter protocol.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately. | L13-L159 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
-| The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | L152-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. | L146-L171; L422-L428 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. | L268-L295 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt. | L210-L217; L694-L712 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction. | L291-L357 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py); [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) L393-L477 |
+| Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately. | `CapabilitySnapshot`; `LaunchKnobs`; `SetResult` | mcp/src/agents_remember/serving/harness_capabilities.py:75-133; mcp/src/agents_remember/serving/harness_capabilities.py:136-148; mcp/src/agents_remember/serving/harness_capabilities.py:151-159 |
+| The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | `_prepare_controlled_launch` | mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
+| The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
+| The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. | `InterruptCapableAdapter` | mcp/src/agents_remember/serving/harness_control_bridge.py:268-295 |
+| The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt. | `_invoke_adapter` | mcp/src/agents_remember/serving/harness_submission_authority.py:729-757 |
+| Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction. | `submit_with_assets`; `interrupt` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:266-279; mcp/src/agents_remember/serving/codex_app_server_adapter.py:281-328; mcp/src/agents_remember/serving/pi_rpc_adapter.py:389-402; mcp/src/agents_remember/serving/pi_rpc_adapter.py:404-454 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this protocol contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -112,6 +112,8 @@ unsupported implementation and reducer callback preserve exact refs so adapters 
 by FIFO or request id alone.
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 5 citation entries (10 findings); no Tier-3 findings.
 
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the two runtime-checkable
   structural sub-protocols — `InterruptCapableAdapter.interrupt` (identity guards ride the write;

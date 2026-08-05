@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -197,19 +197,22 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| The changed-lines coverage floor the full tier carries, and its own behavioural suite. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py); [test_diff_coverage.py](agents-remember/mcp/tests/test_diff_coverage.py) |
-| CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | [registration/](agents-remember/mcp/src/agents_remember/mcp/registration/) |
-| The pytest configuration, complexity selection, and branch-coverage settings this suite reads. | [pyproject.toml](agents-remember/pyproject.toml) |
-| An independent recomputation that the wrapper's real argument vectors reach every tracked file. | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
-| The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
-| The two hooks whose tier arguments the delegation test pins. | [pre-commit](agents-remember/.githooks/pre-commit); [pre-push](agents-remember/.githooks/pre-push) |
-| CI runs the same wrapper on every branch push and pull request. | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths`, `derive_scope` | mcp/src/agents_remember/code_quality/check.py:119-178; mcp/src/agents_remember/code_quality/scope.py:110-110; mcp/src/agents_remember/code_quality/scope.py:325-345 |
+| The changed-lines coverage floor the full tier carries, and its own behavioural suite. | `DEFAULT_DIFF_COVERAGE_FLOOR`, `measure`, `test_a_diff_below_the_floor_fails_the_wrapper`, `test_the_floor_runs_inside_the_wrapper_rather_than_beside_it` | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
+| CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, "mcp/src/agents_remember/mcp/registration/*.py", `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; pyproject.toml:34-38; mcp/tests/test_code_quality_check.py:376-389 |
+| The complexity-selection and branch-coverage settings this suite reads. | `C901`; `branch` | pyproject.toml:17-17; pyproject.toml:68-70 |
+| The pytest configuration this suite reads. | `testpaths` | pyproject.toml:112-112 |
+| An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
+| The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | `run_fast_checks`, `run_full_checks` | .githooks/_gate.sh:120-173 |
+| CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:3-58 |
 
 ## Update History
+
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
+- 2026-08-03T03:59:59+02:00 — Curated 19 citation findings (9 table rows, 10 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator, **correcting the mid-leaf card below**.
   The complexity baseline it described no longer exists: `complexity_baseline.py`,

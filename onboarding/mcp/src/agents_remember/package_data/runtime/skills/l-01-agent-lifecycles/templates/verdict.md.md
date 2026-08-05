@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T17:35+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This template is the **adversarial reviewer's** artifact of the `l-01-agent-life
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/verdict.md`. It carries a prose header naming the writer (`roles/adversarial-reviewer.md`), a numbered **Rules** block, and two fenced variants. The **Master-Exit Variant** records the master integration branch, master/leaf task docs, recommendation, decider, artifact path, and exact gate evidence ref (`kind=reviewer-verdict`, `ref=...`, `verdict=...`), then reviews completion against master task docs, code quality for the master branch, onboarding-vs-code for master-side sidecars/route overviews, ranked refute-tested findings, and manager fix leaves for a BLOCK. The **Super-Exit Variant** records the super branch, portfolio/master task docs, recommendation, decider, artifact path, and the same gate evidence ref shape, then reviews portfolio completion, whole-super branch quality, accumulated onboarding/carry-over/ledger coherence, ranked findings, and orchestrator-routed fix leaves for a BLOCK. As of 260703-L12 round 2 (L12R-3) BOTH variants carry a **Criteria Catalog Results** section (one row per bound criterion — Criterion id · catalog · Ran · Finding · Evidence — plus a proposed-amendments line for the promotion ratchet), Rule 6 makes reporting every bound catalog criterion mandatory (the binding table lives in `roles/reviewer.md`), and a closing **Loop-Review Adaptation** section defines the loop-review shape: the master-exit variant minus the gate-evidence row and Judge-Evidence Note, decider = the loop owner (owning seat / orchestrator for the plan review), delta-verifies appending a dated delta section to the same artifact.
+The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/verdict.md`. It carries a prose header naming the writer (`roles/reviewer.md`), a numbered **Rules** block, and two fenced variants. The **Master-Exit Variant** records the master integration branch, master/leaf task docs, recommendation, decider, artifact path, and exact gate evidence ref (`kind=reviewer-verdict`, `ref=...`, `verdict=...`), then reviews completion against master task docs, code quality for the master branch, onboarding-vs-code for master-side sidecars/route overviews, ranked refute-tested findings, and manager fix leaves for a BLOCK. The **Super-Exit Variant** records the super branch, portfolio/master task docs, recommendation, decider, artifact path, and the same gate evidence ref shape, then reviews portfolio completion, whole-super branch quality, accumulated onboarding/carry-over/ledger coherence, ranked findings, and orchestrator-routed fix leaves for a BLOCK. As of 260703-L12 round 2 (L12R-3) BOTH variants carry a **Criteria Catalog Results** section (one row per bound criterion — Criterion id · catalog · Ran · Finding · Evidence — plus a proposed-amendments line for the promotion ratchet), Rule 6 makes reporting every bound catalog criterion mandatory (the binding table lives in `roles/reviewer.md`), and a closing **Loop-Review Adaptation** section defines the loop-review shape: the master-exit variant minus the gate-evidence row and Judge-Evidence Note, decider = the loop owner (owning seat / orchestrator for the plan review), delta-verifies appending a dated delta section to the same artifact.
 
 ### Conventions
 
@@ -35,7 +35,7 @@ No TODO markers are present in this report template.
 
 No external domain documentation applies to this repository-local report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -43,13 +43,13 @@ No external domain documentation applies to this repository-local report templat
 
 This bundle copy is the shape the adversarial-reviewer job writes at each seam; its lenses cite the impact-analysis and onboarding-coherency backing reports.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | n/a | [verdict.md](agents-remember/skills/l-01-agent-lifecycles/templates/verdict.md) |
-| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. | n/a | [adversarial-reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md) |
-| Lens 1/2 cite a backing impact-analysis report. | n/a | [impact-analysis.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md) |
-| Lens 3 cites a backing onboarding-coherency report. | n/a | [onboarding-coherency.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md) |
-| The frame defines the two seams and the evidence-not-decision / block-decomposes-into-fix-leaves doctrine. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| Sync-propagated bundle copy of the canonical templates source. | `# Verdict Template (adversarial reviewer)` | skills/l-01-agent-lifecycles/templates/verdict.md:1-142 |
+| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. | "judge evidence"; `### MASTER-EXIT — Manager Before Orchestrator Handover` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:31-36; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:90-135 |
+| Lens 1/2 cite a backing impact-analysis report. | "impact-analysis report path"; `# Impact-Analysis Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:43-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52 |
+| Lens 3 cites a backing onboarding-coherency report. | "onboarding-coherency report path"; `# Onboarding-Coherency Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:53-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48 |
+| The frame defines the two seams and the evidence-not-decision doctrine (SKILL.md) and the block-decomposes-into-fix-leaves doctrine (the reviewer role). | "verdicts are evidence"; "decomposable fix leaves" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:190-201; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:109-111 |
 
 As of cycle 4 the decider rows are ruled: master-exit = orchestrator (delegated master-handover-approval; serious issues escalate to the developer); super-exit = developer (human review concentrates at the super gate); the reviewer role file reference is roles/reviewer.md.
 
@@ -57,11 +57,13 @@ As of cycle 4 the decider rows are ruled: master-exit = orchestrator (delegated 
 
 No sibling repository evidence is needed for this report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 5 citation rows; the judge-evidence row was re-bound from the removed roles/adversarial-reviewer.md to roles/reviewer.md (L31-L36 + the seam rubrics L90-L135), the fix-leaf doctrine split to SKILL.md L190-L201 plus reviewer.md L109-L111, and the stale role-file mention in Logic corrected. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-3): Rule 6 (report every bound catalog criterion) + the Criteria Catalog Results section in both variants + the Loop-Review Adaptation note (master-exit shape minus gate machinery; decider = loop owner; delta sections append). The ruled-deciders shape is unchanged. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): decider rows ruled per the seam decision; L4 shorthand replaced. Verification metadata pinned until closeout stamps the L8 commit.

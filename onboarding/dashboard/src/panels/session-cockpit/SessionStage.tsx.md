@@ -16,31 +16,26 @@
 
 ## Purpose
 
-The **SessionStage container** (260715-FEUI-L2 S5, spec §1.2): the stage's FIXED layer order —
-HeaderStrip (always) → the WorkingLine slot (FILLED by L6 via the `workingLine` prop) → the
-surface (the PTY — L6's PtySurface) → the composer (L5). L2 shipped the container + HeaderStrip;
-the surface/composer stay OWNED BY SessionsView (passed as `children`) so L1's keyboard-zone
-markers survive and the zone contract stays testable. FEUI-L4 adds only a controlled-popover
-bridge from the view into the header's sole model/effort control.
+The **SessionStage container** is the fixed header/surface/composer boundary. It renders the
+`HeaderStrip` (or the explained no-focus identity) in `data-stage-header`, forwards the view-owned
+`headerExtra` and `controlPopover` bridge, and renders `children`. `SessionsView` owns the
+content below `ChatsStageBody`: it chooses `ConversationWorkingLine` for live harness conversations
+or `WorkingLine` otherwise, followed by `InteractionBar` and `SessionComposer`. The handoff
+message is an assistive `role="status"` note via `handoffNote`, not visible amber chrome.
 
 ## Code Commentary
 
 ### Logic
 
-- **Header row** (L62-L76): `data-stage-header tabIndex={-1}` (the F6/composer-Esc focus landing
-  from L1) hosting the `HeaderStrip` for the focused seat — or, with NO focused session, the
-  EXPLAINED empty identity ("no focused session — pick one on the rail, or run “Launch session…”
-  from the palette (ctrl+k)"; R9 — never an unexplained empty stage; copy updated by L3, which
-  shipped the launcher the old "launch from Chats (cockpit launcher: L5)" hint deferred to).
-  `headerExtra` renders view-owned chips after the strip (the ~80-col floor hint stays owned by
-  SessionsView). The optional `controlPopover` prop is forwarded unchanged to HeaderStrip so
-  palette commands open the same mounted control as the header trigger.
-- **Handoff note (F17)** (L76-L80): the one-line `role="status"` amber note when the previously
-  focused seat retired/landed (text built by SessionsView's handoff effect).
-- **WorkingLine slot** (L84-L87): `data-slot="working-line"` directly under the header — L6's
-  ONE additive optional `workingLine` prop renders the turn theater (verb, ~elapsed, ⏹ stop)
-  inside it; the slot is the prop's ONLY tenant and stays zero-height when no line renders.
-- **Children** (L88): the PTY surface/composer from SessionsView.
+- **Header row**: `data-stage-header` with `tabIndex={-1}` is the F6/composer-Esc focus landing
+  from L1; it hosts `HeaderStrip` for the focused seat or the explained no-focus identity.
+  `headerExtra` renders view-owned chips after the strip, and `controlPopover` is forwarded
+  unchanged to `HeaderStrip` so palette commands open the same mounted control.
+- **Handoff note (F17)**: the one-line `role="status"` note is supplied through `handoffNote` and
+  remains available to assistive technology rather than standing visual chrome.
+- **View-owned working content**: `SessionsView` chooses `ConversationWorkingLine` or `WorkingLine`
+  below `ChatsStageBody`; `SessionStage` does not own a `workingLine` prop.
+- **Children**: the PTY surface/composer passed from `SessionsView`.
 
 ### Invariants And Boundaries
 
@@ -53,14 +48,18 @@ bridge from the view into the header's sole model/effort control.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The layer order, control-popover bridge, empty identity, handoff note, and filled slot. | L46-L95 | [SessionStage.tsx](SessionStage.tsx) |
-| The header line rendered for the focused seat. | L79-L145 | [HeaderStrip.tsx](HeaderStrip.tsx) |
-| The owner passing focused/cockpit/handoff/workingLine/children + the floor chip. | L606-L657 | [SessionsView.tsx](SessionsView.tsx) |
-| The slot's only tenant — L6's turn theater. | L76-L129 | [WorkingLine.tsx](WorkingLine.tsx) |
-| The focus selectors that target `data-stage-header`. | — | [../../data/keymap/focus.ts](../../data/keymap/focus.ts) |
-| The suite covering slot position, handoff, and the explained empty state. | L83-L107 | [HeaderStrip.test.tsx](HeaderStrip.test.tsx) |
+| The fixed header, empty identity, handoff status, and popover bridge. | `SessionStage`; "data-stage-header"; `handoffNote` | dashboard/src/panels/session-cockpit/SessionStage.tsx:33-43; dashboard/src/panels/session-cockpit/SessionStage.tsx:46-102 |
+| The header line rendered for the focused seat. | `HeaderStrip` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
+| `SessionStage` owns the fixed header and the child stage-body slot below it. | `SessionStage` | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-102 |
+| `SessionsView` supplies `ChatsStageBody` to that child slot. | "<SessionStage"; "<ChatsStageBody" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1112-1195 |
+| `SessionsView` chooses `ConversationWorkingLine` when the focused live conversation is a harness. | "focused.kind === \"harness\" && focusedConversationLive"; "<ConversationWorkingLine" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1215-1216 |
+| `SessionsView` chooses `WorkingLine` in the other branch of that focused-conversation condition. | "focused.kind === \"harness\" && focusedConversationLive"; "<WorkingLine" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1215-1218 |
+| `SessionsView` places `InteractionBar` after the selected harness/non-harness working-line slot. | "data-slot=\"working-line\""; "focused.kind === \"harness\" && focusedConversationLive"; "<ConversationWorkingLine"; "<WorkingLine"; "<InteractionBar" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1209-1232 |
+| The focus selectors that target `data-stage-header`. | "[data-stage-header]" | dashboard/src/data/keymap/focus.ts:32-32 |
+| `SessionStage` exposes the assistive handoff status when a handoff note exists. | "handoff ?"; "role=\"status\"" | dashboard/src/panels/session-cockpit/SessionStage.tsx:94-95 |
+| The `HeaderStrip` suite asserts no `WorkingLine` slot in `SessionStage` chrome, covers handoff, and covers explained empty identity. | "reserves NO WorkingLine slot"; "shows the focus-handoff note" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:119-130; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:132-147 |
 
 ## Current L5I Maintenance
 
@@ -71,6 +70,7 @@ chrome after a chat ends.
 
 ## Update History
 
+- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): separated `SessionStage` chrome/body-slot ownership from `SessionsView` child placement; the `ChatsStageBody` nesting now cites the continuous 1112-1195 owner span and the working-line/InteractionBar ordering the continuous 1209-1232 branch span; the scoped fixer confirmed the final ranges with no writes.
 - 2026-07-24T13:17:17Z — Curator: documented title-row action placement, working-line relocation,
   and screen-reader-only handoff copy; verification fields remain pre-commit.
 

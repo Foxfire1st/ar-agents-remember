@@ -66,13 +66,15 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | [../../leaf_refs.py](../../leaf_refs.py.md) |
-| Start contract builder that calls these helpers. | [start_contract.py](start_contract.py.md) |
-| `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | [../worktree_contract.py](../worktree_contract.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | `LeafRefStatus`, `LeafRefResolutionError`, `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:45-72; mcp/src/agents_remember/worktrees/leaf_refs.py:94-147 |
+| Start contract builder that calls these helpers. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:187-206 |
+| `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | `ContractError`, `_task_vocabulary`, `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:92-93; mcp/src/agents_remember/worktrees/worktree_contract.py:162-179; mcp/src/agents_remember/worktrees/worktree_contract.py:182-197 |
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 6 citation findings (3 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-08-01T09:14+02:00 — 260731-EFA-L4 curator: the card described only two functions; the module
   now has three. Documented `invalid_contract_request_result(error: ContractError)` — the refusal

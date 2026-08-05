@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/notes.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ to `undefined` rather than picking one.
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | A same-origin browser client; nothing crosses repositories. | — | — |
 
@@ -66,20 +66,23 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The serving endpoints this client wraps. | [serving/notes.py](agents-remember/mcp/src/agents_remember/serving/notes.py) |
-| The shared transport (`getJson`, `qs`, `FilesApiError`) reused here. | [data/files.ts](agents-remember/dashboard/src/data/files.ts) |
-| The notes view consuming these helpers + the resolver. | [panels/TaskNotes.tsx](agents-remember/dashboard/src/panels/TaskNotes.tsx) |
-| The test suite for this module. | [data/notes.test.ts](agents-remember/dashboard/src/data/notes.test.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The serving endpoints this client wraps. | `list_notes`; `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136 |
+| The shared transport (`getJson`, `qs`, `FilesApiError`) reused here. | `getJson`; `qs`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97; dashboard/src/data/files.ts:99-100 |
+| The notes view consuming these helpers + the resolver. | `TaskNotes` | dashboard/src/panels/TaskNotes.tsx:73-161 |
+| The test suite for this module. | "builds the list / read URLs"; "throws the shared FilesApiError on a non-ok response" | dashboard/src/data/notes.test.ts:17-26; dashboard/src/data/notes.test.ts:28-31 |
 
 ## Update History
+
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 8 citation finding(s); scoped recheck clean.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

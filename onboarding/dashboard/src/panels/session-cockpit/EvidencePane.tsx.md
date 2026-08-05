@@ -46,29 +46,30 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pure evidence/detail projection. | L34-L105 | [EvidencePane.tsx](EvidencePane.tsx) |
-| Shared terminate/retire residual rendering and exact dismissal. | L107-L167 | [EvidencePane.tsx](EvidencePane.tsx) |
-| Full pane rendering and explicit actions. | L169-L374 | [EvidencePane.tsx](EvidencePane.tsx) |
-| Lifecycle notice store shared with the stage. | L1-L191 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
-| Set acknowledgment driver. | L326-L336 | [../../data/setClient.ts](../../data/setClient.ts) |
+| Pure evidence/detail projection. | `submitEvidenceLines` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:50-93 |
+| Shared terminate/retire residual rendering and exact dismissal. | `RetainedStopResiduals` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:118-167 |
+| Full pane rendering and explicit actions. | `EvidencePane` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:169-374 |
+| Lifecycle notice store shared with the stage. | `useLifecycleNotices` | dashboard/src/data/sessionLifecycle.ts:123-125 |
+| Set acknowledgment driver. | `acknowledgeSetAttention` | dashboard/src/data/setClient.ts:338-343 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Records the
   full evidence audit surface, explicit mark-seen action, and authoritative post-removal stop

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/runtime.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ None; child endpoint implementations are independently owned by the L1/L2/L3 lea
 
 No Domain Documentation source is configured for this internal composition authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -76,22 +76,24 @@ No Domain Documentation source is configured for this internal composition autho
 The runtime is constructed once inside `register_harness_control_routes`, the only place where all
 bound authorities are already in hand, and installed once by the root conversation composition.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The production composition constructs the one runtime from authorities already in hand and passes it to the root registration. | L144-L162 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| The root registration installs the runtime on `app.state` before mounting the unchanged root router. | L22-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The typed composition error covers missing, duplicate, foreign, and missing-member failures. | L30-L38 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
-| Contract tests prove single installation at both seams, duplicate/missing/foreign failure, missing-authority construction failure, immutability, per-app isolation, and no import-time singleton. | L106-L215 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
+| The production composition constructs the one runtime from authorities already in hand and passes it to the root registration. | `ConversationRuntime`; `register_harness_control_routes`; `register_conversation_routes` | mcp/src/agents_remember/serving/app.py:757-774; mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
+| The root registration installs the runtime on `app.state` before mounting the unchanged root router. | `register_conversation_routes`; `install_conversation_runtime`; `include_router` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
+| The typed composition error covers missing, duplicate, foreign, and missing-member failures. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:30-37 |
+| Contract tests prove single installation at both seams, duplicate/missing/foreign failure, missing-authority construction failure, immutability, per-app isolation, and no import-time singleton. | `test_production_composition_installs_one_typed_runtime`; `test_create_app_installs_runtime_from_live_composition`; `test_duplicate_installation_fails_closed`; `test_second_harness_control_registration_fails_closed`; `test_missing_installation_fails_closed`; `test_foreign_state_binding_fails_closed`; `test_missing_authority_fails_at_construction`; `test_runtime_and_scope_are_immutable`; `test_no_import_time_mutable_singleton`; `test_child_composition_is_isolated_per_app`; `test_production_composition_accepts_no_injected_identity`; `test_production_modules_have_no_fixture_pty_or_browser_identity_reliance` | mcp/tests/test_conversation_runtime_composition.py:113-132; mcp/tests/test_conversation_runtime_composition.py:135-139; mcp/tests/test_conversation_runtime_composition.py:142-146; mcp/tests/test_conversation_runtime_composition.py:149-154; mcp/tests/test_conversation_runtime_composition.py:157-163; mcp/tests/test_conversation_runtime_composition.py:166-170; mcp/tests/test_conversation_runtime_composition.py:173-184; mcp/tests/test_conversation_runtime_composition.py:187-194; mcp/tests/test_conversation_runtime_composition.py:197-208; mcp/tests/test_conversation_runtime_composition.py:211-224; mcp/tests/test_conversation_runtime_composition.py:227-233; mcp/tests/test_conversation_runtime_composition.py:236-252 |
 
 ## Cross-Repo References
 
 No cross-repository boundary participates in this app-local composition value.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 4 table citations and normalized 5 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: created the runtime authority sidecar for the
   immutable app-scoped composition repair. Verification is blank because the new source file is

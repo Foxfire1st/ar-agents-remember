@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ and roleless/plain-terminal behavior remains distinct from role-configured nativ
 
 ### 260707-HFX2-L18 Plain-Terminal Regression
 
-`test_plain_terminal_spawn_skips_harness_dispatch` pins the controller branch exposed by the L18
+`test_plain_terminal_spawn_skips_harness_dispatch` pins the application entry point branch exposed by the L18
 decomposition. A `kind="terminal"` spawn succeeds without a `harness` response field, launches the
 plain `/bin/bash` command through the fake host, and persists a terminal-kind catalog row whose
 binding role is `terminal`. The test proves that flattening the dispatch locals did not route plain
@@ -84,7 +84,7 @@ L2 contracts:
   carries the leaf, spawned-by session/lifecycle, and delivered+submitted flags; the model/effort knobs
   are seeded as `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` in the spawn env; the provenance persists on the
   catalog row; and the packet was pasted-and-submitted into the session's tmux pane.
-- **spawn role** (`test_spawn_records_role_from_env_and_reports_it`, L14): a spawn whose `env`
+- **spawn role** (cit:([`test_spawn_records_role_from_env_and_reports_it`], mcp/tests/test_spawn_agent_session.py:305-331)): a spawn whose `env`
   carries `AR_SPAWN_ROLE` persists it on the catalog row (`spawn_role`) and reports it as
   `spawnRole` in the `spawned` payload — the Chats command-tree grouping key.
 - **leaf-ref normalization** (`test_spawn_normalizes_legacy_leaf_slug_before_persisting`, HFX-L4):
@@ -176,25 +176,25 @@ No known follow-up in this file.
 
 No relevant external/domain documentation found; the behavior is local MCP/serving dispatch policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests pin the local agent-facing dispatch composition, not an external protocol. | L160-L307 | [test_spawn_agent_session.py](agents-remember/mcp/tests/test_spawn_agent_session.py) |
+| The tests pin the local agent-facing dispatch composition, not an external protocol. | `call_spawn` | mcp/tests/test_spawn_agent_session.py:71-91 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tool under test composes the opener + echo-confirmed paste and returns the strict spawn payload. | L82-L211 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | resolve_catalog_leaf_key | [leaf_ref_validation.py](agents-remember/mcp/src/agents_remember/serving/leaf_ref_validation.py) |
-| The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | L84-L174 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | L62-L67; L133-L229 | [terminal_paste.py](agents-remember/mcp/src/agents_remember/serving/terminal_paste.py) |
-| The `POST /api/terminal/{session}/paste` endpoint under test. | L653-L676 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
+| The tool under test composes the opener + echo-confirmed paste and returns the strict spawn payload. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
+| The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
+| The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | `PasteResult` | mcp/src/agents_remember/serving/terminal_paste.py:53-59 |
+| The `POST /api/terminal/{session}/paste` endpoint under test. | `api_terminal_paste` | mcp/src/agents_remember/serving/app.py:1915-1927 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The tests cover local MCP/serving behavior only. | - | - |
 
@@ -217,6 +217,10 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-08-04T18:41+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 5 citation rows with exact anchors (`call_spawn`, `spawn_agent_session_payload`, `resolve_catalog_leaf_key`, `open_terminal_session`, `api_terminal_paste`) and ledger-verified ranges; converted the spawn-role prose reference to cit form bound to `test_spawn_records_role_from_env_and_reports_it` (305-332), dropping the task-id fragment mistaken for a line number. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: `spawn_agent_session_payload` now takes the
   `SpawnSeat`, `RetiredSpawnInputs`, `SpawnedBy`, and `SpawnOverrides` parameter objects, so every
   suite calls it through the new module-level `call_spawn(config, **flat)` shim; `_FakeHost.ensure`

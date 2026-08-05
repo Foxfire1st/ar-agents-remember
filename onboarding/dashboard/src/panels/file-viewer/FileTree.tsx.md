@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/file-viewer/FileTree.tsx`    |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-29T09:06+02:00                             |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`         |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -51,13 +51,15 @@ single-select. The sidecar marker is code-side only (onboarding entries carry no
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Headless Tree adapter it renders (async loading, selection, hotkeys). | L19-L55 | [useFilesTree.ts](useFilesTree.ts) |
-| The page that mounts it twice (code + onboarding sides) and supplies `onOpen`. | L236-L249 | [FileViewer.tsx](FileViewer.tsx) |
-| The `DirEntry`/`Scope` types it renders. | L10-L34 | [files.ts](agents-remember/dashboard/src/data/files.ts) |
-| The route overview that governs this component. | — | [overview.md](overview.md) |
+| The Headless Tree adapter it renders (async loading, selection, hotkeys). | `useFilesTree` | dashboard/src/panels/file-viewer/useFilesTree.ts:19-55 |
+| The page that mounts it twice (code + onboarding sides) and supplies `onOpen`. | `FileViewerImpl` | dashboard/src/panels/file-viewer/FileViewer.tsx:151-273 |
+| The `DirEntry`/`Scope` types it renders. | `DirEntry`; `Scope` | dashboard/src/data/files.ts:13-13; dashboard/src/data/files.ts:31-37 |
+| The route overview that governs this component. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-107 |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 4 repo-internal citation rows and preserved verification metadata.
 
 - 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): renders one Headless Tree (code or onboarding) as indented buttons with fully-controlled mouse click (select + folder toggle + file open, overriding the library's `onClick` so a folder never double-toggles) and a code-side `hasSidecar` marker. Verification metadata pinned to the task base until closeout stamps the L2 code commit.

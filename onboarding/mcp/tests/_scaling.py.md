@@ -42,27 +42,28 @@ No known follow-up in this file.
 
 No external documentation governs these repo-local regression helpers.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources; no Domain Documentation entries are configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper module documents the CS-6 regression floor and the three assertion families future tests reuse. | L1-L19; L62-L155 | [mcp/tests/_scaling.py](agents-remember/mcp/tests/_scaling.py) |
-| The `GrowthCeiling` value object and the `SUBQUADRATIC` default that `assert_subquadratic()` accepts as one `ceiling` parameter. | L33-L59 | [mcp/tests/_scaling.py](agents-remember/mcp/tests/_scaling.py) |
-| Store/projection CS-6 tests import all three helpers on one line and reuse them throughout (16 call sites between L113 and L701). | L27; L113-L117; L147-L149; L604-L617 | [mcp/tests/test_store_scaling_cs6.py](agents-remember/mcp/tests/test_store_scaling_cs6.py) |
+| The helper module documents the CS-6 regression floor and the three assertion families future tests reuse. | `measure_scaling`; `assert_subquadratic`; `assert_bounded_file_size`; `assert_bounded_count` | mcp/tests/_scaling.py:62-85; mcp/tests/_scaling.py:88-131; mcp/tests/_scaling.py:134-141; mcp/tests/_scaling.py:144-155 |
+| The `GrowthCeiling` value object and the `SUBQUADRATIC` default that `assert_subquadratic()` accepts as one `ceiling` parameter. | `GrowthCeiling`; `SUBQUADRATIC`; `assert_subquadratic` | mcp/tests/_scaling.py:33-55; mcp/tests/_scaling.py:58-58; mcp/tests/_scaling.py:88-131 |
+| The CS-6 store/projection suite imports the three scaling helpers and invokes them in its compaction and cooldown scenarios. | "from _scaling import"; `test_compact_reclaims_stale_records_and_bounds_file_at_two_sizes`; `test_in_cooldown_with_snapshot_does_not_read_the_file` | mcp/tests/test_store_scaling_cs6.py:27-27; mcp/tests/test_store_scaling_cs6.py:98-117; mcp/tests/test_store_scaling_cs6.py:119-149 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository tests only. | N/A | N/A |
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: bound helper reuse to the importing suite's concrete scenarios under the adversarial verdict, then the exact scoped fixer/check passed.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `test_store_scaling_cs6.py`
   citation. The single import of all three helpers is L27 (was cited L20, which is now

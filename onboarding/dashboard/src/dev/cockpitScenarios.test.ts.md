@@ -91,37 +91,40 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Cross-Repo References
 
 The race suite exercises repository-local generation guards and stores; no cross-repository source applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
 This table is two columns; line ranges are carried inside the `Finding` cell so every row keeps the
 same arity.
 
-| Finding | Source Path |
-| --- | --- |
-| L110-L142 — the daemon-answerability `describe` and its two exact-key-set assertions. | [cockpitScenarios.test.ts](cockpitScenarios.test.ts) |
-| L63-L75 — `authorityTransport`'s `withdraw`, now annotated `: Promise<WithdrawalResultWire>`, with the comment recording why the concise async body lost excess-property checking. | [cockpitScenarios.test.ts](cockpitScenarios.test.ts) |
-| L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them. | [submissionLifecycleClient.ts](../data/submissionLifecycleClient.ts) |
-| L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker. | [harnessCatalog.ts](../data/harnessCatalog.ts) |
-| L355-L366 — the server's `DetectedHarness` / `DetectedHarnessesResponse`, `extra="forbid"` over exactly three fields. | [response_contract.py](../../../mcp/src/agents_remember/serving/response_contract.py) |
-| L456-L468 — the `/api/harnesses` fixture these assertions read, pinned by `satisfies HarnessInfo[]`. | [cockpitScenarios.ts](cockpitScenarios.ts) |
-| L55-L64 — the guard's record of the unmarked-mirror blind spot both removed fixtures lived in. | [wireFixtureGuard.ts](../test/wireFixtureGuard.ts) |
-| Unit under test. | [cockpitScenarios.ts](cockpitScenarios.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| L110-L142 — the daemon-answerability `describe` and its two exact-key-set assertions. | "the scenario server answers only what the daemon could answer" | dashboard/src/dev/cockpitScenarios.test.ts:110-142 |
+| L63-L75 — `authorityTransport`'s `withdraw`, now annotated `: Promise<WithdrawalResultWire>`, with the comment recording why the concise async body lost excess-property checking. | `authorityTransport` | dashboard/src/dev/cockpitScenarios.test.ts:53-77 |
+| L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
+| L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
+| L355-L366 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. | `WireResponse`; `DetectedHarness`; `DetectedHarnessesResponse`; "model_config = ConfigDict("; "extra=\"forbid\"," | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:355-360; mcp/src/agents_remember/serving/response_contract.py:363-366 |
+| L456-L468 — the `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`. | "path === \"/api/harnesses\""; "return json({"; "harnesses: ["; "satisfies HarnessInfo[]" | dashboard/src/dev/cockpitScenarios.ts:456-468 |
+| L55-L64 — the guard documents the unmarked-mirror blind spot and names the removed `control` and `bridgeEpoch` fixtures. | "UNMARKED MIRROR"; `control`; `bridgeEpoch` | dashboard/src/test/wireFixtureGuard.ts:55-55; dashboard/src/test/wireFixtureGuard.ts:62-63 |
 
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+
+- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D1-D2 operative response and route-return evidence for the same-reviewer residual delta.
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 7 repo-internal citation rows and preserved verification metadata.
 
 - 2026-08-01T10:20+02:00 — 260731-EFA-L4 curator: documented the new
   `describe("the scenario server answers only what the daemon could answer")` — two exact-sorted-key-set

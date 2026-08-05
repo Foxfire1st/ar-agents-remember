@@ -43,26 +43,28 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Client and pure derivations under test. | L1-L248 | [sessionCapabilities.ts](sessionCapabilities.ts) |
-| Shared recorded-shape fixture pack. | L1-L358 | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts) |
+| Client and pure derivations under test. | `classifySessionCapabilitiesResponse`, `deriveEffortMenu`, `visibleModelRows`, `cycleEffortTarget`, `effectiveSelection` | dashboard/src/data/sessionCapabilities.ts:71-92; dashboard/src/data/sessionCapabilities.ts:157-178; dashboard/src/data/sessionCapabilities.ts:182-186; dashboard/src/data/sessionCapabilities.ts:193-202; dashboard/src/data/sessionCapabilities.ts:219-248 |
+| Shared recorded-shape fixture pack. | `ENVELOPES_BY_CACHE_STATUS` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:175-179 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 2 repository-internal test-reference rows for the capability derivations and recorded fixture pack; final scoped result 0 (checker-clean).
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

@@ -53,15 +53,17 @@ No relevant documentation found.
 
 The non-distribution guarantee is structural: the sync helper only copies the canonical `skills/` tree.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets; `dev-skills/` is never a target. | L14-L56 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
+| `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets; `dev-skills/` is never a target. | `CANONICAL_SKILLS` | scripts/sync-skills.py:15-15 |
 
 ## Cross-Repo References
 
 No relevant cross-repo evidence found.
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 1 repository-reference citation (1/1 anchored and sourced; scoped citation check clean).
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

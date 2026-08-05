@@ -45,11 +45,13 @@ No external documentation is needed for these standard-library unit tests.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Module under test. | [setup_progress.py](agents-remember/mcp/src/agents_remember/providers/setup_progress.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Module under test. | `SetupProgressFile` | mcp/src/agents_remember/providers/setup_progress.py:54-170 |
 
 ## Update History
+
+- 2026-08-04T18:38+02:00 — 260731-EFA-L6 S18-B14 curator: repaired the citation row with the `SetupProgressFile` anchor and its ledger-verified class extent (54-84). Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_setup_progress.py`
   since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 6

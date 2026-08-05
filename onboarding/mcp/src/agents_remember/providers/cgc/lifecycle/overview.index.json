@@ -90,6 +90,8 @@
       "cgc/lifecycle/",
       "--from-settings",
       "cgc_settings_from_file",
+      "__getattr__",
+      "watcher_cgc_result",
       "CgcBackendContext",
       "settings_path",
       "provider_settings",
@@ -107,9 +109,7 @@
       "CgcHostPorts",
       "CgcRepo",
       "--repo-id",
-      "--code-repo-root",
-      "providers/cgc/lifecycle/",
-      "cgc_*"
+      "--code-repo-root"
     ]
   },
   "fallback": {

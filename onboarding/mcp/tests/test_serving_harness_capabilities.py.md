@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_harness_capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash |  `a1b0aa9143fa777efd8389892e3283ff257ef44d`|
-| lastVerifiedCommitDate |  2026-07-16T06:37:02+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,34 +60,34 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source was available to cite. | — | — |
 
 ## Repo-Internal References
 
 The test source directly proves cache behavior and envelope shape; the catalog implementation owns
 fingerprinting, quarantine, bounded retention, and native discovery composition.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| A cache hit performs one token-free discovery with current environment and preserves model-gated effort plus category-keyed config options in normalized JSON. | L88-L105 | [test_serving_harness_capabilities.py](agents-remember/mcp/tests/test_serving_harness_capabilities.py) |
-| Explicit refresh and executable change replace the one retained entry and produce refreshed or miss status as appropriate. | L107-L131 | [test_serving_harness_capabilities.py](agents-remember/mcp/tests/test_serving_harness_capabilities.py) |
-| Failed explicit refresh quarantines stale data until ordinary rediscovery, while an older failure cannot delete a later concurrent success. | L133-L175 | [test_serving_harness_capabilities.py](agents-remember/mcp/tests/test_serving_harness_capabilities.py) |
-| Same-fingerprint concurrent callers share one in-flight discovery. | L177-L187 | [test_serving_harness_capabilities.py](agents-remember/mcp/tests/test_serving_harness_capabilities.py) |
-| The daemon envelope nests the unchanged normalized snapshot and carries only schema, harness, cache status, and install fingerprint around it. | L48-L64 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
-| Cache lookup is bounded per native harness, single-flight under one lock, and conditionally removes only the observed entry on failed explicit refresh. | L80-L154 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
-| Discovery resolves the installed executable, uses current environment, normalizes effective argv, and calls only the adapter `discover()` port. | L156-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
+| The cache test proves the first lookup is a miss, the second is a hit, and the hit does not launch a second discovery; normalized JSON preserves model-gated effort and category-keyed config options. | "test_cache_hit_is_discover_only_and_preserves_model_gating"; "self.assertEqual((first.cache_status, second.cache_status), (\"miss\", \"hit\"))"; "self.assertEqual(len(factory.launches), 1)"; "self.assertEqual(factory.environments, [{\"AUTH_ACCOUNT\": \"current\"}])"; `effortOptions`; `configOptions` | mcp/tests/test_serving_harness_capabilities.py:88-106 |
+| Focused tests prove explicit refresh re-enumerates and replaces the bounded entry, while executable change yields a miss with a new fingerprint and still one retained entry. | "test_refresh_reenumerates_and_replaces_the_bounded_entry"; "self.assertEqual(refreshed.cache_status, \"refreshed\")"; "self.assertEqual(refreshed.snapshot.models[0].key, \"model-b\")"; "test_executable_change_invalidates_without_growing_the_cache"; "self.assertEqual(changed.cache_status, \"miss\")"; "self.assertNotEqual(first.install_fingerprint, changed.install_fingerprint)"; "self.assertEqual(catalog.retained_entry_count, 1)" | mcp/tests/test_serving_harness_capabilities.py:107-117; mcp/tests/test_serving_harness_capabilities.py:119-131 |
+| Failed explicit refresh quarantines stale data until ordinary rediscovery, while an older failure cannot delete a later concurrent success. | `_refresh_entry`; `get` | mcp/src/agents_remember/serving/harness_capability_catalog.py:110-135; mcp/src/agents_remember/serving/harness_capability_catalog.py:137-155 |
+| Same-fingerprint concurrent callers share one in-flight discovery. | `_refresh_entry` | mcp/src/agents_remember/serving/harness_capability_catalog.py:137-155 |
+| The daemon envelope nests the unchanged normalized snapshot and carries only schema, harness, cache status, and install fingerprint around it. | `CapabilityCatalogResult`; `to_json` | mcp/src/agents_remember/serving/harness_capability_catalog.py:49-65 |
+| Cache lookup is bounded per native harness, single-flight under one lock, and conditionally removes only the observed entry on failed explicit refresh. | `HarnessCapabilityCatalog`; `get`; `_refresh_entry` | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-196 |
+| Discovery resolves the installed executable, uses current environment, normalizes effective argv, and calls only the adapter `discover()` port. | `_installed_harness`; `_discover` | mcp/src/agents_remember/serving/harness_capability_catalog.py:157-179; mcp/src/agents_remember/serving/harness_capability_catalog.py:181-196 |
 
 ## Cross-Repo References
 
 No sibling repository is needed to prove this own-adapter daemon cache.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: corrected cache-hit semantics and reissued whole-claim evidence for miss, refresh, and executable-change behavior for same-reviewer closure.
 
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: created the one-to-one sidecar for dynamic
   token-free cache hit/refresh, executable invalidation, failed-refresh quarantine and recovery,

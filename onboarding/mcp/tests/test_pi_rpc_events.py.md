@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_pi_rpc_events.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,14 +59,17 @@ The dialog / fire-and-forget split this module relies on is the same split recor
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The mapper under test. | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
-| `PiSessionState` and the parser that builds it. | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
-| The measured dialog / fire-and-forget vocabulary. | [0.80.7-capabilities.json](agents-remember/mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json) |
-| The adapter suite that consumes these classifications. | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The mapper under test. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
+| `PiSessionState` and the parser that builds it. | `PiSessionState` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:37-48 |
+| The measured dialog / fire-and-forget vocabulary. | `fireAndForgetMethods` | mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json:43-43 |
+| The adapter suite that consumes these classifications. | `PiRpcAdapterTests` | mcp/tests/test_pi_rpc_adapter.py:550-1124 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new Pi RPC
   event-mapper suite. Verification metadata is pinned to the leaf's reformat commit until

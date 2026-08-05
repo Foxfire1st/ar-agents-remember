@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/ScenarioPlayer.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-19T23:58+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -54,14 +54,16 @@ content (projections/captions/durations) lives in `scenarios.ts`.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `applyFrame` snapshots + replays a frame into the real store. | L12-L17 | [ScenarioPlayer.tsx](ScenarioPlayer.tsx) |
-| The `Scenario`/`ScenarioFrame` model it walks. | — | [scenarios.ts](scenarios.ts) |
-| The real store it drives (`applySnapshot` / `pushEvent`). | — | [store.ts](../data/store.ts) |
-| Mounted (keyed by scenario) beneath the cockpit by the bench. | — | [Bench.tsx](Bench.tsx) |
+| `applyFrame` snapshots + replays a frame into the real store. | `applyFrame` | dashboard/src/dev/ScenarioPlayer.tsx:12-17 |
+| The `Scenario`/`ScenarioFrame` model it walks. | `ScenarioFrame`, `Scenario` | dashboard/src/dev/scenarios.ts:17-22; dashboard/src/dev/scenarios.ts:24-29 |
+| The real store it drives (`applySnapshot` / `pushEvent`). | `applySnapshot`, `pushEvent` | dashboard/src/data/store.ts:43-43; dashboard/src/data/store.ts:45-45 |
+| Mounted (keyed by scenario) beneath the cockpit by the bench. | `ScenarioPlayer` | dashboard/src/dev/Bench.tsx:39-43 |
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 6 citation claims (3 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-06-22T16:00 — 05o: the new-`scenario` effect now calls `dashboardStore.getState().reset()` FIRST
   (before applying frame 0) on each scenario mount — since the Bench keys the player by scenario name, the

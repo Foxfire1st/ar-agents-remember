@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,8 +33,8 @@ steady-state reader; it also passes the expected launch's requested model key
 a resolved id shared by several catalog rows, current-model selection resolves to the requested alias
 and the effective-launch echo compares like-for-like (the claude `opus[1m]` refused-pair fix).
 
-A floor-gated sub-agent text launch (fix-round review finding 8) runs inside
-`start` (L115-L237; the floor gate itself at L120-L144): the FIRST launch deliberately omits
+A floor-gated sub-agent text launch (fix-round review finding 8) runs through
+cit:([`_negotiate`, `start`], mcp/src/agents_remember/serving/harness_control_claude.py:176-223; mcp/src/agents_remember/serving/harness_control_claude.py:283-318): the FIRST launch deliberately omits
 `--forward-subagent-text` because no
 version seam exists at argv-build time — the installed version is provable only from the captured
 `system/init`. When `forward_subagent_text_supported(system_init.version)` confirms the probed
@@ -42,7 +42,7 @@ floor (`FORWARD_SUBAGENT_TEXT_FLOOR = (2, 1, 220)`), the adapter stops the trans
 WITH the flag, and re-negotiates startup; a proven install that then rejected the flag would fail
 loudly at launch, never silently degrade. Below the floor (or with an unparseable/absent version)
 the adapter simply runs on without the flag. The verdict crosses on the snapshot metadata as
-`subagentTextForwarding` (L173-L182, L199): an explicit "enabled: … meets the probed floor …" note
+cit:(["subagentTextForwarding"], mcp/src/agents_remember/serving/harness_control_claude.py:225-258): an explicit "enabled: … meets the probed floor …" note
 or the exact fail-closed "unverified: … flag was omitted …" reason — never a silent omission.
 
 That re-launch reuses the SAME transport object, so it depends on the transport releasing process
@@ -50,7 +50,7 @@ ownership at a completed stop; a transport that retained its terminated process 
 second `start` as already started, and the `HarnessControlError` handler would convert the whole
 handshake into an `unsupported` snapshot — the exact shape of the 260727-CHATS-IM-L4 defect, where
 every install at or above the floor lost control readiness and therefore model/effort selection.
-The probe runs before `_state` exists (assigned L213-L224, reader started L225), so no state reader
+The probe runs before cit:([`start_reader`], mcp/src/agents_remember/serving/harness_control_claude.py:294-306) exists, so no state reader
 competes with that stop.
 
 `discover` copies the `LaunchSpec`, replaces only that transient copy's argv
@@ -127,7 +127,7 @@ None known for the discovery-isolation and native setter seams.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -136,26 +136,15 @@ pass was available for this update.
 Startup controls the stdout ownership boundary and the dedicated parser controls live catalog
 normalization.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| State requires the same vendor session, retained UUID, exact canonical replay body, and ordered terminal result. | L102-L169; L412-L471; L529-L565 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
-| Protocol keeps normal stream argv construction separate from discovery-only MCP selector replacement and pins the first-`--` boundary. | L88-L114; L116-L155 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| The sub-agent-text forwarding floor gate: `FORWARD_SUBAGENT_TEXT_FLAG`, the probed floor `(2, 1, 220)`, and `forward_subagent_text_supported` — fail-closed so unproven/unparseable versions never get the flag. | L50-L85 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| Protocol command gating admits native model/effort categories without model-name heuristics while keeping identity changes blocked. | L223-L261 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| Claude catalog parsing validates unique models, selectability, resolved current identity, and model-local effort. | L15-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
-| The shared submission authority admits setters onto the same ordinary-operation timeline as prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. (`HarnessControlQueue` is now only a facade that forwards to it.) | L335-L339; L725-L760; L1021-L1049; L1323-L1336 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| Adapter regressions prove token-free discovery, complete selector replacement, end-of-options preservation, forced transient stop, and byte-for-byte normal-start preservation. | L195-L351 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-
-## Cross-Repo References
-
-No runtime cross-repository boundary is implemented by this adapter. The coordination evidence is
-retained because the resource measurement triggered the discovery-only change and independent
-review found the selector-collision class that the first implementation missed.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Resource proof distinguishes cheap strict-empty discovery from materially heavier normal sessions and records the corrected live two-marker closure. | L65-L109 | [260716-ACPUI-L5-worker-closeout-report.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
-| Independent review confirms the copied discovery path, normal-start preservation, absent marker, complete live catalog, and final repository gates. | L70-L88 | [260716-ACPUI-L5-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
+| State requires the same vendor session, retained UUID, exact canonical replay body, and ordered terminal result. | `ClaudeStreamState`, `_require_faithful_replay`, `_handle_result` | mcp/src/agents_remember/serving/claude_stream_state.py:112-1030; mcp/src/agents_remember/serving/claude_stream_state.py:720-738; mcp/src/agents_remember/serving/claude_stream_state.py:790-849 |
+| Protocol keeps normal stream argv construction separate from discovery-only MCP selector replacement and pins the first-`--` boundary. | `build_claude_stream_argv`, `build_claude_discovery_argv` | mcp/src/agents_remember/serving/claude_stream_protocol.py:88-113; mcp/src/agents_remember/serving/claude_stream_protocol.py:116-145 |
+| The sub-agent-text forwarding floor gate: `FORWARD_SUBAGENT_TEXT_FLAG`, the probed floor `(2, 1, 220)`, and `forward_subagent_text_supported` — fail-closed so unproven/unparseable versions never get the flag. | `FORWARD_SUBAGENT_TEXT_FLAG`, `FORWARD_SUBAGENT_TEXT_FLOOR`, `forward_subagent_text_supported` | mcp/src/agents_remember/serving/claude_stream_protocol.py:56-56; mcp/src/agents_remember/serving/claude_stream_protocol.py:65-65; mcp/src/agents_remember/serving/claude_stream_protocol.py:77-85 |
+| Protocol command gating admits native model/effort categories without model-name heuristics while keeping identity changes blocked. | `_IDENTITY_CHANGING_COMMANDS`, `_NATIVE_CAPABILITY_COMMANDS`, `command_unsupported_detail` | mcp/src/agents_remember/serving/claude_stream_protocol.py:21-24; mcp/src/agents_remember/serving/claude_stream_protocol.py:352-360 |
+| Claude catalog parsing validates unique models, selectability, resolved current identity, and model-local effort. | `parse_list_models_response`, `_parse_model`, `_require_unique_model_keys`, `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75; mcp/src/agents_remember/serving/claude_stream_capabilities.py:78-83; mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
+| The shared submission authority admits setters onto the same ordinary-operation timeline as prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so the authority is now the only owner rather than the thing behind a facade. | `_validate_set_result` | mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023 |
+| Adapter regressions prove token-free discovery, complete selector replacement, end-of-options preservation, forced transient stop, and byte-for-byte normal-start preservation. | `test_discover_uses_only_token_free_bootstrap_and_list_models`, `test_discover_replaces_all_installed_mcp_selector_spellings`, `test_normal_start_preserves_existing_mcp_selectors_byte_for_byte` | mcp/tests/test_harness_control_claude.py:256-276; mcp/tests/test_harness_control_claude.py:278-390; mcp/tests/test_harness_control_claude.py:392-412 |
 
 ## Submission Authority Delta
 
@@ -187,6 +176,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-03T02:59:16+02:00 — Curator W3-B02 repaired 6 Repo-Internal citation rows, resolving 12 manifest findings with exact current state, protocol, capability, and regression-test anchors; converted 3 current prose line references to exact `cit:` citations; removed 2 unsupported external-evidence claims rather than preserving them as empty-state rows. Verification metadata was preserved.
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations. The
   floor-gated launch is now cited as `start` L115-L237 with the gate block at L120-L144 (the old
   L116-L145 clipped the `def` line and both ends of the gate). The "`_state` does not exist yet"

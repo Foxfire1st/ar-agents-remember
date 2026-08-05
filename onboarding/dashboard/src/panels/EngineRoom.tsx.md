@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EngineRoom.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -85,17 +85,17 @@ must be kept for the legacy projection tests.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `buildEngineRoomModel` (pure model: joins, lifts workspace stack, sets `enclosureKey`/`usesFallback`). | L19-L42 | [panels/engine-room/buildEngineRoomModel.ts](engine-room/buildEngineRoomModel.ts) |
-| §4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \| `roomStage` \| `roomZone`]). | — | [panels/EngineRoom.tsx](EngineRoom.tsx) |
-| `EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`). | — | [panels/EngineRoom.tsx](EngineRoom.tsx) |
-| `OfficialStrip` groups official workspace providers by label + runtime state, renders duplicate peers as counted chips, and exposes grouped repo labels via `title`/`aria-label`. | L65-L129 | [panels/EngineRoom.tsx](EngineRoom.tsx) |
-| Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists. | L118-L158 | [panels/EngineRoom.test.tsx](EngineRoom.test.tsx) |
-| The bounded-height panel variant the room uses. | — | [grammar/Panel.tsx](../grammar/Panel.tsx) |
-| `groupEngines` (fallback) + `engineState` + `selectQueue`. | — | [data/selectors.ts](../data/selectors.ts) |
-| The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | — | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| The shared chat-routed gate responder rendered by diagnostics. | — | [panels/GateResponder.tsx](GateResponder.tsx) |
+| `buildEngineRoomModel` (pure model: joins, lifts workspace stack, sets `enclosureKey`/`usesFallback`). | `buildEngineRoomModel` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66 |
+| §4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \| `roomStage` \| `roomZone`]). | `roomShell` | dashboard/src/panels/EngineRoom.tsx:252-279; dashboard/src/panels/EngineRoom.tsx:284-292 |
+| `EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`). | `EngineRoomHeader` | dashboard/src/panels/EngineRoom.tsx:137-171 |
+| `OfficialStrip` groups official workspace providers by label + runtime state, renders duplicate peers as counted chips, and exposes grouped repo labels via `title`/`aria-label`. | `OfficialStrip` | dashboard/src/panels/EngineRoom.tsx:109-132 |
+| Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists. | "7 CGC · nominal" | dashboard/src/panels/EngineRoom.test.tsx:162-178; dashboard/src/panels/EngineRoom.test.tsx:180-204 |
+| The bounded-height panel variant the room uses. | `fill` | dashboard/src/grammar/Panel.tsx:59-59 |
+| `groupEngines` (fallback) + `engineState` + `selectQueue`. | `groupEngines` | dashboard/src/data/selectors.ts:37-46; dashboard/src/data/selectors.ts:123-127; dashboard/src/data/selectors.ts:147-165 |
+| The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | `read_engine_process_facts` | mcp/src/agents_remember/observer/snapshots.py:639-698 |
+| The shared chat-routed gate responder rendered by diagnostics. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
 
 ## Current L5I Maintenance
 
@@ -106,6 +106,8 @@ The header pulse additionally stops while its observed element is hidden, so a m
 room does not keep a Motion frame loop alive.
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 9 citation rows with exact anchors and ranges: buildEngineRoomModel.ts L26-L66, the roomShell/header/OfficialStrip extents in EngineRoom.tsx, the official-strip test cases, grammar/Panel.tsx fill variant, data/selectors.ts selector triple, observer/snapshots.py `read_engine_process_facts` L639-L700, and GateResponder.tsx L217-L236. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-24T13:17:17Z — Curator: documented the narrowed analytics subscriptions, memoized room
   model/component, and visibility-gated header pulse. Verification fields remain pinned until the

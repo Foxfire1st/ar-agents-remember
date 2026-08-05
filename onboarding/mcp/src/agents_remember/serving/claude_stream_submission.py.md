@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_submission.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ None known for the L3 submission record.
 No Domain Documentation source is configured for this repository, so no live
 domain-documentation pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -56,15 +56,15 @@ domain-documentation pass was available for this update.
 
 The state machine owns tombstone lifecycle and exact replay/result correlation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| State creates these records, correlates exact replays, and completes the terminal future in ordered result handling. | L285-L330; L412-L471; L529-L565 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
+| State creates these records, correlates exact replays, and completes the terminal future in ordered result handling. | `ClaudeStreamState` | mcp/src/agents_remember/serving/claude_stream_state.py:112-1030 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this record type.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -74,6 +74,9 @@ Claude submission state retains the full operation reference rather than a queue
 request id. That ref is the only key allowed to complete/release the shared authority operation.
 
 ## Update History
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 1 citation claim
+  (Repo-Internal reference row); scoped result 0 findings.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented full-ref Claude submission correlation and removed
   implicit queued authority.

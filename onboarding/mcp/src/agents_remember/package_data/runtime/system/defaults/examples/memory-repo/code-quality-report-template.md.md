@@ -75,27 +75,29 @@ None.
 
 No external documentation is needed for this template example.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution. | L1-L9 | [code-quality-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
-| The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example. | L18-L31 | [code-quality-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
-| The findings sections separate touched-file findings from existing or out-of-scope pressure. | L33-L51 | [code-quality-report-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md) |
+| The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution. | `# Code Quality Report Template` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md:1-69 |
+| The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example. | `## Tool Results` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
+| The findings sections separate touched-file findings from existing or out-of-scope pressure. | `## Findings` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md:40-59 |
 
 ## Cross-Repo References
 
 The live memory layer carries a project-specific copy beside `system/tools.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The local memory-layer template is the project-specific copy used by `agents-remember` agents. | n/a | [system/code-quality-report-template.md](ar-coordination/memory-repos/ar-agents-remember/system/code-quality-report-template.md) |
+| The local memory-layer template is the project-specific copy used by `agents-remember` agents. | `# Code Quality Report Template` | system/code-quality-report-template.md:1-55 |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 8 citation finding(s); scoped recheck clean.
 
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 gate honesty (requirement L2-R3): the Radon rows
   can no longer be recorded as `passed` or `failed`, the CRAP row can no longer be

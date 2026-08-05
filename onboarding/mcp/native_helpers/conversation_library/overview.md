@@ -159,20 +159,20 @@ resolution source.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives. | L3-L10; L84-L139; L141-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
-| The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. | L14-L210 | [protocol.test.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.test.ts) |
-| The Python foundation suite forbids incidental resolution and verifies package/lock pins plus the exact helper source set. | L63-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The Python host and Claude/Pi ports drive these entries on the production seam. | L100-L148 | [helper_host.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/helper_host.py) |
-| The installed-runtime suite proves the Pi gate/round-trip and the real Pi open through these helpers, and pins the Claude gate on the live list CONTRACT — asserting the reason is never a version-mismatch demotion. | L217-L263; L284-L413; L554-L586 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
+| The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. | "the exact locked helper versions are protocol constants" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17 |
+| The Python foundation suite forbids incidental resolution and verifies package/lock pins plus the exact helper source set. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:22-22 |
+| The Python host and Claude/Pi ports drive these entries on the production seam. | "class ConversationLibraryHelperHost" | mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-91 |
+| The installed-runtime suite proves the Pi gate/round-trip and the real Pi open through these helpers, and pins the Claude gate on the live list CONTRACT — asserting the reason is never a version-mismatch demotion. | `CodexInstalledTests` | mcp/tests/test_conversation_library_installed.py:103-186 |
 
 ## Cross-Repo References
 
 The installed npm dependencies are third-party libraries, but no neighboring workspace repository
 is read or updated by this route.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant cross-repo implementation evidence found. | — | — |
 
@@ -181,7 +181,7 @@ is read or updated by this route.
 The resolved Domain Documentation registry has no entries. Exact package/lock contents and local
 tests are used as direct evidence; no external behavior is claimed from package names alone.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this helper gate. | — | — |
 
@@ -222,6 +222,9 @@ installed-runtime suite on machines with the harnesses to prove the production s
   installed-runtime gate).
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the installed-runtime suite citation and
   rewrote the claim that carried it. `test_conversation_library_installed.py` is now 590 lines: the Pi

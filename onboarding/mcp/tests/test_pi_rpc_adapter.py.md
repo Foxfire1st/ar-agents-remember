@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,11 +49,12 @@ is reported as `echo-verified` with different requested and effective values aft
 `get_state` plus refreshed `get_available_models`; no notification is treated as acceptance.
 
 One finite configurable budget covers the mutation response, state readback, and catalog refresh.
-Hanging at any of those three stages returns `unknown` without an effective value and releases the
-shared bridge queue for a later successful set. State or refreshed-catalog evidence that reports an
-unadvertised clamp/model is incoherent: the result remains `unknown`, the prior coherent capability
-snapshot stays advertised, and no false promotion occurs. Switching to a non-reasoning model also
-re-gates thinking to `off` so an old model's effort token is immediately unsupported.
+Hanging at any of those three stages returns `unknown` without an effective value, and an unresolved
+mutation retains the authority barrier rather than allowing a later set to pass behind it. State or
+refreshed-catalog evidence that reports an unadvertised clamp/model is incoherent: the result remains
+`unknown`, the prior coherent capability snapshot stays advertised, and no false promotion occurs.
+Switching to a non-reasoning model also re-gates thinking to `off` so an old model's effort token is
+immediately unsupported.
 
 ### Conventions
 
@@ -96,7 +97,8 @@ copied.
 - Thinking clamps remain `echo-verified` only when the effective value is present in the selected
   model's refreshed dynamic menu; requested and effective values remain distinct.
 - Mutation, state readback, and catalog refresh share one finite transaction budget. Timeout or
-  incoherent evidence returns `unknown` without promotion and must release the control queue.
+  incoherent evidence returns `unknown` without promotion; an unresolved mutation holds the
+  authority barrier until explicitly resolved.
 - Model identity remains exact `provider/model-id`, including model ids containing `/`; malformed or
   vendor-unknown values are unsupported rather than guessed.
 - `pi_rpc_launch` adds only `--mode rpc`, preserves existing model/thinking flags and environment,
@@ -111,37 +113,29 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source was available to cite. | — | — |
 
 ## Repo-Internal References
 
 The test module and native Pi modules directly prove catalog parsing, process ownership, and safe
 normalized advertisement.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The fake transport supplies reasoning/non-reasoning models, returns them from `get_available_models`, places a secret-shaped header in state, and emulates mutation responses, clamps, hangs, and catalog drift. | L39-L207 | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| Launch tests preserve every native setting while adding RPC mode and reject a near-miss harness id; parser tests pin provider identity, model-gated thinking, empty catalogs, and malformed maps. | L314-L402 | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| Discovery is prompt-free and entry-free, failure paths stop/reset for retry, and started advertisement preserves selected model/effort while stripping model headers. | L406-L488 | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| Model switching preserves exact provider plus slash-bearing model id, surfaces the vendor unknown-model error, and rejects malformed identities without a write. | L490-L526 | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| Thinking readback proves both exact and silently clamped outcomes without notification evidence; a new model immediately supplies the effort gate. | L528-L585 | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| Missing readback and hangs in mutation, state, or catalog stages return unknown without effect and release the shared queue for a later set. | L587-L629 | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| An unadvertised clamped effort or a selected model missing from the refreshed catalog cannot promote or corrupt the retained advertisement. | L631-L676 | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| `pi_rpc_launch` preserves the launch while adding RPC mode; state parsing sanitizes the model object and catalog parsing builds unique provider-qualified model capabilities. | L114-L130; L176-L234 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
-| Adapter startup, transient discovery, cleanup, cached advertisement, and catalog/state validation are owned by the native Pi adapter. | L109-L194; L411-L434 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
-| The adapter delegates both setters to one configuration transaction object with a configurable finite timeout. | L68-L107; L208-L214 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
-| Configuration validates provider/model identity and the selected model's dynamic effort vocabulary, serializes mutations, and commits only coherent state plus catalog readback. | L70-L153; L196-L203 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
-| The whole mutation/readback transaction is bounded; timeout, disconnect, or incoherent catalog evidence returns unknown without an effective value. | L145-L179 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
+| The fake transport supplies reasoning/non-reasoning models, returns them from `get_available_models`, places a secret-shaped header in state, and emulates mutation responses, clamps, hangs, and catalog drift. | `_FakePiTransport` | mcp/tests/test_pi_rpc_adapter.py:52-293 |
+| `pi_rpc_launch` preserves the launch while adding RPC mode without changing other argv, cwd, settings, or environment. | `pi_rpc_launch` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:135-151 |
+| Adapter startup, transient discovery, cleanup, cached advertisement, and catalog/state validation are owned by the native Pi adapter. | `PiRpcAdapter`; `start`; `discover`; `advertise`; `_current_capabilities` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768 |
+| The adapter delegates both setters to one configuration transaction object with a configurable finite timeout. | `PiRpcAdapter`; `set_model`; `set_effort` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768 |
+| Configuration validates provider/model identity and the selected model's dynamic effort vocabulary, serializes mutations, and commits only coherent state plus catalog readback. | `set_model`; `set_effort`; `_provider_model` | mcp/src/agents_remember/serving/pi_rpc_configuration.py:70-103; mcp/src/agents_remember/serving/pi_rpc_configuration.py:196-202; mcp/src/agents_remember/serving/pi_rpc_configuration.py:105-153 |
+| The whole mutation/readback transaction is bounded; timeout, disconnect, or incoherent catalog evidence returns unknown without an effective value. | `_transaction` | mcp/src/agents_remember/serving/pi_rpc_configuration.py:155-193 |
 
 ## Cross-Repo References
 
 No sibling repository or external transport implementation is required for these native Pi tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -150,6 +144,8 @@ bytes on stale idle, absence of a native queue/steer flag, activity-token settle
 interaction completion, certified disconnect before dispatch, and no resend after acknowledgement.
 
 ## Update History
+
+- 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: narrowed the launch row to its exact protocol owner and reissued the whole claim for same-reviewer closure.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The row's
   four claims live in `PiRpcConfiguration.set_model` / `set_effort` at

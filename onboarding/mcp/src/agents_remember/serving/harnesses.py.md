@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harnesses.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,31 +62,31 @@ selection fields.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+
 
 ## Repo-Internal References
 
 The opener consumes only base command/custom compatibility mapping, while the normalized launch
 path owns dynamic native selection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared opener resolves id/detection/base argv and passes typed native selection to the runner, reserving static mappings for explicit legacy inputs. | L70-L124; L311-L395 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The launch module validates native model and model-local effort against dynamic advertise and rejects duplicate owned selectors. | L78-L182 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| The adapter factory constructs only the three native protocol adapters and leaves unknown/custom ids unsupported. | L19-L57 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
-| The settings loader builds the effective registry and is the authority for explicit custom mappings. | L682-L824 | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
+| The launch module validates native model and model-local effort against dynamic advertise. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
+| The adapter factory constructs builtin protocol adapters and leaves unknown/custom ids unsupported. | `BUILTIN_PROTOCOL_HARNESSES`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:26-26; mcp/src/agents_remember/serving/harness_control_factories.py:48-90 |
+| The settings loader builds the effective registry for explicit custom mappings. | `_parse_harnesses`; `_parse_harness_entry` | mcp/src/agents_remember/kernel/agentic_settings.py:683-715; mcp/src/agents_remember/kernel/agentic_settings.py:746-763 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this local registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+
 
 ## Update History
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored launch references with exact local anchors and generated final ranges with the scoped fixer.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/harnesses.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 1 line(s) with no token change whatsoever. Checked

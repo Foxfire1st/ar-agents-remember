@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -34,12 +34,14 @@ relativizes a path against the onboarding root.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `sidecar.py` and `entities.py` parse metadata and relativize paths through these helpers. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
-| Path normalization is provided by the kernel resolver. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `sidecar.py` and `entities.py` parse metadata and relativize paths through these helpers. | `classify_sidecar_onboarding_units`, `parse_table_metadata`, `normalize_rel_path`, `parse_entity_fingerprint_rows`, `classify_entity_catalog` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:17-32; mcp/src/agents_remember/kernel/coordination_context/paths.py:38-39; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:84-113; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:313-386 |
+| Path normalization is provided by the kernel resolver. | `normalize_rel_path` | mcp/src/agents_remember/kernel/coordination_context/paths.py:38-39 |
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 4 citation claims (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-05-31T12:30+02:00 — Dropped citation of removed `is_file_level_onboarding` helper from Logic (1.0.0 review remediation).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.

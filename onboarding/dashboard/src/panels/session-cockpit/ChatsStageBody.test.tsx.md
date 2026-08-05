@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:55+02:00 |
-| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,29 +55,32 @@ None recorded.
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
+| No relevant domain documentation was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Harness setup preserves real stores while replacing network edges (`vi.mock` of the authority + conversation modules, `afterEach` store reset). | L1-L107 | [ChatsStageBody.test.tsx](ChatsStageBody.test.tsx) |
-| Boot, pool, epoch/freshness, scroll-restore, and persistent-layer matrices cover the stage seams (six describes). | L109-L968 | [ChatsStageBody.test.tsx](ChatsStageBody.test.tsx) |
-| Implementation under test (`ChatsStageBody`). | L146-L454 | [ChatsStageBody.tsx](ChatsStageBody.tsx) |
-| The typed page/item/status builders the warm seeds now use. | L170-L245 | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
-| The only two capability-driven cues on the stage — the `live.completeness` reason and the `history.toolCompleteness`/`history.completeness` cue — both of which stay `null` under the new all-`supported` tree exactly as they did under `undefined`. | L278-L287; L319-L322 | [conversation/ConversationSurface.tsx](conversation/ConversationSurface.tsx) |
+| Harness setup preserves real stores while replacing network edges (`vi.mock` of the authority + conversation modules, `afterEach` store reset). | `vi`; `afterEach` | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:1-109 |
+| Boot, pool, epoch/freshness, scroll-restore, and persistent-layer matrices cover the stage seams (six describes). | "ChatsStageBody fresh-chat boot (260721 D1/D2)"; "ChatsStageBody keep-alive pool (F-j)"; "ChatsStageBody epoch attribution (M3)"; "ChatsStageBody authority freshness (M9)"; "ChatsStageBody view-switch scroll restore (F-ac)"; "ChatsStageBody B1: persistent conversation + PTY layers" | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:111-234; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:282-404; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:411-514; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:516-565; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:590-756; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:767-976 |
+| Implementation under test (`ChatsStageBody`). | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
+| The typed page/item/status builders the warm seeds now use. | `conversationIdentity`; `conversationStatus`; `conversationItem`; `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:172-185; dashboard/src/test/fixtures/conversationWire.ts:187-207; dashboard/src/test/fixtures/conversationWire.ts:209-226; dashboard/src/test/fixtures/conversationWire.ts:228-243 |
+| The `live.completeness` reason stays `null` under the all-`supported` tree. | `CapabilityReason` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:318-326 |
+| The `history.toolCompleteness`/`history.completeness` cue stays `null` under the all-`supported` tree. | `historyCapability` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:278-285 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: regenerated the six describe bodies, restored builder owner order, and split the two capability cues so each whole claim retains its operative surface branch.
 
 - 2026-08-01T10:55+02:00 — 260731-EFA-L4 curator: recorded the conversation-wire fixture conversion,
   which is the largest data change any of this leaf's session-cockpit suites received, so the Logic
@@ -85,9 +88,9 @@ No cross-repository boundary is owned here.
   unchanged, and I traced the one path that could have made it otherwise rather than trusting a green
   run: `capabilities` went from a literal `undefined` to a full all-`supported` tree, and the stage's
   only two capability-driven cues are in `ConversationSurface.tsx` — `live.completeness` renders a
-  `CapabilityReason` only when the state is defined AND not `"supported"` (L319-L322), and
+  `CapabilityReason` only when the state is defined AND not `"supported"` (cit:([`CapabilityReason`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:318-326)), and
   `historyCapability` resolves to `null` unless `toolCompleteness` or `completeness` is not
-  `"supported"` (L278-L287). Both produced nothing under `undefined` and produce nothing under
+  `"supported"` (cit:([`historyCapability`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:278-285)). Both produced nothing under `undefined` and produce nothing under
   all-`supported`, so no cue appeared or disappeared; `grep` also finds no capability/interrupt/stop
   reference anywhere in this suite. The status gained `identity`/`observedAt`/`freshness`/`evidence`/
   `process.generation`, which is unrelated to the M9 "authority freshness" case (that one is about the

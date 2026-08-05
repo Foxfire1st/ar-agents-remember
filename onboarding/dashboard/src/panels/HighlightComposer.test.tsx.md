@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -67,23 +67,23 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The composer under test. | — | [HighlightComposer.tsx](HighlightComposer.tsx) |
-| The accepted-row create helper and routed session store. | — | [data/sessions.ts](../data/sessions.ts) |
-| The mocked reliable readiness, submission, retry, and reconcile seam. | — | [data/submitClient.ts](../data/submitClient.ts) |
+| The composer under test. | "export const HighlightComposer = memo(HighlightComposerImpl)" | dashboard/src/panels/HighlightComposer.tsx:701-701 |
+| The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:681-681 |
+| The mocked reliable readiness, submission, retry, and reconcile seam. | "export async function executeReliableSubmit(" | dashboard/src/data/submitClient.ts:411-411 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -101,6 +101,8 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: updated create mocks to the authoritative result and
   pinned visible failed-create handling with no readiness wait or submission. Verification metadata

@@ -35,7 +35,7 @@ No current template TODO beyond adding examples from a real task wrapped by the 
 
 No external domain documentation applies to this repository-local template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -43,16 +43,16 @@ No external domain documentation applies to this repository-local template.
 
 The template is the stable artifact shape for `w-02-light-task-workflow` skill.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references. | L8-L97 | [`w-02-light-task-workflow` template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md) |
-| Usage rules require `c-08-ar-coordination-context-resolver` skill resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request. | L99-L114 | [`w-02-light-task-workflow` template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md) |
+| The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references. | `# Light Task Template` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md:1-116 |
+| Usage rules require `c-08-ar-coordination-context-resolver` skill resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request. | "# Task: <Title>" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md:10-10 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for the current template file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -61,6 +61,9 @@ No sibling repository evidence is needed for the current template file.
 The light-task template's artifact guidance points worktree-backed tasks at the leaf enclosure contract path under `enclosures/<leaf-id>/series-contract.md`.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  template heading anchors; exact non-fixing check returns zero findings.
 
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged light-task template now points worktree-backed tasks at `enclosures/<leaf-id>/series-contract.md` instead of sibling `contract.md`. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-19T06:03+02:00: Slice 3c reopened (R4, leaf-doc fidelity) — extended the status Usage Rule to cover the leaf extensions: a `statusNote` suffix, `headerNotes`, and freeform `sections` after References (the escape hatch; standard sections stay the backbone). Synced from canonical `skills/`. Verification metadata pinned until closeout stamps the R4 code commit.

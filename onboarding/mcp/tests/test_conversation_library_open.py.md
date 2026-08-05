@@ -58,27 +58,30 @@ None.
 
 No Domain Documentation source is configured. The repository sources are direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The open service, bounded ledger, and record model under test. | L87-L184; L209-L320 | [open_service.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/open_service.py) |
-| The ASGI open/status/reconcile surface mapping the same outcomes to HTTP. | L535-L703 | [test_conversation_library_api.py](agents-remember/mcp/tests/test_conversation_library_api.py) |
-| The installed suite's real open E2Es for the Pi and Codex channels. | L284-L413; L416-L551 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The open service, bounded ledger, and record model under test. | "class ConversationOpenService" | mcp/src/agents_remember/serving/conversation/library/open_service.py:222-222 |
+| The ASGI open/status/reconcile surface mapping the same outcomes to HTTP. | `LibraryApiTests` | mcp/tests/test_conversation_library_api.py:300-704 |
+| The installed suite's real open E2Es for the Pi and Codex channels. | `CodexInstalledTests` | mcp/tests/test_conversation_library_installed.py:103-186 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this open suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
   `test_conversation_library_installed.py`. The two real-open E2E classes are now `PiOpenEndToEndTests`

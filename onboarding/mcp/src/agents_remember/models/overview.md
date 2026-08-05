@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-01T09:26+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -20,7 +20,7 @@
 builders. It turns the public tool surface and retained compatibility builders
 from loose dictionaries into named, inspectable models that can be validated at
 runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
-(L11) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
+(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:62-65)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
@@ -167,20 +167,22 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Public MCP payload builders validate through the response model registry. | [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/) |
-| The registry maps every modeled builder and the advertised public subset to response models. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| Contract tests prove public tool coverage and schema generation. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
-| Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
-| Orchestration response models cover the public manager-nudge helper. | [orchestration.py](agents-remember/mcp/src/agents_remember/models/orchestration.py) |
-| Lifecycle finalizer response model covers the terminal task finalization payload. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/models/lifecycle_finalize.py) |
-| Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | [terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
-| The next-step engine that fills `nextStep` from the active lifecycle. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| Produced-vs-declared vocabulary measurement in both directions; the 165-of-213 contract measurement lives in its module docstring. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
-| The contract-cell vocabularies `worktree.py` imports rather than retypes. | [worktrees/worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The phase/next-operation/next-tool vocabularies and the `LifecycleGuidance` TypedDict `worktree.py` imports. | [worktrees/modules/guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | [onboarding_drift_check/models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
+| Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
+| Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:17-42; mcp/src/agents_remember/models/operator_inbox.py:45-52; mcp/src/agents_remember/models/operator_inbox.py:55-61 |
+| Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
+| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycle_finalize.py:13-33 |
+| Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:30-42; mcp/src/agents_remember/models/terminal.py:80-122 |
+| The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
+| The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
+| Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:638-648; mcp/tests/test_wire_vocabulary_exhaustiveness.py:694-709; mcp/tests/test_wire_vocabulary_exhaustiveness.py:744-754 |
+| The worktree model imports the contract-cell vocabulary aliases rather than retyping them. | "CleanupStatus,"; "HumanReviewStatus,"; "IntegrationStatus,"; "MemoryMode,"; "WorkflowKind,"; "LifecycleStatus," | mcp/src/agents_remember/models/worktree.py:21-25; mcp/src/agents_remember/models/worktree.py:28-28 |
+| The worktree model imports the phase/next-operation/next-tool aliases from guidance. | "WorktreePhase,"; "NextOperation,"; "NextTool," | mcp/src/agents_remember/models/worktree.py:16-18 |
+| Guidance defines the phase/next-operation/next-tool aliases used by the model. | `WorktreePhase`; `NextOperation`; `NextTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:28-53 |
+| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -268,7 +270,7 @@ vocabularies were all local `Literal`s. They now come from
 `IntegrationStatus`, `CleanupStatus`, and `CloseoutStatus` aliased to the published wire name
 `LifecycleStatus`) and `worktrees.modules.guidance` (`WorktreePhase`, `NextOperation`,
 `NextTool`). Only `WorktreeState` stays local — it is produced entirely inside
-`worktrees.status`, which constructs the model directly, so the checker already sees a single
+`application.worktree_status`, which constructs the model directly, so the checker already sees a single
 writer. What the copies had missed is checkable against the producers: the local
 `WorkflowKind` was `Literal["chat", "light", "light-task"]` while the contract's is
 `Literal["chat-task", "light-task"]` — the copy did not contain the kind `worktree_start`'s own
@@ -306,11 +308,11 @@ problem. `DriftSummary` gains `error: str | None`. `models.memory.DriftCheckStat
 third copy (correct, but a third place for the next member not to arrive) and is gone.
 
 **`read_files.py` — the alias moved to the decider.** `FileReadStatus` is declared in
-`controllers/read_files.py`, where `_resolve_onboarding` decides it and now returns it as its
+`application/read_files.py`, where `_resolve_onboarding` decides it and now returns it as its
 annotated type, and this model imports it. Note the direction: this is a `models/` →
-`controllers/` import, the reverse of the usual layering, chosen because the deciding function
+`application/` import, the reverse of the usual layering, chosen because the deciding function
 is the single writer and it puts the value into an untyped payload dict. It creates no cycle —
-`controllers/read_files.py` does not import `models.read_files`.
+`application/read_files.py` does not import `models.read_files`.
 
 **`terminal.py` — folded members and runtime halves.** `LeafAssignmentStatus` and
 `SpawnAgentSessionStatus` fold in `worktrees.leaf_refs.LeafRefStatus` (the pair
@@ -338,6 +340,10 @@ reordered (see the `mcp/tools/` overview). Verified: all 62 registered models ar
 narrower type is true of the whole registry today.
 
 ## Update History
+- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: split the measurement and vocabulary-import claims and rebound them to frozen module bodies/imports; same-reviewer delta pending.
+- 2026-08-03T02:57:31+02:00 — W3-B05 curator: resolved 10 Tier-2 table findings and 1 Tier-2 prose finding with exact source paths; fixer generated all final ranges.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** Every changed file on this
   route replaced a hand-copied `Literal` with an import of the producing module's alias, so the
   route gained a rule it did not state — added it as an invariant ("a wire vocabulary is imported
@@ -353,7 +359,7 @@ narrower type is true of the whole registry today.
   `MemorySummary.mode` lacked `disabled` while `WorktreeSummary` in the same response declared it.
   The 165-of-213 figure is quoted from `test_wire_vocabulary_exhaustiveness.py`'s module docstring,
   which is where it is measured. Recorded `DriftSummary.error` and the `DriftStatus`
-  three-copies-to-one consolidation, `models/read_files.py`'s deliberate models→controllers import
+  three-copies-to-one consolidation, `models/read_files.py`'s deliberate models→application import
   (no cycle — confirmed by importing the module standalone), the two new `WorktreeSummary` fields,
   and `supervisorBanner`/`ResponseEnvelope` on `base.py`. Corrected the `tool_registry.py` entry in
   the Hot Path Summary and explained the mechanism precisely: `type[BaseModel]` made the two

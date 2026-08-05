@@ -47,16 +47,18 @@ swap — not the live `<Markdown>` styling or the CodeMirror diff (both covered 
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Mocks the CodeMirror panes so jsdom renders the markdown path only. | L7-L14 | [ChangeSetPane.test.tsx](ChangeSetPane.test.tsx) |
-| Markdown diff fixture + per-case localStorage reset. | L16-L31 | [ChangeSetPane.test.tsx](ChangeSetPane.test.tsx) |
-| Rendered toggle swaps the diff for the `<Markdown>` prose view. | L34-L49 | [ChangeSetPane.test.tsx](ChangeSetPane.test.tsx) |
-| Non-markdown files do not offer the rendered toggle. | L51-L60 | [ChangeSetPane.test.tsx](ChangeSetPane.test.tsx) |
-| Subject under test: the diff column + its rendered-markdown toggle. | L51-L137 | [ChangeSetPane.tsx](ChangeSetPane.tsx) |
-| The markdown renderer the rendered view mounts. | L98-L121 | [grammar/Markdown.tsx](../../grammar/Markdown.tsx) |
+| Mocks the CodeMirror panes so jsdom renders the markdown path only. | "ChangeSetPane markdown rendered view" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:33-61 |
+| Markdown diff fixture + per-case localStorage reset. | `mdDiff` | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:16-26 |
+| Rendered toggle swaps the diff for the `<Markdown>` prose view. | "offers a 'rendered' toggle for markdown that draws the after-content as prose, not a raw diff" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:34-49 |
+| Non-markdown files do not offer the rendered toggle. | "does not offer the rendered toggle for non-markdown files" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:51-60 |
+| Subject under test: the diff column + its rendered-markdown toggle. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:51-137 |
+| The markdown renderer the rendered view mounts. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 12 citation findings; scoped check passed.
 
 - 2026-06-30T00:00:00+02:00 — Created for operations-integration L5 (diff-viewer polish): vitest/jsdom test for
   `ChangeSetPane`'s markdown **"rendered" toggle** — mocks the CodeMirror `DiffPane`/`FilePane`, then

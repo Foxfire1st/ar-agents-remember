@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_events.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,23 +57,23 @@ projector mints terminal items from durable entries, so the suppressed entry sta
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
-| Finding | Source Path |
-| --- | --- |
-| Pi frame schemas and UI policy. | [pi_rpc_protocol.py](pi_rpc_protocol.py) |
-| Adapter event-stream owner. | [pi_rpc_adapter.py](pi_rpc_adapter.py) |
-| Event/settlement coverage. | [test_pi_rpc_adapter.py](../../../tests/test_pi_rpc_adapter.py) |
-| The guarded abort whose interrupted turns produce the content-less `message_end` shape this mapper crosses evidence-only. | [pi_rpc_adapter.py](pi_rpc_adapter.py) |
-| The control-plane contract test pins the evidence-only mapping and the preserved role/object strictness (bad role still fails the bridge). | [test_harness_control_plane.py](../../../tests/test_harness_control_plane.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Pi frame schemas and UI policy. | `PI_RPC_DIALOG_METHODS`, `PI_RPC_FIRE_AND_FORGET_METHODS`, `PiRpcJsonlDecoder` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:20-23; mcp/src/agents_remember/serving/pi_rpc_protocol.py:59-103 |
+| Adapter event-stream owner. | `PiRpcAdapter`, `_event_stream`, `subscribe` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_adapter.py:268-305; mcp/src/agents_remember/serving/pi_rpc_adapter.py:307-308 |
+| Event/settlement coverage. | `test_retry_compaction_and_agent_settled_are_not_early_idle`, `test_extension_ui_round_trip_and_reclamation_scale` | mcp/tests/test_pi_rpc_adapter.py:916-947; mcp/tests/test_pi_rpc_adapter.py:949-1004 |
+| The guarded abort whose interrupted turns produce the content-less `message_end` shape this mapper crosses evidence-only. | `message_end` | mcp/tests/test_harness_control_evidence_installed.py:325-327 |
+| The control-plane contract test pins the evidence-only mapping and the preserved role/object strictness (bad role still fails the bridge). | `test_contentless_message_end_crosses_as_evidence_without_failing` | mcp/tests/test_harness_control_plane.py:747-773 |
 
 ## Cross-Repo References
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -95,6 +95,8 @@ than as four separate arguments. The emitted events are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 8 citation findings (4 table rows, 4 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `EventPayload` / `EMPTY_EVENT_PAYLOAD` as the per-frame event payload choice.
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the content-less `message_end`

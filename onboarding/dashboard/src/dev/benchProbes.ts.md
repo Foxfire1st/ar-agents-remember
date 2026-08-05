@@ -74,13 +74,19 @@ alongside the four Playwright config files and the four driver directories.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Installs `window.__cockpitBench` / `__cockpitBenchResetAudit` and imports `CockpitBenchProbe` + `CockpitResetAudit` from here. | [cockpitScenarios.ts](cockpitScenarios.ts) |
-| Installs `window.__ptyBench` / `__ptyBenchCols` and imports `PtyFrameStats` + `PtySerializeProbe` from here. | [PtyRenderBench.tsx](PtyRenderBench.tsx) |
-| The driver TypeScript project that names this file directly so the Playwright specs see the `Window` augmentation. | [tsconfig.driver.json](agents-remember/dashboard/tsconfig.driver.json) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `cockpitScenarios.ts` imports `CockpitBenchProbe` + `CockpitResetAudit` from this type-only module. | "./benchProbes" | dashboard/src/dev/cockpitScenarios.ts:39-39 |
+| `cockpitScenarios.ts` installs the `window.__cockpitBench` probe used by the browser drivers. | "window.__cockpitBench =" | dashboard/src/dev/cockpitScenarios.ts:408-408 |
+| `cockpitScenarios.ts` installs the `__cockpitBenchResetAudit` reset-audit surface. | `__cockpitBenchResetAudit` | dashboard/src/dev/cockpitScenarios.ts:313-313 |
+| `PtyRenderBench.tsx` imports `PtyFrameStats` + `PtySerializeProbe` from this type-only module. | "./benchProbes" | dashboard/src/dev/PtyRenderBench.tsx:7-7 |
+| `PtyRenderBench.tsx` installs the initial `window.__ptyBench` probe state. | "window.__ptyBench = { done: false" | dashboard/src/dev/PtyRenderBench.tsx:100-100 |
+| `PtyRenderBench.tsx` installs the real-column-count `__ptyBenchCols` surface. | `__ptyBenchCols` | dashboard/src/dev/PtyRenderBench.tsx:154-154 |
+| The driver TypeScript project includes this file. | "src/dev/benchProbes.ts" | dashboard/tsconfig.driver.json:21-21 |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 
 - 2026-07-31T16:10+02:00 — Created for 260731-EFA-L2. The probe interfaces and the single
   `Window` augmentation were extracted here from `cockpitScenarios.ts` and

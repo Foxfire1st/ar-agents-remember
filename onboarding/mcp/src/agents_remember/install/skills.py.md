@@ -56,11 +56,11 @@ symlink installs can be migrated to the copy.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `skills_install` is exposed as an MCP payload. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
-| Runtime package discovery is shared with runtime install. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| MCP tests cover replacing an existing symlink skill at its flat install path. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `skills_install` is exposed as an MCP payload. | `skills_install` | mcp/src/agents_remember/mcp/tools/core.py:152-152 |
+| Runtime package discovery is shared with runtime install. | "class RuntimeTreeSync" | mcp/src/agents_remember/install/runtime.py:72-72 |
+| MCP tests cover replacing an existing symlink skill at its flat install path. | `test_skills_install_payload_replaces_existing_symlink` | mcp/tests/test_tools.py:507-536 |
 
 ## Update History
 

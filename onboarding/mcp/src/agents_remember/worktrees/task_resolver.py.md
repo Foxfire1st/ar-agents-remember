@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/worktrees/task_resolver.py`     |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-07T20:50+02:00                                  |
-| lastVerifiedCommitHash |                                                         `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                         2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                                  |
+| lastVerifiedCommitHash |                                                         `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                         2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                                  |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 `task_resolver.py` centralizes task-name and leaf-enclosure path resolution for the series-contract
-workflow. It gives controllers, context resolution, worktree start/load paths, observer snapshots, and
+workflow. It gives application entry points, context resolution, worktree start/load paths, observer snapshots, and
 finalization one shared way to find active root tasks, nested task roots, raw leaf
 `enclosures/<leaf-id>/` contracts, and completed root-task archive targets. Canonical leaf-ref validation
 and normalization live in `worktrees/leaf_refs.py`.
@@ -65,7 +65,7 @@ that turns those names into concrete paths. Archived task folders are excluded f
 
 No external documentation is needed for this local task-folder resolver.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed for the local task resolver. | n/a | n/a |
 
@@ -73,30 +73,36 @@ No external documentation is needed for this local task-folder resolver.
 
 Same-repository source and tests define the supported task-folder and series-contract behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The resolver defines series-contract filenames, archive/enclosure directory names, slug helpers, current/legacy task-root candidates, and leaf enclosure paths. | L9-L68 | [task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
-| Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names. | L71-L114 | [task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
-| Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist; completed root tasks archive under `0_archive` with dry-run support and safety blockers. | L117-L184 | [task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
-| `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. | n/a | [leaf_refs.py](agents-remember/mcp/src/agents_remember/worktrees/leaf_refs.py) |
-| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | L38-L43; L71-L86 | [modules/start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
-| `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. | L14-L15; L60-L74 | [modules/finalize.py](agents-remember/mcp/src/agents_remember/worktrees/modules/finalize.py) |
-| Resolver parity tests pin parent-task disambiguation and archive exclusion from active task discovery. | L155-L251 | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py) |
-| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | L60-L64; L493-L528 | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| The resolver defines series-contract filenames, archive/enclosure directory names, slug helpers, current/legacy task-root candidates, and leaf enclosure paths. | "def slugify" | mcp/src/agents_remember/worktrees/task_resolver.py:18-18 |
+| Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names. | "def task_root_for" | mcp/src/agents_remember/worktrees/task_resolver.py:33-33 |
+| Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist; completed root tasks archive under `0_archive` with dry-run support and safety blockers. | "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47 |
+| `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. | "def resolve_leaf_ref" | mcp/src/agents_remember/worktrees/leaf_refs.py:94-94 |
+| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:74-74 |
+| `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. | `archive_completed_root_task` | mcp/src/agents_remember/worktrees/task_resolver.py:147-184 |
+| Resolver parity tests pin parent-task disambiguation and archive exclusion from active task discovery. | `ResolverCliTests` | mcp/tests/test_resolver_parity.py:56-251 |
+| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:573-3091 |
 
 ## Cross-Repo References
 
 No cross-repo boundary is required to explain this local resolver.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors, rebound the archive row to the definition, and converted the history parity citation;
+  exact non-fixing check returns zero findings.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The two parity
-  tests the row names now read at `test_resolver_parity.py` L155-L251 —
-  `test_parent_task_disambiguates_nested_task_roots` (L155-L210) and
+  tests the row names now read at cit:([`ResolverCliTests`], mcp/tests/test_resolver_parity.py:56-251) —
+  cit:([`test_parent_task_disambiguates_nested_task_roots`], mcp/tests/test_resolver_parity.py:155-210) and
   `test_active_series_discovery_excludes_archive` (L212-L251, which asserts
   `iter_active_series_contracts` skips the archived folder and that `resolve_active_task_root` raises
   `TaskResolutionError`). Was L146-L234.

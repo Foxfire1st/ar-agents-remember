@@ -55,13 +55,15 @@ else `stage`).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The provider setup facade calls this module for CGC install, prepare, and isolated settings. | [provider_setup.py](provider_setup.py.md) |
-| CGC seed orchestration lives in the seed module. | [seed.py](seed.py.md) |
-| CGC lifecycle install and refresh commands are dispatched through the lifecycle facade. | [lifecycle package](../lifecycle/__init__.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The provider setup facade dispatches CGC install and preparation through this module. | "def install_enabled_providers" | mcp/src/agents_remember/providers/provider_setup.py:210-210 |
+| CGC seed orchestration lives in the seed module. | "def cgc_seed_bundle" | mcp/src/agents_remember/providers/cgc/seed.py:211-211 |
+| CGC lifecycle install and refresh commands are dispatched through the lifecycle facade. | `__getattr__` | mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py:20-27 |
 
 ## Update History
+
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `run_lifecycle`'s new
   `LifecycleCommand` signature. Same argv, same results. Verification metadata pinned until

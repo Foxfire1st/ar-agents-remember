@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harnesses.py`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-15T23:16+02:00                           |
-| lastVerifiedCommitHash | `5fa7026c644edfb4eb884173b64d31c9a14a6585`       |
-| lastVerifiedCommitDate | 2026-07-15T23:33:30+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -66,26 +66,28 @@ The resolved source registry has no Domain Documentation entries, so no live sou
 for this repository-specific registry contract. Repository source and normalized adapter tests are
 the direct evidence.
 
-| Finding                                                        | Citations | Source Path |
-| -------------------------------------------------------------- | --------- | ----------- |
-| No Domain Documentation source is configured for this repository.       | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No Domain Documentation source is configured for this repository. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The registry under test. | [serving/harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
-| The endpoint-level harness tests (GET detection + the harness opener). | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The registry under test. | `find_harness` | mcp/src/agents_remember/serving/harnesses.py:61-70 |
+| The endpoint-level harness tests (GET detection + the harness opener). | `test_get_harnesses_lists_supported_set_with_detection` | mcp/tests/test_terminal_ws.py:870-880 |
 
 ## Cross-Repo References
 
 No sibling repository defines this registry boundary.
 
-| Finding                                      | Citations | Source Path |
-| -------------------------------------------- | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-03T03:06:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 2 Repo-Internal table citations with exact registry and endpoint test anchors. Verification metadata remains unchanged for closeout.
+
 - 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented removal of static built-in launch
   mappings and retention of explicit settings-defined custom mappings; corrected the governing
   overview backlink and the no-configured-domain-source evidence. Verification metadata remains

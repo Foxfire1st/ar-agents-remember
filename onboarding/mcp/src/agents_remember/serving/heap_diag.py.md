@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/heap_diag.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:18:47Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ No durable follow-up is recorded here.
 
 The configured Domain Documentation registry has no entries. This is repository-local operational diagnostics.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is configured for this opt-in daemon diagnostic. | — | — |
 
@@ -48,19 +48,21 @@ The configured Domain Documentation registry has no entries. This is repository-
 
 The serving lifespan owns scheduling; this module owns only flags, snapshots, formatting, and allocator trimming.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The app lifespan starts the diagnostic and trim loops only when their flags are enabled. | L683-L712 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The paired test sidecar records disabled-by-default behavior, report output, worker-thread placement, and loop responsiveness while its source is still uncommitted. | L19-L33 | [test_heap_diag.py onboarding](../../../tests/test_heap_diag.py.md) |
+| The app lifespan starts the diagnostic and trim loops only when their flags are enabled. | `_serving_lifespan` | mcp/src/agents_remember/serving/app.py:900-943 |
+| The paired test sidecar records disabled-by-default behavior, report output, worker-thread placement, and loop responsiveness while its source is still uncommitted. | `### Logic` | onboarding/mcp/tests/test_heap_diag.py.md:23-26 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary participates in this module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The diagnostic is wholly repository-local. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
 
 - 2026-07-24T13:18:47Z — Created for 260718-CHATS-L5I: documented the opt-in heap diagnostic, worker-thread report path, and optional glibc arena reclamation. Verification metadata remains empty until the code commit.

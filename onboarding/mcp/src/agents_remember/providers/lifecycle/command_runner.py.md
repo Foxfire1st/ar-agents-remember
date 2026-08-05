@@ -50,12 +50,15 @@ wall-clock cap, while setup/control commands still pass a real timeout.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Runtime environment defaults come from the lifecycle environment module. | [runtime_environment.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/runtime_environment.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Runtime environment defaults come from the lifecycle environment module. | `subprocess_env` | mcp/src/agents_remember/providers/lifecycle/runtime_environment.py:17-23 |
 
 ## Update History
 
+- 2026-08-04T18:44+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the single malformed row —
+  bound to `subprocess_env` (runtime_environment.py:10-29), the env-default provider this module
+  imports and calls unconditionally. Claim wording unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   dropped `run_command`'s unused `env` parameter; the sanitized provider environment
   (`subprocess_env(None)`) is now unconditional. No caller changed. Verification metadata pinned

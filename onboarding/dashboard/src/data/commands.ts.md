@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/commands.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,17 +27,17 @@ through the context (the view owns the DOM).
 
 ### Logic
 
-- `CommandContext` (L13-L31): view facts (`railCollapsed`/`inspectorCollapsed`/`paletteOpen`) +
+- cit:([`CommandContext`], dashboard/src/data/commands.ts:13-32): view facts (`railCollapsed`/`inspectorCollapsed`/`paletteOpen`) +
   injected action seams. Panel/focus/palette, session switching, and FEUI-L4 effort cycling are
   live; `submitComposer` remains the FEUI-L5 seam.
-- `Command` (L33-L44): optional `keywords` (palette search), display-only `chord` label (binding
+- cit:([`Command`], dashboard/src/data/commands.ts:34-45): optional `keywords` (palette search), display-only `chord` label (binding
   lives in `keymap/`), and `keepsPaletteOpen` — the palette-page-switch marker (selection keeps
   the palette open; established by `keyboard.reference`).
-- `createCommandRegistry()` (L56-L80): a `Map`-backed registry. `register` replaces by id and
+- cit:([`createCommandRegistry`], dashboard/src/data/commands.ts:57-81): a `Map`-backed registry. `register` replaces by id and
   returns an unregister that removes ONLY its own registration (a stale unregister can't kill a
   replacement — L61-L64). `list(ctx)` returns registration-ordered, `when`-filtered commands;
   `run(id, ctx)` honors the `when` gate and reports whether it ran.
-- `registerDefaultCommands(registry)` (L87-L179) — the v1 set: `palette.open` (gated on closed,
+- cit:([`registerDefaultCommands`], dashboard/src/data/commands.ts:88-191) — the v1 set: `palette.open` (gated on closed,
   ctrl+k), `keyboard.reference` (`keepsPaletteOpen`, opens the `keys` page), `rail.toggle`,
   `inspector.toggle`, `focus.nextRegion`/`prevRegion` (F6/Shift+F6), `focus.stageHeader`
   (composer Esc), `focus.exitToChrome` (PTY F6 — same landing as `focus.stageHeader`),
@@ -61,25 +61,28 @@ through the context (the view owns the DOM).
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry, replace-by-id unregister guard, and the default set with the stub seams. | L56-L179 | [commands.ts](commands.ts) |
-| The view builds `CommandContext` (live actions + honest stubs) and dispatches chord command ids into `registry.run`. | L253-L296 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
-| The palette renders `registry.list` and honors `keepsPaletteOpen` on selection. | L121-L175 | [../panels/session-cockpit/CommandPalette.tsx](../panels/session-cockpit/CommandPalette.tsx) |
-| The chord tables that carry these command ids per zone. | L20-L86 | [keymap/chords.ts](keymap/chords.ts) |
-| The unit suite: order, when-gating, replace-by-id, default-set routing, palette gating. | L36-L115 | [commands.test.ts](commands.test.ts) |
+| The registry, replace-by-id unregister guard, and the default set with the stub seams. | `createCommandRegistry` | dashboard/src/data/commands.ts:57-81 |
+| The view builds the context and dispatches chord command ids into the registry. | "registry.run(commandId" | dashboard/src/panels/session-cockpit/SessionsView.tsx:935-935 |
+| The palette clears its query when the selected command keeps the palette open. | "if (command?.keepsPaletteOpen)" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:192-192 |
+| The chord tables that carry these command ids per zone. | "palette.open" | dashboard/src/data/keymap/chords.ts:24-24 |
+| The registry suite pins registration order and when-predicate filtering. | "lists commands in registration order and filters by when-predicate" | dashboard/src/data/commands.test.ts:38-44 |
+| The registry suite pins replacement-by-id and stale-unregister behavior. | "replaces by id and unregisters only its own registration" | dashboard/src/data/commands.test.ts:57-67 |
+| The default-command suite pins live panel/focus actions and honest stubs. | "registers the v1 set with live panel/focus actions and honest stubs" | dashboard/src/data/commands.test.ts:71-91 |
+| The default-command suite pins palette-open gating. | "gates palette.open on the palette being closed" | dashboard/src/data/commands.test.ts:113-117 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -91,6 +94,8 @@ queue splice. Palette normalization removes the leading slash exactly once so co
 keyboard invocation share one query contract.
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

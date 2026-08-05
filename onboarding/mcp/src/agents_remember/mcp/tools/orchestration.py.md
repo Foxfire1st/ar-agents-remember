@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/orchestration.py`      |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-07-31T15:31+02:00                                    |
-| lastVerifiedCommitHash |                                                           `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                                           2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                                           `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                           2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -61,13 +61,15 @@ validation.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Nudge record and rate-limit policy live in controlplane. | [orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py) |
-| Agent-to-agent message enqueue and hosted-session push live in the operator inbox builder. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| Response validation uses the public orchestration response model. | [orchestration.py](agents-remember/mcp/src/agents_remember/models/orchestration.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Nudge record and rate-limit policy live in controlplane. | `OrchestrationNudgeStore` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127 |
+| Agent-to-agent message enqueue and hosted-session push live in the operator inbox builder. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36 |
+| Response validation uses the public orchestration response model. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2: the seven flat keyword arguments became `target:
   NudgeTarget` + `subject: NudgeSubject`, and the inbox post now travels as `InboxAddress` /

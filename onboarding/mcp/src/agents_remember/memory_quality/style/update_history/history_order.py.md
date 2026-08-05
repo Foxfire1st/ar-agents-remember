@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -37,13 +37,16 @@ local copy.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The memory quality runner registers this checker as `style.update_history.history_order`. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py) |
-| The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Regression tests cover newest-first, out-of-order, and missing timestamp cases. | [test_memory_quality.py](agents-remember/mcp/tests/test_memory_quality.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The memory quality runner entry is `run_memory_quality_check`, and this checker exposes its registered style name. | "style.update_history.history_order"; `run_memory_quality_check` | mcp/src/agents_remember/memory_quality/check.py:86-113; mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
+| The checker imports the `rel` path-relativization helper from the drift-check discovery module. | "from agents_remember.memory_quality.integrity.onboarding_drift_check.discovery import rel" | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:21-21 |
+| The drift-check discovery module defines the `rel` path-relativization helper. | `rel` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
+| The history-order checker entry is `check_onboarding_root`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
 
 ## Update History
+
+- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D20 by binding the shared `rel` claim to the complete helper body; rechecked this card through the locked exact-document fixer/check.
 
 - 2026-05-31T12:50+02:00 — Removed the local `relative_path` helper; `order_findings` now calls the shared `rel(path, onboarding_root)` imported from `agents_remember.memory_quality.integrity.onboarding_drift_check.discovery`. Noted the shared helper in Logic and References (1.0.0 review remediation).
 - 2026-05-24T02:47+02:00: Created for the update-history ordering style check.

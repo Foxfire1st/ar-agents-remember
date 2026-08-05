@@ -104,13 +104,18 @@ tolerance band rather than exact equality.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| All ten parser functions under test live in the Docker lifecycle adapter. | [docker_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py) |
-| `docker_container_state_summary` is the projection these parsers feed into provider current state, which has its own integration coverage. | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| All ten directly imported parser functions under test live in the Docker lifecycle adapter. | `docker_container_state_summary`; `docker_container_uptime_seconds`; `docker_container_health`; `parse_docker_timestamp`; `docker_container_port`; `first_port_mapping`; `docker_data_mount_source`; `mount_source_for_destination`; `docker_host_path_matches`; `docker_container_networks` | mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:47-67; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:70-73; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:76-81; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:84-107; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:127-139; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:142-143; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:146-158; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:161-165; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:168-179; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:187-193 |
+| The GrepAI watcher status exposes the Docker summary in its `containerState` field. | `containerState` | mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:97-97 |
+| The CGC backend status exposes the Docker summary in its `containerState` field. | `containerState` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:212-212 |
+| The provider-current-state regression directly exercises the Docker summary. | `test_docker_container_state_summary_reports_uptime` | mcp/tests/test_provider_current_state.py:27-42 |
 
 ## Update History
 
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: replaced the untested `docker_container_running` entry with the directly tested networks parser while preserving the nine valid generated ranges; rebound the provider-current-state claim to real consumers and exact-name focused coverage provisionally.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_docker_runtime_parsers.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked

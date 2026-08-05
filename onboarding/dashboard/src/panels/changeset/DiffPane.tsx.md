@@ -70,16 +70,20 @@ fetching — the caller (`ChangeSetPane`) supplies already-fetched content from 
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff. | L43-L88 | [FilePane.tsx](../file-viewer/FilePane.tsx) |
-| The shared CodeMirror theme (chrome + syntax `HighlightStyle`). | L9-L41 | [codemirrorTheme.ts](../file-viewer/codemirrorTheme.ts) |
-| The lazy language-by-extension map it awaits. | L8-L49 | [langByExtension.ts](../file-viewer/langByExtension.ts) |
-| `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false). | L62-L88 | [DiffPane.tsx](DiffPane.tsx) |
-| The column wrapper that mounts it and supplies `mode`/`collapse`. | L91-L102 | [ChangeSetPane.tsx](ChangeSetPane.tsx) |
-| The `FileDiff` (before/after content) the caller passes through. | L34-L41 | [data/changeset.ts](../../data/changeset.ts) |
+| Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| The shared CodeMirror theme (chrome + syntax `HighlightStyle`). | `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49 |
+| The lazy language-by-extension map it awaits. | `langExtension` | dashboard/src/panels/file-viewer/langByExtension.ts:8-49 |
+| `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false). | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118 |
+| The column wrapper that mounts it and supplies `mode`/`collapse`. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:51-137 |
+| The `FileDiff` (before/after content) the caller passes through. | `FileDiff` | dashboard/src/data/changeset.ts:34-41 |
 
 ## Update History
+
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 5 Repo-Internal citation rows with exact
+  CodeMirror/component identifiers, including the `DiffPane` implementation for split/inline
+  construction; the existing `FileDiff` citation and verification metadata remain unchanged.
 
 - 2026-06-29T23:00+02:00 — L4a (diff-highlight polish): the `host` css overrides `@codemirror/merge`'s
   default thin underline on `.cm-changedText` into a full-height highlight **rectangle** — a

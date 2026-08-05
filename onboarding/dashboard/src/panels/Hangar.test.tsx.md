@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Hangar.test.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-06T02:30+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -53,14 +53,16 @@ The existence flags themselves are server-stat'ed truth owned by the observer/pr
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test (filters rows through `hasLiveWorktree`). | — | [Hangar.tsx](Hangar.tsx) |
-| The shared existence-truth visibility selector. | — | [data/selectors.ts](../data/selectors.ts) |
-| The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | — | [data/store.ts](../data/store.ts) |
-| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | — | [types/projection.ts](../types/projection.ts) |
+| The component under test (filters rows through `hasLiveWorktree`). | `Hangar` | dashboard/src/panels/Hangar.tsx:72-138 |
+| The shared existence-truth visibility selector. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
+| The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
+| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:133-150 |
 
 ## Update History
+
+- 2026-08-03T02:31:31+02:00 — W3-B05 curator: anchored 4 Tier-2 table citations with exact source paths; fixer generated all ranges.
 
 - 2026-07-06T02:30+02:00 — 260703-L11: rewritten from the archived-cleanup proxy contract to the
   worktree-existence contract — the factory defaults the new existence flags true, and the four cases

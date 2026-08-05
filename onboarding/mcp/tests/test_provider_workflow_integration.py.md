@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_workflow_integration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -23,7 +23,7 @@ The test is skipped unless `AGENTS_REMEMBER_PROVIDER_INTEGRATION=1` is set. When
 The helper parsing now uses small typed dictionary/list adapters so Pyright can
 check nested provider settings traversal without relying on broad untyped-dict
 coercion. `worktree_start_tool` is imported from the split
-`controllers.worktree_tools` module rather than the former `skill_tools`
+`application.worktree_tools` module rather than the former `skill_tools`
 facade, and it is called as `worktree_start_tool(config, TaskIdentity(repo_id=...,
 task_name=..., worktree_name=..., workflow_kind=...))` — the repo/task/worktree/workflow
 quartet travels as one `TaskIdentity` parameter object. The explicit `dry_run=False` is gone
@@ -58,15 +58,19 @@ to take individually now live on the workspace object.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Provider setup is the public service path used to prepare source providers. | [../src/agents_remember/providers/provider_setup.py](../src/agents_remember/providers/provider_setup.py.md) |
-| Worktree start is exercised through the split `worktree_start_tool`, which writes isolated provider state. | [../src/agents_remember/controllers/worktree_tools.py](../src/agents_remember/controllers/worktree_tools.py.md) |
-| Benchmark provider setup is exercised through the benchmark runner registration/setup path. | [../src/agents_remember/benchmarks/runner_modules/mcp_registration.py](../src/agents_remember/benchmarks/runner_modules/mcp_registration.py.md) |
-| Focused provider setup tests cover the same settings and seed behavior without Docker. | [test_provider_setup.py](test_provider_setup.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Provider setup is the public service path used to prepare source providers. | `run_provider_setup`; `_action_payload_from_args` | mcp/src/agents_remember/providers/provider_setup.py:547-555; mcp/src/agents_remember/providers/provider_setup.py:562-588 |
+| Worktree start is exercised through the split `worktree_start_tool`, which writes isolated provider state. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:83-162 |
+| Benchmark provider setup is exercised through the benchmark runner registration/setup path. | `benchmark_lifecycle_settings`; `prepare_configured_providers` | mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:237-238; mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:254-298 |
+| Focused provider setup tests cover the same settings and seed behavior without Docker. | `ProviderSetupTests`; `test_run_provider_setup_accepts_typed_request`; `test_prepare_announces_phases_in_order_with_seed_fallback` | mcp/tests/test_provider_setup.py:25-899 |
 
 ## Update History
 
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 3 table citations and replaced 3 stale source references; no unresolved Tier-3 claims.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. The end-to-end test
   was restructured for the tightened complexity and argument-count gates, and three call
   signatures the card described moved with it. `worktree_start_tool` now takes a `TaskIdentity`

@@ -35,12 +35,14 @@ No exports; one `describe("shouldAnimate")` block over three cases, with a `setR
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `shouldAnimate` under test | L3 | [useShouldAnimate.ts](useShouldAnimate.ts) |
-| `setReduce` matchMedia stub | L5-L16 | [useShouldAnimate.test.ts](useShouldAnimate.test.ts) |
-| The three gate cases (data-effects / reduce / both-off) | L18-L36 | [useShouldAnimate.test.ts](useShouldAnimate.test.ts) |
+| `shouldAnimate` under test | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
+| `setReduce` matchMedia stub | `setReduce` | dashboard/src/panels/engine-room/useShouldAnimate.test.ts:5-16 |
+| The three gate cases (data-effects / reduce / both-off) | "is false when data-effects=off, even if the OS allows motion"; "is true only when effects are on and reduced-motion is off" | dashboard/src/panels/engine-room/useShouldAnimate.test.ts:23-27; dashboard/src/panels/engine-room/useShouldAnimate.test.ts:35-39 |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 1 repo-internal citation row and preserved verification metadata.
 
 - 2026-06-16T01:55 — Created for slice 5f S0: vitest pinning the `shouldAnimate()` gate truth table (data-effects / reduced-motion). Verification metadata pinned until closeout stamps the S0 code commit.

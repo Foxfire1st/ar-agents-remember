@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/file-viewer/useFilesTree.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-06-29T09:06+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,13 +46,15 @@ re-rooting could collide across scopes.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `FileTree` renders this tree and owns the mouse click handler (folder toggle + file open). | L55, L72-L80 | [FileTree.tsx](FileTree.tsx) |
-| `listDir`, `DirEntry`, and `Scope` come from the L1 files client. | L28-L40, L96-L97 | [../../data/files.ts](../../data/files.ts) |
-| `FileViewer` mounts one tree per side, re-keyed on `{repo}:{scope}:{side}`. | L240-L242 | [FileViewer.tsx](FileViewer.tsx) |
+| `FileTree` renders this tree and owns the mouse click handler (folder toggle + file open). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
+| `listDir`, `DirEntry`, and `Scope` come from the L1 files client. | `listDir`, `DirEntry`, `Scope` | dashboard/src/data/files.ts:13-13; dashboard/src/data/files.ts:31-37; dashboard/src/data/files.ts:113-114 |
+| `FileViewer` mounts one tree per side, re-keyed on `{repo}:{scope}:{side}`. | `FileViewer` | dashboard/src/panels/file-viewer/FileViewer.tsx:278-278 |
 
 ## Update History
+
+- 2026-08-03T02:42:21+02:00 — W3-B04 curator: curated 1 table citation (1 total), supplying exact anchors and path; the scoped fixer generated all final extents.
 
 - 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the per-side async
   Headless Tree hook (one tree per `code`|`onboarding` side, rooted at `{repo, scope}`, `getChildren`

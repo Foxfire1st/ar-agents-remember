@@ -34,24 +34,25 @@ The module is intentionally declarative and contains no import-time wiring.
 
 No external documentation is needed for a package marker module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The route overview explains the package split. | package route overview | [overview.md](overview.md) |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed for this package marker.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 
 - 2026-05-25T20:57+02:00: Created with the split coordination-context implementation package.

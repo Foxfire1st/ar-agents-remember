@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_landing_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:56+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -20,11 +20,17 @@ Focused tests for the background landing observer and its honest snapshot contra
 
 ## Code Commentary
 
-The suite exercises exact contract identity across repositories and worktrees, bounded concurrency, slow and failed probes, stale carry-forward and age transitions, startup missing state, copy-on-write publication, retention, cancellation, and Projector-owned shutdown. The timing regression proves projection publication does not await remote observation.
+The suite exercises bounded, contract-scoped observation; slow and failed
+probes; stale carry-forward and age transitions; startup and rewritten-contract
+missing state; cancellation; and the frozen-facts lifecycle. The later tests
+cover fully observed completion, refusal to freeze missing or pending facts,
+fresh-refresher reads, reducer-key filtering, corrupt or stale frozen files,
+and reopening that clears the frozen result.
 
 ## Invariants And Boundaries
 
-Tests cover observer behavior only; the full repository quality gate is owned by the manager.
+Tests use temporary coordination roots and mocked observers; they stay
+offline and cover the landing-state behavior exercised in this file.
 
 ## Docs References
 
@@ -32,9 +38,12 @@ No external Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Observer implementation under test. | [landing_state.py](agents-remember/mcp/src/agents_remember/observer/landing_state.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Bounded, isolated refresh and stale-fact behavior. | `test_refresh_is_bounded_and_isolated_by_exact_contract`; `test_failed_refresh_keeps_last_truth_as_explicit_stale_fact` | mcp/tests/test_landing_state.py:104-132; mcp/tests/test_landing_state.py:134-158 |
+| Missing, rewritten, cancelled, and recovered refresh lifecycle behavior. | `test_startup_and_rewritten_contract_are_explicitly_missing`; `test_cycle_failure_logs_then_recovers_on_normal_cadence`; `test_run_cancellation_leaves_no_refresh_task` | mcp/tests/test_landing_state.py:160-179; mcp/tests/test_landing_state.py:183-204; mcp/tests/test_landing_state.py:206-225 |
+| Fully observed frozen facts and the no-freeze cases. | `test_finished_contract_freezes_once_and_leaves_the_sweep`; `test_unobserved_facts_do_not_freeze`; `test_pending_cleanup_keeps_probing_without_freezing` | mcp/tests/test_landing_state.py:239-266; mcp/tests/test_landing_state.py:268-285; mcp/tests/test_landing_state.py:287-302 |
+| Frozen-file persistence, key filtering, corruption, age, and reopen behavior. | `test_frozen_facts_survive_a_fresh_refresher`; `test_frozen_rows_carry_only_reducer_known_keys`; `test_corrupt_final_file_keeps_contract_in_sweep_and_selfheals`; `test_frozen_file_predating_the_contract_is_never_served_or_kept_out_of_sweep`; `test_reopen_task_entry_point_deletes_the_frozen_landing_file` | mcp/tests/test_landing_state.py:304-319; mcp/tests/test_landing_state.py:333-345; mcp/tests/test_landing_state.py:430-457; mcp/tests/test_landing_state.py:475-528; mcp/tests/test_landing_state.py:530-554 |
 
 ## Cross-Repo References
 
@@ -42,24 +51,17 @@ No cross-repo references.
 
 ## 260718-CHATS-L5I Current Delta
 
-Landing-state tests now cover freezing fully observed completed facts, stale/corrupt frozen-file rejection, and reopening without resurrection of the prior landing result.
+Landing-state tests cover freezing fully observed completed facts, rejecting
+stale or corrupt frozen files, and clearing the frozen result on reopen.
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
-- 2026-08-01T09:56+02:00 — 260731-EFA-L4 curator: No content impact: the diff is a single
-  character-level fixture edit — `_contract`'s `workflow_kind="light"` becoming `"light-task"`,
-  because `WorkflowKind` is now `Literal["chat-task", "light-task"]`
-  (`worktrees/worktree_contract.py` L50) and `"light"` is no longer a member. The per-index
-  contract identities are otherwise identical, and the workflow kind is not read by anything under
-  test: the card claims contract identity across repositories and worktrees, bounded concurrency,
-  slow/failed probes, stale carry-forward and age transitions, startup missing state,
-  copy-on-write publication, retention, cancellation, Projector-owned shutdown, the
-  publication-does-not-await-observation timing regression, and the CHATS-L5I freezing / stale-file
-  rejection / reopen-without-resurrection cases — every one of which I re-read in the current
-  558-line file and all of which still hold. The one reference row resolves:
-  `observer/landing_state.py` exists.
+- 2026-08-01T09:56+02:00 — 260731-EFA-L4 curator: corrected the fixture
+  helper's workflow kind from `"light"` to `"light-task"`. No current
+  landing-state behavior changed.
 
 - 2026-07-31T16:50+02:00 — No content impact: the only change is the `_contract` fixture helper,
   which now calls `default_contract` with the `ContractTask` / `LeafIdentity` / `RepoBranchPlan`

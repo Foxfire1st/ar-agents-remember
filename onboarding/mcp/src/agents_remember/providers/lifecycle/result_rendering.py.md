@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/result_rendering.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -36,11 +36,13 @@ payloads, and routes dry-run versus live command rendering.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The lifecycle CLI delegates result display to this module. | [cli.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/cli.py) |
-| Provider lifecycle tests verify native captured output streaming. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lifecycle CLI delegates result display to this module. | `render_cli_result` | mcp/src/agents_remember/providers/lifecycle/cli.py:333-341 |
+| Provider lifecycle tests verify native captured output streaming. | `ProviderLifecycleRenderTests` | mcp/tests/test_provider_lifecycle.py:30-107 |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 2 citation claims; scoped recheck clean (0 findings).
 
 - 2026-05-25T21:14+02:00: Created from the rendering portion of the former shared lifecycle common module.

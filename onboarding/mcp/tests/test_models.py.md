@@ -30,12 +30,15 @@ a response contract and catches model definitions that are not schema-safe.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Public tool metadata lives in the `mcp/tools/` package. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| Response model registry lives in the models package. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Public tool metadata lives in the `mcp/tools/` package. | "def _tool_payload" | mcp/src/agents_remember/mcp/tools/base.py:73-73 |
+| Response model registry lives in the models package. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:101-108 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-06-06T12:28+02:00: Corrected the public-tool metadata reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created for public tool response model registry and schema coverage.

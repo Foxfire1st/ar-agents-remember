@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash |                                                                   `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate |                                                                   2026-08-01T18:06:36+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash |                                                                   `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                                   2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -226,26 +226,27 @@ The observable-lifecycle design describes passive/active pull as the durable
 return-channel family; this store supplies the durable mailbox for external
 agents that cannot receive dashboard session injection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable. | L251-L266 | [observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | L109-L126 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Pending filters match supplied lifecycle and/or agent keys. | L128-L149 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Consume is idempotent and appends a consumed snapshot only once. | L368-L390 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Delivery snapshots thread `redelivery_floor_seconds` into `next_attempt_at`, and redeliverable selection defaults to the shared backoff floor. | L151-L204; L234-L254 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening its own `fcntl` lockfile. | L468-L492 | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. | `OPERATOR_INBOX_OWNERSHIP` | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | "def log_path" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:63-63 |
+| Pending filters match supplied lifecycle and/or agent keys. | "def list_pending" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:82-82 |
+| Consume is idempotent and appends a consumed snapshot only once. | "def consume" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:127-127 |
+| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to `DEFAULT_RATE_LIMIT_SECONDS` and delegates the due/limit decision. | `DEFAULT_RATE_LIMIT_SECONDS` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125 |
+| `redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives. | `require_redelivery_floor_seconds`; `next_attempt_at`; `redeliverable` | mcp/src/agents_remember/controlplane/inbox_backoff.py:42-52; mcp/src/agents_remember/controlplane/inbox_backoff.py:55-72; mcp/src/agents_remember/controlplane/inbox_backoff.py:111-124 |
+| The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile. | `_read_unlocked`; `_replace_unlocked`; `_exclusive_access`; `fcntl` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:230-238; mcp/src/agents_remember/controlplane/operator_inbox_store.py:240-245; mcp/src/agents_remember/controlplane/operator_inbox_store.py:247-251; mcp/src/agents_remember/providers/provider_setup.py:22-22 |
+| `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. | `OPERATOR_INBOX_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:182-198 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
@@ -255,13 +256,18 @@ The store records accepted, queued, rejected, unsupported, ambiguous, and termin
 adapter evidence against an existing durable row. None of these transitions call `consume`.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors, deduplicated the backoff row, and converted the history pending/consume citations;
+  exact non-fixing check returns zero findings.
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **One stale citation and the
   leaf's least-corroborated number.** The `OPERATOR_INBOX_OWNERSHIP` row cited `durable_store.py`
   **L297-L313**; the constant is at **L368** — the file grew 598 → 699 lines mid-pass, so every
   range written earlier is off. Replaced with a symbol-name citation and no range. Re-read the five
   citations into this module's own source and left them: the log-path/append/read row L109-L126
-  (`log_path` L109, `append` L113, `read` L119, `current` L124), pending filters L128-L149, `consume`
-  L368-L390 (`def` L368), the delivery-snapshot pair L151-L204; L234-L254, and the
+  (`log_path` L109, `append` L113, `read` L119, `current` L124), pending filters cit:(["def list_pending"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:82-82), `consume`
+  cit:(["def consume"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:127-127), the delivery-snapshot pair L151-L204; L234-L254, and the
   `_read_unlocked` / `_replace_unlocked` / `_exclusive_access` row L468-L492 (L471, L481, L489). The
   **0.00 percent** claim is now attributed rather than asserted as a measurement a reader can check:
   it appears only in the `durable_store.py` docstring, as does the 9.20 percent that the old

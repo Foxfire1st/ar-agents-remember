@@ -42,26 +42,29 @@ None.
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | Source discovery checked | — |
+| No relevant external documentation is configured. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Deferred sentinel tests cover acquisition coalescing and release. | L64-L179 | [screenWakeLock.test.ts](screenWakeLock.test.ts) |
-| The production owner holds one sentinel at a time. | L34-L94 | [screenWakeLock.ts](screenWakeLock.ts) |
+| Deferred sentinel tests cover acquisition coalescing and release. | "acquires while visible and releases on stop" | dashboard/src/data/screenWakeLock.test.ts:108-116 |
+| The production owner holds one sentinel at a time. | "export function startScreenWakeLock" | dashboard/src/data/screenWakeLock.ts:34-34 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This is local browser-API test coverage. | L1-L179 | [screenWakeLock.test.ts](screenWakeLock.test.ts) |
+| This is local browser-API test coverage. | "reacquires after a UA-initiated release while still visible" | dashboard/src/data/screenWakeLock.test.ts:118-126 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-24T13:17:50Z — Created for wake-lock lifecycle and overlap regression coverage.
   Verification hash/date remain pinned to the pre-commit source stamp.

@@ -58,29 +58,26 @@ or refuse that settings shape rather than claiming generic command verification.
 
 ## Docs References
 
-No relevant external documentation found after checking the repo Domain Documentation for a
-one-delivery-path contract; the leaf task doc's R1/R3 and this implementation are the source of
-truth, same posture as the other 260707-HFX2-L3 modules.
+No relevant external documentation applies to this local delivery module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines the delivery-outcome contract; the leaf task doc (R1, R3) and this implementation are the source of truth. | whole module | [injector.py](injector.py) |
+| No relevant external documentation applies to this local delivery module. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `get_adapter` supplies every per-harness signature (`blocked_reason`, `turn_started`) this module reads. | `HarnessAdapter` | [harness_adapters.py](harness_adapters.py.md) |
-| `TerminalPaster.paste` is the transport `deliver` calls exactly once per invocation; its own capture-verify/idempotent-retry loop is UNCHANGED by this leaf. | `TerminalPaster.paste` | [terminal_paste.py](terminal_paste.py.md) |
-| `deliver_inbox_entry` builds a `DeliveryRow` (`envelope=False`) and calls `deliver` — the inbox-row half of the ONE path (dispatch/nudge/redelivery/signal-emit, all via `supervisor.py`). | `deliver_inbox_entry` | [inbox_delivery.py](inbox_delivery.py.md) |
-| `_deliver_spawn_pastes` builds separate command/brief `DeliveryRow`s and calls `deliver` — the spawn half of the one path. | `_deliver_spawn_pastes` | [terminal.py](../mcp/tools/terminal.py.md) |
-| Outcome-mapping unit tests (all four `DeliveryOutcome` branches) plus an end-to-end injection test against a scripted in-memory tmux pane (R5). | `DeliveryOutcomeMappingTests`; `ScriptedTmuxE2ETests` | [../../../tests/test_injector.py](../../../tests/test_injector.py.md) |
+| `get_adapter` supplies every per-harness signature (`blocked_reason`, `turn_started`) this module reads. | `HarnessAdapter` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
+| `TerminalPaster.paste` is the transport `deliver` calls exactly once per invocation; its own capture-verify/idempotent-retry loop is UNCHANGED by this leaf. | `TerminalPaster` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
+| `deliver_inbox_entry` builds a `DeliveryRow` (`envelope=False`) and calls `deliver` — the inbox-row half of the ONE path (dispatch/nudge/redelivery/signal-emit, all via `supervisor.py`). | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
+| Outcome-mapping unit tests (all four `DeliveryOutcome` branches) plus an end-to-end injection test against a scripted in-memory tmux pane (R5). | `test_message_is_acked_from_bound_log_and_returns_provenance` | mcp/tests/test_injector.py:63-74 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local delivery path. | — | — |
 
@@ -109,6 +106,8 @@ a duplicate.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-02T20:43+02:00 — W2-B08: anchored 2 injector reference claims, removed the unsupported R1/R3 task-authority claim from the prose and its placeholder row, and removed one deleted stale-reference row; no Tier 3 rows remain. Verification metadata stays pinned until closeout.
+
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `paste_dispatch` vs `paste` split — the acceptance-probe requirement is now enforced by the signature instead of a runtime `ValueError`.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented removal of hosted log-flush/paste authority.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

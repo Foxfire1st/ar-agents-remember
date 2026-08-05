@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/BootTimeline.tsx`    |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-06-27T23:08+02:00                                  |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -43,14 +43,18 @@ The `BootTimeline({ node })` component maps the selected steps to `<li>` rows st
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`) | [L251-L285](../../../../../../dashboard/src/types/projection.ts) | [projection.ts](../../../../../../dashboard/src/types/projection.ts) |
-| `EngineProcessEdge.state` enum (`nominal`/`running`/`stale`/`failed`/`blocked`/`skipped`/`complete`/`planned`/`unknown`) maps via `EDGE_TO_STEP` | L20-L30 | [BootTimeline.tsx](../../../../../../dashboard/src/panels/engine-room/BootTimeline.tsx) |
-| `DISPOSE_PHASES` set, `disposeFrontier(node)` reading `node.landing[]` ref progression, and `teardownSteps(node)` (5k F2/F4 tear-down mode) | L79-L120 | [BootTimeline.tsx](../../../../../../dashboard/src/panels/engine-room/BootTimeline.tsx) |
-| `timeline`, `timelineStep`, `timelineMark`, `sectionLabel` recipes drive the state-keyed styling | L3 | [engineRoomStyles.ts](../../../../../../dashboard/src/panels/engine-room/engineRoomStyles.ts) |
+| Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`). | "export interface EngineProcessNode {"; "function steadyState(node: EngineProcessNode): StepState {"; "node.health === \"failed\""; "node.providers.some"; "function bootSteps(node: EngineProcessNode): Step[] {"; "node.edges.find"; "node.codeWorktree.exists"; "Memory (${node.memoryMode})" | dashboard/src/panels/engine-room/BootTimeline.tsx:46-47; dashboard/src/panels/engine-room/BootTimeline.tsx:51-51; dashboard/src/panels/engine-room/BootTimeline.tsx:56-56; dashboard/src/panels/engine-room/BootTimeline.tsx:58-58; dashboard/src/panels/engine-room/BootTimeline.tsx:66-66; dashboard/src/panels/engine-room/BootTimeline.tsx:74-74; dashboard/src/types/projection.ts:162-162 |
+| `EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values. | `EngineProcessEdge`; `EDGE_TO_STEP`; "node.edges.find"; "EDGE_TO_STEP[found.state] ?? \"pending\"" | dashboard/src/panels/engine-room/BootTimeline.tsx:20-30; dashboard/src/panels/engine-room/BootTimeline.tsx:58-59; dashboard/src/types/projection.ts:152-160 |
+| `DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode. | `DISPOSE_PHASES`; `disposeFrontier`; `teardownSteps` | dashboard/src/panels/engine-room/BootTimeline.tsx:86-93; dashboard/src/panels/engine-room/BootTimeline.tsx:99-112; dashboard/src/panels/engine-room/BootTimeline.tsx:114-148 |
+| `timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared here. | `timeline`; `timelineStep`; `timelineMark`; `sectionLabel` | dashboard/src/panels/engine-room/engineRoomStyles.ts:110-115; dashboard/src/panels/engine-room/engineRoomStyles.ts:481-487; dashboard/src/panels/engine-room/engineRoomStyles.ts:489-508; dashboard/src/panels/engine-room/engineRoomStyles.ts:510-529 |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rebound projection, edge-state mapping, teardown,
+  and styling references to exact anchors; corrected the edge-state claim to the source's string model
+  and narrowed styling to the cited recipe declarations.
 
 - 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: steady-state completion now ignores missing provider placeholders, so an enclosure with only expected-but-unobserved providers does not read as fully booted. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-22T16:00 — Slice 05o right-panel review fixes. (a) "Contract anchor" now LEADS the boot sequence (the task contract is the precondition the worktree is created from), moved ahead of "Code worktree" and the ledger-map/memory step. (b) Three-way header via the new `STEADY_PHASES` set (`sync-needed`/`running`/`nominal`/`completed`/`live`): a live fully-booted worktree (e.g. T12B live-sync) renders "Steady state" (`data-mode="steady"`) over the completed boot checklist, distinct from "Boot sequence" and "Tear-down sequence". (c) `DISPOSE_PHASES` gained `integration-blocked` (T14C) so a terminal integration conflict reads "Tear-down sequence". (d) `teardownSteps` special-cases two terminal phases: a conflict (`integration-blocked`) marks closeout `complete` + the push/integrate step `blocked`; an abandon (`abandoned`) marks the bypassed landing steps (closeout/push/PR/pull/carryover) `skipped` and only cleanup/retire `complete`, because an abandon does no landing. Verification metadata pinned until closeout stamps the 05o code commit.

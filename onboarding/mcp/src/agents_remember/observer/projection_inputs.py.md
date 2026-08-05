@@ -83,17 +83,19 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Projection write edge consumes this retained input state. | [projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The serialized worker maps watcher wakes to refresh kinds. | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| Domain invalidation regressions. | [test_projection_domain_invalidation.py](agents-remember/mcp/tests/test_projection_domain_invalidation.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Projection write edge consumes this retained input state. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
+| The serialized worker maps watcher wakes to refresh kinds. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
+| Domain invalidation regressions. | `test_heartbeat_and_lifecycle_changes_skip_unrelated_heavy_readers`; `test_task_refresh_replaces_and_reclaims_retained_rows_at_two_sizes` | mcp/tests/test_projection_domain_invalidation.py:64-141; mcp/tests/test_projection_domain_invalidation.py:143-186 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `ProjectionInputState.read` and every `_refresh_*` method were re-signed onto three new frozen

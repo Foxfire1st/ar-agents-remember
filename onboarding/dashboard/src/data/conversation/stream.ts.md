@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/stream.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -35,11 +35,16 @@ controller only delivers ordered envelopes and reports connect/disconnect.
   getResumeCursor())`. It listens for `open` (→ `onOpen`), the named `conversation` message event
   (JSON-parses the envelope; a malformed frame is IGNORED so the reducer only ever sees well-formed
   envelopes), and `error`.
-- On `error` it closes, fires `onDisconnect`, and schedules a `reconnectDelayMs` (default 2000)
-  backoff that reopens from the latest cursor. A stale generation guard (`source !== next`) ignores
-  callbacks from a superseded source.
-- The returned controller exposes `reconnect()` (reopen from the current cursor — used by the store
-  after a re-page) and `stop()` (mark stopped, clear the timer, close the source).
+- On `error` it closes, fires `onDisconnect`, and schedules the established-connection
+  `reconnectDelayMs` (default 2000) backoff. Before the first successful open, the boot window uses
+  `bootReconnectDelayMs` instead; both are configured in the transport's defaults and applied by the
+  open/error lifecycle. cit:([`bootReconnectDelayMs`, `reconnectDelayMs`], dashboard/src/data/conversation/stream.ts:55-55; dashboard/src/data/conversation/stream.ts:63-63)
+  cit:([`open`], dashboard/src/data/conversation/stream.ts:137-203)
+  A stale generation guard (`source !== next`) ignores callbacks from a superseded source.
+- cit:([`reconnect`, `stop`], dashboard/src/data/conversation/stream.ts:82-83) exposes controller
+  operations for reopening or stopping the transport. The store's recovery path owns stopping and
+  recreating the stream through `startStream`, rather than claiming that it calls controller
+  `reconnect()`. cit:([`startStream`], dashboard/src/data/conversation/store.ts:382-425)
 
 ### Invariants And Boundaries
 
@@ -63,29 +68,32 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The event-URL builder (`after=` only) this controller opens. | L182-L192 | [client.ts](client.ts) |
-| The envelope type this controller parses and forwards. | L9-L10 | [types.ts](types.ts) |
-| The store that owns connect/recovery and calls `reconnect()`/`stop()`. | L170-L223 | [store.ts](store.ts) |
-| The server preflight that rejects a conflicting `after=`/`Last-Event-ID`. | — | [active/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
+| The event-URL builder (`after=` only) this controller opens. | `conversationEventsUrl` | dashboard/src/data/conversation/client.ts:294-303 |
+| The envelope type this controller parses and forwards. | `eventCursor` | dashboard/src/data/conversation/types.ts:286-315 |
+| The store recovery path that stops and recreates the stream. | `startStream` | dashboard/src/data/conversation/store.ts:382-425 |
+| The active-conversation cursor authority names the `cursor-conflict` refusal. | "cursor-conflict" | mcp/src/agents_remember/serving/conversation/active/cursor.py:82-82 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: split boot versus established reconnect delays,
+  corrected store/controller ownership, and converted transport references to source-backed citations.
 
 - 2026-07-24T13:17:50Z — Recorded boot-aware reconnect, open-deadline, and half-open watchdog
   behavior. Verification hash/date remain pinned to the pre-commit source stamp.

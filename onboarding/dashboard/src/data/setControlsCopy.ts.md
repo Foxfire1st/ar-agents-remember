@@ -45,27 +45,29 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared copy and announcement formatters. | L1-L127 | [setControlsCopy.ts](setControlsCopy.ts) |
-| Presentation-model consumer. | L1-L232 | [setChips.ts](setChips.ts) |
-| I/O and live-region consumer. | L1-L433 | [setClient.ts](setClient.ts) |
+| Shared copy and announcement formatters. | `setWaitingCopy`, `clampChipCopy`, `queuedChipCopy`, `setRouteErrorCopy`, `setResultAnnouncement`, `sessionAwaitingInputAnnouncement` | dashboard/src/data/setControlsCopy.ts:19-21; dashboard/src/data/setControlsCopy.ts:25-27; dashboard/src/data/setControlsCopy.ts:29-31; dashboard/src/data/setControlsCopy.ts:60-74; dashboard/src/data/setControlsCopy.ts:83-101; dashboard/src/data/setControlsCopy.ts:125-127 |
+| Presentation-model consumer. | `deriveSetChips` | dashboard/src/data/setChips.ts:58-216 |
+| I/O and live-region consumer. | "The set-controls driver (260715-FEUI-L4 S1/S3/S4)" | dashboard/src/data/setClient.ts:38-38 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-03T02:38:23+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

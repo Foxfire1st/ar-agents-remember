@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:40+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -211,20 +211,24 @@ the report to a temporary directory unless `--coverage-json` is given.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
-| CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
-| An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
-| `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
-| The shared tiered hook body derives the same `git ls-files` scope and runs this wrapper as its full tier. | [_gate.sh](agents-remember/.githooks/_gate.sh) |
-| `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | [pyproject.toml](agents-remember/pyproject.toml) |
-| Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | [AGENTS.md](agents-remember/AGENTS.md) |
-| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:1-5; mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
+| CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:232-239 |
+| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:168-223; mcp/tests/test_code_quality_check.py:226-238; mcp/tests/test_code_quality_check.py:340-351; mcp/tests/test_code_quality_check.py:514-521 |
+| An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:152-173 |
+| `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
+| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390; mcp/tests/test_git_command.py:372-390 |
+| The shared tiered hook body derives the same `git ls-files` scope and runs this wrapper as its full tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:61-69; .githooks/_gate.sh:162-172 |
+| `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "C901" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:103-112 |
+| Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | "python -m agents_remember.code_quality.check" | AGENTS.md:154-160; AGENTS.md:185-189 |
+| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845; mcp/src/agents_remember/worktrees/modules/closeout.py:820-828; mcp/src/agents_remember/worktrees/modules/closeout.py:841-845 |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized all 10 reference rows from
+  markdown links to plain anchored sources (diff_coverage, crap_calculator, the four test suites,
+  git_command, _gate.sh, pyproject.toml, AGENTS.md, closeout.py). Zero findings remain.
 
 - 2026-08-01T09:40+02:00 — 260731-EFA-L4 curator: recorded the caller obligation that follows from
   reading the index. **Only this file's `derive_scope` docstring changed in L4 — 13 added lines, no

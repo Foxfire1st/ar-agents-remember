@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 
 ## What This Area Is
 
@@ -209,18 +209,31 @@ The parent contract route supplies the wire grammar and composition seams; the L
 supplies the native writes, timeline, asset channel, evidence window, and recovery payload; the
 foundation and four+installed suites pin the slice.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The two L0 request dependencies are the only caller/runtime consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The operation/queue/withdrawal/recovery/attachment/telemetry wire products this route imports, the `protect_queue_source_privacy` validator, and the content-free `operation_fingerprint`. Policy products (`PolicyPart`, `ConversationPolicyProjection`) are route-local in `control/policy.py`, not here. | L935-L1262; L1285-L1302 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The seventeen route declarations: one shared refusal table plus the two outcome tables, and the submit route's own 202/422 entries. `_map_typed_error` is the single mapper that makes one table the complete refusal surface. | L124-L150; L151-L789 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
-| `CONTROL_RESPONSES` (six statuses), `INTERRUPT_OUTCOME_RESPONSES` and `WITHDRAW_OUTCOME_RESPONSES` — the outcome tables whose bodies are the operation, not a refusal — plus `StagedAttachments`/`ConversationSubmitted`/`WithdrawQueueAnswer`. | L57-L90; L95-L112; L140-L177 | [conversation/response_contract.py](agents-remember/mcp/src/agents_remember/serving/conversation/response_contract.py) |
-| The L2E control-plane reads (interrupt write, operation timeline, asset channel) this slice consumes. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The L3E truncation-envelope terminal-identity preservation the pi settlement reads. | L569-L667 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The authority setter mint with no submission source (setter-row exclusion basis). | L541-L543 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The stale-but-fail-closed L1 page-level control/telemetry capability view (L4 gates on the L3 module instead). | L154-L167 | [active/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
-| The foundation pin asserts exactly the seventeen owned control routes (GET-only on policy/telemetry/queue/pending). | L54-L82 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The four focused suites + the opt-in installed suite cover interrupt, queue/withdrawal/recovery, attachments/policy/telemetry, the real-wire routes, and the live proof. | L1-L8 | [mcp/tests overview](../../../../../tests/overview.md) |
+| `get_conversation_runtime` is the runtime dependency entry. | `get_conversation_runtime` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23 |
+| The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
+| The conversation models define `protect_queue_source_privacy`. | `protect_queue_source_privacy` | mcp/src/agents_remember/serving/conversation/models.py:981-988 |
+| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | `operation_fingerprint` | mcp/src/agents_remember/serving/conversation/models.py:1285-1302 |
+| `PolicyPart` is declared in the route-local `control/policy.py`. | `PolicyPart` | mcp/src/agents_remember/serving/conversation/control/policy.py:36-43 |
+| `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. | `ConversationPolicyProjection` | mcp/src/agents_remember/serving/conversation/control/policy.py:46-55 |
+| `_map_typed_error` is the control API error-mapping entry. | `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
+| `CONTROL_RESPONSES` is the six-status shared refusal table for the control surface. | `CONTROL_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108 |
+| `INTERRUPT_OUTCOME_RESPONSES` declares the interrupt outcome response table. | `INTERRUPT_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:140-153 |
+| `WITHDRAW_OUTCOME_RESPONSES` declares the withdrawal outcome response table. | `WITHDRAW_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:160-173 |
+| The control client sends the epoch-guarded interrupt write. | `interrupt_control` | mcp/src/agents_remember/serving/harness_control_client.py:425-445 |
+| The control client validates paged operation-timeline reads before returning them. | `read_operation_timeline` | mcp/src/agents_remember/serving/harness_control_client.py:448-472 |
+| The control client validates the additive asset channel on prompt submission. | `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:214-252 |
+| `clip_evidence_payload` is the truncation-envelope entry. | `clip_evidence_payload` | mcp/src/agents_remember/serving/harness_control_models.py:786-838 |
+| Pi settlement reads the preserved terminal identity through its stop-reason reader. | `_pi_stop_reason` | mcp/src/agents_remember/serving/conversation/control/operations.py:484-511 |
+| `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
+| `capabilities_for` is the active capability-view entry. | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:342-357 |
+| The foundation pin asserts exactly the seventeen owned control routes. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
+| `CodexInterruptTests` covers codex interrupt and operation behavior. | `CodexInterruptTests` | mcp/tests/test_conversation_control_operations.py:40-192 |
+| `QueueProjectionTests` covers queue projection behavior. | `QueueProjectionTests` | mcp/tests/test_conversation_control_queue.py:51-208 |
+| `PolicyTelemetryTests` covers policy and telemetry behavior. | `PolicyTelemetryTests` | mcp/tests/test_conversation_control_attachments.py:572-650 |
+| `ControlApiTests` covers the real-wire control routes. | `ControlApiTests` | mcp/tests/test_conversation_control_api.py:26-378 |
+| `CodexInstalledControlApiTests` provides the installed control proof. | `CodexInstalledControlApiTests` | mcp/tests/test_conversation_control_installed.py:195-484 |
 
 ## Cross-Repo References
 
@@ -228,7 +241,7 @@ No cross-repository implementation participates in this route. All three harness
 subprocesses reached through this repository's own adapters, and the resolved memory policy allows no
 neighboring repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant cross-repo evidence found. | — | — |
 
@@ -238,7 +251,7 @@ The resolved `Domain Documentation` registry has no entries. This route therefor
 repository-owned contract, the L2E/L0E/L3E substrate, fixtures, and tests as its direct evidence and
 does not fabricate an external citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this control gate. | — | — |
 
@@ -379,6 +392,8 @@ most routes) stay declared-and-undriven with a reason, because the bridge fixtur
 edge rather than a stale epoch or a socket that dies mid-write.
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the seventeen route declarations and,
   more importantly, the distinction the declarations had to encode — three of this route's statuses

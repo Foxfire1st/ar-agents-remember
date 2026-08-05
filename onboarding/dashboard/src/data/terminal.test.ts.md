@@ -99,26 +99,29 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
+| No relevant domain documentation was found for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The WebSocket client under test. | — | [terminal.ts](terminal.ts) |
+| The WebSocket client under test. | `connectTerminal` | dashboard/src/data/terminal.ts:197-313 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: bound the client-under-test row to
+  `connectTerminal` (terminal.ts 197-313) with a plain source. Zero findings remain.
 
 - 2026-07-24T13:17:50Z — Added terminal and harness catalog single-flight timeout coverage.
   Verification hash/date remain pinned to the pre-commit source stamp.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T08:36+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ pairing in both directions. It is the first serving module to resolve a
 
 ### 260731-EFA-L4 Current Delta — The Four Routes Now Declare What They Answer With
 
-All four routes gained a `response_model` (L303-L321). Nothing about the wire changed: every
+All four routes gained a `response_model` cit:([`register_files_routes`], mcp/src/agents_remember/serving/files.py:296-325). Nothing about the wire changed: every
 handler still returns a `JSONResponse` it built itself, and FastAPI applies `response_model`
 only to values it serializes for you — so on these four the declaration contributes an OpenAPI
 schema and validates nothing at runtime. The enforcement is
@@ -154,20 +154,20 @@ rejected, never silently re-rooted).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3). | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
-| The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. | [kernel/sidecar_pairing.py](agents-remember/mcp/src/agents_remember/kernel/sidecar_pairing.py) |
-| The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| The repo allow-list authority guard (`require_repo` → `RepositoryScope`). | [controllers/_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
-| `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The leaf-enclosure contract enumerator the catalog walks. | [worktrees/task_resolver.py](agents-remember/mcp/src/agents_remember/worktrees/task_resolver.py) |
-| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | [worktrees/worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | [kernel/onboarding_doc.py](agents-remember/mcp/src/agents_remember/kernel/onboarding_doc.py) |
-| The test suite for this module. | [test_serving_files.py](agents-remember/mcp/tests/test_serving_files.py) |
-| The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | [response_contract.py](response_contract.py.md) |
-| The suite that actually enforces the declarations by driving every route and validating the real body. | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3). | `_resolve_within` | mcp/src/agents_remember/serving/scope.py:196-204 |
+| The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. | `add_middleware` | mcp/src/agents_remember/serving/app.py:749-749 |
+| The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
+| The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. | "test_worktree_support.py" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:156-156 |
+| The repo allow-list authority guard (`require_repo` → `RepositoryScope`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
+| `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | `allowed_repo_ids` | mcp/src/agents_remember/mcp/config.py:131-133 |
+| The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/worktrees/task_resolver.py:80-85 |
+| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1013-1013 |
+| The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |
+| The test suite for this module. | `test_response_shape_and_filtering_are_unchanged` | mcp/tests/test_serving_files.py:333-394 |
+| The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:709-715 |
+| The suite that actually enforces the declarations by driving every route and validating the real body. | `test_files_routes_conform` | mcp/tests/test_serving_response_conformance.py:1209-1265 |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -177,8 +177,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-02T21:25:17+02:00 — 260731-EFA-L6 curator W2-B10: repaired 26 citation findings (12 reference rows and 2 prose pointers); scoped recheck clean.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T08:36+02:00 — 260731-EFA-L4 curator: recorded the four `response_model`
-  declarations (L303-L321) and the shared `SCOPED_READ_RESPONSES` table, including why
+  declarations cit:([`register_files_routes`], mcp/src/agents_remember/serving/files.py:296-325) and the shared `SCOPED_READ_RESPONSES` table, including why
   `/api/files/repos` alone declares no refusal shape (no refusal branch — the catalog is built
   from the allow-list) and why `/api/files/onboarding` declares a five-shape union rather than
   the forward shape only. Noted that FastAPI validates none of these handlers, because all four

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_codex_adapter_thread_routing_and_registry.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                                       |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                   |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -67,13 +67,15 @@ registry assertions a statement about a **settled** frame rather than a race.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The Codex app-server adapter, its thread demux and agent registry. | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| The demux suite this module extends. | [test_codex_adapter_thread_demux.py](agents-remember/mcp/tests/test_codex_adapter_thread_demux.py) |
-| The sub-agent projector whose roster these registry bindings feed. | [test_conversation_projector_codex_agents.py](agents-remember/mcp/tests/test_conversation_projector_codex_agents.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The Codex app-server adapter, its thread demux and agent registry. | `CodexAppServerAdapter`; `CodexThreadRegistry` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115; mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
+| The demux suite this module extends. | "test_spawned_subagent_traffic_never_fails_the_bridge" | mcp/tests/test_codex_adapter_thread_demux.py:118-158 |
+| The sub-agent projector whose roster these registry bindings feed. | `CodexAgentEngineTests` | mcp/tests/test_conversation_projector_codex_agents.py:464-1291 |
 
 ## Update History
+
+- 2026-08-03T11:15+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 6 assigned citation findings (3 missing anchors and 3 malformed sources); final scoped check is clean.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new Codex
   thread-routing / registry-binding suite. Verification metadata is pinned to the leaf's

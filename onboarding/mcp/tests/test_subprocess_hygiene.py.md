@@ -36,11 +36,13 @@ spread is accepted as a deliberate choice (e.g. `command_runner`).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The proving harness for the bug class this guards. | [test_mcp_stdio_transport.py](agents-remember/mcp/tests/test_mcp_stdio_transport.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The proving harness for the bug class this guards. | `StdioTransportTests` | mcp/tests/test_mcp_stdio_transport.py:99-136 |
 
 ## Update History
+
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired the proving-harness reference to the exact `StdioTransportTests` class; scoped citation verification follows.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_subprocess_hygiene.py` since the L2 base commit is the whole-tree `ruff format`

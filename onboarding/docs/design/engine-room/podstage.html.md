@@ -6,8 +6,8 @@
 | path                   | `docs/design/engine-room/podstage.html`     |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-06-21T23:35                            |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`  |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -90,30 +90,32 @@ This is a self-contained design prototype; the only external context is the anim
 renderer uses to realise it. No external documentation was required. No relevant documentation found after
 checking live sources.
 
-| Finding | Citations | Source Path |
-| ------- | --------- | ----------- |
-| The scenario library + transport (`SCENARIOS`, `seekTo`/`play`/`loadSeq`) defining the build-up, tear-down, and failure-mode scenes the renderer reproduces. | L710-L735 | [podstage.html](podstage.html) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The scenario library + transport (`SCENARIOS`, `seekTo`/`play`/`loadSeq`) defining the build-up, tear-down, and failure-mode scenes the renderer reproduces. | `SCENARIOS`; `seekTo`; `play`; `loadSeq` | docs/design/engine-room/podstage.html:710-734 |
 
 ## Repo-Internal References
 
 The prototype sits between the living spec (which distils it) and the React renderer (which reproduces it).
 The two cross-links below are that proving pair.
 
-| Finding | Citations | Source Path |
-| ------- | --------- | ----------- |
-| The living spec that distils this prototype's primitives into the canonical, parameterised visual language; its CSS classes mirror this file 1:1. | L11-L12, L93-L107 | [engine-room-visual-language.html](engine-room-visual-language.html) |
-| The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion. | — | [dashboard/src/panels/engine-room/overview.md](../../../dashboard/src/panels/engine-room/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The living spec that distils this prototype's primitives into the canonical, parameterised visual language; its CSS classes mirror this file 1:1. | `wire`; `flowpath`; `node`; `prov`; `coupler-g`; `dissolve`; `scan` | docs/design/engine-room/engine-room-visual-language.html:97-173 |
+| The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion. | `EnclosureProcessMap`; `EnclosureCanvas`; `ENGINE_ROOM_SCENARIOS`; `useEngineTimeline` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:57-145; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711; dashboard/src/panels/engine-room/fixtures.ts:720-1198; dashboard/src/panels/engine-room/useEngineTimeline.ts:162-247 |
 
 ## Cross-Repo References
 
 This is an in-repo design prototype with no cross-repository or external-system boundary. No meaningful
 cross-repo references found.
 
-| Finding | Citations | Source Path |
-| ------- | --------- | ----------- |
+| Finding | Anchor | Source |
+| --- | --- | --- |
 | _None._ | — | — |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 3 table citations and replaced 1 stale overview path with 4 exact renderer sources; no unresolved Tier-3 claims.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

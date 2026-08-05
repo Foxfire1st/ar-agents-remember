@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_nudges.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash |                                                                   `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate |                                                                   2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash |                                                                   `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                                   2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -104,14 +104,18 @@ does the read, the filter and the rewrite inside that one hold.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public nudge tool records these rows and emits the manager inbox message. | [orchestration.py](agents-remember/mcp/src/agents_remember/mcp/tools/orchestration.py) |
-| Nudge events are written into the observer workspace event log. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| `append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking. | [orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py) |
-| `ORCHESTRATION_NUDGE_OWNERSHIP` at L315-L325 names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet. | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public nudge tool records these rows and emits the manager inbox message. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
+| Nudge events are written into the observer workspace event log. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| `append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking. | `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:145-155 |
+| `ORCHESTRATION_NUDGE_OWNERSHIP` at L315-L325 names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet. | `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:200-210 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the three `n/a`-anchor
+  table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns
+  zero findings.
 
 - 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded the 9.20 percent
   measured loss and the routing of all file I/O through `durable_store.py` under

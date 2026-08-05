@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -78,23 +78,23 @@ precedence; the `worktree_name` fallback is only consulted when it yields nothin
 
 No external documentation is needed for this package-local resolver flow.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Data models and missing-memory errors are defined separately. | models | [models.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/models.py) |
-| Settings parsing, contract loading (task-based + worktree-name fallback), and cross-repo resolution are delegated to focused modules. | package overview | [overview.md](overview.md) |
-| Resolver parity and worktree support tests cover the output contract and worktree-aware path behavior. | tests | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py); [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Data models and missing-memory errors are defined separately. | `CoordinationHints` | mcp/src/agents_remember/kernel/coordination_context/models.py:93-106 |
+| Settings parsing, contract loading (task-based + worktree-name fallback), and cross-repo resolution are delegated to focused modules. | `# mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules` | onboarding/mcp/src/agents_remember/kernel/coordination_context/overview.md:1-131 |
+| Resolver parity and worktree support tests cover the output contract and worktree-aware path behavior. | `test_parent_task_disambiguates_nested_task_roots`, `test_resolver_prefers_task_name_over_worktree_name` | mcp/tests/test_resolver_parity.py:155-210; mcp/tests/test_worktree_support.py:915-937 |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed; cross-repo facts are read dynamically from configured adjacent repos.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No static cross-repo references are required. | n/a | n/a |
 
@@ -103,6 +103,8 @@ No cross-repository evidence is needed; cross-repo facts are read dynamically fr
 Resolver assembly threads `selector.parent_task` and `selector.leaf_id` into contract and task-root selection, so user-facing calls can keep using task names while the source API resolves nested active roots. Independently, `selector.worktree_name` resolves a contract by its worktree-group folder when no task name is available; the two mechanisms coexist (task-based resolution wins, worktree-name is the fallback). All five live on one `EnclosureSelector`.
 
 ## Update History
+
+- 2026-08-02T21:03:24+02:00 — 260731-EFA-L6 curator W2-B10: repaired 7 citation findings (3 reference rows); scoped recheck clean.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   **public API change.** `resolve_coordination_context` now takes keyword-only

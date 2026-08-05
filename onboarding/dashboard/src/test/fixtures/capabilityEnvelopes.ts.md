@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/capabilityEnvelopes.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786`       |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -16,77 +16,65 @@
 
 ## Purpose
 
-**Capability-contract fixtures** (260715-FEUI-L3 R3), typed against the wire mirrors and shaped
-by the RECORDED L5 evidence: Claude's five rows with an effortless Haiku, Codex's eight rows with
-a hidden entry and per-row default efforts, Pi's two provider-qualified rows — plus envelopes in
-all three cache statuses, the fresh-Claude exact-session snapshot, SetResults in every
-acceptance, and the verbatim 404/409/503 route-error bodies. FIXTURES ONLY: these keys/menus are
-evidence examples for tests — they must never enter production UI constants (dynamic-only
-invariant, byte-checked by the L3 review against the L5 conformance reports).
-FEUI-L4 extends the same pack with clamp/defensive-echo evidence, queued→immediate and
-unknown→readback sequences, live Codex snapshot construction, and exact-session error bodies.
+Capability-contract fixtures are test-only wire-shaped examples for model capability, session,
+result, and route-error behavior. They must not enter production UI constants.
 
 ## Code Commentary
 
 ### Logic
 
-- Builders `effortOption`/`modelRow` (L20-L52): full-wire-shape rows with overridable defaults
-  (`supportsEffort` derived from the supplied menu) — the same extend-don't-fork posture as
-  `catalogRows.ts`.
-- `CLAUDE_MODEL_ROWS` (L60-L84): the recorded five keys; every effort menu is the five-key
-  `low…max` list; `haiku` (L83) advertises NO effort rows — THE fixture the effort-gating tests
+- cit:([`effortOption`; `modelRow`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:20-32; dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52): Builders create full-wire-shape rows with overridable defaults
+  (supportsEffort derived from the supplied menu) — the same extend-don't-fork posture as
+  catalogRows.
+- cit:([`CLAUDE_MODEL_ROWS`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:60-84): the recorded five keys; every effort menu is the five-key
+  low…max list; cit:([`haiku`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:83-83) advertises NO effort rows — THE fixture the effort-gating tests
   lean on.
-- `CODEX_MODEL_ROWS` (L88-L131): eight rows with per-row `defaultEffort` (sol=low, spark=high),
-  `ultra` only on sol/terra, and `codex-auto-review` hidden.
-- `PI_MODEL_ROWS` (L135-L146): `deepseek/deepseek-v4-flash|pro` — keys stay provider-qualified
-  VERBATIM with `provider: "deepseek"` alongside; menu off/high/max.
-- `preSessionSnapshot`/`capabilityEnvelope` (L156-L172): pre-session = no selection, empty
-  `configOptions`; the fingerprint mimics the recorded sha256-hex SHAPE.
-  `ENVELOPES_BY_CACHE_STATUS` (L175-L179) is the same catalog under hit/miss/refreshed.
-- `CLAUDE_FRESH_SESSION_SNAPSHOT` (L186-L207): launch model echoed via `system/init` but
-  `selectedEffort` NULL — stream-json emits no launch-effort echo (L5) — and only the `model`
-  config category.
-- `SET_RESULTS` (L211-L247): one per acceptance; `queued`/`unknown`/`unsupported` carry
-  `effectiveValue: null` (evidence words, never a success boolean).
-- **L4 extensions** (L249-L336): clamp and echo-without-value results, queued then immediate,
-  `codexLiveSessionSnapshot`, confirming/disproving unknown readbacks, and verbatim 404/409/503
-  exact-session bodies. `configOptions` remains present only to prove the effort menu ignores it.
-- `CAPABILITY_ERROR_BODIES` (L336-L358): 404 `harness not installed: 'codex'`, 409 non-native,
-  503 control-unavailable — verbatim server wording with the HTTP status alongside.
+- cit:([`CODEX_MODEL_ROWS`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:88-131): eight rows with per-row defaultEffort (sol=low, spark=high),
+  ultra only on sol/terra, and codex-auto-review hidden.
+- cit:([`PI_MODEL_ROWS`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:135-146): the two keys stay provider-qualified
+  VERBATIM with provider: "deepseek" alongside; menu off/high/max.
+- cit:([`preSessionSnapshot`; `capabilityEnvelope`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:156-158; dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-172): pre-session = no selection, empty
+  configOptions; the fingerprint is a synthetic harness-prefixed fixture token, not a sha256-hex digest.
+  cit:([`ENVELOPES_BY_CACHE_STATUS`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:175-179) is the same catalog under hit/miss/refreshed.
+- cit:([`CLAUDE_FRESH_SESSION_SNAPSHOT`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:186-207): the fresh-session fixture records a launch model,
+  null selectedEffort, and only the model config category.
+- cit:([`SET_RESULTS`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247): one per acceptance; queued/unknown/unsupported carry
+  effectiveValue: null (evidence words, never a success boolean).
+- cit:([`SET_RESULT_CLAMP`; `SET_RESULT_ECHO_NO_VALUE`; `QUEUED_THEN_IMMEDIATE_SEQUENCE`; `codexLiveSessionSnapshot`; `UNKNOWN_THEN_READBACK`; `SESSION_CAPABILITY_ERROR_BODIES`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:253-259; dashboard/src/test/fixtures/capabilityEnvelopes.ts:263-269; dashboard/src/test/fixtures/capabilityEnvelopes.ts:273-288; dashboard/src/test/fixtures/capabilityEnvelopes.ts:291-301; dashboard/src/test/fixtures/capabilityEnvelopes.ts:305-319; dashboard/src/test/fixtures/capabilityEnvelopes.ts:322-332): Later extensions cover clamp and echo-without-value results, queued then immediate,
+  `codexLiveSessionSnapshot`, confirming/disproving unknown readbacks, and 404/409/503 exact-session
+  bodies.
+- cit:([`CAPABILITY_ERROR_BODIES`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:336-358): the fixture stores 404 harness-not-installed,
+  409 non-native, and 503 control-unavailable bodies with their HTTP statuses.
 
 ### Invariants And Boundaries
 
-- Values mirror recorded evidence: bridge/route-error strings are the server's EXACT wording;
-  SetResult detail strings are representative paraphrases of L5-observed behavior, marked as
-  fixtures (worker decision 11). Update only against new recorded evidence, never by invention.
-- Shared test infrastructure for L3–L6: extend by adding rows/overrides, not by editing recorded
+- cit:([`SET_RESULTS`; `CAPABILITY_ERROR_BODIES`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247; dashboard/src/test/fixtures/capabilityEnvelopes.ts:336-358): The fixture stores SetResult detail strings and the
+  404/409/503 route-error bodies; update these fixture values only against new recorded evidence,
+  never by invention.
+- cit:([`effortOption`; `modelRow`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:20-32; dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52): Shared test infrastructure across these waves: extend by adding rows/overrides, not by editing recorded
   shapes in place.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Builders, catalogs, envelopes, snapshots, SetResults, L4 sequences, and both route-error families. | L20-L358 | [capabilityEnvelopes.ts](capabilityEnvelopes.ts) |
-| The wire mirrors everything is typed against. | L11-L117 | [../../types/harnessCapabilities.ts](../../types/harnessCapabilities.ts) |
-| The Python serializers the shapes mirror. | L59-L64, L162-L227 | [harness_capability_catalog.py](../../../../mcp/src/agents_remember/serving/harness_capability_catalog.py), [harness_capabilities.py](../../../../mcp/src/agents_remember/serving/harness_capabilities.py) |
-| The conformance suite pinning the pack to the recorded L5 samples. | L31-L161 | [../contractCapabilities.test.ts](../contractCapabilities.test.ts) |
-| Store-suite consumer (adopt/refuse/error paths). | — | [../../data/capabilityCatalog.test.ts](../../data/capabilityCatalog.test.ts) |
-| Flow-suite consumer (dynamic-only render, re-gating, vendor defaults). | — | [../../panels/session-cockpit/LaunchFlow.test.tsx](../../panels/session-cockpit/LaunchFlow.test.tsx) |
+| Builders, catalogs, envelopes, snapshots, SetResults, later sequences, and both route-error families. | `effortOption`; `modelRow`; `CLAUDE_MODEL_ROWS`; `CODEX_MODEL_ROWS`; `PI_MODEL_ROWS`; `capabilityEnvelope`; `SET_RESULTS`; `CAPABILITY_ERROR_BODIES` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:20-32; dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52; dashboard/src/test/fixtures/capabilityEnvelopes.ts:60-84; dashboard/src/test/fixtures/capabilityEnvelopes.ts:88-131; dashboard/src/test/fixtures/capabilityEnvelopes.ts:135-146; dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-172; dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247; dashboard/src/test/fixtures/capabilityEnvelopes.ts:336-358 |
+| The wire mirrors everything is typed against. | `EffortOptionWire`; `ModelCapabilityWire`; `CapabilitySnapshotWire`; `CapabilityEnvelope`; `SetResultWire` | dashboard/src/types/harnessCapabilities.ts:16-22; dashboard/src/types/harnessCapabilities.ts:25-39; dashboard/src/types/harnessCapabilities.ts:59-65; dashboard/src/types/harnessCapabilities.ts:68-75; dashboard/src/types/harnessCapabilities.ts:89-96 |
+| The Python serializers the shapes mirror. | `to_json`; `capability_snapshot_json`; `model_capability_json`; `effort_option_json`; `set_result_json` | mcp/src/agents_remember/serving/harness_capability_catalog.py:56-65; mcp/src/agents_remember/serving/harness_capabilities.py:162-168; mcp/src/agents_remember/serving/harness_capabilities.py:171-184; mcp/src/agents_remember/serving/harness_capabilities.py:187-194; mcp/src/agents_remember/serving/harness_capabilities.py:216-225 |
 
 ## Update History
 
-- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation.
-  `CAPABILITY_ERROR_BODIES` is declared at L336 (the `Record<"notInstalled" | "nonNative" |
-  "controlUnavailable", …>` head) and runs to L358, so the range was widened from L340-L358, which
-  began inside the object literal and skipped the declaration. The three verbatim 404/409/503
+- 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: applied the adversarial fixture-truth correction; the fingerprint is documented as a synthetic harness-prefixed token, and the landing provenance mismatch remains an explicit Tier-3 item.
+- 2026-07-31T18:05+02:00 — 260731-EFA wave 2 curator: re-derived 1 stale self-citation.
+  `CAPABILITY_ERROR_BODIES` is declared at the object's opening line and runs through the three verbatim 404/409/503
   bodies it names are unchanged.
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R9 appended the clamp and defensive echo results,
+- 2026-07-17T08:33+02:00 — 260715-FEUI extension R9 appended the clamp and defensive echo results,
   queued→immediate sequence, live Codex snapshot helper, unknown confirming/disproving readbacks,
   and exact-session 404/409/503 bodies. Verification metadata remains pinned to the contract base
   until code commit.
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R3 (capability fixtures): recorded-L5
+- 2026-07-17T06:10+02:00 — Created for 260715-FEUI R3 (capability fixtures): recorded
   Claude/Codex/Pi catalogs (effortless Haiku, hidden codex-auto-review + per-row defaults,
   provider-qualified Pi keys), envelopes in all three cache statuses, the null-selectedEffort
   fresh-Claude snapshot, SET_RESULTS across the five acceptances, and verbatim 404/409/503
-  error bodies. Verification metadata pinned to the leaf base until closeout stamps the L3 code
+  error bodies. Verification metadata pinned to the leaf base until closeout stamps the code
   commit.

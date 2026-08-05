@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T17:35+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -53,27 +53,31 @@ No TODO is recorded for this catalog.
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [onboarding-memory.md](agents-remember/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md) |
-| The reviewer role that binds this catalog per review type. | n/a | [reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md) |
-| The Update History order checker whose naive/UTC comparison semantics OM-3 pins. | n/a | [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
+| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Onboarding/Memory Review` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:1-67 |
+| The reviewer role that binds this catalog per review type. | `# Lifecycle — Adversarial Reviewer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:1-187 |
+| The Update History order checker whose naive/UTC comparison semantics OM-3 pins. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
+  exact heading/identifier anchors and fixer-generated ranges; exact non-fixing check returns
+  zero findings.
 
 - 2026-07-06T17:35+02:00 — 260703-L12 round 2: OM-1's catching evidence re-cited to the verifiable record (L12R-1: the L8 cycle-6 owner-pass overview de-stales in the 2026-07-05T19:25 history entries + L10's sidecar de-stale — two engagements, standing holds); OM-3 re-tiered STANDING → CANDIDATE (L12R-2: one catch, promotes at ≥2). Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `criteria/onboarding-memory.md` seed catalog (leaf 260703-L12): OM-1 staleness diff (cycle-6 deleted-models catch), OM-2 history-only detection (closeout-body-gate catch), OM-3 newest-first under the checker's naive/UTC semantics (L11 collision re-sort), with the exploratory mandate and the promotion ratchet. Verification metadata pinned until closeout stamps the L12 commit.

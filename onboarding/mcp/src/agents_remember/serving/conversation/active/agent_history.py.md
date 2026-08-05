@@ -50,7 +50,7 @@ None known.
 `system/sources.md` has no configured Domain Documentation entries, so no live domain-documentation
 pass was available.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -59,23 +59,21 @@ pass was available.
 The projector owns I/O and applies these outcomes only at the selected-child boundary; the API
 serializes the same status vocabulary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The projector catches only typed native-history outcomes (`NativeHistoryLimitExceeded`, `NativeHistoryUnavailable`) and mints unavailable/recovered rows under the apply lock. | L99-L137 | [child_history.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/child_history.py) |
-| The active route serializes status, exact child id, detail, and code. | L153-L187 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
-| Projection regressions prove local failure, sibling continuity, same-child singleflight, capacity refusal, and revision-two recovery. | L677-L1052 | [test_conversation_projector_codex_agents.py](agents-remember/mcp/tests/test_conversation_projector_codex_agents.py) |
 
 ## Cross-Repo References
 
 No cross-repository boundary is implemented here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the projector/API/test ledger, converted the package-split history citation, and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation broken by the `active/projector.py` -> `active/projector/` package split. The typed-native-history catch and the unavailable/recovered row minting are now `ChildHistoryProjection._hydrate` in `projector/child_history.py` L99-L137 (`except (NativeHistoryLimitExceeded, NativeHistoryUnavailable)` at L102, both `agent_history_state_item` emissions inside `async with self._apply_lock`); link path and range both repointed.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-file citation after the `active/projector.py` to `active/projector/` package split. The typed-native-history catch and unavailable/recovered row minting are owned by `ChildHistoryProjection._hydrate` cit:([`_hydrate`], mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:99-137).
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: created strict 1:1 onboarding for the
   child-local hydration result and stable unavailable/recovered projection row. Verification

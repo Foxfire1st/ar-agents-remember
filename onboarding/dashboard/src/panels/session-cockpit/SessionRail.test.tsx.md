@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:45+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -51,11 +51,13 @@ the shared `FLEET` fixtures.
   dots' `data-state`/color/pulse attributes (two surfaces, not one function twice).
 - **Zero state (R9)** — the empty rail explains itself; waiting(reason) renders steady
   muted-amber when supplied.
-- **L6 block (R5/R7, 6 cases)** (L648-L776) — End arms an inline confirm NAMING session · leaf ·
-  state with ZERO terminates while armed and the exact terminate URL after confirm; a FAILED
+- **L6 block (R5/R7, 6 cases)** — cit:(["End terminates the seat IMMEDIATELY — no armed inline confirm (F-g ruling)"], dashboard/src/panels/session-cockpit/SessionRail.test.tsx:659-691): End terminates the selected seat immediately; there is no armed inline-confirm state. The
+  selected session identity is carried by the control title, and the first click posts the exact
+  terminate URL. A FAILED
   terminate POST (502 + body) renders `role="alert"` with the VERBATIM server words and retry
-  fires exactly one terminate after recovery (review finding 4's net); cancel disarms without a
-  fetch; the landed-cleanup outcome renders closed + skipped-with-reasons and dismisses; a
+  fires exactly one terminate after recovery (review finding 4's net). The immediate-terminate case
+  asserts that confirm, execute, and cancel controls are all absent; the former cancel test was removed
+  with that state. The landed-cleanup outcome renders closed + skipped-with-reasons and dismisses; a
   harvested bell renders the text-equivalent attention marker; harvested title/turn hints join
   the row TOOLTIP as labeled parts while the dot stays pure grammar.
 
@@ -78,21 +80,21 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | L348-L889 | [SessionRail.tsx](SessionRail.tsx) |
-| The shared fixtures every case builds from. | L10-L172 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
-| The grammar the matrix compares against. | L44-L106 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
-| The notice store + harvest store the L6 block seeds. | L46-L118 | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
-| The harvest store the bell/hint cases drive. | L51-L126 | [../../data/ptyHarvest.ts](../../data/ptyHarvest.ts) |
-| The typed wire builders the gate/brief cases now call (`lifecycleWithGate`, `taskDoc`, `agentPickup`, `analytics`). | L233-L322 | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
-| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | L378-L414 | [../../data/railModel.ts](../../data/railModel.ts) |
+| The component under test. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| The shared fixtures every case builds from. | `FLEET`; `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27; dashboard/src/test/fixtures/catalogRows.ts:32-172 |
+| The grammar the matrix compares against. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
+| The notice store + harvest store the L6 block seeds. | `lifecycleNoticeStore`; `ptyHarvestStore` | dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/ptyHarvest.ts:51-73 |
+| The harvest store the bell/hint cases drive. | `ptyHarvestStore` | dashboard/src/data/ptyHarvest.ts:51-73 |
+| The typed wire builders the gate/brief cases now call (`lifecycleWithGate`, `taskDoc`, `agentPickup`, `analytics`). | `lifecycleWithGate`; `taskDoc`; `agentPickup`; `analytics` | dashboard/src/test/fixtures/wire.ts:256-266; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301; dashboard/src/test/fixtures/wire.ts:317-322 |
+| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | `heldGatesByLeafKey`; `briefPendingSessionIds` | dashboard/src/data/railModel.ts:378-392; dashboard/src/data/railModel.ts:397-414 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -106,9 +108,9 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -116,6 +118,13 @@ The rail suite now pins immediate single-seat termination, retained bulk confirm
 recovery, and the absence of the duplicate bus-footer presentation.
 
 ## Update History
+- 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: replaced the obsolete inline-confirm account
+  with the current immediate single-seat termination regression, including the title-carried
+  identity and one-click POST. The new self-citation is explicit `:1-1` curator input.
+
+- 2026-08-03T09:45+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 16 citation findings (7 missing anchors, 7 malformed sources, and 2 prose citations); one semantically obsolete L6 inline-confirm citation remains reported as Tier 3.
 
 - 2026-08-01T09:45+02:00 — 260731-EFA-L4 curator: two edits. (1) The inline citation for the L6 block
   was `L361-L473`, which now lands inside `completed folder + bulk end`; the
@@ -127,9 +136,9 @@ recovery, and the absence of the duplicate bus-footer presentation.
   `BASE_LIFECYCLE`, where it previously had only `{ id, gate }`; the task doc gained every required
   `TaskDocNode` field; and the ten `Analytics` lists that were `undefined` are now `[]`. `SessionRail.tsx`
   reads `state.lifecycles` and `analytics.taskDocuments` at L505-L539 and nowhere else, and the sole
-  consumer is `heldGatesByLeafKey` (`data/railModel.ts` L378-L392), which touches only `doc.lifecycleId`,
+  consumer is `heldGatesByLeafKey` (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:378-392)), which touches only `doc.lifecycleId`,
   `lifecycles[id]?.gate?.state` and `qualifiedLeafKey`'s `repository`/`docPath`/`id` — all explicitly
-  overridden by the case. `briefPendingSessionIds` (L397-L414) reads `messageKind`, `state` and
+  overridden by the case. `briefPendingSessionIds` (cit:([`briefPendingSessionIds`], dashboard/src/data/railModel.ts:397-414)) reads `messageKind`, `state` and
   `deliveredToSession`, also all overridden, and `git diff -U2` confirms no field value inside either
   literal changed. The two residual deltas the sweep warns about do not reach here: this gate sets
   `decisions: []` explicitly (so `BASE_GATE`'s `["approve","revise"]` never applies), and no assertion
