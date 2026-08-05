@@ -106,10 +106,12 @@ re-raster for scroll, video, or animation invalidations.
 | The Panda PostCSS plugin that fills the layers. | "@pandacss/dev/postcss" | dashboard/postcss.config.cjs:10-10 |
 | The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. | "base.css" | dashboard/src/styles/webtui.css:12-12 |
 | Asserts the exact layer-order statement and the unlayered freeze. | "S1 spike (d): layer order + focus-visible survival (React Aria intact)" | dashboard/src/test/webtuiSpike.test.ts:156-172 |
-| The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. | "word-break:break-all" | dashboard/node_modules/@webtui/css/dist/base.css:1-1 |
+| The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. | "word-break: break-all" | dashboard/src/index.css:117-127 |
 | Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | "export function InspectorFact"; "export const MarkdownBlock"; "export function SessionRail" | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:98-98; dashboard/src/panels/session-cockpit/SessionRail.tsx:487-487; dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
 
 ## Update History
+
+- 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: repointed the WebTUI-base row from the untracked dashboard/node_modules/@webtui/css/dist/base.css:1-1 to the tracked RV-1 comment block dashboard/src/index.css:117-127, which states the @webtui/css `word-break: break-all` base rule and the root override that neutralizes it; anchor corrected to the exact tracked literal "word-break: break-all".
 
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 6 repository-reference citations (6/6 anchored and sourced; scoped citation check clean).
 

@@ -98,9 +98,11 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `dashboard_build_scope_line` (lines 477-502). | `dashboard_build_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:477-502 |
 | Defines the function `dashboard_scope_line` (lines 505-523). | `dashboard_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:505-523 |
 | Defines the function `build_parser` (lines 526-546). | `build_parser` | mcp/src/agents_remember/code_quality/scope_reporting.py:526-546 |
-| Defines the function `main` (lines 549-575). | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:549-575 |
+| Defines the function `main` (lines 586-596). | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:586-596 |
 
 ## Update History
+
+- 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: corrected the `main` citation from the stale range 549-575 (which holds no `main`) to the current definition extent 586-596 in the frozen code tree (HEAD 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060).
 
 - 2026-08-05T03:52+02:00 — 260731-EFA-L6 batch B curator: normalized decorator-inclusive citation ranges via scoped --fix against the frozen snapshot.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
