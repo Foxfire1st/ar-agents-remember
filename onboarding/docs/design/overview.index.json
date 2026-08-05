@@ -48,7 +48,7 @@
       "FEUI",
       "docs/design/",
       "route-local-overview",
-      "e3f94568a0f5f78efc5ce7c26d94e6d103caae5f",
+      "5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
       "/../overview.md",
       "dashboard/src/panels/engine-room/",
       "dashboard/scenario-catalog.md",
@@ -75,7 +75,9 @@
       "lastUpdated",
       "T07",
       "lastVerifiedCommitHash",
+      "ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
       "lastVerifiedCommitDate",
+      "T12",
       "governingOverview",
       "TTL",
       "HFX2",
@@ -84,9 +86,7 @@
       "GSAP",
       "RailChat",
       "T16",
-      "EFA",
-      "B06",
-      "T23"
+      "EFA"
     ]
   },
   "fallback": {
