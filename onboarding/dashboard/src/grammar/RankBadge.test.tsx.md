@@ -40,11 +40,12 @@ to a class would fail here and must prove the pip still fills.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | — | [RankBadge.tsx](RankBadge.tsx) |
+| The orchestration-tier test renders the command pip and three chevrons, then asserts the filled pip and stroked chevrons. | "renders the orchestration tier as a command pip over three chevrons" | dashboard/src/grammar/RankBadge.test.tsx:12-23 |
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: narrowed or split the flagged claim to source-clear evidence under the adversarial verdict, then the exact scoped fixer/check passed.
 
 - 2026-07-06T23:56:06+02:00 — 260703-L14 (visual hierarchy + chat grouping): created — pins the V4
   glyph anatomy (pip + 3 chevrons vs 2 chevrons), fixed-viewBox size scaling, and gold/purple tier

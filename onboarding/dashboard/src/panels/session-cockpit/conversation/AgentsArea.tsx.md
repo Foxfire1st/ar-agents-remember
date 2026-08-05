@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,34 +31,28 @@ renders ONLY from projection roster evidence (`deriveAgents`): no optimistic row
   `lineStatic` span (`0 agents` — nothing to open, so no dead toggle, L59-L62); otherwise a real
   `<button aria-haspopup="listbox" aria-expanded aria-controls>` carrying the count chip
   (`countChip` + `countTone` active/idle by whether anything is running, L64-L77) and, in an agent
-  view, the ellipsized `viewing <label>` note (L78-L82). The separate `← back to parent
+  view, the ellipsized `viewing <label>` note cit:(["conversation-agent-focus-note"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:326-326). The separate `← back to parent
   conversation` button (L84-L98, L331-L340) renders beside the line while focused — the old
   surface-owned focus bar is gone; the line owns the whole affordance row.
-- **Menu state** (L190-L218): `open` + `activeId`; `resolvedActiveId` recomputes the active option
-  against the LIVE roster — a stale id (an agent the roster dropped while the menu was open)
-  resolves to the first option, the honest recompute. `openMenu` starts the active option on the
-  currently-viewed agent (else the first); `selectAgent` focuses the chosen agent — re-selecting
-  the already-viewed agent is a close, not a redundant focus write/announcement.
-- **Effects** (L222-L236): DOM focus lands on the listbox on open (its ring +
-  `aria-activedescendant` carry the active option — no per-option focus movement); every active
-  change scrolls the active option into view (`scrollIntoView({block:"nearest"})` —
-  aria-activedescendant moves no DOM focus, so the browser never does this); a roster that empties
-  while the menu is open closes honestly.
-- **Line keys** (`onLineKeyDown` L238-L265): Enter/Space/ArrowDown toggle the menu
+- **Live-roster state** cit:([`resolvedActiveId`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-202): a stale active id resolves to the first live agent.
+- **Open action** cit:([`openMenu`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:205-209): opening starts from the focused/first agent.
+- **Selection and focus return** cit:([`closeMenu`, `selectAgent`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:210-218): selection focuses a changed agent and closes with focus return.
+- **Active-option visibility** cit:(["useEffect(() => { if (!open || resolvedActiveId === null) return;", "[id='", "scrollIntoView({ block: \"nearest\" })", "[open, resolvedActiveId]"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:227-232): the guarded effect scrolls the option resolved from the active id into view whenever either dependency changes.
+- **Line keys** cit:([`onLineKeyDown`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:238-265): Enter/Space/ArrowDown toggle the menu
   (preventDefault suppresses the native button-activation click); ArrowUp from the closed line
   returns focus to the timeline's tabbable row — symmetric with the surface's ArrowDown hijack
   that moves focus INTO the line (the surface owns that half; this component exposes the line via
   `data-agents-line`, L316); Escape on the closed line in an agent view returns to the parent
   conversation (the menu owns Esc while open).
-- **Menu keys** (`onMenuKeyDown` L267-L296): ArrowUp/ArrowDown move the active descendant with
+- **Menu keys** cit:([`onMenuKeyDown`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:267-297): ArrowUp/ArrowDown move the active descendant with
   wrap-around, Enter selects the active option, Escape closes returning focus to the line, Tab
   dismisses without the focus return (the browser's own order moves on).
-- **The listbox overlay** (L343-L395): a fixed backdrop (outside click closes with focus return)
+- **The listbox overlay** cit:([`AgentsArea`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-396): a fixed backdrop (outside click closes with focus return)
   plus the `role="listbox"` panel (`menu` L100-L122 — maxHeight scroll, `tabIndex={-1}`,
   `aria-activedescendant={optionId(resolvedActiveId)}`), one `role="option"` row per agent
   (`option` L123-L139, `aria-selected` on the active) carrying the ellipsized label, the
   word-carrying status chip, and the terminal `finalMessage` preview with full text in `title`.
-- The area itself is a labeled `role="group"` (`sub-agents`, L299).
+- The area itself is a labeled `role="group"` (`aria-label="sub-agents"`) cit:(["aria-label=\"sub-agents\""], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:300-300).
 
 ### Conventions
 
@@ -90,30 +84,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The line + listbox menu: state, effects, both keymaps, the overlay JSX. | L180-L395 | [AgentsArea.tsx](AgentsArea.tsx) |
-| The `ConversationAgentView` rows are shaped by (`deriveAgents`). | L18 | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts) |
-| The `ConversationAgentStatus` union the tones enumerate. | L19 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The surface that derives the roster, owns the effective focus and the ArrowDown-into-the-line hijack, and mounts this strip. | — | [ConversationSurface.tsx](ConversationSurface.tsx) |
-| The component suite pinning the line/menu states and the keyboard contract. | — | [AgentsArea.test.tsx](AgentsArea.test.tsx) |
+| The line + listbox menu: state, effects, both keymaps, the overlay JSX. | `AgentsArea` | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-396 |
+| The `ConversationAgentView` rows are shaped by (`deriveAgents`). | `deriveAgents` | dashboard/src/data/conversation/agents.ts:71-86 |
+| The `ConversationAgentStatus` union the tones enumerate. | `ConversationAgentStatus` | dashboard/src/data/conversation/types.ts:140-146 |
+| The surface that derives the roster, owns the effective focus and the ArrowDown-into-the-line hijack, and mounts this strip. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The component suite pinning the line/menu states and the keyboard contract. | "shows the viewing note + back-to-parent affordance on the line while an agent view is active" | dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:185-191 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-04T10:53:58+02:00 — 260731-EFA-L6 S18-B07 final surgical correction: rebound selection and active-option claims to the coherent bodies at `AgentsArea.tsx:210-218` and `:227-232`; same-reviewer delta pending.
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 9 citation claims and preserved verification metadata.
 
 - 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: rewrote the card for the one-compact-line
   rework — the per-agent rows and the ResizeObserver narrow collapse are gone; the line carries

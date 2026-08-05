@@ -75,16 +75,16 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Dashboard gate decision client used by Yes/No. | — | [data/actions.ts](../data/actions.ts) |
-| Hosted session identity and delivery helpers. | — | [data/sessions.ts](../data/sessions.ts) |
-| External inbox helper used when no hosted session is attached. | L1-L25 | [data/operatorInbox.ts](../data/operatorInbox.ts) |
-| Request/status formatting helpers extracted from this component. | — | [GateResponderText.ts](GateResponderText.ts) |
-| Canonical lifecycle detail surface that renders this only when a durable gate exists. | L574-L581 | [DetailPanel.tsx](DetailPanel.tsx) |
-| Engine Room diagnostics secondary surface. | — | [engine-room/DiagnosticsPanel.tsx](engine-room/DiagnosticsPanel.tsx) |
-| Hangar secondary surface for worktree-bound gates. | — | [Hangar.tsx](Hangar.tsx) |
-| Projection gate and lifecycle shapes. | — | [types/projection.ts](../types/projection.ts) |
+| Dashboard gate decision client used by Yes/No. | "export type GateDecisionStatus" | dashboard/src/data/actions.ts:7-7 |
+| Hosted session identity and delivery helpers. | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
+| External inbox helper used when no hosted session is attached. | "export interface OperatorInboxPostRequest" | dashboard/src/data/operatorInbox.ts:4-4 |
+| Request/status formatting helpers extracted from this component. | "export function humanKey" | dashboard/src/panels/GateResponderText.ts:20-20 |
+| Canonical lifecycle detail surface that renders this only when a durable gate exists. | "export const DetailPanel" | dashboard/src/panels/DetailPanel.tsx:723-723 |
+| Engine Room diagnostics secondary surface. | "export function DiagnosticsPanel" | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-40 |
+| Hangar secondary surface for worktree-bound gates. | "export function Hangar" | dashboard/src/panels/Hangar.tsx:72-72 |
+| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:217-217 |
 
 ### 260713-PHA-L5 Adapter Interaction Context
 
@@ -99,6 +99,9 @@ fresh response. It distinguishes `not-sent` (safe to decide again) from `unknown
 already hold the decision) and preserves unfamiliar wire values verbatim rather than guessing.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-24T13:17:17Z — Curator: corrected the reopened-gate contract to surface the failed prior
   delivery with evidence-bounded copy; verification fields remain pre-commit.

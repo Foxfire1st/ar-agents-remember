@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -64,11 +64,9 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC setup orchestration lives in the provider-owned setup module. | [setup.py](agents-remember/mcp/src/agents_remember/providers/cgc/setup.py) |
-| CGC context behavior is grouped under the provider-owned context package. | [context overview](context/overview.md) |
-| CGC lifecycle behavior is grouped under the provider-owned lifecycle package. | [lifecycle overview](lifecycle/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC setup orchestration lives in the provider-owned setup module. | "def isolated_cgc_settings" | mcp/src/agents_remember/providers/cgc/setup.py:42-42 |
 
 ## 260731-EFA-L2 — The Seed Reads As Source → Target
 
@@ -121,6 +119,9 @@ from-zero reindex, and `caughtUp` conditioned on zero residuals all still hold e
 above. What changed is that the repository those rules are evaluated against is now guaranteed.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` row with an exact
+  anchor (deleting two unresolvable overview rows); exact non-fixing check returns zero findings.
 
 - 2026-07-31T21:00+02:00 — 260731-EFA-L3 curator: added the section above. `seed.py` lost its two
   hand-built `subprocess.run` git invocations; `git_head_or_none` and `seed_commit_divergence` now

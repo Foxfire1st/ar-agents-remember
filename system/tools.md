@@ -159,7 +159,7 @@ For more information on ruff usage use the official documentation: [Ruff Documen
 
 ### Pyright
 
-Pyright performs static type checking. It catches mismatches between typed public contracts and the values passed through controllers, adapters, tests, and response builders before runtime.
+Pyright performs static type checking. It catches mismatches between typed public contracts and the values passed through application entry points, adapters, tests, and response builders before runtime.
 
 Common commands:
 

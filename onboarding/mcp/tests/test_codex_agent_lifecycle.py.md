@@ -45,9 +45,9 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Normalizer under test. | [codex_agent_lifecycle.py](agents-remember/mcp/src/agents_remember/serving/codex_agent_lifecycle.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Normalizer under test. | `completed_turn_status` | mcp/src/agents_remember/serving/codex_agent_lifecycle.py:26-33 |
 
 ## Cross-Repo References
 
@@ -55,5 +55,6 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for the
   Codex child lifecycle vocabulary regression. Verification metadata remains blank until commit.

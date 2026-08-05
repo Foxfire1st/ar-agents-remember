@@ -41,27 +41,28 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Authority-separation regression. | L75-L123 | [CapabilitiesPane.test.tsx](CapabilitiesPane.test.tsx) |
-| Existing-read-route regression. | L124-L152 | [CapabilitiesPane.test.tsx](CapabilitiesPane.test.tsx) |
-| Component under test. | L35-L240 | [CapabilitiesPane.tsx](CapabilitiesPane.tsx) |
+| Authority-separation regression for `SNAPSHOT`. | `SNAPSHOT` | dashboard/src/panels/session-cockpit/CapabilitiesPane.test.tsx:11-58 |
+| Existing-read-route regression for "uses only the existing exact-session and harness refresh routes". | "uses only the existing exact-session and harness refresh routes" | dashboard/src/panels/session-cockpit/CapabilitiesPane.test.tsx:124-151 |
+| Component under test, `CapabilitiesPane`. | `CapabilitiesPane` | dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx:84-240 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 3 table citations for the capability snapshot, route assertion, and pane component; fixer-generated ranges verified.
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
   metadata remains pinned to the leaf base until closeout.

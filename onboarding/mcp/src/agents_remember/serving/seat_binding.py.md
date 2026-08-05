@@ -61,7 +61,7 @@ the public attach boundary rather than as validation inside this pure helper.
 No external domain sources are configured for this repository; the current seat-binding contract
 is defined by same-repository source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external/domain document is configured for this local runtime contract. | — | — |
 
@@ -70,22 +70,23 @@ is defined by same-repository source and tests.
 The catalog persists the normalized role, assignment performs live pair arbitration, and the tests
 pin migration, role-required attach, coexistence, and suffix refusal.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog rows expose `binding_role` and atomically move `leaf_key` plus `seat_role`. | L44-L84; L478-L497; L534-L552 | [terminal_catalog.py](terminal_catalog.py) |
-| Attach resolves the requested role, refuses an untyped harness, liveness-checks the same-pair owner, and persists one pair move. | L32-L50; L53-L114 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
-| Pair migration and attach behavior are covered at the catalog/assignment seams. | `TerminalCatalogTests`; `TerminalLeafAssignmentTests` | [test_terminal_catalog.py](../../../tests/test_terminal_catalog.py); [test_terminal_leaf_assignment.py](../../../tests/test_terminal_leaf_assignment.py) |
+| Catalog rows expose `binding_role` and atomically move `leaf_key` plus `seat_role`. | `with_leaf_binding` | mcp/src/agents_remember/serving/terminal_catalog.py:354-357 |
+| Attach resolves the requested role, refuses an untyped harness, liveness-checks the same-pair owner, and persists one pair move. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
+| Pair migration and attach behavior are covered at the catalog/assignment seams. | `TerminalCatalogTests`; `TerminalLeafAssignmentTests` | mcp/tests/test_terminal_catalog.py:48-516; mcp/tests/test_terminal_leaf_assignment.py:109-250 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found; seat binding is local runtime state.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No sibling repository owns this catalog identity. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 2 repository-internal citations for catalog pair binding and role-aware attach.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/seat_binding.py` since the L2 base commit is the whole-tree
   `ruff format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever.

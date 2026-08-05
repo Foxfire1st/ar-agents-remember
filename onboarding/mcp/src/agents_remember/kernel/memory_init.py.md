@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_init.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T18:35+02:00|
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -23,12 +23,12 @@ by the `memory_init` MCP tool.
 creates the external memory root, standard `system/`, `onboarding/`, and `docs/`
 folders, seed system files, and an optional Git repository initialization.
 
-`_git_init_result()` (L35-L56) runs that initialization through the package's one
-git runner: `run_git(memory_root, ["init"])` (L47), replacing the local
+cit:([`_git_init_result`], mcp/src/agents_remember/kernel/memory_init.py:35-56) runs that initialization through the package's one
+git runner: cit:([`run_git`], mcp/src/agents_remember/kernel/memory_init.py:47-47), replacing the local
 `subprocess.run(["git", "init"], cwd=memory_root, ...)` this file used to spawn
 itself. The outcome is still reported as data — `ran`, `returncode`, `stdout`,
 `stderr` — and a non-zero `returncode` makes `initialize_memory()` return
-`ok: False` (L89-L98) rather than raise.
+`ok: False` cit:([`initialize_memory`], mcp/src/agents_remember/kernel/memory_init.py:59-109) rather than raise.
 
 ### Invariants And Boundaries
 
@@ -50,19 +50,23 @@ itself. The outcome is still reported as data — `ran`, `returncode`, `stdout`,
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `memory_init` is wired through the Phase 04 controller. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
-| MCP config defines repository memory roots. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The one git runner this module's `git init` goes through: `run_git` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L24-L33) via `git_environment` and bounds the command at `GIT_LOCAL_TIMEOUT_SECONDS = 300` by default (L53-L55; L67-L96). | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `memory_init` is wired through the Phase 04 application entry point. | `memory_init` | mcp/src/agents_remember/mcp/registration/memory.py:95-109 |
+| MCP config defines repository memory roots. | `McpRuntimeConfig` | mcp/src/agents_remember/mcp/config.py:113-137 |
+| The one git runner this module's `git init` goes through: `run_git` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L24-L33) via `git_environment` and bounds the command at `GIT_LOCAL_TIMEOUT_SECONDS = 300` by default (L53-L55; L67-L96). | `run_git`, `git_environment`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Update History
 
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 5 citation findings; scoped recheck clean.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T20:53+02:00 — 260731-EFA-L3 curator: body updated. The card described "an optional Git
   repository initialization" without saying how it was spawned, which is now the load-bearing fact:
   `_git_init_result` was one of the six drifted private git spawns and its
   `subprocess.run(["git", "init"], cwd=memory_root, ...)` — no `env=`, no `timeout` — was replaced
-  by `run_git(memory_root, ["init"])` (L47). Documented the two consequences as invariants: the
+  by cit:([`run_git`], mcp/src/agents_remember/kernel/memory_init.py:47-47). Documented the two consequences as invariants: the
   selectors are stripped, so an inherited `GIT_DIR` can no longer make `git init` build the
   repository elsewhere and still return 0; and the call is bounded at the runner's 300s default
   where it was previously unbounded, with `TimeoutExpired` propagating because this module catches

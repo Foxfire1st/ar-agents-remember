@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T23:57:48+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ the rendered markdown; the JSON document is the source of truth.
 `render_markdown(doc)` assembles the document section by section, mirroring
 `worktrees.worktree_contract.contract_to_text`: a header block (Status/Repo/Type/
 Created, plus a `**Master:**` line for a sub-task, an `**Orchestrates:**` line listing the
-commanded master names in backticks when `doc.orchestrates` is non-empty (L14; master-only by
+commanded master names in backticks when `doc.orchestrates` is non-empty (master-only by
 schema), an optional `statusNote` suffix on the
 `**Status:**` line, and `headerNotes` as extra `**Key:** value` lines — R4), then one `_section()` per
 `w-02-light-task-workflow` `template.md` heading (Objective, Requirements, Design,
@@ -61,12 +61,14 @@ blank-line normalization that would corrupt blank lines inside code fences.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The model it renders. | [document.py](agents-remember/mcp/src/agents_remember/tasks/document.py) |
-| The render-back precedent (model → markdown section helpers). | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
+| The render-back precedent (model → markdown section helpers). | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:691-742 |
 
 ## Update History
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 4 initial citation findings (2 anchor, 0 prose, 2 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/tasks/render.py` since the L2 base commit is the whole-tree `ruff

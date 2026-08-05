@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`grepai.py` is the Docker-owned GrepAI lifecycle export facade. It groups the
+`__init__.py` is the Docker-owned GrepAI lifecycle export facade. It groups the
 split GrepAI implementation modules behind one import surface for
 `providers.lifecycle`.
 
@@ -24,9 +24,8 @@ split GrepAI implementation modules behind one import surface for
 
 ### Logic
 
-The module re-exports GrepAI action dispatch, shared GrepAI settings helpers,
-PostgreSQL backend lifecycle, Ollama embedder lifecycle, and runner
-image/container lifecycle.
+The lazy GrepAI lifecycle facade searches core, compose, backend, embedder, runner,
+and actions in that order and keeps the provider Docker-owned.
 
 ### Invariants And Boundaries
 
@@ -36,12 +35,13 @@ image/container lifecycle.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The parent lifecycle facade imports this GrepAI facade. | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| GrepAI core, backend, embedder, runner, and action modules make up the exported surface. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py); [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py); [actions.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/actions.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The parent lifecycle facade lists the GrepAI lifecycle package among its lazy exports. | `grepai` | mcp/src/agents_remember/providers/lifecycle/__init__.py:12-12 |
+| The lazy GrepAI facade searches core, compose, backend, embedder, runner, and actions in order, imports a matching module, caches the symbol, and raises if none exists. | `_EXPORT_MODULES`; `__getattr__` | mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py:8-15; mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py:18-25 |
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: corrected the lifecycle facade name and captured the ordered lazy-import/cache/error behavior plus current compose export.
 - 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
 - 2026-05-25T19:01+02:00: Created as the Docker-owned GrepAI lifecycle export facade.

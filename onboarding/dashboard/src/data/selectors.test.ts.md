@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/selectors.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,27 +47,29 @@ suppression affects display only.
 
 No relevant external documentation is needed for these pure selector tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant documentation found after checking local project source and package contracts. | N/A | [dashboard/src/data/selectors.test.ts](selectors.test.ts) |
+| No relevant external documentation applies to these pure selector tests. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `selectQueue` coverage includes empty analytics and optimistic suppression. | L62-L95 | [selectors.test.ts](selectors.test.ts) |
-| Tree grouping and wait formatting tests cover the unchanged selector behavior. | L23-L60 | [selectors.test.ts](selectors.test.ts) |
-| The selector under test caches and filters attention rows. | L16-L32 | [selectors.ts](selectors.ts) |
+| `selectQueue` coverage includes empty analytics and optimistic suppression. | "reads the server-computed queue, empty when analytics is absent" | dashboard/src/data/selectors.test.ts:74-89 |
+| Tree grouping and wait formatting tests cover the unchanged selector behavior. | "BY PHASE groups by l-01 phase in pipeline order, members id-sorted"; "scales seconds → s/m/h/d and renders unknown as a dash" | dashboard/src/data/selectors.test.ts:25-36; dashboard/src/data/selectors.test.ts:64-70 |
+| The selector under test caches and filters attention rows. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This test module does not cross repository boundaries. | N/A | [selectors.test.ts](selectors.test.ts) |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:43+02:00 — W2-B08: anchored 3 selector-test citation claims and normalized two generic no-document/boundary placeholders to `n/a | n/a`; no Tier 3 rows remain. Verification metadata stays pinned until closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

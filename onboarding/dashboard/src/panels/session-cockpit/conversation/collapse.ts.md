@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/collapse.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,14 +25,9 @@ identity is never mutated. It produces a flat `DisplayRow[]` the feed virtualize
 
 ### Logic
 
-- **`DisplayRow`** (L12-L14): either a passthrough `item` row or an `unknown-run` row carrying the run's
-  members, a summary, and the first member's `ordinal`.
-- **`unknownVendorSummary`** (L16-L21): derives the run key from the first `unknown-vendor` block's
-  `vendorType: safeSummary` (fallback `unrecognized vendor event`).
-- **`groupUnknownVendorRuns`** (L23-L55): scans items; a maximal run of `unknown-vendor` items sharing
-  the same summary and of length `>= MIN_RUN` (3) collapses to one `unknown-run` row keyed by the first
-  member's `itemId`, with `ordinal = run[0].globalOrdinal`; every other item (and short runs) passes
-  through as its own `item` row.
+- **`DisplayRow`** (cit:(["type DisplayRow"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:12-12)): the declared output row type for the collapse helper.
+- **`unknownVendorSummary`** (cit:(["function unknownVendorSummary"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:16-16)): the declared helper for unknown-vendor summaries.
+- **`groupUnknownVendorRuns`** (cit:(["groupUnknownVendorRuns"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-23)): the declared grouping entry point for unknown-vendor runs.
 
 ### Invariants And Boundaries
 
@@ -47,29 +42,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure run-grouping and its `DisplayRow` output. | L12-L55 | [collapse.ts](collapse.ts) |
-| The `ConversationItem` + `unknown-vendor` block types it reads. | — | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The feed that renders the grouped rows and expands runs. | — | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
-| The pure-grouping proof. | — | [collapse.test.ts](collapse.test.ts) |
+| The declared `DisplayRow` output type. | `DisplayRow` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:12-14 |
+| The declared pure grouping entry point. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
+| The unknown-vendor content block type. | `ConversationContentBlock` | dashboard/src/data/conversation/types.ts:63-105 |
+| The `ConversationItem` wire type. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
+| The `ConversationTimeline` feed component. | "function ConversationTimeline" | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-344 |
+| The grouping test suite. | "describe(\"groupUnknownVendorRuns" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the pure unknown-vendor run
   collapse — a run of ≥3 identical-summary events folds to one de-emphasized addressable row (first

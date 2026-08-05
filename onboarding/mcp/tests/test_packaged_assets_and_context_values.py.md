@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_packaged_assets_and_context_values.py`  |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-01T14:20+02:00                                  |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`              |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`              |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -51,14 +51,7 @@ settings file and the `ok` fold are the **real code under test**.
 
 ## The Prune-To-Nothing Arm (260731-EFA-L5 R5)
 
-`test_pruning_the_last_gate_empties_the_workspace_log_without_unlinking_it` (L419-L445) used to
-be `test_pruning_the_last_gate_deletes_the_workspace_log` and used to end
-`assertFalse(self.store.log_path(None).exists())`. That unlink is exactly what leaf
-260731-EFA-L5 removed: `_replace` called `path.unlink(missing_ok=True)` when the kept set came
-out empty, so an appender that had already opened the log in `"a"` mode kept writing into an
-inode with no remaining links — its snapshot disappeared along with the file, with no torn line
-and no exception for the caller to notice. The empty case was the most dangerous branch in the
-store rather than the dullest one.
+The current prune-to-nothing arm is cit:([`test_pruning_the_last_gate_empties_the_workspace_log_without_unlinking_it`], mcp/tests/test_packaged_assets_and_context_values.py:419-444). It replaced the earlier delete-the-log assertion: that unlink is exactly what leaf 260731-EFA-L5 removed, because an appender that had already opened the log in `"a"` mode could keep writing into an inode with no remaining links — its snapshot disappeared along with the file, with no torn line and no exception for the caller to notice. The empty case was the most dangerous branch in the store rather than the dullest one.
 
 The claim being proven is unchanged and not weakened. Two snapshots go in, `compact` still
 reports removing both, and nothing survives; only the evidence for "nothing survives" moved,
@@ -80,21 +73,25 @@ against the raw bytes: `log_path(None).is_file()`, `read_bytes() == b""`, `read(
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Packaged-asset plumbing: long-path normalisation and traversable tree copy. | [package_data/](agents-remember/mcp/src/agents_remember/package_data/) |
-| Coordination-context crossRepo parsing and gate storage. | [agents_remember/](agents-remember/mcp/src/agents_remember/) |
-| The gate compaction under test and the strict read the prune-to-nothing arm checks the result with (`compact`, `read`, `_replace`). | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
-| The rewrite `_replace` now routes through: it never unlinks, so an empty record set is written as an empty file. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The suite that measures what the unlink was costing, across all six control-plane logs and against the leaf's base commit. | [test_controlplane_store_durability.py](agents-remember/mcp/tests/test_controlplane_store_durability.py) |
-| The provider lifecycle entry points the fan-out drives. | [providers/](agents-remember/mcp/src/agents_remember/providers/) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Packaged-asset plumbing: long-path normalisation and traversable tree copy. | `long_path`, `copy_traversable_tree` | mcp/src/agents_remember/install/assets.py:17-32; mcp/src/agents_remember/install/assets.py:50-62 |
+| CrossRepo serialization emits the fixed and set optional fields. | `cross_repo_entry_to_dict` | mcp/src/agents_remember/kernel/coordination_context/serialize.py:42-57 |
+| CrossRepo parsing excludes malformed entries with an explanation instead of raising. | `parsed_cross_repo_allow_entry` | mcp/src/agents_remember/kernel/coordination_context/setting_values.py:86-103 |
+| Gate storage supplies the strict read and compaction path under test. | `GateStore` | mcp/src/agents_remember/controlplane/store.py:96-325 |
+| Gate compaction uses the store rewrite seam. | `_replace` | mcp/src/agents_remember/controlplane/store.py:316-325 |
+| The shared rewrite never unlinks an empty destination. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| The suite that measures what the unlink was costing, across all six control-plane logs and against the leaf's base commit. | `test_no_record_is_lost_when_a_compaction_empties_and_unlinks_the_log` | mcp/tests/test_controlplane_store_durability.py:140-153 |
+| The provider lifecycle entry points the fan-out drives. | `run_grepai_lifecycle`, `run_cgc_lifecycle` | mcp/src/agents_remember/providers/lifecycle_service.py:50-94; mcp/src/agents_remember/providers/lifecycle_service.py:97-137 |
 
 ## Update History
 
+- 2026-08-03T03:12:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 8 Repo-Internal table citations and 1 prose citation with exact asset, context, gate-store, durability-suite, provider-lifecycle, and current prune-arm anchors. Verification metadata remains unchanged for closeout.
+
 - 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: the prune-to-nothing arm changed its evidence
-  and the card gained a section for it. `test_pruning_the_last_gate_deletes_the_workspace_log`
-  became `test_pruning_the_last_gate_empties_the_workspace_log_without_unlinking_it`
-  (L419-L445), replacing `assertFalse(self.store.log_path(None).exists())` with
+  and the card gained a section for it. The earlier delete-the-workspace-log test became
+  `test_pruning_the_last_gate_empties_the_workspace_log_without_unlinking_it`, replacing
+  `assertFalse(self.store.log_path(None).exists())` with
   `is_file()` + `read_bytes() == b""` alongside the unchanged `read(None) == []` and
   `removed == 2`. The unlink it used to assert is the defect the leaf removed (R5): `_replace`
   called `path.unlink(missing_ok=True)` on an empty kept set, so an appender already holding the

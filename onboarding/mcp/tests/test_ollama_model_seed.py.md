@@ -66,25 +66,27 @@ is subsequently listed.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The embedder module under test. | [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The embedder module under test. | `_seed_ollama_model_from_source`, `docker_ensure_ollama_model` | mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:74-105; mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:108-134 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 1 repository-internal embedder reference for the seed and ensure-model paths; final scoped result 0 (checker-clean).
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_ollama_model_seed.py` since the L2 base commit is the whole-tree `ruff format`

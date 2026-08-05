@@ -55,14 +55,15 @@ Every test asserts a returned value, an on-disk side effect, or the exact typed 
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The conversation control and library surfaces these helpers belong to. | [serving/](agents-remember/mcp/src/agents_remember/serving/) |
-| The contract suites whose happy paths these edge arms complete. | [test_conversation_control_operations.py](agents-remember/mcp/tests/test_conversation_control_operations.py), [test_conversation_control_attachments.py](agents-remember/mcp/tests/test_conversation_control_attachments.py), [test_conversation_library_open.py](agents-remember/mcp/tests/test_conversation_library_open.py) |
-| Sibling edge-arm suite for the same surfaces. | [test_conversation_control_projector_edges.py](agents-remember/mcp/tests/test_conversation_control_projector_edges.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The conversation control and library surfaces these helpers belong to. | `install_conversation_runtime`; `ActiveConversationService`; `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259; mcp/src/agents_remember/serving/conversation/ports.py:59-84; mcp/src/agents_remember/serving/conversation/runtime.py:81-87 |
+| The contract suites whose happy paths these edge arms complete. | `CodexInterruptTests`; `AttachmentStageTests`; `OpenServiceTests` | mcp/tests/test_conversation_control_attachments.py:72-155; mcp/tests/test_conversation_control_operations.py:40-192; mcp/tests/test_conversation_library_open.py:217-1093 |
+| Sibling edge-arm suite for the same surfaces. | `ClaudeResultSettlementFallbackTests` | mcp/tests/test_conversation_control_projector_edges.py:75-142 |
 
 ## Update History
 
+- 2026-08-02T21:13:21+02:00 — W2-B07 curator: repaired 3 repository-reference citations after bounded source reads; the scoped citation check is clean.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   conversation control/library helper suite. Verification metadata is pinned to the leaf's
   reformat commit until closeout stamps the code commit.

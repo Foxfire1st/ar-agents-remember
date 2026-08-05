@@ -35,28 +35,30 @@ Fill verification metadata after the source file is committed.
 
 No external documentation is needed for this repository-local template.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding                                                                                           | Citations | Source Path                                                                                         |
-| ------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------- |
-| The route-local overview template defines route metadata, route verification fields, hot-path summary, scope, structures, flows, load-bearing files, local invariants, and traps. | L1-L59    | [route-local-overview-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
-| The template uses canonical repo-internal, cross-repo, and docs reference sections, with depth-aware evidence-pack link placeholders. | L60-L81   | [route-local-overview-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
-| The template maps file-level onboarding, child overviews, usage order, needs verification, and update history. | L83-L111  | [route-local-overview-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4D writes route-local overviews in mirrored source folders using this template. | L764-L812 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The route-local overview template defines route metadata, route verification fields, hot-path summary, scope, structures, flows, load-bearing files, local invariants, and traps. | `# <Area Or Route Name> Overview` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md:1-112 |
+| The template uses canonical repo-internal, cross-repo, and docs reference sections, with depth-aware evidence-pack link placeholders. | `## Repo-Internal References` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md:61-68 |
+| The template maps file-level onboarding, child overviews, usage order, needs verification, and update history. | `## File-Level Onboarding Map` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md:85-90 |
+| `c-03-repo-bootstrap` skill Phase 4D writes route-local overviews in mirrored source folders using this template. | "Overview workers write durable route-local overviews:" | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:877-877 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 4 citation entries (8 findings); no Tier-3 findings.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-19T02:45+02:00: Added `## Hot Path Summary` to the route-local overview template so generated route indexes can expose compact route summaries and source anchors.

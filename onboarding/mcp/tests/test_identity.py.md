@@ -39,11 +39,13 @@ deterministic and collision-safe rather than a lossy truncation.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The provider identity helpers under test. | [identity.py](agents-remember/mcp/src/agents_remember/providers/identity.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The provider identity helpers under test. | `provider_instance_id`; `scoped_name` | mcp/src/agents_remember/providers/identity.py:31-57; mcp/src/agents_remember/providers/identity.py:109-120 |
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 1 citation row to the provider identity helpers; scoped citation fixing regenerated the source ranges.
 
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-04T23:15+02:00: Added coverage for dotted release worktree names, asserting provider instance IDs replace dots with hyphens before being used in Docker Compose project names. Verification metadata pinned until closeout.

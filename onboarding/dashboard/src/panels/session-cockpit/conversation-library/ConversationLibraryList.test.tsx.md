@@ -38,15 +38,15 @@ inline are now the single named mint `libraryConversationKey()` inside the build
 cast at the assertion site is what made the payload claim self-authored. `afterEach` cleans up. The
 four cases prove:
 
-- **child rows render under the parent with label + suffix** (L44-L54): `library-agent-row` carries
+- **child rows render under the parent with label + suffix** (cit:(["renders agent children as indented rows with label + suffix under the parent"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:44-53)): `library-agent-row` carries
   the child title, the mono `…AG3NT1` suffix, and the `explorer` role badge; the parent
   `library-row` renders unchanged, without the agent badge.
-- **a child selects through the same flow with its own server-minted key** (L55-L67): clicking the
+- **a child selects through the same flow with its own server-minted key** (cit:(["selects a child through the same flow with the child's own server-minted key"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:55-66)): clicking the
   child calls `onSelect` once with a promoted row whose `conversationKey`/`identityDigest` are the
   CHILD's, `agents` is `[]` (no deeper nesting), and `capabilities` follow the parent's read path.
-- **no child rows without agents** (L68-L72): a row with no `agents` renders no
+- **no child rows without agents** (cit:(["renders no child rows when the row carries no agents"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:68-71)): a row with no `agents` renders no
   `library-agent-row` at all.
-- **agentsNote verbatim when present, nothing when absent** (L73-L85): the exact note string
+- **agentsNote verbatim when present, nothing when absent** (cit:(["renders the agentsNote verbatim when present, and nothing when absent"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:73-85)): the exact note string
   renders in `library-agents-note`; with `null` the testid is absent from the DOM.
 
 ### Invariants And Boundaries
@@ -68,29 +68,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The list component under test (child-row grammar, `agentChildRow`, agentsNote render); imported at L14. | L14 | [ConversationLibraryList.tsx](ConversationLibraryList.tsx) |
-| `ConversationLibraryRow` — now the only wire type this file imports directly (L9); `HistoryCapabilities` and `LibraryConversationKey` reach it through the builders instead. | L9 | [../../../data/conversation-library/types.ts](../../../data/conversation-library/types.ts) |
-| `conversationLibraryRow` (aliased `row`), `conversationLibraryAgentRow`, `historyCapabilities`, and the single `libraryConversationKey` brand mint. | L63-L66; L155-L169; L247-L271 | [../../../test/fixtures/conversationWire.ts](../../../test/fixtures/conversationWire.ts) |
-| The sanctioned-cast registry that records `as LibraryConversationKey` as a permitted site with its reason. | L158-L169 | [../../../test/wireFixtureGuard.test.ts](../../../test/wireFixtureGuard.test.ts) |
+| The list component under test (child-row grammar, `agentChildRow`, agentsNote render); imported at L14. | `agentChildRow` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:89-102 |
+| `ConversationLibraryRow` — now the only wire type this file imports directly (L9); `HistoryCapabilities` and `LibraryConversationKey` reach it through the builders instead. | `ConversationLibraryRow` | dashboard/src/data/conversation-library/types.ts:26-36 |
+| The `conversationLibraryRow` fixture builder. | `conversationLibraryRow` | dashboard/src/test/fixtures/conversationWire.ts:247-260 |
+| The `conversationLibraryAgentRow` fixture builder. | `conversationLibraryAgentRow` | dashboard/src/test/fixtures/conversationWire.ts:262-272 |
+| The `historyCapabilities` fixture builder. | `historyCapabilities` | dashboard/src/test/fixtures/conversationWire.ts:155-168 |
+| The `libraryConversationKey` brand mint. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
+| The sanctioned-cast registry that records "as LibraryConversationKey" as a permitted site with its reason. | "as LibraryConversationKey" | dashboard/src/test/wireFixtureGuard.test.ts:172-172 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 6 table citations and 4 prose citations for conversation-library rows, keys, fixtures, and capability evidence; fixer-generated ranges verified.
 
 - 2026-08-01T11:35+02:00 — 260731-EFA-L4 curator: the Helpers paragraph described three fixtures that
   no longer exist, so it was rewritten. The local `capabilities()` and `row()` builders and the

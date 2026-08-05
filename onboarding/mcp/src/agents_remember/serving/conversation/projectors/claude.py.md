@@ -37,20 +37,20 @@ probes, foreground and `run_in_background` Agent calls).
 
 ### Logic
 
-`map_evidence_frame` (L210-L242) dispatches on the frame `type`; it also
+cit:([`map_evidence_frame`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-239) dispatches on the frame `type`; it also
 accepts an optional `parent_thread_id` demux context from the multiplexed-harness path, which the
 claude mapper deliberately ignores because sub-agent identity is encoded in-band via
-`parent_tool_use_id`. `assistant` frames (`_map_assistant` L665-L735)
+`parent_tool_use_id`. `assistant` frames cit:([`_map_assistant`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:665-735)
 key on the message `uuid`, split content into markdown/thinking blocks, mint one
 stable-ID tool-call item per `tool_use` block (keyed by the native block id, input block
 carrying name + arguments, phase `streaming`, parented on the assistant item), and preserve
-unknown block types as `UnknownVendorBlock`s; `result` frames (`_map_result` L1021-L1074) classify
+unknown block types as `UnknownVendorBlock`s; `result` frames cit:([`_map_result`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:1021-1074) classify
 completed/interrupted/failed from the adapter-attributed terminal stamp or
 `subtype`/`is_error`/`terminal_reason` (cancel reasons L76), mint a `turn-result` item, and emit
 `MappedTurnOutcome` with the stop reason; non-replay
-`user` frames are tool-result carriers (`_map_tool_carrier` L887-L975) that upsert the same tool
+`user` frames are tool-result carriers cit:([`_map_tool_carrier`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:887-975) that upsert the same tool
 item with the output block (phase `failed` on `is_error`); `system` frames dispatch through
-`_map_system` (L269-L302): api_retry/status still feed the canonical status service via the
+cit:([`_map_system`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:269-302): api_retry/status still feed the canonical status service via the
 snapshot, and every other subtype observed on 2.1.220 (init, task_updated, hook_*, ...) still
 drops silently exactly as before, but the agent-lifecycle subtypes now mint roster items (see the
 sub-agent paragraph below); `command_lifecycle` frames (L228-L229 →
@@ -65,8 +65,8 @@ L220-L223, table L263-L266 → `_require_rate_limit_event` L253-L256) are shape-
 still become `MappedUnknownVendor`.
 
 Sub-agents: `_map_system` routes `task_started`/`task_progress`/
-`task_notification` to `_map_task_lifecycle` (L298-L424) and `background_tasks_changed` to
-`_map_background_tasks_changed` (L557-L618). `_map_task_lifecycle` upserts ONE roster item per
+`task_notification` to cit:([`_map_task_lifecycle`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:305-385) and `background_tasks_changed` to
+cit:([`_map_background_tasks_changed`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:557-618). `_map_task_lifecycle` upserts ONE roster item per
 agent (`claude-agent-<task_id>`, role `system`, kind `notice`) across started → progress →
 notification, carrying description/summary/usage blocks and a `ConversationAgentRef` whose status
 comes from the probe-locked `task_notification.status` vocabulary (`_NOTIFICATION_AGENT_STATUS`
@@ -80,19 +80,18 @@ honestly still streaming and the later tool_result upsert settles it. Every task
 the binding authority and REQUIRES both ids. `_map_background_tasks_changed` carries the full
 running background-task set with no join key and no status, so it can only honestly REGISTER a
 task the task_* evidence never bound (a replay window that opened mid-agent); already-bound tasks
-and an empty set mint nothing. On the content path, `_sidechain_agent_ref` (L172-L193) attaches
+and an empty set mint nothing. On the content path, cit:([`_sidechain_agent_ref`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:172-193) attaches
 the roster identity to assistant/user frames keyed by `parent_tool_use_id` — the bound `task_id`
 wins once task_* evidence bound the join key, otherwise the join key itself is the honest
 `agent_id` with status `unknown` and the frame's own `subagent_type` as role — and
-`_spawned_agent_ref` (L196-L207) tags a parent-timeline `tool_result` that settles a bound Agent
+cit:([`_spawned_agent_ref`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:196-207) tags a parent-timeline `tool_result` that settles a bound Agent
 call. Sidechain user-frame text blocks become the sub-agent's own user message item (L932-L972 —
 the probe shows the task prompt echo as the first sidechain user frame; with
 `--forward-subagent-text` its replies cross too), while parent user text keeps the
-unknown-vendor/replay-echo path. A MALFORMED task_* frame is vendor shape drift: it degrades to
-preserved unknown-vendor (`claude-system:<subtype>`, L292-L302), never a guess and never a stream
-kill — a frame on every agent spawn must never kill the projection.
+  unknown-vendor/replay-echo path. A MALFORMED task_* frame enters `_map_system`'s `UnmappableShape`
+  branch and is labeled `claude-system:<subtype>` (cit:([`_map_system`; "if subtype in ("; "return mapper(raw)"; "vendor_type=f\"claude-system:{subtype}\","; "except UnmappableShape"; "claude-system:"], mcp/src/agents_remember/serving/conversation/projectors/claude.py:269-302)).
 
-`map_transcript_echo` (L621-L662) consumes only `role="user"` entries: the echo is the
+cit:([`map_transcript_echo`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662) consumes only `role="user"` entries: the echo is the
 authority's own submission record (original text, exact request id, replay correlation uuid), so
 the user item keys on the replay uuid and carries unknown-input provenance until the engine's
 provenance batch resolves the real source — replayed user frames on the evidence channel raise
@@ -159,7 +158,7 @@ consumers), and the 2.1.220 sub-agent frame shapes (`parent_tool_use_id` sidecha
 task_* lifecycle, `background_tasks_changed`) probe-locked in the module docstring from the
 2026-07-26 live probes — are repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this mapper. | — | — |
 
@@ -172,20 +171,20 @@ store's block union converges the split tool items and absorbs the block-less ta
 upsert; the conversation grammar carries the roster identity as `ConversationAgentRef` on
 `ConversationItem`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The adapter builds the exact submission echo (original text, exact request id, replay uuid) this mapper consumes. | L435-L463 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
-| The claude runtime fixture records the claude evidence rows; version strings are informational metadata, never a capability gate. | L37-L41 | [claude-2.1.211.json](agents-remember/mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json) |
-| The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output; a late `streaming`-claiming tagging upsert never regresses a terminal phase (fix-round review finding 9). | L123-L134; L431-L448 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The engine's echo zipper merges echo and frame channels by strict turn order. | L35-L36; L82-L111 | [projector/echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
-| `ConversationAgentRef`/`ConversationAgentStatus` are the additive roster grammar this mapper emits (agent_id/role/join_key/status; `None` = parent conversation). | L311-L334; L371 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The adapter defines replay-user and transcript-entry handlers together with a 128 KiB transcript-text bound and clipping helper. | "def _handle_replayed_user("; "def _transcript_entry("; `MAX_TRANSCRIPT_TEXT_CHARS`; "def clip_transcript_text(" | mcp/src/agents_remember/serving/claude_stream_protocol.py:19-19; mcp/src/agents_remember/serving/claude_stream_protocol.py:427-427; mcp/src/agents_remember/serving/claude_stream_state.py:624-624; mcp/src/agents_remember/serving/claude_stream_state.py:925-925 |
+| The Claude runtime fixture records runtime/helper versions and sets `enablesCapabilities` to false. | "runtimeVersion"; "helperVersion"; "enablesCapabilities" | mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:5-6; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:10-10 |
+| The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output, and a late tagging upsert does not regress a terminal phase. | `ProjectionStore`; `apply_item`; `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445; mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
+| The engine's echo zipper merges echo and frame channels by strict turn order. | `_zip_entry`; `_drain_one_turn_body` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:82-97; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:99-111 |
+| The conversation grammar declares the `ConversationAgentRef` roster-reference model. | "class ConversationAgentRef" | mcp/src/agents_remember/serving/conversation/models.py:316-316 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this mapper; the Claude Code process is a
 local subprocess reached through this repository's own adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -231,12 +230,13 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rewrote the submission-echo claim to the
+  bounded retained-text definitions, narrowed fixture/roster/system claims to their cited extents,
+  and replaced stale rate-limit line references with exact anchors.
+
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. `rate_limit_event`
   is no longer its own `if frame_type == …` branch in `map_evidence_frame`; the silent-contract frame
-  types are now a table lookup, so the old `(L230-L234)` — which now points at the `system` branch and
-  the unknown-vendor fallback — became `_SILENT_FRAME_CONTRACTS` lookup L220-L223, table L263-L266,
-  validator `_require_rate_limit_event` L253-L256. The claim (shape-validated on `rate_limit_info`,
-  then dropped as telemetry, minting no timeline row) re-verified and unchanged.
+  types are now a table lookup (cit:([`_SILENT_FRAME_CONTRACTS`; `_require_rate_limit_event`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:253-256; mcp/src/agents_remember/serving/conversation/projectors/claude.py:263-266)). The current cited behavior binds the frame to the validator, which requires object-shaped `rate_limit_info`.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file citation whose target file
   was split into a package upstream. `serving/conversation/active/projector.py` no longer exists;

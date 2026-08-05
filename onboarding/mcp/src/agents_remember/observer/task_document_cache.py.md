@@ -50,16 +50,18 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Task-document enumeration and parsing consumer. | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| Cache scaling regressions. | [test_task_document_payload_cache.py](agents-remember/mcp/tests/test_task_document_payload_cache.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Task-document enumeration and parsing consumer. | `_iter_task_document_payloads` | mcp/src/agents_remember/observer/snapshots.py:147-165 |
+| Cache scaling regressions. | `TaskDocumentPayloadCacheTests` | mcp/tests/test_task_document_payload_cache.py:18-96 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/observer/task_document_cache.py` since the L2 base commit is the whole-

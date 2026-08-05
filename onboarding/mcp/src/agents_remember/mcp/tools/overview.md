@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -33,7 +33,7 @@ That split is also why the builders here **do** take parameter objects while the
 do not. FastMCP derives each tool's published JSON schema from the Python signature, so a
 model-typed parameter on a declaration would republish the tool as a nested object; a payload
 builder has no such constraint. 260731-EFA-L2 armed `PLR0913` and moved these builders onto the
-concept objects their controllers take:
+concept objects their application entry points take:
 
 | Builder | Now takes |
 | --- | --- |
@@ -53,7 +53,7 @@ concept objects their controllers take:
 | `orchestration_nudge_manager_payload` | `NudgeTarget`, `NudgeSubject` |
 
 Behaviour, refusal vocabularies and response shapes are unchanged throughout; only the argument
-shape on the controller-facing side moved.
+shape on the application-facing side moved.
 
 ## Hot Path Summary
 
@@ -78,7 +78,7 @@ persists resolved model/effort plus log id/path. An unbound replacement declares
 
 The `mcp/registration/` family modules import the advertised `*_payload` builders from
 `agents_remember.mcp.tools`; each builder forwards its arguments to its
-domain controller and validates the result through `base._tool_payload`. Since
+domain application entry point and validates the result through `base._tool_payload`. Since
 task 27 that choke point also attaches the engine-computed `nextStep` hint onto every
 active-lifecycle response, computed by
 `next_step.py`. **260707-HFX2-L2 (R5)** adds a third thing this same choke point
@@ -151,7 +151,7 @@ calling me" session-id resolution anywhere in this codebase.
 | `benchmark.py`  | codex_benchmark_prepare, codex_benchmark_run.                              |
 | `lifecycle.py`  | lifecycle signal builders driving the observer ambient lifecycle; `lifecycle_block_payload` is retained for lower-level compatibility. Since task 27 `lifecycle_start_payload` also emits the one-time `frontHalfRundown` (`next_step.py`'s `FRONT_HALF_RUNDOWN`). Task 28 adds `lifecycle_turn_end_notification_payload(summary)` — the NOTIFY-AND-CONTINUE turn end: drives `await_developer` → `awaiting-developer` and returns immediately (no gate, no wait), the one builder the choke-point auto-dismiss skips by name. |
 | `lifecycle_finalize.py` | the terminal `lifecycle_finalize_task` builder, forwarding to the worktree finalizer and strict response model. |
-| `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (L14: master docs accept the additive `orchestrates` list — the dashboard's command-hierarchy source) (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` controller. |
+| `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (L14: master docs accept the additive `orchestrates` list — the dashboard's command-hierarchy source) (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` application entry point. |
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. Since 260731-EFA-L5 this module also **owns gate-log reclamation**: `_reclaim_gate_log` runs `GateStore.compact` at the end of every terminal decision, guarded by `GATE_OWNERSHIP.is_compaction_owner()` so the dashboard (which reaches `gate_decide_payload` directly) skips it — it moved here off the dashboard projection tick's 30-second rewrite, which raced this process's appends. The gate substrate itself lives in `controlplane/` (task 6). |
 | `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the terminal snapshot and leaves physical expiry to compaction so concurrent delivery cannot resurrect it. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
@@ -174,7 +174,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
   public MCP tools; do not infer public availability from facade exports alone.
 - Every public payload returned from any submodule must go through
   `base._tool_payload`, which validates response shape only (request validation
-  stays in server signatures and controllers).
+  stays in server signatures and application entry points).
 - **Anything the choke point adds to a response is a declared field of that response's
   model, set before the dump — never a key written into the dumped dict** (260731-EFA-L4).
   There is exactly ONE `model_dump` in `_tool_payload` and exactly one
@@ -195,7 +195,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
   `_tool_payload`, and by then a wrong status is a `ValidationError` inside an
   `@server.tool()` handler with no `except` for one.
 - Payload builders stay transport-thin; deterministic behavior belongs in
-  controllers and package services. Import the domain controller that owns the
+  application entry points and package services. Import the domain application entry point that owns the
   tool's behavior — do not reintroduce a mega-facade.
 - Submodules use `..` for `mcp`-package imports (`from .. import SERVER_NAME`,
   `from ..config import McpRuntimeConfig`) since they sit one level below the
@@ -203,7 +203,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 - The facade `__init__.py` re-exports `_tool_payload` with an explicit
   `import _tool_payload as _tool_payload` so the conformance test's
   `tools._tool_payload` access keeps working.
-- Compaction is wire-shape only and lives in this route, not in controllers:
+- Compaction is wire-shape only and lives in this route, not in application entry points:
   the full result is written to the tool report BEFORE any compaction mutates
   it, decision/outcome facts stay inline, and
   `test_tool_response_budgets.py` holds every compact builder under
@@ -224,21 +224,18 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The `@server.tool()` declarations that call these payload builders. | [registration overview](../registration/overview.md) |
-| What each declaration hands its builder, proved through a live FastMCP instance. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
-| Public response model registry maps each tool name to a Pydantic model. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| Domain controllers own the tool behavior the builders forward to. | [controllers overview](../../controllers/overview.md) |
-| Schema tests assert public tool and response model coverage. | [test_models.py](agents-remember/mcp/tests/test_models.py) |
-| Conformance test validates every builder routes through `_tool_payload`. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
-| The external-chat inbox builders post, poll, and consume operator responses. | [operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| The lifecycle finalizer builder exposes the terminal task finalization tool. | [lifecycle_finalize.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py) |
-| The next-step engine computes the `nextStep` hint the `_tool_payload` choke point attaches. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| The linear-half hint delegates to the worktree guidance state machine. | [guidance/lifecycle_guidance](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | [../../serving/supervisor_heartbeat.py](../../serving/supervisor_heartbeat.py.md) |
-| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | [models/base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
-| The terminal status aliases `terminal.py` annotates its refusal seams with. | [models/terminal.py](agents-remember/mcp/src/agents_remember/models/terminal.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
+| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:101-108 |
+| Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
+| Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
+| The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-19 |
+| The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
+| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:230-230 |
+| The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class SupervisorHeartbeatStore" | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-59 |
+| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
+| The terminal status aliases `terminal.py` annotates its refusal seams with. | "class AttachTerminalSessionToLeafResponse" | mcp/src/agents_remember/models/terminal.py:30-30 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -326,6 +323,12 @@ only who runs the pass.
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors (deleting three unresolvable overview/missing-module rows); exact non-fixing check
+  returns zero findings.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: `gates.py` is the only file on this route the leaf
   touched, and it gained a responsibility rather than a payload change — gate-log reclamation moved
   here off the dashboard projection tick. Added the L5 section and updated the `gates.py` Layout row.

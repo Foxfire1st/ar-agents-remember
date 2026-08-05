@@ -46,13 +46,15 @@ longer take a `coordination_root` parameter.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC lifecycle core consumes CGC settings from this module. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
-| GrepAI lifecycle core consumes GrepAI settings from this module. | [core.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/core.py) |
-| Watcher orchestration uses provider-enabled checks from this module. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC lifecycle core consumes CGC settings from this module. | `cgc_apply_settings` | mcp/src/agents_remember/providers/cgc/lifecycle/core.py:298-319 |
+| GrepAI lifecycle core consumes GrepAI settings from this module. | `grepai_runtime_settings` | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:137-139 |
+| Watcher orchestration uses provider-enabled checks from this module. | `watcher_enabled_providers` | mcp/src/agents_remember/providers/lifecycle/watchers.py:88-97 |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/lifecycle/provider_settings.py` since the L2 base commit is

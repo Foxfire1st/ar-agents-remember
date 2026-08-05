@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,14 +25,18 @@ cheap.
 
 ### Logic
 
-- **`itemAccessibleName`** (L15-L42): a stable, human-readable text label per feed article
+- **`itemAccessibleName`**: a stable, human-readable text label per feed article
   (`#<globalOrdinal> <kind/phase>`, §14.2) — always a text label, never color-only.
-- **`ConversationItemViewImpl`** (L44-L65): the kind switch — `message`/`plan` → `MessageItem`,
+- **`ConversationItemViewImpl`**: the kind switch — `message`/`plan` → `MessageItem`,
   `thinking` → `ThinkingItem`, `tool-call`/`tool-result` → `ToolItem`, `interaction` → `InteractionItem`,
   and `turn-result`/`error`/`notice`/`telemetry`/`unknown-vendor` (plus the default) → `TurnResultItem`.
-- **`ConversationItemView`** (L68-L71): `memo`ized on item identity (`prev.item === next.item`), so a
+- **`ConversationItemView`**: `memo`ized on item identity (`prev.item === next.item`), so a
   row re-renders only when its identity/revision object changes (the reducer swaps the object only on a
   real revision advance).
+
+  cit:([`itemAccessibleName`], dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:15-42)
+  cit:([`ConversationItemViewImpl`], dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:44-65)
+  cit:(["export const ConversationItemView = memo("], dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-68)
 
 ### Invariants And Boundaries
 
@@ -47,29 +51,31 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The kind switch and accessible-name helper. | L15-L71 | [ConversationItemView.tsx](ConversationItemView.tsx) |
-| The item block-grammar renderers this dispatches to. | — | [MessageItem.tsx](MessageItem.tsx) · [ThinkingItem.tsx](ThinkingItem.tsx) · [ToolItem.tsx](ToolItem.tsx) · [InteractionItem.tsx](InteractionItem.tsx) · [TurnResultItem.tsx](TurnResultItem.tsx) |
-| The `ConversationItem` wire type it switches on. | — | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The feed that mounts one dispatcher per article and reads the accessible name. | — | [ConversationTimeline.tsx](ConversationTimeline.tsx) |
+| The kind switch and accessible-name helper. | `itemAccessibleName`, `ConversationItemViewImpl` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:15-42; dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:44-65 |
+| The item block-grammar renderers this dispatches to. | `MessageItem`, `ThinkingItem`, `ToolItem`, `InteractionItem`, `TurnResultItem` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:28-28; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156; dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:35-56; dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx:87-118; dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-82 |
+| The `ConversationItem` wire type it switches on. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
+| The feed that mounts one dispatcher per article and reads the accessible name. | "export function ConversationTimeline({" | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-344 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-03T02:46:45+02:00 — W3-B04 curator: curated 3 table citations and 3 prose citations (6 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the kind dispatcher — the
   pure switch mapping each normalized item to its block-grammar renderer plus the stable

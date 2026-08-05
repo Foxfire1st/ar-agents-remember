@@ -48,28 +48,30 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Sender-only reverse request construction and message-kind mapping. | L37-L59 | [BusDeveloperReply.tsx](BusDeveloperReply.tsx) |
-| Accessible controlled form and the sole operator-inbox POST. | L75-L196 | [BusDeveloperReply.tsx](BusDeveloperReply.tsx) |
-| Existing POST client this boundary reuses. | L1-L85 | [../../data/operatorInbox.ts](../../data/operatorInbox.ts) |
-| Exact request-body and zero-POST regression coverage. | L146-L196, L297-L338 | [BusPane.test.tsx](BusPane.test.tsx) |
+| Sender-only reverse request construction and message-kind mapping. | `developerReplyRequest` | dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx:37-59 |
+| Accessible controlled form and the sole operator-inbox POST. | "post to operator inbox" | dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx:154-154 |
+| Existing POST client this boundary reuses. | `postOperatorInbox` | dashboard/src/data/operatorInbox.ts:18-32 |
+| Exact request-body and zero-POST regression coverage. | "posts a developer decision to the original sender through /api/operator-inbox only"; "performs zero POSTs" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:146-184; dashboard/src/panels/session-cockpit/BusPane.test.tsx:186-203 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 4 citation items; scoped citation check now passes.
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Documents the
   authoritative sender-derived reverse reply and the no-consume/no-target-lifecycle boundary.

@@ -5,14 +5,14 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/tests/test_worktree_lifecycle_attribution.py`         |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-06-13T18:45+02:00                                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                 |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                 |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
 
-Covers the slice-2c controller attribution helpers (`_attribute_start`,
+Covers the slice-2c application entry point attribution helpers (`_attribute_start`,
 `_attribute_attach`): `worktree_start` promotes the active lifecycle (or adopts a
 minted id) and `worktree_attach` resumes the contract's lifecycle, driving
 promote / adopt / save-gate on a real ambient without standing up git worktrees.
@@ -37,18 +37,22 @@ snake_case result payloads (no git/provider machinery).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The controller attribution helpers under test. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
-| The ambient lifecycle they drive (`promote`/`attach`). | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The save-gate signal they assert (`SaveGateRequired`). | [save_gate.py](agents-remember/mcp/src/agents_remember/observer/save_gate.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:186-186 |
+| The ambient lifecycle they drive (`promote`/`attach`). | "def promote"; "def attach" | mcp/src/agents_remember/observer/ambient.py:317-317; mcp/src/agents_remember/observer/ambient.py:333-333 |
+| The save-gate signal they assert (`SaveGateRequired`). | `SaveGateRequired` | mcp/src/agents_remember/observer/save_gate.py:34-48 |
 
 ## Series-Contract Notes
 
-Lifecycle-attribution tests verify that controller attribution can use `enclosure_path` while retaining fallback behavior for payloads that still expose `contract_path`.
+Lifecycle-attribution tests verify that application entry point attribution can use `enclosure_path` while retaining fallback behavior for payloads that still expose `contract_path`.
 
 ## Update History
 
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — No content impact: the only change is in `_AttributionCase.setUp`,
   which after the PLR0913 parameter-object pass builds the ambient as
   `AmbientLifecycle(self.store, timing=AmbientTiming(heartbeat_seconds=3600))` and imports

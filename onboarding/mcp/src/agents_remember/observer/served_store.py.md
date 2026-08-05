@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/served_store.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Purpose
@@ -51,8 +51,8 @@ to truncation would not re-serve), but a session-hook **producer** for the
 fresh-worker / lifecycle concern (small work → new worker → new lifecycle → fresh
 ledger) deferred to the post-3.0 **agentic-control-plane** follow-up, and `clear` /
 a new chat already yields a fresh lifecycle and ledger. Until then `refresh=true`
-is the working manual reset; the controller-side marker consumer
-(`controllers/read_files._maybe_reset_served`) stays as defensive scaffolding.
+is the working manual reset; the application-side marker consumer
+(`application/read_files._maybe_reset_served`) stays as defensive scaffolding.
 
 ## Invariants And Boundaries
 
@@ -69,16 +69,20 @@ is the working manual reset; the controller-side marker consumer
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The ambient lifecycle owns this store and the in-memory served-set hot path. | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The append-only event store this mirrors (the GateStore pattern). | [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The observer-root resolver that anchors the per-lifecycle path. | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
-| The controller consumer that records and resets served pieces. | [controllers/read_files.py](agents-remember/mcp/src/agents_remember/controllers/read_files.py) |
-| The observer package re-exports `ServedStore` / `ServedRecord` / `served_key` / `SERVED_RECORD_SCHEMA`. | [observer/__init__.py](agents-remember/mcp/src/agents_remember/observer/__init__.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The ambient lifecycle owns this store and the in-memory served-set hot path. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
+| The append-only event store this mirrors (the GateStore pattern). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| The observer-root resolver that anchors the per-lifecycle path. | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34 |
+| The application entry point consumer that records and resets served pieces. | `_maybe_reset_served` | mcp/src/agents_remember/application/read_files.py:357-381 |
+| The observer package re-exports `ServedStore` / `ServedRecord` / `served_key` / `SERVED_RECORD_SCHEMA`. | `ServedStore`; `ServedRecord`; `served_key`; `SERVED_RECORD_SCHEMA` | mcp/src/agents_remember/observer/__init__.py:73-79 |
 
 ## Update History
 
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 10 citation findings for the served-ledger ownership, storage, path, consumer, and re-export rows.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
 - 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the module-docstring compact-reset note — the `compact-reset.json` **producer** is **not** planned at the session-hook level; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). The controller-side consumer + `refresh=true` stay as defensive scaffolding. Docstring text only; the `ServedRecord`/`ServedStore` surface is unchanged. Verification metadata pinned until closeout stamps the slice-07 code commit.
 - 2026-06-22T22:33+02:00 — Created for slice 07: the `ServedRecord` + `ServedStore` per-lifecycle append-only `served.jsonl` content-hash dedup ledger (GateStore pattern, beside the events/gates logs). Verification metadata pinned until closeout stamps the slice-07 code commit.

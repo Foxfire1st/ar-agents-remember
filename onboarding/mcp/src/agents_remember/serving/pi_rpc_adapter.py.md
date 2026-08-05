@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ None known for the L3 Pi configuration seam.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -109,25 +109,25 @@ pass was available for this update.
 Protocol helpers own launch transformation, state sanitization, catalog mapping, and thinking-level
 rules; process/event modules remain transport and event boundaries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Configuration owns the finite locked mutation/readback/catalog transaction, exact provider split, selected-model effort gate, clamp evidence, and atomic commit decision. | L29-L193; L196-L202 | [pi_rpc_configuration.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) |
-| Pi protocol parsing provides RPC launch validation, safe state identity, and provider-qualified model-local effort menus. | L114-L130; L176-L234; L383-L427 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
-| The launch validator requires exact Pi catalog keys and model-local launch effort before the configured process starts. | L78-L119 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones. | L28-L98; L177-L199 | [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
-| The event mapper owns normalized state, settlement, and extension interaction projections. | L41-L170 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
-| Entry identity/timestamp helpers keep native paging coordinates honest. | L264-L288 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
-| Contract tests pin the entries native page, message_update/message_end evidence forwarding, and the installed 0.80.7 production-seam capture. | L1033-L1179 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
-| The content-less `message_end` evidence mapping that keeps a real abort from failing the bridge. | L226-L244 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
-| The control-plane contract suite pins the guarded abort, replay-once per pair, the successor stale-reconcile typed refusal with zero writes, and the image content construction. | L641-L752; L1336-L1395 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
-| The installed-runtime suite captures the live 0.80.7 abort, timeline, and asset evidence behind the fixture rows. | L262-L364 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
-| The fixture records the redacted `control-plane/*` observed rows this adapter produced through the production seam. | — | [pi-0.80.7.json](agents-remember/mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json) |
+| Configuration owns the finite locked mutation/readback/catalog transaction, exact provider split, selected-model effort gate, clamp evidence, and atomic commit decision. | `PiRpcConfiguration`, `set_effort` | mcp/src/agents_remember/serving/pi_rpc_configuration.py:50-193 |
+| Pi protocol parsing provides RPC launch validation, safe state identity, and provider-qualified model-local effort menus. | `parse_pi_state`, `parse_pi_models`, `pi_rpc_launch` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:135-151; mcp/src/agents_remember/serving/pi_rpc_protocol.py:197-215; mcp/src/agents_remember/serving/pi_rpc_protocol.py:218-255 |
+| The launch validator requires exact Pi catalog keys and model-local launch effort before the configured process starts. | `verify_effective_launch` | mcp/src/agents_remember/serving/harness_launch.py:122-148 |
+| The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones. | `PiRpcSubprocess` | mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
+| The event mapper owns normalized state, settlement, and extension interaction projections. | `PiRpcEventMapper`, `translate` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
+| Entry identity/timestamp helpers keep native paging coordinates honest. | `pi_entry_identity`, `pi_entry_created_at` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:285-296; mcp/src/agents_remember/serving/pi_rpc_protocol.py:299-309 |
+| Contract tests pin the entries native page, message_update/message_end evidence forwarding, and the installed 0.80.7 production-seam capture. | `test_message_end_and_unknown_frames_reach_evidence_with_full_payload`, `test_native_page_typed_identity_and_durable_since_continuation` | mcp/tests/test_harness_control_evidence.py:1306-1344; mcp/tests/test_harness_control_evidence.py:1346-1387 |
+| The content-less `message_end` evidence mapping that keeps a real abort from failing the bridge. | ["pi:message_end"] | mcp/src/agents_remember/serving/pi_rpc_events.py:256-256 |
+| The control-plane contract suite pins the guarded abort, replay-once per pair, the successor stale-reconcile typed refusal with zero writes, and the image content construction. | `test_abort_write_guard_replay_and_successor_refusal`, `test_pi_image_content_blocks_and_receipt_asset_ids` | mcp/tests/test_harness_control_plane.py:681-732; mcp/tests/test_harness_control_plane.py:1590-1643 |
+| The installed-runtime suite captures the live 0.80.7 abort, timeline, and asset evidence behind the fixture rows. | `test_live_abort_guard_timeline_and_assets` | mcp/tests/test_harness_control_plane_installed.py:287-373 |
+| The fixture records the redacted `control-plane/*` observed rows this adapter produced through the production seam. | ["control-plane/abort-write-ack", "control-plane/operation-timeline", "control-plane/asset-image-submit"] | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:72-72; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:83-83; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:94-94 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -149,6 +149,8 @@ alone just moves where the session first misbehaves under load. The default valu
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 11 repository-internal references for Pi configuration, protocol, launch, process, event, contract-test, installed-runtime, and fixture evidence; final scoped result 0 (checker-clean).
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `pi_rpc_configuration.py` citation
   (2 ranges), verified by reading the 220-line file end to end. Now L29-L193 — the finite

@@ -51,14 +51,19 @@ cadence assertions exact.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The helpers under test. | [serving/](agents-remember/mcp/src/agents_remember/serving/) |
-| The happy paths these edge arms sit beside. | [test_serving.py](agents-remember/mcp/tests/test_serving.py), [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
-| The route-level companion for the same app's failure arms. | [test_serving_app_routes.py](agents-remember/mcp/tests/test_serving_app_routes.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The image and retire helpers under test. | `_looks_like_image`; `_retire_response` | mcp/src/agents_remember/serving/app.py:362-373; mcp/src/agents_remember/serving/app.py:1754-1807 |
+| The repository diff helper under test. | `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:433-474 |
+| The current-model helper under test. | `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
+| The Claude activity helper under test. | `_status_activity` | mcp/src/agents_remember/serving/claude_stream_state.py:781-788 |
+| The daemon readiness helper under test. | `_wait_ready` | mcp/src/agents_remember/serving/daemon.py:378-390 |
+| The evidence-page parser under test. | `_evidence_page` | mcp/src/agents_remember/serving/harness_control_client.py:870-917 |
+| The heap diagnostic frame helper under test. | `_frames` | mcp/src/agents_remember/serving/heap_diag.py:66-75 |
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: narrowed the pooled helper sentence to its cited image and retire owners while preserving the exact-owner rows for diff, model, state, readiness, evidence, and heap.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   serving-helper behavioural suite. Verification metadata is pinned to the leaf's reformat
   commit until closeout stamps the code commit.

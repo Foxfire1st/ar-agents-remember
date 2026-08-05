@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
@@ -160,36 +160,36 @@ redelivery pacing and awaits an owner disposition/follow-up.
 No relevant external/domain documentation defines this local paste policy; the frontend
 `data/terminal.ts` mirror, the serving route, the tool, and the tests are the source of truth.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this server-side tmux paste/submit loop. | L133-L229 | [terminal_paste.py](terminal_paste.py) |
+| No external/domain document defines this server-side tmux paste/submit loop. | — | — |
 
 ## Repo-Internal References
 
 The current acceptance/retry contract is implemented and tested locally; the older capture-echo
 rows below are retained only as historical provenance for the superseded L3 mechanism.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Submitted acceptance is callback-driven; recovery is one Enter re-press then one verified-absence clear/replace re-paste. | L130-L218 | [terminal_paste.py](terminal_paste.py) |
-| Duplicate-chip, clear-before-replacement, unobservable-pane, settle-floor, and Escape regressions pin the current ladder. | L64-L210 | [../../../tests/test_terminal_paste.py](../../../tests/test_terminal_paste.py.md) |
+| Submitted acceptance is callback-driven; recovery is one Enter re-press then one verified-absence clear/replace re-paste. | `TerminalPaster`, `_paste_verified`, `_retry_repastes` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
+| Tier 3 preserved: the historical row names a deleted `DeliveryIntegrityTests` grouping; the current focused tests retain the duplicate-chip, clear-before-replacement, unobservable-pane, settle-floor, and Escape evidence as standalone functions. | `test_duplicate_chip_blocks_repaste_when_clear_does_not_remove_it`, `test_visible_composer_chip_is_cleared_before_replacement`, `test_unobservable_pane_blocks_repaste`, `test_settle_guard_is_at_least_100ms`, `test_escape_is_refused` | mcp/tests/test_terminal_paste.py:255-276; mcp/tests/test_terminal_paste.py:279-299; mcp/tests/test_terminal_paste.py:302-315; mcp/tests/test_terminal_paste.py:318-335; mcp/tests/test_terminal_paste.py:347-349 |
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `spawn_agent_session` tool pastes the context packet into the spawned session (submit for a worker, draft otherwise). | L161-L169 | [../mcp/tools/terminal.py](../mcp/tools/terminal.py) |
-| `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | L653-L676 | [app.py](app.py) |
-| It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. | — | [../../../../dashboard/src/data/terminal.ts](../../../../dashboard/src/data/terminal.ts) |
-| Unit tests drive the loop against in-memory fake panes + injected clock — incl. the `DeliveryIntegrityTests` (codex chip confirms with ONE paste, laggy chip seen by re-capture and never re-pasted, failure capture attached, Escape refused, only-Enter) and the chip-vocabulary counter. | whole module | [../../../tests/test_terminal_paste.py](../../../tests/test_terminal_paste.py) |
-| The inbox hosted push records the capture tail in its durable delivery detail on an unverified push. | [inbox_delivery.py](inbox_delivery.py) | [inbox_delivery.py](inbox_delivery.py) |
-| `capture_pane` is called from the liveness sweeper's alive-harness-row turn-state classification path. | `_observe_alive`'s default `pane_capturer` | [terminal_liveness.py](terminal_liveness.py) |
+| Tier 3 preserved: the historical row says `spawn_agent_session` pastes a worker/draft context packet, but the current spawn contract returns `spawned-unbriefed` and refuses legacy context/submit inputs before durable brief delivery. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
+| `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | `api_terminal_paste`, `_paste_response` | mcp/src/agents_remember/serving/app.py:1714-1725; mcp/src/agents_remember/serving/app.py:1915-1927 |
+| It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. | `pasteAndConfirm`, `bracketedPaste`, `sanitizeForInjection` | dashboard/src/data/terminal.ts:87-89; dashboard/src/data/terminal.ts:99-107; dashboard/src/data/terminal.ts:174-188 |
+| Tier 3 preserved: the historical unit-test row names deleted `DeliveryIntegrityTests` and its chip-vocabulary counter; the current focused tests retain the one-paste, duplicate-chip, failure-capture, Escape, and Enter evidence as standalone functions. | `test_initial_dispatch_uses_one_paste_and_one_enter`, `test_dispatch_retry_leaves_ambiguous_duplicate_chips_pending`, `test_exhausted_ladder_returns_the_final_failure_capture`, `test_escape_is_refused`, `test_early_enter_control_is_suppressed_but_dispatch_enter_submits` | mcp/tests/test_terminal_paste.py:239-252; mcp/tests/test_terminal_paste.py:347-349; mcp/tests/test_terminal_paste.py:356-368; mcp/tests/test_terminal_paste.py:406-423; mcp/tests/test_terminal_paste.py:461-499 |
+| Tier 3 preserved: the historical row says inbox hosted push records a pane-capture tail, while the current protocol delivery records adapter correlation/detail and never invokes the pane paster. | `deliver_inbox_entry`, `_record_reconciliation` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191; mcp/src/agents_remember/serving/inbox_delivery.py:249-279 |
+| `capture_pane` is called from the liveness sweeper's alive-harness-row turn-state classification path. | `_observe_alive`; `pane_capturer` | mcp/src/agents_remember/serving/terminal_liveness.py:82-82; mcp/src/agents_remember/serving/terminal_liveness.py:252-308 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This helper drives only a local tmux session over the tmux CLI. | — | — |
+| This helper drives only a local tmux session over the tmux CLI. | `TerminalPasterSeams`, `_tmux_load_buffer`, `_tmux_paste_buffer`, `_tmux_send_key`, `_tmux_capture_pane` | mcp/src/agents_remember/serving/terminal_paste.py:117-131; mcp/src/agents_remember/serving/terminal_paste.py:134-148; mcp/src/agents_remember/serving/terminal_paste.py:151-163; mcp/src/agents_remember/serving/terminal_paste.py:166-178; mcp/src/agents_remember/serving/terminal_paste.py:185-198 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -235,6 +235,8 @@ The verified path is also decomposed into named rungs: `_paste_verified`, `_retr
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: curated 9 reference rows (5 Tier 2 and 4 Tier 3 preservation rows), normalized 1 no-domain placeholder, and resolved the substantive local-tmux Cross-Repo row; scoped citation fixing regenerated the Tier-2 source ranges.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `AcceptanceWindow`, `PasteRecoveryLadder`, `TerminalPasterSeams` and the public `paste_dispatch` split — the mandatory acceptance probe is now signature-enforced, replacing the removed `ValueError` guard.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

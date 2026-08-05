@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/wireFixtureGuard.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 The policy half of the fixture guard. `wireFixtureGuard.ts` is the mechanism; this file supplies the
-three things a mechanism cannot supply itself (L18-L39):
+three things a mechanism cannot supply itself:
 
 1. **The registry** — every site that still does what the rules forbid, with the sentence that earns it.
    Exact (counts, not files) and bidirectional (an entry that stops matching fails too), so a new
@@ -37,34 +37,34 @@ lies.
 
 ### Logic
 
-**`SANCTIONED_WIRE_SITES`** (L45-L182), keyed `<file> :: <what was written>` so it does not churn on
+**`SANCTIONED_WIRE_SITES`**, keyed `<file> :: <what was written>` so it does not churn on
 line moves, in four groups:
 
-- **The decode boundary** (L46-L140) — 24 entries across `data/store.ts`, `data/seatEvents.ts`,
+- **The decode boundary** — 24 entries across `data/store.ts`, `data/seatEvents.ts`,
   `data/taskDocuments.ts`, `data/terminal.ts`, `data/terminalOpen.ts`, `data/launchFlow.ts`,
   `data/submitClient.ts`, `data/sessionCapabilities.ts`, `data/capabilityCatalog.ts`,
   `data/conversation/{client,stream}.ts` and `data/conversation-library/client.ts`. Outside the fixture
   surface a cast to a wire type is the client saying "this JSON came from the server and I am trusting
   it" — a different act from a test authoring the server's answer. Listed rather than rewritten because
   narrowing them honestly is a runtime-validation problem, not a fixture one.
-- **The mirror's own derivations** (L142-L150) — two casts inside `types/projection.ts`:
+- **The mirror's own derivations** — two casts inside `types/projection.ts`:
   `as StateCountField<S>` (the bucket-name rule's runtime twin, re-narrowing what template concatenation
   widens) and `as LifecycleStateCounts` (`Object.fromEntries` answers a plain record; the KEYS come from
   the vocabulary).
-- **The fixture surface's four legitimate casts** (L152-L174) — `servedProjection.ts`'s sanctioned
+- **The fixture surface's four legitimate casts** — `servedProjection.ts`'s sanctioned
   narrowing; three brand mints in `fixtures/conversationWire.ts` (`ActivePageCursor`, `ActiveEventCursor`,
   `LibraryConversationKey` — opaque server-issued tokens with no structure to get wrong); and one in
   `topology/model.test.ts` described as *the one deliberate WIDENING* — `State` is a bare `str`
   server-side, so the mirror's closed union is narrower than the wire by construction, and that test
   exists to prove an unlisted member still classifies.
-- **Compiler suppressions** (L176-L181) — one entry, `contract.test.ts :: @ts-expect-error`, count **3**,
+- **Compiler suppressions** — one entry, `contract.test.ts :: @ts-expect-error`, count **3**,
   reasoned as the inverted pins: each asserts a field the server CANNOT send is absent from the mirror,
   and an unused `@ts-expect-error` is itself a compile error, so they fail the moment a field comes back.
 
-**The sweep over the real tree** (L186-L189) builds the program once and derives `findings` and
+**The sweep over the real tree** builds the program once and derives `findings` and
 `vocabulary` from it.
 
-**`the guard has something to police`** (L195-L258) — the vacuity suite:
+**`the guard has something to police`** — the vacuity suite:
 
 - the vocabulary is asserted **non-empty** (`> 100` names) — "an empty vocabulary is not a clean tree, it
   is a guard that has stopped running";
@@ -80,12 +80,12 @@ line moves, in four groups:
 - `isFixtureSurface` is pinned on eight representative paths, including two that must be `false`
   (`src/data/store.ts`, `src/panels/RailChat.tsx`).
 
-**`no dashboard test asserts against a payload the server cannot produce`** (L260-L282) — the
+**`no dashboard test asserts against a payload the server cannot produce`** — the
 reconciliation: `unregistered` must be empty (with a failure message telling the author to build the
 fixture with `fixtures/wire.ts` or `conversationWire.ts`, annotate it, or `satisfies` it — *do not cast
 it*), `spent` and `miscounted` must be empty, and every entry must carry a written reason.
 
-**`PLANTED_FILES`** (L289-L447) — seven virtual modules under `src/__wire_guard_planted__`, numbered
+**`PLANTED_FILES`** — seven virtual modules under `src/__wire_guard_planted__`, numbered
 1-15 in their own comments:
 
 | Probe | What it plants |
@@ -97,19 +97,19 @@ it*), `spent` and `miscounted` must be empty, and every entry must carry a writt
 | `helper.ts` + `twoModule.test.ts` | smuggling that happens in another planted module |
 | `honest.test.ts` | annotated literal, `satisfies`, `as const`, a DOM mock, a builder call, and both sides of the union on their own |
 
-**`the guard is shown able to fail`** (L462-L578) asserts each rule biting, and two of the assertions are
-harness assertions as much as rule ones. The `twoModule` case (L554-L565) exists because a planted file
+**`the guard is shown able to fail`** asserts each rule biting, and two of the assertions are
+harness assertions as much as rule ones. The `twoModule` case exists because a planted file
 importing another planted file used to resolve to nothing, degrade to `any`, and trip rule 3 — *the test
 passed for the wrong reason*, which is the same as a harness that cannot express the case at all. The
-unresolved-name case (L573-L577) asserts `wire-cast: asserts <unresolved>`, because "the guard did not
+unresolved-name case asserts `wire-cast: asserts <unresolved>`, because "the guard did not
 understand this" must read as a failure.
 
-**`the guard leaves the honest forms alone`** (L580-L587) asserts ZERO findings on `honest.test.ts`. The
+**`the guard leaves the honest forms alone`** asserts ZERO findings on `honest.test.ts`. The
 comment states the stake: a guard that also flags the fix is a guard that gets deleted — and `satisfies`
 and a type annotation both do FULL checking, which is what the whole file exists to force fixtures back
 onto.
 
-**`the registry cannot be quietly outgrown`** (L589-L620) unit-tests `reconcileWithRegistry` on
+**`the registry cannot be quietly outgrown`** unit-tests `reconcileWithRegistry` on
 synthetic findings: a site no entry covers, an entry matching nothing, a second occurrence hiding behind
 a one-site exemption, and an entry with a blank reason.
 
@@ -138,7 +138,7 @@ a one-site exemption, and an entry with a blank reason.
 
 **What these assertions do not establish.**
 
-- **The KNOWN GAP is written into the module-set assertion itself** (L216-L224) rather than papered over:
+- **The KNOWN GAP is written into the module-set assertion itself** rather than papered over:
   `data/changeset.ts`, `data/files.ts`, `data/notes.ts`, `data/harnessCatalog.ts` and
   `data/submissionLifecycleClient.ts` declare wire-shaped response types INLINE, beside client-side
   option and handler types (`MasterChangesetOptions`, `FetchLike`, `ListQuery`). They carry no marker,
@@ -153,9 +153,6 @@ a one-site exemption, and an entry with a blank reason.
   evasions that are not planted here, because they are known to pass.
 - The vocabulary threshold is a floor (`> 100`), not a pinned count, so a partial loss of vocabulary
   short of collapse would not fail this assertion.
-- The header (L23) still says "read its header for the four rules" where there are five. Stale wording
-  worth correcting in the source; the rule set itself is five and is enumerated correctly in the
-  mechanism's header.
 
 ## Docs References
 
@@ -164,45 +161,49 @@ checking: an assertion suppresses excess-property checking, a double assertion s
 too, excess-property checking applies only to fresh literals, and an unused `@ts-expect-error` is itself
 an error.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Type assertions do not perform a check, and a two-step assertion through `unknown` is the documented way to assert between unrelated types — the two moves probes 1 and 2 plant. | Type Assertions | [TypeScript Handbook — Everyday Types / Type Assertions](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions) |
-| Excess-property checking applies to fresh object literals only, which is why probe 9's spread-into-a-variable compiles and needs a rule of its own. | Excess Property Checks | [TypeScript Handbook — Object Types / Excess Property Checks](https://www.typescriptlang.org/docs/handbook/2/objects.html#excess-property-checks) |
-| An unused `@ts-expect-error` is reported as an error — the property that makes the registry's 3-count suppression entry a live pin rather than a permanent exemption. | `@ts-expect-error` | [TypeScript 3.9 Release Notes — // @ts-expect-error Comments](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#-ts-expect-error-comments) |
-| `satisfies` validates a value against a type without widening it — the honest form the guard must leave alone. | `satisfies` | [TypeScript 4.9 Release Notes — the satisfies Operator](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator) |
+| No external documentation is used for this bounded card. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The header: the three things the mechanism cannot supply itself, and R6 as the framing. | L18-L39 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| The registry: decode boundary, the mirror's own derivations, the four fixture-surface casts, and the 3-count suppression entry. | L45-L182 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| The vacuity suite: non-empty vocabulary, the two defect types, the exact seven-module set with its KNOWN GAP note, the `src/types/` marker convention, and the fixture-surface classification. | L195-L258 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| The reconciliation over the real tree, with the failure message that names the fix. | L260-L282 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| The seven planted modules, numbered 1-15. | L289-L447 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| Each rule shown biting, including the two-module harness assertion and the unresolved-name fail-closed case. | L462-L578 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| Zero findings on the honest forms. | L580-L587 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| `reconcileWithRegistry` unit-tested in all four directions. | L589-L620 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| The mechanism: the five rules, the discovered vocabulary, the virtual-file program, and the five uncovered evasions. | L1-L75; L484-L587 | [wireFixtureGuard.ts](wireFixtureGuard.ts) |
-| `SubTaskRow` and the two `extra="forbid"` models the union probe blends. | L361-L391 | [../types/projection.ts](../types/projection.ts) |
-| The two mirror-internal casts the registry sanctions, in context. | L206-L235 | [../types/projection.ts](../types/projection.ts) |
-| The sanctioned narrowing the registry names, with its reason. | L34-L43 | [servedProjection.ts](servedProjection.ts) |
-| The three brand mints the registry names. | L50-L65 | [fixtures/conversationWire.ts](fixtures/conversationWire.ts) |
-| The three `@ts-expect-error` directives the 3-count entry covers. | L501-L523 | [contract.test.ts](contract.test.ts) |
-| The deliberate widening in the topology suite: `fromANewerServer` performs the single `as State` the registry sanctions, named once so its two consumers read as a forward-compatibility check rather than as the pattern this guard bans. | L45-L54 | [../topology/model.test.ts](../topology/model.test.ts) |
-| KNOWN GAP, live: an inline `HarnessInfo` with no marker — the row a removed fixture gave a `control` field. | L4-L16 | [../data/harnessCatalog.ts](../data/harnessCatalog.ts) |
-| KNOWN GAP, live: `WithdrawalResultWire` declares no `bridgeEpoch`, though the sibling batch model does. | L35-L46 | [../data/submissionLifecycleClient.ts](../data/submissionLifecycleClient.ts) |
+| The framing and three responsibilities the mechanism cannot supply itself. | "a test whose fixture is authored by the consumer cannot detect producer drift" | dashboard/src/test/wireFixtureGuard.test.ts:18-18 |
+| The sanctioned-site registry and its four groups. | `SANCTIONED_WIRE_SITES` | dashboard/src/test/wireFixtureGuard.test.ts:51-188 |
+| The real-tree sweep derives its discovered vocabulary with `wireTypeNames(program, ROOT)`. | `vocabulary` | dashboard/src/test/wireFixtureGuard.test.ts:195-195 |
+| The vacuity suite's fixture-surface checks. | "classifies the fixture surface the rules are strict on" | dashboard/src/test/wireFixtureGuard.test.ts:254-263 |
+| The reconciliation over the real tree. | "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.test.ts:266-288 |
+| The virtual planted modules and honest forms. | `PLANTED_FILES` | dashboard/src/test/wireFixtureGuard.test.ts:297-453 |
+| Each rule shown biting, including cross-module and unresolved-name cases. | "the guard is shown able to fail" | dashboard/src/test/wireFixtureGuard.test.ts:468-584 |
+| Zero findings on the honest forms. | "the guard leaves the honest forms alone" | dashboard/src/test/wireFixtureGuard.test.ts:586-593 |
+| The registry reconciliation unit cases. | "the registry cannot be quietly outgrown" | dashboard/src/test/wireFixtureGuard.test.ts:595-626 |
+| The five-rule mechanism and discovered vocabulary. | `wireTypeNames` | dashboard/src/test/wireFixtureGuard.ts:466-482 |
+| The guard's documented uncovered-evasions section names `ElementAccessExpression`. | "WHAT THIS DOES NOT COVER"; "ElementAccessExpression" | dashboard/src/test/wireFixtureGuard.ts:39-39; dashboard/src/test/wireFixtureGuard.ts:44-44 |
+| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:515-515 |
+| The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:282-282 |
+| The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:284-284 |
+| The sanctioned narrowing the registry names. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
+| The `ActivePageCursor` brand mint. | `pageCursor` | dashboard/src/test/fixtures/conversationWire.ts:53-55 |
+| The `ActiveEventCursor` brand mint. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |
+| The `LibraryConversationKey` brand mint. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
+| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:512-512; dashboard/src/test/contract.test.ts:514-514 |
+| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:533-533 |
+| The deliberate widening in the topology suite. | `fromANewerServer` | dashboard/src/topology/model.test.ts:52-54 |
+| KNOWN GAP, live: the inline `HarnessInfo` response shape is outside the marker vocabulary. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
+| KNOWN GAP, live: `WithdrawalResultWire` is outside the marker vocabulary. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
 
 ## Cross-Repo References
 
 No cross-repository boundary. Every scanned root, every registry key and every planted module is inside
 `dashboard/` in this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep is built from `dashboardRoot()` and the in-repo scanned roots; nothing outside this repository is read. | L136; L170-L181 | [wireFixtureGuard.ts](wireFixtureGuard.ts) |
+| The sweep is built from the in-repo dashboard root and scanned source files; nothing outside this repository is read. | `dashboardRoot`, `dashboardSourceFiles` | dashboard/src/test/wireFixtureGuard.ts:171-173; dashboard/src/test/wireFixtureGuard.ts:175-177 |
 
 ## Update History
+- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: narrowed the vacuity/evasion claims and rebound the union and suppression evidence to frozen test/source bodies; same-reviewer delta pending.
 
 - 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
   server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving

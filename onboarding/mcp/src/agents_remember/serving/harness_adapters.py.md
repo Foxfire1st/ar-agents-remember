@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/harness_adapters.py`       |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-10T13:03+02:00                                      |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`                  |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -53,24 +53,23 @@ No relevant external documentation found after checking the repo Domain Document
 per-harness delivery-adapter behavior; this file is same-repository runtime plumbing (the leaf task
 doc's R2 is the source of truth), same posture as `pane_signals.py`/`turn_state.py`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines a per-harness delivery adapter; the leaf task doc (R2) and this implementation are the source of truth. | whole module | [harness_adapters.py](harness_adapters.py) |
+| No external/domain document defines a per-harness delivery adapter; the leaf task doc (R2) and this implementation are the source of truth. | `HarnessAdapter` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `get_adapter` is the sole entry point `serving.injector.deliver` calls to resolve per-harness behavior for the blocked-check and post-submit-confirmation corroboration. | `deliver` | [injector.py](injector.py.md) |
-| `boot_ready`/`composer_state` compose `turn_state.classify_turn_state`/`turn_state.boot_ready` and `pane_signals.classify_pane_signal`/`pane_signals.composer_state`/`pane_signals.blocked_reason_label` — the single source of truth for every pattern table. | `classify_turn_state`; `boot_ready` | [turn_state.py](turn_state.py.md) |
-| | `classify_pane_signal`; `composer_state`; `blocked_reason_label` | [pane_signals.py](pane_signals.py.md) |
-| Fixtures for both harnesses across boot/ready/mid-turn/chip-stacked/quota-modal, plus the registry fallback behavior. | whole module | [../../../tests/test_harness_adapters.py](../../../tests/test_harness_adapters.py.md) |
+| `get_adapter` is the sole entry point `serving.injector.deliver` calls to resolve per-harness behavior for the blocked-check and post-submit-confirmation corroboration. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
+| `boot_ready`/`composer_state` compose `turn_state.classify_turn_state`/`turn_state.boot_ready` and `pane_signals.classify_pane_signal`/`pane_signals.composer_state`/`pane_signals.blocked_reason_label` — the single source of truth for every pattern table. | `classify_turn_state`; `boot_ready` | mcp/src/agents_remember/serving/turn_state.py:157-171; mcp/src/agents_remember/serving/turn_state.py:174-177 |
+| Fixtures for both harnesses across boot/ready/mid-turn/chip-stacked/quota-modal, plus the registry fallback behavior. | `### Logic` | onboarding/mcp/tests/test_harness_adapters.py.md:22-42 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local delivery adapter. | — | — |
 
@@ -82,6 +81,9 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 65; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (4 findings) and deleted the single empty/unanchorable row under the 2026-08-02T14:10 ruling; remaining citation result is zero.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: deleted boot/composer/mid-turn/turn-start

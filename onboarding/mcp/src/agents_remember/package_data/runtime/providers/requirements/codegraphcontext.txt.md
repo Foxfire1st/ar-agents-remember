@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T12:32+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -47,27 +47,29 @@ Provider versions should stay pinned before patching so version-specific patch c
 
 No external documentation is needed for the pin itself.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction. | L1-L4 | [codegraphcontext.txt](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt) |
-| The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root. | n/a | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| The CGC runner build uses the installed requirements pin when building the Docker runner image. | n/a | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction. | "codegraphcontext==0.4.10"; "tree-sitter==0.25.2"; "tree-sitter-language-pack==0.13.0"; "tree-sitter-c-sharp==0.23.5" | mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt:1-4 |
+| The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root. | `require_runtime_tree`; `install_runtime` | mcp/src/agents_remember/install/runtime.py:317-328; mcp/src/agents_remember/install/runtime.py:462-553 |
+| The CGC runner build uses the installed requirements pin when building the Docker runner image. | `cgc_runner_image_build` | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-74 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this provider pin.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:46+02:00 — 260731-EFA-L6 curator W1-B03: repaired 3 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-05-28T12:32+02:00: Updated after managed CGC execution moved to Docker runner images instead of provider virtual environments.
 - 2026-05-25T19:16+02:00: Updated the provider helper reference after `context_providers.py` was replaced by the direct `providers.context` facade and context modules.

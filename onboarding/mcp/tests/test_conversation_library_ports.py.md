@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_ports.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,13 +33,13 @@ range-absurd `lastModified` fails as a typed store error (review F4); read maps 
 and provenance; resolve mints the `--resume` argv target. Pi read maps roles, tools, and
 notices; resolve mints the `--session <file>` argv target.
 
-The `_FakeCodexTransport` boundary (L97-L103) also covers the library's additive sub-agent
+The `_FakeCodexTransport` boundary (cit:([`_FakeCodexTransport`], mcp/tests/test_conversation_library_ports.py:67-121)) also covers the library's additive sub-agent
 fetch: a `thread/list` whose
 `sourceKinds` is outside the plain top-level vocabulary answers an empty page at this fake
 boundary, keeping these dormant port cases green while the agent-grouping suite
 (`test_conversation_library_agents.py`) owns the non-empty sub-agent cases. That fake transport and
 a stubbed environment reach the Codex library through a single `AppServerSeams(env=...,
-transport_factory=...)` object in `_codex_library` (L141-L151), not as two loose constructor
+transport_factory=...)` object in `_codex_library` (cit:(["transport_factory="], mcp/tests/test_conversation_library_ports.py:148-148)), not as two loose constructor
 keywords.
 
 ### Conventions
@@ -62,27 +62,28 @@ None.
 
 No Domain Documentation source is configured. The repository sources are direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Codex direct port and its thread-item parser under test. | L265-L401; L40-L59 | [codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/codex.py), [codex_normalize.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/codex_normalize.py) |
-| The Claude and Pi helper-backed ports under test. | L87-L182; L88-L182 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py), [pi.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/pi.py) |
-| The installed-runtime suite covering the same ports live. | L136-L263 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The Codex direct port and its thread-item parser under test. | `CodexConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/codex.py:265-668 |
+| The Claude and Pi helper-backed ports under test. | `ClaudeConversationLibrary`; `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/claude.py:80-424; mcp/src/agents_remember/serving/conversation/library/pi.py:72-320 |
+| The installed-runtime suite covering the same ports live. | `CodexInstalledTests`; `PiInstalledTests` | mcp/tests/test_conversation_library_installed.py:103-186; mcp/tests/test_conversation_library_installed.py:189-281 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this ports suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-03T03:03:33+02:00 — W3-B05 curator: resolved 5 Tier-2 citation claims (3 table, 2 prose) with exact anchors and source paths; fixer generated all final ranges.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. Only the
   row's first range was stale: `CodexConversationLibrary` — the dormant port with the

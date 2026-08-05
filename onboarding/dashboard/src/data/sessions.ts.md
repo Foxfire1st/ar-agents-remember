@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -47,15 +47,15 @@ same-role owner and preserving different roles on the leaf. Catalog hydration ca
 
 ### Plural Pending Interactions (Review N1)
 
-`OpenSession.controlPendingInteractions?: Record<string, unknown>[]` (L74) is the ADDITIVE plural
-companion to the singular `controlPendingInteraction` (which stays the parent-thread entry): it
+`OpenSession.controlPendingInteractions?: Record<string, unknown>[]` is the ADDITIVE plural
+companion to the singular `controlPendingInteraction` (which stays the parent-thread entry); cit:([`OpenSession`, `controlPendingInteractions`], dashboard/src/data/sessions.ts:28-83) it
 carries multiplexed harness sub-agent pendings (e.g. a codex sub-agent's permission request, with
-the adapter-bound `raw.agentLabel`), mirrored by `fromTerminalSessionInfo` only-when-set like every
-other catalog field (L523-L525). Two helpers are the ONLY sanctioned read of pending state:
-`sessionHasPendingInteraction(session)` (L448-L461) — the singular slot OR a non-empty plural list —
+the adapter-bound `raw.agentLabel`), mirrored by `fromTerminalSessionInfo`, cit:([`fromTerminalSessionInfo`], dashboard/src/data/sessions.ts:488-537) only-when-set like every
+other catalog field. Two helpers are the ONLY sanctioned read of pending state:
+cit:([`sessionHasPendingInteraction`], dashboard/src/data/sessions.ts:454-461) — the singular slot OR a non-empty plural list —
 is the single derivation every attention surface (rail badge, announcer, visual grammar, question
 triage) must use, or a seat blocked SOLELY on a sub-agent approval goes dark;
-`sessionPendingInteractionPayload(session)` (L463-L471) returns the payload attention chrome
+cit:([`sessionPendingInteractionPayload`], dashboard/src/data/sessions.ts:467-471) returns the payload attention chrome
 previews — the parent's singular slot first, else the first multiplexed entry.
 
 ### Logic
@@ -187,31 +187,31 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical Chats view reads this store and separates live action routing from inspection focus. | L247-L293 | [SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
-| The right-rail leaf chat resolves sessions via leaf role and now uses `pasteDraftToSession` for bind-time context after start, attach, or move. | L309-L315; L317-L353 | [panels/RailChat.tsx](../panels/RailChat.tsx) |
-| The replacement rail renders catalog sessions and lifecycle actions through the shared model. | — | [SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
-| `RailChat` is the only production owner of this module's raw connection registry, for visible and hidden keep-alive terminals. | L489-L503; L540-L546 | [RailChat.tsx](../panels/RailChat.tsx) |
-| Production creation callers are `RailChat`, `HighlightComposer`, and the full-page `ChatContextBar`. | L336-L367; L452-L471; L98-L106 | [RailChat.tsx](../panels/RailChat.tsx); [HighlightComposer.tsx](../panels/HighlightComposer.tsx); [ChatContextBar.tsx](../panels/session-cockpit/ChatContextBar.tsx) |
-| The full-page cockpit's keep-alive PTY owner is `PtySurface`, separate from the raw RailChat registry. | L145-L227 | [PtySurface.tsx](../panels/session-cockpit/PtySurface.tsx) |
-| The leaf-identity helper that mints the qualified `leafKey` this store binds. | — | [data/taskIdentity.ts](taskIdentity.ts) |
-| The gate responder resolves `gate.lifecycleId` and directly mutates lifecycle routing through `sessionStore.getState()`. | L300 | [panels/GateResponder.tsx](../panels/GateResponder.tsx) |
-| Development scenario isolation snapshots this store's session ids and active id; it is not a production consumer. | L304-L305 | [dev/cockpitScenarios.ts](../dev/cockpitScenarios.ts) |
-| The projection store this mirrors in pattern but stays separate from. | — | [data/store.ts](store.ts) |
-| The terminal client types/source that provide catalog rows and terminate/open/attach helpers. | L228-L315 | [terminal.ts](terminal.ts) |
-| Catalog-change messages accept the `"leaf"` reason and carry the changed session id for out-of-band reassignment invalidation. | L85-L138 | [sessions.ts](sessions.ts) |
-| The label allocator derives the next label from live rows and releases labels when rows are no longer live. | L251-L269 | [sessions.ts](sessions.ts) |
-| `setLeaf` keeps role-scoped advisory uniqueness local, while `applyLeafAssignment` applies successful server moves and clears stale same-role local owners. | L390-L435 | [sessions.ts](sessions.ts) |
-| The plural pending field and the ONLY sanctioned pending-state reads (N1): `controlPendingInteractions?`, `sessionHasPendingInteraction` (singular OR non-empty plural), `sessionPendingInteractionPayload` (singular first, else first plural entry). | L73-L74; L448-L471; L523-L525 | [sessions.ts](sessions.ts) |
-| `pasteDraftToSession` waits for the live connection and delegates to the confirmed `pasteAndConfirm` draft loop (echo-confirmed, boot-deadline retries, no Enter); `deliverToSession` keeps the submit-and-confirm path. | L630-L673 | [sessions.ts](sessions.ts) |
-| The backend tmux session that persists after `close` and is killed only by explicit terminate. | L330-L347 | [serving/terminal.py](../../../mcp/src/agents_remember/serving/terminal.py) |
+| The canonical Chats view reads this store and separates live action routing from inspection focus. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/SessionsView.tsx:196-1331 |
+| The right-rail leaf chat resolves sessions via leaf role and now uses `pasteDraftToSession` for bind-time context after start, attach, or move. | `pasteDraftToSession` | dashboard/src/data/sessions.ts:636-640 |
+| The replacement rail renders catalog sessions and lifecycle actions through the shared model. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| `RailChat` is the only production owner of this module's raw connection registry, for visible and hidden keep-alive terminals. | `RailChat` | dashboard/src/panels/RailChat.tsx:524-524; dashboard/src/panels/RailChat.tsx:559-559 |
+| Production creation callers are `RailChat`, `HighlightComposer`, and the full-page `ChatContextBar`. | `RailChatImpl`; `HighlightComposerImpl`; `ChatContextBar` | dashboard/src/panels/HighlightComposer.tsx:244-696; dashboard/src/panels/RailChat.tsx:254-519; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
+| The full-page cockpit's keep-alive PTY owner is `PtySurface`, separate from the raw RailChat registry. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
+| The leaf-identity helper that mints the qualified `leafKey` this store binds. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
+| The gate responder resolves `gate.lifecycleId` and directly mutates lifecycle routing through `sessionStore.getState()`. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| Development scenario isolation snapshots this store's session ids and active id; it is not a production consumer. | `cockpitStateSnapshot` | dashboard/src/dev/cockpitScenarios.ts:257-274 |
+| The projection store this mirrors in pattern but stays separate from. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
+| The terminal client types/source that provide catalog rows and terminate/open/attach helpers. | `fetchTerminalSessions`; `terminateTerminalSession`; `attachSessionToLeaf` | dashboard/src/data/terminal.ts:389-395; dashboard/src/data/terminal.ts:397-406; dashboard/src/data/terminal.ts:446-467 |
+| Catalog-change messages accept the `"leaf"` reason and carry the changed session id for out-of-band reassignment invalidation. | `notifySessionCatalogChanged` | dashboard/src/data/sessions.ts:113-126 |
+| The label allocator derives the next label from live rows and releases labels when rows are no longer live. | `nextSessionLabel` | dashboard/src/data/sessions.ts:259-269 |
+| `setLeaf` keeps role-scoped advisory uniqueness local, while `applyLeafAssignment` applies successful server moves and clears stale same-role local owners. | `setLeaf`; `applyLeafAssignment` | dashboard/src/data/sessions.ts:166-166; dashboard/src/data/sessions.ts:171-171 |
+| The plural pending field and the ONLY sanctioned pending-state reads (N1): `controlPendingInteractions?`, `sessionHasPendingInteraction` (singular OR non-empty plural), `sessionPendingInteractionPayload` (singular first, else first plural entry). | `controlPendingInteractions`; `sessionHasPendingInteraction`; `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:74-74; dashboard/src/data/sessions.ts:454-461; dashboard/src/data/sessions.ts:467-471 |
+| `pasteDraftToSession` waits for the live connection and delegates to the confirmed `pasteAndConfirm` draft loop (echo-confirmed, boot-deadline retries, no Enter); `deliverToSession` keeps the submit-and-confirm path. | `pasteDraftToSession`; `deliverToSession` | dashboard/src/data/sessions.ts:636-640; dashboard/src/data/sessions.ts:650-673 |
+| The backend tmux session that persists after `close` and is killed only by explicit terminate. | `close` | mcp/src/agents_remember/serving/terminal.py:218-226 |
 
 ### Protocol Projection
 
@@ -247,11 +247,18 @@ This section records the review point. That candidate subsequently landed in cod
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 1 citation finding. The `RailChat`
+  raw-connection-registry row now spans both `registerConnection` mounts
+  (`RailChat.tsx:505-524; 559-559`), so the visible and hidden keep-alive registrations and the anchor
+  sit inside the cited ranges. Scoped recheck clean.
+
+- 2026-08-03T02:31+02:00 — W3-B01 curator: curated 15 table source citations across 13 Repo-Internal rows and 2 prose citations, replacing malformed links and unanchored claims with exact current source anchors. Verification metadata remains unchanged for closeout.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the fix-round review-N1 plural pending
   change. `OpenSession` gains the additive `controlPendingInteractions?` (multiplexed harness

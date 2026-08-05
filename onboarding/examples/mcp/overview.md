@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
 | lastUpdated            | 2026-07-09T14:05+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -54,8 +54,17 @@ compatibility aliases, but the example uses the current `autoLand*` keys.
 that teams can adapt for a memory repo. It is documentation-shaped example
 content, not a runtime input.
 
+In this leaf the example renamed its layer heading from `### Controller` to
+`### Application entry point` (and anti-pattern 7's wording with it), mirroring the
+`controllers/` → `application/` package move in the repo; the file remains
+documentation-shaped example content, not a runtime input.
+
 ## Update History
 
+- 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: the coding-guidelines example renamed its
+  `Controller` layer heading (and anti-pattern 7) to `Application entry point` to mirror the
+  `controllers/` → `application/` move; `settings.example.json` is unchanged. Verification
+  metadata pinned until closeout stamps the code commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: the settings template's `retirement`
   example now shows `autoLandOnIntegration`/`autoLandOnFinalize`, matching landed archive behavior;
   old `autoRetire*` names remain parser aliases only. Verification metadata pinned until closeout

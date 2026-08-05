@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLifecycle.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -33,31 +33,31 @@ against the retire route's authority checks).
 
 ### Logic
 
-- **`lifecycleNoticeStore`** (L30-L86): newest-first `residuals: StopResidual[]`
+- **`lifecycleNoticeStore`** (cit:([`lifecycleNoticeStore`], dashboard/src/data/sessionLifecycle.ts:68-121)): newest-first `residuals: StopResidual[]`
   (`{sessionId, label, kind: terminate|retire, detail, at}` — detail is the server's words,
   verbatim), kept until explicitly dismissed; `cleanupOutcome` — the last bulk-cleanup result
   (closed/skipped honesty), null when none/dismissed; `sweptRetire` — sessionIds whose retire
   residual was already captured, so a dismissal STAYS dismissed across poll beats (the catalog
-  row carries the fact forever). `sweepRetireResiduals(sessions)` (L57-L83) captures
+  row carries the fact forever). cit:([`sweepRetireResiduals`; "for (const session of sessions)"; "if (!changed)"; "residuals = [...residuals]"; "sweptRetire[session.id] = true"], dashboard/src/data/sessionLifecycle.ts:61-61; dashboard/src/data/sessionLifecycle.ts:87-87; dashboard/src/data/sessionLifecycle.ts:95-96; dashboard/src/data/sessionLifecycle.ts:110-110) captures
   `controlRaw.retireControlStopError` for EVERY row, once per sessionId, with copy-on-write only
   when something actually changes.
-- **`startRetireResidualSweep()`** (L97-L118, review F1 sev-3 fix): the refcounted,
+- **`startRetireResidualSweep()`** (cit:([`startRetireResidualSweep`], dashboard/src/data/sessionLifecycle.ts:136-154), review F1 sev-3 fix): the refcounted,
   FOCUS-INDEPENDENT capture path. Retired rows tombstone out of the rail, so a focused-handoff
   capture silently dropped unfocused retirements (and reloads); this subscription sweeps every
   `sessionStore` change (poll hydrates AND direct patches) and sweeps rows already present at
   subscribe time (the reload path — the catalog serves retired rows forever). Release is
   idempotent (`released` flag); refs 0 unsubscribes and nulls the handle — StrictMode
   double-mount safe, with dedup living in the STORE, not module state.
-- **`terminateSessionDetailed(sessionId)`** (L133-L150): the terminate POST keeping the body —
+- **`terminateSessionDetailed(sessionId)`** (cit:([`terminateSessionDetailed`], dashboard/src/data/sessionLifecycle.ts:169-197)): the terminate POST keeping the body —
   `{ok:true, controlStopDetail?}` on success; on failure `{ok:false, error}` with the server's
   words verbatim (response body or `HTTP <status>` or the network error message — review finding
   4: a failed POST is never silent). Deliberately duplicates the POST instead of calling
   `terminateTerminalSession` (the boolean-only helper drops the body; untouched for Chats).
-- **`endSessionDetailed(session)`** (L156-L172): the cockpit terminate flow — POST, then mirror
+- **`endSessionDetailed(session)`** (cit:([`endSessionDetailed`], dashboard/src/data/sessionLifecycle.ts:203-224)): the cockpit terminate flow — POST, then mirror
   the store (`setStatus("terminated")` + `close` + `notifySessionCatalogChanged`), then record
   any stop residual for the informational surfaces. A failed POST returns early: no tombstone, no
   fake state.
-- **`endLandedDetailed(sessions)`** (L178-L191): bulk-end via the landed-cleanup route, keeping
+- **`endLandedDetailed(sessions)`** (cit:([`endLandedDetailed`], dashboard/src/data/sessionLifecycle.ts:230-251)): bulk-end via the landed-cleanup route, keeping
   the route's OWN outcome (closed + skipped WITH reasons) in `cleanupOutcome` instead of dropping
   the skips; closes the closed rows locally and re-hydrates excluding them.
 
@@ -82,22 +82,24 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Notice store, sweep, and the detailed terminate/bulk-end flows. | L21-L191 | [sessionLifecycle.ts](sessionLifecycle.ts) |
-| The centralized residual/confirm copy (informational wording lives there). | L14-L47 | [../panels/session-cockpit/lifecycleCopy.ts](../panels/session-cockpit/lifecycleCopy.ts) |
-| The stage renderer of residual notices (dismissable `role="status"` lines). | L42-L43 | [../panels/session-cockpit/StopResidualNotes.tsx](../panels/session-cockpit/StopResidualNotes.tsx) |
-| The rail consumers: End arm→confirm→execute + the cleanup-outcome note. | L347-L355; L386-L427 | [../panels/session-cockpit/SessionRail.tsx](../panels/session-cockpit/SessionRail.tsx) |
-| The view mounting the sweep (one effect; the focus-coupled capture was removed). | L229; L279 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
-| The boolean-only predecessors this module deliberately does not reuse. | — | [terminal.ts](terminal.ts) |
-| The registry the sweep subscribes to (hydrates keep the full list incl. terminated rows). | — | [sessions.ts](sessions.ts) |
-| The unit suite: residual kept/clean/verbatim-failure, sweep capture-once + reload path, bulk outcome, copy honesty. | L34-L185 | [sessionLifecycle.test.ts](sessionLifecycle.test.ts) |
+| The notice store and residual sweep. | `lifecycleNoticeStore`; `sweepRetireResiduals`; `startRetireResidualSweep`; "for (const session of sessions)"; "if (!changed)" | dashboard/src/data/sessionLifecycle.ts:61-61; dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/sessionLifecycle.ts:136-154 |
+| The detailed terminate and bulk-end flows preserve server outcomes. | `terminateSessionDetailed`; `endSessionDetailed`; `endLandedDetailed` | dashboard/src/data/sessionLifecycle.ts:169-197; dashboard/src/data/sessionLifecycle.ts:203-224; dashboard/src/data/sessionLifecycle.ts:230-251 |
+| The centralized terminate confirmation copy. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23 |
+| The stage renderer of residual notices (dismissable `role="status"` lines). | `StopResidualNotes` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72 |
+| The rail consumers keep immediate single End and confirmed bulk End. | `endSession`; `endLanded`; `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:462-464; dashboard/src/panels/session-cockpit/SessionRail.tsx:468-472; dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| The cleanup outcome notice is rendered by the dedicated landed-cleanup component. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
+| The view mounts the focus-independent sweep. | "useEffect(() => startRetireResidualSweep(), []);" | dashboard/src/panels/session-cockpit/SessionsView.tsx:298-298 |
+| `terminateTerminalSession` is the boolean-only predecessor. | `terminateTerminalSession` | dashboard/src/data/terminal.ts:397-406 |
+| `subscribeSessionCatalogChanges` registers catalog-change listeners. | `subscribeSessionCatalogChanges` | dashboard/src/data/sessions.ts:128-138 |
+| The focused `endLandedDetailed (bulk cleanup honesty)` test covers the landed cleanup path. | "endLandedDetailed (bulk cleanup honesty)" | dashboard/src/data/sessionLifecycle.test.ts:146-213 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -111,11 +113,18 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: split the duplicated lifecycle source row by
+  owner, completed the residual-sweep body audit, narrowed negative/over-pooled reference claims,
+  and updated rail cleanup references from the retired residual-note path to `LandedCleanupNotice`.
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 12 citation claims
+  (4 Logic citations and 8 Repo-Internal reference rows); scoped result 0 findings.
 
 - 2026-07-24T13:17:50Z — Added termination-time conversation disconnect ownership. Verification
   hash/date remain pinned to the pre-commit source stamp.

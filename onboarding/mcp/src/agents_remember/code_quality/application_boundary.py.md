@@ -1,0 +1,76 @@
+# mcp/src/agents_remember/code_quality/application_boundary.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/code_quality/application_boundary.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-05T00:00+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| governingOverview | `../../../overview.md` |
+
+## Governing Overview
+
+[overview](../../../overview.md)
+
+## Purpose
+
+Enforce the MCP/application transport boundary (L6-R7).
+
+## Code Commentary
+
+### Logic
+
+Module-level surface:
+
+- `BoundaryContractError` (class, lines 27-28) — The declared package order cannot define the application boundary.
+- `BoundaryViolation` (class, lines 39-52) — One import that crosses the MCP/application boundary.
+- `_LayerContract` (class, lines 56-58)
+- `_read_contract` (function, lines 61-85)
+- `_resolved_imports` (function, lines 88-100)
+- `_top_package` (function, lines 103-107)
+- `_permitted` (function, lines 110-114)
+- `_required_modules` (function, lines 117-131)
+- `_serving_modules` (function, lines 134-141)
+- `_module_imports` (function, lines 144-147)
+- `_transport_violations` (function, lines 150-175)
+- `_reverse_serving_violations` (function, lines 178-214)
+- `application_boundary_violations` (function, lines 217-228) — Return every MCP transport bypass and reverse serving edge in stable source order.
+
+### Conventions
+
+Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+
+### Invariants And Boundaries
+
+- The card mirrors the source file one-to-one at `mcp/src/...` path.
+
+### Todos
+
+None.
+
+## Repo-Internal References
+
+This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Defines the class `BoundaryContractError` (lines 27-28) — The declared package order cannot define the application boundary.. | `BoundaryContractError` | mcp/src/agents_remember/code_quality/application_boundary.py:27-28 |
+| Defines the class `BoundaryViolation` (lines 39-52) — One import that crosses the MCP/application boundary.. | `BoundaryViolation` | mcp/src/agents_remember/code_quality/application_boundary.py:38-52 |
+| Defines the class `_LayerContract` (lines 56-58). | `_LayerContract` | mcp/src/agents_remember/code_quality/application_boundary.py:55-58 |
+| Defines the function `_read_contract` (lines 61-85). | `_read_contract` | mcp/src/agents_remember/code_quality/application_boundary.py:61-85 |
+| Defines the function `_resolved_imports` (lines 88-100). | `_resolved_imports` | mcp/src/agents_remember/code_quality/application_boundary.py:88-100 |
+| Defines the function `_top_package` (lines 103-107). | `_top_package` | mcp/src/agents_remember/code_quality/application_boundary.py:103-107 |
+| Defines the function `_permitted` (lines 110-114). | `_permitted` | mcp/src/agents_remember/code_quality/application_boundary.py:110-114 |
+| Defines the function `_required_modules` (lines 117-131). | `_required_modules` | mcp/src/agents_remember/code_quality/application_boundary.py:117-131 |
+| Defines the function `_serving_modules` (lines 134-141). | `_serving_modules` | mcp/src/agents_remember/code_quality/application_boundary.py:134-141 |
+| Defines the function `_module_imports` (lines 144-147). | `_module_imports` | mcp/src/agents_remember/code_quality/application_boundary.py:144-147 |
+| Defines the function `_transport_violations` (lines 150-175). | `_transport_violations` | mcp/src/agents_remember/code_quality/application_boundary.py:150-175 |
+| Defines the function `_reverse_serving_violations` (lines 178-214). | `_reverse_serving_violations` | mcp/src/agents_remember/code_quality/application_boundary.py:178-214 |
+| Defines the function `application_boundary_violations` (lines 217-228) — Return every MCP transport bypass and reverse serving edge in stable source order.. | `application_boundary_violations` | mcp/src/agents_remember/code_quality/application_boundary.py:217-228 |
+
+## Update History
+
+- 2026-08-05T03:52+02:00 — 260731-EFA-L6 batch B curator: normalized decorator-inclusive citation ranges via scoped --fix against the frozen snapshot.
+- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

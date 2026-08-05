@@ -68,8 +68,8 @@ root and replays the event logs, so the rich fixture exercises the whole project
 
 **Three different "kinds" live in this file and only one of them is wire vocabulary.**
 `contract_md`'s `kind=` is the contract's `workflow_kind` front-matter cell, which is now
-`WorkflowKind = Literal["chat-task", "light-task"]` (`worktrees/worktree_contract.py` L50, default
-`DEFAULT_WORKFLOW_KIND = "light-task"` L71) — the task *format*. `ContractSite.contract_kind`
+`WorkflowKind = Literal["chat-task", "light-task"]` (`worktrees/worktree_contract.py` L63, default
+`DEFAULT_WORKFLOW_KIND = "light-task"` L84) — the task *format*. `ContractSite.contract_kind`
 (`leaf`/`series`) is the separate `kind:` cell that carries the series *role*. And `master_doc`
 emits a task-document `"kind": "master"`, which is the doc schema's vocabulary, not the contract's.
 `write_master_series` therefore builds `ContractSite(..., contract_kind="series")` and passes
@@ -94,12 +94,12 @@ emits a task-document `"kind": "master"`, which is the doc schema's vocabulary, 
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The contract format + loader the contracts must satisfy. | [worktrees/worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The task-document schema the docs are validated against. | [tasks/document.py](agents-remember/mcp/src/agents_remember/tasks/document.py) |
-| The event envelope the replayed logs use. | [observer/events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The sim loader/materializer that consumes the fixture. | [serving/sim.py](agents-remember/mcp/src/agents_remember/serving/sim.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The contract format + loader the contracts must satisfy. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-290; mcp/src/agents_remember/worktrees/worktree_contract.py:438-471 |
+| The task-document schema the docs are validated against. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:141-205 |
+| The event envelope the replayed logs use. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
+| The sim loader/materializer that consumes the fixture. | `_materialize_surfaces` | mcp/src/agents_remember/serving/sim.py:123-134 |
 
 ## Series-Contract Notes
 
@@ -107,17 +107,29 @@ The rich simulator now fabricates root `kind="series"` contracts and leaf enclos
 
 ## Update History
 
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 11 citation findings and corrected
+  five stale line refs. Re-anchored the four reference rows (`load_contract`, `TaskDocument`, `Event`,
+  `_materialize_surfaces`) with exact spans; converted the L4-history cites to cit form at current
+  locations (`_vocabulary_cell` 108-142, `load_contract` 438-472, `validate_contract` 763-820); the
+  three-kinds paragraph now cites `WorkflowKind` L63 / `DEFAULT_WORKFLOW_KIND` L84. Scoped recheck
+  clean.
+
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: `write_master_series` no longer passes
   `kind="master"` to `contract_md`; it passes `kind="light-task"`, because `WorkflowKind` is now
   `Literal["chat-task", "light-task"]`. Added the "three kinds" paragraph separating
   `contract_md(kind=)` (the `workflow_kind` cell) from `ContractSite.contract_kind` (`leaf`/`series`)
   and from `master_doc`'s `"kind": "master"` — the series role and the master doc are unchanged.
   Corrected the self-validation invariant, which overstated what `validate_and_report` catches:
-  checked `_vocabulary_cell` (`worktrees/worktree_contract.py` L95-L129) and `load_contract`
-  (L425-L458) and the reader is **total** — an unrecognised `workflow_kind` degrades to
+  checked `_vocabulary_cell`
+  (cit:([`_vocabulary_cell`], mcp/src/agents_remember/worktrees/worktree_contract.py:108-142))
+  and `load_contract`
+  (cit:([`load_contract`], mcp/src/agents_remember/worktrees/worktree_contract.py:438-471))
+  and the reader is **total** — an unrecognised `workflow_kind` degrades to
   `DEFAULT_WORKFLOW_KIND`, lands on `unknown_cells`, and only logs a warning, so the old
   `kind="master"` would have produced quarantined cells rather than a failed self-check. The strict
-  gate is `validate_contract` (L750), reached from `write_contract`, which this generator bypasses
+  gate is `validate_contract`
+  (cit:([`validate_contract`], mcp/src/agents_remember/worktrees/worktree_contract.py:763-818)),
+  reached from `write_contract`, which this generator bypasses
   by emitting markdown text. Helper signatures, the six writers, the four dataclasses, the L11R-1
   worktree materialization rule and the generated tree are all unchanged and re-read.
 

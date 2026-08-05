@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_installed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,27 +65,29 @@ enabling).
 No Domain Documentation source is configured. The repository sources and installed-runtime
 fixture contract are direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The runtime fixtures recording (never enabling) the gate/open evidence rows this suite produces. | L21-L34 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
-| The open service whose real spawn/proof/retire arms this suite exercises end-to-end. | L209-L320 | [open_service.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/open_service.py) |
-| The doubled gate/port suites whose live counterparts these tests are. | L1-L7 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
+| The runtime fixtures recording (never enabling) the gate/open evidence rows this suite produces. | `enablesCapabilities`; "native-history/open-exact-resume" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:9-9; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:84-93 |
+| The open service whose real spawn/proof/retire arms this suite exercises end-to-end. | `ConversationOpenService`; `open`; `_retire` | mcp/src/agents_remember/serving/conversation/library/open_service.py:222-698; mcp/src/agents_remember/serving/conversation/library/open_service.py:242-307; mcp/src/agents_remember/serving/conversation/library/open_service.py:633-651 |
+| The doubled gate/port suites whose live counterparts these tests are. | `CodexLibraryTests`; `ClaudeLibraryTests`; `PiLibraryTests` | mcp/tests/test_conversation_library_ports.py:221-410; mcp/tests/test_conversation_library_ports.py:465-573; mcp/tests/test_conversation_library_ports.py:631-697 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this installed-runtime suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows across the fixture, open service, and port suites; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 only folded call-site arguments into
   parameter objects — `ConversationOpenService(LibraryBinding(runtime=…, shared=…, authorization=…),

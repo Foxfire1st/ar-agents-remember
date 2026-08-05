@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-07-07T18:40+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 Tests for the JSON-primary task-document layer (slice 3c): the schema, renderer,
-store, the `task_doc` controller (master + subTask leaf authoring; `light` is load-compat only),
+store, the `task_doc` application entry point (master + subTask leaf authoring; `light` is load-compat only),
 and tool registration.
 
 ## Code Commentary
@@ -30,7 +30,7 @@ and tool registration.
   steps/lifecycleId; light/subTask ⇒ no subTasks + freeform-only `sections`, R4), plus the **R3**
   `codeExamplesNote` cases (round-trip + `exclude_none` omission, master-forbids,
   note-requires-empty-`codeExamples`), the **R4** extension round-trip
-  (`statusNote`/`headerNotes`/freeform `sections`), and the **L14** `orchestrates` cases
+  (`statusNote`/`headerNotes`/freeform `sections`), and the `orchestrates` cases
   (master round-trip, master-only rejection on a leaf, `[]` default on docs without the field).
 - `RenderTests` — a byte-exact golden for a small light doc, determinism, the
   `(Sub-task <id>)` title + `**Master:**` line, checkbox + substep-note rendering, the **R2**
@@ -42,12 +42,12 @@ and tool registration.
 - `MasterRenderTests` — a byte-exact golden master (header + ordered sections, the
   `subTasks` list with ✅/🔨/⬜ markers incl. the `3c` number, and the Shared Decisions
   table), determinism, the status→marker map, the empty-subtasks placeholder,
-  verbatim preservation of bespoke multi-paragraph prose (the S4 acceptance), and the **L14**
+  verbatim preservation of bespoke multi-paragraph prose (the S4 acceptance), and the
   `**Orchestrates:**` header line (renders backticked names when set; absent field ⇒ no line).
 - `StoreTests` — `doc_stem` light-vs-subtask (and master → `task`), and a write→read
   round-trip that leaves no `.tmp` file.
-- `ControllerTests` — `create` (+ duplicate refusal), `set_status`, `set_field`
-  (incl. `codeExamplesNote`/`statusNote`, and the **L14** `orchestrates` cases: set on a master —
+- `ApplicationTests` — `create` (+ duplicate refusal), `set_status`, `set_field`
+  (incl. `codeExamplesNote`/`statusNote`, and the `orchestrates` cases: set on a master —
   persisted + rendered — and rejected on a leaf via the schema backstop), `set_step`
   insert-then-update (no duplication),
   `append_decision`, non-mutating
@@ -63,13 +63,13 @@ and tool registration.
   `subTask` under a leaf contract.
   A `cast`-typed `SimpleNamespace` stands in for `McpRuntimeConfig` (only
   `coordination_root` is read).
-- `MasterControllerTests` — master `create` (writes `task.json`, no `lifecycleId`
+- `MasterApplicationTests` — master `create` (writes `task.json`, no `lifecycleId`
   even with a contract present), `set_subtask` insert-then-update by number,
   `set_section` upsert by heading, `set_step` rejected on a master,
   `set_subtask` rejected on a non-master, `set_section` now allowed on a leaf (freeform-only, R4),
   the argument-error paths, and the `remove_subtask` CRUD-delete cases (deletes the leaf doc + master
   row, `keep_file` retains the doc, dry-run reports `wouldDeleteFiles` without deleting, absent number
-  raises, non-master rejected). **260703-L18 (finding 1 / F-N):**
+  raises, non-master rejected). The response-conformance regression:
   `test_remove_subtask_response_validates_on_both_paths` validates the `remove_subtask` result against
   `TaskDocResponse` (`extra="forbid"`) on the delete-with-files AND `keep_file` paths (and the dry-run
   preview) — the regression proving the destructive success no longer surfaces a false tool error.
@@ -86,19 +86,22 @@ and tool registration.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The package under test. | [tasks/](agents-remember/mcp/src/agents_remember/tasks/) |
-| The controller under test. | [task_doc_tools.py](agents-remember/mcp/src/agents_remember/controllers/task_doc_tools.py) |
-| The replace controller cases cover structural rewrites, dry-run no-mutation, and path-change rejection. | [test_task_document.py](agents-remember/mcp/tests/test_task_document.py) |
-| The master-sync controller cases cover row creation, manual scope preservation, derived status, and dry-run parent preview. | [test_task_document.py](agents-remember/mcp/tests/test_task_document.py) |
-| The conformance net that also covers `task_doc`. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The test imports and exercises the task-document APIs used by this suite. | `task_doc_tool` | mcp/tests/test_task_document.py:30-56 |
+| The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:135-186 |
+| The path-change rejection test invokes the replace operation and expects TaskDocError. | `test_replace_rejects_document_path_change`, `replace` | mcp/tests/test_task_document.py:1150-1164 |
+| Leaf creation inserts the parent master row. | `create` | mcp/tests/test_task_document.py:724-743 |
+| Master sync preserves manually-authored scope. | `scope` | mcp/tests/test_task_document.py:752-752 |
+| Master row status is derived from leaf state. | `status` | mcp/tests/test_task_document.py:797-797 |
+| Dry-run returns the parent master sync preview. | `dry_run` | mcp/tests/test_task_document.py:923-936 |
+| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:395-395 |
 
 ## Series-Contract Notes
 
 Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields and observer binding from a leaf doc's enclosure path to its lifecycle.
 
-## 260731-EFA-L2 Delta — parent-master integrity
+## Parent-master integrity delta
 
 - An **unreadable parent master refuses the leaf edit rather than dropping the row**: a leaf whose
   parent cannot be read must not be silently orphaned.
@@ -106,19 +109,24 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 
 ## Update History
 
-- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bound the path-change rejection test,
+  `replace` operation, and `TaskDocError` expectation to the complete test body.
 
-- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 1 / friction F-N): added
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata remains pinned until closeout.
+- 2026-08-02T00:17+02:00 — No content impact: the controllers package was renamed to `application/` and `worktrees/status.py` moved to `application/worktree_status.py`. Updated the references and vocabulary here; the behavior this document describes is unchanged. Verification metadata remains pinned until closeout.
+- 2026-07-31T15:32+02:00 — Recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata remains pinned until closeout.
+
+- 2026-07-07T18:40+02:00 — Review fix batch (finding 1 / friction F-N): added
   `MasterControllerTests.test_remove_subtask_response_validates_on_both_paths` — validates the
   `remove_subtask` payload against `TaskDocResponse` on the delete-with-files, `keep_file`, and dry-run
   paths, locking the response contract for the destructive success. Verification metadata pinned until
-  closeout stamps the L18 commit.
-- 2026-07-06T23:58:36+02:00 — 260703-L14 (visual hierarchy + chat grouping): added the `orchestrates`
+  closeout stamps the review commit.
+- 2026-07-06T23:58:36+02:00 — Visual hierarchy + chat grouping: added the `orchestrates`
   coverage — `SchemaTests` round-trip on a master + master-only rejection + `[]` default,
   `MasterRenderTests` `**Orchestrates:**` header line (present when set, absent otherwise), and
   `ControllerTests` `set_field` on a master (persisted + rendered) with the leaf rejection.
-  Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-06-29T22:57+02:00 — CRUD completion (L2): added `MasterControllerTests` cases for `remove_subtask`
+  Verification metadata remains pinned until closeout.
+- 2026-06-29T22:57+02:00 — CRUD completion: added `MasterControllerTests` cases for `remove_subtask`
   — deletes the leaf doc + master row, `keep_file` retains the doc, dry-run previews `wouldDeleteFiles`
   without deleting, absent number raises, non-master rejected. Verification metadata pinned until closeout
   stamps the code commit.

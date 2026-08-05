@@ -67,19 +67,17 @@ inside the same temp dir (never a real host path), so the suite stays hermetic.
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The suite exercises only the local temp coordination tree. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The module under test (list/read routes, confinement, depth cap). | [serving/notes.py](agents-remember/mcp/src/agents_remember/serving/notes.py) |
-| The app factory the route tests drive. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The sibling files-API suite whose harness idiom this mirrors. | [test_serving_files.py](agents-remember/mcp/tests/test_serving_files.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Update History
+2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: deleted the three rangeless internal rows; no unsupported anchored-route disposition retained. Verification metadata unchanged.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the shared client builder now calls
   `create_app(config, cadence=ProjectionCadence(interval=100))`, so the Logic paragraph's quoted

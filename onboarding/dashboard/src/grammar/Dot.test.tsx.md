@@ -92,34 +92,49 @@ No open file-local todos.
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source and the component under test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
 The suite closes over three declarations it does not own: the recipe's variant map, the wire state
 vocabulary, and the glyph table. All three are cited so a reader can see why no list is restated here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `ALL_VARIANTS`/`FALLBACK`, the `markOf` and `appearanceOf` helpers, and the three property tests. | L16-L88 | [Dot.test.tsx](Dot.test.tsx) |
-| `DOT_VARIANTS = dot.variantMap.variant` — the derived vocabulary this suite imports rather than copying, and the total `DOT_GLYPHS` that makes the collision test pass. | L89-L117 | [Dot.tsx](Dot.tsx) |
-| The `cva` base (`color: "muted"`) and the three amber/cyan/alarm pairs that colour alone cannot separate. | L23-L87 | [Dot.tsx](Dot.tsx) |
-| `LIFECYCLE_STATES` — the wire half of the vocabulary equality assertion; composed from `LIVE_STATES` (L42) + `TERMINAL_STATES` (L48), so the range holds all six names. | L42-L59 | [types/projection.ts](../types/projection.ts) |
-| The unlayered `html[data-effects="off"]` freeze that nulls every animation with `!important` — why animation atoms are excluded from the appearance key. | L136-L143 | [index.css](../index.css) |
-| `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail, so a state and a severity sharing a hue are on screen together. | L560-L563 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| The suite declares `ALL_VARIANTS` with the explicit `FALLBACK` member. | `ALL_VARIANTS` | dashboard/src/grammar/Dot.test.tsx:17-17 |
+| `markOf` renders one mark and returns the rendered element for assertions. | `markOf` | dashboard/src/grammar/Dot.test.tsx:19-24 |
+| `appearanceOf` derives the observable appearance key from the rendered mark. | `appearanceOf` | dashboard/src/grammar/Dot.test.tsx:35-42 |
+| The suite asserts the wire/recipe vocabulary equality. | "treats exactly the states" | dashboard/src/grammar/Dot.test.tsx:45-51 |
+| The suite asserts distinct appearances for every variant and the fallback. | "renders every state" | dashboard/src/grammar/Dot.test.tsx:53-70 |
+| The suite asserts that every variant carries its own ink. | "gives every variant an ink" | dashboard/src/grammar/Dot.test.tsx:72-87 |
+| `DOT_VARIANTS = dot.variantMap.variant` is the derived vocabulary this suite imports rather than copying. | `DOT_VARIANTS` | dashboard/src/grammar/Dot.tsx:92-92 |
+| `DOT_GLYPHS` is the glyph table used by the dot recipe. | `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:104-114 |
+| The `cva` base uses `color: "muted"`. | "color: \"muted\"" | dashboard/src/grammar/Dot.tsx:37-37 |
+| The `dot` recipe defines the state/severity color pairs that the glyph tests distinguish. | `dot` | dashboard/src/grammar/Dot.tsx:23-87 |
+| `LIFECYCLE_STATES` is the composed lifecycle vocabulary. | `LIFECYCLE_STATES` | dashboard/src/types/projection.ts:13-13 |
+| `LIVE_STATES` declares the live lifecycle vocabulary. | `LIVE_STATES` | dashboard/src/types/projection.ts:9-9 |
+| `TERMINAL_STATES` declares the terminal lifecycle vocabulary. | `TERMINAL_STATES` | dashboard/src/types/projection.ts:11-11 |
+| The effects-off source comment explicitly keeps the rule unlayered so it wins over the effects layer. | "Unlayered + !important so it always wins over the effects layer." | dashboard/src/index.css:136-137 |
+| The `html[data-effects="off"]` selector is declared here. | "html[data-effects=\"off\"] *," | dashboard/src/index.css:138-138 |
+| The effects-off rule disables animation with `!important`. | "animation: none" | dashboard/src/index.css:141-141 |
+| The effects-off rule disables transition with `!important`. | "transition: none" | dashboard/src/index.css:142-142 |
+| `Cockpit.tsx` renders `AttentionQueue`. | "<AttentionQueue" | dashboard/src/cockpit/Cockpit.tsx:562-562 |
+| `Cockpit.tsx` renders `LifecycleList`. | "<LifecycleList" | dashboard/src/cockpit/Cockpit.tsx:563-563 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The vocabulary mirrors the served lifecycle states, but the
 mirror (`types/projection.ts`) is in this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residuals D7 and D9 by binding the color-pair claim to the `dot` recipe extent and splitting the unlayered source-comment predicate from the literal selector declaration; rechecked this card through the locked exact-document fixer/check.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

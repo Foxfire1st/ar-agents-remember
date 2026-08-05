@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,28 +48,29 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared pane, fact, note, raw, and action grammar. | L1-L135 | [InspectorPrimitives.tsx](InspectorPrimitives.tsx) |
-| Evidence consumer. | L169-L374 | [EvidencePane.tsx](EvidencePane.tsx) |
-| Capability consumer. | L78-L240 | [CapabilitiesPane.tsx](CapabilitiesPane.tsx) |
-| Bus consumer. | L116-L274 | [BusPane.tsx](BusPane.tsx) |
+| Shared pane, fact, note, raw, and action grammar in `InspectorSection`. | `InspectorSection` | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:81-96 |
+| Evidence consumer, `EvidencePane`. | `EvidencePane` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:169-374 |
+| Capability consumer, `CapabilitiesPane`. | `CapabilitiesPane` | dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx:84-240 |
+| Bus consumer, `BusPane`. | `BusPane` | dashboard/src/panels/session-cockpit/BusPane.tsx:116-276 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 4 table citations for inspector, evidence, capability, and bus primitives; fixer-generated ranges verified.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V2 value-wrapping fix — `dd`
   `overflowWrap` `anywhere → break-word` (whole-token wrapping), noting its dependency on the `index.css`

@@ -66,7 +66,7 @@ None.
 
 No Domain Documentation source is configured for this internal helper host.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -75,21 +75,25 @@ No Domain Documentation source is configured for this internal helper host.
 The helper package owns the JSONL protocol this host pairs with; the installed suite drives the
 real helper end-to-end including its malformed-request refusals.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The versioned JSONL serve loop, typed failure vocabulary, and paging primitives the host correlates against. | L102-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
-| The installed suite proves the helper handshake plus malformed-request rejection on the real process seam. | L265-L281 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
-| The Python foundation suite forbids incidental module resolution in the helper sources this host spawns. | L102-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The helper package defines a versioned JSONL serve loop, typed failure vocabulary, and paging primitives. | `PROTOCOL_VERSION`; `HelperFailure`; `serveJsonLines`; `pageByOffset`; `windowByOrdinal` | mcp/native_helpers/conversation_library/src/protocol.ts:13-13; mcp/native_helpers/conversation_library/src/protocol.ts:86-92; mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286 |
+| The installed suite proves the helper handshake plus malformed-request rejection on the real process seam. | `test_live_helper_gate_supports_pi_history`; `test_helper_protocol_rejects_malformed_requests` | mcp/tests/test_conversation_library_installed.py:217-231; mcp/tests/test_conversation_library_installed.py:265-281 |
+| The Python foundation suite forbids incidental module resolution in the helper sources this host spawns. | `test_helper_runtime_source_has_no_incidental_module_resolution` | mcp/tests/test_conversation_foundation.py:139-160 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local helper host.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: anchored the native helper protocol, installed
+  handshake tests, and foundation module-resolution guard to exact symbols; narrowed the protocol row
+  to the cited helper-package definitions.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
   2026-07-21, R4). Corrected the now-false "handshake must report ready against the locked version

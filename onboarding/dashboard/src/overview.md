@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T10:50+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -89,39 +89,30 @@ This leaf is about what the dashboard's server contract is actually pinned by. R
 subsection before writing anything anywhere that cites `fixtures/snapshot.json` or
 `types/projection.ts`.
 
-### There is no generator; the chain terminates at a person
+### Generated producer contract, manually sampled fixtures
 
-`dashboard/src/fixtures/snapshot.json` is **hand-maintained**. Nothing in this repository derives it
-from `mcp/src/agents_remember/observer/projection.py`. Exactly seven files reference `snapshot.json`
-and **every one of them is a reader** (`test/contract.test.ts`, `test/servedProjection.ts`,
-`test/fixtures/wire.ts`, `test/wireFixtureGuard.test.ts`, `data/store.test.ts`, `dev/fixtures.ts`,
-`e2e-production/cockpit.production.spec.ts`); no script under `mcp/`, `scripts/` or `dashboard/`
-writes it; `dashboard/package.json`'s only `codegen` script is `panda codegen` (Panda CSS, unrelated);
-neither dependency set carries a schema-to-type tool; and no Python source or test reads it or the
-mirror — `projection.py` and `mcp/tests/test_observer_projection.py` only *describe* the mirror in a
-comment and a docstring, and assert only against Python.
-
-State the strength exactly. That establishes **no in-repo generator and no in-repo mechanism keeping
-the two sides in step**. It cannot exclude a generator run outside this repository — no search of
-this tree could — so write "no generator exists *in this repository*", never "no generator exists".
-
-`test/fixtures/wire.ts` is likewise a hand-written builder set, and `types/projection.ts`
-is a hand-written mirror whose own header says so ("codegen from pydantic is deferred; keep these in
-lockstep by hand for now"). The chain has **four nodes and three links** — count the links, because
-the two-set shorthand (`fixture ⊆ mirror` / `mirror ⊆ server`) collapses the middle one out of
-existence, and that is the form that has been copied onward:
+`dashboard/src/fixtures/snapshot.json` remains a hand-maintained sample. The TypeScript mirror is no
+longer hand-maintained: `scripts/sync-projection-types.py` emits the schema artifact and
+`types/projection.ts` from `WorkspaceProjection.model_json_schema()` plus the served projection tail,
+and its `--check` mode fails drift. The chain therefore separates generated authority from sampled
+coverage:
 
 ```text
-test/fixtures/wire.ts --A--> types/projection.ts --B--> fixtures/snapshot.json --C--> observer/projection.py
+observer/projection.py schema --A--> generated types/projection.ts
+                                      ↑ type-checked fixture builders
+                                      ↕ measured sample coverage
+                               fixtures/snapshot.json
 ```
 
-- **Link A — the fixture builders against the mirror.** Enforced by `tsc -b`. Every base in
+- **Producer schema → generated mirror.** Enforced by the projection generator, its Python
+  regressions, and `scripts/sync-projection-types.py --check`.
+- **Fixture builders against the mirror.** Enforced by `tsc -b`. Every base in
   `test/fixtures/wire.ts` is assembled from `snapshot.json` **and annotated with its mirror type**,
   so it is pinned from both sides: a required field the mirror gains fails to compile until it is
   filled, and it can only be filled from a served row. Call-site overrides go through
   `Overrides<O, Node>` rather than `Partial<Node>`. `test/wireFixtureGuard.test.ts` refuses the
   one-token moves by which a fixture opts out of the mirror altogether.
-- **Link B — the mirror against the sampled payload.** Enforced by `test/contract.test.ts`, and it
+- **Generated mirror against the sampled payload.** Enforced by `test/contract.test.ts`, and it
   is **not** a one-way containment. Three type-level directions: the mirror declares everything the
   sample carries (`ServedOnlyPaths` fed to `mirrorMustDeclare`, which fails naming the missing
   path); the sample carries everything the mirror declares (`asServedProjection`, whose *parameter*
@@ -129,21 +120,10 @@ test/fixtures/wire.ts --A--> types/projection.ts --B--> fixtures/snapshot.json -
   — the oracle checking itself, because a path the sample never touches, or an empty array, is
   invisible to the other two). Plus runtime `VOCABULARIES` assertions for the closed string unions
   that `resolveJsonModule` widens to `string`, which nothing type-level on this side can see.
-- **Link C — the sampled payload against the server.** Enforced by **nothing**. `snapshot.json` is
-  written by hand to stand in for `observer/projection.py`; codegen is what would close it.
-
-**Two phrases that differ by one letter, and only one of them is true.** `mirror ⊆ served` — every
-field the mirror declares is present in the sampled payload — **is** enforced, by
-`asServedProjection` under link B. `mirror ⊆ server` is enforced by nothing at all. The set
-shorthand invites exactly that substitution, so prefer naming the two files over naming two sets.
-
-So a green dashboard build claims only this: the mirror could produce this shape, and the mirror
-agrees with a payload a person wrote to stand in for the server. It does not claim the server agrees.
-Any sentence in this memory tree saying `snapshot.json` is generated, derived, regenerated, synced or
-automatically kept in step is false, and it is the exact falsehood this leaf existed to remove. The
-authoritative statements are in the code: `test/fixtures/wire.ts` ("BE PRECISE ABOUT WHAT PINS
-WHAT"), `test/wireFixtureGuard.test.ts`, `test/contract.test.ts` ("LEFT FOR CODEGEN") and
-`dev/fixtures.ts` all now carry it.
+The snapshot itself is not generated, so a green sample-coverage test says the manual sample
+exercises the generated contract. The generator separately says the TypeScript contract matches the
+producer schema. Keep those claims distinct: sample provenance is manual; producer-to-TypeScript
+provenance is generated and stale-checked.
 
 ### What `wireFixtureGuard.ts` guards, and exactly where its coverage ends
 
@@ -182,7 +162,7 @@ together; type predicates and assertion functions narrow with no `as` anywhere; 
 measures property **names**, so a correct name carrying an explicit `undefined` is invisible to all
 five (which is what `test/fixtures/overrides.ts` exists to cover).
 
-### The state vocabulary — parallel to the server, not tied to it, and now the same shape
+### The state vocabulary — generated from the projection schema and stale-checked
 
 `observer/lifecycle_state.py` **composes** the server's `State` from named halves
 (`LiveState` / `EndOutcome` → `TerminalState`), and `check_state_partition` refuses at import any
@@ -207,12 +187,17 @@ within one half: `Literal["a", "a"]` collapses to one member in Python, while a 
 `test/contract.test.ts` (three failures, including "gives each live state a bucket of its own").
 Weaker than the server's gate, not absent.
 
-What the two sides also share is the naming rule, and they share it by having been made to agree
-once: Python moved to the TypeScript spelling, not the other way round. **Nothing enforces the
-agreement.** No code executes across the boundary, no test compares the two vocabularies, and the
-mirror is measured only against `snapshot.json` — this is link C again, in its most load-bearing
-instance. The two partitions match today because someone made them match, and the next state added
-on one side alone would compile, test and ship green on both.
+The producer/consumer agreement is now generated rather than maintained as two independent lists.
+On producer import, `check_state_partition` refuses invalid state filing and `state_count_fields`
+refuses bucket-name collisions. The generator's `_state_partition` then reads the producer `State`
+enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, and `_vocabulary_block`
+emits the TypeScript partition and enumerable tuples from those schema enums.
+`stale_generated_files` compares both committed generated targets with fresh output, so the documented
+`scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
+edit on the TypeScript side, until the artifacts are regenerated cit:([`check_state_partition`, `state_count_fields`, `_state_partition`, `_vocabulary_block`, `stale_generated_files`, `test_committed_generated_files_are_current`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/code_quality/projection_types.py:340-356; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515; mcp/tests/test_projection_types_codegen.py:266-271).
+The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
+sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
+not the cross-language authority.
 
 The sixth state `awaiting-developer` is the notify-and-continue turn end: non-terminal, neither
 healthy nor a fault, so every state→colour surface owes it a "your move" treatment rather than a
@@ -239,11 +224,10 @@ name and a slot while being honest that it is field-identical to `TaskSectionNod
 structurally interchangeable — it buys a landing place for a future divergence, not a check.
 `EngineProcessEdge.refusedPolarity` and its `refused` state are **removed**; the renderer derives
 flash polarity from `state`. `ATTENTION_SEVERITIES`, `ATTENTION_LANES`, `PROCESS_FACT_STATES` and
-`PROCESS_HEALTHS` became tuples with derived types, because `projection.py` types those fields as
-bare `str` — the mirror is deliberately narrower than the wire, and only a runtime membership check
-against a runtime list can catch the day that stops being true. Three fields are marked `LATE MIRROR`
-(`GateNode.evidenceRefs`, `LifecycleProjection.stateEnteredAt`, `Analytics.expectationRows`): always
-on the wire, declared optional purely as client tolerance.
+`PROCESS_HEALTHS` became tuples with derived types, because runtime membership checks need
+enumerable values. Schema generation now emits `GateNode.evidenceRefs`,
+`LifecycleProjection.stateEnteredAt`, and `Analytics.expectationRows` as required fields, matching
+their producer schemas rather than preserving the former optional client-tolerance gap.
 
 ### Totality replaces defaults in `topology/`
 
@@ -303,9 +287,8 @@ alone does not exercise them.
 
 ## Layered Architecture
 
-1. Types mirror server wire/projection shapes **by hand**; they do not infer missing evidence. The
-   mirror is checked against a hand-maintained sample, never against the server — see the
-   260731-EFA-L4 section above before treating any of it as automatic.
+1. Projection types are generated and stale-checked from the server's Pydantic schema; the separate
+   hand-maintained snapshot is measured for fixture coverage.
 2. Data modules normalize, reconcile, and retain browser projection state around explicit server
    authorities.
 3. Grammar primitives provide shared state words, badges, panels, and markdown treatment.
@@ -413,33 +396,33 @@ The curator checked `system/sources.md`; it contains no configured Domain Docume
 The L8 architecture statements were verified from repository-local source/tests, task/reports, and
 the recovered same-repository history pack.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for `dashboard/src`. | Source discovery checked | — |
+| No relevant domain documentation was found for `dashboard/src`. | — | — |
 
 ## Cross-Repo References
 
 No cross-repository implementation is imported as the dashboard authority. Historical Toad/T3
 references informed product framing only; current code truth stays in agents-remember.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository implementation source governs this route. | Import and history review | — |
+| No applicable cross-repository implementation source governs this route. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Shell navigation, default, persistent layers, and shared drivers. | [cockpit/Cockpit.tsx](cockpit/Cockpit.tsx) |
-| State and authority architecture. | [data overview](data/overview.md) |
-| Panel composition. | [panels overview](panels/overview.md) |
-| Sole Chats route, deletion map, and future boundary. | [session-cockpit overview](panels/session-cockpit/overview.md) |
-| Dev scenario authority and end-to-end states. | [dev/cockpitScenarios.ts](dev/cockpitScenarios.ts) |
-| The four-node chain and which link stops: links A and B are enforced, link C (`snapshot.json` against `observer/projection.py`) by nothing. No in-repo generator. | [test/fixtures/wire.ts](test/fixtures/wire.ts) · [test/contract.test.ts](test/contract.test.ts) |
-| Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | [test/wireFixtureGuard.ts](test/wireFixtureGuard.ts) · [test/wireFixtureGuard.test.ts](test/wireFixtureGuard.test.ts) |
-| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | [types/projection.ts](types/projection.ts) |
-| Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | [topology/model.ts](topology/model.ts) · [topology/constel.ts](topology/constel.ts) |
-| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | [test/servedProjection.ts](test/servedProjection.ts) · [test/fixtures/overrides.ts](test/fixtures/overrides.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-405 |
+| Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
+| Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
+| Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:113-207 |
+| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "BE PRECISE ABOUT WHAT PINS WHAT"; "WHAT SCHEMA CODEGEN CLOSES"; `check_state_partition`; `state_count_fields`; `workspace_projection_schema`; `_state_partition`; `_vocabulary_block`; `stale_generated_files`; `test_committed_generated_files_are_current` | dashboard/src/test/fixtures/wire.ts:22-34; dashboard/src/test/contract.test.ts:60-72; mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/code_quality/projection_types.py:59-61; mcp/src/agents_remember/code_quality/projection_types.py:340-356; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515; mcp/tests/test_projection_types_codegen.py:266-271; scripts/sync-projection-types.py:43-51 |
+| Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
+| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:303-307 |
+| Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
+| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -453,6 +436,20 @@ selected-child projection in `panels/session-cockpit/conversation/`, and effect 
 unchanged.
 
 ## Update History
+
+- 2026-08-04T18:00+02:00 — 260731-EFA-L6 S18-B17 curator: resolved the S18-T3 leftover `:1-1`
+  placeholders and the malformed route rows. The projection-provenance prose cit and table row now
+  carry exact frozen-source ranges for all nine anchors (`check_state_partition`,
+  `state_count_fields`, `workspace_projection_schema`, `_state_partition`, `_vocabulary_block`,
+  `stale_generated_files`, the codegen staleness test, and the two fixture-comment literals — the
+  wire.ts anchor re-spelled to the verbatim "BE PRECISE ABOUT WHAT PINS WHAT"); the seven remaining
+  route rows gained anchors and plain path:line-line sources (three sibling overview cards cited as
+  `onboarding/...` with their `#` heading anchors); the L4 history entry's superseded parenthesized
+  L59/L72 spellings were rewritten as cit forms against the regenerated `types/projection.ts` lines
+  13 and 21. No claim wording changed.
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: replaced the obsolete four-node/no-generator
+  account with the current split: Pydantic schema → generated/stale-checked TypeScript mirror, plus
+  independently measured manual sample coverage. New ranges are explicit `:1-1` curator input.
 
 - 2026-08-01T10:50+02:00 — 260731-EFA-L4 curator, **fixture-provenance label repair**. The chain
   bullets said `fixture ⊆ mirror` — enforced / `mirror ⊆ server` — enforced by nothing, and the
@@ -488,7 +485,7 @@ unchanged.
   as one tuple of six with `TERMINAL_STATES` as a second tuple beside it and `ActiveState` as the
   subtraction `Exclude<State, TerminalState>`; verified against the current file, the halves are
   written out first (`LIVE_STATES` L42, `TERMINAL_STATES` L48), `LIFECYCLE_STATES` is spread from
-  them (L59), and `ACTIVE_STATES = LIVE_STATES` (L72) with no subtraction anywhere. The heading and
+  them cit:([`LIFECYCLE_STATES`], dashboard/src/types/projection.ts:13-13), and `ACTIVE_STATES = LIVE_STATES` cit:([`ACTIVE_STATES`], dashboard/src/types/projection.ts:21-21) with no subtraction anywhere. The heading and
   the paragraph were corrected, and the section now states the ONE asymmetry that survives, because
   "same shape" on its own would overclaim: TypeScript refuses double-filing at compile time
   (`StatesAreFiledOnce`, verified by mutation to fail with `TS2344`) but cannot refuse a duplicate

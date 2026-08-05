@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_git_freshness.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T08:39+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -37,11 +37,13 @@ clean CI environments.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The kernel under test. | [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
-| Packet-level freshness coverage lives with the context packet tests. | [test_context_packet.py](agents-remember/mcp/tests/test_context_packet.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The kernel under test. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:98-112 |
+| Packet-level freshness coverage lives with the context packet tests. | `ContextPacketTests` | mcp/tests/test_context_packet.py:36-282 |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 2 citation claims; scoped recheck clean (0 findings).
 
 - 2026-06-10T08:39+02:00: Created with the issue #54 freshness kernel (9 tests over bare-origin clone-pair fixtures).

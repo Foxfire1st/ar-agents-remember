@@ -37,20 +37,20 @@ each message to a typed record (uuid, parentToolUseId, parentAgentId, role, cont
 timestamp) plus an honest `totalItems`. Resolve calls `getSessionInfo` and returns the native
 identity (absent → `stale-identity`) for the Python port's argv resume target.
 
-The sub-agent surface (L135-L370). On-disk authority is
+The sub-agent surface cit:(["async function projectDirCandidates"], mcp/native_helpers/conversation_library/src/claude.ts:166-166). On-disk authority is
 `<configDir>/projects/<slug>/<sessionId>/subagents/` holding `agent-<agentId>.jsonl`
 transcripts plus `agent-<agentId>.meta.json` identity (agentType/description/toolUseId/
 spawnDepth/model). The project-dir slug rule replicates the installed claude-agent-sdk's own
 (verified against sdk.mjs 0.3.207 and live directories): non-alphanumerics become `-`, and
 slugs over 200 chars truncate with a base36 Java-hash suffix of the ORIGINAL path; symlinked
-scopes resolve through a realpath candidate (`projectDirCandidates`, L167-L179). List now
+scopes resolve through a realpath candidate (`projectDirCandidates` cit:(["async function projectDirCandidates"], mcp/native_helpers/conversation_library/src/claude.ts:166-166)). List now
 sweeps every session's `subagents/` directory so the catalog signature covers agents too,
 each page row carries its own `agents` children (missing/invalid meta degrades to the honest
 agent-id fallback), and the response carries the `agentsEnumerated: true` marker (L129) —
 over an EMPTY catalog there is no row to carry per-row evidence, so only this marker lets the
 library tell "no agents exist" from "the helper predates enumeration" (fix-round finding 11).
 A read request carrying the additive `agentId` routes to `readClaudeAgentTranscript`
-(L314-L370): it opens `agent-<agentId>.jsonl` read-only under the candidate project dirs,
+cit:(["async function readClaudeAgentTranscript"], mcp/native_helpers/conversation_library/src/claude.ts:313-313): it opens `agent-<agentId>.jsonl` read-only under the candidate project dirs,
 parses each line with fail-closed validation (malformed JSON or missing type/uuid is a typed
 `helper-failed`, never skipped), windows by the shared ordinal pager, and answers
 `stale-identity` when the transcript is absent — sub-agent meta and transcripts are read
@@ -83,7 +83,7 @@ None.
 No Domain Documentation source is configured; the pinned SDK manifest/lock and the local tests
 are the direct contract evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -95,23 +95,27 @@ library gates on the live CONTRACT probe, not a version comparison: `buildHandsh
 ready-by-contract, so this entry's handshake no longer fails closed on a version
 drift — the observed versions are informational and the `list`/`read` operation is the gate).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | L102-L259 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
-| The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. | L87-L182 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py) |
-| The library agent-grouping suite proves the helper's agent rows, marker degrade, and agent transcript read through the fake boundary. | L415-L648 | [test_conversation_library_agents.py](agents-remember/mcp/tests/test_conversation_library_agents.py) |
-| The installed suite gates Claude on the live helper contract probe, not a version comparison; the observed runtime/helper version rides evidence informationally. | L562-L590 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
+| The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. | "class ClaudeConversationLibrary" | mcp/src/agents_remember/serving/conversation/library/claude.py:80-80 |
+| The library agent-grouping suite proves the helper's agent rows, marker degrade, and agent transcript read through the fake boundary. | `ClaudeLibraryAgentTests` | mcp/tests/test_conversation_library_agents.py:471-648 |
+| The installed suite gates Claude on the live helper contract probe, not a version comparison; the observed runtime/helper version rides evidence informationally. | `ClaudeGateHonestyTests` | mcp/tests/test_conversation_library_installed.py:554-586 |
 
 ## Cross-Repo References
 
 The installed `@anthropic-ai/claude-agent-sdk` npm dependency is a third-party library resolved
 only from this repository's package/lock; no neighboring workspace repository participates.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the superseded `(L…)`
+  prose citations and the `n/a` table rows with exact anchors and fixer-generated ranges; exact
+  non-fixing check returns zero findings.
 
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the sub-agent surface — the
   `subagents/` on-disk authority with the SDK-replicated project-slug rule (200-char

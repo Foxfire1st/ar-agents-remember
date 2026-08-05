@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/services.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ fleet kill-switch cannot reach.
 
 ### Invariants And Boundaries
 
-- Service payloads must remain controller-friendly dictionaries.
+- Service payloads must remain application-friendly dictionaries.
 - CLI-specific printing and parser behavior belongs in `cli.py`.
 - `allowed_provider_ids` is pass-through plumbing here: the service layer must
   never default it away or synthesize its own set (containment R1).
@@ -63,12 +63,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | [runner_modules overview](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
-| The stale-registration sweep both entry points open with lives in the registration module. | [mcp_registration.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py) |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public benchmark facade re-exports this module's public functions and classes for compatibility. | `services` | mcp/src/agents_remember/benchmarks/runner.py:24-24 |
+| The route-local overview summarizes how this module fits into the benchmark runner split. | `services` | mcp/src/agents_remember/benchmarks/runner.py:24-24 |
+| The stale-registration sweep both entry points open with lives in the registration module. | `disarm_stale_benchmark_registrations` | mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:39-81 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:573-3049 |
 
 ## Cross-Repo References
 
@@ -76,6 +76,9 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 4 repository-internal citations for the compatibility facade, runner overview, stale-registration sweep, and focused tests.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   `prepare_benchmarks` / `run_selected_cases` now pass `BenchmarkPreparation` and the whole
   request down, and `benchmark_run_payload` takes a `BenchmarkRunOutcome`. Emitted payloads are

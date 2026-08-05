@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -46,12 +46,17 @@ document. Current signatures: `classify_entity_fingerprint(catalog, repo_root, r
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Fingerprints and change notes are computed via `git_ops`. | [git_ops.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
-| `sidecar.py` delegates `repo-entity-catalog` sidecars to `classify_entity_catalog`. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fingerprints and change notes are computed via `git_ops`. | `compute_git_blob_set_fingerprint`; `entity_local_change_notes` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:65-73; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:76-82 |
+| `sidecar.py` delegates `repo-entity-catalog` sidecars to the sidecar classifier. | `classify_sidecar_onboarding_units` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342 |
+| `entities.py` implements `classify_entity_catalog`. | `classify_entity_catalog` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:313-386 |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: anchored fingerprint/change-note and sidecar
+  delegation references to exact implementation symbols; narrowed the entity row to its cited
+  classifier implementation.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `EntityCatalog` and re-signed all three row builders onto it —

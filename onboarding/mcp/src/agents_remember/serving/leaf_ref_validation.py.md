@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/leaf_ref_validation.py` |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`              |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`              |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -41,13 +41,19 @@ catch `LeafRefResolutionError` and return transport-specific refusals.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Shared resolver and expected-form errors. | [../worktrees/leaf_refs.py](../worktrees/leaf_refs.py.md) |
-| Dashboard terminal open/attach routes that call this adapter. | [app.py](app.py.md) |
-| MCP terminal payload builders that call this adapter. | [../mcp/tools/terminal.py](../mcp/tools/terminal.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared resolver and expected-form errors. | `# mcp/src/agents_remember/worktrees/leaf_refs.py` | onboarding/mcp/src/agents_remember/worktrees/leaf_refs.py.md:1-158 |
+| Dashboard terminal open/attach routes that call this adapter. | "def create_app" | mcp/src/agents_remember/serving/app.py:718-718 |
+| MCP terminal payload builders that call this adapter. | "def attach_terminal_session_to_leaf_payload" | mcp/src/agents_remember/mcp/tools/terminal.py:26-26 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18 wave curator (unowned card): rebound the two
+  out-of-bounds onboarding-card citations to their code authorities; exact non-fixing check
+  returns zero findings.
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 3 repo-internal citation rows and preserved verification metadata.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added bounded legacy role-suffix detection and
   canonical leaf-plus-role refusal guidance shared by spawn and attach.

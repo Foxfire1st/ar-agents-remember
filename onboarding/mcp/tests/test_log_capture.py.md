@@ -55,24 +55,27 @@ descent covers both nested dicts (steps) and lists.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The module under test. | [log_capture.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/log_capture.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module under test. | "def summarize_command_logs" | mcp/src/agents_remember/providers/lifecycle/log_capture.py:36-36 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` row with an exact
+  anchor and fixer-generated range; exact non-fixing check returns zero findings.
 
 - 2026-06-01T00:00+02:00 — Created onboarding for the new log-capture tests.

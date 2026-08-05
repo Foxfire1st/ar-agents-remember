@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/DetailPanel.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -35,8 +35,8 @@ display each authored leaf task document's own task id and render in the order t
 them; they do not parse numeric filename prefixes or generate reader-local display counters. Creation
 ordering (`createdAt`) applies on the SERIES path only — `seriesAsMasterDoc` sorts there, because
 `SeriesSubTaskNode` is the only sub-task row that carries the field at all. Leaf progress
-summaries in the master index and reader header are derived from visible top-level implementation steps,
-not nested substeps. Master sub-task navigation resolves authored leaf documents from the full projected
+summaries in the master index and reader header use the server-projected `stepsDone`/`stepsTotal`
+counters; the visible top-level step list is content, not a second progress authority. Master sub-task navigation resolves authored leaf documents from the full projected
 sibling task-document pool, so leaves can stay absent from the Operations sidebar while remaining
 clickable from the master. Directly opened leaf task documents, including enclosure-backed leaf
 lifecycle rows, now get the same sticky parent/root task backlink as the master-drill path. Master
@@ -85,7 +85,8 @@ selected lifecycle is the root task identity (`lifecycle.id === enclosure.taskId
 `enclosure.taskName`) and the served series projection is keyed by that enclosure `taskName`. This
 covers the live master row without stealing leaf lifecycles whose `taskName` names the parent series.
 `seriesAsMasterDoc` adapts the folder-keyed `SeriesNode` into the master overview shape and
-`seriesSliceDocs` limits drill-in candidates to sibling leaf task docs. `taskLabel` uses enclosure
+`seriesSliceDocs` limits drill-in candidates to task documents in the same directory. It does not
+exclude a master document if one is present in the supplied pool. `taskLabel` uses enclosure
 identity for visible promoted-leaf titles, while `taskDocsForLifecycle` keeps the readable body limited
 to actual task-document JSON for that lifecycle. With **no selection** (`!lifecycle && !selectedSeries && !selectedTaskDoc`) the panel early-returns a `Panel` `fill` holding the
 shared `EmptyStateBackdrop` (slice 07b polish): a faint, effects-gated **battle-cruiser** boomerang-video
@@ -124,10 +125,9 @@ lifecycle's `lifecycleId`). `SubTaskIndex` renders rows **in the order received*
 sort — displays `${match?.id || ref.number}. ${match?.title || ref.name}` labels, and uses a separate
 position counter only for stable test ids. `SliceList` still calls `orderedByCreation`, over
 `TaskDocNode[]` (which does carry `createdAt`), so master-less leaf lists default to creation order.
-`topLevelStepProgress` counts `doc.steps` and completed top-level step statuses;
-`SubTaskIndex`, `SliceList`, and the `TaskReader` header `ProgressFill` use that top-level summary
-instead of `TaskDocNode.stepsDone/stepsTotal`, which may be the backend's nested progress-bearing leaf
-count. `TaskReader` renders the top-level progress fill in its head and the step rows exactly once
+`taskStepProgress` returns the projected `TaskDocNode.stepsDone/stepsTotal` counters;
+`SubTaskIndex`, `SliceList`, and the `TaskReader` header `ProgressFill` use that authoritative summary.
+`TaskReader` renders the progress fill in its head and the step rows exactly once
 under **Implementation steps**; the former duplicate **Progress** step section is removed.
 L8 wraps the task-reader body in `data-task-leaf-key={qualifiedLeafKey(doc)}`, giving the selection
 capture helper a durable leaf identifier without changing any visible task content.
@@ -143,7 +143,7 @@ it does not parse or display `series-contract.md`. A sub-task row whose
 `linkedLifecycleId` is set is a parallel/external series → an amber **"→"** that calls `onOpenLifecycle`
 to switch the selected lifecycle; a child master's `masterLifecycleId` drives a **"↑ parent"** head
 link. Prose (objective/design/section bodies) renders through the `Markdown` grammar component, bullets
-and decision cells through its inline variant; a `0/0` step count is suppressed. `SpineLane` draws the code→CGC / memory→GrepAI lanes, joining the
+and decision cells through its inline variant; `SubTaskIndex` omits its row-level `done/total ·` prefix when no matching task document supplies progress or when `progress.total === 0`; `SliceList` omits that prefix when `progress.total === 0`; `TaskReader` always mounts `ProgressFill`, so a zero-step reader displays `0/0`. `SpineLane` draws the code→CGC / memory→GrepAI lanes, joining the
 enclosure's worktree-scoped engines by group name. **Operations-integration L4** adds change-set entry
 buttons to the enclosure-spine block: a `ChangeSetButton` (lazily fetches its target's counters via the
 L3 `data/changeset` client — deps are the stable target ids so the per-second projection tick does not
@@ -248,8 +248,8 @@ union is what keeps `linkedLifecycleId` and `createdAt` attached to the source t
 them. Visible master leaf numbers are never generated row indexes or parsed
 numeric filename/task prefixes. When an authored sibling `TaskDocNode` is projected, its `id` is the
 visible number; the parent ref `number` is fallback only for rows without a projected child doc.
-User-facing task progress in the master index and leaf reader must match the visible top-level
-implementation-step list; nested substeps should not inflate those orientation counts. Step and
+User-facing task progress in the master index and leaf reader must use projected
+`stepsDone`/`stepsTotal`; the component must not derive a competing count from visible steps. Step and
 code-example labels must compose structured ids with titles at render time; do not embed ids inside
 title strings and do not strip ids from display.
 Series token totals are displayed only from the server-projected `SeriesNode.seriesTokenTotal`; the
@@ -265,37 +265,54 @@ view switches skip its subtree, while real selection and store changes still pas
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| DetailPanel resolves the displayed reader document, consumes shared body state across every render branch, and delays notes plus document/enclosure change-set request surfaces while that state is loading. | L380-L388; L437-L466; L629-L687; L1044-L1098; L1296-L1382 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The hook owns fetch, merge, availability, and path-plus-revision caching; the API literal remains in the transport helper. | L1-L72; L1-L9 | [useTaskDocumentBody.ts](../data/useTaskDocumentBody.ts); [taskDocuments.ts](../data/taskDocuments.ts) |
-| Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching. | L799-L1038 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| `parseTaskSelection`/`selectedTaskDoc` resolve typed taskdoc/series/lifecycle selections before rendering by task-document `kind`. | L352-L359; L408-L466 | [DetailPanel.tsx](DetailPanel.tsx) |
-| Typed Operations selection helpers shared with Cockpit and LifecycleList. | L17-L76 | [taskIdentity.ts](../data/taskIdentity.ts) |
-| `selectedIsRootTask`/`selectedSeries` bridge a direct `seriesId` selection or a root-task lifecycle to the folder-keyed series, and `seriesAsMasterDoc`/`seriesSliceDocs` adapt it to the master overview shape with sibling slice docs only. | L369-L379; L550-L571; L831-L832; L954-L969 | [DetailPanel.tsx](DetailPanel.tsx) |
-| Lifecycle-bound selected masters render `MasterOverview` with sibling docs from the full projected task-document pool, so master rows can open authored leaves that are not sidebar rows. | L637-L656; L1029-L1098 | [DetailPanel.tsx](DetailPanel.tsx) |
-| Direct taskdoc and active lifecycle leaf selections use `parentTaskLinkForDoc` to show a sticky parent/root backlink without changing leaf content selection. | L408-L411; L560-L571 | [DetailPanel.tsx](DetailPanel.tsx) |
-| `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and `onViewLeaf` reports its `qualifiedLeafKey` up via effect (L5 fix 1). | L393-L406; L884-L931 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The task reader wraps rendered leaf content in `data-task-leaf-key={qualifiedLeafKey(doc)}` so selection capture can attribute highlighted text to the displayed leaf. | — | [DetailPanel.tsx](DetailPanel.tsx) |
-| `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. | L43-L90; L145-L150 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
-| `SubTaskRow` — the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode` that `MasterDocView.subTasks` takes, and which of the two carries `linkedLifecycleId` vs `createdAt`. | L326-L354 | [types/projection.ts](../types/projection.ts) |
-| The two `extra="forbid"` server models the union mirrors. | L552-L569; L634-L649 | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| `_series_subtask_nodes` already sorts a series' rows by `createdAt` server-side, which is why `seriesAsMasterDoc`'s call is a safety net rather than the ordering source. | L1319-L1337 | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| `MasterDocView` widens `subTasks` to `SubTaskRow[]`; `seriesAsMasterDoc` owns the `orderedByCreation` call. | L937-L969 | [DetailPanel.tsx](DetailPanel.tsx) |
-| `SubTaskIndex` renders in received order and reads the cross-link as `"linkedLifecycleId" in ref`, so the `→` branch is unreachable for a series. | L1141-L1223 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The enclosure-opened leaf backlink regression proves the parent link targets the parent master task document. | L766-L778 | [DetailPanel.test.tsx](DetailPanel.test.tsx) |
-| `topLevelStepProgress` derives user-facing progress from top-level `doc.steps`, and `SubTaskIndex`, `SliceList`, and the `TaskReader` `ProgressFill` consume it. | L932-L935; L1163-L1175; L1243-L1246; L1307-L1316 | [DetailPanel.tsx](DetailPanel.tsx) |
-| Master leaf rows render in received order and display the matched child task document `id`, with `position` kept separate purely for stable test ids; `SliceList` keeps the `createdAt` sort because it orders `TaskDocNode`s. | L1161-L1168; L1230-L1245 | [DetailPanel.tsx](DetailPanel.tsx) |
-| `TaskReader` renders the top `ProgressFill` before Objective and keeps the implementation-step copy later in the document. | L1307-L1345 | [DetailPanel.tsx](DetailPanel.tsx) |
-| `seriesAsMasterDoc`/`masterDocWithSeriesTokens` map `SeriesNode.seriesTokenTotal` onto folder-keyed and concrete master views; `MasterTokenSummary` renders the aggregate scalar. | L954-L974; L1099-L1108 | [DetailPanel.tsx](DetailPanel.tsx) |
-| The `SeriesNode`, `TaskDocNode`, and `SeriesSubTaskNode.createdAt` contract fields consumed by this panel, mirrored in the dashboard projection types. | L326-L354; L381-L430 | [types/projection.ts](../types/projection.ts) |
-| `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | L213-L244 | [taskIdentity.ts](../data/taskIdentity.ts) |
-| The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. | L1-L124 | [GateResponder.tsx](GateResponder.tsx) |
-| The markdown renderer for task prose / master sections / bullets / decisions (6g). | L1-L84 | [grammar/Markdown.tsx](../grammar/Markdown.tsx) |
-| `ProgressFill` + `TokenGauge` grammar it composes. | L1-L58 | [grammar/overview.md](../grammar/overview.md) |
-| The shared empty-state backdrop the no-selection state renders. | L1-L64 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
+| `displayedReaderDoc`; `useTaskDocumentBody`; `taskDocumentBodyState`; `TaskNotes`; `DocChangeSetBar`; `MasterOverview`; `TaskReader`; "change-set"; "loading"; "Loading complete task document…" | `taskDocumentBodyState` | dashboard/src/panels/DetailPanel.tsx:394-395 |
+| The hook owns fetch, merge, availability, and path-plus-revision caching; the API literal remains in the transport helper. | `useTaskDocumentBody`; `mergeTaskDocumentBody`; `taskDocumentBodyKey`; `fetchTaskDocument` | dashboard/src/data/useTaskDocumentBody.ts:9-11; dashboard/src/data/useTaskDocumentBody.ts:13-27; dashboard/src/data/useTaskDocumentBody.ts:29-74; dashboard/src/data/taskDocuments.ts:3-9 |
+| Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching. | "loads the complete task body before mounting reader ancillary requests"; "renders the complete on-demand task-document body while retaining its summary"; "shows the available summary when the on-demand task-document body is absent"; "reuses an unchanged task body and refetches when its revision changes" | dashboard/src/panels/DetailPanel.test.tsx:855-956; dashboard/src/panels/DetailPanel.test.tsx:958-1025; dashboard/src/panels/DetailPanel.test.tsx:983-1005; dashboard/src/panels/DetailPanel.test.tsx:1027-1049; dashboard/src/panels/DetailPanel.test.tsx:1051-1095 |
+| `parseTaskSelection`/`selectedTaskDoc` resolve typed taskdoc/series/lifecycle selections before rendering by task-document `kind`. | `parseTaskSelection`; `selectedTaskDoc`; `selectedSeries`; `DetailPanelImpl`; "taskdoc:"; "series:"; "lifecycle:"; "series-breadcrumb" | dashboard/src/data/taskIdentity.ts:22-45; dashboard/src/panels/DetailPanel.tsx:325-711; dashboard/src/panels/DetailPanel.tsx:352-356; dashboard/src/panels/DetailPanel.tsx:373-379; dashboard/src/data/taskIdentity.ts:13-13; dashboard/src/data/taskIdentity.ts:14-14; dashboard/src/data/taskIdentity.ts:15-15; dashboard/src/panels/DetailPanel.tsx:420-420 |
+| Typed Operations selection helpers shared with Cockpit and LifecycleList. | "export const taskDocSelectionKey"; "key: taskDocSelectionKey(doc.docPath)"; "key: seriesSelectionKey(series.seriesId)"; "key: lifecycleSelectionKey(lifecycle.id)"; "function selectionKey(selection"; "lifecycleSelectionKey(id)" | dashboard/src/cockpit/Cockpit.tsx:454-454; dashboard/src/data/taskIdentity.ts:17-17; dashboard/src/panels/LifecycleList.tsx:599-599; dashboard/src/panels/LifecycleList.tsx:657-657; dashboard/src/panels/LifecycleList.tsx:703-703; dashboard/src/panels/LifecycleList.tsx:826-826 |
+| `selectedIsRootTask`; `selectedSeries`; `seriesAsMasterDoc`; `seriesSliceDocs` | `selectedIsRootTask`; `selectedSeries`; `seriesAsMasterDoc`; `seriesSliceDocs` | dashboard/src/panels/DetailPanel.tsx:376-416; dashboard/src/panels/DetailPanel.tsx:494-494 |
+| Lifecycle-bound selected masters render `MasterOverview` with sibling docs from the full projected task-document pool, so master rows can open authored leaves that are not sidebar rows. | `MasterOverview`; `DetailPanelImpl`; `docs`; `taskDocsForLifecycle`; `seriesDoc`; `seriesSlices` | dashboard/src/panels/DetailPanel.tsx:1029-1097; dashboard/src/panels/DetailPanel.tsx:325-711; dashboard/src/panels/DetailPanel.tsx:536-539; dashboard/src/panels/DetailPanel.tsx:485-487; dashboard/src/panels/DetailPanel.tsx:488-488; dashboard/src/panels/DetailPanel.tsx:553-557; dashboard/src/panels/DetailPanel.tsx:558-558 |
+| Direct taskdoc and active lifecycle leaf selections use `parentTaskLinkForDoc` to show a sticky parent/root backlink without changing leaf content selection. | `parentTaskLinkForDoc`; `DetailPanelImpl`; `TaskReader`; `TaskContent`; `fullTaskDoc`; "master-parent-link" | dashboard/src/data/taskHierarchy.ts:68-82; dashboard/src/panels/DetailPanel.tsx:325-711; dashboard/src/panels/DetailPanel.tsx:387-388; dashboard/src/panels/DetailPanel.tsx:408-411; dashboard/src/panels/DetailPanel.tsx:564-564; dashboard/src/panels/DetailPanel.tsx:1296-1381; dashboard/src/panels/DetailPanel.tsx:980-1024; dashboard/src/panels/DetailPanel.tsx:424-433; dashboard/src/panels/DetailPanel.tsx:578-585; dashboard/src/panels/DetailPanel.tsx:587-596 |
+| `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and `onViewLeaf` reports its `qualifiedLeafKey` up via effect (L5 fix 1). | `displayedLeafDoc`; `viewedLeafKey`; `onViewLeaf`; `qualifiedLeafKey`; `useEffect`; `DetailPanelImpl` | dashboard/src/panels/DetailPanel.tsx:884-931; dashboard/src/panels/DetailPanel.tsx:401-402; dashboard/src/panels/DetailPanel.tsx:340-340; dashboard/src/panels/DetailPanel.tsx:404-404; dashboard/src/panels/DetailPanel.tsx:325-711 |
+| The task reader wraps rendered leaf content in `data-task-leaf-key={qualifiedLeafKey(doc)}` so selection capture can attribute highlighted text to the displayed leaf. | `TaskReader`; `qualifiedLeafKey`; `TASK_LEAF_SELECTOR`; `readSelection` | dashboard/src/panels/DetailPanel.tsx:1303-1388; dashboard/src/panels/DetailPanel.tsx:1308-1308; dashboard/src/data/selection.ts:22-22; dashboard/src/data/selection.ts:39-49 |
+| `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. | `findParentTaskMatch`; `parentTaskLinkForDoc`; `orderedByCreation`; `parentSelectionKey` | dashboard/src/data/taskHierarchy.ts:43-51; dashboard/src/data/taskHierarchy.ts:68-82; dashboard/src/data/taskHierarchy.ts:152-156; dashboard/src/data/taskHierarchy.ts:145-150 |
+| `SubTaskRow`; `TaskSubTaskRefNode`; `SeriesSubTaskNode`; `linkedLifecycleId` | `SubTaskRow`; `TaskSubTaskRefNode`; `linkedLifecycleId` | dashboard/src/types/projection.ts:494-501; dashboard/src/types/projection.ts:515-515 |
+| The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:575-592; mcp/src/agents_remember/observer/projection.py:657-672 |
+| `_series_subtask_nodes`; `seriesAsMasterDoc`; `orderedByCreation`; `createdAt` | "export function orderedByCreation" | dashboard/src/data/taskHierarchy.ts:145-145 |
+| `MasterDocView`; `SubTaskRow`; `seriesAsMasterDoc`; `orderedByCreation` | `orderedByCreation` | dashboard/src/panels/DetailPanel.tsx:970-970 |
+| `SubTaskIndex` renders in received order and reads the cross-link as `"linkedLifecycleId" in ref`, so the `→` branch is unreachable for a series. | `SubTaskIndex` | dashboard/src/panels/DetailPanel.tsx:1148-1230 |
+| "links an enclosure-opened leaf back to its parent task document"; "master-parent-link"; "taskdoc:/tasks/260610_browser-dashboard/task.json"; `parentTaskLinkForDoc` | `parentTaskLinkForDoc`; "links an enclosure-opened leaf back to its parent task document"; "master-parent-link"; "taskdoc:/tasks/260610_browser-dashboard/task.json" | dashboard/src/panels/DetailPanel.tsx:6-6; dashboard/src/panels/DetailPanel.test.tsx:1120-1130 |
+| `taskStepProgress`; `SubTaskIndex`; `SliceList`; `TaskReader`; `ProgressFill` | `taskStepProgress`; `SubTaskIndex`; `SliceList`; `TaskReader`; `ProgressFill` | dashboard/src/panels/DetailPanel.tsx:22-22; dashboard/src/panels/DetailPanel.tsx:1303-1388; dashboard/src/panels/DetailPanel.tsx:939-942; dashboard/src/panels/DetailPanel.tsx:1148-1230; dashboard/src/panels/DetailPanel.tsx:1237-1273 |
+| Master leaf rows render in received order and display the matched child task document `id`, with `position` kept separate purely for stable test ids; `SliceList` keeps the `createdAt` sort because it orders `TaskDocNode`s. | `SubTaskIndex`; `displayNumber`; `position`; `subTaskKey`; `SliceList`; `orderedByCreation` | dashboard/src/panels/DetailPanel.tsx:1148-1230; dashboard/src/panels/DetailPanel.tsx:1232-1234; dashboard/src/panels/DetailPanel.tsx:1225-1227; dashboard/src/panels/DetailPanel.tsx:1166-1166; dashboard/src/panels/DetailPanel.tsx:1164-1164; dashboard/src/panels/DetailPanel.tsx:1237-1273; dashboard/src/panels/DetailPanel.tsx:1243-1243 |
+| `TaskReader` renders the top `ProgressFill` before Objective and keeps the implementation-step copy later in the document. | `TaskReader`; `ProgressFill`; "Implementation steps"; "Objective" | dashboard/src/panels/DetailPanel.tsx:1303-1388; dashboard/src/panels/DetailPanel.tsx:1315-1315; dashboard/src/panels/DetailPanel.tsx:1343-1343; dashboard/src/panels/DetailPanel.tsx:1328-1328 |
+| `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `seriesTokenTotal`; `MasterTokenSummary` | `masterDocWithSeriesTokens` | dashboard/src/panels/DetailPanel.tsx:978-981 |
+| The `SeriesNode`, `TaskDocNode`, and `SeriesSubTaskNode.createdAt` contract fields consumed by this panel, mirrored in the dashboard projection types. | `SeriesNode`; `TaskDocNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:437-463 |
+| `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | `taskLabel`; `taskDocsForLifecycle`; `taskDocumentLabel`; `findLifecycleEnclosure` | dashboard/src/data/taskIdentity.ts:204-211; dashboard/src/data/taskIdentity.ts:213-230; dashboard/src/data/taskIdentity.ts:239-244; dashboard/src/data/taskIdentity.ts:232-237 |
+| The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. | "gate-review"; `GateResponder`; `DetailPanelImpl` | dashboard/src/panels/DetailPanel.tsx:625-625; dashboard/src/panels/DetailPanel.tsx:620-627; dashboard/src/panels/DetailPanel.tsx:332-718 |
+| `Markdown`; `Bullets`; `DecisionList`; `MasterSection` | `DecisionList` | dashboard/src/panels/DetailPanel.tsx:1476-1491 |
+| `ProgressFill` + `TokenGauge` grammar it composes. | `ProgressFill`; `TokenGauge` | dashboard/src/grammar/ProgressFill.tsx:27-45; dashboard/src/grammar/TokenGauge.tsx:18-53 |
+| The shared empty-state backdrop the no-selection state renders. | `EmptyStateBackdrop` | dashboard/src/panels/DetailPanel.tsx:476-476; dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `:1-1`/wrong ranges
+  with exact source-backed occurrences; exact non-fixing check returns zero findings.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected two live contracts:
+  `seriesSliceDocs` is a same-directory filter that does not itself exclude a master, and displayed
+  progress forwards projected `stepsDone`/`stepsTotal` through `taskStepProgress`. New ranges are
+  explicit `:1-1` curator input.
+
+- 2026-08-03T08:32:29+02:00 — 260731-EFA-L6 W3-B11 max-reviewer correction, provenance
+  closure, and developer-authorized line-146 factual correction: restaged and independently
+  verified whole-claim evidence for rows 270, 273, 274, 276, 277, 278, and 293; a fresh exact
+  fixer repair emitted `repairs[].now` for row 274's frozen consumer call sites and removed all
+  provisional `:1-1` inputs. The authorized current-behavior sentence replaced the false `0/0`
+  suppression clause. The final checker remains at two intentional row-275 diagnostics. Unrelated
+  green-row ambiguity declines were not treated as findings. The `seriesSliceDocs` residual remains
+  unchanged; code content was read-only.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the reference row and the restatement in the 09:58 entry
@@ -319,8 +336,8 @@ view switches skip its subtree, while real selection and store changes still pas
   `createdAt`). Repaired nine citations that had drifted off their symbols, including
   `topLevelStepProgress` L553-L556 → L932-L935, `displayedLeafDoc` L771-L818 → L884-L931,
   `MasterTokenSummary` L652-L705 → L1099-L1108, `TaskReader` L833-L866 → L1307-L1345, and the
-  projection-mirror row L196-L250;L375-L386, which contained none of `TaskDocNode` (L381),
-  `SeriesNode` (L412) or `SeriesSubTaskNode` (L343).
+  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:437-463),
+  whose prior ranges contained none of the named types.
 
 - 2026-07-24T13:17:50Z — Added persistent DetailPanel memoization semantics. Verification hash/date
   remain pinned to the pre-commit source stamp.

@@ -35,7 +35,7 @@ No current todo is recorded for this job-variants file.
 
 No external domain documentation applies to this repository-local job-variants file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -43,9 +43,9 @@ No external domain documentation applies to this repository-local job-variants f
 
 The lenses tune the shared spine defined in the companion files.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The lenses tune the `frame` opening move and the `decide` default of the shared spine. | n/a | [lifecycle.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-session-job-lifecycle/lifecycle.md) |
+| The lenses tune the `reframe-research` opening move and the `decide` default of the shared spine. | `# Lenses — How the Scoping Seats Read a Job`; "the first concrete thing"; "where this job usually lands" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/lenses.md:1-45 |
 
 As of cycle 4 the feature lens no longer offers a chat build: size decides the minimal w-02 artifact vs a master + sub-task series (T7 conformance).
 
@@ -53,12 +53,13 @@ As of cycle 4 the feature lens no longer offers a chat build: size decides the m
 
 No sibling repository evidence is needed for this job-variants file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T05:18:11+02:00 — 260731-EFA-L6 W3-B10 curator correction: retried the lens claim with the exact unique anchors `# Lenses — How the Scoping Seats Read a Job`, "the first concrete thing", and "where this job usually lands"; the frozen stale `:1-1` bridge repaired one claim and generated `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/lenses.md:1-45`, and the immediate exact check returned zero findings. Two earlier malformed-contract preflight attempts were non-writing command errors and are recorded in the batch report.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): chat-build remnant removed from the feature lens (T7). Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: job-variants.md became lenses.md: scoping-seat material (orchestrator, designer) - a dispatched role never picks a lens, its brief carries the flavor; the spine reference is now the orchestrator phase axis. Verification metadata pinned until closeout stamps the L9 commit.
 - 2026-06-13T18:45+02:00: Slice 2c — aligned the spine wording to the canonical phase enum (`frame` → `reframe-research`), matching the design §1.4 phase vocabulary the lifecycle now signals. Verification metadata pinned until closeout stamps the 2c code commit.

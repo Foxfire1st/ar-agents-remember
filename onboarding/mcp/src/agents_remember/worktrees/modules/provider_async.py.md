@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
@@ -38,8 +38,8 @@ and the seed-vs-reindex `expectation` text). The thread runs
 `run_provider_setup(request, progress)`, writes the provider-state file via the
 injected callback when the payload is ok (recorded in the finish summary as
 `providerStateFile`), finishes the progress with the payload's `state`, and —
-critically — unlinks `settings_cleanup` in its `finally`: the controller's temp
-lifecycle settings file must outlive the controller call, so ownership
+critically — unlinks `settings_cleanup` in its `finally`: the application entry point's temp
+lifecycle settings file must outlive the application entry point call, so ownership
 transfers to this thread. The thread boundary catches the same exception set
 `provider_setup.main` treats as reportable (`RuntimeError`, `OSError`,
 `TimeoutExpired`, `BadZipFile`, `JSONDecodeError`) and records them as a
@@ -75,15 +75,20 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Progress file format, heartbeat, and staleness projection. | [setup_progress.py](../../providers/setup_progress.py.md) |
-| `start_result` writes the contract first, then launches through this module. | [start.py](start.py.md) |
-| `status_payload` exposes the projection; cleanup/abandon use the running guard. | [guidance.py](guidance.py.md) |
-| Launcher, projection, ordering, retry, and guard unit tests. | [test_provider_async.py](agents-remember/mcp/tests/test_provider_async.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Progress file format, heartbeat, and staleness projection. | "class SetupProgress:" | mcp/src/agents_remember/providers/setup_progress.py:34-34 |
+| `start_result` writes the contract first, then launches through this module. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:74-74 |
+| `status_payload` exposes the projection; cleanup/abandon use the running guard. | "def next_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:143-143 |
+| Launcher, projection, ordering, retry, and guard unit tests. | `LaunchProviderSetupTests` | mcp/tests/test_provider_async.py:73-152 |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   added the frozen `ProviderSetupJob` and re-signed `launch_provider_setup(job, *, runner,
   thread_factory)`; the `request` / `contract` / `write_state_file` / `settings_cleanup` keywords

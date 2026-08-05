@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/serving/actions.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-06-28T07:32+02:00                       |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                       |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -93,17 +93,19 @@ repo-level one-shot signal. The UI is still never the gate *enforcement*.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The precomputed availability + node shapes validated against. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The `Actor` provenance literal reused for attribution. | [observer/events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The app that routes `POST /api/actions/{action}` to this and executes the gate write. | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The gate write-path the router calls for a gate-decision verb (slice 6b). | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The compact acknowledgement store used for lifecycle attention dismissals. | [controlplane/attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
-| `_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift. | L170-L219 | [actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The precomputed availability + node shapes validated against. | `ActionAvailability`, `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:45-58; mcp/src/agents_remember/observer/projection.py:976-995 |
+| The `Actor` provenance literal reused for attribution. | `Actor` | mcp/src/agents_remember/observer/events.py:31-31 |
+| The app that routes `POST /api/actions/{action}` to this and executes the gate write. | `_action_response`, `_register_action_routes` | mcp/src/agents_remember/serving/app.py:1205-1230; mcp/src/agents_remember/serving/app.py:1285-1316 |
+| The control-plane gate write path the router calls for a gate-decision verb (slice 6b). | `record_gate_decision`, `record_lifecycle_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:83-128; mcp/src/agents_remember/controlplane/gate_decisions.py:131-156 |
+| The compact acknowledgement store used for lifecycle attention dismissals. | `AttentionDismissalStore`, `dismiss` | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-135 |
+| `_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift. | `_dismiss_action_outcome` | mcp/src/agents_remember/serving/actions.py:170-219 |
 
 ## Update History
 
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02 repaired 4 Repo-Internal citation rows, resolving 8 manifest findings with exact evaluator, router, gate-service, projection, and acknowledgement-store anchors; verification metadata was preserved.
+- 2026-08-02T01:05+02:00 — No content impact: repaired this document's `Repo-Internal References` table shape. Rows carrying a citation cell were rendering short: the header declared two columns while those rows held three, and GFM TRUNCATES the extra cell, so the citation was in the source but invisible in the rendered table (`memory_quality/style/document_shape/tables.py`, `table_row_cell_count_mismatch`). Widened the header and its delimiter row to `| Finding | Citations | Source Path |` — the shape 1,941 rows in this tree already use — and padded the two-cell rows with `n/a`, which is this tree's own no-citation value (489 uses; zero empty citation cells exist). No finding text and no citation was changed by the widening. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: `evaluate_action` now takes one `ActionEvaluationContext`
   built by the caller instead of six keywords; recorded that context as the named request-context
   concept and recorded that `app.py` deleted its two duplicate shape guards because this module is

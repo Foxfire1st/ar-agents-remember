@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/series_tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T15:10+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00                  |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -55,53 +55,46 @@ No known local todos.
 No relevant external documentation found after checking the observer projection
 scope; this file implements an internal projection rollup.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found; behavior is defined by repo projection contracts and tests. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reducer calls this helper after lifecycle projection and before `build_analytics`, then serves the enriched series list. | L155-L169 | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| `SeriesNode` exposes the served `seriesTokenTotal` field that this helper writes. | L662-L688 (`seriesTokenTotal` L684) | [projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| Projection tests prove two linked leaf lifecycles sum to the master `seriesTokenTotal` and missing rows contribute nothing. | L713-L786 | [test_observer_projection.py](agents-remember/mcp/tests/test_observer_projection.py) |
+| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | `WorkspaceProjection` | mcp/src/agents_remember/observer/reducer.py:166-180 |
+| The reducer module defines `build_analytics` for analytics enrichment. | `build_analytics` | mcp/src/agents_remember/observer/reducer.py:627-654 |
+| `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:707-707 |
+| The projection test module includes a `seriesTokenTotal` regression case. | `seriesTokenTotal` | mcp/tests/test_observer_projection.py:788-788 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found; this helper consumes the current
 agents-remember workspace projection only.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo dependency; aggregate tokens are computed from already-projected lifecycle and task-document nodes. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: split the reducer return and analytics call/order claims onto their frozen-source owners; the landing provenance mismatch remains an explicit Tier-3 item.
+- 2026-08-02T16:20:23+02:00 — 260731-EFA-L6 curator: repaired the remaining history citation for the
+  current `SeriesNode` and `seriesTokenTotal` projection source; the source behavior and card body
+  remain unchanged.
+
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the three reference
-  citations; two were broken and are repaired. `reducer.py` L148-L162 → **L155-L169** — the same
-  window the 17:20 entry below describes, moved +7 by later edits to that file: `_attach_gates`
-  closes lifecycle projection at L155, `attach_series_token_totals` is called at L163, and
-  `build_analytics` spans L164-L169 consuming `series=series_nodes` at L166.
-  `test_observer_projection.py` L690-L763 → **L713-L786** —
-  `test_series_token_total_sums_linked_leaf_lifecycles` in `WorkspaceTests`, with LC1 at 100 tokens
-  (L722), LC2 at 50 (L733), the doc-less `03_c.md` row at L772-L774 and the 150 assertion at L786;
-  the old range ended 23 lines before that assertion, so neither number it cites was inside it.
-  `projection.py` `SeriesNode` L662-L688 (`seriesTokenTotal` L684) was re-read and left unchanged.
-  Every body claim was re-read against the 43-line source and still holds, so no prose changed.
+  citations after source movement; the reducer and observer-projection references were repaired.
+  The current `SeriesNode` and `seriesTokenTotal` projection source (cit:([`SeriesNode`, `seriesTokenTotal`], mcp/src/agents_remember/observer/projection.py:685-711)) was re-read and left unchanged.
+  Every body claim was re-read against the source and still holds, so no prose changed.
   Squared two ragged frontmatter cells.
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): the `projection.py` citation was
-  stale by a much larger margin than the rest of the tree. `SeriesNode` L497-L523 was correct
-  against an older commit (`b7d38a7`); the class is now L662-L688 with `seriesTokenTotal` at L684,
-  so the range is repaired and the field line called out. Also aligned `lastUpdated` with this
-  entry — it had lagged behind the 2026-07-31T17:20 entry below. No body text changed.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the 2 approximate cross-file citations
-  the previous entry flagged, so the numbers are exact again. `reducer.py` L148-L162 is the real
-  window — `_attach_gates` closes lifecycle projection at L148, `attach_series_token_totals` is
-  called at L156, and `build_analytics` consumes `series=series_nodes` at L157-L162.
-  `test_observer_projection.py` L690-L763 is `test_series_token_total_sums_linked_leaf_lifecycles`
-  in `WorkspaceTests`, which asserts 100+50=150 across LC1/LC2 with a third `subTasks` row
-  (`03_c.md`) that has no task document and contributes nothing. Both ranges read back verbatim.
+  stale after source movement; the range was repaired and the field line called out. Also aligned
+  `lastUpdated` with this entry. No body text changed.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the two approximate cross-file citations
+  flagged by the previous entry. The reducer and observer-projection assertions now read back
+  verbatim, including the 100+50=150 token total and the doc-less `03_c.md` row.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/observer/series_tokens.py` since the L2 base commit is the whole-tree

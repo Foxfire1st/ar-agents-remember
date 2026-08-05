@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/catalogPoll.test.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -55,16 +55,16 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | L14-L77 | [catalogPoll.ts](catalogPoll.ts) |
-| The poll-health state the beat assertions read. | L114-L122 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
+| The module under test. | `hydrateTerminalSessionsFromCatalog` | dashboard/src/data/catalogPoll.ts:139-157 |
+| The poll-health state the beat assertions read. | `recordPollBeat` | dashboard/src/data/sessionCockpitStore.ts:228-228 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -78,11 +78,16 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: rebased the
+  `hydrateTerminalSessionsFromCatalog` range; exact non-fixing check returns zero findings.
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 2 citation findings; scoped check passed.
 
 - 2026-07-24T13:17:50Z — Documented poll timeout recovery and no-op reconciliation coverage.
   Verification hash/date remain pinned to the pre-commit source stamp.

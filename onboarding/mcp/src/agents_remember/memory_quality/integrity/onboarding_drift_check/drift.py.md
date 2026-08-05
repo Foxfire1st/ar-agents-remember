@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -26,7 +26,7 @@ helpers, discovery, entity/inline/sidecar classifiers, and report renderers) and
 keeps two things local: `classify_source` (routes one source path to the right
 classifier by storage mode) and `main` (the CLI/dev entry point that resolves
 context, discovers onboarding, classifies, writes the report, and prints
-text/JSON/CSV). MCP tools call package-level summary/controller code that reuses
+text/JSON/CSV). MCP tools call package-level summary/application code that reuses
 the same classifiers.
 
 Since 260731-EFA-L3 one re-exported name is no longer package-local: `run_git` is imported from
@@ -44,7 +44,7 @@ backward-compatible boundary. Since 260731-EFA-L2 `main()` passes `--topology` /
 `--coordination-root` / `--settings-path` / `--onboarding-root` to
 `resolve_coordination_context` inside a `CoordinationHints(...)`, matching the resolver's current
 signature; no CLI flag changed. `main()` is the CLI/dev facade; production callers
-go through `summary.py` / the MCP controllers. `classify_source` routes to the
+go through `summary.py` / the MCP application entry points. `classify_source` routes to the
 external classifier via the shared `is_sidecar_storage` predicate from
 `coordination_context_resolver` (re-exported here); the older
 `sidecar_storage_label` helper and the no-longer-re-exported
@@ -69,18 +69,27 @@ external classifier via the shared `is_sidecar_storage` predicate from
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Data records and constants. | [models.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py) |
-| Git boundary and fingerprints. | [git_ops.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
-| Discovery and metadata parsing. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Sidecar/overview and entity/inline classifiers. | [sidecar.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py) |
-| Report rendering and path resolution. | [report.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py) |
-| Summary generation reuses the facade's classifiers. | [summary.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
-| The re-exported `run_git` and `main`'s git-repository guard resolve here, not to `git_ops`. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Data records and constants. | `DriftRow` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:64-75 |
+| Git boundary and fingerprints. | `compute_git_blob_set_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:65-73 |
+| Discovery and metadata parsing. | `discover_onboarding_files` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:43-48 |
+| Sidecar/overview classifiers. | `classify_overview_onboarding`; `classify_sidecar_onboarding_units` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:214-265; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342 |
+| Entity and inline classifiers. | `classify_entity_fingerprint`; `classify_inline_source` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:91-175 |
+| Report rendering and path resolution. | `write_markdown_report` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py:118-179 |
+| Summary generation reuses the facade's classifiers. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
+| The re-exported `run_git` and `main`'s git-repository guard resolve here, not to `git_ops`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Update History
 
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the seven malformed rows with
+  exact anchors and plain sources (`DriftRow`, `compute_git_blob_set_fingerprint`,
+  `discover_onboarding_files`, the sidecar/overview classifier pair, `write_markdown_report`,
+  `run_drift_summary`, `run_git`), and split the pooled "Sidecar/overview and entity/inline
+  classifiers" row into two — the entity and inline classifiers live in `entities.py` and
+  `inline.py`, not `sidecar.py`. Spurious `agents-remember/` prefixes dropped.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: `run_git` is now imported from
   `kernel.git_command` rather than the sibling `git_ops`, so the facade's re-export (still in
   `__all__`) and `main`'s `rev-parse --show-toplevel` guard resolve to the single owner. Recorded

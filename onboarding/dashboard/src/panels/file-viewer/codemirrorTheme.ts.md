@@ -43,12 +43,14 @@ read from CSS custom properties rather than hardcoded, so the theme tracks the l
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `FilePane` builds its `EditorView` with this theme bundle. | L10, L37 | [FilePane.tsx](FilePane.tsx) |
-| The OKLCH token vars this theme reads. | L5-L19 | [../../styles/tokens.css](../../styles/tokens.css) |
+| `FilePane` builds its `EditorView` with this theme bundle. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| The CodeMirror chrome bundle reads the panel, ink, grid, amber selection, and monospace font tokens. | `chrome` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:9-27 |
+| The syntax-highlight bundle reads the cyan and mint syntax tokens. | `highlight` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:29-46 |
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: split the pooled theme-token claim between chrome and syntax owners under the adversarial verdict, then the exact scoped fixer/check passed.
 
 - 2026-06-29T17:00+02:00 — L4 follow-up (readability): comments and operators/punctuation/brackets now use
   a mid-lightness ink/bg blend (`color-mix(in oklab, var(--ink) 60%/75%, var(--bg))`) instead of `--grid`

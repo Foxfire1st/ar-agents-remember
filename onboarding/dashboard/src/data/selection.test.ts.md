@@ -54,26 +54,28 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The rules under test. | — | [selection.ts](selection.ts) |
+| The rules under test. | `isIgnoredAnchor`; `readSelection` | dashboard/src/data/selection.ts:30-32; dashboard/src/data/selection.ts:39-49 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 1 repo-internal citation row and preserved verification metadata.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

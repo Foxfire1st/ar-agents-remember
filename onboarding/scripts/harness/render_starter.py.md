@@ -77,14 +77,16 @@ byte-identical in every generated file.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The generator that slices, orders, and assembles these fragments. | [sync-harness.py](agents-remember/scripts/sync-harness.py) |
-| The classification of which fragments are genuinely per-harness and why. | [README.md](agents-remember/scripts/harness/README.md) |
-| The hook fragment library with the same contract. | [session_start_hook.py](agents-remember/scripts/harness/session_start_hook.py) |
-| Tests that every declared fragment exists, every harness carries the shared body, and each generated program parses with one entry point. | [test_sync_harness.py](agents-remember/mcp/tests/test_sync_harness.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The generator that slices, orders, and assembles these fragments. | `generated_files`, `render_starter_program` | scripts/sync-harness.py:522-548; scripts/sync-harness.py:576-621 |
+| The classification of which fragments are genuinely per-harness and why. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
+| The hook fragment library with the same contract. | `hook_specific_output`, `emit` | scripts/harness/session_start_hook.py:28-34; scripts/harness/session_start_hook.py:57-59 |
+| Tests that every declared fragment exists, every harness carries the shared body, and each generated program parses with one entry point. | `test_every_declared_fragment_exists_in_its_library`, `test_every_starter_carries_the_shared_body`, `test_generated_programs_parse_and_have_an_entry_point` | mcp/tests/test_sync_harness.py:57-65; mcp/tests/test_sync_harness.py:67-73; mcp/tests/test_sync_harness.py:75-87 |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal generator, README, hook-library, and sync-test references; final scoped result 0 (checker-clean).
 
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 created this fragment library, collapsing eight
   independent `render-starter.py` copies (96–143 lines each, roughly 940 lines) into one

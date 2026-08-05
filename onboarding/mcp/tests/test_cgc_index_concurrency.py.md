@@ -54,24 +54,25 @@ default.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `cgc_index_concurrency` and `DEFAULT_CGC_INDEX_CONCURRENCY` live in the CGC process-control module. | [process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `cgc_index_concurrency` and `DEFAULT_CGC_INDEX_CONCURRENCY` live in the CGC process-control module. | `cgc_index_concurrency`; `DEFAULT_CGC_INDEX_CONCURRENCY` | mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:256-256; mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:259-277 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: anchored the process-control concurrency reference; scoped fixer will generate citation ranges.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new CGC index-concurrency fan-in cap tests.

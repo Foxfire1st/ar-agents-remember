@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/useCollapsedTaskGroups.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T12:58+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -49,27 +49,28 @@ None known for this leaf.
 No relevant documentation found after checking the resolved `system/sources.md`; it has no configured
 Domain Documentation entries. The storage behavior is a local application contract covered by tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain-documentation source was available for this local hook. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. | L216-L240; L281-L318 | [LifecycleList.tsx](LifecycleList.tsx) |
-| Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. | L879-L960 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The existing persisted-flag pattern was the worker's local implementation reference. | — | [file-viewer/usePersistedFlag.ts](file-viewer/usePersistedFlag.ts) |
+| The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. | `LifecycleListImpl` | dashboard/src/panels/LifecycleList.tsx:224-259 |
+| Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. | "operations.tasks.collapsed.v1" | dashboard/src/panels/LifecycleList.test.tsx:951-951 |
+| The existing persisted-flag pattern was the worker's local implementation reference. | `usePersistedFlag` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:6-25 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The preference is local to the dashboard browser surface and has no cross-repository interface. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 repository-internal citations for the parent list, focused persistence tests, and persisted-flag reference.
 - 2026-07-12T12:58+02:00 — Created for 260712-TRH-L3. Candidate source is uncommitted; verification metadata
   is pinned to the leaf base until closeout stamps the eventual code commit.

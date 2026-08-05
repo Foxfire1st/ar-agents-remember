@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/escalation_ladder.py`        |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                           |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                           |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -95,28 +95,33 @@ No relevant external documentation found after checking the repo Domain Document
 escalation-ladder's specific rung semantics; the leaf task doc (R1-R6) and the P-15 pilot-observer
 log (tier 3, dead-man ladder) are the source of truth.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this walker; the leaf task doc and P-15 pilot log are authoritative. | L1-L136 | [escalation_ladder.py](escalation_ladder.py) |
+| No external/domain document defines this walker; the leaf task doc and P-15 pilot log are authoritative. | `rung_due` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The two-hop, dead-node-skipping owner derivation `next_step`'s rung-2 branch calls, and the liveness check `seat_is_suspect` calls. | `derive_skip_level_owner`; `is_seat_dead` | [signal_routing.py](signal_routing.py.md) |
-| The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | `rung`; `escalatedAt` | [operator_inbox_records.py](operator_inbox_records.py.md); [operator_inbox_store.py](operator_inbox_store.py.md) |
-| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect` | [../serving/supervisor.py](../serving/supervisor.py.md) |
-| Unit tests: rung-due dwell/anchor/ceiling cases, next-step routing per rung including the hierarchy-ceiling jump, and seat-suspect liveness/staleness cases. | whole module | [test_escalation_ladder.py](../../../tests/test_escalation_ladder.py.md) |
+| The two-hop, dead-node-skipping owner derivation `next_step`'s rung-2 branch calls, and the liveness check `seat_is_suspect` calls. | `is_seat_dead`; `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
+| The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | "rungTransitionAt: str"; `advance_rung` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:207-207; mcp/src/agents_remember/controlplane/operator_inbox_records.py:209-209; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
+| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | `evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect` | mcp/src/agents_remember/serving/supervisor.py:400-429; mcp/src/agents_remember/serving/supervisor.py:953-1037; mcp/src/agents_remember/serving/supervisor.py:1040-1105 |
+| Unit tests: rung-due dwell/anchor/ceiling cases, next-step routing per rung including the hierarchy-ceiling jump, and seat-suspect liveness/staleness cases. | `RungDueTests`; `NextStepTests`; `SeatSuspectTests` | mcp/tests/test_escalation_ladder.py:68-110; mcp/tests/test_escalation_ladder.py:113-182; mcp/tests/test_escalation_ladder.py:185-228 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository control-plane logic only. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
+  exact non-fixing check returns zero findings.
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made the architect never-suspect rule honor current
   seat binding rather than origin provenance.

@@ -38,12 +38,15 @@ and mixed `multiSelect` / description presence.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The only consumer. | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| The sibling recordings for the same vendor version. | [2.1.210/](agents-remember/mcp/tests/fixtures/claude_stream_json/2.1.210/) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The Claude control test asserts that `mode.multi_select` is false. | "(mode.text, mode.header, mode.multi_select), (\"Which mode should be used?\", \"Mode\", False)," | mcp/tests/test_harness_control_claude.py:777-778 |
+| The Claude control test asserts that `features.multi_select` is true. | "(features.text, features.header, features.multi_select), (\"Which features should be enabled?\", \"Features\", True)," | mcp/tests/test_harness_control_claude.py:785-786 |
+| The initialization sibling recording carries the vendor-version field. | `claude_code_version` | mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl:2-2 |
 
 ## Update History
+
+- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D2 by binding both `multi_select` value predicates to their complete focused assertions; rechecked this card through the locked exact-document fixer/check.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created the missing sidecar for this
   fixture (a pre-existing 1:1 gap, not introduced by this leaf).

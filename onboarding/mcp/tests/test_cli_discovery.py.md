@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cli_discovery.py`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-03T09:55+02:00                           |
-| lastVerifiedCommitHash | `38c56316207997da98d8408e1a3ada3c7525f4c6`       |
-| lastVerifiedCommitDate | 2026-07-03T11:47:48+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -51,12 +51,13 @@ Covered behaviors, one test each:
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The module under test. | [discovery.py](agents-remember/mcp/src/agents_remember/cli/discovery.py) |
-| The CLI wiring that consumes discovery. | [dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module under test. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
+| The CLI wiring that consumes discovery. | `_resolve_settings` | mcp/src/agents_remember/cli/dashboard.py:199-208 |
 
 ## Update History
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
 
 - 2026-07-03T09:55+02:00 — Created for 260703 L1 alongside `cli/discovery.py` (8 tests: hits,
   precedence, nearest-wins, tolerance, template skip, miss error). Verification metadata pinned

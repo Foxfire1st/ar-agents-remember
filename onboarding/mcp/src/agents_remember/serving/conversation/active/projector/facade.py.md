@@ -51,10 +51,10 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The active service owns facade registration and replacement. | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/service.py) |
-| Coordinator and stream implement the delegated work. | [rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py), [mutation_stream.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The active service owns facade registration and replacement. | `ActiveConversationService`; `_projector_for_locked` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259 |
+| Coordinator and stream implement the delegated work. | `RebuildCoordinator`; `ProjectionMutationStream` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
 
 ## Cross-Repo References
 
@@ -78,6 +78,8 @@ parameter lists.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 4 citation findings for the active service, rebuild coordinator, and mutation stream ownership rows.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ProjectedSession` and the spine/readers bundles the facade now builds and shares across every ingestion component.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the facade ownership

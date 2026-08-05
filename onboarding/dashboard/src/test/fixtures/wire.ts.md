@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T14:05+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -22,68 +22,76 @@
 R6 in one sentence: a test whose fixture is authored by the consumer cannot detect producer drift. This
 leaf proved it twice — a test asserted `refusedPolarity === "amber"` against a fixture that set the
 field itself, on a model that is `extra="forbid"` server-side; and three tests built a master
-`TaskDocNode` carrying `createdAt`, which no server model declares. **Both fixtures were written with
+`TaskSubTaskRefNode` carrying `createdAt`, which its server model omits
+cit:(["tests built a master", `TaskSubTaskRefNode`, "which its server model omits"], dashboard/src/test/fixtures/wire.ts:6-6). **Both fixtures were written with
 `as SomeWireType`, and an assertion skips excess-property checking, so both compiled.**
 
 ## Code Commentary
 
 ### How Far A Green Build Actually Reaches
 
-The header does not overstate the guarantee, and neither should this document. `BE PRECISE ABOUT WHAT
-PINS WHAT` (L22-L37) states it outright:
+The source separates two authorities. `snapshot.json` remains a hand-maintained sampled payload,
+while the producer-to-TypeScript link is generated and checked from the Pydantic schema.
+`BE PRECISE ABOUT WHAT PINS WHAT` states that distinction directly.
+cit:(["is NOT generated; it remains a hand-maintained", "producer-to-TypeScript link is generated and checked"], dashboard/src/test/fixtures/wire.ts:22-34)
 
-> **`snapshot.json` is NOT generated.** No generator exists — nothing under `mcp/`, `scripts/` or
-> `dashboard/` writes it — and it is hand-maintained (this change alone edited it by +642/-15 lines).
+The generated `types/projection.ts` header names both regeneration and drift-check commands
+cit:(["GENERATED FILE; DO NOT EDIT", "Canonical core model", "Schema artifact", "Served-only tail", "Generator:", "Regenerate:", "Drift check:"], dashboard/src/types/projection.ts:1-7), and the generator
+implements both update and check modes cit:([`check`, `main`], scripts/sync-projection-types.py:43-51; scripts/sync-projection-types.py:54-65).
+The fixture contract documents that `snapshot.json` is the independent hand-authored sample while
+schema generation closes producer fields and vocabulary a sample can miss
+cit:(["The fixture-coverage guard", "Python codegen tests plus", "remains a hand-authored sampled payload", "generated contract against that independent sample", "coverage cannot disappear from dashboard fixtures unnoticed", "It has to bite in BOTH directions", "hand-kept mirror does not", "fixture was consumed as", "WHAT SCHEMA CODEGEN CLOSES", "sample cannot, even a sample this file polices", "currently null is *omitted*", "only the schema can", "vocabulary member the server declares", "forces the fixture to exercise every member", "it cannot make up a member", "difference between two field-identical models", "matching the server's two", "structural typing keeps them interchangeable", "generation still emits both named model declarations"], dashboard/src/test/contract.test.ts:24-28; dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:33-34; dashboard/src/test/contract.test.ts:60-68; dashboard/src/test/contract.test.ts:70-70; dashboard/src/test/contract.test.ts:72-72).
+The Python drift suite executes the same generator in `--check` mode and rejects stale generated
+files cit:([`test_documented_check_command_runs_with_its_exact_checkout_environment`, `test_committed_generated_files_are_current`], mcp/tests/test_projection_types_codegen.py:229-264; mcp/tests/test_projection_types_codegen.py:266-271).
 
 The chain, as drawn in the source:
 
 ```text
-this fixture  --type-checked against-->  types/projection.ts  --measured against-->  snapshot.json
-               (`Overrides<O, Node>`,     (`contract.test.ts`, three directions)      ↕ BY HAND
-                and every annotated                                            observer/projection.py
-                base below)
+snapshot.json --hand-maintained sample--> this fixture --type-checked against--> generated types/projection.ts
+                                                                                         ↑
+observer/projection.py Pydantic schema --generator + drift check--------------------------┘
 ```
 
-So a green build claims exactly this: **the mirror could produce this shape, and the mirror agrees with
-a payload a person wrote to stand in for the server.** The mirror↔server link is the hand-maintained
-one, and it is the only link in the chain no test can hold up. A field the server starts sending that
-neither the snapshot nor the mirror knows about is invisible to all of it.
+So a green build claims two different things: the generated wire contract agrees with the producer
+schema, and this fixture remains type-correct against that contract while exercising the independent
+sample. The sample does not become generated authority; it remains coverage evidence for runtime
+shapes and vocabularies the fixture contract explicitly measures.
 
 ### Logic
 
-- **`SERVED`** (L69) — `asServedProjection(snapshot)`, the fixture read as the projection the server
+- **`SERVED`** cit:(["export const SERVED: WorkspaceProjection = asServedProjection(snapshot)"], dashboard/src/test/fixtures/wire.ts:66-66) — `asServedProjection(snapshot)`, the fixture read as the projection the server
   would have sent.
-- **`demandServed(row, what)`** (L71-L79) throws `snapshot.json no longer carries ${what}` rather than
-  spreading `undefined`. Eight anchors are pulled through it (L81-L94): `lifecycles[0]`, `enclosures[0]`,
+- **`demandServed(row, what)`** cit:([`demandServed`, `SERVED_LIFECYCLE`, `SERVED_ENCLOSURE`, `SERVED_PROVIDER`, `SERVED_TASK_DOC`, `SERVED_ENGINE_PROCESS`, `SERVED_PICKUP`, `SERVED_ATTENTION`, `SERVED_GATE`], dashboard/src/test/fixtures/wire.ts:73-76; dashboard/src/test/fixtures/wire.ts:78-91) throws `snapshot.json no longer carries ${what}` rather than
+  spreading `undefined`. Eight anchors are pulled through it: `lifecycles[0]`, `enclosures[0]`,
   `providers[0]`, `analytics.taskDocuments[0]`, `analytics.engineProcesses[0]`,
   `analytics.agentPickups[0]`, `analytics.attentionQueue[0]`, and `SERVED.lifecycles.find(entry =>
   entry.gate !== undefined)?.gate`. A snapshot that stops sampling one of them fails loudly here instead
   of producing a base quietly missing every field.
-- **The bases** (L96-L212) — `BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`,
+- **The bases** cit:([`BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`, `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`], dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216) — `BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`,
   `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`. Each is annotated with the
   mirror type AND assembled from a served row, so it is pinned from both sides at once: a required field
   the server adds fails to compile until it is filled, and it can only be filled from a served row.
-  **Only REQUIRED fields are carried.** Optionals (`gate`, `ask`, `staleSeconds`, `landing`, …) are left
+  **Only REQUIRED fields are carried.** Optionals (`gate`, `ask`, `staleSeconds`, `carryoverDoneAt`, …) are left
   off on purpose — a default gate nobody asked for would silently change what an attention-queue test is
   measuring.
-- **`EMPTY_ANALYTICS`** (L214-L233) — every analytics list present and empty. The reducer always sends
+- **`EMPTY_ANALYTICS`** cit:([`EMPTY_ANALYTICS`], dashboard/src/test/fixtures/wire.ts:223-237) — every analytics list present and empty. The reducer always sends
   every key (they are list defaults server-side), so "empty" is a shape the server produces — unlike an
   object that omits them, which is what a `{} as Analytics` fixture claimed.
-- **The builders** (L235-L318) — `lifecycle`, `gate`, `lifecycleWithGate`, `enclosure`, `provider`,
+- **The builders** cit:([`lifecycle`, `gate`, `lifecycleWithGate`, `enclosure`, `provider`, `taskDoc`, `engineProcess`, `agentPickup`, `attentionItem`, `action`, `analytics`, `observerEvent`], dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:248-253; dashboard/src/test/fixtures/wire.ts:256-266; dashboard/src/test/fixtures/wire.ts:268-273; dashboard/src/test/fixtures/wire.ts:275-280; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:289-294; dashboard/src/test/fixtures/wire.ts:296-301; dashboard/src/test/fixtures/wire.ts:303-308; dashboard/src/test/fixtures/wire.ts:310-315; dashboard/src/test/fixtures/wire.ts:317-322; dashboard/src/test/fixtures/wire.ts:373-385) — `lifecycle`, `gate`, `lifecycleWithGate`, `enclosure`, `provider`,
   `taskDoc`, `engineProcess`, `agentPickup`, `attentionItem`, `action`, `analytics`. Each takes
   `Overrides<O, Node>` and widens it to a plain `Partial<Node>` locally before spreading. `action` and
   `observerEvent` differ: their override is REQUIRED rather than optional, via
   `Partial<T> & Pick<T, "…">`.
-- **`projection`** (L320-L341) — destructures `lifecycles`, `analytics` and `metrics` out of the
+- **`projection`** cit:([`projection`], dashboard/src/test/fixtures/wire.ts:329-345) — destructures `lifecycles`, `analytics` and `metrics` out of the
   override, then sets `metrics: metrics ?? metricsFor(lifecycles)`. **`metrics` is DERIVED from the
   lifecycles by the mirror's own rollup rather than restated beside them** — the hand-kept bucket lists
   are where the `awaiting-developer` gap kept reappearing, on both sides of the wire.
-- **`supervisorHeartbeat`** (L343-L362) — a typed literal, not a served row, because the field is
+- **`supervisorHeartbeat`** cit:(["The app-injected supervisor tick", "absent from the snapshot", "base is a typed literal", `supervisorHeartbeat`], dashboard/src/test/fixtures/wire.ts:348-349; dashboard/src/test/fixtures/wire.ts:352-366) — a typed literal, not a served row, because the field is
   app-injected and therefore absent from the snapshot (`contract.test.ts::KnownUnsampled` names it).
-- **`observerEvent`** (L364-L381) — same reasoning: the event channel (`types/event.ts` ←
+- **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:369-370; dashboard/src/test/fixtures/wire.ts:373-385) — same reasoning: the event channel (`types/event.ts` ←
   `observer/events.py`) is a separate contract from the projection, so its base cannot come from
   `snapshot.json`.
-- **`reparsed(source)`** (L383-L394) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
+- **`reparsed(source)`** cit:(["A byte-fresh copy of a projection", "tests need in order to prove", "on purpose. The round-trip answers", "routing it through", "parameter type cannot narrow", "clone keeps the source's type honestly", `reparsed`], dashboard/src/test/fixtures/wire.ts:388-389; dashboard/src/test/fixtures/wire.ts:391-394; dashboard/src/test/fixtures/wire.ts:396-398) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
   The round-trip answers `any`, and `any` assigns to anything, so routing it through
   `asServedProjection` LOOKS like a check and is vacuous — a parameter type cannot narrow an argument
   that is already `any`. This exact function was making that mistake before rule 3 was written, and
@@ -113,19 +121,20 @@ neither the snapshot nor the mirror knows about is invisible to all of it.
 
 **What building a fixture here does not prove.**
 
-1. **Nothing about the server.** See the chain above: `contract.test.ts` *does* measure the mirror
-   against `snapshot.json`, in three directions — but the crossing from `snapshot.json` to
-   `observer/projection.py`, what the header calls the mirror↔server link, is hand-maintained and held
-   by no test. This is the file's own framing, not a caveat added afterwards.
+1. **The snapshot remains a sample, not generated authority.** `contract.test.ts` measures the
+   generated mirror against `snapshot.json` in three fixture directions, while schema generation and
+   its drift check independently bind `types/projection.ts` to the Pydantic producer. A green sample
+   test therefore proves exercised runtime coverage, not that the sample itself is exhaustive.
 2. **Nothing about a pre-widened override.** `Overrides` binds a FRESH literal at the call site; an
    override that has been through a variable admits an explicit `undefined` again.
    `wireFixtureGuard.ts` covers some of that residue and `fixtureOverrides.test.ts` asserts the rest as a
    known pass.
 
-No stale "generated snapshot" wording remains to clean up: `grep -n generated dashboard/src/test/fixtures/wire.ts`
-answers only the header's own `` `snapshot.json` is NOT generated `` (L22) plus two `generatedAt` field
-references (L332, L376). The three docstrings that used to contradict the header now read "the sampled
-payload" (L68), "A row the snapshot is expected to carry" (L72) and "absent from the snapshot" (L344).
+No stale "generated snapshot" wording remains: the source now explicitly pairs the hand-maintained
+sample with the generated producer-to-TypeScript contract
+cit:(["is NOT generated; it remains a hand-maintained", "producer-to-TypeScript link is generated and checked"], dashboard/src/test/fixtures/wire.ts:22-23). The two `generatedAt` field
+references remain ordinary projection data cit:(["generatedAt: SERVED.generatedAt", "ts: SERVED.generatedAt"], dashboard/src/test/fixtures/wire.ts:336-336; dashboard/src/test/fixtures/wire.ts:380-380). The three docstrings that used to contradict the header now read "the sampled
+payload" cit:(["The sampled payload"], dashboard/src/test/fixtures/wire.ts:65-65), "A row the snapshot is expected to carry" cit:(["A row the snapshot is expected to carry"], dashboard/src/test/fixtures/wire.ts:69-69) and "absent from the snapshot" cit:(["absent from the snapshot"], dashboard/src/test/fixtures/wire.ts:348-348).
 
 ## Docs References
 
@@ -134,50 +143,56 @@ excess-property checking (which is what let both proven defects compile), excess
 applies to fresh literals, and `structuredClone` preserves a value's static type where a JSON round-trip
 does not.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| A type assertion performs no check and removes excess-property checking — the mechanism by which `as SomeWireType` let a `refusedPolarity` and a master-row `createdAt` compile. | Type Assertions | [TypeScript Handbook — Everyday Types / Type Assertions](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions) |
-| Excess-property checking applies to fresh object literals, which is why an override written inline at the call site is checked and one routed through a variable is not. | Excess Property Checks | [TypeScript Handbook — Object Types / Excess Property Checks](https://www.typescriptlang.org/docs/handbook/2/objects.html#excess-property-checks) |
-| `structuredClone` deep-clones a value at runtime; unlike a `JSON.parse(JSON.stringify(…))` round-trip it does not launder the value's static type into `any`. | `structuredClone` | [MDN — structuredClone()](https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone) |
+| A type assertion performs no check and removes excess-property checking — the mechanism by which `as SomeWireType` let a `refusedPolarity` and a master-row `createdAt` compile. | "as SomeWireType" | dashboard/src/test/fixtures/wire.ts:7-7 |
+| Excess-property checking applies to fresh object literals, which is why an override written inline at the call site is checked and one routed through a variable is not. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
+| `structuredClone` deep-clones a value at runtime; unlike a `JSON.parse(JSON.stringify(…))` round-trip it does not launder the value's static type into `any`. | `reparsed` | dashboard/src/test/fixtures/wire.ts:396-398 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| R6 and the two proven defects, both of which compiled because they were written with `as SomeWireType`. | L1-L13 | [wire.ts](wire.ts) |
-| `BE PRECISE ABOUT WHAT PINS WHAT`: `snapshot.json` is NOT generated, no generator exists, and the chain diagram naming the link no test holds. | L22-L37 | [wire.ts](wire.ts) |
-| How the defaults stay honest: required fields only, every value taken from a served row, optionals deliberately omitted. | L15-L20 | [wire.ts](wire.ts) |
-| `demandServed` and the eight served anchors it demands the snapshot keep. | L71-L94 | [wire.ts](wire.ts) |
-| The eight bases, each annotated with the mirror type and filled from `SERVED`. | L96-L212 | [wire.ts](wire.ts) |
-| `EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces. | L214-L233 | [wire.ts](wire.ts) |
-| `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | L320-L341 | [wire.ts](wire.ts) |
-| `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. | L383-L394 | [wire.ts](wire.ts) |
-| The mirror every base and override is checked against — every node type the bases annotate, and `metricsFor` (L250-L257), which `projection()` derives with. | L1-L726 | [../../types/projection.ts](../../types/projection.ts) |
-| `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. | L34-L43 | [../servedProjection.ts](../servedProjection.ts) |
-| The hand-maintained oracle the bases are assembled from — `lifecycles` (L4), `enclosures` (L113), `providers` (L136) and the four `analytics` rows the anchors pull (`agentPickups` L229, `taskDocuments` L287, `attentionQueue` L348, `engineProcesses` L386). | L4-L737 | [../../fixtures/snapshot.json](../../fixtures/snapshot.json) |
-| The override constraint every builder takes, and the three limits it documents. | L23-L69 | [overrides.ts](overrides.ts) |
-| The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban (L513-L525), and the `any` rule (L527-L535) whose comment names `fixtures/wire.ts::reparsed` at L530 as the site that was making exactly that mistake. | L513-L535 | [../wireFixtureGuard.test.ts](../wireFixtureGuard.test.ts) |
-| `KnownUnsampled`, which names `supervisorHeartbeat` as absent from the snapshot and therefore a typed literal here. | L177-L187 | [../contract.test.ts](../contract.test.ts) |
-| `ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`. | L1-L22 | [../../types/event.ts](../../types/event.ts) |
-| The companion builder module for the conversation grammar. | L1-L28 | [conversationWire.ts](conversationWire.ts) |
+| R6 and the two proven defects, both of which compiled because they were written with `as SomeWireType`. | "R6 in one sentence"; "drift. This leaf proved it twice"; "fixture that set the field itself"; "tests built a master"; "fixtures were written with"; "both compiled" | dashboard/src/test/fixtures/wire.ts:3-8 |
+| `snapshot.json` remains the hand-maintained sample while the source names the producer-to-TypeScript link as generated and checked. | "is NOT generated; it remains a hand-maintained"; "producer-to-TypeScript link is generated and checked" | dashboard/src/test/fixtures/wire.ts:22-23 |
+| `projection.ts` marks itself generated and names its schema, generator, regeneration command, and drift check. | "GENERATED FILE; DO NOT EDIT"; "Canonical core model"; "Schema artifact"; "Served-only tail"; "Generator:"; "Regenerate:"; "Drift check:" | dashboard/src/types/projection.ts:1-7 |
+| The projection generator implements both check and generation paths. | `check`; `main` | scripts/sync-projection-types.py:43-51; scripts/sync-projection-types.py:54-65 |
+| The fixture contract distinguishes its independent sample checks from the producer-schema coverage codegen closes. | "The fixture-coverage guard"; "Python codegen tests plus"; "remains a hand-authored sampled payload"; "generated contract against that independent sample"; "coverage cannot disappear from dashboard fixtures unnoticed"; "It has to bite in BOTH directions"; "hand-kept mirror does not"; "fixture was consumed as"; "WHAT SCHEMA CODEGEN CLOSES"; "sample cannot, even a sample this file polices"; "currently null is *omitted*"; "only the schema can"; "vocabulary member the server declares"; "forces the fixture to exercise every member"; "it cannot make up a member"; "difference between two field-identical models"; "matching the server's two"; "structural typing keeps them interchangeable"; "generation still emits both named model declarations" | dashboard/src/test/contract.test.ts:24-28; dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:33-34; dashboard/src/test/contract.test.ts:60-68; dashboard/src/test/contract.test.ts:70-70; dashboard/src/test/contract.test.ts:72-72 |
+| The Python drift test rejects stale committed generated files. | `test_committed_generated_files_are_current` | mcp/tests/test_projection_types_codegen.py:266-271 |
+| How the defaults stay honest: required fields only, every value taken from a served row, optionals deliberately omitted. | "HOW THE DEFAULTS STAY HONEST"; "annotated with the mirror type"; "a required field the server adds fails to compile"; "Only the REQUIRED fields are carried"; "staleSeconds"; "silently change what an attention-queue test is measuring"; `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:15-20; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
+| `demandServed` and the eight served anchors it demands the snapshot keep. | `demandServed`; `SERVED_LIFECYCLE`; `SERVED_ENCLOSURE`; `SERVED_PROVIDER`; `SERVED_TASK_DOC`; `SERVED_ENGINE_PROCESS`; `SERVED_PICKUP`; `SERVED_ATTENTION`; `SERVED_GATE` | dashboard/src/test/fixtures/wire.ts:73-76; dashboard/src/test/fixtures/wire.ts:78-91 |
+| The eight bases, each annotated with a generated mirror type and filled from `SERVED`. | `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
+| `EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
+| `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | "metrics: metrics ?? metricsFor(lifecycles)" | dashboard/src/test/fixtures/wire.ts:342-342 |
+| `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. | `reparsed` | dashboard/src/test/fixtures/wire.ts:396-398 |
+| `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
+| The hand-maintained oracle the bases are assembled from — `lifecycles`, `enclosures`, `providers` and the four `analytics` rows the anchors pull (`agentPickups`, `taskDocuments`, `attentionQueue`, `engineProcesses`). | "\"lifecycles\": ["; "\"enclosures\": ["; "\"analytics\": {"; "\"agentPickups\": ["; "\"taskDocuments\": ["; "\"attentionQueue\": ["; "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:4-4; dashboard/src/fixtures/snapshot.json:113-113; dashboard/src/fixtures/snapshot.json:169-169; dashboard/src/fixtures/snapshot.json:229-229; dashboard/src/fixtures/snapshot.json:287-287; dashboard/src/fixtures/snapshot.json:368-368; dashboard/src/fixtures/snapshot.json:406-406 |
+| The override constraint every builder takes, and the three limits it documents. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
+| The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. | "catches a smuggled field where there is no assertion to ban"; "fixtures/wire.ts::reparsed" | dashboard/src/test/wireFixtureGuard.test.ts:512-534 |
+| `KnownUnsampled`, which names `supervisorHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
+| `ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
+| The companion builder module for the conversation grammar. | `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243 |
 
 ## Cross-Repo References
 
 No cross-repository boundary. The wire this file builds against is a Python↔TypeScript seam inside
 `agents-remember`; both the producing models and the consuming mirror are in this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The producing models are in-repo and `extra="forbid"`, which is what makes an invented fixture field impossible on the wire rather than merely unusual. | L1-L9 | [projection.py](../../../../mcp/src/agents_remember/observer/projection.py) |
+| The in-repo `WorkspaceProjection` producer model uses `extra="forbid"` and declares the complete projection boundary. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
 
 ## Update History
+
+- 2026-08-04T19:00:51+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair + delta-verdict residual repair): distinguished the hand-maintained `snapshot.json` sample from the generated/drift-checked producer-to-TypeScript mirror (generator, drift tests, and fixture contract bound to their operative sources); restored operative fixture bodies (bases, `demandServed`, builders, `reparsed`); widened the pin-distinction citation to the full 22-34 comment; bound the `--check` drift execution to its exact test; bound both guard rules to the complete 512-534 evidence; narrowed the producer-model claim to the singular `WorkspaceProjection`. Residual repair per `260731-EFA-L6-S18-B12-reviewer-delta-verdict.md`: replaced `landing` with `carryoverDoneAt` in the bases bullet's optional-left-off examples (`landing` is a required `EngineProcessNode` field carried at `wire.ts:193`; `carryoverDoneAt?` is optional at `projection.ts:164` and absent from `wire.ts:169-198`), and corrected the Purpose defect narrative to the source's record of a master `TaskSubTaskRefNode` carrying `createdAt`, which its server model omits, now cited to `wire.ts:6`. The scoped fixer confirmed the final ranges with no writes.
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 20 citation rows and normalized 17 prose citation groups; scoped citation check now passes.
 
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass). **Withdrew Todos item 3**, which
   told the next agent to fix wording that is already fixed. The item was written from the *staged* blob
   (`git show :dashboard/src/test/fixtures/wire.ts` still carries "the generated payload" L47, "A row the
   generated snapshot" L51, "absent from the generated" L285); the **working tree** — which is what a
   reader opens — was already corrected, and `grep -n generated` over it returns only the header's own
-  `` `snapshot.json` is NOT generated `` (L22) and two `generatedAt` field references (L332, L376). Also
+  `` `snapshot.json` is NOT generated `` cit:(["is NOT generated; it remains a hand-maintained"], dashboard/src/test/fixtures/wire.ts:22-22) and two `generatedAt` field references. Also
   noted there were **three** such phrases, not two: `SERVED`'s doc (now L68) was never in the count.
   Corrected the header quote's diffstat: the snapshot edit is **+642/-15**, not "+657 lines" (657 is
   insertions+deletions read as insertions; `git diff --numstat -- dashboard/src/fixtures/snapshot.json`

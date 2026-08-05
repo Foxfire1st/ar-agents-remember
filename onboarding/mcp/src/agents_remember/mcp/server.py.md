@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T13:20+02:00                     |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -45,30 +45,31 @@ is the [registration route overview](registration/overview.md), not this file.
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), loads it
 through `load_config` and turns a `ConfigError` into an argparse error, then calls
-`declare_process_role("mcp")` and `maybe_autostart_dashboard(config)` **between** `load_config` and
-`run_server`. That hook is a no-op
+`prepare_mcp_process(config)` between `load_config` and `run_server`. The application-layer wrapper
+declares the MCP durable-store role and then invokes the dashboard-autostart hook. That hook is a no-op
 unless the trusted settings set `dashboard.autoStart`; otherwise a daemon thread adopts a healthy
 dashboard daemon, spawns an absent one, or restarts one on version mismatch. It is total and
 threaded so it can never delay or break the stdio handshake this process exists for, and its only
 output goes to stderr — stdout is the MCP protocol.
 
-### 260731-EFA-L5: the durable-store process role is declared here, in `main`
+### Durable-store process-role startup is owned by the application boundary
 
-`main` calls `declare_process_role("mcp")` (`server.py` L52) — one line, and the placement is the
-whole content of it. `controlplane/durable_store.py` names two concurrent writers of the six
+`main` calls the application-layer `prepare_mcp_process` wrapper, which declares the MCP role before
+optional dashboard supervision cit:([`main`], mcp/src/agents_remember/mcp/server.py:35-57) cit:([`prepare_mcp_process`], mcp/src/agents_remember/application/server_startup.py:20-23).
+`controlplane/durable_store.py` names two concurrent writers of the six
 control-plane JSONL logs, `"mcp"` and `"dashboard"`, and the declaration is what lets shared code
 ask which one it is running in. `StoreOwnership.is_compaction_owner()` answers `role is None or
 compaction_owner is None or role == compaction_owner`, so a process that declares nothing counts as
 the owner of every log.
 
-**It belongs at the process entry point, not in `create_server`, and that is a correctness
+**The wrapper belongs on the process-entry path, not in `create_server`, and that is a correctness
 requirement rather than a style choice.** `create_server` is a *factory* the test suite calls
 in-process; `_declared` is a plain module-level dict with no reset, so a declaration made inside the
 factory would stamp `"mcp"` onto the interpreter and every later test in it — including tests that
 exercise the dashboard's own write paths. `main` runs once, in a process that exists only to be the
-MCP server, so the role it declares is a fact about the process rather than about whoever last built
-a server object. The dashboard's mirror image of this is `cli/dashboard.py::run`, for the same
-reason.
+MCP server, so the wrapper declares a fact about the process rather than about whoever last built a
+server object. The dashboard declares its role on both real entry paths: `_dev_app` for the reload
+worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196).
 
 What the declaration does **not** buy is durability. Every append and every rewrite of all six logs
 takes that log's `flock` unconditionally, in every process, declared or not; the role only decides
@@ -82,58 +83,42 @@ that skips this line loses no records — it just stops being distinguishable fr
   per-tool special cases.
 - Keep `install_compact_content()` and `install_ambient(...)` at the top of `create_server()`,
   before tools can be exercised.
-- **`declare_process_role("mcp")` stays in `main` and must never move into `create_server`.**
+- **`prepare_mcp_process(config)` stays in `main` and process-role declaration must never move into `create_server`.**
   `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring
   there marks the whole interpreter `"mcp"` — after which `is_compaction_owner()` answers `True` for
   every MCP-owned log in a test that is exercising the dashboard, and `check_declared_writer()`
-  answers for a process that is not the MCP server. The mirrored obligation on the other side is
-  `cli/dashboard.py::run`.
+  answers for a process that is not the MCP server. The mirrored dashboard obligations are
+  `cli/dashboard.py::_dev_app` and `cli/dashboard.py::run`.
 - The dashboard-autostart hook must stay total and threaded; anything that can raise or block here
   breaks the handshake.
 - Do not add a raw shell or arbitrary-command tool to this server.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `TOOL_REGISTRARS` and the twelve family modules that hold every `@server.tool()`. | [registration overview](registration/overview.md) |
-| The payload builders the declarations forward to. | [tools overview](tools/overview.md) |
-| The config loader, which rejects coordinator `system/settings.json` as MCP authority. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The shared observer store-root resolver used to install the ambient. | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
-| The compact-content shim installed at server creation. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
-| The boot-time dashboard supervision hook `main()` calls. | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
-| The durable-store contract this process declares its role against, including what the role does and does not guarantee. | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The dashboard's mirror of the same declaration, at that process's own entry point. | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| Tests build a live server from this module to check the advertised tool list and each declaration's wiring. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | `register_core_tools`; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:20-48; mcp/src/agents_remember/mcp/registration/__init__.py:50-50 |
+| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; `worktree_sync_payload`; `__all__` | mcp/src/agents_remember/mcp/tools/__init__.py:1-87; mcp/src/agents_remember/mcp/tools/__init__.py:93-159 |
 
 ## Cross-Repo References
 
 No sibling repository defines this process wiring.
 
-| Finding                                      | Citations | Source Path |
-| -------------------------------------------- | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound registrar imports/collection and tools builder imports/exports to packet-specified source spans. Verification metadata unchanged.
 
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: recorded the one source change here, six added
-  lines: the `declare_process_role` import (L8) and the `declare_process_role("mcp")` call in `main`
-  (L52), between `load_config`'s error handling and `maybe_autostart_dashboard`. Recorded **why the
-  placement is the content** — `create_server` is a factory the test suite calls in-process and
-  `controlplane/durable_store._declared` is a module-level dict with no reset, so declaring there
-  marks the whole interpreter and every later test in it. Added it as an invariant with the failure
-  it prevents named, and a reference row to the contract module. Also recorded what the declaration
-  is *not*: it is not what makes the writes safe — the per-log `flock` is unconditional in every
-  process, declared or not. Verification metadata pinned until closeout stamps the L5 code commit.
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: moved the live account to the current
+  application-layer startup boundary: `main` calls `prepare_mcp_process`, which declares the MCP
+  role before optional dashboard supervision; dashboard role declaration is present on both
+  `_dev_app` and `run`. New self/cross-file ranges are explicit scoped fixer output.
 
-  Two docstrings in `controlplane/durable_store.py` **disagree with this call site** and are
-  reported to the manager rather than edited from here (that file is another curator's lane):
-  `declare_process_role` says "`mcp.server.create_server` and `serving.app.create_app` are the ONLY
-  callers" (L168-L169) and the module front matter says "exactly one place does: `mcp.server.main`"
-  (L67-L68). Neither is true of the staged tree: `git grep declare_process_role` over the staged
-  index returns exactly two call sites, `mcp/server.py` L52 and `cli/dashboard.py` L148, and
-  `serving/app.py` is not in this leaf's changed-file set at all. The code is right; the two
-  docstrings describe an earlier iteration of it.
+- 2026-08-03T02:43:00+02:00 — W3-B01 curator: curated 9 Repo-Internal table citations with exact overview headings, current module identifiers, and live test anchor. The earlier call-site commentary was superseded by the current application-layer startup boundary recorded in the S18-T3 entry above. Verification metadata remains unchanged for closeout.
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: recorded the process-entry declaration boundary and why it stays outside the in-process `create_server` factory cit:([`main`, `declare_process_role`], mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/mcp/server.py:35-57). The dashboard owns its mirrored entry paths cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196). Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **rewritten**. The whole tool-registration surface
   left this file for the new `mcp/registration/` package, and `create_server` became wiring plus a
   loop over `TOOL_REGISTRARS`. The previous body — a per-tool catalogue of signatures, refusal

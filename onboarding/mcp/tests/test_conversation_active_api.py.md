@@ -27,10 +27,10 @@ log, no fixture authority.
 
 ### Logic
 
-`_FakeAdapter`/`_NativePageAdapter` (L107-L248) emit native frames exactly as the production
-mappers do and let the real submission authority own dispatch/provenance; `_Harness` (L258-L360)
+`_FakeAdapter`/cit:([`_NativePageAdapter`], mcp/tests/test_conversation_active_api.py:225-255) emit native frames exactly as the production
+mappers do and let the real submission authority own dispatch/provenance; cit:([`_Harness`], mcp/tests/test_conversation_active_api.py:266-356)
 wires the bridge, IPC server, catalog row, and composed app per test. `ProductionRouteTests`
-(L362-L781): a remote peer fails closed typed 403 over a real wire (XFF); the page serves
+cit:([`ProductionRouteTests`], mcp/tests/test_conversation_active_api.py:379-945): a remote peer fails closed typed 403 over a real wire (XFF); the page serves
 native identity, items, canonical status, and capabilities; user-item provenance resolves
 through the REAL authority (cockpit/terminal/durable lanes exact); epoch mismatch maps to 409
 with expected/actual fields; unknown session 404 / unsupported 409; `before` paging walks back
@@ -40,7 +40,7 @@ typed; resume replays in order with cursor ids (and earlier replays are marked `
 an epoch flip mid-stream emits exactly one gap + close read off the live wire (the runner
 generation restarts on the same socket); orchestration parity proves the seat projection comes
 from the same canonical classification; and a source scan proves no PTY/runner-log/fixture
-production authority exists in the active modules. `PiProductionRouteTests` (L948-L1035) drives
+production authority exists in the active modules. cit:([`PiProductionRouteTests`], mcp/tests/test_conversation_active_api.py:948-1035) drives
 pi native hydration, tool convergence, and capabilities through the same real seam.
 
 ### Conventions
@@ -67,24 +67,24 @@ None.
 The resolved `Domain Documentation` registry has no entries; the composition/seam contracts are
 repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this suite. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The three registered production routes under test. | L121-L249 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
-| The L0 root composition the suite installs verbatim. | L7-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The bridge/IPC server seam (L0E) the suite runs on a real socket. | L103-L149 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| The cursor mint helpers used to forge/tamper cursors in the refusal tests. | L197-L262 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/cursor.py) |
+| The three registered production routes under test. | "async def conversation_page" | mcp/src/agents_remember/serving/conversation/active/api.py:127-127 |
+| The L0 root composition the suite installs verbatim. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
+| The bridge/IPC server seam (L0E) the suite runs on a real socket. | "def control_runner_command" | mcp/src/agents_remember/serving/harness_control_runner.py:53-53 |
+| The cursor mint helpers used to forge/tamper cursors in the refusal tests. | "class DecodedPageCursor" | mcp/src/agents_remember/serving/conversation/active/cursor.py:86-86 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -102,6 +102,10 @@ does not replace or fail the parent page. Existing page/event authorization and 
 remain intact.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the superseded
+  `ProductionRouteTests` prose citation and the `n/a` table rows with exact anchors and
+  fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived the stale `PiProductionRouteTests`
   self-citation — the class is L948-L1035 (was L785-L866) after the selected-child and L5I

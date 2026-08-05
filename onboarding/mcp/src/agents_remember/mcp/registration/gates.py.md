@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/gates.py`       |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-07-31T15:31+02:00                                    |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -62,14 +62,16 @@ gates. Read-only.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `GateRaise`, `GateWait`, and the create/block/wait junction. | [tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| `GateAnchor`, `GateRequest`, `GateVerdict`. | [controlplane/records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
-| The configured delegation policy checked on a role-attributed decision. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
-| Both attribution paths and the `wait=false` timeout proved through a live server. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `GateRaise`, `GateWait`, and the create/block/wait junction. | `GateRaise`; `GateWait`; `lifecycle_gate_tool` | mcp/src/agents_remember/application/gate_tools.py:188-203; mcp/src/agents_remember/application/gate_tools.py:216-228; mcp/src/agents_remember/application/gate_tools.py:384-454 |
+| `GateAnchor`, `GateRequest`, `GateVerdict`. | `GateAnchor`; `GateRequest`; `GateVerdict` | mcp/src/agents_remember/controlplane/records.py:128-136; mcp/src/agents_remember/controlplane/records.py:139-146; mcp/src/agents_remember/controlplane/records.py:149-163 |
+| The configured delegation policy checked on a role-attributed decision. | `decision_role_for_gate` | mcp/src/agents_remember/controlplane/gate_policy.py:154-159 |
+| Both attribution paths and the `wait=false` timeout proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 4 repository-reference citations (4/4 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The three gate
   declarations moved out of `server.py`; `lifecycle_gate` now packs `GateRaise` + `GateWait` and

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover.py`                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-31T00:00+02:00                                      |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`                  |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -107,30 +107,32 @@ None known for the MX-FIX-4 carryover boundary.
 No Domain Documentation source is configured for this repository. The service and full-apply test
 matrix define the current write-authority contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Official JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | L1-L415 | [carryover_authority.py](agents-remember/mcp/src/agents_remember/memory/carryover_authority.py) |
-| Route-index rendering requires and reuses explicit repository/storage authority. | L101-L203 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
-| Full-apply tests pin empty/unsupported refusal, retention/repopulation acceptance, official-over-source selection, and exact zero mutation. | L374-L1268 | [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
-| Ledger updates remain delegated to the kernel memory-ledger service. | memory ledger API | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | L24-L96 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Official JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
+| Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-98; mcp/src/agents_remember/kernel/route_index.py:190-190 |
+| Full-apply tests pin empty/unsupported refusal, retention/repopulation acceptance, official-over-source selection, and exact zero mutation. | "test_missing_official_settings_refuses_before_any_mutation", "test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative", "test_markdown_unsupported_rule_lists_refuse_before_mutation", "test_official_settings_override_conflicting_source_settings" | mcp/tests/test_carryover.py:374-387; mcp/tests/test_carryover.py:820-936; mcp/tests/test_carryover.py:938-994; mcp/tests/test_carryover.py:1209-1235 |
+| Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
+| The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Cross-Repo References
 
 Carryover intentionally spans the configured code and external-memory repositories, but its
 authorization implementation remains package-local.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external implementation governs official-memory write authority. | — | — |
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 10 citation claims (5 table rows, 5 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-07-31T20:52+02:00 — 260731-EFA-L3 curator: the module's local `run_git` (the only copy that
   accepted `input_text`) was deleted and every git call re-pointed at

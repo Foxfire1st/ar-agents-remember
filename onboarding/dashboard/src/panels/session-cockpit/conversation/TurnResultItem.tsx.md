@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ unknown-vendor item is preserved as LABELED evidence — never guessed into a me
 
 ### Logic
 
-- `labelFor` (L27-L44) maps `kind` to a `{ text, toneKey }`: `error` → `error`; `turn-result` splits on
+- cit:([`labelFor`], dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:27-44) maps `kind` to a `{ text, toneKey }`: `error` → `error`; `turn-result` splits on
   phase into `interrupted` / `turn failed` / `turn complete`; `notice`/`telemetry` → neutral;
   `unknown-vendor` → `unknown vendor event`. The tone classes (L22) carry neutral/error/interrupted/
   done color, always alongside the text label. **FB7.4/A8 (260718-CHATS-L5P):** the label is now a dim
@@ -51,29 +51,31 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The item/`unknown-vendor`-block types (`vendorType`, `safeSummary`, `evidenceRef`) narrowed here. | L7 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| Streaming-safe Markdown renderer used for result detail. | L8 | [MarkdownBlock.tsx](MarkdownBlock.tsx) |
-| The pure grouping that folds runs of identical unknown-vendor rows (per-member addressable by ordinal/evidenceRef). | — | [collapse.ts](collapse.ts) |
-| The kind dispatcher that routes result items here. | — | [ConversationItemView.tsx](ConversationItemView.tsx) |
+| The item/`unknown-vendor`-block types (`vendorType`, `safeSummary`, `evidenceRef`) narrowed here. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
+| Streaming-safe Markdown renderer used for result detail. | `MarkdownBlock` | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
+| The pure grouping that folds runs of identical unknown-vendor rows (per-member addressable by ordinal/evidenceRef). | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
+| The kind dispatcher that routes result items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal references for result-item types, markdown rendering, unknown-vendor grouping, and dispatch; final scoped result 0 (checker-clean).
 
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. `labelFor` is
   the `switch (item.kind)` reader at L27-L44 (the old single-line L31 landed inside the

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -54,9 +54,9 @@ Add tests for `c-02-memory-quality-control` skill against a migrated external me
 
 No external domain documentation applies to this repository-local maintenance skill.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | — | — |
 
 ## Repo-Internal References
 
@@ -64,23 +64,24 @@ No external domain documentation applies to this repository-local maintenance sk
 commit when new files exist, and before the memory content commit during
 closeout.
 
-| Finding                                                                                                                                                                                                                                    | Citations | Source Path                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------------- |
-| The skill names task-start drift, pre-code-commit missing-onboarding checks, closeout `memory_quality_check`, and targeted style repair as one `c-02-memory-quality-control` skill quality control workflow. | L27-L40 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
-| Task-start quality control runs `drift_check` MCP tool, preserves the gradual-adoption boundary for historical files without onboarding, and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | L67-L91 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
-| Pre-code-commit quality control runs `check_missing_onboarding` only against current worktree additions so newly added files cannot escape onboarding. | L147-L164 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
-| Closeout quality control runs `memory_quality_check` MCP tool and uses focused fixers such as `history_order_fix.py` only after reported findings. | L166-L191 | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The skill names task-start drift, pre-code-commit missing-onboarding checks, closeout `memory_quality_check`, and targeted style repair as one `c-02-memory-quality-control` skill quality control workflow. | `drift_check`, `check_missing_onboarding`, `memory_quality_check`, `history_order_fix` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:31-36 |
+| Task-start quality control runs `drift_check` MCP tool, preserves the gradual-adoption boundary for historical files without onboarding, and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | `drift_check`, `c-05-create-or-update-onboarding-files` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:31-36; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:175-178 |
+| Pre-code-commit quality control runs `check_missing_onboarding` only against current worktree additions so newly added files cannot escape onboarding. | `check_missing_onboarding` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:162-168 |
+| Closeout quality control runs `memory_quality_check` MCP tool and uses focused fixers such as `history_order_fix.py` only after reported findings. | `memory_quality_check`, `history_order_fix` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:180-214 |
 
 ## Cross-Repo References
 
 No cross-repo evidence is needed for the current skill contract.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 4 citations (citation_anchor_missing=2, citation_prose_not_in_cit_form=0, citation_source_malformed=2); final scoped citation check clean.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to `c-02-memory-quality-control` skill.
 - 2026-05-24T04:34+02:00: Refreshed verification metadata after `c-02-memory-quality-control` skill memory quality control source landed.

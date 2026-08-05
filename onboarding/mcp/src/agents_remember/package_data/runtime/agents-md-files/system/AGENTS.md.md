@@ -73,32 +73,34 @@ None.
 No external domain documentation is needed for this repository-local runtime
 template.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
 This onboarding is backed by the source template itself.
 
-| Finding                                                                                                                     | Citations | Source Path |
-| --------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The start-of-task trust gate requires `c-08-ar-coordination-context-resolver` skill context resolution, a configured-provider check, `c-02-memory-quality-control` skill memory quality control, clean-source versus dirty-source drift classification, developer review of drift, approved `c-05-create-or-update-onboarding-files` skill refresh, a second `c-02-memory-quality-control` skill check, and drift report deletion. | L1-L37 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
-| Gate 2 runs provider readiness through `context_packet` MCP tool only when the MCP server is configured and provider settings are enabled. | L17-L26 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
-| Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. | L40-L46 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
-| Post-gate planning and research routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L50-L54 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
-| Post-gate implementation updates or creates onboarding through `c-05-create-or-update-onboarding-files` skill when changed source files alter current-state knowledge. | L58-L73 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
-| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | L77-L81 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The start-of-task trust gate requires `c-08-ar-coordination-context-resolver` skill context resolution, a configured-provider check, `c-02-memory-quality-control` skill memory quality control, clean-source versus dirty-source drift classification, developer review of drift, approved `c-05-create-or-update-onboarding-files` skill refresh, a second `c-02-memory-quality-control` skill check, and drift report deletion. | `## Start-of-Task Onboarding Trust Gate` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:1-59 |
+| Gate 2 runs provider readiness through `context_packet` MCP tool only when the MCP server is configured and provider settings are enabled. | `include_providers` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:22-22 |
+| Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. | `### Cross-Repository Workflow` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:50-59 |
+| Post-gate planning and research routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | `## Post-Gate Planning and Research` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:60-67 |
+| Post-gate implementation updates or creates onboarding through `c-05-create-or-update-onboarding-files` skill when changed source files alter current-state knowledge. | `## Post-Gate Implementation` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:68-83 |
+| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | `## Code Quality Instructions` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:84-89 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this runtime template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 6 citation entries (12 findings); no Tier-3 findings.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to the installed system gate.

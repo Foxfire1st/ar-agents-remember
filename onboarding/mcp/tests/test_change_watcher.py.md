@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_change_watcher.py`             |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-08-01T16:25+02:00 |
-| lastVerifiedCommitHash |                                                `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate |                                                2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash |                                                `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ end-to-end pass (inotify → debounce → projection).
 `ProjectionInputRootsTests` prove an empty tree yields no roots, a fully-populated tree derives
 exactly the documented projection-input surfaces and nothing else (including the two-level
 `worktrees/*/*/provider-runtime` glob), and missing surfaces are skipped until they exist.
-`InputEventFilterTests` (L98-L139) prove genuine inputs pass while `*.tmp`, dotfiles, the
+cit:([`InputEventFilterTests`], mcp/tests/test_change_watcher.py:98-139) prove genuine inputs pass while `*.tmp`, dotfiles, the
 projection's own `latest-state/metrics.json` outputs, every control-plane lockfile, and the
 remaining `workspace/` non-input churn (event river, cursor/lock, supervisor heartbeat) are dropped
 — and that a *lifecycle's* `events.jsonl` is NOT confused with the workspace river (the parent-dir
@@ -92,26 +92,28 @@ the projector.
 No external documentation governs these repo-local pacing regressions; `system/sources.md` has no
 Domain Documentation entries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant documentation found after checking live sources; no Domain Documentation entries are configured. | N/A | N/A |
+
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Root derivation, event filter, domain mapping, pure pacer deadline, adaptive projector, and real-backend suites. | L48-L95; L98-L139; L142-L170; L173-L221; L252-L441; L444-L485 | [mcp/tests/test_change_watcher.py](agents-remember/mcp/tests/test_change_watcher.py) |
-| The module under test: the derived roots, the event filter and the lockfile suffix it now derives from `lock_path_for` instead of naming, the pure `ChangePacer`, and the live `ProjectionInputWatcher`. | `_DURABLE_LOG_LOCK_SUFFIX` L142-L156; `projection_input_roots` L159-L184; `is_projection_input_event` L187-L205; `ChangePacer` L283-L376; `ProjectionInputWatcher` L379-L487 | [mcp/src/agents_remember/serving/change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| The projector integration under test: pacer wiring, watch-task lifecycle, `_on_watch_task_done` fail-open, and the `projection_count`/`last_wake_reason` instrumentation. | `ProjectionRefreshers` L107-L118; `NO_PROJECTION_REFRESHERS` L123; `Projector.__init__` L129-L173; `run` L193-L236; `_on_watch_task_done` L238-L249 | [mcp/src/agents_remember/serving/projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| The naming function the exclusion is derived from, and the six logs whose lockfiles it therefore covers wherever they live. | `lock_path_for`; `exclusive_access` | [mcp/src/agents_remember/controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| Root derivation and event filtering are covered by focused tests. | `ProjectionInputRootsTests`; `InputEventFilterTests` | mcp/tests/test_change_watcher.py:48-95; mcp/tests/test_change_watcher.py:98-139 |
+| Domain mapping and the pure pacer deadline are covered separately. | `ProjectionDomainMappingTests`; `ChangePacerDeadlineTests` | mcp/tests/test_change_watcher.py:142-170; mcp/tests/test_change_watcher.py:173-221 |
+| Adaptive projection and real watchfiles integration are covered separately. | `AdaptiveProjectorTests`; `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:252-441; mcp/tests/test_change_watcher.py:444-485 |
+| The module derives roots and filters lockfiles/events through named helpers and exposes the pacer and watcher. | `_DURABLE_LOG_LOCK_SUFFIX`; `projection_input_roots`; `is_projection_input_event`; `ChangePacer`; `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:159-184; mcp/src/agents_remember/serving/change_watcher.py:187-205; mcp/src/agents_remember/serving/change_watcher.py:283-376; mcp/src/agents_remember/serving/change_watcher.py:379-487 |
+| The projector owns pacer wiring, watch-task lifecycle, fail-open completion, and wake instrumentation. | `ProjectionRefreshers`; `NO_PROJECTION_REFRESHERS`; `run`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:107-118; mcp/src/agents_remember/serving/projector.py:123-123; mcp/src/agents_remember/serving/projector.py:193-236; mcp/src/agents_remember/serving/projector.py:238-249 |
+| The lock exclusion is derived from the durable-store naming function and held by the access context. | `lock_path_for`; `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:291-298; mcp/src/agents_remember/controlplane/durable_store.py:348-394 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Same-repository tests only. | N/A | N/A |
+
 
 ## 260727-CHATS-IM-L2 Current Delta
 
@@ -120,6 +122,8 @@ fallback for an unknown accepted path, and the exact task-domain wake through bo
 worker and real watchfiles integration.
 
 ## Update History
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split watcher, projector, test, and lock claims by source owner and generated final citation ranges with the scoped fixer.
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 1 repository-reference citation (1/1 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T16:25+02:00 — 260731-EFA-L5 curator: `InputEventFilterTests`' lockfile assertion moved
   from `operator-inbox.lock` to `operator-inbox.jsonl.lock` and gained a second case *outside*

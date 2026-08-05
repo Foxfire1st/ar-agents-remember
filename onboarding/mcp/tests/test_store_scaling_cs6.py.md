@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_store_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated            | 2026-07-10T01:14+02:00                    |
-| lastVerifiedCommitHash |                                           `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                           2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                           `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                           2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                          |
 
 ## Governing Overview
@@ -48,27 +48,31 @@ Extend this suite when HFX2-L13 lands live river compaction, task-doc broadcast 
 
 No external documentation governs these repo-local store scaling regressions.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources; no Domain Documentation entries are configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Store scaling tests cover signal compaction/snapshot reads, metrics tail reads, expectation snapshot reads, heartbeat/lifecycle reclamation, expectation and metrics compaction, provider degradation compaction, tolerant readers, terminal catalog batch/compact, and workspace-river compaction. | L76-L162; L163-L215; L216-L250; L288-L383; L384-L464; L465-L482; L251-L287 with L483-L525; L526-L650; L651-L749 | [mcp/tests/test_store_scaling_cs6.py](agents-remember/mcp/tests/test_store_scaling_cs6.py) |
-| The shared CS-6 assertion helpers provide subquadratic, bounded-file-size, and bounded-count assertions used by this suite. | L62-L155 | [mcp/tests/_scaling.py](agents-remember/mcp/tests/_scaling.py) |
-| The startup workspace-river compactor documents why live cursor-safe compaction is out of scope for this leaf. | L111-L162 | [mcp/src/agents_remember/observer/event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
+| Store scaling tests cover signal compaction/snapshot reads, metrics tail reads, expectation snapshot reads, heartbeat/lifecycle reclamation, expectation and metrics compaction, provider degradation compaction, tolerant readers, terminal catalog batch/compact, and workspace-river compaction. | `SupervisorSignalStoreScalingTests` | mcp/tests/test_store_scaling_cs6.py:92-160 |
+| The shared CS-6 assertion helpers provide subquadratic, bounded-file-size, and bounded-count assertions used by this suite. | "def assert_subquadratic" | mcp/tests/_scaling.py:88-88 |
+| The startup workspace-river compactor documents why live cursor-safe compaction is out of scope for this leaf. | `compact_workspace_river` | mcp/src/agents_remember/observer/event_retention.py:110-152 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository tests only. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the `n/a` table rows and
+  the history `_scaling.py`/`compact_workspace_river` citations with exact anchors and
+  fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the store entry points this suite
   drives moved their loose keywords into parameter objects
@@ -80,7 +84,7 @@ No meaningful cross-repo references found.
   L163-L215, expectation snapshot L216-L250, heartbeat/reclamation L288-L383, expectation and
   metrics compaction L384-L464, degradation compaction L465-L482, tolerant readers L251-L287 with
   L483-L525, terminal catalog L526-L650, river compaction L651-L749), plus the moved `_scaling.py`
-  helpers (L62-L155) and `compact_workspace_river` (L111-L162). No test case was added, removed,
+  helpers cit:(["def assert_subquadratic"], mcp/tests/_scaling.py:88-88) and `compact_workspace_river` cit:([`compact_workspace_river`], mcp/src/agents_remember/observer/event_retention.py:110-152). No test case was added, removed,
   or renamed and every bounded-count, bounded-size, and two-size assertion is unchanged.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7/B1: added two-size heartbeat coalescing,

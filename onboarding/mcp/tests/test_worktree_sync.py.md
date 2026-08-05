@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:56+02:00                     |
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../overview.md`                              |
@@ -34,18 +34,25 @@ base only; `merge-memory` merges disjoint memory and advances both.
 ### Invariants And Boundaries
 
 Real git subprocess fixtures; exercises `sync_result` via `WorktreeArgs`
-directly (the controller/payload layers are covered by the conformance suite's
+directly (the application/payload layers are covered by the conformance suite's
 representative `worktree_sync` payload).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The sync module under test. | [sync.py](agents-remember/mcp/src/agents_remember/worktrees/modules/sync.py) |
-| Contract `sync_log` round-trip relies on the contract serializer. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The sync module under test. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:36-119 |
+| Contract `sync_log` round-trip relies on the contract serializer. | `sync_log` | mcp/src/agents_remember/worktrees/worktree_contract.py:281-281 |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: rebased the `sync_log` range; exact
+  non-fixing check returns zero findings.
+
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 2 initial citation findings (1 anchor, 0 prose, 1 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
   No content impact: `SyncFixture` now builds its contract through
   `default_contract(ContractTask(...), leaf=LeafIdentity(...), code=RepoBranchPlan(...),

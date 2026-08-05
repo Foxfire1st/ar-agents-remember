@@ -39,11 +39,13 @@ masks `PASSWORD=...` values in any string.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Compact builders that pair with the reports. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py); [providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py) |
-| Budget/prune/redaction tests. | [test_tool_response_budgets.py](agents-remember/mcp/tests/test_tool_response_budgets.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Compact builders that pair with the reports. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_watchers_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/providers.py:55-70; mcp/src/agents_remember/mcp/tools/providers.py:90-100 |
+| Budget/prune/redaction tests. | `ToolReportFileTests`; `CompactPayloadBudgetTests` | mcp/tests/test_tool_response_budgets.py:60-108; mcp/tests/test_tool_response_budgets.py:111-263 |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 5 citation findings for compact response builders and their budget/redaction tests.
 
 - 2026-06-10T05:30+02:00: Created for the S4 response token budgets (2.5.1).

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T20:50+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -53,16 +53,25 @@ task doc id when the task tree proves the mapping.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The module under test. | [reopen.py](agents-remember/mcp/src/agents_remember/tasks/reopen.py) |
-| The lookup/restamp helpers under test. | [leaf_doc.py](agents-remember/mcp/src/agents_remember/tasks/leaf_doc.py) |
-| The recreate-fresh + restamp start path under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
-| Contract load/write normalization for legacy leaf ids. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The abandon-side ambient end helper under test. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:58-136 |
+| The lookup helper under test. | `find_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70 |
+| The lifecycle restamp helper under test. | `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
+| The recreate-fresh + restamp start path under test. | `start_result`, `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/worktrees/modules/start.py:456-467; mcp/src/agents_remember/worktrees/modules/start.py:579-584 |
+| Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:438-471 |
+| The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:558-581 |
+| The abandon-side ambient end helper under test. | `_end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:401-407 |
 
 ## Update History
 
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: split reopen lookup/restamp and legacy
+  load/write normalization claims, with generated ranges delegated to the scoped fixer.
+
+- 2026-08-03T03:59:59+02:00 — Curated 10 citation findings (5 table rows, 5 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
   leaf diff. Only fixture construction changed: the three `default_contract(...)` fixtures
   (`_completed_leaf_contract` and both `StartAfterReopenTests` cases) now pass

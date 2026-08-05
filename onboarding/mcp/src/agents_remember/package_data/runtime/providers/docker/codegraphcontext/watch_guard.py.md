@@ -56,32 +56,36 @@ it `os.execvp`s `cgc` with the original arguments.
 No external domain documentation is configured for this repository; the
 resolved `system/sources.md` currently contains no entries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation source is configured for this file. | L1-L3 | [system/sources.md](../../../../../../../../../../../../../system/sources.md) |
+| No relevant external documentation source is configured for this file. | `# Sources` | system/sources.md:1-3 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The guard waits for a genuine PONG, clears poisoned graph keys below the threshold, and execs cgc with the original arguments. | L41-L106 | [watch_guard.py](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py) |
-| The CGC Dockerfile copies the guard to `/usr/local/bin/cgc-watch-guard.py` during runner image build. | L13-L16 | [Dockerfile](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile) |
-| The watcher Compose template sets the guard as the watcher service entrypoint. | L14-L22 | [codegraphcontext.watcher.yaml.tmpl](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/compose/codegraphcontext.watcher.yaml.tmpl) |
+| The guard waits for a genuine PONG, clears poisoned graph keys below the threshold, and execs cgc with the original arguments. | `clear_poisoned_graph` | mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py:72-85 |
+| The CGC Dockerfile copies the guard to `/usr/local/bin/cgc-watch-guard.py` during runner image build. | "/usr/local/bin/cgc-watch-guard.py" | mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile:16-16 |
+| The watcher Compose template sets the guard as the watcher service entrypoint. | "cgc-watch-guard.py" | mcp/src/agents_remember/package_data/runtime/providers/compose/codegraphcontext.watcher.yaml.tmpl:25-25 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary is required; the guard only talks to the managed FalkorDB backend inside the Compose network. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the four `n/a`-anchor
+  table citations (guard, Dockerfile, watcher template, `system/sources.md`) with exact anchors
+  and fixer-generated ranges; exact non-fixing check returns zero findings.
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 line citation that ran past the end of
   `watch_guard.py` (cited L1-L115; the file is 110 lines). Narrowed it to L41-L106, the exact span
-  the claim describes: `wait_for_ready` (L41-L53), `indexed_file_count` (L56-L69),
-  `clear_poisoned_graph` (L72-L85), and `main` ending at the `os.execvp("cgc", ...)` call on L106.
+  the claim describes: cit:([`wait_for_ready`], mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py:41-53), cit:([`indexed_file_count`], mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py:56-69),
+  cit:([`clear_poisoned_graph`], mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py:72-85), and `main` ending at the `os.execvp("cgc", ...)` call on L106.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py`

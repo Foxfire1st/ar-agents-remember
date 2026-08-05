@@ -45,12 +45,14 @@ enumerated, and that the report file retains all records round-trip.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The report helper under test. | [tool_reports.py](agents-remember/mcp/src/agents_remember/mcp/tool_reports.py) |
-| The compact builders under test. | [core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py); [providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py); [memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The report helper under test. | `write_tool_report` | mcp/src/agents_remember/mcp/tool_reports.py:30-50 |
+| The compact builders under test. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_carryover_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/memory.py:139-160; mcp/src/agents_remember/mcp/tools/providers.py:55-70 |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 2 citation rows covering 4 source references and preserved verification metadata.
 
 - 2026-06-10T09:00+02:00 — Added carryover plan/apply budget cases for 2.5.2 (GitHub #52): fat 100-candidate plan, duplicate-array apply, inline cap with overflow marker, and report round-trip retention.
 - 2026-06-10T05:30+02:00: Created with the S4 response token budgets (2.5.1).

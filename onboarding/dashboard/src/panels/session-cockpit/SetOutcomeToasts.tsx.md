@@ -44,29 +44,30 @@ None recorded; shared chip derivation caveats are recorded in `setChips.ts.md`.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Background filtering, collapse, focus, and acknowledgment UI. | L58-L142 | [SetOutcomeToasts.tsx](SetOutcomeToasts.tsx) |
-| Persistence and collapse regression cases. | L33-L74 | [SetOutcomeToasts.test.tsx](SetOutcomeToasts.test.tsx) |
-| Shared attention and chip derivation. | L1-L232 | [../../data/setChips.ts](../../data/setChips.ts) |
-| Explicit acknowledgment driver. | L326-L336 | [../../data/setClient.ts](../../data/setClient.ts) |
+| Background filtering, collapse, focus, and acknowledgment UI. | `SetOutcomeToasts` | dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx:58-142 |
+| Persistence and collapse regression cases. | "persists until explicitly marked seen; view alone only focuses the seat", "SEVERAL sessions with outcomes collapse into ONE stack (§9.8 toast discipline)" | dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx:46-63; dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx:65-75 |
+| Shared attention and chip derivation. | `deriveSetChips` | dashboard/src/data/setChips.ts:58-216 |
+| Explicit acknowledgment driver. | `acknowledgeSetAttention` | dashboard/src/data/setClient.ts:338-343 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
 
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 4 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 aligned the visible action with the authoritative
   `mark seen` wording; focus/view remains non-acknowledging. Verification metadata remains pinned
   to the leaf base until closeout.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -106,27 +106,27 @@ precisely because the codex consumer correlates on it first; a status-only envel
 unmatchable and re-stall.
 
 The native-method carry is additive metadata on the same evidence frame.
-`AR_EVIDENCE_METHOD_KEY` (`"arEvidenceMethod"`, L66) is a second reserved `AdapterEvent.raw` key,
+`AR_EVIDENCE_METHOD_KEY` (`"arEvidenceMethod"`) is a second reserved `AdapterEvent.raw` key,
 disjoint from `AR_EVIDENCE_KEY`: a mapper that already knows its native notification method sets it
-beside the `arEvidence` payload. `EvidenceFrame.native_method` (L463-L467) carries it verbatim so a
+beside the `arEvidence` payload. `EvidenceFrame.native_method` carries it verbatim so a
 projector switches on the real method rather than re-guessing meaning from params shape, and
-`evidence_frame_json` writes the `nativeMethod` wire key only when the field is non-None
-(L620-L621). The field defaults None, so every evidence frame, page, and serialization stays
+`evidence_frame_json` writes the `nativeMethod` wire key only when the field is non-None.
+The field defaults None, so every evidence frame, page, and serialization stays
 byte-identical when no method is carried; the bridge, not this module, strips the reserved raw key.
 
 The multiplexing grammar is additive in the same posture. `AdapterSnapshot.
-pending_interactions` (L226-L234) is a tuple of `PendingInteraction` for approvals raised on
+pending_interactions` is a tuple of `PendingInteraction` for approvals raised on
 non-parent (sub-agent) threads — codex sub-agent threads raise their own server→client requests on
 the seat's one connection; each entry carries its thread identity in `raw['threadId']` plus the
 agent-label evidence the adapter could bind. The singular `pending_interaction` stays the
 parent-thread slot for back-compat, and `snapshot_json` adds the plural `pendingInteractions` wire
-key beside the untouched singular one (L603-L607), so consumers that predate multiplexing see
-exactly the parent entry they always saw. `EvidenceFrame.thread_id` (L471-L477) is the demux key:
+key beside the untouched singular one, so consumers that predate multiplexing see
+exactly the parent entry they always saw. `EvidenceFrame.thread_id` is the demux key:
 codex auto-attaches sub-agent thread listeners to the seat's connection, so one evidence stream
 carries many threads and `None` means the parent/session thread (matching pre-multiplexing behavior); Claude
 encodes its sidechain join key (`parent_tool_use_id`) inside `raw` instead.
-`evidence_frame_json` (L613-L624) serializes `thread_id` as the optional `threadId` wire key only
-when it is non-None (L622-L623) — the multiplexed demux key finally crosses the evidence IPC wire;
+`evidence_frame_json` serializes `thread_id` as the optional `threadId` wire key only
+when it is non-None — the multiplexed demux key finally crosses the evidence IPC wire;
 parent frames carry no key, so the pre-multiplex wire shape stays byte-identical. (The recorded
 root cause of the earlier in-process-only gap: a dashboard-side projector received every evidence
 frame as thread-less and bound all agent content to the parent conversation.)
@@ -206,7 +206,7 @@ None known for the public serialization boundary.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -217,25 +217,29 @@ evidence DTOs are consumed by the bridge buffer, the three additive IPC actions,
 validated client reads. The plural pendings are filled by the codex adapter's
 per-thread demux and serialized end-to-end through `snapshot_json` into the control plane.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The daemon submit and reconcile routes select the public raw-free serializers (`public_receipt_json`, `public_reconciliation_json`). | L304-L339 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| Private IPC still serializes full receipts and reconciliation evidence for exact-session peers. | L180-L227 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| Public route tests seed sensitive-looking raw mappings and prove they do not cross the boundary. | L192-L227; L482-L506 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| The bridge diverts `arEvidence` payloads into its bounded deque, stamps the epoch on every evidence page, and extracts `threadId` into `EvidenceFrame.thread_id`. | L204-L288; L495-L610 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The three additive IPC actions serialize these evidence/provenance DTOs onto the private socket. | L212-L218; L380-L410 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| Contract tests pin the evidence round-trips, bounds, no-leak guarantee, continuation, and provenance matrix over these DTOs. | L268-L1460 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
-| The codex adapter fills the multiplexing grammar: `_sync_pending_snapshot` rebuilds `pending_interactions` with per-thread `threadId`/`agentLabel` evidence and keeps the singular slot the parent's. | L955-L981 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| The L2E control-plane DTOs and serializers: channel constants, `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, and the typed spool reader. | L113-L122; L255-L263; L385-L443; L1046-L1064 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The interrupt/operation-timeline IPC actions and the submit-asset admission serialize these DTOs over the same private socket. | L220-L225; L275-L325; L458-L500 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The authority pages the retained ledger into `OperationTimeline`, captures the pre-tombstone recovery, and extends the idempotence digest over canonical asset identity only when assets ride. | L491-L531; L538-L590; L1130-L1151 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| Contract tests pin the interrupt/timeline/asset/recovery round-trips, bounds, and validation battery over these DTOs. | L252-L1575 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
+| The daemon submit route selects the public raw-free receipt serializer. | `api_terminal_submit`; "public_receipt_json(" | mcp/src/agents_remember/serving/harness_control_api.py:370-403 |
+| The daemon reconcile route selects the public raw-free reconciliation serializer. | `api_terminal_reconcile`; "public_reconciliation_json(" | mcp/src/agents_remember/serving/harness_control_api.py:405-423 |
+| Private IPC still serializes full receipt evidence for exact-session peers. | `_submit` | mcp/src/agents_remember/serving/harness_control_ipc.py:229-248 |
+| Private IPC still serializes full reconciliation evidence for exact-session peers. | `_reconcile` | mcp/src/agents_remember/serving/harness_control_ipc.py:221-227 |
+| Public route tests seed sensitive-looking raw mappings and prove they do not cross the boundary. | `test_submit_preserves_whole_message_request_and_vendor_correlation`; `test_reconcile_keeps_the_same_request_correlation` | mcp/tests/test_serving_harness_control_api.py:192-227; mcp/tests/test_serving_harness_control_api.py:482-506 |
+| The bridge diverts `arEvidence` payloads into its bounded deque and stamps typed thread identity onto each frame. | `_divert_evidence`; `_evidence_thread_id`; `_append_evidence` | mcp/src/agents_remember/serving/harness_control_bridge.py:468-489; mcp/src/agents_remember/serving/harness_control_bridge.py:505-528; mcp/src/agents_remember/serving/harness_control_bridge.py:491-503 |
+| The three additive IPC actions serialize these evidence/provenance DTOs onto the private socket. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
+| The evidence contract tests cover reserved-key privacy, epoch/paging, thread-id wire round-trip, provenance bounds, and fail-closed native-page continuation. | `test_reserved_key_round_trip_and_no_leak`; `test_evidence_action_round_trip_with_epoch_and_paging`; `test_evidence_thread_id_round_trips_over_ipc`; `test_submission_provenance_all_sources_epoch_and_bounds`; `test_native_page_continuation_no_overlap_no_gap_and_fail_closed_cursor` | mcp/tests/test_harness_control_evidence.py:370-418; mcp/tests/test_harness_control_evidence.py:645-677; mcp/tests/test_harness_control_evidence.py:679-705; mcp/tests/test_harness_control_evidence.py:816-897; mcp/tests/test_harness_control_evidence.py:1084-1130 |
+| The codex adapter's `_sync_pending_snapshot` preserves the parent pending interaction and adds raw `threadId` plus `agentLabel` for non-parent entries. | `_sync_pending_snapshot` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:910-922 |
+| The L2E control-plane models define interrupt/timeline/asset/recovery DTOs and their serializers, the timeline wire-byte measurer, and `read_asset_bytes`. | `InterruptResult`; `OperationTimeline`; `OperationTimelineItem`; `AssetReference`; `WithdrawalRecovery`; `interrupt_result_json`; `operation_timeline_json`; `operation_timeline_item_wire_bytes`; `asset_reference_json`; `withdrawal_result_json`; `read_asset_bytes` | mcp/src/agents_remember/serving/harness_control_models.py:254-262; mcp/src/agents_remember/serving/harness_control_models.py:384-389; mcp/src/agents_remember/serving/harness_control_models.py:402-411; mcp/src/agents_remember/serving/harness_control_models.py:414-427; mcp/src/agents_remember/serving/harness_control_models.py:430-438; mcp/src/agents_remember/serving/harness_control_models.py:994-1005; mcp/src/agents_remember/serving/harness_control_models.py:1008-1016; mcp/src/agents_remember/serving/harness_control_models.py:1026-1034; mcp/src/agents_remember/serving/harness_control_models.py:1052-1059; mcp/src/agents_remember/serving/harness_control_models.py:1062-1063; mcp/src/agents_remember/serving/harness_control_models.py:1066-1073 |
+| The interrupt and operation-timeline IPC actions serialize these DTOs over the same private socket. | `_interrupt`; `_operation_timeline` | mcp/src/agents_remember/serving/harness_control_ipc.py:306-313; mcp/src/agents_remember/serving/harness_control_ipc.py:315-326 |
+| The submit-asset admission validates staged-asset claims before dispatch. | `_submit_asset_schema` | mcp/src/agents_remember/serving/harness_control_ipc.py:485-506 |
+| The authority captures the pre-tombstone recovery on withdraw and extends the idempotence digest over canonical asset identity only when assets ride. | `withdraw`; `_payload_digest` | mcp/src/agents_remember/serving/harness_submission_authority.py:452-498; mcp/src/agents_remember/serving/harness_submission_authority.py:987-1008 |
+| Paging the retained ledger into `OperationTimeline` moved OUT of the authority in 260731-EFA-L6: `OperationRecord` and `SubmissionLedger` now live in their own module, and the never-bodies paging is `SubmissionLedger.operation_timeline`. | `OperationRecord`; `SubmissionLedger`; `operation_timeline` | mcp/src/agents_remember/serving/harness_submission_ledger.py:57-252; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
+| Contract tests pin the interrupt/timeline/asset/recovery round-trips, bounds, and validation battery over these DTOs. | `InterruptBridgeTests`; `OperationTimelineTests`; `AssetNativeConstructionTests` | mcp/tests/test_harness_control_plane.py:291-378; mcp/tests/test_harness_control_plane.py:966-1194; mcp/tests/test_harness_control_plane.py:1483-1643 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by these local protocol models.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -270,40 +274,25 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: restored route-handler/serializer ownership, expanded the evidence-contract test matrix, split pending-interaction producers, and widened the L2E DTO/serializer coverage; the scoped fixer will generate citation ranges.
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The daemon
-  route row is now L304-L339 of `harness_control_api.py` — the routes were regrouped into
-  `_register_submission_routes`, and `api_terminal_submit` (L304-L323) / `api_terminal_reconcile`
-  (L325-L339) still wrap their calls in `public_receipt_json` / `public_reconciliation_json`; named
-  both serializers in the claim. The no-leak test row was one range starting mid-file; the two
-  tests that actually seed a sensitive `raw` mapping and assert it never crosses are
-  `test_submit_preserves_whole_message_request_and_vendor_correlation` (L192-L227, seeding
-  `VENDOR_AUTH_TOKEN`) and `test_reconcile_keeps_the_same_request_correlation` (L482-L506, seeding
-  `vendorThread`/`auth.account`), so the citation is now `L192-L227; L482-L506`. Read all four
-  ranges back.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: recorded that `_register_submission_routes` delegates submission writes to `_register_submission_write_routes`; the public submit and reconcile serializers and the two raw-free route tests remain the source owners.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `_TOP_LEVEL_IDENTITY_KEYS` and the `_bounded_identity_scalars` / `_nested_identity_scalars` split.
 - 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence-wire demux fix —
   `evidence_frame_json` now emits the optional `threadId` key when `EvidenceFrame.thread_id` is
-  set (L622-L623), so the multiplexed demux key crosses the evidence IPC wire; parent frames carry
+  set, so the multiplexed demux key crosses the evidence IPC wire; parent frames carry
   no key and the pre-multiplex wire stays byte-identical. Recorded the root cause (a dashboard-side
   projector received every frame thread-less and bound all agent content to the parent) and
   corrected the two body statements that claimed the key was deliberately unserialized.
   Verification metadata stays pinned — the change is uncommitted.
-- 2026-07-26T15:36 — 260718-CHATS-L7 curator: documented the multiplexed sub-agent grammar —
-  `AdapterSnapshot.pending_interactions` (L226-L234) serialized as the additive
-  `pendingInteractions` key in `snapshot_json` (L603-L607) with the singular slot kept as the
-  parent-thread entry, and `EvidenceFrame.thread_id` (L471-L477) as the demux key (`None` = parent;
-  Claude keeps its join key in `raw`) that `evidence_frame_json` deliberately does not serialize as
-  its own wire key. Fixed the stale R1 citations (`native_method` L416-L420 → L463-L467;
-  `nativeMethod` L547-L548 → L620-L621) and refreshed the bridge/authority/api/IPC citation ranges
-  against the current sources. Verification metadata stays pinned: the L7 change is uncommitted, so
-  no commit hash can attest it.
+- 2026-07-26T15:36+02:00 — 260718-CHATS-L7 curator: the earlier pre-fix note is historical only; at that point `evidence_frame_json` did not serialize the demux key, while the later correction and current source emit optional `threadId` when `EvidenceFrame.thread_id` is present.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the additive native-method
-  carry: reserved key `AR_EVIDENCE_METHOD_KEY` (`"arEvidenceMethod"`, L66), the optional
-  `EvidenceFrame.native_method` field (L416-L420), and `evidence_frame_json`'s `nativeMethod`
-  serialization when present (L547-L548), with the additive/optional invariant. Verification
+  carry: reserved key `AR_EVIDENCE_METHOD_KEY` (`"arEvidenceMethod"`), the optional
+  `EvidenceFrame.native_method` field, and `evidence_frame_json`'s `nativeMethod`
+  serialization when present, with the additive/optional invariant. Verification
   metadata stays pinned to the last committed source until closeout stamps the candidate commit.
 - 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: documented the clip-envelope terminal-identity
   preservation — `clip_evidence_payload` now re-carries `type`/`message.stopReason`/`turn.id`/

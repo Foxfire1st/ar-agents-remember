@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,16 +50,18 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Codex roster items consumed here. | [codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) |
-| Adapter registry authority. | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Codex roster items consumed here. | `_collab_roster_upserts` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:888-923 |
+| Adapter registry authority. | `_publish_agent_registry` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:1075-1083 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 4 citation findings (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py` since the L2

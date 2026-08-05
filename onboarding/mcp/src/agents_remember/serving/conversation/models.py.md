@@ -47,7 +47,7 @@ on purpose. `active/api._dump` and `control/api._dump` both use
 deliberately does **not** exclude nulls — "null is meaningful on this wire (nextCursor /
 olderCursor / identity absence is contract-significant)". Fields reached only by the library
 serializer, such as `ConversationLibraryPage.next_cursor` and
-`HistoricalConversationPage.older_cursor` (L825), are therefore correct as required-and-nullable
+`HistoricalConversationPage.older_cursor` cit:(["class HistoricalConversationPage"], mcp/src/agents_remember/serving/conversation/models.py:822-822), are therefore correct as required-and-nullable
 and were deliberately left alone. The six above are the ones the exclude-none serializers reach.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current
@@ -61,22 +61,22 @@ closeout.
   library-key, private native-resume, and SHA-256 operation identities non-interchangeable.
 - Conversation items carry stable ids, monotonic revisions/global ordinals, typed content blocks,
   explicit lane/source/producer provenance, and unknown-vendor/input evidence.
-- Harness sub-agent grammar: `ConversationAgentRef` (L316-L334) labels
+- Harness sub-agent grammar: cit:([`ConversationAgentRef`], mcp/src/agents_remember/serving/conversation/models.py:316-334) labels
   the sub-agent one timeline item belongs to via the additive optional `ConversationItem.agent`
   field (L371); absent means the parent conversation. Identity is evidence-bound — codex
   `agentThreadId` (plus `agentPath`/`nickname`/`role` once collab evidence binds them), claude
   `agentId`/`subagent_type` joined through the spawning tool call (`join_key` =
-  `parent_tool_use_id`) — and `status` (`ConversationAgentStatus`, L311-L313) tracks the agent's
+  `parent_tool_use_id`) — and `status` cit:([`ConversationAgentStatus`], mcp/src/agents_remember/serving/conversation/models.py:311-313) tracks the agent's
   own lifecycle, not the item's phase.
-- Library sub-agent grouping: `ConversationLibraryAgentRow` (L775-L794) is one
+- Library sub-agent grouping: cit:([`ConversationLibraryAgentRow`], mcp/src/agents_remember/serving/conversation/models.py:775-794) is one
   sub-agent conversation grouped under its parent row's `agents` tuple (L804); it opens through
   its own `conversation_key` exactly like a top-level row. `ConversationLibraryPage.agents_note`
-  (L817-L819) carries capability honesty: the exact native reason sub-agent conversations are
+  cit:(["agents_note:"], mcp/src/agents_remember/serving/conversation/models.py:819-819) carries capability honesty: the exact native reason sub-agent conversations are
   (partially) unavailable on a page, never silently absent.
 - Status models fix the evidence-to-turn-state vocabulary and validate waiting and terminal
   cross-products; unknown evidence cannot establish ready.
 - Capability models require exact evidence products. `FeatureCapability` carries a documenting NOTE
-  (L685-L690) that there is deliberately
+  cit:(["class FeatureCapability"], mcp/src/agents_remember/serving/conversation/models.py:662-662) that there is deliberately
   NO `for_observed_runtime` version-demotion: the contract is the only gate, a capability is never
   demoted because an installed runtime/helper version drifts from a fixture's captured version, and
   the runtime/helper version survives on `CapabilityEvidence` as informational metadata only.
@@ -125,38 +125,45 @@ do not fragment the accepted wire vocabulary prematurely.
 No Domain Documentation source is configured. The repository-owned hostile contract matrix is the
 authoritative behavioral evidence for this internal grammar.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Hostile tests cover cursor purpose, provenance, status, capability, identity/rollback, recovery, attachment, metrics, and fixture products. | L208-L1176 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
-| Foundation tests prove the types participate in exactly two ports and that installed runtime fixtures are allowlisted evidence, never enablement. | L21-L28; L162-L176 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The two read protocols consume these normalized models without owning control behavior. | L8-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
-| The two serializers whose `exclude_none=True` made the six required-and-nullable fields unvalidatable, versus the library serializer that deliberately keeps nulls. | `_dump` | [active/api.py](active/api.py.md); [control/api.py](control/api.py.md); [library/api.py](library/api.py.md) |
-| The declarations that made these models the routes' stated contract, and the suite that drove the real bodies through them. | `CONTROL_RESPONSES`; `LIBRARY_RESPONSES` | [response_contract.py](response_contract.py.md); [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
+| Hostile tests cover cursor purpose, provenance, status, capability, identity/rollback, recovery, attachment, metrics, and fixture products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:228-252 |
+| Foundation tests prove the types participate in exactly two ports and that installed runtime fixtures are allowlisted evidence, never enablement. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement` | mcp/tests/test_conversation_foundation.py:163-188 |
+| The two read protocols consume these normalized models without owning control behavior. | "class ConversationLibraryPort" | mcp/src/agents_remember/serving/conversation/ports.py:59-59 |
+| The `active/api` serializer emits `exclude_none=True`, which drops the six required-and-nullable fields' nulls. | "page.model_dump" | mcp/src/agents_remember/serving/conversation/active/api.py:155-155 |
+| The `control/api` serializer emits `exclude_none=True`, which drops the six required-and-nullable fields' nulls. | "model.model_dump" | mcp/src/agents_remember/serving/conversation/control/api.py:145-145 |
+| The `library/api` serializer deliberately keeps nulls (`model_dump(mode="json", by_alias=True)` without `exclude_none`). | "value.model_dump" | mcp/src/agents_remember/serving/conversation/library/api.py:316-316 |
+| The declarations that made these models the routes' stated contract. | "class WireResponse" | mcp/src/agents_remember/serving/response_contract.py:88-88 |
+| The suite that drove the real bodies through them. | "class ServingRouteInventoryTests" | mcp/tests/test_serving_response_conformance.py:492-492 |
 
 ## Cross-Repo References
 
 No cross-repository implementation governs these contracts.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded
+  `(L…)` prose citations (Logic + retained history entries) and the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
+
 - 2026-08-01T09:02+02:00 — 260731-EFA-L4 curator: recorded the six fields that gained `= None`
-  defaults across four models — `StatusFreshness.last_evidence_at`/`age_ms` (L473-L474),
-  `ConversationTurnStatus.turn_id`/`state_since` (L505-L506),
-  `ConversationEventEnvelope.previous_cursor` (L641), `ConversationPageWindow.older_cursor`
-  (L760) — and why: declared required-and-nullable while `active/api._dump` and
+  defaults across four models — `StatusFreshness.last_evidence_at`/cit:([`age_ms`], mcp/src/agents_remember/serving/conversation/models.py:474-474),
+  `ConversationTurnStatus.turn_id`/cit:([`state_since`], mcp/src/agents_remember/serving/conversation/models.py:506-506),
+  `ConversationEventEnvelope.previous_cursor` cit:(["previous_cursor:"], mcp/src/agents_remember/serving/conversation/models.py:641-641), `ConversationPageWindow.older_cursor`
+  cit:(["class ConversationPageWindow"], mcp/src/agents_remember/serving/conversation/models.py:754-754) — and why: declared required-and-nullable while `active/api._dump` and
   `control/api._dump` emit with `exclude_none=True`, so the null was dropped and the model could
   not validate its own body. Recorded the deliberate asymmetry that scopes the fix —
-  `library/api._dump` keeps nulls, so `HistoricalConversationPage.older_cursor` (L825) and
+  `library/api._dump` keeps nulls, so `HistoricalConversationPage.older_cursor` cit:(["class HistoricalConversationPage"], mcp/src/agents_remember/serving/conversation/models.py:822-822) and
   `ConversationLibraryPage.next_cursor` are correct as-is — and added it as an invariant. No wire
   bytes moved; the absent key already meant this `None`. Re-derived the 4 in-file citations the
   leaf's 20 added comment lines shifted: the `FeatureCapability` NOTE L670-L675 → L685-L690,
@@ -177,17 +184,17 @@ No cross-repository implementation governs these contracts.
   grammar itself changed — only where to find it.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: the only non-format change here is a lint-suppression cleanup — the `# noqa: UP040` suppressions on the `ConversationContentBlock` / `ConversationMutation` / `WithdrawQueueResponse` / `ComposerSubmitBlock` type aliases and the `# noqa: UP046` on `MetricEvidence` were deleted, because `[tool.ruff] target-version` is now pinned to the supported floor `py311` and those PEP 695 upgrade rules no longer fire. The declarations themselves are byte-identical. Nothing else in the file changed, so no other claim in this sidecar can have been invalidated by this leaf. Attested, deliberately not rewritten.
 - 2026-07-26T15:34 — 260718-CHATS-L7: harness sub-agents became first-class wire participants.
-  Code added `ConversationAgentStatus` (L315-L317) and `ConversationAgentRef` (L320-L338) with
-  the additive `ConversationItem.agent` field (L375), `ConversationLibraryAgentRow` (L765-L784)
-  with `ConversationLibraryRow.agents` (L794), and `ConversationLibraryPage.agents_note`
-  (L807-L809). Sidecar: documented the evidence-bound, never-fabricated sub-agent identity
+  Code added `ConversationAgentStatus` cit:(["ConversationAgentStatus = Literal["], mcp/src/agents_remember/serving/conversation/models.py:311-311) and `ConversationAgentRef` cit:(["class ConversationAgentRef"], mcp/src/agents_remember/serving/conversation/models.py:316-316) with
+  the additive `ConversationItem.agent` field (L375), cit:([`ConversationLibraryAgentRow`], mcp/src/agents_remember/serving/conversation/models.py:775-794)
+  with `ConversationLibraryRow.agents` cit:(["class ConversationLibraryRow"], mcp/src/agents_remember/serving/conversation/models.py:797-797), and `ConversationLibraryPage.agents_note`
+  cit:(["agents_note:"], mcp/src/agents_remember/serving/conversation/models.py:819-819). Sidecar: documented the evidence-bound, never-fabricated sub-agent identity
   grammar and the capability-honesty `agents_note`; fixed the stale L5F NOTE citation
   (L653-L658 → L680-L685); corrected the foundation-test citation (L102-L137 pointed at the
   registration/lock tests, not fixture non-promotion → L162-L176) and the contracts range end
   (L1185 → L1182). Uncommitted; closeout re-stamps verification.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
   2026-07-21, R4). Corrected the now-false "demote mismatched runtime/helper versions" claim:
-  `FeatureCapability.for_observed_runtime` is removed; a documenting NOTE (L653-L658) records the
+  `FeatureCapability.for_observed_runtime` is removed; a documenting NOTE cit:(["class FeatureCapability"], mcp/src/agents_remember/serving/conversation/models.py:662-662) records the
   deliberate absence and the contract-only gate; the runtime/helper version is informational
   `CapabilityEvidence` metadata only. Uncommitted; closeout re-stamps verification.
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the contract sidecar after same-reviewer

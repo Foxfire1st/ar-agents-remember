@@ -26,8 +26,9 @@ plural-pending case: a seat blocked SOLELY on a multiplexed sub-agent approval.
 
 The suite checks every SetResult/promotion/state string, verifies sequence increments for repeated
 text, exhausts the pure state-entry detector's seed/steady/transition cases, and drives the wired
-watcher through the live session store. The N1 case (L119-L141) pins both halves of the
-agent-only-blocked coordination: UNFOCUSED, the region speaks with the seat-level wording
+watcher through the live session store. The N1 case
+cit:([`controlPendingInteractions`], dashboard/src/data/announcer.test.ts:121-133) pins the fixture for both halves of the
+agent-only-blocked coordination — cit:(["Unfocused: the region speaks with the seat-level wording", "Focused: the InteractionBar announces the agent bar itself; the region stays silent."], dashboard/src/data/announcer.test.ts:134-140): UNFOCUSED, the region speaks with the seat-level wording
 (`sessionAwaitingInputAnnouncement`) and never claims the question is the parent's; FOCUSED, the
 InteractionBar announces the agent bar itself and the region stays silent — the fixture builds the
 plural-only row with the adapter-bound `raw: { threadId, agentLabel }`.
@@ -49,23 +50,23 @@ Add a staggered turn-state/interaction-payload regression if sev-4 observation 9
 
 No Domain Documentation source is configured; no external citation applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Announcement implementation under test. | L1-L112 | [announcer.ts](announcer.ts) |
-| One source for every asserted string. | L1-L127 | [setControlsCopy.ts](setControlsCopy.ts) |
-| The catalog-row fixture builder the seat helper spreads (plural pending flows through `...overrides`). | L10-L26 | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
+| Announcement implementation under test. | `stateEntryAnnouncements` | dashboard/src/data/announcer.ts:52-78 |
+| One source for every asserted string. | `setResultAnnouncement`, `promotionAnnouncement`, `sessionFailedAnnouncement`, `sessionAwaitingInputAnnouncement` | dashboard/src/data/setControlsCopy.ts:83-101; dashboard/src/data/setControlsCopy.ts:103-105; dashboard/src/data/setControlsCopy.ts:121-123; dashboard/src/data/setControlsCopy.ts:125-127 |
+| The catalog-row fixture builder the seat helper spreads (plural pending flows through `...overrides`). | `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -78,6 +79,7 @@ leaf base; closeout owns commit stamping.
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 7 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=1, citation_source_malformed=3); amended max-reviewer subject binding for both N1 branches; final scoped citation check clean.
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the N1 agent-only-blocked pin — a seat
   whose plural `controlPendingInteractions` carries a sub-agent permission (singular slot absent)
   announces seat-level "awaiting input" when unfocused and stays silent when focused (the

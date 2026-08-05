@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_watcher_actions.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T16:30+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -67,28 +67,30 @@ stopping is always legal.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `provider_watchers_tool` enforces the action naming guard and the launch-authority gate. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
-| The `require_provider_launch_authority` gate whose refusal these tests observe. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The broader containment suite (authority reload, worktree veto, benchmark filter, lock, metrics). | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `provider_watchers_tool` enforces the action naming guard and the launch-authority gate. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
+| The `require_provider_launch_authority` gate whose refusal these tests observe. | `require_provider_launch_authority` | mcp/src/agents_remember/mcp/config.py:202-221 |
+| The broader containment suite covers authority reload, worktree veto, benchmark filtering, setup locking, and metrics. | `ReloadProviderAuthorityTests`; `WorktreeStartVetoTests`; `BenchmarkProviderFilterTests`; `FleetSetupLockTests`; `MetricsTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:124-177; mcp/tests/test_provider_containment.py:209-273; mcp/tests/test_provider_containment.py:276-315; mcp/tests/test_provider_containment.py:318-450 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound containment coverage to its five exact test classes and removed source-clear placeholders.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): the
   dispatch-with-empty-steps expectation for `invalidate-indexes` is replaced by
   `test_invalidate_indexes_refused_when_disabled_on_disk` (`ConfigError` naming containment R1)

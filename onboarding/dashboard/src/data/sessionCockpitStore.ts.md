@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -33,13 +33,13 @@ projections of server lifecycle truth plus local CAS state; they are not a secon
 
 ### Logic
 
-- **FEUI-L4 live-control slice** (L45-L107): `liveSnapshot` carries a typed
+- **FEUI-L4 live-control slice**: cit:([`liveSnapshot`], dashboard/src/data/sessionCockpitStore.ts:114-114) carries a typed
   `CapabilitySnapshotWire`; `snapshotLoading`/`snapshotError` keep exact-session GET status;
   timestamped per-kind `echoEvidence` competes with snapshots by freshness;
   `setRouteError` keeps HTTP-boundary failures distinct; and `pairChange` holds the serialized
   model→effort machine. Successful snapshots clear fetch errors, failures clear loading, and
   per-kind echo writes never overwrite the other knob.
-- **`PerSessionCockpit`** (L89-L125): per-kind `pendingSets` (`{model?, effort?}` — clobber-proof
+- **`PerSessionCockpit`**: cit:([`PerSessionCockpit`], dashboard/src/data/sessionCockpitStore.ts:113-153) — per-kind `pendingSets` (`{model?, effort?}` — clobber-proof
   by construction: `recordPendingSet` spreads per kind, so a pair change never clobbers the other
   knob's in-flight set); `setLedger: SetLedgerEntry[]` with the explicit `acknowledged` operator
   act (F22 — feeds the unacked attention class); five-tier
@@ -50,14 +50,14 @@ projections of server lifecycle truth plus local CAS state; they are not a secon
   (R15 — fed by the pane's real WS state since L6, via `terminal.ts`'s `onSocketState`); the
   client `queue` of `QueuedSubmit`s (a LIST, not a chip — F13; `supersedeLastQueued` = the alt+↑
   pop-back, requestId never resent); and (260715-FEUI-L6 R4, design §4.3's F7 field)
-  **`interactionAnswer?: InteractionAnswerState`** (L69-L79) — the InteractionBar's answer
+  **`interactionAnswer?: InteractionAnswerState`** — cit:([`InteractionAnswerState`], dashboard/src/data/sessionCockpitStore.ts:156-169) — the InteractionBar's answer
   round-trip: `{interactionId, inflight, error?, answeredAt?}` — in-flight → verbatim POST error
   (cleared by retry) → `answeredAt` on 202 ("answered — waiting for the agent" until the row
   clears). Store-backed rather than component state so it SURVIVES VIEW SWITCHES (worker decision
   3); the bar clears it whenever the row's interactionId changes under it (including to
   undefined — fix round finding 5). Appended via `setInteractionAnswer` (L148, L291-L294);
   `emptyPerSession` untouched (absent = nothing in flight).
-- **Ledger and acknowledgment** (L266-L301): `appendSetLedger` accepts an explicit acknowledgment
+- **Ledger and acknowledgment**: cit:([`appendSetLedger`], dashboard/src/data/sessionCockpitStore.ts:236-239) accepts an explicit acknowledgment
   default so benign immediate/non-clamp echo/queued evidence does not create fleet attention;
   unsupported, clamp, and unknown remain unacknowledged. `acknowledgeMatchingOutcomes` clears only
   the exact kind/request resolved by definitive readback. Ledger writes deliberately never move
@@ -72,7 +72,7 @@ projections of server lifecycle truth plus local CAS state; they are not a secon
   {railCollapsed, inspectorCollapsed}`, `paletteOpen` — ONE-WAY mirrors from SessionsView (the
   view's imperative panel handles stay the source of truth); mirrored so later leaves/commands can
   read them without a view reference.
-- **`startCockpitMirror()`** (L286-L309): the refcounted catalog-mirror subscription — watches
+- **`startCockpitMirror()`**: cit:([`startCockpitMirror`], dashboard/src/data/sessionCockpitStore.ts:522-542) — the refcounted catalog-mirror subscription — watches
   `sessionStore` and records per-seat turn-state transitions into the client `turnClock`
   (`recordTurnObservation`: `workingSince` starts at the OBSERVED transition into working —
   poll/sweep-bounded, never a claim about when the harness really started).
@@ -105,30 +105,30 @@ from rendered controls.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The per-seat shape, L4 live-control state/actions, honesty invariants, poll health, toggle persistence, and mirror. | L14-L425 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| The exact snapshot and five-value set-acceptance wire vocabulary mirrored by the store. | L1-L117 | [../types/harnessCapabilities.ts](../types/harnessCapabilities.ts) |
-| The sole I/O driver for snapshot, route-error, echo, pair, and matching-ack writes. | L1-L433 | [setClient.ts](setClient.ts) |
-| The beat writer (every catalog read records poll health). | L40-L51 | [catalogPoll.ts](catalogPoll.ts) |
-| The catalog registry the mirror subscribes to. | — | [sessions.ts](sessions.ts) |
-| The view that mirrors layout/palette in and consumes focus + perSession. | L206-L344 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
-| The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). | L66-L143 | [../panels/session-cockpit/HeaderStrip.tsx](../panels/session-cockpit/HeaderStrip.tsx) |
-| The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. | L25-L150 | [sessionCockpitStore.test.ts](sessionCockpitStore.test.ts) |
-| The answer round-trip driver (writes in-flight/error/answered; clears on interaction change). | L89-L180; L271 | [../panels/session-cockpit/InteractionBar.tsx](../panels/session-cockpit/InteractionBar.tsx) |
-| The answer path whose outcomes the round-trip state records. | L98-L130 | [interactionAnswer.ts](interactionAnswer.ts) |
+| The per-seat shape, L4 live-control state/actions, honesty invariants, poll health, toggle persistence, and mirror. | `PerSessionCockpit`; `SessionCockpitState`; `recordPollBeat`; `setOrchestrationTreeView`; `startCockpitMirror` | dashboard/src/data/sessionCockpitStore.ts:113-153; dashboard/src/data/sessionCockpitStore.ts:209-268; dashboard/src/data/sessionCockpitStore.ts:227-228; dashboard/src/data/sessionCockpitStore.ts:522-542 |
+| The exact snapshot and five-value set-acceptance wire vocabulary mirrored by the store. | `CapabilitySnapshotWire`; `SetAcceptance` | dashboard/src/types/harnessCapabilities.ts:59-65; dashboard/src/types/harnessCapabilities.ts:86-86 |
+| The sole I/O driver for snapshot, route-error, echo, pair, and matching-ack writes. | `refreshSessionSnapshot`; `sendSet`; `applySetResult`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested` | dashboard/src/data/setClient.ts:68-115; dashboard/src/data/setClient.ts:157-244; dashboard/src/data/setClient.ts:247-300; dashboard/src/data/setClient.ts:327-335; dashboard/src/data/setClient.ts:338-343; dashboard/src/data/setClient.ts:352-374 |
+| The beat writer (every catalog read records poll health). | `currentCatalogTransportAttempt` | dashboard/src/data/catalogPoll.ts:62-77 |
+| The catalog registry the mirror subscribes to. | `sessionStore` | dashboard/src/data/sessions.ts:271-437 |
+| The view that mirrors layout/palette in and consumes focus + perSession. | `focusedSessionId`; `perSession`; `setLayout`; `setPaletteOpen` | dashboard/src/panels/session-cockpit/SessionsView.tsx:258-258; dashboard/src/panels/session-cockpit/SessionsView.tsx:260-260; dashboard/src/panels/session-cockpit/SessionsView.tsx:501-509 |
+| The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). | `WS_WORDS`; `HeaderStrip`; `freshness` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:101-101 |
+| The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. | `recordPendingSet`; "QUEUED NEVER MOVES THE EFFECTIVE MARKER: ledger writes leave launchEvidence untouched" | dashboard/src/data/sessionCockpitStore.test.ts:41-56; dashboard/src/data/sessionCockpitStore.test.ts:75-89 |
+| The answer round-trip driver (writes in-flight/error/answered; clears on interaction change). | `interactionAnswer`; `submitInteractionAnswer`; `setInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:298-315; dashboard/src/panels/session-cockpit/InteractionBar.tsx:352-379; dashboard/src/panels/session-cockpit/InteractionBar.tsx:492-515 |
+| The answer path whose outcomes the round-trip state records. | `answerPendingInteraction`; `submitInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:449-481; dashboard/src/data/interactionAnswer.ts:504-618; dashboard/src/data/interactionAnswer.ts:620-640 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -149,6 +149,7 @@ leaf base; closeout owns commit stamping.
 
 ## Update History
 
+- 2026-08-03T03:59:59+02:00 — Curated 15 citation claims (10 table rows, 5 prose citations): added exact anchors and source paths; scoped fixer generated the final ranges.
 - 2026-07-24T13:17:50Z — Documented structured-interaction retry state. Verification hash/date remain
   pinned to the pre-commit source stamp.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_agents.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ never guessed.
 
 ### Logic
 
-`CodexLibraryAgentTests` (L256-L412) drives `CodexConversationLibrary` over a canned
+cit:([`CodexLibraryAgentTests`], mcp/tests/test_conversation_library_agents.py:256-412) drives `CodexConversationLibrary` over a canned
 app-server transport that dispatches `thread/list` by `sourceKinds`: the additive agent
 fetch uses exactly the probed `_AGENT_SOURCE_KINDS` tuple (`subAgent`,
 `subAgentReview`, `subAgentCompact`, `subAgentThreadSpawn`, `subAgentOther` — pinned
@@ -42,7 +42,7 @@ a visible top-level row and are NAMED in the note, not silently absent (fix-roun
 7); and an ungroupable agent row (no `parentThreadId`) fails closed as a shape-validation
 store error.
 
-`ClaudeLibraryAgentTests` (L471-L648) drives `ClaudeConversationLibrary` over a fake
+cit:([`ClaudeLibraryAgentTests`], mcp/tests/test_conversation_library_agents.py:471-648) drives `ClaudeConversationLibrary` over a fake
 helper host: per-row `agents` children group under the parent session with identity from
 `.meta.json` evidence only (description/role/join key) or the `agent <short-id>` fallback;
 the agent key round-trips to the composite `<sessionId>/<agentId>` vendor id; a helper
@@ -79,19 +79,19 @@ None.
 No Domain Documentation source is configured; the vocabularies are proven against the
 vendored codex enum and the installed claude on-disk layout.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The codex library under test: additive agent fetch, client-side grouping, agent read, agents_note degrade paths. | L24-L26 | [library/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/codex.py) |
-| The claude library under test: per-row agent grouping, marker degrade, composite-id read split, resume refusal. | L21-L21 | [library/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py) |
-| The helper-side sub-agent enumeration and agent transcript read the claude port consumes. | L135-L370 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts) |
-| The signed cursor authority minting and verifying the agent conversation keys. | L26-L29 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/cursor.py) |
-| The empty-page agent fetch added to the shared ports fake boundary. | L91-L97 | [test_conversation_library_ports.py](agents-remember/mcp/tests/test_conversation_library_ports.py) |
+| The codex library under test: additive agent fetch, client-side grouping, agent read, agents_note degrade paths. | `CodexConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/codex.py:265-668 |
+| The claude library under test: per-row agent grouping, marker degrade, composite-id read split, resume refusal. | `ClaudeConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/claude.py:80-424 |
+| The helper-side sub-agent enumeration and agent transcript read the claude port consumes. | `listSubagents`, `readClaudeAgentTranscript` | mcp/native_helpers/conversation_library/src/claude.ts:180-204; mcp/native_helpers/conversation_library/src/claude.ts:313-369 |
+| The signed cursor authority minting and verifying the agent conversation keys. | `LibraryCursorAuthority` | mcp/src/agents_remember/serving/conversation/library/cursor.py:62-297 |
+| The empty-page agent fetch added to the shared ports fake boundary. | `_FakeCodexTransport` | mcp/tests/test_conversation_library_ports.py:67-121 |
 
 ## Cross-Repo References
 
@@ -99,11 +99,13 @@ The codex `sourceKinds` vocabulary is proven against the vendored `ThreadSourceK
 (and a live 0.145.0 app-server probe); the vendor's own `parentThreadId` list filter is
 experimental-gated on 0.145.0, which is why grouping is client-side.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The camelCase sub-agent `ThreadSourceKind` variants the agent fetch pins. | L3-L6 (module docstring); L324-L330 | [codex app-server protocol](https://github.com/openai/codex/tree/main/codex-rs/app-server-protocol) |
+| The camelCase sub-agent `ThreadSourceKind` variant the agent fetch pins. | ["subAgentReview"] | mcp/src/agents_remember/serving/conversation/library/codex.py:74-74 |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 6 repository-internal references for the Codex and Claude libraries, helper agent enumeration/read, cursor authority, shared fake boundary, and the pinned camelCase source-kind literal; final scoped result 0 (checker-clean).
 
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the codex fixture now builds its library with

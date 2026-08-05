@@ -79,7 +79,7 @@ No open file-local todos.
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source and the module under test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -88,24 +88,25 @@ Documentation entries. This card is verified from its direct source and the modu
 The suite is the runtime half of a claim the type system already makes, so both halves are cited: the
 `Record<ConstelStatus, string>` that fails `tsc -b`, and the vocabulary tuple both sides read.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The three `constelColors` cases and the `stub` reader they share. | L18-L58 | [constel.test.ts](constel.test.ts) |
-| `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type — the unit under test, total by type and extracted from `mountConstel` so it is reachable in jsdom. | L15-L39 | [constel.ts](constel.ts) |
-| `col` indexes the palette with no `??` fallback, which is what makes test 2's `undefined` the correct expectation. | L70-L75 | [constel.ts](constel.ts) |
-| `CONSTEL_STATUSES` — the `as const` tuple with `ConstelStatus` derived from it, imported here rather than restated. | L12-L18 | [model.ts](model.ts) |
-| The sibling suite that makes the same move one layer up, iterating `LIFECYCLE_STATES` over `CONSTEL_STATUS_BY_STATE`. | L92-L138 | [model.test.ts](model.test.ts) |
+| The three `constelColors` cases cover vocabulary colors, undefined for unknown status, and themed tokens with concrete fallbacks. | "gives every status in the vocabulary a colour of its own"; "declares no colour for a status the vocabulary does not contain"; "asks for a themed token per status and offers a concrete fallback for each" | dashboard/src/topology/constel.test.ts:21-30; dashboard/src/topology/constel.test.ts:32-39; dashboard/src/topology/constel.test.ts:41-57 |
+| `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type are extracted from `mountConstel` for jsdom. | `constelColors`; `CssVarReader`; `mountConstel` | dashboard/src/topology/constel.ts:16-16; dashboard/src/topology/constel.ts:31-39; dashboard/src/topology/constel.ts:59-372 |
+| `col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct. | `col` | dashboard/src/topology/constel.ts:75-75 |
+| `CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived. | `CONSTEL_STATUSES`; `ConstelStatus` | dashboard/src/topology/model.ts:16-16; dashboard/src/topology/model.ts:18-18 |
+| The topology model maps `LIFECYCLE_STATES` into `CONSTEL_STATUS_BY_STATE` rather than restating the vocabulary. | `LIFECYCLE_STATES`; `CONSTEL_STATUS_BY_STATE` | dashboard/src/topology/model.ts:40-40; dashboard/src/topology/model.ts:48-59 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The palette and its vocabulary are entirely within the
 `agents-remember` dashboard.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: rebound the three constel cases to their complete test bodies under the adversarial verdict, then the exact scoped fixer/check passed.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

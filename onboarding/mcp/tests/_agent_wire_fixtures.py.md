@@ -6,8 +6,8 @@
 | path | `mcp/tests/_agent_wire_fixtures.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,10 +31,9 @@ protocol instead of hand-rolled per-test guesses.
 Pure builder functions returning `JsonObject` params or full JSON-RPC envelopes
 (`notification`, `command_execution_approval_request`, `server_request_resolved`).
 Every builder populates only the fields a consumer reads, and every field name is one the
-vendor emits: the module docstring (L1-L37) pins each shape to its proving source in the
-vendored codex checkout (`app-server-protocol/src/protocol/v2/{item,turn,thread,
-notification}.rs` and the live spawn suite `app-server/tests/suite/v2/turn_start.rs`
-~3544-3868). Timestamps are stable synthetic constants (L46-L48) — no captured user
+local consumer suites exercise against the bounded fixture shapes. The module docstring records
+external provenance labels, but those labels are not protocol proof under this frozen source
+authority. Timestamps are stable synthetic constants — no captured user
 content. Intentionally malformed shapes (degrade/unknown-vendor cases) deliberately stay
 inline in the test modules that assert them, not here.
 
@@ -64,32 +63,33 @@ None.
 No Domain Documentation source is configured; the proving authority is the vendored codex
 protocol checkout cited in the module docstring and below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The builder inventory (incl. the `CollabAgents` parameter object) and the per-shape vendored-protocol proof mapping. | L1-L37; L51-L214 | [_agent_wire_fixtures.py](agents-remember/mcp/tests/_agent_wire_fixtures.py) |
-| The demux incident-regression suite consuming these builders. | L17-L29 | [test_codex_adapter_thread_demux.py](agents-remember/mcp/tests/test_codex_adapter_thread_demux.py) |
-| The codex projector-agent suite consuming these builders. | L25-L35 | [test_conversation_projector_codex_agents.py](agents-remember/mcp/tests/test_conversation_projector_codex_agents.py) |
-| The demuxed adapter under test: thread registry, per-thread state, multiplexed pendings. | L1-L50 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| The local builder inventory, including the `CollabAgents` parameter object. | `CollabAgents` | mcp/tests/_agent_wire_fixtures.py:63-77 |
+| The module docstring records external provenance labels for the fixture shapes; those labels are not protocol proof under this frozen source authority. | `protocol` | mcp/tests/_agent_wire_fixtures.py:1-37 |
+| The demux incident-regression suite imports these local builders. | `collab_agent_tool_call_item` | mcp/tests/test_codex_adapter_thread_demux.py:16-28 |
+| The codex projector-agent suite imports these local builders. | `collab_agent_tool_call_item` | mcp/tests/test_conversation_projector_codex_agents.py:25-35 |
+| The demuxed adapter under test owns the thread registry, per-thread state, and multiplexed pendings. | `CodexAppServerAdapter` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
 
 ## Cross-Repo References
 
-The fixture shapes are proven against the vendored codex app-server protocol (a read-only
-vendor checkout outside the workspace); the module docstring pins each shape to its proving
-file, and the vendored tree is the boundary evidence.
+The module contains local fixture builders and a docstring record of external protocol provenance.
+This bounded card uses the local fixture module and local consumer/adapter suites as source authority;
+external protocol files are not treated as frozen source evidence here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `CollabAgentToolCall` / `SubAgentActivity` item variants and their exact camelCase enums. | L7-L21 (docstring) | [codex app-server protocol v2 item.rs](https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/src/protocol/v2/item.rs) |
-| `TurnStarted`/`TurnCompleted` params `{threadId, turn}`. | L22-L24 (docstring) | [codex app-server protocol v2 turn.rs](https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/src/protocol/v2/turn.rs) |
-| The live V1/V2 sub-agent spawn sequences these builders model. | L30-L32 (docstring) | [codex app-server v2 turn_start suite](https://github.com/openai/codex/blob/main/codex-rs/app-server/tests/suite/v2/turn_start.rs) |
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: separated local fixture construction from
+  external provenance, re-anchored local consumer/adapter suites, and removed out-of-authority protocol rows.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: `collab_agent_tool_call_item` now
   takes `sender_thread_id` / `receiver_thread_ids` / `agents_states` as one frozen `CollabAgents`

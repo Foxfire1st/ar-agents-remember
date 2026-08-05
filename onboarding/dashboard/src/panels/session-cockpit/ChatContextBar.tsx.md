@@ -52,17 +52,17 @@ server id; harness creation remains in the canonical LaunchFlow.
 Compact visible labels may use an explicit accessible name when the action's full meaning would not
 fit the bar; stable data attributes remain the browser-test seam.
 
-### 260718-CHATS-L5P Delta (V8 persistence + R6 short ids)
+### 260718-CHATS-L5P Delta (V8 persistence) And Current Action Ownership
 
-- **V8 — Browse history persists** (L158-L178): the `Browse history` button is now ALWAYS rendered when
+- **V8 — Browse history persists** — cit:([`ChatSessionActions`, "Browse history needs a running harness chat focused"], dashboard/src/panels/session-cockpit/ChatContextBar.tsx:132-206): the `Browse history` button is now ALWAYS rendered when
   `onBrowseHistory` exists, and is `disabled`-with-reason (`Browse history needs a running harness chat
   focused`) when the focused row is not a running harness chat — it no longer unmounts/teleports on a
   focus change (the toolbar never reflows, muscle memory holds). This supersedes the "offered ONLY for a
   controlled harness session" reading below. The `action` recipe gained a muted `_disabled` state +
   `whiteSpace:nowrap`.
-- **R6 — short task ids** (L182-L200): a long task/lifecycle id renders through `shortId()`
-  (`data/conversation/format`) as a `…SUFFIX` badge with the full `task <id>` value in the `title` — the
-  bar never leaks a 26-char raw ULID.
+- **Current ownership** — cit:([`ChatContextBar`; `ChatSessionActions`], dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:132-206): this file owns the Chat/Terminal creation bar and selected-session actions, including
+  history plus server-first leaf attach/move. Task-id abbreviation and badge rendering are outside this
+  component's current ownership.
 
 ### Invariants And Boundaries
 
@@ -70,37 +70,20 @@ This remains one launch entrance. It does not create harness-specific launch but
 canonical LaunchFlow. Local lifecycle routing is not durable server authority; leaf ownership is
 server-authoritative, with no optimistic mutation or hidden 409 refusal. Failed raw opens neither
 create nor focus a session. Library-level affordances (Browse history) stay present and disable with a
-reason rather than teleporting on focus (V8); raw ids display as short suffixes with the full value in a
-tooltip (R6).
+reason rather than teleporting on focus (V8). Task-id abbreviation and badge rendering are outside
+this component's current ownership.
 
 ### Todos
 
 No task-independent technical debt was identified during MX-FIX-2 review.
 
-## Docs References
-
-The curator checked the memory repository's `system/sources.md`; it has no configured Domain
-Documentation entries. This card was verified from its direct source/tests and the reviewed L8
-task/worker/reviewer evidence.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
-
-## Cross-Repo References
-
-The bar composes repository-local task/session helpers and same-origin terminal routes; no cross-repository implementation governs it.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
-
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical host and sole-launch-path composition. | L928-L958 | [SessionsView.tsx](SessionsView.tsx) |
-| Session patch/broadcast and server leaf route. | L1-L80 | [../../data/sessions.ts](../../data/sessions.ts) · [../../data/terminal.ts](../../data/terminal.ts) |
+| Canonical host composition delegates launch through the session view. | `onLaunchChat` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1069-1069 |
+| The server-first leaf operation exposes its result type and assignment action. | `applyLeafAssignment`; `AttachLeafResult` | dashboard/src/data/sessions.ts:171-171; dashboard/src/data/terminal.ts:439-439 |
+| Session changes are broadcast through the catalog notification helper. | `notifySessionCatalogChanged` | dashboard/src/data/sessions.ts:113-126 |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (Browse history)
 
@@ -118,6 +101,14 @@ leaf attach/move—are extracted to `ChatSessionActions` on the stage title row,
 visible. Ineligible actions retain their disabled placement/reason rather than moving unpredictably.
 
 ## Update History
+
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: narrowed claims to positive local ownership and generated final citation ranges with the scoped fixer.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: removed obsolete `shortId` ownership from the
+  live contract. The file currently owns creation and selected-session actions, not task-id badge
+  rendering. The new self-citation was normalized by the scoped fixer.
+
+- 2026-08-03T05:04+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 2 table citations and 1 prose citation, normalized the scoped source paths, audited the interface extents, and reanchored the sole-launch composition row to the `onLaunchChat` binding in `SessionsView`; the localized subject-binding repair generated `SessionsView.tsx:1069-1069`, while the stale `shortId()` ownership claim remains the sole Tier-3 finding in this card.
 
 - 2026-07-24T13:17:17Z — Curator: corrected launch-versus-focused-session action ownership and
   title-row placement; verification fields remain pre-commit.

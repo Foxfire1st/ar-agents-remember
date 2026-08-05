@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/route_index_census.py`           |
 | doc_type               | `file-level-onboarding`                                         |
 | lastUpdated            | 2026-07-18T20:03+02:00                                          |
-| lastVerifiedCommitHash |                                                                 `abc7cbcc74921cdcb57a61529445f61641e919e7`|
-| lastVerifiedCommitDate |                                                                 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash |                                                                 `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                                 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -31,16 +31,16 @@ and symlink modes while excluding directories and gitlinks. It then reads untrac
 paths through `git ls-files --others --exclude-standard -z` and classifies them with non-following
 `lstat`. NUL-delimited records and `surrogateescape` preserve exact path identity.
 
-The resulting `RouteIndexSourceSnapshot` (L29-L38) exposes the frozen candidate paths as
+The resulting cit:([`RouteIndexSourceSnapshot`], mcp/src/agents_remember/kernel/route_index_census.py:29-38) exposes the frozen candidate paths as
 `repository_paths` and a second `eligible_paths` tuple filtered through
 `resolve_storage_for_source`. Route rendering can therefore distinguish source membership from
 onboarding eligibility without rerunning Git or walking the filesystem.
 
 ### Conventions
 
-`RouteIndexCandidate` (L20-L26) records path, Git/file mode, and tracked/untracked origin. The
+cit:([`RouteIndexCandidate`], mcp/src/agents_remember/kernel/route_index_census.py:20-26) records path, Git/file mode, and tracked/untracked origin. The
 module returns immutable tuples in stable path order. All Git execution goes through the one
-selector-scrubbed runner, wrapped locally by `_run_git` (L189-L205). That wrapper names
+selector-scrubbed runner, wrapped locally by cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205). That wrapper names
 `GIT_METADATA_TIMEOUT_SECONDS` (30s) rather than accepting the runner's 300s local default: every
 census command is a constant-time metadata read (`rev-parse --show-toplevel`, `ls-files --stage`,
 `ls-files --others`, `diff-files`), it runs while an MCP tool call waits, and the only way one of
@@ -54,7 +54,7 @@ them takes 30s is that git is blocked on an index lock another process holds.
   `OSError`, and `lstat` failures preserve their original causes for typed diagnosis. `_run_git`
   is the single place that translates: `subprocess.TimeoutExpired`/`OSError` become
   `AuthorityError` when `authority=True` and `RouteIndexCensusError` otherwise, always with
-  `from error` (L200-L205). A census stall therefore surfaces as a typed failure at 30s, not as a
+  `from error` cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205). A census stall therefore surfaces as a typed failure at 30s, not as a
   bare `TimeoutExpired` and not after the runner's 300s default.
 - Ignored paths and path-rule-excluded generated outputs never enter `eligible_paths`.
 - Symlink classification never follows the target, so target appearance/disappearance cannot
@@ -73,43 +73,44 @@ None known for the MX-FIX-4 census boundary.
 No Domain Documentation source is configured for this repository. The source and production-path
 matrix are the authoritative evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The renderer consumes exactly one snapshot and separates repository membership from eligibility. | L101-L249 | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py) |
-| The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. | L24-L96 | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| Focused tests cover ignored/generated paths, symlink/sparse/deletion/gitlink behavior, selectors, typed failures, non-UTF-8 names, and byte convergence. | L258-L907 | [test_route_index.py](agents-remember/mcp/tests/test_route_index.py) |
+| The renderer consumes exactly one snapshot and separates repository membership from eligibility. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
+| The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| Focused tests cover ignored/generated paths, symlink/sparse/deletion/gitlink behavior, selectors, typed failures, non-UTF-8 names, and byte convergence. | `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes`, `test_git_timeout_and_os_errors_use_typed_domain_errors`, `test_non_utf8_git_path_preserves_record_identity`, `test_regular_checkout_and_linked_worktree_produce_identical_indexes` | mcp/tests/test_route_index.py:258-327; mcp/tests/test_route_index.py:675-737; mcp/tests/test_route_index.py:768-820; mcp/tests/test_route_index.py:822-889 |
 
 ## Cross-Repo References
 
 The census operates on the configured code repository, including a sibling worktree, but has no
 external implementation dependency.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-02T21:05:20+02:00 — 260731-EFA-L6 curator W2-B10: repaired 10 citation findings (3 reference rows and 3 prose pointers); scoped recheck clean.
+
 - 2026-07-31T20:54+02:00 — 260731-EFA-L3 curator: body updated. Conventions said only "Git
   execution uses the shared selector-scrubbed runner", which no longer describes the decision this
-  file makes: `_run_git` (L189-L205) now passes `timeout=GIT_METADATA_TIMEOUT_SECONDS` so a census
+  file makes: cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205) now passes `timeout=GIT_METADATA_TIMEOUT_SECONDS` so a census
   fails typed at 30s instead of inheriting the runner's new 300s local default. Recorded that, and
   extended the typed-cause invariant to name `_run_git` as the single translation point
   (`TimeoutExpired`/`OSError` → `AuthorityError` when `authority=True`, else
-  `RouteIndexCensusError`, always `from error`, L200-L205). Repaired 1 citation into a file this
-  leaf changed: the git-runner row's `L9-L42` → `L24-L96`, which is where
-  `GIT_REPOSITORY_SELECTOR_ENV` (L24-L33), `git_environment` (L58-L64) and `run_git` with
-  `errors="surrogateescape"` (L67-L96) now live; the row's claim was also widened to name the
-  metadata timeout class. The `route_index.py` L101-L249 and `test_route_index.py` L258-L907 ranges
-  were left alone — this leaf touched neither file. Also corrected two symbol names the card had
-  wrong independently of this leaf: the dataclasses are `RouteIndexSourceSnapshot` (L29-L38) and
-  `RouteIndexCandidate` (L20-L26), not `SourceSnapshot`/`SourceCandidate`, and `SourceCandidate`
+  `RouteIndexCensusError`, always `from error` via cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205). Repaired 1 citation into a file this
+  leaf changed: the git-runner row now uses cit:([`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`], mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151), which is where those selectors,
+  environment scrubbing, and the surrogateescape runner now live; the row's claim was also widened
+  to name the metadata timeout class. The route-index renderer and focused-test references were left
+  alone — this leaf touched neither file. Also corrected two symbol names the card had
+  wrong independently of this leaf: the dataclasses are cit:([`RouteIndexSourceSnapshot`], mcp/src/agents_remember/kernel/route_index_census.py:29-38) and
+  cit:([`RouteIndexCandidate`], mcp/src/agents_remember/kernel/route_index_census.py:20-26), not `SourceSnapshot`/`SourceCandidate`, and `SourceCandidate`
   was not greppable at all.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that the

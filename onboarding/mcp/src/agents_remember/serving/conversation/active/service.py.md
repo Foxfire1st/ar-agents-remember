@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,28 +26,23 @@ check before an SSE response exists.
 
 ### Logic
 
-`ActiveConversationService` (L57-L259) mints its own 32-byte random cursor secret (L63 — per
-app, never persisted; a daemon restart invalidates old cursor generations loudly). `page`
-(L78-L99) resolves the projector, decodes the optional `before` page cursor against the
-authorized identity, bounds the limit (≤500), and assembles the `ConversationPage` (identity,
-window, fresh page cursor, event cursor, hydration id, canonical status, capabilities) in
-`_assemble_page` (L233-L259). `subscribe` (L101-L127) decodes the event cursor, enforces
-same-generation and the retention floor (`cursor-reset-required` with `generation-changed` /
-`retention-overflow` reasons), then attaches the subscriber queue and snapshots the replay
-window with no await between them — the poll task cannot interleave, so replay and live delivery
-neither gap nor duplicate an envelope (L121-L127). `release_session` (L144-L157) de-registers and closes one
-session's projector when the session ends: it pops the projector from `_projectors`, drops it from
-the LRU order, and awaits `projector.close()`, releasing the whole per-session projection
-(ProjectionStore items, the L5 live-turn/request id-sets, retained SSE envelopes) immediately
-instead of leaving it registered until the tombstone self-idles and then falls to 32-LRU eviction
-(260718-CHATS-L5F R5). `_projector_for` (L158-L197) resolves the
-catalog entry, verifies the expected bridge epoch against the live submission authority, builds
-the proven identity, and returns the matching live projector or closes/replaces a stale one;
-projectors are bounded at 32 per app with LRU eviction (L54, L199-L204) — an evicted projector
-rehydrates from native authority and establishes a new cursor generation, so stale event cursors
-reset loudly instead of mixing sequences. Every blocking sync IPC read is offloaded with
-`asyncio.to_thread` (L188-L191) so the daemon event loop stays responsive. One service per
-runtime is kept through a weak-key registry (L251-L263).
+cit:([`ActiveConversationService`], mcp/src/agents_remember/serving/conversation/active/service.py:57-259) mints the
+per-app cursor secret and owns page, subscription, and projector lifecycle. cit:([`page`, `_assemble_page`],
+mcp/src/agents_remember/serving/conversation/active/service.py:78-99; mcp/src/agents_remember/serving/conversation/active/service.py:233-259)
+resolves the authorized projector, decodes the optional `before` cursor, bounds the limit, and assembles the
+`ConversationPage`. cit:([`subscribe`], mcp/src/agents_remember/serving/conversation/active/service.py:101-127)
+cit:([`generation`], mcp/src/agents_remember/serving/conversation/active/cursor.py:256-256) checks cursor generation and
+retention before attaching the subscriber queue and replay snapshot without an interleaving await.
+
+cit:([`release_session`], mcp/src/agents_remember/serving/conversation/active/service.py:152-158)
+cit:([`close`], mcp/src/agents_remember/serving/conversation/active/projector/facade.py:162-168) removes the projector
+from the registry and LRU order and awaits its close. This is registry/projector release evidence; it does not
+prove immediate deletion of every store item, live-turn/request id-set, or retained envelope.
+
+cit:([`_projector_for`], mcp/src/agents_remember/serving/conversation/active/service.py:160-176) resolves and validates the
+catalog entry, closes or replaces stale projectors, and bounds the registry. cit:(["asyncio.to_thread"],
+mcp/src/agents_remember/serving/conversation/active/service.py:178-216) keeps blocking sync reads off the event loop;
+the weak-key registry is maintained by the service's runtime lookup.
 
 ### Conventions
 
@@ -86,7 +81,7 @@ None.
 The resolved `Domain Documentation` registry has no entries. The composition and wire contracts
 are repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this service. | — | — |
 
@@ -95,25 +90,26 @@ are repository-owned and cited below.
 The L0 runtime authority is the composition this service keys on; the cursor authority does the
 signing/binding; the projector engine does hydration/polling; the routes call only this service.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The immutable app-scoped `ConversationRuntime` is the authority one service instance binds. | L47-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
-| Cursor mint/decode/generation checks run through the cursor authority with this service's secret. | L197-L272 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/cursor.py) |
-| The projector captures the atomic page + event cursor under its apply lock. | L103-L127 | [projector/rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
-| The two routes invoke this service and map its typed refusals to the serving status idiom. | L121-L186 | [api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
+| The immutable app-scoped `ConversationRuntime` is the authority one service instance binds. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
+| The cursor authority's `decode_event_cursor` validates event-cursor generation. | `decode_event_cursor` | mcp/src/agents_remember/serving/conversation/active/cursor.py:248-262 |
+| The rebuild coordinator captures the atomic page + event cursor under its apply lock. | `page` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:103-127 |
+| The page route invokes this service and maps typed refusals to the serving status idiom. | `ConversationPage` | mcp/src/agents_remember/serving/conversation/active/api.py:126-155 |
+| The SSE route invokes this service and maps typed refusals to the serving status idiom. | `StreamingResponse` | mcp/src/agents_remember/serving/conversation/active/api.py:215-247 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this service.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## 260727-CHATS-IM-L2 Selected-Child Service Delta
 
 `hydrate_agent_history` resolves the same exact authorized session/projector and bridge epoch as
-page/SSE, then delegates only the requested child id to `refresh_agent_native` (L138-L153). The
+page/SSE, then delegates only the requested child id to cit:([`refresh_agent_native`], mcp/src/agents_remember/serving/conversation/active/service.py:138-153). The
 service does not widen parent paging, invent child eligibility, or translate the local hydration
 outcome; those contracts remain projector-owned.
 
@@ -127,6 +123,9 @@ references for it — see [projector/facade.py](projector/facade.py.md). No beha
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: corrected cursor-generation and route citations,
+  split projector release from broader cleanup claims, and bound lifecycle evidence to its source owners.
 
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 4 stale self-citations (plus the three
   sub-citations riding the same sentences). The class head moved up 8 lines while

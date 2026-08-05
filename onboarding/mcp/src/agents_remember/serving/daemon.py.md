@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -93,13 +93,13 @@ protocol.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The MCP boot seam calling `maybe_autostart_dashboard`. | [mcp/server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| The version comparator (`SERVER_VERSION`). | [mcp/__init__.py](agents-remember/mcp/src/agents_remember/mcp/__init__.py) |
-| Unit tests: state round-trip, probes, stop escalation, ensure matrix, autostart, CLI dispatch. | [test_dashboard_daemon.py](agents-remember/mcp/tests/test_dashboard_daemon.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. | `add_arguments` | mcp/src/agents_remember/cli/dashboard.py:84-158 |
+| The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | `DashboardSettings` | mcp/src/agents_remember/mcp/config.py:85-90 |
+| The MCP boot seam calling `maybe_autostart_dashboard`. | `maybe_autostart_dashboard` | mcp/src/agents_remember/serving/daemon.py:336-356 |
+| The version comparator (`SERVER_VERSION`). | "agents-remember-mcp" | mcp/src/agents_remember/mcp/__init__.py:9-9 |
+| Unit tests: state round-trip, probes, stop escalation, ensure matrix, autostart, CLI dispatch. | `StateFileTests`; `ProbeTests`; `StopTests`; `EnsureTests`; `AutostartTests`; `CliDaemonDispatchTests` | mcp/tests/test_dashboard_daemon.py:53-90; mcp/tests/test_dashboard_daemon.py:93-125; mcp/tests/test_dashboard_daemon.py:141-181; mcp/tests/test_dashboard_daemon.py:241-364; mcp/tests/test_dashboard_daemon.py:367-404; mcp/tests/test_dashboard_daemon.py:421-503 |
 
 ## 260731-EFA-L2 Current Delta
 
@@ -121,6 +121,8 @@ it — an **adopted** daemon keeps the cadences it was started with.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 5 citation entries (10 findings); no Tier-3 findings.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `DaemonEndpoint` and the `ProjectionCadence` import from the new stdlib-only cadence module; adoption-equality rule unchanged.
 - 2026-07-12T20:24+02:00 — 260712-PTS-L3: `spawn`/`ensure`/`_ensure_locked` gained

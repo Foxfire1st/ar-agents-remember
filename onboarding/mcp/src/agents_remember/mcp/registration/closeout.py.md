@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-01T01:28+02:00                                       |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                   |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                                       |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ The three destructive tools forward flat:
 - Apply registers `dry_run=False` and is paired with the explicit preview tool — that pairing is the
   gate, so do not add an apply path that skips preview.
 - Closeout is worktree-only; the retired `direct_closeout_*` tools are not registered anywhere.
-- All ordering, quality-gate execution and git mechanics live in `controllers/worktree_tools.py`.
+- All ordering, quality-gate execution and git mechanics live in `application/worktree_tools.py`.
 - **These docstrings are the published MCP tool descriptions**, so they are contract, not comment:
   a client sees only what they say. Apply's is deliberately conditional ("when code would commit
   AND the checkout carries the project-owned quality wrapper") because an unconditional promise
@@ -84,23 +84,27 @@ The three destructive tools forward flat:
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders these forward to. | — | [tools/worktree.py](agents-remember/mcp/src/agents_remember/mcp/tools/worktree.py) |
-| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | — | [controllers/worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
-| The two pre-staging refusals and the reset-then-stage step apply's docstring describes. | `_refuse_outside_a_linked_worktree` L557-L596; `_refuse_conflicted_worktree` L599-L622; `_gate_staged_code` L625-L681 | [worktrees/modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
-| The wrapper condition that decides whether the gate — and therefore the staging step and its refusals — runs at all. | `quality_wrapper_path` L24-L26; `requires_strict_code_quality` L35-L42; `code_quality_gate_preview` L45-L82 | [worktrees/modules/code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py) |
-| The approval/message split proved through a live server. | — | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
-| The closeout descriptions are asserted to pin quality-before-commit. | — | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
-| The staged-gate behaviour the rewritten descriptions promise. | — | [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
+| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:78-86 |
+| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tools.py:275-282 |
+| The two pre-staging refusals and the reset-then-stage step apply's docstring describes. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:721-760; mcp/src/agents_remember/worktrees/modules/closeout.py:728-751; mcp/src/agents_remember/worktrees/modules/closeout.py:763-786; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
+| The wrapper condition that decides whether the gate — and therefore the staging step and its refusals — runs at all. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:24-26; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:35-42; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
+| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring.py:815-835 |
+| The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:154-168 |
+| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558 |
 
 ## Update History
 
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 5 citation rows (payload builders, CloseoutCommitMessages/CloseoutApproval, wiring/description/staged-gate tests) and converted 2 history prose line citations to cit: forms; the preview/apply ranges L24-L42/L45-L76 verified still exact against the frozen source. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T01:28+02:00 — 260731-EFA-L4 curator: the card summarised both docstrings as
   "apply runs that quality before any code, memory, ledger, contract, or applied-gate mutation",
   which is now both under- and over-stated. Verified against the diff and the current source and
-  corrected it. Preview (L24-L42) now says quality runs "over the staged task worktree" before the
-  code commit. Apply (L45-L76) became conditional — the gate runs only when code would commit
+  corrected it. Preview cit:([`worktree_closeout_preview`], mcp/src/agents_remember/mcp/registration/closeout.py:23-42) now says quality runs "over the staged task worktree" before the
+  code commit. Apply cit:([`worktree_closeout_apply`], mcp/src/agents_remember/mcp/registration/closeout.py:44-76) became conditional — the gate runs only when code would commit
   **and** the checkout carries the project-owned quality wrapper — and now states the four facts
   the card was missing: the reset-then-stage-the-whole-worktree step (so the gate sees files the
   task created, not only those it edited, and a retry stages what a first run would rather than

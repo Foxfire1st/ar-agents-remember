@@ -139,8 +139,8 @@
       "--from-settings",
       "require_lifecycle_settings_path",
       "providers/current_state.py",
-      "BackendStartReconciliation",
-      "network"
+      "_EXPORT_MODULES",
+      "main"
     ]
   },
   "fallback": {

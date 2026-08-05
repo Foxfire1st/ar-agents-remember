@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/operatorInbox.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                                  2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash |                                                  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,29 +56,31 @@ None.
 The observable-lifecycle design names pull-based return channels as the durable fallback when push or
 direct re-invocation is not available. This helper is the dashboard client side of that fallback.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pull-based return channels resume gate answers when a harness cannot be pushed or directly re-invoked. | L251-L266 | [observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Pull-based return channels resume gate answers when a harness cannot be pushed or directly re-invoked. | "The return channel (four layers on one durable truth)" | docs/design/observable-lifecycle.md:286-304 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper defines the request/status contract and posts JSON to `/api/operator-inbox`. | L1-L25 | [operatorInbox.ts](agents-remember/dashboard/src/data/operatorInbox.ts) |
-| `GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails. | L195-L214 | [GateResponder.tsx](agents-remember/dashboard/src/panels/GateResponder.tsx) |
-| The serving endpoint writes the inbox entry with developer/dashboard attribution. | L358-L376 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The helper test pins the POST body and error mapping. | L5-L45 | [operatorInbox.test.ts](agents-remember/dashboard/src/data/operatorInbox.test.ts) |
-| `AgentPickupIndicator` calls the dismiss helper for stale pending responses. | — | [AgentPickupIndicator.tsx](../panels/AgentPickupIndicator.tsx) |
+| The helper defines the request/status contract and posts JSON to `/api/operator-inbox`. | `postOperatorInbox` | dashboard/src/data/operatorInbox.ts:18-32 |
+| `GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| The serving endpoint writes the inbox entry with developer/dashboard attribution. | `_operator_inbox_response` | mcp/src/agents_remember/serving/app.py:1233-1275 |
+| The helper test pins the POST body and error mapping. | `postOperatorInbox` | dashboard/src/data/operatorInbox.test.ts:5-45 |
+| `AgentPickupIndicator` calls the dismiss helper for stale pending responses. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows with exact anchors and ranges: the observable-lifecycle return-channel section (docs/design/observable-lifecycle.md L286-L304), the helper contract (operatorInbox.ts L1-L48), the serving endpoint's developer/dashboard attribution (serving/app.py L1233-L1274), and the helper test (operatorInbox.test.ts L5-L45). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

@@ -33,12 +33,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `ping_payload()` and `server_info_payload()` report `SERVER_VERSION`. | [tools/core.py](agents-remember/mcp/src/agents_remember/mcp/tools/core.py) |
-| Tool tests assert the public version reported by `ping_payload()`. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `ping_payload()` and `server_info_payload()` report `SERVER_VERSION`. | `ping_payload`; `server_info_payload` | mcp/src/agents_remember/mcp/tools/core.py:19-28; mcp/src/agents_remember/mcp/tools/core.py:31-51 |
+| Tool tests assert the public version reported by `ping_payload()`. | `test_ping_payload` | mcp/tests/test_tools.py:88-97 |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 2 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-12T12:07+02:00 — No content impact: 260712-TRH-L1 bumps the source-checkout
   `SERVER_VERSION` fallback to 3.0.0rc5 in lockstep with `mcp/pyproject.toml`; installed package

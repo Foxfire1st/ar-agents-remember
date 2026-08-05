@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T08:54+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ transcript, and durable-bus paths.
 The snapshot route is multiplex-aware: the serialized snapshot body
 now carries an additive `pendingInteractions` list — every pending interaction across the
 multiplexed threads, each serialized through the same `pending_interaction_json` shape — beside the
-untouched singular `pendingInteraction` parent-thread slot (`_answer_interaction`, L537-L541).
+untouched singular `pendingInteraction` parent-thread slot.
 Consumers reading only the singular field see exactly the pre-multiplexing contract. Both keys
 are declared on `InteractionAnswered`, because both are emitted.
 
@@ -149,7 +149,7 @@ Frontend and settings consumers are separate workstreams outside this module.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -158,26 +158,30 @@ pass was available for this update.
 This route module composes existing normalized launch, exact-session client, liveness, and catalog
 boundaries rather than duplicating their policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pre-session catalog supplies the dynamic cached envelope and failed-refresh quarantine. | L80-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
-| The client implements exact-session advertise/set, first-byte ambiguity, whole-message submit, and reconciliation. | L58-L156; L205-L337 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Public serializers deliberately omit the internal raw evidence mapping. | L251-L296 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope, then feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | L752-L770; L1440-L1446 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The declared models and the shared `SESSION_CONTROL_RESPONSES` table these ten routes name, plus the two submit-only refusals. | `SESSION_CONTROL_RESPONSES`; `PreDispatchFailureRefusal` | [response_contract.py](response_contract.py.md) |
-| The suite that enforces the declarations by driving every route and validating the real body. | `test_serving_response_conformance` | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
-| Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | L129-L147; L154-L159; L171-L313; L482-L518; L677-L725 | [test_serving_harness_control_api.py](agents-remember/mcp/tests/test_serving_harness_control_api.py) |
-| The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | L22-L32 | [conversation/router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The immutable runtime authority and scope types this registration constructs. | L47-L101 | [conversation/runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
-| The server-resolved local-operator resolver bound into the runtime. | L69-L105 | [conversation/authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
-| The foundation suite pins this file as the sole global conversation registration seam. | L50-L62 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The pre-session catalog supplies the dynamic cached envelope and failed-refresh quarantine. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-196 |
+| The exact-session client reads advertised capabilities and applies model/effort setters. | `read_control_capabilities` | mcp/src/agents_remember/serving/harness_control_client.py:134-141 |
+| The exact-session client distinguishes first-byte ambiguity from a request accepted before disconnect. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:534-568 |
+| The exact-session client submits whole messages and preserves request correlation. | `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:214-252 |
+| The exact-session client reconciles a possibly lost submission by request id and bridge epoch. | `reconcile_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:273-303 |
+| Public serializers deliberately omit the internal raw evidence mapping. | `public_receipt_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941 |
+| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:757-757 |
+| The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/app.py:1474-1474 |
+| The declared models and the shared `SESSION_CONTROL_RESPONSES` table these ten routes name, plus the two submit-only refusals. | `SESSION_CONTROL_RESPONSES`; `PreDispatchFailureRefusal` | mcp/src/agents_remember/serving/response_contract.py:161-167; mcp/src/agents_remember/serving/response_contract.py:1067-1074 |
+| The suite that enforces the declarations by driving every route and validating the real body. | `test_harness_control_routes_conform` | mcp/tests/test_serving_response_conformance.py:1516-1658 |
+| Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | `test_pre_session_capabilities_freeze_envelope_and_refresh` | mcp/tests/test_serving_harness_control_api.py:129-147 |
+| The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
+| The immutable runtime authority and scope types this registration constructs. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
+| The server-resolved local-operator resolver bound into the runtime. | `LocalOperatorAuthorizationResolver` | mcp/src/agents_remember/serving/conversation/authorization.py:69-105 |
+| The foundation suite pins this file as the sole global conversation registration seam. | `test_global_registration_has_one_stable_inclusion_seam` | mcp/tests/test_conversation_foundation.py:110-122 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented; the routes address AR-owned local adapters and
 catalog state.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -233,6 +237,8 @@ The shared spine of every control route is now explicit:
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 14 repository-reference citations and normalized 1 prose citation (14/14 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T08:54+02:00 — 260731-EFA-L4 curator: recorded the ten `response_model`
   declarations with their exact lines, the shared `SESSION_CONTROL_RESPONSES` table (which is

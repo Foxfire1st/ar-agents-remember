@@ -38,53 +38,53 @@ harness plus a complete selection; pre-session buttons no longer claim adapter p
 
 ### Logic
 
-- **Reset + harness load on every open** (L170-L225): form reset and catalog request ownership are
+- **Reset + harness load on every open** (cit:(["launch-harness-loading"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:375-375)): form reset and catalog request ownership are
   separate. The hook performs one live read, revokes it on close or supersession, and exposes
   explicit loading/empty/timeout/error/retry states.
-- **Harness buttons** (L332-L420): detection gates each button (`disabled={!harness.detected}`,
+- **Harness buttons** (cit:(["— not installed"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:395-395)): detection gates each button (`disabled={!harness.detected}`,
   "— not installed"). The narrow pre-session contract intentionally has no adapter process word.
 - **Envelope read** (L192-L195, L221-L224): selecting a harness calls
   `fetchHarnessCapabilities(harnessId)` (single-flighted; a daemon cache hit is cheap) and the
   component subscribes to that harness's `perHarness` entry only.
-- **Model/effort pickers — dynamic only** (L356-L473): while `loading`/`refreshing`, the
-  cost-named `capabilityLoadingCopy` renders and ZERO options exist (L448-L454); an `error` entry
-  renders the VERBATIM `status: detail` with a retry button (L366-L381); a loaded envelope renders
+- **Model/effort pickers — dynamic only** (cit:([`capabilityLoadingCopy`], dashboard/src/data/capabilityCatalog.ts:75-79)): while `loading`/`refreshing`, the
+  cost-named `capabilityLoadingCopy` renders and ZERO options exist (cit:(["launch-cap-loading"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:449-449)); an `error` entry
+  renders the VERBATIM `status: detail` with a retry button (cit:(["launch-cap-retry"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:464-464)); a loaded envelope renders
   `cacheStatusNote` + a refresh button whose `title` is `capabilityCostNote` (R2 — the same cost
-  naming as the miss-loading state, L384-L396). Hidden rows are FILTERED OUT (L398-L399);
-  non-selectable rows render disabled with the catalog's own fact ("— not selectable", L406/L417);
-  keys render VERBATIM (Pi stays provider-qualified, L415-L416). The explicit vendor-defaults
-  option (L420-L432) selects `chooseVendorDefaults()` — NEITHER knob goes on the wire.
-- **Effort rules** (L433-L469): a model with no launch-settable efforts gets the honest
+  naming as the miss-loading state, cit:(["launch-cap-refresh"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:479-479)). Hidden rows are FILTERED OUT;
+  non-selectable rows render disabled with the catalog's own fact ("— not selectable", cit:(["— not selectable"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:506-506));
+  keys render VERBATIM (Pi stays provider-qualified, cit:(["launch-model-list"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:486-486)). The explicit vendor-defaults
+  option (cit:(["launch-vendor-defaults"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:513-513)) selects `chooseVendorDefaults()` — NEITHER knob goes on the wire.
+- **Effort rules**: a model with no launch-settable efforts gets the honest
   `launch-effort-none` note (Haiku can never form a pair — "launch with vendor defaults instead",
-  L434-L438); otherwise efforts render in ADVERTISED native order with zero emphasis (L441-L460),
-  and a null re-gated effort demands an explicit choice (`launch-effort-choose`, L461-L466).
+  cit:(["launch-effort-none"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:524-524)); otherwise efforts render in ADVERTISED native order with zero emphasis (cit:(["launch-effort-list"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:530-530)),
+  and a null re-gated effort demands an explicit choice (`launch-effort-choose`, cit:(["launch-effort-choose"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:551-551)).
   Model clicks run `chooseModel` (re-gates effort to THAT row's advertised launch default only),
   effort clicks `chooseEffort` — the reducers, not local logic.
-- **Prefill** (L36-L42, L227-L236): 'Launch corrected…' hands in the refused pair; it is applied
+- **Prefill** (cit:([`chooseModel`], dashboard/src/data/launchFlow.ts:47-59)): 'Launch corrected…' hands in the refused pair; it is applied
   ONLY where the live catalog still advertises it (`chooseModel` returns empty for an absent row)
   — the flow can never re-offer a key the catalog no longer advertises. Consumed once per open
   via `prefillPairRef`.
-- **Launch** (L258-L299): `readyToLaunch` requires a currently advertised detected harness plus
-  `selectionComplete`, not posting, and no pending unknown. `launch()` mints the id (`crypto.randomUUID`, L163;
-  `mintSessionId` is the test seam) and calls `openHostedSession`. A 200 records the retained
+- **Launch** (cit:([`selectionComplete`], dashboard/src/data/launchFlow.ts:77-79)): `readyToLaunch` requires a currently advertised detected harness plus
+  `selectionComplete`, not posting, and no pending unknown. `launch()` mints the id (`crypto.randomUUID`, cit:([`defaultMint`], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:175-175);
+  `mintSessionId` is the test seam) and calls `openHostedSession` (cit:([`openHostedSession`], dashboard/src/data/launchFlow.ts:193-226)). A 200 records the retained
   pair in `sessionCockpitStore.setLaunchEvidence` at the tier `launchTier` derives from the
   RESPONSE controlState ('starting' ⇒ pending — never promoted by the open response itself,
-  L277-L289), hydrates the catalog, focuses the new row, and closes.
-- **Outcome rendering** (`LaunchOutcome`, L525-L613): `launch-selection-invalid` and
-  `open-refused` render the verbatim detail (L539-L552); `leaf-taken` names the owning session
-  with a focus-owner action (L553-L578); `launch-selection-conflict` shows the LIVE retained pair
+  cit:([`launchTier`], dashboard/src/data/launchEvidence.ts:29-41)), hydrates the catalog, focuses the new row, and closes.
+- **Outcome rendering** cit:([`LaunchOutcome`], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:621-709): `launch-selection-invalid` and
+  `open-refused` render the verbatim detail (cit:(["launch-outcome-invalid"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:637-637)); `leaf-taken` names the owning session
+  with a focus-owner action (cit:(["launch-focus-owner"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:662-662)); `launch-selection-conflict` shows the LIVE retained pair
   vs the attempted pair, states "the live process keeps its provenance; nothing was rewritten",
-  and offers focus-existing (L579-L602); `outcome-unknown` (F9) has NO retry button at all — it
+  and offers focus-existing (cit:(["launch-focus-existing"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:688-688)); `outcome-unknown` (F9) has NO retry button at all — it
   names the reconciliation mechanism ("the caller-minted id reconciles on the next poll. No
-  re-POST is sent", L603-L611).
-- **F9 watcher** (L242-L248): the effect watches `sessions` for the minted id — but ONLY while
+  re-POST is sent", cit:(["launch-outcome-unknown"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:701-701)).
+- **F9 watcher**: the effect watches `sessions` for the minted id — but ONLY while
   `open` (review finding 1): an explicit dismiss ends the watch, so a row the daemon surfaces
-  minutes later can never steal focus. `dismiss` (L257-L263, wired to cancel button, overlay
+  minutes later can never steal focus. `dismiss` (cit:(["launch-cancel"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:610-610), wired to cancel button, overlay
   click, and Escape) ALSO clears `unknownId` immediately (the delta-verify residual: a stale id
   surviving dismissal would fire one late focus steal on the next open's first effect pass).
   While an unknown is pending, the cancel button reads "dismiss (resolves via the catalog)"
-  (L517).
-- **Optional inputs** (L475-L493): label + leaf key — the leaf-key input makes the 409 leaf-taken
+  (cit:(["dismiss (resolves via the catalog)"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:613-613)).
+- **Optional inputs** (cit:(["launch-leaf-key"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:583-583)): label + leaf key — the leaf-key input makes the 409 leaf-taken
   path genuinely reachable from this surface. **V7 (260718-CHATS-L5P):** the placeholder is now the
   short `leaf key (optional)` (was a self-truncating sentence `leaf key (optional — the server
   arbitra…`); the arbitration note moved to the field `title` (progressive disclosure) so the input
@@ -103,7 +103,7 @@ harness plus a complete selection; pre-session buttons no longer claim adapter p
 
 Co-located Panda `css()` with token names; option buttons carry `aria-pressed` (not radios —
 worker flag 5, simpler keyboard story inside the dialog); `data-testid` on every assertable
-element (`launch-*`); the dialog stops click propagation and handles its own Escape (L306-L319).
+element (`launch-*`); the dialog stops click propagation and handles its own Escape (cit:(["launch-flow-overlay"], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:356-356)).
 
 ### Invariants And Boundaries
 
@@ -126,24 +126,24 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
+| No relevant domain documentation was found for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The dialog: reset/load, pickers, pair gating, outcomes, F9 watcher + dismiss. | L165-L613 | [LaunchFlow.tsx](LaunchFlow.tsx) |
-| The pure pair reducers + open classifier this renders (`chooseModel`/`chooseEffort`/`selectionComplete`/`openHostedSession`). | L33-L222 | [../../data/launchFlow.ts](../../data/launchFlow.ts) |
-| The envelope store + R2 cost/cache copy (`fetchHarnessCapabilities`, `capabilityCostNote`, `capabilityLoadingCopy`, `cacheStatusNote`). | L69-L243 | [../../data/capabilityCatalog.ts](../../data/capabilityCatalog.ts) |
-| The tier machine stamping the retained pair at 'pending' on a 200. | L29-L41 | [../../data/launchEvidence.ts](../../data/launchEvidence.ts) |
-| The typed narrow harness catalog read and explicit result states. | L1-L74 | [../../data/harnessCatalog.ts](../../data/harnessCatalog.ts) |
-| The hook owning timeout, abort, Retry, and one replacement per serving boot. | L5-L83 | [useHarnessCatalogRead.ts](useHarnessCatalogRead.ts) |
-| The owner registering `session.launch` and mounting the dialog after the palette. | L287-L296, L687-L693 | [SessionsView.tsx](SessionsView.tsx) |
-| The banner handing in the refused-pair prefill. | L127-L143 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
-| The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen. | L85-L425 | [LaunchFlow.test.tsx](LaunchFlow.test.tsx) |
-| The open-response fixtures the classifier paths render. | L1-L178 | [../../test/fixtures/openResponses.ts](../../test/fixtures/openResponses.ts) |
+| The dialog: reset/load, pickers, pair gating, outcomes, F9 watcher + dismiss. | "launch-flow-overlay" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:356-356 |
+| The pure pair reducers + open classifier this renders (`chooseModel`/`chooseEffort`/`selectionComplete`/`openHostedSession`). | `chooseModel`, `chooseEffort`, `selectionComplete`, `openHostedSession` | dashboard/src/data/launchFlow.ts:47-59; dashboard/src/data/launchFlow.ts:62-71; dashboard/src/data/launchFlow.ts:77-79; dashboard/src/data/launchFlow.ts:193-226 |
+| The envelope store + R2 cost/cache copy (`fetchHarnessCapabilities`, `capabilityCostNote`, `capabilityLoadingCopy`, `cacheStatusNote`). | `CapabilityCatalogState` | dashboard/src/data/capabilityCatalog.ts:41-43 |
+| The tier machine stamping the retained pair at 'pending' on a 200. | `launchTier` | dashboard/src/data/launchEvidence.ts:29-41 |
+| The typed narrow harness catalog read and explicit result states. | `HarnessCatalogRead` | dashboard/src/data/harnessCatalog.ts:13-16 |
+| The hook owning timeout, abort, Retry, and one replacement per serving boot. | `useHarnessCatalogRead` | dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts:22-84 |
+| The owner registering `session.launch` and mounting the dialog after the palette. | "session.launch" | dashboard/src/panels/session-cockpit/SessionsView.tsx:514-514 |
+| The banner handing in the refused-pair prefill. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen. | `renderFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx:88-102 |
+| The open-response fixtures the classifier paths render. | `INVALID_PARTIAL_PAIR`, `FAILED_LAUNCH_ROWS` | dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:140-144 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -157,11 +157,13 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-03T02:35:50+02:00 — W3-B05 curator: anchored 10 Tier-2 table citations and 25 Tier-2 prose citations with exact source paths; fixer generated all ranges.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The
   `capabilityLoadingCopy` loading branch moved L359-L365 -> L448-L454 (L359-L365 is now the

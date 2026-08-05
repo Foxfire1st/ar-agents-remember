@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -226,15 +226,15 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The server composer of the process nodes the client renders. | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The honest-motion gate the GSAP/Motion read. | [useShouldAnimate.ts](agents-remember/dashboard/src/panels/engine-room/useShouldAnimate.ts) |
-| The cockpit shell that hides the rails for the Engine Room view (§4.1). | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| `_seed_edge_state` and `_DECISIVE_SETUP_EDGE_STATES` — the only producers of a seed lane's state, including the `stale` reroute. | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The client mirror of the edge, which no longer declares a polarity field. | [types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The server composer of the process nodes the client renders. | `build_analytics`; `_start_process_node`; `_process_edges` | mcp/src/agents_remember/observer/reducer.py:627-654; mcp/src/agents_remember/observer/reducer.py:1089-1180; mcp/src/agents_remember/observer/reducer.py:1504-1577 |
+| The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:832-900 |
+| The honest-motion gate the GSAP/Motion read. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
+| The cockpit shell that hides the rails for the Engine Room view (§4.1). | `fullBleed` | dashboard/src/cockpit/Cockpit.tsx:438-442 |
+| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:785-804 |
+| `_seed_edge_state` and `_DECISIVE_SETUP_EDGE_STATES` — the only producers of a seed lane's state, including the `stale` reroute. | `_seed_edge_state`; `_DECISIVE_SETUP_EDGE_STATES` | mcp/src/agents_remember/observer/reducer.py:1591-1595; mcp/src/agents_remember/observer/reducer.py:1598-1614 |
+| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160 |
 
 ## Current L5I Route State
 
@@ -288,6 +288,7 @@ payload the server can actually send.
 
 ## Update History
 
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped engine-room citation claims; final exact frozen-snapshot check is clean.
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the
   `observer/projection.py` citations in the 12:50 entry below. The range `L752-L771` → `L762-L781`
   (`class EngineProcessEdge` L762, `extra="forbid"` L770, last field `detail` L781), and the two
@@ -299,18 +300,17 @@ payload the server can actually send.
   the "Derived Refused-Conduit Polarity" section and the matching invariant, and corrected the Purpose
   paragraph's two stale mode descriptions — T9B's "refused clone lane" is the `failed` lane and T9C's
   amber flash rides the `stale` seed lane. Evidence for the whole change: `EngineProcessEdge`
-  (`observer/projection.py` L762-L781) is `extra="forbid"`, declares no `refusedPolarity`, and its state
+  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:785-804) is `extra="forbid"`, declares no `refusedPolarity`, and its state
   comment (L778, above `state: str` at L779) lists
   nominal/running/blocked/failed/stale/skipped/complete/planned/unknown with no
   `refused`; `git log --all -S 'state="refused"'` returns 0 commits in all of history; and
-  `_DECISIVE_SETUP_EDGE_STATES` (`observer/reducer.py` L1588-L1592) is what makes `stale` a state
-  `_seed_edge_state` (L1595-L1611) really returns. Recorded that the scenario ID
+  cit:([`_DECISIVE_SETUP_EDGE_STATES`, `_seed_edge_state`], mcp/src/agents_remember/observer/reducer.py:1591-1595; mcp/src/agents_remember/observer/reducer.py:1598-1614) is what makes `stale` a state the helper really returns. Recorded that the scenario ID
   `engine-cgc-seed-refused` is unchanged on purpose because "refused" now names the beat, not a state,
   and that `EnclosureProcessMap.test.tsx`'s `data-refused-polarity` `toBeNull()` is the guard against
   reintroducing the field. Kept the `integration`/`integration-mem` arms documented with their ACTUAL
   justification (`integration` is in the model's own `kind` list at L765-L767 and the lane is
   fixture-authored/test-covered) rather than as forward-compatibility — I checked both reducer edge
-  builders, `_process_edges` (L1501-L1574) and `_start_process_node` (L1086-L1150), and neither emits
+  builders, cit:([`_process_edges`, `_start_process_node`], mcp/src/agents_remember/observer/reducer.py:1089-1180; mcp/src/agents_remember/observer/reducer.py:1504-1577), and neither emits
   either kind. Added three two-cell `Repo-Internal References` rows in the existing two-column shape.
   Evidence: the engine-room suites run green. Verification metadata remains pinned until closeout.
 

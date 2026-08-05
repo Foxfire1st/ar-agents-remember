@@ -89,28 +89,30 @@ No task-independent follow-up is recorded for this module.
 The resolved Domain Documentation registry (`system/sources.md`) has no entries. This
 repository-local serving contract is documented from source and this executable regression.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found after checking the configured sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The resolver's `None`-vs-directory contract and the two mount branches under test. | L94-L129 | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The 503 body, `no-store` header, and GET/HEAD-only method contract under test. | L53-L91 | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The app-level counterpart covering both states through `create_app`. | L526-L558 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The release build step that produces the bundle these tests stand in for. | L138-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
+| The resolver's `None`-vs-directory contract and the two mount branches under test. | `dashboard_static_dir`; `mount_static` | mcp/src/agents_remember/serving/static.py:104-109; mcp/src/agents_remember/serving/static.py:112-129 |
+| The 503 body, `no-store` header, and GET/HEAD-only method contract under test. | `MissingDashboardBundle`; `BUILD_COMMAND` | mcp/src/agents_remember/serving/static.py:35-38; mcp/src/agents_remember/serving/static.py:53-91 |
+| The app-level counterpart covering both states through `create_app`. | `test_root_serves_dashboard_bundle`; `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:538-555; mcp/tests/test_serving.py:557-570 |
+| The release build step that produces the bundle these tests stand in for. | `sync`; `replace_tree` | scripts/sync-dashboard.py:120-135; scripts/sync-dashboard.py:138-159 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this test module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 4 citation rows to the static resolver, missing-bundle surface, app tests, and release sync; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: made the `test_serving.py` citation the previous
   entry flagged as approximate exact again. The app-level counterpart is `AppTests` L526-L558:

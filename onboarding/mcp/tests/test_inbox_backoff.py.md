@@ -72,26 +72,27 @@ None.
 
 No meaningful external design-doc references found yet (created this leaf).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Backoff ladder climbs then clamps at its ceiling; `next_attempt_at` respects the 900-second floor and rejects sub-floor overrides. | L46-L69 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
-| `is_due`/`is_rate_limited`/`redeliverable` combinator semantics, including the consumed-row, ladder-resolved, 900-second-rate-limit, and sub-floor-refusal cases. | L72-L128 | [test_inbox_backoff.py](agents-remember/mcp/tests/test_inbox_backoff.py) |
+| Backoff ladder climbs then clamps at its ceiling; `next_attempt_at` respects the 900-second floor and rejects sub-floor overrides. | `BackoffMathTests` | mcp/tests/test_inbox_backoff.py:45-69 |
+| `is_due`/`is_rate_limited`/`redeliverable` combinator semantics, including the consumed-row, ladder-resolved, 900-second-rate-limit, and sub-floor-refusal cases. | `DueAndRateLimitTests` | mcp/tests/test_inbox_backoff.py:72-128 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Update History
+- 2026-08-02T21:40:21+02:00 — 260731-EFA-L6 curator W2-B10: repaired 4 citation findings (2 reference rows); scoped recheck clean.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2: `create_operator_inbox_entry` moved onto parameter
   objects, which invalidated this card's description of the fixture helper. `_entry` is no longer

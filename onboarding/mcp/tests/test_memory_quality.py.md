@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_memory_quality.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -38,14 +38,16 @@ blocks and skips sections with missing timestamps.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The tested package runner lives in `memory_quality.check`. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py) |
-| The tested payload builder lives in `mcp.tools.memory`. | [memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py) |
-| The tested style checker lives in `history_order.py`. | [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
-| The tested style fixer lives in `history_order_fix.py`. | [history_order_fix.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The tested package runner lives in `memory_quality.check`. | `run_memory_quality_check` | mcp/src/agents_remember/memory_quality/check.py:86-113 |
+| The tested payload builder lives in `mcp.tools.memory`. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
+| The tested style checker lives in `history_order.py`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
+| The tested style fixer lives in `history_order_fix.py`. | `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py:28-50 |
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 8 citation findings (4 rows); scoped recheck clean.
 
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-06-06T12:28+02:00: Corrected the memory-quality payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.

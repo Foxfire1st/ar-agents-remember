@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer.py`                     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -38,13 +38,15 @@ importing `agents_remember.observer`. `EventStore` is exercised against a
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The envelope under test. | [events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The id mint under test. | [ulid.py](agents-remember/mcp/src/agents_remember/observer/ulid.py) |
-| The store under test. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The envelope under test. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
+| The id mint under test. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
+| The store under test. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_observer.py` since
   the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s)

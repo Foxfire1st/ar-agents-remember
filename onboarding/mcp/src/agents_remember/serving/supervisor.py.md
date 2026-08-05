@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -274,37 +274,36 @@ No relevant external documentation found after checking the repo Domain Document
 supervisor-sweep-specific behavior; this is same-repository control-plane plumbing whose design
 source is the pilot-observer log (P-15) and the leaf task doc, not an external spec.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this sweep; the P-15 pilot-run predicate list and the leaf task doc (R1-R6) are the source of truth. | L1-L470 | [supervisor.py](supervisor.py) |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `supervisor_loop`/`_supervisor_context` in `app.py` construct one `SupervisorContext` per sweep iteration and call `run_supervisor_sweep` via `asyncio.to_thread` on the settings-driven interval. | `supervisor_loop`; `_supervisor_context` | [app.py](app.py.md) |
-| The pane classifier `evaluate_pane_findings` calls per running harness row. | `classify_pane_signal` | [pane_signals.py](pane_signals.py.md) |
-| The heartbeat store `run_supervisor_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `SupervisorHeartbeatStore` | [supervisor_heartbeat.py](supervisor_heartbeat.py.md) |
-| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | `ExpectationRowStore.overdue`; `mark_missed` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py) |
-| The operator inbox store R2d/R4a/R4c read and write directly, including the reserved `mark_escalated` transition and the ladder's own `advance_rung` transition. | `OperatorInboxStore.list_redeliverable`; `mark_escalated`; `advance_rung` | [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py) |
-| The pure escalation-ladder walker `_escalate_rung` reads for the row's next rung/owner. | `rung_due`; `next_step`; `seat_is_suspect` | [../controlplane/escalation_ladder.py](../controlplane/escalation_ladder.py.md) |
-| The two-hop, dead-node-skipping owner derivation `_escalate_rung`'s rung-2 branch and `_signal_dead_upstream` both call, plus the liveness check `evaluate_dead_upstream_findings`/`seat_is_suspect` use. | `derive_skip_level_owner`; `is_seat_dead` | [../controlplane/signal_routing.py](../controlplane/signal_routing.py.md) |
-| The orphan-detection hook `_respawn_suspect` calls when the retired seat was a manager. | `find_orphaned_workers` | [../controlplane/orphan_policy.py](../controlplane/orphan_policy.py.md) |
-| The HFX-L8 retirement primitive `_respawn_suspect` calls to retire a confirmed-suspect seat's husk. | `retire_entry` | [retire.py](retire.py.md) |
-| `missing_artifact()` gets its first real caller here (R2c) — previously an uncalled function. | `missing_artifact` | [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py) |
-| The standard turn-report artifact path helper `turn_report_path_for_leaf_key` resolves against, reused rather than re-derived. | `turn_report_artifact` | [../controlplane/orchestration_artifacts.py](../controlplane/orchestration_artifacts.py) |
-| The owner-derivation helper both `_auto_nudge` and `_signal_emit` call before posting an owner-addressed inbox row. | `derive_signal_owner` | [../controlplane/signal_routing.py](../controlplane/signal_routing.py) |
-| The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | [inbox_delivery.py](inbox_delivery.py.md) |
-| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | L61-L113 | [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md) |
-| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | L500-L513; L655-L698; L701-L747 | [supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
-| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | `TerminalCatalog.list` | [terminal_catalog.py](terminal_catalog.py.md) |
-| Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `SupervisorTests`; sweep integration test | [../../../tests/test_supervisor.py](../../../tests/test_supervisor.py.md) |
+| `supervisor_loop`/`_supervisor_context` in `app.py` construct one `SupervisorContext` per sweep iteration and call `run_supervisor_sweep` via `asyncio.to_thread` on the settings-driven interval. | `_supervisor_context`, `_supervisor_loop`, `run_supervisor_sweep` | mcp/src/agents_remember/serving/app.py:834-858; mcp/src/agents_remember/serving/app.py:861-872 |
+| The pane classifier `evaluate_pane_findings` calls per running harness row. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
+| The heartbeat store `run_supervisor_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `SupervisorHeartbeatStore` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121 |
+| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | `evaluate_expectation_findings`, `_mark_expectation_missed`, `mark_missed`, `ExpectationRowStore` | mcp/src/agents_remember/serving/supervisor.py:147-194; mcp/src/agents_remember/serving/supervisor.py:711-731; mcp/src/agents_remember/controlplane/expectation_rows.py:127-134; mcp/src/agents_remember/controlplane/expectation_rows.py:156-166 |
+| The operator inbox store R2d/R4a/R4c read and write directly, including the reserved `mark_escalated` transition and the ladder's own `advance_rung` transition. | `mark_escalated`; `advance_rung` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:237-252; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
+| The pure escalation-ladder walker `_escalate_rung` reads for the row's next rung/owner. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
+| The two-hop, dead-node-skipping owner derivation `_escalate_rung`'s rung-2 branch and `_signal_dead_upstream` both call, plus the liveness check `evaluate_dead_upstream_findings`/`seat_is_suspect` use. | `derive_skip_level_owner`; `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
+| The orphan-detection hook `_respawn_suspect` calls when the retired seat was a manager. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
+| The HFX-L8 retirement primitive `_respawn_suspect` calls to retire a confirmed-suspect seat's husk. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
+| `missing_artifact()` gets its first real caller here (R2c) — previously an uncalled function. | `missing_artifact` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:140-142 |
+| The standard turn-report artifact path helper `turn_report_path_for_leaf_key` resolves against, reused rather than re-derived. | `turn_report_artifact` | mcp/src/agents_remember/controlplane/orchestration_artifacts.py:87-97 |
+| The owner-derivation helper both `_auto_nudge` and `_signal_emit` call before posting an owner-addressed inbox row. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:249-275 |
+| The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
+| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | `_signal_emit` | mcp/src/agents_remember/serving/supervisor.py:858-934 |
+| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | `_redeliver`, `_post_owner_signal`, `_signal_emit`, `deliver_inbox_entry` | mcp/src/agents_remember/serving/supervisor.py:527-577; mcp/src/agents_remember/serving/supervisor.py:775-855; mcp/src/agents_remember/serving/supervisor.py:858-934; mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
+| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | `TerminalCatalog`, `evaluate_pane_findings`, `evaluate_seat_liveness_findings` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857; mcp/src/agents_remember/serving/supervisor.py:124-144; mcp/src/agents_remember/serving/supervisor.py:336-373 |
+| Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `test_mid_turn_pane_fires_a_finding`, `test_overdue_briefed_by_row_fires`, `test_missing_report_fires_when_row_is_overdue`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_supervisor.py:127-135; mcp/tests/test_supervisor.py:153-167; mcp/tests/test_supervisor.py:183-204; mcp/tests/test_supervisor.py:235-248; mcp/tests/test_supervisor.py:270-280; mcp/tests/test_supervisor.py:400-489 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary. | — | — |
 
@@ -339,6 +338,9 @@ durable stores directly rather than the projection.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 10 citation findings (5 table rows, 5 source-form repairs); deleted 1 unanchorable substantive Tier-3 citation row and recorded it in the batch report.
+
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `EscalationSchedule` and `OwnerSignal`; sweep posture and predicates unchanged.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented the final confirmed-gone

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_leaf_assignment.py`      |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`        |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`        |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -60,28 +60,30 @@ No known follow-up in this file.
 
 No relevant external/domain documentation found; the behavior is local catalog/tool policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests pin internal dashboard catalog reassignment behavior, not an external protocol. | L54-L108 | [test_terminal_leaf_assignment.py](test_terminal_leaf_assignment.py) |
+| The tests pin internal dashboard catalog reassignment behavior, not an external protocol. | `TerminalLeafAssignmentTests` | mcp/tests/test_terminal_leaf_assignment.py:109-250 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared assignment helper under test returns `attached`, `leaf-taken`, or `unknown-session` and mutates only on success. | L45-L83 | [../src/agents_remember/serving/terminal_leaf_assignment.py](../src/agents_remember/serving/terminal_leaf_assignment.py) |
-| The MCP payload builder under test opens the dashboard catalog path and validates the response through `_tool_payload`. | L16-L42 | [../src/agents_remember/mcp/tools/terminal.py](../src/agents_remember/mcp/tools/terminal.py) |
-| The shared leaf-ref resolver and serving adapter normalize accepted refs before catalog writes. | resolve_catalog_leaf_key | [../src/agents_remember/serving/leaf_ref_validation.py](../src/agents_remember/serving/leaf_ref_validation.py) |
-| Existing catalog behavior provides the `with_leaf_key` write point and role-scoped active owner lookup these tests exercise indirectly. | L131-L138; L169-L190 | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
+| The shared assignment helper under test returns `attached`, `leaf-taken`, or `unknown-session` and mutates only on success. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
+| The MCP payload builder under test opens the dashboard catalog path and validates the response through `_tool_payload`. | `attach_terminal_session_to_leaf_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43 |
+| The shared leaf-ref resolver and serving adapter normalize accepted refs before catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
+| Existing catalog behavior provides the `with_leaf_key` write point and role-scoped active owner lookup these tests exercise indirectly. | `with_leaf_key` | mcp/src/agents_remember/serving/terminal_catalog.py:350-352 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 4 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: expanded assignment coverage across role resolution,
   pair arbitration, dead-holder replacement, and atomic rebind.

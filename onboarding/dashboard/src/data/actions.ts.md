@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/actions.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,29 +60,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The serving route this POSTs to (records the developer/dashboard gate decision). | — | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The drawer that calls this + renders the status. | — | [panels/DetailPanel.tsx](../panels/DetailPanel.tsx) |
-| The attention queue that calls `postAttentionDismiss`. | — | [panels/AttentionQueue.tsx](../panels/AttentionQueue.tsx) |
-| The interaction answer path riding `postGateDecisionDetailed` (approve + note). | L119-L129 | [interactionAnswer.ts](interactionAnswer.ts) |
+| The serving route this POSTs to (records the developer/dashboard gate decision). | `_gate_decision_response` | mcp/src/agents_remember/serving/app.py:1141-1161 |
+| The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| The attention queue that calls `postAttentionDismiss`. | `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:130-265 |
+| The interaction answer path riding `postGateDecisionDetailed` (approve + note). | `answerPendingInteraction` | dashboard/src/data/interactionAnswer.ts:449-481 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 4 citation entries (8 findings); no Tier-3 findings.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

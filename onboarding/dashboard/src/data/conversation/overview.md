@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/conversation/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -211,31 +211,43 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This route's statements were verified from its direct agents-remember source/tests and the
 reviewed worker report and final-PASS review verdict.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this route. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this route. | — | — |
 
 ## Cross-Repo References
 
 The route mirrors this repository's own landed conversation wire contract and talks only to this
 package's serving endpoints; no cross-repository implementation source governs it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The landed active serving routes this client/stream consume. | [active/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
-| The wire grammar this route mirrors. | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The backend roster mint `agents.ts` reads (one notice/system roster item per sub-agent, evidence-bound). | [projectors/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) · [projectors/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
-| The control routes + the rulings the interrupt client consumes. | [conversation/control overview](../../../../mcp/src/agents_remember/serving/conversation/control/overview.md) |
-| The renderer that projects this store. | [session-cockpit/conversation overview](../../panels/session-cockpit/conversation/overview.md) |
-| The parent data authority boundary. | [data overview](../overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The active serving API exposes page, selected-child history, and event routes. | `conversation_page`; `hydrate_agent_history`; `conversation_events` | mcp/src/agents_remember/serving/conversation/active/api.py:126-155; mcp/src/agents_remember/serving/conversation/active/api.py:160-198; mcp/src/agents_remember/serving/conversation/active/api.py:204-247 |
+| The dashboard client fetches the active page. | `fetchConversationPage`; "if (query.before)"; "return { ok: true, page:"; "return { ok: false, error: null };" | dashboard/src/data/conversation/client.ts:74-98; dashboard/src/data/conversation/client.ts:83-83; dashboard/src/data/conversation/client.ts:94-94; dashboard/src/data/conversation/client.ts:96-96 |
+| The dashboard client requests selected-child history. | "export async function requestAgentHistory("; "const response = await fetchImpl(url, withTimeout({ method: \"POST\" }));"; "history?"; "return parseAgentHistory(body, response.status);" | dashboard/src/data/conversation/client.ts:191-191; dashboard/src/data/conversation/client.ts:198-198; dashboard/src/data/conversation/client.ts:200-200; dashboard/src/data/conversation/client.ts:205-205 |
+| The dashboard stream opens the active events URL built by `conversationEventsUrl`. | "const url = conversationEventsUrl(sessionId, epoch, getResumeCursor(), base);"; "const next = new eventSourceCtor(url);"; "export function conversationEventsUrl("; "/events?${params.join(" | dashboard/src/data/conversation/client.ts:294-294; dashboard/src/data/conversation/client.ts:302-302; dashboard/src/data/conversation/stream.ts:140-141 |
+| The wire grammar this route mirrors. | `WireModel`; `ActiveConversationRef`; `ConversationItem`; `ConversationStatus`; `ConversationEventEnvelope`; `ConversationCapabilities`; `ConversationPage` | mcp/src/agents_remember/serving/conversation/models.py:55-63; mcp/src/agents_remember/serving/conversation/models.py:129-131; mcp/src/agents_remember/serving/conversation/models.py:337-426; mcp/src/agents_remember/serving/conversation/models.py:548-561; mcp/src/agents_remember/serving/conversation/models.py:633-652; mcp/src/agents_remember/serving/conversation/models.py:747-751; mcp/src/agents_remember/serving/conversation/models.py:765-772 |
+| The codex backend mints one evidence-bound roster item per sub-agent. | `_roster_item` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:722-753 |
+| The Claude backend maps task lifecycle evidence into the roster. | `_map_task_lifecycle` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:305-385 |
+| The control API exposes interrupt, status, and reconcile routes. | `conversation_interrupt`; `conversation_interrupt_status`; `conversation_interrupt_reconcile` | mcp/src/agents_remember/serving/conversation/control/api.py:151-181; mcp/src/agents_remember/serving/conversation/control/api.py:184-215; mcp/src/agents_remember/serving/conversation/control/api.py:218-249 |
+| The dashboard client posts interrupt requests through one shared body. | `postInterrupt`; "body: JSON.stringify({ turnId, requestId }),"; "return parseInterrupt(await readJson(response), response.status);" | dashboard/src/data/conversation/client.ts:232-252; dashboard/src/data/conversation/client.ts:246-246; dashboard/src/data/conversation/client.ts:248-248 |
+| The dashboard client exposes the exact-turn interrupt wrapper. | "export function requestInterrupt("; "return postInterrupt(\"interrupt\", sessionId, epoch, turnId, requestId, base, fetchImpl);" | dashboard/src/data/conversation/client.ts:260-260; dashboard/src/data/conversation/client.ts:268-268 |
+| The dashboard client exposes status and reconcile wrappers. | "export function interruptStatus("; "return postInterrupt(\"interrupt-status\", sessionId, epoch, turnId, requestId, base, fetchImpl);"; "export function interruptReconcile("; "return postInterrupt(\"interrupt-reconcile\", sessionId, epoch, turnId, requestId, base, fetchImpl);" | dashboard/src/data/conversation/client.ts:271-271; dashboard/src/data/conversation/client.ts:279-279; dashboard/src/data/conversation/client.ts:282-282; dashboard/src/data/conversation/client.ts:290-290 |
+| The active conversation surface owns projection/focus behavior and renders the reconnect, agent, and timeline body. | "export function ConversationSurface({"; "const projection = useActiveConversation"; `applyAgentFocus`; "<ConversationReconnect phase={projection.stream}"; "<AgentsArea agents={agents} focusedAgentId={agentFocus} onFocusAgent={applyAgentFocus} />"; "<ConversationTimeline"; "onLoadOlder={() => void loadOlderConversation(sessionId)}" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:119-119; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:161-175; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:328-329; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:336-336; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:356-356; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:373-373 |
+| The chats stage body mounts the active conversation surface. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: split active/control route claims by server
+  and client owner, bound the ConversationSurface projection/focus/render body including the reconnect
+  and agents-area renders, cited the events-URL builder beside the stream consumer, retained the
+  chats-stage renderer split, and deleted the unsupported parent data-authority row.
 
 - 2026-08-01T10:30+02:00 — No route impact: 260731-EFA-L4 changed three files in this route and
   all three are tests — `git status --short -- dashboard/src/data/conversation/` lists exactly

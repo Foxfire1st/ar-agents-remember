@@ -159,23 +159,23 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for this file. | Source discovery checked | — |
+| No relevant domain documentation was found for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The backend WebSocket bridge this connects to (binary out, JSON in). | — | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The serving API that returns terminal catalog rows and accepts terminate requests. | L509-L515; L587-L604 | [serving/app.py](../../../mcp/src/agents_remember/serving/app.py) |
-| The xterm wrapper that adapts a `Terminal` to the `TerminalSink`. | — | [panels/Terminal.tsx](../panels/Terminal.tsx) |
-| The dev mock socket the bench provides through `TerminalSocketContext`. | — | [dev/mockTerminalSocket.ts](../dev/mockTerminalSocket.ts) |
-| The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | L127; L224 | [panels/Terminal.tsx](../panels/Terminal.tsx) |
-| The per-pane `freshness.ptyWs` field this hook feeds. | L67 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| The launch flow consumes the narrow catalog reader through an explicit request-owning hook. | L191-L204 | [../panels/session-cockpit/LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx) |
-| The typed narrow harness reader distinguishes transport, protocol, empty, and ready results. | L1-L74 | [harnessCatalog.ts](harnessCatalog.ts) |
-| The classifying open client the launch flow uses instead of this module's boolean opener. | L192-L222 | [launchFlow.ts](launchFlow.ts) |
+| The backend WebSocket bridge this connects to (binary out, JSON in). | "async def stream_events" | mcp/src/agents_remember/serving/app.py:315-315 |
+| The serving API that returns terminal catalog rows and accepts terminate requests. | "async def stream_events" | mcp/src/agents_remember/serving/app.py:315-315 |
+| The xterm wrapper that adapts a `Terminal` to the `TerminalSink`. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:117-117 |
+| The dev mock socket the bench provides through `TerminalSocketContext`. | `TerminalSocketContext` | dashboard/src/data/terminal.ts:500-500 |
+| The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | `onSocketState` | dashboard/src/panels/Terminal.tsx:151-151 |
+| The per-pane `freshness.ptyWs` field this hook feeds. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
+| The launch flow consumes the narrow catalog reader through an explicit request-owning hook. | "export function LaunchFlow" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-177 |
+| The typed narrow harness reader distinguishes transport, protocol, empty, and ready results. | "export function readHarnessCatalog" | dashboard/src/data/harnessCatalog.ts:45-45 |
+| The classifying open client the launch flow uses instead of this module's boolean opener. | "export function launchableEfforts" | dashboard/src/data/launchFlow.ts:34-34 |
 
 ### 260713-PHA-L5 Protocol Catalog Fields
 
@@ -188,11 +188,14 @@ uses correlated backend protocol receipts.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-24T13:17:50Z — Added terminal-catalog single-flight and timeout semantics. Verification
   hash/date remain pinned to the pre-commit source stamp.

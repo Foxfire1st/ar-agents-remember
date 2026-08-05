@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/keymap/preferences.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate |  2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,26 +44,26 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Cross-Repo References
 
 The preference module imports only repository-local keymap definitions and browser/React APIs; no cross-repository implementation governs validation or persistence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Static chord definitions. | [chords.ts](chords.ts) |
-| Browser/PTY reserved set. | [reserved.ts](reserved.ts) |
-| Global dispatcher consumer. | [useKeyboardZones.ts](../../panels/session-cockpit/useKeyboardZones.ts) |
-| Composer and reference UI consumers. | [SessionComposer.tsx](../../panels/SessionComposer.tsx) · [CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Static chord definitions. | `CHROME_CHORDS`, `COMPOSER_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81; dashboard/src/data/keymap/chords.ts:83-104 |
+| Browser/PTY reserved set. | `PTY_RESERVED`, `BROWSER_FORBIDDEN` | dashboard/src/data/keymap/reserved.ts:62-150; dashboard/src/data/keymap/reserved.ts:153-202 |
+| Global dispatcher consumer. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| Composer and reference UI consumers. | `SessionComposer`, `CommandPalette` | dashboard/src/panels/SessionComposer.tsx:231-723; dashboard/src/panels/session-cockpit/CommandPalette.tsx:157-342 |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (ariaKeyshortcuts helper)
 
@@ -76,6 +76,7 @@ Additive to the effective-keymap boundary; verification stays pinned to the FEUI
 
 ## Update History
 
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 9 citation findings (4 rows); scoped recheck clean.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
   the pure `ariaKeyshortcuts(chord)` helper that renders a validated chord as the WAI-ARIA token, so
   the interrupt control's derived `aria-keyshortcuts` follows a rebind of `conversation.stop` (F25).

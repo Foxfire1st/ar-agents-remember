@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:46+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -46,17 +46,16 @@ base, a half-integrated pair, a branch deleted while checked out — so each is 
 `ContractMemoryModeTests` proves both halves of the vocabulary refusal, and the second half is
 the one that is easy to lose. `test_leaf_contract_refuses_an_unknown_memory_mode` and its series
 twin prove `default_contract` / `default_series_contract` **raise** `ContractError`;
-`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception` (L143-L164) then proves
+cit:([`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`], mcp/tests/test_worktree_edge_paths.py:143-164) then proves
 `build_start_contract` converts that raise into a `WorktreeCommandResult(2, {"state":
 "invalid-request", ...})` whose summary still carries the message. Its docstring states the reason
 the conversion is load-bearing: nothing on `worktree_start`'s path — not
-`mcp/registration/worktrees.py`, not `controllers/worktree_tools.py`, not `mcp/tools/worktree.py` —
+`mcp/registration/worktrees.py`, not `application/worktree_tools.py`, not `mcp/tools/worktree.py` —
 catches `ContractError`, so an escaping raise would surface as a traceback instead of a blocked
 result the agent can read and correct. It patches `start_contract_module._build_start_contract`
 with a `side_effect`, since the refusal is the subject and reaching it for real would mean standing
 up a git repository to test an argument check. The production half is `build_start_contract`'s
-`except ContractError -> invalid_contract_request_result` (`modules/start_contract.py` L187-L200,
-`modules/leaf_ref_start.py` L38-L53).
+`except ContractError -> invalid_contract_request_result` cit:([`build_start_contract`], mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211) and cit:([`invalid_contract_request_result`], mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53).
 
 The refusal now covers `workflow_kind` too — the message the fixture uses,
 `"workflow_kind must be one of ['chat-task', 'light-task']"`, is the shape `_task_vocabulary`
@@ -89,23 +88,29 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The worktree lifecycle under test: contract, start, sync, integrate, retire. | [worktrees/](agents-remember/mcp/src/agents_remember/worktrees/) |
-| The construction refusal and its conversion to a result: `_task_vocabulary` (L150-L167, the `must be one of` messages) and `WorkflowKind = Literal["chat-task", "light-task"]` (L50). | [worktrees/worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| `build_start_contract` (L187-L200), which catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler; `_contract_after_memory_start` (`modules/start.py` L137-L161) is the memory-disabled/reconciled recovery. | [worktrees/modules/start_contract.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start_contract.py) |
-| `invalid_contract_request_result` (L38-L53) — the `exit 2` / `state: invalid-request` payload the refusal becomes. | [worktrees/modules/leaf_ref_start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py) |
-| The happy-path lifecycle suites these guards sit beside. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py), [test_worktree_sync.py](agents-remember/mcp/tests/test_worktree_sync.py), [test_worktree_contract_lifecycle.py](agents-remember/mcp/tests/test_worktree_contract_lifecycle.py) |
-| Helper-level arms of the same lifecycle. | [test_worktree_and_observer_helpers.py](agents-remember/mcp/tests/test_worktree_and_observer_helpers.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The construction refusal rejects unknown workflow and memory values through `_task_vocabulary`. | `_task_vocabulary` | mcp/src/agents_remember/worktrees/worktree_contract.py:163-180 |
+| `WorkflowKind` limits workflow selection to `chat-task` and `light-task`. | `WorkflowKind` | mcp/src/agents_remember/worktrees/worktree_contract.py:63-63 |
+| `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211 |
+| `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:137-161 |
+| `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
+| The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_support.py:573-3091; mcp/tests/test_worktree_sync.py:111-244; mcp/tests/test_worktree_contract_lifecycle.py:51-81 |
+| Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:93-180; mcp/tests/test_worktree_and_observer_helpers.py:183-231; mcp/tests/test_worktree_and_observer_helpers.py:234-348; mcp/tests/test_worktree_and_observer_helpers.py:421-526 |
 
 ## Update History
+- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: split task-vocabulary and WorkflowKind ownership, extended the start-contract exception claim, and removed hidden line-number shorthand from result claims. Verification metadata unchanged.
 
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 4 table citations and 1 prose citation; no unresolved Tier-3 claims.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:46+02:00 — 260731-EFA-L4 curator: the suite grew by 95 lines and the card's
   Classes table had gone from complete to eleven-of-twelve. Added the missing class,
   `MemoryDisabledStartTests` (L285-L353, three tests over
   `start_module._contract_after_memory_start`), and extended the `ContractMemoryModeTests` row for
   its fourth test, `test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`
-  (L143-L164). Wrote both up in a new section, because between them they are the leaf's real
+  cit:([`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`], mcp/tests/test_worktree_edge_paths.py:143-164). Wrote both up in a new section, because between them they are the leaf's real
   subject here: a vocabulary refusal that used to escape as a traceback now returns
   `WorktreeCommandResult(2, {"state": "invalid-request", ...})`, and a memory-disabled recovery
   has to clear the *whole* memory topology at once. Verified each production anchor rather than

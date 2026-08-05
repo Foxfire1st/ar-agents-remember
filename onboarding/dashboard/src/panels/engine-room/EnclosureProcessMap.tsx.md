@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.tsx`  |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-04T03:03+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -18,9 +18,11 @@
 
 The Engine Room pod-stage **shell** for one `EngineProcessNode` (5g G1). The bird's-eye render moved out
 to `EnclosureCanvas`, so this file is now a thin wrapper: a `motion.div` (`process-map`) that mounts at its
-settled state (`initial={false}`) and carries the **promote-in-place** morph (gated `layout`), plus the **fleeting**
-(pre-contract blocked-start) banner (§2.1). It delegates the two-world scene — official line ↔ worktree
-enclosure, engine gauges, warp coupler, conduits — to `<EnclosureCanvas node={node} workspaceEngines={…} />`.
+settled state (`initial={false}`) and carries the **promote-in-place** morph (gated `layout`). It renders
+no HTML fleeting banner. Pre-contract or stale-base blocked-start presentation is derived and drawn
+inside `EnclosureCanvas` as `FleetingEnclosure`. The shell delegates the two-world scene — official
+line ↔ worktree enclosure, engine gauges, warp coupler, conduits — to
+`<EnclosureCanvas node={node} workspaceEngines={…} />`.
 **5g G5** adds the t18 **abandon** end-state: when `node.phase === "abandoned"` the shell renders an
 `AbandonRecord` banner (full opacity, persists) above the canvas and wraps the canvas in a `dissolveShell`
 (dim + grayscale) so the enclosure dissolves to a ghost while its record stays; `process-map[data-abandoned]`
@@ -43,18 +45,17 @@ identity in addition to its visual edge/phase gate bars.
 ### Logic
 
 `EnclosureProcessMap({ node, gateNode, workspaceEngines = [], officialLedger })` is the only export — a `motion.div` (`mapWrap`, now a
-positioned `overflow:hidden` stacking context) that scales in on mount and carries `layout` (both
-gated by `useShouldAnimate`; instant under `data-effects=off`), so a fleeting→real swap of the same keyed
-element morphs its size in place (T4). **`initial={false}`** (2026-06-21): the wrapper no longer animates
+positioned `overflow:hidden` stacking context) that mounts at its settled state and carries
+`layout` (gated by `useShouldAnimate`; instant under `data-effects=off`), so a fleeting→real swap of
+the same keyed element morphs its size in place (T4). **`initial={false}`** (2026-06-21): the wrapper no longer animates
 opacity/scale up *from* `{opacity:0, scale:0.985}`; it mounts at the `animate` end-state (`opacity:1,
 scale:1`) and only the `layout`/`animate` target drives subsequent change. This fixes a second-scenario-loop
 bug where the whole map stranded at **opacity 0** when the scenario player remounted the wrapper through the
 B0 (no-enclosure) frame — the enter never re-ran, so the old `initial` opacity-0 was never animated away. **5g G6**: when `useShouldAnimate()` is true the wrapper mounts a
 `backdrop` `<div>` holding `backdropVideo` (`<video src="/assets/blueprint-boomerang.mp4">`, `aria-hidden`,
 absent under reduced-motion / `data-effects=off`) beneath a `stageContent` layer that holds the scene.
-`isFleeting(node)` is true when `missingFacts` contains a "contract not yet written" marker; the
-`FleetingBanner` (block label, `node.summary` reason, `node.nextAction` recovery choice) is wrapped in
-`AnimatePresence` so it **fades out in place as the node promotes**. The body of the map is
+Born-blocked detection and presentation are canvas-owned: `EnclosureCanvas` derives its
+`fleeting` condition from current facts and renders `FleetingEnclosure` there. The body of the map is
 `<EnclosureCanvas node={node} workspaceEngines={workspaceEngines} officialLedger={officialLedger} />` (the
 bird's-eye); the previous linear-lane render moved into `EnclosureCanvas` and the travelling packet +
 draw-on returned in G2. Slice 5h threads the optional `officialLedger?: LedgerNode` prop straight through
@@ -77,26 +78,28 @@ into `EnclosureCanvas` as data while the actionable secondary control lives in `
 
 Purely presentational — all data via the `node` (+ `workspaceEngines`) props. **Honest motion (§2/§8.4):**
 Motion reads `useShouldAnimate()`; under `data-effects=off` or reduced-motion the shell is an instant swap
-(banner exit instant, `layout` off, the abandon `dissolveShell` `motion.div` mounted at its dissolved
+(`layout` off, the abandon `dissolveShell` `motion.div` mounted at its dissolved
 end-state via `initial={false}`) **and the backdrop is absent + lazy** — snapshot-stable. No CSS
 animation/transition drives the dissolve anymore (§8): Motion owns the opacity + grayscale; the recipe is
 layout-only. **Stable
 identity:** the enclosure is keyed by `worktreeGroup` (S0) upstream, so the fleeting (start-progress id) →
 real (contract-path id) swap reuses the element — the morph, not a remount. Provisional ≠ live. The backdrop
-is `aria-hidden` pure atmosphere, never state. `data-testid` hooks (`process-map`, `fleeting-banner`,
-`backdrop`) are load-bearing; the scene's own hooks (`enclosure-canvas`, `branch-node`, `engine-gauge`,
-`conduit`, `warp-coupler`, …) live in `EnclosureCanvas`.
+is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and `backdrop`; the
+`fleeting-enclosure` hook and the scene's other hooks (`enclosure-canvas`, `branch-node`,
+`engine-gauge`, `conduit`, `warp-coupler`, …) live in `EnclosureCanvas`.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene. | — | [EnclosureProcessMap.tsx](EnclosureProcessMap.tsx) |
-| The G6 backdrop (`backdrop`/`backdropVideo`/`stageContent`) mounted only when effects are on. | — | [EnclosureProcessMap.tsx](EnclosureProcessMap.tsx) |
-| `isFleeting` + `FleetingBanner` in `AnimatePresence` (T4 promotion morph, §2.1). | — | [EnclosureProcessMap.tsx](EnclosureProcessMap.tsx) |
-| The bird's-eye scene (the render body, given `workspaceEngines`). | — | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| The honest-motion gate. | — | [useShouldAnimate.ts](useShouldAnimate.ts) |
-| Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | L251-L285 | [projection.ts](../../types/projection.ts) |
+| `EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-147 |
+| The G6 backdrop (`backdrop`/`backdropVideo`/`stageContent`) mounted only when effects are on. | "className={backdrop}"; "className={backdropVideo}"; "className={stageContent}" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:100-100; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:103-103; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:113-113 |
+| The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-147 |
+| The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices. | "prunes the stale base node and raises a fleeting block with BOTH recovery choices" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:352-360 |
+| The bird's-eye scene (the render body, given `workspaceEngines`). | `workspaceEngines` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1194-1194 |
+| The honest-motion gate. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
+| Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | `EngineProcessNode`; `ProviderNode`; `GateNode` | dashboard/src/types/projection.ts:162-202; dashboard/src/types/projection.ts:217-227; dashboard/src/types/projection.ts:325-336 |
 
 ## Current L5I Maintenance
 
@@ -105,6 +108,20 @@ blueprint video, then resumes playback on re-show without unmounting the map.
 
 ## Update History
 
+- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the two whole-claim ranges (2 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
+- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced two
+  underbound shell/canvas fragment records with whole-symbol anchors that retain the approved
+  no-banner delegation and born-blocked fleeting behavior. Both changed bindings are provisional
+  `:1-1` inputs for the fresh Luna curator; no citation mechanics ran.
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T00:41:58+02:00 — 260731-EFA-L6 S18-SR1 worker: removed the B06 semantic-residual
+  scaffold for retired `isFleeting`/`FleetingBanner` behavior. Live prose now records that this
+  shell has no HTML fleeting banner and that `EnclosureCanvas` derives and renders the
+  canvas-owned `FleetingEnclosure`; added provisional current-source/test bindings. Preserved the
+  prior curator entry and did not run citation mechanics. Verification metadata remains pinned until
+  closeout stamps the L6 code commit.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the current shell citations and retained one semantic residual for the retired `isFleeting`/`FleetingBanner` claim; final exact frozen-snapshot check is clean.
 - 2026-07-24T13:17:17Z — Curator: recorded hidden-layer video pause/resume behavior; verification
   fields remain pre-commit.
 

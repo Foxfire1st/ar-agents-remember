@@ -35,30 +35,33 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 No external domain documentation is needed for this repository-local template. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this template is repository source.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found after checking live sources. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
 Inline onboarding is the storage adapter for `c-05-create-or-update-onboarding-files` skill's common file-level content model.
 
-| Finding                                                                                                                    | Citations | Source Path                                                                                                                                                           |
-| -------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The inline template reuses the sidecar content model and differs only in storage, syntax, placement, metadata, and digesting. | L1-L6     | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
-| The inline block includes `governingOverview` metadata and a governing overview section before the normal semantic sections. | L7-L42    | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
-| Docs reference placeholder text now records no relevant documentation only after live-source checks or a retrieval blocker. | L34-L35   | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
-| Guidelines require stable markers, host-language comment adaptation, high placement, and digest recomputation with the block removed. | L46-L51   | [inline-onboarding-block-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The inline template reuses the sidecar content model and differs only in storage, syntax, placement, metadata, and digesting. | "It reuses the same semantic content model" | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md:5-5 |
+| The inline block includes `governingOverview` metadata and a governing overview section before the normal semantic sections. | "governingOverview:" | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md:14-14 |
+| Docs reference placeholder text now records no relevant documentation only after live-source checks or a retrieval blocker. | "No relevant documentation found after checking live sources." | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md:35-35 |
+| Guidelines require stable markers, host-language comment adaptation, high placement, and digest recomputation with the block removed. | "Place the block as high in the file as possible" | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md:50-50 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact template anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-22T13:32+02:00: Updated after inline docs-reference absence wording was aligned with live-source checks from the sidecar model. Verification metadata remains pinned until closeout commits the template change.

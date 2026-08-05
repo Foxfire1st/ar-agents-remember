@@ -108,7 +108,7 @@ Owns argument parsing, command wiring, and conversion into application calls.
 
 Must not own core business logic.
 
-### Controller
+### Application entry point
 
 Owns high-level request flow.
 
@@ -176,7 +176,7 @@ The following patterns are not acceptable:
 4. "I avoided creating a new file because that seemed heavier."
 5. "I kept the logic inline so the reader can see everything in one place."
 6. "I added comments instead of extracting the concept."
-7. "I reused the controller because it already had access to all dependencies."
+7. "I reused the application entry point because it already had access to all dependencies."
 8. "I added another mode flag instead of creating separate strategies."
 9. "I passed more booleans instead of introducing a request/options object."
 10. "I changed unrelated logic because it was nearby."
@@ -256,7 +256,7 @@ Bad:
 
 Public MCP response models should make nested structure explicit at construction time.
 
-Do not rely on Pydantic constructor coercion by passing plain dictionaries or lists into nested model fields in controllers, tool adapters, or response builders. That works at runtime, but it hides the response boundary from static analysis and makes model contracts harder to inspect.
+Do not rely on Pydantic constructor coercion by passing plain dictionaries or lists into nested model fields in application entry points, tool adapters, or response builders. That works at runtime, but it hides the response boundary from static analysis and makes model contracts harder to inspect.
 
 Use these patterns instead:
 
@@ -274,7 +274,7 @@ packet = ContextPacketV2(
 )
 ```
 
-2. For intentionally raw data returned by an adapter, provider, parser, or legacy controller, validate it at the narrow boundary where it becomes modeled data.
+2. For intentionally raw data returned by an adapter, provider, parser, or legacy application entry point, validate it at the narrow boundary where it becomes modeled data.
 
 ```python
 providers = ProviderSummary.model_validate(provider_summary_packet(...))
@@ -310,7 +310,7 @@ Domain failures use the typed error family in `errors.py`, not bare exceptions.
 
 Path-confinement and repo-allowlist checks are centralized, never copy-pasted.
 
-1. Resolve-and-confine a caller path through `controllers/_guards.require_within_coordination`; resolve a caller repo id through `require_repo`. Do not re-implement the "resolve, then check `is_relative_to`" guard inline.
+1. Resolve-and-confine a caller path through `application/_guards.require_within_coordination`; resolve a caller repo id through `require_repo`. Do not re-implement the "resolve, then check `is_relative_to`" guard inline.
 2. A confinement guard returns the resolved path or raises `AuthorityError`. Callers use the returned value; they do not re-resolve.
 3. Rationale: a security check duplicated across call sites is the one you forget to update — and the one you forget is the vuln.
 
@@ -326,7 +326,7 @@ Public, agent-callable surfaces default to the safe option.
 
 Arguments that cross a layer boundary are a typed object, not `argparse.Namespace` or `Any`.
 
-1. Do not pass `argparse.Namespace` from a controller or CLI into the domain layer as the shared argument type. Build a frozen dataclass (e.g. `WorktreeArgs`) and convert argparse output to it at the CLI edge.
+1. Do not pass `argparse.Namespace` from an application entry point or CLI into the domain layer as the shared argument type. Build a frozen dataclass (e.g. `WorktreeArgs`) and convert argparse output to it at the CLI edge.
 2. `Any` on a parameter that has a concrete type is a defect, not a shortcut. Type provider layouts, request objects, and results with their real classes — removing `Any` here surfaced latent `None`-handling bugs the type checker had been unable to see.
 3. This complements the Boolean Flag Rule: prefer a typed request/options object over threading many positional or boolean args.
 

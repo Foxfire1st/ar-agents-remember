@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/TokenGauge.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -35,12 +35,13 @@ uPlot-deferral). Cyan = the progress/charge grammar.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `TokenSample` shape (ts + cumulative) it plots. | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| uPlot deferral is pinned to slice 08. | — | [08_boot-audio-polish.md](agents-remember/../tasks/agents-remember/260610_browser-dashboard/08_boot-audio-polish.md) |
+| The `TokenSample` shape (ts + cumulative) it plots. | `TokenSample` | dashboard/src/types/projection.ts:503-506 |
 
 ## Update History
+
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: reconciled the frozen-source ledger and generated final citation ranges with the scoped fixer.
 
 - 2026-06-15T17:00 — Created for slice 5d: `TokenGauge` migrated to Panda `css()` (was `.gauge*`).
   Verification metadata pinned until closeout stamps the 5d code commit.

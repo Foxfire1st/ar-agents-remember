@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T20:08+02:00 |
-| lastVerifiedCommitHash |  |
-| lastVerifiedCommitDate |  |
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ None known.
 
 No Domain Documentation entries are configured in the resolved source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live documentation source was available for this pass. | — | — |
 
@@ -61,21 +61,23 @@ No Domain Documentation entries are configured in the resolved source registry.
 The Claude adapter suite selects this versioned fixture root explicitly and proves both the
 token-free discovery sequence and the normalized catalog projection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture loader selects the 2.1.210 directory and parses each JSONL frame. | L29-L36 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Discovery and running advertise consume the initialization and catalog frames without a model turn. | L171-L230 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| The dedicated parser validates model identity, model-local effort, disabled state, and current-model selection. | L14-L89 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
+| The fixture loader selects the 2.1.210 directory and parses each JSONL frame. | `_load_fixture` | mcp/tests/test_harness_control_claude.py:49-50 |
+| Discovery and running advertise consume the initialization and catalog frames without a model turn. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude.py:256-276 |
+| The dedicated parser validates model identity, model-local effort, disabled state, and current-model selection. | `parse_list_models_response` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references were needed for this fixture.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.
 
 - 2026-07-15T20:08+02:00 — 260714-ACPUI-L1 curator: created the strict sidecar for the current
   prompt-free initialization and dynamic `list_models` fixture. Verification metadata remains empty

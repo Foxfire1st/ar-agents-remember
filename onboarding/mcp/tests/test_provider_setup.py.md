@@ -94,42 +94,41 @@ install fields into isolated provider settings.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The test module imports package-local provider setup code from `mcp/src`, extending the loaded `agents_remember` package path when needed. | L12-L24 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| Explicit-settings coverage asserts missing provider settings are rejected, the parser requires `--from-settings`, and a typed `ProviderSetupRequest` can execute a disabled-provider dry run with setup summary metadata. | L20-L60 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| Setup reporting coverage asserts compact summary writes and recovered final status reporting while preserving strict failed-phase `ok=false`. | L62-L193 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| CGC prepare fallback coverage asserts a missing seed source still yields an overall successful dry-run payload when refresh fallback is enabled and `refresh-all` is planned. | L195-L236 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| The CGC bundle rewrite test builds JSON, JSONL, and text zip entries that contain a source path, calls `rewrite_cgc_bundle_paths`, then asserts the source path disappeared and the target path appears. | L102-L147 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| The isolated settings tests build synthetic CGC and GrepAI provider settings and assert target worktree roots, isolated runtime/data/log roots, no CGC `venvRoot` emission, canonical isolated setup payload shape, and derived container names. | L286-L623 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| The UTF-8 subprocess test monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`, and `stdin=subprocess.DEVNULL`. | L215-L238 | [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
-| Package-local provider setup is the surface this test module reaches: it re-exports the explicit settings check, command wrapper, isolated CGC settings, and CGC bundle rewriting from their sibling modules, and owns the typed `ProviderSetupRequest` / `run_provider_setup` path itself. | L38-L54; L57-L120; L547-L555 | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
+| The test module imports package-local provider setup code from `mcp/src`, extending the loaded `agents_remember` package path when needed. | `agents_remember` | mcp/tests/test_provider_setup.py:12-24 |
+| Explicit-settings coverage asserts missing provider settings are rejected, the parser requires `--from-settings`, and a typed `ProviderSetupRequest` can execute a disabled-provider dry run with setup summary metadata. | `ProviderSetupRequest` | mcp/tests/test_provider_setup.py:20-60 |
+| Setup reporting coverage asserts compact summary writes and recovered final status reporting while preserving strict failed-phase `ok=false`. | `ProviderSetupTests` | mcp/tests/test_provider_setup.py:25-899 |
+| CGC prepare fallback coverage asserts a missing seed source still yields an overall successful dry-run payload when refresh fallback is enabled and `refresh-all` is planned. | `test_cgc_prepare_is_ok_when_seed_falls_back_to_refresh` | mcp/tests/test_provider_setup.py:281-322 |
+| The CGC bundle rewrite test builds JSON, JSONL, and text zip entries that contain a source path, calls `rewrite_cgc_bundle_paths`, then asserts the source path disappeared and the target path appears. | `test_rewrite_cgc_bundle_paths_rewrites_json_jsonl_and_text` | mcp/tests/test_provider_setup.py:372-416 |
+| The isolated settings tests build synthetic CGC and GrepAI provider settings and assert target worktree roots, isolated runtime/data/log roots, no CGC `venvRoot` emission, canonical isolated setup payload shape, and derived container names. | `ProviderSetupTests` | mcp/tests/test_provider_setup.py:25-899 |
+| The UTF-8 subprocess test monkey-patches `subprocess.run` and asserts `run_command` passes `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`, and `stdin=subprocess.DEVNULL`. | `test_run_command_forces_utf8_for_lifecycle_children` | mcp/tests/test_provider_setup.py:876-899 |
+| Package-local provider setup owns the typed request and runner path used by this test module. | `ProviderSetupRequest`; `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: bound provider rewrite and subprocess claims to complete test bodies under the adversarial verdict, then the exact scoped fixer/check passed.
+- 2026-08-02T21:40:21+02:00 — 260731-EFA-L6 curator W2-B10: repaired 10 citation findings (4 reference rows and 2 prose citations); scoped recheck clean.
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose last
-  range (L886-L894) ran past the end of `provider_setup.py` (849 lines) and rewrote the claim,
-  because four of the five things it named no longer live in that file: `settings_path` and
-  `run_command` moved to `setup_common.py`, `isolated_cgc_settings` to `cgc/setup.py`, and
-  `rewrite_cgc_bundle_paths` to `cgc/bundle.py`. `provider_setup.py` re-binds all four at L38-L54,
-  which is how this test module still reaches them, so the row now cites that re-export surface plus
-  what the module genuinely owns: `ProviderSetupRequest` (L57-L120) and `run_provider_setup`
-  (L547-L555). Separators normalized from commas to semicolons. Not repaired and reported upward
-  instead: the seven self-citations above this row still point at a much older, smaller revision of
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file citation after source
+  movement. The four helper surfaces are re-exported by `provider_setup.py`, while the module owns
+  the typed request and runner path: cit:([`require_settings_path`], mcp/src/agents_remember/providers/setup_common.py:46-52); cit:([`run_command`], mcp/src/agents_remember/providers/setup_common.py:109-146); cit:([`isolated_cgc_settings`], mcp/src/agents_remember/providers/cgc/setup.py:42-54); cit:([`rewrite_cgc_bundle_paths`], mcp/src/agents_remember/providers/cgc/bundle.py:79-99) and
+  cit:([`ProviderSetupRequest`, `run_provider_setup`], mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555).
+  Separators normalized from commas to semicolons. Not repaired and reported upward instead: the
+  seven self-citations above this row still point at a much older, smaller revision of
   `test_provider_setup.py` (now 942 lines) despite the 16:40 entry below.
 
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed

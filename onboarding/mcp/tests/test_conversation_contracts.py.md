@@ -71,33 +71,34 @@ in focused service/API suites.
 No Domain Documentation source is configured. The repository-owned model contract is direct
 evidence for this internal test suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The strict production grammar defines all cursor, item, status, capability, operation, recovery, attachment, metric, and fixture products under test. | L25-L1282 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| Foundation tests separately guard ports, route ownership, helper resolution, and installed-fixture topology. | L21-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The strict production grammar defines all cursor, item, status, capability, operation, recovery, attachment, metric, and fixture products under test. | `ActivePageCursor`; `ConversationItem`; `ConversationStatus`; `OpenConversationOperation`; `MetricEvidence`; `RuntimeFixtureEvidence` | mcp/src/agents_remember/serving/conversation/models.py:84-85; mcp/src/agents_remember/serving/conversation/models.py:337-426; mcp/src/agents_remember/serving/conversation/models.py:548-561; mcp/src/agents_remember/serving/conversation/models.py:831-932; mcp/src/agents_remember/serving/conversation/models.py:1213-1223; mcp/src/agents_remember/serving/conversation/models.py:1272-1282 |
+| Foundation tests separately guard ports, route ownership, helper resolution, and installed-fixture topology. | `test_exactly_two_conversation_ports_exist`; `test_root_composes_three_owned_child_routers`; `test_helper_package_and_lock_select_only_the_exact_repository_dependencies`; `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement` | mcp/tests/test_conversation_foundation.py:22-29; mcp/tests/test_conversation_foundation.py:32-107; mcp/tests/test_conversation_foundation.py:125-136; mcp/tests/test_conversation_foundation.py:163-188 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in these contract tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `models.py`
-  is now 1282 lines and the old L25-L1270 stopped inside `operation_fingerprint` (L1265-L1282), the
+  is now 1282 lines and the old L25-L1270 stopped inside `operation_fingerprint` cit:([`operation_fingerprint`], mcp/src/agents_remember/serving/conversation/models.py:1285-1302), the
   canonical-identity hash the operation products are keyed by. The row now reads L25-L1282: from
   `HarnessId` through the final line of the module, so every product the claim enumerates —
   cursor brands, `ConversationItem`, status, capabilities, operations, recovery, attachments,
-  the metric block (L1185-L1242) and `RuntimeFixtureEvidence` (L1252-L1262) — is inside it. No
+  the metric block cit:([`MetricEvidence`], mcp/src/agents_remember/serving/conversation/models.py:1213-1223) and `RuntimeFixtureEvidence` cit:([`RuntimeFixtureEvidence`], mcp/src/agents_remember/serving/conversation/models.py:1272-1282) — is inside it. No
   claim text changed.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

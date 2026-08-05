@@ -91,6 +91,14 @@
       "grepai clone-db",
       "GREPAI_CLONE_STALL_SECONDS",
       "_clone_skip",
+      "install_enabled_provider",
+      "prepare_enabled_provider",
+      "refresh_enabled_provider",
+      "grepai_runtime_layout",
+      "ensure_grepai_runtime_layout",
+      "grepai_docker_start",
+      "grepai_docker_refresh",
+      "grepai_install",
       "_GrepaiCloneEnd",
       "coordination_root",
       "settings_path",
@@ -98,15 +106,7 @@
       "grepai-memory",
       "_clone_context_from_providers(source, target, *, project_id",
       "_CloneInputs",
-      "NamedTuple",
-      "source_coordination_root",
-      "target_settings_path",
-      "project_id",
-      "_clone_inputs",
-      "LifecycleCommand(provider=, action=, extra_args=, native_args=",
-      "providers/setup_common.py",
-      "GrepaiWorkspace",
-      "GrepaiInstance"
+      "NamedTuple"
     ]
   },
   "fallback": {

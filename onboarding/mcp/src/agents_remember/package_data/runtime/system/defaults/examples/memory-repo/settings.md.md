@@ -35,27 +35,30 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The memory settings example identifies internal and external memory-layer locations. | L1-L11 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
-| The scope section lists memory-owned policy and distinguishes it from global coordinator settings. | L13-L25 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
-| The storage, path eligibility, and cross-repo sections describe memory-layer ownership for settings JSON policy. | L27-L44 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md) |
+| The memory settings example identifies internal and external memory-layer locations. | "ar-coordination/memory-repos/ar-<repo>" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md:3-11 |
+| The scope section lists memory-owned policy and distinguishes it from global coordinator settings. | "onboarding storage policy" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md:13-25 |
+| The storage, path eligibility, and cross-repo sections describe memory-layer ownership for settings JSON policy. | "crossRepo.allow" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md:27-42 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 3 citation rows to plain
+  sources with literal anchors (settings.md 3-11, 13-25, 27-42). Zero findings remain.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-13T13:38: Created onboarding for the memory-repo settings Markdown example.

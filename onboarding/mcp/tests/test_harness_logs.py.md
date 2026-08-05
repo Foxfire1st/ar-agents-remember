@@ -52,26 +52,29 @@ Codex command fixtures only if the product first gains a supported command-evide
 
 No Domain Documentation entries are configured; these are repository-local parser regressions.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests encode the local Claude/Codex record contracts used by L15. | L15-L122 | [test_harness_logs.py](test_harness_logs.py) |
+| The tests encode the local Claude/Codex record contracts used by L15. | `test_claude_log_binding_and_command_evidence` | mcp/tests/test_harness_logs.py:15-64 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `HarnessSessionLog` implements the discovery, cwd validation, message extraction, and command evidence under test. | L36-L225 | [../src/agents_remember/serving/harness_logs.py](../src/agents_remember/serving/harness_logs.py.md) |
-| Injector tests exercise the parser through the public delivery outcome rather than only at parser unit level. | L5-L166 | [test_injector.py](test_injector.py.md) |
+| `HarnessSessionLog` implements the discovery, cwd validation, message extraction, and command evidence under test. | `HarnessSessionLog` | mcp/src/agents_remember/serving/harness_logs.py:39-120 |
+| Injector tests exercise the parser through the public delivery outcome rather than only at parser unit level. | `test_envelope_guarantees_kind_entry_id_and_ack` | mcp/tests/test_injector.py:55-60 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The fixtures and parser are local to this repository. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_harness_logs.py`
   since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 63

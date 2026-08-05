@@ -58,24 +58,24 @@ withdrawability remains reserved for a server-confirmed queued lifecycle state.
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Transport parsing, deadline, reconciliation, submit driver, and store integration. | L35-L734 | [submitClient.ts](submitClient.ts) |
-| The evidence state machine supplies receipt/reconcile transitions and retry scheduling. | — | [submitMachine.ts](submitMachine.ts) |
-| The browser authority client owns polling, withdrawal, and recovery after initial delivery. | — | [submissionLifecycleClient.ts](submissionLifecycleClient.ts) |
-| Tests cover safe certificates, ambiguous loss, no-resend reconciliation, readiness, and provenance. | — | [submitClient.test.ts](submitClient.test.ts) |
+| Transport parsing, deadline, reconciliation, submit driver, and store integration. | `createFetchSubmitTransport`; `executeReliableSubmit`; `continueReliableReconcile`; `submitSessionText` | dashboard/src/data/submitClient.ts:197-254; dashboard/src/data/submitClient.ts:411-491; dashboard/src/data/submitClient.ts:493-499; dashboard/src/data/submitClient.ts:627-681 |
+| The evidence state machine supplies receipt/reconcile transitions and retry scheduling. | `reduceReceipt`; `reduceReconciliation`; `reconcileDelay` | dashboard/src/data/submitMachine.ts:215-263; dashboard/src/data/submitMachine.ts:330-358; dashboard/src/data/submitMachine.ts:360-362 |
+| The browser authority client owns polling, withdrawal, and recovery after initial delivery. | `ensureSubmissionLifecyclePolling`; `restoreWithdrawnRecovery`; `withdrawLastQueuedSubmission` | dashboard/src/data/submissionLifecycleClient.ts:787-799; dashboard/src/data/submissionLifecycleClient.ts:1043-1068; dashboard/src/data/submissionLifecycleClient.ts:1096-1108 |
+| Tests cover safe certificates, ambiguous loss, no-resend reconciliation, readiness, and provenance. | "retries only an explicitly proven pre-dispatch loss, using the same id and immutable text"; "treats a browser rejection as ambiguous and reconciles without resending"; "never resends an unclassified post-dispatch loss; it reconciles the same id at 1s → 2s"; "allows composing before ready but submits only a ready controlled session"; "records a background queue receipt without clearing or joining composer pop-back state" | dashboard/src/data/submitClient.test.ts:103-128; dashboard/src/data/submitClient.test.ts:210-227; dashboard/src/data/submitClient.test.ts:297-325; dashboard/src/data/submitClient.test.ts:432-446; dashboard/src/data/submitClient.test.ts:638-664 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The transport is internal to agents-remember's dashboard/API boundary. | — | — |
 
@@ -87,6 +87,8 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 4 citation rows with exact anchors (transport/machine/lifecycle-client definitions, quoted test names) and ledger-verified source ranges; scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-24T13:17:50Z — Documented live-turn gate precedence, draft clearing, and queued-receipt
   honesty. Verification hash/date remain pinned to the pre-commit source stamp.

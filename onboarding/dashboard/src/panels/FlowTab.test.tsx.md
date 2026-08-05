@@ -80,14 +80,16 @@ exact on-canvas prose, so they double as a regression guard on the drawn spec.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts). | L111-L150; L60-L109 | [FlowTab.tsx](FlowTab.tsx) |
-| The registry the census derives expectations from and whose invariant prose the suite asserts. | L7-L50; L54-L366; L368 | [flowModels.ts](flowModels.ts) |
+| The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts). | `FlowTab`, `FLOW_MODELS` | dashboard/src/panels/FlowTab.tsx:111-148 |
+| The registry the census derives expectations from and whose invariant prose the suite asserts. | `ROUTER`, `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:56-101; dashboard/src/panels/flowModels.ts:437-437 |
 
 As of the 260703-L8 remediation the tests asserted the then-converged canvas: router default + retired models absent from the nav, the ladder and no-chat-builds invariants on the ROUTER drawing, the branch-not-worktree intent and delegated handover decision on the coordination event loop, reopen-not-redo on the manager, brief-started/no-machinery worker, hat-framed designer, and the ruled deciders on the reviewer. Cycle 6 pinned the ruled seam channel verbatim: the coordination assertion matched decide-by-packet-carried-gateId, and a manager assertion matched the gateId-rides-the-packet raise line. Cycle 7 adds a manager assertion pinning the raise node's enclosure address (`enclosure="<master task name>" — the exact address integration enforcement matches the gate by`).
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 4 citation claims (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: updated FlowTab tests for
   the new Architect model, architect router target, backend-orchestrator wording, escalation

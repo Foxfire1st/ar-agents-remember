@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/repo-overview-template.md` |
 | doc_type               | `file-level-onboarding`                                                               |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`                                                                                    |
-| lastVerifiedCommitDate |                                                                                       2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                                                                    |
+| lastVerifiedCommitDate |                                                                                       2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -35,27 +35,30 @@ Fill verification metadata after the source file is committed.
 
 No external documentation is needed for this repository-local template.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding                                                                                       | Citations | Source Path                                                                            |
-| --------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------- |
-| The repo overview template defines metadata, route-based verification fields, repo purpose, hot-path summary, architecture, code structure, functional areas, cross-repo references, build/dev commands, invariants, glossary, docs references, next work, verification needs, and update history. | L1-L83    | [repo-overview-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/repo-overview-template.md) |
-| `c-03-repo-bootstrap` skill treats the root repo overview as the minimum successful bootstrap output. | L8-L14 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
-| `c-03-repo-bootstrap` skill Phase 3 synthesizes the root repo overview from state, input ledger, scout report, area briefs, and existing overview when present. | L604-L651 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The repo overview template defines metadata, route-based verification fields, repo purpose, hot-path summary, architecture, code structure, functional areas, cross-repo references, build/dev commands, invariants, glossary, docs references, next work, verification needs, and update history. | `# <repo> — Onboarding Overview` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/repo-overview-template.md:1-83 |
+| `c-03-repo-bootstrap` skill treats the root repo overview as the minimum successful bootstrap output. | `# Repo Bootstrap` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:6-1265 |
+| `c-03-repo-bootstrap` skill Phase 3 synthesizes the root repo overview from state, input ledger, scout report, area briefs, and existing overview when present. | "# Scout Report — <repo>" | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:610-610 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  heading anchors; exact non-fixing check returns zero findings.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-19T02:45+02:00: Added `## Hot Path Summary` to the root overview template so generated route indexes can expose compact discovery context.

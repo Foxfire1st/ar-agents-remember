@@ -49,7 +49,7 @@ As of cycle 5: the fenced brief opens with the canonical ROLE BRIEF — worker l
 
 No sibling repository evidence is needed for this doctrine file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 

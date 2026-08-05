@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/SeatInspector.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,29 +44,31 @@ None recorded; browser integration smoke remains a leaf-level residual.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Tab navigation and hidden-panel draft retention. | L28-L92 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
-| Off-tab success/error settlement and no-focus Bus. | L93-L185 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
-| Carried L6 evidence cases. | L187-L223 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
-| Explicit mark-seen and seat-switch regressions. | L225-L305 | [SeatInspector.test.tsx](SeatInspector.test.tsx) |
-| Composition host under test. | L18-L151 | [SeatInspector.tsx](SeatInspector.tsx) |
+| Tab navigation and hidden-panel draft retention. | "exposes keyboard-navigable Evidence, Capabilities, and Bus tabs"; "retains an open Bus draft across click and keyboard tabs while hiding inactive controls" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:29-46; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:48-91 |
+| Off-tab success/error settlement and no-focus Bus. | "settles posted and error replies on their exact entries while the Bus tab is inactive" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:93-160 |
+| Carried L6 evidence cases. | "names the pane archetype for controlled vs legacy raw seats (R1)"; "shows the verbatim pending-interaction payload (the unrepresentable fallback's target)" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:187-196; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:212-222 |
+| Explicit mark-seen and seat-switch regressions. | "viewing the ledger does not acknowledge; the explicit mark-seen action does (F22)"; "switching seats never acknowledges the newly focused seat" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:251-273; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:275-292 |
+| Composition host under test. | `SeatInspector` | dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-161 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 10 citation finding(s); scoped recheck clean.
 
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 added integrated tab/hidden/off-tab settlement/no-focus
   coverage and retained the earlier evidence contracts. Verification metadata remains pinned to the

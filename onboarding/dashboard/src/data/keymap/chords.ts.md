@@ -25,10 +25,10 @@ zone passes it through.
 
 ### Logic
 
-- `ZoneChord` (L10-L18): tinykeys `chord` string (`[Shift]` marks an optional modifier — a real
+- cit:([`ZoneChord`], dashboard/src/data/keymap/chords.ts:10-18): tinykeys `chord` string (`[Shift]` marks an optional modifier — a real
   tinykeys v4 syntax), human `label` for the `?` overlay, target `commandId`, and the `zones`
   list.
-- `CHROME_CHORDS` (L20-L71): `Control+K` → `palette.open` (chrome+composer — zone-scoped so it
+- cit:([`CHROME_CHORDS`], dashboard/src/data/keymap/chords.ts:20-81): `Control+K` → `palette.open` (chrome+composer — zone-scoped so it
   NEVER fires over the PTY, where ctrl+k is Codex/Pi kill-line), `Alt+ArrowUp/Down` →
   `session.prev/next` (chrome ONLY — Codex binds alt+Up = edit_queued_message, Pi alt+up =
   dequeue; over a live PTY these always pass through), `Alt+Comma/Period` →
@@ -37,7 +37,7 @@ zone passes it through.
   (chrome+composer), `[Shift]+?` → `keyboard.reference` (chrome; printable — never fires in
   editable targets, and that suppression is GENERIC: `routeKey`'s `isPrintable`/`isEditableTarget`
   contract covers every printable chord; no per-chord flag).
-- `COMPOSER_CHORDS` (L73-L86): `Control+Enter` → `composer.submit`, `Escape` →
+- cit:([`COMPOSER_CHORDS`], dashboard/src/data/keymap/chords.ts:83-104): `Control+Enter` → `composer.submit`, `Escape` →
   `focus.stageHeader` — composer-zone only, so Esc is never touched over the PTY.
 
 ### Invariants And Boundaries
@@ -61,24 +61,24 @@ keyboard-reference surfaces.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The two zone-scoped chord tables and the generic-suppression comment on `?`. | L20-L86 | [chords.ts](chords.ts) |
-| The binding that installs both tables and enforces the per-chord zone lists. | L39-L49 | [../../panels/session-cockpit/useKeyboardZones.ts](../../panels/session-cockpit/useKeyboardZones.ts) |
-| The `?` page renders these tables under the Chrome/Composer group headings. | L179-L194 | [../../panels/session-cockpit/CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
-| The command ids these chords dispatch (registered defaults). | L87-L179 | [../commands.ts](../commands.ts) |
+| The two zone-scoped chord tables and the generic-suppression comment on `?`. | `CHROME_CHORDS`; `COMPOSER_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81; dashboard/src/data/keymap/chords.ts:83-104 |
+| The binding that installs both tables and enforces the per-chord zone lists. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| The `?` page renders these tables under the Chrome/Composer group headings. | "Chrome — the shell around the panes"; "Composer — the editor owns its keys" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:276-276; dashboard/src/panels/session-cockpit/CommandPalette.tsx:284-284 |
+| The command ids these chords dispatch (registered defaults). | "palette.open"; "keyboard.reference" | dashboard/src/data/commands.ts:91-91; dashboard/src/data/commands.ts:98-98 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -101,6 +101,8 @@ zone-scoping contract; the reviewed L4 candidate is uncommitted, verification st
 FEUI-L1 base until closeout.
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 4 repo-internal citation rows and preserved verification metadata.
 
 - 2026-07-24T13:17:50Z — Updated the default composer submit chord to Enter. Verification hash/date
   remain pinned to the pre-commit source stamp.

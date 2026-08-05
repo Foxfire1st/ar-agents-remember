@@ -23,42 +23,24 @@ super-exit because those seams review different accumulated change sets.
 
 ### Logic
 
-L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
+The body defines a short-lived reviewer seat at the master-exit and super-exit seams, plus the
+reusable reviewer seat for full-loop and portfolio-plan reviews. Master-exit hands the accumulated
+master branch to the orchestrator; super-exit hands the accumulated super branch to the architect for
+developer review; leaf-level review remains the manager's duty. The lens is refute-or-confirm over
+the seam diff, task documents, and bound rubric, with a verdict artifact rather than a decision.
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md`; it is model-interpreted markdown, never
-an executor. The body defines: the seat (**short-lived, spawned at exactly TWO seams** — developer
-decision 2026-07-03: **master-exit** before a manager hands its master integration branch to the
-orchestrator, and **super-exit** before the orchestrator hands the super integration branch to the
-developer; it reviews an **accumulated change set, not a single leaf**); the lens (opening move = scope
-the review to the seam's diff · task docs · rubric; retrieval lean = refute-or-confirm, argue *against*
-the change set; decide default = a verdict artifact with an explicit pass/block recommendation — never a
-decision, never prose-only); the **three review lenses** (1. completion vs task docs; 2. code quality per
-`system/tools.md` + regressions **vs the past** via route indexes/cgc/grepai; 3. onboarding-vs-code = the
-paired `read_ar_files` + `memory_quality_check` + `drift_check` check); and the seam-specific rubrics.
-The **master-exit** rubric reviews the accumulated master integration branch before manager →
-orchestrator handover: master/leaf task docs, worker reports, decision logs, the draft handover packet,
-resolved tools evidence, changed sidecars, route overviews, and memory/carry-over state. The
-**super-exit** rubric reviews wholesale super-branch behavior before orchestrator → developer handover:
-the full portfolio docs, master handovers, prior master-exit verdicts, orchestrator decision logs,
-branch-wide quality evidence, route/memory coherence, and final ledger/carry-over state. Both rubrics
-require refute-or-confirm findings and make any BLOCK invalid unless it names concrete fix leaves. The
-file also defines five duties, artifact obligations, the comms protocol, and the knob block. It **fans
-out sub-agents that write durable reports** (`templates/impact-analysis.md`,
-`templates/onboarding-coherency.md`) backing the verdict (`templates/verdict.md`) under the series
-`notes/reports/` directory.
-
-HFX-L6 keeps verdicts as evidence, not decisions, and makes the super-exit handoff
-architect/developer mediated: the backend orchestrator hands the reviewable environment and verdict
-to the architect before developer review. Reviewer seats also carry role-seat immutability in
-dashboard-owned sessions.
+The three lenses are completion versus task docs, code quality and regressions, and
+onboarding-versus-code. Criteria come from the standing catalog for the review type plus the
+exploratory mandate. The seam rubrics cover the relevant accumulated change set, evidence, and
+decomposable fix leaves. The role also defines six duties, artifact obligations, inbox communications,
+and harness-agnostic knobs; its durable reports and verdict are written under the series report
+directory.
 
 ### Conventions
 
-Role + lens in one file (D10); a portable knob block (D7, high-reasoning / high-effort — the last line of
-defense) resolving job base < variant < `settings.json orchestration.roles.adversarial-reviewer`. Comms
-ride the inbox (receive the seam's change-set context, post the verdict reference to the seam's decider);
-stdin push is not a driver here — the reviewer is short-lived and reports through its verdict.
+Role, lens, criteria, duties, artifacts, communications, and knobs live in one self-contained job file.
+The reviewer receives the seam context through the inbox, posts the verdict reference to the decider,
+and does not use stdin as a work driver.
 
 ### Invariants And Boundaries
 
@@ -74,51 +56,50 @@ refute it is not a finding.
 
 ### Todos
 
-No `roles/adversarial-reviewer.<harness>.md` overlay ships yet; author one when a harness needs
-reviewer-specific knobs. Gate-policy enforcement (the seam-verdict requirement) is documented here but is
-**leaf L4**. No other TODO is recorded for this job file.
+No task-independent TODO is declared by this job file.
 
 ### Docs References
 
 No external domain documentation applies to this repository-local orchestration job file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
-### L16 Knob Additions
-
-260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
-`sessionCommands` — lines pasted + submitted into the fresh session before the brief;
-`promptKeywords` — prepended as the first line of the dispatch brief paste; all settings-only,
-never validated, recorded in spawn provenance), and the knob footer now names the per-level
-override (`orchestration.rolesPerLevel.<level>.<role>`; role-file defaults < settings < level
-override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
-
 ## Repo-Internal References
 
-The reviewer is spawned at the manager's master-exit seam and the orchestrator's super-exit seam.
+The reviewer job file is its own source authority for the seat, lenses, seams, duties, and knobs.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [adversarial-reviewer.md](agents-remember/skills/l-01-agent-lifecycles/roles/adversarial-reviewer.md) |
-| The frame that houses this seat and owns the two adversarial review seams, the gate-delegation doctrine, and the report-template library. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The manager that spawns the reviewer at master-exit and dispatches its decomposed fix leaves. | n/a | [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md) |
-| The orchestrator that spawns the reviewer at super-exit and decides that seam's handover gate. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
-
-As of the L8 de-harnessing pass the overlay-authoring sentence is gone and the knob harness row is a preference settings overrides: no per-harness reviewer files.
-
-As of cycle 4 the file is `roles/reviewer.md` (renamed from adversarial-reviewer.md to match the server role vocabulary and the spawn value `AR_SPAWN_ROLE=reviewer`), and its header states the ruled deciders: the ORCHESTRATOR decides master-exit via the delegable `master-handover-approval` gate kind, the DEVELOPER decides super-exit; `requireReviewerVerdictAtSeams` binds delegated seam decisions to attached verdict evidence.
-
-As of cycle 5: settings key is orchestration.roles.reviewer; the super-exit scope packet says 'against its base (main)' instead of spear jargon; the knob tools row gains the inbox.
-
-As of 260703-L12 the file **binds the criteria catalogs** (a new Criteria Catalogs section before the three lenses): criteria are never made up on the spot — every review runs its type's STANDING catalog from `criteria/` plus an exploratory mandate (default 2 novel lenses), with a binding table (master-exit → code-seam · onboarding-memory · report-verification, + doctrine when doctrine files ride; super-exit → all four wholesale; leaf full-loop → per the change set; plan review → plan-review · report-verification) and the promotion-ratchet duty (surviving novel finding-classes are proposed as catalog amendments IN THE VERDICT, promoted on the loop owner's acceptance). The seat definition extends beyond the two seams — since round 2 (L12R-5) the OPENING sentence itself is count-honest ("spawned at exactly two adversarial seams — and as any three-party loop's reviewer seat"): **the same role file is every three-party loop's reviewer** (developer ruling L12-Q2 — reuse, not a lighter loop-checker), including the portfolio plan review; **delta-verify reuse** is stated as this seat's duty (resumed via follow-up to verify a passing round's landed residuals, appending a delta section to its own verdict; only full rounds count against the loop's 3-round cap). The refute-or-confirm posture is unchanged.
+| The reviewer is short-lived and self-contained. | "Short-lived and self-contained" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:3-3 |
+| The reviewer receives the brief as its session start. | "Your **brief is your session start**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:4-4 |
+| Dashboard-owned sessions keep this seat reviewer. | "stays reviewer" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:41-41 |
+| A pasted brief for another role is refused and reported through the inbox. | "role is refused and reported" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:42-42 |
+| Review retrieval is refute-or-confirm, and findings must survive attempted refutation. | "findings must survive an attempt to refute them" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:51-51 |
+| Review criteria are not made up on the spot. | "Criteria are never made up on the spot." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:58-58 |
+| Every review runs its type's standing catalog. | "Every review runs its type's STANDING catalog" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:58-58 |
+| The exploratory mandate defaults to two lenses. | "plus an **exploratory mandate**"; "default 2" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:59-60 |
+| The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill. | "every master requirement, leaf, substep"; "accounted for" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:100-101 |
+| Skipped or reshaped work has a decision-log trail. | "skipped or reshaped work has a decision-log trail" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:101-101 |
+| No unfinished leaf work is hidden inside the handover packet. | "no unfinished leaf work is hidden"; "inside the handover packet" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:101-102 |
+| The code-quality lens checks lint, typecheck, tests, and complexity. | "lint · typecheck · tests · complexity" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:84-84 |
+| The onboarding-vs-code lens checks same-pass sidecars. | "changed source files have same-pass sidecar updates" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:106-106 |
+| Route overviews are current for the master side of the change. | "route overviews are current" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:107-107 |
+| Onboarding evidence records drift and memory-quality checks and names any memory or carry-over gap. | "any memory/carry-over gap is named" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:108-108 |
+| A master-exit block returns to the owning manager as fix leaves. | "returns to the owning **manager**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:109-109 |
+| A super-exit block returns to the orchestrator as fix leaves. | "returns to the **orchestrator**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:132-132 |
+| Reviewer duties include writing a verdict artifact and decomposing blocking verdicts into fix leaves. | "Write the verdict artifact"; "Decompose a blocking verdict into fix leaves" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:144-144; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:151-151 |
+| Reviewer communications use the inbox to receive context. | "Inbox" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:168-168 |
+| Reviewer communications post the verdict reference to the seam's decider. | "verdict reference" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:169-169 |
+| Stdin is not a driver for the reviewer. | "Stdin push" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:170-170 |
+| The role's tools are the review surface. | "review surface" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:185-185 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration job file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -128,6 +109,7 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 
 ## Update History
+- 2026-08-04T10:18:21+02:00 — 260731-EFA-L6 S18-B07 split-row reconciliation: bound exploratory, completion, and handover predicates across every source line they require; same-reviewer delta pending.
 
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added

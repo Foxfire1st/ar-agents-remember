@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_runner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,36 +75,18 @@ retry, default, or continue the vendor launch.
 
 None known for the L4 runner boundary.
 
-## Docs References
-
-No Domain Documentation source is configured for this repository, so no live domain-documentation
-pass was available for this update.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
-
 ## Repo-Internal References
 
 Launch validation and adapter construction remain separate pure/data and vendor-specific seams.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `ResolvedLaunch`, model-gated validation, effective echo checks, and duplicate-selector preflight are centralized in the launch module. | L17-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority. | L22-L57 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
-| The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. | L170-L216; L311-L460 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| Contract tests pin the resumeThreadId payload round-trip, legacy field-less parse, malformed refusal, and codex-only factory channel. | L1309-L1460 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
-| The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw["bridgeError"]`), refusing to overwrite an already-started bridge. | L170-L184 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path. | L180-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
-
-## Cross-Repo References
-
-No external repository boundary is implemented by the runner; it launches installed native
-harnesses owned by the local adapter process.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| Launch selection, validation, effective echo checks, knob application, and duplicate-selector preflight are centralized in the launch module. | `ResolvedLaunch`; `validate_launch_selection`; `verify_effective_launch`; `apply_launch_knobs`; `_owned_argv_overrides` | mcp/src/agents_remember/serving/harness_launch.py:17-54; mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:122-148; mcp/src/agents_remember/serving/harness_launch.py:173-206; mcp/src/agents_remember/serving/harness_launch.py:233-250 |
+| The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority. | `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:48-90 |
+| The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. | `_session_command`; `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:435-468; mcp/src/agents_remember/serving/terminal_opener.py:471-531 |
+| Contract tests pin the resumeThreadId payload round-trip, legacy field-less parse, malformed refusal, and codex-only factory channel. | `test_runner_payload_round_trips_resume_thread_id`; `test_runner_payload_without_the_field_parses_to_none`; `test_runner_payload_rejects_malformed_resume_thread_id`; `test_factory_sets_codex_resume_and_refuses_non_codex_before_any_spawn` | mcp/tests/test_harness_control_evidence.py:1593-1597; mcp/tests/test_harness_control_evidence.py:1599-1610; mcp/tests/test_harness_control_evidence.py:1612-1623; mcp/tests/test_harness_control_evidence.py:1625-1649 |
+| The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw["bridgeError"]`), refusing to overwrite an already-started bridge. | `mark_failed` | mcp/src/agents_remember/serving/harness_control_bridge.py:160-174 |
+| The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path. | `adapter_argv` | mcp/src/agents_remember/serving/harness_capability_catalog.py:180-195 |
 
 ## 260731-EFA-L2 Current Delta
 
@@ -124,6 +106,8 @@ The refusals and the launch sequence are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: split launch, factory, opener, and contract-test ownership and normalized scoped citation evidence.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `HarnessControlBridge.mark_failed` is a single contiguous method at L170-L184 in the 623-line `harness_control_bridge.py`, so the two-range citation collapsed to one; extended the claim to name `raw["bridgeError"]` and the already-started refusal, both read back at L174 and L181.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the named payload-decode and launch-agreement checks; refusals unchanged.

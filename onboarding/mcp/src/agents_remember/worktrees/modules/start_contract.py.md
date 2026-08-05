@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-01T10:45+02:00                                       |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                   |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -25,8 +25,8 @@ canonical task document id.
 
 ### Logic
 
-`build_start_contract(context, args)` (L187-L206) is the public start-side entry. It wraps
-`_build_start_contract` (L209-L261) and converts **two** failures into the same
+`build_start_contract` is the public start-side entry. It wraps
+`_build_start_contract` and converts **two** failures into the same
 `WorktreeCommandResult` refusal shape that `start_result` can return. `_build_start_contract` asserts
 the required start arguments, resolves `args.leaf_id or args.worktree_name` through
 `leaf_ref_start`, then passes the resulting doc id into `default_contract`.
@@ -51,8 +51,8 @@ saying they were.** It previously claimed "Both refusals are bad *arguments*"; t
   funnel through: `workflow_kind` and `memory_mode` arrive at the `worktree_start` MCP signature as
   free `str`, and that helper is where a *request* is narrowed onto the persisted vocabulary. But
   the `except` wraps the **whole call**, so it also catches a `ContractError` raised by the
-  `write_contract(contract.contract_path, contract)` inside `_parent_series_contract` (the call is
-  at L176; the helper is L112-L184). `write_contract` runs `validate_contract` before it writes, so
+  `write_contract(contract.contract_path, contract)` inside `_parent_series_contract`. The helper runs
+  `validate_contract` before it writes, so
   that is a **write-validation failure of the PARENT series contract** — a cell already on disk or
   already computed for the parent, not anything this caller passed.
 
@@ -99,7 +99,7 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
   escape to the tool handler.
 - **`invalid-request` does not imply the caller supplied something invalid.** The `except
   ContractError` covers the whole of `_build_start_contract`, and `_parent_series_contract` writes
-  the parent series contract inside it (L176), so a `validate_contract` refusal on the PARENT can
+  the parent series contract inside it, so a `validate_contract` refusal on the PARENT can
   surface under the same result state. Do not narrow the docstring or the card back to "both
   refusals are bad arguments"; when triaging an `invalid-request` from `worktree_start`, read the
   message — `validate_contract` names the offending cell and the file it belongs to, which is what
@@ -109,30 +109,24 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Shared leaf-ref validation and candidate reporting. | [../../leaf_refs.py](../../leaf_refs.py.md) |
-| Start-side conversion from resolver errors into command results. | [leaf_ref_start.py](leaf_ref_start.py.md) — `invalid_contract_request_result` L38-L54 |
-| The start operation calls `build_start_contract` before preflights and writes. | [start.py](start.py.md) |
-| `_task_vocabulary` L150-L167 (the request-narrowing both constructors funnel through) and `write_contract` L461-L465, which runs `validate_contract` L750 before it writes — the second, non-caller source of the `ContractError` this module catches. | [../worktree_contract.py](../worktree_contract.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:45-72; mcp/src/agents_remember/worktrees/leaf_refs.py:94-147 |
+| Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
+| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:456-467 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context, args)"; "existing_result = _existing_contract_result(context, contract, args)"; "preflighted = _preflighted_contract(context, contract, args)"; "return _create_start_enclosure(context, preflighted, args)" | mcp/src/agents_remember/worktrees/modules/start.py:458-458; mcp/src/agents_remember/worktrees/modules/start.py:461-461; mcp/src/agents_remember/worktrees/modules/start.py:464-464; mcp/src/agents_remember/worktrees/modules/start.py:467-467 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context, preflighted, args)" | mcp/src/agents_remember/worktrees/modules/start.py:467-467; mcp/src/agents_remember/worktrees/modules/start.py:524-590 |
+| `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:163-180; mcp/src/agents_remember/worktrees/worktree_contract.py:763-818 |
 
 ## Update History
 
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): `build_start_contract`
-  gained a docstring after the 09:17 entry below, and it corrects a claim this card had inherited.
-  The docstring previously would have said (and the card implied) that **both** refusals are bad
-  *arguments*. That is false for `ContractError`: the `except` wraps the whole call, so besides the
-  intended vocabulary case it also catches a `ContractError` raised by the `write_contract` inside
-  `_parent_series_contract` — verified in the source, the call is at L176 inside the helper at
-  L112-L184, and `write_contract` (`worktree_contract.py` L461-L465) runs `validate_contract`
-  (L750) before writing. That is a write-validation failure of the **parent series contract**, not
-  anything the caller passed. Recorded the corrected scope in Code Commentary, split the two
-  `except` clauses by kind rather than treating them as one class of failure, and added an invariant
-  saying `invalid-request` does not imply a caller fault and naming what distinguishes the two paths
-  when triaging (`validate_contract` names the offending cell and file). Pinned the two wrapper
-  functions to their current ranges (`build_start_contract` L187-L206, `_build_start_contract`
-  L209-L261) and gave the two reference rows real citations. Verification metadata pinned until
-  closeout stamps the L4 commit.
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: split resolver-result, start-operation, and
+  contract-validation ownership; bound start ordering/caller flow to exact implementation anchors and
+  rewrote stale line references.
+
+- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator: corrected the ContractError scope, separated
+  vocabulary refusal from parent-series write validation, and pinned the wrapper ownership. The
+  current table above supersedes the old line-specific references.
 - 2026-08-01T09:17+02:00 — 260731-EFA-L4 curator: the Code Commentary said `build_start_contract`
   converts `LeafRefResolutionError`; it now converts two failures. Added the second `except
   ContractError as exc: return invalid_contract_request_result(exc)` clause, the new

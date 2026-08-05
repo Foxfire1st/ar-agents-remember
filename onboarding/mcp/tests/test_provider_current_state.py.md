@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-28T19:10+02:00     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -87,38 +87,39 @@ None.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Docker summary regression asserts container state, running flag, health, and integer uptime. | L24-L40 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| The current-truth regression writes current state, asserts `ready`, excludes `lastSetup`, checks the central status path, and verifies GrepAI watcher/resource fields plus `targetRepos`. | L42-L85 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| The CGC degradation regression mutates one repo watcher to down and expects aggregate degraded state plus per-repo watcher/container details. | L76-L103 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| The disabled-provider regression proves disabled GrepAI is reported as disabled without poisoning aggregate readiness. | L157-L176 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| The GrepAI no-workspace regression drops the watcher's searchable workspace and expects GrepAI `degraded` with `indexingState: noWorkspace` plus a degraded aggregate. | L107-L127 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| Provider status and diagnostics both expose restart/rebind recovery guidance when the current projected GrepAI state is `noWorkspace`. | L129-L155 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | L178-L208 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | L209-L230 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
-| Current-state projection and persistence are implemented in the provider current-state module. | L16-L348 | [current_state.py](agents-remember/mcp/src/agents_remember/providers/current_state.py) |
-| The structured-`lastRefresh` regression mutates a CGC watcher's `lastRefresh` to a `{returncode, durationSeconds, updatedAt}` object and asserts the projected watcher `lastRefresh` is the flattened summary string. | L243-L275 | [test_provider_current_state.py](agents-remember/mcp/tests/test_provider_current_state.py) |
+| The Docker summary regression asserts container state, running flag, health, and integer uptime. | `test_docker_container_state_summary_reports_uptime` | mcp/tests/test_provider_current_state.py:27-42 |
+| The current-truth regression writes current state, asserts `ready`, excludes `lastSetup`, checks the central status path, and verifies GrepAI watcher/resource fields plus `targetRepos`. | `test_current_state_is_current_truth_not_setup_history` | mcp/tests/test_provider_current_state.py:44-87 |
+| The CGC degradation regression mutates one repo watcher to down and expects aggregate degraded state plus per-repo watcher/container details. | `test_current_state_reports_per_repo_cgc_degradation` | mcp/tests/test_provider_current_state.py:89-118 |
+| The disabled-provider regression proves disabled GrepAI is reported as disabled without poisoning aggregate readiness. | `test_current_state_ignores_disabled_providers_for_aggregate_readiness` | mcp/tests/test_provider_current_state.py:170-189 |
+| The GrepAI no-workspace regression drops the watcher's searchable workspace and expects GrepAI `degraded` with `indexingState: noWorkspace` plus a degraded aggregate. | `test_current_state_reports_grepai_no_workspace_as_degraded` | mcp/tests/test_provider_current_state.py:120-140 |
+| Provider status and diagnostics both expose restart/rebind recovery guidance when the current projected GrepAI state is `noWorkspace`. | `noWorkspace` | mcp/tests/test_provider_current_state.py:129-155 |
+| The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | `test_current_state_uses_workflow_local_instance_path` | mcp/tests/test_provider_current_state.py:191-220 |
+| The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | `test_provider_status_packet_writes_current_state` | mcp/tests/test_provider_current_state.py:222-243 |
+| Current-state projection and persistence are implemented in the provider current-state module. | `build_current_provider_state`; `write_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36; mcp/src/agents_remember/providers/current_state.py:39-49 |
+| The structured-`lastRefresh` regression mutates a CGC watcher's `lastRefresh` to a `{returncode, durationSeconds, updatedAt}` object and asserts the projected watcher `lastRefresh` is the flattened summary string. | `test_provider_status_summarizes_structured_cgc_last_refresh` | mcp/tests/test_provider_current_state.py:324-356 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 9 table citations and 2 Update History citations; no unresolved Tier-3 claims.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
   `providers/current_state.py`. The module is 348 lines and the old `L16-L325` stopped short of the
-  helpers the claim covers, cutting off `cgc_indexing_state` (L336) and `_result_list` (L345).
+  helpers the claim covers, cutting off `cgc_indexing_state` cit:([`cgc_indexing_state`], mcp/src/agents_remember/providers/current_state.py:336-342) and `_result_list` cit:([`_result_list`], mcp/src/agents_remember/providers/current_state.py:345-348).
   Widened to L16-L348 — `build_current_provider_state` through the last helper — and read both ends
   to confirm the range spans the whole projection-and-persistence body (`write_current_provider_state`
   L39, `current_state_path` L52, `grepai_current_state` L136, `cgc_current_state` L179,

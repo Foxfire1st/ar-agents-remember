@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -35,7 +35,7 @@ No TODO markers are present in this report template.
 
 No external domain documentation applies to this repository-local report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -43,12 +43,12 @@ No external domain documentation applies to this repository-local report templat
 
 This bundle copy is the shape the frame hands a successor at a takeover spawn or respawn; the worker and manager jobs both hand over through it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | n/a | [conversation-handover-packet.md](agents-remember/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md) |
-| The frame's job-selection contact point hands this packet to a takeover-spawned successor so it onboards from state, not the transcript. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The worker respawn use continues a leaf handed over by the worker job. | n/a | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md) |
-| The master-handover use is the manager's completed-master seat hand-off. | n/a | [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md) |
+| Sync-propagated bundle copy of the canonical templates source. | `# Conversation-Handover-Packet Template` | skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md:1-54 |
+| The frame's job-selection contact point hands this packet to a takeover-spawned successor so it onboards from state, not the transcript. | `## The Minimal Frame (the only machinery every session shares)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:140-174 |
+| The worker respawn use continues a leaf handed over by the worker job. | `# Lifecycle — Worker` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:1-154 |
+| The master-handover use is the manager's completed-master seat hand-off. | `# Lifecycle — Manager` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-242 |
 
 As of cycle 4 the takeover use names its owner (the orchestrator's profile check in roles/orchestrator.md) instead of the retired 'frame' vocabulary.
 
@@ -58,11 +58,13 @@ As of cycle 5: the takeover pointer names the real section.
 
 No sibling repository evidence is needed for this report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 4 repo-internal citation rows and preserved verification metadata.
 
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the takeover pointer names the real section.. Verification metadata pinned until closeout stamps the L8 commit.
 - 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): takeover owner named; frame vocabulary removed. Verification metadata pinned until closeout stamps the L8 commit.

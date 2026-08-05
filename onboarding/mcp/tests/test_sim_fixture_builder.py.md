@@ -32,7 +32,7 @@ exercised by the sim. Guards against silent fixture drift with non-zero live/hid
 
 No sibling repository evidence is needed for this test suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 

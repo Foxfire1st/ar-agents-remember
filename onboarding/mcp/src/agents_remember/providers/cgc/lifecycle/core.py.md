@@ -55,13 +55,14 @@ runner image/build/lock/container settings for CGC command execution.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC backend container lifecycle consumes backend settings from this module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| CGC lifecycle actions consume the selected runtime layout from this module. | [process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py); [refresh.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py); [query.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/query.py) |
-| CGC Docker runner helpers consume runner image/build/lock/container fields from this layout. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC backend container lifecycle consumes backend settings from this module through `cgc_backend_start`. | `cgc_backend_start` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-409 |
+| CGC lifecycle actions consume the selected runtime layout through `cgc_start`, `cgc_refresh`, and `cgc_run`. | `cgc_start`; `cgc_refresh`; `cgc_run` | mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:175-201; mcp/src/agents_remember/providers/cgc/lifecycle/query.py:87-107; mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:106-143 |
+| CGC Docker runner helpers consume runner image/build/lock/container fields from this layout through `cgc_runner_image_build`. | `cgc_runner_image_build` | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-74 |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 3 table citations for CGC backend start, refresh/run, and image-build paths; fixer-generated ranges verified.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `cgc_runtime_layout`'s new
   signature (`CgcRepo` bundle). Same resolved layout. Verification metadata pinned until closeout

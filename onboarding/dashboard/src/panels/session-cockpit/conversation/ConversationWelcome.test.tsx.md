@@ -44,26 +44,27 @@ None recorded.
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
+| No relevant domain documentation was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Focused cases cover all process readiness variants. | L1-L61 | [ConversationWelcome.test.tsx](ConversationWelcome.test.tsx) |
-| Component under test. | L154-L206 | [ConversationWelcome.tsx](ConversationWelcome.tsx) |
+| Focused cases cover all process readiness variants. | "never claims the link is ready when the process is %s" | dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx:31-41 |
+| Component under test. | `ConversationWelcome` | dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:154-206 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
 
 - 2026-07-24T13:17:17Z — Curator: created welcome-readiness regression coverage onboarding. It is
   uncommitted, so verification fields are intentionally blank until closeout stamps the code commit.

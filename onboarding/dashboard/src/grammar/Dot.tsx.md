@@ -105,37 +105,40 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. The WCAG 2.3.1 flash-threshold constraint the `pulse` keyframe is written
 against is recorded in the source comment rather than in an external reference this card could cite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
 The dot is where a wire state becomes something visible, so the vocabulary it must cover is cited
 alongside the treatments it applies.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component. | L23-L129 | [Dot.tsx](Dot.tsx) |
-| The shared `pulse` keyframe used by `blocked`/`alarm`, documented as ≤3 flashes/s under WCAG 2.3.1. | L86-L92 | [index.css](../index.css) |
-| The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking. | L94-L101 | [index.css](../index.css) |
-| The unlayered `html[data-effects="off"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here. | L136-L143 | [index.css](../index.css) |
-| `LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59. | L42-L59 | [types/projection.ts](../types/projection.ts) |
-| `LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the "Task progress: …" label beside the dot. | L387-L391; L717 | [panels/LifecycleList.tsx](../panels/LifecycleList.tsx) |
-| `AttentionQueue` passes the raw `q.severity`. | L229 | [panels/AttentionQueue.tsx](../panels/AttentionQueue.tsx) |
-| `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together. | L560-L563 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink. | L44-L88 | [Dot.test.tsx](Dot.test.tsx) |
+| The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component. | "export const DOT_VARIANTS" | dashboard/src/grammar/Dot.tsx:92-92 |
+| The shared `pulse` keyframe used by `blocked`/`alarm`, documented as ≤3 flashes/s under WCAG 2.3.1. | "@keyframes pulse {" | dashboard/src/index.css:88-88 |
+| The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking. | `pulseSlow` | dashboard/src/index.css:94-101 |
+| The unlayered `html[data-effects="off"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here. | "unlayered html[data-effects="off"] freeze" | dashboard/src/index.css:8-8 |
+| `LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59. | "export type State = " | dashboard/src/types/projection.ts:15-15 |
+| `LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the "Task progress: …" label beside the dot. | "export const LifecycleList" | dashboard/src/panels/LifecycleList.tsx:425-425 |
+| `AttentionQueue` passes the raw `q.severity`. | `AttentionQueue` | dashboard/src/panels/AttentionQueue.tsx:270-270 |
+| `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:63-63 |
+| The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink. | "const ALL_VARIANTS" | dashboard/src/grammar/Dot.test.tsx:17-17 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The variant vocabulary mirrors the served lifecycle states,
 but the mirror itself lives in `types/projection.ts` inside this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

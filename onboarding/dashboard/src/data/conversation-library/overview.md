@@ -96,29 +96,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This route's statements were verified from its direct agents-remember source/tests and the
 reviewed worker report and final-PASS review verdict.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this route. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this route. | — | — |
 
 ## Cross-Repo References
 
 The route mirrors this repository's own landed library wire contract and talks only to this package's
 serving endpoints; no cross-repository implementation source governs it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The landed native-library serving routes this client consumes. | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
-| The in-stage browser view that renders this store. | [session-cockpit/conversation-library overview](../../panels/session-cockpit/conversation-library/overview.md) |
-| The sibling active-conversation projection. | [data/conversation overview](../conversation/overview.md) |
-| The parent data authority boundary. | [data overview](../overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The browser client and native serving route expose library listing for a harness with optional query fields. | `fetchLibraryList`; `api_library_list` | dashboard/src/data/conversation-library/client.ts:36-54; mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
+| The browser client and native serving route read a historical conversation page. | `fetchLibraryRead`; `api_library_read` | dashboard/src/data/conversation-library/client.ts:56-76; mcp/src/agents_remember/serving/conversation/library/api.py:133-158 |
+| The browser client and native serving route open a conversation. | `openConversation`; `api_library_open` | dashboard/src/data/conversation-library/client.ts:127-135; mcp/src/agents_remember/serving/conversation/library/api.py:169-199 |
+| The browser client and native serving route report open-request status. | `openStatus`; `api_library_open_status` | dashboard/src/data/conversation-library/client.ts:137-145; mcp/src/agents_remember/serving/conversation/library/api.py:202-221 |
+| The browser client and native serving route reconcile an open request. | `openReconcile`; `api_library_open_reconcile` | dashboard/src/data/conversation-library/client.ts:147-155; mcp/src/agents_remember/serving/conversation/library/api.py:224-243 |
+| The in-stage browser view reads this library state and starts list loading. | `ConversationLibrarySurface` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171 |
+| The sibling active-conversation state is a separate projection. | `ActiveConversationProjection` | dashboard/src/data/conversation/reducer.ts:42-66 |
+| The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`. | `DashboardState`; `dashboardStore`; `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84; dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
 
 ## Update History
+
+- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: split list, read, open, status, and reconcile ownership across the browser client and native routes. Verification metadata unchanged.
 
 - 2026-08-01T10:35+02:00 — No route impact: 260731-EFA-L4 changed exactly one file in this
   route and it is a test — `git status --short -- dashboard/src/data/conversation-library/` lists

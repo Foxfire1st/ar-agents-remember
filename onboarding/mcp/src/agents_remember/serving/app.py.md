@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:44+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ MCP tool spawn through ONE opener — the native capability/control surface
 (`GET /api/harnesses/{harness}/capabilities`, live capability and model/effort set, whole-message
 submit, and same-id reconcile), the L5/L9
 `POST /api/terminal/{session}/attach-leaf` leaf-claim/move route, the **L2**
-`POST /api/terminal/{session}/paste` server-side harness-log-verified context-packet delivery, the `GET /api/harnesses` detection
+`POST /api/terminal/{session}/paste` explicit operator input path, the `GET /api/harnesses` detection
 endpoint (6e-2b), the **260707-HFX-L8** `POST /api/terminal/{session}/retire` (server-authoritative
 seat retirement with authority policy) and `POST /api/terminal/{session}/rename` (post-spawn
 identity rename) endpoints, the **260707-HFX2-L11** landed-archive cleanup endpoint
@@ -56,8 +56,8 @@ must be is `served_state.ServedWorkspaceProjection`, and `/api/state` and `/api/
 exactly that.
 
 Two signatures changed with it, from bare dicts to declared models:
-`stream_events(..., supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (L300-L305)
-and `_supervisor_heartbeat_payload(runtime) -> SupervisorHeartbeatPayload` (L936-L955). The
+`stream_events(..., supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:([`stream_events`], mcp/src/agents_remember/serving/app.py:315-345))
+and `_supervisor_heartbeat_payload(runtime) -> SupervisorHeartbeatPayload` (cit:([`_supervisor_heartbeat_payload`], mcp/src/agents_remember/serving/app.py:949-968)). The
 seven keys are identical; `ServingBuild.payload()` likewise returns `ServingBuildPayload` now.
 
 **The body is deliberately still assembled rather than dumped from one model.** The memo and the
@@ -69,35 +69,35 @@ holds both branches shut against the real route.
 **Every HTTP route this file registers now declares a `response_model`** — 17 of them, plus the
 one websocket that structurally cannot:
 
-- `GET /api/state` (L1007-L1018) → `ServedWorkspaceProjection`, with `304` declared as a
+- `GET /api/state` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `ServedWorkspaceProjection`, with `304` declared as a
   description-only entry carrying **no model**: the branch answers with an ETag and no body at
   all, which no `response_model` can express. That is also why this cannot become a
   model-returning handler.
-- `GET /api/task-document` (L1020-L1032) → `TaskDocNode`, 404/503 as `HttpDetailRefusal`.
-- `GET /api/stream` (L1034-L1054) → `ServedWorkspaceProjection` — what a `snapshot` frame's
+- `GET /api/task-document` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `TaskDocNode`, 404/503 as `HttpDetailRefusal`.
+- `GET /api/stream` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `ServedWorkspaceProjection` — what a `snapshot` frame's
   `data` carries. A `delta` frame is one bare projection node; that asymmetry IS the contract.
-- `GET /api/events` (L1056-L1076) → `StreamReadyMarker`. Every `event` frame is a verbatim
+- `GET /api/events` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `StreamReadyMarker`. Every `event` frame is a verbatim
   observer JSONL record replayed from disk, so the river's schema belongs to the observer; what
   this route mints is the ready marker, so that is what it declares.
-- `POST /api/actions/{action}` (L1259-L1266) → `ActionAccepted` with **`status_code=202`**. Left
+- `POST /api/actions/{action}` (cit:([`_register_action_routes`], mcp/src/agents_remember/serving/app.py:1285-1316)) → `ActionAccepted` with **`status_code=202`**. Left
   implicit, the decorator declared its success shape at 200 — a (route, status) pair no request
   can produce and therefore one no conformance check could ever drive. The handler returns a
   `Response` it built itself, so this moves no bytes.
-- `POST /api/operator-inbox` (L1268-L1274) → `OperatorInboxPostResponse`;
-  `POST /api/operator-inbox/{entry_id}/dismiss` (L1276-L1282) → `OperatorInboxDismissed` on both
+- `POST /api/operator-inbox` (cit:([`api_operator_inbox`], mcp/src/agents_remember/serving/app.py:1302-1308)) → `OperatorInboxPostResponse`;
+  `POST /api/operator-inbox/{entry_id}/dismiss` (cit:([`api_operator_inbox_dismiss`], mcp/src/agents_remember/serving/app.py:1310-1316)) → `OperatorInboxDismissed` on both
   200 and 404 (the same two keys either way).
-- `WS /api/terminal/{session}` (L1340) is **the one route with no declaration, and the only one
+- `WS /api/terminal/{session}` (cit:([`_serve_terminal_websocket`], mcp/src/agents_remember/serving/app.py:1322-1348)) is **the one route with no declaration, and the only one
   there can be**: it is registered as an `APIWebSocketRoute`, which takes no `response_model`
   parameter because it has no response body. The exhaustiveness test recognises the exemption by
   route CLASS, never a path skip-list, so a future undeclared *HTTP* route cannot hide behind it.
-- The eight terminal-control routes (L1843-L1935) declare their success shape plus the exact
+- The eight terminal-control routes (cit:([`_register_terminal_control_routes`], mcp/src/agents_remember/serving/app.py:1874-1973)) declare their success shape plus the exact
   refusal shapes each can emit — including two routes with two success shapes each:
   `/paste` → `TerminalHarnessDelivery | TerminalPaneDelivery` (a protocol harness and a plain
   pane can prove different things), and `/retire` → `TerminalRetired | TerminalAlreadyRetired`
   (retiring an already-terminal seat is idempotent, not an error).
 
 **Two routes are different in kind, because FastAPI actually validates them.**
-`GET /api/terminal/sessions` (L1348-L1356) and `GET /api/harnesses` (L1359) are the only
+`GET /api/terminal/sessions` (cit:([`_register_terminal_session_routes`], mcp/src/agents_remember/serving/app.py:1366-1395)) and `GET /api/harnesses` (cit:([`_register_terminal_session_routes`], mcp/src/agents_remember/serving/app.py:1366-1395)) are the only
 handlers in this file that return a bare `dict`, so `response_model` is live enforcement here
 rather than schema. That is a real behaviour change: they used to be forward-compatible
 pass-through, and they now answer **HTTP 500** (`ResponseValidationError`) if the payload gains
@@ -247,19 +247,13 @@ construct authority refs from binding leaf/role, including replacement-leaf iden
 asset refresh remains a source-to-build-to-package operation performed by `scripts/sync-dashboard.py`;
 this app only serves the synchronized package tree, so generated hashed assets receive no sidecars.
 
-### 260707-HFX2-L15 Harness-Log Paste Endpoint
+### Explicit Operator Input Endpoint
 
-Submitted `POST /api/terminal/{session}/paste` input receives a fresh delivery id and routes through
-the same `injector.deliver` path as spawn and durable inbox traffic. The endpoint builds
-`HarnessSessionLog` from the catalog row, reuses any existing bound log, persists a newly bound
-entry id/path with `TerminalCatalog.bind_session_log`, and reports `submitted:true` only when the
-id-bearing user record exists. Pane capture is returned only for an unconfirmed failure. Drafts
-remain transport-only and intentionally unacked.
-
-Reviewer residual N3: a submitted request for a harness-less `kind=terminal` row has no candidate
-harness log, so it exhausts the bounded ladder and remains unconfirmed; submitted REST text also
-gains the visible delivery-id envelope required for verification. The owner still owes an explicit
-short-circuit/documentation disposition; this sidecar does not present that residual as fixed.
+`POST /api/terminal/{session}/paste` is an explicit operator-input surface, not part of spawn or
+durable inter-agent brief delivery. After catalog and liveness checks, protocol harness rows submit
+through the harness control adapter, while plain terminal panes use `TerminalPaster`; `_paste_response`
+normalizes those two result shapes. Spawn remains `spawned-unbriefed`, and agent-to-agent task briefs
+travel as durable `dispatch-brief` operator-inbox entries.
 
 ### 260707-HFX2-L13 Live Compaction And Task-Body Endpoint
 
@@ -397,11 +391,9 @@ otherwise-unchanged projection look changed.
   stream from `/api/stream` (raw byte-offset resume vs. snapshot resume).
 - `POST /api/actions/{action}` parses an `ActionRequest`, calls the pure
   `serving.actions.evaluate_action` (now=`now_iso()`), and returns its `ActionOutcome` as a
-  `JSONResponse` (503 when no projection yet). For a gate-decision verb (slice 6b) it then calls
-  `gate_decide_for_lifecycle(config, … expected_gate_id=gateId, note=note,
-  decided_by="developer", decided_via="dashboard")` and merges the gate result. For a `cancel` that
-  carries only `gateId` and no lifecycle target, it calls `gate_decide_payload` against the workspace
-  gate log so old malformed attention rows can be physically deleted. No open gate returns
+  `JSONResponse` (503 when no projection yet). For a gate-decision verb, `_recorded_gate_decision`
+  records a lifecycle-targeted decision through `record_lifecycle_gate_decision`, or a gate-id-only
+  decision through `record_gate_decision`, with developer/dashboard attribution. No open gate returns
   `409 {"status":"no-open-gate"}`; a mismatched targeted gate returns
   `409 {"status":"stale-gate"}`; lifecycle transitions stay no-mutation. For the task-28 `dismiss`
   verb, a non-gate lifecycle attention item is written through `AttentionDismissalStore.dismiss` as a
@@ -411,8 +403,8 @@ otherwise-unchanged projection look changed.
   the drift snapshot rather than a lifecycle.
 - `POST /api/operator-inbox` parses `OperatorInboxPostRequest` (`lifecycleId` / `agentId` /
   `recipientRole` / `gateId` aliases plus `ask`, `response`, sender/message metadata, optional
-  `artifactPath`, and `deliverToHosted`) and calls `operator_inbox_post_payload` with
-  `created_by="developer"` and `created_via="dashboard"`. This is the trusted dashboard write side
+  `artifactPath`, and `deliverToHosted`) and calls the serving owner
+  `post_operator_inbox_entry` with `created_by="developer"` and `created_via="dashboard"`. This is the trusted dashboard write side
   for task-10/L3 durable inbox messages; when a hosted session matches, it passes the catalog/host/paster
   seams so the same row can be pushed over echo-confirmed stdin immediately. Missing lifecycle/agent/role
   addressing returns `400 {"status":"bad-address"}` from the builder's address validation.
@@ -479,17 +471,13 @@ otherwise-unchanged projection look changed.
   endpoint support, so unknown/stopped/dead rows are `404`, live plain/legacy rows are `409`, and a
   live native endpoint proceeds. Set responses retain honest adapter acceptance at `200`; endpoint
   or discovery failure is `503`. Submit and reconcile use raw-free public serializers.
-- `POST /api/terminal/{session}/paste` (**L2**) delivers a context packet to a hosted session
-  server-side — the mirror of the frontend WebSocket `pasteAndConfirm`/`submitAndConfirm` for a durable
-  tmux session that has no attached browser client. `TerminalPasteRequest` carries `text` + `submit`
-  (default false). It `404 {"status":"unknown-session"}`s when the row is unknown/non-running, and
-  otherwise runs a direct `observe_terminal_liveness` check (HFX-L5: `checked_at=liveness_clock()`;
-  a transient tmux command failure records hysteresis evidence — no immediate exit mark — but a
-  not-alive observation still 404s); on an alive running row it runs `paster.paste(entry.tmux_name,
-  text, submit=submit)` — the same capture-verified paster mechanic as the spawn tool, no separate
-  path — and returns `{session, status:"delivered"|"unconfirmed", delivered, submitted}`; since
-  260707-HFX-L3 an unconfirmed outcome additionally ships `capture` (the paster's final pane
-  snapshot) as loud-failure evidence, omitted when delivered.
+- `POST /api/terminal/{session}/paste` (**L2**) is explicit operator input for an existing hosted
+  session. `TerminalPasteRequest` carries `text` + `submit` (default false). It returns
+  `404 {"status":"unknown-session"}` for an unknown/non-running/dead row after direct liveness
+  observation. On a live protocol harness, submit goes through the harness control adapter; plain
+  terminal input goes through `TerminalPaster`. `_paste_response` maps the resulting protocol/pane
+  evidence to the declared response union. This route is separate from spawn and durable
+  `dispatch-brief` inbox delivery.
 - `POST /api/terminal/{session}/attach-leaf` claims or **moves** a leaf for an **existing** session from
   the Chats page — enclosure-free, no respawn. `TerminalAttachLeafRequest` carries the required `leafKey`;
   the route normalizes it to the canonical qualified task-doc id before delegating to
@@ -554,7 +542,7 @@ otherwise-unchanged projection look changed.
   **before** `mount_static`. The handlers live in `serving/notes.py`.
 
 `stream_events(projector, *, build: ServingBuild | None = None,
-supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (L300-L305) owns one atomic projector
+supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:(["async def stream_events"], mcp/src/agents_remember/serving/app.py:315-315)) owns one atomic projector
 subscription. It serializes the initial current snapshot when available; if `prime()` left no
 projection, the same connected iterator waits and serializes the projector's first successful full
 recovery snapshot. Every snapshot is decorated identically with the optional boot-time
@@ -678,58 +666,64 @@ Frontend and settings-authoring consumers belong to the separate FEUI and CFGUI 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared projector owns atomic registration/snapshot capture, publish-before-notify ordering, first-recovery snapshots, and the ETag revision. | L135-L178; L207-L269 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| Deterministic serving regressions force the former handoff mutation, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | L441-L503 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The live change watcher `create_app` injects when `live_inputs.change_watch` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | [change_watcher.py](agents-remember/mcp/src/agents_remember/serving/change_watcher.py) |
-| The boot-time serving build stamp that rides `/api/state` + the SSE snapshot, now as the declared `ServingBuildPayload`. | n/a | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py) |
-| The declaration of the served body and the one tail builder both merge sites call. | `ServedWorkspaceProjection`; `served_state_tail` | [served_state.py](served_state.py.md) |
-| The declared response models and shared `responses={...}` tables the 17 HTTP routes here name. | `ACTION_RESPONSES`; `TerminalSessionsResponse`; `StreamReadyMarker` | [response_contract.py](response_contract.py.md) |
-| The suite that validates the assembled `/api/state` body and the SSE snapshot against `ServedWorkspaceProjection`, including the bodiless 304 branch. | `test_served_state_conformance` | [test_served_state_conformance.py](agents-remember/mcp/tests/test_served_state_conformance.py) |
-| The suite that drives every route, validates the real body, pins the 61-HTTP-route inventory, and recognises the websocket exemption by route class. | L512-L536 | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
-| The raw `event` channel `/api/events` delegates to. | n/a | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| The pure action evaluation `/api/actions/{action}` delegates to. | n/a | [actions.py](agents-remember/mcp/src/agents_remember/serving/actions.py) |
-| The gate write-path the router calls for a gate-decision verb (slice 6b). | n/a | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The operator inbox payload builder used by `/api/operator-inbox`. | n/a | [mcp/tools/operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| The Mode B2 terminal host the `/api/terminal` WebSocket bridges to (slice 6d), including tmux probe/kill hooks used for durability. | L86-L121; L230-L239; L287-L289; L340-L347 | [terminal.py](terminal.py) |
-| The durable terminal-session catalog persisted by the opener, sessions endpoint, landed cleanup, and terminate route. | L15-L30; L110-L185 | [terminal_catalog.py](terminal_catalog.py) |
-| The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | [terminal_liveness.py](terminal_liveness.py) |
-| The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | L45-L83 | [terminal_leaf_assignment.py](terminal_leaf_assignment.py) |
-| The shared hosted-session opener (L2) both this route and the `spawn_agent_session` tool compose. | L84-L174 | [terminal_opener.py](terminal_opener.py) |
-| The L4 route module owns harness-neutral advertise, launch selection, exact-session set, submit, reconcile, and liveness-first status mapping. | L156-L179; L210-L409; L618-L651 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| The pre-session catalog owns bounded dynamic discovery and failed-refresh quarantine. | L80-L195 | [harness_capability_catalog.py](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) |
-| The shared opener owns live launch-truth checks and the fenced read/probe/ensure/upsert transaction. | L170-L648 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| The serving leaf-ref adapter normalizes terminal open/attach leaf keys before catalog writes. | resolve_catalog_leaf_key | [leaf_ref_validation.py](leaf_ref_validation.py.md) |
-| The server-side capture-verified paste helper the L2 `/paste` endpoint drives (260707-HFX-L3: unconfirmed ships the pane capture). | L133-L229 | [terminal_paste.py](terminal_paste.py) |
-| The harness launch registry the opener + `/api/harnesses` consume (slice 6e-2b). | n/a | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
-| The static-bundle resolver/mount. | n/a | [static.py](agents-remember/mcp/src/agents_remember/serving/static.py) |
-| The read-only files API registered just before the static mount (operations-integration L1). | n/a | [files.py](agents-remember/mcp/src/agents_remember/serving/files.py) |
-| The read-only change-set API registered right after the files routes (operations-integration L3). | n/a | [changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
-| The served projection shape + `ActionAvailability`. | n/a | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The CLI adapter that builds and serves this app (and wires sim). | n/a | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| The central containment metrics store + sampler the lifespan loop drives (containment R4). | n/a | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
-| The provider degradation detector this loop calls once per tick after recording a metrics sample (260707-HFX-L7). | evaluate_provider_degradation | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The landed archive helper records completion-edge seats without terminating them. | `land_seats_for_leaf` | [landing.py](landing.py) |
-| The retire/rename mechanics + authority policy the explicit retire and landed-cleanup endpoints call into. | `retire_entry`; `check_retire_authority`/`SeatRef`/`master_of` | [retire.py](retire.py); [retire_policy.py](retire_policy.py) |
-| The observer-event loggers the landed, retire, rename, and turn-state paths fire. | `log_landed_event`; `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | [seat_events.py](seat_events.py) |
-| The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `SupervisorContext`; `run_supervisor_sweep` | [supervisor.py](supervisor.py.md) |
-| The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `supervisor.py`) calls. | `classify_pane_signal` | [pane_signals.py](pane_signals.py.md) |
-| The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | [supervisor_heartbeat.py](supervisor_heartbeat.py.md) |
-| The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | [../kernel/agentic_settings.py](../kernel/agentic_settings.py.md) |
-| The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | [../controlplane/expectation_rows.py](../controlplane/expectation_rows.py); [../controlplane/operator_inbox_store.py](../controlplane/operator_inbox_store.py); [../controlplane/orchestration_nudges.py](../controlplane/orchestration_nudges.py); [../controlplane/supervisor_signals.py](../controlplane/supervisor_signals.py.md); [../observer/store.py](../observer/store.py) |
+| The shared projector owns atomic registration/snapshot capture, publish-before-notify ordering, first-recovery snapshots, and the ETag revision. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
+| Deterministic serving regressions force the former handoff mutation, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:420-518 |
+| The live change watcher `create_app` injects when `live_inputs.change_watch` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:379-487 |
+| The boot-time serving build stamp that rides `/api/state` + the SSE snapshot, now as the declared `ServingBuildPayload`. | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
+| The declaration of the served body and the one tail builder both merge sites call. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
+| The declared response models and shared `responses={...}` tables the 17 HTTP routes here name. | `ACTION_RESPONSES`; `TerminalSessionsResponse`; `StreamReadyMarker` | mcp/src/agents_remember/serving/response_contract.py:197-206; mcp/src/agents_remember/serving/response_contract.py:349-352; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
+| The suite that validates the assembled `/api/state` body and the SSE snapshot against `ServedWorkspaceProjection`, including the bodiless 304 branch. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
+| The suite that drives every route, validates the real body, pins the 61-HTTP-route inventory, and recognises the websocket exemption by route class. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:783-1861 |
+| The raw `event` channel `/api/events` delegates to. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
+| The pure action evaluation `/api/actions/{action}` delegates to. | `evaluate_action` | mcp/src/agents_remember/serving/actions.py:149-167 |
+| The serving action helper owns the developer-attributed gate-decision assembly. | `_recorded_gate_decision` | mcp/src/agents_remember/serving/app.py:1092-1138 |
+| The action route records lifecycle-targeted decisions through the control-plane gate function. | "record_lifecycle_gate_decision(" | mcp/src/agents_remember/serving/app.py:1122-1122 |
+| The action route records gate-id-only decisions through the control-plane gate function. | "record_gate_decision(" | mcp/src/agents_remember/serving/app.py:1131-1131 |
+| The `/api/operator-inbox` serving endpoint is registered by the app. | `api_operator_inbox` | mcp/src/agents_remember/serving/app.py:1302-1308 |
+| The operator-inbox endpoint calls the serving post owner directly with trusted developer/dashboard attribution. | `_operator_inbox_response` | mcp/src/agents_remember/serving/app.py:1233-1275 |
+| The serving operator-inbox module owns the post operation. | `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:202-288 |
+| The Mode B2 terminal host the `/api/terminal` WebSocket bridges to (slice 6d), including tmux probe/kill hooks used for durability. | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
+| The durable terminal-session catalog persisted by the opener, sessions endpoint, landed cleanup, and terminate route. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
+| The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
+| The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
+| The MCP application owns the spawn command. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
+| The serving route calls the shared hosted-session opener. | "open_terminal_session(" | mcp/src/agents_remember/serving/app.py:1486-1486 |
+| The MCP application spawn command and serving route compose the shared hosted-session opener. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The L4 route module owns harness-neutral advertise, launch selection, exact-session set, submit, reconcile, and liveness-first status mapping. | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
+| The pre-session catalog owns bounded dynamic discovery and failed-refresh quarantine. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-196 |
+| The shared opener owns live launch-truth checks and the fenced read/probe/ensure/upsert transaction. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The serving leaf-ref adapter normalizes terminal open/attach leaf keys before catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
+| The server-side capture-verified paste helper the L2 `/paste` endpoint drives (260707-HFX-L3: unconfirmed ships the pane capture). | `TerminalPaster` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
+| The harness launch registry the opener + `/api/harnesses` consume (slice 6e-2b). | `detect_harnesses` | mcp/src/agents_remember/serving/harnesses.py:96-109 |
+| The static-bundle resolver/mount. | `mount_static` | mcp/src/agents_remember/serving/static.py:112-129 |
+| The read-only files API registered just before the static mount (operations-integration L1). | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
+| The read-only change-set API registered right after the files routes (operations-integration L3). | `register_changeset_routes` | mcp/src/agents_remember/serving/changeset.py:501-554 |
+| The served projection shape + `ActionAvailability`. | `ActionAvailability` | mcp/src/agents_remember/observer/projection.py:45-58 |
+| The CLI adapter that builds and serves this app (and wires sim). | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
+| The central containment metrics store + sampler the lifespan loop drives (containment R4). | `ProviderMetricsStore`; `sample_provider_containers` | mcp/src/agents_remember/providers/metrics.py:231-360; mcp/src/agents_remember/providers/metrics.py:363-420 |
+| The provider degradation detector this loop calls once per tick after recording a metrics sample (260707-HFX-L7). | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
+| The landed archive helper records completion-edge seats without terminating them. | `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28 |
+| The retire/rename mechanics + authority policy the explicit retire and landed-cleanup endpoints call into. | `retire_entry`; `check_retire_authority`; `SeatRef`; `master_of` | mcp/src/agents_remember/serving/retire.py:37-71; mcp/src/agents_remember/serving/retire_policy.py:23-33; mcp/src/agents_remember/serving/retire_policy.py:36-46; mcp/src/agents_remember/serving/retire_policy.py:49-67 |
+| The observer-event loggers the landed, retire, rename, and turn-state paths fire. | `log_landed_event`; `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:48-68; mcp/src/agents_remember/serving/seat_events.py:71-89; mcp/src/agents_remember/serving/seat_events.py:92-110 |
+| The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:1195-1282 |
+| The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `supervisor.py`) calls. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
+| The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121; mcp/src/agents_remember/serving/supervisor_heartbeat.py:124-132 |
+| The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:445-480 |
+| The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215; mcp/src/agents_remember/observer/store.py:103-171 |
 
 ## Cross-Repo References
 
 No external repository boundary, Toad host, or ACP transport is implemented by the serving app.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -746,12 +740,17 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: regenerated the serving helper and trusted-attribution whole-claim binding with the locked scoped fixer and inspected the complete generated function extent; no approved semantic claim changes.
+- 2026-08-04T03:03:32+02:00 — S18-SR3-B05 worker: selected the complete serving helper as the direct-call and trusted-attribution anchor and returned the whole binding to provisional fixer input.
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: corrected gate recording and operator-inbox ownership, separated explicit REST operator input from spawn/durable briefs, and rebound shared-opener composition to the actual application spawn command; new bindings remain provisional.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:44+02:00 — 260731-EFA-L4 curator: recorded the de-injection and the route
   declarations. `servingBuild`/`supervisorHeartbeat` were being written into an already-dumped,
   already-validated projection dict with nothing declaring them; both sites now call the single
   `served_state.served_state_tail` (L328-L329 for the SSE snapshot, L979-L982 for `/api/state`)
   and the result is declared as `ServedWorkspaceProjection`, which `/api/state` and `/api/stream`
-  name. Corrected `_supervisor_heartbeat_payload` (L936-L955) and `stream_events` (L300-L305),
+  name. Corrected cit:([`_supervisor_heartbeat_payload`], mcp/src/agents_remember/serving/app.py:949-968) and cit:([`stream_events`], mcp/src/agents_remember/serving/app.py:315-345),
   which return/accept declared models rather than bare dicts, and the `stream_events` paragraph,
   which now records that a snapshot with neither key is a valid served body and that deltas carry
   no tail. Documented all 17 route declarations with lines — including `/api/state`'s
@@ -769,7 +768,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   stamps the L4 commit.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: repaired 1 incomplete self-citation. The
-  change-set bullet cited `(L711-L713)` for a claim about ordering relative to `mount_static`, but
+  change-set bullet cited cit:([`create_app`], mcp/src/agents_remember/serving/app.py:718-777) for a claim about ordering relative to `mount_static`, but
   that span holds only the three registrar calls; `mount_static(app)` is at L733, so the citation
   now names both. Two other flagged items in this card were checked and left alone: `(L2)` and
   `(L5)` next to `collaborators.terminal_catalog` / `lifecycleId` are leaf identifiers
@@ -957,7 +956,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   before the catalog upsert; the opener now claims + persists `leaf_key` (preserving an existing binding
   when none is sent) and echoes `leafKey`. Verification metadata pinned until closeout stamps the L5
   commit.
-- 2026-06-29T15:30+02:00 — operations-integration L3: `create_app` now also calls `register_changeset_routes(app, config)` between `register_files_routes` and `mount_static` (L711-L713), mounting the read-only `/api/changeset/{task,file-diff,master}` change-set API (handlers in `serving/changeset.py`) — registered before the greedy `/` static mount. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
+- 2026-06-29T15:30+02:00 — operations-integration L3: `create_app` now also calls `register_changeset_routes(app, config)` between `register_files_routes` and `mount_static` (cit:([`create_app`], mcp/src/agents_remember/serving/app.py:718-777)), mounting the read-only `/api/changeset/{task,file-diff,master}` change-set API (handlers in `serving/changeset.py`) — registered before the greedy `/` static mount. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
 - 2026-06-28T22:41+02:00 — operations-integration L1: `create_app` now calls `register_files_routes(app, config)` immediately before `mount_static`, mounting the read-only `/api/files/{repos,list,read,onboarding}` files API (handlers in `serving/files.py`). Registered before the greedy `/` static mount so it cannot swallow them. Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `/api/actions/dismiss` now persists targetless
   actionable-drift acknowledgements while keeping gate-open dismissal source-consuming and lifecycle

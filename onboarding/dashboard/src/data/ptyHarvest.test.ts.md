@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/ptyHarvest.test.ts`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,13 +25,13 @@ terminal is constructed anywhere).
 
 ### Logic
 
-- **`parseOsc133`** (L11-L23): the mark matrix `A`/`B` → prompt, `C` → command-running, `D;0` →
+- **`parseOsc133`** cit:([`parseOsc133`], dashboard/src/data/ptyHarvest.ts:85-91): the mark matrix `A`/`B` → prompt, `C` → command-running, `D;0` →
   command-finished; unknown marks and the empty payload are NEVER fabricated into hints (null).
-- **`parseOsc94`** (L25-L37): state 0 → progress-done; active states → progress with the percent
+- **`parseOsc94`** cit:([`parseOsc94`], dashboard/src/data/ptyHarvest.ts:98-110): state 0 → progress-done; active states → progress with the percent
   clamped (`4;1;250` → 100); indeterminate `4;3` → progress without a percent; non-progress OSC 9
   payloads (e.g. notification text) and non-numeric states → null.
-- **`turnHintWord`** (L39-L44): the labeled hint words (`command running`, `progress 42%`).
-- **Store semantics** (L46-L70): bell sets the pending marker (+`lastBellAt`) and
+- **`turnHintWord`** cit:([`turnHintWord`], dashboard/src/data/ptyHarvest.ts:113-126): the labeled hint words (`command running`, `progress 42%`).
+- **Store semantics** cit:([`PtyHarvestState`], dashboard/src/data/ptyHarvest.ts:30-38): bell sets the pending marker (+`lastBellAt`) and
   `acknowledgeBell` clears it (focus-as-acknowledgment); acknowledging without a pending bell is
   a strict no-op (state identity preserved — no churn); title and turn hints are per-session and
   independent. Store reset per case via `beforeEach` `setState`.
@@ -42,28 +42,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | L13-L126 | [ptyHarvest.ts](ptyHarvest.ts) |
-| The DOM-level archetype/bell cases (hooks per archetype, rail marker). | — | [../panels/session-cockpit/PtySurface.test.tsx](../panels/session-cockpit/PtySurface.test.tsx) |
-| The rail's L6 block (bell marker + tooltip hints; the dot stays pure grammar). | — | [../panels/session-cockpit/SessionRail.test.tsx](../panels/session-cockpit/SessionRail.test.tsx) |
+| The module under test. | `parseOsc133` | dashboard/src/data/ptyHarvest.ts:85-91 |
+| The DOM-level archetype/bell cases (hooks per archetype, rail marker). | "two archetypes (R1)", "bell acknowledgment (R7)" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:53-92; dashboard/src/panels/session-cockpit/PtySurface.test.tsx:226-234 |
+| The rail's L6 block (bell marker + tooltip hints; the dot stays pure grammar). | "a harvested bell renders the rail attention marker with a text equivalent (R7)" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:749-757 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:42:42+02:00 — 260731-EFA-L6 curator W2-B10: repaired 10 citation findings (4 prose pointers and 3 reference rows); scoped recheck clean.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

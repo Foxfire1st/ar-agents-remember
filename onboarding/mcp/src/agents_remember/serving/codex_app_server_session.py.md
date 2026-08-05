@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ None known for the L3 desired/effective state owner.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -77,17 +77,18 @@ pass was available for this update.
 Strict model-page parsing is isolated from session lifecycle, while the adapter consumes retained
 catalog and thread evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Model pages validate descriptions, per-model effort menus/defaults, visibility, and identity; submission evidence captures its selection epoch. | L38-L118; L155-L256 | [codex_app_server_state.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_state.py) |
-| Adapter setters mutate desired state and fresh `turn/start` acceptance promotes the submission's captured pair. | L168-L226; L235-L287; L360-L428 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults. | L22-L56 | [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
+| `parse_model_page` validates model descriptions, effort menus/defaults, visibility, and identity. | `parse_model_page` | mcp/src/agents_remember/serving/codex_app_server_state.py:156-227 |
+| Session-owned desired-model and desired-effort setters stage the next selection. | `set_desired_model`; `set_desired_effort` | mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253 |
+| Fresh adapter `turn/start` acceptance promotes the submission's captured pair. | `_start_turn`; `_accept_started_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480; mcp/src/agents_remember/serving/codex_app_server_adapter.py:533-568 |
+| The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults. | `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:48-90 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this session owner.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -106,6 +107,7 @@ items first, turns second, and treats runtime results—not Codex version text�
 
 ## Update History
 
+- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): bound `set_desired_model`/`set_desired_effort` to their complete session-owned setter bodies (226-245, 247-253) instead of one-line adapter calls; model-page parsing and adapter turn/start acceptance keep their own owners; the scoped fixer confirmed the final ranges with no writes.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the experimental API opt-in as
   permission to probe bounded history, never as a version/capability assertion. Verification
   metadata remains pinned while the source change is uncommitted.

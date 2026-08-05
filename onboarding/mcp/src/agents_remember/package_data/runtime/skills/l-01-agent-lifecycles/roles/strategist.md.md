@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ dashboard/task-doc kind is deferred to the L14 hierarchy work (proven at the L15
 
 No external domain documentation applies to this repository-local orchestration role file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -108,19 +108,19 @@ override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
 
 When approved, the strategist is spawned by the orchestrator and hands its plan back for adoption.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [strategist.md](agents-remember/skills/l-01-agent-lifecycles/roles/strategist.md) |
-| The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The orchestrator that dispatches an approved strategist, adopts its plan, or authors the orchestration task after a sanctioned skip. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
-| The deliverable's template — the orchestration task with the shown-work requirements. | n/a | [orchestration-task.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md) |
-| The plan-review criteria catalog the loop's reviewer runs against the orchestration task. | n/a | [plan-review.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md) |
+| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-204 |
+| The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:95-112; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:190-248 |
+| The orchestrator that dispatches an approved strategist, adopts its plan, or authors the orchestration task after a sanctioned skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-463 |
+| The deliverable's template — the orchestration task with the shown-work requirements. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-91 |
+| The plan-review criteria catalog the loop's reviewer runs against the orchestration task. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-84 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration role file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -130,6 +130,8 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 6 citation anchors across 5 reference claims; scoped recheck clean (0 findings).
 
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: superseded mandatory-precondition wording

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/fixtures.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Provides the scenario fixtures for the enclosure-centered Engine Room process ma
 
 ### Logic
 
-`EngineRoomScenario` (L19-L23) names a `{ name, processes, workspace }` triple; `ENGINE_ROOM_SCENARIOS` (L724-L1198) is the exported array consumed downstream. Node shaping is factory-driven: `wsEngine` (L27-L36) builds a ready workspace `ProviderNode` (role inferred from id — memory/grepai → `memory`, else `code`), and `WORKSPACE` (L38) is the shared `[codegraphcontext-code, grepai-memory]` stack reused by every scenario. `ref` (L109-L111) wraps a `CommitRefNode` defaulting `factState: "observed"`; `boot` (L113-L120) builds a `ProviderBootNode` for the code/memory role; `edges` (L142-L214) emits the `EngineProcessEdge[]` graph (worktree-add, cgc-seed, and — when `external` — ledger-map + grepai-clone, plus an optional sync edge), each edge state overridable via `EdgeStates` (L132-L140). `engineProcess` (L216-L270) is the core builder: it derives the worktree group path from `repoName`/`id`, fills a nominal `worktree-started` enclosure (leaf id, commit refs, external memory, provider boots, completed phases, source files), then spreads `over` last so each scenario overrides only the fields it varies. `bootStages` are the six `engine-boot-*` build-up frames, **renumbered B0→B5 in slice 5i** to match the
+cit:([`EngineRoomScenario`], dashboard/src/panels/engine-room/fixtures.ts:19-23) names a `{ name, processes, workspace }` triple; `ENGINE_ROOM_SCENARIOS` cit:([`ENGINE_ROOM_SCENARIOS`], dashboard/src/panels/engine-room/fixtures.ts:722-1198) is the exported array consumed downstream. Node shaping is factory-driven: cit:([`wsEngine`], dashboard/src/panels/engine-room/fixtures.ts:27-36) builds a ready workspace `ProviderNode` (role inferred from id — memory/grepai → `memory`, else `code`), and cit:([`WORKSPACE`], dashboard/src/panels/engine-room/fixtures.ts:38-38) is the shared `[codegraphcontext-code, grepai-memory]` stack reused by every scenario. cit:([`ref`], dashboard/src/panels/engine-room/fixtures.ts:109-111) wraps a `CommitRefNode` defaulting `factState: "observed"`; cit:([`boot`], dashboard/src/panels/engine-room/fixtures.ts:113-120) builds a `ProviderBootNode` for the code/memory role; `edges` cit:([`edges`], dashboard/src/panels/engine-room/fixtures.ts:141-212) emits the `EngineProcessEdge[]` graph (worktree-add, cgc-seed, and — when `external` — ledger-map + grepai-clone, plus an optional sync edge), each edge state overridable via cit:([`EdgeStates`], dashboard/src/panels/engine-room/fixtures.ts:132-139). `engineProcess` cit:([`engineProcess`], dashboard/src/panels/engine-room/fixtures.ts:214-268) is the core builder: it derives the worktree group path from `repoName`/`id`, fills a nominal `worktree-started` enclosure (leaf id, commit refs, external memory, provider boots, completed phases, source files), then spreads `over` last so each scenario overrides only the fields it varies. `bootStages` are the six `engine-boot-*` build-up frames, **renumbered B0→B5 in slice 5i** to match the
 scenario-player beats: `engine-boot-0-main-only` (the official line at rest — worktree refs `planned`, no
 providers, every edge planned, no `missingFacts`: a not-yet-created enclosure is not an alarm) →
 `-1-code-worktree` (code worktree forks in; `worktree-add` complete) → `-2-memory-contract` (memory copies
@@ -32,22 +32,22 @@ in, the coupler binds; `ledger-map` complete) → `-3-providers-dim` (the runtim
 
 ### Invariants And Boundaries
 
-Fixtures are presentation data only: they encode the wire shape (camelCase, `exclude_none` optionals) and carry no behavior. They must stay in lockstep with the imported node types in [types/projection.ts](../../types/projection.ts) — fields like `factState`, `health`, edge `state`, and `phase` use the unions defined there. `SOURCE_BRANCH` (L25) and the hard-coded commits (`08e9221a`, `d60a0511`) are illustrative, not live. Health/setup/edge state strings must remain valid members of `ProcessHealth` and the edge-state vocabulary so the map renders honestly — and "valid" means the SERVER's vocabulary, not the renderer's tolerance. `EngineProcessEdge` is `extra="forbid"`, so a fixture inventing a field (`refusedPolarity`) or a state (`refused`) that the reducer cannot produce describes a payload the server would reject; the scenario then exercises a branch no user can ever reach. Every fixture edge state must be one `_seed_edge_state`/`_materialize_edge_state` can actually return. `seedFallback: true` in `engine-cgc-fallback` (L379) models a reroute-to-reindex, not a failure; `retryArgs` appears only on failed-setup scenarios. The active provider `runtimeState` is kept consistent with the running conduit (5g G4) — the engine being seeded/cloned is `indexing`, the done engine `nominal` — so the charging engine lines up with the flowing conduit (e.g. GrepAI cloning ⇒ `[boot("code"), boot("memory", "indexing")]`).
+Fixtures are presentation data only: they encode the wire shape (camelCase, `exclude_none` optionals) and carry no behavior. They must stay in lockstep with the imported node types in [types/projection.ts](../../types/projection.ts) — fields like `factState`, `health`, edge `state`, and `phase` use the unions defined there. cit:([`SOURCE_BRANCH`], dashboard/src/panels/engine-room/fixtures.ts:25-25) and the hard-coded commits (`08e9221a`, `d60a0511`) are illustrative, not live. Health/setup/edge state strings must remain valid members of `ProcessHealth` and the edge-state vocabulary so the map renders honestly — and "valid" means the SERVER's vocabulary, not the renderer's tolerance. `EngineProcessEdge` is `extra="forbid"`, so a fixture inventing a field (`refusedPolarity`) or a state (`refused`) that the reducer cannot produce describes a payload the server would reject; the scenario then exercises a branch no user can ever reach. Every fixture edge state must be one `_seed_edge_state`/`_materialize_edge_state` can actually return. `seedFallback: true` in `engine-cgc-fallback` cit:([`ENGINE_ROOM_SCENARIOS`], dashboard/src/panels/engine-room/fixtures.ts:722-1198) models a reroute-to-reindex, not a failure; `retryArgs` appears only on failed-setup scenarios. The active provider `runtimeState` is kept consistent with the running conduit (5g G4) — the engine being seeded/cloned is `indexing`, the done engine `nominal` — so the charging engine lines up with the flowing conduit (e.g. GrepAI cloning ⇒ `[boot("code"), boot("memory", "indexing")]`).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Node/edge types this file shapes — the import list here, resolving to the mirror there. | L7-L17 → L143-L154; L521-L608 | [fixtures.ts](fixtures.ts) → [types/projection.ts](../../types/projection.ts) |
-| `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | L762-L781 | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | L1588-L1611 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | L19-L23; L722-L1198 | [fixtures.ts](fixtures.ts) |
-| `engineProcess` core builder (override-last spread) | L214-L268 | [fixtures.ts](fixtures.ts) |
-| `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. | L132-L212 | [fixtures.ts](fixtures.ts) |
-| `engine-cgc-seed-refused` — the T9C scenario, now `edges({ cgc: "stale", … })` with `seedFallback: true`. | L829-L860 | [fixtures.ts](fixtures.ts) |
-| `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail | — | [fixtures.ts](fixtures.ts) |
-| `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) | — | [fixtures.ts](fixtures.ts) |
-| `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split | — | [fixtures.ts](fixtures.ts) |
+| Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160 |
+| `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:771-790 |
+| `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1596-1612 |
+| `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | `EngineRoomScenario`, `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:19-23; dashboard/src/panels/engine-room/fixtures.ts:722-1198 |
+| `engineProcess` core builder (override-last spread) | `engineProcess` | dashboard/src/panels/engine-room/fixtures.ts:214-268 |
+| `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. | `edges`, `EdgeStates` | dashboard/src/panels/engine-room/fixtures.ts:132-139; dashboard/src/panels/engine-room/fixtures.ts:141-212 |
+| `engine-cgc-seed-refused` — the T9C scenario, now `edges({ cgc: "stale", … })` with `seedFallback: true`. | "engine-cgc-seed-refused" | dashboard/src/panels/engine-room/fixtures.ts:835-835 |
+| `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail | `bootStages` | dashboard/src/panels/engine-room/fixtures.ts:275-417 |
+| `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) | "engine-retired" | dashboard/src/panels/engine-room/fixtures.ts:992-992 |
+| `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split | "engine-landing-pushed" | dashboard/src/panels/engine-room/fixtures.ts:1166-1166 |
 
 ## Series-Contract Notes
 
@@ -55,11 +55,16 @@ Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<r
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: removed duplicated Source ranges
+  from the `ENGINE_ROOM_SCENARIOS` and `edges`/`EdgeStates` rows; exact non-fixing check returns
+  zero findings.
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 24 citation findings (8 rows plus prose); scoped recheck clean.
+
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the reference row and the restatement in the 10:56 entry
-  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` (L762),
-  `model_config = ConfigDict(extra="forbid")` (L770), the nine-state comment (L778) above
-  `state: str` (L779), and the last field `detail` (L781). No body claim changed.
+  below. `EngineProcessEdge` cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:771-790)
+  is the class with the `extra="forbid"` model and the documented state vocabulary. No body claim changed.
 
 - 2026-08-01T10:56+02:00 — 260731-EFA-L4 curator: corrected the T9C fixture description. `EdgeStates`
   no longer has a `cgcRefused: "amber" | "red"` flag, and the `cgc-seed` lane no longer emits

@@ -98,31 +98,33 @@ collapsed panels dropping out.
 The curator checked `system/sources.md`; no Domain Documentation entries are configured. Keyboard
 claims were therefore verified against the repository's collision records, source, and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for the effective keymap. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for the effective keymap. | — | — |
 
 ## Cross-Repo References
 
 The keymap is repository-local. Vendor/browser collision evidence is recorded in `reserved.ts`, but
 no cross-repository implementation source is imported or treated as governing code.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source governs this route. | Import and collision-record review | — |
+| No applicable cross-repository source governs this route. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The effective-keymap preference and validation boundary. | [preferences.ts](preferences.ts) |
-| The thin React binding that installs the effective tables via tinykeys. | [useKeyboardZones.ts](../../panels/session-cockpit/useKeyboardZones.ts) |
-| The `?` reference/profile page that renders the same effective map. | [CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
-| The command ids the chord tables dispatch into. | [commands.ts](../commands.ts) |
-| The DOM that carries the `data-kbzone`/`data-region` markers. | [SessionsView.tsx](../../panels/session-cockpit/SessionsView.tsx) |
-| The live CodeMirror surface that consumes profile and chord reconfiguration. | [SessionComposer.tsx](../../panels/SessionComposer.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The effective-keymap preference and validation boundary. | `resolveKeymap` | dashboard/src/data/keymap/preferences.ts:141-231 |
+| The thin React binding that installs the effective tables via tinykeys. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| The `?` reference/profile page that renders the same effective map. | `CommandPalette` | dashboard/src/panels/session-cockpit/CommandPalette.tsx:157-342 |
+| The command ids the chord tables dispatch into. | `registerDefaultCommands` | dashboard/src/data/commands.ts:88-191 |
+| The DOM that carries the `data-kbzone`/`data-region` markers. | `SessionsView` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
+| The live CodeMirror surface that consumes profile and chord reconfiguration. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:231-723 |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 6 citation entries (12 findings); no Tier-3 findings.
 
 - 2026-07-24T13:17:50Z — Route impact: corrected the focus model after StatusLine removal and recorded
   the harness-chat Enter submit default (with Shift+Enter retaining newline insertion). Verification

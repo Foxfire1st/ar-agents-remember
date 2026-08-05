@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_leaf_ref_resolution.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T19:55+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,15 +64,20 @@ contract persisted with a legacy stem-shaped id — the pre-heal on-disk state) 
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Resolver under test. | [../src/agents_remember/worktrees/leaf_refs.py](../src/agents_remember/worktrees/leaf_refs.py.md) |
-| Walk-free `load_contract` and the `heal_contract_leaf_ids` sweep under test. | [../src/agents_remember/worktrees/worktree_contract.py](../src/agents_remember/worktrees/worktree_contract.py.md) |
-| The `heal-leaf-ids` CLI seam driven end to end via `main`. | [../src/agents_remember/worktrees/modules/cli.py](../src/agents_remember/worktrees/modules/cli.py.md) |
-| Task document writer used to create representative task trees. | [../src/agents_remember/tasks/overview.md](../src/agents_remember/tasks/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Resolver under test. | `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:94-147 |
+| Walk-free `load_contract` and the `heal_contract_leaf_ids` sweep under test. | `load_contract`; `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:438-471; mcp/src/agents_remember/worktrees/worktree_contract.py:480-555 |
+| The `heal-leaf-ids` CLI seam driven end to end via `main`. | `main` | mcp/src/agents_remember/worktrees/modules/cli.py:159-166 |
+| Task document writer used to create representative task trees. | `write_task_doc` | mcp/src/agents_remember/tasks/store.py:36-37 |
 
 ## Update History
 
+- 2026-08-04T18:51+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the three malformed rows whose
+  links pointed at `.md` cards or an overview instead of code — `resolve_leaf_ref` (leaf_refs.py:
+  94-149), `load_contract` + `heal_contract_leaf_ids` (worktree_contract.py:438-473; 480-557), and
+  `write_task_doc` (tasks/store.py:36-38, replacing the tasks overview link). Claim wording
+  unchanged.
 - 2026-07-31T16:50+02:00 — No content impact: the two `default_contract(...)` fixtures — the shared
   `_persisted_legacy_contract` helper and the duplicate-slug case — now build the same contract
   from the `ContractTask`, `LeafIdentity`, and `RepoBranchPlan` parameter objects instead of eleven

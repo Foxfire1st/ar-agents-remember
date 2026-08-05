@@ -49,26 +49,28 @@ None.
 
 No Domain Documentation source is configured. The repository sources are direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The cursor authority under test: mint/verify for cursors, keys, and resume targets plus digests and generations. | L62-L98 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/cursor.py) |
-| The canonical scope, query digest, and limit clamp under test. | L30-L97 | [scope.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/scope.py) |
+| The cursor authority under test: mint/verify for cursors, keys, and resume targets plus digests and generations. | `LibraryCursorAuthority`; `identity_digest`; `catalog_generation`; `mint_list_cursor`; `verify_list_cursor`; `mint_read_cursor`; `verify_read_cursor`; `mint_conversation_key`; `verify_conversation_key`; `mint_resume_target`; `verify_resume_target` | mcp/src/agents_remember/serving/conversation/library/cursor.py:62-297; mcp/src/agents_remember/serving/conversation/library/cursor.py:72-87; mcp/src/agents_remember/serving/conversation/library/cursor.py:89-98; mcp/src/agents_remember/serving/conversation/library/cursor.py:102-115; mcp/src/agents_remember/serving/conversation/library/cursor.py:117-130; mcp/src/agents_remember/serving/conversation/library/cursor.py:132-138; mcp/src/agents_remember/serving/conversation/library/cursor.py:140-146; mcp/src/agents_remember/serving/conversation/library/cursor.py:150-170; mcp/src/agents_remember/serving/conversation/library/cursor.py:172-186; mcp/src/agents_remember/serving/conversation/library/cursor.py:190-211; mcp/src/agents_remember/serving/conversation/library/cursor.py:213-228 |
+| The canonical scope, query digest, and limit clamp under test. | `canonical_library_scope`; `query_digest`; `clamp_limit` | mcp/src/agents_remember/serving/conversation/library/scope.py:30-71; mcp/src/agents_remember/serving/conversation/library/scope.py:74-87; mcp/src/agents_remember/serving/conversation/library/scope.py:90-97 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this contract suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 2 citation rows with exact cursor and scope symbols; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the cursor/scope contract suite
   sidecar. Verification is blank until closeout commits and stamps the new source.

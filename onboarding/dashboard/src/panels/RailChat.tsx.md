@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -134,29 +134,29 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The rail builds the leaf context package, pastes it as draft input after start-on-leaf or successful attach/move, and surfaces unconfirmed delivery status. | L204-L243; L309-L315; L317-L353; L413-L423 | [RailChat.tsx](RailChat.tsx) |
-| The session store it resolves the chat/terminal slots from and the accepted-row create helper. | L112-L180; L598-L621 | [data/sessions.ts](../data/sessions.ts) |
-| Reliable readiness and leaf-context submission. | L314-L333 | [data/submitClient.ts](../data/submitClient.ts) |
-| The harness-detection, terminate, and attach clients the rail drives. | L252-L357 | [data/terminal.ts](../data/terminal.ts) |
-| The durable leaf-key helpers and task tree builder used for packet lookup, heading labels, and the attach picker. | L60-L70; L102-L105; L126-L165 | [data/taskIdentity.ts](../data/taskIdentity.ts) |
-| The lazy xterm terminal it mounts per pane (shared with Chats). | — | [Terminal.tsx](Terminal.tsx) |
-| The composer docked below each pane that injects into that session's stdin. | — | [SessionComposer.tsx](SessionComposer.tsx) |
-| The canonical Chats duty bar and view surface the same registry and authoritative leaf attach. | — | [ChatContextBar.tsx](session-cockpit/ChatContextBar.tsx) · [SessionsView.tsx](session-cockpit/SessionsView.tsx) |
-| The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | L346-L356; L479-L485 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| The rail builds the leaf context package, pastes it as draft input after start-on-leaf or successful attach/move, and surfaces unconfirmed delivery status. | "function stepLines" | dashboard/src/panels/RailChat.tsx:187-187 |
+| The session store it resolves the chat/terminal slots from and the accepted-row create helper. | "interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
+| Reliable readiness and leaf-context submission. | "interface ReliableSubmitTransport" | dashboard/src/data/submitClient.ts:58-58 |
+| The harness-detection, terminate, and attach clients the rail drives. | "function connectTerminal" | dashboard/src/data/terminal.ts:197-197 |
+| The durable leaf-key helpers and task tree builder used for packet lookup, heading labels, and the attach picker. | "export type TaskSelection" | dashboard/src/data/taskIdentity.ts:8-8 |
+| The lazy xterm terminal it mounts per pane (shared with Chats). | "export function Terminal" | dashboard/src/panels/Terminal.tsx:117-117 |
+| The composer docked below each pane that injects into that session's stdin. | "export const SessionComposer" | dashboard/src/panels/SessionComposer.tsx:231-231 |
+| The canonical Chats duty bar and view surface the same registry and authoritative leaf attach. | "export function ChatContextBar", "export const SessionsView" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74; dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
+| The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:63-63 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -179,6 +179,9 @@ The contextual rail chat is memoized as another persistent shell surface. It ski
 tab-switch parent renders without changing its own session/store driven behavior.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-24T13:17:17Z — Curator: documented the rail-chat memo boundary; verification fields
   remain pre-commit.

@@ -224,16 +224,16 @@ owns the per-harness frame grammars; orchestration consumes the canonical status
 delegated seat projection. Four new test suites prove the contract, three of them through the
 engine/store and one over a real socket.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The request dependencies are the only consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The validated IPC reads are the only substrate channels polled. | L270-L360 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The evidence/native-page/provenance products define the polled shapes. | L310-L380 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| Orchestration's delegated seat projection consumes the canonical classification. | L71-L91 | [hosted_control_projection.py](agents-remember/mcp/src/agents_remember/serving/hosted_control_projection.py) |
-| The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | L32-L57 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The declared response shapes and the cursor-aware refusal table the three routes spread. | L126-L227 | [active/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) |
-| `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | L81-L88; L113-L124 | [conversation/response_contract.py](agents-remember/mcp/src/agents_remember/serving/conversation/response_contract.py) |
-| The four focused suites cover status, mappers, engine/store, and production routes. | L1-L8 | [mcp/tests overview](../../../../../tests/overview.md) |
+| The request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
+| The validated IPC reads are the only substrate channels polled. | `read_control_snapshot`; `read_control_capabilities`; `read_submission_authority`; `read_submission_status`; `read_control_transcript`; `read_control_evidence`; `read_control_native_page`; `read_submission_provenance` | mcp/src/agents_remember/serving/harness_control_client.py:119-131; mcp/src/agents_remember/serving/harness_control_client.py:134-141; mcp/src/agents_remember/serving/harness_control_client.py:144-148; mcp/src/agents_remember/serving/harness_control_client.py:151-169; mcp/src/agents_remember/serving/harness_control_client.py:330-343; mcp/src/agents_remember/serving/harness_control_client.py:346-366; mcp/src/agents_remember/serving/harness_control_client.py:369-401; mcp/src/agents_remember/serving/harness_control_client.py:404-422 |
+| The evidence/native-page/provenance products define the polled shapes. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/serving/harness_control_models.py:455-478; mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:492-500; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:513-524; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
+| Orchestration's delegated seat projection consumes the canonical classification. | `snapshot_turn_state`; `snapshot_seat_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
+| The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
+| The declared response shapes and the cursor-aware refusal table the three routes spread. | `conversation_page`; `hydrate_agent_history`; `conversation_events`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
+| `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
+| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:668-668; onboarding/mcp/tests/overview.md:670-672 |
 
 ## Cross-Repo References
 
@@ -241,7 +241,7 @@ No cross-repository implementation participates in this route. All three harness
 subprocesses reached through this repository's own adapters, and the resolved memory policy
 allows no neighboring repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant cross-repo evidence found. | — | — |
 
@@ -251,7 +251,7 @@ The resolved `Domain Documentation` registry has no entries. This route therefor
 repository-owned contract, IPC substrate, fixtures, and tests as its direct evidence and does
 not fabricate an external citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this serving gate. | — | — |
 
@@ -396,6 +396,8 @@ required-but-nullable fields in `models.py` (see `../overview.md`): the serializ
 `previous_cursor` could not previously validate a body this route had itself emitted.
 
 ## Update History
+
+- 2026-08-03T05:21:55+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 8 table citations and normalized 8 source paths; retried the focused-suite claim with four unique behavioral literals from `onboarding/mcp/tests/overview.md`, and the frozen stale `:1-1` bridge generated `onboarding/mcp/tests/overview.md:668-668; onboarding/mcp/tests/overview.md:670-672`. The immediate exact check returned zero findings; the two unchanged ambiguous rows are recorded in the batch report.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three routes' declared response
   shapes and the one shared refusal table, with the two things the table would otherwise mislead

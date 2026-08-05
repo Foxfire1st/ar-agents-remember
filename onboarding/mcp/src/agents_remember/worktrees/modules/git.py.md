@@ -84,12 +84,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| Memory baseline code reuses these facade-exported Git helpers. | [baseline.py](agents-remember/mcp/src/agents_remember/memory/baseline.py) |
-| The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
-| Worktree tests cover changed-path behavior for long filesystem paths. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | "def run_git" | mcp/src/agents_remember/kernel/git_command.py:85-85 |
+| Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:69-69 |
+| The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:78-78 |
+| Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support.py:1541-1554 |
 
 ## Update History
 

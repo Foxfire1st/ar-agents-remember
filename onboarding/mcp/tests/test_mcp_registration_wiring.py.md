@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/tests/test_mcp_registration_wiring.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-07-31T15:32+02:00                      |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`  |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                      |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ What each advertised MCP tool **does with the arguments it is handed**.
 
 `agents_remember.mcp.registration` is the tool surface: one module per family, each
 declaring `@server.tool()` bodies that translate a flat MCP argument list into the
-parameter objects the controllers take. `test_tools.py` proves the surface *advertises* the
+parameter objects the application entry points take. `test_tools.py` proves the surface *advertises* the
 right names; nothing proved what a call to one of those names actually does.
 
 That translation is the whole content of these bodies, and it is exactly where a split goes
@@ -77,21 +77,24 @@ the config only to keep one signature, and these six must be called without it.
 
 - Tests go through the real server, never by calling the tool function directly — the
   registered schema and its coercions are part of what is under test.
-- Only the payload builder is doubled; no controller runs.
+- Only the payload builder is doubled; no application entry point runs.
 - This module is the behavioural companion to `test_tools.py`'s name/description surface,
   and to `test_code_quality_check.py::ToolSignatureExemptionTests`, which proves every
   function under `registration/` is a published tool declaration.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The tool surface under test: one module per family of `@server.tool()` declarations. | [registration/](agents-remember/mcp/src/agents_remember/mcp/registration/) |
-| The advertised-surface companion (names, descriptions, response conformance). | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
-| The AST test that keeps the `PLR0913` exemption over `registration/` honest. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The tool surface under test: one module per family of `@server.tool()` declarations. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
+| The advertised-surface companion (names, descriptions, response conformance). | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
+| The AST test that keeps the `PLR0913` exemption over `registration/` honest. | `ToolSignatureExemptionTests` | mcp/tests/test_code_quality_check.py:340-416 |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   registration-wiring suite. Verification metadata is pinned to the leaf's reformat commit
   until closeout stamps the code commit.

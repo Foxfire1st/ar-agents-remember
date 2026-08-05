@@ -44,15 +44,18 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| References are attached during native and echo ingestion. | [native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py), [echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| References are attached during native evidence-frame ingestion. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:159-200 |
+| References are attached during echo-frame ingestion. | `_apply_frame` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:180-182 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the evidence-reference
   sidecar. Verification metadata remains blank until commit.

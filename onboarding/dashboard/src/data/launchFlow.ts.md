@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchFlow.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,27 +36,27 @@ path. This preserves the caller-minted-id catalog watch without creating a secon
 
 ### Logic
 
-- `LaunchSelectionState` / `EMPTY_SELECTION` (L19-L30) — `{modelKey, effort, vendorDefaults}`;
+- `LaunchSelectionState` / cit:([`EMPTY_SELECTION`], dashboard/src/data/launchFlow.ts:27-31) — `{modelKey, effort, vendorDefaults}`;
   `vendorDefaults: true` is the EXPLICIT selectionless choice (send NEITHER knob).
-- `launchableEfforts(model)` (L33-L35) — `effortOptions.filter(launchSettable)`; a `filter` only,
+- cit:([`launchableEfforts`], dashboard/src/data/launchFlow.ts:34-36) — `effortOptions.filter(launchSettable)`; a `filter` only,
   no `.sort()` anywhere (advertised order preserved — reviewer-grepped).
-- `chooseModel(snapshot, modelKey)` (L46-L58) — picking a model RE-GATES effort: that row's
+- cit:([`chooseModel`], dashboard/src/data/launchFlow.ts:47-59) — picking a model RE-GATES effort: that row's
   advertised `defaultEffort` only when it is itself in the launch-settable menu, otherwise `null`
   (the flow demands an explicit choice — a non-launch-settable default is never silently
   selected). An unadvertised key returns `EMPTY_SELECTION` (dynamic-only ⇒ not selectable; this
   is also why a corrected-launch prefill can never re-offer a key the live catalog dropped).
-- `chooseEffort(snapshot, selection, effortKey)` (L61-L70) — accepts only the CURRENT model's
+- cit:([`chooseEffort`], dashboard/src/data/launchFlow.ts:62-71) — accepts only the CURRENT model's
   advertised launchable menu; anything else leaves the selection unchanged.
-- `selectionComplete` (L76-L78) / `launchSelectionBody` (L81-L89) — complete = vendor defaults OR
+- cit:([`selectionComplete`], dashboard/src/data/launchFlow.ts:77-79) / cit:([`launchSelectionBody`], dashboard/src/data/launchFlow.ts:82-90) — complete = vendor defaults OR
   both knobs; the body emits `{model, effort}` or `{}` and THROWS on any partial pair
   ("complete the pair or choose vendor defaults") — partiality is unrepresentable.
-- `OpenOutcome` (L94-L125) — one normalized outcome per server path, each rendered verbatim by
+- cit:([`OpenOutcome`], dashboard/src/data/launchFlow.ts:95-126) — one normalized outcome per server path, each rendered verbatim by
   the flow: `opened` (200 + session, carrying the REQUESTED pair verbatim — tier 'pending', never
   proof), `launch-selection-invalid` (400, partial-pair/non-native detail),
   `open-refused` (other 400, verbatim status+detail), `leaf-taken` (409, names the owning
   session), `launch-selection-conflict` (409, the LIVE row's retained pair vs attempted —
   provenance never rewritten), `outcome-unknown` (transport/5xx/unrecognized — design §7.1 F9).
-- `classifyOpenResponse(httpStatus, body)` (L130-L178) — the pure classifier; `httpStatus: null`
+- cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:131-179) — the pure classifier; `httpStatus: null`
   = the fetch threw. Unrecognized 200s/409s/5xx all fall through to `outcome-unknown` with an
   honest detail line.
 - `openHostedSession(sessionId, request, base)` — delegates to the sole opener with
@@ -92,33 +92,34 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Selection reducers, wire-body rule, classifier, and the classifying open client. | L19-L222 | [launchFlow.ts](launchFlow.ts) |
-| The capability wire types the reducers read (snapshot/model/effort rows). | — | [../types/harnessCapabilities.ts](../types/harnessCapabilities.ts) |
-| The open-response wire shapes this classifies (200/400/409×2 bodies). | — | [../types/terminalOpen.ts](../types/terminalOpen.ts) |
-| The server's synchronous-refusal boundary (split pair / non-native only). | L64-L87 | [harness_control_api.py](../../../mcp/src/agents_remember/serving/harness_control_api.py) |
-| The dialog rendering these machines (options exclusively from the envelope). | — | [../panels/session-cockpit/LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx) |
-| Open-response fixtures the classifier is table-tested over. | — | [../test/fixtures/openResponses.ts](../test/fixtures/openResponses.ts) |
-| The unit suite (reducer tables, classifier table, POST-body assertions). | — | [launchFlow.test.ts](launchFlow.test.ts) |
+| Selection reducers, wire-body rule, classifier, and the classifying open client. | `LaunchSelectionState`, `selectionComplete`, `launchSelectionBody`, `classifyOpenResponse`, `openHostedSession` | dashboard/src/data/launchFlow.ts:20-25; dashboard/src/data/launchFlow.ts:77-79; dashboard/src/data/launchFlow.ts:82-90; dashboard/src/data/launchFlow.ts:131-179; dashboard/src/data/launchFlow.ts:193-226 |
+| The capability wire types the reducers read (snapshot/model/effort rows). | `CapabilitySnapshotWire`, `ModelCapabilityWire`, `EffortOptionWire` | dashboard/src/types/harnessCapabilities.ts:16-22; dashboard/src/types/harnessCapabilities.ts:25-39; dashboard/src/types/harnessCapabilities.ts:59-65 |
+| The open-response wire shapes this classifies (200/400/409×2 bodies). | `TerminalOpenSuccessBody`, `TerminalOpenSelectionInvalidBody`, `TerminalOpenBadKindBody`, `TerminalOpenLeafTakenBody`, `TerminalOpenConflictBody` | dashboard/src/types/terminalOpen.ts:10-26; dashboard/src/types/terminalOpen.ts:31-34; dashboard/src/types/terminalOpen.ts:37-40; dashboard/src/types/terminalOpen.ts:43-47; dashboard/src/types/terminalOpen.ts:51-63 |
+| The server's synchronous-refusal boundary (split pair / non-native only). | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
+| The dialog rendering these machines (options exclusively from the envelope). | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-619 |
+| Open-response fixtures the classifier is table-tested over. | `OPENED_STARTING`, `INVALID_PARTIAL_PAIR`, `LAUNCH_CONFLICT` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:72-86 |
+| The unit suite (reducer tables, classifier table, POST-body assertions). | "selection reducers — complete pair or vendor defaults, never partial", "200 + session → opened, carrying the REQUESTED pair (starting) verbatim", "POSTs the complete pair and classifies the answer" | dashboard/src/data/launchFlow.test.ts:35-128; dashboard/src/data/launchFlow.test.ts:133-142; dashboard/src/data/launchFlow.test.ts:200-220 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: removed the second browser POST and delegated hosted
   launch to the sole discriminated opener while preserving recognized refusal and unknown-outcome
   reconciliation semantics. Verification metadata remains pinned until closeout.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_launch.py` |
 | doc_type               | `file-level-onboarding`            |
 | lastUpdated            | 2026-07-21T11:30+02:00             |
-| lastVerifiedCommitHash |                                    `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                    2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                    `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                    2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                      |
 
 ## Governing Overview
@@ -76,32 +76,34 @@ The resolved source registry has no Domain Documentation entries, so no live doc
 was available for this repository-owned launch contract. The code and tests below provide the
 direct evidence.
 
-| Finding                                                        | Citations | Source Path |
-| -------------------------------------------------------------- | --------- | ----------- |
-| No Domain Documentation source is configured for this repository.       | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No Domain Documentation source is configured for this repository. | n/a | n/a |
 
 ## Repo-Internal References
 
 The production module defines the exact policy exercised here, while the hosted runner establishes
 the ordering and persistence boundary covered by its sibling tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `ResolvedLaunch` is complete and JSON-safe; dynamic validation is model-gated and Pi requires an exact provider-qualified key. | L17-L119 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| Effective echo verification is honest, and launch-knob application refuses duplicate adapter-owned argv/config keys. | L122-L182 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| Codex config parsing covers separated, equals-attached, and short-attached forms. | L185-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| The sibling runner suite verifies discovery/application ordering and persistent failed launch evidence. | L110-L474 | [test_harness_control_runner.py](agents-remember/mcp/tests/test_harness_control_runner.py) |
+| `ResolvedLaunch` is complete and JSON-safe; dynamic validation is model-gated and Pi requires an exact provider-qualified key. | `ResolvedLaunch` | mcp/src/agents_remember/serving/harness_launch.py:17-54 |
+| Effective echo verification is honest, and launch-knob application refuses duplicate adapter-owned argv/config keys. | `verify_effective_launch`, `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:122-148; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
+| Codex config parsing covers separated, equals-attached, and short-attached forms. | ["--config/-c"] | mcp/src/agents_remember/serving/harness_launch.py:210-210 |
+| The sibling runner suite verifies discovery/application ordering and persistent failed launch evidence. | `test_dynamic_discovery_precedes_native_launch_knob_application`, `test_adapter_start_mismatch_is_persistent_failed_rejected_evidence` | mcp/tests/test_harness_control_runner.py:190-220; mcp/tests/test_harness_control_runner.py:402-450 |
 
 ## Cross-Repo References
 
 No sibling repository participates in this own-adapter policy test; installed vendor CLIs are
 covered through adapter and live-matrix evidence rather than a cross-repository code dependency.
 
-| Finding                                      | Citations | Source Path |
-| -------------------------------------------- | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 3 repository-internal launch-policy and runner-contract references for effective echo/knob checks, Codex config parsing, and discovery/failure ordering; final scoped result 0 (checker-clean).
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_harness_launch.py`
   since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3

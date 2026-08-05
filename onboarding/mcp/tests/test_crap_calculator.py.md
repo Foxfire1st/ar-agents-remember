@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_crap_calculator.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -76,13 +76,16 @@ offender the branch coverage that would clear it, and returns `None` when no cov
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CRAP-Calculator owns the formula, branch-arc attribution, Radon integration, the clearing-coverage inversion, and both renderings. | [crap_calculator.py](agents-remember/mcp/src/agents_remember/code_quality/crap_calculator.py) |
-| The wrapper side: threshold enforcement, per-offender failure lines, and the no-exemption-file assertion. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
-| `[tool.coverage.run] branch = true` — without it the reader refuses. | [pyproject.toml](agents-remember/pyproject.toml) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CRAP-Calculator owns the formula, branch-arc attribution, Radon integration, the clearing-coverage inversion, and both renderings. | "class FunctionScore" | mcp/src/agents_remember/code_quality/crap_calculator.py:63-63 |
+| The wrapper side: threshold enforcement, per-offender failure lines, and the no-exemption-file assertion. | `CodeQualityCheckTests` | mcp/tests/test_code_quality_check.py:38-165 |
+| `[tool.coverage.run] branch = true` — without it the reader refuses. | "[tool.ruff]" | pyproject.toml:1-1 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: rewritten. The previous card described a
   statement-coverage reader; CRAP now consumes branch coverage and refuses a report without

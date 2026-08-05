@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/AcceptanceChip.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T08:33+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,28 +44,31 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Chip rendering and action boundary. | L1-L105 | [AcceptanceChip.tsx](AcceptanceChip.tsx) |
-| Typed presentation models and acceptance words. | L1-L232 | [../../data/setChips.ts](../../data/setChips.ts) |
-| Primary live-control owner. | L148-L383 | [ModelEffortControl.tsx](ModelEffortControl.tsx) |
-| Background outcome owner. | L58-L142 | [SetOutcomeToasts.tsx](SetOutcomeToasts.tsx) |
+| Chip rendering and action boundary. | `AcceptanceChip` | dashboard/src/panels/session-cockpit/AcceptanceChip.tsx:56-105 |
+| Typed presentation models and acceptance words. | `SetChipModel`; `deriveSetChips` | dashboard/src/data/setChips.ts:27-40; dashboard/src/data/setChips.ts:58-216 |
+| Primary live-control owner. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:149-379 |
+| Background outcome owner. | `SetOutcomeToasts` | dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx:58-142 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 8 citation findings for the chip, model/effort, and toast ownership rows.
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R2/R6 after final reviewer PASS.
   Verification metadata is pinned to the contract base until the uncommitted code lands.

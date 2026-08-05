@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ checks existence, size, and sha256 against the staged bytes. Asset bytes never c
 only verified references ride submit.
 
 The multiplexing extension keeps the same additive posture without adding an action: `_evidence_native_page`
-(L376-L389) now forwards the optional `threadId` payload key straight to `bridge.native_page`
+now forwards the optional `threadId` payload key straight to cit:([`thread_id`], mcp/src/agents_remember/serving/harness_control_ipc.py:395-395)
 through `_optional_text`. When the key is absent the call is byte-identical to before and reads the
 parent/session thread; when present it selects that (sub-agent) multiplexed thread — the codex
 app-server serves `thread/read` for every multiplexed thread, and adapters that do not multiplex
@@ -108,7 +108,7 @@ None known for the private IPC action set.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -118,22 +118,22 @@ The bridge supplies ordered native truth and the blocking client applies first-b
 The `threadId` selector lands on the bridge's additive `native_page(thread_id=...)`
 parameter, whose `None` default keeps the parent-thread read byte-identical.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The bridge exposes live advertise and ordered setter operations only while running. | L440-L452 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | L236-L273 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | L186-L326; L475-L585 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | L1423-L1670; L1844-L1898 | [test_harness_control.py](agents-remember/mcp/tests/test_harness_control.py) |
-| Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | L463-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
-| The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | L113-L122; L403-L443 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | L291-L355 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| Contract tests pin the asset schema/traversal/verification batteries, the two actions end-to-end over a real socket, and the typed confinement refusals. | L1025-L1268; L864-L959 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
+| The bridge exposes live advertise and ordered setter operations only while running. | `submissions` | mcp/src/agents_remember/serving/harness_control_bridge.py:323-332 |
+| The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | `native_page` | mcp/src/agents_remember/serving/harness_control_bridge.py:226-271 |
+| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:563-563 |
+| IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | `test_exact_session_ipc_advertises_and_returns_set_acceptance` | mcp/tests/test_harness_control.py:1485-1518 |
+| Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | `test_evidence_action_round_trip_with_epoch_and_paging` | mcp/tests/test_harness_control_evidence.py:645-677 |
+| The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | `MAX_OPERATION_TIMELINE_PAGE` | mcp/src/agents_remember/serving/harness_control_models.py:113-113 |
+| The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | "interrupt adapter must not mint the bridge epoch" | mcp/src/agents_remember/serving/harness_control_bridge.py:299-299 |
+| Contract tests pin the asset schema/traversal/verification batteries, the two actions end-to-end over a real socket, and the typed confinement refusals. | `test_digest_and_size_verification` | mcp/tests/test_harness_control_plane.py:1329-1378 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by the local exact-session socket.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -155,7 +155,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 The private IPC preserves child-history semantics in both directions.
 `NativeHistoryLimitExceeded` serializes status, stable code, actual bytes, and limit bytes;
 `NativeHistoryUnavailable` serializes status and code. The inverse decoder requires the same
-typed fields before reconstructing either error (L535-L597). This makes the selected-child
+typed fields before reconstructing either error cit:(["control request failed"], mcp/src/agents_remember/serving/harness_control_ipc.py:605-605). This makes the selected-child
 boundary recoverable across Unix IPC without converting it into an undifferentiated
 `HarnessControlError`.
 
@@ -179,6 +179,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-02T21:28:06+02:00 — 260731-EFA-L6 curator W2-B10: repaired 19 citation findings (8 reference rows and 3 prose pointers); scoped recheck clean.
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `test_harness_control.py` citation.
   The stamped `L988-L1285` sits inside `HarnessControlConformanceTests`, not the IPC suite; the
   IPC tests are `HarnessControlIpcTests` (opens L1355). The five behaviours the row names are
@@ -197,7 +199,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   control IPC. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T15:37 — 260718-CHATS-L7 curator: documented the additive optional `threadId` payload
-  key on `evidence-native-page` (`_evidence_native_page`, L388-L401) — the multiplexed-thread
+  key on `evidence-native-page` (`_evidence_native_page`, cit:([`thread_id`], mcp/src/agents_remember/serving/harness_control_ipc.py:395-395)) — the multiplexed-thread
   selector forwarded to `bridge.native_page`; absent = parent/session thread byte-identical to
   before, no new action, protocol unchanged. Added the additive/absent-means-parent invariant and
   refreshed the bridge (advertise L413-L425, native_page L209-L246, interrupt/timeline L264-L328),

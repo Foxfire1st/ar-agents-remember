@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/scenarios.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -116,23 +116,23 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name. | L33-L44 | [scenarios.ts](scenarios.ts) |
-| The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. | L90-L102 | [scenarios.ts](scenarios.ts) |
-| `SCENARIOS` — timelines first, then the folded-in resting frames. | L258-L271 | [scenarios.ts](scenarios.ts) |
-| The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. | L835-L855 | [engine-room/fixtures.ts](../panels/engine-room/fixtures.ts) |
-| `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. | L1588-L1611 | [reducer.py](../../../mcp/src/agents_remember/observer/reducer.py) |
-| `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | L762-L781 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
-| `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | L134-L144; L146 | [fixtures.ts](fixtures.ts) |
-| Consumed by the player transport + the bench picker. | — | [ScenarioPlayer.tsx](ScenarioPlayer.tsx) · [Bench.tsx](Bench.tsx) |
-| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | — | [projection.ts](../types/projection.ts) · [event.ts](../types/event.ts) |
+| `erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name. | `erFrame` | dashboard/src/dev/scenarios.ts:33-37 |
+| The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. | `reindexReroute` | dashboard/src/dev/scenarios.ts:90-102 |
+| `SCENARIOS` — timelines first, then the folded-in resting frames. | `SCENARIOS` | dashboard/src/dev/scenarios.ts:260-273 |
+| The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. | "engine-cgc-seed-refused" | dashboard/src/panels/engine-room/fixtures.ts:835-835 |
+| `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1596-1612 |
+| `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:771-790 |
+| `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | `engineRoomProjection`, `GALLERY` | dashboard/src/dev/fixtures.ts:135-144; dashboard/src/dev/fixtures.ts:146-490 |
+| Consumed by the player transport + the bench picker. | `Bench`, `applyFrame` | dashboard/src/dev/Bench.tsx:18-83; dashboard/src/dev/ScenarioPlayer.tsx:12-17; dashboard/src/dev/ScenarioPlayer.tsx:27-27 |
+| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:507-518 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -146,13 +146,15 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+
+- 2026-08-03T02:41:37+02:00 — W3-B04 curator: curated 6 table citations (6 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the `projection.py`
   citation after a worker inserted ten lines above it. `EngineProcessEdge` L752-L771 → L762-L781:

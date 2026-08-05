@@ -98,26 +98,26 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The mouse-up selection snapshot it attaches to, including optional task leaf metadata. | L9-L44 | [data/selection.ts](../data/selection.ts) |
-| Session creation supplies only accepted server ids; session lookup supplies routed targets. | L1-L180; L598-L621 | [data/sessions.ts](../data/sessions.ts) |
-| Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. | L395-L510 | [data/submitClient.ts](../data/submitClient.ts) |
-| Harness discovery supplies detected create options. | — | [data/terminal.ts](../data/terminal.ts) |
-| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | L491-L499 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The behavior tests cover direct leaf paste and fallback routing. | L132-L163 | [HighlightComposer.test.tsx](HighlightComposer.test.tsx) |
+| The mouse-up selection snapshot it attaches to, including optional task leaf metadata. | `SelectionContext` | dashboard/src/data/selection.ts:9-16 |
+| Session creation supplies only accepted server ids; session lookup supplies routed targets. | `createSession`; `findSessionForLeaf` | dashboard/src/data/sessions.ts:477-486; dashboard/src/data/sessions.ts:681-699 |
+| Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. | `submitSessionText`; `retryRouteFailure`; `keepWaitingForSubmit`; `waitForSubmissionReady` | dashboard/src/data/submitClient.ts:627-681; dashboard/src/data/submitClient.ts:697-715; dashboard/src/data/submitClient.ts:729-757; dashboard/src/data/submitClient.ts:760-784 |
+| Harness discovery supplies detected create options. | `fetchHarnesses` | dashboard/src/data/terminal.ts:346-348 |
+| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | `viewedLeafKey` | dashboard/src/cockpit/Cockpit.tsx:428-428 |
+| The behavior tests cover direct leaf paste and fallback routing. | "direct leaf pill click submits through /submit; selection alone never acts"; "keeps a rejected direct submit visible with the verbatim detail" | dashboard/src/panels/HighlightComposer.test.tsx:380-420; dashboard/src/panels/HighlightComposer.test.tsx:422-457 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -141,6 +141,8 @@ The persistent highlight composer is now memoized. Unchanged shell props on a co
 skip its subtree while its own local and store-backed state still updates normally.
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 5 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-24T13:17:17Z — Curator: documented the persistent-composer memo boundary; verification
   fields remain pre-commit.

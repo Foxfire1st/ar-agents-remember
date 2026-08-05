@@ -6,8 +6,8 @@
 | path                   | `dashboard/e2e-production/cockpit.production.spec.ts`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T10:45+02:00                                 |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7`             |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00                              |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -138,39 +138,40 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card is verified from its direct source, the Playwright config that runs
 it, and the server/mirror types its payloads are pinned to.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
 The spec's payloads sit between two contracts it does not own — the dashboard wire mirrors and the
 server routes those mirror — so both are cited, along with the config that decides how the suite runs.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The header's three-answer rule (L8-L29), the `snapshot.json` read (L32-L34), and the module-level `dashboard.fingerprint` read that makes import fail without a release-generated file (L35-L38). | L8-L38 | [cockpit.production.spec.ts](cockpit.production.spec.ts) |
-| The fault-injection dispositions — the `OpenDisposition` union declaring `missing`/`malformed`/`contradictory` (L47-L54) and the arms that fulfil them alongside the `503`/`400` bodies (L93-L122), all deliberately untyped. | L47-L54; L93-L122 | [cockpit.production.spec.ts](cockpit.production.spec.ts) |
-| The catalog row `satisfies TerminalCatalogRow` (L141) and the open response `satisfies TerminalOpenSuccessBody` (L163), with `harness` (L149), `controlState` (L156), `controlEndpoint` (L159) and `controlProtocol` (L160) written unconditionally. | L125-L164 | [cockpit.production.spec.ts](cockpit.production.spec.ts) |
-| The five-way failure loop asserting the error text and zero `rail-row-*` elements (the count assertion at L297). | L285-L301 | [cockpit.production.spec.ts](cockpit.production.spec.ts) |
-| The shared typed capability fixture the envelopes come from — annotated with the `types/harnessCapabilities` wire mirrors, which is why it is a stronger claim than the reused projection. | L1-L18 | [../src/test/fixtures/capabilityEnvelopes.ts](../src/test/fixtures/capabilityEnvelopes.ts) |
-| Nothing generates `snapshot.json`: every reference in the repository reads it. | `contract.test.ts` L22; `test/fixtures/wire.ts` L66; `data/store.test.ts` L7; `dev/fixtures.ts` L8; this spec L32-L34 | [../src/fixtures/snapshot.json](../src/fixtures/snapshot.json) |
-| `TerminalOpenSuccessBody` — every field required, including the two that were absent before the `satisfies` pin. | L10-L26 | [types/terminalOpen.ts](../src/types/terminalOpen.ts) |
-| `TerminalCatalogRow` — `harness`, `lifecycleId`, `leafKey` and `seatRole` are optional, which is why the row's conditional spreads stay valid. | L24-L46 | [types/terminalCatalog.ts](../src/types/terminalCatalog.ts) |
-| `testDir: "./e2e-production"` and the `npm run preview` web server on `127.0.0.1:4173` — the built bundle, no daemon. | L1-L17 | [playwright.production.config.ts](../playwright.production.config.ts) |
-| `dashboard.fingerprint` is gitignored, so the file this spec reads at import does not exist in a working tree. | L24 | [.gitignore](../../.gitignore) |
-| `source_fingerprint` — the release-path writer of that file, byte-for-byte the algorithm the bundle carries. | `FINGERPRINT_FILE` L45; `source_fingerprint` L91-L104 | [scripts/sync-dashboard.py](../../scripts/sync-dashboard.py) |
+| The header's three-answer rule (L8-L29), the `snapshot.json` read (L32-L34), and the module-level `dashboard.fingerprint` read that makes import fail without a release-generated file (L35-L38). | `dashboardBuild` | dashboard/e2e-production/cockpit.production.spec.ts:35-38 |
+| The fault-injection dispositions — the `OpenDisposition` union declaring `missing`/`malformed`/`contradictory` (L47-L54) and the arms that fulfil them alongside the `503`/`400` bodies (L93-L122), all deliberately untyped. | `OpenDisposition` | dashboard/e2e-production/cockpit.production.spec.ts:47-54 |
+| The catalog row `satisfies TerminalCatalogRow` (L141) and the open response `satisfies TerminalOpenSuccessBody` (L163), with `harness` (L149), `controlState` (L156), `controlEndpoint` (L159) and `controlProtocol` (L160) written unconditionally. | "controlProtocol: null" | dashboard/e2e-production/cockpit.production.spec.ts:160-160 |
+| The five-way failure loop asserting the error text and zero `rail-row-*` elements (the count assertion at L297). | "production raw ${failure} failure stays visible with zero ghost rows" | dashboard/e2e-production/cockpit.production.spec.ts:286-300 |
+| The shared typed capability fixture the envelopes come from — annotated with the `types/harnessCapabilities` wire mirrors, which is why it is a stronger claim than the reused projection. | `capabilityEnvelope` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-172 |
+| Nothing generates `snapshot.json`: every reference in the repository reads it. | "NOT generated" | dashboard/src/test/fixtures/wire.ts:22-22 |
+| `TerminalOpenSuccessBody` — every field required, including the two that were absent before the `satisfies` pin. | `TerminalOpenSuccessBody` | dashboard/src/types/terminalOpen.ts:10-26 |
+| `TerminalCatalogRow` — `harness`, `lifecycleId`, `leafKey` and `seatRole` are optional, which is why the row's conditional spreads stay valid. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-93 |
+| `testDir: "./e2e-production"` and the `npm run preview` web server on `127.0.0.1:4173` — the built bundle, no daemon. | "./e2e-production" | dashboard/playwright.production.config.ts:4-4 |
+| `dashboard.fingerprint` is gitignored, so the file this spec reads at import does not exist in a working tree. | "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:24-24 |
+| `source_fingerprint` — the release-path writer of that file, byte-for-byte the algorithm the bundle carries. | `FINGERPRINT_FILE`; `source_fingerprint` | scripts/sync-dashboard.py:45-45; scripts/sync-dashboard.py:91-104 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The mocked endpoints correspond to routes served by the
 `mcp/` package in this same repository; nothing here crosses a repository boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 10 table citations and 1 prose citation for production cockpit fixtures, response types, and build evidence; fixer-generated ranges verified.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
@@ -189,8 +190,8 @@ No meaningful cross-repo references found. The mocked endpoints correspond to ro
   describes (a green production run claims "the mirror could produce this shape", never "the server
   sent it"), and annotated the 10:30 entry below as superseded on that point so the old wording is
   not read as current. Also verified and recorded the one claim in that answer that IS stronger:
-  the capability envelopes come from `test/fixtures/capabilityEnvelopes.ts`, which is annotated with
-  the `types/harnessCapabilities` wire mirrors (L1-L18). **The first Todo still stands and was
+  the capability envelopes come from `test/fixtures/capabilityEnvelopes.ts`, whose `capabilityEnvelope`
+  fixture supplies the typed wire evidence (cit:([`capabilityEnvelope`], dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-172)). **The first Todo still stands and was
   re-verified**: `mcp/src/agents_remember/package_data/dashboard.fingerprint` does not exist in this
   worktree and is gitignored at `.gitignore` L24, so the spec still throws at import here.
   **Citation repairs — five of nine rows had ranges that started correctly and stopped short of a

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/gates.py`   |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-04T12:32+02:00                      |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`  |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -35,14 +35,15 @@ drift-proof as the record.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The Literals reused here. | [controlplane/records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
-| The strict response base. | [models/base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
-| The registry that maps the gate tools to these models. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The Literals reused here. | `GateKind`; `GateState` | mcp/src/agents_remember/controlplane/records.py:29-45; mcp/src/agents_remember/controlplane/records.py:49-57 |
+| The strict response base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
+| The registry that maps the gate tools to these models. | `TOOL_RESPONSE_MODELS`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179; mcp/src/agents_remember/models/tool_registry.py:181-185 |
 
 ## Update History
 
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped gate-model citation claims; final exact frozen-snapshot check is clean.
 - 2026-07-04T12:32+02:00 — 260703-L4: `GateDecideResponse` now exposes
   delegated-decision attribution (`decidingRole`) and reviewer/evidence refs
   carried on the gate record. Verification metadata pinned until closeout stamps

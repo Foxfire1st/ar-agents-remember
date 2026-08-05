@@ -46,15 +46,17 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Replacement owner. | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/service.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Replacement owner. | `ActiveConversationService` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 1 repo-internal citation row and preserved verification metadata.
 
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 widened the in-test `_Projected`
   double's constructor from `(**_kwargs)` to `(*_args, **_kwargs)` so it still absorbs the

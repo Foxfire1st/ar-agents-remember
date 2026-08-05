@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/screenWakeLock.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:50Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,26 +43,31 @@ None.
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | Source discovery checked | — |
+| No relevant external documentation is configured. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Visibility, release, and overlapping-acquire handling. | L30-L94 | [screenWakeLock.ts](screenWakeLock.ts) |
-| Cockpit startup owns the returned lifecycle. | L1-L760 | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
+| Visibility, release, and overlapping-acquire handling. | `startScreenWakeLock` | dashboard/src/data/screenWakeLock.ts:34-94 |
+| Cockpit startup owns the returned lifecycle. | `startScreenWakeLock` | dashboard/src/cockpit/Cockpit.tsx:393-393 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional browser API is wrapped locally. | L15-L94 | [screenWakeLock.ts](screenWakeLock.ts) |
+| The optional browser API is wrapped locally. | `wakeLockOf` | dashboard/src/data/screenWakeLock.ts:25-28 |
 
 ## Update History
+
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 6 citation findings. Re-anchored and
+  re-ranged the three reference rows: `startScreenWakeLock` for visibility/release handling, its
+  `Cockpit.tsx:393` mount, and `wakeLockOf` for the local wrapper of the optional API. Scoped recheck
+  clean.
 
 - 2026-07-24T13:17:50Z — Created for visible-tab screen wake-lock ownership. Verification hash/date
   remain pinned to the pre-commit source stamp.

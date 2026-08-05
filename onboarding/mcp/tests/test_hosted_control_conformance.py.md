@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_hosted_control_conformance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,30 +71,30 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source was available to cite. | — | — |
+
 
 ## Repo-Internal References
 
 The matrix source directly proves the shared scenario and the protocol interface defines its new
 advertisement requirement.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The matrix enumerates the three native harness ids, and its fake adapter implements startup, snapshots, and an intentionally empty advertisement. | L49-L86 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
-| The generic fake implements structurally valid immediate model/effort setters without claiming an effective value; the matrix does not exercise them. | L101-L119 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
-| Every harness identity runs through ready state, immediate/queued delivery, blocked interaction, completion, ambiguity/reconciliation, and shutdown. | L214-L345 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
-| Restart recovery rebinds the same identity and validates protocol incompatibility through the private endpoint. | L347-L414 | [test_hosted_control_conformance.py](agents-remember/mcp/tests/test_hosted_control_conformance.py) |
-| The shared adapter protocol requires normalized cached advertisement and setters alongside the existing hosted-control lifecycle. | L31-L53 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
+| The matrix enumerates the native harness ids and its fake adapter implements startup, snapshots, and advertisement. | `HARNESSES`; `_Adapter`; `advertise` | mcp/tests/test_hosted_control_conformance.py:49-49; mcp/tests/test_hosted_control_conformance.py:52-165 |
+| The fake provides model and effort setters at the adapter boundary. | `set_model`; `set_effort` | mcp/tests/test_hosted_control_conformance.py:101-109; mcp/tests/test_hosted_control_conformance.py:111-119 |
+| Every harness identity runs through ready state, delivery, blocked interaction, completion, ambiguity/reconciliation, and shutdown. | `test_ready_delivery_blocked_completion_ambiguity_and_shutdown` | mcp/tests/test_hosted_control_conformance.py:214-345 |
+| Restart recovery rebinds the same identity and validates protocol incompatibility through the private endpoint. | `test_restart_recovery_and_incompatible_protocol` | mcp/tests/test_hosted_control_conformance.py:347-414 |
+| The shared adapter protocol defines normalized advertisement and setters alongside the hosted-control lifecycle. | `HarnessProtocolAdapter`; `LaunchableHarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59; mcp/src/agents_remember/serving/harness_control_adapter.py:78-88 |
 
 ## Cross-Repo References
 
 No sibling repository is needed for this same-repository conformance matrix.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -103,6 +103,8 @@ op-aware preflight, guarded write, and exact completion. The matrix prevents one
 quietly retaining native queue or id-only release behavior.
 
 ## Update History
+
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split the conformance matrix into exact test/protocol owners, removed unsupported cached-claim wording, and generated final citation ranges with the scoped fixer.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the three `submit_control_prompt` call sites
   now pass a `ControlSubmission(source=..., request_id=...)` parameter object instead of loose

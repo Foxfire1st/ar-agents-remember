@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 > **Status:** active baseline
 
@@ -804,33 +804,19 @@ lives in the `serving/` + `observer/` + `dashboard/src/` route overviews.
 
 This repository is currently selected into the workspace `/home/foxfire/Projects/ar-coordination` coordinator by path rules in the coordinator settings, but onboarding content should cite same-repo files for repository behavior and task files only as planning references.
 
-| Finding                                                                                                                                                                                                                       | Citations            | Source Path                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------------- |
-| The source checkout instructions distinguish this repository from the installed runtime, hand sibling-repo work to `ar-coordination/AGENTS.md`, keep `c-08-ar-coordination-context-resolver` skill plus `c-02-memory-quality-control` skill memory quality control as the context gate for this repo, and separate implementation approval from commit approval. | L1-L14; L28-L53; L84-L91 | [AGENTS.md](agents-remember/AGENTS.md) |
-| The installed runtime system template defines the hard start-of-task onboarding trust gate: resolve context, call `context_packet` when configured, run drift detection, classify update candidates versus dirty work-in-progress, ask whether to update candidates, rerun drift after updates, and never silently drop or ignore onboarding after drift detection. | L1-L48 | [system AGENTS template](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) |
-| The source checkout instructions name `python -m agents_remember.code_quality.check` as the gate, state that it takes no path arguments because its scope is `git ls-files '*.py'`, state that nothing in the gate is exempt and no baseline or allowlist may be added, say plainly that Radon does not enforce anything while remaining CRAP's complexity engine, and route the rest through resolved memory-layer `system/tools.md` and `system/coding-guidelines.md`. (`AGENTS.md` does *not* name the changed-lines coverage floor; `CONTRIBUTING.md` does.) | L148-L198 | [AGENTS.md](agents-remember/AGENTS.md) |
-| The nine harness configuration trees are generated from `scripts/harness/` and verified by `--check` in both hook tiers and in the suite; the classification of genuine per-harness requirements versus drift is recorded beside the generator. | n/a | [sync-harness.py](agents-remember/scripts/sync-harness.py); [scripts/harness/README.md](agents-remember/scripts/harness/README.md); [test_sync_harness.py](agents-remember/mcp/tests/test_sync_harness.py) |
-| The gate's scope is recomputed independently from `git ls-files` and asserted against the wrapper's real `ruff`/`pyright` argument vectors. Anything neither rail reaches fails the module, and **there is no allowlist to name it in** — the module docstring records that three empty shrink-only lists (`ALLOWED_UNGATED_PYTHON`, `ALLOWED_UNGATED_TYPESCRIPT`, `ALLOWED_UNTYPED_TYPESCRIPT`) stood there and were deleted, because an empty exemption list is a place to put the next offender. | n/a | [test_gate_scope.py](agents-remember/mcp/tests/test_gate_scope.py) |
-| The README now presents the public front door, a Core Features pitch, the generic quickstart, links to harness install pages, and a compact source/runtime layout.                                                                                                   | L1-L191            | [README.md](agents-remember/README.md) |
-| The docs index owns the expanded documentation map for start-here docs, install guides, operational guides, and reference pages, and now includes `docs/features.md` as the concentrated product tour.                                                                                                   | L1-L46            | [docs/README.md](agents-remember/docs/README.md) |
-| The source checkout carries hidden harness starter packages whose hook, rule, context, or extension startup surfaces load the coordinator first-action directive and now require the `l-01` deep-research retrieval-strategy evidence tally; the Claude Code install page also documents the required copy from `.claude/mcp/mcp.json` to root `.mcp.json` for MCP detection. | README L95-L119; Claude install L18-L31; install README L1-L25; starter instruction files whole file (12-68 lines each) | [README.md](agents-remember/README.md); [docs/install/claude-code.md](agents-remember/docs/install/claude-code.md); [docs/install/README.md](agents-remember/docs/install/README.md); [.claude hook](agents-remember/.claude/hooks/agents-remember-session-start.md); [.codex hook](agents-remember/.codex/hooks/agents-remember-session-start.md); [.cursor hook](agents-remember/.cursor/hooks/agents-remember-session-start.md); [.cursor rule](agents-remember/.cursor/rules/agents-remember.mdc); [.agents GEMINI.md](agents-remember/.agents/GEMINI.md); [.github-vscode hook](agents-remember/.github-vscode/hooks/agents-remember-session-start.md); [.github-vscode instructions](agents-remember/.github-vscode/copilot-instructions.md); [.hermes HERMES.md](agents-remember/.hermes/HERMES.md); [.openclaw workspace AGENTS.md](agents-remember/.openclaw/workspace/AGENTS.md); [.pi extension](agents-remember/.pi/extensions/agents-remember-start.ts) |
-| The current feature inventory is supported by the public Core Features pitch, the full `docs/features.md` tour, runtime/tool-surface docs, MCP `PUBLIC_TOOLS`, response model registry, packaged skill reference, runtime layout, benchmark methodology, and source quality wrapper. | README L32-L48; features L1-L471; MCP README L64-L90; tools L50-L86; model registry L108-L185; skills L15-L46; runtime layout L1-L118; benchmarks L1-L31; quality wrapper L1-L140 | [README.md](agents-remember/README.md); [docs/features.md](agents-remember/docs/features.md); [mcp/README.md](agents-remember/mcp/README.md); [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/); [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py); [skills reference](agents-remember/docs/reference/skills.md); [runtime layout](agents-remember/docs/reference/runtime-layout.md); [benchmark methodology](agents-remember/docs/benchmarks-methodology.md); [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| Runtime asset sync treats root runtime folders as canonical and copies them into package data; both hook tiers run the check form so package data does not silently drift from canonical assets. | sync-runtime L1-L168; test L1-L69; gate `generated_copy_checks` | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [_gate.sh](agents-remember/.githooks/_gate.sh) |
-| The local gate is one shared body in two tiers: `fast` certifies the staged content under stash isolation, `full` runs the wrapper. | L19-L29; L66-L91; L93-L202 | [_gate.sh](agents-remember/.githooks/_gate.sh); [pre-commit](agents-remember/.githooks/pre-commit); [pre-push](agents-remember/.githooks/pre-push) |
-| CI runs the wrapper and the frontend rail on every branch push and pull request, and is `workflow_call`-able so the release path can require it. | `on:` block; jobs `quality`, `dashboard` | [quality-checks.yml](agents-remember/.github/workflows/quality-checks.yml) |
-| The publish workflow gates on quality, owns the frontend build, and fails if a distribution lacks the bundle or its fingerprint. | jobs `quality`, `build`, `publish` | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
-| The generated bundle, its fingerprint sidecar, and local packaging output are git-ignored with the reason recorded inline. Since 260731-EFA-L4 the file also ignores `.dmypy.json` and `.mypy_cache/`, with the reason stated in the same comment: closeout stages the whole worktree before gating, so an untracked-and-unignored tool dropping is staged and committed rather than merely skipped by ruff. | dashboard and build ignore rules; L31-L37 | [.gitignore](agents-remember/.gitignore) |
-| Closeout stages before it gates: `_gate_staged_code` runs `reset --mixed` then `add -A` and hands the gate exactly the commit's content, downstream of two refusals — `_refuse_outside_a_linked_worktree` (git-dir vs git-common-dir, the property `default_series_contract` violates) and `_refuse_conflicted_worktree` (an unmerged index, which `add -A` would resolve to the conflict markers). No rollback: the index-copy machinery is removed, and the next run's reset is what makes a retry equal a first run. | L557-L681 | [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
-| The canonical closeout skill states the staging step, the "no commit" (not "no mutation") phrasing, both refusals and their gate-scoped applicability, and the `wrapper-unavailable` state for a checkout with no wrapper. It is fanned into the eight harness mirrors and the package-data copy by `sync-skills.py`, whose `--check` runs in both hook tiers. | SKILL L69-L97; L227-L275; L301-L340 | [skills/c-12-closeout/SKILL.md](agents-remember/skills/c-12-closeout/SKILL.md); [sync-skills.py](agents-remember/scripts/sync-skills.py) |
-| The production E2E spec's happy-path terminal payloads are `satisfies`-checked against the wire mirrors (which surfaced the absent `controlEndpoint`/`controlProtocol` and the conditionally spread `harness`/`controlState`), while the fault-injection payloads are deliberately left untyped so they can remain shapes the server should never send. | L5-L29; L141; L159-L163 | [cockpit.production.spec.ts](agents-remember/dashboard/e2e-production/cockpit.production.spec.ts) |
-| The mirror boundary, stated by the mirror itself: `snapshot.json` is hand-maintained and no generator exists, so a fixture is type-checked against `types/projection.ts` and the mirror is measured against that hand-kept payload — fixture ⊆ mirror is enforced, mirror ⊆ server is enforced by nothing. | wire L1-L46; guard L21-L30 | [wire.ts](agents-remember/dashboard/src/test/fixtures/wire.ts); [wireFixtureGuard.test.ts](agents-remember/dashboard/src/test/wireFixtureGuard.test.ts) |
-| The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" section | [CONTRIBUTING.md](agents-remember/CONTRIBUTING.md) |
-| MCP provider guidance requires Docker-wrapped provider backends instead of host-level services, live GrepAI memory roots, runtime artifacts under `providers/runners/grepai/`, PostgreSQL data under `providers/data/grepai/postgres/`, and `.grepai/` working directories treated as runtime artifacts rather than durable memory. | L79-L99 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md) |
-| The MCP settings example declares the external authority surface for repositories, provider ids, timeout caps, transcript roots, and package-derived provider runtime paths, replacing the removed coordinator `system/settings.json` provider template. | L1-L31 | [examples/mcp/settings.example.json](agents-remember/examples/mcp/settings.example.json) |
-| The repository quality configuration selects `C901`, un-ignores `PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` with no baseline behind them, carves out only published MCP tool signatures via one AST-guarded `per-file-ignores` entry, pins `target-version` to the `py311` floor, widens Pyright's `include` to the whole checkout, enables branch coverage, adds the first `[tool.pytest.ini_options]` block (including the eight now-applied `AR_*` integration markers), and keeps Radon as report configuration only. | L1-L288 | [pyproject.toml](agents-remember/pyproject.toml) |
-| The binding coverage gate: a 100% floor on changed statements and branch arcs, scored from the same coverage report CRAP reads, naming every uncovered line. | n/a | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
-| One command per environment-gated integration path, with `--require-passed` reading pytest's JUnit report because a skipped test exits 0. | n/a | [run-gated-integration.py](agents-remember/scripts/run-gated-integration.py); [integration-gated.yml](agents-remember/.github/workflows/integration-gated.yml) |
-| The coordinator tools example says repo-specific code quality tools belong in the selected memory layer, while the memory-repo tools example provides a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. | L6-L7; L5-L14 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md); [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:143-143 |
+| The source checkout defines the repository code-quality gate and its no-baseline/no-allowlist policy. | "Code Quality Instructions"; "After implementing Python code in this source checkout"; "python -m agents_remember.code_quality.check"; "There is no baseline, ratchet, allowlist"; "a finding is fixed, never" | AGENTS.md:148-148; AGENTS.md:150-150; AGENTS.md:154-154; AGENTS.md:166-167 |
+| The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
+| Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
+| The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
+| CI exposes the quality workflow as a reusable call. | `workflow_call` | .github/workflows/quality-checks.yml:11-11 |
+| Closeout stages before it gates and refuses unsafe linked/conflicted worktrees. | `_gate_staged_code`; `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout.py:721-760; mcp/src/agents_remember/worktrees/modules/closeout.py:763-786; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
+| The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
+| Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
+| The MCP settings example declares repository and coordination authority. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
+| The memory-repo tools example provides the `Code Quality` section. | "Code Quality" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md:11-11 |
 
 HFX2-L21 advances the existing Dashboard frontend feature: the Chats session rail is now a
 persisted, pointer- and keyboard-adjustable 220–560 px sidebar instead of a fixed 16 rem column. The
@@ -995,15 +981,13 @@ reads the spec as producer-verified: the projection is read whole from `src/fixt
 and the spec's own comment says that is **reuse, not provenance** — the biggest payload in the file
 is exactly as unverified as a hand-written one, merely unverified in one place instead of many.
 
-**Be precise about what the mirrors pin.** `dashboard/src/test/fixtures/wire.ts` is a
-**hand-maintained** TypeScript mirror and `dashboard/src/fixtures/snapshot.json` is a
-hand-maintained payload; **no generator exists in this repository** — nothing under `mcp/`,
-`scripts/` or `dashboard/` writes either. The chain is: a fixture is type-checked against
-`types/projection.ts` (the mirror), and the mirror is measured against `snapshot.json` by
-`dashboard/src/test/contract.test.ts` in three directions. So **fixture ⊆ mirror is enforced;
-mirror ⊆ server is enforced by nothing.** A field the server starts sending that neither the
-snapshot nor the mirror knows about is invisible to all of it. Do not read any of this as the two
-sides being kept in sync automatically.
+**Be precise about what each artifact pins.** `dashboard/src/fixtures/snapshot.json` remains a
+hand-maintained sampled payload. `dashboard/src/types/projection.ts`, however, is generated from
+`WorkspaceProjection.model_json_schema()` plus the served projection tail, and
+The generated mirror's cit:(["Drift check"], dashboard/src/types/projection.ts:7-7) makes schema and TypeScript drift a failing check. Fixture builders are type-checked against that
+generated mirror, `wireFixtureGuard` refuses fixture-side opt-outs, and `contract.test.ts` measures
+how completely the manual sample exercises the mirror. The human-maintained boundary is sample
+coverage, not the producer-to-TypeScript contract.
 
 ## 260727-CHATS-IM-L2 Repository Impact
 
@@ -1015,6 +999,15 @@ unchanged; ownership and failure containment are now explicit in their route ove
 
 ## Update History
 
+- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the code-quality and docs-index claims through their operative sections and regenerated the final ranges with the scoped fixer.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: superseded the deferred-codegen account.
+  `types/projection.ts` is generated and stale-checked from the Pydantic projection schema;
+  `snapshot.json` remains a manual sample whose coverage is measured separately. New ranges are
+  ranges were normalized by the scoped fixer.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` (14 modules), moved `worktrees/status.py` in as `application/worktree_status.py`, and renamed `mcp/tests/test_controller_guards.py` to `test_application_guards.py`. The repo's structure, feature inventory, and functional areas this overview describes are unchanged — the rename replaces MVC vocabulary that described nothing about the contents with the layer the package actually is; the vocabulary is "the application layer" for the package and "an application entry point" for one function. Reviewed this overview's body: it does not name the renamed package outside dated history entries, which are preserved verbatim. Detail lives in the `mcp/` package overview, the new `application/` route overview, and the file sidecars. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **corrected three passages this
   same leaf wrote and this same leaf then falsified.** The 00:50 entry below correctly found that
   nothing outside the locally-installed `.githooks/_gate.sh` checked the ten byte-identical skill
@@ -1022,11 +1015,11 @@ unchanged; ownership and failure containment are now explicit in their route ove
   asset sync` capability row, in the `260731-EFA-L4 Repository Impact` section, and in that entry
   itself. **The gap was then closed later in the same leaf and all three passages were left stating
   the old world.** Re-derived from `mcp/tests/test_sync_scripts.py` rather than from the review lead:
-  a new `RealTreeDriftTests` class (L159-L207) holds
+  a new `RealTreeDriftTests` class holds
   `test_every_skill_copy_matches_the_canonical_tree`, which iterates all **nine**
-  `sync-skills.TARGETS` (mcp package data + eight harness roots, L43-L56 of `scripts/sync-skills.py`),
+  `sync-skills.TARGETS` (mcp package data + eight harness roots in `scripts/sync-skills.py`),
   and `test_every_runtime_package_asset_matches_its_source`, which iterates all **four**
-  `sync-runtime.TARGETS`; both read through one module-level `drifted_files()` helper (L36-L54) over
+  `sync-runtime.TARGETS`; both read through one module-level `drifted_files()` helper over
   each script's `diff_target`, rebasing each entry onto its target so a failure names the copy to
   repair, and both assert against `[]` with the repair command in the message. It is a plain
   `unittest` class under `mcp/tests/`, which `[tool.pytest.ini_options] testpaths` declares as the
@@ -1037,7 +1030,7 @@ unchanged; ownership and failure containment are now explicit in their route ove
   `.github/workflows/` is a comment), so the enforcement is via pytest, not a workflow step; and there
   is **no completeness assertion on `sync-skills.TARGETS`**, so a tenth mirror added without
   registering it would pass (verified by grep across `mcp/tests/`) — unlike
-  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` (L72-L84), which pins
+  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data`, which pins
   the runtime label set to `{agents-md-files, benchmarks, providers, system}`. Also recorded that the
   six pre-existing `ReplaceTreeTests` temp-directory cases are **unchanged and not superseded** —
   they cover `replace_tree`'s crash-safe copy-then-swap contract, a different property — and rewrote
@@ -1096,16 +1089,16 @@ unchanged; ownership and failure containment are now explicit in their route ove
   **corrected the `.gitattributes` `-text` claim, which was false.** It said tiktoken verifies the
   vocabulary's SHA-256 on load and re-downloads any copy whose bytes differ, so an autocrlf clone
   would "restore the cold-start download on those clones alone". Read against the current code:
-  `models/tokens.py::_verify_vendored_vocabulary` (L70-L106) hashes the file against
-  `VENDORED_VOCABULARY_SHA256` (L47) itself and raises `TokenizerVocabularyError` — such a clone
+  `models/tokens.py::_verify_vendored_vocabulary` hashes the file against
+  `VENDORED_VOCABULARY_SHA256` itself and raises `TokenizerVocabularyError` — such a clone
   cannot start the server at all, and nothing is re-downloaded. Recorded why the check moved into
   this package (`tiktoken.load.read_file_cached` verifies but does not fail closed: it deletes the
   file and downloads a replacement over it, which inside an installed package is a startup fetch
   plus a rewrite of the installed tree, or a `PermissionError` on a read-only install), and that the
   entry is a **literal filename** — `.gitattributes` L13 names
   `package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`, so a refresh renames both and
-  `test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` (L246) holds them
-  together. `.gitattributes` carries its own corrected comment (L5-L12) for the same reason. Also
+  `test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` holds them
+  together. `.gitattributes` carries its own corrected comment for the same reason. Also
   made the cold-start hot-path sentence say *absent or byte-wrong* rather than only absent, and
   added the invariant that a downstream integrity check which repairs itself is not a check. The
   `blank-at-eol` half of the paragraph and the one-git-runner half were re-read and are unchanged.
@@ -1207,7 +1200,7 @@ unchanged; ownership and failure containment are now explicit in their route ove
   projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and
   new/extended regression suites incl. the installed F1 real-wire regression and the 10k renderer
   tripwire) against the repo body. No repo-level feature inventory changed — L5 hardens the
-  already-landed structured Chats surfaces (L0–L4) against their proven production faults rather than
+  already-landed structured Chats surfaces against their proven production faults rather than
   adding a product surface; detail routes to the `serving/`, `conversation/`, `conversation/active/`,
   `conversation/projectors/`, `mcp/tests/`, and `dashboard/…/session-cockpit/conversation/` governors.
   Master-exit carries recorded by the reviewer: the F3 completion-correlation disposition, the L3.7
@@ -2014,11 +2007,11 @@ unchanged; ownership and failure containment are now explicit in their route ove
   `kind`, because `kind` is a label beside the path while the git-dir comparison constrains the path
   about to be written — and `default_series_contract` records `code_worktree = code.repo_path`, so
   the unsafe shape is producible.
-- **A hand-maintained mirror is not a contract, and saying so is part of the memory.** The dashboard
-  wire mirrors and `dashboard/src/fixtures/snapshot.json` are hand-kept; **no generator exists in
-  this repository**. Fixture ⊆ mirror is enforced by `tsc` plus the fixture guard, mirror ⊆ server is
-  enforced by nothing, and a field the server starts sending that neither knows about is invisible to
-  all of it. Never describe the two sides as automatically synchronized.
+- **A generated contract and a manual sample have different jobs.** The dashboard TypeScript mirror
+  is generated and stale-checked from the Pydantic schema; fixture builders plus the fixture guard
+  bind tests to it. `dashboard/src/fixtures/snapshot.json` remains hand-maintained, and the contract
+  suite measures its coverage. Never describe the sample itself as generated or treat sample
+  completeness as the producer-to-TypeScript authority.
 - **A downstream integrity check is not a check if the downstream repairs itself.** tiktoken verifies the vendored vocabulary's SHA-256 and then answers a mismatch by deleting the file and re-downloading it, so "tiktoken verifies it" was never the guarantee it read as — inside an installed package that repair is a startup download plus a rewrite of the installed tree. `models/tokens.py` hashes the file itself before handing it over and raises `TokenizerVocabularyError`, which is what makes corruption behave like absence (260731-EFA-L3). When delegating verification, check what the verifier does on failure, not just that it looks.
 - Managed provider mode should wrap provider databases and daemon infrastructure in Docker instead of requiring host-level PostgreSQL, FalkorDB, OS service managers, launch agents, package-manager services, or global user daemons.
 - Provider runtime artifacts are not durable memory or source data: GrepAI config/state/cache/home files belong under `providers/runners/grepai/`, GrepAI per-root `.grepai/` working directories are git-ignored runtime artifacts, CGC runtime files belong under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable provider database data belongs under `providers/data/`, and MCP/provider operator logs belong under `logs/`.
@@ -2043,10 +2036,9 @@ unchanged; ownership and failure containment are now explicit in their route ove
 
 Same-repository files remain the direct evidence for Agents Remember's own runtime and memory behavior. Public install pages now also link official harness documentation for volatile skill-location claims.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Claude Code, Cursor, Antigravity, VS Code Copilot, Pi, Hermes, and OpenClaw install pages link official docs for their current instruction and skill discovery behavior. | n/a | [Claude Code skills](https://code.claude.com/docs/en/skills); [Cursor Agent Skills](https://cursor.com/docs/skills.md); [Antigravity IDE Skills](https://antigravity.google/docs/ide-skills); [VS Code Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills); [Pi Skills](https://pi.dev/docs/latest/skills); [Hermes Context Files](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files/); [OpenClaw Agent Workspace](https://docs.openclaw.ai/concepts/agent-workspace) |
-| No external documentation is needed to prove the repository's own runtime, resolver, drift, onboarding, or workflow structure; same-repository files remain the direct evidence. | n/a | n/a |
+
 
 ## What To Explore Next
 

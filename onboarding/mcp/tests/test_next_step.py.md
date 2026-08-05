@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ as the pure ones do:
 - **Choke point**: `lifecycle_start_payload()` carries
   `frontHalfRundown == FRONT_HALF_RUNDOWN` and a `nextStep` whose
   `nextTool == "lifecycle_turn_end_notification"` with a `summary` in `nextArgs`
-  (`test_tool_payload_attaches_next_step_and_lifecycle_start_emits_rundown`, L298-L303).
+  cit:([`test_tool_payload_attaches_next_step_and_lifecycle_start_emits_rundown`], mcp/tests/test_next_step.py:298-303).
 - **Advertised token count covers the hint** (L305-L317,
   `test_advertised_token_count_covers_the_attached_next_step`): the hint is several hundred
   characters and it is on the wire, so it is in the count. It was not —
@@ -181,20 +181,20 @@ No relevant documentation found after checking live sources.
 The suite pins `next_step.py` and the collaborators it resolves at the edge plus
 the `lifecycle_start` payload it asserts the rundown on.
 
-| Finding | Source Path |
-| --- | --- |
-| The next-step engine under test. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| The choke point that attaches `nextStep` to every response. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| `lifecycle_start_payload` whose `frontHalfRundown` + `nextStep` are asserted. | [lifecycle.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle.py) |
-| The ambient lifecycle installed/started/promoted by the edge tests. | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The projected `LifecycleState` the pure tests construct. | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The `EventStore` backing the ambient under test. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The `NextStep` shape the assertions read, and the `nextStep` / `supervisorBanner` fields now declared on both response envelopes. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
-| The `lifecycle_guidance` state machine the linear half delegates to. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| `count_response_tokens` / `finalize_payload_tokens` — the counter the fixed-point assertions call and the one the choke point runs over the dump. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
-| `supervisor_staleness_banner` — the probe the degrade test patches, and the store that makes it fire. | [supervisor_heartbeat.py](agents-remember/mcp/src/agents_remember/serving/supervisor_heartbeat.py) |
-| `PingResponse`, the model the banner-carrying payload is validated against. | [core.py](agents-remember/mcp/src/agents_remember/models/core.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The next-step engine under test. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
+| The choke point that attaches `nextStep` to every response. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| `lifecycle_start_payload` whose `frontHalfRundown` + `nextStep` are asserted. | `lifecycle_start_payload` | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-21 |
+| The ambient lifecycle installed/started/promoted by the edge tests. | `AmbientLifecycle`; `install_ambient` | mcp/src/agents_remember/observer/ambient.py:90-594; mcp/src/agents_remember/observer/ambient.py:628-630 |
+| The projected `LifecycleState` the pure tests construct. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:187-210 |
+| The `EventStore` backing the ambient under test. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | `WorktreeContract`; `write_contract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:231-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-470; mcp/src/agents_remember/worktrees/worktree_contract.py:473-477 |
+| The `NextStep` shape the assertions read, and the `nextStep` / `supervisorBanner` fields now declared on both response envelopes. | `NextStep`; `ResponseModel`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:22-38; mcp/src/agents_remember/models/base.py:41-60; mcp/src/agents_remember/models/base.py:69-84 |
+| The `lifecycle_guidance` state machine the linear half delegates to. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:230-240 |
+| `count_response_tokens` / `finalize_payload_tokens` — the counter the fixed-point assertions call and the one the choke point runs over the dump. | `count_response_tokens`; `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:208-215; mcp/src/agents_remember/models/tokens.py:232-249 |
+| `supervisor_staleness_banner` — the probe the degrade test patches, and the store that makes it fire. | `supervisor_staleness_banner` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:135-151 |
+| `PingResponse`, the model the banner-carrying payload is validated against. | `PingResponse` | mcp/src/agents_remember/models/core.py:14-17 |
 
 ## Cross-Repo References
 
@@ -202,22 +202,24 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 8 citation entries (15 findings); no Tier-3 findings.
+
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: corrected a claim this card made twice and
   recorded three new tests. **The correction:** the card said `next_step_for` "returns the
   JSON-dumped dict, not a `NextStep`" and that assertions "read the dumped dict by key
   (`step["nextArgs"]`) for `next_step_for`". Both are now false — `next_step_for` is typed
-  `NextStep | None` (`next_step.py` L260) and every edge case in `EdgeAndChokePointTests` reads
+  `NextStep | None` cit:([`next_step_for`], mcp/src/agents_remember/application/next_step.py:260-281) and every edge case in `EdgeAndChokePointTests` reads
   attributes (`step.nextTool`, `step.nextArgs`), because the choke point assigns the hint to the
   declared envelope field `ResponseEnvelope.nextStep` before the single dump rather than writing a
   dict into the payload afterwards (`mcp/tools/base.py` `_attach_lifecycle_tail`). Rewrote both
   passages. **New coverage** in `EdgeAndChokePointTests`:
-  `test_advertised_token_count_covers_the_attached_next_step` (L305-L317) —
+  cit:([`test_advertised_token_count_covers_the_attached_next_step`], mcp/tests/test_next_step.py:305-317) —
   `payload["tokens"] == count_response_tokens(payload)` and the recount without `nextStep` is
   strictly less, closing the gap where `finalize_payload_tokens` ran before the hint was written
-  in; `test_advertised_token_count_covers_the_supervisor_banner` (L319-L331) — the same pair for
+  in; cit:([`test_advertised_token_count_covers_the_supervisor_banner`], mcp/tests/test_next_step.py:319-331) — the same pair for
   `supervisorBanner` off a supervisor ticked six hours into the past, plus
   `PingResponse.model_validate(payload)`, which only became possible once the key was declared;
-  and `test_a_raising_staleness_probe_degrades_to_silence` (L333-L345) — a patched
+  and cit:([`test_a_raising_staleness_probe_degrades_to_silence`], mcp/tests/test_next_step.py:333-345) — a patched
   `base.supervisor_staleness_banner` raising `OSError` yields no key, a still-valid response, and
   an intact token fixed point. Added the matching invariants and three Repo-Internal rows
   (`models/tokens.py`, `serving/supervisor_heartbeat.py`, `models/core.py`). Every other assertion,

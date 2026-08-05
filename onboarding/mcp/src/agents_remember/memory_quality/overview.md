@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-01T09:26+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ checks that enforce repository memory conventions.
 
 `check.py` is the public package-level runner. It can execute style-only checks
 without repository context, or combine drift integrity and style checks when an
-MCP controller supplies `DriftCheckContext`. Drift logic lives under
+MCP application entry point supplies `DriftCheckContext`. Drift logic lives under
 `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding
 check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under
 `style/update_history/`. The history-order checker is diagnostic; the matching
@@ -50,7 +50,7 @@ history-order fixes.
   `summary.py`'s `not_checked`, `run_drift_summary` and `summarize_rows` are annotated with it
   instead of `dict[str, Any]`. This is an INBOUND dependency edge that did not exist before —
   `models/drift.py` (context-packet `DriftSummary`), `models/memory.py`
-  (`DriftCheckResponse`) and `controllers/context_packet.py` all import from here now.
+  (`DriftCheckResponse`) and `application/context_packet.py` all import from here now.
 - `integrity/check_missing_onboarding.py` checks only current worktree
   additions so newly added eligible files get sidecars before the code commit.
 - `style/update_history/` checks that onboarding `## Update History` bullets
@@ -87,14 +87,14 @@ history-order fixes.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The MCP controller builds drift context and calls the package runner for `memory_quality_check`. | [memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py) |
-| Tool metadata and server registration expose `memory_quality_check` to agents. | [mcp/tools/memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py); [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | [history_order_fix.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py) |
-| The missing-onboarding checker catches newly added worktree files before code commit. | [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
-| The two wire models that import this route's `DriftStatus` instead of retyping it. | [models/drift.py](agents-remember/mcp/src/agents_remember/models/drift.py); [models/memory.py](agents-remember/mcp/src/agents_remember/models/memory.py) |
-| The context-packet controller that returns `DriftSummaryPacket` from its drift seam. | [controllers/context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The MCP application entry point builds drift context and calls the package runner for `memory_quality_check`. | "def memory_quality_check_tool" | mcp/src/agents_remember/application/memory_tools.py:189-189 |
+| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:18-28; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
+| The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
+| The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
+| The two wire models that import this route's `DriftStatus` instead of retyping it. | `DriftSummary`, `DriftCheckResponse` | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
+| The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 
 ## 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
@@ -180,17 +180,27 @@ in `integrity/onboarding_drift_check/models.py` beside the classifier that fills
   expressible, since a `TypedDict` cannot carry the `status != "checked"` guard's conclusion
   into the branch below it.
 
-The reason this route now has an inbound dependency from `models/` and `controllers/`: the
+The reason this route now has an inbound dependency from `models/` and `application/`: the
 vocabulary had been copied twice on the wire side, and one copy was SHORT. `models.drift`
 declared `Literal["notChecked", "checked"]` and no `error` field, while `run_drift_summary`
 returns `{"status": "error", "error": ...}` for a missing onboarding root — the diagnostic
 crashed on precisely the call meant to explain the missing onboarding. Both wire models now
-import `DriftStatus` from here, and `controllers/context_packet.py`'s `_drift_packet` is
+import `DriftStatus` from here, and `application/context_packet.py`'s `_drift_packet` is
 annotated `-> DriftSummaryPacket`. The route's checks, their names, their classification
 vocabulary and their emitted rows are all unchanged.
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: rebound the
+  `memory_quality_check` row to the actual `memory_quality_check_tool` definition; exact
+  non-fixing check returns zero findings.
+
+- 2026-08-02T20:33:53+02:00 — 260731-EFA-L6 curator W1-B10 final-index reconciliation after S31: repaired 1 citation range for `memory_quality_check` using the warm source-index snapshot; scoped recheck clean.
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 10 citation findings (4 rows); scoped recheck clean.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** This route acquired
   something the card did not describe — it is now the declaring owner of a wire vocabulary, not
   only its producer. Recorded `DriftStatus` and the `DriftSummaryPacket` TypedDict in

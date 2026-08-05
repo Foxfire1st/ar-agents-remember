@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_longpath_preflight.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T00:40+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03`|
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -39,11 +39,15 @@ helper, so they run identically on Windows and Linux CI.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The preflight and pure payload function under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
-| The longest-tracked-path git helper. | [git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The preflight and pure payload function under test. | `long_path_block_payload`; `_long_path_preflight` | mcp/src/agents_remember/worktrees/modules/start.py:248-276; mcp/src/agents_remember/worktrees/modules/start.py:279-306 |
+| The longest-tracked-path git helper. | `longest_tracked_path_length` | mcp/src/agents_remember/worktrees/modules/git.py:93-102 |
 
 ## Update History
 
+- 2026-08-04T18:52+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the two malformed rows —
+  `long_path_block_payload` + `_long_path_preflight` (start.py:248-308) and
+  `longest_tracked_path_length` (git.py:93-103). Spurious `agents-remember/` prefixes dropped;
+  claim wording unchanged.
 - 2026-06-10T00:40+02:00: Created with the S8 worktree long-path preflight.

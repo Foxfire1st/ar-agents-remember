@@ -28,11 +28,11 @@ carries the multiplexed sub-agent pendings end-to-end into the catalog row.
 
 Snapshot projection preserves existing catalog schema members while adding control state,
 activity, acceptance, vendor identity, pending interaction, sequence, and raw vendor detail.
-`control_snapshot_entry` (L35-L57) also projects `control_pending_interactions` (L47-L54): every entry of the snapshot's plural `pending_interactions` tuple
+cit:([`control_snapshot_entry`], mcp/src/agents_remember/serving/hosted_control_projection.py:35-57) also projects cit:([`control_pending_interactions`], mcp/src/agents_remember/serving/hosted_control_projection.py:47-54): every entry of the snapshot's plural `pending_interactions` tuple
 is serialized through the same `pending_interaction_json` wire shape and stored as a list —
 purely additive, so the singular `control_pending_interaction` slot stays the parent-thread
 entry exactly as before, and an empty tuple serializes as `None` (no claim) rather than `[]`.
-Legacy raw-TUI harness rows are explicitly marked unsupported. `snapshot_turn_state` (L78-L101)
+Legacy raw-TUI harness rows are explicitly marked unsupported. cit:([`snapshot_turn_state`], mcp/src/agents_remember/serving/hosted_control_projection.py:78-101)
 now delegates to `snapshot_seat_turn_state` in the canonical status authority with an optional
 harness parameter: the same canonical classification the Chats serving consumes produces the
 turn state, and the single seat projection rule translates it — parity with the pre-canonical
@@ -68,7 +68,7 @@ None.
 
 No relevant external/domain documentation was configured; catalog and projection tests are authoritative.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -78,19 +78,19 @@ The canonical status authority classifies adapter evidence once for every consum
 owns the persisted additive fields the projection writes, including the multiplexed plural pendings; the
 snapshot grammar defines the multiplexed tuple this module serializes.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical status authority this module now delegates to (classification plus single seat projection rule). | L205-L224 | [status.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/status.py) |
-| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | L168-L250 | [test_conversation_active_status.py](agents-remember/mcp/tests/test_conversation_active_status.py) |
-| `terminal_catalog.py` owns persisted additive fields and the `SeatTurnState` vocabulary. | L38 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | L121; L271 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| `AdapterSnapshot.pending_interactions` is the multiplexed sub-agent pending tuple this module serializes end-to-end; the singular slot stays the parent-thread entry (D3). | L224-L231 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The canonical status authority this module now delegates to (classification plus single seat projection rule). | `snapshot_seat_turn_state` | mcp/src/agents_remember/serving/conversation/active/status.py:205-223 |
+| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | `test_projection_across_control_activity_product` | mcp/tests/test_conversation_active_status.py:188-200 |
+| `terminal_catalog.py` owns persisted additive fields and the `SeatTurnState` vocabulary. | `SeatTurnState` | mcp/src/agents_remember/serving/terminal_catalog.py:49-49 |
+| The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | `control_snapshot_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:35-57 |
+| `AdapterSnapshot.pending_interactions` is the multiplexed sub-agent pending tuple this module serializes end-to-end; the singular slot stays the parent-thread entry (D3). | `AdapterSnapshot`, `pending_interaction_json` | mcp/src/agents_remember/serving/harness_control_models.py:216-241; mcp/src/agents_remember/serving/harness_control_models.py:557-568 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -102,6 +102,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 9 citations (citation_anchor_missing=4, citation_prose_not_in_cit_form=1, citation_source_malformed=4); final scoped citation check clean.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/hosted_control_projection.py` since the L2 base commit is the
   whole-tree `ruff format` pass in `00e8379`, which re-wrapped 2 line(s) with no token change
@@ -117,7 +118,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: recorded the multiplexed sub-agent pendings
   projection (review R6): `control_snapshot_entry` now serializes every entry of the snapshot's
   plural `pending_interactions` into the additive `control_pending_interactions` catalog field
-  (L47-L53), while the singular slot stays the parent-thread entry exactly as before and an
+  cit:([`control_snapshot_entry`], mcp/src/agents_remember/serving/hosted_control_projection.py:35-57), while the singular slot stays the parent-thread entry exactly as before and an
   empty tuple serializes as `None`. Refreshed stale line citations (`snapshot_turn_state`
   L77-L100, status authority L205-L224, parity suite L168-L258) and added the
   catalog-field and snapshot-grammar reference rows. Verification metadata stays pinned — the

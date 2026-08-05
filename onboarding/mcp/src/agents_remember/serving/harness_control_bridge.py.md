@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,8 +16,8 @@
 
 ## Purpose
 
-Hosts one exact harness identity, validates adapter handshake/capabilities, serializes prompts,
-interactions, reconciliation, and model/effort mutations through one bounded queue, and publishes
+Hosts one exact harness identity, validates adapter handshake/capabilities, exposes one bounded
+`HarnessSubmissionAuthority` for prompts, interactions, reconciliation, and model/effort mutations, and publishes
 normalized snapshots/transcripts. A bounded per-session native evidence buffer sits beside the
 untouched transcript path, plus deque-domain/native-domain evidence page reads and the
 submission-provenance batch read. The epoch-guarded native `interrupt` write dispatch
@@ -34,36 +34,38 @@ for multiplexed adapters.
 
 Start refuses identity, protocol, readiness, or capability mismatches and force-cleans a rejected
 adapter. `advertise` reads the already-running exact adapter instance and refuses outside running
-state. `set_model` and `set_effort` require that same running bridge and delegate to the command queue
-as prompt submission, interaction response, reconciliation, and stop. Submission receipts remain
-distinct from terminal completion; reconciliation and explicit unknown resolution handle ambiguous
-sends. Event reduction and transcript retention are bounded. Unexpected queue failures publish a
-loud failed state, resolve active callers, and drain queued commands.
+state. Per operation, `submissions()` applies that running-state check and returns the epoch-bound
+`HarnessSubmissionAuthority`; the authority owns prompt/setter order, interaction responses,
+reconciliation, stop, result validation, and ambiguous-send resolution. Submission receipts remain
+distinct from terminal completion. Event reduction and transcript retention are bounded. Adapter
+failures are classified by the authority: certified pre-send failures can requeue, while a possible
+send or incoherent result installs the ambiguity barrier instead of guessing
+cit:([`_send_and_settle`], mcp/src/agents_remember/serving/harness_submission_authority.py:700-727).
 
 The evidence buffer is a bounded per-session deque (default 2000 frames, per-frame 32 KiB clip)
 fed at the single `_run_events` event-consumption point: when an adapter event carries the reserved
-`arEvidence` raw key, `_divert_evidence` (L548-L569) appends an `EvidenceFrame(sequence, kind,
+`arEvidence` raw key, `_divert_evidence` cit:([`_divert_evidence`], mcp/src/agents_remember/serving/harness_control_bridge.py:468-489) appends an `EvidenceFrame(sequence, kind,
 created_at, clipped payload, native_method, thread_id)` and the redacted event (raw minus BOTH reserved keys,
-`{AR_EVIDENCE_KEY, AR_EVIDENCE_METHOD_KEY}` at L565) flows to reduce/observe/transcript/publish, so
+`{AR_EVIDENCE_KEY, AR_EVIDENCE_METHOD_KEY}` cit:([`AR_EVIDENCE_KEY`, `AR_EVIDENCE_METHOD_KEY`], mcp/src/agents_remember/serving/harness_control_models.py:58-58; mcp/src/agents_remember/serving/harness_control_models.py:66-66) flows to reduce/observe/transcript/publish, so
 `snapshot.raw`, catalog `control_raw`, SSE projections, and every existing consumer stay
 byte-identical. The out-of-band native method rides this same seam:
 when the event also carries `AR_EVIDENCE_METHOD_KEY`, `_divert_evidence` validates it is non-empty
-text (L559-L561, else raises) and preserves it on the frame as typed `native_method` (L562-L564) so the
+text (else raises) and preserves it on the frame as typed `native_method` cit:([`_divert_evidence`], mcp/src/agents_remember/serving/harness_control_bridge.py:468-489) so the
 codex projector switches on the real method, then strips the extra reserved key so the redacted
 snapshot stays byte-identical exactly as before. A third stamped field carries the multiplex demux key:
-`_evidence_thread_id` (L571-L583) reads the payload's `threadId` verbatim — codex notification
+`_evidence_thread_id` cit:([`_evidence_thread_id`], mcp/src/agents_remember/serving/harness_control_bridge.py:491-503) reads the payload's `threadId` verbatim — codex notification
 params carry it, parent frames carry the parent thread's id — and `_append_evidence` stamps it as
-`thread_id` on every frame (L606); anything present-but-not-non-empty-text degrades to `None`
+`thread_id` on every frame cit:([`_append_evidence`], mcp/src/agents_remember/serving/harness_control_bridge.py:505-528); anything present-but-not-non-empty-text degrades to `None`
 (the parent/session thread, matching pre-multiplexing behavior) rather than being guessed. `evidence()` pages
 the deque domain with count+byte bounds and reports
 `latestSequence`, `evictedBeforeSequence`, `truncated`, and `bridgeEpoch`; `native_page()` dispatches
 through the structural `NativePageReader` protocol (fail-closed typed where the adapter does not
 support it) and stamps the bridge epoch itself — an adapter-minted epoch is refused;
-`submission_provenance()` delegates the epoch-checked batch to the command queue, the sole
-bridge→authority path. The evidence sequence is the adapter event sequence and non-monotonic input
+Private IPC `_submission_provenance` reads the epoch-checked batch through the running-checked
+authority and its ledger, the sole bridge-to-submission path. The evidence sequence is the adapter event sequence and non-monotonic input
 fails visibly.
 
-`native_page` is also optionally per-thread (L236-L281): the additive `thread_id` kwarg is
+`native_page` is also optionally per-thread cit:([`native_page`], mcp/src/agents_remember/serving/harness_control_bridge.py:226-271): the additive `thread_id` kwarg is
 forwarded to `adapter.read_native_page` only when present, so the structural `NativePageReader`
 protocol and every single-thread adapter keep their exact signature; an adapter that rejects the
 additive kwarg (`TypeError`) surfaces a typed `HarnessControlError` naming the adapter and stating
@@ -77,21 +79,23 @@ compares the caller's expected epoch with the authority's and raises
 the adapter type. The adapter returns an `InterruptResult`; a non-empty adapter-minted
 `bridge_epoch` is refused and the bridge stamps its own epoch via `replace`. Settlement is
 deliberately untouched — the interrupted operation still settles through the landed completion
-path. `operation_timeline` delegates the epoch-checked paged read to the command queue under
-`_require_running`, bounded by `MAX_OPERATION_TIMELINE_PAGE` and `EVIDENCE_PAGE_BYTE_BUDGET`.
+path. Private IPC obtains the running-checked authority from `bridge.submissions()` and pages
+`authority.ledger.operation_timeline`, bounded by `MAX_OPERATION_TIMELINE_PAGE` and
+`EVIDENCE_PAGE_BYTE_BUDGET`.
 
 ### Conventions
 
-The bridge is a lifecycle/state publisher; harness-specific set evidence belongs to the adapter and
-generic evidence validation/ordering belongs to the queue.
+The bridge is a lifecycle/state publisher; harness-specific set evidence belongs to the adapter,
+ordinary-operation ordering/result validation belongs to `HarnessSubmissionAuthority`, and retained
+operation rows plus provenance/timeline reads belong to its `SubmissionLedger`.
 
 ### Invariants And Boundaries
 
 - The bridge is control authority; pane content is never used to infer readiness or acceptance.
 - Live advertise addresses this exact adapter instance; pre-session cached discovery is owned by a
   separate catalog and is never substituted here.
-- A model/effort mutation cannot bypass the serialized queue or race a prompt accepted through this
-  bridge.
+- A model/effort mutation cannot bypass the authority's serialized ordinary-operation timeline or
+  race a prompt accepted through this bridge.
 - No automatic resend follows a disconnect after a possible send.
 - Unsupported receipts use the bounded submission ledger and remain explicitly unsupported.
 - The evidence buffer is evidence, not authority: it is a hot window with an explicit frame-count
@@ -125,31 +129,34 @@ None known for the bridge seam.
 No Domain Documentation source is configured for this repository, so no live
 domain-documentation pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
 ## Repo-Internal References
 
-The protocol owns vendor-specific setters; the queue owns order and result validation.
+The adapter protocol owns vendor-specific setter execution; `HarnessSubmissionAuthority` owns
+ordinary-operation order and result validation, while `SubmissionLedger` owns retained rows and
+timeline/provenance reads.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | L33-L79; L151-L180 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The queue facade serializes both setters and the timeline read through the authority. | L93-L197 | [harness_control_queue.py](agents-remember/mcp/src/agents_remember/serving/harness_control_queue.py) |
-| Private IPC exposes bridge advertise/set actions under the same exact identity. | L150-L170; L220-L229 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` are the method-carry pair this divert preserves, alongside `EvidenceFrame.thread_id` (the demux key this bridge stamps) plus `AdapterSnapshot.pending_interactions` (the plural multiplexed set). | L57-L76; L217-L227; L456-L478; L534-L544; L770-L790 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| Contract tests pin diversion no-leak, buffer bounds, continuation, epoch mismatch, and the provenance delegation through this bridge. | L268-L791 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
-| The structural interrupt sub-protocol this bridge dispatches against, with identity guards riding the write. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The IPC server dispatches the interrupt and operation-timeline actions to this bridge over the private socket. | L212-L215; L302-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The validated client drives `interrupt_control`/`read_operation_timeline` with strict response validation against this bridge's stamps. | L398-L450 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Contract tests pin the epoch guard, structural refusal naming the adapter, adapter-mint-epoch refusal, and the bridge-stamped epoch. | L252-L346 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
+| The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | `HarnessProtocolAdapter`; `UnsupportedHarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59; mcp/src/agents_remember/serving/harness_control_adapter.py:151-235 |
+| The bridge exposes its running, epoch-bound `HarnessSubmissionAuthority` through `submissions()`. The authority owns ordinary-operation dispatch order and result validation, including `set_model` and `set_effort`; the bridge applies the running-state guard before each caller takes the authority. | `submissions`; `HarnessSubmissionAuthority`; `set_model`; `set_effort` | mcp/src/agents_remember/serving/harness_control_bridge.py:323-332; mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023; mcp/src/agents_remember/serving/harness_submission_authority.py:294-295; mcp/src/agents_remember/serving/harness_submission_authority.py:297-298 |
+| The retained `SubmissionLedger` owns provenance and paged operation-timeline reads; private IPC reaches the timeline as `bridge.submissions().ledger.operation_timeline`. | `_submission_provenance`; `_operation_timeline`; `SubmissionLedger`; `provenance`; `operation_timeline` | mcp/src/agents_remember/serving/harness_control_ipc.py:315-326; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:228-238; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437; mcp/src/agents_remember/serving/harness_submission_ledger.py:368-390; mcp/src/agents_remember/serving/harness_submission_ledger.py:392-426 |
+| Private IPC exposes bridge advertise/set actions under the same exact identity. | `HarnessControlServer`; `_advertise`; `_set_model`; `_set_effort` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
+| The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` are the method-carry pair this divert preserves, alongside `EvidenceFrame.thread_id` (the demux key this bridge stamps) plus `AdapterSnapshot.pending_interactions` (the plural multiplexed set). | `AR_EVIDENCE_KEY`; `AR_EVIDENCE_METHOD_KEY`; `AdapterSnapshot`; `EvidenceFrame`; `EvidencePage`; `NativeEvidencePage`; `NativePageReader` | mcp/src/agents_remember/serving/harness_control_models.py:58-58; mcp/src/agents_remember/serving/harness_control_models.py:66-66; mcp/src/agents_remember/serving/harness_control_models.py:216-241; mcp/src/agents_remember/serving/harness_control_models.py:455-478; mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:533-543 |
+| Contract tests pin diversion no-leak, buffer bounds, continuation, epoch mismatch, and the provenance delegation through this bridge. | `EvidenceBufferTests`; `EvidenceIpcTests` | mcp/tests/test_harness_control_evidence.py:369-608; mcp/tests/test_harness_control_evidence.py:636-922 |
+| The structural interrupt sub-protocol this bridge dispatches against, with identity guards riding the write. | `InterruptCapableAdapter`; `interrupt` | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_bridge.py:273-300 |
+| The IPC server dispatches the interrupt and operation-timeline actions to this bridge over the private socket. | `HarnessControlServer`; `_interrupt`; `_operation_timeline` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
+| The validated client drives `interrupt_control`/`read_operation_timeline` with strict response validation against this bridge's stamps. | `interrupt_control`; `read_operation_timeline`; `_interrupt_result`; `_operation_timeline` | mcp/src/agents_remember/serving/harness_control_client.py:425-445; mcp/src/agents_remember/serving/harness_control_client.py:777-796; mcp/src/agents_remember/serving/harness_control_client.py:448-472; mcp/src/agents_remember/serving/harness_control_client.py:799-819 |
+| Contract tests pin the epoch guard, structural refusal naming the adapter, adapter-mint-epoch refusal, and the bridge-stamped epoch. | `InterruptBridgeTests`; `OperationTimelineTests`; `ClientValidationTests` | mcp/tests/test_harness_control_plane.py:291-378; mcp/tests/test_harness_control_plane.py:966-1194; mcp/tests/test_harness_control_plane.py:1731-1831 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by the bridge.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -172,7 +179,7 @@ active operation. Startup failure and graceful stop clean the same authority ins
 `evidence=2000`, `evidence_frame_bytes=32 KiB`; module default `DEFAULT_BRIDGE_LIMITS`) replaces the
 six independent bound arguments. The concept: **every bound one control bridge holds itself to,
 chosen as one memory budget**. A bridge retains a transcript, an evidence window (capped in frames
-AND in bytes per frame), a command queue, a submission ledger and a per-subscriber fan-out queue —
+AND in bytes per frame), an authority timeline, a submission ledger and a per-subscriber fan-out queue —
 they are one decision, how much a single live session may hold, and raising any one alone silently
 moves the process's real ceiling somewhere else. The default values are unchanged.
 
@@ -180,6 +187,18 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `:1-1` fixer-input
+  ranges with exact source-backed occurrences (bridge `submissions`, authority setters,
+  ledger/ipc provenance and timeline); exact non-fixing check returns zero findings.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected setter and operation-timeline
+  ownership. The bridge supplies a running-checked path to its authority; the authority owns setter
+  order/result validation, while its ledger owns retained rows and timeline/provenance reads. New
+  ranges are left as explicit `:1-1` curator input.
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 18 mechanical citation findings across the evidence/interrupt prose and seven reference rows. Preserved one Tier-3 row: the claim assigns `operation_timeline` ownership to the bridge, but frozen code routes the read through IPC to the submission ledger; no misleading bridge citation was fabricated.
+
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `BridgeLimits` / `DEFAULT_BRIDGE_LIMITS` as the single per-session memory budget (default values unchanged).
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex demux key — `_evidence_thread_id`
   extracts `threadId` verbatim (missing/malformed degrades to `None` = parent, never guessed) and

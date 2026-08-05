@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_adapters.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T13:03+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -62,27 +62,27 @@ No known follow-up in this file.
 No relevant external documentation found after checking the repo Domain Documentation; this is a
 same-repository unit-test suite for internal control-plane plumbing with no external spec.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines a per-harness delivery adapter; the leaf task doc (R2, R5) is the source of truth this suite pins. | whole module | [test_harness_adapters.py](test_harness_adapters.py) |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The adapter under test. | `HarnessAdapter`; `get_adapter` | [../src/agents_remember/serving/harness_adapters.py](../src/agents_remember/serving/harness_adapters.py) |
-| The underlying classifiers the adapter composes (their own dedicated fixtures live in their own test files). | `classify_pane_signal`; `composer_state` | [../src/agents_remember/serving/pane_signals.py](../src/agents_remember/serving/pane_signals.py) |
-| | `classify_turn_state`; `boot_ready` | [../src/agents_remember/serving/turn_state.py](../src/agents_remember/serving/turn_state.py) |
+| The adapter under test. | `HarnessAdapter`; `get_adapter` | mcp/src/agents_remember/serving/harness_adapters.py:14-25; mcp/src/agents_remember/serving/harness_adapters.py:38-41 |
+| The underlying classifier the adapter composes (its dedicated fixtures live in its own test file). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Adapter-local behavior only. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 1 repository-internal classifier reference, retained 1 adapter-identity reference, and removed the claimless turn-state pointer plus source-gap task-authority row under the 2026-08-02 17:45 ruling; final scoped result 0 (checker-clean).
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: deleted screen-acceptance fixtures and
   retained only adapter identity plus failure-diagnostic modal labeling. Verification metadata

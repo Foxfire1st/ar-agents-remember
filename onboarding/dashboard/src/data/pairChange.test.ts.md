@@ -43,27 +43,28 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pure machine under test. | L1-L219 | [pairChange.ts](pairChange.ts) |
-| Production driver tests that prove actual POST ordering and route siblings. | L339-L536 | [setClient.test.ts](setClient.test.ts) |
+| Pure machine under test. | `applyPairStepResult`; `applyPairRouteError`; `applyPairReadback` | dashboard/src/data/pairChange.ts:58-111; dashboard/src/data/pairChange.ts:119-150; dashboard/src/data/pairChange.ts:156-196 |
+| Production driver tests that prove actual POST ordering and route siblings. | "serialized pair change (R5)" | dashboard/src/data/setClient.test.ts:340-536 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
 
+- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: retained the direct pair-change source rows and supplied the S18-B12 history marker; scoped fixer will generate final ranges.
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
   is unchanged by this memory-only governance move; verification hash/date remain pinned.

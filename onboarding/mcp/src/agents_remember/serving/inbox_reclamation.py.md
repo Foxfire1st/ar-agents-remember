@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:40+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,27 +56,29 @@ duplicated terminal-resolution update shape.
 No domain documentation is configured; the task contract and repository source are the direct
 evidence for this policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain source was available. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The eligibility, catalog/tmux evidence join, and aggregate plan are defined here. | L52-L105; L108-L157 | [inbox_reclamation.py](agents-remember/mcp/src/agents_remember/serving/inbox_reclamation.py) |
-| Terminal catalog statuses and tmux ownership provide the evidence inputs. | L1-L30 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The supervisor invokes the policy before compaction and redelivery. | L1127-L1161 | [supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
+| The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `snapshot` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
+| Terminal catalog entries provide the status and ownership evidence. | `terminal` | mcp/src/agents_remember/serving/terminal_catalog.py:81-94 |
+| Reconstructed tmux snapshots provide the remaining ownership evidence. | `snapshot` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
+| The supervisor imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/supervisor.py:88-88 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: removed placeholder findings and narrowed
+  reclamation evidence to the snapshot, catalog, policy, and supervisor owners.
 
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: created the sidecar for the new policy module,
   recording narrow eligibility, positive-gone/fail-closed evidence, one-snapshot boundedness,

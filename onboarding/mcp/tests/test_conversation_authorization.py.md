@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_authorization.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,28 +63,31 @@ None known for this leaf.
 No Domain Documentation source is configured. The repository authorization sources are direct
 evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The production resolver, loopback classification, and OS-resolved principal under test. | L48-L105 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
-| The request dependency that forwards only the ASGI TCP peer. | L26-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The strict binding, cursor, scope, and fingerprint carriers used as own/foreign evidence. | L134-L144 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The typed `AuthorityError` refusal asserted across the suite. | L17-L17 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
+| The production resolver, loopback classification, and OS-resolved principal under test. | "class LocalOperatorAuthorizationResolver" | mcp/src/agents_remember/serving/conversation/authorization.py:70-70 |
+| The request dependency that forwards only the ASGI TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:26-26 |
+| The strict binding, cursor, scope, and fingerprint carriers used as own/foreign evidence. | "class ConversationEventEnvelope" | mcp/src/agents_remember/serving/conversation/models.py:633-633 |
+| The typed `AuthorityError` refusal asserted across the suite. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this authorization suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: created the authorization contract suite
   sidecar. Verification is blank because the new source file is uncommitted; closeout owns its

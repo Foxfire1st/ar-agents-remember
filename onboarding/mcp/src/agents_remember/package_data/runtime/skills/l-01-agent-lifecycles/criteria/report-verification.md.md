@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/report-verification.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T17:35+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -56,26 +56,28 @@ No TODO is recorded for this catalog.
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [report-verification.md](agents-remember/skills/l-01-agent-lifecycles/criteria/report-verification.md) |
-| The reviewer role that binds this catalog in every review type. | n/a | [reviewer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md) |
+| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Report Verification`; `SkillTarget`; `TARGETS`; "mcp package data" | skills/l-01-agent-lifecycles/criteria/report-verification.md:1-99; scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
+| The reviewer role that binds this catalog in every review type. | `## Criteria Catalogs (the review test bench — bound here)`; `report-verification` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:56-75 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 2 table citations and added the exact canonical-to-package sync evidence; no unresolved Tier-3 claims.
 
 - 2026-07-07T20:55+02:00 — agent-orchestration L18: body de-staled to the current catalog — RV-2 and RV-4 PROMOTED to standing at their second catches (L18R-3, L18R-4); candidates now RV-3 + RV-5 (worktree-shadowed regression pins, catch L18R-1). Covers both the 984a303 direct commit (RV-4 seeding, previously unreflected in this sidecar) and this leaf's promotions. Verification metadata pinned until closeout stamps the L18 commit.
 - 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-2): RV-2 and RV-3 re-tiered STANDING → CANDIDATE (one catching engagement each, honestly marked; promote at ≥2 per the catalog's own ratchet); content unchanged. Verification metadata pinned until closeout stamps the L12 commit.

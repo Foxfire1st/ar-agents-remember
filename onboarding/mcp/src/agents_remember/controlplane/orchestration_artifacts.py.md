@@ -60,13 +60,16 @@ their own workflow.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The L2 worker job requires a durable turn report at hand-off. | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/jobs/worker.md) |
-| The bundled turn-report template is the worker artifact shape. | [turn-report.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md) |
-| The bundled master-handover template is rendered by the helper. | [master-handover-packet.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The bundled turn-report template is the worker artifact shape. | `# Turn-Report Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md:1-58 |
+| The bundled master-handover template is rendered by the helper. | `# Master-Handover-Packet Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md:1-49 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact template heading anchors (deleting the unresolvable `jobs/worker.md` row); exact
+  non-fixing check returns zero findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/controlplane/orchestration_artifacts.py` since the L2 base commit is

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-01T19:10+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -365,20 +365,20 @@ response models are `models/operator_inbox.py`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Gates mirror the observer event substrate (envelope + append-only JSONL store). | [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| Gate policy validation and delegated decision checks. | [gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
-| The `gate_*` payload builders that drive this substrate. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| Gate response models. | [models/gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
-| The inbox record/store pair provides the external-chat pull return channel. | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) and [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | [attention_dismissals.py](agents-remember/mcp/src/agents_remember/controlplane/attention_dismissals.py) |
-| The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The two process entry points that declare a durable-store role: `declare_process_role("mcp")` at L52 and `declare_process_role("dashboard")` at L148. Nothing else in the tree declares one, which is the whole reach of the advisory ownership checks. | [mcp/server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) and [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The projection tick that no longer rewrites anything: `read_gates` at L514-L537 folds through the tolerant `projected_current`, and `read_expectation_rows` at L592-L610 uses `pending_for_projection`. | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) | [../serving/supervisor.py](agents-remember/mcp/src/agents_remember/serving/supervisor.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Gates mirror the observer event substrate (envelope + append-only JSONL store). | "class EventStore" | mcp/src/agents_remember/observer/store.py:103-103 |
+| Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/controlplane/gate_policy.py:52-52 |
+| The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:34-34 |
+| Gate response models. | "class GateCreateResponse" | mcp/src/agents_remember/models/gates.py:18-18 |
+| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-54; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
+| The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
+| The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:159-159 |
+| The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:45-45 |
+| Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/server_startup.py:20-23; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
+| `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:67-67 |
+| The projection tick that no longer rewrites anything: `read_gates` at L514-L537 folds through the tolerant `projected_current`, and `read_expectation_rows` at L592-L610 uses `pending_for_projection`. | "def read_gates", "def read_expectation_rows" | mcp/src/agents_remember/observer/snapshots.py:513-513; mcp/src/agents_remember/observer/snapshots.py:598-598 |
+| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) | "def evaluate_escalation_findings" | mcp/src/agents_remember/serving/supervisor.py:400-400 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -418,6 +418,13 @@ keyword lists, and the groupings are the route's own vocabulary:
 No record schema, wire field or refusal changed.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and source-backed ranges; exact non-fixing check returns zero findings.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected durable-store startup ownership to
+  the application wrapper plus both dashboard entry paths. New ranges are explicit `:1-1` curator
+  input.
 
 - 2026-08-01T19:10+02:00 — Measured-claim repair; no prose about the lock, ownership, the read-policy
   split or the compaction owners was touched, because it was right. The Hot Path Summary asserted six

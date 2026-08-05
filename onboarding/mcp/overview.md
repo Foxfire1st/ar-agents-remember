@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -94,13 +94,13 @@ pi settlement reads the L3E-preserved evidence terminal identity. The `mcp/tests
 gains four focused service/route suites, a shared control topology, and an opt-in installed-runtime
 proof; the slice is governed by `conversation/control/overview.md`.
 
-260715-FEUI-L9 adds two deliberately bounded package routes. Under `serving/conversation/`, strict
-wire models, exactly two read ports, and three behavior-empty child routers establish the stable
-protocol-neutral contract roof for active transcript, conversation library, and future control
-behavior. Under `native_helpers/conversation_library/`, a locked private Node helper normalizes
-repository-resolved harness observations into redacted evidence; it is not a second server, store,
-or capability authority. The existing harness-control application factory registers the new root
-once. L9 does not yet claim a native-history projector, control implementation, or Chats renderer.
+260715-FEUI-L9 established the stable protocol-neutral contract roof under `serving/conversation/`:
+strict wire models and exactly two read ports now sit above the active transcript, conversation
+library, and control child routes. Under `native_helpers/conversation_library/`, a locked private
+Node helper normalizes repository-resolved harness observations into redacted evidence; it is not a
+second server, store, or capability authority. The existing harness-control application factory
+registers the conversation root once. The current child routes own their behavior beneath that roof;
+the package does not thereby grant unrelated projector or renderer authority.
 
 260718-CHATS-L0 repairs the production composition boundary under that contract roof. The same
 single harness-control registration now constructs and installs one immutable app-scoped
@@ -117,7 +117,7 @@ native-history service, control implementation, or renderer.
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`. The tool surface gained `task_reopen` (L11):
+coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:19-31):
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
 whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
@@ -298,7 +298,8 @@ vendor driver is registered or production cutover is implied.
 260715-FEUI-L5 is the current production authority over that historical seam. One
 `HarnessSubmissionAuthority` per bridge generation orders prompt/model/effort work, linearizes
 withdrawal against guarded native dispatch, completes only exact full operation refs, and exposes
-bounded raw-free lifecycle status. `HarnessControlQueue` is a facade, not a second actor. The shared
+bounded raw-free lifecycle status. `HarnessControlQueue` was a facade, not a second actor, and
+260731-EFA-L6 deleted it outright. The shared
 typed error family now distinguishes certified pre-dispatch busy, immutable-id conflict, and epoch
 mismatch so only the exact certificate is retry-safe.
 
@@ -471,8 +472,8 @@ still holds the payload builders those declarations call; verbose tools
 additionally file bulk diagnostics under `temp/tool-reports/` via
 `mcp/tool_reports.py` and return compact outcomes with a `reportPath`. Then
 `models/tool_registry.py` for public response contracts,
-`controllers/context_packet.py` for compact `ContextPacketV2` startup packets,
-and `controllers/runtime_install.py` plus `install/runtime.py` for MCP-owned
+`application/context_packet.py` for compact `ContextPacketV2` startup packets,
+and `application/runtime_install.py` plus `install/runtime.py` for MCP-owned
 runtime installation. Provider status is composed in `providers/status.py`; the serving/observer path can
 refresh the persisted provider current-state snapshot before live dashboard projection so provider rows are
 not limited to the last explicit diagnostics/status command.
@@ -497,7 +498,7 @@ newest-first ordering. Shared onboarding-document parsing, route-overview discov
 reviewed-no-impact attestations. Branch freshness (issue #54: is a local
 branch current with its upstream, plus ahead/behind counts) lives in
 `kernel/git_freshness.py` beside `kernel/git_facts.py`; the `context_packet`
-controller surfaces it as the opt-in `include_freshness` packet section
+application entry point surfaces it as the opt-in `include_freshness` packet section
 together with a `ledgerMapsCodeHead` check, forming the lifecycle-start
 staleness checkpoint. Route-index generation is split between
 `kernel/route_index.py`, which renders route-local metadata, and
@@ -508,7 +509,7 @@ excluded by Git plus resolved storage rules, symlinks are classified without
 following their targets, and ambient Git repository selectors are scrubbed by
 `kernel/git_command.py` — which since 260731-EFA-L3 is the **only** module in
 this package that spawns git at all, so that scrubbing is no longer a census
-property. Controllers and worktree closeout pass the resolved
+property. Application entry points and worktree closeout pass the resolved
 repository identity and `StorageSettings` explicitly rather than rediscovering
 authority inside the builder.
 
@@ -657,7 +658,7 @@ The MCP package separates three surfaces:
   APPLIED onto the harness argv; legacy caller spend fields, direct launch/session controls, and
   maintained harness-native spend/endpoint env keys refuse with `spend-override-unsupported` before
   spawning — manual: `docs/reference/harnesses.md`).
-- `agents_remember.controllers` owns operation-level composition such as
+- `agents_remember.application` owns operation-level composition such as
   `context_packet`, provider tools, worktree tools, memory tools, benchmarks,
   and `runtime_install`.
 - `agents_remember.models` owns public MCP response contracts and the
@@ -946,10 +947,11 @@ into the role files.
   semantically empty JSON/Markdown onboarding storage rules refuse before ledger, content,
   route-index, or commit mutation; parser defaults used for read/topology convenience cannot grant
   write authority.
-- L9 conversation products are strict normalized contracts; package presence does not imply a
-  projector, historical store, control service, or renderer.
-- Active and library cursors are separate purpose-bound authorities. Exactly two read ports and
-  three owned behavior-empty child routers prevent later leaves from collapsing those seams.
+- Serving conversation products are strict normalized contracts; active, library, and control routes
+  own their behavior beneath the conversation root, while package presence alone grants no unrelated
+  projector or renderer authority.
+- Active and library cursors are separate purpose-bound authorities. Exactly two read ports and three
+  owned child routers preserve those seams.
 - The conversation-library helper resolves only inside this repository and emits redacted evidence.
   Runtime fixture versions/counts never become maintained capability declarations.
 - MCP settings are authority; coordinator files can teach the model what to ask
@@ -1097,55 +1099,92 @@ The active memory repository's `system/sources.md` has no configured Domain Docu
 generated dashboard-package boundary is established by same-repository sync code, tests, and the reviewed
 FEUI-L8 build output.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external Domain Documentation source governs this generated package refresh. | `system/sources.md` checked | — |
+| No configured external Domain Documentation source governs this generated package refresh. | — | — |
 
 ## Cross-Repo References
 
 The generated dashboard bundle is produced and served entirely inside `agents-remember`; no cross-repository
 implementation governs its hash rollover or static mount.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Same-repository sync/build review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
 ### Current L9 evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The serving conversation route owns strict normalized products, exactly two read ports, and three owned child routers beneath one root — all now implemented (active L1, library L2, control L3), none behavior-empty. | L1-L1282; L1-L87; L1-L35 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py); [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py); [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The private locked helper normalizes redacted observations and validates its protocol without becoming a runtime server or store. | L1-L272 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
-| Foundation tests pin helper resolution, fixture redaction/non-promotion, two ports, three routers, and one registration seam. | L1-L137 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| Hostile normalized-product matrices pin semantic authority and contradiction rejection. | L1-L1179 | [test_conversation_contracts.py](agents-remember/mcp/tests/test_conversation_contracts.py) |
+| The strict normalized conversation products. | `ConversationItem` | mcp/src/agents_remember/serving/conversation/models.py:337-426 |
+| The two purpose-specific read ports. | `ActiveConversationPort`; `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/ports.py:27-56; mcp/src/agents_remember/serving/conversation/ports.py:59-84 |
+| The three owned child routers under the conversation root. | `CONVERSATION_CHILD_ROUTERS` | mcp/src/agents_remember/serving/conversation/router.py:15-15 |
+| Helper error redaction. | `redactHelperError` | mcp/native_helpers/conversation_library/src/protocol.ts:98-102 |
+| Helper request parsing. | `parseHelperRequest` | mcp/native_helpers/conversation_library/src/protocol.ts:327-345 |
+| Locked helper JSON-lines serving. | `serveJsonLines` | mcp/native_helpers/conversation_library/src/protocol.ts:114-147 |
+| Foundation tests for ports, routers, and one registration seam. | `test_exactly_two_conversation_ports_exist`; `test_root_composes_three_owned_child_routers`; `test_global_registration_has_one_stable_inclusion_seam` | mcp/tests/test_conversation_foundation.py:22-29; mcp/tests/test_conversation_foundation.py:32-107; mcp/tests/test_conversation_foundation.py:110-122 |
+| Foundation tests for helper dependency and fixture redaction boundaries. | `test_helper_package_and_lock_select_only_the_exact_repository_dependencies`; `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement`; `test_runtime_fixtures_contain_no_raw_secret_path_or_conversation_material` | mcp/tests/test_conversation_foundation.py:125-136; mcp/tests/test_conversation_foundation.py:163-188; mcp/tests/test_conversation_foundation.py:191-202 |
+| Unknown-input and terminal-provenance authority rejection. | `test_unknown_input_and_controlled_terminal_provenance_fail_closed` | mcp/tests/test_conversation_contracts.py:280-301 |
+| Unique item-source authority cross-product rejection. | `test_unique_item_sources_enforce_the_exact_authority_cross_product` | mcp/tests/test_conversation_contracts.py:304-359 |
 
 ### Legacy package map
 
-| Finding | Source Path |
-| --- | --- |
-| MCP settings reject coordinator `system/settings.json`, forbid settings inside the coordinator, and derive provider runtime roots under `providers/runners/<provider>`. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The tool surface exposes `context_packet`, provider diagnostics, runtime, memory, worktree, benchmark, and install tools. The `@server.tool()` declarations live in `mcp/registration/` (one module per family, ordered by `TOOL_REGISTRARS`); `server.py` only walks that tuple; handlers delegate to controllers and response validation flows through the model registry. | [mcp/registration/](agents-remember/mcp/src/agents_remember/mcp/registration/); [mcp/tools/](agents-remember/mcp/src/agents_remember/mcp/tools/); [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py); [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| `server.py` installs a FastMCP shim that minifies the JSON text mirror of tool results without touching structured content. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
-| `context_packet` composes resolver, git, worktree, compact provider summary, and optional drift and branch-freshness status into `ContextPacketV2`; detailed provider state is exposed by `provider_diagnostics`. | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py); [context_packet model](agents-remember/mcp/src/agents_remember/models/context_packet.py); [provider models](agents-remember/mcp/src/agents_remember/models/providers.py); [git_freshness.py](agents-remember/mcp/src/agents_remember/kernel/git_freshness.py) |
-| `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py); [install runtime](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| Runtime package data is synchronized from canonical root asset folders, and tests verify missing, extra, changed, and target-scope behavior. The `--check` form runs in both hook tiers. | [sync-runtime.py](agents-remember/scripts/sync-runtime.py); [test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py); [_gate.sh](agents-remember/.githooks/_gate.sh) |
-| The dashboard cockpit bundle is a **release build product**, not a committed artifact: `scripts/sync-dashboard.py` places `dashboard/dist/` into `package_data/dashboard/` during the publish workflow and writes the sibling `package_data/dashboard.fingerprint`, refusing any `dist` that does not carry the current build-input fingerprint. Both paths are git-ignored, there is no `--check`, and no hook or branch CI job touches them. The serving app resolves and mounts the packaged tree, or answers 503 with the build command when nothing was placed. | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py); [static.py](agents-remember/mcp/src/agents_remember/serving/static.py); [test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py); [test_static.py](agents-remember/mcp/tests/test_static.py); [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
-| The closeout quality gate applies to any checkout that carries the wrapper rather than to one repository name, reports `enforced` / `no-code-commit` / `wrapper-unavailable`, and (since L4) resets and stages the whole task worktree before running so its index-derived scope is the commit's content — leaving that staging in place when it refuses. | [code_quality_gate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/code_quality_gate.py); [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py); [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py); [test_worktree_closeout_quality_gate.py](agents-remember/mcp/tests/test_worktree_closeout_quality_gate.py) |
-| Every wire vocabulary is declared once by its producer and imported by the response model; the runtime half is derived with `get_args`, and the exhaustiveness suite walks producers and producer→wire crossings rather than comparing two lists. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py); [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py); [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py); [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
-| The worktree contract reads tolerantly and writes strictly: an unreadable vocabulary cell degrades and is quarantined on `unknown_cells` (reported as `unknownContractCells`) because no lifecycle tool catches `ContractError`, while `validate_contract(contract, *, path)` refuses all six cells at the write boundary and every refusal names the file. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py); [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py); [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
-| Provider lifecycle settings are generated from MCP settings and include `providers/runners`, `providers/data`, `logs/mcp`, and `logs/providers` paths. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
-| Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
-| Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | [providers/lifecycle/](agents-remember/mcp/src/agents_remember/providers/lifecycle/); [CGC lifecycle overview](src/agents_remember/providers/cgc/lifecycle/overview.md); [GrepAI lifecycle overview](src/agents_remember/providers/grepai/lifecycle/overview.md) |
-| Memory quality combines drift integrity and onboarding style checks for closeout. | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py) |
-| Deterministic route indexes consume one validated tracked/untracked Git census and resolved path-rule authority; route rendering reuses the frozen repository and eligible-path sets. | [route_index.py](agents-remember/mcp/src/agents_remember/kernel/route_index.py); [route_index_census.py](agents-remember/mcp/src/agents_remember/kernel/route_index_census.py); [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| Every `git` subprocess in the package goes through one runner that always scrubs the eight repository-selector variables, declares its stdin (`input_text` only for `git patch-id`), and carries local/remote/metadata timeout classes; a decoy-repository suite and an AST sweep fail if a second spawner appears. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py); [worktrees/modules/git.py](agents-remember/mcp/src/agents_remember/worktrees/modules/git.py); [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
-| The `o200k_base` tokenizer vocabulary is vendored under `package_data/tiktoken/` so the import-time default counter never downloads it; an absent file, an unshipped encoding, or a copy whose SHA-256 does not match raises `TokenizerVocabularyError` — checked in `_verify_vendored_vocabulary` before tiktoken is pointed at the directory, because tiktoken answers a mismatch by deleting and re-downloading — and the cold-start suite starts the real server with every socket call blocked. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py); [errors.py](agents-remember/mcp/src/agents_remember/errors.py); [test_cold_start.py](agents-remember/mcp/tests/test_cold_start.py) |
-| Carryover validates effective official-memory JSON or Markdown storage authority before mutation and reuses it for official route-index refresh. | [carryover.py](agents-remember/mcp/src/agents_remember/memory/carryover.py); [carryover_authority.py](agents-remember/mcp/src/agents_remember/memory/carryover_authority.py); [test_carryover.py](agents-remember/mcp/tests/test_carryover.py) |
-| The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py); [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py); [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py); [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
-| The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [test_provider_degradation.py](agents-remember/mcp/tests/test_provider_degradation.py) |
-| FEUI-L5 submission authority, typed lifecycle errors, public boundary, and focused race matrix. | [errors.py](agents-remember/mcp/src/agents_remember/errors.py); [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py); [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py); [test_harness_submission_authority.py](agents-remember/mcp/tests/test_harness_submission_authority.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| MCP settings reject coordinator `system/settings.json`, forbid settings inside the coordinator, and derive provider runtime roots under `providers/runners/<provider>`. | `require_config_path`; `config_from_mapping`; `provider_runtime_name` | mcp/src/agents_remember/mcp/config.py:224-238; mcp/src/agents_remember/mcp/config.py:241-290; mcp/src/agents_remember/mcp/config.py:420-428 |
+| Tool-family registration is ordered by the registrar tuple. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
+| Tool handlers build validated payloads through the shared choke point. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The model registry maps modeled builders and the public subset. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
+| The FastMCP result-content shim is installed. | `install_compact_content` | mcp/src/agents_remember/mcp/compact_content.py:47-65 |
+| The compact-content shim minifies text blocks without changing structured content. | `_compact_text_block` | mcp/src/agents_remember/mcp/compact_content.py:29-44 |
+| The application builder assembles the startup context packet. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
+| The response model represents version-2 context packets. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:115-125 |
+| Detailed provider state is exposed by `provider_diagnostics`. | `provider_diagnostics` | mcp/src/agents_remember/mcp/registration/providers.py:22-26 |
+| `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:556-615 |
+| Runtime package-data sync tests cover missing, extra, changed, and target-scope files. | `test_diff_reports_missing_extra_and_changed_files` | mcp/tests/test_sync_runtime.py:24-45 |
+| The generated-copy checks invoke `scripts/sync-runtime.py`. | "scripts/sync-runtime.py" | .githooks/_gate.sh:74-74 |
+| The dashboard bundle is described as the cockpit's Vite output. | "The cockpit's Vite output" | scripts/sync-dashboard.py:4-4 |
+| Dashboard sync tests reject an absent `dist` bundle, and the serving test covers the missing-bundle 503/build-command response. | `test_refuses_when_dist_is_absent`; `test_missing_bundle_answers_503_with_the_build_command` | mcp/tests/test_static.py:87-94; mcp/tests/test_sync_dashboard.py:92-113 |
+| The publish job waits for the quality workflow before building. | "needs: [quality]" | .github/workflows/publish-mcp-to-pypi.yml:33-33 |
+| Closeout preview enforces the strict wrapper when a checkout carries it. | `test_preview_requires_strict_wrapper_for_any_repo_that_carries_it` | mcp/tests/test_worktree_closeout_quality_gate.py:50-62 |
+| Closeout preview reports the no-code-commit state when nothing would commit. | `test_preview_reports_no_code_commit_when_nothing_would_commit` | mcp/tests/test_worktree_closeout_quality_gate.py:64-75 |
+| Closeout preview reports a missing wrapper instead of silently skipping it. | `test_preview_reports_missing_wrapper_instead_of_skipping_silently` | mcp/tests/test_worktree_closeout_quality_gate.py:77-93 |
+| The closeout quality-gate preview classifies the wrapper and code-quality outcomes. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
+| Closeout resets and stages the task worktree before gating exact commit content. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
+| A refused closeout gate leaves no commit or contract advance and preserves the staged retry tree. | `test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged` | mcp/tests/test_worktree_closeout_quality_gate.py:488-525 |
+| The closeout gates scope is the commit's content. | `test_the_gates_scope_is_the_commits_content` | mcp/tests/test_worktree_closeout_quality_gate.py:527-558 |
+| Runtime workflow vocabularies are derived from their aliases with `get_args`. | `VALID_WORKFLOW_KINDS`; "frozenset(get_args(WorkflowKind))" | mcp/src/agents_remember/worktrees/worktree_contract.py:72-72 |
+| The producer vocabulary scan walks every Python module under the installed package root. | `PACKAGE_ROOT`; `_module_trees` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:156-156; mcp/tests/test_wire_vocabulary_exhaustiveness.py:307-309 |
+| The produced literal set is derived from producer source rather than retyped aliases. | `produced_literals` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:323-338 |
+| The response model imports all three producer-owned guidance vocabulary aliases. | "NextOperation,"; "NextTool,"; "WorktreePhase," | mcp/src/agents_remember/models/worktree.py:16-18 |
+| The response model imports the cleanup contract alias. | "CleanupStatus," | mcp/src/agents_remember/models/worktree.py:21-21 |
+| The response model publishes the lifecycle alias for closeout status. | "CloseoutStatus as LifecycleStatus" | mcp/src/agents_remember/models/worktree.py:28-28 |
+| The exhaustiveness suite crosses guidance through the wire model field by field. | `cross_the_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:222-237 |
+| The worktree contract reads tolerantly and writes strictly: an unreadable vocabulary cell degrades and is quarantined on `unknown_cells` (reported as `unknownContractCells`) because no lifecycle tool catches `ContractError`, while `validate_contract(contract, *, path)` refuses all six cells at the write boundary and every refusal names the file. | `ContractBoundaryTests`; `test_an_unknown_cleanup_cell_degrades_and_names_itself`; `test_every_vocabulary_cell_degrades_rather_than_stranding_the_task`; `test_the_writer_refuses_what_the_reader_tolerated`; `test_every_refusal_names_the_contract_it_was_reading`; `test_the_invalid_contract_payload_carries_the_file_to_open` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:922-1222 |
+| Base provider lifecycle settings derive their runtime and log roots from MCP settings. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
+| GrepAI lifecycle settings use the generated provider roots. | `_grepai_settings` | mcp/src/agents_remember/providers/settings.py:195-234 |
+| CodeGraphContext lifecycle settings use the generated provider roots. | `_cgc_settings` | mcp/src/agents_remember/providers/settings.py:237-327 |
+| Provider status reports watcher status and structured recovery actions; the prior runner-integrity check was removed in the 1.0.0 remediation. | `ProviderStatusProjection`; `provider_status_packet`; `provider_diagnostics_packet` | mcp/src/agents_remember/providers/status.py:38-50; mcp/src/agents_remember/providers/status.py:53-87; mcp/src/agents_remember/providers/status.py:105-127 |
+| Provider lifecycle is now a facade plus focused provider/shared packages instead of a monolithic file. | `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
+| Memory quality combines drift integrity and onboarding style checks for closeout. | `run_memory_quality_check`; `HistoryEntry` | mcp/src/agents_remember/memory_quality/check.py:86-113; mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:38-44 |
+| The route-index survey captures the repository candidate snapshot. | `_survey_routes` | mcp/src/agents_remember/kernel/route_index.py:118-142 |
+| The route-index census records its source snapshot. | `route_index_source_snapshot` | mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
+| The route-index census enumerates and classifies tracked source candidates. | `_tracked_source_candidates` | mcp/src/agents_remember/kernel/route_index_census.py:83-123 |
+| The route-index census enumerates and classifies untracked source candidates. | `_untracked_source_candidates` | mcp/src/agents_remember/kernel/route_index_census.py:126-156 |
+| Route rendering reuses the surveyed repository and eligible-path sets. | `build_route_indexes`; `_survey_routes` | mcp/src/agents_remember/kernel/route_index.py:118-142; mcp/src/agents_remember/kernel/route_index.py:182-230 |
+| The package has one Git command runner, and its module documents the singular ownership and selector-scrubbing rationale. | "The one git command runner for this package."; "It used to go through six"; "code_quality/single_owner.py" | mcp/src/agents_remember/kernel/git_command.py:1-1; mcp/src/agents_remember/kernel/git_command.py:3-3; mcp/src/agents_remember/kernel/git_command.py:23-23 |
+| The Git runner scrubs the eight repository-selector variables. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42 |
+| The Git runner carries local, remote, metadata, and bulk-remote timeout classes. | `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `GIT_BULK_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-73 |
+| The Git runner derives a selector-free environment. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:76-82 |
+| `run_git` defines the command runner and stdin contract. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| The Git test suite rejects ambient selectors and extra spawners and checks the stdin contract. | `test_no_module_spawns_git_with_the_ambient_environment`; `test_only_the_kernel_module_defines_a_git_runner`; `test_stdin_is_devnull_unless_input_text_is_given` | mcp/tests/test_git_command.py:215-233; mcp/tests/test_git_command.py:427-446; mcp/tests/test_git_command.py:448-465 |
+| The `o200k_base` tokenizer vocabulary is vendored under `package_data/tiktoken/` so the import-time default counter never downloads it; an absent file, an unshipped encoding, or a copy whose SHA-256 does not match raises `TokenizerVocabularyError` — checked in `_verify_vendored_vocabulary` before tiktoken is pointed at the directory, because tiktoken answers a mismatch by deleting and re-downloading — and the cold-start suite starts the real server with every socket call blocked. | `_verify_vendored_vocabulary`; `VENDORED_VOCABULARY_URL`; `test_the_server_starts_with_cold_caches_and_no_network`; `test_a_missing_vocabulary_fails_loudly` | mcp/src/agents_remember/models/tokens.py:38-38; mcp/src/agents_remember/models/tokens.py:70-106; mcp/tests/test_cold_start.py:200-205; mcp/tests/test_cold_start.py:241-241; mcp/tests/test_cold_start.py:261-269 |
+| Carryover validates effective official-memory JSON or Markdown storage authority before mutation and reuses it for official route-index refresh. | `_ScopedRuleAuthority`; `_refresh_official_route_indexes`; `test_apply_carries_reviewed_overview_and_regenerates_indexes` | mcp/src/agents_remember/memory/carryover.py:653-687; mcp/src/agents_remember/memory/carryover_authority.py:216-230; mcp/tests/test_carryover.py:295-344 |
+| The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | "containment R1, fail-closed"; `test_require_launch_authority_refuses_disk_disabled`; `test_second_setup_waits_and_times_out_loudly`; `test_store_roundtrip_and_torn_line_tolerance` | mcp/src/agents_remember/mcp/config.py:214-214; mcp/tests/test_provider_containment.py:109-115; mcp/tests/test_provider_containment.py:277-300; mcp/tests/test_provider_containment.py:435-450 |
+| The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | `parse_provider_degradation_settings`; `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`; `test_critical_transition_records_event_inbox_and_failsafe_once` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:58-128; mcp/tests/test_provider_degradation.py:99-159; mcp/tests/test_provider_degradation.py:239-330 |
+| FEUI-L5 submission authority, typed lifecycle errors, public boundary, and focused race matrix. | `register_harness_control_routes`; `test_slow_active_operation_does_not_block_status_or_queued_withdrawal`; `test_dispatch_claim_wins_atomic_withdrawal_race`; `test_same_id_is_idempotent_but_source_or_payload_change_conflicts` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/tests/test_harness_submission_authority.py:231-262; mcp/tests/test_harness_submission_authority.py:307-321; mcp/tests/test_harness_submission_authority.py:515-530 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -1266,7 +1305,7 @@ here the drift was already load-bearing.
 `models/worktree.py` hand-wrote nine `Literal`s beside the modules that already produce their
 values — six contract cells plus phase, next-operation and next-tool — and the copies had come
 apart in six places at once. Measured at `abc7cbcc`, the model declared
-`CleanupStatus = Literal["pending", "completed", "abandoned"]` while `tasks/reopen.py` writes
+`CleanupStatus = Literal["pending", "completed", "abandoned"]` while `worktrees/reopen.py` writes
 `reopened`; `WorkflowKind = Literal["chat", "light", "light-task"]` while `worktree_start`'s own
 argument documents and defaults to `light-task`/`chat-task` (re-derived independently over the
 213 `series-contract.md` files in this workspace's `ar-coordination/tasks/`: 205 `light-task`,
@@ -1293,8 +1332,8 @@ list — so a member can only ever be added in one place. `mcp/tests/test_wire_v
 is the regression line, and it is the reach that matters: it walks the guidance state machine,
 the produced literals, and the producer→wire crossings rather than asserting two lists match.
 
-**`worktrees/status.py` stopped handing the packet a `dict[str, Any]`.**
-`worktree_status_packet` now *returns* `WorktreeSummary`; `controllers/context_packet.py`
+**`application/worktree_status.py` stopped handing the packet a `dict[str, Any]`.**
+`worktree_status_packet` now *returns* `WorktreeSummary`; `application/context_packet.py`
 (line 88) assigns it straight onto the packet instead of calling `model_validate` on an opaque
 dict. That `Any` was what let every mismatch above survive the type checker up to the moment
 the packet was built. One wire change came out of it and is stated rather than absorbed: the
@@ -1319,7 +1358,7 @@ they are about — and `path` is a required parameter taken from the caller rath
 copied contract claims the path it came from.
 
 `ContractCells` + `amend_contract` replace `dataclasses.replace` for those six cells across
-`abandon`/`cleanup`/`closeout`/`integrate`/`start` and `tasks/reopen.py`. Typeshed declares
+`abandon`/`cleanup`/`closeout`/`integrate`/`start` and `worktrees/reopen.py`. Typeshed declares
 `def replace(obj, /, **changes: Any)`, and one `Any` in a third-party stub voided the guarantee
 the whole scheme rests on: an off-vocabulary literal at any of the six fields, through
 `replace`, produced no pyright diagnostic at all.
@@ -1364,9 +1403,10 @@ module. What follows is only what reached **this** route's own
 files.
 
 **Two processes, two declarations, both at their entry points.** The contract names two concurrent
-writers, `"mcp"` and `"dashboard"`. `mcp/server.py::main` declares the first (L52) and
-`cli/dashboard.py::run` declares the second (L148). Neither declaration sits in the factory beside
-it — not `create_server`, not `create_app` — and that is a correctness constraint rather than taste:
+writers, `"mcp"` and `"dashboard"`. The MCP `main` entry point invokes `prepare_mcp_process` before
+`run_server` cit:([`main`], mcp/src/agents_remember/mcp/server.py:35-57), while the dashboard `run`
+entry point calls `declare_process_role("dashboard")` cit:([`run`], mcp/src/agents_remember/cli/dashboard.py:161-196).
+Neither declaration sits in the factory beside it — not `create_server`, not `create_app` — and that is a correctness constraint rather than taste:
 both factories are called **in-process by the test suite**, and `durable_store._declared` is a
 module-level dict with no reset, so a declaration made there stamps a role onto the interpreter and
 every later test in it. The two entry points run once each, in processes that exist to be exactly
@@ -1416,6 +1456,16 @@ six JSONL logs.
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18 hygiene curator: removed stale `:1-1` fixer-input
+  source entries whose anchors do not occur in those files (provider facade rows, tokenizer,
+  containment, degradation, submission authority); the retained line-1 docstring anchors are
+  genuine. Exact checks remain zero-finding.
+- 2026-08-04T10:53:58+02:00 — 260731-EFA-L6 S18-B07 final surgical correction: rebound all guidance aliases and separated route-census enumeration/classification from shared storage-authority filtering; same-reviewer delta pending.
+
+- 2026-08-02T16:52:42+02:00 — 260731-EFA-L6 curator W1-B11: anchored 26 citation items in `mcp/overview.md` (93 live findings cleared; scoped memory-citations check PASS with 0 findings). Verification metadata remains pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator. Added the L5 route impact for the four files this
   route governs that the leaf touched — `mcp/server.py`, `cli/dashboard.py`,
   `worktrees/worktree_contract.py`, `kernel/memory_ledger.py` — and deliberately left the

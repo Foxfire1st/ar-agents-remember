@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,15 +25,15 @@ body stays sequentially readable/navigable without one enormous forced-layout DO
 
 ### Logic
 
-- `useHideThinking` (L36) reads the global preference; when hidden the item collapses to a single
-  `thinking hidden` marker (L38-L44) — the content stays in the store, only rendering is suppressed
+- cit:([`useHideThinking`], dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:36-36) reads the global preference; when hidden the item collapses to a single
+  `thinking hidden` marker (cit:([`hiddenMarker`], dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:27-27)) — the content stays in the store, only rendering is suppressed
   (non-destructive).
 - When shown, it renders the marker label plus each block's text through `MarkdownBlock`
-  (`testId="thinking-markdown"`). `thinkingText` (L29-L33) reads `thinking`/`markdown` (`.markdown`) or
+  (`testId="thinking-markdown"`). cit:([`thinkingText`], dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:29-33) reads `thinking`/`markdown` (`.markdown`) or
   `text` (`.text`) blocks and skips the rest. **FB7.4 (260718-CHATS-L5P):** the label is now Claude
   Code's inline lowercase marker `✻ thinking` at meta size — the uppercase/letterspaced `textTransform`
   was dropped (it was a boxed web-chip idiom the well does not use).
-- The wrap sets `contentVisibility: "auto"` + `containIntrinsicSize: "auto 4rem"` (L17-L20) so a huge
+- The wrap sets `contentVisibility: "auto"` + `containIntrinsicSize: "auto 4rem"` (cit:([`wrap`], dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:11-20)) so a huge
   reasoning body is rendered in bounded segments — accessible, never deleted (§14.2).
 
 ### Invariants And Boundaries
@@ -48,33 +48,37 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The persisted global hide-thinking preference hook (the only durable UI bit). | L7, L37 | [../../../data/conversation/thinkingPreference.ts](../../../data/conversation/thinkingPreference.ts) |
-| The content-block/item types the thinking blocks come from. | L8 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| Streaming-safe Markdown renderer used for each thinking block. | L9, L51 | [MarkdownBlock.tsx](MarkdownBlock.tsx) |
-| The kind dispatcher that routes thinking items here. | — | [ConversationItemView.tsx](ConversationItemView.tsx) |
+| The persisted global hide-thinking preference hook (the only durable UI bit). | `useHideThinking` | dashboard/src/data/conversation/thinkingPreference.ts:38-39 |
+| The content-block/item types the thinking blocks come from. | `ConversationContentBlock`, `ConversationItem` | dashboard/src/data/conversation/types.ts:63-105; dashboard/src/data/conversation/types.ts:158-176 |
+| Streaming-safe Markdown renderer used for each thinking block. | `MarkdownBlock` | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
+| The kind dispatcher that routes thinking items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 4 citation rows and rewrote 2 prose citations; scoped citation fixing regenerated the source ranges.
+
 - 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the FB7.4
-  `label` css shrank and shifted the component up a line: the `useHideThinking` call is L36 (L37 is
-  now the `if (hidden)` guard) and `thinkingText` is the whole helper at L29-L33. Behaviour unchanged.
+  `label` css shrank and shifted the component up a line: the `useHideThinking` call is
+  (cit:([`ThinkingItem`], dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:35-56))
+  and `thinkingText` is the whole helper at
+  (cit:([`thinkingText`], dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:29-33)). Behaviour unchanged.
 
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: corrected the label claim — the marker is now the
   lowercase inline `✻ thinking` (FB7.4), no longer uppercase/letterspaced. Never-clamped full-inline

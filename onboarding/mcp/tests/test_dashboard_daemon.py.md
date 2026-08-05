@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_dashboard_daemon.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -76,14 +76,18 @@ minimal real settings JSON for CLI dispatch tests.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The module under test. | [serving/daemon.py](agents-remember/mcp/src/agents_remember/serving/daemon.py) |
-| The CLI wiring under test. | [cli/dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| The `dashboard` settings key parsing (companion tests live in test_config.py). | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module under test. | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
+| The CLI wiring under test. | `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:270-297 |
+| The `dashboard` settings key parsing (companion tests live in test_config.py). | `parse_dashboard_settings` | mcp/src/agents_remember/mcp/config.py:437-453 |
 
 ## Update History
 
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 6 citation findings. Re-anchored the
+  three rows with exact spans: the module under test (`ensure`, daemon.py:264-292), the CLI wiring
+  (`_run_daemon_command`, cli/dashboard.py:270-297), and the settings parsing
+  (`parse_dashboard_settings`, config.py:437-455). Scoped recheck clean.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: `daemon.spawn` and `daemon.ensure` now take a
   positional `DaemonEndpoint(host, port, version)` plus an optional
   `cadence=ProjectionCadence(interval, heartbeat)`, so the pinned `spawn.assert_called_once_with`

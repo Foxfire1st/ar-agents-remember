@@ -26,15 +26,15 @@ anywhere in this leaf — capability gating alone cannot authorize one.
 
 ### Logic
 
-`ConversationPolicyProjection` (L46-L55) carries two `PolicyPart` (L36-L43) DTOs — the AR `repoPolicy`
+cit:([`ConversationPolicyProjection`], mcp/src/agents_remember/serving/conversation/control/policy.py:46-55) carries two cit:([`PolicyPart`], mcp/src/agents_remember/serving/conversation/control/policy.py:36-43) DTOs — the AR `repoPolicy`
 posture and the effective `harnessMode` — each with state/origin/evidence/freshness/reasons.
-`conversation_policy` (L58-L101) resolves the caller and epoch, reads the live snapshot, and builds both
-parts plus the `policyRead` capability. `_harness_mode` (L104) reports Claude's `permissionMode` from
+cit:([`conversation_policy`], mcp/src/agents_remember/serving/conversation/control/policy.py:58-101) uses the already-resolved authorization binding as route proof, resolves the session entry, verifies the bridge epoch, reads the live snapshot, and builds both
+parts plus the `policyRead` capability. cit:([`_harness_mode`], mcp/src/agents_remember/serving/conversation/control/policy.py:104-130) reports Claude's `permissionMode` from
 the live snapshot carrying the control-contract capability's own `capability.reason` — since
 260718-CHATS-L5F R4 that reason is contract-verification language ("unverified until the control seam
 is probed"), NEVER a locked-version-mismatch string; codex approval/sandbox values are adapter-private
 at thread/turn start and never cross (honestly unverified); pi has no built-in permission-popup
-surface. `_freshness` (L133) stamps the observed-time window. `_POLICY_ORIGIN` (L33) is the AR
+surface. cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/policy.py:133-134) stamps the observed-time window. cit:([`_POLICY_ORIGIN`], mcp/src/agents_remember/serving/conversation/control/policy.py:33-33) is the AR
 composition origin string.
 
 ### Conventions
@@ -60,7 +60,7 @@ None.
 
 No Domain Documentation source is configured; the policy contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -69,28 +69,29 @@ No Domain Documentation source is configured; the policy contract is repository-
 The policy DTOs and capability evidence live in the contract; the AR posture comes from the L0
 authorization ruling; the harness mode reads the live snapshot.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | L55-L63; L640-L675 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The AR local-operator ruling and canonical scope the `repoPolicy` part reports. | L48-L105 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
-| The `policyRead` capability gate. | L305-L321 | [capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
-| The live snapshot `harnessMode` reads Claude `permissionMode` from. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
+| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | `WireModel`; `CapabilityEvidence`; `FeatureCapability` | mcp/src/agents_remember/serving/conversation/models.py:55-63; mcp/src/agents_remember/serving/conversation/models.py:655-659; mcp/src/agents_remember/serving/conversation/models.py:662-690 |
+| The AR local-operator ruling and canonical scope the `repoPolicy` part reports. | `LocalOperatorAuthorizationResolver`; `for_workspace`; `resolve`; `require` | mcp/src/agents_remember/serving/conversation/authorization.py:69-105 |
+| The `policyRead` capability gate. | `policyRead` | dashboard/src/data/conversation/types.ts:274-274 |
+| The live snapshot `harnessMode` reads Claude `permissionMode` from. | `_harness_mode` | mcp/src/agents_remember/serving/conversation/control/policy.py:104-130 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, all read back.
   The three single-line anchors each pointed at the blank line ABOVE their construct (a one-line
   shift, from the module docstring's re-wrap) and are now full spans: `PolicyPart` L35 → L36-L43,
-  `ConversationPolicyProjection` L45 → L46-L55, `conversation_policy` L57 → L58-L101. `_harness_mode`
-  (L104), `_freshness` (L133) and `_POLICY_ORIGIN` (L33) were re-checked and still land on their own
+  `ConversationPolicyProjection` L45 → L46-L55, `conversation_policy` L57 → L58-L101. cit:([`_harness_mode`], mcp/src/agents_remember/serving/conversation/control/policy.py:104-130),
+  cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/policy.py:133-134) and cit:([`_POLICY_ORIGIN`], mcp/src/agents_remember/serving/conversation/control/policy.py:33-33) were re-checked and still land on their own
   `def`/assignment. No claim text changed; every claim still holds.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The single

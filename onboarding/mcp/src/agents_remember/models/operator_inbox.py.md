@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash |                                                         `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate |                                                         2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash |                                                         `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                         2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -58,22 +58,22 @@ None.
 No relevant external documentation found after checking the in-repo design docs
 listed as Domain Documentation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The response models cover post, poll, and consume payloads and reuse the inbox state literal. | L7-L36 | [operator_inbox.py](agents-remember/mcp/src/agents_remember/models/operator_inbox.py) |
-| The registry maps the three `operator_inbox_*` tools to these response models. | L56-L60; L139-L141 | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
+| The response models cover post, poll, and consume payloads and reuse the inbox state literal. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse`; `OperatorInboxState` | mcp/src/agents_remember/models/operator_inbox.py:7-13; mcp/src/agents_remember/models/operator_inbox.py:17-42; mcp/src/agents_remember/models/operator_inbox.py:45-52; mcp/src/agents_remember/models/operator_inbox.py:55-61 |
+| The registry maps the three `operator_inbox_*` tools to these response models. | `OperatorInboxPostResponse` | mcp/src/agents_remember/models/tool_registry.py:59-63; mcp/src/agents_remember/models/tool_registry.py:175-177 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
@@ -85,6 +85,9 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-04T18:17+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 2 citation rows with exact anchors (the three response models + `OperatorInboxState`, and the registry import/mapping) and ledger-verified ranges. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
+
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `OperatorInboxPostResponse` gained `ownerRole`/`ownerAgentId`/`ownerLifecycleId` (R4 routed-owner address) alongside the existing `recipientRole`. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

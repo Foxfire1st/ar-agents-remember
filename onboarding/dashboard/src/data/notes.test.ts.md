@@ -50,7 +50,7 @@ not provably one existing note, so the UI can never render a dead or guessed lin
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | A stubbed-fetch unit suite; nothing crosses repositories. | — | — |
 
@@ -60,18 +60,20 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The module under test. | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
-| The sibling client suite whose stub idiom this mirrors. | [data/files.test.ts](agents-remember/dashboard/src/data/files.test.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The list/read client functions under test. | `listNotes`, `readNote` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:35-41 |
+| The reference resolver under test. | `resolveNoteReference` | dashboard/src/data/notes.ts:52-65 |
+| The sibling client suite's shared fetch-stub idiom. | `stubFetch` | dashboard/src/data/files.test.ts:23-29 |
 
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

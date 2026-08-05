@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/normalize_common.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ None.
 
 No Domain Documentation source is configured for this internal primitives module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -60,20 +60,23 @@ No Domain Documentation source is configured for this internal primitives module
 All three resolvers consume these primitives; the ports suite exercises them through the
 normalized grammar on fake native payloads.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Codex parser builds its blocks and provenance on these primitives. | L19-L24 | [codex_normalize.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/codex_normalize.py) |
-| The Claude and Pi ports cap text, extract content, and require fields through this module. | L29-L39; L28-L36 | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/claude.py), [pi.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/pi.py) |
+| The Codex parser builds its blocks and provenance on these primitives. | `conversation_items_from_thread` | mcp/src/agents_remember/serving/conversation/library/codex_normalize.py:40-59 |
+| The Claude and Pi ports cap text, extract content, and require fields through this module. | `ClaudeConversationLibrary`; `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/claude.py:80-424; mcp/src/agents_remember/serving/conversation/library/pi.py:72-320 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local primitives module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 2 citation claims
+  (Repo-Internal reference rows); scoped result 0 findings.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the shared normalization primitives
   sidecar. Verification is blank until closeout commits and stamps the new source.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/leaf_ref.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-07-07T20:50+02:00                          |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`      |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`      |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -34,13 +34,16 @@ session `kind` when it is one of the modeled values.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Shared resolver error facts. | [../../worktrees/leaf_refs.py](../../worktrees/leaf_refs.py.md) |
-| Terminal payload builders using the helper. | [terminal.py](terminal.py.md) |
-| Strict response models accepting the leaf-ref refusal statuses. | [../../models/terminal.py](../../models/terminal.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared resolver error facts. | `LeafRefStatus`; `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:45-72 |
+| `terminal.py` imports `LeafRefStatus` and declares the `LeafAssignmentStatus` and `SpawnAgentSessionStatus` aliases. | "LeafAssignmentStatus = Literal["; "SpawnAgentSessionStatus = Literal["; "from agents_remember.worktrees.leaf_refs import LeafRefStatus" | mcp/src/agents_remember/models/terminal.py:8-8; mcp/src/agents_remember/models/terminal.py:21-21; mcp/src/agents_remember/models/terminal.py:45-45 |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rebound resolver and strict-model references;
+  narrowed the terminal row to its import and alias declarations and deleted the unsupported
+  terminal-consumer row because no consumer/import exists.
 
 - 2026-07-07T20:50+02:00 — 260707-HFX-L4: created as the strict MCP payload adapter for leaf-ref
   validation refusals. Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.

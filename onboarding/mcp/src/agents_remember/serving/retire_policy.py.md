@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/retire_policy.py`      |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -18,8 +18,9 @@
 
 `retire_policy.py` is the server-side authority policy for seat retirement (260707-HFX-L8, issue
 #12). It is the single place that decides WHETHER an actor seat may retire a target seat — the
-developer-ruled authority split (a manager retires only its own master's worker/reviewer seats; the
-orchestrator retires any seat; no seat ever retires itself) is enforced here, not trusted from the
+developer-ruled authority split (a manager retires only its own master's worker/reviewer/curator
+seats; the orchestrator retires any seat; no seat ever retires itself) is enforced here, not trusted
+from the
 caller, and both the manual `session_retire` MCP tool / `POST /api/terminal/{session}/retire`
 endpoint and any future retire entry point must route through `check_retire_authority` before
 mutating the catalog. Completion-edge `landed` archive marking is not a retire entry point and is
@@ -87,40 +88,23 @@ No known follow-up in this file. The reviewer's Risk 2 disposition (actor identi
 self-declared, not ambiently resolved) is a caller-side concern (see `retire.py` and
 `mcp/tools/terminal.py`), not a gap in this policy module itself.
 
-## Docs References
-
-No relevant external documentation found after checking the repo Domain Documentation for
-retire-authority-specific behavior; this file is same-repository runtime plumbing implementing a
-developer-ruled authority split recorded in the task doc, not an external standard.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No external/domain document defines this authority split; the developer ruling in the leaf task doc and this implementation are the source of truth. | L1-L64 | [retire_policy.py](retire_policy.py) |
-
 ## Repo-Internal References
 
 `check_retire_authority` is called from both the manual retire paths and reads `SeatRef`s built
 from `TerminalCatalogEntry` fields; the leaf task doc records the developer ruling this file
 encodes.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `session_retire_payload` builds actor/target `SeatRef`s from `binding_role`/`binding_leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status. | `session_retire_payload` | [terminal.py](../mcp/tools/terminal.py) |
-| `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | `api_terminal_retire` | [app.py](app.py) |
-| `TerminalCatalogEntry.binding_role` and `binding_leaf_key` are the current identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | `binding_role`; `binding_leaf_key`; `with_retirement` | [terminal_catalog.py](terminal_catalog.py) |
-| `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_leaf` | [retire.py](retire.py); [landing.py](landing.py) |
-| The leaf task doc's E1 code example matches the original authority split; HFX2-L17 extends its identity input from spawn provenance to binding pair. | Objective; Requirements; E1 | [10_seat-retirement-and-chat-cleanup.md](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md) |
-| Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
-
-## Cross-Repo References
-
-No meaningful cross-repo references found.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this local retire-authority policy. | — | — |
+| `session_retire_payload` builds actor/target `SeatRef`s from `binding_role`/`binding_leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status. | `session_retire_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83 |
+| `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | `_retire_response`; `_seat_ref` | mcp/src/agents_remember/serving/app.py:1754-1807; mcp/src/agents_remember/serving/app.py:1810-1817 |
+| `TerminalCatalogEntry.binding_role` and `binding_leaf_key` are the current identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | `binding_role`; `binding_leaf_key`; `with_retirement` | mcp/src/agents_remember/serving/terminal_catalog.py:359-384; mcp/src/agents_remember/serving/terminal_catalog.py:496-504; mcp/src/agents_remember/serving/terminal_catalog.py:506-510 |
+| `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28; mcp/src/agents_remember/serving/retire.py:37-71 |
+| Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:103-166 |
 
 ## Update History
+
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: corrected curator-role authority and split retire/landing implementation ownership while removing stale task/domain/cross-repo claims.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: keyed authority on binding leaf plus seat role,
   extended own-master manager authority through curator, and made unbound failed dispatches

@@ -47,25 +47,28 @@ No open file-local todos.
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pipeline (Stage 4) that consumes this delegation map. | whole file | [SKILL.md](agents-remember/dev-skills/dashboard-experience-review/SKILL.md) |
+| The pipeline (Stage 4) that consumes this delegation map. | "Stage 4" | dev-skills/dashboard-experience-review/SKILL.md:46-106 |
 
 ## Cross-Repo References
 
 The delegate skills are installed Claude Code skills / MCP servers in the harness, not repo files.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: anchored the governing Stage 4 delegation
+  reference to the local skill source.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

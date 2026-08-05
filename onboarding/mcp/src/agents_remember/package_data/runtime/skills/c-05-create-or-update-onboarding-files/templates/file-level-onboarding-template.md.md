@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md` |
 | doc_type               | `file-level-onboarding`                                                                                      |
 | lastUpdated            | 2026-05-29T11:11+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`                                                                   |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                                                   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -35,29 +35,32 @@ None; verification metadata is current as of committed template revision df07057
 
 No external domain documentation is needed for this repository-local template. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this template is repository source.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found after checking live sources. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found after checking live sources. | n/a | n/a |
 
 ## Repo-Internal References
 
 The template is governed by `c-05-create-or-update-onboarding-files` skill's onboarding-maintenance contract and is consumed when creating file-level sidecars.
 
-| Finding                                                                                                                      | Citations | Source Path                                                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `c-05-create-or-update-onboarding-files` skill routes file-level onboarding creation to this template and requires strict one-to-one mirroring with source files and route-local governing overview links. | L19-L51 | [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) |
-| The template defines metadata including `governingOverview`, the governing overview section, purpose, code commentary, top-level reference sections, and append-only update-history guidance. | L1-L68 | [file-level-onboarding-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md) |
-| Docs reference placeholder text requires actual online, intranet, library, or product documentation, treats local mirrors as orientation caches, links canonical live references, and records no relevant docs only after live-source checks. | L41-L49 | [file-level-onboarding-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `c-05-create-or-update-onboarding-files` skill routes file-level onboarding creation to this template and requires strict one-to-one mirroring with source files and route-local governing overview links. | `# c-05-create-or-update-onboarding-files Create Or Update Onboarding Files` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:6-231 |
+| The template defines metadata including `governingOverview`, the governing overview section, purpose, code commentary, top-level reference sections, and append-only update-history guidance. | `# <SourceFileName.ext>` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md:1-68 |
+| Docs reference placeholder text requires actual online, intranet, library, or product documentation, treats local mirrors as orientation caches, links canonical live references, and records no relevant docs only after live-source checks. | `# <SourceFileName.ext>` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md:1-68 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  heading anchors; exact non-fixing check returns zero findings.
 
 - 2026-05-29T11:11+02:00: Refreshed verification metadata to committed template revision `df07057` after source commit `1ccbc2d` corrected the template's update-history wording from append-only to prepend-only; aligned the logic description to the prepend-only wording.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.

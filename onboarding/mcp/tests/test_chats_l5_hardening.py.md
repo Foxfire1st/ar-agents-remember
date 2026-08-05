@@ -109,29 +109,33 @@ None.
 The resolved `Domain Documentation` registry has no entries; the hardening contract is
 repository-owned and cited below.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this suite. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The H1 quarantine under test: `_observe_control_snapshot` contains the per-entry synchronizer failure; `LivenessProbe` (L71) is the sweeper's probe parameter object. | L371-L421 | [terminal_liveness.py](agents-remember/mcp/src/agents_remember/serving/terminal_liveness.py) |
-| The synchronizer whose `observe` raises on the orphan completion (contract left intact). | — | [hosted_interactions.py](agents-remember/mcp/src/agents_remember/serving/hosted_interactions.py) |
-| The H2/F4 store pin under test: `_preserved_input_authority` keeps the user-item authority triple intact. | L54-L75; L221-L245 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The validator (`preserve_input_authority`) whose violation the split item raises at re-validation. | L377 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The projector-tier and installed companions to these store-level regressions. | — | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) · [test_conversation_control_installed.py](agents-remember/mcp/tests/test_conversation_control_installed.py) |
+| The H1 quarantine under test: `_observe_control_snapshot` contains the per-entry synchronizer failure; `LivenessProbe` (L71) is the sweeper's probe parameter object. | `LivenessProbe` | mcp/src/agents_remember/serving/terminal_liveness.py:70-84; mcp/src/agents_remember/serving/terminal_liveness.py:371-421 |
+| The synchronizer whose `observe` raises on the orphan completion (contract left intact). | `observe` | mcp/src/agents_remember/serving/hosted_interactions.py:59-61 |
+| The H2/F4 store pin under test: `_preserved_input_authority` keeps the user-item authority triple intact. | `_preserved_input_authority` | mcp/src/agents_remember/serving/conversation/active/store.py:54-74 |
+| The validator (`preserve_input_authority`) whose violation the split item raises at re-validation. | `preserve_input_authority` | mcp/src/agents_remember/serving/conversation/models.py:376-426 |
+| The projector-tier and installed companions to these store-level regressions. | "Projector engine: hydration, ordering, idempotence, provenance, rehydration, gaps."; "Installed-runtime production proof for the L3 control API (260718-CHATS-L3, R7)." | mcp/tests/test_conversation_active_service.py:1-1; mcp/tests/test_conversation_control_installed.py:1-7 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 2 citation rows
+  (terminal_liveness probe + quarantine ranges, and the two companion-suite docstring literals).
+  Zero findings remain.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: `TerminalCatalogLivenessSweeper` now
   takes `config` / `pane_capturer` / `snapshot_reader` / `on_control_snapshot` as one

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submissionLifecycleClient.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -45,22 +45,22 @@ never-terminal record reaches bounded endgame instead of producing an unbounded 
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The system under test owns polling, withdrawal, and draft recovery. | — | [submissionLifecycleClient.ts](submissionLifecycleClient.ts) |
-| The server authority suite proves the corresponding linearization boundary. | — | [../../../mcp/tests/test_harness_submission_authority.py](../../../mcp/tests/test_harness_submission_authority.py) |
+| The system under test owns polling, withdrawal, and draft recovery. | `ensureSubmissionLifecyclePolling`, `withdrawLastQueuedSubmission`, `restoreWithdrawnRecovery` | dashboard/src/data/submissionLifecycleClient.ts:787-799; dashboard/src/data/submissionLifecycleClient.ts:1043-1068; dashboard/src/data/submissionLifecycleClient.ts:1096-1108 |
+| The server authority suite proves the corresponding linearization boundary. | `HarnessSubmissionAuthorityTests` | mcp/tests/test_harness_submission_authority.py:230-755 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This is a repository-local frontend integration suite. | — | — |
 
@@ -72,6 +72,8 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-08-03T02:30:16+02:00 — W3-B05 curator: anchored 2 Tier-2 table citations with exact source paths; fixer generated all final ranges.
 
 - 2026-07-24T13:17:50Z — Added terminal-word and bounded-watch polling coverage. Verification
   hash/date remain pinned to the pre-commit source stamp.

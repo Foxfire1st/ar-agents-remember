@@ -37,9 +37,9 @@ uppercase minus I, L, O, U).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Events carry a ULID `id`. | [events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Events carry a ULID `id`. | `id` | mcp/src/agents_remember/observer/events.py:54-54 |
 
 ## Update History
 

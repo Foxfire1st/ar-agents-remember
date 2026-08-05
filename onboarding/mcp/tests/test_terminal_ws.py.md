@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -148,7 +148,7 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
@@ -157,21 +157,21 @@ source was available for this test-file curation pass.
 This route suite remains broad, but L4's new authority is narrow: complete-pair carriage and truthful
 live/dead reopen projection over the shared opener.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| A complete native model/effort pair reaches the encoded runner exactly once and is returned as resolved launch truth. | L947-L968 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
-| Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | L970-L1006 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
-| Partial, plain-terminal, and non-native selections all fail before host ensure. | L1008-L1032 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
-| WebSocket and catalog cases continue to cover raw PTY framing, parallel attachments, liveness, leaf/role claims, and landed inspection. | L439-L945 | [test_terminal_ws.py](agents-remember/mcp/tests/test_terminal_ws.py) |
-| `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | L348-L365; L945-L991 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | L1006-L1026 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Direct opener regressions provide the complementary same/different/dead/concurrent transaction and role-path authority. | L291-L400 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
+| A complete native model/effort pair reaches the encoded runner exactly once and is returned as resolved launch truth. | "test_post_open_harness_carries_complete_model_effort_pair_once"; "/api/terminal/h-selected" | mcp/tests/test_terminal_ws.py:908-929 |
+| Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | "test_post_open_reopen_preserves_live_truth_conflicts_then_replaces_dead"; "launch-selection-conflict" | mcp/tests/test_terminal_ws.py:931-967 |
+| Partial, plain-terminal, and non-native selections all fail before host ensure. | "test_post_open_rejects_partial_or_non_harness_selection_before_spawn"; "launch-selection-invalid" | mcp/tests/test_terminal_ws.py:969-993 |
+| WebSocket and catalog cases continue to cover raw PTY framing, parallel attachments, liveness, leaf/role claims, and landed inspection. | `ApplyTerminalInputTests`; `TerminalWebSocketTests`; `feed_all`; `_TERMINAL_EXIT_FRAME`; "/api/terminal/restored"; "/api/terminal/chat-2"; "/api/terminal/term-2" | mcp/tests/test_terminal_ws.py:392-421; mcp/tests/test_terminal_ws.py:365-368; mcp/tests/test_terminal_ws.py:424-1009 |
+| `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | `TerminalOpenRequest`; `_open_terminal_response` | mcp/src/agents_remember/serving/app.py:464-481; mcp/src/agents_remember/serving/app.py:1461-1550 |
+| A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | `_terminal_entry_payload`; `_open_terminal_response` | mcp/src/agents_remember/serving/app.py:1443-1458; mcp/src/agents_remember/serving/app.py:1461-1550 |
+| Direct opener regressions provide the complementary same/different/dead/concurrent transaction and role-path authority. | `OpenTerminalSessionTests`; "spawnedByLifecycle"; "seatRole"; "ar-owner-1"; `reviewer_entry`; `first_worker`; `KnobApplicationTests`; "attempted metadata rewrite"; `pair_conflict`; "other-workspace"; "resolved launch requested 'codex'"; `second_runner`; `open_after_barrier` | mcp/tests/test_terminal_opener.py:156-335; mcp/tests/test_terminal_opener.py:338-630 |
 
 ## Cross-Repo References
 
 No sibling repository is required for this local daemon/open/WebSocket suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -193,6 +193,8 @@ Note on shape: the terminal fixtures now build `TerminalSessionSpec` / `Terminal
 instead of long keyword lists. The assertions are unchanged.
 
 ## Update History
+
+- 2026-08-04T14:24:05+02:00 — 260731-EFA-L6 S18-B08 curator: regenerated launch-pair/reopen/pre-spawn test anchors and retained the generated WebSocket/direct-opener body extents so behavior-bearing evidence remains cited through the whole-claim audit.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 

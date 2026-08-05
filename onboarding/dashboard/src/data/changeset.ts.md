@@ -38,7 +38,7 @@ Data contracts plus three fetch helpers:
   code→sidecar split), `ChangeCounters` (`files`/`insertions`/`deletions`), `TaskChangeset`
   (`code`/`memory` + `counters`), `FileDiff` (`before`/`after` = `{content}` or `null` for an
   added/deleted file — feeds CodeMirror MergeView a/b), `MasterChangeset` (`leaves[]` per-leaf counters +
-  the NET series `code`/`memory` as plain `ChangedFile[]` + `counters`). (L12-L50)
+  the NET series `code`/`memory` as plain `ChangedFile[]` + `counters`) (cit:(["export interface MasterChangeset {"], dashboard/src/data/changeset.ts:45-45)).
 - `taskChangeset(repo, scope, base?)`, `fileDiff(repo, scope, kind, path, base?)`,
   `masterChangeset(repo, master, options?, base?)`, and `masterFileDiff(repo, master, kind, path, base?)` (the series
   net before/after via `/file-diff?master=`) each build their query string with `qs` (`URLSearchParams`)
@@ -68,32 +68,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation). | L12-L50 | [changeset.ts](changeset.ts) |
-| Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. | L52-L69 | [changeset.ts](changeset.ts) |
-| Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`. | L82-L92 | [files.ts](files.ts) |
-| The serving layer that defines the endpoints + response shapes this client mirrors. | L38-L195 | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
-| `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. | L152-L187 | [ChangeSetViewer.tsx](agents-remember/dashboard/src/panels/changeset/ChangeSetViewer.tsx) |
-| `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. | L573-L616 | [DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
-| The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. | L16-L36 | [changeset.test.ts](changeset.test.ts) |
+| Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation). | "interface TaskChangeset" | dashboard/src/data/changeset.ts:26-26 |
+| Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. | "export const taskChangeset" | dashboard/src/data/changeset.ts:56-56 |
+| Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`. | "export const qs" | dashboard/src/data/files.ts:99-99 |
+| The serving layer that defines the endpoints + response shapes this client mirrors. | "def register_changeset_routes" | mcp/src/agents_remember/serving/changeset.py:501-501 |
+| `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. | "export function ChangeSetViewer" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:156-156 |
+| `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. | "masterChangeset(target.repo" | dashboard/src/panels/DetailPanel.tsx:748-748 |
+| The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. | "builds the task / file-diff / master URLs" | dashboard/src/data/changeset.test.ts:17-32 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 7 table citations and 1 prose citation for the changeset contract and consumer path; fixer-generated ranges verified.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

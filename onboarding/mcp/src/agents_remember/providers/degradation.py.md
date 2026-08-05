@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -242,38 +242,45 @@ The developer plan-gate ruling (folded into the task doc's `objective` and `deci
 authoritative design source for this protocol; it is a task artifact, not published product
 documentation, so it is cited as a repo-internal reference below rather than here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external/product documentation governs this protocol; it is a repository-internal doctrine and detector. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The developer plan-gate ruling defining the detector/response protocol, the providers-only scope, and the Sentry-replaceable seam requirement this module is shaped around. | objective; decisions[] | [08_degradation-protocol-and-system-specialist.json](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/08_degradation-protocol-and-system-specialist.json) |
-| The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). | whole module | [metrics.py](metrics.py) |
-| The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). | action="stop" | [provider_tools.py](../controllers/provider_tools.py) |
-| The inbox record schema (`system-specialist` in `AgentRole` at L24, `degradation-alert` in `InboxMessageKind` at L39) this module posts against. | L17-L43 | [operator_inbox_records.py](../controlplane/operator_inbox_records.py) |
-| The store this module appends/compacts durable inbox rows through. | whole module | [operator_inbox_store.py](../controlplane/operator_inbox_store.py) |
-| The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. | whole module | [inbox_delivery.py](../serving/inbox_delivery.py) |
-| The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. | whole module | [terminal_catalog.py](../serving/terminal_catalog.py) |
-| `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | whole module | [../mcp/provider_degradation_settings.py](../mcp/provider_degradation_settings.py.md) |
-| `_metrics_loop` — the sole production caller: `metrics_store.record` (L812), `evaluate_provider_degradation` (L813) and `metrics_store.compact` (L815) on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. | L806-L818 (app.py) | [app.py](../serving/app.py.md) |
-| Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | whole module | [../../../tests/test_provider_degradation.py](../../../tests/test_provider_degradation.py.md) |
-| `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol — that file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | by symbol | [durable_store.py](../controlplane/durable_store.py) |
-| The sibling provider store put on the same contract in the same change, and the shared durability suite whose docstring disclaims the base-commit percentages as unreproducible. | `PROVIDER_METRICS_OWNERSHIP` | [metrics.py](metrics.py); [test_provider_store_durability.py](../../../tests/test_provider_store_durability.py) |
-| The two single-writer control-plane logs whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | `ATTENTION_DISMISSAL_OWNERSHIP` | [attention_dismissals.py](../controlplane/attention_dismissals.py); [supervisor_signals.py](../controlplane/supervisor_signals.py) |
+| The provider-only detector/response entry point implemented by this module. | "def evaluate_provider_degradation" | mcp/src/agents_remember/providers/degradation.py:268-268 |
+| The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). | "PROVIDER_METRICS_SCHEMA ="; "PROVIDER_INDEX_STATE_SCHEMA ="; "class ProviderMetricsStore" | mcp/src/agents_remember/providers/metrics.py:62-63; mcp/src/agents_remember/providers/metrics.py:231-231 |
+| The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). | `run_configured_watchers` | mcp/src/agents_remember/providers/watcher_service.py:16-43 |
+| The critical-failsafe wiring supplies the stop action directly from the dashboard loop. | "stop_provider_stacks=partial(" | mcp/src/agents_remember/serving/app.py:821-821 |
+| The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against. | "degradation-alert" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:39-39 |
+| The store this module appends/compacts durable inbox rows through. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
+| The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
+| The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
+| `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | `ProviderDegradationSettings` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:36-55 |
+| `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. | "async def _metrics_loop" | mcp/src/agents_remember/serving/app.py:811-811 |
+| Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`; `test_critical_transition_records_event_inbox_and_failsafe_once`; `test_critical_stop_failure_still_records_event_inbox_and_state` | mcp/tests/test_provider_degradation.py:99-159; mcp/tests/test_provider_degradation.py:239-330; mcp/tests/test_provider_degradation.py:332-363 |
+| `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol — that file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | "def exclusive_access"; "def append_line"; "def rewrite_lines"; "def read_log_text"; "SCHEMA_VERSION ="; "def schema_version_supported"; "class StoreOwnership" | mcp/src/agents_remember/controlplane/durable_store.py:45-45; mcp/src/agents_remember/controlplane/durable_store.py:93-93; mcp/src/agents_remember/controlplane/durable_store.py:224-224; mcp/src/agents_remember/controlplane/durable_store.py:349-349; mcp/src/agents_remember/controlplane/durable_store.py:418-418; mcp/src/agents_remember/controlplane/durable_store.py:425-425; mcp/src/agents_remember/controlplane/durable_store.py:439-439 |
+| The sibling provider store put on the same contract in the same change. | "class ProviderMetricsStore" | mcp/src/agents_remember/providers/metrics.py:231-231 |
+| The shared durability suite whose docstring disclaims the base-commit percentages as unreproducible. | `ProviderStoreDurabilityTests` | mcp/tests/test_provider_store_durability.py:280-351 |
+| The attention-dismissal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
+| The supervisor-signal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | "class SupervisorSignalCooldownStore" | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-68 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This protocol is providers-only this iteration; Sentry integration is a future detection source in a separate task (`260703_spotlight-dev-observability`), not yet a cross-repo/cross-system boundary this module touches. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 28 initial citation findings (13 anchor, 0 prose, 15 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). This store was brought onto
   `ar-durable-store/1.0` and the card described the pre-contract shape. Recorded: the unlocked
   `open("a")` + whole-file `compact_events` rewrite + unscoped `.compact.tmp` it had; that its

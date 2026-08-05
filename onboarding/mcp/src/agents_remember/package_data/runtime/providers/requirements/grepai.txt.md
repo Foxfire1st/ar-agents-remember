@@ -43,28 +43,29 @@ None.
 
 No external documentation is needed for this pin file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The requirement file pins GrepAI to `grepai==0.35.0`. | L1-L2 | [grepai.txt](agents-remember/mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt) |
-| The MCP runtime installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root. | n/a | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| The provider helper exposes the GrepAI pin and writes the managed requirements file through the package provider helper. | n/a | [context.py](agents-remember/mcp/src/agents_remember/providers/context.py) |
-| The lifecycle installer reads the GrepAI pin and builds the Docker-owned runner image through the lifecycle facade. | n/a | [lifecycle.py](agents-remember/mcp/src/agents_remember/providers/lifecycle.py) |
+| The requirement file pins GrepAI to `grepai==0.35.0`. | "grepai==0.35.0" | mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt:2-2 |
+| The MCP runtime installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root. | `require_runtime_tree` | mcp/src/agents_remember/install/runtime.py:317-328 |
+| The provider helper exposes the GrepAI pin and writes the managed requirements file through the package provider helper. | `ensure_grepai_requirements_file` | mcp/src/agents_remember/providers/grepai/context/layout.py:69-70 |
+| The lifecycle installer reads the GrepAI pin and builds the Docker-owned runner image through the lifecycle facade. | `grepai_install` | mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:471-488 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-03T02:59:47+02:00 — W3-B05 curator: resolved 4 Tier-2 table findings across the package-data, installer, context, and lifecycle moves; fixer generated all final ranges.
 
 - 2026-05-28T14:21:08+02:00: Updated after the source comment was clarified
   from provider binary wording to Docker runner wording.

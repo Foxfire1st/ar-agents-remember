@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/DevApp.tsx`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T04:20+02:00 |
+| lastUpdated            | 2026-08-02T01:42+02:00 |
 | lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
 | lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
 | governingOverview      | `../overview.md`                                 |
@@ -27,11 +27,11 @@ gallery; `/dev/flows` = the lifecycle-design canvas (orchestration L0); otherwis
 
 Path-prefix routing over `window.location.pathname`. Imports `./dev.css` (the co-located dev-gallery
 styles, slice 5d) and uses the global `.raw-list` utility (index.css). The `/dev/pty-bench` branch
-(L15) renders the L6 `PtyRenderBench` measurement harness. The `/dev/flows` branch (L17-L22) renders the panels
+renders the L6 `PtyRenderBench` measurement harness. The `/dev/flows` branch renders the panels
 `FlowTab` inside a `.cockpit` wrapper, passing `initialModel` from the `?model=` query param
 (`new URLSearchParams(window.location.search).get("model") ?? undefined`) — a deep link into a
 specific drawn model. The index list carries a `/dev/flows` entry alongside `/dev/bench` and
-`/dev/reference`.
+`/dev/reference`. cit:(["return <PtyRenderBench />", "FlowTab initialModel"], dashboard/src/dev/DevApp.tsx:15-15; dashboard/src/dev/DevApp.tsx:20-20)
 
 ### Invariants And Boundaries
 
@@ -40,17 +40,20 @@ chunk). Its CSS is co-located in `dev.css`, loaded only here.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The DEV-only route gate that drops this chunk in prod. | L8-L18 | [App.tsx](../App.tsx) |
-| The co-located dev-gallery styles it imports. | — | [dev.css](dev.css) |
-| The L6 renderer measurement harness mounted at `/dev/pty-bench`. | L108-L189 | [PtyRenderBench.tsx](PtyRenderBench.tsx) |
-| The lifecycle-design canvas mounted at `/dev/flows` (`initialModel` from `?model=`). | L17-L22 | [panels/FlowTab.tsx](../panels/FlowTab.tsx) |
+| The DEV-only route gate that drops this chunk in prod. | "const DevApp = import.meta.env.DEV" | dashboard/src/App.tsx:8-8 |
+| The co-located dev-gallery styles it imports. | "./dev.css" | dashboard/src/dev/DevApp.tsx:6-6 |
+| The L6 renderer measurement harness mounted at `/dev/pty-bench`. | "return <PtyRenderBench />" | dashboard/src/dev/DevApp.tsx:15-15 |
+| The lifecycle-design canvas mounted at `/dev/flows` (`initialModel` from `?model=`). | `initialModel` | dashboard/src/panels/FlowTab.tsx:111-111 |
 
 As of cycle 5 the /dev/flows index label lists the converged model set (router first; build job and frame gone).
 
 ## Update History
 
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 7 initial citation findings (3 anchor, 1 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6: added the `/dev/pty-bench` route mounting the
   `PtyRenderBench` renderer-measurement harness (master OQ-B; driven by the un-carded
   `dashboard/e2e/ptyRenderBench.mjs` node script). Verification metadata pinned to the leaf base

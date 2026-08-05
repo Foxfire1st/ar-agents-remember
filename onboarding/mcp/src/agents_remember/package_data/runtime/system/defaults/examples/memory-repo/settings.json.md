@@ -35,26 +35,28 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The JSON example declares version 2 memory-repo storage and path-rule include/exclude filters with common generated/vendor/build/local exclusions. | L1-L33 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json) |
-| The JSON example shows a branch-gated cross-repo allowance with code and memory inclusion flags. | L35-L45 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json) |
+| The JSON example declares version 2 memory-repo storage and path-rule include/exclude filters with common generated/vendor/build/local exclusions. | "version" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json:2-2 |
+| The JSON example shows a branch-gated cross-repo allowance with code and memory inclusion flags. | "crossRepo" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json:35-35 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 2 repo-internal citation rows and preserved verification metadata.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-14T21:38+02:00: Refreshed after the example gained the standard path-rule exclusion baseline for generated/vendor/build/local artifacts. Verification metadata remains pinned to the last committed source until closeout.

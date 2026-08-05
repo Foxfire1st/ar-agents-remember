@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/__init__.py`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -59,19 +59,20 @@ importing the package never drags in the providers/worktrees machinery.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The route this package exposes. | [overview.md](overview.md) |
-| The ambient lifecycle singleton re-exported here. | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The state vocabulary re-exported here. | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The projection schema re-exported here. | [projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The reducer functions re-exported here. | [reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The shared store-root resolver re-exported here. | [paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
-| The timing config + age helper now sourced here. | [timeutil.py](agents-remember/mcp/src/agents_remember/observer/timeutil.py) |
-| The served-onboarding ledger re-exported here (`ServedStore`/`ServedRecord`/`served_key`/`SERVED_RECORD_SCHEMA`). | [served_store.py](agents-remember/mcp/src/agents_remember/observer/served_store.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The route this package exposes. | `# mcp/src/agents_remember/observer/ — Observable-Lifecycle Substrate And Projection Overview` | onboarding/mcp/src/agents_remember/observer/overview.md:1-1042 |
+| The ambient lifecycle singleton re-exported here. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
+| The state vocabulary re-exported here. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:187-210 |
+| The projection schema re-exported here. | `LifecycleProjection` | mcp/src/agents_remember/observer/projection.py:99-138 |
+| The reducer functions re-exported here. | `project_lifecycle`; `project_workspace` | mcp/src/agents_remember/observer/reducer.py:79-106; mcp/src/agents_remember/observer/reducer.py:126-179 |
+| The shared store-root resolver re-exported here. | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34 |
+| The timing config + age helper now sourced here. | `HEARTBEAT_SECONDS`; `STALE_AFTER_SECONDS`; `TTL_SECONDS`; `Clock` | mcp/src/agents_remember/observer/timeutil.py:21-21; mcp/src/agents_remember/observer/timeutil.py:29-31 |
+| The served-onboarding ledger re-exported here (`ServedStore`/`ServedRecord`/`served_key`/`SERVED_RECORD_SCHEMA`). | `ServedStore`; `ServedRecord`; `served_key`; `SERVED_RECORD_SCHEMA` | mcp/src/agents_remember/observer/served_store.py:44-44; mcp/src/agents_remember/observer/served_store.py:52-54; mcp/src/agents_remember/observer/served_store.py:57-75; mcp/src/agents_remember/observer/served_store.py:78-121 |
 
 ## Update History
 
+- 2026-08-03T02:46:38+02:00 — W3-B01 curator: curated 8 Repo-Internal table citations with exact overview, lifecycle, state, projection, reducer, path, timing, and served-ledger anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-08T14:35+02:00 — 260707-HFX2-L1: re-exports `ExpectationRowNode` alongside `AgentPickupNode` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
 - 2026-06-25T13:20+02:00 — Task 23/24: re-exported `AgentPickupNode`, the projection surface for waiting-for-agent/check-chat task-row feedback.
 - 2026-06-22T22:33+02:00 — Slice 07: re-export the served-onboarding ledger surface (`SERVED_RECORD_SCHEMA`, `ServedRecord`, `ServedStore`, `served_key`) and pin it in `__all__`; the I/O readers stay unexported by design. Body and references only — verification metadata pinned until closeout stamps the slice-07 code commit.

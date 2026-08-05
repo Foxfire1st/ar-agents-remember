@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -122,14 +122,12 @@ not as normative delivery authority.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Delivery state is persisted on the operator inbox record. | [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| Echo-confirmed paste behavior lives in the server-side paster. | [terminal_paste.py](agents-remember/mcp/src/agents_remember/serving/terminal_paste.py) |
-| The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | [injector.py](injector.py.md) |
-| `serving.supervisor`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit action the supervisor takes rides through this same translation layer. | `_redeliver`; `_post_owner_signal` | [supervisor.py](supervisor.py.md) |
-| `deliver_inbox_entry` threads `redelivery_floor_seconds` into every `record_delivery` path. | L42-L90 | [inbox_delivery.py](agents-remember/mcp/src/agents_remember/serving/inbox_delivery.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Delivery state is persisted on the operator inbox record. | `record_delivery` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:159-209 |
+| The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | `created_by` | mcp/src/agents_remember/serving/app.py:1266-1266 |
+| 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
+| `serving.supervisor`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit action the supervisor takes rides through this same translation layer. | `_redeliver`; `_post_owner_signal` | mcp/src/agents_remember/serving/supervisor.py:527-577; mcp/src/agents_remember/serving/supervisor.py:775-855 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -174,6 +172,8 @@ gate — are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-02T21:40:21+02:00 — 260731-EFA-L6 curator W2-B10: resolved 8 citation findings by repairing 4 findings across 2 reference rows and deleting the 2 unanchorable claims under the 2026-08-02 14:10 citation ruling; scoped recheck clean.
+- 2026-08-02T01:05+02:00 — No content impact: repaired this document's `Repo-Internal References` table shape. Rows carrying a citation cell were rendering short: the header declared two columns while those rows held three, and GFM TRUNCATES the extra cell, so the citation was in the source but invisible in the rendered table (`memory_quality/style/document_shape/tables.py`, `table_row_cell_count_mismatch`). Widened the header and its delimiter row to `| Finding | Citations | Source Path |` — the shape 1,941 rows in this tree already use — and padded the two-cell rows with `n/a`, which is this tree's own no-citation value (489 uses; zero empty citation cells exist). No finding text and no citation was changed by the widening. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `InboxDeliveryLog`, `RedeliveryFloor`, `DeliveryAdmission`, `_DeliveryOutcome` and `_AdapterCorrelation`, plus `_delivery_refusal` / `_redelivery`; durable semantics unchanged.
 - 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative delivery to inbox-rooted adapter submission and
   explicit consume acknowledgement; historicized pane/log/copy-mode/raw-paste authority.

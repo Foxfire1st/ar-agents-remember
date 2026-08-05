@@ -37,22 +37,22 @@ On all 59 the decorator contributes an OpenAPI schema and validates *nothing*. O
 validated by FastAPI itself. "Declare a model everywhere plus a test that no declaration is
 missing" would have been green on day one and enforced nothing on 59 routes.
 
-**`WireResponse`** (L88-L100) is the strict base every model here derives from:
+**`WireResponse`** cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:88-100) is the strict base every model here derives from:
 `alias_generator=to_camel`, `extra="forbid"`, `frozen=True`, `populate_by_name=True` — mirroring
 `serving/conversation/models.WireModel`. `extra="forbid"` is what makes a conformance check able
 to fail at all: a key the handler started emitting and nobody declared is a validation error,
 not a silent addition.
 
-**Refusal shapes** (L111-L191) are separate models rather than one "status + anything" envelope,
+**Refusal shapes** cit:([`StatusRefusal`, `HttpDetailRefusal`], mcp/src/agents_remember/serving/response_contract.py:111-115; mcp/src/agents_remember/serving/response_contract.py:186-191) are separate models rather than one "status + anything" envelope,
 precisely because `extra="forbid"` would make a shared permissive model accept every shape and
-pin none of them. `HttpDetailRefusal` (L186-L191) is the odd one out: it is FastAPI's own
+pin none of them. cit:([`HttpDetailRefusal`], mcp/src/agents_remember/serving/response_contract.py:186-191) is the odd one out: it is FastAPI's own
 `HTTPException` body, so it is a plain `BaseModel` with no alias generator.
 
-**The two live-enforcement models.** `TerminalCatalogEntryWire` (L280-L346) declares 52 fields in
+**The two live-enforcement models.** cit:([`TerminalCatalogEntryWire`], mcp/src/agents_remember/serving/response_contract.py:280-346) declares 52 fields in
 `TerminalCatalogEntry.to_json`'s exact emission order, and its route declares
 `response_model_exclude_unset=True` so re-serializing reproduces that hand-rolled, *conditional*
 body byte for byte instead of back-filling nulls the dashboard has never seen.
-`DetectedHarnessesResponse` (L363-L366) is the other. These two are the routes where a
+cit:([`DetectedHarnessesResponse`], mcp/src/agents_remember/serving/response_contract.py:363-366) is the other. These two are the routes where a
 declaration change is a **behaviour** change: they used to be forward-compatible pass-through,
 and with `response_model` + `extra="forbid"` they now answer HTTP 500
 (`ResponseValidationError`) if the payload gains a key, loses a required one, or changes type.
@@ -66,29 +66,29 @@ fires the moment the field is added, before any payload carries it — strictly 
 either the runtime 500 or a conformance run whose fixture happens to populate the new field.
 
 **Unions are declared where the route really answers in more than one shape**, and each is
-discriminated where it can be: `CodeNode` (L616-L618, `Field(discriminator="kind")` — only a
-`kind: "file"` row may carry `language`/`hasSidecar`, and only it must), `OnboardingMeta`
-(L645), `OnboardingResolution` (the five shapes `GET /api/files/onboarding` answers with,
-L709-L719), and `SubmissionLookup` (L947-L949).
+discriminated where it can be: cit:([`CodeNode`, `OnboardingMeta`, `OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:616-616; mcp/src/agents_remember/serving/response_contract.py:645-645; mcp/src/agents_remember/serving/response_contract.py:709-715) (`Field(discriminator="kind")` — only a
+`kind: "file"` row may carry `language`/`hasSidecar`, and only it must), cit:([`OnboardingMeta`], mcp/src/agents_remember/serving/response_contract.py:645-645),
+cit:([`OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:709-715) (the five shapes `GET /api/files/onboarding` answers with),
+and cit:([`SubmissionLookup`], mcp/src/agents_remember/serving/response_contract.py:947-949).
 
 **Three shared `responses={...}` tables** close the module, declared once because the refusal
 idiom is shared, and each route adds only the statuses it can actually produce:
 
-- `SCOPED_READ_RESPONSES` (L1057-L1063) — the files / notes / change-set family, whose
+- cit:([`SCOPED_READ_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1057-1063) — the files / notes / change-set family, whose
   `run_scoped` and its two siblings map every domain error onto exactly 400 and 404.
-- `SESSION_CONTROL_RESPONSES` (L1067-L1074) — every `harness_control_api` route, where
+- cit:([`SESSION_CONTROL_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1067-1074) — every `harness_control_api` route, where
   `_control_route` resolves the seat and `_control_failure_response` answers control failures
   (404 / 409 / 503).
-- `ACTION_RESPONSES` (L1079-L1087) — `/api/actions/{action}`: the evaluator's refusals plus the
+- cit:([`ACTION_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1079-1087) — `/api/actions/{action}`: the evaluator's refusals plus the
   not-ready projection as an `HttpDetailRefusal`.
 
-`TerminalCleanupResult.model_rebuild()` (L1090) is not decoration: `TerminalCleanupResult`
-(L420-L427) references `TerminalCleanupSkip`, which is declared after it (L430-L434).
+cit:(["TerminalCleanupResult.model_rebuild()", `TerminalCleanupResult`, `TerminalCleanupSkip`], mcp/src/agents_remember/serving/response_contract.py:420-427; mcp/src/agents_remember/serving/response_contract.py:430-434; mcp/src/agents_remember/serving/response_contract.py:1090-1090) is not decoration: `TerminalCleanupResult`
+references `TerminalCleanupSkip`, which is declared after it.
 
 ### Conventions
 
 Every model is strict (`extra="forbid"`), immutable (`frozen=True`), and camel-aliased — an
-undeclared key is a failure, which is the entire point. `__all__` (L80-L85) lists only the three
+undeclared key is a failure, which is the entire point. cit:([`__all__`], mcp/src/agents_remember/serving/response_contract.py:80-85) lists only the three
 shared tables and `WireResponse`; the individual models are imported by name from the route
 modules and are deliberately not re-exported wholesale.
 
@@ -113,8 +113,8 @@ declare" is answered in the route module, never by reading this one.
   all — a websocket has no response body to model. That is the only route without a declaration,
   and the exhaustiveness test finds it by route *class*, so a future undeclared HTTP route cannot
   hide behind a path skip-list.
-- **The route inventory is pinned.** `test_serving_response_conformance` asserts
-  `len(self.http) == 61` (L536) — 62 route decorators, 61 HTTP plus the one websocket — so a new
+- **The route inventory is pinned.** cit:([`test_the_declared_surface_is_the_whole_surface`], mcp/tests/test_serving_response_conformance.py:529-534) asserts
+  `len(self.http) == 61` — 62 route decorators, 61 HTTP plus the one websocket — so a new
   route cannot be added without meeting this contract.
 - **Declaring is not enforcing, and the module says so.** Rewriting the 59 handlers FastAPI does not
   validate — the 57 returning a `Response` subclass **and the two SSE generators** — to return models
@@ -139,7 +139,7 @@ domain-documentation pass was available. FastAPI's `response_model` behaviour is
 against the repository's own routing code and conformance suite rather than an external
 document.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -148,28 +148,29 @@ document.
 The models are declared here and consumed by the four serving route modules; the enforcement is
 one suite, and the one live-validated model has its own producer-parity test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The app routes that name these models, including the two FastAPI-validated bare-`dict` routes and the single undeclared websocket. | `TerminalSessionsResponse`; `DetectedHarnessesResponse`; `ACTION_RESPONSES` | [app.py](app.py.md) |
-| The files routes consuming `RepoCatalog` / `DirectoryListing` / `FileContents` / `OnboardingResolution` under `SCOPED_READ_RESPONSES`. | `register_files_routes` | [files.py](files.py.md) |
-| The change-set routes consuming `TaskChangeSet` / `LeafChangeSet` / `FileDiff` / `MasterChangeSet`. | `register_changeset_routes` | [changeset.py](changeset.py.md) |
-| The notes routes consuming `NotesListing` / `NoteContents`. | `register_notes_routes` | [notes.py](notes.py.md) |
-| The harness-control routes consuming `SESSION_CONTROL_RESPONSES` plus the submit/interaction extra refusals. | `SESSION_CONTROL_RESPONSES` | [harness_control_api.py](harness_control_api.py.md) |
-| The producer this contract's one live-validated model must stay key-for-key equal to. | `TerminalCatalogEntry.to_json` | [terminal_catalog.py](terminal_catalog.py.md) |
-| The enforcement: the route inventory pin, the declaration exhaustiveness test, the catalog key-set equality test, and `validate_wire`'s `by_name=False` alias-only validation. | L211-L231; L512-L536; L687 | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
-| The gate-decision body `ActionAccepted` carries through on an accepted gate verb. | `GateDecideResponse` | [models/gates.py](agents-remember/mcp/src/agents_remember/models/gates.py) |
+| The app routes that name these models, including the two FastAPI-validated bare-`dict` routes and the single undeclared websocket. | `api_terminal`, `api_terminal_sessions`, `api_harnesses` | mcp/src/agents_remember/serving/app.py:1374-1376; mcp/src/agents_remember/serving/app.py:1382-1390; mcp/src/agents_remember/serving/app.py:1393-1395 |
+| The files routes consuming `RepoCatalog` / `DirectoryListing` / `FileContents` / `OnboardingResolution` under `SCOPED_READ_RESPONSES`. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
+| The change-set routes consuming `TaskChangeSet` / `LeafChangeSet` / `FileDiff` / `MasterChangeSet`. | `register_changeset_routes` | mcp/src/agents_remember/serving/changeset.py:501-554 |
+| The notes routes consuming `NotesListing` / `NoteContents`. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:168-177 |
+| The harness-control routes consuming `SESSION_CONTROL_RESPONSES` plus the submit/interaction extra refusals. | `register_harness_control_routes`, `_control_route`, `_control_failure_response` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/src/agents_remember/serving/harness_control_api.py:465-485; mcp/src/agents_remember/serving/harness_control_api.py:488-493 |
+| The producer this contract's one live-validated model must stay key-for-key equal to. | `to_json` | mcp/src/agents_remember/serving/terminal_catalog.py:255-324 |
+| The enforcement: the route inventory pin, the declaration exhaustiveness test, the catalog key-set equality test, and `validate_wire`'s `by_name=False` alias-only validation. | `validate_wire` | mcp/tests/test_serving_response_conformance.py:211-231 |
+| The gate-decision body `ActionAccepted` carries through on an accepted gate verb. | `GateDecideResponse` | mcp/src/agents_remember/models/gates.py:36-44 |
 
 ## Cross-Repo References
 
 No external repository boundary is declared here; every model describes a body this repository's
 own serving app emits over localhost.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 13 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=7, citation_source_malformed=3); final scoped citation check clean.
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. The **Invariants**
   bullet said "Rewriting the 59 `Response`-returning handlers…", attributing a `Response` return to
   all 59. The module's own line (L47) says "the 59 handlers", without that attribution, and its L11-L18

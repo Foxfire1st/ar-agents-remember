@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-15T23:16+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../../overview.md`            |
 
 ## Governing Overview
@@ -111,38 +111,42 @@ No open file-local todos.
 
 Harness-native setup details now live in the install guides and starter packages.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external documentation is needed to prove this repository-local skill contract. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. | L8-L22; L25-L42 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | L63-L95 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | L97-L116 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 2 interviews the developer on the agentic settings families and writes the global file seeded by `runtime_install`. | L125-L165 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| Stage 3/4 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | L167-L194 | [`c-13-install-and-onboard` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md) |
-| The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). | L47-L86 | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
-| The install-side seeding the interview builds on (copy-if-missing global file). | seed_agentic_settings | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
+| Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | `## Stage 0 - Preflight` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:67-103 |
+| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | `## Stage 1 - Runtime Scaffold`, `runtime_install`, `skills_install` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:104-123 |
+| Stage 2 interviews the developer on the agentic settings families and writes the global file seeded by `runtime_install`. | `runtime_install` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:125-165 |
+| Stage 3/4 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | `## Stage 3 - Memory Repo: Ask Scaffold Vs Existing`, `## Stage 4 - Bootstrap` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:187-215 |
+| The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). | `provider_watchers_tool`, "refresh", "restart", "invalidate-indexes" | mcp/src/agents_remember/application/provider_tools.py:48-65 |
+| The install-side seeding the interview builds on (copy-if-missing global file). | `seed_agentic_settings` | mcp/src/agents_remember/install/runtime.py:164-180 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this skill.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T03:59:59+02:00 — Curated 13 citation findings (6 table rows, 1 prose citation, 6 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation and rewrote
   its claim. The row's `L196-L216` were SKILL.md stage-heading line numbers carried onto a
   `provider_tools.py` link, so they never pointed at that file's material; the row now cites
   `provider_watchers_tool` at `provider_tools.py` L47-L86. Reading it showed the claim was also
   false: the tool no longer accepts `action="refresh"` (it raises and points at `restart` /
-  `invalidate-indexes`), while this SKILL.md's Stage 5 (L216-L236) still instructs `refresh`. The
+  `invalidate-indexes`), while this SKILL.md's Stage 5 still instructs `refresh`: cit:([`## Stage 5 - Configure Providers To Index`], mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:216-240). The
   row now states the tool's real action vocabulary and names that drift instead of asserting a
   refresh path that fails.
 

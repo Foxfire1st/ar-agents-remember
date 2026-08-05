@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,10 +25,10 @@ fake adapter as the only double at the harness edge.
 
 ### Logic
 
-`ControlApiTests` (L26) exercises the seventeen registered routes over the real wire: the O4
+cit:([`ControlApiTests`], mcp/tests/test_conversation_control_api.py:26-378) exercises the seventeen registered routes over the real wire: the O4
 typed-error mapping per route family, remote-peer 403, epoch guards, multipart attachment staging,
 read-only policy 405s on PATCH/PUT/DELETE, the queue-truth privacy + withdrawal flow end-to-end, and
-`test_no_paste_pty_or_native_queue_substitution_in_control_modules` (L355), the source scan proving
+cit:([`test_no_paste_pty_or_native_queue_substitution_in_control_modules`], mcp/tests/test_conversation_control_api.py:355-378), the source scan proving
 no PTY Esc / paste / native-queue substitution anywhere in the control modules. The terminal-wire
 arm submits through `submit_control_prompt(entry, body, ControlSubmission(source="terminal",
 request_id=…))` — one parameter object, not loose keywords.
@@ -55,7 +55,7 @@ None.
 
 No Domain Documentation source is configured; the route contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -63,21 +63,23 @@ No Domain Documentation source is configured; the route contract is repository-o
 
 The suite drives the registered routes and their O4 mapping over the real wire and shared topology.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The seventeen registered routes and the O4 typed-error mapping under test. | L107-L124; L131-L631 | [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
-| The shared fake-topology harness (real bridge/IPC/authority/L0 composition). | L406-L518 | [_control_plane.py](agents-remember/mcp/tests/_control_plane.py) |
-| The foundation pin that independently asserts the exact seventeen routes. | L54-L82 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The seventeen registered routes and the O4 typed-error mapping under test. | `conversation_telemetry` | mcp/src/agents_remember/serving/conversation/control/api.py:711-734 |
+| The shared fake-topology harness (real bridge/IPC/authority/L0 composition). | `ControlHarness` | mcp/tests/_control_plane.py:436-518 |
+| The foundation pin that independently asserts the exact seventeen routes. | `control_paths` | mcp/tests/test_conversation_foundation.py:58-62 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 6 citation finding(s); scoped recheck clean.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `control/api.py` citation. The file
   is now 686 lines and the stamped `L57-L570` both started before the routes (in the import block)

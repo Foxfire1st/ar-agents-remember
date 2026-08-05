@@ -24,13 +24,11 @@ only; a parent-conversation interaction stays unbadged.
 
 ### Logic
 
-- **Fixture** (L11-L25): an `interactionItem()` factory — lane `interaction`, phase `waiting`, a
+- **Fixture** cit:([`interactionItem`], dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx:11-25): an `interactionItem()` factory — lane `interaction`, phase `waiting`, a
   single text prompt block — with the `agent` ref attached only when supplied.
-- **Badge present** (L32-L39): an item carrying `{ agentId: "t-1", nickname: "scout" }` renders the
-  `interaction-agent-badge` with the nickname label.
-- **Label fallback** (L41-L46): with no nickname/role/path bound, the badge falls back to
+- **Label fallback** cit:([`agentLabel`], dashboard/src/data/conversation/agents.ts:30-38): with no nickname/role/path bound, the badge falls back to
   `agent <first8>` (`agent abcdef12`) — the `agentLabel` precedence chain's floor.
-- **Badge absent** (L48-L51): a parent-conversation interaction (no agent ref) renders no badge at
+- **Badge absent** cit:([`interactionItem`, "render(<InteractionItem item={interactionItem()} />)", "toBeNull"], dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx:11-25; dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx:49-50): a parent-conversation interaction (no agent ref) renders no badge at
   all.
 
 ### Invariants And Boundaries
@@ -38,34 +36,17 @@ only; a parent-conversation interaction stays unbadged.
 - The suite pins the badge as bound-evidence-only: attribution is never invented for a
   parent-conversation interaction, and never omitted when an agent ref is bound.
 
-## Docs References
-
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
-configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
-reviewed task evidence for any current behavioral claim.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
-
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | L9 | [InteractionItem.tsx](InteractionItem.tsx) |
-| The `ConversationItem`/`agent` ref type the fixture builds. | L8 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The `agentLabel` precedence chain whose nickname and `agent <first8>` floors are pinned here. | — | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts) |
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| The component under test. | `InteractionItem` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101 |
+| The `ConversationItem`/`agent` ref type the fixture builds. | `ConversationItem`; `agent` | dashboard/src/data/conversation/types.ts:158-176 |
+| The `agentLabel` precedence chain whose nickname and `agent <first8>` floors are pinned here. | `agentLabel` | dashboard/src/data/conversation/agents.ts:30-38 |
 
 ## Update History
+
+- 2026-08-04T13:49:32+02:00 — 260731-EFA-L6 S18-B02 curator: extended the badge-absence claim through the no-agent render and null assertion and regenerated the final range with the scoped fixer.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: created the sidecar for the R7 interaction-badge
   suite — badge present with the asking agent's label, the `agent <first8>` fallback when no

@@ -35,27 +35,28 @@ Fill verification metadata after the source file is committed.
 
 No external documentation is needed for this repository-local template.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding                                                                                  | Citations | Source Path                                                                                               |
-| ---------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------- |
-| The boundary pack records allowed adjacent repos, boundary summaries, confirmed interfaces, and shared contracts. | L1-L31    | [cross-repo-boundary-pack-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md) |
-| The template records branch/topology notes, same-repo facts that must not be classified as cross-repo, boundary risks, and developer-confirmation needs. | L33-L51   | [cross-repo-boundary-pack-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md) |
-| `c-03-repo-bootstrap` skill Phase 4F writes boundary packs for priority routes with inbound or outbound cross-repo signals. | L837-L859 | [`c-03-repo-bootstrap` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The boundary pack records allowed adjacent repos, boundary summaries, confirmed interfaces, and shared contracts. | `## Allowed Adjacent Repos`; `## Boundary Summary`; `## Confirmed Interfaces`; `## Shared Contracts` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md:11-32 |
+| The template records branch/topology notes, same-repo facts that must not be classified as cross-repo, boundary risks, and developer-confirmation needs. | `## Branch And Topology Notes`; `## Same-Repo Facts That Must Not Be Classified As Cross-Repo`; `## Boundary Risks`; `## Needs Developer Confirmation` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md:33-51 |
+| `c-03-repo-bootstrap` skill Phase 4F writes boundary packs for priority routes with inbound or outbound cross-repo signals. | `### 4F — Cross-Repo Boundary Pass` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:936-959 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-14T18:00+02:00: Created onboarding for the cross-repo boundary pack template. Verification metadata remains blank until the source file is committed.

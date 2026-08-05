@@ -82,30 +82,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reducer consumes these item/block/event/status types. | L17-L313 | [reducer.ts](reducer.ts) |
-| The roster derivation + focus model consumes `ConversationAgentRef`/`ConversationAgentStatus` and reads `ConversationItem.agent`. | L140-L156 · L172 | [agents.ts](agents.ts) |
-| The client + stream mirror these page/telemetry/interrupt/error shapes. | L8-L15 | [client.ts](client.ts) · [stream.ts](stream.ts) |
-| The server wire contract this file mirrors exactly (camelCase `to_camel`). | — | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The stale L1 control/telemetry capability view (`controls.interrupt`). | L154-L167 | [active/capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
+| The reducer consumes these item/block/event/status types. | "export function applyInitialPage" | dashboard/src/data/conversation/reducer.ts:168-168 |
+| The roster derivation + focus model consumes `ConversationAgentRef`/`ConversationAgentStatus` and reads `ConversationItem.agent`. | "export function deriveAgents" | dashboard/src/data/conversation/agents.ts:71-71 |
+| The client + stream mirror these page/telemetry/interrupt/error shapes. | "export async function fetchConversationTelemetry", "export const STREAM_OPEN_DEADLINE_MS" | dashboard/src/data/conversation/client.ts:101-101; dashboard/src/data/conversation/stream.ts:30-30 |
+| The server wire contract this file mirrors exactly (camelCase `to_camel`). | "class ConversationEventEnvelope" | mcp/src/agents_remember/serving/conversation/models.py:633-633 |
+| The stale L1 control/telemetry capability view (`controls.interrupt`). | "def _fixture_evidence" | mcp/src/agents_remember/serving/conversation/active/capabilities.py:56-56 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the additive harness sub-agent
   identity (D2/D3) — the `ConversationAgentStatus` union, `ConversationAgentRef`

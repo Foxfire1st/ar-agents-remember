@@ -35,18 +35,19 @@ reducer's `ActionAvailability`, never recomputed here.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `ActionAvailability` shape rendered (enabled / disabledReason / nextSafeAction). | L36-L49 | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| The `ActionAvailability` shape rendered (enabled / disabledReason / nextSafeAction). | `ActionAvailability` | mcp/src/agents_remember/observer/projection.py:45-58 |
 
 ## Update History
 
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: normalized 4 prose citation references to the `ActionAvailability` evidence; final scoped result 0 (checker-clean).
+
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the
-  `observer/projection.py` citation. `L26-L33` → `L36-L49`; read there: `class ActionAvailability`
-  (L36), `enabled` (L47), `disabledReason` (L48), `nextSafeAction` (L49). The old range was short
-  as well as drifted — shifting it alone would have stopped before all three fields the finding
-  names, so the end was widened to the class's last field rather than merely moved. No body claim
-  changed.
+  `observer/projection.py` citation. cit:([`ActionAvailability`], mcp/src/agents_remember/observer/projection.py:45-58)
+  names the class and its enabled, disabledReason, and nextSafeAction fields. The old range was
+  short as well as drifted, so the citation is widened to cover the class's last field rather than
+  merely moved. No body claim changed.
 
 - 2026-06-15T17:00 — Created for slice 5d: `Affordance` migrated to a Panda `cva` (was `.afford--*`).
   Verification metadata pinned until closeout stamps the 5d code commit.

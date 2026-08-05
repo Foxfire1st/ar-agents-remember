@@ -51,17 +51,20 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Structural canvas and overlay placement. | [EnclosureCanvas.tsx](agents-remember/dashboard/src/panels/engine-room/EnclosureCanvas.tsx) |
-| Timeline selectors and choreography. | [useEngineTimeline.ts](agents-remember/dashboard/src/panels/engine-room/useEngineTimeline.ts) |
-| Visual isolation regressions. | [EnclosureProcessMap.test.tsx](agents-remember/dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Timeline selectors and choreography. | `useEngineTimeline`; `buildFx` | dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
+| Visual isolation regressions. | "isolates repeating transforms from the text-heavy structural SVG" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:73-89 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: removed the unsupported canvas/overlay
+  ownership claim, retained the exact timeline choreography and visual-isolation references, and
+  anchored `buildFx` only where its implementation is present.
 
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for the
   sparse effects overlay and recorded that it preserves existing choreography and structural

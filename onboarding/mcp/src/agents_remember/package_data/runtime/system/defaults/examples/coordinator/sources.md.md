@@ -35,25 +35,27 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The coordinator sources example distinguishes global source registries from repository-specific domain documentation. | L1-L12 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md) |
+| The coordinator sources example distinguishes global source registries from repository-specific domain documentation. | `# Coordinator Sources Example` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md:1-12 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 1 citation entry (2 findings); no Tier-3 findings.
 
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-13T13:38: Created onboarding for the coordinator sources example.

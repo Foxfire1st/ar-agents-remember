@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:20+02:00     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,10 +17,10 @@ tool response envelopes.
 
 ## Code Commentary
 
-`WorktreeSummary` (L36-L73) is the strict context-packet shape for the
+cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:36-74) is the strict context-packet shape for the
 `c-09-git-worktree-manager` lifecycle. Its vocabulary fields are typed, and
-**since 260731-EFA-L4 every one of them is IMPORTED from the module that
-produces it rather than retyped here** (L9-L29). The command response models
+**since 260731-EFA-L4 every shared lifecycle vocabulary is imported from the
+module that produces it; only `WorktreeState` remains local** (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:33-33; mcp/src/agents_remember/models/worktree.py:36-74)). The command response models
 remain flexible because worktree service results can carry operation-specific
 planning and closeout fields.
 
@@ -39,14 +39,14 @@ planning and closeout fields.
 | `nextTool` | `NextTool` (5 members) | `guidance.py` L47-L53 |
 | `state` | `WorktreeState` — the ONE alias still declared here (L33) | this file |
 
-`WorktreeState` stays local on purpose: `worktrees.status.worktree_status_packet`
+`WorktreeState` stays local on purpose: `application.worktree_status.worktree_status_packet`
 constructs this model directly and is its only writer, so the projection there is
 already the single writer the type checker can see.
 
 **What the hand-written copies had cost.** They had drifted from their producers
 in six places at once, all of them writable and none of them validated:
 `chat-task` (the kind `worktree_start`'s own docstring advertises, present on 8
-contracts), `reopened` (written by `tasks/reopen.py`), `carryover-pending`,
+contracts), `reopened` (written by `worktrees/reopen.py`), `carryover-pending`,
 `abandoned`, `request_carryover_decision` and `memory_carryover_apply`. The
 result was that `WorktreeSummary` rejected **165 of the 213 `series-contract.md`
 files on disk (77.5%)** with a `ValidationError` that nothing on the
@@ -57,11 +57,11 @@ and the old `NextOperation`/`NextTool`/`WorktreePhase` carried
 `request_commit_approval` / `worktree_closeout_preview` /
 `commit-approval-pending`, which belong to the closeout preview's commit gate and
 the blocked-start recovery payloads — those keep their own
-`RecoveryOperation` / `RecoveryTool` aliases (`guidance.py` L61-L68) precisely so
+`RecoveryOperation` / `RecoveryTool` aliases (cit:([`RecoveryOperation`, `RecoveryTool`], mcp/src/agents_remember/worktrees/modules/guidance.py:62-69)) precisely so
 a wider `NextOperation` cannot put "requires developer approval" back into the set
 the context packet's `nextOperation` claims to be.
 
-`nextRequiredArgs` (L63-L67) is **omitted rather than `[]`** when there is
+`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:68-68)) is **omitted rather than `[]`** when there is
 nothing to supply. `next_guidance` writes the key only when the next call needs a
 caller-supplied argument; the projection now reports what the producer said
 instead of substituting a value for it. This is a stated wire change: measured
@@ -72,7 +72,7 @@ beyond `nextArgs` — and there is no third state to confuse it with. The same r
 now covers `nextTool` and `nextArgs`, where the old substitution had put an
 un-declarable `""` on the wire.
 
-`unknownContractCells: list[str] | None` (L68-L72) is new. It is present only
+`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:73-73)) is new. It is present only
 when the contract file carried a cell outside its declared vocabulary, formatted
 `"<field>=<raw token> read as <fallback>"`. The `state` is still `active` and
 every other field was computed from the substituted values — this field is the
@@ -108,7 +108,7 @@ all-snake payload shape.
   edit at the producer; re-declaring one locally recreates the exact set
   difference that made the packet raise on 77.5% of the contracts on disk.
 - **`WorktreeState` is the only local alias**, and only because
-  `worktrees.status` constructs this model directly and is its sole writer.
+  `application.worktree_status` constructs this model directly and is its sole writer.
 - Absent is the shape for `nextTool` / `nextArgs` / `nextRequiredArgs`. The
   projection reports what the producer wrote and never fills a hole the producer
   left; `""`, `{}` and `[]` are not substitutes for an omitted key.
@@ -120,13 +120,13 @@ all-snake payload shape.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The sole writer of `WorktreeSummary`: `worktree_status_packet` (L14-L49) returns the MODEL now, and `_summary_from_status_payload` (L52-L103) projects field by field, reading `nextTool`/`nextArgs`/`nextRequiredArgs` with `.get` so an omitted key stays omitted. | [status.py](agents-remember/mcp/src/agents_remember/worktrees/status.py) |
-| The six persisted contract vocabularies (`WorkflowKind` L50 … `CleanupStatus` L55) with their `VALID_*` frozensets (L59-L64), the `ContractCells` typed write record (L171) and `amend_contract` (L188). | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The guidance state machine that declares and writes `WorktreePhase` (L28-L37), `NextOperation` (L38-L46) and `NextTool` (L47-L53), plus the separate `RecoveryOperation`/`RecoveryTool` (L61-L68) that deliberately do NOT reach this model. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| The suite pinning every value a producer can emit against the field it crosses, including the omitted-`nextRequiredArgs` shape and the degrade-and-report contract cell. | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
-| Public worktree MCP controllers delegate to the package worktree manager. | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading `nextTool`/`nextArgs`/`nextRequiredArgs` with `.get` so an omitted key stays omitted. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
+| The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:72-77; mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
+| The guidance state machine that declares and writes `WorktreePhase`, `NextOperation` and `NextTool`, plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | `WorktreePhase`; `NextOperation`; `NextTool`; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:28-53; mcp/src/agents_remember/worktrees/modules/guidance.py:62-69 |
+| The suite pinning every value a producer can emit against the field it crosses, including the omitted-`nextRequiredArgs` shape and the degrade-and-report contract cell. | `AdvertisedVocabularyTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:823-881 |
+| Public worktree MCP application entry points delegate to the package worktree manager. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:239-241 |
 
 ## Series-Contract Notes
 
@@ -134,21 +134,26 @@ Worktree response models expose `kind`, `leafId`, and `enclosurePath` in additio
 
 ## Update History
 
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: removed the internal contradiction by distinguishing imported shared lifecycle vocabularies from the intentionally local `WorktreeState` alias.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: body rewritten; this file was the epicentre.
   The Code Commentary said `WorktreeSummary` "uses literal state fields" — it declared nine
   `Literal`s locally, all hand-copied from producers, and they had drifted in six writable places:
   `chat-task`, `reopened`, `carryover-pending`, `abandoned`, `request_carryover_decision` and
   `memory_carryover_apply`. That made this model reject 165 of the 213 `series-contract.md` files
   on disk (77.5%) with an uncaught `ValidationError` on the `context_packet` tool path. All nine
-  are now imports (L9-L29); only `WorktreeState` (L33) is still declared here, because
+  are now imports (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:33-33; mcp/src/agents_remember/models/worktree.py:36-74)); only cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:33-33) is still declared here, because
   `worktrees.status` is its sole writer. Added the declaration table, which also records three
   published-vocabulary changes the card had no way to state: `WorkflowKind` is now `chat-task |
   light-task` (the bare `chat`/`light` had zero occurrences across the 213 contracts and no
   writer), `CleanupStatus` gained `reopened`, and `request_commit_approval` /
   `worktree_closeout_preview` / `commit-approval-pending` left `NextOperation`/`NextTool`/
   `WorktreePhase` for the separate `RecoveryOperation`/`RecoveryTool` aliases that never reach
-  this model. Recorded `nextRequiredArgs` (L63-L67) now being OMITTED rather than `[]` — a stated
-  wire change on 48 of the 213 responses — and the new `unknownContractCells` field (L68-L72),
+  this model. Recorded `nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:68-68)) now being OMITTED rather than `[]` — a stated
+  wire change on 48 of the 213 responses — and the new `unknownContractCells` field (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:73-73)),
   the degrade-and-report notice that keeps a contract with an off-vocabulary cell reachable by
   every lifecycle tool. Added four invariants. Citations: `WorktreeSummary` pinned to L36-L73,
   the import block to L9-L29, `WorktreeState` to L33; the `status.py` row re-pointed to

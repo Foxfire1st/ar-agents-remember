@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,32 +46,16 @@ state plus an explicit `retry` callback and accepts timeout as a test seam rathe
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Docs References
-
-No relevant documentation was found after checking the configured sources; current claims are
-proven by repository source and direct tests.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No relevant external or domain documentation is configured for this repository-local hook. | Source discovery checked | — |
-
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Supplies the typed one-attempt read and result states. | L1-L74 | [data/harnessCatalog.ts](../../data/harnessCatalog.ts) |
-| Consumes the hook and renders retryable explicit states. | L199-L204 | [LaunchFlow.tsx](LaunchFlow.tsx) |
-| Pins cancellation, timeout, retry, and recovery behavior. | L200-L361 | [LaunchFlow.test.tsx](LaunchFlow.test.tsx) |
-
-## Cross-Repo References
-
-No meaningful cross-repository implementation source governs this repository-local React hook.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| Supplies the typed one-attempt read and result states. | `HarnessCatalogRead`; `readHarnessCatalog` | dashboard/src/data/harnessCatalog.ts:13-16; dashboard/src/data/harnessCatalog.ts:45-51 |
+| Consumes the hook and renders retryable explicit states. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-619 |
 
 ## Update History
+
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored local references with exact source anchors and generated final citation ranges with the scoped fixer.
 
 - 2026-07-18T12:43+02:00 — FEUI-L9R: created the one-to-one card for the candidate chooser read
   owner; verification metadata stays blank until the code candidate is committed and closeout can

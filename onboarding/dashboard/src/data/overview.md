@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -194,17 +194,16 @@ code must not use them as ordinary recovery APIs.
 
 ## Invariants And Boundaries
 
-- **A test fixture is checked against the mirror; the mirror is not checked against the server.**
-  Every wire node a dashboard test builds comes from `test/fixtures/wire.ts` and is type-checked
-  against `types/projection.ts`. `test/contract.test.ts` then measures that mirror against
+- **Fixtures are checked against a generated producer contract.** Every wire node a dashboard test
+  builds comes from `test/fixtures/wire.ts` and is type-checked against `types/projection.ts`, which
+  is generated and stale-checked from the Pydantic projection schema. `test/contract.test.ts` measures
+  the separate hand-maintained sample against that mirror
   `fixtures/snapshot.json` in three directions, and `test/wireFixtureGuard.ts` sweeps the tree for
   the one-token opt-outs plain `tsc` cannot see (a cast, a `@ts-expect-error`, a literal that lost
-  freshness through a variable, `Object.assign`, `JSON.parse`). Both `wire.ts` and `snapshot.json`
-  are **hand-maintained**; no generator exists anywhere in this repository, and `contract.test.ts`
-  files generating the fixture under LEFT FOR CODEGEN. So the chain proves `fixture ⊆ mirror` and
-  mirror-against-snapshot; the `mirror ⊆ server` link is held up by nothing except a person
-  remembering to edit both sides. A field the server starts sending that neither the snapshot nor
-  the mirror knows about is invisible to every gate here. Check it with `npm run typecheck`
+  freshness through a variable, `Object.assign`, `JSON.parse`). `wire.ts` and `snapshot.json` remain
+  hand-maintained fixture/sample artifacts, while the producer-to-TypeScript link is generated. The
+  tests therefore hold fixtures and sample coverage to the generated contract; the generator and
+  stale check hold the contract to the producer schema. Check it with `npm run typecheck`
   (`tsc -b`) — a bare `tsc --noEmit` proves nothing in this repo, because the root tsconfig is
   solution-style and compiles no files while still exiting 0.
 - The terminal catalog and bridge responses are authoritative; browser state is a projection and
@@ -273,9 +272,9 @@ yet,” so no Domain Documentation source was available for this route. The curr
 verified from same-repository source/tests, the task/worker/reviewer records, and the recovered
 same-repository history pack.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found for the data route. | Source discovery checked | — |
+| No relevant domain documentation was found for the data route. | — | — |
 
 ## Cross-Repo References
 
@@ -283,24 +282,22 @@ The data route's imports and authority calls resolve inside agents-remember; no 
 implementation source governs this slice. Adapter behavior is consumed through this repository's
 own server contracts, so no external code path is cited as authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found for these browser state/authority modules. | Import and task-boundary review | — |
+| No applicable cross-repository source was found for these browser state/authority modules. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Catalog/session ownership and cross-tab reconciliation. | [catalogPoll.ts](catalogPoll.ts) · [sessions.ts](sessions.ts) |
-| Per-seat UI and evidence state. | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| Reliable submission and authoritative withdrawal. | [submitClient.ts](submitClient.ts) · [submissionLifecycleClient.ts](submissionLifecycleClient.ts) |
-| Lifecycle termination, residuals, and landed cleanup. | [sessionLifecycle.ts](sessionLifecycle.ts) |
-| Role/spawn hierarchy replacing legacy `sessionGroups`. | [railModel.ts](railModel.ts) |
-| The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | [taskHierarchy.ts](taskHierarchy.ts) · [DetailPanel.tsx](../panels/DetailPanel.tsx) |
-| The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | [types/projection.ts](../types/projection.ts) · [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| The hand-maintained wire mirror this route's suites now build fixtures from, and the two gates that measure it. | [wire.ts](../test/fixtures/wire.ts) · [contract.test.ts](../test/contract.test.ts) · [wireFixtureGuard.ts](../test/wireFixtureGuard.ts) |
-| Effective keymap and composer profile. | [keymap overview](keymap/overview.md) |
-| Product projection of this data plane. | [session-cockpit overview](../panels/session-cockpit/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:113-113 |
+| Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
+| Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:14-14; dashboard/src/data/submitClient.ts:197-197 |
+| Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
+| Role/spawn hierarchy replacing legacy `sessionGroups`. | `sessionGroups` | dashboard/src/data/railModel.ts:119-119 |
+| The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/data/taskHierarchy.ts:43-43; dashboard/src/panels/DetailPanel.tsx:723-723 |
+| The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | "GENERATED FILE", "class _TaskDocumentLifecycleMaps" | dashboard/src/types/projection.ts:1-1; mcp/src/agents_remember/observer/snapshots.py:141-141 |
+| The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:43-43; scripts/sync-projection-types.py:54-54 |
 
 ## Placement Decision
 
@@ -318,6 +315,14 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges, and deleted two rows whose onboarding-overview sources
+  are not indexable; exact non-fixing check returns zero findings.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected the data-route projection boundary:
+  generated/stale-checked mirror, typed fixture builders, and separately measured manual sample.
+  New ranges are explicit `:1-1` curator input.
 
 - 2026-08-01T10:20+02:00 — 260731-EFA-L4 curator (route impact: one source file, one type contract
   and one shared helper): `taskHierarchy.ts` is the only non-test source this leaf changed in the

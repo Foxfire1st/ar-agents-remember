@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/runtime_environment.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,12 +35,14 @@ environments that force UTF-8 Python IO.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The lifecycle CLI uses these root and stdio helpers. | [cli.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/cli.py) |
-| Command execution uses the subprocess environment helper. | [command_runner.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lifecycle CLI uses these root and stdio helpers. | ["default=default_coordination_root()", "configure_utf8_stdio()"] | mcp/src/agents_remember/providers/lifecycle/cli.py:47-47; mcp/src/agents_remember/providers/lifecycle/cli.py:345-345 |
+| Command execution uses the subprocess environment helper. | ["subprocess_env(None)"] | mcp/src/agents_remember/providers/lifecycle/command_runner.py:25-25 |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 2 repository-internal references for lifecycle CLI environment setup and command execution; final scoped result 0 (checker-clean).
 
 - 2026-05-31T12:30+02:00 — Dropped runtime_root_from_script; Logic now describes only the coordination root inference (1.0.0 review remediation).
 - 2026-05-25T21:14+02:00: Created from the environment portion of the former shared lifecycle common module.

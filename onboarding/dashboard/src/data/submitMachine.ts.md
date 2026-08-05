@@ -60,27 +60,29 @@ states start one bounded terminal-word watch shared with reconciliation.
 No Domain Documentation source is configured for this repository; the implemented state algebra and
 its tests are the authority for this internal protocol.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle client feeds status, withdrawal, and response observations through this fold. | — | [submissionLifecycleClient.ts](submissionLifecycleClient.ts) |
-| The transport driver preserves the same request id through submit and reconciliation. | — | [submitClient.ts](submitClient.ts) |
-| The unit suite locks the partial order, availability-loss join, monotonicity, and deadlines. | — | [submitMachine.test.ts](submitMachine.test.ts) |
+| The lifecycle client feeds status, withdrawal, and response observations through this fold. | "possible-send-join" | dashboard/src/data/submissionLifecycleClient.ts:526-526 |
+| The transport driver preserves the same request id through submit and reconciliation. | `executeReliableSubmit`, `continueReliableReconcile` | dashboard/src/data/submitClient.ts:411-491; dashboard/src/data/submitClient.ts:493-499 |
+| The unit suite locks the partial order, availability-loss join, monotonicity, and deadlines. | "joins stale dispatching with newer authority loss as possible-send unknown", "finds only truly resolving submissions as active", "backs off 1s → 2s → 5s and stops before crossing the ~2 minute window" | dashboard/src/data/submitMachine.test.ts:102-120; dashboard/src/data/submitMachine.test.ts:136-151; dashboard/src/data/submitMachine.test.ts:192-211 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This state machine is repository-local. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:48:04+02:00 — 260731-EFA-L6 curator W2-B10: repaired 6 citation findings (3 reference rows); scoped recheck clean.
 
 - 2026-07-24T13:17:50Z — Corrected queued-receipt semantics and documented the bounded lifecycle
   watch. Verification hash/date remain pinned to the pre-commit source stamp.

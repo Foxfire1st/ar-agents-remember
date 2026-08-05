@@ -139,39 +139,39 @@ is bounded. Non-blocking while `orchestration.supervisor.enabled` remains disabl
 No external/domain documentation is configured for this repo memory layer. The behavior is internal
 supervisor control-plane state.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant documentation found after checking live sources; no Domain Documentation entries are configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `SupervisorSignalRecord` defines the persisted signal-cooldown key fields and delivery state. | L27-L42 | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
-| The store resolves `workspace/supervisor-signals.jsonl`, reads it tolerantly, and appends under the log's lock after the declared-writer check. | L83-L107 | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
-| `last_sent` matches on the whole `SupervisorSignalKey` (target plus kind plus detail) and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | L109-L155 | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
-| `compact` holds one `exclusive_access` across the new `_compact_locked` read-filter-rewrite half, and `_replace` delegates to `rewrite_lines` without unlinking. | L157-L213 | [supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py) |
-| `SUPERVISOR_SIGNAL_OWNERSHIP` names the dashboard sole writer and compaction owner, and states why the log is locked all the same. | `SUPERVISOR_SIGNAL_OWNERSHIP` | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | L850-L911 | [../serving/supervisor.py](../serving/supervisor.py.md) |
-| The serving app imports `SupervisorSignalCooldownStore` and wires `signal_cooldown_seconds` into each supervisor context. | L81; L833-L839 | [../serving/app.py](../serving/app.py.md) |
-| The 900-second floor constant and the shared validator that refuses anything below it. | L26-L53 | [inbox_backoff.py](inbox_backoff.py.md) |
+| `SupervisorSignalRecord` defines the persisted signal-cooldown key fields and delivery state. | `SupervisorSignalRecord` | mcp/src/agents_remember/controlplane/supervisor_signals.py:27-41 |
+| The store resolves `workspace/supervisor-signals.jsonl`, reads it tolerantly, and appends under the log's lock after the declared-writer check. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
+| `last_sent` matches on the whole `SupervisorSignalKey` (target plus kind plus detail) and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | `in_cooldown` | mcp/src/agents_remember/controlplane/supervisor_signals.py:131-155 |
+| `compact` holds one `exclusive_access` across the new `_compact_locked` read-filter-rewrite half, and `_replace` delegates to `rewrite_lines` without unlinking. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
+| `SUPERVISOR_SIGNAL_OWNERSHIP` names the dashboard sole writer and compaction owner, and states why the log is locked all the same. | `SUPERVISOR_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
+| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | `_signal_emit` | mcp/src/agents_remember/serving/supervisor.py:858-934 |
+| The serving app imports `SupervisorSignalCooldownStore` and wires `signal_cooldown_seconds` into each supervisor context. | `signal_cooldown_store`, `signal_cooldown_seconds` | mcp/src/agents_remember/serving/app.py:846-846; mcp/src/agents_remember/serving/app.py:852-852 |
+| The 900-second floor constant and the shared validator that refuses anything below it. | `MIN_REDELIVERY_INTERVAL_SECONDS`, `require_redelivery_floor_seconds` | mcp/src/agents_remember/controlplane/inbox_backoff.py:26-26; mcp/src/agents_remember/controlplane/inbox_backoff.py:42-52 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository supervisor state only. | N/A | N/A |
 
 ## Update History
 
+- 2026-08-03T02:46:27+02:00 — W3-B05 curator: anchored 5 Tier-2 table citations and 1 Tier-2 prose citation with exact source paths; fixer generated all ranges.
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **One stale citation and one
   unsourced number.** The `SUPERVISOR_SIGNAL_OWNERSHIP` row cited `durable_store.py`
   **L327-L336**; the constant is at **L398** — the file grew 598 → 699 lines mid-pass, so every
   range written earlier is off. Replaced with a symbol-name citation and no range. Re-read the three
-  citations into this module's own source and left them: `SupervisorSignalRecord` L27-L42 (`class`
-  L27), the path/read/append row L83-L107 (`log_path` L83, `read` L86, `append` L103), `last_sent` /
+  citations into this module's own source and left them: `SupervisorSignalRecord` (cit:([`SupervisorSignalRecord`], mcp/src/agents_remember/controlplane/supervisor_signals.py:27-41)), the path/read/append row L83-L107 (`log_path` L83, `read` L86, `append` L103), `last_sent` /
   `in_cooldown` L109-L155 (L109, L131), and `compact` L157-L213 (L157, `_compact_locked` L178,
   `_replace` L206). The **10.50 percent** figure is now attributed rather than asserted: it appears
   only in the `durable_store.py` docstring, which is also the only place 10.20, 9.20 and 0.00 appear

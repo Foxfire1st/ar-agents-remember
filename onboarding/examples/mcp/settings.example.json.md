@@ -90,13 +90,16 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | n/a | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | n/a | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
-| The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). | n/a | [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py) |
+| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | "class McpRuntimeConfig" | mcp/src/agents_remember/mcp/config.py:114-114 |
+| Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | "def lifecycle_settings_from_config" | mcp/src/agents_remember/providers/settings.py:25-25 |
+| The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). | "class ProviderDegradationSettings:" | mcp/src/agents_remember/mcp/provider_degradation_settings.py:37-37 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the template's `retirement` example
   now documents `autoLandOnIntegration`/`autoLandOnFinalize`, preserving successful chats in the

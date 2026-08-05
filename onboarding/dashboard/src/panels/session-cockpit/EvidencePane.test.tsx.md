@@ -42,24 +42,25 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Complete focused-seat evidence case. | L27-L109 | [EvidencePane.test.tsx](EvidencePane.test.tsx) |
-| Missing-receipt honesty case. | L110-L123 | [EvidencePane.test.tsx](EvidencePane.test.tsx) |
-| Both residual classes, exact dismissal, and post-removal case. | L124-L197 | [EvidencePane.test.tsx](EvidencePane.test.tsx) |
-| Component under test. | L34-L374 | [EvidencePane.tsx](EvidencePane.tsx) |
+| Focused-seat case covers launch, receipt/reconciliation, bridge, pane, retire-stop residual, and liveness evidence. | "reveals launch, receipt, reconciliation, bridge, pane, residual, and liveness evidence" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:32-113 |
+| Missing-receipt honesty case. | "keeps missing receipt evidence explicitly absent in the pure detail projection" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:115-127 |
+| Terminate and retire residuals remain inspectable without focus and share dismissal across surfaces. | "keeps terminate and retire residuals inspectable without focus and shares exact dismissal" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:129-177 |
+| A successful terminate residual remains visible after the terminated seat is removed. | "reveals a successful terminate residual after the terminated seat is removed" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:179-201 |
+| Component under test. | "export function EvidencePane({" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:169-169 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -72,6 +73,7 @@ leaf base; closeout owns commit stamping.
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

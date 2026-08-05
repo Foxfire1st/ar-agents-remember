@@ -47,9 +47,9 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Retained domain state under test. | [projection_inputs.py](agents-remember/mcp/src/agents_remember/observer/projection_inputs.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Retained domain state under test. | `ProjectionInputState`, `ProjectionReaders`, `ProjectionRefresh` | mcp/src/agents_remember/observer/projection_inputs.py:93-117; mcp/src/agents_remember/observer/projection_inputs.py:178-186; mcp/src/agents_remember/observer/projection_inputs.py:189-407 |
 
 ## Cross-Repo References
 
@@ -57,6 +57,7 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-08-03T03:05:00+02:00 — Curator W3-B02 repaired 1 Repo-Internal citation row, resolving 2 manifest findings with exact retained-state and invalidation anchors; verification metadata was preserved.
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 collapsed
   `ProjectionInputState.read`'s loose arguments into two parameter objects, `ProjectionReaders`
   (lifecycle, repo_surfaces, landing_state) and `RefreshPass` (now, refresh), so all five

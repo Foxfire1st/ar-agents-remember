@@ -59,28 +59,30 @@ the committed source revision.
 
 No external documentation is needed for this repository-local renderer test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Harness cases cover copied starter folders, rendered settings files, rendered placeholder-free files, and optional hook smoke scripts. | L15-L126 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
-| `render_case()` creates temporary repository roots, copies starter folders, invokes the harness-local renderer, and passes a duplicate repo argument to prove output de-duplication. | L129-L158 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
-| Shared assertions verify MCP root settings, absence of placeholders, hook smoke output, and rendered Python command shapes for Codex, Claude Code, Cursor, and VS Code/Copilot. | L161-L249 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
-| The missing-repository test requires the renderer to fail explicitly when a requested repository root is absent. | L250-L269 | [test_starter_renderers.py](agents-remember/mcp/tests/test_starter_renderers.py) |
+| Harness cases cover copied starter folders, rendered settings files, rendered placeholder-free files, and optional hook smoke scripts. | `test_starter_renderers_fill_placeholders_and_settings` | mcp/tests/test_starter_renderers.py:238-247 |
+| `render_case()` creates temporary repository roots, copies starter folders, invokes the harness-local renderer, and passes a duplicate repo argument to prove output de-duplication. | `render_case` | mcp/tests/test_starter_renderers.py:137-156 |
+| Shared assertions verify MCP root settings, absence of placeholders, hook smoke output, and rendered Python command shapes for Codex, Claude Code, Cursor, and VS Code/Copilot. | `assert_no_placeholders` | mcp/tests/test_starter_renderers.py:169-173 |
+| The missing-repository test requires the renderer to fail explicitly when a requested repository root is absent. | `test_starter_renderer_rejects_missing_repository` | mcp/tests/test_starter_renderers.py:250-269 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 8 citation findings; scoped check passed.
 
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
   `mcp/tests/test_starter_renderers.py` and moved the lines this card cites, so the Citations

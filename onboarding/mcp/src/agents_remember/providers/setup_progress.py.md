@@ -66,14 +66,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Provider setup functions announce phases through `setup_progress_from(args)`. | [setup_common.py](setup_common.py.md) |
-| The worktree launcher creates the file and finishes it from the setup payload. | [provider_async.py](../worktrees/modules/provider_async.py.md) |
-| Unit tests cover the event lifecycle, heartbeat, staleness, and projections. | [test_setup_progress.py](agents-remember/mcp/tests/test_setup_progress.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Provider setup functions announce phases through `setup_progress_from(args)`. | `setup_progress_from` | mcp/src/agents_remember/providers/setup_common.py:25-33 |
+| The worktree launcher creates the file and finishes it from the setup payload. | `launch_provider_setup` | mcp/src/agents_remember/worktrees/modules/provider_async.py:72-120 |
+| Unit tests cover the event lifecycle, heartbeat, staleness, and projections. | `SetupProgressFileTests`, `ReadAndProjectionTests` | mcp/tests/test_setup_progress.py:45-143; mcp/tests/test_setup_progress.py:146-221 |
 
 ## Update History
 
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02 anchored 3 Repo-Internal citation rows with 4 exact identifiers and generated source ranges; verification metadata was preserved.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/setup_progress.py` since the L2 base commit is the whole-tree
   `ruff format` pass in `00e8379`, which re-wrapped 12 line(s) with no token change whatsoever.

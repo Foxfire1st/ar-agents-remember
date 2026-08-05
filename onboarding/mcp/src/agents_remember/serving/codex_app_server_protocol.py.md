@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,24 +56,23 @@ None known for the L3 cancellation boundary.
 No Domain Documentation entries are configured in the resolved source registry; the validated
 protocol snapshot is recorded in the repository fixture instead.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live documentation source was available for this pass. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture pins the CLI version, protocol, and stable method inventory. | L1-L31 | [codex_app_server_0_144_3.json](agents-remember/mcp/tests/fixtures/codex_app_server_0_144_3.json) |
-| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | L360-L428 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
+| Fixture pins the CLI version, protocol, and stable method inventory. | "codex-app-server/0.144.3", "initialize", "model/list" | mcp/tests/fixtures/codex_app_server_0_144_3.json:4-16 |
+| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | `CodexAppServerSession`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458; mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224 |
 
 ## Cross-Repo References
 
 The transport is an external-process boundary to the installed Codex CLI.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| PASS review confirms the pinned stable-only protocol boundary. | L22-L30 | [260713-PHA-L3-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
 ### 260713-PHA-L6 Capability Boundary
 
@@ -90,15 +89,16 @@ the final claim and write, making withdrawal-vs-dispatch linearization observabl
 ## 260727-CHATS-IM-L2 Emergency Framing Fuse Delta
 
 The former 4 MiB normal-operation cap is replaced by
-`CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES = 128 << 20` (L18-L23). This number is the available
+cit:([`CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:22-22). This number is the available
 Codex remote app-server compatibility precedent and an emergency malformed/runaway JSON payload
-fuse only; it is not paging and does not bound retained history. `_read_messages` removes exactly
-one JSONL newline before comparing payload bytes (L217-L240): a 128 MiB payload plus delimiter is
+fuse only; it is not paging and does not bound retained history. cit:([`_read_messages`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:217-246) removes exactly
+one JSONL newline before comparing payload bytes: a 128 MiB payload plus delimiter is
 valid, 128 MiB + 1 is shared-fatal, and the same explicit failure reaches pending RPCs and the event
 stream because the JSONL transport cannot safely resynchronize after a partial oversized record.
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the 128 MiB emergency payload
   fuse, delimiter-excluded boundary, shared-fatal above-fuse behavior, and separation from native
   history paging/materialization bounds. Verification metadata remains pinned while the source

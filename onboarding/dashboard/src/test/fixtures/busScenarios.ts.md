@@ -6,8 +6,8 @@
 | path | `dashboard/src/test/fixtures/busScenarios.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -41,28 +41,30 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Full decision and sender-address variants. | L7-L67 | [busScenarios.ts](busScenarios.ts) |
-| Escalation, legacy absence, combined rows, and heartbeat. | L69-L117 | [busScenarios.ts](busScenarios.ts) |
-| Projection types the fixtures satisfy. | L220-L450 | [../../types/projection.ts](../../types/projection.ts) |
-| Primary Bus regression consumer. | L1-L338 | [../../panels/session-cockpit/BusPane.test.tsx](../../panels/session-cockpit/BusPane.test.tsx) |
+| Full decision and sender-address variants. | `L7_DECISION_PICKUP`; `L7_SENDER_AGENT_ONLY_PICKUP`; `L7_SENDER_ROLE_ONLY_PICKUP`; `L7_LIFECYCLE_ONLY_PICKUP` | dashboard/src/test/fixtures/busScenarios.ts:8-30; dashboard/src/test/fixtures/busScenarios.ts:32-46; dashboard/src/test/fixtures/busScenarios.ts:48-59; dashboard/src/test/fixtures/busScenarios.ts:61-71 |
+| Escalation, legacy absence, combined rows, and heartbeat. | `L7_ESCALATED_PICKUP`; `L7_LEGACY_PICKUP`; `L7_PICKUPS`; `L7_SUPERVISOR_HEARTBEAT` | dashboard/src/test/fixtures/busScenarios.ts:73-92; dashboard/src/test/fixtures/busScenarios.ts:95-106; dashboard/src/test/fixtures/busScenarios.ts:108-112; dashboard/src/test/fixtures/busScenarios.ts:114-122 |
+| The six pickup fixtures satisfy the generated `AgentPickupNode` projection shape. | `L7_DECISION_PICKUP`; `L7_SENDER_AGENT_ONLY_PICKUP`; `L7_SENDER_ROLE_ONLY_PICKUP`; `L7_LIFECYCLE_ONLY_PICKUP`; `L7_ESCALATED_PICKUP`; `L7_LEGACY_PICKUP` | dashboard/src/test/fixtures/busScenarios.ts:8-30; dashboard/src/test/fixtures/busScenarios.ts:32-46; dashboard/src/test/fixtures/busScenarios.ts:48-59; dashboard/src/test/fixtures/busScenarios.ts:61-71; dashboard/src/test/fixtures/busScenarios.ts:73-92; dashboard/src/test/fixtures/busScenarios.ts:95-106 |
+| The supervisor heartbeat fixture satisfies the generated `SupervisorHeartbeat` projection shape. | `L7_SUPERVISOR_HEARTBEAT` | dashboard/src/test/fixtures/busScenarios.ts:114-122 |
+| The primary Bus regression consumer covers sender-to-owner, redelivery, escalation, heartbeat, and UA-3 limits. | "defaults fleet-global and renders sender-to-owner, redelivery, escalation, heartbeat, and UA-3 limits" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:50-77 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: bound each fixture-shape claim to its concrete satisfies expression under the adversarial verdict, then the exact scoped fixer/check passed.
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
   metadata remains pinned to the leaf base until closeout.

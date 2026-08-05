@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/index.css`                        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -100,16 +100,18 @@ re-raster for scroll, video, or animation invalidations.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `:root` vars referenced by the base layer. | — | [styles/tokens.css](styles/tokens.css) |
-| The Panda PostCSS plugin that fills the layers. | — | [postcss.config.cjs](agents-remember/dashboard/postcss.config.cjs) |
-| The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. | L12-L15 | [styles/webtui.css](styles/webtui.css) |
-| Asserts the exact layer-order statement and the unlayered freeze. | L131-L172 | [test/webtuiSpike.test.ts](test/webtuiSpike.test.ts) |
-| The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. | — | [styles/webtui.css](styles/webtui.css) |
-| Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | — | [panels/session-cockpit/InspectorPrimitives.tsx](panels/session-cockpit/InspectorPrimitives.tsx.md) · [panels/session-cockpit/conversation/MarkdownBlock.tsx](panels/session-cockpit/conversation/MarkdownBlock.tsx.md) · [panels/session-cockpit/SessionRail.tsx](panels/session-cockpit/SessionRail.tsx.md) |
+| The `:root` vars referenced by the base layer. | ":root" | dashboard/src/styles/tokens.css:5-5 |
+| The Panda PostCSS plugin that fills the layers. | "@pandacss/dev/postcss" | dashboard/postcss.config.cjs:10-10 |
+| The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. | "base.css" | dashboard/src/styles/webtui.css:12-12 |
+| Asserts the exact layer-order statement and the unlayered freeze. | "S1 spike (d): layer order + focus-visible survival (React Aria intact)" | dashboard/src/test/webtuiSpike.test.ts:156-172 |
+| The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. | "word-break:break-all" | dashboard/node_modules/@webtui/css/dist/base.css:1-1 |
+| Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | "export function InspectorFact"; "export const MarkdownBlock"; "export function SessionRail" | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:98-98; dashboard/src/panels/session-cockpit/SessionRail.tsx:487-487; dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 6 repository-reference citations (6/6 anchored and sourced; scoped citation check clean).
 
 - 2026-07-24T13:17:50Z — Documented the compositor-safe CRT overlay change. Verification hash/date
   remain pinned to the pre-commit source stamp.

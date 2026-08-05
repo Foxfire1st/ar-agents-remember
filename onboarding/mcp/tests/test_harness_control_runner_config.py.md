@@ -50,14 +50,15 @@ Helpers: `_encode`, `_payload`, `_launch`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `parse_runner_config` and its delegated helpers. | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| The round-trip suite this module completes. | [test_harness_control_runner.py](agents-remember/mcp/tests/test_harness_control_runner.py) |
-| The hosted-session surface that shows the refusal text. | [test_hosted_readiness.py](agents-remember/mcp/tests/test_hosted_readiness.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `parse_runner_config` and its delegated helpers. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:72-97 |
+| The round-trip suite this module completes. | `test_command_round_trip_and_malformed_payloads` | mcp/tests/test_harness_control_runner.py:60-75 |
+| The hosted-session surface that shows the refusal text. | `test_an_unreachable_bridge_is_not_ready_and_keeps_the_adapter_refusal` | mcp/tests/test_hosted_readiness.py:182-199 |
 
 ## Update History
 
+- 2026-08-03T03:03:00+02:00 — Curator W3-B02 repaired 2 Repo-Internal citation rows, resolving 4 manifest findings with exact runner-config and hosted-readiness regression anchors; verification metadata was preserved.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new runner-config
   rejection/default suite. Verification metadata is pinned to the leaf's reformat commit
   until closeout stamps the code commit.

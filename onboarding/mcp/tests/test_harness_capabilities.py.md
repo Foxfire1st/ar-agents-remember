@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `06973f6886276d7b3670c2c1e19cbb76928a7892`|
-| lastVerifiedCommitDate | 2026-07-16T01:49:31+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this new test file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
@@ -76,25 +76,26 @@ source was available for this new test file.
 
 The test and its shared contract module are the direct evidence for the normalized projection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The primary snapshot verifies exact category names, nested selected-model effort options, disabled-model filtering, and JSON metadata. | L18-L73 | [test_harness_capabilities.py](agents-remember/mcp/tests/test_harness_capabilities.py) |
-| Selected hidden and non-selectable models remain in the select, while unknown current values suppress the corresponding projections. | L76-L129 | [test_harness_capabilities.py](agents-remember/mcp/tests/test_harness_capabilities.py) |
-| `SetResult` coverage proves the exact five-value set, preserves requested versus effective evidence in JSON, and rejects an arbitrary acceptance token. | L132-L156 | [test_harness_capabilities.py](agents-remember/mcp/tests/test_harness_capabilities.py) |
-| The anti-paste guard scans every shared and harness-specific module in the native setter delegation graph for terminal/chat injection dependencies. | L159-L194 | [test_harness_capabilities.py](agents-remember/mcp/tests/test_harness_capabilities.py) |
-| The shared types define the exact capability categories, five SetResult acceptances, model-gated effort structure, and current selection fields; serialization independently enforces acceptance membership. | L13-L23; L26-L81; L216-L225 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
-| Config projection retains the selected model, gates effort to that model, omits unknown-current selects, and serializes required string current values. | L75-L133; L162-L214 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
+| The primary snapshot verifies exact category names, nested selected-model effort options, disabled-model filtering, and JSON metadata. | `test_capability_snapshot_projects_exact_acp_sense_one_categories` | mcp/tests/test_harness_capabilities.py:18-73 |
+| Selected hidden and non-selectable models remain in the select, while unknown current values suppress the corresponding projections. | `test_hidden_or_disabled_current_model_remains_in_its_select_projection`, `test_acp_projection_omits_selects_without_an_honest_current_value` | mcp/tests/test_harness_capabilities.py:76-106; mcp/tests/test_harness_capabilities.py:109-129 |
+| `SetResult` coverage proves the exact five-value set, preserves requested versus effective evidence in JSON, and rejects an arbitrary acceptance token. | `test_set_result_serialization_keeps_the_five_value_acceptance_contract` | mcp/tests/test_harness_capabilities.py:132-156 |
+| The anti-paste guard scans every shared and harness-specific module in the native setter delegation graph for terminal/chat injection dependencies. | `test_native_setter_modules_have_no_terminal_or_chat_paste_dependency` | mcp/tests/test_harness_capabilities.py:159-195 |
+| The shared types define the exact capability categories, five SetResult acceptances, model-gated effort structure, and current selection fields; serialization independently enforces acceptance membership. | `CapabilityCategory`, `SetAcceptance`, `EffortOption`, `ModelCapability`, `CapabilitySnapshot`, `SetResult`, `set_result_json` | mcp/src/agents_remember/serving/harness_capabilities.py:13-20; mcp/src/agents_remember/serving/harness_capabilities.py:26-34; mcp/src/agents_remember/serving/harness_capabilities.py:37-51; mcp/src/agents_remember/serving/harness_capabilities.py:75-133; mcp/src/agents_remember/serving/harness_capabilities.py:14-20; mcp/src/agents_remember/serving/harness_capabilities.py:151-159; mcp/src/agents_remember/serving/harness_capabilities.py:216-225 |
+| Config projection retains the selected model, gates effort to that model, omits unknown-current selects, and serializes required string current values. | `CapabilitySnapshot`, `config_option_json`, "currentValue" | mcp/src/agents_remember/serving/harness_capabilities.py:75-133; mcp/src/agents_remember/serving/harness_capabilities.py:197-213 |
 
 ## Cross-Repo References
 
 This is a same-repository contract test with no transport or sibling-repository dependency.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T03:02:00+02:00 — Curator W3-B02 repaired 6 Repo-Internal citation rows, resolving 12 manifest findings with exact projection, setter, anti-paste, shared-type, and serialization-test anchors; verification metadata was preserved.
 - 2026-07-16T01:21+02:00 — 260714-ACPUI-L3 curator: documented exact runtime enforcement of the
   five-value setter-acceptance vocabulary and the complete native-setter anti-paste delegate scan.
   Verification metadata remains pinned until closeout stamps the L3 code commit.

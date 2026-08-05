@@ -53,13 +53,11 @@ question is resolved. `lifecycle_end(outcome)` takes `completed` (the human decl
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The six payload builders and the ambient they drive. | [tools/lifecycle.py](agents-remember/mcp/src/agents_remember/mcp/tools/lifecycle.py) |
-| The choke point that auto-dismisses `awaiting-developer` on the next call. | [tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| The config-free call and each forwarded argument proved through a live server. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Update History
+- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the frozen-source ledger, split ambient lifecycle and response-tail ownership, and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
 
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The six lifecycle
   declarations moved out of `server.py`; the registrar takes `_config` unused, by design, to keep the

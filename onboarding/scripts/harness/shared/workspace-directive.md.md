@@ -63,14 +63,16 @@ bodies exist:**
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The generator that composes this body into three files with per-harness framing. | [sync-harness.py](agents-remember/scripts/sync-harness.py) |
-| The inside-the-workspace variant of the same directive. | [session-start-directive.md](agents-remember/scripts/harness/shared/session-start-directive.md) |
-| `write_context_file` mirrors the rendered file to the workspace root for Hermes and Antigravity. | [render_starter.py](agents-remember/scripts/harness/render_starter.py) |
-| The classification recording why the two bodies differ. | [README.md](agents-remember/scripts/harness/README.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The generator's `HARNESSES` declaration table is defined here. | `HARNESSES` | scripts/sync-harness.py:202-408 |
+| The inside-the-workspace variant of the same directive uses the relative coordinator path. | "ar-coordination/AGENTS.md" | scripts/harness/shared/session-start-directive.md:8-8 |
+| `write_context_file` mirrors the rendered file to the workspace root for Hermes and Antigravity. | `write_context_file` | scripts/harness/render_starter.py:86-105 |
+| The classification recording why the two directive bodies differ. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
 
 ## Update History
+
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for the three
   workspace-root context files (requirement L2-R12). Verification metadata is pinned to

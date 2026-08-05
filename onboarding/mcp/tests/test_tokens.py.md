@@ -40,12 +40,14 @@ metadata fields back into the counted JSON.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Counting engine under test. | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
-| `PingResponse` is the representative `ResponseModel` used for the serializer tests. | [core.py](agents-remember/mcp/src/agents_remember/models/core.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Counting engine under test. | `ApproximateTokenCounter`; `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:169-180; mcp/src/agents_remember/models/tokens.py:232-249 |
+| `PingResponse` is the representative `ResponseModel` used for the serializer tests. | `PingResponse` | mcp/src/agents_remember/models/core.py:14-17 |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 2 citation rows: the counting engine (models/tokens.py L170-L275) and the representative `PingResponse` (models/core.py L14-L18). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_tokens.py` since
   the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s)

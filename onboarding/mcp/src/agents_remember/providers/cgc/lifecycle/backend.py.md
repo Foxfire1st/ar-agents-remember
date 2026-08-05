@@ -76,12 +76,14 @@ when Docker labels do not show the expected Compose project.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC backend settings are derived in the CGC core module. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/core.py) |
-| Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration. | [docker_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py); [host_ports.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/host_ports.py); [compose_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC backend settings are derived in the CGC core module. | `cgc_backend_settings` | mcp/src/agents_remember/providers/cgc/lifecycle/core.py:140-170 |
+| Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration. | `docker_container_port`; `docker_data_mount_source`; `docker_wait_for_ping`; `allocate_host_port`; `remove_unmanaged_compose_container`; `remove_unmanaged_compose_network` | mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:127-139; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:146-158; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:196-204; mcp/src/agents_remember/providers/lifecycle/host_ports.py:21-28; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:252-269; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:272-289 |
 
 ## Update History
+
+- 2026-08-03T10:35+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 6 assigned citation findings (2 missing anchors and 4 malformed sources); final scoped check is clean.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   the two backend context builders now return `CgcBackendContext` instead of a five-tuple;

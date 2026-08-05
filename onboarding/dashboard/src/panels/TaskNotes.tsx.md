@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/TaskNotes.tsx`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -61,22 +61,24 @@ write.
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | A same-origin view over the local notes API; nothing crosses repositories. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The data client + the pure reference resolver. | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
-| The L17 reader this surface opens (and the `NotesReaderTarget` type it passes). | [panels/notes-reader/NotesReaderViewer.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.tsx) |
-| The shared markdown renderer (inline reference rendering). | [grammar/Markdown.tsx](agents-remember/dashboard/src/grammar/Markdown.tsx) |
-| The task reader + master overview that mount this component and thread `onOpenNotes`. | [panels/DetailPanel.tsx](agents-remember/dashboard/src/panels/DetailPanel.tsx) |
-| The serving endpoints behind the client. | [serving/notes.py](agents-remember/mcp/src/agents_remember/serving/notes.py) |
-| The component test suite. | [panels/TaskNotes.test.tsx](agents-remember/dashboard/src/panels/TaskNotes.test.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The data client + the pure reference resolver. | `listNotes`, `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:52-65 |
+| The L17 reader this surface opens (and the `NotesReaderTarget` type it passes). | `NotesReaderTarget` | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:22-26 |
+| The shared markdown renderer (inline reference rendering). | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
+| The task reader + master overview that mount this component and thread `onOpenNotes`. | `MasterOverview`, `TaskReader` | dashboard/src/panels/DetailPanel.tsx:1029-1097; dashboard/src/panels/DetailPanel.tsx:1296-1381 |
+| The serving endpoints behind the client. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:168-177 |
+| The component test suite. | "TaskNotes entry surface" | dashboard/src/panels/TaskNotes.test.tsx:38-76 |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 5 repository-internal references for the notes client, renderer, mounting surfaces, serving routes, and component tests; final scoped result 0 (checker-clean).
 
 - 2026-07-07T14:00+02:00 — agent-orchestration L17: TaskNotes became the compact ENTRY SURFACE only. The
   inline `NoteReader` pane was RETIRED; the list rows and resolved references now call the new `onOpenNotes`

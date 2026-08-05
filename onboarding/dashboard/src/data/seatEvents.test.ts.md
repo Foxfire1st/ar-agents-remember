@@ -48,60 +48,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | L40-L130 | [seatEvents.ts](seatEvents.ts) |
-| The store whose rows the events mutate. | — | [sessions.ts](sessions.ts) |
-| The shared `observerEvent` builder the local `event()` factory (L15-L21) now wraps; its `schema`/`trust`/`actor` defaults are the fields the factory used to inline, and the factory's own `id`/`ts` still win by spreading last. | L369-L381 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
+| The module under test. | `applySeatEvent`; `applySeatEventLine`; `createGatedSeatEventApplier` | dashboard/src/data/seatEvents.ts:40-92; dashboard/src/data/seatEvents.ts:95-104; dashboard/src/data/seatEvents.ts:113-130 |
+| The store whose rows the events mutate. | `sessionStore` | dashboard/src/data/sessions.ts:271-437 |
+| The local `event()` factory supplies explicit `id`/`ts` over the shared defaults. | `event` | dashboard/src/data/seatEvents.test.ts:15-21 |
+| The shared `observerEvent` fixture supplies the schema/trust/actor defaults. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
-- 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **the 09:26 entry's analysis is
-  sound and is kept in full; its `No content impact:` header was not.** The conversion introduced a
-  new dependency this card did not record — `seatEvents.test.ts` L6 now imports `observerEvent` from
-  `../test/fixtures/wire.ts` and the local `event()` factory (L15-L21) is a wrapper over it — and the
-  `Repo-Internal References` table had no fixtures row of any kind. (The review lead said this card
-  carried a "Shared deterministic fixtures" row naming `capabilityEnvelopes.ts`; it does not — that
-  row exists on `setClient.test.ts.md`, and here the row was simply absent.) A card that needs a new
-  reference row has content impact by definition, so the attestation is re-stated as **no behavioural
-  impact**, which is what the 09:26 analysis actually establishes. Added the row pointing at
-  `../test/fixtures/wire.ts` (`observerEvent`, L369-L381), matching the rows the same curator added on
-  `railModel.test.ts.md`, `interactionAnswer.test.ts.md` and `store.test.ts.md`; the table is
-  three-column here, so the new row carries three cells. Re-verified the kept citations from the
-  working tree: `seatEvents.ts` is 130 lines and `L40-L130` contains `applySeatEvent` (L40),
-  `applySeatEventLine` (L95) and `createGatedSeatEventApplier` (L113); the builder's defaults at
-  wire.ts L369-L381 are exactly the `schema`/`id`/`ts`/`trust`/`actor` set the entry describes, and
-  the factory's explicit `id`/`ts` do spread last. Verification metadata untouched.
+- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: converted the seat-event reference rows and legacy prose citations to exact anchors, preserving the local-factory/default precedence claim for scoped citation fixing. Verification metadata unchanged.
 
-- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: No behavioural impact (this entry originally read
-  "No content impact"; corrected 11:40 — the card gained a `wire.ts` reference row): the entire diff against
-  `abc7cbc` is the local `event()` factory (L15-L21) delegating to
-  `test/fixtures/wire.ts::observerEvent` instead of building an inline object closed with
-  `as ObserverEvent`. The check that could have made this consequential: the builder supplies its own
-  defaults, so I compared them field by field against the ones the factory used to inline —
-  `schema: "ar-observer-event/v1"`, `trust: "observed"`, `actor: "system"` are identical, and the
-  factory still passes `id: "evt-1"` and `ts: "2026-07-16T10:00:00Z"` explicitly, which win over the
-  builder's `id: evt-${kind}` / `ts: SERVED.generatedAt` defaults because the overrides spread last.
-  The produced envelope is therefore byte-identical, which matters most for the
-  `seat.turn-state-changed` describe (L99-L147), whose whole subject is comparing an event `ts`
-  against the seeded row's `turnStateChangedAt`. Confirmed all five describes and eleven cases are
-  unchanged in name, count and order, and that the L40-L130 citation still contains
-  `applySeatEvent`, `applySeatEventLine` and `createGatedSeatEventApplier` in the 130-line source.
+- 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): retained the behavioral analysis, corrected its attestation to no behavioral impact, and added the missing shared-fixture reference. The local `event()` factory wraps `observerEvent` cit:([`event`], dashboard/src/data/seatEvents.test.ts:15-21) cit:([`observerEvent`], dashboard/src/test/fixtures/wire.ts:373-385); the module-under-test functions remain covered by the table above. Verification metadata untouched.
+
+- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: the local `event()` factory delegates to the shared `observerEvent` fixture cit:([`event`], dashboard/src/data/seatEvents.test.ts:15-21) cit:([`observerEvent`], dashboard/src/test/fixtures/wire.ts:373-385). Its explicit id/timestamp overrides preserve the deterministic event envelope used by the `seat.turn-state-changed` case. Verification metadata remains unchanged.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

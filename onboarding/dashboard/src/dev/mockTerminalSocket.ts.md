@@ -43,16 +43,16 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The client contract this fakes (the socket surface + frame shapes). | — | [data/terminal.ts](../data/terminal.ts) |
-| The bench that provides this via context. | — | [Bench.tsx](Bench.tsx) |
+| The client contract this fakes (the socket surface + frame shapes). | `TerminalSocketFactory` | dashboard/src/data/terminal.ts:46-46 |
+| The bench that provides this via context. | `Bench` | dashboard/src/dev/Bench.tsx:18-83 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -66,11 +66,13 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 2 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

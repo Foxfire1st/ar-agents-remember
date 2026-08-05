@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/orphan_policy.py`             |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                           |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                           |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -58,31 +58,31 @@ module's own docstring as an explicit, not-yet-scoped follow-up) — not a defec
 
 ## Docs References
 
-No relevant external documentation found after checking the repo Domain Documentation; the leaf
-task doc's R3 scope allowance ("a stub/hook is sufficient scope for this leaf") is the source of
-truth for this module's deliberately narrow surface.
+No external requirement or design document is represented here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines orphan-worker policy; the leaf task doc's R3 scope note is authoritative. | L1-L32 | [orphan_policy.py](orphan_policy.py) |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The sole caller: gathers the orphan list once a manager seat is retired as suspect and surfaces it in the respawn observer event. | `_respawn_suspect` | [../serving/supervisor.py](../serving/supervisor.py.md) |
-| Unit test: running workers of the named manager are returned; a terminated sibling and another manager's worker are excluded. | `test_finds_running_workers_of_the_named_manager` | [test_escalation_ladder.py](../../../tests/test_escalation_ladder.py.md) |
+| The sole caller: gathers the orphan list once a manager seat is retired as suspect and surfaces it in the respawn observer event. | `_respawn_suspect` | mcp/src/agents_remember/serving/supervisor.py:1040-1105 |
+| Unit test: running workers of the named manager are returned; a terminated sibling and another manager's worker are excluded. | `test_finds_running_workers_of_the_named_manager` | mcp/tests/test_escalation_ladder.py:237-254 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository control-plane logic only. | — | — |
 
 ## Update History
 
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: removed the whole unsupported task-authority claim, including its prose and table row, under the 2026-08-02 17:45 ruling; the two repository-internal references were already exact and unchanged; final scoped result 0 (checker-clean).
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: moved current worker classification to binding role
   while retaining spawned-by provenance for parentage.
 

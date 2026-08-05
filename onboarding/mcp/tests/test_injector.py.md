@@ -12,60 +12,28 @@
 
 ## Purpose
 
-Created for 260707-HFX2-L3 (paste injector hardening, R1 + R3 + R5): covers the ONE delivery path
-(`serving/injector.py::deliver`) — the standardized payload envelope, every branch of the four-way
-`DeliveryOutcome` contract, and an end-to-end injection test against a scripted in-memory tmux pane
-(R5's explicit ask).
-
+Created for 260707-HFX2-L3 (paste injector hardening, R1 + R3 + R5): covers the delivery path's
+bound-log acceptance and provenance, diagnostic failure capture, deferred unbound commands, and
+isolated reissue behavior through `_Log` and `_Paster` fixtures cit:([`_Log`, `_Paster`], mcp/tests/test_injector.py:15-25; mcp/tests/test_injector.py:28-52).
 ## Code Commentary
 
 ### Logic
 
-**260707-HFX2-L15 coverage.** Scripted harness logs prove id-envelope message acceptance and returned
-binding provenance; absence fails with diagnostic capture even when the pane moves. Separate tests
-pin deferred pre-bind commands, successful retroactive verification without reissue, isolated
-reissue after errored evidence, draft behavior, and failure-only modal labeling.
-
-Four test classes:
-
-- `EnvelopeTests` — `envelope_text` renders the header + ack line when `envelope=True`, ships the
-  body verbatim when `envelope=False`, and omits the `ack:` line when no `ack_instruction` is given.
-- `DeliveryOutcomeMappingTests` — drives `deliver` against a `_StubPaster` returning a canned
-  `PasteResult`, one test per outcome branch: delivered+submitted → `acked`; `submit=False` →
-  `landed-unacked`; submitted-but-no-advance-and-no-spinner → `landed-unacked`; submitted-with-a-
-  spinner-in-the-capture-but-no-advance → `acked` (the harness-aware corroboration); never
-  capture-verified → `failed`; a codex quota-modal capture (even with `delivered=True`) → `blocked`
-  with reason `"codex-quota-limit"`; a permission-prompt capture → `blocked` with reason
-  `"permission-prompt"` (pinning the two are DISTINCT reasons); `test_envelope_text_is_what_gets_
-  pasted` pins that the rendered envelope (not the bare body) is what actually reaches
-  `paster.paste`.
-- `_ScriptedPane` / `_Clock` / `_scripted_paster` — a minimal in-memory codex-shaped pane (mirroring
-  `test_terminal_paste.py`'s `_FakePane` conventions: injected buffers/keys/capture, no real tmux, no
-  real sleeping) driving a REAL `TerminalPaster`.
-- `ScriptedTmuxE2ETests` — `test_brief_lands_and_the_turn_starts`: a full paste+submit sequence
-  against the scripted pane resolves `acked`. `test_quota_modal_already_on_the_pane_blocks_delivery`:
-  a pane whose paste is permanently swallowed (a modal that never clears) and whose initial content
-  already shows the quota text resolves `blocked` with reason `"codex-quota-limit"` — not a bare
-  `failed` — even though the paste itself never capture-verified as landed.
-
+**260707-HFX2-L15 coverage.** The current suite binds message acceptance to a matching log entry,
+returns provenance from that bound entry, captures diagnostic failures, defers unbound spawn
+commands, avoids reissuing successful retroactive commands, and reissues only errored commands
+cit:([`test_message_is_acked_from_bound_log_and_returns_provenance`, `test_submitted_message_without_log_entry_fails_with_diagnostic_capture`, `test_failure_capture_may_receive_modal_diagnostic_label`, `test_unbound_spawn_command_is_deferred_not_acked`, `test_successful_retroactive_command_is_not_reissued`, `test_errored_command_reissues_only_that_command`], mcp/tests/test_injector.py:63-74; mcp/tests/test_injector.py:77-88; mcp/tests/test_injector.py:91-101; mcp/tests/test_injector.py:104-119; mcp/tests/test_injector.py:122-143; mcp/tests/test_injector.py:146-168).
 ### Conventions
 
-`_StubPaster` intentionally does NOT drive `TerminalPaster`'s internal loop — it is a pure
-outcome-mapping fixture (fast, exact control per branch). The scripted-pane class is a SEPARATE,
-narrower fixture than `test_terminal_paste.py`'s `_FakePane` family (this file does not import it —
-tests should not cross-import another test module's private fixtures); it exists only to prove the
-full stack (`TerminalPaster` + `harness_adapters` + `injector.deliver`) composes correctly
-end-to-end, not to re-cover `TerminalPaster`'s own capture-verify semantics (that suite already
-does).
-
+`_Log` models the bound event log and `_Paster` supplies deterministic paste and capture outcomes;
+the tests keep provenance, deferred commands, and reissue decisions tied to those fixtures
+cit:([`_Log`, `_Paster`], mcp/tests/test_injector.py:15-25; mcp/tests/test_injector.py:28-52).
 ### Invariants And Boundaries
 
-- Every `deliver(...)` call against a fake/stub paster carries a `# type: ignore[arg-type]` comment
-  (the fakes are structurally compatible but not nominally `TerminalPaster` — the same convention
-  `test_operator_inbox.py` already uses for its paster fakes).
-- The blocked-modal e2e test proves the R2 requirement directly: a modal trap is `blocked(reason)`,
-  never silent non-delivery, even under the worst case (the paste literally never lands).
-
+- A submitted message is acknowledged only when the bound log contains its matching entry; an
+  unbound command is deferred rather than acknowledged cit:([`test_message_is_acked_from_bound_log_and_returns_provenance`, `test_unbound_spawn_command_is_deferred_not_acked`], mcp/tests/test_injector.py:63-74; mcp/tests/test_injector.py:104-119).
+- Successful retroactive evidence is not reissued, while errored evidence reissues only the errored
+  command cit:([`test_successful_retroactive_command_is_not_reissued`, `test_errored_command_reissues_only_that_command`], mcp/tests/test_injector.py:122-143; mcp/tests/test_injector.py:146-168).
 ### Todos
 
 No known follow-up in this file.
@@ -75,27 +43,25 @@ No known follow-up in this file.
 No relevant external documentation found after checking the repo Domain Documentation; this is a
 same-repository unit-test suite for internal control-plane plumbing with no external spec.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines the delivery-outcome contract; the leaf task doc (R1, R3, R5) is the source of truth this suite pins. | whole module | [test_injector.py](test_injector.py) |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The delivery path under test. | `deliver`; `DeliveryRow`; `envelope_text` | [../src/agents_remember/serving/injector.py](../src/agents_remember/serving/injector.py) |
-| The harness adapter `deliver` reads for the blocked-check and turn-started corroboration. | `get_adapter` | [../src/agents_remember/serving/harness_adapters.py](../src/agents_remember/serving/harness_adapters.py) |
-| `TerminalPaster` is the real transport the scripted-pane e2e tests drive; its own fixture conventions (`_FakePane`, injected clock/sleep) are the pattern this file's narrower `_ScriptedPane` mirrors without importing. | `TerminalPaster` | [../src/agents_remember/serving/terminal_paste.py](../src/agents_remember/serving/terminal_paste.py) |
-
+| The delivery path under test. | `deliver`; `DeliveryRow`; `envelope_text` | mcp/src/agents_remember/serving/injector.py:24-34; mcp/src/agents_remember/serving/injector.py:50-57; mcp/src/agents_remember/serving/injector.py:60-134 |
+| The injector obtains a harness adapter for the failure-only handoff: session-command transport failures and absent-log outcomes flow through `_failed_from_capture`, which uses the adapter's blocked-reason diagnostic. | "get_adapter("; "session command transport failed before log binding"; "input absent from the harness session log after bounded recovery"; `_failed_from_capture`; "blocked = adapter.blocked_reason(outcome.capture)"; `blocked_reason` | mcp/src/agents_remember/serving/injector.py:74-74; mcp/src/agents_remember/serving/injector.py:92-92; mcp/src/agents_remember/serving/injector.py:126-126; mcp/src/agents_remember/serving/injector.py:190-210 |
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Delivery-path-local behavior only. | — | — |
 
 ## Update History
+- 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound the failure-only adapter/transport handoff to the packet-specified operative spans, adding the blocked-reason diagnostic use inside `_failed_from_capture`; the two handoffs stay pinned by their unique failure-reason lines inside each call. Verification metadata unchanged.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_injector.py` since
   the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s)

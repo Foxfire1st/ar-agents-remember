@@ -43,26 +43,28 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pure reducer and promotion implementation. | L1-L250 | [setAcceptance.ts](setAcceptance.ts) |
-| Clamp, queued, and unknown fixture extensions. | L219-L358 | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts) |
+| Pure reducer and promotion implementation. | `reduceSetResult` | dashboard/src/data/setAcceptance.ts:101-153 |
+| Clamp, queued, and unknown fixture extensions. | `SET_RESULT_CLAMP`; `QUEUED_THEN_IMMEDIATE_SEQUENCE`; `UNKNOWN_THEN_READBACK` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:253-259; dashboard/src/test/fixtures/capabilityEnvelopes.ts:273-288; dashboard/src/test/fixtures/capabilityEnvelopes.ts:305-319 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-03T02:34+02:00 — W3-B01 curator: curated 2 Repo-Internal table citations with exact reducer and fixture anchors. Verification metadata remains unchanged for closeout.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

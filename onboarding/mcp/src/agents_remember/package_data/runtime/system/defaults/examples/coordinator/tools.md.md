@@ -75,29 +75,31 @@ None.
 
 No external documentation is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools. | L1-L7; L87-L91 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
-| The provider command section records MCP runtime install, `grepai_search`, aggregate provider status/watcher flows, and CGC bounded `run -- ...` plus long-running `visualize --port 8000` command shapes. | L13-L68 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
-| The provider notes say GrepAI lifecycle commands expand `grepai-memory` workspace roots, ensure Docker network/PostgreSQL/Ollama health, bind-mount and index the live memory roots in place, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand the configured `roots` array, ensure FalkorDB Docker, start/stop every configured root unless `--repo-id` narrows it, pass post-`--` arguments to native CGC for bounded queries, and expose the visualizer as a separate long-running lifecycle command. | L42-L67 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
-| The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace, while lifecycle status reports `processNamespace` diagnostics and refuses `--die-with-parent` sandboxes. | L69-L75 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
-| The containment notes say a CGC provider should not be used in managed mode if indexing writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs into the indexed source repository, and a GrepAI provider should not be used if indexing creates `.grepai/` inside source repositories or durable memory roots. | L77-L81 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md) |
+| The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools. | `# Coordinator Tools Example` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md:1-91 |
+| The provider command section records MCP runtime install, `grepai_search`, aggregate provider status/watcher flows, and CGC bounded `run -- ...` plus long-running `visualize --port 8000` command shapes. | "Expected provider setup and lifecycle command shapes" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md:22-22 |
+| The provider notes say GrepAI lifecycle commands expand `grepai-memory` workspace roots, ensure Docker network/PostgreSQL/Ollama health, bind-mount and index the live memory roots in place, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand the configured `roots` array, ensure FalkorDB Docker, start/stop every configured root unless `--repo-id` narrows it, pass post-`--` arguments to native CGC for bounded queries, and expose the visualizer as a separate long-running lifecycle command. | "The GrepAI lifecycle command reads" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md:42-42 |
+| The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace, while lifecycle status reports `processNamespace` diagnostics and refuses `--die-with-parent` sandboxes. | `processNamespace` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md:69-75 |
+| The containment notes say a CGC provider should not be used in managed mode if indexing writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs into the indexed source repository, and a GrepAI provider should not be used if indexing creates `.grepai/` inside source repositories or durable memory roots. | "A CGC provider should not be used" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md:77-78 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 4 repository-reference citations (4/4 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 4 self-file line citations that all ran
   past the end of the 91-line `coordinator/tools.md`, and corrected two claims the source no longer

@@ -55,18 +55,21 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Panda token mirror of this palette (incl. `colors.well`). | L30-L46 | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
-| The pty pane + structured stage that consume `well` (parity is the FB7.1 acceptance test). | — | [../panels/Terminal.tsx](../panels/Terminal.tsx.md) · [../panels/session-cockpit/conversation/ConversationTimeline.tsx](../panels/session-cockpit/conversation/ConversationTimeline.tsx.md) · [../panels/SessionComposer.tsx](../panels/SessionComposer.tsx.md) |
-| The WebTUI mapping that consumes these vars (incl. `--muted`) — no raw literals allowed there. | L17-L34 | [webtui.css](webtui.css) |
-| The spike assertion that every mapped var is declared here. | L117-L128 | [../test/webtuiSpike.test.ts](../test/webtuiSpike.test.ts) |
+| The Panda token mirror declares the palette under `colors`, including `colors.well`. | `colors`; "well: { value:" | dashboard/panda.config.ts:30-30; dashboard/panda.config.ts:36-36 |
+| The pty pane consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/Terminal.tsx:19-19 |
+| The session composer consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/SessionComposer.tsx:67-67 |
+| The structured conversation stage consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:152-152 |
+| WebTUI maps `--foreground1` to `--muted`. | "--foreground1" | dashboard/src/styles/webtui.css:28-28 |
+| The WebTUI mapping is token-only and contains no raw color literals. | "[data-view=\"sessions\"] { --background0: var(--bg); --background1: var(--bg-panel); --background2: var(--grid); --background3: color-mix(in oklch, var(--grid) 55%, var(--muted)); --foreground0: var(--ink); --foreground1: var(--muted); --foreground2: color-mix(in oklch, var(--muted) 60%, var(--bg-panel)); --box-border-color: var(--grid); --font-family: var(--font-mono); --font-size: 14px; --line-height: 1.3; }" | dashboard/src/styles/webtui.css:22-34 |
+| The spike assertion that every mapped var is declared here. | "references only existing token vars — no raw color literals (no second color system)" | dashboard/src/test/webtuiSpike.test.ts:117-128 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -80,12 +83,17 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: resolved the CSS anchor ambiguity with a source-exact whole-rule quote, regenerated the complete mapping extent with the locked fixer, and inspected it against the approved claim; no semantic claim changes.
+- 2026-08-04T03:03:32+02:00 — S18-SR3-B05 worker: selected the complete sessions token-mapping rule as the whole-claim anchor and returned its binding to provisional fixer input.
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: repaired the `well` mirror/consumer bindings and separated the proven `--foreground1` mapping from the broader token-only WebTUI claim; new bindings remain provisional.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: added the `--well` (`#070b0f`) terminal-well token
   — the xterm pty inset promoted from a Terminal.tsx literal (FB7.1/V31) so the structured conversation
   stage + composer inherit the same well tone; mirrored as Panda `colors.well`. Two-views-of-one-palette

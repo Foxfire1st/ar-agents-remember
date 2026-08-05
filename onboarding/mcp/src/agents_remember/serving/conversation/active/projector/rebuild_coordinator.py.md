@@ -51,10 +51,11 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Native and echo channel state. | [native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py), [echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
-| Status derivation. | [status.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/status.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Native polling establishes the timeline and native continuation is then followed by echo polling for transcript gaps; the coordinator composes them in order. | `poll_evidence`, `poll_native_continuation` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:116-146; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:244-268; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:171-171; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:176-176 |
+| Echo polling fills transcript gaps in the ordered rebuild. | `poll` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:64-80 |
+| Conversation status is derived by the status service. | `ConversationStatusService` | mcp/src/agents_remember/serving/conversation/active/status.py:306-508 |
 
 ## Cross-Repo References
 
@@ -72,6 +73,9 @@ what keeps a coordinator from being wired to three components of this session an
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: split native, echo, ordered-composition, and
+  status-derivation claims by their source owner.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `IngestionComponents` as the ordered four-component rebuild set.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the rebuild/poll

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_terminal_surface.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,13 +34,15 @@ the draft for reconciliation. Pane content remains a readable projection, not au
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Draft and transcript models. | [harness_control_models.py](harness_control_models.py) |
-| Shared queue owner. | [harness_control_bridge.py](harness_control_bridge.py) |
-| R11 scenarios. | [test_harness_control.py](../../../tests/test_harness_control.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Draft and transcript models. | `UncommittedDraft` | mcp/src/agents_remember/serving/harness_control_models.py:205-213; mcp/src/agents_remember/serving/harness_control_models.py:278-287 |
+| Shared queue owner. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
+| R11 scenarios. | `test_ambiguous_draft_submission_retains_human_text` | mcp/tests/test_harness_control.py:603-617 |
 
 ## Update History
+
+- 2026-08-04T18:29+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 3 citation rows with exact anchors (`UncommittedDraft`/`TranscriptEntry` model extents, `HarnessControlBridge`, and the draft-custody test block 551-618 containing `test_ambiguous_draft_submission_retains_human_text`) and ledger-verified ranges. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for normalized transcript
   rendering and the R11 surface-owned uncommitted-draft guarantee.

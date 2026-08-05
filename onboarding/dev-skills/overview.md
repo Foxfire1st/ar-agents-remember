@@ -80,9 +80,9 @@ A `README.md` defining the tree's contract, and one skill package
 The non-distribution guarantee is enforced structurally by the sync helper, which only copies the
 canonical `skills/` tree — never `dev-skills/`.
 
-| Finding | Citations | Source Path |
-|---|---|---|
-| `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets, so `dev-skills/` is never distributed. | L14-L56 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets, so `dev-skills/` is never distributed. | `CANONICAL_SKILLS`; `TARGETS`; `diff_target`; `sync_target` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56; scripts/sync-skills.py:117-129; scripts/sync-skills.py:136-139 |
 
 ## Cross-Repo References
 
@@ -123,6 +123,7 @@ When changing files under this route:
 
 ## Update History
 
+- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — `dev-skills/` carries no retired lifecycle vocabulary (no `l-01-session-job-lifecycle`/`l-02` names, no dead phase axis), so nothing changed on this route.
 <!-- newest first; append-only -->
 

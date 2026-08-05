@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/__init__.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-14T11:30+02:00                         |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`     |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`     |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -29,11 +29,12 @@ package's surface is reached through its submodules (`app.create_app`, `projecto
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The serving route overview. | [overview.md](agents-remember/mcp/src/agents_remember/serving/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The serving route overview. | `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview` | onboarding/mcp/src/agents_remember/serving/overview.md:1-2198 |
 
 ## Update History
+- 2026-08-03T03:00:33+02:00 — W3-B05 curator: resolved 1 Tier-2 table finding with an exact route-overview heading and memory-repository source path; fixer generated the final range.
 
 - 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the serving package marker.
   Verification metadata pinned until closeout stamps the 4a code commit.

@@ -26,12 +26,12 @@ one-use attachment recovery-exchange refs with full alt provenance. The lifecycl
 
 ### Logic
 
-`recovery_text` (L40-L47) resolves the recovered body: the substrate `WithdrawalRecovery` payload first,
-then the submit journal entry, else honest empty. `recovery_digest` (L50-L61) computes the
+cit:([`recovery_text`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47) resolves the recovered body: the substrate `WithdrawalRecovery` payload first,
+then the submit journal entry, else honest empty. cit:([`recovery_digest`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:50-61) computes the
 authority-parity digest (via `payload_digest`, matching `EMPTY_DIGEST` L37 when empty).
-`recovery_payload` (L64-L77) assembles the `WithdrawalRecovery` wire product (text, digest,
-`submittedDraftRevision`, attachment recovery refs). `recover_attachment_refs` (L80) mints one
-`AttachmentRecoveryRef` per recoverable asset via `attachment_recovery_ref` (L96) — the opaque
+cit:([`recovery_payload`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:64-77) assembles the `WithdrawalRecovery` wire product (text, digest,
+`submittedDraftRevision`, attachment recovery refs). cit:([`recover_attachment_refs`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:80-93) mints one
+`AttachmentRecoveryRef` per recoverable asset via cit:([`attachment_recovery_ref`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123) — the opaque
 `ar-war1.` exchange identity carrying alt provenance but no content.
 
 ### Conventions
@@ -57,7 +57,7 @@ None.
 
 No Domain Documentation source is configured; the recovery contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -66,19 +66,19 @@ No Domain Documentation source is configured; the recovery contract is repositor
 The substrate recovery payload is the first content source; the journal is the fallback; the ref mint
 and digest transform are the sibling authorities.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The substrate `WithdrawalRecovery` pre-tombstone payload this assembly reads first. | L1-L120 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The submit journal entry used as recovery source of last resort. | L135-L166 | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
-| The `ar-war1.` recovery-asset brand and the purpose-branded `mint_ref` this assembly calls. | L14; L37-L44; L136-L161 | [refs.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/refs.py) |
-| The authority-parity content digest (`payload_digest`) that `recovery_digest` reuses so recovery matches the submit's idempotence digest. | L28-L48 | [previews.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/previews.py) |
-| The lifecycle policy that consumes this assembly: `_build_withdrawn_record` calls `recovery_text`, `recovery_digest`, `recover_attachment_refs`, and `recovery_payload`. | L442-L511 | [withdrawals.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/withdrawals.py) |
+| The assembly's source priority reads the substrate `WithdrawalRecovery` payload first. | `recovery_text` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47 |
+| The submit journal entry used as recovery source of last resort. | `JournalEntry`; `recovery_text` | mcp/src/agents_remember/serving/conversation/control/service.py:144-153; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47 |
+| The attachment recovery-ref assembly mints one ref per recoverable asset through its ref-mint call. | `attachment_recovery_ref` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123 |
+| `recovery_digest` reuses the authority-parity payload digest so recovery matches the submit's idempotence digest. | `recovery_digest` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:50-61 |
+| The lifecycle policy that consumes this assembly: `_build_withdrawn_record` calls `recovery_text`, `recovery_digest`, `recover_attachment_refs`, and `recovery_payload`. | `_build_withdrawn_record` | mcp/src/agents_remember/serving/conversation/control/withdrawals.py:442-511 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -93,8 +93,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, all pointing four lines above their function after the signatures were wrapped multi-line: `recovery_text` L36 → L40-L47, `recovery_digest` L46 → L50-L61, `recovery_payload` L60 → L64-L77. `EMPTY_DIGEST` (L37), `recover_attachment_refs` (L80) and `attachment_recovery_ref` (L96) were already correct and are untouched.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. `refs.py` is 246 lines, so the old L28-L204 was the whole module: narrowed to the `ar-war1.` brand (L14, `_PREFIX_BY_PURPOSE` L37-L44) and `mint_ref` (L136-L161), and split the authority-parity digest out into its real home, `previews.py` `payload_digest` L28-L48. Re-anchored the consuming lifecycle policy to `withdrawals.py` `_build_withdrawn_record` L442-L511 (was L455-L538), verified by the four `recovery_assembly.*` calls at L454, L456, L465, and L490.
+- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound recovery source priority, attachment-ref assembly, and authority-parity digest reuse to their complete assembly functions.
+
+- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, all pointing four lines above their function after the signatures were wrapped multi-line: `recovery_text` L36 → L40-L47, `recovery_digest` L46 → L50-L61, `recovery_payload` L60 → L64-L77. cit:([`EMPTY_DIGEST`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:37-37), cit:([`recover_attachment_refs`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:80-93) and cit:([`attachment_recovery_ref`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123) were already correct and are untouched.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-file citations by binding the `ar-war1.` brand and ref mint to cit:([`_PREFIX_BY_PURPOSE`, `mint_ref`], mcp/src/agents_remember/serving/conversation/control/refs.py:39-44; mcp/src/agents_remember/serving/conversation/control/refs.py:136-161), the authority-parity digest to cit:([`payload_digest`], mcp/src/agents_remember/serving/conversation/control/previews.py:28-48), and the consuming lifecycle policy to cit:([`_build_withdrawn_record`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:442-511).
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ControlScope` / `RefBinding` / `RefTarget` call shapes; recovery payload unchanged.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the recovery assembly —
   substrate-payload-first content resolution with journal fallback, authority-parity digests, and

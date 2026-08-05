@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-06-14T11:30+02:00                        |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`    |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`    |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                      |
 
 ## Governing Overview
@@ -38,13 +38,15 @@ configs launch the server by that exact name, so it is never folded into this um
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The `dashboard` subcommand adapter this dispatches to. | [dashboard.py](agents-remember/mcp/src/agents_remember/cli/dashboard.py) |
-| The peer CLI adapter pattern. | [context_packet.py](agents-remember/mcp/src/agents_remember/cli/context_packet.py) |
-| The separate MCP server console entry that stays standalone. | [mcp/__main__.py](agents-remember/mcp/src/agents_remember/mcp/__main__.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The `dashboard` subcommand adapter this dispatches to. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
+| The peer CLI adapter pattern. | `main` | mcp/src/agents_remember/cli/context_packet.py:17-60 |
+| The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:8-8 |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 6 citation findings for the dashboard, context-packet, and MCP console entry points.
 
 - 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the umbrella `agents-remember`
   dispatcher with the `dashboard` subcommand. Verification metadata pinned until closeout

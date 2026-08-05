@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -26,26 +26,11 @@ theater NEVER renders per rail row.
 
 ### Logic
 
-- **Render gate** (L86, L93): `seatVisualState(session).key === "working"` — the SAME predicate
-  the `turn.stop` palette command gates on (review finding 3 aligned them), so the grammar
-  yields to awaiting-input/failed and the line disappears with them.
-- **Activity form seam** (L66-L74): `workingActivityForm` returns the REAL form when one is
-  known — no wire field carries one today (turn-state is a bit, not a verb phrase), so it
-  returns undefined and the line says plain "working". NEVER whimsy verbs (spec §1.1-10); the
-  seam stays typed for UA-1 reasoning headers / UA-5 states.
-- **~elapsed** (L57-L64, L107-L115): `formatApproxElapsed` from L2's client `turnClock`
-  (`workingSince` — the OBSERVED transition, poll/10 s-sweep bounded), `~`-labeled at every
-  magnitude, `tabular-nums`, tooltip states the sweep bound; OMITTED entirely when unobserved
-  (`workingSince === null`). A 1 s self-tick drives production; the `now` prop is the test seam
-  (L83-L92).
-- **Welded stop (UA-7)** (L116-L126): the ⏹ stop button sits at the line's fixed end position,
-  `disabled` with `STOP_TURN_DISABLED_REASON` in title/aria-label/`data-disabled-reason` — the
-  control names the gap until the interrupt route exists; retry/compaction states join this line
-  when UA-5 exposes them.
-- **Spinner** (L31-L37, L101-L103): the slow-pulse `◐` glyph ONLY — the Panda literal
-  `pulseSlow 2.4s ease-in-out infinite` (the animation ruling; the test pins it to
-  `stateGrammar.PULSE_ANIMATION`), `_motionReduce: none`, frozen by the unlayered
-  `html[data-effects="off"]` rule in index.css. No shimmer, no braille frames, aria-hidden.
+- **Render gate** (cit:(["if (!working) return null;"], dashboard/src/panels/session-cockpit/WorkingLine.tsx:122-122)): the render returns null when `working` is false.
+- **Activity form seam** (cit:(["export function workingActivityForm(session: OpenSession): string | undefined {"], dashboard/src/panels/session-cockpit/WorkingLine.tsx:93-93)): `workingActivityForm` is the typed activity-form helper.
+- **~elapsed** (cit:(["export function formatApproxElapsed(elapsedMs: number): string {"; "now?: number;"], dashboard/src/panels/session-cockpit/WorkingLine.tsx:80-80; dashboard/src/panels/session-cockpit/WorkingLine.tsx:107-107)): the elapsed formatter and optional `now` input are declared here.
+- **Stop action (UA-7)** (cit:(["interrupt === undefined ? null"], dashboard/src/panels/session-cockpit/WorkingLine.tsx:148-148)): the stop-control render branches when `interrupt` is undefined.
+- **Spinner** (cit:([`PULSE_ANIMATION`], dashboard/src/data/stateGrammar.ts:14-14)): `stateGrammar` defines `PULSE_ANIMATION`.
 
 ### Invariants And Boundaries
 
@@ -57,15 +42,14 @@ theater NEVER renders per rail row.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Gate, anatomy, elapsed, welded stop, spinner. | L57-L129 | [WorkingLine.tsx](WorkingLine.tsx) |
-| The grammar predicate + the ruled pulse literal. | L14, L44-L106 | [../../data/stateGrammar.ts](../../data/stateGrammar.ts) |
-| The client turnClock supplying `workingSince`. | L56-L81 | [../../data/sessionCockpitStore.ts](../../data/sessionCockpitStore.ts) |
-| The UA-7 reason copy. | L52 | [lifecycleCopy.ts](lifecycleCopy.ts) |
-| The reserved slot this line is the only tenant of. | L84-L87 | [SessionStage.tsx](SessionStage.tsx) |
-| The view passing `workingLine` + the same-predicate `turn.stop` palette command. | L322-L336, L622-L626 | [SessionsView.tsx](SessionsView.tsx) |
-| The jsdom suite (6 cases) + 2 view-level cases. | L33-L95 | [WorkingLine.test.tsx](WorkingLine.test.tsx) |
+| The WorkingLine component, elapsed formatter, and interrupt seam. | "export function WorkingLine({"; "export function formatApproxElapsed(elapsedMs: number): string {"; "interrupt === undefined ? null" | dashboard/src/panels/session-cockpit/WorkingLine.tsx:80-80; dashboard/src/panels/session-cockpit/WorkingLine.tsx:98-98; dashboard/src/panels/session-cockpit/WorkingLine.tsx:148-148 |
+| The grammar predicate + the ruled pulse literal. | `seatVisualState`; `PULSE_ANIMATION` | dashboard/src/data/stateGrammar.ts:14-14; dashboard/src/data/stateGrammar.ts:101-125 |
+| The cockpit-store shape contains `workingSince`. | `workingSince` | dashboard/src/data/sessionCockpitStore.ts:139-139 |
+| The UA-7 reason copy. | `STOP_TURN_DISABLED_REASON` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:66-67 |
+| The reserved stage slot renders `ConversationWorkingLine` or `WorkingLine`. | "<ConversationWorkingLine sessionId={focused.id} />"; "<WorkingLine" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1216-1216; dashboard/src/panels/session-cockpit/SessionsView.tsx:1218-1218 |
+| SessionsView registers the `conversation.stop` command used by the working-line stage. | "id: \"conversation.stop\""; "title: \"Stop turn\""; "keywords: [\"stop\", \"interrupt\", \"cancel\", \"turn\", \"abort\"]"; "when: () => chatsInterruptRef.current.available"; "run: () => chatsInterruptRef.current.onStop?.()" | dashboard/src/panels/session-cockpit/SessionsView.tsx:582-584; dashboard/src/panels/session-cockpit/SessionsView.tsx:586-587 |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta
 
@@ -88,6 +72,10 @@ window. It renders no stop at all when no interrupt is wired, because controlled
 Send; a raw terminal can still receive the line-hosted evidence-gated control.
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: replaced stale WorkingLine ranges with exact
+  gate/action/grammar anchors, bound the dependent full conversation.stop registration, narrowed
+  declaration-only claims, and rewrote the old welded-stop claim around the interrupt branch.
 
 - 2026-07-24T13:17:17Z — Curator: corrected fallback-source and stop-control ownership semantics;
   verification fields remain pre-commit.

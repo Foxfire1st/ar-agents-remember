@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_pi_rpc_real_smoke.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -77,22 +77,22 @@ a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Real adapter and launch path under test. | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py), [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
-| The recording this module re-verifies. | [0.80.7-capabilities.json](agents-remember/mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json) |
-| Produces the observation compared against the recording. | [_pi_rpc_capabilities.py](agents-remember/mcp/tests/_pi_rpc_capabilities.py) |
-| Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | [test_pi_rpc_adapter.py](agents-remember/mcp/tests/test_pi_rpc_adapter.py) |
-| Proves this marker is applied and reachable from the gated runner. | [test_gated_integration_runner.py](agents-remember/mcp/tests/test_gated_integration_runner.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Real adapter and launch path under test. | `PiRpcAdapter`, `PiRpcSubprocess` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
+| The recording this module re-verifies. | "0.80.7" | mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json:4-4 |
+| Produces the observation compared against the recording. | `observe_capabilities` | mcp/tests/_pi_rpc_capabilities.py:431-473 |
+| Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | `CAPABILITY_FIXTURE`, `PI_RPC_VERSION` | mcp/tests/test_pi_rpc_real_smoke.py:42-42; mcp/tests/test_pi_rpc_real_smoke.py:49-49 |
+| Proves this marker is applied and reachable from the gated runner. | "ar_run_pi_rpc_smoke" | scripts/run-gated-integration.py:79-79 |
 
 ## Cross-Repo References
 
-| Finding | Source Path |
-| --- | --- |
-| Real package RPC documentation. | [Pi RPC](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/rpc.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 12 citations (citation_anchor_missing=6, citation_prose_not_in_cit_form=0, citation_source_malformed=6); final scoped citation check clean.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: rewritten. The module now installs
   0.80.7 (the previous card still said 0.80.6 in Purpose and Code Commentary), owns a
   single install path, and re-records the capability fixture from a live probe instead of

@@ -40,25 +40,27 @@ No durable follow-up is recorded here.
 
 The configured Domain Documentation registry has no entries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is configured for this repository-local suite. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The paired source sidecar records the module's flag parsing, snapshots, reporting, and optional trim resolution while the new source remains uncommitted. | L19-L33 | [heap_diag.py onboarding](../src/agents_remember/serving/heap_diag.py.md) |
+| The source module records the flag parsing, snapshots, reporting, and optional trim resolution. | `heap_diag_enabled` | mcp/src/agents_remember/serving/heap_diag.py:48-51 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary participates in this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The tests exercise repository-local serving diagnostics. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 2 citation findings; scoped check passed.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_heap_diag.py` since
   the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s)

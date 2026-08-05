@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-skills.py`       |
 | doc_type               | `file-level-onboarding`        |
 | lastUpdated            | 2026-06-10T00:40+02:00         |
-| lastVerifiedCommitHash |                               `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash |                               `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -62,28 +62,30 @@ No open file-local todos.
 
 No external documentation is needed for this repository-local helper.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets. | L13-L55 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
-| `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | L86-L161 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
-| Normal sync mode refuses self-sync, removes each target skill folder, copies canonical skills into place, and then reruns the check. | L124-L132; L164-L172 | [scripts/sync-skills.py](agents-remember/scripts/sync-skills.py) |
-| The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. | L95-L117 | [AGENTS.md](agents-remember/AGENTS.md) |
+| The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets. | `CANONICAL_SKILLS`, `TARGETS` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56 |
+| `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | `check_targets` | scripts/sync-skills.py:179-192 |
+| Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. | `sync_targets`, `sync_target`, `replace_tree` | scripts/sync-skills.py:136-139; scripts/sync-skills.py:142-162; scripts/sync-skills.py:195-203 |
+| The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-200 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this helper.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-03T03:20:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 4 Repo-Internal table citations with exact canonical-target, check, sync, and root-instruction anchors. Verification metadata remains unchanged for closeout.
 
 - 2026-06-10T00:40+02:00 — `sync_target` now uses crash-safe `replace_tree` (copy to `<target>.ar-sync-new`, rename live target aside, swap in, then remove the old tree; stale staging/retired leftovers are cleaned on re-run), and `extended_length()` applies the Windows `\\?\` prefix so syncs and `--check` walks work past 260-char paths even with `LongPathsEnabled=0`. Replaces the delete-then-copy that gutted `package_data` when a long-path crash hit mid-delete (2026-06-09 incident).
 - 2026-06-03T18:58+02:00: Created onboarding for the new skill synchronization helper. Verification metadata is pending until the code commit exists.

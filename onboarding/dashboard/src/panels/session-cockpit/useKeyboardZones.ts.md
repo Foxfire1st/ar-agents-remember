@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/useKeyboardZones.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00                           |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -24,21 +24,21 @@ capture phase, active only while the sessions view is the visible view. Every ha
 
 ### Logic
 
-- `active` gates the whole effect (L31-L32): the hidden keep-alive layer never grabs keys;
-  `dispatch` rides a ref (L27-L28) so rebinding never depends on render identity.
-- **Composed handlers** (L30-L37, L79-L87): one binding string can serve several zones with
+- `active` gates the whole effect (cit:([`active`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:23-23)): the hidden keep-alive layer never grabs keys;
+  `dispatch` rides a ref (cit:([`dispatchRef`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:27-27)) so rebinding never depends on render identity.
+- **Composed handlers** (cit:([`handlers`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:36-36); cit:([`defaultPrevented`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:86-94)): one binding string can serve several zones with
   different actions (F6 = chrome region-cycle AND PTY exit-to-chrome), so handlers accumulate per
   chord string and at most one acts per event (`event.defaultPrevented` short-circuits).
-- Chrome/composer chords (L39-L49): per event — resolve the zone (`zoneForTarget`), require the
+- Chrome/composer chords (cit:([`routeKey`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:43-56)): per event — resolve the zone (`zoneForTarget`), require the
   chord's `zones` list to include it, require `routeKey(...) === "handle"` (the generic printable
   suppression), then preventDefault + stopPropagation + dispatch the command id.
-- PTY reserved chords (L54-L64): only `bound` entries with a `tinykeys` string are installed, the
+- PTY reserved chords (cit:([`PTY_RESERVED`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:58-71)): only `bound` entries with a `tinykeys` string are installed, the
   zone must be `pty`, and `routeKey` stays the authority (reserved.ts data) — an unbound/removed
   entry can never be intercepted by a stale binding.
-- The composer `/` rule (L69-L77): `[Shift]+/` (keeps layouts where `/` needs Shift working, e.g.
+- The composer `/` rule (cit:([`slashOpensPalette`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:73-84)): `[Shift]+/` (keeps layouts where `/` needs Shift working, e.g.
   German Shift+7), gated by zone = composer + the pure `slashOpensPalette(value, selectionStart)`
   caret test — the deliberate exception to printable suppression.
-- `tinykeys(window, map, { ignore: () => false, capture: true })` (L88): the **default ignore
+- `tinykeys(window, map, { ignore: () => false, capture: true })` (cit:([`tinykeys`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:95-95)): the **default ignore
   (skip form elements) is disabled** — composer chords MUST fire inside a textarea;
   editable-target suppression is the zone contract's job (printables only, R7).
 
@@ -57,19 +57,20 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The binding: composed per-chord handlers, zone/route gating, `/` rule, ignore-disabled tinykeys. | L15-L90 | [useKeyboardZones.ts](useKeyboardZones.ts) |
-| The zone/routing contract every handler defers to. | L28-L67 | [../../data/keymap/zones.ts](../../data/keymap/zones.ts) |
-| The chord tables and reserved set it installs. | L20-L86; L62-L150 | [../../data/keymap/chords.ts](../../data/keymap/chords.ts) |
-| The view that supplies `active` + `dispatch`. | L291-L298 | [SessionsView.tsx](SessionsView.tsx) |
-| End-to-end binding coverage (real markers, window tinykeys, preventDefault observation, active=false). | L170-L208 | [SessionsView.test.tsx](SessionsView.test.tsx) |
+| The binding: composed per-chord handlers, zone/route gating, `/` rule, ignore-disabled tinykeys. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| The zone/routing contract every handler defers to. | `routeKey` | dashboard/src/data/keymap/zones.ts:54-58 |
+| The chord tables it installs (`CHROME_CHORDS`, `COMPOSER_CHORDS`). | `CHROME_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81 |
+| The reserved set it installs — `PTY_RESERVED` lives in `reserved.ts`, not in `chords.ts`, which is why the old row's second range read out of bounds against the file it named. | `PTY_RESERVED` | dashboard/src/data/keymap/reserved.ts:62-150 |
+| The view that supplies `active` + `dispatch`. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/SessionsView.tsx:940-940 |
+| End-to-end binding coverage (real markers, window tinykeys, preventDefault observation, active=false). | "keyboard zones over the legacy-raw PTY (S4)" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:386-423 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -83,12 +84,18 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 16 citation findings. Converted the
+  six Logic line-cite parentheticals — plus the unflagged composed-handlers pair — to cit form against
+  the post-rework layout (`active` 31-32, `dispatchRef` 27-28, `handlers`/`defaultPrevented` 36-41/86-94,
+  `routeKey` 43-56, `PTY_RESERVED` 58-71, `slashOpensPalette` 73-84, `tinykeys` 95), and re-anchored +
+  re-ranged the five Repo-Internal References rows. Scoped recheck clean.
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the stale `active` self-citation. L27-L28
   is the `dispatchRef` wiring, not the gate; the `active` guard is the effect's first statement, so the
   bullet now cites L31-L32 for the gate and keeps L27-L28 on the ref clause it actually describes.

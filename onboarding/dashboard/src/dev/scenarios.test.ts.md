@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/scenarios.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -108,32 +108,34 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card is verified from its direct source, the model under test, and the
 server-side model the vocabulary mirrors.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The T9C `reindex-reroute` case: `/reroute/i` caption, `stale` `cgc-seed` edge, `seedFallback`, never `blocked`, same-`worktreeGroup` prop diff. | L131-L161 | [scenarios.test.ts](scenarios.test.ts) |
-| `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. | L279-L313 | [scenarios.test.ts](scenarios.test.ts) |
-| Asserts the `build-up`/`tear-down` timelines + frame validity. | L10-L37 | [scenarios.test.ts](scenarios.test.ts) |
-| The `SCENARIOS` model under test, including the `reindexReroute` timeline whose R4 caption this case matches. | L90-L102; L258-L271 | [scenarios.ts](scenarios.ts) |
-| `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. | L762-L781 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
-| `_seed_edge_state` — the reducer function that actually emits `stale`; `refused` is not among its answers. | L1588-L1611 | [reducer.py](../../../mcp/src/agents_remember/observer/reducer.py) |
-| `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. | L231-L241 | [engine-room/EnclosureCanvas.tsx](../panels/engine-room/EnclosureCanvas.tsx) |
+| The T9C `reindex-reroute` case: `/reroute/i` caption, `stale` `cgc-seed` edge, `seedFallback`, never `blocked`, same-`worktreeGroup` prop diff. | "reindex-reroute" | dashboard/src/dev/scenarios.test.ts:131-161 |
+| `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. | `SERVED_EDGE_STATES` | dashboard/src/dev/scenarios.test.ts:284-294 |
+| Asserts the `build-up`/`tear-down` timelines + frame validity. | `buildUp`; `tearDown`; `version`; `caption` | dashboard/src/dev/scenarios.test.ts:7-14; dashboard/src/dev/scenarios.test.ts:8-25; dashboard/src/dev/scenarios.test.ts:28-36 |
+| The `SCENARIOS` model under test, including the `reindexReroute` timeline whose R4 caption this case matches. | `SCENARIOS`; `reindexReroute` | dashboard/src/dev/scenarios.ts:90-102; dashboard/src/dev/scenarios.ts:260-273 |
+| `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. | `SERVED_EDGE_STATES` | dashboard/src/dev/scenarios.test.ts:284-294 |
+| `_seed_edge_state` — the reducer function that actually emits `stale`; `refused` is not among its answers. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1596-1612 |
+| `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. | `refusedPolarityOf` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:231-241 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The served vocabulary this file mirrors lives in the same
 repository, under `mcp/src/agents_remember/observer/`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-03T09:30+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 8 assigned citation findings (4 missing anchors and 4 malformed sources); final scoped check is clean. Max-reviewer Tier-2 subject-binding addendum bound the buildUp/tearDown assertion bodies and frame-validity checks instead of declaration-only ranges.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

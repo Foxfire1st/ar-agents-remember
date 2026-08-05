@@ -26,21 +26,21 @@ vendor-clone skin.
 
 ### Logic
 
-- `Block` (L67-L102) dispatches one `ConversationContentBlock` by `type`: `markdown`/`text`/`code` flow
+- cit:([`Block`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:67-102) dispatches one `ConversationContentBlock` by `type`: `markdown`/`text`/`code` flow
   through `MarkdownBlock` (code is fenced with its language); `image-ref` renders a LABELED reference
-  (L71-L85) — the alt text plus a `· filename/type fallback` note when `altProvenance ===
+  cit:([`imageRef`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:40-52) — the alt text plus a `· filename/type fallback` note when `altProvenance ===
   "filename-mime-fallback"` and the MIME type — with **no `<img>` fetch and no invented
   `/api/assets/...` URL** (finding F11: no asset-read route exists in the backend; `assetId` is a
   submit-side reference, so an `<img>` would 404 on every future `image-ref`; the missing asset-read
   seam is recorded in-code); `file-ref`/`resource-ref` render a 📎 name + optional MIME chip.
-- `MessageItem` (L104-L156) computes the clamp from LOGICAL SOURCE LINES: `combinedSourceText` (L55-L65) joins
+- cit:([`MessageItem`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156) computes the clamp from LOGICAL SOURCE LINES: cit:([`combinedSourceText`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:55-65) joins
   the markdown/text blocks, `sourceLineCount` counts newlines, and a message is `clampable` only when
   it is an assistant message, `phase === "completed"`, and exceeds `CLAMP_THRESHOLD_LINES` (40, L13).
 - **Clamp by slicing, not by pixels (F12):** a collapsed message renders `sourceText.split("\n").
-  slice(0, 40)` and reports `hiddenLines = totalLines - 40` (L109-L114), so the `+N lines` on the
+  slice(0, 40)` and reports `hiddenLines = totalLines - 40` cit:(["const hiddenLines = collapsed"], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:115-115), so the `+N lines` on the
   `ClampButton` is EXACTLY what is hidden — never a `maxHeight` visual clamp whose count diverges
   from the pixels actually hidden.
-- The user role gets a distinct left-amber-border wrap and a `>` glyph (L118-L121); the head row
+- The user role gets a distinct left-amber-border wrap and a `>` glyph cit:([`userWrap`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:16-25); the head row
   shows a `SourceBadge` that appears only when the origin changes interpretation.
 
 ### Invariants And Boundaries
@@ -57,28 +57,28 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The content-block/item types this component narrows over (`image-ref`, `altProvenance`). | L8-L9 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| Streaming-safe Markdown renderer used for every prose/code block. | L10, L63-L70 | [MarkdownBlock.tsx](MarkdownBlock.tsx) |
-| The shared ClampButton (real button, exact `+N`), `sourceLineCount`, `SourceBadge`, `useClampIds`. | L11, L100-L138 | [primitives.tsx](primitives.tsx) |
-| The kind dispatcher that routes messages here. | — | [ConversationItemView.tsx](ConversationItemView.tsx) |
-| The feed-ARIA/image-alt/clamp assertions covering this component. | — | [renderer.test.tsx](renderer.test.tsx) |
+| The content-block/item types this component narrows over (`image-ref`, `altProvenance`). | `altProvenance` | dashboard/src/data/conversation/types.ts:83-83 |
+| Streaming-safe Markdown renderer used for every prose/code block. | "export const MarkdownBlock" | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
+| The shared ClampButton (real button, exact `+N`), `sourceLineCount`, `SourceBadge`, `useClampIds`. | "export function ClampButton" | dashboard/src/panels/session-cockpit/conversation/primitives.tsx:38-38 |
+| The kind dispatcher that routes messages here. | "export const ConversationItemView" | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-68 |
+| The feed-ARIA/image-alt/clamp assertions covering this component. | "exposes a role=feed and articles keyed to the server globalOrdinal" | dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:34-52 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -88,10 +88,14 @@ in-progress conversation evidence.
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the superseded `(L…)`
+  prose citations and the `n/a` rows with exact anchors and ranges; exact non-fixing check returns
+  zero findings.
+
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations. The four lines
   the streaming-phase cue added (the `streamDot`/`phaseWord` recipes and their comment, L28-L31)
   shifted everything below them by +4: `combinedSourceText` L51 → L55-L65, `Block` L63 → L67-L102,
-  `MessageItem` L100 → L104-L156. `CLAMP_THRESHOLD_LINES` (L13) sits above the insert and was
+  `MessageItem` L100 → L104-L156. cit:([`CLAMP_THRESHOLD_LINES`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:13-13) sits above the insert and was
   already correct.
 
 - 2026-07-24T13:17:17Z — Curator: documented the visible, non-color-only streaming phase cue;

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ responsibility: a `"full"` request must use `read_text`, never this helper.
 
 No external documentation is needed for this standard-library path helper.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed for the local filesystem wrapper. | n/a | n/a |
 
@@ -60,23 +60,27 @@ No external documentation is needed for this standard-library path helper.
 
 Same-repository closeout code and tests are the direct evidence for this helper.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes. | closeout plan helpers | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. | missing-onboarding checks | [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
-| Worktree support tests create and clean up deliberately long paths through this helper. | long-path regression tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| The `read_ar_files` controller calls `read_text` for full reads and `read_text_range` for line-range reads. | ranged/full source read | [controllers/read_files.py](agents-remember/mcp/src/agents_remember/controllers/read_files.py) |
+| `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes. | `changed_worktree_paths`; `onboarding_refresh_plan_for_context`; `refresh_entity_fingerprints_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/git.py:116-124; mcp/src/agents_remember/worktrees/modules/onboarding.py:75-116; mcp/src/agents_remember/worktrees/modules/onboarding.py:507-553; mcp/src/agents_remember/worktrees/modules/onboarding.py:751-783 |
+| The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. | `_missing_sidecar_onboarding`; `_missing_inline_onboarding`; `filesystem.exists`; `filesystem.read_text` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:111-124; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:127-150 |
+| Worktree support tests create and clean up deliberately long paths through this helper. | `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support.py:1541-1554; mcp/tests/test_worktree_support.py:1573-1591 |
+| The `read_ar_files` application entry point calls `read_text` for full reads and `read_text_range` for line-range reads. | `_read_source`; `read_text`; `read_text_range` | mcp/src/agents_remember/application/read_files.py:188-206 |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed for this local helper.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 4 table citations and replaced 4 stale source references with exact helper implementations/tests; no unresolved Tier-3 claims.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/kernel/filesystem.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked

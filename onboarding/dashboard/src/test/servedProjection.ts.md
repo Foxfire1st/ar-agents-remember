@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/servedProjection.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:10+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -39,20 +39,17 @@ types the import erased.
 
 ### Logic
 
-- `AsJsonModule<T>` (L22-L32): a conditional type distributed over `T`. Scalars widen to their base
+- cit:([`AsJsonModule`], dashboard/src/test/servedProjection.ts:22-32): a conditional type distributed over `T`. Scalars widen to their base
   type; `readonly (infer Item)[]` maps to `AsJsonModule<Item>[]`; `object` maps homomorphically over
   its keys — which preserves optionality, so an optional mirror field stays optional. Anything else
   falls through unchanged.
-- `asServedProjection(payload: AsJsonModule<WorkspaceProjection>): WorkspaceProjection` (L34-L43).
+- cit:([`asServedProjection`], dashboard/src/test/servedProjection.ts:41-43).
   **The PARAMETER type is the check.** A payload that does not satisfy `AsJsonModule<WorkspaceProjection>`
   fails `tsc -b` at the call site and names the field. The body is `return payload as WorkspaceProjection`
   — the only assertion, and it is narrow enough to describe in one sentence: it re-narrows the
   vocabularies, and only those.
 
 ### Conventions
-
-Placement is deliberate and stated in the header (L16-L18): this lives beside the tests rather than in
-`types/projection.ts` because it is scaffolding for *consuming* the fixture, not part of the contract.
 
 The body cast is one of the sites registered in `wireFixtureGuard.test.ts::SANCTIONED_WIRE_SITES`
 (`src/test/servedProjection.ts :: as WorkspaceProjection`, count 1) with the written reason "the
@@ -62,9 +59,6 @@ fails the guard rather than sheltering under the existing entry.
 
 ### Invariants And Boundaries
 
-- **Every test that reads `snapshot.json` comes through here.** The header says why (L17-L18): a second
-  `as unknown as` elsewhere silently re-opens the hole for that file. `contract.test.ts` and
-  `test/fixtures/wire.ts` are the two current callers.
 - `AsJsonModule<T>` must stay the *exact* widening the compiler performs — no more, no less. Widening
   more would let a wrong payload through; widening less would reject a correct one and push callers
   back to a double cast.
@@ -84,36 +78,45 @@ fails the guard rather than sheltering under the existing entry.
 ## Docs References
 
 The behaviour this file compensates for is a TypeScript compiler behaviour: `resolveJsonModule` imports
-a JSON file as a module whose type is inferred from its contents, with literals widened. No
-project-external domain documentation governs the file beyond that language reference.
+a JSON file as a module whose type is inferred from its contents, with literals widened. The canonical
+language reference is [TSConfig Reference — resolveJsonModule](https://www.typescriptlang.org/tsconfig/#resolveJsonModule).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `resolveJsonModule` enables importing `.json` files as modules; the module's type is inferred from the file's contents, which is the widening this file re-applies deliberately. | `resolveJsonModule` | [TSConfig Reference — resolveJsonModule](https://www.typescriptlang.org/tsconfig/#resolveJsonModule) |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The header stating the defect: `resolveJsonModule` widening, why the double cast was reached for, and what `AsJsonModule` restores. | L1-L18 | [servedProjection.ts](servedProjection.ts) |
-| `AsJsonModule<T>` — the exact widening, and nothing else. | L22-L32 | [servedProjection.ts](servedProjection.ts) |
-| `asServedProjection` — the parameter type is the check; the body cast only re-narrows vocabularies. | L34-L43 | [servedProjection.ts](servedProjection.ts) |
-| The mirror whose literal unions the import erases (`State`, `Phase`, `AttentionSeverity`, `AttentionLane`, `ProcessFactState`, `ProcessHealth`). | L21-L30; L57-L70; L429-L442; L487-L519 | [../types/projection.ts](../types/projection.ts) |
-| Caller 1: the contract guard reads the fixture through this function and then walks it in three directions. | L21-L22; L75 | [contract.test.ts](contract.test.ts) |
-| Caller 2: the fixture builders take their bases from the payload read through this function. | L64; L69 | [fixtures/wire.ts](fixtures/wire.ts) |
-| The registry entry that makes the body cast the only one allowed in this file, with its written reason. | L153-L157 | [wireFixtureGuard.test.ts](wireFixtureGuard.test.ts) |
-| `tsconfig.app.json` sets `resolveJsonModule`, which is what makes the widening apply to the fixture import. | L11 | [../../tsconfig.app.json](../../tsconfig.app.json) |
+| `AsJsonModule<T>` — the exact widening, and nothing else. | `AsJsonModule` | dashboard/src/test/servedProjection.ts:22-32 |
+| `asServedProjection` — the parameter type is the check; the body cast only re-narrows vocabularies. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
+| The mirror whose literal unions the import erases (`State`, `Phase`, `AttentionSeverity`, `AttentionLane`, `ProcessFactState`, `ProcessHealth`). | `State`; `Phase`; `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | dashboard/src/types/projection.ts:15-15; dashboard/src/types/projection.ts:29-29; dashboard/src/types/projection.ts:33-33; dashboard/src/types/projection.ts:37-37; dashboard/src/types/projection.ts:41-41; dashboard/src/types/projection.ts:45-45 |
+| Caller 1: the contract test imports `asServedProjection` for the sampled snapshot. | "./servedProjection" | dashboard/src/test/contract.test.ts:21-21 |
+| Caller 1: the contract test calls `asServedProjection` for the sampled snapshot. | "asServedProjection(snapshot)" | dashboard/src/test/contract.test.ts:74-74 |
+| The contract file documents the three type-level directions `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror`. | "mirror ⊇ served"; "served ⊇ mirror"; "fixture ⊇ mirror" | dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45 |
+| Caller 2: the fixture module exports `SERVED` from `asServedProjection(snapshot)`. | "export const SERVED" | dashboard/src/test/fixtures/wire.ts:66-66 |
+| Caller 2: the fixture module reads the served projection's fields when constructing the `BASE_*` builders. | `BASE_LIFECYCLE` | dashboard/src/test/fixtures/wire.ts:95-107 |
+| The registry entry that makes the body cast the only one allowed in this file, with its written reason. | "src/test/servedProjection.ts :: as WorkspaceProjection" | dashboard/src/test/wireFixtureGuard.test.ts:159-159 |
+| `tsconfig.app.json` sets `resolveJsonModule`, which is what makes the widening apply to the fixture import. | `resolveJsonModule` | dashboard/tsconfig.app.json:11-11 |
 
 ## Cross-Repo References
 
 The projection whose shape is being narrowed originates in the Python serving/observer layer, which is
 the same repository. No sibling repository or external system is involved.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local; the payload's producer is `observer/projection.py` in this repo. | L1-L9 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
+| The reviewed behavior is wholly repository-local; the payload's producer is `observer/projection.py` in this repo. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
 
 ## Update History
+
+- 2026-08-04T15:46:45+02:00 — 260731-EFA-L6 S18-B08 curator: split contract import/call, direction comments, and fixture-consumer ownership, regenerated the unique caller/builder extents, and rechecked the ledger-bounded direction literals.
+
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02: removed unsupported comment-header and absolute
+  every-test claims whose multi-line `//` anchors could not produce stable generated extents;
+  preserved current `AsJsonModule`/`asServedProjection` constructs, the sanctioned cast registry
+  and reason, and the two concrete consumer/test citations with exact generated ranges. Verification
+  metadata remains unchanged.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: created. Records `AsJsonModule<T>` as the exact
   `resolveJsonModule` widening, `asServedProjection`'s parameter type as the real check, the single

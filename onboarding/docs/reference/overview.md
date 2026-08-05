@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-31T16:20+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -83,7 +83,34 @@ pathRules-excluded, so the durable record lives on the root overview and here:
 `worktrees-c09.md`'s quality-before-commit *sequence* is unaffected — the gate still runs before any
 closeout mutation, and still fails closed. What changed is what the gate can catch.
 
+## 260731-EFA-L6 Reference Impact
+
+`mcp-tools.md` now carries three additions this route must hold:
+
+1. **The memory tools are leaf-scoped by `contract_path`.** `drift_check`, `memory_quality_check`,
+   and `route_index_refresh` all take the same optional `contract_path` as the `worktree_*` verbs.
+   Supplied, they act on that leaf's memory worktree and measure it against the leaf's code
+   worktree; `route_index_refresh` **writes**, so running it unscoped from inside a leaf dirties
+   the official memory repo. The response carries `onboardingRoot`, so the acted-on tree is always
+   visible.
+2. **Citation ranges are not repaired by hand.** `agents-remember memory-citations --repo <id>
+   --contract <enclosure contract> [--fix]` regenerates every range that can be regenerated from
+   its anchor after a package move and prints a work order for the rest. `--contract` is required,
+   and only pure moves (symbol keeps its name, changes file) are repaired — a rename, deletion, or
+   ambiguous match is refused rather than guessed.
+3. **Task-document and lifecycle rows were added.** `worktree_cleanup` is explicitly non-terminal
+   for task documents; `lifecycle_finalize_task` proves the landed edge and completes the exact
+   contract-bound leaf (with parent-row reconciliation); the new Task documents section names
+   `task_doc` and `task_reopen`.
+
 ## Update History
+
+- 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: recorded the reference-route impact of the
+  contract-scoped memory tools (`contract_path` on `drift_check`, `memory_quality_check`,
+  `route_index_refresh`, with write behavior and `onboardingRoot`), the required-`--contract`
+  `memory-citations` repair rule (moves only), and the new task-document/lifecycle rows
+  (`worktree_cleanup` non-terminal, `lifecycle_finalize_task`, `task_doc`, `task_reopen`).
+  Verification metadata remains pinned.
 - 2026-07-31T16:20+02:00 — 260731-EFA-L2 curator: `mcp-tools.md` now names
   `mcp/src/agents_remember/mcp/registration/` (one module per tool family, `TOOL_REGISTRARS` walked
   by `create_server`) as the authoritative tool surface instead of `mcp/server.py`. Flagged the

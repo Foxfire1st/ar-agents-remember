@@ -44,28 +44,33 @@ None.
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | Source discovery checked | — |
+| No relevant external documentation is configured. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Stream lifecycle and watchdog behavior are covered with controlled sources. | L11-L335 | [stream.test.ts](stream.test.ts) |
-| The production EventSource controller consumes these callbacks. | L1-L240 | [stream.ts](stream.ts) |
-| The resume cursor the watchdog cases replay from is a minted brand, not an inline cast. | `eventCursor` | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
+| Stream lifecycle and watchdog behavior are covered with controlled sources. | `ControlledSource`; "boot-window reconnect backoff (260718-CHATS-L5I A3)"; "liveness watchdog (260723 sleep/wake + half-open wedge)" | dashboard/src/data/conversation/stream.test.ts:18-34; dashboard/src/data/conversation/stream.test.ts:55-130; dashboard/src/data/conversation/stream.test.ts:132-335 |
+| The production EventSource controller consumes these callbacks. | `openConversationStream` | dashboard/src/data/conversation/stream.ts:86-242 |
+| The `openWatched` harness supplies the watchdog replay cursor. | `openWatched` | dashboard/src/data/conversation/stream.test.ts:141-153 |
+| The replay cursor is minted by the `eventCursor` brand constructor. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |
+| The first watchdog replay assertion requires the resumed URL to contain `after=evt-7`. | "expect(ControlledSource.instances).toHaveLength(2); // fresh subscribe, SAME cursor — no re-page expect(ControlledSource.instances[1].url).toContain(\"after=evt-7\")" | dashboard/src/data/conversation/stream.test.ts:173-174 |
+| The established reconnect assertion requires the resumed URL to contain `after=evt-7`. | "vi.advanceTimersByTime(2_000); // established backoff, not the boot cadence expect(ControlledSource.instances).toHaveLength(3); expect(ControlledSource.instances[2].url).toContain(\"after=evt-7\")" | dashboard/src/data/conversation/stream.test.ts:187-189 |
+| The watchdog backstop assertion requires the resumed URL to contain `after=evt-7`. | "vi.advanceTimersByTime(5_000); expect(ControlledSource.instances[0].closed).toBe(true); expect(ControlledSource.instances).toHaveLength(2); expect(ControlledSource.instances[1].url).toContain(\"after=evt-7\")" | dashboard/src/data/conversation/stream.test.ts:212-215 |
+| The visibility-recovery assertion requires the resumed URL to contain `after=evt-7`. | "document.dispatchEvent(new Event(\"visibilitychange\")); expect(ControlledSource.instances).toHaveLength(2); expect(ControlledSource.instances[1].url).toContain(\"after=evt-7\")" | dashboard/src/data/conversation/stream.test.ts:235-237 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests exercise this repository's conversation transport. | L1-L335 | [stream.test.ts](stream.test.ts) |
 
 ## Update History
 
+- 2026-08-04T14:59:10+02:00 — 260731-EFA-L6 S18-B12 curator: completed the whole-claim cursor audit by splitting the `openWatched` setup, `eventCursor` brand definition, and four exact `after=evt-7` replay assertions; scoped fixer generated the final ranges.
 - 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **corrected the assertion count
   in the 10:02 entry below.** It said "the two assertions that consume it … (L174, L189)". There are
   **four** `after=evt-7` assertions in the `liveness watchdog` describe — L174, L189, **L215** and
@@ -80,21 +85,11 @@ No meaningful cross-repository references found.
   (`boot-window reconnect backoff` L55 with four, `liveness watchdog` L132 with seven) are unchanged
   in name and order. Verification metadata untouched.
 
-- 2026-08-01T10:02+02:00 — 260731-EFA-L4 curator: No content impact: the whole diff against
-  `abc7cbc` is two lines in the watchdog harness — the `type ActiveEventCursor` import became a
-  value import of `test/fixtures/conversationWire.ts::eventCursor`, and
-  `getResumeCursor: () => "evt-7" as ActiveEventCursor` became `() => eventCursor("evt-7")` (L149).
-  The check that could have made this consequential: this card's claim is that the suite "verif[ies]
-  resume cursors across quiet sleep/wake cycles", so the cursor VALUE is load-bearing here in a way
-  it is not in the other converted files. I read the **four** assertions that consume it —
-  `ControlledSource.instances[1].url` and `[2].url` must contain `after=evt-7` (L174, L189, L215,
-  L237) — and
-  the string is unchanged; `eventCursor` is a pure brand mint (`raw as ActiveEventCursor`) with no
-  default and no transformation, so it cannot alter what the re-subscribe URL carries. Also verified
-  all eleven cases across the two describes (`boot-window reconnect backoff` L55,
-  `liveness watchdog` L132) are unchanged in name and order, that `ControlledSource` still models the
-  EventSource lifecycle with fake timers, and that both citations still hold on the current
-  335-line test and 242-line source. Added one reference row for the mint.
-
+- 2026-08-01T10:02+02:00 — 260731-EFA-L4 curator: the watchdog harness supplies
+  `getResumeCursor: () => eventCursor("evt-7")`, and the four `after=evt-7` assertions remain in
+  place across the liveness cases; the current table carries the generated cursor and watchdog
+  citations.
+  The current-state cursor is a pure brand mint and the suite continues to exercise quiet sleep/wake
+  recovery without changing the resumed URL.
 - 2026-07-24T13:17:50Z — Created for boot-aware reconnect and half-open stream regression coverage.
   Verification hash/date remain pinned to the pre-commit source stamp.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-01T08:40+02:00                         |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`     |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                         |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`     |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -30,8 +30,8 @@ feeds the task reader's notes view (`dashboard/src/panels/TaskNotes.tsx` via
 ### 260731-EFA-L4 Current Delta — Both Routes Now Declare What They Answer With
 
 `GET /api/notes/list` declares `response_model=NotesListing` and `GET /api/notes/read` declares
-`response_model=NoteContents`, both under the shared `responses=SCOPED_READ_RESPONSES` table
-(L171-L176). All three come from `serving/response_contract.py`, which is where this module's
+`response_model=NoteContents`, both under the shared `responses=SCOPED_READ_RESPONSES` table.
+All three come from `serving/response_contract.py`, which is where this module's
 one new import lives.
 
 `SCOPED_READ_RESPONSES` is exactly the two statuses `_notes_json` can produce — 400
@@ -110,29 +110,32 @@ confined to one honest path segment.
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The API reads only the local coordination tree; nothing crosses repositories. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The app factory that calls `register_notes_routes(app, config)` immediately before `mount_static`. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The `confine_rel` realpath confinement this module reuses for reads. | [kernel/sidecar_pairing.py](agents-remember/mcp/src/agents_remember/kernel/sidecar_pairing.py) |
-| The repo allow-list authority guard (`require_repo`). | [controllers/_guards.py](agents-remember/mcp/src/agents_remember/controllers/_guards.py) |
-| `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) + `path_is_relative_to`. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| `language_for`, reused for the listing + read `language` field. | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
-| The same single-segment `master` confinement idiom on the change-set routes. | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
-| The browser client for these endpoints. | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
-| The test suite for this module (API-layer coverage). | [test_serving_notes.py](agents-remember/mcp/tests/test_serving_notes.py) |
-| `NotesListing`, `NoteContents`, and the shared `SCOPED_READ_RESPONSES` refusal table these two routes declare. | [response_contract.py](response_contract.py.md) |
-| The suite that enforces the declarations by driving both routes and validating the real body. | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. | `register_notes_routes`, `mount_static` | mcp/src/agents_remember/serving/app.py:756-776 |
+| The `confine_rel` realpath confinement this module reuses for reads. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
+| The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
+| `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. | `McpRuntimeConfig`, `path_is_relative_to` | mcp/src/agents_remember/mcp/config.py:113-137; mcp/src/agents_remember/mcp/config.py:635-640 |
+| `language_for` supplies the listing and read `language` field. | `language_for` | mcp/src/agents_remember/serving/scope.py:65-67 |
+| The changeset route's single-segment master confinement helper. | `_master_task_root` | mcp/src/agents_remember/serving/changeset.py:145-149 |
+| The browser client for these endpoints. | `notes` | dashboard/src/data/notes.ts:19-19 |
+| The `list_notes` and `read_note` helper bodies. | `list_notes`, `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136 |
+| The shared `SCOPED_READ_RESPONSES` refusal-table declaration. | `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:1057-1063 |
 
 ## Update History
 
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: narrowed rows 127-128 to the `list_notes`/
+  `read_note` helper bodies and the shared refusal-table declaration.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T08:40+02:00 — 260731-EFA-L4 curator: recorded the two `response_model`
-  declarations (L171-L176) and the shared `SCOPED_READ_RESPONSES` table, mapping its 400/404
+  declarations and the shared `SCOPED_READ_RESPONSES` table, mapping its 400/404
   entries onto the exact refusals `_notes_json` already produced (`bad-request`, `bad-path`,
   `unknown-repo`, `not-found`). Noted that FastAPI validates neither handler — both return a
   `JSONResponse` directly — so the gate is `test_serving_response_conformance.py`; added that to

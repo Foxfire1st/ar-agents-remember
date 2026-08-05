@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/buildIdentity.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,28 +55,29 @@ commit still falls back to version identity rather than inventing a hash.
 No relevant documentation was found after checking the configured sources; current claims are
 proven by repository source and direct consumers.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation is configured for this repository-local seam. | Source discovery checked | — |
+| No relevant external or domain documentation is configured for this repository-local seam. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Declares the optional server fingerprint consumed by the comparator. | L443-L448 | [types/projection.ts](../types/projection.ts) |
-| Renders the comparison and owns the explicit reload action. | L621-L655 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| Embeds the fingerprint into the compiled client. | L65 | [vite.config.ts](../../vite.config.ts) |
+| Declares the optional server fingerprint consumed by the comparator. | `ServingBuild` | dashboard/src/types/projection.ts:378-384 |
+| Renders the comparison and owns the explicit reload action. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:689-719 |
+| Embeds the fingerprint into the compiled client. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
 - 2026-07-24T13:17:50Z — Documented dirty serving-build labels and their compact/tooltip split.
   Verification hash/date remain pinned to the pre-commit source stamp.
 

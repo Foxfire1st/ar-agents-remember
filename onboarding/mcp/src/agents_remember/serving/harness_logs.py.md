@@ -61,23 +61,23 @@ serialized substring heuristics. Candidate discovery is bounded before the 100 m
 The resolved source registry has no Domain Documentation entries, and this repository-local parser
 is defined by the real harness records and regression fixtures inspected for L15.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external/domain source defines this local record parser. | L1-L261 | [harness_logs.py](harness_logs.py) |
+| No configured external/domain source defines this local record parser. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The parser binds recent cwd-matching logs and distinguishes user messages from Claude command evidence. | L36-L113; L142-L225 | [harness_logs.py](harness_logs.py) |
-| The injector supplies the unique message id or command text and chooses calibrated acceptance windows. | L62-L176 | [injector.py](injector.py.md) |
-| Real-shape fixtures cover Claude message/command success and error, Codex cwd binding, and partial final appends. | L15-L122 | [../../../tests/test_harness_logs.py](../../../tests/test_harness_logs.py.md) |
+| The parser binds recent cwd-matching logs and distinguishes user messages from Claude command evidence. | `HarnessSessionLog` | mcp/src/agents_remember/serving/harness_logs.py:39-120 |
+| The injector supplies the unique message id or command text and chooses calibrated acceptance windows. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
+| Real-shape fixtures cover Claude message/command success and error, Codex cwd binding, and partial final appends. | `test_claude_log_binding_and_command_evidence` | mcp/tests/test_harness_logs.py:15-64 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Session JSONL is local harness-owned state read by this repository's serving process. | — | — |
 
@@ -102,6 +102,7 @@ is stated once, where it is decided.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 4 citation findings (3/3 anchored and sourced; the no-source documentation row was normalized; scoped citation check clean).
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_claude_user_text` / `_codex_user_text` readers and the exclusion rules they carry.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

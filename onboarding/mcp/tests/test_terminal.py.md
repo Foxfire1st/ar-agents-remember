@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -105,16 +105,16 @@ No task-independent technical debt was identified during FEUI-L9R review.
 No relevant documentation was found after checking the configured sources; the regression claims
 are proven by repository source and the test suite itself.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local test module. | Source discovery checked | — |
+| No relevant external or domain documentation was found for this repository-local test module. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The terminal host under test. | L123-L136; L397-L430 | [serving/terminal.py](agents-remember/mcp/src/agents_remember/serving/terminal.py) |
-| The serving layer the host joins. | Current FEUI-L9R runtime-truth repair | [serving overview](../src/agents_remember/serving/overview.md) |
+| The terminal host under test. | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
+| The serving layer the host joins. | `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview` | onboarding/mcp/src/agents_remember/serving/overview.md:1-2198 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -124,9 +124,9 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 No meaningful cross-repository implementation source governs this repository-local test module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -135,6 +135,8 @@ Terminal regressions now pin capability-aware synchronized tmux frame setup and 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: anchored 2 Repo-Internal reference rows; scoped result 0 findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2: every fixture in this suite was rewritten onto two new
   parameter objects, so Conventions now records them. `TerminalHost` is constructed from one

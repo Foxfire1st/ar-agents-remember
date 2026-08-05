@@ -30,14 +30,14 @@ exports the launch flow renders.
 
 ### Logic
 
-- `CapabilityFetchState` (L23) — exactly `idle | loading | refreshing | error`; there is no
+- cit:([`CapabilityFetchState`], dashboard/src/data/capabilityCatalog.ts:23-23) — exactly `idle | loading | refreshing | error`; there is no
   "loaded" word: loaded = `idle` + `envelope` present (`fetchedAt` distinguishes never-fetched).
-- `CapabilityCatalogError` (L25-L30) — the verbatim error surface `{httpStatus, status, detail}`;
+- cit:([`CapabilityCatalogError`], dashboard/src/data/capabilityCatalog.ts:26-31) — the verbatim error surface `{httpStatus, status, detail}`;
   `httpStatus: null` = the fetch itself threw (transport).
-- `capabilityCatalogStore` / `useCapabilityCatalog` / `harnessCapabilities(harness)` (L44-L55) —
-  vanilla store + hook selector + imperative read; `patchHarness` (L58-L62) replaces one harness's
+- `capabilityCatalogStore` / `useCapabilityCatalog` / cit:([`harnessCapabilities`], dashboard/src/data/capabilityCatalog.ts:54-56) —
+  vanilla store + hook selector + imperative read; cit:([`patchHarness`], dashboard/src/data/capabilityCatalog.ts:58-62) replaces one harness's
   entry whole (envelopes are never merged).
-- **R2 cost-honesty exports** (L69-L90): `capabilityCostNote(harness)` = ``starts a short-lived
+- **R2 cost-honesty exports** cit:(["export function capabilityCostNote(", "export function capabilityLoadingCopy(", "export function cacheStatusNote("], dashboard/src/data/capabilityCatalog.ts:70-70; dashboard/src/data/capabilityCatalog.ts:75-75; dashboard/src/data/capabilityCatalog.ts:82-82): `capabilityCostNote(harness)` = ``starts a short-lived
   native ${harness} process`` — GENERIC, no seconds constant anywhere (observed per-harness
   timings are L5 evidence, never UI constants); `capabilityLoadingCopy(harness, mode)` gives the
   initial/miss loading state the SAME cost naming as refresh ("same cost as an explicit
@@ -46,7 +46,7 @@ exports the launch flow renders.
 - `isEffortOption`/`isModelRow` (L98-L119, review finding 4) — validate every field a picker
   actually reads per model row (key/displayName/hidden/selectable, `defaultEffort` null|string,
   `effortOptions` array of {key, displayName, launchSettable, sessionSettable}); `isEnvelope`
-  (L121-L135) checks schema = `CAPABILITY_SCHEMA`, harness, `cacheStatus ∈ hit|miss|refreshed`,
+  cit:(["function isEnvelope(body: unknown): body is CapabilityEnvelope {"], dashboard/src/data/capabilityCatalog.ts:122-122) checks schema = `CAPABILITY_SCHEMA`, harness, `cacheStatus ∈ hit|miss|refreshed`,
   `installFingerprint`, and `models.every(isModelRow)` — a malformed 200 lands in the honest
   schema-mismatch error path (detail names `ar-harness-capabilities/v1`), never adopted, never a
   later render crash.
@@ -54,7 +54,7 @@ exports the launch flow renders.
   server's own vocabulary (`capability-unavailable`/`control-unavailable`) renders only when the
   server's JSON body actually said it; a 502 gateway page reads `transport: HTTP 502`. Detail
   defaults to the honest `HTTP <status>` line — never invented.
-- `fetchHarnessCapabilities(harness, {refresh, base})` (L170-L243) — the ONE read path. NEVER
+- cit:([`fetchHarnessCapabilities`], dashboard/src/data/capabilityCatalog.ts:192-268) — the ONE read path. NEVER
   throws; failures land as `fetchState: "error"` with verbatim detail and resolve the returned
   promise with the per-harness entry (also written to the store). Sets `loading` only on the very
   first read of a harness; a refresh or any re-read over an existing snapshot shows `refreshing`
@@ -92,20 +92,20 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The store, cost-honesty copy, envelope validation, and single-flight/refresh machinery. | L22-L243 | [capabilityCatalog.ts](capabilityCatalog.ts) |
-| The wire mirror the envelope validates against (`CAPABILITY_SCHEMA`, envelope/snapshot/row types). | — | [../types/harnessCapabilities.ts](../types/harnessCapabilities.ts) |
-| The daemon route + quarantine posture this mirrors (failed refresh pops the cache entry). | — | [harness_capability_catalog.py](../../../mcp/src/agents_remember/serving/harness_capability_catalog.py) |
-| The primary consumer (picker options exclusively from the envelope; verbatim error + retry). | — | [../panels/session-cockpit/LaunchFlow.tsx](../panels/session-cockpit/LaunchFlow.tsx) |
-| Envelope/error fixtures (all three cacheStatus values; verbatim 404/409/503 bodies). | — | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts) |
-| The unit suite (state transitions, verbatim errors, drop-on-error, refresh chaining, malformed rows, cost honesty). | — | [capabilityCatalog.test.ts](capabilityCatalog.test.ts) |
+| The store, cost-honesty copy, envelope validation, and single-flight/refresh machinery. | "export const capabilityCatalogStore"; "export function capabilityCostNote("; "function isEnvelope(body: unknown): body is CapabilityEnvelope {"; "export function fetchHarnessCapabilities(" | dashboard/src/data/capabilityCatalog.ts:45-45; dashboard/src/data/capabilityCatalog.ts:70-70; dashboard/src/data/capabilityCatalog.ts:122-122; dashboard/src/data/capabilityCatalog.ts:192-192 |
+| The wire mirror the envelope validates against (`CAPABILITY_SCHEMA`, envelope/snapshot/row types). | `CAPABILITY_SCHEMA` | dashboard/src/types/harnessCapabilities.ts:11-11 |
+| The daemon route + quarantine posture this mirrors (failed refresh pops the cache entry). | "class HarnessCapabilityCatalog:" | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-81 |
+| The primary consumer (picker options exclusively from the envelope; verbatim error + retry). | "const snapshot = entry?.envelope?.capabilities;" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:218-218 |
+| Envelope/error fixtures (all three cacheStatus values; verbatim 404/409/503 bodies). | "export function capabilityEnvelope(" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-160 |
+| The unit suite (state transitions, verbatim errors, drop-on-error, refresh chaining, malformed rows, cost honesty). | "single-flight: concurrent reads of one harness share ONE request" | dashboard/src/data/capabilityCatalog.test.ts:154-159 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -119,11 +119,13 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 6 citation rows and 2 prose citations with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
   leaf's reformat. `CapabilityFetchState` moved L22 -> L23 (the honesty-invariant header comment

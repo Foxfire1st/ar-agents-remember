@@ -74,31 +74,33 @@ with observed evidence through the same redaction policy.
 No Domain Documentation source is configured. The installed runtimes and the repository fixture
 contract are the direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The runtime fixtures recording (never enabling) the `control-plane/*` rows this suite captures. | L94-L137 · L71-L102 · L45-L50 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) · [pi-0.80.7.json](agents-remember/mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json) · [claude-2.1.211.json](agents-remember/mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json) |
-| The client helpers driven against the live socket (`interrupt_control`, `read_operation_timeline`, asset-carrying submit, withdrawal). | L398-L450; L179-L227 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The contract-suite companion pinning the same seams over fake transports. | L252-L1575 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py) |
-| The L0E installed-suite precedent for opt-in version-locked capture. | L115-L362 | [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
+| The runtime fixtures recording (never enabling) the `control-plane/*` rows this suite captures. | "control-plane/interrupt-write-ack"; "control-plane/abort-write-ack"; "control-plane/interrupt-and-assets" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:94-137; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:71-102; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:45-50 |
+| The client helpers driven against the live socket (`interrupt_control`, `read_operation_timeline`, asset-carrying submit, withdrawal). | `withdraw_control_submission`; `submit_control_prompt`; `interrupt_control`; `read_operation_timeline` | mcp/src/agents_remember/serving/harness_control_client.py:172-186; mcp/src/agents_remember/serving/harness_control_client.py:214-252; mcp/src/agents_remember/serving/harness_control_client.py:425-445; mcp/src/agents_remember/serving/harness_control_client.py:448-472 |
+| The contract-suite companion pinning the same seams over fake transports. | "Contract tests for the native control-plane substrate." | mcp/tests/test_harness_control_plane.py:1-45 |
+| The L0E installed-suite precedent for opt-in version-locked capture. | "AR_RUN_EVIDENCE_INSTALLED"; `CodexInstalledEvidenceTests` | mcp/tests/test_harness_control_evidence_installed.py:59-59; mcp/tests/test_harness_control_evidence_installed.py:114-278 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this installed-runtime suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the runtime-fixture citation. One range
-  (L1-L140) was being applied to three files of different lengths and overran the 139-line codex
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows: the three runtime fixtures now carry one `path:start-end` citation each (codex L94-L137, pi L71-L102, claude L45-L50 — the ` · ` separator form replaced), plus the client helpers, the contract-suite companion, and the L0E precedent; removed one superseded history line-spelling. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
+
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the runtime-fixture citation. One shared
+  range was being applied to three files of different lengths and overran the 139-line codex
   fixture; the row now carries one range per fixture, each covering exactly that file's
   `control-plane/*` entries: `codex-0.144.5.json` L94-L137 (interrupt-write-ack, operation-timeline,
   asset-local-image-submit, withdrawal-recovery), `pi-0.80.7.json` L71-L102 (abort-write-ack,

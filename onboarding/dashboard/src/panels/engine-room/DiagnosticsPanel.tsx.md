@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -39,19 +39,20 @@ Two exports, both presentational (no state, no effects, no mutation).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `CommitRow` formats branch/commit + absent/dirty/behind flags behind a `factChip` | L18-L37 | [DiagnosticsPanel.tsx](DiagnosticsPanel.tsx) |
-| `DiagnosticsPanel` derives `poweringDown`, builds `setupLine`, renders facts, phases, seed, actions, missing facts, sources | L39-L128 | [DiagnosticsPanel.tsx](DiagnosticsPanel.tsx) |
-| `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) | L43, L85-L88 | [DiagnosticsPanel.tsx](DiagnosticsPanel.tsx) |
-| `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes | L207-L285 | [projection.ts](../../types/projection.ts) |
-| `Affordance` display-only action button (aria-disabled, no POST) | L27-L42 | [Affordance.tsx](../../grammar/Affordance.tsx) |
-| `GateResponder` compact worktree-gate control. | — | [GateResponder.tsx](../GateResponder.tsx) |
-| `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d | L83-L89 | [selectors.ts](../../data/selectors.ts) |
-| `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes | — | [engineRoomStyles.ts](engineRoomStyles.ts) |
+| `CommitRow` formats branch/commit + absent/dirty/behind flags behind a `factChip` | `CommitRow` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:19-38 |
+| `DiagnosticsPanel` derives `poweringDown`, builds `setupLine`, renders facts, phases, seed, actions, missing facts, sources | `DiagnosticsPanel` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-146 |
+| `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) | `poweringDown` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:52-52 |
+| `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes | `EngineProcessNode`, `CommitRefNode`, `ProcessFactState` | dashboard/src/types/projection.ts:41-41; dashboard/src/types/projection.ts:111-119; dashboard/src/types/projection.ts:162-202 |
+| `Affordance` display-only action button (aria-disabled, no POST) | `Affordance` | dashboard/src/grammar/Affordance.tsx:27-42 |
+| `GateResponder` compact worktree-gate control. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d | `fmtWait` | dashboard/src/data/selectors.ts:108-114 |
+| `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes | `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` | dashboard/src/panels/engine-room/engineRoomStyles.ts:110-115; dashboard/src/panels/engine-room/engineRoomStyles.ts:267-291; dashboard/src/panels/engine-room/engineRoomStyles.ts:533-541; dashboard/src/panels/engine-room/engineRoomStyles.ts:543-548; dashboard/src/panels/engine-room/engineRoomStyles.ts:550-551; dashboard/src/panels/engine-room/engineRoomStyles.ts:553-561; dashboard/src/panels/engine-room/engineRoomStyles.ts:563-568; dashboard/src/panels/engine-room/engineRoomStyles.ts:570-577; dashboard/src/panels/engine-room/engineRoomStyles.ts:586-591 |
 
 ## Update History
 
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 6 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-06-23T13:45+02:00 — Task 11: added `lifecycleId`/`gateNode` props. Worktree-bound projected
   gates render compact `GateResponder` in the action row; ordinary action availability still renders
   through display-only `Affordance`. Verification metadata pinned until closeout stamps the task-11 code commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T16:30+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -69,9 +69,9 @@ triple from being respelled per case — `BY_DEVELOPER`, `BY_MODEL`, `BY_MANAGER
 surface + manager role + a non-owning actor) and `BY_OWNING_MANAGER` (the gate's own
 `OWNER_LIFECYCLE` claiming the manager role, i.e. self-approval) — and `dataclasses.replace` varies
 one field for the reviewer-verdict and rejection-note cases.
-`CloseoutEnforcementHelperTests` (L964-L1035) drives `closeout.py`'s closeout-gate helpers over a
+cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates.py:964-1035) drives `closeout.py`'s closeout-gate helpers over a
 temp `GateStore` rooted at a stub contract's `coordination_root`. **Since 260731-EFA-L5 R2 the
-helper under test is `_claim_closeout_gate` (`closeout.py` L449-L499), and
+helper under test is `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:513-563)), and
 `_mark_closeout_gate_applied` no longer exists — it was deleted rather than deprecated**, so there
 is no second, later step for a test to call and no arrangement of two lines that leaves the
 approval spendable in between. `test_gateless_lifecycle_returns_none`,
@@ -80,16 +80,15 @@ approval spendable in between. `test_gateless_lifecycle_returns_none`,
 the gate reads `applied` immediately after the single permitting call.
 
 The two blocking cases **additionally** assert that the early refusal
-`_refuse_unsatisfied_closeout_gate` (`closeout.py` L424-L446) raises for the same seeded gate. That
+`_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:488-510)) raises for the same seeded gate. That
 is a second rung, not a duplicate: the claim sits one statement above the first irreversible act
-(`closeout.py` L795), while the early read sits before staging and the strict code-quality gate
-(L750), so without it an unapproved closeout would only be refused after a full quality run over a
+(`closeout_result`, cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:932-1024)), while the early read sits before staging and the strict code-quality gate
+(`_gate_staged_code`, cit:([`_gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout.py:789-845)), so without it an unapproved closeout would only be refused after a full quality run over a
 staged worktree. The early rung is safe precisely because it can only DENY — its read is unlocked
 and therefore already stale when it returns, but a stale refusal costs a rerun and consumes
 nothing, and a stale permit is re-evaluated under the lock by the claim.
 
-**What the claim changed underneath these tests.** `GateStore.claim_approval` (`controlplane/store.py`
-L190-L234) folds the log, evaluates the policy and appends the `applied` snapshot inside **one**
+**What the claim changed underneath these tests.** `GateStore.claim_approval` (cit:([`claim_approval`], mcp/src/agents_remember/controlplane/store.py:190-234)) folds the log, evaluates the policy and appends the `applied` snapshot inside **one**
 held `exclusive_access`, so `approved -> applied` is a compare-and-swap against every other writer
 and exactly one caller can both see the gate approved and be the one that marks it consumed. The
 consequence is a deliberate semantic change worth stating plainly: **an approval now authorises one
@@ -125,27 +124,28 @@ approvals according to `GatePolicy`.
   a compaction with nothing prunable does not rewrite, so the concurrency they exist to exercise
   would never happen and both halves of the affected tests would pass for the wrong reason. All
   three moved to `expired` (which is in `PRUNE_IMMEDIATE_GATE_STATES`): `_store_durability.py`'s
-  `GateAdapter.write_decoy` (L172-L178), `test_durable_store_contract.py`'s
-  `GateReclaimOwnershipTests.setUp` (L851-L876), and `test_gate_replay_window.py`'s `_prunable_gate`
-  (L116-L130) — the last of which also moved off `closeout-approval` onto `alarm-ack`, a kind
+  `GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:163-189)), `test_durable_store_contract.py`'s
+  `GateReclaimOwnershipTests.setUp` (cit:([`GateReclaimOwnershipTests`], mcp/tests/test_durable_store_contract.py:854-918)), and `test_gate_replay_window.py`'s `_prunable_gate`
+  (cit:([`_prunable_gate`], mcp/tests/test_gate_replay_window.py:116-130)) — the last of which also moved off `closeout-approval` onto `alarm-ack`, a kind
   nothing decides on. Each carries the reasoning in a comment at the fixture rather than in a
   commit message.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The records under test. | [controlplane/records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
-| The store under test, and since 260731-EFA-L5 the only way to spend an approval: `claim_approval` (L190-L234) folds, evaluates policy and appends the `applied` snapshot inside one held lock. | [controlplane/store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
-| The payload builders under test. | [mcp/tools/gates.py](agents-remember/mcp/src/agents_remember/mcp/tools/gates.py) |
-| The operator inbox store polled by `gate_response_wait_payload`. | [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py) |
-| The enforcement policy under test (slice 6b): `evaluate_gate` (L52-L94), whose `applied` branch (L82-L88) is the refusal a second consume meets and the reason the `applied` snapshot is an authority record. | [controlplane/enforcement.py](agents-remember/mcp/src/agents_remember/controlplane/enforcement.py) |
-| Gate delegation policy under test. | [controlplane/gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
-| The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (L424-L446, called at L750) and the claim `_claim_closeout_gate` (L449-L499, called at L795, one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | [worktrees/modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
-| Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | [controlplane/interaction_retention.py](agents-remember/mcp/src/agents_remember/controlplane/interaction_retention.py) |
-| The suite that pins the claim's position rather than its policy: the gate is already `applied` by the time `commit_if_dirty` runs, a failure upstream leaves it `approved`, and `_prunable_gate` (L116-L130) is one of the three fixtures moved to `expired`. | [test_gate_replay_window.py](agents-remember/mcp/tests/test_gate_replay_window.py) |
-| The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` (`_store_durability.py` L172-L178) and `GateReclaimOwnershipTests.setUp` (`test_durable_store_contract.py` L851-L876). | [test_durable_store_contract.py](agents-remember/mcp/tests/test_durable_store_contract.py) |
-| The conformance suite that also covers the gate tools. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The records under test. | `GateRecord`; `create_gate`; `decide_gate`; `apply_gate` | mcp/src/agents_remember/controlplane/records.py:84-116; mcp/src/agents_remember/controlplane/records.py:166-188; mcp/src/agents_remember/controlplane/records.py:191-216; mcp/src/agents_remember/controlplane/records.py:224-233 |
+| The store under test, and since 260731-EFA-L5 the only way to spend an approval: `claim_approval` folds, evaluates policy and appends the `applied` snapshot inside one held lock. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234 |
+| The payload builders under test. | `gate_create_payload`; `lifecycle_gate_payload`; `gate_decide_payload`; `gate_wait_payload`; `gate_response_wait_payload`; `gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:34-44; mcp/src/agents_remember/mcp/tools/gates.py:47-53; mcp/src/agents_remember/mcp/tools/gates.py:67-84; mcp/src/agents_remember/mcp/tools/gates.py:118-128; mcp/src/agents_remember/mcp/tools/gates.py:131-148; mcp/src/agents_remember/mcp/tools/gates.py:151-156 |
+| The operator inbox store polled by `gate_response_wait_payload`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:131-148 |
+| The enforcement policy under test (slice 6b): `evaluate_gate`, whose `applied` branch is the refusal a second consume meets and the reason the `applied` snapshot is an authority record. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
+| Gate delegation policy under test. | `make_gate_policy`; `named_gate_policy`; `apply_seam_verdict_requirement`; `delegated_decision_failure_reason`; `approval_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:73-105; mcp/src/agents_remember/controlplane/gate_policy.py:108-125; mcp/src/agents_remember/controlplane/gate_policy.py:128-147; mcp/src/agents_remember/controlplane/gate_policy.py:179-191; mcp/src/agents_remember/controlplane/gate_policy.py:194-210 |
+| The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (called before staging and the strict gate) and the claim `_claim_closeout_gate` (one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate`; `_gate_staged_code`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:488-510; mcp/src/agents_remember/worktrees/modules/closeout.py:513-563; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845; mcp/src/agents_remember/worktrees/modules/closeout.py:932-1024 |
+| Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | `CONSUMED_APPROVAL_GATE_KINDS`; `PRUNE_IMMEDIATE_GATE_STATES` | mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:81-81 |
+| The suite that pins the claim's position rather than its policy: the gate is already `applied` by the time `commit_if_dirty` runs, a failure upstream leaves it `approved`, and `_prunable_gate` is one of the three fixtures moved to `expired`. | `test_the_approval_is_already_consumed_when_the_first_commit_runs`; `_prunable_gate` | mcp/tests/test_gate_replay_window.py:116-130; mcp/tests/test_gate_replay_window.py:582-615 |
+| The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` and its enclosing adapter. | `GateAdapter` | mcp/tests/_store_durability.py:163-189 |
+| The durable-store ownership fixture that also carries the relocated decoy. | `GateReclaimOwnershipTests` | mcp/tests/test_durable_store_contract.py:854-918 |
+| The conformance suite that also covers the gate tools. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
 
 As of the 260703-L8 seam ruling the suite carries MasterHandoverSeamTests: delegability to the orchestrator, the named-policy routing, human-pinned kinds staying pinned, apply_seam_verdict_requirement binding only delegated seam rules, verdict-evidence refusal/acceptance on a delegated handover decision, and owner-never-self-approves on the handover kind.
 
@@ -158,21 +158,22 @@ landing hook orthogonal to this test's gate-policy-plumbing focus and disabled a
 fake's unattached contract. Cycle 7 adds three layers on the enclosure address: SeamChannelTests proves an enclosure-less/blank wait=false raise refuses BEFORE mutation (no orphan gate, sibling not expired) and that a raised gate carries its address; HandoverEnforcementHelperTests covers the pure `unmatched_handover_gate_warning` (foreign-enclosure open gate warns with gateId+enclosure, no-handover-gates and matched/decided cases stay silent); and `IntegrateDryRunGuardTests` drives `integrate_result(dry_run=true)` with the git steps mocked over a REAL cross-lifecycle store, asserting the preview carries `handover_gate` (permitted/gateId/reason), names `handover-gate-blocked` in the summary when the real run would refuse, carries the unmatched-gate warning, and never calls `write_contract`; its mocked `_integration_replay_requirements` now returns an `IntegrationSources(current_code_source=…, current_memory_source=…, code_replay_required=…, memory_replay_required=…)` object rather than a bare four-tuple.
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 12 table citations and 14 prose citation repairs for gate records, policy, closeout ordering, retention fixtures, and conformance coverage; fixer-generated ranges verified.
 
-- 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: `CloseoutEnforcementHelperTests` (L964-L1035) now
-  exercises `_claim_closeout_gate` (`closeout.py` L449-L499) wherever it used to call
+- 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates.py:964-1035) now
+  exercises `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:513-563)) wherever it used to call
   `_enforce_closeout_gate`, and the two blocking cases **additionally** assert that
-  `_refuse_unsatisfied_closeout_gate` (`closeout.py` L424-L446) raises for the same seeded gate.
+  `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:488-510)) raises for the same seeded gate.
   `_mark_closeout_gate_applied` was **deleted rather than deprecated**, so
   `test_developer_approved_permits_and_marks_applied` no longer calls a second step — it asserts the
   gate reads `applied` straight after the single permitting call, which is the point: permitting and
   marking applied are one step and there is no arrangement of two lines that leaves the approval
   spendable in between. Recorded the two rungs as distinct rather than redundant — the claim sits
-  one statement above the first irreversible act (`closeout.py` L795) while the early read sits
-  before staging and the strict code-quality gate (L750), and the early rung is safe only because it
+  one statement above the first irreversible act (cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:932-1024)) while the early read sits
+  before staging and the strict code-quality gate (cit:([`_gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout.py:789-845)), and the early rung is safe only because it
   can exclusively DENY: its unlocked read is stale on return, but a stale refusal costs a rerun and
   consumes nothing while a stale permit is re-evaluated under the lock. Recorded the mechanism
-  underneath: `GateStore.claim_approval` (`controlplane/store.py` L190-L234) folds, evaluates policy
+  underneath: `GateStore.claim_approval` (cit:([`claim_approval`], mcp/src/agents_remember/controlplane/store.py:190-234)) folds, evaluates policy
   and appends the `applied` snapshot inside **one** held `exclusive_access`, making
   `approved -> applied` a compare-and-swap, and with it the deliberate semantic change — **an
   approval now authorises one attempt, not one success** — together with why the fail-closed side is
@@ -181,12 +182,12 @@ fake's unattached contract. Cycle 7 adds three layers on the enclosure address: 
   something for a reclaim pass to drop, and since R1 such a record is retained at any age
   (`CONSUMED_APPROVAL_GATE_KINDS`), so leaving them would have made a compaction with nothing
   prunable skip its rewrite and quietly turn those harnesses into no-ops. All three moved to
-  `expired`: `_store_durability.py::GateAdapter.write_decoy` (L172-L178),
-  `test_durable_store_contract.py::GateReclaimOwnershipTests.setUp` (L851-L876) and
-  `test_gate_replay_window.py::_prunable_gate` (L116-L130), the last also moving off
+  `expired`: `_store_durability.py::GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:163-189)),
+  `test_durable_store_contract.py::GateReclaimOwnershipTests.setUp` (cit:([`GateReclaimOwnershipTests`], mcp/tests/test_durable_store_contract.py:854-918)) and
+  `test_gate_replay_window.py::_prunable_gate` (cit:([`_prunable_gate`], mcp/tests/test_gate_replay_window.py:116-130)), the last also moving off
   `closeout-approval` onto `alarm-ack`. **Citations:** every range added here was opened and checked
-  against each symbol the claim names, ends included — `evaluate_gate` L52-L94 with its `applied`
-  branch at L82-L88, both closeout helpers with their call sites, and each of the three fixtures.
+  against each symbol the claim names, ends included — cit:([`evaluate_gate`], mcp/src/agents_remember/controlplane/enforcement.py:52-94) with its `applied`
+  branch, both closeout helpers with their call sites, and each of the three fixtures.
   The reference table is two-column by construction, so citations are carried inline in the Finding
   cells rather than by widening it. Verification metadata untouched.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the whole gate substrate moved its

@@ -65,33 +65,17 @@ when bounded evidence cannot prove effect.
 
 None known for the L3 correlation state.
 
-## Docs References
-
-No Domain Documentation source is configured for this repository, so no live
-domain-documentation pass was available for this update.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
-
 ## Repo-Internal References
 
 The protocol supplies canonical replay text, and the submission record stores both evidence phases.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Protocol parsing derives the canonical native-command replay body and keeps identity-changing commands blocked. | L190-L227 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| Submission records retain wire/replay text, acceptance and terminal futures, and abandoned/completed state. | L18-L35 | [claude_stream_submission.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_submission.py) |
-| The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback. | L424-L527 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Contract tests pin full-frame forwarding, the no-leak guarantee at both merge points, and the honestly fail-closed Claude native page. | L1179-L1309 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
-
-## Cross-Repo References
-
-No external repository boundary is implemented by this state reducer.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| Protocol parsing derives the canonical native-command replay body and keeps identity-changing commands blocked. | `session_command_replay_text`; `command_unsupported_detail` | mcp/src/agents_remember/serving/claude_stream_protocol.py:330-349; mcp/src/agents_remember/serving/claude_stream_protocol.py:352-360 |
+| Submission records retain wire/replay text, acceptance and terminal futures, and abandoned/completed state. | `ClaudeSubmission` | mcp/src/agents_remember/serving/claude_stream_submission.py:18-30 |
+| The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback. | `_submit_set_command`; `_wait_set_terminal`; `_terminal_set_result`; `_completed_set_result` | mcp/src/agents_remember/serving/harness_control_claude.py:402-442; mcp/src/agents_remember/serving/harness_control_claude.py:589-607; mcp/src/agents_remember/serving/harness_control_claude.py:627-646; mcp/src/agents_remember/serving/harness_control_claude.py:649-674 |
+| Contract tests pin full-frame forwarding and the no-leak guarantee at both merge points. | `test_assistant_blocks_and_unknown_frames_forward_full_payload_without_leak`; `test_result_usage_and_cost_forward_as_evidence` | mcp/tests/test_harness_control_evidence.py:1452-1500; mcp/tests/test_harness_control_evidence.py:1502-1573 |
+| The Claude native page remains fail-closed when the adapter reports it unsupported. | `test_native_page_unsupported_fails_closed_with_adapter_name` | mcp/tests/test_harness_control_evidence.py:729-741 |
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -129,6 +113,8 @@ still raise `HarnessControlError`; they now live in one helper each instead of b
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: removed source-clear domain/cross-repo placeholders and bound replay, submission, adapter, and evidence claims to exact anchors.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ClaudeStreamSession` / `TranscriptCorrelation` concepts and the `_handle_abandoned_replay` / `_require_faithful_replay` extraction (replay refusals byte-preserved).
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.

@@ -40,27 +40,29 @@ None recorded; the task-local concurrent jsdom shutdown residual is tracked in t
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| 100-row ordinary DOM case. | L44-L50 | [VirtualizedInspectorList.test.tsx](VirtualizedInspectorList.test.tsx) |
-| 101-row virtualized logical-total case. | L51-L63 | [VirtualizedInspectorList.test.tsx](VirtualizedInspectorList.test.tsx) |
-| Component under test. | L39-L107 | [VirtualizedInspectorList.tsx](VirtualizedInspectorList.tsx) |
+| 100-row ordinary DOM case. | "keeps 100 rows as ordinary DOM list items" | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.test.tsx:44-49 |
+| 101-row virtualized logical-total case. | "virtualizes past 100 without slicing the accessible total" | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.test.tsx:51-62 |
+| Component under test. | `VirtualizedInspectorList` | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx:39-107 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:40:58+02:00 — 260731-EFA-L6 S18-B08 curator: bound both threshold cases and the component row to current test/function anchors.
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
   metadata remains pinned to the leaf base until closeout.

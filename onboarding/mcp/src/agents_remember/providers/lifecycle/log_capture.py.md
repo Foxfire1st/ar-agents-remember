@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/log_capture.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -77,19 +77,23 @@ embedded inline in provider clone command arguments.
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. | [tools/providers.py](agents-remember/mcp/src/agents_remember/mcp/tools/providers.py) |
-| `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | [tools/worktree.py](agents-remember/mcp/src/agents_remember/mcp/tools/worktree.py) |
-| Unit tests verify per-node success/failure behaviour, `json` always-dropped, secret redaction, and recursive step trimming. | [test_log_capture.py](agents-remember/mcp/tests/test_log_capture.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. | `provider_watchers_payload` | mcp/src/agents_remember/mcp/tools/providers.py:73-87 |
+| `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:31-41 |
+| Unit tests verify per-node success/failure behaviour, `json` always-dropped, secret redaction, and recursive step trimming. | `SummarizeCommandLogsTests` | mcp/tests/test_log_capture.py:31-104 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the three `n/a`-anchor
+  table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns
+  zero findings.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
   exemptions): extracted `_shrink_logs` and `_drop_verbose_plumbing` from `summarize_command_logs`.

@@ -29,7 +29,7 @@ never into fabricated identities.
 ### Logic
 
 Two tiers drive the real mapper and projector engine. `CodexCollabMapperTests`
-(L132-L329) maps synthesized wire frames (built by `_agent_wire_fixtures`, parent thread
+cit:([`CodexCollabMapperTests`], mcp/tests/test_conversation_projector_codex_agents.py:135-334) maps synthesized wire frames (built by `_agent_wire_fixtures`, parent thread
 `vendor-1`) directly through `codex.map_evidence_frame`: a `spawnAgent` call stays the
 parent's own untagged tool-call while minting a roster notice; a single-receiver
 `sendInput` carries the agent ref but a multi-receiver `wait` does not; a terminal collab
@@ -40,15 +40,15 @@ non-parent (parent boot/resume is silent, and without the parent context the sha
 mints nothing); agent-thread lifecycle frames drive roster status while an agent
 `turn/completed` never feeds the parent-scoped status service.
 
-`CodexAgentEngineTests` (L438-L930) drives the real `ActiveSessionProjector` over a
+cit:([`CodexAgentEngineTests`], mcp/tests/test_conversation_projector_codex_agents.py:464-1291) drives the real `ActiveSessionProjector` over a
 `_MultiplexedBridge` (extends the `_ScriptedBridge` harness with per-thread native pages and
 demux-keyed frames): the 2026-07-24 incident stream multiplexes into one contiguous
 ordinal space with one upserted roster settled by the agent's turn completion, agent
 items carrying the bound ref while parent items stay byte-identical (no agent dimension);
 block-less lifecycle roster upserts never wipe the final message (fix-round finding 5);
 plural `pending_interactions` project labeled and resolve per id while the singular
-parent path is untouched; the page-driven backfill test
-(`test_page_backfills_agent_content_when_live_delivery_is_partial`, L733-L810) proves a partial
+parent path is untouched; the selected-child backfill test
+cit:([`test_selected_agent_backfills_content_when_live_delivery_is_partial`], mcp/tests/test_conversation_projector_codex_agents.py:845-939) proves a partial
 live delivery (roster and lifecycle crossed, the agent's content did not) is completed from
 native authority — the content backfills thread-scoped (`{AGENT}:msg-1`) and agent-attributed,
 the thread is marked walked once (`_agent_native_walked`) so later pages do not re-read it, and
@@ -56,19 +56,21 @@ a native `subAgentActivity` spawn record referencing ANOTHER agent mints no rost
 `codex-agent-other-agent`, not even a thread-scoped duplicate); per-thread twin suppression
 keeps a live-settled agent turn
 from re-projecting through `thread/read` while genuine agent history backfills (thread-scoped
-ids: `{AGENT}:item-1` suppressed, `{AGENT}:item-0` kept, L809-L868) and the
+ids: `{AGENT}:item-1` suppressed, `{AGENT}:item-0` kept);
+cit:([`test_per_thread_twin_suppression_and_lazy_agent_native_walk`], mcp/tests/test_conversation_projector_codex_agents.py:1174-1233) covers the
+same twin-suppression behavior, and the
 agent bucket never suppresses the parent re-walk; the lazy agent-native walk refuses
 unlived or parent threads; and a malformed agent-thread frame's preserved unknown-vendor
 evidence is tagged with the agent ref (fix-round finding 4) while the identical parent
 failure stays untagged.
 
 The remediation pair pins the concurrent-parent-pending projection.
-`test_concurrent_parent_pendings_all_project_and_resolve_per_id` (L737-L792): two
+cit:([`test_concurrent_parent_pendings_all_project_and_resolve_per_id`], mcp/tests/test_conversation_projector_codex_agents.py:737-792): two
 concurrent parent pendings plus an agent pending all project into the interaction lane —
 the singular slot carries the parent's OLDEST (back-compat), parent-thread entries project
 plainly (no agent ref), the agent entry carries its identity — and one parent pending
 settling resolves per id while the others stay waiting.
-`test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live` (L794-L843): an
+cit:([`test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live`], mcp/tests/test_conversation_projector_codex_agents.py:794-843): an
 A→B singular rotation (oldest answered, the adapter rotates the next-oldest into the slot,
 leaving the multiplexed tuple for the same id) RESOLVES the evicted id while the rotated
 id stays live under the singular path; the later settle resolves both, none left waiting.
@@ -114,32 +116,32 @@ traffic is fixture-proven only (the multiplexed-traffic soak ran under a never-p
 No Domain Documentation source is configured; the wire shapes are proven against the
 vendored codex protocol via the shared fixture module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The vendored-shape builders the mapped frames come from, plus the `CollabAgents` thread bundle. | L25-L36 | [_agent_wire_fixtures.py](agents-remember/mcp/tests/_agent_wire_fixtures.py) |
-| The codex mapper under test: collab/activity roster grammar, demux-keyed mapping, unknown-vendor degrade. | L47 | [projectors/codex.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/codex.py) |
-| Roster identity and per-thread binding under test: `is_agent_roster_item`, the registry-backed agent ref, `bind_thread`, `reconcile_roster`, and the `scope_native_item` thread-scoped id prefix. | L33-L131 | [projector/agent_authority.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py) |
-| Per-thread native twin suppression under test: a native output is dropped when its turn or user request id was already seen live in that thread's bucket. | L215-L242 | [projector/native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) |
-| The page-driven agent backfill under test: the paged `_walk` scopes every evidence handle to `<thread>:<nativeId>`, drops roster items, and binds the thread. | L139-L173 | [projector/child_history.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/child_history.py) |
-| Plural pendings under test: the parent pending rotates singly while multiplexed thread-keyed pendings are upserted/resolved concurrently against it. | L44-L79 | [projector/interaction_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py) |
-| The two parameter objects the suite wires the engine through. | L42-L57; L35-L49 | [projector/facade.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/facade.py); [projector/wiring.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/wiring.py) |
-| The scripted-bridge harness this suite extends with per-thread native pages. | L59-L66 | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
-| The additive agent grammar on conversation items. | L41-L46 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| The vendored-shape builders the mapped frames come from, plus the `CollabAgents` thread bundle. | `CollabAgents` | mcp/tests/_agent_wire_fixtures.py:63-77 |
+| The codex mapper under test: collab/activity roster grammar, demux-keyed mapping, unknown-vendor degrade. | `map_evidence_frame`; `_map_collab_tool_call` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:148-201; mcp/src/agents_remember/serving/conversation/projectors/codex.py:926-968 |
+| Roster identity and per-thread binding under test: `is_agent_roster_item`, the registry-backed agent ref, `bind_thread`, `reconcile_roster`, and the `scope_native_item` thread-scoped id prefix. | `is_agent_roster_item`; `bind_thread`; `reconcile_roster`; `scope_native_item` | mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:33-41; mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:80-93; mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:95-122; mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:124-131 |
+| Per-thread native twin suppression under test: a native output is dropped when its turn or user request id was already seen live in that thread's bucket. | `suppress_live_twins` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:215-242 |
+| The page-driven agent backfill under test: the paged `_walk` scopes every evidence handle to `<thread>:<nativeId>`, drops roster items, and binds the thread. | `_walk` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:139-173 |
+| Plural pendings under test: the parent pending rotates singly while multiplexed thread-keyed pendings are upserted/resolved concurrently against it. | `apply`; `_apply_multiplexed` | mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py:44-54; mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py:56-79 |
+| The two parameter objects the suite wires the engine through. | `ProjectedSession`; "The whole read surface a projection is assembled from: five bridge reads, one session." | mcp/src/agents_remember/serving/conversation/active/projector/facade.py:42-56; mcp/src/agents_remember/serving/conversation/active/projector/wiring.py:37-37 |
+| The scripted-bridge harness this suite extends with per-thread native pages. | `_ScriptedBridge` | mcp/tests/test_conversation_active_service.py:75-169 |
+| The additive agent grammar on conversation items. | `ConversationAgentRef` | mcp/src/agents_remember/serving/conversation/models.py:316-334 |
 
 ## Cross-Repo References
 
 The collab/activity item variants and notification shapes are vendored codex app-server
 protocol; the fixture module pins each shape to its proving file in the vendor checkout.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `CollabAgentToolCall` / `SubAgentActivity` variants, exact camelCase enums, and turn/thread notification params. | L7-L28 of the fixture docstring | [codex app-server protocol v2](https://github.com/openai/codex/tree/main/codex-rs/app-server-protocol/src/protocol/v2) |
+| `CollabAgentToolCall` / `SubAgentActivity` variants, exact camelCase enums, and turn/thread notification params. | "camelCase enums"; "all four fields are required" | mcp/tests/_agent_wire_fixtures.py:10-10; mcp/tests/_agent_wire_fixtures.py:116-116 |
 
 ## 260727-CHATS-IM-L2 Selected-Child Continuity Delta
 
@@ -152,16 +154,19 @@ without native-id cursor assumptions.
 
 ## Update History
 
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 7 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 129, 132; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 12 citation entries (21 findings); corrected the 3 obsolete historical/current prose citations and the checker-blind twin-suppression range residue under the max-reviewer ruling; remaining active citation result is zero.
+
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the 2 remediation-pair citations, both
   read back against the current 1295-line source. The IM-L2 selected-child tests were inserted
   ahead of them, so `test_concurrent_parent_pendings_all_project_and_resolve_per_id` L626-L681 →
   L737-L792 and `test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live` L682-L732 →
   L794-L843; both bodies still prove exactly what the paragraph claims (plain parent entries, the
   singular slot on the parent's oldest, per-id resolution; and the A→B rotation resolving the
-  evicted id while the rotated id stays live). NOT fixed (beyond this worklist): the engine-tier
-  paragraph still names `test_page_backfills_agent_content_when_live_delivery_is_partial`
-  (L733-L810), which no longer exists — the IM-L2 delta replaced it with
-  `test_selected_agent_backfills_content_when_live_delivery_is_partial` (L845-L939) — and the
+  evicted id while the rotated id stays live). At that point the engine-tier paragraph's
+  page-driven backfill reference was left for follow-up; the IM-L2 delta replaced it with the
+  selected-child test, now cited as
+  cit:([`test_selected_agent_backfills_content_when_live_delivery_is_partial`], mcp/tests/test_conversation_projector_codex_agents.py:845-939) — and the
   surrounding spans drifted with it: mapper tier L132-L329 → L135-L334, engine tier L438-L930 →
   L464-L1291, and the twin-suppression span L809-L868 → `test_per_thread_twin_suppression_and_lazy_agent_native_walk`
   L1174-L1233.
@@ -178,8 +183,7 @@ without native-id cursor assumptions.
   `child_history.py` L139-L173 (the paged `_walk` with thread-scoped evidence refs),
   `interaction_projection.py` L44-L79 (`apply` rotating the single parent pending, then
   `_apply_multiplexed` upserting/resolving the thread-keyed plural pendings around it), and the two
-  parameter objects `ProjectedSession` (`facade.py` L42-L57) + `BridgeReaders` (`wiring.py`
-  L35-L49). Beyond my worklist and NOT fixed: the other two rows in this table
+  parameter objects `ProjectedSession` cit:([`ProjectedSession`], mcp/src/agents_remember/serving/conversation/active/projector/facade.py:42-56) + `BridgeReaders` cit:([`BridgeReaders`], mcp/src/agents_remember/serving/conversation/active/projector/wiring.py:35-48). Beyond my worklist and NOT fixed: the other two rows in this table
   (`_agent_wire_fixtures.py` L25-L36, `projectors/codex.py` L47) cite this test file's own import
   line numbers rather than lines in the linked file, so they point at unrelated text.
 
@@ -198,8 +202,8 @@ without native-id cursor assumptions.
   explicit capacity, typed failure, and recovery regressions. Verification metadata remains
   pinned while uncommitted.
 
-- 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the backfill coverage —
-  `test_page_backfills_agent_content_when_live_delivery_is_partial` (L730-L807): partial live
+- 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the then-current page-driven backfill
+  coverage: partial live
   delivery + native authority → content backfilled, thread-scoped (`{AGENT}:msg-1`) and
   attributed, walk-once marking (`_agent_native_walked`), and a spawn-record native frame minting
   no roster row; the lazy-walk assertions moved to thread-scoped ids (`{AGENT}:item-0` kept,
@@ -210,7 +214,7 @@ without native-id cursor assumptions.
   projection pair — all pendings project into the interaction lane (parent entries plainly, the
   agent entry labeled; the singular slot on the parent's oldest) with per-id resolution, and the
   A→B singular-rotation semantics (evicted id resolves, rotated id stays live under the singular
-  path). Anchored the new tests (L622-L729) and refreshed the tier spans (engine tier L438-L849).
+  path). Anchored the new tests cit:([`test_concurrent_parent_pendings_all_project_and_resolve_per_id`, `test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live`], mcp/tests/test_conversation_projector_codex_agents.py:737-792; mcp/tests/test_conversation_projector_codex_agents.py:794-843) and refreshed the tier spans (engine tier L438-L849).
   Verification metadata stays pinned — the change is uncommitted.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: created the sidecar for the new codex
   projector sub-agent suite (R2/R5/R6; fix-round findings 3/4/5 pins). Verification is

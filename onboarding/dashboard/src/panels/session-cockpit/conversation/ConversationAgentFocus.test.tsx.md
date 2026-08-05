@@ -33,7 +33,7 @@ parent stream failure.
   mount) are mocked; jsdom has no layout, so fixed geometry (`offsetHeight`/`scrollHeight`/`scrollTo`)
   is pinned so the virtualizer renders rows. The REAL `activeConversationStore` is seeded
   and reset per test.
-- **Fixtures** (L44-L116): a status/identity pair and four items — two parent items, a roster row
+- **Fixtures** cit:([`conversationWire`], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:33-33): a status/identity pair and four items — two parent items, a roster row
   (kind `notice`, role `system`, carrying `agent: { agentId: "t-1", nickname: "scout" }`), and one
   agent-owned message; `seed()` writes them into the store as a live projection. Since 260731-EFA-L4
   they are built with `conversationIdentity` / `conversationStatus` / `conversationItem` /
@@ -43,32 +43,32 @@ parent stream failure.
   `connectRuntime`'s fetch stub serves — previously set `capabilities: {} as ConversationCapabilities`,
   an empty tree the server cannot send; it is now the full 23-leaf tree, and the page also carries
   `page.totalItems`.
-- **Parent view** (L172-L185): the timeline shows parent items + roster rows, and the agents area
+- **Parent view** cit:(["parent view shows parent items + roster rows"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:172-184): the timeline shows parent items + roster rows, and the agents area
   stays ONE compact line (`1 agent · 1 running`) — the roster lives in the menu (no options, no
   viewing note) until Enter opens it.
-- **ArrowDown primary path** (L186-L212): ArrowDown from a timeline row moves DOM focus INTO the
+- **ArrowDown primary path** cit:(["ArrowDown from the timeline moves focus into the agents line"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:186-211): ArrowDown from a timeline row moves DOM focus INTO the
   agents line WITHOUT switching the view; Enter opens the menu (focus on the listbox, nothing
   announced yet); Enter selects the only agent — the store records the focus, `viewing scout` is
   announced, the menu closes with focus back on the line, and the timeline filters to the agent's
   own items (its roster row included, never the parent's) with the viewing note on the line.
-- **Uniform hijack** (L213-L221): ArrowDown from the scroll VIEWPORT also moves focus into the
+- **Uniform hijack** cit:(["uniform hijack"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:213-220): ArrowDown from the scroll VIEWPORT also moves focus into the
   agents line — the hijack is not article-only.
-- **ArrowUp return** (L222-L234): ArrowUp from the agents line returns focus to the timeline's
+- **ArrowUp return** cit:(["ArrowUp from the agents line returns focus"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:222-233): ArrowUp from the agents line returns focus to the timeline's
   tabbable row.
-- **Scroll-key contract** (L235-L240): the exported `OPERATOR_SCROLL_KEYS` no longer carries
+- **Scroll-key contract** cit:(["no longer documents ArrowDown as a scroll key"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:235-239): the exported `OPERATOR_SCROLL_KEYS` no longer carries
   ArrowDown (PageDown/`]` remain) — the feed's scroll-key documentation matches the hijack.
-- **Cycle + filter + announce** (L241-L258): ArrowRight stores the focus, politely announces
+- **Cycle + filter + announce** cit:(["ArrowRight focuses the agent"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:241-257): ArrowRight stores the focus, politely announces
   `viewing scout`, and filters the timeline to the agent's own items; Escape stores `undefined`,
   announces `viewing parent conversation`, and restores the parent view.
-- **Wrap-around** (L259-L270): ArrowRight from the last agent wraps to the parent; ArrowLeft from
+- **Wrap-around** cit:(["wraps to the parent"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:259-269): ArrowRight from the last agent wraps to the parent; ArrowLeft from
   the parent wraps to agent N.
-- **Back-to-parent affordance** (L271-L279): the agents line's back-to-parent button returns to
+- **Back-to-parent affordance** cit:(["back-to-parent affordance"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:271-278): the agents line's back-to-parent button returns to
   the parent view.
-- **Key ownership** (L280-L287): keys from an interactive target (the agents line, a button) do
+- **Key ownership** cit:(["ignores the focus keys"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:280-286): keys from an interactive target (the agents line, a button) do
   NOT cycle the focus.
-- **Stale stored focus** (L288-L296): a stored focus for an agent absent after rehydrate renders the
+- **Stale stored focus** cit:(["stale stored focus"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:288-295): a stored focus for an agent absent after rehydrate renders the
   parent view with no viewing note — the effective-focus honesty.
-- **Hidden keep-alive** (L393-L409): a `visible={false}` surface still STORES the focus switch but
+- **Hidden keep-alive** cit:(["hidden keep-alive surface"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:393-409): a `visible={false}` surface still STORES the focus switch but
   never voices it (neither polite nor assertive announcer fires).
 
 ### Invariants And Boundaries
@@ -95,39 +95,44 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The surface under test; imported at L34. | L34 | [ConversationSurface.tsx](ConversationSurface.tsx.md) |
-| The exported scroll-key set the ArrowDown-absence pin imports; imported at L35. | L35 | [ConversationTimeline.tsx](ConversationTimeline.tsx.md) |
-| The real store seeded with projections (`activeConversationStore`, `connectConversation`, `disconnectConversation`); imported at L16-L20. | L16-L20 | [../../../data/conversation/store.ts](../../../data/conversation/store.ts.md) |
-| The projection type + `emptyProjection` the fixtures extend; imported at L14-L15. `applyInitialPage` at L182-L195 is what copies a page's `capabilities`/`totalItems` onto the projection. | L14-L15 | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts.md) |
-| The item/identity/status/page wire types the fixtures build (incl. the `agent` ref); imported at L22-L27. | L22-L27 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts.md) |
-| The mocked announcer side channel the visibility gate is asserted against; imported at L13, mocked at L37-L40. | L13; L37-L40 | [../../../data/announcer.ts](../../../data/announcer.ts.md) |
-| `conversationIdentity` / `conversationItem` / `conversationStatus` / `conversationPage` — the builders the fixtures now use; imported at L28-L33. | L28-L33 | [../../../test/fixtures/conversationWire.ts](../../../test/fixtures/conversationWire.ts.md) |
+| The surface under test; imported at L34. | `statusRevision` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:315-315 |
+| The exported scroll-key set the ArrowDown-absence pin imports; imported at L35. | `ArrowDown` | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:114-114 |
+| The real store seeded with projections (`activeConversationStore`, `connectConversation`, `disconnectConversation`); imported at L16-L20. | "export const activeConversationStore =" | dashboard/src/data/conversation/store.ts:84-84 |
+| The projection type + `emptyProjection` the fixtures extend; imported at L14-L15. `applyInitialPage` at L182-L195 is what copies a page's `capabilities`/`totalItems` onto the projection. | `applyInitialPage` | dashboard/src/data/conversation/reducer.ts:168-202 |
+| The item/identity/status/page wire types the fixtures build (incl. the `agent` ref); imported at L22-L27. | `agent` | dashboard/src/data/conversation/types.ts:172-172 |
+| The mocked announcer side channel the visibility gate is asserted against; imported at L13, mocked at L37-L40. | `announcePolite` | dashboard/src/data/announcer.ts:33-35 |
+| `conversationIdentity` / `conversationItem` / `conversationStatus` / `conversationPage` — the builders the fixtures now use; imported at L28-L33. | `conversationItem` | dashboard/src/test/fixtures/conversationWire.ts:209-226 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## 260727-CHATS-IM-L2 Persisted-Focus And Retry Delta
 
 The persisted-focus regression proves a valid effective child hydrates exactly once across
-mount/remount while a stale stored id sends zero POSTs (L297-L349). The failure/retry regression
+mount/remount while a stale stored id sends zero POSTs cit:(["hydrates a valid persisted focus once"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:297-348). The failure/retry regression
 renders the server's child-scoped detail, keeps the parent projection `live` with no parent error,
-retries explicitly, and clears the local error after success (L350-L392).
+retries explicitly, and clears the local error after success cit:(["child-scoped history failure"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:350-391).
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded `(L…)`
+  prose citations with exact test-title anchors, the `n/a` table rows with exact frozen-source
+  anchors, and the history `applyInitialPage` range via the scoped fixer; exact non-fixing
+  check returns zero findings.
 
 - 2026-08-01T11:50+02:00 — 260731-EFA-L4 curator: recorded the conversation-wire fixture conversion
   and repaired every case range. The two fixture details worth a reader's time are named in the
@@ -136,8 +141,7 @@ retries explicitly, and clears the local error after success (L350-L392).
   there would have changed what `resolveWorkingTurnId`-adjacent code sees; and `initialPage()`'s
   `capabilities` went from `{} as ConversationCapabilities` (a tree the server cannot send) to the
   full 23-leaf tree, with `page.totalItems` now set. That second one looked consequential, so I
-  traced it instead of trusting the green run: `applyInitialPage` (`data/conversation/reducer.ts`
-  L182-L195) really does copy `page.capabilities` and `page.page.totalItems` onto the projection, and
+  traced it instead of trusting the green run: `applyInitialPage` cit:([`applyInitialPage`], dashboard/src/data/conversation/reducer.ts:168-202) really does copy `page.capabilities` and `page.page.totalItems` onto the projection, and
   `ConversationSurface.tsx` — unchanged by this leaf — reads `capabilities?.live.completeness` at
   L319-L321 and `capabilities?.history` at L279. What makes it inert is ORDERING: all three
   `connectRuntime` cases flush the GET and then call `seed()`, which overwrites the session's

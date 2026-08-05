@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/context/constants.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ patch snippets.
 
 CGC runtime, runner, and patch modules import this file for stable names and
 marker text. It also reads source `.gitignore` patterns for managed
-`.cgcignore` generation. `CGC_RUNNER_IMAGE_LAYER_REVISION` ("ar1") is suffixed
+`.cgcignore` generation. `CGC_RUNNER_IMAGE_LAYER_REVISION` ("ar2") is suffixed
 onto the runner image tag (`<repo>:<cgc-version>-<revision>`) so changes to
 the runner Docker layer alone — entrypoint scripts, baked patches — produce a
 new tag.
@@ -45,14 +45,19 @@ new tag.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC runtime layout uses provider constants and default ignore text from this module. | [core.py](core.py.md) |
-| CGC Docker runner command/build helpers use runner image and watcher container constants from this module. | [runner.py](../lifecycle/runner.py.md) |
-| CGC patch application uses marker and snippet constants from this module. | [patches.py](patches.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC runtime layout uses provider constants and default ignore text from this module. | `CGC_PROVIDER` | mcp/src/agents_remember/providers/cgc/context/core.py:11-21; mcp/src/agents_remember/providers/cgc/context/materialize.py:55-65 |
+| CGC Docker runner command/build helpers use runner image and watcher container constants from this module. | `cgc_runner_image_build` | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-74 |
+| CGC patch application uses marker and snippet constants from this module. | `CGC_PATCH_MARKER` | mcp/src/agents_remember/providers/cgc/context/patches.py:9-35 |
 
 ## Update History
 
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 6 citation findings and one value
+  drift. `CGC_RUNNER_IMAGE_LAYER_REVISION` is "ar2" in the source (the Logic paragraph said "ar1").
+  Re-anchored the three rows: layout/materialize constants use (core.py:11-21; materialize.py:55-65),
+  runner build/inspect helpers (runner.py:37-90), and patch application (patches.py:9-35). Scoped
+  recheck clean.
 - 2026-07-03T01:55+02:00 — L12: adds CGC_REPO_CGCIGNORE_EXTRAS (feeds per-root cgcignorePatterns in generated settings), the watcher timer-pop patch id/marker/snippets, and bumps CGC_RUNNER_IMAGE_LAYER_REVISION ar1->ar2 so hosts rebuild the runner image with the new patch.
 - 2026-06-10T06:20+02:00 — Body-quality pass: merged the layer-revision tag mechanics into Logic and promoted the bump-on-layer-change rule to Invariants (documentation only).
 - 2026-06-09T22:10+02:00 — Added `CGC_RUNNER_IMAGE_LAYER_REVISION` ("ar1"), suffixed onto the runner image tag (`<repo>:<cgc-version>-<revision>`); bump it whenever the runner Docker layer changes without a cgc version change, because `runtime_install` skips building image tags that already exist.

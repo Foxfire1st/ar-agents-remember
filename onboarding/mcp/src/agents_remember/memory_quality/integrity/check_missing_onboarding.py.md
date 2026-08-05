@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -84,15 +84,18 @@ code and refresh the new sidecars to the real code commit hash.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Drift helpers provide sidecar path construction and inline block parsing. | [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py) |
-| Resolver helpers provide storage/path-rule decisions. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
-| Tests cover untracked, staged, excluded, and renamed file cases. | [test_missing_onboarding.py](agents-remember/mcp/tests/test_missing_onboarding.py) |
-| The kernel filesystem helper handles long-path sidecar and source probes. | [filesystem.py](agents-remember/mcp/src/agents_remember/kernel/filesystem.py) |
-| `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Drift helpers provide sidecar path construction and inline block parsing. | "def classify_source" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:161-161 |
+| Resolver helpers provide storage/path-rule decisions. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-131 |
+| Tests cover untracked, staged, excluded, and renamed file cases. | `MissingOnboardingTests` | mcp/tests/test_missing_onboarding.py:22-154 |
+| The kernel filesystem helper handles long-path sidecar and source probes. | "def absolute_path" | mcp/src/agents_remember/kernel/filesystem.py:10-10 |
+| `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | "def run_git" | mcp/src/agents_remember/kernel/git_command.py:85-85 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T20:53+02:00 — 260731-EFA-L3 curator: the module-local `run_git` copy was removed; the
   helper is now `require_git`, wrapping `kernel.git_command.run_git`. Documented the rename, why it

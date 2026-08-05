@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/CommandPalette.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -28,26 +28,18 @@ stays local (R7 — the view's `closePalette` hands focus back to the invoker).
 ### Logic
 
 - Controlled by the view: `open`/`page` state, `onClose`, `onPage`; the component holds only the
-  query, reset on every open (L113-L117 — the palette is transient, never a standing filter).
-- `runItem(id)` (L121-L126): runs through `registry.run(id, getContext())`; commands without
+  query, reset on every open (cit:([`initialQuery`], dashboard/src/panels/session-cockpit/CommandPalette.tsx:170-170) — the palette is transient, never a standing filter).
+- `runItem(id)` cit:([`runItem`], dashboard/src/panels/session-cockpit/CommandPalette.tsx:184-193): runs through `registry.run(id, getContext())`; commands without
   `keepsPaletteOpen` close the palette, page-switch commands (keyboard.reference) keep it open
   and clear the query.
-- `onKeyDown` (L195-L224): Escape closes (preventDefault + stopPropagation so the window-level
-  layer never sees it); Tab/Shift-Tab wrap focus inside the dialog (L202-L218 — the modal focus
+- cit:([`onKeyDown`], dashboard/src/panels/session-cockpit/CommandPalette.tsx:195-224): Escape closes (preventDefault + stopPropagation so the window-level
+  layer never sees it); Tab/Shift-Tab wrap focus inside the dialog (the modal focus
   trap over the dialog's own enabled inputs/buttons/tabbables); Backspace on an EMPTY query leaves
   a sub-page back to `commands` — the page pattern's back gesture.
-- The `keys` page (L274-L331) renders three disabled groups straight from the data — but the data
-  is now the EFFECTIVE keymap, not the static chord tables: the Chrome group (L276-L283) and the
-  Composer group (L284-L297) filter `useEffectiveKeymap()`'s `bindings` by zone (composer
-  additionally drops profile-inactive commands), so `CHROME_CHORDS`/`COMPOSER_CHORDS` are no longer
-  read here at all — they only seed `data/keymap/preferences.DEFAULT_BINDINGS`. The PTY reserved set
-  (`PTY_RESERVED`, unbound slots labeled "(reserved, unbound)") rides under the heading "Terminal —
-  everything passes through except exactly" (L319-L329). The page also carries the composer-profile
-  toggle (L298-L313) and any keymap validation issues (L314-L318). `shouldFilter` is disabled on
-  the keys page (L241). The footer hint (L333-L337) states the
-  Esc-is-never-intercepted-over-the-terminal rule.
-- cmdk is unstyled; the Panda `box` css styles its `[cmdk-*]` data-attribute parts (L36-L77).
-- **V1 panel clamp (260718-CHATS-L5P)** (L36-L77): the panel `box` is `overflow:hidden` and its
+- The `keys` page cit:(["Chrome — the shell around the panes"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:276-276) renders three disabled groups from the effective keymap. The Chrome group and the Composer group filter the effective bindings by zone; the Composer group also drops profile-inactive commands, as shown by cit:(["Composer — the editor owns its keys"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:284-284). The old static chord tables are not read here; they only seed the default bindings.
+- The PTY reserved set and its unbound slots are rendered under the terminal heading cit:(["Terminal — everything passes through except exactly"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:319-319). The page also carries the composer-profile toggle cit:(["composer-profile-toggle"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:309-309) and keymap validation issues cit:(["keymap-validation"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:315-315). `shouldFilter` is disabled on the keys page cit:([`shouldFilter`], dashboard/src/panels/session-cockpit/CommandPalette.tsx:241-241). The footer hint cit:(["esc closes · backspace returns to commands · Esc is NEVER intercepted over the terminal"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:335-335) states the Esc-is-never-intercepted-over-the-terminal rule.
+- cmdk is unstyled; the Panda `box` css styles its `[cmdk-*]` data-attribute parts (cit:([`box`], dashboard/src/panels/session-cockpit/CommandPalette.tsx:31-103)).
+- **V1 panel clamp (260718-CHATS-L5P)** (cit:([`box`], dashboard/src/panels/session-cockpit/CommandPalette.tsx:31-103)): the panel `box` is `overflow:hidden` and its
   `[cmdk-root]` is a bounded flex column (`flex:1; minHeight:0; overflow:hidden`) with the
   `[cmdk-list]` as the sole interior scroller (`flex:1; minHeight:0; overflow:auto`). The keys reference
   is taller than the `maxHeight:70%` panel; without this clamp its list rows + footer spilled onto a
@@ -67,25 +59,25 @@ stays local (R7 — the view's `closePalette` hands focus back to the invoker).
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Pages, run/close semantics, back gesture, and the data-driven keys page. | L98-L218 | [CommandPalette.tsx](CommandPalette.tsx) |
-| The registry contract (`list`/`run`/`keepsPaletteOpen`). | L33-L80 | [../../data/commands.ts](../../data/commands.ts) |
-| The chord tables + reserved set the keys page renders. | L20-L86; L62-L150 | [../../data/keymap/chords.ts](../../data/keymap/chords.ts) |
-| The view that owns open/page state and the invoker focus-return. | L235-L251; L496-L503 | [SessionsView.tsx](SessionsView.tsx) |
-| Palette behavior coverage: open, Esc + focus return, keys page from real tables, suppression, `/` rule. | L112-L175 | [SessionsView.test.tsx](SessionsView.test.tsx) |
+| Pages, run/close semantics, back gesture, and the data-driven keys page. | `CommandPalette` | dashboard/src/panels/session-cockpit/CommandPalette.tsx:157-342 |
+| The registry contract (`list`/`run`/`keepsPaletteOpen`). | `CommandRegistry` | dashboard/src/data/commands.ts:47-55 |
+| The keys page renders the PTY-reserved terminal entries. | "Terminal — everything passes through except exactly" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:319-319 |
+| The view that owns open/page state and the invoker focus-return. | `closePalette` | dashboard/src/panels/session-cockpit/SessionsView.tsx:735-741 |
+| Palette behavior coverage: open, Esc + focus return, keys page from real tables, suppression, `/` rule. | "opens on ctrl+k from the chrome zone and closes on Escape, returning focus to the invoker" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:301-315 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -103,6 +95,7 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 15 citation claims; narrowed the keys-page row to PTY-reserved rendering; normalized 1 redundant prose subrange; scoped result 0 findings.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations and corrected
   one now-false claim inside them. `onKeyDown` L128-L140 → L195-L224 (the handler also grew the

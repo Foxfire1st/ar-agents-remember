@@ -59,10 +59,10 @@ visualizer commands.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The parent lifecycle facade imports the CGC package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| Watcher aggregation imports CGC all-root start/status/stop behavior from this package. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The parent lifecycle facade imports the CGC package facade. | `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
+| Watcher aggregation imports CGC all-root start/status/stop behavior from this package. | `watcher_cgc_result` | mcp/src/agents_remember/providers/lifecycle/watchers.py:165-183 |
 
 ## 260731-EFA-L2 — The Backend Invocation Is A Value
 
@@ -87,6 +87,8 @@ published port is a new `CgcBackendPort` constant, not a new keyword group.
 — the explicit `--from-settings` requirement recorded below is untouched.
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `backend.py`'s five-tuple invocation became the frozen
   `CgcBackendContext` (with `layout` as a property over `layouts[0]`, making the shared-backend /

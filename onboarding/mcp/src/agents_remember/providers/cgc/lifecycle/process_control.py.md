@@ -65,15 +65,17 @@ default). The function returns at least 1 and at most `layout_count`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Shared process helpers provide durable namespace checks and command execution. | [process_status.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/process_status.py); [command_runner.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/command_runner.py) |
-| CGC backend startup is delegated to the backend module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| Docker watcher command construction lives in the runner module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
-| `cgc_index_concurrency` is also imported by `refresh.py` to report `indexConcurrency` in the refresh-all result. | [refresh.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py) |
-| Unit tests protect the cap defaults, env-override, and boundary conditions. | [test_cgc_index_concurrency.py](agents-remember/mcp/tests/test_cgc_index_concurrency.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared process helpers provide durable namespace checks and command execution. | "def process_namespace_status() -> dict[str, Any]:"; "def run_command(" | mcp/src/agents_remember/providers/lifecycle/command_runner.py:15-15; mcp/src/agents_remember/providers/lifecycle/process_status.py:38-38 |
+| CGC backend startup is delegated to the backend module. | "def cgc_backend_start(args: argparse.Namespace) -> dict[str, Any]:" | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-390 |
+| Docker watcher command construction lives in the runner module. | "def cgc_runner_image_build(args: argparse.Namespace, layout: CgcRuntimeLayout) -> dict[str, Any]:" | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-37 |
+| `cgc_index_concurrency` is also imported by `refresh.py` to report `indexConcurrency` in the refresh-all result. | "def cgc_refresh_all(args: argparse.Namespace) -> dict[str, Any]:"; "def cgc_index_concurrency(layout_count: int) -> int:" | mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:259-259; mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:175-175 |
+| Unit tests protect the cap defaults, env-override, and boundary conditions. | "def test_default_caps_below_repo_count(self) -> None:"; "def test_env_override_raises_cap(self) -> None:"; "def test_bad_override_falls_back_to_default(self) -> None:"; "def test_zero_layouts_returns_one(self) -> None:" | mcp/tests/test_cgc_index_concurrency.py:22-22; mcp/tests/test_cgc_index_concurrency.py:37-37; mcp/tests/test_cgc_index_concurrency.py:41-41; mcp/tests/test_cgc_index_concurrency.py:45-45 |
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 5 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py` since the L2 base commit is

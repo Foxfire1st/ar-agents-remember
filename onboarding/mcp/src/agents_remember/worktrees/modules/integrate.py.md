@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:50+02:00 |
+| lastUpdated            | 2026-08-04T03:03+02:00 |
 | lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
 | lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
 | governingOverview      | `overview.md`                              |
@@ -71,15 +71,32 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Worktree contract fields record closeout and integration commit state; `ContractCells` / `amend_contract` are the typed path both writes here take, and `IntegrationStatus` / `CleanupStatus` are the vocabularies they are checked against. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Worktree tests cover fast-forward integration, replay, and conflict blocking. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Worktree-contract definitions declare `IntegrationStatus` / `CleanupStatus` and expose `ContractCells` / `amend_contract` as the typed amendment path. | `ContractCells`; `amend_contract`; `IntegrationStatus`; `CleanupStatus` | mcp/src/agents_remember/worktrees/worktree_contract.py:67-68; mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:117-130; mcp/src/agents_remember/worktrees/modules/integrate.py:483-513 |
+| Worktree tests cover fast-forward integration, replay, and conflict blocking. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_replay_handles_parallel_non_overlapping_changes`; `test_integrate_replay_blocks_code_conflicts_before_main_moves`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support.py:2109-2164; mcp/tests/test_worktree_support.py:2174-2219; mcp/tests/test_worktree_support.py:2221-2252; mcp/tests/test_worktree_support.py:3056-3091 |
 
-As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the controller) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
+As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
 ## Update History
 
+- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the two persisted integration-write ranges (1 repair, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
+- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
+  underbound function-header/assignment fragments with both complete integration-write owners,
+  retaining the blocked and completed-plus-cleanup-pending meanings. The changed binding is a
+  provisional `:1-1` input for the fresh Luna curator; no citation mechanics ran.
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: source-first separated the
+  worktree-contract type/helper definitions from this module's two actual `amend_contract` call
+  sites. Preserved every generated definition range and added one honest `:1-1` binding for the
+  blocked and completed writes; no citation mechanics ran.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped worktree-integration citation claims; final exact frozen-snapshot check is clean.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (4 findings); no Tier-3 findings.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:50+02:00 — 260731-EFA-L4 curator: this leaf's diff here is not an import move — both
   of the module's contract writes changed shape. `blocked_integration_payload` went from
   `replace(contract, integration_status="blocked")` to

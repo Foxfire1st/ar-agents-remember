@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ terminal dependency by construction, so xterm never appears here.
 
 ### Logic
 
-- **`projectGate` helper** (L27-L44): seeds `dashboardStore.lifecycles` with an open
+- **`projectGate` helper**: seeds `dashboardStore.lifecycles` with an open
   `agent-question` gate carrying the REAL packet shape
   (`packet.adapterInteraction.{sessionId,interactionId}`) — the exact stamp
   `hosted_interactions.py` writes. Since 260731-EFA-L4 it builds that through
@@ -34,28 +34,35 @@ terminal dependency by construction, so xterm never appears here.
   `{ id, gate } as unknown as LifecycleProjection` cast, so the seeded lifecycle is a shape the
   mirror can produce and a packet field the mirror does not declare fails `tsc -b` here. The gate
   still sets `decisions: []` explicitly.
-- **Kind-awareness (F8)** (L75-L112): choices render one button per choice + kind chip + the
+- **Kind-awareness (F8)**: choices render one button per choice + kind chip + the
   honesty hint; non-choice kinds mark the composer (`data-answer-mode`) with the gate-channel
   label; unrepresentable payloads say so with ZERO dead buttons; no pending interaction ⇒
   renders nothing.
-- **Round-trip (F7)** (L114-L244): a deferred-promise fetch pins the in-flight `answering…` +
+- **Round-trip (F7)**: a deferred-promise fetch pins the in-flight `answering…` +
   disabled buttons before release → "answered — waiting" with the poll-bounded copy; the
   500-with-body case asserts the VERBATIM server words and that retry re-sends the SAME body
   (captured fetch bodies compared — `note: "deny"` twice); the missing-gate case proves NO blind
   POST (fetch spy never called) and poll-bounded copy; composer answer-mode asserts the EXACT
   URL + body (`/api/actions/approve`, `{target, gateId, note}`) — never /submit.
-- **Stale round-trip state (review finding 5)** (L246-L268): a pre-seeded "answered" record on
+- **Stale round-trip state (review finding 5)**: a pre-seeded "answered" record on
   the seat + a FOLLOWING unrepresentable payload ⇒ the store record clears and no answered line
   renders (fails on the old guard that skipped `interactionId === undefined`).
-- **Focus + announce** (L270-L292): appearance never steals focus (outside button keeps it) and
+- **Focus + announce**: appearance never steals focus (outside button keeps it) and
   the `role="alert"` region carries the prompt; unmount while holding focus returns it to the
   invoker.
-- **Multiplexed sub-agent approvals (review R6)** (L482-L521): over the
+- **Multiplexed sub-agent approvals (review R6)**: over the
   `L7_MULTIPLEXED_INTERACTIONS` fixture — two bars render (parent first, UNBADGED; the agent bar
   badged `agent agent-t` from the adapter-bound `raw.agentLabel`), answering the AGENT bar POSTs
   `{interactionId: "ix_l7_agent", expectedBridgeEpoch: "ep-1", response: "allow"}` through the
   existing session-direct channel, and the parent's bar never shows the agent's
   inflight/answered state.
+
+  cit:([`projectGate`], dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:27-43)
+  cit:(["choice kinds render one button per choice + the kind chip + the honesty hint", "non-choice kinds mark the composer as the answer input (gate-routed, labeled)", "unrepresentable kinds say so honestly — no dead buttons", "renders nothing when no interaction is pending"], dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:76-86; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:88-96; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:98-105; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:107-111)
+  cit:(["answering… disables the buttons in flight, then lands on answered — waiting (poll-bounded copy)", "POST failure renders the verbatim error and retry re-sends the SAME answer", "a missing gate is stated as the poll-bounded truth, retryable — never a blind POST", "composer answer-mode routes the composer text through the gate channel, NOT /submit"], dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:115-134; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:136-159; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:161-171; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:173-196)
+  cit:(["clears a previous 'answered — waiting' before a FOLLOWING unrepresentable interaction renders"], dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:247-267)
+  cit:(["never steals focus on appearance and announces via an assertive region", "returns focus to the invoker when the bar clears while holding focus"], dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:271-280; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:282-291)
+  cit:(["renders one bar per pending interaction — parent first, agent badged", "answers the AGENT approval through the existing interaction-response channel"], dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:485-500; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:502-520)
 
 ### Invariants And Boundaries
 
@@ -67,26 +74,26 @@ Test-only.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test (multiplexing fan-out + per-payload bar). | L242-L281, L283-L525 | [InteractionBar.tsx](InteractionBar.tsx) |
-| The answer path + cross-slot channel routing the suite exercises end-to-end. | L449-L640, L533 | [../../data/interactionAnswer.ts](../../data/interactionAnswer.ts) |
-| The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable). | L205-L256 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
-| The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). | L411-L446 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
-| The copy constants asserted verbatim (honesty hint). | L54-L71 | [lifecycleCopy.ts](lifecycleCopy.ts) |
-| `lifecycleWithGate` — the typed builder `projectGate` now seeds through, and the `BASE_LIFECYCLE`/`BASE_GATE` bases it spreads. | L98-L120; L252-L262 | [../../test/fixtures/wire.ts](../../test/fixtures/wire.ts) |
+| The component under test (multiplexing fan-out + per-payload bar). | "export const InteractionBar = forwardRef<" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:242-242 |
+| The answer path + cross-slot channel routing the suite exercises end-to-end. | `submitInteractionAnswer`, `answerPendingInteraction` | dashboard/src/data/interactionAnswer.ts:449-481; dashboard/src/data/interactionAnswer.ts:504-618 |
+| The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable). | `L6_INTERACTION_CHOICES`, `L6_INTERACTION_FREETEXT`, `L6_INTERACTION_UNREPRESENTABLE` | dashboard/src/test/fixtures/catalogRows.ts:205-221; dashboard/src/test/fixtures/catalogRows.ts:224-240; dashboard/src/test/fixtures/catalogRows.ts:243-255 |
+| The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:414-446 |
+| The copy constants asserted verbatim (honesty hint). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:75-75; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:78-79; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:82-83 |
+| `lifecycleWithGate` — the typed builder `projectGate` now seeds through, and the `BASE_LIFECYCLE`/`BASE_GATE` bases it spreads. | `lifecycleWithGate`, `BASE_LIFECYCLE`, `BASE_GATE` | dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:256-266 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -102,6 +109,8 @@ The interaction tests cover separate question option groups, multi-select confir
 recorded-answer copy, all-or-nothing direct submission, and the retained honest fallback forms.
 
 ## Update History
+
+- 2026-08-03T02:45:49+02:00 — W3-B04 curator: curated 5 table citations and 6 prose citations (11 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator: the only source change is `projectGate` swapping an
   `{ id, gate } as unknown as LifecycleProjection` cast for `lifecycleWithGate(…)`, so the helper

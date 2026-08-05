@@ -81,15 +81,16 @@ the hook fires for unrelated sessions and must scope itself); and the payload en
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The generator whose `HARNESSES` table encodes this classification. | [sync-harness.py](agents-remember/scripts/sync-harness.py) |
-| The two fragment libraries this file inventories. | [render_starter.py](agents-remember/scripts/harness/render_starter.py); [session_start_hook.py](agents-remember/scripts/harness/session_start_hook.py) |
-| The verbatim and composed bodies. | [shared/](agents-remember/scripts/harness/shared/) |
-| The suite check that makes the classification enforceable rather than descriptive. | [test_sync_harness.py](agents-remember/mcp/tests/test_sync_harness.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The generator whose `HARNESSES` table encodes this classification. | `HARNESSES` | scripts/sync-harness.py:202-408 |
+| The two fragment libraries this file inventories. | `render_settings`; `hook_specific_output` | scripts/harness/render_starter.py:108-115; scripts/harness/session_start_hook.py:28-34 |
+| The verbatim and composed bodies. | "exec python3"; "Join-Path" | scripts/harness/shared/render-starter.ps1:4-4; scripts/harness/shared/render-starter.sh:5-5 |
+| The suite check that makes the classification enforceable rather than descriptive. | `test_every_generated_harness_file_matches_its_source` | mcp/tests/test_sync_harness.py:40-51 |
 
 ## Update History
 
+- 2026-08-03T03:10:23+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact anchors and current source paths; fixer generated all final ranges.
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 created this classification alongside the
   generator (requirement L2-R12). It is the recorded answer to the leaf's open question
   about genuine per-harness requirements versus drift. Verification metadata is pinned to

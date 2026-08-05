@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`  |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -129,32 +129,34 @@ No task-independent technical debt was identified during FEUI-L9R review.
 No relevant documentation was found after checking the configured sources; cursor and event-stream
 claims are proven by repository source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local event tail. | Source discovery checked | — |
+| No relevant external or domain documentation was found for this repository-local event tail. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The observer event envelope tailed here. | — | [observer/events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). | — | [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The one read/path abstraction (NS #5). | — | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
-| The app that mounts this as `GET /api/events`. | — | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | L36-L94 | [event_retention.py](agents-remember/mcp/src/agents_remember/observer/event_retention.py) |
-| `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | L125-L227 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | L190-L233 | [events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
-| Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | L1913-L2039; L2099-L2128 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| The observer event envelope tailed here. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
+| The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| The one read/path abstraction (NS #5). | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34 |
+| The app that mounts this as `GET /api/events`. | `stream_events` | mcp/src/agents_remember/serving/app.py:315-345 |
+| The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
+| `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
+| `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
+| Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | `RawEventTests` | mcp/tests/test_serving.py:1702-2068 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local event tail.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 7 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the one remaining cross-file citation,
   into `mcp/tests/test_serving.py`. The stamped `L994-L1124` now lands in `BuildInfoTests` /

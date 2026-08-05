@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/file-viewer/langByExtension.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-06-29T09:06+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,10 +41,10 @@ error.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `FilePane` awaits this and pushes the result as an editor extension, guarding a late resolve. | L11, L30-L41 | [FilePane.tsx](FilePane.tsx) |
-| The `language` id is produced by the L1 read client. | L48-L56, L99-L104 | [../../data/files.ts](../../data/files.ts) |
+| `FilePane` awaits this and pushes the result as an editor extension, guarding a late resolve. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| The `language` id is produced by the L1 read client. | `language` | dashboard/src/data/files.ts:54-54 |
 
 ## Update History
 

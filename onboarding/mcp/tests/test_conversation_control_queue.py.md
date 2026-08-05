@@ -25,16 +25,16 @@ the queued→dispatching race, the bounded 900 s recovery lease, and lease expir
 
 ### Logic
 
-`QueueProjectionTests` (L51): complete multi-source truth (`3 queued · 1 yours(cockpit) · 1 terminal
+cit:([`QueueProjectionTests`], mcp/tests/test_conversation_control_queue.py:51-208): complete multi-source truth (`3 queued · 1 yours(cockpit) · 1 terminal
 · 1 durable`), sequences ordered, no body anywhere in the JSON; only queued cockpit rows carry the
 withdrawal ref/redacted preview/digest; legacy cockpit rows report empty held content honestly;
 setter operations are not queue rows (while the timeline still enumerates them); semantic monotonic
-revisions. `WithdrawalRecoveryTests` (L211): atomic `cockpit_only` withdrawal; the queued→dispatching
+revisions. cit:([`WithdrawalRecoveryTests`], mcp/tests/test_conversation_control_queue.py:211-619): atomic `cockpit_only` withdrawal; the queued→dispatching
 race with exactly one winner (`already-dispatching` 409, refs captured while queued); replay returns
 the same outcome/revision + recovery; opaque pending discovery then authenticated fetch/ack/disposed
 replay; lost withdraw response → journal-of-last-resort recovery; legacy-row recovery from the
 substrate payload; the reference forgery battery; and `test_recovery_lease_expiry_disposes_content`
-(L505) which builds its own separate advancing frozen clock (09:00:00Z → 09:16:01Z) and asserts
+cit:([`test_recovery_lease_expiry_disposes_content`], mcp/tests/test_conversation_control_queue.py:505-558) which builds its own separate advancing frozen clock (09:00:00Z → 09:16:01Z) and asserts
 `pending.items == ()` / `recovery_state == "expired"` after the advance.
 
 Every withdrawal-authority call is addressed through a `ControlRequest(service=…, authorization=…,
@@ -68,7 +68,7 @@ None.
 
 No Domain Documentation source is configured; the queue/withdrawal contract is repository-owned.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -77,21 +77,23 @@ No Domain Documentation source is configured; the queue/withdrawal contract is r
 The suite exercises the queue projection and the withdrawal/recovery authority over the shared
 topology.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The source-aware queue projection under test. | L47-L152 | [control/queue_projection.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/queue_projection.py) |
-| The withdrawal + bounded recovery authority (900 s lease, `sweep_recoveries` expiry sweep at L651) and the `ControlRequest` it is addressed by. | L121-L706 | [control/withdrawals.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/withdrawals.py) |
-| The shared fake-topology harness with the `NOW`-anchored service. | L436-L520 | [_control_plane.py](agents-remember/mcp/tests/_control_plane.py) |
+| The source-aware queue projection under test. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:47-47 |
+| The withdrawal + bounded recovery authority (900 s lease, `sweep_recoveries` expiry sweep at L651) and the `ControlRequest` it is addressed by. | "def sweep_recoveries" | mcp/src/agents_remember/serving/conversation/control/withdrawals.py:651-651 |
+| The shared fake-topology harness with the `NOW`-anchored service. | `NOW` | mcp/tests/_control_plane.py:68-68 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 5 citation finding(s); scoped recheck clean.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the withdrawal authority, the harness
   control client, and the ref minter all moved their loose arguments into parameter objects, so

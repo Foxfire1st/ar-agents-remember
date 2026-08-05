@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -157,7 +157,7 @@ None known for the L4 shared opener boundary.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -166,24 +166,24 @@ pass was available for this update.
 The opener deliberately separates command/id resolution, role arbitration, typed runner startup,
 and caller-specific response shaping.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The hosted runner decodes the typed launch, validates against dynamic advertise, applies native knobs, and persists exact failures. | L37-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| Native launch selection and fail-loud duplicate/catalog validation are centralized in the launch module. | L17-L226 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| Role-scoped leaf arbitration resolves only the same-role owner and marks dead owners exited. | L32-L50 | [terminal_leaf_assignment.py](agents-remember/mcp/src/agents_remember/serving/terminal_leaf_assignment.py) |
-| The catalog row owns durable seat, lineage, resolved knob, free-form, and control metadata. | L50-L120 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The catalog batch holds both the process lock and instance lock across the complete unit of work. | L696-L727 | [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py) |
-| The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | L946-L1049 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The agent-facing spawn tool resolves role settings, calls this opener, and maps live launch conflict to its existing launch-selection refusal. | L474-L628 | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | L271-L407 | [test_terminal_opener.py](agents-remember/mcp/tests/test_terminal_opener.py) |
-| Resume-channel contract tests pin the opener `bad-kind` refusals with zero host interactions and the codex pass-through into the runner payload. | L1409-L1460 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py) |
+| The hosted runner decodes the typed launch, validates against dynamic advertise, applies native knobs, and persists exact failures. | `parse_runner_config`; `_prepare_controlled_launch`; `run_controlled_session` | mcp/src/agents_remember/serving/harness_control_runner.py:72-97; mcp/src/agents_remember/serving/harness_control_runner.py:143-189; mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
+| Native launch selection and fail-loud duplicate/catalog validation are centralized in the launch module. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
+| Role-scoped leaf arbitration resolves only the same-role owner and marks dead owners exited. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
+| The catalog row owns durable seat, lineage, resolved knob, free-form, and control metadata. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
+| The catalog batch holds both the process lock and instance lock across the complete unit of work. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:730-762 |
+| The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | `_open_terminal_response` | mcp/src/agents_remember/serving/app.py:1461-1550 |
+| The agent-facing spawn tool resolves role settings, calls this opener, and maps live launch conflict to its existing launch-selection refusal. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
+| Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | `test_live_reopen_preserves_actual_pair_command_and_endpoint`; `test_live_reopen_changed_pair_or_identity_conflicts_without_mutation`; `test_dead_replacement_uses_new_pair_and_fresh_control_generation`; `test_concurrent_different_pair_opens_keep_one_process_and_one_truth`; `test_different_roles_share_leaf_and_dead_same_role_is_replaced` | mcp/tests/test_terminal_opener.py:261-286; mcp/tests/test_terminal_opener.py:377-392; mcp/tests/test_terminal_opener.py:394-410; mcp/tests/test_terminal_opener.py:478-508; mcp/tests/test_terminal_opener.py:510-537 |
+| Resume-channel contract tests pin the opener `bad-kind` refusals with zero host interactions and the codex pass-through into the runner payload. | `test_codex_resume_rides_opener_to_runner_payload`; `test_non_codex_resume_fails_closed_before_any_spawn`; `test_malformed_resume_fails_closed_before_any_spawn` | mcp/tests/test_harness_control_evidence.py:1698-1705; mcp/tests/test_harness_control_evidence.py:1715-1721; mcp/tests/test_harness_control_evidence.py:1723-1726 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented. The helper mutates only local tmux and the local
 dashboard terminal catalog.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -211,6 +211,7 @@ Runner launch now propagates the daemon worktree's package root into the tmux-sp
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 9 citation claims; scoped result 0 findings.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: rewrote Purpose/Logic/Invariants for the parameter-object
   signatures (`HostedSessionRuntime`, `TerminalLaunchRequest`, `SpawnProvenance`, `SpawnKnobs`,

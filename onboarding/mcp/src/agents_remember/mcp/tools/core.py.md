@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-07-31T15:31+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                      |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                      |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -21,12 +21,12 @@ Server, context, install, and skills payload builders.
 Holds `ping_payload`, `server_info_payload`, `context_packet_payload`,
 `runtime_install_payload`, `resolve_context_payload`, and
 `skills_install_payload`. `resolve_context_payload` takes one `TaskRef`
-(`agents_remember.controllers.task_ref`) carrying `repo_id` plus whichever locator the caller holds
+(`agents_remember.application.task_ref`) carrying `repo_id` plus whichever locator the caller holds
 — `task_name`, `contract_path`, `leaf_id`, `parent_task` — and keeps `worktree_name`/`topology` as
 separate keyword arguments, since neither is part of "which task".
 `ping`/`server_info` are built locally from
 `SERVER_NAME`/`SERVER_VERSION`/`TRANSPORT` and config; the rest forward typed
-arguments to their controllers (`build_context_packet`, `run_runtime_install`,
+arguments to their application entry points (`build_context_packet`, `run_runtime_install`,
 `resolve_context_tool`, `skills_install_tool`). `server_info_payload` reports
 `PUBLIC_TOOLS`/`RESERVED_TOOLS`. `runtime_install_payload` forwards a full
 `RuntimeInstallRequest` — `dry_run`, `include_benchmarks`, `install_provider_deps`
@@ -60,6 +60,8 @@ keyword arguments, through the same response-model validation path as the rest o
 
 ## Update History
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2: `resolve_context_payload`'s five flat locators collapsed
   into one `TaskRef` (`resolve_context_payload(config, task, *, worktree_name=None, topology=None)`),
   forwarded to `resolve_context_tool(config, task, ...)`. `RuntimeInstallRequest` is now imported

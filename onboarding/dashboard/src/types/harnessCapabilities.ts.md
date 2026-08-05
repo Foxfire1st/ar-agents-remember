@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/harnessCapabilities.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,80 +16,72 @@
 
 ## Purpose
 
-The TypeScript mirror of the **pre-session capability contract** (260715-FEUI-L3 R1/R3): the
-daemon envelope `CapabilityCatalogResult.to_json()`
-(`mcp/src/agents_remember/serving/harness_capability_catalog.py`) nesting the normalized snapshot
-`capability_snapshot_json()` (`serving/harness_capabilities.py`), served by
-`GET /api/harnesses/{h}/capabilities`. The Python serializers are the source of truth — kept in
-lockstep BY HAND, camelCase matching the wire form (same posture as `types/terminalCatalog.ts`);
-the L3 reviewer verified every field name byte-level against the serializers. Also hosts the live
-setter/submit/reconcile evidence shapes (`SetResultWire`, `SubmissionReceiptWire`,
-`ReconciliationResultWire`) consumed by the L4/L5 leaves via the fixture pack.
+This file declares the TypeScript wire shapes for the pre-session capability envelope, dynamic
+catalog, route errors, and the setter/submit/reconcile evidence payloads. The runtime envelope and
+snapshot serializers live in the MCP serving package, while this module preserves their camelCase
+wire names and keeps catalog values dynamic rather than embedding an install's data.
 
 ## Code Commentary
 
 ### Logic
 
-- `CAPABILITY_SCHEMA = "ar-harness-capabilities/v1"` (L11) + `CapabilityCacheStatus`
-  `hit|miss|refreshed` (L13) — hit = served from cache; miss/refreshed both ran the SAME
-  short-lived native discovery (the R2 cost-honesty fact the store's copy names).
-- `EffortOptionWire` (L16-L22): one vendor token accepted by one specific model
+- `CAPABILITY_SCHEMA = "ar-harness-capabilities/v1"` and `CapabilityCacheStatus`
+  `hit|miss|refreshed` — hit is served from cache; miss and refreshed both ran
+  the same short-lived native discovery.
+- cit:([`EffortOptionWire`], dashboard/src/types/harnessCapabilities.ts:16-22): one vendor token accepted by one specific model
   (`effort_option_json`) — `launchSettable`/`sessionSettable` booleans gate the launch flow's
   effort menu (R4).
-- `ModelCapabilityWire` (L25-L39): one dynamically advertised model with its model-gated effort
+- cit:([`ModelCapabilityWire`], dashboard/src/types/harnessCapabilities.ts:25-39): one dynamically advertised model with its model-gated effort
   menu (`model_capability_json`) — `effortOptions` is the advertised NATIVE order, never reordered
-  client-side; `hidden`/`selectable`/`isDefault`/`defaultEffort` are catalog data; Pi rows keep
-  the provider-qualified `key` (`provider/id`) verbatim with `provider` alongside (L37-L38).
-- `SessionConfigOptionWire` (L48-L56): the ACP Sense 1 select-config SHAPE
+  client-side; `hidden`/`selectable`/`isDefault`/`defaultEffort` are catalog data; provider rows
+  keep their provider-qualified key verbatim with `provider` alongside.
+- cit:([`SessionConfigOptionWire`], dashboard/src/types/harnessCapabilities.ts:48-56): the ACP Sense 1 select-config SHAPE
   (`config_option_json`, categories `model|thought_level`) — a shape, not an ACP transport.
-- `CapabilitySnapshotWire` (L59-L65): the full dynamic catalog + current selection;
-  `selectedEffort` is null on a fresh Claude session — stream-json emits no launch-effort echo
-  (recorded L5 evidence).
-- `CapabilityEnvelope` (L68-L75) + `CapabilityRouteErrorBody` (L78-L81): the daemon envelope and
+- cit:([`CapabilitySnapshotWire`], dashboard/src/types/harnessCapabilities.ts:59-65): the full dynamic catalog plus
+  nullable current model/effort selections; the wire shape permits `selectedEffort` to be null.
+- cit:([`CapabilityEnvelope`], dashboard/src/types/harnessCapabilities.ts:68-75) + cit:([`CapabilityRouteErrorBody`], dashboard/src/types/harnessCapabilities.ts:78-81): the daemon envelope and
   the 404/409/503 error body (`status: capability-unavailable|control-unavailable`, verbatim
   `detail`) the store surfaces unreworded.
-- `SetAcceptance` (L86, = `SET_ACCEPTANCE_VALUES`, exactly five words) + `SetResultWire`
-  (L89-L96): honest mutation evidence, never a generic success boolean — `effectiveValue` present
+- `SetAcceptance` (= `SET_ACCEPTANCE_VALUES`, exactly five words) + `SetResultWire`: honest mutation
+  evidence, never a generic success boolean — `effectiveValue` present
   only when the server PROVED the value took effect.
-- `SubmissionReceiptWire` (L99-L106, `public_receipt_json`) and `ReconciliationState`/
-  `ReconciliationResultWire` (L108-L117, `public_reconciliation_json`): resolve an ambiguous
+- `SubmissionReceiptWire` (`public_receipt_json`) and `ReconciliationState`/
+  `ReconciliationResultWire` (`public_reconciliation_json`): resolve an ambiguous
   submit by requestId, never a resend.
 
 ### Invariants And Boundaries
 
 - **DYNAMIC-ONLY: these are SHAPES.** No model key, effort key, or menu from any install may ever
-  be copied here as a value (module header, L8-L9) — catalogs are live data fetched per
-  install/auth. Fixture values live only under `test/fixtures/`.
-- Any server field addition lands HERE first, then in consumers; the file must track the Python
-  serializers, not invent fields.
-- `types/terminalCatalog.ts` was deliberately NOT touched by L3 — new wire shapes go to new files.
+  be copied here as a value — catalogs are live data fetched per install/auth. Fixture values live
+  only under `test/fixtures/`.
+- The file mirrors the current Python serializer fields and must not invent fields; consumers use
+  these shapes without embedding a live catalog.
 
 ## Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Schema constant, cache-status union, and all wire interfaces. | L11-L117 | [harnessCapabilities.ts](harnessCapabilities.ts) |
-| The envelope serializer (`CapabilityCatalogResult.to_json()`), source of truth. | L59-L64 | [harness_capability_catalog.py](../../../mcp/src/agents_remember/serving/harness_capability_catalog.py) |
-| The snapshot/model/effort/config serializers + `SET_ACCEPTANCE_VALUES`. | L162-L227 | [harness_capabilities.py](../../../mcp/src/agents_remember/serving/harness_capabilities.py) |
-| Receipt/reconciliation serializers (`public_receipt_json`/`public_reconciliation_json`). | L274-L296 | [harness_control_models.py](../../../mcp/src/agents_remember/serving/harness_control_models.py) |
-| The memory-only store that adopts/refuses envelopes of this shape. | — | [../data/capabilityCatalog.ts](../data/capabilityCatalog.ts) |
-| The fixture pack instantiating every shape declared here. | — | [../test/fixtures/capabilityEnvelopes.ts](../test/fixtures/capabilityEnvelopes.ts), [../test/fixtures/controlMessages.ts](../test/fixtures/controlMessages.ts) |
-| The conformance suite asserting the pack against the recorded L5 samples. | — | [../test/contractCapabilities.test.ts](../test/contractCapabilities.test.ts) |
-| The sibling hand-mirrored wire type this follows the posture of. | — | [terminalCatalog.ts](terminalCatalog.ts) |
+| The capability schema constant. | `CAPABILITY_SCHEMA` | dashboard/src/types/harnessCapabilities.ts:11-11 |
+| Capability catalog envelope and route-error shapes. | `CapabilityEnvelope`, `CapabilityRouteErrorBody` | dashboard/src/types/harnessCapabilities.ts:68-75; dashboard/src/types/harnessCapabilities.ts:78-81 |
+| Dynamic model, effort, config, and snapshot shapes. | `EffortOptionWire`, `ModelCapabilityWire`, `SessionConfigOptionWire`, `CapabilitySnapshotWire` | dashboard/src/types/harnessCapabilities.ts:16-22; dashboard/src/types/harnessCapabilities.ts:25-39; dashboard/src/types/harnessCapabilities.ts:48-56; dashboard/src/types/harnessCapabilities.ts:59-65 |
+| Setter, submission, and reconciliation evidence shapes. | `SetResultWire`, `SubmissionReceiptWire`, `ReconciliationResultWire` | dashboard/src/types/harnessCapabilities.ts:89-96; dashboard/src/types/harnessCapabilities.ts:99-107; dashboard/src/types/harnessCapabilities.ts:120-128 |
+| The daemon envelope serializer. | `CapabilityCatalogResult` | mcp/src/agents_remember/serving/harness_capability_catalog.py:49-65 |
+| Snapshot and setter serializers plus acceptance vocabulary. | `SET_ACCEPTANCE_VALUES`, `capability_snapshot_json`, `set_result_json` | mcp/src/agents_remember/serving/harness_capabilities.py:21-23; mcp/src/agents_remember/serving/harness_capabilities.py:162-168; mcp/src/agents_remember/serving/harness_capabilities.py:216-225 |
+| Public receipt and reconciliation serializers. | `public_receipt_json`, `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941; mcp/src/agents_remember/serving/harness_control_models.py:944-955 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -100,6 +92,7 @@ lifecycle union names the normalized authority states consumed by polling and wi
 is deliberately raw-free and does not expose vendor queue details or adapter evidence.
 
 ## Update History
+- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: narrowed the schema claim to the constant definition; same-reviewer delta pending.
 
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented generation-bound receipt/reconcile types and the
   normalized lifecycle-state union.

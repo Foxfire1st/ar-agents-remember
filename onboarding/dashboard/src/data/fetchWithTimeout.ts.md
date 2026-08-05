@@ -44,26 +44,29 @@ None.
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | Source discovery checked | — |
+| No relevant external documentation is configured. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper aborts and always clears its timer. | L10-L26 | [fetchWithTimeout.ts](fetchWithTimeout.ts) |
-| Shared boot reads use the helper before entering their single-flight maps. | L1-L30 | [inflight.ts](inflight.ts) |
+| The helper aborts and always clears its timer. | "export async function fetchWithTimeout" | dashboard/src/data/fetchWithTimeout.ts:15-15 |
+| Shared boot reads use the helper before entering their single-flight maps. | "export function shareInflight" | dashboard/src/data/inflight.ts:21-21 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper is local browser transport plumbing. | L1-L26 | [fetchWithTimeout.ts](fetchWithTimeout.ts) |
+| The helper is local browser transport plumbing. | "export async function fetchWithTimeout" | dashboard/src/data/fetchWithTimeout.ts:15-15 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-24T13:17:50Z — Created for aborting hung browser fetches. Verification hash/date remain
   pinned to the pre-commit source stamp.

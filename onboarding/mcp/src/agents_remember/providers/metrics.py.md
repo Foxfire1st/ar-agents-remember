@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/metrics.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -171,8 +171,8 @@ hosts (a `ContextProviderError` from `docker_command`) and a
 failed `docker ps` yield an error-annotated empty snapshot, never a crash or a
 launch — status must stay legal while providers are disabled. Since
 260718-CHATS-L5F R6, a `docker ps` that TIMES OUT (a slow or hung docker daemon)
-is bounded the same way: the call passes `allow_timeout=True` (L252) and the
-`timedOut` branch (L256-L261) returns an error-annotated empty `MetricsSnapshot`
+is bounded the same way: the call passes `allow_timeout=True` cit:([`allow_timeout`], mcp/src/agents_remember/providers/metrics.py:392-392) and the
+`timedOut` branch cit:([`sample_provider_containers`], mcp/src/agents_remember/providers/metrics.py:363-420) returns an error-annotated empty `MetricsSnapshot`
 ("docker ps timed out after {timeout}s") instead of letting a
 `subprocess.TimeoutExpired` escape and dump a full traceback into the daemon's
 30s `metrics_loop` every sampling interval (the developer's image1 log noise). A
@@ -227,20 +227,22 @@ each docker call.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The ownership labels every provider container carries (`provider_ownership_labels`). | [identity.py](agents-remember/mcp/src/agents_remember/providers/identity.py) |
-| `run_command` / `docker_command` seams the sampler runs through. | [command_runner.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/command_runner.py); [docker_runtime.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/docker_runtime.py) |
-| The serving daemon's lifespan runs the 30s sampling loop into this store. | [serving/app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| `provider_status_packet` attaches `read_current()` to the status packet. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
-| Containment tests pin the parsers, the sampler paths (incl. dockerless), and the store's torn-line tolerance. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
-| The seed catch-up stage records index-state rows through `_record_index_state`. | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
-| Index-lifecycle tests pin the `record_index_state` row landing in the log with its schema. | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
-| `ar-durable-store/1.0` itself: `exclusive_access`, `append_line`, `rewrite_lines`, `SCHEMA_VERSION`, `schema_version_supported` and the `StoreOwnership` record `PROVIDER_METRICS_OWNERSHIP` instantiates. Cited by symbol: this file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The MCP-side appender that makes this a two-process store (`_record_index_state`). | [provider_setup.py](agents-remember/mcp/src/agents_remember/providers/provider_setup.py) |
-| The durability suite for this store and its sibling: R10 no-record-lost under real processes, R14 the harness proven able to fail against a `git archive` of the base commit, R8 the tolerant-read policy, R2 the ownership decisions as assertions. Its docstring is also where the base-commit figures are explicitly disclaimed as unreproducible. | [test_provider_store_durability.py](agents-remember/mcp/tests/test_provider_store_durability.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The ownership labels every provider container carries (`provider_ownership_labels`). | `provider_ownership_labels` | mcp/src/agents_remember/providers/identity.py:123-135 |
+| `run_command` / `docker_command` seams the sampler runs through. | `timeout_command_result` | mcp/src/agents_remember/providers/lifecycle/command_runner.py:58-74 |
+| The serving daemon's lifespan runs the 30s sampling loop into this store. | `_metrics_loop` | mcp/src/agents_remember/serving/app.py:811-831 |
+| `provider_status_packet` attaches `read_current()` to the status packet. | `provider_status_packet` | mcp/src/agents_remember/providers/status.py:53-87 |
+| Containment tests pin the parsers, the sampler paths (incl. dockerless), and the store's torn-line tolerance. | `MetricsTests` | mcp/tests/test_provider_containment.py:318-450 |
+| The seed catch-up stage records index-state rows through `_record_index_state`. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
+| Index-lifecycle tests pin the `record_index_state` row landing in the log with its schema. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
+| `ar-durable-store/1.0` itself: `exclusive_access`, `append_line`, `rewrite_lines`, `SCHEMA_VERSION`, `schema_version_supported` and the `StoreOwnership` record `PROVIDER_METRICS_OWNERSHIP` instantiates. Cited by symbol: this file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | `DURABLE_STORE_CONTRACT` | mcp/src/agents_remember/controlplane/durable_store.py:42-42 |
+| The MCP-side appender that makes this a two-process store (`_record_index_state`). | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
+| The durability suite for this store and its sibling: R10 no-record-lost under real processes, R14 the harness proven able to fail against a `git archive` of the base commit, R8 the tolerant-read policy, R2 the ownership decisions as assertions. Its docstring is also where the base-commit figures are explicitly disclaimed as unreproducible. | `ProviderStoreDurabilityTests`, `ProviderReadPolicyTests`, `ProviderOwnershipTests`, `ProviderReclaimShapeTests` | mcp/tests/test_provider_store_durability.py:280-351; mcp/tests/test_provider_store_durability.py:391-571; mcp/tests/test_provider_store_durability.py:630-723; mcp/tests/test_provider_store_durability.py:726-801 |
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 13 citation findings (5 rows and 2 prose pointers); scoped recheck clean.
 
 - 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). This store was brought onto
   `ar-durable-store/1.0`, and the card described the pre-contract shape throughout. Recorded: the

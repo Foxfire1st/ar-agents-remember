@@ -16,11 +16,10 @@
 
 ## Purpose
 
-`turn_state.py` classifies a captured tmux pane's text into a live turn-state (260707-HFX-L8, issue
-#4): `working | turn-ended | awaiting-input | stale`. This is the "the rail tells the truth about
-what every seat is doing right now" primitive — the same "model ended its turn" / "waiting on you"
-signal a developer would read off a raw tmux/cmux pane, surfaced onto the catalog row instead of
-requiring anyone to attach.
+`turn_state.py` classifies captured tmux pane text into a diagnostic turn-state (260707-HFX-L8,
+issue #4): `working | turn-ended | awaiting-input | stale`. It is observation evidence for the
+liveness path, not authoritative readiness, delivery, liveness, or action state; adapter snapshots
+and catalog state remain the authority a reader sees.
 
 ## Code Commentary
 
@@ -49,13 +48,6 @@ for every known harness (every harness classifies off the shared markers), wired
 future harness with a distinctive pane shape to add its own table without touching the classifier
 itself.
 
-**`boot_ready(pane_text, *, harness=None) -> bool`** (260707-HFX2-L3, R2): the per-harness delivery
-adapter's boot-readiness signature (the P-5 window) — has the composer rendered ANY recognizable
-state yet? A thin composition, not a new marker table: `True` whenever `classify_turn_state(...)
-.state != "stale"` (working/awaiting-input/turn-ended all count as "the composer has mounted
-something"; only `stale` — no marker matched at all — means "still booting, nothing to read yet").
-Consumed by `harness_adapters.HarnessAdapter.boot_ready`.
-
 ### Conventions
 
 Deliberately marker-based (regex `.search()` over captured text), not a terminal-control-sequence
@@ -71,21 +63,15 @@ pane-TEXT patterns, an orthogonal concern to that registry's launch-argv/knob-ma
 - Classification is stateless and pure (no I/O, no catalog access) — the caller
   (`terminal_liveness.py::_observe_alive`) is responsible for capturing the pane text and persisting
   the result.
+- Pane markers are diagnostic only: they cannot authorize boot readiness, delivery, liveness,
+  or actions, and adapter snapshots remain authoritative for those decisions.
 
 ### Todos
 
-**Known accuracy gap (HFX-L8 doctrine review F1/F2 — accepted, deferred, not actionable in this
-leaf):** the caller (`terminal_liveness.py::_observe_alive`) feeds this classifier the FULL
-history-inclusive `tmux capture-pane -S -200` output (`terminal_paste.capture_pane`, 200 lines of
-scrollback), not just the pane's current bottom. Because these are broad `.search()` regexes
-matched anywhere in that window, a pane whose scrollback merely CONTAINS a marker word (e.g.
-"generating" in an earlier file listing) can misclassify regardless of the seat's actual present
-state — reviewer-confirmed as "systematically wrong for panes with chatty scrollback," not just
-"regexes are untuned." Folded into a future live-pane calibration follow-up (classify over only the
-last N/visible-viewport lines, or anchor markers to the pane tail); not this leaf's action item. The
-shared marker regexes themselves are also a first-cut best-effort guess at common TUI shapes
-(Design Decision 5 in the builder report), not calibrated against real captured Claude/Codex panes —
-someone with live harness access should verify/tune before this ships to real dashboards.
+**Diagnostic boundary (HFX-L8 doctrine review F1/F2):** the liveness caller may provide a
+history-inclusive capture, so marker matches are evidence only and must not authorize readiness,
+delivery, liveness, or actions. Harness-specific tail-sensitive handling and adapter snapshots
+remain the authority for live decisions; marker calibration is a separate follow-up.
 
 ## Docs References
 
@@ -93,33 +79,30 @@ No relevant external documentation found after checking the repo Domain Document
 turn-state-classification-specific behavior; this file is same-repository runtime plumbing, and the
 marker regexes are a first-cut internal heuristic (see Todos), not derived from an external spec.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines pane-marker turn-state classification; the leaf task doc's E3 example and this implementation are the source of truth. | L1-L91 | [turn_state.py](turn_state.py) |
 
 ## Repo-Internal References
 
 `classify_turn_state` is called from exactly one place — the L5 liveness sweep's alive-observation
 path — with pane text captured by `terminal_paste.capture_pane`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `_observe_alive` calls `classify_turn_state(pane_text, harness=entry.harness)` for every ALIVE `kind == "harness"` row on the existing L5 sweep cadence, feeding it `terminal_paste.capture_pane`'s history-inclusive capture (see Todos for the resulting accuracy gap). | `_observe_alive` | [terminal_liveness.py](terminal_liveness.py) |
-| `capture_pane` is the shared history-inclusive `tmux capture-pane` wrapper this classifier's input comes from — the SAME view paste-verification already reads, so there is exactly one capture-command shape in the codebase. | `capture_pane` | [terminal_paste.py](terminal_paste.py) |
-| The classification result is persisted via `TerminalCatalog.record_turn_state`, which returns a no-op when the state did not transition (so `_observe_alive` can detect and emit an observer event only on an actual change). | `record_turn_state`; `with_turn_state` | [terminal_catalog.py](terminal_catalog.py) |
-| `Harness.id` is the key namespace the per-harness override dicts are keyed by, even though every override dict is currently empty. | `Harness` | [harnesses.py](harnesses.py) |
-| Failing-first tests for classification precedence (busy > awaiting-input > turn-ended > stale), each marker family, and the empty-per-harness-override fallback, from scripted pane-text fixtures. | `TurnStateClassificationTests` | [../../../tests/test_seat_lifecycle.py](../../../tests/test_seat_lifecycle.py) |
-| `boot_ready` is composed into the one delivery adapter interface's `boot_ready` method, alongside `pane_signals.composer_state`/`classify_pane_signal`. | `HarnessAdapter.boot_ready` | [harness_adapters.py](harness_adapters.py.md) |
-| `classify_turn_state` is also reused by `HarnessAdapter.turn_started` (post-submit confirmation: a busy/spinner marker in the post-submit capture corroborates a turn start even before the generic pane-advance diff fires). | `HarnessAdapter.turn_started` | [harness_adapters.py](harness_adapters.py.md) |
-| Boot/ready/mid-turn/chip-stacked/quota-modal fixtures for both known harnesses, exercised through the adapter (not this module directly). | `ClaudeCodeAdapterTests`; `CodexAdapterTests` | [../../../tests/test_harness_adapters.py](../../../tests/test_harness_adapters.py.md) |
+| `_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:252-308 |
+| The terminal-paste module defines the shared history-inclusive `capture_pane` wrapper and its bounded history argv supplying classifier input. | "def capture_pane"; `_capture_pane_argv`; `_CAPTURE_HISTORY_LINES` | mcp/src/agents_remember/serving/terminal_paste.py:40-40; mcp/src/agents_remember/serving/terminal_paste.py:181-182; mcp/src/agents_remember/serving/terminal_paste.py:201-201 |
+| The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. | `record_turn_state`; `with_turn_state` | mcp/src/agents_remember/serving/terminal_catalog.py:419-423; mcp/src/agents_remember/serving/terminal_catalog.py:714-728 |
+| The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns. | `_classify_by_marker_tables`; "key = harness or \"\""; "_HARNESS_WORKING_PATTERNS.get(key,"; "_HARNESS_AWAITING_INPUT_PATTERNS.get(key,"; "_HARNESS_TURN_ENDED_PATTERNS.get(key," | mcp/src/agents_remember/serving/turn_state.py:140-154 |
+| Tests cover classification precedence, marker families, and the empty per-harness override fallback from scripted pane-text fixtures. | `TurnStateClassificationTests` | mcp/tests/test_seat_lifecycle.py:374-464 |
+| The adapter exposes diagnostic `blocked_reason`; pane classification does not provide a boot-readiness authority method. | `HarnessAdapter`; `blocked_reason` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
+| Adapter tests pin stable known/generic classification and keep `blocked_reason` diagnostic-only. | `test_known_and_generic_adapters_are_stable`; `test_blocked_reason_is_failure_diagnostic_only` | mcp/tests/test_harness_adapters.py:11-15; mcp/tests/test_harness_adapters.py:18-25 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repo boundary owns or consumes this local turn-state classifier. | — | — |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -148,6 +131,8 @@ unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D11 complete marker-table lookup construct evidence for the same-reviewer residual delta.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_first_matching_state` / `_classify_codex_pane` / `_classify_by_marker_tables` split; marker tables and precedence unchanged.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

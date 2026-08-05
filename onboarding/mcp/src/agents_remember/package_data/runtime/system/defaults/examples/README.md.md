@@ -44,7 +44,7 @@ None.
 
 No external documentation is needed for this example index.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -52,20 +52,23 @@ No external documentation is needed for this example index.
 
 The source file itself is the active example index.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The README states that examples are split by target folder rather than by inferred ownership from file names. | L1-L4 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
-| The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `git-workflow.md` landing-flow starter and quality-report template. | L8-L34 | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md) |
+| The README states that examples are split by target folder rather than by inferred ownership from file names. | "Examples are split by target folder" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md:3-3 |
+| The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `git-workflow.md` landing-flow starter and quality-report template. | `## Memory Repo` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md:19-36 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-06-02T16:24+02:00: Normalized skill references in the example coordinator README to full lowercase skill ids plus the word "skill" (was abbreviated, e.g. C-08). Reference-style normalization; example guidance unchanged.
 - 2026-06-02T03:30+02:00: Documented the new memory-repo `git-workflow.md` example (gated-branch landing flow) alongside the code-quality report template (mcp 1.0.2). Verification metadata pinned until closeout.

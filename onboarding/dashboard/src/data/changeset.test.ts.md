@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/changeset.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,9 +17,9 @@
 ## Purpose
 
 Vitest contract test for the `data/changeset` client. It stubs the global `fetch` and asserts that each
-helper builds the exact L3 change-set endpoint URL (with encoded query params) and that a non-ok response
-is mapped to a thrown `FilesApiError` carrying the server status code — the same idiom shared with the L1
-`data/files` client.
+helper builds the exact L3 change-set endpoint URL with encoded query params. The test proves that a
+non-ok response throws `FilesApiError`; the production clients and serving route separately own status
+retention and the 400/404 response mapping.
 
 ## Code Commentary
 
@@ -29,16 +29,17 @@ The URL contract tests cover the optional master `includeLeaves=false` query
 shape alongside the existing task, file-diff, and leaf selectors, ensuring the
 typed client does not silently drop the performance-critical flag.
 
-- `stubFetch(payload, ok, status)` installs a `vi.fn` `fetch` returning a minimal `Response`-shaped
-  object; `afterEach` unstubs globals. (L6-L14)
-- The first case calls all three helpers and asserts the recorded URLs: `/api/changeset/task?repo&scope`,
+- cit:([`stubFetch`, `afterEach`], dashboard/src/data/changeset.test.ts:6-12; dashboard/src/data/changeset.test.ts:14-14) installs a `vi.fn` `fetch`
+  returning a minimal `Response`-shaped object and restores globals after each test.
+- cit:(["includeLeaves=false"], dashboard/src/data/changeset.test.ts:16-32)
+  covers the task, file-diff, and master URLs, including the optional `includeLeaves=false` selector:
+  `/api/changeset/task?repo&scope`,
   `/api/changeset/file-diff?...&kind=memory&path=...` (note the `%2F`-encoded path), and
-  `/api/changeset/master?repo&master`. (L16-L30)
-- An L4a case calls `leafChangeset` + `leafFileDiff` and asserts the leaf URLs ride the same `task` /
-  `file-diff` routes with the `leaf` + `mode` query (`/api/changeset/task?...&leaf=...&mode=committed`,
-  `/api/changeset/file-diff?...&leaf=...&kind=code&path=...&mode=working`).
-- The last case stubs a 404 `{status: "not-found"}` (the completed-task / no-worktree path) and asserts
-  `taskChangeset` rejects with a `FilesApiError` instance.
+  `/api/changeset/master?repo&master`.
+- cit:([`leafChangeset`, `leafFileDiff`], dashboard/src/data/changeset.test.ts:32-46) calls the leaf URLs on
+  the same `task` / `file-diff` routes with the `leaf` + `mode` query.
+- cit:(["not-found"], dashboard/src/data/changeset.test.ts:54-57) stubs a 404 `{status: "not-found"}`
+  and asserts that `taskChangeset` rejects with a `FilesApiError` instance.
 
 ### Invariants And Boundaries
 
@@ -51,30 +52,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Stubs `fetch` and unstubs globals after each test. | L6-L14 | [changeset.test.ts](changeset.test.ts) |
-| Asserts the task / file-diff / master URLs (including `%2F` path encoding). | L16-L30 | [changeset.test.ts](changeset.test.ts) |
-| Asserts a non-ok (404) response throws `FilesApiError`. | L32-L35 | [changeset.test.ts](changeset.test.ts) |
-| Subject under test: the helpers + result types + the shared error mapping. | L52-L69 | [changeset.ts](changeset.ts) |
-| Contract counterpart: the serving layer emits the 404/400 codes this test stubs. | L38-L195 | [serving/changeset.py](agents-remember/mcp/src/agents_remember/serving/changeset.py) |
+| Stubs `fetch` and unstubs globals after each test. | `fetch` | dashboard/src/data/changeset.test.ts:6-14 |
+| Asserts the task / file-diff / master URLs (including `%2F` path encoding). | "includeLeaves=false" | dashboard/src/data/changeset.test.ts:16-32 |
+| Asserts a non-ok (404) response throws `FilesApiError`. | "not-found" | dashboard/src/data/changeset.test.ts:48-57 |
+| The test imports and exercises taskChangeset and FilesApiError in its URL and error cases. | `taskChangeset`, `FilesApiError` | dashboard/src/data/changeset.test.ts:3-4; dashboard/src/data/changeset.test.ts:16-32; dashboard/src/data/changeset.test.ts:54-57 |
+| Contract counterpart: the serving layer emits the 404/400 codes this test stubs. | `status_code` | mcp/src/agents_remember/serving/changeset.py:482-498 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bound the test imports and URL/error
+  cases to the complete `taskChangeset`/`FilesApiError` test evidence through the scoped fixer.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

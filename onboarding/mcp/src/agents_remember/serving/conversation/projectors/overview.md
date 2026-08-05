@@ -174,20 +174,20 @@ The engine route drives these mappers and owns everything stateful; the strict c
 validates every emitted product; the evidence substrate defines the frame products; the runtime
 fixtures record which shapes are gate-observed. The mapper suite pins every grammar.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine consumes the mapper channel flags (`uses_native_pages`, `uses_transcript_echo`, `eager_native_continuation`) and converts `UnmappableShape` into preserved unknown-vendor evidence. | L148-L200 · L64-L66, L165-L178 | [projector/native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) · [projector/echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
-| The store converges the split tool items these mappers emit. | L123-L126; L301-L317 | [store.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/store.py) |
-| The evidence/native frame products the mappers parse. | L310-L350 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The runtime fixtures record the observed (never enabling) shapes per harness. | L34-L58 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
-| The mapper suite pins identity, blocks, tools, provenance, and preservation for all three. | L84-L901 | [test_conversation_active_projectors.py](agents-remember/mcp/tests/test_conversation_active_projectors.py) |
+| The engine consumes the mapper channel flags (`uses_native_pages`, `uses_transcript_echo`, `eager_native_continuation`) and converts `UnmappableShape` into preserved unknown-vendor evidence. | `uses_native_pages`; `uses_transcript_echo`; `eager_native_continuation`; `UnmappableShape` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:106-114; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:148-200; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:64-75; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:165-178 |
+| The store converges the split tool items these mappers emit. | `apply_item`; "tool-call"; `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249; mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
+| The evidence/native frame products the mappers parse. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/serving/harness_control_models.py:455-478; mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:492-500; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:513-524; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
+| The runtime fixtures record the observed (never enabling) shapes per harness. | "active-projector/items-events"; "substrate-evidence/native-page-thread-read" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:34-62 |
+| The mapper suite pins identity, blocks, tools, provenance, and preservation for all three. | `CodexMapperTests`; `ClaudeMapperTests`; `PiMapperTests` | mcp/tests/test_conversation_active_projectors.py:84-404; mcp/tests/test_conversation_active_projectors.py:407-710; mcp/tests/test_conversation_active_projectors.py:713-901 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this route. All three harnesses are local
 subprocesses reached through this repository's own adapters.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant cross-repo evidence found. | — | — |
 
@@ -197,7 +197,7 @@ The resolved `Domain Documentation` registry has no entries. Each mapper names i
 authority (the codex app-server v2 generated protocol, the locked claude stream-json fixtures,
 the locked Pi RPC documentation); those are repository-owned and cited in the file sidecars.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this projector gate. | — | — |
 
@@ -299,6 +299,8 @@ neither `subagent_type` nor `description`, and its roster upsert **must not blan
 filled in**. Nothing is guessed; absent evidence stays absent.
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 5 table citations and normalized 6 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The engine row
   was repointed off the deleted `active/projector.py` onto the package that replaced it: channel-flag

@@ -58,7 +58,7 @@ None; child endpoint implementations are independently owned by the L1/L2/L3 lea
 
 No Domain Documentation source is configured for this internal request-dependency seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -67,23 +67,25 @@ No Domain Documentation source is configured for this internal request-dependenc
 The dependencies are thin fail-closed adapters over the runtime authority and its bound resolver;
 contract tests drive both through real requests and prove per-app isolation over HTTP.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Fail-closed runtime retrieval and the reserved `app.state` key live in the runtime module. | L90-L101 | [runtime.py](agents-remember/mcp/src/agents_remember/serving/conversation/runtime.py) |
-| The bound resolver's loopback-only ruling is what the authorization dependency delegates to. | L90-L97 | [authorization.py](agents-remember/mcp/src/agents_remember/serving/conversation/authorization.py) |
-| The package facade re-exports both dependencies beside `ConversationRuntime` and `register_conversation_routes`. | L3-L15 | [__init__.py](agents-remember/mcp/src/agents_remember/serving/conversation/__init__.py) |
-| Composition tests drive `get_conversation_runtime` through per-app probe routes over `TestClient` and prove missing-install failure. | L96-L103; L164-L170; L218-L231 | [test_conversation_runtime_composition.py](agents-remember/mcp/tests/test_conversation_runtime_composition.py) |
-| Authorization tests prove forged browser identity headers are never read and the dependency fails closed off loopback. | L160-L195 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
+| Fail-closed runtime retrieval and the reserved `app.state` key live in the runtime module. | "CONVERSATION_RUNTIME_STATE_KEY ="; "class ConversationRuntime:" | mcp/src/agents_remember/serving/conversation/runtime.py:44-44; mcp/src/agents_remember/serving/conversation/runtime.py:56-56 |
+| The bound resolver's loopback-only ruling is what the authorization dependency delegates to. | "Return the local operator binding for a loopback peer; fail closed otherwise." | mcp/src/agents_remember/serving/conversation/authorization.py:91-91 |
+| The package facade re-exports both dependencies beside `ConversationRuntime` and `register_conversation_routes`. | "from agents_remember.serving.conversation.router import register_conversation_routes"; "from agents_remember.serving.conversation.runtime import ConversationRuntime" | mcp/src/agents_remember/serving/conversation/__init__.py:7-8 |
+| Composition tests drive `get_conversation_runtime` through per-app probe routes over `TestClient` and prove missing-install failure. | "def test_missing_installation_fails_closed(tmp_path: Path) -> None:" | mcp/tests/test_conversation_runtime_composition.py:157-157 |
+| Authorization tests prove forged browser identity headers are never read and the dependency fails closed off loopback. | "def test_browser_identity_claims_are_never_read(tmp_path: Path) -> None:"; "def test_non_loopback_peers_fail_closed(tmp_path: Path, peer: str) -> None:" | mcp/tests/test_conversation_authorization.py:141-141; mcp/tests/test_conversation_authorization.py:160-160 |
 
 ## Cross-Repo References
 
 No cross-repository boundary participates in this request-local dependency seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 5 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: created the request-dependency seam sidecar.
   Verification is blank because the new source file is uncommitted; closeout owns its first source

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/commands.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,14 +59,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | [runner_modules overview](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
-| `git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple both spawns strip. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| The destructive argv this runner is handed: `clone`, `fetch --all --tags`, `checkout --detach`, `reset --hard`, `clean -fdx`. | [workspace.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/workspace.py) |
-| `BenchmarkRunnerEnvironmentTests` points `GIT_DIR` at a decoy repository, runs a real `reset --hard` through `run_command`, and asserts the decoy's uncommitted work survives; a second test does the same for `repo_has_commit`. | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public benchmark facade re-exports this module's public functions and classes for compatibility. | `run_git_command`; `repo_has_commit` | mcp/src/agents_remember/benchmarks/runner.py:14-15 |
+| The route-local overview summarizes how this module fits into the benchmark runner split. | `## Hot Path Summary` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:20-68 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support.py:2960-3588 |
+| `git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple both spawns strip. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42 |
+| The destructive argv this runner is handed: `clone`, `fetch --all --tags`, `checkout --detach`, `reset --hard`, `clean -fdx`. | `prepare_repo` | mcp/src/agents_remember/benchmarks/runner_modules/workspace.py:38-75 |
+| `BenchmarkRunnerEnvironmentTests` points `GIT_DIR` at a decoy repository, runs a real `reset --hard` through `run_command`, and asserts the decoy's uncommitted work survives; a second test does the same for `repo_has_commit`. | `BenchmarkRunnerEnvironmentTests` | mcp/tests/test_git_command.py:663-791 |
 
 ## Cross-Repo References
 
@@ -74,6 +74,9 @@ No configured sibling repository is required for this module.
 
 ## Update History
 
+- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout: normalized the Repo-Internal References
+  table to the tree-wide 3-column `Finding | Anchor | Source` format with source-backed
+  citations (the citation-curation wave's format migration). No behavior claim changed.
 - 2026-07-31T20:48+02:00 — 260731-EFA-L3 curator: both `subprocess.run` calls now pass
   `env=git_environment()` (from `agents_remember.kernel.git_command`) instead of inheriting the
   ambient environment, so the `GIT_DIR`-family repository selectors are stripped from every child.

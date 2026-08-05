@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -37,7 +37,7 @@ No TODO markers are present in this report template.
 
 No external domain documentation applies to this repository-local report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -45,21 +45,23 @@ No external domain documentation applies to this repository-local report templat
 
 This bundle copy is the shape the worker job writes at every hand-off; the frame catalogs it as a per-role artifact obligation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | n/a | [turn-report.md](agents-remember/skills/l-01-agent-lifecycles/templates/turn-report.md) |
-| The worker writes the turn report in the main loop at every hand-off; it is the leaf's single artifact of record. | n/a | [worker.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md) |
-| The frame lists the mandatory worker turn report among the per-role artifact obligations. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
+| Sync-propagated bundle copy of the canonical templates source. | `# Turn-Report Template` | skills/l-01-agent-lifecycles/templates/turn-report.md:1-58 |
+| The worker writes the turn report in the main loop at every hand-off; it is the leaf's single artifact of record. | `# Lifecycle — Worker` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:1-154 |
+| The frame lists the mandatory worker turn report among the per-role artifact obligations. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 6 citation findings for the canonical turn-report template, worker role, and lifecycle skill references.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
   process-and-ack): "A missing turn report is nudged by the manager" reworded to name the HFX2-L2

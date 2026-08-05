@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T11:50+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -69,20 +69,22 @@ contract the day it moves.
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | A frontend component test; nothing crosses repositories. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The component under test. | [notes-reader/NotesReaderViewer.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.tsx) |
-| The shell driven by the takeover-wiring test. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| `masterDoc` (L188-L210) and `seedMaster` (L211-L226) — the cast-free seed and its `satisfies WorkspaceProjection`. | [notes-reader/NotesReaderViewer.test.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx) |
-| `TaskDocNode` (L418-L447), `Analytics` (L663-L678) with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection` (L711-L726), and `metricsFor` (L250-L257). | [types/projection.ts](agents-remember/dashboard/src/types/projection.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:243-243 |
+| The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:385-385 |
+| `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:188-229 |
+| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:79-93; dashboard/src/types/projection.ts:309-316; dashboard/src/types/projection.ts:437-463; dashboard/src/types/projection.ts:507-518 |
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 5 citation items; scoped citation check now passes.
 
 - 2026-08-01T11:50+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
   server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
@@ -101,7 +103,7 @@ No meaningful cross-repo references found.
   (the cast was gratuitous over an already-complete node), and `metricsFor([])` is a superset of the old
   six-field literal, which no assertion here reads. Also verified why the short `analytics` literal
   still compiles under `satisfies` — `Analytics.agentPickups` and `.expectationRows` are optional in the
-  mirror (L633-L635) — and recorded it, since that is the one thing that would otherwise look like a
+  mirror (cit:(["agentPickups", "expectationRows"], dashboard/src/types/projection.ts:80-80; dashboard/src/types/projection.ts:84-84)) — and recorded it, since that is the one thing that would otherwise look like a
   type error. Added the cast-free-seed boundary and two two-cell reference rows (this table is
   consistently two columns; the line ranges ride inside the Finding cell rather than adding a third).
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compact_content.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T08:53+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -46,13 +46,15 @@ the compaction must never raise on non-JSON content.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The shim under test installs the FastMCP converter patch. | [compact_content.py](agents-remember/mcp/src/agents_remember/mcp/compact_content.py) |
-| `create_server()` installs the shim before registering tools. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| MCP settings fixtures come from `test_config.py`. | [test_config.py](agents-remember/mcp/tests/test_config.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shim under test installs the FastMCP converter patch. | `install_compact_content` | mcp/src/agents_remember/mcp/compact_content.py:47-65 |
+| `create_server()` installs the shim before registering tools. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| MCP settings fixtures come from `test_config.py`. | `settings_payload` | mcp/tests/test_config.py:29-46 |
 
 ## Update History
+
+- 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: anchored 3 Repo-Internal reference rows; scoped result 0 findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_compact_content.py`
   since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3

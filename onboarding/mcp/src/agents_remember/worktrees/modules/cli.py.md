@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T19:55+02:00                     |
-| lastVerifiedCommitHash | `b120efbfda76931cfa8eb9f24c9a808a62c10d1e` |
-| lastVerifiedCommitDate | 2026-07-13T12:33:57+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -39,19 +39,22 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public manager facade imports `main()` from this CLI module for `python -m` execution. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| MCP controllers bypass CLI parsing and call result-returning functions directly. | [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
-| The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The CLI seam regression drives `main(["heal-leaf-ids", ...])` end to end. | [test_leaf_ref_resolution.py](agents-remember/mcp/tests/test_leaf_ref_resolution.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The CLI module exposes the public main entry point for `python -m` execution. | "def main" | mcp/src/agents_remember/worktrees/modules/cli.py:159-159 |
+| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:83-162; mcp/src/agents_remember/application/worktree_tools.py:227-236; mcp/src/agents_remember/application/worktree_tools.py:239-241; mcp/src/agents_remember/application/worktree_tools.py:330-359; mcp/src/agents_remember/application/worktree_tools.py:362-375 |
+| The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:480-555 |
+| The CLI seam regression drives `main(["heal-leaf-ids", ...])` end to end. | `test_heal_cli_command_is_the_on_demand_seam` | mcp/tests/test_leaf_ref_resolution.py:418-432 |
 
 ## Series-Contract Notes
 
 The common CLI contract-path help now names `series-contract.md`, aligning command-line usage with the root/leaf contract schema.
 
 ## Update History
+- 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1: added the `heal-leaf-ids` subcommand and
   `command_heal_leaf_ids` (`--coordination-root`, `--dry-run`; prints the heal report JSON) — the
   explicit, one-shot invocation seam for `heal_contract_leaf_ids` now that contract loads are walk-free

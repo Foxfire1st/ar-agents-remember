@@ -6,8 +6,8 @@
 | path | mcp/tests/test_dispatch_brief.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | mcp/tests/overview.md |
 
 ## Governing Overview
@@ -16,17 +16,33 @@ Governing overview: mcp/tests/overview.md
 
 ## Purpose
 
-Dispatch-brief delivery is readiness-gated, exact-session, harness-log-confirmed, calibrated beyond the active Enter-suppression window, and pending without respawn on proof failure.
+Pins the serving dispatch-brief contract end to end: exact-session readiness gating, adapter
+submission and receipt handling, durable inbox rooting, expectation-clock startup, and the
+byte-identical canonical/packaged skill copies the dispatch instructions encode.
 
 ## Code Commentary
 
 ### Logic
 
-Dispatch-brief delivery is readiness-gated, exact-session, harness-log-confirmed, calibrated beyond the active Enter-suppression window, and pending without respawn on proof failure.
+`test_ready_dispatch_is_inbox_rooted_and_starts_expectation_clocks` posts a `dispatch-brief`
+through `operator_inbox_post_payload` with a `HostedDelivery` seam set and asserts the durable
+row is `delivered`/`accepted`/`pending`, the submitted control prompt carries the prompt keywords
+and entry id, and the expectation rows become exactly `{ack-by, briefed-by, turn-report-by}` with
+`briefed-by` met. Receipt tests pin that a rejected adapter receipt keeps the same row pending and
+that an ambiguous redelivery reconciles without resubmitting. Refusal tests pin that a not-ready
+session raises before any durable row exists, that an uncommitted caller (`submit=False`) is
+recorded as adapter-rejected without touching the wire, that a closed dispatch gate keeps its own
+reason with the row pending for retry, and that a missing exact session yields
+`no-hosted-session` rather than falling back to a matching lifecycle. The sync test asserts the
+canonical `skills/l-01-agent-lifecycles` files carry the protocol phrases and equal their packaged
+copies byte-for-byte.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. Dispatch proof remains exact-session and fail-closed: the exact agent target is never
+replaced by a lifecycle match, refusals never contact the adapter, and a pending row survives
+redelivery ambiguity without a second submission.
 
 ## Docs References
 
@@ -54,8 +70,20 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 - A **closed dispatch gate** refuses the brief and **keeps the gate reason**, so the operator sees
   why rather than a generic denial.
 
+## 260731-EFA-L6 Delta — imports follow the serving move
+
+`HostedDelivery` (and `DispatchBriefGate`) are now imported from
+`agents_remember.serving.dispatch_brief` instead of the deleted
+`agents_remember.mcp.tools.dispatch_brief`; the suite itself is unchanged and still pins the same
+readiness-gated, inbox-rooted contract against the serving policy module.
+
 ## Update History
 
+- 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: replaced the placeholder body with the actual
+  suite: inbox-rooted dispatch with expectation clocks, receipt/reconciliation handling, refusal
+  and no-fallback pins, and canonical/packaged skill sync equality. Recorded that imports now come
+  from `serving.dispatch_brief` after the tool-layer move. Verification metadata pinned until
+  closeout stamps the code commit.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.

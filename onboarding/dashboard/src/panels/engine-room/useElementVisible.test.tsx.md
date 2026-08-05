@@ -44,27 +44,28 @@ None recorded.
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant domain documentation was found. | Source discovery checked | — |
+| No relevant domain documentation was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The mock captures per-element observer callbacks and teardown removes the shim. | L7-L53 | [useElementVisible.test.tsx](useElementVisible.test.tsx) |
-| The two cases pin visible fallback and hide/show/disconnect transitions. | L55-L77 | [useElementVisible.test.tsx](useElementVisible.test.tsx) |
-| Implementation under test. | L15-L27 | [useElementVisible.ts](useElementVisible.ts) |
+| The mock captures per-element observer callbacks and teardown removes the shim. | `MockIntersectionObserver` | dashboard/src/panels/engine-room/useElementVisible.test.tsx:10-22 |
+| The two cases pin visible fallback and hide/show/disconnect transitions. | "stays visible when IntersectionObserver is unavailable (the jsdom default — a no-op gate)"; "flips false on hide and true on re-show, and stops observing on unmount" | dashboard/src/panels/engine-room/useElementVisible.test.tsx:56-60; dashboard/src/panels/engine-room/useElementVisible.test.tsx:62-77 |
+| Implementation under test. | `useElementVisible` | dashboard/src/panels/engine-room/useElementVisible.ts:15-27 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 3 citation claims; scoped result 0 findings.
 
 - 2026-07-24T13:17:17Z — Curator: created coverage onboarding for the new visibility gate. It is
   uncommitted, so verification fields are intentionally blank until closeout stamps the code commit.

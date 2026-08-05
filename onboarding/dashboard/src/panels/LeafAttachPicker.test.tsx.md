@@ -57,10 +57,10 @@ key as opaque — they only check it round-trips through `onPick`.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | — | [LeafAttachPicker.tsx](LeafAttachPicker.tsx) |
-| The `TaskTreeNode` type the `TREE` fixture is built against. | — | [data/taskIdentity.ts](../data/taskIdentity.ts) |
+| The component under test. | `LeafAttachPicker` | dashboard/src/panels/LeafAttachPicker.tsx:145-349 |
+| The `TaskTreeNode` type the `TREE` fixture is built against. | `TaskTreeNode` | dashboard/src/data/taskIdentity.ts:110-116 |
 
 ## Current L5I Maintenance
 
@@ -69,6 +69,7 @@ including opening above the trigger when the lower viewport room cannot accommod
 
 ## Update History
 
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.
 - 2026-07-24T13:17:17Z — Curator: recorded regression coverage for measured vertical placement;
   verification fields remain pre-commit.
 

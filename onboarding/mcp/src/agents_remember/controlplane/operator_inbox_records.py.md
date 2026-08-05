@@ -171,24 +171,24 @@ The observable-lifecycle design defines gates as durable append-only truth and
 describes pull-style return channels for blocked agents; this inbox is the
 external-chat pull implementation of that idea.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Gate records are durable, attributed, append-only decision facts; return channels above them must not lose an approval. | L220-L231; L251-L266 | [observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Gate records are durable, attributed, append-only decision facts; return channels above them must not lose an approval. | `## 3. Gates and the Return Channel` | docs/design/observable-lifecycle.md:252-311 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | L13-L50 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
-| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | L125-L154 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
-| `OperatorInboxEntry` preserves mailbox keys, ask, response, creation attribution, consume attribution and the routed owner address. | L156-L224 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
-| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | L227-L307 | [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
+| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | "OPERATOR_INBOX_RECORD_SCHEMA ="; "OperatorInboxState = Literal["; "OperatorInboxVia = Literal["; "AgentRole = Literal["; "InboxMessageKind = Literal["; "InboxDeliveryState = Literal[" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:13-13; mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-17; mcp/src/agents_remember/controlplane/operator_inbox_records.py:32-32; mcp/src/agents_remember/controlplane/operator_inbox_records.py:44-44 |
+| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | "def require_inbox_address("; "class OperatorInboxCompatibleRecord(DurableRecord):" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:125-125; mcp/src/agents_remember/controlplane/operator_inbox_records.py:136-136 |
+| `OperatorInboxEntry` preserves mailbox keys, ask, response, creation attribution, consume attribution and the routed owner address. | `OperatorInboxEntry` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:156-224 |
+| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | "def fold_operator_inbox_entries("; "def create_operator_inbox_entry("; "def consume_operator_inbox_entry(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:227-227; mcp/src/agents_remember/controlplane/operator_inbox_records.py:246-246; mcp/src/agents_remember/controlplane/operator_inbox_records.py:289-289 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
@@ -210,6 +210,8 @@ this is an additive two-field seam, not catch-all parsing. Delivery evidence rem
 the explicit consume state.
 
 ## Update History
+
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 4 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 - 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded that
   `OperatorInboxCompatibleRecord` now inherits `durable_store.DurableRecord`, so `OperatorInboxEntry`
   carries the contract's validated `schemaVersion` (unknown major rejected, unknown minor accepted,

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T14:20+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated | 2026-08-04T01:24+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -63,14 +63,14 @@ seeds the real series shape — lowercase enclosure leaf id, uppercase doc id, n
 matching neither, no lifecycleId/enclosures[] on the doc — and asserts `read_task_documents` still
 attaches the enclosure's lifecycle.
 
-#### 260731-EFA-L4 — the lifecycle-state vocabulary suites (L1625-L2013)
+#### 260731-EFA-L4 — the lifecycle-state vocabulary suites
 
 Five classes added between `TokenSeriesTests` and `StalenessHistogramTests`. They exist for a set
 difference, not a typo: `Metrics` bucketed **three** states by hand while `State` declared **six**,
 so an `awaiting-developer` lifecycle counted towards `lifecycleCount` and `totalTokens` and towards
 nothing else — the rollup could not show a lifecycle that had handed the turn back.
 
-- **`MetricsBucketVocabularyTests` (L1625-L1730)** — the coverage half. `live_states()` re-derives
+- **cit:([`MetricsBucketVocabularyTests`], mcp/tests/test_observer_projection.py:1627-1732)** — the coverage half. `live_states()` re-derives
   the live set as `STATES` minus `TERMINAL_STATES` rather than reading `projection.ACTIVE_STATES`
   (which *is* the live half verbatim), **so the measurement is not taken with the same instrument
   it is checking**, and a seventh state fails here.
@@ -84,14 +84,14 @@ nothing else — the rollup could not show a lifecycle that had handed the turn 
   them. `test_an_awaiting_developer_lifecycle_is_no_longer_uncountable` pins the reported symptom.
   The `_log(state)` helper derives its event kind from the state (`lifecycle.<state>`) rather than
   from a fourth table keyed by it.
-- **`StatePartitionTests` (L1733-L1797)** — deriving the bucket set as "the vocabulary minus
+- **cit:([`StatePartitionTests`], mcp/tests/test_observer_projection.py:1735-1799)** — deriving the bucket set as "the vocabulary minus
   `TERMINAL_STATES`" only moves the hand-written list one level down unless `TERMINAL_STATES` is
   itself tied to the vocabulary. It is: `State` is **composed** from the two halves. These hold
   `check_state_partition` to totality and disjointness (`ACTIVE_STATES == LIVE_STATES` verbatim)
   and drive its three refusals — a state filed on neither side ("neither live nor terminal"), on
   both, and a filed state missing from the vocabulary — against **synthetic** `Literal`
   vocabularies, so the guard is exercised without the real declaration having to be wrong.
-- **`TerminalityIsStructuralTests` (L1800-L1917)** — totality stops a state escaping
+- **cit:([`TerminalityIsStructuralTests`], mcp/tests/test_observer_projection.py:1802-1919)** — totality stops a state escaping
   classification; it cannot stop one being classified **wrongly**, and a mis-filed state is the
   same defect wearing the fix. So terminality gets an observable definition and is checked against
   the fold in both directions: a terminal state is one the log reaches **only** through
@@ -103,14 +103,14 @@ nothing else — the rollup could not show a lifecycle that had handed the turn 
   same set — `AmbientLifecycle.end` validates against `TERMINAL_STATES` and converts through
   `coerce_end_outcome`, so a terminal state the reducer can project but no session can write fails
   here whatever the write side is spelled in.
-- **`StateVocabularyReaderTests` (L1920-L1955)** — `vocabulary_names` must read every legal
+- **cit:([`StateVocabularyReaderTests`], mcp/tests/test_observer_projection.py:1922-1957)** — `vocabulary_names` must read every legal
   declaration form. `get_args` alone is only correct for a **flat** `Literal`; on the union form
   (`Literal[...] | ReviewState`, a plausible way to fold a second vocabulary in) it returns
   `Literal` objects, and the first consumer to call `.split` on one dies with `AttributeError` at
   import of `agents_remember.observer` — the whole package goes down and the traceback names none
   of this. These pin the reading, the flattening of an alias composition, the by-name refusals
   (non-string member, empty declaration), and that the real declarations read as plain `str`.
-- **`StateCountFieldTests` (L1958-L2013)** — the state → bucket-field naming rule, held one-to-one
+- **cit:([`StateCountFieldTests`], mcp/tests/test_observer_projection.py:1960-2015)** — the state → bucket-field naming rule, held one-to-one
   and identical to the client's. `test_a_capital_in_the_tail_survives` records why Python moved:
   `dashboard/src/types/projection.ts` derives the names with `Capitalize<Camel<Tail>>`, which
   upper-cases the first character and leaves the rest alone, while Python used `str.capitalize`,
@@ -198,7 +198,7 @@ enrich each served row when the commits are local and leave the message/date fie
 served by its hash) when they are not.
 
 **260731-EFA-L3** adds one case to that class:
-`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` (L2895-L2921). It is the
+cit:([`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`], mcp/tests/test_observer_projection.py:2897-2923). It is the
 only test in this suite that patches git rather than running it: `mock.patch.object(snapshots,
 "run_git", side_effect=subprocess.TimeoutExpired(cmd=["git", "log"], timeout=300))` over a real
 two-commit repo with a written ledger. `TimeoutExpired` is a `SubprocessError` and a `SubprocessError`
@@ -272,7 +272,7 @@ signals re-surface the item, and non-lifecycle provider alarms are not suppressi
 acknowledgement rows. Task 29 extends this suite so targetless actionable-drift acknowledgements suppress
 only until a newer drift snapshot appears. `SnapshotReaderTests` adds an end-to-end `project_and_write` assertion that a
 completed lifecycle's attention acknowledgement is pruned
-(`test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement`, L1504-L1538).
+cit:([`test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement`], mcp/tests/test_observer_projection.py:1506-1540).
 
 Since 260731-EFA-L5 (R5) that assertion is about **emptiness, not absence**. It used to end
 `assertFalse(dismissals.log_path().exists())`; the unlink that made it true is the defect the leaf
@@ -325,17 +325,17 @@ with a *different* instrument from the one under test — `live_states()` subtra
 `TERMINAL_STATES` from `STATES` rather than reading `ACTIVE_STATES`, and `seeded_state()` asks the
 fold rather than naming `running` — so no assertion can agree with itself. Second, the partition
 and reader guards are driven against **synthetic** `Literal` vocabularies declared as class
-attributes (`StatePartitionTests.LIVE` / `.TERMINAL`, L1745-L1746) plus inline `Literal[...]`
+attributes cit:([`StatePartitionTests`], mcp/tests/test_observer_projection.py:1735-1799) (`LIVE` / `TERMINAL`) plus inline `Literal[...]`
 arguments, so a refusal is exercised without the shipped declaration having to be wrong; only
 `test_the_real_partition_is_total_and_disjoint` and
 `test_the_real_bucket_fields_are_distinct` assert against the live vocabulary. `typing.Literal` is
-imported for exactly that (L23). The `EngineProcessTests` contract fixtures ask for
+imported for exactly that. The `EngineProcessTests` contract fixtures ask for
 `workflow_kind="light-task"`; the bare `"light"` they used is no longer a member of `WorkflowKind`.
 
 Git is exercised for real, not mocked, everywhere except one case: the suite imports the module
-object (`from agents_remember.observer import snapshots`, L43) purely so
+object cit:(["from agents_remember.observer import snapshots"], mcp/tests/test_observer_projection.py:43-43) purely so
 `LedgerCommitMetaTests.test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
-can patch `snapshots.run_git` — a wedged git cannot be produced with a real repository. Patching the
+can patch `snapshots.run_git` cit:(["test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick", "with mock.patch.object", "TimeoutExpired(cmd="], mcp/tests/test_observer_projection.py:2897-2897; mcp/tests/test_observer_projection.py:2908-2908; mcp/tests/test_observer_projection.py:2910-2910) — a wedged git cannot be produced with a real repository. Patching the
 module attribute rather than `kernel.git_command.run_git` is what makes the test see the binding
 `snapshots.py` actually resolves at call time, so a future re-import from a different module fails it.
 
@@ -350,33 +350,34 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode` L585-L631; `SeriesSubTaskNode` L634-L649; `SeriesNode` L662-L688 | [projection.py](../src/agents_remember/observer/projection.py) |
-| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | `read_task_documents` L1146-L1174; `read_series_documents` L1269-L1310; `_series_subtask_nodes` L1313-L1330; `_series_subtask_created_at` L1333-L1346; `_task_doc_node` L1367-L1456 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` L3203-L3650 | [test_observer_projection.py](test_observer_projection.py) |
-| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` L3529-L3587 | [test_observer_projection.py](test_observer_projection.py) |
-| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | `test_series_token_total_sums_linked_leaf_lifecycles` L713-L786 | [test_observer_projection.py](test_observer_projection.py) |
-| The fold + inferred layer + action availability under test. | `project_lifecycle` L78-L105; `_project_inferred` L454-L468; the action-availability block (`_lifecycle_actions` L474-L483, `enclosure_actions` L486-L487, `_integrate_action` L490-L504, `_cleanup_action` L507-L521) | [reducer.py](../src/agents_remember/observer/reducer.py) |
-| The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | `workspace_provider_nodes` L16-L39; `_cgc_repo_provider_nodes` L83-L98; `_target_repo_provider_nodes` L139-L150; `_target_repo_ids` L174-L185 | [provider_nodes.py](../src/agents_remember/observer/provider_nodes.py) |
-| The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | `admitted_worktree_groups` L24-L45; `active_enclosure_worktree_groups` L48-L73 | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
-| The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`, `SeriesRetentionTests` | [test_observer_projection.py](test_observer_projection.py) |
-| The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | [worktree_provider_admission.py](../src/agents_remember/observer/worktree_provider_admission.py) |
-| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers` L185-L203 with the group filter in `_worktree_providers` L218-L278; `read_engine_process_facts` L630-L689; `read_setup_progress_nodes` L1032-L1066 | [snapshots.py](../src/agents_remember/observer/snapshots.py) |
-| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` L2157-L2190 | [test_observer_projection.py](test_observer_projection.py) |
-| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L2331-L2370 | [test_observer_projection.py](test_observer_projection.py) |
-| The log reader + atomic writer + orchestrator under test. | `read_lifecycle_logs` L112-L154; `write_projection` L157-L164 with `_atomic_write_json` L361-L365; `project_and_write` L214-L277 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
-| Projection reads active admission sets once and caches repo surfaces on a short TTL. | `REPO_SURFACE_REFRESH_TTL_SECONDS` L64-L68; the single admission/surface read inside `project_and_write` L232; L247; `_gather_repo_surfaces_cached` L334-L345 with `_repo_surface_cache_key` L348-L358 | [projection_store.py](../src/agents_remember/observer/projection_store.py) |
-| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests` L239-L347; `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315; `test_active_group_filter_skips_parked_progress` L2686-L2700; `test_repo_surface_cache_reuses_recent_repo_reads` L3100-L3121; `test_reader_skips_inactive_engine_process_groups_when_filtered` L4077-L4106 | [test_observer_projection.py](test_observer_projection.py) |
-| The drift-snapshot producer exercised by the round-trip test. | `run_drift_summary` L24-L72; `_write_drift_snapshot` L108-L150 | [onboarding_drift_check/summary.py](../src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
-| The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | `drift_snapshot_path` L19-L22; `prune_orphaned_drift_snapshots` L36-L69 | [drift_snapshots.py](../src/agents_remember/observer/drift_snapshots.py) |
-| The shared drift-snapshot dir/schema the fixtures use. | `DRIFT_SNAPSHOT_SCHEMA` L24; `drift_snapshot_dir` L37-L39 (the file is 39 lines) | [paths.py](../src/agents_remember/observer/paths.py) |
-| The lifecycle-state vocabulary under test: the composed `State`, its two halves, the partition guard, the declaration reader, and the end-outcome coercion the terminality tests drive. | `vocabulary_names` L41-L56; `check_state_partition` L73-L98; `STATES` L133-L135; `LIVE_STATES` L136-L138; `TERMINAL_STATES` L139; `DEFAULT_END_OUTCOME` L143; `coerce_end_outcome` L149-L158; `LifecycleState.is_terminal` L188-L210 | [lifecycle_state.py](../src/agents_remember/observer/lifecycle_state.py) |
-| The metrics buckets and the state→field naming rule the coverage suites hold to the vocabulary. | `ACTIVE_STATES` L227; `state_count_field` L230-L245; `state_count_fields` L248-L270; `STATE_COUNT_FIELDS` L273; `Metrics` L278-L304 | [projection.py](../src/agents_remember/observer/projection.py) |
-| The event-kind table `TerminalityIsStructuralTests` reads to decide which states a running session can declare about itself, and the rollup that fills the buckets. | `_KIND_UPDATES` L418-L427; `_metrics` L524-L547 | [reducer.py](../src/agents_remember/observer/reducer.py) |
-| The write side held to the same terminal set — `end` validates against `TERMINAL_STATES` and converts through `coerce_end_outcome`. | `AmbientLifecycle.end` | [ambient.py](../src/agents_remember/observer/ambient.py) |
-| The TypeScript mirror of the naming rule, which is why Python moved off `str.capitalize`: the field names are derived type-level with `Capitalize<Camel<Tail>>`. | `stateCountField` | [projection.ts](../../dashboard/src/types/projection.ts) |
-| The sibling suite that pins the structure of the ambient end signal's vocabulary, which this file pins the behaviour of. | `EndSignalVocabularyTests` | [test_observer_ambient.py](test_observer_ambient.py) |
+| The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:608-654; mcp/src/agents_remember/observer/projection.py:657-672; mcp/src/agents_remember/observer/projection.py:685-711 |
+| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | `read_task_documents`; `read_series_documents`; `_series_subtask_nodes`; `_series_subtask_created_at`; `_task_doc_node` | mcp/src/agents_remember/observer/snapshots.py:1155-1183; mcp/src/agents_remember/observer/snapshots.py:1405-1483; mcp/src/agents_remember/observer/snapshots.py:1278-1319; mcp/src/agents_remember/observer/snapshots.py:1322-1339; mcp/src/agents_remember/observer/snapshots.py:1342-1355 |
+| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` | mcp/tests/test_observer_projection.py:3205-3693 |
+| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` | mcp/tests/test_observer_projection.py:3572-3630 |
+| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | `test_series_token_total_sums_linked_leaf_lifecycles` | mcp/tests/test_observer_projection.py:715-788 |
+| The fold + inferred layer + action availability under test. | `project_lifecycle`; `_project_inferred`; `_lifecycle_actions`; `enclosure_actions`; `_integrate_action`; `_cleanup_action` | mcp/src/agents_remember/observer/reducer.py:81-108; mcp/src/agents_remember/observer/reducer.py:457-471; mcp/src/agents_remember/observer/reducer.py:477-486; mcp/src/agents_remember/observer/reducer.py:489-490; mcp/src/agents_remember/observer/reducer.py:493-507; mcp/src/agents_remember/observer/reducer.py:510-524 |
+| The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | `workspace_provider_nodes`; `_cgc_repo_provider_nodes`; `_target_repo_provider_nodes`; `_target_repo_ids` | mcp/src/agents_remember/observer/provider_nodes.py:16-39; mcp/src/agents_remember/observer/provider_nodes.py:83-98; mcp/src/agents_remember/observer/provider_nodes.py:139-150; mcp/src/agents_remember/observer/provider_nodes.py:174-185 |
+| The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | `admitted_worktree_groups`; `active_enclosure_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45; mcp/src/agents_remember/observer/worktree_provider_admission.py:48-73 |
+| The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`; `SeriesRetentionTests` | mcp/tests/test_observer_projection.py:334-349; mcp/tests/test_observer_projection.py:352-408 |
+| The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101 |
+| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers`; `_worktree_providers`; `read_engine_process_facts`; `read_setup_progress_nodes` | mcp/src/agents_remember/observer/snapshots.py:184-202; mcp/src/agents_remember/observer/snapshots.py:217-277; mcp/src/agents_remember/observer/snapshots.py:639-698; mcp/src/agents_remember/observer/snapshots.py:1041-1075 |
+| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` | mcp/tests/test_observer_projection.py:2159-2192 |
+| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` | mcp/tests/test_observer_projection.py:2333-2372 |
+| The projection-store log reader, projection writer, and tick orchestrator under test. | `read_lifecycle_logs`; `write_projection`; `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:111-153; mcp/src/agents_remember/observer/projection_store.py:156-162; mcp/src/agents_remember/observer/projection_store.py:212-275 |
+| Current `_write_json` owns JSON serialization and delegates atomic publication to the kernel's `atomic_write_text`; the removed `_atomic_write_json` name is not a live symbol. | `_write_json`; "def atomic_write_text" | mcp/src/agents_remember/kernel/atomic_write.py:73-73; mcp/src/agents_remember/observer/projection_store.py:359-366 |
+| Projection reads active admission sets once and caches repo surfaces on a short TTL. | `REPO_SURFACE_REFRESH_TTL_SECONDS`; `project_and_write`; `_gather_repo_surfaces_cached`; `_repo_surface_cache_key` | mcp/src/agents_remember/observer/projection_store.py:67-67; mcp/src/agents_remember/observer/projection_store.py:212-275; mcp/src/agents_remember/observer/projection_store.py:332-343; mcp/src/agents_remember/observer/projection_store.py:346-356 |
+| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests`; `test_read_providers_ignores_unadmitted_worktree_stacks`; `test_active_group_filter_skips_parked_progress`; `test_repo_surface_cache_reuses_recent_repo_reads`; `test_reader_skips_inactive_engine_process_groups_when_filtered` | mcp/tests/test_observer_projection.py:241-349; mcp/tests/test_observer_projection.py:1291-1317; mcp/tests/test_observer_projection.py:2688-2702; mcp/tests/test_observer_projection.py:3102-3123; mcp/tests/test_observer_projection.py:4140-4169 |
+| The drift-snapshot producer exercised by the round-trip test. | `run_drift_summary`; `_write_drift_snapshot` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:109-148 |
+| The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | `drift_snapshot_path`; `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/observer/drift_snapshots.py:19-22; mcp/src/agents_remember/observer/drift_snapshots.py:36-69 |
+| The shared drift-snapshot dir/schema the fixtures use. | `DRIFT_SNAPSHOT_SCHEMA`; `drift_snapshot_dir` | mcp/src/agents_remember/observer/paths.py:24-24; mcp/src/agents_remember/observer/paths.py:37-39 |
+| The lifecycle-state vocabulary under test: the composed `State`, its two halves, the partition guard, the declaration reader, and the end-outcome coercion the terminality tests drive. | `vocabulary_names`; `check_state_partition`; `STATES`; `LIVE_STATES`; `TERMINAL_STATES`; `DEFAULT_END_OUTCOME`; `coerce_end_outcome` | mcp/src/agents_remember/observer/lifecycle_state.py:41-56; mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/lifecycle_state.py:133-139; mcp/src/agents_remember/observer/lifecycle_state.py:143-143; mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158 |
+| The metrics buckets and the state→field naming rule the coverage suites hold to the vocabulary. | `ACTIVE_STATES`; `state_count_field`; `state_count_fields`; `STATE_COUNT_FIELDS`; `Metrics` | mcp/src/agents_remember/observer/projection.py:227-227; mcp/src/agents_remember/observer/projection.py:236-236; mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:287-313; mcp/src/agents_remember/observer/projection.py:282-282; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:273-273 |
+| The event-kind table `TerminalityIsStructuralTests` reads to decide which states a running session can declare about itself, and the rollup that fills the buckets. | `_KIND_UPDATES`; `_metrics` | mcp/src/agents_remember/observer/reducer.py:421-430; mcp/src/agents_remember/observer/reducer.py:527-550 |
+| The write side held to the same terminal set — `end` validates against `TERMINAL_STATES` and converts through `coerce_end_outcome`. | `end` | mcp/src/agents_remember/observer/ambient.py:243-274 |
+| The TypeScript mirror of the naming rule, which is why Python moved off `str.capitalize`: the field names are derived type-level with `Capitalize<Camel<Tail>>`. | `stateCountField` | dashboard/src/types/projection.ts:286-290 |
+| The sibling suite that pins the structure of the ambient end signal's vocabulary, which this file pins the behaviour of. | `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:157-185 |
 
 ## Series-Contract Notes
 
@@ -403,10 +404,18 @@ asserts the same projection output and uncached volatile-provider behavior.
 
 ## Update History
 
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: source-first bound the
+  timeout-patch test body rather than only its module import, preserved the three valid
+  projection-store ranges, and replaced the removed `_atomic_write_json` live claim with current
+  `_write_json` → `atomic_write_text` ownership using honest `:1-1` bindings. No citation mechanics
+  ran.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped observer-projection citations; final exact frozen-snapshot check is clean.
 - 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: one assertion changed in this suite and every
   line citation in the card moved with it. **Coverage:**
   `SnapshotReaderTests::test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement`
-  (L1504-L1538) ended `assertFalse(dismissals.log_path().exists())`; it now asserts
+  cit:([`test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement`], mcp/tests/test_observer_projection.py:1506-1540) ended `assertFalse(dismissals.log_path().exists())`; it now asserts
   `dismissals.read() == []`, `log_path().is_file()` and `log_path().read_bytes() == b""`. The
   unlink it used to prove is the defect 260731-EFA-L5 removed (R5): `_replace` called
   `path.unlink(missing_ok=True)` on an empty kept set, so a concurrent dismisser holding an
@@ -451,29 +460,24 @@ asserts the same projection output and uncached volatile-provider behavior.
 
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the eight
   `projection.py` pointers after a worker inserted ten lines above them; every one moved by exactly
-  +10 and none needed reshaping. `TaskDocNode` L575-L621 → L585-L631 (`id` L596, `lifecycleId` L597,
-  `createdAt` L609), `SeriesSubTaskNode` L624-L639 → L634-L649 (`createdAt` L649, the class's last
-  line), `SeriesNode` L652-L678 → L662-L688 (`objective` L680); `ACTIVE_STATES` L217 → L227,
-  `state_count_field` L220-L235 → L230-L245, `state_count_fields` L238-L260 → L248-L270,
-  `STATE_COUNT_FIELDS` L263 → L273, `Metrics` L268-L294 → L278-L304. No body text changed.
+  +10 and none needed reshaping. cit:([`TaskDocNode`, `SeriesSubTaskNode`, `SeriesNode`, `ACTIVE_STATES`, `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS`, `Metrics`], mcp/src/agents_remember/observer/projection.py:236-236; mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:287-313; mcp/src/agents_remember/observer/projection.py:282-282; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:608-654; mcp/src/agents_remember/observer/projection.py:657-672; mcp/src/agents_remember/observer/projection.py:685-711). No body text changed.
 - 2026-08-01T09:35+02:00 — 260731-EFA-L4 curator: this suite gained **five vocabulary/partition
   classes** and the card gained a section for them, plus three corrections and 12 citation repairs.
-  **New coverage (L1617-L2005, between `TokenSeriesTests` and `StalenessHistogramTests`):**
-  `MetricsBucketVocabularyTests` (L1617-L1722) derives the live state set as `STATES` minus
+  **New coverage between `TokenSeriesTests` and `StalenessHistogramTests`:**
+  cit:([`MetricsBucketVocabularyTests`], mcp/tests/test_observer_projection.py:1627-1732) derives the live state set as `STATES` minus
   `TERMINAL_STATES` **rather than** reading `projection.ACTIVE_STATES`, so the measurement is not
   taken with the instrument it is checking; it holds both directions (every live state has a
   bucket, every `*Count` bucket except `lifecycleCount` is a live state), drives one real lifecycle
   per live state through `project_workspace` so a declared-but-undrivable state is reported rather
   than skipped, and pins the reported symptom — `awaiting-developer` was in `lifecycleCount` and
-  `totalTokens` and in no bucket. `StatePartitionTests` (L1725-L1789) holds
+  `totalTokens` and in no bucket. cit:([`StatePartitionTests`], mcp/tests/test_observer_projection.py:1735-1799) holds
   `check_state_partition`'s three refusals against **synthetic** `Literal` vocabularies so the
   guard is exercised without the shipped declaration being wrong.
-  `TerminalityIsStructuralTests` (L1792-L1909) gives terminality an observable definition and
+  cit:([`TerminalityIsStructuralTests`], mcp/tests/test_observer_projection.py:1802-1919) gives terminality an observable definition and
   checks it against the fold in both directions (`coerce_end_outcome`, `_KIND_UPDATES`), and holds
-  the write side (`AmbientLifecycle.end`) to the same terminal set. `StateVocabularyReaderTests`
-  (L1912-L1947) pins `vocabulary_names` across the flat, composed and union `Literal` forms — the
+  the write side (`AmbientLifecycle.end`) to the same terminal set. cit:([`StateVocabularyReaderTests`], mcp/tests/test_observer_projection.py:1922-1957) pins `vocabulary_names` across the flat, composed and union `Literal` forms — the
   union form is where bare `get_args` returns `Literal` objects and the first `.split` kills the
-  whole `agents_remember.observer` import. `StateCountFieldTests` (L1950-L2005) pins the
+  whole `agents_remember.observer` import. cit:([`StateCountFieldTests`], mcp/tests/test_observer_projection.py:1960-2015) pins the
   state→field rule against the TypeScript mirror's `Capitalize<Camel<Tail>>` and refuses two states
   that would share a bucket — the reviewer's `awaiting-Developer`/`awaiting-developer` case
   produced a merged count and a **green** vocabulary suite, because the coverage tests compare
@@ -481,8 +485,8 @@ asserts the same projection output and uncached volatile-provider behavior.
   `## Governing Overview` line asserted "there is no route-local `mcp/tests/overview.md`" — that
   file exists in this memory tree, so the section and the `governingOverview` cell now point at it
   (`overview.md`) instead of at `../overview.md`; (2) the Conventions note cited the
-  `from agents_remember.observer import snapshots` patch-seam import at L42, now **L43** (the
-  `typing.Literal` import at L23 pushed it down); (3) recorded that the `EngineProcessTests`
+  `from agents_remember.observer import snapshots` patch-seam import (the
+  `typing.Literal` import pushed it down); (3) recorded that the `EngineProcessTests`
   contract fixtures now ask for `workflow_kind="light-task"` — the bare `"light"` is no longer a
   `WorkflowKind` member. Added a Conventions paragraph for the two local conventions the new suites
   introduce (derive with a different instrument; drive guards against synthetic vocabularies).
@@ -518,8 +522,7 @@ asserts the same projection output and uncached volatile-provider behavior.
 - 2026-07-31T21:55+02:00 — 260731-EFA-L3 curator: recorded the one test this leaf added and
   repaired every line range in the card. **New coverage:**
   `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
-  (L2474-L2504), plus the module-object import `from agents_remember.observer import snapshots`
-  (L42) that exists only to give it a patch seam. It is the sole case in the suite that patches git
+  cit:([`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`], mcp/tests/test_observer_projection.py:2897-2923), plus the module-object import cit:(["from agents_remember.observer import snapshots"], mcp/tests/test_observer_projection.py:43-43) that exists only to give it a patch seam. It is the sole case in the suite that patches git
   instead of running it: `mock.patch.object(snapshots, "run_git", side_effect=
   subprocess.TimeoutExpired(...))` proves that when `snapshots._git_commit_meta` moved onto a runner
   with a timeout, `TimeoutExpired` — a `SubprocessError`, which is **not** an `OSError` — no longer
@@ -534,20 +537,10 @@ asserts the same projection output and uncached volatile-provider behavior.
   `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` L1909-L1948 → L1910-L1949; and the
   task-29 set L216-L324; L1266-L1292; L2264-L2278; L2650-L2691; L3627-L3656 → L217-L325;
   L1267-L1293; L2265-L2279; L2679-L2720; L3656-L3685. Ranges into other files were stale from
-  earlier restructurings and are now cited per symbol rather than as bare spans: `projection.py`
-  L412-L507 held none of `TaskDocNode` (L487), `SeriesSubTaskNode` (L536) or `SeriesNode` (L564);
-  `snapshots.py` L584-L736; L757-L783 held none of `read_task_documents` (L1149),
-  `read_series_documents` (L1272), `_series_subtask_nodes` (L1316) or `_task_doc_node` (L1370), and
-  its group-filter row L112-L203; L496-L535; L778-L805 held none of `read_providers` (L191),
-  `read_engine_process_facts` (L636) or `read_setup_progress_nodes` (L1035); `reducer.py` L1-L92
-  held `project_lifecycle` (L71) but neither `_project_inferred` (L446) nor the action-availability
-  block (L466-L513); `provider_nodes.py` L1-L92 held `_cgc_repo_provider_nodes` (L83) but not
-  `_target_repo_provider_nodes` (L139) or `_target_repo_ids` (L174); `projection_store.py` L1-L90
-  held none of `read_lifecycle_logs` (L112), `write_projection` (L157), `project_and_write` (L214)
-  or `_atomic_write_json` (L361), and its cache row L151-L180; L217-L240 missed
-  `_gather_repo_surfaces_cached` (L334) and `REPO_SURFACE_REFRESH_TTL_SECONDS` (L68);
-  `summary.py` L1-L88 missed `_write_drift_snapshot` (L107); and `paths.py` L1-L47 ran eight lines
-  past a 39-line file. `drift_snapshots.py` and `worktree_provider_admission.py` did contain their
+  earlier restructurings and are now cited per symbol rather than as bare spans: cit:([`TaskDocNode`, `SeriesSubTaskNode`, `SeriesNode`], mcp/src/agents_remember/observer/projection.py:608-654; mcp/src/agents_remember/observer/projection.py:657-672; mcp/src/agents_remember/observer/projection.py:685-711) held the projection types;
+  cit:([`read_task_documents`, `read_series_documents`, `_series_subtask_nodes`, `_task_doc_node`], mcp/src/agents_remember/observer/snapshots.py:1155-1183; mcp/src/agents_remember/observer/snapshots.py:1405-1483; mcp/src/agents_remember/observer/snapshots.py:1278-1319; mcp/src/agents_remember/observer/snapshots.py:1322-1339) held the task readers, and
+  cit:([`read_providers`, `read_engine_process_facts`, `read_setup_progress_nodes`], mcp/src/agents_remember/observer/snapshots.py:184-202; mcp/src/agents_remember/observer/snapshots.py:639-698; mcp/src/agents_remember/observer/snapshots.py:1041-1075) held the group-filter readers; cit:([`project_lifecycle`, `_project_inferred`, `_lifecycle_actions`, `enclosure_actions`, `_integrate_action`, `_cleanup_action`], mcp/src/agents_remember/observer/reducer.py:81-108; mcp/src/agents_remember/observer/reducer.py:457-471; mcp/src/agents_remember/observer/reducer.py:477-486; mcp/src/agents_remember/observer/reducer.py:489-490; mcp/src/agents_remember/observer/reducer.py:493-507; mcp/src/agents_remember/observer/reducer.py:510-524) held the reducer and action-availability helpers; cit:([`_cgc_repo_provider_nodes`, `_target_repo_provider_nodes`, `_target_repo_ids`], mcp/src/agents_remember/observer/provider_nodes.py:83-98; mcp/src/agents_remember/observer/provider_nodes.py:139-150; mcp/src/agents_remember/observer/provider_nodes.py:174-185) held the provider-node helpers; cit:([`read_lifecycle_logs`, `write_projection`, `project_and_write`, `_atomic_write_json`, `_gather_repo_surfaces_cached`, `REPO_SURFACE_REFRESH_TTL_SECONDS`], mcp/src/agents_remember/observer/projection_store.py:67-67; mcp/src/agents_remember/observer/projection_store.py:111-153; mcp/src/agents_remember/observer/projection_store.py:156-162; mcp/src/agents_remember/observer/projection_store.py:212-275; mcp/src/agents_remember/observer/projection_store.py:332-343; mcp/src/agents_remember/observer/projection_store.py:362-362) held the projection-store helpers;
+  cit:([`_write_drift_snapshot`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:109-148) held the drift producer, and cit:([`drift_snapshot_path`], mcp/src/agents_remember/observer/drift_snapshots.py:19-22) rechecked the shared path helper. `drift_snapshots.py` and `worktree_provider_admission.py` did contain their
   named symbols and were narrowed to exact definition ranges rather than corrected. Two rows carry
   no line range by design (`test_active_group_survives_a_pruned_lifecycle_log` / `SeriesRetentionTests`
   and `series_retained_lifecycle_ids`) and were left naming their symbols. The Repo-Internal

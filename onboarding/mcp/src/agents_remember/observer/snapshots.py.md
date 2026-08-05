@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T20:45+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`       |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -208,10 +208,9 @@ it builds an `EngineProcessFacts` bundle per contract carrying the status-guidan
 `contract_payload(contract)` (code/memory branches, base commits, worktree paths) and
 `dict(lifecycle_guidance(contract))` — both pure — plus `status` from `_safe_status_payload`.
 Since 260731-EFA-L4 the guidance payload is **widened at the boundary** with an explicit `dict(...)`
-(L679-L681): `EngineProcessFacts` is the projection's untyped input carrier and the reducer folds it
-by key name, so the carrier takes a plain `dict[str, Any]` rather than propagating the guidance
-producer's narrower typed shape into a structure that never re-emits its vocabulary. The same
-widening is applied to the cached local status in `_cached_local_status` (L781-L798), where the
+cit:([`read_engine_process_facts`], mcp/src/agents_remember/observer/snapshots.py:639-698): `read_engine_process_facts`
+constructs `EngineProcessFacts` with a plain dictionary guidance payload. The same
+widening is applied to the cached local status in cit:([`_cached_local_status`], mcp/src/agents_remember/observer/snapshots.py:783-800), where the
 annotation `value: dict[str, Any] | None` is now declared before the `try` so the `except` branch's
 `None` and the success branch's `dict(projected_status_payload(...))` share one type. Neither change
 alters a served value. `status_payload`
@@ -246,7 +245,7 @@ variable named, not the worktree's own) and under the runner's `GIT_LOCAL_TIMEOU
 the retired copy carried no timeout at all, so a wedged `git log` could hold a projection tick forever.
 
 **Gaining a timeout is what forced the handler to widen.** The guard around the probe is
-`except (OSError, subprocess.SubprocessError)` (L842), not the `except OSError` it was before this
+`except (OSError, subprocess.SubprocessError)` cit:([`_git_commit_meta`], mcp/src/agents_remember/observer/snapshots.py:826-859), not the `except OSError` it was before this
 leaf. `subprocess.TimeoutExpired` is a `SubprocessError` and `SubprocessError` is **not** a subclass
 of `OSError`, so the moment the call moved onto a runner that has a bound, the bound's own exception
 became something the old handler could not see. It would have escaped `_git_commit_meta` through
@@ -254,7 +253,7 @@ became something the old handler could not see. It would have escaped `_git_comm
 make: `_ledger_window`'s "best-effort … so the projection tick never fails" and the `LedgerNode`
 builder in `read_ledger`. The degrade is hash-only rows, never an exception, and
 `test_observer_projection.py::LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
-(L2895-L2921) drives **both** paths through a patched `run_git` that raises `TimeoutExpired`.
+cit:([`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`], mcp/tests/test_observer_projection.py:2897-2923) drives **both** paths through a patched `run_git` that raises `TimeoutExpired`.
 
 It returns `{}` on any failure (no repo path / git absent / non-zero exit / a raise from the runner),
 and `--ignore-missing` drops a
@@ -410,34 +409,34 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | L1153-L1181, the call at L1180; `_task_document_lifecycle_maps` L1217-L1250; `_task_doc_node` L1374-L1463 | [snapshots.py](snapshots.py) |
-| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | L1276-L1317 | [snapshots.py](snapshots.py) |
-| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | L1320-L1353 | [snapshots.py](snapshots.py) |
-| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | L1374-L1463 (`createdAt=doc.createdAt` L1406) | [snapshots.py](snapshots.py) |
-| The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode` L585-L631; `SeriesSubTaskNode` L634-L649; `SeriesNode` L662-L688 | [projection.py](projection.py) |
-| The provider current-state path + snapshot shape (surface 1). | L1-L49 | [providers/current_state.py](../providers/current_state.py) |
-| The provider-node projection policy used by `read_providers`. | L1-L92 | [provider_nodes.py](provider_nodes.py) |
-| Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | L216-L276; L279-L464 | [snapshots.py](snapshots.py) |
-| `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`). | L183-L201; L232-L233 | [snapshots.py](snapshots.py) |
-| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before `contract_payload`/`lifecycle_guidance`/`_safe_status_payload` are built. | L637-L696, the group guard at L663-L667 and the `_safe_status_payload` call at L682; `_safe_status_payload` itself L745-L778 | [snapshots.py](snapshots.py) |
-| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | L467-L484; L637-L696 | [snapshots.py](snapshots.py) |
-| The shared per-tick contract snapshot + stat-identity parse cache these readers consume. | L1-L112 | [contract_snapshot.py](contract_snapshot.py) |
-| PTS-L2 tests pin reader-output parity with and without the shared snapshot and one enumeration per full projection tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged` L690-L728; `test_reader_outputs_equal_with_and_without_shared_snapshot` L730-L761 | [test_projection_scaling_cs6.py](../../../tests/test_projection_scaling_cs6.py) |
-| `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | L1039-L1073 | [snapshots.py](snapshots.py) |
-| `read_drift_snapshots` carries `checkedAt`/`sourceRoot`/`memoryRoot`/`reportPath` provenance from the persisted snapshot. | L932-L968 | [snapshots.py](snapshots.py) |
-| `_git_commit_meta` is this module's only git call, runs on the package's one runner, `kernel.git_command.run_git`, and guards it with `except (OSError, subprocess.SubprocessError)` so the runner's own `TimeoutExpired` cannot escape. | `def` L824; the guard L842; the guard's `return {}` L848 | [snapshots.py](snapshots.py) |
-| That runner strips the `GIT_DIR`-family selectors, adds `safe.directory`, DEVNULLs stdin, and bounds the call at `GIT_LOCAL_TIMEOUT_SECONDS` (300) by default — the bound whose `subprocess.TimeoutExpired` the widened guard above exists to absorb. | L24-L33; L53-L55; L58-L96 | [kernel/git_command.py](../kernel/git_command.py) |
-| A wedged `git log` degrades both ledger entry points to hash-only rows instead of failing the tick: a patched `run_git` raising `TimeoutExpired` is driven through `_ledger_window` **and** `read_ledger`. | `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` L2895-L2921 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
-| Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | `WorktreeProviderAdmissionTests` (admission + `test_rejects_parked_terminal_and_non_provider_phase_groups`) L239-L347; `test_read_providers_ignores_unadmitted_worktree_stacks` L1289-L1315; `test_active_group_filter_skips_parked_progress` L2686-L2700; `test_reader_skips_inactive_engine_process_groups_when_filtered` L4077-L4106 | [test_observer_projection.py](../../../tests/test_observer_projection.py) |
-| The worktree contract loader + fields (surfaces 5/6). | L1-L116 | [worktrees/worktree_contract.py](../worktrees/worktree_contract.py) |
-| The setup-progress projection (`progress_status`) reused for surface 3. | L1-L75 | [providers/setup_progress.py](../providers/setup_progress.py) |
-| The memory ledger loader read for surface 8. | L1-L104 | [kernel/memory_ledger.py](../kernel/memory_ledger.py) |
-| The data-surface inventory the structural/analytical split follows. | L91-L118; L332-L344 | [docs/design/observable-lifecycle.md](../../../../docs/design/observable-lifecycle.md) |
-| The gate reader's two halves: the tolerant `read_for_projection` this module now uses, and `projected_current`, which folds + keep-filters from that one read and rewrites nothing (`now=None` folds without the retention filter). | `GateStore.read_for_projection`; `GateStore.projected_current` | [controlplane/store.py](../controlplane/store.py) |
-| The expectation-row reader's two halves: the tolerant `read_for_projection` and the `pending_for_projection` wrapper `read_expectation_rows` calls; the docstring names this module's `suppress`-plus-strict-read defect as the reason it exists. | `read_for_projection` L185-L203; `pending_for_projection` L215-L217 | [controlplane/expectation_rows.py](../controlplane/expectation_rows.py) |
-| Where the gate-log rewrite went: reclamation in the log's owner process, guarded by a non-raising ownership question and run on terminal decisions. | `_reclaim_gate_log` L453-L473; called L539 | [mcp/tools/gates.py](../mcp/tools/gates.py) |
+| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | `_task_document_lifecycle_maps`; `_task_doc_node` | mcp/src/agents_remember/observer/snapshots.py:1219-1252; mcp/src/agents_remember/observer/snapshots.py:1405-1483 |
+| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | `read_series_documents` | mcp/src/agents_remember/observer/snapshots.py:1278-1319 |
+| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | `_series_subtask_nodes`; `_series_subtask_created_at` | mcp/src/agents_remember/observer/snapshots.py:1322-1339; mcp/src/agents_remember/observer/snapshots.py:1342-1355 |
+| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | `_task_doc_node` | mcp/src/agents_remember/observer/snapshots.py:1405-1483 |
+| The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:608-654; mcp/src/agents_remember/observer/projection.py:657-672; mcp/src/agents_remember/observer/projection.py:685-711 |
+| The provider current-state path + snapshot shape (surface 1). | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:52-62 |
+| The provider-node projection policy used by `read_providers`. | `read_providers` | mcp/src/agents_remember/observer/snapshots.py:184-202 |
+| Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | `_worktree_providers` | mcp/src/agents_remember/observer/snapshots.py:217-277 |
+| `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`). | `read_providers` | mcp/src/agents_remember/observer/snapshots.py:184-202 |
+| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built. | `read_engine_process_facts`; "contract.worktree_group.name not in active_worktree_groups"; "cp = contract_payload(contract)" | mcp/src/agents_remember/observer/snapshots.py:639-698 |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | `read_enclosures`; `read_engine_process_facts` | mcp/src/agents_remember/observer/snapshots.py:468-485; mcp/src/agents_remember/observer/snapshots.py:639-698 |
+| The shared per-tick contract snapshot + stat-identity parse cache these readers consume. | `ContractSnapshot`; `ContractSnapshotCache` | mcp/src/agents_remember/observer/contract_snapshot.py:37-49; mcp/src/agents_remember/observer/contract_snapshot.py:60-126 |
+| PTS-L2 tests pin reader-output parity with and without the shared snapshot and one enumeration per full projection tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged`; `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:690-728; mcp/tests/test_projection_scaling_cs6.py:730-761 |
+| `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | `read_setup_progress_nodes` | mcp/src/agents_remember/observer/snapshots.py:1041-1075 |
+| `read_drift_snapshots` carries `checkedAt`/`sourceRoot`/`memoryRoot`/`reportPath` provenance from the persisted snapshot. | `read_drift_snapshots` | mcp/src/agents_remember/observer/snapshots.py:934-970 |
+| `_git_commit_meta` is this module's only git call, runs on the package's one runner, `kernel.git_command.run_git`, and guards it with `except (OSError, subprocess.SubprocessError)` so the runner's own `TimeoutExpired` cannot escape. | `_git_commit_meta` | mcp/src/agents_remember/observer/snapshots.py:826-859 |
+| That runner strips the `GIT_DIR`-family selectors, adds `safe.directory`, DEVNULLs stdin, and bounds the call at `GIT_LOCAL_TIMEOUT_SECONDS` (300) by default — the bound whose `subprocess.TimeoutExpired` the widened guard above exists to absorb. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| A wedged `git log` degrades both ledger entry points to hash-only rows instead of failing the tick: a patched `run_git` raising `TimeoutExpired` is driven through `_ledger_window` **and** `read_ledger`. | `test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` | mcp/tests/test_observer_projection.py:2897-2923 |
+| Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | `WorktreeProviderAdmissionTests`; `test_rejects_parked_terminal_and_non_provider_phase_groups`; `test_read_providers_ignores_unadmitted_worktree_stacks`; `test_active_group_filter_skips_parked_progress`; `test_reader_skips_inactive_engine_process_groups_when_filtered` | mcp/tests/test_observer_projection.py:241-349; mcp/tests/test_observer_projection.py:1291-1317; mcp/tests/test_observer_projection.py:2688-2702; mcp/tests/test_observer_projection.py:4140-4169 |
+| The worktree contract loader + fields (surfaces 5/6). | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-287 |
+| The setup-progress projection (`progress_status`) reused for surface 3. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
+| The memory ledger loader read for surface 8. | `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |
+| The data-surface inventory the structural/analytical split follows. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
+| The gate reader's two halves: the tolerant `read_for_projection` this module now uses, and `projected_current`, which folds + keep-filters from that one read and rewrites nothing (`now=None` folds without the retention filter). | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
+| The expectation-row reader's two halves: the tolerant `read_for_projection` and the `pending_for_projection` wrapper `read_expectation_rows` calls; the docstring names this module's `suppress`-plus-strict-read defect as the reason it exists. | `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:185-203; mcp/src/agents_remember/controlplane/expectation_rows.py:215-217 |
+| Where the gate-log rewrite went: reclamation in the log's owner process, guarded by a non-raising ownership question and run on terminal decisions. | `_reclaim_gate_log` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80 |
 
 ## 260727-CHATS-IM-L2 Current Delta
 
@@ -447,6 +446,13 @@ reparses only changed/new stat identities and removes deleted entries. The new
 facts on heartbeat ticks.
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rebound Engine Room facts and Task 29
+  regression references to exact anchors, preserved the filter-before-payload dataflow, removed
+  duplicated source ranges, and restored the stale projection-schema history's true L412-L507
+  referent as explicitly historical text beside the live per-class definition citations.
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 23 repeated path:start-end Citation objects from 5 same-claim citation group(s) at card line(s) 417, 419, 425, 426, 439; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 16 citation claims; scoped result 0 findings.
 
 - 2026-08-01T20:45+02:00 — 260731-EFA-L5 worker: **`read_attention_dismissals` is deleted, together
   with the `AttentionDismissalRecord` / `AttentionDismissalStore` imports that existed only to serve
@@ -567,11 +573,11 @@ facts on heartbeat ticks.
   verbatim. No body text changed.
 - 2026-08-01T00:48+02:00 — 260731-EFA-L4 curator: the source change here is two boundary
   widenings, recorded in the Slice-5e paragraph. `read_engine_process_facts` now builds
-  `EngineProcessFacts(guidance=dict(lifecycle_guidance(contract)))` (L676-L678) rather than passing
-  the guidance producer's own return through — `EngineProcessFacts` is the projection's untyped
+  the engine-process carrier rather than passing
+  the guidance producer's own return through — the carrier is the projection's untyped
   input carrier and the reducer folds it by key name, so the carrier takes a plain
   `dict[str, Any]` and does not propagate a narrower typed shape into a structure that never
-  re-emits its vocabulary. `_cached_local_status` (L780-L797) declares
+  re-emits its vocabulary. cit:([`_cached_local_status`], mcp/src/agents_remember/observer/snapshots.py:783-800) declares
   `value: dict[str, Any] | None` before the `try` and stores
   `dict(projected_status_payload(...))`, so the `except` branch's `None` and the success value
   share one type. No served value changes. **Citation repairs** — the two edits added three lines
@@ -597,7 +603,7 @@ facts on heartbeat ticks.
 - 2026-07-31T21:45+02:00 — 260731-EFA-L3 curator, second pass on top of the 20:55 entry below. The
   20:55 entry stopped one step short: it recorded that `_git_commit_meta` moved onto a runner that
   *has* a timeout, but not the consequence a later fix had to land. `except OSError` is now
-  `except (OSError, subprocess.SubprocessError)` (L838) — `subprocess.TimeoutExpired` **is** a
+  `except (OSError, subprocess.SubprocessError)` cit:([`_git_commit_meta`], mcp/src/agents_remember/observer/snapshots.py:826-859) — `subprocess.TimeoutExpired` **is** a
   `SubprocessError` and **is not** an `OSError`, so the bound the consolidation introduced raised
   an exception the old handler could not see. It would have escaped `_git_commit_meta` →
   `_enrich_ledger_rows` → the projection tick, contradicting the "the projection tick never fails"
@@ -614,14 +620,14 @@ facts on heartbeat ticks.
   (`read_providers` L190-L207; L237-L240, `read_enclosures` L474-L492,
   `read_engine_process_facts` L635-L693, the worktree/Docker chain L223-L283; L286-L471) were
   re-checked against the current file and still land on their symbols — unchanged. Two rows into
-  files this leaf did **not** touch were stale and are fixed: the projection-schema row cited
-  `projection.py` L412-L507, which contains none of `TaskDocNode` (L487), `SeriesSubTaskNode`
-  (L536) or `SeriesNode` (L564) — now cited per class; and the Task-29 test row cited
+  files this leaf did **not** touch were stale historical references and are fixed: the old
+  projection-schema row pointed to the then-stale `projection.py` range L412-L507, which contained
+  none of the named `TaskDocNode`, `SeriesSubTaskNode`, or `SeriesNode`; the current card now
+  cites each class at its actual definition. The Task-29 test row cited
   `test_observer_projection.py` L169-L258; L1034-L1132; L1863-L1907; L3109-L3134, none of which
   held the four tests it names (L3109-L3134 was inside `test_read_series_documents_skips_leaf_docs`)
   — replaced with the named tests at L217-L325; L1267-L1293; L2265-L2279; L3656-L3685. Added a
-  reference row for the new regression, `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_
-  hash_only_rows_instead_of_failing_the_tick` (L2474-L2504), which drives both entry points through
+  reference row for the new regression, `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` cit:([`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`], mcp/tests/test_observer_projection.py:2897-2923), which drives both entry points through
   a patched `run_git` raising `TimeoutExpired`. Finally, four reference links in the same table
   carried one `../` too many and resolved to paths that do not exist — `../../providers/
   current_state.py`, `../../providers/setup_progress.py`, `../../worktrees/worktree_contract.py`,

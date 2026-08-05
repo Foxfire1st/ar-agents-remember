@@ -44,13 +44,15 @@ while leaving production bundles and live DevTools recording behavior untouched.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The Panda entry + layer order it loads. | L1-L6 | [index.css](index.css) |
-| The `:root` design tokens it loads. | — | [styles/tokens.css](styles/tokens.css) |
-| The scoped WebTUI skin it loads third (260715-FEUI-L1). | L12-L15 | [styles/webtui.css](styles/webtui.css) |
+| The Panda entry + layer order it loads. | "@layer reset, base, effects, webtui, tokens, recipes, utilities" | dashboard/src/index.css:9-9 |
+| The `:root` design tokens it loads. | ":root" | dashboard/src/styles/tokens.css:5-5 |
+| The scoped WebTUI skin it loads third (260715-FEUI-L1). | "base.css" | dashboard/src/styles/webtui.css:12-12 |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 6 citation findings for the three stylesheet reference rows using exact CSS literals.
 
 - 2026-07-24T13:17:50Z — Added the development performance-timeline cleanup boundary. Verification
   hash/date remain pinned to the pre-commit source stamp.

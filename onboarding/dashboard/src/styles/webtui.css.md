@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/styles/webtui.css`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00                           |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -26,22 +26,22 @@ tokens — ONE color system, no second palette.
 
 ### Logic
 
-- Four `@import … layer(webtui)` lines (L12-L15): `base.css`, `utils/box.css`,
+- Four `@import … layer(webtui)` lines cit:(["layer(webtui)"], dashboard/src/styles/webtui.css:12-15): `base.css`, `utils/box.css`,
   `components/badge.css`, `components/separator.css`. Each file's own `@layer
   base/utils/components` blocks nest INSIDE our `webtui` layer, which `index.css` slots between
   `effects` and `tokens` — so Panda tokens/recipes/utilities beat WebTUI on any conflict, and the
   unlayered `!important` effects freeze always wins (WebTUI ships no `!important`
   animation/transition declarations; the spike test asserts that stays true).
-- **Relative node_modules paths are deliberate** (L10-L11): Vite 8's bundled postcss-import does
+- **Relative node_modules paths are deliberate** cit:(["postcss-import"], dashboard/src/styles/webtui.css:10-10): Vite 8's bundled postcss-import does
   not resolve bare package specifiers inside CSS `@import`, and a JS-side import could not carry
   `layer(webtui)`.
-- The `@layer webtui` block (L17-L43): `[data-view="sessions"]` maps
+- The `@layer webtui` block cit:(["[data-view=\"sessions\"]"], dashboard/src/styles/webtui.css:22-34) maps
   `--background0/1/2/3`, `--foreground0/1/2`, `--box-border-color`, `--font-family` (+
   `--font-size`, `--line-height`) onto `var(--bg)/var(--bg-panel)/var(--grid)/var(--ink)/
   var(--muted)/var(--font-mono)` — `color-mix(in oklch, …)` only ever blends token vars; the
   session-surface spec §2.1 roles table is this mapping's semantic contract. These direct-in-layer
   rules outrank the imports' nested `webtui.base` defaults.
-- The scoped `:focus-visible` restore (L39-L42): WebTUI's base resets `* { outline: none }`
+- The scoped `:focus-visible` restore cit:([":focus-visible"], dashboard/src/styles/webtui.css:39-39): WebTUI's base resets `* { outline: none }`
   inside the scope; this rule restores a visible amber ring for anything a higher layer does not
   style — Panda's `_focusVisible` rules (utilities layer) still win, so React Aria focus styling
   is untouched (spike assertion d).
@@ -66,17 +66,19 @@ transform leaves them alone.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The layer-order statement that slots `webtui` between effects and tokens. | L6 | [../index.css](../index.css) |
-| The token vars the mapping references (incl. the L1-added `--muted`). | — | [tokens.css](tokens.css) |
-| The shared scoping options (prefix, includeFiles, the :root/html/body collapse transform). | — | [webtui-scope.config.cjs](../../../webtui-scope.config.cjs) |
-| The build wiring: Panda first, then the prefixer over the inlined imports. | — | [postcss.config.cjs](../../../postcss.config.cjs) |
-| The four automated spike assertions + exact-pin checks that keep this contract honest. | L61-L182 | [../test/webtuiSpike.test.ts](../test/webtuiSpike.test.ts) |
-| The scope-root carrier. | L358-L363 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
+| The layer-order statement that slots `webtui` between effects and tokens. | "@layer reset, base, effects, webtui, tokens, recipes, utilities;" | dashboard/src/index.css:9-9 |
+| The token vars the mapping references (incl. the L1-added `--muted`). | "--muted" | dashboard/src/styles/tokens.css:13-13 |
+| The shared scoping options (prefix, includeFiles, the :root/html/body collapse transform). | `webtuiPrefixOptions` | dashboard/webtui-scope.config.cjs:26-30 |
+| The build wiring: Panda first, then the prefixer over the inlined imports. | "Panda first", "postcss-import", "postcss-prefix-selector': webtuiPrefixOptions" | dashboard/postcss.config.cjs:1-4; dashboard/postcss.config.cjs:8-11 |
+| The four automated spike assertions + exact-pin checks that keep this contract honest. | "S1 spike (a): every WebTUI rule is confined to the cockpit root", "S1 spike (b): one color system — WebTUI vars map onto podracer tokens", "S1 spike (c): the html[data-effects=off] determinism freeze still wins", "S1 spike (d): layer order + focus-visible survival (React Aria intact)", "S1 spike: exact version pins (0.x churn ruling)" | dashboard/src/test/webtuiSpike.test.ts:61-96; dashboard/src/test/webtuiSpike.test.ts:98-129; dashboard/src/test/webtuiSpike.test.ts:131-154; dashboard/src/test/webtuiSpike.test.ts:156-172; dashboard/src/test/webtuiSpike.test.ts:174-182 |
+| The scope-root carrier. | "sessions" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1030-1035 |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 14 citations (citation_anchor_missing=5, citation_prose_not_in_cit_form=4, citation_source_malformed=5); amended max-reviewer subject binding for layer and plugin ordering; final scoped citation check clean.
+- 2026-08-02T01:42+02:00 — No content impact: corrected Source Path link depth. The link(s) in this document carried one `../` too many and had never resolved from this card's directory — not code moving out from under a citation, the path as written. Enumerating every depth in both trees leaves exactly one that resolves and it is exactly one level shallower, so there was nothing to judge (`memory_quality/style/citations`, `citation_link_depth_wrong`). No claim, range or target document changed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S1 (R2, OQ-D = adopt): the one WebTUI
   mapping file — four dist imports into `layer(webtui)` via relative node_modules paths (Vite 8
   postcss-import limitation), the `[data-view="sessions"]` token mapping (color-mix over token

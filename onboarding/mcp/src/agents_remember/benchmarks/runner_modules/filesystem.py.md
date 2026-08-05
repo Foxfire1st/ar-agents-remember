@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -46,17 +46,23 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | [runner_modules overview](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/overview.md) |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.filesystem import *" | mcp/src/agents_remember/benchmarks/runner.py:18-18 |
+| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support.py:1541-1554 |
 
 ## Cross-Repo References
 
 No configured sibling repository is required for this module.
 
 ## Update History
+
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 1 citation finding:
+  `test_changed_worktree_paths_includes_long_files` moved to `test_worktree_support.py:1541-1554`.
+  Scoped recheck clean.
+
+- 2026-08-02T21:02:09+02:00 — 260731-EFA-L6 curator W2-B10: repaired 6 citation findings (3 reference rows); scoped recheck clean.
 
 - 2026-05-31T12:50+02:00 — `removable_path` stopped inlining the Windows `\\?\` long-path logic and now delegates to the shared `long_path` helper (imported from `agents_remember.install.assets`); corrected Logic prose to drop "across platforms" ownership and note the delegation (1.0.0 review remediation).
 - 2026-05-28T12:32+02:00: Updated after benchmark workspace scaffolding moved MCP/provider logs under the central `logs/` tree.

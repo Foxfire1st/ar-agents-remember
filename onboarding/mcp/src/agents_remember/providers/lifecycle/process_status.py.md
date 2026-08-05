@@ -36,12 +36,16 @@ liveness, reads `/proc/<pid>/cmdline`, or resolves provider venv Python paths.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| CGC process lifecycle uses namespace gates, liveness checks, and command-line inspection. | [process.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process.py) |
-| Aggregate watcher lifecycle reports namespace durability before starting enabled providers. | [watchers.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/watchers.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| CGC process lifecycle uses namespace gates, liveness checks, and command-line inspection. | `cgc_start_watch_process` | mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:89-101 |
+| Aggregate watcher lifecycle reports namespace durability before starting enabled providers. | `require_durable_watcher_namespace` | mcp/src/agents_remember/providers/lifecycle/watchers.py:208-210 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the two `n/a`-anchor
+  table citations with exact anchors (rebinding the CGC process row to the renamed
+  `process_control.py`); exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/lifecycle/process_status.py` since the L2 base commit is the

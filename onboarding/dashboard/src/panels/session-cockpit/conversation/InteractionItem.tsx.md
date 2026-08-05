@@ -27,14 +27,14 @@ approval request) badges WHO is asking, from the bound evidence only.
 
 ### Logic
 
-- The wrap sets `aria-live="off"` (L75) so the historical record never competes with the live gate
+- cit:([`InteractionItem`], dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101) — The wrap sets `aria-live="off"` so the historical record never competes with the live gate
   channel for announcements.
-- **Agent badge (R7)** (L76-L83): the `interaction` label now sits in a `labelRow`
+- cit:([`InteractionItem`], dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101) — **Agent badge (R7)**: the `interaction` label now sits in a `labelRow`
   flex; when `item.agent != null`, a cyan uppercase `interaction-agent-badge` renders
-  `agentLabel(item.agent)` beside it (badge styling L23-L34). A parent-conversation interaction stays
+  `agentLabel(item.agent)` beside it (badge styling). A parent-conversation interaction stays
   unbadged — the badge is bound evidence, never an invented attribution.
-- `phaseText` (L40-L52) maps the item phase to `waiting for answer` / `answered` / `failed`.
-- `ChoicesBlock` (L54-L71) renders a `choices` block's options as a marked list (`label — description`);
+- cit:([`phaseText`], dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:40-52) maps the item phase to `waiting for answer` / `answered` / `failed`.
+- cit:([`ChoicesBlock`], dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:54-71) renders a `choices` block's options as a marked list (`label — description`);
   `markdown`/`text` blocks flow through `MarkdownBlock`.
 
 ### Invariants And Boundaries
@@ -53,31 +53,33 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The item/`choices`-block types this component narrows over (incl. the `item.agent` ref). | L9 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The `agentLabel` precedence (nickname → role → agentPath tail → `agent <first8>`) the badge prints. | L8 | [../../../data/conversation/agents.ts](../../../data/conversation/agents.ts) |
-| Streaming-safe Markdown renderer used for the prompt body. | L10, L87-L91 | [MarkdownBlock.tsx](MarkdownBlock.tsx) |
-| The LIVE gate-channel interaction authority this timeline copy defers to. | — | [../InteractionBar.tsx](../InteractionBar.tsx) |
-| The kind dispatcher that routes interaction items here. | — | [ConversationItemView.tsx](ConversationItemView.tsx) |
-| The badge present/absent pinning suite. | — | [InteractionItem.test.tsx](InteractionItem.test.tsx) |
+| The item/`choices`-block types this component narrows over (incl. the `item.agent` ref). | `choices` | dashboard/src/data/conversation/types.ts:95-95 |
+| The `agentLabel` precedence (nickname → role → agentPath tail → `agent <first8>`) the badge prints. | `agentLabel` | dashboard/src/data/conversation/agents.ts:30-38 |
+| Streaming-safe Markdown renderer used for the prompt body. | `MarkdownBlock` | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
+| The LIVE gate-channel interaction authority this timeline copy defers to. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:242-281 |
+| The kind dispatcher that routes interaction items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
+| The badge present/absent pinning suite. | "badges the asking agent's label when the item carries an agent ref" | dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx:32-39 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 10 citation findings; scoped check passed.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the R7 asking-agent badge — an item
   carrying an agent ref renders `agentLabel(item.agent)` in a cyan uppercase

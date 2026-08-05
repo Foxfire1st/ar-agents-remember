@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_markdown_settings.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -70,14 +70,16 @@ module runs under `unittest.main()`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The parser under test exposes `parse_settings_block`. | [markdown_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py) |
-| Returned `StorageSettings`, `StorageRule`, and `CrossRepoSettings` shapes are defined here. | [models.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/models.py) |
-| Topology-derived default modes come from `default_storage_mode`. | [paths.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/paths.py) |
-| The legacy "expectedBranch is required" cross-repo error originates here. | [markdown_cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The parser under test exposes `parse_settings_block`. | `parse_settings_block` | mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py:34-38 |
+| Returned `StorageSettings`, `StorageRule`, and `CrossRepoSettings` shapes are defined here. | `StorageSettings`; `StorageRule`; `CrossRepoSettings` | mcp/src/agents_remember/kernel/coordination_context/models.py:33-39; mcp/src/agents_remember/kernel/coordination_context/models.py:42-46; mcp/src/agents_remember/kernel/coordination_context/models.py:61-64 |
+| Topology-derived default modes come from `default_storage_mode`. | `default_storage_mode` | mcp/src/agents_remember/kernel/coordination_context/paths.py:62-63 |
+| The legacy "expectedBranch is required" cross-repo error originates here. | "expectedBranch is required" | mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py:7-7 |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation anchors in 1 reference claim; scoped recheck clean (0 findings).
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_markdown_settings.py` since the L2 base commit is the whole-tree `ruff format`

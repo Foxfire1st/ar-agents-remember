@@ -43,26 +43,29 @@ None recorded.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Visibility, persistence, mark-seen, focus, and collapse cases. | L33-L74 | [SetOutcomeToasts.test.tsx](SetOutcomeToasts.test.tsx) |
-| Component under test. | L58-L142 | [SetOutcomeToasts.tsx](SetOutcomeToasts.tsx) |
+| Visibility, persistence, mark-seen, focus, and collapse cases. | "renders nothing without unacknowledged outcomes" | dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx:34-44 |
+| Component under test. | "export function SetOutcomeToasts" | dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx:58-58 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-17T23:54+02:00 — 260715-FEUI-L7 updated the regression contract to the explicit
   `mark seen` wording while preserving focus/view as non-acknowledging. Verification metadata

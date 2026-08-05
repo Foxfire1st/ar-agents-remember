@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -64,17 +64,19 @@ state before the next AR tool call resumes the lifecycle to `running`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The singleton driven here, plus `require_ambient`/`build_ask`. | [observer/ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The `coerce_phase` boundary validator. | [observer/lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The choke point each builder returns through. | [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| Source of `FRONT_HALF_RUNDOWN`, emitted as `frontHalfRundown` by `lifecycle_start_payload`. | [next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| The response models these payloads validate against. | [models/lifecycle.py](agents-remember/mcp/src/agents_remember/models/lifecycle.py) |
-| Where these lifecycle signal tools (now including `lifecycle_turn_end_notification`) are declared — `register_lifecycle_tools`, which takes the config unused because these payloads act on the ambient lifecycle. | [registration/lifecycle.py](agents-remember/mcp/src/agents_remember/mcp/registration/lifecycle.py) |
-| The design's signal surface (§1.3). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The singleton these builders drive through `application/lifecycle_tools`, plus `require_ambient`/`build_ask`. | `require_ambient`; `build_ask` | mcp/src/agents_remember/observer/ambient.py:597-600; mcp/src/agents_remember/observer/ambient.py:633-639; mcp/src/agents_remember/application/lifecycle_tools.py:3-16 |
+| The `coerce_phase` boundary validator. | `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:180-184 |
+| The choke point each builder returns through. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| Source of `FRONT_HALF_RUNDOWN`, emitted as `frontHalfRundown` on `lifecycle_start`. | `FRONT_HALF_RUNDOWN` | mcp/src/agents_remember/application/next_step.py:57-69; mcp/src/agents_remember/application/lifecycle_tools.py:41-41 |
+| The response models these payloads validate against. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycle.py:17-22 |
+| Where these lifecycle signal tools (now including `lifecycle_turn_end_notification`) are declared — `register_lifecycle_tools`, which takes the config unused because these payloads act on the ambient lifecycle. | `register_lifecycle_tools` | mcp/src/agents_remember/mcp/registration/lifecycle.py:18-59 |
+| The design's signal surface (§1.3). | `### 1.3 Signals (the complete model-facing surface)` | docs/design/observable-lifecycle.md:71-88 |
 
 ## Update History
+
+- 2026-08-04T18:13+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 6 citation rows with exact anchors and ledger-verified ranges; re-pointed the FRONT_HALF_RUNDOWN citation from the removed `mcp/tools/next_step.py` to `application/next_step.py` plus its emission site in `application/lifecycle_tools.py`, narrowed the singleton claim to the application-layer delegation, and cited the §1.3 design heading at its exact level. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: `lifecycle.py` itself is unchanged by this leaf,
   but its reference row pointed at `server.py` for where these six signals are registered; they are

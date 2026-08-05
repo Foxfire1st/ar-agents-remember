@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_plane.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,26 +77,26 @@ None.
 No Domain Documentation source is configured. The repository sources under test are the direct
 evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The bridge epoch-guarded interrupt dispatch and timeline delegation under test. | L268-L317 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The authority's paged ledger enumeration, recovery capture, and asset channel under test. | L436-L485; L515-L531; L1053-L1073 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The codex/pi interrupt and asset implementations under fake-transport test. | L291-L357 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py); [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) L393-L477 |
-| The IPC asset admission and the two additive actions exercised over a real socket. | L212-L215; L252-L325; L449-L490 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The strict client validators exercised by the validation battery. | L667-L790 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The installed-runtime companion that captures the same seams live into the redacted fixtures. | L126-L364 | [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
+| The bridge epoch-guarded interrupt dispatch and timeline delegation under test. | "class HarnessControlBridge" | mcp/src/agents_remember/serving/harness_control_bridge.py:77-77 |
+| The authority's paged ledger enumeration, recovery capture, and asset channel under test. | "class HarnessSubmissionAuthority" | mcp/src/agents_remember/serving/harness_submission_authority.py:116-116 |
+| The codex/pi interrupt and asset implementations under fake-transport test. | "class CodexAppServerAdapter", "class PiRpcAdapter" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-91; mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-94 |
+| The IPC asset admission and the two additive actions exercised over a real socket. | "class HarnessControlServer" | mcp/src/agents_remember/serving/harness_control_ipc.py:99-99 |
+| The strict client validators exercised by the validation battery. | "class ControlledSession" | mcp/src/agents_remember/serving/harness_control_client.py:91-91 |
+| The installed-runtime companion that captures the same seams live into the redacted fixtures. | `CodexInstalledControlPlaneTests` | mcp/tests/test_harness_control_plane_installed.py:124-266 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this contract suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -113,6 +113,9 @@ action is refused **by name** and the bridge **keeps serving**. An unknown verb 
 take the control plane down, and the refusal has to say which verb it was.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 

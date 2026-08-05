@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/primitives.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34` |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,14 +25,14 @@ introduced.
 
 ### Logic
 
-- `ClampButton` (L38-L68): the ONLY expand/collapse control for a clamped message/tool/diff. It is a real
+- cit:([`ClampButton`], dashboard/src/panels/session-cockpit/conversation/primitives.tsx:38-68): the ONLY expand/collapse control for a clamped message/tool/diff. It is a real
   `<button>` with `aria-expanded`/`aria-controls`, and it shows an exact `show more (+N lines)` ONLY
   when a logical source-line count is known (`hiddenLines > 0`); otherwise plain `show more`/`show
   less`. `noun` defaults to `lines`. **FB7.4/A8/V12 (260718-CHATS-L5P):** the labels are now LOWERCASE
   (`show more`/`show less`, was `Show …`) and the control is a de-boxed underline text affordance
   (`clampButton`, L16-L31, dropped the border/padding chip for `textDecoration: underline` +
   `whiteSpace: nowrap`) — it never wraps its own label and matches the well's chip grammar.
-- `sourceLineCount` (L71-L74): counts logical source lines (`split("\n").length`) — the honest basis for
+- cit:([`sourceLineCount`], dashboard/src/panels/session-cockpit/conversation/primitives.tsx:71-74): counts logical source lines (`split("\n").length`) — the honest basis for
   an exact clamp count, never visual wrapping/pixels.
 - `SourceBadge` / `sourceBadgeLabel` (L92/L108): a terse source/lane badge shown ONLY when origin
   changes interpretation (§13) — `agent bus` (agent-bus lane / durable-inbox source), `native replay`,
@@ -46,13 +46,13 @@ introduced.
   `primitives.test.tsx` (visible = state word; `title` = full reason incl. optional `label:` prefix;
   supported = nothing). This replaced the prior always-visible `state: reason` paragraph, which was an
   implementation-jargon wall above every codex conversation (A3).
-- `useClampIds` (L161-L164): a stable `useId`-based `{buttonId, regionId}` pair binding a clamp button to
+- cit:([`useClampIds`], dashboard/src/panels/session-cockpit/conversation/primitives.tsx:161-164): a stable `useId`-based `{buttonId, regionId}` pair binding a clamp button to
   its controlled region.
 
 ### Invariants And Boundaries
 
 - An exact `+N lines` count is emitted only from a known logical source-line delta; a clamp with an
-  unknown count degrades to plain `Show more` rather than lying (F12/§14.2).
+  unknown count degrades to plain `show more` rather than lying (F12/§14.2).
 - A badge appears only when the source changes how the content should be read; the common case is
   deliberately unbadged (no chip noise).
 - `CapabilityReason` shows only the one-word state as the visible cue and carries the SERVER's exact
@@ -65,30 +65,37 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane/source/capability types these primitives narrow over. | L8-L12 | [../../../data/conversation/types.ts](../../../data/conversation/types.ts) |
-| The clamp/badge consumers across the grammar. | — | [MessageItem.tsx](MessageItem.tsx) · [ToolItem.tsx](ToolItem.tsx) · [DiffBlock.tsx](DiffBlock.tsx) |
-| The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness. | — | [ConversationSurface.tsx](ConversationSurface.tsx) |
-| The renderer suite asserting the real clamp button + source badge. | — | [renderer.test.tsx](renderer.test.tsx) |
-| The R11 progressive-disclosure cue unit pins (visible state word, full reason in `title`, supported = nothing). | — | [primitives.test.tsx](primitives.test.tsx) |
+| The lane/source/capability types these primitives narrow over. | `ConversationLane`; `ConversationSource`; `ConversationCapabilities` | dashboard/src/data/conversation/types.ts:29-36; dashboard/src/data/conversation/types.ts:38-46; dashboard/src/data/conversation/types.ts:253-283 |
+| The clamp/badge consumer in the message grammar. | `MessageItem` | dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156 |
+| The clamp/badge consumer in the tool grammar. | `ToolItem` | dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx:87-118 |
+| The clamp/badge consumer in the diff grammar. | `DiffBlock` | dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:35-79 |
+| The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The renderer suite asserting the real clamp button + source badge. | "ConversationTimeline — one navigable role=feed (R5, §14.2)" | dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:33-68 |
+| The R11 progressive-disclosure cue unit pins (visible state word, full reason in `title`, supported = nothing). | "CapabilityReason — R11 progressive disclosure cue" | dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:19-47 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
+- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: corrected the invariant's label casing to the source-owned lowercase `show more` grammar.
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 7 citation anchors across the 5 assigned reference claims; scoped recheck clean (0 findings).
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, each now a full
   span over its construct instead of a single line that had drifted off it. `ClampButton` L37 → the

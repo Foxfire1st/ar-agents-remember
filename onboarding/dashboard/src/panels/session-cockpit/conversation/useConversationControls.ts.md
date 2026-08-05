@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,19 +32,19 @@ turn-id correlation, and the never-surface-the-stale-L1-reason discipline.
   correlates from the newest streaming/pending item's `turnId` (falling back to the newest item that
   carries one — codex `native_parent_id`; pi the AR operation id per ruling 3). Returns `null` only when
   genuinely unresolvable.
-- **`useConversationInterrupt`** (L88-L170): resolves `turnId`, `turnState`, and `capability` from the
+- **`useConversationInterrupt`** (cit:([`useConversationInterrupt`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170)): resolves `turnId`, `turnState`, and `capability` from the
   projection. `keyshortcut` (L92-L97, F25) is DERIVED from the effective keymap —
   `ariaKeyshortcuts(bindingFor(useEffectiveKeymap(), "conversation.stop")?.chord ?? DEFAULT_STOP_CHORD)`
   — so a rebind through `cockpit.sessions.keymap.v1` keeps the AT advertisement truthful, never a
   hardcoded constant.
-- **Dispatch** (L134-L144): `onStop` uses a per-turn requestId (`requestIdByTurn`); the FIRST dispatch is
+- **Dispatch** (cit:([`useConversationInterrupt`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170)): `onStop` uses a per-turn requestId (`requestIdByTurn`); the FIRST dispatch is
   `requestInterrupt`, a later one is `interruptReconcile` under the SAME id (never a fresh id). `applyResult`
-  (L115-L132) announces ack (`interrupt <acknowledgement>`) and, separately, settlement (`turn <settlement>`)
+  (cit:([`applyResult`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:115-132)) announces ack (`interrupt <acknowledgement>`) and, separately, settlement (`turn <settlement>`)
   — ack is never voiced as interrupted; `pending` tracks in-flight.
-- **Availability + honest reason** (L146-L169): `available = working && turnId !== null && !hardUnavailable
+- **Availability + honest reason** (cit:([`useConversationInterrupt`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170)): `available = working && turnId !== null && !hardUnavailable
   && !refusedThisTurn`. Reason copy is ONLY the honest, current signal — an enabled control carries NO
   reason (F24); a hard `unavailable` capability shows its reason; a typed refusal (scoped to its turn,
-  L99/L119/L127, F5) shows the exact server detail until the turn changes; an unresolvable working turn
+  F5) shows the exact server detail until the turn changes; an unresolvable working turn
   shows `turn identity unavailable on this wire` (never the stale L1 text).
 
 ### Conventions
@@ -73,32 +73,39 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Turn-id correlation, attempt-and-reflect gating, honest reason, ack≠settlement announcing. | L61-L170 | [useConversationControls.ts](useConversationControls.ts) |
-| The interrupt request/status/reconcile client + typed `ControlResult` (a refusal never guessed into success). | — | [../../../data/conversation/client.ts](../../../data/conversation/client.ts) |
-| The projection this hook reads (`status.turn.turnId`, item `turnId`, `capabilities.controls`). | — | [../../../data/conversation/reducer.ts](../../../data/conversation/reducer.ts) · [../../../data/conversation/store.ts](../../../data/conversation/store.ts) |
-| The `ariaKeyshortcuts` helper + `conversation.stop` binding lookup (F25). | — | [../../../data/keymap/preferences.ts](../../../data/keymap/preferences.ts) |
-| The shared polite announcer for ack/settlement transitions. | — | [../../../data/announcer.ts](../../../data/announcer.ts) |
-| The WorkingLine host that renders the enabled/disabled stop from this hook. | — | [../WorkingLine.tsx](../WorkingLine.tsx) |
-| The interrupt hook suite (enable/unresolvable/refusal regression). | — | [useConversationControls.test.tsx](useConversationControls.test.tsx) |
+| Turn-id correlation, attempt-and-reflect gating, honest reason, ack≠settlement announcing. | `resolveWorkingTurnId`; `useConversationInterrupt` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78; dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170 |
+| The interrupt request/status/reconcile client + typed `ControlResult` (a refusal never guessed into success). | `ControlResult` | dashboard/src/data/conversation/client.ts:211-213 |
+| The projection type this hook reads (`status.turn.turnId`, item `turnId`, `capabilities.controls`). | `ActiveConversationProjection` | dashboard/src/data/conversation/reducer.ts:42-66 |
+| The active conversation store this hook reads. | `activeConversationStore` | dashboard/src/data/conversation/store.ts:84-191 |
+| The `ariaKeyshortcuts` helper + `conversation.stop` binding lookup (F25). | `ariaKeyshortcuts` | dashboard/src/data/keymap/preferences.ts:267-280 |
+| The shared polite announcer for ack/settlement transitions. | `announcePolite` | dashboard/src/data/announcer.ts:33-35 |
+| The WorkingLine host that renders the enabled/disabled stop from this hook. | `WorkingLine` | dashboard/src/panels/session-cockpit/WorkingLine.tsx:98-178 |
+| The interrupt hook suite (enable/unresolvable/refusal regression). | "useConversationInterrupt (F1 enable / F5 honest reasons)" | dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx:85-170 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: rebased the `ControlResult` range;
+  exact non-fixing check returns zero findings.
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 7 citation claims
+  (4 Logic citations and 3 Repo-Internal reference rows); scoped result 0 findings.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the exact-turn interrupt
   hook — `resolveWorkingTurnId` item-evidence correlation (F1/L4.R1), attempt-and-reflect capability

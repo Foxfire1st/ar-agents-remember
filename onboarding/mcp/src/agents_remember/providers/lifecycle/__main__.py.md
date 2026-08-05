@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/__main__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,10 +33,12 @@ that command's return code.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The lifecycle CLI parser and main function live in `cli.py`. | [cli.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/cli.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lifecycle CLI parser and main function live in `cli.py`. | `build_parser`; `main` | mcp/src/agents_remember/providers/lifecycle/cli.py:172-267; mcp/src/agents_remember/providers/lifecycle/cli.py:344-359 |
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 1 citation item; scoped citation check now passes.
 
 - 2026-05-25T21:14+02:00: Created when `providers.lifecycle` became a package facade.

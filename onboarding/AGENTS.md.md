@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -162,9 +162,9 @@ Refresh verification metadata after this `AGENTS.md` source update is committed.
 No external domain documentation is needed to prove this repository-local agent
 contract.
 
-| Finding                                                                                           | Citations | Source Path |
-| ------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| No relevant external documentation found; same-repository workflow files are the direct evidence. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found; same-repository workflow files are the direct evidence. | n/a | n/a |
 
 ## Repo-Internal References
 
@@ -172,30 +172,32 @@ The active repo behavior depends on the source-checkout scope, installed-runtime
 handoff, workflow routing, resolver gate, and source-layout boundaries in this
 file.
 
-| Finding                                                                                                                                        | Citations | Source Path                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`.       | L1-L14    | [AGENTS.md](agents-remember/AGENTS.md) |
-| The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | L16-L40 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | L51-L89 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | L122-L137 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | L101-L127; L124-L131 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | L106-L118; L128-L129 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Code-quality routing names `python -m agents_remember.code_quality.check` as the gate, states that it takes no path arguments because its scope is `git ls-files '*.py'`, lists four enforcing steps plus mandatory CRAP, states that nothing in the gate is exempt and no baseline or allowlist may be added, tells agents how to clear a complexity finding by extraction, states that Radon reports and cannot fail a gate while remaining CRAP's complexity engine, and requires the Stability/Reclamation doctrine before store, loop-over-store, queue, or append-only-log changes. | L148-L198 | [AGENTS.md](agents-remember/AGENTS.md) |
-| Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | L109-L113; L135-L138 | [AGENTS.md](agents-remember/AGENTS.md) |
-| The gate command this file names, with the enforcing/report split it describes — and the `diff-coverage` step this file omits. | n/a | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| The binding coverage floor `AGENTS.md` does not mention; `CONTRIBUTING.md` is the document that does. | n/a | [diff_coverage.py](agents-remember/mcp/src/agents_remember/code_quality/diff_coverage.py) |
-| The report template this file says must record Radon rows as `reported`. | n/a | [code-quality-report-template.md](agents-remember/system/defaults/examples/memory-repo/code-quality-report-template.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-200 |
+| The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | `## Start Here — Route By Role` | AGENTS.md:16-50 |
+| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | `## Memory And Onboarding` | AGENTS.md:51-100 |
+| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:127-147 |
+| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:101-126 |
+| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:101-126 |
+| Code-quality routing names `python -m agents_remember.code_quality.check` as the gate, states that it takes no path arguments because its scope is `git ls-files '*.py'`, lists four enforcing steps plus mandatory CRAP, states that nothing in the gate is exempt and no baseline or allowlist may be added, tells agents how to clear a complexity finding by extraction, states that Radon reports and cannot fail a gate while remaining CRAP's complexity engine, and requires the Stability/Reclamation doctrine before store, loop-over-store, queue, or append-only-log changes. | `## Code Quality Instructions` | AGENTS.md:148-200 |
+| Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:101-126 |
+| The gate command this file names, with the enforcing/report split it describes — and the `diff-coverage` step this file omits. | `run_quality_check`; `run_diff_coverage` | mcp/src/agents_remember/code_quality/check.py:220-248; mcp/src/agents_remember/code_quality/check.py:396-439 |
+| The binding coverage floor `AGENTS.md` does not mention; `CONTRIBUTING.md` is the document that does. | `DiffCoverage`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:56-77; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
+| The report template this file says must record Radon rows as `reported`. | `## Tool Results` | system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
 
 ## Cross-Repo References
 
 The workspace root may include this file as a pointer, but this file now
 delegates sibling-repository work to the installed runtime instructions.
 
-| Finding                                                                                                   | Citations | Source Path |
-| --------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:46+02:00 — 260731-EFA-L6 curator W1-B03: repaired 11 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired this card's mid-leaf claim
   that `AGENTS.md` documents a shrink-only complexity baseline and five enforcing steps.**

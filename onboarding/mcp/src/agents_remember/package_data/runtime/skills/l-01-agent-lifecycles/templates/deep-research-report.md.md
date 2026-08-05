@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T16:20+02:00 |
-| lastVerifiedCommitHash |                                            `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`|
-| lastVerifiedCommitDate |                                            2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
 
 ## Purpose
 
@@ -35,7 +35,7 @@ No current todo is recorded for this deep research report template.
 
 No external domain documentation applies to this repository-local lifecycle report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
@@ -43,10 +43,10 @@ No external domain documentation applies to this repository-local lifecycle repo
 
 The template is a companion to the lifecycle entry contract and the detailed spine.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from. | L376-L383 | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | L12-L123 | [deep-research-report.md](deep-research-report.md) |
+| The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from. | `## Companion Files` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:372-387 |
+| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | `# Deep Research Report Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md:1-123 |
 
 As of cycle 4 the decision block asks for the suggested artifact shape (minimal w-02 task vs master + series) instead of the retired 'build mode' axis.
 
@@ -54,11 +54,13 @@ As of cycle 4 the decision block asks for the suggested artifact shape (minimal 
 
 No sibling repository evidence is needed for this lifecycle report template.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (4 findings); no Tier-3 findings.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 citations and DELETED 1 whose material
   is gone, after the `l-01-session-job-lifecycle` skill was renamed to `l-01-agent-lifecycles` and

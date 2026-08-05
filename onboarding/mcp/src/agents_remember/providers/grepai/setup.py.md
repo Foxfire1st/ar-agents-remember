@@ -40,12 +40,14 @@ phases (`grepai install`, `grepai clone-db`) through
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The setup facade calls this module during install and prepare. | [provider_setup.py](provider_setup.py.md) |
-| Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules. | [core.py](lifecycle/core.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The setup facade calls this module during install and prepare. | `install_enabled_provider` | mcp/src/agents_remember/providers/provider_setup.py:210-230 |
+| Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules. | "Docker-owned" | onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/core.py.md:17-20 |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 2 citation rows: the facade-call row now cites the calling code (providers/provider_setup.py L210-L230, `install_enabled_provider`) and the lifecycle-modules row cites the core.py.md card L17-L20. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `run_lifecycle`'s new
   `LifecycleCommand` signature. Same argv, same results. Verification metadata pinned until

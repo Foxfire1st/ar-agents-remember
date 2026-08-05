@@ -35,11 +35,11 @@ proves no next cycle begins while the prior list/file requests remain pending.
 - **task scope** — renders `<ChangeSetViewer repo scope onBack/>`, awaits `changeset-counters`, and
   asserts the changed code + onboarding rows render, the counters contain `+3`, and the no-file empty
   state prompts "Select a changed file" — now asserted via `container.textContent` (the prompt comes
-  from the siege-tank `EmptyStateBackdrop`, not a bare `pane-placeholder`). (L44-L60)
-- **back link** — clicking `changeset-back` calls `onBack` once. (L122-L130)
+  from the siege-tank `EmptyStateBackdrop`, not a bare `pane-placeholder`). cit:(["renders the changed-file rows + counters for a task scope"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:107-120)
+- **back link** — clicking `changeset-back` calls `onBack` once. cit:(["calls onBack when the back link is clicked"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130)
 - **master mode** — `<ChangeSetViewer repo master onBack/>` now renders **clickable** rows; before a
   pick it shows the same empty-state prompt (asserted via `container.textContent`), and clicking a row
-  opens a diff (`ChangeSetPane` is mocked so CodeMirror stays out of jsdom). (L262-L278)
+  opens a diff (`ChangeSetPane` is mocked so CodeMirror stays out of jsdom). cit:(["opens a per-file NET diff from a clickable row in master mode"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278)
 - **leaf mode** (L4a) — `<ChangeSetViewer repo master leaf mode="committed"/>` loads via the `task` route
   (the stub returns `TASK_CHANGESET`), labels the header `committed · <leaf>`, and is per-file inspectable
   (a row click opens the diff pane); a `mode="working"` case asserts the `working · <leaf> · uncommitted`
@@ -50,9 +50,9 @@ proves no next cycle begins while the prior list/file requests remain pending.
   1 each (the interval is gated off).
 - **DetailPanel entry** — over the `full` gallery projection, a lifecycle selection renders an
   `open-changeset` button whose click calls `onOpenChangeSet` with the series target `{ repo, master }`
-  (the fixture has no `activeWorktreeGroups`, so only the series button shows). (L282-L293)
+  (the fixture has no `activeWorktreeGroups`, so only the series button shows). cit:(["renders a series change-set button for an enclosure-backed lifecycle and opens the target"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:282-293)
 - **Cockpit takeover** — `<CockpitShell/>` shows no `changeset-viewer` initially and keeps the
-  `rail--left` + `data-fullbleed="false"`. (L99-L108)
+  `rail--left` + `data-fullbleed="false"`. cit:(["does not show the takeover initially and keeps the Operations rails"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:297-304)
 
 ### Invariants And Boundaries
 
@@ -64,15 +64,17 @@ design).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| URL-aware `fetch` stub for the change-set endpoints. | L24-L42 | [ChangeSetViewer.test.tsx](ChangeSetViewer.test.tsx) |
-| Screen rows + counters + empty-state prompt (matched on `container.textContent`); master-mode clickable row opens a diff. | L44-L81 | [ChangeSetViewer.test.tsx](ChangeSetViewer.test.tsx) |
-| DetailPanel button calls `onOpenChangeSet` with the series target. | L84-L97 | [ChangeSetViewer.test.tsx](ChangeSetViewer.test.tsx) |
-| Cockpit shows no takeover initially and keeps the rails. | L99-L108 | [ChangeSetViewer.test.tsx](ChangeSetViewer.test.tsx) |
-| Subject under test: the screen. | L144-L293 | [ChangeSetViewer.tsx](ChangeSetViewer.tsx) |
+| URL-aware `fetch` stub for the change-set endpoints. | `fetch` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:24-42 |
+| Screen rows + counters + empty-state prompt (matched on `container.textContent`); master-mode clickable row opens a diff. | "renders the changed-file rows + counters for a task scope"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:107-120; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
+| DetailPanel button calls `onOpenChangeSet` with the series target. | `onOpenChangeSet` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:285-285 |
+| Cockpit shows no takeover initially and keeps the rails. | "does not show the takeover initially and keeps the Operations rails" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:297-304 |
+| Subject under test: the screen. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:156-365 |
 
 ## Update History
+
+- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 11 citation finding(s); scoped recheck clean.
 
 - 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the
   loading/error and non-overlapping-refresh cases were inserted ahead of them. The back-link case

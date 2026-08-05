@@ -25,12 +25,13 @@ mapped to a thrown `FilesApiError` carrying the server status code.
 ### Logic
 
 - `stubFetch(payload, ok, status)` installs a `vi.fn` `fetch` returning a minimal `Response`-shaped
-  object (`ok`, `status`, `statusText`, async `json`); `afterEach` unstubs all globals. (L23-L31)
+  object (`ok`, `status`, `statusText`, async `json`); `afterEach` unstubs all globals.
+  (cit:([`stubFetch`], dashboard/src/data/files.test.ts:23-29))
 - The first case calls all five helpers once and asserts the recorded URLs: bare `/api/files/repos`,
   the `list` / `read` query strings (note the `%2F`-encoded `path`), and `direction=forward` /
-  `direction=reverse` for the two onboarding calls. (L16-L29)
+  `direction=reverse` for the two onboarding calls. (cit:(["direction=forward"], dashboard/src/data/files.test.ts:34-47))
 - The second case stubs a 400 `{status: "bad-path"}` response and asserts `listDir` rejects with a
-  `FilesApiError` instance. (L49-L52)
+  `FilesApiError` instance. (cit:([`FilesApiError`], dashboard/src/data/files.test.ts:49-52))
 
 ### Invariants And Boundaries
 
@@ -51,30 +52,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Stubs `fetch` and unstubs globals after each test. | L23-L31 | [files.test.ts](files.test.ts) |
-| Asserts the catalog / list / read / onboarding URLs (including `%2F` path encoding and `direction`). | L16-L29 | [files.test.ts](files.test.ts) |
-| Asserts a non-ok response throws `FilesApiError`. | L49-L52 | [files.test.ts](files.test.ts) |
-| Subject under test: the helpers, result types, and `FilesApiError` mapping pinned here. | L72-L124 | [files.ts](files.ts) |
-| Contract counterpart: the serving layer emits the 404/400 status codes this test stubs. | L207-L227 | [serving/scope.py](agents-remember/mcp/src/agents_remember/serving/scope.py) |
+| Stubs `fetch` and unstubs globals after each test. | `fetch` | dashboard/src/data/files.test.ts:23-31 |
+| Asserts the catalog / list / read / onboarding URLs (including `%2F` path encoding and `direction`). | `direction` | dashboard/src/data/files.test.ts:45-46 |
+| Asserts a non-ok response throws `FilesApiError`. | `FilesApiError` | dashboard/src/data/files.test.ts:49-52 |
+| Subject under test: the helpers, result types, and `FilesApiError` mapping pinned here. | `FilesApiError` | dashboard/src/data/files.ts:76-84 |
+| Contract counterpart: the serving layer emits the 404/400 status codes this test stubs. | `run_scoped` | mcp/src/agents_remember/serving/scope.py:207-227 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 8 citation findings. Converted the
+  three Logic line-cite parentheticals and the L2 history cite to cit form — the first-case range moved
+  to `files.test.ts:34-47` — and re-anchored + re-ranged the `FilesApiError` and `run_scoped` rows.
+  Scoped recheck clean.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
   hung-socket helper was added above the fixtures. The `stubFetch` + `afterEach` setup moved
@@ -83,7 +89,8 @@ cross-repository implementation source that governs its behavior.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that moved
   out of `serving/files.py`. The 404/400 status-code idiom the test stubs is now emitted by
-  `run_scoped` in the extracted `serving/scope.py` (L207-L227), not by `serving/files.py`
+  `run_scoped` in the extracted `serving/scope.py`
+  (cit:([`run_scoped`], mcp/src/agents_remember/serving/scope.py:207-227)), not by `serving/files.py`
   (which only registers routes and delegates); repointed both the link path and the range.
 
 - 2026-07-24T13:17:50Z — Added repository-catalog single-flight and timeout coverage. Verification

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/stream.ts`                   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,28 +62,33 @@ signal-lost state instead of retaining a live badge forever.
 
 No relevant external documentation is needed beyond the browser EventSource API used directly here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant documentation found after checking local project source and package contracts. | N/A | [dashboard/src/data/stream.ts](stream.ts) |
+| No relevant documentation found after checking local project source and package contracts. | `connectState` | dashboard/src/data/stream.ts:30-114 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| State stream snapshot and named deltas merge into the Zustand store. | L17-L34 | [stream.ts](stream.ts) |
-| Raw event stream forwards `event` rows and the backend `ready` marker. | L36-L50 | [stream.ts](stream.ts) |
-| `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. | L172-L181 | [../cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The backend raw stream emits a `ready` event after backlog delivery. | L151-L177 | [agents-remember/mcp/src/agents_remember/serving/events.py](agents-remember/mcp/src/agents_remember/serving/events.py) |
+| State stream snapshot and named deltas merge into the Zustand store. | `connectState` | dashboard/src/data/stream.ts:30-114 |
+| Raw event stream forwards `event` rows and the backend `ready` marker. | `connectEvents` | dashboard/src/data/stream.ts:129-140 |
+| `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. | `markEventsHydrated` | dashboard/src/cockpit/Cockpit.tsx:369-380 |
+| The backend raw stream emits a `ready` event after backlog delivery. | `ready_sent` | mcp/src/agents_remember/serving/events.py:253-276 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This client transport module talks only to this package's dashboard serving endpoints. | N/A | [stream.ts](stream.ts) |
+| This client transport module talks only to this package's dashboard serving endpoints. | `connectState` | dashboard/src/data/stream.ts:30-114; dashboard/src/data/stream.ts:129-139 |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 6 citation rows to plain
+  anchored sources: `connectState`/`connectEvents` ranges, the `Cockpit` ready callback
+  (Cockpit.tsx 369-380), and the backend `ready` marker (events.py 253-276). Zero findings
+  remain.
 
 - 2026-07-24T13:17:50Z — Added state-stream half-open and never-open honesty behavior. Verification
   hash/date remain pinned to the pre-commit source stamp.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-07-03T00:30+02:00                      |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`  |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                      |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -47,14 +47,16 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The reopen reset that clears the doc's stamp before the next start restamps it. | [reopen.py](agents-remember/mcp/src/agents_remember/tasks/reopen.py) |
-| The post-contract-write restamp call site in worktree start. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
-| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reopen reset that clears the doc's stamp before the next start restamps it. | `_reset_leaf_doc` | mcp/src/agents_remember/worktrees/reopen.py:162-195 |
+| The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:584-584 |
+| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | `read_task_documents` | mcp/src/agents_remember/observer/snapshots.py:1154-1182 |
 
 ## Update History
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-03T00:30+02:00 — Created for L11: exact case-insensitive leaf-doc lookup plus the explicit
   lifecycleId restamp worktree_start applies after (re)creating a leaf whose doc already exists.
   Verification metadata pinned until closeout stamps the code commit.

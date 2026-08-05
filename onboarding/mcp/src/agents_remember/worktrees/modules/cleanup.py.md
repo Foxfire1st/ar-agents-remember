@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:54+02:00     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -160,20 +160,24 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | [args.py](agents-remember/mcp/src/agents_remember/worktrees/modules/args.py) |
-| `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| Integration creates the scratch memory integration branch name that cleanup may remove. | [integrate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Provider teardown is delegated to this module. | [provider_teardown.py](agents-remember/mcp/src/agents_remember/worktrees/modules/provider_teardown.py) |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | [abandon.py](agents-remember/mcp/src/agents_remember/worktrees/modules/abandon.py) |
-| The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | [test_cleanup_carryover.py](agents-remember/mcp/tests/test_cleanup_carryover.py) |
-| Shared drift snapshot removal helper used by cleanup. | [observer/drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Worktree tests cover cleanup preconditions and completed cleanup state. | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:21-21 |
+| `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:204-204 |
+| Integration creates the scratch memory integration branch name that cleanup may remove. | "def integration_branch" | mcp/src/agents_remember/worktrees/modules/integrate.py:45-45 |
+| Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/worktrees/modules/provider_teardown.py:27-46 |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:304-304 |
+| The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | `CleanupCarryoverGuardTests` | mcp/tests/test_cleanup_carryover.py:181-197 |
+| Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/observer/drift_snapshots.py:25-33 |
+| `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-71 |
+| `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
+| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:573-3091 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the ten `n/a`-anchor
+  table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns
+  zero findings.
 
 - 2026-08-01T09:54+02:00 — 260731-EFA-L4 curator: the `cleanup="completed"` stamp changed mechanism.
   `cleanup_result` now writes `amend_contract(contract, ContractCells(cleanup="completed"))` on a

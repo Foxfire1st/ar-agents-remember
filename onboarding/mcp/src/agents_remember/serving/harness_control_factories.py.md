@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `ca9dd05a295ef5f24c479e2231fdcd174b372e04` |
-| lastVerifiedCommitDate | 2026-07-19T10:04:45+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ L4 replaces the temporary roleless/default boundary with explicit daemon request
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -72,22 +72,24 @@ pass was available for this update.
 The hosted runner owns ordering, while each built-in adapter owns its native launch material and
 startup evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter. | L152-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| Claude consumes expected launch evidence and produces native model/effort flags. | L94-L100; L145-L172; L200-L210; L271-L285 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Codex session settings resolve typed or catalog-default model/effort into thread config. | L37-L83; L106-L176; L295-L337 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
-| Pi consumes expected launch evidence and produces native provider-qualified model/thinking flags. | L63-L153; L181-L191 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
+| The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter. | `_prepare_controlled_launch`; `create_harness_protocol_adapter`; `harness_launch_knobs`; `apply_launch_knobs`; `discover`; `validate_launch_selection` | mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
+| Claude consumes expected launch evidence and produces native model/effort flags. | `claude_launch_knobs`; `ClaudeStreamJsonAdapter`; `verify_effective_launch`; `launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142; mcp/src/agents_remember/serving/harness_control_claude.py:145-571; mcp/src/agents_remember/serving/harness_control_runner.py:237-237 |
+| Codex session settings resolve typed or catalog-default model/effort into thread config. | `CodexAppServerSettings`; `connect`; `_thread_params` | mcp/src/agents_remember/serving/codex_app_server_session.py:57-99; mcp/src/agents_remember/serving/codex_app_server_session.py:124-208; mcp/src/agents_remember/serving/codex_app_server_session.py:403-448 |
+| Pi consumes expected launch evidence and produces native provider-qualified model/thinking flags. | `PiRpcAdapter`; `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by this factory.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:40:58+02:00 — 260731-EFA-L6 S18-B08 curator: split runner, Claude, Codex, and Pi launch ownership across their current implementation modules.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The Claude
   adapter grew a two-pass `--forward-subagent-text` startup, so the cited ranges no longer covered

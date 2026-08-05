@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-31T15:32+02:00                                      |
-| lastVerifiedCommitHash | `00e83791d4d21bf56fd5b3cc0af194bc5e28112a`                  |
-| lastVerifiedCommitDate | 2026-07-31T05:07:07+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -45,12 +45,14 @@ appears in the installed capability evidence (`claude-2.1.217-installed-20260722
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The interrupt-settlement arms that assert against this shape. | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py), [test_conversation_active_projectors.py](agents-remember/mcp/tests/test_conversation_active_projectors.py) |
-| The fallback classification that must not upgrade an unstamped error result. | [test_conversation_control_projector_edges.py](agents-remember/mcp/tests/test_conversation_control_projector_edges.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The interrupt-settlement arms that assert against this shape. | `ClaudeEngineTests`; `ClaudeMapperTests` | mcp/tests/test_conversation_active_projectors.py:407-710; mcp/tests/test_conversation_active_service.py:553-845 |
+| The fallback classification that must not upgrade an unstamped error result. | `ClaudeResultSettlementFallbackTests` | mcp/tests/test_conversation_control_projector_edges.py:75-142 |
 
 ## Update History
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 2 citation rows covering 3 source references and preserved verification metadata.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created the missing sidecar for this
   fixture (a pre-existing 1:1 gap, not introduced by this leaf).

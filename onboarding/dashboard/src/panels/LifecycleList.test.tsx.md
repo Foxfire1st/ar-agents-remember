@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/LifecycleList.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T10:30+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -166,24 +166,24 @@ than a reusable gallery scenario. `afterEach` calls both Testing Library `cleanu
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `operationRows` in the component under test admits root/master docs, active-enclosure-matched leaves, series fallbacks, and active-enclosure-backed lifecycle fallbacks. | L477-L571 | [LifecycleList.tsx](LifecycleList.tsx) |
-| `docRow`/`seriesRow` build the mark as `lifecycle?.state ?? statusVariant(...)` — the handover these tests pin. | L592-L597; L641-L646; L982-L1001 | [LifecycleList.tsx](LifecycleList.tsx) |
-| The `awaiting-developer` and `paused`-vs-`abandoned` state-mark regressions, with `rowMarkOf`/`bareDotOf`. | L1190-L1230 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| `seedActivityProjection` takes the seeded lifecycle `state`, so one fixture serves every state case. | L1125-L1160 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| `Dot` — the variant treatments these tests deliberately do not restate. | L23-L129 | [grammar/Dot.tsx](../grammar/Dot.tsx) |
-| `metricsFor` / `LifecycleStateCounts` — why the seeds derive metrics instead of listing buckets. | L208-L257 | [types/projection.ts](../types/projection.ts) |
-| The regression fixture proves sidebar inclusion/exclusion for root docs, active leaves, cleanup-completed leaves, enclosure fallbacks, inactive leaves, loose leaves, and unenclosed lifecycles, plus BY REPO child depth and BY PHASE flatness. | L227-L360 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The numbered-leaf regression fixture proves a leaf document whose file stem is longer than `EnclosureNode.leafId` still nests under its master when its authored task id matches the enclosure leaf id. | L401-L456 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The reopen regressions prove a reopened worktree-less enclosure is hidden until restart then re-admitted, and the identity regression proves one row per `enclosureId` with lifecycle annotation (both binding directions). | reopen-hidden + reopen-restart + one-row tests | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The orphan-lifecycle regression proves a doc-less enclosure-backed runtime row nests under its master via the computed parent key instead of floating top-level. | orphan test | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The long-title fixture proves native row title hover text plus the row/title/metadata shrink classes on an admitted enclosure-backed task row. | L1018-L1081 | [LifecycleList.test.tsx](LifecycleList.test.tsx) |
-| The shared hierarchy helper supplies `findParentTaskMatch`, `taskDocHierarchyLabel`, and `taskDocParentKey` — the parent match, child task-document id, and parent key the test expects in the Operations row label. | L28-L67 | [taskHierarchy.ts](../data/taskHierarchy.ts) |
-| `taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey` and `parseTaskSelection` apply the typed task selection contract; `taskLabel`/`taskDocumentLabel` the label contract. | L17-L76; L213-L244 | [taskIdentity.ts](../data/taskIdentity.ts) |
-| `dashboardStore` — the Zustand projection store seeded (and `reset()`) by the test. | L225-L348 | [data/store.ts](../data/store.ts) |
-| The frontend mirror of `LifecycleProjection` and `EnclosureNode`. | L132-L176 | [types/projection.ts](../types/projection.ts) |
-| The frontend mirror of `WorkspaceProjection`. | L711-L726 | [types/projection.ts](../types/projection.ts) |
+| `operationRows` in the component under test admits root/master docs, active-enclosure-matched leaves, series fallbacks, and active-enclosure-backed lifecycle fallbacks. | `operationRows` | dashboard/src/panels/LifecycleList.tsx:477-567 |
+| `docRow`/`seriesRow` build the mark as `lifecycle?.state ?? statusVariant(...)` — the handover these tests pin. | "function docRow", "function seriesRow" | dashboard/src/panels/LifecycleList.tsx:582-582; dashboard/src/panels/LifecycleList.tsx:635-635 |
+| The `awaiting-developer` and `paused`-vs-`abandoned` state-mark regressions, with `rowMarkOf`/`bareDotOf`. | "gives a live awaiting-developer row the handoff dot, not the one an unknown state gets" | dashboard/src/panels/LifecycleList.test.tsx:1217-1231 |
+| `seedActivityProjection` takes the seeded lifecycle `state`, so one fixture serves every state case. | "function seedActivityProjection" | dashboard/src/panels/LifecycleList.test.tsx:1134-1134 |
+| `Dot` — the variant treatments these tests deliberately do not restate. | `Dot` | dashboard/src/grammar/Dot.tsx:119-129 |
+| `metricsFor` / `LifecycleStateCounts` — why the seeds derive metrics instead of listing buckets. | "export type LifecycleStateCounts" | dashboard/src/types/projection.ts:284-284 |
+| The regression fixture proves sidebar inclusion/exclusion for root docs, active leaves, cleanup-completed leaves, enclosure fallbacks, inactive leaves, loose leaves, and unenclosed lifecycles, plus BY REPO child depth and BY PHASE flatness. | "limits sidebar rows to root docs" | dashboard/src/panels/LifecycleList.test.tsx:234-366 |
+| The numbered-leaf regression fixture proves a leaf document whose file stem is longer than `EnclosureNode.leafId` still nests under its master when its authored task id matches the enclosure leaf id. | "nests numbered leaf docs whose enclosure leaf id is shorter than the task file stem" | dashboard/src/panels/LifecycleList.test.tsx:408-462 |
+| The reopen regressions prove a reopened worktree-less enclosure is hidden until restart then re-admitted, and the identity regression proves one row per `enclosureId` with lifecycle annotation (both binding directions). | "renders ONE task entry per enclosureId" | dashboard/src/panels/LifecycleList.test.tsx:584-676 |
+| The orphan-lifecycle regression proves a doc-less enclosure-backed runtime row nests under its master via the computed parent key instead of floating top-level. | "nests a doc-less orphan lifecycle under its master instead of floating top-level" | dashboard/src/panels/LifecycleList.test.tsx:717-753 |
+| The long-title fixture proves native row title hover text plus the row/title/metadata shrink classes on an admitted enclosure-backed task row. | "exposes the full long task title and row context on title hover" | dashboard/src/panels/LifecycleList.test.tsx:1026-1088 |
+| The shared hierarchy helper supplies `findParentTaskMatch`, `taskDocHierarchyLabel`, and `taskDocParentKey` — the parent match, child task-document id, and parent key the test expects in the Operations row label. | "function findParentTaskMatch" | dashboard/src/data/taskHierarchy.ts:43-43 |
+| `taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey` and `parseTaskSelection` apply the typed task selection contract; `taskLabel`/`taskDocumentLabel` the label contract. | `taskDocSelectionKey` | dashboard/src/data/taskIdentity.ts:17-17 |
+| `dashboardStore` — the Zustand projection store seeded (and `reset()`) by the test. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
+| The frontend mirror of `LifecycleProjection` and `EnclosureNode`. | "interface LifecycleProjection", "interface EnclosureNode" | dashboard/src/types/projection.ts:133-133; dashboard/src/types/projection.ts:258-258 |
+| The frontend mirror of `WorkspaceProjection`. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
 
 ## Current L5I Maintenance
 
@@ -192,6 +192,10 @@ hierarchy rules, preserving the guarantee that a hidden persistent rail need not
 age presentation.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges, and converted the history `(L…)` projection-mirror
+  citations to `cit:`; exact non-fixing check returns zero findings.
 
 - 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
   server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
@@ -217,8 +221,8 @@ age presentation.
   L227-L360; the numbered-leaf test L264-L318 → L401-L456; the long-title test L296-L350 → L1018-L1081
   (that old range now lands inside the L10 case-mismatch test); `dashboardStore` L1-L112 → L225-L348
   (L1-L112 held only the state interface); and the projection-mirror row L1-L80;L360-L390, which
-  contained none of `LifecycleProjection` (L97), `EnclosureNode` (L121) or `WorkspaceProjection`
-  (L674) — split into two rows with real ranges.
+  contained none of `LifecycleProjection` cit:(["interface LifecycleProjection"], dashboard/src/types/projection.ts:258-258), `EnclosureNode` cit:(["interface EnclosureNode"], dashboard/src/types/projection.ts:133-133) or `WorkspaceProjection`
+  cit:(["interface WorkspaceProjection"], dashboard/src/types/projection.ts:517-517) — split into two rows with real ranges.
 
 - 2026-07-24T13:17:17Z — Curator: recorded hidden-rail activity regression coverage; verification
   fields remain pre-commit.

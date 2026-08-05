@@ -63,11 +63,11 @@ ports stay `5432` and `11434`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| GrepAI setup delegates to provider lifecycle commands. | [setup.py](agents-remember/mcp/src/agents_remember/providers/grepai/setup.py) |
-| GrepAI context behavior is grouped under the provider-owned context package. | [context overview](context/overview.md) |
-| GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package. | [lifecycle overview](lifecycle/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| GrepAI setup delegates to provider lifecycle commands. | `install_enabled_provider`, `prepare_enabled_provider`, `refresh_enabled_provider` | mcp/src/agents_remember/providers/grepai/setup.py:37-53; mcp/src/agents_remember/providers/grepai/setup.py:56-71; mcp/src/agents_remember/providers/grepai/setup.py:74-88 |
+| GrepAI context behavior is grouped under the provider-owned context package. | `grepai_runtime_layout`, `ensure_grepai_runtime_layout` | mcp/src/agents_remember/providers/grepai/context/layout.py:111-156; mcp/src/agents_remember/providers/grepai/context/layout.py:329-349 |
+| GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package. | `grepai_docker_start`, `grepai_docker_refresh`, `grepai_install` | mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:177-227; mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:259-282; mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:471-488 |
 
 ## 260731-EFA-L2 — The Clone Reads As Source → Target
 
@@ -100,6 +100,7 @@ entry of.
 
 ## Update History
 
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `seed.py` gained `_GrepaiCloneEnd` (naming source and
   target instead of six prefixed keywords) and `_CloneInputs`/`_clone_inputs` (first missing
   coordinate wins, before any source settings read); `setup.py` dispatches via `LifecycleCommand`.

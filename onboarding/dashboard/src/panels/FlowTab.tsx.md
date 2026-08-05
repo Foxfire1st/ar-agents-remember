@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/FlowTab.tsx`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-06T15:40+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -35,46 +35,47 @@ dev-only** at `/dev/flows` (see `dev/DevApp.tsx`), dead-code-eliminated from the
 
 ### Logic
 
-`FlowTab({ initialModel }: { initialModel?: string } = {})` (L111) resolves the shown model against the
+cit:([`FlowTab`], dashboard/src/panels/FlowTab.tsx:111-150) resolves the shown model against the
 `flowModels.FLOW_MODELS` array: it seeds `useState` with `initialModel` only when some registered model
 carries that id, else falls back to `FLOW_MODELS[0]` (the router model); an unknown id therefore
-lands on the fallback rather than crashing (L112-L116). The root `<div>` carries `data-testid="flow-tab"`
-and `data-model={model.id}` (L118). The **model nav** (L119-L133) is a `role="radiogroup"`
+lands on the fallback rather than crashing. The root `<div>` carries `data-testid="flow-tab"`
+and `data-model={model.id}`. The **model nav** is a `role="radiogroup"`
 (`aria-label="Flow model"`, `data-testid="flow-nav"`) of one `role="radio"` button per model, each with
 `aria-checked={m.id === model.id}`, `data-testid={\`flow-nav-${m.id}\`}`, and an `onClick` that sets the
 nav state. Below the nav sit the header (`LIFECYCLE FLOW · {model.title}`) + the wired-today/this-series
-legend (L134-L140), the model `takeaway` paragraph (L141), and the `chain` column that maps
-`model.segments` through `<Segment>` (L143-L147).
+legend, the model `takeaway` paragraph, and the `chain` column that maps `model.segments` through
+`<Segment>`.
 
-`Segment({ segment })` (L81-L109) is a discriminated-union switch over `segment.kind`:
+cit:([`Segment`], dashboard/src/panels/FlowTab.tsx:81-109) is a discriminated-union switch over `segment.kind`:
 
-- **`start`** (L83-L89) — a dotted pill `startNode` with the label, and, when `segment.next` is set, an
+- **`start`** — a dotted pill `startNode` with the label, and, when `segment.next` is set, an
   `Arrow` to it (`segment.nextStatus ?? "proposed"`).
-- **`node`** (L90-L96) — a `ToolNode` plus the optional outgoing `Arrow`.
-- **`rundown`** (L97-L105) — a dashed `rundownCard` (`data-testid="flow-rundown"`) with a title and one
+- **`node`** — a `ToolNode` plus the optional outgoing `Arrow`.
+- **`rundown`** — a dashed `rundownCard` (`data-testid="flow-rundown"`) with a title and one
   styled line per `segment.lines` entry; a line with `junction: true` renders cyan/mono via the
   `rundownLine` cva variant.
-- **`divider`** (L106-L107) — a centered italic caption.
+- **`divider`** — a centered italic caption.
 
-`ToolNode({ n })` (L60-L70) picks the `ridesNode` style (amber left-bar) when `n.rides` is set, else the
-plain `toolNode`, and tags itself `data-testid="flow-gate"` vs `"flow-node"` accordingly (L61-L63). It
-appends `" · gate"` to the phase tag for gate nodes (L64), renders the monospace `tool` name and optional
-`detail`, and for a gate renders a rider line = `n.ridesNote ?? DEFAULT_RIDES_NOTE(n.rides)` (L67).
-`DEFAULT_RIDES_NOTE` (L57-L58) is the task-26 auto-fire framing (`⊘ auto-fires
+cit:([`ToolNode`], dashboard/src/panels/FlowTab.tsx:60-70) picks the `ridesNode` style (amber left-bar) when `n.rides` is set, else the
+plain `toolNode`, and tags itself `data-testid="flow-gate"` vs `"flow-node"` accordingly. It appends
+`" · gate"` to the phase tag for gate nodes, renders the monospace `tool` name and optional `detail`,
+and for a gate renders a rider line = `n.ridesNote ?? DEFAULT_RIDES_NOTE(n.rides)`.
+cit:([`DEFAULT_RIDES_NOTE`], dashboard/src/panels/FlowTab.tsx:57-58) is the task-26 auto-fire framing (`⊘ auto-fires
 lifecycle_turn_end_notification · {rides} — rides this call … next AR tool clears it`); orchestration
 models override it per node (the two adversarial seams, delegated gates, judge evidence, reframe).
-`Arrow({ to, status })` (L72-L79) draws the connector wire + `nextStep → {to}` label and sets
+cit:([`Arrow`], dashboard/src/panels/FlowTab.tsx:72-79) draws the connector wire + `nextStep → {to}` label and sets
 `data-edge={status}`; the `wire`/`connector`/`swatch` cva variants encode **mint = current (wired
-today)** vs **amber dashed = proposed (this series)** (L50-L51, L19).
+today)** vs **amber dashed = proposed (this series)**.
 
 ### Conventions
 
-Styling is co-located Panda **`css`/`cva`** imported from the generated `../../styled-system/css`
-(L3), token-keyed (`mint`/`amber`/`cyan`/`ink`/`muted`/`grid`/`bg`); no global CSS, no hardcoded colours.
+cit:([`FlowTab`], dashboard/src/panels/FlowTab.tsx:111-150) Styling is co-located Panda **`css`/`cva`**
+imported from the generated `../../styled-system/css`, token-keyed
+(`mint`/`amber`/`cyan`/`ink`/`muted`/`grid`/`bg`); no global CSS, no hardcoded colours.
 The model nav mirrors the repo's radiogroup toggle idiom (`RailToggle`/`EffectsToggle`) rather than a
 React Aria widget, since it is a small dev-only control. Types (`FlowModel`, `FlowNode`, `FlowSegment`,
-`Status`) and all content are imported from `flowModels.ts` (L4) — this file defines no model data.
-Segments are keyed by array index in the map (L144); rundown lines by index (L102). Stable
+`Status`) and all content are imported from `flowModels.ts` — this file defines no model data.
+Segments are keyed by array index in the map; rundown lines by index. Stable
 test/contract hooks: `data-testid` `flow-tab` / `flow-nav` / `flow-nav-{id}` / `flow-node` / `flow-gate`
 / `flow-rundown`, plus `data-model` on the root, `aria-checked` on the radios, and `data-edge` on arrows.
 
@@ -105,19 +106,21 @@ No relevant documentation found after checking live sources.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The flow-model registry FlowTab renders and switches between — all content + the segment/model types live here. | L7-L50; L368 | [flowModels.ts](flowModels.ts) |
-| The renderer + nav under test (default model, nav switching, initialModel fallback, per-model render census, invariant text). | L1-L95 | [FlowTab.test.tsx](FlowTab.test.tsx) |
-| The dev harness route that mounts FlowTab at `/dev/flows` with `initialModel` from `?model=`. | L15-L20 | [dev/DevApp.tsx](../dev/DevApp.tsx) |
-| The next-step engine the build-job model is the human-readable spec for (regime model). | — | [tools/next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py) |
-| Generated Panda `css`/`cva` this panel styles with. | — | [styled-system/css](agents-remember/dashboard/styled-system/css/index.mjs) |
+| The flow-model registry FlowTab renders and switches between — all content + the segment/model types live here. | `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:437-437 |
+| The renderer + nav under test (default model, nav switching, initialModel fallback, per-model render census, invariant text). | "FlowTab canvas (unified l-01-agent-lifecycles)" | dashboard/src/panels/FlowTab.test.tsx:9-176 |
+| The dev harness route that mounts FlowTab at `/dev/flows` with `initialModel` from `?model=`. | `initialModel` | dashboard/src/dev/DevApp.tsx:15-20 |
+| The next-step engine the build-job model is the human-readable spec for (regime model). | `compute_next_step` | mcp/src/agents_remember/application/next_step.py:110-131 |
+| Generated Panda `css`/`cva` this panel styles with. | `FlowTab` | dashboard/src/panels/FlowTab.tsx:111-150 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 21 citation findings; scoped check passed.
 
 - 2026-07-06T15:40+02:00 — 260703-L12 (three-party loops, staleness de-stale — no source change): the Purpose's pre-convergence census ("8 static models" meaning build-job/frame-era; "the other seven models draw … designer, frame, …") was stale since the L8 convergence and is rewritten to the current 8-model registry (strategist joins in L12); the Logic fallback line now names the router, not build-job. Verification metadata pinned until closeout stamps the L12 commit.
 - 2026-07-04T09:40+02:00 — 260703-L0 (Canvas & playground): rewrote FlowTab from the single hardcoded

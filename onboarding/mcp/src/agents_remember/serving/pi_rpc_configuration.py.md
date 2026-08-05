@@ -61,7 +61,7 @@ None known for the L3 Pi mutation transaction.
 No Domain Documentation source is configured for this repository, so no live
 domain-documentation pass was available for this creation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -70,17 +70,17 @@ domain-documentation pass was available for this creation.
 The adapter supplies candidate readers and the atomic committer; the transport supplies correlated
 request cancellation behavior; protocol parsing validates state and model-local menus.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Adapter delegates setters here, reads candidate state without publishing it, and commits state/catalog together. | L68-L127; L208-L214; L382-L404 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
-| Transport removes cancelled pending futures and discards their later valid responses without an unbounded tombstone set. | L67-L86; L177-L199 | [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
-| Protocol helpers parse correlated responses, safe state, provider-qualified catalogs, and each model's own effort menu. | L176-L234; L383-L427 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
+| Adapter delegates setters here, reads candidate state without publishing it, and commits state/catalog together. | `_read_configuration_state`; `_commit_configuration` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:546-549; mcp/src/agents_remember/serving/pi_rpc_adapter.py:551-557 |
+| Transport removes cancelled pending futures and discards their later valid responses without an unbounded tombstone set. | "except asyncio.CancelledError:"; `_dispatch` | mcp/src/agents_remember/serving/pi_rpc_process.py:107-107; mcp/src/agents_remember/serving/pi_rpc_process.py:221-238 |
+| Protocol helpers parse correlated responses, safe state, provider-qualified catalogs, and each model's own effort menu. | `parse_pi_response`; `parse_pi_state`; `parse_pi_models`; `_pi_effort_options` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:180-194; mcp/src/agents_remember/serving/pi_rpc_protocol.py:197-215; mcp/src/agents_remember/serving/pi_rpc_protocol.py:218-255; mcp/src/agents_remember/serving/pi_rpc_protocol.py:450-475 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented beyond Pi's native RPC process.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -104,6 +104,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-03T03:08:58+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ConfigurationPorts` as the one atomic set-transaction surface.
 - 2026-07-17T21:39+02:00 — FEUI-L5: corrected timeout-release claims and documented guarded
   configuration plus unknown-barrier behavior.

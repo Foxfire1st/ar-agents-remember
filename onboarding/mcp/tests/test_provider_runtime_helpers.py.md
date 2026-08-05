@@ -53,12 +53,13 @@ the clock, which is what makes the retry-cadence assertions exact rather than ti
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The provider runtime helpers under test (setup rendering, docker/compose adapters, embedder polling, CGC refresh/apply/isolation). | [providers/](agents-remember/mcp/src/agents_remember/providers/) |
-| The lifecycle-level provider suites these helpers sit beneath. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py), [test_provider_setup.py](agents-remember/mcp/tests/test_provider_setup.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The provider runtime helpers under test (setup rendering, docker/compose adapters, embedder polling, CGC refresh/apply/isolation). | `render_text` | mcp/src/agents_remember/providers/provider_setup.py:761-770 |
+| The lifecycle-level provider suites these helpers sit beneath. | `ProviderLifecycleRenderTests`; `ProviderSetupTests` | mcp/tests/test_provider_lifecycle.py:30-107; mcp/tests/test_provider_setup.py:25-899 |
 
 ## Update History
+- 2026-08-03T03:06:51+02:00 — W3-B05 curator: resolved 2 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   provider-runtime helper suite. Verification metadata is pinned to the leaf's reformat

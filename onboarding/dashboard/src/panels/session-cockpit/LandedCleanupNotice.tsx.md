@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate |  2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,26 +36,29 @@ The curator checked the memory repository's `system/sources.md`; it has no confi
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Cross-Repo References
 
 The notice consumes the repository-local lifecycle authority client/store; no cross-repository implementation governs it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Notice store and detailed cleanup. | [../../data/sessionLifecycle.ts](../../data/sessionLifecycle.ts) |
-| Root host. | [SessionsView.tsx](SessionsView.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Notice store and detailed cleanup. | `lifecycleNoticeStore`; `endLandedDetailed` | dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/sessionLifecycle.ts:230-251 |
+| Root host. | `SessionsView` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
 
 ## Update History
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 2 citation claims
+  (Repo-Internal reference rows); scoped result 0 findings.
 
 - 2026-07-18T07:22+02:00 — Created for FEUI-L8 landed-cleanup authority honesty; verification
   metadata remains blank until commit.

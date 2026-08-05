@@ -61,7 +61,7 @@ None.
 
 No Domain Documentation source is configured for this internal token authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -70,22 +70,23 @@ No Domain Documentation source is configured for this internal token authority.
 The cursor suite round-trips every token family and probes tamper, wrong-purpose, and garbage
 rejection; the contract module owns the branded token types this authority mints.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| List/read cursors round-trip and reject tampering and wrong-purpose use. | L37-L68 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
-| Conversation keys and resume targets round-trip and reject garbage/foreign signatures. | L69-L112 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
-| Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. | L113-L130 | [test_conversation_library_cursor.py](agents-remember/mcp/tests/test_conversation_library_cursor.py) |
-| The purpose-branded token types and binding models are declared in the parent contract. | L311-L399 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| List/read cursors round-trip and reject tampering and wrong-purpose use. | `test_list_cursor_round_trip_and_tamper_rejection`, `test_read_cursor_round_trip_and_wrong_purpose_rejection` | mcp/tests/test_conversation_library_cursor.py:37-50; mcp/tests/test_conversation_library_cursor.py:53-66 |
+| Conversation keys and resume targets round-trip and reject garbage/foreign signatures. | `test_conversation_key_round_trip_and_garbage_rejection`, `test_resume_target_round_trip_and_garbage_rejection` | mcp/tests/test_conversation_library_cursor.py:77-90; mcp/tests/test_conversation_library_cursor.py:93-110 |
+| Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. | `identity_digest`, `catalog_generation` | mcp/src/agents_remember/serving/conversation/library/cursor.py:72-87; mcp/src/agents_remember/serving/conversation/library/cursor.py:89-98 |
+| The purpose-branded token types and binding models are declared in the parent contract. | `LibraryCursorBinding`, `LibraryKeyBinding` | mcp/src/agents_remember/serving/conversation/models.py:154-158; mcp/src/agents_remember/serving/conversation/models.py:161-165 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local token authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 4 repository-internal citations for cursor tests, digest/generation methods, and parent binding models.
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the signed cursor/key authority
   sidecar. Verification is blank until closeout commits and stamps the new source.

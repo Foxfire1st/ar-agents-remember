@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_launch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ lookup and model-gating semantics without conflating launch and mid-session acce
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this new file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -84,25 +84,27 @@ pass was available for this new file.
 
 The launch policy is carried by the shared opener/runner and consumed by each own adapter.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The normalized capability types nest effort under each model and declare owned launch selectors. | L73-L156 | [harness_capabilities.py](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) |
-| The runner performs pure conflict preflight, transient discovery, dynamic validation, then fresh runtime construction. | L152-L191 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
-| Claude produces native model/effort flags and verifies the model echo without fabricating effort echo. | L160-L172; L200-L210; L271-L285 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Codex produces thread config plus owned model/config selectors. | L225-L243 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Pi produces native provider-qualified model/thinking flags and requires both effective echoes. | L94-L153; L181-L191 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
-| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | L170-L216; L311-L460 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
+| The normalized capability types nest effort under each model and declare owned launch selectors. | `LaunchKnobs` | mcp/src/agents_remember/serving/harness_capabilities.py:136-148 |
+| The runner performs pure conflict preflight, transient discovery, dynamic validation, then fresh runtime construction. | `launch_knobs` | mcp/src/agents_remember/serving/harness_control_runner.py:237-237 |
+| Claude produces native model/effort flags and verifies the model echo without fabricating effort echo. | `claude_launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142 |
+| Codex produces thread config plus owned model/config selectors. | `codex_launch_knobs` | mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
+| Pi produces native provider-qualified model/thinking flags and requires both effective echoes. | `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
+| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | "The durable row for the process this open just spawned" | mcp/src/agents_remember/serving/terminal_opener.py:478-478 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented; installed native harnesses are reached only through
 their in-repository own adapters.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T21:30:45+02:00 — 260731-EFA-L6 curator W2-B10: repaired 12 citation findings (6 reference rows); scoped recheck clean.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. Claude's row now
   cites the three places the claim actually lives in `harness_control_claude.py`: the

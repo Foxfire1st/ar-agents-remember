@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,29 +28,29 @@ the server reports (partial) agent unavailability.
 
 ### Logic
 
-- **`completenessLabel`** (L79-L82): reads `row.capabilities.completeness.state` and prints
+- **`completenessLabel`** cit:([`completenessLabel`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:79-82): reads `row.capabilities.completeness.state` and prints
   `full history` when `supported`, else `partial history` — honest per-row completeness, never a
   fabricated "complete".
-- **`agentChildRow`** (L89-L102): promotes one `ConversationLibraryAgentRow` to the
+- **`agentChildRow`** cit:([`agentChildRow`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:89-102): promotes one `ConversationLibraryAgentRow` to the
   SAME row shape the select/preview/open flow already consumes — the child's own server-minted
   `conversationKey` + `identityDigest`, its title/suffix/age, the PARENT's `capabilities` (the wire
   carries none per child; the harness read-path capabilities apply), and `agents: []` (no deeper
   nesting).
-- **States** (L126-L146): typed `error` renders a `role="alert"`; an empty-while-loading row prints
+- **States** cit:(["library-list-error"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:126-146): typed `error` renders a `role="alert"`; an empty-while-loading row prints
   `loading <harness> history…`; a genuinely empty scope prints the A1 empty-state copy
   `No <harness> conversations in this project scope.` (no dash-chain).
-- **`agentsNote`** (L149-L153): rendered VERBATIM (data-testid `library-agents-note`)
+- **`agentsNote`** cit:(["library-agents-note"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:149-153): rendered VERBATIM (data-testid `library-agents-note`)
   above the rows whenever the page's note is non-null and non-empty — the exact native reason agent
   conversations are (partially) unavailable, never silently absent.
-- **Rows** (L154-L197): each row is a real `<button>`; `data-selected` marks the previewed row;
+- **Rows** cit:([`truncateMiddle`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:154-197): each row is a real `<button>`; `data-selected` marks the previewed row;
   `title` carries the full untruncated title (A5) while `truncateMiddle(title, 60)` renders the
   boundary-truncated visible text; the meta line joins the completeness badge, the mono
   `…safeNativeIdSuffix`, and `humanizeAge(lastActivityAt)`. A row's `agents` render directly beneath
-  it (L174-L195) inside a `Fragment` keyed on the parent — the same row grammar plus the `agentChild`
-  css (L72-L77: `2ch` inline indent, dashed border), a fixed `agent` badge, the `role` badge when
+  it cit:([`agentChildRow`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:89-102) inside a `Fragment` keyed on the parent — the same row grammar plus the `agentChild`
+  css cit:([`agentChild`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:73-76) (`2ch` inline indent, dashed border), a fixed `agent` badge, the `role` badge when
   present, suffix, and age; `data-testid="library-agent-row"`; clicking selects through
   `onSelect(agentChildRow(parent, agent))` — the identical flow, with the child's own key.
-- **`Load more`** (L198-L202): rendered only when `nextCursor !== null`; disabled while loading —
+- **`Load more`** cit:(["Load more"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:198-202): rendered only when `nextCursor !== null`; disabled while loading —
   the R5 explicit native paging affordance (never infinite auto-scroll indexing).
 
 ### Invariants And Boundaries
@@ -71,30 +71,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Row/cursor/key wire types this list renders (now including `ConversationLibraryAgentRow`). | L14-L19 | [../../../data/conversation-library/types.ts](../../../data/conversation-library/types.ts) |
-| The A4/A5 presentation helpers (`humanizeAge`, `truncateMiddle`, `harnessLabel`). | L12 | [../../../data/conversation/format.ts](../../../data/conversation/format.ts) |
-| The surface that owns selection/paging callbacks into the store and passes `agentsNote` through. | L137-L150 | [ConversationLibrarySurface.tsx](ConversationLibrarySurface.tsx) |
-| The sub-agent nesting + agentsNote regression suite for this list. | — | [ConversationLibraryList.test.tsx](ConversationLibraryList.test.tsx) |
+| Row/cursor/key wire types this list renders (now including `ConversationLibraryAgentRow`). | `ConversationLibraryAgentRow` | dashboard/src/data/conversation-library/types.ts:39-50 |
+| The A4/A5 presentation helpers (`humanizeAge`, `truncateMiddle`, `harnessLabel`). | `humanizeAge` | dashboard/src/data/conversation/format.ts:40-47 |
+| The surface that owns selection/paging callbacks into the store and passes `agentsNote` through. | `agentsNote` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:137-150 |
+| The sub-agent nesting + agentsNote regression suite for this list. | "ConversationLibraryList agent nesting" | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:43-86 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-04T18:07+02:00 — 260731-EFA-L6 S18-B17 curator: rewrote the seven superseded `(L…)`
+  prose line-cites as cit forms with exact frozen-source ranges (plus the `agentChild` css
+  sub-reference, corrected from L72-L77 to its real 73-76), and repaired the two malformed
+  Repo-Internal rows with anchors `humanizeAge` and the `"ConversationLibraryList agent nesting"`
+  describe literal. Claim wording unchanged; every anchor verified verbatim in the frozen source.
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the harness sub-agent grouping —
   `agentChildRow` promotion (child's own server-minted key + parent's read-path capabilities,
   `agents: []`), indented dashed child rows with `agent`/role badges, and the verbatim `agentsNote`

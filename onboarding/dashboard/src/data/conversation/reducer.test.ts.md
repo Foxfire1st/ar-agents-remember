@@ -74,27 +74,27 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure reducer under test (recovery signals, dedupe, revision gating). | `applyInitialPage`; `applyEvent`; `applyOlderPage` | [reducer.ts](reducer.ts) |
-| The wire grammar the fixtures mirror. | `ConversationItem`; `ConversationEventEnvelope`; `ConversationMutation` | [types.ts](types.ts) |
-| The local `page`/`envelope` wrappers and the fourteen cases they drive. | L27-L48; L50-L193 | [reducer.test.ts](reducer.test.ts) |
-| The shared item/page/identity builders and the `eventCursor` mint the fixtures now use. | L52-L65; L209-L243 | [../../test/fixtures/conversationWire.ts](../../test/fixtures/conversationWire.ts) |
+| The pure reducer under test (recovery signals, dedupe, revision gating). | `applyInitialPage`; `applyEvent`; `applyOlderPage` | dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:205-229; dashboard/src/data/conversation/reducer.ts:246-286 |
+| The wire grammar the fixtures mirror. | `ConversationItem`; `ConversationEventEnvelope`; `ConversationMutation` | dashboard/src/data/conversation/types.ts:158-176; dashboard/src/data/conversation/types.ts:300-325; dashboard/src/data/conversation/types.ts:327-336 |
+| The local `page`/`envelope` wrappers and the fourteen cases they drive. | "function page", "function envelope" | dashboard/src/data/conversation/reducer.test.ts:27-27; dashboard/src/data/conversation/reducer.test.ts:31-31 |
+| The shared item/page/identity builders and the `eventCursor` mint the fixtures now use. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 

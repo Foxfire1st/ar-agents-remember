@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/BusPane.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,25 +49,25 @@ Integration smoke should exercise a long virtualized Bus list while a reply sett
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact focused-seat identity predicate and row facts. | L41-L114 | [BusPane.tsx](BusPane.tsx) |
-| Entry-keyed state, authoritative pruning, filters, and list rendering. | L116-L222 | [BusPane.tsx](BusPane.tsx) |
-| Separately rendered supervisor heartbeat. | L224-L274 | [BusPane.tsx](BusPane.tsx) |
-| Reverse reply write boundary. | L37-L196 | [BusDeveloperReply.tsx](BusDeveloperReply.tsx) |
-| Shared virtualized-list threshold and semantics. | L39-L107 | [VirtualizedInspectorList.tsx](VirtualizedInspectorList.tsx) |
+| Exact focused-seat identity predicate and row facts. | `pickupMatchesFocusedSeat` | dashboard/src/panels/session-cockpit/BusPane.tsx:46-60 |
+| Entry-keyed state, authoritative pruning, filters, and list rendering. | `BusPane` | dashboard/src/panels/session-cockpit/BusPane.tsx:116-276 |
+| Separately rendered supervisor heartbeat. | "Supervisor heartbeat" | dashboard/src/panels/session-cockpit/BusPane.tsx:226-226 |
+| Reverse reply write boundary. | `developerReplyRequest` | dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx:37-59 |
+| Shared virtualized-list threshold and semantics. | `INSPECTOR_VIRTUALIZE_THRESHOLD` | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx:11-11 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -79,6 +79,7 @@ unseen clock-driven rendering.
 
 ## Update History
 
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 5 repository-internal citations for the focused predicate, pane projection, heartbeat, reverse reply, and virtualized-list threshold.
 - 2026-07-24T13:17:17Z — Curator: documented inspector-tab age-clock gating; verification fields
   remain pre-commit.
 

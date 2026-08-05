@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalOpen.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -28,46 +28,46 @@ shapes went to new files.
 
 ### Logic
 
-- `TerminalOpenSuccessBody` (L10-L26) — 200, opened or idempotently reused: `status: "running"`,
+- cit:([`TerminalOpenSuccessBody`], dashboard/src/types/terminalOpen.ts:10-26) — 200, opened or idempotently reused: `status: "running"`,
   `controlState` starts at `'starting'` for a native harness; `resolvedModel`/`resolvedEffort`
   are the REQUESTED pair persisted verbatim BEFORE any validation (`terminal_opener.py`
   `_resolved_pair`) — provenance, never proof (the R7 tier machine renders it 'pending').
-- `TerminalOpenSelectionInvalidBody` (L31-L34) — 400 `launch-selection-invalid`, the ONLY
+- cit:([`TerminalOpenSelectionInvalidBody`], dashboard/src/types/terminalOpen.ts:31-34) — 400 `launch-selection-invalid`, the ONLY
   synchronous launch-selection refusal: a partial pair or a non-native harness
   (`harness_control_api.py` `resolve_terminal_open_selection`). Catalog validity is NOT checked
   at open time — an invalid pair opens 200/'starting' and fails asynchronously on every harness
   (the R6 uniform fail-loud premise).
-- `TerminalOpenBadKindBody` (L37-L40) — 400 `bad-kind`: unknown kind / unknown or undetected
+- cit:([`TerminalOpenBadKindBody`], dashboard/src/types/terminalOpen.ts:37-40) — 400 `bad-kind`: unknown kind / unknown or undetected
   harness.
-- `TerminalOpenLeafTakenBody` (L43-L47) — 409: the (leaf, role) pair already has a live owner;
+- cit:([`TerminalOpenLeafTakenBody`], dashboard/src/types/terminalOpen.ts:43-47) — 409: the (leaf, role) pair already has a live owner;
   the server NAMES the owning `session`.
-- `TerminalOpenConflictBody` (L51-L63) — 409 `launch-selection-conflict`: the session id is live
+- cit:([`TerminalOpenConflictBody`], dashboard/src/types/terminalOpen.ts:51-63) — 409 `launch-selection-conflict`: the session id is live
   with a DIFFERENT launch identity; the body carries the LIVE row's retained pair (process truth)
   — reopening never rewrites provenance.
 
 ### Invariants And Boundaries
 
 - Every body is rendered VERBATIM by the flow's classifier (`data/launchFlow.ts`
-  `classifyOpenResponse`) — no field here may be reworded or synthesized client-side.
+  `classifyOpenResponse`) cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:131-179) — no field here may be reworded or synthesized client-side.
 - The two `resolvedModel`/`resolvedEffort` carriers mean different things: success = the
   REQUESTED pair, conflict = the LIVE row's retained pair. Confusing them is a provenance
   honesty violation.
-- Reuses `HarnessControlState`/`TerminalOpenKind` from `terminalCatalog.ts` (L5) rather than
-  re-declaring the vocabularies.
+- Reuses `HarnessControlState`/`TerminalOpenKind` from `terminalCatalog.ts` cit:([`TerminalOpenKind`], dashboard/src/types/terminalCatalog.ts:7-7) rather than re-declaring the vocabularies.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| All five response-body interfaces. | L10-L63 | [terminalOpen.ts](terminalOpen.ts) |
-| The route these mirror (`api_terminal_open`, 200/400/409 bodies). | L956-L1046 | [app.py](../../../mcp/src/agents_remember/serving/app.py) |
-| The synchronous selection gate (partial pair / non-native only). | L64-L87 | [harness_control_api.py](../../../mcp/src/agents_remember/serving/harness_control_api.py) |
-| The vocabularies imported instead of re-declared. | L7-L15 | [terminalCatalog.ts](terminalCatalog.ts) |
-| The classifier consuming every body verbatim (`classifyOpenResponse`). | — | [../data/launchFlow.ts](../data/launchFlow.ts) |
-| The request-side knobs (`OpenTerminalOptions.model/effort`). | — | [../data/terminal.ts](../data/terminal.ts) |
-| The fixture instances of every body (+ failed rows). | — | [../test/fixtures/openResponses.ts](../test/fixtures/openResponses.ts) |
+| All five response-body interfaces. | `TerminalOpenSuccessBody` | dashboard/src/types/terminalOpen.ts:10-26 |
+| The route these mirror (`api_terminal_open`, 200/400/409 bodies). | `api_terminal_open` | mcp/src/agents_remember/serving/app.py:1881-1896 |
+| The synchronous selection gate (partial pair / non-native only). | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
+| The vocabularies imported instead of re-declared. | `TerminalOpenKind` | dashboard/src/types/terminalCatalog.ts:7-7 |
+| The classifier consuming every body verbatim (`classifyOpenResponse`). | `classifyOpenResponse` | dashboard/src/data/launchFlow.ts:131-179 |
+| The request-side knobs (`OpenTerminalOptions.model/effort`). | `OpenTerminalOptions` | dashboard/src/data/terminal.ts:336-336 |
+| The fixture instances of every body (+ failed rows). | `OPENED_STARTING` | dashboard/src/test/fixtures/openResponses.ts:17-33 |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 7 citation claims; scoped result 0 findings.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R5 (open-route wire mirror): the 200
   success body (requested pair as provenance), 400 `launch-selection-invalid` (partial

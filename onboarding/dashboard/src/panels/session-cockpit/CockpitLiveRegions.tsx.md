@@ -44,23 +44,23 @@ None recorded; the announcer transition caveat is recorded on `announcer.ts.md`.
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Persistent polite/assertive DOM bridge. | L1-L44 | [CockpitLiveRegions.tsx](CockpitLiveRegions.tsx) |
-| Mount-before-message and repeated-message coverage. | L15-L39 | [CockpitLiveRegions.test.tsx](CockpitLiveRegions.test.tsx) |
-| Refcounted announcement stores. | L1-L102 | [../../data/announcer.ts](../../data/announcer.ts) |
+| Persistent polite/assertive DOM bridge. | `CockpitLiveRegions` | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-45 |
+| Mount-before-message and repeated-message coverage. | "renders one polite and one assertive region, both present BEFORE any announcement" | dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx:16-26 |
+| Refcounted announcement stores. | `announcerStore` | dashboard/src/data/announcer.ts:25-28 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -73,6 +73,7 @@ leaf base; closeout owns commit stamping.
 
 ## Update History
 
+- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.
 

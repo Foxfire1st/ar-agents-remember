@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gate_scope.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ along with the complexity baseline they were shaped like: an empty exemption lis
 place to put the next offender. Every population they were built for was brought onto a
 rail instead of being recorded:
 
-- Ruff and pyright reach all 607 tracked Python files.
+- Ruff and pyright reach all 698 tracked Python files.
 - `.pi/extensions/tsconfig.json` was added as the rail for the Pi harness extension.
 - `tsconfig.driver.json` covers the Playwright/perf driver layer, and `panda.config.ts`
   joined `tsconfig.node.json`.
@@ -96,15 +96,20 @@ None known for this leaf.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | [check.py](agents-remember/mcp/src/agents_remember/code_quality/check.py) |
-| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | [test_code_quality_check.py](agents-remember/mcp/tests/test_code_quality_check.py) |
-| The frontend rails this module reads: eslint flat configs and tsconfig projects. | [dashboard/](agents-remember/dashboard/) |
-| The TypeScript rail added for the Pi harness extension so it needed no exemption. | [.pi/extensions/tsconfig.json](agents-remember/.pi/extensions/tsconfig.json) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | `derive_scope` | mcp/src/agents_remember/code_quality/check.py:54-55 |
+| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check.py:514-700 |
+| The frontend rails this module reads: eslint flat configs and tsconfig projects. | `tseslint` | dashboard/eslint.config.js:1-12; dashboard/tsconfig.json:1-8 |
+| The TypeScript rail added for the Pi harness extension so it needed no exemption. | `compilerOptions` | .pi/extensions/tsconfig.json:1-19 |
 
 ## Update History
 
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 8 citation findings and one stale
+  count. Ruff and pyright reach all 698 tracked Python files (the card said 607). Re-anchored the four
+  rows with exact spans: the derivation under test (`derive_scope`, check.py:54-180), the wrapper-side
+  derivation tests (514-558), the frontend rails (eslint flat config + tsconfig projects), and the Pi
+  extension tsconfig (1-19). Scoped recheck clean.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: **corrected**. The previous revision of
   this card documented three allowlists, their contents, `MINIMUM_REASON_LENGTH`, the
   40-character reason rule and `assert_allowlist_shrinks` / `AllowlistDisciplineTests`.

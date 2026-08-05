@@ -47,26 +47,27 @@ fresh-chat path from returning to a stale or alarmed label.
 
 No relevant domain documentation was configured in the resolved `system/sources.md`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No domain reference was available for this UI-local test contract. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Implementation under test. | L1-L141 | [ChatActivityIndicator.tsx](ChatActivityIndicator.tsx) |
+| Implementation under test. | `summarizeChatActivity`, `ChatActivityIndicator` | dashboard/src/panels/ChatActivityIndicator.tsx:107-130; dashboard/src/panels/ChatActivityIndicator.tsx:132-148 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference exists.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo reference. | — | — |
 
 ## Update History
 
+- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-24T13:17:50Z — Added fresh-chat activity-summary coverage. Verification hash/date remain
   pinned to the pre-commit source stamp.
 

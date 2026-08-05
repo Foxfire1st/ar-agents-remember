@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EngineRoom.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -56,13 +56,13 @@ do not assert or reshape the enclosure canvas' workspace-engine rendering.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. | — | [EngineRoom.tsx](EngineRoom.tsx) |
-| `OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title. | L65-L129 | [EngineRoom.tsx](EngineRoom.tsx) |
-| The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. | L54-L87; L118-L158 | [EngineRoom.test.tsx](EngineRoom.test.tsx) |
-| The `GALLERY` projection seed + the store `applySnapshot`. | — | [dev/fixtures.ts](../dev/fixtures.ts) |
-| The honest-motion gate the pulse reads. | — | [engine-room/useShouldAnimate.ts](engine-room/useShouldAnimate.ts) |
+| The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. | `EngineRoomHeader`; `LIFECYCLE_PHASES` | dashboard/src/panels/EngineRoom.tsx:59-66; dashboard/src/panels/EngineRoom.tsx:137-171 |
+| `OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title. | `OfficialStrip` | dashboard/src/panels/EngineRoom.tsx:109-132 |
+| The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. | `seedOfficialProviders`; "aggregates same-state official CGC engines into one strip chip"; "keeps official CGC aggregate chips separated by runtime state" | dashboard/src/panels/EngineRoom.test.tsx:93-97; dashboard/src/panels/EngineRoom.test.tsx:163-178; dashboard/src/panels/EngineRoom.test.tsx:180-204 |
+| The `GALLERY` projection seed + the store `applySnapshot`. | `GALLERY`; `applySnapshot` | dashboard/src/data/store.ts:43-43; dashboard/src/dev/fixtures.ts:146-490 |
+| The honest-motion gate the pulse reads. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 
 ## Current L5I Maintenance
 
@@ -71,6 +71,8 @@ boundary: unchanged render inputs and unrelated analytics deltas do not rebuild 
 real `engineProcesses` change does.
 
 ## Update History
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 61; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 4 citation claims; scoped result 0 findings.
 
 - 2026-07-24T13:17:17Z — Curator: recorded the model-memo and narrowed-subscription regression
   coverage; verification fields remain pre-commit.

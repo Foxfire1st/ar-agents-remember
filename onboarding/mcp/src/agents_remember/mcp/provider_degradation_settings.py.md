@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/provider_degradation_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00                     |
+| lastUpdated            | 2026-08-02T01:42+02:00                     |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -78,29 +78,33 @@ No known follow-up in this file.
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference. | providerDegradation section | [../../../../../docs/reference/settings-json.md](../../../../../docs/reference/settings-json.md) |
+| The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference. | `# settings.json Reference` | docs/reference/settings-json.md:1-526 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. | L16-L21; L236-L239; L258 | [config.py](config.py.md) |
-| The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface. | whole module | [../providers/degradation.py](../providers/degradation.py.md) |
-| The public settings example ships a representative `providerDegradation` block. | providerDegradation key | [../../../../../examples/mcp/settings.example.json](../../../../../examples/mcp/settings.example.json.md) |
-| Settings-parsing tests cover defaults, explicit thresholds, unknown-key rejection, and per-field type rejection. | `ProviderDegradationSettingsTests` | [../../../tests/test_config.py](../../../tests/test_config.py.md) |
+| `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. | "class McpRuntimeConfig" | mcp/src/agents_remember/mcp/config.py:114-114 |
+| The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:159-159 |
+| The public settings example ships a representative `providerDegradation` block. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
+| Settings-parsing tests cover defaults, explicit thresholds, unknown-key rejection, and per-field type rejection. | `ProviderDegradationSettingsTests` | mcp/tests/test_config.py:480-556 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Settings parsing is a repository-local MCP boundary; no external system or sibling repo involved. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
+
+- 2026-08-02T01:42+02:00 — No content impact: corrected Source Path link depth. The link(s) in this document carried one `../` too many and had never resolved from this card's directory — not code moving out from under a citation, the path as written. Enumerating every depth in both trees leaves exactly one that resolves and it is exactly one level shallower, so there was nothing to judge (`memory_quality/style/citations`, `citation_link_depth_wrong`). No claim, range or target document changed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/mcp/provider_degradation_settings.py` since the L2 base commit is the
   whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change

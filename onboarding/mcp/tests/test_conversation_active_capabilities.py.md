@@ -40,26 +40,27 @@ No durable follow-up is recorded here.
 
 The configured Domain Documentation registry has no entries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is configured for this repository-local capability suite. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The active view delegates its interrupt verdict to the control capability source. | L342-L360 | [active capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/capabilities.py) |
-| The control view supplies the fixture-backed interrupt verdict and retains its other control boundaries. | L318-L355 | [control capabilities.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/capabilities.py) |
+| The active view delegates its interrupt verdict to the control capability source. | `_codex_capabilities`; `_claude_capabilities`; `_pi_capabilities` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:112-200; mcp/src/agents_remember/serving/conversation/active/capabilities.py:203-248; mcp/src/agents_remember/serving/conversation/active/capabilities.py:251-339 |
+| The control view supplies the fixture-backed interrupt verdict and retains its other control boundaries. | `_codex_controls`; `_claude_controls`; `_pi_controls` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:145-173; mcp/src/agents_remember/serving/conversation/control/capabilities.py:176-209; mcp/src/agents_remember/serving/conversation/control/capabilities.py:212-237 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary participates in this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Capability evidence and its active projection are repository-local. | — | — |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 2 table citations for the active-to-control interrupt bridge and harness control fixtures; fixer-generated ranges verified.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_conversation_active_capabilities.py` since the L2 base commit is the whole-tree

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/stateGrammar.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,23 +29,23 @@ tracked separately).
 
 ### Logic
 
-- **Pulse ruling as exported constants** (L12-L14): `PULSE_DURATION_S = 2.4`,
+- **Pulse ruling as exported constants** cit:([`PULSE_DURATION_S`, `PULSE_TIMING`, `PULSE_ANIMATION`], dashboard/src/data/stateGrammar.ts:12-14): `PULSE_DURATION_S = 2.4`,
   `PULSE_TIMING = "ease-in-out"`, `PULSE_ANIMATION = "pulseSlow 2.4s ease-in-out infinite"` — so
   tests pin the ruling, not a magic string; the keyframe lives in `index.css`, the literal is
   repeated in `StateDot.tsx` for Panda static extraction (a test pins the two together).
-- **`VISUALS` table** (L44-L71): key → `{word, chip?, color, pulse}`. working = cyan PULSE ·
+- **`VISUALS` table** cit:([`VISUALS`], dashboard/src/data/stateGrammar.ts:44-71): key → `{word, chip?, color, pulse}`. working = cyan PULSE ·
   awaiting-input = STEADY amber `input?` · waiting = STEADY muted-amber (reserved) · failed =
   alarm PULSE · starting = cyan steady · ready = mint, NO chip · turn-ended = mint ·
   stale/landed/retired/exited = muted/dormant steady · unclassified = `—`, no chip. `chip` is the
   rail status-chip label — the status vocabulary ONLY, never the model (R6); absent ⇒ no chip.
-- **`seatVisualState(input)`** (L95-L125) — precedence: terminal statuses first
+- **`seatVisualState(input)`** cit:([`seatVisualState`], dashboard/src/data/stateGrammar.ts:101-125) — precedence: terminal statuses first
   (landed/terminated→retired/exited never look alive) → `controlState==="failed"` → blocked-on-human
   (`sessionHasPendingInteraction(input)` OR `turnState==="awaiting-input"`) → the declared
   `waitingReason` (word `waiting(<reason>)`, chip `waiting: <reason>`) → **`liveTurnWorking`** → live turn-state (working/turn-ended/stale) → control lifecycle
   (starting/ready) → `unclassified`. Server truth mirrored — an unclassified row renders as
   unclassified, never a fabricated state.
 - **Plural pending counts as blocked (review N1)**: `SeatStateInput` picks up
-  `controlPendingInteractions` (L73-L93), and the blocked-on-human guard (L106-L110) calls
+  cit:([`controlPendingInteractions`], dashboard/src/data/stateGrammar.ts:73-93), and the blocked-on-human guard cit:([`sessionHasPendingInteraction`], dashboard/src/data/sessions.ts:454-461) calls
   `sessions.ts`'s `sessionHasPendingInteraction` — the singular parent slot OR a non-empty
   multiplexed sub-agent list — instead of reading only the singular slot. A seat blocked SOLELY on
   a sub-agent approval is STEADY amber awaiting-input, never dark; the guard still slots below the
@@ -80,32 +80,35 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The pulse constants, visuals table, and precedence mapping. | L12-L125 | [stateGrammar.ts](stateGrammar.ts) |
-| The ONLY renderer of these visuals (Panda literal pinned to `PULSE_ANIMATION`). | L8-L49 | [../panels/session-cockpit/StateDot.tsx](../panels/session-cockpit/StateDot.tsx) |
-| The `pulseSlow` keyframe + the effects-off freeze that governs it. | L91-L98 | [../index.css](../index.css) |
-| The server classifier whose words this mirrors (turn state, sweep cadence). | — | [serving/turn_state.py](../../../mcp/src/agents_remember/serving/turn_state.py) |
-| The ANY-pending derivation (N1) the blocked-on-human guard now calls — singular slot OR non-empty multiplexed plural. | L448-L461 | [sessions.ts](sessions.ts) |
-| The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`. | L296-L318 | [../panels/session-cockpit/SessionsView.tsx](../panels/session-cockpit/SessionsView.tsx) |
-| The unit suite: per-state mapping, precedence, waiting(reason), the no-steps pulse ruling, the R9 override winning only below terminal/fault/blocked, and the N1 agent-only-blocked pin. | L14-L168 | [stateGrammar.test.ts](stateGrammar.test.ts) |
+| The pulse constants, visuals table, and precedence mapping. | `PULSE_DURATION_S`; `PULSE_TIMING`; `PULSE_ANIMATION`; `VISUALS`; `seatVisualState` | dashboard/src/data/stateGrammar.ts:12-14; dashboard/src/data/stateGrammar.ts:44-71; dashboard/src/data/stateGrammar.ts:101-125 |
+| The ONLY renderer of these visuals (Panda literal pinned to `PULSE_ANIMATION`). | `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
+| The `pulseSlow` keyframe + the effects-off freeze that governs it. | `pulseSlow` | dashboard/src/index.css:91-98 |
+| The server classifier whose words this mirrors (turn state, sweep cadence). | `classify_turn_state`; `boot_ready` | mcp/src/agents_remember/serving/turn_state.py:157-171; mcp/src/agents_remember/serving/turn_state.py:174-177 |
+| The ANY-pending derivation (N1) the blocked-on-human guard now calls — singular slot OR non-empty multiplexed plural. | `sessionHasPendingInteraction` | dashboard/src/data/sessions.ts:454-461 |
+| The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`. | `liveTurnWorking` | dashboard/src/panels/session-cockpit/SessionsView.tsx:322-322 |
+| The unit suite: per-state mapping, precedence, waiting(reason), the no-steps pulse ruling, the R9 override winning only below terminal/fault/blocked, and the N1 agent-only-blocked pin. | "seatVisualState mapping (spec §2.4)" | dashboard/src/data/stateGrammar.test.ts:14-158 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 2 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 91, 94; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 10 citation entries (16 findings); no Tier-3 findings.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the fix-round review-N1 plural pending
   change. `SeatStateInput` picks up `controlPendingInteractions` and the blocked-on-human guard now

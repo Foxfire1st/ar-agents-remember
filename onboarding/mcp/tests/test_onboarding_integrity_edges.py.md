@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_integrity_edges.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`   |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -55,13 +55,14 @@ by a hand-built dict.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The onboarding drift / missing-onboarding checkers under test. | [agents_remember/](agents-remember/mcp/src/agents_remember/) |
-| The clean-path suites these edge verdicts complete. | [test_onboarding_drift.py](agents-remember/mcp/tests/test_onboarding_drift.py), [test_missing_onboarding.py](agents-remember/mcp/tests/test_missing_onboarding.py), [test_onboarding_doc.py](agents-remember/mcp/tests/test_onboarding_doc.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The onboarding drift / missing-onboarding checkers under test. | `classify_external_onboarding`; `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:33-112 |
+| The clean-path suites these edge verdicts complete. | `InlineOnboardingTests`; `MissingOnboardingTests`; `MeaningfulBodyTests` | mcp/tests/test_missing_onboarding.py:22-154; mcp/tests/test_onboarding_doc.py:42-72; mcp/tests/test_onboarding_drift.py:62-121 |
 
 ## Update History
 
+- 2026-08-02T22:15+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation rows; scoped citation check now passes.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   onboarding-integrity edge-verdict suite. Verification metadata is pinned to the leaf's
   reformat commit until closeout stamps the code commit.

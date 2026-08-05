@@ -48,22 +48,22 @@ the file).
 
 ### Logic
 
-- **Query-parameterized run** (L84-L91): `?panes=` (default 12), `?renderer=dom|webgl`,
+- **Query-parameterized run** cit:([`PtyRenderBench`], dashboard/src/dev/PtyRenderBench.tsx:83-164): `?panes=` (default 12), `?renderer=dom|webgl`,
   `?rate=` lines/s/pane (default 20), `?seconds=` measurement window (default 10), `?settle=`
   pre-measure settle (default 3), `?probe=serialize&lines=N` for the serialize path.
-- **`measureFrames`** (L18-L41): rAF-delta collection over the window → `frames`, `meanMs`,
+- **`measureFrames`** cit:([`measureFrames`], dashboard/src/dev/PtyRenderBench.tsx:18-41): rAF-delta collection over the window → `frames`, `meanMs`,
   `p95Ms`, `maxMs`, and `longFrames` (> 33.4 ms — two 60 Hz budgets, the visible-jank count).
   Its return type is `Omit<PtyFrameStats, …>` against the shared declaration.
-- **`runSerializeProbe`** (L43-L81): lazily imports `@xterm/xterm` + `@xterm/addon-serialize`,
+- **`runSerializeProbe`** cit:([`runSerializeProbe`], dashboard/src/dev/PtyRenderBench.tsx:43-81): lazily imports `@xterm/xterm` + `@xterm/addon-serialize`,
   fills an off-screen raw xterm with `lines` buffer lines from `RUNNER_LINE_LOG_STREAM`, times
   ONE `serialize()` pass and one restore-`write()` into a fresh terminal (the reattach path),
   returns `{bufferLines, serializedBytes, serializeMs, restoreMs}`.
 - **Results surface** (L100-L123, L135-L137): stats land on `window.__ptyBench`
   (`{done, stats?|serialize?|error?}`) for the driver's `waitForFunction`, AND render into
   `data-testid="pty-bench-results"` for scraping; per-pane REAL column counts land on
-  `window.__ptyBenchCols` via each pane's `onResizeCols` (L153-L154) — the R8 ~80-col floor
+  `window.__ptyBenchCols` via each pane's cit:([`onResizeCols`], dashboard/src/dev/PtyRenderBench.tsx:153-154) — the R8 ~80-col floor
   verification reads these.
-- **The constrained grid** (L138-L160): `repeat(4, minmax(0, 1fr))` — `minmax(0,…)` is
+- **The constrained grid** cit:(["repeat(4, minmax(0, 1fr))"], dashboard/src/dev/PtyRenderBench.tsx:138-160): `repeat(4, minmax(0, 1fr))` — `minmax(0,…)` is
   deliberate: xterm's canvas must never inflate a track to min-content, so panes get REALLY
   squeezed (the bug fixed during the L6 run; also exactly what the floor verification needs).
   Each 220px-tall cell mounts `<Terminal sessionId="bench-N" renderer={…}>` under a
@@ -89,16 +89,21 @@ the file).
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Query params, rAF measurement, serialize probe, `__ptyBench`/`__ptyBenchCols` installation, the minmax grid. | L18-L164 | [PtyRenderBench.tsx](PtyRenderBench.tsx) |
-| The shared declaration of `PtyFrameStats`, `PtySerializeProbe` and the `Window` augmentation this file installs into. | L57-L90 | [benchProbes.ts](benchProbes.ts) |
-| The line-log content + configurable-rate mock socket factory the panes consume. | L22-L91 | [lineLogFixture.ts](lineLogFixture.ts) |
-| The real pane component under measurement (renderer prop, `onResizeCols`). | L110-L210 | [../panels/Terminal.tsx](../panels/Terminal.tsx) |
-| The decision record the numbers feed (`PTY_RENDERER = "dom"` + measured summary). | L23-L34 | [../panels/session-cockpit/PtySurface.tsx](../panels/session-cockpit/PtySurface.tsx) |
-| The `/dev/pty-bench` route mount. | L15 | [DevApp.tsx](DevApp.tsx) |
+| Query params, rAF measurement, serialize probe, `__ptyBench`/`__ptyBenchCols` installation, the minmax grid. | `measureFrames` | dashboard/src/dev/PtyRenderBench.tsx:18-41; dashboard/src/dev/PtyRenderBench.tsx:43-81; dashboard/src/dev/PtyRenderBench.tsx:84-91; dashboard/src/dev/PtyRenderBench.tsx:100-123; dashboard/src/dev/PtyRenderBench.tsx:138-160 |
+| The shared declaration of `PtyFrameStats`, `PtySerializeProbe` and the `Window` augmentation this file installs into. | `PtyFrameStats` | dashboard/src/dev/benchProbes.ts:57-90 |
+| The line-log content + configurable-rate mock socket factory the panes consume. | `benchLineLogSocketFactory` | dashboard/src/dev/lineLogFixture.ts:22-22; dashboard/src/dev/lineLogFixture.ts:89-90 |
+| The real pane component under measurement (renderer prop, `onResizeCols`). | `onResizeCols` | dashboard/src/panels/Terminal.tsx:153-153 |
+| The decision record the numbers feed (`PTY_RENDERER = "dom"` + measured summary). | `PTY_RENDERER` | dashboard/src/panels/session-cockpit/PtySurface.tsx:39-39 |
+| The `/dev/pty-bench` route mount. | `PtyRenderBench` | dashboard/src/dev/DevApp.tsx:15-15 |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: converted the 4 superseded prose
+  citations to cit form (query params `PtyRenderBench`, `measureFrames` 18-41, `runSerializeProbe`
+  43-81, the minmax grid 138-160) and normalized the 6 reference rows with anchors. Zero findings
+  remain.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2: the `FrameStats`/`SerializeProbe` interfaces and the
   `Window` augmentation for `__ptyBench`/`__ptyBenchCols` moved out to `benchProbes.ts` (as

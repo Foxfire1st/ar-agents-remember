@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -109,7 +109,7 @@ deterministic sweep loop hosted beside the serving daemon's projector/metrics lo
 `SupervisorSettings` (`enabled` default `true`, `interval_seconds` default 10.0,
 `stale_cutoff_seconds` default 60.0, `redeliver_rate_limit_seconds` default `None`,
 `signal_cooldown_seconds` default `DEFAULT_RATE_LIMIT_SECONDS` / 900, `redeliver_budget` default
-250). `_parse_supervisor` validates boolean/positive fields and checks
+1, and `escalation_budget` default 250). `_parse_supervisor` validates boolean/positive fields and checks
 `redeliverRateLimitSeconds` plus `signalCooldownSeconds` through `_require_supervisor_floor_seconds`,
 which refuses any value below `inbox_backoff.MIN_REDELIVERY_INTERVAL_SECONDS` (900). Absent block or
 absent key both fall back to the documented default (`SupervisorSettings()`'s field defaults).
@@ -244,30 +244,20 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema reference for the agentic family (two-layer model, merge semantics, fail-loud rule, loop schema, role/level spend knobs, harnesses, supervisor settings including the 900-second redelivery floor / `signalCooldownSeconds` / kill-switch mitigation text, reserved families). | Agentic Settings section | [settings-json.md](agents-remember/docs/reference/settings-json.md) |
-| **Known gap (260707-HFX2-L4):** the `orchestration.escalation` family is not yet documented in this schema reference. A follow-up doc pass should add it alongside `orchestration.supervisor`. | — | [settings-json.md](agents-remember/docs/reference/settings-json.md) |
+| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:408-408; docs/reference/settings-json.md:410-411 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate policy primitives the gateDelegation parse builds on (named policies, rule construction, seam verdict binding). | L1-L118 | [gate_policy.py](agents-remember/mcp/src/agents_remember/controlplane/gate_policy.py) |
-| The harness registry whose ids bound every harness preference value. | L41-L49 | [harnesses.py](agents-remember/mcp/src/agents_remember/serving/harnesses.py) |
-| The boot-snapshot consumer: gateDelegation sourced from the global file at boot with the legacy authority fallback. | parse_orchestration_settings | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The per-use spawn consumer: HFX2-L10 makes caller spend fields a `spend-override-unsupported` refusal; settings resolve spend as repo-local level override > global level override > repo-local role default > global role default > spawn preference/detection. | _caller_spend_override_refusal; _resolve_harness_dispatch | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| The install seeding consumer (copy-if-missing global file). | seed_agentic_settings | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| The supervisor sweep's `SupervisorContext` construction reads `settings.supervisor.*` per loop iteration (interval, enable flag, staleness cutoff, redeliver rate limit, signal cooldown, redeliver budget) — the per-use read contract this loader guarantees. | `_supervisor_context`; `supervisor_loop` | [../serving/app.py](../serving/app.py.md) |
-| The MCP tool choke point reads `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS` (this file's constant, not `settings.supervisor.stale_cutoff_seconds`) for the opportunistic banner check (260707-HFX2-L2 R5) — a deliberate simplification so the banner check needs no settings read on every tool call. | `_tool_payload` | [../mcp/tools/base.py](../mcp/tools/base.py.md) |
-| The escalation ladder's per-use consumer: `_supervisor_context()` resolves `settings.escalation.sla_seconds`/`rung_seconds`/`respawn_after_rung` into `SupervisorContext`'s plain-primitive escalation knobs every sweep. | `_supervisor_context` | [../serving/app.py](../serving/app.py.md) |
-| `KNOWN_SUPERVISOR_FIELDS`, `SupervisorSettings`, and `_parse_supervisor` include `signalCooldownSeconds` and reject sub-900 redelivery/cooldown values through `_require_supervisor_floor_seconds`. | L126-L141; L301-L314; L1196-L1238 | [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | The loader operates on coordinator/repo-local files only. | - | - |
 
@@ -276,6 +266,7 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: corrected redelivery default `1`, separated escalation default `250`, and removed the unsupported repository-wide absence claim. Verification metadata unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
   exemptions): `_parse_escalation` was split into `_parse_escalation_sla_seconds`,
   `_parse_escalation_rung_seconds` and `_parse_respawn_after_rung`, each owning one sub-block and

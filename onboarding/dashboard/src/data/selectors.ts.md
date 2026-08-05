@@ -52,27 +52,28 @@ projected `waitSeconds`/`staleSeconds`; this module never calls the clock.
 
 No relevant external documentation is needed for these store selectors.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant documentation found after checking local project source and package contracts. | N/A | [dashboard/src/data/selectors.ts](selectors.ts) |
+| No relevant documentation found after checking live sources. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids. | L16-L32 | [selectors.ts](selectors.ts) |
-| Lifecycle tree grouping and wait formatting are pure display derivations. | L34-L100 | [selectors.ts](selectors.ts) |
-| Store state owns `suppressedAttentionIds`, not this selector. | L29-L39 | [store.ts](store.ts) |
+| `selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
+| Lifecycle tree grouping and wait formatting are pure display derivations. | `buildTree` | dashboard/src/data/selectors.ts:73-105 |
+| Store state owns `suppressedAttentionIds`, not this selector. | "suppressedAttentionIds: Record<string, true>" | dashboard/src/data/store.ts:41-41 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| This selector layer does not cross repository boundaries. | N/A | [selectors.ts](selectors.ts) |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 2 table citations for selector tree construction and suppressed-attention state; fixer-generated ranges verified.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_claude_smoke.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-30T15:25+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -45,9 +45,9 @@ failure only became reachable after the transport restart repair — before it, 
 past the handshake.
 
 ## Repo-Internal References
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Adapter exercised. | `L1-L25` | [harness_control_claude.py](../src/agents_remember/serving/harness_control_claude.py) |
+| Adapter exercised. | `ClaudeStreamJsonAdapter` | mcp/src/agents_remember/serving/harness_control_claude.py:145-571 |
 
 ## 260713-PHA-L6 Fixture Boundary
 
@@ -56,6 +56,7 @@ production exact-version requirement; production accepts the installed/current C
 structured contract.
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 1 table citation for the Claude stream adapter exercised by the smoke; fixer-generated range verified.
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 added only `import pytest` and the
   `@pytest.mark.ar_claude_stream_smoke` marker stacked above the existing
   `@unittest.skipUnless(AR_CLAUDE_STREAM_SMOKE == "1", ...)` decorator — the leaf's way of naming

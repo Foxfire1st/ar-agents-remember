@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/pi_rpc/activity.jsonl` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `409891a4bea54f3b6c3a125611afe54c41cca661` |
-| lastVerifiedCommitDate | 2026-07-14T10:43:35+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -26,16 +26,16 @@ the stronger terminal boundary. It is consumed as one JSONL frame per line.
 - The fixture does not imply that `agent_end` alone is terminal idle.
 
 ## Repo-Internal References
-| Finding | Source Path |
-| --- | --- |
-| Event mapper. | [pi_rpc_events.py](../../../../src/agents_remember/serving/pi_rpc_events.py) |
-| Fixture-driven tests. | [test_pi_rpc_adapter.py](../../test_pi_rpc_adapter.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Event mapper. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
+| Fixture-driven tests. | `test_retry_compaction_and_agent_settled_are_not_early_idle` | mcp/tests/test_pi_rpc_adapter.py:916-947 |
 
 ## Cross-Repo References
-| Finding | Source Path |
-| --- | --- |
-| Upstream Pi RPC event semantics. | [Pi RPC](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/rpc.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Update History
+- 2026-08-02T22:10+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 local citation rows; deleted 1 unsupported external-source row under the 2026-08-02 14:10 ruling; scoped citation check now passes.
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for the retry/compaction/
   settlement event fixture.

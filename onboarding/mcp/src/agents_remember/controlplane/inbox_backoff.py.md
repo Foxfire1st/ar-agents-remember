@@ -76,27 +76,31 @@ the only guaranteed path) and Temporal/Restate/Inngest persisted-timeout pattern
 `wf_5782a3a5-6a1`, cited in the leaf spec) motivate a durable backoff schedule over an in-memory
 retry loop.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None (research citation, no local doc). | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The redelivery floor helper defaults to 900 seconds and refuses explicit sub-floor values; `next_attempt_at` applies the floor over the early ladder rungs. | L24-L72 | [inbox_backoff.py](agents-remember/mcp/src/agents_remember/controlplane/inbox_backoff.py) |
-| The rate-limit predicate reuses the same floor helper before comparing elapsed time since `lastAttemptAt`. | L92-L108 | [inbox_backoff.py](agents-remember/mcp/src/agents_remember/controlplane/inbox_backoff.py) |
-| The backoff ladder + rate-limit gate mirror `OrchestrationNudgeStore.record`'s elapsed-time check. | L81-L99 | [orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py) |
+| The redelivery floor helper defaults to 900 seconds and refuses explicit sub-floor values; `next_attempt_at` applies the floor over the early ladder rungs. | `next_attempt_at` | mcp/src/agents_remember/controlplane/inbox_backoff.py:55-72 |
+| The rate-limit predicate reuses the same floor helper before comparing elapsed time since `lastAttemptAt`. | `is_rate_limited` | mcp/src/agents_remember/controlplane/inbox_backoff.py:92-108 |
+| The backoff ladder + rate-limit gate mirror `OrchestrationNudgeStore.record`'s elapsed-time check. | `_elapsed_seconds` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:170-174 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the two `n/a`-anchor
+  table citations with exact anchors (`is_rate_limited`, `_elapsed_seconds`) and fixer-generated
+  ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/controlplane/inbox_backoff.py` since the L2 base commit is the whole-

@@ -63,12 +63,14 @@ watcher startup so later Compose calls use the same dependency port mappings.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| PostgreSQL, Ollama, and runner modules provide the Docker stack that this module composes. | [backend.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/backend.py); [embedder.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py); [runner.py](agents-remember/mcp/src/agents_remember/providers/grepai/lifecycle/runner.py) |
-| Tests protect Docker-only direct-run rejection, Docker bounded run construction, and full dry-run stack creation. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| PostgreSQL, Ollama, and runner modules provide the Docker stack that this module composes. | `docker_wait_for_postgres`; `docker_wait_for_ollama`; `grepai_runner_image_build` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:51-68; mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:46-62; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:37-74 |
+| Tests protect Docker-only direct-run rejection, Docker bounded run construction, and full dry-run stack creation. | `test_grepai_direct_run_requires_settings_backed_docker`; `test_grepai_start_dry_run_builds_complete_docker_stack` | mcp/tests/test_provider_lifecycle.py:282-316; mcp/tests/test_provider_lifecycle.py:354-409 |
 
 ## Update History
+
+- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 2 citation rows: the Docker stack module functions (backend.py L51-L68, embedder.py L46-L62, runner.py L37-L74) and the lifecycle tests (test_provider_lifecycle.py L282-L410). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site updates for the new
   `GrepaiWorkspaceConfig` / `GrepaiServicePorts` / `GrepaiStackResults` signatures. Same payloads

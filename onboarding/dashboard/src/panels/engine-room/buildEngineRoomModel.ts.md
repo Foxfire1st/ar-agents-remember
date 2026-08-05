@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.ts` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-06-24T08:09+02:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00                                 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -30,17 +30,23 @@ Inputs are flat arrays (mirroring `buildTopology`) so the seam stays React-free 
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `buildEngineRoomModel` export — pure projection -> `EngineRoomModel` | [L19-L42](../../../../../dashboard/src/panels/engine-room/buildEngineRoomModel.ts) | [buildEngineRoomModel.ts](../../../../../dashboard/src/panels/engine-room/buildEngineRoomModel.ts) |
-| `enclosureKey: node.worktreeGroup` set on each view | L29-L33 | [buildEngineRoomModel.ts](../../../../../dashboard/src/panels/engine-room/buildEngineRoomModel.ts) |
-| `EngineRoomModel` / `EngineProcessView` render shapes | L14-L34 | [engineRoomTypes.ts](../../../../../dashboard/src/panels/engine-room/engineRoomTypes.ts) |
-| `GateNode` comes from the joined lifecycle and is exposed as `EngineProcessView.gate`. | — | [projection.ts](../../../../../dashboard/src/types/projection.ts) |
-| `groupEngines` + `EngineStack.scope` workspace/worktree split | L107-L137 | [selectors.ts](../../../../../dashboard/src/data/selectors.ts) |
-| `EngineProcessNode.worktreeGroup`/`lifecycleId`, `ProviderNode.scope` | L29-L68, L251-L258 | [projection.ts](../../../../../dashboard/src/types/projection.ts) |
+| The `buildEngineRoomModel` projection function is exported here. | "function buildEngineRoomModel" | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-33 |
+| Each view assigns `enclosureKey` from `node.worktreeGroup`. | `enclosureKey` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:47-47 |
+| `EngineRoomModel` render shape | `EngineRoomModel` | dashboard/src/panels/engine-room/engineRoomTypes.ts:28-37 |
+| `EngineProcessView` render shape | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
+| The model assigns the joined lifecycle gate into the process view. | "lifecycle?.gate" | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:50-50 |
+| `EngineProcessView` exposes the gate field. | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
+| `groupEngines` + `EngineStack.scope` workspace/worktree split | `groupEngines` | dashboard/src/data/selectors.ts:147-165 |
+| `EngineProcessNode.worktreeGroup` and `lifecycleId` | `EngineProcessNode` | dashboard/src/types/projection.ts:162-202 |
+| `ProviderNode.scope` | `ProviderNode` | dashboard/src/types/projection.ts:325-336 |
 
 ## Update History
 
+- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
+
+- 2026-08-02T01:42+02:00 — No content impact: corrected Source Path link depth. The link(s) in this document carried one `../` too many and had never resolved from this card's directory — not code moving out from under a citation, the path as written. Enumerating every depth in both trees leaves exactly one that resolves and it is exactly one level shallower, so there was nothing to judge (`memory_quality/style/citations`, `citation_link_depth_wrong`). No claim, range or target document changed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-24T08:09+02:00 — Engine Room leaf identity: process views now sort active leaf enclosures ahead of cleanup/retired siblings and use `leafId || taskName` as the tie-breaker, preventing an old cleanup-pending leaf from becoming the selected duplicate parent task. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-23T13:45+02:00 — Task 11: `EngineProcessView` now carries `gate: lifecycle?.gate`, giving
   Engine Room diagnostics/canvas a direct projected gate instead of phase/edge inference. Verification

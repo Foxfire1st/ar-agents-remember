@@ -16,49 +16,53 @@
 
 ## Purpose
 
-`refresh.py` owns CodeGraphContext index refresh lifecycle for one configured
-root or every settings-backed root.
+`refresh.py` owns the CodeGraphContext refresh lifecycle: it builds compose plans,
+performs per-layout preflight and live refreshes, records refresh state, and
+aggregates refresh-all results.
 
 ## Code Commentary
 
 ### Logic
 
-The module builds Dockerized `cgc index <repo> --force` commands (with `<repo>`
-rendered as the driveless container path `container_code_repo_root` so it is
-valid inside the Linux runner on Windows hosts), returns dry-run refresh
-payloads, starts the managed backend when required, runs CGC doctor before live
-refreshes, records refresh state, and aggregates all-root refresh results. The
-`cgc index --force` commands run with `UNLIMITED_TIMEOUT` (from
-`lifecycle.command_runner`) so a long index pass is never killed by a
-wall-clock cap.
+`cgc_refresh_command` selects the settings-backed layouts and builds a compose
+plan for the runner's `index` command, using the layout's
+`container_code_repo_root`. `cgc_refresh_dry_result` returns the provider,
+repository, working-directory, environment, and command in a dry-run payload.
 
-`cgc_refresh_all` now imports and calls `cgc_index_concurrency` and includes
-the result as `indexConcurrency` in the all-root refresh result payload. This
-lets callers confirm which concurrency cap was active for the refresh-all run.
+`cgc_refresh_preflight` returns the dry-run result without executing the live
+command, or starts the configured backend and runs `cgc_doctor` before a live
+refresh. `cgc_refresh` runs the compose plan with `UNLIMITED_TIMEOUT` and
+passes the result to `cgc_write_refresh_state`, which records the return code,
+duration, and UTC update time.
+
+`cgc_refresh_all` starts the configured watchers, returns early on a backend
+failure, creates one dry-run result per layout when requested, and otherwise
+uses the parallel layout action helper. Its final payload includes the watcher
+result, the parallel marker, and `cgc_index_concurrency` for the selected
+layout count.
 
 ### Invariants And Boundaries
 
-- Refresh requires a healthy CGC install and backend when settings-backed roots
-  use managed backend mode.
-- All-root result aggregation is reused from `process_control.py`.
-- Bounded `cgc run` and visualizer behavior live in `query.py`.
-- Refresh execution must use the Docker runner image, not a host `cgc`
-  executable.
-- Index refresh must stay uncapped (`UNLIMITED_TIMEOUT`); do not reintroduce a
-  wall-clock timeout on the `cgc index` commands.
-- Layout parameters are typed as `CgcRuntimeLayout` (imported from
-  `lifecycle.core`, which re-exports it from
-  `agents_remember.providers.context`), not bare `Any`.
+- Settings-backed refreshes use the backend and doctor preflight before the
+  live compose command; dry-run returns before those live actions.
+- Live index execution uses `UNLIMITED_TIMEOUT`.
+- Refresh state is written only after a live compose result is available.
+- Layout arguments are typed as `CgcRuntimeLayout`, and refresh-all uses the
+  shared watcher, parallel-action, aggregation, and concurrency helpers.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Backend startup is delegated to the CGC backend lifecycle module. | [backend.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/backend.py) |
-| All-root aggregation helpers and `cgc_index_concurrency` are shared with process control. | [process_control.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py) |
-| Docker command construction is provided by the runner module. | [runner.py](agents-remember/mcp/src/agents_remember/providers/cgc/lifecycle/runner.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The per-layout compose command plan. | `cgc_refresh_command` | mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:34-50 |
+| The dry-run payload and backend/doctor preflight. | `cgc_refresh_dry_result`; `cgc_refresh_preflight` | mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:53-63; mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:92-103 |
+| Refresh state records the live command result. | `cgc_write_refresh_state` | mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:75-89 |
+| The live refresh uses the uncapped command runner. | `cgc_refresh` | mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:106-143 |
+| Refresh-all combines watcher startup, parallel layout actions, and aggregation. | `cgc_refresh_all` | mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:175-214 |
+| Refresh-all reports the selected concurrency. | "indexConcurrency" | mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:213-213 |
 
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py` since the L2 base commit is the

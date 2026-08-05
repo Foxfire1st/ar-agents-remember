@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,26 +58,29 @@ None.
 
 No Domain Documentation source is configured. The repository sources are direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate registry, locked Codex version constant, and per-fingerprint cache under test. | L146-L192; L40 | [gates.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/gates.py) |
-| The installed-runtime suite re-proving the same gates on real harnesses. | L136-L153; L217-L231 | [test_conversation_library_installed.py](agents-remember/mcp/tests/test_conversation_library_installed.py) |
+| The gate registry, locked Codex version constant, and per-fingerprint cache under test. | `LibraryGateRegistry`; `LOCKED_CODEX_RUNTIME_VERSION` | mcp/src/agents_remember/serving/conversation/library/gates.py:48-48; mcp/src/agents_remember/serving/conversation/library/gates.py:171-324 |
+| Codex gate behavior is covered by the focused test class. | `CodexGateTests` | mcp/tests/test_conversation_library_gates.py:63-148 |
+| Helper-backed gate behavior is covered by the focused test class. | `HelperGateTests` | mcp/tests/test_conversation_library_gates.py:151-212 |
 
 ## Cross-Repo References
 
 No neighboring repository participates in this gate suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+
 
 ## Update History
+
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored gate references with exact local anchors and generated final ranges with the scoped fixer.
 
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
   leaf diff. The only change is the local `_registry` helper handing `LibraryGateRegistry` a

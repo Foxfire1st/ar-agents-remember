@@ -46,22 +46,22 @@ any ledger path ever writes `launchEvidence`. Test-only.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | L14-L309 | [sessionCockpitStore.ts](sessionCockpitStore.ts) |
-| The registry the mirror case writes through. | — | [sessions.ts](sessions.ts) |
+| The module under test. | `setOrchestrationTreeView` | dashboard/src/data/sessionCockpitStore.ts:227-227 |
+| The registry the mirror case writes through. | `useSessions` | dashboard/src/data/sessions.ts:439-440 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -72,6 +72,10 @@ withdrawal, one-slot recovery, and exact draft/answer revision-CAS behavior. It 
 edits and successor requests cannot be cleared, restored, or dismissed by stale actions.
 
 ## Update History
+
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 2 Repo-Internal citation rows with exact
+  store identifiers and repository-relative sources; verification metadata and non-repo references
+  remain unchanged.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
   from the packed dashboard/src parent to the new nearest data authority overview. Source behavior

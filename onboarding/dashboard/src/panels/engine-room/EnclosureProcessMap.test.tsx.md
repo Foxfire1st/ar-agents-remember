@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T11:06+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -167,15 +167,15 @@ negative — it is the assertion that would fail if a polarity field were reintr
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals). | — | [EnclosureProcessMap.tsx](EnclosureProcessMap.tsx) |
-| The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: "stale", … })`. | L829-L860 | [fixtures.ts](fixtures.ts) |
-| The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. | L514-L557 | [EnclosureProcessMap.test.tsx](EnclosureProcessMap.test.tsx) |
-| `refusedPolarityOf` — the derivation the test's amber expectation depends on. | L204-L241 | [EnclosureCanvas.tsx](EnclosureCanvas.tsx) |
-| `_seed_edge_state` — why `stale` is the honest reroute state to assert. | L1588-L1611 | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | L143-L154 | [projection.ts](../../types/projection.ts) |
-| The jsdom stubs + determinism freeze. | — | [test/setup.ts](../../test/setup.ts) |
+| `EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals). | "export function EnclosureProcessMap" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-62 |
+| The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: "stale", … })`. | `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:722-1198 |
+| The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. | "renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:38-45 |
+| `refusedPolarityOf` — the derivation the test's amber expectation depends on. | `refusedPolarityOf` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:231-241 |
+| `_seed_edge_state` — why `stale` is the honest reroute state to assert. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1598-1614 |
+| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:517-517 |
+| The jsdom stubs + determinism freeze. | "window.matchMedia = ((query" | dashboard/src/test/setup.ts:6-6 |
 
 ## Current L5I Maintenance
 
@@ -190,6 +190,9 @@ targets and the sparse overlay owns surge and reindex targets. Existing effects-
 to pin the static scene.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-08-01T11:06+02:00 — 260731-EFA-L4 curator: corrected the T9C case description. The conduit
   assertion is no longer `data-state=refused` + `data-refused-polarity=amber`; it is `data-state=stale`

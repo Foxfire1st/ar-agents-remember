@@ -67,11 +67,12 @@ name.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `analyze_jsonl` and the per-event metric extraction under test live in the benchmark analysis module. | [analysis.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/analysis.py) |
-| The token-key set summed from `turn.completed.usage` is defined in benchmark runner constants. | [constants.py](agents-remember/mcp/src/agents_remember/benchmarks/runner_modules/constants.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `analyze_jsonl` and the per-event metric extraction under test live in the benchmark analysis module. | `analyze_jsonl` | mcp/src/agents_remember/benchmarks/runner_modules/analysis.py:96-100 |
+| The token-key set summed from `turn.completed.usage` is defined in benchmark runner constants. | `USAGE_TOKEN_KEYS` | mcp/src/agents_remember/benchmarks/runner_modules/constants.py:19-24 |
 
 ## Update History
 
+- 2026-08-03T03:09:46+02:00 — W3-B04 curator: curated 1 table citation (1 total), supplying the exact anchor and path; the scoped fixer generated the final extent.
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

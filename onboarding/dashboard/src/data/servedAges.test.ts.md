@@ -51,27 +51,29 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Subject under test. | [servedAges.ts](agents-remember/dashboard/src/data/servedAges.ts) |
-| The server set this must mirror. | [delta.py](agents-remember/mcp/src/agents_remember/serving/delta.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Subject under test. | `VOLATILE_AGE_FIELDS`; `stableEquals`; `servedAgeSeconds`; `useNowMs` | dashboard/src/data/servedAges.ts:16-22; dashboard/src/data/servedAges.ts:30-45; dashboard/src/data/servedAges.ts:61-71; dashboard/src/data/servedAges.ts:81-95 |
+| The server set this must mirror. | `VOLATILE_AGE_FIELDS` | mcp/src/agents_remember/serving/delta.py:36-38 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 2 citation claims; scoped recheck clean (0 findings).
 
 - 2026-07-24T13:17:50Z — Added hidden-layer age-clock regression coverage. Verification hash/date
   remain pinned to the pre-commit source stamp.

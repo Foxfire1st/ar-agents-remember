@@ -85,9 +85,8 @@ authority this backdrop borrows from; the backdrop is explicitly faint, off-stat
 state encoding. No backdrop-for-empty-states page exists in the canonical spec beyond the engine-room
 backdrop treatment this reuses.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine-room visual-language spec the G6 atmospheric backdrop (reused here) is drawn from. | — | [engine-room-visual-language.html](https://github.com/Foxfire1st/agents-remember/blob/main/docs/design/engine-room/engine-room-visual-language.html) |
 
 ## Repo-Internal References
 
@@ -95,22 +94,26 @@ This component generalizes the engine-room G6 backdrop into a shared panel; its 
 engine-room backdrop styles + their usage, the honest-motion gate it shares, and the three current
 empty states that mount it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. | L1230-L1247 | [engine-room/engineRoomStyles.ts](engine-room/engineRoomStyles.ts) |
-| The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | L82-L88 | [engine-room/EnclosureProcessMap.tsx](engine-room/EnclosureProcessMap.tsx) |
-| The honest-motion gate that decides whether the backdrop mounts at all. | L19-L37 | [engine-room/useShouldAnimate.ts](engine-room/useShouldAnimate.ts) |
-| `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | L476-L479 | [DetailPanel.tsx](DetailPanel.tsx) |
-| File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. | L107-L110 | [file-viewer/DualPane.tsx](file-viewer/DualPane.tsx) |
-| Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | L347-L350 | [changeset/ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx) |
-| The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | L6-L12; L31-L40; L51-L59 | [EmptyStateBackdrop.tsx](EmptyStateBackdrop.tsx) |
-| The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. | L39-L55 | [EmptyStateBackdrop.test.tsx](EmptyStateBackdrop.test.tsx) |
+| The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. | "export const backdrop =" | dashboard/src/panels/engine-room/engineRoomStyles.ts:1263-1263 |
+| The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | "export function EnclosureProcessMap" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-62 |
+| The honest-motion gate that decides whether the backdrop mounts at all. | "export function useShouldAnimate" | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19 |
+| `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | "export const DetailPanel" | dashboard/src/panels/DetailPanel.tsx:723-723 |
+| File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. | `DualPane` | dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
+| Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:156-365 |
+| The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | "export function EmptyStateBackdrop" | dashboard/src/panels/EmptyStateBackdrop.tsx:52-52 |
+| The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. | "always renders the message children" | dashboard/src/panels/EmptyStateBackdrop.test.tsx:32-37 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. This is a self-contained presentational dashboard component.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors (deleting the unresolvable external URL row); exact non-fixing check returns zero
+  findings.
 
 - 2026-07-24T13:17:50Z — Added visibility-gated backdrop video behavior. Verification hash/date remain
   pinned to the pre-commit source stamp.

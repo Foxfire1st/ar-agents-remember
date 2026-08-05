@@ -6,8 +6,8 @@
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated            | 2026-07-18T07:43+02:00                      |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`  |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -76,30 +76,33 @@ The active memory repository's `system/sources.md` has no configured Domain Docu
 overview was refreshed from the same-repository design documents, reviewed FEUI-L8 implementation/tests,
 and the accepted worker/reviewer evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external Domain Documentation source governs this route. | `system/sources.md` checked | — |
+| No configured external Domain Documentation source governs this route. | — | — |
 
 ## Cross-Repo References
 
 The FEUI-L8 design evidence and Chats ruling are repository-local. No cross-repository implementation was
 needed to establish the route model.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Same-repository design/source review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| ------- | ----------- |
-| The engine-room design reference child route (living spec + prototype) governing the dashboard engine room. | [engine-room/ overview](engine-room/overview.md) |
-| The dashboard engine-room renderer the engine-room design docs govern. | [dashboard/src/panels/engine-room/overview.md](../../dashboard/src/panels/engine-room/overview.md) |
-| FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. | [scenario catalog](agents-remember/docs/design/dashboard/scenario-catalog.md) |
-| The explicit upstream gaps and one-Chats cutover ruling. | [session cockpit upstream register](agents-remember/docs/design/dashboard/session-cockpit-upstream-register.md) |
-| The bounded series closeout evidence pack. | [session cockpit closeout evidence](agents-remember/docs/design/dashboard/session-cockpit-closeout-evidence.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The engine-room design reference child route (living spec + prototype) governing the dashboard engine room. | `# docs/design/engine-room/ — Engine Room Design Reference Overview` | onboarding/docs/design/engine-room/overview.md:1-91 |
+| The dashboard engine-room renderer the engine-room design docs govern. | `# dashboard/src/panels/engine-room/ — Engine Room Process Map Overview` | onboarding/dashboard/src/panels/engine-room/overview.md:1-482 |
+| FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. | `# Cockpit Dashboard — Workflow Scenario Catalog` | docs/design/dashboard/scenario-catalog.md:1-166 |
+| The explicit upstream gaps and one-Chats cutover ruling. | `# Session cockpit upstream register and Chats decision brief` | docs/design/dashboard/session-cockpit-upstream-register.md:1-66 |
+| The bounded series closeout evidence pack. | `# Session cockpit closeout evidence` | docs/design/dashboard/session-cockpit-closeout-evidence.md:1-154 |
 
 ## Update History
+
+- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 5 citation claims
+  (Repo-Internal reference rows, including two memory-repo-relative sources); scoped result 0 findings.
 
 - 2026-07-18T07:43+02:00 — 260715-FEUI-L8 route impact: added the `dashboard/` evidence route to the
   current model, routed scenario/accessibility/performance and closeout proof there, and preserved the

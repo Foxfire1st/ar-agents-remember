@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -58,15 +58,17 @@ from `git_ops`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Metadata parsing, path mirroring, and `rel` come from `discovery`. | [discovery.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py) |
-| Entity-catalog sidecars are delegated to `entities`. | [entities.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py) |
-| Local staged/unstaged change notes come from `git_ops`. | [git_ops.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py) |
-| The `cat-file -e` and `diff --quiet` calls run on the single kernel git runner. | [git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Metadata parsing, path mirroring, and `rel` come from `discovery`. | `parse_table_metadata`; `mirror_onboarding_path`; `rel` | mcp/src/agents_remember/kernel/coordination_context/paths.py:42-52; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:17-32; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
+| Entity-catalog sidecars import `classify_entity_catalog` from `entities`. | "from agents_remember.memory_quality.integrity.onboarding_drift_check.entities import ( classify_entity_catalog, )" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:21-23 |
+| For `repo-entity-catalog` sidecars, `classify_sidecar_onboarding_units` delegates to `classify_entity_catalog`. | "if doc_type == \"repo-entity-catalog\": return classify_entity_catalog" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:299-300 |
+| Local staged/unstaged change notes come from `git_ops`. | `local_change_note`; `local_route_change_note` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:22-38; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:48-51 |
+| The `cat-file -e` and `diff --quiet` calls run on the single kernel git runner. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Update History
 
+- 2026-08-03T02:45:41+02:00 — W3-B01 curator: the correction delta split the entity-catalog finding into separate import and delegation claims, and the fixer generated the actual sidecar extents `21-23` and `299-300` rather than retaining a transient `1-1` pointer. The preserved discovery wording is semantically broader than the current split implementation because `mirror_onboarding_path` lives in coordination-context paths; that developer-owned Tier-3 wording mismatch remains inventoried rather than silently rewritten. Verification metadata remains unchanged for closeout.
 - 2026-07-31T20:57+02:00 — 260731-EFA-L3 curator: `run_git` is now imported from
   `kernel.git_command` instead of `git_ops`, so the reference row "Source diff and change notes come
   from `git_ops`" was half false. Split the row, documented the two git calls each classifier makes

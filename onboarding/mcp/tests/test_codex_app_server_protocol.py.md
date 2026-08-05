@@ -57,24 +57,23 @@ None known for this leaf.
 
 No Domain Documentation entries are configured in the resolved source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live documentation source was available for this pass. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Late-response coverage proves that cancelling one request cannot steal or poison the next request's correlated response. | L94-L117 | [test_codex_app_server_protocol.py](agents-remember/mcp/tests/test_codex_app_server_protocol.py) |
-| Two-size coverage proves that 8 and 64 cancelled requests without responses require no retained tombstone store and leave the next request usable. | L120-L146 | [test_codex_app_server_protocol.py](agents-remember/mcp/tests/test_codex_app_server_protocol.py) |
-| The transport removes cancelled pending futures and discards only syntactically valid responses whose ids no longer have a live future. | L93-L106; L220-L232 | [codex_app_server_protocol.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_protocol.py) |
-| Fixture captures the pinned protocol identity. | L1-L31 | [codex_app_server_0_144_3.json](agents-remember/mcp/tests/fixtures/codex_app_server_0_144_3.json) |
+| Late-response coverage proves that cancelling one request cannot steal or poison the next request's correlated response. | `test_cancelled_request_neutralizes_late_response_and_next_request_survives` | mcp/tests/test_codex_app_server_protocol.py:239-262 |
+| Two-size coverage proves that 8 and 64 cancelled requests without responses require no retained tombstone store and leave the next request usable. | `test_cancelled_requests_without_responses_need_no_retained_tombstones` | mcp/tests/test_codex_app_server_protocol.py:265-291 |
+| The transport removes cancelled pending futures and discards only syntactically valid responses whose ids no longer have a live future. | `CodexStdioTransport` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:60-305 |
+| Fixture captures the pinned protocol identity. | "codex-app-server/0.144.3" | mcp/tests/fixtures/codex_app_server_0_144_3.json:4-4 |
 
 ## Cross-Repo References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Reviewer confirmed malformed/oversized protocol and pinned-schema checks. | L25-L29 | [260713-PHA-L3-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260713_protocol-backed-harness-adapters/notes/reports/260713-PHA-L3-reviewer-verdict.md) |
 
 ## 260727-CHATS-IM-L2 Framing-Fuse Regression Delta
 
@@ -86,6 +85,9 @@ explicit failure to every pending RPC and the event stream; the fuse is not pres
 paging.
 
 ## Update History
+
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the supported protocol-test citations and removed the unsupported reviewer-verdict row; final exact frozen-snapshot check is clean.
+- 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: repaired 4 Repo-Internal reference rows and 1 exact staged fixture range; retained 1 unresolved reviewer-verdict Cross-Repo row; scoped result preserves 2 Tier-3 findings (`citation_anchor_missing`, `citation_source_malformed`).
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented measured-size compatibility,
   increasing payloads, exact 128 MiB delimiter-excluded boundary, and shared-fatal above-fuse

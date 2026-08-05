@@ -108,36 +108,37 @@ None.
 
 No external documentation is needed for this repository-local template.
 
-| Finding                                   | Citations | Source Path |
-| ----------------------------------------- | --------- | ----------- |
-| No relevant external documentation found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation found. | — | — |
 
 ## Repo-Internal References
 
 This onboarding is backed by the source template itself.
 
-| Finding                                                                                                                       | Citations | Source Path |
-| ----------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| The template routes spawned agents by their role brief and keeps the developer-facing chat as a free-chat launcher that spawns a settings-profile architect for role-shaped work. | L3-L18 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | L28-L38   | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | L40-L49 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. | L50-L60 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The resolver section requires `c-08-ar-coordination-context-resolver` skill before relying on memory/task surfaces, then checks provider readiness through the `context_packet` MCP tool when the MCP server is configured and providers are enabled. | L65-L86 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. | L88-L111 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise. | L122-L126 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| Branch/worktree approval boundaries and memory-layer authority remain listed in the template. | L127-L134 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
-| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | L131-L135 | [mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template routes spawned agents by their role brief and keeps the developer-facing chat as a free-chat launcher that spawns a settings-profile architect for role-shaped work. | `## Start Here — Route By Role`, `AR_SPAWN_ROLE` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:3-12 |
+| The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | `### Installed AGENTS.md Routing` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:34-41 |
+| The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | `### Onboarding Documentation`, `c-04-retrieval-strategy-router` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:42-54 |
+| The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. | `### Developer Clarifications`, `c-01-findings-capture`, `c-05-create-or-update-onboarding-files` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:55-68 |
+| The resolver section requires `c-08-ar-coordination-context-resolver` skill before relying on memory/task surfaces, then checks provider readiness through the `context_packet` MCP tool when the MCP server is configured and providers are enabled. | `## Ar-coordination & Memory Layer Resolver`, `context_packet` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:69-83 |
+| Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. | `memory_root` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:88-111 |
+| The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise. | "ar-coordination/" | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:147-153 |
+| Branch/worktree approval boundaries and memory-layer authority remain listed in the template. | `### Boundaries` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:147-162 |
+| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | `## Code Quality Instructions` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:163-170 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this package template.
 
-| Finding                                    | Citations | Source Path |
-| ------------------------------------------ | --------- | ----------- |
-| No meaningful cross-repo references found. | n/a       | n/a         |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 16 citations (citation_anchor_missing=8, citation_prose_not_in_cit_form=0, citation_source_malformed=8); final scoped citation check clean.
 - 2026-07-10T02:39+02:00 — HFX3 retro curation: corrected the installed coordinator-template
   account to the otherwise-free-chat launcher contract. Research stays inline; role-shaped work
   spawns a clean architect with the settings-owned profile. Updated the source citation range.

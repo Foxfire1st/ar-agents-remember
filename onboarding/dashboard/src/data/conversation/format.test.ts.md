@@ -48,27 +48,30 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The presentation conventions under test. | — | [format.ts](format.ts) |
+| The presentation conventions under test. | `humanizeDuration` | dashboard/src/data/conversation/format.ts:25-37 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
 
+- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 2 citation findings. Re-anchored the
+  presentation-conventions row to `humanizeDuration` and normalized its source cell to the exact
+  `format.ts:11-86` span. Scoped recheck clean.
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the format convention
   proofs (A1/A4/A5) — exact humanized-duration strings, em-dash absent, interpunct joins, quiet
   long-stale tone, and boundary truncation. Verification is pinned to the leaf base (`0be0099`)

@@ -19,7 +19,7 @@
 `test_install_runtime.py` covers MCP package runtime-install behavior that
 affects live provider runtime safety from the core-skill test suite, including
 the provider watcher rebind path used when provider dependencies are refreshed.
-`AgenticSettingsSeedTests` (L466) pins the global agentic settings seeding:
+cit:([`AgenticSettingsSeedTests`], mcp/tests/test_install_runtime.py:466-526) pins the global agentic settings seeding:
 `install_runtime` writes `<coordinationRoot>/system/settings.json` when missing
 (content equal to `default_agentic_settings_seed()`), NEVER clobbers an
 existing file (byte-for-byte preserved), and dry-run counts the seed without
@@ -98,32 +98,33 @@ None.
 
 No external documentation is needed for this test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | L25-L36 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | L65-L119 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | L121-L164 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The provider-deps rebind regression proves watcher stop happens before runner refresh and watcher start/status happens after provider dependency install. | L166-L237 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The dry-run rebind regression reports watcher stop/start/status and dependency install while preserving the stale runner file. | L239-L303 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| Degraded and unrecovered status regressions prove one non-destructive restart/rebind attempt and recovery-action reporting. | L305-L411 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| Dependency-install failure still attempts watcher recovery before raising a runtime-install failure. | L413-L463 | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
-| The `ProviderDependencyInstall` parameter object and the two entry points this suite drives through it. | L89-L102; L415-L421; L462-L469 | [install/runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
+| The test creates a synthetic runtime source tree with the MCP installer-required runtime directories and provider defaults, without a runtime `scripts/` tree. | `test_runtime_install_preserves_docker_provider_state` | mcp/tests/test_install_runtime.py:65-119 |
+| The provider-runtime preservation regression proves runtime install preserves CGC and GrepAI runner roots while pruning legacy `_bin` and `_venvs`, removing unrelated stale provider files, and copying provider requirements. | `test_runtime_install_preserves_docker_provider_state` | mcp/tests/test_install_runtime.py:65-119 |
+| The full-install regression preserves provider data and central log roots, creates default provider data/log/runner directories, and does not install the MCP package into the coordinator. | `test_runtime_install_preserves_provider_state_and_ignores_mcp_package` | mcp/tests/test_install_runtime.py:121-164 |
+| The provider-deps rebind regression proves watcher stop happens before runner refresh and watcher start/status happens after provider dependency install. | `test_runtime_install_provider_deps_rebinds_watchers_around_runner_refresh` | mcp/tests/test_install_runtime.py:166-237 |
+| The dry-run rebind regression reports watcher stop/start/status and dependency install while preserving the stale runner file. | `test_runtime_install_provider_deps_dry_run_reports_rebind_without_mutating` | mcp/tests/test_install_runtime.py:239-303 |
+| Degraded and unrecovered status regressions prove one non-destructive restart/rebind attempt and recovery-action reporting. | `test_runtime_install_provider_deps_retries_rebind_after_degraded_status`; `test_runtime_install_provider_deps_reports_unrecovered_provider_failure` | mcp/tests/test_install_runtime.py:305-363; mcp/tests/test_install_runtime.py:365-411 |
+| Dependency-install failure still attempts watcher recovery before raising a runtime-install failure. | `test_runtime_install_provider_dependency_failure_attempts_watcher_recovery` | mcp/tests/test_install_runtime.py:413-463 |
+| The `ProviderDependencyInstall` parameter object and the two entry points this suite drives through it. | `ProviderDependencyInstall` | mcp/src/agents_remember/install/runtime.py:89-102 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this installer test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 7 citation claims; scoped result 0 findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass deleted a keyword this card
   named, so the body was corrected rather than attested. `install_runtime` no longer accepts

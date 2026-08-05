@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |                                            `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`|
-| lastVerifiedCommitDate |                                            2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -73,18 +73,18 @@ owner-never-self-approves still holds.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | n/a | [architect.md](agents-remember/skills/l-01-agent-lifecycles/roles/architect.md) |
-| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | n/a | [SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md) |
-| The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | n/a | [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md) |
-| The design hat the architect wears inline when shaping intent or task docs. | n/a | [designer.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md) |
+| The canonical architect role is defined in the cited source file. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-264 |
+| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | `architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:95-124 |
+| The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
+| The design hat the architect wears inline when shaping intent or task docs. | `designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration role file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -93,14 +93,9 @@ No sibling repository evidence is needed for this orchestration role file.
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 
-### 260713-PHA-L5 Reviewed Hosted Cutover Impact
-
-Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
-contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
-legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
-inbox acceptance remains distinct from explicit consumption where applicable.
-
 ## Update History
+- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: restored canonical/package-data source ownership
+  citations and removed the unsupported hosted-cutover impact section.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 

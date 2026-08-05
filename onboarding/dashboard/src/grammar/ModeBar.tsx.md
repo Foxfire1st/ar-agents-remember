@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/ModeBar.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -41,12 +41,15 @@ free. (A full `Tabs`/`TabPanel` wiring with `aria-controls` to the viewport is a
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The cockpit shell consumes `ModeBar` for the view switcher. | L40-L82 | [cockpit/Cockpit.tsx](../cockpit/Cockpit.tsx) |
-| The React Aria condition reconciliation it relies on. | L20-L30 | [panda.config.ts](agents-remember/dashboard/panda.config.ts) |
+| The cockpit shell consumes `ModeBar` for the view switcher. | "Views" | dashboard/src/cockpit/Cockpit.tsx:654-654 |
+| The React Aria condition reconciliation it relies on. | `_selected` | dashboard/panda.config.ts:18-18 |
 
 ## Update History
+
+- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 2 Repo-Internal citation rows with exact
+  current React/Panda source anchors and repository-relative paths; verification metadata unchanged.
 
 - 2026-06-15T17:00 — Created for slice 5d: React Aria `ToggleButtonGroup` mode bar styled by Panda.
   Verification metadata pinned until closeout stamps the 5d code commit.

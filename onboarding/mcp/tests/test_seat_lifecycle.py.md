@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ Test classes, in file order:
   untouched, records the landing provenance carried by `SeatClosure`, and skips
   already-terminated seats.
 - **`AutoLandHookIntegrationTests`** — the completion-edge wiring in
-  `controllers/worktree_tools.py`, built around a fake `WorktreeContract` and mocked
+  `application/worktree_tools.py`, built around a fake `WorktreeContract` and mocked
   `git_worktree_manager.integrate_result`/`finalize_result`: `worktree_integrate_tool` auto-lands
   worker+reviewer seats (manager untouched) and reports them in `autoLandedSeats`; skipped when
   `auto_land_on_integration=False` (key absent from the result entirely, not an empty list) or on a
@@ -107,7 +107,7 @@ rather than a shared fixture, so catalog file state never leaks between tests.
 
 This file tests behavior across the seat lifecycle source files (`retire_policy.py`, `retire.py`,
 `landing.py`, `turn_state.py`, `terminal_catalog.py`, `terminal_liveness.py`, and
-`controllers/worktree_tools.py`'s auto-land hooks) plus the `session_retire`/`session_rename` MCP
+`application/worktree_tools.py`'s auto-land hooks) plus the `session_retire`/`session_rename` MCP
 tool payloads and `RetirementSettings` config parsing.
 
 ### Todos
@@ -119,31 +119,30 @@ No known follow-up in this file.
 No relevant external documentation found after checking the repo Domain Documentation; this is a
 same-repository unit/integration test file with no external-standard dependency.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document governs this test shape; the leaf task doc's failing-first requirement list is the source of truth for coverage scope. | L1-L832 | [test_seat_lifecycle.py](test_seat_lifecycle.py) |
+| No external/domain document governs this test shape; the leaf task doc's failing-first requirement list is the source of truth for coverage scope. | "class RetirePolicyMatrixTests" | mcp/tests/test_seat_lifecycle.py:103-103 |
 
 ## Repo-Internal References
 
 This suite directly exercises five source files and the leaf task doc's requirement list.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `RetirePolicyMatrixTests` exercises `check_retire_authority`/`master_of`/`RetirePolicyError` directly. | `RetirePolicyMatrixTests` | [../src/agents_remember/serving/retire_policy.py](../src/agents_remember/serving/retire_policy.py) |
-| `LandSeatsForLeafTests` exercises `land_seats_for_leaf` directly. | `LandSeatsForLeafTests` | [../src/agents_remember/serving/landing.py](../src/agents_remember/serving/landing.py) |
-| `TurnStateClassificationTests` exercises `classify_turn_state` directly. | `TurnStateClassificationTests` | [../src/agents_remember/serving/turn_state.py](../src/agents_remember/serving/turn_state.py) |
-| `TurnStateSweepWiringTests` exercises `observe_terminal_liveness`'s alive-classification path with an injected `pane_capturer`. | `TurnStateSweepWiringTests` | [../src/agents_remember/serving/terminal_liveness.py](../src/agents_remember/serving/terminal_liveness.py) |
-| `TerminalMarkVsLivenessInterplayTests` exercises `mark_retired`/`record_liveness_probe` interplay on `TerminalCatalog` directly. | `TerminalMarkVsLivenessInterplayTests` | [../src/agents_remember/serving/terminal_catalog.py](../src/agents_remember/serving/terminal_catalog.py) |
-| `AutoLandHookIntegrationTests` exercises `worktree_integrate_tool`/`lifecycle_finalize_task_tool`/`_auto_land_completed_seats` including the best-effort landing guard. | `AutoLandHookIntegrationTests` | [../src/agents_remember/controllers/worktree_tools.py](../src/agents_remember/controllers/worktree_tools.py) |
-| `RetirementSettingsConfigTests` exercises `RetirementSettings` defaults (config parsing itself is covered separately in `test_config.py::RetirementSettingsTests`). | `RetirementSettingsConfigTests` | [../src/agents_remember/mcp/config.py](../src/agents_remember/mcp/config.py) |
-| `SessionRetireToolTests`/`SessionRenameToolTests` exercise `session_retire_payload`/`session_rename_payload` end-to-end. | `SessionRetireToolTests`; `SessionRenameToolTests` | [../src/agents_remember/mcp/tools/terminal.py](../src/agents_remember/mcp/tools/terminal.py) |
-| The leaf task doc's original failing-first requirement list this suite extends. | Requirements | [10_seat-retirement-and-chat-cleanup.md](ar-coordination/tasks/agents-remember/260707_hotfix-orchestration-stack/10_seat-retirement-and-chat-cleanup.md) |
+| `RetirePolicyMatrixTests` exercises `check_retire_authority`/`master_of`/`RetirePolicyError` directly. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:103-166 |
+| `LandSeatsForLeafTests` exercises `land_seats_for_leaf` directly. | `LandSeatsForLeafTests` | mcp/tests/test_seat_lifecycle.py:584-633 |
+| `TurnStateClassificationTests` exercises `classify_turn_state` directly. | `TurnStateClassificationTests` | mcp/tests/test_seat_lifecycle.py:374-464 |
+| `TurnStateSweepWiringTests` exercises `observe_terminal_liveness`'s alive-classification path with an injected `pane_capturer`. | `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:467-532 |
+| `TerminalMarkVsLivenessInterplayTests` exercises `mark_retired`/`record_liveness_probe` interplay on `TerminalCatalog` directly. | `TerminalMarkVsLivenessInterplayTests` | mcp/tests/test_seat_lifecycle.py:538-578 |
+| `AutoLandHookIntegrationTests` exercises `worktree_integrate_tool`/`lifecycle_finalize_task_tool`/`_auto_land_completed_seats` including the best-effort landing guard. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:636-824 |
+| `RetirementSettingsConfigTests` exercises `RetirementSettings` defaults (config parsing itself is covered separately in `test_config.py::RetirementSettingsTests`). | `RetirementSettingsConfigTests` | mcp/tests/test_seat_lifecycle.py:827-831 |
+| `SessionRetireToolTests`/`SessionRenameToolTests` exercise `session_retire_payload`/`session_rename_payload` end-to-end. | `SessionRetireToolTests`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:172-313; mcp/tests/test_seat_lifecycle.py:319-368 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary is exercised by this local test suite. | — | — |
 
@@ -159,6 +158,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected the shared-fixture and injection-seam
   descriptions, which the leaf made false. `_entry` lost three parameters — its documented
   signature `(session_id, *, leaf_key, spawn_role, status, kind)` is now

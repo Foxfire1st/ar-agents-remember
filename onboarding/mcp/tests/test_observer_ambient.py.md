@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_ambient.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T09:18+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-04T01:24+02:00                           |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ Task 28 adds the NOTIFY-AND-CONTINUE turn-end guards:
 blocked-only and raises on an await; `resume_from_await()`→`running` emits
 `lifecycle.resumed`, and calling it from `running` raises).
 
-`EndSignalVocabularyTests` (L157-L186) is the one class here that asserts against the *shape* of
+cit:([`EndSignalVocabularyTests`], mcp/tests/test_observer_ambient.py:157-185) is the one class here that asserts against the *shape* of
 the production method rather than its behaviour. `observer/ambient.py::end` held the last
 hand-written copy of the live/terminal split — a literal `("completed", "abandoned")` accept-tuple
 plus an outcome→state conditional — and now guards on `TERMINAL_STATES` and converts through
@@ -97,19 +97,20 @@ time deterministically across the cutoff.
 `EndSignalVocabularyTests` is the exception to every convention above: it is a plain
 `unittest.TestCase`, not an `_AmbientCase`, because it never instantiates an `AmbientLifecycle` —
 it reads the unbound `AmbientLifecycle.end` function object. Its instrument is the module-level
-`_string_constants(function)` helper (L140-L154), which walks `function.__code__.co_consts` with an
+cit:([`_string_constants`], mcp/tests/test_observer_ambient.py:140-154) walks `function.__code__.co_consts` with an
 explicit stack, flattening nested `tuple | frozenset | set | list` constants so a vocabulary folded
 into a literal container is still seen.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The ambient lifecycle under test. | [ambient.py](agents-remember/mcp/src/agents_remember/observer/ambient.py) |
-| The state vocabulary (`TERMINAL_STATES` L139), `coerce_end_outcome` (L149), the errors, and `coerce_phase` under test. | [lifecycle_state.py](agents-remember/mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The store events are written to and read back from. | [store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| Task 34 heartbeat activity-decay coverage (L315-L372): inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
-| `_string_constants` (L140-L154) + `EndSignalVocabularyTests` (L157-L186): the `end` signal names no terminal state of its own and converts through `coerce_end_outcome`. | [test_observer_ambient.py](agents-remember/mcp/tests/test_observer_ambient.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The ambient lifecycle under test. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
+| The state vocabulary (`TERMINAL_STATES`), `coerce_end_outcome`, and `coerce_phase` under test. | `TERMINAL_STATES`; `coerce_end_outcome`; `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158; mcp/src/agents_remember/observer/lifecycle_state.py:180-184 |
+| The lifecycle-state module owns the `LifecycleError` and guarded-start subtype asserted throughout this suite. | `LifecycleError`; `GuardedStartError` | mcp/src/agents_remember/observer/lifecycle_state.py:161-162; mcp/src/agents_remember/observer/lifecycle_state.py:165-177 |
+| The store events are written to and read back from. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| Task 34 heartbeat activity-decay coverage: inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | `test_inactive_seconds_tracks_real_activity_not_heartbeats`; `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` | mcp/tests/test_observer_ambient.py:315-343; mcp/tests/test_observer_ambient.py:345-371 |
+| `_string_constants` plus `EndSignalVocabularyTests`: the `end` signal names no terminal state of its own and converts through `coerce_end_outcome`. | `_string_constants`; `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:140-154; mcp/tests/test_observer_ambient.py:157-185 |
 
 ## Series-Contract Notes
 
@@ -117,18 +118,22 @@ Ambient observer tests use leaf enclosure paths when lifecycle promotion records
 
 ## Update History
 
+- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+
+- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: retained the generated
+  vocabulary/coercer ranges and source-first split the previously unbound `LifecycleError` and
+  `GuardedStartError` definitions into one honest `:1-1` row. No citation mechanics ran.
+- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped observer-ambient test citations; final exact frozen-snapshot check is clean.
 - 2026-08-01T09:18+02:00 — 260731-EFA-L4 curator: the suite gained a module-level
-  `_string_constants` helper (L140-L154) and `EndSignalVocabularyTests` (L157-L186, two tests), and
+  cit:([`_string_constants`, `EndSignalVocabularyTests`], mcp/tests/test_observer_ambient.py:140-154; mcp/tests/test_observer_ambient.py:157-185) and
   a `TERMINAL_STATES` import, after `observer/ambient.py::end` gave up its hand-written
   live/terminal split. The card had no trace of either, so the Purpose, Logic and Conventions
   sections now name them and say what makes them structural rather than behavioural — they read
   `AmbientLifecycle.end.__code__` (`co_consts` for the first, `co_names` for the second), so a
   comment or docstring cannot satisfy them, and the second is what stops a bare `cast` from passing
-  the first. Verified the production side directly: `end` (L237-L268 of `ambient.py`) guards on
-  `TERMINAL_STATES` and calls `coerce_end_outcome`, defined at `lifecycle_state.py` L139 and L149.
-  Re-anchored the task-34 heartbeat citation from L265-L322 to **L315-L372** — the 50 inserted
-  lines pushed it down exactly that far; `test_inactive_seconds_tracks_real_activity_not_heartbeats`
-  now opens at L315 and `AskTests` at L374 — and added a self-citation row for the new class.
+  the first. Verified the production side directly: cit:([`end`], mcp/src/agents_remember/observer/ambient.py:243-274) guards on
+  cit:([`TERMINAL_STATES`, `coerce_end_outcome`], mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158), and added a self-citation row for the new class.
+  The task-34 heartbeat coverage remains anchored to the two named test methods.
   Counted the file: 39 tests across 11 classes. No existing test was renamed and no assertion in
   them changed.
 

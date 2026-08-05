@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_startup.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `38c3fd81bdf851dce96e9b2b14e2bff741e7b383` |
-| lastVerifiedCommitDate | 2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ None known for L1; launch-model/effort flags are owned by the later launch leaf.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -73,20 +73,22 @@ pass was available for this update.
 The protocol module provides the exact frames and the catalog module performs model-local
 normalization.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Initialize, non-query bootstrap, and `list_models` frame shapes are explicit protocol primitives. | L56-L82 | [claude_stream_protocol.py](claude_stream_protocol.py) |
-| The catalog parser returns a normalized snapshot only after current-model reconciliation. | L15-L31; L85-L97 | [claude_stream_capabilities.py](claude_stream_capabilities.py) |
+| Initialize, non-query bootstrap, and `list_models` frame shapes are explicit protocol primitives. | `initialization_request`; `bootstrap_message`; `list_models_request` | mcp/src/agents_remember/serving/claude_stream_protocol.py:148-153; mcp/src/agents_remember/serving/claude_stream_protocol.py:206-216; mcp/src/agents_remember/serving/claude_stream_protocol.py:156-161 |
+| The catalog parser returns a normalized snapshot only after current-model reconciliation. | `parse_list_models_response`; `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 
 ## Cross-Repo References
 
 No external repository boundary is implemented by startup negotiation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-03T10:45+02:00 — 260731-EFA-L6 W3-B07 curator: repaired both assigned citation findings (1 missing anchor and 1 malformed source); final scoped check is clean. Max-reviewer Tier-2 subject-binding addendum bound the initialize, non-query bootstrap, and list_models frame constructors instead of the list_models constructor alone.
 
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: documented that a floor-proven install negotiates twice
   over two launched processes on one transport, and that both passes read inline so no state reader

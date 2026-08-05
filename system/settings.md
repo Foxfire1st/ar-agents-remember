@@ -27,8 +27,8 @@ Benchmark case metadata and documentation may be source material, but resettable
 The current MCP work adds first-class source under `mcp/**`, source-owned
 operational helpers under `scripts/**`, and the authority-settings example
 under `examples/mcp/**`. These routes are eligible for onboarding in
-`settings.json` so drift detection sees the MCP server, controller, provider
-adapter, settings-template, and non-runtime script changes.
+`settings.json` so drift detection sees the MCP server, application-layer,
+provider adapter, settings-template, and non-runtime script changes.
 
 ## Cross-Repo Policy
 

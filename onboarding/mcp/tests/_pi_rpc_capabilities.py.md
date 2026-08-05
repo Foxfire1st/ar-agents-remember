@@ -101,14 +101,16 @@ None known for this leaf.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The only consumer: installs the pinned Pi, calls `observe_capabilities`, and asserts the recording still describes it. | [test_pi_rpc_real_smoke.py](agents-remember/mcp/tests/test_pi_rpc_real_smoke.py) |
-| The recording this module produces the evidence for. | [0.80.7-capabilities.json](agents-remember/mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json) |
-| The product framing/protocol this probe deliberately does not reuse. | [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
-| The parser whose state-field dependencies the recording must keep listing. | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The only consumer: installs the pinned Pi, calls `observe_capabilities`, and asserts the recording still describes it. | `PiRpcRealSmokeTests`; "test_committed_capability_fixture_still_describes_the_installed_runtime" | mcp/tests/test_pi_rpc_real_smoke.py:236-499 |
+| The recording this module produces the evidence for. | "ar-pi-rpc-capabilities/v1" | mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json:2-2 |
+| The product framing/protocol this probe deliberately does not reuse. | `PiRpcSubprocess`; `PiRpcTransport` | mcp/src/agents_remember/serving/pi_rpc_process.py:16-40; mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
+| The parser whose state-field dependencies the recording must keep listing. | `parse_pi_state`; `PiSessionState`; `parse_pi_response` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:37-48; mcp/src/agents_remember/serving/pi_rpc_protocol.py:180-194; mcp/src/agents_remember/serving/pi_rpc_protocol.py:197-215 |
 
 ## Update History
+
+- 2026-08-03T11:00+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 8 assigned citation findings (4 missing anchors and 4 malformed sources); final scoped check is clean.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new
   capability-observation helper (probe, negative control, per-field observation method,

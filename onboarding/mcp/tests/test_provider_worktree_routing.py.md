@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_worktree_routing.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -70,27 +70,31 @@ loudly rather than silently picking one.
 
 No external documentation is needed for these standard-library unit tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `_resolve_worktree_target` and `_worktree_provider_targets` live in the provider tools controller. | [provider_tools.py](agents-remember/mcp/src/agents_remember/controllers/provider_tools.py) |
-| `_isolated_grepai_base_fields` derives the workspace key under test. | [isolated.py](agents-remember/mcp/src/agents_remember/providers/grepai/isolated.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `_resolve_worktree_target` and `_worktree_provider_targets` live in the provider tools application entry point. | `_resolve_worktree_target`, `_worktree_provider_targets` | mcp/src/agents_remember/application/provider_tools.py:161-192; mcp/src/agents_remember/application/provider_tools.py:195-225 |
+| `_isolated_grepai_base_fields` derives the workspace key under test. | `_isolated_grepai_base_fields` | mcp/src/agents_remember/providers/grepai/isolated.py:100-143 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for these tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-03T03:16:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 1 Repo-Internal table citation with exact worktree-target resolver anchors. Verification metadata remains unchanged for closeout.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/tests/test_provider_worktree_routing.py` since the L2 base commit is the whole-tree `ruff
   format` pass in `00e8379`, which re-wrapped 18 line(s) with no token change whatsoever. Checked

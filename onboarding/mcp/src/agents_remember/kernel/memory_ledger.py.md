@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T20:15+02:00|
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,10 +30,10 @@ mappings, and creates an initial ledger.
 
 ### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
 
-`write_ledger(path, ledger)` (L193-L215) is two statements — `mkdir(parents=True, exist_ok=True)`
+cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:193-215) is two statements — `mkdir(parents=True, exist_ok=True)`
 then `path.write_text(...)`. It got no lock, no temp-and-rename and no `fsync` in the leaf that gave
 all six control-plane JSONL stores exactly those things, and L5 records why in the function's own
-docstring (L194-L213) rather than leaving the omission to be re-litigated. The ruling is **degraded,
+docstring cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:193-215) rather than leaving the omission to be re-litigated. The ruling is **degraded,
 not unrecoverable**, and it rests on two properties of the callers, both of which are checkable:
 
 - **Every call commits within two statements.** Six call sites across five modules —
@@ -93,7 +93,7 @@ grammar rather than pulling in a general markdown or YAML dependency.
 
 No external documentation is needed for this repository-local ledger format.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed for the local ledger parser. | n/a | n/a |
 
@@ -102,13 +102,13 @@ No external documentation is needed for this repository-local ledger format.
 Same-repository source is the direct evidence for the external-memory ledger
 format.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of `AgentsRememberError`). | L17-L41 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | L51-L104 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger` L147-L156; `ledger_to_text` L159-L184; `prepend_mapping` L218-L229 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | `def` + body L193-L215; the ruling L194-L213 | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py) |
-| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | the module docstring's `CONTRACT FRONT MATTER` and read-policy sections; the deployment-fact paragraph in `StoreOwnership`'s class docstring ("only one process writes this file" is a deployment fact, not a structural one) | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of `AgentsRememberError`). | `AgentsRememberError` | mcp/src/agents_remember/kernel/memory_ledger.py:17-41 |
+| `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | `parse_ledger_text` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104 |
+| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:147-156; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:218-229 |
+| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | `def` | mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
+| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "ar-durable-store/1.0" | mcp/src/agents_remember/controlplane/durable_store.py:1-25 |
 
 ## Cross-Repo References
 
@@ -116,13 +116,23 @@ The ledger records code and memory commits across the source repository and its
 external memory repository, but the implementation contract is local to this
 file and the `c-09-git-worktree-manager` skill worktree manager.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing `memory.md`. | L9-L14; L523-L534 | [modules/closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py) |
-| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | L10-L15; L251-L257 | [modules/integrate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/integrate.py) |
+| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing `memory.md`. | `find_mapping` | mcp/src/agents_remember/worktrees/modules/closeout.py:13-17; mcp/src/agents_remember/worktrees/modules/closeout.py:698-710 |
+| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | `prepend_mapping` | mcp/src/agents_remember/worktrees/modules/integrate.py:11-15; mcp/src/agents_remember/worktrees/modules/integrate.py:253-258 |
 
 ## Update History
 
+- 2026-08-04T18:29+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows and two
+  superseded prose cites. `parse_ledger_text` bound to 52-104; closeout/integration rows bound to
+  their import blocks plus the exact conditional/unconditional mapping-rewrite spans (`find_mapping`
+  at closeout.py:698-710, `prepend_mapping` at integrate.py:253-258). The durable-store row: the
+  verbatim deployment-fact paragraph the L5 entry cites is gone from the frozen 446-line file, but
+  the module docstring (1-25) still carries both predicates — the unconditional per-log mutex +
+  `flock` and the shared-local-POSIX-filesystem deployment requirement — so the claim stands,
+  anchored on "ar-durable-store/1.0" at 1-25; not a Tier-3 remainder. Also extended
+  `prepend_mapping`'s row range to its true end (218-231) and converted the two `(L…)` history
+  prose cites to cit forms. No claim wording changed.
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass): **the `durable_store.py` row
   pointed at the wrong docstring.** It cited "contract front matter L1-L116; the deployment-fact
   paragraph L190-L198". Neither range holds. `durable_store.py` grew 598 → 699 lines mid-pass: the
@@ -136,9 +146,9 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   this leaf's test cards do, because a number that was wrong within the hour is worse than no
   number. The row's claim is unchanged and was re-read at the new location. The four citations into
   this module's own source were re-read and are correct: L17-L41 (`LEDGER_SCHEMA` L17, `LedgerRow`
-  L23, `MemoryLedger` L29, `LedgerError` L40), `parse_ledger_text` L51-L104 (`def` L52),
+  L23, `MemoryLedger` L29, `LedgerError` L40), `parse_ledger_text` L51-L104 cit:([`def`], mcp/src/agents_remember/kernel/memory_ledger.py:52-52),
   `validate_ledger` L147 / `ledger_to_text` L159 / `prepend_mapping` L218, and `write_ledger`
-  L193-L215 (`def` L193). Nothing on this card asserts a measured figure.
+  L193-L215 cit:([`def`], mcp/src/agents_remember/kernel/memory_ledger.py:193-193). Nothing on this card asserts a measured figure.
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: the only source change here is a 20-line docstring
   on `write_ledger`, and it is a **ruling**, not a description — so the card now records the ruling,
   the evidence for it, and what would overturn it. Verified all six call sites myself rather than
@@ -163,7 +173,7 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   `L142-L179; L193-L204` → `validate_ledger` **L147-L156**, `ledger_to_text` **L159-L184**,
   `prepend_mapping` **L218-L229**. Note the old range was already defective in the shape the L4
   audit found — `L142-L179` began at `_is_separator_row` and stopped 5 lines short of the end of
-  `ledger_to_text` (L184), and `L193-L204` began at `def write_ledger` and stopped 5 lines short of
+  `ledger_to_text` cit:([`ledger_to_text`], mcp/src/agents_remember/kernel/memory_ledger.py:159-184), and `L193-L204` began at `def write_ledger` and stopped 5 lines short of
   the end of `prepend_mapping`; both symbols the claim names are now fully inside their ranges.
   Added a row for `write_ledger` itself and one for the contract it was measured against.
   Verification metadata pinned until closeout stamps the L5 code commit.

@@ -44,26 +44,29 @@ None.
 
 No Domain Documentation source is configured for this internal compiler configuration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The package's `typecheck` script invokes this no-emit configuration. | L9-L12 | [package.json](agents-remember/mcp/native_helpers/conversation_library/package.json) |
-| Protocol code and tests are the complete included TypeScript source set. | L1-L272 | [protocol.ts](agents-remember/mcp/native_helpers/conversation_library/src/protocol.ts) |
+| The package's `typecheck` script invokes this no-emit configuration. | `typecheck` | mcp/native_helpers/conversation_library/package.json:9-12 |
+| Protocol code and tests are the complete included TypeScript source set. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local configuration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` row with an exact
+  anchor and fixer-generated range; exact non-fixing check returns zero findings.
 
 - 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the strict compiler-config sidecar.
   Verification is blank until closeout commits and stamps the new source.

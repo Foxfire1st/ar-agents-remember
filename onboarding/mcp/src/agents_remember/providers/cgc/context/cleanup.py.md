@@ -38,12 +38,14 @@ under the expected root before calling `remove_runtime_path`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `CgcRuntimeLayout` definition. | [core.py](agents-remember/mcp/src/agents_remember/providers/cgc/context/core.py) |
-| `remove_runtime_path` and `ContextProviderError`. | [common.py](agents-remember/mcp/src/agents_remember/providers/context/common.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `CgcRuntimeLayout` definition. | `CgcRuntimeLayout` | mcp/src/agents_remember/providers/cgc/context/core.py:36-126 |
+| `remove_runtime_path` and `ContextProviderError`. | `ContextProviderError`, `remove_runtime_path` | mcp/src/agents_remember/providers/context_common.py:18-19; mcp/src/agents_remember/providers/context_common.py:122-128 |
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 2 citation findings (1 table row, 1 source-form repair): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-05-29T18:35+02:00: Created when the runtime-artifact cleanup functions were extracted from `core.py` (commit `01f503d`).

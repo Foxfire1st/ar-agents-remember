@@ -61,13 +61,15 @@ out anonymously.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The loops and the lifespan under test. | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The same app's failing route arms. | [test_serving_app_routes.py](agents-remember/mcp/tests/test_serving_app_routes.py) |
-| The opt-in heap diagnostic's own suite. | [test_heap_diag.py](agents-remember/mcp/tests/test_heap_diag.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The loops and the lifespan under test. | `_serving_lifespan` | mcp/src/agents_remember/serving/app.py:900-943 |
+| The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:427-481 |
+| The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
 
 ## Update History
+
+- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new background
   loop / lifespan suite. Verification metadata is pinned to the leaf's reformat commit until

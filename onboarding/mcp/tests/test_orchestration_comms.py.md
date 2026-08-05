@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_orchestration_comms.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T01:00+02:00 |
-| lastVerifiedCommitHash |                                            `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -53,15 +53,18 @@ workspace.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Artifact and escalation helpers under test. | [orchestration_artifacts.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_artifacts.py) |
-| Nudge store and message policy under test. | [orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py) |
-| Public nudge payload under test. | [orchestration.py](agents-remember/mcp/src/agents_remember/mcp/tools/orchestration.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Artifact and escalation helpers under test. | "class TurnReportArtifact" | mcp/src/agents_remember/controlplane/orchestration_artifacts.py:38-38 |
+| Nudge store and message policy under test. | "class OrchestrationNudgeStore" | mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-43 |
+| Public nudge payload under test. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
 
 As of the 260703-L9 lifecycle convergence, the artifact-helper test pins the turn-report template path under `runtime/skills/l-01-agent-lifecycles/templates/` (the unified skill folder that replaced the l-02 tree).
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
+  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
   leaf diff. The sole change is the `orchestration_nudge_manager_payload` call inside

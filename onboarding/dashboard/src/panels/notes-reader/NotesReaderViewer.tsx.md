@@ -69,21 +69,21 @@ editor), the same jsdom accommodation the Change-Set Viewer tests make for `Chan
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | A same-origin view over the local notes API; nothing crosses repositories. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The reused File Viewer content pane (markdown/code/placeholder). | [file-viewer/DualPane.tsx](agents-remember/dashboard/src/panels/file-viewer/DualPane.tsx) |
-| The `FileContent` type the text path maps a note into. | [data/files.ts](agents-remember/dashboard/src/data/files.ts) |
-| The L9 notes client (`listNotes`/`readNote`) this view consumes. | [data/notes.ts](agents-remember/dashboard/src/data/notes.ts) |
-| The shell that hosts the takeover + lifts its selection. | [cockpit/Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| The entry surface (compact list + references) that opens this reader. | [panels/TaskNotes.tsx](agents-remember/dashboard/src/panels/TaskNotes.tsx) |
-| The unchanged L9 serving endpoints behind the client. | [serving/notes.py](agents-remember/mcp/src/agents_remember/serving/notes.py) |
-| The component test suite. | [panels/notes-reader/NotesReaderViewer.test.tsx](agents-remember/dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reused File Viewer content pane (markdown/code/placeholder). | "export type SidecarView" | dashboard/src/panels/file-viewer/DualPane.tsx:14-14 |
+| The `FileContent` type the text path maps a note into. | `FileContent` | dashboard/src/data/files.ts:51-59 |
+| The L9 notes client (`listNotes`/`readNote`) this view consumes. | "export interface NoteEntry" | dashboard/src/data/notes.ts:10-10 |
+| The shell that hosts the takeover + lifts its selection. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:63-63 |
+| The entry surface (compact list + references) that opens this reader. | "export function TaskNotes" | dashboard/src/panels/TaskNotes.tsx:73-73 |
+| The unchanged L9 serving endpoints behind the client. | "def _walk_notes" | mcp/src/agents_remember/serving/notes.py:67-67 |
+| The component test suite. | "function stubNotesApi" | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:29-29 |
 
 ## Current L5I Maintenance
 
@@ -92,6 +92,9 @@ unchanged route props no longer reconstruct its reader subtree, while its own se
 and data reads remain unchanged.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-24T13:17:17Z — Curator: documented the persistent-reader memo boundary; verification
   fields remain pre-commit.

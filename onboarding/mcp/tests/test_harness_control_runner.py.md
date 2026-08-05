@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `a1b0aa9143fa777efd8389892e3283ff257ef44d` |
-| lastVerifiedCommitDate | 2026-07-16T06:37:02+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ L3/L4 suites; this file preserves runner preparation and interactive loop owners
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
@@ -78,23 +78,30 @@ source was available for this test-file curation pass.
 The test file proves runner composition and startup behavior; daemon advertise and reliable-submit
 contracts remain in their dedicated suites.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Runner payload round-trip and `adapter_argv` preserve Codex arguments while inserting `app-server` and leave Claude argv unchanged. | L54-L108 | [test_harness_control_runner.py](agents-remember/mcp/tests/test_harness_control_runner.py) |
-| Native factory and launch-preparation cases retain token-free discovery, model-gated validation, and adapter-owned selector refusal. | L110-L334 | [test_harness_control_runner.py](agents-remember/mcp/tests/test_harness_control_runner.py) |
-| Preparation/start failures remain queryable as failed/rejected evidence with exact bridge detail. | L337-L468 | [test_harness_control_runner.py](agents-remember/mcp/tests/test_harness_control_runner.py) |
-| Interactive input submits complete nonempty lines once and renders acceptance or rejection; state rendering preserves structured terminal results. | L471-L562 | [test_harness_control_runner.py](agents-remember/mcp/tests/test_harness_control_runner.py) |
-| Session preparation calls the public argv normalizer; its implementation inserts Codex `app-server` while preserving all caller arguments and leaves other harness argv unchanged. | L152-L175; L262-L270 | [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py) |
+| Runner payload round-trip and `adapter_argv` preserve Codex arguments while inserting `app-server` and leave Claude argv unchanged. | `adapter_argv` | mcp/tests/test_harness_control_runner.py:59-114 |
+| Native factory and launch-preparation cases retain token-free discovery, model-gated validation, and adapter-owned selector refusal. | `test_factory_maps_all_builtins_and_keeps_custom_unsupported`; `LaunchPreparationTests` | mcp/tests/test_harness_control_runner.py:115-127; mcp/tests/test_harness_control_runner.py:167-316 |
+| Preparation/start failures remain queryable as failed/rejected evidence with exact bridge detail. | `RunnerStartupFailureTests` | mcp/tests/test_harness_control_runner.py:354-450 |
+| Interactive input submits complete nonempty lines once and renders acceptance or rejection; state rendering preserves structured terminal results. | `RunnerLoopTests` | mcp/tests/test_harness_control_runner.py:506-544 |
+| Session preparation calls the public argv normalizer; its implementation inserts Codex `app-server` while preserving all caller arguments and leaves other harness argv unchanged. | `adapter_argv` | mcp/src/agents_remember/serving/harness_control_runner.py:311-319 |
 
 ## Cross-Repo References
 
 No sibling repository is needed to prove runner composition.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-04T18:50+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows with
+  class/method anchors and exact extents (`LaunchPreparationTests` 115-318 incl. the factory
+  cases, `RunnerStartupFailureTests` 354-452, `RunnerLoopTests` 506-546, and the `adapter_argv`
+  call site plus implementation in harness_control_runner.py), and widened the first row's range
+  54-108 → 59-114 so the "leave Claude argv unchanged" assertion (110-113) is actually inside it.
+  Claim wording unchanged.
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the public `adapter_argv` seam shared
   by controlled launch and daemon discovery, preserved Codex/Claude argv authority, and clarified
   the interactive line-loop boundary from daemon whole-message submit. Body verified against the

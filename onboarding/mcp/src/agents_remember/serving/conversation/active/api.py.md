@@ -28,13 +28,13 @@ never a routine refusal path (L0 reviewer obligation O4).
 
 ### 260731-EFA-L4 Current Delta — The Three Routes Declare Their Contract
 
-- `GET ""` (L126) declares `response_model=ConversationPage`.
-- `POST /agents/{agent_id}/history` (L160-L164) declares `response_model=AgentHistoryHydrated` —
+- `GET ""` (cit:([`ConversationPage`], mcp/src/agents_remember/serving/conversation/active/api.py:126-126)) declares `response_model=ConversationPage`.
+- `POST /agents/{agent_id}/history` (cit:([`AgentHistoryHydrated`], mcp/src/agents_remember/serving/conversation/active/api.py:160-164)) declares `response_model=AgentHistoryHydrated` —
   the first model this assembled body has ever had. The comment above it states the rule this
   card already documented: **a typed child failure is a SUCCESSFUL local outcome**, so the
   failure vocabulary lives inside the 200 body's `status`/`code` and only parent-bridge refusals
   reach `responses`.
-- `GET /events` (L204-L214) declares `response_model=ConversationEventEnvelope` — one envelope
+- `GET /events` (cit:([`ConversationEventEnvelope`], mcp/src/agents_remember/serving/conversation/active/api.py:204-214)) declares `response_model=ConversationEventEnvelope` — one envelope
   per SSE frame's `data` — plus an explicit `200: {"content": {"text/event-stream": {}}}` entry.
   The declaration is coherent here precisely because every failure on this route is typed
   PRE-stream, which is why the handler returns an explicit `StreamingResponse` rather than being
@@ -65,17 +65,17 @@ optional `before` page cursor, and returns the atomically assembled page.
 authorization, epoch, dual-resume agreement (`after` query + `Last-Event-ID` header must name
 the same event cursor, `_resume_cursor` L111-L123), generation, retention floor — BEFORE the
 `StreamingResponse` exists, so all routine failures are typed HTTP responses.
-`_map_typed_error` (L77-L99) maps each typed refusal to one precise status: 409
+cit:([`_map_typed_error`], mcp/src/agents_remember/serving/conversation/active/api.py:77-99) maps each typed refusal to one precise status: 409
 `bridge-epoch-mismatch` (with expected/actual), 403 `authorization-failed`, 503
 `composition-unavailable`/`control-unavailable`, the cursor family (400
 `cursor-invalid`/`cursor-conflict`, 403 `cursor-authorization`, 409
 `cursor-reset-required`), and the session-resolution family (404 `unknown-session`, 409
-`unsupported`). `_event_stream` (L250-L271) primes the stream with one `: connected` SSE comment
+`unsupported`). cit:([`_event_stream`], mcp/src/agents_remember/serving/conversation/active/api.py:250-271) primes the stream with one `: connected` SSE comment
 (the first body chunk makes GZipMiddleware flush the response start, so a caught-up subscriber's
 headers arrive at connect; it carries no cursor and no event field), then yields
 `resume-replay`-marked replay envelopes, then live envelopes until the close sentinel or a gap
 mutation (returning after the gap frame), detaching the subscription in `finally`.
-`_sse_frame` (L274-L282) emits explicit wire frames (`event`/`data`/`retry`/`id`) rather than
+cit:([`_sse_frame`], mcp/src/agents_remember/serving/conversation/active/api.py:274-282) emits explicit wire frames (`event`/`data`/`retry`/`id`) rather than
 the generator-route idiom: this FastAPI version only encodes `ServerSentEvent` objects after
 the stream starts, which would make pre-stream typed errors impossible (declared deviation,
 review-ruled legitimate).
@@ -102,26 +102,26 @@ None.
 No Domain Documentation source is configured for this route module; the strict wire contract
 and the production-route suite are the direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The active service these routes invoke for page assembly and subscription validation. | L83-L135 | [service.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/service.py) |
-| The cursor error family mapped to exact statuses here. | L39-L82 | [cursor.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/cursor.py) |
-| The L0 request dependencies invoked directly in-handler for typed mapping. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The production-route suite driving these routes over a real socket. | L362-L781 | [test_conversation_active_api.py](agents-remember/mcp/tests/test_conversation_active_api.py) |
-| The `CONVERSATION_RESPONSES` table these routes declare and the `AgentHistoryHydrated` model the child-history body finally has. | `CONVERSATION_RESPONSES`; `AgentHistoryHydrated` | [../response_contract.py](../response_contract.py.md) |
-| The suite that enforces the declarations by driving all three routes and validating the real bodies and SSE frames. | `test_serving_response_conformance` | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
+| The active service these routes invoke for page assembly and subscription validation. | `active_conversation_service` | mcp/src/agents_remember/serving/conversation/active/service.py:57-130; mcp/src/agents_remember/serving/conversation/active/service.py:285-292 |
+| The cursor error family mapped to exact statuses here. | `ConversationCursorError` | mcp/src/agents_remember/serving/conversation/active/cursor.py:39-47 |
+| The L0 request dependencies invoked directly in-handler for typed mapping. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
+| The production-route suite driving these routes over a real socket. | `ProductionRouteTests` | mcp/tests/test_conversation_active_api.py:333-348; mcp/tests/test_conversation_active_api.py:379-945 |
+| The `CONVERSATION_RESPONSES` table these routes declare and the `AgentHistoryHydrated` model the child-history body finally has. | `CONVERSATION_RESPONSES`; `AgentHistoryHydrated` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
+| The suite that enforces the declarations by driving all three routes and validating the real bodies and SSE frames. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:783-1861 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this route module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
@@ -134,13 +134,20 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 ## 260727-CHATS-IM-L2 Selected-Child Route Delta
 
 `POST /agents/{agent_id}/history` resolves the same authorization and exact bridge epoch as the
-page/event wires, then asks the active service to hydrate only that child (L160-L198). Typed
+page/event wires, then asks the active service to hydrate only that child
+(cit:([`hydrate_agent_history`], mcp/src/agents_remember/serving/conversation/active/api.py:160-198)). Typed
 child-local unavailable/not-eligible outcomes are successful response bodies with status, exact
 agent id, and optional detail/code; authority, epoch, composition, cursor, control, and session
 failures retain the existing typed HTTP mapping. The route never replaces the parent page or SSE
 stream.
 
 ## Update History
+
+- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 14 citation findings. Converted the
+  four route-declaration/hydration line-cites to cit form at their verified decorator/handler spans
+  (`ConversationPage` 126, `AgentHistoryHydrated` 160-164, `ConversationEventEnvelope` 204-214,
+  `hydrate_agent_history` 160-198), and re-anchored the five reference rows (active service, cursor
+  family, L0 dependencies, production-route suite, conformance suite). Scoped recheck clean.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three `response_model`
   declarations (`ConversationPage`, the newly-modelled `AgentHistoryHydrated`, and

@@ -42,24 +42,26 @@ No open file-local todos.
 
 ## Docs References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Stage 6 of the pipeline, which emits this report. | whole file | [SKILL.md](agents-remember/dev-skills/dashboard-experience-review/SKILL.md) |
+| Stage 6 of the pipeline, which emits this report. | `Emit` | dev-skills/dashboard-experience-review/SKILL.md:79-79 |
 
 ## Cross-Repo References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 2 citation findings; scoped check passed.
 
 - 2026-06-23T05:31 — Created with the skill (issue #92).

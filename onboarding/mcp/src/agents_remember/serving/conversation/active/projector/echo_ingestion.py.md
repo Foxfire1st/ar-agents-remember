@@ -50,10 +50,10 @@ No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Claude echo mapping. | [claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
-| Ordering and eviction regressions. | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Claude echo mapping. | `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662 |
+| Ordering and eviction regressions. | `ZipperEvictionGapTests` | mcp/tests/test_conversation_active_service.py:1481-1913 |
 
 ## Cross-Repo References
 
@@ -70,6 +70,8 @@ flush its buffered frames); the zip/turn semantics themselves are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: constructor now takes `SessionProjectionSpine` + `BridgeReaders`; drain loop split into `_zip_entry` / `_drain_one_turn_body`.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the Claude

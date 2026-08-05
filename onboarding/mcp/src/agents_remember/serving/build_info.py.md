@@ -25,8 +25,8 @@ silently serving an old build.
 
 ### 260731-EFA-L4 Current Delta — `payload()` Returns A Declared Model
 
-`ServingBuild.payload()` (L77-L88) no longer hand-builds a `dict[str, Any]`. It returns
-**`ServingBuildPayload`** (L43-L63), a `BaseModel` with `extra="forbid"` and the five camelCase
+`ServingBuild.payload()` cit:(["def payload(self) -> ServingBuildPayload:"], mcp/src/agents_remember/serving/build_info.py:77-77) no longer hand-builds a `dict[str, Any]`. It returns
+**`ServingBuildPayload`** cit:(["class ServingBuildPayload(BaseModel):"], mcp/src/agents_remember/serving/build_info.py:43-43), a `BaseModel` with `extra="forbid"` and the five camelCase
 fields the dict carried: `version`, `bootedAt`, `commit`, `dashboardBuild`, `dirty`. A model
 rather than an untyped dict because this object is now a *field* of the served state contract
 (`served_state.ServedWorkspaceProjection.servingBuild`), and a contract whose members are
@@ -43,7 +43,7 @@ self.dirty else None` — because the tri-state must not leak: proven-clean (`Fa
 unprovable (`None`) both drop out, so the wire never fabricates a "clean" fact. Absence is not a
 pristine claim.
 
-**No bytes moved.** `test_serving.py`'s `_build_wire(build)` helper (L128-L136) is the one place
+**No bytes moved.** `test_serving.py`'s `_build_wire(build)` helper cit:(["return build.payload().model_dump("], mcp/tests/test_serving.py:137-137) is the one place
 the tests express "the stamp exactly as the state body carries it"
 (`build.payload().model_dump(mode="json", exclude_none=True)`), and every assertion that used to
 call `build.payload()` directly now goes through it against the same expected dicts.
@@ -95,8 +95,8 @@ stamp serves version-only, never a crash.
 
 ### 260731-EFA-L3 — Both Probes Run On The One Git Runner
 
-This module no longer spawns git itself. `_git_short_head` (L91-L101) and `_git_worktree_dirty`
-(L104-L118) each call `run_git` from `agents_remember.kernel.git_command` — the package's single
+This module no longer spawns git itself. cit:([`_git_short_head`], mcp/src/agents_remember/serving/build_info.py:91-101) and `_git_worktree_dirty`
+cit:(["def _git_worktree_dirty("], mcp/src/agents_remember/serving/build_info.py:104-104) each call `run_git` from `agents_remember.kernel.git_command` — the package's single
 runner — with the module's own bound:
 
 ```python
@@ -156,31 +156,31 @@ No task-independent technical debt was identified during FEUI-L9R review.
 No relevant documentation was found after checking the configured sources; packaged-build behavior
 is proven by repository source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local build stamp. | Source discovery checked | — |
+| No relevant external or domain documentation was found for this repository-local build stamp. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. | L328-L329; L979-L982 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. | `ServedWorkspaceProjection`; `served_state_tail` | [served_state.py](served_state.py.md) |
-| `SERVER_VERSION` supplies the wheel version in the daemon restart identity, read from installed package metadata with a source-checkout literal fallback. | L7-L11 | [mcp/__init__.py](agents-remember/mcp/src/agents_remember/mcp/__init__.py) |
-| The cockpit compares and renders the serving/client identity. | L619-L657 | [Cockpit.tsx](agents-remember/dashboard/src/cockpit/Cockpit.tsx) |
-| The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | L138-L159 | [sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | job `build`, step "Verify the distributions ship the dashboard bundle" | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
-| `test_resolves_commit_in_a_git_checkout` asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally, through the shared `_build_wire` helper that names the wire form. | L128-L136; L947-L962 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
-| The one runner both probes call: `GIT_REPOSITORY_SELECTOR_ENV` (the `GIT_DIR` family stripped by `git_environment`) and `run_git` itself (`safe.directory`, stdin `DEVNULL`, caller-supplied `timeout`). | L24-L33; L58-L96 | [kernel/git_command.py](agents-remember/mcp/src/agents_remember/kernel/git_command.py) |
-| `DecoyRepositoryTests` sets the selectors against a decoy repository and proves reads and writes still answer from the real one; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` keeps this module from growing a private copy again. | `test_reads_answer_from_the_real_repository_not_the_decoy`; `test_only_the_kernel_module_defines_a_git_runner` | [test_git_command.py](agents-remember/mcp/tests/test_git_command.py) |
+| The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. | "payload.update(served_state_tail("; "served_state_tail(build=runtime.build" | mcp/src/agents_remember/serving/app.py:344-344; mcp/src/agents_remember/serving/app.py:994-994 |
+| The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
+| `SERVER_VERSION` supplies the wheel version in the daemon restart identity, read from installed package metadata with a source-checkout literal fallback. | "SERVER_VERSION = version(" | mcp/src/agents_remember/mcp/__init__.py:9-9 |
+| The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:689-689 |
+| The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text(" | scripts/sync-dashboard.py:147-147; scripts/sync-dashboard.py:157-157 |
+| The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:93-94 |
+| `test_resolves_commit_in_a_git_checkout` asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally, through the shared `_build_wire` helper that names the wire form. | `test_resolves_commit_in_a_git_checkout`; "return build.payload().model_dump(" | mcp/tests/test_serving.py:137-137; mcp/tests/test_serving.py:948-963 |
+| The one runner both probes call: `GIT_REPOSITORY_SELECTOR_ENV` (the `GIT_DIR` family stripped by `git_environment`) and `run_git` itself (`safe.directory`, stdin `DEVNULL`, caller-supplied `timeout`). | "GIT_REPOSITORY_SELECTOR_ENV = ("; "def git_environment() ->"; "def run_git(" | mcp/src/agents_remember/kernel/git_command.py:33-33; mcp/src/agents_remember/kernel/git_command.py:76-76; mcp/src/agents_remember/kernel/git_command.py:85-85 |
+| `DecoyRepositoryTests` sets the selectors against a decoy repository and proves reads and writes still answer from the real one; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` keeps this module from growing a private copy again. | `test_reads_answer_from_the_real_repository_not_the_decoy`; `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:184-202; mcp/tests/test_git_command.py:448-465 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local build stamp.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
+| The reviewed behavior is wholly repository-local. | — | — |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -190,8 +190,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 13 citation items (7 table rows and 6 prose citations); scoped citation check now passes.
+
 - 2026-08-01T08:30+02:00 — 260731-EFA-L4 curator: recorded the new `ServingBuildPayload`
-  (L43-L63) and `payload()`'s (L77-L88) return-type change from `dict[str, Any]` to that model,
+  cit:(["class ServingBuildPayload(BaseModel):"], mcp/src/agents_remember/serving/build_info.py:43-43) and `payload()`'s cit:(["def payload(self) -> ServingBuildPayload:"], mcp/src/agents_remember/serving/build_info.py:77-77) return-type change from `dict[str, Any]` to that model,
   including where the honest-unknown rule now lives — `None` on every best-effort field plus the
   caller's `exclude_none=True`, with the tri-state `dirty` still collapsed in code so
   proven-clean and unprovable both drop out. Corrected the FEUI-L9R sentence that still described

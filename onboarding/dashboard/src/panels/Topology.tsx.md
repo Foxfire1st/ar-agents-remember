@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Topology.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -47,12 +47,14 @@ for the wrap to fill its slot.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The imperative renderer (refs + `.style`, no className dep). | L290-L312 | [topology/constel.ts](../topology/constel.ts) |
-| The pure model adapter. | — | [topology/model.ts](../topology/model.ts) |
+| The imperative renderer (refs + `.style`, no className dep). | `mountConstel` | dashboard/src/topology/constel.ts:59-372 |
+| The pure model adapter. | `buildTopology` | dashboard/src/topology/model.ts:117-221 |
 
 ## Update History
+
+- 2026-08-03T02:32:28+02:00 — W3-B05 curator: anchored 2 Tier-2 table citations with exact source paths; fixer generated all ranges.
 
 - 2026-06-28T07:30+02:00 — Task 33: the panel now reads `activeWorktreeGroups` from the store and runs
   `activeTopologyInputs(...)` before `buildTopology`, bounding the constellation to active enclosures

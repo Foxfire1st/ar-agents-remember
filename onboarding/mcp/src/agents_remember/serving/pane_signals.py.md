@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-10T13:03+02:00                             |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b`         |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00                             |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -107,26 +107,25 @@ No relevant external documentation found after checking the repo Domain Document
 pane-signal-classification-specific behavior; this file is same-repository runtime plumbing (the
 leaf task doc's R2a is the source of truth), same posture as `turn_state.py`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines pane-signal classification; the leaf task doc (R2a) and this implementation are the source of truth. | L1-L101 | [pane_signals.py](pane_signals.py) |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `classify_pane_signal` is called from exactly one place — `evaluate_pane_findings`, the R2a predicate over every `RUNNING` `kind == "harness"` catalog row, passed each row's captured pane text and `entry.harness`. | `evaluate_pane_findings` | [supervisor.py](supervisor.py.md) |
-| `count_paste_chips` is the shared chip-counting helper this classifier's delivery-stalled trigger reuses rather than re-implementing (the same F-V/N1 duplicate-paste diagnostic `terminal_paste.py` already owns). | `count_paste_chips` | [terminal_paste.py](terminal_paste.py.md) |
-| `classify_turn_state` is the SEPARATE L8 UI-state classifier over the same captured pane text — distinct precedence, distinct question, deliberately not merged (see Invariants). | `classify_turn_state` | [turn_state.py](turn_state.py.md) |
-| Failing-first unit tests for every trigger family plus the empty-per-harness-override fallback, from scripted pane-text fixtures. | `PaneSignalClassifierTests` | [../../../tests/test_pane_signals.py](../../../tests/test_pane_signals.py.md) |
-| `composer_state` and `blocked_reason_label` are composed into the one per-harness delivery adapter interface (`HarnessAdapter.composer_state` / `.blocked_reason`); `classify_pane_signal` itself is reused there too (`.mid_turn`, `.blocked_reason`). | `HarnessAdapter` | [harness_adapters.py](harness_adapters.py.md) |
-| The R1 delivery contract (`serving/injector.deliver`) reads `HarnessAdapter.blocked_reason` off the FINAL paste capture to classify a modal trap as `blocked(reason)` rather than a bare failed/delivered boolean. | `deliver` | [injector.py](injector.py.md) |
+| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | `evaluate_pane_findings` | mcp/src/agents_remember/serving/supervisor.py:124-144 |
+| The pane classifier used by that path is `classify_pane_signal`. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
+| `classify_turn_state` remains a separate classifier with its own operative call and precedence over the captured pane text. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
+| The failing-first suite covers five generic pane-signal cases; it does not establish per-harness override coverage. | `PaneSignalClassifierTests` | mcp/tests/test_pane_signals.py:16-43 |
+| The adapter exposes `blocked_reason` for final diagnostic classification; it does not expose the stale `composer_state` field. | `HarnessAdapter`; `blocked_reason` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
+| The R1 delivery contract (`serving/injector.deliver`) reads `HarnessAdapter.blocked_reason` off the FINAL paste capture to classify a modal trap as `blocked(reason)` rather than a bare failed/delivered boolean. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local pane-signal classifier. | — | — |
 
@@ -138,6 +137,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: narrowed pane-signal call ownership, classifier comparison, test coverage, and adapter behavior to operative source spans. Verification metadata unchanged.
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: deleted `never-briefed`,

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -42,17 +42,21 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `buildEngineRoomModel` under test | L8, L66 | [buildEngineRoomModel.ts](buildEngineRoomModel.ts) |
-| `node`/`lifecycle`/`worktreeEngine` fixture factories | L10-L64 | [buildEngineRoomModel.test.ts](buildEngineRoomModel.test.ts) |
-| Lifecycle join + workspace lift + fallback cases | L67-L100 | [buildEngineRoomModel.ts](buildEngineRoomModel.ts) |
-| `enclosureKey` = worktreeGroup stable-across-id-swap case | L102-L109 | [buildEngineRoomModel.test.ts](buildEngineRoomModel.test.ts) |
-| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` fixture types | L3-L7 | [projection.ts](../../types/projection.ts) |
+| `buildEngineRoomModel` under test | `buildEngineRoomModel` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66 |
+| `node`/`lifecycle`/`worktreeEngine` fixture factories | `node`; `lifecycle`; `worktreeEngine` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:10-42; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:44-58; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:60-69 |
+| Lifecycle join + workspace lift + fallback cases | `buildEngineRoomModel`; `workspaceEngines`; `fallbackStacks`; `usesFallback` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:39-39; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:59-59; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:63-63 |
+| `enclosureKey` = worktreeGroup stable-across-id-swap case | `enclosureKey` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:132-134 |
+| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` fixture types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:162-202; dashboard/src/types/projection.ts:258-276; dashboard/src/types/projection.ts:325-336 |
 
 ## Series-Contract Notes
 
 The stable-key regression uses a real-node id ending in `series-contract.md`, preserving the invariant that process identity comes from `worktreeGroup` rather than the contract file path.
+
+## Update History
+
+- 2026-08-03T09:35+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 6 citation findings (3 missing anchors and 3 malformed sources) in the three assigned repository-reference rows; all anchors and ranges were resolved against the frozen source index.
 
 ## Update History
 

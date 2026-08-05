@@ -63,10 +63,10 @@ service ports (`5432` and `11434`) used inside the Docker network.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The parent lifecycle facade imports the GrepAI package facade. | [__init__.py](agents-remember/mcp/src/agents_remember/providers/lifecycle/__init__.py) |
-| Provider lifecycle tests cover Docker-only GrepAI install, run, and watcher behavior. | [test_provider_lifecycle.py](agents-remember/mcp/tests/test_provider_lifecycle.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The parent lifecycle facade imports the GrepAI package facade. | `_EXPORT_MODULES` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24 |
+| Provider lifecycle tests cover Docker-only GrepAI install, run, and watcher behavior. | `test_grepai_settings_backed_run_uses_docker_without_host_binary`; `test_grepai_direct_run_does_not_special_case_native_watcher_commands`; `test_grepai_runner_image_build_no_cache_inserts_flag_in_dry_run` | mcp/tests/test_provider_lifecycle.py:318-352; mcp/tests/test_provider_lifecycle.py:892-920; mcp/tests/test_provider_lifecycle.py:1248-1260 |
 
 ## 260731-EFA-L2 — The Vocabulary Of A Stack Start
 
@@ -101,6 +101,11 @@ reading or settings rule changed.
 
 ## Update History
 
+- 2026-08-04T18:42+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the two malformed rows — the
+  parent facade row bound to `_EXPORT_MODULES` (providers/lifecycle/__init__.py:8-35, the
+  lazy-import list carrying the GrepAI facade) and the test-coverage row bound to the three
+  Docker-only/watcher/install test methods with their exact extents in test_provider_lifecycle.py.
+  Claim wording unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: the resolved-invocation tuples became named frozen values
   — `GrepaiBackendContext`, `GrepaiEmbedderContext`, `GrepaiWatcherStart`, `GrepaiStackResults`,
   `GrepaiServicePorts` (+ `UNRESOLVED_SERVICE_PORTS`) and `GrepaiWorkspaceConfig` — and both

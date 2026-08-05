@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/client.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-27T14:20+02:00                           |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`       |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -68,38 +68,42 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The page/telemetry/interrupt/error wire shapes this client returns. | L8-L15 | [types.ts](types.ts.md) |
-| The store that threads `PageResult` errors to `errorBySession`/the banner. | L96-L104 | [store.ts](store.ts.md) |
-| The SSE controller that consumes `conversationEventsUrl`. | L9-L10 | [stream.ts](stream.ts.md) |
-| The interrupt hook that discriminates `ControlResult` into ack/settlement/refusal. | L115-L132 | [../../panels/session-cockpit/conversation/useConversationControls.ts](../../panels/session-cockpit/conversation/useConversationControls.ts.md) |
-| The landed active + control routes this client calls. | — | [active/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/api.py) · [control/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/api.py) |
+| The page/telemetry/interrupt/error wire shapes this client returns. | "export interface ConversationPage" | dashboard/src/data/conversation/types.ts:286-286 |
+| The store that threads `PageResult` errors to `errorBySession`/the banner. | "export const LRU_LIMIT" | dashboard/src/data/conversation/store.ts:42-42 |
+| The SSE controller that consumes `conversationEventsUrl`. | "export function openConversationStream" | dashboard/src/data/conversation/stream.ts:86-86 |
+| The interrupt hook that discriminates `ControlResult` into ack/settlement/refusal. | `ControlResult` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:115-132 |
+| The landed active + control routes this client calls. | "async def conversation_page", "def _dump" | mcp/src/agents_remember/serving/conversation/active/api.py:127-127; mcp/src/agents_remember/serving/conversation/control/api.py:144-144 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## 260727-CHATS-IM-L2 Selected-Child Client Delta
 
 `requestAgentHistory` posts to the exact active-session child route with the expected bridge epoch
-and encoded agent id (L179-L198). Its discriminated result preserves the four successful
+and encoded agent id cit:(["export async function requestAgentHistory"], dashboard/src/data/conversation/client.ts:191-191). Its discriminated result preserves the four successful
 child-local statuses and converts non-2xx, invalid successful payloads, network failure, and
-timeout into typed route errors (L110-L177). These errors are returned to the child store; they do
+timeout into typed route errors cit:(["function asRouteError"], dashboard/src/data/conversation/client.ts:37-37). These errors are returned to the child store; they do
 not fail the parent stream.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the superseded `(L…)`
+  prose citations and the `n/a` rows with exact anchors and fixer-generated ranges; exact
+  non-fixing check returns zero findings.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the selected-child POST,
   discriminated outcomes, strict response validation, and visible transport/error mapping.

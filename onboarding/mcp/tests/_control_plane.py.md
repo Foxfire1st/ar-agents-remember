@@ -6,8 +6,8 @@
 | path | `mcp/tests/_control_plane.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,12 +26,12 @@ support code, not a test module: the four service/route L3 suites import `Contro
 
 ### Logic
 
-`LiveHost` (L79-L82) is the minimal terminal-host stand-in; `FakeControlAdapter` (L89-L425) is the structural
+cit:([`LiveHost`], mcp/tests/_control_plane.py:79-82) is the minimal terminal-host stand-in; cit:([`FakeControlAdapter`], mcp/tests/_control_plane.py:89-425) is the structural
 interrupt/asset-capable adapter at the far edge (no PTY, no runner log, no fixture authority) that
 plays codex/pi/claude native shapes — including `pi_emit_message_end`/`pi_release` and the composed
 `pi_settle_with_content` helper that mirror `pi_rpc_events` message_end emission exactly (event kind
 `transcript`, monotonic `TranscriptEntry`, the full frame under `AR_EVIDENCE_KEY`, completion
-release). `ControlledEntry` (L428-L433) is the catalog row wrapper. `ControlHarness` (L436-L518) builds the
+release). cit:([`ControlledEntry`], mcp/tests/_control_plane.py:428-433) is the catalog row wrapper. cit:([`ControlHarness`], mcp/tests/_control_plane.py:436-518) builds the
 whole seam per test: bridge + IPC server on a real socket, the real submission authority (which owns
 dispatch, provenance, withdrawal, the timeline, and the L2E recovery payload), `register_conversation_
 routes`, and — the manager-authorized residual repair — a single `NOW`-anchored
@@ -64,29 +64,30 @@ None.
 
 No Domain Documentation source is configured; the topology mirrors the production composition.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+
 
 ## Repo-Internal References
 
 The topology composes the real bridge/IPC/authority and the L0 route registration; the seeded service
 and its clock seam are the production control service.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The L0 `register_conversation_routes` composition the harness builds. | L15-L35 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The per-app control service and its public `clock` seam + `_SERVICES` memo the harness seeds. | L168-L280 | [control/service.py](agents-remember/mcp/src/agents_remember/serving/conversation/control/service.py) |
-| The pi mapper message_end emission shapes the fake adapter mirrors. | L131-L302 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
-| The real bridge + IPC server on a user-private socket. | L88-L144; L70-L117 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py); [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
+| The L0 `register_conversation_routes` composition the harness builds. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
+| The per-app control service and its public `clock` seam plus `_SERVICES` memo the harness seeds. | `ConversationControlService`; `_SERVICES` | mcp/src/agents_remember/serving/conversation/control/service.py:222-349; mcp/src/agents_remember/serving/conversation/control/service.py:352-354 |
+| The pi mapper message_end emission shapes the fake adapter mirrors. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
+| The real bridge on a user-private socket. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
+| The IPC server on a user-private socket. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -95,6 +96,10 @@ The shared control-plane test topology now supports structured interaction repli
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: removed duplicate service-source segments and generated final citation ranges with the scoped fixer.
+
+- 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: repaired 4 Repo-Internal reference rows, including 2 exact staged ranges, and normalized 1 duplicate range list; scoped result clean (0 findings).
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the 4 self-citations in Logic, which
   named single `class` lines and had all drifted. `LiveHost` L78 -> L79-L82, `FakeControlAdapter`

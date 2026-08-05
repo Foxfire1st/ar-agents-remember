@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/MemoryMirror.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -39,12 +39,14 @@ ages are server-computed.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `driftSegments` + the `DRIFT_ORDER`. | L142-L161 | [data/selectors.ts](../data/selectors.ts) |
-| The drift/ledger/stalest analytics nodes. | — | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
+| `driftSegments` + the `DRIFT_ORDER`. | `driftSegments` | dashboard/src/data/selectors.ts:178-186 |
+| The drift/ledger/stalest analytics nodes. | `Analytics` | mcp/src/agents_remember/observer/projection.py:942-973 |
 
 ## Update History
+
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation items; scoped citation check now passes.
 
 - 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
 

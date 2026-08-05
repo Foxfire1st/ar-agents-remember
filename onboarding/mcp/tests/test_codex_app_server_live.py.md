@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_live.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,18 +51,18 @@ transport if startup fails before that outer block is entered. Turn waits are bo
 seconds.
 
 Since 260731-EFA-L2 that sequence is a driver over named helpers rather than one long function —
-the `C901`/`PLR0915` extraction. `test_live_dynamic_launch_and_mid_thread_selection` (L167-L258)
+the `C901`/`PLR0915` extraction. cit:([`test_live_dynamic_launch_and_mid_thread_selection`], mcp/tests/test_codex_app_server_live.py:162-259)
 now reads as its own outline and delegates each step:
-`_discover_without_starting_a_thread` (L269) returns a `_Discovery` carrying the catalog, the
-recorder, and the elapsed probe seconds; `_selection_pair` (L297) returns the `_SelectionPair`
-whose launch and switch rows must differ; `_assert_launch_selection_is_validated_against_the_catalog`
-(L400) holds the two fail-loud validations; `_configured_adapter` (L324) builds the adapter,
+cit:([`_discover_without_starting_a_thread`], mcp/tests/test_codex_app_server_live.py:270-286) returns a `_Discovery` carrying the catalog, the
+recorder, and the elapsed probe seconds; cit:([`_selection_pair`], mcp/tests/test_codex_app_server_live.py:298-322) returns the `_SelectionPair`
+whose launch and switch rows must differ; cit:([`_assert_launch_selection_is_validated_against_the_catalog`], mcp/tests/test_codex_app_server_live.py:399-413)
+holds the two fail-loud validations; cit:([`_configured_adapter`], mcp/tests/test_codex_app_server_live.py:325-343) builds the adapter,
 recorder, and knob-applied launch with the `CODEX_CONFIG` negative assertion;
-`_refused_unknown_selections` (L347) and `_queued_mid_thread_switch` (L358) hold the
-unsupported and queued setter assertions; `_completed_turn` (L369) submits one bounded turn and
-returns its vendor correlation id; `_accepted_turn_calls` (L387) checks both `turn/start` calls
+cit:([`_refused_unknown_selections`, `_queued_mid_thread_switch`], mcp/tests/test_codex_app_server_live.py:346-354; mcp/tests/test_codex_app_server_live.py:357-365) hold the
+unsupported and queued setter assertions; cit:([`_completed_turn`], mcp/tests/test_codex_app_server_live.py:368-383) submits one bounded turn and
+returns its vendor correlation id; cit:([`_accepted_turn_calls`], mcp/tests/test_codex_app_server_live.py:386-396) checks both `turn/start` calls
 carry the one thread and the switched pair. The evidence print moved into
-`_print_conformance_evidence` (L447), which takes the `_LaunchedSession`, `_MidThreadSwitch`, and
+cit:([`_print_conformance_evidence`], mcp/tests/test_codex_app_server_live.py:446-494), which takes the `_LaunchedSession`, `_MidThreadSwitch`, and
 `_BilledTurns` parameter objects instead of a long argument list. Every assertion, bound, and
 allowlisted evidence key is the same as before the split; only where each one lives changed.
 
@@ -101,7 +101,7 @@ None known for this leaf.
 
 No Domain Documentation entries are configured in the resolved source registry.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live documentation source was available for this pass. | — | — |
 
@@ -110,28 +110,25 @@ No Domain Documentation entries are configured in the resolved source registry.
 The live cases exercise the same native adapter/session/launch contracts used by production, while
 retaining only an allowlisted evidence projection.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The recorder allowlists method/model/effort/thread fields and numeric token counters instead of retaining raw transport messages. | L42-L110 | [test_codex_app_server_live.py](agents-remember/mcp/tests/test_codex_app_server_live.py) |
-| The original opt-in smoke, marker- and env-gated, opens an ephemeral no-prompt thread and always stops it. | L118-L158 | [test_codex_app_server_live.py](agents-remember/mcp/tests/test_codex_app_server_live.py) |
-| The L5 driver: independently marker/env opt-in, it sequences the conformance run and force-stops the adapter in its `finally` (L257-L258). | L161-L258 | [test_codex_app_server_live.py](agents-remember/mcp/tests/test_codex_app_server_live.py) |
-| Discovery proves the probe emits only initialize/model-list, starts no thread or turn, and records no token usage; the selection pair is chosen from model-local dynamic rows. | L261-L285; L288-L321 | [test_codex_app_server_live.py](agents-remember/mcp/tests/test_codex_app_server_live.py) |
-| Settings-shaped resolution validates unknown model/effort before launch and carries the accepted pair without `CODEX_CONFIG`. | L324-L344; L400-L414 | [test_codex_app_server_live.py](agents-remember/mcp/tests/test_codex_app_server_live.py) |
-| Setters are refused as unsupported, move from queued to effective on a fresh turn, repeat as immediate, and both accepted `turn/start` calls carry the one thread and the switched pair. | L347-L397 | [test_codex_app_server_live.py](agents-remember/mcp/tests/test_codex_app_server_live.py) |
-| Printed evidence stays allowlisted behind its three parameter objects, and turn completion has a bounded timeout. | L417-L495; L498-L503 | [test_codex_app_server_live.py](agents-remember/mcp/tests/test_codex_app_server_live.py) |
-| The adapter carries launch state through native thread config, reports desired setters as queued until effective, and reports already-effective values as immediate. | L225-L306 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| The session fails closed and stops on startup error, discovers via initialize/model-list with forced teardown, and bounds paginated catalog reads. | L108-L208; L347-L387 | [codex_app_server_session.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) |
+| The recorder allowlists method/model/effort/thread fields and numeric token counters instead of retaining raw transport messages. | `RecordingCodexTransport`, `_safe_token_usage` | mcp/tests/test_codex_app_server_live.py:43-91; mcp/tests/test_codex_app_server_live.py:94-111 |
+| The original opt-in smoke, marker- and env-gated, opens an ephemeral no-prompt thread and always stops it. | `test_live_handshake_model_menu_and_ephemeral_thread` | mcp/tests/test_codex_app_server_live.py:119-159 |
+| The L5 driver: independently marker/env opt-in, it sequences the conformance run and force-stops the adapter in its `finally` (L257-L258). | `finally` | mcp/tests/test_codex_app_server_live.py:161-258 |
+| Discovery proves the probe emits only initialize/model-list, starts no thread or turn, and records no token usage; the selection pair is chosen from model-local dynamic rows. | `_discover_without_starting_a_thread`, `_selection_pair` | mcp/tests/test_codex_app_server_live.py:270-286; mcp/tests/test_codex_app_server_live.py:298-322 |
+| Settings-shaped resolution validates unknown model/effort before launch and carries the accepted pair without `CODEX_CONFIG`. | `CODEX_CONFIG` | mcp/tests/test_codex_app_server_live.py:324-344 |
+| Setters are refused as unsupported, move from queued to effective on a fresh turn, repeat as immediate, and both accepted `turn/start` calls carry the one thread and the switched pair. | `_refused_unknown_selections`, `_queued_mid_thread_switch`, `_completed_turn`, `_accepted_turn_calls` | mcp/tests/test_codex_app_server_live.py:346-354; mcp/tests/test_codex_app_server_live.py:357-365; mcp/tests/test_codex_app_server_live.py:368-383; mcp/tests/test_codex_app_server_live.py:386-396 |
+| Printed evidence stays allowlisted behind its three parameter objects, and turn completion has a bounded timeout. | `_wait_for_turn` | mcp/tests/test_codex_app_server_live.py:497-502 |
+| The adapter carries launch state through native thread config, reports desired setters as queued until effective, and reports already-effective values as immediate. | `codex_launch_knobs`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224; mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
+| The session fails closed and stops on startup error, discovers via initialize/model-list with forced teardown, and bounds paginated catalog reads. | `connect`, `discover`, `_read_models` | mcp/src/agents_remember/serving/codex_app_server_session.py:124-208; mcp/src/agents_remember/serving/codex_app_server_session.py:214-224; mcp/src/agents_remember/serving/codex_app_server_session.py:383-401 |
 
 ## Cross-Repo References
 
 Task-local live and independent-review artifacts establish that the opt-in test was run safely and
 that its captured catalog is observation evidence rather than a maintained model list.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The live worker recorded separate opt-in/default-skip behavior, an allowlisted recorder, dynamic target selection, token-free discovery, same-thread queued-to-effective switching, bounded turn accounting, and safe output. | L14-L50; L102-L150; L165-L187 | [L5 Codex live report](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-codex-live-conformance.md) |
-| The final matrix labels the eight captured rows and exact keys as account-visible live evidence; consumers must not promote them into static policy. | L28-L34 | [L5 worker closeout report](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
-| Independent review audited the environment gate, recorder allowlist, two-turn bound, PID/thread assertions, token accounting, and cleanup, confirming default runs skip the turns and retain no secret/raw/prompt body. | L155-L161 | [L5 reviewer verdict](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -141,12 +138,13 @@ tests.
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 30 citations (citation_anchor_missing=9, citation_prose_not_in_cit_form=12, citation_source_malformed=9); final scoped citation check clean.
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The three
-  behaviours the row names sit together at `codex_app_server_adapter.py` L225-L306: `launch_knobs`
-  (L225-L243) returns `session_config={"model", "model_reasoning_effort"}` — native thread config,
-  never `CODEX_CONFIG` — and `set_model` (L245-L276) / `set_effort` (L278-L306) return
-  `acceptance="immediate"` when `has_pending_settings` is false and `"queued"` otherwise. The old
-  L124-L208 spans the constructor and `start`. No claim text changed.
+  behaviours the row names sit together at
+  cit:([`codex_launch_knobs`], mcp/src/agents_remember/serving/codex_app_server_session.py:35-54)
+  and cit:([`set_model`, `set_effort`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224):
+  native thread config, never `CODEX_CONFIG`, and the immediate/queued acceptance ladder. No claim text changed.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the conformance case this card describes was
   split, so the body was rewritten rather than attested. The `C901`/`PLR0915` extraction turned

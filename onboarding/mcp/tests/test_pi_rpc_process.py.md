@@ -54,7 +54,7 @@ None known for this leaf.
 No Domain Documentation category is configured for this repository, so no live documentation
 source was available for this test-file curation pass.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured Domain Documentation source was available to cite. | — | — |
 
@@ -63,22 +63,24 @@ source was available for this test-file curation pass.
 The subprocess tests and transport implementation directly prove cancellation reclamation and
 late-response behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| A cancelled request's eventual response is ignored and a separately correlated next request still completes. | L90-L118 | [test_pi_rpc_process.py](agents-remember/mcp/tests/test_pi_rpc_process.py) |
-| Two-size coverage proves that 8 and 64 cancelled requests with no response require no retained tombstone store. | L120-L151 | [test_pi_rpc_process.py](agents-remember/mcp/tests/test_pi_rpc_process.py) |
-| The transport removes a cancelled pending future, and response dispatch drops an id that has no live future instead of retaining it. | L67-L84; L184-L200 | [pi_rpc_process.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_process.py) |
-| Strict frame decoding remains the protocol boundary used by the subprocess transport. | L35-L75 | [pi_rpc_protocol.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_protocol.py) |
+| A cancelled request's eventual response is ignored and a separately correlated next request still completes. | `test_cancelled_request_ignores_late_response_and_next_reader_survives` | mcp/tests/test_pi_rpc_process.py:90-118 |
+| Two-size coverage proves that 8 and 64 cancelled requests with no response require no retained tombstone store. | `test_cancelled_requests_without_responses_need_no_retained_tombstones` | mcp/tests/test_pi_rpc_process.py:120-151 |
+| The transport removes a cancelled pending future, and response dispatch drops an id that has no live future instead of retaining it. | `request`; `_dispatch` | mcp/src/agents_remember/serving/pi_rpc_process.py:90-112; mcp/src/agents_remember/serving/pi_rpc_process.py:221-238 |
+| Strict frame decoding remains the protocol boundary used by the subprocess transport. | `PiRpcJsonlDecoder`; `_decode_frame` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:59-103; mcp/src/agents_remember/serving/pi_rpc_protocol.py:383-394 |
 
 ## Cross-Repo References
 
 No sibling repository is required to prove this process boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 8 citation findings for cancellation tests, pending-request dispatch, and strict frame decoding.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_pi_rpc_process.py`
   since the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 1

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,9 +16,9 @@
 
 ## Purpose
 
-Hand-maintained TypeScript mirror of the served projection contract (`mcp/.../observer/projection.py`, the source of truth — D7: pydantic codegen deferred). camelCase matches the wire form, and because the server dumps with `exclude_none=True`, every `T | None` server field is modelled as optional (`?:`). Slice 5e extends the contract with the enclosure-centered Engine Room process map: `CommitRefNode` / `ProviderBootNode` / `EngineProcessEdge` / `EngineProcessNode`, the `ProcessFactState` / `ProcessHealth` honesty enums, and the `Analytics.engineProcesses` derived surface. Slice 6g mirrors the master-navigation additions: `TaskSubTaskRefNode` (with `linkedLifecycleId`), `TaskSectionNode`, and `subTasks` / `sections` / `masterLifecycleId` on `TaskDocNode`. (6g originally gave `TaskSubTaskRefNode` an optional `createdAt` as well; 260731-EFA-L4 removed it and split the interface — see the L4 subsection below.) Task 17 makes `TaskDocNode.lifecycleId?` optional because runtime lifecycle state is attachment, not the condition for projecting a JSON-primary task document; planning-only leaves and masters can be listed/read before a worktree exists. Task 17 also mirrors `TaskDocNode.id`, the JSON-primary task id used as the authored leaf display number when parent sub-task refs are only fallback rows. The masters surface is still also exposed as `Analytics.series: SeriesNode[]`, carrying folder-keyed master content with `createdAt`, `objective`, sections, decisions, sub-task creation metadata for default oldest-first ordering, and `seriesTokenTotal` for the server-composed leaf-lifecycle token aggregate.
+Generated TypeScript mirror of the served projection contract. The canonical core input is `WorkspaceProjection.model_json_schema()`, the served-only tail comes from `ServedWorkspaceProjection.model_json_schema()`, and `scripts/sync-projection-types.py --check` fails when either the schema artifact or this file is stale. camelCase matches the wire form, and schema required/nullable/default information determines whether a generated field is required or optional. Slice 5e extends the contract with the enclosure-centered Engine Room process map: `CommitRefNode` / `ProviderBootNode` / `EngineProcessEdge` / `EngineProcessNode`, the `ProcessFactState` / `ProcessHealth` honesty enums, and the `Analytics.engineProcesses` derived surface. Slice 6g mirrors the master-navigation additions: `TaskSubTaskRefNode` (with `linkedLifecycleId`), `TaskSectionNode`, and `subTasks` / `sections` / `masterLifecycleId` on `TaskDocNode`. (6g originally gave `TaskSubTaskRefNode` an optional `createdAt` as well; 260731-EFA-L4 removed it and split the interface — see the L4 subsection below.) Task 17 makes `TaskDocNode.lifecycleId?` optional because runtime lifecycle state is attachment, not the condition for projecting a JSON-primary task document; planning-only leaves and masters can be listed/read before a worktree exists. Task 17 also mirrors `TaskDocNode.id`, the JSON-primary task id used as the authored leaf display number when parent sub-task refs are only fallback rows. The masters surface is still also exposed as `Analytics.series: SeriesNode[]`, carrying folder-keyed master content with `createdAt`, `objective`, sections, decisions, sub-task creation metadata for default oldest-first ordering, and `seriesTokenTotal` for the server-composed leaf-lifecycle token aggregate.
 
-**260731-EFA-L4 changes what kind of file this is.** It is still hand-kept against `projection.py`, but the parts most often hand-copied are now *derived*: the state vocabulary is COMPOSED from its two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48, spread into `LIFECYCLE_STATES` L59), `State` and `Phase` are types read off exported runtime tuples (`State` L61, `PHASES` L96-L103), the `Metrics` bucket field NAMES are computed from the live half (`StateCountField` L206, `LifecycleStateCounts` L214), and this module now emits **eleven** runtime values a test can enumerate — nine vocabulary lists plus the functions `stateCountField` (L220-L224) and `metricsFor` (L250-L257) — so no consumer has to keep a private list. That change is the fix for this leaf's defect: `State` had stayed five members long while `observer/lifecycle_state.py` declared six, so an `awaiting-developer` lifecycle rendered as healthy and was counted in no `Metrics` bucket at all.
+**260731-EFA-L6 changes what kind of file this is.** The generator emits the model declarations plus the runtime vocabulary/metric helpers the dashboard consumes: the state vocabulary is composed from its two halves, `State` and `Phase` derive from exported tuples, and `Metrics` bucket names derive from the live half. This module still emits the enumerable runtime values and `stateCountField`/`metricsFor`; they are generator output now, not hand-copied declarations.
 
 ## Code Commentary
 
@@ -31,38 +31,49 @@ remain unknown; it is not evidence of mismatch.
 
 ### 260707-HFX2-L13 Task-Body Revision
 
-`TaskDocNode.bodyRevision?` mirrors the server-generated digest of reader-body fields omitted from
-the always-on summary. It is optional for compatibility with persisted/older projections. The detail
-reader combines it with `docPath` as the on-demand body cache key; summary fields such as identity,
-status, progress, steps, sub-task links, and routing metadata remain in the broadcast contract.
+`TaskDocNode.bodyRevision` mirrors the server-generated digest of reader-body fields omitted from the
+always-on summary. It is required by the current generated contract; the detail reader combines it
+with `docPath` as the on-demand body cache key. Summary fields such as identity, status, progress,
+steps, sub-task links, and routing metadata remain in the broadcast contract.
+cit:([`bodyRevision`], dashboard/src/types/projection.ts:439-439)
 
 ### Logic
 
-**No longer a pure type module.** Since 260731-EFA-L4 it emits **eleven** runtime values: eight `as const` vocabulary tuples — `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `PHASES`, `ATTENTION_SEVERITIES`, `ATTENTION_LANES`, `PROCESS_FACT_STATES`, `PROCESS_HEALTHS` — plus `ACTIVE_STATES` (a `readonly ActiveState[]` bound directly to `LIVE_STATES`, not a tuple of its own) and the functions `stateCountField` and `metricsFor`. Everything else is still type-only. The top-level shape is `WorkspaceProjection`: `version`, `generatedAt`, `lifecycles: LifecycleProjection[]`, `enclosures: EnclosureNode[]`, `providers: ProviderNode[]`, `activeWorktreeGroups: string[]` (required — the worktree-group basenames with a live enclosure lifecycle; the bounded set the Topology filters on, join key = worktree `ProviderNode.worktreeGroup` / basename of `EnclosureNode.worktreeGroup`; always present because the server default is a list, never `exclude_none`-dropped), `metrics: Metrics`, and `analytics: Analytics`. Core nodes — `LifecycleProjection` (state/phase/tokens + `stateEnteredAt`, `tokenSeries`, `actions`), `EnclosureNode`, `ProviderNode` (with `scope` workspace|worktree, `role` code|memory, optional `repoId`, and optional `worktreeGroup`), `Metrics`, plus the analytics children (`DriftSnapshotNode`, `SidecarStaleNode`, `SetupSummaryNode`, `SetupProgressNode`, `RouteCoverageNode`, `ToolReportNode`, `LedgerNode`, the `TaskDocNode` tree, and the reducer-derived `AttentionItem`). Slice 6c adds `GateNode` and the optional `LifecycleProjection.gate` — the durable gate the cockpit reviews (`decisions` = the verbs an open gate can POST). `State` (L61) and `Phase` (L105) are no longer hand-written unions: each is `(typeof <TUPLE>)[number]` over an exported `as const` tuple, so a consumer that needs to *enumerate* the vocabulary reads the one list instead of copying a second.
+**No longer a pure type module.** Since 260731-EFA-L4 it emits **eleven** runtime values: eight `as const` vocabulary tuples — `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `PHASES`, `ATTENTION_SEVERITIES`, `ATTENTION_LANES`, `PROCESS_FACT_STATES`, `PROCESS_HEALTHS` — plus `ACTIVE_STATES` (a `readonly ActiveState[]` bound directly to `LIVE_STATES`, not a tuple of its own) and the functions `stateCountField` and `metricsFor`. Everything else is still type-only. The top-level shape is `WorkspaceProjection`: `version`, `generatedAt`, `lifecycles: LifecycleProjection[]`, `enclosures: EnclosureNode[]`, `providers: ProviderNode[]`, `activeWorktreeGroups: string[]` (required — the worktree-group basenames with a live enclosure lifecycle; the bounded set the Topology filters on, join key = worktree `ProviderNode.worktreeGroup` / basename of `EnclosureNode.worktreeGroup`; always present because the server default is a list, never `exclude_none`-dropped), `metrics: Metrics`, and `analytics: Analytics`. Core nodes — `LifecycleProjection` (state/phase/tokens + `stateEnteredAt`, `tokenSeries`, `actions`), `EnclosureNode`, `ProviderNode` (with `scope` workspace|worktree, `role` code|memory, optional `repoId`, and optional `worktreeGroup`), `Metrics`, plus the analytics children (`DriftSnapshotNode`, `SidecarStaleNode`, `SetupSummaryNode`, `SetupProgressNode`, `RouteCoverageNode`, `ToolReportNode`, `LedgerNode`, the `TaskDocNode` tree, and the reducer-derived `AttentionItem`). Slice 6c adds `GateNode` and the optional `LifecycleProjection.gate` — the durable gate the cockpit reviews (`decisions` = the verbs an open gate can POST). cit:([`State`], dashboard/src/types/projection.ts:15-15) and cit:([`Phase`], dashboard/src/types/projection.ts:29-29) are no longer hand-written unions: each is `(typeof <TUPLE>)[number]` over an exported `as const` tuple, so a consumer that needs to *enumerate* the vocabulary reads the one list instead of copying a second.
 
-Slice 5e adds the engine-room process map. `ProcessFactState` (`observed` | `derived` | `planned` | `missing` | `not-applicable`) is the honesty axis and `ProcessHealth` (`nominal` | `running` | `blocked` | `failed` | `stale` | `skipped` | `unknown` | `complete`) the rollup. `CommitRefNode` describes one checkout (branch/commit/path, `exists`, `dirty`, `behindSource`, `factState`); `ProviderBootNode` describes a per-process provider boot (id/role/`runtimeState`/`factState`) and includes `runtimeState="missing"` for expected provider slots whose runtime facts were not observed; `EngineProcessEdge` is a setup-step edge (`fromNode`/`toNode`/`kind`/`state`/`label`). `EngineProcessNode` is the enclosure pod keyed by the contract path (`id` == `EnclosureNode.enclosure`): code/memory source-vs-worktree `CommitRefNode`s, `memoryMode`, ledger + review/closeout/integration/cleanup status, setup phase fields, its `providers`/`edges`/`actions`, `missingFacts` / `sourceFiles`, and the two series-contract identities (`taskName` for the parent series task, `leafId` for the concrete leaf worktree/enclosure). `Analytics.engineProcesses: EngineProcessNode[]` carries the whole derived surface. Slice 5h adds the successful-landing arc mirror: `LandingRefNode` (`kind`/`label`/`state` + the `ProcessFactState` honesty axis + optional `detail`) and two additive `EngineProcessNode` fields — `landing?: LandingRefNode[]` (optional — a pre-5h/persisted projection omits it; a list is never dropped by `exclude_none`, so this `?:` encodes schema evolution, not the omission rule) and optional `integrationStrategy` — kept in lockstep with the `projection.py` source of truth. The 5h coupler popover then mirrors `LedgerRefNode` (`codeCommit`/`memoryCommit`), `LedgerNode.rows` (the official coupler's served window; `closeoutCount` stays the full total), and `EngineProcessNode.ledgerRows`/`ledgerRowCount` (the worktree coupler's window). **5h Tier 2** adds four optional fields to `LedgerRefNode` — `codeSubject?`/`codeDate?`/`memorySubject?`/`memoryDate?` (the per-side commit message + committer ISO date for the popover's 6 columns) — modelled `?:` to mirror the source model's `exclude_none` omission. **Slice 05o added, and 260731-EFA-L4 REMOVED, the refused-conduit signal on `EngineProcessEdge`.** 05o listed a `refused` value in the `state` comment enumeration and declared an optional `refusedPolarity?: "amber" | "red"` field. Neither existed server-side: no Python model declares `refusedPolarity` (and the engine-process models are `extra="forbid"`), and the reducer never emits a `refused` edge state. The field was an invention of the mirror, and its renderer branch shipped permanently dead. Both are gone (`EngineProcessEdge` L574-L585, whose comment now reads `nominal | running | blocked | failed | stale | skipped | complete | planned | unknown` and states that flash polarity is DERIVED in the renderer — `failed` → red fault, `stale` → amber reroute — never carried). `contract.test.ts` pins the removal with an inverted `@ts-expect-error` assertion, which fails `tsc -b` the moment the field comes back, because an unused `@ts-expect-error` is itself a compile error.
+Slice 5e adds the engine-room process map. `ProcessFactState` includes `observed`, `derived`,
+`planned`, `missing`, `stale`, and `not-applicable`; `ProcessHealth` carries the eight rollup states.
+The generated declarations include `CommitRefNode`, `ProviderBootNode`, `EngineProcessEdge`, and
+`EngineProcessNode`, including required `landing: LandingRefNode[]` and optional
+`integrationStrategy`. `EngineProcessEdge` has no `refusedPolarity`; flash polarity remains a
+renderer derivation (`failed` → red fault, `stale` → amber reroute), not commentary embedded in the
+generated source. `contract.test.ts` retains the inverted pin against reintroducing the field.
 
-Slice 6g extends `TaskDocNode` for navigation/content: `subTasks: TaskSubTaskRefNode[]` — a master's series-index row (`number`/`name`/`file`/`status`/`scope` + optional `linkedLifecycleId`, set when `file` points at another master, the cross-series "→" jump target; **no `createdAt`** — see the L4 subsection) — and `sections: TaskSectionNode[]` — ordered task-document sections (`kind`/`heading`/`body`). `TaskDocNode.id` mirrors the JSON-primary document `id` and is the clean task-specific display number for authored leaf rows; `subTasks[].number` remains a parent-row fallback for unauthored rows. `TaskDocNode.createdAt?` exposes the JSON-primary task document creation time so leaf lists can default to creation order without parsing file names. Task 17 makes `TaskDocNode.lifecycleId?` optional; a missing lifecycle id means "planning/unbound task document", not "not readable." `subTasks` are master-only, while `sections` may also carry authored freeform sections on light/subTask docs; plus `masterLifecycleId?`, the parent master's lifecycle (the "↑ parent" link). 260703-L14 adds `TaskDocNode.orchestrates?: string[]` — the orchestration-command relation (non-empty only on a master doc that IS an orchestration task; the master task names it commands, from which the dashboard derives the orchestration > master > leaf hierarchy). It mirrors a list-default server field (always dumped as `[]`), but is modelled `?:` deliberately so projections **persisted before L14** still parse — the same forward-compat exception as `landing?`, so consumers must guard (`doc.orchestrates ?? []`). `SeriesNode` mirrors folder-keyed masters in `Analytics.series`: it includes master `createdAt`, `objective`, subTasks, done/total counts, `seriesTokenTotal`, sections, decisions, `docPath`, and optional age. Task 23/24/L3 mirrors `AttentionItem.gateId?` for deletion actions and `AgentPickupNode` / `Analytics.agentPickups?` for task-row waiting-for-agent/check-chat feedback, now including sender/recipient role metadata, message kind, artifact path, and hosted-delivery state. FEUI-L7 adds optional owner identity (`ownerRole`/`ownerAgentId`/`ownerLifecycleId`) and redelivery/escalation facts (`attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`) to that mirror. They stay optional so persisted pre-L7 projections remain readable and their absence stays absent in the Bus pane. Task 28 mirrors `AttentionItem.signalTs?`, the server-computed current-occurrence acknowledgement anchor for lifecycle-scoped dismissals. Task 29 adds `DriftSnapshotNode.checkedAt?`, `sourceRoot?`, `memoryRoot?`, and `reportPath?` so actionable-drift attention rows can identify the affected repo/memory/report and use `checkedAt` as a dismissible occurrence anchor. Optional fields mirror `exclude_none`.
+Slice 6g extends generated `TaskDocNode` navigation/content with required `subTasks`, `sections`,
+`orchestrates`, `id`, and `createdAt` fields; `lifecycleId?` remains an optional runtime binding.
+`SeriesNode.createdAt` is required, while `SeriesSubTaskNode.createdAt?` remains optional. `SeriesNode`
+carries the folder-keyed master shape. Analytics now
+requires `agentPickups`; each `AgentPickupNode` has required `attemptCount` plus optional owner and
+attempt/escalation timestamps. `AttentionItem.signalTs?` and drift provenance fields remain optional
+where the generated schema permits omission.
+cit:([`TaskDocNode`], dashboard/src/types/projection.ts:437-463)
+cit:([`SeriesNode`], dashboard/src/types/projection.ts:346-361)
+cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:369-376)
 
-### 260731-EFA-L4 Vocabulary Derivation, Model Split, And LATE MIRROR
+### Generated Vocabulary, Model, And Required-Field Structure
 
-**The vocabularies became tuples.** Eight closed vocabularies are now declared as `as const` tuples
-with the type derived from them: `LIVE_STATES` (L42), `TERMINAL_STATES` (L48), `LIFECYCLE_STATES`
-(L59), `PHASES` (L96-L103), `ATTENTION_SEVERITIES` (L473) / `ATTENTION_LANES` (L477),
-`PROCESS_FACT_STATES` (L534-L541) / `PROCESS_HEALTHS` (L545-L554). The reason is
-stated in the source and is worth keeping: `projection.py` types every one of these fields as a bare
-`str`, so the mirror's closed union is NARROWER than the server by construction, and nothing
-type-level can notice — a JSON module import widens the payload's literals to `string`, so a served
-`severity: "critical"` assigns to `"alarm" | "warn" | "info"` in silence. Only a runtime membership
-check bites, and a runtime check needs a runtime list. `contract.test.ts::VOCABULARIES` (L269-L284)
-is the consumer.
+**The generator emits vocabularies as tuples.** Eight closed vocabularies are declared as `as const`
+tuples with their types derived from them: `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`,
+`PHASES`, `ATTENTION_SEVERITIES`, `ATTENTION_LANES`, `PROCESS_FACT_STATES`, and
+`PROCESS_HEALTHS`. The rationale is recorded here rather than in generated comments: runtime
+membership checks need enumerable values, and JSON-module literals widen to `string`.
+`contract.test.ts::VOCABULARIES` consumes the tuples for sample coverage.
 
 **The state vocabulary is now a COMPOSED partition, matching the server.** The halves are written out
-first — `LIVE_STATES` (L36-L42) and `TERMINAL_STATES` (L44-L48) — and the whole is assembled from
-them: `LIFECYCLE_STATES = [...LIVE_STATES, ...TERMINAL_STATES]` (L59). `State` (L61) derives from that
-tuple, `TerminalState` (L63) from the terminal half, `ActiveState` (L70) from the live half, and
-`ACTIVE_STATES` (L72) is bound to `LIVE_STATES` **directly**, not by subtraction — mirroring
-`projection.py::ACTIVE_STATES = LIVE_STATES` (L227) and for the reason that file gives: a set
+first — cit:([`LIVE_STATES`], dashboard/src/types/projection.ts:9-9) and cit:([`TERMINAL_STATES`], dashboard/src/types/projection.ts:11-11) — and the whole is assembled from
+them: `LIFECYCLE_STATES = [...LIVE_STATES, ...TERMINAL_STATES]`. cit:([`LIFECYCLE_STATES`, `State`, `TerminalState`, `ActiveState`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:15-15; dashboard/src/types/projection.ts:17-17; dashboard/src/types/projection.ts:19-19; dashboard/src/types/projection.ts:21-21) derives the whole and its halves, with
+`ACTIVE_STATES` bound to `LIVE_STATES` **directly**, not by subtraction — mirroring
+`projection.py::ACTIVE_STATES = LIVE_STATES` cit:([`ACTIVE_STATES`], mcp/src/agents_remember/observer/projection.py:236-236) and for the reason that file gives: a set
 difference re-derives the answer from a second list that could itself be wrong.
 
 This replaced the previous shape, which is worth naming because the card used to describe it: one
@@ -71,18 +82,18 @@ list of six (`LIFECYCLE_STATES`) plus a SECOND, independent list of two (`TERMIN
 nothing noticed — `Exclude` over a member the whole never contained removes nothing, silently, so the
 terminal half could have named a state that did not exist and every gate stayed green. Composed from
 the halves there is no second list left to disagree: filing a state on a half is what puts it in the
-vocabulary at all. Both halves stay exported for the reason the source gives (L28-L34): server-side
-the same pair is public, and publishing one half is what invites the next consumer to hand-roll the
-missing half beside it — the move that produced the bucket list this change replaced.
+vocabulary at all. Both halves stay exported so consumers can enumerate the producer partition
+without hand-rolling a second list.
 
-**The partition check is real, and it is a compile-time one.** `type FiledOnce<S extends never> = S;`
-(L88) with `export type StatesAreFiledOnce = FiledOnce<ActiveState & TerminalState>;` (L90). Disjoint
+**The partition check is real, and it is a compile-time one.** The generator emits
+`type FiledOnce<S extends never> = S` and
+`export type StatesAreFiledOnce = FiledOnce<ActiveState & TerminalState>`. Disjoint
 string-literal unions intersect to `never`, so the constraint holds exactly while the halves are
 disjoint. Verified non-vacuous by mutation on a copy of this file, not taken on trust: double-filing
 `"completed"` onto `LIVE_STATES` and running the repository's own `tsc` (5.9.3) under the
 `tsconfig.app.json` flags fails with
-`error TS2344: Type '"completed"' does not satisfy the constraint 'never'.` at L90; the unmodified
-file compiles clean. `StatesAreFiledOnce` is exported because it has to be — `noUnusedLocals` rejects
+`error TS2344: Type '"completed"' does not satisfy the constraint 'never'.`; the unmodified file
+compiles clean. `StatesAreFiledOnce` is exported because `noUnusedLocals` rejects
 a type alias nothing reads, and an assertion is precisely a declaration nothing reads.
 
 Two of `check_state_partition`'s three server-side refusals are *unrepresentable* here rather than
@@ -98,14 +109,13 @@ that mutation: "gives each live state a bucket of its own" (`new Set(buckets).si
 `buckets.length`), "counts a lifecycle in each live state into its own bucket" (the duplicated state
 counts 2 where 1 is asserted), and "exercises every member of every vocabulary, so the check does not
 depend on luck". Weaker than the Python side — import-time refusal there, one test file here — but
-not absent. `projection.py` L224-L226 states the same asymmetry from the other side.
+not absent. cit:([`ACTIVE_STATES`], mcp/src/agents_remember/observer/projection.py:236-236) states the same asymmetry from the other side.
 
-**`Metrics` buckets are derived, not listed.** `Camel<S>` (L202-L204) + `StateCountField<S>` (L206)
-compute the field name from the state name; `LifecycleStateCounts` (L214) is a mapped type over
-`ActiveState`, so `Metrics extends LifecycleStateCounts` (L240-L244) gains a REQUIRED field the day a
+**`Metrics` buckets are derived, not listed.** cit:([`Camel`, `StateCountField`, `LifecycleStateCounts`], dashboard/src/types/projection.ts:278-280; dashboard/src/types/projection.ts:282-282; dashboard/src/types/projection.ts:284-284)
+computes the field name from the state name; `Metrics extends LifecycleStateCounts` gains a REQUIRED field the day a
 live state is filed on `LIVE_STATES` and every object claiming to be a `Metrics` stops compiling until
 it counts it. Filing one on `TERMINAL_STATES` adds no field — the filing doing its job, not an
-omission. `stateCountField` (L220-L224) is the runtime twin and `metricsFor` (L250-L257) the
+omission. cit:([`stateCountField`, `metricsFor`], dashboard/src/types/projection.ts:286-290; dashboard/src/types/projection.ts:309-316) is the runtime twin and the
 client-side mirror of `reducer.py::_metrics`, so a fixture states its lifecycles and gets the metrics
 the server would have sent instead of re-listing buckets beside them.
 
@@ -117,42 +127,45 @@ lower-cases the tail, so `awaiting-DEVELOPER` bucketed to `awaitingDeveloperCoun
 cannot lower-case a tail at the type level and because lower-casing merges two states differing only
 in tail case.
 
-**Two model pairs were un-collapsed.** `TaskSubTaskRefNode` (L368-L375) and `SeriesSubTaskNode`
-(L380-L387) are two distinct `extra="forbid"` server models that this mirror had collapsed into one
+**Two model pairs were un-collapsed.** cit:([`TaskSubTaskRefNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:494-501) are two distinct `extra="forbid"` server models that this mirror had collapsed into one
 interface. The collapse invented a `createdAt` on the master row that the server never sends and lent
 `linkedLifecycleId` to series rows that never carry it. They share five fields and differ in exactly
-one each. `SubTaskRow = TaskSubTaskRefNode | SeriesSubTaskNode` (L391) is the union the sub-task index
-renders. `SeriesNode.subTasks` (L449-L464) is now `SeriesSubTaskNode[]`.
+one each. cit:([`SubTaskRow`, `SeriesNode`], dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:515-515) is the union the sub-task index;
+`SeriesNode.subTasks` is now `SeriesSubTaskNode[]`.
 
-`SeriesSectionNode` (L412-L416) is the same situation one model over — a separate `extra="forbid"`
-Python model from `TaskSectionNode` (L393-L397) — and the source is explicit about how much less this
-one buys: the two declare the same three fields, so TypeScript's structural typing keeps them
+cit:([`SeriesSectionNode`], dashboard/src/types/projection.ts:363-367) is the same situation one model over — a separate `extra="forbid"`
+Python model from cit:([`TaskSectionNode`], dashboard/src/types/projection.ts:465-469). The two declare the same three fields, so TypeScript's structural typing keeps them
 interchangeable (`DetailPanel.tsx::seriesAsMasterDoc` assigns one array to the other), no assertion
 over any payload can separate them, and `contract.test.ts`'s structural walk never will. It is a NAME
-and a SLOT for the day the server adds a field to one of them — not a check. Only per-model codegen
-makes it load-bearing.
+and a SLOT for the day the server adds a field to one of them — not a check. The generator now emits
+both named declarations from their separate schemas, while structural assignment remains possible
+until their fields diverge.
 
-**`LATE MIRROR` is a new, narrower meaning for `?:`.** Normally `?:` here means "the server omits this
-when null" (`exclude_none=True`). Three fields marked `LATE MIRROR` are *always* on the wire — a
-non-None default server-side — and are still declared optional as a CLIENT-SIDE TOLERANCE, because
-making them required would force every hand-written literal across the test suite to be edited in the
-same change: `GateNode.evidenceRefs?` (L125-L126), `LifecycleProjection.stateEnteredAt?` (L143-L147),
-`Analytics.expectationRows?` (L671-L672). The header (L7-L12) says so and names codegen as what
-removes the distinction. Do not read a `LATE MIRROR` optional as evidence the server may omit the
-field.
+**Schema-required fields are required.** Generated `GateNode.evidenceRefs`,
+`LifecycleProjection.stateEnteredAt`, and `Analytics.expectationRows` have no `?`; the former
+client-tolerance optionality is gone. Hand-written fixtures must supply them through typed builders or
+the sampled bases rather than weakening the generated contract.
 
-**Additive fields.** `LandingRefNode.at?` (L597) — the ref's own merge/push timestamp, distinct from
-the probe's `observedAt`; `EngineProcessNode.carryoverDoneAt?` (L629) — when memory carryover landed,
-absent until it has; `ExpectationRowNode` (L650-L661) — one outstanding supervisor expectation
-(`dueAt`/`overdue`), reached from `Analytics.expectationRows?`.
+**Additive fields.** cit:([`LandingRefNode`, `observedAt`], dashboard/src/types/projection.ts:229-239) — the ref's own merge/push timestamp, distinct from
+the probe's observation; cit:([`EngineProcessNode`, `carryoverDoneAt`], dashboard/src/types/projection.ts:162-202) — when memory carryover landed,
+absent until it has; cit:([`ExpectationRowNode`], dashboard/src/types/projection.ts:204-215) — one outstanding supervisor expectation
+(`dueAt`/`overdue`), reached from required `Analytics.expectationRows`.
 
 ### Invariants And Boundaries
 
-- `projection.py` is the source of truth — change it first, then mirror here in lockstep. This module
-  is no longer type-only: it emits eleven runtime values — the eight `as const` vocabulary tuples,
-  `ACTIVE_STATES`, and the functions `stateCountField` and `metricsFor`.
-- Optional (`?:`) fields encode the server's `exclude_none=True` omission; never assume a `?:` field is present. Two documented exceptions: `landing?` (forward-compat, below) and the three `LATE MIRROR` fields, which the server ALWAYS sends and which are optional here only as client-side tolerance.
-- A closed string union in this file is a claim NARROWER than the server, which types the same field as a bare `str`. Adding a member is a mirror-side widening that needs no server change; removing one silently rejects a value the server may still send. The tuples exist so `contract.test.ts` can check the claim at runtime — do not replace one with a hand-written union.
+- The Pydantic projection schema is the source of truth. Change the Python model, run
+  `scripts/sync-projection-types.py`, and require `--check` to pass; do not edit this generated file.
+  The output includes the runtime vocabulary tuples, `ACTIVE_STATES`, `stateCountField`, and `metricsFor`.
+- Optional (`?:`) fields follow schema omission/nullability/compatibility. Required collection/default
+  fields remain required, including `landing`, `orchestrates`, `agentPickups`, `expectationRows`,
+  `evidenceRefs`, and `stateEnteredAt`.
+- Closed vocabularies in this file are generated from producer-side `Literal`/typed aliases exposed as
+  Pydantic schema enums. A producer vocabulary change changes the generated tuple/union, and
+  `scripts/sync-projection-types.py --check` rejects stale committed output. `contract.test.ts`
+  separately checks whether the manual snapshot exercises every generated vocabulary member/path and
+  catches a duplicate within a tuple; it is sample coverage, not producer authority
+  cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:268-293).
+  Do not hand-edit a generated tuple or replace it with a hand-written union.
 - **Adding a state means filing it on exactly one half — `LIVE_STATES` or `TERMINAL_STATES` — and nothing else.** `LIFECYCLE_STATES` is assembled from them, so filing is what puts a state in the vocabulary; there is no second list to keep in step. Never re-introduce a hand-written `LIFECYCLE_STATES`, and never re-derive `ACTIVE_STATES` as `Exclude<State, TerminalState>`: both moves restore a list that can disagree with the halves, which is the defect this shape removed.
 - **Double-filing is refused at compile time; a duplicate within one half is not.** `StatesAreFiledOnce = FiledOnce<ActiveState & TerminalState>` fails `tsc -b` with `TS2344` naming the offending state (verified by mutation, not assumed). But a TypeScript tuple keeps repeated members where Python's `Literal` collapses them, so `["running", "running", …]` compiles clean and is caught only by `contract.test.ts` at runtime (three failing tests, including "gives each live state a bucket of its own"). Do not delete those runtime bucket assertions on the grounds that the type check covers the partition — it covers a different half of it.
 - One interface per Python model. `TaskSubTaskRefNode` / `SeriesSubTaskNode` and `TaskSectionNode` / `SeriesSectionNode` are separate because their server models are separate `extra="forbid"` models — not because TypeScript can tell them apart. Structural typing means the second pair is interchangeable and no test can pin it; that is a known limit, not an oversight.
@@ -164,13 +177,15 @@ absent until it has; `ExpectationRowNode` (L650-L661) — one outstanding superv
   because it has not been bound to a lifecycle/enclosure yet.
 - `TaskDocNode.sections` means sections from the JSON task-document schema. It is not a projection path
   for `series-contract.md` content.
-- `createdAt` is a structured ordering field supplied by the server. Consumers may sort by it when
-  present, but must not derive creation order by parsing `number` or filename prefixes.
+- `TaskDocNode.createdAt` and `SeriesNode.createdAt` are required structured ordering fields supplied
+  by the server; `SeriesSubTaskNode.createdAt?` is optional. Consumers may sort by the optional field
+  only where the schema permits it, and must not derive creation order by parsing `number` or filename
+  prefixes. cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:437-463)
 - `SeriesNode.seriesTokenTotal` is server-derived. Dashboard consumers display it; they do not recompute
   it from lifecycle gauges or task-doc rows.
-- `landing?` is the exception (a list, never `exclude_none`-dropped): it is `?:` for **forward-compat** — a projection produced before slice 5h omits the field, so consumers must guard (`node.landing?.…`).
+- `landing` is a required generated list field; consumers need no mirror-side optionality workaround.
 - `engineProcesses` and `attentionQueue` are derived surfaces composed server-side; the client renders them verbatim and preserves server order (no re-sort, no re-derivation).
-- `AttentionItem.signalTs?` and `LifecycleProjection.stateEnteredAt?` are server-computed lifecycle acknowledgement anchors. Clients forward ids/kinds only; they do not decide suppression freshness. `stateEnteredAt?` is `LATE MIRROR` — a `str` with a `""` default server-side, so it is always on the wire despite the `?`.
+- `AttentionItem.signalTs?` and required `LifecycleProjection.stateEnteredAt` are server-computed lifecycle acknowledgement anchors. Clients forward ids/kinds only; they do not decide suppression freshness.
 - `DriftSnapshotNode.checkedAt?` is the repo-level acknowledgement anchor for actionable drift; clients render/dismiss it but do not reclassify drift.
 - `agentPickups` is also server-derived. Clients render the projected `waiting-for-agent` or `check-chat`
   state, role/message/delivery metadata, and do not run their own pickup TTL timers.
@@ -196,32 +211,26 @@ absent until it has; `ExpectationRowNode` (L650-L661) — one outstanding superv
 
 ### Conventions
 
-Optional fields preserve compatibility with older persisted or serving payloads; app-injected fields
-remain explicitly distinguished from projection-reducer output. Since 260731-EFA-L4 a third reason for
-`?:` exists and is marked in-line: `LATE MIRROR` = always on the wire, optional only so existing
-hand-written test literals keep compiling. A closed vocabulary is declared tuple-first (`as const`
+Optional fields reflect the generated schema or the explicitly served-only app tail; app-injected
+fields remain distinguished from projection-reducer output. Required producer fields are not made
+optional to preserve hand-written fixtures. A closed vocabulary is emitted tuple-first (`as const`
 runtime list, type derived from it) so consumers enumerate rather than copy.
 
 ### Todos
 
-Recorded as open, not as done — the derivations above close specific holes and leave these.
-(The partition item that stood here is **closed**: the halves-first composition and the compile-time
-`StatesAreFiledOnce` check landed in this file, and `projection.py`'s "STATE OF THE MIRROR" comment
-was rewritten to say so. What remains of it is the narrower within-half item below.)
+Schema generation closes the former producer-to-TypeScript gap. The remaining limits are properties
+of TypeScript or sample coverage, not deferred codegen:
 
 - **A duplicate within one half is not a compile-time error.** Composition and `StatesAreFiledOnce`
   rule out an unfiled state and a double-filed one; a TypeScript tuple still admits
   `["running", "running", …]`, which Python's `Literal` would collapse. Only `contract.test.ts`
-  catches it, at runtime. Codegen from the pydantic models is what closes the last of it.
+  catches it at runtime.
 - **`SeriesSectionNode` vs `TaskSectionNode` is a slot, not a check.** Same three fields, so
   structural typing keeps them interchangeable and no payload walk can separate them.
-- **The mirror↔server link is held by no test.** `contract.test.ts` measures this file against
-  `dashboard/src/fixtures/snapshot.json`, which is HAND-maintained — there is no generator. A field
-  the server starts sending that neither the snapshot nor this file knows about is invisible to the
-  whole chain. Codegen from the pydantic models is the fix and is deferred (header L4-L5;
-  `contract.test.ts` "LEFT FOR CODEGEN (R3)").
-- **Every closed union here is narrower than the server**, which types the same fields as bare `str`.
-  Only the runtime vocabulary checks bite, and only for members the mirror already knows.
+- **The manual snapshot can still under-sample the generated contract.** `contract.test.ts` measures
+  this explicitly; it is a fixture-coverage limit, not a producer-schema drift gap.
+- **Runtime tuple integrity still needs runtime checks.** TypeScript cannot reject a duplicate inside
+  one tuple half, so the vocabulary/bucket assertions remain load-bearing.
 
 ### 2026-07-24 Curator Delta
 
@@ -234,47 +243,55 @@ comments without changing projection schema semantics.
 No relevant documentation was found after checking the configured sources; the wire-shape claims
 are proven by repository source and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local type mirror. | Source discovery checked | — |
+| No relevant external or domain documentation was found for this repository-local type mirror. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Header: `projection.py` is the source of truth, `?:` encodes `exclude_none=True`, codegen deferred — and the `LATE MIRROR` exception (always on the wire, optional as client tolerance only). | L1-L12 | [projection.ts](projection.ts) |
-| The state vocabulary as a COMPOSED partition: the two halves written out (`LIVE_STATES`, `TERMINAL_STATES`), `LIFECYCLE_STATES` spread from them, and `State` derived from that tuple — with the comment recording that the previous shape was a whole plus a second, independent list. | L14-L61 | [projection.ts](projection.ts) |
-| `TerminalState`, `ActiveState` derived from the live half, and `ACTIVE_STATES = LIVE_STATES` bound DIRECTLY rather than by subtraction. | L62-L72 | [projection.ts](projection.ts) |
-| The compile-time partition check: `FiledOnce<S extends never>` and `StatesAreFiledOnce = FiledOnce<ActiveState & TerminalState>`, with the comment naming the exact `TS2344` diagnostic and why the two other refusals are unrepresentable rather than checked. | L74-L90 | [projection.ts](projection.ts) |
-| `PHASES` / `Phase`, tuple-first for the stated reason that the contract test used to hold its OWN copy of the six phase names. | L91-L105 | [projection.ts](projection.ts) |
-| The served docstring: persisted/served contract, camelCase wire convention, `extra="forbid"` keeps it honest. | L1-L9 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
-| The partition helper this file's compile-time check mirrors: `check_state_partition` and the `LifecycleVocabularyError` it raises. | `LifecycleVocabularyError` L30-L38; `check_state_partition` L73-L98 | [lifecycle_state.py](../../../mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The server-side vocabulary: `LiveState` / `TerminalState` written out as halves, `State = Literal[LiveState, TerminalState]` composed FROM them, `Phase`, and `STATES` / `LIVE_STATES` / `TERMINAL_STATES` built through the partition check. | L101-L146 | [lifecycle_state.py](../../../mcp/src/agents_remember/observer/lifecycle_state.py) |
-| The "STATE OF THE MIRROR" comment, rewritten to record that the mirror now holds the same partition in the same shape, that this file refuses double-filing at import while the mirror refuses it at compile time, and that a duplicate WITHIN one half is the one thing the mirror cannot follow (`Literal["a","a"]` collapses; a TS tuple does not) — caught by the dashboard contract test at runtime instead. | comment L194-L226 (the mirror paragraph L208-L226); `ACTIVE_STATES` L227 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
-| The bucket-name rule's server copy: `word[:1].upper() + word[1:]`, why `str.capitalize` was abandoned, `state_count_fields` refusing a non-injective mapping, and `STATE_COUNT_FIELDS`. | L230-L273 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
-| `Camel<S>` / `StateCountField<S>` / `LifecycleStateCounts`, the runtime twin `stateCountField`, the private `lifecycleStateCounts`, and `Metrics extends LifecycleStateCounts` — one `number` per live state, so a new live state is a REQUIRED field. | L190-L244 | [projection.ts](projection.ts) |
-| `metricsFor`, the client-side mirror of the reducer's rollup, so a fixture derives metrics instead of re-listing buckets. | L245-L257 | [projection.ts](projection.ts) |
-| `GateNode.evidenceRefs?` and `LifecycleProjection.stateEnteredAt?` — both marked `LATE MIRROR`, both always on the wire. | L118-L147 | [projection.ts](projection.ts) |
-| `ProviderNode` comments mirror the served `repoId` and `worktreeGroup` binding semantics consumed by topology. | L177-L189 | [projection.ts](projection.ts) |
-| Drift snapshot metadata mirrors the backend provenance fields used by actionable-drift rows. | L258-L269 | [projection.ts](projection.ts) |
-| `TaskSubTaskRefNode` (has `linkedLifecycleId`, no `createdAt`), `SeriesSubTaskNode` (has `createdAt`, no `linkedLifecycleId`), and the `SubTaskRow` union — with the comment recording that collapsing them invented a `createdAt` the server never sends. | L360-L391 | [projection.ts](projection.ts) |
-| `SeriesSectionNode` declared separately from `TaskSectionNode`, and the note that structural typing keeps the two interchangeable so the split is a NAME and a SLOT, not a check. | L392-L416 | [projection.ts](projection.ts) |
-| `TaskDocNode.id`/`createdAt?`/`lifecycleId?` and the master-navigation fields. | L417-L447 | [projection.ts](projection.ts) |
-| `SeriesNode` now carries `SeriesSubTaskNode[]` / `SeriesSectionNode[]` alongside `seriesTokenTotal`. | L448-L464 | [projection.ts](projection.ts) |
-| `ATTENTION_SEVERITIES` / `ATTENTION_LANES` as tuples, with the note that Python declares both fields as bare `str` so only a runtime check can bite; `AttentionItem` consumes the derived types. | L465-L495 | [projection.ts](projection.ts) |
-| FEUI-L7 optional owner identity and redelivery/escalation fields on `AgentPickupNode`. | L496-L524 | [projection.ts](projection.ts) |
-| `PROCESS_FACT_STATES` / `PROCESS_HEALTHS` honesty vocabularies, tuple-first for the same reason. | L525-L556 | [projection.ts](projection.ts) |
-| `CommitRefNode` / `ProviderBootNode` / `EngineProcessEdge` — the edge comment now excludes `refused` and states that polarity is derived in the renderer. | L557-L585 | [projection.ts](projection.ts) |
-| `LandingRefNode.at?` added beside `observedAt` (ref timestamp vs probe timestamp). | L586-L601 | [projection.ts](projection.ts) |
-| `EngineProcessNode` enclosure pod, now including `carryoverDoneAt?`. | L602-L645 | [projection.ts](projection.ts) |
-| `ExpectationRowNode` and `Analytics.expectationRows?` (`LATE MIRROR`). | L646-L678 | [projection.ts](projection.ts) |
-| The Python models the two split pairs mirror: `GateNode.evidenceRefs`, `LifecycleProjection.stateEnteredAt`, `ExpectationRowNode`, `TaskSubTaskRefNode`/`TaskSectionNode`, `SeriesSubTaskNode`/`SeriesSectionNode`, `EngineProcessNode.carryoverDoneAt`, `Analytics.expectationRows`. | L84; L116; L413-L429; L552-L582; L634-L659; L855; L955 | [projection.py](../../../mcp/src/agents_remember/observer/projection.py) |
-| `SupervisorHeartbeat` mirrors the app-injected wire shape, not a `projection.py` model. | L693-L709 | [projection.ts](projection.ts) |
-| `WorkspaceProjection` top-level shape. | L710-L726 | [projection.ts](projection.ts) |
-| The app-side payload builder `SupervisorHeartbeat` mirrors. | L936 | [serving/app.py](../../../mcp/src/agents_remember/serving/app.py) |
-| The contract guard that measures this mirror in three directions, derives `VOCABULARIES` from its closed unions, and pins the removed `refusedPolarity` / split sub-task rows. | L24-L73; L269-L284; L471-L526 | [../test/contract.test.ts](../test/contract.test.ts) |
-| The RUNTIME half of the partition guard — the three tests a duplicate within one half fails: the vocabulary-exhaustiveness pooling check, and the two bucket assertions that read `ACTIVE_STATES` (`counts a lifecycle in each live state into its own bucket`, `gives each live state a bucket of its own`). | L346-L376; L404-L469 | [../test/contract.test.ts](../test/contract.test.ts) |
-| The fixture builders that type every test's wire node against this mirror. | L1-L46 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
+| The generated header names the top-level `WorkspaceProjection` shape. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
+| The generated state partition declarations: `LIVE_STATES`, `TERMINAL_STATES`, composed `LIFECYCLE_STATES`, and derived `State`. | `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `State` | dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:15-15 |
+| `TerminalState`, `ActiveState`, and `ACTIVE_STATES = LIVE_STATES` are derived from the live/terminal partition. | `TerminalState`, `ActiveState`, `ACTIVE_STATES` | dashboard/src/types/projection.ts:17-17; dashboard/src/types/projection.ts:19-19; dashboard/src/types/projection.ts:21-21 |
+| The generated compile-time partition declarations `FiledOnce<S extends never>` and `StatesAreFiledOnce = FiledOnce<ActiveState & TerminalState>`. | `FiledOnce`, `StatesAreFiledOnce` | dashboard/src/types/projection.ts:23-23; dashboard/src/types/projection.ts:25-25 |
+| Generated `PHASES` tuple and derived `Phase` type. | `PHASES`, `Phase` | dashboard/src/types/projection.ts:27-27; dashboard/src/types/projection.ts:29-29 |
+| The served docstring describes the persisted/served contract, camelCase wire convention, and `extra="forbid"` boundary. | `projection` | mcp/src/agents_remember/observer/projection.py:1-9 |
+| The partition helper this file's compile-time check mirrors: `check_state_partition` and the `LifecycleVocabularyError` it raises. | `LifecycleVocabularyError`, `check_state_partition` | mcp/src/agents_remember/observer/lifecycle_state.py:30-38; mcp/src/agents_remember/observer/lifecycle_state.py:73-98 |
+| The server-side vocabulary writes `LiveState` and `TerminalState` as halves, composes `State`, and builds phase/state tuples through the partition check. | `LiveState`, `TerminalState`, `State`, `Phase`, `STATES`, `LIVE_STATES`, `TERMINAL_STATES` | mcp/src/agents_remember/observer/lifecycle_state.py:109-109; mcp/src/agents_remember/observer/lifecycle_state.py:118-118; mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:124-131; mcp/src/agents_remember/observer/lifecycle_state.py:133-139 |
+| The server-side mirror comment records the same partition shape and the runtime duplicate-within-half limit. | `ACTIVE_STATES` | mcp/src/agents_remember/observer/projection.py:236-236 |
+| The server bucket-name rule uses the preserved-tail camel transform and rejects non-injective mappings. | `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:282-282 |
+| `Camel<S>`, `StateCountField<S>`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, and `Metrics extends LifecycleStateCounts` derive one number per live state. | `Camel`, `StateCountField`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, `Metrics` | dashboard/src/types/projection.ts:278-280; dashboard/src/types/projection.ts:282-282; dashboard/src/types/projection.ts:284-284; dashboard/src/types/projection.ts:286-290; dashboard/src/types/projection.ts:292-301; dashboard/src/types/projection.ts:303-307 |
+| `metricsFor` is the client-side mirror of the reducer rollup. | `metricsFor` | dashboard/src/types/projection.ts:309-316 |
+| `GateNode.evidenceRefs` is required in the generated contract. | `evidenceRefs` | dashboard/src/types/projection.ts:221-221 |
+| `LifecycleProjection.stateEnteredAt` is required in the generated contract. | `stateEnteredAt` | dashboard/src/types/projection.ts:273-273 |
+| `Analytics.expectationRows` is required in the generated contract. | `expectationRows` | dashboard/src/types/projection.ts:84-84 |
+| Generated `ProviderNode.scope`, `repoId`, and `worktreeGroup` are topology inputs in the wire declaration. | `ProviderNode`, `scope`, `repoId`, `worktreeGroup` | dashboard/src/types/projection.ts:325-336 |
+| Topology uses provider scope to choose workspace/worktree ownership. | `groupKey`, `buildTopology` | dashboard/src/topology/model.ts:99-99; dashboard/src/topology/model.ts:117-221 |
+| Generated `ProviderNode.role` is a field in the wire declaration. | `ProviderNode` | dashboard/src/types/projection.ts:325-336 |
+| Engine Room labels workspace engines from provider role. | `engineLabel` | dashboard/src/panels/EngineRoom.tsx:68-70 |
+| Enclosure canvas selects code/memory engines from provider role. | `role` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1204-1205; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1316-1317 |
+| Drift snapshot metadata mirrors backend provenance fields used by actionable-drift rows. | `DriftSnapshotNode` | dashboard/src/types/projection.ts:121-131 |
+| Generated `TaskSubTaskRefNode` has `linkedLifecycleId` and no `createdAt`; `SeriesSubTaskNode` has `createdAt` and no `linkedLifecycleId`; `SubTaskRow` unites them. | `TaskSubTaskRefNode`, `SeriesSubTaskNode`, `SubTaskRow` | dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:494-501; dashboard/src/types/projection.ts:515-515 |
+| Generated `SeriesSectionNode` and `TaskSectionNode` are separate declarations, with structural typing remaining a documented limit. | `SeriesSectionNode`, `TaskSectionNode` | dashboard/src/types/projection.ts:363-367; dashboard/src/types/projection.ts:465-469 |
+| `TaskDocNode.id`, required `createdAt`, optional `lifecycleId`, and master-navigation fields are generated here. | `TaskDocNode`, `id`, `createdAt`, `lifecycleId`, `subTasks`, `sections`, `masterLifecycleId` | dashboard/src/types/projection.ts:437-463 |
+| `SeriesNode` carries `SeriesSubTaskNode[]`, `SeriesSectionNode[]`, and `seriesTokenTotal`. | `SeriesNode`, `seriesTokenTotal` | dashboard/src/types/projection.ts:346-361 |
+| Generated `ATTENTION_SEVERITIES` / `ATTENTION_LANES` tuples and derived `AttentionItem` fields. | `ATTENTION_SEVERITIES`, `ATTENTION_LANES`, `AttentionItem` | dashboard/src/types/projection.ts:31-31; dashboard/src/types/projection.ts:35-35; dashboard/src/types/projection.ts:95-109 |
+| FEUI-L7 optional owner identity and redelivery/escalation fields on `AgentPickupNode`, with required `attemptCount`. | `AgentPickupNode`, `attemptCount` | dashboard/src/types/projection.ts:54-77 |
+| `PROCESS_FACT_STATES` is the process-fact honesty vocabulary. | `PROCESS_FACT_STATES` | dashboard/src/types/projection.ts:39-39 |
+| `PROCESS_HEALTHS` is the process-health honesty vocabulary. | `PROCESS_HEALTHS` | dashboard/src/types/projection.ts:43-43 |
+| Generated `CommitRefNode`, `ProviderBootNode`, and `EngineProcessEdge` declarations carry no `refusedPolarity`. | `CommitRefNode`, `ProviderBootNode`, `EngineProcessEdge` | dashboard/src/types/projection.ts:111-119; dashboard/src/types/projection.ts:152-160; dashboard/src/types/projection.ts:318-323 |
+| `LandingRefNode.at?` is distinct from the probe's `observedAt`. | `LandingRefNode`, `at`, `observedAt` | dashboard/src/types/projection.ts:229-239 |
+| `EngineProcessNode` includes optional `carryoverDoneAt?`. | `EngineProcessNode`, `carryoverDoneAt` | dashboard/src/types/projection.ts:162-202 |
+| `ExpectationRowNode` and required `Analytics.expectationRows` form the supervisor expectation surface. | `ExpectationRowNode`, `expectationRows` | dashboard/src/types/projection.ts:84-84; dashboard/src/types/projection.ts:204-215 |
+| The Python projection producer defines gate evidence, lifecycle entry time, and expectation rows. | `GateNode`, `LifecycleProjection`, `ExpectationRowNode` | mcp/src/agents_remember/observer/projection.py:76-96; mcp/src/agents_remember/observer/projection.py:99-138; mcp/src/agents_remember/observer/projection.py:422-438 |
+| The Python producer defines task sub-task references and task sections. | `TaskSubTaskRefNode`, `TaskSectionNode` | mcp/src/agents_remember/observer/projection.py:575-592; mcp/src/agents_remember/observer/projection.py:595-605 |
+| The Python producer defines series sub-tasks and series sections. | `SeriesSubTaskNode`, `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:657-672; mcp/src/agents_remember/observer/projection.py:675-682 |
+| The Python producer defines engine carryover and analytics expectation projections. | `EngineProcessNode`, `Analytics` | mcp/src/agents_remember/observer/projection.py:832-900; mcp/src/agents_remember/observer/projection.py:956-987 |
+| `SupervisorHeartbeat` mirrors the app-injected wire shape, not a `projection.py` model. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
+| `WorkspaceProjection` is the top-level generated shape. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
+| The app-side payload builder names the `SupervisorHeartbeatPayload` wire shape. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/app.py:949-949 |
+| The contract guard measures the mirror in three directions and derives `VOCABULARIES`. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
 
 ## Series-Contract Notes
 
@@ -284,51 +301,22 @@ are proven by repository source and tests.
 
 No meaningful cross-repository implementation source governs this repository-local type mirror.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | Import and task-boundary review | — |
 
 ## Update History
 
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): the state vocabulary
-  adopted the server's partition after the main wave wrote this card, so the card described a shape
-  the file no longer has. **Corrected the central claim.** The file now declares `LIVE_STATES` (L42)
-  and `TERMINAL_STATES` (L48) as the two halves and COMPOSES `LIFECYCLE_STATES = [...LIVE_STATES,
-  ...TERMINAL_STATES]` (L59); `State` (L61), `TerminalState` (L63) and `ActiveState` (L70) are all
-  derived, and `ACTIVE_STATES` (L72) is bound to `LIVE_STATES` directly rather than by subtraction —
-  mirroring `projection.py::ACTIVE_STATES = LIVE_STATES` (L227) for the reason that file gives.
-  Every sentence describing the old whole-plus-second-list shape with
-  `ActiveState = Exclude<State, TerminalState>` was rewritten, the invariant telling a reader to
-  "cross-check by hand until the halves-first shape lands here" was replaced, and the `Todos` item
-  "**The partition is not adopted here**" was **closed** with a note saying so rather than deleted
-  silently. Recorded the new compile-time check — `FiledOnce<S extends never>` (L88) /
-  `StatesAreFiledOnce` (L90) — and **proved it non-vacuous myself rather than trusting the comment**:
-  on a scratch copy of the file, double-filing `"completed"` onto `LIVE_STATES` and running this
-  repository's own `tsc` 5.9.3 under the `tsconfig.app.json` flags produces
-  `error TS2344: Type '"completed"' does not satisfy the constraint 'never'.` at L90, while the
-  unmodified file compiles clean (exit 0). Recorded the honest gap the same way: a duplicate WITHIN
-  one half compiles clean (same harness, exit 0, no diagnostics) because a TypeScript tuple keeps
-  repeated members where `Literal["a","a"]` collapses, and is caught only at runtime by
-  `contract.test.ts` — which I ran against that mutation and which fails exactly **three** tests,
-  including "gives each live state a bucket of its own". Fixed two self-contradictory counts: the
-  Logic section said "six runtime values" and listed ten, and Purpose said "two"; the file exports
-  **eleven** (`grep -cE "^export (const|function) "`), now stated consistently in Purpose, Logic and
-  the invariant. **Citation repairs: all 29 rows in the reference table were re-derived against the
-  current source and 24 had moved or were wrong** — every `projection.ts` range (the partition rewrite added ~37
-  lines above everything else: e.g. `WorkspaceProjection` L674-L689 → L710-L726,
-  `EngineProcessNode` L566-L608 → L602-L645, `PROCESS_*` L487-L519 → L525-L556) and every
-  `projection.py` range at or after the rewritten comment (a uniform +10: `TaskSubTaskRefNode`
-  L542-L568 → L552-L582, `Analytics.expectationRows` L945 → L955, `carryoverDoneAt` L845 → L855).
-  Two rows were wrong in kind rather than by offset and were rebuilt: the `lifecycle_state.py`
-  partition row cited L101-L146 for `check_state_partition`, which is at **L73-L98** — outside the
-  range — so it is now two rows; and the row claiming `projection.py` "states outright that the
-  mirror has NOT adopted the partition" cited a comment that has since been rewritten to say the
-  opposite. Added three rows (the compile-time check, `PHASES` as its own row, and the runtime
-  bucket tests in `contract.test.ts` that catch the within-half duplicate). The five ranges that
-  still land unchanged: the `projection.ts` header L1-L12, `projection.py` L1-L9,
-  `serving/app.py` L936, `contract.test.ts` L24-L73; L269-L284; L471-L526, and
-  `test/fixtures/wire.ts` L1-L46.
-  Verification metadata pinned until closeout stamps the L4 commit.
+- 2026-08-04T13:01:29+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: reconciled generated projection citations against the frozen source, removed unsupported or duplicate claims, and regenerated scoped citation ranges.
+
+- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: rewrote the live card for generated
+  provenance. Removed the deferred-codegen/`LATE MIRROR` contract, made schema-required fields
+  explicit, and stopped attributing historical rationale or diagnostic commentary to generated
+  source. New or rewritten source bindings are resolved by the scoped citation fixer.
+
+- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator: reconciled the state-partition rewrite,
+  compile-time uniqueness guard, runtime duplicate coverage, and moved reference ranges against
+  the landed source. Corrected stale claims and contradictory counts; verification metadata remains
+  pinned until closeout.
 
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: body corrected against the landed diff. Removed the
   false claim that this is a pure type module (it now exports eight vocabulary tuples plus

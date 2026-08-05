@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -177,21 +177,22 @@ provider stack is POSIX-hosted anyway.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Worktree start calls provider setup with MCP-derived provider settings. | [git_worktree_manager.py](agents-remember/mcp/src/agents_remember/worktrees/git_worktree_manager.py) |
-| Benchmark preparation calls package-local provider setup instead of a source script. | [runner.py](agents-remember/mcp/src/agents_remember/benchmarks/runner.py) |
-| Provider lifecycle calls are captured through package-local command capture. | [command_capture.py](agents-remember/mcp/src/agents_remember/mcp/command_capture.py) |
-| CGC seed orchestration and bundle rewriting now live outside the facade. | [seed.py](cgc/seed.py.md); [bundle.py](cgc/bundle.py.md) |
-| Provider-specific setup branches live in provider-owned setup modules. | [CGC setup](cgc/setup.py.md); [GrepAI setup](grepai/setup.py.md) |
-| Shared settings and command helpers live in the setup common module. | [setup_common.py](setup_common.py.md) |
-| Setup payload summaries and failed-phase compaction live in the setup reporting module. | [setup_reporting.py](setup_reporting.py.md) |
-| Containment tests pin the fleet setup lock's contention timeout and uncontended no-op. | [test_provider_containment.py](agents-remember/mcp/tests/test_provider_containment.py) |
-| The index-state metrics rows the catch-up stage records best-effort. | [metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
-| Index-lifecycle tests pin the catch-up touch/stale/no-op paths and the metrics row. | [test_provider_index_lifecycle.py](agents-remember/mcp/tests/test_provider_index_lifecycle.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:629-667; mcp/src/agents_remember/worktrees/modules/start.py:839-870 |
+| Benchmark preparation calls package-local provider setup instead of a source script. | `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:547-555 |
+| Provider lifecycle calls are captured through package-local command capture. | `run_package_main` | mcp/src/agents_remember/mcp/command_capture.py:12-39 |
+| CGC seed orchestration and bundle rewriting now live outside the facade. | `cgc_seed_bundle`, `rewrite_cgc_bundle_paths` | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
+| Provider-specific setup branches live in provider-owned setup modules. | `prepare_enabled_provider` | mcp/src/agents_remember/providers/cgc/setup.py:241-251; mcp/src/agents_remember/providers/grepai/setup.py:56-71 |
+| Shared settings and command helpers live in the setup common module. | `run_command`, `LifecycleCommand`, `run_lifecycle` | mcp/src/agents_remember/providers/setup_common.py:109-146; mcp/src/agents_remember/providers/setup_common.py:159-172; mcp/src/agents_remember/providers/setup_common.py:175-218 |
+| Setup payload summaries and failed-phase compaction live in the setup reporting module. | `finalize_setup_payload` | mcp/src/agents_remember/providers/setup_reporting.py:45-66 |
+| Containment tests pin the fleet setup lock's contention timeout and uncontended no-op. | `FleetSetupLockTests` | mcp/tests/test_provider_containment.py:276-315 |
+| The index-state metrics rows the catch-up stage records best-effort. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
+| Index-lifecycle tests pin the catch-up touch/stale/no-op paths and the metrics row. | `test_clean_delta_to_ready_watcher_is_caught_up`, `test_watcher_not_ready_means_no_touch_and_honest_staleness`, `test_no_divergence_or_dry_run_is_a_noop` | mcp/tests/test_provider_index_lifecycle.py:192-207; mcp/tests/test_provider_index_lifecycle.py:209-233; mcp/tests/test_provider_index_lifecycle.py:277-289 |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 22 citations (citation_anchor_missing=10, citation_prose_not_in_cit_form=0, citation_source_malformed=12); final scoped citation check clean.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915` armed with no
   exemptions): extracted `_seed_touch_plan`, `_stale_index_skip` and `_deliver_seed_touches` from
   `_seed_catchup_results`, and updated the watcher `run_lifecycle` call for the new

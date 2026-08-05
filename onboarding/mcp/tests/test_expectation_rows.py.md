@@ -70,28 +70,31 @@ None.
 
 No meaningful external design-doc references found yet (created this leaf).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Row creation/transition idempotency: `mark_met`/`mark_missed` never overwrite an existing terminal state. | L34-L66 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
-| Store query surface: `pending`, `overdue`, `find_by_source`, `mark_met`/`mark_missed` via the store. | L75-L149 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
-| `orchestration.expectations` SLA-settings parser: defaults, per-kind override, fail-loud validation. | L153-L175 | [test_expectation_rows.py](agents-remember/mcp/tests/test_expectation_rows.py) |
-| The `Expectation` / `ExpectationSubject` parameter objects and the two builders under test. | L60-L90; L293-L300 | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py) |
+| Row creation/transition idempotency: `mark_met`/`mark_missed` never overwrite an existing terminal state. | "def test_mark_met_is_idempotent" | mcp/tests/test_expectation_rows.py:46-46 |
+| Store query surface: `pending`, `overdue`, `find_by_source`, `mark_met`/`mark_missed` via the store. | "def test_pending_excludes_met_rows" | mcp/tests/test_expectation_rows.py:91-91 |
+| `orchestration.expectations` SLA-settings parser: defaults, per-kind override, fail-loud validation. | "class ExpectationRowRecordTests" | mcp/tests/test_expectation_rows.py:33-33 |
+| "class Expectation" | "class Expectation:" | mcp/src/agents_remember/controlplane/expectation_rows.py:79-79 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and source-backed ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass changed both builders this
   suite exercises, so the card now states the current call shape and its own-source citations were

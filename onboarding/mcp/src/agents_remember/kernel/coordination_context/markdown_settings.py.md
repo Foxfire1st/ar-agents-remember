@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00|
-| lastVerifiedCommitHash | `c20a3292e667d227a3be0c1fb276f8a701df814f` |
-| lastVerifiedCommitDate | 2026-05-31T14:17:11+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -46,27 +46,27 @@ global path-rule branches to focused helper modules.
 
 No external documentation is needed for this project fallback parser.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Settings selection calls this parser only after confirming JSON settings are absent. | settings selector | [settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/settings.py) |
-| Legacy cross-repo and global path-rule branches are delegated to focused modules. | parser helpers | [markdown_cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py); [markdown_global_rules.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/markdown_global_rules.py) |
-| Worktree support tests cover legacy Markdown and cross-repo settings behavior. | resolver tests | [test_worktree_support.py](agents-remember/mcp/tests/test_worktree_support.py) |
+| `parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns topology defaults when no settings file exists. | `parse_coordination_settings` | mcp/src/agents_remember/kernel/coordination_context/settings.py:50-72 |
 
 ## Cross-Repo References
 
 No cross-repository evidence is needed for this fallback parser.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D9 complete settings-selection construct evidence for the same-reviewer residual delta.
 
 - 2026-05-31T12:50+02:00 — `try_apply_storage_mode` consolidated the separate `mode:`/`layout:` branches into one alias branch and `try_apply_storage_default` now falls back to `self.settings.default` instead of a hardcoded `"external"`, so empty storage scalars keep the topology-derived default; recorded the new empty-scalar fallback boundary in Invariants And Boundaries (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Added `None` guards for `current_list`/`current_rule` (`global_target_list`, `try_apply_storage_rule_value`, `try_select_storage_rule_list`) to clear Pyright optional errors; behavior-preserving (commit `0549b28`).

@@ -73,17 +73,21 @@ through the component's own subscription.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The server-side attention queue this reads. | — | [observer/reducer.py](agents-remember/mcp/src/agents_remember/observer/reducer.py) |
-| The `selectQueue` selector. | L37-L46 | [data/selectors.ts](../data/selectors.ts) |
-| `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | L122-L128 | [AttentionQueue.tsx](AttentionQueue.tsx) |
-| `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. | L146-L178 | [AttentionQueue.tsx](AttentionQueue.tsx) |
-| `severityMark` — the wrapper that carries the severity's accessible name, and why the role is required. | L41-L49 | [AttentionQueue.tsx](AttentionQueue.tsx) |
-| The `role="img"` / `aria-label` span rendered around the decorative `Dot`. | L222-L230 | [AttentionQueue.tsx](AttentionQueue.tsx) |
-| `Dot` is `aria-hidden`, so its consumers own the announced name. | L118-L126 | [grammar/Dot.tsx](../grammar/Dot.tsx) |
+| The server-side attention queue this reads. | `build_attention_queue` | mcp/src/agents_remember/observer/reducer.py:678-712 |
+| The `selectQueue` selector. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
+| `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | `canDismiss` | dashboard/src/panels/AttentionQueue.tsx:122-128 |
+| `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. | `dismissItem`, `clearAll` | dashboard/src/panels/AttentionQueue.tsx:146-178 |
+| `severityMark` — the CSS style applied to the severity wrapper. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
+| The `role="img"` / `aria-label` span rendered around the decorative `Dot`. | `Dot` | dashboard/src/panels/AttentionQueue.tsx:222-230 |
+| `Dot` is `aria-hidden`, so its consumers own the announced name. | `Dot` | dashboard/src/grammar/Dot.tsx:119-129 |
 
 ## Update History
+
+- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: narrowed the severity-mark row to the `severityMark` CSS style and regenerated its exact source line; the accessibility behavior remains owned by the adjacent rows.
+
+- 2026-08-02T20:49:58+02:00 — 260731-EFA-L6 curator W2-B10: repaired 4 citation findings (2 reference rows); scoped recheck clean.
 
 - 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: documented the `severityMark` wrapper — the `Dot`
   is `aria-hidden`, so the severity is now announced from a `role="img"` span with

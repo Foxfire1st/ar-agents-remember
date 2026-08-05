@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-07-31T15:31+02:00                                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                 |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                 |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -48,19 +48,27 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 - The signature stays flat; the parameter objects are built in the body.
 - `drift_check` is task-start guidance, `memory_quality_check` is the closeout quality gate — do not
   swap them in prose or hints.
-- Everything these tools do lives in `controllers/memory_tools.py` and the memory-quality package;
+- Everything these tools do lives in `application/memory_tools.py` and the memory-quality package;
   this module chooses nothing.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The payload builders, including the report-filing carryover pair. | [tools/memory.py](agents-remember/mcp/src/agents_remember/mcp/tools/memory.py) |
-| `MemoryBranches`, `CarryoverSelection`, `CarryoverCommitMessages`. | [controllers/memory_tools.py](agents-remember/mcp/src/agents_remember/controllers/memory_tools.py) |
-| Defaults and packing proved through a live server. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload`; `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:163-174; mcp/src/agents_remember/mcp/tools/memory.py:177-198 |
+| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:398-404 |
+| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:411-427 |
+| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:430-436 |
+| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring.py:466-482 |
+| Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring.py:484-508 |
+| Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring.py:510-531 |
 
 ## Update History
+- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): expanded the payload-builder claim to cover both the carryover plan builder (163-174) and the report-filing apply builder (177-198); parameter objects and registration tests retained; the scoped fixer confirmed the final ranges with no writes.
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 7 table citations for carryover payloads, branch selection, commit messages, and related tests; fixer-generated ranges verified.
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The eight memory
   declarations moved out of `server.py`; adopt and the carryover pair now pack their arguments into
   `MemoryBranches` / `CarryoverSelection` / `CarryoverCommitMessages` in the body. Verification

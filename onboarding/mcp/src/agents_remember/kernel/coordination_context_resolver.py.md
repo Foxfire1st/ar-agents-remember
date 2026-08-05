@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context_resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -59,17 +59,19 @@ invokes it.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `c-08-ar-coordination-context-resolver` skill guidance routes normal use through the MCP/package resolver. | [`c-08-ar-coordination-context-resolver` SKILL.md](agents-remember/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md) |
-| Resolver shape is covered by package resolver tests. | [test_resolver_parity.py](agents-remember/mcp/tests/test_resolver_parity.py) |
-| Focused implementation modules now live under the coordination-context package. | [coordination_context overview](agents-remember/mcp/src/agents_remember/kernel/coordination_context/overview.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The compatibility facade exposes the package resolver entry point. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-131 |
+| Resolver shape is covered by the package resolver harness. | "def run_package_resolver" | mcp/tests/test_resolver_parity.py:328-328 |
+| Focused implementation modules live under the coordination-context package. | "def build_coordination_context" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-268 |
 
 ## Series-Contract Notes
 
 The compatibility facade preserves the old import path while forwarding `parent_task` and `leaf_id` into the focused resolver package.
 
 ## Update History
+
+- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
   the facade's `resolve_coordination_context` was re-signed onto keyword-only `hints=` /

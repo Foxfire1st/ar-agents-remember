@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-07-31T15:31+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                       |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Purpose
@@ -22,12 +22,12 @@ Holds `worktree_start_payload`, `worktree_attach_payload`,
 `worktree_status_payload`, `worktree_closeout_preview_payload`,
 `worktree_closeout_apply_payload`, `worktree_integrate_payload`,
 `worktree_cleanup_payload`, and `worktree_abandon_payload`. Each forwards typed
-arguments to the matching `controllers.worktree_tools` function and returns
+arguments to the matching `application.worktree_tools` function and returns
 through `base._tool_payload`. The former `direct_closeout_preview_payload` /
 `direct_closeout_apply_payload` builders were removed with the direct-closeout
 tool surface (issue #62): closeout is worktree-only.
 
-`worktree_start_payload` now wraps its controller result with
+`worktree_start_payload` now wraps its application entry point result with
 `summarize_command_logs` (imported from `providers.lifecycle.log_capture`)
 before returning, trimming large stdout/stderr from provider setup output that
 would otherwise make the response too large to render.
@@ -38,11 +38,11 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` forwards `retry_provider_setup` to the controller — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` is newly added (GitHub #54 sub-task D), forwarding `contract_path`/`memory_sync_choice`/`dry_run` to `worktree_sync_tool`. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
+`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` is newly added (GitHub #54 sub-task D), forwarding `contract_path`/`memory_sync_choice`/`dry_run` to `worktree_sync_tool`. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
 ### Parameter Objects (260731-EFA-L2)
 
-Every builder here now takes the concept object its controller takes, not a keyword list:
+Every builder here now takes the concept object its application entry point takes, not a keyword list:
 
 | Builder | Signature |
 | --- | --- |
@@ -67,9 +67,9 @@ parameter would republish the tool as a nested object.
 ### Invariants And Boundaries
 
 - Transport-thin: worktree/closeout behavior lives in
-  `controllers.worktree_tools` and `worktrees/modules`.
+  `application.worktree_tools` and `worktrees/modules`.
 - Closeout/apply builders carry the explicit `intent_note` commit-approval
-  argument through to the controller — it now travels inside `CloseoutApproval`, which must stay a
+  argument through to the application entry point — it now travels inside `CloseoutApproval`, which must stay a
   separate parameter from `CloseoutCommitMessages`.
 - `worktree_start_payload`/`worktree_integrate_payload`/`worktree_cleanup_payload`/`worktree_abandon_payload`
   default `dry_run=False` (act-by-default); the `*_closeout_apply` builders keep
@@ -81,6 +81,8 @@ Worktree payload builders keep closeout/integration path-explicit while start/at
 
 ## Update History
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2: the builders here took parameter objects.
   `worktree_start_payload` now takes `TaskIdentity` + `bases: TaskBases` + `execution:
   StartExecution`; attach/status take one `TaskRef`; the closeout pair take

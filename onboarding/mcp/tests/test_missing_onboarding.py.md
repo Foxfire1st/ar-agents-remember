@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_missing_onboarding.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:51+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -37,12 +37,14 @@ historical repository gaps.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The tested checker lives in `check_missing_onboarding.py`. | [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py) |
-| Storage settings and path rules are resolved by the kernel resolver helpers. | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The tested checker lives in `check_missing_onboarding.py`. | `check_missing_onboarding`, `worktree_added_sources` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:76-85 |
+| Storage settings and path rules are resolved by the kernel resolver helpers. | `detect_coordination_selection`, `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:40-74; mcp/src/agents_remember/kernel/coordination_context/resolver.py:151-164 |
 
 ## Update History
+
+- 2026-08-03T03:59:59+02:00 — Curated 4 citation findings (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-06-11T14:12+02:00: No content impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in the source file; the card already uses the new name and its semantics are unchanged.
 - 2026-05-24T18:51+02:00: Added coverage for renamed linked worktrees resolving external memory by Git common-directory repository identity.

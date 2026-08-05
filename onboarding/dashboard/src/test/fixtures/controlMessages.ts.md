@@ -25,12 +25,12 @@ founded here because L3 is the first API-consuming leaf.
 
 ### Logic
 
-- `SUBMISSION_RECEIPTS` (L14-L55): one receipt per acceptance state —
+- cit:([`SUBMISSION_RECEIPTS`], dashboard/src/test/fixtures/controlMessages.ts:15-61): one receipt per acceptance state —
   `immediate` (accepted + vendor correlation id), `queued` ("an active turn is running; the
   prompt is retained"), `rejected`, `unknown` ("response lost — reconcile by requestId, never
   resend"), `unsupported` (no native protocol control endpoint). Only `immediate` carries
   `acceptedAt`/`vendorCorrelationId`.
-- `RECONCILIATIONS` (L57-L86): the four states — `accepted`/`rejected`/`unresolved` ("keep the
+- cit:([`RECONCILIATIONS`], dashboard/src/test/fixtures/controlMessages.ts:63-100): the four states — `accepted`/`rejected`/`unresolved` ("keep the
   draft, do not resend")/`unsupported` — EVERY one reusing the ambiguous receipt's
   `requestId` (`req-unknown-1`): reconciliation resolves BY ID, it is never a resend (pinned by
   the conformance suite).
@@ -47,24 +47,24 @@ founded here because L3 is the first API-consuming leaf.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The five receipts + four reconciliations. | L14-L86 | [controlMessages.ts](controlMessages.ts) |
-| The wire mirrors (`SubmissionReceiptWire`, `ReconciliationResultWire`). | L99-L117 | [../../types/harnessCapabilities.ts](../../types/harnessCapabilities.ts) |
-| The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`). | L274-L296 | [harness_control_models.py](../../../../mcp/src/agents_remember/serving/harness_control_models.py) |
-| The vocabulary-equality suite (five/four by sorted keys, shared requestId). | L141-L160 | [../contractCapabilities.test.ts](../contractCapabilities.test.ts) |
+| The five receipts + four reconciliations. | `SUBMISSION_RECEIPTS`; `RECONCILIATIONS` | dashboard/src/test/fixtures/controlMessages.ts:15-61; dashboard/src/test/fixtures/controlMessages.ts:63-100 |
+| The wire mirrors (`SubmissionReceiptWire`, `ReconciliationResultWire`). | `SubmissionReceiptWire`; `ReconciliationResultWire` | dashboard/src/types/harnessCapabilities.ts:99-107; dashboard/src/types/harnessCapabilities.ts:120-128 |
+| The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`). | `public_receipt_json`; `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941; mcp/src/agents_remember/serving/harness_control_models.py:944-955 |
+| The vocabulary-equality suite (five/four by sorted keys, shared requestId). | "SetResult / receipt / reconciliation vocabularies" | dashboard/src/test/contractCapabilities.test.ts:120-161 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -76,6 +76,7 @@ responses and prevents fixtures from silently accepting pre-L5 unversioned shape
 
 ## Update History
 
+- 2026-08-03T02:40:51+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations with exact fixture, wire-type, serializer, and vocabulary-suite anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-17T21:39+02:00 — FEUI-L5: added epoch and lifecycle-state coverage to normalized control
   message fixtures.
 

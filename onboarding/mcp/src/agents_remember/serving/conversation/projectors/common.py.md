@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/common.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,10 +24,10 @@ builders that keep producer claims honest (never guessed, never defaulted).
 
 ### Logic
 
-`required_object`/`required_list`/`required_text` (L34-L49) are the parse-by-schema gate: any
-shape that misses an exact required key or type raises `UnmappableShape` (L24-L25), which the
+`required_object`/`required_list`/cit:([`required_text`], mcp/src/agents_remember/serving/conversation/projectors/common.py:46-49) are the parse-by-schema gate: any
+shape that misses an exact required key or type raises cit:([`UnmappableShape`], mcp/src/agents_remember/serving/conversation/projectors/common.py:24-25), which the
 engine converts into preserved `unknown-vendor` evidence — malformed known shapes never kill
-the stream and never acquire guessed semantics. The frozen output dataclasses (L56-L99) are the
+the stream and never acquire guessed semantics. cit:([`MappedItem`, `MappedBlockDelta`, `MappedTurnOutcome`, `MappedUnknownVendor`], mcp/src/agents_remember/serving/conversation/projectors/common.py:56-60; mcp/src/agents_remember/serving/conversation/projectors/common.py:63-69; mcp/src/agents_remember/serving/conversation/projectors/common.py:72-78; mcp/src/agents_remember/serving/conversation/projectors/common.py:81-95) are the
 only things a mapper may emit: `MappedItem` (a fully built item; the engine assigns the real
 ordinal/revision), `MappedBlockDelta` (streaming text into one existing item block),
 `MappedTurnOutcome` (a native turn settlement feeding canonical status), and
@@ -35,7 +35,7 @@ ordinal/revision), `MappedBlockDelta` (streaming text into one existing item blo
 `MappedUnknownVendor` also carries an
 optional `agent: ConversationAgentRef` (L92-L96; fix-round review finding 4): a malformed AGENT-thread frame's preserved
 evidence belongs to that agent's view, never the parent's; `None` means the parent conversation.
-`provenance`/`harness_provenance`/`unknown_input_provenance` (L102-L145) build the
+`provenance`/`harness_provenance`/cit:([`unknown_input_provenance`], mcp/src/agents_remember/serving/conversation/projectors/common.py:136-144) build the
 `ProvenanceEvidence` values; `unknown_input_provenance` is the honest user-input product when no
 producer can be proven — it never defaults to operator or the bus.
 
@@ -66,7 +66,7 @@ None.
 The resolved `Domain Documentation` registry has no entries. This module carries no vendor
 semantics of its own; each harness mapper sidecar cites its own schema authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this shared module. | — | — |
 
@@ -76,23 +76,25 @@ The engine catches `UnmappableShape` and mints the fallback unknown-vendor item;
 consumes the output types; the strict `ProvenanceEvidence`/`ConversationItem` wire models
 validate every emitted product.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Native evidence ingestion maps `UnmappableShape` (and an over-budget truncated frame) to preserved `MappedUnknownVendor` evidence, never a stream failure; thread binding and roster reconciliation still apply to malformed agent-thread frames. | L159-L200 | [native_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py) |
-| Echo ingestion takes the same containment for a submission echo it cannot parse. | L165-L178 | [echo_ingestion.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py) |
-| `ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal. | L85-L100 | [mutation_stream.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py) |
-| The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store. | L179-L192 | [rebuild_coordinator.py](agents-remember/mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py) |
-| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | L193-L200; L337-L427 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
+| Native evidence ingestion maps `UnmappableShape` (and an over-budget truncated frame) to preserved `MappedUnknownVendor` evidence, never a stream failure; thread binding and roster reconciliation still apply to malformed agent-thread frames. | `NativeEvidenceIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:44-268 |
+| Echo ingestion takes the same containment for a submission echo it cannot parse. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:35-187 |
+| `ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal. | `ProjectionMutationStream` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |
+| The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
+| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | `ProvenanceEvidence` | mcp/src/agents_remember/serving/conversation/models.py:193-199 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this shared module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-03T03:00:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 5 Repo-Internal citation claims with exact ingestion, mutation, rebuild, and mapper-output anchors. Verification metadata remains unchanged for closeout.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations broken by the `active/projector.py` -> `active/projector/` package split, expanding them into 4 rows because the consumers landed in different modules. `UnmappableShape` containment plus thread binding/roster reconciliation is `native_ingestion.py` L159-L200; the echo-side equivalent is `echo_ingestion.py` L165-L178; the `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` routing into the store is `ProjectionMutationStream.apply_outputs` in `mutation_stream.py` L85-L100; the user-item provenance rebuild is `RebuildCoordinator._resolve_provenance` in `rebuild_coordinator.py` L179-L192.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/master_sync.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-26T20:18+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                         |
-| lastVerifiedCommitDate |                                            2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                         |
+| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,33 +25,33 @@ know task-series policy.
 
 ### Logic
 
-`plan_master_sync(task_root, leaf)` only acts on `kind == "subTask"` documents. It
-resolves the parent master JSON from the leaf's `master` reference when that points
-inside the same task root, otherwise from a sibling `task.json` when present. Missing
-masters and cross-series refs return `status="none"` so navigation metadata does not
-become an implicit cross-folder write. A resolvable but unreadable or non-master
-parent raises `MasterSyncError`.
+`plan_master_sync(task_root, leaf)` only acts on `kind == "subTask"` documents.
+When a leaf has a `master` reference, `_json_path_from_master_ref` accepts
+only a candidate inside the task root whose parent is that root. Without a
+master reference, the planner checks the root's default `task.json`. Missing
+or cross-series candidates return `status="none"`; a found but unreadable or
+non-master parent raises `MasterSyncError`.
 
 When a parent master is available, the planner finds the existing row by
-`SubTaskRef.number == leaf.id`, maps deterministic leaf fields into a row
-(`number`, `name`, `file`, derived `status`), and preserves any existing manual
-`scope`. It returns `created`, `updated`, or `unchanged` with the planned master
-document; callers decide whether to preview or write it.
+`SubTaskRef.number == leaf.id`, maps `number`, `name`, `file`, and derived
+`status`, and preserves an existing manual `scope`. It returns
+`created`, `updated`, or `unchanged` with the planned master document.
 
 ### Conventions
 
 The module is pure planning plus reads. It does not write the master file and does
-not render markdown; the controller/store boundary owns that.
+not render markdown; the application/store boundary owns that.
 
 ### Invariants And Boundaries
 
-- Auto-sync is same-root only. A `master` reference outside `task_root` is navigation
-  metadata and must not trigger a write to another task series.
+- Auto-sync accepts only a same-root master candidate whose parent is exactly
+  the task root. A cross-series or nested candidate is ignored.
 - Manual master-row `scope` is preserved; the sync only owns deterministic row
   fields that can be derived from the leaf.
-- Leaf step/substep status collapses into the strict master status vocabulary:
-  all done becomes `Completed`, any active/done/blocked progress becomes
-  `inProgress`, otherwise the leaf's declared status is retained.
+- With statuses present and no `completion_blockers`, the derived row is
+  `Completed`. Any done, in-progress, or blocked status otherwise derives
+  `inProgress`; an inconsistent completed leaf also derives
+  `inProgress`, and the remaining case keeps the leaf status.
 
 ### Todos
 
@@ -62,29 +62,34 @@ No known local todos.
 No relevant external documentation found after checking the task-document route
 scope; this file implements an internal coordination contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found; behavior is defined by repo task-document contracts and tests. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The task-doc controller invokes `plan_master_sync`, includes sync data in dry-run previews, and writes the changed leaf plus changed master together. | L125-L135; L444-L472 | [task_doc_tools.py](agents-remember/mcp/src/agents_remember/controllers/task_doc_tools.py) |
-| Store batch writes prepare every JSON and markdown payload before writing, then return paths in input order. | L35-L57 | [store.py](agents-remember/mcp/src/agents_remember/tasks/store.py) |
-| Controller tests prove row creation, manual scope preservation, status derivation, unreadable/mis-kinded parent refusal, and dry-run sync preview without writing the master. | L635-L758 | [test_task_document.py](agents-remember/mcp/tests/test_task_document.py) |
+| Same-root parent resolution and master-plan construction. | `plan_master_sync`; `_master_json_path`; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:34-83; mcp/src/agents_remember/tasks/master_sync.py:138-142; mcp/src/agents_remember/tasks/master_sync.py:145-155 |
+| Deterministic leaf-to-row mapping with manual scope preservation. | `subtask_ref_from_leaf` | mcp/src/agents_remember/tasks/master_sync.py:86-96 |
+| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:99-110; mcp/src/agents_remember/tasks/master_sync.py:113-119 |
+| Existing-row path validation. | `_validate_existing_row_path` | mcp/src/agents_remember/tasks/master_sync.py:122-135 |
+| Parent document loading. | "master = read_task_doc" | mcp/src/agents_remember/tasks/master_sync.py:42-42 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found; this planner only writes within the
 resolved agents-remember coordination task root.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo dependency; external-memory alignment is handled by the worktree lifecycle outside this file. | n/a | n/a |
 
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The master-sync controller tests now sit at L635-L758 of `test_task_document.py` (1375 lines): `test_leaf_create_syncs_parent_master_row` L635, `test_leaf_updates_preserve_manual_master_scope` L650, `test_leaf_step_progress_derives_master_row_status` L669, unreadable-parent and wrong-kind refusals L684/L711, and `test_leaf_dry_run_includes_master_sync_preview_without_writing` L745-L758. Extended the claim to name the two refusal tests the range now covers.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

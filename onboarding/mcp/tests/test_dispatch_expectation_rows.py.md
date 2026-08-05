@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_dispatch_expectation_rows.py`             |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -81,23 +81,23 @@ None.
 
 No meaningful external design-doc references found yet (created this leaf).
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Spawn writes `briefed-by` (+ `turn-report-by` when leaf-attached) atomically with the dispatch. | L85-L135 | [test_dispatch_expectation_rows.py](agents-remember/mcp/tests/test_dispatch_expectation_rows.py) |
-| Gate create writes a `verdict-by` row; gate decide meets it. | L138-L169 | [test_dispatch_expectation_rows.py](agents-remember/mcp/tests/test_dispatch_expectation_rows.py) |
-| Inbox post writes an `ack-by` row; consume meets it. | L172-L206 | [test_dispatch_expectation_rows.py](agents-remember/mcp/tests/test_dispatch_expectation_rows.py) |
+| Spawn writes `briefed-by` (+ `turn-report-by` when leaf-attached) atomically with the dispatch. | `SpawnExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:85-135 |
+| Gate create writes a `verdict-by` row; gate decide meets it. | `GateExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:138-169 |
+| Inbox post writes an `ack-by` row; consume meets it. | `InboxExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:172-207 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
@@ -106,6 +106,8 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: rewrote the Logic paragraph and all three
   self-file citations to match the parameter-object call sites. `SpawnExpectationRowTests` no
   longer calls `spawn_agent_session_payload` directly — it imports and calls

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,10 +30,10 @@ launching the flag itself.
 
 ### Logic
 
-`build_claude_stream_argv` (L88-L113) preserves caller arguments while requiring stream-json
+cit:([`build_claude_stream_argv`], mcp/src/agents_remember/serving/claude_stream_protocol.py:88-113) preserves caller arguments while requiring stream-json
 input/output, stdio permission prompts, print mode, verbosity, and replayed user messages. It
 takes a keyword-only `forward_subagent_text` flag: the
-`--forward-subagent-text` transport flag (`FORWARD_SUBAGENT_TEXT_FLAG` L56) is appended only when
+`--forward-subagent-text` transport flag cit:([`FORWARD_SUBAGENT_TEXT_FLAG`], mcp/src/agents_remember/serving/claude_stream_protocol.py:56-56) is appended only when
 the caller proved the installed CLI meets `FORWARD_SUBAGENT_TEXT_FLOOR` (2.1.220, L65) — never by
 default. The verdict helpers are `claude_version_tuple` (L68-L74 — parses `major.minor.patch`;
 anything unparseable is `None`, never guessed) and `forward_subagent_text_supported` (L77-L85 —
@@ -100,15 +100,6 @@ accepted by the live 2.1.210 grammar; it does not guess unsupported boolean or n
 
 None known for the discovery-normalization and native-command framing contract.
 
-## Docs References
-
-No Domain Documentation source is configured for this repository, so no live domain-documentation
-pass was available for this update.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
-
 ## Repo-Internal References
 
 Startup owns the request ordering, while the dedicated catalog parser owns the dynamic model and
@@ -116,26 +107,15 @@ model-gated effort projection. The adapter also owns the flag's consumption:
 it launches WITHOUT `--forward-subagent-text`, consults this module's floor verdict against the
 `system/init`-captured version, and re-launches WITH the flag only on a proven install.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The adapter applies discovery normalization only to a copied transient launch, then uses the ordinary startup/advertise/forced-stop sequence. | L247-L256 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| The adapter launches without the flag, re-launches with it when `system/init` proves the floor, and records the exact enabled/unverified reason in the snapshot. | L121-L144; L173-L182 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Regression cases cover separate, repeated/variadic, equals-attached, end-of-options, exactly-one-empty-selector, and normal-start preservation behavior. | L260-L395; L430-L445 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Floor-gate regressions: at/above the floor the adapter re-launches with the flag; an unparseable version stays fail-closed with no flag. | L466-L500 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
-| Startup sends initialization/bootstrap before the correlated catalog request and rejects unexpected catalog frames. | L59-L109 | [claude_stream_startup.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_startup.py) |
-| State requires the same session, retained UUID, and exact canonical replay body before accepting a command. | L598-L648 | [claude_stream_state.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_state.py) |
-| Catalog parsing validates model identities, disabled state, and each model's own effort menu. | L15-L97 | [claude_stream_capabilities.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_capabilities.py) |
-
-## Cross-Repo References
-
-No runtime cross-repository boundary is implemented by this protocol module. Task-local live and
-review evidence records why the strict-empty discovery grammar exists and preserves the failed
-append-only attempt as review history.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The final worker report records the blocked append-only selector attempt, the corrected pre-`--` grammar, and two-marker zero-turn closure. | L72-L96 | [260716-ACPUI-L5-worker-closeout-report.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-worker-closeout-report.md) |
-| Independent review confirms normal-start preservation, the absent synthetic MCP marker, all five live rows, and the closed high-severity collision. | L70-L88; L165-L168 | [260716-ACPUI-L5-reviewer-verdict.md](ar-coordination/tasks/agents-remember/260714_dependency-owned-acp-session-interface/notes/reports/260716-ACPUI-L5-reviewer-verdict.md) |
+| The adapter applies discovery normalization only to a copied transient launch, then uses the ordinary startup/advertise/forced-stop sequence. | `ClaudeStreamJsonAdapter` | mcp/src/agents_remember/serving/harness_control_claude.py:145-571 |
+| The adapter launches without the flag, re-launches with it when `system/init` proves the floor, and records the exact enabled/unverified reason in the snapshot. | `ClaudeStreamJsonAdapter` | mcp/src/agents_remember/serving/harness_control_claude.py:145-571 |
+| Regression cases cover separate, repeated/variadic, equals-attached, end-of-options, exactly-one-empty-selector, and normal-start preservation behavior. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude.py:256-276 |
+| Floor-gate regressions: at/above the floor the adapter re-launches with the flag; an unparseable version stays fail-closed with no flag. | `test_forward_subagent_text_stays_fail_closed_on_an_unparseable_version` | mcp/tests/test_harness_control_claude.py:498-513 |
+| Startup sends initialization/bootstrap before the correlated catalog request and rejects unexpected catalog frames. | `negotiate_claude_startup` | mcp/src/agents_remember/serving/claude_stream_startup.py:59-81 |
+| State requires the same session, retained UUID, and exact canonical replay body before accepting a command. | `ClaudeStreamState` | mcp/src/agents_remember/serving/claude_stream_state.py:112-1030 |
+| Catalog parsing validates model identities, disabled state, and each model's own effort menu. | `parse_list_models_response` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |
 
 ## Structured Interaction And Interrupt Grammar Delta
 
@@ -144,6 +124,8 @@ Claude protocol parsing now normalizes structured multi-question interactions an
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T20:53:56+02:00 — W2-B04 curator: deleted 2 unanchorable task-report claims and repaired the remaining 16 citation findings; scoped check passed.
 
 - 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented R4 — the fail-closed
   `--forward-subagent-text` capability (`FORWARD_SUBAGENT_TEXT_FLAG`, `FORWARD_SUBAGENT_TEXT_FLOOR`

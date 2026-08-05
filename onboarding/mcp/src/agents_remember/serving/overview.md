@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -117,8 +117,9 @@ route history, not current authority.
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
 dispatch claim, exact full-operation-ref completion, early-terminal dominance, response bypass,
-raw-free cockpit status, and bounded privacy-aware retention. `HarnessControlQueue` is now only a
-compatibility facade. Codex, Claude, and Pi are dispatch-now adapters with guarded first-byte seams;
+raw-free cockpit status, and bounded privacy-aware retention. `HarnessControlQueue` no longer exists:
+260731-EFA-L6 deleted the compatibility facade outright, so the authority is reached directly.
+Codex, Claude, and Pi are dispatch-now adapters with guarded first-byte seams;
 none may create a native/adapter queue or release work by FIFO/id alone.
 
 **The additive, read-only native evidence and resume substrate.** Mappers
@@ -353,7 +354,8 @@ inbox/brief bus remain on their existing paths; no UI, settings authoring, paste
 ACP transport rides this boundary.
 
 `set_model` and `set_effort` are first-class operations on the normalized
-own-adapter port, serialized with prompt submission through `HarnessControlQueue`.
+own-adapter port, serialized with prompt submission through `HarnessSubmissionAuthority`
+(until 260731-EFA-L6 this was reached through the `HarnessControlQueue` facade, now deleted).
 `SetResult` accepts exactly `echo-verified`, `immediate`, `queued`, `unknown`, or `unsupported`,
 with requested and effective values kept separate and contradictory combinations rejected. Claude
 sends ordinary structured `/model` and `/effort` user frames, then requires the same vendor
@@ -515,8 +517,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 - `harness_submission_authority.py` — the sole prompt/setter timeline: epoch/idempotency
   admission, lock-linearized dispatch/withdraw, full operation refs, response bypass, early exact
   completion, raw-free status/withdraw projection, and bounded live-safe retention.
-- `harness_control_queue.py` — compatibility facade over `HarnessSubmissionAuthority`; it owns no
-  independent command queue or receipt ledger.
+- `harness_submission_ledger.py` — `OperationRecord` and `SubmissionLedger`: enrolment, retention,
+  eviction (`make_room`) and the paged never-bodies `operation_timeline`, split out of the authority
+  in 260731-EFA-L6.
 
 - `harness_capabilities.py` and `harness_control_adapter.py` — the normalized capability contract:
   `CapabilitySnapshot` contains dynamic `ModelCapability` rows with model-local `EffortOption`
@@ -931,7 +934,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   landed-cleanup closure, not normal successful completion.
 - `landing.py` — the shared landing mechanics: `land_seats_for_leaf` marks matching
   non-terminated catalog rows `status:"landed"` with reason/edge provenance, without constructing a
-  `TerminalHost` and without killing tmux. `controllers/worktree_tools.py` calls it from successful
+  `TerminalHost` and without killing tmux. `application/worktree_tools.py` calls it from successful
   `worktree_integrate`/`lifecycle_finalize_task` completion edges.
 - `turn_state.py` — the live turn-state classifier: `classify_turn_state(pane_text,
   harness=)` is marker-regex-based (precedence working > awaiting-input > turn-ended > stale; blank/
@@ -1168,7 +1171,7 @@ current hosted-session authority.
 The resolved Domain Documentation registry has no configured entries for this route. The
 structured-conversation contract is grounded in repository code, tests, and redacted observations.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation governed the structured-conversation contract update. | — | — |
 
@@ -1177,7 +1180,7 @@ structured-conversation contract is grounded in repository code, tests, and reda
 The structured-conversation contract, helper package, fixtures, and tests are all owned by `agents-remember`; no
 neighboring repository governs this route.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repository reference was found. | — | — |
 
@@ -1185,79 +1188,99 @@ neighboring repository governs this route.
 
 ### Current Evidence Substrate
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reserved `arEvidence` key, evidence DTOs, clip/window helpers, and structural native-page protocol define the substrate; the DTOs also carry the multiplexing grammar (`AdapterSnapshot.pending_interactions`, `EvidenceFrame.thread_id`). | L57-L72; L217-L234; L456-L477; L770-L815 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page; `_evidence_thread_id` also stamps the per-thread demux key on every diverted frame. | L167-L234; L548-L610 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| Three additive read actions cross only the private socket under the unchanged v1 protocol. | L213-L218; L380-L401 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| Strict client validation enforces disjoint coordinate domains, continuation coherence, and epoch continuity; `read_control_native_page` takes the additive `threadId` selector and snapshots parse the plural `pendingInteractions`. | L342-L395; L863-L874; L1100-L1152 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The provenance batch reads the authority's existing records epoch-checked through the sole queue delegation. | L528-L565 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The codex resume channel threads opener → runner payload → factory → the sole settings site with pre-spawn refusals. | L611-L621; L88-L105; L41-L58 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py); [harness_control_runner.py](agents-remember/mcp/src/agents_remember/serving/harness_control_runner.py); [harness_control_factories.py](agents-remember/mcp/src/agents_remember/serving/harness_control_factories.py) |
-| Contract and installed-runtime suites pin the whole seam including no-leak, continuation, provenance, and resume. | L268-L1470 | [test_harness_control_evidence.py](agents-remember/mcp/tests/test_harness_control_evidence.py); [test_harness_control_evidence_installed.py](agents-remember/mcp/tests/test_harness_control_evidence_installed.py) |
+| The reserved evidence key names the evidence channel. | `AR_EVIDENCE_KEY` | mcp/src/agents_remember/serving/harness_control_models.py:58-58 |
+| The snapshot DTO carries `pending_interactions`. | `pending_interactions` | mcp/src/agents_remember/serving/harness_control_models.py:226-226 |
+| Evidence frames carry `thread_id`. | `thread_id` | mcp/src/agents_remember/serving/harness_control_models.py:471-471 |
+| The native evidence page defines the structural page protocol. | `NativeEvidencePage` | mcp/src/agents_remember/serving/harness_control_models.py:503-510 |
+| The bridge clips evidence payloads. | `clip_evidence_payload` | mcp/src/agents_remember/serving/harness_control_models.py:786-838 |
+| The bridge windows native evidence pages. | `window_native_evidence_page` | mcp/src/agents_remember/serving/harness_control_models.py:849-888 |
+| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page; `_evidence_thread_id` also stamps the per-thread demux key on every diverted frame. | `_divert_evidence`; `_evidence_thread_id`; `_append_evidence` | mcp/src/agents_remember/serving/harness_control_bridge.py:468-489; mcp/src/agents_remember/serving/harness_control_bridge.py:505-528; mcp/src/agents_remember/serving/harness_control_bridge.py:491-503 |
+| Three additive evidence/provenance read actions are defined. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
+| The native evidence client validates coordinate domains while reading a control-native page. | `read_control_native_page` | mcp/src/agents_remember/serving/harness_control_client.py:369-401 |
+| The native evidence parser validates continuation state. | "def _native_evidence_page" | mcp/src/agents_remember/serving/harness_control_client.py:920-956 |
+| Snapshot parsing recognizes plural `pendingInteractions`. | `pendingInteractions` | mcp/src/agents_remember/serving/harness_control_client.py:1182-1182 |
+| The provenance batch reads the authority-owned ledger through the bridge's single submission handle, enforcing the expected bridge epoch and returning each requested record's provenance. | `SubmissionLedger`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
+| The resume request shape is `ControlRunnerRequest`. | `ControlRunnerRequest` | mcp/src/agents_remember/serving/terminal_opener.py:83-98 |
+| The runner parses its configuration through `parse_runner_config`. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:72-97 |
+| The factory owns the built-in protocol harness set. | `BUILTIN_PROTOCOL_HARNESSES` | mcp/src/agents_remember/serving/harness_control_factories.py:26-26 |
+| Contract and installed-runtime suites pin the whole seam including no-leak, continuation, provenance, and resume. | `EvidenceBufferTests`; `EvidenceIpcTests`; `CodexEvidenceTests`; `PiEvidenceTests`; `CodexInstalledEvidenceTests`; `PiInstalledEvidenceTests` | mcp/tests/test_harness_control_evidence.py:369-608; mcp/tests/test_harness_control_evidence.py:636-922; mcp/tests/test_harness_control_evidence.py:1031-1198; mcp/tests/test_harness_control_evidence.py:1305-1398; mcp/tests/test_harness_control_evidence_installed.py:114-278; mcp/tests/test_harness_control_evidence_installed.py:281-352 |
 
 ### Current Control-Plane Substrate
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | L255-L263; L385-L443; L1046-L1064 | [harness_control_models.py](agents-remember/mcp/src/agents_remember/serving/harness_control_models.py) |
-| The structural sub-protocols adapters opt into without a base-contract member. | L92-L115 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | L291-L355 | [harness_control_bridge.py](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py) |
-| The authority's paged never-bodies enumeration, eviction floor, pre-tombstone recovery capture, capability gate, and asset-conditional digest; `respond` matches a response against the singular parent pending OR the plural tuple with the active-operation guard kept parent-only BY ENTRY THREAD (a parent-thread tuple entry is guarded like the singular slot). | L276-L334; L502-L542; L549-L601; L1141-L1162 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | L219-L225; L259-L325 | [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py) |
-| The validated client helpers: `interrupt_control`, `read_operation_timeline` coherence/monotonicity/epoch validation, recovery parsing, additive submit assets. | L421-L444; L733-L760 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| Codex exact-active-turn `turn/interrupt` with replay-once and verified `localImage` construction; the adapter also owns the per-thread demux/registry, collab identity learning, per-thread pending-interaction MAPS (concurrent requests normal traffic, unknown METHODS declined + degraded on any thread), and the load-shed event queue (detail in the file sidecar). | L99-L135; L375-L422; L950-L1071; L1160-L1247; L1309-L1346; L1385-L1469 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Pi expected-operation-guarded `abort` with replay-once and verified base64 image content. | L393-L477 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
-| The content-less `message_end` evidence-only mapping (the abort's own shape) with preserved role strictness. | L226-L244 | [pi_rpc_events.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_events.py) |
-| Contract and installed-runtime suites pin the whole seam; the fixtures record redacted `control-plane/*` rows without enabling anything. | L252-L1575; L126-L384 | [test_harness_control_plane.py](agents-remember/mcp/tests/test_harness_control_plane.py); [test_harness_control_plane_installed.py](agents-remember/mcp/tests/test_harness_control_plane_installed.py) |
+| The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | `AssetReference`; `WithdrawalRecovery`; `InterruptResult`; `OperationTimelineItem`; `OperationTimeline`; `read_asset_bytes` | mcp/src/agents_remember/serving/harness_control_models.py:254-262; mcp/src/agents_remember/serving/harness_control_models.py:384-389; mcp/src/agents_remember/serving/harness_control_models.py:402-411; mcp/src/agents_remember/serving/harness_control_models.py:414-427; mcp/src/agents_remember/serving/harness_control_models.py:430-438; mcp/src/agents_remember/serving/harness_control_models.py:1066-1073 |
+| The structural sub-protocols adapters opt into without a base-contract member. | `InterruptCapableAdapter`; `AssetSubmitCapable` | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_adapter.py:109-113 |
+| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | `interrupt`; `submissions` | mcp/src/agents_remember/serving/harness_control_bridge.py:273-300; mcp/src/agents_remember/serving/harness_control_bridge.py:323-332 |
+| The authority's `respond` path owns response matching. | `respond` | mcp/src/agents_remember/serving/harness_submission_authority.py:300-356 |
+| The authority's `withdraw` path owns recovery capture. | `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:452-498 |
+| The authority applies its capability decision through `_unsupported_prompt_locked`. | `_unsupported_prompt_locked` | mcp/src/agents_remember/serving/harness_submission_authority.py:262-292 |
+| The authority computes asset-conditional payload digests through `_payload_digest`. | `_payload_digest` | mcp/src/agents_remember/serving/harness_submission_authority.py:987-1008 |
+| The paged never-bodies enumeration and eviction floor now belong to `SubmissionLedger.operation_timeline`, with `OperationRecord` and `SubmissionLedger` defined in the split ledger. | `OperationRecord`; `SubmissionLedger`; `operation_timeline` | mcp/src/agents_remember/serving/harness_submission_ledger.py:57-252; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
+| The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | `_interrupt`; `_operation_timeline`; `_submit_assets`; `_submit_asset_schema`; `_confined_asset_path`; `_verify_staged_asset` | mcp/src/agents_remember/serving/harness_control_ipc.py:250-282; mcp/src/agents_remember/serving/harness_control_ipc.py:284-304; mcp/src/agents_remember/serving/harness_control_ipc.py:485-506; mcp/src/agents_remember/serving/harness_control_ipc.py:525-543; mcp/src/agents_remember/serving/harness_control_ipc.py:306-313; mcp/src/agents_remember/serving/harness_control_ipc.py:315-326 |
+| The client defines the `interrupt_control` helper. | "def interrupt_control" | mcp/src/agents_remember/serving/harness_control_client.py:425-425 |
+| The client defines the `read_operation_timeline` helper. | "def read_operation_timeline" | mcp/src/agents_remember/serving/harness_control_client.py:448-448 |
+| Operation-timeline response validation is implemented by `_operation_timeline` and `_operation_timeline_items`. | `_operation_timeline`; `_operation_timeline_items` | mcp/src/agents_remember/serving/harness_control_client.py:799-819; mcp/src/agents_remember/serving/harness_control_client.py:822-837 |
+| The client defines the `_withdrawal_recovery` parser helper. | "def _withdrawal_recovery" | mcp/src/agents_remember/serving/harness_control_client.py:746-746 |
+| The client defines the `_asset_reference` parser helper. | "def _asset_reference" | mcp/src/agents_remember/serving/harness_control_client.py:763-763 |
+| The client defines the `_submit_payload` helper. | "def _submit_payload" | mcp/src/agents_remember/serving/harness_control_client.py:255-255 |
+| The Codex adapter handles exact-active-turn interrupt replay and load-shed. | `interrupt`; `_load_shed_notice` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:281-328; mcp/src/agents_remember/serving/codex_app_server_adapter.py:1012-1039 |
+| `CodexThreadRegistry` owns `resolve`, `pending_interactions`, `learn_collab_identity`, and `route_delta_params`. | `CodexThreadRegistry` | mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
+| Verified `localImage` construction uses `verified_asset_path` and `turn_input`. | `verified_asset_path`; `turn_input` | mcp/src/agents_remember/serving/codex_app_server_turns.py:42-52; mcp/src/agents_remember/serving/codex_app_server_turns.py:55-61 |
+| Pi expected-operation-guarded `abort` with replay-once and verified base64 image content. | `interrupt`; `_image_content`; `_verified_asset_bytes` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:404-454; mcp/src/agents_remember/serving/pi_rpc_adapter.py:456-462; mcp/src/agents_remember/serving/pi_rpc_adapter.py:464-474 |
+| The content-less `message_end` evidence-only mapping (the abort's own shape) with preserved role strictness. | `_message_event` | mcp/src/agents_remember/serving/pi_rpc_events.py:244-262 |
+| Contract and installed-runtime suites pin the whole seam; the fixtures record redacted `control-plane/*` rows without enabling anything. | `InterruptBridgeTests`; `CodexInterruptTests`; `OperationTimelineTests`; `AssetChannelTests`; `AssetNativeConstructionTests`; `CodexInstalledControlPlaneTests`; `PiInstalledControlPlaneTests` | mcp/tests/test_harness_control_plane.py:291-378; mcp/tests/test_harness_control_plane.py:493-555; mcp/tests/test_harness_control_plane.py:966-1194; mcp/tests/test_harness_control_plane.py:1214-1480; mcp/tests/test_harness_control_plane.py:1483-1643; mcp/tests/test_harness_control_plane_installed.py:124-266; mcp/tests/test_harness_control_plane_installed.py:269-373 |
 
 ### Current Structured-Conversation Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | L1-L1302 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| Exactly two protocol read ports separate active transcript reads from conversation-library reads. | L1-L87 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
-| Three owned child routers compose beneath one stable root and one explicit registration function. | L1-L24 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The existing harness-control application factory mounts the conversation root once. | L182-L217 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
+| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | `NativeConversationRef`; `ProvenanceEvidence`; `ConversationStatus`; `ConversationCapabilities`; `OpenConversationOperation`; `AttachmentOperationProjection`; `ConversationTelemetry` | mcp/src/agents_remember/serving/conversation/models.py:122-126; mcp/src/agents_remember/serving/conversation/models.py:193-199; mcp/src/agents_remember/serving/conversation/models.py:548-561; mcp/src/agents_remember/serving/conversation/models.py:747-751; mcp/src/agents_remember/serving/conversation/models.py:831-932; mcp/src/agents_remember/serving/conversation/models.py:1165-1202; mcp/src/agents_remember/serving/conversation/models.py:1255-1262 |
+| Exactly two protocol read ports separate active transcript reads from conversation-library reads. | `ActiveConversationPort`; `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/ports.py:27-56; mcp/src/agents_remember/serving/conversation/ports.py:59-84 |
+| Three owned child routers compose beneath one stable root and one explicit registration function. | `CONVERSATION_CHILD_ROUTERS`; `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:15-15; mcp/src/agents_remember/serving/conversation/router.py:22-32 |
+| The existing harness-control application factory mounts the conversation root once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
 
 ### Current Folded-State Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Projector publication computes events, commits authority, and then notifies; subscription activation registers before snapshot capture and cleans up in `finally`. | L268-L295; L314-L330 | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| App streaming consumes one iterator, decorates every snapshot, preserves event/id/retry framing, and owns explicit closure. | L300-L330 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | L419-L503 | [test_serving.py](agents-remember/mcp/tests/test_serving.py) |
+| Projector publication computes events, commits authority, and then notifies; subscription activation registers before snapshot capture and cleans up in `finally`. | `_publish_projection`; `subscribe` | mcp/src/agents_remember/serving/projector.py:268-295; mcp/src/agents_remember/serving/projector.py:314-330 |
+| App streaming consumes one iterator, decorates every snapshot, preserves event/id/retry framing, and owns explicit closure. | `stream_events` | mcp/src/agents_remember/serving/app.py:315-345 |
+| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:420-518 |
 
 ### Current Wire Contract
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `WireResponse` — the strict (`extra="forbid"`), frozen, `populate_by_name`, camel-aliased base every declared response model derives from — plus the 93 model classes and the three shared refusal tables (`SCOPED_READ_RESPONSES`, `SESSION_CONTROL_RESPONSES`, `ACTION_RESPONSES`) the route tables spread. | L88-L101; L1057-L1090 | [response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
-| `TerminalCatalogEntryWire` (52 fields) and `TerminalSessionsResponse`/`DetectedHarnessesResponse` — the only models FastAPI itself enforces, because only these two routes return a bare `dict`. | L280-L367 | [response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
-| `OnboardingResolution` — the five-shape union `GET /api/files/onboarding` answers with, declared rather than collapsed to the forward shape. | L709-L720 | [response_contract.py](agents-remember/mcp/src/agents_remember/serving/response_contract.py) |
-| `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | L47-L78 | [served_state.py](agents-remember/mcp/src/agents_remember/serving/served_state.py) |
-| `ServingBuildPayload` and `SupervisorHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | L43-L88; L30-L52 | [build_info.py](agents-remember/mcp/src/agents_remember/serving/build_info.py); [supervisor_heartbeat.py](agents-remember/mcp/src/agents_remember/serving/supervisor_heartbeat.py) |
-| The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | L1004-L1075; L1259-L1284; L1336-L1361 | [app.py](agents-remember/mcp/src/agents_remember/serving/app.py) |
-| The route-inventory, validated-route hazard, per-route conformance and declared-surface-coverage suites — the only thing that enforces the contract on the 59 routes FastAPI does not validate. | L495-L629; L630-L700; L786-L1869; L2271-L2492 | [test_serving_response_conformance.py](agents-remember/mcp/tests/test_serving_response_conformance.py) |
-| The served-state tail rules, the 200 body, the body-less 304 and the bare-node `delta` asymmetry, driven over a populated coordination root. | L213-L414 | [test_served_state_conformance.py](agents-remember/mcp/tests/test_served_state_conformance.py) |
+| `WireResponse` is strict (`extra="forbid"`), frozen, `populate_by_name`, and camel-aliased; the three shared refusal tables are also defined here. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1057-1063; mcp/src/agents_remember/serving/response_contract.py:1067-1074; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
+| The catalog wire model and the `TerminalSessionsResponse`/`DetectedHarnessesResponse` declarations. | `TerminalCatalogEntryWire`; `TerminalSessionsResponse`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:280-346; mcp/src/agents_remember/serving/response_contract.py:349-352; mcp/src/agents_remember/serving/response_contract.py:363-366 |
+| `OnboardingResolution` declares the five-shape union for `GET /api/files/onboarding`. | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:709-715 |
+| `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:58-58; mcp/src/agents_remember/serving/served_state.py:63-78 |
+| `ServingBuildPayload` and `SupervisorHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | `ServingBuildPayload`; `ServingBuild`; `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/build_info.py:43-63; mcp/src/agents_remember/serving/build_info.py:66-88; mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
+| The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | `_register_projection_routes`; `_register_action_routes`; `_register_terminal_session_routes` | mcp/src/agents_remember/serving/app.py:1014-1086; mcp/src/agents_remember/serving/app.py:1285-1316; mcp/src/agents_remember/serving/app.py:1366-1395 |
+| The route-inventory, validated-route hazard, per-route conformance and declared-surface-coverage suites enforce the contract on routes FastAPI does not validate. | `ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; `DeclaredSurfaceCoverageTests` | mcp/tests/test_serving_response_conformance.py:492-624; mcp/tests/test_serving_response_conformance.py:627-695; mcp/tests/test_serving_response_conformance.py:783-1861; mcp/tests/test_serving_response_conformance.py:2432-2489 |
+| The served-state tail rules, the populated 200 body, the body-less 304, and the bare-node `delta` asymmetry are bound by the served-state route and snapshot conformance suites. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests`; `delta` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 
 ### Legacy route map
 
-| Finding | Source Path |
-| --- | --- |
-| The tick entry the projector drives (read → fold → atomic write; the `now` seam + fixture loader). | [observer/projection_store.py](agents-remember/mcp/src/agents_remember/observer/projection_store.py) |
-| The served shapes (`WorkspaceProjection`, `ActionAvailability`). | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The raw event envelope + log layout tailed by `events.py`/`sim.py`. | [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The one read/path abstraction (NS #5). | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
-| The `--config` → `McpRuntimeConfig` contract the CLI mirrors. | [mcp/config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| The umbrella CLI entry that launches the server (and wires `--sim`). | [cli/__main__.py](agents-remember/mcp/src/agents_remember/cli/__main__.py) |
-| The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | [docs/design/observable-lifecycle.md](agents-remember/docs/design/observable-lifecycle.md) |
-| The containment metrics sampler + store the lifespan loop drives. | [providers/metrics.py](agents-remember/mcp/src/agents_remember/providers/metrics.py) |
-| The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | [providers/degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py) |
-| The stores the supervisor sweep's predicates read directly: expectation rows, operator inbox, orchestration nudges, supervisor signal cooldowns, and the observer event log the sweep appends `orchestration.supervisor.*` events to. | [controlplane/expectation_rows.py](agents-remember/mcp/src/agents_remember/controlplane/expectation_rows.py); [controlplane/operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [controlplane/orchestration_nudges.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_nudges.py); [controlplane/supervisor_signals.py](agents-remember/mcp/src/agents_remember/controlplane/supervisor_signals.py); [observer/store.py](agents-remember/mcp/src/agents_remember/observer/store.py) |
-| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | [kernel/agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py) |
-| The MCP tool choke point that surfaces the supervisor staleness banner on every tool call. | [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py); [harness_control_ipc.py](agents-remember/mcp/src/agents_remember/serving/harness_control_ipc.py); [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The tick entry the projector drives (read → fold → atomic write; the `now` seam + fixture loader). | `read_lifecycle_logs`; `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:111-153; mcp/src/agents_remember/observer/projection_store.py:212-275 |
+| The served shapes (`WorkspaceProjection`, `ActionAvailability`). | `WorkspaceProjection`; `ActionAvailability` | mcp/src/agents_remember/observer/projection.py:45-58; mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The raw event envelope + log layout tailed by `events.py`/`sim.py`. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| The one read/path abstraction (NS #5). | `observer_logs_root`; `observer_root` | mcp/src/agents_remember/observer/paths.py:27-29; mcp/src/agents_remember/observer/paths.py:32-34 |
+| The `--config` → `McpRuntimeConfig` contract the CLI mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/mcp/config.py:113-137 |
+| The umbrella CLI entry that launches the server (and wires `--sim`). | `build_parser`; `main` | mcp/src/agents_remember/cli/__main__.py:16-28; mcp/src/agents_remember/cli/__main__.py:31-33 |
+| The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`; `## 2. The Event Substrate`; `## 3. Gates and the Return Channel`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:1-402 |
+| The containment metrics sampler + store the lifespan loop drives. | `ProviderMetricsStore`; `sample_provider_containers` | mcp/src/agents_remember/providers/metrics.py:231-360; mcp/src/agents_remember/providers/metrics.py:363-420 |
+| The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
+| The expectation-row, operator-inbox, orchestration-nudge, signal-cooldown, and observer-event stores. | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215; mcp/src/agents_remember/observer/store.py:103-171 |
+| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | `SupervisorSettings`; `_supervisor_loop` | mcp/src/agents_remember/kernel/agentic_settings.py:302-316; mcp/src/agents_remember/serving/app.py:861-872 |
+| The MCP tool choke point that surfaces the supervisor staleness banner on every tool call. | `_tool_payload`; `_supervisor_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | `HarnessSubmissionAuthority`; `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
+| The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | `register_harness_control_routes`; `_dispatch`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/src/agents_remember/serving/harness_control_client.py:534-568; mcp/src/agents_remember/serving/harness_control_ipc.py:159-171 |
 
 ## Historical Route Impact (superseded hosted authority)
 
@@ -1585,6 +1608,12 @@ closeout stamps the L4 commit.
 
 ## Update History
 
+- 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: closed the five adversarial whole-claim gaps across client, parser, runner, factory, authority, and adapter owners; the landing provenance mismatch remains an explicit Tier-3 item.
+- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B12 resolved all 91 scoped citation findings in this document: 40 missing anchors and 51 malformed source segments. The current provenance sentence was aligned with the bridge-owned ledger path; the scoped check passes with 0 findings. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T19:45+02:00 — 260731-EFA-L5 second curator pass (route governor for
   `serving/change_watcher.py`). Corrected the `change_watcher.py` route bullet, which named
   `operator-inbox.lock` as a workspace name-filter entry: that literal is gone, and it was the

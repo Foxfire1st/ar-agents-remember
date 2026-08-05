@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/operatorInbox.test.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate |                                                  2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash |                                                  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |                                                  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,27 +50,29 @@ None.
 No relevant external documentation beyond the repository's observable-lifecycle design was needed for
 this client helper test; the behavior is pinned by same-repository code and tests.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests pin the POST body, posted/error return contract, and dismiss helper endpoint mapping. | L5-L65 | [operatorInbox.test.ts](agents-remember/dashboard/src/data/operatorInbox.test.ts) |
-| The helper under test owns the fetch call and response mapping. | L1-L25 | [operatorInbox.ts](agents-remember/dashboard/src/data/operatorInbox.ts) |
-| Component-level tests pin how the helper is used from Gate Respond. | L53-L84 | [GateResponder.test.tsx](agents-remember/dashboard/src/panels/GateResponder.test.tsx) |
+| The tests pin the POST body, posted/error return contract, and dismiss helper endpoint mapping. | `postOperatorInbox`; `dismissOperatorInboxEntry` | dashboard/src/data/operatorInbox.test.ts:5-65 |
+| The helper under test owns the fetch call and response mapping. | `postOperatorInbox`; `dismissOperatorInboxEntry` | dashboard/src/data/operatorInbox.ts:18-32; dashboard/src/data/operatorInbox.ts:34-48 |
+| Component-level tests pin how the helper is used from Gate Respond. | `postOperatorInbox` | dashboard/src/panels/GateResponder.test.tsx:83-108 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 3 table citations and normalized 3 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 line citation that ran past the end of
   the file (cited L5-L67; the file is 65 lines). The two `describe` blocks the row names span

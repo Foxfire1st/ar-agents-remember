@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/orchestration.py`       |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-31T15:31+02:00                                            |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                        |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                        |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -57,15 +57,19 @@ nudge the wrong mailbox. `reason` is a `NudgeReason` and `rate_limit_seconds` de
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The three inbox payload builders and the hosted-delivery seam. | [tools/operator_inbox.py](agents-remember/mcp/src/agents_remember/mcp/tools/operator_inbox.py) |
-| `NudgeTarget` / `NudgeSubject` and the nudge builder. | [tools/orchestration.py](agents-remember/mcp/src/agents_remember/mcp/tools/orchestration.py) |
-| `HostedDelivery` — the delivery bundle the post declaration builds. | [tools/dispatch_brief.py](agents-remember/mcp/src/agents_remember/mcp/tools/dispatch_brief.py) |
-| `InboxAddress`, `InboxMessage`, `InboxPoster`, `AgentRole`, `InboxMessageKind`. | [controlplane/operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py) |
-| Fixed model attribution and the target/subject split proved through a live server. | [test_mcp_registration_wiring.py](agents-remember/mcp/tests/test_mcp_registration_wiring.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The three inbox payload builders and the hosted-delivery seam. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36; mcp/src/agents_remember/mcp/tools/operator_inbox.py:50-65; mcp/src/agents_remember/mcp/tools/operator_inbox.py:68-83 |
+| `NudgeTarget` / `NudgeSubject` and the nudge builder. | `NudgeSubject` | mcp/src/agents_remember/mcp/tools/orchestration.py:7-12; mcp/src/agents_remember/mcp/tools/orchestration.py:19-37 |
+| `HostedDelivery` — the delivery bundle the post declaration builds. | `HostedDelivery` | mcp/src/agents_remember/serving/dispatch_brief.py:45-54 |
+| `InboxAddress`, `InboxMessage`, `InboxPoster`, `AgentRole`, `InboxMessageKind`. | `AgentRole` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:17-42; mcp/src/agents_remember/controlplane/operator_inbox_records.py:53-61; mcp/src/agents_remember/controlplane/operator_inbox_records.py:101-123 |
+| Fixed model attribution and the target/subject split proved through a live server. | `test_operator_inbox_post_over_mcp_is_always_attributed_to_the_model` | mcp/tests/test_mcp_registration_wiring.py:1202-1213; mcp/tests/test_mcp_registration_wiring.py:1271-1297 |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 4 citation rows with
+  builder, model-record and wiring-test anchors (operator_inbox.py, orchestration.py,
+  operator_inbox_records.py, test_mcp_registration_wiring.py). Zero findings remain.
 
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The four messaging
   declarations moved out of `server.py`; post now packs `InboxAddress`/`InboxMessage`/`InboxPoster`/

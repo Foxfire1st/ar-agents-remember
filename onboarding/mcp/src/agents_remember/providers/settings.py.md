@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -73,15 +73,17 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
-| Provider status writes generated lifecycle settings before calling `watchers_run`. | [status.py](agents-remember/mcp/src/agents_remember/providers/status.py) |
-| Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
-| CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. | `McpRuntimeConfig`, `allowed_repo_ids`, `allowed_provider_ids` | mcp/src/agents_remember/mcp/config.py:113-137 |
+| Provider status writes generated lifecycle settings before calling `watchers_run`. | `watchers_run` | mcp/src/agents_remember/providers/status.py:239-239 |
+| Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. | `install_runtime_from_config`, ["settings=lifecycle_settings_from_config("], ["def lifecycle_settings_from_config(config: McpRuntimeConfig)"] | mcp/src/agents_remember/install/runtime.py:556-615; mcp/src/agents_remember/providers/settings.py:25-25 |
+| GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. | `_grepai_settings`, `_grepai_runtime`, `_grepai_backend`, `_grepai_embedder` | mcp/src/agents_remember/providers/settings.py:94-115; mcp/src/agents_remember/providers/settings.py:118-153; mcp/src/agents_remember/providers/settings.py:156-192; mcp/src/agents_remember/providers/settings.py:195-234 |
+| CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. | `_cgc_settings`, `_cgc_root_settings` | mcp/src/agents_remember/providers/settings.py:237-327; mcp/src/agents_remember/providers/settings.py:330-340 |
 
 ## Update History
+
+- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal configuration and generated-settings references; the existing `watchers_run` row remains exact; final scoped result 0 (checker-clean).
 
 - 2026-07-03T01:55+02:00 — L12: _cgc_root_settings generates each CGC root and attaches per-repo cgcignorePatterns from the in-code extras map (agents-remember: exclude the committed package_data bundle).
 - 2026-06-10T05:30+02:00 — CGC runner image comes from the single `cgc_runner_image()` derivation (GitHub #50): the independent repository:version f-string here dropped the image layer revision, so upgrading hosts kept a cached guard-less image under the guard entrypoint.

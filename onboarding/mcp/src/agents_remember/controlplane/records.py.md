@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`         |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -103,13 +103,13 @@ advance). All helpers are pure.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). | [observer/events.py](agents-remember/mcp/src/agents_remember/observer/events.py) |
-| The append-only store that serializes and folds these snapshots. | [store.py](agents-remember/mcp/src/agents_remember/controlplane/store.py) |
-| Ids come from the local ULID mint. | [observer/ulid.py](agents-remember/mcp/src/agents_remember/observer/ulid.py) |
-| `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions; the local `model_config` line is gone (L84-L116). | [records.py](agents-remember/mcp/src/agents_remember/controlplane/records.py) |
-| `DurableRecord` supplies the `extra="forbid"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor (L339-L374). | [durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
+| The append-only store that serializes and folds these snapshots. | `GateStore` | mcp/src/agents_remember/controlplane/store.py:96-325 |
+| Ids come from the local ULID mint. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
+| `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:84-116 |
+| `DurableRecord` supplies the `extra="forbid"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor. | `DurableRecord`; `schema_version_supported` | mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
 
 As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handover-approval`: the master-exit seam gate the manager raises with the reviewer verdict attached and the orchestrator decides (delegable, never human-pinned — human review concentrates at the super gate).
 
@@ -120,6 +120,8 @@ As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handove
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded that `GateRecord` now
   subclasses `durable_store.DurableRecord` instead of `BaseModel`: the local

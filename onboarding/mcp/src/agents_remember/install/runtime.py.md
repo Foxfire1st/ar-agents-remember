@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -125,16 +125,20 @@ clients reach it through the `runtime_install` tool.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The MCP controller exposes only typed install booleans. | [runtime_install.py](agents-remember/mcp/src/agents_remember/controllers/runtime_install.py) |
-| Provider settings generation derives lifecycle settings from MCP authority. | [settings.py](agents-remember/mcp/src/agents_remember/providers/settings.py) |
-| `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. | [runtime.py](agents-remember/mcp/src/agents_remember/install/runtime.py) |
-| Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. | [provider_watchers.py](agents-remember/mcp/src/agents_remember/install/provider_watchers.py) |
-| Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, unrecovered failure reporting, and dependency-install failure recovery. | [test_install_runtime.py](agents-remember/mcp/tests/test_install_runtime.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The MCP application entry point exposes only typed install booleans. | `run_runtime_install` | mcp/src/agents_remember/application/runtime_install.py:13-17 |
+| Provider settings generation derives lifecycle settings from MCP authority. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
+| `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. | `install_runtime` | mcp/src/agents_remember/install/runtime.py:462-553 |
+| Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. | `complete_provider_watcher_rebind` | mcp/src/agents_remember/install/provider_watchers.py:144-166 |
+| Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, and dependency-install failure recovery. | `test_runtime_install_provider_deps_rebinds_watchers_around_runner_refresh`; `test_runtime_install_provider_deps_dry_run_reports_rebind_without_mutating`; `test_runtime_install_provider_deps_retries_rebind_after_degraded_status`; `test_runtime_install_provider_dependency_failure_attempts_watcher_recovery` | mcp/tests/test_install_runtime.py:166-237; mcp/tests/test_install_runtime.py:239-303; mcp/tests/test_install_runtime.py:305-363; mcp/tests/test_install_runtime.py:413-463 |
 
 ## Update History
 
+- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 8 initial citation findings (4 anchor, 0 prose, 4 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915`/`PLR0913`
   armed with no exemptions): added the frozen `RuntimeTreeSync`, `ProviderDependencyInstall` and
   `RuntimeInstallRequest`; `prune_tree`/`copy_tree` take a `RuntimeTreeSync` (whose single

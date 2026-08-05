@@ -100,30 +100,32 @@ should return with it.
 The resolved Domain Documentation registry (`system/sources.md`) has no entries. This
 repository-local build-step contract is documented from source and this executable regression.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found after checking the configured sources. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite loads the hyphenated script and reproduces Vite's compiled-fingerprint handshake in its fixtures. | L23-L60 | [mcp/tests/test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
-| Placement succeeds only for a current bundle; every refusal path writes nothing. | L63-L219 | [mcp/tests/test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
-| The path contract and the process-boundary proof that `--check` is gone. | L244-L268 | [mcp/tests/test_sync_dashboard.py](agents-remember/mcp/tests/test_sync_dashboard.py) |
-| The script under test: refuse-absent, refuse-stale, place, then record. | L107-L166 | [scripts/sync-dashboard.py](agents-remember/scripts/sync-dashboard.py) |
-| Vite compiles the fingerprint the fixtures embed. | L36-L66 | [dashboard/vite.config.ts](agents-remember/dashboard/vite.config.ts) |
-| The release job is the only caller, and it runs the frontend build immediately before. | job `build` | [publish-mcp-to-pypi.yml](agents-remember/.github/workflows/publish-mcp-to-pypi.yml) |
+| The suite loads the hyphenated script and reproduces Vite's compiled-fingerprint handshake in its fixtures. | `load_sync_dashboard`, `emit_bundle` | mcp/tests/test_sync_dashboard.py:26-33; mcp/tests/test_sync_dashboard.py:46-60 |
+| Placement succeeds only for a current bundle; every refusal path writes nothing. | `BuildPlacementTests` | mcp/tests/test_sync_dashboard.py:63-219 |
+| The path contract and the process-boundary proof that `--check` is gone. | `PlacementSurfaceTests` | mcp/tests/test_sync_dashboard.py:244-268 |
+| The script under test: refuse-absent, refuse-stale, place, then record. | `sync` | scripts/sync-dashboard.py:138-159 |
+| Vite compiles the fingerprint the fixtures embed. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
+| The release job is the only caller, and it runs the frontend build immediately before. | "npm run build" | .github/workflows/publish-mcp-to-pypi.yml:62-62 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this test module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 6 repository-internal references for the dashboard sync fixtures, placement surface, sync script, Vite fingerprint define, and release workflow; scoped citation verification follows.
 
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 rewrote this card for the suite's inversion. The three
   fail-open tests (`test_check_noops_without_a_build`,

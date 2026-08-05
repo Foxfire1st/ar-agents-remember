@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 
 ## What This Area Is
 
@@ -203,17 +203,17 @@ tracked opener/readiness/retire authorities execute the open. Six new test suite
 foundation pin prove the contract on doubled boundaries, and the installed-runtime suite proves
 the live gates and both real open E2Es.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The dormant library read port defines scoped list, historical read, and server-private resume-target resolution. | L59-L84 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
-| The L0 request dependencies are the only consumption seam the handlers use. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. | L170-L257 | [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) |
-| Locked helper entries and the JSONL protocol serve the Claude/Pi ports and host. | L50-L63; L54-L67 | [claude.ts](agents-remember/mcp/native_helpers/conversation_library/src/claude.ts), [pi.ts](agents-remember/mcp/native_helpers/conversation_library/src/pi.ts) |
-| The foundation pin asserts exactly the five owned library routes and the helper source set. | L32-L56; L113-L120 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
-| The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | L68-L85; L109-L235; L261-L268; L271-L320 | [library/api.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/api.py) |
-| `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | L125-L139; L178-L210 | [conversation/response_contract.py](agents-remember/mcp/src/agents_remember/serving/conversation/response_contract.py) |
-| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | L1-L8 | [mcp/tests overview](../../../../../tests/overview.md) |
-| Runtime fixtures record the observed (never enabling) gate/open evidence rows per harness. | L21-L34 | [codex-0.144.5.json](agents-remember/mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json) |
+| The dormant library read port defines scoped list, historical read, and server-private resume-target resolution. | `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/ports.py:59-84 |
+| The L0 request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
+| The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The locked Claude and Pi helpers dispatch list, read, and resume operations through their request handlers. | `handleClaude`; `handlePi` | mcp/native_helpers/conversation_library/src/claude.ts:65-78; mcp/native_helpers/conversation_library/src/pi.ts:54-67 |
+| The foundation pin asserts exactly the five owned library routes and the helper source set. | `test_exactly_two_conversation_ports_exist`; `test_root_composes_three_owned_child_routers`; `test_helper_package_and_lock_select_only_the_exact_repository_dependencies` | mcp/tests/test_conversation_foundation.py:22-29; mcp/tests/test_conversation_foundation.py:32-107; mcp/tests/test_conversation_foundation.py:125-136 |
+| The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | `api_library_list`; `api_library_read`; `api_library_open`; `api_library_open_status`; `api_library_open_reconcile`; `_OPEN_STATUS_BY_OUTCOME`; `_error_response`; `_ERROR_STATUS_TABLE` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:109-130; mcp/src/agents_remember/serving/conversation/library/api.py:133-158; mcp/src/agents_remember/serving/conversation/library/api.py:169-199; mcp/src/agents_remember/serving/conversation/library/api.py:202-221; mcp/src/agents_remember/serving/conversation/library/api.py:224-243; mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305 |
+| `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
+| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-1762 |
+| The installed Codex 0.144.5 runtime fixture records disabled capabilities and the native-history/list-read-resume production-gate evidence. | "codex-0.144.5-installed-20260718"; "enablesCapabilities"; "native-history/list-read-resume"; "L2 production gate" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:3-3; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:9-9; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:23-23; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:31-31 |
 
 ## Cross-Repo References
 
@@ -221,7 +221,7 @@ No cross-repository implementation participates in this route. The locked npm de
 third-party libraries resolved only from this repository's package/lock, and the resolved memory
 policy allows no neighboring repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant cross-repo evidence found. | — | — |
 
@@ -231,7 +231,7 @@ The resolved `Domain Documentation` registry has no entries. This route therefor
 repository-owned contract, production seams, fixtures, and tests as its direct evidence and does
 not fabricate an external citation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available for this library gate. | — | — |
 
@@ -363,6 +363,9 @@ app's own authority will sign), while the harness-specific failure legs remain d
 with a recorded reason.
 
 ## Update History
+- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: split helper dispatch from runtime-fixture ownership under the adversarial verdict, then the exact scoped fixer/check passed.
+
+- 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: anchored 9 Repo-Internal reference rows; scoped result 0 findings.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the five route declarations and the one
   real behaviour change — `_open_call` dropped `_OPEN_STATUS_BY_OUTCOME.get(outcome, 500)` for a

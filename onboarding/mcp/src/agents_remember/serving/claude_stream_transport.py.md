@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_transport.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,15 +37,15 @@ rather than the previous process's exit status.
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The adapter's floor-gated sub-agent-text probe stops the transport and starts the same object again, so a completed stop must release process ownership for the relaunch to launch at all. | `L106-L131` | [harness_control_claude.py](harness_control_claude.py) |
-| The adapter's own shutdown stops the transport before it cancels the state reader, so ownership release is the final shutdown step rather than an early reset. | `L437-L444` | [harness_control_claude.py](harness_control_claude.py) |
+| The adapter's floor-gated sub-agent-text probe stops the transport and starts the same object again, so a completed stop must release process ownership for the relaunch to launch at all. | `_negotiate` | mcp/src/agents_remember/serving/harness_control_claude.py:176-223 |
+| The adapter's own shutdown stops the transport before it cancels the state reader, so ownership release is the final shutdown step rather than an early reset. | `finish_reader` | mcp/src/agents_remember/serving/harness_control_claude.py:528-528 |
 
 ### 260713-PHA-L6 Boundary
 
@@ -57,7 +57,7 @@ fallback.
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | This file implements a repository-local contract. | — | — |
 
@@ -69,6 +69,7 @@ zero candidate bytes and unrelated response traffic cannot interleave a control 
 
 ## Update History
 
+- 2026-08-03T02:49:11+02:00 — W3-B01 curator: curated 2 Repo-Internal table citations with exact sub-agent-text capability and reader-finish anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: documented the single-process ownership contract —
   a completed stop releases the process and stderr task so the adapter's probe relaunch can reuse the
   object, while a live start still refuses. Corrected the transport-lifecycle citation, which pointed

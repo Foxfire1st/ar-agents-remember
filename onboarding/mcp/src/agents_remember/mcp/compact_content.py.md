@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/compact_content.py`     |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-05-29T08:53+02:00                               |
-| lastVerifiedCommitHash | `a06bfa65dcee3c8b82652085c69f2a20f163e306`           |
-| lastVerifiedCommitDate | 2026-05-29T09:05:12+02:00                            |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`           |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                               |
 
 ## Purpose
@@ -49,11 +49,12 @@ compacted text remains a faithful mirror of the structured payload.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| `create_server()` installs the shim as its first action. | [server.py](agents-remember/mcp/src/agents_remember/mcp/server.py) |
-| Behavior is verified through an in-process tool call. | [test_compact_content.py](agents-remember/mcp/tests/test_compact_content.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `create_server()` installs the shim as its first action. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| Behavior is verified through an in-process tool call. | `test_tool_call_text_block_is_compact_and_matches_structured` | mcp/tests/test_compact_content.py:50-72 |
 
 ## Update History
 
+- 2026-08-03T02:32:19+02:00: Curator W3-B02 anchored 2 Repo-Internal citation rows with 2 exact identifiers and generated source ranges; verification metadata was preserved.
 - 2026-05-29T08:53+02:00: Created onboarding for the FastMCP compact-content shim that minifies the JSON text mirror of tool results.

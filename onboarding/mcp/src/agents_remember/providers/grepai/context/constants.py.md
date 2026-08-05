@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/context/constants.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-25T09:55+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,12 +33,13 @@ The module is constant-only: it declares the GrepAI package pin, Docker network,
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| GrepAI layout consumes these constants for provider-owned runtime paths. | [layout.py](layout.py.md) |
-| GrepAI lifecycle modules consume Docker container/image constants through `providers.context`. | [core.py](../lifecycle/core.py.md) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| GrepAI layout consumes these constants for provider-owned runtime paths through `grepai_runtime_layout`. | `grepai_runtime_layout` | mcp/src/agents_remember/providers/grepai/context/layout.py:111-156 |
+| GrepAI lifecycle modules consume Docker container/image constants through `grepai_network_name`, `grepai_runner_settings`, and `grepai_backend_settings` in `providers.context`. | `grepai_network_name`; `grepai_runner_settings`; `grepai_backend_settings` | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:148-152; mcp/src/agents_remember/providers/grepai/lifecycle/core.py:166-189; mcp/src/agents_remember/providers/grepai/lifecycle/core.py:339-362 |
 
 ## Update History
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 2 table citations for the runtime layout and backend/network settings; fixer-generated ranges verified.
 
 - 2026-06-25T09:55+02:00: Changed managed GrepAI's preferred auto host ports to Postgres `61432` and Ollama `61434`; container ports remain configured by lifecycle settings.
 - 2026-06-02T01:15+02:00: Removed `GREPAI_ROOT_ARTIFACT_NAMES` (and the artifact-cleanup reference) after `artifacts.py` was deleted; `.grepai/` is now git-ignored in each live root rather than guarded.

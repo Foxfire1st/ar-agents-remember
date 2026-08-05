@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_capabilities.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ None known for the normalized L4 serialization/parsing boundary.
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -80,33 +80,36 @@ pass was available for this update.
 The adapter boundary consumes these data types, and each native adapter exposes cached advertise
 plus transient discovery through that boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The protocol, discovery, and launchable adapter ports consume `CapabilitySnapshot`, `LaunchKnobs`, and `SetResult`. | L31-L80 | [harness_control_adapter.py](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) |
-| The submission authority behind the control queue validates the exact `SET_ACCEPTANCE_VALUES` vocabulary and the ok/effective-value relationship before releasing a setter result to its waiter. | L1021-L1032; L1323-L1336 | [harness_submission_authority.py](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py) |
-| The launch boundary consumes owned selectors before token-free discovery and runtime construction. | L149-L182 | [harness_launch.py](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) |
-| The exact-session client uses the strict inverse parsers for live advertise and set responses. | L81-L96; L282-L308 | [harness_control_client.py](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) |
-| The daemon emits this unchanged normalized shape for both pre-session and live capability reads. | L105-L137 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| Claude produces native model/effort flags. | L271-L285 | [harness_control_claude.py](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) |
-| Codex declares session config plus owned CLI/config selectors. | L225-L243 | [codex_app_server_adapter.py](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) |
-| Pi declares provider-qualified model and thinking flags. | L181-L191 | [pi_rpc_adapter.py](agents-remember/mcp/src/agents_remember/serving/pi_rpc_adapter.py) |
+| The protocol, discovery, and launchable adapter ports consume `CapabilitySnapshot`, `LaunchKnobs`, and `SetResult`. | `HarnessProtocolAdapter`; `HarnessCapabilityDiscoverer`; `LaunchableHarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59; mcp/src/agents_remember/serving/harness_control_adapter.py:62-65; mcp/src/agents_remember/serving/harness_control_adapter.py:78-88 |
+| The submission authority validates the exact `SET_ACCEPTANCE_VALUES` vocabulary and the ok/effective-value relationship before releasing a setter result to its waiter. | `_apply_set_result_locked`; `_validate_set_result` | mcp/src/agents_remember/serving/harness_submission_authority.py:856-882; mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023 |
+| The launch boundary consumes owned selectors before token-free discovery and runtime construction. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
+| The exact-session client uses the strict inverse parsers for live advertise and set responses. | `read_control_capabilities`; `_set_control_value` | mcp/src/agents_remember/serving/harness_control_client.py:134-141; mcp/src/agents_remember/serving/harness_control_client.py:608-634 |
+| The normalized capability and setter payloads have strict inverse parsers. | `capability_snapshot_from_json`; `set_result_from_json` | mcp/src/agents_remember/serving/harness_capabilities.py:228-246; mcp/src/agents_remember/serving/harness_capabilities.py:249-265 |
+| The daemon emits this unchanged normalized shape for both pre-session and live capability reads. | `api_harness_capabilities`; `api_terminal_capabilities` | mcp/src/agents_remember/serving/harness_control_api.py:231-253; mcp/src/agents_remember/serving/harness_control_api.py:255-265 |
+| Claude produces native model/effort flags. | `claude_launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142 |
+| Codex declares session config plus owned CLI/config selectors. | `codex_launch_knobs` | mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
+| Pi declares provider-qualified model and thinking flags. | `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
 
 ## Cross-Repo References
 
 No external repository or ACP transport dependency is implemented by the normalized type layer.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 15 citation findings, converting 7 malformed/unanchored adapter rows and 1 legacy prose reference to exact capability, launch, parser, and native-adapter anchors.
+
+- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The setter
   row pointed at `harness_control_queue.py` L476-L508, but that module is now a 227-line facade
-  whose `set_model`/`set_effort` (L126-L130) only delegate — the validation moved with the rest of
+  whose `set_model`/`set_effort` cit:([`set_model`, `set_effort`], mcp/src/agents_remember/serving/harness_submission_authority.py:294-295; mcp/src/agents_remember/serving/harness_submission_authority.py:297-298) only delegate — the validation moved with the rest of
   the ordering truth into `harness_submission_authority.py`. Repointed the link and the range to
-  `_apply_set_result_locked` L1021-L1032 and the `_validate_set_result` static it calls at
-  L1323-L1336, which is where `SET_ACCEPTANCE_VALUES` membership and the
+  `_apply_set_result_locked` cit:([`_apply_set_result_locked`, `_validate_set_result`], mcp/src/agents_remember/serving/harness_submission_authority.py:856-882; mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023), which is where `SET_ACCEPTANCE_VALUES` membership and the
   `ok`/`effective_value` coherence per acceptance tier are actually enforced, and renamed the row's
   subject accordingly. Both adapter `launch_knobs` rows had also drifted: Claude's native
   `--model`/`--effort` argv is L271-L285 (was `L188-L202`) and Codex's `session_config` plus

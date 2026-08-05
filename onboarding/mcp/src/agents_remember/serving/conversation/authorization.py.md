@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/authorization.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ None; L1/L2/L3 map `AuthorityError` to the serving status idiom at their own rou
 
 No Domain Documentation source is configured for this repository-local authorization ruling.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -82,23 +82,25 @@ The resolver binds the strict `AuthorizationBinding` wire type from the conversa
 is driven per request by the narrow authorization dependency; the production composition constructs
 it from the workspace root it already holds.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies. | L134-L136 | [models.py](agents-remember/mcp/src/agents_remember/serving/conversation/models.py) |
-| The request dependency consults only the ASGI TCP peer and delegates to the bound resolver. | L26-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime. | L160 | [harness_control_api.py](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) |
-| `AuthorityError` is the typed refusal raised for non-loopback peers and cross-principal bindings. | L17-L17 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
-| Contract tests prove local-operator identity, loopback resolution, non-loopback/unknown fail-closed, the signature-pinned no-identity-channel, ignored browser claims, cross-principal cursor/scope/operation rejection, and injected-resolver separation in both directions. | L109-L282 | [test_conversation_authorization.py](agents-remember/mcp/tests/test_conversation_authorization.py) |
+| `AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies. | `AuthorizationBinding` | mcp/src/agents_remember/serving/conversation/models.py:134-136 |
+| The request dependency consults only the ASGI TCP peer and delegates to the bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
+| The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime. | "LocalOperatorAuthorizationResolver.for_workspace(config.workspace_root)" | mcp/src/agents_remember/serving/app.py:773-773 |
+| `AuthorityError` is the typed refusal raised for non-loopback peers and cross-principal bindings. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
+| Contract tests prove local-operator identity, loopback resolution, non-loopback/unknown fail-closed, the signature-pinned no-identity-channel, ignored browser claims, cross-principal cursor/scope/operation rejection, and injected-resolver separation in both directions. | `test_server_resolves_one_local_operator_workspace_identity`; `test_loopback_peers_resolve`; `test_non_loopback_peers_fail_closed`; `test_unknown_peer_fails_closed`; `test_server_resolves_one_local_operator_workspace_identity`; `test_browser_identity_claims_are_never_read`; `test_cross_principal_cursor_binding_rejected`; `test_cross_principal_scope_binding_rejected`; `test_cross_principal_operations_have_distinct_fingerprints`; `test_injected_resolver_proves_cross_principal_rejection` | mcp/tests/test_conversation_authorization.py:109-118; mcp/tests/test_conversation_authorization.py:121-126; mcp/tests/test_conversation_authorization.py:129-144; mcp/tests/test_conversation_authorization.py:147-150; mcp/tests/test_conversation_authorization.py:160-181; mcp/tests/test_conversation_authorization.py:209-227; mcp/tests/test_conversation_authorization.py:230-247; mcp/tests/test_conversation_authorization.py:250-259; mcp/tests/test_conversation_authorization.py:262-282 |
 
 ## Cross-Repo References
 
 No cross-repository boundary participates in this server-local identity ruling.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: created the local-operator authorization
   sidecar for the server-resolved single-user ruling. Verification is blank because the new source

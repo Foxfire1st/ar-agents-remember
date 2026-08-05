@@ -70,14 +70,15 @@
     "dashboard/src/topology/model.test.ts",
     "dashboard/src/topology/model.ts",
     "dashboard/src/types/harnessCapabilities.ts",
+    "dashboard/src/types/projection.schema.json",
     "dashboard/src/types/projection.ts",
     "dashboard/src/types/terminalCatalog.ts",
     "dashboard/src/types/terminalOpen.ts",
     "dashboard/src/vite-env.d.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 334,
-    "fileSidecars": 48,
+    "sourceFilesInScope": 336,
+    "fileSidecars": 49,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -118,6 +119,7 @@
     "ptyrenderbench",
     "scenarioplayer",
     "scenarios",
+    "schema",
     "servedprojection",
     "setup",
     "snapshot",

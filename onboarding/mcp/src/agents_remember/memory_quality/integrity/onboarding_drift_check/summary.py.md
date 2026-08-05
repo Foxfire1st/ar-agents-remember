@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T01:00+02:00                     |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -26,10 +26,10 @@ provides the stable context-packet response when callers do not request drift.
 
 Since 260731-EFA-L4 all three builders return the shared
 `models.DriftSummaryPacket` TypedDict rather than a bare `dict[str, Any]`:
-`not_checked()` (L20-L21) → `{"status": "notChecked"}`, `run_drift_summary(...)`
-(L24-L72) → `{"status": "error", "error": ...}` when the onboarding root does not
-exist (L30-L34) and otherwise the `summarize_rows` result, and `summarize_rows(...)`
-(L75-L90) → the `checked` packet carrying `count`/`actionableCount`/`reportPath`/
+cit:([`not_checked`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:21-22) → `{"status": "notChecked"}`, `run_drift_summary(...)`
+cit:([`run_drift_summary`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73) → `{"status": "error", "error": ...}` when the onboarding root does not
+exist cit:(["if not context.onboarding_root.exists()"], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:31-31) and otherwise the `summarize_rows` result, and `summarize_rows(...)`
+cit:([`summarize_rows`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:76-91) → the `checked` packet carrying `count`/`actionableCount`/`reportPath`/
 `actionableSample`. This module is therefore the **producer of every `DriftStatus`
 member**, and the two wire models (`models/drift.py::DriftSummary` for the context
 packet, `models/memory.py::DriftCheckResponse` for the tool) validate against the
@@ -81,24 +81,30 @@ cleanup now share one filename contract.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Context packets and skill-facing drift tools call this summary helper. | — | [context_packet.py](agents-remember/mcp/src/agents_remember/controllers/context_packet.py); [skill_tools.py](agents-remember/mcp/src/agents_remember/controllers/skill_tools.py) |
-| The memory quality runner wraps actionable rows from this summary as integrity findings, reading the status-conditional keys with `.get`. | `run_drift_quality_check` L71-L104 | [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py) |
-| `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module. | `DriftStatus` L14; `DriftSummaryPacket` L17-L25 | [models.py](models.py) |
-| The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. | `DriftSummary` L13-L23 | [models/drift.py](agents-remember/mcp/src/agents_remember/models/drift.py) |
-| The tool response model that validates the same packet. | `DriftCheckResponse` L13-L23 | [models/memory.py](agents-remember/mcp/src/agents_remember/models/memory.py) |
-| The drift-snapshot dir + schema the b1 write targets (shared with the reader). | — | [observer/paths.py](agents-remember/mcp/src/agents_remember/observer/paths.py) |
-| The shared drift-snapshot filename helper now used by the producer. | — | [observer/drift_snapshots.py](agents-remember/mcp/src/agents_remember/observer/drift_snapshots.py) |
-| The observer reader that consumes the persisted snapshot. | — | [observer/snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py) |
-| `_write_drift_snapshot` persists source/memory/report provenance beside counts and rows. | L108-L150 | [summary.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py) |
+| Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call. | "return run_drift_summary("; `skills_install_tool` | mcp/src/agents_remember/application/context_packet.py:176-176; mcp/src/agents_remember/application/skill_tools.py:11-28 |
+| The memory quality runner wraps actionable rows from this summary as integrity findings, reading the status-conditional keys with `.get`. | `run_drift_quality_check` | mcp/src/agents_remember/memory_quality/check.py:137-170 |
+| `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module. | `DriftStatus`; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
+| The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
+| The tool response model that validates the same packet. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
+| The drift-snapshot dir + schema the b1 write targets (shared with the reader). | `DRIFT_SNAPSHOT_SCHEMA` | mcp/src/agents_remember/observer/paths.py:24-24 |
+| The shared drift-snapshot filename helper now used by the producer. | `drift_snapshot_path` | mcp/src/agents_remember/observer/drift_snapshots.py:19-22 |
+| The observer reader that consumes the persisted snapshot. | `read_drift_snapshots` | mcp/src/agents_remember/observer/snapshots.py:933-969 |
+| `_write_drift_snapshot` persists source/memory/report provenance beside counts and rows. | `_write_drift_snapshot` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:109-148 |
 
 ## Update History
 
+- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 3 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 88; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 7 citation items; preserved 1 semantic claim explicitly as Tier 3.
+
+- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T01:00+02:00 — 260731-EFA-L4 curator: the Logic section described what the three
   builders return but not what type they return it *as*, which is the whole of this leaf's change
-  here. Verified against the diff and the current source: `not_checked` (L20-L21),
-  `run_drift_summary` (L24-L72) and `summarize_rows` (L75-L90) are now all typed
+  here. Verified against the diff and the current source: cit:([`not_checked`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:21-22),
+  cit:([`run_drift_summary`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73) and cit:([`summarize_rows`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:76-91) are now all typed
   `-> DriftSummaryPacket`, imported from the package's `models.py` alongside
   `ACTIONABLE_CLASSIFICATIONS`. Recorded that this module is therefore the producer of every
   `DriftStatus` member and that both wire models now validate against that one declaration —

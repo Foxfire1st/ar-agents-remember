@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T14:05+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -35,7 +35,7 @@ off, when nothing matched the finalizing master's own qualified leaf key
 (`repo/master/master-doc-id`), or when the call was a dry run. The
 landing sweep is best-effort and never fails this finalize call itself — any failure in the landing
 body (contract load or catalog I/O) is swallowed and reported as an empty list
-(`controllers/worktree_tools.py::_auto_land_completed_seats`), so this field can legitimately be
+(`application/worktree_tools.py::_auto_land_completed_seats`), so this field can legitimately be
 empty even when spent seats existed, never a signal that finalization itself failed.
 
 ## Docs References
@@ -44,13 +44,13 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| Strict tool response base class is defined here. | [base.py](agents-remember/mcp/src/agents_remember/models/base.py) |
-| Public response registry maps `lifecycle_finalize_task` to this model. | [tool_registry.py](agents-remember/mcp/src/agents_remember/models/tool_registry.py) |
-| Conformance tests validate representative finalizer payloads against this model. | [test_tool_response_conformance.py](agents-remember/mcp/tests/test_tool_response_conformance.py) |
-| `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. | _auto_land_completed_seats | [worktree_tools.py](agents-remember/mcp/src/agents_remember/controllers/worktree_tools.py) |
-| `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. | RetirementSettings | [config.py](agents-remember/mcp/src/agents_remember/mcp/config.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Strict tool response base class is defined here. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
+| Public response registry maps `lifecycle_finalize_task` to this model. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:167-167 |
+| Conformance tests validate representative finalizer payloads against this model. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
+| `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. | "def worktree_start_tool" | mcp/src/agents_remember/application/worktree_tools.py:83-83 |
+| `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. | "class McpRuntimeConfig" | mcp/src/agents_remember/mcp/config.py:114-114 |
 
 ## Series-Contract Notes
 
@@ -58,6 +58,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
+  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
+
+- 2026-08-02T01:05+02:00 — No content impact: repaired this document's `Repo-Internal References` table shape. Rows carrying a citation cell were rendering short: the header declared two columns while those rows held three, and GFM TRUNCATES the extra cell, so the citation was in the source but invisible in the rendered table (`memory_quality/style/document_shape/tables.py`, `table_row_cell_count_mismatch`). Widened the header and its delimiter row to `| Finding | Citations | Source Path |` — the shape 1,941 rows in this tree already use — and padded the two-cell rows with `n/a`, which is this tree's own no-citation value (489 uses; zero empty citation cells exist). No finding text and no citation was changed by the widening. Verification metadata pinned until closeout stamps the L6 code commit.
+- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: finalizer response onboarding now
   names `autoLandedSeats` and the `auto_land_on_finalize` gate; completion-edge cleanup marks seats
   `landed` for archive inspection rather than retiring them. Verification metadata pinned until

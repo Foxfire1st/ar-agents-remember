@@ -24,19 +24,19 @@ an honest Retire confirm and 'Launch corrected…' — no auto-retry path exists
 
 ### Logic
 
-- **Verbatim ×3** (L31-L39) — loops `FAILED_LAUNCH_ROWS` (Claude, Codex, Pi) asserting the
+- **Verbatim ×3** cit:(["renders the bridgeError VERBATIM for every harness's failed row"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:31-39) — loops `FAILED_LAUNCH_ROWS` (Claude, Codex, Pi) asserting the
   rendered text `toBe` the fixture's `controlRaw.bridgeError` byte-for-byte (uniform async
   fail-loud: no harness gets special framing).
-- **Refused, never validated** (L41-L49) — the Codex row's retained pair renders with "never
+- **Refused, never validated** cit:(["renders the retained pair as the REFUSED pair, never as validated evidence"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:41-49) — the Codex row's retained pair renders with "never
   validated" and the badge's `data-evidence-tier`/`aria-label` are `refused`.
-- **Prefill** (L51-L59) — 'Launch corrected…' calls back with the Pi row's exact
+- **Prefill** cit:(["'Launch corrected…' pre-fills the flow from the refused pair"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:51-59) — 'Launch corrected…' calls back with the Pi row's exact
   `{harness, modelKey, effort}` (provider-qualified key intact).
-- **Honest confirm** (L61-L89) — ZERO fetches before the explicit confirm (asserted twice: on
+- **Honest confirm** cit:(["Retire arms an HONEST confirm naming the session and leaf; confirming retires once"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:61-89) — ZERO fetches before the explicit confirm (asserted twice: on
   render and after arming); the confirm names the session label ("scout-claude") AND the leaf id;
   confirming sends exactly ONE `POST /api/terminal/<id>/terminate`; the confirm closes after
   success.
-- **Decline** (L91-L99) — `keep` disarms and NOTHING is sent.
-- **Stated absence** (L101-L105) — a failed row without a retained bridgeError renders "no
+- **Decline** cit:(["declining the confirm keeps the row untouched"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:91-99) — `keep` disarms and NOTHING is sent.
+- **Stated absence** cit:(["a failed row WITHOUT a retained bridgeError states the absence rather than inventing one"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:101-105) — a failed row without a retained bridgeError renders "no
   bridgeError retained", never an invented message.
 
 ### Conventions
@@ -51,13 +51,17 @@ zero-fetch-before-confirm assertions are the no-auto-retry net.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The banner under test. | L70-L182 | [FailedLaunchBanner.tsx](FailedLaunchBanner.tsx) |
-| The failed-row fixtures ×3 harnesses with verbatim bridgeErrors. | L93-L178 | [../../test/fixtures/openResponses.ts](../../test/fixtures/openResponses.ts) |
-| The shared row builder for the leafed/bare variants. | L10-L27 | [../../test/fixtures/catalogRows.ts](../../test/fixtures/catalogRows.ts) |
+| The banner under test. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| The failed-row fixtures ×3 harnesses with verbatim bridgeErrors. | `FAILED_CLAUDE_ROW` | dashboard/src/test/fixtures/openResponses.ts:93-106 |
+| The shared row builder for the leafed/bare variants. | `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the six superseded
+  `(L…)` prose citations with exact test-title anchors and the three `n/a` table rows with
+  exact anchors; exact non-fixing check returns zero findings.
 
 - 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 S4 (R6): verbatim bridgeError ×3 harnesses,
   refused-not-validated pair + badge tier, refused-pair prefill, the honest armed confirm with a

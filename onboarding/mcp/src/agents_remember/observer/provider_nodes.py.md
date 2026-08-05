@@ -93,7 +93,7 @@ No file-local todos.
 No relevant external documentation was found after checking the repository source
 registry. This file implements project-local projection policy.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found after checking in-repo design docs for provider projection policy. | n/a | n/a |
 
@@ -102,22 +102,22 @@ registry. This file implements project-local projection policy.
 The module consumes the provider current-state shape and emits the served projection
 contract used by the dashboard topology.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| CGC current state stores per-repo watcher rows under `resources.watchers`, keyed by repo id. | L179-L203 | [providers/current_state.py](../providers/current_state.py) |
-| GrepAI current state persists configured repository memory-root targets as `targetRepos`. | L100-L109; L136-L176 | [providers/current_state.py](../providers/current_state.py) |
-| Isolated worktree GrepAI settings keep the aggregate multi-root provider shape while replacing only the active project root with the worktree memory root. | L36-L74; L146-L167 | [providers/grepai/isolated.py](../providers/grepai/isolated.py) |
-| The isolated GrepAI test proves the active repo root points at the target memory worktree while an unrelated repo root stays on its source path. | L632-L706 | [test_provider_setup.py](../../../tests/test_provider_setup.py) |
-| `workspace_provider_nodes` expands CGC watcher rows and generic `targetRepos`, but falls back to aggregate workspace provider nodes when evidence is absent. | L16-L39; L67-L185 | [provider_nodes.py](provider_nodes.py) |
-| Worktree provider nodes carry `worktreeGroup` and `repoId` while workspace repo-covered provider nodes carry only `repoId`. | L42-L64; L117-L171 | [provider_nodes.py](provider_nodes.py) |
-| `ProviderNode` is the served schema carrying scope, role, `repoId`, and `worktreeGroup`. | L166-L193 | [projection.py](projection.py) |
+| CGC current state stores per-repo watcher rows under `resources.watchers`, keyed by repo id. | "def cgc_current_state(" | mcp/src/agents_remember/providers/current_state.py:179-179 |
+| GrepAI current state persists configured repository memory-root targets as `targetRepos`. | `targetRepos` | mcp/src/agents_remember/providers/current_state.py:167-167 |
+| Isolated worktree GrepAI settings keep the aggregate multi-root provider shape while replacing only the active project root with the worktree memory root. | `isolated_grepai_settings` | mcp/src/agents_remember/providers/grepai/isolated.py:36-74 |
+| The isolated GrepAI test proves the active repo root points at the target memory worktree while an unrelated repo root stays on its source path. | `test_isolated_grepai_settings_swaps_only_active_memory_root` | mcp/tests/test_provider_setup.py:632-706 |
+| `workspace_provider_nodes` expands CGC watcher rows and generic `targetRepos`, but falls back to aggregate workspace provider nodes when evidence is absent. | `workspace_provider_nodes` | mcp/src/agents_remember/observer/provider_nodes.py:16-39 |
+| Worktree provider nodes carry `worktreeGroup` and `repoId` while workspace repo-covered provider nodes carry only `repoId`. | `worktree_provider_node`; `_cgc_repo_provider_node`; `_target_repo_provider_node` | mcp/src/agents_remember/observer/provider_nodes.py:42-64; mcp/src/agents_remember/observer/provider_nodes.py:117-136; mcp/src/agents_remember/observer/provider_nodes.py:153-171 |
+| `ProviderNode` is the served schema carrying scope, role, `repoId`, and `worktreeGroup`. | `ProviderNode` | mcp/src/agents_remember/observer/projection.py:175-202 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found. The behavior is inside the same provider
 current-state to observer projection boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
@@ -125,16 +125,18 @@ current-state to observer projection boundary.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 
+- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 7 citation items; scoped citation check now passes.
+
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): re-verified all seven reference
   citations against source; five were broken and are repaired. `current_state.py` L175-L198 →
   **L179-L203** (`cgc_current_state` whole) — the old range began inside `grepai_target_repos` and
-  ended one line before the `"resources"` block, leaving `"watchers": repos` (L201), the symbol the
+  ended one line before the `"resources"` block, leaving `"watchers": repos` cit:([`cgc_current_state`], mcp/src/agents_remember/providers/current_state.py:179-203), the symbol the
   finding names, outside it; the repo-id keying it also names is L183-L184. `current_state.py`
   L101-L105; L132-L172 → **L100-L109; L136-L176** — the first stopped three lines short of
-  `target_repos=grepai_target_repos(config)` (L108) and the second began in `disabled_provider_state`
+  `target_repos=grepai_target_repos(config)` cit:(["target_repos=grepai_target_repos(config)"], mcp/src/agents_remember/providers/current_state.py:108-108) and the second began in `disabled_provider_state`
   and ended mid-function; the new pair is the GrepAI branch of `current_provider_states` plus
   `grepai_current_state` (`payload` gains `targetRepos` at L167) and `grepai_target_repos`
-  (`memory_root` L175) whole. `grepai/isolated.py` L36-L67 → **L36-L74** —
+  and the `memory_root` mapping cit:(["repo.memory_root.as_posix()"], mcp/src/agents_remember/providers/current_state.py:173-173) is inside the function. `grepai/isolated.py` L36-L67 → **L36-L74** —
   `isolated_grepai_settings` was truncated mid-function and returns at L74; its second range
   L146-L167 (`_isolated_grepai_roots`) was already exact and is unchanged.
   `test_provider_setup.py` L583-L657 → **L632-L706** — the old range started inside

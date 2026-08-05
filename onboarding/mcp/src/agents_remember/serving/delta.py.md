@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/delta.py`  |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-07T05:06+02:00                      |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`  |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -62,13 +62,15 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The projection schema diffed here (flat, id-keyed collections). | [observer/projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py) |
-| The projector that calls this, caches stable forms, and broadcasts. | [projector.py](agents-remember/mcp/src/agents_remember/serving/projector.py) |
-| The client mirror of the volatile set + local age advancement. | [servedAges.ts](agents-remember/dashboard/src/data/servedAges.ts) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The projection schema diffed here (flat, id-keyed collections). | `WorkspaceProjection`; `lifecycles`; `enclosures`; `providers`; `metrics`; `analytics` | mcp/src/agents_remember/observer/projection.py:976-995 |
+| The projector that calls this, caches stable forms, and broadcasts. | `Projector`; `_publish_projection`; `stable_projection_state`; `diff_projection`; `_broadcast` | mcp/src/agents_remember/serving/projector.py:126-330; mcp/src/agents_remember/serving/projector.py:268-295; mcp/src/agents_remember/serving/projector.py:310-312 |
+| The client mirror of the volatile set + local age advancement. | `VOLATILE_AGE_FIELDS`; `stampServed`; `servedAgeSeconds` | dashboard/src/data/servedAges.ts:16-22; dashboard/src/data/servedAges.ts:52-54; dashboard/src/data/servedAges.ts:61-71 |
 
 ## Update History
+
+- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 3 table citations and normalized 3 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/serving/delta.py` since the L2 base commit is the whole-tree `ruff

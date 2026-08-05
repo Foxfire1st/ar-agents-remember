@@ -94,6 +94,10 @@
       "claude/skills/",
       "dev-skills/dashboard-experience-review/SKILL.md",
       "REPO_ROOT/\"skills",
+      "CANONICAL_SKILLS",
+      "TARGETS",
+      "diff_target",
+      "sync_target",
       "README.md.md",
       "dashboard-experience-review/SKILL.md.md",
       "dev-skills/dashboard-experience-review/owned-methods.md",
@@ -102,11 +106,7 @@
       "dashboard-experience-review/delegation-map.md.md",
       "dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md",
       "dashboard-experience-review/templates/scenario-catalog-template.md.md",
-      "dev-skills/dashboard-experience-review/templates/review-report-template.md",
-      "dashboard-experience-review/templates/review-report-template.md.md",
-      "dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md",
-      "dashboard-experience-review/templates/missing-view-matrix-template.md.md",
-      "l-01-session-job-lifecycle"
+      "dev-skills/dashboard-experience-review/templates/review-report-template.md"
     ]
   },
   "fallback": {

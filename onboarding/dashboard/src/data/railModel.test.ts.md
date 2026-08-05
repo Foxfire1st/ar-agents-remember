@@ -63,45 +63,51 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | L17-L464 | [railModel.ts](railModel.ts) |
-| The shared full-wire-shape fixtures: the `catalogRow` builder (spreads overrides, so the plural pending list flows through) and `FLEET`; the multiplexed parent+sub-agent fixture is `L7_MULTIPLEXED_INTERACTIONS`. | L10-L26; L32-L172; L410-L446 | [../test/fixtures/catalogRows.ts](../test/fixtures/catalogRows.ts) |
-| The N1 agent-only-blocked triage pin. | L342-L358 | [railModel.test.ts](railModel.test.ts) |
-| The served builders the projection-joins describe uses (`taskDoc`/`gate`/`lifecycle`/`agentPickup`), and the bases they draw from `snapshot.json`. | L96-L233; L237-L297 | [../test/fixtures/wire.ts](../test/fixtures/wire.ts) |
-| The projection-joins describe itself: the doc/gate/lifecycle/pickup fixtures and the three join cases. | L256-L318 | [railModel.test.ts](railModel.test.ts) |
+| The rail-model functions under test. | `buildRailModel`, `railCycleOrder`, `buildSpawnTree` | dashboard/src/data/railModel.ts:131-205; dashboard/src/data/railModel.ts:208-216; dashboard/src/data/railModel.ts:227-249 |
+| The shared full-wire-shape catalog fixtures, including the multiplexed interaction row. | `catalogRow`, `FLEET`, `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:10-27; dashboard/src/test/fixtures/catalogRows.ts:32-172; dashboard/src/test/fixtures/catalogRows.ts:414-446 |
+| The N1 agent-only-blocked triage pin. | "lists a seat blocked SOLELY on a multiplexed sub-agent approval" | dashboard/src/data/railModel.test.ts:342-358 |
+| The served builders used by the projection-join fixtures. | `taskDoc`, `gate`, `lifecycle`, `agentPickup` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:248-253; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301 |
+| The held-gate join case. | "joins HELD gates by leafKey only while undecided (R13)" | dashboard/src/data/railModel.test.ts:274-278 |
+| The two-state brief-column join case. | "brief column is TWO-state: pending while unacknowledged, gone otherwise — never a tri-state" | dashboard/src/data/railModel.test.ts:293-304 |
+| The critical-bus join case. | "critical bus = age ≥ ttl·0.8 or escalated check-chat (F11)" | dashboard/src/data/railModel.test.ts:306-317 |
 
 ## Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-08-01T09:32+02:00 — 260731-EFA-L4 curator: the Invariants section claimed the whole suite was
   "Pure-logic suite over `test/fixtures/catalogRows.ts` (`catalogRow`/`FLEET`)", which the diff
-  against `abc7cbc` made incomplete — the **projection joins** describe (L256-L318) now builds its
+  against `abc7cbc` made incomplete — the **projection joins** describe
+  (cit:(["projection joins"], dashboard/src/data/railModel.test.ts:256-318)) now builds its
   nodes with `test/fixtures/wire.ts`'s `taskDoc`/`gate`/`lifecycle`/`agentPickup` instead of object
   literals closed with `as TaskDocNode` / `as unknown as LifecycleProjection`. Corrected it and
   named which fields are load-bearing at each call site. The behavioral bullets are unchanged
   because I checked the residual data deltas against the consumers rather than assuming them:
   `gate()` now hands the joins `decisions: ["approve","revise"]` where the old literal wrote `[]`,
   and `lifecycle()` gives LC1/LC2 a full served lifecycle (`state: "blocked"`, phase, tokens) where
-  the old cast gave them only an `id` — but `railModel.ts::heldGatesByLeafKey` (L378-L392) reads
+  the old cast gave them only an `id` — but `railModel.ts::heldGatesByLeafKey`
+  (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:378-392)) reads
   exactly `doc.lifecycleId`, `lifecycles[…].gate` and `gate.state !== "open"`, and never `decisions`
   or any lifecycle field, so R13 still measures undecided-ness by state alone. Likewise the doc
   fixture stopped stating `status`/`stepsDone`/`stepsTotal`/`steps` and now inherits them from the
-  served row, which `qualifiedLeafKey` (`taskIdentity.ts` L64-L70) cannot see — it composes
+  served row, which `qualifiedLeafKey`
+  (cit:([`qualifiedLeafKey`], dashboard/src/data/taskIdentity.ts:64-70)) cannot see — it composes
   `repository`/docPath folder/`id`. Re-anchored the N1 pin from L349-L365 to L342-L358 (the
   conversion shortened the file by 7 lines, so the old range no longer contained the case) and added
   rows for the builders and the joins describe.

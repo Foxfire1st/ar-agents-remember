@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T20:15+02:00                     |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6` |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ can only ever be added in one place. `VALID_MEMORY_MODES` was previously a hand-
 lifecycle tools rewrite it, and `models.worktree` imports these same aliases for the response
 boundary. One declaration is what turns "a writer emits a value the wire model rejects" into a type
 error at the writer instead of a pydantic `ValidationError` escaping an MCP tool handler that has no
-`except` anywhere on its path. `cleanup: reopened` (written by `tasks/reopen.py`) and
+`except` anywhere on its path. `cleanup: reopened` (written by `worktrees/reopen.py`) and
 `workflow_kind: chat-task` (`worktree_start`'s own documented argument) were both missing from the
 `Literal` the packet validated against.
 
@@ -66,11 +66,11 @@ and `light` the pre-L4 union also carried had no writer at all and were dropped.
 
 ### 260731-EFA-L5 R6: the front matter carries a `schemaVersion`, and it is the durable-store one
 
-`CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION` (L36, documented L37-L46) — imported from
+`CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION` cit:(["CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION"], mcp/src/agents_remember/worktrees/worktree_contract.py:37-37) — imported from
 `controlplane/durable_store.py`, not declared here. `contract_to_text` emits
 `schemaVersion: {CONTRACT_SCHEMA_VERSION}` as the second front-matter line, directly under `schema:`
-(L696). The read side is `_require_supported_schema_version(data, contract_path)` (L883-L896),
-called by `_contract_from_data` immediately after the `schema` check (L904), and it delegates the
+cit:([`contract_to_text`], mcp/src/agents_remember/worktrees/worktree_contract.py:691-742). The read side is cit:([`_require_supported_schema_version`], mcp/src/agents_remember/worktrees/worktree_contract.py:883-896),
+called by `_contract_from_data` cit:([`_contract_from_data`], mcp/src/agents_remember/worktrees/worktree_contract.py:976-1047) immediately after the `schema` check, and it delegates the
 policy to the same `schema_version_supported` the JSONL records use.
 
 **Two version fields answering two questions.** `schema: ar-series-contract/v1` names the *document
@@ -316,7 +316,7 @@ contract files human-readable without introducing a general YAML dependency.
 
 No external documentation is needed for this local contract format.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation is needed for the local worktree contract parser. | n/a | n/a |
 
@@ -324,36 +324,43 @@ No external documentation is needed for this local contract format.
 
 Same-repository source defines the contract format and `c-09-git-worktree-manager` skill uses it.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The front matter's `schemaVersion`: the constant reused from the durable-store contract, the line `contract_to_text` emits, and the read-side refusal `_contract_from_data` calls right after the `schema` check. | `CONTRACT_SCHEMA_VERSION` L36-L46; emitted L696; `_require_supported_schema_version` L883-L896; called L904 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The single version policy both this file and the six control-plane JSONL stores read through — unknown major rejected, unknown minor accepted, an unparseable version rejected. | `SCHEMA_VERSION`; `SUPPORTED_SCHEMA_MAJOR`; `schema_version_supported` | [controlplane/durable_store.py](agents-remember/mcp/src/agents_remember/controlplane/durable_store.py) |
-| The module defines the contract schema, the six vocabulary `Literal`s and their derived `VALID_*` / `DEFAULT_*` constants, the `ContractError` type (subclassing `AgentsRememberError` from `agents_remember.errors`), the total reader `_vocabulary_cell` with `_scalar` / `_memory_mode_fallback` / `_task_vocabulary`, the `ContractCells` record with `amend_contract`, and the full `WorktreeContract` state record ending in `unknown_cells`. | L35-L286 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths; both constructors narrow the request through `_task_vocabulary`. | L335-L434 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Contract WRITE paths normalize legacy leaf ids to canonical doc ids when the leaf-ref resolver can prove the mapping; `load_contract` performs no normalization at all. | load_contract, normalize_contract_leaf_id | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| `heal_contract_leaf_ids` sweeps the active leaf-enclosure population once, cheap-skips canonical ids via a per-root doc-id index, rewrites only changed contracts, and reports every rewrite and error. | heal_contract_leaf_ids | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| Dedicated leaf-ref resolver supplies canonical doc ids, legacy alias policy, and the heal's bounded per-task-root doc-id index (`canonical_leaf_doc_ids`). | n/a | [leaf_refs.py](agents-remember/mcp/src/agents_remember/worktrees/leaf_refs.py) |
-| The `heal-leaf-ids` CLI subcommand (`--coordination-root`, `--dry-run`) is the deliberate invocation seam for the heal. | command_heal_leaf_ids | [modules/cli.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cli.py) |
-| Walk-free load tripwires, heal parity with the removed read-time normalization, idempotence, dry-run, error tolerance, and the CLI seam are pinned by the resolver test suite. | n/a | [test_leaf_ref_resolution.py](agents-remember/mcp/tests/test_leaf_ref_resolution.py) |
-| Load/write/render helpers: `load_contract` (which logs the quarantined cells and passes `path=` to validation), `write_contract`, the heal, and the section renderers through `contract_to_text`. | L437-L742 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`. | L745-L1011 | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py) |
-| `WorktreeSummary` imports `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` from here for the response boundary. | n/a | [models/worktree.py](agents-remember/mcp/src/agents_remember/models/worktree.py) |
-| `WorktreeStatusFacts` imports the same six and reports `unknown_cells` as `unknown_contract_cells`. | n/a | [modules/guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py) |
-| `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | n/a | [modules/start_contract.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start_contract.py) |
-| Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. | n/a | [test_wire_vocabulary_exhaustiveness.py](agents-remember/mcp/tests/test_wire_vocabulary_exhaustiveness.py) |
-| The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | n/a | [modules/overview.md](agents-remember/mcp/src/agents_remember/worktrees/modules/overview.md) |
+| The front matter's `schemaVersion`: the constant reused from the durable-store contract, the line `contract_to_text` emits, and the read-side refusal `_contract_from_data` calls right after the `schema` check. | "CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION"; `_require_supported_schema_version` | mcp/src/agents_remember/worktrees/worktree_contract.py:37-37; mcp/src/agents_remember/worktrees/worktree_contract.py:883-896 |
+| The single version policy both this file and the six control-plane JSONL stores read through — unknown major rejected, unknown minor accepted, an unparseable version rejected. | `SCHEMA_VERSION`; `SUPPORTED_SCHEMA_MAJOR`; `schema_version_supported` | mcp/src/agents_remember/controlplane/durable_store.py:45-45; mcp/src/agents_remember/controlplane/durable_store.py:55-55; mcp/src/agents_remember/controlplane/durable_store.py:224-245 |
+| The module defines the contract schema, the six vocabulary `Literal`s and their derived `VALID_*` / `DEFAULT_*` constants, the `ContractError` type (subclassing `AgentsRememberError` from `agents_remember.errors`), the total reader `_vocabulary_cell` with `_scalar` / `_memory_mode_fallback` / `_task_vocabulary`, the `ContractCells` record with `amend_contract`, and the full `WorktreeContract` state record ending in `unknown_cells`. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-287 |
+| Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths; both constructors narrow the request through `_task_vocabulary`. | `_task_vocabulary` | mcp/src/agents_remember/worktrees/worktree_contract.py:163-180 |
+| Contract WRITE paths normalize legacy leaf ids to canonical doc ids when the leaf-ref resolver can prove the mapping; `load_contract` performs no normalization at all. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:438-471 |
+| `heal_contract_leaf_ids` sweeps the active leaf-enclosure population once, cheap-skips canonical ids via a per-root doc-id index, rewrites only changed contracts, and reports every rewrite and error. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:480-555 |
+| Dedicated leaf-ref resolver supplies canonical doc ids, legacy alias policy, and the heal's bounded per-task-root doc-id index (`canonical_leaf_doc_ids`). | `canonical_leaf_doc_ids` | mcp/src/agents_remember/worktrees/leaf_refs.py:150-160 |
+| The `heal-leaf-ids` CLI subcommand (`--coordination-root`, `--dry-run`) is the deliberate invocation seam for the heal. | "heal-leaf-ids" | mcp/src/agents_remember/worktrees/modules/cli.py:147-147 |
+| Walk-free load tripwires, heal parity with the removed read-time normalization, idempotence, dry-run, error tolerance, and the CLI seam are pinned by the resolver test suite. | `LeafRefResolutionTests` | mcp/tests/test_leaf_ref_resolution.py:103-464 |
+| Load/write/render helpers: `load_contract` (which logs the quarantined cells and passes `path=` to validation), `write_contract`, the heal, and the section renderers through `contract_to_text`. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:691-742 |
+| The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`. | `_contract_vocabularies`; `validate_contract`; `_extract_front_matter`; `_contract_from_data` | mcp/src/agents_remember/worktrees/worktree_contract.py:745-760; mcp/src/agents_remember/worktrees/worktree_contract.py:763-818; mcp/src/agents_remember/worktrees/worktree_contract.py:821-834; mcp/src/agents_remember/worktrees/worktree_contract.py:976-1047 |
+| `WorktreeSummary` imports `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` from here for the response boundary. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:36-74 |
+| `WorktreeStatusFacts` imports the same six and reports `unknown_cells` as `unknown_contract_cells`. | `WorktreeStatusFacts` | mcp/src/agents_remember/worktrees/modules/guidance.py:99-136 |
+| `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211 |
+| Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. | `ContractBoundaryTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:922-1222 |
+| The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | `# mcp/src/agents_remember/worktrees/modules Overview` | onboarding/mcp/src/agents_remember/worktrees/modules/overview.md:1-762 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is documented here; the contract points at
 external memory paths, but the parser and renderer are same-repository code.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
 ## Update History
 
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: rebased the `CONTRACT_SCHEMA_VERSION`
+  citations to the assignment line, deduplicated the version-policy row, and regenerated ranges
+  via the scoped fixer; exact non-fixing check returns zero findings.
+
+- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 15 citation claims and preserved verification metadata.
+
+- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass): **the version-policy row cited
   three symbols and covered none of them.** It read `SCHEMA_VERSION` L134-L142;
   `SUPPORTED_SCHEMA_MAJOR` L144; `schema_version_supported` L339-L348 into `durable_store.py`. That
@@ -365,16 +372,15 @@ external memory paths, but the parser and renderer are same-repository code.
   new locations: `schema_version_supported` compares the major for **equality** with
   `SUPPORTED_SCHEMA_MAJOR` (not `<=`) and rejects an unparseable version, which is exactly the
   "unknown major rejected, unknown minor accepted" policy this file imports. The sibling row into
-  this module's own source was re-read and is correct: `CONTRACT_SCHEMA_VERSION` L36-L46 (assignment
-  L36), emitted L696 (`f"schemaVersion: {CONTRACT_SCHEMA_VERSION}"`),
-  `_require_supported_schema_version` L883-L896 (`def` L883), called L904. No other change; nothing
+  this module's own source was re-read and is correct: `CONTRACT_SCHEMA_VERSION` cit:(["CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION"], mcp/src/agents_remember/worktrees/worktree_contract.py:37-37) (assignment), emitted cit:([`contract_to_text`], mcp/src/agents_remember/worktrees/worktree_contract.py:691-742),
+  `_require_supported_schema_version` cit:([`_require_supported_schema_version`], mcp/src/agents_remember/worktrees/worktree_contract.py:883-896), called cit:([`_contract_from_data`], mcp/src/agents_remember/worktrees/worktree_contract.py:976-1047). No other change; nothing
   on this card asserts a measured figure.
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: the series contract's front matter gained
   `schemaVersion`, and the card now records the three-case rule and the boundary it belongs to.
-  Added a section for it: `CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION` (L36, imported from
+  Added a section for it: `CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION` cit:(["CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION"], mcp/src/agents_remember/worktrees/worktree_contract.py:37-37) (imported from
   `controlplane/durable_store.py` rather than declared here), emitted as the second front-matter
-  line by `contract_to_text` (L696), and enforced on read by `_require_supported_schema_version`
-  (L883-L896) which `_contract_from_data` calls straight after the `schema` check (L904) and which
+  line by `contract_to_text` cit:([`contract_to_text`], mcp/src/agents_remember/worktrees/worktree_contract.py:691-742), and enforced on read by `_require_supported_schema_version`
+  cit:([`_require_supported_schema_version`], mcp/src/agents_remember/worktrees/worktree_contract.py:883-896) which `_contract_from_data` cit:([`_contract_from_data`], mcp/src/agents_remember/worktrees/worktree_contract.py:976-1047) calls straight after the `schema` check and which
   delegates to the same `schema_version_supported` the JSONL records use. **Stated the one
   distinction this file makes it easy to get wrong**: this is a *document-level* refusal, joining
   absent front matter and an unrecognized `schema` — it is not a vocabulary cell and does not

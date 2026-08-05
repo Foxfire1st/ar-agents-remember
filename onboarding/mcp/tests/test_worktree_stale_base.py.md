@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_stale_base.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -55,13 +55,14 @@ with a `SimpleNamespace` context because it only reads
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The preflight and template under test. | [start.py](agents-remember/mcp/src/agents_remember/worktrees/modules/start.py) |
-| Freshness states come from the shared kernel (unit-tested separately). | [test_git_freshness.py](agents-remember/mcp/tests/test_git_freshness.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The preflight and template under test. | `_stale_base_preflight`, `prepare_memory_for_start` | mcp/src/agents_remember/worktrees/modules/start.py:326-367; mcp/src/agents_remember/worktrees/modules/start.py:906-944 |
+| Freshness states come from the shared kernel (unit-tested separately). | `GitFreshnessTests` | mcp/tests/test_git_freshness.py:20-104 |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 4 citations (citation_anchor_missing=2, citation_prose_not_in_cit_form=0, citation_source_malformed=2); final scoped citation check clean.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. The `make_contract`
   fixture was reshaped: it no longer takes `code_repo`/`memory_repo`/`code_base_commit`/
   `memory_base_commit` as four independent keywords but a new module-level frozen `RepoSide`

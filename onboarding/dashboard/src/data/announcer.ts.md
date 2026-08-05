@@ -30,7 +30,7 @@ subscribes to `sessionStore` and releases the subscription when the final consum
 
 ### Plural Pending Suppression (Review N1)
 
-The focused-seat awaiting-input suppression (L66-L75) now derives from
+The focused-seat awaiting-input suppression cit:(["export function announcePolite"], dashboard/src/data/announcer.ts:33-33) now derives from
 `sessions.ts`'s `sessionHasPendingInteraction(session)` — the singular parent slot OR a non-empty
 multiplexed sub-agent list — instead of reading only `controlPendingInteraction`. The InteractionBar
 announces EVERY pending payload (multiplexed agent entries included), so the region must stay
@@ -59,25 +59,25 @@ payload arrive on separate poll beats, the watcher and `InteractionBar` can both
 No relevant external documentation was available; the resolved source registry configures no
 Domain Documentation sources.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No external domain citation applies to this same-repository announcement seam. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Store, transition detector, and refcounted watcher. | L1-L112 | [announcer.ts](announcer.ts) |
-| The ANY-pending derivation (N1) the focused-seat suppression now uses. | L448-L461 | [sessions.ts](sessions.ts) |
-| Exact announcement copy and sequencing coverage. | L35-L79 | [announcer.test.ts](announcer.test.ts) |
-| The N1 agent-only-blocked pin: unfocused speaks seat-level, focused stays silent (the bar announces every pending payload). | L119-L141 | [announcer.test.ts](announcer.test.ts) |
-| Permanent DOM regions consuming both channels. | L1-L44 | [../panels/session-cockpit/CockpitLiveRegions.tsx](../panels/session-cockpit/CockpitLiveRegions.tsx) |
+| Store, transition detector, and refcounted watcher. | "export function announcePolite" | dashboard/src/data/announcer.ts:33-33 |
+| The ANY-pending derivation (N1) the focused-seat suppression now uses. | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
+| Exact announcement copy and sequencing coverage. | "SetResult arrival strings" | dashboard/src/data/announcer.test.ts:36-52 |
+| The N1 agent-only-blocked pin: unfocused speaks seat-level, focused stays silent (the bar announces every pending payload). | "promotion + assertive state strings" | dashboard/src/data/announcer.test.ts:54-60 |
+| Permanent DOM regions consuming both channels. | "export function CockpitLiveRegions" | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-19 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
@@ -89,6 +89,10 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the superseded `(L…)`
+  prose citation and the `n/a` rows with exact anchors and fixer-generated ranges; exact
+  non-fixing check returns zero findings.
 
 - 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the fix-round review-N1 plural pending
   suppression. The focused-seat awaiting-input skip now derives from

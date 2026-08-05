@@ -39,27 +39,28 @@ instead of inventing subtly incompatible payloads per suite.
 
 No Domain Documentation source is configured for this repository.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured live domain-documentation source was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle algebra defines the vocabulary represented here. | — | [../../data/submitMachine.ts](../../data/submitMachine.ts) |
-| The frontend authority client consumes the public status and withdrawal shapes. | — | [../../data/submissionLifecycleClient.ts](../../data/submissionLifecycleClient.ts) |
+| The lifecycle algebra defines the vocabulary represented here. | `SubmitPhase` | dashboard/src/data/submitMachine.ts:22-36 |
+| The frontend authority client consumes the public status and withdrawal shapes. | `SubmissionStatusWire`, `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:22-29; dashboard/src/data/submissionLifecycleClient.ts:40-46 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | Fixtures are internal to this repository's dashboard tests. | — | — |
 
 ## Update History
 
+- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 4 citations (citation_anchor_missing=2, citation_prose_not_in_cit_form=0, citation_source_malformed=2); final scoped citation check clean.
 - 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5; documented the shared normalized scenario
   vocabulary and its explicit correlation/privacy boundaries. Verification metadata remains pinned
   to the leaf base until closeout.

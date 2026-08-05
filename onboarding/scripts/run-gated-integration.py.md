@@ -6,8 +6,8 @@
 | path                   | `scripts/run-gated-integration.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -119,15 +119,17 @@ starts.
 
 ## Repo-Internal References
 
-| Finding | Source Path |
-| --- | --- |
-| The eight registered markers, each naming its opt-in variable and the test file it decorates. | [pyproject.toml](agents-remember/pyproject.toml) |
-| The two credential-free jobs, both calling this script with `--require-passed`. | [integration-gated.yml](agents-remember/.github/workflows/integration-gated.yml) |
-| The inventory test: every marker is applied, every marker has a runner entry, `ci-safe` is exactly the two CI paths, and the dry-run node exists. | [test_gated_integration_runner.py](agents-remember/mcp/tests/test_gated_integration_runner.py) |
-| The Pi RPC smoke suite this runner installs and drives offline. | [test_pi_rpc_real_smoke.py](agents-remember/mcp/tests/test_pi_rpc_real_smoke.py) |
-| The real-MCP class whose planning test the generated settings file serves. | [test_tools.py](agents-remember/mcp/tests/test_tools.py) |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The eight opt-in integration markers, each naming its opt-in variable and the test file it decorates. | "ar_run_pi_rpc_smoke:"; "ar_run_control_plane_installed:"; "ar_run_control_installed:"; "ar_run_evidence_installed:"; "ar_claude_stream_smoke:"; "ar_codex_app_server_live_smoke:"; "ar_codex_app_server_live_conformance:"; "agents_remember_real_mcp_config:" | pyproject.toml:196-202; pyproject.toml:204-204 |
+| The Pi RPC smoke job calls this script with its `--require-passed 3` guard. | "Run the Pi RPC smoke"; "python scripts/run-gated-integration.py ar-run-pi-rpc-smoke --require-passed 3" | .github/workflows/integration-gated.yml:75-76 |
+| The real-MCP planning job calls this script with its dry-run and `--require-passed 1` guards. | "Run the real MCP stdio integration (planning path)"; "python scripts/run-gated-integration.py agents-remember-real-mcp-config"; "--dry-run-only --require-passed 1" | .github/workflows/integration-gated.yml:109-109; .github/workflows/integration-gated.yml:111-112 |
+| The inventory test: every marker is applied, every marker has a runner entry, `ci-safe` is exactly the two CI paths, and the dry-run node exists. | `GatedPathInventoryTests` | mcp/tests/test_gated_integration_runner.py:86-154 |
+| The Pi RPC smoke suite this runner installs and drives offline. | `install_pinned_pi`; `PiRpcRealSmokeTests` | mcp/tests/test_pi_rpc_real_smoke.py:52-83; mcp/tests/test_pi_rpc_real_smoke.py:236-499 |
+| The real-MCP class whose planning test the generated settings file serves. | `RealMcpIntegrationTests`; `test_real_mcp_grepai_search_dry_run_uses_workspace_scope` | mcp/tests/test_tools.py:834-914 |
 
 ## Update History
+- 2026-08-04T14:01:47+02:00 — 260731-EFA-L6 S18-B01 second same-reviewer residual correction: split the eight opt-in markers from the Pi and real-MCP workflow jobs under the adversarial verdict, then the exact scoped fixer/check passed.
 
 - 2026-07-31T16:10+02:00 — Created for 260731-EFA-L2 (requirement L2-R8). Records the one
   command per gated path, the `CI_SAFE`/`LOCAL_ONLY` split and what each side needs, the

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,28 +52,29 @@ None; later behavior belongs to the owned child modules and focused services.
 
 No Domain Documentation source is configured for this internal package facade.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The root function installs the one runtime and mounts the composed router once. | L22-L32 | [router.py](agents-remember/mcp/src/agents_remember/serving/conversation/router.py) |
-| The two re-exported request dependencies are the child-facing consumption seam. | L21-L36 | [dependencies.py](agents-remember/mcp/src/agents_remember/serving/conversation/dependencies.py) |
-| The foundation test requires one stable inclusion seam. | L50-L62 | [test_conversation_foundation.py](agents-remember/mcp/tests/test_conversation_foundation.py) |
+| The root function installs the one runtime and mounts the composed router once. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
+| The two re-exported request dependencies are the child-facing consumption seam. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
+| The foundation test requires one stable inclusion seam. | `test_global_registration_has_one_stable_inclusion_seam` | mcp/tests/test_conversation_foundation.py:110-122 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this repository-local facade.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
 
+- 2026-08-03T02:51:52+02:00 — W3-B01 curator: curated 3 Repo-Internal table citations with exact router, dependency, and foundation-test anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the facade's new re-exports —
   `ConversationRuntime`, `get_conversation_runtime`, and `resolve_conversation_authorization` —
   beside the unchanged registration seam. Verification metadata remains pinned until closeout

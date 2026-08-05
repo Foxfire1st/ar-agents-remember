@@ -54,28 +54,30 @@ No open file-local todos.
 
 No external documentation is needed for this repository-local test.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests load `scripts/sync-runtime.py` from the repository root despite its hyphenated filename. | L11-L21 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
-| The diff test verifies missing, extra, and changed file reporting. | L24-L46 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
-| The sync test verifies target replacement and cache-directory ignore behavior. | L48-L71 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
-| The target-boundary test verifies default targets are package-data-only and exclude harness starter package folders. | L73-L85 | [mcp/tests/test_sync_runtime.py](agents-remember/mcp/tests/test_sync_runtime.py) |
+| The tests load `scripts/sync-runtime.py` from the repository root despite its hyphenated filename. | `load_sync_runtime` | mcp/tests/test_sync_runtime.py:13-20 |
+| The diff test verifies missing, extra, and changed file reporting. | `test_diff_reports_missing_extra_and_changed_files` | mcp/tests/test_sync_runtime.py:24-45 |
+| The sync test verifies target replacement and cache-directory ignore behavior. | `test_sync_target_replaces_target_with_source_tree` | mcp/tests/test_sync_runtime.py:47-70 |
+| The target-boundary test verifies default targets are package-data-only and exclude harness starter package folders. | `test_default_targets_only_write_to_mcp_package_data` | mcp/tests/test_sync_runtime.py:72-84 |
 
 ## Cross-Repo References
 
 No sibling repository evidence is needed for this test module.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-04T18:43+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 4 citation rows with exact anchors (`load_sync_runtime` + `SCRIPT_PATH` extent and the three named test functions) and ledger-verified ranges. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
   `mcp/tests/test_sync_runtime.py` and moved the lines this card cites, so the Citations column no

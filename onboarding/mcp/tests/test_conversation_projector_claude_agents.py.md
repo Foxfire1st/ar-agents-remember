@@ -34,7 +34,7 @@ run_in_background, subagent_type}`, and sidechain `tool_result` content crosses 
 string while the parent-carried Agent result keeps list content). Each test drives a
 distinct vendor session id so the session-keyed binding registry never leaks across cases.
 
-`ClaudeAgentLifecycleTests` (L219-L466) maps frames directly through
+cit:([`ClaudeAgentLifecycleTests`], mcp/tests/test_conversation_projector_claude_agents.py:219-466) maps frames directly through
 `claude.map_evidence_frame`: the full lifecycle (spawn tool_use → `task_started` →
 sidechain user/assistant/tool-cycle → `task_progress` → `task_notification` → Agent
 tool_result) binds identity and upserts one roster row.
@@ -60,7 +60,7 @@ silently. `background_tasks_changed` registers an unknown task once — the rich
 authority owns the row afterward, and a late `task_started` still binds the join key onto
 the same row; an empty task set reconciles nothing.
 
-`ClaudeLaunchFlagTests` (L469-L491) pin the fail-closed `--forward-subagent-text` floor
+cit:([`ClaudeLaunchFlagTests`], mcp/tests/test_conversation_projector_claude_agents.py:469-491) pin the fail-closed `--forward-subagent-text` floor
 (fix-round finding 8): the flag is emitted only when the caller proved the floor
 (`forward_subagent_text=True`), never by default and never duplicated;
 `forward_subagent_text_supported` accepts 2.1.220/2.2.0 and refuses 2.1.219 and below,
@@ -91,29 +91,33 @@ residual N3): below-floor or unparseable installs run without sub-agent text for
 No Domain Documentation source is configured; the frame shapes are probe-locked against
 the installed claude runtime as recorded in the module docstring.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The claude mapper under test: sidechain binding registry, task_* roster grammar, unknown-vendor degrade. | L32-L32 | [projectors/claude.py](agents-remember/mcp/src/agents_remember/serving/conversation/projectors/claude.py) |
-| The launch-flag builder and floor verdict under test. | L23-L26 | [claude_stream_protocol.py](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) |
-| The reordered-binder engine companion (tool_result settling before task_started keeps the terminal phase). | L982-L1050 | [test_conversation_active_service.py](agents-remember/mcp/tests/test_conversation_active_service.py) |
-| The flag-floor probe/relaunch flow at the adapter level. | L466-L510 | [test_harness_control_claude.py](agents-remember/mcp/tests/test_harness_control_claude.py) |
+| The claude mapper under test: sidechain binding registry, task_* roster grammar, unknown-vendor degrade. | `_AgentBindingRegistry` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:122-159; mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-210; mcp/src/agents_remember/serving/conversation/projectors/claude.py:286-299 |
+| The launch-flag builder and floor verdict under test. | `forward_subagent_text_supported` | mcp/src/agents_remember/serving/claude_stream_protocol.py:77-114 |
+| The reordered-binder engine companion (tool_result settling before task_started keeps the terminal phase). | `test_reordered_task_started_tagging_never_regresses_a_terminal_phase` | mcp/tests/test_conversation_active_service.py:982-1053 |
+| The flag-floor probe/relaunch flow at the adapter level. | `test_forward_subagent_text_relaunches_with_the_flag_at_or_above_the_floor` | mcp/tests/test_harness_control_claude.py:471-496 |
 
 ## Cross-Repo References
 
 No neighboring repository participates; the vendor boundary is the installed claude
 stream-json runtime probed live during implementation.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 4 citation rows (mapper
+  registry/grammar ranges, floor verdict + argv builder 77-114, the reordered-binder engine
+  companion 982-1053, the adapter floor flow 471-496). Zero findings remain.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep.
   `test_full_lifecycle_binds_identity_and_upserts_roster` was too complex for the tightened

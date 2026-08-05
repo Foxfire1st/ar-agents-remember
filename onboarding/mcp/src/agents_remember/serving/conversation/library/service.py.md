@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
+| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ None.
 
 No Domain Documentation source is configured for this internal orchestration service.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation was available. | — | — |
 
@@ -64,21 +64,22 @@ No Domain Documentation source is configured for this internal orchestration ser
 The dormant port protocol this service orchestrates is fixed by the parent contract; the ASGI
 suite drives the service through the real FastAPI composition with doubled native boundaries.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The dormant library port defines scoped list, historical read, and server-private resume-target resolution. | L59-L84 | [ports.py](agents-remember/mcp/src/agents_remember/serving/conversation/ports.py) |
-| List/read routes return wire pages, narrow scope, and map capability/cursor/store refusals to exact statuses. | L323-L432 | [test_conversation_library_api.py](agents-remember/mcp/tests/test_conversation_library_api.py) |
-| The per-app `LibraryShared` bundle and caller-bound builders construct this service. | L127-L159 | [factories.py](agents-remember/mcp/src/agents_remember/serving/conversation/library/factories.py) |
+| The dormant library port defines scoped list, historical read, and server-private resume-target resolution. | `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/ports.py:59-84 |
+| List/read routes return wire pages, narrow scope, and map capability/cursor/store refusals to exact statuses. | `test_list_route_returns_wire_page_and_authorizes_scope` | mcp/tests/test_conversation_library_api.py:345-358 |
+| The per-app `LibraryShared` bundle and caller-bound builders construct this service. | `LibraryShared` | mcp/src/agents_remember/serving/conversation/library/factories.py:53-60 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local orchestration service.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 2 citation claims; scoped result 0 findings.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the list/read re-authorization
   service sidecar. Verification is blank until closeout commits and stamps the new source.

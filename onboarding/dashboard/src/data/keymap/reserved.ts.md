@@ -29,7 +29,7 @@ string.
 
 ### Logic
 
-- `PTY_RESERVED` (L62-L150): four BOUND chords — `ctrl+;` → `palette.open`, `F6` →
+- cit:([`PTY_RESERVED`], dashboard/src/data/keymap/reserved.ts:62-150): four BOUND chords — `ctrl+;` → `palette.open`, `F6` →
   `focus.exitToChrome`, `ctrl+alt+pageup` → `session.prev`, `ctrl+alt+pagedown` → `session.next`
   — plus two reserved-but-UNBOUND clipboard slots (`ctrl+c (with selection)` →
   `clipboard.copySelection`, `ctrl+shift+c` → `clipboard.copy`) that ride along as data for the
@@ -39,12 +39,11 @@ string.
   string, and a structural `match` (`ChordMatch`: accepted `key` values case-insensitively OR
   `code` values for layout robustness — `ctrl+;` matches `code: Semicolon` even on layouts where
   the key face differs, e.g. German `ö`).
-- `matchReservedChord(ev)` (L193-L199) is the PTY zone's single gate: returns the matching BOUND
+- `matchReservedChord(ev)` (cit:([`matchReservedChord`; `matches`], dashboard/src/data/keymap/reserved.ts:204-212; dashboard/src/data/keymap/reserved.ts:218-224)) is the PTY zone's single gate: returns the matching BOUND
   reserved chord or `null`; null means the event belongs to the hosted harness (passthrough), no
   exceptions. Modifier flags must match exactly; key OR code may match.
-- `BROWSER_FORBIDDEN` (L153-L177): the chords no zone may EVER bind because browsers reserve them
-  non-preventably (ctrl+w/t/n, ctrl+tab, ctrl+1..9, alt+f4, f11, …) — asserted against
-  `PTY_RESERVED` by `zones.test.ts`.
+- cit:([`BROWSER_FORBIDDEN`], dashboard/src/data/keymap/reserved.ts:153-202): the chords no zone may EVER bind because browsers reserve them
+  non-preventably (ctrl+w/t/n, ctrl+tab, ctrl+1..9, alt+f4, f11, …).
 
 ### The R6 chord replacement (the header comment, L13-L18)
 
@@ -86,19 +85,17 @@ The curator checked the memory repository's `system/sources.md`; no Domain Docum
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | `system/sources.md` checked | — |
+| No configured Domain Documentation source exists for this file. | — | — |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The reserved set, verification records, replacement notes, and the single PTY gate. | L62-L199 | [reserved.ts](reserved.ts) |
-| `routeKey("pty", …)` defers entirely to `matchReservedChord`. | L54-L58 | [zones.ts](zones.ts) |
-| The tinykeys binding installs only bound entries and re-checks `routeKey` before intercepting. | L54-L64 | [../../panels/session-cockpit/useKeyboardZones.ts](../../panels/session-cockpit/useKeyboardZones.ts) |
-| The `?` reference page renders this set verbatim (bound + reserved-unbound rows). | L195-L205 | [../../panels/session-cockpit/CommandPalette.tsx](../../panels/session-cockpit/CommandPalette.tsx) |
-| The hygiene suite: five-source records, bound-must-be-clear, no bare Esc, no browser-forbidden chord. | L84-L111 | [zones.test.ts](zones.test.ts) |
+| The reserved set, browser-forbidden records, and the single PTY matching gate. | `PTY_RESERVED`; `BROWSER_FORBIDDEN`; `matchReservedChord`; `matches` | dashboard/src/data/keymap/reserved.ts:62-150; dashboard/src/data/keymap/reserved.ts:218-224; dashboard/src/data/keymap/reserved.ts:204-212; dashboard/src/data/keymap/reserved.ts:153-202 |
+| `routeKey("pty", …)` defers entirely to `matchReservedChord`. | `matchReservedChord` | dashboard/src/data/keymap/zones.ts:54-58 |
+| The tinykeys binding installs only bound entries. | "if (!reserved.bound"; "!reserved.tinykeys) continue;"; "add(reserved.tinykeys, (event) => {" | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:62-63 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -112,11 +109,15 @@ leaf base; closeout owns commit stamping.
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No applicable cross-repository source was found. | Import and task-boundary review | — |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: deleted the unsupported reference-page and
+  hygiene-suite rows, rebound the surviving PTY gate/reserved-set/modifier/bound-entry claims to exact
+  source owners, and completed the bound-entry whole-claim audit.
 
 - 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
   source/test/task evidence; no Domain Documentation source is configured.

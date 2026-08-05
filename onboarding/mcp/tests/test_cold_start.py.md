@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cold_start.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T20:52+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
+| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,51 +35,57 @@ half, and it runs in-process against corrupted *copies*.
 ### Logic
 
 **Nothing in this file may import `agents_remember.models.tokens` at module scope, and that rule is
-load-bearing enough that the docstring spends a paragraph on it (L23-L31).** That module builds
-`DEFAULT_TOKEN_COUNTER` at import, so a module-scope import runs the load under test inside the
-*parent* pytest process, during collection, before any assertion exists to see what it did — and
+load-bearing enough that the docstring spends a paragraph on it —
+cit:([`DEFAULT_TOKEN_COUNTER`, `tokens_module`], mcp/tests/test_cold_start.py:24-24; mcp/tests/test_cold_start.py:160-169).** That module
+builds `DEFAULT_TOKEN_COUNTER` at import, so a module-scope import runs the load under test inside
+the *parent* pytest process, during collection, before any assertion exists to see what it did — and
 the parent has network and a writable checkout, which is exactly the pair of conditions this guard
 asserts the absence of. It cost the file its teeth once already: with the load happening at
 collection, `tiktoken.load.read_file_cached` met the mismatching bytes first, deleted the vendored
 file, re-downloaded it into the package directory, and every test reported green. Every test that
-needs the module now calls `tokens_module()` (L160-L169), a helper wrapping
-`importlib.import_module("agents_remember.models.tokens")` — `importlib` rather than a
+needs the module now calls cit:([`tokens_module`], mcp/tests/test_cold_start.py:160-169), a helper
+wrapping `importlib.import_module("agents_remember.models.tokens")` — `importlib` rather than a
 function-level `import` statement because PLC0415 forbids the latter and there is no per-file
-ignore. The only module-scope import from the package is `TokenizerVocabularyError` (L72), which
+ignore. The only module-scope import from the package is cit:([`TokenizerVocabularyError`], mcp/tests/test_cold_start.py:72-72), which
 carries no import-time load.
 
 **The cold-start assertions must run in a subprocess, and that is the second thing shaping this
-file.** The docstring states it (L11-L21): tiktoken memoizes loaded encodings in
-`tiktoken.registry.ENCODINGS`, and any earlier test in the session has already populated it.
-In-process, the load under test would be a dictionary hit that never touches the disk — let alone
-the network — and the assertion would pass against a package that ships no vocabulary at all. Do
+file.** The docstring states it —
+cit:([`ENCODINGS`, `TIKTOKEN_CACHE_DIR`], mcp/tests/test_cold_start.py:11-21): tiktoken memoizes
+loaded encodings in `tiktoken.registry.ENCODINGS`, and any earlier test in the session has already
+populated it. In-process, the load under test would be a dictionary hit that never touches the disk
+— let alone the network — and the assertion would pass against a package that ships no vocabulary
+at all. Do
 not "simplify" those tests into the parent process; doing so makes them vacuous without making
 them fail.
 
-The subprocess's other job is cold caches. `run_cold_start_probe()` (L172-L196) points
+The subprocess's other job is cold caches —
+cit:([`run_cold_start_probe`], mcp/tests/test_cold_start.py:172-196) points
 `TIKTOKEN_CACHE_DIR`, `DATA_GYM_CACHE_DIR`, `TMPDIR` and `HOME` at one empty directory, so every
 place tiktoken looks — including its default `<tmpdir>/data-gym-cache` — is empty. Pointing the
 *operator* variable at a cold directory is deliberate: it also proves the package's own vendored
 copy wins over an exported one that would send the load back to the network. `PYTHONPATH` is set to
 this checkout's `mcp/src` so the child imports the tree under test.
 
-`PROBE` (L98-L157) is the child script, and it closes the network before importing anything it is
+cit:([`PROBE`], mcp/tests/test_cold_start.py:98-157) is the child script, and it closes the network before importing anything it is
 testing. It replaces `socket.socket.connect`, `connect_ex`, `socket.create_connection`,
-`getaddrinfo` and `gethostbyname` with a raiser (L119-L123) rather than replacing the
+`getaddrinfo` and `gethostbyname` with a raiser —
+cit:([`_blocked`], mcp/tests/test_cold_start.py:119-123) — rather than replacing the
 `socket.socket` class itself, because replacing the class breaks unrelated imports that subclass
-it. It then *proves the block took effect* (L126-L131) — a block that silently did not take would
+it. It then *proves the block took effect*
+cit:(["the network block did not take effect; the run proves nothing"], mcp/tests/test_cold_start.py:126-131) — a block that silently did not take would
 make every assertion below vacuous — and only then imports `create_server` and
 `DEFAULT_TOKEN_COUNTER`, builds a server, and prints the server name, tokenizer name, exactness and
 the token count for a fixed payload as JSON.
 
-`ColdStartTests` (L199-L218) reads that JSON. L200-L205 asserts the child exited zero and the
+cit:([`ColdStartTests`], mcp/tests/test_cold_start.py:199-218) reads that JSON. L200-L205 asserts the child exited zero and the
 server is `"Agents Remember"`. L207-L218 asserts the behaviour that must **not** have changed:
 `tokenizer == "tiktoken:o200k_base"`, `exact is True`, and the child's count for `PROBE_PAYLOAD`
 equals the count the parent's `DEFAULT_TOKEN_COUNTER` — reached through `tokens_module()`, not an
 import — produces for the same payload. That comparison is the point of the fixed payload at L96:
 a lazy load with an approximate fallback would pass the start test and fail this one.
 
-`VendoredVocabularyTests` (L221-L331) runs in-process because it tests the loader's own contract,
+cit:([`VendoredVocabularyTests`], mcp/tests/test_cold_start.py:221-331) runs in-process because it tests the loader's own contract,
 not the cold path.
 
 - L222-L244 re-derives everything from the *installed* tiktoken rather than restating it: it
@@ -94,7 +100,7 @@ not the cold path.
   path and the path is `sha1(url)`, so a tiktoken release that moves the URL renames the file and
   leaves the rule naming a file that no longer exists — an orphaned `-text` rule protects nothing,
   silently, and only on `core.autocrlf=true` clones. The test finds candidate lines by the
-  directory prefix `VENDORED_VOCABULARY_ATTRIBUTE_PREFIX` (L85) and asserts the whole list is
+  directory prefix cit:([`VENDORED_VOCABULARY_ATTRIBUTE_PREFIX`], mcp/tests/test_cold_start.py:85-85) and asserts the whole list is
   exactly `[[prefix + name, "-text"]]`.
 - L261-L269 points `VENDORED_VOCABULARY_DIR` at an empty directory and requires
   `TokenizerVocabularyError` — an absent vocabulary must never fall through to a download.
@@ -111,14 +117,15 @@ not the cold path.
   `REENTRANT_LOAD_TIMEOUT_SECONDS` (L91, `60.0`) and the assertion is `worker.is_alive()` is false
   — a regression must *report* the deadlock, not reproduce it inside the suite.
 
-`CorruptVendoredVocabularyTests` (L334-L417) covers the case the cold-start probe structurally
+cit:([`CorruptVendoredVocabularyTests`], mcp/tests/test_cold_start.py:334-417) covers the case the cold-start probe structurally
 cannot see: a vendored file that is present but *wrong*. No child can observe it, because tiktoken
 never gets far enough to try the network. If the digest check were left to tiktoken,
 `read_file_cached` would answer each mismatch by deleting the file and downloading a replacement
 over it — measured, on this very suite: CRLF-mangling the vendored file and truncating it to half
 its bytes both passed while the file was quietly restored.
 
-- `assert_corruption_is_refused()` (L350-L376) is the shared shape. It copies the shipped blob into
+- cit:([`assert_corruption_is_refused`], mcp/tests/test_cold_start.py:350-376) is the shared shape. It
+  copies the shipped blob into
   a `TemporaryDirectory`, applies the caller's corruption **to the copy**, asserts the copy's digest
   differs from `VENDORED_VOCABULARY_SHA256`, patches `VENDORED_VOCABULARY_DIR` at the temp
   directory, and requires `TokenizerVocabularyError`. It then asserts the message names three
@@ -188,8 +195,9 @@ immediately inside it rather than in the name.
 
 ### Todos
 
-None known. The docstring (L33-L46) records that the guard was verified to bite, on a scratch copy
-of the tree with the vendored vocabulary deleted: the child dies while importing the server with
+None known. The docstring — cit:([`TokenizerVocabularyError`], mcp/tests/test_cold_start.py:33-46) —
+records that the guard was verified to bite, on a scratch copy of the tree with the vendored
+vocabulary deleted: the child dies while importing the server with
 **`TokenizerVocabularyError`** raised from `DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` — the
 designed refusal, *not* a `requests.exceptions.ConnectionError`, because `vendored_vocabulary_cache`
 never lets the load reach the network at all. The probe exits 1, both `ColdStartTests` fail on its
@@ -203,7 +211,7 @@ The resolved `system/sources.md` registry declares no `Domain Documentation` ent
 no live documentation source to check for this file. The tiktoken facts this suite depends on are
 proven against the installed library rather than asserted from prose; see `Cross-Repo References`.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured domain documentation could be checked. | — | — |
 
@@ -213,14 +221,14 @@ The suite spans the whole import chain it defends: the tool surface that imports
 the module that builds the counter at import, the vendored blob the counter reads, and the typed
 error that must be raised instead of a download.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: the vendored constants including `VENDORED_VOCABULARY_SHA256` and the `RLock`, `vendored_vocabulary_path()` deriving the file name as `sha1(url)`, `_verify_vendored_vocabulary()` refusing absent / wrong-encoding / wrong-digest before the environment is touched, the scoped `vendored_vocabulary_cache()` handing tiktoken `str(path.parent)` of the verified file, `TiktokenTokenCounter.__post_init__` reading the vocabulary, and `DEFAULT_TOKEN_COUNTER` built at module scope — the statement a module-scope import here would execute during collection. | L37-L54; L57-L67; L70-L106; L109-L146; L191-L195; L205 | [tokens.py](agents-remember/mcp/src/agents_remember/models/tokens.py) |
-| The import-path link that puts the counter on the server's startup path: the tool payload builder imports `finalize_payload_tokens` at module level and calls it on every public tool response. | L9; L80-L83 | [tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py) |
-| `TokenizerVocabularyError` — the one production symbol this file may import at module scope, because it carries no import-time load. Raised instead of letting tiktoken reach for a vocabulary that is missing *or wrong*, precisely because the counter is built while the MCP tool surface is still importing. | L40-L48 | [errors.py](agents-remember/mcp/src/agents_remember/errors.py) |
-| The vendored blob's own documentation: why the file name is a hash, why `models/tokens.py` verifies the digest itself rather than leaving it to tiktoken, the copy-based corruption tests this file runs, and how to refresh it. | L1-L11; L26-L40; L42-L62 | [package_data/tiktoken/README.md](agents-remember/mcp/src/agents_remember/package_data/tiktoken/README.md) |
-| The `-text` entry that `test_the_gitattributes_entry_names_the_shipped_file` reads and pins: it stops a `core.autocrlf=true` checkout from rewriting the bytes that are the blob's identity, which now makes that clone alone refuse to start rather than re-download. Its comment names this test as the thing that stays red until a refresh renames the entry. | L5-L13 | [.gitattributes](agents-remember/.gitattributes) |
-| Packaging ships whatever is under `package_data` recursively, which is how the vendored vocabulary reaches an installed wheel or sdist. | L52-L63 | [mcp/pyproject.toml](agents-remember/mcp/pyproject.toml) |
+| The module under test: the vendored constants including `VENDORED_VOCABULARY_SHA256` and the reentrant `_CACHE_DIR_LOCK`, `vendored_vocabulary_path()` deriving the file name as `sha1(url)`, `_verify_vendored_vocabulary()` refusing absent / wrong-encoding / wrong-digest before the environment is touched, the scoped `vendored_vocabulary_cache()` handing tiktoken `str(path.parent)` of the verified file, `TiktokenTokenCounter.__post_init__` reading the vocabulary, and `DEFAULT_TOKEN_COUNTER` built at module scope — the statement a module-scope import here would execute during collection. | `VENDORED_VOCABULARY_SHA256`, `_CACHE_DIR_LOCK`, `vendored_vocabulary_path`, `_verify_vendored_vocabulary`, `vendored_vocabulary_cache`, `TiktokenTokenCounter`, `DEFAULT_TOKEN_COUNTER` | mcp/src/agents_remember/models/tokens.py:47-47; mcp/src/agents_remember/models/tokens.py:54-54; mcp/src/agents_remember/models/tokens.py:57-67; mcp/src/agents_remember/models/tokens.py:70-106; mcp/src/agents_remember/models/tokens.py:109-146; mcp/src/agents_remember/models/tokens.py:183-202; mcp/src/agents_remember/models/tokens.py:205-205 |
+| The import-path link that puts the counter on the server's startup path: the tool payload builder imports `finalize_payload_tokens` at module level and calls it from `_tool_payload`, which every public tool response is built by. | `finalize_payload_tokens`, `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75; mcp/src/agents_remember/models/tokens.py:232-249 |
+| `TokenizerVocabularyError` — the one production symbol this file may import at module scope, because it carries no import-time load. Raised instead of letting tiktoken reach for a vocabulary that is missing *or wrong*, precisely because the counter is built while the MCP tool surface is still importing. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:44-52 |
+| The vendored blob's own documentation: why the file name is a hash, why `models/tokens.py` verifies the digest itself rather than leaving it to tiktoken, the copy-based corruption tests this file runs, and how to refresh it. | `## Why the file name is a hash`, `## Refreshing it` | mcp/src/agents_remember/package_data/tiktoken/README.md:13-67 |
+| The `-text` entry that `test_the_gitattributes_entry_names_the_shipped_file` reads and pins: it stops a `core.autocrlf=true` checkout from rewriting the bytes that are the blob's identity, which now makes that clone alone refuse to start rather than re-download. Its comment names this test as the thing that stays red until a refresh renames the entry. | "fb374d419588a4632f3f557e76b4b70aebbca790 -text", `test_the_gitattributes_entry_names_the_shipped_file` | .gitattributes:5-13 |
+| Packaging ships whatever is under `package_data` recursively, which is how the vendored vocabulary reaches an installed wheel or sdist. | "setuptools globs package-data with recursive=True", "package_data/**/*" | mcp/pyproject.toml:73-84 |
 
 ## Cross-Repo References
 
@@ -231,32 +239,67 @@ the installed 0.13.0 sources. The decisive one is that **`read_file_cached` does
 a hash mismatch** — it repairs, from the network — which is why the digest check lives in
 `models/tokens.py` and why `CorruptVendoredVocabularyTests` exists at all.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_file_cached` prefers `TIKTOKEN_CACHE_DIR`, then `DATA_GYM_CACHE_DIR`, then `<tmpdir>/data-gym-cache`, and looks a download up under `hashlib.sha1(blobpath.encode()).hexdigest()` — which is why the probe must point all of them at an empty directory and why the shipped file's name is that digest. | L35-L53 | [tiktoken/load.py @ 0.13.0](https://github.com/openai/tiktoken/blob/0.13.0/tiktoken/load.py) |
-| A cached file whose SHA-256 does not match `expected_hash` is **not** rejected: `os.remove(cache_path)` (L62) then `contents = read_file(blobpath)` (L66) then the write-back (L75-L80). This is the exact mechanism that let a CRLF-mangled and a half-truncated vendored blob both report "8 passed" while the file was silently re-downloaded into the package directory — the defect that made this file's module-scope import fatal to its own purpose. | L54-L66 | [tiktoken/load.py @ 0.13.0](https://github.com/openai/tiktoken/blob/0.13.0/tiktoken/load.py) |
-| The write-back re-raises `OSError` when the cache directory was caller-specified and swallows it only for tiktoken's own default — so on a read-only install the repair path would surface as `PermissionError` rather than the designed refusal. | L75-L84 | [tiktoken/load.py @ 0.13.0](https://github.com/openai/tiktoken/blob/0.13.0/tiktoken/load.py) |
-| `o200k_base()` passes the vendored URL (L97) and `expected_hash="446a9538...1a2d"` (L98) to `load_tiktoken_bpe`; these are the values `test_the_shipped_file_is_the_one_tiktoken_asks_for` records and compares against both the shipped bytes and `VENDORED_VOCABULARY_SHA256`. | L95-L99 | [tiktoken_ext/openai_public.py @ 0.13.0](https://github.com/openai/tiktoken/blob/0.13.0/tiktoken_ext/openai_public.py) |
+| `read_file_cached` prefers `TIKTOKEN_CACHE_DIR`, then `DATA_GYM_CACHE_DIR`, then `<tmpdir>/data-gym-cache`, and looks a download up under `hashlib.sha1(blobpath.encode()).hexdigest()` — which is why the probe must point all of them at an empty directory and why the shipped file's name is that digest. | `read_file_cached`, "cache_key = hashlib.sha1(blobpath.encode()).hexdigest()" | tiktoken/load.py:35-53 |
+| A cached file whose SHA-256 does not match `expected_hash` is **not** rejected: the mismatch branch removes the cached copy, re-reads the blob from its source URL and writes the result back over it. This is the exact mechanism that let a CRLF-mangled and a half-truncated vendored blob both report "8 passed" while the file was silently re-downloaded into the package directory — the defect that made this file's module-scope import fatal to its own purpose. | "the cached file does not match the hash, remove it and re-fetch", "contents = read_file(blobpath)" | tiktoken/load.py:54-80 |
+| The write-back re-raises `OSError` when the cache directory was caller-specified and swallows it only for tiktoken's own default — so on a read-only install the repair path would surface as `PermissionError` rather than the designed refusal. | `user_specified_cache`, "don't raise if we can't write to the default cache" | tiktoken/load.py:81-84 |
+| `o200k_base()` passes the vendored URL and `expected_hash="446a9538...1a2d"` to `load_tiktoken_bpe`; these are the values `test_the_shipped_file_is_the_one_tiktoken_asks_for` records and compares against both the shipped bytes and `VENDORED_VOCABULARY_SHA256`. | `o200k_base`, "446a9538cb6c348e3516120d7c08b09f57c36495e2acfffe59a5bf8b0cfb1a2d" | tiktoken_ext/openai_public.py:95-99 |
+| The pin those four ranges are read under. Nothing offline can check a line number inside a dependency, so the version this package admits is the anchor that makes them falsifiable: a release outside it invalidates every range above, and `test_the_shipped_file_is_the_one_tiktoken_asks_for` is what fails when it does. Resolved to 0.13.0 in this environment. | "tiktoken>=0.12,<1" | mcp/pyproject.toml:23-26 |
 
 ## Update History
+
+- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
+  exact non-fixing check returns zero findings.
+
+- 2026-08-02T09:40+02:00 — 260731-EFA-L6 curator: migrated this card's 22 declined citations to the
+  anchored format. Nothing about the file under test changed — `test_cold_start.py` is untouched
+  since `abc7cbc`, and so are `models/tokens.py` and `.gitattributes`; every defect here was the
+  pointer, not the claim. Thirteen prose ranges gained the anchor they never had: the four docstring
+  windows are anchored on what those paragraphs actually name (`DEFAULT_TOKEN_COUNTER` and
+  `tokens_module` for the no-module-scope-import rule, `ENCODINGS` and `TIKTOKEN_CACHE_DIR` for the
+  two subprocess reasons, `TokenizerVocabularyError` for the verified-to-bite record), the network
+  block is anchored on `_blocked` and on the `SystemExit` message that proves the block took, and
+  the L243 pointer — which named the *test* but cited the *assertion inside it* — is now anchored on
+  `VENDORED_VOCABULARY_SHA256`, the thing that line asserts. Six table rows lost `n/a` and their
+  markdown links: `tokens.py` is cited as the seven constructs its row enumerates rather than as a
+  file, `base.py` as the module-level import plus `_tool_payload` (the docstring mention at L105 is
+  neither and is deliberately not cited), the vendored README by its two headings, `.gitattributes`
+  by the shipped entry itself with the test name as the second anchor, and `pyproject.toml` by the
+  recursive-glob comment and the `package_data/**/*` entry. The four tiktoken rows were URLs, which
+  no offline gate can check: they are re-anchored on quoted literals from tiktoken's own source with
+  dependency-relative ranges, all re-verified against the installed **0.13.0** (`os.remove` at L62,
+  `read_file` at L66, the write-back at L75-L80, the caller-specified re-raise at L81-L84,
+  `expected_hash` at openai_public L98 — every number the previous entry recorded still holds), and
+  a fifth row was added pinning them to `tiktoken>=0.12,<1` in `mcp/pyproject.toml`, because a range
+  inside a dependency is only falsifiable if the version it was read at is. No range was typed: the
+  seven that could be regenerated were written by `memory-citations --fix` from their anchors, and
+  the rest are windows whose anchor was verified present with the same engine. Metadata cells
+  untouched — this pass re-read the cited constructs, not the whole file.
 
 - 2026-07-31T22:25+02:00 — 260731-EFA-L3 curator: reconciled against the substantial rewrite this
   file received after the sidecar below was created. Three claims were outright false. (1) The
   Conventions section said "Production symbols are imported, never restated ... all come from
-  `agents_remember.models.tokens` (L48-L57)" — that module-scope import *was* the defect: it ran
+  `agents_remember.models.tokens`" — that module-scope import *was* the defect: it ran
   `DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` in the parent pytest process at collection,
   where `read_file_cached` deleted and re-downloaded a corrupt vendored blob before any assertion
-  ran. No such import remains; everything reaches the module through `tokens_module()` (L160-L169),
+  ran. No such import remains; everything reaches the module through
+  cit:([`tokens_module`], mcp/tests/test_cold_start.py:160-169),
   `TIKTOKEN_CACHE_DIR_ENV` is deliberately restated as a literal (L78), and the only module-scope
-  package import is `TokenizerVocabularyError` (L72). (2) Todos claimed the guard was proven to
-  bite with `requests.exceptions.ConnectionError`; the docstring (L33-L46) now records
+  package import is cit:([`TokenizerVocabularyError`], mcp/tests/test_cold_start.py:72-72). (2) Todos claimed the guard was proven to
+  bite with `requests.exceptions.ConnectionError`; the docstring —
+  cit:([`TokenizerVocabularyError`], mcp/tests/test_cold_start.py:33-46) — now records
   `TokenizerVocabularyError` instead, because `vendored_vocabulary_cache` never lets the load reach
   the network — thirteen failures, not eight. (3) The suite was described as two classes; the third,
-  `CorruptVendoredVocabularyTests` (L334-L417), is the half the probe structurally cannot cover.
-  Added it, plus `test_the_gitattributes_entry_names_the_shipped_file` (L246-L259), the
-  `RLock` deadlock guard (L307-L331), and the new `VENDORED_VOCABULARY_SHA256` assertion inside
-  `test_the_shipped_file_is_the_one_tiktoken_asks_for` (L243). Re-derived every citation in the file
-  — the docstring L1-L27 → L1-L47, `PROBE` L64-L123 → L98-L157, `run_cold_start_probe` L126-L150 →
+  cit:([`CorruptVendoredVocabularyTests`], mcp/tests/test_cold_start.py:334-417), is the half the probe structurally cannot cover.
+  Added it, plus cit:([`test_the_gitattributes_entry_names_the_shipped_file`], mcp/tests/test_cold_start.py:246-259), the
+  `RLock` deadlock guard
+  cit:([`test_holding_the_context_open_around_a_counter_does_not_deadlock`], mcp/tests/test_cold_start.py:307-331),
+  and the new `VENDORED_VOCABULARY_SHA256` assertion inside
+  `test_the_shipped_file_is_the_one_tiktoken_asks_for` —
+  cit:([`VENDORED_VOCABULARY_SHA256`], mcp/tests/test_cold_start.py:243-243). Re-derived every
+  citation in the file — the docstring L1-L27 → L1-L47, `PROBE` L64-L123 → L98-L157,
+  `run_cold_start_probe` L126-L150 →
   L172-L196, `ColdStartTests` L153-L171 → L199-L218, `VendoredVocabularyTests` L174-L228 →
   L221-L331, `.gitattributes` L5-L11 → L5-L13, and every `tokens.py` citation in the reference
   table. Added the cross-repo row proving tiktoken's `read_file_cached` does *not* fail closed
