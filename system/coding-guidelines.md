@@ -18,11 +18,19 @@ Code structure must preserve these properties:
 4. Tests can target one behavior boundary without needing the whole system.
 5. Onboarding notes can remain local and meaningful because the code file itself remains local and meaningful.
 
-Large files are allowed only when they are explicitly boring: generated output, static data, fixtures, or intentionally centralized declarations. Large files containing branching behavior, orchestration, parsing, command handling, or policy decisions are not acceptable.
+Large files are allowed only when they are explicitly boring: generated output,
+static data, or fixtures may still be large. Intentionally centralized
+declarations stay acceptable only while they remain declarative data. A large
+file containing branching behavior, orchestration, parsing, command handling,
+policy decisions, or a module of behavior assertions is not acceptable.
 
 ## File Size Budget
 
-Treat these as hard review signals for Python source files:
+Treat these as enforced limits for every tree the file-size detector measures:
+Python source and test files across the repository, plus TypeScript/TSX source
+under `dashboard/src`. At or above the hard limit the detector fails the build;
+the 2000-line band is architectural failure and the 4000-line band is an
+emergency cleanup target. The healthy target is 0-600 lines.
 
 | File size | Meaning | Required behavior |
 |---:|---|---|
@@ -249,6 +257,12 @@ Bad:
 - `manager.py` without a precise noun
 - `processor.py` without a precise noun
 - `handler.py` without the event or boundary it handles
+
+## Frontend Component Splitting Naming
+
+When splitting a frontend component, use one kebab-case folder per component (e.g. `detail-panel/`), keep one canonical component entry file (`DetailPanel.tsx` or `index.tsx`), and name sibling files by their short responsibility WITHOUT repeating the component prefix (`model.ts`, `styles.ts`, `changeSetBar.tsx`, `changeSetBar.test.tsx`).
+
+File casing follows the existing repository convention: PascalCase for component files and their tests, camelCase for hooks/helpers/models/styles, kebab-case for folders. Do not rename already-well-named files; apply this to new splits.
 
 `utils.py` is allowed only for tiny, dependency-free primitives that are genuinely shared and have no domain ownership.
 
