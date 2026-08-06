@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
@@ -177,11 +177,11 @@ rows below are retained only as historical provenance for the superseded L3 mech
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Tier 3 preserved: the historical row says `spawn_agent_session` pastes a worker/draft context packet, but the current spawn contract returns `spawned-unbriefed` and refuses legacy context/submit inputs before durable brief delivery. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
-| `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | `api_terminal_paste`, `_paste_response` | mcp/src/agents_remember/serving/app.py:1714-1725; mcp/src/agents_remember/serving/app.py:1915-1927 |
+| `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | `api_terminal_paste`, `_paste_response` | mcp/src/agents_remember/serving/app.py:1714-1725; mcp/src/agents_remember/serving/app.py:1923-1935 |
 | It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. | `pasteAndConfirm`, `bracketedPaste`, `sanitizeForInjection` | dashboard/src/data/terminal.ts:87-89; dashboard/src/data/terminal.ts:99-107; dashboard/src/data/terminal.ts:174-188 |
 | Tier 3 preserved: the historical unit-test row names deleted `DeliveryIntegrityTests` and its chip-vocabulary counter; the current focused tests retain the one-paste, duplicate-chip, failure-capture, Escape, and Enter evidence as standalone functions. | `test_initial_dispatch_uses_one_paste_and_one_enter`, `test_dispatch_retry_leaves_ambiguous_duplicate_chips_pending`, `test_exhausted_ladder_returns_the_final_failure_capture`, `test_escape_is_refused`, `test_early_enter_control_is_suppressed_but_dispatch_enter_submits` | mcp/tests/test_terminal_paste.py:239-252; mcp/tests/test_terminal_paste.py:347-349; mcp/tests/test_terminal_paste.py:356-368; mcp/tests/test_terminal_paste.py:406-423; mcp/tests/test_terminal_paste.py:461-499 |
 | Tier 3 preserved: the historical row says inbox hosted push records a pane-capture tail, while the current protocol delivery records adapter correlation/detail and never invokes the pane paster. | `deliver_inbox_entry`, `_record_reconciliation` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191; mcp/src/agents_remember/serving/inbox_delivery.py:249-279 |
-| `capture_pane` is called from the liveness sweeper's alive-harness-row turn-state classification path. | `_observe_alive`; `pane_capturer` | mcp/src/agents_remember/serving/terminal_liveness.py:82-82; mcp/src/agents_remember/serving/terminal_liveness.py:252-308 |
+| `capture_pane` is called from the liveness sweeper's alive-harness-row turn-state classification path. | `_observe_alive`; `pane_capturer` | mcp/src/agents_remember/serving/terminal_liveness.py:82-82; mcp/src/agents_remember/serving/terminal_liveness.py:327-393 |
 
 ## Cross-Repo References
 

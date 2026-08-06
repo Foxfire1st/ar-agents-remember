@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/queue_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -112,6 +112,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's one call site (`operation_queue`) gained only the matching `await` — a one-for-one line replacement; no projection logic, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
 - 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: deduplicated the shared queue-model source
   reference while retaining both exact privacy-validator anchors; split preview/digest definitions,
   empty fallback, and authorized queue-row use into their operative owners.

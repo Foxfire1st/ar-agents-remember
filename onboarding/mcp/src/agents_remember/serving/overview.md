@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -1606,8 +1606,28 @@ This entry supersedes any earlier description in this overview that conflicts wi
 source behavior above; verification metadata stays pinned to the pre-commit source history until
 closeout stamps the L4 commit.
 
+## 260731-EFA-L16 Route Impact — cross-store lock order, and an event loop that cannot park
+
+The 2026-08-05 production incident (two py-spy-verified deadlocks of the serving daemon in one
+day) ended with three repairs on this route. The liveness sweep's hosted-interaction synchronizer
+no longer runs inside `TerminalCatalog.batch()`: the sweep collects `_PendingInteractionSync`
+evidence and `_run_deferred_interaction_syncs` drains it after the commit — the collector rides
+the `LivenessProbe` seam bundle beside the observer it defers, so no call signature grew. The
+supervisor sweep fetches its catalog snapshot BEFORE the inbox transaction (the lock-held
+fold → resolve → compact itself is byte-for-byte untouched, L5's declared exception), accepting
+only benign one-directional staleness (a false keep, never a false resolve). And blocking store
+I/O left the uvicorn loop: control `resolve_entry`, the active side's projector resolution, and
+the terminal-image catalog read + paste write all run through `asyncio.to_thread` — the
+amplifier that turned a two-thread deadlock into a full outage is gone. The cross-store
+lock-order doctrine is declared in `controlplane/durable_store.py` beside the intra-store order:
+no thread holds one store's lock while acquiring another's. Forcing regressions
+(`mcp/tests/test_cross_store_lock_order.py`) deadlock on the pristine base and pin placement,
+both sweep paths, the legacy inline path, and every offload. No wire schema, record format,
+endpoint shape, or sweep cadence changed.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the cross-store lock-order doctrine, the deferred liveness synchronizer (probe-bundled collector), the supervisor's pre-lock catalog snapshot, the event-loop offloads, and the forcing tests, with the 2026-08-05 ABBA provenance. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: closed the five adversarial whole-claim gaps across client, parser, runner, factory, authority, and adapter owners; the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B12 resolved all 91 scoped citation findings in this document: 40 missing anchors and 51 malformed source segments. The current provenance sentence was aligned with the bridge-owned ledger path; the scoped check passes with 0 findings. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.

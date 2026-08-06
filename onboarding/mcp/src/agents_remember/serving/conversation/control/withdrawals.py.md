@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/withdrawals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,6 +118,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's five call sites (`withdraw`, `withdraw_status`, `pending_recoveries`, `fetch_recovery`, `acknowledge_recovery`) gained only the matching `await` — one-for-one line replacements; no handler logic, lease sweep, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
 - 2026-08-03T02:54:18+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations and 5 prose citation groups with exact authority, recovery, attachment, ref, withdrawal, lease, projection, and status anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 11 stale self-citations in Logic and
   corrected one wrong claim they were hiding. The `WithdrawalTicket` refactor moved the record

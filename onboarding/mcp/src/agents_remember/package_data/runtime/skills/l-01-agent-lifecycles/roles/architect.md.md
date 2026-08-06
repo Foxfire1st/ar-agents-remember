@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                            `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |                                            2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,24 @@ back to backend seats. It is a sync-propagated (`scripts/sync-skills.py`) packag
 canonical `skills/l-01-agent-lifecycles/roles/architect.md`.
 
 ## Code Commentary
+
+### Spawn Doctrine And tools.md (260731-EFA-L16)
+
+Two developer rulings landed here. First, the immutability clause now binds role-seat creation to
+`spawn_agent_session` explicitly — a role seat is never a native sub-agent — and native sub-agent
+fan-out is scoped to the one mode where this seat does hands-on work: solo build under the worker
+discipline (developer correction). Once orchestration runs, analysis goes to spawned role seats.
+Second, the Opening Move gained a standing read of the resolved `system/tools.md` — as the repo's
+tool INVENTORY, not merely the quality gate — phrased generically (whatever test/lint/build/
+smoke-check, discovery, and repo-local command notes that repository actually provides), because
+the role files ship with the package across repos whose memory layers name different tools
+(developer ruling: this role file never named the file at all; the solo-build bullet also names
+the wrapper as its checks authority). Third, the drawing-board phase now names its shared
+doctrine: `tasks/AGENTS.md` (task-collaboration doctrine) governs HOW the problem gets
+decomposed before planning — reviewable reframing (surface request vs deeper objective vs
+highest-leverage framing), explicit assumptions/truth gaps/invariants/non-goals, typed evidence
+plan, examples before risky change, and an implementation plan derived from the framing sections
+rather than substituted for them.
 
 ### Logic
 
@@ -77,7 +95,7 @@ owner-never-self-approves still holds.
 | --- | --- | --- |
 | The canonical architect role is defined in the cited source file. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-264 |
 | The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | `architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:95-124 |
-| The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
+| The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
 
 ## Cross-Repo References
@@ -94,6 +112,8 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 
 ## Update History
+- 2026-08-05T23:30+02:00 — 260731-EFA-L16 curator: recorded the drawing-board doctrine naming — the Design And Drawing Board section now points at `tasks/AGENTS.md` (task-collaboration doctrine) as the decomposition discipline for the phase: reviewable reframing, explicit assumptions/truth gaps/invariants/non-goals, typed evidence plan, examples before risky change, plan derived from the framing (developer ruling; corrected from an initial whether-a-task-is-needed misreading). Verification metadata stays pinned until closeout stamps the L16 commit.
+- 2026-08-05T22:10+02:00 — 260731-EFA-L16 curator: recorded the spawn-doctrine binding (role seats only via `spawn_agent_session`; native fan-out scoped to solo build per the developer correction) and the Opening-Move `system/tools.md` standing read — as the repo's tool inventory, phrased generically because the shipped role files span repos whose memory layers name different tools; widened from the solo-build-only naming after the developer noted tools.md is not just the quality gate. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: restored canonical/package-data source ownership
   citations and removed the unsupported hosted-cutover impact section.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.

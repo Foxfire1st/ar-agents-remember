@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -230,6 +230,19 @@ cannot be guaranteed — same write, same late position, same failure modes — 
 reaper to age a stuck `claimed` gate back to spendable, which re-opens this window on a timer and
 cannot tell a died-mid-commit closeout from a died-before-commit one.
 
+### Memory-quality phase placement (260731-EFA-L16)
+
+The closeout runs its citation gate — `range_resolution` plus `claim_reopen` — BEFORE the strict
+wrapper and the code commit: both checks are working-tree semantics, so they clear without a
+commit (the fixer regenerates ranges; a changed construct with a current citation is the
+report-only review surface) and a failure rejects in seconds instead of after the 13-minute
+suite. The curator clears the same `memory_quality_check` during the leaf, so gate findings are
+the exception. The L6 placement ran claim evidence before the code commit with a clearing
+condition that required the commit to exist — an unreachable state that deadlocked this leaf's
+closeout with 115 unresolvable findings. The post-commit phase keeps drift, document shape, and
+history order as the sanity pass over the metadata refresh. The approval-claim ordering is
+untouched: `gate_guard` is still claimed before the first irreversible act.
+
 ### `_claim_closeout_gate` — the spend
 
 `_claim_closeout_gate(contract, args)` calls
@@ -282,13 +295,13 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Ledger updates use the kernel memory ledger parser and renderer. | `parse_ledger_text`, `ledger_to_text`, `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |
-| Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | `refresh_onboarding_metadata`, `refresh_route_overview_metadata_for_context`, `refresh_route_indexes_for_context`, `refresh_entity_fingerprints_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:358-389; mcp/src/agents_remember/worktrees/modules/onboarding.py:392-400; mcp/src/agents_remember/worktrees/modules/onboarding.py:507-553; mcp/src/agents_remember/worktrees/modules/onboarding.py:786-794 |
-| The dry-run preview test reports the commit plan. | `test_closeout_dry_run_without_approval_reports_commit_plan` | mcp/tests/test_worktree_support.py:1454-1507 |
-| The approval-note test guards real commits. | `test_closeout_requires_approval_note_for_real_commits` | mcp/tests/test_worktree_support.py:1593-1609 |
-| The missing-onboarding test blocks changed-source closeout. | `test_closeout_blocks_missing_onboarding_for_changed_source` | mcp/tests/test_worktree_support.py:1674-1693 |
-| The refresh test covers onboarding metadata, route overview/index refresh, and new code commit metadata. | `test_closeout_refreshes_onboarding_metadata_to_new_code_commit` | mcp/tests/test_worktree_support.py:1631-1672 |
-| The memory-quality test blocks a memory commit when quality fails. | `test_closeout_blocks_memory_commit_when_memory_quality_fails` | mcp/tests/test_worktree_support.py:1961-1996 |
-| The ledger round-trip test covers ledger rendering and prepend behavior. | `test_memory_ledger_roundtrip_and_prepend` | mcp/tests/test_worktree_support.py:750-761 |
+| Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | `refresh_onboarding_metadata`, `refresh_route_overview_metadata_for_context`, `refresh_route_indexes_for_context`, `refresh_entity_fingerprints_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:359-390; mcp/src/agents_remember/worktrees/modules/onboarding.py:393-401; mcp/src/agents_remember/worktrees/modules/onboarding.py:508-554; mcp/src/agents_remember/worktrees/modules/onboarding.py:856-864 |
+| The dry-run preview test reports the commit plan. | `test_closeout_dry_run_without_approval_reports_commit_plan` | mcp/tests/test_worktree_support.py:1547-1600 |
+| The approval-note test guards real commits. | `test_closeout_requires_approval_note_for_real_commits` | mcp/tests/test_worktree_support.py:1686-1702 |
+| The missing-onboarding test blocks changed-source closeout. | `test_closeout_blocks_missing_onboarding_for_changed_source` | mcp/tests/test_worktree_support.py:1767-1786 |
+| The refresh test covers onboarding metadata, route overview/index refresh, and new code commit metadata. | `test_closeout_refreshes_onboarding_metadata_to_new_code_commit` | mcp/tests/test_worktree_support.py:1724-1765 |
+| The memory-quality test blocks a memory commit when quality fails. | `test_closeout_blocks_memory_commit_when_memory_quality_fails` | mcp/tests/test_worktree_support.py:2054-2089 |
+| The ledger round-trip test covers ledger rendering and prepend behavior. | `test_memory_ledger_roundtrip_and_prepend` | mcp/tests/test_worktree_support.py:843-854 |
 | Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
 | The pure closeout-gate policy this module enforces (slice 6b). | `GateGuard`, `evaluate_gate`, `evaluate_closeout_gate` | mcp/src/agents_remember/controlplane/enforcement.py:34-46; mcp/src/agents_remember/controlplane/enforcement.py:52-94; mcp/src/agents_remember/controlplane/enforcement.py:97-102 |
 | The gate policy threaded through `WorktreeArgs`. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
@@ -298,10 +311,10 @@ No external Domain Documentation source is configured for this memory repo.
 | The strict source-quality adapter decides applicability, executes the current worktree wrapper, and fails before mutation. | `code_quality_gate_preview`, `requires_strict_code_quality`, `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:35-42; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-147 |
 | Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs quality before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests`, `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558; mcp/tests/test_worktree_closeout_quality_gate.py:776-835; mcp/tests/test_worktree_closeout_quality_gate.py:601-713; mcp/tests/test_worktree_closeout_quality_gate.py:716-770 |
 | `require_git` is the generic Git command runner. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:18-22 |
-| Closeout routes its staging call sites through `require_git`. | `require_git` | mcp/src/agents_remember/worktrees/modules/closeout.py:776-844 |
+| Closeout routes its staging call sites through `require_git`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:776-844 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:62-68; mcp/src/agents_remember/worktrees/modules/guidance.py:160-183; mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
-| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `amend_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:906-929 |
+| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:898-934 |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -333,6 +346,7 @@ still what actually runs the wrapper, one step inside `_gate_staged_code`.
 
 ## Update History
 
+- 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the citation-gate placement in `closeout_result` — the citation checks (`range_resolution` + `claim_reopen`, working-tree semantics that clear without a commit) run BEFORE the strict wrapper and the code commit as the quick-reject gate, and `_combined_memory_quality` reports the gate and the post-commit sanity phase as one result. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: split refresh, gate-test, Git-runner, and
   contract-amendment claims so each source owner is independently cited.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -29,13 +29,25 @@ Drift rows from `run_drift_summary()` are normalized into quality findings so
 the MCP response has one finding list even when checks come from different
 subdomains.
 
+The closeout gate consumes this registry through two declared phase lists,
+`BEFORE_METADATA_REFRESH_CHECKS` — the citation gate (`range_resolution` + `claim_reopen`),
+which runs before the code commit and the strict test wrapper because the checks are
+working-tree semantics that need no commit to clear — and `AFTER_METADATA_REFRESH_CHECKS`
+(drift, document shape, history order), the sanity pass over the single ordinary metadata
+refresh. `claim_reopen` splits detected change three ways: absent/ambiguous anchors and
+unverifiable provenance are hard; a changed construct whose citation stays current (anchor
+resolves uniquely, range covers it) is the report-only review surface; only a changed construct
+with a stale pointer is enforced. The curator runs the same `memory_quality_check` during the
+leaf, so gate findings are the exception, not the rule (260731-EFA-L16, repairing the L6
+placement that deadlocked this leaf's own closeout with 115 unresolvable findings).
+
 `run_drift_quality_check(drift_context)` branches on the packet's
 status first: anything other than `checked` returns `ok: False` with one synthetic
 `onboarding_drift_check_failed` finding built from `packet.get("error", ...)`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170).
 Only past that guard does it read the checked-status keys. Since
 260731-EFA-L4 `run_drift_summary` returns the typed `DriftSummaryPacket`, whose
 `count`/`reportPath`/`actionableCount` are `NotRequired`, so those three reads are
-`.get` rather than `[...]`: cit:(["count", "reportPath", "actionableCount"], mcp/src/agents_remember/memory_quality/check.py:137-170) — the guard has established the status, but
+`.get` rather than `[...]`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170) — the guard has established the status, but
 the TypedDict cannot carry that narrowing across the branch. No emitted value
 changed: `summarize_rows` always sets all three on a `checked` packet.
 
@@ -47,7 +59,7 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 - The top-level finding count uses each checker result's declared
   `findingCount`, so bounded drift samples can report fewer concrete findings
   than the total count. `run_memory_quality_check` coerces it with
-  `int(result.get("findingCount", 0))`: cit:([`run_memory_quality_check`, "findingCount"], mcp/src/agents_remember/memory_quality/check.py:86-113), which assumes a checker never puts
+  `int(result.get("findingCount", 0))`: cit:([`run_memory_quality_check`, "result.get(\"findingCount\", 0)"], mcp/src/agents_remember/memory_quality/check.py:86-113), which assumes a checker never puts
   a literal `None` under that key — the drift checker's `.get` reads are safe only
   because the `checked` guard above guarantees the key is present.
 - **The drift packet's shape is owned by `onboarding_drift_check/models.py`.**
@@ -66,6 +78,7 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 
 ## Update History
 
+- 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the citation-gate semantics and placement. The L6 closeout placement ran `style.citations.claim_reopen` before the code commit with a clearing condition that required the commit to exist — unreachable, and it deadlocked this leaf's closeout with 115 unresolvable findings. Now: detected change splits into hard (absent/ambiguous anchor, unverifiable provenance, stale pointer) versus report-only review surface (changed construct with a current citation — anchor resolves uniquely, range covers it, clearing needs no commit), and the citation gate (`range_resolution` + `claim_reopen`) runs before the strict wrapper and the code commit, so failures reject in seconds. The curator runs the same `memory_quality_check` during the leaf; gate findings are the exception. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-03T03:59:59+02:00 — Curated 8 citation findings (1 table row, 6 prose citations, 1 source-form repair): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

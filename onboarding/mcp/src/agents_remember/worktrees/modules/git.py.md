@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `abc7cbcc74921cdcb57a61529445f61641e919e7` |
-| lastVerifiedCommitDate | 2026-07-31T21:50:08+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -89,7 +89,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | "def run_git" | mcp/src/agents_remember/kernel/git_command.py:85-85 |
 | Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:69-69 |
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:78-78 |
-| Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support.py:1541-1554 |
+| Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support.py:1634-1647 |
 
 ## Update History
 

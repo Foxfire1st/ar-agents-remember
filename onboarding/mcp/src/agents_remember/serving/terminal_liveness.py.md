@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                             |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`                                             |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -122,6 +122,26 @@ regressions in `test_chats_l5_hardening.py`), never swallowed. The completion-co
 that raised (`hosted_interactions.py`) is left untouched — this is availability hardening, not a
 correlation redesign.
 
+**260731-EFA-L16 — the quarantined placement was itself a lock-order violation.** The guard kept a
+synchronizer exception from aborting the sweep, but the guarded call still ran INSIDE `with
+self._catalog.batch()`, and the synchronizer folds the operator-inbox and gate stores: on
+2026-08-05 the production serving daemon deadlocked twice (py-spy-verified ABBA) — this sweep held
+the catalog batch lock (RLock + flock) across those inbox/gate acquisitions while the supervisor
+sweep held the inbox lock across a catalog read, and the uvicorn event loop then queued on the
+same catalog RLock via async endpoints doing synchronous catalog reads, so the server stopped
+accepting. The synchronizer still rides the ONE sweep tick (no second hot loop), but it no longer
+runs inside the batch: `refresh()` and `_refresh_starting_rows()` collect a `sync_collector` list
+and `_observe_catalog_entry` bundles it into the probe (`replace(probe, sync_collector=...)` — a
+`LivenessProbe` field beside the observer it defers, so `observe_terminal_liveness` keeps its
+five-argument signature), `_observe_alive` appends a `_PendingInteractionSync` (entry, snapshot,
+previous_sync_error) instead of calling `_observe_control_snapshot`, and after the batch commits
+the new `_run_deferred_interaction_syncs` drains the list — re-reading each row via `catalog.get`
+before the quarantine upsert, so the marker composes with the just-committed turn state. A probe
+whose `sync_collector` is `None` (the direct callers outside a batch — WS attach, paste) keeps
+the legacy inline call. The quarantine semantics above are otherwise unchanged; the one visible
+cost is that a freshly-quarantined row shows its `interactionSyncError` marker from the next
+catalog read rather than inside this sweep's return value.
+
 **Load-bearing steady state.** An orphan `vendorCorrelationId` is the NORMAL steady state of every
 cockpit-driven hosted (`+ Chat`) codex chat — a cockpit turn's terminal result carries a correlation
 id that matches no operator-inbox row because it never was an inbox delivery — so this quarantine
@@ -158,6 +178,12 @@ pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-d
   completion is the normal steady state of cockpit-driven hosted chats, so this path is hot; the
   marker refreshes every sweep and self-heals when the fault clears (F2 bounds the log to state
   changes; F8 phantom re-warns on non-observer `control_raw` rebuilds remain a Low residual).
+- **The synchronizer NEVER runs under the catalog batch lock** (260731-EFA-L16): the sweep collects
+  `_PendingInteractionSync` evidence inside `catalog.batch()` and drains it after the commit via
+  `_run_deferred_interaction_syncs`, re-reading each row before the marker upsert. One store's lock
+  is never held while another store's is acquired — the cross-store order doctrine in
+  [durable_store.py](../controlplane/durable_store.py.md), written from the 2026-08-05 ABBA
+  deadlock.
 - Hosted activity and turn state are adapter-derived; pane/log/copy-mode observations are
   diagnostics-only and cannot drive readiness, delivery, completion, or supervisor action.
 - The sweeper remains rate-limited and non-overlapping, and process-liveness failures remain
@@ -200,7 +226,7 @@ record.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. | `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
+| No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. | `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:282-324 |
 
 ## Repo-Internal References
 
@@ -256,8 +282,49 @@ The observation semantics and exit-marking rules themselves are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L16 Current Delta
+
+One change, about when the side effect runs: the hosted-interaction synchronizer no longer runs
+inside `TerminalCatalog.batch()`. During the batch the sweep only COLLECTS the evidence — one
+`_PendingInteractionSync` (entry, snapshot, previous_sync_error) per alive harness row with an
+observer — and the new `_run_deferred_interaction_syncs` drains the list after the commit,
+re-reading each row (`catalog.get`) before the quarantine upsert so the marker composes with the
+just-committed turn state. The collector is a `LivenessProbe` field bundled beside
+`on_control_snapshot` (the observer it defers): `_observe_catalog_entry` swaps it in via
+`replace(probe, sync_collector=...)`, so `observe_terminal_liveness` keeps its five-argument
+signature; a probe whose collector is `None` (the direct callers outside a batch — WS attach,
+paste) keeps the legacy inline behavior. The quarantine contract — fail-loud
+`interactionSyncError`, log on state change, self-heal on clear — is unchanged; the visible cost
+is that a freshly-quarantined row shows its marker from the next catalog read rather than inside
+this sweep's return value.
+
+Provenance: on 2026-08-05 the production serving daemon deadlocked twice (py-spy-verified ABBA) —
+this sweep held the catalog batch lock across the synchronizer's operator-inbox/gate lock
+acquisitions while the supervisor sweep held the inbox lock across a catalog read, and the uvicorn
+event loop queued on the same catalog RLock via async endpoints doing synchronous catalog reads.
+The placement CHATS-L5 had quarantined was the second symptom: the guard absorbed the failure
+mode, not the lock-order one. Forcing regressions live in `mcp/tests/test_cross_store_lock_order.py`
+(placement property on both sweep paths, rendezvous-parked ABBA reproduction on real sweeps,
+event-loop offload).
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-08-05T20:20+02:00 — 260731-EFA-L16 curator: mechanism correction — the collector is a
+  `LivenessProbe` field (`replace(probe, sync_collector=...)` at `_observe_catalog_entry`), not a
+  sixth parameter of `observe_terminal_liveness`; the bundled probe keeps the five-argument
+  signature the four-parameter mistake taught (PLR0913 stays enforced). The forcing tests gained
+  the starting-fast-path placement pin, its early returns, and the legacy inline direct-observe
+  path, and the quality-wrapper ruff/type findings were repaired. Verification metadata stays
+  pinned until closeout stamps the L16 commit.
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: documented the deferred hosted-interaction
+  synchronizer — `_PendingInteractionSync` collected inside `catalog.batch()`,
+  `_run_deferred_interaction_syncs` draining after the commit with a `catalog.get` re-read before
+  each quarantine upsert, `sync_collector=None` keeping the legacy inline call for direct callers —
+  the never-under-the-catalog-lock invariant, and the 2026-08-05 ABBA provenance (two py-spy-verified
+  production deadlocks; the event loop parked on the catalog RLock). Verification metadata stays
+  pinned until closeout stamps the L16 commit.
 - 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 5 citation claims and preserved verification metadata.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `LivenessProbe` / `DEFAULT_LIVENESS_PROBE` and the relocation of the hysteresis config to `terminal_catalog.py`.

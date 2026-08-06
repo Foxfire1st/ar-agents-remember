@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/turn_state.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ path — with pane text captured by `terminal_paste.capture_pane`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:252-308 |
+| `_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:327-393 |
 | The terminal-paste module defines the shared history-inclusive `capture_pane` wrapper and its bounded history argv supplying classifier input. | "def capture_pane"; `_capture_pane_argv`; `_CAPTURE_HISTORY_LINES` | mcp/src/agents_remember/serving/terminal_paste.py:40-40; mcp/src/agents_remember/serving/terminal_paste.py:181-182; mcp/src/agents_remember/serving/terminal_paste.py:201-201 |
 | The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. | `record_turn_state`; `with_turn_state` | mcp/src/agents_remember/serving/terminal_catalog.py:419-423; mcp/src/agents_remember/serving/terminal_catalog.py:714-728 |
 | The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns. | `_classify_by_marker_tables`; "key = harness or \"\""; "_HARNESS_WORKING_PATTERNS.get(key,"; "_HARNESS_AWAITING_INPUT_PATTERNS.get(key,"; "_HARNESS_TURN_ENDED_PATTERNS.get(key," | mcp/src/agents_remember/serving/turn_state.py:140-154 |

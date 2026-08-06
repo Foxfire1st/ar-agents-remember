@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -188,7 +188,7 @@ No relevant external/domain documentation found; the behavior is local MCP/servi
 | The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
 | The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
 | The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | `PasteResult` | mcp/src/agents_remember/serving/terminal_paste.py:53-59 |
-| The `POST /api/terminal/{session}/paste` endpoint under test. | `api_terminal_paste` | mcp/src/agents_remember/serving/app.py:1915-1927 |
+| The `POST /api/terminal/{session}/paste` endpoint under test. | `api_terminal_paste` | mcp/src/agents_remember/serving/app.py:1923-1935 |
 
 ## Cross-Repo References
 

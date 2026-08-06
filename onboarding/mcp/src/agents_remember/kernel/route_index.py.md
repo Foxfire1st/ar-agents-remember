@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/route_index.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-02T01:05+02:00                                   |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`               |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`               |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ package source and deterministic production-path tests.
 | --- | --- | --- |
 | The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points. | "def route_index_source_snapshot(", "def _tracked_source_candidates(", "def _untracked_source_candidates(" | mcp/src/agents_remember/kernel/route_index_census.py:41-41; mcp/src/agents_remember/kernel/route_index_census.py:83-83; mcp/src/agents_remember/kernel/route_index_census.py:126-126 |
 | MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(", "storage=scope.context.storage" | mcp/src/agents_remember/application/memory_tools.py:358-358; mcp/src/agents_remember/application/memory_tools.py:370-370 |
-| Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:392-392; mcp/src/agents_remember/worktrees/modules/onboarding.py:403-403 |
+| Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:393-393; mcp/src/agents_remember/worktrees/modules/onboarding.py:404-404 |
 | The regression matrix proves identity, exclusions, typed failures, and repeat convergence. | `RouteIndexTests`, `test_exact_paths_and_symlinks_are_target_independent`, `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes`, `test_git_census_failure_uses_typed_domain_error`, `test_regular_checkout_and_linked_worktree_produce_identical_indexes` | mcp/tests/test_route_index.py:82-907 |
 
 ## Cross-Repo References

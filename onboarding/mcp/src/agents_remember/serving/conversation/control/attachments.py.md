@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/attachments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,11 +31,11 @@ transition.
 
 cit:([`AttachmentOperation`], mcp/src/agents_remember/serving/conversation/control/attachments.py:101-115), cit:([`SubmitAnswer`], mcp/src/agents_remember/serving/conversation/control/attachments.py:118-126), and cit:([`StageAnswer`], mcp/src/agents_remember/serving/conversation/control/attachments.py:129-132) are the
 ledger/answer types. cit:([`stage`], mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201) enforces the 1..4 asset count itself (cit:(["attachment staging requires 1..4 assets per request"], mcp/src/agents_remember/serving/conversation/control/attachments.py:150-151)) and admits
-each upload through cit:([`stage_one`], mcp/src/agents_remember/serving/conversation/control/attachments.py:185-185) — the kind-capability gate, then per-asset MIME
+each upload through cit:([`stage_one`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:68-85) — the kind-capability gate, then per-asset MIME
 allow-list / byte-limit / description validation, digest compute, and the confined 0600 spool write;
 the allow-list and the byte limit ride the kind capability and are never re-declared here. Identical
 content replays idempotently, changed content under the same request id is `request-conflict`
-(cit:([`OperationConflictError`], mcp/src/agents_remember/serving/conversation/control/attachments.py:166-176; mcp/src/agents_remember/serving/conversation/control/service.py:116-120)). cit:([`submit`], mcp/src/agents_remember/serving/conversation/control/attachments.py:204-270)
+(cit:(["class OperationConflictError"], mcp/src/agents_remember/serving/conversation/control/service.py:116-120)). cit:([`submit`], mcp/src/agents_remember/serving/conversation/control/attachments.py:204-270)
 composes the one-use blocks (cit:([`_compose`], mcp/src/agents_remember/serving/conversation/control/attachments.py:500-516), cit:([`_consume_block`], mcp/src/agents_remember/serving/conversation/control/attachments.py:519-531), `_require_receipt_match` L534 —
 exact receipt match refuses tampered blocks pre-dispatch), dispatches through the L2E asset channel,
 maps the receipt's acceptance onto the operation's phase/outcome and builds the `SubmitAnswer`
@@ -90,7 +90,7 @@ the authority; the withdrawal lease ties recoverable assets to the text recovery
 | The staged-bytes filesystem boundary and staged asset types. | `stage_one` | mcp/src/agents_remember/serving/conversation/control/asset_spool.py:68-83; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:101-123 |
 | The L2E asset channel (refs on the wire, digest verify at admission/construction) and MIME/count/byte constants. | `MAX_SUBMIT_ASSETS`; `AssetReference`; `read_asset_bytes` | mcp/src/agents_remember/serving/harness_control_models.py:116-116; mcp/src/agents_remember/serving/harness_control_models.py:254-262; mcp/src/agents_remember/serving/harness_control_models.py:1066-1073 |
 | The retained operation timeline this lifecycle advances from. | `read_full_timeline` | mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
-| Recoverable assets ride the same 900 s lease as the text recovery. | `RECOVERY_TTL_SECONDS` | mcp/src/agents_remember/serving/conversation/control/service.py:74-74; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:458-467 |
+| Recoverable assets ride the same 900 s lease as the text recovery. | "RECOVERY_TTL_SECONDS =" | mcp/src/agents_remember/serving/conversation/control/service.py:74-74; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:458-467 |
 
 ## Cross-Repo References
 
@@ -121,12 +121,13 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's four call sites (`stage`, `submit`, `attachment_status`, `rebind`) gained only the matching `await` — one-for-one line replacements; no handler logic, admission bound, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
 - 2026-08-04T18:27+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 4 citation rows with exact anchors (`stage_one`, `MAX_SUBMIT_ASSETS`/`AssetReference`/`read_asset_bytes`, `read_full_timeline`, `RECOVERY_TTL_SECONDS`) and ledger-verified ranges; converted 7 flagged prose line citations to cit form (1..4 count literal, `stage_one` admission, `OperationConflictError` request-conflict with its service.py slug owner, `mark_recoverable` 460-481, `_delete_operation_bytes` 736-741, `_admit` 564-591/253, `recover_attachment_refs` 465-467) and repaired the 4 stale bare-line references the previous pass deferred (`_compose` 500-516, `_consume_block` 519-531, `_rebind_target` 667-707, `_rebind_replay` 436-457). Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: repaired 7 stale self-citations and corrected one
   false wiring claim. **The claim `stage` "admits uploads through `_admit`" was wrong**: cit:([`_admit`], mcp/src/agents_remember/serving/conversation/control/attachments.py:564-591) is `submit`'s receipt mapper — it turns the bridge receipt's acceptance into the
   operation phase/outcome and the `SubmitAnswer`, and its only caller is `submit` (cit:([`_admit`], mcp/src/agents_remember/serving/conversation/control/attachments.py:564-591)). cit:([`stage`], mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201) checks the 1..4 count inline (cit:(["attachment staging requires 1..4 assets per request"], mcp/src/agents_remember/serving/conversation/control/attachments.py:150-151)) and delegates per-asset gating, MIME/byte
-  validation, digest and the confined spool write to cit:([`stage_one`], mcp/src/agents_remember/serving/conversation/control/attachments.py:185-185). The
+  validation, digest and the confined spool write to cit:([`stage_one`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:68-85). The
   `_LIVE_TIMELINE_STATES` reference moved with it: that constant (L97, correct) is read by
   `_timeline_transition` at L652 and has nothing to do with upload validation. Re-derived ranges:
   `SubmitAnswer` L118-L126, `StageAnswer` L129-L132, `submit` L204-L270, `rebind` L375-L433,

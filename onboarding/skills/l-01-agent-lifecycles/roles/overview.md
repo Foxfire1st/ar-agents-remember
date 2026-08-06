@@ -6,8 +6,8 @@
 | sourceRoute | skills/l-01-agent-lifecycles/roles |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 
 ## Purpose
 
@@ -32,8 +32,23 @@ enclosure `contract_path`, and each response's `onboardingRoot` must be the memo
 `templates/curator-brief.md` feeds the same contract-path doctrine to the dispatched curator.
 The other role briefs are unchanged.
 
+### 260731-EFA-L16 Route Impact — role seats only, and guidelines where code is written
+
+The three prior role files now bind role-seat creation to `spawn_agent_session` explicitly and
+remove native sub-agent fan-out from the orchestration seats (orchestrator, manager); the
+architect keeps fan-out only for solo build under the worker discipline. The worker role (and
+its brief) reads `system/coding-guidelines.md` before the first edit; the reviewer lens verifies
+adherence independently; the architect's Opening Move reads `system/tools.md` as the repo's tool
+inventory and its drawing-board phase now names `tasks/AGENTS.md` as the problem-decomposition
+doctrine (reframe, assumptions/truth gaps/invariants, evidence plan, examples, derived plan);
+the curator's checks paragraph names the citation-gate contract (findings clear by
+making citations current, never attestations; the same `memory_quality_check` snaps at closeout
+before the code commit and test wrapper). Worker, reviewer, and curator fan-out (read/search/
+report) is unchanged.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the role-seat-only spawn doctrine across architect/orchestrator/manager, the worker/reviewer coding-guidelines reads, and the architect's `system/tools.md` inventory read; hands-on seats' fan-out unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: recorded the curator self-check contract
   (`contract_path`-scoped memory tools and `onboardingRoot` confirmation) landed in
   `roles/curator.md` and `templates/curator-brief.md`; other role documents are unchanged.

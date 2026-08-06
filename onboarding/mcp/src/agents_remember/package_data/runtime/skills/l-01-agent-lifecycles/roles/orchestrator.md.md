@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `cff3e8f9a64258ea3e7d3007e2153b22c01e273b` |
-| lastVerifiedCommitDate | 2026-07-14T14:23:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,18 @@ handover, worker report, verdict, own finding) into portfolio/orchestration work
 decisions go to the architect as one-at-a-time decision items over the operator inbox.
 
 ## Code Commentary
+
+### No Native Sub-Agents (260731-EFA-L16)
+
+The Sub-Agent Fan-Out section is replaced by the "No Native Sub-Agents" doctrine (developer
+ruling): orchestration seats never use harness-native sub-agents — a sub-agent beside the
+orchestration machinery is a shadow channel with no brief, leaf, turn report, or supervision.
+Analyses that once fanned out (route-coherence scan, conflict/regression scan, per-design
+adversarial pass) now run sequentially in the seat's own loop or dispatch as proper
+system-specialist/strategist role seats, each writing the same templated durable reports. Native
+fan-out survives only on the hands-on seats (worker, reviewer, curator, architect-solo). The same
+pass names the resolved `system/tools.md` wrapper in the delegated-authority checks and the
+master→super integration packet — this role file previously never named the quality suite.
 
 ### Logic
 
@@ -183,6 +195,7 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-05T22:10+02:00 — 260731-EFA-L16 curator: recorded the No Native Sub-Agents doctrine replacing the Sub-Agent Fan-Out section (developer ruling: orchestration seats use no shadow channel; analyses run in-loop or as dispatched role seats) and the `system/tools.md` naming in delegated-authority checks and the master→super integration packet. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
 

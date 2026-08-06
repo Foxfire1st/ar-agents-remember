@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -189,8 +189,19 @@ import `DriftStatus` from here, and `application/context_packet.py`'s `_drift_pa
 annotated `-> DriftSummaryPacket`. The route's checks, their names, their classification
 vocabulary and their emitted rows are all unchanged.
 
+## 260731-EFA-L16 — The Citation Gate Moves Before The Suite
+
+Closeout's citation gate (`range_resolution` + `claim_reopen`) now runs before the code commit
+and the strict wrapper: both checks are working-tree semantics — the fixer regenerates ranges
+and a changed construct with a current citation is only the review surface — so they clear
+without a commit and reject in seconds. The L6 placement made clearing require the commit
+itself, deadlocking every structural change (115 unresolvable findings at this leaf's closeout).
+The curator runs the same `memory_quality_check` during the leaf; the gate is its fallback.
+The post-commit phase keeps drift, shape, and history order as the refresh sanity pass.
+
 ## Update History
 
+- 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the closeout memory-quality phase-order repair (`check.py` phase constants + `worktrees/modules/closeout.py`): the before-commit phase list is now empty and every check, claim-reopen included, runs in the single phase after the code commit and the metadata refresh to it — claim evidence is only comparable once the commit it must be compared against exists; L16's closeout produced the first live deadlock under the L6 placement (115 unresolvable findings). Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: rebound the
   `memory_quality_check` row to the actual `memory_quality_check_tool` definition; exact
   non-fixing check returns zero findings.

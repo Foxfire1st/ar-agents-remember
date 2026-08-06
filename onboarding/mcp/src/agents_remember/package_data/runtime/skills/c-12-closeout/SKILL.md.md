@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-01T09:45+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,19 @@ applicable authority for the context: explicit developer approval for standalone
 work, or recorded delegated series authority for subordinate accepted-series work.
 
 ## Code Commentary
+
+### Coding-Guidelines Read (260731-EFA-L16)
+
+The Preconditions section now also requires reading the change set's added lines against the
+memory layer's `system/coding-guidelines.md` before the closeout preview, and Boundaries rule 10
+forbids closing out a guideline contradiction that was neither repaired in scope nor named at the
+commit-approval relay. Rationale: the wrapper certifies lint, types, tests, coverage, and CRAP —
+it does not read for guideline adherence. Three leaves had already shipped source comments
+carrying task/leaf identifiers (forbidden by the guidelines' Source Comment Scope) through fully
+green rails; the violation surfaced only when the developer spotted it in review. The named
+failure modes the new read targets are exactly that class: task identifiers in shipped comments,
+new positional boolean flags, `object`-typed boundary parameters, and oversize files growing
+again. In the reviewer chain this read belongs to the reviewer seat's evidence.
 
 ### Seat Note (260707-HFX-L11)
 
@@ -225,11 +238,11 @@ preconditions — a checkout carrying no wrapper runs no gate and neither refusa
 | `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-372 |
 | `c-12-closeout` skill keeps commit approval separate from implementation approval and requires preview before apply. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-110 |
 | Server-Side Gate Enforcement, now explicitly headed **"(parked fallback)"**: run preview/dry-run first, report in chat, raise one `lifecycle_gate(kind="closeout-approval", ask=..., packet=...)`, then `lifecycle_resume` before apply once the developer response is handled; the developer-attributed gate is the security boundary and `closeout-approval` IS the commit gate. The active hand-off is the notify-and-continue `lifecycle_turn_end_notification` above it. | `## Server-Side Gate Enforcement (parked fallback)` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:111-175 |
-| `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:176-224 |
+| `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:176-236 |
 | `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-328 |
-| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | `lifecycle_finalize_task` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:288-292 |
+| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:305-305 |
 | The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-110 |
-| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:301-340 |
+| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:355-355 |
 | Both memory-order lists restate step 4 as reset + stage + gate over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:225-254 |
 | The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:255-293 |
 | `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. | `DEFAULT_CRAP_THRESHOLD` | mcp/src/agents_remember/code_quality/crap_calculator.py:37-37 |
@@ -248,6 +261,12 @@ Closeout instructions now target the leaf enclosure `series-contract.md`; the ro
 
 ## Update History
 
+- 2026-08-05T21:40+02:00 — 260731-EFA-L16 curator: recorded the coding-guidelines read added to
+  Preconditions and Boundaries rule 10 (developer ruling after task identifiers shipped in source
+  comments through green rails on three leaves) — the change set's added lines are read against
+  `system/coding-guidelines.md` before the preview, in-scope violations are repaired, and the rest
+  are named findings at the commit-approval relay. Preconditions citation range extended to
+  176-236. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
   heading anchors, converted the history `(L…)` citations, and rebound the lifecycle_finalize
   row; exact non-fixing check returns zero findings.

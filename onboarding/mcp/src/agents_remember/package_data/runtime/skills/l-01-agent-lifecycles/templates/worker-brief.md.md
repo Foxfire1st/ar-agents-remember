@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                  |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`                                  |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 
 ## Purpose
 
@@ -20,6 +20,15 @@ It still absorbs the old dispatch frictions: route-index leaks into the official
 provider-stack keying confusion (F-H), and the missing `python` shim in spawn environments (F-I).
 
 ## Code Commentary
+
+### Coding-Guidelines Section (260731-EFA-L16)
+
+The brief shape gained a "Coding guidelines" section naming
+`<memory-worktree-path>/system/coding-guidelines.md` with the read-before-first-edit instruction
+and the turn-report finding rule. The brief is the worker's entire session start, so a rule that
+is not in this template does not exist for a spawned worker — which is exactly how the guidelines
+sat unread while three leaves shipped task identifiers in source comments through green rails.
+The spawning seat's compiler duty is unchanged: fill the path like every other placeholder.
 
 ### Logic
 
@@ -55,6 +64,7 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## Update History
 
+- 2026-08-05T21:55+02:00 — 260731-EFA-L16 curator: recorded the brief's new "Coding guidelines" section (developer ruling) — the brief is the worker's entire session start, so a rule absent from this template does not exist for a spawned worker; that is how `system/coding-guidelines.md` sat unread through three violating leaves. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: the worker dispatch
   contract now states that `AR_SPAWN_ROLE=worker` and the qualified leaf together claim the
   worker's `(leaf, role)` seat. Verification metadata remains pinned until closeout stamps the L17

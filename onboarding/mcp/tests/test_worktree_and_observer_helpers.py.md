@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T09:38+02:00                             |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`         |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ deciding anything.
 | --- | --- | --- |
 | The worktree provider-teardown helpers under test are `_docker_rm_f` / `_docker_network_rm`. | "def _docker_rm_f"; "def _docker_network_rm" | mcp/src/agents_remember/worktrees/modules/provider_teardown.py:120-120; mcp/src/agents_remember/worktrees/modules/provider_teardown.py:135-135 |
 | The cleanup helper under test is `delete_branch_if_merged`. | "def delete_branch_if_merged(repo: Path, branch: str, dry_run: bool) -> dict[str, object]:" | mcp/src/agents_remember/worktrees/modules/cleanup.py:64-64 |
-| The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:123-123 |
+| The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:124-124 |
 | The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/start_contract.py:117-117 |
 | The task-resolver helpers under test are `archive_completed_root_task` and `series_contract_path`. | "def archive_completed_root_task"; "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47; mcp/src/agents_remember/worktrees/task_resolver.py:147-147 |
 | The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/observer/snapshots.py:370-392; mcp/src/agents_remember/observer/snapshots.py:395-418 |

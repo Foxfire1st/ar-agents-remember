@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,9 +40,12 @@ from the registry and LRU order and awaits its close. This is registry/projector
 prove immediate deletion of every store item, live-turn/request id-set, or retained envelope.
 
 cit:([`_projector_for`], mcp/src/agents_remember/serving/conversation/active/service.py:160-176) resolves and validates the
-catalog entry, closes or replaces stale projectors, and bounds the registry. cit:(["asyncio.to_thread"],
-mcp/src/agents_remember/serving/conversation/active/service.py:178-216) keeps blocking sync reads off the event loop;
-the weak-key registry is maintained by the service's runtime lookup.
+catalog entry, closes or replaces stale projectors, and bounds the registry. cit:([`_projector_for_locked`],
+mcp/src/agents_remember/serving/conversation/active/service.py:178-216) keeps blocking sync reads off the event loop —
+since 260731-EFA-L16 the catalog resolution too: `_projector_for_locked` offloads
+`resolve_running_entry` via `asyncio.to_thread` alongside the epoch/snapshot reads (a catalog
+RLock wait on the loop thread was the event-loop seat of the 2026-08-05 deadlock). The weak-key
+registry is maintained by the service's runtime lookup.
 
 ### Conventions
 
@@ -124,6 +127,11 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded `_projector_for_locked` offloading the
+  catalog resolution (`resolve_running_entry`) via `asyncio.to_thread`, joining the epoch/snapshot
+  reads under the existing no-blocking-reads-on-the-loop rule — a catalog RLock wait on the loop
+  thread was the event-loop seat of the 2026-08-05 deadlock. Verification metadata stays pinned
+  until closeout stamps the L16 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: corrected cursor-generation and route citations,
   split projector release from broader cleanup claims, and bound lifecycle evidence to its source owners.
 

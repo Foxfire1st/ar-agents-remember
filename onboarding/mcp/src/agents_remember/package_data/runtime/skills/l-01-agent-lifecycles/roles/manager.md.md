@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,16 @@ apply to the manager** — the default agent behavior stands, with no creative-l
 direction.
 
 ## Code Commentary
+
+### Spawn Doctrine (260731-EFA-L16)
+
+The immutability clause's fan-out permission is removed (developer ruling): the manager, as an
+orchestration seat, uses no native sub-agents — analysis and report checks are its own work or a
+dispatched reviewer/curator seat's, and role seats are created only via `spawn_agent_session`,
+never as native sub-agents. Previously the clause allowed "sub-agents drill vertically for bounded
+analysis or report checks", a shadow channel beside the seat machinery the manager exists to
+operate. Native fan-out survives only on the hands-on seats (worker, reviewer, curator,
+architect-solo).
 
 ### Logic
 
@@ -228,6 +238,7 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-05T22:10+02:00 — 260731-EFA-L16 curator: recorded the removal of the manager's native fan-out permission (developer ruling: orchestration seats use no shadow channel; analysis and report checks are the seat's own work or a dispatched reviewer/curator seat's) and the role-seat-only-via-`spawn_agent_session` binding. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 10 citation findings and two wording
   drifts. Re-anchored the five role/frame rows to their `#`-heading anchors with exact spans (canonical
   manager.md 1-242 byte-identical to this copy; SKILL.md 6-416; worker 1-80; reviewer 1-151;

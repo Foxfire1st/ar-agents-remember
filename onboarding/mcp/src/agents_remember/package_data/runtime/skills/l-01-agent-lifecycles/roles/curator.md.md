@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                            `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |                                            2026-08-06T05:49:07+02:00|
 
 ## Purpose
 
@@ -28,7 +28,10 @@ This is a sync-propagated (`scripts/sync-skills.py`) package-data copy of the ca
 manager -> builder -> reviewer -> curator chain, and 260707-HFX-L11 activates it: change-set
 feeding (R1), the c-12/c-05 process rewiring that moves onboarding-authoring duty off the builder
 and onto this seat (R2/R3), and the manager wiring that makes the chain enforced rather than
-descriptive (R4).
+descriptive (R4). Its Checks And Report section is the soft gate of the citation contract
+(260731-EFA-L16): the curator runs `memory_quality_check` during its own pass and clears findings
+by making citations CURRENT (fixer, re-anchor, re-read — never attestation prose), because the
+same tool is the closeout hard gate and now snaps BEFORE the code commit and the test wrapper.
 
 **What This Seat Is** now names the fed inputs explicitly: the brief FEEDS the curator the leaf's
 landed change set (code diff over the leaf's base-to-head range, with counters/paths — the manager
@@ -91,6 +94,7 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 ## Update History
 
+- 2026-08-05T23:20+02:00 — 260731-EFA-L16 curator: recorded the checks-paragraph sharpening — citation findings clear by making the citation CURRENT (fixer, re-anchor, re-read), never by attestation prose, and the same `memory_quality_check` is the closeout gate running BEFORE the code commit and test wrapper, so skipping it snaps in seconds. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the seat-routing claim through the operative ownership paragraph and regenerated the final range with the scoped fixer.
 
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.

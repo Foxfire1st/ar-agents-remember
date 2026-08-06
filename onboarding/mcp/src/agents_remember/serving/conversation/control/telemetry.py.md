@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/telemetry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,9 @@ comparison — and the runtime/helper versions ride the metric as informational 
 
 ### Logic
 
-cit:([`conversation_telemetry`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:41-73) resolves caller/epoch, reads the telemetry capability set, and emits
+cit:([`conversation_telemetry`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:41-73) resolves caller/epoch — since 260731-EFA-L16
+awaiting the offloaded `service.resolve_entry` (`asyncio.to_thread`), so the catalog read never
+runs on the event loop — reads the telemetry capability set, and emits
 only capability-cleared metrics. The single currently-supported metric is codex cumulative token
 usage: cit:([`_codex_usage`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:76-121) reads the latest `thread/tokenUsage/updated` frame in the bounded evidence
 window and projects the cumulative breakdown with unit `tokens`, scope `conversation`, observed time
@@ -89,6 +91,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded that caller/epoch resolution now awaits
+  the async, `asyncio.to_thread`-offloaded `service.resolve_entry` (same convention as the IPC
+  reads), so this route's catalog read never parks the uvicorn event loop on the `TerminalCatalog`
+  RLock — the loop-side seat of the 2026-08-05 ABBA deadlock. Verification metadata stays pinned
+  until closeout stamps the L16 commit.
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 repairs and the pre-PASS whole-claim audit; narrowed the revision sentence to the generated revision extent while retaining the semantic-key body citation, then rechecked this card through the locked exact-document fixer/check.
 
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 5 stale self-citations (plus the

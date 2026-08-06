@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`       |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -96,10 +96,10 @@ classification, self-heal, and sweep cadence/overlap only.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweeper + shared observation path under test. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
+| The sweeper + shared observation path under test. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | The liveness transition copiers retain success-side healing and thresholded failure behavior. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:425-455; mcp/src/agents_remember/serving/terminal_catalog.py:457-489 |
 | The catalog records each probe through the success/failure transition copiers. | "def record_liveness_probe("; "updated = entry.with_liveness_success()"; "updated = entry.with_liveness_failure("; "pane_gone_failure_threshold=hysteresis.pane_gone_failure_threshold, ) if updated != entry: entries[index] = updated self._write(entries)" | mcp/src/agents_remember/serving/terminal_catalog.py:592-592; mcp/src/agents_remember/serving/terminal_catalog.py:609-609; mcp/src/agents_remember/serving/terminal_catalog.py:613-613; mcp/src/agents_remember/serving/terminal_catalog.py:618-622 |
-| The production observer caller drives the catalog probe on alive and failed paths. | "def observe_terminal_liveness("; "if session is not None and session.is_alive: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "if tmux.exists: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "updated = catalog.record_liveness_probe( entry.id, alive=False, checked_at=checked_at, evidence=_failure_evidence(tmux)"; "return TerminalLivenessObservation(entry=updated or entry, alive=False)" | mcp/src/agents_remember/serving/terminal_liveness.py:215-215; mcp/src/agents_remember/serving/terminal_liveness.py:229-230; mcp/src/agents_remember/serving/terminal_liveness.py:236-237; mcp/src/agents_remember/serving/terminal_liveness.py:242-246; mcp/src/agents_remember/serving/terminal_liveness.py:249-249 |
+| The production observer caller drives the catalog probe on alive and failed paths. | "def observe_terminal_liveness("; "if session is not None and session.is_alive: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "if tmux.exists: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "updated = catalog.record_liveness_probe( entry.id, alive=False, checked_at=checked_at, evidence=_failure_evidence(tmux)"; "return TerminalLivenessObservation(entry=updated or entry, alive=False)" | mcp/src/agents_remember/serving/terminal_liveness.py:282-282; mcp/src/agents_remember/serving/terminal_liveness.py:298-299; mcp/src/agents_remember/serving/terminal_liveness.py:308-309; mcp/src/agents_remember/serving/terminal_liveness.py:317-321; mcp/src/agents_remember/serving/terminal_liveness.py:324-324 |
 | The production stderr-aware probe classifier the `_TmuxSubprocessProbeHost` cases exercise for real. | `_tmux_missing_session_stderr`; `tmux_probe_session` | mcp/src/agents_remember/serving/terminal_tmux.py:149-176; mcp/src/agents_remember/serving/terminal_tmux.py:179-181 |
 | The catalog JSON/storage unit tests this file deliberately does not duplicate. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |
 
