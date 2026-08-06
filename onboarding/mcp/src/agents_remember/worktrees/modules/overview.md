@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -576,7 +576,17 @@ The retention half is already in place: `master-handover-approval` is in
 `interaction_retention.SEAM_CONSUMED_GATE_KINDS`, hence in `CONSUMED_APPROVAL_GATE_KINDS`, so an
 `applied` snapshot of that kind would be retained with no TTL the moment something writes one.
 
+## 260731-EFA-L16 — Closeout's Citation Gate Before The Suite
+
+`closeout_result` runs the citation gate (`range_resolution` + `claim_reopen`) before the strict
+wrapper and the code commit — working-tree checks that clear without a commit — and keeps drift,
+shape, and history order in the post-commit sanity phase. The L6 clearing condition required the
+commit it was checking against, deadlocking every structural change; `_combined_memory_quality`
+reports the two phases as one gate. The approval claim still precedes the first irreversible
+act.
+
 ## Update History
+- 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the closeout memory-quality phase-order repair in `closeout.py` — before-phase skipped when its check list is empty, `_combined_memory_quality` tolerates the empty phase, and all memory-quality checks run in the single phase after the code commit and the metadata refresh to it. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 22 citation findings. Re-anchored the
   eight reference rows (facade `__all__`, `WorktreeSupportTests`, `LifecycleFinalizeTests`,
   `refresh_route_indexes_for_context`, closeout-gate suite, `WorktreePhase` wire vocabulary,

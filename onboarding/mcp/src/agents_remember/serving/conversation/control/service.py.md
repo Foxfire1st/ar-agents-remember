@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,21 +39,26 @@ per-(session, epoch) `OrderedDict`-backed ledger bundle with named eviction; its
 `queue_projection._queue_row`), closing the former unbounded per-channel structure. The service
 builds one channel lazily via cit:(["def channel"], mcp/src/agents_remember/serving/conversation/control/service.py:240-240) under the app channel cap; the body looks up or creates the
 channel, evicts the oldest entry at `MAX_CHANNELS_PER_APP`, refreshes reuse order, and returns it
-cit:([`channel`], mcp/src/agents_remember/serving/conversation/control/service.py:240-250).
-cit:([`ConversationControlService`], mcp/src/agents_remember/serving/conversation/control/service.py:222-349) mints a 32-byte control cit:([`secret`], mcp/src/agents_remember/serving/conversation/control/service.py:232-234) and takes an injectable
+cit:(["def channel"], mcp/src/agents_remember/serving/conversation/control/service.py:240-250).
+cit:([`ConversationControlService`], mcp/src/agents_remember/serving/conversation/control/service.py:222-356) mints a 32-byte control cit:([`secret`], mcp/src/agents_remember/serving/conversation/control/service.py:232-234) and takes an injectable
 cit:([`clock`], mcp/src/agents_remember/serving/conversation/control/service.py:236-238) (default `utc_clock`; the fake harness anchors it to `NOW` for time-consistent lease
-tests). cit:([`_channels`], mcp/src/agents_remember/serving/conversation/control/service.py:229-229) and cit:([`_locks`], mcp/src/agents_remember/serving/conversation/control/service.py:230-230) are both `OrderedDict`s. cit:([`session_lock`], mcp/src/agents_remember/serving/conversation/control/service.py:252-262) hands
+tests). cit:(["_channels: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:229-229) and cit:(["_locks: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:230-230) are both `OrderedDict`s. cit:([`session_lock`], mcp/src/agents_remember/serving/conversation/control/service.py:252-262) hands
 out the per-session `asyncio.Lock` that serializes every same-session interrupt/withdraw above the
 L2E replay cache, calling cit:([`_evict_idle_locks`], mcp/src/agents_remember/serving/conversation/control/service.py:264-276) before minting a new lock so `_locks` stays
 bounded at `MAX_SESSION_LOCKS_PER_APP` — the oldest UNLOCKED lock is evicted and a currently-held
 lock is never dropped (a pathological all-held set is left intact). cit:([`release_session`], mcp/src/agents_remember/serving/conversation/control/service.py:278-289) is the
 explicit session-end release (L5F R5): it pops the session's lock and deletes every epoch channel
 keyed to that session, closing the prime monotonic `_locks` leak — sync pure-dict ops, safe from
-any context. cit:([`resolve_entry`], mcp/src/agents_remember/serving/conversation/control/service.py:291-292), cit:([`verify_epoch`], mcp/src/agents_remember/serving/conversation/control/service.py:294-298) (against the live authority),
-cit:([`live_snapshot`], mcp/src/agents_remember/serving/conversation/control/service.py:300-306), cit:([`build_identity`], mcp/src/agents_remember/serving/conversation/control/service.py:308-318) (via the L1 factory seam), cit:([`read_full_timeline`], mcp/src/agents_remember/serving/conversation/control/service.py:320-341)
-(pages the L2E operation-timeline to union completeness), and cit:([`spool_assets_root`], mcp/src/agents_remember/serving/conversation/control/service.py:343-349) are
-the shared seams. cit:([`conversation_control_service`], mcp/src/agents_remember/serving/conversation/control/service.py:357-364) resolves the one instance through the
-`_SERVICES` `WeakKeyDictionary` memo keyed by runtime via cit:([`_SERVICES`, `WeakKeyDictionary`], mcp/src/agents_remember/serving/conversation/control/service.py:352-354), create-on-miss.
+any context. cit:([`resolve_entry`], mcp/src/agents_remember/serving/conversation/control/service.py:291-299), cit:([`verify_epoch`], mcp/src/agents_remember/serving/conversation/control/service.py:301-305) (against the live authority),
+cit:([`live_snapshot`], mcp/src/agents_remember/serving/conversation/control/service.py:307-313), cit:([`build_identity`], mcp/src/agents_remember/serving/conversation/control/service.py:315-325) (via the L1 factory seam), cit:([`read_full_timeline`], mcp/src/agents_remember/serving/conversation/control/service.py:327-348)
+(pages the L2E operation-timeline to union completeness), and cit:([`spool_assets_root`], mcp/src/agents_remember/serving/conversation/control/service.py:350-356) are
+the shared seams. `resolve_entry` is async since 260731-EFA-L16: like `verify_epoch`, `live_snapshot`, and
+`read_full_timeline` it offloads its blocking read through `asyncio.to_thread`, because
+`resolve_running_entry` takes the `TerminalCatalog` RLock and every caller here runs on the uvicorn
+event loop, where a catalog lock wait parks the whole server (measured live in the 2026-08-05 ABBA
+incident); sync callers needing resolution use `factories.resolve_running_entry` directly, off the
+loop. cit:([`conversation_control_service`], mcp/src/agents_remember/serving/conversation/control/service.py:364-371) resolves the one instance through the
+`_SERVICES` `WeakKeyDictionary` memo keyed by runtime via cit:([`_SERVICES`, `WeakKeyDictionary`], mcp/src/agents_remember/serving/conversation/control/service.py:359-361), create-on-miss.
 
 ### Conventions
 
@@ -110,7 +115,7 @@ identity; the L2E validated client reads are the substrate this service consumes
 | The immutable app-scoped `ConversationRuntime` one service instance binds. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
 | The L1 running-session factory and native-identity proof `build_identity` reuses. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:79-105 |
 | The L2E validated interrupt/timeline/submit/recovery reads this service consumes. | `read_control_snapshot`; `interrupt_control`; `read_operation_timeline`; `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:119-131; mcp/src/agents_remember/serving/harness_control_client.py:214-252; mcp/src/agents_remember/serving/harness_control_client.py:425-445; mcp/src/agents_remember/serving/harness_control_client.py:448-472 |
-| The catalog row `resolve_entry` returns. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-292 |
+| The catalog row `resolve_entry` returns (async; offloaded via `asyncio.to_thread` since 260731-EFA-L16). | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
 
 ## Cross-Repo References
 
@@ -144,6 +149,15 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T19:57+02:00 — 260731-EFA-L16 curator: `resolve_entry` became `async` and now offloads
+  the lock-taking `resolve_running_entry` catalog read via `asyncio.to_thread` (the same idiom as
+  `verify_epoch`/`live_snapshot`/`read_full_timeline`), because every caller runs on the uvicorn
+  event loop where a catalog RLock wait parked the whole server in the 2026-08-05 ABBA incident;
+  every control route's call site gained the matching `await`. Re-derived the shifted citations
+  (`resolve_entry` 291-299, `verify_epoch` 301-305, `live_snapshot` 307-313, `build_identity`
+  315-325, `read_full_timeline` 327-348, `spool_assets_root` 350-356, `ConversationControlService`
+  222-356, `_SERVICES` 359-361, `conversation_control_service` 364-371) against the worktree source.
+  Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: source-read the ambiguous `channel` candidates, applied one provisional declaration-line disambiguator, and generated the whole channel-body range (0 repairs, 1 final normalisation, 1 first-pass decline); the locked rerun recheck was clean with frozen zero source/tokenize/parse/build telemetry.
 - 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
   underbound channel-state/loop/move fragments with the complete `channel` owner, binding lookup,
@@ -157,7 +171,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   citation mechanics ran.
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped control-service citations; final exact frozen-snapshot check is clean.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the self-citations the `ControlRequest`/
-  `ControlScope` insertion invalidated. cit:(["class ControlChannel"], mcp/src/agents_remember/serving/conversation/control/service.py:200-200); cit:(["async def live_snapshot"], mcp/src/agents_remember/serving/conversation/control/service.py:300-300); cit:(["queue_rows: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:209-209); cit:(["clock: Clock"], mcp/src/agents_remember/serving/conversation/control/service.py:225-225); cit:(["def build_identity"], mcp/src/agents_remember/serving/conversation/control/service.py:308-308); cit:(["self._secret = os.urandom"], mcp/src/agents_remember/serving/conversation/control/service.py:228-228); cit:(["self._channels: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:229-229); cit:(["self._locks: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:230-230); cit:(["_SERVICES: weakref.WeakKeyDictionary"], mcp/src/agents_remember/serving/conversation/control/service.py:352-352) were checked against the current definitions and left behaviorally unchanged.
+  `ControlScope` insertion invalidated. cit:(["class ControlChannel"], mcp/src/agents_remember/serving/conversation/control/service.py:200-200); cit:(["async def live_snapshot"], mcp/src/agents_remember/serving/conversation/control/service.py:307-307); cit:(["queue_rows: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:209-209); cit:(["clock: Clock"], mcp/src/agents_remember/serving/conversation/control/service.py:225-225); cit:(["def build_identity"], mcp/src/agents_remember/serving/conversation/control/service.py:315-315); cit:(["self._secret = os.urandom"], mcp/src/agents_remember/serving/conversation/control/service.py:228-228); cit:(["self._channels: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:229-229); cit:(["self._locks: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:230-230); cit:(["_SERVICES: weakref.WeakKeyDictionary"], mcp/src/agents_remember/serving/conversation/control/service.py:359-359) were checked against the current definitions and left behaviorally unchanged.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ControlRequest` (claimed epoch) vs `ControlScope` (verified epoch, via `.resolved()`) as the pre/post-check scope types.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R5 per-session release/bounds. `_locks` is now
   a bounded `OrderedDict` (`MAX_SESSION_LOCKS_PER_APP=128`, oldest-UNLOCKED evicted via

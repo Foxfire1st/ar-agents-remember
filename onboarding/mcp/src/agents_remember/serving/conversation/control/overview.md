@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 
 ## What This Area Is
 
@@ -391,8 +391,20 @@ reachable success shape off a live bridge — while the typed-bridge-failure leg
 most routes) stay declared-and-undriven with a reason, because the bridge fixture models the harness
 edge rather than a stale epoch or a socket that dies mid-write.
 
+## 260731-EFA-L16 — Resolution Leaves The Loop
+
+`ConversationControlService.resolve_entry` is now async and offloads the lock-taking
+`resolve_running_entry` catalog read through `asyncio.to_thread` — the same idiom as
+`verify_epoch`/`live_snapshot`/`read_full_timeline` — because every caller here runs on the
+uvicorn event loop, where a catalog RLock wait parked the whole server in the 2026-08-05 ABBA
+incident. Every route module's call site gained the matching `await` (attachments, operations,
+policy, queue_projection, withdrawals, telemetry, and the inline `api.py` call); sync callers
+use `factories.resolve_running_entry` directly, off the loop. Wire shapes, epoch semantics, and
+error mappings are untouched.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the async/offloaded `resolve_entry` choke point and the mechanical `await` sweep across the route modules. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the seventeen route declarations and,

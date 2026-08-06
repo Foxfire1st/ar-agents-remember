@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_carryover.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-18T20:03+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ typed parser are the authority evidence.
 | Carryover invokes official settings authority before any content/ledger/index/commit mutation. | `apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:776-862 |
 | Raw JSON/Markdown preflight mirrors typed parser semantics while rejecting default-only write authority. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 | Authority matrix spans missing/invalid/empty/reset/unsupported refusals and retention/repopulation/fallback positive controls. | `test_missing_official_settings_refuses_before_any_mutation`; `test_supported_nonempty_path_rules_remain_authoritative`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation` | mcp/tests/test_carryover.py:374-387; mcp/tests/test_carryover.py:1059-1098; mcp/tests/test_carryover.py:1173-1207 |
-| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | `test_memory_ledger_roundtrip_and_prepend`; `test_memory_carryover_applies_landed_branch_onboarding` | mcp/tests/test_worktree_support.py:750-761; mcp/tests/test_worktree_support.py:2787-2841 |
+| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | `test_memory_ledger_roundtrip_and_prepend`; `test_memory_carryover_applies_landed_branch_onboarding` | mcp/tests/test_worktree_support.py:843-854; mcp/tests/test_worktree_support.py:2949-3003 |
 
 ## Cross-Repo References
 

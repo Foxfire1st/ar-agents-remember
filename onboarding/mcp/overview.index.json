@@ -263,7 +263,7 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 858,
+    "sourceFilesInScope": 859,
     "fileSidecars": 160,
     "childRoutes": 18
   },

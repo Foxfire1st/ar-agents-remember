@@ -6,14 +6,25 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77` |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 
 ## Purpose
 
 The self-contained worker lifecycle: one leaf, one session, one report. The brief is the worker's ENTIRE session start - it replaces the front half the spawner already ran. The worker builds code and writes the builder turn report; it owns no lifecycle machinery and no official onboarding memory pass. Closeout, integration, finalization, gates, task-doc bookkeeping, and the curator memory pass belong to separate owning/spawned seats. Terminal state: checks green + mandatory turn report with changed paths for the curator.
 
 ## Code Commentary
+
+### Coding-Guidelines Read (260731-EFA-L16)
+
+Orient step 2 now requires reading the memory layer's `system/coding-guidelines.md` **before the
+first edit**, with an explicit escalation rule for plan conflicts. Before this, no role file named
+the guidelines at all — a spawned worker onboards from brief + task_doc + turn report, so the file
+that owns file/function budgets, source-comment scope, and the DTO/stability rules never entered
+the code-writing seat's context; the wrapper's green rails were the only signal, and they read for
+none of it. Three leaves shipped guideline violations (task identifiers in shipped comments)
+through fully green gates before the developer caught them in review. The c-12 closeout skill's
+guideline read sits at the wrong end on the wrong seat without this: prevention lives here.
 
 ### Logic
 
@@ -76,6 +87,7 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 ## Update History
 
+- 2026-08-05T21:55+02:00 — 260731-EFA-L16 curator: recorded the Orient-step coding-guidelines read (developer ruling after task identifiers shipped in source comments through green gates) — the worker reads `system/coding-guidelines.md` before its first edit because no role file named it and the worker onboards from the brief alone. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
   process-and-ack): "A missing report gets nudged." reworded to name the HFX2-L2 supervisor sweep

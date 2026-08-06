@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,6 +32,13 @@ commit exists. The shared metadata/route parsing helpers
 (`onboarding_metadata_row`, `markdown_table_cells`, `table_metadata`,
 `normalize_route`, `route_contains_changed_path`, `ROUTE_OVERVIEW_DOC_TYPES`)
 live in `kernel/onboarding_doc.py` and are re-exported here as a facade.
+
+`refresh_onboarding_metadata_for_context` also stamps the task's regenerated citation documents
+(`_refresh_regenerated_documents`, 260731-EFA-L16): the citation gate clears a changed claim by
+making its citation CURRENT, which the fixer achieves without the document's own source file
+changing, so those documents are outside the changed-source plan — any onboarding document the
+task touched in the memory worktree that carries verification metadata advances to the new code
+commit here, except route overviews and entity catalogs (their own refresh passes own them).
 
 `onboarding_refresh_plan_for_context` carries the two-tier responsibility split
 (issue #83) through its keyword-only `working_paths`: paths in the working set
@@ -143,7 +150,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
 | Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | `build_route_indexes`; `route_index_source_snapshot` | mcp/src/agents_remember/kernel/route_index.py:182-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. | "test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit" | mcp/tests/test_worktree_support.py:1573-1592; mcp/tests/test_worktree_support.py:1631-1673; mcp/tests/test_worktree_support.py:1674-1694; mcp/tests/test_worktree_support.py:2041-2094 |
+| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. | "test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit" | mcp/tests/test_worktree_support.py:1666-1666; mcp/tests/test_worktree_support.py:1724-1724; mcp/tests/test_worktree_support.py:1767-1767; mcp/tests/test_worktree_support.py:2161-2161 |
 
 ## Cross-Repo References
 
@@ -156,6 +163,7 @@ implementation governs this module.
 
 ## Update History
 
+- 2026-08-05T23:20+02:00 — 260731-EFA-L16 curator: recorded `_refresh_regenerated_documents` — the metadata refresh now also stamps onboarding documents the task touched (memory worktree diff) that carry verification metadata, so citations the fixer regenerated against the working tree do not stay pinned to a commit whose constructs no longer exist; route overviews and entity catalogs keep their own refresh passes. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T18:47+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the four drifted test ranges
   in the worktree-tests row (long-sidecar 1573-1592, metadata refresh 1631-1673, missing-sidecar
   blocking 1674-1694, entity fingerprint 2041-2094) and narrowed the claim: the "explicit

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:28+02:00 |
-| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -160,8 +160,26 @@ codes are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L16 Current Delta
+
+Every handler's entry resolution now runs off the event loop: `ConversationControlService.resolve_entry`
+is `async def` and offloads the catalog read via `asyncio.to_thread` — the same convention the
+service's IPC reads (`verify_epoch`, `live_snapshot`) already followed — and all fifteen call
+sites across the control modules (telemetry, withdrawals, api, operations, attachments,
+queue_projection, policy) await it. No route on this surface queues on the `TerminalCatalog` RLock
+on the uvicorn loop thread. Provenance: in the 2026-08-05 deadlock the event loop parked on
+exactly that lock while the two sweeps held it across cross-store acquisitions, and the daemon
+stopped accepting. The offload itself is documented in [service.py](service.py.md).
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the async offloaded resolution —
+  `service.resolve_entry` is `async def` with the catalog read on `asyncio.to_thread`, awaited from
+  all fifteen control-layer call sites — so no control route queues on the catalog RLock on the
+  event loop (the loop-side seat of the 2026-08-05 deadlock). Verification metadata stays pinned
+  until closeout stamps the L16 commit.
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 18 citation finding(s); scoped recheck clean.
 
 - 2026-08-01T09:28+02:00 — 260731-EFA-L4 curator: recorded the seventeen `response_model`

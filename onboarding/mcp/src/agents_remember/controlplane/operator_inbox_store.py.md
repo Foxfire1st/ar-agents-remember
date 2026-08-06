@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash |                                                                   `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                                   2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                                   `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |                                                                   2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -86,8 +86,11 @@ current used by redelivery selection. A concurrent consume that wins the lock re
 authoritative, while stale pending snapshots cannot outrank the terminal-dominant fold.
 The returned `removed` count is the persisted folded-id delta, excluding transient terminal
 snapshots that were appended only inside the transaction. The resolver callback must not call
-back into this store: the exclusive lock is intentionally held across catalog/tmux evidence,
-with a worst-case 5-second tmux timeout.
+back into this store. Since 260731-EFA-L16 the catalog evidence is fetched BEFORE the lock is
+taken (the supervisor pre-fetches `catalog.list(include_terminated=True)` and the callback
+consumes that snapshot): holding this lock across another store's read was one half of the
+2026-08-05 ABBA deadlock. The exclusive lock is now intentionally held only across the remaining
+tmux evidence, with a worst-case 5-second tmux timeout.
 
 ### 260707-HFX2-L20 Consume And Delivery Race
 
@@ -257,6 +260,11 @@ adapter evidence against an existing durable row. None of these transitions call
 
 ## Update History
 
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: corrected the TRH-L5 lock-held-evidence
+  statement — the catalog read left the lock (pre-fetched by the supervisor before
+  `reconcile_and_compact`); only the bounded tmux snapshot remains lock-held. Consume authority and
+  the same-lock resolve/compact rationale are unchanged. Verification metadata stays pinned until
+  closeout stamps the L16 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors, deduplicated the backoff row, and converted the history pending/consume citations;
   exact non-fixing check returns zero findings.

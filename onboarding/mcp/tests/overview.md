@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1322,7 +1322,23 @@ repaired and remains a named follow-up.
 
 The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
 
+## 260731-EFA-L16 Route Impact — cross-store lock-order forcing tests
+
+`test_cross_store_lock_order.py` pins the 2026-08-05 ABBA repair against the daemon's real
+sharing shape (ONE catalog + ONE inbox log per process): a placement property proving the
+hosted-interaction synchronizer's inbox/gate locks are never taken under the catalog batch —
+driven on the full sweep AND the starting fast path, with the legacy inline direct-observe path
+pinned beside it; a rendezvous-parked reproduction running the real liveness sweep and
+supervisor sweep on threads, which deadlocks by timeout on the pre-fix tree ("the ABBA is
+live") and passes on the fix, on daemon threads so the proof cannot hang the suite; and
+thread-identity proofs that control/active resolution and the terminal-image handler run their
+blocking reads on worker threads, never the event loop. Every test asserts the synchronizer
+actually ran — no vacuity. The closeout citation-gate tests joined them: a changed construct
+completes with the stamp advanced to the new code commit, and a deleted construct refuses in
+the citation gate BEFORE the code commit with no commit spent.
+
 ## Update History
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the cross-store lock-order forcing tests (placement, rendezvous ABBA reproduction, offload proofs, anti-vacuity). Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-04T14:41:21+02:00 — 260731-EFA-L6 S18-B01 closing same-reviewer correction: narrowed the rich-sim claim to the complete raw-token/unknown_cells and Markdown-bypass relationship under the adversarial verdict, then the exact scoped fixer/check passed.
 
 - 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.

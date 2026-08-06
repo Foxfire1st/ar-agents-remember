@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 
 ## What This Area Is
 
@@ -448,8 +448,17 @@ conformance suite caught the un-unioned version on a real 422 from the interrupt
 The wire grammar, the two-port split, the `ConversationRuntime` composition, the local-operator
 authorization ruling and the three child prefixes are all unchanged.
 
+## 260731-EFA-L16 — Blocking Resolution Leaves The Event Loop (Children Carry The Detail)
+
+Both child routes now keep their blocking catalog reads off the uvicorn event loop: control's
+`resolve_entry` went async at the service choke point (`conversation/control` carries the call
+site sweep), and active's projector resolution offloads the same `resolve_running_entry` read
+(`conversation/active` carries it). The conversation wire contracts are untouched — this was an
+availability repair, not a vocabulary change.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the event-loop offload across both child routes; wire contracts untouched. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and converted the history `create_app` citation; exact non-fixing check returns zero
   findings.

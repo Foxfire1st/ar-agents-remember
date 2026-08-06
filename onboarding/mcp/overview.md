@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1454,8 +1454,18 @@ that file's card: **write and commit in the same function.** A caller that defer
 "lose a delta" into "lose the mapping history", and the ledger then belongs on the contract with the
 six JSONL logs.
 
+## 260731-EFA-L16 Route Impact — child routes carry the detail
+
+One defect-repair leaf and one doctrine chain landed across this route's children: the
+cross-store lock-order repair (`serving/`, `controlplane/`, `serving/conversation/*` carry the
+mechanism — deferred synchronizer, hoisted supervisor snapshot, event-loop offloads, declared
+doctrine), its forcing regressions (`mcp/tests/`), and the coding-guidelines/spawn-doctrine
+skill edits (`skills/l-01-agent-lifecycles/` carries those). No new route appeared and no
+umbrella scope statement changed; the detail lives with the children.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: pointer entry — mechanism in serving/controlplane/conversation children, tests in mcp/tests, doctrine in skills/l-01-agent-lifecycles. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18 hygiene curator: removed stale `:1-1` fixer-input
   source entries whose anchors do not occur in those files (provider facade rows, tokenizer,
   containment, degradation, submission authority); the retained line-1 docstring anchors are

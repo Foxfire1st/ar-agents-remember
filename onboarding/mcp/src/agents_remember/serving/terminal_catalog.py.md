@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -265,7 +265,7 @@ operations that keep catalog state honest.
 | The FastAPI app injects/creates the catalog, refreshes stale rows, rehydrates WebSockets from catalog metadata, persists opener rows, marks terminations, and uses catalog cwd for image uploads. | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
 | The terminal host exposes the tmux probe and terminate hooks that app.py uses before rehydrate and during explicit termination. | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
 | Unit tests pin catalog path, JSON schema/order, complete optional-field round-trip, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |
-| The liveness sweeper + shared observation path that drive `record_liveness_probe` and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
+| The liveness sweeper + shared observation path that drive `record_liveness_probe` and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
 | Worktree integrate/finalize completion hooks call `_auto_land_completed_seats`, which archives selected roles through `land_seats_for_leaf`; this is completion-edge auto-land, not manual retirement authority. | "def _auto_land_completed_seats"; "def land_seats_for_leaf" | mcp/src/agents_remember/application/worktree_tools.py:457-457; mcp/src/agents_remember/serving/landing.py:9-9 |
 | The serving manual-retire route assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | `_retire_response` | mcp/src/agents_remember/serving/app.py:1754-1807 |

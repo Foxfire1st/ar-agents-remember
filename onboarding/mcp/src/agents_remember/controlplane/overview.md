@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-01T19:10+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -417,8 +417,21 @@ keyword lists, and the groupings are the route's own vocabulary:
 
 No record schema, wire field or refusal changed.
 
+## 260731-EFA-L16 Route Impact — one order across stores
+
+`exclusive_access`'s docstring now declares the cross-store order beside the intra-store one: no
+thread may hold one store's lock (mutex, RLock, or flock) while acquiring another store's lock;
+evidence a transaction needs from a second store is gathered before entry, or the side effect
+runs after exit — never nested. The two nestings this forbids (the liveness sweep's catalog
+batch across the synchronizer's inbox/gate locks; the supervisor's inbox transaction across a
+catalog read) deadlocked ABBA in production on 2026-08-05. The operator-inbox store's lock-held
+fold → resolve → compact transaction is untouched — L5's declared exception stands; what moved
+is the evidence gathering around it (the supervisor's catalog read now precedes the lock), and
+the liveness sweep's synchronizer side effect now follows its batch commit.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the cross-store lock-order doctrine in `durable_store.py` and that the inbox's lock-held transaction (L5's exception) is untouched. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
   anchors and source-backed ranges; exact non-fixing check returns zero findings.
 

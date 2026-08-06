@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_packaged_assets_and_context_values.py`  |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-01T14:20+02:00                                  |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`              |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`              |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ against the raw bytes: `log_path(None).is_file()`, `read_bytes() == b""`, `read(
 | CrossRepo parsing excludes malformed entries with an explanation instead of raising. | `parsed_cross_repo_allow_entry` | mcp/src/agents_remember/kernel/coordination_context/setting_values.py:86-103 |
 | Gate storage supplies the strict read and compaction path under test. | `GateStore` | mcp/src/agents_remember/controlplane/store.py:96-325 |
 | Gate compaction uses the store rewrite seam. | `_replace` | mcp/src/agents_remember/controlplane/store.py:316-325 |
-| The shared rewrite never unlinks an empty destination. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| The shared rewrite never unlinks an empty destination. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
 | The suite that measures what the unlink was costing, across all six control-plane logs and against the leaf's base commit. | `test_no_record_is_lost_when_a_compaction_empties_and_unlinks_the_log` | mcp/tests/test_controlplane_store_durability.py:140-153 |
 | The provider lifecycle entry points the fan-out drives. | `run_grepai_lifecycle`, `run_cgc_lifecycle` | mcp/src/agents_remember/providers/lifecycle_service.py:50-94; mcp/src/agents_remember/providers/lifecycle_service.py:97-137 |
 

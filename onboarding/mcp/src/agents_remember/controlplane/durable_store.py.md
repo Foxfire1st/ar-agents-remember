@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-01T19:10+02:00                                    |
-| lastVerifiedCommitHash |                                                           `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                           2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                           `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |                                                           2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -243,6 +243,24 @@ every other *process* waits on while it queues behind a thread of its own, and i
 once-per-path capability probe — which takes that same flock twice — behind a hold this process
 already has.
 
+### The Ordering Across Stores (260731-EFA-L16)
+
+The intra-store order above is not sufficient. `exclusive_access`'s docstring now declares ONE
+ORDER ACROSS STORES, TOO: no thread may hold one store's lock — mutex, RLock, or flock — while
+acquiring another store's lock. Evidence a transaction needs from a second store is gathered
+BEFORE entering this one, or the side effect runs AFTER leaving it; never nested. The two nestings
+this rule forbids were each locally documented and locally defensible: the liveness sweep held the
+catalog batch lock across the hosted-interaction synchronizer's operator-inbox/gate acquisitions
+(260718-CHATS-L5 had quarantined that call's failure mode, not its placement), and the
+supervisor's lock-held reconcile read the catalog under the inbox lock (260712-TRH-L5's
+"intentionally held across catalog/tmux evidence"). On 2026-08-05 the two deadlocked ABBA in
+production, twice and py-spy-verified, and the uvicorn event loop then queued on the same catalog
+RLock via async endpoints doing synchronous catalog reads, so the daemon stopped accepting. Both
+nestings are un-nested now — `terminal_liveness` defers the synchronizer to after the batch
+commit, the supervisor pre-fetches the catalog before the inbox transaction — and
+`mcp/tests/test_cross_store_lock_order.py` pins the rule with a placement property and a
+rendezvous-parked ABBA reproduction over the real sweeps.
+
 ### Same Host, Enforced Rather Than Assumed
 
 The MCP process and the dashboard share a host, and `_verify_lock_capability` is how that stops
@@ -354,12 +372,12 @@ only for other files, and every one below was re-verified against the working tr
 | `_verify_lock_capability` takes the lock twice from two file descriptions and raises `UnsafeLockFilesystemError` when the second acquisition succeeds. | `_verify_lock_capability` | mcp/src/agents_remember/controlplane/durable_store.py:318-345 |
 | `exclusive_access` takes the per-log mutex before the flock, and the thread-local `_LockDepth` counter makes a nested acquisition return before either lock is touched. `lock_path_for` names the lockfile after the whole log and states why renaming it makes a rolling restart unsafe, with no compatibility path. | `exclusive_access`; `_LockDepth`; `lock_path_for` | mcp/src/agents_remember/controlplane/durable_store.py:274-282; mcp/src/agents_remember/controlplane/durable_store.py:348-394; mcp/src/agents_remember/controlplane/durable_store.py:291-298 |
 | `require_lock_held` raises from inside `rewrite_lines`, so no store can rewrite a log it has not locked however the call was reached. | `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:397-415; mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
-| The one read both policies share; the only append in the package, which fsyncs before the handle closes; and the only rewrite, which never unlinks the log, uses a pid-scoped hidden temp, and fsyncs both the temp and the parent directory. | `read_log_text`; `append_line`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:418-422; mcp/src/agents_remember/controlplane/durable_store.py:425-436; mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| The one read both policies share; the only append in the package, which fsyncs before the handle closes; and the only rewrite, which never unlinks the log, uses a pid-scoped hidden temp, and fsyncs both the temp and the parent directory. | `read_log_text`; `append_line`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:427-431; mcp/src/agents_remember/controlplane/durable_store.py:434-445; mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
 | The MCP process declares its role at the true entry point, not in the `create_server` factory a test would call in-process. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
 | The dashboard declares its role in `run`, for the same reason. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | The third call site and the only factory that declares: `--reload` serves from a uvicorn `multiprocessing` spawn child that re-imports the module with an empty declaration dict and never reaches `run`, so it answered owner for every log. The docstring records this as an ownership gap and not a durability defect — the unconditional lock covered the rewrite — and why `create_app` still must not declare. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
 | `_reclaim_gate_log` guards on `is_compaction_owner` before compacting, because the dashboard calls `gate_decide_payload` directly; without the guard an MCP-side reclaim runs inside the dashboard. | `_reclaim_gate_log` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80 |
-| The dashboard's HTTP dismiss route calls `AttentionDismissalStore.dismiss`, the whole-file read-modify-write that made the single-writer store the worst loser. | `AttentionDismissalStore`; `dismiss` | mcp/src/agents_remember/serving/app.py:1192-1198 |
+| The dashboard's HTTP dismiss route calls `AttentionDismissalStore.dismiss`, the whole-file read-modify-write that made the single-writer store the worst loser. | "class AttentionDismissalStore"; "def dismiss" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-78 |
 | `read_gates` no longer rewrites on the projection tick; it uses the tolerant `projected_current`, and physical reclamation moved to the gate log's owner. | `read_gates` | mcp/src/agents_remember/observer/snapshots.py:512-546 |
 | The worktree series contract imports this module's `SCHEMA_VERSION` and `schema_version_supported`, so the tree carries one version policy rather than two. | `SCHEMA_VERSION`; `schema_version_supported` | mcp/src/agents_remember/worktrees/worktree_contract.py:16-16; mcp/src/agents_remember/worktrees/worktree_contract.py:40-40 |
 | The control-plane lockfiles are excluded from the projection watch by a rule DERIVED from `lock_path_for` rather than spelled out, and matched by suffix in every watched directory — which is what covers the per-lifecycle `gates.jsonl.lock` a basename list structurally could not. `_EXCLUDED_WORKSPACE_NAMES` no longer names any lockfile; the comment above the derived constant records that spelling it out is exactly what broke. | `_DURABLE_LOG_LOCK_SUFFIX`; `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:187-205 |
@@ -375,6 +393,11 @@ repository; nothing outside it reads these logs.
 
 ## Update History
 
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the cross-store lock-order doctrine
+  (`exclusive_access` docstring: ONE ORDER ACROSS STORES, TOO — evidence before entry, side effects
+  after exit, never nested) next to the intra-store ordering, with the 2026-08-05 ABBA incident
+  provenance (two py-spy-verified production deadlocks; the event loop parked on the catalog
+  RLock). Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-03T10:05+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 13 live citation findings (6 missing anchors, 6 malformed sources, and 1 duplicate source; the duplicate was live-only drift beyond the 12-item manifest); final scoped check is clean.
 
 - 2026-08-01T19:10+02:00 — Measured-claim repair, confined to the defect section; the contract,

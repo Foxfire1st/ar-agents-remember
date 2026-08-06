@@ -95,6 +95,7 @@
     "mcp/tests/test_conversation_projector_codex_agents.py",
     "mcp/tests/test_conversation_runtime_composition.py",
     "mcp/tests/test_crap_calculator.py",
+    "mcp/tests/test_cross_store_lock_order.py",
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_diff_coverage.py",
     "mcp/tests/test_dispatch_brief.py",
@@ -280,8 +281,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 258,
-    "fileSidecars": 268,
+    "sourceFilesInScope": 259,
+    "fileSidecars": 269,
     "childRoutes": 0
   },
   "routingTerms": [

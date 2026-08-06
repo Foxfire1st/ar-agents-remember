@@ -6,8 +6,8 @@
 | sourceRoute | skills/l-01-agent-lifecycles |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-07-15T23:31+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 
 ## Purpose
 
@@ -52,8 +52,24 @@ provenance) from candidate to standing, with two catches including this leaf's S
 contract-name finding. `criteria/code-seam.md` now names the `application` entry point instead of
 the controller in its production-wiring walk, matching the `controllers/` → `application/` move.
 
+### 260731-EFA-L16 Route Impact — spawn doctrine and the guideline-adherence chain
+
+Two developer-ruled doctrine waves landed. The spawn doctrine: role seats are created only via
+`spawn_agent_session`, never as native sub-agents — now stated in the architect/orchestrator/
+manager immutability clauses; the orchestrator's Sub-Agent Fan-Out section became "No Native
+Sub-Agents — role seats only" (analyses run in-loop or dispatch as system-specialist/strategist
+seats); native fan-out survives only on the hands-on seats (worker, reviewer, curator, and the
+architect when building solo). The guideline-adherence chain: the worker's Orient step and brief
+template now require reading the resolved `system/coding-guidelines.md` before the first edit,
+the reviewer's second lens independently verifies adherence, and `c-12-closeout` Preconditions
+plus Boundaries rule 10 relay named findings at the commit-approval gate — closing the hole
+where green wrapper rails were the only signal (three leaves had shipped task identifiers in
+source comments). The architect's Opening Move also gained a standing, repo-generic
+`system/tools.md` inventory read.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the spawn doctrine (role seats only via `spawn_agent_session`; no native sub-agents on orchestration seats; architect-solo exception) and the guideline-adherence chain (worker Orient/brief read, reviewer lens, c-12 Preconditions + Boundaries rule 10), plus the architect's generic `system/tools.md` inventory read. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: recorded the curator self-check doctrine
   (`contract_path`-scoped `route_index_refresh`/`memory_quality_check`/`drift_check`), RV-5's
   promotion to a standing criterion, and the controller → application-entry-point language in

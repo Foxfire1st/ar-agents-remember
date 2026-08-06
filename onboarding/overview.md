@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 
 > **Status:** active baseline
 
@@ -2058,8 +2058,14 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 
 ## Last Verified
 
+Updated 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.
+
 Updated 2026-06-28T07:43+02:00 — task 29 S7: refreshed the root Event River, actionable-drift, and dashboard frontend inventory for backend-retained raw events, raw-stream hydration, no frontend count cap, targetless actionable-drift dismissal, and the hidden Lifecycle Flow tab. Route detail lives in the `mcp/`, `observer/`, `serving/`, `controlplane/`, `memory_quality/`, `dashboard/src/`, and `dashboard/src/panels/` route overviews. Verification metadata pinned until closeout stamps the task-29 code commit.
 
 Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refreshed the Observable session lifecycle inventory row + functional-area section for the new public `lifecycle_turn_end_notification` tool, the non-terminal `awaiting-developer` state, the next-step hint repoint off the now-parked `lifecycle_gate`, and the reducer gate-open/blocked-gate dedup. Route detail lives in the `observer/`, `mcp/tools/`, and `models/` route overviews and their file sidecars. Verification metadata pinned until closeout stamps the code commit.
 
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
+
+## Update History
+
+- 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.

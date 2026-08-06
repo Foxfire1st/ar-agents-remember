@@ -6,8 +6,8 @@
 | path | `mcp/tests/_control_plane.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ and its clock seam are the production control service.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The L0 `register_conversation_routes` composition the harness builds. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
-| The per-app control service and its public `clock` seam plus `_SERVICES` memo the harness seeds. | `ConversationControlService`; `_SERVICES` | mcp/src/agents_remember/serving/conversation/control/service.py:222-349; mcp/src/agents_remember/serving/conversation/control/service.py:352-354 |
+| The per-app control service and its public `clock` seam plus `_SERVICES` memo the harness seeds. | `ConversationControlService`; `_SERVICES` | mcp/src/agents_remember/serving/conversation/control/service.py:222-356; mcp/src/agents_remember/serving/conversation/control/service.py:359-361 |
 | The pi mapper message_end emission shapes the fake adapter mirrors. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
 | The real bridge on a user-private socket. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
 | The IPC server on a user-private socket. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |

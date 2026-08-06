@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:44+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -529,7 +529,11 @@ otherwise-unchanged projection look changed.
   `<cwd>/.dashboard-pastes/<uuid>.<ext>` (uuid
   basename ⇒ no traversal), returning `{path}`. Same localhost posture; unlike the JSON POSTs it is
   multipart (a preflight-free "simple request"), but the write target is keyed by an unguessable session
-  UUID. Needs `python-multipart` (for `UploadFile`).
+  UUID. Since 260731-EFA-L16 `_terminal_image_response` offloads the catalog read
+  (`runtime.catalog.get`) and the paste write (the new `_write_paste_image` helper) via
+  `asyncio.to_thread`, keeping the catalog RLock wait and the blocking disk I/O off the event loop —
+  a synchronous catalog read on the loop was the third seat of the 2026-08-05 deadlock. Needs
+  `python-multipart` (for `UploadFile`).
 - `register_files_routes(app, config)` (operations-integration L1) registers the read-only
   `GET /api/files/{repos,list,read,onboarding}` routes **before** `mount_static`, so the greedy `/`
   SPA mount cannot swallow them. The handlers live in `serving/files.py`.
@@ -692,7 +696,7 @@ pass was available for this update.
 | The serving operator-inbox module owns the post operation. | `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:202-288 |
 | The Mode B2 terminal host the `/api/terminal` WebSocket bridges to (slice 6d), including tmux probe/kill hooks used for durability. | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
 | The durable terminal-session catalog persisted by the opener, sessions endpoint, landed cleanup, and terminate route. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
-| The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:215-249 |
+| The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The MCP application owns the spawn command. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
 | The serving route calls the shared hosted-session opener. | "open_terminal_session(" | mcp/src/agents_remember/serving/app.py:1486-1486 |
@@ -740,6 +744,11 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the image route's offload —
+  `_terminal_image_response` runs the catalog read (`runtime.catalog.get`) and the
+  `_write_paste_image` disk write on `asyncio.to_thread`, keeping the catalog RLock wait and
+  blocking I/O off the event loop (the loop-side seat of the 2026-08-05 deadlock). Verification
+  metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: regenerated the serving helper and trusted-attribution whole-claim binding with the locked scoped fixer and inspected the complete generated function extent; no approved semantic claim changes.
 - 2026-08-04T03:03:32+02:00 — S18-SR3-B05 worker: selected the complete serving helper as the direct-call and trusted-attribution anchor and returned the whole binding to provisional fixer input.
 - 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.

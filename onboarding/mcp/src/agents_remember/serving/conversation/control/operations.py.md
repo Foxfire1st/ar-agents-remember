@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ shapes come from the vendor mappers; the L3E envelope preservation is what the p
 | The L2E epoch-guarded native interrupt write and replay-once cache. | "One native interrupt write, epoch-guarded and bridge-stamped."; `InterruptCapableAdapter` | mcp/src/agents_remember/serving/harness_control_bridge.py:273-300; mcp/src/agents_remember/serving/harness_control_adapter.py:91-106 |
 | The pi mapper's two message_end emission classes (`pi:message_end` content-less L237, `transcript` content-ful L241). | `transcript` | mcp/src/agents_remember/serving/pi_rpc_events.py:302-302 |
 | The L3E truncation-envelope identity preservation (`type` + `message.stopReason`) this read consumes. | `_preserved_evidence_identity`, `clip_evidence_payload` | mcp/src/agents_remember/serving/harness_control_models.py:727-754; mcp/src/agents_remember/serving/harness_control_models.py:786-838 |
-| The service seams (per-session lock, epoch verify, identity, timeline) this ledger composes. | `session_lock`, `verify_epoch`, `build_identity`, `read_full_timeline` | mcp/src/agents_remember/serving/conversation/control/service.py:252-262; mcp/src/agents_remember/serving/conversation/control/service.py:294-298; mcp/src/agents_remember/serving/conversation/control/service.py:308-318; mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
+| The service seams (per-session lock, epoch verify, identity, timeline) this ledger composes. | `session_lock`, `verify_epoch`, `build_identity`, `read_full_timeline` | mcp/src/agents_remember/serving/conversation/control/service.py:252-262; mcp/src/agents_remember/serving/conversation/control/service.py:301-305; mcp/src/agents_remember/serving/conversation/control/service.py:315-325; mcp/src/agents_remember/serving/conversation/control/service.py:327-348 |
 
 ## Cross-Repo References
 
@@ -126,6 +126,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's two call sites (`interrupt`, `interrupt_status`) gained only the matching `await` — one-for-one line replacements; no handler logic, replay-cache, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
 - 2026-08-03T03:06:44+02:00 — W3-B04 curator: curated 3 table citations and 8 prose citations (11 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 19 stale self-citations after the
   `InterruptTicket` extraction and the `_claude_terminal_outcome`/`_claude_result_settlement` pair

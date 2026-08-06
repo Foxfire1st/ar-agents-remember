@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 
 ## What This Area Is
 
@@ -395,8 +395,17 @@ required-but-nullable fields in `models.py` (see `../overview.md`): the serializ
 `exclude_none=True`, so `ConversationPage`'s window (`older_cursor`) and every envelope's
 `previous_cursor` could not previously validate a body this route had itself emitted.
 
+## 260731-EFA-L16 — Projector Resolution Offloaded
+
+The active side's `_projector_for` now resolves the catalog row through `asyncio.to_thread(
+resolve_running_entry, ...)` — the catalog RLock + file read no longer executes on the uvicorn
+event loop, where a lock wait parked the whole server in the 2026-08-05 ABBA incident. The
+singleflight replacement semantics, epoch verification, and identity construction below the
+offload are untouched.
+
 ## Update History
 
+- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the offloaded projector resolution; singleflight/epoch/identity semantics unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-03T05:21:55+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 8 table citations and normalized 8 source paths; retried the focused-suite claim with four unique behavioral literals from `onboarding/mcp/tests/overview.md`, and the frozen stale `:1-1` bridge generated `onboarding/mcp/tests/overview.md:668-668; onboarding/mcp/tests/overview.md:670-672`. The immediate exact check returned zero findings; the two unchanged ambiguous rows are recorded in the batch report.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three routes' declared response

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/supervisor.py`  |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
+| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -49,9 +49,12 @@ sweep before redelivery is selected. The body-free aggregate `inbox-compacted` e
 counts and evidence only, and is silent when a sweep has no physical removals or resolutions;
 the existing TTL/cap fallback remains in force.
 
-The lock-held reconcile callback performs one catalog read and at most one deduplicated tmux
-snapshot. The callback is deliberately store-independent because the inbox lock can be held for
-up to the tmux's 5-second timeout; future callbacks must not re-enter the store.
+Since 260731-EFA-L16 the callback's catalog read is hoisted BEFORE the inbox transaction:
+`run_supervisor_sweep` fetches `ctx.catalog.list(include_terminated=True)` outside the lock and
+the reconcile closure consumes that pre-fetched `catalog_entries`, so the lock-held callback
+performs at most one deduplicated tmux snapshot and no catalog read. The callback remains
+deliberately store-independent because the inbox lock can still be held for up to the tmux's
+5-second timeout; future callbacks must not re-enter the store.
 
 ### 260707-HFX2-L17 Pair-Scoped Supervisor
 
@@ -281,10 +284,10 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `supervisor_loop`/`_supervisor_context` in `app.py` construct one `SupervisorContext` per sweep iteration and call `run_supervisor_sweep` via `asyncio.to_thread` on the settings-driven interval. | `_supervisor_context`, `_supervisor_loop`, `run_supervisor_sweep` | mcp/src/agents_remember/serving/app.py:834-858; mcp/src/agents_remember/serving/app.py:861-872 |
+| `supervisor_loop`/`_supervisor_context` in `app.py` construct one `SupervisorContext` per sweep iteration and call `run_supervisor_sweep` via `asyncio.to_thread` on the settings-driven interval. | `_supervisor_context`, `_supervisor_loop`, "def run_supervisor_sweep" | mcp/src/agents_remember/serving/app.py:834-858; mcp/src/agents_remember/serving/app.py:861-872; mcp/src/agents_remember/serving/supervisor.py:1195-1195 |
 | The pane classifier `evaluate_pane_findings` calls per running harness row. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The heartbeat store `run_supervisor_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `SupervisorHeartbeatStore` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121 |
-| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | `evaluate_expectation_findings`, `_mark_expectation_missed`, `mark_missed`, `ExpectationRowStore` | mcp/src/agents_remember/serving/supervisor.py:147-194; mcp/src/agents_remember/serving/supervisor.py:711-731; mcp/src/agents_remember/controlplane/expectation_rows.py:127-134; mcp/src/agents_remember/controlplane/expectation_rows.py:156-166 |
+| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | `evaluate_expectation_findings`, `_mark_expectation_missed`, "def mark_missed(row: ExpectationRow", "class ExpectationRowStore" | mcp/src/agents_remember/serving/supervisor.py:147-194; mcp/src/agents_remember/serving/supervisor.py:711-731; mcp/src/agents_remember/controlplane/expectation_rows.py:127-134; mcp/src/agents_remember/controlplane/expectation_rows.py:156-166 |
 | The operator inbox store R2d/R4a/R4c read and write directly, including the reserved `mark_escalated` transition and the ladder's own `advance_rung` transition. | `mark_escalated`; `advance_rung` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:237-252; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
 | The pure escalation-ladder walker `_escalate_rung` reads for the row's next rung/owner. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
 | The two-hop, dead-node-skipping owner derivation `_escalate_rung`'s rung-2 branch and `_signal_dead_upstream` both call, plus the liveness check `evaluate_dead_upstream_findings`/`seat_is_suspect` use. | `derive_skip_level_owner`; `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
@@ -295,8 +298,8 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 | The owner-derivation helper both `_auto_nudge` and `_signal_emit` call before posting an owner-addressed inbox row. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:249-275 |
 | The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
 | The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | `_signal_emit` | mcp/src/agents_remember/serving/supervisor.py:858-934 |
-| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | `_redeliver`, `_post_owner_signal`, `_signal_emit`, `deliver_inbox_entry` | mcp/src/agents_remember/serving/supervisor.py:527-577; mcp/src/agents_remember/serving/supervisor.py:775-855; mcp/src/agents_remember/serving/supervisor.py:858-934; mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
-| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | `TerminalCatalog`, `evaluate_pane_findings`, `evaluate_seat_liveness_findings` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857; mcp/src/agents_remember/serving/supervisor.py:124-144; mcp/src/agents_remember/serving/supervisor.py:336-373 |
+| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | `_redeliver`, `_post_owner_signal`, `_signal_emit`, "def deliver_inbox_entry" | mcp/src/agents_remember/serving/supervisor.py:527-577; mcp/src/agents_remember/serving/supervisor.py:775-855; mcp/src/agents_remember/serving/supervisor.py:858-934; mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
+| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", `evaluate_pane_findings`, `evaluate_seat_liveness_findings` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857; mcp/src/agents_remember/serving/supervisor.py:124-144; mcp/src/agents_remember/serving/supervisor.py:336-373 |
 | Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `test_mid_turn_pane_fires_a_finding`, `test_overdue_briefed_by_row_fires`, `test_missing_report_fires_when_row_is_overdue`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_supervisor.py:127-135; mcp/tests/test_supervisor.py:153-167; mcp/tests/test_supervisor.py:183-204; mcp/tests/test_supervisor.py:235-248; mcp/tests/test_supervisor.py:270-280; mcp/tests/test_supervisor.py:400-489 |
 
 ## Cross-Repo References
@@ -337,8 +340,34 @@ durable stores directly rather than the projection.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L16 Current Delta
+
+`ctx.catalog.list(include_terminated=True)` is now fetched BEFORE `reconcile_and_compact`, outside
+the operator-inbox lock, and the reconcile closure consumes the pre-fetched `catalog_entries`. The
+lock-held fold→resolve→compact transaction is unchanged — consume authority and the declared
+260731-EFA-L5 exception stand — and the tmux snapshot is still taken fresh inside the callback,
+bounded by its 5-second timeout and fail-closed.
+
+The accepted staleness is one-directional and benign: `terminated` is monotone in the catalog, so a
+subject that terminates after the pre-fetch reads as non-terminated and is KEPT this sweep — never
+a false resolve; absence in the snapshot is never proof of gone; and the supervisor is
+level-triggered, so a kept row is simply re-judged on the next sweep.
+
+Provenance: the previous shape — a catalog read inside the lock-held reconcile — was the mirror
+image of the liveness sweep's nesting (the catalog batch lock held across the synchronizer's
+inbox/gate acquisitions), and the ABBA deadlocked the serving daemon twice on 2026-08-05. No
+thread may now hold one store's lock while acquiring another's (`durable_store.exclusive_access`:
+ONE ORDER ACROSS STORES, TOO); forcing regressions live in `mcp/tests/test_cross_store_lock_order.py`.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: documented the reconcile catalog read hoisted
+  before the inbox transaction (a pre-fetched `catalog.list(include_terminated=True)` consumed by
+  the closure; the lock-held fold→resolve→compact and the bounded fail-closed tmux snapshot
+  unchanged), the one-directional benign staleness analysis, and the 2026-08-05 ABBA deadlock
+  provenance. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-03T03:59:59+02:00 — Curated 10 citation findings (5 table rows, 5 source-form repairs); deleted 1 unanchorable substantive Tier-3 citation row and recorded it in the batch report.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `EscalationSchedule` and `OwnerSignal`; sweep posture and predicates unchanged.
