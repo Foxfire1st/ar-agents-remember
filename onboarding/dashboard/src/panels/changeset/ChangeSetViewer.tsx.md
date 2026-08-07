@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-12T12:55+02:00                                 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`             |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -91,17 +91,18 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "useEffect(() =>"; "const req = leaf"; "leafChangeset("; "masterChangeset("; "taskChangeset("; "void req.then"; "[repo, scope, master, leaf, mode]" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:168-187 |
-| The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind, file.path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:233-233; dashboard/src/panels/changeset/ChangeSetViewer.tsx:237-238; dashboard/src/panels/changeset/ChangeSetViewer.tsx:240-240; dashboard/src/panels/changeset/ChangeSetViewer.tsx:245-245 |
-| Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath`; `partnerOf` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:149-154; dashboard/src/panels/changeset/ChangeSetViewer.tsx:221-229 |
-| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo"; "masterChangeset(repo"; "taskChangeset(repo"; "fileDiff(repo" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:168-187; dashboard/src/panels/changeset/ChangeSetViewer.tsx:233-247 |
-| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:342-342; dashboard/src/panels/changeset/ChangeSetViewer.tsx:353-353; dashboard/src/panels/changeset/ChangeSetViewer.tsx:357-357 |
-| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:502-502 |
-| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; ") : ("; "No file picked yet: the same faint boomerang backdrop"; "EmptyStateBackdrop src="; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:341-341; dashboard/src/panels/changeset/ChangeSetViewer.tsx:343-344; dashboard/src/panels/changeset/ChangeSetViewer.tsx:347-348 |
-| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/DetailPanel.tsx:730-772; dashboard/src/panels/DetailPanel.tsx:783-829 |
+| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo, scope, master, leaf, mode);"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo, master, { includeLeaves: false })"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-167; dashboard/src/panels/changeset/ChangeSetViewer.tsx:295-296; dashboard/src/panels/changeset/ChangeSetViewer.tsx:322-322 |
+| The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind, file.path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:182-183; dashboard/src/panels/changeset/ChangeSetViewer.tsx:442-442; dashboard/src/panels/changeset/ChangeSetViewer.tsx:445-445; dashboard/src/panels/changeset/ChangeSetViewer.tsx:450-450 |
+| Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:149-155 |
+| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo, master, { includeLeaves: false })"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-190 |
+| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:393-393; dashboard/src/panels/changeset/ChangeSetViewer.tsx:404-404; dashboard/src/panels/changeset/ChangeSetViewer.tsx:408-408 |
+| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:565-565 |
+| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:392-392; dashboard/src/panels/changeset/ChangeSetViewer.tsx:398-399 |
+| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:20-62; dashboard/src/panels/detail-panel/changeSetBar.tsx:69-115 |
 | The loading, back, and master-file NET-diff behavior pinned in the tests. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T14:53+02:00 — 260731-EFA-L6 S18-B13 curator: closed D5 false-branch connector evidence by fixer-generated ternary/backdrop ranges for the same-reviewer closing delta.
 

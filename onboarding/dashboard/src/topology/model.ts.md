@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/topology/model.ts`           |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-01T10:30+02:00                      |
-| lastVerifiedCommitHash |                                             `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |                                             2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |                                             `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |                                             2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
@@ -166,6 +166,7 @@ projection/model/render boundary.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

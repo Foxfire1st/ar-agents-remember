@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:50+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -103,9 +103,9 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The surface under test; imported at L34. | `statusRevision` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:315-315 |
-| The exported scroll-key set the ArrowDown-absence pin imports; imported at L35. | `ArrowDown` | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:114-114 |
-| The real store seeded with projections (`activeConversationStore`, `connectConversation`, `disconnectConversation`); imported at L16-L20. | "export const activeConversationStore =" | dashboard/src/data/conversation/store.ts:84-84 |
+| The surface under test; imported at L34. | `statusRevision` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:73-73 |
+| The exported scroll-key set the ArrowDown-absence pin imports; imported at L35. | `ArrowDown` | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/measurements.ts:75-75 |
+| The real store seeded with projections (`activeConversationStore`, `connectConversation`, `disconnectConversation`); imported at L16-L20. | "export const activeConversationStore =" | dashboard/src/data/conversation/store.ts:207-207 |
 | The projection type + `emptyProjection` the fixtures extend; imported at L14-L15. `applyInitialPage` at L182-L195 is what copies a page's `capabilities`/`totalItems` onto the projection. | `applyInitialPage` | dashboard/src/data/conversation/reducer.ts:168-202 |
 | The item/identity/status/page wire types the fixtures build (incl. the `agent` ref); imported at L22-L27. | `agent` | dashboard/src/data/conversation/types.ts:172-172 |
 | The mocked announcer side channel the visibility gate is asserted against; imported at L13, mocked at L37-L40. | `announcePolite` | dashboard/src/data/announcer.ts:33-35 |
@@ -128,6 +128,7 @@ renders the server's child-scoped detail, keeps the parent projection `live` wit
 retries explicitly, and clears the local error after success cit:(["child-scoped history failure"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:350-391).
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded `(L…)`
   prose citations with exact test-title anchors, the `n/a` table rows with exact frozen-source

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-07T20:09+02:00 |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -604,7 +604,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/observer/contract_snapshot.py:60-126 |
 | `progress_status` is the setup-progress status record. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
 | The `MetricsBucketVocabularyTests` suite pins the bucket vocabulary. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection.py:1627-1732 |
-| The ambient `end()` entry and its focused terminal-state test are named here. | "def end"; `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` | mcp/src/agents_remember/observer/ambient.py:243-243; mcp/tests/test_observer_ambient.py:166-166 |
+| The ambient `end()` entry and its focused terminal-state test are named here. | "def end"; `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` | mcp/src/agents_remember/observer/ambient.py:274-274; mcp/tests/test_observer_ambient.py:175-175 |
 | `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
 | The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:215-217 |
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
@@ -729,7 +729,26 @@ and the dashboard told an operator nothing was due. It now calls `pending_for_pr
 degrades one row at a time. **The general rule for this route: a `suppress(ValueError)` around a
 strict read is not per-row tolerance, it is whole-file silence.**
 
+## 260731-EFA-L8 — The Ambient Heartbeat Wait Is A Monotonic-Deadline Recheck Loop
+
+Round 13 removes the last wedged-wait path from the ambient heartbeat ticker.
+`_default_ticker_wait(stop, interval)` replaces `Event.wait`/`Condition.wait` in
+`ambient._heartbeat_loop`: CPython's waiter-lock handoff can overrun the timeout and leave the
+thread parked with no recheck or escape, so the production wait chunks `time.sleep` against a
+monotonic deadline and re-reads the stop flag on every wake — the interval expires
+deterministically and stop is always observed. `start(ticker_wait=...)` is the keyword-only test
+seam, and `_heartbeat_tick` owns one beat: emit unless idle past the inactivity cutoff, return
+False to exit the loop when no lifecycle is active or the current one is terminal. Tests are
+seam-driven and deterministic (grant-stepping fake + `wait_until` polling, plus unit pins for the
+default wait and the loop exit) — no short-interval wall-clock races.
+
 ## Update History
+
+- 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13
+  ambient heartbeat mechanism — `_default_ticker_wait`'s monotonic-deadline chunked wait with
+  stop recheck replaces `Event.wait` (no wedged-wait path), the `start(ticker_wait=...)`
+  keyword-only seam, `_heartbeat_tick` extraction, and the deterministic seam-driven test
+  rewrite. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 repairs and the pre-PASS whole-claim audit; narrowed the ContractSnapshot row to its generated declaration extent and rechecked this card through the locked exact-document fixer/check.
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-12T12:55+02:00                                      |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`                  |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -70,9 +70,10 @@ design).
 | Screen rows + counters + empty-state prompt (matched on `container.textContent`); master-mode clickable row opens a diff. | "renders the changed-file rows + counters for a task scope"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:107-120; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
 | DetailPanel button calls `onOpenChangeSet` with the series target. | `onOpenChangeSet` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:285-285 |
 | Cockpit shows no takeover initially and keeps the rails. | "does not show the takeover initially and keeps the Operations rails" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:297-304 |
-| Subject under test: the screen. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:156-365 |
+| Subject under test: the screen. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:416-478 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 11 citation finding(s); scoped recheck clean.
 

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/setControlsCopy.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Shared copy and announcement formatters. | `setWaitingCopy`, `clampChipCopy`, `queuedChipCopy`, `setRouteErrorCopy`, `setResultAnnouncement`, `sessionAwaitingInputAnnouncement` | dashboard/src/data/setControlsCopy.ts:19-21; dashboard/src/data/setControlsCopy.ts:25-27; dashboard/src/data/setControlsCopy.ts:29-31; dashboard/src/data/setControlsCopy.ts:60-74; dashboard/src/data/setControlsCopy.ts:83-101; dashboard/src/data/setControlsCopy.ts:125-127 |
 | Presentation-model consumer. | `deriveSetChips` | dashboard/src/data/setChips.ts:58-216 |
-| I/O and live-region consumer. | "The set-controls driver (260715-FEUI-L4 S1/S3/S4)" | dashboard/src/data/setClient.ts:38-38 |
+| I/O and live-region consumer. | "The set-controls driver (260715-FEUI-L4 S1/S3/S4)" | dashboard/src/data/setClient.ts:42-42 |
 
 ## Cross-Repo References
 

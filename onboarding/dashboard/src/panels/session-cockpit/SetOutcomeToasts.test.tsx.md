@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Visibility, persistence, mark-seen, focus, and collapse cases. | "renders nothing without unacknowledged outcomes" | dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx:34-44 |
-| Component under test. | "export function SetOutcomeToasts" | dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx:58-58 |
+| Component under test. | "export function SetOutcomeToasts" | dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx:141-141 |
 
 ## Cross-Repo References
 

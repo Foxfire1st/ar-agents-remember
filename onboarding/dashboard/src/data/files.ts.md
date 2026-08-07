@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/files.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,12 +86,12 @@ the reviewed task evidence for any current behavioral claim.
 | Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs. | `fetchRepos`; `listDir`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:113-114; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141 |
 | The serving layer registers the four `/api/files/*` endpoints this client calls. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
 | `run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404). | `run_scoped` | mcp/src/agents_remember/serving/scope.py:207-227 |
-| `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. | `FileViewerImpl`; `FilesApiError` | dashboard/src/panels/file-viewer/FileViewer.tsx:112-112; dashboard/src/panels/file-viewer/FileViewer.tsx:151-273 |
+| `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. | "function FileViewerImpl({ active = true }: { active?: boolean }) {"; "return e instanceof FilesApiError ? e.code : \"request failed\";" | dashboard/src/panels/file-viewer/FileViewer.tsx:205-205; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112 |
 | `useFilesTree` calls `listDir` per directory level to lazy-load each tree side. | `useFilesTree`; `listDir` | dashboard/src/panels/file-viewer/useFilesTree.ts:19-55 |
 | `FileTree` consumes the `DirEntry` and `Scope` types. | `FileTree`; `DirEntry`; `Scope` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
 | `DualPane` consumes the `FileContent` type for its code side. | `DualPane`; `FileContent` | dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
 | The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping. | `FilesApiError` | dashboard/src/data/files.test.ts:1-35 |
-| House-style sibling client: `base` arg and typed results. Unlike this request/response client, `stream.ts` is stateful: it applies snapshots/deltas and connection status directly to the stream store. | "export function openConversationStream" | dashboard/src/data/conversation/stream.ts:86-86 |
+| House-style sibling client: `base` arg and typed results. Unlike this request/response client, `stream.ts` is stateful: it applies snapshots/deltas and connection status directly to the stream store. | "export function openConversationStream" | dashboard/src/data/conversation/stream.ts:209-209 |
 
 ## Cross-Repo References
 

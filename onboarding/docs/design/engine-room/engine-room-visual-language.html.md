@@ -6,8 +6,8 @@
 | path                   | `docs/design/engine-room/engine-room-visual-language.html` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-06-21T23:35                                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`           |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`           |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -131,9 +131,9 @@ renderer it governs.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The companion prototype / scenario player this spec distils into a primitives library; the spec's CSS classes mirror it 1:1. | "h1>Engine Room · Pod Stage</h1>" | docs/design/engine-room/podstage.html:162-162 |
-| The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
 | The React engine-room renderer drives the GSAP timeline from `useEngineTimeline.ts`. | "export function useEngineTimeline" | dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168 |
-| The React engine-room renderer's static styles live in `engineRoomStyles.ts`. | "Static layout only" | dashboard/src/panels/engine-room/engineRoomStyles.ts:599-599 |
+| The React engine-room renderer's static styles live in `engineRoomStyles.ts`. | "Static layout only" | dashboard/src/panels/engine-room/layout.styles.ts:592-592 |
 | The React engine-room renderer's boot timeline lives in `BootTimeline.tsx`. | `BootTimeline` | dashboard/src/panels/engine-room/BootTimeline.tsx:155-177 |
 
 ## Cross-Repo References

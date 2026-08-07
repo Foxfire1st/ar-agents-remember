@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_ambient.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-04T01:24+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T20:09+02:00                           |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -80,7 +80,14 @@ events appear, plus the task-34 **activity-decay** coverage:
 reset `_inactive_seconds_locked()` to 0 while an emitted heartbeat does not) and
 `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` (the ticker beats while active,
 goes silent once the clock jumps past `inactivity_cutoff_seconds`, and resumes the moment a real
-`emit_tool` resets the activity clock). `AskTests` cover `build_ask` pruning and `coerce_phase` validation.
+`emit_tool` resets the activity clock). Rounds 12-13 (260731-EFA-L8) make the heartbeat assertions
+**seam-driven and deterministic**: tests inject a grant-stepping fake through the keyword-only
+`start(ticker_wait=...)` seam — each call is one tick step the test grants, never a parked
+Condition/Event handoff — and `wait_until(...)` polls for the asserted side effect (first
+heartbeat, stop observed, thread exit) instead of racing wall-clock time. Unit pins cover
+`_default_ticker_wait` (returns after the interval; rechecks the stop flag on every wake) and the
+loop-exit contract (`test_heartbeat_loop_exits_when_tick_reports_the_lifecycle_is_gone`).
+`AskTests` cover `build_ask` pruning and `coerce_phase` validation.
 
 ### Conventions
 
@@ -89,7 +96,9 @@ Inserts `mcp/src` on `sys.path` (the suite idiom). `_AmbientCase` builds an
 heartbeat for determinism — the cadence rides one `timing=AmbientTiming(...)`
 parameter object rather than loose keywords — and calls `shutdown()` in `tearDown`
 to stop the ticker; the heartbeat tests deliberately use a short interval then stop
-before reading. The task-34 decay tests inject a list-backed mutable clock (still a
+before reading. Rounds 12-13 replace that wall-clock cadence with
+`start(ticker_wait=...)` grant-stepping fakes plus `wait_until` polling, so tick, stop, and
+loop-exit assertions are deterministic. The task-34 decay tests inject a list-backed mutable clock (still a
 separate `clock=` argument) plus an explicit
 `AmbientTiming(heartbeat_seconds=..., inactivity_cutoff_seconds=...)` so they can step
 time deterministically across the cutoff.
@@ -109,7 +118,7 @@ into a literal container is still seen.
 | The state vocabulary (`TERMINAL_STATES`), `coerce_end_outcome`, and `coerce_phase` under test. | `TERMINAL_STATES`; `coerce_end_outcome`; `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158; mcp/src/agents_remember/observer/lifecycle_state.py:180-184 |
 | The lifecycle-state module owns the `LifecycleError` and guarded-start subtype asserted throughout this suite. | `LifecycleError`; `GuardedStartError` | mcp/src/agents_remember/observer/lifecycle_state.py:161-162; mcp/src/agents_remember/observer/lifecycle_state.py:165-177 |
 | The store events are written to and read back from. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| Task 34 heartbeat activity-decay coverage: inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | `test_inactive_seconds_tracks_real_activity_not_heartbeats`; `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` | mcp/tests/test_observer_ambient.py:315-343; mcp/tests/test_observer_ambient.py:345-371 |
+| Task 34 heartbeat activity-decay coverage: inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | `test_inactive_seconds_tracks_real_activity_not_heartbeats`; `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` | mcp/tests/test_observer_ambient.py:377-405; mcp/tests/test_observer_ambient.py:407-474 |
 | `_string_constants` plus `EndSignalVocabularyTests`: the `end` signal names no terminal state of its own and converts through `coerce_end_outcome`. | `_string_constants`; `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:140-154; mcp/tests/test_observer_ambient.py:157-185 |
 
 ## Series-Contract Notes
@@ -118,6 +127,12 @@ Ambient observer tests use leaf enclosure paths when lifecycle promotion records
 
 ## Update History
 
+- 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded rounds 12-13 —
+  heartbeat tests are now seam-driven and deterministic: a grant-stepping `ticker_wait` fake via
+  `start(ticker_wait=...)` (one tick per granted step), `wait_until` polling for first
+  heartbeat/stop/thread-exit, unit pins for `_default_ticker_wait` interval and stop-recheck, and
+  the loop-exit pin `test_heartbeat_loop_exits_when_tick_reports_the_lifecycle_is_gone`.
+  Verification metadata stays pinned until closeout stamps the code commit.
 - 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
 
 - 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: retained the generated

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/ProgressFill.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ Presentational; the only inline style is the dynamic fill height. Cyan = the pro
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The detail panel renders this for task-step progress. | `ProgressFill` | dashboard/src/panels/DetailPanel.tsx:1322-1322 |
+| The detail panel renders this for task-step progress. | `ProgressFill` | dashboard/src/grammar/ProgressFill.tsx:27-45 |
 
 ## Update History
 

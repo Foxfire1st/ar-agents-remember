@@ -6,13 +6,31 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260731-EFA-L8 Split Layout
+
+The frontend-rail size remediation (R4/R5) re-shaped this route: `DetailPanel.tsx`
+→ `detail-panel/` (canonical entry + `state.ts`, `model.ts`, `lifecycleBody.tsx`,
+`taskReader.tsx`, `taskDocPanels.tsx`, `changeSetBar.tsx`, `styles.ts`, seven
+behavior-split test files + `test-utils.tsx`); `LifecycleList.tsx` →
+`lifecycle-list/` (four behavior-split test files + `test-utils.tsx`);
+`SessionsView.tsx` → `session-cockpit/sessions-view/` (controller/body/palette/
+styles + six test files); `ConversationTimeline.tsx` →
+`session-cockpit/conversation/conversation-timeline/` (12 machinery modules +
+seven test files); `engineRoomStyles.ts` → engine-room style domains + `styles.ts`
+barrel; `EnclosureCanvas.tsx` → eight engine-room sibling modules. Shared panels
+also gained parts/styles modules (`sessionComposer*`, `terminalSession.ts`,
+`interactionParts*`, `launchFlowParts*`, `sessionRailParts*`, `stageLayers.tsx`,
+`conversationSurfaceParts*`, `chatsStageStyles.ts`). The naming rule
+(kebab-case folder, one canonical entry, short responsibility-based siblings) is
+now a repository guideline. Behavior is preserved.
 
 ## Purpose
 
@@ -129,19 +147,19 @@ inside agents-remember.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:72-80 |
-| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "display: view === \"chats\" ? \"flex\" : \"none\""; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:612-612; dashboard/src/cockpit/Cockpit.tsx:619-619; dashboard/src/cockpit/Cockpit.tsx:622-622 |
-| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLifecycleId={selectedLifecycleId}"; "selectedLeafKey={viewedLeafKey}"; "taskDocuments={taskDocuments}"; "contextMaster={contextMaster}" | dashboard/src/cockpit/Cockpit.tsx:622-628 |
+| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:768-768; dashboard/src/cockpit/Cockpit.tsx:774-774 |
+| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:774-779 |
 | Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
 | The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
 | The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:359-383 |
-| `CockpitShell` defaults `initialView="operations"`. | `initialView` | dashboard/src/cockpit/Cockpit.tsx:385-385 |
-| The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:117-459 |
-| The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:231-723 |
-| Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `send`; `successful` | dashboard/src/panels/HighlightComposer.tsx:240-242; dashboard/src/panels/HighlightComposer.tsx:244-696 |
-| Contextual task-side chat builds a leaf context package and routes it to running sessions or detected harnesses. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForLeaf` | dashboard/src/data/sessions.ts:477-486; dashboard/src/panels/RailChat.tsx:213-252; dashboard/src/panels/RailChat.tsx:254-519 |
-| `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({"; "const rows = operationRows({"; "const selectedKey = selectedSelection ? selectionKey(selectedSelection) : selectedId;"; "onSelectionChange={(keys) => {"; "Re-showing passes active=true" | dashboard/src/panels/LifecycleList.tsx:224-419 |
-| `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. | `DetailPanelImpl`; `selectedTaskDoc`; `displayedReaderDoc`; `TaskReader` | dashboard/src/panels/DetailPanel.tsx:332-718; dashboard/src/panels/DetailPanel.tsx:841-886; dashboard/src/panels/DetailPanel.tsx:1303-1388 |
-| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel. | `State`; `LIVE_STATES`; `TERMINAL_STATES`; `LifecycleList` | dashboard/src/panels/LifecycleList.tsx:425-425; dashboard/src/panels/LifecycleList.tsx:852-852; mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:136-139 |
+| `CockpitShell` defaults `initialView="operations"`. | `initialView` | dashboard/src/cockpit/Cockpit.tsx:850-850 |
+| The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
+| The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
+| Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `successful` | dashboard/src/panels/HighlightComposer.tsx:745-745; dashboard/src/panels/HighlightComposer.tsx:244-696; dashboard/src/panels/HighlightComposer.tsx:238-238 |
+| Contextual task-side chat builds a leaf context package and routes it to running sessions or detected harnesses. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForLeaf` | dashboard/src/data/sessions.ts:548-557; dashboard/src/panels/RailChat.tsx:218-252; dashboard/src/panels/RailChat.tsx:414-478 |
+| `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:294-294; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-224; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:307-307; dashboard/src/grammar/ModeBar.tsx:65-65; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:350-350; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:329-329 |
+| `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. | "function DetailPanelImpl({"; "export function displayedReaderDoc({"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/model.ts:89-89; dashboard/src/panels/detail-panel/taskReader.tsx:494-494 |
+| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel. | "State = Literal[LiveState, TerminalState]"; "LIVE_STATES: tuple[LiveState, ...] = cast("; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:136-136; mcp/src/agents_remember/observer/lifecycle_state.py:139-139; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
 | The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. | `SERVED_LIFECYCLE`; `BASE_LIFECYCLE`; `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:78-78; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The typed fixture factories provide lifecycle and projection nodes. | `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The hand-kept snapshot payload provides the generated timestamp. | `generatedAt` | dashboard/src/fixtures/snapshot.json:3-3 |
@@ -219,6 +237,7 @@ directions plus runtime vocabulary assertions. The producer-to-TypeScript contra
 generator and its stale check; the manual boundary is sample coverage.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Split Layout section (kebab-case folders, canonical entries, parts/styles modules). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound Chats mount/props, lifecycle navigation/reader ownership, and served-fixture seeding to the packet-specified operative spans. Verification metadata unchanged.
 

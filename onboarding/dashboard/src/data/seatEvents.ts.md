@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/seatEvents.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e2b99dcd71fb6ca31f642dd61c3c16f3d3d05bf5`       |
-| lastVerifiedCommitDate | 2026-07-17T02:52:07+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ holds — one connection, two consumers.
     classification 4× as often and usually got here first; equal-or-older must never regress the
     row). ISO strings compared lexicographically — same-producer server stamps, flagged as
     acceptable in the worker report.
-- cit:([`applySeatEventLine`], dashboard/src/data/seatEvents.ts:95-104) — the JSONL adapter for `connectEvents`; malformed lines
+- cit:([`applySeatEventLine`], dashboard/src/data/seatEvents.ts:107-116) — the JSONL adapter for `connectEvents`; malformed lines
   and non-seat kinds are ignored, never break the feed.
 - cit:([`createGatedSeatEventApplier`], dashboard/src/data/seatEvents.ts:113-130) — the **per-connection backlog gate** (review
   finding 2 fix): the channel replays history before EACH connection's `ready` marker (a reconnect
@@ -78,7 +78,7 @@ the reviewed task evidence for any current behavioral claim.
 | Kind gate, per-kind application, strictly-newer dedup, JSONL adapter, backlog gate. | `applySeatEvent` | dashboard/src/data/seatEvents.ts:40-92 |
 | The server emitter defining the four kinds + data field names. | `log_retire_event`, `log_landed_event`, `log_rename_event`, `log_turn_state_change_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:48-68; mcp/src/agents_remember/serving/seat_events.py:71-89; mcp/src/agents_remember/serving/seat_events.py:92-110 |
 | The `ready`/`error` transport hooks the gate rides (`connectEvents` + `onInterrupt`). | `connectEvents` | dashboard/src/data/stream.ts:129-140 |
-| The one-EventSource-two-consumers wiring + gate lifecycle. | `onInterrupt` | dashboard/src/cockpit/Cockpit.tsx:379-379 |
+| The one-EventSource-two-consumers wiring + gate lifecycle. | `onInterrupt` | dashboard/src/cockpit/Cockpit.tsx:383-383 |
 | The `patch`/`setStatus` store actions this applies through. | `patch`, `setStatus` | dashboard/src/data/sessions.ts:153-153; dashboard/src/data/sessions.ts:158-158 |
 | The unit suite: never-resurrect, unknown-session, strict-newer dedup, vocabulary guard, malformed lines, per-connection gate. | "createGatedSeatEventApplier (per-connection backlog gate — review finding 2)" | dashboard/src/data/seatEvents.test.ts:161-186 |
 
@@ -92,6 +92,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 6 Repo-Internal citation rows with 10 exact
   identifiers and repository-relative sources; preserved the no-Domain-Documentation and no-cross-repo

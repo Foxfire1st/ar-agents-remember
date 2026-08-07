@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ refusal path — the exact behaviors the review caught as falsely claimed in rou
   `reason: \`interrupt ${state}\`` string the reason assertions compare against. `IDENTITY`,
   `streamingItem` and `status` likewise build on `conversationIdentity` / `conversationItem` /
   `conversationStatus`.
-- **`resolveWorkingTurnId` (F1)** cit:([`resolveWorkingTurnId`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78): prefers the canonical status turn id; correlates from the
+- **`resolveWorkingTurnId` (F1)** cit:([`resolveWorkingTurnId`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:90-97): prefers the canonical status turn id; correlates from the
   newest streaming item's `turnId` when status omits it on the hosted-codex topology (L4.R1); is null
   when the turn is not `working` even if items carry a `turnId`; is null when a working turn's id is
   genuinely unresolvable.
@@ -69,8 +69,8 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The hook + `resolveWorkingTurnId` under test (imported at L17). | `resolveWorkingTurnId` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78 |
-| The store seeded with projections (`activeConversationStore`, imported at L5). | `activeConversationStore` | dashboard/src/data/conversation/store.ts:84-191 |
+| The hook + `resolveWorkingTurnId` under test (imported at L17). | `resolveWorkingTurnId` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:90-97 |
+| The store seeded with projections (`activeConversationStore`, imported at L5). | `activeConversationStore` | dashboard/src/data/conversation/store.ts:207-215 |
 | The reducer `emptyProjection`/projection type (imported at L4). | `emptyProjection` | dashboard/src/data/conversation/reducer.ts:68-81 |
 | The status/capability/item wire types the fixtures build (imported at L6-L10). | `ConversationStatus`, `ConversationCapabilities`, `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176; dashboard/src/data/conversation/types.ts:197-229; dashboard/src/data/conversation/types.ts:253-283 |
 | `capabilitiesWithInterrupt` (aliased to `capabilities` here) and the full `conversationCapabilities` tree it overrides one leaf of. | `capabilitiesWithInterrupt` | dashboard/src/test/fixtures/conversationWire.ts:149-153 |

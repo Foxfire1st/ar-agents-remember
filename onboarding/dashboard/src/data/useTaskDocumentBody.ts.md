@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/useTaskDocumentBody.ts`       |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                   `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                   2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                   `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |                                                   2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,11 +80,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
-| `DetailPanelImpl` resolves the displayed reader document and passes it through the body hook. | `DetailPanelImpl`; `useTaskDocumentBody` | dashboard/src/panels/DetailPanel.tsx:332-718 |
-| The enclosure change-set controls wait until the body reader is no longer loading. | `taskDocumentBodyState`, `changeSetBar` | dashboard/src/panels/DetailPanel.tsx:205-205; dashboard/src/panels/DetailPanel.tsx:394-395 |
-| The task-document reader delays its notes until the body reader is no longer loading. | `TaskNotes` | dashboard/src/panels/DetailPanel.tsx:1085-1093; dashboard/src/panels/DetailPanel.tsx:1369-1377 |
+| `DetailPanelImpl` resolves the displayed reader document and passes it through the body hook. | "function DetailPanelImpl({"; "export function useTaskDocumentBody(" | dashboard/src/data/useTaskDocumentBody.ts:29-74; dashboard/src/panels/detail-panel/DetailPanel.tsx:18-71 |
+| The enclosure change-set controls wait until the body reader is no longer loading. | "import { ChangeSetButton } from \"./changeSetBar\";"; "const { documentFor: fullTaskDoc, state: taskDocumentBodyState } =" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:19-19; dashboard/src/panels/detail-panel/state.ts:132-132 |
+| The task-document reader delays its notes until the body reader is no longer loading. | `TaskNotes` | dashboard/src/panels/TaskNotes.tsx:146-189 |
 | The transport adapter owns the same-origin endpoint and non-OK rejection. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
-| Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | "DetailPanel doc-reader change-set bar (L4a)" | dashboard/src/panels/DetailPanel.test.tsx:1276-1399 |
+| Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | "DetailPanel doc-reader change-set bar (L4a)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:13-13 |
 | Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. | "Operations click-to-detail body hydration" | dashboard/src/cockpit/Cockpit.test.tsx:335-441 |
 
 ## Cross-Repo References

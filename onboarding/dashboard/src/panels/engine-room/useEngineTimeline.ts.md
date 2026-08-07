@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/useEngineTimeline.ts`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash |                                                           `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                           2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                           `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |                                                           2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -126,7 +126,7 @@ entries, so the GSAP/Motion library docs are not cited here — the split is pro
 | RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. | `clearProps` | dashboard/src/panels/engine-room/useEngineTimeline.ts:194-212 |
 | Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); the `refuse` one-shot and the gentle ~1.7s sine `fault` breathe. | `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
 | The honest-motion gate that suppresses the whole hook under effects-off/reduced-motion. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| The canvas that renders the `data-draw='on'` / `data-fx=…` elements + wires this hook to the `<svg>` root. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| The canvas that renders the `data-draw='on'` / `data-fx=…` elements + wires this hook to the `<svg>` root. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
 | `EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`). | `EngineProcessNode`; `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160; dashboard/src/types/projection.ts:162-202 |
 | The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract. | "EnclosureCanvas — GSAP gate (05f §8.4 — no ticker under effects=off)" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:55-90 |
 

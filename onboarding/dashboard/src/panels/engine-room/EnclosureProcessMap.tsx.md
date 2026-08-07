@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.tsx`  |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -93,11 +93,11 @@ is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-147 |
-| The G6 backdrop (`backdrop`/`backdropVideo`/`stageContent`) mounted only when effects are on. | "className={backdrop}"; "className={backdropVideo}"; "className={stageContent}" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:100-100; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:103-103; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:113-113 |
+| The G6 backdrop (`backdrop`/`backdropVideo`/`stageContent`) mounted only when effects are on. | "className={backdrop}"; "className={backdropVideo}"; "className={stageContent}" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:105-105; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:108-108; dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:118-118 |
 | The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`. | `EnclosureProcessMap` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-147 |
-| The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
 | The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices. | "prunes the stale base node and raises a fleeting block with BOTH recovery choices" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:352-360 |
-| The bird's-eye scene (the render body, given `workspaceEngines`). | `workspaceEngines` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1194-1194 |
+| The bird's-eye scene (the render body, given `workspaceEngines`). | `workspaceEngines` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:50-50 |
 | The honest-motion gate. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 | Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | `EngineProcessNode`; `ProviderNode`; `GateNode` | dashboard/src/types/projection.ts:162-202; dashboard/src/types/projection.ts:217-227; dashboard/src/types/projection.ts:325-336 |
 
@@ -107,6 +107,7 @@ The process-map wrapper is observed for visibility. A hidden keep-alive room pau
 blueprint video, then resumes playback on re-show without unmounting the map.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the two whole-claim ranges (2 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
 - 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced two

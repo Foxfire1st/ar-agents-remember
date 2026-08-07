@@ -6,13 +6,20 @@
 | path | `dashboard/src/data/submissionLifecycleClient.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
 
 [data overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The withdrawal helpers moved to `data/submissionWithdrawal.ts` (authoritative
+queued-withdrawal target resolution, result application, and recovery/dismiss), and
+the `wireFixtureGuard` cast was replaced with a validated narrow so the client
+rejects unvalidated submission lifecycle states. Behavior is otherwise unchanged.
 
 ## Purpose
 
@@ -67,10 +74,10 @@ No Domain Documentation source is configured for this repository.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Withdrawal, central settlement, poll cadence, response-loss convergence, and recovery. | `applySubmissionLifecycle`, `withdrawLastQueuedSubmission`, `restoreWithdrawnRecovery` | dashboard/src/data/submissionLifecycleClient.ts:569-586; dashboard/src/data/submissionLifecycleClient.ts:1043-1068; dashboard/src/data/submissionLifecycleClient.ts:1096-1108 |
+| Withdrawal, central settlement, poll cadence, response-loss convergence, and recovery. | `applySubmissionLifecycle`; `withdrawLastQueuedSubmission`; `restoreWithdrawnRecovery` | dashboard/src/data/submissionLifecycleClient.ts:672-689; dashboard/src/data/submissionWithdrawal.ts:352-377; dashboard/src/data/submissionWithdrawal.ts:405-417 |
 | The pure evidence fold defines admissible lifecycle progression. | `settleSubmissionObservation`, `projectSubmissionLifecycle` | dashboard/src/data/submitMachine.ts:155-186; dashboard/src/data/submitMachine.ts:265-294 |
 | The cockpit store owns pending-withdrawal and recovery-slot projections. | `setWithdrawal`, `replaceComposerDraftIfRevision` | dashboard/src/data/sessionCockpitStore.ts:231-231; dashboard/src/data/sessionCockpitStore.ts:257-257 |
-| The composer binds Alt+Up and renders the queue/recovery affordances. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:231-723 |
+| The composer binds Alt+Up and renders the queue/recovery affordances. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 | Tests exercise withdrawal races, lost responses, CAS recovery, exact dismissal, and poll order. | "atomic Alt+Up withdrawal", "polls immediately then at the visible cadence, keeps polling past dispatch, and stops on delivered" | dashboard/src/data/submissionLifecycleClient.test.ts:194-233; dashboard/src/data/submissionLifecycleClient.test.ts:339-1127 |
 
 ## Cross-Repo References
@@ -89,6 +96,7 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the withdrawal extraction and the validated-narrow replacement. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 10 citation findings (5 rows); scoped recheck clean.
 - 2026-07-24T13:17:50Z — Added bounded lifecycle transport and post-dispatch watch semantics.

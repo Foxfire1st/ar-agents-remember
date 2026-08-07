@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/capabilityCatalog.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ the reviewed task evidence for any current behavioral claim.
 | The store, cost-honesty copy, envelope validation, and single-flight/refresh machinery. | "export const capabilityCatalogStore"; "export function capabilityCostNote("; "function isEnvelope(body: unknown): body is CapabilityEnvelope {"; "export function fetchHarnessCapabilities(" | dashboard/src/data/capabilityCatalog.ts:45-45; dashboard/src/data/capabilityCatalog.ts:70-70; dashboard/src/data/capabilityCatalog.ts:122-122; dashboard/src/data/capabilityCatalog.ts:192-192 |
 | The wire mirror the envelope validates against (`CAPABILITY_SCHEMA`, envelope/snapshot/row types). | `CAPABILITY_SCHEMA` | dashboard/src/types/harnessCapabilities.ts:11-11 |
 | The daemon route + quarantine posture this mirrors (failed refresh pops the cache entry). | "class HarnessCapabilityCatalog:" | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-81 |
-| The primary consumer (picker options exclusively from the envelope; verbatim error + retry). | "const snapshot = entry?.envelope?.capabilities;" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:218-218 |
+| The primary consumer (picker options exclusively from the envelope; verbatim error + retry). | "const snapshot = entry?.envelope?.capabilities;" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:116-116 |
 | Envelope/error fixtures (all three cacheStatus values; verbatim 404/409/503 bodies). | "export function capabilityEnvelope(" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-160 |
 | The unit suite (state transitions, verbatim errors, drop-on-error, refresh chaining, malformed rows, cost honesty). | "single-flight: concurrent reads of one harness share ONE request" | dashboard/src/data/capabilityCatalog.test.ts:154-159 |
 

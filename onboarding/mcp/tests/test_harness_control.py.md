@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-07T20:09+02:00 |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,13 @@ illegal acceptance tokens, `echo-verified` without an effective value, accepted 
 not-ok, and unknown/unsupported results that falsely claim an effect. Each rejected result leaves
 the runner usable for the next prompt. The unregistered adapter remains explicitly unsupported for
 both setters.
+
+**260731-EFA-L8 (round 11): queued acceptance is deterministic by construction.** The fake
+adapter gates submissions behind `release_submit` / `release_set` asyncio events, so a prompt
+submitted while the setter is still held receives its `queued` receipt BEFORE the release — the
+queue state is constructed by ordering, never by timing heuristics. The rewrite removed
+receive-before-release races: a held submission is returned only after the test releases it, and
+`queued` is asserted while the gate is still closed.
 
 The suite also drives the real local socket and daemon route composition. Duplicate
 request ids are idempotency keys: a retained duplicate returns the first receipt, and a duplicate
@@ -182,6 +189,11 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-11
+  deterministic rewrite — the fake adapter gates submissions behind `release_submit` /
+  `release_set` events, so a prompt submitted while the setter is held receives its `queued`
+  receipt by construction (receipt before release), removing receive-before-release timing races.
+  Verification metadata stays pinned until closeout stamps the code commit.
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 11 citation rows across the fake adapter, conformance cases, submission authority, and private IPC implementation; scoped citation fixing regenerated the source ranges.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose subject

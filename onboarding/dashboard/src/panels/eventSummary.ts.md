@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/eventSummary.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-28T05:38+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -84,11 +84,11 @@ repository's observer event contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The raw observer event envelope rendered by this formatter. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
-| Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. | `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:204-211; dashboard/src/data/taskIdentity.ts:213-230; dashboard/src/data/taskIdentity.ts:232-237; dashboard/src/data/taskIdentity.ts:239-244 |
-| Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. | "tool.completed", "read.packet", "lifecycle.phase-changed", "lifecycle.blocked" | mcp/src/agents_remember/observer/ambient.py:183-422 |
+| Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. | `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:230-237; dashboard/src/data/taskIdentity.ts:239-256; dashboard/src/data/taskIdentity.ts:258-263; dashboard/src/data/taskIdentity.ts:265-270 |
+| Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. | "\"tool.completed\","; "\"read.packet\", \"observed\", \"model\", repoId=repo_id, files=projected"; "self._emit_locked(\"lifecycle.phase-changed\", \"declared\", \"model\", phase=phase)"; "\"lifecycle.blocked\"," | mcp/src/agents_remember/observer/ambient.py:418-418; mcp/src/agents_remember/observer/ambient.py:452-452; mcp/src/agents_remember/observer/ambient.py:312-312; mcp/src/agents_remember/observer/ambient.py:217-217 |
 | The Event River component consumes these summaries for rendering. | `eventSummaryContextReady`, `summarizeEvent` | dashboard/src/panels/EventRiver.tsx:62-73 |
 | Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. | "uses task document labels when event history no longer has a live lifecycle row" | dashboard/src/panels/EventRiver.test.tsx:312-332 |
-| `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:145-158 |
+| `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:143-156 |
 | `EventRiver` drops not-ready rows before calling `summarizeEvent`. | `eventSummaryContextReady`, `summarizeEvent` | dashboard/src/panels/EventRiver.tsx:62-73 |
 | The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives. | "uses task document labels when event history no longer has a live lifecycle row" | dashboard/src/panels/EventRiver.test.tsx:312-332 |
 
@@ -97,6 +97,7 @@ repository's observer event contract.
 No meaningful cross-repo references found.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T03:59:59+02:00 — Curated 14 citation claims (7 table rows, 7 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

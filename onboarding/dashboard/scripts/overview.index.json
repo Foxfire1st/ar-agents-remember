@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/scripts",
+  "overview": "dashboard/scripts/overview.md",
+  "index": "dashboard/scripts/overview.index.json",
+  "sourceScope": [
+    "dashboard/scripts/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/scripts/check-diff-coverage.mjs",
+    "dashboard/scripts/check-diff-coverage.test.mjs"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 0,
+    "fileSidecars": 2,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "check",
+    "coverage",
+    "dashboard",
+    "diff",
+    "mjs",
+    "scripts",
+    "test"
+  ],
+  "hotPath": {
+    "summary": "",
+    "candidateHints": [
+      "dashboard/scripts",
+      "dashboard/scripts/check-diff-coverage.mjs",
+      "dashboard/scripts/check-diff-coverage.test.mjs"
+    ],
+    "anchorHints": [
+      "check-diff-coverage.mjs",
+      "check-diff-coverage",
+      "check-diff-coverage.test.mjs",
+      "check-diff-coverage.test",
+      "dashboard/scripts/",
+      "route-local-overview",
+      "7c56c11d651972515723b4090b8174087eb5236f",
+      "/../overview.md",
+      "diff_coverage.py",
+      "check-bundle-size.mjs",
+      "npm run build",
+      "scripts/**/*.test.mjs",
+      "dashboard/vitest.config.ts",
+      "AR_GATE_DIFF_BASE",
+      "GITHUB_BASE_REF",
+      "@{upstream",
+      "origin/HEAD",
+      "main",
+      "dashboard/",
+      "AR_DASHBOARD_DIFF_COVERAGE_FLOOR",
+      "system/sources.md",
+      "measureDiffCoverage",
+      "resolveBase",
+      "cf5ef50",
+      "dashboard/scripts/check-diff-coverage.mjs",
+      "/src/test/setup.ts",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T08",
+      "lastVerifiedCommitHash",
+      "c56c11d651972515723b4090b8174087eb5236f",
+      "lastVerifiedCommitDate",
+      "T20",
+      "governingOverview",
+      "EFA",
+      "diff_coverage",
+      "MiB",
+      "HEAD",
+      "JSON",
+      "OPTION",
+      "ESM",
+      "ENOBUFS",
+      "setupFiles"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/scripts/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/Markdown.tsx`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-21T02:44+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ table scrolls **inside** its box; the panel layout is never widened by content.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | `DetailPanel`; `MasterSection`; `Bullets`; `DecisionList`; `MasterOverview`; `TaskReader` | dashboard/src/panels/DetailPanel.tsx:723-723; dashboard/src/panels/DetailPanel.tsx:1036-1104; dashboard/src/panels/DetailPanel.tsx:1116-1144; dashboard/src/panels/DetailPanel.tsx:1303-1388; dashboard/src/panels/DetailPanel.tsx:1415-1425; dashboard/src/panels/DetailPanel.tsx:1476-1491 |
+| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/panels/detail-panel/taskReader.tsx:126-126; dashboard/src/panels/detail-panel/taskReader.tsx:206-206; dashboard/src/panels/detail-panel/taskReader.tsx:555-555; dashboard/src/panels/detail-panel/taskReader.tsx:612-612; dashboard/src/panels/detail-panel/taskReader.tsx:494-494 |
 
 ## Update History
 

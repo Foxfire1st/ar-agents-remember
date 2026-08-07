@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/keymap/chords.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -71,8 +71,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | The two zone-scoped chord tables and the generic-suppression comment on `?`. | `CHROME_CHORDS`; `COMPOSER_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81; dashboard/src/data/keymap/chords.ts:83-104 |
 | The binding that installs both tables and enforces the per-chord zone lists. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| The `?` page renders these tables under the Chrome/Composer group headings. | "Chrome — the shell around the panes"; "Composer — the editor owns its keys" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:276-276; dashboard/src/panels/session-cockpit/CommandPalette.tsx:284-284 |
-| The command ids these chords dispatch (registered defaults). | "palette.open"; "keyboard.reference" | dashboard/src/data/commands.ts:91-91; dashboard/src/data/commands.ts:98-98 |
+| The `?` page renders these tables under the Chrome/Composer group headings. | "Chrome — the shell around the panes"; "Composer — the editor owns its keys" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:260-260; dashboard/src/panels/session-cockpit/CommandPalette.tsx:268-268 |
+| The command ids these chords dispatch (registered defaults). | "palette.open"; "keyboard.reference" | dashboard/src/data/commands.ts:90-90; dashboard/src/data/commands.ts:97-97 |
 
 ## Cross-Repo References
 

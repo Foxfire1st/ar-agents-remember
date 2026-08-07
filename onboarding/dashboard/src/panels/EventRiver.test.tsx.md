@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EventRiver.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T11:15+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -85,12 +85,12 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The panel under test (now a virtualized list; the `read.packet` per-kind row on an otherwise-generic river). | "Event river" | dashboard/src/panels/EventRiver.tsx:89-89 |
-| The summary layer whose known-kind behavior, lifecycle-only task-document label fallback, and context-ready gate the render tests exercise. | `summarizeReadPacket` | dashboard/src/panels/eventSummary.ts:175-195 |
+| The summary layer whose known-kind behavior, lifecycle-only task-document label fallback, and context-ready gate the render tests exercise. | `summarizeReadPacket` | dashboard/src/panels/eventSummary.ts:173-193 |
 | The render regression pins that a lifecycle-bound row stays hidden until task-document context is available. | "waits for lifecycle summary context before rendering lifecycle-bound rows" | dashboard/src/panels/EventRiver.test.tsx:240-265 |
 | The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts). | "retains and virtualizes the full window beyond the old newest-60 cap" | dashboard/src/panels/EventRiver.test.tsx:196-218 |
 | `ev` delegates to the shared `observerEvent` builder and drops the `as ObserverEvent` cast. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
 | `observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
-| The `read.packet` emitter that carries `data.repoId` + facts-only `files`. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:395-422 |
+| The `read.packet` emitter that carries `data.repoId` + facts-only `files`. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | The `ObserverEvent` shape (trust/actor/kind/data) the helper builds. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
 | `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | `leafTitleForKey` | dashboard/src/data/taskIdentity.ts:95-100 |
 

@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-harness.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -112,7 +112,7 @@ two.
 | Fragment library for the four session-start hook scripts. | `hook_specific_output` | scripts/harness/session_start_hook.py:28-34 |
 | The classification of genuine per-harness requirements versus drift, and the shared-source inventory. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
 | The suite check that makes drift a test failure rather than a forgotten script. | `GeneratedTreesTests` | mcp/tests/test_sync_harness.py:35-107 |
-| Both hook tiers run `--check` beside the skill and runtime generated-copy checks. | "run_fast_checks() {"; "run_full_checks() {" | .githooks/_gate.sh:120-120; .githooks/_gate.sh:163-163 |
+| Both hook tiers run `--check` beside the skill and runtime generated-copy checks. | "run_fast_checks() {"; "run_full_checks() {" | .githooks/_gate.sh:147-147; .githooks/_gate.sh:191-191 |
 | The sibling generators this one is modelled on. | `SkillTarget`; `RuntimeTarget` | scripts/sync-runtime.py:26-30; scripts/sync-skills.py:26-29 |
 | Repo instructions route harness edits through `scripts/harness/` and forbid editing generated starter files. | `## Source Layout`; `## Boundaries`; `## Repository Layout` | AGENTS.md:101-147; README.md:192-272 |
 

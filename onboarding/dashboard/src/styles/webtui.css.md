@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/styles/webtui.css`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ transform leaves them alone.
 | The shared scoping options (prefix, includeFiles, the :root/html/body collapse transform). | `webtuiPrefixOptions` | dashboard/webtui-scope.config.cjs:26-30 |
 | The build wiring: Panda first, then the prefixer over the inlined imports. | "Panda first", "postcss-import", "postcss-prefix-selector': webtuiPrefixOptions" | dashboard/postcss.config.cjs:1-4; dashboard/postcss.config.cjs:8-11 |
 | The four automated spike assertions + exact-pin checks that keep this contract honest. | "S1 spike (a): every WebTUI rule is confined to the cockpit root", "S1 spike (b): one color system — WebTUI vars map onto podracer tokens", "S1 spike (c): the html[data-effects=off] determinism freeze still wins", "S1 spike (d): layer order + focus-visible survival (React Aria intact)", "S1 spike: exact version pins (0.x churn ruling)" | dashboard/src/test/webtuiSpike.test.ts:61-96; dashboard/src/test/webtuiSpike.test.ts:98-129; dashboard/src/test/webtuiSpike.test.ts:131-154; dashboard/src/test/webtuiSpike.test.ts:156-172; dashboard/src/test/webtuiSpike.test.ts:174-182 |
-| The scope-root carrier. | "sessions" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1030-1035 |
+| The scope-root carrier. | "data-testid=\"sessions-stage\"" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
 
 ## Update History
 

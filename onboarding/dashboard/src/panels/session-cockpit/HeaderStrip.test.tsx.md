@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two components under test. | "export function HeaderStrip({", "export function SessionStage({" | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-88; dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
+| The two components under test. | "export function HeaderStrip({", "export function SessionStage({" | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:132-132; dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
 | The stage container (slot order, handoff note, empty identity). | "export function SessionStage({" | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
 | The tier machine whose derivation the R7 cases pin. | `launchTier`, `TIER_SENSE` | dashboard/src/data/launchEvidence.ts:29-41; dashboard/src/data/launchEvidence.ts:44-51 |
 

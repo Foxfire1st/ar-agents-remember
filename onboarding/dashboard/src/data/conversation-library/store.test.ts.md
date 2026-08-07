@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/store.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:08+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The store and orchestration verbs under test. | `conversationLibraryStore`; `beginOpen`; `reconcileOpen` | dashboard/src/data/conversation-library/store.ts:77-84; dashboard/src/data/conversation-library/store.ts:189-223; dashboard/src/data/conversation-library/store.ts:229-251 |
+| The store and orchestration verbs under test. | `conversationLibraryStore`; `beginOpen`; `reconcileOpen` | dashboard/src/data/conversation-library/store.ts:77-84; dashboard/src/data/conversation-library/store.ts:229-263; dashboard/src/data/conversation-library/store.ts:269-291 |
 | The open-operation type the `op` fixture builds, and the branded key the suite passes to every verb. | `OpenConversationOperation`; `LibraryConversationKey` | dashboard/src/data/conversation-library/types.ts:16-16; dashboard/src/data/conversation-library/types.ts:91-110 |
 | The `libraryConversationKey` mint that replaced the inline brand cast. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
 

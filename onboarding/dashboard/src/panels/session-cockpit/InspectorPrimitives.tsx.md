@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared pane, fact, note, raw, and action grammar in `InspectorSection`. | `InspectorSection` | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:81-96 |
-| Evidence consumer, `EvidencePane`. | `EvidencePane` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:169-374 |
+| Evidence consumer, `EvidencePane`. | `EvidencePane` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:407-463 |
 | Capability consumer, `CapabilitiesPane`. | `CapabilitiesPane` | dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx:84-240 |
 | Bus consumer, `BusPane`. | `BusPane` | dashboard/src/panels/session-cockpit/BusPane.tsx:116-276 |
 

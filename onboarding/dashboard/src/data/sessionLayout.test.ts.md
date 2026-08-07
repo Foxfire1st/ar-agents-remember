@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLayout.test.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The suite exercises autoCollapseTransition across crossing, quiet, and first-measure cases. | `autoCollapseTransition` | dashboard/src/data/sessionLayout.test.ts:16-32 |
-| The component-level floor-chip and calibration counterparts. | `SessionsView` | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:222-298 |
+| The component-level floor-chip and calibration counterparts. | `SessionsView` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
 
 ## Cross-Repo References
 

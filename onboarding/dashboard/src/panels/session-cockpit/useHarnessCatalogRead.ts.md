@@ -6,13 +6,18 @@
 | path | `dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [session-cockpit overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The react-hooks remediation added a `servingBootedAtRef` initialization-only ref so
+`exhaustive-deps` passes without duplicate catalog reads; behavior is unchanged.
 
 ## Purpose
 
@@ -51,9 +56,10 @@ No task-independent technical debt was identified during FEUI-L9R review.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Supplies the typed one-attempt read and result states. | `HarnessCatalogRead`; `readHarnessCatalog` | dashboard/src/data/harnessCatalog.ts:13-16; dashboard/src/data/harnessCatalog.ts:45-51 |
-| Consumes the hook and renders retryable explicit states. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-619 |
+| Consumes the hook and renders retryable explicit states. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-423 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the servingBootedAtRef hooks fix. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored local references with exact source anchors and generated final citation ranges with the scoped fixer.
 

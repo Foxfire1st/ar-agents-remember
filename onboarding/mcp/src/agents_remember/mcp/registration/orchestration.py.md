@@ -6,13 +6,19 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/orchestration.py`       |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-31T15:31+02:00                                            |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                        |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                        |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
 
 [registration route overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The tool-registration functions gained bare-`*` keyword-only signatures (the 19
+PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
+already pass keywords. Registered tools are unchanged.
 
 ## Purpose
 
@@ -66,6 +72,7 @@ nudge the wrong mailbox. `reason` is a `NudgeReason` and `rate_limit_seconds` de
 | Fixed model attribution and the target/subject split proved through a live server. | `test_operator_inbox_post_over_mcp_is_always_attributed_to_the_model` | mcp/tests/test_mcp_registration_wiring.py:1202-1213; mcp/tests/test_mcp_registration_wiring.py:1271-1297 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 4 citation rows with
   builder, model-record and wiring-test anchors (operator_inbox.py, orchestration.py,

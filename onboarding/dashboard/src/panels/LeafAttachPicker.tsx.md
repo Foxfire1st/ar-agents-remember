@@ -6,13 +6,19 @@
 | path                   | `dashboard/src/panels/LeafAttachPicker.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
 
 [panels overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The react-hooks-first remediation memoized the `measure` callback
+(`useCallback`) and added it to the effect dependency array; picker behavior is
+unchanged.
 
 ## Purpose
 
@@ -107,10 +113,10 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `TaskTreeNode` shape it drills and `findMasterPath` it pre-drills with (and `buildTaskTree` that produces the `tree` prop). | `TaskTreeNode`; `findMasterPath`; `buildTaskTree` | dashboard/src/data/taskIdentity.ts:110-116; dashboard/src/data/taskIdentity.ts:126-165; dashboard/src/data/taskIdentity.ts:169-176 |
-| `RailChat` builds the nested task tree used by the attach picker. | `buildTaskTree` | dashboard/src/panels/RailChat.tsx:388-388 |
-| `RailChat` renders the picker with right alignment and passes the selected leaf/role pair to its attach callback. | `LeafAttachPicker`; "right" | dashboard/src/panels/RailChat.tsx:472-478 |
-| `RailChat` performs the server-first attach/move and applies the returned leaf-role assignment only after success. | `attachSessionToLeaf`; "leaf-taken" | dashboard/src/panels/RailChat.tsx:394-399 |
+| The `TaskTreeNode` shape it drills and `findMasterPath` it pre-drills with (and `buildTaskTree` that produces the `tree` prop). | `TaskTreeNode`; `findMasterPath`; `buildTaskTree` | dashboard/src/data/taskIdentity.ts:110-116; dashboard/src/data/taskIdentity.ts:185-191; dashboard/src/data/taskIdentity.ts:195-202 |
+| `RailChat` builds the nested task tree used by the attach picker. | "buildTaskTree," | dashboard/src/panels/RailChat.tsx:25-25 |
+| `RailChat` renders the picker with right alignment and passes the selected leaf/role pair to its attach callback. | "import { lazy, memo, Suspense, useEffect, useState } from \"react\";"; "import { LeafAttachPicker } from "; "align=" | dashboard/src/panels/RailChat.tsx:31-31; dashboard/src/panels/RailChat.tsx:762-762; dashboard/src/panels/RailChat.tsx:1-1 |
+| `RailChat` performs the server-first attach/move and applies the returned leaf-role assignment only after success. | "attachSessionToLeaf,"; "if (!gate.ready) {"; "} else if (result === " | dashboard/src/panels/RailChat.tsx:19-19; dashboard/src/panels/RailChat.tsx:405-405; dashboard/src/panels/RailChat.tsx:330-330 |
 | `ChatContextBar` builds the tree, restricts terminal role options when needed, and attaches/moves the focused session server-first. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
 | Render/drill tests cover role selection, disabled leaf rows, and the two-argument callback. | "LeafAttachPicker drill-down" | dashboard/src/panels/LeafAttachPicker.test.tsx:35-134 |
 
@@ -126,6 +132,7 @@ available height. Horizontal placement remains edge-aware, preventing both rail 
 fixed-height menu that runs off-screen.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the memoized measure hooks fix. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: rebased the `RailChat` rows to their
   source occurrences; exact non-fixing check returns zero findings.

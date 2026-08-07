@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/setChips.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5` |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pure presentation model under test. | `deriveSetChips`; `queuedComposerHint`; `hasUnackedSetAttention` | dashboard/src/data/setChips.ts:58-216; dashboard/src/data/setChips.ts:219-225; dashboard/src/data/setChips.ts:228-232 |
+| Pure presentation model under test. | `deriveSetChips`; `queuedComposerHint`; `hasUnackedSetAttention` | dashboard/src/data/setChips.ts:192-229; dashboard/src/data/setChips.ts:232-238; dashboard/src/data/setChips.ts:241-245 |
 | Pair copy/provenance source. | `startPairChange`; `applyPairStepResult`; `pairProgressCopy`; `pairPartialFailureCopy` | dashboard/src/data/pairChange.ts:50-52; dashboard/src/data/pairChange.ts:58-111; dashboard/src/data/pairChange.ts:199-203; dashboard/src/data/pairChange.ts:216-219 |
 
 ## Cross-Repo References

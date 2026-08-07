@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/operatorInbox.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |                                                  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ direct re-invocation is not available. This helper is the dashboard client side 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The helper defines the request/status contract and posts JSON to `/api/operator-inbox`. | `postOperatorInbox` | dashboard/src/data/operatorInbox.ts:18-32 |
-| `GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| `GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | The serving endpoint writes the inbox entry with developer/dashboard attribution. | `_operator_inbox_response` | mcp/src/agents_remember/serving/app.py:1233-1275 |
 | The helper test pins the POST body and error mapping. | `postOperatorInbox` | dashboard/src/data/operatorInbox.test.ts:5-45 |
 | `AgentPickupIndicator` calls the dismiss helper for stale pending responses. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |

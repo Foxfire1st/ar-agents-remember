@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/BusPane.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Exact focused-seat identity predicate and row facts. | `pickupMatchesFocusedSeat` | dashboard/src/panels/session-cockpit/BusPane.tsx:46-60 |
 | Entry-keyed state, authoritative pruning, filters, and list rendering. | `BusPane` | dashboard/src/panels/session-cockpit/BusPane.tsx:116-276 |
-| Separately rendered supervisor heartbeat. | "Supervisor heartbeat" | dashboard/src/panels/session-cockpit/BusPane.tsx:226-226 |
+| Separately rendered supervisor heartbeat. | "<InspectorSection title=\"Supervisor heartbeat\" testId=\"bus-heartbeat\">" | dashboard/src/panels/session-cockpit/BusPane.tsx:197-197 |
 | Reverse reply write boundary. | `developerReplyRequest` | dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx:37-59 |
 | Shared virtualized-list threshold and semantics. | `INSPECTOR_VIRTUALIZE_THRESHOLD` | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx:11-11 |
 
@@ -78,6 +78,7 @@ visible inspector is showing the bus tab. Hidden inspector tabs retain their dat
 unseen clock-driven rendering.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 5 repository-internal citations for the focused predicate, pane projection, heartbeat, reverse reply, and virtualized-list threshold.
 - 2026-07-24T13:17:17Z — Curator: documented inspector-tab age-clock gating; verification fields

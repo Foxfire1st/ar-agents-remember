@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated | 2026-08-07T14:30+02:00 |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -24,15 +24,15 @@ Reopen citation claims whose anchored evidence changed since verification.
 
 Module-level surface:
 
-- `LocalSource` (class, lines 71-77)
-- `Candidate` (class, lines 80-84)
-- `CurrentFiles` (class, lines 87-94)
-- `SourceViews` (class, lines 97-136) — Parsed source revisions shared by every claim in one gate run.
-- `Evaluation` (class, lines 139-190)
-- `claims_in` (function, lines 193-207)
-- `finding` (function, lines 210-223)
-- `provenance_finding` (function, lines 226-240)
-- `changed_finding` (function, lines 243-254)
+- `LocalSource` (class, lines 84-92)
+- `Candidate` (class, lines 93-99)
+- `CurrentFiles` (class, lines 100-109)
+- `SourceViews` (class, lines 110-151) — Parsed source revisions shared by every claim in one gate run.
+- `Evaluation` (class, lines 152-204)
+- `claims_in` (function, lines 205-221)
+- `finding` (function, lines 222-237)
+- `provenance_finding` (function, lines 238-254)
+- `changed_finding` (function, lines 255-268)
 - `surfaced_finding` — the report-only review surface (never a blocker): a detected change whose
   citation is CURRENT (the anchor resolves exactly once and any cited range still contains the
   construct's declaration line, per `_anchor_in_cited_range`). Detected change splits three ways:
@@ -41,14 +41,18 @@ Module-level surface:
   changed construct whose pointer is stale is an enforced reopened claim. Ambiguous provenance in
   documents the task did not touch demotes to report-only debt (`_demote_preexisting_provenance_debt`);
   in touched documents it stays enforced. This is what lets the citation gate run before the code
-  commit at closeout (260731-EFA-L16).
-- `selected_current` (function, lines 257-268)
-- `selected_historical` (function, lines 271-282)
-- `local_changes` (function, lines 285-312)
-- `anchor_change` (function, lines 315-340)
-- `dependency_changes` (function, lines 343-372)
-- `evaluate_claim` (function, lines 375-418)
-- `check_onboarding_root` (function, lines 421-500) — Compare every complete claim against its own historical provenance.
+  commit at closeout (260731-EFA-L16). The absent-at-stamp rule extends to whole source files added
+  after the stamp (260731-EFA-L8): a unique working-tree anchor inside a cited range surfaces
+  report-only; absent, ambiguous, or stale constructs stay hard.
+- `selected_current` (function, lines 297-310)
+- `selected_historical` (function, lines 311-324)
+- `local_changes` (function, lines 325-360) — missing-source handling now reports the
+  absent-at-stamp-plus-absent-now case explicitly and lets each anchor judge the whole-new-file
+  currency rule (`_anchor_in_cited_range`) instead of failing on any absent-at-stamp source.
+- `anchor_change` (function, lines 361-419)
+- `dependency_changes` (function, lines 482-513)
+- `evaluate_claim` (function, lines 560-604)
+- `check_onboarding_root` (function, lines 605-681) — Compare every complete claim against its own historical provenance.
 
 ### Conventions
 
@@ -57,6 +61,9 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 ### Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/...` path.
+- A whole source file added after the stamp follows the absent-at-stamp rule (260731-EFA-L8):
+  an exactly-once working-tree anchor inside a cited range is the report-only surface; absent,
+  ambiguous, or stale evidence is enforced.
 
 ### Todos
 
@@ -68,25 +75,31 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the class `LocalSource` (lines 71-77). | `LocalSource` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:79-85 |
-| Defines the class `Candidate` (lines 80-84). | `Candidate` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:88-92 |
-| Defines the class `CurrentFiles` (lines 87-94). | `CurrentFiles` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:95-102 |
-| Defines the class `SourceViews` (lines 97-136) — Parsed source revisions shared by every claim in one gate run.. | `SourceViews` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:97-136 |
-| Defines the class `Evaluation` (lines 139-190). | `Evaluation` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:139-190 |
-| Defines the function `claims_in` (lines 193-207). | `claims_in` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:193-207 |
-| Defines the function `finding` (lines 210-223). | `finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:210-223 |
-| Defines the function `provenance_finding` (lines 226-240). | `provenance_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:226-240 |
-| Defines the function `changed_finding` (lines 243-254). | `changed_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:243-254 |
-| Defines the function `selected_current` (lines 257-268). | `selected_current` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:292-303 |
-| Defines the function `selected_historical` (lines 271-282). | `selected_historical` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:306-317 |
-| Defines the function `local_changes` (lines 285-312). | `local_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:320-349 |
-| Defines the function `anchor_change` (lines 352-387). | `anchor_change` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:352-387 |
-| Defines the function `dependency_changes` (lines 343-372). | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:457-486 |
-| Defines the function `evaluate_claim` (lines 488-537). | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:547-589 |
-| Defines the function `check_onboarding_root` (lines 538-584) — Compare every complete claim against its own historical provenance.. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:592-666 |
+| Defines the class `LocalSource` (lines 84-92). | `LocalSource` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:84-92 |
+| Defines the class `Candidate` (lines 93-99). | `Candidate` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:93-99 |
+| Defines the class `CurrentFiles` (lines 100-109). | `CurrentFiles` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:100-109 |
+| Defines the class `SourceViews` (lines 110-151) — Parsed source revisions shared by every claim in one gate run.. | `SourceViews` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:110-151 |
+| Defines the class `Evaluation` (lines 152-204). | `Evaluation` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:152-204 |
+| Defines the function `claims_in` (lines 205-221). | `claims_in` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:205-221 |
+| Defines the function `finding` (lines 222-237). | `finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:222-237 |
+| Defines the function `provenance_finding` (lines 238-254). | `provenance_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:238-254 |
+| Defines the function `changed_finding` (lines 255-268). | `changed_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:255-268 |
+| Defines the function `selected_current` (lines 297-310). | `selected_current` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:297-310 |
+| Defines the function `selected_historical` (lines 311-324). | `selected_historical` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:311-324 |
+| Defines the function `local_changes` (lines 325-360). | `local_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:325-360 |
+| Defines the function `anchor_change` (lines 361-419). | `anchor_change` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:361-419 |
+| Defines the function `dependency_changes` (lines 482-513). | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:482-513 |
+| Defines the function `evaluate_claim` (lines 560-604). | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:560-604 |
+| Defines the function `check_onboarding_root` (lines 605-681) — Compare every complete claim against its own historical provenance.. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:605-681 |
 
 ## Update History
 
+- 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9 mechanism
+  change — the absent-at-stamp rule now extends to whole source files added after the stamp: an
+  anchor that resolves exactly once in the working tree inside a cited range surfaces report-only;
+  absent, ambiguous, or stale constructs stay hard. Corrected the Logic bullets and reference
+  ranges to the current mechanism build. Verification metadata stays pinned until closeout stamps
+  the code commit.
 - 2026-08-05T23:20+02:00 — 260731-EFA-L16 curator: recorded the three-way split of detected change (hard absent/ambiguous/provenance, report-only current-citation surface via `surfaced_finding` + `_citation_covers_current`, enforced stale pointer) — the semantics that let the closeout citation gate run before the code commit. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-05T03:49+02:00 — 260731-EFA-L6 C1 closeout pass: aligned the Logic bullets and Finding line numbers with the scoped fixer's generated decorator-inclusive class ranges; verification metadata unchanged.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

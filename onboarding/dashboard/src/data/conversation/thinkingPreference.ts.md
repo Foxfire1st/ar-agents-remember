@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/thinkingPreference.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The full-inline thinking item whose rendering this toggle suppresses. | `ThinkingItem` | dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:35-56 |
-| The surface toolbar hosting the toggle control. | "export function ConversationSurface" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100 |
+| The surface toolbar hosting the toggle control. | "export function ConversationSurface" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-269 |
 | The house persisted-preference idiom this mirrors. | `KEYMAP_STORAGE_KEY` | dashboard/src/data/keymap/preferences.ts:17-17 |
 
 ## Cross-Repo References

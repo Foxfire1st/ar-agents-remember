@@ -61,7 +61,7 @@
       "FilePane",
       "dashboard/src/panels/changeset/",
       "route-local-overview",
-      "5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
+      "7c56c11d651972515723b4090b8174087eb5236f",
       "/overview.md",
       "changeset/",
       "GET /api/changeset/{task,file-diff,master",

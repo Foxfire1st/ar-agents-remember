@@ -6,13 +6,20 @@
 | path | `mcp/src/agents_remember/code_quality/scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
 [overview](../../../overview.md)
+
+## 260731-EFA-L8 Change
+
+The scope report gained the dashboard rail steps and provenance lines (coverage,
+diff-coverage, and e2e) forced by this leaf's S3 CI/hook wiring, plus the pinned
+TypeScript input count update (349→425); the report remains read-only. The matching
+hook-skip and provenance tests were reconciled in `mcp/tests/test_quality_scope_reporting.py`.
 
 ## Purpose
 
@@ -97,10 +104,11 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `dashboard_typecheck_scope_line` (lines 468-474). | `dashboard_typecheck_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:468-474 |
 | Defines the function `dashboard_build_scope_line` (lines 477-502). | `dashboard_build_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:477-502 |
 | Defines the function `dashboard_scope_line` (lines 505-523). | `dashboard_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:505-523 |
-| Defines the function `build_parser` (lines 526-546). | `build_parser` | mcp/src/agents_remember/code_quality/scope_reporting.py:526-546 |
-| Defines the function `main` (lines 586-596). | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:586-596 |
+| Defines the function `build_parser` (lines 526-546). | `build_parser` | mcp/src/agents_remember/code_quality/scope_reporting.py:549-573 |
+| Defines the function `main` (lines 586-596). | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:612-622 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the dashboard rail steps and pinned TS input count. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: corrected the `main` citation from the stale range 549-575 (which holds no `main`) to the current definition extent 586-596 in the frozen code tree (HEAD 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060).
 

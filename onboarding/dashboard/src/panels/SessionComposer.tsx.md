@@ -6,13 +6,21 @@
 | path                   | `dashboard/src/panels/SessionComposer.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
 [panels overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The composer was split by responsibility: hooks moved to
+`panels/sessionComposerHooks.ts`, render parts to `panels/sessionComposerParts.tsx`,
+and styles to `panels/sessionComposerStyles.ts`. The editor-creation effect now
+reads initial values through refs so `exhaustive-deps` passes without recreating the
+editor per keystroke; behavior is unchanged.
 
 ## Purpose
 
@@ -58,9 +66,9 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `SessionsView` names the focused-live seat condition used by the composer boundary. | `focusedLive` | dashboard/src/panels/session-cockpit/SessionsView.tsx:324-325 |
-| Ordinary composer drafts call `submitSessionDraft`. | "void submitSessionDraft" | dashboard/src/panels/SessionComposer.tsx:305-305 |
-| Pending interaction answers call `submitInteractionAnswer`. | "submitInteractionAnswer(" | dashboard/src/panels/SessionComposer.tsx:297-297 |
+| `SessionsView` names the focused-live seat condition used by the composer boundary. | "const { focused, focusedLive } = data;" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:172-172 |
+| Ordinary composer drafts call `submitSessionDraft`. | "void submitSessionDraft" | dashboard/src/panels/sessionComposerHooks.ts:125-125 |
+| Pending interaction answers call `submitInteractionAnswer`. | "export async function submitInteractionAnswer(args: {" | dashboard/src/data/interactionAnswer.ts:654-654 |
 | The test suite declares the `SessionComposer` render/interaction block. | "describe(\"SessionComposer" | dashboard/src/panels/SessionComposer.test.tsx:57-57 |
 
 ## Cross-Repo References
@@ -126,6 +134,7 @@ in a tooltip rather than standing footer chrome. The exact-turn stop action belo
 working controlled seats; raw terminal seats mount no dashboard composer.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the composer split (hooks/parts/styles) and the exhaustive-deps refs fix. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 

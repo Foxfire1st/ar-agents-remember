@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/Dot.tsx`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -121,9 +121,9 @@ alongside the treatments it applies.
 | The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking. | `pulseSlow` | dashboard/src/index.css:94-101 |
 | The unlayered `html[data-effects="off"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here. | "unlayered html[data-effects="off"] freeze" | dashboard/src/index.css:8-8 |
 | `LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59. | "export type State = " | dashboard/src/types/projection.ts:15-15 |
-| `LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the "Task progress: …" label beside the dot. | "export const LifecycleList" | dashboard/src/panels/LifecycleList.tsx:425-425 |
-| `AttentionQueue` passes the raw `q.severity`. | `AttentionQueue` | dashboard/src/panels/AttentionQueue.tsx:270-270 |
-| `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:63-63 |
+| `LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the "Task progress: …" label beside the dot. | "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
+| `AttentionQueue` passes the raw `q.severity`. | `AttentionQueue` | dashboard/src/panels/AttentionQueue.tsx:328-328 |
+| `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
 | The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink. | "const ALL_VARIANTS" | dashboard/src/grammar/Dot.test.tsx:17-17 |
 
 ## Cross-Repo References

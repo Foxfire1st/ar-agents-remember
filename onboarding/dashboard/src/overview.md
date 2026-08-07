@@ -6,13 +6,29 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T10:50+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
 
 [agents-remember root overview](../../overview.md)
+
+## 260731-EFA-L8 Frontend Rail
+
+The route is now rail-enforced: `eslint.config.js` arms react-hooks (first),
+jsx-a11y, import/no-cycle, complexity 10, max-lines-per-function 80 (tests
+excluded), and max-lines 1,200 with no exemption list; `npm run lint` is 0 errors
+with no suppressions. Vitest coverage thresholds, `coverage:diff` (90% floor,
+GITHUB_BASE_REF-aware), a 32 MiB bundle budget in `npm run build`, `knip`, and the
+setup-level unhandled-error trap (which caught the live canvas exception) are all
+wired. The nine over-limit files were split by responsibility into kebab-case
+folders with canonical entries (`detail-panel/`, `lifecycle-list/`, `sessions-view/`,
+`conversation-timeline/`, and engine-room siblings + six style domains); test
+suites split by behavior with reconciled test-name sets. The primary Playwright
+suite (`dashboard/e2e/cockpit.spec.ts`) is green 27/27 and runs in CI. Behavior is
+preserved (R12), with two recorded genuine app fixes from the e2e repair (Terminal
+headless focus; ChatsStageBody keep-alive).
 
 ## Purpose
 
@@ -413,7 +429,7 @@ references informed product framing only; current code truth stays in agents-rem
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-405 |
 | Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
 | Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
@@ -436,6 +452,7 @@ selected-child projection in `panels/session-cockpit/conversation/`, and effect 
 unchanged.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section for this route. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:00+02:00 — 260731-EFA-L6 S18-B17 curator: resolved the S18-T3 leftover `:1-1`
   placeholders and the malformed route rows. The projection-provenance prose cit and table row now

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -115,14 +115,15 @@ no cross-repository implementation source is imported or treated as governing co
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The effective-keymap preference and validation boundary. | `resolveKeymap` | dashboard/src/data/keymap/preferences.ts:141-231 |
+| The effective-keymap preference and validation boundary. | `resolveKeymap` | dashboard/src/data/keymap/preferences.ts:244-271 |
 | The thin React binding that installs the effective tables via tinykeys. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| The `?` reference/profile page that renders the same effective map. | `CommandPalette` | dashboard/src/panels/session-cockpit/CommandPalette.tsx:157-342 |
+| The `?` reference/profile page that renders the same effective map. | `CommandPalette` | dashboard/src/panels/session-cockpit/CommandPalette.tsx:379-449 |
 | The command ids the chord tables dispatch into. | `registerDefaultCommands` | dashboard/src/data/commands.ts:88-191 |
-| The DOM that carries the `data-kbzone`/`data-region` markers. | `SessionsView` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
-| The live CodeMirror surface that consumes profile and chord reconfiguration. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:231-723 |
+| The DOM that carries the `data-kbzone`/`data-region` markers. | `SessionsView` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
+| The live CodeMirror surface that consumes profile and chord reconfiguration. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: preferences.ts changed only by behavior-preserving lint remediation.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 6 citation entries (12 findings); no Tier-3 findings.
 

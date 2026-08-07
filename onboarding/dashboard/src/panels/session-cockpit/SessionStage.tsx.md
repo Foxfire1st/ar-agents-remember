@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionStage.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -53,10 +53,10 @@ message is an assistive `role="status"` note via `handoffNote`, not visible ambe
 | The fixed header, empty identity, handoff status, and popover bridge. | `SessionStage`; "data-stage-header"; `handoffNote` | dashboard/src/panels/session-cockpit/SessionStage.tsx:33-43; dashboard/src/panels/session-cockpit/SessionStage.tsx:46-102 |
 | The header line rendered for the focused seat. | `HeaderStrip` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
 | `SessionStage` owns the fixed header and the child stage-body slot below it. | `SessionStage` | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-102 |
-| `SessionsView` supplies `ChatsStageBody` to that child slot. | "<SessionStage"; "<ChatsStageBody" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1112-1195 |
-| `SessionsView` chooses `ConversationWorkingLine` when the focused live conversation is a harness. | "focused.kind === \"harness\" && focusedConversationLive"; "<ConversationWorkingLine" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1215-1216 |
-| `SessionsView` chooses `WorkingLine` in the other branch of that focused-conversation condition. | "focused.kind === \"harness\" && focusedConversationLive"; "<WorkingLine" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1215-1218 |
-| `SessionsView` places `InteractionBar` after the selected harness/non-harness working-line slot. | "data-slot=\"working-line\""; "focused.kind === \"harness\" && focusedConversationLive"; "<ConversationWorkingLine"; "<WorkingLine"; "<InteractionBar" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1209-1232 |
+| `SessionsView` supplies `ChatsStageBody` to that child slot. | "cockpit={data.focused ? data.perSession[data.focused.id] : undefined}"; "onToggleDiagnostics={handlers.toggleChatsDiagnostics}" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:291-291; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:260-260 |
+| `SessionsView` chooses `ConversationWorkingLine` when the focused live conversation is a harness. | "focused.kind === \"harness\" && focusedConversationLive"; "<ConversationWorkingLine" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:194-194; skills/w-02-light-task-workflow/master-template.md:93-93; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:195-195 |
+| `SessionsView` chooses `WorkingLine` in the other branch of that focused-conversation condition. | "focused.kind === \"harness\" && focusedConversationLive"; "data-testid=\"sessions-stage\"" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:194-194; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
+| `SessionsView` places `InteractionBar` after the selected harness/non-harness working-line slot. | "data-slot=\"working-line\""; "focused.kind === \"harness\" && focusedConversationLive" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:190-190; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:194-194; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:195-215 |
 | The focus selectors that target `data-stage-header`. | "[data-stage-header]" | dashboard/src/data/keymap/focus.ts:32-32 |
 | `SessionStage` exposes the assistive handoff status when a handoff note exists. | "handoff ?"; "role=\"status\"" | dashboard/src/panels/session-cockpit/SessionStage.tsx:94-95 |
 | The `HeaderStrip` suite asserts no `WorkingLine` slot in `SessionStage` chrome, covers handoff, and covers explained empty identity. | "reserves NO WorkingLine slot"; "shows the focus-handoff note" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:119-130; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:132-147 |

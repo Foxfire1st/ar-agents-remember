@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/railModel.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,29 +45,29 @@ triage (R16).
 - **`compareClusterSeats`** (cit:([`compareClusterSeats`], dashboard/src/data/railModel.ts:62-68)): active-first (turnState working via `seatVisualState`),
   ties keep worker → reviewer → curator, final tiebreak id — PURE over turnState/role/id, so the
   order changes ONLY when a state changes (no jumpy reflows between identical polls).
-- **`railCycleOrder`** (cit:([`railCycleOrder`], dashboard/src/data/railModel.ts:208-216)): the alt+↑/↓ cycle order — spine → managers → clusters →
+- **`railCycleOrder`** (cit:([`railCycleOrder`], dashboard/src/data/railModel.ts:238-246)): the alt+↑/↓ cycle order — spine → managers → clusters →
   unattached, live rows only.
-- **`buildSpawnTree`** (cit:([`buildSpawnTree`], dashboard/src/data/railModel.ts:227-249)): the palette/button-toggled spawn-edge PROVENANCE view (R5) —
+- **`buildSpawnTree`** (cit:([`buildSpawnTree`], dashboard/src/data/railModel.ts:257-279)): the palette/button-toggled spawn-edge PROVENANCE view (R5) —
   exactly the who-spawned-whom forest the ruled hierarchy replaced as the default.
-- **Row anatomy invariants** (cit:([`ROW_SEGMENTS`], dashboard/src/data/railModel.ts:255-255)): `ROW_SEGMENTS = dot|role|title|status|end`,
+- **Row anatomy invariants** (cit:([`ROW_SEGMENTS`], dashboard/src/data/railModel.ts:285-285)): `ROW_SEGMENTS = dot|role|title|status|end`,
   `ROW_ELIDABLE_SEGMENTS = [status]`; `railRowTooltip` carries the full untruncated truth (label ·
   role · state word · leaf · landed/retired reasons) the elided chip falls back to.
-- **Fleet attention (R12)** (cit:([`attentionRollup`], dashboard/src/data/railModel.ts:283-298)): `attentionRollup` (needsInput/failed/unacked/criticalBus/
+- **Fleet attention (R12)** (cit:([`attentionRollup`], dashboard/src/data/railModel.ts:313-328)): `attentionRollup` (needsInput/failed/unacked/criticalBus/
   working over LIVE rows; unacked + criticalBus are injected joins); `attentionZeroState` — the
   strip renders NOTHING when only `working` is non-empty (working alone is not attention);
   `jumpToAttentionTarget` — priority awaiting-input → failed → unacked → critical bus → OLDEST
   working, and within EVERY class the longest-waiting seat wins (`oldestFirst` over
   `turnStateChangedAt ?? createdAt`; review finding 4 fix); `masterAttentionBadge` — the group
   header's dominant-class badge (❗ input beats ✖ failed).
-- **`smartDefaultFocus`** (cit:([`smartDefaultFocus`], dashboard/src/data/railModel.ts:357-373)): view-entry focus — oldest awaiting-input → oldest failed →
+- **`smartDefaultFocus`** (cit:([`smartDefaultFocus`], dashboard/src/data/railModel.ts:387-403)): view-entry focus — oldest awaiting-input → oldest failed →
   most recently active running → null (the stage then renders the EXPLAINED launcher hint).
-- **Projection joins** (cit:([`heldGatesByLeafKey`, `briefPendingSessionIds`, "function criticalBusSessionIds("], dashboard/src/data/railModel.ts:378-392; dashboard/src/data/railModel.ts:397-414; dashboard/src/data/railModel.ts:417-417)): `heldGatesByLeafKey` — leafKey → taskDoc → lifecycle → gate
+- **Projection joins** (cit:([`heldGatesByLeafKey`, `briefPendingSessionIds`, "function criticalBusSessionIds("], dashboard/src/data/railModel.ts:408-422; dashboard/src/data/railModel.ts:427-439; dashboard/src/data/railModel.ts:442-442)): `heldGatesByLeafKey` — leafKey → taskDoc → lifecycle → gate
   with `state === "open"` (the projection's undecided state; a distinct `decision-pending` word
   would extend HERE — reviewer note); `briefPendingSessionIds` — dispatch-brief pickups in
   `waiting-for-agent`/`check-chat`, joined `deliveredToSession` first then `lifecycleId`,
   deliberately TWO-state (consumed history is not projected; the tri-state is UA-3-gated and must
   never be faked); `criticalBusSessionIds` — pickups at ≥ 80% of ttl or escalated check-chat.
-- **Question triage (R16)** (cit:([`interactionPromptPreview`, `waitingSeats`], dashboard/src/data/railModel.ts:443-453; dashboard/src/data/railModel.ts:456-464)): `interactionPromptPreview` — prompt/question/message/title
+- **Question triage (R16)** (cit:([`interactionPromptPreview`, `waitingSeats`], dashboard/src/data/railModel.ts:460-470; dashboard/src/data/railModel.ts:473-481)): `interactionPromptPreview` — prompt/question/message/title
   keys, clamped, never fabricated; `waitingSeats` — ALL live seats with a pending interaction,
   newest first (the palette triage list). Per review N1, the filter derives from
   `sessions.ts`'s `sessionHasPendingInteraction` — the singular parent slot OR a non-empty
@@ -98,12 +98,12 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Role codes, rail model, comparators, spawn tree, anatomy invariants, attention, joins, triage. | `roleCode`, `buildRailModel`, `compareClusterSeats`, `railCycleOrder`, `buildSpawnTree`, `ROW_SEGMENTS`, `attentionRollup`, `smartDefaultFocus`, `heldGatesByLeafKey`, `briefPendingSessionIds`, "function criticalBusSessionIds(", `interactionPromptPreview`, `waitingSeats` | dashboard/src/data/railModel.ts:30-34; dashboard/src/data/railModel.ts:62-68; dashboard/src/data/railModel.ts:131-205; dashboard/src/data/railModel.ts:208-216; dashboard/src/data/railModel.ts:227-249; dashboard/src/data/railModel.ts:255-255; dashboard/src/data/railModel.ts:283-298; dashboard/src/data/railModel.ts:357-373; dashboard/src/data/railModel.ts:378-392; dashboard/src/data/railModel.ts:397-414; dashboard/src/data/railModel.ts:417-417; dashboard/src/data/railModel.ts:443-453; dashboard/src/data/railModel.ts:456-464 |
+| Role codes, rail model, comparators, spawn tree, anatomy invariants, attention, joins, triage. | `roleCode`, `buildRailModel`, `compareClusterSeats`, `railCycleOrder`, `buildSpawnTree`, `ROW_SEGMENTS`, `attentionRollup`, `smartDefaultFocus`, `heldGatesByLeafKey`, `briefPendingSessionIds`, "function criticalBusSessionIds(", `interactionPromptPreview`, `waitingSeats` | dashboard/src/data/railModel.ts:30-34; dashboard/src/data/railModel.ts:62-68; dashboard/src/data/railModel.ts:192-235; dashboard/src/data/railModel.ts:238-246; dashboard/src/data/railModel.ts:257-279; dashboard/src/data/railModel.ts:285-285; dashboard/src/data/railModel.ts:313-328; dashboard/src/data/railModel.ts:387-403; dashboard/src/data/railModel.ts:408-422; dashboard/src/data/railModel.ts:427-439; dashboard/src/data/railModel.ts:442-442; dashboard/src/data/railModel.ts:460-470; dashboard/src/data/railModel.ts:473-481 |
 | The one grammar the active-first sort + rollup classify through. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
-| The renderer consuming the model/rollup as props. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
-| The view deriving model + rollup once and wiring palette commands over them. | "buildRailModel(sessions, { masterLabel: (key) => labels.get(key) })", "attentionRollup(sessions, {" | dashboard/src/panels/session-cockpit/SessionsView.tsx:343-343; dashboard/src/panels/session-cockpit/SessionsView.tsx:359-359 |
+| The renderer consuming the model/rollup as props. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
+| The view deriving model + rollup once and wiring palette commands over them. | "buildRailModel," | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:24-24 |
 | The projection types joined (TaskDocNode, GateNode, AgentPickupNode, LifecycleProjection). | `TaskDocNode`, `GateNode`, `AgentPickupNode`, `LifecycleProjection` | dashboard/src/types/projection.ts:54-77; dashboard/src/types/projection.ts:217-227; dashboard/src/types/projection.ts:258-276; dashboard/src/types/projection.ts:437-463 |
-| The seat-role resolution (`sessionSeatRole`: binding first, provenance fallback) and the ANY-pending derivation (`sessionHasPendingInteraction`, N1) the triage filter uses. | `sessionSeatRole`, `sessionHasPendingInteraction` | dashboard/src/data/sessions.ts:183-187; dashboard/src/data/sessions.ts:454-461 |
+| The seat-role resolution (`sessionSeatRole`: binding first, provenance fallback) and the ANY-pending derivation (`sessionHasPendingInteraction`, N1) the triage filter uses. | `sessionSeatRole`, `sessionHasPendingInteraction` | dashboard/src/data/sessions.ts:183-187; dashboard/src/data/sessions.ts:525-532 |
 | The unit suite: grouping/ordering, determinism, anatomy, attention priority + tiebreaks, joins, triage (incl. the N1 agent-only-blocked listing pin). | "buildRailModel (R5 — flat command spine, workers-only clusters)", "fleet attention (R12)", "row anatomy invariants (R6)", "projection joins", "question triage (R16)" | dashboard/src/data/railModel.test.ts:47-121; dashboard/src/data/railModel.test.ts:152-167; dashboard/src/data/railModel.test.ts:169-239; dashboard/src/data/railModel.test.ts:256-318; dashboard/src/data/railModel.test.ts:320-359 |
 | The duty-transfer and deletion map records the retired grouping model and this module's replacement ownership. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
 
@@ -117,6 +117,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:35:41+02:00 — W3-B04 curator: curated 8 table citations and 10 prose citations (18 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 

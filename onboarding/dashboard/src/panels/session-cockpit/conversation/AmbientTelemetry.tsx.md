@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,10 +29,10 @@ product truth (F19), giving the previously-orphaned `fetchConversationTelemetry`
 
 - **`formatTokens`** cit:([`formatTokens`], dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:25-30): humanizes token counts (`k`/`M`), returns `null` for absent/non-finite
   — the absent-not-zero primitive.
-- **`usageChips`** cit:([`usageChips`], dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:32-52): builds `in/out/cached` token chips, a `ctx %` chip, and a `cost` chip ONLY
+- **`usageChips`** cit:([`usageChips`], dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:53-61): builds `in/out/cached` token chips, a `ctx %` chip, and a `cost` chip ONLY
   for metrics the harness actually supplies, then `joinChips` (interpunct join, drops empties). A metric
   the harness does not supply produces no chip — never a reassurance `0` (A2).
-- **Fetch effect** cit:([`AbortController`], dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:73-73): `fetchConversationTelemetry(sessionId, epoch, base)` refreshes when the
+- **Fetch effect** cit:([`AbortController`], dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:82-82): `fetchConversationTelemetry(sessionId, epoch, base)` refreshes when the
   turn/status advances (`statusRevision` in deps) — ambient, not per-token; cancellation-guarded.
 - **Freshness marker** (L79-L101, A4): renders nothing until telemetry arrives and only if there is at
   least one chip; the primary metric's `freshnessTone` governs a quiet italic `stale` marker (never an
@@ -63,7 +63,7 @@ reviewed task evidence for any current behavioral claim.
 | The telemetry read client (previously orphaned, now consumed — F3). | `fetchConversationTelemetry` | dashboard/src/data/conversation/client.ts:101-119 |
 | The A-convention presentation module (`joinChips`/`freshnessTone`/`humanizeAge`). | `joinChips` | dashboard/src/data/conversation/format.ts:17-19 |
 | The `ConversationTelemetry` wire type. | `ConversationTelemetry` | dashboard/src/data/conversation/types.ts:352-365 |
-| The toolbar host that mounts this component. | `statusRevision` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:315-315 |
+| The toolbar host that mounts this component. | `statusRevision` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:73-73 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the three superseded
   `(L…)` prose citations and the `n/a` table rows with exact anchors and fixer-generated

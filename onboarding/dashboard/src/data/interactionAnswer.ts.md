@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/interactionAnswer.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ the ONE interaction looked up across BOTH slots.
   with an honest reason pointing at the inspector's raw payload — never dead buttons, never
   silently dropped. A missing prompt stays answerable: `prompt` is the empty string, reported not
   invented. Absent payload → `null` (no bar).
-- **`pendingInteractionAgentLabel(raw)`** cit:([`pendingInteractionAgentLabel`], dashboard/src/data/interactionAnswer.ts:192-199) — the adapter-bound sub-agent label on a
+- **`pendingInteractionAgentLabel(raw)`** cit:([`pendingInteractionAgentLabel`], dashboard/src/data/interactionAnswer.ts:202-209) — the adapter-bound sub-agent label on a
   multiplexed pending interaction, read from `raw.raw.agentLabel` ONLY (the codex adapter binds it
   when a sub-agent thread raises the request). Absent on the parent thread's singular slot;
   missing/blank → `undefined` — the bar badges WHO is asking only from this evidence, never a
@@ -71,7 +71,7 @@ the ONE interaction looked up across BOTH slots.
   `postGateDecisionDetailed(lifecycleId, "approve", {gateId, note: answer})` — one verb, the note
   IS the vendor response (the durable gate record reads "approved + note"; developer-attributed).
   Failures return the server's words verbatim (retryable by the caller with the same answer).
-- **`submitInteractionAnswer(args)`** cit:([`submitInteractionAnswer`], dashboard/src/data/interactionAnswer.ts:504-618) — acquires the per-interaction store lock,
+- **`submitInteractionAnswer(args)`** cit:([`submitInteractionAnswer`], dashboard/src/data/interactionAnswer.ts:654-702) — acquires the per-interaction store lock,
   retains the exact retry payload, then derives channel routing from the session's CURRENT pending
   interaction via `representSessionPendingInteraction(args.session, args.interactionId)`
   cit:([`representSessionPendingInteraction`], dashboard/src/data/interactionAnswer.ts:231-246) — across the singular slot AND the multiplexed agent entries, never the caller's
@@ -108,15 +108,15 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Kind classification, the agent label, the multiplexed payload set, and the per-interaction lookup. | `representPendingInteraction`; `pendingInteractionAgentLabel`; `pendingInteractionPayloads`; `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:136-184; dashboard/src/data/interactionAnswer.ts:192-199; dashboard/src/data/interactionAnswer.ts:208-223; dashboard/src/data/interactionAnswer.ts:231-246 |
-| Gate matching, the direct-route POST + epoch retry, the legacy gate fallback, and the locked submit. | `findInteractionGate`; `answerPendingInteraction`; `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:258-274; dashboard/src/data/interactionAnswer.ts:449-481; dashboard/src/data/interactionAnswer.ts:504-618 |
+| Kind classification, the agent label, the multiplexed payload set, and the per-interaction lookup. | `representPendingInteraction`; `pendingInteractionAgentLabel`; `pendingInteractionPayloads`; `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:157-194; dashboard/src/data/interactionAnswer.ts:202-209; dashboard/src/data/interactionAnswer.ts:218-233; dashboard/src/data/interactionAnswer.ts:241-256 |
+| Gate matching, the direct-route POST + epoch retry, the legacy gate fallback, and the locked submit. | `findInteractionGate`; `answerPendingInteraction`; `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:268-284; dashboard/src/data/interactionAnswer.ts:477-509; dashboard/src/data/interactionAnswer.ts:654-702 |
 | The `OpenSession` mirror of both pending slots + the catalog mapping that carries them. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
 | The detailed gate-decision POST carrying the verbatim body back. | `postGateDecisionDetailed` | dashboard/src/data/actions.ts:49-82 |
 | The server side: interaction → gate projection + verbatim note return. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-264 |
-| The bar that renders one bar per pending payload and badges the agent label. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:242-281 |
-| The rail preview naming WHO asks via the same label helper. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
-| The waiting-seat triage titles deriving asker + preview from the helpers. | `SessionsView` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
-| The round-trip state slice this path's outcomes land in. | `sessionCockpitStore` | dashboard/src/data/sessionCockpitStore.ts:279-511 |
+| The bar that renders one bar per pending payload and badges the agent label. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
+| The rail preview naming WHO asks via the same label helper. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
+| The waiting-seat triage titles deriving asker + preview from the helpers. | `SessionsView` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
+| The round-trip state slice this path's outcomes land in. | `sessionCockpitStore` | dashboard/src/data/sessionCockpitStore.ts:588-601 |
 | The suite: kind matrix, gate matching, structured/direct-route round-trips, agent-label pins, NOT-YET vs CANNOT. | "representPendingInteraction (kind-awareness, F8)" | dashboard/src/data/interactionAnswer.test.ts:67-115 |
 
 ## Cross-Repo References
@@ -135,6 +135,7 @@ clearing is revision-CAS so a concurrent operator edit survives. This remains wh
 prompt submission and PTY input: a normal message can never satisfy a vendor interaction.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 4 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 111, 112; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 18 citation entries (27 findings); no Tier-3 findings.

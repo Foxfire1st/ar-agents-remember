@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EventRiver.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -74,12 +74,12 @@ visible window mounts; backend retention and the store reset/reload boundary own
 | The raw event channel (single-encoded) it consumes. | `RawEvent` | mcp/src/agents_remember/serving/events.py:63-77 |
 | The `ObserverEvent` shape (trust/actor/kind/data). | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
 | The formatter layer that owns per-kind Event River copy. | `summarizeEvent` | dashboard/src/panels/eventSummary.ts:113-143 |
-| The emitter of `tool.completed` and `read.packet` facts this row renders. | `emit_tool`; `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:374-393; mcp/src/agents_remember/observer/ambient.py:395-422 |
-| Existing lifecycle/enclosure/task-document helpers used for task labels. | `taskLabel` | dashboard/src/data/taskIdentity.ts:213-230 |
+| The emitter of `tool.completed` and `read.packet` facts this row renders. | `emit_tool`; `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:405-424; mcp/src/agents_remember/observer/ambient.py:426-453 |
+| Existing lifecycle/enclosure/task-document helpers used for task labels. | `taskLabel` | dashboard/src/data/taskIdentity.ts:239-256 |
 | The store's bounded sliding window this virtualizes over. | `EVENT_WINDOW` | dashboard/src/data/store.ts:56-56 |
 | The render tests pinning readable event rows (now over a virtualized list). | "EventRiver readable activity feed" | dashboard/src/panels/EventRiver.test.tsx:143-351 |
 | `EventRiver` memoizes the displayed list (reverse to newest-first, gate on `eventSummaryContextReady`, drop hidden rows). | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
-| `eventSummaryContextReady` requires lifecycle/enclosure/task-document context for bound events. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:145-158 |
+| `eventSummaryContextReady` requires lifecycle/enclosure/task-document context for bound events. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:143-156 |
 | The reload-order regression keeps a lifecycle-bound tool row hidden until task-document context arrives. | "waits for lifecycle summary context before rendering lifecycle-bound rows" | dashboard/src/panels/EventRiver.test.tsx:240-265 |
 | `EventRiver` virtualizes the displayed rows with `@tanstack/react-virtual` (`useVirtualizer`) over a state-backed scroll ref; only the visible window mounts as absolutely-positioned measured rows, with no newest-N slice. | `virtualizer` | dashboard/src/panels/EventRiver.tsx:79-85 |
 

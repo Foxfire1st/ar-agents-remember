@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No Domain Documentation entries are configured in `system/sources.md`.
 | --- | --- | --- |
 | Helpers seed projection/visibility variants for the surface. | `seed` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:59-70 |
 | Hidden gating, latest chip, and scroll wiring are covered. | "ConversationSurface hidden keep-alive gating (F-j)"; "ConversationSurface — latest chip (B3)"; "ConversationSurface — the scroll-up trap, production wiring (L5I interactive fix)" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:89-122; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:124-184; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:186-314 |
-| Implementation under test. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| Implementation under test. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
 
 ## Cross-Repo References
 

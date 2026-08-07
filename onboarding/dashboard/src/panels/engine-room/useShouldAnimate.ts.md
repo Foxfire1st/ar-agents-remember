@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/useShouldAnimate.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ Two exports.
 | `shouldAnimate()` reads data-effects + prefers-reduced-motion | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
 | `useShouldAnimate()` reactive hook (media query + MutationObserver) | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 | The main entry checks `?effects=off` or `calm-cockpit` and sets `document.documentElement.dataset.effects` to `off`. | "effects=off"; "window.localStorage.getItem(\"calm-cockpit\")"; "document.documentElement.dataset.effects = \"off\"" | dashboard/src/main.tsx:12-12; dashboard/src/main.tsx:15-16 |
-| The prior inline freeze check this generalizes | `mountConstel` | dashboard/src/topology/constel.ts:59-372 |
+| The prior inline freeze check this generalizes | `mountConstel` | dashboard/src/topology/constel.ts:408-468 |
 
 ## Update History
 

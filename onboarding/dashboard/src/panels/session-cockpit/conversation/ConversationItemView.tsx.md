@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ cheap.
 
   cit:([`itemAccessibleName`], dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:15-42)
   cit:([`ConversationItemViewImpl`], dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:44-65)
-  cit:(["export const ConversationItemView = memo("], dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-68)
+  cit:(["export const ConversationItemView = memo("], dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-66)
 
 ### Invariants And Boundaries
 
@@ -60,9 +60,9 @@ reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kind switch and accessible-name helper. | `itemAccessibleName`, `ConversationItemViewImpl` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:15-42; dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:44-65 |
-| The item block-grammar renderers this dispatches to. | `MessageItem`, `ThinkingItem`, `ToolItem`, `InteractionItem`, `TurnResultItem` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:28-28; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156; dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:35-56; dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx:87-118; dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-82 |
+| The item block-grammar renderers this dispatches to. | "export function MessageItem({ item }: { item: ConversationItem }) {"; "export function ThinkingItem({ item }: { item: ConversationItem }) {"; "export function InteractionItem({ item }: { item: ConversationItem }) {"; "export function TurnResultItem({ item }: { item: ConversationItem }) {" | dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-104; dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:35-35; dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-73; dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-46 |
 | The `ConversationItem` wire type it switches on. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
-| The feed that mounts one dispatcher per article and reads the accessible name. | "export function ConversationTimeline({" | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-344 |
+| The feed that mounts one dispatcher per article and reads the accessible name. | "export function ConversationTimeline({" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-56 |
 
 ## Cross-Repo References
 
@@ -74,6 +74,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:46:45+02:00 — W3-B04 curator: curated 3 table citations and 3 prose citations (6 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 

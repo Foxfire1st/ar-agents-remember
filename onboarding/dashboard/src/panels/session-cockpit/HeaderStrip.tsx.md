@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-04T00:41+02:00|
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -31,18 +31,18 @@ provenance; model/effort values and their evidence are not duplicated outside th
   and the state cluster are `flex: none` — they NEVER elide; leaf context is `flex: 0 2 auto`;
   diagnostics is `flex: 0 4 auto; min-width:0` — the FIRST segment to elide (highest shrink),
   matching R10's diagnostics-first elision order.
-- **Identity dedup (R10, 260718-CHATS-L5P)** cit:(["codex codex"], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:108-108): the harness label is DROPPED when it merely
+- **Identity dedup (R10, 260718-CHATS-L5P)** cit:(["codex codex"], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:156-156): the harness label is DROPPED when it merely
   repeats the session label case-insensitively (a raw terminal literally named after its harness), so
   the header no longer stutters `codex codex` / `claude claude` — it renders the single distinct name.
-- **Controls slot** cit:(["model-effort-control"], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:118-118): `data-slot="model-effort-control"` mounts the one live
+- **Controls slot** cit:(["model-effort-control"], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:165-165): `data-slot="model-effort-control"` mounts the one live
   `ModelEffortControl`. It can shrink after diagnostics, clips overflowing chips, and preserves
   the trigger's identity words; `controlPopover` optionally makes its open state view-controlled.
-- **State cluster** cit:(["header-dot"], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:132-132): `StateDot` + the grammar's state word (`seatVisualState`) — the
+- **State cluster** cit:(["header-dot"], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:179-179): `StateDot` + the grammar's state word (`seatVisualState`) — the
   same visuals as the rail row (cross-surface test).
 - **Leaf context:** when `leafKey` exists, the header renders `leaf <leaf-id>` through
   `leafIdFromKey`. It intentionally renders no seat-role suffix; the focused test asserts that
   the leaf segment does not contain `seat`.
-- **Freshness honesty (R15 + R3, 260718-CHATS-L5P)** cit:([`WS_WORDS`, `quiet`], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:102-102): `WS_WORDS` for the real ws
+- **Freshness honesty (R15 + R3, 260718-CHATS-L5P)** cit:([`WS_WORDS`, `quiet`], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:146-146): `WS_WORDS` for the real ws
   state; `quiet Xs/Xm` ONLY when an output stamp exists; the tooltip states the 10 s sweep bound on
   turn-state freshness. **R3:** the diagnostics segment now filters absent parts — the `ws` word shows
   only when a pane actually reports a ws state (`freshness.ptyWs !== "none"`), so a paneless seat no
@@ -70,7 +70,7 @@ provenance; model/effort values and their evidence are not duplicated outside th
 | The grammar + single dot renderer the state cluster uses. | `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
 | The freshness state consumed (`PerSessionCockpit`). | `PerSessionCockpit` | dashboard/src/data/sessionCockpitStore.ts:113-153 |
 | The stage container mounting this as the always-on header layer. | `SessionStage` | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-102 |
-| The live exact-session model/effort control mounted in the slot. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:149-379 |
+| The live exact-session model/effort control mounted in the slot. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:635-704 |
 | The suite pins anatomy order, the mounted control, the grammar state, freshness honesty, absence of duplicated model/effort provenance, and conditional spawn-level/source provenance. | "HeaderStrip (R10)" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:16-116 |
 
 ## Current L5I Maintenance
@@ -81,6 +81,7 @@ without painting a false visible state word; model/effort remains one plain curr
 dedicated control.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
 

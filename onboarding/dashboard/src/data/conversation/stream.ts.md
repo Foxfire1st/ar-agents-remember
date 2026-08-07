@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/stream.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -38,8 +38,8 @@ controller only delivers ordered envelopes and reports connect/disconnect.
 - On `error` it closes, fires `onDisconnect`, and schedules the established-connection
   `reconnectDelayMs` (default 2000) backoff. Before the first successful open, the boot window uses
   `bootReconnectDelayMs` instead; both are configured in the transport's defaults and applied by the
-  open/error lifecycle. cit:([`bootReconnectDelayMs`, `reconnectDelayMs`], dashboard/src/data/conversation/stream.ts:55-55; dashboard/src/data/conversation/stream.ts:63-63)
-  cit:([`open`], dashboard/src/data/conversation/stream.ts:137-203)
+  open/error lifecycle. cit:(["bootReconnectDelayMs?: number;", "reconnectDelayMs?: number;"], dashboard/src/data/conversation/stream.ts:55-55; dashboard/src/data/conversation/stream.ts:63-63)
+  cit:(["the silent dead chat that the loud open-failure escalation exists to prevent"], dashboard/src/data/conversation/stream.ts:29-29; dashboard/src/data/conversation/stream.ts:137-203)
   A stale generation guard (`source !== next`) ignores callbacks from a superseded source.
 - cit:([`reconnect`, `stop`], dashboard/src/data/conversation/stream.ts:82-83) exposes controller
   operations for reopening or stopping the transport. The store's recovery path owns stopping and
@@ -91,6 +91,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: split boot versus established reconnect delays,
   corrected store/controller ownership, and converted transport references to source-backed citations.

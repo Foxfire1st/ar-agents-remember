@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskIdentity.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:44+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,14 +78,14 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test (the `buildTaskTree` / `findMasterPath` / `masterFolderForSelection` helpers). | `buildTaskTree`; `findMasterPath`; `masterFolderForSelection` | dashboard/src/data/taskIdentity.ts:126-165; dashboard/src/data/taskIdentity.ts:169-176; dashboard/src/data/taskIdentity.ts:180-194 |
+| The module under test (the `buildTaskTree` / `findMasterPath` / `masterFolderForSelection` helpers). | `buildTaskTree`; `findMasterPath`; `masterFolderForSelection` | dashboard/src/data/taskIdentity.ts:185-191; dashboard/src/data/taskIdentity.ts:195-202; dashboard/src/data/taskIdentity.ts:206-220 |
 | The leaf-key composer the assertions read through: `repository` + docPath folder + `id`, nothing else. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
 | The test file's `doc` fixture helper. | `doc` | dashboard/src/data/taskIdentity.test.ts:10-12 |
 | The `taskDoc` / `analytics` builders and the thirteen-key `EMPTY_ANALYTICS` base. | `EMPTY_ANALYTICS`; `taskDoc`; `analytics` | dashboard/src/test/fixtures/wire.ts:223-237; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:317-322 |
-| ChatSessionActions derives its task tree from taskDocuments. | "const leafTree = useMemo(() => buildTaskTree(taskDocuments), [taskDocuments]);" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:140-140 |
-| ChatSessionActions renders LeafAttachPicker. | "<LeafAttachPicker" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:184-184 |
-| LeafAttachPicker pre-drills to the context master with findMasterPath. | "setPath(contextMaster ? findMasterPath(tree, contextMaster) : []);" | dashboard/src/panels/LeafAttachPicker.tsx:232-232 |
-| Master rows drill further through drillInto. | "onClick={() => drillInto(node)}" | dashboard/src/panels/LeafAttachPicker.tsx:333-333 |
+| ChatSessionActions derives its task tree from taskDocuments. | "const leafTree = useMemo(() => buildTaskTree(taskDocuments), [taskDocuments]);" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:176-176 |
+| ChatSessionActions renders LeafAttachPicker. | "<LeafAttachPicker" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:211-211 |
+| LeafAttachPicker pre-drills to the context master with findMasterPath. | "setPath(contextMaster ? findMasterPath(tree, contextMaster) : []);" | dashboard/src/panels/LeafAttachPicker.tsx:276-276 |
+| Master rows drill further through drillInto. | "const drillInto = (node: TaskTreeNode) => setPath((current) => [...current, node]);" | dashboard/src/panels/LeafAttachPicker.tsx:284-284 |
 
 ## Cross-Repo References
 

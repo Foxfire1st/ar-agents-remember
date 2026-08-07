@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -43,14 +43,15 @@ Two exports, both presentational (no state, no effects, no mutation).
 | --- | --- | --- |
 | `CommitRow` formats branch/commit + absent/dirty/behind flags behind a `factChip` | `CommitRow` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:19-38 |
 | `DiagnosticsPanel` derives `poweringDown`, builds `setupLine`, renders facts, phases, seed, actions, missing facts, sources | `DiagnosticsPanel` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-146 |
-| `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) | `poweringDown` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:52-52 |
+| `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) | "const poweringDown = node.phase" | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:52-52 |
 | `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes | `EngineProcessNode`, `CommitRefNode`, `ProcessFactState` | dashboard/src/types/projection.ts:41-41; dashboard/src/types/projection.ts:111-119; dashboard/src/types/projection.ts:162-202 |
 | `Affordance` display-only action button (aria-disabled, no POST) | `Affordance` | dashboard/src/grammar/Affordance.tsx:27-42 |
-| `GateResponder` compact worktree-gate control. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| `GateResponder` compact worktree-gate control. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d | `fmtWait` | dashboard/src/data/selectors.ts:108-114 |
-| `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes | `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` | dashboard/src/panels/engine-room/engineRoomStyles.ts:110-115; dashboard/src/panels/engine-room/engineRoomStyles.ts:267-291; dashboard/src/panels/engine-room/engineRoomStyles.ts:533-541; dashboard/src/panels/engine-room/engineRoomStyles.ts:543-548; dashboard/src/panels/engine-room/engineRoomStyles.ts:550-551; dashboard/src/panels/engine-room/engineRoomStyles.ts:553-561; dashboard/src/panels/engine-room/engineRoomStyles.ts:563-568; dashboard/src/panels/engine-room/engineRoomStyles.ts:570-577; dashboard/src/panels/engine-room/engineRoomStyles.ts:586-591 |
+| `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes | `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` | dashboard/src/panels/engine-room/layout.styles.ts:526-526; dashboard/src/panels/engine-room/layout.styles.ts:260-260; dashboard/src/panels/engine-room/layout.styles.ts:536-536; dashboard/src/panels/engine-room/layout.styles.ts:543-543; dashboard/src/panels/engine-room/layout.styles.ts:544-544; dashboard/src/panels/engine-room/layout.styles.ts:546-546; dashboard/src/panels/engine-room/layout.styles.ts:556-556; dashboard/src/panels/engine-room/layout.styles.ts:563-563; dashboard/src/panels/engine-room/layout.styles.ts:579-579; dashboard/src/panels/EngineRoom.tsx:39-39 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 6 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-06-23T13:45+02:00 — Task 11: added `lifecycleId`/`gateNode` props. Worktree-bound projected

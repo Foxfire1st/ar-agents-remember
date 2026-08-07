@@ -6,8 +6,8 @@
 | path | `dashboard/src/dev/CockpitScenarioHarness.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ The harness composes repository-local stores, scenario fixtures, and the real Co
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Scenario facts, reset, and fake fetch installer. | `resetCockpitScenario`; `installCockpitScenarioFetch` | dashboard/src/dev/cockpitScenarios.ts:276-315; dashboard/src/dev/cockpitScenarios.ts:381-627 |
+| Scenario facts, reset, and fake fetch installer. | `resetCockpitScenario`; `installCockpitScenarioFetch` | dashboard/src/dev/cockpitScenarios.ts:289-328; dashboard/src/dev/cockpitScenarios.ts:741-779 |
 | Bench mounts `CockpitScenarioHarness` and wraps the shell in `CockpitScenarioExitBoundary`. | "<CockpitScenarioHarness key={scenario.name} scenario={scenario.cockpit}>"; "<CockpitScenarioExitBoundary key={scenario.name}>{shell}</CockpitScenarioExitBoundary>" | dashboard/src/dev/Bench.tsx:75-75; dashboard/src/dev/Bench.tsx:79-79 |
 
 ## Update History

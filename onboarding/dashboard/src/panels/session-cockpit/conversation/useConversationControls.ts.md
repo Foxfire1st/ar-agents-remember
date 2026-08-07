@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ turn-id correlation, and the never-surface-the-stale-L1-reason discipline.
   hardcoded constant.
 - **Dispatch** (cit:([`useConversationInterrupt`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170)): `onStop` uses a per-turn requestId (`requestIdByTurn`); the FIRST dispatch is
   `requestInterrupt`, a later one is `interruptReconcile` under the SAME id (never a fresh id). `applyResult`
-  (cit:([`applyResult`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:115-132)) announces ack (`interrupt <acknowledgement>`) and, separately, settlement (`turn <settlement>`)
+  (cit:([`applyResult`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:179-196)) announces ack (`interrupt <acknowledgement>`) and, separately, settlement (`turn <settlement>`)
   — ack is never voiced as interrupted; `pending` tracks in-flight.
 - **Availability + honest reason** (cit:([`useConversationInterrupt`], dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170)): `available = working && turnId !== null && !hardUnavailable
   && !refusedThisTurn`. Reason copy is ONLY the honest, current signal — an enabled control carries NO
@@ -84,8 +84,8 @@ reviewed task evidence for any current behavioral claim.
 | Turn-id correlation, attempt-and-reflect gating, honest reason, ack≠settlement announcing. | `resolveWorkingTurnId`; `useConversationInterrupt` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78; dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:88-170 |
 | The interrupt request/status/reconcile client + typed `ControlResult` (a refusal never guessed into success). | `ControlResult` | dashboard/src/data/conversation/client.ts:211-213 |
 | The projection type this hook reads (`status.turn.turnId`, item `turnId`, `capabilities.controls`). | `ActiveConversationProjection` | dashboard/src/data/conversation/reducer.ts:42-66 |
-| The active conversation store this hook reads. | `activeConversationStore` | dashboard/src/data/conversation/store.ts:84-191 |
-| The `ariaKeyshortcuts` helper + `conversation.stop` binding lookup (F25). | `ariaKeyshortcuts` | dashboard/src/data/keymap/preferences.ts:267-280 |
+| The active conversation store this hook reads. | `activeConversationStore` | dashboard/src/data/conversation/store.ts:207-215 |
+| The `ariaKeyshortcuts` helper + `conversation.stop` binding lookup (F25). | `ariaKeyshortcuts` | dashboard/src/data/keymap/preferences.ts:307-320 |
 | The shared polite announcer for ack/settlement transitions. | `announcePolite` | dashboard/src/data/announcer.ts:33-35 |
 | The WorkingLine host that renders the enabled/disabled stop from this hook. | `WorkingLine` | dashboard/src/panels/session-cockpit/WorkingLine.tsx:98-178 |
 | The interrupt hook suite (enable/unresolvable/refusal regression). | "useConversationInterrupt (F1 enable / F5 honest reasons)" | dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx:85-170 |
@@ -100,6 +100,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: rebased the `ControlResult` range;
   exact non-fixing check returns zero findings.

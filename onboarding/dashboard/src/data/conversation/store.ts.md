@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/store.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-27T14:20+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -117,8 +117,8 @@ reviewed task evidence for any current behavioral claim.
 | The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | `LRU_LIMIT` | dashboard/src/data/conversation/store.test.ts:245-303; dashboard/src/data/conversation/store.test.ts:382-417 |
 | The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). | `effectiveAgentFocus` | dashboard/src/data/conversation/agents.ts:106-112 |
 | The focus LRU-survival + reset pins for `agentFocusBySession`. | `setAgentFocus` | dashboard/src/data/conversation/agents.test.ts:197-235 |
-| The stage body that connects/disconnects on focus + epoch resolution. | `connectConversation` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:175-220; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:265-276 |
-| The house vanilla-zustand store idiom this matches. | `createStore` | dashboard/src/data/store.ts:225-225; dashboard/src/data/sessionCockpitStore.ts:279-279 |
+| The stage body that connects/disconnects on focus + epoch resolution. | "connectConversation," | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:20-20; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:265-276 |
+| The house vanilla-zustand store idiom this matches. | "import { createStore } from \"zustand/vanilla\";" | dashboard/src/data/store.ts:2-2 |
 
 ## Cross-Repo References
 
@@ -132,9 +132,9 @@ cross-repository implementation source that governs its behavior.
 ## 260727-CHATS-IM-L2 Selected-Child Store Delta
 
 `agentHistoryBySession` is child-scoped UI acquisition state and never changes the parent's stream
-phase cit:([`agentHistoryBySession`], dashboard/src/data/conversation/store.ts:64-64; dashboard/src/data/conversation/store.ts:143-143). `hydrateAgentConversation` sends one request for the selected child,
+phase cit:(["agentHistoryBySession: Record<string, Record<string, AgentHistoryLoadState>>;", `hydrateAgentConversation`], dashboard/src/data/conversation/store.ts:64-64; dashboard/src/data/conversation/store.ts:143-143; dashboard/src/data/conversation/store.ts:795-795).
 singleflights duplicate callers, retains successful child ids in LRU order, and publishes
-loading/ready/failed states without calling `failStream` cit:([`hydrateAgentConversation`], dashboard/src/data/conversation/store.ts:656-748). Both in-flight and retained
+loading/ready/failed states without calling `failStream` cit:([`hydrateAgentConversation`], dashboard/src/data/conversation/store.ts:795-834). Both in-flight and retained
 child bookkeeping are capped at 64. This explicit bound is necessary because multiple mounted
 consumers can call the exported function and abandoned requests/success rows otherwise form
 unbounded browser state; capacity refusal is a visible `local-resource-limit`, not silent defense.
@@ -144,6 +144,7 @@ survives and is revalidated against the next roster. A failed child is retryable
 child is not re-posted within the same runtime.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized 8 repo-internal rows from
   markdown links to plain anchored sources, and corrected the child-history prose citations — the

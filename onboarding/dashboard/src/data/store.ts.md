@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |                                                  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -130,11 +130,11 @@ the reviewed task evidence for any current behavioral claim.
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
 | `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:526-526 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
-| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:225-225 |
-| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:349-349 |
+| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:312-312 |
+| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:384-384 |
 | `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
 | `SupervisorHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
-| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:725-752 |
+| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-986 |
 
 ## Cross-Repo References
 
@@ -146,6 +146,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and source-backed ranges; exact non-fixing check returns zero findings.

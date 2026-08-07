@@ -6,13 +6,18 @@
 | path | `dashboard/src/dev/cockpitScenarios.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:12+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260731-EFA-L8 Change
+
+The scenario catalog gained the `terminal-focus` scenario and its landed-cleanup
+route for the repaired primary e2e suite; existing scenarios are unchanged.
 
 ## Purpose
 
@@ -138,7 +143,7 @@ construct those lines contain.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `HarnessInfo` type import and the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`. | `HarnessInfo` | dashboard/src/dev/cockpitScenarios.ts:7-7; dashboard/src/dev/cockpitScenarios.ts:456-468 |
+| The `HarnessInfo` type import and the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`. | "import { announcerStore } from \"../data/announcer\";"; "import type { HarnessInfo } from " | dashboard/src/dev/cockpitScenarios.ts:7-7; dashboard/src/dev/cockpitScenarios.ts:456-468; dashboard/src/dev/cockpitScenarios.ts:1-1 |
 | `HarnessInfo` declared inline (`id`, `name`, `detected`) in a module carrying no mirror marker, which is why nothing compared the old fixture against it. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
 | The server's `DetectedHarness` / `DetectedHarnessesResponse` for `GET /api/harnesses`: exactly three fields on a `WireResponse`. | `DetectedHarness` | mcp/src/agents_remember/serving/response_contract.py:355-360 |
 | The guard's own note that its wire vocabulary is discovered from a house marker, that discovery is fail-closed in one direction only, and the five unmarked modules still in the blind spot. | "A NEW UNMARKED MIRROR MODULE IS INVISIBLE" | dashboard/src/test/wireFixtureGuard.ts:55-63 |
@@ -149,6 +154,7 @@ construct those lines contain.
 | The probe types and the `Window` augmentation this file installs into, shared with the Playwright driver tsconfig project. | `Window` | dashboard/src/dev/benchProbes.ts:85-91 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the terminal-focus scenario addition. Verification metadata stays pinned until closeout stamps the code commit.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

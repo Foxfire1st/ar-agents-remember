@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchFlow.test.ts`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,13 +43,13 @@ pass through the removed direct `response.json()` implementation.
   verbatim and a bare id matches nothing; `launchSelectionBody` emits both knobs or `{}` and
   throws `/incomplete/` on either partial; the fresh-Claude exact-session snapshot keeps
   `selectedEffort` null with only the model config category.
-- **Classifier table (R5/R8)** cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:131-179) — every open fixture: 200-starting → `opened`
+- **Classifier table (R5/R8)** cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:182-195) — every open fixture: 200-starting → `opened`
   carrying the requested pair verbatim; 200 vendor-defaults → both knobs null; 400
   `launch-selection-invalid` ×2 (partial pair / non-native, verbatim details); 400 bad-kind →
   `open-refused` with verbatim status+detail; 409 leaf-taken → owning session named; 409
   launch-selection-conflict → the LIVE retained pair, provenance untouched; transport-null / 500
   / 502 / garbage-200 / unrecognized-409 all → `outcome-unknown` (F9).
-- **`openHostedSession`** cit:([`openHostedSession`], dashboard/src/data/launchFlow.ts:193-226) — asserts the exact POST URL (`/api/terminal/launch-1`)
+- **`openHostedSession`** cit:([`openHostedSession`], dashboard/src/data/launchFlow.ts:232-250) — asserts the exact POST URL (`/api/terminal/launch-1`)
   and body `{kind, harness, model, effort, label}` for a complete pair; a vendor-defaults launch
   sends NEITHER knob (`"model" in body === false`); a thrown fetch becomes `outcome-unknown`
   (the caller keeps the id and reconciles).

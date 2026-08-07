@@ -6,8 +6,8 @@
 | path                   | `docs/design/engine-room/podstage.html`     |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-06-21T23:35                            |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`  |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ The two cross-links below are that proving pair.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The living spec that distils this prototype's primitives into the canonical, parameterised visual language; its CSS classes mirror this file 1:1. | `wire`; `flowpath`; `node`; `prov`; `coupler-g`; `dissolve`; `scan` | docs/design/engine-room/engine-room-visual-language.html:97-173 |
-| The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion. | `EnclosureProcessMap`; `EnclosureCanvas`; `ENGINE_ROOM_SCENARIOS`; `useEngineTimeline` | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:57-145; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711; dashboard/src/panels/engine-room/fixtures.ts:720-1198; dashboard/src/panels/engine-room/useEngineTimeline.ts:162-247 |
+| The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion. | "export function EnclosureProcessMap({"; "export function EnclosureCanvas({"; "export const ENGINE_ROOM_SCENARIOS"; "export function useEngineTimeline(" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:67-67; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-42; dashboard/src/panels/engine-room/fixtures.ts:721-721; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/store.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:56+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The store orchestration under test (`connectConversation`, `disconnectConversation`, `enforceLru`, and `failStream`) records typed stream errors in `errorBySession`. | "failStream: (sessionId, error) =>"; "return { bySession, errorBySession"; `connectConversation`; `disconnectConversation`; `enforceLru` | dashboard/src/data/conversation/store.ts:151-151; dashboard/src/data/conversation/store.ts:158-158; dashboard/src/data/conversation/store.ts:567-612; dashboard/src/data/conversation/store.ts:803-820; dashboard/src/data/conversation/store.ts:614-630 |
+| The store orchestration under test (`connectConversation`, `disconnectConversation`, `enforceLru`, and `failStream`) records typed stream errors in `errorBySession`. | "failStream: (sessionId, error) =>"; "return { bySession, errorBySession"; `connectConversation`; `disconnectConversation`; `enforceLru` | dashboard/src/data/conversation/store.ts:164-164; dashboard/src/data/conversation/store.ts:171-171; dashboard/src/data/conversation/store.ts:637-682; dashboard/src/data/conversation/store.ts:684-700; dashboard/src/data/conversation/store.ts:889-906 |
 | The `FakeEventSource` is a no-op `EventSourceCtor` transport double; the F15 case passes it as `eventSourceCtor`. | `FakeEventSource`; "A no-op EventSource"; "eventSourceCtor: FakeEventSource" | dashboard/src/data/conversation/store.test.ts:38-42; dashboard/src/data/conversation/store.test.ts:39-42; dashboard/src/data/conversation/store.test.ts:385-385 |
 | The F15 first-connect case records the server's typed error and leaves no fabricated projection. | "threads the server's typed error to the store on a first-connect page failure (F15)" | dashboard/src/data/conversation/store.test.ts:382-394 |
 | The shared page/status/identity builders the fake `fetch` answers with. | `conversationPage`; `conversationStatus`; `conversationIdentity` | dashboard/src/test/fixtures/conversationWire.ts:172-185; dashboard/src/test/fixtures/conversationWire.ts:187-207; dashboard/src/test/fixtures/conversationWire.ts:228-243 |

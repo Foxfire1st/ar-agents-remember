@@ -6,13 +6,18 @@
 | path                   | `dashboard/src/panels/session-cockpit/PtySurface.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The react-hooks remediation memoized `inspectableIds` and pinned the effect
+dependency array; keep-alive and renderer-by-measurement behavior is unchanged.
 
 ## Purpose
 
@@ -42,11 +47,11 @@ those panes get byte-stream harvesting hooks.
   (`running`/`landed` — L106-L108); tombstones PRUNE (a terminated seat's pane and its WS are
   torn down, not hidden forever). Uncapped, like Chats — an LRU cap is where the serialize addon
   plugs in later (worker-report verdict).
-- **Two archetypes per pane** cit:(["export function PtySurface"], dashboard/src/panels/session-cockpit/PtySurface.tsx:136-136): `isControlledSession` (lifecycleCopy) switches
+- **Two archetypes per pane** cit:(["export function PtySurface"], dashboard/src/panels/session-cockpit/PtySurface.tsx:334-334): `isControlledSession` (lifecycleCopy) switches
   `data-pty-archetype="controlled"|"legacy-raw"`; harvesting `hooks` (onBell/onTitle/OSC 133/9)
   are passed ONLY for legacy raw (`controlled ? undefined : {…}` — L188-L205, R7); the pane
-  chrome names the archetype honestly cit:([`paneArchetypeCopy`], dashboard/src/panels/session-cockpit/PtySurface.tsx:305-305).
-- **Bell acknowledge-on-focus** cit:(["Focusing a seat acknowledges its bell marker"], dashboard/src/panels/session-cockpit/PtySurface.tsx:195-195): focusing a seat clears its harvested bell marker —
+  chrome names the archetype honestly cit:(["paneArchetypeCopy,"], dashboard/src/panels/session-cockpit/PtySurface.tsx:16-16).
+- **Bell acknowledge-on-focus** cit:(["Focusing a seat acknowledges its bell marker"], dashboard/src/panels/session-cockpit/PtySurface.tsx:371-371): focusing a seat clears its harvested bell marker —
   the marker exists to pull attention here.
 - **R8 real-cols wiring** (L144-L149, L183-L185): the VISIBLE pane's `onResizeCols` feeds
   `onVisibleCols` (→ SessionsView's `pane N cols (< 80)` floor chip); reset to `null` on focus
@@ -63,7 +68,7 @@ those panes get byte-stream harvesting hooks.
   teardown/reconnect.
 - **Reserved badge slot** (L66-L68, L231-L234): `data-slot="scrollback-paused-badge"` stays EMPTY
   until the pane-freeze fields land server-side (260710 deferred spec, fix 2) — never faked.
-- **Zone focus handoff** cit:(["export function PtySurface"], dashboard/src/panels/session-cockpit/PtySurface.tsx:136-136): the `data-kbzone="pty"` root delegates focus to the visible
+- **Zone focus handoff** cit:(["export function PtySurface"], dashboard/src/panels/session-cockpit/PtySurface.tsx:334-334): the `data-kbzone="pty"` root delegates focus to the visible
   pane's terminal host (which delegates into xterm's textarea).
 
 ### Invariants And Boundaries
@@ -90,13 +95,13 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Renderer record, keep-alive, archetypes, hooks, toggle, slots, focus handoff. | "export function PtySurface" | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-136 |
-| The wrapped terminal: fit rules, live screenReaderMode, key filter, hooks, cols. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:117-117 |
+| Renderer record, keep-alive, archetypes, hooks, toggle, slots, focus handoff. | "export function PtySurface" | dashboard/src/panels/session-cockpit/PtySurface.tsx:334-334 |
+| The wrapped terminal: fit rules, live screenReaderMode, key filter, hooks, cols. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:110-110 |
 | The archetype predicate + pane copy + accessible name + toggle cost note. | "export function cleanupOutcomeCopy" | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
 | The harvest store + OSC parsers the legacy-raw hooks feed. | "export interface PtyHarvest" | dashboard/src/data/ptyHarvest.ts:21-21 |
 | The reserved-chord matcher the key filter consults. | "export const PTY_RESERVED" | dashboard/src/data/keymap/reserved.ts:62-62 |
 | The freshness fields the socket/output callbacks write. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
-| The view mounting this surface + the measured-cols floor chip. | "export const SessionsView" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
+| The view mounting this surface + the measured-cols floor chip. | "export const SessionsView" | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
 | The measurement harness behind the renderer record. | "export function PtyRenderBench" | dashboard/src/dev/PtyRenderBench.tsx:83-83 |
 | The jsdom suite (Terminal mocked out — xterm never enters jsdom). | "controlled panes are labeled as the runner line-log and get NO harvesting hooks" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:54-69 |
 
@@ -136,6 +141,7 @@ which now floats inside the pane. A hidden layer has no keyboard zone or ended-s
 so focus routing reaches only the currently visible terminal surface.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the inspectableIds memoization fix. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the superseded `(L…)`
   prose citations and the `n/a` rows with exact anchors and fixer-generated ranges; exact

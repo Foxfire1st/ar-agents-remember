@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ No Domain Documentation entries are configured in `system/sources.md`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | SSE status drives working, elapsed, and stale rendering without any control. | `ConversationWorkingLine` | dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx:47-98 |
-| Stage composition selects this only for a live harness stream. | `focusedConversationLive`, `ConversationWorkingLine` | dashboard/src/panels/session-cockpit/SessionsView.tsx:327-327; dashboard/src/panels/session-cockpit/SessionsView.tsx:330-333; dashboard/src/panels/session-cockpit/SessionsView.tsx:1216-1216 |
+| Stage composition selects this only for a live harness stream. | "const { focused, focusedLive, focusedConversationLive, perSession } = data;"; "<ConversationWorkingLine sessionId={focused.id} />" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:186-186; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:195-195 |
 | Focused tests pin cue-only behavior. | "working-line-stop" | dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:116-124 |
 
 ## Cross-Repo References
@@ -65,6 +65,7 @@ No cross-repository boundary is owned here.
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:43:37+02:00 — W3-B05 curator: anchored 3 Tier-2 table citations with exact source paths; fixer generated all ranges.
 - 2026-07-24T13:17:17Z — Curator: created the SSE working-cue sidecar. It is uncommitted, so

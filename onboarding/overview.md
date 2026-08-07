@@ -6,10 +6,48 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 
 > **Status:** active baseline
+
+## 260731-EFA-L8 Frontend Rail
+
+The dashboard frontend is now under the same enforcement doctrine as the Python
+side, with its own toolchain (260731-EFA-L8, 209 changed paths / 41,520+
+insertions / 26,003- deletions over the leaf base):
+
+- **ESLint rail (R1/R2/R3):** `dashboard/eslint.config.js` arms
+  `react-hooks` (`rules-of-hooks` + `exhaustive-deps`, landed first and alone),
+  `jsx-a11y`, `import/no-cycle` (with the TS resolver), `complexity` (max 10),
+  `max-lines-per-function` (max 80, tests excluded), and `max-lines` (1,200, no
+  exemption list — the repository File Size Budget's dashboard-side enforcement).
+  Strict-target lint is green (0 errors; was 250) with no suppressions.
+- **Size remediation (R4/R5/R6):** the nine over-limit `dashboard/src` files were
+  split by responsibility into kebab-case folders with one canonical entry
+  (`detail-panel/`, `lifecycle-list/`, `sessions-view/`,
+  `conversation-timeline/`, engine-room sibling modules and six style domains).
+  `engineRoomStyles.ts` was ruled a split-by-semantic-axis case (recorded
+  decision, no exemption list). Test suites were split by behavior with the
+  collected test-name sets reconciled item-for-item.
+- **Coverage / budget / dead code / error trap (R7/R9/R10):** Vitest coverage
+  thresholds (lines 85 / stmts 82 / funcs 82 / branches 70), a per-diff
+  changed-lines floor (`scripts/check-diff-coverage.mjs`, default 90%,
+  `GITHUB_BASE_REF` parity with the Python resolver), a 32 MiB bundle budget wired
+  into `npm run build`, `knip` dead-code detection, and a setup-level
+  unhandled-error trap that provably caught the review's live canvas exception.
+- **Playwright (R8):** the primary suite (`dashboard/e2e/cockpit.spec.ts`) is
+  wired into CI and green 27/27 after the FL3 repair, which surfaced two genuine
+  app fixes (Terminal headless-focus delegation; ChatsStageBody PTY keep-alive).
+- **Hooks (R11):** `.githooks/_gate.sh` runs lint, typecheck, and tests in both
+  tiers and fails closed on missing `dashboard/node_modules`; CI's dashboard job
+  adds coverage, diff-coverage, and e2e. The formatter (Prettier) is installed
+  with `format`/`format:check` scripts as an advisory, not a hard rail (recorded
+  decision, 436-file churn deferred).
+- **Python ripple:** 19 PLR0917 bare-`*` keyword-only fixes ride in the 10
+  `mcp/registration/*.py` files, and `code_quality/scope_reporting.py` gained the
+  dashboard rail steps/provenance. The diff-coverage gate itself is red
+  (17,171/27,814 = 61.7% vs 90%) pending an owner ruling at the time of this pass.
 
 ## What This Repo Is
 
@@ -998,6 +1036,7 @@ per-file task parsing. The repository's public capability, task, and dashboard s
 unchanged; ownership and failure containment are now explicit in their route overviews.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the code-quality and docs-index claims through their operative sections and regenerated the final ranges with the scoped fixer.
 
@@ -2067,5 +2106,6 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.

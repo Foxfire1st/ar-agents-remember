@@ -6,13 +6,19 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The rail render parts moved to `sessionRailParts.tsx` and styles to
+`sessionRailStyles.ts`; this file keeps the rail model wiring and bulk actions.
+Behavior is unchanged.
 
 ## Purpose
 
@@ -27,7 +33,7 @@ rail view.
 
 ### Logic
 
-- **Props vs store** cit:(["export function SessionRail"], dashboard/src/panels/session-cockpit/SessionRail.tsx:487-487): `model`/`rollup` arrive as PROPS — derived once in
+- **Props vs store** cit:(["export function SessionRail"], dashboard/src/panels/session-cockpit/SessionRail.tsx:149-149): `model`/`rollup` arrive as PROPS — derived once in
   `SessionsView` and shared with the palette commands (one derivation, two surfaces; same-snapshot
   consistency, worker flag 5) — while `sessions`, the tree toggle, poll health, the projection
   slices (`taskDocuments`, `lifecycles`, `agentPickups`, `supervisorHeartbeat`), the lifecycle
@@ -160,16 +166,16 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | "export function SessionRail" | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-487 |
-| The pure model/rollup/join derivations this renders. | "export function buildRailModel" | dashboard/src/data/railModel.ts:131-131 |
+| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | "export function SessionRail" | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-149 |
+| The pure model/rollup/join derivations this renders. | "export function buildRailModel" | dashboard/src/data/railModel.ts:192-192 |
 | The payload selector + agent label the `input?` chip tooltip resolves (N1). | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
 | The adapter-bound agent label the tooltip prefixes. | "export interface InteractionQuestionOption" | dashboard/src/data/interactionAnswer.ts:29-29 |
 | The single dot renderer + grammar. | "export function StateDot" | dashboard/src/panels/session-cockpit/StateDot.tsx:38-38 |
-| The view deriving props and wiring focus + palette mirrors. | "export const SessionsView" | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
+| The view deriving props and wiring focus + palette mirrors. | "export const SessionsView" | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
 | The detailed terminate/cleanup flows + notice store the End paths run through. | "export function startRetireResidualSweep" | dashboard/src/data/sessionLifecycle.ts:136-136 |
 | The confirm + cleanup-outcome copy. | "export function cleanupOutcomeCopy" | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
 | The harvest store + hint words the markers/tooltips read. | "export interface PtyHarvest" | dashboard/src/data/ptyHarvest.ts:21-21 |
-| Shared set-attention predicate feeding the `set!` marker. | "export function deriveSetChips" | dashboard/src/data/setChips.ts:58-58 |
+| Shared set-attention predicate feeding the `set!` marker. | "export function deriveSetChips" | dashboard/src/data/setChips.ts:192-192 |
 | The poll-health + tree-toggle store slices. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 | The jsdom suite: state matrix, anatomy order, model-leakage negative, hierarchy, attention, joins, completed/bulk, footer honesty, cross-surface dot, + the End/cleanup/harvest block. | "every row's dot carries exactly the stateGrammar visual for that seat" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:77-96 |
 
@@ -197,6 +203,7 @@ instead of heartbeat age, and its former bus footer is removed because inbox and
 already have their authority in the top bar and detailed inspector.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the sessionRailParts/sessionRailStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the superseded `(L…)`
   prose citations and the `n/a` rows with exact anchors and fixer-generated ranges; exact

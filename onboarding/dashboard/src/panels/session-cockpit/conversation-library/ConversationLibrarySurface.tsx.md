@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ discipline that the review's F8/F16/F22/F23 findings and the height-containment 
   contenteditable) calls `onBack`, which consumes the same focus-return token as the `← back to
   current chat` button (L131) and the palette `conversation.backToChat` command in `SessionsView`.
 - **List mount + `agentsNote` pass-through**: the list receives rows/cursor/loading/
-  error and `agentsNote={list?.agentsNote}` (cit:([`agentsNote`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:144-144)) — a pure pass-through; the list
+  error and `agentsNote={listView.agentsNote}` (cit:(["agentsNote={listView.agentsNote}"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:235-235)) — a pure pass-through; the list
   owns the verbatim render and the nested agent child rows.
 - **Selection → preview only** (L145): selecting a row loads its preview; it never opens/activates.
 - **`OpenConversationAction`** is mounted only for the selected row (cit:([`ConversationLibrarySurface`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171)), so the sole resume
@@ -45,7 +45,7 @@ discipline that the review's F8/F16/F22/F23 findings and the height-containment 
 ### Invariants And Boundaries
 
 - **Height containment is the whole point of the CSS here (F23).** The `columns`
-  flex box is cit:([`nowrap`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:61-67): a *wrapping* flex container is multi-line, so each line's cross-size
+  flex box is cit:([`nowrap`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:71-71): a *wrapping* flex container is multi-line, so each line's cross-size
   is sized to content — the columns would then grow to full content height inside this
   `overflow:hidden` clip and the interior `overflow-y:auto` scrollers would never engage, pushing
   `Open as new chat`/`Load more` past the fold and out of pointer reach. `nowrap` keeps one flex line
@@ -94,10 +94,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:41:46+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and 5 Tier-2 prose citations with exact source paths; fixer generated all ranges.
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the one-line `agentsNote` pass-through
-  (`agentsNote={list?.agentsNote}`) (cit:([`agentsNote`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:144-144)) into the list; all line citations re-stamped against the
+  (the list receives `agentsNote` as a pass-through prop) (cit:(["agentsNote: list?.agentsNote,"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:178-178)) into the list; all line citations re-stamped against the
   post-L7 source (several pre-existing citations had also drifted and are corrected). The L7 source is
   uncommitted, so lastVerifiedCommit* stays on the prior stamp and closeout re-stamps verification.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V10 stack-threshold raise (`@container`

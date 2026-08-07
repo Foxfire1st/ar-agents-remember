@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/useCollapsedTaskGroups.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T12:58+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -57,8 +57,8 @@ Domain Documentation entries. The storage behavior is a local application contra
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. | `LifecycleListImpl` | dashboard/src/panels/LifecycleList.tsx:224-259 |
-| Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. | "operations.tasks.collapsed.v1" | dashboard/src/panels/LifecycleList.test.tsx:951-951 |
+| The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. | `LifecycleListImpl` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-259 |
+| Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. | "operations.tasks.collapsed.v1" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:182-182 |
 | The existing persisted-flag pattern was the worker's local implementation reference. | `usePersistedFlag` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:6-25 |
 
 ## Cross-Repo References

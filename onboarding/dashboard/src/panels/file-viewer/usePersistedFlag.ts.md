@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/file-viewer/usePersistedFlag.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-06-29T09:06+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,9 +50,9 @@ are caller-owned and global to the origin (e.g. `fileviewer.split`,
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `FileViewer` persists its split/single toggle through this hook. | "fileviewer.split"; "className={toggle({ on: split })} aria-pressed={split} onClick={() => setSplit(!split)}> {split ? \"▣ Split\" : \"▢ Single\"} </button>" | dashboard/src/panels/file-viewer/FileViewer.tsx:157-157; dashboard/src/panels/file-viewer/FileViewer.tsx:248-250 |
-| `Cockpit` persists its left/right rail pixel widths via `usePersistedNumber`. | "cockpit.rail-left-w", "cockpit.rail-right-w" | dashboard/src/cockpit/Cockpit.tsx:418-419 |
-| The calm-cockpit `localStorage` flag pattern this mirrors. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:855-882 |
+| `FileViewer` persists its split/single toggle through this hook. | "fileviewer.split"; "className={toggle({ on: split })} aria-pressed={split} onClick={() => setSplit(!split)}> {split ? \"▣ Split\" : \"▢ Single\"} </button>" | dashboard/src/panels/file-viewer/FileViewer.tsx:211-211; dashboard/src/panels/file-viewer/FileViewer.tsx:269-271 |
+| `Cockpit` persists its left/right rail pixel widths via `usePersistedNumber`. | "cockpit.rail-left-w", "cockpit.rail-right-w" | dashboard/src/cockpit/Cockpit.tsx:431-432 |
+| The calm-cockpit `localStorage` flag pattern this mirrors. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:1089-1116 |
 
 ## Update History
 

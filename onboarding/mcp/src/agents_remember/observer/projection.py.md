@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -358,7 +358,7 @@ Projection assembly receives the latest landing facts as an input and does not c
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `TaskDocNode.lifecycleId` is optional runtime attachment on the served projection node. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:608-654 |
-| The lifecycle panel uses structured `createdAt` data in its row comparator. | `compareRows` | dashboard/src/panels/LifecycleList.tsx:1003-1006 |
+| The lifecycle panel uses structured `createdAt` data in its row comparator. | `compareRows` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1179-1182 |
 | `TaskDocNode.createdAt` and `SeriesSubTaskNode.createdAt` are part of the served projection contract. | `TaskDocNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:608-654; mcp/src/agents_remember/observer/projection.py:657-672 |
 | `SeriesNode.createdAt` and `objective` are part of the served projection contract. | `SeriesNode` | mcp/src/agents_remember/observer/projection.py:685-711 |
 | `Analytics.series` carries the folder-keyed master aggregation surface while `taskDocuments` carries concrete active task documents read from JSON-primary sources. | `Analytics`; `taskDocuments`; `read_task_documents` | mcp/src/agents_remember/observer/projection.py:956-987; mcp/src/agents_remember/observer/snapshots.py:1155-1183 |

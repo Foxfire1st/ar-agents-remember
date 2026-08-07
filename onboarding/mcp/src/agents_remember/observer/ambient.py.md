@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:05+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T20:09+02:00                      |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -57,10 +57,10 @@ conditional `terminal: State = "completed" if outcome == "completed" else "aband
 the reducer projects and no session could write, and a renamed one would pass the
 guard and then be mapped to the wrong state by the conditional. Both halves now
 read `lifecycle_state`: the guard is `if outcome not in TERMINAL_STATES:`
-cit:([`TERMINAL_STATES`], mcp/src/agents_remember/observer/ambient.py:260-263)
+cit:(["if outcome not in TERMINAL_STATES:"], mcp/src/agents_remember/observer/ambient.py:291-291)
 (its message built from `'|'.join(sorted(TERMINAL_STATES))`) and the
 conversion is `terminal = coerce_end_outcome(outcome)`
-cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/ambient.py:267-267). Membership is
+cit:(["terminal = coerce_end_outcome(outcome)"], mcp/src/agents_remember/observer/ambient.py:298-298). Membership is
 already established by the guard, so that call is the identity conversion — it is
 made anyway, rather than `cast`, so the outcome→state rule has exactly one owner
 and the write side reads it from the same function the reducer's `_ended_updates`
@@ -72,7 +72,7 @@ reducer, which reads logs it did not write; a session ending *itself* must not
 have a typo silently recorded as an abandonment.
 
 One literal `"abandoned"` deliberately remains, in the `discard` branch of
-`_leave_current_locked` cit:([`_leave_current_locked`], mcp/src/agents_remember/observer/ambient.py:436-465): that branch is *naming one outcome*, not
+`_leave_current_locked` cit:([`_leave_current_locked`], mcp/src/agents_remember/observer/ambient.py:467-496): that branch is *naming one outcome*, not
 classifying, so the literal is the decision. It is deliberately not
 `DEFAULT_END_OUTCOME`, which is the separate policy for coercing a free-form
 outcome at the tool boundary — discard would follow that constant anywhere it
@@ -132,9 +132,10 @@ The heartbeat ticker is a daemon `threading.Thread` (generalizing the
 `setup_progress` idiom) that appends `lifecycle.heartbeat` every
 `HEARTBEAT_SECONDS` until stopped on end/switch/`shutdown`; a stale last
 heartbeat is how the projection reducer infers `paused (quiet)`. The ticker now
-**decays with activity**: `_heartbeat_loop` skips the emit (`continue`, keeping the loop
+**decays with activity**: `_heartbeat_tick` skips the emit (returns True, keeping the loop
 alive) whenever `_inactive_seconds_locked()` exceeds `_inactivity_cutoff_seconds`
-(`INACTIVITY_CUTOFF_SECONDS`, 10 min), and resumes the moment a real event resets the clock.
+(`INACTIVITY_CUTOFF_SECONDS`, 10 min) and returns False — ending the loop — when no lifecycle
+is active or the current one is terminal; emitting resumes the moment a real event resets the clock.
 `_inactive_seconds_locked()` is the age of `self._last_activity_iso`, which `_emit_locked`
 stamps for every kind except the module-level `_HEARTBEAT_KIND` (heartbeats are liveness
 theater, so they never refresh it). Since 260731-EFA-L2 the cutoff is pinned through the frozen
@@ -146,6 +147,16 @@ them onto `_heartbeat_seconds` / `_ttl_seconds` / `_inactivity_cutoff_seconds`, 
 read is unchanged. Net: a parked lifecycle
 stops beating and its dashboard log ages out under `event_retention`'s inactivity TTL instead
 of being kept alive forever by its own keepalive.
+
+**260731-EFA-L8 (round 13): the ticker wait is a monotonic-deadline recheck loop.** The loop body
+is now `while not self._ticker_wait(stop, interval): if not self._heartbeat_tick(): return` — one
+beat per wait return, with `_heartbeat_tick` owning the activity cutoff and the gone/terminal exit.
+`_default_ticker_wait(stop, interval)` replaces `Event.wait`/`Condition.wait`: CPython's
+waiter-lock handoff can overrun the timeout and leave the thread parked with no recheck or escape,
+so the production wait chunks `time.sleep` against a monotonic deadline, re-reads the stop flag on
+every wake, and returns deterministically when the interval expires — there is no wedged-wait path.
+Tests inject a grant-stepping fake through the keyword-only `start(ticker_wait=...)` seam (stored
+as `self._ticker_wait`) instead of racing a short interval.
 `_reap_stale_fleeting` is the project-and-prune TTL sweep — it deletes the log
 directory of any dormant (`> TTL_SECONDS`), never-promoted fleeting lifecycle (a
 directory deletion, never a non-owner append) and runs opportunistically on
@@ -205,6 +216,10 @@ existing seam rather than adding a second one.
   after `_inactivity_cutoff_seconds` of no real event and resumes on the next real event; only
   non-heartbeat kinds stamp `_last_activity_iso`, so a heartbeat can never keep its own
   lifecycle's log alive. This is what lets `event_retention` age out an idle/parked log.
+- **The ticker wait never wedges (260731-EFA-L8 round 13).** The production wait is
+  `_default_ticker_wait`: chunked sleeps against a monotonic deadline with the stop flag re-read
+  on every wake; the test seam (`start(ticker_wait=...)`) grants ticks deterministically, and the
+  loop exits when `_heartbeat_tick` reports no active or terminal lifecycle.
 - All mutation/emission is lock-guarded; the heartbeat ticker is a daemon thread
   stopped via `shutdown()` / end / switch.
 - State *types* live in `lifecycle_state.py`; this module is behavior, threading,
@@ -216,7 +231,7 @@ existing seam rather than adding a second one.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). | `TERMINAL_STATES`; `coerce_end_outcome`; `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158; mcp/src/agents_remember/observer/lifecycle_state.py:187-210 |
-| `end` is pinned to hold no string constant from `TERMINAL_STATES` and to convert through the shared function — a structural test, because a copy that happens to agree passes a behavioural one. | `test_the_end_signal_names_no_terminal_state_of_its_own` | mcp/tests/test_observer_ambient.py:172-180 |
+| `end` is pinned to hold no string constant from `TERMINAL_STATES` and to convert through the shared function — a structural test, because a copy that happens to agree passes a behavioural one. | `test_the_end_signal_names_no_terminal_state_of_its_own` | mcp/tests/test_observer_ambient.py:181-189 |
 | The append-only store the ambient writes events to. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The `ar-observer-event/v1` envelope every signal emits. | `OBSERVER_EVENT_SCHEMA` | mcp/src/agents_remember/observer/events.py:23-23 |
 | `mcp/tools/base.py::_tool_payload` delegates to `application/tool_response.py::complete_tool_response`, the choke point that calls `ambient().emit_tool(...)` for every public tool and (260707-HFX2-L2) reads `.root` to check the supervisor heartbeat. | `complete_tool_response`; `emit_tool` | mcp/src/agents_remember/mcp/tools/base.py:73-75; mcp/src/agents_remember/application/tool_response.py:47-61 |
@@ -231,6 +246,11 @@ existing seam rather than adding a second one.
 
 ## Update History
 
+- 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13
+  production fix — `_default_ticker_wait`'s monotonic-deadline chunked wait with stop recheck
+  replaces `Event.wait` (no wedged-wait path), `start(ticker_wait=...)` is the keyword-only
+  seam, and `_heartbeat_tick` owns the activity cutoff plus the gone/terminal loop exit.
+  Verification metadata stays pinned until closeout stamps the code commit.
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired all 13 citation rows and converted 5 superseded prose line citations to cit: forms against the frozen source (end guard L260-L263, conversion L267, discard branch L436-L465, end L243-L274). Three claims re-bound to moved code: the choke point now lives in application/tool_response.py (`complete_tool_response`, delegated from mcp/tools/base.py L73-L75), the served dedup surface is `amb.served.is_served`/`record`/`reset`, and `age_seconds` now lives in controlplane/stamps.py. Two unflagged stale line numbers in touched sentences corrected. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
@@ -240,15 +260,15 @@ existing seam rather than adding a second one.
   last hand-written copy of the live/terminal split. Verified against the diff and the current
   source and corrected it: the accept-tuple `("completed", "abandoned")` is now
   `if outcome not in TERMINAL_STATES:`
-  cit:([`TERMINAL_STATES`], mcp/src/agents_remember/observer/ambient.py:260-263)
+  cit:(["if outcome not in TERMINAL_STATES:"], mcp/src/agents_remember/observer/ambient.py:291-291)
   (message from `sorted(TERMINAL_STATES)`) and
   the outcome→state conditional is now `terminal = coerce_end_outcome(outcome)`
-  cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/ambient.py:267-267) — the
+  cit:(["terminal = coerce_end_outcome(outcome)"], mcp/src/agents_remember/observer/ambient.py:298-298) — the
   identity conversion, called anyway rather than `cast`, so the rule has one owner. Recorded the
   deliberate asymmetry (`end` refuses an unknown outcome; `coerce_end_outcome` defaults it,
   because the reducer reads foreign logs), and the one surviving `"abandoned"` literal in the
   `discard` branch of `_leave_current_locked`
-  cit:([`_leave_current_locked`], mcp/src/agents_remember/observer/ambient.py:436-465), which names one outcome as a decision and
+  cit:([`_leave_current_locked`], mcp/src/agents_remember/observer/ambient.py:467-496), which names one outcome as a decision and
   is deliberately not `DEFAULT_END_OUTCOME`. Added `end`'s line range
   cit:([`end`], mcp/src/agents_remember/observer/ambient.py:243-274), two invariants,
   and a reference row for the structural test that pins `end` to hold no such string constant.

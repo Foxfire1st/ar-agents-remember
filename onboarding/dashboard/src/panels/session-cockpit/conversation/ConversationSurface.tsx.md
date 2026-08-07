@@ -6,13 +6,19 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The surface render parts moved to `conversationSurfaceParts.tsx` and styles to
+`conversationSurfaceStyles.ts`; this file keeps the announcements, paging, and
+agents-line wiring. Behavior is unchanged.
 
 ## Purpose
 
@@ -33,15 +39,15 @@ owns no data/paging/cursor logic — the store/reducer do.
 
 - **Store reads** cit:([`orderedItemIds`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:119-141): `useActiveConversation` selects the session projection and its typed
   `errorBySession` reason; `items` is the materialized ordered list (`orderedItemIds.map`).
-- **Sub-agent focus model (R7)** cit:([`effectiveAgentFocus`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:147-159): `storedAgentFocus` reads the
+- **Sub-agent focus model (R7)** cit:(["effectiveAgentFocus,", "const storedAgentFocus = useActiveConversation(", "const storedAgentFocus = useActiveConversation(", "const storedAgentFocus = useActiveConversation(", `storedAgentFocus`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:163-167; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:22-22): `storedAgentFocus` reads the
   LRU-surviving `agentFocusBySession` entry; `agents = deriveAgents(items)` derives the roster from
   projection evidence only; `agentFocus = effectiveAgentFocus(stored, agents)` is NEVER the stored
   value applied blindly — a rehydrated projection without that agent honestly falls back to the
   parent conversation; `focusedItems = filterItemsForFocus(items, agentFocus)` yields the lane the
   timeline renders.
-- **Focus keys** cit:([`onSurfaceKeyDown`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:185-219) (the Claude Code sub-agent navigation model): the surface root's
+- **Focus keys** cit:([`onSurfaceKeyDown`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:294-298) (the Claude Code sub-agent navigation model): the surface root's
   `onKeyDown` handles FOUR keys. ArrowDown ANYWHERE on the surface (feed article AND scroll
-  viewport — one uniform hijack, cit:([`surfaceRef`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:125-125)) moves DOM focus INTO the agents line when
+  viewport — one uniform hijack, cit:(["surfaceRef.current?.querySelector<HTMLElement>("[data-agents-line]")?.focus();", `, `], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();", `], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)) moves DOM focus INTO the agents line when
   the roster is non-empty — the primary sub-agent path; the line owns Enter/menu from there and
   ArrowUp from the line returns focus to the timeline's tabbable row. ArrowLeft/ArrowRight cycle
   parent → agent 1 → … → agent N → parent (`cycleAgentFocus`) as an additional path, and Escape
@@ -50,31 +56,31 @@ owns no data/paging/cursor logic — the store/reducer do.
   input/textarea/select/contentEditable, or anything inside
   `button, a, pre, [role='group'], .cm-editor` — the same exclusion discipline the feed's own
   navigation uses.
-- **`applyAgentFocus`** cit:([`applyAgentFocus`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:161-175): writes the store via `setAgentFocus`, then announces politely
+- **`applyAgentFocus`** cit:([`applyAgentFocus`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:182-197): writes the store via `setAgentFocus`, then announces politely
   (`viewing <label>` / `viewing parent conversation`) ONLY when the surface is visible — a hidden
   keep-alive surface never voices an operator action it did not see.
-- **Announcer discipline** cit:([`lastAppliedDelivery`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:221-245) (§14.2/F21): status announcers key on `(state + revision)` and
+- **Announcer discipline** cit:(["const live = projection?.lastAppliedDelivery === \"live\";"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:231-231) (§14.2/F21): status announcers key on `(state + revision)` and
   fire ONLY when `projection.lastAppliedDelivery === "live"` — hydration/re-page (delivery `replay` or
   the `undefined` fresh-hydration case) updates the store WITHOUT announcing. `failed` → assertive
   `turn failed`; `ready` → polite `response complete`; process `disconnected` → assertive. Stream-phase
-  transitions cit:(["re-syncing history"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:248-259) politely announce `reconnecting` / `re-syncing history` once per phase.
-- **First-connect failure** cit:([`ConversationReconnect`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:261-273) (F15): with no projection yet, the surface renders
+  transitions cit:(["re-syncing history"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:265-265) politely announce `reconnecting` / `re-syncing history` once per phase.
+- **First-connect failure** cit:(["import { ConversationReconnect } from \"./ConversationReconnect\";"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:38-38; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:16-16) (F15): with no projection yet, the surface renders
   `ConversationReconnect` carrying the typed `routeError.detail` (honest reason, never a generic
   message).
-- **Capability cues (R11)** cit:([`historyCapability`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:278-285) (F13): the always-visible italic `history: <reason>` note
+- **Capability cues (R11)** cit:([`historyCapability`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:313-315) (F13): the always-visible italic `history: <reason>` note
   div is GONE. The offending history capability (tool details first, then overall completeness) is
   selected as `historyCapability` and rendered through `CapabilityReason` with `label="history"` INSIDE
   the toolbar; the live-completeness cue likewise carries `label="live"`. Each cue shows only the
   one-word state (`history partial`, `live unavailable`) with the exact server reason behind hover
   (`title`) — the implementation-jargon paragraph never owns above-the-fold chrome (A3). The
   `history-completeness-note` testid now wraps the history cue (not the removed div).
-- **Toolbar** cit:([`thinkingPreferenceStore`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:294-327): thinking toggle (`thinkingPreferenceStore`), a `terminal diagnostics`
+- **Toolbar** cit:([`thinkingPreferenceStore`], dashboard/src/data/conversation/thinkingPreference.ts:25-36): thinking toggle (`thinkingPreferenceStore`), a `terminal diagnostics`
   opener, `AmbientTelemetry` (keyed on `status.revision`), and the live + history capability cues above.
-- **Agents strip** cit:([`AgentsArea`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:334-336): `AgentsArea` mounts above the timeline with the derived roster and
+- **Agents strip** cit:(["import { AgentsArea } from \"./AgentsArea\";", "import { AgentsArea } from \"./AgentsArea\";", "import { AgentsArea } from \"./AgentsArea\";", "import { AgentsArea } from \"./AgentsArea\";"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:334-336; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:37-37; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:16-16): `AgentsArea` mounts above the timeline with the derived roster and
   the effective focus. The area owns the whole compact line — the count chip plus, in an agent
   view, the viewing note and the `← back to parent conversation` affordance; the surface's own
   focus bar is deleted.
-- **Empty vs timeline** cit:([`ConversationWelcome`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:356-378): the timeline receives `focusedItems`; `totalItems` is passed
+- **Empty vs timeline** cit:([`ConversationWelcome`], dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:154-206): the timeline receives `focusedItems`; `totalItems` is passed
   only when unfocused (a focused lane's count is not the server's total, so the honest-total
   contract stays intact). An empty live conversation shows the `ConversationWelcome` when unfocused
   (A1); a focused lane with no evidence shows `no evidence from <label> yet` instead — never the
@@ -110,12 +116,12 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
 | The roster/focus primitives this surface composes (`deriveAgents`, `effectiveAgentFocus`, `cycleAgentFocus`, `filterItemsForFocus`). | `deriveAgents`; `effectiveAgentFocus`; `cycleAgentFocus`; `filterItemsForFocus` | dashboard/src/data/conversation/agents.ts:71-86; dashboard/src/data/conversation/agents.ts:93-103; dashboard/src/data/conversation/agents.ts:106-112; dashboard/src/data/conversation/agents.ts:119-127 |
 | The reconstructable store's `agentFocusBySession` focus state and the `setAgentFocus` writer this surface reads/writes. | `setAgentFocus` | dashboard/src/data/conversation/store.ts:69-69 |
 | The `live`-delivery flag the announcers gate on. | `lastAppliedDelivery` | dashboard/src/data/conversation/reducer.ts:58-58 |
 | The shared polite/assertive announcer store. | `announcePolite` | dashboard/src/data/announcer.ts:33-35 |
-| The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. | `AgentsArea`; `ConversationTimeline`; `ConversationReconnect`; `AmbientTelemetry`; `CapabilityReason` | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-396; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-1265; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:68-102; dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:54-106; dashboard/src/panels/session-cockpit/conversation/primitives.tsx:140-158 |
+| The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. | `AgentsArea`; `ConversationTimeline`; `ConversationReconnect`; `AmbientTelemetry`; `CapabilityReason` | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-247; dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:63-115; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:68-102; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106; dashboard/src/panels/session-cockpit/conversation/primitives.tsx:140-158 |
 | The surface-level focus-cycling/filtering/Esc/hijack suite. | "ConversationSurface agent focus" | dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:144-410 |
 | The persisted hide-thinking preference. | `thinkingPreferenceStore` | dashboard/src/data/conversation/thinkingPreference.ts:25-36 |
 
@@ -139,15 +145,16 @@ projection state.
 ## 260727-CHATS-IM-L2 Effective-Focus Hydration Delta
 
 The surface derives history state from the validated effective focus and runs hydration from an
-effect keyed by that focus/session/bridge epoch cit:([`hydrateAgentConversation`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:180-183). A valid persisted focus therefore
+effect keyed by that focus/session/bridge epoch cit:(["hydrateAgentConversation,"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:28-28). A valid persisted focus therefore
 hydrates after page load or remount even without a click; a stale focus becomes parent and sends
 no request. Runtime singleflight makes the remount path exactly once.
 
-A failed selected-child route renders its typed detail beside a retry action cit:(["conversation-agent-history-retry"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:337-353). Retrying
+A failed selected-child route renders its typed detail beside a retry action cit:(["conversation-agent-history-retry"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:385-385). Retrying
 addresses only that child; the parent projection and reconnect surface remain live. The component
 still owns presentation/focus only—the store owns request orchestration and resource bounds.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the conversationSurfaceParts/Styles extraction. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:15+02:00 — 260731-EFA-L6 S18-B17 curator: the source had drifted ~2-26 lines past
   every inline cite. Rewrote all nine flagged `(L…)` prose cites as cit forms with re-measured

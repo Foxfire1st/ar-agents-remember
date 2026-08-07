@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/keymap/focus.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ including forward/backward wrapping and collapsed-region handling.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The cycle logic under test. | `FOCUS_REGIONS`; `nextRegion` | dashboard/src/data/keymap/focus.ts:9-9; dashboard/src/data/keymap/focus.ts:14-24 |
-| The DOM-level F6/Shift+F6 counterpart over the rendered view. | "F6 from the pty zone exits to chrome (the stage header)"; "F6 skips the default-closed inspector, then includes it after deliberate reopen"; "Shift+F6 cycles backward" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:395-405; dashboard/src/panels/session-cockpit/SessionsView.test.tsx:425-471; dashboard/src/panels/session-cockpit/SessionsView.test.tsx:648-667 |
+| The DOM-level F6/Shift+F6 counterpart over the rendered view. | "F6 from the pty zone exits to chrome (the stage header)"; "F6 skips the default-closed inspector, then includes it after deliberate reopen"; "Shift+F6 cycles backward" | dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:31-31; dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:265-265; dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:254-254 |
 
 ## Update History
 

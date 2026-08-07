@@ -6,13 +6,21 @@
 | path                   | `dashboard/src/panels/Terminal.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
 [panels overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The xterm session machinery moved to `panels/terminalSession.ts` (the component
+keeps the wrapper), and the e2e repair fixed a genuine headless-focus bug: palette
+focus on the terminal landed on the host while xterm's textarea stayed inactive.
+Focus is now delegated via a rAF deferral with a `termRef.focus()` fallback. The
+mounted-scrollback and one-reattach contracts are unchanged.
 
 ## Purpose
 
@@ -81,7 +89,7 @@ tears down and reconnects the data subscription correctly.
   `session-cockpit/PtySurface.tsx` — PtySurface owns the two-archetype switch, keep-alive layers,
   and pane chrome; this component stays the one xterm engine. Chats/RailChat call sites are
   unchanged in behavior (they gained only `ariaLabel`).
-- **Accessible-name guarantee (F6)** cit:([`aria-label`, `tabIndex`], dashboard/src/panels/Terminal.tsx:451-451): the host div is now `role="group"` with
+- **Accessible-name guarantee (F6)** cit:([`aria-label`, `tabIndex`], dashboard/src/panels/Terminal.tsx:183-183): the host div is now `role="group"` with
   `aria-label={ariaLabel ?? `terminal session ${sessionId}`}` — the landmark can NEVER be unnamed
   regardless of caller. The cockpit passes the full `paneAccessibleName` (label + harness +
   state); legacy views pass `terminal: <label>`. The host also carries `tabIndex={-1}` with focus
@@ -108,7 +116,7 @@ tears down and reconnects the data subscription correctly.
   → `lastOutputAt`); `onSocketState` relays the socket's own
   `connected`/`reconnecting`/`dropped` (from `data/terminal.ts`'s additive option; a deliberate
   `dispose()` reports nothing);
-  `onResizeCols(term.cols)` fires after EVERY successful `refit()` cit:([`onResizeColsRef`, `refit`], dashboard/src/panels/Terminal.tsx:169-169; dashboard/src/panels/Terminal.tsx:362-399) — the R8 ~80-col floor
+  `onResizeCols(term.cols)` fires after EVERY successful `refit()` cit:(["const onResizeColsRef = useRef(props.onResizeCols);", "const refit = (force = false) => {", "refit();"], dashboard/src/panels/Terminal.tsx:76-76; dashboard/src/panels/terminalSession.ts:341-341; dashboard/src/panels/terminalSession.ts:379-379) — the R8 ~80-col floor
   chip's real-pane truth.
 
 ### Conventions
@@ -154,8 +162,8 @@ the reviewed task evidence for any current behavioral claim.
 | The WebSocket client this adapts a `Terminal` onto (incl. the L6 `onSocketState` option). | `onSocketState` | dashboard/src/data/terminal.ts:55-55 |
 | The canonical keep-alive owner lazy-loads and mounts this per inspectable session. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
 | The cockpit surface that mounts this per seat: archetypes, keep-alive layers, hooks/filter wiring, accessible names. | `PTY_RENDERER` | dashboard/src/panels/session-cockpit/PtySurface.tsx:39-39 |
-| The wrapper handles wheel input with three-way precedence: app mouse tracking passes through, normal-buffer viewport scrolls, and mouse-less alternate-buffer wheel input maps to PageUp/PageDown. | `handleWheel` | dashboard/src/panels/Terminal.tsx:316-338 |
-| The L6 additive surface includes the always-named group landmark (`role="group"` + `aria-label` fallback). | `tabIndex` | dashboard/src/panels/Terminal.tsx:451-451 |
+| The wrapper handles wheel input with three-way precedence: app mouse tracking passes through, normal-buffer viewport scrolls, and mouse-less alternate-buffer wheel input maps to PageUp/PageDown. | `handleWheel` | dashboard/src/panels/terminalSession.ts:272-301 |
+| The L6 additive surface includes the always-named group landmark (`role="group"` + `aria-label` fallback). | `tabIndex` | dashboard/src/panels/Terminal.tsx:183-183 |
 | The focused component test mocks xterm (extended for options/parser/onBell/onTitleChange/attachCustomKeyEventHandler) and asserts the always-named landmark plus scrollback. | "the group landmark is ALWAYS named", `attachCustomKeyEventHandler`, `onBell` | dashboard/src/panels/Terminal.test.tsx:74-76; dashboard/src/panels/Terminal.test.tsx:95-97; dashboard/src/panels/Terminal.test.tsx:132-143 |
 | The renderer measurement behind the DOM default (master OQ-B). | `PtyRenderBench` | dashboard/src/dev/PtyRenderBench.tsx:83-164 |
 
@@ -185,6 +193,7 @@ the last fitted visible box, corrects only genuinely overflowing rows, and does 
 PTY winsize on a keep-alive re-show; disposal is synchronous after all listeners are detached.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the headless-focus delegation fix and the terminalSession extraction. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the seven `n/a`-anchor
   table citations and the two superseded `(L…​)` prose citations with exact frozen-source anchors

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/SessionComposer.test.tsx`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T11:22+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | "export const SessionComposer" | dashboard/src/panels/SessionComposer.tsx:231-231 |
+| The component under test. | "export const SessionComposer" | dashboard/src/panels/SessionComposer.tsx:57-57 |
 
 ## Cross-Repo References
 
@@ -84,7 +84,7 @@ Send.
 - 2026-08-01T11:22+02:00 — 260731-EFA-L4 curator: No content impact: the answer-mode lifecycle map
   entry calls `lifecycleWithGate`, cit:(["lifecycleWithGate("], dashboard/src/panels/SessionComposer.test.tsx:712-712).
   Gate resolution is implemented by `findInteractionGate`,
-  cit:(["function findInteractionGate"], dashboard/src/data/interactionAnswer.ts:258-258), and the fixture
+  cit:(["function findInteractionGate"], dashboard/src/data/interactionAnswer.ts:268-268), and the fixture
   builder is `lifecycleWithGate`, cit:(["lifecycleWithGate"], dashboard/src/test/fixtures/wire.ts:256-256).
   These use/declaration facts avoid asserting behavior or argument equivalence that those cited lines
   do not establish.

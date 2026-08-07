@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/conversation-library/`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-01T10:35+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -123,6 +123,7 @@ serving endpoints; no cross-repository implementation source governs it.
 | The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`. | `DashboardState`; `dashboardStore`; `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84; dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: store.ts changed only by behavior-preserving lint remediation.
 
 - 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: split list, read, open, status, and reconcile ownership across the browser client and native routes. Verification metadata unchanged.
 

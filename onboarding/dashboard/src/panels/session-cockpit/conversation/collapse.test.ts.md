@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/collapse.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The pure grouping function under test. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
 | The item wire type the fixtures build. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
-| The timeline consumer that virtualizes the grouped display rows. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:357-357; dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:462-462 |
+| The timeline consumer that virtualizes the grouped display rows. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
 
 ## Cross-Repo References
 
