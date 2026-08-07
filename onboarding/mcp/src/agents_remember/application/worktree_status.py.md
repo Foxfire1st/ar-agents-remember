@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-04T01:24+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -89,7 +89,7 @@ able to touch.
 | `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against. | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/worktrees/modules/guidance.py:38-38; mcp/src/agents_remember/worktrees/modules/guidance.py:139-139 |
 | `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell(", "unknown_cells: tuple[str, ...]" | mcp/src/agents_remember/worktrees/worktree_contract.py:108-108; mcp/src/agents_remember/worktrees/worktree_contract.py:287-287 |
 | `_summary_from_status_payload` maps the producer's `unknown_contract_cells` value onto `WorktreeSummary.unknownContractCells`. | "def _summary_from_status_payload"; "unknownContractCells=payload.get"; "unknown_contract_cells" | mcp/src/agents_remember/application/worktree_status.py:59-59; mcp/src/agents_remember/application/worktree_status.py:105-105 |
-| `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | `ContractBoundaryTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:922-1222 |
+| `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144 |
 
 ## Series-Contract Notes
 

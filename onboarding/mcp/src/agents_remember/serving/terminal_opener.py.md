@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -173,10 +173,10 @@ and caller-specific response shaping.
 | Role-scoped leaf arbitration resolves only the same-role owner and marks dead owners exited. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The catalog row owns durable seat, lineage, resolved knob, free-form, and control metadata. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
 | The catalog batch holds both the process lock and instance lock across the complete unit of work. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:730-762 |
-| The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | `_open_terminal_response` | mcp/src/agents_remember/serving/app.py:1461-1550 |
+| The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:221-221 |
 | The agent-facing spawn tool resolves role settings, calls this opener, and maps live launch conflict to its existing launch-selection refusal. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
-| Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | `test_live_reopen_preserves_actual_pair_command_and_endpoint`; `test_live_reopen_changed_pair_or_identity_conflicts_without_mutation`; `test_dead_replacement_uses_new_pair_and_fresh_control_generation`; `test_concurrent_different_pair_opens_keep_one_process_and_one_truth`; `test_different_roles_share_leaf_and_dead_same_role_is_replaced` | mcp/tests/test_terminal_opener.py:261-286; mcp/tests/test_terminal_opener.py:377-392; mcp/tests/test_terminal_opener.py:394-410; mcp/tests/test_terminal_opener.py:478-508; mcp/tests/test_terminal_opener.py:510-537 |
-| Resume-channel contract tests pin the opener `bad-kind` refusals with zero host interactions and the codex pass-through into the runner payload. | `test_codex_resume_rides_opener_to_runner_payload`; `test_non_codex_resume_fails_closed_before_any_spawn`; `test_malformed_resume_fails_closed_before_any_spawn` | mcp/tests/test_harness_control_evidence.py:1698-1705; mcp/tests/test_harness_control_evidence.py:1715-1721; mcp/tests/test_harness_control_evidence.py:1723-1726 |
+| Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | `test_live_reopen_preserves_actual_pair_command_and_endpoint`; `test_live_reopen_changed_pair_or_identity_conflicts_without_mutation`; `test_dead_replacement_uses_new_pair_and_fresh_control_generation`; `test_concurrent_different_pair_opens_keep_one_process_and_one_truth`; `test_different_roles_share_leaf_and_dead_same_role_is_replaced` | mcp/tests/test_terminal_opener.py:320-345; mcp/tests/test_terminal_opener.py:434-449; mcp/tests/test_terminal_opener.py:451-467; mcp/tests/test_terminal_opener.py:535-565; mcp/tests/test_terminal_opener.py:567-594 |
+| Resume-channel contract tests pin the opener `bad-kind` refusals with zero host interactions and the codex pass-through into the runner payload. | `test_codex_resume_rides_opener_to_runner_payload`; `test_non_codex_resume_fails_closed_before_any_spawn`; `test_malformed_resume_fails_closed_before_any_spawn` | mcp/tests/test_harness_control_evidence_other.py:373-380; mcp/tests/test_harness_control_evidence_other.py:390-396; mcp/tests/test_harness_control_evidence_other.py:398-401 |
 
 ## Cross-Repo References
 
@@ -211,6 +211,8 @@ Runner launch now propagates the daemon worktree's package root into the tmux-sp
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: 260731-EFA-L7 changed this file (split/refactor); the card body remains accurate and this entry records the change. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 9 citation claims; scoped result 0 findings.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: rewrote Purpose/Logic/Invariants for the parameter-object

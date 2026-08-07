@@ -101,7 +101,7 @@
     "dashboard/src/panels/useCollapsedTaskGroups.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 236,
+    "sourceFilesInScope": 237,
     "fileSidecars": 63,
     "childRoutes": 5
   },

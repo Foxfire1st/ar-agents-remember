@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_live.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,12 +55,12 @@ the `C901`/`PLR0915` extraction. cit:([`test_live_dynamic_launch_and_mid_thread_
 now reads as its own outline and delegates each step:
 cit:([`_discover_without_starting_a_thread`], mcp/tests/test_codex_app_server_live.py:270-286) returns a `_Discovery` carrying the catalog, the
 recorder, and the elapsed probe seconds; cit:([`_selection_pair`], mcp/tests/test_codex_app_server_live.py:298-322) returns the `_SelectionPair`
-whose launch and switch rows must differ; cit:([`_assert_launch_selection_is_validated_against_the_catalog`], mcp/tests/test_codex_app_server_live.py:399-413)
+whose launch and switch rows must differ; cit:([`_assert_launch_selection_is_validated_against_the_catalog`], mcp/tests/test_codex_app_server_live.py:418-432)
 holds the two fail-loud validations; cit:([`_configured_adapter`], mcp/tests/test_codex_app_server_live.py:325-343) builds the adapter,
 recorder, and knob-applied launch with the `CODEX_CONFIG` negative assertion;
-cit:([`_refused_unknown_selections`, `_queued_mid_thread_switch`], mcp/tests/test_codex_app_server_live.py:346-354; mcp/tests/test_codex_app_server_live.py:357-365) hold the
-unsupported and queued setter assertions; cit:([`_completed_turn`], mcp/tests/test_codex_app_server_live.py:368-383) submits one bounded turn and
-returns its vendor correlation id; cit:([`_accepted_turn_calls`], mcp/tests/test_codex_app_server_live.py:386-396) checks both `turn/start` calls
+cit:([`_refused_unknown_selections`, `_queued_mid_thread_switch`], mcp/tests/test_codex_app_server_live.py:361-369; mcp/tests/test_codex_app_server_live.py:373-381) hold the
+unsupported and queued setter assertions; cit:([`_completed_turn`], mcp/tests/test_codex_app_server_live.py:385-400) submits one bounded turn and
+returns its vendor correlation id; cit:([`_accepted_turn_calls`], mcp/tests/test_codex_app_server_live.py:404-414) checks both `turn/start` calls
 carry the one thread and the switched pair. The evidence print moved into
 cit:([`_print_conformance_evidence`], mcp/tests/test_codex_app_server_live.py:446-494), which takes the `_LaunchedSession`, `_MidThreadSwitch`, and
 `_BilledTurns` parameter objects instead of a long argument list. Every assertion, bound, and
@@ -117,8 +117,8 @@ retaining only an allowlisted evidence projection.
 | The L5 driver: independently marker/env opt-in, it sequences the conformance run and force-stops the adapter in its `finally` (L257-L258). | `finally` | mcp/tests/test_codex_app_server_live.py:161-258 |
 | Discovery proves the probe emits only initialize/model-list, starts no thread or turn, and records no token usage; the selection pair is chosen from model-local dynamic rows. | `_discover_without_starting_a_thread`, `_selection_pair` | mcp/tests/test_codex_app_server_live.py:270-286; mcp/tests/test_codex_app_server_live.py:298-322 |
 | Settings-shaped resolution validates unknown model/effort before launch and carries the accepted pair without `CODEX_CONFIG`. | `CODEX_CONFIG` | mcp/tests/test_codex_app_server_live.py:324-344 |
-| Setters are refused as unsupported, move from queued to effective on a fresh turn, repeat as immediate, and both accepted `turn/start` calls carry the one thread and the switched pair. | `_refused_unknown_selections`, `_queued_mid_thread_switch`, `_completed_turn`, `_accepted_turn_calls` | mcp/tests/test_codex_app_server_live.py:346-354; mcp/tests/test_codex_app_server_live.py:357-365; mcp/tests/test_codex_app_server_live.py:368-383; mcp/tests/test_codex_app_server_live.py:386-396 |
-| Printed evidence stays allowlisted behind its three parameter objects, and turn completion has a bounded timeout. | `_wait_for_turn` | mcp/tests/test_codex_app_server_live.py:497-502 |
+| Setters are refused as unsupported, move from queued to effective on a fresh turn, repeat as immediate, and both accepted `turn/start` calls carry the one thread and the switched pair. | `_refused_unknown_selections`, `_queued_mid_thread_switch`, `_completed_turn`, `_accepted_turn_calls` | mcp/tests/test_codex_app_server_live.py:361-369; mcp/tests/test_codex_app_server_live.py:373-381; mcp/tests/test_codex_app_server_live.py:385-400; mcp/tests/test_codex_app_server_live.py:404-414 |
+| Printed evidence stays allowlisted behind its three parameter objects, and turn completion has a bounded timeout. | `_wait_for_turn` | mcp/tests/test_codex_app_server_live.py:518-523 |
 | The adapter carries launch state through native thread config, reports desired setters as queued until effective, and reports already-effective values as immediate. | `codex_launch_knobs`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224; mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
 | The session fails closed and stops on startup error, discovers via initialize/model-list with forced teardown, and bounds paginated catalog reads. | `connect`, `discover`, `_read_models` | mcp/src/agents_remember/serving/codex_app_server_session.py:124-208; mcp/src/agents_remember/serving/codex_app_server_session.py:214-224; mcp/src/agents_remember/serving/codex_app_server_session.py:383-401 |
 
@@ -137,6 +137,8 @@ configuration. It remains an opt-in live proof; deterministic lifecycle races st
 tests.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 30 citations (citation_anchor_missing=9, citation_prose_not_in_cit_form=12, citation_source_malformed=9); final scoped citation check clean.
 - 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.

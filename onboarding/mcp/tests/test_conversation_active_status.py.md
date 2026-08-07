@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_status.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ is repository-owned and cited below.
 | --- | --- | --- |
 | The canonical status authority under test: classification, seat projection, revisioned service. | `classify_snapshot` | mcp/src/agents_remember/serving/conversation/active/status.py:153-162 |
 | The delegated orchestration entry point driven by the parity suite. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
-| `CANONICAL_TURN_STATE_BY_EVIDENCE` fixes the vocabulary the classification tests pin. | `CANONICAL_TURN_STATE_BY_EVIDENCE` | mcp/src/agents_remember/serving/conversation/models.py:453-463 |
+| "CANONICAL_TURN_STATE_BY_EVIDENCE," fixes the vocabulary the classification tests pin. | "CANONICAL_TURN_STATE_BY_EVIDENCE," | mcp/tests/test_conversation_active_api.py:44-44 |
 
 ## Cross-Repo References
 

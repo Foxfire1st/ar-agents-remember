@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Claude echo mapping. | `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662 |
-| Ordering and eviction regressions. | `ZipperEvictionGapTests` | mcp/tests/test_conversation_active_service.py:1481-1913 |
+| Ordering and eviction regressions. | `ZipperEvictionGapTests` | mcp/tests/test_conversation_active_service_gaps.py:68-500 |
 
 ## Cross-Repo References
 

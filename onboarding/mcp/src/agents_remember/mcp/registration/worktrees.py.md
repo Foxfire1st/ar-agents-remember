@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-02T01:05+02:00                                        |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                    |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                    |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ and the sync-early doctrine.
 | The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:31-41; mcp/src/agents_remember/mcp/tools/worktree.py:44-59; mcp/src/agents_remember/mcp/tools/worktree.py:62-71; mcp/src/agents_remember/mcp/tools/worktree.py:74-75 |
 | `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:31-45; mcp/src/agents_remember/application/worktree_tools.py:48-62; mcp/src/agents_remember/application/worktree_tools.py:65-73 |
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
-| The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring.py:698-741; mcp/tests/test_mcp_registration_wiring.py:743-760 |
+| The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_1.py:599-642; mcp/tests/test_mcp_registration_wiring_tests_2.py:7-24 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

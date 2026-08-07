@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/read_files.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-02T01:05+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`  |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -70,7 +70,7 @@ sets them.
 | The strict response base and `ToolResponse`. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
 | The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. | `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:209-238 |
 | The registry mapping `read_ar_files` to this response model (L120). | `read_ar_files` | mcp/src/agents_remember/models/tool_registry.py:120-120 |
-| `test_every_onboarding_status_the_read_entry_point_returns_validates` asserts the produced set equals the declared alias. | `test_every_onboarding_status_the_read_entry_point_returns_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:778-785 |
+| `test_every_onboarding_status_the_read_entry_point_returns_validates` asserts the produced set equals the declared alias. | `test_every_onboarding_status_the_read_entry_point_returns_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:775-782 |
 
 ## Update History
 

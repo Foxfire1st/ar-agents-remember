@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/collapse.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,9 +25,9 @@ identity is never mutated. It produces a flat `DisplayRow[]` the feed virtualize
 
 ### Logic
 
-- **`DisplayRow`** (cit:(["type DisplayRow"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:12-12)): the declared output row type for the collapse helper.
-- **`unknownVendorSummary`** (cit:(["function unknownVendorSummary"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:16-16)): the declared helper for unknown-vendor summaries.
-- **`groupUnknownVendorRuns`** (cit:(["groupUnknownVendorRuns"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-23)): the declared grouping entry point for unknown-vendor runs.
+- **`DisplayRow`** (cit:(["type DisplayRow"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-23)): the declared output row type for the collapse helper.
+- **`unknownVendorSummary`** (cit:(["function unknownVendorSummary"], dashboard/src/panels/session-cockpit/conversation/collapse.ts:37-37)): the declared helper for unknown-vendor summaries.
+- **`groupUnknownVendorRuns`** (cit:(["groupUnknownVendorRuns"], dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24)): the declared grouping entry point for unknown-vendor runs.
 
 ### Invariants And Boundaries
 
@@ -50,8 +50,8 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared `DisplayRow` output type. | `DisplayRow` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:12-14 |
-| The declared pure grouping entry point. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
+| The declared `DisplayRow` output type. | `DisplayRow` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-33 |
+| The declared pure grouping entry point. | "describe(\"groupUnknownVendorRuns (F10)\", () => {" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
 | The unknown-vendor content block type. | `ConversationContentBlock` | dashboard/src/data/conversation/types.ts:63-105 |
 | The `ConversationItem` wire type. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
 | The `ConversationTimeline` feed component. | "function ConversationTimeline" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-56 |
@@ -67,6 +67,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: the L7-FIX-3 stable-row refactor: `groupDisplayRows` now delegates to extracted helpers (`liveKeyFor`, `handleLiveOpen`, `handleLiveUpdate`, `handleLiveFinalize`, `unknownRunFor`) with `openLiveRow` storing row-object references and finalize locating them via `rows.indexOf` before `splice` — no index bookkeeping, no splice-without-renumber path. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 

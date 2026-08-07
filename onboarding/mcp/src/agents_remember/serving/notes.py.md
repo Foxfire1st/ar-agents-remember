@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-02T01:05+02:00                         |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`     |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`     |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -117,7 +117,7 @@ No meaningful cross-repo references found.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. | `register_notes_routes`, `mount_static` | mcp/src/agents_remember/serving/app.py:756-776 |
+| The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. | "def register_notes_routes(app: FastAPI, config: McpRuntimeConfig) -> None:", `mount_static` | mcp/src/agents_remember/serving/notes.py:168-168; mcp/src/agents_remember/serving/static.py:112-129 |
 | The `confine_rel` realpath confinement this module reuses for reads. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
 | The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. | `McpRuntimeConfig`, `path_is_relative_to` | mcp/src/agents_remember/mcp/config.py:113-137; mcp/src/agents_remember/mcp/config.py:635-640 |

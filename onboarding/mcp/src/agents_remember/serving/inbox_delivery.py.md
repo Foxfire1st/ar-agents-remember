@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -125,9 +125,9 @@ not as normative delivery authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Delivery state is persisted on the operator inbox record. | `record_delivery` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:159-209 |
-| The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | `created_by` | mcp/src/agents_remember/serving/app.py:1266-1266 |
+| The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | "created_by=\"provider-degradation-detector\"," | mcp/src/agents_remember/providers/degradation.py:644-644 |
 | 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
-| `serving.supervisor`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit action the supervisor takes rides through this same translation layer. | `_redeliver`; `_post_owner_signal` | mcp/src/agents_remember/serving/supervisor.py:527-577; mcp/src/agents_remember/serving/supervisor.py:775-855 |
+| `serving.supervisor`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit action the supervisor takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(  # pragma: no cover" | mcp/src/agents_remember/serving/_supervisor_actions.py:72-72; mcp/src/agents_remember/serving/_supervisor_actions.py:324-324 |
 
 ## 260712-TRH-L4 Final Candidate
 

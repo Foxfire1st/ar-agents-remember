@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_history_production_path.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,10 @@ failure containment and sibling/parent continuity.
 
 ## Code Commentary
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): the Codex history production-path suite keeps its assertions; its imports were reconciled with the split adapter family.
+## Logic
 
 One fake app-server process emits the exact measured below-fuse response. The test observes
 items-list `-32601`, turns/full success, and no legacy `thread/read`. It then introduces a cyclic
@@ -70,6 +73,10 @@ The fake Codex process is repository-local; no external repository is executed.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the Codex history production-path suite keeps its assertions; its impor...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 12 citation findings (3 rows and 6 historical pointers); scoped recheck clean.
 

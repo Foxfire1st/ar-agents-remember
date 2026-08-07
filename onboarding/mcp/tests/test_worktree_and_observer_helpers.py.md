@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T09:38+02:00                             |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`         |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`         |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ deciding anything.
 | The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:124-124 |
 | The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/start_contract.py:117-117 |
 | The task-resolver helpers under test are `archive_completed_root_task` and `series_contract_path`. | "def archive_completed_root_task"; "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47; mcp/src/agents_remember/worktrees/task_resolver.py:147-147 |
-| The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/observer/snapshots.py:370-392; mcp/src/agents_remember/observer/snapshots.py:395-418 |
-| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:95-164; mcp/tests/test_worktree_support.py:573-3091 |
+| The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/observer/snapshots.py:356-378; mcp/src/agents_remember/observer/snapshots.py:381-404 |
+| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:95-164; mcp/tests/test_worktree_support.py:539-614 |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/event_retention.py` |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`          |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`          |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Governing Overview
@@ -141,10 +141,10 @@ lifecycles.
 | Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. | `protected_lifecycle_ids`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | The protection set is derived from durable enclosure state (a live master series) by the admission module. | `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101 |
-| A protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | mcp/tests/test_serving.py:2013-2036 |
+| A protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | mcp/tests/test_serving_raw_events.py:334-357 |
 | `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. | `_first_retained_offset` | mcp/src/agents_remember/observer/event_retention.py:210-223 |
 | The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | `stream_raw_events`; `initial_event_offsets`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/serving/events.py:230-277 |
-| Raw-event tests cover dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, and uncapped parallel active history. | `test_fresh_connection_does_not_cap_parallel_active_lifecycle_history`; `test_read_new_events_skips_heartbeats`; `test_read_new_events_limit_bounds_batch`; `test_dormant_promoted_lifecycle_pruned_without_terminal_event`; `test_dormant_fleeting_lifecycle_pruned_without_terminal_event`; `test_protected_lifecycle_log_survives_inactivity`; `test_initial_offsets_bound_active_replay_to_recent_window` | mcp/tests/test_serving.py:1915-1941; mcp/tests/test_serving.py:1943-1959; mcp/tests/test_serving.py:1961-1974; mcp/tests/test_serving.py:1976-1997; mcp/tests/test_serving.py:1999-2011; mcp/tests/test_serving.py:2013-2036; mcp/tests/test_serving.py:2053-2068 |
+| Raw-event tests cover dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, and uncapped parallel active history. | `test_fresh_connection_does_not_cap_parallel_active_lifecycle_history`; `test_read_new_events_skips_heartbeats`; `test_read_new_events_limit_bounds_batch`; `test_dormant_promoted_lifecycle_pruned_without_terminal_event`; `test_dormant_fleeting_lifecycle_pruned_without_terminal_event`; `test_protected_lifecycle_log_survives_inactivity`; `test_initial_offsets_bound_active_replay_to_recent_window` | mcp/tests/test_serving_raw_events.py:236-262; mcp/tests/test_serving_raw_events.py:264-280; mcp/tests/test_serving_raw_events.py:282-295; mcp/tests/test_serving_raw_events.py:297-318; mcp/tests/test_serving_raw_events.py:320-332; mcp/tests/test_serving_raw_events.py:334-357; mcp/tests/test_serving_raw_events.py:374-389 |
 
 ## Cross-Repo References
 

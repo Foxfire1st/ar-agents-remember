@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/orphan_policy.py`             |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                           |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                           |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No external requirement or design document is represented here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sole caller: gathers the orphan list once a manager seat is retired as suspect and surfaces it in the respawn observer event. | `_respawn_suspect` | mcp/src/agents_remember/serving/supervisor.py:1040-1105 |
+| The sole caller: gathers the orphan list once a manager seat is retired as suspect and surfaces it in the respawn observer event. | "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_supervisor_actions.py:592-592 |
 | Unit test: running workers of the named manager are returned; a terminated sibling and another manager's worker are excluded. | `test_finds_running_workers_of_the_named_manager` | mcp/tests/test_escalation_ladder.py:237-254 |
 
 ## Cross-Repo References

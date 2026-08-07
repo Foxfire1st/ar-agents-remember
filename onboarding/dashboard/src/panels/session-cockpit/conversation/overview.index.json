@@ -38,6 +38,7 @@
     "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/baseline.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/intentLock.test.tsx",
+    "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/liveThinking.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/measurements.ts",
     "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/messages.test.tsx",
     "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory.test-utils.tsx",
@@ -63,8 +64,8 @@
     "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 51,
-    "fileSidecars": 51,
+    "sourceFilesInScope": 52,
+    "fileSidecars": 52,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -88,6 +89,7 @@
     "feedsemantics",
     "intentlock",
     "interactionitem",
+    "livethinking",
     "markdownblock",
     "measurements",
     "messageitem",

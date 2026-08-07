@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -199,17 +199,19 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths`, `derive_scope` | mcp/src/agents_remember/code_quality/check.py:119-178; mcp/src/agents_remember/code_quality/scope.py:110-110; mcp/src/agents_remember/code_quality/scope.py:325-345 |
+| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths`, `derive_scope` | mcp/src/agents_remember/code_quality/check.py:54-55; mcp/src/agents_remember/code_quality/check.py:124-201; mcp/src/agents_remember/code_quality/scope.py:111-111; mcp/src/agents_remember/code_quality/scope.py:345-373 |
 | The changed-lines coverage floor the full tier carries, and its own behavioural suite. | `DEFAULT_DIFF_COVERAGE_FLOOR`, `measure`, `test_a_diff_below_the_floor_fails_the_wrapper`, `test_the_floor_runs_inside_the_wrapper_rather_than_beside_it` | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; pyproject.toml:34-38; mcp/tests/test_code_quality_check.py:376-389 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:390-403; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | `C901`; `branch` | pyproject.toml:17-17; pyproject.toml:68-70 |
-| The pytest configuration this suite reads. | `testpaths` | pyproject.toml:112-112 |
+| The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
 | An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
 | The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
 | CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:3-58 |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-03T03:59:59+02:00 — Curated 19 citation findings (9 table rows, 10 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -177,7 +177,7 @@ upsert; the conversation grammar carries the roster identity as `ConversationAge
 | The Claude runtime fixture records runtime/helper versions and sets `enablesCapabilities` to false. | "runtimeVersion"; "helperVersion"; "enablesCapabilities" | mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:5-6; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:10-10 |
 | The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output, and a late tagging upsert does not regress a terminal phase. | `ProjectionStore`; `apply_item`; `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445; mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
 | The engine's echo zipper merges echo and frame channels by strict turn order. | `_zip_entry`; `_drain_one_turn_body` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:82-97; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:99-111 |
-| The conversation grammar declares the `ConversationAgentRef` roster-reference model. | "class ConversationAgentRef" | mcp/src/agents_remember/serving/conversation/models.py:316-316 |
+| The conversation grammar declares the `ConversationAgentRef` roster-reference model. |"class ConversationAgentRef"|mcp/src/agents_remember/serving/conversation/_models_blocks.py:137-137|
 
 ## Cross-Repo References
 

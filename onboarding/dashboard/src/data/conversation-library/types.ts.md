@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/types.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,8 +92,8 @@ reviewed task evidence for any current behavioral claim.
 | The client that returns these types as or-null reads / typed open evidence. | `fetchLibraryList`; `openConversation` | dashboard/src/data/conversation-library/client.ts:36-54; dashboard/src/data/conversation-library/client.ts:127-135 |
 | The store that holds the paged list, preview, and open-operation state over these types. | `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84 |
 | The native library route authority these types mirror. | `api_library_list` | mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
-| The wire model authority these types mirror. | `ConversationLibraryPage` | mcp/src/agents_remember/serving/conversation/models.py:813-819 |
-| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | `ConversationLibraryAgentRow` | mcp/src/agents_remember/serving/conversation/models.py:775-794 |
+| The wire model authority these types mirror. | "class ConversationLibraryPage(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_status.py:413-413 |
+| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | "class ConversationLibraryAgentRow(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_status.py:375-375 |
 | The Claude harness lister's unavailable-agent note. | `_AGENTS_UNAVAILABLE_NOTE` | mcp/src/agents_remember/serving/conversation/library/claude.py:75-77 |
 | The Codex harness lister's degraded/truncated agent-page note. | `_agent_page` | mcp/src/agents_remember/serving/conversation/library/codex.py:477-500 |
 

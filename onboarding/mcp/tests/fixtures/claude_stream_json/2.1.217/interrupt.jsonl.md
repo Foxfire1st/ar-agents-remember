@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-31T15:32+02:00                                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                  |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ appears in the installed capability evidence (`claude-2.1.217-installed-20260722
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The interrupt-settlement arms that assert against this shape. | `ClaudeEngineTests`; `ClaudeMapperTests` | mcp/tests/test_conversation_active_projectors.py:407-710; mcp/tests/test_conversation_active_service.py:553-845 |
+| The interrupt-settlement arms that assert against this shape. | `ClaudeEngineTests`; `ClaudeMapperTests` | mcp/tests/test_conversation_active_projectors.py:407-710; mcp/tests/test_conversation_active_service.py:544-836 |
 | The fallback classification that must not upgrade an unstamped error result. | `ClaudeResultSettlementFallbackTests` | mcp/tests/test_conversation_control_projector_edges.py:75-142 |
 
 ## Update History

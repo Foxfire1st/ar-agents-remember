@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/pi.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ open; the locked helper implements the native seam.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Pi read maps roles, tools, and notices; resolve mints the session-file argv target on fake helper boundaries. | "def test_read_maps_roles_tools_and_notices(self) -> None:"; "def test_resolve_mints_session_file_argv(self) -> None:" | mcp/tests/test_conversation_library_ports.py:647-647; mcp/tests/test_conversation_library_ports.py:672-672 |
-| The installed suite proves the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. | "def test_live_helper_gate_supports_pi_history(self) -> None:"; "def test_live_list_read_resolve(self) -> None:"; "def test_open_real_pi_session_proves_exact_identity(self) -> None:" | mcp/tests/test_conversation_library_installed.py:217-217; mcp/tests/test_conversation_library_installed.py:233-233; mcp/tests/test_conversation_library_installed.py:366-366 |
+| The installed suite proves the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. | "def test_live_helper_gate_supports_pi_history(self) -> None:"; "def test_live_list_read_resolve(self) -> None:"; "def test_open_real_pi_session_proves_exact_identity(self) -> None:" | mcp/tests/test_conversation_library_installed.py:234-234; mcp/tests/test_conversation_library_installed.py:251-251; mcp/tests/test_conversation_library_installed.py:390-390 |
 | The locked helper's SessionManager list/branch-read/session-file resolution implementations. | "export async function handlePi(request: HelperRequest): Promise<unknown> {"; "async function listPiSessions("; "async function readPiSession("; "async function resolvePiResumeTarget(" | mcp/native_helpers/conversation_library/src/pi.ts:54-54; mcp/native_helpers/conversation_library/src/pi.ts:69-69; mcp/native_helpers/conversation_library/src/pi.ts:101-101; mcp/native_helpers/conversation_library/src/pi.ts:133-133 |
 
 ## Cross-Repo References

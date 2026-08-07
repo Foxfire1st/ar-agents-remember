@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-02T01:05+02:00                                    |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ recreates everything.
 | The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30; mcp/src/agents_remember/mcp/tools/task_doc.py:33-46 |
 | The finalize builder. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
 | `FinalizeTaskDocs`. | `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tools.py:410-417 |
-| Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring.py:900-935; mcp/tests/test_mcp_registration_wiring.py:937-948 |
+| Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:160-195; mcp/tests/test_mcp_registration_wiring_tests_2.py:197-208 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

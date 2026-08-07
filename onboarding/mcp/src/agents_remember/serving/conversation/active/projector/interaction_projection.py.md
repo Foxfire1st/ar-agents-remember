@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Snapshot pending-interaction model. | `PendingInteraction` | mcp/src/agents_remember/serving/harness_control_models.py:185-193 |
-| Projection transition regressions. | `test_multiplexed_pending_interactions_project_labeled_and_resolve`; `test_concurrent_parent_pendings_all_project_and_resolve_per_id`; `test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live` | mcp/tests/test_conversation_projector_codex_agents.py:681-735; mcp/tests/test_conversation_projector_codex_agents.py:737-792; mcp/tests/test_conversation_projector_codex_agents.py:794-843 |
+| Projection transition regressions. | `test_multiplexed_pending_interactions_project_labeled_and_resolve`; `test_concurrent_parent_pendings_all_project_and_resolve_per_id`; `test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live` | mcp/tests/test_conversation_projector_codex_agents_engine_1.py:255-309; mcp/tests/test_conversation_projector_codex_agents_engine_1.py:311-366; mcp/tests/test_conversation_projector_codex_agents_engine_1.py:368-417 |
 
 ## Cross-Repo References
 

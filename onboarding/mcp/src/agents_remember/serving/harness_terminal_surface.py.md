@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_terminal_surface.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ the draft for reconciliation. Pane content remains a readable projection, not au
 | --- | --- | --- |
 | Draft and transcript models. | `UncommittedDraft` | mcp/src/agents_remember/serving/harness_control_models.py:205-213; mcp/src/agents_remember/serving/harness_control_models.py:278-287 |
 | Shared queue owner. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
-| R11 scenarios. | `test_ambiguous_draft_submission_retains_human_text` | mcp/tests/test_harness_control.py:603-617 |
+| R11 scenarios. | `test_ambiguous_draft_submission_retains_human_text` | mcp/tests/test_harness_control_conformance_1.py:230-244 |
 
 ## Update History
 

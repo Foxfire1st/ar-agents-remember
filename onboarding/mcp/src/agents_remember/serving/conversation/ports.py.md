@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/ports.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No Domain Documentation source is configured for this repository-owned port boun
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally. | "class ConversationEventEnvelope" | mcp/src/agents_remember/serving/conversation/models.py:633-633 |
+| Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally. |"class ConversationEventEnvelope"|mcp/src/agents_remember/serving/conversation/_models_status.py:232-232|
 | The topology regression requires exactly these two ports and forbids a control port. | `test_exactly_two_conversation_ports_exist` | mcp/tests/test_conversation_foundation.py:22-29 |
 
 ## Cross-Repo References

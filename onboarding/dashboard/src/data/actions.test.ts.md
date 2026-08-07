@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/actions.test.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Client under test. | "export type GateDecisionStatus" | dashboard/src/data/actions.ts:7-7 |
-| Serving tests cover the backend action route. | `AppTests` | mcp/tests/test_serving.py:521-595 |
+| Serving tests cover the backend action route. | `AppTests` | mcp/tests/test_serving.py:480-554 |
 | Targetless actionable drift dismissal omits `target` while still carrying `itemId` and `kind`. | "distinguishes stale gates from missing open gates" | dashboard/src/data/actions.test.ts:51-64 |
 
 ## Cross-Repo References

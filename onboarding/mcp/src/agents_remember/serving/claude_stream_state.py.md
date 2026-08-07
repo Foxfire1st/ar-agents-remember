@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_state.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,8 +74,8 @@ The protocol supplies canonical replay text, and the submission record stores bo
 | Protocol parsing derives the canonical native-command replay body and keeps identity-changing commands blocked. | `session_command_replay_text`; `command_unsupported_detail` | mcp/src/agents_remember/serving/claude_stream_protocol.py:330-349; mcp/src/agents_remember/serving/claude_stream_protocol.py:352-360 |
 | Submission records retain wire/replay text, acceptance and terminal futures, and abandoned/completed state. | `ClaudeSubmission` | mcp/src/agents_remember/serving/claude_stream_submission.py:18-30 |
 | The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback. | `_submit_set_command`; `_wait_set_terminal`; `_terminal_set_result`; `_completed_set_result` | mcp/src/agents_remember/serving/harness_control_claude.py:402-442; mcp/src/agents_remember/serving/harness_control_claude.py:589-607; mcp/src/agents_remember/serving/harness_control_claude.py:627-646; mcp/src/agents_remember/serving/harness_control_claude.py:649-674 |
-| Contract tests pin full-frame forwarding and the no-leak guarantee at both merge points. | `test_assistant_blocks_and_unknown_frames_forward_full_payload_without_leak`; `test_result_usage_and_cost_forward_as_evidence` | mcp/tests/test_harness_control_evidence.py:1452-1500; mcp/tests/test_harness_control_evidence.py:1502-1573 |
-| The Claude native page remains fail-closed when the adapter reports it unsupported. | `test_native_page_unsupported_fails_closed_with_adapter_name` | mcp/tests/test_harness_control_evidence.py:729-741 |
+| Contract tests pin full-frame forwarding and the no-leak guarantee at both merge points. | `test_assistant_blocks_and_unknown_frames_forward_full_payload_without_leak`; `test_result_usage_and_cost_forward_as_evidence` | mcp/tests/test_harness_control_evidence_other.py:157-205; mcp/tests/test_harness_control_evidence_other.py:208-279 |
+| The Claude native page remains fail-closed when the adapter reports it unsupported. | `test_native_page_unsupported_fails_closed_with_adapter_name` | mcp/tests/test_harness_control_evidence_ipc.py:141-153 |
 
 ## 260715-FEUI-L5 Submission Authority Delta
 

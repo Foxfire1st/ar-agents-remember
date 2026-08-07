@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/gates.py`       |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`         |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -161,9 +161,9 @@ fails; the shared decision service owns that failure boundary.
 | Gate wait response model. | `GateWaitResponse` | mcp/src/agents_remember/models/gates.py:47-55 |
 | The durable-store gate ownership constant. | `GATE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:138-150 |
 | The compaction-owner predicate. | `is_compaction_owner` | mcp/src/agents_remember/controlplane/durable_store.py:123-132 |
-| The durable-store contract string. | "ar-durable-store/1.0" | mcp/src/agents_remember/controlplane/durable_store.py:42-52 |
-| The serving adapter that records dashboard gate decisions through the shared decision service. | `_recorded_gate_decision`; `record_gate_decision` | mcp/src/agents_remember/serving/app.py:1092-1138; mcp/src/agents_remember/controlplane/gate_decisions.py:83-128 |
-| The projection reader that no longer rewrites gate logs (`read_gates` → `GateStore.projected_current`). | `read_gates` | mcp/src/agents_remember/observer/snapshots.py:513-547 |
+| The durable-store contract string. | "DURABLE_STORE_CONTRACT = \"ar-durable-store/1.0\"" | mcp/src/agents_remember/controlplane/durable_store.py:42-52 |
+| The serving adapter that records dashboard gate decisions through the shared decision service. | "def _recorded_gate_decision("; "def record_gate_decision(" | mcp/src/agents_remember/serving/_app_routes.py:193-193; mcp/src/agents_remember/controlplane/gate_decisions.py:83-128 |
+| The projection reader that no longer rewrites gate logs (`read_gates` → `GateStore.projected_current`). | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
 
 As of cycle 5 the seam channel is operable: lifecycle_gate accepts wait=false (raise-and-continue — returns the gateId in a model-conformant raised payload instead of blocking); gate_decide resolves a bare gate_id across lifecycles via GateStore.find when no lifecycle_id is given, REFUSES cli-attributed non-cancel decisions on kinds the active policy delegates (fail-loud: pass deciding_role or leave it to the developer), and cancel deletes by the gate's own lifecycleId. Cycle 6 hardens the raise path: wait=false is now reserved for SEAM kinds (`SEAM_GATE_KINDS`) that the active policy also delegates — a delegated non-seam kind like plan-approval blocks again — and the check runs BEFORE the expire-sweep and append (validate-then-mutate), so a refused raise persists no orphan open gate and expires no sibling. `gate_list_payload` is now ambient-defaulting: with no explicit lifecycle_id it lists the ACTIVE lifecycle's gates (a raiser polls its own gate without handling lifecycle ids) and falls back to the workspace log only when no lifecycle is active. Cycle 7 closes the addressless-raise hole (AR4-1): a wait=false raise additionally requires a non-empty `enclosure` — the master task name the integrate guard matches the gate by — and refuses inside the same validate-then-mutate block ("a master-handover-approval raise-and-continue requires enclosure=<master task name>"), because an addressless seam gate could only ever fail open at the enforcement rung.
 

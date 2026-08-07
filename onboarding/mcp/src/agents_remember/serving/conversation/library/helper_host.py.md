@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/helper_host.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |  2026-07-21T11:31:07+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ real helper end-to-end including its malformed-request refusals.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The helper package defines a versioned JSONL serve loop, typed failure vocabulary, and paging primitives. | `PROTOCOL_VERSION`; `HelperFailure`; `serveJsonLines`; `pageByOffset`; `windowByOrdinal` | mcp/native_helpers/conversation_library/src/protocol.ts:13-13; mcp/native_helpers/conversation_library/src/protocol.ts:86-92; mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286 |
-| The installed suite proves the helper handshake plus malformed-request rejection on the real process seam. | `test_live_helper_gate_supports_pi_history`; `test_helper_protocol_rejects_malformed_requests` | mcp/tests/test_conversation_library_installed.py:217-231; mcp/tests/test_conversation_library_installed.py:265-281 |
+| The installed suite proves the helper handshake plus malformed-request rejection on the real process seam. | `test_live_helper_gate_supports_pi_history`; `test_helper_protocol_rejects_malformed_requests` | mcp/tests/test_conversation_library_installed.py:234-248; mcp/tests/test_conversation_library_installed.py:285-301 |
 | The Python foundation suite forbids incidental module resolution in the helper sources this host spawns. | `test_helper_runtime_source_has_no_incidental_module_resolution` | mcp/tests/test_conversation_foundation.py:139-160 |
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,10 @@ contract reason, not a version comparison.
 
 ## Code Commentary
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): the installed-runtime library suite retains the live-gate pin (`async def test_live_gate_supports_list_read_and_partial_completeness(`) at its current line; environment-gated helpers carry R10 pragmas.
+## Logic
 
 Eight opt-in tests, each skipping with an exact reason where its runtime precondition is absent
 (CI has no harnesses); none fabricates capability evidence. Codex: the live gate supports
@@ -86,6 +89,10 @@ No neighboring repository participates in this installed-runtime suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the installed-runtime library suite retains the live-gate pin (`async d...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows across the fixture, open service, and port suites; scoped citation fixing regenerated the source ranges.
 

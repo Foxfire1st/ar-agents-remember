@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_files.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:20+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -81,9 +81,9 @@ Run with `PYTHONPATH=mcp/src python -m pytest mcp/tests/test_serving_files.py -q
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The files API under test (`FileScope`, `list_repos`, `list_dir`, `read_file`, `resolve_onboarding`, `resolve_partner`, `_resolve_within`). | `list_repos`; `list_dir`; `read_file`; `resolve_onboarding`; `resolve_partner` | mcp/src/agents_remember/serving/files.py:92-107; mcp/src/agents_remember/serving/files.py:161-184; mcp/src/agents_remember/serving/files.py:190-213; mcp/src/agents_remember/serving/files.py:232-239; mcp/src/agents_remember/serving/files.py:264-290 |
-| The app factory the route tests build. | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| The app factory the route tests build. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | `McpRuntimeConfig` / `RepositoryScope` constructed by the catalog + route tests. | `McpRuntimeConfig`; `RepositoryScope` | mcp/src/agents_remember/mcp/config.py:68-73; mcp/src/agents_remember/mcp/config.py:113-137 |
-| The serving test suite whose `_config` / `TestClient` pattern this mirrors. | `_config` | mcp/tests/test_serving.py:140-146 |
+| The serving test suite whose `_config` / `TestClient` pattern this mirrors. | `_config` | mcp/tests/test_serving.py:95-101 |
 
 ## 260718-CHATS-L5I Current Delta
 

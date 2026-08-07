@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T08:45+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -152,14 +152,14 @@ served-state module plus the two producers of the tail.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The contract under test: `ServedWorkspaceProjection`, `SERVED_TAIL_FIELDS`, `served_state_tail`, and the five reasons the tail lives here rather than on `WorkspaceProjection` (layer, the dump memo, the ETag, `latest-state.json`, and the snapshot/delta shape asymmetry). | "class ServedWorkspaceProjection", "def served_state_tail" | mcp/src/agents_remember/serving/served_state.py:47-47; mcp/src/agents_remember/serving/served_state.py:63-63 |
-| The route and the SSE generator driven for real; the tail rides the `snapshot` only. | `create_app`; `stream_events` | mcp/src/agents_remember/serving/app.py:315-345; mcp/src/agents_remember/serving/app.py:718-777 |
+| The route and the SSE generator driven for real; the tail rides the `snapshot` only. |"def create_app("; "async def stream_events("|mcp/src/agents_remember/serving/app.py:226-226; mcp/src/agents_remember/serving/_app_common.py:112-112|
 | The build half of the tail, whose payload omits what it could not prove (`commit`, `dirty`, `dashboardBuild`). | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
 | The heartbeat half, which reports a never-ticked supervisor as explicit nulls, plus the store the fixture ticks. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
 | The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
 | The second consumer that must not gain serve-time fields. | `write_projection` | mcp/src/agents_remember/observer/projection_store.py:156-162 |
 | The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:201-229; mcp/src/agents_remember/worktrees/worktree_contract.py:345-395; mcp/src/agents_remember/worktrees/worktree_contract.py:474-477 |
-| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | `DeclaredSurfaceCoverageTests` | mcp/tests/test_serving_response_conformance.py:2432-2489 |
-| The serving suite that owns the ETag change gate and the build stamp in general; this file only pins that the declared tail does not break them. | `StateEtagTests`; `BuildInfoTests` | mcp/tests/test_serving.py:598-682; mcp/tests/test_serving.py:947-1091 |
+| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:484-484 |
+| The serving suite that owns the ETag change gate and the build stamp in general; this file only pins that the declared tail does not break them. | `StateEtagTests`; `BuildInfoTests` | mcp/tests/test_serving.py:557-641; mcp/tests/test_serving_cli.py:36-181 |
 
 ## Cross-Repo References
 

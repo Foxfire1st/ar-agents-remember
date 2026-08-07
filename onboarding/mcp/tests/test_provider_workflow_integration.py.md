@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_workflow_integration.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                         |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,7 +16,10 @@
 
 ## Code Commentary
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): the provider workflow-integration suite is environment-gated; its helpers carry per-function R10 pragmas and the benchmark-runner import was reconciled.
+## Logic
 
 The test is skipped unless `AGENTS_REMEMBER_PROVIDER_INTEGRATION=1` is set. When enabled, it creates temporary code and external-memory repositories, writes MCP settings with a unique provider instance id, prepares the source providers, starts a worktree through the MCP tool path, verifies worktree-local provider settings and watcher status, prepares benchmark-local providers using the (now hermetic, no-seed) benchmark registration path, verifies watcher status again, and finally removes the generated provider containers and networks.
 
@@ -66,6 +69,10 @@ to take individually now live on the workspace object.
 | Focused provider setup tests cover the same settings and seed behavior without Docker. | `ProviderSetupTests`; `test_run_provider_setup_accepts_typed_request`; `test_prepare_announces_phases_in_order_with_seed_fallback` | mcp/tests/test_provider_setup.py:25-899 |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the provider workflow-integration suite is environment-gated; its helpe...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 3 table citations and replaced 3 stale source references; no unresolved Tier-3 claims.
 

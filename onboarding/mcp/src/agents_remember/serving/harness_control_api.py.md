@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T08:54+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -161,15 +161,15 @@ boundaries rather than duplicating their policy.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The pre-session catalog supplies the dynamic cached envelope and failed-refresh quarantine. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-196 |
-| The exact-session client reads advertised capabilities and applies model/effort setters. | `read_control_capabilities` | mcp/src/agents_remember/serving/harness_control_client.py:134-141 |
+| The exact-session client reads advertised capabilities and applies model/effort setters. | `read_control_capabilities` | mcp/src/agents_remember/serving/harness_control_client.py:144-151 |
 | The exact-session client distinguishes first-byte ambiguity from a request accepted before disconnect. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:534-568 |
 | The exact-session client submits whole messages and preserves request correlation. | `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:214-252 |
 | The exact-session client reconciles a possibly lost submission by request id and bridge epoch. | `reconcile_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:273-303 |
 | Public serializers deliberately omit the internal raw evidence mapping. | `public_receipt_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941 |
-| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:757-757 |
-| The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/app.py:1474-1474 |
+| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:265-265 |
+| The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:234-234 |
 | The declared models and the shared `SESSION_CONTROL_RESPONSES` table these ten routes name, plus the two submit-only refusals. | `SESSION_CONTROL_RESPONSES`; `PreDispatchFailureRefusal` | mcp/src/agents_remember/serving/response_contract.py:161-167; mcp/src/agents_remember/serving/response_contract.py:1067-1074 |
-| The suite that enforces the declarations by driving every route and validating the real body. | `test_harness_control_routes_conform` | mcp/tests/test_serving_response_conformance.py:1516-1658 |
+| The suite that enforces the declarations by driving every route and validating the real body. | `test_harness_control_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:265-407 |
 | Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | `test_pre_session_capabilities_freeze_envelope_and_refresh` | mcp/tests/test_serving_harness_control_api.py:129-147 |
 | The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
 | The immutable runtime authority and scope types this registration constructs. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |

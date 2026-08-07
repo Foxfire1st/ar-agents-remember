@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_events.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,9 +66,9 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | Pi frame schemas and UI policy. | `PI_RPC_DIALOG_METHODS`, `PI_RPC_FIRE_AND_FORGET_METHODS`, `PiRpcJsonlDecoder` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:20-23; mcp/src/agents_remember/serving/pi_rpc_protocol.py:59-103 |
 | Adapter event-stream owner. | `PiRpcAdapter`, `_event_stream`, `subscribe` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_adapter.py:268-305; mcp/src/agents_remember/serving/pi_rpc_adapter.py:307-308 |
-| Event/settlement coverage. | `test_retry_compaction_and_agent_settled_are_not_early_idle`, `test_extension_ui_round_trip_and_reclamation_scale` | mcp/tests/test_pi_rpc_adapter.py:916-947; mcp/tests/test_pi_rpc_adapter.py:949-1004 |
-| The guarded abort whose interrupted turns produce the content-less `message_end` shape this mapper crosses evidence-only. | `message_end` | mcp/tests/test_harness_control_evidence_installed.py:325-327 |
-| The control-plane contract test pins the evidence-only mapping and the preserved role/object strictness (bad role still fails the bridge). | `test_contentless_message_end_crosses_as_evidence_without_failing` | mcp/tests/test_harness_control_plane.py:747-773 |
+| Event/settlement coverage. | `test_retry_compaction_and_agent_settled_are_not_early_idle`, `test_extension_ui_round_trip_and_reclamation_scale` | mcp/tests/test_pi_rpc_adapter_ops_2.py:79-110; mcp/tests/test_pi_rpc_adapter_ops_2.py:112-167 |
+| The guarded abort whose interrupted turns produce the content-less `message_end` shape this mapper crosses evidence-only. | `message_end` | mcp/tests/test_harness_control_evidence_installed.py:345-347 |
+| The control-plane contract test pins the evidence-only mapping and the preserved role/object strictness (bad role still fails the bridge). | `test_contentless_message_end_crosses_as_evidence_without_failing` | mcp/tests/test_harness_control_plane_assets.py:113-139 |
 
 ## Cross-Repo References
 No meaningful cross-repo references found.

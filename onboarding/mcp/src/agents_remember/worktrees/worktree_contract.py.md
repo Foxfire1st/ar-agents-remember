@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -340,7 +340,7 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 | `WorktreeSummary` imports `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` from here for the response boundary. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:36-74 |
 | `WorktreeStatusFacts` imports the same six and reports `unknown_cells` as `unknown_contract_cells`. | `WorktreeStatusFacts` | mcp/src/agents_remember/worktrees/modules/guidance.py:99-136 |
 | `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211 |
-| Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. | `ContractBoundaryTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:922-1222 |
+| Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144 |
 | The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | `# mcp/src/agents_remember/worktrees/modules Overview` | onboarding/mcp/src/agents_remember/worktrees/modules/overview.md:1-762 |
 
 ## Cross-Repo References

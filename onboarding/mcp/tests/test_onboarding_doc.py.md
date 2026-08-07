@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T04:47+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`                                  |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                  |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 
 ## Purpose
 
@@ -43,7 +43,7 @@ No external documentation is needed for this standard-library test.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Module under test. | `meaningful_body` | mcp/src/agents_remember/kernel/onboarding_doc.py:94-108 |
-| Git-fixture gate coverage consuming the same helpers. | `RequireUpdatedSidecarContentTests` | mcp/tests/test_worktree_support.py:3845-4000 |
+| Git-fixture gate coverage consuming the same helpers. | `RequireUpdatedSidecarContentTests` | mcp/tests/test_worktree_support_benchmark.py:668-823 |
 
 ## Update History
 

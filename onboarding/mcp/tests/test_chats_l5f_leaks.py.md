@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_chats_l5f_leaks.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ The suite pins the control service's bounded/released lock map and the capped qu
 | The `_locks` `OrderedDict`, `MAX_SESSION_LOCKS_PER_APP` cap, idle-first `_evict_idle_locks`, and `release_session` under test. | "def utc_clock" | mcp/src/agents_remember/serving/conversation/control/service.py:81-81 |
 | The frozen `ControlScope` parameter object this suite now builds to call `_queue_row`. | "class ControlOperationError" | mcp/src/agents_remember/serving/conversation/control/service.py:102-102 |
 | The `queue_rows` cap enforcement (`MAX_QUEUE_ROWS_PER_CHANNEL`, oldest-key `popitem`) under test. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:47-47 |
-| The active-projector dormant-release companion to these control-side leak pins. | `CodexEngineTests` | mcp/tests/test_conversation_active_service.py:233-550 |
+| The active-projector dormant-release companion to these control-side leak pins. | `CodexEngineTests` | mcp/tests/test_conversation_active_service.py:224-541 |
 
 ## Cross-Repo References
 

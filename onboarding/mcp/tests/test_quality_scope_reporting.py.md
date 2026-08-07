@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,10 @@ Defines the module-level API of test_quality_scope_reporting.py.
 
 ## Code Commentary
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): the count-fix delta pins the live 426-TypeScript-input measurement (tsconfig project-input union after `liveThinking.test.tsx` joined the sync merge).
+## Logic
 
 Module-level surface:
 
@@ -74,6 +77,10 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `CallerProvenanceTests` (lines 519-705). | `CallerProvenanceTests` | mcp/tests/test_quality_scope_reporting.py:519-705 |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the count-fix delta pins the live 426-TypeScript-input measurement (tsc...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: the count-fix delta: the `426 TypeScript inputs` assertion matches the live measurement after the sync merge added `liveThinking.test.tsx`. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the npm-shim re-scoping of the sequencer-contract test (FL4). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

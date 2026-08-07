@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -125,7 +125,7 @@ all-snake payload shape.
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading `nextTool`/`nextArgs`/`nextRequiredArgs` with `.get` so an omitted key stays omitted. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 | The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:72-77; mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
 | The guidance state machine that declares and writes `WorktreePhase`, `NextOperation` and `NextTool`, plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | `WorktreePhase`; `NextOperation`; `NextTool`; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:28-53; mcp/src/agents_remember/worktrees/modules/guidance.py:62-69 |
-| The suite pinning every value a producer can emit against the field it crosses, including the omitted-`nextRequiredArgs` shape and the degrade-and-report contract cell. | `AdvertisedVocabularyTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:823-881 |
+| The suite pinning every value a producer can emit against the field it crosses, including the omitted-`nextRequiredArgs` shape and the degrade-and-report contract cell. | "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45 |
 | Public worktree MCP application entry points delegate to the package worktree manager. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:239-241 |
 
 ## Series-Contract Notes

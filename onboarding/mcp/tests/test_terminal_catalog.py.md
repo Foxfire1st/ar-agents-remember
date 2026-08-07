@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The catalog implementation under test, including typed optional reads and required/optional JSON projection. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
-| The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | `test_get_terminal_sessions_lists_catalog_entries`; `test_post_open_spawns_shell_at_workspace_root`; `test_terminate_marks_catalog_and_kills_tmux`; `test_saves_under_session_cwd_and_returns_path` | mcp/tests/test_terminal_ws.py:523-550; mcp/tests/test_terminal_ws.py:552-571; mcp/tests/test_terminal_ws.py:642-651; mcp/tests/test_terminal_ws.py:1032-1043 |
+| The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | `test_get_terminal_sessions_lists_catalog_entries`; `test_post_open_spawns_shell_at_workspace_root`; `test_terminate_marks_catalog_and_kills_tmux`; `test_saves_under_session_cwd_and_returns_path` | mcp/tests/test_terminal_ws_misc.py:43-54; mcp/tests/test_terminal_ws_websocket_1.py:84-111; mcp/tests/test_terminal_ws_websocket_1.py:113-132; mcp/tests/test_terminal_ws_websocket_1.py:203-212 |
 
 ## 260712-TRH-L4 Final Candidate
 

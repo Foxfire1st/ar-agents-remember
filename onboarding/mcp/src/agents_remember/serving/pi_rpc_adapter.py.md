@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -117,9 +117,9 @@ rules; process/event modules remain transport and event boundaries.
 | The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones. | `PiRpcSubprocess` | mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
 | The event mapper owns normalized state, settlement, and extension interaction projections. | `PiRpcEventMapper`, `translate` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
 | Entry identity/timestamp helpers keep native paging coordinates honest. | `pi_entry_identity`, `pi_entry_created_at` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:285-296; mcp/src/agents_remember/serving/pi_rpc_protocol.py:299-309 |
-| Contract tests pin the entries native page, message_update/message_end evidence forwarding, and the installed 0.80.7 production-seam capture. | `test_message_end_and_unknown_frames_reach_evidence_with_full_payload`, `test_native_page_typed_identity_and_durable_since_continuation` | mcp/tests/test_harness_control_evidence.py:1306-1344; mcp/tests/test_harness_control_evidence.py:1346-1387 |
+| Contract tests pin the entries native page, message_update/message_end evidence forwarding, and the installed 0.80.7 production-seam capture. | `test_message_end_and_unknown_frames_reach_evidence_with_full_payload`, `test_native_page_typed_identity_and_durable_since_continuation` | mcp/tests/test_harness_control_evidence_other.py:61-99; mcp/tests/test_harness_control_evidence_other.py:101-142 |
 | The content-less `message_end` evidence mapping that keeps a real abort from failing the bridge. | ["pi:message_end"] | mcp/src/agents_remember/serving/pi_rpc_events.py:256-256 |
-| The control-plane contract suite pins the guarded abort, replay-once per pair, the successor stale-reconcile typed refusal with zero writes, and the image content construction. | `test_abort_write_guard_replay_and_successor_refusal`, `test_pi_image_content_blocks_and_receipt_asset_ids` | mcp/tests/test_harness_control_plane.py:681-732; mcp/tests/test_harness_control_plane.py:1590-1643 |
+| The control-plane contract suite pins the guarded abort, replay-once per pair, the successor stale-reconcile typed refusal with zero writes, and the image content construction. | `test_abort_write_guard_replay_and_successor_refusal`, `test_pi_image_content_blocks_and_receipt_asset_ids` | mcp/tests/test_harness_control_plane_assets.py:47-98; mcp/tests/test_harness_control_plane_channels.py:428-481 |
 | The installed-runtime suite captures the live 0.80.7 abort, timeline, and asset evidence behind the fixture rows. | `test_live_abort_guard_timeline_and_assets` | mcp/tests/test_harness_control_plane_installed.py:287-373 |
 | The fixture records the redacted `control-plane/*` observed rows this adapter produced through the production seam. | ["control-plane/abort-write-ack", "control-plane/operation-timeline", "control-plane/asset-image-submit"] | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:72-72; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:83-83; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:94-94 |
 

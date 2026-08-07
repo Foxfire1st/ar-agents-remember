@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ navigation, and unknown-vendor run collapse — and no data/cursor logic.
 
 ### Logic
 
-- **ARIA honesty** cit:(["aria-posinset={posinset}", "{...(knownTotal !== undefined ? { \"aria-setsize\": knownTotal } : {})}"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:162-163) (R5): `aria-posinset` is the item's server
+- **ARIA honesty** cit:(["aria-posinset={posinset}", "{...(knownTotal !== undefined ? { \"aria-setsize\": knownTotal } : {})}"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:165-166) (R5): `aria-posinset` is the item's server
   `globalOrdinal` (or the run's first ordinal), NOT the array index; `aria-setsize` is emitted ONLY
   when `totalItems` is a known number (`knownTotal`), else omitted and the older-paging button reads
   `Load older (total unknown)`. The button copy and article attributes are owned by the render body
@@ -58,7 +58,7 @@ navigation, and unknown-vendor run collapse — and no data/cursor logic.
   owned by the timeline cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106), while its update-state emphasis is static color/border styling rather than a continuous animation
   cit:([`latestChipWithUpdates`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/styles.ts:81-84). Older prepend restores the captured top stable row + pixel
   offset through `prevFirstKeyRef` and the saved anchor cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106).
-- **Widget-scoped keyboard nav** cit:(["The feed surface owns the ARIA feed contract (label + busy); layout, keyboard, and test", "<div role=\"feed\" aria-label=\"Conversation\" aria-busy={busy} {...props}>"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:24-24; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:32-32) (§14.4/F14 accepted deviation): `onKeyDown` on the `feed`
+- **Widget-scoped keyboard nav** cit:(["The feed surface owns the ARIA feed contract (label + busy); layout, keyboard, and test", "<div role=\"feed\" aria-label=\"Conversation\" aria-busy={busy} {...props}>"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:25-25; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:33-33) (§14.4/F14 accepted deviation): `onKeyDown` on the `feed`
   element (the ARIA feed pattern), NOT a global document handler. `]`/`[` move next/prev; `Home`/`End`
   jump ends. The exclusion list is complete — cit:([`isEditableTarget`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/unknownRun.tsx:12-12) skips
   `INPUT/TEXTAREA/SELECT/contentEditable` and any `closest('button,a,[contenteditable],.cm-editor')`;
@@ -71,7 +71,7 @@ navigation, and unknown-vendor run collapse — and no data/cursor logic.
   conversation surface hijacks ArrowDown into the agents line, so it is no longer a scroll key here
   — PageUp/PageDown, `[`/`]` and the wheel remain the downward scroll paths. The set is EXPORTED for
   the surface keyboard-contract tests.
-- **Unknown-vendor run collapse** cit:([`groupUnknownVendorRuns`], dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55): a run of ≥3
+- **Unknown-vendor run collapse** cit:(["describe(\"groupUnknownVendorRuns (F10)\", () => {"], dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24): a run of ≥3
   identical-summary unknown-vendor items folds into one de-emphasized expandable `unknown-run` row;
   members stay addressable (`#ordinal · evidenceRef`), identity is never mutated. The collapsed
   run is a dim mono GUTTER line (`runRow`/`runSummary`, `whiteSpace:nowrap` + ellipsis, full text in
@@ -129,7 +129,7 @@ reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, the scroll-key set, run collapse. | "export { OPERATOR_SCROLL_KEYS } from \"./measurements\";"; "export interface ConversationTimelineProps {"; "honestly known (else omitted; paging copy says \"total unknown\"). A roving tabindex + a focus-pinning" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:32-32; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:34-34; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:4-4 |
-| The pure unknown-vendor run grouping this feed renders. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
+| The pure unknown-vendor run grouping this feed renders. | "describe(\"groupUnknownVendorRuns (F10)\", () => {" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
 | The kind dispatcher + stable accessible-name helper per article. | `ConversationItemView`, `itemAccessibleName` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:41-44; dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
 | The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
 | The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |

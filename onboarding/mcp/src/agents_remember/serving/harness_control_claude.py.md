@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -144,7 +144,7 @@ normalization.
 | Protocol command gating admits native model/effort categories without model-name heuristics while keeping identity changes blocked. | `_IDENTITY_CHANGING_COMMANDS`, `_NATIVE_CAPABILITY_COMMANDS`, `command_unsupported_detail` | mcp/src/agents_remember/serving/claude_stream_protocol.py:21-24; mcp/src/agents_remember/serving/claude_stream_protocol.py:352-360 |
 | Claude catalog parsing validates unique models, selectability, resolved current identity, and model-local effort. | `parse_list_models_response`, `_parse_model`, `_require_unique_model_keys`, `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75; mcp/src/agents_remember/serving/claude_stream_capabilities.py:78-83; mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 | The shared submission authority admits setters onto the same ordinary-operation timeline as prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so the authority is now the only owner rather than the thing behind a facade. | `_validate_set_result` | mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023 |
-| Adapter regressions prove token-free discovery, complete selector replacement, end-of-options preservation, forced transient stop, and byte-for-byte normal-start preservation. | `test_discover_uses_only_token_free_bootstrap_and_list_models`, `test_discover_replaces_all_installed_mcp_selector_spellings`, `test_normal_start_preserves_existing_mcp_selectors_byte_for_byte` | mcp/tests/test_harness_control_claude.py:256-276; mcp/tests/test_harness_control_claude.py:278-390; mcp/tests/test_harness_control_claude.py:392-412 |
+| Adapter regressions prove token-free discovery, complete selector replacement, end-of-options preservation, forced transient stop, and byte-for-byte normal-start preservation. | `test_discover_uses_only_token_free_bootstrap_and_list_models`, `test_discover_replaces_all_installed_mcp_selector_spellings`, `test_normal_start_preserves_existing_mcp_selectors_byte_for_byte` | mcp/tests/test_harness_control_claude_stream_1.py:33-53; mcp/tests/test_harness_control_claude_stream_1.py:55-167; mcp/tests/test_harness_control_claude_stream_1.py:169-189 |
 
 ## Submission Authority Delta
 

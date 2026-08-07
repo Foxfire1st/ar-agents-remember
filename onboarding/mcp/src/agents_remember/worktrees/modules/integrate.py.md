@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -75,7 +75,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Worktree-contract definitions declare `IntegrationStatus` / `CleanupStatus` and expose `ContractCells` / `amend_contract` as the typed amendment path. | `ContractCells`; `amend_contract`; `IntegrationStatus`; `CleanupStatus` | mcp/src/agents_remember/worktrees/worktree_contract.py:67-68; mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
 | This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:117-130; mcp/src/agents_remember/worktrees/modules/integrate.py:483-513 |
-| Worktree tests cover fast-forward integration, replay, and conflict blocking. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_replay_handles_parallel_non_overlapping_changes`; `test_integrate_replay_blocks_code_conflicts_before_main_moves`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support.py:2229-2284; mcp/tests/test_worktree_support.py:2294-2339; mcp/tests/test_worktree_support.py:2341-2372; mcp/tests/test_worktree_support.py:3176-3211 |
+| Worktree tests cover fast-forward integration, replay, and conflict blocking. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_replay_handles_parallel_non_overlapping_changes`; `test_integrate_replay_blocks_code_conflicts_before_main_moves`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:582-637; mcp/tests/test_worktree_support_tests_2.py:647-692; mcp/tests/test_worktree_support_tests_2.py:694-725; mcp/tests/test_worktree_support_tests_3.py:715-750 |
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 

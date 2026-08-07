@@ -83,7 +83,7 @@ repository-owned and cited through the source and tests below.
 | --- | --- | --- |
 | The active service creates and retires projector instances. | `ActiveConversationService` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259 |
 | The package mutates one canonical projection store. | `ProjectionStore` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445 |
-| Focused regressions cover projection, restart, overflow, child hydration, and singleflight. | `test_settled_live_turns_project_once_when_native_ids_disjoint`; `test_concurrent_reconnect_replaces_a_retired_projector_once` | mcp/tests/test_active_projector_singleflight.py:24-94; mcp/tests/test_conversation_active_service.py:329-414 |
+| Focused regressions cover projection, restart, overflow, child hydration, and singleflight. | `test_settled_live_turns_project_once_when_native_ids_disjoint`; `test_concurrent_reconnect_replaces_a_retired_projector_once` | mcp/tests/test_active_projector_singleflight.py:24-94; mcp/tests/test_conversation_active_service.py:320-405 |
 
 ## Cross-Repo References
 

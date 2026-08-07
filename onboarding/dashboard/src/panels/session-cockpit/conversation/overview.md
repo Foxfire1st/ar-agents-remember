@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-08-01T13:05+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-07T23:35:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                  |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -300,7 +300,13 @@ Rulings Register's interrupt gate is an argument ABOUT capability evidence.
   with its reason. Registration is what makes them the only three rather than the first three: the
   registry counts occurrences, so a fourth cast in a listed file fails.
 
+## 260731-EFA-L7 — Live-Thinking Coalescing
+
+The conversation timeline now coalesces repeated empty/in-progress reasoning into ONE stable live `thinking` row per active turn identity: `collapse.ts`'s `groupDisplayRows` delegates to extracted helpers (`liveKeyFor`, `handleLiveOpen`, `handleLiveUpdate`, `handleLiveFinalize`, `unknownRunFor`) with row-object references and `rows.indexOf` finalize (no index bookkeeping); `ThinkingItem` gained the animated live indicator (shared `pulseSlow`, frozen by effects=off); `timelineController.ts` and `timelineFeed.tsx` carry the wiring in the split conversation-timeline. The interleaved R15/R17 acceptance pins live in `conversation-timeline/liveThinking.test.tsx` and `collapse.test.ts` (at most one live indicator, zero diff-update unknown rows, unknown evidence preserved).
+
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking coalescing change set and its acceptance pins. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (conversation-timeline split). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:40:00+02:00 — W3-B01 curator: curated 7 Repo-Internal table citations (5 memory-overview and 2 code-source references) with exact headings, builder identifiers, and registry anchor. Verification metadata remains unchanged for closeout.

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The item/`unknown-vendor`-block types (`vendorType`, `safeSummary`, `evidenceRef`) narrowed here. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
 | Streaming-safe Markdown renderer used for result detail. | `MarkdownBlock` | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
-| The pure grouping that folds runs of identical unknown-vendor rows (per-member addressable by ordinal/evidenceRef). | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
+| The pure grouping that folds runs of identical unknown-vendor rows (per-member addressable by ordinal/evidenceRef). | "describe(\"groupUnknownVendorRuns (F10)\", () => {" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
 | The kind dispatcher that routes result items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
 
 ## Cross-Repo References

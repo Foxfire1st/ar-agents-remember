@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T16:20+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ Git isolation directly.
 | --- | --- | --- |
 | Production owns the eight-selector inventory and the scrubbed Git environment built from it. | `GIT_REPOSITORY_SELECTOR_ENV`; `git_environment` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82 |
 | Route-index tests independently contaminate each selector and require identical output. | "test_ambient_git_repository_selectors_cannot_redirect_the_census"; "test_regular_checkout_and_linked_worktree_produce_identical_indexes" | mcp/tests/test_route_index.py:592-620; mcp/tests/test_route_index.py:822-850 |
-| Worktree fixture tests. | "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings" | mcp/tests/test_worktree_support.py:1602-1602; mcp/tests/test_worktree_support.py:1767-1767 |
+| Worktree fixture tests. |"test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings"|mcp/tests/test_worktree_support_tests_2.py:120-120; mcp/tests/test_worktree_support_tests_1.py:1012-1012|
 | The explicit ownership register, snapshot/restore operations, and scoped preservation helper used by the autouse guard. | `OWNED_MUTABLE_STATES`; `snapshot_owned_mutable_state`; `restore_owned_mutable_state`; `preserve_owned_mutable_state` | mcp/tests/_global_state.py:33-39; mcp/tests/_global_state.py:42-43; mcp/tests/_global_state.py:46-54; mcp/tests/_global_state.py:57-64 |
 | The current autouse guard restores all registered state and fails the leaking test with the complete changed-owner list. | `reject_owned_global_state_leaks` | mcp/tests/conftest.py:78-89 |
 | The currently registered process-global declaration and its production writer/accessor. | `_declared`; `declare_process_role`; `declared_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:73-73; mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:87-89 |

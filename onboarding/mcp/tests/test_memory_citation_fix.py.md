@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_citation_fix.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,31 +67,33 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `_frozen_no_discovery` (lines 82-115). | `_frozen_no_discovery` | mcp/tests/test_memory_citation_fix.py:82-115 |
-| Defines the function `document` (lines 118-120). | `document` | mcp/tests/test_memory_citation_fix.py:118-120 |
-| Defines the function `filler` (lines 123-124). | `filler` | mcp/tests/test_memory_citation_fix.py:123-124 |
+| Defines the function `_frozen_no_discovery` (lines 82-115). | `_frozen_no_discovery` | mcp/tests/test_memory_citation_fix.py:59-93 |
+| Defines the function `document` (lines 118-120). | `document` | mcp/tests/test_memory_citation_fix.py:96-98 |
+| Defines the function `filler` (lines 123-124). | `filler` | mcp/tests/test_memory_citation_fix.py:101-102 |
 | Defines the class `Tree` (lines 127-168) — A memory repository and the code repository it documents, both on disk.. | `Tree` | mcp/tests/test_memory_citation_fix.py:127-168 |
-| Defines the class `TreeCase` (lines 171-187). | `TreeCase` | mcp/tests/test_memory_citation_fix.py:171-187 |
-| Defines the class `PureMoveTests` (lines 190-248) — A symbol that kept its name and changed file. The only class that auto-repairs.. | `PureMoveTests` | mcp/tests/test_memory_citation_fix.py:190-248 |
-| Defines the class `ReflowTests` (lines 251-317) — The bulk of the churn: the file changed shape and the number went stale.. | `ReflowTests` | mcp/tests/test_memory_citation_fix.py:251-317 |
-| Defines the class `NoSimilarityMatchingTests` (lines 320-352) — Refuse similarity guesses when an anchor is absent.. | `NoSimilarityMatchingTests` | mcp/tests/test_memory_citation_fix.py:320-352 |
-| Defines the class `DeletionAndAmbiguityTests` (lines 355-434) — The other two refusals, each with the work order R28 requires.. | `DeletionAndAmbiguityTests` | mcp/tests/test_memory_citation_fix.py:355-434 |
-| Defines the class `MultiAnchorRangeTests` (lines 437-482) — Several anchors pool, so the generated source list is a UNION, never a span.. | `MultiAnchorRangeTests` | mcp/tests/test_memory_citation_fix.py:437-482 |
-| Defines the class `AnchorKindTests` (lines 485-532) — One extent rule per anchor kind: AST construct, markdown section, quoted lines.. | `AnchorKindTests` | mcp/tests/test_memory_citation_fix.py:485-532 |
-| Defines the class `SourcePreservationTests` (lines 535-571) — What `--fix` must not delete, and the one thing it must.. | `SourcePreservationTests` | mcp/tests/test_memory_citation_fix.py:535-571 |
-| Defines the class `UnresolvableOnlyClaimTests` (lines 574-634) — A claim whose every source is a dependency is SATISFIED, not permanently failing.. | `UnresolvableOnlyClaimTests` | mcp/tests/test_memory_citation_fix.py:574-634 |
-| Defines the class `DocumentScopeTests` (lines 637-748) — `--document` exists because a curator wave shares one memory worktree.. | `DocumentScopeTests` | mcp/tests/test_memory_citation_fix.py:637-748 |
-| Defines the class `CoreOperationScopeTests` (lines 751-876) — The deepest exported operations enforce acquisition and leased-index authority.. | `CoreOperationScopeTests` | mcp/tests/test_memory_citation_fix.py:751-876 |
-| Defines the class `DuplicateCitationTests` (lines 879-945) — Exact source repetition gates within one Claim, never across separate Claims.. | `DuplicateCitationTests` | mcp/tests/test_memory_citation_fix.py:879-945 |
-| Defines the class `ScopedNormalisationTests` (lines 948-1090) — A curator's provisional passing range is generated away inside its one document.. | `ScopedNormalisationTests` | mcp/tests/test_memory_citation_fix.py:948-1090 |
-| Defines the class `ProseSerialisationTests` (lines 1093-1153) — `cit:` in running text shares every rule, and says so when it cannot be rewritten.. | `ProseSerialisationTests` | mcp/tests/test_memory_citation_fix.py:1093-1153 |
-| Defines the class `TreeShapeTests` (lines 1156-1186) — Shapes the memory tree really holds that the rewriter must walk past.. | `TreeShapeTests` | mcp/tests/test_memory_citation_fix.py:1156-1186 |
-| Defines the class `FindingEnrichmentTests` (lines 1189-1223) — L6-R28: the CHECK names every location in the tree, not only the row's own files.. | `FindingEnrichmentTests` | mcp/tests/test_memory_citation_fix.py:1189-1223 |
-| Defines the class `SymbolIndexTests` (lines 1226-1319) — The one walk both halves share: what it reads, what it skips, what it counts.. | `SymbolIndexTests` | mcp/tests/test_memory_citation_fix.py:1226-1319 |
-| Defines the class `ExtentTests` (lines 1322-1423) — The generator, on the shapes a whole-tree run meets.. | `ExtentTests` | mcp/tests/test_memory_citation_fix.py:1322-1423 |
-| Defines the class `WriteGuardTests` (lines 1426-1709) — L6-R27: the fixer writes into a leaf's memory worktree or it does not write.. | `WriteGuardTests` | mcp/tests/test_memory_citation_fix.py:1426-1709 |
-| Defines the class `CommandLineTests` (lines 1712-2000) — Command-line scope and write-mode contract.. | `CommandLineTests` | mcp/tests/test_memory_citation_fix.py:1712-2000 |
+| Defines the class `TreeCase` (lines 171-187). | `TreeCase` | mcp/tests/test_memory_citation_fix.py:149-165 |
+| Defines the class `PureMoveTests` (lines 190-248) — A symbol that kept its name and changed file. The only class that auto-repairs.. | `PureMoveTests` | mcp/tests/test_memory_citation_fix.py:168-226 |
+| Defines the class `ReflowTests` (lines 251-317) — The bulk of the churn: the file changed shape and the number went stale.. | `ReflowTests` | mcp/tests/test_memory_citation_fix.py:229-295 |
+| Defines the class `NoSimilarityMatchingTests` (lines 320-352) — Refuse similarity guesses when an anchor is absent.. | `NoSimilarityMatchingTests` | mcp/tests/test_memory_citation_fix.py:298-330 |
+| Defines the class `DeletionAndAmbiguityTests` (lines 355-434) — The other two refusals, each with the work order R28 requires.. | `DeletionAndAmbiguityTests` | mcp/tests/test_memory_citation_fix.py:333-412 |
+| Defines the class `MultiAnchorRangeTests` (lines 437-482) — Several anchors pool, so the generated source list is a UNION, never a span.. | `MultiAnchorRangeTests` | mcp/tests/test_memory_citation_fix.py:415-460 |
+| Defines the class `AnchorKindTests` (lines 485-532) — One extent rule per anchor kind: AST construct, markdown section, quoted lines.. | `AnchorKindTests` | mcp/tests/test_memory_citation_fix.py:463-510 |
+| Defines the class `SourcePreservationTests` (lines 535-571) — What `--fix` must not delete, and the one thing it must.. | `SourcePreservationTests` | mcp/tests/test_memory_citation_fix.py:513-549 |
+| Defines the class `UnresolvableOnlyClaimTests` (lines 574-634) — A claim whose every source is a dependency is SATISFIED, not permanently failing.. | `UnresolvableOnlyClaimTests` | mcp/tests/test_memory_citation_fix.py:552-612 |
+| Defines the class `DocumentScopeTests` (lines 637-748) — `--document` exists because a curator wave shares one memory worktree.. | `DocumentScopeTests` | mcp/tests/test_memory_citation_fix_scopes.py:17-128 |
+| Defines the class `CoreOperationScopeTests` (lines 751-876) — The deepest exported operations enforce acquisition and leased-index authority.. | `CoreOperationScopeTests` | mcp/tests/test_memory_citation_fix_scopes.py:131-256 |
+| Defines the class `DuplicateCitationTests` (lines 879-945) — Exact source repetition gates within one Claim, never across separate Claims.. | `DuplicateCitationTests` | mcp/tests/test_memory_citation_fix_scopes.py:259-325 |
+| Defines the class `ScopedNormalisationTests` (lines 948-1090) — A curator's provisional passing range is generated away inside its one document.. | `ScopedNormalisationTests` | mcp/tests/test_memory_citation_fix_scopes.py:328-470 |
+| Defines the class `ProseSerialisationTests` (lines 1093-1153) — `cit:` in running text shares every rule, and says so when it cannot be rewritten.. | `ProseSerialisationTests` | mcp/tests/test_memory_citation_fix_scopes.py:473-533 |
+| Defines the class `TreeShapeTests` (lines 1156-1186) — Shapes the memory tree really holds that the rewriter must walk past.. | `TreeShapeTests` | mcp/tests/test_memory_citation_fix_scopes.py:536-566 |
+| Defines the class `FindingEnrichmentTests` (lines 1189-1223) — L6-R28: the CHECK names every location in the tree, not only the row's own files.. | `FindingEnrichmentTests` | mcp/tests/test_memory_citation_fix_scopes.py:569-603 |
+| Defines the class `SymbolIndexTests` (lines 1226-1319) — The one walk both halves share: what it reads, what it skips, what it counts.. | `SymbolIndexTests` | mcp/tests/test_memory_citation_fix_operations.py:36-129 |
+| Defines the class `ExtentTests` (lines 1322-1423) — The generator, on the shapes a whole-tree run meets.. | `ExtentTests` | mcp/tests/test_memory_citation_fix_operations.py:132-234 |
+| Defines the class `WriteGuardTests` (lines 1426-1709) — L6-R27: the fixer writes into a leaf's memory worktree or it does not write.. | `WriteGuardTests` | mcp/tests/test_memory_citation_fix.py:16-16 |
+| Defines the class `CommandLineTests` (lines 1712-2000) — Command-line scope and write-mode contract.. | "class CommandLineTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:523-523 |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

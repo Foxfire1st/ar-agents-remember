@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:05+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -55,106 +55,106 @@ another module, a local bound elsewhere, and `cast`. `cast` passes
 both pyright and the literal scan *as it must* — it is a programmer overriding the checker on
 purpose — and the readability rule below is the only thing that refuses it here.
 
-#### cit:([`ProducedLiteralTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-820) — the set difference itself
+#### cit:([`ProducedLiteralTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817) — the set difference itself
 
-cit:([`produced_literals`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:323-338) parses **every `*.py` under the installed package root**
-(`PACKAGE_ROOT` cit:([`PACKAGE_ROOT`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:156-156); `_module_trees` cit:([`_module_trees`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:307-309)) and collects the string literals passed at the
-six contract-cell keywords of cit:(["CONTRACT_CALLS = frozenset"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:174-174). The producible set is therefore derived **from the producers' source,
+cit:([`produced_literals`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:313-328) parses **every `*.py` under the installed package root**
+(`PACKAGE_ROOT` cit:([`PACKAGE_ROOT`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:146-146); `_module_trees` cit:([`_module_trees`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:297-299)) and collects the string literals passed at the
+six contract-cell keywords of cit:(["CONTRACT_CALLS = frozenset"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:164-164). The producible set is therefore derived **from the producers' source,
 not from the `Literal` alias** — which is what stops the suite passing by agreeing with itself
-cit:(["make it agree with itself"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:328-328). cit:([`test_the_scan_actually_found_the_writers`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:650-657) pins five known literals so a
+cit:(["make it agree with itself"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:318-318). cit:([`test_the_scan_actually_found_the_writers`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:647-654) pins five known literals so a
 scan that silently matched nothing cannot pass.
 
 Two further rules make pyright's coverage of those six fields total:
 
-- cit:([`test_no_contract_cell_is_written_through_dataclasses_replace`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:659-667) asserts
-  cit:([`contract_cells_written_through_replace`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:347-374) `contract_cells_written_through_replace() == []`. **No `dataclasses.replace` call
+- cit:([`test_no_contract_cell_is_written_through_dataclasses_replace`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:656-664) asserts
+  cit:([`contract_cells_written_through_replace`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:338-365) `contract_cells_written_through_replace() == []`. **No `dataclasses.replace` call
   anywhere in the package may carry one of the six keywords.** typeshed types `replace` as
   `**changes: Any`, so `replace(contract, cleanup="reclaimed-ish")` produced *zero* pyright
   diagnostics against a four-member `Literal` — one `Any` in a third-party stub voiding the whole
   guarantee. `amend_contract(contract, ContractCells(...))` puts those fields back in front of the
   checker; this rule refuses the spelling that routes around it. The check matches on the *keyword
   name*, so a `replace` on some other dataclass owning a `cleanup` field is reported too — a
-  cit:(["inference that makes a scan lie"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:359-359). The declaring module
-  `worktrees/worktree_contract.py` cit:(["VOCABULARY_DECLARING_MODULE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:184-184) is exempt from both scans. In the `replace` scan,
+  cit:(["inference that makes a scan lie"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:350-350). The declaring module
+  `worktrees/worktree_contract.py` cit:(["VOCABULARY_DECLARING_MODULE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:174-174) is exempt from both scans. In the `replace` scan,
   `amend_contract` **is** the one sanctioned `replace`, and its own parameters did the checking a
-  line earlier cit:(["The declaring module is exempt because", "its own parameters did the checking one line earlier. \"\"\" offenders: list[str] = [] for path, tree in _module_trees(): if path.as_posix().endswith(VOCABULARY_DECLARING_MODULE): continue"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:361-367).
+  line earlier cit:(["The declaring module is exempt because", "its own parameters did the checking one line earlier. \"\"\" offenders: list[str] = [] for path, tree in _module_trees(): if path.as_posix().endswith(VOCABULARY_DECLARING_MODULE): continue"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:352-358).
   The typed-writer scan applies the same declaring-module exemption
-  cit:(["def unreadable_contract_writes() -> list[str]: \"\"\"Contract-vocabulary keywords at a typed writer whose value this scan cannot read.\"\"\" offenders: list[str] = [] for path, tree in _module_trees(): if path.as_posix().endswith(VOCABULARY_DECLARING_MODULE): continue"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:393-398).
-- cit:([`test_every_contract_cell_is_written_as_something_this_scan_can_read`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:683-692) asserts
-  cit:([`unreadable_contract_writes`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:393-407) `unreadable_contract_writes() == []`. Every value reaching a **typed** writer
-  cit:(["TYPED_CONTRACT_WRITERS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:179-179) must be an
+  cit:(["def unreadable_contract_writes() -> list[str]:  # pragma: no cover"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:385-385).
+- cit:([`test_every_contract_cell_is_written_as_something_this_scan_can_read`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:680-689) asserts
+  cit:([`unreadable_contract_writes`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:385-399) `unreadable_contract_writes() == []`. Every value reaching a **typed** writer
+  cit:(["TYPED_CONTRACT_WRITERS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:169-169) must be an
   expression the scan can enumerate: a bare string constant, a conditional between two readable
   branches, or an attribute read — the last being how a lifecycle write says "leave this cell as
   it was" (`contract.integration_status`). See `_readable_expression` cit:([`_readable_expression`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:377-390). `ContractTask`
-  is excluded on purpose cit:(["is excluded on purpose"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:176-176): its two vocabulary fields are plain `str` because they are a
+  is excluded on purpose cit:(["is excluded on purpose"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:166-166): its two vocabulary fields are plain `str` because they are a
   *request*, narrowed at runtime by `_task_vocabulary` and pinned by `ContractBoundaryTests`.
 
-cit:([`test_the_typed_writer_moves_only_the_cells_it_is_handed`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:669-681) holds `amend_contract` to
+cit:([`test_the_typed_writer_moves_only_the_cells_it_is_handed`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:666-678) holds `amend_contract` to
 `replace` semantics: an omitted cell keeps its value, a given one moves, nothing else changes.
 
 Where the scan is exact the assertion is set **EQUALITY**, which also catches the other direction —
 a declared member no producer can ever emit:
 
-- cit:([`test_every_next_guidance_literal_validates_at_its_wire_field`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:694-709):
-  cit:(["def guidance_next_moves"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:410-410) `guidance_next_moves()` == `set(get_args(NextOperation))` / `set(get_args(NextTool))`.
-- cit:([`test_every_phase_the_guidance_module_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:711-720): the `phase` literals
-  cit:([`_dict_literal_values`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:432-455) reads out of `worktrees/modules/guidance.py` ==
+- cit:([`test_every_next_guidance_literal_validates_at_its_wire_field`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:691-706):
+  cit:(["def guidance_next_moves"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:402-402) `guidance_next_moves()` == `set(get_args(NextOperation))` / `set(get_args(NextTool))`.
+- cit:([`test_every_phase_the_guidance_module_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:708-717): the `phase` literals
+  cit:([`_dict_literal_values`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:425-448) reads out of `worktrees/modules/guidance.py` ==
   `set(get_args(WorktreePhase))`. That helper reads **both** dict spellings (`{"phase": "x"}` and
   `dict(phase="x")`), because reading only the first left a producer shape invisible.
 - the seven that had the identical construction but had not drifted yet, each
   measured produced-from-source == declared: `RepoSummary.state` ← `kernel.git_facts.RepoState`
-  cit:([`test_every_repo_state_the_git_facts_reader_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:744-754); `BranchFreshness.state` ← `kernel.git_freshness.FreshnessState`
-  cit:([`test_every_freshness_state_the_git_reader_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:756-765);
+  cit:([`test_every_repo_state_the_git_facts_reader_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:741-751); `BranchFreshness.state` ← `kernel.git_freshness.FreshnessState`
+  cit:([`test_every_freshness_state_the_git_reader_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:753-762);
   `DriftCheckResponse.status` ← the drift summary's own dict literals, now one declaration serving
-  both the packet and the tool cit:([`test_every_drift_status_validates_at_both_of_its_wire_models`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:767-776); `FileRead.status` ← `application.read_files`
-  `_resolve_onboarding`'s returned tuple cit:([`test_every_onboarding_status_the_read_entry_point_returns_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:778-785); and the three `models.terminal` response
-  vocabularies for `spawn_agent_session` / `session_retire` / `session_rename` cit:([`test_every_spawn_status_the_tool_can_return_validates`, `test_every_retire_status_the_tool_writes_validates`, `test_every_rename_status_the_tool_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:787-803; mcp/tests/test_wire_vocabulary_exhaustiveness.py:805-812; mcp/tests/test_wire_vocabulary_exhaustiveness.py:814-820).
+  both the packet and the tool cit:([`test_every_drift_status_validates_at_both_of_its_wire_models`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:764-773); `FileRead.status` ← `application.read_files`
+  `_resolve_onboarding`'s returned tuple cit:([`test_every_onboarding_status_the_read_entry_point_returns_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:775-782); and the three `models.terminal` response
+  vocabularies for `spawn_agent_session` / `session_retire` / `session_rename` cit:([`test_every_spawn_status_the_tool_can_return_validates`, `test_every_retire_status_the_tool_writes_validates`, `test_every_rename_status_the_tool_writes_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:784-800; mcp/tests/test_wire_vocabulary_exhaustiveness.py:802-809; mcp/tests/test_wire_vocabulary_exhaustiveness.py:811-817).
 
 The reading helpers are deliberately narrow so the scan cannot lie in the expensive direction:
 cit:([`_value_literals`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:471-484) returns only strings an expression can *evaluate* to and never a
-comparison operand; cit:([`_dataclass_field_writes`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:522-540) reads the field's positional index off
-the class body and also follows the same-named local both git readers assign; cit:([`_builder_statuses`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:583-604) follows a refusal builder handed a variable through the first cell of the table its
+comparison operand; cit:([`_dataclass_field_writes`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:517-535) reads the field's positional index off
+the class body and also follows the same-named local both git readers assign; cit:([`_builder_statuses`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:579-600) follows a refusal builder handed a variable through the first cell of the table its
 function walks, which is how two of the thirteen spawn statuses are reached at all.
 
-#### cit:([`AdvertisedVocabularyTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:823-881) — the published input contract
+#### cit:(["class AdvertisedVocabularyTests(unittest.TestCase):"], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45) — the published input contract
 
 This class reads vocabularies **out of a tool's own docstring, by AST**, and holds them to the
 published output contract:
 
-- cit:([`_advertised_workflow_kinds`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1255-1260) parses `worktree_start`'s docstring in
+- cit:([`_advertised_workflow_kinds`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:478-483) parses `worktree_start`'s docstring in
   `mcp/registration/worktrees.py` with `re.findall(r"'([a-z-]+-task)'", …)`.
-  cit:([`test_the_workflow_kinds_advertised_and_declared_are_the_same_set`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:826-843) asserts it EQUAL
+  cit:([`test_the_workflow_kinds_advertised_and_declared_are_the_same_set`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:48-65) asserts it EQUAL
   to `set(get_args(WorkflowKind))` **and** to `{"light-task", "chat-task"}`. Held only one way,
   the alias could grow a member no tool advertises and no writer emits — which is exactly what had
   happened: `WorkflowKind` carried a bare `chat` and `light` beside `chat-task` and `light-task`,
   the un-reconciled union of the old hand-written copy and the new one, with zero occurrences
   across the 213 contracts on disk.
-- cit:([`_advertised_statuses`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:615-632) reads `mcp/registration/sessions.py`: the closing
+- cit:([`_advertised_statuses`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:612-629) reads `mcp/registration/sessions.py`: the closing
   `Status …` roster plus any inline `status 'x'` mention in the prose above it, and nothing else —
   the backticked `dispatch-brief` in `spawn_agent_session` is a message kind, and reading it as a
   status would assert the existence of one that was never meant to exist.
-  cit:([`test_every_status_the_session_tools_roster_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:845-867) asserts docstring ==
+  cit:([`test_every_status_the_session_tools_roster_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:67-89) asserts docstring ==
   response enum for `session_retire` and `session_rename`, and for `spawn_agent_session` **pins
   the difference rather than tolerating it**: `vocabulary - advertised == {"leaf-ref-not-found",
   "leaf-ref-ambiguous"}` — two statuses that are producible and undocumented.
-- cit:([`test_every_memory_mode_the_contract_accepts_validates_on_both_fields`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:869-881): one packet
+- cit:([`test_every_memory_mode_the_contract_accepts_validates_on_both_fields`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:91-103): one packet
   reports the mode twice (`WorktreeSummary.memoryMode` and `MemorySummary.mode`); both copies must
   accept `VALID_MEMORY_MODES`.
 
 #### The behavioural halves
 
-- cit:([`GuidanceWalkTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:240-304) drives one contract per `lifecycle_guidance` branch, in the
+- cit:([`GuidanceWalkTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294) drives one contract per `lifecycle_guidance` branch, in the
   order the machine tries them cit:([`_phases`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:248-274), and crosses each result through
-  `WorktreeSummary` with cit:([`cross_the_wire`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:222-237) — the same field-by-field projection
-  production does, filtered to `GUIDANCE_WIRE_KEYS` cit:(["GUIDANCE_WIRE_KEYS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:161-161). It pins the two gaps that were
+  `WorktreeSummary` with cit:([`cross_the_wire`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:212-227) — the same field-by-field projection
+  production does, filtered to `GUIDANCE_WIRE_KEYS` cit:(["GUIDANCE_WIRE_KEYS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:151-151). It pins the two gaps that were
   measured writable-and-unrepresentable (`request_carryover_decision` /
   `memory_carryover_apply`), the omission of `nextTool` on a done phase, and every writable
   `cleanup` value.
-- cit:([`RecoveryGuidanceTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:884-919) holds the *other* side of the vocabulary split so it cannot
+- cit:([`RecoveryGuidanceTests`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:106-141) holds the *other* side of the vocabulary split so it cannot
   be undone by accident: `recovery_guidance` emits the same four keys in the same order, omits
   `nextRequiredArgs` when there are none — and its vocabulary must **not** validate at
   `WorktreeSummary`.
-- cit:([`ContractBoundaryTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:922-1222) is the other half of the same guarantee, and the one place
+- cit:(["class ContractBoundaryTests(unittest.TestCase):"], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144) is the other half of the same guarantee, and the one place
   tolerance is the correct answer. `load_contract` is the single entry point of
   `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_sync`,
   `worktree_abandon` and `worktree_status`, **none** of which catches `ContractError`, so one
@@ -163,28 +163,28 @@ published output contract:
   `WorktreeSummary.unknownContractCells` (`OFF_VOCABULARY_CELLS`;
   `test_every_vocabulary_cell_degrades_rather_than_stranding_the_task`); the
   **writer** refuses, reachable only through a deliberate `cast`
-  cit:([`test_the_writer_refuses_what_the_reader_tolerated`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1056-1068). `memory_mode` is the one cell
+  cit:([`test_the_writer_refuses_what_the_reader_tolerated`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:278-290). `memory_mode` is the one cell
   whose fallback is *inferred* rather than declared — a recorded memory worktree is an external
-  topology cit:([`test_an_unreadable_memory_mode_degrades_to_the_topology_on_disk`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1021-1044). A rewrite by any lifecycle tool heals the file, and that is the recovery
-  path cit:([`test_a_rewrite_heals_the_file_and_that_is_the_recovery_path`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1046-1054). Every refusal names the contract file it was reading cit:([`test_every_refusal_names_the_contract_it_was_reading`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1080-1109), and the
-  refusal reaches `worktree_status` as a payload rather than a traceback cit:([`test_the_invalid_contract_payload_carries_the_file_to_open`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1150-1162).
-  cit:([`test_a_healthy_contract_omits_the_next_required_args_it_has_none_of`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1205-1222) pins the
+  topology cit:([`test_an_unreadable_memory_mode_degrades_to_the_topology_on_disk`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:243-266). A rewrite by any lifecycle tool heals the file, and that is the recovery
+  path cit:([`test_a_rewrite_heals_the_file_and_that_is_the_recovery_path`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:268-276). Every refusal names the contract file it was reading cit:([`test_every_refusal_names_the_contract_it_was_reading`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:302-331), and the
+  refusal reaches `worktree_status` as a payload rather than a traceback cit:([`test_the_invalid_contract_payload_carries_the_file_to_open`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:372-384).
+  cit:([`test_a_healthy_contract_omits_the_next_required_args_it_has_none_of`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:427-444) pins the
   declared wire shape: measured across the 213 contracts on disk, **48 responses that carried
   `"nextRequiredArgs": []` now omit the key**.
-- cit:([`ProducerWireCrossingTests`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1225-1252) does for the two `kernel` readers what
+- cit:([`ProducerWireCrossingTests`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474) does for the two `kernel` readers what
   `GuidanceWalkTests` does for the phase machine, and stays offline: an absent repo is answered
   before any subprocess runs, and the freshness read is told not to fetch.
 
 ### Conventions
 
-`sys.path.insert(0, mcp/src)` **and** `mcp/tests` before package imports cit:(["MCP_SRC =", "MCP_TESTS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:106-107). Vocabulary
-membership is asserted through `_accepts(model, base, field, value)` cit:([`_accepts`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:191-196) — a
+`sys.path.insert(0, mcp/src)` **and** `mcp/tests` before package imports cit:(["MCP_SRC =", "MCP_TESTS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:109-110). Vocabulary
+membership is asserted through `_accepts(model, base, field, value)` cit:([`_accepts`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:181-186) — a
 `model_validate` over a minimal base dict with only the field under test undecided
-(`REPO_BASE` cit:(["REPO_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:467-467) / `SESSION_BASE` cit:(["SESSION_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:468-468)) — rather than by reading the alias, so the assertion is
+(`REPO_BASE` cit:(["REPO_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:460-460) / `SESSION_BASE` cit:(["SESSION_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:461-461)) — rather than by reading the alias, so the assertion is
 about the wire model and not about the constant beside it. Every scan is source-reading, never
-import-time reflection: cit:([`_module_tree`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:458-460) re-parses one module by repo-relative
+import-time reflection: cit:([`_module_tree`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:451-453) re-parses one module by repo-relative
 path, `_module_trees()` walks the whole package. Contract fixtures go through
-`_contract(root, **overrides)` cit:([`_contract`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:199-219), which builds one fully-populated `WorktreeContract` and then
+`_contract(root, **overrides)` cit:([`_contract`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:189-209), which builds one fully-populated `WorktreeContract` and then
 `replace`s — the test module is outside the package, so the no-`replace` rule does not apply to it.
 
 ### Invariants And Boundaries
@@ -243,7 +243,7 @@ themselves.
 | Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:45-72 |
 | Git facts, freshness, onboarding-read, and drift-status producers. | `git_facts_to_packet`; `freshness_to_packet`; `_resolve_onboarding`; `run_drift_summary` | mcp/src/agents_remember/application/read_files.py:209-238; mcp/src/agents_remember/kernel/git_facts.py:104-115; mcp/src/agents_remember/kernel/git_freshness.py:158-169; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The suite's own producer scan and behavioural test classes. | `ProducedLiteralTests`; `AdvertisedVocabularyTests`; `GuidanceWalkTests`; `RecoveryGuidanceTests`; `ContractBoundaryTests`; `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:240-304; mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-820; mcp/tests/test_wire_vocabulary_exhaustiveness.py:823-881; mcp/tests/test_wire_vocabulary_exhaustiveness.py:884-919; mcp/tests/test_wire_vocabulary_exhaustiveness.py:922-1222; mcp/tests/test_wire_vocabulary_exhaustiveness.py:1225-1252 |
+| The suite's own producer scan and behavioural test classes. | `ProducedLiteralTests`; "class AdvertisedVocabularyTests(unittest.TestCase):"; `GuidanceWalkTests`; `RecoveryGuidanceTests`; "class ContractBoundaryTests(unittest.TestCase):"; `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:106-141; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
 
 ## Cross-Repo References
 
@@ -252,9 +252,11 @@ and docstring this suite reads lives in `mcp/src/agents_remember/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found — the whole import surface is same-repository. | `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:1225-1252 |
+| No meaningful cross-repo references found — the whole import surface is same-repository. | `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-04T09:54:46+02:00 — 260731-EFA-L6 S18-B07 second bounded correction: made package traversal, exemption branches, readable-expression behavior, base dictionaries, and the bounded history citations checker-visible; same-reviewer delta pending.
 
 - 2026-08-02T18:15:05+02:00 — 260731-EFA-L6 curator W1-B09 resumed: repaired 1 citation finding and normalized 4 citation ranges; scoped recheck clean (0 findings).
@@ -272,14 +274,14 @@ and docstring this suite reads lives in `mcp/src/agents_remember/`.
   has no such row — all four of its rows name pyright (three) or the runtime
   `_task_vocabulary` narrowing (one), and the scan appears only as the measurement laid beside
   them. This card states what the source says. Recorded `ProducedLiteralTests`' derivation from the
-  producers' source rather than from the alias cit:(["def produced_literals"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:323-323), the two rules that
+  producers' source rather than from the alias cit:(["def produced_literals"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:313-313), the two rules that
   make pyright total — no `dataclasses.replace` may carry one of the six contract-cell keywords
-  (`contract_cells_written_through_replace` cit:([`contract_cells_written_through_replace`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:347-374); typeshed's `**changes: Any` is
+  (`contract_cells_written_through_replace` cit:([`contract_cells_written_through_replace`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:338-365); typeshed's `**changes: Any` is
   the reason), and every value at a typed writer must be a statically readable expression
-  (`unreadable_contract_writes` cit:([`unreadable_contract_writes`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:393-407)) — plus the declaring-module exemption
-  cit:([`VOCABULARY_DECLARING_MODULE`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:184-184), applied by both scan branches:
-  cit:(["The declaring module is exempt because", "its own parameters did the checking one line earlier. \"\"\" offenders: list[str] = [] for path, tree in _module_trees(): if path.as_posix().endswith(VOCABULARY_DECLARING_MODULE): continue"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:361-367) and
-  cit:(["def unreadable_contract_writes() -> list[str]: \"\"\"Contract-vocabulary keywords at a typed writer whose value this scan cannot read.\"\"\" offenders: list[str] = [] for path, tree in _module_trees(): if path.as_posix().endswith(VOCABULARY_DECLARING_MODULE): continue"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:393-398). `AdvertisedVocabularyTests` reads its docstring by AST, including the pinned
+  (`unreadable_contract_writes` cit:([`unreadable_contract_writes`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:385-399)) — plus the declaring-module exemption
+  cit:([`VOCABULARY_DECLARING_MODULE`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:174-174), applied by both scan branches:
+  cit:(["The declaring module is exempt because", "its own parameters did the checking one line earlier. \"\"\" offenders: list[str] = [] for path, tree in _module_trees(): if path.as_posix().endswith(VOCABULARY_DECLARING_MODULE): continue"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:352-358) and
+  cit:(["def unreadable_contract_writes() -> list[str]:  # pragma: no cover"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:385-385). `AdvertisedVocabularyTests` reads its docstring by AST, including the pinned
   `{"leaf-ref-not-found", "leaf-ref-ambiguous"}` difference, and the behavioural halves are covered by
   `GuidanceWalkTests`, `RecoveryGuidanceTests`, `ContractBoundaryTests`, and `ProducerWireCrossingTests`.
   Verification metadata pinned to the pre-leaf source authority

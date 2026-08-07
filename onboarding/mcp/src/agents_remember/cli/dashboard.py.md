@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-04T03:03+02:00                       |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`   |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`   |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -174,10 +174,10 @@ against the same coordination root as a live MCP server. Closing it means declar
 | This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:84-158; mcp/src/agents_remember/cli/dashboard.py:211-232; mcp/src/agents_remember/cli/dashboard.py:246-267; mcp/src/agents_remember/cli/dashboard.py:270-297 |
 | Daemon CLI dispatch tests (status/stop/port precedence/failure exits/sim rejection). | `CliDaemonDispatchTests` | mcp/tests/test_dashboard_daemon.py:421-503 |
 | Discovery unit tests (hits, precedence, template skip, miss error). | `DiscoverConfigTests` | mcp/tests/test_cli_discovery.py:42-142 |
-| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:137-148 |
 | The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/mcp/config.py:113-137 |
-| Tests covering the serving CLI (including the `--reload` path). | `CliRunTests` | mcp/tests/test_serving.py:1600-1699 |
+| Tests covering the serving CLI (including the `--reload` path). | `CliRunTests` | mcp/tests/test_serving_cli.py:211-310 |
 | The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84 |
 | The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
 

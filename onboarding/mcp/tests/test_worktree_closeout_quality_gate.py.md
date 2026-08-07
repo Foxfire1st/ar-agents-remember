@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T08:55+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -256,7 +256,7 @@ The suite proves the adapter and its production closeout call sites together.
 | The unannotated call sites the spy guards, both passing `contract.code_worktree` and `diff_base=contract.code_base_commit`. The apply path now reaches the gate through `_gate_staged_code`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
 | `_gate_staged_code` under test: both refusals, then the mixed reset, then `add -A`, then the gate — and the recorded reasoning for the ordering and for having no rollback. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
 | The two preconditions themselves: the linked-worktree check and the unmerged-index check. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout.py:721-760; mcp/src/agents_remember/worktrees/modules/closeout.py:763-786 |
-| The scope derivation the created-file cases exercise for real — `git ls-files` over the index is why staging changes what the gate sees. | `derive_scope`; `posix_args` | mcp/src/agents_remember/code_quality/check.py:54-55; mcp/src/agents_remember/code_quality/check.py:181-182 |
+| The scope derivation the created-file cases exercise for real — `git ls-files` over the index is why staging changes what the gate sees. | `derive_scope`; `posix_args` | mcp/src/agents_remember/code_quality/check.py:54-55; mcp/src/agents_remember/code_quality/check.py:204-205 |
 | `GIT_REPOSITORY_SELECTOR_ENV` — the eight names the selector test plants and then requires absent — and `git_environment`, which removes them. | `GIT_REPOSITORY_SELECTOR_ENV`; `git_environment` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82 |
 
 ## Cross-Repo References

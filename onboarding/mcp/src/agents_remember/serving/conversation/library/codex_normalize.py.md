@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/codex_normalize.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ on fake native payloads; the shared primitives module owns the capping/extractio
 | --- | --- | --- |
 | Codex reads normalize items with ordinals, windows, roles, blocks, and provenance through the strict contract validators. | `CodexLibraryTests` | mcp/tests/test_conversation_library_ports.py:221-410 |
 | Shared capping, provenance, and text-extraction primitives this parser builds on. | `capped_text`, `native_provenance`, `text_content_parts` | mcp/src/agents_remember/serving/conversation/library/normalize_common.py:18-23; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:26-31; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:51-56 |
-| The normalized item/block/provenance grammar this parser targets. | `ConversationItem` | mcp/src/agents_remember/serving/conversation/models.py:337-426 |
+| The normalized item/block/provenance grammar this parser targets. | "class ConversationItem(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_blocks.py:158-158 |
 
 ## Cross-Repo References
 

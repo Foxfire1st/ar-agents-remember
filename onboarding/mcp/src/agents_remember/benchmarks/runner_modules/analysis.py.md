@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/analysis.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.analysis import *" | mcp/src/agents_remember/benchmarks/runner.py:11-11 |
 | The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:575-3211; mcp/tests/test_worktree_support.py:3287-3287 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:539-614; mcp/tests/test_worktree_support_benchmark.py:110-110 |
 
 ## Cross-Repo References
 

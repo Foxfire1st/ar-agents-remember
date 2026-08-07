@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`        |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`        |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `test_terminal_opener.py` covers the shared hosted-session opener (`serving.terminal_opener`) — the
 ONE spawn path both the dashboard `POST /api/terminal/{session}` route and the agent-facing
-`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:620-672) cit:([`_open_terminal_response`], mcp/src/agents_remember/serving/app.py:1461-1550) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
+`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:620-672) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:221-221) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
 (records the `ensure` call, no real tmux) + a real JSON catalog, pinning the leaf-claim / provenance /
 env-seed behaviour both call paths inherit — and, since 260703-L16, the per-harness knob→argv
 application (`KnobApplicationTests`).
@@ -76,7 +76,7 @@ cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalo
   from the env's `AR_SPAWN_ROLE`; the knob env was seeded into the
   detached tmux spawn; and the provenance survives the catalog camelCase round-trip
   (`spawnedBySession` / `spawnedByLifecycle` / `spawnRole`).
-- **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, cit:([`test_reopen_preserves_spawn_role_and_hand_open_records_none`], mcp/tests/test_terminal_opener.py:236-249)): a
+- **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, cit:([`test_reopen_preserves_spawn_role_and_hand_open_records_none`], mcp/tests/test_terminal_opener.py:295-308)): a
   role-less re-open keeps the recorded `spawn_role` (write-once, like the spawned-by pair), and a
   hand-opened session (no env role) records `None` with `spawnRole` absent from its JSON.
 
@@ -163,6 +163,8 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 - A dead pre-bridge row is replaced by a **controlled spawn** rather than being reattached to.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: recorded that two prose citations were converted and seven rangeless internal rows were deleted; no deleted row was retained as anchored evidence. Verification metadata unchanged.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.

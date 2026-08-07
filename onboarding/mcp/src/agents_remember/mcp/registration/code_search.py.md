@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/code_search.py`       |
 | doc_type               | `file-level-onboarding`                                         |
 | lastUpdated            | 2026-08-02T01:05+02:00                                          |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                      |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                      |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                   |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ contract rather than forwarding native arguments.
 | --- | --- | --- |
 | The payload builders these forward to. | `grepai_search_payload`; `cgc_symbol_search_payload` | mcp/src/agents_remember/mcp/tools/providers.py:129-139; mcp/src/agents_remember/mcp/tools/providers.py:155-165 |
 | `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. | "class ProviderQueryScope:"; "class GrepaiRepoScope:"; "class GrepaiSearchQuery:"; "class GrepaiTraceQuery:" | mcp/src/agents_remember/application/provider_tools.py:106-106; mcp/src/agents_remember/application/provider_tools.py:121-121; mcp/src/agents_remember/application/provider_tools.py:140-140; mcp/src/agents_remember/application/provider_tools.py:149-149 |
-| Query/scope splitting proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
+| Query/scope splitting proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

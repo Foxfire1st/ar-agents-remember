@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_helper_behaviour.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`   |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`   |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -53,12 +53,12 @@ cadence assertions exact.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The image and retire helpers under test. | `_looks_like_image`; `_retire_response` | mcp/src/agents_remember/serving/app.py:362-373; mcp/src/agents_remember/serving/app.py:1754-1807 |
+| The image and retire helpers under test. | "def _looks_like_image(body: bytes, ext: str) -> bool:"; "def _retire_response(" | mcp/src/agents_remember/serving/_app_common.py:159-159; mcp/src/agents_remember/serving/_app_terminal_routes.py:514-514 |
 | The repository diff helper under test. | `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:433-474 |
 | The current-model helper under test. | `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 | The Claude activity helper under test. | `_status_activity` | mcp/src/agents_remember/serving/claude_stream_state.py:781-788 |
 | The daemon readiness helper under test. | `_wait_ready` | mcp/src/agents_remember/serving/daemon.py:378-390 |
-| The evidence-page parser under test. | `_evidence_page` | mcp/src/agents_remember/serving/harness_control_client.py:870-917 |
+| The evidence-page parser under test. | "def _evidence_page(result: object, *, expected_bridge_epoch" | mcp/src/agents_remember/serving/_harness_control_parsing.py:348-348 |
 | The heap diagnostic frame helper under test. | `_frames` | mcp/src/agents_remember/serving/heap_diag.py:66-75 |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-16T07:25+02:00                  |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -105,13 +105,13 @@ references below use source evidence rather than treating this prose as runtime 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults. | `resolved_role_knobs`, `_parse_harnesses` | mcp/src/agents_remember/kernel/agentic_settings.py:378-399; mcp/src/agents_remember/kernel/agentic_settings.py:683-715 |
+| The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults. | `resolved_role_knobs`, "def _parse_harnesses(" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:342-363; mcp/src/agents_remember/kernel/_agentic_settings_harness.py:26-26 |
 | Built-in ids are registry identities, while native model validation is dynamic rather than a registry enum. | `find_harness`, `invalid_model_detail` | mcp/src/agents_remember/serving/harnesses.py:61-70; mcp/src/agents_remember/serving/harnesses.py:160-172 |
 | Spawn rejects caller spend overrides before side effects and sends settings-resolved model/effort through one typed native runner payload. | `_caller_spend_override_refusal`, `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:527-564; mcp/src/agents_remember/application/terminal_tools.py:769-842 |
 | Claude initialize and `system/init` parse different required fields; the catalog request is a separate control message. | `parse_control_initialization`, `parse_system_initialization`, `list_models_request` | mcp/src/agents_remember/serving/claude_stream_protocol.py:156-161; mcp/src/agents_remember/serving/claude_stream_protocol.py:219-232; mcp/src/agents_remember/serving/claude_stream_protocol.py:235-263 |
 | Startup orders correlated initialize/bootstrap before a separate correlated dynamic catalog request. | `negotiate_claude_startup`, `negotiate_claude_catalog` | mcp/src/agents_remember/serving/claude_stream_startup.py:59-81; mcp/src/agents_remember/serving/claude_stream_startup.py:84-111 |
 | Catalog parsing preserves native model keys and nests each effort menu under its owning model row. | `parse_list_models_response`, `_parse_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75 |
-| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | `test_level_override_deep_merges_harness_inherited`, `test_legacy_model_effort_args_are_refused_instead_of_beating_settings`, `test_spend_env_keys_are_refused_instead_of_overriding_settings` | mcp/tests/test_spawn_agent_session.py:991-1007; mcp/tests/test_spawn_agent_session.py:1039-1048; mcp/tests/test_spawn_agent_session.py:1074-1090 |
+| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | `test_level_override_deep_merges_harness_inherited`, `test_legacy_model_effort_args_are_refused_instead_of_beating_settings`, `test_spend_env_keys_are_refused_instead_of_overriding_settings` | mcp/tests/test_spawn_agent_session_settings.py:235-251; mcp/tests/test_spawn_agent_session_settings.py:283-292; mcp/tests/test_spawn_agent_session_settings.py:318-334 |
 
 ## Cross-Repo References
 

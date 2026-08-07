@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-01T10:40+02:00                             |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`         |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ The enforcement for the declared HTTP response contract (`serving/response_contr
 
 It exists because **declaration-only checks do not establish runtime response behavior**. The route
 inventory, hazard, per-route conformance, and declared-surface-coverage suites below drive actual
-responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; `DeclaredSurfaceCoverageTests`], mcp/tests/test_serving_response_conformance.py:492-624; mcp/tests/test_serving_response_conformance.py:627-695; mcp/tests/test_serving_response_conformance.py:783-1861; mcp/tests/test_serving_response_conformance.py:2432-2489)
+responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):"], mcp/tests/test_serving_response_conformance.py:500-632; mcp/tests/test_serving_response_conformance.py:635-704; mcp/tests/test_serving_response_conformance.py:792-899; mcp/tests/test_serving_response_conformance_live.py:484-484)
 
 ## Code Commentary
 
@@ -35,19 +35,19 @@ by_name=False)`. The field-name and conversation tests cited below exercise that
 boundary directly.
 
 cit:([`field_name_form`], mcp/tests/test_serving_response_conformance.py:234-248) rewrites a real body into field-name form so the rule is *proved*
-load-bearing rather than asserted. cit:([`test_a_field_name_body_fails_the_declared_contract`], mcp/tests/test_serving_response_conformance.py:1146-1171)
+load-bearing rather than asserted. cit:([`test_a_field_name_body_fails_the_declared_contract`], mcp/tests/test_serving_response_conformance_cases_1.py:275-300)
 drives
 `GET /api/terminal/sessions`, shows the route really answers `tmuxName`, shows the old plain
 validation **accepts** the rewritten `tmux_name` body, and shows `validate_wire` rejects it.
-cit:([`test_the_conversation_wire_is_pinned_to_camel_case_too`], mcp/tests/test_serving_response_conformance.py:1173-1193)
+cit:([`test_the_conversation_wire_is_pinned_to_camel_case_too`], mcp/tests/test_serving_response_conformance_cases_1.py:302-322)
 pins the same axis on the 25
 conversation routes, which dump `by_alias=True` by hand.
 
 #### `DeclaredSurfaceCoverageTests` — the score, stated as a number
 
 cit:([`declared_pairs`], mcp/tests/test_serving_response_conformance.py:194-208) is the denominator: every `(method, path, status)` triple the app
-declares. cit:([`DRIVEN`], mcp/tests/test_serving_response_conformance.py:260-260) is the conformance ledger;
-cit:([`_driven_pairs`], mcp/tests/test_serving_response_conformance.py:2406-2429) re-runs the driving classes when the module was
+declares. cit:([`DRIVEN`], mcp/tests/test_serving_response_conformance.py:265-265) is the conformance ledger;
+cit:([`_driven_pairs`], mcp/tests/test_serving_response_conformance_live.py:458-481) re-runs the driving classes when the module was
 run partially, so a coverage number is never computed from a partial run.
 
 `test_the_conformance_table_accounts_for_every_declared_pair` pins three numbers,
@@ -220,8 +220,8 @@ modules, and everything that proves them lives here.
 | --- | --- | --- |
 | The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1057-1063; mcp/src/agents_remember/serving/response_contract.py:1067-1074; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The serving app factory and SSE generator under test. | `stream_events`; `create_app` | mcp/src/agents_remember/serving/app.py:315-345; mcp/src/agents_remember/serving/app.py:718-777 |
-| The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:2150-2262 |
+| The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/app.py:226-226|
+| The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
 | The producer's `_present_fields` conditionality. | `_present_fields` | mcp/src/agents_remember/serving/terminal_catalog.py:906-907 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
@@ -241,6 +241,8 @@ type is recorded separately below as an in-repo boundary.
 | The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): repaired one citation. The

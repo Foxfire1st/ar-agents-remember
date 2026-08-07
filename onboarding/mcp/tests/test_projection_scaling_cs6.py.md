@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-01T09:31+02:00 |
-| lastVerifiedCommitHash |                                                `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |                                                `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ No external documentation governs these repo-local projection scaling regression
 | The shared per-tick contract snapshot + stat-identity parse cache under test. | `ContractSnapshotCache` | mcp/src/agents_remember/observer/contract_snapshot.py:60-126 |
 | The single per-tick build in `project_and_write` the full-tick regression instruments: one shared `ContractSnapshotCache`, then exactly one `state.read(...)` pass per tick. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
 | Projection store implements lifecycle-log caching and over-budget task-document payload warnings. | `project_and_write`; `_warn_if_task_documents_payload_over_budget` | mcp/src/agents_remember/observer/projection_store.py:212-275; mcp/src/agents_remember/observer/projection_store.py:278-304 |
-| Snapshot readers implement the shared task-document cache (`_task_doc_cache` + `_iter_task_document_payloads`), the single-read gate fold (`read_gates`), and the git-status TTL cache (`STATUS_PAYLOAD_TTL_SECONDS` / `_cached_local_status`). | `_task_doc_cache`; `read_gates`; `STATUS_PAYLOAD_TTL_SECONDS`; `_cached_local_status` | mcp/src/agents_remember/observer/snapshots.py:130-130; mcp/src/agents_remember/observer/snapshots.py:136-136; mcp/src/agents_remember/observer/snapshots.py:513-547; mcp/src/agents_remember/observer/snapshots.py:783-800 |
+| Snapshot readers implement the shared task-document cache (`_task_doc_cache` + `_iter_task_document_payloads`), the single-read gate fold (`read_gates`), and the git-status TTL cache (`STATUS_PAYLOAD_TTL_SECONDS` / `_cached_local_status`). | "_task_doc_cache = TaskDocumentPayloadCache()"; "def read_gates(coordination_root: Path, *, now: datetime"; "STATUS_PAYLOAD_TTL_SECONDS = 8.0"; "def _cached_local_status(  # pragma: no cover" | mcp/src/agents_remember/observer/snapshots_impl/_common.py:26-26; mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104; mcp/src/agents_remember/observer/snapshots_impl/_common.py:32-32; mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:383-383 |
 
 ## Cross-Repo References
 
@@ -93,6 +93,8 @@ No meaningful cross-repo references found.
 landing authority while contract, guidance, and other status facts retain identity and value.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
 - 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: replaced the obsolete unbounded-payload characterization and todo with the source-proven bounded/body-free summary and on-demand-body contract.

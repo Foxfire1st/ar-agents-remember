@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/drift_snapshots.py`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-31T00:00+02:00                                 |
-| lastVerifiedCommitHash |                                                        `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                        2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                        `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |                                                        2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ drift producer, the observer projection tick, and worktree cleanup.
 | The projection-store module exposes the `project_and_write` entry. | "def project_and_write(" | mcp/src/agents_remember/observer/projection_store.py:212-212 |
 | PTS-L2 tests pin prune-key parity with and without the shared snapshot. | `ContractSnapshotSharedPassTests`, `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:590-858 |
 | Cleanup binds the `cleanup_result`. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:422-465 |
-| Tests cover shared drift-snapshot path usage by reader/producer suites and projection-time pruning of orphaned worktree snapshots (the dry-run/exact cleanup-removal coverage now lives with the worktree cleanup tests). | `DriftSnapshotReaderTests`, `DriftSnapshotProducerTests`, `test_project_and_write_prunes_orphaned_worktree_drift_snapshots`, `_write_snapshot` | mcp/tests/test_observer_projection.py:2528-2574; mcp/tests/test_observer_projection.py:2936-3010; mcp/tests/test_observer_projection.py:3145-3183; mcp/tests/test_observer_projection.py:3185-3202 |
+| Tests cover shared drift-snapshot path usage by reader/producer suites and projection-time pruning of orphaned worktree snapshots (the dry-run/exact cleanup-removal coverage now lives with the worktree cleanup tests). | `DriftSnapshotReaderTests`, `DriftSnapshotProducerTests`, `test_project_and_write_prunes_orphaned_worktree_drift_snapshots`, `_write_snapshot` | mcp/tests/test_observer_projection_ledger.py:210-284; mcp/tests/test_observer_projection_ledger.py:419-457; mcp/tests/test_observer_projection_ledger.py:459-476; mcp/tests/test_observer_projection_readers.py:156-202 |
 
 ## Cross-Repo References
 

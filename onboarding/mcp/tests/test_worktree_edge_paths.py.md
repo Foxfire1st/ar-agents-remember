@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 | `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211 |
 | `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:137-161 |
 | `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_support.py:573-3091; mcp/tests/test_worktree_sync.py:111-244; mcp/tests/test_worktree_contract_lifecycle.py:51-81 |
+| The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81; mcp/tests/test_worktree_support.py:539-614; mcp/tests/test_worktree_sync.py:111-244 |
 | Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:93-180; mcp/tests/test_worktree_and_observer_helpers.py:183-231; mcp/tests/test_worktree_and_observer_helpers.py:234-348; mcp/tests/test_worktree_and_observer_helpers.py:421-526 |
 
 ## Update History

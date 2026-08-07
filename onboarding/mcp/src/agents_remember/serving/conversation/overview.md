@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 
 ## What This Area Is
 
@@ -216,14 +216,14 @@ composition and authorization contract suites.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. | "class ConversationEventEnvelope" | mcp/src/agents_remember/serving/conversation/models.py:633-633 |
-| Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. | "class ConversationEventEnvelope" | mcp/src/agents_remember/serving/conversation/models.py:633-633 |
+| Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. |"class ConversationEventEnvelope"|mcp/src/agents_remember/serving/conversation/_models_status.py:232-232|
+| Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. |"class ConversationEventEnvelope"|mcp/src/agents_remember/serving/conversation/_models_status.py:232-232|
 | Exactly two read ports separate active exact-session reads from dormant native library reads. | "class ActiveConversationPort" | mcp/src/agents_remember/serving/conversation/ports.py:27-27 |
 | Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
 | The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. | "class ConversationRuntime" | mcp/src/agents_remember/serving/conversation/runtime.py:56-56 |
 | The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | "class ConversationAuthorizationResolver" | mcp/src/agents_remember/serving/conversation/authorization.py:32-32 |
 | The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:26-26 |
-| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:718-718; mcp/src/agents_remember/serving/harness_control_api.py:182-182 |
+| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:226-226; mcp/src/agents_remember/serving/harness_control_api.py:182-182 |
 | The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. | "class WireResponse" | mcp/src/agents_remember/serving/response_contract.py:88-88 |
 | The foundation suite verifies two-port topology, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper pins, and fixture non-promotion. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:22-22 |
 | The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | `_NoSessionHost` | mcp/tests/test_conversation_runtime_composition.py:42-47 |
@@ -484,7 +484,7 @@ availability repair, not a vocabulary change.
   `enables_capabilities: Literal[False]` is at L1281). Seventh: the composition row cited
   `harness_control_api.py` L144-L162, which is `resolve_terminal_open_selection` and was wrong
   BEFORE this leaf; the claim was also wrong on its face — construction happens in
-  cit:(["def create_app"], mcp/src/agents_remember/serving/app.py:718-718), and `harness_control_api.py` L182-L195 is where the single
+  cit:(["def create_app"], mcp/src/agents_remember/serving/app.py:226-226), and `harness_control_api.py` L182-L195 is where the single
   `register_conversation_routes(app, runtime)` install call sits. Corrected the router row's
   "three behavior-empty child routers", contradicted by this same file's own text. Verification
   metadata pinned until closeout stamps the L4 commit.

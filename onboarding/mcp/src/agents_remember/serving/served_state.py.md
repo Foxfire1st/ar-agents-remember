@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/served_state.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ Two exports and one constant, all small:
 
 Both call sites are in `serving/app.py` and both are one line: `stream_events` does
 `payload.update(served_state_tail(build=build, heartbeat=supervisor_heartbeat))` under
-`if delta.event == "snapshot"` (cit:([`stream_events`, `_state_response`], mcp/src/agents_remember/serving/app.py:315-345; mcp/src/agents_remember/serving/app.py:971-996)), and `_state_response` does the same against
+`if delta.event == "snapshot"` (cit:(["async def stream_events(", "def _state_response(runtime: _ServingRuntime, if_none_match: str"], mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/_app_routes.py:72-72)), and `_state_response` does the same against
 `runtime.build` and `_supervisor_heartbeat_payload(runtime)`.
 
 ### Conventions
@@ -69,7 +69,7 @@ by declaration. The two payload types are owned by the modules that produce them
   1. **Layer.** `Projector` builds the projection at TICK time; both keys are serving-layer
      facts computed at SERVE time (`_supervisor_heartbeat_payload` is explicitly "the tick age
      at RESPONSE time"). A tick-time model cannot hold a per-response value.
-  2. **The dump memo.** `app._ProjectionBodyCache` (cit:([`_ProjectionBodyCache`], mcp/src/agents_remember/serving/app.py:261-288)) memoizes the ~1.3 MB
+  2. **The dump memo.** `app._ProjectionBodyCache` (cit:(["class _ProjectionBodyCache:"], mcp/src/agents_remember/serving/_app_common.py:58-58)) memoizes the ~1.3 MB
      projection dump per published instance *because* the volatile tail is merged onto a
      shallow copy afterwards. Projection fields would sit inside the memo and would have to be
      either stale or uncached; the memo saves a measured 13.7-16.5 ms per request.
@@ -115,7 +115,7 @@ suite rather than per-request validation.
 | The strict base this model extends: `WorkspaceProjection` with `extra="forbid"`, which is what made the two injected keys a contract violation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:976-995 |
 | The build half of the tail, and the `exclude_none` honest-unknown rule `served_state_tail` applies to it. | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
 | The heartbeat half of the tail, serialized WITHOUT `exclude_none` so a never-ticked supervisor reports explicit nulls. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
-| The two consumers: the SSE snapshot merge and the `/api/state` merge onto a copy of the memoized dump, plus the memo itself. | `stream_events`; `_state_response` | mcp/src/agents_remember/serving/app.py:315-345; mcp/src/agents_remember/serving/app.py:971-996 |
+| The two consumers: the SSE snapshot merge and the `/api/state` merge onto a copy of the memoized dump, plus the memo itself. | "async def stream_events("; "def _state_response(runtime: _ServingRuntime, if_none_match: str" | mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/_app_routes.py:72-72 |
 | The suite that validates the real route's and the real generator's output against `ServedWorkspaceProjection`, since per-request validation is deliberately not done. | `test_state_body_validates_against_the_served_model`; `test_snapshot_validates_and_delta_carries_no_tail` | mcp/tests/test_served_state_conformance.py:310-328; mcp/tests/test_served_state_conformance.py:364-394 |
 
 ## Cross-Repo References

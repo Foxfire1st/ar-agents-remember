@@ -305,7 +305,7 @@ own server contracts, so no external code path is cited as authority.
 | Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
 | Role/spawn hierarchy replacing legacy `sessionGroups`. | `sessionGroups` | dashboard/src/data/railModel.ts:119-119 |
 | The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/data/taskHierarchy.ts:43-43 |
-| The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | "GENERATED FILE", "class _TaskDocumentLifecycleMaps" | dashboard/src/types/projection.ts:1-1; mcp/src/agents_remember/observer/snapshots.py:141-141 |
+| The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | , "class _TaskDocumentLifecycleMaps:" | mcp/src/agents_remember/observer/snapshots_impl/_common.py:37-37;  |
 | The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:43-43; scripts/sync-projection-types.py:54-54 |
 
 ## Placement Decision

@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/pi_rpc/activity.jsonl` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:17+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ the stronger terminal boundary. It is consumed as one JSONL frame per line.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Event mapper. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
-| Fixture-driven tests. | `test_retry_compaction_and_agent_settled_are_not_early_idle` | mcp/tests/test_pi_rpc_adapter.py:916-947 |
+| Fixture-driven tests. | `test_retry_compaction_and_agent_settled_are_not_early_idle` | mcp/tests/test_pi_rpc_adapter_ops_2.py:79-110 |
 
 ## Cross-Repo References
 | Finding | Anchor | Source |

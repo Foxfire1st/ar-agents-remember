@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_projector_claude_agents.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,8 +101,8 @@ the installed claude runtime as recorded in the module docstring.
 | --- | --- | --- |
 | The claude mapper under test: sidechain binding registry, task_* roster grammar, unknown-vendor degrade. | `_AgentBindingRegistry` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:122-159; mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-210; mcp/src/agents_remember/serving/conversation/projectors/claude.py:286-299 |
 | The launch-flag builder and floor verdict under test. | `forward_subagent_text_supported` | mcp/src/agents_remember/serving/claude_stream_protocol.py:77-114 |
-| The reordered-binder engine companion (tool_result settling before task_started keeps the terminal phase). | `test_reordered_task_started_tagging_never_regresses_a_terminal_phase` | mcp/tests/test_conversation_active_service.py:982-1053 |
-| The flag-floor probe/relaunch flow at the adapter level. | `test_forward_subagent_text_relaunches_with_the_flag_at_or_above_the_floor` | mcp/tests/test_harness_control_claude.py:471-496 |
+| The reordered-binder engine companion (tool_result settling before task_started keeps the terminal phase). | `test_reordered_task_started_tagging_never_regresses_a_terminal_phase` | mcp/tests/test_conversation_active_service_queues.py:104-177 |
+| The flag-floor probe/relaunch flow at the adapter level. | `test_forward_subagent_text_relaunches_with_the_flag_at_or_above_the_floor` | mcp/tests/test_harness_control_claude_stream_1.py:248-273 |
 
 ## Cross-Repo References
 

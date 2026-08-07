@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/store.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`       |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -209,7 +209,7 @@ into an inode with no remaining links.
 | `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. | `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate` | mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:179-192 |
 | `evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
 | `_claim_closeout_gate` at closeout.py:513-563: the first production caller of `claim_approval`, and its call site at closeout.py:970 — one statement above the first commit, which is what makes an approval authorise one attempt rather than one success. | `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:513-563 |
-| `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed. | `read_gates` | mcp/src/agents_remember/observer/snapshots.py:513-547 |
+| `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed. | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
 
 As of cycle 5 GateStore.find(gate_id) resolves one gate id across the workspace log and every lifecycle log — the seam-decide path: the deciding seat holds only the packet-carried gate id; lifecycle ids stay server-side. Cycle 6 adds `all_current()`, the cross-lifecycle enforcement fold: it merges every gate log (workspace + all lifecycles) last-wins per gate id, so identity-addressed consumers (the integrate-side master-handover guard, which matches by the gate's `enclosure`) can see a seam gate raised on a different lifecycle than the one the consuming contract anchors.
 

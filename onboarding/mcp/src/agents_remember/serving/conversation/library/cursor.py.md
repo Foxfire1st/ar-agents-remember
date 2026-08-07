@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/cursor.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `67cad9bcdc736de70168ea9c153a0f12319a7263`|
-| lastVerifiedCommitDate |  2026-07-19T17:19:21+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ rejection; the contract module owns the branded token types this authority mints
 | List/read cursors round-trip and reject tampering and wrong-purpose use. | `test_list_cursor_round_trip_and_tamper_rejection`, `test_read_cursor_round_trip_and_wrong_purpose_rejection` | mcp/tests/test_conversation_library_cursor.py:37-50; mcp/tests/test_conversation_library_cursor.py:53-66 |
 | Conversation keys and resume targets round-trip and reject garbage/foreign signatures. | `test_conversation_key_round_trip_and_garbage_rejection`, `test_resume_target_round_trip_and_garbage_rejection` | mcp/tests/test_conversation_library_cursor.py:77-90; mcp/tests/test_conversation_library_cursor.py:93-110 |
 | Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. | `identity_digest`, `catalog_generation` | mcp/src/agents_remember/serving/conversation/library/cursor.py:72-87; mcp/src/agents_remember/serving/conversation/library/cursor.py:89-98 |
-| The purpose-branded token types and binding models are declared in the parent contract. | `LibraryCursorBinding`, `LibraryKeyBinding` | mcp/src/agents_remember/serving/conversation/models.py:154-158; mcp/src/agents_remember/serving/conversation/models.py:161-165 |
+| The purpose-branded token types and binding models are declared in the parent contract. | "class LibraryCursorBinding(WireModel):", "class LibraryKeyBinding(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:137-137; mcp/src/agents_remember/serving/conversation/_models_wire.py:144-144 |
 
 ## Cross-Repo References
 

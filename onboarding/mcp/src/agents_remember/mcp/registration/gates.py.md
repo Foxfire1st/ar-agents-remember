@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/gates.py`       |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-07-31T15:31+02:00                                    |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ gates. Read-only.
 | `GateRaise`, `GateWait`, and the create/block/wait junction. | `GateRaise`; `GateWait`; `lifecycle_gate_tool` | mcp/src/agents_remember/application/gate_tools.py:188-203; mcp/src/agents_remember/application/gate_tools.py:216-228; mcp/src/agents_remember/application/gate_tools.py:384-454 |
 | `GateAnchor`, `GateRequest`, `GateVerdict`. | `GateAnchor`; `GateRequest`; `GateVerdict` | mcp/src/agents_remember/controlplane/records.py:128-136; mcp/src/agents_remember/controlplane/records.py:139-146; mcp/src/agents_remember/controlplane/records.py:149-163 |
 | The configured delegation policy checked on a role-attributed decision. | `decision_role_for_gate` | mcp/src/agents_remember/controlplane/gate_policy.py:154-159 |
-| Both attribution paths and the `wait=false` timeout proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
+| Both attribution paths and the `wait=false` timeout proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

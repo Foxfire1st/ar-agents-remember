@@ -142,8 +142,8 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:376-389 |
-| What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
+| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:390-403 |
+| What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
 

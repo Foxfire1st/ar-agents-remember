@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/supervisor_heartbeat.py`    |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-01T08:24+02:00                                        |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                    |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                    |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ write it straight into an already-dumped, already-validated projection body unde
 `serving/served_state.py` declares the key on `ServedWorkspaceProjection`. No bytes moved: the
 model is `extra="forbid"` with the same seven camelCase field names the dict carried
 (`lastTickAt`, `ageSeconds`, `staleCutoffSeconds`, `stale`, `pendingInboxCount`,
-`redeliverableInboxCount`, `lastSweepDurationSeconds`) cit:([`_supervisor_heartbeat_payload`], mcp/src/agents_remember/serving/app.py:949-968) cit:([`ServedWorkspaceProjection`], mcp/src/agents_remember/serving/served_state.py:47-55).
+`redeliverableInboxCount`, `lastSweepDurationSeconds`) cit:(["def _supervisor_heartbeat_payload(runtime: _ServingRuntime) -> SupervisorHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185) cit:([`ServedWorkspaceProjection`], mcp/src/agents_remember/serving/served_state.py:47-55).
 
 It is deliberately serialized **without** `exclude_none` (`served_state_tail` dumps it plainly,
 while it dumps the build stamp with `exclude_none=True`): a supervisor that has never ticked
@@ -125,7 +125,7 @@ source is the leaf task doc (R5), not an external spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application computes response-time heartbeat age/staleness, while the served body declares the key and `served_state_tail` serializes the payload without `exclude_none`. | "def _supervisor_heartbeat_payload"; `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/app.py:949-968; mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
+| The application computes response-time heartbeat age/staleness, while the served body declares the key and `served_state_tail` serializes the payload without `exclude_none`. |"def _supervisor_heartbeat_payload"; `ServedWorkspaceProjection`; `served_state_tail`|mcp/src/agents_remember/serving/_app_lifespan.py:185-185; mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78|
 
 ## Cross-Repo References
 

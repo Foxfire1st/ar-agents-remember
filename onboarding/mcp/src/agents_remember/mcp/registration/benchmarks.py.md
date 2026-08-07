@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/benchmarks.py`       |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-08-02T01:05+02:00                                         |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                     |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                     |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ unless the MCP settings set `benchmarksEnabled`.
 | The payload builders these forward to. | `codex_benchmark_prepare_payload`; `codex_benchmark_run_payload` | mcp/src/agents_remember/mcp/tools/benchmark.py:22-31; mcp/src/agents_remember/mcp/tools/benchmark.py:34-44 |
 | `BenchmarkSelection`, `BenchmarkPreparation`, `CodexBenchmarkRun`, and the `benchmarksEnabled` refusal. | `BenchmarkSelection`; `BenchmarkPreparation`; `CodexBenchmarkRun`; `_benchmarks_disabled` | mcp/src/agents_remember/application/benchmark_tools.py:17-25; mcp/src/agents_remember/application/benchmark_tools.py:28-37; mcp/src/agents_remember/application/benchmark_tools.py:40-51; mcp/src/agents_remember/application/benchmark_tools.py:162-170 |
 | `CODEX_BENCHMARK_SANDBOX` and the sandbox allowlist. | `CODEX_BENCHMARK_SANDBOX` | mcp/src/agents_remember/models/benchmarks.py:13-13 |
-| The preview default and sandbox value proved through a live server. | `test_codex_benchmark_run_defaults_to_a_preview_in_codex_own_sandbox` | mcp/tests/test_mcp_registration_wiring.py:970-979 |
+| The preview default and sandbox value proved through a live server. | `test_codex_benchmark_run_defaults_to_a_preview_in_codex_own_sandbox` | mcp/tests/test_mcp_registration_wiring_tests_2.py:228-237 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

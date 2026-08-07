@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/result_rendering.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-25T21:14+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ payloads, and routes dry-run versus live command rendering.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The lifecycle CLI delegates result display to this module. | `render_cli_result` | mcp/src/agents_remember/providers/lifecycle/cli.py:333-341 |
-| Provider lifecycle tests verify native captured output streaming. | `ProviderLifecycleRenderTests` | mcp/tests/test_provider_lifecycle.py:30-107 |
+| Provider lifecycle tests verify native captured output streaming. | `ProviderLifecycleRenderTests` | mcp/tests/test_provider_lifecycle.py:20-97 |
 
 ## Update History
 

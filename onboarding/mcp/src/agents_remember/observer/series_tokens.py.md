@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/series_tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T15:10+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -63,10 +63,10 @@ scope; this file implements an internal projection rollup.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | `WorkspaceProjection` | mcp/src/agents_remember/observer/reducer.py:166-180 |
-| The reducer module defines `build_analytics` for analytics enrichment. | `build_analytics` | mcp/src/agents_remember/observer/reducer.py:627-654 |
+| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:990-990 |
+| The reducer module defines `build_analytics` for analytics enrichment. | "def build_analytics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129 |
 | `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:707-707 |
-| The projection test module includes a `seriesTokenTotal` regression case. | `seriesTokenTotal` | mcp/tests/test_observer_projection.py:788-788 |
+| The projection test module includes a `seriesTokenTotal` regression case. | `seriesTokenTotal` | mcp/tests/test_observer_projection.py:681-681 |
 
 ## Cross-Repo References
 

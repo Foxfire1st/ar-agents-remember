@@ -11,14 +11,15 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/serving/conversation/projectors/__init__.py",
+    "mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py",
     "mcp/src/agents_remember/serving/conversation/projectors/claude.py",
     "mcp/src/agents_remember/serving/conversation/projectors/codex.py",
     "mcp/src/agents_remember/serving/conversation/projectors/common.py",
     "mcp/src/agents_remember/serving/conversation/projectors/pi.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 5,
-    "fileSidecars": 5,
+    "sourceFilesInScope": 6,
+    "fileSidecars": 6,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -26,6 +27,8 @@
     "agents_remember",
     "claude",
     "codex",
+    "codex_collab",
+    "collab",
     "common",
     "conversation",
     "init",
@@ -41,6 +44,7 @@
     "candidateHints": [
       "mcp/src/agents_remember/serving/conversation/projectors",
       "mcp/src/agents_remember/serving/conversation/projectors/__init__.py",
+      "mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py",
       "mcp/src/agents_remember/serving/conversation/projectors/claude.py",
       "mcp/src/agents_remember/serving/conversation/projectors/codex.py",
       "mcp/src/agents_remember/serving/conversation/projectors/common.py",
@@ -49,6 +53,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "_codex_collab.py",
+      "_codex_collab",
       "claude.py",
       "claude",
       "codex.py",
@@ -67,7 +73,7 @@
       "mcp/src/agents_remember/serving/conversation/projectors/",
       "mcp/src/agents_remember/serving/conversation/projectors/overview.md",
       "conversation/overview.md",
-      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
+      "b252c42cca200933d5c9c36e26de47a526a569ce",
       "active/",
       "unknown-vendor",
       "parent_thread_id",
@@ -92,9 +98,7 @@
       "tool_use",
       "toolCallId",
       "unknown-input",
-      "clientId",
-      "collabAgentToolCall",
-      "subAgentActivity"
+      "clientId"
     ]
   },
   "fallback": {

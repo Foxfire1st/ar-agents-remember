@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -48,7 +48,10 @@ the parser never derives a model/effort paste command from them.
 
 `orchestration.supervisor.escalationBudget` is now a known supervisor setting with default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,policy,sections}.py`; the full base surface (public + private patch targets) is re-exported and pinned by `mcp/tests/test_facade_surface.py`.
+## Logic
 
 **260714-ACPUI-L2 effort policy.** When a settings-defined non-native harness declares
 `effortFlagValues`, the effective merged harness uses enumerated validation so its explicit menu is
@@ -266,6 +269,10 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,polic...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_agentic_settings_{core,harness,policy,sections}.py`; the mechanical surface pin (`test_facade_surface.py`) keeps every base top-level name importable. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: corrected redelivery default `1`, separated escalation default `250`, and removed the unsupported repository-wide absence claim. Verification metadata unchanged.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
   exemptions): `_parse_escalation` was split into `_parse_escalation_sla_seconds`,

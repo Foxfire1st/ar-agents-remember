@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -141,7 +141,7 @@ declared nor part of the input."
 | The registry maps each public tool to its response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | `_tool_payload()` is the production validation path mirrored here. | `_tool_payload`, `complete_tool_response` | mcp/src/agents_remember/mcp/tools/base.py:73-75; mcp/src/agents_remember/application/tool_response.py:47-61 |
 | The strict/flexible response-model taxonomy lives in the model base. | `StrictResponseModel`, `FlexibleResponseModel` | mcp/src/agents_remember/models/base.py:10-13; mcp/src/agents_remember/models/base.py:16-19 |
-| Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:103-120; mcp/tests/test_worktree_support.py:123-144; mcp/tests/test_worktree_support.py:276-304 |
+| Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:68-85; mcp/tests/test_worktree_support.py:88-109; mcp/tests/test_worktree_support.py:242-270 |
 | Schema-level registry coverage is asserted separately. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:17-18 |
 | Inbox representative payloads call the real post, poll, and consume builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:486-507 |
 | Lifecycle finalizer representative payload exercises the new terminal worktree tool. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |

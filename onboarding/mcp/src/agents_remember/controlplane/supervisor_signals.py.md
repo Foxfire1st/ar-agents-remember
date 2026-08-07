@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/supervisor_signals.py`   |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash |                                                                `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate |                                                                2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash |                                                                `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |                                                                2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -152,8 +152,8 @@ supervisor control-plane state.
 | `last_sent` matches on the whole `SupervisorSignalKey` (target plus kind plus detail) and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | `in_cooldown` | mcp/src/agents_remember/controlplane/supervisor_signals.py:131-155 |
 | `compact` holds one `exclusive_access` across the new `_compact_locked` read-filter-rewrite half, and `_replace` delegates to `rewrite_lines` without unlinking. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
 | `SUPERVISOR_SIGNAL_OWNERSHIP` names the dashboard sole writer and compaction owner, and states why the log is locked all the same. | `SUPERVISOR_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
-| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | `_signal_emit` | mcp/src/agents_remember/serving/supervisor.py:858-934 |
-| The serving app imports `SupervisorSignalCooldownStore` and wires `signal_cooldown_seconds` into each supervisor context. | `signal_cooldown_store`, `signal_cooldown_seconds` | mcp/src/agents_remember/serving/app.py:846-846; mcp/src/agents_remember/serving/app.py:852-852 |
+| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | "def _signal_emit(" | mcp/src/agents_remember/serving/_supervisor_actions.py:407-407 |
+| The serving app imports `SupervisorSignalCooldownStore` and wires "signal_cooldown_seconds = (" into each supervisor context. | "signal_cooldown_store=SupervisorSignalCooldownStore(root),",  | mcp/src/agents_remember/serving/_app_lifespan.py:82-82 |
 | The 900-second floor constant and the shared validator that refuses anything below it. | `MIN_REDELIVERY_INTERVAL_SECONDS`, `require_redelivery_floor_seconds` | mcp/src/agents_remember/controlplane/inbox_backoff.py:26-26; mcp/src/agents_remember/controlplane/inbox_backoff.py:42-52 |
 
 ## Cross-Repo References

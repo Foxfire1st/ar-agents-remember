@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T20:09+02:00                      |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -235,12 +235,12 @@ existing seam rather than adding a second one.
 | The append-only store the ambient writes events to. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The `ar-observer-event/v1` envelope every signal emits. | `OBSERVER_EVENT_SCHEMA` | mcp/src/agents_remember/observer/events.py:23-23 |
 | `mcp/tools/base.py::_tool_payload` delegates to `application/tool_response.py::complete_tool_response`, the choke point that calls `ambient().emit_tool(...)` for every public tool and (260707-HFX2-L2) reads `.root` to check the supervisor heartbeat. | `complete_tool_response`; `emit_tool` | mcp/src/agents_remember/mcp/tools/base.py:73-75; mcp/src/agents_remember/application/tool_response.py:47-61 |
-| The supervisor heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "supervisor_heartbeat.py" | onboarding/mcp/src/agents_remember/serving/supervisor_heartbeat.py.md:19-25 |
+| The supervisor heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "the watcher must be code AND watched" | onboarding/mcp/src/agents_remember/serving/supervisor_heartbeat.py.md:20-20 |
 | The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | `ServedStore` | mcp/src/agents_remember/observer/served_store.py:78-121 |
 | The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:105-133; mcp/src/agents_remember/application/read_files.py:301-303; mcp/src/agents_remember/application/read_files.py:357-379 |
 | The heartbeat/stale idiom this generalizes. | `SetupProgressFile` | mcp/src/agents_remember/providers/setup_progress.py:54-170 |
 | The shared timing thresholds + `Clock` this imports (the `age_seconds` stamp-ager now lives in `controlplane.stamps`). | `HEARTBEAT_SECONDS`; `age_seconds` | mcp/src/agents_remember/observer/timeutil.py:29-29; mcp/src/agents_remember/controlplane/stamps.py:22-35 |
-| The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). | `project_lifecycle`; `_project_inferred` | mcp/src/agents_remember/observer/reducer.py:81-108; mcp/src/agents_remember/observer/reducer.py:457-471 |
+| The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). | `project_lifecycle`; `_project_inferred` | mcp/src/agents_remember/observer/reducer.py:120-147; mcp/src/agents_remember/observer/reducer.py:431-445 |
 | The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays. | `FLEETING_INACTIVE_TTL_SECONDS`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:37-37; mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:40-133; docs/design/observable-lifecycle.md:156-171; docs/design/observable-lifecycle.md:391-402 |
 

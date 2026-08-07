@@ -288,11 +288,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:109-191 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:44-44; mcp/tests/test_worktree_support.py:573-3091 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:392-400; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558 |
-| This route's phase/next-move `Literal`s are the ones the wire model imports, and no producer here emits a value outside them. | `WorktreePhase` | mcp/src/agents_remember/models/worktree.py:15-19; mcp/src/agents_remember/models/worktree.py:59-60; mcp/tests/test_wire_vocabulary_exhaustiveness.py:276-292; mcp/tests/test_wire_vocabulary_exhaustiveness.py:694-720 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase" | mcp/src/agents_remember/models/worktree.py:59-59; mcp/src/agents_remember/models/worktree.py:18-18 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 

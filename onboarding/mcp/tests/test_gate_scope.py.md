@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_gate_scope.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -99,11 +99,13 @@ None known for this leaf.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | `derive_scope` | mcp/src/agents_remember/code_quality/check.py:54-55 |
-| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check.py:514-700 |
+| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check_scope.py:22-212 |
 | The frontend rails this module reads: eslint flat configs and tsconfig projects. | `tseslint` | dashboard/eslint.config.js:1-12; dashboard/tsconfig.json:1-8 |
 | The TypeScript rail added for the Pi harness extension so it needed no exemption. | `compilerOptions` | .pi/extensions/tsconfig.json:1-19 |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 8 citation findings and one stale
   count. Ruff and pyright reach all 698 tracked Python files (the card said 607). Re-anchored the four

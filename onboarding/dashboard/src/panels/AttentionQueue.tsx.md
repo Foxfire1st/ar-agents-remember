@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/AttentionQueue.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:20+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ through the component's own subscription.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The server-side attention queue this reads. | `build_attention_queue` | mcp/src/agents_remember/observer/reducer.py:678-712 |
+| The server-side attention queue this reads. | "def build_attention_queue(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:41-41 |
 | The `selectQueue` selector. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
 | `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | `canDismiss` | dashboard/src/panels/AttentionQueue.tsx:122-128 |
 | `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. | `dismissItem`, `clearAll` | dashboard/src/panels/AttentionQueue.tsx:287-288 |

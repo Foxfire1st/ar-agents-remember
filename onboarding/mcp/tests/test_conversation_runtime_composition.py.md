@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_runtime_composition.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,7 @@ evidence.
 | --- | --- | --- |
 | The immutable runtime/scope types, install-once, and fail-closed retrieval under test. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
 | The production seam accepts the already-built runtime and installs it once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
-| The live composition that constructs the runtime and mints the resolver the identity scan looks for. | `create_app` | mcp/src/agents_remember/serving/app.py:718-777 |
+| The live composition that constructs the runtime and mints the resolver the identity scan looks for. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | The root registration installs the runtime then mounts the unchanged root router. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
 | The typed composition error asserted by every failure-shape case. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:30-37 |
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_ref.py`         |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-02T01:05+02:00                                    |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ tools share.
 | `worktree_attach_tool` / `worktree_status_tool` take a `TaskRef` and resolve it through `_task_ref_namespace`. | `worktree_attach_tool`; `worktree_status_tool`; `_task_ref_namespace` | mcp/src/agents_remember/application/worktree_tools.py:227-236; mcp/src/agents_remember/application/worktree_tools.py:244-257; mcp/src/agents_remember/application/worktree_tools.py:239-241 |
 | `resolve_context_tool` takes a `TaskRef`. | `resolve_context_tool` | mcp/src/agents_remember/application/coordination_tools.py:20-50 |
 | The three tool declarations expose `TaskRef` arguments. | `resolve_context_tool`; `worktree_attach_tool`; `worktree_status_tool` | mcp/src/agents_remember/application/coordination_tools.py:20-50; mcp/src/agents_remember/application/worktree_tools.py:227-236; mcp/src/agents_remember/application/worktree_tools.py:239-241 |
-| The locator packing is asserted against a live server. | `test_resolve_context_packs_the_locators_into_a_task_ref` | mcp/tests/test_mcp_registration_wiring.py:154-179 |
+| The locator packing is asserted against a live server. | `test_resolve_context_packs_the_locators_into_a_task_ref` | mcp/tests/test_mcp_registration_wiring_tests_1.py:65-90 |
 
 ## Update History
 

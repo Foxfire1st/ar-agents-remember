@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:18+02:00 |
-| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ shared table's refusal member into each overlapping status itself.
 **The `.get(..., 500)` fallback in `_open_call` was REMOVED rather than declared.**
 cit:([`_OPEN_STATUS_BY_OUTCOME`], mcp/src/agents_remember/serving/conversation/library/api.py:75-84) is now typed `dict[str, int]` and indexed directly, and it
 is **TOTAL** over `OpenConversationOperation.outcome`'s eight-member `Literal`
-cit:(["class OpenConversationOperation(WireModel):"], mcp/src/agents_remember/serving/conversation/models.py:831-831): `opened`, `pending`, `timeout-unknown`, `unsupported`,
+cit:(["class OpenConversationOperation(WireModel):"], mcp/src/agents_remember/serving/conversation/_models_operations.py:19-19): `opened`, `pending`, `timeout-unknown`, `unsupported`,
 `stale-identity`, `request-conflict`, `launch-failed`, `identity-mismatch`. A ninth outcome added
 without a status here is a loud `KeyError` at the one place that can fix it — the same posture as
 `_error_response`, which re-raises rather than inventing a status. The old default answered an
@@ -118,9 +118,9 @@ models these handlers serialize.
 | Open/status/reconcile routes map outcomes to 201/202/409/422/503 and fail closed off loopback. | `test_open_created_replays_and_focuses_only_proven_identity`, `test_open_maps_stale_digest_unknown_request_and_timeout`, `test_open_launch_failure_and_identity_mismatch_statuses` | mcp/tests/test_conversation_library_api.py:557-592; mcp/tests/test_conversation_library_api.py:594-647; mcp/tests/test_conversation_library_api.py:649-704 |
 | The foundation suite pins exactly the five owned library routes inside the child router. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The L0 request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`, `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The eight-member `outcome` `Literal` that `_OPEN_STATUS_BY_OUTCOME` must stay total over. | ["class OpenConversationOperation(WireModel):"] | mcp/src/agents_remember/serving/conversation/models.py:831-831 |
+| The eight-member `outcome` `Literal` that `_OPEN_STATUS_BY_OUTCOME` must stay total over. | ["class OpenConversationOperation(WireModel):"] | mcp/src/agents_remember/serving/conversation/_models_operations.py:19-19 |
 | The `LIBRARY_RESPONSES` and `OPEN_OUTCOME_RESPONSES` tables these routes declare, and the dict-merge rule that makes the outcome table union in each refusal model. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
-| The suite that drives all five routes, validates the real bodies, and asserts the status-map/`Literal` set equality. | `test_the_library_and_open_bodies_conform`, `test_the_open_status_map_is_total_over_the_declared_outcomes` | mcp/tests/test_serving_response_conformance.py:2045-2114; mcp/tests/test_serving_response_conformance.py:2481-2489 |
+| The suite that drives all five routes, validates the real bodies, and asserts the status-map/`Literal` set equality. | `test_the_library_and_open_bodies_conform`, `test_the_open_status_map_is_total_over_the_declared_outcomes` | mcp/tests/test_serving_response_conformance_live.py:224-293; mcp/tests/test_serving_response_conformance_live.py:533-541 |
 
 ## Cross-Repo References
 
@@ -151,7 +151,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   refusals, so `OPEN_OUTCOME_RESPONSES` must UNION the refusal member into each overlapping
   status because `{**a, **b}` is a dict merge. Recorded the removal of `_open_call`'s
   `.get(..., 500)` fallback: cit:([`_OPEN_STATUS_BY_OUTCOME`], mcp/src/agents_remember/serving/conversation/library/api.py:75-84) is now indexed directly and is
-  total over the eight-member `outcome` `Literal` cit:(["class OpenConversationOperation(WireModel):"], mcp/src/agents_remember/serving/conversation/models.py:831-831), so a ninth outcome is
+  total over the eight-member `outcome` `Literal` cit:(["class OpenConversationOperation(WireModel):"], mcp/src/agents_remember/serving/conversation/_models_operations.py:19-19), so a ninth outcome is
   a loud `KeyError` instead of a silent, undeclared, undrivable 500 carrying a full operation
   body. Corrected the Logic sentence about the outcome table and added both as invariants.
   Verification metadata pinned until closeout stamps the L4 commit.

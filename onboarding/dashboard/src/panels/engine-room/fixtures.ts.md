@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/fixtures.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 | --- | --- | --- |
 | Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160 |
 | `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:771-790 |
-| `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1596-1612 |
+| `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
 | `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | `EngineRoomScenario`, `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:19-23; dashboard/src/panels/engine-room/fixtures.ts:721-1197 |
 | `engineProcess` core builder (override-last spread) | `engineProcess` | dashboard/src/panels/engine-room/fixtures.ts:214-268 |
 | `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. | `edges`, `EdgeStates` | dashboard/src/panels/engine-room/fixtures.ts:132-139; dashboard/src/panels/engine-room/fixtures.ts:141-212 |

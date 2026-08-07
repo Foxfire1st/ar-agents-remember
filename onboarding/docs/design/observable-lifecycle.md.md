@@ -6,8 +6,8 @@
 | path                   | `docs/design/observable-lifecycle.md`   |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-08T23:59+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                           |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ metrics and compact normally.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Retention policy implementation follows this design split. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
-| Projection readers apply interaction TTL and pickup feedback. | `read_agent_pickups` | mcp/src/agents_remember/observer/snapshots.py:549-594 |
+| Projection readers apply interaction TTL and pickup feedback. | "def read_agent_pickups(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:142-142 |
 | MCP `lifecycle_gate` exposes the unified public gate junction. | `lifecycle_gate_tool` | mcp/src/agents_remember/application/gate_tools.py:384-454 |
 
 ## Update History

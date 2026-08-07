@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ asset limits come from the L2E substrate; the L1 page-level view is the conserva
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ControlCapabilities`, `AttachmentCapabilities`, `TelemetryCapabilities` DTOs; `FeatureCapability` carries the documenting NOTE that there is deliberately no `for_observed_runtime` version-demotion. | `FeatureCapability`, `AttachmentCapabilities`, `ControlCapabilities`, `TelemetryCapabilities` | mcp/src/agents_remember/serving/conversation/models.py:662-690; mcp/src/agents_remember/serving/conversation/models.py:725-728; mcp/src/agents_remember/serving/conversation/models.py:731-736; mcp/src/agents_remember/serving/conversation/models.py:739-744 |
+| `ControlCapabilities`, `AttachmentCapabilities`, "class TelemetryCapabilities(WireModel):" DTOs; `FeatureCapability` carries the documenting NOTE that there is deliberately no `for_observed_runtime` version-demotion. | "class FeatureCapability(WireModel):", "class AttachmentCapabilities(WireModel):", "class ControlCapabilities(WireModel):", `TelemetryCapabilities` | mcp/src/agents_remember/serving/conversation/_models_status.py:339-339; mcp/src/agents_remember/serving/conversation/_models_status.py:325-325; mcp/src/agents_remember/serving/conversation/_models_status.py:331-331; mcp/src/agents_remember/serving/conversation/_models_status.py:262-262 |
 | The L2E asset MIME/count/byte constants used by this gate. | `MAX_SUBMIT_ASSETS`, `MAX_SUBMIT_ASSET_BYTES`, `SUBMIT_ASSET_MIME_TYPES` | mcp/src/agents_remember/serving/harness_control_models.py:116-116; mcp/src/agents_remember/serving/harness_control_models.py:119-119; mcp/src/agents_remember/serving/harness_control_models.py:122-122 |
 | The L1 conservative page-level control/telemetry view (stale post-L2E; L4 gates on this module instead). | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:342-357 |
 

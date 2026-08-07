@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/sessions.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:31+02:00                                       |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                   |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                   |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ The other four forward their arguments as keywords:
 | --- | --- | --- |
 | The payload builders and the `SpawnSeat`/`RetiredSpawnInputs`/`SpawnedBy` definitions. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
 | The readiness builder and its finite-wait bound. | `hosted_session_readiness_payload` | mcp/src/agents_remember/mcp/tools/hosted_readiness.py:13-30 |
-| Each argument lands in exactly one of the three spawn groups. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
+| Each argument lands in exactly one of the three spawn groups. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/_pi_rpc_capabilities.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -30,7 +30,10 @@ fixture and fails on any disagreement.
 
 ## Code Commentary
 
-### Public Surface
+#
+
+- 260731-EFA-L7 (trace delta): the shared Pi RPC capability helpers were retained for the split `test_pi_rpc_adapter_*` family; environment-gated helpers carry per-function `# pragma: no cover` with recorded R10 reasons.
+## Public Surface
 
 | Symbol | What it is |
 | --- | --- |
@@ -109,6 +112,10 @@ None known for this leaf.
 | The parser whose state-field dependencies the recording must keep listing. | `parse_pi_state`; `PiSessionState`; `parse_pi_response` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:37-48; mcp/src/agents_remember/serving/pi_rpc_protocol.py:180-194; mcp/src/agents_remember/serving/pi_rpc_protocol.py:197-215 |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the shared Pi RPC capability helpers were retained for the split `test_...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T11:00+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 8 assigned citation findings (4 missing anchors and 4 malformed sources); final scoped check is clean.
 

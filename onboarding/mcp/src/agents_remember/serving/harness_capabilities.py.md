@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ plus transient discovery through that boundary.
 | The protocol, discovery, and launchable adapter ports consume `CapabilitySnapshot`, `LaunchKnobs`, and `SetResult`. | `HarnessProtocolAdapter`; `HarnessCapabilityDiscoverer`; `LaunchableHarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59; mcp/src/agents_remember/serving/harness_control_adapter.py:62-65; mcp/src/agents_remember/serving/harness_control_adapter.py:78-88 |
 | The submission authority validates the exact `SET_ACCEPTANCE_VALUES` vocabulary and the ok/effective-value relationship before releasing a setter result to its waiter. | `_apply_set_result_locked`; `_validate_set_result` | mcp/src/agents_remember/serving/harness_submission_authority.py:856-882; mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023 |
 | The launch boundary consumes owned selectors before token-free discovery and runtime construction. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
-| The exact-session client uses the strict inverse parsers for live advertise and set responses. | `read_control_capabilities`; `_set_control_value` | mcp/src/agents_remember/serving/harness_control_client.py:134-141; mcp/src/agents_remember/serving/harness_control_client.py:608-634 |
+| The exact-session client uses the strict inverse parsers for live advertise and set responses. | `read_control_capabilities`; `_set_control_value` | mcp/src/agents_remember/serving/harness_control_client.py:144-151; mcp/src/agents_remember/serving/harness_control_client.py:596-622 |
 | The normalized capability and setter payloads have strict inverse parsers. | `capability_snapshot_from_json`; `set_result_from_json` | mcp/src/agents_remember/serving/harness_capabilities.py:228-246; mcp/src/agents_remember/serving/harness_capabilities.py:249-265 |
 | The daemon emits this unchanged normalized shape for both pre-session and live capability reads. | `api_harness_capabilities`; `api_terminal_capabilities` | mcp/src/agents_remember/serving/harness_control_api.py:231-253; mcp/src/agents_remember/serving/harness_control_api.py:255-265 |
 | Claude produces native model/effort flags. | `claude_launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142 |

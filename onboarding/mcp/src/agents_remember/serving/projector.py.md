@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`     |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`     |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -146,8 +146,8 @@ regression suite below prove the ordering rather than relying on timing observat
 | --- | --- | --- |
 | The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | "def _publish_projection(" | mcp/src/agents_remember/serving/projector.py:268-268 |
 | Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" | mcp/src/agents_remember/serving/projector.py:322-322; mcp/src/agents_remember/serving/projector.py:330-330 |
-| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. | "async with contextlib.aclosing(projector.subscribe())"; "payload.update(served_state_tail(" | mcp/src/agents_remember/serving/app.py:334-334; mcp/src/agents_remember/serving/app.py:344-344 |
-| Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription` | mcp/tests/test_serving.py:428-440; mcp/tests/test_serving.py:442-462; mcp/tests/test_serving.py:464-492; mcp/tests/test_serving.py:494-504 |
+| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. |"async with contextlib.aclosing(projector.subscribe())"; "payload.update(served_state_tail("|mcp/src/agents_remember/serving/_app_common.py:131-131; mcp/src/agents_remember/serving/_app_common.py:141-141|
+| Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription` | mcp/tests/test_serving.py:387-399; mcp/tests/test_serving.py:401-421; mcp/tests/test_serving.py:423-451; mcp/tests/test_serving.py:453-463 |
 | The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | "VOLATILE_AGE_FIELDS = frozenset("; "def diff_projection(" | mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:102-102 |
 | The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/observer/projection_store.py:156-156; mcp/src/agents_remember/observer/projection_store.py:212-212 |
 | Change-driven pacing remains owned by `ChangePacer`/`ChangeWatch`; it changes wake timing, not publication semantics. | "class ChangePacer:"; "class ChangeWatch(Protocol):" | mcp/src/agents_remember/serving/change_watcher.py:273-273; mcp/src/agents_remember/serving/change_watcher.py:283-283 |
@@ -196,7 +196,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The
   `test_serving.py` row is anchored to the four `StreamEventsTests` cases that prove it
-  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:428-440; mcp/tests/test_serving.py:442-462; mcp/tests/test_serving.py:464-492; mcp/tests/test_serving.py:494-504), including identical-state suppression and later deltas. The pure-diff row is anchored to
+  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:387-399; mcp/tests/test_serving.py:401-421; mcp/tests/test_serving.py:423-451; mcp/tests/test_serving.py:453-463), including identical-state suppression and later deltas. The pure-diff row is anchored to
   cit:(["VOLATILE_AGE_FIELDS = frozenset("; "def _strip_volatile("; "def stable_projection_state("; "def diff_projection("; "def _collection_deltas("], mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:41-41; mcp/src/agents_remember/serving/delta.py:76-76; mcp/src/agents_remember/serving/delta.py:102-102; mcp/src/agents_remember/serving/delta.py:148-148), while the observer row is anchored to
   cit:(["def write_projection("; "def project_and_write("], mcp/src/agents_remember/observer/projection_store.py:156-156; mcp/src/agents_remember/observer/projection_store.py:212-212). Read all ranges back.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ProjectionCadence` / `ProjectionReplay` / `ProjectionRefreshers` constructor concepts and their module defaults; pacing behaviour unchanged.

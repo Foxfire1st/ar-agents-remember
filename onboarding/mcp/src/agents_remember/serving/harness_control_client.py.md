@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ zero-length send. Once the server had answered and closed with the request drain
 and that pointless write raised `EPIPE` — turning an exchange the server actually completed into a
 `may_have_sent=True` disconnect that forces reconciliation. Only a non-empty remainder is written now
 (260727-CHATS-IM-L4). A connect failure routes through
-cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:511-531): `ECONNREFUSED` (a stale socket file with nothing
+cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:532-552): `ECONNREFUSED` (a stale socket file with nothing
 listening — the observed `[Errno 111]` banner) and `ENOENT` (an absent socket) both map to
 the honest "the controlled runner already exited (…)" note, and the stale socket is best-effort
 `unlink`ed on `ECONNREFUSED` so the next probe reads the absent case cleanly instead of repeating the
@@ -66,18 +66,18 @@ continue the last frame) under the dedicated `EVIDENCE_PAGE_TIMEOUT_SECONDS = 35
 `read_submission_provenance` enforces exact result count/order, valid sources, and request-id echo.
 Every evidence response carries `bridgeEpoch`; a caller-supplied expected epoch that mismatches
 raises `HarnessBridgeEpochMismatchError`, so cross-restart continuation fails detectably. The
-optional evidence `nativeMethod` is deserialized on the frame round trip (cit:([`_evidence_page`], mcp/src/agents_remember/serving/harness_control_client.py:870-917)):
+optional evidence `nativeMethod` is deserialized on the frame round trip (cit:(["def _evidence_page(result: object, *, expected_bridge_epoch"], mcp/src/agents_remember/serving/_harness_control_parsing.py:348-348)):
 a present value must be non-empty text or the read fails typed, so the projector receives the
  carried notification method the bridge preserved. The optional evidence `threadId` rides the same
- frame parse (cit:([`_evidence_page`], mcp/src/agents_remember/serving/harness_control_client.py:870-917)): a present value must be non-empty text or the
+ frame parse (cit:(["def _evidence_page(result: object, *, expected_bridge_epoch"], mcp/src/agents_remember/serving/_harness_control_parsing.py:348-348)): a present value must be non-empty text or the
 read fails typed, and an absent key yields `None` — the parent thread — so the multiplexed demux
 key the models serialize reaches the projector verbatim.
 
 Two multiplex seams live here. cit:([`read_control_native_page`], mcp/src/agents_remember/serving/harness_control_client.py:369-401) gained the
-additive `thread_id` selector: it rides the payload as `threadId` only when set (cit:([`read_control_native_page`, "threadId"], mcp/src/agents_remember/serving/harness_control_client.py:369-401)), so a
+additive `thread_id` selector: it rides the payload as `threadId` only when set (cit:([`read_control_native_page`, "threadId"], mcp/src/agents_remember/serving/harness_control_client.py:387-419)), so a
 `None` reads the parent/session thread with the exact pre-multiplexing request shape. And `_snapshot` now
-parses the plural pending set (cit:([`_snapshot`, `pendingInteractions`], mcp/src/agents_remember/serving/harness_control_client.py:1165-1201)): the singular `pendingInteraction`
-parse was extracted verbatim into the shared strict `_pending_interaction` helper (cit:([`_pending_interaction`], mcp/src/agents_remember/serving/harness_control_client.py:1146-1162) —
+parses the plural pending set (cit:(["def _snapshot(raw: Mapping[str, object]) -> AdapterSnapshot:  # pragma: no cover", `pendingInteractions`], mcp/src/agents_remember/serving/_harness_control_parsing.py:637-637; mcp/src/agents_remember/serving/_harness_control_parsing.py:654-654)): the singular `pendingInteraction`
+parse was extracted verbatim into the shared strict `_pending_interaction` helper (cit:(["def _pending_interaction(raw: object) -> PendingInteraction:  # pragma: no cover"], mcp/src/agents_remember/serving/_harness_control_parsing.py:617-617) —
 same required-text/choices/questions validation), and the additive `pendingInteractions` list maps
 each entry through it. The plural key is OPTIONAL — absent on pre-multiplexing bridges it deserializes to the
 empty tuple — but a present non-list value fails typed, so a malformed multiplex payload is never
@@ -159,10 +159,10 @@ unknown/reconcile contract without a second submission.
 | Request id is the idempotency key and retained reconciliation truth comes back from the authority directly, with no facade in the path since 260731-EFA-L6. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | Client tests pin pre-first-byte versus post-first-byte ambiguity and unknown setter/submission mapping. | `HarnessControlClientRetrySafetyTests` | mcp/tests/test_harness_control_client.py:149-319 |
 | A regression test pins that a refused control socket yields the honest note AND unlinks the stale socket (never a raw errno). | `test_refused_control_socket_yields_honest_note_and_unlinks_stale_socket` | mcp/tests/test_harness_control_client.py:150-180 |
-| Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | `test_outer_socket_lost_receipt_reconciles_retained_known_truth`, `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend` | mcp/tests/test_harness_control.py:1520-1559; mcp/tests/test_harness_control.py:1561-1631 |
-| Contract tests pin the strict page/native-page/provenance validators, cross-domain typed rejection, and epoch-continuity failure exercised through this client. | `EvidenceIpcTests` | mcp/tests/test_harness_control_evidence.py:636-922 |
+| Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | `test_outer_socket_lost_receipt_reconciles_retained_known_truth`, `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend` | mcp/tests/test_harness_control_ipc.py:183-222; mcp/tests/test_harness_control_ipc.py:224-294 |
+| Contract tests pin the strict page/native-page/provenance validators, cross-domain typed rejection, and epoch-continuity failure exercised through this client. | `EvidenceIpcTests` | mcp/tests/test_harness_control_evidence_ipc.py:48-337 |
 | The IPC server answers the two additive actions and verifies staged assets before dispatch, so this client's references and reads stay reference-only and strictly shaped. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
-| Contract tests pin the strict interrupt/timeline/recovery validators, the cross-domain cursor rejection, and the epoch-flip typed failure through this client. | `ClientValidationTests` | mcp/tests/test_harness_control_plane.py:1731-1831 |
+| Contract tests pin the strict interrupt/timeline/recovery validators, the cross-domain cursor rejection, and the epoch-flip typed failure through this client. | `ClientValidationTests` | mcp/tests/test_harness_control_plane_recovery.py:107-207 |
 
 ## Cross-Repo References
 
@@ -194,9 +194,9 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 ## 260727-CHATS-IM-L2 Opaque Cursor And Typed History Delta
 
 The client reconstructs `NativeHistoryLimitExceeded` with exact byte evidence and
-`NativeHistoryUnavailable` with its stable code from private control responses (cit:([`_decode_control_response`], mcp/src/agents_remember/serving/harness_control_client.py:571-605)).
+`NativeHistoryUnavailable` with its stable code from private control responses (cit:(["def _decode_control_response(response: bytes) -> object:  # pragma: no cover"], mcp/src/agents_remember/serving/_harness_control_parsing.py:63-63)).
 Native-page `nextCursor` is now treated as an opaque adapter continuation rather than required to
-equal the final frame's native id (cit:([`_native_evidence_page`, `_native_evidence_frames`], mcp/src/agents_remember/serving/harness_control_client.py:920-938; mcp/src/agents_remember/serving/harness_control_client.py:941-956)). Page shape, duplicate-id checks, epoch validation,
+equal the final frame's native id (cit:(["def _native_evidence_page(  # pragma: no cover", "def _native_evidence_frames(  # pragma: no cover"], mcp/src/agents_remember/serving/_harness_control_parsing.py:399-399; mcp/src/agents_remember/serving/_harness_control_parsing.py:421-421)). Page shape, duplicate-id checks, epoch validation,
 and non-empty-page continuation rules remain strict.
 
 ## 260731-EFA-L2 Current Delta
@@ -225,6 +225,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_harness_control_parsing.py` for the raw-response parsers; patch targets (`request_control`/`socket.socket`) keep working and the surface is pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 8 repository-internal reference rows for the IPC server, submission authority, client retry tests, socket/reconciliation regressions, evidence validators, and control-plane validation tests; scoped citation verification follows.
 
 - 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
@@ -235,7 +237,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   its non-empty-text refusal). `read_control_native_page`'s additive selector cited L391-L392, which
   is the `cursor` branch; the `threadId` payload key is set at L393-L394.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The two
-  lost-response regressions now read at cit:([`test_outer_socket_lost_receipt_reconciles_retained_known_truth`, `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend`], mcp/tests/test_harness_control.py:1520-1559; mcp/tests/test_harness_control.py:1561-1631), both in
+  lost-response regressions now read at cit:([`test_outer_socket_lost_receipt_reconciles_retained_known_truth`, `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend`], mcp/tests/test_harness_control_ipc.py:183-222; mcp/tests/test_harness_control_ipc.py:224-294), both in
   `HarnessControlIpcTests` and both asserting `adapter.reconciliation_requests == []`. The prior
   range landed in the fake-adapter bridge tests.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ControlSubmission`, the `_submission_lookup` extraction, and the overloaded `_submission_state` that now refuses non-members itself (the removed timeline re-check was a duplicate, not a relaxation).
@@ -262,8 +264,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the evidence `nativeMethod`
-  deserialization on the frame round trip (present-must-be-non-empty-text, cit:([`_evidence_page`], mcp/src/agents_remember/serving/harness_control_client.py:870-917)). R6 —
-  documented `_connect_unavailable_detail` (cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:511-531)): `ECONNREFUSED`/`ENOENT` map to the honest
+  deserialization on the frame round trip (present-must-be-non-empty-text, cit:(["def _evidence_page(result: object, *, expected_bridge_epoch"], mcp/src/agents_remember/serving/_harness_control_parsing.py:348-348)). R6 —
+  documented `_connect_unavailable_detail` (cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:532-552)): `ECONNREFUSED`/`ENOENT` map to the honest
   "already exited" note, the stale socket is unlinked on `ECONNREFUSED`, and no raw errno leaks
   (pre-write `may_have_sent=False`); added both invariants and the R6 regression citation.
   Verification metadata stays pinned until closeout stamps the candidate commit.

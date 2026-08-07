@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -180,7 +180,7 @@ No meaningful external design-doc references found yet (created this leaf).
 | The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | "def _pending_rows" | mcp/src/agents_remember/controlplane/expectation_rows.py:137-137 |
 | `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | "def append(self" | mcp/src/agents_remember/controlplane/expectation_rows.py:165-165 |
 | `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard supervisor sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:152-162 |
-| `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. | "def read_expectation_rows" | mcp/src/agents_remember/observer/snapshots.py:598-598 |
+| `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. |"def read_expectation_rows"|mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193|
 
 ## Cross-Repo References
 
@@ -208,7 +208,7 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
   cit:([`def`], mcp/src/agents_remember/controlplane/expectation_rows.py:339-339), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
-  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows"], mcp/src/agents_remember/observer/snapshots.py:598-598). The **10.20 percent** figure
+  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows"], mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193). The **10.20 percent** figure
   is now attributed rather than asserted: it appears only in the `durable_store.py` docstring, unlike
   31.45 percent and 11.50 percent, which several independent sites carry. Named the harness that
   produces a loss rate and recorded that no base-commit run of it is stored in the tree, so a reader

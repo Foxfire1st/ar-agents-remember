@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,24 +29,24 @@ A cit:([`_ScriptedBridge`], mcp/tests/test_conversation_active_service.py:75-169
 answers through the projector's injected reader seams; its `read_native_page` double takes exactly
 the production seam's parameters (`entry`, `cursor`, `limit`, `expected_bridge_epoch`) and
 deliberately does NOT accept a `byte_budget`, so a caller cannot pass the double an argument the
-real `read_control_native_page` would reject. cit:([`_projector`], mcp/tests/test_conversation_active_service.py:177-196) assembles the projector from
+real `read_control_native_page` would reject. cit:([`_projector`], mcp/tests/test_conversation_active_service.py:168-187) assembles the projector from
 a `ProjectedSession(identity, authorization, entry, mapper, secret)` and a
 `BridgeReaders(evidence, native_page, transcript, provenance, snapshot)` bundle rather than ten
-loose keywords. cit:([`CodexEngineTests`], mcp/tests/test_conversation_active_service.py:233-550): hydration
+loose keywords. cit:([`CodexEngineTests`], mcp/tests/test_conversation_active_service.py:224-541): hydration
 from native pages plus the live window with stable identity and ordinals; live polling appends
 in order; idempotent re-feeds mint no duplicates; provenance resolves through the batch;
 ephemeral-thread native refusal stays honestly partial; rehydration reproduces the identical
-projection with a new generation. cit:([`ClaudeEngineTests`], mcp/tests/test_conversation_active_service.py:553-845): the echo zipper merges
+projection with a new generation. cit:([`ClaudeEngineTests`], mcp/tests/test_conversation_active_service.py:544-836): the echo zipper merges
 submission echoes and frames in exact turn order (echo first, result in a later poll, multiple
-turns) with no duplicate or inverted items. cit:([`PiEngineTests`], mcp/tests/test_conversation_active_service.py:848-889): eager native
+turns) with no duplicate or inverted items. cit:([`PiEngineTests`], mcp/tests/test_conversation_active_service.py:839-880): eager native
 continuation anchors live items to durable-entry identity and live tool upserts converge.
-cit:([`StoreTests`], mcp/tests/test_conversation_active_service.py:892-910): identical upsert replays are no-ops. `ToolConvergenceTests` cit:([`ToolConvergenceTests`], mcp/tests/test_conversation_active_service.py:913-1199) (review finding F1): claude `tool_use` → `tool_result`, pi live start → update →
+cit:([`StoreTests`], mcp/tests/test_conversation_active_service.py:883-901): identical upsert replays are no-ops. `ToolConvergenceTests` cit:([`ToolConvergenceTests`], mcp/tests/test_conversation_active_service_queues.py:31-326) (review finding F1): claude `tool_use` → `tool_result`, pi live start → update →
 end (including the result-less update as a true no-op), and pi entry call → `toolResult` all
 converge to items carrying BOTH input and output blocks with completed phase; codex full-item
-re-maps are byte-identical under the block union. `OverflowGapTests` cit:([`OverflowGapTests`], mcp/tests/test_conversation_active_service.py:1435-1478) (review finding
+re-maps are byte-identical under the block union. `OverflowGapTests` cit:([`OverflowGapTests`], mcp/tests/test_conversation_active_service_gaps.py:22-65) (review finding
 F2): with a clamped undrained subscriber queue the consumer receives exactly one
 `retention-overflow` gap (requiresRepage + closeAfterEvent) then the close sentinel, and the
-retention sequence set is contiguous with no hole. `ZipperEvictionGapTests` cit:([`ZipperEvictionGapTests`], mcp/tests/test_conversation_active_service.py:1481-1913) (review
+retention sequence set is contiguous with no hole. `ZipperEvictionGapTests` cit:([`ZipperEvictionGapTests`], mcp/tests/test_conversation_active_service_gaps.py:68-500) (review
 finding F3): an advancing eviction floor raises `ZipperEvidenceEvicted` for the echo-zipper
 projector (mapped to one ordering-fault gap), does NOT gap the codex projector (totals clear
 honestly), and a fresh claude projector rehydrates from the remaining window without raising,
@@ -59,27 +59,27 @@ Two proven-failure families extend `CodexEngineTests`, both driving the REAL pro
 re-validating every emitted item — the surface the intermittent active-page 500 and the native
 twins actually reach:
 
-- **H2** — `test_native_remap_after_resolution_stays_model_valid` cit:([`test_native_remap_after_resolution_stays_model_valid`], mcp/tests/test_conversation_active_service.py:282-327): a resolved user item re-mapped by
+- **H2** — `test_native_remap_after_resolution_stays_model_valid` cit:([`test_native_remap_after_resolution_stays_model_valid`], mcp/tests/test_conversation_active_service.py:273-318): a resolved user item re-mapped by
   a native frame must stay model-valid; before the store's `_preserved_input_authority` pin this
   raised the exact E2 `ValidationError: unknown-input cannot claim exact or correlated provenance`
   when `UpsertItemMutation` re-validated the split authority triple. The pre-existing
   `test_provenance_resolution_exact_then_unknown` resolved provenance but never re-mapped afterward —
   the coverage gap that let E2 through.
-- **F1** — `test_settled_live_turns_project_once_when_native_ids_disjoint` cit:([`test_settled_live_turns_project_once_when_native_ids_disjoint`], mcp/tests/test_conversation_active_service.py:329-414) and
-  `test_settled_live_turns_project_once_when_hosted_renumbers_turn_ids` cit:([`test_settled_live_turns_project_once_when_hosted_renumbers_turn_ids`], mcp/tests/test_conversation_active_service.py:416-465): after settling live turns, the native-tip re-walk must project
+- **F1** — `test_settled_live_turns_project_once_when_native_ids_disjoint` cit:([`test_settled_live_turns_project_once_when_native_ids_disjoint`], mcp/tests/test_conversation_active_service.py:320-405) and
+  `test_settled_live_turns_project_once_when_hosted_renumbers_turn_ids` cit:([`test_settled_live_turns_project_once_when_hosted_renumbers_turn_ids`], mcp/tests/test_conversation_active_service.py:407-456): after settling live turns, the native-tip re-walk must project
   each settled turn ONCE; on stashed `projector.py` they fail with the exact 4 / 2 `item-N` native
-  twins and pass with `_drop_live_settled_natives`. `test_prior_session_native_history_survives_live_turns` cit:([`test_prior_session_native_history_survives_live_turns`], mcp/tests/test_conversation_active_service.py:467-487)
+  twins and pass with `_drop_live_settled_natives`. `test_prior_session_native_history_survives_live_turns` cit:([`test_prior_session_native_history_survives_live_turns`], mcp/tests/test_conversation_active_service.py:458-478)
   proves genuine prior-session native history (both live sets empty at hydration) is untouched. These
   are the always-run (no opt-in) companions to the installed F1 real-wire regression in
   `test_conversation_control_installed.py`.
 
 ### Echo honesty and dormant release (R3 + R5)
 
-`ClaudeEngineTests` gains `test_nonuser_transcript_entries_mint_no_echo_unknown_vendor_rows` cit:([`test_nonuser_transcript_entries_mint_no_echo_unknown_vendor_rows`], mcp/tests/test_conversation_active_service.py:600-669) (R3):
+`ClaudeEngineTests` gains `test_nonuser_transcript_entries_mint_no_echo_unknown_vendor_rows` cit:([`test_nonuser_transcript_entries_mint_no_echo_unknown_vendor_rows`], mcp/tests/test_conversation_active_service.py:591-660) (R3):
 the echo poller now consumes only `role == "user"` transcript entries and advances past
 assistant/result entries, so a mixed-role transcript no longer mints `claude:echo: unrecognized
 submission echo shape` unknown-vendor rows. A new `DormantReleaseTests` adds
-`test_release_dormant_state_frees_heavy_projection_and_retires_shell` cit:([`test_release_dormant_state_frees_heavy_projection_and_retires_shell`], mcp/tests/test_conversation_active_service.py:1917-1941) (R5): when the poll loop goes
+`test_release_dormant_state_frees_heavy_projection_and_retires_shell` cit:([`test_release_dormant_state_frees_heavy_projection_and_retires_shell`], mcp/tests/test_conversation_active_service_gaps.py:504-528) (R5): when the poll loop goes
 idle the projector's `_release_dormant_state` clears the full heavy per-session state
 (`ProjectionStore` items, the live-turn/request id maps, retention and pending frames) and
 retires the shell, so a dead session's state frees immediately on the idle-break instead of lingering
@@ -87,7 +87,7 @@ as a registered tombstone until 32-LRU eviction.
 
 ### Sub-agent binding regressions
 
-`ToolConvergenceTests` gains `test_reordered_task_started_tagging_never_regresses_a_terminal_phase` cit:([`test_reordered_task_started_tagging_never_regresses_a_terminal_phase`], mcp/tests/test_conversation_active_service.py:982-1053)
+`ToolConvergenceTests` gains `test_reordered_task_started_tagging_never_regresses_a_terminal_phase` cit:([`test_reordered_task_started_tagging_never_regresses_a_terminal_phase`], mcp/tests/test_conversation_active_service_queues.py:104-177)
 (fix-round review finding 9): reordered claude evidence — the Agent `tool_result`
 settles the call BEFORE `task_started` binds the agent identity — keeps the terminal phase while
 the agent ref still lands through the real claude mapper and store. The dormant-release assertions
@@ -159,6 +159,8 @@ and dormant-release assertions remain behavior-identical, demonstrating that the
 change the public projector contract.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 12 citation findings across the six projector, ingestion, stream, store, and bridge-model rows and normalized 10 additional current prose citations to exact `cit:` form.
 

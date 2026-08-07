@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-07T23:35:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 
 ## What This Area Is
 
@@ -298,7 +298,13 @@ and falls back to what earlier `task_*` evidence already proved — a `task_noti
 neither `subagent_type` nor `description`, and its roster upsert **must not blank what `task_started`
 filled in**. Nothing is guessed; absent evidence stays absent.
 
+## 260731-EFA-L7 — Codex Projector Facade And R16
+
+`projectors/codex.py` (1,223 → 704) is now a facade over `_codex_collab.py` (collab/roster/agent-thread/turn-completed mapping), with the full surface pinned by `mcp/tests/test_facade_surface.py`. The silent-notification set gained `turn/diff/updated` exactly (R16): it routes to the non-transcript state and mints zero unknown-vendor items, while genuinely unknown vendor methods still produce addressable unknown-vendor evidence; pinned by `test_conversation_projector_codex_agents_engine_1.py`/`_2.py`.
+
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the codex facade split and the `turn/diff/updated` silent-method routing. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 5 table citations and normalized 6 source paths; no unresolved Tier-3 claims.
 

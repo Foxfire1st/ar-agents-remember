@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T16:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -69,7 +69,7 @@ triple from being respelled per case — `BY_DEVELOPER`, `BY_MODEL`, `BY_MANAGER
 surface + manager role + a non-owning actor) and `BY_OWNING_MANAGER` (the gate's own
 `OWNER_LIFECYCLE` claiming the manager role, i.e. self-approval) — and `dataclasses.replace` varies
 one field for the reviewer-verdict and rejection-note cases.
-cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates.py:964-1035) drives `closeout.py`'s closeout-gate helpers over a
+cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates_closeout.py:191-262) drives `closeout.py`'s closeout-gate helpers over a
 temp `GateStore` rooted at a stub contract's `coordination_root`. **Since 260731-EFA-L5 R2 the
 helper under test is `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:513-563)), and
 `_mark_closeout_gate_applied` no longer exists — it was deleted rather than deprecated**, so there
@@ -158,9 +158,11 @@ landing hook orthogonal to this test's gate-policy-plumbing focus and disabled a
 fake's unattached contract. Cycle 7 adds three layers on the enclosure address: SeamChannelTests proves an enclosure-less/blank wait=false raise refuses BEFORE mutation (no orphan gate, sibling not expired) and that a raised gate carries its address; HandoverEnforcementHelperTests covers the pure `unmatched_handover_gate_warning` (foreign-enclosure open gate warns with gateId+enclosure, no-handover-gates and matched/decided cases stay silent); and `IntegrateDryRunGuardTests` drives `integrate_result(dry_run=true)` with the git steps mocked over a REAL cross-lifecycle store, asserting the preview carries `handover_gate` (permitted/gateId/reason), names `handover-gate-blocked` in the summary when the real run would refuse, carries the unmatched-gate warning, and never calls `write_contract`; its mocked `_integration_replay_requirements` now returns an `IntegrationSources(current_code_source=…, current_memory_source=…, code_replay_required=…, memory_replay_required=…)` object rather than a bare four-tuple.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 12 table citations and 14 prose citation repairs for gate records, policy, closeout ordering, retention fixtures, and conformance coverage; fixer-generated ranges verified.
 
-- 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates.py:964-1035) now
+- 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates_closeout.py:191-262) now
   exercises `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:513-563)) wherever it used to call
   `_enforce_closeout_gate`, and the two blocking cases **additionally** assert that
   `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:488-510)) raises for the same seeded gate.

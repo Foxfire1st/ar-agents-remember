@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_contracts.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ evidence for this internal test suite.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The strict production grammar defines all cursor, item, status, capability, operation, recovery, attachment, metric, and fixture products under test. | `ActivePageCursor`; `ConversationItem`; `ConversationStatus`; `OpenConversationOperation`; `MetricEvidence`; `RuntimeFixtureEvidence` | mcp/src/agents_remember/serving/conversation/models.py:84-85; mcp/src/agents_remember/serving/conversation/models.py:337-426; mcp/src/agents_remember/serving/conversation/models.py:548-561; mcp/src/agents_remember/serving/conversation/models.py:831-932; mcp/src/agents_remember/serving/conversation/models.py:1213-1223; mcp/src/agents_remember/serving/conversation/models.py:1272-1282 |
+| The strict production grammar defines all cursor, item, status, capability, operation, recovery, attachment, metric, and fixture products under test. | "class ActivePageCursor(_OpaqueToken):"; "class ConversationItem(WireModel):"; "class ConversationStatus(WireModel):"; "class OpenConversationOperation(WireModel):"; "class MetricEvidence(WireModel, Generic[T]):"; "class RuntimeFixtureEvidence(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:67-67; mcp/src/agents_remember/serving/conversation/_models_blocks.py:158-158; mcp/src/agents_remember/serving/conversation/_models_status.py:145-145; mcp/src/agents_remember/serving/conversation/_models_operations.py:19-19; mcp/src/agents_remember/serving/conversation/_models_telemetry.py:28-28; mcp/src/agents_remember/serving/conversation/_models_telemetry.py:87-87 |
 | Foundation tests separately guard ports, route ownership, helper resolution, and installed-fixture topology. | `test_exactly_two_conversation_ports_exist`; `test_root_composes_three_owned_child_routers`; `test_helper_package_and_lock_select_only_the_exact_repository_dependencies`; `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement` | mcp/tests/test_conversation_foundation.py:22-29; mcp/tests/test_conversation_foundation.py:32-107; mcp/tests/test_conversation_foundation.py:125-136; mcp/tests/test_conversation_foundation.py:163-188 |
 
 ## Cross-Repo References
@@ -91,14 +91,16 @@ No neighboring repository participates in these contract tests.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `models.py`
-  is now 1282 lines and the old L25-L1270 stopped inside `operation_fingerprint` cit:([`operation_fingerprint`], mcp/src/agents_remember/serving/conversation/models.py:1285-1302), the
+  is now 1282 lines and the old L25-L1270 stopped inside `operation_fingerprint` cit:(["def operation_fingerprint("], mcp/src/agents_remember/serving/conversation/_models_telemetry.py:100-100), the
   canonical-identity hash the operation products are keyed by. The row now reads L25-L1282: from
   `HarnessId` through the final line of the module, so every product the claim enumerates —
   cursor brands, `ConversationItem`, status, capabilities, operations, recovery, attachments,
-  the metric block cit:([`MetricEvidence`], mcp/src/agents_remember/serving/conversation/models.py:1213-1223) and `RuntimeFixtureEvidence` cit:([`RuntimeFixtureEvidence`], mcp/src/agents_remember/serving/conversation/models.py:1272-1282) — is inside it. No
+  the metric block cit:(["class MetricEvidence(WireModel, Generic[T]):"], mcp/src/agents_remember/serving/conversation/_models_telemetry.py:28-28) and `RuntimeFixtureEvidence` cit:(["class RuntimeFixtureEvidence(WireModel):"], mcp/src/agents_remember/serving/conversation/_models_telemetry.py:87-87) — is inside it. No
   claim text changed.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -149,7 +149,7 @@ the codex roster lifecycle upserts the two retention guards cover.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ConversationItem` and the block/provenance vocabulary define what the store compares and unions. | `ConversationItem` | mcp/src/agents_remember/serving/conversation/models.py:337-426 |
+| `ConversationItem` and the block/provenance vocabulary define what the store compares and unions. | "class ConversationItem(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_blocks.py:158-158 |
 | The submission-provenance batch is the only producer-verdict channel; absent records stay unknown-input. | `SubmissionProvenanceBatch`; `apply_provenance` | mcp/src/agents_remember/serving/conversation/active/store.py:275-306; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
 | Claude mappers emit split tool items (input first, output later) that the block union converges, and the `task_started` tagging upsert that hard-claims `streaming` (the finding-9 guard's subject). | `_map_task_lifecycle`; `_agent_identity_tag_item`; `_map_tool_result` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:305-385; mcp/src/agents_remember/serving/conversation/projectors/claude.py:514-554; mcp/src/agents_remember/serving/conversation/projectors/claude.py:978-1018 |
 | The projector wraps store mutations into totally ordered envelopes. | `ProjectionMutationStream`; `_mint_envelope` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |

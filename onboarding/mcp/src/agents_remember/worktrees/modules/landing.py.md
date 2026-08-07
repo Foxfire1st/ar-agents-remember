@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T05:30+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -135,7 +135,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:402-451; mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
 | The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:807-829 |
-| The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer.py:1267-1267 |
+| The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:300-300 |
 | The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_gh_probe_does_not_inherit_the_repository_selectors` — the direct assertion for the one probe the AST sweep cannot see. | `test_the_gh_probe_does_not_inherit_the_repository_selectors` | mcp/tests/test_landing.py:171-195 |
 | The package-wide AST sweep that covers the git spawns but deliberately not `gh` (`_spawns_git`; `test_a_program_that_merely_starts_with_git_is_not_git`). | "def _spawns_git"; "test_a_program_that_merely_starts_with_git" | mcp/tests/test_git_command.py:119-119; mcp/tests/test_git_command.py:528-528 |

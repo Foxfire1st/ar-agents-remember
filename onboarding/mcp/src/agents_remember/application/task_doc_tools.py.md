@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -105,7 +105,7 @@ validation failures, and invalid resolvable parent master docs.
 | --- | --- | --- |
 | The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:60-72 |
 | `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:248-260 |
-| Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document.py:1080-1123; mcp/tests/test_task_document.py:1125-1148; mcp/tests/test_task_document.py:1150-1164 |
+| Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:375-418 |
 | Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root, doc)" | mcp/src/agents_remember/application/task_doc_tools.py:176-186 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:141-205 |

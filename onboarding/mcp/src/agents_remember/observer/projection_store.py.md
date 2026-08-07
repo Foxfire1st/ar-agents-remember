@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`             |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -209,7 +209,7 @@ The recurring projection path uses projected status plus the latest landing snap
 | `ProjectionInputState.read` owns the delegated domain refreshes and returns the complete input bundle. | "def read("; "return ProjectionInputs" | mcp/src/agents_remember/observer/projection_inputs.py:214-264 |
 | The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | `_repo_surface_cache`; `_repo_surface_cache_key`; `_gather_repo_surfaces_cached` | mcp/src/agents_remember/observer/projection_store.py:85-85; mcp/src/agents_remember/observer/projection_store.py:332-343; mcp/src/agents_remember/observer/projection_store.py:346-356 |
 | Admission policy is centralized in the worktree provider admission helper. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
-| Projection tests prove cached repo surfaces do not cache provider reads. | `test_project_and_write_keeps_provider_reads_on_fast_path_with_cached_surfaces` | mcp/tests/test_observer_projection.py:3125-3143 |
+| Projection tests prove cached repo surfaces do not cache provider reads. | `test_project_and_write_keeps_provider_reads_on_fast_path_with_cached_surfaces` | mcp/tests/test_observer_projection_ledger.py:399-417 |
 
 ## 260718-CHATS-L5I Current Delta
 

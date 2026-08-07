@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:40+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,7 +26,10 @@ python -m agents_remember.code_quality.check
 
 ## Code Commentary
 
-### Enforcing Steps Versus Report Steps
+#
+
+- 260731-EFA-L7 (trace delta): the quality steps gained the enforcing `file-size` rail (armed via `pyproject.toml`'s `file_size_armed`), and the CRAP/coverage input scope now includes the configured test roots.
+## Enforcing Steps Versus Report Steps
 
 Every step is one of two kinds, and the distinction lives in the type rather than in
 prose. `Step.report_note is None` means the step **enforces**: a non-zero exit is a finding
@@ -225,6 +228,10 @@ the report to a temporary directory unless `--coverage-json` is given.
 | The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845; mcp/src/agents_remember/worktrees/modules/closeout.py:820-828; mcp/src/agents_remember/worktrees/modules/closeout.py:841-845 |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the quality steps gained the enforcing `file-size` rail (armed via `pyp...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: the file-size step (`file_size`) was added to the project-owned quality steps, armed via `pyproject.toml`'s `file_size_armed`; CRAP/coverage scope now includes the configured test roots. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized all 10 reference rows from
   markdown links to plain anchored sources (diff_coverage, crap_calculator, the four test suites,

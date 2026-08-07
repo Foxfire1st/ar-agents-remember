@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-07T22:45:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1125,7 +1125,7 @@ implementation governs its hash rollover or static mount.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The strict normalized conversation products. | `ConversationItem` | mcp/src/agents_remember/serving/conversation/models.py:337-426 |
+| The strict normalized conversation products. | "class ConversationItem(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_blocks.py:158-158 |
 | The two purpose-specific read ports. | `ActiveConversationPort`; `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/ports.py:27-56; mcp/src/agents_remember/serving/conversation/ports.py:59-84 |
 | The three owned child routers under the conversation root. | `CONVERSATION_CHILD_ROUTERS` | mcp/src/agents_remember/serving/conversation/router.py:15-15 |
 | Helper error redaction. | `redactHelperError` | mcp/native_helpers/conversation_library/src/protocol.ts:98-102 |
@@ -1133,8 +1133,8 @@ implementation governs its hash rollover or static mount.
 | Locked helper JSON-lines serving. | `serveJsonLines` | mcp/native_helpers/conversation_library/src/protocol.ts:114-147 |
 | Foundation tests for ports, routers, and one registration seam. | `test_exactly_two_conversation_ports_exist`; `test_root_composes_three_owned_child_routers`; `test_global_registration_has_one_stable_inclusion_seam` | mcp/tests/test_conversation_foundation.py:22-29; mcp/tests/test_conversation_foundation.py:32-107; mcp/tests/test_conversation_foundation.py:110-122 |
 | Foundation tests for helper dependency and fixture redaction boundaries. | `test_helper_package_and_lock_select_only_the_exact_repository_dependencies`; `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement`; `test_runtime_fixtures_contain_no_raw_secret_path_or_conversation_material` | mcp/tests/test_conversation_foundation.py:125-136; mcp/tests/test_conversation_foundation.py:163-188; mcp/tests/test_conversation_foundation.py:191-202 |
-| Unknown-input and terminal-provenance authority rejection. | `test_unknown_input_and_controlled_terminal_provenance_fail_closed` | mcp/tests/test_conversation_contracts.py:280-301 |
-| Unique item-source authority cross-product rejection. | `test_unique_item_sources_enforce_the_exact_authority_cross_product` | mcp/tests/test_conversation_contracts.py:304-359 |
+| Unknown-input and terminal-provenance authority rejection. | `test_unknown_input_and_controlled_terminal_provenance_fail_closed` | mcp/tests/test_conversation_contracts.py:248-269 |
+| Unique item-source authority cross-product rejection. | `test_unique_item_sources_enforce_the_exact_authority_cross_product` | mcp/tests/test_conversation_contracts.py:272-327 |
 
 ### Legacy package map
 
@@ -1163,13 +1163,13 @@ implementation governs its hash rollover or static mount.
 | A refused closeout gate leaves no commit or contract advance and preserves the staged retry tree. | `test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged` | mcp/tests/test_worktree_closeout_quality_gate.py:488-525 |
 | The closeout gates scope is the commit's content. | `test_the_gates_scope_is_the_commits_content` | mcp/tests/test_worktree_closeout_quality_gate.py:527-558 |
 | Runtime workflow vocabularies are derived from their aliases with `get_args`. | `VALID_WORKFLOW_KINDS`; "frozenset(get_args(WorkflowKind))" | mcp/src/agents_remember/worktrees/worktree_contract.py:72-72 |
-| The producer vocabulary scan walks every Python module under the installed package root. | `PACKAGE_ROOT`; `_module_trees` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:156-156; mcp/tests/test_wire_vocabulary_exhaustiveness.py:307-309 |
-| The produced literal set is derived from producer source rather than retyped aliases. | `produced_literals` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:323-338 |
+| The producer vocabulary scan walks every Python module under the installed package root. | `PACKAGE_ROOT`; `_module_trees` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:146-146; mcp/tests/test_wire_vocabulary_exhaustiveness.py:297-299 |
+| The produced literal set is derived from producer source rather than retyped aliases. | `produced_literals` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:313-328 |
 | The response model imports all three producer-owned guidance vocabulary aliases. | "NextOperation,"; "NextTool,"; "WorktreePhase," | mcp/src/agents_remember/models/worktree.py:16-18 |
 | The response model imports the cleanup contract alias. | "CleanupStatus," | mcp/src/agents_remember/models/worktree.py:21-21 |
 | The response model publishes the lifecycle alias for closeout status. | "CloseoutStatus as LifecycleStatus" | mcp/src/agents_remember/models/worktree.py:28-28 |
-| The exhaustiveness suite crosses guidance through the wire model field by field. | `cross_the_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:222-237 |
-| The worktree contract reads tolerantly and writes strictly: an unreadable vocabulary cell degrades and is quarantined on `unknown_cells` (reported as `unknownContractCells`) because no lifecycle tool catches `ContractError`, while `validate_contract(contract, *, path)` refuses all six cells at the write boundary and every refusal names the file. | `ContractBoundaryTests`; `test_an_unknown_cleanup_cell_degrades_and_names_itself`; `test_every_vocabulary_cell_degrades_rather_than_stranding_the_task`; `test_the_writer_refuses_what_the_reader_tolerated`; `test_every_refusal_names_the_contract_it_was_reading`; `test_the_invalid_contract_payload_carries_the_file_to_open` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:922-1222 |
+| The exhaustiveness suite crosses guidance through the wire model field by field. | `cross_the_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:212-227 |
+| The worktree contract reads tolerantly and writes strictly: an unreadable vocabulary cell degrades and is quarantined on `unknown_cells` (reported as `unknownContractCells`) because no lifecycle tool catches `ContractError`, while `validate_contract(contract, *, path)` refuses all six cells at the write boundary and every refusal names the file. | "class ContractBoundaryTests(unittest.TestCase):"; `test_an_unknown_cleanup_cell_degrades_and_names_itself`; `test_every_vocabulary_cell_degrades_rather_than_stranding_the_task`; `test_the_writer_refuses_what_the_reader_tolerated`; `test_every_refusal_names_the_contract_it_was_reading`; `test_the_invalid_contract_payload_carries_the_file_to_open` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:211-216; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:231-241; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:278-290; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:302-331; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:372-384 |
 | Base provider lifecycle settings derive their runtime and log roots from MCP settings. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
 | GrepAI lifecycle settings use the generated provider roots. | `_grepai_settings` | mcp/src/agents_remember/providers/settings.py:195-234 |
 | CodeGraphContext lifecycle settings use the generated provider roots. | `_cgc_settings` | mcp/src/agents_remember/providers/settings.py:237-327 |
@@ -1188,7 +1188,7 @@ implementation governs its hash rollover or static mount.
 | `run_git` defines the command runner and stdin contract. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | The Git test suite rejects ambient selectors and extra spawners and checks the stdin contract. | `test_no_module_spawns_git_with_the_ambient_environment`; `test_only_the_kernel_module_defines_a_git_runner`; `test_stdin_is_devnull_unless_input_text_is_given` | mcp/tests/test_git_command.py:215-233; mcp/tests/test_git_command.py:427-446; mcp/tests/test_git_command.py:448-465 |
 | The `o200k_base` tokenizer vocabulary is vendored under `package_data/tiktoken/` so the import-time default counter never downloads it; an absent file, an unshipped encoding, or a copy whose SHA-256 does not match raises `TokenizerVocabularyError` — checked in `_verify_vendored_vocabulary` before tiktoken is pointed at the directory, because tiktoken answers a mismatch by deleting and re-downloading — and the cold-start suite starts the real server with every socket call blocked. | `_verify_vendored_vocabulary`; `VENDORED_VOCABULARY_URL`; `test_the_server_starts_with_cold_caches_and_no_network`; `test_a_missing_vocabulary_fails_loudly` | mcp/src/agents_remember/models/tokens.py:38-38; mcp/src/agents_remember/models/tokens.py:70-106; mcp/tests/test_cold_start.py:200-205; mcp/tests/test_cold_start.py:241-241; mcp/tests/test_cold_start.py:261-269 |
-| Carryover validates effective official-memory JSON or Markdown storage authority before mutation and reuses it for official route-index refresh. | `_ScopedRuleAuthority`; `_refresh_official_route_indexes`; `test_apply_carries_reviewed_overview_and_regenerates_indexes` | mcp/src/agents_remember/memory/carryover.py:653-687; mcp/src/agents_remember/memory/carryover_authority.py:216-230; mcp/tests/test_carryover.py:295-344 |
+| Carryover validates effective official-memory JSON or Markdown storage authority before mutation and reuses it for official route-index refresh. | `_ScopedRuleAuthority`; `_refresh_official_route_indexes`; `test_apply_carries_reviewed_overview_and_regenerates_indexes` | mcp/src/agents_remember/memory/carryover.py:653-687; mcp/src/agents_remember/memory/carryover_authority.py:216-230; mcp/tests/test_carryover_apply_1.py:21-70 |
 | The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | "containment R1, fail-closed"; `test_require_launch_authority_refuses_disk_disabled`; `test_second_setup_waits_and_times_out_loudly`; `test_store_roundtrip_and_torn_line_tolerance` | mcp/src/agents_remember/mcp/config.py:214-214; mcp/tests/test_provider_containment.py:109-115; mcp/tests/test_provider_containment.py:277-300; mcp/tests/test_provider_containment.py:435-450 |
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | `parse_provider_degradation_settings`; `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`; `test_critical_transition_records_event_inbox_and_failsafe_once` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:58-128; mcp/tests/test_provider_degradation.py:99-159; mcp/tests/test_provider_degradation.py:239-330 |
 | FEUI-L5 submission authority, typed lifecycle errors, public boundary, and focused race matrix. | `register_harness_control_routes`; `test_slow_active_operation_does_not_block_status_or_queued_withdrawal`; `test_dispatch_claim_wins_atomic_withdrawal_race`; `test_same_id_is_idempotent_but_source_or_payload_change_conflicts` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/tests/test_harness_submission_authority.py:231-262; mcp/tests/test_harness_submission_authority.py:307-321; mcp/tests/test_harness_submission_authority.py:515-530 |
@@ -1470,7 +1470,14 @@ doctrine), its forcing regressions (`mcp/tests/`), and the coding-guidelines/spa
 skill edits (`skills/l-01-agent-lifecycles/` carries those). No new route appeared and no
 umbrella scope statement changed; the detail lives with the children.
 
+## 260731-EFA-L7 Change
+
+The file-size rail joined the project-owned wrapper: `code_quality/file_size.py` measures index-known Python plus `dashboard/src` TypeScript/TSX against the written File Size Budget (1,200 hard limit / 2,000 architectural failure / 4,000 emergency cleanup), reports the band per finding, fails the run enforced, and is armed via `pyproject.toml`'s `file_size_armed` key read through `code_quality/scope.py`. CRAP/coverage input scope now includes the configured test roots (L7-R8). The over-limit source modules were split in place into facades plus private responsibility modules (`kernel/_agentic_settings_*`, `observer/snapshots_impl/`, `observer/reducer_impl/`, `serving/_app_*`, `serving/_supervisor_*`, `serving/conversation/_models_*`, `serving/_harness_control_parsing.py`, `serving/conversation/projectors/_codex_collab.py`), each facade's full base surface pinned mechanically by `mcp/tests/test_facade_surface.py`.
+
+
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the armed file-size detector rail, the test-tree CRAP/coverage scope, and the in-place facade splits under `code_quality`, `kernel`, `observer`, and `serving`. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (scope-reporting dashboard steps; registration keyword-only fixes). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: pointer entry — mechanism in serving/controlplane/conversation children, tests in mcp/tests, doctrine in skills/l-01-agent-lifecycles. Verification metadata pinned until closeout stamps the code commit.

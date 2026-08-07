@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/tests/test_mcp_registration_wiring.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`  |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -29,6 +29,7 @@ default that silently changes what a call means. This module exists because 163 
 objects were introduced across the codebase — the registration layer is where the flat wire
 schema meets them.
 
+260731-EFA-L7 (trace delta): the registration-wiring suite was split in place into `test_mcp_registration_wiring_tests_1.py` / `_2.py`; this card remains the family entry.
 ## Method
 
 Each test calls the tool **through the live `FastMCP` instance**, so the registered schema,
@@ -91,6 +92,10 @@ the config only to keep one signature, and these six must be called without it.
 | The AST test that keeps the `PLR0913` exemption over `registration/` honest. | `ToolSignatureExemptionTests` | mcp/tests/test_code_quality_check.py:340-416 |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the registration-wiring suite was split in place into `test_mcp_registr...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

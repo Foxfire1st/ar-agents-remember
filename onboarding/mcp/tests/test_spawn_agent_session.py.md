@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -188,7 +188,7 @@ No relevant external/domain documentation found; the behavior is local MCP/servi
 | The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
 | The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
 | The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | `PasteResult` | mcp/src/agents_remember/serving/terminal_paste.py:53-59 |
-| The `POST /api/terminal/{session}/paste` endpoint under test. | `api_terminal_paste` | mcp/src/agents_remember/serving/app.py:1923-1935 |
+| The `POST /api/terminal/{session}/paste` endpoint under test. | `api_terminal_paste` | mcp/src/agents_remember/serving/_app_terminal_routes.py:683-695 |
 
 ## Cross-Repo References
 
@@ -216,6 +216,8 @@ Spawn/session tests now retain the environment and worktree identity boundary ne
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T18:41+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 5 citation rows with exact anchors (`call_spawn`, `spawn_agent_session_payload`, `resolve_catalog_leaf_key`, `open_terminal_session`, `api_terminal_paste`) and ledger-verified ranges; converted the spawn-role prose reference to cit form bound to `test_spawn_records_role_from_env_and_reports_it` (305-332), dropping the task-id fragment mistaken for a line number. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

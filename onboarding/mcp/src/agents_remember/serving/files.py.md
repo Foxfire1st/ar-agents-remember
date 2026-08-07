@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -157,7 +157,7 @@ rejected, never silently re-rooted).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3). | `_resolve_within` | mcp/src/agents_remember/serving/scope.py:196-204 |
-| The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. | `add_middleware` | mcp/src/agents_remember/serving/app.py:749-749 |
+| The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. | `add_middleware` | mcp/src/agents_remember/serving/app.py:257-257 |
 | The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
 | The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. | "test_worktree_support.py" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:156-156 |
 | The repo allow-list authority guard (`require_repo` → `RepositoryScope`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
@@ -167,7 +167,7 @@ rejected, never silently re-rooted).
 | The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |
 | The test suite for this module. | `test_response_shape_and_filtering_are_unchanged` | mcp/tests/test_serving_files.py:333-394 |
 | The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:709-715 |
-| The suite that actually enforces the declarations by driving every route and validating the real body. | `test_files_routes_conform` | mcp/tests/test_serving_response_conformance.py:1209-1265 |
+| The suite that actually enforces the declarations by driving every route and validating the real body. | `test_files_routes_conform` | mcp/tests/test_serving_response_conformance_cases_1.py:336-392 |
 
 ## 260718-CHATS-L5I Current Delta
 

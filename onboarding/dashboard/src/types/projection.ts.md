@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -290,7 +290,7 @@ are proven by repository source and tests.
 | The Python producer defines engine carryover and analytics expectation projections. | `EngineProcessNode`, `Analytics` | mcp/src/agents_remember/observer/projection.py:832-900; mcp/src/agents_remember/observer/projection.py:956-987 |
 | `SupervisorHeartbeat` mirrors the app-injected wire shape, not a `projection.py` model. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
 | `WorkspaceProjection` is the top-level generated shape. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
-| The app-side payload builder names the `SupervisorHeartbeatPayload` wire shape. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/app.py:949-949 |
+| The app-side payload builder names the `SupervisorHeartbeatPayload` wire shape. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
 | The contract guard measures the mirror in three directions and derives `VOCABULARIES`. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
 
 ## Series-Contract Notes

@@ -73,7 +73,7 @@ an invalid UID/GID override.
 | Package execution delegates to the lifecycle CLI. | `main` | mcp/src/agents_remember/providers/lifecycle/__main__.py:1-8 |
 | CGC lifecycle implementation is grouped under the CGC provider package. | `## Purpose` | onboarding/mcp/src/agents_remember/providers/cgc/lifecycle/overview.md:17-22 |
 | GrepAI lifecycle implementation is grouped under the GrepAI provider package. | `## Purpose` | onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/overview.md:17-22 |
-| Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | `test_grepai_settings_backed_run_uses_docker_without_host_binary` | mcp/tests/test_provider_lifecycle.py:318-352; mcp/tests/test_provider_lifecycle.py:1058-1112; mcp/tests/test_provider_lifecycle.py:1143-1224 |
+| Provider lifecycle tests cover Docker-only GrepAI behavior, CGC bounded run behavior, and watcher aggregation. | `test_grepai_settings_backed_run_uses_docker_without_host_binary` | mcp/tests/test_provider_lifecycle_parser_1.py:109-143 |
 
 ## 260731-EFA-L2 — One More Shared Primitive, One Fewer Unused Knob
 

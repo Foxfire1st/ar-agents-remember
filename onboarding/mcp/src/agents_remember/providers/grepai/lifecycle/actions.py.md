@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/actions.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ watcher startup so later Compose calls use the same dependency port mappings.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | PostgreSQL, Ollama, and runner modules provide the Docker stack that this module composes. | `docker_wait_for_postgres`; `docker_wait_for_ollama`; `grepai_runner_image_build` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:51-68; mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:46-62; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:37-74 |
-| Tests protect Docker-only direct-run rejection, Docker bounded run construction, and full dry-run stack creation. | `test_grepai_direct_run_requires_settings_backed_docker`; `test_grepai_start_dry_run_builds_complete_docker_stack` | mcp/tests/test_provider_lifecycle.py:282-316; mcp/tests/test_provider_lifecycle.py:354-409 |
+| Tests protect Docker-only direct-run rejection, Docker bounded run construction, and full dry-run stack creation. | `test_grepai_direct_run_requires_settings_backed_docker`; `test_grepai_start_dry_run_builds_complete_docker_stack` | mcp/tests/test_provider_lifecycle_parser_1.py:73-107; mcp/tests/test_provider_lifecycle_parser_1.py:145-200 |
 
 ## Update History
 

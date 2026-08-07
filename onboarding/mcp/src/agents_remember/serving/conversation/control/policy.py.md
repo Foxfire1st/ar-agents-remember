@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/policy.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ authorization ruling; the harness mode reads the live snapshot.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | `WireModel`; `CapabilityEvidence`; `FeatureCapability` | mcp/src/agents_remember/serving/conversation/models.py:55-63; mcp/src/agents_remember/serving/conversation/models.py:655-659; mcp/src/agents_remember/serving/conversation/models.py:662-690 |
+| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | "class WireModel(BaseModel):"; "class CapabilityEvidence(WireModel):"; "class FeatureCapability(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:38-38; mcp/src/agents_remember/serving/conversation/_models_status.py:255-255; mcp/src/agents_remember/serving/conversation/_models_status.py:262-262 |
 | The AR local-operator ruling and canonical scope the `repoPolicy` part reports. | `LocalOperatorAuthorizationResolver`; `for_workspace`; `resolve`; `require` | mcp/src/agents_remember/serving/conversation/authorization.py:69-105 |
 | The `policyRead` capability gate. | `policyRead` | dashboard/src/data/conversation/types.ts:274-274 |
 | The live snapshot `harnessMode` reads Claude `permissionMode` from. | `_harness_mode` | mcp/src/agents_remember/serving/conversation/control/policy.py:104-130 |
